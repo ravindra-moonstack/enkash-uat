@@ -1,6 +1,11 @@
 "use client";
 
-import { ButtonProps } from "@/types/props";
+export interface ButtonProps {
+  isDisabled?: boolean;
+  containerStyles?: string;
+  title: string;
+  url: string;
+}
 
 const PrimaryButton = ({ isDisabled, title, url }: ButtonProps) => {
   const handleClick = () => {

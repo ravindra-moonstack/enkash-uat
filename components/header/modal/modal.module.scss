@@ -1,0 +1,40 @@
+@import "../../../styles/mixin";
+@import "../../../styles/variables";
+
+.product_row {
+  padding: 15px 20px;
+  border-radius: 10px;
+  &:hover {
+    background-color: $color-light-shade-grey;
+  }
+}
+
+.product_name {
+  font-size: 27px;
+  line-height: 45px;
+  color: $color-equity-blue;
+}
+
+.product_description {
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-equity-blue;
+}
+
+.left_column {
+  padding-left: 100px !important;
+}
+
+.empty_state_image {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
