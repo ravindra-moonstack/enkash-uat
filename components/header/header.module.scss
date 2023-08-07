@@ -1,0 +1,77 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.header {
+  padding: 35px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+
+  &:hover{
+    li{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    color:$color-indi-volt;
+    background-color: $color-white;
+    .whitelogo {
+      display: none;
+    }
+    .bluelogo {
+      display: block;
+    }
+    .arrow_down_black{
+      display: block;
+    }
+    .arrow_down_white{
+      display: none;
+    }
+   }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 19px;
+    text-align: center;
+    img{
+      margin-top: -4px;
+      margin-left: 2px;
+      height: 12px;
+      width: 12px;
+    }
+  }
+
+  button {
+    border-radius: 32px;
+  }
+}
+
+.arrow_down_black{
+  display: none;
+}
+
+.bluelogo{
+  display: none;
+}
+
+.buttons_container {
+  display: flex;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 19px;
+  text-align: center;
+}
