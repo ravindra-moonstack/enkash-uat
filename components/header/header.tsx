@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import styles from "./header.module.scss";
 import navBarTopTtitle from "../../constant/nav-bar";
 import modalData from "../../constant/modal-data";
@@ -21,7 +21,7 @@ const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_b
 const loginUrl = "https://home.enkash.com/login";
 
 const Header = () => {
-  const [showModal, setShowModal] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [modalContent, setModalContent] = useState(modalData[0]);
 
   const handleMouseEnter = (index: any) => {
@@ -52,13 +52,12 @@ const Header = () => {
           <ul>
             {navBarTopTtitle.map((item, index) => (
               <li
-                key={index}
+                key={item.name}
                 className="px-3"
                 onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={() => setShowModal(false)}
               >
                 {item.name}
-                {index !== 3 && (
+                {index !== 2 && (
                   <>
                     <Image
                       src={arrowDownBlack}

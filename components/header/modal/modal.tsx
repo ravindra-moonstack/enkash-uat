@@ -5,19 +5,18 @@ import styles from "./modal.module.scss";
 const Modal = ({ showModal, content }: any) => {
   const [hoveredProduct, setHoveredProduct] = useState(null);
 
-  // if (!showModal) {
-  //   return null;
-  // }
+  if (!showModal) {
+    return null;
+  }
 
   return (
     <div className="row mt-5">
       <div className="col-4 d-flex flex-column align-items-right pl-5">
         {content.products.map((product: any, index: any) => (
           <div
-            key={index}
+            key={product.name}
             className={styles.product_row}
             onMouseEnter={() => setHoveredProduct(index)}
-            onMouseLeave={() => setHoveredProduct(null)}
           >
             <div className={styles.product_name}>{product.name}</div>
             <div className={styles.product_description}>
@@ -26,7 +25,7 @@ const Modal = ({ showModal, content }: any) => {
           </div>
         ))}
       </div>
-      <div className="col-8 ${styles.empty_state_image">
+      <div className={`col-8 ${styles.empty_state_image}`}>
         <div
           className={`${styles.empty_state_image} ${
             hoveredProduct === null ? styles.show : styles.hide
@@ -41,12 +40,12 @@ const Modal = ({ showModal, content }: any) => {
         </div>
         {content.products.map((product: any, index: any) => (
           <div
-            key={index}
+            key={product.name}
             className={hoveredProduct === index ? styles.show : styles.hide}
           >
             <div className="row">
               {product.subProductLeft.map((subProduct: any) => (
-                <div className="col-6" key={subProduct.name}>
+                <div className="col-6" key={subProduct.title}>
                   <div className="row align-items-center">
                     <div className="col-2">
                       {/* <Image
@@ -66,7 +65,7 @@ const Modal = ({ showModal, content }: any) => {
             </div>
             <div className="row">
               {product.subProductRight.map((subProduct: any) => (
-                <div className="col-6" key={subProduct.name}>
+                <div className="col-6" key={subProduct.title}>
                   <div className="row align-items-center">
                     <div className="col-2">
                       {/* <Image

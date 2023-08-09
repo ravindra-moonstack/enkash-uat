@@ -24,7 +24,7 @@ export const modalData = [
             image: "/img/empty-state.png",
           },
           {
-            title: "ItemTitle2",
+            title: "ItemTitle",
             description: "ItemDesc2",
             image: "/img/empty-state.png",
           },
@@ -36,24 +36,24 @@ export const modalData = [
           "Track corporate expenses with a highly customizable platform",
         subProductLeft: [
           {
-            title: "ItemTitle1",
+            title: "ItemTitle12",
             description: "ItemDesc1",
             image: "/img/empty-state.png",
           },
           {
-            title: "ItemTitle2",
+            title: "ItemTitle23",
             description: "ItemDesc2",
             image: "/img/empty-state.png",
           },
         ],
         subProductRight: [
           {
-            title: "ItemTitle1",
+            title: "ItemTitle123",
             description: "ItemDesc1",
             image: "/img/empty-state.png",
           },
           {
-            title: "ItemTitle2",
+            title: "ItemTitle22",
             description: "ItemDesc2",
             image: "/img/empty-state.png",
           },
@@ -64,7 +64,7 @@ export const modalData = [
         description: "Simplify corporate spending with flexible card solutions",
         subProductLeft: [
           {
-            title: "ItemTitle1",
+            title: "ItemTitle14",
             description: "ItemDesc1",
             image: "/img/empty-state.png",
           },
@@ -76,7 +76,7 @@ export const modalData = [
         ],
         subProductRight: [
           {
-            title: "ItemTitle1",
+            title: "ItemTitle15",
             description: "ItemDesc1",
             image: "/img/empty-state.png",
           },
@@ -93,7 +93,7 @@ export const modalData = [
           "Seamlessly automate & manage rewards, incentives, and payouts",
         subProductLeft: [
           {
-            title: "ItemTitle1",
+            title: "ItemTitle16",
             description: "ItemDesc1",
             image: "/img/empty-state.png",
           },
@@ -105,7 +105,129 @@ export const modalData = [
         ],
         subProductRight: [
           {
-            title: "ItemTitle1",
+            title: "ItemTitle17",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle28",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+      },
+    ],
+    subTitle: ["Payables", "Recievables"],
+    image: "/img/empty-state.png", // path from public
+    footerText: "Footer text",
+  },
+  {
+    products: [
+      {
+        name: "Reward Platform",
+        description:
+          "Automate your company's AP, AR, and bank reconciliation seamlessly",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle19",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+      },
+      {
+        name: "Brand Voucher",
+        description:
+          "Track corporate expenses with a highly customizable platform",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle110",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+      },
+      {
+        name: "Gift Cards",
+        description: "Simplify corporate spending with flexible card solutions",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle111",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+      },
+      {
+        name: "Offers",
+        description:
+          "Seamlessly automate & manage rewards, incentives, and payouts",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle112",
             description: "ItemDesc1",
             image: "/img/empty-state.png",
           },
@@ -124,152 +246,244 @@ export const modalData = [
   {
     products: [
       {
-        name: "Reward Platform",
+        name: "Reward Platform1",
         description:
           "Automate your company's AP, AR, and bank reconciliation seamlessly",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle113",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
       },
       {
-        name: "Brand Voucher",
+        name: "Brand Voucher1",
         description:
           "Track corporate expenses with a highly customizable platform",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle114",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
       },
       {
-        name: "Gift Cards",
+        name: "Gift Cards1",
         description: "Simplify corporate spending with flexible card solutions",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle115",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
       },
       {
-        name: "Offers",
+        name: "Offers1",
         description:
           "Seamlessly automate & manage rewards, incentives, and payouts",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle116",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
       },
     ],
     subTitle: ["Payables", "Recievables"],
-    subProductRight: [
-      {
-        title: "ItemTitle1",
-        description: "ItemDesc1",
-        image: "/img/empty-state.png",
-      },
-      {
-        title: "ItemTitle2",
-        description: "ItemDesc2",
-        image: "/img/empty-state.png",
-      },
-    ],
     image: "/img/empty-state.png", // path from public
     footerText: "Footer text",
   },
   {
     products: [
       {
-        name: "Reward Platform",
+        name: "Reward Platform2",
         description:
           "Automate your company's AP, AR, and bank reconciliation seamlessly",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle117",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
       },
       {
-        name: "Brand Voucher",
+        name: "Brand Voucher2",
         description:
           "Track corporate expenses with a highly customizable platform",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle118",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
       },
       {
-        name: "Gift Cards",
+        name: "Gift Cards2",
         description: "Simplify corporate spending with flexible card solutions",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle119",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
       },
       {
-        name: "Offers",
+        name: "Offers2",
         description:
           "Seamlessly automate & manage rewards, incentives, and payouts",
+        subProductLeft: [
+          {
+            title: "Vendor Payment",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "Rental Payment",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
+        subProductRight: [
+          {
+            title: "ItemTitle120",
+            description: "ItemDesc1",
+            image: "/img/empty-state.png",
+          },
+          {
+            title: "ItemTitle2",
+            description: "ItemDesc2",
+            image: "/img/empty-state.png",
+          },
+        ],
       },
     ],
     subTitle: ["Payables", "Recievables"],
-    subProductRight: [
-      {
-        title: "ItemTitle1",
-        description: "ItemDesc1",
-        image: "/img/empty-state.png",
-      },
-      {
-        title: "ItemTitle2",
-        description: "ItemDesc2",
-        image: "/img/empty-state.png",
-      },
-    ],
-    image: "/img/empty-state.png", // path from public
-    footerText: "Footer text",
-  },
-  {
-    products: [
-      {
-        name: "Reward Platform",
-        description:
-          "Automate your company's AP, AR, and bank reconciliation seamlessly",
-      },
-      {
-        name: "Brand Voucher",
-        description:
-          "Track corporate expenses with a highly customizable platform",
-      },
-      {
-        name: "Gift Cards",
-        description: "Simplify corporate spending with flexible card solutions",
-      },
-      {
-        name: "Offers",
-        description:
-          "Seamlessly automate & manage rewards, incentives, and payouts",
-      },
-    ],
-    subTitle: ["Payables", "Recievables"],
-    subProductRight: [
-      {
-        title: "ItemTitle1",
-        description: "ItemDesc1",
-        image: "/img/empty-state.png",
-      },
-      {
-        title: "ItemTitle2",
-        description: "ItemDesc2",
-        image: "/img/empty-state.png",
-      },
-    ],
-    image: "/img/empty-state.png", // path from public
-    footerText: "Footer text",
-  },
-  {
-    products: [
-      {
-        name: "Reward Platform",
-        description:
-          "Automate your company's AP, AR, and bank reconciliation seamlessly",
-      },
-      {
-        name: "Brand Voucher",
-        description:
-          "Track corporate expenses with a highly customizable platform",
-      },
-      {
-        name: "Gift Cards",
-        description: "Simplify corporate spending with flexible card solutions",
-      },
-      {
-        name: "Offers",
-        description:
-          "Seamlessly automate & manage rewards, incentives, and payouts",
-      },
-    ],
-    subTitle: ["Payables", "Recievables"],
-    subProductRight: [
-      {
-        title: "ItemTitle1",
-        description: "ItemDesc1",
-        image: "/img/empty-state.png",
-      },
-      {
-        title: "ItemTitle2",
-        description: "ItemDesc2",
-        image: "/img/empty-state.png",
-      },
-    ],
     image: "/img/empty-state.png", // path from public
     footerText: "Footer text",
   },
