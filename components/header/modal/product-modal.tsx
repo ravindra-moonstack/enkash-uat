@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import styles from "./modal.module.scss";
 import motherProducts from "../../../constant/mother-products";
@@ -7,12 +8,11 @@ import olympusProducts from "../../../constant/olympus-products";
 import freedomProducts from "../../../constant/freedom-products";
 import xpenzProducts from "../../../constant/xpenz-products";
 import loyaltyLoungeProducts from "../../../constant/loaylty-lounge-products";
-
 import SubProduct from "./sub-product";
+import { productModalEmptyStateImg } from "../.";
 
 const ProductModal = () => {
-  const [hoveredProduct, setHoveredProduct] = useState(null);
-  const [hoverIconImage, setHoverIconImage] = useState(null);
+  const [hoveredProductIndex, setHoveredProductIndex] = useState(null);
 
   return (
     <div className="row mt-5">
@@ -21,7 +21,9 @@ const ProductModal = () => {
           <div
             key={product.name}
             className={styles.product_row}
-            onMouseEnter={() => setHoveredProduct(index)}
+            onMouseEnter={() => {
+              setHoveredProductIndex(index);
+            }}
           >
             <div className={styles.product_name}>{product.name}</div>
             <div className={styles.product_description}>
@@ -30,34 +32,27 @@ const ProductModal = () => {
           </div>
         ))}
       </div>
-      <SubProduct
-        hoveredProduct={hoveredProduct}
-        hoveredIndex={0}
-        hoverIconImage={hoverIconImage}
-        setHoverIconImage={setHoverIconImage}
-        subProducts={olympusProducts}
-      />
-      <SubProduct
-        hoveredProduct={hoveredProduct}
-        hoveredIndex={1}
-        hoverIconImage={hoverIconImage}
-        setHoverIconImage={setHoverIconImage}
-        subProducts={freedomProducts}
-      />
-      <SubProduct
-        hoveredProduct={hoveredProduct}
-        hoveredIndex={2}
-        hoverIconImage={hoverIconImage}
-        setHoverIconImage={setHoverIconImage}
-        subProducts={xpenzProducts}
-      />
-      <SubProduct
-        hoveredProduct={hoveredProduct}
-        hoveredIndex={3}
-        hoverIconImage={hoverIconImage}
-        setHoverIconImage={setHoverIconImage}
-        subProducts={loyaltyLoungeProducts}
-      />
+      {!hoveredProductIndex && (
+        <div className={`col-8 d-flex`}>
+          <Image
+            src={productModalEmptyStateImg}
+            alt="Enkash product modal image"
+            className="position-absolute end-0 bottom-0"
+            width={700}
+            height={450}
+          />
+        </div>
+      )}
+      {hoveredProductIndex === 0 && (
+        <SubProduct subProducts={olympusProducts} />
+      )}
+      {hoveredProductIndex === 1 && (
+        <SubProduct subProducts={freedomProducts} />
+      )}
+      {hoveredProductIndex === 2 && <SubProduct subProducts={xpenzProducts} />}
+      {hoveredProductIndex === 3 && (
+        <SubProduct subProducts={loyaltyLoungeProducts} />
+      )}
     </div>
   );
 };

@@ -21,7 +21,6 @@
 .sub_product_title {
   font-size: 27px;
   padding-right: 30px;
-  color: $color-equity-blue;
   text-decoration: underline;
   text-underline-offset: 8px;
 }
@@ -45,12 +44,6 @@
     rgba(0, 0, 0, 0.2) 0%,
     rgba(0, 0, 0, 0) 100%
   );
-}
-
-.empty_state_image {
-  position: absolute;
-  right: 0;
-  bottom: 0;
 }
 
 .footer {
