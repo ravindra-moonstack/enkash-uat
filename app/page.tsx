@@ -8,7 +8,7 @@ export const metadata = {
 
 const home = () => {
   return (
-    <div className={`bg-indi-volt color-white ${Styles.home}`}>
+    <div className={`bg-indi-volt color-white pt-5 ${Styles.home}`}>
       <div>
         Spend Management <br />
         Management Solution <br />
