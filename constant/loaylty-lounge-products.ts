@@ -1,0 +1,41 @@
+import {
+  vendorPayment,
+  vendorPaymentFilled,
+  bulkPayout,
+  taxPayment,
+} from "@/components/header";
+
+const loyaltyLoungeProducts = [
+  {
+    name: "Employee Rewards",
+    description: "Automated platform for employee appreciation",
+    imageSrc: vendorPayment,
+    imageSrcHovered: vendorPaymentFilled,
+  },
+  {
+    name: "Brand Voucher",
+    description: "200+ brand vouchers for corporate gifting",
+    imageSrc: vendorPayment,
+    imageSrcHovered: vendorPaymentFilled,
+  },
+  {
+    name: "Channel Incentives",
+    description: "Enable automated trade incentives easily",
+    imageSrc: bulkPayout,
+    imageSrcHovered: vendorPaymentFilled,
+  },
+  {
+    name: "Offers",
+    description: "Get discounts on partnered subscriptions and more",
+    imageSrc: vendorPayment,
+    imageSrcHovered: vendorPaymentFilled,
+  },
+  {
+    name: "Gift Cards",
+    description: "Gift cards for employee benefits",
+    imageSrc: taxPayment,
+    imageSrcHovered: vendorPaymentFilled,
+  },
+];
+
+export default loyaltyLoungeProducts;

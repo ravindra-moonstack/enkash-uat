@@ -23,7 +23,7 @@ const Header = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false);
   const [isHeaderColor, setIsHeaderColor] = useState(false);
-  const [isHeaderLogoWhite, setIsHeaderLogoWhite] = useState(false);
+  const [isHeaderLogoWhite, setIsHeaderLogoWhite] = useState(true);
   const [isHeaderArrowWhite, setIsHeaderArrowWhite] = useState(false);
 
   return (
@@ -43,20 +43,9 @@ const Header = () => {
         <div className="d-flex">
           <Link href="/" className={styles.logo_container}>
             <Image
-              src={enkashBlueLogo}
+              src={isHeaderLogoWhite ? enkashWhiteLogo : enkashBlueLogo}
               alt="logo"
               width={120}
-              className={`object-contain ${
-                isHeaderLogoWhite ? "d-block" : "d-none"
-              }`}
-            />
-            <Image
-              src={enkashWhiteLogo}
-              alt="logo"
-              width={120}
-              className={`object-contain ${
-                isHeaderLogoWhite ? "d-none" : "d-block"
-              }`}
             />
           </Link>
           <ul>
@@ -69,7 +58,7 @@ const Header = () => {
                     setHoveredIndex(index);
                     setIsHeaderBgWhite(true);
                     setIsHeaderColor(true);
-                    setIsHeaderLogoWhite(true);
+                    setIsHeaderLogoWhite(false);
                     setIsHeaderArrowWhite(true);
                   }
                 }}
@@ -78,13 +67,7 @@ const Header = () => {
                 {index !== 2 && (
                   <>
                     <Image
-                      src={arrowDownWhite}
-                      className={isHeaderArrowWhite ? "d-none" : "d-block"}
-                      alt="arrow down icon"
-                    />
-                    <Image
-                      src={arrowDownBlack}
-                      className={isHeaderArrowWhite ? "d-block" : "d-none"}
+                      src={isHeaderArrowWhite ? arrowDownBlack : arrowDownWhite}
                       alt="arrow down icon"
                     />
                   </>
