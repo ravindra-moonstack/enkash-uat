@@ -3,11 +3,11 @@
 import Image from "next/image";
 import { useState } from "react";
 import styles from "./modal.module.scss";
-import motherProducts from "../../../constant/mother-products";
-import olympusProducts from "../../../constant/olympus-products";
-import freedomProducts from "../../../constant/freedom-products";
+import motherProducts from "../../../constant/products/mother-products";
+import olympusProducts from "../../../constant/products/olympus-products";
+import freedomProducts from "../../../constant/products/freedom-products";
 import xpenzProducts from "../../../constant/xpenz-products";
-import loyaltyLoungeProducts from "../../../constant/loaylty-lounge-products";
+import loyaltyLoungeProducts from "../../../constant/products/loaylty-lounge-products";
 import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";
 
@@ -32,7 +32,7 @@ const ProductModal = () => {
           </div>
         ))}
       </div>
-      {!hoveredProductIndex && (
+      {hoveredProductIndex === null && (
         <div className={`col-8 d-flex`}>
           <Image
             src={productModalEmptyStateImg}

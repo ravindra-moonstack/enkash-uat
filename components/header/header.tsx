@@ -12,9 +12,10 @@ import {
   enkashBlueLogo,
   arrowDownBlack,
   arrowDownWhite,
-  arrowUpBlue,
 } from ".";
 import ProductModal from "./modal/product-modal";
+import SolutionsModal from "./modal/solutions-modal";
+import ResourcesModal from "./modal/resources-modal";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
@@ -54,7 +55,7 @@ const Header = () => {
                 key={item.name}
                 className="px-3 d-flex justify-content-center align-items-center"
                 onMouseEnter={() => {
-                  if ([0, 1, 3].includes(index)) {
+                  if (index !== 2) {
                     setHoveredIndex(index);
                     setIsHeaderBgWhite(true);
                     setIsHeaderColor(true);
@@ -84,8 +85,8 @@ const Header = () => {
       </nav>
 
       {hoveredIndex === 0 && <ProductModal />}
-      {hoveredIndex === 1 && <ProductModal />}
-      {hoveredIndex === 3 && <ProductModal />}
+      {hoveredIndex === 1 && <SolutionsModal />}
+      {hoveredIndex === 3 && <ResourcesModal />}
     </header>
   );
 };
