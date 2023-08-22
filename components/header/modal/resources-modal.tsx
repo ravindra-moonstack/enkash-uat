@@ -26,7 +26,7 @@ const ResourcesModal = () => {
                 className="ms-3"
                 src={blueforwardArrow}
                 alt="Read Enkash blog post"
-                width={75}
+                width={60}
               />
             </div>
           </div>

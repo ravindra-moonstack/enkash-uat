@@ -1,16 +1,50 @@
+@import "/styles/variables";
+
 .home_container {
   padding-top: 100px;
 }
 
 .bg_rainbow {
   background-image: url(../public/blue-rainbow.png);
-  background-size: 96% 100%;
+  background-size: 110% 100%;
   background-repeat: no-repeat;
   background-position: center center;
-  padding-top: 60px;
 }
 
-.font_heading {
-  font-size: 100px;
-  line-height: 100px;
+.first_row {
+  padding-top: 60px;
+  .font_heading {
+    font-size: 100px;
+    line-height: 100px;
+  }
+}
+
+.second_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 80px 200px 80px;
+  text-align: center;
+  .title {
+    font-size: 50px;
+  }
+}
+
+.third_row {
+  padding-top: 60px;
+  .menu_title {
+    margin-left: 50px;
+    padding: 5px 20px 5px 20px;
+    background-color: #fff;
+    color: $color-main-black;
+    border-radius: 20px;
+  }
+  .title {
+    font-size: 35px;
+    padding-bottom: 50px;
+  }
+  img {
+    width: 60%;
+  }
 }
