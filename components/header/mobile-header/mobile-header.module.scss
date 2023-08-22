@@ -1,0 +1,27 @@
+@import "../../../styles/mixin";
+@import "../../../styles/variables";
+
+.mobile_modal {
+  background-color: $color-white;
+  height: 100vh;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    color: $color-equity-blue;
+    font-size: 31px;
+    line-height: 37px;
+  }
+}
+
+.line {
+  background-color: $color-alt-grey;
+  height: 2px;
+}
+
+.buttons_container {
+  flex-grow: 4;
+}

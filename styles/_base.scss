@@ -1,4 +1,5 @@
 @import "_variables.scss";
+@import "_mixin.scss";
 
 /* Background Classes */
 .bg-deep-indigo {
@@ -136,4 +137,26 @@
 
 .color-error-red {
   color: $color-error-red;
+}
+
+/* Header Configuration */
+
+/* The styles that are not inside any mixins */
+.mobile-header {
+  display: flex;
+}
+
+.desktop-header {
+  display: none;
+}
+
+/* Styles for bp-md */
+@media (min-width: 768px) {
+  .mobile-header {
+    display: none;
+  }
+
+  .desktop-header {
+    display: flex;
+  }
 }
