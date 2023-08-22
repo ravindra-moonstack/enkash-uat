@@ -13,9 +13,7 @@ const RootLayout = ({ children }: RootProps) => {
           <div className="gradient"></div>
         </div>
         <main className="app">
-          <div className="mobile-header">
-            <MobileHeader />
-          </div>
+          <div className="mobile-header">{/* <MobileHeader /> */}</div>
           <div className="desktop-header">
             <Header />
           </div>

@@ -12,6 +12,7 @@ import {
   enkashBlueLogo,
   arrowDownBlack,
   arrowDownWhite,
+  arrowUpBlue,
 } from ".";
 import ProductModal from "./modal/product-modal";
 import SolutionsModal from "./modal/solutions-modal";
@@ -21,30 +22,33 @@ const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_b
 const loginUrl = "https://home.enkash.com/login";
 
 const Header = () => {
+  const getArrowImageSource = (index: number) => {
+    if (hoveredIndex === index) {
+      //replace blue logo
+      return arrowDownBlack;
+    }
+
+    return isHeaderBgWhite ? arrowDownBlack : arrowDownWhite;
+  };
+
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false);
-  const [isHeaderColor, setIsHeaderColor] = useState(false);
-  const [isHeaderLogoWhite, setIsHeaderLogoWhite] = useState(true);
-  const [isHeaderArrowWhite, setIsHeaderArrowWhite] = useState(false);
 
   return (
     <header
       className={`w-full absolute z-10 d-flex flex-column ${styles.header} ${
-        isHeaderBgWhite ? "bg-white" : ""
-      }  ${isHeaderColor ? "color-indi-volt" : ""}`}
+        isHeaderBgWhite ? "bg-white color-indi-volt" : ""
+      }`}
       onMouseLeave={() => {
-        //setHoveredIndex(null);
-        //setIsHeaderBgWhite(false);
-        //setIsHeaderColor(false);
-        //setIsHeaderLogoWhite(false);
-        //setIsHeaderArrowWhite(false);
+        setHoveredIndex(null);
+        setIsHeaderBgWhite(false);
       }}
     >
       <nav className="d-flex justify-content-between">
         <div className="d-flex">
           <Link href="/" className={styles.logo_container}>
             <Image
-              src={isHeaderLogoWhite ? enkashWhiteLogo : enkashBlueLogo}
+              src={isHeaderBgWhite ? enkashBlueLogo : enkashWhiteLogo}
               alt="logo"
               width={120}
             />
@@ -53,14 +57,13 @@ const Header = () => {
             {navBarTopTtitle.map((item, index) => (
               <li
                 key={item.name}
-                className="px-3 d-flex justify-content-center align-items-center"
+                className={`px-3 d-flex justify-content-center align-items-center ${
+                  hoveredIndex === index ? styles.selected_border : ""
+                }`}
                 onMouseEnter={() => {
                   if (index !== 2) {
                     setHoveredIndex(index);
                     setIsHeaderBgWhite(true);
-                    setIsHeaderColor(true);
-                    setIsHeaderLogoWhite(false);
-                    setIsHeaderArrowWhite(true);
                   }
                 }}
               >
@@ -68,7 +71,7 @@ const Header = () => {
                 {index !== 2 && (
                   <>
                     <Image
-                      src={isHeaderArrowWhite ? arrowDownBlack : arrowDownWhite}
+                      src={getArrowImageSource(index)}
                       alt="arrow down icon"
                     />
                   </>

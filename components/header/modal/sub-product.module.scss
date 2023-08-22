@@ -4,8 +4,8 @@
 .sub_products_container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 22px;
-  column-gap: 55px;
+  gap: 15px;
+  column-gap: 20px;
 }
 
 .sub_product_row {
@@ -19,20 +19,20 @@
 }
 
 .sub_product_title {
-  font-size: 27px;
+  font-size: 23px;
   padding-right: 30px;
   text-decoration: underline;
   text-underline-offset: 8px;
 }
 
 .sub_product_name {
-  font-size: 25px;
+  font-size: 21px;
   line-height: 30px;
 }
 
 .sub_product_description {
-  font-size: 13px;
-  line-height: 15px;
+  font-size: 12px;
+  line-height: 13px;
   margin-top: 5px;
 }
 

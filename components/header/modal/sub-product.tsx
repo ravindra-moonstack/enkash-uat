@@ -38,7 +38,7 @@ const SubProduct = (props: any) => {
 
         {/* Render content based on active subtitle */}
         <div
-          className={`d-flex ${props.subProducts.length > 1 ? "mt-5" : "mt-2"}`}
+          className={`d-flex ${props.subProducts.length > 1 ? "mt-4" : "mt-2"}`}
         >
           <div className={styles.sub_products_container}>
             {activeGroup.list.map((product: any, index: any) => (
@@ -56,6 +56,8 @@ const SubProduct = (props: any) => {
                         : product.imageSrc
                     }
                     alt={product.name}
+                    width={50}
+                    height={50}
                   />
                 </div>
                 <div className="d-flex flex-column ms-4">

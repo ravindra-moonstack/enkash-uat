@@ -2,7 +2,7 @@
 @import "../../../styles/variables";
 
 .product_row {
-  padding: 15px 20px;
+  padding: 10px 15px;
   border-radius: 10px;
   cursor: pointer;
   &:hover {
@@ -10,22 +10,15 @@
   }
 }
 
-.resources_grid_row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-auto-flow: column;
-  grid-template-rows: repeat(4, auto);
-}
-
 .product_name {
-  font-size: 27px;
-  line-height: 45px;
+  font-size: 23px;
+  line-height: 41px;
   color: $color-equity-blue;
 }
 
 .product_description {
-  font-size: 14px;
-  line-height: 17px;
+  font-size: 12px;
+  line-height: 15px;
   color: $color-equity-blue;
 }
 
@@ -37,4 +30,16 @@
     rgba(0, 0, 0, 0.2) 0%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+.resource_modal_blog_title {
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.resources_grid_row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-flow: column;
+  grid-template-rows: repeat(4, auto);
 }

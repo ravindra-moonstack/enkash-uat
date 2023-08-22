@@ -24,6 +24,7 @@
     font-weight: 600;
     line-height: 19px;
     text-align: center;
+    padding: 5px;
     img {
       margin-top: -4px;
       margin-left: 2px;
@@ -43,4 +44,9 @@
   font-weight: 500;
   line-height: 19px;
   text-align: center;
+}
+
+.selected_border {
+  border: 1.35px solid $color-equity-blue;
+  border-radius: 13px;
 }

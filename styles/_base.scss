@@ -135,6 +135,10 @@
   color: $color-alternate-grey;
 }
 
+.color-slate-grey {
+  color: $color-slate-grey;
+}
+
 .color-error-red {
   color: $color-error-red;
 }
@@ -159,4 +163,10 @@
   .desktop-header {
     display: flex;
   }
+}
+
+/* Other Helful classes */
+
+.rotate_icon_90 {
+  transform: rotate(180deg);
 }
