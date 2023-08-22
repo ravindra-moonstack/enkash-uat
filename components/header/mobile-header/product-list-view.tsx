@@ -1,5 +1,5 @@
 import styles from "./mobile-header.module.scss";
-import PrimaryButton from "@/components/primary-button/primary-button";
+import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import utmSources from "@/constant/utm-source";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;

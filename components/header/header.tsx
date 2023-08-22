@@ -6,7 +6,7 @@ import { useState } from "react";
 import styles from "./header.module.scss";
 import navBarTopTtitle from "../../constant/nav-bar";
 import utmSources from "@/constant/utm-source";
-import PrimaryButton from "../primary-button/primary-button";
+import PrimaryButton from "../buttons/primary-button/primary-button";
 import {
   enkashWhiteLogo,
   enkashBlueLogo,

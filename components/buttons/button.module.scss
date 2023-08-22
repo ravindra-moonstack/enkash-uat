@@ -1,0 +1,23 @@
+@import "/styles/variables";
+
+.primary_button {
+  background-color: $color-equity-blue;
+  color: $color-white;
+  border-radius: 20px;
+  border: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.secondry_button {
+  background-color: $color-indi-volt;
+  color: $color-white;
+  border-radius: 20px;
+  border: 1px solid $color-equity-blue;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+}

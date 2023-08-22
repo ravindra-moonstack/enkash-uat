@@ -1,6 +1,6 @@
 import styles from "./footer.module.scss";
 import Image from "next/image";
-import PrimaryButton from "../primary-button/primary-button";
+import PrimaryButton from "../buttons/primary-button/primary-button";
 import {
   twitterLogo,
   linkedinLogo,
@@ -22,10 +22,7 @@ const Footer = () => {
             Spend Smart, Collect Fast, <br />{" "}
             <span className="color-baby-blue">Grow More</span>
           </h2>
-          <PrimaryButton
-            title="Get Started"
-            url={signupUrl}
-          />
+          <PrimaryButton title="Get Started" url={signupUrl} />
         </div>
         <div
           className={`footer_left_section col-12 col-md-3 ${styles.footer_links_col}`}

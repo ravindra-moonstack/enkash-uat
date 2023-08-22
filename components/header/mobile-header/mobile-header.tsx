@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import styles from "./mobile-header.module.scss";
-import PrimaryButton from "@/components/primary-button/primary-button";
+import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import {
   enkashWhiteLogo,
   hamnburgerIcon,

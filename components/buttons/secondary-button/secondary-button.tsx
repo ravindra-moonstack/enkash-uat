@@ -1,5 +1,7 @@
 "use client";
 
+import styles from "../button.module.scss";
+
 export interface ButtonProps {
   isDisabled?: boolean;
   containerStyles?: string;
@@ -7,7 +9,7 @@ export interface ButtonProps {
   url: string;
 }
 
-const PrimaryButton = ({ isDisabled, title, url }: ButtonProps) => {
+const SecondryButton = ({ isDisabled, title, url }: ButtonProps) => {
   const handleClick = () => {
     if (url) {
       window.open(url, "_blank");
@@ -17,7 +19,7 @@ const PrimaryButton = ({ isDisabled, title, url }: ButtonProps) => {
   return (
     <button
       disabled={isDisabled}
-      className="bg-equity-blue border-0 color-white rounded-5 px-4 py-1"
+      className={styles.secondry_button}
       onClick={handleClick}
     >
       {title}
@@ -25,4 +27,4 @@ const PrimaryButton = ({ isDisabled, title, url }: ButtonProps) => {
   );
 };
 
-export default PrimaryButton;
+export default SecondryButton;

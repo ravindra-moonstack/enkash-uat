@@ -1,10 +1,16 @@
-.home {
-  div {
-    font-size: 100px;
-    padding: 50px;
-    text-align: center;
-  }
+.home_container {
+  padding-top: 100px;
 }
 
+.bg_rainbow {
+  background-image: url(../public/blue-rainbow.png);
+  background-size: 96% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  padding-top: 60px;
+}
 
-
+.font_heading {
+  font-size: 100px;
+  line-height: 100px;
+}
