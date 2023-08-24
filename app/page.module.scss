@@ -19,12 +19,6 @@
   );
 }
 
-.title {
-  font-size: 40px;
-  line-height: 55px;
-  font-weight: 500px;
-}
-
 .blue_grad_bg_light {
   background: radial-gradient(
     53.38% 50% at 50% 50%,
@@ -49,27 +43,10 @@
   align-items: center;
   padding: 80px 80px 200px 80px;
   text-align: center;
-  .title {
-    font-size: 50px;
-  }
 }
 
 .third_row {
   padding-top: 60px;
-  .menu_title {
-    margin-left: 50px;
-    padding: 5px 20px 5px 20px;
-    background-color: #fff;
-    color: $color-main-black;
-    border-radius: 20px;
-  }
-  .title {
-    font-size: 35px;
-    padding-bottom: 50px;
-  }
-  img {
-    width: 60%;
-  }
 }
 
 .fourth_row {
@@ -134,4 +111,18 @@
 .ninth_row {
   padding: 50px 100px 100px 100px;
   background-color: $color-white;
+}
+
+.tenth_row {
+  padding: 50px 100px 0px 100px;
+  background-color: $color-white;
+}
+
+.eleventh_row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 80px 200px 80px;
+  text-align: center;
 }

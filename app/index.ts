@@ -17,5 +17,7 @@ export { default as expenseDashboard } from "./img/expense-dashboard.png";
 export { default as teamImg } from "./img/team-img.png";
 export { default as diyCardsModuleImg } from "./img/diy-card-module.png";
 export { default as corporateCardsImg } from "./img/corporate-cards.png";
+export { default as loyaltyLoungeMobileImg } from "./img/loyalty_lounge_mobile_img.png";
+
 
 

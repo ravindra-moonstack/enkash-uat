@@ -2,6 +2,7 @@ import styles from "./page.module.scss";
 import PrimaryButton from "../components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ExploreCard from "@/components/explore-card/explore-card";
+import MenuButton from "@/components/buttons/menu-button/menu-button";
 import {
   dashboard,
   iphoneDashboard,
@@ -21,9 +22,9 @@ import {
   teamImg,
   corporateCardsImg,
   diyCardsModuleImg,
+  loyaltyLoungeMobileImg,
 } from ".";
 import Image from "next/image";
-import { blueforwardArrow } from "@/components/header";
 
 export const metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -59,7 +60,7 @@ const home = () => {
         </div>
         <div className={`row ${styles.second_row}`}>
           <div className={`col-12`}>
-            <div className={styles.title}>
+            <div className="sub_heading">
               <b>3 Easy Steps to</b> <br />
               Get Started with EnKash
             </div>
@@ -95,26 +96,25 @@ const home = () => {
           </div>
         </div>
         <div className={`row ${styles.third_row}`}>
+          <div className="col-2"></div>
           <div
-            className={`col-12 d-flex justify-content-center align-items-center`}
+            className={`col-8 d-flex flex-column justify-content-center align-items-center px-5`}
           >
-            <div className={styles.menu_title}>Manage</div>
-            <div className={styles.menu_title}>Track</div>
-            <div className={styles.menu_title}>Customize</div>
-            <div className={styles.menu_title}>Automate</div>
+            <div className="mb-3 d-flex justify-content-evenly w-100">
+              <MenuButton isDisabled={false} title="Manage" theme="dark" />
+              <MenuButton isDisabled={false} title="Track" theme="dark" />
+              <MenuButton isDisabled={false} title="Customize" theme="dark" />
+              <MenuButton isDisabled={false} title="Automate" theme="dark" />
+            </div>
+
+            <Image src={dashboard} alt="enkash dashboard" className="w-100" />
           </div>
-          <div className="col-12 d-flex justify-content-center align-items-center p-4">
-            <Image
-              src={dashboard}
-              alt="enkash dashboard"
-              width="0"
-              height="0"
-              sizes="100vw"
-              className="w-full h-auto"
-            />
-          </div>
+          <div className="col-2"></div>
+          {/* <div className="col-12 d-flex justify-content-center align-items-center p-4">
+          
+          </div> */}
           <div className="col-12 d-flex justify-content-center align-items-center p-4 text-center">
-            <div className={styles.title}>
+            <div className="sub_heading mb-5">
               Solutions that let you
               <br />
               <b>streamline cashflow and optimize workflow.</b>
@@ -123,7 +123,7 @@ const home = () => {
         </div>
         <div className={`row ${styles.fourth_row}`}>
           <div className="col-6 d-flex flex-column justify-content-center align-items-center color-equity-blue">
-            <div className={styles.title}>
+            <div className="heading">
               <span className="color-black">Ultimate</span> <br />
               productivity <span className="color-black">and</span> <br />
               control. <span className="color-black">Now at</span> <br />
@@ -260,9 +260,10 @@ const home = () => {
         </div>
         <div className={`row d-flex d-flex ${styles.eigth_row}`}>
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <div className={styles.title}>
+            <div className="heading">
               <span className="color-black">Discover full control.</span>
-              <br /> Discover freedom.
+              <br />{" "}
+              <span className="color-equity-blue">Discover freedom.</span>
             </div>
             <div className={styles.description}>
               Leverage the power of purpose-based cards with smart controls.
@@ -295,7 +296,85 @@ const home = () => {
             />
           </div>
         </div>
-        <div className={`row ${styles.tenth_row}`}></div>
+        <div className={`row ${styles.tenth_row}`}>
+          <div className="col-12 d-flex justify-content-center heading">
+            <span className="color-equity-blue">Loyalty</span>
+            <span className="color-black ms-2">Lounge</span>
+          </div>
+          <div className="col-6 d-flex flex-column mt-5">
+            <div className="d-flex">
+              <div className="me-2">
+                <MenuButton isDisabled={false} title="Voucher" theme="light" />
+              </div>
+              <div className="me-2">
+                <MenuButton isDisabled={false} title="Reward" theme="light" />
+              </div>
+              <MenuButton isDisabled={false} title="Incentive" theme="light" />
+            </div>
+            <div className="d-flex mt-3">
+              <div className="me-2">
+                <MenuButton
+                  isDisabled={false}
+                  title="Gift Card"
+                  theme="light"
+                />
+              </div>
+              <MenuButton isDisabled={false} title="Offers" theme="light" />
+            </div>
+            <div className="d-flex description color-black mt-3">
+              200+ brand vouchers for corporate gifting. The more you spend, the
+              more you’ll earn, and the closer you’ll get to unlocking more and
+              more rewards.
+            </div>
+            <div className="d-flex mt-3">
+              <PrimaryButton title="Get a Demo" isDisabled={false} url="" />
+            </div>
+          </div>
+          <div className="col-6 d-flex justify-content-center mt-5">
+            <Image
+              src={loyaltyLoungeMobileImg}
+              alt="loyalty lounge image"
+              width={300}
+            />
+          </div>
+        </div>
+        <div className={`row ${styles.eleventh_row}`}>
+          <div className={`col-12`}>
+            <div className="sub_heading">
+              <b>3 Easy Steps to</b> <br />
+              Get Started with EnKash
+            </div>
+            <div className="d-flex justify-content-evenly align-items-center mt-5">
+              <div className="d-flex align-items-center">
+                <Image src={userPlus} alt="signup image"></Image>
+                <Image
+                  className="ms-2"
+                  src={numberOne}
+                  alt="step one image"
+                ></Image>
+                <div className="ms-2">Sign Up</div>
+              </div>
+              <div className="d-flex align-items-center">
+                <Image src={userTick} alt="signup image"></Image>
+                <Image
+                  className="ms-2"
+                  src={numberTwo}
+                  alt="step one image"
+                ></Image>
+                <div className="ms-2">Complete KYC Process</div>
+              </div>
+              <div className="d-flex align-items-center">
+                <Image src={stack} alt="signup image"></Image>
+                <Image
+                  className="ms-2"
+                  src={numberThree}
+                  alt="step one image"
+                ></Image>
+                <div className="ms-2">Get Started</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

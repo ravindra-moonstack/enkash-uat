@@ -1,4 +1,5 @@
 import Image from "next/image";
+import styles from "../explore-card/explore-card.module.scss";
 import { greenArrow, blueArrow } from ".";
 
 export interface CardProps {
@@ -17,7 +18,7 @@ const ExploreCard = ({ title, description, theme }: CardProps) => {
 
   return (
     <div className="d-flex flex-column">
-      <div className={`heading ${titleClass}`}>{title}</div>
+      <div className={`${styles.title} ${titleClass}`}>{title}</div>
       <div className={`description ${descriptionClass}`}>{description}</div>
       <div className="d-flex align-items-center mt-2">
         <div className={actionTextClass}>Explore Now</div>

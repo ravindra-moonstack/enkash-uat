@@ -21,3 +21,19 @@
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.menu_button {
+  padding: 5px 20px 5px 20px;
+  background-color: $color-white;
+  color: $color-main-black;
+  border-radius: 20px;
+  border: none;
+}
+
+.menu_button_light {
+  padding: 5px 20px 5px 20px;
+  background-color: $color-white;
+  color: $color-main-black;
+  border: 2px solid $color-black;
+  border-radius: 20px;
+}
