@@ -22,9 +22,7 @@ const RootLayout = ({ children }: RootProps) => {
         </div>
         <main className="app">
           <div className="mobile-header">{/* <MobileHeader /> */}</div>
-          <div className="desktop-header">
-            <Header />
-          </div>
+          <div className="desktop-header">{<Header />}</div>
           {children}
           <Footer />
         </main>

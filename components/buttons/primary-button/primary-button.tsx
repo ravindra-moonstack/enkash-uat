@@ -17,13 +17,15 @@ const PrimaryButton = ({ isDisabled, title, url }: ButtonProps) => {
   };
 
   return (
-    <button
-      disabled={isDisabled}
-      className={styles.primary_button}
-      onClick={handleClick}
-    >
-      {title}
-    </button>
+    <>
+      <button
+        disabled={isDisabled}
+        className={styles.primary_button}
+        onClick={handleClick}
+      >
+        {title}
+      </button>
+    </>
   );
 };
 

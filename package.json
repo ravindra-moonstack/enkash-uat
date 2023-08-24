@@ -14,6 +14,7 @@
     "@types/react": "18.2.14",
     "@types/react-dom": "18.2.6",
     "bootstrap": "5.3.0",
+    "framer-motion": "^10.16.1",
     "next": "13.4.9",
     "prop-types": "^15.8.1",
     "react": "18.2.0",
