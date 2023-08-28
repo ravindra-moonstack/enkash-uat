@@ -34,6 +34,10 @@ body {
   background-color: $color-rainy-blue;
 }
 
+.bg-night-blue {
+  background-color: $color-night-blue;
+}
+
 .bg-electric-green {
   background-color: $color-electric-green;
 }
@@ -147,6 +151,33 @@ body {
   color: $color-error-red;
 }
 
+/* Gradient Classes */
+
+.blue_grad_bg_one {
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    #1c5af4 0%,
+    rgba(28, 90, 244, 0) 86.87%
+  );
+}
+
+.blue_grad_bg_two {
+  background: radial-gradient(
+    53.38% 50% at 50% 50%,
+    #1c5af4 0%,
+    rgba(28, 90, 244, 0.5) 57.29%,
+    rgba(255, 255, 255, 0) 84.9%
+  );
+}
+
+.blue_grad_bg_three {
+  background: radial-gradient(
+    44.33% 44.33% at 50% 50%,
+    #1c5af4 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
 /* Header Configuration */
 
 /* The styles that are not inside any mixins */
@@ -167,27 +198,4 @@ body {
   .desktop-header {
     display: flex;
   }
-}
-
-/* Other Helful classes */
-
-.rotate_icon_90 {
-  transform: rotate(180deg);
-}
-
-.heading {
-  font-size: 55px;
-  line-height: 65px;
-  font-weight: 500;
-}
-
-.sub_heading{
-  font-size: 42px;
-  line-height: 50px;
-  font-weight: 500;
-}
-
-.description {
-  font-size: 21px;
-  line-height: 28px;
 }

@@ -3,6 +3,14 @@ import PrimaryButton from "../components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ExploreCard from "@/components/explore-card/explore-card";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
+import GetStartedCard from "@/components/get-started-card/get-started-card";
+import H0 from "@/components/heading/h0";
+import H1 from "@/components/heading/h1";
+import H2 from "@/components/heading/h2";
+import H3 from "@/components/heading/h3";
+import H4 from "@/components/heading/h4";
+import H5 from "@/components/heading/h5";
+
 import {
   dashboard,
   iphoneDashboard,
@@ -23,6 +31,7 @@ import {
   corporateCardsImg,
   diyCardsModuleImg,
   loyaltyLoungeMobileImg,
+  mobileIntegration,
 } from ".";
 import Image from "next/image";
 
@@ -41,28 +50,38 @@ const home = () => {
         <div
           className={`row text-center color-white ${styles.bg_rainbow} ${styles.first_row}`}
         >
-          <span className={`col-12 ${styles.font_heading}`}>A Spend</span>
-          <span className={`col-12 mt-4 ${styles.font_heading}`}>
-            Management Solution
+          <span className="col-12">
+            <H0 title="A Spend" />
           </span>
-          <span className={`col-12 mt-5 ${styles.font_heading}`}>
-            That Does it All
+          <span className="col-12 mt-4">
+            <H0 title="Management Solution" />
+          </span>
+          <span className="col-12 mt-5">
+            <H0 title="That Does it All" />
           </span>
           <div className={`col-12 mt-5`}>
-            <div>Now streamline buisiness spend and optimize your cashflow</div>
-            <div>with real-time data and insights.</div>
+            <div>
+              <H5 title="Now streamline buisiness spend and optimize your cashflow" />
+            </div>
+            <div>
+              <H5 title="with real-time data and insights." />
+            </div>
           </div>
           <div className="my-5">
-            <PrimaryButton title="Get a Demo" url={loginUrl} />
+            <PrimaryButton
+              title="Get a Demo"
+              url={loginUrl}
+              theme="theme-blue"
+            />
             <span className="mx-2"></span>
             <SecondryButton title="Watch Video" url={loginUrl} />
           </div>
         </div>
         <div className={`row ${styles.second_row}`}>
           <div className={`col-12`}>
-            <div className="sub_heading">
-              <b>3 Easy Steps to</b> <br />
-              Get Started with EnKash
+            <div>
+              <H2 title="3 Easy Steps to" color="white" bold={true}></H2>
+              <H2 title="Get Started with EnKash" color="white"></H2>
             </div>
             <div className="d-flex justify-content-evenly align-items-center mt-5">
               <div className="d-flex align-items-center">
@@ -72,7 +91,9 @@ const home = () => {
                   src={numberOne}
                   alt="step one image"
                 ></Image>
-                <div className="ms-2">Sign Up</div>
+                <div className="ms-2">
+                  <H5 title="Sign Up" />
+                </div>
               </div>
               <div className="d-flex align-items-center">
                 <Image src={userTick} alt="signup image"></Image>
@@ -81,7 +102,9 @@ const home = () => {
                   src={numberTwo}
                   alt="step one image"
                 ></Image>
-                <div className="ms-2">Complete KYC Process</div>
+                <div className="ms-2">
+                  <H5 title="Complete KYC Process" />
+                </div>
               </div>
               <div className="d-flex align-items-center">
                 <Image src={stack} alt="signup image"></Image>
@@ -90,12 +113,14 @@ const home = () => {
                   src={numberThree}
                   alt="step one image"
                 ></Image>
-                <div className="ms-2">Get Started</div>
+                <div className="ms-2">
+                  <H5 title="Get Started" />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className={`row ${styles.third_row}`}>
+        {/* <div className={`row ${styles.third_row}`}>
           <div className="col-2"></div>
           <div
             className={`col-8 d-flex flex-column justify-content-center align-items-center px-5`}
@@ -110,26 +135,34 @@ const home = () => {
             <Image src={dashboard} alt="enkash dashboard" className="w-100" />
           </div>
           <div className="col-2"></div>
-          {/* <div className="col-12 d-flex justify-content-center align-items-center p-4">
-          
-          </div> */}
           <div className="col-12 d-flex justify-content-center align-items-center p-4 text-center">
             <div className="sub_heading mb-5">
-              Solutions that let you
-              <br />
-              <b>streamline cashflow and optimize workflow.</b>
+              <H2 title="Solutions that let you" />
+              <H2
+                title="streamline cashflow and optimize workflow."
+                bold={true}
+              />
             </div>
           </div>
-        </div>
+        </div> */}
         <div className={`row ${styles.fourth_row}`}>
-          <div className="col-6 d-flex flex-column justify-content-center align-items-center color-equity-blue">
-            <div className="heading">
-              <span className="color-black">Ultimate</span> <br />
-              productivity <span className="color-black">and</span> <br />
-              control. <span className="color-black">Now at</span> <br />
-              your <span className="color-black">fingertips.</span>
+          <div className="col-6 d-flex flex-column justify-content-center align-items-center">
+            <div>
+              <H1 title="Ultimate" color="black" />
+              <div>
+                <H1 title="productivity " color="equity-blue" />
+                <H1 title="and" color="black" />
+              </div>
+              <div>
+                <H1 title="control " color="equity-blue" />
+                <H1 title="Now at" color="black" />
+              </div>
+              <div>
+                <H1 title="your " color="black" />
+                <H1 title="fingertips." color="equity-blue" />
+              </div>
             </div>
-            <div className={`d-flex flex-column my-5 ${styles.bullet_points}`}>
+            <div className="d-flex flex-column my-5">
               <div className="row d-flex my-4">
                 <div className="col-6 d-flex">
                   <Image
@@ -138,9 +171,10 @@ const home = () => {
                     className="mx-4"
                     height={50}
                   />
-                  <div className="color-equity-blue">
-                    Intelligent <br />
-                    Automation Tools
+                  <div>
+                    <H5 title="Intelligent" color="equity-blue" />
+                    <br />
+                    <H5 title="Automation Tools" color="equity-blue" />
                   </div>
                 </div>
                 <div className="col-6 d-flex">
@@ -150,8 +184,10 @@ const home = () => {
                     className="mx-4"
                     height={50}
                   />
-                  <div className="color-equity-blue">
-                    Real-Time Data <br />& Insights
+                  <div>
+                    <H5 title="Real-Time Data" color="equity-blue" />
+                    <br />
+                    <H5 title="& Insights" color="equity-blue" />
                   </div>
                 </div>
               </div>
@@ -163,9 +199,10 @@ const home = () => {
                     className="mx-4"
                     height={50}
                   />
-                  <div className="color-equity-blue">
-                    Optimized Business <br />
-                    Productivity
+                  <div>
+                    <H5 title="Optimized Business" color="equity-blue" />
+                    <br />
+                    <H5 title="Productivity" color="equity-blue" />
                   </div>
                 </div>
                 <div className="col-6 d-flex">
@@ -175,9 +212,10 @@ const home = () => {
                     className="mx-4"
                     height={50}
                   />
-                  <div className="color-equity-blue">
-                    Unparalleled <br />
-                    Savings
+                  <div>
+                    <H5 title=" Unparalleled" color="equity-blue" />
+                    <br />
+                    <H5 title="Savings" color="equity-blue" />
                   </div>
                 </div>
               </div>
@@ -224,7 +262,7 @@ const home = () => {
           </div>
         </div>
         <div className={`row d-flex ${styles.sixth_row}`}>
-          <div className={`col-6 d-flex mb-5 ${styles.blue_grad_bg}`}>
+          <div className="col-6 d-flex mb-5 blue_grad_bg_one">
             <Image src={expenseDashboard} alt="payables image" />
           </div>
           <div className="col-6 mb-5 px-5">
@@ -240,18 +278,26 @@ const home = () => {
         <div className={`row d-flex ${styles.seventh_row}`}>
           <div className={`d-flex col-12 flex-row`}>
             <div className={`d-flex flex-column ${styles.card_container}`}>
-              <span className={styles.title}>
-                <span className="color-electric-green">Say yes to better</span>{" "}
-                <br />
-                approval flows.
-              </span>
-              <span className={styles.description}>
-                Choose an approval matrix that’s best for your business, down to
+              <H2
+                title="Say yes to better"
+                color="electric-green"
+                bold={true}
+              />
+              <H2 title="approval flows." color="white" bold={true} />
+              <H5
+                title="Choose an approval matrix that’s best for your business, down to
                 the departmental level. Transparent approval processes increase
-                efficiency and nullify delays.
-              </span>
+                efficiency and nullify delays.Choose an approval matrix that’s best for your business, down to
+                the departmental level. Transparent approval processes increase
+                efficiency and nullify delays."
+                color="white"
+              />
               <div className="mt-5">
-                <PrimaryButton title="Get a Demo" url={loginUrl} />
+                <PrimaryButton
+                  title="Get a Demo"
+                  url={loginUrl}
+                  theme="theme-green"
+                />
               </div>
             </div>
 
@@ -260,19 +306,23 @@ const home = () => {
         </div>
         <div className={`row d-flex d-flex ${styles.eigth_row}`}>
           <div className="d-flex flex-column justify-content-center align-items-center">
-            <div className="heading">
-              <span className="color-black">Discover full control.</span>
-              <br />{" "}
-              <span className="color-equity-blue">Discover freedom.</span>
+            <div>
+              <H1 title="Discover full control." color="black" />
             </div>
-            <div className={styles.description}>
-              Leverage the power of purpose-based cards with smart controls.
+            <div>
+              <H1 title="Discover freedom." color="equity-blue" />
+            </div>
+            <div className="mt-2">
+              <H4
+                title="Leverage the power of purpose-based cards with smart controls."
+                color="equity-blue"
+              />
             </div>
           </div>
         </div>
         <div className={`row ${styles.ninth_row}`}>
-          <div className={`col-6 d-flex mb-5 ${styles.blue_grad_bg_light}`}>
-            <Image src={corporateCardsImg} height={400} alt="payables image" />
+          <div className="col-6 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two">
+            <Image src={corporateCardsImg} width={350} alt="payables image" />
           </div>
           <div className="col-6 mb-5 px-5">
             <ExploreCard
@@ -288,18 +338,16 @@ const home = () => {
               theme="blue"
             />
           </div>
-          <div className={`col-6 d-flex mb-5 ${styles.blue_grad_bg_light}`}>
-            <Image
-              src={diyCardsModuleImg}
-              height={400}
-              alt="receivable image"
-            />
+          <div className="col-6 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two">
+            <Image src={diyCardsModuleImg} width={350} alt="receivable image" />
           </div>
         </div>
         <div className={`row ${styles.tenth_row}`}>
-          <div className="col-12 d-flex justify-content-center heading">
-            <span className="color-equity-blue">Loyalty</span>
-            <span className="color-black ms-2">Lounge</span>
+          <div className="col-12 d-flex justify-content-center">
+            <div>
+              <H1 title="Loyalty " color="black" />
+              <H1 title="Lounge" color="equity-blue" />
+            </div>
           </div>
           <div className="col-6 d-flex flex-column mt-5">
             <div className="d-flex">
@@ -321,13 +369,21 @@ const home = () => {
               </div>
               <MenuButton isDisabled={false} title="Offers" theme="light" />
             </div>
-            <div className="d-flex description color-black mt-3">
-              200+ brand vouchers for corporate gifting. The more you spend, the
+            <div className="d-flex mt-3">
+              <H5
+                title="200+ brand vouchers for corporate gifting. The more you spend, the
               more you’ll earn, and the closer you’ll get to unlocking more and
-              more rewards.
+              more rewards."
+                color="black"
+              />
             </div>
             <div className="d-flex mt-3">
-              <PrimaryButton title="Get a Demo" isDisabled={false} url="" />
+              <PrimaryButton
+                title="Get a Demo"
+                isDisabled={false}
+                url=""
+                theme="theme-blue"
+              />
             </div>
           </div>
           <div className="col-6 d-flex justify-content-center mt-5">
@@ -340,9 +396,9 @@ const home = () => {
         </div>
         <div className={`row ${styles.eleventh_row}`}>
           <div className={`col-12`}>
-            <div className="sub_heading">
-              <b>3 Easy Steps to</b> <br />
-              Get Started with EnKash
+            <div>
+              <H2 title="3 Easy Steps to" color="white" bold={true}></H2>
+              <H2 title="Get Started with EnKash" color="white"></H2>
             </div>
             <div className="d-flex justify-content-evenly align-items-center mt-5">
               <div className="d-flex align-items-center">
@@ -352,7 +408,9 @@ const home = () => {
                   src={numberOne}
                   alt="step one image"
                 ></Image>
-                <div className="ms-2">Sign Up</div>
+                <div className="ms-2">
+                  <H5 title="Sign Up" />
+                </div>
               </div>
               <div className="d-flex align-items-center">
                 <Image src={userTick} alt="signup image"></Image>
@@ -361,7 +419,9 @@ const home = () => {
                   src={numberTwo}
                   alt="step one image"
                 ></Image>
-                <div className="ms-2">Complete KYC Process</div>
+                <div className="ms-2">
+                  <H5 title="Complete KYC Process" />
+                </div>
               </div>
               <div className="d-flex align-items-center">
                 <Image src={stack} alt="signup image"></Image>
@@ -370,8 +430,72 @@ const home = () => {
                   src={numberThree}
                   alt="step one image"
                 ></Image>
-                <div className="ms-2">Get Started</div>
+                <div className="ms-2">
+                  <H5 title="Get Started" />
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className={`row ${styles.twelfth_row}`}>
+          <div className="d-flex">
+            <div className="me-4">
+              <GetStartedCard
+                title1="Optimize Spending;"
+                title2="save more."
+                description="Power your business with a centralized spend management
+               platform & save countless working hours."
+              />
+            </div>
+            <div className="me-4">
+              <GetStartedCard
+                title1="Total Visibility;"
+                title2="smarter controls."
+                description="Power your business with a centralized spend management
+               platform & save countless working hours."
+              />
+            </div>
+            <div>
+              <GetStartedCard
+                title1="Convenient solutions to scale faster."
+                title2="to scale faster."
+                description="Power your business with a centralized spend management
+               platform & save countless working hours."
+              />
+            </div>
+          </div>
+        </div>
+        <div className={`row ${styles.thirteenth_row}`}>
+          <div className="col-6 d-flex justify-content-center mt-5 blue_grad_bg_three">
+            <Image
+              src={mobileIntegration}
+              alt="mobile integrations"
+              width={400}
+            />
+          </div>
+          <div className="col-6 d-flex flex-column mt-5">
+            <div className="mt-3">
+              <div>
+                <H1 title="Integrate Seamlessly;" color="equity-blue" />
+              </div>
+              <H1 title="Connect Systems Readily." color="black" />
+            </div>
+            <div>
+              <H5
+                title="Our platform links seamlessly with any accounting, ERP 
+                solution you currently use like Tally, Quickbooks, SAP amongst 
+                others. Ensure your books are always audit ready and view real-time 
+                up-to-the-minute data."
+                color="black"
+              />
+            </div>
+            <div className="d-flex mt-3">
+              <PrimaryButton
+                title="Get a Demo"
+                isDisabled={false}
+                url=""
+                theme="theme-blue"
+              />
             </div>
           </div>
         </div>

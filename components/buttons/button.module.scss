@@ -1,14 +1,9 @@
 @import "/styles/variables";
 
 .primary_button {
-  background-color: $color-equity-blue;
-  color: $color-white;
   border-radius: 20px;
   border: none;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 5px 15px 5px 15px;
 }
 
 .secondry_button {
@@ -16,14 +11,11 @@
   color: $color-white;
   border-radius: 20px;
   border: 1px solid $color-equity-blue;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding: 5px 15px 5px 15px;
 }
 
 .menu_button {
-  padding: 5px 20px 5px 20px;
+  padding: 5px 20px;
   background-color: $color-white;
   color: $color-main-black;
   border-radius: 20px;
@@ -31,9 +23,16 @@
 }
 
 .menu_button_light {
-  padding: 5px 20px 5px 20px;
-  background-color: $color-white;
-  color: $color-main-black;
+  @extend .menu_button;
   border: 2px solid $color-black;
-  border-radius: 20px;
+}
+
+.theme-blue {
+  background-color: $color-equity-blue;
+  color: $color-white;
+}
+
+.theme-green {
+  background-color: $color-electric-green;
+  color: $color-black;
 }

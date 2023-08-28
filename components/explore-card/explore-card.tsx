@@ -1,5 +1,9 @@
 import Image from "next/image";
+
 import { greenArrow, blueArrow } from ".";
+import H1 from "../heading/h1";
+import H4 from "../heading/h4";
+import H5 from "../heading/h5";
 
 export interface CardProps {
   title: string;
@@ -8,20 +12,26 @@ export interface CardProps {
 }
 
 const ExploreCard = ({ title, description, theme }: CardProps) => {
-  const titleClass =
-    theme === "blue" ? "color-equity-blue" : "color-electric-green";
-  const descriptionClass = theme === "blue" ? "color-black" : "color-white";
-  const actionTextClass =
-    theme === "blue" ? "color-equity-blue" : "color-electric-green";
-  const arrowSrc = theme === "blue" ? blueArrow : greenArrow;
+  const isBlueTheme = () => theme === "blue";
+  const getPrimaryColor = () =>
+    isBlueTheme() ? "equity-blue" : "electric-green";
+  const getSecondaryColor = () => (isBlueTheme() ? "black" : "white");
+  const getArrowSrc = () => (isBlueTheme() ? blueArrow : greenArrow);
 
   return (
     <div className="d-flex flex-column">
-      <div className={`heading ${titleClass}`}>{title}</div>
-      <div className={`description ${descriptionClass}`}>{description}</div>
+      <H1 title={title} color={getPrimaryColor()} />
+      <div className="my-2">
+        <H5 title={description} color={getSecondaryColor()} />
+      </div>
       <div className="d-flex align-items-center mt-2">
-        <div className={actionTextClass}>Explore Now</div>
-        <Image className="m-2" src={arrowSrc} alt="arrow icon" width={50} />
+        <H5 title="Explore Now" color={getPrimaryColor()} />
+        <Image
+          className="m-2"
+          src={getArrowSrc()}
+          alt="arrow icon"
+          width={50}
+        />
       </div>
     </div>
   );
