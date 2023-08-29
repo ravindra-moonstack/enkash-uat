@@ -3,6 +3,7 @@ import PrimaryButton from "../components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ExploreCard from "@/components/explore-card/explore-card";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
+import faqData  from "@/constant/faq-data/billPaymentFaq";
 import {
   dashboard,
   iphoneDashboard,
@@ -25,6 +26,7 @@ import {
   loyaltyLoungeMobileImg,
 } from ".";
 import Image from "next/image";
+import FaqComponent from "@/components/faq/faq";
 
 export const metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -38,6 +40,9 @@ const home = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="">
+        <div className="row">
+          <FaqComponent faqData={faqData}/>
+        </div>
         <div
           className={`row text-center color-white ${styles.bg_rainbow} ${styles.first_row}`}
         >
