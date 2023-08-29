@@ -11,29 +11,9 @@
   background-position: center center;
 }
 
-.blue_grad_bg {
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    #1c5af4 0%,
-    rgba(28, 90, 244, 0) 86.87%
-  );
-}
-
-.blue_grad_bg_light {
-  background: radial-gradient(
-    53.38% 50% at 50% 50%,
-    #1c5af4 0%,
-    rgba(28, 90, 244, 0.5) 57.29%,
-    rgba(255, 255, 255, 0) 84.9%
-  );
-}
-
 .first_row {
   padding-top: 60px;
-  .font_heading {
-    font-size: 100px;
-    line-height: 100px;
-  }
+  padding-top: 60px;
 }
 
 .second_row {
@@ -41,7 +21,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 80px 80px 200px 80px;
+  padding: 80px 80px 140px 80px;
   text-align: center;
 }
 
@@ -66,9 +46,6 @@
     right: -500px;
     top: 0;
   }
-  .bullet_points {
-    font-size: 18px;
-  }
 }
 
 .fifth_row {
@@ -76,7 +53,7 @@
 }
 
 .sixth_row {
-  padding: 150px 100px 100px 100px;
+  padding: 100px 100px 50px 100px;
   background-color: $color-white;
 }
 
@@ -84,9 +61,9 @@
   padding: 50px 200px 50px 200px;
   background-color: $color-white;
   .card_container {
-    padding: 30px 70px 30px 70px;
+    padding: 30px;
     background: $color-indi-volt;
-    width: 55%;
+    width: 60%;
   }
   .description {
     font-size: 20px;
@@ -102,10 +79,6 @@
 .eigth_row {
   padding: 50px 100px 100px 100px;
   background-color: $color-white;
-  .description {
-    color: $color-equity-blue;
-    font-size: 25px;
-  }
 }
 
 .ninth_row {
@@ -114,7 +87,7 @@
 }
 
 .tenth_row {
-  padding: 50px 100px 0px 100px;
+  padding: 0px 100px 0px 100px;
   background-color: $color-white;
 }
 
@@ -123,6 +96,44 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 80px 80px 200px 80px;
+  padding: 80px 80px 150px 80px;
   text-align: center;
+}
+
+.twelfth_row {
+  background-color: $color-white;
+  padding: 50px 150px 50px 100px;
+  background-color: $color-white;
+}
+
+.thirteenth_row {
+  background-color: $color-white;
+  padding: 50px 100px 50px 100px;
+}
+
+.fourteenth_row {
+  background-color: $color-white;
+  padding: 150px 100px 100px 100px;
+  .box {
+    border: 2px solid $color-black;
+    border-radius: 20px;
+  }
+  .box_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    width: 33%;
+  }
+}
+
+.fifthteen_row {
+  padding: 50px 100px 0px 100px;
+  .testimonials_section {
+    padding: 100px;
+  }
+}
+
+.sixteenth_row {
+  background-color: $color-white;
 }

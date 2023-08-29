@@ -1,0 +1,12 @@
+@import "/styles/variables";
+
+.card_body {
+  width: 350px;
+  height: 400px;
+  background-image: url(./img/rainy-blue-biscuit.png);
+  background-size: 300px auto;
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  border-radius: 15px;
+  padding: 30px;
+}

@@ -81,9 +81,9 @@ const Header = () => {
           </ul>
         </div>
         <div className={styles.buttons_container}>
-          <PrimaryButton title="Sign Up" url={singupUrl} />
+          <PrimaryButton title="Sign Up" url={singupUrl} theme="theme-blue"/>
           <span className="mx-2"></span>
-          <PrimaryButton title="Log In" url={loginUrl} />
+          <PrimaryButton title="Log In" url={loginUrl} theme="theme-blue"/>
         </div>
       </nav>
 

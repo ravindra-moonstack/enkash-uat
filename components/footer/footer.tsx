@@ -22,7 +22,7 @@ const Footer = () => {
             Spend Smart, Collect Fast, <br />{" "}
             <span className="color-baby-blue">Grow More</span>
           </h2>
-          <PrimaryButton title="Get Started" url={signupUrl} />
+          <PrimaryButton title="Get Started" url={signupUrl} theme="theme-blue" />
         </div>
         <div
           className={`footer_left_section col-12 col-md-3 ${styles.footer_links_col}`}

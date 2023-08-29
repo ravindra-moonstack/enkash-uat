@@ -4,12 +4,12 @@ import styles from "../button.module.scss";
 
 export interface ButtonProps {
   isDisabled?: boolean;
-  containerStyles?: string;
   title: string;
   url: string;
+  theme?: "theme-blue" | "theme-green";
 }
 
-const PrimaryButton = ({ isDisabled, title, url }: ButtonProps) => {
+const PrimaryButton = ({ isDisabled, title, url, theme }: ButtonProps) => {
   const handleClick = () => {
     if (url) {
       window.open(url, "_blank");
@@ -20,7 +20,7 @@ const PrimaryButton = ({ isDisabled, title, url }: ButtonProps) => {
     <>
       <button
         disabled={isDisabled}
-        className={styles.primary_button}
+        className={`${styles.primary_button} ${theme ? styles[theme] : ""}`}
         onClick={handleClick}
       >
         {title}
