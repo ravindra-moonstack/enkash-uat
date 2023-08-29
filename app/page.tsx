@@ -1,9 +1,10 @@
 import styles from "./page.module.scss";
 import PrimaryButton from "../components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import ExploreCard from "@/components/explore-card/explore-card";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
+import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
+import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import H0 from "@/components/heading/h0";
 import H1 from "@/components/heading/h1";
 import H2 from "@/components/heading/h2";
@@ -32,6 +33,11 @@ import {
   diyCardsModuleImg,
   loyaltyLoungeMobileImg,
   mobileIntegration,
+  inc42,
+  paymentAndCardSummit,
+  nasscom,
+  testimonials,
+  userImg,
 } from ".";
 import Image from "next/image";
 
@@ -498,6 +504,82 @@ const home = () => {
               />
             </div>
           </div>
+        </div>
+        <div className={`row ${styles.fourteenth_row}`}>
+          <div className={`d-flex ${styles.box}`}>
+            <div
+              className={`d-flex flex-column justify-content-between  ${styles.box_item}`}
+            >
+              <div className="mb-5">
+                <H5 title="Startups to Watch" color="black" />
+              </div>
+              <div className="mt-5">
+                <Image src={inc42} alt="inc42 logo" width={250} />
+              </div>
+            </div>
+            <div
+              className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
+            >
+              <div className="mb-5">
+                <H5
+                  title="Winner - India Fintech Awards 2020"
+                  color="electric-green"
+                />
+              </div>
+              <div className="mt-5">
+                <Image src={nasscom} alt="nasscom logo" width={250} />
+              </div>
+            </div>
+            <div
+              className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
+            >
+              <div className="mb-5">
+                <H5 title="Best B2B Solution Provider" color="black" />
+              </div>
+              <div className="mt-5">
+                <Image
+                  src={paymentAndCardSummit}
+                  alt="payment and card summit logo"
+                  width={250}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className={`row ${styles.fifthteen_row}`}>
+          <div className="col-12 mb-5 d-flex justify-content-center">
+            <H1 title="Trusted by " color="white" />
+            <H1 title="1000+ " color="electric-green" />
+            <H1 title="companies." color="white" />
+          </div>
+          <div
+            className={`col-6 d-flex flex-column  ${styles.testimonials_section}`}
+          >
+            <div>
+              <H5 title="NTech Media" color="electric-green" />
+            </div>
+            <div>
+              <H4
+                title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+              quis, ornare metus nec, feugiat erat."
+              />
+            </div>
+            <div className="d-flex mt-4 align-items-center">
+              <div className="me-4">
+                <Image src={userImg} alt="enkash user image" />
+              </div>
+              <div className="d-flex flex-column">
+                <H5 title="- Manoj Day, CEO," />
+                <H5 title=" NTech Media" />
+              </div>
+            </div>
+          </div>
+          <div className="col-6">
+            <Image src={testimonials} alt="enkash testimonials" width={600} />
+          </div>
+        </div>
+        <div className={`row ${styles.sixteenth_row}`}>
+          <ContactUsCard />
         </div>
       </div>
     </div>

@@ -1,9 +1,11 @@
 @import "/styles/variables";
 
+$button-padding: 5px 15px 5px 15px;
+
 .primary_button {
   border-radius: 20px;
   border: none;
-  padding: 5px 15px 5px 15px;
+  padding: $button-padding;
 }
 
 .secondry_button {
@@ -11,7 +13,7 @@
   color: $color-white;
   border-radius: 20px;
   border: 1px solid $color-equity-blue;
-  padding: 5px 15px 5px 15px;
+  padding: $button-padding;
 }
 
 .menu_button {

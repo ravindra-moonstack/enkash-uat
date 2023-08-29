@@ -109,5 +109,31 @@
 .thirteenth_row {
   background-color: $color-white;
   padding: 50px 100px 50px 100px;
+}
+
+.fourteenth_row {
+  background-color: $color-white;
+  padding: 150px 100px 100px 100px;
+  .box {
+    border: 2px solid $color-black;
+    border-radius: 20px;
+  }
+  .box_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 30px;
+    width: 33%;
+  }
+}
+
+.fifthteen_row {
+  padding: 50px 100px 0px 100px;
+  .testimonials_section {
+    padding: 100px;
+  }
+}
+
+.sixteenth_row {
   background-color: $color-white;
 }
