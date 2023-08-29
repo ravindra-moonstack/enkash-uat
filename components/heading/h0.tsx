@@ -4,9 +4,9 @@ export interface HeadingProps {
   title: string;
 }
 
-const H1 = ({ title }: HeadingProps) => {
-  return <div className={`${styles.h0} color-white`}>{title}</div>;
+const H0 = ({ title }: HeadingProps) => {
+  return <h1 className={`${styles.h0} color-white`}>{title}</h1>;
 };
 
-export default H1;
+export default H0;
 1;

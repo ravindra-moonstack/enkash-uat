@@ -11,9 +11,9 @@ const H4 = ({ title, color, bold }: HeadingProps) => {
   const fontWeightClass = bold ? styles.bold : styles.regular;
 
   return (
-    <div className={`${styles.h4} ${fontWeightClass} ${colorClass}`}>
+    <h4 className={`${styles.h4} ${fontWeightClass} ${colorClass}`}>
       {title}
-    </div>
+    </h4>
   );
 };
 

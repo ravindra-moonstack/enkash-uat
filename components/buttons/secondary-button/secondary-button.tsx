@@ -6,7 +6,7 @@ export interface ButtonProps {
   isDisabled?: boolean;
   containerStyles?: string;
   title: string;
-  url: string;
+  url?: string;
 }
 
 const SecondryButton = ({ isDisabled, title, url }: ButtonProps) => {

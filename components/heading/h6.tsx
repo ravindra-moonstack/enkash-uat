@@ -5,10 +5,10 @@ export interface HeadingProps {
   color?: "white" | "electric-green" | "black" | "equity-blue";
 }
 
-const H5 = ({ title, color }: HeadingProps) => {
+const H6 = ({ title, color }: HeadingProps) => {
   const colorClass = color ? `color-${color}` : "";
-  return <h5 className={`${styles.h5} ${colorClass}`}>{title}</h5>;
+  return <h6 className={`${styles.h6} ${colorClass}`}>{title}</h6>;
 };
 
-export default H5;
+export default H6;
 1;
