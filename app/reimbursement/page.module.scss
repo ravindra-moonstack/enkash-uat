@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+
+.home_container {
+  padding-top: 100px;
+}
+
+.first_row {
+  padding: 100px 0px 100px 80px;
+}
+
+.second_row {
+  padding: 100px 80px 0px 80px;
+  background-color: $color-white;
+}
+
+.third_row {
+  padding: 100px 80px 100px 80px;
+  background-color: $color-white;
+}
+
+.fourth_row {
+  padding: 100px 80px 100px 80px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(28, 90, 244, 0.55) 0%,
+    rgba(28, 90, 244, 0) 86.87%
+  );
+
+  .left_row {
+    background: url(./img/blue-bg.png);
+    background-size: 100% 90%;
+    background-repeat: no-repeat;
+    padding: 100px;
+  }
+  .right_row {
+    background: url(./img/laptop-screen.png) -100px center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding: 120px;
+  }
+}

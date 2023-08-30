@@ -1,9 +1,8 @@
 import Image from "next/image";
 import { contactUsSpiralImg } from ".";
-import H1 from "../heading/h1";
-import H5 from "../heading/h5";
 import PrimaryButton from "../buttons/primary-button/primary-button";
 import styles from "./contact-us-card.module.scss";
+import Heading from "../heading/heading";
 
 const ContactUsCard = () => {
   return (
@@ -19,24 +18,34 @@ const ContactUsCard = () => {
         <div className="col-6 d-flex flex-column justify-content-center">
           <div className="mt-5">
             <div>
-              <H1 title="Couldn’t find what" color="equity-blue" />
+              <Heading
+                title="Couldn’t find what"
+                color="equity-blue"
+                size="h1"
+              />
             </div>
             <div>
-              <H1 title="you’re looking for?" color="equity-blue" />
+              <Heading
+                title="you’re looking for?"
+                color="equity-blue"
+                size="h1"
+              />
             </div>
           </div>
           <div className="mt-3">
             <div>
-              <H5
+              <Heading
                 title="We're here to help! Get in touch with us so that we"
                 color="black"
+                size="h5"
               />
             </div>
             <div>
-              <H5
+              <Heading
                 title=" can figure out 
             what's best for your business, together."
                 color="black"
+                size="h5"
               />
             </div>
           </div>
