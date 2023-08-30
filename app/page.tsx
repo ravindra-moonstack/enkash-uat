@@ -6,13 +6,6 @@ import MenuButton from "@/components/buttons/menu-button/menu-button";
 import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import H0 from "@/components/heading/h0";
-import H1 from "@/components/heading/h1";
-import H2 from "@/components/heading/h2";
-import H3 from "@/components/heading/h3";
-import H4 from "@/components/heading/h4";
-import H5 from "@/components/heading/h5";
-import H6 from "@/components/heading/h6";
 import { space } from "@/constant/common";
 
 import {
@@ -42,6 +35,8 @@ import {
   testimonials,
   userImg,
 } from ".";
+import Heading from "@/components/heading/heading";
+import Head from "next/head";
 
 export const metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -58,20 +53,23 @@ const home = () => {
         className={`row text-center color-white ${styles.bg_rainbow} ${styles.first_row}`}
       >
         <span className="col-12">
-          <H0 title="A Spend" />
+          <Heading title="A Spend" size="h0" />
         </span>
         <span className="col-12 mt-4">
-          <H0 title="Management Solution" />
+          <Heading title="Management Solution" size="h0" />
         </span>
         <span className="col-12 mt-5">
-          <H0 title="That Does it All" />
+          <Heading title="That Does it All" size="h0" />
         </span>
         <div className={`col-12 mt-5`}>
           <div>
-            <H5 title="Now streamline buisiness spend and optimize your cashflow" />
+            <Heading
+              title="Now streamline buisiness spend and optimize your cashflow"
+              size="h5"
+            />
           </div>
           <div>
-            <H5 title="with real-time data and insights." />
+            <Heading title="with real-time data and insights." size="h5" />
           </div>
         </div>
         <div className="my-5">
@@ -83,8 +81,8 @@ const home = () => {
       <div className={`row ${styles.second_row}`}>
         <div className={`col-12`}>
           <div>
-            <H2 title="3 Easy Steps to" color="white" bold={true}></H2>
-            <H2 title="Get Started with EnKash" color="white"></H2>
+            <Heading title="3 Easy Steps to" color="white" size="h2" />
+            <Heading title="Get Started with EnKash" color="white" size="h2" />
           </div>
           <div className="d-flex justify-content-evenly align-items-center mt-5">
             <div className="d-flex align-items-center">
@@ -95,7 +93,7 @@ const home = () => {
                 alt="step one image"
               ></Image>
               <div className="ms-2">
-                <H5 title="Sign Up" />
+                <Heading title="Sign Up" size="h5" />
               </div>
             </div>
             <div className="d-flex align-items-center">
@@ -106,7 +104,7 @@ const home = () => {
                 alt="step one image"
               ></Image>
               <div className="ms-2">
-                <H5 title="Complete KYC Process" />
+                <Heading title="Complete KYC Process" size="h5" />
               </div>
             </div>
             <div className="d-flex align-items-center">
@@ -117,7 +115,7 @@ const home = () => {
                 alt="step one image"
               ></Image>
               <div className="ms-2">
-                <H5 title="Get Started" />
+                <Heading title="Get Started" size="h5" />
               </div>
             </div>
           </div>
@@ -151,18 +149,26 @@ const home = () => {
       <div className={`row ${styles.fourth_row}`}>
         <div className="col-6 d-flex flex-column justify-content-center align-items-center">
           <div>
-            <H1 title="Ultimate" color="black" />
+            <Heading title="Ultimate" color="black" size="h1" />
             <div>
-              <H1 title={`productivity${space}`} color="equity-blue" />
-              <H1 title="and" color="black" />
+              <Heading
+                title={`productivity${space}`}
+                color="equity-blue"
+                size="h1"
+              />
+              <Heading title="and" color="black" size="h1" />
             </div>
             <div>
-              <H1 title={`control${space}`} color="equity-blue" />
-              <H1 title="Now at" color="black" />
+              <Heading
+                title={`control${space}`}
+                color="equity-blue"
+                size="h1"
+              />
+              <Heading title="Now at" color="black" size="h1" />
             </div>
             <div>
-              <H1 title={`your${space}`} color="equity-blue" />
-              <H1 title="fingertips." color="equity-blue" />
+              <Heading title={`your${space}`} color="equity-blue" size="h1" />
+              <Heading title="fingertips." color="equity-blue" size="h1" />
             </div>
           </div>
           <div className="d-flex flex-column my-5">
@@ -175,8 +181,12 @@ const home = () => {
                   height={50}
                 />
                 <div>
-                  <H5 title="Intelligent" color="equity-blue" />
-                  <H5 title="Automation Tools" color="equity-blue" />
+                  <Heading title="Intelligent" color="equity-blue" size="h5" />
+                  <Heading
+                    title="Automation Tools"
+                    color="equity-blue"
+                    size="h5"
+                  />
                 </div>
               </div>
               <div className="col-6 d-flex">
@@ -187,8 +197,12 @@ const home = () => {
                   height={50}
                 />
                 <div>
-                  <H5 title="Real-Time Data" color="equity-blue" />
-                  <H5 title="& Insights" color="equity-blue" />
+                  <Heading
+                    title="Real-Time Data"
+                    color="equity-blue"
+                    size="h5"
+                  />
+                  <Heading title="& Insights" color="equity-blue" size="h5" />
                 </div>
               </div>
             </div>
@@ -201,8 +215,12 @@ const home = () => {
                   height={50}
                 />
                 <div>
-                  <H5 title="Optimized Business" color="equity-blue" />
-                  <H5 title="Productivity" color="equity-blue" />
+                  <Heading
+                    title="Optimized Business"
+                    color="equity-blue"
+                    size="h5"
+                  />
+                  <Heading title="Productivity" color="equity-blue" size="h5" />
                 </div>
               </div>
               <div className="col-6 d-flex">
@@ -213,8 +231,8 @@ const home = () => {
                   height={50}
                 />
                 <div>
-                  <H5 title="Unparalleled" color="equity-blue" />
-                  <H5 title="Savings" color="equity-blue" />
+                  <Heading title="Unparalleled" color="equity-blue" size="h5" />
+                  <Heading title="Savings" color="equity-blue" size="h5" />
                 </div>
               </div>
             </div>
@@ -277,16 +295,21 @@ const home = () => {
       <div className={`row d-flex ${styles.seventh_row}`}>
         <div className={`d-flex col-12 flex-row`}>
           <div className={`d-flex flex-column ${styles.card_container}`}>
-            <H2 title="Say yes to better" color="electric-green" bold={true} />
-            <H2 title="approval flows." color="white" bold={true} />
+            <Heading
+              title="Say yes to better"
+              color="electric-green"
+              size="h2"
+            />
+            <Heading title="approval flows." color="white" size="h2" />
             <div className="mt-2">
-              <H6
+              <Heading
                 title="Choose an approval matrix that’s best for your business, down to
                 the departmental level. Transparent approval processes increase
                 efficiency and nullify delays.Choose an approval matrix that’s best for your business, down to
                 the departmental level. Transparent approval processes increase
                 efficiency and nullify delays."
                 color="white"
+                size="h6"
               />
             </div>
 
@@ -305,15 +328,16 @@ const home = () => {
       <div className={`row d-flex d-flex ${styles.eigth_row}`}>
         <div className="d-flex flex-column justify-content-center align-items-center">
           <div>
-            <H1 title="Discover full control." color="black" />
+            <Heading title="Discover full control." color="black" size="h1" />
           </div>
           <div>
-            <H1 title="Discover freedom." color="equity-blue" />
+            <Heading title="Discover freedom." color="equity-blue" size="h1" />
           </div>
           <div className="mt-2">
-            <H4
+            <Heading
               title="Leverage the power of purpose-based cards with smart controls."
               color="equity-blue"
+              size="h4"
             />
           </div>
         </div>
@@ -343,8 +367,8 @@ const home = () => {
       <div className={`row ${styles.tenth_row}`}>
         <div className="col-12 d-flex justify-content-center">
           <div>
-            <H1 title={`Loyalty ${space}`} color="black" />
-            <H1 title="Lounge" color="equity-blue" />
+            <Heading title={`Loyalty ${space}`} color="black" size="h1" />
+            <Heading title="Lounge" color="equity-blue" size="h1" />
           </div>
         </div>
         <div className="col-6 d-flex flex-column mt-5">
@@ -364,11 +388,12 @@ const home = () => {
             <MenuButton isDisabled={false} title="Offers" theme="light" />
           </div>
           <div className="d-flex mt-3">
-            <H5
+            <Heading
               title="200+ brand vouchers for corporate gifting. The more you spend, the
               more you’ll earn, and the closer you’ll get to unlocking more and
               more rewards."
               color="black"
+              size="h5"
             />
           </div>
           <div className="d-flex mt-3">
@@ -391,8 +416,8 @@ const home = () => {
       <div className={`row ${styles.eleventh_row}`}>
         <div className={`col-12`}>
           <div>
-            <H2 title="3 Easy Steps to" color="white" bold={true}></H2>
-            <H2 title="Get Started with EnKash" color="white"></H2>
+            <Heading title="3 Easy Steps to" color="white" size="h2" />
+            <Heading title="Get Started with EnKash" color="white" size="h2" />
           </div>
           <div className="d-flex justify-content-evenly align-items-center mt-5">
             <div className="d-flex align-items-center">
@@ -403,7 +428,7 @@ const home = () => {
                 alt="step one image"
               ></Image>
               <div className="ms-2">
-                <H5 title="Sign Up" />
+                <Heading title="Sign Up" size="h5" />
               </div>
             </div>
             <div className="d-flex align-items-center">
@@ -414,7 +439,7 @@ const home = () => {
                 alt="step one image"
               ></Image>
               <div className="ms-2">
-                <H5 title="Complete KYC Process" />
+                <Heading title="Complete KYC Process" size="h5" />
               </div>
             </div>
             <div className="d-flex align-items-center">
@@ -425,7 +450,7 @@ const home = () => {
                 alt="step one image"
               ></Image>
               <div className="ms-2">
-                <H5 title="Get Started" />
+                <Heading title="Get Started" size="h5" />
               </div>
             </div>
           </div>
@@ -470,17 +495,22 @@ const home = () => {
         <div className="col-6 d-flex flex-column mt-5">
           <div className="mt-3">
             <div>
-              <H1 title="Integrate Seamlessly;" color="equity-blue" />
+              <Heading
+                title="Integrate Seamlessly;"
+                color="equity-blue"
+                size="h1"
+              />
             </div>
-            <H1 title="Connect Systems Readily." color="black" />
+            <Heading title="Connect Systems Readily." color="black" size="h1" />
           </div>
           <div>
-            <H5
+            <Heading
               title="Our platform links seamlessly with any accounting, ERP 
                 solution you currently use like Tally, Quickbooks, SAP amongst 
                 others. Ensure your books are always audit ready and view real-time 
                 up-to-the-minute data."
               color="black"
+              size="h5"
             />
           </div>
           <div className="d-flex mt-3">
@@ -499,7 +529,7 @@ const home = () => {
             className={`d-flex flex-column justify-content-between  ${styles.box_item}`}
           >
             <div className="mb-5">
-              <H5 title="Startups to Watch" color="black" />
+              <Heading title="Startups to Watch" color="black" size="h5" />
             </div>
             <div className="mt-5">
               <Image src={inc42} alt="inc42 logo" width={250} />
@@ -509,9 +539,10 @@ const home = () => {
             className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
           >
             <div className="mb-5">
-              <H5
+              <Heading
                 title="Winner - India Fintech Awards 2020"
                 color="electric-green"
+                size="h5"
               />
             </div>
             <div className="mt-5">
@@ -522,7 +553,11 @@ const home = () => {
             className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
           >
             <div className="mb-5">
-              <H5 title="Best B2B Solution Provider" color="black" />
+              <Heading
+                title="Best B2B Solution Provider"
+                color="black"
+                size="h5"
+              />
             </div>
             <div className="mt-5">
               <Image
@@ -537,25 +572,26 @@ const home = () => {
       <div className={`row ${styles.fifthteen_row}`}>
         <div className="col-12 mb-5 d-flex justify-content-center">
           <div>
-            <H1 title="Trusted by " color="white" />
+            <Heading title="Trusted by " color="white" size="h1" />
           </div>
           <div>
-            <H1 title="1000+ " color="electric-green" />
+            <Heading title="1000+ " color="electric-green" size="h1" />
           </div>
           <div>
-            <H1 title="companies." color="white" />
+            <Heading title="companies." color="white" size="h1" />
           </div>
         </div>
         <div
           className={`col-6 d-flex flex-column  ${styles.testimonials_section}`}
         >
           <div>
-            <H5 title="NTech Media" color="electric-green" />
+            <Heading title="NTech Media" color="electric-green" size="h5" />
           </div>
           <div>
-            <H4
+            <Heading
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               quis, ornare metus nec, feugiat erat."
+              size="h4"
             />
           </div>
           <div className="d-flex mt-4 align-items-center">
@@ -563,8 +599,8 @@ const home = () => {
               <Image src={userImg} alt="enkash user image" />
             </div>
             <div className="d-flex flex-column">
-              <H5 title="- Manoj Day, CEO," />
-              <H5 title=" NTech Media" />
+              <Heading title="- Manoj Day, CEO," size="h5" />
+              <Heading title=" NTech Media" size="h5" />
             </div>
           </div>
         </div>

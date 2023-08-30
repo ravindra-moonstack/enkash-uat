@@ -24,3 +24,7 @@ export { default as paymentAndCardSummit } from "./img/payment-and-card-summit.p
 export { default as nasscom } from "./img/nasscom.png";
 export { default as testimonials } from "./img/testimonials.png";
 export { default as userImg } from "./img/user-img.png";
+
+
+
+

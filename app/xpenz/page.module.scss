@@ -1,0 +1,50 @@
+@import "../../styles/variables";
+
+.home_container {
+  padding-top: 100px;
+}
+
+.first_row {
+  padding: 100px 0px 100px 80px;
+}
+
+.second_row {
+  padding: 50px 200px 50px 200px;
+  background-color: $color-white;
+  img {
+    height: auto;
+    margin-right: -40px;
+  }
+}
+
+.third_row {
+  padding: 150px 100px 150px 100px;
+}
+
+.fourth_row {
+  padding: 50px;
+}
+
+.fifth_row {
+  background: url(./img/row-bg.png);
+  background-size: cover;
+  padding: 50px;
+}
+
+.sixth_row {
+  padding: 100px 80px 0px 80px;
+}
+
+.seventh_row {
+  padding: 50px 200px 50px 200px;
+  background-color: $color-white;
+  .left_row {
+    padding: 40px;
+  }
+  .right_row {
+    margin-left: -20px;
+    img {
+      height: 100%;
+    }
+  }
+}

@@ -1,7 +1,4 @@
 export { default as reimbursementDashboard } from "./img/reimbursement-dashboard.png";
-export { default as steps } from "./img/steps.png";
-export { default as oldWay } from "./img/old-way.png";
-export { default as newWay } from "./img/new-way.png";
 export { default as blueArrowForward } from "./img/blue-arrow-forward.png";
 export { default as blueArrowBackward } from "./img/blue-arrow-back.png";
 export { default as bar } from "./img/bar.png";
