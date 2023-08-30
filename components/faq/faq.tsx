@@ -1,7 +1,9 @@
-"use client"
-import React, { useState } from 'react';
+"use client";
+import React, { useState } from "react";
 import styles from "./faq.module.scss";
-
+import H1 from "../heading/h1";
+import H4 from "../heading/h4";
+import { arrowDown } from ".";
 
 interface FaqBulletPoint {
   text: string;
@@ -35,57 +37,91 @@ const FaqComponent: React.FC<FaqProps> = ({ faqData }) => {
   const [activeFaqIndex, setActiveFaqIndex] = useState<number | null>(null);
 
   const toggleFaq = (index: number) => {
-    setActiveFaqIndex(activeFaqIndex === index ? null : index);
+    if (activeFaqIndex === index) {
+      setActiveFaqIndex(null);
+    } else {
+      setActiveFaqIndex(index);
+    }
   };
+
   return (
     <div className={styles.faq_page}>
-      <h1 className='text-center'>GOT QUESTIONS?</h1>
-    <div className="container mt-5 d-flex justify-content-center">
-      <div className='w-80'>
-        <h2 className="text-center">{faqData.heading}</h2>
-        <div className="accordion mt-4" id="faqAccordion">
-          {faqData.faqs.map((faq, faqIndex) => (
-            <div className="accordion-item" key={faqIndex}>
-              <h3 className="accordion-header" onClick={() => toggleFaq(faqIndex)}>
-                <button className={`accordion-button ${activeFaqIndex === faqIndex ? '' : 'collapsed'}`} type="button" data-bs-toggle="collapse" data-bs-target={`#faqCollapse${faqIndex}`}>
-                  {faq.question}
-                </button>
-              </h3>
-              <div id={`faqCollapse${faqIndex}`} className={`accordion-collapse collapse ${activeFaqIndex === faqIndex ? 'show' : ''}`}>
-                <div className="accordion-body">
-                  {faq.answer.paragraphs.map((paragraph, paragraphIndex) => (
-                    <div key={paragraphIndex}>
-                      <p>{paragraph.text}</p>
-                      {paragraph.bulletPoints && (
-                        <ul>
-                          {paragraph.bulletPoints.map((bullet, bulletIndex) => (
-                            <li key={bulletIndex}>
-                              {bullet.text}
-                              {bullet.subpoints && (
-                                <ul>
-                                  {bullet.subpoints.map((subpoint, subpointIndex) => (
-                                    <li key={subpointIndex}>
-                                      {subpoint}
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-                            </li>
-                          ))}
-                        </ul>
-                      )}
-                    </div>
-                  ))}
+      <H1 title="Got Questions?" color="equity-blue" />
+      <div className="container mt-5 d-flex justify-content-center w-80">
+        <div>
+          <H4 title={faqData.heading} color="black" bold={true} />
+          <div className={styles.customAccordion} id="faqAccordion">
+            {faqData.faqs.map((faq, faqIndex) => (
+              <div className={styles.accordionItem} key={faqIndex}>
+                <div
+                  className={styles.accordionHeader}
+                  onClick={() => toggleFaq(faqIndex)}
+                >
+                  <button
+                    className={`${styles.accordionButton} ${
+                      activeFaqIndex === faqIndex ? styles.active : ""
+                    }`}
+                  >
+                    {faq.question}
+                    <span className={styles.arrowIcon}>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        fill="currentColor"
+                        className={`bi bi-chevron-${
+                          activeFaqIndex === faqIndex ? "up" : "down"
+                        }`}
+                        viewBox="0 0 16 16"
+                      >
+                        <path d="M4.293 8.293a1 1 0 0 1 1.414 0L8 10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z" />
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+
+                <div
+                  className={`${styles.accordionCollapse} ${
+                    activeFaqIndex === faqIndex ? styles.show : ""
+                  }`}
+                >
+                  <div className={styles.accordionBody}>
+                    {faq.answer.paragraphs.map((paragraph, paragraphIndex) => (
+                      <div key={paragraphIndex}>
+                        <p>{paragraph.text}</p>
+                        {paragraph.bulletPoints && (
+                          <ul>
+                            {paragraph.bulletPoints.map(
+                              (bullet, bulletIndex) => (
+                                <li key={bulletIndex}>
+                                  {bullet.text}
+                                  {bullet.subpoints && (
+                                    <ul>
+                                      {bullet.subpoints.map(
+                                        (subpoint, subpointIndex) => (
+                                          <li key={subpointIndex}>
+                                            {subpoint}
+                                          </li>
+                                        )
+                                      )}
+                                    </ul>
+                                  )}
+                                </li>
+                              )
+                            )}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
     </div>
   );
 };
 
 export default FaqComponent;
-

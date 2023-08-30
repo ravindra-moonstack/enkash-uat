@@ -1,13 +1,75 @@
 @import "../../styles/mixin";
 @import "../../styles/variables";
+// customAccordionStyles.scss
 
-.faq_page{
-    background-color: white;
-    color : black;
+.faq_page {
+  background-color: white;
+  color: black;
 }
 
-.accordian{
-    border: blue;
+.customAccordion {
+  width: 100%;
+  max-width: 600px; // Adjust this to your desired width
+  margin: 0 auto;
 }
-// $accordion-button-icon:         url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
-// $accordion-button-active-icon:  url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='#{$accordion-icon-active-color}'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>");
+
+.accordionItem {
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.accordionHeader {
+  background-color: #f8f9fa;
+  padding: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:hover {
+    background-color: #e9ecef;
+  }
+
+  .accordionButton {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    color: #333;
+    font-weight: bold;
+  }
+}
+
+.accordionCollapse {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+
+  &.show {
+    max-height: 1000px; // Adjust this value based on your content
+  }
+}
+
+.accordionBody {
+  padding: 10px;
+  background-color: #f8f9fa;
+}
+
+.active {
+  .accordionButton {
+    color: #007bff; // Color for active FAQ
+  }
+}
+
+.arrowIcon {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.active .arrowIcon {
+  transform: rotate(180deg);
+}
