@@ -8,25 +8,26 @@ $button-padding: 5px 15px 5px 15px;
   padding: $button-padding;
 }
 
-.secondry_button {
-  background-color: $color-indi-volt;
-  color: $color-white;
-  border-radius: 20px;
-  border: 1px solid $color-equity-blue;
-  padding: $button-padding;
-}
-
 .menu_button {
-  padding: 5px 20px;
-  background-color: $color-white;
-  color: $color-main-black;
   border-radius: 20px;
+  padding: 5px 20px;
   border: none;
-}
 
-.menu_button_light {
-  @extend .menu_button;
-  border: 2px solid $color-black;
+  &.theme-light {
+    background-color: $color-white;
+    color: $color-black;
+  }
+
+  &.theme-dark {
+    background-color: $color-white;
+    color: $color-main-black;
+  }
+
+  &.theme-secondary {
+    background-color: $color-pale-grey;
+    color: $color-secondry-grey;
+    border: 1px solid;
+  }
 }
 
 .theme-blue {

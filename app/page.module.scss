@@ -2,6 +2,7 @@
 
 .home_container {
   padding-top: 100px;
+  background-color: $color-indi-volt;
 }
 
 .bg_rainbow {
@@ -11,30 +12,39 @@
   background-position: center center;
 }
 
-.first_row {
-  padding-top: 60px;
-  padding-top: 60px;
+.bg_traingle_stack {
+  background-image: url(img/traingle-stack.png);
+  background-size: 110% 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .second_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 80px 80px 140px 80px;
-  text-align: center;
-}
-
-.third_row {
-  padding-top: 60px;
+  .email_box {
+    margin-top: 150px;
+    margin-bottom: 100px;
+    border: 2px solid $color-equity-blue;
+    border-radius: 30px;
+    color: $color-white;
+    display: flex;
+    width: fit-content;
+    padding: 10px 30px;
+    input {
+      padding-left: 30px;
+      padding-right: 30px;
+      background: transparent;
+      border: none;
+    }
+    ::placeholder {
+      color: $color-white;
+    }
+  }
 }
 
 .fourth_row {
   overflow: hidden;
   width: auto;
   position: relative;
-  padding-top: 150px;
-  padding-bottom: 150px;
   background-color: $color-white;
   .iphone_img {
     position: absolute;
@@ -49,16 +59,13 @@
 }
 
 .fifth_row {
-  padding: 150px 100px 150px 100px;
 }
 
 .sixth_row {
-  padding: 100px 100px 50px 100px;
   background-color: $color-white;
 }
 
 .seventh_row {
-  padding: 50px 200px 50px 200px;
   background-color: $color-white;
   .card_container {
     padding: 30px;
@@ -73,17 +80,14 @@
 }
 
 .eigth_row {
-  padding: 50px 100px 100px 100px;
   background-color: $color-white;
 }
 
 .ninth_row {
-  padding: 50px 100px 100px 100px;
   background-color: $color-white;
 }
 
 .tenth_row {
-  padding: 0px 100px 0px 100px;
   background-color: $color-white;
 }
 
@@ -92,24 +96,20 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 80px 80px 150px 80px;
   text-align: center;
 }
 
 .twelfth_row {
   background-color: $color-white;
-  padding: 50px 150px 50px 100px;
   background-color: $color-white;
 }
 
 .thirteenth_row {
   background-color: $color-white;
-  padding: 50px 100px 50px 100px;
 }
 
 .fourteenth_row {
   background-color: $color-white;
-  padding: 150px 100px 100px 100px;
   .box {
     border: 2px solid $color-black;
     border-radius: 20px;
@@ -124,7 +124,6 @@
 }
 
 .fifthteen_row {
-  padding: 50px 100px 0px 100px;
   .testimonials_section {
     padding: 100px;
   }

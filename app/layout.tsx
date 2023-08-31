@@ -1,4 +1,4 @@
-import Header from "@/components/header/header";
+import WebHeader from "@/components/header/web-header";
 import Footer from "@/components/footer/footer";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/_base.scss";
@@ -24,7 +24,7 @@ const RootLayout = ({ children }: RootProps) => {
           <div className="mobile-header">
             <MobileHeader />
           </div>
-          <div className="desktop-header">{<Header />}</div>
+          <div className="desktop-header">{<WebHeader />}</div>
           {children}
           <Footer />
         </main>

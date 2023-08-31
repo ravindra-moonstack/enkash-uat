@@ -1,18 +1,19 @@
-"use client";
-
 import styles from "../button.module.scss";
 
 export interface ButtonProps {
   isDisabled?: boolean;
   title: string;
-  theme: "light" | "default"; 
+  theme: "light" | "dark" | "secondary";
 }
 
-const MenuButton = ({ isDisabled, title, theme = "default" }: ButtonProps) => {
-  const buttonClassName = theme === "light" ? styles.menu_button_light : styles.menu_button;
+const MenuButton = ({ isDisabled, title, theme = "dark" }: ButtonProps) => {
+  const themeClass = `theme-${theme}`;
 
   return (
-    <button disabled={isDisabled} className={buttonClassName}>
+    <button
+      disabled={isDisabled}
+      className={`${styles.menu_button} ${styles[themeClass]}`}
+    >
       {title}
     </button>
   );

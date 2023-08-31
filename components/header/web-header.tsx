@@ -21,7 +21,7 @@ import ResourcesModal from "./modal/resources-modal";
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
 
-const Header = () => {
+const WebHeader = () => {
   const getArrowImageSource = (index: number) => {
     if (hoveredIndex === index) {
       //replace blue logo
@@ -37,7 +37,7 @@ const Header = () => {
   return (
     <header
       className={`w-full absolute z-10 d-flex flex-column ${styles.header} ${
-        isHeaderBgWhite ? "bg-white color-indi-volt" : ""
+        isHeaderBgWhite ? "bg-white color-indi-volt" : "bg-indi-volt color-white"
       }`}
       onMouseLeave={() => {
         setHoveredIndex(null);
@@ -94,4 +94,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default WebHeader;

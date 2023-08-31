@@ -147,8 +147,28 @@ body {
   color: $color-slate-grey;
 }
 
+.color-pale-grey{
+  color: $color-pale-grey;
+}
+
 .color-error-red {
   color: $color-error-red;
+}
+
+/* Padding Classes */
+
+.row-padding {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.row-padding-bottom-none {
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 80px;
+  padding-bottom: 0px;
 }
 
 /* Gradient Classes */

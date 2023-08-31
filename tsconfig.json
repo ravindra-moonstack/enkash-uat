@@ -29,7 +29,7 @@
     "**/*.tsx",
     "app/types/**/*.ts",
     "components/footer/footer.tsx",
-    "components/header/header.tsx",
+    "components/header/web-header.tsx",
     "app/layout.tsx",
     "app/page.tsx",
     ".next/types/**/*.ts"
