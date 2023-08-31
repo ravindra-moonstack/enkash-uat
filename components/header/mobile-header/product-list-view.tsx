@@ -1,6 +1,7 @@
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import utmSources from "@/constant/utm-source";
+import { Fragment } from "react";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
@@ -13,12 +14,12 @@ const ProductListView = (props: any) => {
           <div className={styles.line}></div>
           <ul>
             {props.products.map((item: any, index: any) => (
-              <>
-                <li key={item.name + "a"} className={`py-4 px-4`}>
+              <Fragment key={item.name}>
+                <li key={item.name} className={`py-4 px-4`}>
                   {item.name}
                 </li>
                 <div className={styles.line}></div>
-              </>
+              </Fragment>
             ))}
           </ul>
         </div>
