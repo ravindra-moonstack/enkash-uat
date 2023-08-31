@@ -24,6 +24,9 @@ import { progress } from "framer-motion";
 import { laptopScreen } from "../reimbursement";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
+import GetStartedCard from "@/components/get-started-card/get-started-card";
+import Head from "next/head";
+import BlogCard from "@/components/blog-card/blog-card";
 
 const xpenz = () => {
   return (
@@ -199,6 +202,94 @@ const xpenz = () => {
           </div>
         </div>
       </div>
+      <div className={`row ${styles.eigth_row}`}>
+        <div className="col-12 d-flex justify-content-evenly mt-3">
+          <div>
+            <GetStartedCard
+              title1="Digital Receipt Management"
+              title2=""
+              description="Leverage OCR technology to create a seamless reimbursement process 
+            for your employees. Scan or photograph receipts, and upload them for immediate approvals."
+            />
+          </div>
+          <div>
+            <GetStartedCard
+              title1="Approval Process"
+              title2=""
+              description="Configure approval processes as per the requirements of your business.
+             Plan your cash flow better, optimize savings, and accelerate your reimbursement process."
+            />
+          </div>
+          <div>
+            <GetStartedCard
+              title1="Departmental Hierarchy"
+              title2=""
+              description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
+            />
+          </div>
+        </div>
+      </div>
+      <div className={`row ${styles.ninth_row}`}>
+        <div className="col-12 d-flex justify-content-center">
+          <Heading
+            title="Expense Management Insights"
+            size="h1"
+            color="black"
+          />
+        </div>
+        <div className="col-12 d-flex justify-content-center mt-3">
+          <Heading
+            title="Expense Management Insights"
+            size="h5"
+            color="equity-blue"
+          />
+        </div>
+        <div className="col-12 d-flex justify-content-center mt-3">
+          <PrimaryButton title="See all" />
+        </div>
+
+        <div className="col-12 d-flex justify-content-evenly mt-5">
+          <BlogCard
+            title="Lorem ipsum dolor sit amet, consectetur."
+            date="Dec 21, 2023"
+            description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
+          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
+          vestibulum ipsum. Nibh vestibulum ut viverra mattis."
+            blogImage={laptop}
+            blogImageAlt="office image"
+          />
+          <BlogCard
+            title="Lorem ipsum dolor sit amet, consectetur."
+            date="Dec 21, 2023"
+            description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
+          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
+          vestibulum ipsum. Nibh vestibulum ut viverra mattis."
+            blogImage={officeImg}
+            blogImageAlt="office image"
+          />
+          <BlogCard
+            title="Lorem ipsum dolor sit amet, consectetur."
+            date="Dec 21, 2023"
+            description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
+          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
+          vestibulum ipsum. Nibh vestibulum ut viverra mattis."
+            blogImage={laptop}
+            blogImageAlt="office image"
+          />
+        </div>
+      </div>
+
+      <div className={`row  bg-equity-blue ${styles.tenth_row}`}>
+        <div className="d-flex justify-content-evenly">
+          <Heading
+            title="Have Questions about Expense Management?"
+            size="h3"
+            color="white"
+          />
+          <PrimaryButton title="Know More" />
+        </div>
+      </div>
+
       <div className="row">
         <ContactUsCard />
       </div>
