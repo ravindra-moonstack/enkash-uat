@@ -6,7 +6,7 @@ export interface ButtonProps {
   isDisabled?: boolean;
   title: string;
   url?: string;
-  theme?: "theme-blue" | "theme-green";
+  theme?: "theme-blue" | "theme-green" | "theme-black";
 }
 
 const PrimaryButton = ({ isDisabled, title, url, theme }: ButtonProps) => {

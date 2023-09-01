@@ -5,24 +5,16 @@
 }
 
 .first_row {
-  padding: 100px 0px 100px 80px;
+  background-image: url(./img/bg-image.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 
 .second_row {
-  padding: 50px 200px 50px 200px;
-  background-color: $color-white;
   img {
     height: auto;
     margin-right: -40px;
   }
-}
-
-.third_row {
-  padding: 150px 100px 150px 100px;
-}
-
-.fourth_row {
-  padding: 50px;
 }
 
 .fifth_row {
@@ -31,13 +23,11 @@
   padding: 50px;
 }
 
-.sixth_row {
-  padding: 100px 80px 0px 80px;
-}
-
 .seventh_row {
-  padding: 50px 200px 50px 200px;
-  background-color: $color-white;
+  .container {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
   .left_row {
     padding: 40px;
   }
@@ -47,18 +37,4 @@
       height: 100%;
     }
   }
-}
-
-.eigth_row {
-  padding: 50px 100px 50px 100px;
-  background-color: $color-white;
-}
-
-.ninth_row {
-  padding: 50px 100px 50px 100px;
-  background-color: $color-white;
-}
-
-.tenth_row {
-  padding: 50px;
 }

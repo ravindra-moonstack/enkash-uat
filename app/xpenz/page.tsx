@@ -17,21 +17,19 @@ import {
   reimbursement,
   rupeeCard,
   scanAndDrop,
+  whiteArrow,
   xpenzDashboard,
 } from ".";
 import Heading from "@/components/heading/heading";
-import { progress } from "framer-motion";
-import { laptopScreen } from "../reimbursement";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import Head from "next/head";
 import BlogCard from "@/components/blog-card/blog-card";
 
 const xpenz = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <div className={`row color-white ${styles.first_row}`}>
+      <div className={`${styles.first_row} row color-white row-padding`}>
         <div className="col-6 d-flex flex-column">
           <div className="d-flex mb-4">
             <Heading title="X" color="rainy-blue" size="h1" />
@@ -58,18 +56,18 @@ const xpenz = () => {
           <div className="my-5">
             <PrimaryButton title="Enkash Now!" theme="theme-blue" />
             <span className="mx-2"></span>
-            <SecondryButton title="Book a Demo" />
+            <SecondryButton title="Book a Demo" actionImage={whiteArrow} />
           </div>
         </div>
         <div className="col-6 d-flex justify-content-center">
           <Image
             src={xpenzDashboard}
             alt="reimbursement dashboard"
-            width={600}
+            width={800}
           />
         </div>
       </div>
-      <div className={`row d-flex ${styles.second_row}`}>
+      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
         <div className={`d-flex col-12 flex-row`}>
           <Image src={laptop} alt="office team image" />
           <div className="d-flex flex-column justify-content-center align-items-center bg-indi-volt">
@@ -98,7 +96,7 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div className={`row d-flex ${styles.second_row}`}>
+      <div className="third_row row d-flex row-padding-top-none bg-white">
         <div className="col-6 my-5 px-5">
           <ExploreCard
             title="Budgets and Advances"
@@ -130,7 +128,7 @@ const xpenz = () => {
           <Image src={reimbursement} width={350} alt="payables image" />
         </div>
       </div>
-      <div className={`row ${styles.third_row}`}>
+      <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-6 d-flex mb-5">
           <Image src={policyApproval} alt="payables image" />
         </div>
@@ -154,7 +152,7 @@ const xpenz = () => {
           <Image src={scanAndDrop} alt="receivable image" />
         </div>
       </div>
-      <div className={`row bg-white ${styles.fourth_row}`}>
+      <div className="row bg-white row-padding">
         <div className="d-flex justify-content-center">
           <Heading title={`EnKash does${space}`} size="h1" color="black" />
           <Heading
@@ -184,11 +182,11 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div className={`row d-flex bg-white ${styles.sixth_row}`}>
+      <div className="sixth_row row d-flex bg-white row-padding">
         <EnkashWay />
       </div>
-      <div className={`row d-flex ${styles.seventh_row}`}>
-        <div className={`d-flex col-12 flex-row`}>
+      <div className={`row d-flex bg-white row-padding ${styles.seventh_row}`}>
+        <div className={`d-flex col-12 flex-row ${styles.container}`}>
           <div className={`d-flex flex-column bg-indi-volt ${styles.left_row}`}>
             <ExploreCard
               title="Total Visibility"
@@ -202,7 +200,7 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.eigth_row}`}>
+      <div className="row eigth_row bg-white row-padding">
         <div className="col-12 d-flex justify-content-evenly mt-3">
           <div>
             <GetStartedCard
@@ -229,7 +227,7 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.ninth_row}`}>
+      <div className="row eigth_row bg-white row-padding">
         <div className="col-12 d-flex justify-content-center">
           <Heading
             title="Expense Management Insights"
@@ -278,15 +276,14 @@ const xpenz = () => {
           />
         </div>
       </div>
-
-      <div className={`row  bg-equity-blue ${styles.tenth_row}`}>
+      <div className="row eigth_row bg-equity-blue row-padding">
         <div className="d-flex justify-content-evenly">
           <Heading
             title="Have Questions about Expense Management?"
             size="h3"
             color="white"
           />
-          <PrimaryButton title="Know More" />
+          <PrimaryButton title="Know More" theme="theme-black" />
         </div>
       </div>
 
