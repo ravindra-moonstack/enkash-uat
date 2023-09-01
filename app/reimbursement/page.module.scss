@@ -2,7 +2,10 @@
 @import "../../styles/mixin";
 
 .home_container {
-  padding-top: 100px;
+  padding-top: 50px;
+  @include bp-md {
+    padding-top: 100px;
+  }
 }
 
 .fourth_row {

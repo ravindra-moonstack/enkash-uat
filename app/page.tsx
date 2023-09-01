@@ -10,7 +10,6 @@ import { space } from "@/constant/common";
 
 import {
   dashboard,
-  iphoneDashboard,
   numberOne,
   numberThree,
   numberTwo,

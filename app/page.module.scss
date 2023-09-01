@@ -2,8 +2,11 @@
 @import "/styles/mixin";
 
 .home_container {
-  padding-top: 100px;
+  padding-top: 50px;
   background-color: $color-indi-volt;
+  @include bp-md {
+    padding-top: 100px;
+  }
 }
 
 .bg_rainbow {

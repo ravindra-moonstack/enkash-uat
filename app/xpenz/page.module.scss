@@ -1,13 +1,27 @@
 @import "../../styles/variables";
+@import "../../styles/mixin";
 
 .home_container {
-  padding-top: 100px;
+  padding-top: 50px;
+  @include bp-md {
+    padding-top: 100px;
+  }
 }
 
 .first_row {
   background-image: url(./img/bg-image.png);
   background-repeat: no-repeat;
   background-position: right bottom;
+  background-size: contain;
+  .dashboard_img {
+    max-width: 100%;
+    height: auto;
+    @include bp-md {
+      max-width: none;
+      height: fit-content;
+      width: 800px;
+    }
+  }
 }
 
 .second_row {
@@ -25,14 +39,25 @@
 
 .seventh_row {
   .container {
-    padding-left: 100px;
-    padding-right: 100px;
+    @include bp-md {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
   }
   .left_row {
     padding: 40px;
+    @include bp-md {
+      padding: 40px;
+      width: 50%;
+    }
   }
   .right_row {
-    margin-left: -20px;
+    @include bp-md {
+      margin-left: -20px;
+      margin-top: 0;
+      width: 50%;
+    }
+    margin-top: -10px;
     img {
       height: 100%;
     }

@@ -30,7 +30,7 @@ const xpenz = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} row color-white row-padding`}>
-        <div className="col-6 d-flex flex-column">
+        <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
             <Heading title="X" color="rainy-blue" size="h1" />
             <Heading title="penz" size="h1" />
@@ -59,17 +59,17 @@ const xpenz = () => {
             <SecondryButton title="Book a Demo" actionImage={whiteArrow} />
           </div>
         </div>
-        <div className="col-6 d-flex justify-content-center">
+        <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <Image
             src={xpenzDashboard}
             alt="reimbursement dashboard"
-            width={800}
+            className={styles.dashboard_img}
           />
         </div>
       </div>
       <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <div className={`d-flex col-12 flex-row`}>
-          <Image src={laptop} alt="office team image" />
+        <div className={`d-flex col-12 flex-column flex-md-row`}>
+          <Image src={laptop} alt="office team image" className="img-fluid" />
           <div className="d-flex flex-column justify-content-center align-items-center bg-indi-volt">
             <Heading
               title="How does it work?"
@@ -97,49 +97,68 @@ const xpenz = () => {
         </div>
       </div>
       <div className="third_row row d-flex row-padding-top-none bg-white">
-        <div className="col-6 my-5 px-5">
+        <div className="col-md-6 col-12 my-5 px-5">
           <ExploreCard
             title="Budgets and Advances"
             description="Create budgets, track and optimize expenses, increase savings. "
             theme="blue"
           />
         </div>
-        <div className="col-6 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
-          <Image src={budgetAndAdvance} width={350} alt="payables image" />
+        <div className="col-md-6 col-12 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
+          <Image
+            src={budgetAndAdvance}
+            className="img-fluid"
+            alt="payables image"
+          />
         </div>
-        <div className="col-6 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
-          <Image src={heirarchyControl} width={350} alt="payables image" />
+
+        <div className="col-md-6 col-12 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
+          <Image
+            src={heirarchyControl}
+            className="img-fluid"
+            alt="heirarchy control image"
+          />
         </div>
-        <div className="col-6 my-5 px-5">
+
+        <div className="col-md-6 col-12 my-5 px-5 ">
           <ExploreCard
             title="Hierarchy and Controls"
             description="Create hierarchies and establish control over employee expenditure."
             theme="blue"
           />
         </div>
-        <div className="col-6 px-5 my-5">
+
+        <div className="col-md-6 col-12 px-5 my-5">
           <ExploreCard
             title="Reimbursements"
             description="Fast-track and optimize the entire reimbursement process with better spend overview."
             theme="blue"
           />
         </div>
-        <div className="col-6 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
-          <Image src={reimbursement} width={350} alt="payables image" />
+        <div className="col-md-6 col-12 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
+          <Image
+            src={reimbursement}
+            className="img-fluid"
+            alt="payables image"
+          />
         </div>
       </div>
       <div className={`${styles.fourth_row} row row-padding`}>
-        <div className="col-6 d-flex mb-5">
-          <Image src={policyApproval} alt="payables image" />
+        <div className="col-md-6 col-12 d-flex mb-5">
+          <Image
+            src={policyApproval}
+            alt="payables image"
+            className="img-fluid"
+          />
         </div>
-        <div className="col-6 mb-5 px-5">
+        <div className="col-md-6 col-12 mb-5 px-5">
           <ExploreCard
             title="Scan and Drop Receipts"
             description="Leverage OCR for digital receipt management & reconciliation."
             theme="green"
           />
         </div>
-        <div className="col-6 mt-5 px-5">
+        <div className="col-md-6 col-12 mt-5 px-5">
           <ExploreCard
             title="Receivables"
             description="EnKash empowers your business by providing intelligent
@@ -148,8 +167,12 @@ const xpenz = () => {
             theme="green"
           />
         </div>
-        <div className="col-6 d-flex mt-5">
-          <Image src={scanAndDrop} alt="receivable image" />
+        <div className="col-md-6 col-12 d-flex mt-5">
+          <Image
+            src={scanAndDrop}
+            alt="receivable image"
+            className="img-fluid"
+          />
         </div>
       </div>
       <div className="row bg-white row-padding">
@@ -164,19 +187,27 @@ const xpenz = () => {
         </div>
       </div>
       <div className={`row bg-indi-volt ${styles.fifth_row}`}>
-        <div className="d-flex justify-content-evenly">
-          <div>
-            <Image src={coin} alt="coins icon" />
+        <div className="d-flex flex-column flex-md-row align-items-center tex-center justify-content-evenly">
+          <div className="md:mb-0 mb-4">
+            <Image src={coin} alt="coins icon" className="md:mb-0 mb-4" />
             <Heading title="On-time" size="h5" color="white" />
             <Heading title="Payments" size="h5" color="white" />
           </div>
-          <div>
-            <Image src={regualation} alt="regulation icon" />
+          <div className="md:mb-0 mb-4">
+            <Image
+              src={regualation}
+              alt="regulation icon"
+              className="md:mb-0 mb-4"
+            />
             <Heading title="Spend" size="h5" color="white" />
             <Heading title="Regulation" size="h5" color="white" />
           </div>
-          <div>
-            <Image src={cashAndCoin} alt="cash and coin icon" />
+          <div className="md:mb-0 mb-4">
+            <Image
+              src={cashAndCoin}
+              alt="cash and coin icon"
+              className="md:mb-0 mb-4"
+            />
             <Heading title="Cash Flow" size="h5" color="white" />
             <Heading title="Optimization" size="h5" color="white" />
           </div>
@@ -186,7 +217,9 @@ const xpenz = () => {
         <EnkashWay />
       </div>
       <div className={`row d-flex bg-white row-padding ${styles.seventh_row}`}>
-        <div className={`d-flex col-12 flex-row ${styles.container}`}>
+        <div
+          className={`d-flex col-12 flex-column flex-md-row ${styles.container}`}
+        >
           <div className={`d-flex flex-column bg-indi-volt ${styles.left_row}`}>
             <ExploreCard
               title="Total Visibility"
@@ -196,13 +229,17 @@ const xpenz = () => {
             />
           </div>
           <div className={styles.right_row}>
-            <Image src={officeImg} alt="office team image" width={500} />
+            <Image
+              src={officeImg}
+              alt="office team image"
+              className="img-fluid"
+            />
           </div>
         </div>
       </div>
       <div className="row eigth_row bg-white row-padding">
-        <div className="col-12 d-flex justify-content-evenly mt-3">
-          <div>
+        <div className="col-12 d-flex flex-column flex-md-row justify-content-evenly mt-3">
+          <div className="mb-4 md:mb-0">
             <GetStartedCard
               title1="Digital Receipt Management"
               title2=""
@@ -210,7 +247,7 @@ const xpenz = () => {
             for your employees. Scan or photograph receipts, and upload them for immediate approvals."
             />
           </div>
-          <div>
+          <div className="mb-4 md:mb-0">
             <GetStartedCard
               title1="Approval Process"
               title2=""
@@ -218,7 +255,7 @@ const xpenz = () => {
              Plan your cash flow better, optimize savings, and accelerate your reimbursement process."
             />
           </div>
-          <div>
+          <div className="mb-4 md:mb-0">
             <GetStartedCard
               title1="Departmental Hierarchy"
               title2=""
@@ -246,34 +283,41 @@ const xpenz = () => {
           <PrimaryButton title="See all" />
         </div>
 
-        <div className="col-12 d-flex justify-content-evenly mt-5">
-          <BlogCard
-            title="Lorem ipsum dolor sit amet, consectetur."
-            date="Dec 21, 2023"
-            description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
+        <div className="col-12 d-flex flex-column flex-md-row justify-content-evenly mt-5">
+          <div className="mb-4 md:mb-0">
+            <BlogCard
+              title="Lorem ipsum dolor sit amet, consectetur."
+              date="Dec 21, 2023"
+              description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
           imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
           vestibulum ipsum. Nibh vestibulum ut viverra mattis."
-            blogImage={laptop}
-            blogImageAlt="office image"
-          />
-          <BlogCard
-            title="Lorem ipsum dolor sit amet, consectetur."
-            date="Dec 21, 2023"
-            description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
+              blogImage={laptop}
+              blogImageAlt="office image"
+            />
+          </div>
+          <div className="mb-4 md:mb-0">
+            <BlogCard
+              title="Lorem ipsum dolor sit amet, consectetur."
+              date="Dec 21, 2023"
+              description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
           imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
           vestibulum ipsum. Nibh vestibulum ut viverra mattis."
-            blogImage={officeImg}
-            blogImageAlt="office image"
-          />
-          <BlogCard
-            title="Lorem ipsum dolor sit amet, consectetur."
-            date="Dec 21, 2023"
-            description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
+              blogImage={officeImg}
+              blogImageAlt="office image"
+            />
+          </div>
+
+          <div className="mb-4 md:mb-0">
+            <BlogCard
+              title="Lorem ipsum dolor sit amet, consectetur."
+              date="Dec 21, 2023"
+              description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
           imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
           vestibulum ipsum. Nibh vestibulum ut viverra mattis."
-            blogImage={laptop}
-            blogImageAlt="office image"
-          />
+              blogImage={laptop}
+              blogImageAlt="office image"
+            />
+          </div>
         </div>
       </div>
       <div className="row eigth_row bg-equity-blue row-padding">

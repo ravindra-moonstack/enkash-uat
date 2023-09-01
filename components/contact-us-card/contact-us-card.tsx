@@ -10,19 +10,19 @@ const ContactUsCard = () => {
       <div className="row">
         <div className="col-6 d-flex justify-content-center"></div>
         <div className="col-6 d-flex flex-column justify-content-center">
-          <div className="md:mt-2 mt-5">
+          <div className="mt-2">
             <div>
               <Heading
                 title="Couldn’t find what"
                 color="equity-blue"
-                size="h1"
+                size="h2"
               />
             </div>
             <div>
               <Heading
                 title="you’re looking for?"
                 color="equity-blue"
-                size="h1"
+                size="h2"
               />
             </div>
           </div>
@@ -43,7 +43,7 @@ const ContactUsCard = () => {
               />
             </div>
           </div>
-          <div className="d-flex mt-3 mb-5 md:mb-2">
+          <div className="d-flex mt-3 mb-2">
             <PrimaryButton
               title="Contact Us"
               isDisabled={false}
