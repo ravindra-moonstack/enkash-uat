@@ -12,6 +12,7 @@ import {
   laptopScreen,
   reimbursementCard,
   reimbursementDashboard,
+  whiteArrow,
 } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
@@ -21,7 +22,7 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 const reimbursement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <div className={`row color-white ${styles.first_row}`}>
+      <div className="first_row row row-padding color-white">
         <div className="col-6 d-flex flex-column">
           <div className="d-flex mb-4">
             <Heading title="X" color="rainy-blue" size="h1" />
@@ -51,7 +52,7 @@ const reimbursement = () => {
           <div className="my-5">
             <PrimaryButton title="Enkash Now!" theme="theme-blue" />
             <span className="mx-2"></span>
-            <SecondryButton title="Book a Demo" />
+            <SecondryButton title="Book a Demo" actionImage={whiteArrow} />
           </div>
         </div>
         <div className="col-6 d-flex justify-content-center">
@@ -62,10 +63,10 @@ const reimbursement = () => {
           />
         </div>
       </div>
-      <div className={`row d-flex ${styles.second_row}`}>
+      <div className="second-row row row-padding d-flex bg-white">
         <EnkashWay />
       </div>
-      <div className={`row d-flex ${styles.third_row}`}>
+      <div className="third-row row d-flex bg-white row-padding-top-none">
         <div className="col-12 d-flex justify-content-center">
           <Heading
             title="Streamline Your Reimbursement Process"
@@ -99,7 +100,7 @@ const reimbursement = () => {
           <Image src={bar} alt="progress bar" width={1200} />
         </div>
       </div>
-      <div className={`row d-flex ${styles.fourth_row}`}>
+      <div className={`row d-flex row-padding ${styles.fourth_row}`}>
         <div className="col-12">
           <Heading
             title="EnKash Makes Your Business’ Reimbursement"
