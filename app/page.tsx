@@ -35,6 +35,12 @@ import {
   testimonials,
   userImg,
   whiteArrow,
+  dashboardTwo,
+  axisBankLogo,
+  iciciBankLogo,
+  rupayLogo,
+  sbmLogo,
+  visaLogo,
 } from ".";
 import Heading from "@/components/heading/heading";
 import Head from "next/head";
@@ -161,13 +167,9 @@ const home = () => {
         >
           <div className="mb-4 d-flex justify-content-evenly w-100">
             <MenuButton isDisabled={false} title="Manage" theme="dark" />
-            <MenuButton isDisabled={false} title="Track" theme="secondary" />
-            <MenuButton
-              isDisabled={false}
-              title="Customize"
-              theme="secondary"
-            />
-            <MenuButton isDisabled={false} title="Automate" theme="secondary" />
+            <MenuButton isDisabled={false} title="Track" theme="disabled" />
+            <MenuButton isDisabled={false} title="Customize" theme="disabled" />
+            <MenuButton isDisabled={false} title="Automate" theme="disabled" />
           </div>
 
           <Image
@@ -197,8 +199,8 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.fourth_row}`}>
-        <div className="col-6 d-flex flex-column justify-content-center align-items-center">
+      <div className={`${styles.fourth_row} bg-white row`}>
+        <div className="col-6 d-flex flex-column justify-content-center align-items-center  row-padding">
           <div>
             <Heading title="Ultimate" color="black" size="h1" />
             <div>
@@ -232,11 +234,11 @@ const home = () => {
                   height={50}
                 />
                 <div>
-                  <Heading title="Intelligent" color="equity-blue" size="h5" />
+                  <Heading title="Intelligent" color="equity-blue" size="h6" />
                   <Heading
                     title="Automation Tools"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                   />
                 </div>
               </div>
@@ -251,9 +253,9 @@ const home = () => {
                   <Heading
                     title="Real-Time Data"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                   />
-                  <Heading title="& Insights" color="equity-blue" size="h5" />
+                  <Heading title="& Insights" color="equity-blue" size="h6" />
                 </div>
               </div>
             </div>
@@ -269,9 +271,9 @@ const home = () => {
                   <Heading
                     title="Optimized Business"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                   />
-                  <Heading title="Productivity" color="equity-blue" size="h5" />
+                  <Heading title="Productivity" color="equity-blue" size="h6" />
                 </div>
               </div>
               <div className="col-6 d-flex">
@@ -282,16 +284,16 @@ const home = () => {
                   height={50}
                 />
                 <div>
-                  <Heading title="Unparalleled" color="equity-blue" size="h5" />
-                  <Heading title="Savings" color="equity-blue" size="h5" />
+                  <Heading title="Unparalleled" color="equity-blue" size="h6" />
+                  <Heading title="Savings" color="equity-blue" size="h6" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-6 d-flex position-relative">
+        <div className="col-6 d-flex position-relative  row-padding">
           <Image
-            src={dashboard}
+            src={dashboardTwo}
             alt="enkash dashboard image"
             className={styles.desktop_img}
           />
@@ -301,8 +303,60 @@ const home = () => {
             className={styles.iphone_img}
           />
         </div>
+        <div className="col-12 row-padding-x-only mb-3 ">
+          <div>
+            <Heading
+              title={`Financial${space}`}
+              size="h1"
+              weight="normal"
+              color="equity-blue"
+            />
+            <Heading title={`Partners${space}`} size="h1" weight="normal" />
+            <Heading
+              title="and"
+              size="h1"
+              weight="normal"
+              color="equity-blue"
+            />
+          </div>
+          <div>
+            <Heading title="Customers." size="h1" weight="normal" />
+          </div>
+        </div>
+        <div className="col-12 row-padding-x-only mb-3 d-flex align-items-center">
+          <Image
+            width={150}
+            src={axisBankLogo}
+            className="me-5"
+            alt="axis bank logo"
+          />
+          <Image
+            width={150}
+            src={iciciBankLogo}
+            className="me-5"
+            alt="axis bank logo"
+          />
+          <Image
+            width={150}
+            src={rupayLogo}
+            className="me-5"
+            alt="axis bank logo"
+          />
+          <Image
+            width={150}
+            src={sbmLogo}
+            className="me-3"
+            alt="axis bank logo"
+          />
+          <Image
+            width={100}
+            src={visaLogo}
+            className="me-3"
+            alt="axis bank logo"
+          />
+        </div>
       </div>
-      <div className={`row ${styles.fifth_row}`}>
+      <div className={`${styles.fifth_row} row row-padding`}>
         <div className="col-6 d-flex mb-5">
           <Image src={payablesImage} alt="payables image" />
         </div>
@@ -329,7 +383,7 @@ const home = () => {
           <Image src={receivableImage} alt="receivable image" />
         </div>
       </div>
-      <div className={`row d-flex ${styles.sixth_row}`}>
+      <div className="sixth_row bg-white row d-flex row-padding-bottom-none">
         <div className="col-6 d-flex mb-5 blue_grad_bg_one">
           <Image src={expenseDashboard} alt="payables image" />
         </div>
@@ -343,8 +397,8 @@ const home = () => {
           />
         </div>
       </div>
-      <div className={`row d-flex ${styles.seventh_row}`}>
-        <div className={`d-flex col-12 flex-row`}>
+      <div className={`${styles.seventh_row} bg-white row d-flex row-padding`}>
+        <div className={`d-flex col-12 flex-row ${styles.card}`}>
           <div className={`d-flex flex-column ${styles.card_container}`}>
             <Heading
               title="Say yes to better"
@@ -376,13 +430,23 @@ const home = () => {
           <Image src={teamImg} alt="office team image" />
         </div>
       </div>
-      <div className={`row d-flex d-flex ${styles.eigth_row}`}>
+      <div className="eigth_row row d-flex d-flex bg-white row-padding-top-none">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <div>
-            <Heading title="Discover full control." color="black" size="h1" />
+            <Heading
+              title="Discover full control."
+              color="black"
+              size="h1"
+              weight="bolder"
+            />
           </div>
           <div>
-            <Heading title="Discover freedom." color="equity-blue" size="h1" />
+            <Heading
+              title="Discover freedom."
+              color="equity-blue"
+              size="h1"
+              weight="bolder"
+            />
           </div>
           <div className="mt-2">
             <Heading
@@ -393,7 +457,7 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.ninth_row}`}>
+      <div className="ninth_row row bg-white row-padding-top-none">
         <div className="col-6 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two">
           <Image src={corporateCardsImg} width={350} alt="payables image" />
         </div>
@@ -415,10 +479,10 @@ const home = () => {
           <Image src={diyCardsModuleImg} width={350} alt="receivable image" />
         </div>
       </div>
-      <div className={`row ${styles.tenth_row}`}>
+      <div className="tenth_row row bg-white row-padding-x-only">
         <div className="col-12 d-flex justify-content-center">
           <div>
-            <Heading title={`Loyalty ${space}`} color="black" size="h1" />
+            <Heading title={`Loyalty${space}`} color="black" size="h1" />
             <Heading title="Lounge" color="equity-blue" size="h1" />
           </div>
         </div>
@@ -428,15 +492,19 @@ const home = () => {
               <MenuButton isDisabled={false} title="Voucher" theme="light" />
             </div>
             <div className="me-2">
-              <MenuButton isDisabled={false} title="Reward" theme="light" />
+              <MenuButton isDisabled={false} title="Reward" theme="disabled" />
             </div>
-            <MenuButton isDisabled={false} title="Incentive" theme="light" />
+            <MenuButton isDisabled={false} title="Incentive" theme="disabled" />
           </div>
           <div className="d-flex mt-3">
             <div className="me-2">
-              <MenuButton isDisabled={false} title="Gift Card" theme="light" />
+              <MenuButton
+                isDisabled={false}
+                title="Gift Card"
+                theme="disabled"
+              />
             </div>
-            <MenuButton isDisabled={false} title="Offers" theme="light" />
+            <MenuButton isDisabled={false} title="Offers" theme="disabled" />
           </div>
           <div className="d-flex mt-3">
             <Heading
@@ -464,7 +532,10 @@ const home = () => {
           />
         </div>
       </div>
-      <div className={`row ${styles.eleventh_row}`}>
+      <div
+        className="eleventh_row row row-padding d-flex justify-content-center 
+      align-content-center color-white text-center"
+      >
         <div className={`col-12`}>
           <div>
             <Heading title="3 Easy Steps to" color="white" size="h2" />
@@ -509,8 +580,8 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.twelfth_row}`}>
-        <div className="d-flex">
+      <div className="twelfth_row row color-white bg-white row-padding">
+        <div className="d-flex justify-content-center align-items-center">
           <div className="me-4">
             <GetStartedCard
               title1="Optimize Spending;"
@@ -537,7 +608,7 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.thirteenth_row}`}>
+      <div className="thirteenth_row row row-padding-top-none bg-white">
         <div className="col-6 d-flex justify-content-center mt-5 blue_grad_bg_three">
           <Image
             src={mobileIntegration}
@@ -576,7 +647,7 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.fourteenth_row}`}>
+      <div className={`${styles.fourteenth_row} row bg-white row-padding`}>
         <div className={`d-flex ${styles.box}`}>
           <div
             className={`d-flex flex-column justify-content-between  ${styles.box_item}`}
@@ -622,13 +693,15 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.fifthteen_row}`}>
+      <div
+        className={`${styles.fifthteen_row} row row-padding-bottom-none color-white`}
+      >
         <div className="col-12 mb-5 d-flex justify-content-center">
           <div>
-            <Heading title="Trusted by " color="white" size="h1" />
+            <Heading title={`Trusted by${space}`} color="white" size="h1" />
           </div>
           <div>
-            <Heading title="1000+ " color="electric-green" size="h1" />
+            <Heading title={`1000+${space}`} color="electric-green" size="h1" />
           </div>
           <div>
             <Heading title="companies." color="white" size="h1" />

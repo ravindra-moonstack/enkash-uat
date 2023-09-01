@@ -3,7 +3,7 @@
 
 .mobile_modal {
   background-color: $color-white;
-  height: 100vh;
+  height: 100%;
   ul {
     list-style-type: none;
     padding: 0;
@@ -21,6 +21,14 @@
       line-height: 20px;
     }
   }
+}
+
+.underline_text {
+  font-size: 25px;
+  line-height: 30px;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 8px;
 }
 
 .line {

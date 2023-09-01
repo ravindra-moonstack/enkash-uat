@@ -1,10 +1,11 @@
-import Image from "next/image";
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import utmSources from "@/constant/utm-source";
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import motherProducts from "@/constant/products/mother-products";
 import SubProductListView from "./sub-product-list-view";
+import resources from "@/constant/resources";
+import solutions from "@/constant/solutions";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
@@ -15,16 +16,11 @@ interface ProductListViewProps {
   currentStep: number;
 }
 
-const ProductListView = ({
-  products,
-  setCurrentStep,
-  currentStep,
-}: ProductListViewProps) => {
+const ProductListView = ({ products }: ProductListViewProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
-
   return (
     <div className={`w-100 absolute z-10 bg-indi-volt`}>
-      {currentStep === 2 && (
+      {selectedItemIndex == null && (
         <div className={`${styles.mobile_modal} `}>
           <div className="list">
             <div className={styles.line}></div>
@@ -35,7 +31,7 @@ const ProductListView = ({
                     key={item.name}
                     className={`py-4 px-4`}
                     onClick={() => {
-                      setCurrentStep(3);
+                      setSelectedItemIndex(index);
                     }}
                   >
                     <div className="d-flex flex-column">
@@ -60,27 +56,29 @@ const ProductListView = ({
         </div>
       )}
 
-      {currentStep === 3 && (
+      {selectedItemIndex === 0 && (
         <SubProductListView
+          setSelectedItemIndex={selectedItemIndex}
           type="mother"
           products={motherProducts}
-          setSelectedItemIndex={selectedItemIndex}
         />
       )}
-      {/* {currentStep === 3 && selectedItemIndex === 1 && (
+
+      {selectedItemIndex === 1 && (
         <SubProductListView
+          setSelectedItemIndex={selectedItemIndex}
           type="solutions"
           products={solutions}
-          setSelectedItemIndex={selectedItemIndex}
         />
       )}
-      {currentStep === 3 && selectedItemIndex === 3 && (
+
+      {selectedItemIndex === 2 && (
         <SubProductListView
+          setSelectedItemIndex={selectedItemIndex}
           type="resources"
           products={resources}
-          setSelectedItemIndex={selectedItemIndex}
         />
-      )} */}
+      )}
     </div>
   );
 };

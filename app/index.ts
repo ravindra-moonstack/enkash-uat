@@ -5,6 +5,7 @@ export { default as numberTwo } from "./img/number-two.png";
 export { default as numberThree } from "./img/number-three.png";
 export { default as stack } from "./img/stack.png";
 export { default as dashboard } from "./img/dashboard.png";
+export { default as dashboardTwo } from "./img/dashboard-two.png";
 export { default as iphoneDashboard } from "./img/iphone-dashboard.png";
 export { default as salesDashboard } from "./img/sales-dashboard.png";
 export { default as automateIcon } from "./img/automate-icon.png";
@@ -24,5 +25,10 @@ export { default as paymentAndCardSummit } from "./img/payment-and-card-summit.p
 export { default as nasscom } from "./img/nasscom.png";
 export { default as testimonials } from "./img/testimonials.png";
 export { default as userImg } from "./img/user-img.png";
-
 export { default as whiteArrow } from "./img/white-arrow.png";
+export { default as axisBankLogo } from "./img/axis-bank-logo.png";
+export { default as iciciBankLogo } from "./img/icici-bank-logo.png";
+export { default as rupayLogo } from "./img/rupay-logo.png";
+export { default as sbmLogo } from "./img/sbm-logo.png";
+export { default as visaLogo } from "./img/visa-logo.png";
+

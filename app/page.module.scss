@@ -34,7 +34,12 @@
       padding-right: 30px;
       background: transparent;
       border: none;
+      color: $color-white;
+      &:focus {
+        outline: none;
+      }
     }
+
     ::placeholder {
       color: $color-white;
     }
@@ -45,32 +50,27 @@
   overflow: hidden;
   width: auto;
   position: relative;
-  background-color: $color-white;
   .iphone_img {
     position: absolute;
-    right: 400px;
-    top: 80px;
+    bottom: 70px;
   }
   .desktop_img {
     position: absolute;
-    right: -500px;
-    top: 0;
+    height: 600px;
+    right: 0px;
+    bottom: 70px;
   }
 }
 
-.fifth_row {
-}
-
-.sixth_row {
-  background-color: $color-white;
-}
-
 .seventh_row {
-  background-color: $color-white;
+  .card {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
   .card_container {
     padding: 30px;
     background: $color-indi-volt;
-    width: 60%;
+    width: 50%;
   }
   img {
     width: 50%;
@@ -79,37 +79,7 @@
   }
 }
 
-.eigth_row {
-  background-color: $color-white;
-}
-
-.ninth_row {
-  background-color: $color-white;
-}
-
-.tenth_row {
-  background-color: $color-white;
-}
-
-.eleventh_row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.twelfth_row {
-  background-color: $color-white;
-  background-color: $color-white;
-}
-
-.thirteenth_row {
-  background-color: $color-white;
-}
-
 .fourteenth_row {
-  background-color: $color-white;
   .box {
     border: 2px solid $color-black;
     border-radius: 20px;

@@ -52,7 +52,7 @@ const SubProductListView = (props: {
     <div className={`w-100 absolute z-10 bg-indi-volt`}>
       <div className={styles.mobile_modal}>
         <li>
-          <div className="d-flex flex-column justify-content-center px-4">
+          <div className="d-flex flex-column justify-content-center px-4 py-2">
             <div className={styles.title}>{currentHeading?.name}</div>
             <div className={styles.description}>
               {currentHeading?.description}
@@ -70,7 +70,7 @@ const SubProductListView = (props: {
               >
                 <li>
                   <div
-                    className={`mt-3 ${styles.title} ${
+                    className={`my-3 ${styles.underline_text} ${
                       activeSubtitleIndex === index
                         ? "color-equity-blue"
                         : "color-secondry-grey"

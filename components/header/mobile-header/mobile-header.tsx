@@ -46,7 +46,7 @@ const MobileHeader = () => {
                       setCurrentStep(2);
                     }}
                   >
-                    {item.name}
+                    <div className={styles.title}> {item.name}</div>
                     {index !== 2 && (
                       <>
                         <Image src={forwardArrowBlue} alt="arrow down icon" />
@@ -62,8 +62,8 @@ const MobileHeader = () => {
           <div className="d-flex justify-content-end">
             <Image
               src={productModalEmptyStateImg}
-              width={320}
-              height={200}
+              height={450}
+              width={1200}
               alt="product empty state image"
             />
           </div>

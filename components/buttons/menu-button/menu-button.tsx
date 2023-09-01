@@ -3,7 +3,7 @@ import styles from "../button.module.scss";
 export interface ButtonProps {
   isDisabled?: boolean;
   title: string;
-  theme: "light" | "dark" | "secondary";
+  theme: "light" | "dark" | "disabled";
 }
 
 const MenuButton = ({ isDisabled, title, theme = "dark" }: ButtonProps) => {
