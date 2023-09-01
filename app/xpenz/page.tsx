@@ -176,7 +176,7 @@ const xpenz = () => {
         </div>
       </div>
       <div className="row bg-white row-padding">
-        <div className="d-flex justify-content-center">
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
           <Heading title={`EnKash does${space}`} size="h1" color="black" />
           <Heading
             title={`the heavy lifting${space}`}
@@ -238,8 +238,10 @@ const xpenz = () => {
         </div>
       </div>
       <div className="row eigth_row bg-white row-padding">
-        <div className="col-12 d-flex flex-column flex-md-row justify-content-evenly mt-3">
-          <div className="mb-4 md:mb-0">
+        <div
+          className={`col-12 d-flex flex-md-row justify-content-evenly mt-3 ${styles.scroll_container}`}
+        >
+          <div className="me-4 md:me-0">
             <GetStartedCard
               title1="Digital Receipt Management"
               title2=""
@@ -247,7 +249,7 @@ const xpenz = () => {
             for your employees. Scan or photograph receipts, and upload them for immediate approvals."
             />
           </div>
-          <div className="mb-4 md:mb-0">
+          <div className="me-4 md:me-0">
             <GetStartedCard
               title1="Approval Process"
               title2=""
@@ -255,7 +257,7 @@ const xpenz = () => {
              Plan your cash flow better, optimize savings, and accelerate your reimbursement process."
             />
           </div>
-          <div className="mb-4 md:mb-0">
+          <div className="me-4 md:me-0">
             <GetStartedCard
               title1="Departmental Hierarchy"
               title2=""

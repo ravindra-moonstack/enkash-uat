@@ -63,3 +63,9 @@
     }
   }
 }
+
+.scroll_container {
+  width: 100%;           
+  overflow-x: auto;     
+  white-space: nowrap;  
+}
