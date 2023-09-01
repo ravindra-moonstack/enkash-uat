@@ -1,4 +1,5 @@
 @import "../../styles/variables";
+@import "../../styles/mixin";
 
 .home_container {
   padding-top: 100px;
@@ -15,12 +16,21 @@
     background: url(./img/blue-bg.png);
     background-size: 100% 90%;
     background-repeat: no-repeat;
-    padding: 100px;
+    padding: 20px;
+    @include bp-md {
+      padding: 100px;
+    }
   }
+
   .right_row {
-    background: url(./img/laptop-screen.png) -100px center;
+    background: url(./img/laptop-screen.png) center;
     background-repeat: no-repeat;
     background-size: contain;
-    padding: 120px;
+    padding: 30px;
+    width: 100%;
+    @include bp-md {
+      background: url(./img/laptop-screen.png) -100px center;
+      padding: 120px;
+    }
   }
 }

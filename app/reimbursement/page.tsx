@@ -9,21 +9,19 @@ import {
   bar,
   blueArrowBackward,
   blueArrowForward,
-  laptopScreen,
   reimbursementCard,
   reimbursementDashboard,
   whiteArrow,
 } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import Head from "next/head";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 
 const reimbursement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="first_row row row-padding color-white">
-        <div className="col-6 d-flex flex-column">
+        <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-4">
             <Heading title="X" color="rainy-blue" size="h1" />
             <Heading title="penz | Reimbursements" size="h1" />
@@ -49,17 +47,20 @@ const reimbursement = () => {
               size="h5"
             />
           </div>
-          <div className="my-5">
-            <PrimaryButton title="Enkash Now!" theme="theme-blue" />
-            <span className="mx-2"></span>
-            <SecondryButton title="Book a Demo" actionImage={whiteArrow} />
+          <div className="my-5 d-flex flex-row justify-content-start align-items-center">
+            <div className="me-2">
+              <PrimaryButton title="Enkash Now!" theme="theme-blue" />
+            </div>
+            <div>
+              <SecondryButton title="Book a Demo" actionImage={whiteArrow} />
+            </div>
           </div>
         </div>
-        <div className="col-6 d-flex justify-content-center">
+        <div className="col-12 col-md-6 d-flex justify-content-center">
           <Image
             src={reimbursementDashboard}
             alt="reimbursement dashboard"
-            width={600}
+            className="img-fluid p-5"
           />
         </div>
       </div>
@@ -67,7 +68,7 @@ const reimbursement = () => {
         <EnkashWay />
       </div>
       <div className="third-row row d-flex bg-white row-padding-top-none">
-        <div className="col-12 d-flex justify-content-center">
+        <div className="col-12 d-flex justify-content-center text-center">
           <Heading
             title="Streamline Your Reimbursement Process"
             color="equity-blue"
@@ -77,41 +78,50 @@ const reimbursement = () => {
         <div className="col-12 d-flex justify-content-center mb-5">
           <Heading title="with Automated Solutions." color="black" size="h1" />
         </div>
-        <div className="col-12 d-flex justify-content-evenly mt-3">
-          <GetStartedCard
-            title1="Automated Processes"
-            title2=""
-            description="A digitized end-to-end solution, automate checking, approvals,
+        <div className="col-12 d-flex flex-column flex-md-row justify-content-evenly mt-3">
+          <div className="mb-2 mb-md-0">
+            <GetStartedCard
+              title1="Automated Processes"
+              title2=""
+              description="A digitized end-to-end solution, automate checking, approvals,
              invoice generation and submission to ensure speed and accuracy."
-          />
-          <GetStartedCard
-            title1="Better Documentation"
-            title2=""
-            description="Ensure employee compliance with easy-to-use capture modes which 
+            />
+          </div>
+          <div className="mb-2 mb-md-0">
+            <GetStartedCard
+              title1="Better Documentation"
+              title2=""
+              description="Ensure employee compliance with easy-to-use capture modes which 
             captures payments made on behalf of the business in a few simple steps"
-          />
-          <GetStartedCard
-            title1="Real time tracking"
-            title2=""
-            description="Track spends made on behalf of the business by employees in real time."
-          />
+            />
+          </div>
+          <div className="mb-2 mb-md-0">
+            <GetStartedCard
+              title1="Real time tracking"
+              title2=""
+              description="Track spends made on behalf of the business by employees in real time."
+            />
+          </div>
         </div>
         <div className="col-12 d-flex justify-content-center mt-4">
-          <Image src={bar} alt="progress bar" width={1200} />
+          <Image src={bar} alt="progress bar" className="img-fluid" />
         </div>
       </div>
-      <div className={`row d-flex row-padding ${styles.fourth_row}`}>
-        <div className="col-12">
+      <div className={`row ${styles.fourth_row}`}>
+        <div className="col-12 text-center">
           <Heading
             title="EnKash Makes Your Business’ Reimbursement"
             color="white"
             size="h1"
           />
         </div>
-        <div className="col-12 d-flex justify-content-center">
+        <div className="col-12 text-center">
           <Heading title="Process Effortless." color="rainy-blue" size="h1" />
         </div>
-        <div className={`col-6 mt-5 d-flex flex-column ${styles.left_row}`}>
+
+        <div
+          className={`col-12 col-md-6 mt-5 d-flex flex-column ${styles.left_row}`}
+        >
           <Heading
             title="How do Reimbursements work?"
             color="white"
@@ -128,10 +138,10 @@ const reimbursement = () => {
           </div>
         </div>
         <div
-          className={`col-6 mt-5 d-flex flex-column justify-content-center  ${styles.right_row}`}
+          className={`col-12 col-md-6 mt-5 d-flex flex-column justify-content-center ${styles.right_row}`}
         >
           <Image
-            className="mb-4"
+            className="mb-4 img-fluid"
             src={reimbursementCard}
             alt="reimbursement card image"
           />

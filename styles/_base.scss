@@ -1,5 +1,5 @@
-@import "_variables.scss";
-@import "_mixin.scss";
+@import "./variables";
+@import "./mixin";
 
 body {
   font-family: var(--font-poppins);
@@ -147,7 +147,7 @@ body {
   color: $color-slate-grey;
 }
 
-.color-pale-grey{
+.color-pale-grey {
   color: $color-pale-grey;
 }
 
@@ -158,30 +158,51 @@ body {
 /* Padding Classes */
 
 .row-padding {
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  @include bp-md {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
 }
 
 .row-padding-bottom-none {
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 16px;
   padding-bottom: 0px;
+  @include bp-md {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 80px;
+    padding-bottom: 0px;
+  }
 }
 
 .row-padding-top-none {
-  padding-left: 100px;
-  padding-right: 100px;
-  padding-top: 00px;
-  padding-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 0px;
+  padding-bottom: 16px;
+  @include bp-md {
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 0px;
+    padding-bottom: 80px;
+  }
 }
 
 .row-padding-x-only {
-  padding-left: 100px;
-  padding-right: 100px;
-
+  padding-left: 20px;
+  padding-right: 20px;
+  @include bp-md {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
 }
 
 /* Gradient Classes */
@@ -213,22 +234,16 @@ body {
 
 /* Header Configuration */
 
-/* The styles that are not inside any mixins */
 .mobile-header {
-  display: flex;
+  display: block;
+  @include bp-sm {
+    display: none;
+  }
 }
 
 .desktop-header {
   display: none;
-}
-
-/* Styles for bp-md */
-@media (min-width: 768px) {
-  .mobile-header {
-    display: none;
-  }
-
-  .desktop-header {
-    display: flex;
+  @include bp-sm {
+    display: block;
   }
 }

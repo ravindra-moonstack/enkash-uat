@@ -8,15 +8,9 @@ const ContactUsCard = () => {
   return (
     <div className={styles.contact_us_body}>
       <div className="row">
-        <div className="col-6 d-flex justify-content-center">
-          {/* <Image
-            src={contactUsSpiralImg}
-            alt="mobile integrations"
-            width={400}
-          /> */}
-        </div>
+        <div className="col-6 d-flex justify-content-center"></div>
         <div className="col-6 d-flex flex-column justify-content-center">
-          <div className="mt-5">
+          <div className="md:mt-2 mt-5">
             <div>
               <Heading
                 title="Couldn’t find what"
@@ -49,7 +43,7 @@ const ContactUsCard = () => {
               />
             </div>
           </div>
-          <div className="d-flex mt-3 mb-5">
+          <div className="d-flex mt-3 mb-5 md:mb-2">
             <PrimaryButton
               title="Contact Us"
               isDisabled={false}
