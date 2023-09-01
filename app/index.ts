@@ -31,4 +31,6 @@ export { default as iciciBankLogo } from "./img/icici-bank-logo.png";
 export { default as rupayLogo } from "./img/rupay-logo.png";
 export { default as sbmLogo } from "./img/sbm-logo.png";
 export { default as visaLogo } from "./img/visa-logo.png";
+export { default as desktopIphone } from "./img/desktop-iphone.png";
+
 

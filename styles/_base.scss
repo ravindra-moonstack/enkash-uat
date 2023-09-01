@@ -160,8 +160,8 @@ body {
 .row-padding {
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  padding-top: 26px;
+  padding-bottom: 26px;
   @include bp-md {
     padding-left: 100px;
     padding-right: 100px;
@@ -171,8 +171,8 @@ body {
 }
 
 .row-padding-bottom-none {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-top: 16px;
   padding-bottom: 0px;
   @include bp-md {
@@ -184,8 +184,8 @@ body {
 }
 
 .row-padding-top-none {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 30px;
+  padding-right: 30px;
   padding-top: 0px;
   padding-bottom: 16px;
   @include bp-md {

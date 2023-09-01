@@ -107,7 +107,7 @@ const reimbursement = () => {
           <Image src={bar} alt="progress bar" className="img-fluid" />
         </div>
       </div>
-      <div className={`row ${styles.fourth_row}`}>
+      <div className={`row ${styles.fourth_row} row-padding`}>
         <div className="col-12 text-center">
           <Heading
             title="EnKash Makes Your Business’ Reimbursement"
@@ -138,10 +138,10 @@ const reimbursement = () => {
           </div>
         </div>
         <div
-          className={`col-12 col-md-6 mt-5 d-flex flex-column justify-content-center ${styles.right_row}`}
+          className={`col-12  col-md-6 mt-5 d-flex flex-column justify-content-center ${styles.right_row}`}
         >
           <Image
-            className="mb-4 img-fluid"
+            className={`mb-4 img-fluid ${styles.card_img}`}
             src={reimbursementCard}
             alt="reimbursement card image"
           />

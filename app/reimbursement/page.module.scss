@@ -25,12 +25,17 @@
   .right_row {
     background: url(./img/laptop-screen.png) center;
     background-repeat: no-repeat;
-    background-size: contain;
     padding: 30px;
-    width: 100%;
     @include bp-md {
-      background: url(./img/laptop-screen.png) -100px center;
+      background: url(./img/laptop-screen.png) -60px center;
       padding: 120px;
+    }
+  }
+
+  .card_img {
+    width: 40px;
+    @include bp-md {
+      width: 100px;
     }
   }
 }

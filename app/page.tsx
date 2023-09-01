@@ -41,6 +41,7 @@ import {
   rupayLogo,
   sbmLogo,
   visaLogo,
+  desktopIphone,
 } from ".";
 import Heading from "@/components/heading/heading";
 import Head from "next/head";
@@ -93,7 +94,7 @@ const home = () => {
         className={`${styles.second_row} row d-flex justify-content-center align-items-center
        text-center color-white bg-indi-volt row-padding`}
       >
-        <div className={`col-12`}>
+        <div className={`col-12 mb-5`}>
           <div>
             <Heading
               title="3 Easy Steps to"
@@ -110,46 +111,37 @@ const home = () => {
               weight="normal"
             />
           </div>
-
-          <div className="d-flex justify-content-evenly align-items-center mt-5">
-            <div className="d-flex align-items-center">
-              <Image src={userPlus} alt="signup image"></Image>
-              <Image
-                className="ms-2"
-                src={numberOne}
-                alt="step one image"
-              ></Image>
-              <div className="ms-2">
-                <Heading title="Sign Up" size="h5" />
-              </div>
-            </div>
-            <div className="d-flex align-items-center">
-              <Image src={userTick} alt="signup image"></Image>
-              <Image
-                className="ms-2"
-                src={numberTwo}
-                alt="step one image"
-              ></Image>
-              <div className="ms-2">
-                <Heading title="Complete KYC Process" size="h5" />
-              </div>
-            </div>
-            <div className="d-flex align-items-center">
-              <Image src={stack} alt="signup image"></Image>
-              <Image
-                className="ms-2"
-                src={numberThree}
-                alt="step one image"
-              ></Image>
-              <div className="ms-2">
-                <Heading title="Get Started" size="h5" />
-              </div>
-            </div>
+        </div>
+        <div
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image src={userPlus} alt="signup image" width={90} height={90} />
+          <Image className="ms-5" src={numberOne} alt="step one image" />
+          <div className="ms-2">
+            <Heading title="Sign Up" size="h5" />
+          </div>
+        </div>
+        <div
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image src={userTick} alt="kyc image" width={90} height={90} />
+          <Image className="ms-5" src={numberTwo} alt="step one image" />
+          <div className="ms-2">
+            <Heading title="Complete KYC Process" size="h5" />
+          </div>
+        </div>
+        <div
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image src={stack} alt="get started image" width={90} height={90} />
+          <Image className="ms-5" src={numberThree} alt="step one image" />
+          <div className="ms-2">
+            <Heading title="Get Started" size="h5" />
           </div>
         </div>
         <div className="col-12 d-flex justify-content-center align-items-center">
           <div className={styles.email_box}>
-            <div className="me-4 w-full d-flex align-items-center">
+            <div className="w-full d-flex align-items-center">
               <input type="text" placeholder="Enter your email"></input>
             </div>
             <div>
@@ -159,27 +151,23 @@ const home = () => {
         </div>
       </div>
       <div
-        className={`third_row row color-white row-padding px-5 mt-5 ${styles.bg_traingle_stack}`}
+        className={`${styles.third_row} row color-white row-padding px-5 mt-5 ${styles.bg_traingle_stack}`}
       >
-        <div className="col-2"></div>
         <div
-          className={`col-8 d-flex flex-column justify-content-center align-items-center px-5`}
+          className={`col-md-12 col-4 d-flex flex-column justify-content-center align-items-center ${styles.action_container}`}
         >
-          <div className="mb-4 d-flex justify-content-evenly w-100">
+          <div className="d-flex flex-column flex-md-row justify-content-evenly w-100 mb-4">
             <MenuButton isDisabled={false} title="Manage" theme="dark" />
             <MenuButton isDisabled={false} title="Track" theme="disabled" />
             <MenuButton isDisabled={false} title="Customize" theme="disabled" />
             <MenuButton isDisabled={false} title="Automate" theme="disabled" />
           </div>
-
-          <Image
-            src={dashboard}
-            alt="enkash dashboard"
-            className="w-100"
-            height={500}
-          />
         </div>
-        <div className="col-2"></div>
+        <div
+          className={`col-md-12 col-8 d-flex flex-column align-items-center mb-4 ${styles.action_container}`}
+        >
+          <Image src={dashboard} alt="enkash dashboard" className="img-fluid" />
+        </div>
         <div className="col-12 d-flex justify-content-center align-items-center p-4 text-center">
           <div className="sub_heading mb-5">
             <div>
@@ -200,28 +188,40 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fourth_row} bg-white row`}>
-        <div className="col-6 d-flex flex-column justify-content-center align-items-center  row-padding">
+        <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center row-padding">
           <div>
-            <Heading title="Ultimate" color="black" size="h1" />
+            <Heading title="Ultimate" color="black" size="h1" weight="bold" />
             <div>
               <Heading
                 title={`productivity${space}`}
                 color="equity-blue"
                 size="h1"
+                weight="bold"
               />
-              <Heading title="and" color="black" size="h1" />
+              <Heading title="and" color="black" size="h1" weight="bold" />
             </div>
             <div>
               <Heading
                 title={`control${space}`}
                 color="equity-blue"
                 size="h1"
+                weight="bold"
               />
-              <Heading title="Now at" color="black" size="h1" />
+              <Heading title="Now at" color="black" size="h1" weight="bold" />
             </div>
             <div>
-              <Heading title={`your${space}`} color="equity-blue" size="h1" />
-              <Heading title="fingertips." color="equity-blue" size="h1" />
+              <Heading
+                title={`your${space}`}
+                color="equity-blue"
+                size="h1"
+                weight="bold"
+              />
+              <Heading
+                title="fingertips."
+                color="equity-blue"
+                size="h1"
+                weight="bold"
+              />
             </div>
           </div>
           <div className="d-flex flex-column my-5">
@@ -291,19 +291,14 @@ const home = () => {
             </div>
           </div>
         </div>
-        <div className="col-6 d-flex position-relative  row-padding">
+        <div className="col-md-6 col-12 d-flex position-relative row-padding">
           <Image
-            src={dashboardTwo}
+            src={desktopIphone}
             alt="enkash dashboard image"
             className={styles.desktop_img}
           />
-          <Image
-            src={iphoneDashboard}
-            alt="enkash dashboard mobile image"
-            className={styles.iphone_img}
-          />
         </div>
-        <div className="col-12 row-padding-x-only mb-3 ">
+        <div className="col-md-6 row-padding-x-only mb-3 ">
           <div>
             <Heading
               title={`Financial${space}`}
@@ -357,10 +352,14 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
-        <div className="col-6 d-flex mb-5">
-          <Image src={payablesImage} alt="payables image" />
+        <div className="col-md-6 col-12 d-flex px-5 mb-5 order-1 order-md-1">
+          <Image
+            src={payablesImage}
+            alt="payables image"
+            className="img-fluid"
+          />
         </div>
-        <div className="col-6 mb-5 px-5">
+        <div className="col-md-6 col-12 mb-5 px-5 order-2 order-md-2">
           <ExploreCard
             title="Payables"
             description=" Manage all outgoing expenses in one place. Our online platform
@@ -370,7 +369,7 @@ const home = () => {
             theme="green"
           />
         </div>
-        <div className="col-6 mt-5 px-5">
+        <div className="col-md-6 col-12 mt-5 px-5 px-5 order-4 order-md-3">
           <ExploreCard
             title="Receivables"
             description="EnKash empowers your business by providing intelligent
@@ -379,15 +378,23 @@ const home = () => {
             theme="green"
           />
         </div>
-        <div className="col-6 d-flex mt-5">
-          <Image src={receivableImage} alt="receivable image" />
+        <div className="col-md-6 col-12 d-flex px-5 mt-5 order-3 order-md-4">
+          <Image
+            src={receivableImage}
+            alt="receivable image"
+            className="img-fluid"
+          />
         </div>
       </div>
       <div className="sixth_row bg-white row d-flex row-padding-bottom-none">
-        <div className="col-6 d-flex mb-5 blue_grad_bg_one">
-          <Image src={expenseDashboard} alt="payables image" />
+        <div className="col-md-6 col-12 d-flex mb-5 blue_grad_bg_one">
+          <Image
+            src={expenseDashboard}
+            alt="payables image"
+            className="img-fluid"
+          />
         </div>
-        <div className="col-6 mb-5 px-5">
+        <div className="col-md-6 col-12 mb-5 px-5">
           <ExploreCard
             title="Expense Management"
             description="Gain control over your business spends with a complete overview
@@ -398,7 +405,9 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.seventh_row} bg-white row d-flex row-padding`}>
-        <div className={`d-flex col-12 flex-row ${styles.card}`}>
+        <div
+          className={`d-flex col-12 flex-column flex-md-row align-items-center ${styles.card}`}
+        >
           <div className={`d-flex flex-column ${styles.card_container}`}>
             <Heading
               title="Say yes to better"
@@ -426,7 +435,6 @@ const home = () => {
               />
             </div>
           </div>
-
           <Image src={teamImg} alt="office team image" />
         </div>
       </div>
@@ -448,7 +456,7 @@ const home = () => {
               weight="bolder"
             />
           </div>
-          <div className="mt-2">
+          <div className="mt-2 text-center">
             <Heading
               title="Leverage the power of purpose-based cards with smart controls."
               color="equity-blue"
@@ -458,25 +466,35 @@ const home = () => {
         </div>
       </div>
       <div className="ninth_row row bg-white row-padding-top-none">
-        <div className="col-6 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two">
-          <Image src={corporateCardsImg} width={350} alt="payables image" />
+        <div className="col-md-6 col-12 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two order-1 order-md-1">
+          <Image
+            src={corporateCardsImg}
+            width={350}
+            alt="payables image"
+            className="img-fluid"
+          />
         </div>
-        <div className="col-6 mb-5 px-5">
+        <div className="col-md-6 col-12 mb-5 px-5 order-2 order-md-2">
           <ExploreCard
             title="Corporate Cards"
             description="Issue cards for different purposes, and manage them all on a single platform with smart controls. Enable or disable spend categories as and when required."
             theme="blue"
           />
         </div>
-        <div className="col-6 mt-5 px-5">
+        <div className="col-md-6 col-12 mt-5 px-5 order-4 order-md-3">
           <ExploreCard
             title="DIY Card Module"
             description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
             theme="blue"
           />
         </div>
-        <div className="col-6 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two">
-          <Image src={diyCardsModuleImg} width={350} alt="receivable image" />
+        <div className="col-md-6 col-12 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two order-3 order-md-4">
+          <Image
+            src={diyCardsModuleImg}
+            width={350}
+            alt="receivable image"
+            className="img-fluid"
+          />
         </div>
       </div>
       <div className="tenth_row row bg-white row-padding-x-only">
@@ -486,8 +504,8 @@ const home = () => {
             <Heading title="Lounge" color="equity-blue" size="h1" />
           </div>
         </div>
-        <div className="col-6 d-flex flex-column mt-5">
-          <div className="d-flex">
+        <div className="col-md-6 col-12 d-flex flex-column mt-5">
+          <div className="d-flex justify-content-center justify-content-md-start">
             <div className="me-2">
               <MenuButton isDisabled={false} title="Voucher" theme="light" />
             </div>
@@ -496,7 +514,7 @@ const home = () => {
             </div>
             <MenuButton isDisabled={false} title="Incentive" theme="disabled" />
           </div>
-          <div className="d-flex mt-3">
+          <div className="d-flex mt-3 justify-content-center justify-content-md-start">
             <div className="me-2">
               <MenuButton
                 isDisabled={false}
@@ -506,7 +524,7 @@ const home = () => {
             </div>
             <MenuButton isDisabled={false} title="Offers" theme="disabled" />
           </div>
-          <div className="d-flex mt-3">
+          <div className="d-flex mt-3 text-md-start">
             <Heading
               title="200+ brand vouchers for corporate gifting. The more you spend, the
               more you’ll earn, and the closer you’ll get to unlocking more and
@@ -515,7 +533,7 @@ const home = () => {
               size="h5"
             />
           </div>
-          <div className="d-flex mt-3">
+          <div className="d-flex mt-3 justify-content-center justify-content-md-start">
             <PrimaryButton
               title="Get a Demo"
               isDisabled={false}
@@ -524,65 +542,68 @@ const home = () => {
             />
           </div>
         </div>
-        <div className="col-6 d-flex justify-content-center mt-5">
+        <div className="col-md-6 col-12 d-flex justify-content-center mt-5">
           <Image
             src={loyaltyLoungeMobileImg}
             alt="loyalty lounge image"
             width={300}
+            className="img-fluid"
           />
         </div>
       </div>
       <div
-        className="eleventh_row row row-padding d-flex justify-content-center 
-      align-content-center color-white text-center"
+        className={`row d-flex justify-content-center align-items-center
+       text-center color-white bg-indi-volt row-padding`}
       >
-        <div className={`col-12`}>
+        <div className={`col-12 mb-5`}>
           <div>
-            <Heading title="3 Easy Steps to" color="white" size="h2" />
+            <Heading
+              title="3 Easy Steps to"
+              color="white"
+              size="h2"
+              weight="bold"
+            />
           </div>
           <div>
-            <Heading title="Get Started with EnKash" color="white" size="h2" />
+            <Heading
+              title="Get Started with EnKash"
+              color="white"
+              size="h2"
+              weight="normal"
+            />
           </div>
-          <div className="d-flex justify-content-evenly align-items-center mt-5">
-            <div className="d-flex align-items-center">
-              <Image src={userPlus} alt="signup image"></Image>
-              <Image
-                className="ms-2"
-                src={numberOne}
-                alt="step one image"
-              ></Image>
-              <div className="ms-2">
-                <Heading title="Sign Up" size="h5" />
-              </div>
-            </div>
-            <div className="d-flex align-items-center">
-              <Image src={userTick} alt="signup image"></Image>
-              <Image
-                className="ms-2"
-                src={numberTwo}
-                alt="step one image"
-              ></Image>
-              <div className="ms-2">
-                <Heading title="Complete KYC Process" size="h5" />
-              </div>
-            </div>
-            <div className="d-flex align-items-center">
-              <Image src={stack} alt="signup image"></Image>
-              <Image
-                className="ms-2"
-                src={numberThree}
-                alt="step one image"
-              ></Image>
-              <div className="ms-2">
-                <Heading title="Get Started" size="h5" />
-              </div>
-            </div>
+        </div>
+        <div
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image src={userPlus} alt="signup image" width={90} height={90} />
+          <Image className="ms-5" src={numberOne} alt="step one image" />
+          <div className="ms-2">
+            <Heading title="Sign Up" size="h5" />
+          </div>
+        </div>
+        <div
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image src={userTick} alt="kyc image" width={90} height={90} />
+          <Image className="ms-5" src={numberTwo} alt="step one image" />
+          <div className="ms-2">
+            <Heading title="Complete KYC Process" size="h5" />
+          </div>
+        </div>
+        <div
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image src={stack} alt="get started image" width={90} height={90} />
+          <Image className="ms-5" src={numberThree} alt="step one image" />
+          <div className="ms-2">
+            <Heading title="Get Started" size="h5" />
           </div>
         </div>
       </div>
       <div className="twelfth_row row color-white bg-white row-padding">
-        <div className="d-flex justify-content-center align-items-center">
-          <div className="me-4">
+        <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
+          <div className="me-4 mb-4 md:mb-0">
             <GetStartedCard
               title1="Optimize Spending;"
               title2="save more."
@@ -590,7 +611,7 @@ const home = () => {
                platform & save countless working hours."
             />
           </div>
-          <div className="me-4">
+          <div className="me-4 mb-4 md:mb-0">
             <GetStartedCard
               title1="Total Visibility;"
               title2="smarter controls."
@@ -598,7 +619,7 @@ const home = () => {
                platform & save countless working hours."
             />
           </div>
-          <div>
+          <div className="me-4 mb-4 md:mb-0">
             <GetStartedCard
               title1="Convenient solutions to scale faster."
               title2="to scale faster."
@@ -609,14 +630,14 @@ const home = () => {
         </div>
       </div>
       <div className="thirteenth_row row row-padding-top-none bg-white">
-        <div className="col-6 d-flex justify-content-center mt-5 blue_grad_bg_three">
+        <div className="col-md-6 col-12 d-flex justify-content-center mt-5 blue_grad_bg_three">
           <Image
             src={mobileIntegration}
             alt="mobile integrations"
-            width={400}
+            className="img-fluid"
           />
         </div>
-        <div className="col-6 d-flex flex-column mt-5">
+        <div className="col-md-6 col-12 d-flex flex-column mt-5">
           <div className="mt-3">
             <div>
               <Heading
@@ -648,9 +669,9 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fourteenth_row} row bg-white row-padding`}>
-        <div className={`d-flex ${styles.box}`}>
+        <div className={`d-flex flex-column flex-md-row ${styles.box}`}>
           <div
-            className={`d-flex flex-column justify-content-between  ${styles.box_item}`}
+            className={`d-flex flex-column justify-content-between ${styles.box_item}`}
           >
             <div className="mb-5">
               <Heading title="Startups to Watch" color="black" size="h5" />
@@ -708,7 +729,7 @@ const home = () => {
           </div>
         </div>
         <div
-          className={`col-6 d-flex flex-column  ${styles.testimonials_section}`}
+          className={`col-md-6 col-12 d-flex flex-column  ${styles.testimonials_section}`}
         >
           <div>
             <Heading title="NTech Media" color="electric-green" size="h5" />
@@ -730,11 +751,15 @@ const home = () => {
             </div>
           </div>
         </div>
-        <div className="col-6">
-          <Image src={testimonials} alt="enkash testimonials" width={600} />
+        <div className="col-12 col-md-6">
+          <Image
+            src={testimonials}
+            alt="enkash testimonials"
+            className="img-fluid"
+          />
         </div>
       </div>
-      <div className={`row ${styles.sixteenth_row}`}>
+      <div className={`row bg-white ${styles.sixteenth_row}`}>
         <ContactUsCard />
       </div>
     </div>

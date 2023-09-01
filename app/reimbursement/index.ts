@@ -6,4 +6,3 @@ export { default as laptopScreen } from "./img/laptop-screen.png";
 export { default as blueBg } from "./img/laptop-screen.png";
 export { default as reimbursementCard } from "./img/reimbursement-card.png";
 export { default as whiteArrow } from "./img/white-arrow.png";
-

@@ -1,4 +1,5 @@
 @import "/styles/variables";
+@import "/styles/mixin";
 
 .home_container {
   padding-top: 100px;
@@ -30,18 +31,37 @@
     width: fit-content;
     padding: 10px 30px;
     input {
-      padding-left: 30px;
-      padding-right: 30px;
+      padding: 0;
       background: transparent;
       border: none;
       color: $color-white;
       &:focus {
         outline: none;
       }
+      @include bp-md {
+        padding-left: 30px;
+        padding-right: 30px;
+      }
     }
-
     ::placeholder {
       color: $color-white;
+    }
+  }
+  .steps {
+    margin-bottom: 10px;
+    margin-left: 80px;
+    @include bp-md {
+      margin: 0;
+    }
+  }
+}
+
+.third_row {
+  .action_container {
+    padding-left: 10px;
+    @include bp-md {
+      padding-left: 200px;
+      padding-right: 200px;
     }
   }
 }
@@ -50,22 +70,23 @@
   overflow: hidden;
   width: auto;
   position: relative;
-  .iphone_img {
-    position: absolute;
-    bottom: 70px;
-  }
   .desktop_img {
-    position: absolute;
-    height: 600px;
-    right: 0px;
-    bottom: 70px;
+    @include bp-md {
+      width: 600px;
+      height: 600px;
+      position: absolute;
+      right: 0px;
+    }
   }
 }
 
 .seventh_row {
   .card {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding: 0;
+    @include bp-md {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
   }
   .card_container {
     padding: 30px;
@@ -75,7 +96,10 @@
   img {
     width: 50%;
     height: auto;
-    margin-left: -10px;
+    margin-top: -10px;
+    @include bp-md {
+      margin-left: -10px;
+    }
   }
 }
 
@@ -88,17 +112,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px 30px;
-    width: 33%;
+    padding: 0;
+    @include bp-md {
+      padding: 20px 30px;
+      width: 33%;
+    }
   }
 }
 
 .fifthteen_row {
   .testimonials_section {
-    padding: 100px;
-  }
-}
+    padding: 20px;
 
-.sixteenth_row {
-  background-color: $color-white;
+    @include bp-md {
+      padding: 100px;
+    }
+  }
 }

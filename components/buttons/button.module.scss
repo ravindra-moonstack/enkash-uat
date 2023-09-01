@@ -2,11 +2,17 @@
 @import "/styles/mixin";
 
 $button-padding: 5px 15px 5px 15px;
+$font-size: 16px;
+$font-size-mobile: 12px;
 
 .primary_button {
   border-radius: 20px;
   border: none;
   padding: $button-padding;
+  font-size: $font-size-mobile;
+  @include bp-md {
+    font-size: $font-size;
+  }
 }
 
 .secondry_button {
@@ -15,12 +21,21 @@ $button-padding: 5px 15px 5px 15px;
   padding: $button-padding;
   background-color: $color-indi-volt;
   color: $color-white;
+  font-size: $font-size-mobile;
+  @include bp-md {
+    font-size: $font-size;
+  }
 }
 
 .menu_button {
   border-radius: 20px;
-  padding: 5px 20px;
+  padding: 5px;
   border: none;
+  font-size: $font-size-mobile;
+  @include bp-md {
+    padding: 5px 20px;
+    font-size: $font-size;
+  }
 
   &.theme-light {
     border: 1px solid $color-black;
