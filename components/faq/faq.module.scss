@@ -3,32 +3,63 @@
 // customAccordionStyles.scss
 
 .faq_page {
+  position: relative;
   background-color: white;
   color: black;
+  padding: 10vh 10vh;
+  z-index: 1;
+  max-width: 100vw;
+  //SVG BOTTOM
+  &::before {
+    content: ""; /* Create a pseudo-element to hold the SVG */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px; /* Adjust width as needed */
+    height: 100px; /* Adjust height as needed */
+    z-index: -1; /* Place the SVG behind the content */
+
+    /* Insert your SVG as a background image */
+    background: url(./img/group.png) no-repeat;
+    /* You can use background-size, background-position, and other properties to adjust the appearance of the SVG */
+  }
 }
 
+.accordianContentContainer {
+  margin-top: 30px;
+}
+
+.customMainHeading {
+  display: flex;
+  justify-content: center;
+}
 .customAccordion {
   width: 100%;
-  max-width: 600px; // Adjust this to your desired width
-  margin: 0 auto;
+  max-width: 1233px; // Adjust this to your desired width
+  margin: 100px auto;
+  background-color: none;
 }
 
-.accordionItem {
-  border: 1px solid #ddd;
-  margin-bottom: 10px;
-  border-radius: 4px;
+.customAccordianHeading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.customAccordionItem {
+  border-bottom: 3px solid blue;
+  padding: 40px 10px;
+  cursor: pointer;
 }
 
 .accordionHeader {
-  background-color: #f8f9fa;
-  padding: 10px;
+  background-color: none;
+  padding: 0 10px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   &:hover {
-    background-color: #e9ecef;
+    background-color: none;
   }
 
   .accordionButton {
@@ -38,7 +69,7 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
-    color: #333;
+    color: white;
     font-weight: bold;
   }
 }
@@ -46,30 +77,41 @@
 .accordionCollapse {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease-in-out;
+  transition: max-height 0.4s ease-in-out;
 
   &.show {
     max-height: 1000px; // Adjust this value based on your content
   }
 }
 
+.questionContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
 .accordionBody {
   padding: 10px;
-  background-color: #f8f9fa;
+  background-color: none;
 }
 
 .active {
   .accordionButton {
-    color: #007bff; // Color for active FAQ
+    color: none; // Color for active FAQ
   }
 }
 
 .arrowIcon {
   display: inline-block;
-  margin-left: 8px;
+  margin-right: 8px;
   transition: transform 0.3s ease-in-out;
 }
 
 .active .arrowIcon {
   transform: rotate(180deg);
+}
+
+.mt-5 {
+  margin-top: 1vh;
 }

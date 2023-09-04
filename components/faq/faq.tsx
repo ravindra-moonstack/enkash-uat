@@ -1,10 +1,8 @@
 "use client";
 import React, { useState } from "react";
 import styles from "./faq.module.scss";
-import H1 from "../heading/h1";
-import H4 from "../heading/h4";
+import Heading from "../heading/heading";
 import { arrowDown } from ".";
-
 interface FaqBulletPoint {
   text: string;
   subpoints?: string[];
@@ -46,40 +44,46 @@ const FaqComponent: React.FC<FaqProps> = ({ faqData }) => {
 
   return (
     <div className={styles.faq_page}>
-      <H1 title="Got Questions?" color="equity-blue" />
-      <div className="container mt-5 d-flex justify-content-center w-80">
+      <div className={styles.customMainHeading}>
+        <Heading title="Got Questions?" color="equity-blue" size="h1" />
+      </div>
+      <div
+        className={`container mt-5 d-flex justify-content-center ${styles.accordianContentContainer}`}
+      >
         <div>
-          <H4 title={faqData.heading} color="black" bold={true} />
+          <div className={styles.customAccordianHeading}>
+            <Heading title={faqData.heading} color="black" size="h4" />
+          </div>
           <div className={styles.customAccordion} id="faqAccordion">
             {faqData.faqs.map((faq, faqIndex) => (
-              <div className={styles.accordionItem} key={faqIndex}>
-                <div
-                  className={styles.accordionHeader}
-                  onClick={() => toggleFaq(faqIndex)}
-                >
-                  <button
-                    className={`${styles.accordionButton} ${
-                      activeFaqIndex === faqIndex ? styles.active : ""
-                    }`}
-                  >
-                    {faq.question}
-                    <span className={styles.arrowIcon}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="12"
-                        height="12"
-                        fill="currentColor"
-                        className={`bi bi-chevron-${
-                          activeFaqIndex === faqIndex ? "up" : "down"
-                        }`}
-                        viewBox="0 0 16 16"
-                      >
-                        <path d="M4.293 8.293a1 1 0 0 1 1.414 0L8 10.586l2.293-2.293a1 1 0 1 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z" />
-                      </svg>
-                    </span>
-                  </button>
+              <div
+                className={styles.customAccordionItem}
+                key={faqIndex}
+                onClick={() => toggleFaq(faqIndex)}
+              >
+                <div className={styles.accordionHeader}>
+                  <div className={styles.questionContainer}>
+                    <Heading title={faq.question} color="black" size="h4" />
+                    <div
+                      className={`${
+                        activeFaqIndex === faqIndex ? styles.active : ""
+                      }`}
+                    >
+                      <span className={styles.arrowIcon}>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="35"
+                          height="35"
+                          fill="currentColor"
+                          className="bi bi-chevron-down"
+                          viewBox="0 0 16 16"
+                        >
+                          <path d="M3.646 5.646a.5.5 0 0 1 .708 0L8 9.293l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z" />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
                 </div>
-
                 <div
                   className={`${styles.accordionCollapse} ${
                     activeFaqIndex === faqIndex ? styles.show : ""
@@ -88,7 +92,11 @@ const FaqComponent: React.FC<FaqProps> = ({ faqData }) => {
                   <div className={styles.accordionBody}>
                     {faq.answer.paragraphs.map((paragraph, paragraphIndex) => (
                       <div key={paragraphIndex}>
-                        <p>{paragraph.text}</p>
+                        <Heading
+                          title={paragraph.text}
+                          color="black"
+                          size="h5"
+                        />
                         {paragraph.bulletPoints && (
                           <ul>
                             {paragraph.bulletPoints.map(
