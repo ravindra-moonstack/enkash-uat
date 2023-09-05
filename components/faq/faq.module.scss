@@ -1,6 +1,5 @@
 @import "../../styles/mixin";
 @import "../../styles/variables";
-// customAccordionStyles.scss
 
 .faq_page {
   position: relative;
@@ -15,43 +14,42 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100px; /* Adjust width as needed */
-    height: 100px; /* Adjust height as needed */
-    z-index: -1; /* Place the SVG behind the content */
-
-    /* Insert your SVG as a background image */
+    width: 100px; 
+    height: 100px; 
+    z-index: -1; 
     background: url(./img/group.png) no-repeat;
-    /* You can use background-size, background-position, and other properties to adjust the appearance of the SVG */
   }
 }
 
-.accordianContentContainer {
-  margin-top: 30px;
-}
-
-.customMainHeading {
+.faq_page_title {
   display: flex;
   justify-content: center;
 }
-.customAccordion {
+
+.faq_container {
+  margin-top: 30px;
+}
+
+.faq_heading {
+  text-align: center;
+  margin-bottom: 70px;
+}
+.faq_list {
   width: 100%;
-  max-width: 1233px; // Adjust this to your desired width
+  max-width: 1233px;
   margin: 100px auto;
   background-color: none;
 }
 
-.customAccordianHeading {
-  text-align: center;
-  margin-bottom: 70px;
-}
 
-.customAccordionItem {
+
+.faq_item {
   border-bottom: 3px solid blue;
   padding: 40px 10px;
   cursor: pointer;
 }
 
-.accordionHeader {
+.faq_header {
   background-color: none;
   padding: 0 10px;
   cursor: pointer;
@@ -62,44 +60,28 @@
     background-color: none;
   }
 
-  .accordionButton {
-    background: none;
-    border: none;
-    padding: 0;
-    font: inherit;
-    cursor: pointer;
-    outline: inherit;
-    color: white;
-    font-weight: bold;
-  }
 }
 
-.accordionCollapse {
+.faq_collapse {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.4s ease-in-out;
 
   &.show {
-    max-height: 1000px; // Adjust this value based on your content
+    max-height: 1000px;
   }
 }
 
-.questionContainer {
+.faq_question {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
 }
 
-.accordionBody {
+.faq_body {
   padding: 10px;
   background-color: none;
-}
-
-.active {
-  .accordionButton {
-    color: none; // Color for active FAQ
-  }
 }
 
 .arrowIcon {

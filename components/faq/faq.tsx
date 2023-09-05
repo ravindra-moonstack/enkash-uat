@@ -44,25 +44,25 @@ const FaqComponent: React.FC<FaqProps> = ({ faqData }) => {
 
   return (
     <div className={styles.faq_page}>
-      <div className={styles.customMainHeading}>
+      <div className={styles.faq_page_title}>
         <Heading title="Got Questions?" color="equity-blue" size="h1" />
       </div>
       <div
-        className={`container mt-5 d-flex justify-content-center ${styles.accordianContentContainer}`}
+        className={`container mt-5 d-flex justify-content-center ${styles.faq_container}`}
       >
         <div>
-          <div className={styles.customAccordianHeading}>
+          <div className={styles.faq_heading}>
             <Heading title={faqData.heading} color="black" size="h4" />
           </div>
-          <div className={styles.customAccordion} id="faqAccordion">
+          <div className={styles.faq_list} id="faq_list">
             {faqData.faqs.map((faq, faqIndex) => (
               <div
-                className={styles.customAccordionItem}
+                className={styles.faq_item}
                 key={faqIndex}
                 onClick={() => toggleFaq(faqIndex)}
               >
-                <div className={styles.accordionHeader}>
-                  <div className={styles.questionContainer}>
+                <div className={styles.faq_header}>
+                  <div className={styles.faq_question}>
                     <Heading title={faq.question} color="black" size="h4" />
                     <div
                       className={`${
@@ -85,11 +85,11 @@ const FaqComponent: React.FC<FaqProps> = ({ faqData }) => {
                   </div>
                 </div>
                 <div
-                  className={`${styles.accordionCollapse} ${
+                  className={`${styles.faq_collapse } ${
                     activeFaqIndex === faqIndex ? styles.show : ""
                   }`}
                 >
-                  <div className={styles.accordionBody}>
+                  <div className={styles.faq_body}>
                     {faq.answer.paragraphs.map((paragraph, paragraphIndex) => (
                       <div key={paragraphIndex}>
                         <Heading
