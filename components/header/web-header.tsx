@@ -24,7 +24,6 @@ const loginUrl = "https://home.enkash.com/login";
 const WebHeader = () => {
   const getArrowImageSource = (index: number) => {
     if (hoveredIndex === index) {
-      //replace blue logo
       return arrowDownBlack;
     }
 

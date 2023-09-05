@@ -44,14 +44,16 @@ const ProductModal = () => {
         </div>
       )}
       {hoveredProductIndex === 0 && (
-        <SubProduct subProducts={olympusProducts} />
+        <SubProduct subProducts={olympusProducts} index={0} />
       )}
       {hoveredProductIndex === 1 && (
-        <SubProduct subProducts={freedomProducts} />
+        <SubProduct subProducts={freedomProducts} index={1} />
       )}
-      {hoveredProductIndex === 2 && <SubProduct subProducts={xpenzProducts} />}
+      {hoveredProductIndex === 2 && (
+        <SubProduct subProducts={xpenzProducts} index={2} />
+      )}
       {hoveredProductIndex === 3 && (
-        <SubProduct subProducts={loyaltyLoungeProducts} />
+        <SubProduct subProducts={loyaltyLoungeProducts} index={3} />
       )}
     </div>
   );

@@ -13,6 +13,21 @@ const SubProduct = (props: any) => {
     (group: any) => group.subtitle === activeSubtitle
   );
 
+  const animationClassName = (() => {
+    switch (props.index) {
+      case 0:
+        return styles.top_to_bottom;
+      case 1:
+        return styles.right_to_left;
+      case 2:
+        return styles.right_to_left;
+      case 3:
+        return styles.right_to_left;
+      default:
+        return "";
+    }
+  })();
+
   if (!activeGroup) return null;
 
   return (
@@ -38,7 +53,9 @@ const SubProduct = (props: any) => {
 
         {/* Render content based on active subtitle */}
         <div
-          className={`d-flex ${props.subProducts.length > 1 ? "mt-4" : "mt-2"}`}
+          className={`d-flex ${animationClassName} ${
+            props.subProducts.length > 1 ? "mt-4" : "mt-2"
+          }`}
         >
           <div className={styles.sub_products_container}>
             {activeGroup.list.map((product: any, index: any) => (

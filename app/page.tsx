@@ -41,7 +41,6 @@ import {
   sbmLogo,
   visaLogo,
   desktopIphone,
-  dashboardGif,
 } from ".";
 import Heading from "@/components/heading/heading";
 import FaqComponent from "@/components/faq/faq";
@@ -115,7 +114,7 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userPlus} alt="signup image" width={90} height={90} />
+          <Image src={userPlus} alt="signup image" className="img-fluid" />
           <Image className="ms-5" src={numberOne} alt="step one image" />
           <div className="ms-2">
             <Heading title="Sign Up" size="h5" />
@@ -124,7 +123,7 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userTick} alt="kyc image" width={90} height={90} />
+          <Image src={userTick} alt="kyc image" className="img-fluid" />
           <Image className="ms-5" src={numberTwo} alt="step one image" />
           <div className="ms-2">
             <Heading title="Complete KYC Process" size="h5" />
@@ -133,7 +132,7 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={stack} alt="get started image" width={90} height={90} />
+          <Image src={stack} alt="get started image" className="img-fluid" />
           <Image className="ms-5" src={numberThree} alt="step one image" />
           <div className="ms-2">
             <Heading title="Get Started" size="h5" />
@@ -151,7 +150,7 @@ const home = () => {
         </div>
       </div>
       <div
-        className={`${styles.third_row} row color-white row-padding px-5 mt-5 ${styles.bg_traingle_stack}`}
+        className={`${styles.third_row} row color-white row-padding-top-none px-5 ${styles.bg_traingle_stack}`}
       >
         <div
           className={`col-md-12 col-4 d-flex flex-column justify-content-center align-items-center ${styles.action_container}`}
@@ -166,11 +165,7 @@ const home = () => {
         <div
           className={`col-md-12 col-8 d-flex flex-column align-items-center mb-4 ${styles.action_container}`}
         >
-          <Image
-            src={dashboardGif}
-            alt="enkash dashboard"
-            className="img-fluid"
-          />
+          <Image src={dashboard} alt="enkash dashboard" className="img-fluid" />
         </div>
         <div className="col-12 d-flex justify-content-center align-items-center p-4 text-center">
           <div className="sub_heading mb-5">
@@ -580,7 +575,7 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userPlus} alt="signup image" width={90} height={90} />
+          <Image src={userPlus} alt="signup image" className="img-fluid" />
           <Image className="ms-5" src={numberOne} alt="step one image" />
           <div className="ms-2">
             <Heading title="Sign Up" size="h5" />
@@ -589,7 +584,7 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userTick} alt="kyc image" width={90} height={90} />
+          <Image src={userTick} alt="kyc image" className="img-fluid" />
           <Image className="ms-5" src={numberTwo} alt="step one image" />
           <div className="ms-2">
             <Heading title="Complete KYC Process" size="h5" />
@@ -598,7 +593,7 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={stack} alt="get started image" width={90} height={90} />
+          <Image src={stack} alt="get started image" className="img-fluid" />
           <Image className="ms-5" src={numberThree} alt="step one image" />
           <div className="ms-2">
             <Heading title="Get Started" size="h5" />
