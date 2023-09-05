@@ -6,6 +6,7 @@ export { default as arrowDownBlack } from "./img/arrow-down-black.png";
 export { default as vendorPayment } from "./img/vendor-payment.png";
 export { default as vendorPaymentFilled } from "./img/vendor-payment-filled.png";
 export { default as bulkPayout } from "./img/bulk-payout.png";
+export { default as bulkPayoutFilled } from "./img/bill-payment-filled.png";
 export { default as taxPayment } from "./img/tax-payment.png";
 export { default as footerArrow } from "./img/footer-arrow.png";
 export { default as blueforwardArrow } from "./img/blue-forward-arrow.png";
