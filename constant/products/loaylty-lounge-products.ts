@@ -3,6 +3,8 @@ import {
   vendorPaymentFilled,
   bulkPayout,
   taxPayment,
+  bulkPayoutFilled,
+  taxPaymentFilled,
 } from "@/components/header";
 
 const loyaltyLoungeProducts = [
@@ -18,14 +20,14 @@ const loyaltyLoungeProducts = [
       {
         name: "Brand Voucher",
         description: "200+ brand vouchers for corporate gifting",
-        imageSrc: vendorPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: bulkPayout,
+        imageSrcHovered: bulkPayoutFilled,
       },
       {
         name: "Channel Incentives",
         description: "Enable automated trade incentives easily",
-        imageSrc: bulkPayout,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: taxPayment,
+        imageSrcHovered: taxPaymentFilled,
       },
       {
         name: "Offers",

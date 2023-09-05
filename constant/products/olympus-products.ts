@@ -3,6 +3,8 @@ import {
   vendorPaymentFilled,
   bulkPayout,
   taxPayment,
+  bulkPayoutFilled,
+  taxPaymentFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -18,14 +20,14 @@ const olympusProducts = [
       {
         name: "Rental Payments",
         description: "Maintain rental records for payments",
-        imageSrc: vendorPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: bulkPayout,
+        imageSrcHovered: bulkPayoutFilled,
       },
       {
         name: "Bulk Payout",
         description: "Keep track of all your vendor bills",
-        imageSrc: bulkPayout,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: taxPayment,
+        imageSrcHovered: taxPaymentFilled,
       },
       {
         name: "Bill Payments",

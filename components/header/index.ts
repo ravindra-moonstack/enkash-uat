@@ -8,6 +8,7 @@ export { default as vendorPaymentFilled } from "./img/vendor-payment-filled.png"
 export { default as bulkPayout } from "./img/bulk-payout.png";
 export { default as bulkPayoutFilled } from "./img/bill-payment-filled.png";
 export { default as taxPayment } from "./img/tax-payment.png";
+export { default as taxPaymentFilled } from "./img/tax-payment-filled.png";
 export { default as footerArrow } from "./img/footer-arrow.png";
 export { default as blueforwardArrow } from "./img/blue-forward-arrow.png";
 export { default as readMore } from "./img/read-more.png";
@@ -16,5 +17,3 @@ export { default as officeDiscussionPic } from "./img/office-discussion-pic.png"
 export { default as hamnburgerIcon } from "./img/hambergermenu.png";
 export { default as crossMenu } from "./img/cross-menu.png";
 export { default as forwardArrowBlue } from "./img/forward-arrow-blue.png";
-
-

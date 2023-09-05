@@ -8,7 +8,6 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
 
-import faqData from "@/constant/faq-data/billPaymentFaq";
 import {
   dashboard,
   numberOne,
@@ -42,9 +41,9 @@ import {
   sbmLogo,
   visaLogo,
   desktopIphone,
+  dashboardGif,
 } from ".";
 import Heading from "@/components/heading/heading";
-import Head from "next/head";
 import FaqComponent from "@/components/faq/faq";
 
 export const metadata = {
@@ -58,9 +57,6 @@ const loginUrl = "https://home.enkash.com/login";
 const home = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <div className="row">
-        <FaqComponent faqData={faqData} />
-      </div>
       <div
         className={`first_row row text-center color-white bg-indi-volt row-padding ${styles.bg_rainbow}`}
       >
@@ -170,7 +166,11 @@ const home = () => {
         <div
           className={`col-md-12 col-8 d-flex flex-column align-items-center mb-4 ${styles.action_container}`}
         >
-          <Image src={dashboard} alt="enkash dashboard" className="img-fluid" />
+          <Image
+            src={dashboardGif}
+            alt="enkash dashboard"
+            className="img-fluid"
+          />
         </div>
         <div className="col-12 d-flex justify-content-center align-items-center p-4 text-center">
           <div className="sub_heading mb-5">

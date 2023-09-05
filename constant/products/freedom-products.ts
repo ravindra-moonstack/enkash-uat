@@ -3,6 +3,7 @@ import {
   vendorPaymentFilled,
   bulkPayout,
   taxPayment,
+  taxPaymentFilled,
 } from "@/components/header";
 
 const freedomProducts = [
@@ -18,8 +19,8 @@ const freedomProducts = [
       {
         name: "Virtual Cards",
         description: "Unlimited cards with centralised controls",
-        imageSrc: vendorPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: taxPayment,
+        imageSrcHovered: taxPaymentFilled,
       },
       {
         name: "Integrated Cards",

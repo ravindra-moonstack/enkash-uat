@@ -4,6 +4,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
+import faqData from "@/constant/faq-data/billPaymentFaq";
 
 import {
   bar,
@@ -16,6 +17,7 @@ import {
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
+import FaqComponent from "@/components/faq/faq";
 
 const reimbursement = () => {
   return (
@@ -150,6 +152,11 @@ const reimbursement = () => {
             color="white"
             size="h4"
           />
+        </div>
+      </div>
+      <div className="fifth_row">
+        <div className="row">
+          <FaqComponent faqData={faqData} />
         </div>
       </div>
       <div className="row">

@@ -5,6 +5,7 @@ export { default as numberTwo } from "./img/number-two.png";
 export { default as numberThree } from "./img/number-three.png";
 export { default as stack } from "./img/stack.png";
 export { default as dashboard } from "./img/dashboard.png";
+export { default as dashboardGif } from "./img/dashboard.gif";
 export { default as dashboardTwo } from "./img/dashboard-two.png";
 export { default as iphoneDashboard } from "./img/iphone-dashboard.png";
 export { default as salesDashboard } from "./img/sales-dashboard.png";
