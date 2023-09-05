@@ -10,7 +10,7 @@ const ContactUsCard = () => {
       <div className="row">
         <div className="col-6 d-flex justify-content-center"></div>
         <div className="col-6 d-flex flex-column justify-content-center">
-          <div className="mt-5">
+          <div className="md:mt-5 mt-3">
             <div>
               <Heading
                 title="Couldn’t find what"
@@ -43,7 +43,7 @@ const ContactUsCard = () => {
               />
             </div>
           </div>
-          <div className="d-flex mt-3 mb-5">
+          <div className="d-flex mt-3 md:mb-5 mb-3">
             <PrimaryButton
               title="Contact Us"
               isDisabled={false}

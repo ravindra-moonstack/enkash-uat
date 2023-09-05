@@ -305,7 +305,12 @@ const home = () => {
               weight="normal"
               color="equity-blue"
             />
-            <Heading title={`Partners${space}`} size="h1" weight="normal" />
+            <Heading
+              title={`Partners${space}`}
+              size="h1"
+              weight="normal"
+              color="black"
+            />
             <Heading
               title="and"
               size="h1"
@@ -314,20 +319,24 @@ const home = () => {
             />
           </div>
           <div>
-            <Heading title="Customers." size="h1" weight="normal" />
+            <Heading
+              title="Customers."
+              size="h1"
+              weight="normal"
+              color="black"
+            />
           </div>
         </div>
         <div className="col-12 row-padding-x-only mb-3 d-flex align-items-center">
           <Image
-            width={150}
             src={axisBankLogo}
-            className="me-5"
+            className="img-fluid me-5"
             alt="axis bank logo"
           />
           <Image
             width={150}
             src={iciciBankLogo}
-            className="me-5"
+            className="img-fluid me-5"
             alt="axis bank logo"
           />
           <Image
