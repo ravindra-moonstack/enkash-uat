@@ -8,6 +8,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
 
+import faqData from "@/constant/faq-data/billPaymentFaq";
 import {
   dashboard,
   numberOne,
@@ -44,6 +45,7 @@ import {
 } from ".";
 import Heading from "@/components/heading/heading";
 import Head from "next/head";
+import FaqComponent from "@/components/faq/faq";
 
 export const metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -55,7 +57,10 @@ const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
   return (
-    <div className={styles.home_container}>
+    <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <div className="row">
+        <FaqComponent faqData={faqData} />
+      </div>
       <div
         className={`first_row row text-center color-white bg-indi-volt row-padding ${styles.bg_rainbow}`}
       >
