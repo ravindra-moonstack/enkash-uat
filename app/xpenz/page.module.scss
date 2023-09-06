@@ -32,9 +32,12 @@
 }
 
 .fifth_row {
-  background: url(./img/row-bg.png);
+  background: url(./img/circle-stack.png);
   background-size: cover;
   padding: 50px;
+  @include bp-md {
+    background: none;
+  }
 }
 
 .seventh_row {
@@ -65,7 +68,7 @@
 }
 
 .scroll_container {
-  width: 100%;           
-  overflow-x: auto;     
-  white-space: nowrap;  
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
 }

@@ -96,7 +96,9 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div className="third_row row d-flex row-padding-top-none bg-white">
+      <div className="third_row row d-flex row-padding-top-none bg-white"></div>
+
+      <div className="row row-padding-x-only bg-white">
         <div className="col-md-6 col-12 my-5 px-5">
           <ExploreCard
             title="Budgets and Advances"
@@ -111,8 +113,10 @@ const xpenz = () => {
             alt="payables image"
           />
         </div>
+      </div>
 
-        <div className="col-md-6 col-12 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
+      <div className="row row-padding-x-only bg-white">
+        <div className="col-md-6 col-12 order-md-1 order-2 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
           <Image
             src={heirarchyControl}
             className="img-fluid"
@@ -120,14 +124,16 @@ const xpenz = () => {
           />
         </div>
 
-        <div className="col-md-6 col-12 my-5 px-5 ">
+        <div className="col-md-6 col-12 order-md-2 order-1 my-5 px-5 ">
           <ExploreCard
             title="Hierarchy and Controls"
             description="Create hierarchies and establish control over employee expenditure."
             theme="blue"
           />
         </div>
+      </div>
 
+      <div className="row row-padding-top-none bg-white">
         <div className="col-md-6 col-12 px-5 my-5">
           <ExploreCard
             title="Reimbursements"
@@ -143,31 +149,32 @@ const xpenz = () => {
           />
         </div>
       </div>
+
       <div className={`${styles.fourth_row} row row-padding`}>
-        <div className="col-md-6 col-12 d-flex mb-5">
+        <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1">
           <Image
             src={policyApproval}
             alt="payables image"
             className="img-fluid"
           />
         </div>
-        <div className="col-md-6 col-12 mb-5 px-5">
+        <div className="col-md-6 col-12 mb-5 px-5 order-2 order-md-2">
           <ExploreCard
             title="Scan and Drop Receipts"
             description="Leverage OCR for digital receipt management & reconciliation."
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 mt-5 px-5">
+        <div className="col-md-6 col-12 mt-5 px-5 order-4 order-md-3">
           <ExploreCard
-            title="Receivables"
+            title="Policy and Approval Flows"
             description="EnKash empowers your business by providing intelligent
                 automation tools that help you end time-consuming manual
                 follow-ups and create better collection strategies."
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 d-flex mt-5">
+        <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4">
           <Image
             src={scanAndDrop}
             alt="receivable image"
@@ -187,11 +194,10 @@ const xpenz = () => {
         </div>
       </div>
       <div className={`row bg-indi-volt ${styles.fifth_row}`}>
-        <div className="d-flex flex-column flex-md-row align-items-center tex-center justify-content-evenly">
+        <div className="d-flex flex-column flex-md-row tex-center justify-content-evenly">
           <div className="md:mb-0 mb-4">
             <Image src={coin} alt="coins icon" className="md:mb-0 mb-4" />
-            <Heading title="On-time" size="h5" color="white" />
-            <Heading title="Payments" size="h5" color="white" />
+            <Heading title="On-time Payments" size="h5" color="white" />
           </div>
           <div className="md:mb-0 mb-4">
             <Image
@@ -199,8 +205,7 @@ const xpenz = () => {
               alt="regulation icon"
               className="md:mb-0 mb-4"
             />
-            <Heading title="Spend" size="h5" color="white" />
-            <Heading title="Regulation" size="h5" color="white" />
+            <Heading title="Spend Regulation" size="h5" color="white" />
           </div>
           <div className="md:mb-0 mb-4">
             <Image
@@ -208,8 +213,7 @@ const xpenz = () => {
               alt="cash and coin icon"
               className="md:mb-0 mb-4"
             />
-            <Heading title="Cash Flow" size="h5" color="white" />
-            <Heading title="Optimization" size="h5" color="white" />
+            <Heading title="Cash Flow Optimization" size="h5" color="white" />
           </div>
         </div>
       </div>

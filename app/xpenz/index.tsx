@@ -13,3 +13,4 @@ export { default as cashAndCoin } from "./img/cash-and-coin.png";
 export { default as officeImg } from "./img/office-img.png";
 export { default as whiteArrow } from "./img/white-arrow.png";
 
+
