@@ -11,6 +11,7 @@
   background-position: right bottom;
   border-radius: 15px;
   padding: 40px;
+  white-space: normal;
   @include bp-md {
     height: 400px;
     padding: 30px;

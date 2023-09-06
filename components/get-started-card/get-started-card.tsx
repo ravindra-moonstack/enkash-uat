@@ -20,7 +20,7 @@ const GetStartedCard = ({ title1, title2, description }: CardProps) => {
         <Heading title={description} color="white" size="h5" />
       </div>
       <div className="d-flex align-items-center mt-2">
-        <Heading title="Explore Now" color="white" size="h5" />
+        <Heading title="Get Started" color="white" size="h5" />
         <Image className="m-2" src={whiteArrow} alt="arrow icon" width={50} />
       </div>
     </div>
