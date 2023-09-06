@@ -154,10 +154,8 @@ const reimbursement = () => {
           />
         </div>
       </div>
-      <div className="fifth_row">
-        <div className="row">
-          <FaqComponent faqData={faqData} />
-        </div>
+      <div className="fifth_row row row-padding-bottom-none bg-white">
+        <FaqComponent faqData={faqData} />
       </div>
       <div className="row">
         <ContactUsCard />

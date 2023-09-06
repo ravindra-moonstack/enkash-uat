@@ -90,7 +90,7 @@ const xpenz = () => {
                 />
               </div>
             </div>
-            <div className="d-flex justify-content-center mt-5">
+            <div className="d-flex justify-content-center mt-5 md:mb-0">
               <Image src={progressBar} alt="progress bard" height={10} />
             </div>
           </div>
