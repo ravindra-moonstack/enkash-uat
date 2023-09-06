@@ -17,3 +17,11 @@ export { default as officeDiscussionPic } from "./img/office-discussion-pic.png"
 export { default as hamnburgerIcon } from "./img/hambergermenu.png";
 export { default as crossMenu } from "./img/cross-menu.png";
 export { default as forwardArrowBlue } from "./img/forward-arrow-blue.png";
+export {default as brandVouchers} from "./img/brand-vouchers.png";
+export {default as brandVouchersFilled} from "./img/brand-vouchers-filled.png";
+export {default as giftCards} from "./img/gift-cards.png";
+export {default as giftCardFilled} from  "./img/gift-cards-filled.png";
+export {default as offers} from "./img/offers.png";
+export {default as offersFilled} from "./img/offers-filled.png";
+export {default as rewardsPlatform} from "./img/rewards-platform.png";
+export {default as rewardsPlatformFilled} from "./img/rewards-platform-filled.png";

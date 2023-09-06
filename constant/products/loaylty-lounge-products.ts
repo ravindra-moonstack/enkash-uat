@@ -5,6 +5,12 @@ import {
   taxPayment,
   bulkPayoutFilled,
   taxPaymentFilled,
+  brandVouchers,
+  brandVouchersFilled,
+  offers,
+  offersFilled,
+  giftCards,
+  giftCardFilled,
 } from "@/components/header";
 
 const loyaltyLoungeProducts = [
@@ -20,8 +26,8 @@ const loyaltyLoungeProducts = [
       {
         name: "Brand Voucher",
         description: "200+ brand vouchers for corporate gifting",
-        imageSrc: bulkPayout,
-        imageSrcHovered: bulkPayoutFilled,
+        imageSrc: brandVouchers,
+        imageSrcHovered: brandVouchersFilled,
       },
       {
         name: "Channel Incentives",
@@ -32,14 +38,14 @@ const loyaltyLoungeProducts = [
       {
         name: "Offers",
         description: "Get discounts on partnered subscriptions and more",
-        imageSrc: vendorPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: offers,
+        imageSrcHovered: offersFilled,
       },
       {
         name: "Gift Cards",
         description: "Gift cards for employee benefits",
-        imageSrc: taxPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: giftCards,
+        imageSrcHovered: giftCardFilled,
       },
     ],
     footerText: "Stream Line with Loyalty",
