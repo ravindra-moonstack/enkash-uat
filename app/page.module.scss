@@ -5,7 +5,7 @@
   padding-top: 50px;
   background-color: $color-indi-volt;
   @include bp-md {
-    padding-top: 100px;
+    padding-top: 0px;
   }
 }
 
@@ -15,7 +15,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   @include bp-md {
-    background-size: 110% 100%;
+    background-size: 137% 81%;
   }
 }
 

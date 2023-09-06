@@ -76,13 +76,13 @@ const home = () => {
       <div
         className={`first_row row text-center color-white bg-indi-volt row-padding ${styles.bg_rainbow}`}
       >
-        <span className="col-12">
+        <span className="col-12 mt-5">
           <Heading title="A Spend" size="h0" />
         </span>
-        <span className="col-12 md:mt-4 mt-2">
+        <span className="col-12 mt-4">
           <Heading title="Management Solution" size="h0" />
         </span>
-        <span className="col-12 md:mt-5 mt-2">
+        <span className="col-12 mt-5">
           <Heading title="That Does it All" size="h0" />
         </span>
         <div className={`col-12 mt-5`}>

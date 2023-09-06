@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import styles from "./faq.module.scss";
 import Heading from "../heading/heading";
-import { arrowDown } from ".";
 interface FaqBulletPoint {
   text: string;
   subpoints?: string[];
