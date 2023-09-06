@@ -43,7 +43,6 @@ import {
   desktopIphone,
 } from ".";
 import Heading from "@/components/heading/heading";
-import FaqComponent from "@/components/faq/faq";
 
 export const metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -114,7 +113,11 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userPlus} alt="signup image" className="img-fluid" />
+          <Image
+            src={userPlus}
+            alt="signup image"
+            className={styles.steps_img}
+          />
           <Image className="ms-5" src={numberOne} alt="step one image" />
           <div className="ms-2">
             <Heading title="Sign Up" size="h5" />
@@ -123,7 +126,7 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userTick} alt="kyc image" className="img-fluid" />
+          <Image src={userTick} alt="kyc image" className={styles.steps_img} />
           <Image className="ms-5" src={numberTwo} alt="step one image" />
           <div className="ms-2">
             <Heading title="Complete KYC Process" size="h5" />
@@ -132,7 +135,11 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={stack} alt="get started image" className="img-fluid" />
+          <Image
+            src={stack}
+            alt="get started image"
+            className={styles.steps_img}
+          />
           <Image className="ms-5" src={numberThree} alt="step one image" />
           <div className="ms-2">
             <Heading title="Get Started" size="h5" />
@@ -330,17 +337,18 @@ const home = () => {
         <div className="col-12 row-padding-x-only mb-3 d-flex align-items-center">
           <Image
             src={axisBankLogo}
-            className="img-fluid me-5"
+            width={150}
+            className="me-5"
             alt="axis bank logo"
           />
           <Image
             width={150}
             src={iciciBankLogo}
-            className="img-fluid me-5"
+            className="me-5"
             alt="axis bank logo"
           />
           <Image
-            width={150}
+            width={120}
             src={rupayLogo}
             className="me-5"
             alt="axis bank logo"
@@ -352,7 +360,7 @@ const home = () => {
             alt="axis bank logo"
           />
           <Image
-            width={100}
+            width={70}
             src={visaLogo}
             className="me-3"
             alt="axis bank logo"
@@ -508,8 +516,18 @@ const home = () => {
       <div className="tenth_row row bg-white row-padding-x-only">
         <div className="col-12 d-flex justify-content-center">
           <div>
-            <Heading title={`Loyalty${space}`} color="black" size="h1" />
-            <Heading title="Lounge" color="equity-blue" size="h1" />
+            <Heading
+              title={`Loyalty${space}`}
+              color="black"
+              size="h1"
+              weight="bold"
+            />
+            <Heading
+              title="Lounge"
+              color="equity-blue"
+              size="h1"
+              weight="bold"
+            />
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex flex-column mt-5">
@@ -560,7 +578,7 @@ const home = () => {
         </div>
       </div>
       <div
-        className={`row d-flex justify-content-center align-items-center
+        className={`${styles.eleventh_row} row d-flex justify-content-center align-items-center
        text-center color-white bg-indi-volt row-padding`}
       >
         <div className={`col-12 mb-5`}>
@@ -584,7 +602,11 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userPlus} alt="signup image" className="img-fluid" />
+          <Image
+            src={userPlus}
+            alt="signup image"
+            className={styles.steps_img}
+          />
           <Image className="ms-5" src={numberOne} alt="step one image" />
           <div className="ms-2">
             <Heading title="Sign Up" size="h5" />
@@ -593,7 +615,7 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userTick} alt="kyc image" className="img-fluid" />
+          <Image src={userTick} alt="kyc image" className={styles.steps_img} />
           <Image className="ms-5" src={numberTwo} alt="step one image" />
           <div className="ms-2">
             <Heading title="Complete KYC Process" size="h5" />
@@ -602,7 +624,11 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={stack} alt="get started image" className="img-fluid" />
+          <Image
+            src={stack}
+            alt="get started image"
+            className={styles.steps_img}
+          />
           <Image className="ms-5" src={numberThree} alt="step one image" />
           <div className="ms-2">
             <Heading title="Get Started" size="h5" />
@@ -610,8 +636,10 @@ const home = () => {
         </div>
       </div>
       <div className="twelfth_row row color-white bg-white row-padding">
-        <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-          <div className="me-4 mb-4 md:mb-0">
+        <div
+          className={`col-12 d-flex flex-md-row justify-content-evenly mt-3 ${styles.scroll_container}`}
+        >
+          <div className="me-4 md:me-0">
             <GetStartedCard
               title1="Optimize Spending;"
               title2="save more."
@@ -619,7 +647,8 @@ const home = () => {
                platform & save countless working hours."
             />
           </div>
-          <div className="me-4 mb-4 md:mb-0">
+
+          <div className="me-4 md:me-0">
             <GetStartedCard
               title1="Total Visibility;"
               title2="smarter controls."
@@ -627,7 +656,8 @@ const home = () => {
                platform & save countless working hours."
             />
           </div>
-          <div className="me-4 mb-4 md:mb-0">
+
+          <div className="me-4 md:me-0">
             <GetStartedCard
               title1="Convenient solutions to scale faster."
               title2="to scale faster."
@@ -645,7 +675,7 @@ const home = () => {
             className="img-fluid"
           />
         </div>
-        <div className="col-md-6 col-12 d-flex flex-column mt-5">
+        <div className="col-md-6 col-12 d-flex flex-column mt-5 justify-content-center">
           <div className="mt-3">
             <div>
               <Heading
@@ -677,28 +707,30 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fourteenth_row} row bg-white row-padding`}>
-        <div className={`d-flex flex-column flex-md-row ${styles.box}`}>
+        <div
+          className={`d-flex flex-column flex-md-row justify-content-center ${styles.box}`}
+        >
           <div
             className={`d-flex flex-column justify-content-between ${styles.box_item}`}
           >
             <div className="mb-5">
               <Heading title="Startups to Watch" color="black" size="h5" />
             </div>
-            <div className="mt-5">
+            <div className="md:mt-5">
               <Image src={inc42} alt="inc42 logo" width={250} />
             </div>
           </div>
           <div
             className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
           >
-            <div className="mb-5">
+            <div className="mt-5">
               <Heading
                 title="Winner - India Fintech Awards 2020"
                 color="electric-green"
                 size="h5"
               />
             </div>
-            <div className="mt-5">
+            <div className="md:mt-5">
               <Image src={nasscom} alt="nasscom logo" width={250} />
             </div>
           </div>
@@ -712,7 +744,7 @@ const home = () => {
                 size="h5"
               />
             </div>
-            <div className="mt-5">
+            <div className="md:mt-5">
               <Image
                 src={paymentAndCardSummit}
                 alt="payment and card summit logo"
@@ -725,14 +757,14 @@ const home = () => {
       <div
         className={`${styles.fifthteen_row} row row-padding-bottom-none color-white`}
       >
-        <div className="col-12 mb-5 d-flex justify-content-center">
-          <div>
+        <div className="col-12 mb-5 text-center">
+          <div className={styles.inline_div}>
             <Heading title={`Trusted by${space}`} color="white" size="h1" />
           </div>
-          <div>
+          <div className={styles.inline_div}>
             <Heading title={`1000+${space}`} color="electric-green" size="h1" />
           </div>
-          <div>
+          <div className={styles.inline_div}>
             <Heading title="companies." color="white" size="h1" />
           </div>
         </div>

@@ -18,7 +18,7 @@ export { default as expenseDashboard } from "./img/expense-dashboard.png";
 export { default as teamImg } from "./img/team-img.png";
 export { default as diyCardsModuleImg } from "./img/diy-card-module.png";
 export { default as corporateCardsImg } from "./img/corporate-cards.png";
-export { default as loyaltyLoungeMobileImg } from "./img/loyalty_lounge_mobile_img.gif";
+export { default as loyaltyLoungeMobileImg } from "./img/loyalty_lounge_mobile_img.png";
 export { default as mobileIntegration } from "./img/mobile-integrations.gif";
 export { default as inc42 } from "./img/inc42.png";
 export { default as paymentAndCardSummit } from "./img/payment-and-card-summit.png";
