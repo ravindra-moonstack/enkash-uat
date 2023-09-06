@@ -11,9 +11,12 @@
 
 .bg_rainbow {
   background-image: url(../public/blue-rainbow.png);
-  background-size: 110% 100%;
+  background-size: 150% 100%;
   background-repeat: no-repeat;
   background-position: center center;
+  @include bp-md {
+    background-size: 110% 100%;
+  }
 }
 
 .bg_traingle_stack {

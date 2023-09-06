@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.scss";
 import PrimaryButton from "../components/buttons/primary-button/primary-button";
@@ -41,18 +43,34 @@ import {
   sbmLogo,
   visaLogo,
   desktopIphone,
+  singleStack,
 } from ".";
 import Heading from "@/components/heading/heading";
-
-export const metadata = {
-  title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
-  description:
-    "Enkash is now Asia's 1st and Smartest Spend Management Platform that offer services like Account Payable, Accounts Receivable, Expense Management & many more.",
-};
+import { useEffect } from "react";
 
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.querySelector(`.${styles.third_row}`);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        if (rect.top <= window.innerHeight) {
+          section.classList.add("bg_animated_1");
+          setTimeout(() => section.classList.add("bg_animated_2"), 500);
+          setTimeout(() => section.classList.add("bg_animated_3"), 1000);
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div
@@ -61,10 +79,10 @@ const home = () => {
         <span className="col-12">
           <Heading title="A Spend" size="h0" />
         </span>
-        <span className="col-12 mt-4">
+        <span className="col-12 md:mt-4 mt-2">
           <Heading title="Management Solution" size="h0" />
         </span>
-        <span className="col-12 mt-5">
+        <span className="col-12 md:mt-5 mt-2">
           <Heading title="That Does it All" size="h0" />
         </span>
         <div className={`col-12 mt-5`}>
@@ -147,7 +165,7 @@ const home = () => {
         </div>
         <div className="col-12 d-flex justify-content-center align-items-center">
           <div className={styles.email_box}>
-            <div className="w-full d-flex align-items-center">
+            <div className="w-50 d-flex align-items-center">
               <input type="text" placeholder="Enter your email"></input>
             </div>
             <div>
@@ -304,67 +322,71 @@ const home = () => {
             className={styles.desktop_img}
           />
         </div>
-        <div className="col-md-6 row-padding-x-only mb-3 ">
-          <div>
-            <Heading
-              title={`Financial${space}`}
-              size="h1"
-              weight="normal"
-              color="equity-blue"
-            />
-            <Heading
-              title={`Partners${space}`}
-              size="h1"
-              weight="normal"
-              color="black"
-            />
-            <Heading
-              title="and"
-              size="h1"
-              weight="normal"
-              color="equity-blue"
-            />
-          </div>
-          <div>
-            <Heading
-              title="Customers."
-              size="h1"
-              weight="normal"
-              color="black"
-            />
+        <div className="col-md-6">
+          <div className="row-padding-x-only mb-3 ">
+            <div>
+              <Heading
+                title={`Financial${space}`}
+                size="h1"
+                weight="normal"
+                color="equity-blue"
+              />
+              <Heading
+                title={`Partners${space}`}
+                size="h1"
+                weight="normal"
+                color="black"
+              />
+              <Heading
+                title="and"
+                size="h1"
+                weight="normal"
+                color="equity-blue"
+              />
+            </div>
+            <div>
+              <Heading
+                title="Customers."
+                size="h1"
+                weight="normal"
+                color="black"
+              />
+            </div>
           </div>
         </div>
-        <div className="col-12 row-padding-x-only mb-3 d-flex align-items-center">
-          <Image
-            src={axisBankLogo}
-            width={150}
-            className="me-5"
-            alt="axis bank logo"
-          />
-          <Image
-            width={150}
-            src={iciciBankLogo}
-            className="me-5"
-            alt="axis bank logo"
-          />
-          <Image
-            width={120}
-            src={rupayLogo}
-            className="me-5"
-            alt="axis bank logo"
-          />
-          <Image
-            width={150}
-            src={sbmLogo}
-            className="me-3"
-            alt="axis bank logo"
-          />
-          <Image
-            width={70}
-            src={visaLogo}
-            className="me-3"
-            alt="axis bank logo"
-          />
+        <div className="col-12">
+          <div className="row-padding-x-only mb-3 d-flex align-items-center">
+            <Image
+              src={axisBankLogo}
+              width={150}
+              className="me-5"
+              alt="axis bank logo"
+            />
+            <Image
+              width={150}
+              src={iciciBankLogo}
+              className="me-5"
+              alt="axis bank logo"
+            />
+            <Image
+              width={120}
+              src={rupayLogo}
+              className="me-5"
+              alt="axis bank logo"
+            />
+            <Image
+              width={150}
+              src={sbmLogo}
+              className="me-3"
+              alt="axis bank logo"
+            />
+            <Image
+              width={70}
+              src={visaLogo}
+              className="me-3"
+              alt="axis bank logo"
+            />
+          </div>
         </div>
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>

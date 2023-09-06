@@ -4,23 +4,14 @@ import "bootstrap/dist/css/bootstrap.css";
 import "../styles/_base.scss";
 import { RootProps } from "@/types/props";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import { Poppins } from "next/font/google";
-
-const poppins = Poppins({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-poppins",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-});
+import localFont from "next/font/local";
+const myFont = localFont({ src: "../fonts/grotesque.ttf" });
 
 const RootLayout = ({ children }: RootProps) => {
   return (
-    <html className={`${poppins.variable}`}>
+    <html>
       <body>
-        <div className="main">
-          <div className="gradient"></div>
-        </div>
-        <main className="app">
+        <main className={`app ${myFont.className}`}>
           <div className="mobile-header">
             <MobileHeader />
           </div>

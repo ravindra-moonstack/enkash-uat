@@ -4,6 +4,7 @@ export { default as numberOne } from "./img/number-one.png";
 export { default as numberTwo } from "./img/number-two.png";
 export { default as numberThree } from "./img/number-three.png";
 export { default as stack } from "./img/stack.png";
+export { default as singleStack } from "./img/single-stack.png";
 export { default as dashboard } from "./img/dashboard.png";
 export { default as dashboardTwo } from "./img/dashboard-two.png";
 export { default as iphoneDashboard } from "./img/iphone-dashboard.png";

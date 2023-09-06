@@ -1,10 +1,6 @@
 @import "./variables";
 @import "./mixin";
 
-body {
-  font-family: var(--font-poppins);
-}
-
 /* Background Classes */
 .bg-deep-indigo {
   background-color: $color-deep-indigo;
