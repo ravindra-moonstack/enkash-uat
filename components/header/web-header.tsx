@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styles from "./header.module.scss";
 import navBarTopTtitle from "../../constant/nav-bar";
 import utmSources from "@/constant/utm-source";
@@ -21,16 +21,23 @@ const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_b
 const loginUrl = "https://home.enkash.com/login";
 
 const WebHeader = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false);
+  const [itemWidth, setItemWidth] = useState(0);
+  const itemRef = useRef<HTMLLIElement | null>(null);
+
+  useEffect(() => {
+    if (itemRef.current) {
+      setItemWidth(itemRef.current.offsetWidth);
+    }
+  }, []);
+
   const getArrowImageSource = (index: number) => {
     if (hoveredIndex === index) {
       return arrowDownBlack;
     }
-
     return isHeaderBgWhite ? arrowDownBlack : arrowDownWhite;
   };
-
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false);
 
   return (
     <header
@@ -54,12 +61,20 @@ const WebHeader = () => {
             />
           </Link>
           <ul>
+            {hoveredIndex !== null && (
+              <div
+                className={styles.background_slide}
+                style={{
+                  transform: `translateX(${hoveredIndex * (itemWidth + 10)}px)`, // If you have padding/margin, add its value multiplied by hoveredIndex
+                  width: `${itemWidth}px`,
+                }}
+              ></div>
+            )}
             {navBarTopTtitle.map((item, index) => (
               <li
+                ref={index === 0 ? itemRef : null}
                 key={item.name}
-                className={`px-3 d-flex justify-content-center align-items-center ${
-                  hoveredIndex === index ? styles.selected_border : ""
-                }`}
+                className={`px-3 d-flex justify-content-center align-items-center`}
                 onMouseEnter={() => {
                   if (index !== 2) {
                     setHoveredIndex(index);
