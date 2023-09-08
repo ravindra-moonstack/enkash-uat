@@ -15,7 +15,6 @@
   display: inline-block;
   font-size: 23px;
   line-height: 30px;
-  font-weight: 500;
   margin-bottom: 0;
   @include bp-md {
     font-size: 45px;
@@ -26,7 +25,6 @@
 .h2 {
   display: inline-block;
   font-size: 25px;
-  font-weight: 500;
   margin-bottom: 0;
   line-height: normal;
   @include bp-md {
@@ -38,7 +36,6 @@
   display: inline-block;
   font-size: 15px;
   line-height: 22px;
-  font-weight: 500;
   margin-bottom: 0;
   @include bp-md {
     font-size: 30px;
@@ -79,18 +76,9 @@
   }
 }
 
-.f-1 {
-  font-weight: 100;
-}
-
-.f-2 {
-  font-weight: 200;
-}
-
 .f-3 {
   font-weight: 300;
 }
-
 .f-4 {
   font-weight: 400;
 }
@@ -101,4 +89,8 @@
 
 .f-6 {
   font-weight: 600;
+}
+
+.f-7 {
+  font-weight: 700;
 }

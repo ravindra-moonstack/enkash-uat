@@ -96,19 +96,22 @@ const WebHeader = () => {
           </ul>
         </div>
         <div className={styles.buttons_container}>
-          <PrimaryButton
-            title="Sign Up"
-            url={singupUrl}
-            theme="theme-blue"
-            size="small"
-          />
-          <span className="mx-2"></span>
-          <PrimaryButton
-            title="Log In"
-            url={loginUrl}
-            theme="theme-blue"
-            size="small"
-          />
+          <div>
+            <PrimaryButton
+              title="Sign Up"
+              url={singupUrl}
+              theme="theme-blue"
+              size="small"
+            />
+          </div>
+          <div className="mx-2">
+            <PrimaryButton
+              title="Log In"
+              url={loginUrl}
+              theme="theme-blue"
+              size="small"
+            />
+          </div>
         </div>
       </nav>
 

@@ -36,4 +36,7 @@ export { default as desktopIphone } from "./img/desktop-iphone.png";
 export { default as playButton } from "./img/watch.svg";
 export { default as rainbowOne } from "./img/rainbow-one-cropped.png";
 export { default as rainbowTwo } from "./img/rainbow-two-cropped.png";
-export { default as rainbowThree } from "./img/rainbow-three-cropped.png";
+export { default as rainbowThree } from "./img/rainbow-three-cropped-f.png";
+export { default as polygonOne } from "./img/polygon-one-cropped.png";
+export { default as polygonTwo } from "./img/polygon-two-cropped.png";
+export { default as polygonThree } from "./img/polygon-three-cropped.png";

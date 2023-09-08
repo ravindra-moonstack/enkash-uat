@@ -11,7 +11,7 @@ const RootLayout = ({ children }: RootProps) => {
   return (
     <html>
       <body>
-        <main className={`app ${myFont.className}`}>
+        <main className={`app main ${myFont.className}`}>
           <div className="mobile-header">
             <MobileHeader />
           </div>

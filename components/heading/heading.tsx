@@ -4,14 +4,14 @@ export interface HeadingProps {
   size: "h0" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   title: string;
   color?: "black" | "electric-green" | "white" | "equity-blue" | "rainy-blue";
-  weight?: "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9";
+  weight?: "3" | "4" | "5" | "6" | "7";
 }
 
 const Heading = ({ size, title, color, weight }: HeadingProps) => {
   const colorClass = color ? `color-${color}` : "";
-  const fontWeight =`f-${weight}` || 'f-5';
+  const fontWeight = `f-${weight}` || "f-5";
   const sizeClass = size || "h6";
-  console.log(fontWeight)
+  console.log(fontWeight);
 
   return (
     <h1 className={`${styles[sizeClass]} ${colorClass} ${styles[fontWeight]}`}>

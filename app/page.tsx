@@ -46,31 +46,31 @@ import {
   rainbowOne,
   rainbowTwo,
   rainbowThree,
+  polygonOne,
+  polygonTwo,
+  polygonThree,
 } from ".";
 import Heading from "@/components/heading/heading";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { watch } from "fs";
 
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
+  const [isInView, setIsInView] = useState(false);
+
   useEffect(() => {
-    const handleScroll = () => {
-      const section = document.querySelector(`.${styles.third_row}`);
-      if (section) {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= window.innerHeight) {
-          section.classList.add("bg_animated_1");
-          setTimeout(() => section.classList.add("bg_animated_2"), 500);
-          setTimeout(() => section.classList.add("bg_animated_3"), 1000);
-        }
+    const checkScroll = () => {
+      const elem = document.querySelector(`.${styles.third_row}`);
+      if (elem && elem.getBoundingClientRect().top <= window.innerHeight) {
+        setIsInView(true);
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", checkScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", checkScroll);
     };
   }, []);
 
@@ -92,7 +92,7 @@ const home = () => {
         </span>
 
         <Image
-          src={rainbowTwo} 
+          src={rainbowTwo}
           alt="background image 2"
           className={styles.rainbow_two}
         />
@@ -102,8 +102,8 @@ const home = () => {
         </span>
 
         <Image
-          src={rainbowThree} 
-          alt="background image 2"
+          src={rainbowThree}
+          alt="background image 3"
           className={styles.rainbow_three}
         />
 
@@ -197,83 +197,82 @@ const home = () => {
               <input type="text" placeholder="Enter your email"></input>
             </div>
             <div>
-              <PrimaryButton title="Get Started Now" theme="theme-blue" />
+              <PrimaryButton
+                title="Get Started Now"
+                theme="theme-blue"
+                size="medium"
+                weight="bold"
+              />
             </div>
           </div>
         </div>
       </div>
-      <div
-        className={`${styles.third_row} row color-white row-padding-top-none px-5 ${styles.bg_traingle_stack}`}
-      >
-        <div
-          className={`col-md-12 col-4 d-flex flex-column justify-content-center align-items-center ${styles.action_container}`}
-        >
-          <div className="d-flex flex-column flex-md-row justify-content-evenly w-100 mb-4">
+      <div className={`${styles.third_row} row color-white`}>
+        <Image
+          src={polygonOne}
+          alt="background image"
+          className={`${styles.polygon_one} ${isInView ? styles.slideIn : ""}`}
+        />
+        <Image
+          src={polygonTwo}
+          alt="background image"
+          className={`${styles.polygon_two} ${isInView ? styles.slideIn : ""}`}
+        />
+        <Image
+          src={polygonThree}
+          alt="background image"
+          className={`${styles.polygon_three} ${
+            isInView ? styles.slideIn : ""
+          }`}
+        />
+
+        <div className={`col-md-12 col-4  ${styles.action_container}`}>
+          <div className="d-flex flex-column flex-md-row justify-content-evenly w-100">
             <MenuButton isDisabled={false} title="Manage" theme="dark" />
             <MenuButton isDisabled={false} title="Track" theme="disabled" />
             <MenuButton isDisabled={false} title="Customize" theme="disabled" />
             <MenuButton isDisabled={false} title="Automate" theme="disabled" />
           </div>
         </div>
-        <div
-          className={`col-md-12 col-8 d-flex flex-column align-items-center mb-4 ${styles.action_container}`}
-        >
+        <div className={`col-md-12 col-8 ${styles.image_container}`}>
           <Image src={dashboard} alt="enkash dashboard" className="img-fluid" />
         </div>
-        <div className="col-12 d-flex justify-content-center align-items-center p-4 text-center">
-          <div className="sub_heading mb-5">
-            <div>
-              <Heading
-                title="Solutions that let you"
-                size="h2"
-                weight="light"
-              />
-            </div>
-            <div>
-              <Heading
-                title="streamline cashflow and optimize workflow."
-                size="h2"
-                weight="bold"
-              />
-            </div>
+        <div className={`col-12  ${styles.descrption_container}`}>
+          <div>
+            <Heading title="Solutions that let you" size="h2" weight="3" />
+          </div>
+          <div>
+            <Heading
+              title="streamline cashflow and optimize workflow."
+              size="h2"
+              weight="7"
+            />
           </div>
         </div>
       </div>
       <div className={`${styles.fourth_row} bg-white row`}>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center row-padding">
           <div>
-            <Heading title="Ultimate" color="black" size="h1" weight="bold" />
+            <Heading title="Ultimate" color="black" size="h1" />
             <div>
               <Heading
                 title={`productivity${space}`}
                 color="equity-blue"
                 size="h1"
-                weight="bold"
               />
-              <Heading title="and" color="black" size="h1" weight="bold" />
+              <Heading title="and" color="black" size="h1" />
             </div>
             <div>
               <Heading
                 title={`control${space}`}
                 color="equity-blue"
                 size="h1"
-                weight="bold"
               />
-              <Heading title="Now at" color="black" size="h1" weight="bold" />
+              <Heading title="Now at" color="black" size="h1" />
             </div>
             <div>
-              <Heading
-                title={`your${space}`}
-                color="equity-blue"
-                size="h1"
-                weight="bold"
-              />
-              <Heading
-                title="fingertips."
-                color="equity-blue"
-                size="h1"
-                weight="bold"
-              />
+              <Heading title={`your${space}`} color="equity-blue" size="h1" />
+              <Heading title="fingertips." color="equity-blue" size="h1" />
             </div>
           </div>
           <div className="d-flex flex-column my-5">
@@ -356,29 +355,13 @@ const home = () => {
               <Heading
                 title={`Financial${space}`}
                 size="h1"
-                weight="normal"
                 color="equity-blue"
               />
-              <Heading
-                title={`Partners${space}`}
-                size="h1"
-                weight="normal"
-                color="black"
-              />
-              <Heading
-                title="and"
-                size="h1"
-                weight="normal"
-                color="equity-blue"
-              />
+              <Heading title={`Partners${space}`} size="h1" color="black" />
+              <Heading title="and" size="h1" color="equity-blue" />
             </div>
             <div>
-              <Heading
-                title="Customers."
-                size="h1"
-                weight="normal"
-                color="black"
-              />
+              <Heading title="Customers." size="h1" color="black" />
             </div>
           </div>
         </div>
@@ -507,20 +490,10 @@ const home = () => {
       <div className="eigth_row row d-flex d-flex bg-white row-padding-top-none">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <div>
-            <Heading
-              title="Discover full control."
-              color="black"
-              size="h1"
-              weight="bolder"
-            />
+            <Heading title="Discover full control." color="black" size="h1" />
           </div>
           <div>
-            <Heading
-              title="Discover freedom."
-              color="equity-blue"
-              size="h1"
-              weight="bolder"
-            />
+            <Heading title="Discover freedom." color="equity-blue" size="h1" />
           </div>
           <div className="mt-2 text-center">
             <Heading
@@ -566,18 +539,8 @@ const home = () => {
       <div className="tenth_row row bg-white row-padding-x-only">
         <div className="col-12 d-flex justify-content-center">
           <div>
-            <Heading
-              title={`Loyalty${space}`}
-              color="black"
-              size="h1"
-              weight="bold"
-            />
-            <Heading
-              title="Lounge"
-              color="equity-blue"
-              size="h1"
-              weight="bold"
-            />
+            <Heading title={`Loyalty${space}`} color="black" size="h1" />
+            <Heading title="Lounge" color="equity-blue" size="h1" />
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex flex-column mt-5">
@@ -628,8 +591,8 @@ const home = () => {
         </div>
       </div>
       <div
-        className={`${styles.eleventh_row} row d-flex justify-content-center align-items-center
-       text-center color-white bg-indi-volt row-padding`}
+        className={`${styles.eleventh_row} row row-padding d-flex justify-content-center align-items-center
+       text-center color-white bg-indi-volt`}
       >
         <div className={`col-12 mb-5`}>
           <div>
@@ -637,7 +600,7 @@ const home = () => {
               title="3 Easy Steps to"
               color="white"
               size="h2"
-              weight="bold"
+              weight="6"
             />
           </div>
           <div>
@@ -645,42 +608,34 @@ const home = () => {
               title="Get Started with EnKash"
               color="white"
               size="h2"
-              weight="normal"
+              weight="3"
             />
           </div>
         </div>
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image
-            src={userPlus}
-            alt="signup image"
-            className={styles.steps_img}
-          />
-          <Image className="ms-5" src={numberOne} alt="step one image" />
-          <div className="ms-2">
+          <Image src={userPlus} alt="signup image" className="me-3" />
+          <Image src={numberOne} alt="step one image" className="me-3" />
+          <div>
             <Heading title="Sign Up" size="h5" />
           </div>
         </div>
         <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center`}
         >
-          <Image src={userTick} alt="kyc image" className={styles.steps_img} />
-          <Image className="ms-5" src={numberTwo} alt="step one image" />
-          <div className="ms-2">
+          <Image src={userTick} alt="kyc image" className="me-3" />
+          <Image src={numberTwo} alt="step one image" className="me-3" />
+          <div>
             <Heading title="Complete KYC Process" size="h5" />
           </div>
         </div>
         <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center `}
         >
-          <Image
-            src={stack}
-            alt="get started image"
-            className={styles.steps_img}
-          />
-          <Image className="ms-5" src={numberThree} alt="step one image" />
-          <div className="ms-2">
+          <Image src={stack} alt="get started image" className="me-3" />
+          <Image src={numberThree} alt="step one image" className="me-3" />
+          <div>
             <Heading title="Get Started" size="h5" />
           </div>
         </div>
