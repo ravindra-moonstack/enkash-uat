@@ -7,9 +7,21 @@ export interface ButtonProps {
   title: string;
   url?: string;
   theme?: "theme-blue" | "theme-green" | "theme-black";
+  size: "small" | "medium";
+  weight?: "bold" | "normal";
 }
 
-const PrimaryButton = ({ isDisabled, title, url, theme }: ButtonProps) => {
+const PrimaryButton = ({
+  isDisabled,
+  title,
+  url,
+  theme,
+  size,
+  weight,
+}: ButtonProps) => {
+  const sizeClass = size || "small";
+  const weightClass = weight || "normal";
+
   const handleClick = () => {
     if (url) {
       window.open(url, "_blank");
@@ -20,7 +32,9 @@ const PrimaryButton = ({ isDisabled, title, url, theme }: ButtonProps) => {
     <>
       <button
         disabled={isDisabled}
-        className={`${styles.primary_button} ${theme ? styles[theme] : ""}`}
+        className={`${styles.primary_button} ${styles[sizeClass]} ${
+          styles[weightClass]
+        } ${theme ? styles[theme] : ""}`}
         onClick={handleClick}
       >
         {title}

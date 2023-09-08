@@ -12,7 +12,6 @@ import {
   enkashBlueLogo,
   arrowDownBlack,
   arrowDownWhite,
-  arrowUpBlue,
 } from ".";
 import ProductModal from "./modal/product-modal";
 import SolutionsModal from "./modal/solutions-modal";
@@ -36,7 +35,9 @@ const WebHeader = () => {
   return (
     <header
       className={`w-full absolute z-10 d-flex flex-column ${styles.header} ${
-        isHeaderBgWhite ? "bg-white color-indi-volt" : "bg-indi-volt color-white"
+        isHeaderBgWhite
+          ? "bg-white color-indi-volt"
+          : "bg-indi-volt color-white"
       }`}
       onMouseLeave={() => {
         setHoveredIndex(null);
@@ -80,9 +81,19 @@ const WebHeader = () => {
           </ul>
         </div>
         <div className={styles.buttons_container}>
-          <PrimaryButton title="Sign Up" url={singupUrl} theme="theme-blue"/>
+          <PrimaryButton
+            title="Sign Up"
+            url={singupUrl}
+            theme="theme-blue"
+            size="small"
+          />
           <span className="mx-2"></span>
-          <PrimaryButton title="Log In" url={loginUrl} theme="theme-blue"/>
+          <PrimaryButton
+            title="Log In"
+            url={loginUrl}
+            theme="theme-blue"
+            size="small"
+          />
         </div>
       </nav>
 

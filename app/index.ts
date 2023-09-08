@@ -33,3 +33,7 @@ export { default as rupayLogo } from "./img/rupay-logo.png";
 export { default as sbmLogo } from "./img/sbm-logo.png";
 export { default as visaLogo } from "./img/visa-logo.png";
 export { default as desktopIphone } from "./img/desktop-iphone.png";
+export { default as playButton } from "./img/watch.svg";
+export { default as rainbowOne } from "./img/rainbow-one-cropped.png";
+export { default as rainbowTwo } from "./img/rainbow-two-cropped.png";
+export { default as rainbowThree } from "./img/rainbow-three-cropped.png";

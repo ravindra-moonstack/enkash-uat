@@ -25,13 +25,12 @@
 
 .h2 {
   display: inline-block;
-  font-size: 19px;
-  line-height: 27px;
+  font-size: 25px;
   font-weight: 500;
   margin-bottom: 0;
+  line-height: normal;
   @include bp-md {
-    font-size: 38px;
-    line-height: 55px;
+    font-size: 48px;
   }
 }
 
@@ -52,20 +51,19 @@
   font-size: 13px;
   line-height: 17px;
   margin-bottom: 0;
+  line-height: normal;
   @include bp-md {
-    font-size: 24px;
-    line-height: 30px;
+    font-size: 25px;
   }
 }
 
 .h5 {
-  font-size: 11px;
-  line-height: 15px;
-  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
   margin-bottom: 0;
   white-space: normal;
   @include bp-md {
-    font-size: 17px;
+    font-size: 18px;
     line-height: 30px;
   }
 }
@@ -81,10 +79,26 @@
   }
 }
 
-.bold {
-  font-weight: 600;
+.f-1 {
+  font-weight: 100;
 }
 
-.regular {
+.f-2 {
+  font-weight: 200;
+}
+
+.f-3 {
   font-weight: 300;
+}
+
+.f-4 {
+  font-weight: 400;
+}
+
+.f-5 {
+  font-weight: 500;
+}
+
+.f-6 {
+  font-weight: 600;
 }

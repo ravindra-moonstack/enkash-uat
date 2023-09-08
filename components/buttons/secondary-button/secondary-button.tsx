@@ -8,6 +8,8 @@ export interface ButtonProps {
   title: string;
   url?: string;
   actionImage: any;
+  size: "small" | "medium";
+  weight: "bold" | "normal";
 }
 
 const SecondryButton = ({
@@ -15,7 +17,12 @@ const SecondryButton = ({
   title,
   url,
   actionImage,
+  size,
+  weight,
 }: ButtonProps) => {
+  const sizeClass = size || "small";
+  const weightClass = weight || "normal";
+
   const handleClick = () => {
     if (url) {
       window.open(url, "_blank");
@@ -25,11 +32,11 @@ const SecondryButton = ({
   return (
     <button
       disabled={isDisabled}
-      className={styles.secondry_button}
+      className={`${styles.secondry_button}  ${styles[sizeClass]} ${styles[weightClass]}`}
       onClick={handleClick}
     >
       {title}
-      <Image className="ms-2" src={actionImage} alt="action image" />
+      <Image className="ms-2" src={actionImage} alt="action image" width={30} />
     </button>
   );
 };

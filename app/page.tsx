@@ -35,8 +35,6 @@ import {
   nasscom,
   testimonials,
   userImg,
-  whiteArrow,
-  dashboardTwo,
   axisBankLogo,
   iciciBankLogo,
   rupayLogo,
@@ -44,9 +42,14 @@ import {
   visaLogo,
   desktopIphone,
   singleStack,
+  playButton,
+  rainbowOne,
+  rainbowTwo,
+  rainbowThree,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect } from "react";
+import { watch } from "fs";
 
 const loginUrl = "https://home.enkash.com/login";
 
@@ -74,41 +77,74 @@ const home = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div
-        className={`first_row row text-center color-white bg-indi-volt row-padding ${styles.bg_rainbow}`}
+        className={`${styles.first_row} row  text-center color-white bg-indi-volt`}
       >
-        <span className="col-12 mt-5">
+        <span className={`col-12  ${styles.first_text}`}>
           <Heading title="A Spend" size="h0" />
         </span>
-        <span className="col-12 mt-4">
+        <Image
+          src={rainbowOne}
+          alt="background image"
+          className={styles.rainbow_one}
+        />
+        <span className={`col-12  ${styles.second_text}`}>
           <Heading title="Management Solution" size="h0" />
         </span>
-        <span className="col-12 mt-5">
+
+        <Image
+          src={rainbowTwo} 
+          alt="background image 2"
+          className={styles.rainbow_two}
+        />
+
+        <span className={`col-12  ${styles.third_text}`}>
           <Heading title="That Does it All" size="h0" />
         </span>
-        <div className={`col-12 mt-5`}>
+
+        <Image
+          src={rainbowThree} 
+          alt="background image 2"
+          className={styles.rainbow_three}
+        />
+
+        <div className={`col-12 ${styles.description_text}`}>
           <div>
             <Heading
               title="Now streamline buisiness spend and optimize your cashflow"
-              size="h5"
+              size="h4"
+              weight="4"
             />
           </div>
           <div>
-            <Heading title="with real-time data and insights." size="h5" />
+            <Heading
+              title="with real-time data and insights."
+              size="h4"
+              weight="4"
+            />
           </div>
         </div>
-        <div className="my-5">
-          <PrimaryButton title="Get a Demo" url={loginUrl} theme="theme-blue" />
+        <div className={`col-12 ${styles.button_container}`}>
+          <PrimaryButton
+            title="Get a Demo"
+            url={loginUrl}
+            theme="theme-blue"
+            size="medium"
+            weight="bold"
+          />
           <span className="mx-2"></span>
           <SecondryButton
             title="Watch Video"
-            actionImage={whiteArrow}
+            actionImage={playButton}
             url={loginUrl}
+            size="medium"
+            weight="bold"
           />
         </div>
       </div>
+
       <div
-        className={`${styles.second_row} row d-flex justify-content-center align-items-center
-       text-center color-white bg-indi-volt row-padding`}
+        className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center
+       text-center color-white bg-indi-volt`}
       >
         <div className={`col-12 mb-5`}>
           <div>
@@ -116,7 +152,7 @@ const home = () => {
               title="3 Easy Steps to"
               color="white"
               size="h2"
-              weight="bold"
+              weight="6"
             />
           </div>
           <div>
@@ -124,42 +160,34 @@ const home = () => {
               title="Get Started with EnKash"
               color="white"
               size="h2"
-              weight="normal"
+              weight="3"
             />
           </div>
         </div>
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image
-            src={userPlus}
-            alt="signup image"
-            className={styles.steps_img}
-          />
-          <Image className="ms-5" src={numberOne} alt="step one image" />
-          <div className="ms-2">
+          <Image src={userPlus} alt="signup image" className="me-3" />
+          <Image src={numberOne} alt="step one image" className="me-3" />
+          <div>
             <Heading title="Sign Up" size="h5" />
           </div>
         </div>
         <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center`}
         >
-          <Image src={userTick} alt="kyc image" className={styles.steps_img} />
-          <Image className="ms-5" src={numberTwo} alt="step one image" />
-          <div className="ms-2">
+          <Image src={userTick} alt="kyc image" className="me-3" />
+          <Image src={numberTwo} alt="step one image" className="me-3" />
+          <div>
             <Heading title="Complete KYC Process" size="h5" />
           </div>
         </div>
         <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center `}
         >
-          <Image
-            src={stack}
-            alt="get started image"
-            className={styles.steps_img}
-          />
-          <Image className="ms-5" src={numberThree} alt="step one image" />
-          <div className="ms-2">
+          <Image src={stack} alt="get started image" className="me-3" />
+          <Image src={numberThree} alt="step one image" className="me-3" />
+          <div>
             <Heading title="Get Started" size="h5" />
           </div>
         </div>
