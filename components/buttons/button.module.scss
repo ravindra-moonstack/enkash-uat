@@ -32,9 +32,10 @@ $font-size-mobile: 12px;
   padding: 5px;
   border: none;
   font-size: $font-size-mobile;
+  font-weight: 700px;
   @include bp-md {
-    padding: 5px 20px;
-    font-size: $font-size;
+    padding: 5px 50px;
+    font-size: 20px;
   }
 
   &.theme-light {

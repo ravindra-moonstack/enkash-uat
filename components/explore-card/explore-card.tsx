@@ -17,12 +17,22 @@ const ExploreCard = ({ title, description, theme }: CardProps) => {
 
   return (
     <div className="d-flex flex-column">
-      <Heading title={title} color={getPrimaryColor()} size="h1" />
+      <Heading title={title} color={getPrimaryColor()} size="h2" weight="6" />
       <div className="my-2">
-        <Heading title={description} color={getSecondaryColor()} size="h5" />
+        <Heading
+          title={description}
+          color={getSecondaryColor()}
+          size="h4"
+          weight="4"
+        />
       </div>
       <div className="d-flex align-items-center mt-2">
-        <Heading title="Explore Now" color={getPrimaryColor()} size="h5" />
+        <Heading
+          title="Explore Now"
+          color={getPrimaryColor()}
+          size="h5"
+          weight="6"
+        />
         <Image
           className="m-2"
           src={getArrowSrc()}

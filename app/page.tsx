@@ -49,6 +49,8 @@ import {
   polygonOne,
   polygonTwo,
   polygonThree,
+  blueBlackLine,
+  greenDot,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useState } from "react";
@@ -251,9 +253,9 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fourth_row} bg-white row`}>
-        <div className="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center row-padding">
-          <div>
-            <Heading title="Ultimate" color="black" size="h1" />
+        <div className="col-12 col-md-6 d-flex flex-column justify-content-start row-padding">
+          <div className="ps-5">
+            <Heading title="Ultimate" color="black" size="h1" weight="6" />
             <div>
               <Heading
                 title={`productivity${space}`}
@@ -275,21 +277,28 @@ const home = () => {
               <Heading title="fingertips." color="equity-blue" size="h1" />
             </div>
           </div>
-          <div className="d-flex flex-column my-5">
+          <div className="d-flex flex-column my-5 ps-5">
             <div className="row d-flex my-4">
               <div className="col-6 d-flex">
                 <Image
                   src={automateIcon}
                   alt="automate icon"
-                  className="mx-4"
-                  height={50}
+                  className="me-4"
+                  height={55}
+                  width={55}
                 />
                 <div>
-                  <Heading title="Intelligent" color="equity-blue" size="h6" />
+                  <Heading
+                    title="Intelligent"
+                    color="equity-blue"
+                    size="h4"
+                    weight="6"
+                  />
                   <Heading
                     title="Automation Tools"
                     color="equity-blue"
-                    size="h6"
+                    size="h4"
+                    weight="6"
                   />
                 </div>
               </div>
@@ -297,16 +306,23 @@ const home = () => {
                 <Image
                   src={twoBoxIcon}
                   alt="automate icon"
-                  className="mx-4"
-                  height={50}
+                  className="me-4"
+                  height={55}
+                  width={55}
                 />
                 <div>
                   <Heading
                     title="Real-Time Data"
                     color="equity-blue"
-                    size="h6"
+                    size="h4"
+                    weight="6"
                   />
-                  <Heading title="& Insights" color="equity-blue" size="h6" />
+                  <Heading
+                    title="& Insights"
+                    color="equity-blue"
+                    size="h4"
+                    weight="6"
+                  />
                 </div>
               </div>
             </div>
@@ -315,34 +331,54 @@ const home = () => {
                 <Image
                   src={blueBoxIcon}
                   alt="automate icon"
-                  className="mx-4"
-                  height={50}
+                  className="me-4"
+                  height={55}
+                  width={55}
                 />
                 <div>
                   <Heading
                     title="Optimized Business"
                     color="equity-blue"
-                    size="h6"
+                    size="h4"
+                    weight="6"
                   />
-                  <Heading title="Productivity" color="equity-blue" size="h6" />
+                  <Heading
+                    title="Productivity"
+                    color="equity-blue"
+                    size="h4"
+                    weight="6"
+                  />
                 </div>
               </div>
               <div className="col-6 d-flex">
                 <Image
                   src={circleRupeeIcon}
                   alt="automate icon"
-                  className="mx-4"
-                  height={50}
+                  className="me-4"
+                  height={55}
+                  width={55}
                 />
                 <div>
-                  <Heading title="Unparalleled" color="equity-blue" size="h6" />
-                  <Heading title="Savings" color="equity-blue" size="h6" />
+                  <Heading
+                    title="Unparalleled"
+                    color="equity-blue"
+                    size="h4"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Savings"
+                    color="equity-blue"
+                    size="h4"
+                    weight="6"
+                  />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="col-md-6 col-12 d-flex position-relative row-padding">
+        <div
+          className={`col-md-6 col-12 d-flex position-relative  ${styles.img_container}`}
+        >
           <Image
             src={desktopIphone}
             alt="enkash dashboard image"
@@ -350,19 +386,26 @@ const home = () => {
           />
         </div>
         <div className="col-md-6">
-          <div className="row-padding-x-only mb-3 ">
+          <div className={`row-padding-x-only mb-3 `}>
             <div>
               <Heading
                 title={`Financial${space}`}
-                size="h1"
+                size="h2"
                 color="equity-blue"
+                weight="6"
               />
-              <Heading title={`Partners${space}`} size="h1" color="black" />
-              <Heading title="and" size="h1" color="equity-blue" />
+              <Heading
+                title={`Partners${space}`}
+                size="h2"
+                color="black"
+                weight="6"
+              />
+              <Heading title="and" size="h2" color="equity-blue" weight="6" />
             </div>
             <div>
-              <Heading title="Customers." size="h1" color="black" />
+              <Heading title="Customers." size="h2" color="black" weight="6" />
             </div>
+            <Image src={blueBlackLine} alt="underline image" />
           </div>
         </div>
         <div className="col-12">
@@ -418,7 +461,7 @@ const home = () => {
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 mt-5 px-5 px-5 order-4 order-md-3">
+        <div className="col-md-6 col-12 mt-5 px-5 order-4 order-md-3">
           <ExploreCard
             title="Receivables"
             description="EnKash empowers your business by providing intelligent
@@ -436,7 +479,7 @@ const home = () => {
         </div>
       </div>
       <div className="sixth_row bg-white row d-flex row-padding-bottom-none">
-        <div className="col-md-6 col-12 d-flex mb-5 blue_grad_bg_one">
+        <div className="col-md-6 col-12 d-flex mb-5 px-5">
           <Image
             src={expenseDashboard}
             alt="payables image"
@@ -462,8 +505,14 @@ const home = () => {
               title="Say yes to better"
               color="electric-green"
               size="h2"
+              weight="6"
             />
-            <Heading title="approval flows." color="white" size="h2" />
+            <Heading
+              title="approval flows."
+              color="white"
+              size="h2"
+              weight="6"
+            />
             <div className="mt-2">
               <Heading
                 title="Choose an approval matrix that’s best for your business, down to
@@ -472,13 +521,16 @@ const home = () => {
                 the departmental level. Transparent approval processes increase
                 efficiency and nullify delays."
                 color="white"
-                size="h6"
+                size="h4"
+                weight="4"
               />
             </div>
 
             <div className="mt-5">
               <PrimaryButton
                 title="Get a Demo"
+                size="medium"
+                weight="bold"
                 url={loginUrl}
                 theme="theme-green"
               />
@@ -487,25 +539,38 @@ const home = () => {
           <Image src={teamImg} alt="office team image" />
         </div>
       </div>
-      <div className="eigth_row row d-flex d-flex bg-white row-padding-top-none">
+      <div className="eigth_row row d-flex d-flex bg-white row-padding">
         <div className="d-flex flex-column justify-content-center align-items-center">
           <div>
-            <Heading title="Discover full control." color="black" size="h1" />
+            <Heading
+              title="Discover full control."
+              color="black"
+              size="h1"
+              weight="7"
+            />
           </div>
           <div>
-            <Heading title="Discover freedom." color="equity-blue" size="h1" />
+            <Heading
+              title="Discover freedom."
+              color="equity-blue"
+              size="h1"
+              weight="7"
+            />
           </div>
           <div className="mt-2 text-center">
             <Heading
               title="Leverage the power of purpose-based cards with smart controls."
               color="equity-blue"
               size="h4"
+              weight="5"
             />
           </div>
         </div>
       </div>
-      <div className="ninth_row row bg-white row-padding-top-none">
-        <div className="col-md-6 col-12 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two order-1 order-md-1">
+      <div className={`${styles.ninth_row} row bg-white`}>
+        <div
+          className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center ${styles.blue_grad_bg_left} order-1 order-md-1`}
+        >
           <Image
             src={corporateCardsImg}
             width={350}
@@ -513,21 +578,25 @@ const home = () => {
             className="img-fluid"
           />
         </div>
-        <div className="col-md-6 col-12 mb-5 px-5 order-2 order-md-2">
+        <div className="col-md-6 col-12 row-padding-bottom-none mb-5 order-2 order-md-2">
           <ExploreCard
             title="Corporate Cards"
             description="Issue cards for different purposes, and manage them all on a single platform with smart controls. Enable or disable spend categories as and when required."
             theme="blue"
           />
         </div>
-        <div className="col-md-6 col-12 mt-5 px-5 order-4 order-md-3">
-          <ExploreCard
-            title="DIY Card Module"
-            description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
-            theme="blue"
-          />
+        <div className="col-md-6 col-12 mt-5 row-padding-top-none order-4 order-md-3">
+          <div className="px-5">
+            <ExploreCard
+              title="DIY Card Module"
+              description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
+              theme="blue"
+            />
+          </div>
         </div>
-        <div className="col-md-6 col-12 d-flex mb-5 d-flex justify-content-center blue_grad_bg_two order-3 order-md-4">
+        <div
+          className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  ${styles.blue_grad_bg_bottom}  order-3 order-md-4`}
+        >
           <Image
             src={diyCardsModuleImg}
             width={350}
@@ -536,14 +605,14 @@ const home = () => {
           />
         </div>
       </div>
-      <div className="tenth_row row bg-white row-padding-x-only">
-        <div className="col-12 d-flex justify-content-center">
+      <div className="tenth_row row bg-white row-padding-bottom-none">
+        <div className="col-12 d-flex justify-content-center px-5">
           <div>
             <Heading title={`Loyalty${space}`} color="black" size="h1" />
             <Heading title="Lounge" color="equity-blue" size="h1" />
           </div>
         </div>
-        <div className="col-md-6 col-12 d-flex flex-column mt-5">
+        <div className="col-md-6 col-12 d-flex flex-column mt-5 px-5">
           <div className="d-flex justify-content-center justify-content-md-start">
             <div className="me-2">
               <MenuButton isDisabled={false} title="Voucher" theme="light" />
@@ -569,7 +638,8 @@ const home = () => {
               more you’ll earn, and the closer you’ll get to unlocking more and
               more rewards."
               color="black"
-              size="h5"
+              size="h4"
+              weight="4"
             />
           </div>
           <div className="d-flex mt-3 justify-content-center justify-content-md-start">
@@ -578,6 +648,8 @@ const home = () => {
               isDisabled={false}
               url=""
               theme="theme-blue"
+              size="medium"
+              weight="bold"
             />
           </div>
         </div>
@@ -640,11 +712,13 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className="twelfth_row row color-white bg-white row-padding">
+      <div
+        className={`${styles.twelfth_row} row color-white bg-white row-padding`}
+      >
         <div
-          className={`col-12 d-flex flex-md-row justify-content-evenly mt-3 ${styles.scroll_container}`}
+          className={`col-12 d-flex flex-md-row mt-3 ${styles.scroll_container}`}
         >
-          <div className="me-4 md:me-0">
+          <div className={styles.card}>
             <GetStartedCard
               title1="Optimize Spending;"
               title2="save more."
@@ -653,7 +727,7 @@ const home = () => {
             />
           </div>
 
-          <div className="me-4 md:me-0">
+          <div className={styles.card}>
             <GetStartedCard
               title1="Total Visibility;"
               title2="smarter controls."
@@ -662,7 +736,7 @@ const home = () => {
             />
           </div>
 
-          <div className="me-4 md:me-0">
+          <div className={styles.card}>
             <GetStartedCard
               title1="Convenient solutions to scale faster."
               title2="to scale faster."
@@ -670,26 +744,46 @@ const home = () => {
                platform & save countless working hours."
             />
           </div>
+
+          <div className={styles.card}>
+            <GetStartedCard
+              title1="Optimize Spending;"
+              title2="save more."
+              description="Power your business with a centralized spend management
+               platform & save countless working hours."
+            />
+          </div>
         </div>
       </div>
-      <div className="thirteenth_row row row-padding-top-none bg-white">
-        <div className="col-md-6 col-12 d-flex justify-content-center mt-5 blue_grad_bg_three">
+      <div
+        className={`${styles.thirteenth_row} row row-padding-top-none bg-white`}
+      >
+        <div
+          className={`col-md-6 col-12 d-flex justify-content-center mt-5 ${styles.blue_grad_bg}`}
+        >
           <Image
             src={mobileIntegration}
             alt="mobile integrations"
             className="img-fluid"
+            height={450}
           />
         </div>
-        <div className="col-md-6 col-12 d-flex flex-column mt-5 justify-content-center">
+        <div className="col-md-6 col-12 d-flex flex-column mt-5">
           <div className="mt-3">
             <div>
               <Heading
                 title="Integrate Seamlessly;"
                 color="equity-blue"
                 size="h1"
+                weight="6"
               />
             </div>
-            <Heading title="Connect Systems Readily." color="black" size="h1" />
+            <Heading
+              title="Connect Systems Readily."
+              color="black"
+              size="h1"
+              weight="6"
+            />
           </div>
           <div>
             <Heading
@@ -698,7 +792,8 @@ const home = () => {
                 others. Ensure your books are always audit ready and view real-time
                 up-to-the-minute data."
               color="black"
-              size="h5"
+              size="h4"
+              weight="4"
             />
           </div>
           <div className="d-flex mt-3">
@@ -707,54 +802,61 @@ const home = () => {
               isDisabled={false}
               url=""
               theme="theme-blue"
+              size="medium"
+              weight="bold"
             />
           </div>
         </div>
       </div>
       <div className={`${styles.fourteenth_row} row bg-white row-padding`}>
-        <div
-          className={`d-flex flex-column flex-md-row justify-content-center ${styles.box}`}
-        >
+        <div className="col-12 text-center mb-5">
+          <Heading title="Awards & Accolades" color="equity-blue" size="h1" />
+        </div>
+        <div className="px-5">
           <div
-            className={`d-flex flex-column justify-content-between ${styles.box_item}`}
+            className={`d-flex flex-column flex-md-row justify-content-center px-5 ${styles.box}`}
           >
-            <div className="mb-5">
-              <Heading title="Startups to Watch" color="black" size="h5" />
+            <div
+              className={`d-flex flex-column justify-content-between ${styles.box_item}`}
+            >
+              <div className="mb-5">
+                <Heading title="Startups to Watch" color="black" size="h5" />
+              </div>
+              <div className="md:mt-5">
+                <Image src={inc42} alt="inc42 logo" width={250} />
+              </div>
             </div>
-            <div className="md:mt-5">
-              <Image src={inc42} alt="inc42 logo" width={250} />
+            <div
+              className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
+            >
+              <div className="">
+                <Heading
+                  title="Winner - India Fintech Awards 2020"
+                  color="electric-green"
+                  size="h5"
+                />
+              </div>
+              <div className="md:mt-5">
+                <Image src={nasscom} alt="nasscom logo" width={250} />
+              </div>
             </div>
-          </div>
-          <div
-            className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
-          >
-            <div className="mt-5">
-              <Heading
-                title="Winner - India Fintech Awards 2020"
-                color="electric-green"
-                size="h5"
-              />
-            </div>
-            <div className="md:mt-5">
-              <Image src={nasscom} alt="nasscom logo" width={250} />
-            </div>
-          </div>
-          <div
-            className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
-          >
-            <div className="mb-5">
-              <Heading
-                title="Best B2B Solution Provider"
-                color="black"
-                size="h5"
-              />
-            </div>
-            <div className="md:mt-5">
-              <Image
-                src={paymentAndCardSummit}
-                alt="payment and card summit logo"
-                width={250}
-              />
+            <div
+              className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
+            >
+              <div className="mb-5">
+                <Heading
+                  title="Best B2B Solution Provider"
+                  color="black"
+                  size="h5"
+                />
+              </div>
+              <div className="md:mt-5">
+                <Image
+                  src={paymentAndCardSummit}
+                  alt="payment and card summit logo"
+                  width={250}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -764,13 +866,13 @@ const home = () => {
       >
         <div className="col-12 mb-5 text-center">
           <div className={styles.inline_div}>
-            <Heading title={`Trusted by${space}`} color="white" size="h1" />
+            <Heading title={`Trusted by${space}`} color="white" size="h1" weight="6" />
           </div>
           <div className={styles.inline_div}>
-            <Heading title={`1000+${space}`} color="electric-green" size="h1" />
+            <Heading title={`1000+${space}`} color="electric-green" size="h1" weight="6" />
           </div>
           <div className={styles.inline_div}>
-            <Heading title="companies." color="white" size="h1" />
+            <Heading title="companies." color="white" size="h1" weight="6" />
           </div>
         </div>
         <div

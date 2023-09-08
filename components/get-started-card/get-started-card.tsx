@@ -14,12 +14,12 @@ const GetStartedCard = ({ title1, title2, description }: CardProps) => {
     <div
       className={`d-flex flex-column bg-indi-volt position-relative ${styles.card_body}`}
     >
-      <Heading title={title1} color="rainy-blue" size="h3" />
-      <Heading title={title2} color="white" size="h3" />
+      <Heading title={title1} color="rainy-blue" size="h2" weight="6" />
+      <Heading title={title2} color="white" size="h2" weight="6" />
       <div className="my-3">
-        <Heading title={description} color="white" size="h5" />
+        <Heading title={description} color="white" size="h6"  weight="4"/>
       </div>
-      <div className="d-flex align-items-center mt-2">
+      <div className="d-flex align-items-center mt-5">
         <Heading title="Get Started" color="white" size="h5" />
         <Image className="m-2" src={whiteArrow} alt="arrow icon" width={50} />
       </div>

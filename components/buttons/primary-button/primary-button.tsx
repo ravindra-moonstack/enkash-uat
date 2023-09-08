@@ -7,7 +7,7 @@ export interface ButtonProps {
   title: string;
   url?: string;
   theme?: "theme-blue" | "theme-green" | "theme-black";
-  size: "small" | "medium";
+  size?: "small" | "medium";
   weight?: "bold" | "normal";
 }
 

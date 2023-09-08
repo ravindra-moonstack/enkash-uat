@@ -22,12 +22,6 @@
   display: inline-block;
 }
 
-.scroll_container {
-  width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -168,7 +162,6 @@
     flex-direction: column;
     text-align: center;
     top: 1120px;
-    z-index: 4;
   }
 
   .polygon_one {
@@ -176,21 +169,18 @@
     top: 230px;
     opacity: 0;
     transform: translateY(100%);
-    z-index: 1;
   }
   .polygon_two {
     position: absolute;
     top: 390px;
     opacity: 0;
     transform: translateY(100%);
-    z-index: 2;
   }
   .polygon_three {
     position: absolute;
     top: 550px;
     opacity: 0;
     transform: translateY(100%);
-    z-index: 3;
   }
 
   @keyframes slideInFromBottom {
@@ -221,6 +211,12 @@
   overflow: hidden;
   width: auto;
   position: relative;
+
+  .img_container {
+    margin-bottom: 250px;
+    padding-top: 100px;
+  }
+
   .desktop_img {
     width: 100%;
     height: auto;
@@ -263,6 +259,25 @@
   }
 }
 
+.ninth_row {
+  .blue_grad_bg_left {
+    background: radial-gradient(
+      33.38% 50% at 40% 45%,
+      #1c5af4 0%,
+      rgba(28, 90, 244, 0.5) 57.29%,
+      rgba(255, 255, 255, 0) 84.9%
+    );
+  }
+  .blue_grad_bg_bottom {
+    background: radial-gradient(
+      33.38% 50% at 40% 60%,
+      #1c5af4 0%,
+      rgba(28, 90, 244, 0.5) 57.29%,
+      rgba(255, 255, 255, 0) 84.9%
+    );
+  }
+}
+
 .eleventh_row {
   .steps_img {
     width: 60px;
@@ -279,6 +294,36 @@
   .steps_img {
     width: 60px;
     height: 60px;
+  }
+}
+
+.twelfth_row {
+  .scroll_container {
+    overflow-x: auto;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+      background: #092093;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #61d6ff 30%, transparent 30%);
+    }
+  }
+  .card {
+    margin-right: 20px;
+    margin-bottom: 40px;
+  }
+}
+
+.thirteenth_row {
+  .blue_grad_bg {
+    background: radial-gradient(
+      34.33% 44.33% at 60% 50%,
+      #1c5af4 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
   }
 }
 

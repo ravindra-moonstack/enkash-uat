@@ -16,9 +16,9 @@
   font-size: 23px;
   line-height: 30px;
   margin-bottom: 0;
+  line-height: normal;
   @include bp-md {
-    font-size: 45px;
-    line-height: 60px;
+    font-size: 61px;
   }
 }
 
@@ -59,9 +59,9 @@
   line-height: 20px;
   margin-bottom: 0;
   white-space: normal;
+  line-height: normal;
   @include bp-md {
-    font-size: 18px;
-    line-height: 30px;
+    font-size: 22px;
   }
 }
 
@@ -70,9 +70,9 @@
   line-height: 13px;
   font-weight: 400;
   margin-bottom: 0;
+  line-height: normal;
   @include bp-md {
-    font-size: 14px;
-    line-height: 26px;
+    font-size: 18px;
   }
 }
 
