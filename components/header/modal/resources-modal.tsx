@@ -20,24 +20,24 @@ const ResourcesModal = () => {
         <div className={styles.box_shadow_left}></div>
         <div className="d-flex flex-column ps-4">
           <div>
-            <div className="mb-3">
-              Latest Reads
+            <div className="mb-3 d-flex align-items-center">
+              <div className={styles.latest_read_text}>Latest Reads</div>
               <Image
                 className="ms-3"
                 src={blueforwardArrow}
                 alt="Read Enkash blog post"
-                width={60}
+                width={80}
               />
             </div>
           </div>
           <div>
-            <Image src={officeDiscussionPic} alt="Blog post Pic" height={150} />
+            <Image src={officeDiscussionPic} alt="Blog post Pic" height={200} />
           </div>
           <div className={`mb-2 mt-2 ${styles.resource_modal_blog_title}`}>
             Lorem ipsum dolor sit amet, consectetur.
           </div>
           <div className="color-slate-grey mb-2">Dec 21, 2023</div>
-          <div className="mb-3">
+          <div className={`mb-3 ${styles.resource_modal_blog_descrption}`}>
             Lorem ipsum dolor sit amet consectetur. Magna malesuada imperdiet
             fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi.
             Fames et diam quis urna vestibulum ipsum. Nibh vestibulum ut viverra
