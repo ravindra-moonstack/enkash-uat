@@ -52,6 +52,7 @@ import {
   blueBlackLine,
   greenDot,
   blackRectangleTop,
+  threeDownArrow,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useState } from "react";
@@ -126,6 +127,22 @@ const home = () => {
             />
           </div>
         </div>
+        <div className={`col-12 ${styles.description_text_mobile}`}>
+          <div>
+            <Heading
+              title="Now streamline buisiness spend and optimize your cashflow"
+              size="h3"
+              weight="4"
+            />
+          </div>
+          <div>
+            <Heading
+              title="with real-time data and insights."
+              size="h3"
+              weight="4"
+            />
+          </div>
+        </div>
         <div className={`col-12 ${styles.button_container}`}>
           <PrimaryButton
             title="Get a Demo"
@@ -142,6 +159,9 @@ const home = () => {
             size="medium"
             weight="bold"
           />
+        </div>
+        <div className={`col-12 ${styles.down_arrow}`}>
+          <Image src={threeDownArrow} alt="arrow icon" />
         </div>
       </div>
 
@@ -170,26 +190,50 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userPlus} alt="signup image" className="me-3" />
-          <Image src={numberOne} alt="step one image" className="me-3" />
+          <Image
+            src={userPlus}
+            alt="signup image"
+            className={`me-3 ${styles.action_image_user_plus}`}
+          />
+          <Image
+            src={numberOne}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
           <div>
             <Heading title="Sign Up" size="h5" />
           </div>
         </div>
         <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center`}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userTick} alt="kyc image" className="me-3" />
-          <Image src={numberTwo} alt="step one image" className="me-3" />
+          <Image
+            src={userTick}
+            alt="kyc image"
+            className={`me-3 ${styles.action_image_user_tick}`}
+          />
+          <Image
+            src={numberTwo}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
           <div>
             <Heading title="Complete KYC Process" size="h5" />
           </div>
         </div>
         <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center `}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={stack} alt="get started image" className="me-3" />
-          <Image src={numberThree} alt="step one image" className="me-3" />
+          <Image
+            src={stack}
+            alt="get started image"
+            className={`me-3 ${styles.action_image_stack}`}
+          />
+          <Image
+            src={numberThree}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
           <div>
             <Heading title="Get Started" size="h5" />
           </div>
@@ -255,7 +299,7 @@ const home = () => {
       </div>
       <div className={`${styles.fourth_row} bg-white row`}>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-start row-padding">
-          <div className="ps-5">
+          <div className="ps-3">
             <Heading title="Ultimate" color="black" size="h1" weight="6" />
             <div>
               <Heading
@@ -278,15 +322,13 @@ const home = () => {
               <Heading title="fingertips." color="equity-blue" size="h1" />
             </div>
           </div>
-          <div className="d-flex flex-column my-5 ps-5">
+          <div className="d-flex flex-column my-3 ps-3">
             <div className="row d-flex my-4">
               <div className="col-6 d-flex">
                 <Image
                   src={automateIcon}
                   alt="automate icon"
-                  className="me-4"
-                  height={55}
-                  width={55}
+                  className={`me-4 ${styles.icons}`}
                 />
                 <div>
                   <Heading
@@ -307,9 +349,7 @@ const home = () => {
                 <Image
                   src={twoBoxIcon}
                   alt="automate icon"
-                  className="me-4"
-                  height={55}
-                  width={55}
+                  className={`me-4 ${styles.icons}`}
                 />
                 <div>
                   <Heading
@@ -332,9 +372,7 @@ const home = () => {
                 <Image
                   src={blueBoxIcon}
                   alt="automate icon"
-                  className="me-4"
-                  height={55}
-                  width={55}
+                  className={`me-4 ${styles.icons}`}
                 />
                 <div>
                   <Heading
@@ -355,9 +393,7 @@ const home = () => {
                 <Image
                   src={circleRupeeIcon}
                   alt="automate icon"
-                  className="me-4"
-                  height={55}
-                  width={55}
+                  className={`me-4 ${styles.icons}`}
                 />
                 <div>
                   <Heading
@@ -410,7 +446,9 @@ const home = () => {
           </div>
         </div>
         <div className="col-12">
-          <div className="row-padding-x-only mb-3 d-flex align-items-center">
+          <div
+            className={`${styles.bank_logo} row-padding-x-only mb-3 d-flex align-items-center`}
+          >
             <Image
               src={axisBankLogo}
               width={150}
@@ -445,14 +483,14 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
-        <div className="col-md-6 col-12 d-flex px-5 mb-5 order-1 order-md-1">
+        <div className="col-md-6 col-12 d-flex  mb-5 order-2 order-md-1">
           <Image
             src={payablesImage}
             alt="payables image"
             className="img-fluid"
           />
         </div>
-        <div className="col-md-6 col-12 mb-5 px-5 order-2 order-md-2">
+        <div className="col-md-6 col-12 mb-5  order-1 order-md-2">
           <ExploreCard
             title="Payables"
             description=" Manage all outgoing expenses in one place. Our online platform
@@ -462,7 +500,7 @@ const home = () => {
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 mt-5 px-5 order-4 order-md-3">
+        <div className="col-md-6 col-12 mt-5  order-3 order-md-3">
           <ExploreCard
             title="Receivables"
             description="EnKash empowers your business by providing intelligent
@@ -471,7 +509,7 @@ const home = () => {
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 d-flex px-5 mt-5 order-3 order-md-4">
+        <div className="col-md-6 col-12 d-flex mt-5 order-4 order-md-4">
           <Image
             src={receivableImage}
             alt="receivable image"
@@ -480,14 +518,14 @@ const home = () => {
         </div>
       </div>
       <div className="sixth_row bg-white row d-flex row-padding-bottom-none">
-        <div className="col-md-6 col-12 d-flex mb-5 px-5">
+        <div className="col-md-6 col-12 d-flex mb-5">
           <Image
             src={expenseDashboard}
             alt="payables image"
             className="img-fluid"
           />
         </div>
-        <div className="col-md-6 col-12 mb-5 px-5">
+        <div className="col-md-6 col-12 mb-5">
           <ExploreCard
             title="Expense Management"
             description="Gain control over your business spends with a complete overview
@@ -501,43 +539,49 @@ const home = () => {
         <div
           className={`d-flex col-12 flex-column flex-md-row align-items-center ${styles.card}`}
         >
-          <div className={`d-flex flex-column ${styles.card_container}`}>
-            <Heading
-              title="Say yes to better"
-              color="electric-green"
-              size="h2"
-              weight="5"
-            />
-            <Heading
-              title="approval flows."
-              color="white"
-              size="h2"
-              weight="6"
-            />
-            <div className="mt-2">
+          <div className="d-flex flex-column-reverse flex-md-row">
+            <div className={`d-flex flex-column ${styles.card_container}`}>
               <Heading
-                title="Choose an approval matrix that’s best for your business, down to
-                the departmental level. Transparent approval processes increase
-                efficiency and nullify delays.Choose an approval matrix that’s best for your business, down to
+                title="Say yes to better"
+                color="electric-green"
+                size="h2"
+                weight="5"
+              />
+              <Heading
+                title="approval flows."
+                color="white"
+                size="h2"
+                weight="6"
+              />
+              <div className="mt-2">
+                <Heading
+                  title="Choose an approval matrix that’s best for your business, down to
                 the departmental level. Transparent approval processes increase
                 efficiency and nullify delays."
-                color="white"
-                size="h5"
-                weight="4"
-              />
-            </div>
+                  color="white"
+                  size="h5"
+                  weight="4"
+                />
+              </div>
 
-            <div className="mt-5">
-              <PrimaryButton
-                title="Get a Demo"
-                size="medium"
-                weight="bold"
-                url={loginUrl}
-                theme="theme-green"
+              <div className="mt-5">
+                <PrimaryButton
+                  title="Get a Demo"
+                  size="medium"
+                  weight="bold"
+                  url={loginUrl}
+                  theme="theme-green"
+                />
+              </div>
+            </div>
+            <div className={styles.img_container}>
+              <Image
+                src={teamImg}
+                alt="office team image"
+                className={`${styles.img_container} img-fluid`}
               />
             </div>
           </div>
-          <Image src={teamImg} alt="office team image" />
         </div>
       </div>
       <div className="eigth_row row d-flex d-flex bg-white row-padding">
@@ -570,7 +614,7 @@ const home = () => {
       </div>
       <div className={`${styles.ninth_row} row bg-white`}>
         <div
-          className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center ${styles.blue_grad_bg_left} order-1 order-md-1`}
+          className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center ${styles.blue_grad_bg_left} order-2 order-md-1`}
         >
           <Image
             src={corporateCardsImg}
@@ -579,24 +623,22 @@ const home = () => {
             className="img-fluid"
           />
         </div>
-        <div className="col-md-6 col-12 row-padding-bottom-none mb-5 order-2 order-md-2">
+        <div className="col-md-6 col-12 row-padding-bottom-none mb-5 order-1 order-md-2">
           <ExploreCard
             title="Corporate Cards"
             description="Issue cards for different purposes, and manage them all on a single platform with smart controls. Enable or disable spend categories as and when required."
             theme="blue"
           />
         </div>
-        <div className="col-md-6 col-12 mt-5 row-padding-top-none order-4 order-md-3">
-          <div className="px-5">
-            <ExploreCard
-              title="DIY Card Module"
-              description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
-              theme="blue"
-            />
-          </div>
+        <div className="col-md-6 col-12  mt-2 row-padding-top-none order-3 order-md-3">
+          <ExploreCard
+            title="DIY Card Module"
+            description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
+            theme="blue"
+          />
         </div>
         <div
-          className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  ${styles.blue_grad_bg_bottom}  order-3 order-md-4`}
+          className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  ${styles.blue_grad_bg_bottom}  order-4 order-md-4`}
         >
           <Image
             src={diyCardsModuleImg}
@@ -607,14 +649,14 @@ const home = () => {
         </div>
       </div>
       <div className="tenth_row row bg-white row-padding-bottom-none">
-        <div className="col-12 d-flex justify-content-center px-5">
-          <div>
+        <div className="col-12 d-flex justify-content-center">
+          <div className="pb-md-5 pb-3">
             <Heading title={`Loyalty${space}`} color="black" size="h1" />
             <Heading title="Lounge" color="equity-blue" size="h1" />
           </div>
         </div>
-        <div className="col-md-6 col-12 d-flex flex-column mt-5 px-5">
-          <div className="d-flex justify-content-center justify-content-md-start">
+        <div className="col-md-6 col-12 d-flex flex-column mt-3">
+          <div className="d-flex  justify-content-md-start">
             <div className="me-2">
               <MenuButton isDisabled={false} title="Voucher" theme="light" />
             </div>
@@ -623,7 +665,7 @@ const home = () => {
             </div>
             <MenuButton isDisabled={false} title="Incentive" theme="disabled" />
           </div>
-          <div className="d-flex mt-3 justify-content-center justify-content-md-start">
+          <div className="d-flex mt-3  justify-content-md-start">
             <div className="me-2">
               <MenuButton
                 isDisabled={false}
@@ -688,26 +730,50 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userPlus} alt="signup image" className="me-3" />
-          <Image src={numberOne} alt="step one image" className="me-3" />
+          <Image
+            src={userPlus}
+            alt="signup image"
+            className={`me-3 ${styles.action_image_user_plus}`}
+          />
+          <Image
+            src={numberOne}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
           <div>
             <Heading title="Sign Up" size="h5" />
           </div>
         </div>
         <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center`}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={userTick} alt="kyc image" className="me-3" />
-          <Image src={numberTwo} alt="step one image" className="me-3" />
+          <Image
+            src={userTick}
+            alt="kyc image"
+            className={`me-3 ${styles.action_image_user_tick}`}
+          />
+          <Image
+            src={numberTwo}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
           <div>
             <Heading title="Complete KYC Process" size="h5" />
           </div>
         </div>
         <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center `}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image src={stack} alt="get started image" className="me-3" />
-          <Image src={numberThree} alt="step one image" className="me-3" />
+          <Image
+            src={stack}
+            alt="get started image"
+            className={`me-3 ${styles.action_image_stack}`}
+          />
+          <Image
+            src={numberThree}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
           <div>
             <Heading title="Get Started" size="h5" />
           </div>
@@ -760,7 +826,7 @@ const home = () => {
         className={`${styles.thirteenth_row} row row-padding-top-none bg-white`}
       >
         <div
-          className={`col-md-6 col-12 d-flex justify-content-center mt-5 ${styles.blue_grad_bg}`}
+          className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
         >
           <Image
             src={mobileIntegration}
@@ -769,7 +835,7 @@ const home = () => {
             height={450}
           />
         </div>
-        <div className="col-md-6 col-12 d-flex flex-column mt-5">
+        <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">
           <div className="mt-3">
             <div>
               <Heading
@@ -786,7 +852,7 @@ const home = () => {
               weight="6"
             />
           </div>
-          <div>
+          <div className="mt-2">
             <Heading
               title="Our platform links seamlessly with any accounting, ERP
                 solution you currently use like Tally, Quickbooks, SAP amongst
@@ -813,49 +879,49 @@ const home = () => {
         <div className="col-12 text-center mb-5">
           <Heading title="Awards & Accolades" color="equity-blue" size="h1" />
         </div>
-        <div className="px-5">
+        <div className="">
           <div
-            className={`d-flex flex-column flex-md-row justify-content-center px-5 ${styles.box}`}
+            className={`d-flex flex-column flex-md-row justify-content-center ${styles.box}`}
           >
             <div
               className={`d-flex flex-column justify-content-between ${styles.box_item}`}
             >
-              <div className="mb-5">
+              <div className="mb-5 py-2">
                 <Heading title="Startups to Watch" color="black" size="h5" />
               </div>
-              <div className="md:mt-5">
-                <Image src={inc42} alt="inc42 logo" width={250} />
+              <div>
+                <Image src={inc42} alt="inc42 logo" className="img-fluid" />
               </div>
             </div>
             <div
               className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
             >
-              <div className="">
+              <div className="mb-5 py-2">
                 <Heading
                   title="Winner - India Fintech Awards 2020"
                   color="electric-green"
                   size="h5"
                 />
               </div>
-              <div className="md:mt-5">
-                <Image src={nasscom} alt="nasscom logo" width={250} />
+              <div>
+                <Image src={nasscom} alt="nasscom logo" className="img-fluid" />
               </div>
             </div>
             <div
               className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
             >
-              <div className="mb-5">
+              <div className="mb-5 py-2">
                 <Heading
                   title="Best B2B Solution Provider"
                   color="black"
                   size="h5"
                 />
               </div>
-              <div className="md:mt-5">
+              <div>
                 <Image
                   src={paymentAndCardSummit}
                   alt="payment and card summit logo"
-                  width={250}
+                  className="img-fluid"
                 />
               </div>
             </div>

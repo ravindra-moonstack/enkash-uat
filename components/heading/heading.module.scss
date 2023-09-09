@@ -13,8 +13,7 @@
 
 .h1 {
   display: inline-block;
-  font-size: 23px;
-  line-height: 30px;
+  font-size: 31px;
   margin-bottom: 0;
   line-height: normal;
   @include bp-md {
@@ -34,7 +33,7 @@
 
 .h3 {
   display: inline-block;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 22px;
   margin-bottom: 0;
   line-height: normal;
@@ -45,8 +44,7 @@
 
 .h4 {
   display: inline-block;
-  font-size: 13px;
-  line-height: 17px;
+  font-size: 16px;
   margin-bottom: 0;
   line-height: normal;
   @include bp-md {

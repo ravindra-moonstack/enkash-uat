@@ -18,12 +18,20 @@ $font-size-mobile: 12px;
 .secondry_button {
   border-radius: 20px;
   border: 2px solid $color-equity-blue;
-  padding: $button-padding;
   background-color: $color-indi-volt;
   color: $color-white;
   font-size: $font-size-mobile;
+  padding: $button-padding;
   @include bp-md {
     font-size: $font-size;
+  }
+  img {
+    width: 20px;
+    height: 20px;
+    @include bp-md {
+      width: 30px;
+      height: 30px;
+    }
   }
 }
 
@@ -33,6 +41,7 @@ $font-size-mobile: 12px;
   border: none;
   font-size: $font-size-mobile;
   font-weight: 700px;
+  padding: 5px 10px;
   @include bp-md {
     padding: 5px 50px;
     font-size: 20px;
@@ -75,7 +84,10 @@ $font-size-mobile: 12px;
 }
 
 .medium {
-  font-size: 20px;
+  font-size: 12px;
+  @include bp-md {
+    font-size: 20px;
+  }
 }
 
 .bold {

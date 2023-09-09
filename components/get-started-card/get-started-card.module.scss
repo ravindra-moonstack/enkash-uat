@@ -2,7 +2,7 @@
 @import "/styles/mixin";
 
 .card_body {
-  width: 400px;
+  width: 250px;
   height: 100%;
   background-image: url(./img/rainy-blue-biscuit.png);
   background-size: 200px auto;
@@ -12,6 +12,7 @@
   padding: 40px;
   white-space: normal;
   @include bp-md {
+    width: 400px;
     padding: 30px;
     background-size: 300px auto;
   }

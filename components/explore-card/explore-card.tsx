@@ -17,7 +17,7 @@ const ExploreCard = ({ title, description, theme }: CardProps) => {
 
   return (
     <div className="d-flex flex-column">
-      <Heading title={title} color={getPrimaryColor()} size="h2" weight="6" />
+      <Heading title={title} color={getPrimaryColor()} size="h1" weight="6" />
       <div className="my-2">
         <Heading
           title={description}
@@ -30,7 +30,7 @@ const ExploreCard = ({ title, description, theme }: CardProps) => {
         <Heading
           title="Explore Now"
           color={getPrimaryColor()}
-          size="h5"
+          size="h4"
           weight="6"
         />
         <Image

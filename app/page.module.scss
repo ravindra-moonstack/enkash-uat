@@ -11,7 +11,6 @@
 
 .bg_rainbow {
   background-image: url(img/blue-rainbow.png);
-
   background-repeat: no-repeat;
   background-position: center center;
   @include bp-md {
@@ -59,58 +58,122 @@
 
   .second_text {
     position: absolute;
-    top: 208px;
+    top: 145px;
     z-index: 3;
     animation-delay: 0.6s;
+    @include bp-md {
+      top: 208px;
+    }
   }
 
   .rainbow_two {
     position: absolute;
-    top: 290px;
+    top: 180px;
     height: 100px;
     z-index: 4;
     animation-delay: 0.8s;
     @include bp-md {
       height: 400px;
+      top: 290px;
     }
   }
 
   .third_text {
     position: absolute;
-    top: 320px;
+    top: 195px;
     z-index: 5;
     animation-delay: 1s;
+    @include bp-md {
+      top: 320px;
+    }
   }
 
   .rainbow_three {
     position: absolute;
-    top: 400px;
-    height: 150px;
+    top: 230px;
+    height: 90px;
     z-index: 6;
     animation-delay: 1.2s;
     @include bp-md {
-      height: 400px;
+      height: 300px;
+      top: 400px;
     }
   }
 
   .description_text {
+    display: none;
+    @include bp-md {
+      display: block;
+      position: absolute;
+      z-index: 7;
+      animation-delay: 1.4s;
+      top: 470px;
+    }
+  }
+
+  .description_text_mobile {
     position: absolute;
-    top: 470px;
+    top: 310px;
     z-index: 7;
     animation-delay: 1.4s;
+    @include bp-md {
+      display: none;
+    }
   }
 
   .button_container {
     position: absolute;
-    top: 570px;
+    top: 450px;
     z-index: 7;
     animation-delay: 1.6s;
+    @include bp-md {
+      top: 570px;
+    }
+  }
+  .down_arrow {
+    position: absolute;
+    top: 550px;
+    @include bp-md {
+      display: none;
+    }
   }
 }
 
 .second_row {
+  .steps_image {
+    width: 23px;
+    height: 23px;
+    @include bp-md {
+      width: 41px;
+      height: 41px;
+    }
+  }
+  .action_image_stack {
+    width: 35px;
+    height: 37px;
+    @include bp-md {
+      width: 71px;
+      height: 74px;
+    }
+  }
+  .action_image_user_tick {
+    width: 45px;
+    height: 40px;
+    @include bp-md {
+      width: 90px;
+      height: 79px;
+    }
+  }
+  .action_image_user_plus {
+    width: 35px;
+    height: 37px;
+    @include bp-md {
+      width: 71px;
+      height: 74px;
+    }
+  }
   .email_box {
-    margin-top: 120px;
+    margin-top: 20px;
     border: 2px solid $color-equity-blue;
     border-radius: 30px;
     color: $color-white;
@@ -118,7 +181,11 @@
     width: fit-content;
     justify-content: space-between;
     padding: 10px;
-    font-size: 20px;
+    font-size: 12px;
+    @include bp-md {
+      font-size: 20px;
+      margin-top: 120px;
+    }
     input {
       padding: 0;
       background: transparent;
@@ -132,9 +199,20 @@
         padding-right: 80px;
       }
     }
+
     ::placeholder {
       color: $color-white;
     }
+  }
+  .steps {
+    @include bp-md {
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 0;
+    }
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 30px;
   }
 }
 
@@ -218,9 +296,26 @@
   width: auto;
   position: relative;
 
+  .bank_logo {
+    overflow-x: auto;
+  }
+
+  .icons {
+    height: 26px;
+    width: 26px;
+    @include bp-md {
+      height: 55px;
+      width: 55px;
+    }
+  }
+
   .img_container {
-    margin-bottom: 250px;
-    padding-top: 100px;
+    margin-bottom: 50px;
+    padding-top: 0;
+    @include bp-md {
+      padding-top: 100px;
+      margin-bottom: 250px;
+    }
   }
 
   .desktop_img {
@@ -251,23 +346,17 @@
     border: 1.935px solid #092093;
     background: #0b0b28;
     background: $color-indi-volt;
-    width: 70%;
-
+    margin-top: -20px;
     @include bp-md {
       width: 50%;
+      margin-top: 0;
       margin-right: -20px;
     }
   }
-  img {
+  .img_container {
     z-index: 1;
-    width: 70%;
     @include bp-md {
-      width: 50%;
-    }
-    height: 100%;
-    margin-top: -10px;
-    @include bp-md {
-      margin-top: 0px;
+      height: 400px;
     }
   }
 }
@@ -292,21 +381,45 @@
 }
 
 .eleventh_row {
-  .steps_img {
-    width: 60px;
-    height: 60px;
+  .steps_image {
+    width: 23px;
+    height: 23px;
+    @include bp-md {
+      width: 41px;
+      height: 41px;
+    }
   }
+  .action_image_stack {
+    width: 35px;
+    height: 37px;
+    @include bp-md {
+      width: 71px;
+      height: 74px;
+    }
+  }
+  .action_image_user_tick {
+    width: 45px;
+    height: 40px;
+    @include bp-md {
+      width: 90px;
+      height: 79px;
+    }
+  }
+  .action_image_user_plus {
+    width: 35px;
+    height: 37px;
+    @include bp-md {
+      width: 71px;
+      height: 74px;
+    }
+  }
+
   .steps {
     margin-bottom: 10px;
     margin-left: 80px;
     @include bp-md {
       margin: 0;
     }
-  }
-
-  .steps_img {
-    width: 60px;
-    height: 60px;
   }
 }
 

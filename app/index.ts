@@ -45,3 +45,5 @@ export { default as greenDot } from "./img/green-dot.png";
 export { default as blackRectangleTop } from "./img/black-rectangle-top.png";
 export { default as blackRectangleBottom } from "./img/black-rectangle-bottom.png";
 export { default as stairs } from "./img/stairs-cropped.png";
+export { default as threeDownArrow } from "./img/three-down-arrow.png";
+
