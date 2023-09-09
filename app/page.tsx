@@ -51,6 +51,7 @@ import {
   polygonThree,
   blueBlackLine,
   greenDot,
+  blackRectangleTop,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useState } from "react";
@@ -861,31 +862,35 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`${styles.fifthteen_row} row row-padding-bottom-none color-white`}
-      >
-        <div className="col-12 mb-5 text-center">
-          <div className={styles.inline_div}>
-            <Heading title={`Trusted by${space}`} color="white" size="h1" weight="6" />
-          </div>
-          <div className={styles.inline_div}>
-            <Heading title={`1000+${space}`} color="electric-green" size="h1" weight="6" />
-          </div>
-          <div className={styles.inline_div}>
-            <Heading title="companies." color="white" size="h1" weight="6" />
-          </div>
+      <div className={`${styles.fifthteen_row} row color-white`}>
+        <div className={`${styles.title} col-12 mb-5 text-center`}>
+          <Heading
+            title={`Trusted by${space}`}
+            color="white"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title={`1000+${space}`}
+            color="electric-green"
+            size="h1"
+            weight="6"
+          />
+          <Heading title="companies." color="white" size="h1" weight="6" />
         </div>
         <div
-          className={`col-md-6 col-12 d-flex flex-column  ${styles.testimonials_section}`}
+          className={`col-md-6 col-12 d-flex flex-column ${styles.testimonials_section}`}
         >
-          <div>
-            <Heading title="NTech Media" color="electric-green" size="h5" />
+          <div className="mb-3">
+            <Heading title="NTech Media" color="white" size="h4" weight="6" />
           </div>
-          <div>
+          <div className="mb-5">
             <Heading
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               quis, ornare metus nec, feugiat erat."
-              size="h4"
+              size="h3"
+              weight="6"
+              color="electric-green"
             />
           </div>
           <div className="d-flex mt-4 align-items-center">
@@ -893,12 +898,12 @@ const home = () => {
               <Image src={userImg} alt="enkash user image" />
             </div>
             <div className="d-flex flex-column">
-              <Heading title="- Manoj Day, CEO," size="h5" />
-              <Heading title=" NTech Media" size="h5" />
+              <Heading title="- Manoj Day, CEO," size="h4" weight="4" />
+              <Heading title=" NTech Media" size="h4" weight="4" />
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-6">
+        <div className={`col-md-6 col-12 ${styles.image_section}`}>
           <Image
             src={testimonials}
             alt="enkash testimonials"

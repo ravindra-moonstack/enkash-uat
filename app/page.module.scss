@@ -18,10 +18,6 @@
   }
 }
 
-.inline_div {
-  display: inline-block;
-}
-
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -348,11 +344,23 @@
 }
 
 .fifthteen_row {
-  .testimonials_section {
-    padding: 20px;
+  .title {
+    background: url(img/black-rectangle-top.png);
+    z-index: 2;
+    position: relative;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
 
-    @include bp-md {
-      padding: 100px;
-    }
+  .image_section {
+    margin-top: -200px;
+    z-index: 1;
+    position: relative;
+    padding-right: 80px;
+  }
+
+  .testimonials_section {
+    padding-left: 180px;
+    padding-right: 100px;
   }
 }

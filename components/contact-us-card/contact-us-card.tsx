@@ -10,12 +10,13 @@ const ContactUsCard = () => {
       <div className="row">
         <div className="col-6 d-flex justify-content-center"></div>
         <div className="col-6 d-flex flex-column justify-content-center">
-          <div className="md:mt-5 mt-3">
+          <div className="mt-5">
             <div>
               <Heading
                 title="Couldn’t find what"
                 color="equity-blue"
                 size="h2"
+                weight="6"
               />
             </div>
             <div>
@@ -23,6 +24,7 @@ const ContactUsCard = () => {
                 title="you’re looking for?"
                 color="equity-blue"
                 size="h2"
+                weight="6"
               />
             </div>
           </div>
@@ -31,7 +33,8 @@ const ContactUsCard = () => {
               <Heading
                 title="We're here to help! Get in touch with us so that we"
                 color="black"
-                size="h5"
+                size="h4"
+                weight="4"
               />
             </div>
             <div>
@@ -39,16 +42,17 @@ const ContactUsCard = () => {
                 title=" can figure out 
             what's best for your business, together."
                 color="black"
-                size="h5"
+                size="h4"
               />
             </div>
           </div>
-          <div className="d-flex mt-3 md:mb-5 mb-3">
+          <div className="d-flex mt-3 mb-5">
             <PrimaryButton
               title="Contact Us"
               isDisabled={false}
               url=""
               theme="theme-blue"
+              size="medium"
             />
           </div>
         </div>

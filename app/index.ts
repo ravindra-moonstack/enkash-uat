@@ -42,3 +42,6 @@ export { default as polygonTwo } from "./img/polygon-two-cropped.png";
 export { default as polygonThree } from "./img/polygon-three-cropped.png";
 export { default as blueBlackLine } from "./img/blue-black-line.png";
 export { default as greenDot } from "./img/green-dot.png";
+export { default as blackRectangleTop } from "./img/black-rectangle-top.png";
+export { default as blackRectangleBottom } from "./img/black-rectangle-bottom.png";
+export { default as stairs } from "./img/stairs-cropped.png";
