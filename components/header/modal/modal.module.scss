@@ -1,6 +1,10 @@
 @import "../../../styles/mixin";
 @import "../../../styles/variables";
 
+.container {
+  height: 450px;
+}
+
 .product_row {
   padding: 10px 15px;
   border-radius: 10px;

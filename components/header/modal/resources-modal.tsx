@@ -5,7 +5,7 @@ import { blueforwardArrow, officeDiscussionPic, readMore } from "..";
 
 const ResourcesModal = () => {
   return (
-    <div className="row mt-5">
+    <div className={`row mt-5 ${styles.container}`}>
       <div className={`${styles.resources_grid_row} col-7 px-5 pb-5 mb-2`}>
         {resources.map((product: any) => (
           <div key={product.name} className={styles.product_row}>

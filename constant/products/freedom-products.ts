@@ -42,6 +42,7 @@ const freedomProducts = [
       },
     ],
     footerText: "Stream Line with Freedom",
+    footerImg: "xpenz_footer_bg",
   },
 ];
 

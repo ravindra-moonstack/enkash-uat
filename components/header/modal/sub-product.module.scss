@@ -1,6 +1,11 @@
 @import "../../../styles/mixin";
 @import "../../../styles/variables";
 
+.container {
+  height: 450px;
+  position: relative;
+}
+
 .sub_products_container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -49,11 +54,13 @@
 .footer {
   position: absolute;
   bottom: 0;
-  width: 65%;
-  height: 65px;
+  height: 96px;
+  width: 102%;
   color: $color-electric-green;
-  font-size: 23px;
+  font-size: 27px;
+  font-weight: 600;
   line-height: 23px;
+  background-color: $color-equity-blue;
 }
 
 @keyframes top-to-bottom {
@@ -84,4 +91,8 @@
 
 .top_to_bottom {
   animation: top-to-bottom 0.3s ease-in-out forwards;
+}
+
+.xpenz_footer_bg {
+  background-image: url(/components/header/img/brand-vouchers-filled.png);
 }

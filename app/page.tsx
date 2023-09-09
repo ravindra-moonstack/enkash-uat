@@ -506,7 +506,7 @@ const home = () => {
               title="Say yes to better"
               color="electric-green"
               size="h2"
-              weight="6"
+              weight="5"
             />
             <Heading
               title="approval flows."
@@ -522,7 +522,7 @@ const home = () => {
                 the departmental level. Transparent approval processes increase
                 efficiency and nullify delays."
                 color="white"
-                size="h4"
+                size="h5"
                 weight="4"
               />
             </div>

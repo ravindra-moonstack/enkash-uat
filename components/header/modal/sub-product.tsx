@@ -31,10 +31,9 @@ const SubProduct = (props: any) => {
   if (!activeGroup) return null;
 
   return (
-    <div className={`col-8 d-flex`}>
+    <div className={`col-8 d-flex mb-5 ${styles.container}`}>
       <div className={styles.box_shadow_left}></div>
       <div className="d-flex flex-column">
-        {/* List out all subtitles */}
         {props.subProducts.length > 1 && (
           <div className="d-flex flex-row color-secondry-grey">
             {props.subProducts.map((group: any) => (
@@ -51,8 +50,8 @@ const SubProduct = (props: any) => {
           </div>
         )}
 
-        {/* Render content based on active subtitle */}
         <div
+          key={activeSubtitle}
           className={`d-flex ${animationClassName} ${
             props.subProducts.length > 1 ? "mt-4" : "mt-2"
           }`}
@@ -89,9 +88,10 @@ const SubProduct = (props: any) => {
         </div>
       </div>
 
-      {/* Footer content */}
       <div
-        className={`bg-equity-blue d-flex align-items-center justify-content-around ${styles.footer}`}
+        className={`d-flex align-items-center justify-content-around ${
+          styles.footer
+        } ${styles[activeGroup.footerImg]}`}
       >
         <div>{activeGroup.footerText}</div>
         <div className="d-flex">

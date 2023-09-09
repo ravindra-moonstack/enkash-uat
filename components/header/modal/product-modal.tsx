@@ -12,33 +12,40 @@ import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";
 
 const ProductModal = () => {
-  const [hoveredProductIndex, setHoveredProductIndex] = useState(0);
+  const [hoveredProductIndex, setHoveredProductIndex] = useState<null | number>(
+    null
+  );
   const [rowHeight, setRowHeight] = useState(0);
   const productRowRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (productRowRef.current) {
       setRowHeight(productRowRef.current.offsetHeight);
-      console.log("Row Height:", productRowRef.current.offsetHeight); // log the value
     }
   }, [productRowRef]);
 
   return (
-    <div className="row mt-5">
+    <div className={`row mt-5 ${styles.container}`}>
       <div className="col-4 d-flex flex-column align-items-right px-5 pb-5 mb-2 position-relative">
-        <div
-          className={styles.background_slide}
-          style={{
-            transform: `translateY(${hoveredProductIndex * rowHeight}px)`,
-            height: `${rowHeight}px`,
-          }}
-        ></div>
+        {hoveredProductIndex !== null && (
+          <div
+            className={styles.background_slide}
+            style={{
+              transform: `translateY(${hoveredProductIndex * rowHeight}px)`,
+              height: `${rowHeight}px`,
+            }}
+          ></div>
+        )}
         {motherProducts.map((product: any, index: any) => (
           <div
             key={product.name}
             className={styles.product_row}
             onMouseEnter={() => {
-              setHoveredProductIndex(index);
+              if (hoveredProductIndex === null) {
+                setHoveredProductIndex(0);
+              } else {
+                setHoveredProductIndex(index);
+              }
             }}
             ref={index === 0 ? productRowRef : null}
           >

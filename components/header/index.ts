@@ -31,6 +31,8 @@ export {default as scanAndDrop} from "./img/scan-and-drop-receipts.png";
 export {default as scanAndDropFilled} from "./img/scan-and-drop-receipts-filled.png";
 export {default as reimbursements} from "./img/reimbursements.png";
 export {default as reimbursementsFilled} from "./img/reimbursement-filled.png";
+export {default as XpenzFooterBg} from "./img/xpenz-footer-bg.png";
+
 //receivables
 export {default as bulkCollect} from "./img/bulk-collect.png";
 export {default as bulkCollectFilled} from "./img/bulk-collect-filled.png";

@@ -47,10 +47,14 @@
 
   .rainbow_one {
     position: absolute;
-    top: 180px;
-    height: 400px;
+    top: 130px;
+    height: 100px;
     z-index: 2;
     animation-delay: 0.4s;
+    @include bp-md {
+      height: 400px;
+      top: 180px;
+    }
   }
 
   .second_text {
@@ -63,9 +67,12 @@
   .rainbow_two {
     position: absolute;
     top: 290px;
-    height: 400px;
+    height: 100px;
     z-index: 4;
     animation-delay: 0.8s;
+    @include bp-md {
+      height: 400px;
+    }
   }
 
   .third_text {
@@ -78,9 +85,12 @@
   .rainbow_three {
     position: absolute;
     top: 400px;
-    height: 300px;
+    height: 150px;
     z-index: 6;
     animation-delay: 1.2s;
+    @include bp-md {
+      height: 400px;
+    }
   }
 
   .description_text {
@@ -226,6 +236,7 @@
 }
 
 .seventh_row {
+  position: relative;
   .card {
     padding: 0;
     @include bp-md {
@@ -234,14 +245,21 @@
     }
   }
   .card_container {
+    z-index: 2;
     padding: 30px;
+    border-radius: 14.51px;
+    border: 1.935px solid #092093;
+    background: #0b0b28;
     background: $color-indi-volt;
     width: 70%;
+
     @include bp-md {
       width: 50%;
+      margin-right: -20px;
     }
   }
   img {
+    z-index: 1;
     width: 70%;
     @include bp-md {
       width: 50%;
@@ -249,7 +267,6 @@
     height: 100%;
     margin-top: -10px;
     @include bp-md {
-      margin-left: -10px;
       margin-top: 0px;
     }
   }
