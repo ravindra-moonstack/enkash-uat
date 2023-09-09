@@ -5,7 +5,22 @@
   background-image: url(./img/contact-us-spiral-img.png);
   background-repeat: no-repeat;
   background-color: $color-white;
+  background-size: 90% 100%;
   @include bp-md {
     background-size: 80% 100%;
+  }
+
+  .mobile {
+    display: block;
+    @include bp-md {
+      display: none;
+    }
+  }
+
+  .desktop {
+    display: none;
+    @include bp-md {
+      display: block;
+    }
   }
 }

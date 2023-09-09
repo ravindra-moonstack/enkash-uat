@@ -53,6 +53,7 @@ import {
   greenDot,
   blackRectangleTop,
   threeDownArrow,
+  mobileTestimonial,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useState } from "react";
@@ -276,8 +277,11 @@ const home = () => {
         <div className={`col-md-12 col-4  ${styles.action_container}`}>
           <div className="d-flex flex-column flex-md-row justify-content-evenly w-100">
             <MenuButton isDisabled={false} title="Manage" theme="dark" />
+            <div className={styles.space}></div>
             <MenuButton isDisabled={false} title="Track" theme="disabled" />
+            <div className={styles.space}></div>
             <MenuButton isDisabled={false} title="Customize" theme="disabled" />
+            <div className={styles.space}></div>
             <MenuButton isDisabled={false} title="Automate" theme="disabled" />
           </div>
         </div>
@@ -929,7 +933,7 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fifthteen_row} row color-white`}>
-        <div className={`${styles.title} col-12 mb-5 text-center`}>
+        <div className={`${styles.title} col-12 mb-md-5 text-center`}>
           <Heading
             title={`Trusted by${space}`}
             color="white"
@@ -950,7 +954,7 @@ const home = () => {
           <div className="mb-3">
             <Heading title="NTech Media" color="white" size="h4" weight="6" />
           </div>
-          <div className="mb-5">
+          <div className="mb-md-5">
             <Heading
               title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
               quis, ornare metus nec, feugiat erat."
@@ -973,7 +977,12 @@ const home = () => {
           <Image
             src={testimonials}
             alt="enkash testimonials"
-            className="img-fluid"
+            className={`img-fluid ${styles.desktop_testimonial}`}
+          />
+          <Image
+            src={mobileTestimonial}
+            alt="enkash testimonials"
+            className={styles.mobile_testimonial}
           />
         </div>
       </div>
