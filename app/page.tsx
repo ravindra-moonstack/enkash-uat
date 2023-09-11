@@ -76,38 +76,29 @@ const home = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  const style = getComputedStyle(document.documentElement);
 
-  const initialTopFirstText = parseInt(
-    style.getPropertyValue("--initialTopFirstText"),
-    10
-  );
-  const initialTopSecondText = parseInt(
-    style.getPropertyValue("--initialTopSecondText"),
-    10
-  );
-  const initialTopThirdText = parseInt(
-    style.getPropertyValue("--initialTopThirdText"),
-    10
-  );
+  const largeScreen = window.matchMedia("(min-width:786px)");
+  let maxScrollForFullAdjustment = 400;
+  let maxAdjustment = 45;
+  if (!largeScreen.matches) {
+    maxScrollForFullAdjustment = 300;
+    maxAdjustment = 15;
+  }
 
-  const maxAdjustment = parseInt(
-    style.getPropertyValue("--maxAdjustment"),
-    10
-  );
-
-  const maxScrollForFullAdjustment = parseInt(
-    style.getPropertyValue("--maxScrollForFullAdjustment"),
-    10
-  );
   const adjustment = Math.min(
     (scrollY / maxScrollForFullAdjustment) * maxAdjustment,
     maxAdjustment
   );
 
-  const topFirstText = initialTopFirstText + adjustment;
-  const topSecondText = initialTopSecondText + adjustment;
-  const topThirdText = initialTopThirdText + adjustment;
+  let topFirstText = 90 + adjustment;
+  let topSecondText = 208 + adjustment;
+  let topThirdText = 320 + adjustment;
+
+  if (!largeScreen.matches) {
+    topFirstText = 90 + adjustment;
+    topSecondText = 145 + adjustment;
+    topThirdText = 195 + adjustment;
+  }
 
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
