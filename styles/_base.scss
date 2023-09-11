@@ -230,3 +230,18 @@
 .main {
   overflow-x: hidden;
 }
+
+:root {
+  --initialTopFirstText: 92px;
+  --initialTopSecondText: 145px;
+  --initialTopThirdText: 195px;
+  --maxAdjustment: 15px;
+  --maxScrollForFullAdjustment: 250px;
+  @include bp-md {
+    --initialTopFirstText: 92px;
+    --initialTopSecondText: 208px;
+    --initialTopThirdText: 320px;
+    --maxAdjustment: 35px;
+    --maxScrollForFullAdjustment: 300px;
+  }
+}

@@ -1,11 +1,8 @@
 import Image from "next/image";
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { enkashBlueLogo, crossMenu } from "..";
-import HamBurger from "./hamburger";
 import { Fragment, useState } from "react";
 import olympusProducts from "@/constant/products/olympus-products";
-import freedomProducts from "@/constant/products/freedom-products";
 import utmSources from "@/constant/utm-source";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;

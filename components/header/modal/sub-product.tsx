@@ -14,18 +14,16 @@ const SubProduct = (props: any) => {
   );
 
   const animationClassName = (() => {
-    switch (props.index) {
-      case 0:
-        return styles.top_to_bottom;
-      case 1:
-        return styles.right_to_left;
-      case 2:
-        return styles.right_to_left;
-      case 3:
-        return styles.right_to_left;
-      default:
-        return "";
+    if (
+      props.hoveredProductIndex > props.prevHoveredProductIndex ||
+      (props.hoveredProductIndex === 0 &&
+        props.prevHoveredProductIndex === null)
+    ) {
+      return styles.top_to_bottom;
+    } else if (props.hoveredProductIndex < props.prevHoveredProductIndex) {
+      return styles.bottom_to_top;
     }
+    return "";
   })();
 
   if (!activeGroup) return null;

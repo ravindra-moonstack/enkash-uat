@@ -17,6 +17,9 @@ const ProductModal = () => {
   );
   const [rowHeight, setRowHeight] = useState(0);
   const productRowRef = useRef<HTMLDivElement | null>(null);
+  const [prevHoveredProductIndex, setPrevHoveredProductIndex] = useState<
+    null | number
+  >(null);
 
   useEffect(() => {
     if (productRowRef.current) {
@@ -41,6 +44,7 @@ const ProductModal = () => {
             key={product.name}
             className={styles.product_row}
             onMouseEnter={() => {
+              setPrevHoveredProductIndex(hoveredProductIndex);
               if (hoveredProductIndex === null) {
                 setHoveredProductIndex(0);
               } else {
@@ -67,17 +71,39 @@ const ProductModal = () => {
           />
         </div>
       )}
+
       {hoveredProductIndex === 0 && (
-        <SubProduct subProducts={olympusProducts} index={0} />
+        <SubProduct
+          subProducts={olympusProducts}
+          index={0}
+          hoveredProductIndex={hoveredProductIndex}
+          prevHoveredProductIndex={prevHoveredProductIndex}
+        />
       )}
       {hoveredProductIndex === 1 && (
-        <SubProduct subProducts={freedomProducts} index={1} />
+        <SubProduct
+          subProducts={freedomProducts}
+          index={1}
+          hoveredProductIndex={hoveredProductIndex}
+          prevHoveredProductIndex={prevHoveredProductIndex}
+        />
       )}
       {hoveredProductIndex === 2 && (
-        <SubProduct subProducts={xpenzProducts} index={2} />
+        <SubProduct
+          subProducts={xpenzProducts}
+          index={2}
+          hoveredProductIndex={hoveredProductIndex}
+          prevHoveredProductIndex={prevHoveredProductIndex}
+        />
       )}
+
       {hoveredProductIndex === 3 && (
-        <SubProduct subProducts={loyaltyLoungeProducts} index={3} />
+        <SubProduct
+          subProducts={loyaltyLoungeProducts}
+          index={3}
+          hoveredProductIndex={hoveredProductIndex}
+          prevHoveredProductIndex={prevHoveredProductIndex}
+        />
       )}
     </div>
   );

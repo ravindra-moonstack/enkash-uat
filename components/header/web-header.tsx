@@ -65,7 +65,7 @@ const WebHeader = () => {
               <div
                 className={styles.background_slide}
                 style={{
-                  transform: `translateX(${hoveredIndex * (itemWidth + 10)}px)`, // If you have padding/margin, add its value multiplied by hoveredIndex
+                  transform: `translateX(${hoveredIndex * (itemWidth + 10)}px)`,
                   width: `${itemWidth}px`,
                 }}
               ></div>
@@ -74,7 +74,7 @@ const WebHeader = () => {
               <li
                 ref={index === 0 ? itemRef : null}
                 key={item.name}
-                className={`px-3 d-flex justify-content-center align-items-center`}
+                className={`px-3 d-flex justify-content-center align-items-center cursor-pointer`}
                 onMouseEnter={() => {
                   if (index !== 2) {
                     setHoveredIndex(index);

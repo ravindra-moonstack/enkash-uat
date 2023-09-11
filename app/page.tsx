@@ -41,7 +41,6 @@ import {
   sbmLogo,
   visaLogo,
   desktopIphone,
-  singleStack,
   playButton,
   rainbowOne,
   rainbowTwo,
@@ -50,41 +49,75 @@ import {
   polygonTwo,
   polygonThree,
   blueBlackLine,
-  greenDot,
-  blackRectangleTop,
   threeDownArrow,
   mobileTestimonial,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useState } from "react";
-import { watch } from "fs";
 
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
   const [isInView, setIsInView] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+
+    const elem = document.querySelector(`.${styles.third_row}`);
+    if (elem && elem.getBoundingClientRect().top <= window.innerHeight) {
+      setIsInView(true);
+    } else {
+      setIsInView(false);
+    }
+  };
 
   useEffect(() => {
-    const checkScroll = () => {
-      const elem = document.querySelector(`.${styles.third_row}`);
-      if (elem && elem.getBoundingClientRect().top <= window.innerHeight) {
-        setIsInView(true);
-      }
-    };
-
-    window.addEventListener("scroll", checkScroll);
-
-    return () => {
-      window.removeEventListener("scroll", checkScroll);
-    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const style = getComputedStyle(document.documentElement);
+
+  const initialTopFirstText = parseInt(
+    style.getPropertyValue("--initialTopFirstText"),
+    10
+  );
+  const initialTopSecondText = parseInt(
+    style.getPropertyValue("--initialTopSecondText"),
+    10
+  );
+  const initialTopThirdText = parseInt(
+    style.getPropertyValue("--initialTopThirdText"),
+    10
+  );
+
+  const maxAdjustment = parseInt(
+    style.getPropertyValue("--maxAdjustment"),
+    10
+  );
+
+  const maxScrollForFullAdjustment = parseInt(
+    style.getPropertyValue("--maxScrollForFullAdjustment"),
+    10
+  );
+  const adjustment = Math.min(
+    (scrollY / maxScrollForFullAdjustment) * maxAdjustment,
+    maxAdjustment
+  );
+
+  const topFirstText = initialTopFirstText + adjustment;
+  const topSecondText = initialTopSecondText + adjustment;
+  const topThirdText = initialTopThirdText + adjustment;
 
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div
         className={`${styles.first_row} row  text-center color-white bg-indi-volt`}
       >
-        <span className={`col-12  ${styles.first_text}`}>
+        <span
+          className={`col-12  ${styles.first_text}`}
+          style={{ top: `${topFirstText}px` }}
+        >
           <Heading title="A Spend" size="h0" />
         </span>
         <Image
@@ -92,7 +125,10 @@ const home = () => {
           alt="background image"
           className={styles.rainbow_one}
         />
-        <span className={`col-12  ${styles.second_text}`}>
+        <span
+          className={`col-12  ${styles.second_text}`}
+          style={{ top: `${topSecondText}px` }}
+        >
           <Heading title="Management Solution" size="h0" />
         </span>
 
@@ -102,7 +138,10 @@ const home = () => {
           className={styles.rainbow_two}
         />
 
-        <span className={`col-12  ${styles.third_text}`}>
+        <span
+          className={`col-12  ${styles.third_text}`}
+          style={{ top: `${topThirdText}px` }}
+        >
           <Heading title="That Does it All" size="h0" />
         </span>
 

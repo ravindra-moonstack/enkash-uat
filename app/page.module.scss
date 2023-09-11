@@ -1,6 +1,7 @@
 @import "/styles/variables";
 @import "/styles/mixin";
 
+
 .home_container {
   padding-top: 50px;
   background-color: $color-indi-volt;
@@ -336,15 +337,15 @@
   }
 
   .slideIn {
-    animation: slideInFromBottom 2s forwards;
+    animation: slideInFromBottom 1.5s forwards;
   }
 
   .polygon_two.slideIn {
-    animation-delay: 2.5s;
+    animation-delay: 1s;
   }
 
   .polygon_three.slideIn {
-    animation-delay: 3.5s;
+    animation-delay: 2s;
   }
 }
 
