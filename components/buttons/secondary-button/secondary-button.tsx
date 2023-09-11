@@ -8,8 +8,8 @@ export interface ButtonProps {
   title: string;
   url?: string;
   actionImage: any;
-  size: "small" | "medium";
-  weight: "bold" | "normal";
+  size?: "small" | "medium";
+  weight?: "bold" | "normal";
 }
 
 const SecondryButton = ({
