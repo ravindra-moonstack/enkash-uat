@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/constant/common";
 import {
+  blueArrowForward,
   budgetAndAdvance,
   cashAndCoin,
   coin,
@@ -19,12 +20,20 @@ import {
   scanAndDrop,
   whiteArrow,
   xpenzDashboard,
+  oldWay,
+  newWay,
+  greenArrow,
+  cardOne,
+  cardTwo,
+  cardThree,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import BlogCard from "@/components/blog-card/blog-card";
+import Head from "next/head";
+import MenuButton from "@/components/buttons/menu-button/menu-button";
 
 const xpenz = () => {
   return (
@@ -32,14 +41,15 @@ const xpenz = () => {
       <div className={`${styles.first_row} row color-white row-padding`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="X" color="rainy-blue" size="h1" />
-            <Heading title="penz" size="h1" />
+            <Heading title="X" color="rainy-blue" size="h1" weight="7" />
+            <Heading title="penz" size="h1" weight="7" />
           </div>
           <div className="d-flex flex-column">
             <Heading
               title="optimize buisness spends"
               color="rainy-blue"
               size="h2"
+              weight="7"
             />
             <Heading title="with a complete overview" color="white" size="h2" />
             <Heading title="of expenses" color="white" size="h2" />
@@ -50,13 +60,23 @@ const xpenz = () => {
                   reimbursement system that helps you track, process and sync data in
                    real-time."
               color="white"
-              size="h5"
+              size="h6"
+              weight="5"
             />
           </div>
           <div className="my-5">
-            <PrimaryButton title="Enkash Now!" theme="theme-blue" />
+            <PrimaryButton
+              title="Enkash Now!"
+              theme="theme-blue"
+              size="medium"
+            />
             <span className="mx-2"></span>
-            <SecondryButton title="Book a Demo" actionImage={whiteArrow} />
+            <SecondryButton
+              title="Book a Demo"
+              actionImage={whiteArrow}
+              size="medium"
+              iconSize="small-icon"
+            />
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
@@ -67,56 +87,75 @@ const xpenz = () => {
           />
         </div>
       </div>
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <div className={`d-flex col-12 flex-column flex-md-row`}>
-          <Image src={laptop} alt="office team image" className="img-fluid" />
-          <div className="d-flex flex-column justify-content-center align-items-center bg-indi-volt">
-            <Heading
-              title="How does it work?"
-              color="electric-green"
-              size="h2"
-            />
-            <div className="d-flex mt-2 px-5 mt-5">
-              <div className="px-5">
-                <Image src={rupeeCard} alt="rupee card image" width={100} />
-              </div>
-              <div className="px-5">
+      <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
+        <div
+          className={`d-flex col-12 flex-column flex-md-row align-items-center ${styles.card}`}
+        >
+          <div className="d-flex flex-column-reverse flex-md-row">
+            <div className={styles.img_container}>
+              <Image
+                src={laptop}
+                alt="office team image"
+                className={`${styles.img_container} img-fluid`}
+              />
+            </div>
+            <div
+              className={`d-flex flex-column align-items-center ${styles.card_container}`}
+            >
+              <Heading
+                title="How does it work?"
+                color="electric-green"
+                size="h2"
+                weight="6"
+              />
+
+              <div className="mt-5 d-flex">
+                <Image
+                  src={rupeeCard}
+                  alt="rupee card image"
+                  className="me-5"
+                />
                 <Heading
-                  title="Make sure your business expenses are 
-                paid on time for uninterrupted 
-                operations."
+                  title="Make sure your business expenses are paid on time for uninterrupted operations."
                   color="white"
-                  size="h6"
+                  size="h5"
+                  weight="5"
                 />
               </div>
-            </div>
-            <div className="d-flex justify-content-center mt-5 md:mb-0">
-              <Image src={progressBar} alt="progress bard" height={10} />
+
+              <div
+                className={`d-flex justify-content-center ${styles.progress_bar}`}
+              >
+                <Image src={progressBar} alt="progress" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="third_row row d-flex row-padding-top-none bg-white"></div>
 
       <div className="row row-padding-x-only bg-white">
-        <div className="col-md-6 col-12 my-5 px-5">
+        <div className="col-md-1"></div>
+        <div className="col-md-5 col-12 my-5">
           <ExploreCard
             title="Budgets and Advances"
             description="Create budgets, track and optimize expenses, increase savings. "
             theme="blue"
           />
         </div>
-        <div className="col-md-6 col-12 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
+        <div className="col-md-5 col-12 d-flex my-5 d-flex justify-content-end blue_grad_bg_two">
           <Image
             src={budgetAndAdvance}
             className="img-fluid"
             alt="payables image"
           />
         </div>
+        <div className="col-md-1"></div>
       </div>
 
       <div className="row row-padding-x-only bg-white">
-        <div className="col-md-6 col-12 order-md-1 order-2 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
+        <div className="col-md-1"></div>
+
+        <div className="col-md-5 col-12 order-md-1 order-2 d-flex my-5 d-flex justify-content-start blue_grad_bg_two">
           <Image
             src={heirarchyControl}
             className="img-fluid"
@@ -124,113 +163,237 @@ const xpenz = () => {
           />
         </div>
 
-        <div className="col-md-6 col-12 order-md-2 order-1 my-5 px-5 ">
+        <div className="col-md-5 col-12 order-md-2 order-1 my-5 px-5 ">
           <ExploreCard
             title="Hierarchy and Controls"
             description="Create hierarchies and establish control over employee expenditure."
             theme="blue"
           />
         </div>
+        <div className="col-md-1"></div>
       </div>
 
       <div className="row row-padding-top-none bg-white">
-        <div className="col-md-6 col-12 px-5 my-5">
+        <div className="col-md-1"></div>
+
+        <div className="col-md-5 col-12 px-5 my-5">
           <ExploreCard
             title="Reimbursements"
             description="Fast-track and optimize the entire reimbursement process with better spend overview."
             theme="blue"
           />
         </div>
-        <div className="col-md-6 col-12 d-flex my-5 d-flex justify-content-center blue_grad_bg_two">
+        <div className="col-md-5 col-12 d-flex my-5 d-flex justify-content-end blue_grad_bg_two">
           <Image
             src={reimbursement}
             className="img-fluid"
             alt="payables image"
           />
         </div>
+        <div className="col-md-1"></div>
       </div>
 
       <div className={`${styles.fourth_row} row row-padding`}>
-        <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1">
-          <Image
-            src={policyApproval}
-            alt="payables image"
-            className="img-fluid"
+        <div className="col-md-1"></div>
+
+        <div className="col-md-5 col-12 d-flex mb-5 ">
+          <Image src={scanAndDrop} alt="policy and approval flows image" />
+        </div>
+        <div className="col-md-5 col-12 mb-5 ">
+          <ExploreCard
+            title="Policy and Approval Flows"
+            description="Choose an approval matrix that works best for your business and create and maintain an aligned approval process for all kinds of spends."
+            theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 mb-5 px-5 order-2 order-md-2">
+        <div className="col-md-1"></div>
+        <div className="col-md-1"></div>
+
+        <div className="col-md-5 col-12 mt-5 ">
           <ExploreCard
             title="Scan and Drop Receipts"
             description="Leverage OCR for digital receipt management & reconciliation."
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 mt-5 px-5 order-4 order-md-3">
-          <ExploreCard
-            title="Policy and Approval Flows"
-            description="EnKash empowers your business by providing intelligent
-                automation tools that help you end time-consuming manual
-                follow-ups and create better collection strategies."
-            theme="green"
-          />
+        <div className="col-md-5 col-12 d-flex mt-5 ">
+          <Image src={policyApproval} alt="scan and drop receipt image" />
         </div>
-        <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4">
-          <Image
-            src={scanAndDrop}
-            alt="receivable image"
-            className="img-fluid"
-          />
-        </div>
+        <div className="col-md-1"></div>
       </div>
+
       <div className="row bg-white row-padding">
         <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
-          <Heading title={`EnKash does${space}`} size="h1" color="black" />
+          <Heading
+            title={`EnKash does${space}`}
+            size="h1"
+            color="black"
+            weight="6"
+          />
           <Heading
             title={`the heavy lifting${space}`}
             size="h1"
             color="equity-blue"
+            weight="6"
           />
-          <Heading title="for you." size="h1" color="black" />
+          <Heading title="for you." size="h1" color="black" weight="6" />
         </div>
       </div>
+
       <div className={`row bg-indi-volt ${styles.fifth_row}`}>
         <div className="d-flex flex-column flex-md-row tex-center justify-content-evenly">
           <div className="md:mb-0 mb-4">
             <Image src={coin} alt="coins icon" className="md:mb-0 mb-4" />
-            <Heading title="On-time Payments" size="h5" color="white" />
-          </div>
-          <div className="md:mb-0 mb-4">
-            <Image
-              src={regualation}
-              alt="regulation icon"
-              className="md:mb-0 mb-4"
+            <Heading
+              title="On-time Payments"
+              size="h5"
+              color="white"
+              weight="7"
             />
-            <Heading title="Spend Regulation" size="h5" color="white" />
+            <Heading title="Payments" size="h5" color="white" weight="7" />
           </div>
-          <div className="md:mb-0 mb-4">
+          <div className="mb-4 text-center">
+            <Image src={regualation} alt="regulation icon" className="mb-4" />
+            <Heading title="Spend " size="h5" color="white" weight="7" />
+            <Heading title="Regulation" size="h5" color="white" weight="7" />
+          </div>
+          <div className="mb-4 text-center">
             <Image
               src={cashAndCoin}
               alt="cash and coin icon"
               className="md:mb-0 mb-4"
             />
-            <Heading title="Cash Flow Optimization" size="h5" color="white" />
+            <Heading
+              title="Cash Flow Optimization"
+              size="h5"
+              color="white"
+              weight="7"
+            />
+            <Heading title="Optimization" size="h5" color="white" weight="7" />
           </div>
         </div>
       </div>
-      <div className="sixth_row row d-flex bg-white row-padding">
-        <EnkashWay />
+      <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
+        <div className="col-12 d-flex flex-column flex-md-row justify-content-center align-items-center">
+          <Heading
+            title={`The EnKash Way is${space}`}
+            color="black"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title="the better way."
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+        </div>
+        <div className="col-12 d-flex justify-content-center mb-5">
+          <Heading
+            title="Switch to EnKash today!"
+            color="black"
+            size="h1"
+            weight="6"
+          />
+        </div>
+        <div className={`col-12 d-flex justify-content-evenly my-5`}>
+          <div>
+            <Heading title="Expense" size="h4" color="equity-blue" weight="7" />
+            <br />
+            <Heading
+              title="Reporting"
+              size="h4"
+              color="equity-blue"
+              weight="7"
+            />
+          </div>
+          <div>
+            <Heading title="Operational" size="h4" color="black" weight="7" />
+            <br />
+            <Heading title="Efficency" size="h4" color="black" weight="7" />
+          </div>
+          <div>
+            <Heading title="Spend" size="h4" color="black" weight="7" />
+            <br />
+            <Heading title="Overview" size="h4" color="black" weight="7" />
+          </div>
+          <div>
+            <Heading title="Expense" size="h4" color="black" weight="7" />
+            <br />
+            <Heading title="Approval" size="h4" color="black" weight="7" />
+          </div>
+          <div>
+            <Heading title="Accessibility" size="h4" color="black" weight="7" />
+          </div>
+        </div>
+        <div className="col-1"></div>
+        <div
+          className={`col-10 d-flex justify-content-evenly ${styles.progress_bar}`}
+        ></div>
+        <div className="col-1"></div>
+
+        <div className="col-12 d-flex flex-column flex-lg-row my-5 align-items-center justify-content-center">
+          <Image
+            className="me-2 mb-3 mb-lg-0 img-fluid"
+            src={oldWay}
+            alt="enkash steps"
+            width={550}
+          />
+          <Image
+            className="me-2 mb-3 mb-lg-0 img-fluid"
+            src={blueArrowForward}
+            alt="enkash steps"
+          />
+          <Image
+            className="img-fluid"
+            src={newWay}
+            alt="enkash steps"
+            width={550}
+          />
+        </div>
       </div>
-      <div className={`row d-flex bg-white row-padding ${styles.seventh_row}`}>
+      <div
+        className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
+      >
         <div
           className={`d-flex col-12 flex-column flex-md-row ${styles.container}`}
         >
           <div className={`d-flex flex-column bg-indi-volt ${styles.left_row}`}>
-            <ExploreCard
-              title="Total Visibility"
-              description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize 
+            <div className="d-flex flex-column">
+              <div className="d-flex">
+                <Heading title="Total" color="white" size="h1" weight="5" />
+                <Heading
+                  title={`${space}Visibility`}
+                  color="electric-green"
+                  size="h1"
+                  weight="5"
+                />
+              </div>
+
+              <div className="my-4">
+                <Heading
+                  title="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize 
             expenses and increase your savings."
-              theme="green"
-            />
+                  color="white"
+                  size="h6"
+                  weight="4"
+                />
+              </div>
+              <div className="d-flex align-items-center mt-2">
+                <Heading
+                  title="Get Started"
+                  color="electric-green"
+                  size="h6"
+                  weight="4"
+                />
+                <Image
+                  className="m-2"
+                  src={greenArrow}
+                  alt="arrow icon"
+                  width={50}
+                />
+              </div>
+            </div>
           </div>
           <div className={styles.right_row}>
             <Image
@@ -243,7 +406,7 @@ const xpenz = () => {
       </div>
       <div className="row eigth_row bg-white row-padding">
         <div
-          className={`col-12 d-flex flex-md-row justify-content-evenly mt-3 ${styles.scroll_container}`}
+          className={`col-12 d-flex flex-md-row justify-content-center mt-3 ${styles.scroll_container}`}
         >
           <div className="me-4 md:me-0">
             <GetStartedCard
@@ -276,17 +439,18 @@ const xpenz = () => {
             title="Expense Management Insights"
             size="h1"
             color="black"
+            weight="6"
           />
         </div>
-        <div className="col-12 d-flex justify-content-center mt-3">
+        <div className="col-12 d-flex justify-content-center mt-4">
           <Heading
-            title="Expense Management Insights"
-            size="h5"
+            title="Blogs to related topics"
+            size="h4"
             color="equity-blue"
           />
         </div>
-        <div className="col-12 d-flex justify-content-center mt-3">
-          <PrimaryButton title="See all" />
+        <div className="col-12 d-flex justify-content-center mt-4">
+          <MenuButton title="See all" theme="light" />
         </div>
 
         <div className="col-12 d-flex flex-column flex-md-row justify-content-evenly mt-5">
@@ -296,8 +460,8 @@ const xpenz = () => {
               date="Dec 21, 2023"
               description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
           imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
-          vestibulum ipsum. Nibh vestibulum ut viverra mattis."
-              blogImage={laptop}
+         "
+              blogImage={cardOne}
               blogImageAlt="office image"
             />
           </div>
@@ -307,8 +471,8 @@ const xpenz = () => {
               date="Dec 21, 2023"
               description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
           imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
-          vestibulum ipsum. Nibh vestibulum ut viverra mattis."
-              blogImage={officeImg}
+          "
+              blogImage={cardTwo}
               blogImageAlt="office image"
             />
           </div>
@@ -319,21 +483,23 @@ const xpenz = () => {
               date="Dec 21, 2023"
               description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
           imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
-          vestibulum ipsum. Nibh vestibulum ut viverra mattis."
-              blogImage={laptop}
+          "
+              blogImage={cardThree}
               blogImageAlt="office image"
             />
           </div>
         </div>
       </div>
-      <div className="row eigth_row bg-equity-blue row-padding">
+      <div
+        className={`row ${styles.eigth_row} bg-equity-blue row-padding-x-only`}
+      >
         <div className="d-flex justify-content-evenly">
           <Heading
             title="Have Questions about Expense Management?"
             size="h3"
             color="white"
           />
-          <PrimaryButton title="Know More" theme="theme-black" />
+          <PrimaryButton title="Know More" theme="theme-black" size="medium" />
         </div>
       </div>
 

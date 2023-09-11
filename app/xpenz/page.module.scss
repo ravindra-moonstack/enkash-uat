@@ -25,9 +25,54 @@
 }
 
 .second_row {
-  img {
-    height: auto;
-    margin-right: -40px;
+  position: relative;
+  .card {
+    padding: 0;
+    @include bp-md {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+  .card_container {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    border-radius: 14.51px;
+    border: 1.935px solid #092093;
+    background: #0b0b28;
+    background: $color-indi-volt;
+    margin-top: -20px;
+    @include bp-md {
+      width: 50%;
+      margin-top: 0;
+      margin-left: -60px;
+    }
+    .progress_bar {
+      position: absolute;
+      bottom: 20px;
+      left: 40%;
+    }
+  }
+  .img_container {
+    position: relative;
+    z-index: 1;
+    @include bp-md {
+      height: 400px;
+    }
+  }
+}
+
+.sixth_row {
+  .progress_bar {
+    height: 8px;
+    border-radius: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: linear-gradient(
+      90deg,
+      $color-equity-blue 15%,
+      $color-black 30%
+    );
   }
 }
 
@@ -65,6 +110,11 @@
       height: 100%;
     }
   }
+}
+
+.eigth_row {
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .scroll_container {

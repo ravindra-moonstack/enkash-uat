@@ -12,5 +12,10 @@ export { default as regualation } from "./img/regulations.png";
 export { default as cashAndCoin } from "./img/cash-and-coin.png";
 export { default as officeImg } from "./img/office-img.png";
 export { default as whiteArrow } from "./img/white-arrow.png";
-
-
+export { default as oldWay } from "./img/old-way.png";
+export { default as newWay } from "./img/new-way.png";
+export { default as blueArrowForward } from "./img/blue-forward-arrow.png";
+export { default as greenArrow } from "./img/green-arrow.svg";
+export { default as cardOne } from "./img/card-one-image.png";
+export { default as cardTwo } from "./img/card-two-image.png";
+export { default as cardThree } from "./img/card-three-image.png";

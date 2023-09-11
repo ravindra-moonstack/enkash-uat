@@ -47,3 +47,4 @@ export { default as blackRectangleBottom } from "./img/black-rectangle-bottom.pn
 export { default as stairs } from "./img/stairs-cropped.png";
 export { default as threeDownArrow } from "./img/three-down-arrow.png";
 export { default as mobileTestimonial } from "./img/mobile-testimonial-image.png";
+

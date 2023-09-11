@@ -25,13 +25,19 @@ $font-size-mobile: 12px;
   @include bp-md {
     font-size: $font-size;
   }
-  img {
-    width: 20px;
-    height: 20px;
-    @include bp-md {
-      width: 30px;
-      height: 30px;
-    }
+}
+
+.small-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.big-icon {
+  width: 20px;
+  height: 20px;
+  @include bp-md {
+    width: 30px;
+    height: 30px;
   }
 }
 
