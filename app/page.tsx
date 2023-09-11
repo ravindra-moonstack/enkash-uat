@@ -61,43 +61,49 @@ const home = () => {
   const [isInView, setIsInView] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
+  if (typeof window !== "undefined") {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+      const elem = document.querySelector(`.${styles.third_row}`);
+      if (elem && elem.getBoundingClientRect().top <= window.innerHeight) {
+        setIsInView(true);
+      } else {
+        setIsInView(false);
+      }
+    };
 
-    const elem = document.querySelector(`.${styles.third_row}`);
-    if (elem && elem.getBoundingClientRect().top <= window.innerHeight) {
-      setIsInView(true);
-    } else {
-      setIsInView(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const largeScreen = window.matchMedia("(min-width:786px)");
-  let maxScrollForFullAdjustment = 400;
-  let maxAdjustment = 45;
-  if (!largeScreen.matches) {
-    maxScrollForFullAdjustment = 300;
-    maxAdjustment = 15;
+    useEffect(() => {
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
   }
 
-  const adjustment = Math.min(
-    (scrollY / maxScrollForFullAdjustment) * maxAdjustment,
-    maxAdjustment
-  );
+  let largeScreen;
+  let topFirstText = 90;
+  let topSecondText = 208;
+  let topThirdText = 320;
 
-  let topFirstText = 90 + adjustment;
-  let topSecondText = 208 + adjustment;
-  let topThirdText = 320 + adjustment;
+  if (typeof window !== "undefined") {
+    largeScreen = window.matchMedia("(min-width:786px)");
+    let maxScrollForFullAdjustment = 400;
+    let maxAdjustment = 45;
+    if (!largeScreen.matches) {
+      maxScrollForFullAdjustment = 300;
+      maxAdjustment = 15;
+    }
+    const adjustment = Math.min(
+      (scrollY / maxScrollForFullAdjustment) * maxAdjustment,
+      maxAdjustment
+    );
+    topFirstText = topFirstText + adjustment;
+    topSecondText = topSecondText + adjustment;
+    topThirdText = topThirdText + adjustment;
 
-  if (!largeScreen.matches) {
-    topFirstText = 90 + adjustment;
-    topSecondText = 145 + adjustment;
-    topThirdText = 195 + adjustment;
+    if (!largeScreen.matches) {
+      topFirstText = 90 + adjustment;
+      topSecondText = 145 + adjustment;
+      topThirdText = 195 + adjustment;
+    }
   }
 
   return (
