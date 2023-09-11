@@ -20,7 +20,7 @@ const BlogCard = ({
 }: BlogProps) => {
   return (
     <div className={`d-flex flex-column ${styles.card_body}`}>
-      <Image src={blogImage} alt={blogImageAlt} width={348} />
+      <Image src={blogImage} alt={blogImageAlt} className="img-fluid" />
       <div className="d-flex flex-column p-4">
         <Heading title={title} color="black" size="h4" weight="7" />
         <div className="mt-3">

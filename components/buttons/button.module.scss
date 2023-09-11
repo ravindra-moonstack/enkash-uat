@@ -28,8 +28,12 @@ $font-size-mobile: 12px;
 }
 
 .small-icon {
-  width: 20px;
-  height: 20px;
+  width: 15px;
+  height: 15px;
+  @include bp-md {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 .big-icon {

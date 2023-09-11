@@ -22,6 +22,18 @@
       width: 800px;
     }
   }
+  .desktop_description {
+    display: none;
+    @include bp-md {
+      display: block;
+    }
+  }
+  .mobile_description {
+    display: block;
+    @include bp-md {
+      display: none;
+    }
+  }
 }
 
 .second_row {
@@ -49,8 +61,23 @@
     }
     .progress_bar {
       position: absolute;
-      bottom: 20px;
-      left: 40%;
+      bottom: 5px;
+      left: 30%;
+      @include bp-md {
+        bottom: 20px;
+        left: 40%;
+      }
+    }
+    .rupee_img {
+      width: 100px;
+      height: 80px;
+      margin-bottom: 10px;
+      @include bp-md {
+        margin-bottom: 0px;
+
+        width: 150px;
+        height: 130px;
+      }
     }
   }
   .img_container {
@@ -64,7 +91,7 @@
 
 .sixth_row {
   .progress_bar {
-    height: 8px;
+    height: 4px;
     border-radius: 12px;
     padding-left: 50px;
     padding-right: 50px;
@@ -73,6 +100,32 @@
       $color-equity-blue 15%,
       $color-black 30%
     );
+    @include bp-md {
+      height: 8px;
+    }
+  }
+  .progress_items {
+    margin-right: 30px;
+    @include bp-md {
+      margin-right: 0;
+    }
+  }
+  .progress_container {
+    @include bp-md {
+      justify-content: space-evenly;
+    }
+  }
+  .arrow {
+    transform: rotate(90deg);
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+    @include bp-md {
+      height: 50px;
+      width: 50px;
+      transform: none;
+      margin-top: 0;
+    }
   }
 }
 
@@ -94,9 +147,11 @@
   }
   .left_row {
     padding: 40px;
+    margin-top: -20px;
     @include bp-md {
       padding: 40px;
       width: 50%;
+      margin-top: 0px;
     }
   }
   .right_row {
@@ -113,12 +168,29 @@
 }
 
 .eigth_row {
-  padding-top: 60px;
-  padding-bottom: 60px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include bp-md {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
 }
 
 .scroll_container {
-  width: 100%;
   overflow-x: auto;
   white-space: nowrap;
+
+  &::-webkit-scrollbar {
+    padding: 20px;
+    height: 4px;
+    background: #092093;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #61d6ff 30%, transparent 30%);
+  }
 }
