@@ -471,7 +471,7 @@ const xpenz = () => {
         <div
           className={`col-12 d-flex justify-content-md-evenly mt-5 pb-3 ${styles.scroll_container}`}
         >
-          <div className="me-4">
+          <div className="me-4 ms-md-4">
             <BlogCard
               title="Lorem ipsum dolor sit amet, consectetur."
               date="Dec 21, 2023"
@@ -507,9 +507,7 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`row ${styles.eigth_row} bg-equity-blue`}
-      >
+      <div className={`row ${styles.eigth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly">
           <Heading
             title="Have Questions about Expense Management?"
