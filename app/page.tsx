@@ -604,7 +604,7 @@ const home = () => {
                 />
               </div>
 
-              <div className="mt-5">
+              <div className="mt-4">
                 <PrimaryButton
                   title="Get a Demo"
                   size="medium"
