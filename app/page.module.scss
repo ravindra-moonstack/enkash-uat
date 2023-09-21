@@ -35,6 +35,26 @@
   }
 }
 
+@keyframes revealFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.reveal {
+  animation: revealFromBottom 1s ease-out forwards;
+}
+
 .first_row {
   position: relative;
   height: 700px;

@@ -9,6 +9,7 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
+import { useInView } from "react-intersection-observer";
 
 import {
   dashboard,
@@ -62,33 +63,44 @@ const home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [relativeScroll, setRelativeScroll] = useState(0);
 
+  const [inViewRef, inView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
+
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const handleScroll = () => {
       setScrollY(window.scrollY);
 
-      const elem = document.querySelector(`.${styles.third_row}`);
-      if (!elem) return;
-
-      const elemTop = elem.getBoundingClientRect().top;
-      const elemHeight = elem.getBoundingClientRect().height;
-      const relativeScrollPosition =
-        elemHeight - (elemTop + window.innerHeight);
-
-      setRelativeScroll(relativeScrollPosition);
+      if (typeof document !== "undefined") {
+        const elem = document.querySelector(`.${styles.third_row}`);
+        if (!elem) return;
+        const elemTop = elem.getBoundingClientRect().top;
+        const elemHeight = elem.getBoundingClientRect().height;
+        const relativeScrollPosition =
+          elemHeight - (elemTop + window.innerHeight);
+        setRelativeScroll(relativeScrollPosition);
+      }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const elem = document.querySelector(`.${styles.third_row}`);
-  const elemHeight = elem ? elem.getBoundingClientRect().height : 0;
+  let isPolygonOneInView;
+  let isPolygonTwoInView;
+  let isPolygonThreeInView;
 
-  const isPolygonOneInView = relativeScroll > 0;
-  const isPolygonTwoInView = relativeScroll > elemHeight / 7;
-  const isPolygonThreeInView = relativeScroll > (2 * elemHeight) / 7;
+  if (typeof document !== "undefined") {
+    const elem = document.querySelector(`.${styles.third_row}`);
+    const elemHeight = elem ? elem.getBoundingClientRect().height : 0;
+
+    isPolygonOneInView = relativeScroll > 0;
+    isPolygonTwoInView = relativeScroll > elemHeight / 7;
+    isPolygonThreeInView = relativeScroll > (2 * elemHeight) / 7;
+  }
 
   let largeScreen;
   let topFirstText, topSecondText, topThirdText;
@@ -776,12 +788,15 @@ const home = () => {
             />
           </div>
         </div>
-        <div className="col-md-6 col-12 d-flex justify-content-center mt-5">
+        <div
+          ref={inViewRef}
+          className="col-md-6 col-12 d-flex justify-content-center mt-5"
+        >
           <Image
             src={loyaltyLoungeMobileImg}
             alt="loyalty lounge image"
             width={300}
-            className="img-fluid"
+            className={`img-fluid ${inView ? styles.reveal : styles.hidden}`}
           />
         </div>
       </div>
