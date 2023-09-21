@@ -60,23 +60,35 @@ const loginUrl = "https://home.enkash.com/login";
 const home = () => {
   const [isInView, setIsInView] = useState(false);
   const [scrollY, setScrollY] = useState(0);
+  const [relativeScroll, setRelativeScroll] = useState(0);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
 
     const handleScroll = () => {
       setScrollY(window.scrollY);
+
       const elem = document.querySelector(`.${styles.third_row}`);
-      if (elem && elem.getBoundingClientRect().top <= window.innerHeight) {
-        setIsInView(true);
-      } else {
-        setIsInView(false);
-      }
+      if (!elem) return;
+
+      const elemTop = elem.getBoundingClientRect().top;
+      const elemHeight = elem.getBoundingClientRect().height;
+      const relativeScrollPosition =
+        elemHeight - (elemTop + window.innerHeight);
+
+      setRelativeScroll(relativeScrollPosition);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const elem = document.querySelector(`.${styles.third_row}`);
+  const elemHeight = elem ? elem.getBoundingClientRect().height : 0;
+
+  const isPolygonOneInView = relativeScroll > 0;
+  const isPolygonTwoInView = relativeScroll > elemHeight / 7;
+  const isPolygonThreeInView = relativeScroll > (2 * elemHeight) / 7;
 
   let largeScreen;
   let topFirstText, topSecondText, topThirdText;
@@ -102,7 +114,11 @@ const home = () => {
 
     const segmentLength = maxScrollForFullAdjustment / 3;
 
-    const computeAdjustment = (currentScroll: number, segmentLength: number, maxAdj: number) => {
+    const computeAdjustment = (
+      currentScroll: number,
+      segmentLength: number,
+      maxAdj: number
+    ) => {
       return Math.min((currentScroll / segmentLength) * maxAdj, maxAdj);
     };
 
@@ -315,18 +331,22 @@ const home = () => {
         <Image
           src={polygonOne}
           alt="background image"
-          className={`${styles.polygon_one} ${isInView ? styles.slideIn : ""}`}
+          className={`${styles.polygon_one} ${
+            isPolygonOneInView ? styles.slideIn : ""
+          }`}
         />
         <Image
           src={polygonTwo}
           alt="background image"
-          className={`${styles.polygon_two} ${isInView ? styles.slideIn : ""}`}
+          className={`${styles.polygon_two} ${
+            isPolygonTwoInView ? styles.slideIn : ""
+          }`}
         />
         <Image
           src={polygonThree}
           alt="background image"
           className={`${styles.polygon_three} ${
-            isInView ? styles.slideIn : ""
+            isPolygonThreeInView ? styles.slideIn : ""
           }`}
         />
 

@@ -284,7 +284,7 @@
     position: absolute;
     top: 30px;
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50%);
     height: 100px;
     z-index: 1;
     @include bp-md {
@@ -296,7 +296,7 @@
     position: absolute;
     top: 60px;
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(50%);
     height: 100px;
     z-index: 2;
     @include bp-md {
@@ -309,7 +309,7 @@
     top: 90px;
     opacity: 0;
     height: 100px;
-    transform: translateY(100%);
+    transform: translateY(50%);
     height: 100px;
     z-index: 3;
     @include bp-md {
