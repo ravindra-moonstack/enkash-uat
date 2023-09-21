@@ -61,7 +61,9 @@ const home = () => {
   const [isInView, setIsInView] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
-  if (typeof window !== "undefined") {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
     const handleScroll = () => {
       setScrollY(window.scrollY);
       const elem = document.querySelector(`.${styles.third_row}`);
@@ -72,37 +74,55 @@ const home = () => {
       }
     };
 
-    useEffect(() => {
-      window.addEventListener("scroll", handleScroll, { passive: true });
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-  }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   let largeScreen;
-  let topFirstText = 90;
-  let topSecondText = 208;
-  let topThirdText = 320;
+  let topFirstText, topSecondText, topThirdText;
+  let maxScrollForFullAdjustment;
+  let maxAdjustment;
 
   if (typeof window !== "undefined") {
     largeScreen = window.matchMedia("(min-width:786px)");
-    let maxScrollForFullAdjustment = 400;
-    let maxAdjustment = 45;
-    if (!largeScreen.matches) {
+
+    if (largeScreen.matches) {
+      topFirstText = 90;
+      topSecondText = 208;
+      topThirdText = 320;
+      maxScrollForFullAdjustment = 400;
+      maxAdjustment = 45;
+    } else {
+      topFirstText = 90;
+      topSecondText = 145;
+      topThirdText = 195;
       maxScrollForFullAdjustment = 300;
       maxAdjustment = 15;
     }
-    const adjustment = Math.min(
-      (scrollY / maxScrollForFullAdjustment) * maxAdjustment,
-      maxAdjustment
-    );
-    topFirstText = topFirstText + adjustment;
-    topSecondText = topSecondText + adjustment;
-    topThirdText = topThirdText + adjustment;
 
-    if (!largeScreen.matches) {
-      topFirstText = 90 + adjustment;
-      topSecondText = 145 + adjustment;
-      topThirdText = 195 + adjustment;
+    const segmentLength = maxScrollForFullAdjustment / 3;
+
+    const computeAdjustment = (currentScroll: number, segmentLength: number, maxAdj: number) => {
+      return Math.min((currentScroll / segmentLength) * maxAdj, maxAdj);
+    };
+
+    if (scrollY < segmentLength) {
+      topFirstText += computeAdjustment(scrollY, segmentLength, maxAdjustment);
+    } else if (scrollY < segmentLength * 2) {
+      topFirstText += maxAdjustment;
+      topSecondText += computeAdjustment(
+        scrollY - segmentLength,
+        segmentLength,
+        maxAdjustment
+      );
+    } else {
+      topFirstText += maxAdjustment;
+      topSecondText += maxAdjustment;
+      topThirdText += computeAdjustment(
+        scrollY - 2 * segmentLength,
+        segmentLength,
+        maxAdjustment
+      );
     }
   }
 

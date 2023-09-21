@@ -44,8 +44,8 @@
     top: 92px;
     z-index: 1;
     opacity: 0;
-    animation: slideFromBottom 1.3s forwards;
-    animation-delay: 0.2s;
+    animation: slideFromBottom 0.4s ease-out forwards;
+    animation-delay: 0.1s;
   }
 
   .rainbow_one {
@@ -54,8 +54,8 @@
     height: 100px;
     z-index: 2;
     opacity: 0;
-    animation: slideFromBottom 1.3s forwards;
-    animation-delay: 0.4s;
+    animation: slideFromBottom 0.6s ease-out forwards;
+    animation-delay: 0.2s;
     @include bp-md {
       height: 400px;
       top: 180px;
@@ -67,8 +67,8 @@
     top: 145px;
     z-index: 3;
     opacity: 0;
-    animation: slideFromBottom 1.3s forwards;
-    animation-delay: 0.6s;
+    animation: slideFromBottom 0.4s ease-out forwards;
+    animation-delay: 0.3s;
     @include bp-md {
       top: 208px;
     }
@@ -80,8 +80,8 @@
     height: 100px;
     z-index: 4;
     opacity: 0;
-    animation: slideFromBottom 1.3s forwards;
-    animation-delay: 0.8s;
+    animation: slideFromBottom 0.4s ease-out forwards;
+    animation-delay: 0.4s;
     @include bp-md {
       height: 400px;
       top: 290px;
@@ -93,8 +93,8 @@
     top: 195px;
     z-index: 5;
     opacity: 0;
-    animation: slideFromBottom 1.3s forwards;
-    animation-delay: 1s;
+    animation: slideFromBottom 0.4s ease-out forwards;
+    animation-delay: 0.5s;
     @include bp-md {
       top: 320px;
     }
@@ -106,8 +106,8 @@
     height: 90px;
     z-index: 6;
     opacity: 0;
-    animation: slideFromBottom 1.3s forwards;
-    animation-delay: 1.2s;
+    animation: slideFromBottom 0.4s ease-out forwards;
+    animation-delay: 0.6s;
     @include bp-md {
       height: 300px;
       top: 400px;
@@ -122,7 +122,7 @@
       z-index: 7;
       opacity: 0;
       animation: fadeIn 1.3s forwards;
-      animation-delay: 1.4s;
+      animation-delay: 0.7s;
       top: 470px;
     }
   }
@@ -131,7 +131,6 @@
     position: absolute;
     top: 310px;
     z-index: 7;
-    // animation-delay: 1.4s;
     @include bp-md {
       display: none;
     }
@@ -143,7 +142,7 @@
     z-index: 7;
     opacity: 0;
     animation: fadeIn 1.3s forwards;
-    animation-delay: 1.8s;
+    animation-delay: 0.8s;
     @include bp-md {
       top: 570px;
     }
