@@ -98,8 +98,8 @@ const home = () => {
     const elemHeight = elem ? elem.getBoundingClientRect().height : 0;
 
     isPolygonOneInView = relativeScroll > 0;
-    isPolygonTwoInView = relativeScroll > elemHeight / 7;
-    isPolygonThreeInView = relativeScroll > (2 * elemHeight) / 7;
+    isPolygonTwoInView = relativeScroll > 450;
+    isPolygonThreeInView = relativeScroll > 700;
   }
 
   let largeScreen;

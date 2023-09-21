@@ -53,6 +53,7 @@
 
 .reveal {
   animation: revealFromBottom 1s ease-out forwards;
+  z-index: 0;
 }
 
 .first_row {
@@ -304,7 +305,7 @@
     position: absolute;
     top: 30px;
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(60%);
     height: 100px;
     z-index: 1;
     @include bp-md {
@@ -316,7 +317,7 @@
     position: absolute;
     top: 60px;
     opacity: 0;
-    transform: translateY(50%);
+    transform: translateY(60%);
     height: 100px;
     z-index: 2;
     @include bp-md {
@@ -329,7 +330,7 @@
     top: 90px;
     opacity: 0;
     height: 100px;
-    transform: translateY(50%);
+    transform: translateY(30%);
     height: 100px;
     z-index: 3;
     @include bp-md {
@@ -357,15 +358,7 @@
   }
 
   .slideIn {
-    animation: slideInFromBottom 2.5s forwards;
-  }
-
-  .polygon_two.slideIn {
-    animation-delay: 1.5s;
-  }
-
-  .polygon_three.slideIn {
-    animation-delay: 2s;
+    animation: slideInFromBottom 2.5s ease-out forwards;
   }
 }
 
@@ -460,6 +453,8 @@
 }
 
 .eleventh_row {
+  position: relative;
+  z-index: 1;
   .steps_image {
     width: 23px;
     height: 23px;
