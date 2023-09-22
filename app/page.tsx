@@ -72,45 +72,23 @@ const home = () => {
   });
   const translateY = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
 
-  //Below code has 2 animation which are custom built and any lib is not used
 
-  //1- Polygon animation
+  //polygon animation aniamtion
+
+
+
+  //Below code one animation which are custom built and any lib is not used
+
   useEffect(() => {
     if (typeof window === "undefined") return;
-
     const handleScroll = () => {
       setScrollY(window.scrollY);
-
-      if (typeof document !== "undefined") {
-        const elem = document.querySelector(`.${styles.third_row}`);
-        if (!elem) return;
-        const elemTop = elem.getBoundingClientRect().top;
-        const elemHeight = elem.getBoundingClientRect().height;
-        const relativeScrollPosition =
-          elemHeight - (elemTop + window.innerHeight);
-        setRelativeScroll(relativeScrollPosition);
-      }
     };
-
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  let isPolygonOneInView;
-  let isPolygonTwoInView;
-  let isPolygonThreeInView;
-
-  if (typeof document !== "undefined") {
-    const elem = document.querySelector(`.${styles.third_row}`);
-    const elemHeight = elem ? elem.getBoundingClientRect().height : 0;
-
-    isPolygonOneInView = relativeScroll > -200;
-    isPolygonTwoInView = relativeScroll > 400;
-    isPolygonThreeInView = relativeScroll > 700;
-  }
-
-  //2 - Stack animation
-
+  //Stack animation custom built
   let largeScreen;
   let topFirstText, topSecondText, topThirdText;
   let maxScrollForFullAdjustment;
@@ -359,23 +337,17 @@ const home = () => {
         <Image
           src={polygonOne}
           alt="background image"
-          className={`${styles.polygon_one} ${
-            isPolygonOneInView ? styles.slideIn : ""
-          }`}
+          className={`${styles.polygon_one}`}
         />
         <Image
           src={polygonTwo}
           alt="background image"
-          className={`${styles.polygon_two} ${
-            isPolygonTwoInView ? styles.slideIn : ""
-          }`}
+          className={`${styles.polygon_two}`}
         />
         <Image
           src={polygonThree}
           alt="background image"
-          className={`${styles.polygon_three} ${
-            isPolygonThreeInView ? styles.slideIn : ""
-          }`}
+          className={`${styles.polygon_three}`}
         />
 
         <div className={`col-md-12 col-4  ${styles.action_container}`}>

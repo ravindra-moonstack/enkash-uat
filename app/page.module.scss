@@ -304,8 +304,6 @@
   .polygon_one {
     position: absolute;
     top: 30px;
-    opacity: 0;
-    transform: translateY(60%);
     height: 100px;
     z-index: 1;
     @include bp-md {
@@ -316,8 +314,6 @@
   .polygon_two {
     position: absolute;
     top: 60px;
-    opacity: 0;
-    transform: translateY(60%);
     height: 100px;
     z-index: 2;
     @include bp-md {
@@ -328,9 +324,7 @@
   .polygon_three {
     position: absolute;
     top: 90px;
-    opacity: 0;
     height: 100px;
-    transform: translateY(30%);
     height: 100px;
     z-index: 3;
     @include bp-md {
@@ -344,21 +338,6 @@
     @include bp-md {
       display: none;
     }
-  }
-
-  @keyframes slideInFromBottom {
-    from {
-      transform: translateY(100%);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  .slideIn {
-    animation: slideInFromBottom 1s ease-out forwards;
   }
 }
 
