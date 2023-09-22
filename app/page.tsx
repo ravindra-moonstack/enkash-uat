@@ -10,6 +10,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
 import { useInView } from "react-intersection-observer";
+const Fade = require("react-reveal/Fade");
 
 import {
   dashboard,
@@ -59,10 +60,8 @@ import { useEffect, useState } from "react";
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
-  const [isInView, setIsInView] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const [relativeScroll, setRelativeScroll] = useState(0);
-
   const [inViewRef, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -272,57 +271,64 @@ const home = () => {
             />
           </div>
         </div>
-        <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-        >
-          <Image
-            src={userPlus}
-            alt="signup image"
-            className={`me-3 ${styles.action_image_user_plus}`}
-          />
-          <Image
-            src={numberOne}
-            alt="step one image"
-            className={`me-3 ${styles.steps_image}`}
-          />
-          <div>
-            <Heading title="Sign Up" size="h5" />
+
+        <Fade delay={1000} duration={700}>
+          <div
+            className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          >
+            <Image
+              src={userPlus}
+              alt="signup image"
+              className={`me-3 ${styles.action_image_user_plus}`}
+            />
+            <Image
+              src={numberOne}
+              alt="step one image"
+              className={`me-3 ${styles.steps_image}`}
+            />
+            <div>
+              <Heading title="Sign Up" size="h5" />
+            </div>
           </div>
-        </div>
-        <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-        >
-          <Image
-            src={userTick}
-            alt="kyc image"
-            className={`me-3 ${styles.action_image_user_tick}`}
-          />
-          <Image
-            src={numberTwo}
-            alt="step one image"
-            className={`me-3 ${styles.steps_image}`}
-          />
-          <div>
-            <Heading title="Complete KYC Process" size="h5" />
+        </Fade>
+        <Fade delay={1500} duration={900}>
+          <div
+            className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          >
+            <Image
+              src={userTick}
+              alt="kyc image"
+              className={`me-3 ${styles.action_image_user_tick}`}
+            />
+            <Image
+              src={numberTwo}
+              alt="step one image"
+              className={`me-3 ${styles.steps_image}`}
+            />
+            <div>
+              <Heading title="Complete KYC Process" size="h5" />
+            </div>
           </div>
-        </div>
-        <div
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-        >
-          <Image
-            src={stack}
-            alt="get started image"
-            className={`me-3 ${styles.action_image_stack}`}
-          />
-          <Image
-            src={numberThree}
-            alt="step one image"
-            className={`me-3 ${styles.steps_image}`}
-          />
-          <div>
-            <Heading title="Get Started" size="h5" />
+        </Fade>
+        <Fade delay={2000} duration={1000}>
+          <div
+            className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          >
+            <Image
+              src={stack}
+              alt="get started image"
+              className={`me-3 ${styles.action_image_stack}`}
+            />
+            <Image
+              src={numberThree}
+              alt="step one image"
+              className={`me-3 ${styles.steps_image}`}
+            />
+            <div>
+              <Heading title="Get Started" size="h5" />
+            </div>
           </div>
-        </div>
+        </Fade>
         <div className="col-12 d-flex justify-content-center align-items-center">
           <div className={styles.email_box}>
             <div className="w-50 d-flex align-items-center">
