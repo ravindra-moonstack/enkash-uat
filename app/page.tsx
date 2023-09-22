@@ -62,6 +62,7 @@ const loginUrl = "https://home.enkash.com/login";
 const home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [relativeScroll, setRelativeScroll] = useState(0);
+  const [lastScrollY, setLastScrollY] = useState(0);
   const [inViewRef, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
@@ -96,8 +97,8 @@ const home = () => {
     const elem = document.querySelector(`.${styles.third_row}`);
     const elemHeight = elem ? elem.getBoundingClientRect().height : 0;
 
-    isPolygonOneInView = relativeScroll > 0;
-    isPolygonTwoInView = relativeScroll > 450;
+    isPolygonOneInView = relativeScroll > -200;
+    isPolygonTwoInView = relativeScroll > 400;
     isPolygonThreeInView = relativeScroll > 700;
   }
 
@@ -272,7 +273,7 @@ const home = () => {
           </div>
         </div>
 
-        <Fade delay={1000} duration={700}>
+        <Fade delay={600} duration={700}>
           <div
             className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
           >
@@ -291,7 +292,7 @@ const home = () => {
             </div>
           </div>
         </Fade>
-        <Fade delay={1500} duration={900}>
+        <Fade delay={800} duration={900}>
           <div
             className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
           >
@@ -310,7 +311,7 @@ const home = () => {
             </div>
           </div>
         </Fade>
-        <Fade delay={2000} duration={1000}>
+        <Fade delay={1000} duration={1000}>
           <div
             className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
           >
