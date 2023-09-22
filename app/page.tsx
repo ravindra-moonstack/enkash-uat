@@ -9,8 +9,8 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
-import { useInView } from "react-intersection-observer";
 const Fade = require("react-reveal/Fade");
+import { motion, useTransform, useScroll } from "framer-motion";
 
 import {
   dashboard,
@@ -55,19 +55,26 @@ import {
   mobileTestimonial,
 } from ".";
 import Heading from "@/components/heading/heading";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
   const [scrollY, setScrollY] = useState(0);
   const [relativeScroll, setRelativeScroll] = useState(0);
-  const [lastScrollY, setLastScrollY] = useState(0);
-  const [inViewRef, inView] = useInView({
-    threshold: 0.1,
-    triggerOnce: true,
-  });
 
+  //Loyalty lounge aniamtion
+
+  const loungeImgRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: loungeImgRef,
+    offset: ["0.4 1", "1.33 1"],
+  });
+  const translateY = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+
+  //Below code has 2 animation which are custom built and any lib is not used
+
+  //1- Polygon animation
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -101,6 +108,8 @@ const home = () => {
     isPolygonTwoInView = relativeScroll > 400;
     isPolygonThreeInView = relativeScroll > 700;
   }
+
+  //2 - Stack animation
 
   let largeScreen;
   let topFirstText, topSecondText, topThirdText;
@@ -795,16 +804,20 @@ const home = () => {
             />
           </div>
         </div>
-        <div
-          ref={inViewRef}
-          className="col-md-6 col-12 d-flex justify-content-center mt-5"
-        >
-          <Image
-            src={loyaltyLoungeMobileImg}
-            alt="loyalty lounge image"
-            width={300}
-            className={`img-fluid ${inView ? styles.reveal : styles.hidden}`}
-          />
+        <div className="col-md-6 col-12 d-flex justify-content-center mt-5">
+          <motion.div
+            ref={loungeImgRef}
+            style={{
+              y: translateY,
+            }}
+          >
+            <Image
+              src={loyaltyLoungeMobileImg}
+              alt="loyalty lounge image"
+              width={300}
+              className={`img-fluid`}
+            />
+          </motion.div>
         </div>
       </div>
       <div
