@@ -10,7 +10,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
 const Fade = require("react-reveal/Fade");
-import { motion, useTransform, useScroll } from "framer-motion";
+import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
 
 import {
   dashboard,
@@ -60,24 +60,58 @@ import { useEffect, useRef, useState } from "react";
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
-  const [scrollY, setScrollY] = useState(0);
-  const [relativeScroll, setRelativeScroll] = useState(0);
-
-  //Loyalty lounge aniamtion
-
+  //Framer motion animations on many divs
   const loungeImgRef = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
+  const polygonOneRef = useRef<HTMLImageElement>(null);
+  const polygonTwoRef = useRef<HTMLImageElement>(null);
+  const polygonThreeRef = useRef<HTMLImageElement>(null);
+
+  // Assuming useScroll returns an object with a scrollYProgress property
+  const loungeScrollData = useScroll({
     target: loungeImgRef,
     offset: ["0.4 1", "1.33 1"],
-  });
-  const translateY = useTransform(scrollYProgress, [0, 1], ["100%", "0%"]);
+  }) as { scrollYProgress: MotionValue<number> };
 
+  const polygonOneScrollData = useScroll({
+    target: polygonOneRef,
+    offset: ["0.2 1", "0.5 1"],
+  }) as { scrollYProgress: MotionValue<number> };
 
-  //polygon animation aniamtion
+  const polygonTwoScrollData = useScroll({
+    target: polygonTwoRef,
+    offset: ["0.2 1", "0.7 1"],
+  }) as { scrollYProgress: MotionValue<number> };
 
+  const polygonThreeScrollData = useScroll({
+    target: polygonThreeRef,
+    offset: ["0.3 1", "0.8 1"],
+  }) as { scrollYProgress: MotionValue<number> };
 
+  const loungeTranslateY = useTransform(
+    loungeScrollData.scrollYProgress,
+    [0, 1],
+    ["10%", "0%"]
+  );
+  const polygonOneTranslateY = useTransform(
+    polygonOneScrollData.scrollYProgress,
+    [0, 1],
+    ["50%", "0%"]
+  );
+
+  const polygonTwoTranslateY = useTransform(
+    polygonTwoScrollData.scrollYProgress,
+    [0, 1],
+    ["100", "0%"]
+  );
+  const polygonThreeTranslateY = useTransform(
+    polygonThreeScrollData.scrollYProgress,
+    [0, 1],
+    ["100%", "0%"]
+  );
 
   //Below code one animation which are custom built and any lib is not used
+  //Stack animation custom built
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -88,7 +122,6 @@ const home = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  //Stack animation custom built
   let largeScreen;
   let topFirstText, topSecondText, topThirdText;
   let maxScrollForFullAdjustment;
@@ -334,20 +367,26 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.third_row} row color-white`}>
-        <Image
-          src={polygonOne}
+        <motion.img
+          ref={polygonOneRef}
+          style={{ y: polygonOneTranslateY }}
+          src={polygonOne.src}
           alt="background image"
-          className={`${styles.polygon_one}`}
+          className={styles.polygon_one}
         />
-        <Image
-          src={polygonTwo}
+        <motion.img
+          ref={polygonTwoRef}
+          style={{ y: polygonTwoTranslateY }}
+          src={polygonTwo.src}
           alt="background image"
-          className={`${styles.polygon_two}`}
+          className={styles.polygon_two}
         />
-        <Image
-          src={polygonThree}
+        <motion.img
+          ref={polygonThreeRef}
+          style={{ y: polygonThreeTranslateY }}
+          src={polygonThree.src}
           alt="background image"
-          className={`${styles.polygon_three}`}
+          className={styles.polygon_three}
         />
 
         <div className={`col-md-12 col-4  ${styles.action_container}`}>
@@ -597,7 +636,9 @@ const home = () => {
           />
         </div>
       </div>
-      <div className="sixth_row bg-white row d-flex row-padding-bottom-none">
+      <div
+        className={`${styles.sixth_row} bg-white row d-flex row-padding-bottom-none`}
+      >
         <div className="col-md-6 col-12 d-flex mb-5">
           <Image
             src={expenseDashboard}
@@ -664,7 +705,9 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className="eigth_row row d-flex d-flex bg-white row-padding">
+      <div
+        className={`${styles.eigth_row}row d-flex d-flex bg-white row-padding`}
+      >
         <div className="d-flex flex-column justify-content-center align-items-center">
           <div>
             <Heading
@@ -728,7 +771,9 @@ const home = () => {
           />
         </div>
       </div>
-      <div className="tenth_row row bg-white row-padding-bottom-none">
+      <div
+        className={`${styles.tenth_row} row bg-white row-padding-bottom-none`}
+      >
         <div className="col-12 d-flex justify-content-center">
           <div className="pb-md-5 pb-3">
             <Heading title={`Loyalty${space}`} color="black" size="h1" />
@@ -780,7 +825,7 @@ const home = () => {
           <motion.div
             ref={loungeImgRef}
             style={{
-              y: translateY,
+              y: loungeTranslateY,
             }}
           >
             <Image

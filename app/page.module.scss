@@ -260,7 +260,7 @@
   display: flex;
   justify-content: center;
   @include bp-md {
-    height: 1300px;
+    height: 1400px;
   }
 
   .action_container {
@@ -291,6 +291,7 @@
     }
   }
   .descrption_container {
+    z-index: 4;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -307,7 +308,7 @@
     height: 100px;
     z-index: 1;
     @include bp-md {
-      top: 230px;
+      top: 240px;
       height: auto;
     }
   }
@@ -317,7 +318,7 @@
     height: 100px;
     z-index: 2;
     @include bp-md {
-      top: 390px;
+      top: 380px;
       height: auto;
     }
   }
@@ -328,7 +329,7 @@
     height: 100px;
     z-index: 3;
     @include bp-md {
-      top: 550px;
+      top: 540px;
       height: auto;
     }
   }
@@ -345,6 +346,7 @@
   overflow: hidden;
   width: auto;
   position: relative;
+  z-index: 4;
 
   .bank_logo {
     overflow-x: auto;

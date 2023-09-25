@@ -37,9 +37,9 @@ export { default as playButton } from "./img/watch.svg";
 export { default as rainbowOne } from "./img/rainbow-one-cropped.png";
 export { default as rainbowTwo } from "./img/rainbow-two-cropped.png";
 export { default as rainbowThree } from "./img/rainbow-three-cropped-f.png";
-export { default as polygonOne } from "./img/polygon-one-cropped.png";
-export { default as polygonTwo } from "./img/polygon-two-cropped.png";
-export { default as polygonThree } from "./img/polygon-three-cropped.png";
+export { default as polygonOne } from "./img/polygon-one.png";
+export { default as polygonTwo } from "./img/polygon-two.png";
+export { default as polygonThree } from "./img/polygon-three.png";
 export { default as blueBlackLine } from "./img/blue-black-line.png";
 export { default as greenDot } from "./img/green-dot.png";
 export { default as blackRectangleTop } from "./img/black-rectangle-top.png";
@@ -47,4 +47,3 @@ export { default as blackRectangleBottom } from "./img/black-rectangle-bottom.pn
 export { default as stairs } from "./img/stairs-cropped.png";
 export { default as threeDownArrow } from "./img/three-down-arrow.png";
 export { default as mobileTestimonial } from "./img/mobile-testimonial-image.png";
-
