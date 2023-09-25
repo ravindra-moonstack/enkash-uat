@@ -9,8 +9,13 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
-const Fade = require("react-reveal/Fade");
-import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
+import {
+  motion,
+  useTransform,
+  useScroll,
+  MotionValue,
+  useCycle,
+} from "framer-motion";
 
 import {
   dashboard,
@@ -56,6 +61,7 @@ import {
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
+import { noSSR } from "next/dynamic";
 
 const loginUrl = "https://home.enkash.com/login";
 
@@ -65,6 +71,7 @@ const home = () => {
   const polygonOneRef = useRef<HTMLImageElement>(null);
   const polygonTwoRef = useRef<HTMLImageElement>(null);
   const polygonThreeRef = useRef<HTMLImageElement>(null);
+  const getStartedButtonRef = useRef<HTMLDivElement>(null);
 
   // Assuming useScroll returns an object with a scrollYProgress property
   const loungeScrollData = useScroll({
@@ -87,6 +94,11 @@ const home = () => {
     offset: ["0.3 1", "0.8 1"],
   }) as { scrollYProgress: MotionValue<number> };
 
+  const getStartedButtonScrollData = useScroll({
+    target: getStartedButtonRef,
+    offset: ["0 1", "0 1"],
+  }) as { scrollXProgress: MotionValue<number> };
+
   const loungeTranslateY = useTransform(
     loungeScrollData.scrollYProgress,
     [0, 1],
@@ -107,6 +119,12 @@ const home = () => {
     polygonThreeScrollData.scrollYProgress,
     [0, 1],
     ["100%", "0%"]
+  );
+
+  const getStartedButtonTranslateX = useTransform(
+    getStartedButtonScrollData.scrollXProgress,
+    [0, 1],
+    ["20%", "50%"]
   );
 
   //Below code one animation which are custom built and any lib is not used
@@ -293,75 +311,101 @@ const home = () => {
           </div>
         </div>
 
-        <Fade delay={600} duration={700}>
-          <div
-            className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-          >
-            <Image
-              src={userPlus}
-              alt="signup image"
-              className={`me-3 ${styles.action_image_user_plus}`}
-            />
-            <Image
-              src={numberOne}
-              alt="step one image"
-              className={`me-3 ${styles.steps_image}`}
-            />
-            <div>
-              <Heading title="Sign Up" size="h5" />
-            </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 0.5,
+            ease: "easeInOut",
+          }}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image
+            src={userPlus}
+            alt="signup image"
+            className={`me-3 ${styles.action_image_user_plus}`}
+          />
+          <Image
+            src={numberOne}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
+          <div>
+            <Heading title="Sign Up" size="h5" />
           </div>
-        </Fade>
-        <Fade delay={800} duration={900}>
-          <div
-            className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-          >
-            <Image
-              src={userTick}
-              alt="kyc image"
-              className={`me-3 ${styles.action_image_user_tick}`}
-            />
-            <Image
-              src={numberTwo}
-              alt="step one image"
-              className={`me-3 ${styles.steps_image}`}
-            />
-            <div>
-              <Heading title="Complete KYC Process" size="h5" />
-            </div>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{
+            duration: 1,
+            delay: 0.7,
+            ease: "easeInOut",
+          }}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image
+            src={userTick}
+            alt="kyc image"
+            className={`me-3 ${styles.action_image_user_tick}`}
+          />
+          <Image
+            src={numberTwo}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
+          <div>
+            <Heading title="Complete KYC Process" size="h5" />
           </div>
-        </Fade>
-        <Fade delay={1000} duration={1000}>
-          <div
-            className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-          >
-            <Image
-              src={stack}
-              alt="get started image"
-              className={`me-3 ${styles.action_image_stack}`}
-            />
-            <Image
-              src={numberThree}
-              alt="step one image"
-              className={`me-3 ${styles.steps_image}`}
-            />
-            <div>
-              <Heading title="Get Started" size="h5" />
-            </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 2.2 }}
+          transition={{
+            duration: 1,
+            delay: 0.9,
+            ease: "easeInOut",
+          }}
+          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+        >
+          <Image
+            src={stack}
+            alt="get started image"
+            className={`me-3 ${styles.action_image_stack}`}
+          />
+          <Image
+            src={numberThree}
+            alt="step one image"
+            className={`me-3 ${styles.steps_image}`}
+          />
+          <div>
+            <Heading title="Get Started" size="h5" />
           </div>
-        </Fade>
+        </motion.div>
         <div className="col-12 d-flex justify-content-center align-items-center">
           <div className={styles.email_box}>
             <div className="w-50 d-flex align-items-center">
               <input type="text" placeholder="Enter your email"></input>
             </div>
+
             <div>
-              <PrimaryButton
-                title="Get Started Now"
-                theme="theme-blue"
-                size="medium"
-                weight="bold"
-              />
+              <motion.div
+                initial={{ translateX: "-150px" }}
+                whileInView={{ translateX: 0 }}
+                transition={{
+                  duration: 0.7,
+                  ease: "easeInOut",
+                }}
+              >
+                <PrimaryButton
+                  title="Get Started Now"
+                  theme="theme-blue"
+                  size="medium"
+                  weight="bold"
+                />
+              </motion.div>
             </div>
           </div>
         </div>
