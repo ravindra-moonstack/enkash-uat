@@ -16,6 +16,7 @@ import {
 import ProductModal from "./modal/product-modal";
 import SolutionsModal from "./modal/solutions-modal";
 import ResourcesModal from "./modal/resources-modal";
+import EmptyModal from "./modal/empty-modal";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
@@ -25,6 +26,8 @@ const WebHeader = () => {
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false);
   const [itemWidth, setItemWidth] = useState(0);
   const itemRef = useRef<HTMLLIElement | null>(null);
+  const [slidePosition, setSlidePosition] = useState<number | null>(null);
+  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
   useEffect(() => {
     if (itemRef.current) {
@@ -65,21 +68,31 @@ const WebHeader = () => {
               <div
                 className={styles.background_slide}
                 style={{
-                  transform: `translateX(${hoveredIndex * (itemWidth + 10)}px)`,
+                  transform: `translateX(${slidePosition}px)`,
                   width: `${itemWidth}px`,
                 }}
               ></div>
             )}
+
             {navBarTopTtitle.map((item, index) => (
               <li
-                ref={index === 0 ? itemRef : null}
+                ref={(el) => (itemRefs.current[index] = el)}
                 key={item.name}
                 className={`px-3 d-flex justify-content-center align-items-center cursor-pointer`}
                 onMouseEnter={() => {
-                  if (index !== 2) {
-                    setHoveredIndex(index);
-                    setIsHeaderBgWhite(true);
-                  }
+                  const position =
+                    itemRefs.current[index]?.getBoundingClientRect().left || 0;
+                  const width = itemRefs.current[index]?.offsetWidth || 0; // Get the width here
+
+                  setSlidePosition(
+                    position -
+                      (itemRefs.current[
+                        index
+                      ]?.parentElement?.getBoundingClientRect().left || 0)
+                  );
+                  setItemWidth(width); // Set the width here
+                  setHoveredIndex(index);
+                  setIsHeaderBgWhite(true);
                 }}
               >
                 {item.name}
@@ -117,6 +130,7 @@ const WebHeader = () => {
 
       {hoveredIndex === 0 && <ProductModal />}
       {hoveredIndex === 1 && <SolutionsModal />}
+      {hoveredIndex === 2 && <EmptyModal />}
       {hoveredIndex === 3 && <ResourcesModal />}
     </header>
   );

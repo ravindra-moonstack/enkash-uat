@@ -9,13 +9,7 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
-import {
-  motion,
-  useTransform,
-  useScroll,
-  MotionValue,
-  useCycle,
-} from "framer-motion";
+import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
 
 import {
   dashboard,
@@ -61,22 +55,19 @@ import {
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
-import { noSSR } from "next/dynamic";
 
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
-  //Framer motion animations on many divs
+  //Framer motion (scroll intact animations)
   const loungeImgRef = useRef<HTMLDivElement>(null);
   const polygonOneRef = useRef<HTMLImageElement>(null);
   const polygonTwoRef = useRef<HTMLImageElement>(null);
   const polygonThreeRef = useRef<HTMLImageElement>(null);
-  const getStartedButtonRef = useRef<HTMLDivElement>(null);
 
-  // Assuming useScroll returns an object with a scrollYProgress property
   const loungeScrollData = useScroll({
     target: loungeImgRef,
-    offset: ["0.4 1", "1.33 1"],
+    offset: ["1.0 1", "1.7 1"],
   }) as { scrollYProgress: MotionValue<number> };
 
   const polygonOneScrollData = useScroll({
@@ -94,15 +85,10 @@ const home = () => {
     offset: ["0.3 1", "0.8 1"],
   }) as { scrollYProgress: MotionValue<number> };
 
-  const getStartedButtonScrollData = useScroll({
-    target: getStartedButtonRef,
-    offset: ["0 1", "0 1"],
-  }) as { scrollXProgress: MotionValue<number> };
-
   const loungeTranslateY = useTransform(
     loungeScrollData.scrollYProgress,
     [0, 1],
-    ["10%", "0%"]
+    ["100%", "0%"]
   );
   const polygonOneTranslateY = useTransform(
     polygonOneScrollData.scrollYProgress,
@@ -121,13 +107,7 @@ const home = () => {
     ["100%", "0%"]
   );
 
-  const getStartedButtonTranslateX = useTransform(
-    getStartedButtonScrollData.scrollXProgress,
-    [0, 1],
-    ["20%", "50%"]
-  );
-
-  //Below code one animation which are custom built and any lib is not used
+  //Below code is animation which are custom built and any lib is not used
   //Stack animation custom built
   const [scrollY, setScrollY] = useState(0);
 
@@ -191,6 +171,8 @@ const home = () => {
       );
     }
   }
+
+  //Start of HTML code
 
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
