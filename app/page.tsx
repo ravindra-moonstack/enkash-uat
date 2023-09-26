@@ -306,7 +306,7 @@ const home = () => {
           <Image
             src={userPlus}
             alt="signup image"
-            className={`me-3 ${styles.action_image_user_plus}`}
+            className={`me-3 img-fluid ${styles.action_image_user_plus}`}
           />
           <Image
             src={numberOne}
@@ -330,7 +330,7 @@ const home = () => {
           <Image
             src={userTick}
             alt="kyc image"
-            className={`me-3 ${styles.action_image_user_tick}`}
+            className={`me-3 img-fluid ${styles.action_image_user_tick}`}
           />
           <Image
             src={numberTwo}
@@ -355,7 +355,7 @@ const home = () => {
           <Image
             src={stack}
             alt="get started image"
-            className={`me-3 ${styles.action_image_stack}`}
+            className={`me-3 img-fluid ${styles.action_image_stack}`}
           />
           <Image
             src={numberThree}
