@@ -59,9 +59,14 @@ import {
   payablesAnimation,
   recieveableAnimation,
   diyCardAnimation,
+  dashboardTwo,
+  dashboardUi,
+  dashboardUiManageAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
+import { laptop } from "./xpenz";
+import { laptopScreen } from "./reimbursement";
 
 const loginUrl = "https://home.enkash.com/login";
 
@@ -423,19 +428,27 @@ const home = () => {
         />
 
         <div className={`col-md-12 col-4  ${styles.action_container}`}>
-          <div className="d-flex flex-column flex-md-row justify-content-evenly w-100">
+          <div className="d-flex flex-column flex-md-row justify-content-center w-100">
+            <div className="me-2">
             <MenuButton isDisabled={false} title="Manage" theme="dark" />
+            </div>
             <div className={styles.space}></div>
+            <div className="me-2">
             <MenuButton isDisabled={false} title="Track" theme="disabled" />
+            </div>
             <div className={styles.space}></div>
+            <div className="me-2">
             <MenuButton isDisabled={false} title="Customize" theme="disabled" />
+            </div>
             <div className={styles.space}></div>
+            <div>
             <MenuButton isDisabled={false} title="Automate" theme="disabled" />
+            </div>
           </div>
         </div>
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
-          <Image src={dashboard} alt="enkash dashboard" className="img-fluid" />
-          {/* <Lottie animationData={dashboardUiManage} loop={true}/> */}
+          <Image src={dashboardUi} alt="enkash dashboard" className="img-fluid" />
+          {/* <Lottie animationData={dashboardUiManageAnimation} loop={true}/> */}
         </div>
         <div className={`col-12  ${styles.descrption_container}`}>
           <div>

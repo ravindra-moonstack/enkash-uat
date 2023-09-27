@@ -53,6 +53,8 @@ export { default as recieveableAnimation } from "./img/lottie/recievables.json";
 export { default as dashboardUIAnimation } from "./img/lottie/dashboard-ui.json";
 export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard-ui-mange.json";
 export { default as diyCardAnimation } from "./img/lottie/diy-card.json";
+export { default as dashboardUi } from "./img/dashboard-ui.png";
+
 
 
 
