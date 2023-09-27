@@ -47,3 +47,15 @@ export { default as blackRectangleBottom } from "./img/black-rectangle-bottom.pn
 export { default as stairs } from "./img/stairs-cropped.png";
 export { default as threeDownArrow } from "./img/three-down-arrow.png";
 export { default as mobileTestimonial } from "./img/mobile-testimonial-image.png";
+export { default as expenseManagementAnimation } from "./img/lottie/expense-management.json";
+export { default as payablesAnimation } from "./img/lottie/payables.json"
+export { default as recieveableAnimation } from "./img/lottie/recievables.json";
+export { default as dashboardUIAnimation } from "./img/lottie/dashboard-ui.json";
+export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard-ui-mange.json";
+export { default as diyCardAnimation } from "./img/lottie/diy-card.json";
+
+
+
+
+
+

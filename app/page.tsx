@@ -10,6 +10,9 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import { space } from "@/constant/common";
 import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
+import Lottie from "lottie-react";
+
+
 
 import {
   dashboard,
@@ -52,6 +55,10 @@ import {
   blueBlackLine,
   threeDownArrow,
   mobileTestimonial,
+  expenseManagementAnimation,
+  payablesAnimation,
+  recieveableAnimation,
+  diyCardAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
@@ -428,6 +435,7 @@ const home = () => {
         </div>
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
           <Image src={dashboard} alt="enkash dashboard" className="img-fluid" />
+          {/* <Lottie animationData={dashboardUiManage} loop={true}/> */}
         </div>
         <div className={`col-12  ${styles.descrption_container}`}>
           <div>
@@ -629,11 +637,13 @@ const home = () => {
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex  mb-5 order-2 order-md-1">
-          <Image
+          {/* <Image
             src={payablesImage}
             alt="payables image"
             className="img-fluid"
-          />
+          /> */}
+                    <Lottie animationData={payablesAnimation} loop={true} />
+
         </div>
         <div className="col-md-6 col-12 mb-5  order-1 order-md-2">
           <ExploreCard
@@ -655,22 +665,24 @@ const home = () => {
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-4 order-md-4">
-          <Image
+          {/* <Image
             src={receivableImage}
             alt="receivable image"
             className="img-fluid"
-          />
+          /> */}
+          <Lottie animationData={recieveableAnimation} loop={true}/>
         </div>
       </div>
       <div
         className={`${styles.sixth_row} bg-white row d-flex row-padding-bottom-none`}
       >
         <div className="col-md-6 col-12 d-flex mb-5">
-          <Image
+          {/* <Image
             src={expenseDashboard}
             alt="payables image"
             className="img-fluid"
-          />
+          /> */}
+          <Lottie animationData={expenseManagementAnimation} loop={true} />
         </div>
         <div className="col-md-6 col-12 mb-5">
           <ExploreCard
@@ -771,6 +783,7 @@ const home = () => {
             alt="payables image"
             className="img-fluid"
           />
+
         </div>
         <div className="col-md-6 col-12 row-padding-bottom-none mb-5 order-1 order-md-2">
           <ExploreCard
@@ -789,12 +802,13 @@ const home = () => {
         <div
           className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  ${styles.blue_grad_bg_bottom}  order-4 order-md-4`}
         >
-          <Image
+          {/* <Image
             src={diyCardsModuleImg}
             width={350}
             alt="receivable image"
             className="img-fluid"
-          />
+          /> */}
+          <Lottie animationData={diyCardAnimation} loop={true}/>
         </div>
       </div>
       <div
