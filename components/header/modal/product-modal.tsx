@@ -6,7 +6,7 @@ import styles from "./modal.module.scss";
 import motherProducts from "../../../constant/products/mother-products";
 import olympusProducts from "../../../constant/products/olympus-products";
 import freedomProducts from "../../../constant/products/freedom-products";
-import xpenzProducts from "../../../constant/xpenz-products";
+import xpenzProducts from "../../../constant/products/xpenz-products";
 import loyaltyLoungeProducts from "../../../constant/products/loaylty-lounge-products";
 import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";

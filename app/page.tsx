@@ -353,7 +353,6 @@ const home = () => {
             <Heading title="Complete KYC Process" size="h5" />
           </div>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 2.2 }}

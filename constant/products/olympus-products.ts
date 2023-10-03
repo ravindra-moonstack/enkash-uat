@@ -58,6 +58,8 @@ const olympusProducts = [
     ],
     footerText: "Stream Line with Payables",
     footerImg: "xpenz_footer_bg",
+    footerLink:"/olympus"
+
   },
   {
     subtitle: "Receivables",

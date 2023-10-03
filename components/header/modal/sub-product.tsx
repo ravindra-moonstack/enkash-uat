@@ -2,6 +2,7 @@ import Image from "next/image";
 import styles from "./sub-product.module.scss";
 import { footerArrow } from "..";
 import { useState } from "react";
+import Link from "next/link";
 
 const SubProduct = (props: any) => {
   const [hoverIconImage, setHoverIconImage] = useState(null);
@@ -92,10 +93,12 @@ const SubProduct = (props: any) => {
         } ${styles[activeGroup.footerImg]}`}
       >
         <div>{activeGroup.footerText}</div>
-        <div className="d-flex">
-          <div className="px-2">Explore</div>
-          <Image src={footerArrow} alt="explore olympus" />
-        </div>
+        <Link href={activeGroup.footerLink}>
+          <div className={`${styles.explore} d-flex`}>
+            <div className="px-2">Explore</div>
+            <Image src={footerArrow} alt="explore arrow image" />
+          </div>
+        </Link>
       </div>
     </div>
   );

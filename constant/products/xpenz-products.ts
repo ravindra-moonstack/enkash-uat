@@ -53,6 +53,8 @@ const xpenzProducts = [
       },
     ],
     footerText: "Stream Line with Xpenze",
+    footerImg: "xpenz_footer_bg",
+    footerLink: "/xpenz",
   },
 ];
 

@@ -82,7 +82,7 @@ const WebHeader = () => {
                 onMouseEnter={() => {
                   const position =
                     itemRefs.current[index]?.getBoundingClientRect().left || 0;
-                  const width = itemRefs.current[index]?.offsetWidth || 0; // Get the width here
+                  const width = itemRefs.current[index]?.offsetWidth || 0;
 
                   setSlidePosition(
                     position -

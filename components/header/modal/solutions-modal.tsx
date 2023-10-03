@@ -60,7 +60,6 @@ const SolutionsModal = () => {
           />
         </div>
       )}
-      {/* Add any conditional rendering for sub-products here if necessary */}
     </div>
   );
 };

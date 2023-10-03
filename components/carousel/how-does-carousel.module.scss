@@ -1,0 +1,60 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.home_container {
+  position: relative;
+  padding-top: 80px;
+  padding-bottom: 200px;
+
+  .title {
+    margin-bottom: 100px;
+  }
+
+  .container {
+    height: 500px;
+    border: 2.7px solid #fffbfb;
+    background: linear-gradient(
+      324deg,
+      #1c5af4 2.33%,
+      rgba(11, 11, 40, 0.25) 85.63%
+    );
+    backdrop-filter: blur(3.210831880569458px);
+    .left_row {
+      width: 43%;
+      @include bp-md {
+        padding: 100px;
+      }
+    }
+  }
+
+  .right_row {
+    position: absolute;
+    right: 0;
+    top: -40px;
+    width: 57%;
+    img {
+      height: 650px;
+    }
+    .content {
+      left: 30%;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      justify-content: center;
+      height: 100%;
+      width: 57%;
+      display: flex;
+      img {
+        height: 100px;
+      }
+    }
+  }
+
+  .card_img {
+    width: 40px;
+    @include bp-md {
+      width: 100px;
+    }
+  }
+}

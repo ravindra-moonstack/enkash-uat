@@ -5,11 +5,12 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "@/constant/faq-data/billPaymentFaq";
+import carouselData from "./carouselData";
 
 import {
   bar,
-  blueArrowBackward,
-  blueArrowForward,
+  newWay,
+  oldWay,
   reimbursementCard,
   reimbursementDashboard,
   whiteArrow,
@@ -18,15 +19,17 @@ import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import FaqComponent from "@/components/faq/faq";
+import ThreeSteps from "@/components/three-steps/three-steps";
+import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 
 const reimbursement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <div className="first_row row row-padding color-white">
+      <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="X" color="rainy-blue" size="h1" />
-            <Heading title="penz | Reimbursements" size="h1" />
+            <Heading title="X" color="rainy-blue" size="h4" />
+            <Heading title="penz | Reimbursements" size="h4" />
           </div>
           <div className="d-flex">
             <Heading title={`EnKash${space}`} color="white" size="h2" />
@@ -46,7 +49,7 @@ const reimbursement = () => {
               reimbursement system that helps you track, process and sync data in
                real-time."
               color="white"
-              size="h5"
+              size="h6"
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
@@ -54,7 +57,11 @@ const reimbursement = () => {
               <PrimaryButton title="Enkash Now!" theme="theme-blue" />
             </div>
             <div>
-              <SecondryButton title="Book a Demo" actionImage={whiteArrow} />
+              <SecondryButton
+                title="Book a Demo"
+                actionImage={whiteArrow}
+                iconSize="small-icon"
+              />
             </div>
           </div>
         </div>
@@ -65,11 +72,16 @@ const reimbursement = () => {
             className="img-fluid p-5"
           />
         </div>
+        <div className={styles.three_step_container}>
+          <ThreeSteps />
+        </div>
       </div>
-      <div className="second-row row row-padding d-flex bg-white">
+      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
         <EnkashWay />
       </div>
-      <div className="third-row row d-flex bg-white row-padding-top-none">
+      <div
+        className={`${styles.third_row}  row d-flex bg-white row-padding-top-none`}
+      >
         <div className="col-12 d-flex justify-content-center text-center">
           <Heading
             title="Streamline Your Reimbursement Process"
@@ -109,55 +121,37 @@ const reimbursement = () => {
           <Image src={bar} alt="progress bar" className="img-fluid" />
         </div>
       </div>
-      <div className={`row ${styles.fourth_row} row-padding`}>
-        <div className="col-12 text-center">
-          <Heading
-            title="EnKash Makes Your Business’ Reimbursement"
-            color="white"
-            size="h1"
-          />
-        </div>
-        <div className="col-12 text-center">
-          <Heading title="Process Effortless." color="rainy-blue" size="h1" />
-        </div>
-
-        <div
-          className={`col-12 col-md-6 mt-5 d-flex flex-column ${styles.left_row}`}
-        >
-          <Heading
-            title="How do Reimbursements work?"
-            color="white"
-            size="h1"
-          />
-          <div className="d-flex align-items-center mt-4">
-            <Image
-              className="me-2"
-              src={blueArrowBackward}
-              alt="enkash steps"
-            />
-            <Heading title="1/5" color="white" size="h1" />
-            <Image className="ms-2" src={blueArrowForward} alt="enkash steps" />
-          </div>
-        </div>
-        <div
-          className={`col-12  col-md-6 mt-5 d-flex flex-column justify-content-center ${styles.right_row}`}
-        >
-          <Image
-            className={`mb-4 img-fluid ${styles.card_img}`}
-            src={reimbursementCard}
-            alt="reimbursement card image"
-          />
-          <Heading
-            title="Allocate funds for specific expenses and set limits on corporate cards to avoid the risk of overspending."
-            color="white"
-            size="h4"
-          />
-        </div>
+      <div className={`${styles.fourth_row} row`}>
+        <HowDoesCarousel
+          titleContent={
+            <>
+              <div className=" text-center">
+                <Heading
+                  title={`EnKash Makes Your Business’ ${space}`}
+                  color="white"
+                  size="h1"
+                />
+                <Heading title="Reimbursement" color="rainy-blue" size="h1" />
+              </div>
+              <div className=" text-center">
+                <Heading
+                  title="Process Effortless."
+                  color="rainy-blue"
+                  size="h1"
+                />
+              </div>
+            </>
+          }
+          mainTitle="How do Reimbursements work?"
+          carouselData={carouselData}
+        />
       </div>
-      <div className="fifth_row row row-padding-bottom-none bg-white">
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+      >
         <FaqComponent faqData={faqData} />
       </div>
-      <div className="row">
+      <div className={`${styles.sixth} row`}>
         <ContactUsCard />
       </div>
     </div>

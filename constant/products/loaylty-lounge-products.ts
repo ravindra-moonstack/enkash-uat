@@ -50,7 +50,7 @@ const loyaltyLoungeProducts = [
     ],
     footerText: "Stream Line with Loyalty",
     footerImg: "xpenz_footer_bg",
-
+    footerLink:"/loyalty"
   },
 ];
 

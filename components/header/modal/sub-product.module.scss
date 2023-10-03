@@ -61,6 +61,10 @@
   font-weight: 600;
   line-height: 23px;
   background-color: $color-equity-blue;
+  .explore {
+    cursor: pointer;
+    color: $color-electric-green;
+  }
 }
 
 @keyframes top-to-bottom {
