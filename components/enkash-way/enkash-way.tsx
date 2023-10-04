@@ -44,7 +44,7 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
   return (
     <>
       <div
-        className={`d-flex flex-column flex-md-row justify-content-center align-items-center`}
+        className={`d-flex flex-column flex-md-row justify-content-center align-items-center text-center`}
       >
         <Heading
           title={`The EnKash Way is${space}`}

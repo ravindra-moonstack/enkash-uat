@@ -7,7 +7,19 @@
   flex-direction: column;
   color: $color-black;
   text-align: left;
-  padding: 20px 80px;
+  padding: 10px 0px;
+  @include bp-md {
+    padding: 20px 80px;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    @include bp-md {
+      width: 40px;
+      height: 40px;
+    }
+  }
 
   .faq_inner_row {
     border-bottom: 3px solid blue;
@@ -15,9 +27,13 @@
   }
 
   .question {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 400;
     margin-bottom: 20px;
+
+    @include bp-md {
+      font-size: 25px;
+    }
 
     img {
       padding-left: 10px;
@@ -38,12 +54,16 @@
       opacity: 1;
     }
     .heading {
-      font-size: 20px;
+      font-size: 14px;
+      @include bp-md {
+        font-size: 20px;
+      }
     }
   }
 
   .normal {
     transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
   }
 
   .rotated {

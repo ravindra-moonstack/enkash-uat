@@ -6,20 +6,10 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-
-import {
-  bar,
-  faqBg,
-  newWay,
-  oldWay,
-  reimbursementCard,
-  reimbursementDashboard,
-  whiteArrow,
-} from ".";
+import { bar, faqBg, reimbursementDashboard, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
-import FaqComponent from "@/components/faq/faq";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
@@ -29,22 +19,31 @@ const reimbursement = () => {
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
-          <div className="d-flex mb-4">
-            <Heading title="X" color="rainy-blue" size="h4" />
-            <Heading title="penz | Reimbursements" size="h4" />
+          <div className="d-flex mb-4 flex-column flex-md-row">
+            <div className="d-flex">
+              <Heading title="X" color="rainy-blue" size="h4" />
+              <Heading title={`penz${space}`} color="rainy-blue" size="h4" />
+            </div>
+            <Heading title="| Reimbursements" size="h4" />
           </div>
-          <div className="d-flex">
-            <Heading title={`EnKash${space}`} color="white" size="h2" />
-            <Heading title="minimizes" color="rainy-blue" size="h2" />
+
+          <div className="">
+            <div className="d-flex">
+              <Heading title={`EnKash${space}`} color="white" size="h2" />
+              <Heading title="minimizes" color="rainy-blue" size="h2" />
+            </div>
+            <div className="d-flex flex-wrap">
+              <Heading title={`distractions${space}`} color="white" size="h2" />
+              <Heading title={`so that${space}`} color="white" size="h2" />
+              <Heading
+                title={`you can ${space}`}
+                color="rainy-blue"
+                size="h2"
+              />
+              <Heading title="take action." color="rainy-blue" size="h2" />
+            </div>
           </div>
-          <div className="d-flex">
-            <Heading title={`distractions${space}`} color="white" size="h2" />
-            <Heading title={`so that${space}`} color="white" size="h2" />
-            <Heading title="you can" color="rainy-blue" size="h2" />
-          </div>
-          <div className="d-flex">
-            <Heading title="take action." color="rainy-blue" size="h2" />
-          </div>
+
           <div className="d-flex mt-4 pe-5">
             <Heading
               title="Maximize productivity within your organization with an easier 
@@ -71,13 +70,14 @@ const reimbursement = () => {
           <Image
             src={reimbursementDashboard}
             alt="reimbursement dashboard"
-            className="img-fluid p-5"
+            className={styles.hero_image}
           />
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
         </div>
       </div>
+
       <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
@@ -114,16 +114,10 @@ const reimbursement = () => {
               newWayDescription:
                 "New way description for Operational Efficency",
             },
-            {
-              item: "Operational Efficency",
-              oldWayDescription:
-                "Old way description for Operational Efficency",
-              newWayDescription:
-                "New way description for Operational Efficency",
-            },
           ]}
         />
       </div>
+
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-top-none`}
       >
@@ -134,11 +128,13 @@ const reimbursement = () => {
             size="h1"
           />
         </div>
-        <div className="col-12 d-flex justify-content-center mb-5">
+        <div className="col-12 d-flex justify-content-center mb-5 text-center">
           <Heading title="with Automated Solutions." color="black" size="h1" />
         </div>
-        <div className="col-12 d-flex flex-column flex-md-row justify-content-evenly mt-3">
-          <div className="mb-2 mb-md-0">
+        <div
+          className={`col-12 d-flex flex-md-row mt-3 ${styles.scroll_container}`}
+        >
+          <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Automated Processes"
               title2=""
@@ -146,7 +142,7 @@ const reimbursement = () => {
              invoice generation and submission to ensure speed and accuracy."
             />
           </div>
-          <div className="mb-2 mb-md-0">
+          <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Better Documentation"
               title2=""
@@ -154,7 +150,7 @@ const reimbursement = () => {
             captures payments made on behalf of the business in a few simple steps"
             />
           </div>
-          <div className="mb-2 mb-md-0">
+          <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Real time tracking"
               title2=""
@@ -162,10 +158,8 @@ const reimbursement = () => {
             />
           </div>
         </div>
-        <div className="col-12 d-flex justify-content-center mt-4">
-          <Image src={bar} alt="progress bar" className="img-fluid" />
-        </div>
       </div>
+
       <div className={`${styles.fourth_row} row`}>
         <HowDoesCarousel
           titleContent={
@@ -214,6 +208,7 @@ const reimbursement = () => {
           <Image src={faqBg} alt="background image" />x
         </div>
       </div>
+
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard />
       </div>

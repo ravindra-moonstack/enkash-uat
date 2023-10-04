@@ -1,5 +1,8 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
 .home_container {
-  padding: 70px 60px;
+  padding: 10px 20px;
   border-radius: 15px;
   border: 2.7px solid #fffbfb;
   background: linear-gradient(
@@ -8,4 +11,24 @@
     rgba(11, 11, 40, 0.25) 85.63%
   );
   backdrop-filter: blur(3.210831880569458px);
+  @include bp-md {
+    padding: 70px 60px;
+  }
+
+  .image_one {
+    width: 40px;
+    height: 40px;
+    @include bp-md {
+      width: 70px;
+      height: 70px;
+    }
+  }
+  .image_two {
+    width: 20px;
+    height: 20px;
+    @include bp-md {
+      width: 30px;
+      height: 30px;
+    }
+  }
 }

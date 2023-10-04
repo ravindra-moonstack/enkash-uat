@@ -30,8 +30,9 @@ const FAQ = ({ question, answer }: faq) => {
             <Image
               src={arrowDown}
               alt="faq arrow icon"
-              width={40}
-              className={isAnswerVisible ? styles.rotated : styles.normal}
+              className={`${isAnswerVisible ? styles.rotated : styles.normal} ${
+                styles.arrow
+              }`}
             />
           </div>
 

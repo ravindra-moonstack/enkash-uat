@@ -154,8 +154,8 @@
 /* Padding Classes */
 
 .row-padding {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
   padding-top: 36px;
   padding-bottom: 36px;
   @include bp-md {
@@ -167,8 +167,8 @@
 }
 
 .row-padding-bottom-none {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
   padding-top: 36px;
   padding-bottom: 0px;
   @include bp-md {
@@ -180,8 +180,8 @@
 }
 
 .row-padding-top-none {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
   padding-top: 0px;
   padding-bottom: 36px;
   @include bp-md {
@@ -193,8 +193,8 @@
 }
 
 .row-padding-x-only {
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 25px;
+  padding-right: 25px;
   @include bp-md {
     padding-left: 100px;
     padding-right: 100px;

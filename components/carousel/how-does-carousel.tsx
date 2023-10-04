@@ -20,7 +20,6 @@ const HowDoesCarousel = ({
   const [count, setCount] = useState(1);
 
   const handleForwardClick = () => {
-    
     if (count < carouselData.length) {
       setCount((prevCount) => prevCount + 1);
     }

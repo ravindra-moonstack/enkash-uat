@@ -7,3 +7,5 @@ export { default as whiteArrow } from "./img/white-arrow.png";
 export { default as newWay } from "./img/old-way.png";
 export { default as oldWay } from "./img/new-way.png";
 export { default as faqBg } from "./img/faq-bg.png";
+export { default as caraouselBg } from "./img/carousel-bg.png";
+

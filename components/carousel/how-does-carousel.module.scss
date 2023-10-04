@@ -19,10 +19,17 @@
       rgba(11, 11, 40, 0.25) 85.63%
     );
     backdrop-filter: blur(3.210831880569458px);
+    display: flex;
+    @include bp-md {
+      flex-direction: column;
+    }
     .left_row {
-      width: 43%;
+      width: 100%;
+      padding-left: 20px;
       @include bp-md {
+        padding: 0;
         padding: 100px;
+        width: 43%;
       }
     }
   }
@@ -30,23 +37,39 @@
   .right_row {
     position: absolute;
     right: 0;
-    top: -40px;
-    width: 57%;
+    top: 250px;
+    width: 100%;
+    @include bp-md {
+      top: -40px;
+      width: 57%;
+    }
     img {
-      height: 650px;
+      height: 300px;
+      @include bp-md {
+        height: 650px;
+      }
     }
     .content {
-      left: 30%;
       position: absolute;
+      left: 40%;
+      top: 0;
+      height: 100%;
+      width: 60%;
       display: flex;
       flex-direction: column;
-      top: 0;
       justify-content: center;
-      height: 100%;
-      width: 57%;
-      display: flex;
+
+      @include bp-md {
+        left: 30%;
+        width: 57%;
+      }
       img {
-        height: 100px;
+        height: 50px;
+        width: 70px;
+        @include bp-md {
+          height: 100px;
+          width: 120px;
+        }
       }
     }
   }

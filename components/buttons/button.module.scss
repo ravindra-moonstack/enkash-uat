@@ -9,9 +9,9 @@ $font-size-mobile: 12px;
   border-radius: 20px;
   border: none;
   padding: $button-padding;
-  font-size: $font-size-mobile;
+  font-size: 10px;
   @include bp-md {
-    font-size: $font-size;
+    font-size: 20px;
   }
 }
 
@@ -20,10 +20,10 @@ $font-size-mobile: 12px;
   border: 2px solid $color-equity-blue;
   background-color: $color-indi-volt;
   color: $color-white;
-  font-size: $font-size-mobile;
+  font-size: 10px;
   padding: $button-padding;
   @include bp-md {
-    font-size: $font-size;
+    font-size: 20px;
   }
 }
 
@@ -87,17 +87,6 @@ $font-size-mobile: 12px;
 .theme-black {
   background-color: $color-black;
   color: white;
-}
-
-.small {
-  font-size: 15px;
-}
-
-.medium {
-  font-size: 12px;
-  @include bp-md {
-    font-size: 20px;
-  }
 }
 
 .bold {
