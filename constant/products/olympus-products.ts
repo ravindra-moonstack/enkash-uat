@@ -101,11 +101,12 @@ const olympusProducts = [
         description: "Audit-compliant tax payment process.",
         imageSrc: invoices,
         imageSrcHovered: invoicesFilled,
-        link: "/404",
+        link: "/invoices",
       },
     ],
     footerText: "Stream Line with Payables",
     footerImg: "xpenz_footer_bg",
+    footerLink: "/olympus",
   },
 ];
 
