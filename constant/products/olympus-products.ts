@@ -94,7 +94,7 @@ const olympusProducts = [
         description: "Automate timely bill payments",
         imageSrc: quickCollect,
         imageSrcHovered: quickCollectFilled,
-        link: "/404",
+        link: "/quick-collect",
       },
       {
         name: "Invoices",
