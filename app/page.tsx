@@ -12,8 +12,6 @@ import { space } from "@/constant/common";
 import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
 import Lottie from "lottie-react";
 
-
-
 import {
   dashboard,
   numberOne,
@@ -66,7 +64,7 @@ import {
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
 import { laptop } from "./xpenz";
-import { laptopScreen } from "./reimbursement";
+import { laptopScreen } from "./delete";
 
 const loginUrl = "https://home.enkash.com/login";
 
@@ -429,24 +427,36 @@ const home = () => {
         <div className={`col-md-12 col-4  ${styles.action_container}`}>
           <div className="d-flex flex-column flex-md-row justify-content-center w-100">
             <div className="me-2">
-            <MenuButton isDisabled={false} title="Manage" theme="dark" />
+              <MenuButton isDisabled={false} title="Manage" theme="dark" />
             </div>
             <div className={styles.space}></div>
             <div className="me-2">
-            <MenuButton isDisabled={false} title="Track" theme="disabled" />
+              <MenuButton isDisabled={false} title="Track" theme="disabled" />
             </div>
             <div className={styles.space}></div>
             <div className="me-2">
-            <MenuButton isDisabled={false} title="Customize" theme="disabled" />
+              <MenuButton
+                isDisabled={false}
+                title="Customize"
+                theme="disabled"
+              />
             </div>
             <div className={styles.space}></div>
             <div>
-            <MenuButton isDisabled={false} title="Automate" theme="disabled" />
+              <MenuButton
+                isDisabled={false}
+                title="Automate"
+                theme="disabled"
+              />
             </div>
           </div>
         </div>
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
-          <Image src={dashboardUi} alt="enkash dashboard" className="img-fluid" />
+          <Image
+            src={dashboardUi}
+            alt="enkash dashboard"
+            className="img-fluid"
+          />
           {/* <Lottie animationData={dashboardUiManageAnimation} loop={true}/> */}
         </div>
         <div className={`col-12  ${styles.descrption_container}`}>
@@ -654,8 +664,7 @@ const home = () => {
             alt="payables image"
             className="img-fluid"
           /> */}
-                    <Lottie animationData={payablesAnimation} loop={true} />
-
+          <Lottie animationData={payablesAnimation} loop={true} />
         </div>
         <div className="col-md-6 col-12 mb-5  order-1 order-md-2">
           <ExploreCard
@@ -682,7 +691,7 @@ const home = () => {
             alt="receivable image"
             className="img-fluid"
           /> */}
-          <Lottie animationData={recieveableAnimation} loop={true}/>
+          <Lottie animationData={recieveableAnimation} loop={true} />
         </div>
       </div>
       <div
@@ -795,7 +804,6 @@ const home = () => {
             alt="payables image"
             className="img-fluid"
           />
-
         </div>
         <div className="col-md-6 col-12 row-padding-bottom-none mb-5 order-1 order-md-2">
           <ExploreCard
@@ -820,7 +828,7 @@ const home = () => {
             alt="receivable image"
             className="img-fluid"
           /> */}
-          <Lottie animationData={diyCardAnimation} loop={true}/>
+          <Lottie animationData={diyCardAnimation} loop={true} />
         </div>
       </div>
       <div

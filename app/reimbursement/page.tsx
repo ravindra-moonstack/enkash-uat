@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { bar, faqBg, reimbursementDashboard, whiteArrow } from ".";
+import { faqBg, heroImage, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -21,40 +21,48 @@ const reimbursement = () => {
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-4 flex-column flex-md-row">
             <div className="d-flex">
-              <Heading title="X" color="rainy-blue" size="h4" />
-              <Heading title={`penz${space}`} color="rainy-blue" size="h4" />
+              <Heading title="X" color="rainy-blue" size="h4" weight="7" />
+              <Heading
+                title={`penz ${space}`}
+                color="white"
+                size="h4"
+                weight="7"
+              />
             </div>
-            <Heading title="| Reimbursements" size="h4" />
+
+            <Heading title="| Reimbursements" size="h4" weight="7" />
           </div>
 
           <div className="">
-            <div className="d-flex">
-              <Heading title={`EnKash${space}`} color="white" size="h2" />
-              <Heading title="minimizes" color="rainy-blue" size="h2" />
-            </div>
             <div className="d-flex flex-wrap">
+              <Heading title="EnKash" color="white" size="h2" weight="7" />
               <Heading
-                title={`distractions,${space}`}
+                title="minimizes distractions,"
                 color="rainy-blue"
                 size="h2"
+                weight="7"
               />
-              <Heading title={`so that${space}`} color="white" size="h2" />
               <Heading
-                title={`you can ${space}`}
+                title={`so that${space}`}
+                color="white"
+                size="h2"
+                weight="7"
+              />
+              <Heading
+                title="you can take action."
                 color="rainy-blue"
                 size="h2"
+                weight="7"
               />
-              <Heading title="take action." color="rainy-blue" size="h2" />
             </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Maximize productivity within your organization with an easier 
-              reimbursement system that helps you track, process and sync data in
-               real-time."
+              title="Maximize productivity within your organization with an easier reimbursement system that helps you track, process and sync data in real-time."
               color="white"
               size="h6"
+              weight="5"
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
@@ -72,7 +80,7 @@ const reimbursement = () => {
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <Image
-            src={reimbursementDashboard}
+            src={heroImage}
             alt="reimbursement dashboard"
             className={styles.hero_image}
           />
@@ -86,37 +94,39 @@ const reimbursement = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Expense Reporting",
-              oldWayDescription: "Old way description for Expense Reporting",
-              newWayDescription: "New way description for Expense Reporting",
+              item: "Process",
+              oldWayDescription:
+                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+              newWayDescription:
+                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Operational Efficency",
+              item: "Timelines",
               oldWayDescription:
-                "Old way description for Operational Efficency",
+                "Traditional methods take a lot of time and come with layers of red tape.",
               newWayDescription:
-                "New way description for Operational Efficency",
+                "Utilize advanced solutions like OCR technology and approval systems to streamline the reimbursement procedure.",
             },
             {
-              item: "Operational Efficency",
+              item: "Spend Visibility",
               oldWayDescription:
-                "Old way description for Operational Efficency",
+                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
-                "New way description for Operational Efficency",
+                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
             },
             {
-              item: "Operational Efficency",
+              item: "Tax Compliance",
               oldWayDescription:
-                "Old way description for Operational Efficency",
+                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
-                "New way description for Operational Efficency",
+                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
             },
             {
-              item: "Operational Efficency",
+              item: "Budgets & Policies",
               oldWayDescription:
-                "Old way description for Operational Efficency",
+                "Without a payment link, customers need to manually enter payment information or visit a physical location to make a payment which is prone to errors and delays.",
               newWayDescription:
-                "New way description for Operational Efficency",
+                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment.",
             },
           ]}
         />
@@ -125,40 +135,51 @@ const reimbursement = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-top-none`}
       >
-        <div className="col-12 d-flex justify-content-center text-center">
+        <div className="d-flex justify-content-center text-center flex-wrap mb-5">
           <Heading
             title="Streamline Your Reimbursement Process"
             color="equity-blue"
             size="h1"
+            weight="6"
+          />
+          <Heading
+            title={`${space}with Automated Solutions.`}
+            color="black"
+            size="h1"
+            weight="6"
           />
         </div>
-        <div className="col-12 d-flex justify-content-center mb-5 text-center">
-          <Heading title="with Automated Solutions." color="black" size="h1" />
-        </div>
+
         <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center ${styles.scroll_container}`}
+          className={`col-12 d-flex flex-md-row mt-3 pb-3 ${styles.scroll_container}`}
         >
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Automated Processes"
               title2=""
-              description="A digitized end-to-end solution, automate checking, approvals,
-             invoice generation and submission to ensure speed and accuracy."
+              description="A digitized end-to-end solution, automate checking, approvals, invoice generation and submission to ensure speed and accuracy."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Better Documentation"
               title2=""
-              description="Ensure employee compliance with easy-to-use capture modes which 
-            captures payments made on behalf of the business in a few simple steps"
+              description="Ensure employee compliance with easy-to-use capture modes which captures payments made on behalf of the business in a few simple steps"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Real time tracking"
               title2=""
               description="Track spends made on behalf of the business by employees in real time."
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              title1="Correct Entries"
+              title2=""
+              description="Automated reimbursement procedures eliminate the scope for delayed or incorrect data entries."
             />
           </div>
         </div>
@@ -168,19 +189,18 @@ const reimbursement = () => {
         <HowDoesCarousel
           titleContent={
             <>
-              <div className=" text-center">
+              <div className="text-center d-flex justify-content-center flex-wrap">
                 <Heading
-                  title={`EnKash Makes Your Business’ ${space}`}
+                  title={`EnKash Makes Your Business${space}`}
                   color="white"
                   size="h1"
+                  weight="6"
                 />
-                <Heading title="Reimbursement" color="rainy-blue" size="h1" />
-              </div>
-              <div className=" text-center">
                 <Heading
-                  title="Process Effortless."
+                  title="Reimbursement Process Effortless."
                   color="rainy-blue"
                   size="h1"
+                  weight="6"
                 />
               </div>
             </>
