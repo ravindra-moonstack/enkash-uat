@@ -505,17 +505,17 @@ const home = () => {
                   alt="automate icon"
                   className={`me-4 ${styles.icons}`}
                 />
-                <div>
+                <div className="d-flex flex-column">
                   <Heading
                     title="Intelligent"
                     color="equity-blue"
-                    size="h4"
+                    size="h5"
                     weight="6"
                   />
                   <Heading
                     title="Automation Tools"
                     color="equity-blue"
-                    size="h4"
+                    size="h5"
                     weight="6"
                   />
                 </div>
@@ -526,17 +526,17 @@ const home = () => {
                   alt="automate icon"
                   className={`me-4 ${styles.icons}`}
                 />
-                <div>
+                <div className="d-flex flex-column">
                   <Heading
                     title="Real-Time Data"
                     color="equity-blue"
-                    size="h4"
+                    size="h5"
                     weight="6"
                   />
                   <Heading
                     title="& Insights"
                     color="equity-blue"
-                    size="h4"
+                    size="h5"
                     weight="6"
                   />
                 </div>
@@ -549,17 +549,17 @@ const home = () => {
                   alt="automate icon"
                   className={`me-4 ${styles.icons}`}
                 />
-                <div>
+                <div className="d-flex flex-column">
                   <Heading
                     title="Optimized Business"
                     color="equity-blue"
-                    size="h4"
+                    size="h5"
                     weight="6"
                   />
                   <Heading
                     title="Productivity"
                     color="equity-blue"
-                    size="h4"
+                    size="h5"
                     weight="6"
                   />
                 </div>
@@ -570,17 +570,17 @@ const home = () => {
                   alt="automate icon"
                   className={`me-4 ${styles.icons}`}
                 />
-                <div>
+                <div className="d-flex flex-column">
                   <Heading
                     title="Unparalleled"
                     color="equity-blue"
-                    size="h4"
+                    size="h5"
                     weight="6"
                   />
                   <Heading
                     title="Savings"
                     color="equity-blue"
-                    size="h4"
+                    size="h5"
                     weight="6"
                   />
                 </div>
