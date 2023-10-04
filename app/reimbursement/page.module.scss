@@ -14,6 +14,7 @@
   }
 }
 
+
 .second_row {
   .progress_bar {
     height: 4px;
@@ -55,6 +56,21 @@
   }
 }
 
-.fourth_row {
-  
+.fifth_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 200px;
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 300px;
+    }
+  }
 }
+
+

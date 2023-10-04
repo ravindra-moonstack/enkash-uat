@@ -4,11 +4,12 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
-import faqData from "@/constant/faq-data/billPaymentFaq";
+import faqData from "./faqData";
 import carouselData from "./carouselData";
 
 import {
   bar,
+  faqBg,
   newWay,
   oldWay,
   reimbursementCard,
@@ -21,6 +22,7 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 import FaqComponent from "@/components/faq/faq";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
+import FAQ from "@/components/faq/faq";
 
 const reimbursement = () => {
   return (
@@ -77,7 +79,50 @@ const reimbursement = () => {
         </div>
       </div>
       <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay />
+        <EnkashWay
+          progressData={[
+            {
+              item: "Expense Reporting",
+              oldWayDescription: "Old way description for Expense Reporting",
+              newWayDescription: "New way description for Expense Reporting",
+            },
+            {
+              item: "Operational Efficency",
+              oldWayDescription:
+                "Old way description for Operational Efficency",
+              newWayDescription:
+                "New way description for Operational Efficency",
+            },
+            {
+              item: "Operational Efficency",
+              oldWayDescription:
+                "Old way description for Operational Efficency",
+              newWayDescription:
+                "New way description for Operational Efficency",
+            },
+            {
+              item: "Operational Efficency",
+              oldWayDescription:
+                "Old way description for Operational Efficency",
+              newWayDescription:
+                "New way description for Operational Efficency",
+            },
+            {
+              item: "Operational Efficency",
+              oldWayDescription:
+                "Old way description for Operational Efficency",
+              newWayDescription:
+                "New way description for Operational Efficency",
+            },
+            {
+              item: "Operational Efficency",
+              oldWayDescription:
+                "Old way description for Operational Efficency",
+              newWayDescription:
+                "New way description for Operational Efficency",
+            },
+          ]}
+        />
       </div>
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-top-none`}
@@ -149,9 +194,27 @@ const reimbursement = () => {
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
-        <FaqComponent faqData={faqData} />
+        <div className="mb-5">
+          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="Don't worry! Our FAQs section will help you learn about Reimbursements in detail."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          {faqData.map((item, index) => (
+            <FAQ key={index} question={item.question} answer={item.answer} />
+          ))}
+        </div>
+        <div className={styles.faq_bg}>
+          <Image src={faqBg} alt="background image" />x
+        </div>
       </div>
-      <div className={`${styles.sixth} row`}>
+      <div className={`${styles.sixth_row} row`}>
         <ContactUsCard />
       </div>
     </div>

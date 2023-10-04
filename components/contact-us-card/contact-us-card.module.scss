@@ -2,25 +2,21 @@
 @import "/styles/mixin";
 
 .contact_us_body {
-  background-image: url(./img/contact-us-spiral-img.png);
-  background-repeat: no-repeat;
-  background-color: $color-white;
-  background-size: 90% 100%;
-  @include bp-md {
-    background-size: 80% 100%;
+  display: flex;
+  background: $color-white;
+  border-top: 1px solid $color-black;
+
+  .text_container {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }
 
-  .mobile {
-    display: block;
-    @include bp-md {
-      display: none;
-    }
-  }
-
-  .desktop {
-    display: none;
-    @include bp-md {
-      display: block;
+  .image_container {
+    width: 50%;
+    img {
+      height: 400px;
     }
   }
 }
