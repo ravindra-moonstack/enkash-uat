@@ -68,8 +68,11 @@
     top: 35%;
     right: 20px;
     color: $color-white;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 500;
+    @include bp-md {
+      font-size: 18px;
+    }
   }
 }
 
@@ -83,7 +86,10 @@
     top: 35%;
     right: 20px;
     color: $color-black;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: 500;
+    @include bp-md {
+      font-size: 18px;
+    }
   }
 }

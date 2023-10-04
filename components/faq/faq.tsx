@@ -36,22 +36,20 @@ const FAQ = ({ question, answer }: faq) => {
             />
           </div>
 
-          {isAnswerVisible && (
-            <div
-              className={`${styles.answer} ${
-                isAnswerVisible ? styles.visible : ""
-              }`}
-            >
-              <h4 className={styles.heading}>{answer.heading}</h4>
-              {answer.bullets && (
-                <ul>
-                  {answer.bullets.map((item, index) => (
-                    <li key={index}>{item}</li>
-                  ))}
-                </ul>
-              )}
-            </div>
-          )}
+          <div
+            className={`${styles.answer} ${
+              isAnswerVisible ? styles.visible : ""
+            }`}
+          >
+            <h4 className={styles.heading}>{answer.heading}</h4>
+            {answer.bullets && (
+              <ul>
+                {answer.bullets.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
       </div>
     </div>

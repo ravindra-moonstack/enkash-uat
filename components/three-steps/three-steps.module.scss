@@ -15,20 +15,36 @@
     padding: 70px 60px;
   }
 
-  .image_one {
-    width: 40px;
-    height: 40px;
+  .steps_image {
+    width: 23px;
+    height: 23px;
     @include bp-md {
-      width: 70px;
-      height: 70px;
+      width: 41px;
+      height: 41px;
     }
   }
-  .image_two {
-    width: 20px;
-    height: 20px;
+  .action_image_stack {
+    width: 35px;
+    height: 37px;
     @include bp-md {
-      width: 30px;
-      height: 30px;
+      width: 71px;
+      height: 74px;
+    }
+  }
+  .action_image_user_tick {
+    width: 35px;
+    height: 40px;
+    @include bp-md {
+      width: 90px;
+      height: 79px;
+    }
+  }
+  .action_image_user_plus {
+    width: 35px;
+    height: 37px;
+    @include bp-md {
+      width: 71px;
+      height: 74px;
     }
   }
 }

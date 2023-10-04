@@ -10,6 +10,7 @@ import xpenzProducts from "../../../constant/products/xpenz-products";
 import loyaltyLoungeProducts from "../../../constant/products/loaylty-lounge-products";
 import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";
+import Link from "next/link";
 
 const ProductModal = () => {
   const [hoveredProductIndex, setHoveredProductIndex] = useState<null | number>(

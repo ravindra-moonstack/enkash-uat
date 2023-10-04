@@ -13,7 +13,9 @@ const Heading = ({ size, title, color, weight }: HeadingProps) => {
   const sizeClass = size || "h6";
 
   return (
-    <h1 className={`${styles[sizeClass]} ${colorClass} ${styles[fontWeight]}`}>
+    <h1
+      className={`${styles[sizeClass]} ${colorClass} ${styles[fontWeight]}`}
+    >
       {title}
     </h1>
   );

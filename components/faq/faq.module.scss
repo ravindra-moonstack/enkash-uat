@@ -9,7 +9,7 @@
   text-align: left;
   padding: 10px 0px;
   @include bp-md {
-    padding: 20px 80px;
+    padding: 20px 60px;
   }
 
   img {
@@ -28,7 +28,7 @@
 
   .question {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 500;
     margin-bottom: 20px;
 
     @include bp-md {
@@ -44,9 +44,8 @@
     font-weight: 300;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-in-out;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     padding-bottom: 20px;
 
     &.visible {
@@ -57,17 +56,18 @@
       font-size: 14px;
       @include bp-md {
         font-size: 20px;
+        font-weight: 400;
       }
     }
   }
 
   .normal {
-    transform: rotate(180deg);
+    transform: rotate(0deg);
     transition: transform 0.3s ease-in-out;
   }
 
   .rotated {
-    transform: rotate(360deg);
+    transform: rotate(180deg);
     transition: transform 0.3s ease-in-out;
   }
 }

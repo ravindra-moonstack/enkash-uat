@@ -78,6 +78,7 @@ const HowDoesCarousel = ({
               title={carouselData[count - 1].title}
               color="white"
               size="h4"
+              weight="4"
             />
           </div>
         </div>

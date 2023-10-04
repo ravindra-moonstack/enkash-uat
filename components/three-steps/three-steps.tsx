@@ -32,12 +32,12 @@ const ThreeSteps = () => {
             <Image
               src={userPlus}
               alt="signup image"
-              className={`me-2 ${styles.image_one}`}
+              className={`mx-2 ${styles.action_image_user_plus}`}
             />
             <Image
               src={numberOne}
               alt="step one image"
-              className={`me-2 ${styles.image_two}`}
+              className={`mx-2 ${styles.steps_image}`}
             />
             <div>
               <Heading title="Sign Up" size="h6" />
@@ -49,12 +49,12 @@ const ThreeSteps = () => {
             <Image
               src={userTick}
               alt="kyc image"
-              className={`me-2 ${styles.image_one}`}
+              className={`mx-2 ${styles.action_image_user_tick}`}
             />
             <Image
               src={numberTwo}
               alt="step one image"
-              className={`me-2 ${styles.image_two}`}
+              className={`mx-2 ${styles.steps_image}`}
             />
             <div>
               <Heading title="Complete KYC Process" size="h6" />
@@ -66,12 +66,12 @@ const ThreeSteps = () => {
             <Image
               src={stack}
               alt="get started image"
-              className={`me-2 ${styles.image_one}`}
+              className={`mx-2 ${styles.action_image_stack}`}
             />
             <Image
               src={numberThree}
               alt="step one image"
-              className={`me-2 ${styles.image_two}`}
+              className={`mx-2 ${styles.steps_image}`}
             />
             <div>
               <Heading title="Get Started" size="h6" />

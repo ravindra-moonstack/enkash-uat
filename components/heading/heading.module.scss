@@ -1,7 +1,7 @@
 @import "/styles/mixin";
 
 .h0 {
-  display: inline-block;
+  display: inline;
   font-size: 37px;
   line-height: 50px;
   margin-bottom: 0;
@@ -12,7 +12,7 @@
 }
 
 .h1 {
-  display: inline-block;
+  display: inline;
   font-size: 31px;
   margin-bottom: 0;
   line-height: normal;
@@ -22,7 +22,7 @@
 }
 
 .h2 {
-  display: inline-block;
+  display: inline;
   font-size: 25px;
   margin-bottom: 0;
   line-height: normal;
@@ -32,7 +32,7 @@
 }
 
 .h3 {
-  display: inline-block;
+  display: inline;
   font-size: 20px;
   line-height: 22px;
   margin-bottom: 0;
@@ -43,7 +43,7 @@
 }
 
 .h4 {
-  display: inline-block;
+  display: inline;
   font-size: 16px;
   margin-bottom: 0;
   line-height: normal;
@@ -53,6 +53,7 @@
 }
 
 .h5 {
+  display: inline;
   font-size: 14px;
   line-height: 20px;
   margin-bottom: 0;

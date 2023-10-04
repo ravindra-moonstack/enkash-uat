@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { bar, faqBg, reimbursementDashboard, whiteArrow } from ".";
+import { faqBg, heroImage, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -14,47 +14,47 @@ import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 
-const reimbursement = () => {
+const digitalMarketingCards = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-4 flex-column flex-md-row">
             <div className="d-flex">
-              <Heading title="X" color="rainy-blue" size="h4" />
-              <Heading title={`penz${space}`} color="rainy-blue" size="h4" />
+              <Heading
+                title={`Freedom${space}`}
+                color="rainy-blue"
+                size="h4"
+                weight="7"
+              />
             </div>
-            <Heading title="| Reimbursements" size="h4" />
+            <Heading title="| Digital Marketing Cards" size="h4" weight="7" />
           </div>
 
           <div className="">
-            <div className="d-flex">
-              <Heading title={`EnKash${space}`} color="white" size="h2" />
-              <Heading title="minimizes" color="rainy-blue" size="h2" />
-            </div>
             <div className="d-flex flex-wrap">
               <Heading
-                title={`distractions,${space}`}
-                color="rainy-blue"
+                title={`Never exceed your${space}`}
+                color="white"
                 size="h2"
+                weight="7"
               />
-              <Heading title={`so that${space}`} color="white" size="h2" />
               <Heading
-                title={`you can ${space}`}
+                title=" Digital Marketing budget."
                 color="rainy-blue"
                 size="h2"
+                weight="7"
               />
-              <Heading title="take action." color="rainy-blue" size="h2" />
+              <Heading title="again" color="white" size="h2" weight="7" />
             </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Maximize productivity within your organization with an easier 
-              reimbursement system that helps you track, process and sync data in
-               real-time."
+              title="Manage your business’ digital marketing expenses with smart corporate cards with flexible controls. Load your marketing budget into the card, select the types of campaigns you want to run and keep track of expenditure in real-time."
               color="white"
               size="h6"
+              weight="5"
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
@@ -72,7 +72,7 @@ const reimbursement = () => {
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <Image
-            src={reimbursementDashboard}
+            src={heroImage}
             alt="reimbursement dashboard"
             className={styles.hero_image}
           />
@@ -86,37 +86,32 @@ const reimbursement = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Expense Reporting",
-              oldWayDescription: "Old way description for Expense Reporting",
-              newWayDescription: "New way description for Expense Reporting",
+              item: "Budget Allocation",
+              oldWayDescription:
+                "Verbally specifying budgets, or even having them in writing does not guarantee that your digital marketing spends will not cross said budget, especially when you’re using one corporate card for all spends.",
+              newWayDescription:
+                "Having a purpose-based corporate card for digital marketing with a predefined limit ensures that your digital marketing spends cannot exceed your intended budget.",
             },
             {
-              item: "Operational Efficency",
+              item: "Expense Tracking",
               oldWayDescription:
-                "Old way description for Operational Efficency",
+                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
               newWayDescription:
-                "New way description for Operational Efficency",
+                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Operational Efficency",
+              item: "Campaign Management",
               oldWayDescription:
-                "Old way description for Operational Efficency",
+                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
-                "New way description for Operational Efficency",
+                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
             },
             {
-              item: "Operational Efficency",
+              item: "Spend Overview",
               oldWayDescription:
-                "Old way description for Operational Efficency",
+                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
-                "New way description for Operational Efficency",
-            },
-            {
-              item: "Operational Efficency",
-              oldWayDescription:
-                "Old way description for Operational Efficency",
-              newWayDescription:
-                "New way description for Operational Efficency",
+                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
             },
           ]}
         />
@@ -125,40 +120,51 @@ const reimbursement = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-top-none`}
       >
-        <div className="col-12 d-flex justify-content-center text-center">
+        <div className="d-flex justify-content-center text-center flex-wrap mb-5">
+          <Heading title="EnKash is the" color="black" size="h1" weight="6" />
           <Heading
-            title="Streamline Your Reimbursement Process"
+            title={`${space}key to boosting${space}`}
             color="equity-blue"
             size="h1"
+            weight="6"
+          />
+          <Heading
+            title="your Digital Marketing performance."
+            color="black"
+            size="h1"
+            weight="6"
           />
         </div>
-        <div className="col-12 d-flex justify-content-center mb-5 text-center">
-          <Heading title="with Automated Solutions." color="black" size="h1" />
-        </div>
+
         <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center ${styles.scroll_container}`}
+          className={`col-12 d-flex flex-md-row mt-3 pb-3 ${styles.scroll_container}`}
         >
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automated Processes"
+              title1="Subscription Management"
               title2=""
-              description="A digitized end-to-end solution, automate checking, approvals,
-             invoice generation and submission to ensure speed and accuracy."
+              description="Effectively manage your recurring digital marketing expenses such as subscriptions that recur monthly or annually."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Better Documentation"
+              title1="Spend Optimization"
               title2=""
-              description="Ensure employee compliance with easy-to-use capture modes which 
-            captures payments made on behalf of the business in a few simple steps"
+              description="Enhance your organization's performance by implementing a robust purchasing oversight process that helps to reduce costs and streamlines your payment process."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Real time tracking"
+              title1="Marketing Budgets"
               title2=""
-              description="Track spends made on behalf of the business by employees in real time."
+              description="EnKash lets you set customized usage limits that ensure there is no scope for overspending. You’ll have the flexibility to set the limit based on your marketing budget."
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              title1="Run Campaigns"
+              title2=""
+              description="Seamlessly add your card for digital marketing expenses onto the platform and select the desired campaigns you wish to run."
             />
           </div>
         </div>
@@ -168,24 +174,23 @@ const reimbursement = () => {
         <HowDoesCarousel
           titleContent={
             <>
-              <div className=" text-center">
+              <div className="text-center d-flex justify-content-center flex-wrap">
                 <Heading
-                  title={`EnKash Makes Your Business’ ${space}`}
+                  title={`Master Your Digital Marketing Expenditure with greater${space}`}
                   color="white"
                   size="h1"
+                  weight="6"
                 />
-                <Heading title="Reimbursement" color="rainy-blue" size="h1" />
-              </div>
-              <div className=" text-center">
                 <Heading
-                  title="Process Effortless."
+                  title="Control and Visibility."
                   color="rainy-blue"
                   size="h1"
+                  weight="6"
                 />
               </div>
             </>
           }
-          mainTitle="How do Reimbursements work?"
+          mainTitle="How do Digital Marketing Cards work?"
           carouselData={carouselData}
         />
       </div>
@@ -220,4 +225,4 @@ const reimbursement = () => {
   );
 };
 
-export default reimbursement;
+export default digitalMarketingCards;

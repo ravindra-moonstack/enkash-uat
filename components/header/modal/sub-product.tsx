@@ -57,31 +57,35 @@ const SubProduct = (props: any) => {
         >
           <div className={styles.sub_products_container}>
             {activeGroup.list.map((product: any, index: any) => (
-              <div
-                key={product.name}
-                className={`${styles.sub_product_row} d-flex`}
-                onMouseEnter={() => setHoverIconImage(index)}
-                onMouseLeave={() => setHoverIconImage(null)}
-              >
-                <div>
-                  <Image
-                    src={
-                      hoverIconImage === index
-                        ? product.imageSrcHovered
-                        : product.imageSrc
-                    }
-                    alt={product.name}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-                <div className="d-flex flex-column ms-4">
-                  <div className={styles.sub_product_name}>{product.name}</div>
-                  <div className={styles.sub_product_description}>
-                    {product.description}
+              <Link href={product.link}>
+                <div
+                  key={product.name}
+                  className={`${styles.sub_product_row} d-flex`}
+                  onMouseEnter={() => setHoverIconImage(index)}
+                  onMouseLeave={() => setHoverIconImage(null)}
+                >
+                  <div>
+                    <Image
+                      src={
+                        hoverIconImage === index
+                          ? product.imageSrcHovered
+                          : product.imageSrc
+                      }
+                      alt={product.name}
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                  <div className="d-flex flex-column ms-4">
+                    <div className={styles.sub_product_name}>
+                      {product.name}
+                    </div>
+                    <div className={styles.sub_product_description}>
+                      {product.description}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

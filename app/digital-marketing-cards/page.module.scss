@@ -1,0 +1,105 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.home_container {
+  padding-top: 50px;
+  @include bp-md {
+    padding-top: 100px;
+  }
+}
+
+.first_row {
+  .three_step_container {
+    padding-top: 120px;
+  }
+
+  .hero_image {
+    width: 300px;
+    height: auto;
+    @include bp-md {
+      width: auto;
+      height: auto;
+    }
+  }
+}
+
+.second_row {
+  .progress_bar {
+    height: 4px;
+    border-radius: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: linear-gradient(
+      90deg,
+      $color-equity-blue 15%,
+      $color-black 30%
+    );
+    @include bp-md {
+      height: 8px;
+    }
+  }
+  .progress_items {
+    margin-right: 30px;
+    @include bp-md {
+      margin-right: 0;
+    }
+  }
+  .progress_container {
+    @include bp-md {
+      justify-content: space-evenly;
+    }
+  }
+  .arrow {
+    transform: rotate(90deg);
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+
+    @include bp-md {
+      height: 50px;
+      width: 50px;
+      transform: none;
+      margin-top: 0;
+    }
+  }
+}
+
+.third_row {
+  .scroll_container {
+    overflow-x: auto;
+    white-space: nowrap;
+
+    &::-webkit-scrollbar {
+      height: 6px;
+      background: #092093;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: linear-gradient(90deg, #61d6ff 30%, transparent 30%);
+    }
+  }
+}
+
+.fifth_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  @include bp-md {
+    padding-bottom: 220px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: none;
+      @include bp-md {
+        height: 300px;
+        display: flex;
+      }
+    }
+  }
+}
