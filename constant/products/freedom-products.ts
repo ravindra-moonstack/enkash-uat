@@ -25,11 +25,11 @@ const freedomProducts = [
         link: "/digital-marketing-cards",
       },
       {
-        name: "Integrated Cards",
-        description: "Optimise corporate spendings",
+        name: "Travel and Expense Cards",
+        description: "Optimise travel spendings",
         imageSrc: bulkPayout,
         imageSrcHovered: vendorPaymentFilled,
-        link: "/404",
+        link: "/travel-and-expense-cards",
       },
       {
         name: "DIY Card Module",
