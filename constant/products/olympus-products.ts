@@ -80,7 +80,7 @@ const olympusProducts = [
         description: "Maintain rental records for payments",
         imageSrc: paymentLinks,
         imageSrcHovered: paymentLinksFilled,
-        link: "/404",
+        link: "/payment-links",
       },
       {
         name: "Bulk Collect",
