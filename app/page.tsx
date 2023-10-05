@@ -24,12 +24,8 @@ import {
   twoBoxIcon,
   blueBoxIcon,
   circleRupeeIcon,
-  payablesImage,
-  receivableImage,
-  expenseDashboard,
   teamImg,
   corporateCardsImg,
-  diyCardsModuleImg,
   loyaltyLoungeMobileImg,
   mobileIntegration,
   inc42,
@@ -57,14 +53,10 @@ import {
   payablesAnimation,
   recieveableAnimation,
   diyCardAnimation,
-  dashboardTwo,
   dashboardUi,
-  dashboardUiManageAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
-import { laptop } from "./xpenz";
-import { laptopScreen } from "./delete";
 
 const loginUrl = "https://home.enkash.com/login";
 
