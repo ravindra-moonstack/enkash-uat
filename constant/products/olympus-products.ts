@@ -87,7 +87,7 @@ const olympusProducts = [
         description: "Keep track of all your vendor bills",
         imageSrc: bulkCollect,
         imageSrcHovered: bulkCollectFilled,
-        link: "/404",
+        link: "/bulk-collect",
       },
       {
         name: "Quick Collect",
