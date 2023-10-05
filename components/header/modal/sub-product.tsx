@@ -29,6 +29,11 @@ const SubProduct = (props: any) => {
 
   if (!activeGroup) return null;
 
+  const handleItemClick = () => {
+    props.onLinkClick && props.onLinkClick();
+  };
+
+
   return (
     <div className={`col-8 d-flex mb-5 ${styles.container}`}>
       <div className={styles.box_shadow_left}></div>
@@ -63,6 +68,7 @@ const SubProduct = (props: any) => {
                   className={`${styles.sub_product_row} d-flex`}
                   onMouseEnter={() => setHoverIconImage(index)}
                   onMouseLeave={() => setHoverIconImage(null)}
+                  onClick={handleItemClick}
                 >
                   <div>
                     <Image

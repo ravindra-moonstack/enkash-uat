@@ -10,9 +10,8 @@ import xpenzProducts from "../../../constant/products/xpenz-products";
 import loyaltyLoungeProducts from "../../../constant/products/loaylty-lounge-products";
 import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";
-import Link from "next/link";
 
-const ProductModal = () => {
+const ProductModal = ({ onLinkClick }: any) => {
   const [hoveredProductIndex, setHoveredProductIndex] = useState<null | number>(
     null
   );
@@ -79,6 +78,7 @@ const ProductModal = () => {
           index={0}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
+          onLinkClick={onLinkClick}
         />
       )}
       {hoveredProductIndex === 1 && (
@@ -87,6 +87,7 @@ const ProductModal = () => {
           index={1}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
+          onLinkClick={onLinkClick}
         />
       )}
       {hoveredProductIndex === 2 && (
@@ -95,6 +96,7 @@ const ProductModal = () => {
           index={2}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
+          onLinkClick={onLinkClick}
         />
       )}
 
@@ -104,6 +106,7 @@ const ProductModal = () => {
           index={3}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
+          onLinkClick={onLinkClick}
         />
       )}
     </div>

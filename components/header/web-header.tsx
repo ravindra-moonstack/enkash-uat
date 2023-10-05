@@ -42,6 +42,11 @@ const WebHeader = () => {
     return isHeaderBgWhite ? arrowDownBlack : arrowDownWhite;
   };
 
+  const handleLinkClick = () => {
+    setHoveredIndex(null);
+    setIsHeaderBgWhite(false);
+  };
+
   return (
     <header
       className={`w-full absolute z-10 d-flex flex-column ${styles.header} ${
@@ -90,7 +95,7 @@ const WebHeader = () => {
                         index
                       ]?.parentElement?.getBoundingClientRect().left || 0)
                   );
-                  setItemWidth(width); 
+                  setItemWidth(width);
                   setHoveredIndex(index);
                   setIsHeaderBgWhite(true);
                 }}
@@ -128,7 +133,7 @@ const WebHeader = () => {
         </div>
       </nav>
 
-      {hoveredIndex === 0 && <ProductModal />}
+      {hoveredIndex === 0 && <ProductModal onLinkClick={handleLinkClick} />}
       {hoveredIndex === 1 && <SolutionsModal />}
       {hoveredIndex === 2 && <EmptyModal />}
       {hoveredIndex === 3 && <ResourcesModal />}
