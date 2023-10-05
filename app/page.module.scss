@@ -15,6 +15,13 @@
   background-position: center center;
 }
 
+.animation_data_padding {
+  padding: 20px;
+  @include bp-md {
+    padding: 80px;
+  }
+}
+
 @keyframes slideFromBottom {
   from {
     opacity: 0;

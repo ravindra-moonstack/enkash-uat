@@ -16,6 +16,11 @@ import {
 const loyaltyLoungeProducts = [
   {
     subtitle: "Default",
+    currentHeading: {
+      name: "Loyalty Lounge ",
+      description:
+        "Automate your company's AP, AR, and bank reconciliation seamlessly",
+    },
     list: [
       {
         name: "Employee Rewards",

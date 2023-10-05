@@ -2,48 +2,21 @@ import Image from "next/image";
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { Fragment, useState } from "react";
-import olympusProducts from "@/constant/products/olympus-products";
 import utmSources from "@/constant/utm-source";
+import Link from "next/link";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
 
 const SubProductListView = (props: {
   setSelectedItemIndex: any;
-  type: string;
   products: any;
+  setCurrentStep: (step: number) => void; // Receive this prop
 }) => {
   const [activeSubtitleIndex, setActiveSubtitleIndex] = useState(0);
 
-  let currentHeading;
-
-  let productsToUse: any[] = [];
-  switch (props.type) {
-    case "mother":
-      productsToUse = olympusProducts;
-      currentHeading = {
-        name: "Olympus",
-        description:
-          "Automate your company's AP, AR, and bank reconciliation seamlessly",
-      };
-      break;
-    case "solutions":
-      productsToUse = olympusProducts;
-      currentHeading = {
-        name: "Olympus",
-        description:
-          "Automate your company's AP, AR, and bank reconciliation seamlessly",
-      };
-      break;
-    case "resources":
-      productsToUse = olympusProducts;
-      currentHeading = {
-        name: "Olympus",
-        description:
-          "Automate your company's AP, AR, and bank reconciliation seamlessly",
-      };
-      break;
-  }
+  const productsToUse = props.products;
+  const currentHeading = productsToUse[activeSubtitleIndex]?.currentHeading;
 
   return (
     <div className={`w-100 absolute z-10 bg-indi-volt`}>
@@ -65,39 +38,48 @@ const SubProductListView = (props: {
                 className={`py-2 px-4`}
                 onClick={() => setActiveSubtitleIndex(index)}
               >
-                <li>
-                  <div
-                    className={`my-3 ${styles.underline_text} ${
-                      activeSubtitleIndex === index
-                        ? "color-equity-blue"
-                        : "color-secondry-grey"
-                    }`}
-                  >
-                    {category.subtitle}
-                  </div>
-                </li>
+                {category.subtitle != "Default" && (
+                  <li>
+                    <div
+                      className={`my-3 ${styles.underline_text} ${
+                        activeSubtitleIndex === index
+                          ? "color-equity-blue"
+                          : "color-secondry-grey"
+                      }`}
+                    >
+                      {category.subtitle}
+                    </div>
+                  </li>
+                )}
               </div>
             ))}
           </div>
           <div className={styles.line}></div>
           {productsToUse[activeSubtitleIndex]?.list.map((item: any) => (
-            <Fragment key={item.name}>
-              <li className={`d-flex justify-content-start py-4 px-4`}>
-                <div className="me-4">
-                  <Image
-                    src={item.imageSrc}
-                    alt={item.name}
-                    width={50}
-                    height={50}
-                  />
-                </div>
-                <div className="d-flex flex-column color-secondry-grey">
-                  <div className={styles.title}>{item.name}</div>
-                  <div className={styles.description}>{item.description}</div>
-                </div>
-              </li>
-              <div className={styles.line}></div>
-            </Fragment>
+            <Link
+              href={item.link}
+              onClick={() => {
+                props.setCurrentStep(0);
+              }}
+            >
+              <Fragment key={item.name}>
+                <li className={`d-flex justify-content-start py-4 px-4`}>
+                  <div className="me-4">
+                    <Image
+                      src={item.imageSrc}
+                      alt={item.name}
+                      width={50}
+                      height={50}
+                    />
+                  </div>
+                  <div className="d-flex flex-column color-secondry-grey">
+                    <div className={styles.title}>{item.name}</div>
+                    <div className={styles.description}>{item.description}</div>
+                  </div>
+                </li>
+                <div className={styles.line}></div>
+              </Fragment>
+            </Link>
           ))}
         </div>
         <div

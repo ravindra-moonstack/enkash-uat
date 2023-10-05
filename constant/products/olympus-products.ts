@@ -24,6 +24,11 @@ import {
 const olympusProducts = [
   {
     subtitle: "Payables",
+    currentHeading: {
+      name: "Olympus",
+      description:
+        "Automate your company's AP, AR, and bank reconciliation seamlessly",
+    },
     list: [
       {
         name: "Vendor Payments",
@@ -67,6 +72,11 @@ const olympusProducts = [
   },
   {
     subtitle: "Receivables",
+    currentHeading: {
+      name: "olympus ",
+      description:
+        "Automate your company's AP, AR, and bank reconciliation seamlessly",
+    },
     list: [
       {
         name: "Virtual Account",

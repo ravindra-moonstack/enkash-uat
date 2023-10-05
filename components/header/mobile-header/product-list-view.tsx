@@ -1,7 +1,7 @@
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import utmSources from "@/constant/utm-source";
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useState } from "react";
 import motherProducts from "@/constant/products/mother-products";
 import SubProductListView from "./sub-product-list-view";
 import resources from "@/constant/resources";
@@ -11,12 +11,17 @@ const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_b
 const loginUrl = "https://home.enkash.com/login";
 
 interface ProductListViewProps {
+  childProducts: any[];
   products: any[];
   setCurrentStep: (step: number) => void;
   currentStep: number;
 }
 
-const ProductListView = ({ products }: ProductListViewProps) => {
+const ProductListView = ({
+  products,
+  childProducts,
+  setCurrentStep,
+}: ProductListViewProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   return (
     <div className={`w-100 absolute z-10 bg-indi-volt`}>
@@ -57,26 +62,35 @@ const ProductListView = ({ products }: ProductListViewProps) => {
       )}
 
       {selectedItemIndex === 0 && (
-        <SubProductListView
-          setSelectedItemIndex={selectedItemIndex}
-          type="mother"
-          products={motherProducts}
-        />
+        <div>
+          <SubProductListView
+            setSelectedItemIndex={selectedItemIndex}
+            products={childProducts[0]}
+            setCurrentStep={setCurrentStep}
+          />
+        </div>
       )}
 
       {selectedItemIndex === 1 && (
         <SubProductListView
           setSelectedItemIndex={selectedItemIndex}
-          type="solutions"
-          products={solutions}
+          products={childProducts[1]}
+          setCurrentStep={setCurrentStep}
         />
       )}
 
       {selectedItemIndex === 2 && (
         <SubProductListView
           setSelectedItemIndex={selectedItemIndex}
-          type="resources"
-          products={resources}
+          products={childProducts[2]}
+          setCurrentStep={setCurrentStep}
+        />
+      )}
+      {selectedItemIndex === 3 && (
+        <SubProductListView
+          setSelectedItemIndex={selectedItemIndex}
+          products={childProducts[3]}
+          setCurrentStep={setCurrentStep}
         />
       )}
     </div>

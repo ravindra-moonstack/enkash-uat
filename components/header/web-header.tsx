@@ -90,7 +90,7 @@ const WebHeader = () => {
                         index
                       ]?.parentElement?.getBoundingClientRect().left || 0)
                   );
-                  setItemWidth(width); // Set the width here
+                  setItemWidth(width); 
                   setHoveredIndex(index);
                   setIsHeaderBgWhite(true);
                 }}

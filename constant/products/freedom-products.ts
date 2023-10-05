@@ -9,6 +9,11 @@ import {
 const freedomProducts = [
   {
     subtitle: "Default",
+    currentHeading: {
+      name: "Freedom",
+      description:
+        "Automate your company's AP, AR, and bank reconciliation seamlessly",
+    },
     list: [
       {
         name: "Corporate Cards",

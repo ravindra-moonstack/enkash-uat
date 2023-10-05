@@ -257,18 +257,17 @@ const xpenz = () => {
         <div className="d-flex flex-column flex-md-row tex-center justify-content-evenly">
           <div className="md:mb-0 mb-4 text-md-center">
             <Image src={coin} alt="coins icon" className="md:mb-0 mb-4" />
-            <Heading
-              title="On-time Payments"
-              size="h5"
-              color="white"
-              weight="7"
-            />
+            <div className="d-flex flex-column">
+              <Heading title="On-time" size="h5" color="white" weight="7" />
+            </div>
             <Heading title="Payments" size="h5" color="white" weight="7" />
           </div>
           <div className="mb-4 text-md-center">
             <Image src={regualation} alt="regulation icon" className="mb-4" />
-            <Heading title="Spend " size="h5" color="white" weight="7" />
-            <Heading title="Regulation" size="h5" color="white" weight="7" />
+            <div className="d-flex flex-column">
+              <Heading title="Spend " size="h5" color="white" weight="7" />
+              <Heading title="Regulation" size="h5" color="white" weight="7" />
+            </div>
           </div>
           <div className="mb-4 text-md-center">
             <Image
@@ -276,96 +275,58 @@ const xpenz = () => {
               alt="cash and coin icon"
               className="md:mb-0 mb-4"
             />
-            <Heading
-              title="Cash Flow Optimization"
-              size="h5"
-              color="white"
-              weight="7"
-            />
-            <Heading title="Optimization" size="h5" color="white" weight="7" />
+            <div className="d-flex flex-column">
+              <Heading title="Cash Flow" size="h5" color="white" weight="7" />
+              <Heading
+                title="Optimization"
+                size="h5"
+                color="white"
+                weight="7"
+              />
+            </div>
           </div>
         </div>
       </div>
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
-        <div className="col-12 d-flex flex-column flex-md-row justify-content-center align-items-center">
-          <Heading
-            title={`The EnKash Way is${space}`}
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title="the better way."
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-        </div>
-        <div className="col-12 d-flex justify-content-center mb-5 text-center">
-          <Heading
-            title="Switch to EnKash today!"
-            color="black"
-            size="h1"
-            weight="6"
-          />
-        </div>
-        <div
-          className={`col-12 d-flex my-md-5 my-3 ${styles.progress_container}`}
-        >
-          <div className={styles.progress_items}>
-            <Heading title="Expense" size="h4" color="equity-blue" weight="7" />
-            <br />
-            <Heading
-              title="Reporting"
-              size="h4"
-              color="equity-blue"
-              weight="7"
-            />
-          </div>
-          <div className={styles.progress_items}>
-            <Heading title="Operational" size="h4" color="black" weight="7" />
-            <br />
-            <Heading title="Efficency" size="h4" color="black" weight="7" />
-          </div>
-          <div className={styles.progress_items}>
-            <Heading title="Spend" size="h4" color="black" weight="7" />
-            <br />
-            <Heading title="Overview" size="h4" color="black" weight="7" />
-          </div>
-          <div className={styles.progress_items}>
-            <Heading title="Expense" size="h4" color="black" weight="7" />
-            <br />
-            <Heading title="Approval" size="h4" color="black" weight="7" />
-          </div>
-          <div className={styles.progress_items}>
-            <Heading title="Accessibility" size="h4" color="black" weight="7" />
-          </div>
-        </div>
-        <div className="col-1"></div>
-        <div
-          className={`col-10 d-flex justify-content-evenly ${styles.progress_bar}`}
-        ></div>
-        <div className="col-1"></div>
-
-        <div className="col-12 d-flex flex-column flex-lg-row my-5 align-items-center justify-content-center">
-          <Image
-            className="me-2  img-fluid"
-            src={oldWay}
-            alt="enkash steps"
-            width={550}
-          />
-          <Image
-            className={`me-2 img-fluid ${styles.arrow}`}
-            src={blueArrowForward}
-            alt="enkash steps"
-          />
-          <Image
-            className="img-fluid"
-            src={newWay}
-            alt="enkash steps"
-            width={550}
-          />
-        </div>
+        <EnkashWay
+          progressData={[
+            {
+              item: "Expense Reporting",
+              oldWayDescription:
+                "Manual expense reporting is prone to errors and can lead to incorrect reimbursement or accounting issues.",
+              newWayDescription:
+                "EnKash’s Expense management platform automates the process of recording expenses, reducing the likelihood of errors.",
+            },
+            {
+              item: "Operational Efficiency",
+              oldWayDescription:
+                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+              newWayDescription:
+                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
+            },
+            {
+              item: "Spend Overview",
+              oldWayDescription:
+                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
+              newWayDescription:
+                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+            },
+            {
+              item: "Expense Approvals",
+              oldWayDescription:
+                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+              newWayDescription:
+                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+            },
+            {
+              item: "Accessibility",
+              oldWayDescription:
+                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+              newWayDescription:
+                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+            },
+          ]}
+        />
       </div>
       <div
         className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}

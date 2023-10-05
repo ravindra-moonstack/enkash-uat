@@ -3,27 +3,44 @@
 import Image from "next/image";
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import {
-  enkashWhiteLogo,
-  hamnburgerIcon,
-  enkashBlueLogo,
-  crossMenu,
-  forwardArrowBlue,
-  productModalEmptyStateImg,
-} from "..";
+import { forwardArrowBlue, productModalEmptyStateImg } from "..";
 import utmSources from "@/constant/utm-source";
 import navBarTopTtitle from "@/constant/nav-bar";
 import { Fragment, useState } from "react";
 import ProductListView from "./product-list-view";
-import motherProducts from "@/constant/products/mother-products";
-import solutions from "@/constant/solutions";
-import resources from "@/constant/resources";
 import Hamburger from "./hamburger";
+import olympusProducts from "@/constant/products/olympus-products";
+import freedomProducts from "@/constant/products/freedom-products";
+import xpenzProducts from "@/constant/products/xpenz-products";
+import loyaltyLoungeProducts from "@/constant/products/loaylty-lounge-products";
+import motherProducts from "@/constant/products/mother-products";
+import { solutions } from "@/constant/solutions";
+import resources from "@/constant/resources";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
 
+const motherProductsList = [
+  olympusProducts,
+  freedomProducts,
+  xpenzProducts,
+  loyaltyLoungeProducts,
+];
+const solutionsList = [
+  olympusProducts,
+  freedomProducts,
+  xpenzProducts,
+  loyaltyLoungeProducts,
+];
+const resourcesList = [
+  olympusProducts,
+  freedomProducts,
+  xpenzProducts,
+  loyaltyLoungeProducts,
+];
+
 const MobileHeader = () => {
+
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -85,6 +102,13 @@ const MobileHeader = () => {
               : selectedItemIndex === 1
               ? solutions
               : resources
+          }
+          childProducts={
+            selectedItemIndex === 0
+              ? motherProductsList
+              : selectedItemIndex === 1
+              ? solutionsList
+              : resourcesList
           }
           setCurrentStep={setCurrentStep}
           currentStep={currentStep}

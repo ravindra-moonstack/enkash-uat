@@ -20,6 +20,11 @@ import {
 const xpenzProducts = [
   {
     subtitle: "Default",
+    currentHeading: {
+      name: "Xpenz ",
+      description:
+        "Automate your company's AP, AR, and bank reconciliation seamlessly",
+    },
     list: [
       {
         name: "Budgets and Advances",

@@ -13,7 +13,6 @@ import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
 import Lottie from "lottie-react";
 
 import {
-  dashboard,
   numberOne,
   numberThree,
   numberTwo,
@@ -374,21 +373,21 @@ const home = () => {
             </div>
 
             <div>
-              <motion.div
+              {/* <motion.div
                 initial={{ translateX: "-150px" }}
                 whileInView={{ translateX: 0 }}
                 transition={{
                   duration: 0.7,
                   ease: "easeInOut",
                 }}
-              >
-                <PrimaryButton
-                  title="Get Started Now"
-                  theme="theme-blue"
-                  size="medium"
-                  weight="bold"
-                />
-              </motion.div>
+              > */}
+              <PrimaryButton
+                title="Get Started Now"
+                theme="theme-blue"
+                size="medium"
+                weight="bold"
+              />
+              {/* </motion.div> */}
             </div>
           </div>
         </div>
@@ -650,7 +649,9 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
-        <div className="col-md-6 col-12 d-flex  mb-5 order-2 order-md-1">
+        <div
+          className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1 ${styles.animation_data_padding}`}
+        >
           {/* <Image
             src={payablesImage}
             alt="payables image"
@@ -677,7 +678,9 @@ const home = () => {
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 d-flex mt-5 order-4 order-md-4">
+        <div
+          className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ${styles.animation_data_padding}`}
+        >
           {/* <Image
             src={receivableImage}
             alt="receivable image"
@@ -689,7 +692,9 @@ const home = () => {
       <div
         className={`${styles.sixth_row} bg-white row d-flex row-padding-bottom-none`}
       >
-        <div className="col-md-6 col-12 d-flex mb-5">
+        <div
+          className={`col-md-6 col-12 d-flex mb-5 ${styles.animation_data_padding}`}
+        >
           {/* <Image
             src={expenseDashboard}
             alt="payables image"
@@ -812,7 +817,7 @@ const home = () => {
           />
         </div>
         <div
-          className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  ${styles.blue_grad_bg_bottom}  order-4 order-md-4`}
+          className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  ${styles.blue_grad_bg_bottom} order-4 order-md-4`}
         >
           {/* <Image
             src={diyCardsModuleImg}
@@ -820,7 +825,11 @@ const home = () => {
             alt="receivable image"
             className="img-fluid"
           /> */}
-          <Lottie animationData={diyCardAnimation} loop={true} />
+          <Lottie
+            animationData={diyCardAnimation}
+            loop={true}
+            style={{ width: 350 }}
+          />
         </div>
       </div>
       <div
