@@ -421,7 +421,7 @@ const xpenz = () => {
         </div>
       </div>
       <div className={`row ${styles.eigth_row} bg-equity-blue`}>
-        <div className="d-flex justify-content-evenly">
+        <div className="d-flex justify-content-evenly align-items-center">
           <Heading
             title="Have Questions about Expense Management?"
             size="h3"
