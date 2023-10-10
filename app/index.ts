@@ -14,8 +14,6 @@ export { default as blueBoxIcon } from "./img/blue-box-icon.png";
 export { default as twoBoxIcon } from "./img/two-box-icon.png";
 export { default as circleRupeeIcon } from "./img/circle-rupee-icon.png";
 export { default as payablesImage } from "./img/payables-img.png";
-export { default as receivableImage } from "./img/recieveable-img.png";
-export { default as expenseDashboard } from "./img/expense-dashboard.png";
 export { default as teamImg } from "./img/team-img.png";
 export { default as diyCardsModuleImg } from "./img/diy-card-module.png";
 export { default as corporateCardsImg } from "./img/corporate-cards.png";

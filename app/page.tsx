@@ -720,11 +720,6 @@ const home = () => {
         <div
           className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ${styles.animation_data_padding}`}
         >
-          {/* <Image
-            src={receivableImage}
-            alt="receivable image"
-            className="img-fluid"
-          /> */}
           <Lottie animationData={recieveableAnimation} loop={true} />
         </div>
       </div>
@@ -739,11 +734,6 @@ const home = () => {
         <div
           className={`col-md-6 col-12 d-flex mb-5 ${styles.animation_data_padding}`}
         >
-          {/* <Image
-            src={expenseDashboard}
-            alt="payables image"
-            className="img-fluid"
-          /> */}
           <Lottie animationData={expenseManagementAnimation} loop={true} />
         </div>
         <div className="col-md-6 col-12 mb-5">

@@ -415,11 +415,17 @@
   }
 }
 
+.fifth_row {
+  position: relative;
+  z-index: 2;
+}
+
 .sixth_row {
   position: relative;
+  z-index: 1;
   .left_gradient {
     position: absolute;
-    top: -800px;
+    top: -700px;
     left: -300px;
   }
 }
