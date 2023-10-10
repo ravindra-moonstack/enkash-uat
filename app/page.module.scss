@@ -302,11 +302,9 @@
     justify-content: center;
     position: absolute;
     top: 60px;
-    img {
-      width: 900px;
-    }
+    width: 900px;
+
     z-index: 4;
-    left: 0;
     @include bp-md {
       top: 300px;
     }
@@ -319,7 +317,7 @@
     text-align: center;
     top: 270px;
     @include bp-md {
-      top: 930px;
+      top: 970px;
     }
   }
 

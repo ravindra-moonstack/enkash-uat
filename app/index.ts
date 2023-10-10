@@ -47,12 +47,6 @@ export { default as blackRectangleBottom } from "./img/black-rectangle-bottom.pn
 export { default as stairs } from "./img/stairs-cropped.png";
 export { default as threeDownArrow } from "./img/three-down-arrow.png";
 export { default as mobileTestimonial } from "./img/mobile-testimonial-image.png";
-export { default as expenseManagementAnimation } from "./img/lottie/expense-management.json";
-export { default as payablesAnimation } from "./img/lottie/payables.json";
-export { default as recieveableAnimation } from "./img/lottie/recievables.json";
-export { default as dashboardUIAnimation } from "./img/lottie/dashboard-ui.json";
-export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard-ui-mange.json";
-export { default as diyCardAnimation } from "./img/lottie/diy-card.json";
 export { default as dashboardUi } from "./img/dashboard-ui.png";
 export { default as polygonOneShadow } from "./img/polygon-one-shadow.png";
 export { default as rainbowOneShadow } from "./img/rainbow-one-shadow.png";
@@ -61,5 +55,17 @@ export { default as rainbowThreeShadow } from "./img/rainbow-three-shadow.png";
 export { default as leftBlueGradient } from "./img/left-blue-gradient.png";
 export { default as leftCardGradient } from "./img/left-card-gradient.png";
 export { default as rightCardGradient } from "./img/right-card-gradient.png";
+
+//Animations import
+export { default as dashboardUiAutomateAnimation } from "./img/lottie/dashboard-automate.json";
+export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard-manage.json";
+export { default as dashboardUiTrackAnimation } from "./img/lottie/dashboard-track.json";
+export { default as dashboardUiOptimizeAnimation } from "./img/lottie/dashboard-optimize.json";
+export { default as expenseManagementAnimation } from "./img/lottie/expense-management.json";
+export { default as payablesAnimation } from "./img/lottie/payables.json";
+export { default as recieveableAnimation } from "./img/lottie/recievables.json";
+export { default as diyCardAnimation } from "./img/lottie/diy.json";
+export { default as dashboardAnimation } from "./img/lottie/dashboard-ui.json";
+export { default as expenseAnimation } from "./img/lottie/expense.json";
 
 

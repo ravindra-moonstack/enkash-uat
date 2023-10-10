@@ -59,6 +59,12 @@ import {
   leftBlueGradient,
   leftCardGradient,
   rightCardGradient,
+  dashboardUiAutomateAnimation,
+  dashboardUiManageAnimation,
+  dashboardUiTrackAnimation,
+  dashboardUiOptimizeAnimation,
+  dashboardAnimation,
+  expenseAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
@@ -128,6 +134,8 @@ const home = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const [activeAnimation, setActiveAnimation] = useState("manage");
 
   let largeScreen;
   let posTopRainbowOneImg, posTopRainbowTwoImg, posTopRainbowThreeImg;
@@ -422,38 +430,51 @@ const home = () => {
 
         <div className={`col-md-12 col-4  ${styles.action_container}`}>
           <div className="d-flex flex-column flex-md-row justify-content-center w-100">
-            <div className="me-2">
-              <MenuButton isDisabled={false} title="Manage" theme="dark" />
-            </div>
-            <div className={styles.space}></div>
-            <div className="me-2">
-              <MenuButton isDisabled={false} title="Track" theme="disabled" />
-            </div>
-            <div className={styles.space}></div>
-            <div className="me-2">
+            <div className="me-2" onClick={() => setActiveAnimation("manage")}>
               <MenuButton
-                isDisabled={false}
-                title="Customize"
-                theme="disabled"
+                title="Manage"
+                theme={activeAnimation === "manage" ? "dark" : "disabled"}
               />
             </div>
             <div className={styles.space}></div>
-            <div>
+            <div className="me-2" onClick={() => setActiveAnimation("track")}>
               <MenuButton
-                isDisabled={false}
+                title="Track"
+                theme={activeAnimation === "track" ? "dark" : "disabled"}
+              />
+            </div>
+            <div className={styles.space}></div>
+            <div
+              className="me-2"
+              onClick={() => setActiveAnimation("optimize")}
+            >
+              <MenuButton
+                title="Optimize"
+                theme={activeAnimation === "optimize" ? "dark" : "disabled"}
+              />
+            </div>
+            <div className={styles.space}></div>
+            <div onClick={() => setActiveAnimation("automate")}>
+              <MenuButton
                 title="Automate"
-                theme="disabled"
+                theme={activeAnimation === "automate" ? "dark" : "disabled"}
               />
             </div>
           </div>
         </div>
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
-          <Image
-            src={dashboardUi}
-            alt="enkash dashboard"
-            className="img-fluid"
-          />
-          {/* <Lottie animationData={dashboardUiManageAnimation} loop={true}/> */}
+          {activeAnimation === "manage" && (
+            <Lottie animationData={dashboardUiManageAnimation} loop={true} />
+          )}
+          {activeAnimation === "track" && (
+            <Lottie animationData={dashboardUiTrackAnimation} loop={true} />
+          )}
+          {activeAnimation === "optimize" && (
+            <Lottie animationData={dashboardUiOptimizeAnimation} loop={true} />
+          )}
+          {activeAnimation === "automate" && (
+            <Lottie animationData={dashboardUiAutomateAnimation} loop={true} />
+          )}{" "}
         </div>
         <div className={`col-12  ${styles.descrption_container}`}>
           <div>
@@ -1062,6 +1083,8 @@ const home = () => {
             className="img-fluid"
             height={450}
           />
+
+          {/* <Lottie animationData={expenseAnimation} loop={true} /> */}
         </div>
         <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">
           <div className="mt-3">
