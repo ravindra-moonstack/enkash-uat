@@ -1,6 +1,4 @@
 export { default as xpenzDashboard } from "./img/xpenz-dashboard.png";
-export { default as laptop } from "./img/laptop.png";
-export { default as rupeeCard } from "./img/rupee-card.png";
 export { default as progressBar } from "./img/progress-bar.png";
 export { default as reimbursement } from "./img/reimbursement.png";
 export { default as heirarchyControl } from "./img/heirarchy-control.png";

@@ -29,6 +29,21 @@ $font-size-mobile: 12px;
   }
 }
 
+.theme-blue {
+  background-color: $color-equity-blue;
+  color: $color-white;
+}
+
+.theme-green {
+  background-color: $color-electric-green;
+  color: $color-black;
+}
+
+.theme-black {
+  background-color: $color-black;
+  color: white;
+}
+
 .menu_button {
   border-radius: 20px;
   padding: 5px;
@@ -56,27 +71,4 @@ $font-size-mobile: 12px;
     color: $color-secondry-grey;
     border: 1px solid;
   }
-}
-
-.theme-blue {
-  background-color: $color-equity-blue;
-  color: $color-white;
-}
-
-.theme-green {
-  background-color: $color-electric-green;
-  color: $color-black;
-}
-
-.theme-black {
-  background-color: $color-black;
-  color: white;
-}
-
-.bold {
-  font-weight: 600;
-}
-
-.normal {
-  font-weight: 500;
 }

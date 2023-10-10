@@ -36,55 +36,19 @@
   }
 }
 
-.second_row {
-  position: relative;
-  .card {
-    padding: 0;
-    @include bp-md {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
+.third_row {
+  background-color: $color-white;
+  padding-left: 50px;
+  padding-right: 50px;
+  @include bp-md {
+    padding-left: 200px;
+    padding-right: 200px;
   }
-  .card_container {
-    position: relative;
-    z-index: 2;
-    padding: 30px;
-    border-radius: 14.51px;
-    border: 1.935px solid #092093;
-    background: #0b0b28;
-    background: $color-indi-volt;
-    margin-top: -20px;
-    @include bp-md {
-      width: 50%;
-      margin-top: 0;
-      margin-left: -60px;
-    }
-    .progress_bar {
-      position: absolute;
-      bottom: 5px;
-      left: 30%;
-      @include bp-md {
-        bottom: 20px;
-        left: 40%;
-      }
-    }
-    .rupee_img {
-      width: 100px;
-      height: 80px;
-      margin-bottom: 10px;
-      @include bp-md {
-        margin-bottom: 0px;
 
-        width: 150px;
-        height: 130px;
-      }
-    }
-  }
-  .img_container {
-    position: relative;
-    z-index: 1;
+  .section {
+    margin-bottom: 50px;
     @include bp-md {
-      height: 400px;
+      margin-bottom: 50px;
     }
   }
 }

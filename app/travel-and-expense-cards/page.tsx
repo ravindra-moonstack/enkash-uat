@@ -63,7 +63,7 @@ const travelAndExpenseCards = () => {
               <SecondryButton
                 title="Book a Demo"
                 actionImage={whiteArrow}
-                iconSize="small-icon"
+                iconSize={15}
               />
             </div>
           </div>

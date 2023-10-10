@@ -275,6 +275,7 @@ const home = () => {
             title="Watch Video"
             actionImage={playButton}
             url={loginUrl}
+            iconSize={25}
           />
         </div>
         <div className={`col-12 ${styles.down_arrow}`}>

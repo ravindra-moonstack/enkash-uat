@@ -5,23 +5,17 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/constant/common";
 import {
-  blueArrowForward,
   budgetAndAdvance,
   cashAndCoin,
   coin,
   heirarchyControl,
-  laptop,
   officeImg,
   policyApproval,
-  progressBar,
   regualation,
   reimbursement,
-  rupeeCard,
   scanAndDrop,
   whiteArrow,
   xpenzDashboard,
-  oldWay,
-  newWay,
   greenArrow,
   cardOne,
   cardTwo,
@@ -32,15 +26,15 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import BlogCard from "@/components/blog-card/blog-card";
-import Head from "next/head";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 
 const xpenz = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-       <div className="mobile-header">
+      <div className="mobile-header">
         <MobileHeader />
       </div>
       <div className="desktop-header">{<WebHeader />}</div>
@@ -62,9 +56,7 @@ const xpenz = () => {
           </div>
           <div className={`mt-4 ${styles.desktop_description}`}>
             <Heading
-              title="Maximize productivity within your organization with an easier 
-                  reimbursement system that helps you track, process and sync data in
-                   real-time."
+              title="Get a detailed analysis of where, when and how your business is spending, and optimize accordingly with digital receipt management, approval matrices and more."
               color="white"
               size="h6"
               weight="5"
@@ -90,8 +82,7 @@ const xpenz = () => {
             <SecondryButton
               title="Book a Demo"
               actionImage={whiteArrow}
-              size="medium"
-              iconSize="small-icon"
+              iconSize={15}
             />
           </div>
         </div>
@@ -104,109 +95,57 @@ const xpenz = () => {
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <div
-          className={`d-flex col-12 flex-column flex-md-row align-items-center ${styles.card}`}
-        >
-          <div className="d-flex flex-column flex-md-row">
-            <div className={styles.img_container}>
-              <Image
-                src={laptop}
-                alt="office team image"
-                className={`${styles.img_container} img-fluid`}
-              />
-            </div>
-            <div
-              className={`d-flex flex-column align-items-center ${styles.card_container}`}
-            >
-              <Heading
-                title="How does it work?"
-                color="electric-green"
-                size="h2"
-                weight="6"
-              />
-
-              <div className="mt-md-5 mt-3 d-flex flex-column flex-md-row">
-                <Image
-                  src={rupeeCard}
-                  alt="rupee card image"
-                  className={`me-5 ${styles.rupee_img}`}
-                />
-                <Heading
-                  title="Make sure your business expenses are paid on time for uninterrupted operations."
-                  color="white"
-                  size="h5"
-                  weight="5"
-                />
-              </div>
-
-              <div
-                className={`d-flex justify-content-center ${styles.progress_bar}`}
-              >
-                <Image src={progressBar} alt="progress" />
-              </div>
-            </div>
+        <HowDoesItWork />
+      </div>
+      <div className={styles.third_row}>
+        <div className={`row bg-white ${styles.section}`}>
+          <div className="col-md-6 col-12 my-md-5 my-3">
+            <ExploreCard
+              title="Budgets and Advances"
+              description="Create budgets, track and optimize expenses, increase savings. "
+              theme="blue"
+            />
+          </div>
+          <div className="col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end blue_grad_bg_two">
+            <Image
+              src={budgetAndAdvance}
+              className="img-fluid"
+              alt="payables image"
+            />
           </div>
         </div>
-      </div>
-
-      <div className="row row-padding-x-only bg-white">
-        <div className="col-md-1"></div>
-        <div className="col-md-5 col-12 my-md-5 my-3">
-          <ExploreCard
-            title="Budgets and Advances"
-            description="Create budgets, track and optimize expenses, increase savings. "
-            theme="blue"
-          />
+        <div className={`row bg-white ${styles.section}`}>
+          <div className="col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start blue_grad_bg_two">
+            <Image
+              src={heirarchyControl}
+              className="img-fluid"
+              alt="heirarchy control image"
+            />
+          </div>
+          <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
+            <ExploreCard
+              title="Hierarchy and Controls"
+              description="Create hierarchies and establish control over employee expenditure."
+              theme="blue"
+            />
+          </div>
         </div>
-        <div className="col-md-5 col-12 d-flex my-md-5 my-3 d-flex justify-content-end blue_grad_bg_two">
-          <Image
-            src={budgetAndAdvance}
-            className="img-fluid"
-            alt="payables image"
-          />
+        <div className={`row bg-white ${styles.section}`}>
+          <div className="col-md-6 col-12 px-5 my-md-5 my-3">
+            <ExploreCard
+              title="Reimbursements"
+              description="Fast-track and optimize the entire reimbursement process with better spend overview."
+              theme="blue"
+            />
+          </div>
+          <div className="col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end blue_grad_bg_two">
+            <Image
+              src={reimbursement}
+              className="img-fluid"
+              alt="payables image"
+            />
+          </div>
         </div>
-        <div className="col-md-1"></div>
-      </div>
-
-      <div className="row row-padding-x-only bg-white">
-        <div className="col-md-1"></div>
-
-        <div className="col-md-5 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start blue_grad_bg_two">
-          <Image
-            src={heirarchyControl}
-            className="img-fluid"
-            alt="heirarchy control image"
-          />
-        </div>
-
-        <div className="col-md-5 col-12 order-md-2 order-1 my-md-5 my-3 ">
-          <ExploreCard
-            title="Hierarchy and Controls"
-            description="Create hierarchies and establish control over employee expenditure."
-            theme="blue"
-          />
-        </div>
-        <div className="col-md-1"></div>
-      </div>
-
-      <div className="row row-padding-top-none bg-white">
-        <div className="col-md-1"></div>
-
-        <div className="col-md-5 col-12 px-5 my-md-5 my-3">
-          <ExploreCard
-            title="Reimbursements"
-            description="Fast-track and optimize the entire reimbursement process with better spend overview."
-            theme="blue"
-          />
-        </div>
-        <div className="col-md-5 col-12 d-flex my-md-5 my-3 d-flex justify-content-end blue_grad_bg_two">
-          <Image
-            src={reimbursement}
-            className="img-fluid"
-            alt="payables image"
-          />
-        </div>
-        <div className="col-md-1"></div>
       </div>
 
       <div className={`${styles.fourth_row} row row-padding`}>
@@ -500,3 +439,6 @@ const xpenz = () => {
 };
 
 export default xpenz;
+function setCurrentData(arg0: (prevData: any) => number) {
+  throw new Error("Function not implemented.");
+}

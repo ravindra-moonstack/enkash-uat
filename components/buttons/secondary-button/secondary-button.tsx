@@ -8,9 +8,7 @@ export interface ButtonProps {
   title: string;
   url?: string;
   actionImage?: any;
-  size?: "small" | "medium";
-  weight?: "bold" | "normal";
-  iconSize?: "small-icon" | "big-icon";
+  iconSize?: any;
 }
 
 const SecondryButton = ({
@@ -39,7 +37,7 @@ const SecondryButton = ({
         className={`ms-2  ${styles[iconClass]} `}
         src={actionImage}
         alt="action image"
-        width={25}
+        width={iconSize}
       />
     </button>
   );
