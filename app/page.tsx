@@ -43,6 +43,7 @@ import {
   rainbowTwo,
   rainbowThree,
   polygonOne,
+  polygonOneShadow,
   polygonTwo,
   polygonThree,
   blueBlackLine,
@@ -53,6 +54,11 @@ import {
   recieveableAnimation,
   diyCardAnimation,
   dashboardUi,
+  rainbowOneShadow,
+  rainbowThreeShadow,
+  leftBlueGradient,
+  leftCardGradient,
+  rightCardGradient,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
@@ -73,17 +79,17 @@ const home = () => {
 
   const polygonOneScrollData = useScroll({
     target: polygonOneRef,
-    offset: ["0.2 1", "0.5 1.1"],
+    offset: ["0.2 1.2", "0.5 1.2"],
   }) as { scrollYProgress: MotionValue<number> };
 
   const polygonTwoScrollData = useScroll({
     target: polygonTwoRef,
-    offset: ["0.2 1", "0.7 1.2"],
+    offset: ["0.2 1.3", "0.7 1.3"],
   }) as { scrollYProgress: MotionValue<number> };
 
   const polygonThreeScrollData = useScroll({
     target: polygonThreeRef,
-    offset: ["0.2 1", "0.9 1.2"],
+    offset: ["0.2 1.4", "1.1 1.4"],
   }) as { scrollYProgress: MotionValue<number> };
 
   const loungeTranslateY = useTransform(
@@ -154,7 +160,11 @@ const home = () => {
     };
 
     if (scrollY < segmentLength) {
-      posTopRainbowOneImg -= computeAdjustment(scrollY, segmentLength, maxAdjustment);
+      posTopRainbowOneImg -= computeAdjustment(
+        scrollY,
+        segmentLength,
+        maxAdjustment
+      );
     } else if (scrollY < segmentLength * 2) {
       posTopRainbowOneImg -= maxAdjustment;
       posTopRainbowTwoImg -= computeAdjustment(
@@ -380,6 +390,13 @@ const home = () => {
           src={polygonOne.src}
           alt="background image"
           className={styles.polygon_one}
+        />
+        <motion.img
+          ref={polygonOneRef}
+          style={{ y: polygonOneTranslateY }}
+          src={polygonOneShadow.src}
+          alt="background image"
+          className={styles.polygon_one_shadow}
         />
         <motion.img
           ref={polygonTwoRef}
@@ -685,6 +702,11 @@ const home = () => {
       <div
         className={`${styles.sixth_row} bg-white row d-flex row-padding-bottom-none`}
       >
+        <Image
+          className={styles.left_gradient}
+          src={leftBlueGradient}
+          alt="gradient image"
+        />
         <div
           className={`col-md-6 col-12 d-flex mb-5 ${styles.animation_data_padding}`}
         >
@@ -785,14 +807,21 @@ const home = () => {
       </div>
       <div className={`${styles.ninth_row} row bg-white`}>
         <div
-          className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center ${styles.blue_grad_bg_left} order-2 order-md-1`}
+          className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center order-2 order-md-1`}
         >
-          <Image
-            src={corporateCardsImg}
-            width={350}
-            alt="payables image"
-            className="img-fluid"
-          />
+          <div className={styles.left_image_container}>
+            <Image
+              src={corporateCardsImg}
+              width={350}
+              alt="payables image"
+              className={`img-fluid ${styles.overlay_image}`}
+            />
+            <Image
+              src={rightCardGradient}
+              alt="gradients"
+              className={styles.background_image}
+            />
+          </div>
         </div>
         <div className="col-md-6 col-12 row-padding-bottom-none mb-5 order-1 order-md-2">
           <ExploreCard
@@ -809,7 +838,7 @@ const home = () => {
           />
         </div>
         <div
-          className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  ${styles.blue_grad_bg_bottom} order-4 order-md-4`}
+          className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  order-4 order-md-4`}
         >
           {/* <Image
             src={diyCardsModuleImg}
@@ -817,11 +846,19 @@ const home = () => {
             alt="receivable image"
             className="img-fluid"
           /> */}
-          <Lottie
-            animationData={diyCardAnimation}
-            loop={true}
-            style={{ width: 350 }}
-          />
+          <div className={styles.right_image_container}>
+            <Lottie
+              className={styles.overlay_image}
+              animationData={diyCardAnimation}
+              loop={true}
+              style={{ width: 350 }}
+            />
+            <Image
+              src={leftCardGradient}
+              alt="gradients"
+              className={styles.background_image}
+            />
+          </div>
         </div>
       </div>
       <div

@@ -141,7 +141,6 @@
       top: 400px;
     }
   }
-
   .description_text {
     display: none;
     @include bp-md {
@@ -405,6 +404,15 @@
   }
 }
 
+.sixth_row {
+  position: relative;
+  .left_gradient {
+    position: absolute;
+    top: -800px;
+    left: -300px;
+  }
+}
+
 .seventh_row {
   position: relative;
   .card {
@@ -438,21 +446,36 @@
 }
 
 .ninth_row {
-  .blue_grad_bg_left {
-    background: radial-gradient(
-      33.38% 50% at 40% 45%,
-      #1c5af4 0%,
-      rgba(28, 90, 244, 0.5) 57.29%,
-      rgba(255, 255, 255, 0) 84.9%
-    );
+  .left_image_container {
+    position: relative;
+
+    .background_image {
+      position: absolute;
+      top: -200px;
+      left: -200px;
+      height: 300px;
+      width: 300px;
+      @include bp-md {
+        height: 600px;
+        width: 600px;
+      }
+    }
   }
-  .blue_grad_bg_bottom {
-    background: radial-gradient(
-      33.38% 50% at 40% 60%,
-      #1c5af4 0%,
-      rgba(28, 90, 244, 0.5) 57.29%,
-      rgba(255, 255, 255, 0) 84.9%
-    );
+
+  .right_image_container {
+    position: relative;
+
+    .background_image {
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      height: 300px;
+      width: 300px;
+      @include bp-md {
+        height: 600px;
+        width: 600px;
+      }
+    }
   }
 }
 
