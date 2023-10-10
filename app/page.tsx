@@ -62,6 +62,8 @@ import {
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
+import MobileHeader from "@/components/header/mobile-header/mobile-header";
+import WebHeader from "@/components/header/web-header";
 
 const loginUrl = "https://home.enkash.com/login";
 
@@ -187,6 +189,11 @@ const home = () => {
 
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <div className="mobile-header">
+        <MobileHeader />
+      </div>
+      <div className="desktop-header">{<WebHeader />}</div>
+
       <div
         className={`${styles.first_row} row  text-center color-white bg-indi-volt`}
       >

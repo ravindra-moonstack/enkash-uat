@@ -34,10 +34,16 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import BlogCard from "@/components/blog-card/blog-card";
 import Head from "next/head";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
+import MobileHeader from "@/components/header/mobile-header/mobile-header";
+import WebHeader from "@/components/header/web-header";
 
 const xpenz = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+       <div className="mobile-header">
+        <MobileHeader />
+      </div>
+      <div className="desktop-header">{<WebHeader />}</div>
       <div className={`${styles.first_row} row color-white row-padding`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">

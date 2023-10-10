@@ -13,10 +13,16 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
+import MobileHeader from "@/components/header/mobile-header/mobile-header";
+import WebHeader from "@/components/header/web-header";
 
 const saas = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+       <div className="mobile-header">
+        <MobileHeader />
+      </div>
+      <div className="desktop-header">{<WebHeader />}</div>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-4">

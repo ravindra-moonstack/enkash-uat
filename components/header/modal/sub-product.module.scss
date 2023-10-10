@@ -69,6 +69,9 @@
     cursor: pointer;
     color: $color-electric-green;
   }
+  a {
+    text-decoration: none;
+  }
 }
 
 @keyframes top-to-bottom {
