@@ -2,7 +2,6 @@
 @import "/styles/mixin";
 
 .home_container {
-  padding-top: 50px;
   background-color: $color-indi-volt;
   @include bp-md {
     padding-top: 100px;
@@ -299,12 +298,15 @@
   }
   .image_container {
     display: flex;
-    justify-content: center;
     position: absolute;
     top: 60px;
-    width: 750px;
     z-index: 4;
+    width: 250px;
+    left: 30px;
     @include bp-md {
+      left: auto;
+      justify-content: center;
+      width: 750px;
       top: 300px;
     }
   }
@@ -315,14 +317,26 @@
     flex-direction: column;
     text-align: center;
     top: 270px;
+    padding: 0 20px;
     @include bp-md {
       top: 970px;
     }
   }
 
+  .polygon_one_shadow {
+    position: absolute;
+    top: -20px;
+    height: 200px;
+    z-index: 2;
+    @include bp-md {
+      top: -40px;
+      height: auto;
+    }
+  }
+
   .polygon_one {
     position: absolute;
-    top: -100px;
+    top: -20px;
     height: 200px;
     z-index: 1;
     @include bp-md {
@@ -332,7 +346,7 @@
   }
   .polygon_two {
     position: absolute;
-    top: -160px;
+    top: 30px;
     height: 200px;
     z-index: 2;
     @include bp-md {
@@ -342,7 +356,7 @@
   }
   .polygon_three {
     position: absolute;
-    top: -120px;
+    top: 80px;
     height: 200px;
     z-index: 3;
     @include bp-md {
@@ -443,16 +457,25 @@
 }
 
 .ninth_row {
+  padding-left: 30px;
+  padding-right: 30px;
+  @include bp-md {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
   .left_image_container {
     position: relative;
 
     .background_image {
       position: absolute;
-      top: -200px;
-      left: -200px;
-      height: 300px;
-      width: 300px;
+      top: -80px;
+      left: -50px;
+      height: 400px;
+      width: 400px;
       @include bp-md {
+        top: -200px;
+        left: -200px;
         height: 600px;
         width: 600px;
       }
@@ -464,10 +487,10 @@
 
     .background_image {
       position: absolute;
-      top: -100px;
-      left: -100px;
-      height: 300px;
-      width: 300px;
+      top: -80px;
+      left: -50px;
+      height: 400px;
+      width: 400px;
       @include bp-md {
         height: 600px;
         width: 600px;

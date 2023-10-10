@@ -2,7 +2,6 @@
 @import "../../styles/mixin";
 
 .home_container {
-  padding-top: 50px;
   @include bp-md {
     padding-top: 100px;
   }

@@ -20,6 +20,7 @@ import {
   cardOne,
   cardTwo,
   cardThree,
+  gradientBg,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -231,6 +232,12 @@ const xpenz = () => {
             </div>
           </div>
         </div>
+
+        {/* <Image
+          src={gradientBg}
+          alt="gradient image"
+          className={styles.gradient}
+        /> */}
       </div>
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
@@ -327,7 +334,7 @@ const xpenz = () => {
       </div>
       <div className="row eigth_row bg-white row-padding">
         <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center ${styles.scroll_container}`}
+          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center align-items-center ${styles.scroll_container}`}
         >
           <div className="me-4">
             <GetStartedCard
@@ -335,6 +342,7 @@ const xpenz = () => {
               title2=""
               description="Leverage OCR technology to create a seamless reimbursement process 
             for your employees. Scan or photograph receipts, and upload them for immediate approvals."
+              ctaColor="blue"
             />
           </div>
           <div className="me-4">
@@ -343,6 +351,7 @@ const xpenz = () => {
               title2=""
               description="Configure approval processes as per the requirements of your business.
              Plan your cash flow better, optimize savings, and accelerate your reimbursement process."
+              ctaColor="blue"
             />
           </div>
           <div className="me-4">
@@ -350,6 +359,7 @@ const xpenz = () => {
               title1="Departmental Hierarchy"
               title2=""
               description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
+              ctaColor="blue"
             />
           </div>
         </div>
@@ -382,19 +392,17 @@ const xpenz = () => {
               title="Lorem ipsum dolor sit amet, consectetur."
               date="Dec 21, 2023"
               description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
-          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
-         "
+          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna "
               blogImage={cardOne}
               blogImageAlt="office image"
             />
           </div>
-          <div className="me-4 ">
+          <div className={`me-4`}>
             <BlogCard
               title="Lorem ipsum dolor sit amet, consectetur."
               date="Dec 21, 2023"
               description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
-          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
-          "
+          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna "
               blogImage={cardTwo}
               blogImageAlt="office image"
             />
@@ -405,8 +413,7 @@ const xpenz = () => {
               title="Lorem ipsum dolor sit amet, consectetur."
               date="Dec 21, 2023"
               description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
-          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna 
-          "
+          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna "
               blogImage={cardThree}
               blogImageAlt="office image"
             />
@@ -421,7 +428,6 @@ const xpenz = () => {
             color="white"
           />
           <div>
-            {" "}
             <PrimaryButton
               title="Know More"
               theme="theme-black"

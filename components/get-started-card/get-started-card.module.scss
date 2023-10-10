@@ -30,6 +30,17 @@
   }
 }
 
+.get_started_text {
+    font-size: 14px;
+    line-height: 13px;
+    font-weight: 400;
+    margin-bottom: 0;
+    line-height: normal;
+    @include bp-md {
+      font-size: 18px;
+    }
+}
+
 .underline {
   h1 {
     text-decoration: underline;

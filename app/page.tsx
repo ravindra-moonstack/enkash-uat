@@ -475,7 +475,7 @@ const home = () => {
           )}
           {activeAnimation === "automate" && (
             <Lottie animationData={dashboardUiAutomateAnimation} loop={true} />
-          )}{" "}
+          )}
         </div>
         <div className={`col-12  ${styles.descrption_container}`}>
           <div>
@@ -852,14 +852,14 @@ const home = () => {
             />
           </div>
         </div>
-        <div className="col-md-6 col-12 row-padding-bottom-none mb-5 order-1 order-md-2">
+        <div className="col-md-6 col-12 mb-5 row-padding-bottom-none order-1 order-md-2">
           <ExploreCard
             title="Corporate Cards"
             description="Issue cards for different purposes, and manage them all on a single platform with smart controls. Enable or disable spend categories as and when required."
             theme="blue"
           />
         </div>
-        <div className="col-md-6 col-12  mt-2 row-padding-top-none order-3 order-md-3">
+        <div className="col-md-6 col-12 mt-5 row-padding-top-none order-3 order-md-3">
           <ExploreCard
             title="DIY Card Module"
             description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
@@ -867,7 +867,7 @@ const home = () => {
           />
         </div>
         <div
-          className={`col-md-6 col-12 row-padding-top-none d-flex mb-5 d-flex justify-content-center  order-4 order-md-4`}
+          className={`col-md-6 col-12 row-padding-top-none d-flex mt-5 d-flex justify-content-center order-4 order-md-4`}
         >
           {/* <Image
             src={diyCardsModuleImg}
@@ -891,7 +891,7 @@ const home = () => {
         </div>
       </div>
       <div
-        className={`${styles.tenth_row} row bg-white row-padding-bottom-none`}
+        className={`${styles.tenth_row} row bg-white row-padding-bottom-none `}
       >
         <div className="col-12 d-flex justify-content-center">
           <div className="pb-md-5 pb-3">

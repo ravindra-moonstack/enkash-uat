@@ -13,7 +13,7 @@ const HowDoesItWork = () => {
       setCurrentData((prevData: number) => (prevData + 1) % dataSets.length);
     }, 3000);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, []);
 
   const [currentData, setCurrentData] = useState(0);
@@ -48,7 +48,7 @@ const HowDoesItWork = () => {
             <Image src={laptop} alt="office team image" />
           </div>
           <div
-            className={`d-flex flex-column align-items-center ${styles.card_container}`}
+            className={`d-flex flex-column align-items-md-center ${styles.card_container}`}
           >
             <Heading
               title="How does it work?"
@@ -61,14 +61,11 @@ const HowDoesItWork = () => {
               <Image
                 src={dataSets[currentData].imageSrc}
                 alt={dataSets[currentData].altText}
-                className={`me-5 ${styles.rupee_img}`}
+                className={`${styles.rupee_img}`}
               />
-              <Heading
-                title={dataSets[currentData].heading}
-                color="white"
-                size="h5"
-                weight="5"
-              />
+              <h1 className={styles.heading}>
+                {dataSets[currentData].heading}
+              </h1>
             </div>
 
             <div

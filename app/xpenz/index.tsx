@@ -17,3 +17,5 @@ export { default as greenArrow } from "./img/green-arrow.svg";
 export { default as cardOne } from "./img/card-one-image.png";
 export { default as cardTwo } from "./img/card-two-image.png";
 export { default as cardThree } from "./img/card-three-image.png";
+export { default as gradientBg } from "./img/gradient-bg.png";
+

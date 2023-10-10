@@ -2,7 +2,6 @@
 @import "../../styles/mixin";
 
 .home_container {
-  padding-top: 50px;
   @include bp-md {
     padding-top: 100px;
   }
@@ -40,6 +39,7 @@
   background-color: $color-white;
   padding-left: 50px;
   padding-right: 50px;
+  padding-bottom: 50px;
   @include bp-md {
     padding-left: 200px;
     padding-right: 200px;
@@ -50,6 +50,19 @@
     @include bp-md {
       margin-bottom: 50px;
     }
+  }
+}
+
+.fourth_row {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  @include bp-md {
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 110px;
+    padding-bottom: 80px;
   }
 }
 
@@ -94,11 +107,14 @@
 }
 
 .fifth_row {
+  position: relative;
   background: url(./img/circle-stack.png);
   background-size: cover;
   padding: 50px;
+  z-index: 1;
   @include bp-md {
-    background: none;
+    background: url(./img/circle-stack-desktop.png);
+    background-size: 100%;
   }
 }
 
@@ -112,6 +128,8 @@
   .left_row {
     padding: 40px;
     margin-top: -20px;
+    border-radius: 10px;
+    border: 2px solid $color-night-blue;
     @include bp-md {
       padding: 40px;
       width: 50%;
