@@ -122,7 +122,7 @@ const home = () => {
   }, []);
 
   let largeScreen;
-  let topFirstText, topSecondText, topThirdText;
+  let posTopRainbowOneImg, posTopRainbowTwoImg, posTopRainbowThreeImg;
   let maxScrollForFullAdjustment;
   let maxAdjustment;
 
@@ -130,15 +130,15 @@ const home = () => {
     largeScreen = window.matchMedia("(min-width:786px)");
 
     if (largeScreen.matches) {
-      topFirstText = 90;
-      topSecondText = 208;
-      topThirdText = 320;
+      posTopRainbowOneImg = 180;
+      posTopRainbowTwoImg = 290;
+      posTopRainbowThreeImg = 400;
       maxScrollForFullAdjustment = 400;
       maxAdjustment = 45;
     } else {
-      topFirstText = 90;
-      topSecondText = 145;
-      topThirdText = 195;
+      posTopRainbowOneImg = 130;
+      posTopRainbowTwoImg = 180;
+      posTopRainbowThreeImg = 230;
       maxScrollForFullAdjustment = 300;
       maxAdjustment = 15;
     }
@@ -154,18 +154,18 @@ const home = () => {
     };
 
     if (scrollY < segmentLength) {
-      topFirstText += computeAdjustment(scrollY, segmentLength, maxAdjustment);
+      posTopRainbowOneImg -= computeAdjustment(scrollY, segmentLength, maxAdjustment);
     } else if (scrollY < segmentLength * 2) {
-      topFirstText += maxAdjustment;
-      topSecondText += computeAdjustment(
+      posTopRainbowOneImg -= maxAdjustment;
+      posTopRainbowTwoImg -= computeAdjustment(
         scrollY - segmentLength,
         segmentLength,
         maxAdjustment
       );
     } else {
-      topFirstText += maxAdjustment;
-      topSecondText += maxAdjustment;
-      topThirdText += computeAdjustment(
+      posTopRainbowOneImg -= maxAdjustment;
+      posTopRainbowTwoImg -= maxAdjustment;
+      posTopRainbowThreeImg -= computeAdjustment(
         scrollY - 2 * segmentLength,
         segmentLength,
         maxAdjustment
@@ -180,21 +180,16 @@ const home = () => {
       <div
         className={`${styles.first_row} row  text-center color-white bg-indi-volt`}
       >
-        <span
-          className={`col-12  ${styles.first_text}`}
-          style={{ top: `${topFirstText}px` }}
-        >
+        <span className={`col-12  ${styles.first_text}`}>
           <Heading title="A Spend" size="h0" />
         </span>
         <Image
           src={rainbowOne}
           alt="background image"
           className={styles.rainbow_one}
+          style={{ top: `${posTopRainbowOneImg}px` }}
         />
-        <span
-          className={`col-12  ${styles.second_text}`}
-          style={{ top: `${topSecondText}px` }}
-        >
+        <span className={`col-12  ${styles.second_text}`}>
           <Heading title="Management Solution" size="h0" />
         </span>
 
@@ -202,12 +197,10 @@ const home = () => {
           src={rainbowTwo}
           alt="background image 2"
           className={styles.rainbow_two}
+          style={{ top: `${posTopRainbowTwoImg}px` }}
         />
 
-        <span
-          className={`col-12  ${styles.third_text}`}
-          style={{ top: `${topThirdText}px` }}
-        >
+        <span className={`col-12  ${styles.third_text}`}>
           <Heading title="That Does it All" size="h0" />
         </span>
 
@@ -215,6 +208,7 @@ const home = () => {
           src={rainbowThree}
           alt="background image 3"
           className={styles.rainbow_three}
+          style={{ top: `${posTopRainbowThreeImg}px` }}
         />
 
         <div className={`col-12 ${styles.description_text}`}>
