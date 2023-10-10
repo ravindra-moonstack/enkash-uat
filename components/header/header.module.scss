@@ -24,7 +24,7 @@
 
   li {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 400;
     line-height: 19px;
     text-align: center;
     cursor: pointer;
@@ -51,6 +51,27 @@
   font-weight: 500;
   line-height: 19px;
   text-align: center;
+
+  .primary_button {
+    border-radius: 20px;
+    background-color: $color-equity-blue;
+    color: $color-white;
+    border: none;
+    padding: 5px 20px;
+    margin-right: 5px;
+  }
+
+  .secondary_button {
+    border-radius: 20px;
+    border: 2px solid $color-equity-blue;
+    background-color: $color-indi-volt;
+    color: $color-white;
+    padding: 3px 20px;
+  }
+  .active {
+    color: $color-black;
+    background-color: $color-white;
+  }
 }
 
 .selected_border {

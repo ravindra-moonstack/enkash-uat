@@ -1,6 +1,10 @@
 @import "./variables";
 @import "./mixin";
 
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
 /* Background Classes */
 .bg-deep-indigo {
   background-color: $color-deep-indigo;
@@ -159,9 +163,9 @@
   padding-top: 36px;
   padding-bottom: 36px;
   @include bp-md {
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 80px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 110px;
     padding-bottom: 80px;
   }
 }
@@ -172,9 +176,9 @@
   padding-top: 36px;
   padding-bottom: 0px;
   @include bp-md {
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-top: 80px;
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 110px;
     padding-bottom: 0px;
   }
 }
@@ -185,8 +189,8 @@
   padding-top: 0px;
   padding-bottom: 36px;
   @include bp-md {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 90px;
+    padding-right: 90px;
     padding-top: 0px;
     padding-bottom: 80px;
   }
@@ -196,8 +200,8 @@
   padding-left: 25px;
   padding-right: 25px;
   @include bp-md {
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 90px;
+    padding-right: 90px;
   }
 }
 

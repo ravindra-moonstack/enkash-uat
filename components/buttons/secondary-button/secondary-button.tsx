@@ -7,7 +7,7 @@ export interface ButtonProps {
   isDisabled?: boolean;
   title: string;
   url?: string;
-  actionImage: any;
+  actionImage?: any;
   size?: "small" | "medium";
   weight?: "bold" | "normal";
   iconSize?: "small-icon" | "big-icon";
@@ -18,12 +18,8 @@ const SecondryButton = ({
   title,
   url,
   actionImage,
-  size,
-  weight,
   iconSize,
 }: ButtonProps) => {
-  const sizeClass = size || "small";
-  const weightClass = weight || "normal";
   const iconClass = iconSize || "big-icon";
 
   const handleClick = () => {
@@ -35,7 +31,7 @@ const SecondryButton = ({
   return (
     <button
       disabled={isDisabled}
-      className={`${styles.secondry_button} ${styles[sizeClass]} ${styles[weightClass]}`}
+      className={`${styles.secondry_button}`}
       onClick={handleClick}
     >
       {title}
@@ -43,6 +39,7 @@ const SecondryButton = ({
         className={`ms-2  ${styles[iconClass]} `}
         src={actionImage}
         alt="action image"
+        width={25}
       />
     </button>
   );

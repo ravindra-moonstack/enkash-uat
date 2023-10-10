@@ -65,7 +65,7 @@
 
 .first_row {
   position: relative;
-  height: 700px;
+  height: 650px;
 
   .first_text {
     position: absolute;
@@ -185,6 +185,17 @@
 }
 
 .second_row {
+  padding-top: 60px;
+  @include bp-md {
+    padding-top: 150px;
+  }
+
+  .heading {
+    padding-bottom: 60px;
+    @include bp-md {
+      padding-bottom: 60px;
+    }
+  }
   .steps_image {
     width: 23px;
     height: 23px;
@@ -202,8 +213,8 @@
     }
   }
   .action_image_user_tick {
-    width: 45px;
-    height: 40px;
+    width: 35px;
+    height: 37px;
     @include bp-md {
       width: 90px;
       height: 79px;
@@ -218,18 +229,19 @@
     }
   }
   .email_box {
+    width: 100%;
     margin-top: 20px;
     border: 2px solid $color-equity-blue;
     border-radius: 30px;
     color: $color-white;
     display: flex;
-    width: fit-content;
     justify-content: space-between;
     padding: 10px;
     font-size: 12px;
     @include bp-md {
       font-size: 20px;
-      margin-top: 120px;
+      margin-top: 100px;
+      width: fit-content;
     }
     input {
       padding: 0;
@@ -264,7 +276,7 @@
   display: flex;
   justify-content: center;
   @include bp-md {
-    height: 1400px;
+    height: 1200px;
   }
 
   .action_container {
@@ -276,22 +288,28 @@
     @include bp-md {
       justify-content: space-evenly;
       width: 900px;
-      top: 320px;
+      top: 240px;
       right: auto;
+    }
+    button {
+      width: 100%;
+      @include bp-md {
+        width: auto;
+      }
     }
   }
   .image_container {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 80px;
+    top: 60px;
     img {
       width: 900px;
     }
     z-index: 4;
     left: 0;
     @include bp-md {
-      top: 380px;
+      top: 300px;
     }
   }
   .descrption_container {
@@ -302,38 +320,37 @@
     text-align: center;
     top: 270px;
     @include bp-md {
-      top: 1120px;
+      top: 930px;
     }
   }
 
   .polygon_one {
     position: absolute;
-    top: 30px;
-    height: 100px;
+    top: -100px;
+    height: 200px;
     z-index: 1;
     @include bp-md {
-      top: 240px;
+      top: 30px;
       height: auto;
     }
   }
   .polygon_two {
     position: absolute;
-    top: 60px;
-    height: 100px;
+    top: -160px;
+    height: 200px;
     z-index: 2;
     @include bp-md {
-      top: 380px;
+      top: 140px;
       height: auto;
     }
   }
   .polygon_three {
     position: absolute;
-    top: 90px;
-    height: 100px;
-    height: 100px;
+    top: -120px;
+    height: 200px;
     z-index: 3;
     @include bp-md {
-      top: 540px;
+      top: 230px;
       height: auto;
     }
   }
@@ -347,6 +364,8 @@
 }
 
 .fourth_row {
+  padding-top: 50px;
+  padding-bottom: 100px;
   overflow: hidden;
   width: auto;
   position: relative;
@@ -360,8 +379,8 @@
     height: 26px;
     width: 26px;
     @include bp-md {
-      height: 55px;
-      width: 55px;
+      height: 50px;
+      width: 50px;
     }
   }
 
@@ -378,8 +397,8 @@
     width: 100%;
     height: auto;
     @include bp-md {
-      width: 600px;
-      height: 600px;
+      width: auto;
+      height: 800px;
       position: absolute;
       right: 0px;
     }
@@ -397,7 +416,7 @@
   }
   .card_container {
     z-index: 2;
-    padding: 30px;
+    padding: 30px 50px;
     border-radius: 14.51px;
     border: 1.935px solid #092093;
     background: #0b0b28;
@@ -457,8 +476,8 @@
     }
   }
   .action_image_user_tick {
-    width: 45px;
-    height: 40px;
+    width: 35px;
+    height: 37px;
     @include bp-md {
       width: 90px;
       height: 79px;
@@ -503,6 +522,11 @@
 }
 
 .thirteenth_row {
+  padding-top: 60px;
+  @include bp-md {
+    padding-top: 120px;
+  }
+
   .blue_grad_bg {
     background: radial-gradient(
       34.33% 44.33% at 60% 50%,
@@ -546,7 +570,7 @@
     position: relative;
     padding-right: 80px;
     @include bp-md {
-      margin-top: -200px;
+      margin-top: -50px;
     }
   }
 

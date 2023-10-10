@@ -6,7 +6,6 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./header.module.scss";
 import navBarTopTtitle from "../../constant/nav-bar";
 import utmSources from "@/constant/utm-source";
-import PrimaryButton from "../buttons/primary-button/primary-button";
 import {
   enkashWhiteLogo,
   enkashBlueLogo,
@@ -66,6 +65,7 @@ const WebHeader = () => {
               src={isHeaderBgWhite ? enkashBlueLogo : enkashWhiteLogo}
               alt="logo"
               width={120}
+              className="me-3"
             />
           </Link>
           <ul>
@@ -115,20 +115,16 @@ const WebHeader = () => {
         </div>
         <div className={styles.buttons_container}>
           <div>
-            <PrimaryButton
-              title="Sign Up"
-              url={singupUrl}
-              theme="theme-blue"
-              size="small"
-            />
+            <button className={styles.primary_button}>Sign Up</button>
           </div>
-          <div className="mx-2">
-            <PrimaryButton
-              title="Log In"
-              url={loginUrl}
-              theme="theme-blue"
-              size="small"
-            />
+          <div>
+            <button
+              className={`${styles.secondary_button} ${
+                isHeaderBgWhite ? styles.active : ""
+              }`}
+            >
+              Login
+            </button>
           </div>
         </div>
       </nav>

@@ -68,22 +68,22 @@ const home = () => {
 
   const loungeScrollData = useScroll({
     target: loungeImgRef,
-    offset: ["1.0 1", "1.7 1"],
+    offset: ["0.5 1.5", "1 1"],
   }) as { scrollYProgress: MotionValue<number> };
 
   const polygonOneScrollData = useScroll({
     target: polygonOneRef,
-    offset: ["0.2 1", "0.5 1"],
+    offset: ["0.2 1", "0.5 1.1"],
   }) as { scrollYProgress: MotionValue<number> };
 
   const polygonTwoScrollData = useScroll({
     target: polygonTwoRef,
-    offset: ["0.2 1", "0.7 1"],
+    offset: ["0.2 1", "0.7 1.2"],
   }) as { scrollYProgress: MotionValue<number> };
 
   const polygonThreeScrollData = useScroll({
     target: polygonThreeRef,
-    offset: ["0.3 1", "0.8 1"],
+    offset: ["0.2 1", "0.9 1.2"],
   }) as { scrollYProgress: MotionValue<number> };
 
   const loungeTranslateY = useTransform(
@@ -250,20 +250,12 @@ const home = () => {
           </div>
         </div>
         <div className={`col-12 ${styles.button_container}`}>
-          <PrimaryButton
-            title="Get a Demo"
-            url={loginUrl}
-            theme="theme-blue"
-            size="medium"
-            weight="bold"
-          />
+          <PrimaryButton title="Get a Demo" url={loginUrl} theme="theme-blue" />
           <span className="mx-2"></span>
           <SecondryButton
             title="Watch Video"
             actionImage={playButton}
             url={loginUrl}
-            size="medium"
-            weight="bold"
           />
         </div>
         <div className={`col-12 ${styles.down_arrow}`}>
@@ -275,7 +267,7 @@ const home = () => {
         className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center
        text-center color-white bg-indi-volt`}
       >
-        <div className={`col-12 mb-5`}>
+        <div className={`col-12 ${styles.heading}`}>
           <div>
             <Heading
               title="3 Easy Steps to"
@@ -369,7 +361,7 @@ const home = () => {
         <div className="col-12 d-flex justify-content-center align-items-center">
           <div className={styles.email_box}>
             <div className="w-50 d-flex align-items-center">
-              <input type="text" placeholder="Enter your email"></input>
+              <input type="text" placeholder="Enter your work email"></input>
             </div>
 
             <div>
@@ -381,12 +373,7 @@ const home = () => {
                   ease: "easeInOut",
                 }}
               > */}
-              <PrimaryButton
-                title="Get Started Now"
-                theme="theme-blue"
-                size="medium"
-                weight="bold"
-              />
+              <PrimaryButton title="Get Started Now" theme="theme-blue" />
               {/* </motion.div> */}
             </div>
           </div>
@@ -472,23 +459,35 @@ const home = () => {
                 title={`productivity${space}`}
                 color="equity-blue"
                 size="h1"
+                weight="6"
               />
-              <Heading title="and" color="black" size="h1" />
+              <Heading title="and" color="black" size="h1" weight="6" />
             </div>
             <div>
               <Heading
                 title={`control${space}`}
                 color="equity-blue"
                 size="h1"
+                weight="6"
               />
-              <Heading title="Now at" color="black" size="h1" />
+              <Heading title="Now at" color="black" size="h1" weight="6" />
             </div>
             <div>
-              <Heading title={`your${space}`} color="equity-blue" size="h1" />
-              <Heading title="fingertips." color="equity-blue" size="h1" />
+              <Heading
+                title={`your${space}`}
+                color="equity-blue"
+                size="h1"
+                weight="6"
+              />
+              <Heading
+                title="fingertips."
+                color="equity-blue"
+                size="h1"
+                weight="6"
+              />
             </div>
           </div>
-          <div className="d-flex flex-column my-3 ps-3">
+          <div className="d-flex flex-column my-3 ps-3 mt-5">
             <div className="row d-flex my-4">
               <div className="col-6 d-flex">
                 <Image
@@ -500,13 +499,13 @@ const home = () => {
                   <Heading
                     title="Intelligent"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                     weight="6"
                   />
                   <Heading
                     title="Automation Tools"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                     weight="6"
                   />
                 </div>
@@ -521,13 +520,13 @@ const home = () => {
                   <Heading
                     title="Real-Time Data"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                     weight="6"
                   />
                   <Heading
                     title="& Insights"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                     weight="6"
                   />
                 </div>
@@ -544,13 +543,13 @@ const home = () => {
                   <Heading
                     title="Optimized Business"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                     weight="6"
                   />
                   <Heading
                     title="Productivity"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                     weight="6"
                   />
                 </div>
@@ -565,13 +564,13 @@ const home = () => {
                   <Heading
                     title="Unparalleled"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                     weight="6"
                   />
                   <Heading
                     title="Savings"
                     color="equity-blue"
-                    size="h5"
+                    size="h6"
                     weight="6"
                   />
                 </div>
@@ -589,7 +588,7 @@ const home = () => {
           />
         </div>
         <div className="col-md-6">
-          <div className={`row-padding-x-only mb-3 `}>
+          <div className={`row-padding-x-only mb-3 mt-5`}>
             <div>
               <Heading
                 title={`Financial${space}`}
@@ -659,7 +658,7 @@ const home = () => {
           /> */}
           <Lottie animationData={payablesAnimation} loop={true} />
         </div>
-        <div className="col-md-6 col-12 mb-5  order-1 order-md-2">
+        <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
           <ExploreCard
             title="Payables"
             description=" Manage all outgoing expenses in one place. Our online platform
@@ -745,7 +744,6 @@ const home = () => {
                 <PrimaryButton
                   title="Get a Demo"
                   size="medium"
-                  weight="bold"
                   url={loginUrl}
                   theme="theme-green"
                 />
@@ -764,7 +762,7 @@ const home = () => {
       <div
         className={`${styles.eigth_row}row d-flex d-flex bg-white row-padding`}
       >
-        <div className="d-flex flex-column justify-content-center align-items-center">
+        <div className="d-flex flex-column justify-content-center align-items-center w-100">
           <div>
             <Heading
               title="Discover full control."
@@ -844,7 +842,7 @@ const home = () => {
         <div className="col-md-6 col-12 d-flex flex-column mt-3">
           <div className="d-flex  justify-content-md-start">
             <div className="me-2">
-              <MenuButton isDisabled={false} title="Voucher" theme="light" />
+              <MenuButton isDisabled={false} title="Vouchers" theme="light" />
             </div>
             <div className="me-2">
               <MenuButton isDisabled={false} title="Reward" theme="disabled" />
@@ -878,7 +876,6 @@ const home = () => {
               url=""
               theme="theme-blue"
               size="medium"
-              weight="bold"
             />
           </div>
         </div>
@@ -1045,12 +1042,15 @@ const home = () => {
               weight="6"
             />
           </div>
-          <div className="mt-2">
+          <div className="mt-2 d-flex flex-column">
             <Heading
-              title="Our platform links seamlessly with any accounting, ERP
-                solution you currently use like Tally, Quickbooks, SAP amongst
-                others. Ensure your books are always audit ready and view real-time
-                up-to-the-minute data."
+              title="Our platform links seamlessly with any accounting, ERP solution you currently use like Tally, Quickbooks, SAP amongst others."
+              color="black"
+              size="h4"
+              weight="4"
+            />
+            <Heading
+              title="Ensure your books are always audit ready and view real-time up-to-the-minute data."
               color="black"
               size="h4"
               weight="4"
@@ -1063,7 +1063,6 @@ const home = () => {
               url=""
               theme="theme-blue"
               size="medium"
-              weight="bold"
             />
           </div>
         </div>
