@@ -57,7 +57,7 @@ export { default as rightCardGradient } from "./img/right-card-gradient.png";
 //Animations import
 export { default as dashboardUiAutomateAnimation } from "./img/lottie/dashboard-automate.json";
 export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard-manage.json";
-export { default as dashboardUiTrackAnimation } from "./img/lottie/dashboard-track.json";
+export { default as dashboardUiTrackAnimation } from "./img/lottie/dashboard-track-two.json";
 export { default as dashboardUiOptimizeAnimation } from "./img/lottie/dashboard-optimize.json";
 export { default as expenseManagementAnimation } from "./img/lottie/expense-management.json";
 export { default as payablesAnimation } from "./img/lottie/payables.json";
@@ -65,5 +65,3 @@ export { default as recieveableAnimation } from "./img/lottie/recievables.json";
 export { default as diyCardAnimation } from "./img/lottie/diy.json";
 export { default as dashboardAnimation } from "./img/lottie/dashboard-ui.json";
 export { default as expenseAnimation } from "./img/lottie/expense.json";
-
-

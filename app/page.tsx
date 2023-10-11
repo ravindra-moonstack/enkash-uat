@@ -826,12 +826,12 @@ const home = () => {
       </div>
       <div className={`${styles.ninth_row} row bg-white`}>
         <div
-          className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center order-2 order-md-1`}
+          className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center order-2 order-md-1 ${styles.section_padding}`}
         >
           <div className={styles.left_image_container}>
             <Image
               src={corporateCardsImg}
-              width={350}
+              width={430}
               alt="payables image"
               className={`img-fluid ${styles.overlay_image}`}
             />
@@ -842,7 +842,9 @@ const home = () => {
             />
           </div>
         </div>
-        <div className="col-md-6 col-12 mb-5 row-padding-bottom-none order-1 order-md-2">
+        <div
+          className={`col-md-6 col-12 mb-5 row-padding-bottom-none order-1 order-md-2 ${styles.section_padding}`}
+        >
           <ExploreCard
             title="Corporate Cards"
             description="Issue cards for different purposes, and manage them all on a single platform with smart controls. Enable or disable spend categories as and when required."
@@ -859,18 +861,11 @@ const home = () => {
         <div
           className={`col-md-6 col-12 row-padding-top-none d-flex mt-5 d-flex justify-content-center order-4 order-md-4`}
         >
-          {/* <Image
-            src={diyCardsModuleImg}
-            width={350}
-            alt="receivable image"
-            className="img-fluid"
-          /> */}
           <div className={styles.right_image_container}>
             <Lottie
               className={styles.overlay_image}
               animationData={diyCardAnimation}
               loop={true}
-              style={{ width: 350 }}
             />
             <Image
               src={leftCardGradient}
