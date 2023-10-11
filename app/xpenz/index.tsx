@@ -19,3 +19,9 @@ export { default as cardTwo } from "./img/card-two-image.png";
 export { default as cardThree } from "./img/card-three-image.png";
 export { default as gradientBg } from "./img/gradient-bg.png";
 
+//Animations import
+export { default as heirarchyControlAnimation } from "./img/lottie/hierarchy.json";
+export { default as budgetAndAdvanceAnimation } from "./img/lottie/budget-and-advances.json";
+export { default as reimbursementAnimation } from "./img/lottie/reimbursement.json";
+export { default as scanAndDropAnimation } from "./img/lottie/scan-and-drop.json";
+export { default as policyAnimation } from "./img/lottie/policy.json";

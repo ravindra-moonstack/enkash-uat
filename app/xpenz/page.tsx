@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.scss";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -21,6 +23,11 @@ import {
   cardTwo,
   cardThree,
   gradientBg,
+  heirarchyControlAnimation,
+  budgetAndAdvanceAnimation,
+  reimbursementAnimation,
+  scanAndDropAnimation,
+  policyAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -31,6 +38,7 @@ import MenuButton from "@/components/buttons/menu-button/menu-button";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
+import Lottie from "lottie-react";
 
 const xpenz = () => {
   return (
@@ -108,20 +116,22 @@ const xpenz = () => {
             />
           </div>
           <div className="col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end blue_grad_bg_two">
-            <Image
+            {/* <Image
               src={budgetAndAdvance}
               className="img-fluid"
               alt="payables image"
-            />
+            /> */}
+            <Lottie animationData={budgetAndAdvanceAnimation} loop={true} />
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start blue_grad_bg_two">
-            <Image
+            {/* <Image
               src={heirarchyControl}
               className="img-fluid"
               alt="heirarchy control image"
-            />
+            /> */}
+            <Lottie animationData={heirarchyControlAnimation} loop={true} />
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
@@ -140,22 +150,24 @@ const xpenz = () => {
             />
           </div>
           <div className="col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end blue_grad_bg_two">
-            <Image
+            {/* <Image
               src={reimbursement}
               className="img-fluid"
               alt="payables image"
-            />
+            /> */}
+            <Lottie animationData={reimbursementAnimation} loop={true} />
           </div>
         </div>
       </div>
 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
-          <Image
+          {/* <Image
             src={scanAndDrop}
             alt="policy and approval flows image"
             className="img-fluid"
-          />
+          /> */}
+          <Lottie animationData={policyAnimation} loop={true} />
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
@@ -173,11 +185,12 @@ const xpenz = () => {
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4">
-          <Image
+          {/* <Image
             src={policyApproval}
             alt="scan and drop receipt image"
             className="img-fluid"
-          />
+          /> */}
+          <Lottie animationData={scanAndDropAnimation} loop={true} />
         </div>
       </div>
 
