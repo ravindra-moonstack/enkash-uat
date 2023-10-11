@@ -28,6 +28,7 @@ import {
   reimbursementAnimation,
   scanAndDropAnimation,
   policyAnimation,
+  cardBg,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -115,22 +116,26 @@ const xpenz = () => {
               theme="blue"
             />
           </div>
-          <div className="col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end blue_grad_bg_two">
-            {/* <Image
-              src={budgetAndAdvance}
-              className="img-fluid"
-              alt="payables image"
-            /> */}
+          <div
+            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.first_container}`}
+          >
+            <Image
+              src={cardBg}
+              alt="card background"
+              className={styles.card_bg}
+            />
             <Lottie animationData={budgetAndAdvanceAnimation} loop={true} />
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start blue_grad_bg_two">
-            {/* <Image
-              src={heirarchyControl}
-              className="img-fluid"
-              alt="heirarchy control image"
-            /> */}
+          <div
+            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start  ${styles.second_container}`}
+          >
+            <Image
+              src={cardBg}
+              alt="card background"
+              className={styles.card_bg}
+            />
             <Lottie animationData={heirarchyControlAnimation} loop={true} />
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
@@ -149,12 +154,14 @@ const xpenz = () => {
               theme="blue"
             />
           </div>
-          <div className="col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end blue_grad_bg_two">
-            {/* <Image
-              src={reimbursement}
-              className="img-fluid"
-              alt="payables image"
-            /> */}
+          <div
+            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.third_container}`}
+          >
+            <Image
+              src={cardBg}
+              alt="card background"
+              className={styles.card_bg}
+            />
             <Lottie animationData={reimbursementAnimation} loop={true} />
           </div>
         </div>

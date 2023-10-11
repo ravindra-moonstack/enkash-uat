@@ -303,10 +303,28 @@
     z-index: 4;
     width: 250px;
     left: 30px;
+    z-index: 5;
     @include bp-md {
       left: auto;
       justify-content: center;
-      width: 750px;
+      width: 790px;
+      top: 320px;
+    }
+  }
+
+  .laptop_background_image {
+    display: flex;
+    position: absolute;
+    top: 60px;
+    z-index: 4;
+    width: 250px;
+    left: 30px;
+    z-index: 4;
+    height: auto;
+    @include bp-md {
+      left: auto;
+      justify-content: center;
+      width: 980px;
       top: 300px;
     }
   }

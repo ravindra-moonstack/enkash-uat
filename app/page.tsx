@@ -65,11 +65,14 @@ import {
   dashboardUiOptimizeAnimation,
   dashboardAnimation,
   expenseAnimation,
+  laptopOne,
+  laptopTwo,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
+import { laptop } from "@/components/carousel";
 
 const loginUrl = "https://home.enkash.com/login";
 
@@ -463,6 +466,11 @@ const home = () => {
             </div>
           </div>
         </div>
+        <Image
+          src={laptopTwo}
+          alt="laptop image"
+          className={styles.laptop_background_image}
+        />
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
           {activeAnimation === "manage" && (
             <Lottie animationData={dashboardUiManageAnimation} loop={true} />

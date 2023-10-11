@@ -53,11 +53,13 @@ export { default as rainbowThreeShadow } from "./img/rainbow-three-shadow.png";
 export { default as leftBlueGradient } from "./img/left-blue-gradient.png";
 export { default as leftCardGradient } from "./img/left-card-gradient.png";
 export { default as rightCardGradient } from "./img/right-card-gradient.png";
+export { default as laptopOne } from "./img/laptop-one.png";
+export { default as laptopTwo } from "./img/laptop-two.png";
 
 //Animations import
 export { default as dashboardUiAutomateAnimation } from "./img/lottie/dashboard-automate.json";
 export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard-manage.json";
-export { default as dashboardUiTrackAnimation } from "./img/lottie/dashboard-track-two.json";
+export { default as dashboardUiTrackAnimation } from "./img/lottie/dashboard-track-four.json";
 export { default as dashboardUiOptimizeAnimation } from "./img/lottie/dashboard-optimize.json";
 export { default as expenseManagementAnimation } from "./img/lottie/expense-management.json";
 export { default as payablesAnimation } from "./img/lottie/payables.json";
