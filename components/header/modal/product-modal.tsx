@@ -10,6 +10,7 @@ import xpenzProducts from "../../../constant/products/xpenz-products";
 import loyaltyLoungeProducts from "../../../constant/products/loaylty-lounge-products";
 import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";
+import Link from "next/link";
 
 const ProductModal = ({ onLinkClick }: any) => {
   const [hoveredProductIndex, setHoveredProductIndex] = useState<null | number>(
@@ -53,10 +54,12 @@ const ProductModal = ({ onLinkClick }: any) => {
             }}
             ref={index === 0 ? productRowRef : null}
           >
-            <div className={styles.product_name}>{product.name}</div>
-            <div className={styles.product_description}>
-              {product.description}
-            </div>
+            <Link href={product.link}>
+              <div className={styles.product_name}>{product.name}</div>
+              <div className={styles.product_description}>
+                {product.description}
+              </div>
+            </Link>
           </div>
         ))}
       </div>
