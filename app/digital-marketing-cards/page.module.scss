@@ -8,6 +8,7 @@
 }
 
 .first_row {
+  margin-bottom: 80px;
   .three_step_container {
     padding-top: 120px;
   }
@@ -64,6 +65,12 @@
 }
 
 .third_row {
+  padding-bottom: 50px;
+  padding-top: 20px;
+  @include bp-md {
+    padding-bottom: 150px;
+    padding-top: 20px;
+  }
   .scroll_container {
     overflow-x: auto;
     white-space: nowrap;

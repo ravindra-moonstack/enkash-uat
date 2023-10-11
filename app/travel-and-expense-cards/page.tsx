@@ -19,13 +19,13 @@ import WebHeader from "@/components/header/web-header";
 const travelAndExpenseCards = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-       <div className="mobile-header">
+      <div className="mobile-header">
         <MobileHeader />
       </div>
       <div className="desktop-header">{<WebHeader />}</div>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
-          <div className="d-flex mb-4 flex-column">
+          <div className="d-flex mb-5 flex-column">
             <Heading title="Freedom " color="rainy-blue" size="h4" weight="7" />
             <Heading title="| Travel and Expense Cards" size="h4" weight="7" />
           </div>
@@ -116,7 +116,7 @@ const travelAndExpenseCards = () => {
       </div>
 
       <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-top-none`}
+        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-flex justify-content-center text-center flex-wrap mb-5">
           <Heading

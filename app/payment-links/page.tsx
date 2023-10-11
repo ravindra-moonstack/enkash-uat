@@ -25,7 +25,7 @@ const paymentlinks = () => {
       <div className="desktop-header">{<WebHeader />}</div>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
-          <div className="d-flex mb-4 flex-column">
+          <div className="d-flex mb-5 flex-column">
             <Heading
               title="Olympus | Receivables"
               color="rainy-blue"
@@ -128,7 +128,7 @@ const paymentlinks = () => {
       </div>
 
       <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-top-none`}
+        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-flex justify-content-center text-center flex-wrap mb-5">
           <Heading
