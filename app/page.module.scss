@@ -597,19 +597,6 @@
 }
 
 .twelfth_row {
-  .scroll_container {
-    overflow-x: auto;
-    white-space: nowrap;
-
-    &::-webkit-scrollbar {
-      height: 6px;
-      background: #092093;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      background: linear-gradient(90deg, #61d6ff 30%, transparent 30%);
-    }
-  }
   .card {
     margin-right: 20px;
     margin-bottom: 40px;

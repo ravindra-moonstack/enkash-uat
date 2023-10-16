@@ -195,6 +195,30 @@
 }
 
 .eigth_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  @include bp-md {
+    padding-bottom: 250px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: none;
+      @include bp-md {
+        height: 300px;
+        display: flex;
+      }
+    }
+  }
+}
+
+.ninth_row {
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
@@ -204,20 +228,5 @@
     padding-bottom: 60px;
     padding-left: 80px;
     padding-right: 80px;
-  }
-}
-
-.scroll_container {
-  overflow-x: auto;
-  white-space: nowrap;
-
-  &::-webkit-scrollbar {
-    padding: 20px;
-    height: 4px;
-    background: #092093;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: linear-gradient(90deg, #61d6ff 30%, transparent 30%);
   }
 }

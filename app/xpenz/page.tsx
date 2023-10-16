@@ -29,6 +29,7 @@ import {
   scanAndDropAnimation,
   policyAnimation,
   cardBg,
+  faqBg,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -40,6 +41,8 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import Lottie from "lottie-react";
+import faqData from "./faqData";
+import FAQ from "@/components/faq/faq";
 
 const xpenz = () => {
   return (
@@ -354,7 +357,7 @@ const xpenz = () => {
       </div>
       <div className="row eigth_row bg-white row-padding">
         <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center align-items-center ${styles.scroll_container}`}
+          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center align-items-center scroll_container`}
         >
           <div className="me-4">
             <GetStartedCard
@@ -405,7 +408,7 @@ const xpenz = () => {
         </div>
 
         <div
-          className={`col-12 d-flex justify-content-md-evenly mt-5 pb-3 ${styles.scroll_container}`}
+          className={`col-12 d-flex justify-content-md-evenly mt-5 pb-3 scroll_container`}
         >
           <div className="me-4 ms-md-4">
             <BlogCard
@@ -440,7 +443,32 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.eigth_row} bg-equity-blue`}>
+
+      <div
+        className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
+      >
+        <div className="mb-5">
+          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="Don't worry! Our FAQs section will help you learn about expense in detail."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          {faqData.map((item, index) => (
+            <FAQ key={index} question={item.question} answer={item.answer} />
+          ))}
+        </div>
+        <div className={styles.faq_bg}>
+          <Image src={faqBg} alt="background image" />x
+        </div>
+      </div>
+
+      <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
             title="Have Questions about Expense Management?"

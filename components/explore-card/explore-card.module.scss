@@ -1,0 +1,12 @@
+.arrow_icon {
+  cursor: pointer;
+  img {
+    transition: width 0.4s ease-in-out;
+  }
+}
+
+.arrow_icon:hover {
+  img {
+    width: 85px;
+  }
+}

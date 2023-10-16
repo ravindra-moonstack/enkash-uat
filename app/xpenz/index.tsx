@@ -19,6 +19,7 @@ export { default as cardTwo } from "./img/card-two-image.png";
 export { default as cardThree } from "./img/card-three-image.png";
 export { default as gradientBg } from "./img/gradient-bg.png";
 export { default as cardBg } from "./img/card-bg.png";
+export { default as faqBg } from "./img/faq-bg.png";
 
 //Animations import
 export { default as heirarchyControlAnimation } from "./img/lottie/hierarchy.json";

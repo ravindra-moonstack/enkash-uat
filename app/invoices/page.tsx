@@ -147,7 +147,7 @@ const invoices = () => {
         </div>
 
         <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 ${styles.scroll_container}`}
+          className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}
         >
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard

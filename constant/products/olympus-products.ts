@@ -92,13 +92,13 @@ const olympusProducts = [
         imageSrcHovered: paymentLinksFilled,
         link: "/payment-links",
       },
-      {
-        name: "Bulk Collect",
-        description: "Keep track of all your vendor bills",
-        imageSrc: bulkCollect,
-        imageSrcHovered: bulkCollectFilled,
-        link: "/bulk-collect",
-      },
+      // {
+      //   name: "Bulk Collect",
+      //   description: "Keep track of all your vendor bills",
+      //   imageSrc: bulkCollect,
+      //   imageSrcHovered: bulkCollectFilled,
+      //   link: "/bulk-collect",
+      // },
       {
         name: "Quick Collect",
         description: "Automate timely bill payments",

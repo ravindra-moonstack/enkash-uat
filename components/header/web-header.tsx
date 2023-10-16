@@ -83,7 +83,7 @@ const WebHeader = () => {
               <li
                 ref={(el) => (itemRefs.current[index] = el)}
                 key={item.name}
-                className={`px-3 d-flex justify-content-center align-items-center cursor-pointer`}
+                className={`px-3 d-flex justify-content-center align-items-center cursor-pointer `}
                 onMouseEnter={() => {
                   const position =
                     itemRefs.current[index]?.getBoundingClientRect().left || 0;
@@ -98,10 +98,14 @@ const WebHeader = () => {
                   setItemWidth(width);
                   setHoveredIndex(index);
                   setIsHeaderBgWhite(true);
+
+                  if (index === 3) {
+                    setIsHeaderBgWhite(false);
+                  }
                 }}
               >
                 {item.name}
-                {index !== 2 && (
+                {index !== 3 && (
                   <>
                     <Image
                       src={getArrowImageSource(index)}
@@ -131,8 +135,8 @@ const WebHeader = () => {
 
       {hoveredIndex === 0 && <ProductModal onLinkClick={handleLinkClick} />}
       {hoveredIndex === 1 && <SolutionsModal />}
-      {hoveredIndex === 2 && <EmptyModal />}
-      {hoveredIndex === 3 && <ResourcesModal />}
+      {hoveredIndex === 2 && <ResourcesModal />}
+      {/* {hoveredIndex === 3 && <EmptyModal />} */}
     </header>
   );
 };

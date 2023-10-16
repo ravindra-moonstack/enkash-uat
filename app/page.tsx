@@ -1007,7 +1007,7 @@ const home = () => {
         className={`${styles.twelfth_row} row color-white bg-white row-padding`}
       >
         <div
-          className={`col-12 d-flex flex-md-row mt-3 ${styles.scroll_container}`}
+          className={`col-12 d-flex flex-md-row mt-3 scroll_container`}
         >
           <div className={styles.card}>
             <GetStartedCard

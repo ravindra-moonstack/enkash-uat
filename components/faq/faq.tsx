@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import styles from "./faq.module.scss";
-import arrow from "./arrow.svg";
 import Image from "next/image";
 import arrowDown from "./img/arrow-down.png";
 

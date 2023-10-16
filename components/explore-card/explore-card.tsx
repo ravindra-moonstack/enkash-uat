@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { greenArrow, blueArrow } from ".";
 import Heading from "../heading/heading";
+import styles from "./explore-card.module.scss";
 
 export interface CardProps {
   title: string;
@@ -28,7 +29,7 @@ const ExploreCard = ({ title, description, theme }: CardProps) => {
           weight="4"
         />
       </div>
-      <div className="d-flex align-items-center mt-2">
+      <div className={`${styles.arrow_icon} d-flex align-items-center mt-2`}>
         <Heading
           title="Explore Now"
           color={getPrimaryColor()}
@@ -36,7 +37,7 @@ const ExploreCard = ({ title, description, theme }: CardProps) => {
           weight="6"
         />
         <Image
-          className="m-2"
+          className={` m-2`}
           src={getArrowSrc()}
           alt="arrow icon"
           width={50}
