@@ -146,9 +146,7 @@ const bulkcollect = () => {
           />
         </div>
 
-        <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}
-        >
+        <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Improved Experience"
@@ -180,7 +178,7 @@ const bulkcollect = () => {
           </div>
         </div>
       </div>
-
+      {/* 
       <div className={`${styles.fourth_row} row`}>
         <HowDoesCarousel
           titleContent={
@@ -204,7 +202,7 @@ const bulkcollect = () => {
           mainTitle="How does Bulk Collect work?"
           carouselData={carouselData}
         />
-      </div>
+      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
