@@ -68,9 +68,15 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
         />
       </div>
       <div className={styles.content}>
-        <div className={`d-flex my-md-5 my-3 ${styles.progress_container}`}>
+        <div
+          className={`d-flex my-md-5 my-3 ${styles.progress_container}`}
+        >
           {(progressData || []).map((data, index) => (
-            <div key={index} className={styles.progress_items}>
+            <div
+              key={index}
+              className={styles.progress_items}
+              onClick={() => setSelectedItemIndex(index)}
+            >
               {data.item.split(" ").map((word, wordIndex) => (
                 <div key={wordIndex}>
                   <Heading
@@ -110,7 +116,6 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
             className={`img-fluid ${styles.arrow}`}
             src={blueArrowForward}
             alt="enkash steps"
-            onClick={handleArrowClick}
           />
           <div className={styles.new_way_container}>
             <Image

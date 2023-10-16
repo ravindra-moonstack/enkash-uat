@@ -55,6 +55,9 @@ export { default as leftCardGradient } from "./img/left-card-gradient.png";
 export { default as rightCardGradient } from "./img/right-card-gradient.png";
 export { default as laptopOne } from "./img/laptop-one.png";
 export { default as laptopTwo } from "./img/laptop-two.png";
+export { default as kotakLogo } from "./img/kotak-bank-logo.png";
+export { default as hdfcLogo } from "./img/hdfc-logo.png";
+export { default as masterCardLogo } from "./img/master-card-logo.png";
 
 //Animations import
 export { default as dashboardUiAutomateAnimation } from "./img/lottie/dashboard-automate.json";

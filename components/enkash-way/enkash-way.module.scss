@@ -17,6 +17,7 @@
 
 .progress_items {
   margin-right: 30px;
+  cursor: pointer;
   @include bp-md {
     margin-right: 0;
   }

@@ -67,6 +67,9 @@ import {
   expenseAnimation,
   laptopOne,
   laptopTwo,
+  kotakLogo,
+  hdfcLogo,
+  masterCardLogo,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
@@ -660,38 +663,16 @@ const home = () => {
         </div>
         <div className="col-12">
           <div
-            className={`${styles.bank_logo} row-padding-x-only mb-3 d-flex align-items-center`}
+            className={`${styles.bank_logo} row-padding-x-only mb-3 d-flex align-items-center justify-content-between`}
           >
-            <Image
-              src={axisBankLogo}
-              width={150}
-              className="me-5"
-              alt="axis bank logo"
-            />
-            <Image
-              width={150}
-              src={iciciBankLogo}
-              className="me-5"
-              alt="axis bank logo"
-            />
-            <Image
-              width={120}
-              src={rupayLogo}
-              className="me-5"
-              alt="axis bank logo"
-            />
-            <Image
-              width={150}
-              src={sbmLogo}
-              className="me-3"
-              alt="axis bank logo"
-            />
-            <Image
-              width={70}
-              src={visaLogo}
-              className="me-3"
-              alt="axis bank logo"
-            />
+            <Image src={axisBankLogo} width={150} alt="axis bank logo" />
+            <Image width={150} src={iciciBankLogo} alt="axis bank logo" />
+            <Image width={150} src={sbmLogo} alt="axis bank logo" />
+            <Image width={70} src={visaLogo} alt="axis bank logo" />
+            <Image width={130} src={kotakLogo} alt="axis bank logo" />
+            <Image width={70} src={hdfcLogo} alt="axis bank logo" />
+            <Image width={120} src={rupayLogo} alt="axis bank logo" />
+            <Image width={100} src={masterCardLogo} alt="axis bank logo" />
           </div>
         </div>
       </div>
