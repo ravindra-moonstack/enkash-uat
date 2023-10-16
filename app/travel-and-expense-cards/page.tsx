@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { faqBg, heroImage, whiteArrow } from ".";
+import { carouselBg, faqBg, heroImage, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -15,6 +15,7 @@ import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
+import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
 const travelAndExpenseCards = () => {
   return (
@@ -27,7 +28,7 @@ const travelAndExpenseCards = () => {
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column">
             <Heading title="Freedom " color="rainy-blue" size="h4" weight="7" />
-            <Heading title="| Travel and Expense Cards" size="h4" weight="7" />
+            <Heading title="| Travel and Expense Cards" size="h4" weight="4" />
           </div>
 
           <div className="">
@@ -133,9 +134,7 @@ const travelAndExpenseCards = () => {
           />
         </div>
 
-        <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}
-        >
+        <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Spend Smarter"
@@ -190,8 +189,13 @@ const travelAndExpenseCards = () => {
             </>
           }
           mainTitle="How do Travel and Expense Cards work?"
+          carouselBg={carouselBg}
           carouselData={carouselData}
         />
+      </div>
+
+      <div className="row bg-white row-padding text-center">
+        <BlogWrapper title="Travel Expense Insights" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}

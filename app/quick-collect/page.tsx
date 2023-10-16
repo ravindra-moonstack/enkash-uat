@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { faqBg, heroImage, whiteArrow } from ".";
+import { faqBg, heroImage, whiteArrow ,carouselBg} from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -15,6 +15,7 @@ import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
+import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
 const invoices = () => {
   return (
@@ -32,7 +33,7 @@ const invoices = () => {
               size="h4"
               weight="7"
             />
-            <Heading title="| Quick Collect" size="h4" weight="7" />
+            <Heading title="| Quick Collect" size="h4" weight="4" />
           </div>
 
           <div className="">
@@ -210,7 +211,11 @@ const invoices = () => {
           }
           mainTitle="How does Quick Collect work?"
           carouselData={carouselData}
+          carouselBg={carouselBg}
         />
+      </div>
+      <div className="row bg-white row-padding text-center">
+        <BlogWrapper title="Quick Collect Insights" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}

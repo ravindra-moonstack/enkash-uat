@@ -19,9 +19,6 @@ import {
   whiteArrow,
   xpenzDashboard,
   greenArrow,
-  cardOne,
-  cardTwo,
-  cardThree,
   gradientBg,
   heirarchyControlAnimation,
   budgetAndAdvanceAnimation,
@@ -35,7 +32,7 @@ import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import BlogCard from "@/components/blog-card/blog-card";
+import BlogCard from "@/components/blog/blog-card/blog-card";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
@@ -43,6 +40,7 @@ import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import Lottie from "lottie-react";
 import faqData from "./faqData";
 import FAQ from "@/components/faq/faq";
+import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
 const xpenz = () => {
   return (
@@ -355,7 +353,7 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div className="row eigth_row bg-white row-padding">
+      <div className="row bg-white row-padding">
         <div
           className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center align-items-center scroll_container`}
         >
@@ -387,61 +385,8 @@ const xpenz = () => {
           </div>
         </div>
       </div>
-      <div className="row eigth_row bg-white row-padding text-center">
-        <div className="col-12 d-flex justify-content-center">
-          <Heading
-            title="Expense Management Insights"
-            size="h1"
-            color="black"
-            weight="6"
-          />
-        </div>
-        <div className="col-12 d-flex justify-content-center mt-4">
-          <Heading
-            title="Blogs to related topics"
-            size="h4"
-            color="equity-blue"
-          />
-        </div>
-        <div className="col-12 d-flex justify-content-center mt-4">
-          <MenuButton title="See all" theme="light" />
-        </div>
-
-        <div
-          className={`col-12 d-flex justify-content-md-evenly mt-5 pb-3 scroll_container`}
-        >
-          <div className="me-4 ms-md-4">
-            <BlogCard
-              title="Lorem ipsum dolor sit amet, consectetur."
-              date="Dec 21, 2023"
-              description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
-          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna "
-              blogImage={cardOne}
-              blogImageAlt="office image"
-            />
-          </div>
-          <div className={`me-4`}>
-            <BlogCard
-              title="Lorem ipsum dolor sit amet, consectetur."
-              date="Dec 21, 2023"
-              description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
-          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna "
-              blogImage={cardTwo}
-              blogImageAlt="office image"
-            />
-          </div>
-
-          <div className="me-4">
-            <BlogCard
-              title="Lorem ipsum dolor sit amet, consectetur."
-              date="Dec 21, 2023"
-              description="Lorem ipsum dolor sit amet consectetur. Magna malesuada 
-          imperdiet fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi. Fames et diam quis urna "
-              blogImage={cardThree}
-              blogImageAlt="office image"
-            />
-          </div>
-        </div>
+      <div className="row bg-white row-padding text-center">
+        <BlogWrapper title="Expense Management Insights" />
       </div>
 
       <div

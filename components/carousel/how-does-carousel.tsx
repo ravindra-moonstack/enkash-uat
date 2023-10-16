@@ -9,6 +9,7 @@ import { blueArrowBackward, blueArrowForward, laptop } from ".";
 interface CarouselData {
   titleContent: any;
   mainTitle: string;
+  carouselBg: any;
   carouselData: any;
 }
 
@@ -16,6 +17,7 @@ const HowDoesCarousel = ({
   titleContent,
   mainTitle,
   carouselData,
+  carouselBg,
 }: CarouselData) => {
   const [count, setCount] = useState(1);
 
@@ -32,7 +34,15 @@ const HowDoesCarousel = ({
   };
 
   return (
-    <div className={styles.home_container}>
+    <div
+      className={styles.home_container}
+      style={{
+        backgroundImage: `url(${carouselBg.src})`,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
+    >
       <div className={styles.title}>{titleContent}</div>
       <div className={styles.container}>
         <div className={`mt-5 d-flex flex-column ${styles.left_row}`}>

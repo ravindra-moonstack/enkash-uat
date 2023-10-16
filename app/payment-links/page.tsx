@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { faqBg, heroImage, whiteArrow } from ".";
+import { carasoulBg, faqBg, heroImage, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -15,11 +15,12 @@ import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
+import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
 const paymentlinks = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-       <div className="mobile-header">
+      <div className="mobile-header">
         <MobileHeader />
       </div>
       <div className="desktop-header">{<WebHeader />}</div>
@@ -32,7 +33,7 @@ const paymentlinks = () => {
               size="h4"
               weight="7"
             />
-            <Heading title="| Travel and Expense Cards" size="h4" weight="7" />
+            <Heading title="| Travel and Expense Cards" size="h4" weight="4" />
           </div>
 
           <div className="">
@@ -145,9 +146,7 @@ const paymentlinks = () => {
           />
         </div>
 
-        <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}
-        >
+        <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Quicker Collections"
@@ -202,7 +201,11 @@ const paymentlinks = () => {
           }
           mainTitle="How do Payment Links work?"
           carouselData={carouselData}
+          carouselBg={carasoulBg}
         />
+      </div>
+      <div className="row bg-white row-padding text-center">
+        <BlogWrapper title="Payment Links Insights" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
