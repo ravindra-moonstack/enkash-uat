@@ -215,6 +215,9 @@ const reimbursement = () => {
           carouselBg={carouselBg}
         />
       </div>
+      <div className="row bg-white row-padding text-center">
+        <BlogWrapper title="Reimbursement Insights" />
+      </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -229,9 +232,6 @@ const reimbursement = () => {
           />
         </div>
 
-        <div className="row bg-white row-padding text-center">
-          <BlogWrapper title="Reimbursement Insights" />
-        </div>
         <div>
           {faqData.map((item, index) => (
             <FAQ key={index} question={item.question} answer={item.answer} />
