@@ -1,17 +1,12 @@
 @import "../../styles/variables";
 @import "../../styles/mixin";
 
-.home_container {
-  @include bp-md {
-    padding-top: 100px;
-  }
-}
-
 .first_row {
   background-image: url(./img/bg-image.png);
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
+
   .dashboard_img {
     max-width: 100%;
     height: auto;
