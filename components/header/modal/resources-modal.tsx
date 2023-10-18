@@ -1,14 +1,40 @@
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import resources from "../../../constant/resources";
-import { blueforwardArrow, officeDiscussionPic, readMore } from "..";
+import { blueforwardArrow, officeDiscussionPic } from "..";
 
 const ResourcesModal = () => {
+  const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
+    null | number
+  >(null);
+  const refs = resources.map(() => useRef<HTMLDivElement>(null)); // Array of refs, one for each resource
   return (
     <div className={`row mt-5 ${styles.container}`}>
-      <div className={`${styles.resources_grid_row} col-7 px-5 pb-5 mb-2`}>
-        {resources.map((product: any) => (
-          <div key={product.name} className={styles.product_row}>
+      <div
+        className={`${styles.resources_grid_row} col-7 px-5 pb-5 mb-2 position-relative`}
+      >
+        {hoveredResourceIndex !== null &&
+          refs[hoveredResourceIndex].current && (
+            <div
+              className={styles.background_slide}
+              style={{
+                transform: `
+              translateY(${refs[hoveredResourceIndex].current!.offsetTop}px) 
+              translateX(${refs[hoveredResourceIndex].current!.offsetLeft}px)
+            `,
+                height: `${refs[hoveredResourceIndex].current!.offsetHeight}px`,
+                width: `${refs[hoveredResourceIndex].current!.offsetWidth}px`,
+              }}
+            ></div>
+          )}
+        {resources.map((product: any, index: any) => (
+          <div
+            key={product.name}
+            className={styles.product_row}
+            onMouseEnter={() => setHoveredResourceIndex(index)}
+            ref={refs[index]}
+          >
             <div className={styles.product_name}>{product.name}</div>
             <div className={styles.product_description}>
               {product.description}

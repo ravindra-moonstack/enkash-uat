@@ -1,55 +1,47 @@
 import Image from "next/image";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import solutions from "../../../constant/solutions";
 import { productModalEmptyStateImg } from "..";
 
 const SolutionsModal = () => {
-  const [hoveredProductIndex, setHoveredProductIndex] = useState<null | number>(
-    null
-  );
-  const [rowHeight, setRowHeight] = useState(0);
-  const productRowRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (productRowRef.current) {
-      setRowHeight(productRowRef.current.offsetHeight);
-    }
-  }, [productRowRef]);
+  const [hoveredSolutionIndex, setHoveredSolutionIndex] = useState<
+    null | number
+  >(null);
+  const refs = solutions.map(() => useRef<HTMLDivElement>(null));
 
   return (
     <div className={`row mt-5 ${styles.container}`}>
       <div className="col-4 d-flex flex-column align-items-right px-5 pb-5 mb-2 position-relative">
-        {hoveredProductIndex !== null && (
+        {hoveredSolutionIndex !== null &&
+          refs[hoveredSolutionIndex].current && (
+            <div
+              className={styles.background_slide}
+              style={{
+                transform: `
+        translateY(${refs[hoveredSolutionIndex].current!.offsetTop}px) 
+        translateX(${refs[hoveredSolutionIndex].current!.offsetLeft}px)
+      `,
+                height: `${refs[hoveredSolutionIndex].current!.offsetHeight}px`,
+                width: `${refs[hoveredSolutionIndex].current!.offsetWidth}px`,
+              }}
+            ></div>
+          )}
+        {solutions.map((solution: any, index: any) => (
           <div
-            className={styles.background_slide}
-            style={{
-              transform: `translateY(${hoveredProductIndex * rowHeight}px)`,
-              height: `${rowHeight}px`,
-            }}
-          ></div>
-        )}
-        {solutions.map((product: any, index: any) => (
-          <div
-            key={product.name}
+            key={solution.name}
             className={styles.product_row}
-            onMouseEnter={() => {
-              if (hoveredProductIndex === null) {
-                setHoveredProductIndex(0);
-              } else {
-                setHoveredProductIndex(index);
-              }
-            }}
-            ref={index === 0 ? productRowRef : null}
+            onMouseEnter={() => setHoveredSolutionIndex(index)}
+            ref={refs[index]}
           >
-            <div className={styles.product_name}>{product.name}</div>
+            <div className={styles.product_name}>{solution.name}</div>
             <div className={styles.product_description}>
-              {product.description}
+              {solution.description}
             </div>
           </div>
         ))}
       </div>
-      {hoveredProductIndex === null && (
+      {hoveredSolutionIndex === null && (
         <div className={`col-8 d-flex`}>
           <Image
             src={productModalEmptyStateImg}

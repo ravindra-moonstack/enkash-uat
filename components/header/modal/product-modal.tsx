@@ -1,7 +1,5 @@
-"use client";
-
 import Image from "next/image";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import motherProducts from "../../../constant/products/mother-products";
 import olympusProducts from "../../../constant/products/olympus-products";
@@ -16,43 +14,31 @@ const ProductModal = ({ onLinkClick }: any) => {
   const [hoveredProductIndex, setHoveredProductIndex] = useState<null | number>(
     null
   );
-  const [rowHeight, setRowHeight] = useState(0);
-  const productRowRef = useRef<HTMLDivElement | null>(null);
-  const [prevHoveredProductIndex, setPrevHoveredProductIndex] = useState<
-    null | number
-  >(null);
-
-  useEffect(() => {
-    if (productRowRef.current) {
-      setRowHeight(productRowRef.current.offsetHeight);
-    }
-  }, [productRowRef]);
-
+  const refs = motherProducts.map(() => useRef<HTMLDivElement>(null));
   return (
     <div className={`row mt-5 ${styles.container}`}>
       <div className="col-4 d-flex flex-column align-items-right px-5 pb-5 mb-2 position-relative">
-        {hoveredProductIndex !== null && (
-          <div
-            className={styles.background_slide}
-            style={{
-              transform: `translateY(${hoveredProductIndex * rowHeight}px)`,
-              height: `${rowHeight}px`,
-            }}
-          ></div>
-        )}
+        {hoveredProductIndex !== null &&
+          refs[hoveredProductIndex] &&
+          refs[hoveredProductIndex].current && (
+            <div
+              className={styles.background_slide}
+              style={{
+                transform: `
+        translateY(${refs[hoveredProductIndex].current!.offsetTop}px) 
+        translateX(${refs[hoveredProductIndex].current!.offsetLeft}px)
+      `,
+                height: `${refs[hoveredProductIndex].current!.offsetHeight}px`,
+                width: `${refs[hoveredProductIndex].current!.offsetWidth}px`,
+              }}
+            ></div>
+          )}
         {motherProducts.map((product: any, index: any) => (
           <div
             key={product.name}
             className={styles.product_row}
-            onMouseEnter={() => {
-              setPrevHoveredProductIndex(hoveredProductIndex);
-              if (hoveredProductIndex === null) {
-                setHoveredProductIndex(0);
-              } else {
-                setHoveredProductIndex(index);
-              }
-            }}
-            ref={index === 0 ? productRowRef : null}
+            onMouseEnter={() => setHoveredProductIndex(index)}
+            ref={refs[index]}
           >
             <Link href={product.link}>
               <div className={styles.product_name}>{product.name}</div>
@@ -80,7 +66,6 @@ const ProductModal = ({ onLinkClick }: any) => {
           subProducts={olympusProducts}
           index={0}
           hoveredProductIndex={hoveredProductIndex}
-          prevHoveredProductIndex={prevHoveredProductIndex}
           onLinkClick={onLinkClick}
         />
       )}
@@ -89,7 +74,6 @@ const ProductModal = ({ onLinkClick }: any) => {
           subProducts={freedomProducts}
           index={1}
           hoveredProductIndex={hoveredProductIndex}
-          prevHoveredProductIndex={prevHoveredProductIndex}
           onLinkClick={onLinkClick}
         />
       )}
@@ -98,7 +82,6 @@ const ProductModal = ({ onLinkClick }: any) => {
           subProducts={xpenzProducts}
           index={2}
           hoveredProductIndex={hoveredProductIndex}
-          prevHoveredProductIndex={prevHoveredProductIndex}
           onLinkClick={onLinkClick}
         />
       )}
@@ -108,7 +91,6 @@ const ProductModal = ({ onLinkClick }: any) => {
           subProducts={loyaltyLoungeProducts}
           index={3}
           hoveredProductIndex={hoveredProductIndex}
-          prevHoveredProductIndex={prevHoveredProductIndex}
           onLinkClick={onLinkClick}
         />
       )}

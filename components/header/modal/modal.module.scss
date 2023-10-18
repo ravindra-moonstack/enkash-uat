@@ -17,13 +17,13 @@
   top: 0;
   left: 0;
   right: 0;
-  margin-left: 30px;
-  margin-right: 30px;
   background-color: $color-light-shade-grey;
   border-radius: inherit;
   z-index: 0;
   border-radius: 10px;
   transition: transform 0.3s;
+  transition: transform 0.3s, width 0.3s;
+  padding: 20px;
 }
 
 .product_name {
