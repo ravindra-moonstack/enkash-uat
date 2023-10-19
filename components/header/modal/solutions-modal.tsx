@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import solutions from "../../../constant/solutions";
-import { productModalEmptyStateImg } from "..";
+import { productModalEmptyStateImg, solutionModalEmptyStateImg } from "..";
 
 const SolutionsModal = () => {
   const [hoveredSolutionIndex, setHoveredSolutionIndex] = useState<
@@ -41,17 +41,16 @@ const SolutionsModal = () => {
           </div>
         ))}
       </div>
-      {hoveredSolutionIndex === null && (
-        <div className={`col-8 d-flex`}>
-          <Image
-            src={productModalEmptyStateImg}
-            alt="Enkash product modal image"
-            className="position-absolute end-0 bottom-0"
-            height={450}
-            width={1200}
-          />
-        </div>
-      )}
+
+      <div className={`col-8 d-flex`}>
+        <Image
+          src={solutionModalEmptyStateImg}
+          alt="Enkash product modal image"
+          className="position-absolute end-0 bottom-0"
+          height={450}
+          width={1200}
+        />
+      </div>
     </div>
   );
 };

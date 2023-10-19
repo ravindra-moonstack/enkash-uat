@@ -7,6 +7,7 @@ export { default as footerArrow } from "./img/footer-arrow.png";
 export { default as blueforwardArrow } from "./img/blue-forward-arrow.png";
 export { default as readMore } from "./img/read-more.png";
 export { default as productModalEmptyStateImg } from "./img/product-empty-state-img.png";
+export { default as solutionModalEmptyStateImg } from "./img/solution-empty-image.png";
 export { default as officeDiscussionPic } from "./img/office-discussion-pic.png";
 export { default as hamnburgerIcon } from "./img/hambergermenu.png";
 export { default as crossMenu } from "./img/cross-menu.png";
