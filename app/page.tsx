@@ -152,16 +152,16 @@ const home = () => {
     largeScreen = window.matchMedia("(min-width:786px)");
 
     if (largeScreen.matches) {
-      posTopRainbowOneImg = 180;
-      posTopRainbowTwoImg = 290;
-      posTopRainbowThreeImg = 400;
+      posTopRainbowOneImg = 136;
+      posTopRainbowTwoImg = 236;
+      posTopRainbowThreeImg = 346;
       maxScrollForFullAdjustment = 400;
       maxAdjustment = 45;
     } else {
-      posTopRainbowOneImg = 130;
-      posTopRainbowTwoImg = 180;
-      posTopRainbowThreeImg = 230;
-      maxScrollForFullAdjustment = 300;
+      posTopRainbowOneImg = 120;
+      posTopRainbowTwoImg = 170;
+      posTopRainbowThreeImg = 215;
+      maxScrollForFullAdjustment = 250;
       maxAdjustment = 15;
     }
 
@@ -1006,9 +1006,7 @@ const home = () => {
       <div
         className={`${styles.twelfth_row} row color-white bg-white row-padding`}
       >
-        <div
-          className={`col-12 d-flex flex-md-row mt-3 scroll_container`}
-        >
+        <div className={`col-12 d-flex flex-md-row mt-3 scroll_container`}>
           <div className={styles.card}>
             <GetStartedCard
               title1="Optimize Spending;"
