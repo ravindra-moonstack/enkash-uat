@@ -295,6 +295,7 @@
   .image_container {
     display: flex;
     position: absolute;
+    z-index: 0;
     top: 60px;
     z-index: 4;
     width: 250px;
@@ -303,8 +304,14 @@
     @include bp-md {
       left: auto;
       justify-content: center;
-      width: 790px;
+      width: 1050px;
       top: 320px;
+    }
+    .logo{
+      z-index: 1;
+      position: absolute;
+      left: 130px;
+      top: 20px;
     }
   }
 
@@ -414,6 +421,14 @@
     @include bp-md {
       padding-top: 100px;
       margin-bottom: 250px;
+    }
+
+    .lottie_container{
+      position: absolute;
+      right: 0;
+      top:100px;
+      width: 580px;
+
     }
   }
 
@@ -543,6 +558,15 @@
         margin-top: -120px;
         width: 500px;
       }
+    }
+  }
+}
+
+.tenth_row{
+  .lottie_container{
+    width: 200px;
+    @include bp-md{
+      width: 300px;
     }
   }
 }

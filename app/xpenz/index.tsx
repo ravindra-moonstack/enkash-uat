@@ -19,8 +19,12 @@ export { default as cardBg } from "./img/card-bg.png";
 export { default as faqBg } from "./img/faq-bg.png";
 
 //Animations import
-export { default as heirarchyControlAnimation } from "./img/lottie/hierarchy.json";
-export { default as budgetAndAdvanceAnimation } from "./img/lottie/budget-and-advances.json";
-export { default as reimbursementAnimation } from "./img/lottie/reimbursement.json";
+export { default as heirarchyControlAnimation } from "./img/lottie/hierarchy-v2.json";
+export { default as budgetAndAdvanceAnimation } from "./img/lottie/budget-and-advances-v2.json";
+export { default as reimbursementAnimation } from "./img/lottie/reimbursement-v2.json";
 export { default as scanAndDropAnimation } from "./img/lottie/scan-and-drop.json";
-export { default as policyAnimation } from "./img/lottie/policy.json";
+export { default as policyAnimation } from "./img/lottie/policy-v2.json";
+export { default as expense } from "./img/lottie/expense.json";
+
+
+

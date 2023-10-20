@@ -60,13 +60,24 @@ export { default as hdfcLogo } from "./img/hdfc-logo.png";
 export { default as masterCardLogo } from "./img/master-card-logo.png";
 
 //Animations import
-export { default as dashboardUiAutomateAnimation } from "./img/lottie/dashboard-automate.json";
-export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard-manage.json";
-export { default as dashboardUiTrackAnimation } from "./img/lottie/dashboard-track-four.json";
-export { default as dashboardUiOptimizeAnimation } from "./img/lottie/dashboard-optimize.json";
+export { default as dashboardUiAutomateAnimation } from "./img/lottie/automate.json";
+export { default as dashboardUiManageAnimation } from "./img/lottie/automate.json";
+export { default as dashboardUiTrackAnimation } from "./img/lottie/automate.json";
+export { default as dashboardUiOptimizeAnimation } from "./img/lottie/optimize.json";
+
 export { default as expenseManagementAnimation } from "./img/lottie/expense-management.json";
-export { default as payablesAnimation } from "./img/lottie/payables.json";
+
+export { default as payablesAnimation } from "./img/lottie/payables-v2.json";
 export { default as recieveableAnimation } from "./img/lottie/recievables.json";
+
 export { default as diyCardAnimation } from "./img/lottie/diy.json";
-export { default as dashboardAnimation } from "./img/lottie/dashboard-ui.json";
-export { default as expenseAnimation } from "./img/lottie/expense.json";
+
+export { default as phoneAnimation } from "./img/lottie/phone.json";
+export { default as group } from "./img/lottie/group.json";
+
+
+
+
+
+
+

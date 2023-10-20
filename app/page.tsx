@@ -63,19 +63,20 @@ import {
   dashboardUiManageAnimation,
   dashboardUiTrackAnimation,
   dashboardUiOptimizeAnimation,
-  dashboardAnimation,
-  expenseAnimation,
   laptopOne,
   laptopTwo,
   kotakLogo,
   hdfcLogo,
   masterCardLogo,
+  phoneAnimation,
+  group,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import { laptop } from "@/components/carousel";
+import { enkashWhiteLogo } from "@/components/header";
 
 const loginUrl = "https://home.enkash.com/login";
 
@@ -469,12 +470,15 @@ const home = () => {
             </div>
           </div>
         </div>
-        <Image
+        {/* <Image
           src={laptopTwo}
           alt="laptop image"
           className={styles.laptop_background_image}
-        />
+        /> */}
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
+          {/* <div className={styles.logo}>
+            <Image src={enkashWhiteLogo}  alt="logo" width={50}/>
+          </div> */}
           {activeAnimation === "manage" && (
             <Lottie animationData={dashboardUiManageAnimation} loop={true} />
           )}
@@ -632,11 +636,12 @@ const home = () => {
         <div
           className={`col-md-6 col-12 d-flex position-relative  ${styles.img_container}`}
         >
-          <Image
-            src={desktopIphone}
-            alt="enkash dashboard image"
-            className={styles.desktop_img}
-          />
+          <div className={styles.lottie_container}>
+          <Lottie animationData={group}
+          loop={true}/>
+          </div>
+
+
         </div>
         <div className="col-md-6">
           <div className={`row-padding-x-only mb-3 mt-5`}>
@@ -824,6 +829,11 @@ const home = () => {
               alt="payables image"
               className={`img-fluid ${styles.overlay_image}`}
             />
+             {/* <Lottie
+              className={styles.overlay_image}
+              animationData={corporateCardsImg}
+              loop={true}
+            /> */}
             <Image
               src={rightCardGradient}
               alt="gradients"
@@ -919,13 +929,15 @@ const home = () => {
             style={{
               y: loungeTranslateY,
             }}
+            className={styles.lottie_container}
           >
-            <Image
+            {/* <Image
               src={loyaltyLoungeMobileImg}
               alt="loyalty lounge image"
               width={300}
               className={`img-fluid`}
-            />
+            /> */}
+            <Lottie animationData={phoneAnimation} loop={true} />
           </motion.div>
         </div>
       </div>
@@ -1056,6 +1068,8 @@ const home = () => {
             className="img-fluid"
             height={450}
           />
+          {/* <Lottie animationData={integrationsAnimation}
+          loop={true}/> */}
 
           {/* <Lottie animationData={expenseAnimation} loop={true} /> */}
         </div>

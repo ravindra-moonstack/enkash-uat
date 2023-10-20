@@ -27,6 +27,7 @@ import {
   policyAnimation,
   cardBg,
   faqBg,
+  expense,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -98,11 +99,12 @@ const xpenz = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <Image
+          {/* <Image
             src={xpenzDashboard}
             alt="reimbursement dashboard"
             className={styles.dashboard_img}
-          />
+          /> */}
+          <Lottie animationData={expense} loop={true}/>
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
@@ -192,7 +194,7 @@ const xpenz = () => {
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4">
+        <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           {/* <Image
             src={policyApproval}
             alt="scan and drop receipt image"
