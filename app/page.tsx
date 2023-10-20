@@ -70,6 +70,7 @@ import {
   masterCardLogo,
   phoneAnimation,
   group,
+  integrationsAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
@@ -726,9 +727,11 @@ const home = () => {
           alt="gradient image"
         />
         <div
-          className={`col-md-6 col-12 d-flex mb-5 ${styles.animation_data_padding}`}
+          className={`col-md-6 col-12 d-flex mb-5`}
         >
+          <div className={styles.lottie_container}>
           <Lottie animationData={expenseManagementAnimation} loop={true} />
+          </div>
         </div>
         <div className="col-md-6 col-12 mb-5">
           <ExploreCard
@@ -1062,15 +1065,18 @@ const home = () => {
         <div
           className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
         >
-          <Image
+          {/* <Image
             src={mobileIntegration}
             alt="mobile integrations"
             className="img-fluid"
             height={450}
-          />
-          {/* <Lottie animationData={integrationsAnimation}
-          loop={true}/> */}
+          /> */}
+          <div className={styles.lottie_container}>
+          <Lottie animationData={integrationsAnimation}
+          loop={true}/>
 
+          </div>
+        
           {/* <Lottie animationData={expenseAnimation} loop={true} /> */}
         </div>
         <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">

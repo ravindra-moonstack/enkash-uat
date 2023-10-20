@@ -64,16 +64,14 @@ export { default as dashboardUiAutomateAnimation } from "./img/lottie/automate.j
 export { default as dashboardUiManageAnimation } from "./img/lottie/manage.json";
 export { default as dashboardUiTrackAnimation } from "./img/lottie/track.json";
 export { default as dashboardUiOptimizeAnimation } from "./img/lottie/optimize.json";
-
 export { default as expenseManagementAnimation } from "./img/lottie/expense-management.json";
-
 export { default as payablesAnimation } from "./img/lottie/payables-v2.json";
 export { default as recieveableAnimation } from "./img/lottie/recievables.json";
-
 export { default as diyCardAnimation } from "./img/lottie/diy.json";
-
 export { default as phoneAnimation } from "./img/lottie/phone.json";
 export { default as group } from "./img/lottie/group.json";
+export { default as integrationsAnimation } from "./img/lottie/integration.json";
+
 
 
 

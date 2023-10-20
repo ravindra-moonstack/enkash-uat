@@ -7,6 +7,17 @@
   background-position: right bottom;
   background-size: contain;
 
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  @include bp-md {
+    padding-left: 70px;
+    padding-right: 30px;
+    padding-top: 110px;
+    padding-bottom: 80px;
+  }
+
   .dashboard_img {
     max-width: 100%;
     height: auto;
@@ -103,6 +114,16 @@
     padding-right: 90px;
     padding-top: 110px;
     padding-bottom: 110px;
+  }
+
+  .lottie_container{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .lottie_second_container{
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 }
 

@@ -50,7 +50,7 @@ const xpenz = () => {
         <MobileHeader />
       </div>
       <div className="desktop-header">{<WebHeader />}</div>
-      <div className={`${styles.first_row} row color-white row-padding`}>
+      <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
             <Heading title="X" color="rainy-blue" size="h1" weight="7" />
@@ -105,6 +105,7 @@ const xpenz = () => {
             className={styles.dashboard_img}
           /> */}
           <Lottie animationData={expense} loop={true}/>
+         
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
@@ -177,7 +178,9 @@ const xpenz = () => {
             alt="policy and approval flows image"
             className="img-fluid"
           /> */}
+          <div className={styles.lottie_container}>
           <Lottie animationData={policyAnimation} loop={true} />
+             </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
@@ -200,7 +203,9 @@ const xpenz = () => {
             alt="scan and drop receipt image"
             className="img-fluid"
           /> */}
+          <div className={styles.lottie_second_container}>
           <Lottie animationData={scanAndDropAnimation} loop={true} />
+          </div>
         </div>
       </div>
 

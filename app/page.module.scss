@@ -12,9 +12,12 @@
 }
 
 .animation_data_padding {
-  padding: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   @include bp-md {
-    padding: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+
   }
 }
 
@@ -464,6 +467,11 @@
       left: 0;
     }
   }
+  .lottie_container{
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
 }
 
 .seventh_row {
@@ -635,6 +643,14 @@
       #1c5af4 0%,
       rgba(255, 255, 255, 0) 100%
     );
+    .lottie_container{
+      width: 350px;
+      @include bp-md{
+        width: 550px;
+        margin-top: -40px;
+        padding-right: 40px;
+      }
+    }
   }
 }
 
