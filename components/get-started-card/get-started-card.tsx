@@ -25,7 +25,9 @@ const GetStartedCard = ({
       <div className="my-3">
         <Heading title={description} color="white" size="h6" weight="4" />
       </div>
-      <div className="d-flex align-items-center mt-5">
+      <div
+        className={`d-flex align-items-center mt-5 ${styles.action_container}`}
+      >
         <div className={styles.underline}>
           <h1
             className={`${styles.get_started_text} ${

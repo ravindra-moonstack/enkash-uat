@@ -31,19 +31,36 @@
 }
 
 .get_started_text {
-    font-size: 14px;
-    line-height: 13px;
-    font-weight: 400;
-    margin-bottom: 0;
-    line-height: normal;
-    @include bp-md {
-      font-size: 18px;
-    }
+  font-size: 14px;
+  line-height: 13px;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: normal;
+  @include bp-md {
+    font-size: 18px;
+  }
 }
 
 .underline {
   h1 {
     text-decoration: underline;
     text-underline-offset: 5px;
+  }
+}
+
+.action_container {
+  img {
+    cursor: pointer;
+    transition: width 0.3s ease-in-out;
+  }
+
+  img:hover {
+    width: 65px;
+  }
+}
+
+.action_container:hover {
+  img {
+    width: 65px;
   }
 }
