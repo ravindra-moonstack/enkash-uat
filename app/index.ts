@@ -58,6 +58,8 @@ export { default as laptopTwo } from "./img/laptop-two.png";
 export { default as kotakLogo } from "./img/kotak-bank-logo.png";
 export { default as hdfcLogo } from "./img/hdfc-logo.png";
 export { default as masterCardLogo } from "./img/master-card-logo.png";
+export { default as greenBg } from "./img/green-gradient-bg.png";
+
 
 //Animations import
 export { default as dashboardUiAutomateAnimation } from "./img/lottie/automate.json";

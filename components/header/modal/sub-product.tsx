@@ -33,7 +33,6 @@ const SubProduct = (props: any) => {
     props.onLinkClick && props.onLinkClick();
   };
 
-
   return (
     <div className={`col-8 d-flex mb-5 ${styles.container}`}>
       <div className={styles.box_shadow_left}></div>
@@ -72,14 +71,28 @@ const SubProduct = (props: any) => {
                 >
                   <div>
                     <Image
-                      src={
-                        hoverIconImage === index
-                          ? product.imageSrcHovered
-                          : product.imageSrc
-                      }
+                      src={product.imageSrc}
                       alt={product.name}
                       width={50}
                       height={50}
+                      className={
+                        hoverIconImage === index
+                          ? styles.image_hidden
+                          : styles.default_image_visible
+                      }
+                    />
+
+                    {/* Hover Image */}
+                    <Image
+                      src={product.imageSrcHovered}
+                      alt={`${product.name} hovered`}
+                      width={50}
+                      height={50}
+                      className={
+                        hoverIconImage === index
+                          ? styles.color_image_visible
+                          : styles.image_hidden
+                      }
                     />
                   </div>
                   <div className="d-flex flex-column ms-4">

@@ -48,11 +48,8 @@ const WebHeader = () => {
 
   return (
     <header
-      className={`w-full absolute z-10 d-flex flex-column ${styles.header} ${
-        isHeaderBgWhite
-          ? "bg-white color-indi-volt"
-          : "bg-indi-volt color-white"
-      }`}
+      className={`w-full absolute z-10 d-flex flex-column ${styles.header}
+       ${isHeaderBgWhite ? styles.bg_white : styles.bg_blue}`}
       onMouseLeave={() => {
         setHoveredIndex(null);
         setIsHeaderBgWhite(false);

@@ -71,6 +71,7 @@ import {
   phoneAnimation,
   group,
   integrationsAnimation,
+  greenBg,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
@@ -638,11 +639,13 @@ const home = () => {
           className={`col-md-6 col-12 d-flex position-relative  ${styles.img_container}`}
         >
           <div className={styles.lottie_container}>
-          <Lottie animationData={group}
-          loop={true}/>
+            <Lottie animationData={group} loop={true} />
           </div>
-
-
+          <Image
+            className={styles.green_bg}
+            src={greenBg}
+            alt="background image"
+          />
         </div>
         <div className="col-md-6">
           <div className={`row-padding-x-only mb-3 mt-5`}>
@@ -686,11 +689,6 @@ const home = () => {
         <div
           className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1 ${styles.animation_data_padding}`}
         >
-          {/* <Image
-            src={payablesImage}
-            alt="payables image"
-            className="img-fluid"
-          /> */}
           <Lottie animationData={payablesAnimation} loop={true} />
         </div>
         <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
@@ -726,11 +724,9 @@ const home = () => {
           src={leftBlueGradient}
           alt="gradient image"
         />
-        <div
-          className={`col-md-6 col-12 d-flex mb-5`}
-        >
+        <div className={`col-md-6 col-12 d-flex mb-5`}>
           <div className={styles.lottie_container}>
-          <Lottie animationData={expenseManagementAnimation} loop={true} />
+            <Lottie animationData={expenseManagementAnimation} loop={true} />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-5">
@@ -832,7 +828,7 @@ const home = () => {
               alt="payables image"
               className={`img-fluid ${styles.overlay_image}`}
             />
-             {/* <Lottie
+            {/* <Lottie
               className={styles.overlay_image}
               animationData={corporateCardsImg}
               loop={true}
@@ -1065,19 +1061,9 @@ const home = () => {
         <div
           className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
         >
-          {/* <Image
-            src={mobileIntegration}
-            alt="mobile integrations"
-            className="img-fluid"
-            height={450}
-          /> */}
           <div className={styles.lottie_container}>
-          <Lottie animationData={integrationsAnimation}
-          loop={true}/>
-
+            <Lottie animationData={integrationsAnimation} loop={true} />
           </div>
-        
-          {/* <Lottie animationData={expenseAnimation} loop={true} /> */}
         </div>
         <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">
           <div className="mt-3">

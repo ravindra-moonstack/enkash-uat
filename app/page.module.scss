@@ -12,12 +12,11 @@
 }
 
 .animation_data_padding {
-  padding-left: 20px;
+  padding-left: 40px;
   padding-right: 20px;
   @include bp-md {
-    padding-left: 40px;
-    padding-right: 40px;
-
+    padding-left: 60px;
+    padding-right: 60px;
   }
 }
 
@@ -183,8 +182,13 @@
 
 .second_row {
   padding-top: 60px;
+  position: relative;
   @include bp-md {
     padding-top: 150px;
+  }
+
+  @include bp-extra-lg {
+    padding-top: 200px;
   }
 
   .heading {
@@ -310,7 +314,7 @@
       width: 1050px;
       top: 320px;
     }
-    .logo{
+    .logo {
       z-index: 1;
       position: absolute;
       left: 130px;
@@ -426,12 +430,20 @@
       margin-bottom: 250px;
     }
 
-    .lottie_container{
+    .lottie_container {
       position: absolute;
       right: 0;
-      top:100px;
+      top: 100px;
       width: 580px;
+      z-index: 2;
+    }
 
+    .green_bg {
+      position: absolute;
+      right: 0;
+      top: 150px;
+      width: 580px;
+      z-index: 1;
     }
   }
 
@@ -467,7 +479,7 @@
       left: 0;
     }
   }
-  .lottie_container{
+  .lottie_container {
     padding-bottom: 50px;
     padding-left: 50px;
     padding-right: 50px;
@@ -570,10 +582,10 @@
   }
 }
 
-.tenth_row{
-  .lottie_container{
+.tenth_row {
+  .lottie_container {
     width: 200px;
-    @include bp-md{
+    @include bp-md {
       width: 300px;
     }
   }
@@ -643,9 +655,9 @@
       #1c5af4 0%,
       rgba(255, 255, 255, 0) 100%
     );
-    .lottie_container{
+    .lottie_container {
       width: 350px;
-      @include bp-md{
+      @include bp-md {
         width: 550px;
         margin-top: -40px;
         padding-right: 40px;
