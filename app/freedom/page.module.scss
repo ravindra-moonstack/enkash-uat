@@ -1,0 +1,252 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.first_row {
+  background-image: url(./img/bg-image.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: contain;
+
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  @include bp-md {
+    padding-left: 70px;
+    padding-right: 30px;
+    padding-top: 110px;
+    padding-bottom: 80px;
+  }
+
+  .dashboard_img {
+    max-width: 100%;
+    height: auto;
+    @include bp-md {
+      max-width: none;
+      height: fit-content;
+      width: 800px;
+    }
+  }
+  .desktop_description {
+    display: none;
+    @include bp-md {
+      display: block;
+    }
+  }
+  .mobile_description {
+    display: block;
+    @include bp-md {
+      display: none;
+    }
+  }
+}
+
+.third_row {
+  background-color: $color-white;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  @include bp-md {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .section {
+    margin-bottom: 50px;
+    @include bp-md {
+      margin-bottom: 50px;
+    }
+  }
+
+  .first_container {
+    position: relative;
+    z-index: 2;
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -50px;
+      @include bp-md {
+        top: -50px;
+        left: 200px;
+      }
+    }
+  }
+
+  .second_container {
+    position: relative;
+    z-index: 2;
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -50px;
+      @include bp-md {
+        top: -100px;
+        left: -100px;
+      }
+    }
+  }
+
+  .third_container {
+    position: relative;
+    z-index: 2;
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -50px;
+      @include bp-md {
+        top: -50px;
+        left: 200px;
+      }
+    }
+  }
+}
+
+.fourth_row {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  @include bp-md {
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  .lottie_container{
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  .lottie_second_container{
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.sixth_row {
+  .progress_bar {
+    height: 4px;
+    border-radius: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: linear-gradient(
+      90deg,
+      $color-equity-blue 15%,
+      $color-black 30%
+    );
+    @include bp-md {
+      height: 8px;
+    }
+  }
+  .progress_items {
+    margin-right: 30px;
+    @include bp-md {
+      margin-right: 0;
+    }
+  }
+  .progress_container {
+    @include bp-md {
+      justify-content: space-evenly;
+    }
+  }
+  .arrow {
+    transform: rotate(90deg);
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+    @include bp-md {
+      height: 50px;
+      width: 50px;
+      transform: none;
+      margin-top: 0;
+    }
+  }
+}
+
+.fifth_row {
+  position: relative;
+  background: url(./img/stack-bg.png);
+  background-size: cover;
+  padding: 50px;
+  z-index: 1;
+  @include bp-md {
+    background: url(./img/stack-bg.png);
+    background-size: 100%;
+  }
+  img{
+    height: 120px;
+    width: auto;
+  }
+}
+
+.seventh_row {
+  .container {
+    @include bp-md {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+  }
+  .left_row {
+    padding: 40px;
+    margin-top: -20px;
+    border-radius: 10px;
+    border: 2px solid $color-night-blue;
+    @include bp-md {
+      padding: 40px;
+      width: 50%;
+      margin-top: 0px;
+    }
+  }
+  .right_row {
+    @include bp-md {
+      margin-left: -20px;
+      margin-top: 0;
+      width: 50%;
+    }
+    margin-top: -10px;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.eigth_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  @include bp-md {
+    padding-bottom: 250px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: none;
+      @include bp-md {
+        height: 300px;
+        display: flex;
+      }
+    }
+  }
+}
+
+.ninth_row {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include bp-md {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

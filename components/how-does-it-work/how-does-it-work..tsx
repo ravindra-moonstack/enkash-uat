@@ -4,10 +4,14 @@ import { useEffect, useState } from "react";
 import rupeeCard from "./rupee-card.png";
 import laptop from "./laptop.png";
 import styles from "./how-does-it-work.module.scss";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Heading from "../heading/heading";
 
-const HowDoesItWork = () => {
+interface howDoesItWorkProps {
+  bannerImage?: StaticImageData; // Define the bannerImage as optional with type StaticImageData
+}
+
+const HowDoesItWork = ({ bannerImage }: howDoesItWorkProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentData((prevData: number) => (prevData + 1) % dataSets.length);
@@ -38,6 +42,11 @@ const HowDoesItWork = () => {
         "Ensure timely payment of your business expenses to maintain smooth operations.",
     },
   ];
+
+  const defaultImageSrc: StaticImageData = laptop;
+
+  const imageToDisplay: StaticImageData = bannerImage || defaultImageSrc
+
   return (
     <div className={styles.home_container}>
       <div
@@ -45,7 +54,7 @@ const HowDoesItWork = () => {
       >
         <div className="d-flex flex-column flex-md-row">
           <div className={styles.img_container}>
-            <Image src={laptop} alt="office team image" />
+            <Image src={imageToDisplay} alt="office team image" />
           </div>
           <div
             className={`d-flex flex-column align-items-md-center ${styles.card_container}`}
