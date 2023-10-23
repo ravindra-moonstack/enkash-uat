@@ -687,10 +687,10 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
-        <div
-          className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1 ${styles.animation_data_padding}`}
-        >
-          <Lottie animationData={payablesAnimation} loop={true} />
+        <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
+          <div className={styles.lottie_container}>
+            <Lottie animationData={payablesAnimation} loop={true} />
+          </div>
         </div>
         <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
           <ExploreCard
@@ -702,7 +702,7 @@ const home = () => {
             theme="green"
           />
         </div>
-        <div className="col-md-6 col-12 mt-5  order-3 order-md-3">
+        <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
           <ExploreCard
             title="Receivables"
             description="EnKash empowers your business by providing intelligent
@@ -711,10 +711,10 @@ const home = () => {
             theme="green"
           />
         </div>
-        <div
-          className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ${styles.animation_data_padding}`}
-        >
-          <Lottie animationData={recieveableAnimation} loop={true} />
+        <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
+          <div className={styles.lottie_container}>
+            <Lottie animationData={recieveableAnimation} loop={true} />
+          </div>
         </div>
       </div>
       <div
@@ -823,17 +823,11 @@ const home = () => {
           className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center order-2 order-md-1 ${styles.section_padding}`}
         >
           <div className={styles.left_image_container}>
-            <Image
-              src={corporateCardsImg}
-              width={430}
-              alt="payables image"
-              className={`img-fluid ${styles.overlay_image}`}
-            />
-            {/* <Lottie
+            <Lottie
               className={styles.overlay_image}
               animationData={corporateCardAnimation}
               loop={true}
-            /> */}
+            />
             <Image
               src={rightCardGradient}
               alt="gradients"
@@ -861,11 +855,14 @@ const home = () => {
           className={`col-md-6 col-12 row-padding-top-none d-flex mt-5 d-flex justify-content-center order-4 order-md-4`}
         >
           <div className={styles.right_image_container}>
-            <Lottie
-              className={styles.overlay_image}
-              animationData={diyCardAnimation}
-              loop={true}
-            />
+            <div className={styles.lottie_container}>
+              <Lottie
+                className={styles.overlay_image}
+                animationData={diyCardAnimation}
+                loop={true}
+              />
+            </div>
+
             <Image
               src={leftCardGradient}
               alt="gradients"
