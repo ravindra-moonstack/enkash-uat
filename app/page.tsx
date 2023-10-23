@@ -203,6 +203,10 @@ const home = () => {
     }
   }
 
+  const corporateCardAnimationStyle = {
+    width: 600,
+  };
+
   //Start of HTML code
 
   return (
@@ -827,6 +831,7 @@ const home = () => {
               className={styles.overlay_image}
               animationData={corporateCardAnimation}
               loop={true}
+              style={corporateCardAnimationStyle}
             />
             <Image
               src={rightCardGradient}
