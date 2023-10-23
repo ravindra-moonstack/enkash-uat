@@ -72,6 +72,7 @@ import {
   group,
   integrationsAnimation,
   greenBg,
+  corporateCardAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { useEffect, useRef, useState } from "react";
@@ -830,7 +831,7 @@ const home = () => {
             />
             {/* <Lottie
               className={styles.overlay_image}
-              animationData={corporateCardsImg}
+              animationData={corporateCardAnimation}
               loop={true}
             /> */}
             <Image

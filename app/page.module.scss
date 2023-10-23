@@ -490,9 +490,15 @@
   position: relative;
   .card {
     padding: 0;
+
     @include bp-md {
       padding-left: 100px;
       padding-right: 100px;
+    }
+
+    @include bp-extra-lg {
+      padding-left: 200px;
+      padding-right: 200px;
     }
   }
   .card_container {

@@ -60,7 +60,6 @@ export { default as hdfcLogo } from "./img/hdfc-logo.png";
 export { default as masterCardLogo } from "./img/master-card-logo.png";
 export { default as greenBg } from "./img/green-gradient-bg.png";
 
-
 //Animations import
 export { default as dashboardUiAutomateAnimation } from "./img/lottie/automate.json";
 export { default as dashboardUiManageAnimation } from "./img/lottie/manage.json";
@@ -70,14 +69,7 @@ export { default as expenseManagementAnimation } from "./img/lottie/expense-mana
 export { default as payablesAnimation } from "./img/lottie/payables-v2.json";
 export { default as recieveableAnimation } from "./img/lottie/recievables.json";
 export { default as diyCardAnimation } from "./img/lottie/diy.json";
+export { default as corporateCardAnimation } from "./img/lottie/credit-card.json";
 export { default as phoneAnimation } from "./img/lottie/phone.json";
 export { default as group } from "./img/lottie/group.json";
 export { default as integrationsAnimation } from "./img/lottie/integration.json";
-
-
-
-
-
-
-
-
