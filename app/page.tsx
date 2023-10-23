@@ -75,7 +75,7 @@ import {
   corporateCardAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
-import { useEffect, useRef, useState } from "react";
+import { SetStateAction, useEffect, useRef, useState } from "react";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import { laptop } from "@/components/carousel";
@@ -204,7 +204,13 @@ const home = () => {
   }
 
   const corporateCardAnimationStyle = {
-    width: 600,
+    width: 900,
+  };
+
+  const [selectedTab, setSelectedTab] = useState("partners"); // By default, partners is selected
+
+  const handleTabClick = (tab: SetStateAction<string>) => {
+    setSelectedTab(tab);
   };
 
   //Start of HTML code
@@ -487,10 +493,10 @@ const home = () => {
             <Image src={enkashWhiteLogo}  alt="logo" width={50}/>
           </div> */}
           {activeAnimation === "manage" && (
-            <Lottie animationData={dashboardUiManageAnimation} loop={true} />
+            <Lottie animationData={dashboardUiTrackAnimation} loop={true} />
           )}
           {activeAnimation === "track" && (
-            <Lottie animationData={dashboardUiTrackAnimation} loop={true} />
+            <Lottie animationData={dashboardUiManageAnimation} loop={false} />
           )}
           {activeAnimation === "optimize" && (
             <Lottie animationData={dashboardUiOptimizeAnimation} loop={true} />
@@ -670,24 +676,73 @@ const home = () => {
               <Heading title="and" size="h2" color="equity-blue" weight="6" />
             </div>
             <div>
-              <Heading title="Customers." size="h2" color="black" weight="6" />
+              <Heading
+                title="Customers."
+                size="h2"
+                color="equity-blue"
+                weight="6"
+              />
             </div>
+
             <Image src={blueBlackLine} alt="underline image" />
           </div>
         </div>
-        <div className="col-12">
-          <div
-            className={`${styles.bank_logo} row-padding-x-only mb-3 d-flex align-items-center justify-content-between`}
-          >
-            <Image src={axisBankLogo} width={150} alt="axis bank logo" />
-            <Image width={150} src={iciciBankLogo} alt="axis bank logo" />
-            <Image width={150} src={sbmLogo} alt="axis bank logo" />
-            <Image width={70} src={visaLogo} alt="axis bank logo" />
-            <Image width={130} src={kotakLogo} alt="axis bank logo" />
-            <Image width={70} src={hdfcLogo} alt="axis bank logo" />
-            <Image width={120} src={rupayLogo} alt="axis bank logo" />
-            <Image width={100} src={masterCardLogo} alt="axis bank logo" />
+        <div className="col-12 row-padding-x-only">
+          <div className="d-flex mb-4">
+            <div
+              className="ms-3 me-5 cursor-pointer"
+              onClick={() => handleTabClick("partners")}
+            >
+              <Heading
+                title="Our Partners"
+                size="h4"
+                color={selectedTab === "partners" ? "equity-blue" : "black"}
+                weight="6"
+              />
+            </div>
+            <div
+              className="cursor-pointer"
+              onClick={() => handleTabClick("customers")}
+            >
+              <Heading
+                title="Happy Customers"
+                size="h4"
+                color={selectedTab === "partners" ? "black" : "equity-blue"}
+                weight="6"
+              />
+            </div>
           </div>
+
+          {selectedTab === "partners" && (
+            <div
+              className={`${styles.bank_logo} mb-3 d-flex align-items-center justify-content-between`}
+            >
+              <Image src={axisBankLogo} width={150} alt="axis bank logo" />
+              <Image width={150} src={iciciBankLogo} alt="axis bank logo" />
+              <Image width={150} src={sbmLogo} alt="axis bank logo" />
+              <Image width={70} src={visaLogo} alt="axis bank logo" />
+              <Image width={130} src={kotakLogo} alt="axis bank logo" />
+              <Image width={70} src={hdfcLogo} alt="axis bank logo" />
+              <Image width={120} src={rupayLogo} alt="axis bank logo" />
+              <Image width={100} src={masterCardLogo} alt="axis bank logo" />
+            </div>
+          )}
+
+          {selectedTab === "customers" && (
+            <div
+              className={`${styles.bank_logo} mb-3 d-flex align-items-center justify-content-between`}
+            >
+              <h1>customer</h1>
+              <Image src={axisBankLogo} width={150} alt="axis bank logo" />
+              <Image width={150} src={iciciBankLogo} alt="axis bank logo" />
+              <Image width={150} src={sbmLogo} alt="axis bank logo" />
+              <Image width={70} src={visaLogo} alt="axis bank logo" />
+              <Image width={130} src={kotakLogo} alt="axis bank logo" />
+              <Image width={70} src={hdfcLogo} alt="axis bank logo" />
+              <Image width={120} src={rupayLogo} alt="axis bank logo" />
+              <Image width={100} src={masterCardLogo} alt="axis bank logo" />
+            </div>
+          )}
         </div>
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
@@ -824,14 +879,13 @@ const home = () => {
       </div>
       <div className={`${styles.ninth_row} row bg-white`}>
         <div
-          className={`col-md-6 col-12 row-padding-bottom-none d-flex mb-5 d-flex justify-content-center order-2 order-md-1 ${styles.section_padding}`}
+          className={`col-md-6 col-12 row-padding-x-only d-flex d-flex justify-content-center order-2 order-md-1 ${styles.section_padding}`}
         >
           <div className={styles.left_image_container}>
             <Lottie
               className={styles.overlay_image}
               animationData={corporateCardAnimation}
               loop={true}
-              style={corporateCardAnimationStyle}
             />
             <Image
               src={rightCardGradient}
@@ -841,7 +895,7 @@ const home = () => {
           </div>
         </div>
         <div
-          className={`col-md-6 col-12 mb-5 row-padding-bottom-none order-1 order-md-2 ${styles.section_padding}`}
+          className={`col-md-6 col-12 row-padding-bottom-none order-1 order-md-2`}
         >
           <ExploreCard
             title="Corporate Cards"
@@ -849,7 +903,7 @@ const home = () => {
             theme="blue"
           />
         </div>
-        <div className="col-md-6 col-12 mt-5 row-padding-top-none order-3 order-md-3">
+        <div className="col-md-6 col-12 row-padding-x-only order-3 order-md-3">
           <ExploreCard
             title="DIY Card Module"
             description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
@@ -857,7 +911,7 @@ const home = () => {
           />
         </div>
         <div
-          className={`col-md-6 col-12 row-padding-top-none d-flex mt-5 d-flex justify-content-center order-4 order-md-4`}
+          className={`col-md-6 col-12 mb-5 mb-m-0 row-padding-x-only d-flex d-flex justify-content-center order-4 order-md-4`}
         >
           <div className={styles.right_image_container}>
             <div className={styles.lottie_container}>

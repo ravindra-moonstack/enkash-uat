@@ -183,6 +183,8 @@
   }
 
   .heading {
+    position: relative;
+    z-index: 10;
     padding-bottom: 60px;
     @include bp-md {
       padding-bottom: 60px;
@@ -414,7 +416,7 @@
   }
 
   .img_container {
-    margin-bottom: 50px;
+    margin-bottom: 450px;
     padding-top: 0;
     @include bp-md {
       padding-top: 100px;
@@ -424,17 +426,25 @@
     .lottie_container {
       position: absolute;
       right: 0;
-      top: 100px;
-      width: 580px;
+      top: 0px;
+      width: 90%;
       z-index: 2;
+      @include bp-md {
+        width: 580px;
+      }
     }
 
     .green_bg {
       position: absolute;
       right: 0;
       top: 150px;
-      width: 580px;
+      width: 230px;
+      height: auto;
       z-index: 1;
+      @include bp-md {
+        height: auto;
+        width: 580px;
+      }
     }
   }
 
@@ -458,11 +468,11 @@
     display: flex;
     align-items: center;
     @include bp-md {
-      width: 450px;
+      width: 500px;
     }
 
     @include bp-extra-lg {
-      width: 500px;
+      width: 650px;
     }
   }
 }
@@ -541,21 +551,15 @@
     padding-right: 100px;
   }
 
-  .section_padding {
-    @include bp-md {
-      padding-bottom: 70px;
-    }
-  }
-
   .lottie_container {
     display: flex;
     align-items: center;
     @include bp-md {
-      width: 350px;
+      height: 525px;
     }
 
     @include bp-extra-lg {
-      width: 400px;
+      height: 600px;
     }
   }
 
@@ -564,22 +568,29 @@
 
     .background_image {
       position: absolute;
-      top: -80px;
-      left: -50px;
-      height: 300px;
-      width: 300px;
+      top: -30px;
+      left: 0px;
+      height: 350px;
+      width: 350px;
       @include bp-md {
-        top: -150px;
-        left: -50px;
-        height: 450px;
-        width: 450px;
+        top: -100px;
+        left: 0px;
+        height: 700px;
+        width: auto;
+      }
+      @include bp-extra-lg {
+        height: 800px;
       }
     }
     .overlay_image {
-      width: 370px;
+      width: 470px;
       @include bp-md {
-        margin-top: -70px;
-        width: 500px;
+        margin-top: 0px;
+        width: 850px;
+        margin-top: -10px;
+      }
+      @include bp-extra-lg {
+        width: 1000px;
       }
     }
   }
@@ -589,21 +600,26 @@
 
     .background_image {
       position: absolute;
-      top: 30px;
+      top: -10px;
       left: -50px;
-      height: 400px;
-      width: 400px;
+      height: 350px;
+      width: 350px;
       @include bp-md {
-        top: -80px;
-        height: 450px;
-        width: 450px;
+        top: -150px;
+        left: -150px;
+        height: 700px;
+        width: auto;
       }
     }
     .overlay_image {
-      width: 350px;
+      width: 250px;
       @include bp-md {
-        margin-top: -100px;
+        margin-top: -250px;
         width: 500px;
+      }
+
+      @include bp-extra-lg {
+        width: 600px;
       }
     }
   }

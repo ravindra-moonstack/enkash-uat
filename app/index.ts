@@ -62,9 +62,10 @@ export { default as greenBg } from "./img/green-gradient-bg.png";
 
 //Animations import
 export { default as dashboardUiAutomateAnimation } from "./img/lottie/automate.json";
-export { default as dashboardUiManageAnimation } from "./img/lottie/manage.json";
+export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard.json";
 export { default as dashboardUiTrackAnimation } from "./img/lottie/track.json";
 export { default as dashboardUiOptimizeAnimation } from "./img/lottie/optimize.json";
+
 export { default as expenseManagementAnimation } from "./img/lottie/expense-management.json";
 export { default as payablesAnimation } from "./img/lottie/payables-v2.json";
 export { default as recieveableAnimation } from "./img/lottie/recievables.json";
