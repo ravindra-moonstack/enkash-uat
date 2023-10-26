@@ -18,9 +18,12 @@ const SubProduct = (props: any) => {
 
   const hasActiveGroup = !!activeGroup;
 
-  const maxRefsLength = props.subProducts.reduce((acc, curr) => {
-    return curr.list.length > acc ? curr.list.length : acc;
-  }, 0);
+  const maxRefsLength = props.subProducts.reduce(
+    (acc: any, curr: { list: string | any[] }) => {
+      return curr.list.length > acc ? curr.list.length : acc;
+    },
+    0
+  );
 
   const refs = Array.from({ length: maxRefsLength }, () =>
     useRef<HTMLDivElement>(null)
