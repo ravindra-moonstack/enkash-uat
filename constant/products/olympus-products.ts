@@ -114,7 +114,7 @@ const olympusProducts = [
         link: "/invoices",
       },
     ],
-    footerText: "Stream Line with Payables",
+    footerText: "Stream Line with Receivables",
     footerImg: "xpenz_footer_bg",
     footerLink: "/olympus",
   },

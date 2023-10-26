@@ -21,15 +21,11 @@
   color: $color-secondry-grey;
   cursor: pointer;
   padding: 10px;
-  &:hover {
-    background-color: $color-light-shade-grey;
-    color: $color-indi-volt;
-  }
 }
 
 .color_image_visible {
   opacity: 1;
-  animation: fadeIn 0.3s ease-in-out forwards;
+  animation: fadeIn 0.3s ease-in forwards;
 }
 
 .default_image_visible {
@@ -129,4 +125,17 @@
   to {
     opacity: 1;
   }
+}
+
+.background_slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-light-shade-grey;
+  border-radius: inherit;
+  z-index: -1;
+  border-radius: 10px;
+  transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
+  padding: 20px;
 }

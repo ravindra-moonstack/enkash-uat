@@ -73,6 +73,7 @@ import {
   integrationsAnimation,
   greenBg,
   corporateCardAnimation,
+  box8Logo,
 } from ".";
 import Heading from "@/components/heading/heading";
 import { SetStateAction, useEffect, useRef, useState } from "react";
@@ -203,9 +204,7 @@ const home = () => {
     }
   }
 
-  const corporateCardAnimationStyle = {
-    width: 900,
-  };
+  const lottieRef = useRef();
 
   const [selectedTab, setSelectedTab] = useState("partners"); // By default, partners is selected
 
@@ -496,7 +495,11 @@ const home = () => {
             <Lottie animationData={dashboardUiTrackAnimation} loop={true} />
           )}
           {activeAnimation === "track" && (
-            <Lottie animationData={dashboardUiManageAnimation} loop={false} />
+            <Lottie
+              animationData={dashboardUiManageAnimation}
+              loop={false}
+              autoplay={true}
+            />
           )}
           {activeAnimation === "optimize" && (
             <Lottie animationData={dashboardUiOptimizeAnimation} loop={true} />
@@ -715,24 +718,9 @@ const home = () => {
 
           {selectedTab === "partners" && (
             <div
-              className={`${styles.bank_logo} mb-3 d-flex align-items-center justify-content-between`}
+              className={`${styles.bank_logo} 
+            animate__animated mb-3 d-flex align-items-center justify-content-between`}
             >
-              <Image src={axisBankLogo} width={150} alt="axis bank logo" />
-              <Image width={150} src={iciciBankLogo} alt="axis bank logo" />
-              <Image width={150} src={sbmLogo} alt="axis bank logo" />
-              <Image width={70} src={visaLogo} alt="axis bank logo" />
-              <Image width={130} src={kotakLogo} alt="axis bank logo" />
-              <Image width={70} src={hdfcLogo} alt="axis bank logo" />
-              <Image width={120} src={rupayLogo} alt="axis bank logo" />
-              <Image width={100} src={masterCardLogo} alt="axis bank logo" />
-            </div>
-          )}
-
-          {selectedTab === "customers" && (
-            <div
-              className={`${styles.bank_logo} mb-3 d-flex align-items-center justify-content-between`}
-            >
-              <h1>customer</h1>
               <Image src={axisBankLogo} width={150} alt="axis bank logo" />
               <Image width={150} src={iciciBankLogo} alt="axis bank logo" />
               <Image width={150} src={sbmLogo} alt="axis bank logo" />

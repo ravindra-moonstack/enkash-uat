@@ -8,7 +8,7 @@ const ResourcesModal = () => {
   const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
     null | number
   >(null);
-  const refs = resources.map(() => useRef<HTMLDivElement>(null)); // Array of refs, one for each resource
+  const refs = resources.map(() => useRef<HTMLDivElement>(null)); 
   return (
     <div className={`row mt-5 ${styles.container}`}>
       <div
