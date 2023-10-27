@@ -61,10 +61,9 @@ export { default as masterCardLogo } from "./img/master-card-logo.png";
 export { default as greenBg } from "./img/green-gradient-bg.png";
 export { default as box8Logo } from "./img/box-eight-logo.png";
 
-
 //Animations import
 export { default as dashboardUiAutomateAnimation } from "./img/lottie/automate.json";
-export { default as dashboardUiManageAnimation } from "./img/lottie/dashboard.json";
+export { default as dashboardUiManageAnimation } from "./img/lottie/manage-v2.json";
 export { default as dashboardUiTrackAnimation } from "./img/lottie/track.json";
 export { default as dashboardUiOptimizeAnimation } from "./img/lottie/optimize.json";
 

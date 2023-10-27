@@ -354,7 +354,7 @@ const home = () => {
           whileInView={{ opacity: 1 }}
           transition={{
             duration: 1,
-            delay: 0.7,
+            delay: 0.6,
             ease: "easeInOut",
           }}
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
@@ -375,10 +375,10 @@ const home = () => {
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 2.2 }}
+          whileInView={{ opacity: 1 }}
           transition={{
             duration: 1,
-            delay: 0.9,
+            delay: 0.7,
             ease: "easeInOut",
           }}
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
@@ -492,11 +492,11 @@ const home = () => {
             <Image src={enkashWhiteLogo}  alt="logo" width={50}/>
           </div> */}
           {activeAnimation === "manage" && (
-            <Lottie animationData={dashboardUiTrackAnimation} loop={true} />
+            <Lottie animationData={dashboardUiManageAnimation} loop={true} />
           )}
           {activeAnimation === "track" && (
             <Lottie
-              animationData={dashboardUiManageAnimation}
+              animationData={dashboardUiTrackAnimation}
               loop={false}
               autoplay={true}
             />
