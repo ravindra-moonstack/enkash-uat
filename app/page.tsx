@@ -1,5 +1,8 @@
 "use client";
 
+import { SetStateAction, useEffect, useRef, useState } from "react";
+import { space } from "@/constant/common";
+import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
 import Image from "next/image";
 import styles from "./page.module.scss";
 import PrimaryButton from "../components/buttons/primary-button/primary-button";
@@ -8,9 +11,10 @@ import MenuButton from "@/components/buttons/menu-button/menu-button";
 import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import { space } from "@/constant/common";
-import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
 import Lottie from "lottie-react";
+import Heading from "@/components/heading/heading";
+import MobileHeader from "@/components/header/mobile-header/mobile-header";
+import WebHeader from "@/components/header/web-header";
 
 import {
   numberOne,
@@ -66,10 +70,6 @@ import {
   corporateCardAnimation,
   box8Logo,
 } from ".";
-import Heading from "@/components/heading/heading";
-import { SetStateAction, useEffect, useRef, useState } from "react";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 
 const loginUrl = "https://home.enkash.com/login";
 
@@ -79,6 +79,11 @@ const home = () => {
   const polygonOneRef = useRef<HTMLImageElement>(null);
   const polygonTwoRef = useRef<HTMLImageElement>(null);
   const polygonThreeRef = useRef<HTMLImageElement>(null);
+  const descTextScrollRef = useRef<HTMLDivElement>(null);
+  const payableCardRef = useRef<HTMLDivElement>(null);
+  const recieveCardRef = useRef<HTMLDivElement>(null);
+
+  //Framer motion scroll progress
 
   const loungeScrollData = useScroll({
     target: loungeImgRef,
@@ -99,6 +104,23 @@ const home = () => {
     target: polygonThreeRef,
     offset: ["0.2 1.4", "1.1 1.4"],
   }) as { scrollYProgress: MotionValue<number> };
+
+  const descTextScrollData = useScroll({
+    target: descTextScrollRef,
+    offset: ["0% 85%", "0% 50%"],
+  }) as { scrollYProgress: MotionValue<number> };
+
+  const payableCardScrollData = useScroll({
+    target: payableCardRef,
+    offset: ["0% 90%", "0% 50%"],
+  }) as { scrollYProgress: MotionValue<number> };
+
+  const recieveCardData = useScroll({
+    target: recieveCardRef,
+    offset: ["0% 90%", "0% 50%"],
+  }) as { scrollYProgress: MotionValue<number> };
+
+  //Framer motion transform val
 
   const loungeTranslateY = useTransform(
     loungeScrollData.scrollYProgress,
@@ -124,6 +146,7 @@ const home = () => {
 
   //Below code is animation which are custom built and any lib is not used
   //Stack animation custom built
+
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -134,8 +157,6 @@ const home = () => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const [activeAnimation, setActiveAnimation] = useState("manage");
 
   let largeScreen;
   let posTopRainbowOneImg, posTopRainbowTwoImg, posTopRainbowThreeImg;
@@ -193,10 +214,10 @@ const home = () => {
     }
   }
 
-  const lottieRef = useRef();
+  //functions
 
-  const [selectedTab, setSelectedTab] = useState("partners"); // By default, partners is selected
-
+  const [selectedTab, setSelectedTab] = useState("partners");
+  const [activeAnimation, setActiveAnimation] = useState("manage");
   const handleTabClick = (tab: SetStateAction<string>) => {
     setSelectedTab(tab);
   };
@@ -480,7 +501,13 @@ const home = () => {
             <Lottie animationData={dashboardUiAutomateAnimation} loop={true} />
           )}
         </div>
-        <div className={`col-12  ${styles.descrption_container}`}>
+        <motion.div
+          ref={descTextScrollRef}
+          className={`col-12  ${styles.descrption_container}`}
+          style={{
+            opacity: descTextScrollData.scrollYProgress,
+          }}
+        >
           <div>
             <Heading title="Solutions that let you" size="h2" weight="3" />
           </div>
@@ -491,7 +518,7 @@ const home = () => {
               weight="7"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className={`${styles.fourth_row} bg-white row`}>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-start row-padding">
@@ -711,7 +738,13 @@ const home = () => {
             <Lottie animationData={payablesAnimation} loop={true} />
           </div>
         </div>
-        <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
+        <motion.div
+          ref={payableCardRef}
+          className="col-md-6 col-12 mb-5 order-1 order-md-2"
+          style={{
+            opacity: payableCardScrollData.scrollYProgress,
+          }}
+        >
           <ExploreCard
             title="Payables"
             description=" Manage all outgoing expenses in one place. Our online platform
@@ -720,8 +753,14 @@ const home = () => {
               with no delays."
             theme="green"
           />
-        </div>
-        <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
+        </motion.div>
+        <motion.div
+          className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5"
+          ref={recieveCardRef}
+          style={{
+            opacity: recieveCardData.scrollYProgress,
+          }}
+        >
           <ExploreCard
             title="Receivables"
             description="EnKash empowers your business by providing intelligent
@@ -729,7 +768,7 @@ const home = () => {
                 follow-ups and create better collection strategies."
             theme="green"
           />
-        </div>
+        </motion.div>
         <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
           <div className={styles.lottie_container}>
             <Lottie animationData={recieveableAnimation} loop={true} />
@@ -810,7 +849,7 @@ const home = () => {
       <div
         className={`${styles.eigth_row}row d-flex d-flex bg-white row-padding`}
       >
-        <div className="d-flex flex-column justify-content-center align-items-center w-100">
+        <motion.div className="d-flex flex-column justify-content-center align-items-center w-100">
           <div>
             <Heading
               title="Discover full control."
@@ -835,7 +874,7 @@ const home = () => {
               weight="5"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
       <div className={`${styles.ninth_row} row bg-white`}>
         <div
