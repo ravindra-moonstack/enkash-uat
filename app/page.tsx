@@ -625,7 +625,7 @@ const home = () => {
           className={`col-md-6 col-12 d-flex position-relative  ${styles.img_container}`}
         >
           <div className={styles.lottie_container}>
-            {/* <Lottie animationData={group} loop={true} /> */}
+            <Lottie animationData={group} loop={true} />
           </div>
           <Image
             className={styles.green_bg}
@@ -1073,7 +1073,7 @@ const home = () => {
           className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
         >
           <div className={styles.lottie_container}>
-            {/* <Lottie animationData={integrationsAnimation} loop={true} /> */}
+            <Lottie animationData={integrationsAnimation} loop={true} />
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">
