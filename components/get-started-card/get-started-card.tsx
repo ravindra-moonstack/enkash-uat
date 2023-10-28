@@ -18,7 +18,7 @@ const GetStartedCard = ({
 }: CardProps) => {
   return (
     <div
-      className={`d-flex flex-column bg-indi-volt position-relative ${styles.card_body}`}
+      className={`d-flex flex-column bg-indi-volt position-relative m-1 ${styles.card_body}`}
     >
       <Heading title={title1} color="rainy-blue" size="h2" weight="6" />
       <Heading title={title2} color="white" size="h2" weight="6" />

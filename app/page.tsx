@@ -74,7 +74,7 @@ import {
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
-  //Framer motion (scroll intact animations)
+  //Framer motion reference
   const loungeImgRef = useRef<HTMLDivElement>(null);
   const polygonOneRef = useRef<HTMLImageElement>(null);
   const polygonTwoRef = useRef<HTMLImageElement>(null);
@@ -84,7 +84,6 @@ const home = () => {
   const recieveCardRef = useRef<HTMLDivElement>(null);
 
   //Framer motion scroll progress
-
   const loungeScrollData = useScroll({
     target: loungeImgRef,
     offset: ["0.5 1.5", "1 1"],
@@ -120,8 +119,7 @@ const home = () => {
     offset: ["0% 90%", "0% 50%"],
   }) as { scrollYProgress: MotionValue<number> };
 
-  //Framer motion transform val
-
+  //Framer motion transform values
   const loungeTranslateY = useTransform(
     loungeScrollData.scrollYProgress,
     [0, 1],
@@ -146,7 +144,6 @@ const home = () => {
 
   //Below code is animation which are custom built and any lib is not used
   //Stack animation custom built
-
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
@@ -215,7 +212,6 @@ const home = () => {
   }
 
   //functions
-
   const [selectedTab, setSelectedTab] = useState("partners");
   const [activeAnimation, setActiveAnimation] = useState("manage");
   const handleTabClick = (tab: SetStateAction<string>) => {
@@ -223,7 +219,6 @@ const home = () => {
   };
 
   //Start of HTML code
-
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
