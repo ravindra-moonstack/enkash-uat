@@ -24,9 +24,6 @@ import {
   blueBoxIcon,
   circleRupeeIcon,
   teamImg,
-  corporateCardsImg,
-  loyaltyLoungeMobileImg,
-  mobileIntegration,
   inc42,
   paymentAndCardSummit,
   nasscom,
@@ -37,7 +34,6 @@ import {
   rupayLogo,
   sbmLogo,
   visaLogo,
-  desktopIphone,
   playButton,
   rainbowOne,
   rainbowTwo,
@@ -53,9 +49,6 @@ import {
   payablesAnimation,
   recieveableAnimation,
   diyCardAnimation,
-  dashboardUi,
-  rainbowOneShadow,
-  rainbowThreeShadow,
   leftBlueGradient,
   leftCardGradient,
   rightCardGradient,
@@ -63,8 +56,6 @@ import {
   dashboardUiManageAnimation,
   dashboardUiTrackAnimation,
   dashboardUiOptimizeAnimation,
-  laptopOne,
-  laptopTwo,
   kotakLogo,
   hdfcLogo,
   masterCardLogo,
@@ -79,8 +70,6 @@ import Heading from "@/components/heading/heading";
 import { SetStateAction, useEffect, useRef, useState } from "react";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
-import { laptop } from "@/components/carousel";
-import { enkashWhiteLogo } from "@/components/header";
 
 const loginUrl = "https://home.enkash.com/login";
 
