@@ -393,16 +393,7 @@ const home = () => {
             </div>
 
             <div>
-              {/* <motion.div
-                initial={{ translateX: "-150px" }}
-                whileInView={{ translateX: 0 }}
-                transition={{
-                  duration: 0.7,
-                  ease: "easeInOut",
-                }}
-              > */}
               <PrimaryButton title="Get Started Now" theme="theme-blue" />
-              {/* </motion.div> */}
             </div>
           </div>
         </div>
@@ -471,15 +462,7 @@ const home = () => {
             </div>
           </div>
         </div>
-        {/* <Image
-          src={laptopTwo}
-          alt="laptop image"
-          className={styles.laptop_background_image}
-        /> */}
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
-          {/* <div className={styles.logo}>
-            <Image src={enkashWhiteLogo}  alt="logo" width={50}/>
-          </div> */}
           {activeAnimation === "manage" && (
             <Lottie animationData={dashboardUiManageAnimation} loop={true} />
           )}
@@ -642,7 +625,7 @@ const home = () => {
           className={`col-md-6 col-12 d-flex position-relative  ${styles.img_container}`}
         >
           <div className={styles.lottie_container}>
-            <Lottie animationData={group} loop={true} />
+            {/* <Lottie animationData={group} loop={true} /> */}
           </div>
           <Image
             className={styles.green_bg}
@@ -964,12 +947,6 @@ const home = () => {
             }}
             className={styles.lottie_container}
           >
-            {/* <Image
-              src={loyaltyLoungeMobileImg}
-              alt="loyalty lounge image"
-              width={300}
-              className={`img-fluid`}
-            /> */}
             <Lottie animationData={phoneAnimation} loop={true} />
           </motion.div>
         </div>
@@ -1096,7 +1073,7 @@ const home = () => {
           className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
         >
           <div className={styles.lottie_container}>
-            <Lottie animationData={integrationsAnimation} loop={true} />
+            {/* <Lottie animationData={integrationsAnimation} loop={true} /> */}
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">
