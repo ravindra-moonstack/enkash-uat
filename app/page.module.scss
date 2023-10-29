@@ -406,11 +406,24 @@
     display: flex;
     justify-content: space-evenly;
     overflow-x: auto;
+    img {
+      margin-right: 20px;
+      @include bp-md {
+        margin-right: 0px;
+      }
+    }
   }
 
   .customer_logo {
+    display: flex;
+    justify-content: space-evenly;
+    overflow-x: auto;
     img {
       filter: grayscale(1);
+      margin-right: 20px;
+      @include bp-md {
+        margin-right: 0px;
+      }
     }
   }
 

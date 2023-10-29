@@ -725,9 +725,9 @@ const home = () => {
               <Image width={150} src={sbmLogo} alt="axis bank logo" />
               <Image width={70} src={visaLogo} alt="axis bank logo" />
               <Image width={130} src={kotakLogo} alt="axis bank logo" />
-              <Image width={70} src={hdfcLogo} alt="axis bank logo" />
-              <Image width={120} src={rupayLogo} alt="axis bank logo" />
-              <Image width={100} src={masterCardLogo} alt="axis bank logo" />
+              <Image width={65} src={hdfcLogo} alt="axis bank logo" />
+              <Image width={100} src={rupayLogo} alt="axis bank logo" />
+              <Image width={90} src={masterCardLogo} alt="axis bank logo" />
             </div>
           )}
           {selectedTab === "customers" && (
