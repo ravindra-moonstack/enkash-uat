@@ -69,6 +69,11 @@ import {
   greenBg,
   corporateCardAnimation,
   box8Logo,
+  firstCryLogo,
+  landmarkLogo,
+  everestLogo,
+  cureFoodsLogo,
+  infraMarketLogo,
 } from ".";
 
 const loginUrl = "https://home.enkash.com/login";
@@ -723,6 +728,19 @@ const home = () => {
               <Image width={70} src={hdfcLogo} alt="axis bank logo" />
               <Image width={120} src={rupayLogo} alt="axis bank logo" />
               <Image width={100} src={masterCardLogo} alt="axis bank logo" />
+            </div>
+          )}
+          {selectedTab === "customers" && (
+            <div
+              className={`${styles.customer_logo} 
+            animate__animated mb-3 d-flex align-items-center justify-content-between`}
+            >
+              <Image width={100} src={box8Logo} alt="axis bank logo" />
+              <Image width={100} src={firstCryLogo} alt="axis bank logo" />
+              <Image width={100} src={landmarkLogo} alt="axis bank logo" />
+              <Image width={120} src={everestLogo} alt="axis bank logo" />
+              <Image width={120} src={cureFoodsLogo} alt="axis bank logo" />
+              <Image width={140} src={infraMarketLogo} alt="axis bank logo" />
             </div>
           )}
         </div>

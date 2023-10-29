@@ -38,6 +38,12 @@ export { default as hdfcLogo } from "./img/hdfc-logo.png";
 export { default as masterCardLogo } from "./img/master-card-logo.png";
 export { default as greenBg } from "./img/green-gradient-bg.png";
 export { default as box8Logo } from "./img/box-eight-logo.png";
+export { default as firstCryLogo } from "./img/first-cry-logo.png";
+export { default as landmarkLogo } from "./img/landmark-group.webp";
+export { default as everestLogo } from "./img/everest-logo.png";
+export { default as pristynCareLogo } from "./img/pristyn-care-logo.png";
+export { default as cureFoodsLogo } from "./img/curefoods-logo.png";
+export { default as infraMarketLogo } from "./img/infra-market-logo.png";
 
 //Animations import
 export { default as dashboardUiAutomateAnimation } from "./img/lottie/automate.json";
