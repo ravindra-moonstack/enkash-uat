@@ -1,11 +1,6 @@
 @import "./variables";
 @import "./mixin";
 
-body {
-  font-family: "Bricolage Grotesque", sans-serif;
-  overflow-x: hidden;
-}
-
 /* Background Classes */
 .bg-deep-indigo {
   background-color: $color-deep-indigo;
@@ -247,9 +242,24 @@ body {
   }
 }
 
-.desktop-header .main {
+/* Top Level Classes */
+
+body {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+.main {
   overflow-x: hidden;
 }
+
+/* Other Classes */
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Common Vertical scroll*/
+
 
 .scroll_container {
   overflow-x: auto;
@@ -266,8 +276,4 @@ body {
   &::-webkit-scrollbar-thumb {
     background: linear-gradient(90deg, #61d6ff, transparent);
   }
-}
-
-.cursor-pointer {
-  cursor: pointer;
 }
