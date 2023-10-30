@@ -3,6 +3,9 @@
 
 .home_container {
   background-color: $color-indi-volt;
+  @include bp-md {
+    padding-top: 100px;
+  }
 }
 
 .bg_rainbow {

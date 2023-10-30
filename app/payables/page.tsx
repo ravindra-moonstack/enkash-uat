@@ -10,7 +10,6 @@ import {
   cardBg,
   faqBg,
   whiteArrow,
-  officeImg,
   bannerAnimation,
   virtualCardAnimation,
   travelCardAnimation,
@@ -21,6 +20,7 @@ import {
   settingIcon,
   cashAndTime,
   coinIcon,
+  officeImg,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -36,7 +36,6 @@ import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
-import { cashAndCoin } from "../xpenz";
 
 const payables = () => {
   return (

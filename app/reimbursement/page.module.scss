@@ -3,6 +3,9 @@
 
 .first_row {
   margin-bottom: 80px;
+  @include bp-md {
+    padding-top: 170px;
+  }
   .three_step_container {
     padding-top: 120px;
     padding-left: 50px;
