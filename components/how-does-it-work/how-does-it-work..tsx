@@ -32,7 +32,7 @@ const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
       <div
         className={`d-flex col-12 flex-column flex-md-row align-items-center ${styles.card}`}
       >
-        <div className="d-flex flex-column flex-md-row">
+        <div className="d-flex flex-column flex-md-row justify-content-center">
           <div className={styles.img_container}>
             <Image src={imageToDisplay} alt="office team image" />
           </div>

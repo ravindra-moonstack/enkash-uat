@@ -1,38 +1,42 @@
 const faqData = [
   {
-    question: "What is Expense Management?",
+    question: "What is the Freedom Card?",
     answer: {
       heading:
-        "Expense management refers to the systems and procedures deployed by a business to process, pay, and audit employee-initiated expenses. This includes expenses incurred for travel, entertainment, and various operational costs. An effective expense management process involves the use of software, tools, and strategies to streamline these tasks and ensure adherence to corporate policies.",
+        "The Freedom Card is a corporate credit card designed to cater to the financial needs of businesses. It offers flexibility, increased spending limits, and specialized perks tailored for corporate usage, providing businesses with a convenient method of handling their expenses.",
     },
   },
   {
-    question: "Why should I automate my expense management process?",
+    question: "How can the Freedom Card benefit my business?",
     answer: {
       heading:
-        "Automating your expense management process can drastically reduce the time and effort required for manual entry, approval, and reconciliation. Automated systems provide real-time visibility into spending, minimize errors, ensure policy compliance, and improve the overall efficiency of your financial operations. This, in turn, can lead to significant cost savings and more strategic financial decision-making.",
+        "The Freedom Card offers a myriad of benefits including streamlined expense management, detailed transaction reports, rewards on business-related spending, and increased cash flow due to extended credit periods. It can also offer custom solutions based on the specific needs and size of your business, thereby adding value beyond traditional payment mechanisms.",
     },
   },
   {
-    question: "How can mobile integration help in expense management?",
+    question:
+      "Is there an integration feature to link the Freedom Card with our expense management system?",
     answer: {
       heading:
-        "Mobile integration allows employees to capture and report expenses on-the-go, as soon as they occur. They can easily snap photos of receipts, auto-fill expense forms, and even make travel arrangements, all through mobile apps. This real-time data entry reduces the chance of lost receipts or forgotten expenses and accelerates the reimbursement process. Furthermore, managers can approve expenses remotely, making the whole process faster and more efficient.",
+        "Yes, the Freedom Card typically offers seamless integration capabilities with popular expense management systems. This allows for real-time expense tracking, automated report generation, and easy reconciliation, reducing administrative effort and enhancing transparency.",
     },
   },
   {
-    question: "What benefits do analytics offer in expense management?",
+    question:
+      "How does the Freedom Card enhance security for corporate transactions?",
     answer: {
       heading:
-        "Analytics in expense management provide insights into spending trends, policy violations, and potential areas of savings. Businesses can identify patterns, understand their major cost areas, and make data-driven decisions to optimize their spending. It can also help in forecasting future expenses, budget planning, and negotiating vendor contracts.",
+        "The Freedom Card comes with advanced security features such as end-to-end encryption, fraud monitoring, and real-time transaction alerts. It may also feature tokenization and biometric verifications, ensuring that all corporate transactions are secure and authorized.",
     },
   },
   {
-    question: "Why is policy compliance crucial in expense management?",
+    question:
+      "Can employees be given individual Freedom Cards with set spending limits?",
     answer: {
       heading:
-        "Policy compliance ensures that all expenses are valid, justified",
+        "Absolutely. The Freedom Card system allows businesses to issue individual cards to employees with preset spending limits and categories. This ensures that employees can make necessary transactions while adhering to company spending policies. The centralized system also provides managers with oversight on all transactions, promoting accountability and efficient expense management.",
     },
   },
 ];
+
 export default faqData;

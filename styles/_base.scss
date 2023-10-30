@@ -260,10 +260,10 @@ body {
 
 /* Common Vertical scroll*/
 
-
 .scroll_container {
   overflow-x: auto;
   white-space: nowrap;
+  overflow-y: hidden;
 
   &::-webkit-scrollbar {
     height: 6px;

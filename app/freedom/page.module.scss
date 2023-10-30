@@ -116,11 +116,11 @@
     padding-bottom: 110px;
   }
 
-  .lottie_container{
+  .lottie_container {
     padding-left: 50px;
     padding-right: 50px;
   }
-  .lottie_second_container{
+  .lottie_second_container {
     padding-top: 30px;
     padding-left: 50px;
     padding-right: 50px;
@@ -169,7 +169,7 @@
 
 .fifth_row {
   position: relative;
-  background: url(./img/stack-bg.png);
+  background: url(./img/stack-mobile-bg.png);
   background-size: cover;
   padding: 50px;
   z-index: 1;
@@ -177,9 +177,11 @@
     background: url(./img/stack-bg.png);
     background-size: 100%;
   }
-  img{
-    height: 120px;
-    width: auto;
+  .container {
+    img {
+      width: 100px;
+      height: 100px;
+    }
   }
 }
 

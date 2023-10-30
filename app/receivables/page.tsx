@@ -321,30 +321,32 @@ const receivables = () => {
           description="Put repetitive and mundane tasks on auto-pilot and significantly reduce your team’s efforts in the invoicing and reconciliation process."
         />
       </div>
-      <div className="bg-white row-padding d-flex scroll_container">
-        <div className="me-4">
-          <GetStartedCard
-            title1="Proactive Collection"
-            title2=""
-            description="Build collection strategies that work for both you, and your customer. Get details about each and every transaction, linked seamlessly with virtual accounts for better insights."
-            ctaColor="blue"
-          />
-        </div>
-        <div className="me-4">
-          <GetStartedCard
-            title1="Improved Cashflow"
-            title2=""
-            description="Improve your businesses overall cashflow with an automated collection strategy that does most of the work for you."
-            ctaColor="blue"
-          />
-        </div>
-        <div className="me-4">
-          <GetStartedCard
-            title1="Departmental Hierarchy"
-            title2=""
-            description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
-            ctaColor="blue"
-          />
+      <div className="bg-white row-padding d-flex justify-content-center">
+        <div className="ps-md-5 scroll_container d-flex pb-4">
+          <div className="me-4">
+            <GetStartedCard
+              title1="Proactive Collection"
+              title2=""
+              description="Build collection strategies that work for both you, and your customer. Get details about each and every transaction, linked seamlessly with virtual accounts for better insights."
+              ctaColor="blue"
+            />
+          </div>
+          <div className="me-4">
+            <GetStartedCard
+              title1="Improved Cashflow"
+              title2=""
+              description="Improve your businesses overall cashflow with an automated collection strategy that does most of the work for you."
+              ctaColor="blue"
+            />
+          </div>
+          <div className="me-4">
+            <GetStartedCard
+              title1="Departmental Hierarchy"
+              title2=""
+              description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
+              ctaColor="blue"
+            />
+          </div>
         </div>
       </div>
       <div className="row bg-white row-padding text-center">

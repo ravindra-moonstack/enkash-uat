@@ -7,16 +7,6 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/constant/common";
 import {
-  budgetAndAdvance,
-  heirarchyControl,
-  officeImg,
-  policyApproval,
-  reimbursement,
-  scanAndDrop,
-  whiteArrow,
-  xpenzDashboard,
-  greenArrow,
-  gradientBg,
   heirarchyControlAnimation,
   budgetAndAdvanceAnimation,
   reimbursementAnimation,
@@ -29,20 +19,23 @@ import {
   cardIcon,
   timeJarIcon,
   settingsIcon,
+  whiteArrow,
+  officeImg,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import BlogCard from "@/components/blog/blog-card/blog-card";
-import MenuButton from "@/components/buttons/menu-button/menu-button";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import Lottie from "lottie-react";
 import faqData from "./faqData";
+import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import ActionCard from "@/components/action-card/action-card";
 
 const xpenz = () => {
   return (
@@ -64,7 +57,11 @@ const xpenz = () => {
               size="h2"
               weight="7"
             />
-            <Heading title="corporate cards for better spending" color="white" size="h2" />
+            <Heading
+              title="corporate cards for better spending"
+              color="white"
+              size="h2"
+            />
           </div>
           <div className={`mt-4 ${styles.desktop_description}`}>
             <Heading
@@ -97,17 +94,14 @@ const xpenz = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          {/* <Image
-            src={xpenzDashboard}
-            alt="reimbursement dashboard"
-            className={styles.dashboard_img}
-          /> */}
-          <Lottie animationData={expense} loop={true}/>
-         
+          <Lottie animationData={expense} loop={true} />
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork bannerImage={cardOnLaptop}/>
+        <HowDoesItWork
+          dataSets={howDoesItWorkData}
+          bannerImage={cardOnLaptop}
+        />
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
@@ -177,8 +171,8 @@ const xpenz = () => {
             className="img-fluid"
           /> */}
           <div className={styles.lottie_container}>
-          <Lottie animationData={policyAnimation} loop={true} />
-             </div>
+            <Lottie animationData={policyAnimation} loop={true} />
+          </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
@@ -197,7 +191,7 @@ const xpenz = () => {
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
-          <Lottie animationData={scanAndDropAnimation} loop={true} />
+            <Lottie animationData={scanAndDropAnimation} loop={true} />
           </div>
         </div>
       </div>
@@ -220,19 +214,31 @@ const xpenz = () => {
       </div>
 
       <div className={`row bg-indi-volt ${styles.fifth_row}`}>
-        <div className="d-flex flex-column flex-md-row tex-center justify-content-evenly">
+        <div
+          className={`d-flex flex-column flex-md-row tex-center justify-content-evenly  ${styles.container}`}
+        >
           <div className="md:mb-0 mb-4 text-md-center">
             <Image src={cardIcon} alt="coins icon" className="md:mb-0 mb-4" />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="Cards for" size="h5" color="white" weight="7" />
+              <Heading
+                title={`${space}Every Need`}
+                size="h5"
+                color="white"
+                weight="7"
+              />
             </div>
-            <Heading title="Every Need" size="h5" color="white" weight="7" />
           </div>
           <div className="mb-4 text-md-center">
             <Image src={timeJarIcon} alt="regulation icon" className="mb-4" />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="Quick" size="h5" color="white" weight="7" />
-              <Heading title="Processing" size="h5" color="white" weight="7" />
+              <Heading
+                title={`${space}Processing`}
+                size="h5"
+                color="white"
+                weight="7"
+              />
             </div>
           </div>
           <div className="mb-4 text-md-center">
@@ -241,10 +247,10 @@ const xpenz = () => {
               alt="cash and coin icon"
               className="md:mb-0 mb-4"
             />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="Flexible" size="h5" color="white" weight="7" />
               <Heading
-                title="Controls"
+                title={`${space}Controls`}
                 size="h5"
                 color="white"
                 weight="7"
@@ -252,7 +258,6 @@ const xpenz = () => {
             </div>
           </div>
         </div>
-
       </div>
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
@@ -298,12 +303,10 @@ const xpenz = () => {
       <div
         className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
       >
-        <div
-          className={`d-flex col-12 flex-column-reverse flex-md-row ${styles.container}`}
-        >
-          <div className={`d-flex flex-column bg-indi-volt ${styles.left_row}`}>
-            <div className="d-flex flex-column">
-              <div className="d-flex">
+        <ActionCard
+          mainTitle={
+            <>
+              <div className="d-flex flex-row">
                 <Heading title="Total" color="white" size="h1" weight="5" />
                 <Heading
                   title={`${space}Control`}
@@ -312,44 +315,15 @@ const xpenz = () => {
                   weight="5"
                 />
               </div>
-
-              <div className="my-4">
-                <Heading
-                  title="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
-                  color="white"
-                  size="h6"
-                  weight="4"
-                />
-              </div>
-              <div className="d-flex align-items-center mt-2">
-                <Heading
-                  title="Get Started"
-                  color="electric-green"
-                  size="h6"
-                  weight="4"
-                />
-                <Image
-                  className="m-2"
-                  src={greenArrow}
-                  alt="arrow icon"
-                  width={50}
-                />
-              </div>
-            </div>
-          </div>
-          <div className={styles.right_row}>
-            <Image
-              src={officeImg}
-              alt="office team image"
-              className="img-fluid"
-            />
-          </div>
-        </div>
+            </>
+          }
+          mainImage={officeImg}
+          description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
+        />
       </div>
-      <div className="row bg-white row-padding">
-        <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center align-items-center scroll_container`}
-        >
+
+      <div className="bg-white row-padding d-flex justify-content-center">
+        <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
               title1="Simplified Card Creation"
@@ -376,8 +350,9 @@ const xpenz = () => {
           </div>
         </div>
       </div>
+
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Expense Management Insights" />
+        <BlogWrapper title="Corporate Cards Insights" />
       </div>
 
       <div
@@ -429,4 +404,3 @@ const xpenz = () => {
 };
 
 export default xpenz;
-

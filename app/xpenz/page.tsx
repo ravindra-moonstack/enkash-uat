@@ -34,6 +34,7 @@ import faqData from "./faqData";
 import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import ActionCard from "@/components/action-card/action-card";
 
 const xpenz = () => {
   return (
@@ -307,59 +308,26 @@ const xpenz = () => {
       <div
         className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
       >
-        <div
-          className={`d-flex col-12 flex-column-reverse flex-md-row ${styles.container}`}
-        >
-          <div className={`d-flex flex-column bg-indi-volt ${styles.left_row}`}>
-            <div className="d-flex flex-column">
-              <div className="d-flex">
+        <ActionCard
+          mainTitle={
+            <>
+              <div className="d-flex flex-column">
                 <Heading title="Total" color="white" size="h1" weight="5" />
                 <Heading
-                  title={`${space}Visibility`}
+                  title={`${space}Control`}
                   color="electric-green"
                   size="h1"
                   weight="5"
                 />
               </div>
-
-              <div className="my-4">
-                <Heading
-                  title="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize 
-            expenses and increase your savings."
-                  color="white"
-                  size="h6"
-                  weight="4"
-                />
-              </div>
-              <div className="d-flex align-items-center mt-2">
-                <Heading
-                  title="Get Started"
-                  color="electric-green"
-                  size="h6"
-                  weight="4"
-                />
-                <Image
-                  className="m-2"
-                  src={greenArrow}
-                  alt="arrow icon"
-                  width={50}
-                />
-              </div>
-            </div>
-          </div>
-          <div className={styles.right_row}>
-            <Image
-              src={officeImg}
-              alt="office team image"
-              className="img-fluid"
-            />
-          </div>
-        </div>
+            </>
+          }
+          mainImage={officeImg}
+          description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
+        />
       </div>
-      <div className="row bg-white row-padding">
-        <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center align-items-center scroll_container`}
-        >
+      <div className="bg-white row-padding d-flex justify-content-center">
+        <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
               title1="Digital Receipt Management"
@@ -388,6 +356,7 @@ const xpenz = () => {
           </div>
         </div>
       </div>
+
       <div className="row bg-white row-padding text-center">
         <BlogWrapper title="Expense Management Insights" />
       </div>
