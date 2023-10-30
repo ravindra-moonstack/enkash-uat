@@ -7,27 +7,21 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/constant/common";
 import {
-  budgetAndAdvance,
-  cashAndCoin,
-  coin,
-  heirarchyControl,
   officeImg,
-  policyApproval,
-  regualation,
-  reimbursement,
-  scanAndDrop,
   whiteArrow,
-  xpenzDashboard,
   greenArrow,
-  gradientBg,
-  heirarchyControlAnimation,
-  budgetAndAdvanceAnimation,
-  reimbursementAnimation,
-  scanAndDropAnimation,
-  policyAnimation,
   cardBg,
   faqBg,
-  expense,
+  bannerImage,
+  bulkCollectAnimation,
+  invoiceAnimation,
+  quickCollectAnimation,
+  paymentLinkAnimation,
+  receivablesAnimation,
+  virtualAccountAnimation,
+  cashInHandIcon,
+  clickIcon,
+  searchIcon,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -40,8 +34,10 @@ import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import Lottie from "lottie-react";
 import faqData from "./faqData";
+import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import ActionCard from "@/components/action-card/action-card";
 
 const receivables = () => {
   return (
@@ -61,9 +57,9 @@ const receivables = () => {
             />
             <Heading title="| Receivables" size="h1" weight="7" />
           </div>
-          <div className={styles.demo}>
+          <div>
             <Heading
-              title="Digitize and optimize"
+              title={`Digitize and optimize${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -72,7 +68,7 @@ const receivables = () => {
           </div>
           <div className={`mt-4 ${styles.desktop_description}`}>
             <Heading
-              title="Get a detailed analysis of where, when and how your business is spending, and optimize accordingly with digital receipt management, approval matrices and more."
+              title="With EnKash, you’ll build collection strategies that work for both you and your customers with smart automation tools, actionable data and smart invoices."
               color="white"
               size="h6"
               weight="5"
@@ -88,7 +84,7 @@ const receivables = () => {
               weight="5"
             />
           </div>
-          <div className="my-5">
+          <div className={`my-5 ${styles.button_container}`}>
             <PrimaryButton
               title="Enkash Now!"
               theme="theme-blue"
@@ -103,18 +99,22 @@ const receivables = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <Lottie animationData={expense} loop={true} />
+          <Lottie
+            animationData={receivablesAnimation}
+            loop={true}
+            className={styles.lottie_container}
+          />
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork />
+        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={bannerImage} />
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Budgets and Advances"
-              description="Create budgets, track and optimize expenses, increase savings. "
+              title="Virtual Accounts"
+              description="Steamline the collection process by creating virtual accounts for your customers "
               theme="blue"
             />
           </div>
@@ -126,7 +126,9 @@ const receivables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={budgetAndAdvanceAnimation} loop={true} />
+            <div className={styles.lottie_container}>
+              <Lottie animationData={virtualAccountAnimation} loop={true} />
+            </div>
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
@@ -138,12 +140,14 @@ const receivables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={heirarchyControlAnimation} loop={true} />
+            <div className={styles.lottie_container}>
+              <Lottie animationData={paymentLinkAnimation} loop={true} />
+            </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
-              title="Hierarchy and Controls"
-              description="Create hierarchies and establish control over employee expenditure."
+              title="Payment Links"
+              description="Embed payment links within digital invoices for quicker collections."
               theme="blue"
             />
           </div>
@@ -151,8 +155,8 @@ const receivables = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 px-5 my-md-5 my-3">
             <ExploreCard
-              title="Reimbursements"
-              description="Fast-track and optimize the entire reimbursement process with better spend overview."
+              title="Bulk Collect"
+              description="Create an improved, customer-focused collection experience while ensuring better DSO."
               theme="blue"
             />
           </div>
@@ -164,25 +168,22 @@ const receivables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={reimbursementAnimation} loop={true} />
+            <div className={styles.lottie_container}>
+              <Lottie animationData={bulkCollectAnimation} loop={true} />
+            </div>
           </div>
         </div>
       </div>
 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
-          {/* <Image
-            src={scanAndDrop}
-            alt="policy and approval flows image"
-            className="img-fluid"
-          /> */}
           <div className={styles.lottie_container}>
-            <Lottie animationData={policyAnimation} loop={true} />
+            <Lottie animationData={quickCollectAnimation} loop={true} />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="Policy and Approval Flows"
+            title="Quick Collect"
             description="Choose an approval matrix that works best for your business and create and maintain an aligned approval process for all kinds of spends."
             theme="green"
           />
@@ -190,19 +191,14 @@ const receivables = () => {
 
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
-            title="Scan and Drop Receipts"
-            description="Leverage OCR for digital receipt management & reconciliation."
+            title="Invoices"
+            description="Automate invoice fetching seamlessly and discover hassle free invoice sharing."
             theme="green"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
-          {/* <Image
-            src={policyApproval}
-            alt="scan and drop receipt image"
-            className="img-fluid"
-          /> */}
           <div className={styles.lottie_second_container}>
-            <Lottie animationData={scanAndDropAnimation} loop={true} />
+            <Lottie animationData={invoiceAnimation} loop={true} />
           </div>
         </div>
       </div>
@@ -210,94 +206,81 @@ const receivables = () => {
       <div className="row bg-white row-padding">
         <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
           <Heading
-            title={`EnKash does${space}`}
-            size="h1"
-            color="black"
-            weight="6"
-          />
-          <Heading
-            title={`the heavy lifting${space}`}
+            title={`Quick Collection${space}`}
             size="h1"
             color="equity-blue"
             weight="6"
           />
-          <Heading title="for you." size="h1" color="black" weight="6" />
+          <Heading
+            title={`, Seamless Invoice Sharing${space}`}
+            size="h1"
+            color="black"
+            weight="6"
+          />
         </div>
       </div>
 
       <div className={`row bg-indi-volt ${styles.fifth_row}`}>
-        <div className="d-flex flex-column flex-md-row tex-center justify-content-evenly">
+        <div
+          className={`d-flex flex-column flex-md-row tex-center justify-content-evenly  ${styles.container}`}
+        >
           <div className="md:mb-0 mb-4 text-md-center">
-            <Image src={coin} alt="coins icon" className="md:mb-0 mb-4" />
+            <Image
+              src={cashInHandIcon}
+              alt="cash icon"
+              className="md:mb-0 mb-4"
+            />
             <div className="d-flex flex-column">
-              <Heading title="On-time" size="h5" color="white" weight="7" />
+              <Heading title="Quick" size="h5" color="white" weight="7" />
+              <Heading title="Collections" size="h5" color="white" weight="7" />
             </div>
-            <Heading title="Payments" size="h5" color="white" weight="7" />
           </div>
           <div className="mb-4 text-md-center">
-            <Image src={regualation} alt="regulation icon" className="mb-4" />
+            <Image src={clickIcon} alt="click icon" className="mb-4" />
             <div className="d-flex flex-column">
-              <Heading title="Spend " size="h5" color="white" weight="7" />
-              <Heading title="Regulation" size="h5" color="white" weight="7" />
+              <Heading title="One-click" size="h5" color="white" weight="7" />
+              <Heading title="Sharing" size="h5" color="white" weight="7" />
             </div>
           </div>
           <div className="mb-4 text-md-center">
             <Image
-              src={cashAndCoin}
-              alt="cash and coin icon"
+              src={searchIcon}
+              alt="search icon"
               className="md:mb-0 mb-4"
             />
             <div className="d-flex flex-column">
-              <Heading title="Cash Flow" size="h5" color="white" weight="7" />
-              <Heading
-                title="Optimization"
-                size="h5"
-                color="white"
-                weight="7"
-              />
+              <Heading title="Easy" size="h5" color="white" weight="7" />
+              <Heading title="Tracking" size="h5" color="white" weight="7" />
             </div>
           </div>
         </div>
-
-        {/* <Image
-          src={gradientBg}
-          alt="gradient image"
-          className={styles.gradient}
-        /> */}
       </div>
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
             {
-              item: "Expense Reporting",
+              item: "Collection Process",
               oldWayDescription:
-                "Manual expense reporting is prone to errors and can lead to incorrect reimbursement or accounting issues.",
+                "Manually keeping track of receivables and customer payments creates unnecessary confusion.",
               newWayDescription:
-                "EnKash’s Expense management platform automates the process of recording expenses, reducing the likelihood of errors.",
+                "Leverage virtual accounts to streamline the reconciliation process by linking received payments to customer accounts.",
             },
             {
-              item: "Operational Efficiency",
+              item: "Payment Methods",
               oldWayDescription:
                 "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
               newWayDescription:
                 "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Spend Overview",
+              item: "Collection Method",
               oldWayDescription:
                 "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
                 "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
             },
             {
-              item: "Expense Approvals",
-              oldWayDescription:
-                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
-              newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
-            },
-            {
-              item: "Accessibility",
+              item: "Invoice Generation",
               oldWayDescription:
                 "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
@@ -306,14 +289,14 @@ const receivables = () => {
           ]}
         />
       </div>
+
       <div
         className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
       >
-        <div
-          className={`d-flex col-12 flex-column-reverse flex-md-row ${styles.container}`}
-        >
-          <div className={`d-flex flex-column bg-indi-volt ${styles.left_row}`}>
-            <div className="d-flex flex-column">
+        <ActionCard
+          mainTitle={
+            <>
+              {" "}
               <div className="d-flex">
                 <Heading title="Total" color="white" size="h1" weight="5" />
                 <Heading
@@ -323,7 +306,17 @@ const receivables = () => {
                   weight="5"
                 />
               </div>
-
+            </>
+          }
+          mainImage={officeImg}
+          description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize 
+        expenses and increase your savings."
+        />
+        {/* <div
+          className={`d-flex col-12 flex-column-reverse flex-md-row ${styles.container}`}
+        >
+          <div className={`d-flex flex-column bg-indi-volt ${styles.left_row}`}>
+            <div className="d-flex flex-column">
               <div className="my-4">
                 <Heading
                   title="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize 
@@ -356,7 +349,7 @@ const receivables = () => {
               className="img-fluid"
             />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="row bg-white row-padding">
         <div

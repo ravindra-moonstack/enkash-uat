@@ -1,15 +1,11 @@
 @import "../../styles/variables";
 @import "../../styles/mixin";
 
-.demo {
-  display: inline;
-}
-
 .first_row {
-  background-image: url(./img/bg-image.png);
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
+  position: relative;
 
   padding-left: 25px;
   padding-right: 25px;
@@ -20,6 +16,19 @@
     padding-right: 30px;
     padding-top: 110px;
     padding-bottom: 80px;
+  }
+
+  .lottie_container {
+    position: absolute;
+    width: auto;
+    bottom: 0;
+    height: 350px;
+
+    @include bp-md {
+      bottom: 0;
+      right: 0;
+      height: 550px;
+    }
   }
 
   .dashboard_img {
@@ -41,6 +50,13 @@
     display: block;
     @include bp-md {
       display: none;
+    }
+  }
+
+  .button_container {
+    padding-bottom: 270px;
+    @include bp-md {
+      padding-bottom: 0px;
     }
   }
 }
@@ -71,9 +87,13 @@
       top: -100px;
       left: -50px;
       @include bp-md {
-        top: -50px;
-        left: 200px;
+        top: -120px;
+        left: 70px;
       }
+    }
+    .lottie_container {
+      margin-top: -30px;
+      margin-left: 50px;
     }
   }
 
@@ -86,9 +106,14 @@
       top: -100px;
       left: -50px;
       @include bp-md {
-        top: -100px;
+        top: -150px;
         left: -100px;
       }
+    }
+    .lottie_container {
+      margin-top: -30px;
+      margin-right: 50px;
+      width: 300px;
     }
   }
 
@@ -101,9 +126,14 @@
       top: -100px;
       left: -50px;
       @include bp-md {
-        top: -50px;
-        left: 200px;
+        top: -130px;
+        left: 220px;
       }
+    }
+    .lottie_container {
+      margin-top: -30px;
+      margin-left: 50px;
+      width: 400px;
     }
   }
 }
@@ -173,13 +203,20 @@
 
 .fifth_row {
   position: relative;
-  background: url(./img/circle-stack.png);
+  background: url(./img/stack-bg.png);
   background-size: cover;
   padding: 50px;
   z-index: 1;
   @include bp-md {
-    background: url(./img/circle-stack-desktop.png);
+    background: url(./img/stack-bg.png);
     background-size: 100%;
+  }
+
+  .container {
+    img {
+      width: 100px;
+      height: 100px;
+    }
   }
 }
 

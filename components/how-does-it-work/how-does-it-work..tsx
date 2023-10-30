@@ -1,17 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import rupeeCard from "./rupee-card.png";
 import laptop from "./laptop.png";
 import styles from "./how-does-it-work.module.scss";
 import Image, { StaticImageData } from "next/image";
 import Heading from "../heading/heading";
 
 interface howDoesItWorkProps {
-  bannerImage?: StaticImageData; // Define the bannerImage as optional with type StaticImageData
+  bannerImage?: StaticImageData;
+  dataSets: any;
 }
 
-const HowDoesItWork = ({ bannerImage }: howDoesItWorkProps) => {
+const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentData((prevData: number) => (prevData + 1) % dataSets.length);
@@ -21,27 +21,6 @@ const HowDoesItWork = ({ bannerImage }: howDoesItWorkProps) => {
   }, []);
 
   const [currentData, setCurrentData] = useState(0);
-
-  const dataSets = [
-    {
-      imageSrc: rupeeCard,
-      altText: "Ensure timely payment image",
-      heading:
-        "Make sure your business expenses are paid on time for uninterrupted operations.",
-    },
-    {
-      imageSrc: rupeeCard,
-      altText: "Make sure your businessimage",
-      heading:
-        "Prioritize paying your business costs on schedule to guarantee continuous workflow.",
-    },
-    {
-      imageSrc: rupeeCard,
-      altText: "Ensure timely payment image",
-      heading:
-        "Ensure timely payment of your business expenses to maintain smooth operations.",
-    },
-  ];
 
   const defaultImageSrc: StaticImageData = laptop;
 
