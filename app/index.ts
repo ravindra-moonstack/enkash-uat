@@ -54,9 +54,11 @@ export const trackAnimation = () => import("./img/lottie/track.json");
 export const optimizeAnimation = () => import("./img/lottie/optimize.json");
 export const phoneAndTabAnimation = () => import("./img/lottie/group.json");
 export const payablesAnimation = () => import("./img/lottie/payables.json");
-export const recieveableAnimation = () => import("./img/lottie/recievables.json");
-export const expenseManagementAnimation = () => import("./img/lottie/expense-management.json");
-export const corporateCardAnimation = () => import( "./img/lottie/credit-card.json");
+export const recieveableAnimation = () =>
+  import("./img/lottie/recievables.json");
+export const expenseManagementAnimation = () =>
+  import("./img/lottie/expense-management.json");
+export const corporateCardAnimation = () =>
+  import("./img/lottie/credit-card.json");
 export const diyCardAnimation = () => import("./img/lottie/diy.json");
 export const phoneAnimation = () => import("./img/lottie/phone.json");
-
