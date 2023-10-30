@@ -56,16 +56,11 @@ import {
   leftBlueGradient,
   leftCardGradient,
   rightCardGradient,
-  dashboardUiAutomateAnimation,
-  dashboardUiManageAnimation,
-  dashboardUiTrackAnimation,
-  dashboardUiOptimizeAnimation,
   kotakLogo,
   hdfcLogo,
   masterCardLogo,
   phoneAnimation,
-  group,
-  integrationsAnimation,
+  phoneAndTabAnimation,
   greenBg,
   corporateCardAnimation,
   box8Logo,
@@ -75,6 +70,10 @@ import {
   cureFoodsLogo,
   infraMarketLogo,
   integration,
+  manageAnimation,
+  automateAnimation,
+  optimizeAnimation,
+  trackAnimation
 } from ".";
 
 const loginUrl = "https://home.enkash.com/login";
@@ -151,15 +150,11 @@ const home = () => {
   //Below code is animation which are custom built and any lib is not used
   //Stack animation custom built
   const [scrollY, setScrollY] = useState(0);
-  const [isLottieActive, setLottieActive] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const handleScroll = () => {
       setScrollY(window.scrollY);
-      if (window.scrollY > 500 && !isLottieActive) {
-        setLottieActive(true);
-      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -224,6 +219,59 @@ const home = () => {
   //functions
   const [selectedTab, setSelectedTab] = useState("partners");
   const [activeAnimation, setActiveAnimation] = useState("manage");
+
+  type LottieAnimationData = any;
+  const [dashBoardAnimationData, setDashBoardAnimationData] =
+    useState<LottieAnimationData | null>(null);
+  const [phoneAndTabAnimationData, setPhoneAndTabAnimationData] =
+    useState<LottieAnimationData | null>(null);
+  const [payablesAnimationData, setPayablesAnimationData] =
+    useState<LottieAnimationData | null>(null);
+  const [recieveableAnimationData, setRecieveableAnimationData] =
+    useState<LottieAnimationData | null>(null);
+  const [expenseManagementAnimationData, setExpenseManagementAnimationData] =
+    useState<LottieAnimationData | null>(null);
+  const [corporateCardAnimationData, setCorporateCardAnimationData] =
+    useState<LottieAnimationData | null>(null);
+  const [diyCardAnimationData, setDiyCardAnimationData] =
+    useState<LottieAnimationData | null>(null);
+  const [phoneAnimationData, setPhoneAnimationData] =
+    useState<LottieAnimationData | null>(null);
+
+  const ANIMATION_MAP: any = {
+    automate: automateAnimation,
+    manage: manageAnimation,
+    track: trackAnimation,
+    optimize: optimizeAnimation,
+  };
+
+  useEffect(() => {
+    const loadAnimation = async () => {
+      const dashboardAnimationModule = await ANIMATION_MAP[activeAnimation]();
+      const phoneAndTabAnimationModule = await phoneAndTabAnimation();
+      const payablesAnimationModule = await payablesAnimation();
+      const recieveableAnimationModule = await recieveableAnimation();
+      const expenseManagementAnimationModule =
+        await expenseManagementAnimation();
+      const corporateCardAnimationModule = await corporateCardAnimation();
+      const diyCardAnimationModule = await diyCardAnimation();
+      const phoneAnimationModule = await phoneAnimation();
+
+      setPhoneAndTabAnimationData(phoneAndTabAnimationModule.default);
+      setDashBoardAnimationData(dashboardAnimationModule.default);
+      setPayablesAnimationData(payablesAnimationModule.default);
+      setRecieveableAnimationData(recieveableAnimationModule.default);
+      setExpenseManagementAnimationData(
+        expenseManagementAnimationModule.default
+      );
+      setCorporateCardAnimationData(corporateCardAnimationModule.default);
+      setDiyCardAnimationData(diyCardAnimationModule.default);
+      setPhoneAnimationData(phoneAnimationModule.default);
+    };
+
+    loadAnimation();
+  }, [activeAnimation]);
+
   const handleTabClick = (tab: SetStateAction<string>) => {
     setSelectedTab(tab);
   };
@@ -489,22 +537,11 @@ const home = () => {
           </div>
         </div>
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
-          {activeAnimation === "manage" && (
-            <Lottie animationData={dashboardUiManageAnimation} loop={true} />
-          )}
-          {activeAnimation === "track" && (
-            <Lottie
-              animationData={dashboardUiTrackAnimation}
-              loop={false}
-              autoplay={true}
-            />
-          )}
-          {activeAnimation === "optimize" && (
-            <Lottie animationData={dashboardUiOptimizeAnimation} loop={true} />
-          )}
-          {activeAnimation === "automate" && (
-            <Lottie animationData={dashboardUiAutomateAnimation} loop={true} />
-          )}
+          <Lottie
+            animationData={dashBoardAnimationData}
+            loop={true}
+            autoplay={true}
+          />
         </div>
         <motion.div
           ref={descTextScrollRef}
@@ -657,7 +694,7 @@ const home = () => {
           className={`col-md-6 col-12 d-flex position-relative  ${styles.img_container}`}
         >
           <div className={styles.lottie_container}>
-            {isLottieActive && <Lottie animationData={group} loop={true} />}
+            <Lottie animationData={phoneAndTabAnimationData} loop={true} />
           </div>
           <Image
             className={styles.green_bg}
@@ -753,9 +790,7 @@ const home = () => {
       <div className={`${styles.fifth_row} row row-padding`}>
         <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
           <div className={styles.lottie_container}>
-            {isLottieActive && (
-              <Lottie animationData={payablesAnimation} loop={true} />
-            )}
+            <Lottie animationData={payablesAnimationData} loop={true} />
           </div>
         </div>
         <motion.div
@@ -791,9 +826,7 @@ const home = () => {
         </motion.div>
         <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
           <div className={styles.lottie_container}>
-            {isLottieActive && (
-              <Lottie animationData={recieveableAnimation} loop={true} />
-            )}
+            <Lottie animationData={recieveableAnimationData} loop={true} />
           </div>
         </div>
       </div>
@@ -807,9 +840,10 @@ const home = () => {
         />
         <div className={`col-md-6 col-12 d-flex mb-5`}>
           <div className={styles.lottie_container}>
-            {isLottieActive && (
-              <Lottie animationData={expenseManagementAnimation} loop={true} />
-            )}
+            <Lottie
+              animationData={expenseManagementAnimationData}
+              loop={true}
+            />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-5">
@@ -905,9 +939,11 @@ const home = () => {
           className={`col-md-6 col-12 row-padding-x-only d-flex d-flex justify-content-center order-2 order-md-1 ${styles.section_padding}`}
         >
           <div className={styles.left_image_container}>
-            {isLottieActive && (
-              <Lottie animationData={corporateCardAnimation} loop={true} />
-            )}
+            <Lottie
+              animationData={corporateCardAnimationData}
+              loop={true}
+              className={styles.overlay_image}
+            />
 
             <Image
               src={rightCardGradient}
@@ -937,9 +973,11 @@ const home = () => {
         >
           <div className={styles.right_image_container}>
             <div className={styles.lottie_container}>
-              {isLottieActive && (
-                <Lottie animationData={diyCardAnimation} loop={true} />
-              )}
+              <Lottie
+                animationData={diyCardAnimationData}
+                loop={true}
+                className={styles.overlay_image}
+              />
             </div>
 
             <Image
@@ -1007,9 +1045,7 @@ const home = () => {
             }}
             className={styles.lottie_container}
           >
-            {isLottieActive && (
-              <Lottie animationData={phoneAnimation} loop={true} />
-            )}
+            <Lottie animationData={phoneAnimationData} loop={true} />
           </motion.div>
         </div>
       </div>
