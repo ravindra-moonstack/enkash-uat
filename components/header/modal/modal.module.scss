@@ -40,6 +40,18 @@
   color: $color-equity-blue;
 }
 
+.opacity_selected {
+  .product_description {
+    opacity: 1;
+  }
+}
+
+.opacity_normal {
+  .product_description {
+    opacity: 0.6;
+  }
+}
+
 .box_shadow_left {
   height: 100%;
   width: 20px;

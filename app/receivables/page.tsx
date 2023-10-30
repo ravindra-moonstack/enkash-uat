@@ -8,9 +8,12 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "@/constant/common";
 import {
   budgetAndAdvance,
+  cashAndCoin,
+  coin,
   heirarchyControl,
   officeImg,
   policyApproval,
+  regualation,
   reimbursement,
   scanAndDrop,
   whiteArrow,
@@ -25,10 +28,6 @@ import {
   cardBg,
   faqBg,
   expense,
-  cardOnLaptop,
-  cardIcon,
-  timeJarIcon,
-  settingsIcon,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -44,7 +43,7 @@ import faqData from "./faqData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
-const xpenz = () => {
+const receivables = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -54,21 +53,26 @@ const xpenz = () => {
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="F" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="reedom" size="h1" weight="7" />
-          </div>
-          <div className="d-flex flex-column">
             <Heading
-              title="Leverage purpose-based"
+              title={`Olympus${space}`}
+              color="rainy-blue"
+              size="h1"
+              weight="7"
+            />
+            <Heading title="| Receivables" size="h1" weight="7" />
+          </div>
+          <div className={styles.demo}>
+            <Heading
+              title="Digitize and optimize"
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <Heading title="corporate cards for better spending" color="white" size="h2" />
+            <Heading title="your collection process." color="white" size="h2" />
           </div>
           <div className={`mt-4 ${styles.desktop_description}`}>
             <Heading
-              title="Choose from unique card offerings and solutions that cover a range of business spends such as travel, subscriptions, marketing, GST, procurement, and more."
+              title="Get a detailed analysis of where, when and how your business is spending, and optimize accordingly with digital receipt management, approval matrices and more."
               color="white"
               size="h6"
               weight="5"
@@ -76,7 +80,9 @@ const xpenz = () => {
           </div>
           <div className={`mt-4 ${styles.mobile_description}`}>
             <Heading
-              title="Choose from unique card offerings and solutions that cover a range of business spends such as travel, subscriptions, marketing, GST, procurement, and more."
+              title="Maximize productivity within your organization with an easier 
+                  reimbursement system that helps you track, process and sync data in
+                   real-time."
               color="white"
               size="h5"
               weight="5"
@@ -97,24 +103,18 @@ const xpenz = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          {/* <Image
-            src={xpenzDashboard}
-            alt="reimbursement dashboard"
-            className={styles.dashboard_img}
-          /> */}
-          <Lottie animationData={expense} loop={true}/>
-         
+          <Lottie animationData={expense} loop={true} />
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork bannerImage={cardOnLaptop}/>
+        <HowDoesItWork />
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Virtual Cards"
-              description="Issue, manage, and monitor virtual cards on the go for unexpected expenses. "
+              title="Budgets and Advances"
+              description="Create budgets, track and optimize expenses, increase savings. "
               theme="blue"
             />
           </div>
@@ -142,8 +142,8 @@ const xpenz = () => {
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
-              title="Travel Cards"
-              description="Manage, monitor and maximize control over travel expenditure."
+              title="Hierarchy and Controls"
+              description="Create hierarchies and establish control over employee expenditure."
               theme="blue"
             />
           </div>
@@ -151,8 +151,8 @@ const xpenz = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 px-5 my-md-5 my-3">
             <ExploreCard
-              title="Spend Control"
-              description="DIY management tools for total control over card usage, budgets and spends."
+              title="Reimbursements"
+              description="Fast-track and optimize the entire reimbursement process with better spend overview."
               theme="blue"
             />
           </div>
@@ -177,74 +177,80 @@ const xpenz = () => {
             className="img-fluid"
           /> */}
           <div className={styles.lottie_container}>
-          <Lottie animationData={policyAnimation} loop={true} />
-             </div>
+            <Lottie animationData={policyAnimation} loop={true} />
+          </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="SaaS Cards"
-            description="Control SaaS spends & security like never before with real-time visibility"
+            title="Policy and Approval Flows"
+            description="Choose an approval matrix that works best for your business and create and maintain an aligned approval process for all kinds of spends."
             theme="green"
           />
         </div>
 
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
-            title="Digital Marketing Cards"
-            description="Effectively handle subscriptions to various digital marketing platforms, and prevent excessive expenditures"
+            title="Scan and Drop Receipts"
+            description="Leverage OCR for digital receipt management & reconciliation."
             theme="green"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
+          {/* <Image
+            src={policyApproval}
+            alt="scan and drop receipt image"
+            className="img-fluid"
+          /> */}
           <div className={styles.lottie_second_container}>
-          <Lottie animationData={scanAndDropAnimation} loop={true} />
+            <Lottie animationData={scanAndDropAnimation} loop={true} />
           </div>
         </div>
       </div>
 
       <div className="row bg-white row-padding">
-        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center flex-wrap">
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
           <Heading
-            title={`Corporate cards made for${space}`}
-            size="h1"
-            color="equity-blue"
-            weight="6"
-          />
-          <Heading
-            title={`fast growing businesses.${space}`}
+            title={`EnKash does${space}`}
             size="h1"
             color="black"
             weight="6"
           />
+          <Heading
+            title={`the heavy lifting${space}`}
+            size="h1"
+            color="equity-blue"
+            weight="6"
+          />
+          <Heading title="for you." size="h1" color="black" weight="6" />
         </div>
       </div>
 
       <div className={`row bg-indi-volt ${styles.fifth_row}`}>
         <div className="d-flex flex-column flex-md-row tex-center justify-content-evenly">
           <div className="md:mb-0 mb-4 text-md-center">
-            <Image src={cardIcon} alt="coins icon" className="md:mb-0 mb-4" />
+            <Image src={coin} alt="coins icon" className="md:mb-0 mb-4" />
             <div className="d-flex flex-column">
-              <Heading title="Cards for" size="h5" color="white" weight="7" />
+              <Heading title="On-time" size="h5" color="white" weight="7" />
             </div>
-            <Heading title="Every Need" size="h5" color="white" weight="7" />
+            <Heading title="Payments" size="h5" color="white" weight="7" />
           </div>
           <div className="mb-4 text-md-center">
-            <Image src={timeJarIcon} alt="regulation icon" className="mb-4" />
+            <Image src={regualation} alt="regulation icon" className="mb-4" />
             <div className="d-flex flex-column">
-              <Heading title="Quick" size="h5" color="white" weight="7" />
-              <Heading title="Processing" size="h5" color="white" weight="7" />
+              <Heading title="Spend " size="h5" color="white" weight="7" />
+              <Heading title="Regulation" size="h5" color="white" weight="7" />
             </div>
           </div>
           <div className="mb-4 text-md-center">
             <Image
-              src={settingsIcon}
+              src={cashAndCoin}
               alt="cash and coin icon"
               className="md:mb-0 mb-4"
             />
             <div className="d-flex flex-column">
-              <Heading title="Flexible" size="h5" color="white" weight="7" />
+              <Heading title="Cash Flow" size="h5" color="white" weight="7" />
               <Heading
-                title="Controls"
+                title="Optimization"
                 size="h5"
                 color="white"
                 weight="7"
@@ -253,6 +259,11 @@ const xpenz = () => {
           </div>
         </div>
 
+        {/* <Image
+          src={gradientBg}
+          alt="gradient image"
+          className={styles.gradient}
+        /> */}
       </div>
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
@@ -260,33 +271,33 @@ const xpenz = () => {
             {
               item: "Expense Reporting",
               oldWayDescription:
-                "Employees pay for business expenses from their own pocket, causing tiresome reimbursement processes for both the employer and employee.",
+                "Manual expense reporting is prone to errors and can lead to incorrect reimbursement or accounting issues.",
               newWayDescription:
-                "Issue virtual corporate cards with a pre-approved budget that can be tracked in real time and optimized accordingly, reducing the reimbursement load.",
+                "EnKash’s Expense management platform automates the process of recording expenses, reducing the likelihood of errors.",
             },
             {
-              item: "Clear Demarcation",
+              item: "Operational Efficiency",
               oldWayDescription:
                 "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
               newWayDescription:
                 "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Complete Control",
+              item: "Spend Overview",
               oldWayDescription:
                 "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
                 "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
             },
             {
-              item: "Spend Overview",
+              item: "Expense Approvals",
               oldWayDescription:
                 "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
                 "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
             },
             {
-              item: "Fund Disbursement",
+              item: "Accessibility",
               oldWayDescription:
                 "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
@@ -306,7 +317,7 @@ const xpenz = () => {
               <div className="d-flex">
                 <Heading title="Total" color="white" size="h1" weight="5" />
                 <Heading
-                  title={`${space}Control`}
+                  title={`${space}Visibility`}
                   color="electric-green"
                   size="h1"
                   weight="5"
@@ -315,7 +326,8 @@ const xpenz = () => {
 
               <div className="my-4">
                 <Heading
-                  title="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
+                  title="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize 
+            expenses and increase your savings."
                   color="white"
                   size="h6"
                   weight="4"
@@ -352,25 +364,27 @@ const xpenz = () => {
         >
           <div className="me-4">
             <GetStartedCard
-              title1="Simplified Card Creation"
+              title1="Digital Receipt Management"
               title2=""
-              description="Onboard and issue purpose-based corporate cards in a few simple steps with basic KYC documents."
+              description="Leverage OCR technology to create a seamless reimbursement process 
+            for your employees. Scan or photograph receipts, and upload them for immediate approvals."
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Set Card Spend Limits"
+              title1="Approval Process"
               title2=""
-              description="Use the DIY card platform to set limits on expenditure and types of expenses to enhance spending for your teams and employees."
+              description="Configure approval processes as per the requirements of your business.
+             Plan your cash flow better, optimize savings, and accelerate your reimbursement process."
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Enhanced Savings"
+              title1="Departmental Hierarchy"
               title2=""
-              description="Maximize savings by ensuring that your spends are optimized, and benefit from on-time payment rebates and better payment terms."
+              description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
               ctaColor="blue"
             />
           </div>
@@ -407,7 +421,7 @@ const xpenz = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Corporate Cards?"
+            title="Have Questions about Expense Management?"
             size="h3"
             color="white"
           />
@@ -428,5 +442,4 @@ const xpenz = () => {
   );
 };
 
-export default xpenz;
-
+export default receivables;

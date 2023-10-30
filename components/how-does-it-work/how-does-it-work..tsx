@@ -45,7 +45,7 @@ const HowDoesItWork = ({ bannerImage }: howDoesItWorkProps) => {
 
   const defaultImageSrc: StaticImageData = laptop;
 
-  const imageToDisplay: StaticImageData = bannerImage || defaultImageSrc
+  const imageToDisplay: StaticImageData = bannerImage || defaultImageSrc;
 
   return (
     <div className={styles.home_container}>

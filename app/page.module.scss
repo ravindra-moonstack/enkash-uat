@@ -722,10 +722,15 @@
     .lottie_container {
       display: flex;
       align-items: center;
-      width: 350px;
       @include bp-md {
-        width: 500px;
         padding-right: 40px;
+      }
+      img {
+        width: 100%;
+        height: auto;
+        @include bp-md {
+          width: 500px;
+        }
       }
     }
   }

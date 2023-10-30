@@ -74,6 +74,7 @@ import {
   everestLogo,
   cureFoodsLogo,
   infraMarketLogo,
+  integration,
 } from ".";
 
 const loginUrl = "https://home.enkash.com/login";
@@ -150,11 +151,15 @@ const home = () => {
   //Below code is animation which are custom built and any lib is not used
   //Stack animation custom built
   const [scrollY, setScrollY] = useState(0);
+  const [isLottieActive, setLottieActive] = useState(false);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      if (window.scrollY > 500 && !isLottieActive) {
+        setLottieActive(true);
+      }
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
@@ -652,7 +657,7 @@ const home = () => {
           className={`col-md-6 col-12 d-flex position-relative  ${styles.img_container}`}
         >
           <div className={styles.lottie_container}>
-            <Lottie animationData={group} loop={true} />
+            {isLottieActive && <Lottie animationData={group} loop={true} />}
           </div>
           <Image
             className={styles.green_bg}
@@ -748,7 +753,9 @@ const home = () => {
       <div className={`${styles.fifth_row} row row-padding`}>
         <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
           <div className={styles.lottie_container}>
-            <Lottie animationData={payablesAnimation} loop={true} />
+            {isLottieActive && (
+              <Lottie animationData={payablesAnimation} loop={true} />
+            )}
           </div>
         </div>
         <motion.div
@@ -784,7 +791,9 @@ const home = () => {
         </motion.div>
         <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
           <div className={styles.lottie_container}>
-            <Lottie animationData={recieveableAnimation} loop={true} />
+            {isLottieActive && (
+              <Lottie animationData={recieveableAnimation} loop={true} />
+            )}
           </div>
         </div>
       </div>
@@ -798,7 +807,9 @@ const home = () => {
         />
         <div className={`col-md-6 col-12 d-flex mb-5`}>
           <div className={styles.lottie_container}>
-            <Lottie animationData={expenseManagementAnimation} loop={true} />
+            {isLottieActive && (
+              <Lottie animationData={expenseManagementAnimation} loop={true} />
+            )}
           </div>
         </div>
         <div className="col-md-6 col-12 mb-5">
@@ -894,11 +905,10 @@ const home = () => {
           className={`col-md-6 col-12 row-padding-x-only d-flex d-flex justify-content-center order-2 order-md-1 ${styles.section_padding}`}
         >
           <div className={styles.left_image_container}>
-            <Lottie
-              className={styles.overlay_image}
-              animationData={corporateCardAnimation}
-              loop={true}
-            />
+            {isLottieActive && (
+              <Lottie animationData={corporateCardAnimation} loop={true} />
+            )}
+
             <Image
               src={rightCardGradient}
               alt="gradients"
@@ -927,11 +937,9 @@ const home = () => {
         >
           <div className={styles.right_image_container}>
             <div className={styles.lottie_container}>
-              <Lottie
-                className={styles.overlay_image}
-                animationData={diyCardAnimation}
-                loop={true}
-              />
+              {isLottieActive && (
+                <Lottie animationData={diyCardAnimation} loop={true} />
+              )}
             </div>
 
             <Image
@@ -999,7 +1007,9 @@ const home = () => {
             }}
             className={styles.lottie_container}
           >
-            <Lottie animationData={phoneAnimation} loop={true} />
+            {isLottieActive && (
+              <Lottie animationData={phoneAnimation} loop={true} />
+            )}
           </motion.div>
         </div>
       </div>
@@ -1125,7 +1135,7 @@ const home = () => {
           className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
         >
           <div className={styles.lottie_container}>
-            <Lottie animationData={integrationsAnimation} loop={true} />
+            <Image src={integration} alt="enkash phone integration image" />
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">

@@ -445,6 +445,4 @@ const xpenz = () => {
 };
 
 export default xpenz;
-function setCurrentData(arg0: (prevData: any) => number) {
-  throw new Error("Function not implemented.");
-}
+

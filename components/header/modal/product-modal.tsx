@@ -54,7 +54,11 @@ const ProductModal = ({ onLinkClick }: any) => {
         {motherProducts.map((product: any, index: any) => (
           <div
             key={product.name}
-            className={styles.product_row}
+            className={`${styles.product_row} ${
+              hoveredProductIndex == index
+                ? styles.opacity_selected
+                : styles.opacity_normal
+            }`}
             onMouseEnter={() => {
               setPrevHoveredProductIndex(hoveredProductIndex);
               if (hoveredProductIndex === null) {
