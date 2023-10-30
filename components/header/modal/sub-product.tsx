@@ -55,19 +55,20 @@ const SubProduct = (props: any) => {
             {props.subProducts.length > 1 && (
               <div className="d-flex flex-row color-secondry-grey">
                 {props.subProducts.map((group: any) => (
-                  <div
+                  <Link
+                    href={group.subtitleLink}
                     key={group.subtitle}
                     className={`${styles.sub_product_title} ${
                       group.subtitle === activeSubtitle
                         ? "color-equity-blue"
-                        : ""
+                        : "color-secondry-grey"
                     }`}
                     onMouseOver={() => {
                       setActiveSubtitle(group.subtitle);
                     }}
                   >
                     {group.subtitle}
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}

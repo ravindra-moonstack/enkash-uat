@@ -24,6 +24,7 @@ import {
 const olympusProducts = [
   {
     subtitle: "Payables",
+    subtitleLink: "/payables",
     currentHeading: {
       name: "Olympus",
       description:
@@ -72,6 +73,7 @@ const olympusProducts = [
   },
   {
     subtitle: "Receivables",
+    subtitleLink: "/receivables",
     currentHeading: {
       name: "olympus ",
       description:

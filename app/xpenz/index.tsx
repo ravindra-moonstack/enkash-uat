@@ -1,10 +1,4 @@
-export { default as xpenzDashboard } from "./img/xpenz-dashboard.png";
 export { default as progressBar } from "./img/progress-bar.png";
-export { default as reimbursement } from "./img/reimbursement.png";
-export { default as heirarchyControl } from "./img/heirarchy-control.png";
-export { default as budgetAndAdvance } from "./img/budget-and-advances.png";
-export { default as policyApproval } from "./img/policy-approval.png";
-export { default as scanAndDrop } from "./img/scan-and-drop.png";
 export { default as coin } from "./img/coins.png";
 export { default as regualation } from "./img/regulations.png";
 export { default as cashAndCoin } from "./img/cash-and-coin.png";

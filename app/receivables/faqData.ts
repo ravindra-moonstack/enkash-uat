@@ -1,38 +1,40 @@
 const faqData = [
   {
-    question: "What is Expense Management?",
+    question: "What are receivables?",
     answer: {
       heading:
-        "Expense management refers to the systems and procedures deployed by a business to process, pay, and audit employee-initiated expenses. This includes expenses incurred for travel, entertainment, and various operational costs. An effective expense management process involves the use of software, tools, and strategies to streamline these tasks and ensure adherence to corporate policies.",
+        "Receivables refer to the outstanding invoices a company has or the money clients owe the company. The term can be understood as an asset amounting to the future payments a company expects to receive from its clients for goods or services delivered.",
     },
   },
   {
-    question: "Why should I automate my expense management process?",
+    question: "Why is it important to manage receivables efficiently?",
     answer: {
       heading:
-        "Automating your expense management process can drastically reduce the time and effort required for manual entry, approval, and reconciliation. Automated systems provide real-time visibility into spending, minimize errors, ensure policy compliance, and improve the overall efficiency of your financial operations. This, in turn, can lead to significant cost savings and more strategic financial decision-making.",
+        "Efficient management of receivables ensures timely collection of revenues, improves cash flow, and reduces the risk of bad debts. By optimizing the incoming payments, a company can maintain a healthy working capital and reinvest in its growth and operations.",
     },
   },
   {
-    question: "How can mobile integration help in expense management?",
+    question: "How can automation help in receivables management?",
     answer: {
       heading:
-        "Mobile integration allows employees to capture and report expenses on-the-go, as soon as they occur. They can easily snap photos of receipts, auto-fill expense forms, and even make travel arrangements, all through mobile apps. This real-time data entry reduces the chance of lost receipts or forgotten expenses and accelerates the reimbursement process. Furthermore, managers can approve expenses remotely, making the whole process faster and more efficient.",
+        "Automation in receivables management can streamline invoice generation, payment reminders, reconciliation processes, and more. It minimizes manual errors, offers real-time insights into outstanding amounts, and accelerates the overall collection process, leading to improved financial health.",
     },
   },
   {
-    question: "What benefits do analytics offer in expense management?",
+    question:
+      "What strategies can businesses use to optimize incoming payments?",
     answer: {
       heading:
-        "Analytics in expense management provide insights into spending trends, policy violations, and potential areas of savings. Businesses can identify patterns, understand their major cost areas, and make data-driven decisions to optimize their spending. It can also help in forecasting future expenses, budget planning, and negotiating vendor contracts.",
+        "Businesses can offer early payment discounts, set clear payment terms, regularly review their credit policies, employ digital payment methods, and leverage analytics to understand payment patterns. Automated reminders and robust communication can also play a crucial role in ensuring timely collections.",
     },
   },
   {
-    question: "Why is policy compliance crucial in expense management?",
+    question: "Why is it crucial to monitor and analyze receivables regularly?",
     answer: {
       heading:
-        "Policy compliance ensures that all expenses are valid, justified",
+        "Regular monitoring and analysis of receivables help in identifying potential bad debts, understanding client payment behaviors, and forecasting cash flows. It aids in timely decision-making, ensuring that the company's liquidity position remains strong and supports ongoing operations and investments.",
     },
   },
 ];
+
 export default faqData;

@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Key, useEffect, useState } from "react";
+import rupeeCard from "./rupee-card.png";
 import laptop from "./laptop.png";
 import styles from "./how-does-it-work.module.scss";
 import Image, { StaticImageData } from "next/image";
@@ -49,7 +50,7 @@ const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
               <Image
                 src={dataSets[currentData].imageSrc}
                 alt={dataSets[currentData].altText}
-                className={`${styles.rupee_img}`}
+                className={`${styles.icon_img}`}
               />
               <h1 className={styles.heading}>
                 {dataSets[currentData].heading}
@@ -59,7 +60,7 @@ const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
             <div
               className={`d-flex justify-content-center ${styles.progress_bar}`}
             >
-              {dataSets.map((_, index) => (
+              {dataSets.map((_: any, index: Key | null | undefined) => (
                 <span
                   key={index}
                   className={`${styles.bar} ${

@@ -5,7 +5,7 @@ import { space } from "@/constant/common";
 import greenArrow from "./green-arrow.svg";
 
 interface data {
-  mainTitle: string;
+  mainTitle: any;
   mainImage: any;
   description: string;
 }

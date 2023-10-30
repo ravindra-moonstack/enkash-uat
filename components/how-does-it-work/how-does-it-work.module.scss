@@ -46,15 +46,18 @@
           font-size: 22px;
         }
       }
-      .rupee_img {
-        height: 70px;
-        width: 100px;
-        margin-bottom: 10px;
+      .icon_img {
+        height: 60px;
+        width: 70px;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
         @include bp-md {
           height: 85px;
           width: 150px;
           margin-bottom: 0px;
           margin-right: 25px;
+          margin-top: 0px;
         }
       }
     }

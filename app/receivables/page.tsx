@@ -9,7 +9,6 @@ import { space } from "@/constant/common";
 import {
   officeImg,
   whiteArrow,
-  greenArrow,
   cardBg,
   faqBg,
   bannerImage,
@@ -27,8 +26,6 @@ import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import BlogCard from "@/components/blog/blog-card/blog-card";
-import MenuButton from "@/components/buttons/menu-button/menu-button";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
@@ -76,9 +73,7 @@ const receivables = () => {
           </div>
           <div className={`mt-4 ${styles.mobile_description}`}>
             <Heading
-              title="Maximize productivity within your organization with an easier 
-                  reimbursement system that helps you track, process and sync data in
-                   real-time."
+              title="With EnKash, you’ll build collection strategies that work for both you and your customers with smart automation tools, actionable data and smart invoices."
               color="white"
               size="h5"
               weight="5"
@@ -203,16 +198,16 @@ const receivables = () => {
         </div>
       </div>
 
-      <div className="row bg-white row-padding">
-        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
+      <div className="row bg-white row-padding text-center">
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-md-center">
           <Heading
-            title={`Quick Collection${space}`}
+            title={`Quick Collection,${space}`}
             size="h1"
             color="equity-blue"
             weight="6"
           />
           <Heading
-            title={`, Seamless Invoice Sharing${space}`}
+            title={`Seamless Invoice Sharing${space}`}
             size="h1"
             color="black"
             weight="6"
@@ -230,16 +225,26 @@ const receivables = () => {
               alt="cash icon"
               className="md:mb-0 mb-4"
             />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="Quick" size="h5" color="white" weight="7" />
-              <Heading title="Collections" size="h5" color="white" weight="7" />
+              <Heading
+                title={`${space}Collections`}
+                size="h5"
+                color="white"
+                weight="7"
+              />
             </div>
           </div>
           <div className="mb-4 text-md-center">
             <Image src={clickIcon} alt="click icon" className="mb-4" />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="One-click" size="h5" color="white" weight="7" />
-              <Heading title="Sharing" size="h5" color="white" weight="7" />
+              <Heading
+                title={`${space}Sharing`}
+                size="h5"
+                color="white"
+                weight="7"
+              />
             </div>
           </div>
           <div className="mb-4 text-md-center">
@@ -248,9 +253,14 @@ const receivables = () => {
               alt="search icon"
               className="md:mb-0 mb-4"
             />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="Easy" size="h5" color="white" weight="7" />
-              <Heading title="Tracking" size="h5" color="white" weight="7" />
+              <Heading
+                title={`${space}Tracking`}
+                size="h5"
+                color="white"
+                weight="7"
+              />
             </div>
           </div>
         </div>
@@ -296,11 +306,10 @@ const receivables = () => {
         <ActionCard
           mainTitle={
             <>
-              {" "}
-              <div className="d-flex">
-                <Heading title="Total" color="white" size="h1" weight="5" />
+              <div className="d-flex flex-column">
+                <Heading title="Automate." color="white" size="h1" weight="5" />
                 <Heading
-                  title={`${space}Visibility`}
+                  title="Accelerate."
                   color="electric-green"
                   size="h1"
                   weight="5"
@@ -309,82 +318,37 @@ const receivables = () => {
             </>
           }
           mainImage={officeImg}
-          description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize 
-        expenses and increase your savings."
+          description="Put repetitive and mundane tasks on auto-pilot and significantly reduce your team’s efforts in the invoicing and reconciliation process."
         />
-        {/* <div
-          className={`d-flex col-12 flex-column-reverse flex-md-row ${styles.container}`}
-        >
-          <div className={`d-flex flex-column bg-indi-volt ${styles.left_row}`}>
-            <div className="d-flex flex-column">
-              <div className="my-4">
-                <Heading
-                  title="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize 
-            expenses and increase your savings."
-                  color="white"
-                  size="h6"
-                  weight="4"
-                />
-              </div>
-              <div className="d-flex align-items-center mt-2">
-                <Heading
-                  title="Get Started"
-                  color="electric-green"
-                  size="h6"
-                  weight="4"
-                />
-                <Image
-                  className="m-2"
-                  src={greenArrow}
-                  alt="arrow icon"
-                  width={50}
-                />
-              </div>
-            </div>
-          </div>
-          <div className={styles.right_row}>
-            <Image
-              src={officeImg}
-              alt="office team image"
-              className="img-fluid"
-            />
-          </div>
-        </div> */}
       </div>
-      <div className="row bg-white row-padding">
-        <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 justify-content-md-center align-items-center scroll_container`}
-        >
-          <div className="me-4">
-            <GetStartedCard
-              title1="Digital Receipt Management"
-              title2=""
-              description="Leverage OCR technology to create a seamless reimbursement process 
-            for your employees. Scan or photograph receipts, and upload them for immediate approvals."
-              ctaColor="blue"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              title1="Approval Process"
-              title2=""
-              description="Configure approval processes as per the requirements of your business.
-             Plan your cash flow better, optimize savings, and accelerate your reimbursement process."
-              ctaColor="blue"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              title1="Departmental Hierarchy"
-              title2=""
-              description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
-              ctaColor="blue"
-            />
-          </div>
+      <div className="bg-white row-padding d-flex scroll_container">
+        <div className="me-4">
+          <GetStartedCard
+            title1="Proactive Collection"
+            title2=""
+            description="Build collection strategies that work for both you, and your customer. Get details about each and every transaction, linked seamlessly with virtual accounts for better insights."
+            ctaColor="blue"
+          />
+        </div>
+        <div className="me-4">
+          <GetStartedCard
+            title1="Improved Cashflow"
+            title2=""
+            description="Improve your businesses overall cashflow with an automated collection strategy that does most of the work for you."
+            ctaColor="blue"
+          />
+        </div>
+        <div className="me-4">
+          <GetStartedCard
+            title1="Departmental Hierarchy"
+            title2=""
+            description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
+            ctaColor="blue"
+          />
         </div>
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Expense Management Insights" />
+        <BlogWrapper title="Receivables Insights" />
       </div>
 
       <div
@@ -414,7 +378,7 @@ const receivables = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Expense Management?"
+            title="Have Questions about Receivables?"
             size="h3"
             color="white"
           />

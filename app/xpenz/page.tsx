@@ -7,19 +7,12 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/constant/common";
 import {
-  budgetAndAdvance,
   cashAndCoin,
   coin,
-  heirarchyControl,
   officeImg,
-  policyApproval,
   regualation,
-  reimbursement,
-  scanAndDrop,
   whiteArrow,
-  xpenzDashboard,
   greenArrow,
-  gradientBg,
   heirarchyControlAnimation,
   budgetAndAdvanceAnimation,
   reimbursementAnimation,
@@ -33,13 +26,12 @@ import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import BlogCard from "@/components/blog/blog-card/blog-card";
-import MenuButton from "@/components/buttons/menu-button/menu-button";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import Lottie from "lottie-react";
 import faqData from "./faqData";
+import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
@@ -99,17 +91,11 @@ const xpenz = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          {/* <Image
-            src={xpenzDashboard}
-            alt="reimbursement dashboard"
-            className={styles.dashboard_img}
-          /> */}
-          <Lottie animationData={expense} loop={true}/>
-         
+          <Lottie animationData={expense} loop={true} />
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork />
+        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={officeImg} />
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
@@ -179,8 +165,8 @@ const xpenz = () => {
             className="img-fluid"
           /> */}
           <div className={styles.lottie_container}>
-          <Lottie animationData={policyAnimation} loop={true} />
-             </div>
+            <Lottie animationData={policyAnimation} loop={true} />
+          </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
@@ -204,7 +190,7 @@ const xpenz = () => {
             className="img-fluid"
           /> */}
           <div className={styles.lottie_second_container}>
-          <Lottie animationData={scanAndDropAnimation} loop={true} />
+            <Lottie animationData={scanAndDropAnimation} loop={true} />
           </div>
         </div>
       </div>
@@ -231,16 +217,26 @@ const xpenz = () => {
         <div className="d-flex flex-column flex-md-row tex-center justify-content-evenly">
           <div className="md:mb-0 mb-4 text-md-center">
             <Image src={coin} alt="coins icon" className="md:mb-0 mb-4" />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="On-time" size="h5" color="white" weight="7" />
+              <Heading
+                title={`${space}Payments`}
+                size="h5"
+                color="white"
+                weight="7"
+              />
             </div>
-            <Heading title="Payments" size="h5" color="white" weight="7" />
           </div>
           <div className="mb-4 text-md-center">
             <Image src={regualation} alt="regulation icon" className="mb-4" />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="Spend " size="h5" color="white" weight="7" />
-              <Heading title="Regulation" size="h5" color="white" weight="7" />
+              <Heading
+                title={`${space}Regulation`}
+                size="h5"
+                color="white"
+                weight="7"
+              />
             </div>
           </div>
           <div className="mb-4 text-md-center">
@@ -249,10 +245,10 @@ const xpenz = () => {
               alt="cash and coin icon"
               className="md:mb-0 mb-4"
             />
-            <div className="d-flex flex-column">
+            <div className="d-flex flex-md-column flex-row">
               <Heading title="Cash Flow" size="h5" color="white" weight="7" />
               <Heading
-                title="Optimization"
+                title={`${space}Optimization`}
                 size="h5"
                 color="white"
                 weight="7"
@@ -445,4 +441,3 @@ const xpenz = () => {
 };
 
 export default xpenz;
-

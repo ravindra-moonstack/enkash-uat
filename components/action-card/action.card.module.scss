@@ -1,0 +1,31 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.container {
+  @include bp-md {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+}
+.left_row {
+  padding: 40px;
+  margin-top: -20px;
+  border-radius: 10px;
+  border: 2px solid $color-night-blue;
+  @include bp-md {
+    padding: 40px;
+    width: 50%;
+    margin-top: 0px;
+  }
+}
+.right_row {
+  @include bp-md {
+    margin-left: -20px;
+    margin-top: 0;
+    width: 50%;
+  }
+  margin-top: -10px;
+  img {
+    height: 100%;
+  }
+}
