@@ -7,20 +7,20 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/constant/common";
 import {
-  heirarchyControlAnimation,
-  budgetAndAdvanceAnimation,
-  reimbursementAnimation,
-  scanAndDropAnimation,
-  policyAnimation,
   cardBg,
   faqBg,
-  expense,
   cardOnLaptop,
   cardIcon,
   timeJarIcon,
   settingsIcon,
   whiteArrow,
   officeImg,
+  bannerAnimation,
+  virtualCardAnimation,
+  travelCardAnimation,
+  spendAnimation,
+  digitalAnimation,
+  saasAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -79,7 +79,7 @@ const xpenz = () => {
               weight="5"
             />
           </div>
-          <div className="my-5">
+          <div className={`my-5 ${styles.button_container}`}>
             <PrimaryButton
               title="Enkash Now!"
               theme="theme-blue"
@@ -94,7 +94,11 @@ const xpenz = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <Lottie animationData={expense} loop={true} />
+          <Lottie
+            animationData={bannerAnimation}
+            loop={true}
+            className={styles.lottie_container}
+          />
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
@@ -120,7 +124,11 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={budgetAndAdvanceAnimation} loop={true} />
+            <Lottie
+              animationData={virtualCardAnimation}
+              loop={true}
+              className={styles.lottie_container}
+            />
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
@@ -132,7 +140,12 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={heirarchyControlAnimation} loop={true} />
+
+            <Lottie
+              animationData={travelCardAnimation}
+              loop={true}
+              className={styles.lottie_container}
+            />
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
@@ -158,20 +171,15 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={reimbursementAnimation} loop={true} />
+            <Lottie animationData={spendAnimation} loop={true} />
           </div>
         </div>
       </div>
 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
-          {/* <Image
-            src={scanAndDrop}
-            alt="policy and approval flows image"
-            className="img-fluid"
-          /> */}
           <div className={styles.lottie_container}>
-            <Lottie animationData={policyAnimation} loop={true} />
+            <Lottie animationData={saasAnimation} loop={true} />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
@@ -191,25 +199,27 @@ const xpenz = () => {
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
-            <Lottie animationData={scanAndDropAnimation} loop={true} />
+            <Lottie animationData={digitalAnimation} loop={true} />
           </div>
         </div>
       </div>
 
       <div className="row bg-white row-padding">
-        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center flex-wrap">
-          <Heading
-            title={`Corporate cards made for${space}`}
-            size="h1"
-            color="equity-blue"
-            weight="6"
-          />
-          <Heading
-            title={`fast growing businesses.${space}`}
-            size="h1"
-            color="black"
-            weight="6"
-          />
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
+          <div className="d-inline text-center">
+            <Heading
+              title={`Corporate cards made for${space}`}
+              size="h1"
+              color="black"
+              weight="6"
+            />
+            <Heading
+              title={`fast growing businesses.${space}`}
+              size="h1"
+              color="equity-blue"
+              weight="6"
+            />
+          </div>
         </div>
       </div>
 

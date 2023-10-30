@@ -2,11 +2,7 @@
 @import "../../styles/mixin";
 
 .first_row {
-  background-image: url(./img/bg-image.png);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: contain;
-
+  position: relative;
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 36px;
@@ -24,7 +20,7 @@
     @include bp-md {
       max-width: none;
       height: fit-content;
-      width: 800px;
+      width: 400px;
     }
   }
   .desktop_description {
@@ -39,8 +35,33 @@
       display: none;
     }
   }
+
+  .lottie_container {
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    bottom: -100px;
+    right: -120px;
+    height: 350px;
+    @include bp-md {
+      bottom: -140px;
+      right: -220px;
+      height: 600px;
+    }
+  }
+
+  .button_container {
+    padding-bottom: 270px;
+    @include bp-md {
+      padding-bottom: 0px;
+    }
+  }
 }
 
+.second_row {
+  position: relative;
+  z-index: 2;
+}
 .third_row {
   background-color: $color-white;
   padding-left: 50px;
@@ -67,8 +88,13 @@
       top: -100px;
       left: -50px;
       @include bp-md {
-        top: -50px;
+        top: -100px;
         left: 200px;
+      }
+    }
+    .lottie_container {
+      @include bp-md {
+        margin-top: -50px;
       }
     }
   }
@@ -84,6 +110,11 @@
       @include bp-md {
         top: -100px;
         left: -100px;
+      }
+    }
+    .lottie_container {
+      @include bp-md {
+        margin-top: -50px;
       }
     }
   }

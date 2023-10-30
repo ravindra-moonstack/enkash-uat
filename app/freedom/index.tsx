@@ -14,9 +14,15 @@ export { default as faqBg } from "./img/faq-bg.png";
 export { default as cardOnLaptop } from "./img/card-on-laptop.png";
 
 //Animations import
-export { default as heirarchyControlAnimation } from "./img/lottie/hierarchy-v2.json";
-export { default as budgetAndAdvanceAnimation } from "./img/lottie/budget-and-advances-v2.json";
-export { default as reimbursementAnimation } from "./img/lottie/reimbursement-v2.json";
-export { default as scanAndDropAnimation } from "./img/lottie/scan-and-drop.json";
-export { default as policyAnimation } from "./img/lottie/policy-v2.json";
-export { default as expense } from "./img/lottie/expense.json";
+// export { default as heirarchyControlAnimation } from "./img/lottie/hierarchy-v2.json";
+// export { default as budgetAndAdvanceAnimation } from "./img/lottie/budget-and-advances-v2.json";
+// export { default as reimbursementAnimation } from "./img/lottie/reimbursement-v2.json";
+// export { default as scanAndDropAnimation } from "./img/lottie/scan-and-drop.json";
+// export { default as policyAnimation } from "./img/lottie/policy-v2.json";
+export { default as travelCardAnimation } from "./img/lottie/travel.json";
+export { default as saasAnimation } from "./img/lottie/saas.json";
+export { default as virtualCardAnimation } from "./img/lottie/virtual.json";
+export { default as bannerAnimation } from "./img/lottie/banner.json";
+export { default as spendAnimation } from "./img/lottie/spend.json";
+export { default as digitalAnimation } from "./img/lottie/digital-marketing.json";
+
