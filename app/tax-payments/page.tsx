@@ -20,8 +20,7 @@ import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import Lottie from "lottie-react";
 
-
-const billPayments = () => {
+const taxtPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -39,30 +38,29 @@ const billPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Bill Payments" size="h4" weight="4" />
+            <Heading title="Tax Payments" size="h4" weight="4" />
           </div>
 
           <div className="">
             <div className="d-flex flex-wrap">
               <Heading
-                title={`Digital bill payments to enjoy${space}`}
+                title={`GST Payments with Complete${space}`}
                 color="white"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title="convenience, flexibility, and control"
+                title="Visibility and Approvals"
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
-              <Heading title="again" color="white" size="h2" weight="7" />
             </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Pay all your business-related bills digitally from a single dashboard. Experience exclusive features like auto-fetch and automated reminders to avoid late payment charges."
+              title="Make GST challan payments on time every time with an optimized process and easy approvals via EnKash"
               color="white"
               size="h6"
               weight="5"
@@ -95,43 +93,37 @@ const billPayments = () => {
             {
               item: "Manual Intervention",
               oldWayDescription:
-                "The old way to make bill payments is time-consuming and requires manual intervention that leads to errors, misses, and losses of bills",
+                "Set a reminder for tax payments to make sure it is paid on time",
               newWayDescription:
-                "With the EnKash way, make instant bill payments in a few clicks from a single dashboard and reduce manual efforts extensively",
+                "Go to the government portal - Create GST challan",
             },
             {
               item: "Mode of Payment",
               oldWayDescription:
-                "The traditional way doesn’t allow you to use multiple modes of payment to pay bills",
+                "Log in to the portal to get access to the invoice and check it",
               newWayDescription:
-                "EnKash supports different modes of payments like credit cards, net banking, debit cards, and connected banking",
+                "Choose payment mode like NEFT/RTGS - Remitting bank -Axis bank",
             },
             {
               item: "Late Payment Charges",
               oldWayDescription:
-                "In case you miss the payment date, late payment charges will incur",
+                "Prepare paperwork to get the payment approved from the right person",
               newWayDescription:
-                "With EnKash, you will not incur any penalties or late payments as chances of making late payments will be negligible",
+                "Upload GST challan to EnKash portal. Challan will be read and verified digitally",
             },
             {
               item: "Bulk or Multiple Payments",
-              oldWayDescription: "Only one bill can be paid at a time",
+              oldWayDescription:
+                "Arrange funds or ensure limits to make the payment",
               newWayDescription:
-                "Bill payments in bulk can be automated in one click",
+                "Set unlimited hierarchy approvals and pay using any mode",
             },
             {
               item: "Chances of Loss",
               oldWayDescription:
-                "Managing paper-made bills is a hassle and comes with its own set of challenges like loss, storage, and depreciation",
+                "Make the payment and file the paperwork for future reference",
               newWayDescription:
-                "All bills are digitally stored for future records and reconciliation",
-            },
-            {
-              item: "Timely Reminders",
-              oldWayDescription:
-                "There is no way to send timely reminders to customers",
-              newWayDescription:
-                "With EnKash, you can send timely reminders to customers",
+                "Automatic real time entry of the payment record",
             },
           ]}
         />
@@ -142,13 +134,19 @@ const billPayments = () => {
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Bill payments"
+            title="Leverage EnKash for"
+            color="black"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title={`${space}Automatic and Easy${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}with EnKash is easier, simpler, and faster`}
+            title="GST Tax Payments"
             color="black"
             size="h1"
             weight="6"
@@ -158,16 +156,16 @@ const billPayments = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Regulate Payments"
+              title1="Easy Payments"
               title2=""
-              description="Carry out a one-time process to ensure that you have a regulated payment process that helps you make payments smoothly without any risk"
+              description=" Set and manage a simple and intuitive process to ensure that all aspects are checked and payments are quick and easy."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automated Reminders"
+              title1="Easy Monitoring"
               title2=""
-              description="Ensure that you do not miss any of the regularly recurring bill payments’ deadlines, with automatic reminders. This ensures continuity, helps cut down penalties, and improves savings"
+              description="Benefit from centralized view and control over all GST bill payments across your company on a single platform"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -180,16 +178,16 @@ const billPayments = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Complete Transparency"
+              title1="Digital Challans"
               title2=""
-              description="Clearly view the status of your bill payments, including confirmation of payment processing, the date of payment, and upcoming bills to pay"
+              description="Auto read the challans and convert them into paper records for audits and other purposes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Secured Payments"
+              title1="Manage Approvals"
               title2=""
-              description="Billing automation helps protect your privacy and identity by eliminating any risks associated with lost paperwork using encryption to protect the transmission of sensitive data."
+              description="Set multi-level hierarchical approvals"
             />
           </div>
         </div>
@@ -200,22 +198,16 @@ const billPayments = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-inline">
+                <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Choose to make${space}`}
+                    title={`How Tax Payments Help with${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="Billl Payments"
+                    title="Expense Monitoring and Audit Trails"
                     color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title={`${space}seamlessly with Enkash!`}
-                    color="white"
                     size="h1"
                     weight="6"
                   />
@@ -223,13 +215,13 @@ const billPayments = () => {
               </div>
             </>
           }
-          mainTitle="How do Bill Payments Cards work?"
+          mainTitle="How do Tax Payments Cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Learn how bill payments could revolutionize the way you work!" />
+        <BlogWrapper title="How does Tax Payment Help Your Finance Team Become More Efficient?" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -239,7 +231,7 @@ const billPayments = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about bill payments in detail"
+            title="Don't worry! Our FAQs Section will Help you Learn about Tax Payments in detail."
             color="black"
             size="h4"
           />
@@ -262,4 +254,4 @@ const billPayments = () => {
   );
 };
 
-export default billPayments;
+export default taxtPayments;

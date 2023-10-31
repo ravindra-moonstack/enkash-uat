@@ -64,7 +64,7 @@ const olympusProducts = [
         description: "Audit-compliant tax payment process.",
         imageSrc: taxPayment,
         imageSrcHovered: taxPaymentFilled,
-        link: "/404",
+        link: "/tax-payments",
       },
     ],
     footerText: "Stream Line with Payables",
