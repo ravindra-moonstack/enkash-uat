@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import styles from "./faq.module.scss";
 import Image from "next/image";

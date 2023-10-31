@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
@@ -6,7 +8,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { caraouselBg, faqBg, heroImage, whiteArrow } from ".";
+import { bannerLottie, caraouselBg, faqBg, heroImage, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -16,8 +18,9 @@ import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import Lottie from "lottie-react";
 
-const virtualAccount = () => {
+const billPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -29,25 +32,25 @@ const virtualAccount = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Freedom${space}`}
+                title={`Olympus |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <Heading title="| Digital Marketing Cards" size="h4" weight="4" />
+            <Heading title="Bill Payments" size="h4" weight="4" />
           </div>
 
           <div className="">
             <div className="d-flex flex-wrap">
               <Heading
-                title={`Never exceed your${space}`}
+                title={`Digital bill payments to enjoy${space}`}
                 color="white"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title=" Digital Marketing budget."
+                title="convenience, flexibility, and control"
                 color="rainy-blue"
                 size="h2"
                 weight="7"
@@ -58,7 +61,7 @@ const virtualAccount = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage your business’ digital marketing expenses with smart corporate cards with flexible controls. Load your marketing budget into the card, select the types of campaigns you want to run and keep track of expenditure in real-time."
+              title="Pay all your business-related bills digitally from a single dashboard. Experience exclusive features like auto-fetch and automated reminders to avoid late payment charges."
               color="white"
               size="h6"
               weight="5"
@@ -78,11 +81,7 @@ const virtualAccount = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Image
-            src={heroImage}
-            alt="reimbursement dashboard"
-            className={styles.hero_image}
-          />
+          <Lottie animationData={bannerLottie} loop={true} />
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -93,32 +92,45 @@ const virtualAccount = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Budget Allocation",
+              item: "Manual Intervention",
               oldWayDescription:
-                "Verbally specifying budgets, or even having them in writing does not guarantee that your digital marketing spends will not cross said budget, especially when you’re using one corporate card for all spends.",
+                "The old way to make bill payments is time-consuming and requires manual intervention that leads to errors, misses, and losses of bills",
               newWayDescription:
-                "Having a purpose-based corporate card for digital marketing with a predefined limit ensures that your digital marketing spends cannot exceed your intended budget.",
+                "With the EnKash way, make instant bill payments in a few clicks from a single dashboard and reduce manual efforts extensively",
             },
             {
-              item: "Expense Tracking",
+              item: "Mode of Payment",
               oldWayDescription:
-                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+                "The traditional way doesn’t allow you to use multiple modes of payment to pay bills",
               newWayDescription:
-                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
+                "EnKash supports different modes of payments like credit cards, net banking, debit cards, and connected banking",
             },
             {
-              item: "Campaign Management",
+              item: "Late Payment Charges",
               oldWayDescription:
-                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
+                "In case you miss the payment date, late payment charges will incur",
               newWayDescription:
-                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+                "With EnKash, you will not incur any penalties or late payments as chances of making late payments will be negligible",
             },
             {
-              item: "Spend Overview",
-              oldWayDescription:
-                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+              item: "Bulk or Multiple Payments",
+              oldWayDescription: "Only one bill can be paid at a time",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+                "Bill payments in bulk can be automated in one click",
+            },
+            {
+              item: "Chances of Loss",
+              oldWayDescription:
+                "Managing paper-made bills is a hassle and comes with its own set of challenges like loss, storage, and depreciation",
+              newWayDescription:
+                "All bills are digitally stored for future records and reconciliation",
+            },
+            {
+              item: "Timely Reminders",
+              oldWayDescription:
+                "There is no way to send timely reminders to customers",
+              newWayDescription:
+                "With EnKash, you can send timely reminders to customers",
             },
           ]}
         />
@@ -127,16 +139,15 @@ const virtualAccount = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex justify-content-center text-center flex-wrap mb-5">
-          <Heading title="EnKash is the" color="black" size="h1" weight="6" />
+        <div className="d-inline text-center mb-5">
           <Heading
-            title={`${space}key to boosting${space}`}
+            title="Bill payments"
             color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title="your Digital Marketing performance."
+            title={`${space}with EnKash is easier, simpler, and faster`}
             color="black"
             size="h1"
             weight="6"
@@ -146,30 +157,38 @@ const virtualAccount = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Subscription Management"
+              title1="Regulate Payments"
               title2=""
-              description="Effectively manage your recurring digital marketing expenses such as subscriptions that recur monthly or annually."
+              description="Carry out a one-time process to ensure that you have a regulated payment process that helps you make payments smoothly without any risk"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Spend Optimization"
+              title1="Automated Reminders"
               title2=""
-              description="Enhance your organization's performance by implementing a robust purchasing oversight process that helps to reduce costs and streamlines your payment process."
+              description="Ensure that you do not miss any of the regularly recurring bill payments’ deadlines, with automatic reminders. This ensures continuity, helps cut down penalties, and improves savings"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Marketing Budgets"
+              title1="Approval Flow"
               title2=""
-              description="EnKash lets you set customized usage limits that ensure there is no scope for overspending. You’ll have the flexibility to set the limit based on your marketing budget."
+              description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
+              prevent errors, unauthorized payments and reduce the risk of fraud"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Run Campaigns"
+              title1="Complete Transparency"
               title2=""
-              description="Seamlessly add your card for digital marketing expenses onto the platform and select the desired campaigns you wish to run."
+              description="Clearly view the status of your bill payments, including confirmation of payment processing, the date of payment, and upcoming bills to pay"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              title1="Secured Payments"
+              title2=""
+              description="Billing automation helps protect your privacy and identity by eliminating any risks associated with lost paperwork using encryption to protect the transmission of sensitive data."
             />
           </div>
         </div>
@@ -179,29 +198,37 @@ const virtualAccount = () => {
         <HowDoesCarousel
           titleContent={
             <>
-              <div className="text-center d-flex justify-content-center flex-wrap">
-                <Heading
-                  title={`Master Your Digital Marketing Expenditure with greater${space}`}
-                  color="white"
-                  size="h1"
-                  weight="6"
-                />
-                <Heading
-                  title="Control and Visibility."
-                  color="rainy-blue"
-                  size="h1"
-                  weight="6"
-                />
+              <div className="text-center">
+                <div className="text-center d-inline">
+                  <Heading
+                    title={`Choose to make${space}`}
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Billl Payments"
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title={`${space}seamlessly with Enkash!`}
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
+                </div>
               </div>
             </>
           }
-          mainTitle="How do Digital Marketing Cards work?"
+          mainTitle="How do Bill Payments Cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Digital Marketing Insights" />
+        <BlogWrapper title="Learn how bill payments could revolutionize the way you work!" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -211,7 +238,7 @@ const virtualAccount = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about Reimbursements in detail."
+            title="Don't worry! Our FAQs section will help you learn about bill payments in detail"
             color="black"
             size="h4"
           />
@@ -234,4 +261,4 @@ const virtualAccount = () => {
   );
 };
 
-export default virtualAccount;
+export default billPayments;

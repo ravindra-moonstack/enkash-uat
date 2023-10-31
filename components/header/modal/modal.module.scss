@@ -37,18 +37,12 @@
   font-size: 14px;
   line-height: 18px;
   font-weight: 400;
-  color: $color-equity-blue;
+  color: $color-secondry-grey;
 }
 
 .opacity_selected {
   .product_description {
-    opacity: 1;
-  }
-}
-
-.opacity_normal {
-  .product_description {
-    opacity: 0.6;
+    color: $color-equity-blue;
   }
 }
 
