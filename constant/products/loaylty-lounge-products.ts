@@ -34,7 +34,7 @@ const loyaltyLoungeProducts = [
         description: "200+ brand vouchers for corporate gifting",
         imageSrc: brandVouchers,
         imageSrcHovered: brandVouchersFilled,
-        link: "/404",
+        link: "/brand-voucher",
       },
       {
         name: "Channel Incentives",
@@ -60,7 +60,7 @@ const loyaltyLoungeProducts = [
     ],
     footerText: "Stream Line with Loyalty",
     footerImg: "xpenz_footer_bg",
-    footerLink:"/loyalty"
+    footerLink: "/loyalty",
   },
 ];
 
