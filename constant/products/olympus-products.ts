@@ -43,7 +43,7 @@ const olympusProducts = [
         description: "Maintain rental records for payments",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
-        link: "/404",
+        link: "/rental-payments",
       },
       {
         name: "Bulk Payout",
