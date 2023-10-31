@@ -57,7 +57,7 @@ const olympusProducts = [
         description: "Automate timely bill payments",
         imageSrc: billPayments,
         imageSrcHovered: billPaymentsFilled,
-        link: "/404",
+        link: "/bill-payments",
       },
       {
         name: "Tax Payments",
