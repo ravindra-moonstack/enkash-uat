@@ -51,7 +51,7 @@ const xpenz = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="optimize buisness spends"
+              title="Optimize buisness spends"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -79,7 +79,7 @@ const xpenz = () => {
           </div>
           <div className="my-5">
             <PrimaryButton
-              title="Enkash Now!"
+              title="EnKash Now"
               theme="theme-blue"
               size="medium"
             />

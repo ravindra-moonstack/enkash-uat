@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { faqBg, heroImage, whiteArrow ,carouselBg} from ".";
+import { faqBg, heroImage, whiteArrow, carouselBg } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -20,7 +20,7 @@ import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 const invoices = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-       <div className="mobile-header">
+      <div className="mobile-header">
         <MobileHeader />
       </div>
       <div className="desktop-header">{<WebHeader />}</div>
@@ -64,7 +64,7 @@ const invoices = () => {
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
-              <PrimaryButton title="Enkash Now!" theme="theme-blue" />
+              <PrimaryButton title="EnKash Now" theme="theme-blue" />
             </div>
             <div>
               <SecondryButton
@@ -148,9 +148,7 @@ const invoices = () => {
           <Heading title="instead." color="black" size="h1" weight="6" />
         </div>
 
-        <div
-          className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}
-        >
+        <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               title1="Quicker Collections"

@@ -87,7 +87,7 @@ const payables = () => {
           </div>
           <div className={`my-5 ${styles.button_container}`}>
             <PrimaryButton
-              title="Enkash Now!"
+              title="EnKash Now"
               theme="theme-blue"
               size="medium"
             />

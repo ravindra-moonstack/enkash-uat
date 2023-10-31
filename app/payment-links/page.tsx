@@ -63,7 +63,7 @@ const paymentlinks = () => {
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
-              <PrimaryButton title="Enkash Now!" theme="theme-blue" />
+              <PrimaryButton title="EnKash Now" theme="theme-blue" />
             </div>
             <div>
               <SecondryButton

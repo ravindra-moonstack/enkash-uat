@@ -70,10 +70,11 @@ import {
   cureFoodsLogo,
   infraMarketLogo,
   integration,
-  manageAnimation,
+  manageAnimationData,
   automateAnimation,
   optimizeAnimation,
-  trackAnimation
+  trackAnimation,
+  manageAnimation,
 } from ".";
 
 const loginUrl = "https://home.enkash.com/login";
@@ -538,7 +539,11 @@ const home = () => {
         </div>
         <div className={`col-md-12 col-8 ${styles.image_container}`}>
           <Lottie
-            animationData={dashBoardAnimationData}
+            animationData={
+              activeAnimation === "manage"
+                ? manageAnimationData
+                : dashBoardAnimationData
+            }
             loop={true}
             autoplay={true}
           />
