@@ -16,11 +16,11 @@ const freedomProducts = [
     },
     list: [
       {
-        name: "Corporate Cards",
+        name: "Meal Cards",
         description: "Issue purpose-based cards to your teams",
         imageSrc: vendorPayment,
         imageSrcHovered: vendorPaymentFilled,
-        link: "/404",
+        link: "/meal-cards",
       },
       {
         name: "Digital Marketing Cards",
