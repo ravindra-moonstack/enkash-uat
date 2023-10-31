@@ -20,7 +20,7 @@ import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import Lottie from "lottie-react";
 
-const taxtPayments = () => {
+const taxPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -254,4 +254,4 @@ const taxtPayments = () => {
   );
 };
 
-export default taxtPayments;
+export default taxPayments;

@@ -20,7 +20,7 @@ import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import Lottie from "lottie-react";
 
-const rentalPayments = () => {
+const bulkPayout = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -38,24 +38,23 @@ const rentalPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Rental Payments" size="h4" weight="4" />
+            <Heading title="Bulk Payout" size="h4" weight="4" />
           </div>
-
+          <Heading
+            title={`Fast and Secure${space}`}
+            color="white"
+            size="h2"
+            weight="7"
+          />
           <div className="d-line">
             <Heading
-              title={`Making${space}`}
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="Rental Payments"
+              title="Bulk Payouts"
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`${space}Has Never Been this Seamless!`}
+              title={`${space}for All Your Business Needs`}
               color="white"
               size="h2"
               weight="7"
@@ -64,7 +63,7 @@ const rentalPayments = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="With EnKash, make rental payments in just a few clicks and easy steps with no delays or hassles"
+              title="Receive automated reminders and approvals for recurring business expenses, such as rent, utilities, vendors, and more"
               color="white"
               size="h6"
               weight="5"
@@ -84,7 +83,11 @@ const rentalPayments = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Lottie animationData={bannerLottie} loop={true} />
+          <Lottie
+            animationData={bannerLottie}
+            loop={true}
+            className={styles.lottie_container}
+          />
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -95,31 +98,46 @@ const rentalPayments = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Data Processing",
-              oldWayDescription: "Data loss due to manual payment processing ",
+              item: "Processing Time",
+              oldWayDescription:
+                "Single payments take longer time  to process since each transaction is processed separately",
               newWayDescription:
-                "The records and receipts are digitally stored; low or no chance of data loss",
+                "Multiple payments are processed much faster with a single click",
             },
             {
-              item: "Payments Charges",
+              item: "Type of Payment",
               oldWayDescription:
-                "Late payment charges are incurred due to delays in making payments",
+                "Payments are typically used for one-off transactions such as purchases",
               newWayDescription:
-                "Automated reminders ensure timely payments; no penalties or late payment charges",
+                "Solves hassle of recurring payments such as vendor payments, GST, rental and utility",
             },
             {
-              item: "Bulk Payments",
+              item: "Flexibility",
               oldWayDescription:
-                "Prepare paperwork to get the payment approved from the right person",
+                "Single payments offer lesser flexibility and control over each individual transaction",
               newWayDescription:
-                "Upload GST challan to EnKash portal. Challan will be read and verified digitally",
+                "Bulk payments offer greater flexibility since all payments are in the batch and are processed together",
             },
             {
-              item: "Payment Modes",
+              item: "Vendor Relationships",
               oldWayDescription:
-                "Challenging to make bulk rental payments in real time",
+                "Businesses fail to build stronger relationships with vendors and suppliers as payments are not timely processed",
               newWayDescription:
-                "Bulk rental payments can be made  seamlessly and hassle-free",
+                "Businesses build stronger relationships with vendors and suppliers by providing timely or early payments",
+            },
+            {
+              item: "Payment Tracking",
+              oldWayDescription:
+                "Since payments are mostly done manually, the chances of loss of payment receipts are very high, making it difficult to track",
+              newWayDescription:
+                "Bulk payments are easier to track and manage as they are processed as a batch, making it simpler to reconcile accounts and track ",
+            },
+            {
+              item: "Payables Managemen",
+              oldWayDescription:
+                "Paying numerous vendor invoices, utility bills, rental bills, or multiple GST challans is a cumbersome process with a risk of errors or missed deadlines",
+              newWayDescription:
+                "outstanding invoices, bills, rentals, and GST challans simplifies managing company payables, and minimizes errors and potential delays",
             },
           ]}
         />
@@ -128,70 +146,63 @@ const rentalPayments = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-inline text-center mb-2">
+        <div className="d-inline text-center">
+          <Heading title="Facing the" color="black" size="h1" weight="6" />
           <Heading
-            title="Simple, smooth & hassle-free rental payments"
-            color="black"
+            title={`${space}Complexities`}
+            color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}for your business`}
+            title={`${space}Involved in`}
+            color="black"
+            size="h1"
+            weight="6"
+          />
+        </div>
+        <div className="text-center mb-5">
+          <Heading
+            title={`${space}Bulk Processing?`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
         </div>
-        <div className="d-flex justify-content-center text-center mb-5">
-          <Heading
-            title="We ensure fast, easy, and safe payments!"
-            color="black"
-            size="h5"
-            weight="6"
-          />
-        </div>
-
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Quick and Easy Onboarding"
+              title1="Repeat Payments"
               title2=""
-              description="Complete the onboarding with a few simple steps to ensure that rent payments go on time"
+              description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automated Payment Reminders"
+              title1="Reduce Payment Processing Time"
               title2=""
-              description="Enables automated reminders to track due dates, reduce late payments, and improve business cash flow"
+              description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Easy Payment Tracking"
+              title1="Centralized Payment Processing"
               title2=""
-              description="Track what’s paid, due, and pending on a single dashboard to improve visibility, control payment activity, and increase efficiency"
+              description="By centralizing payment processing through a bulk payout system, you can have better visibility and control over processes to prevent errors"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Centralized Approval"
+              title1="Automate Payment Reminders"
               title2=""
-              description="Easily pay rent online for all locations with a centralized approval process with all due checks and approvals"
+              description="Enable an automated reminder engine to keep track of all your outstanding business payments"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Pay Using Credit Cards"
+              title1="Checks and Approvals"
               title2=""
-              description="Get the option to pay rentals on time using any credit card and keep your business cash flow steady"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              title1="Auto-Generated Records"
-              title2=""
-              description="The platform auto-generates monthly rental bills on specified dates as per rental agreements that you feed into the system"
+              description="Finance is all about timely payments with the right checks and approvals to ensure negligible misuse of funds. The process of bulk payout for your recurring payments ensures speed and efficiency"
             />
           </div>
         </div>
@@ -204,14 +215,14 @@ const rentalPayments = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Rental Payments${space}`}
-                    color="rainy-blue"
+                    title={`Simplify your Payouts with our${space}`}
+                    color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="are Now Fast, Easy, and Safe!"
-                    color="white"
+                    title="Bulk Processing Solution"
+                    color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
@@ -219,13 +230,13 @@ const rentalPayments = () => {
               </div>
             </>
           }
-          mainTitle="How Does Rental Payments Work?"
+          mainTitle="How Does Bulk Payout Work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Learn how Rental Payments could revolutionize the way you work!" />
+        <BlogWrapper title="Learn how Bulk Payouts could revolutionize the way you work!" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -235,7 +246,7 @@ const rentalPayments = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about rental payments in detail."
+            title="Don't worry! Our FAQs section will help you learn about bulk payout in detail"
             color="black"
             size="h4"
           />
@@ -258,4 +269,4 @@ const rentalPayments = () => {
   );
 };
 
-export default rentalPayments;
+export default bulkPayout;

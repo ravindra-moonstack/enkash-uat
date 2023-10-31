@@ -50,7 +50,7 @@ const olympusProducts = [
         description: "Keep track of all your vendor bills",
         imageSrc: bulkPayout,
         imageSrcHovered: bulkPayoutFilled,
-        link: "/404",
+        link: "/bulk-payout",
       },
       {
         name: "Bill Payments",
