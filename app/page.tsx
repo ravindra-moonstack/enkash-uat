@@ -812,6 +812,7 @@ const home = () => {
               timely reminders that ensure all necessary payments are paid,
               with no delays."
             theme="green"
+            link="/payables"
           />
         </motion.div>
         <motion.div
@@ -827,6 +828,7 @@ const home = () => {
                 automation tools that help you end time-consuming manual
                 follow-ups and create better collection strategies."
             theme="green"
+            link="/receivables"
           />
         </motion.div>
         <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
@@ -858,6 +860,7 @@ const home = () => {
               of all your expenses. Analyze data to create efficient budgets,
               optimize expenses and scale your business."
             theme="blue"
+            link="/xpenz"
           />
         </div>
       </div>
