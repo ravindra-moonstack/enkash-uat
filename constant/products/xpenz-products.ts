@@ -1,9 +1,4 @@
-import { heirarchyControl } from "@/app/xpenz";
 import {
-  vendorPayment,
-  vendorPaymentFilled,
-  bulkPayout,
-  taxPayment,
   budgetAndAndvances,
   budgetAndAndvancesFilled,
   hierarchyAndControlsFilled,
@@ -12,7 +7,6 @@ import {
   reimbursementsFilled,
   policyAndApproval,
   policyAndApprovalFilled,
-  taxPaymentFilled,
   scanAndDrop,
   scanAndDropFilled,
 } from "@/components/header";
