@@ -4,6 +4,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { Fragment, useState } from "react";
 import utmSources from "@/constant/utm-source";
 import Link from "next/link";
+import { footerArrow } from "..";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
@@ -39,21 +40,45 @@ const SubProductListView = (props: {
                 onClick={() => setActiveSubtitleIndex(index)}
               >
                 {category.subtitle != "Default" && (
-                  <li>
-                    <div
-                      className={`my-3 ${styles.underline_text} ${
-                        activeSubtitleIndex === index
-                          ? "color-equity-blue"
-                          : "color-secondry-grey"
-                      }`}
-                    >
-                      {category.subtitle}
-                    </div>
-                  </li>
+                  <>
+                    <li>
+                      <div
+                        className={`my-3 ${styles.underline_text} ${
+                          activeSubtitleIndex === index
+                            ? "color-equity-blue"
+                            : "color-secondry-grey"
+                        }`}
+                      >
+                        {category.subtitle}
+                      </div>
+                    </li>
+                  </>
                 )}
               </div>
             ))}
           </div>
+          {productsToUse.map(
+            (category: any, index: any) =>
+              activeSubtitleIndex === index && (
+                <div
+                  className={`d-flex align-items-center ${styles.footer} ${
+                    styles[category.footerImg]
+                  }`}
+                >
+                  <div className="mx-4">{category.footerMobileText}</div>
+                  <Link href={category.footerLink}>
+                    <div className={`${styles.explore} d-flex`}>
+                      <Image
+                        src={footerArrow}
+                        alt="explore arrow image"
+                        width={80}
+                      />
+                    </div>
+                  </Link>
+                </div>
+              )
+          )}
+
           <div className={styles.line}></div>
           {productsToUse[activeSubtitleIndex]?.list.map((item: any) => (
             <Link

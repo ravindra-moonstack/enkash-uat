@@ -66,6 +66,7 @@ const xpenzProducts = [
       },
     ],
     footerText: "Optimize Business Spends with Xpenz",
+    footerMobileText: "Explore Xpenz",
     footerImg: "xpenz_footer_bg",
     footerLink: "/xpenz",
   },

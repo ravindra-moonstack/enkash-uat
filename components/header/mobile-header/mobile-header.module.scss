@@ -42,3 +42,43 @@
 .buttons_container {
   flex-grow: 4;
 }
+
+.olympus_footer_bg {
+  background: url(../img/olympus-footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.freedom_footer_bg {
+  background: url(../img/freedom-footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.xpenz_footer_bg {
+  background: url(../img/xpenz-footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.loyalty_footer_bg {
+  background: url(../img/loyalty-footer-bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.footer {
+  height: 85px;
+  color: $color-electric-green;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 23px;
+  background-color: $color-equity-blue;
+  .explore {
+    cursor: pointer;
+    color: $color-electric-green;
+  }
+  a {
+    text-decoration: none;
+  }
+}

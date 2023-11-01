@@ -93,6 +93,7 @@ const freedomProducts = [
       },
     ],
     footerText: "Stream Line with Freedom",
+    footerMobileText: "Explore Freedom",
     footerImg: "freedom_footer_bg",
     footerLink: "/freedom",
   },

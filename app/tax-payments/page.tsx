@@ -80,7 +80,11 @@ const taxPayments = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Lottie animationData={bannerLottie} loop={true} />
+          <Lottie
+            animationData={bannerLottie}
+            loop={true}
+            className={styles.lottie_container}
+          />
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />

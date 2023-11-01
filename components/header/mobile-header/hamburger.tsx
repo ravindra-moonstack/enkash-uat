@@ -36,7 +36,7 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
           <Image
             src={enkashWhiteLogo}
             alt="Enkash White logo"
-            width={90}
+            width={100}
             className="ps-4"
           />
         </div>
@@ -54,7 +54,7 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
             <Image
               src={enkashBlueLogo}
               alt="Enkash Blue logo"
-              width={90}
+              width={100}
               className="ps-4"
             />
           </div>

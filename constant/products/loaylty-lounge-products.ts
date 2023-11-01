@@ -53,6 +53,7 @@ const loyaltyLoungeProducts = [
       },
     ],
     footerText: "Stream Line with Loyalty",
+    footerMobileText: "Explore Loyalty Lounge",
     footerImg: "loyalty_footer_bg",
     footerLink: "/loyalty",
   },

@@ -24,6 +24,12 @@
       height: auto;
     }
   }
+
+  .lottie_container {
+    @include bp-md {
+      margin-top: -100px;
+    }
+  }
 }
 
 .second_row {

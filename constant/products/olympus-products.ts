@@ -71,6 +71,7 @@ const olympusProducts = [
       },
     ],
     footerText: "Streamline Your Payments with Payables",
+    footerMobileText: "Explore Payables",
     footerImg: "olympus_footer_bg",
     footerLink: "/payables",
   },
@@ -78,7 +79,7 @@ const olympusProducts = [
     subtitle: "Receivables",
     subtitleLink: "/receivables",
     currentHeading: {
-      name: "olympus ",
+      name: "Olympus",
       description:
         "Automate your company's AP, AR, and bank reconciliation seamlessly",
     },
@@ -114,6 +115,7 @@ const olympusProducts = [
       },
     ],
     footerText: "Optimize Your Collections with Receivables",
+    footerMobileText: "Explore Receivables",
     footerImg: "olympus_footer_bg",
     footerLink: "/receivables",
   },
