@@ -4,13 +4,14 @@
 .container {
   height: 450px;
   position: relative;
+  width: 72%;
 }
 
 .sub_products_container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
-  column-gap: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  column-gap: 7px;
 
   a {
     text-decoration: none;
@@ -45,14 +46,14 @@
 }
 
 .sub_product_name {
-  font-size: 26px;
-  line-height: 30px;
+  font-size: 19px;
+  line-height: 25px;
 }
 
 .sub_product_description {
-  font-size: 13px;
+  font-size: 11px;
   line-height: 16px;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 .box_shadow_left {
@@ -68,7 +69,7 @@
 .footer {
   position: absolute;
   bottom: 0;
-  height: 96px;
+  height: 85px;
   width: 102%;
   color: $color-electric-green;
   font-size: 27px;
@@ -87,11 +88,11 @@
 @keyframes top-to-bottom {
   from {
     opacity: 0;
-    transform: translateY(0px);
+    transform: translateY(-25px);
   }
   to {
     opacity: 1;
-    transform: translateY(25px);
+    transform: translateY(0px);
   }
 }
 
@@ -138,4 +139,8 @@
   border-radius: 10px;
   transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
   padding: 20px;
+}
+
+.color_highlight {
+  color: $color-black;
 }

@@ -11,44 +11,77 @@ const freedomProducts = [
     subtitle: "Default",
     currentHeading: {
       name: "Freedom",
-      description:
-        "Automate your company's AP, AR, and bank reconciliation seamlessly",
+      description: "Simplify corporate spending with flexible card solutions",
     },
     list: [
       {
-        name: "Meal Cards",
-        description: "Issue purpose-based cards to your teams",
-        imageSrc: vendorPayment,
+        name: "SaaS Cards*",
+        description:
+          "Manage all your SaaS subscriptions with our dedicated SaaS Card",
+        imageSrc: taxPayment,
+        imageSrcHovered: vendorPaymentFilled,
+        link: "/saas-cards",
+      },
+      {
+        name: "Meal Cards*",
+        description:
+          "Let your employees choose their favorite meals and save on taxes",
+        imageSrc: taxPayment,
         imageSrcHovered: vendorPaymentFilled,
         link: "/meal-cards",
       },
       {
-        name: "Digital Marketing Cards",
-        description: "Unlimited cards with centralised controls",
+        name: "Payroll Cards*",
+        description: "Pay your employees quickly and easily with payroll cards",
+        imageSrc: taxPayment,
+        imageSrcHovered: vendorPaymentFilled,
+        link: "/payroll-cards",
+      },
+      ////
+      {
+        name: "T&E Cards*",
+        description: "Simplify travel and entertainment expenses for employees",
+        imageSrc: taxPayment,
+        imageSrcHovered: vendorPaymentFilled,
+        link: "/tne-cards",
+      },
+      {
+        name: "Virtual Cards*",
+        description: "Unlimited cards with centralized controls",
         imageSrc: taxPayment,
         imageSrcHovered: taxPaymentFilled,
-        link: "/digital-marketing-cards",
+        link: "/virtual-cards",
       },
       {
-        name: "Travel and Expense Cards",
-        description: "Optimise travel spendings",
-        imageSrc: bulkPayout,
-        imageSrcHovered: vendorPaymentFilled,
-        link: "/travel-and-expense-cards",
-      },
-      {
-        name: "DIY Card Module",
-        description: "Create and manage all your cards on your own",
+        name: "Fuel Cards*",
+        description: "Track and manage fuel expenses for your business travels",
         imageSrc: vendorPayment,
         imageSrcHovered: vendorPaymentFilled,
-        link: "/404",
+        link: "/fuel-cards",
       },
       {
-        name: "SaaS Cards",
-        description: "saas cards and control on your spends",
+        name: "Purchase Cards*",
+        description:
+          "Empower employees to make purchases and track spends in real time",
         imageSrc: taxPayment,
         imageSrcHovered: vendorPaymentFilled,
-        link: "/saas",
+        link: "/purchase-cards",
+      },
+      {
+        name: "Digital Marketing Cards*",
+        description:
+          "Pay for digital marketing campaigns and subscriptions with ease",
+        imageSrc: bulkPayout,
+        imageSrcHovered: vendorPaymentFilled,
+        link: "/digital-marketing-cards",
+      },
+
+      {
+        name: "Multi-Currency Forex Cards*",
+        description: "Hassle-free international travel and business",
+        imageSrc: taxPayment,
+        imageSrcHovered: vendorPaymentFilled,
+        link: "/multi-currency-forex-cards",
       },
     ],
     footerText: "Stream Line with Freedom",

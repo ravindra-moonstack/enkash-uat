@@ -2,25 +2,25 @@ export const motherProducts = [
   {
     name: "Olympus",
     description:
-      "Automate your company's AP, AR, and bank reconciliation seamlessly",
+      "Automate your company’s AP, AR, and bank reconciliation seamlessly",
     link: "/olympus",
   },
   {
     name: "Freedom",
     description:
-      "Automate your company's AP, AR, and bank reconciliation seamlessly",
+      "Simplify corporate spending with flexible card solutions",
     link: "/freedom",
   },
   {
     name: "Xpenz",
     description:
-      "Automate your company's AP, AR, and bank reconciliation seamlessly",
+      "Track employee expenses with a highly customizable platform",
     link: "/xpenz",
   },
   {
     name: "Loyalty Lounge",
     description:
-      "Automate your company's AP, AR, and bank reconciliation seamlessly",
+      "Seamlessly automate & manage rewards, incentives, and payouts",
     link: "/loaylty-lounge",
   },
 ];

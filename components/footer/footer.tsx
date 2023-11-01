@@ -46,7 +46,7 @@ const Footer = () => {
                   <a href="/bulk-payout/">Bulk Payout</a>
                 </li>
                 <li>
-                  <a href="/bill-payments/">Bill Payments</a>
+                  <a href="/bill-paybles/">Bill Payments</a>
                 </li>
                 <li>
                   <a href="/tax-payments/">Tax Payments</a>

@@ -47,7 +47,7 @@ const SubProduct = (props: any) => {
   };
 
   return (
-    <div className={`col-8 d-flex mb-5 ${styles.container}`}>
+    <div className={`d-flex mb-5 ${styles.container}`}>
       {hasActiveGroup ? (
         <>
           <div className={styles.box_shadow_left}></div>
@@ -106,7 +106,11 @@ const SubProduct = (props: any) => {
                   <Link href={product.link}>
                     <div
                       key={product.name}
-                      className={`${styles.sub_product_row} d-flex`}
+                      className={`${styles.sub_product_row} ${
+                        hoveredProductIndex === index
+                          ? styles.color_highlight
+                          : ""
+                      } d-flex`}
                       onMouseEnter={() => {
                         sethoveredProductIndex(index);
                       }}
@@ -139,7 +143,7 @@ const SubProduct = (props: any) => {
                           }
                         />
                       </div>
-                      <div className="d-flex flex-column ms-4">
+                      <div className={`d-flex flex-column ms-3`}>
                         <div className={styles.sub_product_name}>
                           {product.name}
                         </div>

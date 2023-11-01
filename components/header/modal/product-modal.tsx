@@ -37,7 +37,9 @@ const ProductModal = ({ onLinkClick }: any) => {
 
   return (
     <div className={`row mt-5 ${styles.container}`}>
-      <div className="col-4 d-flex flex-column align-items-right px-5 pb-5 mb-2 position-relative">
+      <div
+        className={`${styles.left_container} d-flex flex-column align-items-right pe-5 pb-5 mb-2 position-relative`}
+      >
         {hoveredProductIndex !== null && (
           <div
             className={styles.background_slide}
@@ -82,7 +84,7 @@ const ProductModal = ({ onLinkClick }: any) => {
         ))}
       </div>
       {hoveredProductIndex === null && (
-        <div className={`col-8 d-flex`}>
+        <div className={`${styles.right_container} d-flex`}>
           <Image
             src={productModalEmptyStateImg}
             alt="Enkash product modal image"

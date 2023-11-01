@@ -3,6 +3,12 @@
 
 .container {
   height: 450px;
+  .left_container {
+    width: 28%;
+  }
+  .right_container {
+    width: 72%;
+  }
 }
 
 .product_row {

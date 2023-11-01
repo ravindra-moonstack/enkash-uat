@@ -32,44 +32,47 @@ const olympusProducts = [
     },
     list: [
       {
-        name: "Vendor Payments",
-        description: "Keep track of all your vendor bills",
-        imageSrc: vendorPayment,
-        imageSrcHovered: vendorPaymentFilled,
-        link: "/404",
-      },
-      {
-        name: "Rental Payments",
-        description: "Maintain rental records for payments",
-        imageSrc: rentalPayments,
-        imageSrcHovered: rentalPaymentsFilled,
-        link: "/rental-payments",
+        name: "Bill Payables",
+        description:
+          "Pay utilities on time, every time, with Auto-Fetch and Auto-Pay",
+        imageSrc: billPayments,
+        imageSrcHovered: billPaymentsFilled,
+        link: "/bill-payables",
       },
       {
         name: "Bulk Payout",
-        description: "Keep track of all your vendor bills",
+        description: "Pay multiple bills & invoices with a single click",
         imageSrc: bulkPayout,
         imageSrcHovered: bulkPayoutFilled,
         link: "/bulk-payout",
       },
       {
-        name: "Bill Payments",
-        description: "Automate timely bill payments",
-        imageSrc: billPayments,
-        imageSrcHovered: billPaymentsFilled,
-        link: "/bill-payments",
-      },
-      {
-        name: "Tax Payments",
-        description: "Audit-compliant tax payment process.",
+        name: "GST Payments",
+        description: "Pay GST with any card, get reminders, and track payments",
         imageSrc: taxPayment,
         imageSrcHovered: taxPaymentFilled,
-        link: "/tax-payments",
+        link: "/gst-payments",
+      },
+      {
+        name: "Vendor Payment",
+        description:
+          "Instantaneously Add, verify, pay, and manage vendors with ease",
+        imageSrc: vendorPayment,
+        imageSrcHovered: vendorPaymentFilled,
+        link: "/vemdor-payment",
+      },
+      {
+        name: "Rental Payment",
+        description:
+          "Pay & manage your office/home rent directly into your landlord’s bank",
+        imageSrc: rentalPayments,
+        imageSrcHovered: rentalPaymentsFilled,
+        link: "/rental-payment",
       },
     ],
     footerText: "Stream Line with Payables",
     footerImg: "xpenz_footer_bg",
-    footerLink: "/olympus",
+    footerLink: "/payables",
   },
   {
     subtitle: "Receivables",
@@ -81,15 +84,15 @@ const olympusProducts = [
     },
     list: [
       {
-        name: "Virtual Account",
-        description: "Keep track of all your vendor bills",
+        name: "Virtual Accounts",
+        description: "Reconcile invoices and streamline collections",
         imageSrc: virtualAccounts,
         imageSrcHovered: virtualAccountsFilled,
         link: "/404",
       },
       {
         name: "Payment Links",
-        description: "Maintain rental records for payments",
+        description: "Embed payments, quicken collections, improve sales",
         imageSrc: paymentLinks,
         imageSrcHovered: paymentLinksFilled,
         link: "/payment-links",
@@ -102,23 +105,17 @@ const olympusProducts = [
       //   link: "/bulk-collect",
       // },
       {
-        name: "Quick Collect",
-        description: "Automate timely bill payments",
-        imageSrc: quickCollect,
-        imageSrcHovered: quickCollectFilled,
-        link: "/quick-collect",
-      },
-      {
         name: "Invoices",
-        description: "Audit-compliant tax payment process.",
+        description:
+          "Manage invoices with complete details with quicker payment options",
         imageSrc: invoices,
         imageSrcHovered: invoicesFilled,
-        link: "/invoices",
+        link: "/quick-collect",
       },
     ],
     footerText: "Stream Line with Receivables",
     footerImg: "xpenz_footer_bg",
-    footerLink: "/olympus",
+    footerLink: "/receivables",
   },
 ];
 
