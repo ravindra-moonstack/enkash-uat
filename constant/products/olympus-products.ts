@@ -74,6 +74,7 @@ const olympusProducts = [
     footerMobileText: "Explore Payables",
     footerImg: "olympus_footer_bg",
     footerLink: "/payables",
+    parentLink: "/olympus",
   },
   {
     subtitle: "Receivables",
@@ -118,6 +119,7 @@ const olympusProducts = [
     footerMobileText: "Explore Receivables",
     footerImg: "olympus_footer_bg",
     footerLink: "/receivables",
+    parentLink: "/olympus",
   },
 ];
 

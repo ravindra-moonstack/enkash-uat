@@ -64,7 +64,7 @@ const MobileHeader = () => {
                     }}
                   >
                     <div className={styles.title}> {item.name}</div>
-                    {index !== 2 && (
+                    {index !== 3 && (
                       <>
                         <Image src={forwardArrowBlue} alt="arrow down icon" />
                       </>

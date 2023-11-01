@@ -4,7 +4,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { Fragment, useState } from "react";
 import utmSources from "@/constant/utm-source";
 import Link from "next/link";
-import { footerArrow } from "..";
+import { footerArrow, forwardArrowBlue } from "..";
 
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
@@ -18,19 +18,26 @@ const SubProductListView = (props: {
 
   const productsToUse = props.products;
   const currentHeading = productsToUse[activeSubtitleIndex]?.currentHeading;
+  const link = productsToUse[activeSubtitleIndex]?.parentLink;
 
   return (
     <div className={`w-100 absolute z-10 bg-indi-volt`}>
       <div className={styles.mobile_modal}>
-        <li>
-          <div className="d-flex flex-column justify-content-center px-4 py-2">
-            <div className={styles.title}>{currentHeading?.name}</div>
-            <div className={styles.description}>
-              {currentHeading?.description}
+        <Link href={link}>
+          <li className="d-flex align-items-center pe-4 pt-2">
+            <div className="d-flex flex-column justify-content-center px-4 py-2 ">
+              <div className={styles.title}>{currentHeading?.name}</div>
+              <div className={styles.description}>
+                {currentHeading?.description}
+              </div>
             </div>
-          </div>
-        </li>
-
+            <Image
+              src={forwardArrowBlue}
+              alt="arrow down icon"
+              className="ms-4"
+            />
+          </li>
+        </Link>
         <div className="list">
           <div className="d-flex flex-row">
             {productsToUse.map((category: any, index: any) => (

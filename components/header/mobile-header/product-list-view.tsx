@@ -6,7 +6,8 @@ import motherProducts from "@/constant/products/mother-products";
 import SubProductListView from "./sub-product-list-view";
 import resources from "@/constant/resources";
 import solutions from "@/constant/solutions";
-
+import { forwardArrowBlue } from "..";
+import Image from "next/image";
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
 const loginUrl = "https://home.enkash.com/login";
 
@@ -34,7 +35,7 @@ const ProductListView = ({
                 <Fragment key={index}>
                   <li
                     key={item.name}
-                    className={`py-4 px-4`}
+                    className={`py-4 px-4 align-items-center`}
                     onClick={() => {
                       setSelectedItemIndex(index);
                     }}
@@ -45,6 +46,11 @@ const ProductListView = ({
                         {item.description}
                       </div>
                     </div>
+                    <Image
+                      src={forwardArrowBlue}
+                      alt="arrow down icon"
+                      className="ms-4"
+                    />
                   </li>
                   <div className={styles.line}></div>
                 </Fragment>

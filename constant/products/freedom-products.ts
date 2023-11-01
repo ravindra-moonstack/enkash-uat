@@ -96,6 +96,7 @@ const freedomProducts = [
     footerMobileText: "Explore Freedom",
     footerImg: "freedom_footer_bg",
     footerLink: "/freedom",
+    parentLink: "/freedom",
   },
 ];
 

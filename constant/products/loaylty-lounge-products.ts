@@ -56,6 +56,7 @@ const loyaltyLoungeProducts = [
     footerMobileText: "Explore Loyalty Lounge",
     footerImg: "loyalty_footer_bg",
     footerLink: "/loyalty",
+    parentLink: "/loyalty",
   },
 ];
 

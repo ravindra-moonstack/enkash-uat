@@ -69,6 +69,7 @@ const xpenzProducts = [
     footerMobileText: "Explore Xpenz",
     footerImg: "xpenz_footer_bg",
     footerLink: "/xpenz",
+    parentLink: "/xpenz",
   },
 ];
 
