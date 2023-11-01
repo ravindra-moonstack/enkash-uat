@@ -114,7 +114,7 @@ const Footer = () => {
                     <a href="/purchase-cards/">Purchase Cards*</a>
                   </li>
                   <li>
-                    <a href="/saas/">SaaS Cards*</a>
+                    <a href="/saas-cards/">SaaS Cards*</a>
                   </li>
                   <li>
                     <a href="/travel-and-expense-cards">

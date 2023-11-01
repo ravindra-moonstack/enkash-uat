@@ -55,7 +55,6 @@ const billPayments = () => {
                 size="h2"
                 weight="7"
               />
-              <Heading title="again" color="white" size="h2" weight="7" />
             </div>
           </div>
 

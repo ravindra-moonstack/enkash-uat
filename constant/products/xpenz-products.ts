@@ -48,7 +48,7 @@ const xpenzProducts = [
         description: "Get reimbursed for your expenses quickly and easily",
         imageSrc: reimbursements,
         imageSrcHovered: reimbursementsFilled,
-        link: "/reimbursements",
+        link: "/reimbursement",
       },
       {
         name: "Scan and Drop Receipts",

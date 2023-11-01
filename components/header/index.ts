@@ -12,7 +12,6 @@ export { default as officeDiscussionPic } from "./img/office-discussion-pic.png"
 export { default as hamnburgerIcon } from "./img/hambergermenu.png";
 export { default as crossMenu } from "./img/cross-menu.png";
 export { default as forwardArrowBlue } from "./img/forward-arrow-blue.png";
-export { default as olympusFooterBg } from "./img/olympus_footer_bg.png";
 
 //loyalty lounge
 export { default as brandVouchers } from "./img/brand-vouchers.png";

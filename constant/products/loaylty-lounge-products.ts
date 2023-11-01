@@ -21,7 +21,7 @@ const loyaltyLoungeProducts = [
         description: "400+ brand vouchers for corporate gifting ",
         imageSrc: brandVouchers,
         imageSrcHovered: brandVouchersFilled,
-        link: "/404",
+        link: "/brand-voucher",
       },
       {
         name: "Channel Incentive",
