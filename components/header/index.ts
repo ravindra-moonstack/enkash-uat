@@ -35,6 +35,8 @@ export { default as scanAndDrop } from "./img/scan-and-drop-receipts.png";
 export { default as scanAndDropFilled } from "./img/scan-and-drop-receipts-filled.png";
 export { default as reimbursements } from "./img/reimbursements.png";
 export { default as reimbursementsFilled } from "./img/reimbursement-filled.png";
+export { default as spendControl } from "./img/spend-control.svg";
+export { default as spendControlFilled } from "./img/spend-control-filled.svg";
 
 //receivables
 export { default as bulkCollect } from "./img/bulk-collect.png";
@@ -54,8 +56,18 @@ export { default as billPaymentsFilled } from "./img/bill-payments-filled.png";
 export { default as vendorPayment } from "./img/vendor-payment.png";
 export { default as vendorPaymentFilled } from "./img/vendor-payment-filled.png";
 export { default as bulkPayout } from "./img/bulk-payout.png";
-export { default as bulkPayoutFilled } from "./img/bulk-payout-filled.png"; //huh
+export { default as bulkPayoutFilled } from "./img/bulk-payout-filled.png";
 export { default as taxPayment } from "./img/tax-payment.png";
 export { default as taxPaymentFilled } from "./img/tax-payment-filled.png";
 export { default as rentalPayments } from "./img/rental-payments.png";
 export { default as rentalPaymentsFilled } from "./img/rental-payments-filled.png";
+
+//freedom
+export { default as saas } from "./img/saas.svg";
+export { default as saasFilled } from "./img/saas-filled.svg";
+export { default as tne } from "./img/tne.svg";
+export { default as tneFilled } from "./img/tne-filled.svg";
+export { default as virtualCard } from "./img/virrtual-card.svg";
+export { default as virtualCardFilled } from "./img/virtual-card-filled.svg";
+export { default as digitalMarketingCard } from "./img/digital-marketing.svg";
+export { default as digitalMarketingCardFilled } from "./img/digital-marketing-filled.svg";

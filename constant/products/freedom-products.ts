@@ -4,6 +4,14 @@ import {
   bulkPayout,
   taxPayment,
   taxPaymentFilled,
+  digitalMarketingCard,
+  digitalMarketingCardFilled,
+  saas,
+  saasFilled,
+  tne,
+  tneFilled,
+  virtualCard,
+  virtualCardFilled,
 } from "@/components/header";
 
 const freedomProducts = [
@@ -18,8 +26,8 @@ const freedomProducts = [
         name: "SaaS Cards*",
         description:
           "Manage all your SaaS subscriptions with our dedicated SaaS Card",
-        imageSrc: taxPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: saas,
+        imageSrcHovered: saasFilled,
         link: "/saas-cards",
       },
       {
@@ -41,21 +49,21 @@ const freedomProducts = [
       {
         name: "T&E Cards*",
         description: "Simplify travel and entertainment expenses for employees",
-        imageSrc: taxPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: tne,
+        imageSrcHovered: tneFilled,
         link: "/tne-cards",
       },
       {
         name: "Virtual Cards*",
         description: "Unlimited cards with centralized controls",
-        imageSrc: taxPayment,
-        imageSrcHovered: taxPaymentFilled,
+        imageSrc: virtualCard,
+        imageSrcHovered: virtualCardFilled,
         link: "/virtual-cards",
       },
       {
         name: "Fuel Cards*",
         description: "Track and manage fuel expenses for your business travels",
-        imageSrc: vendorPayment,
+        imageSrc: bulkPayout,
         imageSrcHovered: vendorPaymentFilled,
         link: "/fuel-cards",
       },
@@ -71,8 +79,8 @@ const freedomProducts = [
         name: "Digital Marketing Cards*",
         description:
           "Pay for digital marketing campaigns and subscriptions with ease",
-        imageSrc: bulkPayout,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: digitalMarketingCard,
+        imageSrcHovered: digitalMarketingCardFilled,
         link: "/digital-marketing-cards",
       },
 

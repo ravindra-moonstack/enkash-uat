@@ -9,6 +9,8 @@ import {
   policyAndApprovalFilled,
   scanAndDrop,
   scanAndDropFilled,
+  spendControl,
+  spendControlFilled,
 } from "@/components/header";
 
 const xpenzProducts = [
@@ -58,8 +60,8 @@ const xpenzProducts = [
       {
         name: "Spend Control",
         description: "Real-time visibility and control on your spends",
-        imageSrc: scanAndDrop,
-        imageSrcHovered: scanAndDropFilled,
+        imageSrc: spendControl,
+        imageSrcHovered: spendControlFilled,
         link: "/spend-control",
       },
     ],
