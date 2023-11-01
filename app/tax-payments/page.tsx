@@ -225,8 +225,12 @@ const taxPayments = () => {
         />
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="How does Tax Payment Help Your Finance Team Become More Efficient?" />
+        <BlogWrapper
+          title="How does Tax Payment Help Your Finance Team Become More Efficient?"
+          pageName="tax-payment"
+        />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

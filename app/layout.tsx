@@ -1,7 +1,11 @@
 import Footer from "@/components/footer/footer";
 import "bootstrap/dist/css/bootstrap.css";
-import { RootProps } from "@/types/props";
 import "../styles/_base.scss";
+import { ReactNode } from "react";
+
+export interface RootProps {
+  children: ReactNode;
+}
 
 const RootLayout = ({ children }: RootProps) => {
   return (

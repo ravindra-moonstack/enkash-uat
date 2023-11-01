@@ -2,6 +2,8 @@
 @import "/styles/mixin";
 
 .card_body {
+  position: relative;
+  z-index: 2;
   width: 250px;
   height: 100%;
   border: 2px solid $color-night-blue;
@@ -10,6 +12,35 @@
   text-align: left;
   @include bp-md {
     width: 400px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .desktop_image_container {
+    display: none;
+    @include bp-md {
+      display: block;
+      margin-top: -3px;
+      width: 396px;
+      height: 300px;
+      border-top-left-radius: 22.5px;
+      border-top-right-radius: 22.5px;
+      overflow: hidden;
+    }
+  }
+
+  .mobile_image_container {
+    margin-top: -3px;
+    width: 246px;
+    height: 200px;
+    border-top-left-radius: 22.5px;
+    border-top-right-radius: 22.5px;
+    overflow: hidden;
+    @include bp-md {
+      display: none;
+    }
   }
 
   .underline {
