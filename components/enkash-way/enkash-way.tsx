@@ -3,7 +3,7 @@
 import Heading from "../heading/heading";
 import { space } from "../../constant/common";
 import Image from "next/image";
-import { blueArrowForward, newWay, oldWay } from ".";
+import { blueArrowForward, gradient, newWay, oldWay } from ".";
 import styles from "./enkash-way.module.scss";
 import React, { useState } from "react";
 
@@ -44,8 +44,9 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
   return (
     <>
       <div
-        className={`d-flex flex-column flex-md-row justify-content-center align-items-center text-center`}
+        className={`d-flex position-relative flex-column flex-md-row justify-content-center align-items-center text-center`}
       >
+        <Image src={gradient} alt="background gradient image" className={styles.gradient}/>
         <Heading
           title={`The EnKash Way is${space}`}
           color="black"
@@ -68,9 +69,7 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
         />
       </div>
       <div className={styles.content}>
-        <div
-          className={`d-flex my-md-5 my-3 ${styles.progress_container}`}
-        >
+        <div className={`d-flex my-md-5 my-3 ${styles.progress_container}`}>
           {(progressData || []).map((data, index) => (
             <div
               key={index}
