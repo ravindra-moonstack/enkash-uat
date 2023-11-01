@@ -73,6 +73,16 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+
+    img {
+      cursor: pointer;
+      transition: width 0.3s ease-in-out;
+    }
+
+    img:hover {
+      width: 65px;
+    }
+
     .contact_us {
       font-size: 16px;
       font-style: normal;
@@ -85,5 +95,11 @@
         font-size: 22.5px;
       }
     }
+  }
+}
+
+.action_container:hover {
+  img {
+    width: 65px;
   }
 }

@@ -19,3 +19,20 @@
     }
   }
 }
+
+.action_container {
+  cursor: pointer;
+  img {
+    transition: width 0.3s ease-in-out;
+  }
+
+  img:hover {
+    width: 65px;
+  }
+}
+
+.action_container:hover {
+  img {
+    width: 65px;
+  }
+}

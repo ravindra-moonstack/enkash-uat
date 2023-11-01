@@ -29,7 +29,7 @@ const BlogCard = ({
         <div className="my-3">
           <Heading title={description} color="black" size="h6" weight="4" />
         </div>
-        <div className={`d-flex align-items-center mt-2 ${styles.underline}`}>
+        <div className={`d-flex align-items-center mt-2 ${styles.underline} ${styles.action_container}`}>
           <Heading title="Read More" color="equity-blue" size="h6" />
           <Image src={arrow} alt="arrow icon" width={50} className="ms-2" />
         </div>
