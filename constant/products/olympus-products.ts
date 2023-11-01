@@ -70,8 +70,8 @@ const olympusProducts = [
         link: "/rental-payment",
       },
     ],
-    footerText: "Stream Line with Payables",
-    footerImg: "xpenz_footer_bg",
+    footerText: "Streamline Your Payments with Payables",
+    footerImg: "olympus_footer_bg",
     footerLink: "/payables",
   },
   {
@@ -97,13 +97,13 @@ const olympusProducts = [
         imageSrcHovered: paymentLinksFilled,
         link: "/payment-links",
       },
-      // {
-      //   name: "Bulk Collect",
-      //   description: "Keep track of all your vendor bills",
-      //   imageSrc: bulkCollect,
-      //   imageSrcHovered: bulkCollectFilled,
-      //   link: "/bulk-collect",
-      // },
+      {
+        name: "Bulk Collect",
+        description: "Simplify bulk collections, invoicing, data quality",
+        imageSrc: bulkCollect,
+        imageSrcHovered: bulkCollectFilled,
+        link: "/bulk-collect",
+      },
       {
         name: "Invoices",
         description:
@@ -113,8 +113,8 @@ const olympusProducts = [
         link: "/quick-collect",
       },
     ],
-    footerText: "Stream Line with Receivables",
-    footerImg: "xpenz_footer_bg",
+    footerText: "Optimize Your Collections with Receivables",
+    footerImg: "olympus_footer_bg",
     footerLink: "/receivables",
   },
 ];

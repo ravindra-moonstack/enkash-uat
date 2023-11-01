@@ -63,7 +63,7 @@ const xpenzProducts = [
         link: "/spend-control",
       },
     ],
-    footerText: "Stream Line with Xpenze",
+    footerText: "Optimize Business Spends with Xpenz",
     footerImg: "xpenz_footer_bg",
     footerLink: "/xpenz",
   },

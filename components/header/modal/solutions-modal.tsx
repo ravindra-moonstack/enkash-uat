@@ -30,7 +30,11 @@ const SolutionsModal = () => {
         {solutions.map((solution: any, index: any) => (
           <div
             key={solution.name}
-            className={styles.product_row}
+            className={`${styles.product_row} ${
+              hoveredSolutionIndex == index
+                ? styles.opacity_selected
+                : styles.opacity_normal
+            }`}
             onMouseEnter={() => setHoveredSolutionIndex(index)}
             ref={refs[index]}
           >

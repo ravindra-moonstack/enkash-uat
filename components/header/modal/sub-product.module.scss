@@ -115,10 +115,6 @@
   animation: top-to-bottom 0.5s ease-in-out forwards;
 }
 
-.xpenz_footer_bg {
-  background-image: url(/components/header/img/brand-vouchers-filled.png);
-}
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -143,4 +139,22 @@
 
 .color_highlight {
   color: $color-black;
+}
+
+.olympus_footer_bg {
+  background: url(../img/olympus_footer_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.xpenz_footer_bg {
+  background: url(../img/xpenz_footer_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.loyalty_footer_bg {
+  background: url(../img/xpenz_footer_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }

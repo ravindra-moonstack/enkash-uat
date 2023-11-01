@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import resources from "../../../constant/resources";
 import { blueforwardArrow, officeDiscussionPic } from "..";
@@ -8,7 +8,7 @@ const ResourcesModal = () => {
   const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
     null | number
   >(null);
-  const refs = resources.map(() => useRef<HTMLDivElement>(null)); 
+  const refs = resources.map(() => useRef<HTMLDivElement>(null));
   return (
     <div className={`row mt-5 ${styles.container}`}>
       <div
@@ -31,7 +31,11 @@ const ResourcesModal = () => {
         {resources.map((product: any, index: any) => (
           <div
             key={product.name}
-            className={styles.product_row}
+            className={`${styles.product_row} ${
+              hoveredResourceIndex == index
+                ? styles.opacity_selected
+                : styles.opacity_normal
+            }`}
             onMouseEnter={() => setHoveredResourceIndex(index)}
             ref={refs[index]}
           >

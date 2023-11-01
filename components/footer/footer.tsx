@@ -100,25 +100,25 @@ const Footer = () => {
                     <a href="/fuel-cards/">Fuel Cards*</a>
                   </li>
                   <li>
-                    <a href="/meal-card/">Meal Cards</a>
+                    <a href="/meal-card/">Meal Cards*</a>
                   </li>
                   <li>
                     <a href="/multi-currency-forex-cards/">
-                      Multi-Currency Forex Cards
+                      Multi-Currency Forex Cards*
                     </a>
                   </li>
                   <li>
-                    <a href="/payroll-cards/">Payroll Cards</a>
+                    <a href="/payroll-cards/">Payroll Cards*</a>
                   </li>
                   <li>
-                    <a href="/purchase-cards/">Purchase Cards</a>
+                    <a href="/purchase-cards/">Purchase Cards*</a>
                   </li>
                   <li>
-                    <a href="/saas/">SaaS Cards</a>
+                    <a href="/saas/">SaaS Cards*</a>
                   </li>
                   <li>
                     <a href="/travel-and-expense-cards">
-                      Travel and Expense Cards
+                      Travel and Expense Cards*
                     </a>
                   </li>
                 </ul>
