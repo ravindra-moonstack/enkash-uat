@@ -22,7 +22,11 @@ const Footer = () => {
             Spend Smart, Collect Fast, <br />{" "}
             <span className="color-baby-blue">Grow More</span>
           </h2>
-          <PrimaryButton title="Get Started" url={signupUrl} theme="theme-blue" />
+          <PrimaryButton
+            title="Get Started"
+            url={signupUrl}
+            theme="theme-blue"
+          />
         </div>
         <div
           className={`footer_left_section col-12 col-md-3 ${styles.footer_links_col}`}
@@ -37,19 +41,19 @@ const Footer = () => {
                   </div>
                 </li>
                 <li>
-                  <a href="/vendor-payments/">Vendor Payments</a>
-                </li>
-                <li>
-                  <a href="/rental-payments/">Rental Payments</a>
+                  <a href="/bill-payables/">Bill Payables</a>
                 </li>
                 <li>
                   <a href="/bulk-payout/">Bulk Payout</a>
                 </li>
                 <li>
-                  <a href="/bill-paybles/">Bill Payments</a>
+                  <a href="/tax-payments/">GST Payments</a>
                 </li>
                 <li>
-                  <a href="/tax-payments/">Tax Payments</a>
+                  <a href="/vendor-payments/">Vendor Payment</a>
+                </li>
+                <li>
+                  <a href="/rental-payment/">Rental Payment</a>
                 </li>
               </ul>
             </div>
@@ -70,9 +74,6 @@ const Footer = () => {
                   <a href="/bulk-collect/">Bulk Collect</a>
                 </li>
                 <li>
-                  <a href="/quick-collect/">Quick Collect</a>
-                </li>
-                <li>
                   <a href="/invoices/">Invoices</a>
                 </li>
               </ul>
@@ -88,19 +89,37 @@ const Footer = () => {
                 </div>
                 <ul>
                   <li>
-                    <a href="/purpose-based-cards/">Purpose based Cards*</a>
-                  </li>
-                  <li>
-                    <a href="/integrated-cards/">Integrated Cards*</a>
-                  </li>
-                  <li>
                     <a href="/virtual-cards/">Virtual Cards*</a>
                   </li>
                   <li>
-                    <a href="/diy-card/">DIY Card Module</a>
+                    <a href="/digital-marketing-cards/">
+                      Digital Marketing Cards*
+                    </a>
                   </li>
                   <li>
-                    <a href="/spend-control/">Spends Control</a>
+                    <a href="/fuel-cards/">Fuel Cards*</a>
+                  </li>
+                  <li>
+                    <a href="/meal-card/">Meal Cards</a>
+                  </li>
+                  <li>
+                    <a href="/multi-currency-forex-cards/">
+                      Multi-Currency Forex Cards
+                    </a>
+                  </li>
+                  <li>
+                    <a href="/payroll-cards/">Payroll Cards</a>
+                  </li>
+                  <li>
+                    <a href="/purchase-cards/">Purchase Cards</a>
+                  </li>
+                  <li>
+                    <a href="/saas/">SaaS Cards</a>
+                  </li>
+                  <li>
+                    <a href="/travel-and-expense-cards">
+                      Travel and Expense Cards
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -108,6 +127,7 @@ const Footer = () => {
             <div className={`col-6 col-md-4 ${styles.footer_links_col}`}>
               <div>
                 <h4 className={`col-12 ${styles.title}`}>Xpenz</h4>
+
                 <ul>
                   <li>
                     <a href="/budget-and-advances/">Budgets and Advances</a>
@@ -118,17 +138,21 @@ const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="/reimbursement/">Reimbursement</a>
-                  </li>
-                  <li>
                     <a href="/policy-and-approval-flow/">
                       Policy and Approval Flows
                     </a>
                   </li>
                   <li>
+                    <a href="/reimbursement/">Reimbursement</a>
+                  </li>
+
+                  <li>
                     <a href="/scan-and-drop-receipts/">
                       Scan and Drop Receipts
                     </a>
+                  </li>
+                  <li>
+                    <a href="/spend-control/">Spend Control</a>
                   </li>
                 </ul>
               </div>
@@ -138,14 +162,15 @@ const Footer = () => {
                 <h4 className={`col-12 ${styles.title}`}>Loyalty Lounge</h4>
                 <ul>
                   <li>
-                    <a href="/employee-reward/">Employee Rewards</a>
-                  </li>
-                  <li>
                     <a href="/brand-gift-vouchers/">Brand Voucher</a>
                   </li>
                   <li>
                     <a href="/channel-incentive/">Channel Incentives</a>
                   </li>
+                  <li>
+                    <a href="/employee-reward/">Employee Rewards</a>
+                  </li>
+
                   <li>
                     <a href="/brand-gift-vouchers/">Gift Cards</a>
                   </li>
@@ -216,6 +241,19 @@ const Footer = () => {
                   </li>
                   <li>
                     <a href="/term-condition/">Terms & Conditions</a>
+                  </li>
+                  <li>
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href="https://www.sbmbank.co.in/aboutus/grievance-redressal-mechanism.php"
+                    >
+                      SBM Grievances
+                      <div className={styles.grievance_text}>
+                        <span>Grievance Redressal Mechanism</span>
+                        <span>- SBM Bank India</span>
+                      </div>
+                    </a>
                   </li>
                 </ul>
               </div>

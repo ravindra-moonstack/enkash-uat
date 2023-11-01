@@ -1,7 +1,6 @@
 @import "../../styles/mixin";
 @import "../../styles/variables";
 
-
 .footer {
   li {
     list-style-type: none;
@@ -122,4 +121,21 @@
     height: 18px;
     margin: 0 10px;
   }
+}
+
+.grievance_text {
+  text-decoration: underline;
+  font-size: 9px;
+  line-height: 9px;
+  display: flex;
+  flex-direction: column;
+  @include bp-md {
+    flex-direction: row;
+    font-size: 10px;
+    line-height: 10px;
+  }
+
+  color: #b5bbcb;
+  white-space: nowrap;
+  text-underline-offset: 2px;
 }
