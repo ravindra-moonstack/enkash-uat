@@ -5,6 +5,10 @@ import {
   offersFilled,
   giftCards,
   giftCardFilled,
+  channelIncentive,
+  channelIncentiveFilled,
+  rewardsPlatformFilled,
+  rewardsPlatform,
 } from "@/components/header";
 
 const loyaltyLoungeProducts = [
@@ -26,15 +30,15 @@ const loyaltyLoungeProducts = [
       {
         name: "Channel Incentive",
         description: "Enable automated trade incentives easily",
-        imageSrc: brandVouchers,
-        imageSrcHovered: brandVouchersFilled,
+        imageSrc: channelIncentive,
+        imageSrcHovered: channelIncentiveFilled,
         link: "/brand-voucher",
       },
       {
         name: "Employee Rewards",
         description: "Automated platform for employee appreciation",
-        imageSrc: brandVouchers,
-        imageSrcHovered: brandVouchersFilled,
+        imageSrc: rewardsPlatform,
+        imageSrcHovered: rewardsPlatformFilled,
         link: "/404",
       },
       {
@@ -52,7 +56,7 @@ const loyaltyLoungeProducts = [
         link: "/404",
       },
     ],
-    footerText: "Stream Line with Loyalty",
+    footerText: "StreamLine with Loyalty",
     footerMobileText: "Explore Loyalty Lounge",
     footerImg: "loyalty_footer_bg",
     footerLink: "/loyalty",

@@ -20,8 +20,10 @@ export { default as giftCards } from "./img/gift-cards.png";
 export { default as giftCardFilled } from "./img/gift-cards-filled.png";
 export { default as offers } from "./img/offers.png";
 export { default as offersFilled } from "./img/offers-filled.png";
-export { default as rewardsPlatform } from "./img/rewards-platform.png";
-export { default as rewardsPlatformFilled } from "./img/rewards-platform-filled.png";
+export { default as rewardsPlatform } from "./img/employee-reward.svg";
+export { default as rewardsPlatformFilled } from "./img/employee-reward-filled.svg";
+export { default as channelIncentive } from "./img/channel-filled.svg";
+export { default as channelIncentiveFilled } from "./img/channel-incentive-filled.svg";
 
 //Xpenz
 export { default as budgetAndAndvances } from "./img/budgets-and-advances.png";
@@ -70,3 +72,14 @@ export { default as virtualCard } from "./img/virrtual-card.svg";
 export { default as virtualCardFilled } from "./img/virtual-card-filled.svg";
 export { default as digitalMarketingCard } from "./img/digital-marketing.svg";
 export { default as digitalMarketingCardFilled } from "./img/digital-marketing-filled.svg";
+
+export { default as fuelCard } from "./img/fuel-card.svg";
+export { default as fuelCardFilled } from "./img/fuel-card-filled.svg";
+export { default as mealCard } from "./img/meal-card.svg";
+export { default as mealCardFilled } from "./img/meal-card-filled.svg";
+export { default as purchaseCard } from "./img/purchase-card.svg";
+export { default as purchaseCardFilled } from "./img/purchase-card-filled.svg";
+export { default as payrollCard } from "./img/payroll-card.svg";
+export { default as payrollCardFilled } from "./img/payroll-card-filled.svg";
+export { default as multiForexCard } from "./img/multi-currency.svg";
+export { default as multiForexCardFilled } from "./img/multi-currency-filled.svg";

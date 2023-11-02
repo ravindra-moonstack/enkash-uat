@@ -12,6 +12,16 @@ import {
   tneFilled,
   virtualCard,
   virtualCardFilled,
+  mealCard,
+  payrollCard,
+  mealCardFilled,
+  payrollCardFilled,
+  fuelCard,
+  fuelCardFilled,
+  purchaseCard,
+  purchaseCardFilled,
+  multiForexCard,
+  multiForexCardFilled,
 } from "@/components/header";
 
 const freedomProducts = [
@@ -25,7 +35,7 @@ const freedomProducts = [
       {
         name: "SaaS Cards*",
         description:
-          "Manage all your SaaS subscriptions with our dedicated SaaS Card",
+          "Manage all your SaaS subscriptions with our dedicated SaaS Cards",
         imageSrc: saas,
         imageSrcHovered: saasFilled,
         link: "/saas-cards",
@@ -34,18 +44,17 @@ const freedomProducts = [
         name: "Meal Cards*",
         description:
           "Let your employees choose their favorite meals and save on taxes",
-        imageSrc: taxPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: mealCard,
+        imageSrcHovered: mealCardFilled,
         link: "/meal-cards",
       },
       {
         name: "Payroll Cards*",
         description: "Pay your employees quickly and easily with payroll cards",
-        imageSrc: taxPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: payrollCard,
+        imageSrcHovered: payrollCardFilled,
         link: "/payroll-cards",
       },
-      ////
       {
         name: "T&E Cards*",
         description: "Simplify travel and entertainment expenses for employees",
@@ -63,16 +72,16 @@ const freedomProducts = [
       {
         name: "Fuel Cards*",
         description: "Track and manage fuel expenses for your business travels",
-        imageSrc: bulkPayout,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: fuelCard,
+        imageSrcHovered: fuelCardFilled,
         link: "/fuel-cards",
       },
       {
         name: "Purchase Cards*",
         description:
           "Empower employees to make purchases and track spends in real time",
-        imageSrc: taxPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: purchaseCard,
+        imageSrcHovered: purchaseCardFilled,
         link: "/purchase-cards",
       },
       {
@@ -87,12 +96,12 @@ const freedomProducts = [
       {
         name: "Multi-Currency Forex Cards*",
         description: "Hassle-free international travel and business",
-        imageSrc: taxPayment,
-        imageSrcHovered: vendorPaymentFilled,
+        imageSrc: multiForexCard,
+        imageSrcHovered: multiForexCardFilled,
         link: "/multi-currency-forex-cards",
       },
     ],
-    footerText: "Stream Line with Freedom",
+    footerText: "StreamLine with Freedom",
     footerMobileText: "Explore Freedom",
     footerImg: "freedom_footer_bg",
     footerLink: "/freedom",
