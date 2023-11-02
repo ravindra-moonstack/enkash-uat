@@ -4,7 +4,7 @@
 .home_container {
   position: relative;
   padding-top: 80px;
-  padding-bottom: 250px;
+  padding-bottom: 200px;
 
   .title {
     margin-bottom: 100px;
@@ -17,7 +17,7 @@
   }
 
   .container {
-    height: 500px;
+    height: 450px;
     border: 2.7px solid #fffbfb;
     background: linear-gradient(
       324deg,
@@ -34,7 +34,7 @@
       padding-left: 20px;
       @include bp-md {
         padding: 0;
-        padding: 100px 70px 100px 70px;
+        padding: 50px 70px 100px 70px;
         width: 43%;
       }
     }
@@ -52,7 +52,7 @@
     img {
       height: 300px;
       @include bp-md {
-        height: 650px;
+        height: 600px;
       }
     }
     .content {

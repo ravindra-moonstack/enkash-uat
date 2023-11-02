@@ -1,39 +1,37 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.png";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
-    alt: "reimbursement image",
+    image: iconOne,
+    alt: "Login to EnKash or register",
     title:
       "Login to EnKash or register with your valid mobile number or email address",
   },
   {
-    image: sampleIconOne,
-    alt: "reimbursement image",
+    image: iconTwo,
+    alt: "Go to bill payments and enter company details",
     title:
       "Go to bill payments and enter company details like type/sub-category and PAN",
   },
   {
-    image: sampleIconTwo,
-    alt: "reimbursement image",
+    image: iconThree,
+    alt: "Upload your bills on the platform",
     title:
       "Upload your bills on the platform in bulk or individually as per your convenience",
   },
   {
-    image: sampleIconFour,
-    alt: "reimbursement image",
-    title:
-      "Select the bill you want to pay and click on Pay button",
+    image: iconFour,
+    alt: "Select the bill you want to pay",
+    title: "Select the bill you want to pay and click on Pay button",
   },
   {
-    image: calenderIcon,
-    alt: "reimbursement image",
-    title:
-      "Make payment using any mode as per your convenience",
+    image: iconFive,
+    alt: "Make payment using any mode",
+    title: "Make payment using any mode as per your convenience",
   },
 ];
 

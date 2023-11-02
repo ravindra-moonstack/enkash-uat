@@ -3,6 +3,7 @@ import BlogCard from "../blog-card/blog-card";
 import blogData from "../blogData.json";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
 import Heading from "@/components/heading/heading";
+import Link from "next/link";
 
 type BlogItem = {
   imageAlt: any;
@@ -43,12 +44,12 @@ const BlogWrapper: React.FC<BlogWrapperProps> = ({
       </div>
 
       <div className="col-12 d-flex justify-content-center mt-4">
-        <MenuButton title="See all" theme="light" />
+        <Link href={"https://www.enkash.com/resources/"} target="_blank">
+          <MenuButton title="See all" theme="light" />
+        </Link>
       </div>
 
-      <div
-        className={`col-12 d-flex justify-content-md-evenly mt-5 pb-3 scroll_container`}
-      >
+      <div className={`col-12 d-flex  mt-5 pb-3 scroll_container`}>
         {filteredData.map((blog, index) => (
           <div className="me-4" key={index}>
             <BlogCard

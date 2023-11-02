@@ -84,12 +84,14 @@ const HowDoesCarousel = ({
               alt={carouselData[count - 1].alt}
               className="mb-2"
             />
-            <Heading
-              title={carouselData[count - 1].title}
-              color="white"
-              size="h4"
-              weight="4"
-            />
+            <div className="mt-3">
+              <Heading
+                title={carouselData[count - 1].title}
+                color="white"
+                size="h4"
+                weight="4"
+              />
+            </div>
           </div>
         </div>
       </div>

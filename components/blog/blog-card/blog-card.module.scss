@@ -10,6 +10,7 @@
   border-radius: 22.5px;
   white-space: normal;
   text-align: left;
+  padding-bottom: 30px;
   @include bp-md {
     width: 400px;
   }
@@ -52,6 +53,8 @@
 }
 
 .action_container {
+  position: absolute;
+  bottom: 30px;
   cursor: pointer;
   img {
     transition: width 0.3s ease-in-out;

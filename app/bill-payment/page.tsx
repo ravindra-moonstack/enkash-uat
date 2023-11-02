@@ -8,7 +8,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { bannerLottie, caraouselBg, faqBg, heroImage, whiteArrow } from ".";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -98,7 +98,7 @@ const billPayments = () => {
                 "With the EnKash way, make instant bill payments in a few clicks from a single dashboard and reduce manual efforts extensively",
             },
             {
-              itemArray: ["Mode", "of", "Payment"],
+              itemArray: ["Mode of", "Payment"],
               oldWayDescription:
                 "The traditional way doesn’t allow you to use multiple modes of payment to pay bills",
               newWayDescription:
@@ -118,7 +118,7 @@ const billPayments = () => {
                 "Bill payments in bulk can be automated in one click",
             },
             {
-              itemArray: ["Chances", "of", "Loss"],
+              itemArray: ["Chances of", "Loss"],
               oldWayDescription:
                 "Managing paper-made bills is a hassle and comes with its own set of challenges like loss, storage, and depreciation",
               newWayDescription:
@@ -227,7 +227,10 @@ const billPayments = () => {
         />
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Learn how bill payments could revolutionize the way you work!" />
+        <BlogWrapper
+          pageName="bill-payment"
+          title="Learn how bill payments could revolutionize the way you work!"
+        />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
