@@ -1,7 +1,6 @@
 "use client";
 
 import { Key, useEffect, useState } from "react";
-import rupeeCard from "./rupee-card.png";
 import laptop from "./laptop.png";
 import styles from "./how-does-it-work.module.scss";
 import Image, { StaticImageData } from "next/image";

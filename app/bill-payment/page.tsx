@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
@@ -18,7 +16,13 @@ import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-import Lottie from "lottie-react";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+
+export const metadata = {
+  title: "Bill Payment | Billing Payment Solution | EnKash",
+  description:
+    "Streamline your financial management with an advanced bill payment platform.  Simplify bill payment processes and stay organized effortlessly. Discover efficient bill pay solutions for seamless financial tracking and timely payments",
+};
 
 const billPayments = () => {
   return (
@@ -80,7 +84,7 @@ const billPayments = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Lottie animationData={bannerLottie} loop={true} />
+          <LottieClientComponent animationData={bannerLottie} loop={true} />
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />

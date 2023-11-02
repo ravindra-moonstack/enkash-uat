@@ -10,8 +10,9 @@
   background-position: right bottom;
   border-radius: 15px;
   padding-top: 40px;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 70px;
   white-space: normal;
   transition: all 0.3s ease;
   cursor: pointer;
@@ -55,7 +56,10 @@
 
 .action_container {
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
+  @include bp-md {
+    bottom: 50px;
+  }
   cursor: pointer;
   img {
     transition: width 0.3s ease-in-out;
