@@ -67,6 +67,8 @@
 }
 
 .footer {
+  padding-left: 5%;
+  padding-right: 10%;
   position: absolute;
   bottom: 0;
   height: 85px;
@@ -83,6 +85,14 @@
   a {
     text-decoration: none;
   }
+}
+
+.powered {
+  position: absolute;
+  right: 30px;
+  bottom: 100px;
+  font-size: 14px;
+  color: $color-secondry-grey;
 }
 
 @keyframes top-to-bottom {

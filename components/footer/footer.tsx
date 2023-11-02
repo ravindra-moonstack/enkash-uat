@@ -41,13 +41,13 @@ const Footer = () => {
                   </div>
                 </li>
                 <li>
-                  <a href="/bill-payables/">Bill Payables</a>
+                  <a href="/bill-payables/">Bill Payment</a>
                 </li>
                 <li>
                   <a href="/bulk-payout/">Bulk Payout</a>
                 </li>
                 <li>
-                  <a href="/tax-payments/">GST Payments</a>
+                  <a href="/tax-payments/">GST Payment</a>
                 </li>
                 <li>
                   <a href="/vendor-payments/">Vendor Payment</a>
@@ -118,7 +118,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a href="/travel-and-expense-cards">
-                      Travel and Expense Cards*
+                    T&E Cards*
                     </a>
                   </li>
                 </ul>
@@ -194,7 +194,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <a href="https://www.enkash.com/resources/press-release/">
-                      PressRelease
+                      Press Release
                     </a>
                   </li>
                   <li>

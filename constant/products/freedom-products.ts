@@ -101,7 +101,7 @@ const freedomProducts = [
         link: "/multi-currency-forex-cards",
       },
     ],
-    footerText: "StreamLine with Freedom",
+    footerText: "Streamline with Freedom",
     footerMobileText: "Explore Freedom",
     footerImg: "freedom_footer_bg",
     footerLink: "/freedom",

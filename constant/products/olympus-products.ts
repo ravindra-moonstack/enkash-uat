@@ -32,12 +32,12 @@ const olympusProducts = [
     },
     list: [
       {
-        name: "Bill Payables",
+        name: "Bill Payment",
         description:
           "Pay utilities on time, every time, with Auto-Fetch and Auto-Pay",
         imageSrc: billPayments,
         imageSrcHovered: billPaymentsFilled,
-        link: "/bill-payables",
+        link: "/bill-payment",
       },
       {
         name: "Bulk Payout",
@@ -47,7 +47,7 @@ const olympusProducts = [
         link: "/bulk-payout",
       },
       {
-        name: "GST Payments",
+        name: "GST Payment",
         description: "Pay GST with any card, get reminders, and track payments",
         imageSrc: taxPayment,
         imageSrcHovered: taxPaymentFilled,
@@ -56,10 +56,10 @@ const olympusProducts = [
       {
         name: "Vendor Payment",
         description:
-          "Instantaneously Add, verify, pay, and manage vendors with ease",
+          "Instantaneously add, verify, pay, and manage vendors with ease",
         imageSrc: vendorPayment,
         imageSrcHovered: vendorPaymentFilled,
-        link: "/vemdor-payment",
+        link: "/vendor-payment",
       },
       {
         name: "Rental Payment",

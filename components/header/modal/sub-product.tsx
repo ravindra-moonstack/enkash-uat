@@ -158,8 +158,13 @@ const SubProduct = (props: any) => {
             </div>
           </div>
 
+          {/* only for freedom products */}
+          {props.index === 1 && (
+            <div className={styles.powered}>*Powered By Bank</div>
+          )}
+
           <div
-            className={`d-flex align-items-center justify-content-around ${
+            className={`d-flex align-items-center justify-content-between ${
               styles.footer
             } ${styles[activeGroup.footerImg]}`}
           >

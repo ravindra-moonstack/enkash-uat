@@ -2,7 +2,7 @@ export const navBarTopTtitle = [
   { name: "Product", link: "" },
   { name: "Solutions", link: "" },
   { name: "Resources", link: "" },
-  { name: "Why Enkash?", link: "/why-enkash" },
+  { name: "Why EnKash?", link: "/why-enkash" },
 ];
 
 export default navBarTopTtitle;

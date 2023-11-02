@@ -30,8 +30,8 @@ const xpenzProducts = [
         link: "/budget-and-advances",
       },
       {
-        name: "Hierarchy and controls",
-        description: "DIY Hierarchy for approval, policies, and expenses",
+        name: "Hierarchy and Controls",
+        description: "DIY hierarchy for approval, policies, and expenses",
         imageSrc: hierarchyAndControls,
         imageSrcHovered: hierarchyAndControlsFilled,
         link: "/hierarchy-and-controls",
