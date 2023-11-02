@@ -93,30 +93,30 @@ const digitalMarketingCards = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Budget Allocation",
+              itemArray: ["Budget", "Allocation"],
               oldWayDescription:
                 "Verbally specifying budgets, or even having them in writing does not guarantee that your digital marketing spends will not cross said budget, especially when you’re using one corporate card for all spends.",
               newWayDescription:
                 "Having a purpose-based corporate card for digital marketing with a predefined limit ensures that your digital marketing spends cannot exceed your intended budget.",
             },
             {
-              item: "Expense Tracking",
+              itemArray: ["Expense", "Tracking"],
               oldWayDescription:
-                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy",
               newWayDescription:
                 "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Campaign Management",
+              itemArray: ["Campaign", "Management"],
               oldWayDescription:
                 "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
                 "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
             },
             {
-              item: "Spend Overview",
+              itemArray: ["Spend", "Overview"],
               oldWayDescription:
-                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
                 "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
             },

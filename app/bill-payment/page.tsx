@@ -91,41 +91,41 @@ const billPayments = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Manual Intervention",
+              itemArray: ["Manual", "Intervention"],
               oldWayDescription:
                 "The old way to make bill payments is time-consuming and requires manual intervention that leads to errors, misses, and losses of bills",
               newWayDescription:
                 "With the EnKash way, make instant bill payments in a few clicks from a single dashboard and reduce manual efforts extensively",
             },
             {
-              item: "Mode of Payment",
+              itemArray: ["Mode", "of", "Payment"],
               oldWayDescription:
                 "The traditional way doesn’t allow you to use multiple modes of payment to pay bills",
               newWayDescription:
                 "EnKash supports different modes of payments like credit cards, net banking, debit cards, and connected banking",
             },
             {
-              item: "Late Payment Charges",
+              itemArray: ["Late", "Payment", "Charges"],
               oldWayDescription:
                 "In case you miss the payment date, late payment charges will incur",
               newWayDescription:
                 "With EnKash, you will not incur any penalties or late payments as chances of making late payments will be negligible",
             },
             {
-              item: "Bulk or Multiple Payments",
+              itemArray: ["Bulk or", "Multiple", "Payments"],
               oldWayDescription: "Only one bill can be paid at a time",
               newWayDescription:
                 "Bill payments in bulk can be automated in one click",
             },
             {
-              item: "Chances of Loss",
+              itemArray: ["Chances", "of", "Loss"],
               oldWayDescription:
                 "Managing paper-made bills is a hassle and comes with its own set of challenges like loss, storage, and depreciation",
               newWayDescription:
                 "All bills are digitally stored for future records and reconciliation",
             },
             {
-              item: "Timely Reminders",
+              itemArray: ["Timely", "Reminders"],
               oldWayDescription:
                 "There is no way to send timely reminders to customers",
               newWayDescription:

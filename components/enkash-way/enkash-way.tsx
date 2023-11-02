@@ -1,15 +1,15 @@
 "use client";
 
+import React, { useState } from "react";
+import Image from "next/image";
 import Heading from "../heading/heading";
 import { space } from "../../constant/common";
-import Image from "next/image";
 import { blueArrowForward, gradient, newWay, oldWay } from ".";
 import styles from "./enkash-way.module.scss";
-import React, { useState } from "react";
 
 interface EnkashWayProps {
   progressData?: {
-    item: string;
+    itemArray: string[];
     oldWayDescription: string;
     newWayDescription: string;
   }[];
@@ -17,14 +17,6 @@ interface EnkashWayProps {
 
 const EnkashWay = ({ progressData }: EnkashWayProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
-
-  const handleArrowClick = () => {
-    if (selectedItemIndex < progressData!.length - 1) {
-      setSelectedItemIndex((prevIndex) => prevIndex + 1);
-    } else {
-      setSelectedItemIndex(0);
-    }
-  };
 
   const getProgressBarStyle = (
     selectedItem: number,
@@ -46,7 +38,11 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
       <div
         className={`d-flex position-relative flex-column flex-md-row justify-content-center align-items-center text-center`}
       >
-        <Image src={gradient} alt="background gradient image" className={styles.gradient}/>
+        <Image
+          src={gradient}
+          alt="background gradient image"
+          className={styles.gradient}
+        />
         <Heading
           title={`The EnKash Way is${space}`}
           color="black"
@@ -76,7 +72,7 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
               className={styles.progress_items}
               onClick={() => setSelectedItemIndex(index)}
             >
-              {data.item.split(" ").map((word, wordIndex) => (
+              {data.itemArray.map((word, wordIndex) => (
                 <div key={wordIndex}>
                   <Heading
                     title={word}

@@ -4,6 +4,8 @@
 .content {
   padding-left: 10px;
   padding-right: 10px;
+  position: relative;
+  z-index: 1;
   cursor: pointer;
   @include bp-md {
     padding-left: 100px;

@@ -90,28 +90,28 @@ const saas = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Subscription Management",
+              itemArray: ["Subscription", "Management"],
               oldWayDescription:
-                "Multiple platforms to keep track of individual Saas subscription renewal dates and spends causes confusion and amplifies the risk of missed payments.",
+                "Multiple platforms to keep track of individual SaaS subscription renewal dates and spends causes confusion and amplifies the risk of missed payments.",
               newWayDescription:
                 "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
             },
             {
-              item: "Billing & Invoicing",
+              itemArray: ["Billing", "&", "Invoicing"],
               oldWayDescription:
                 "Traditional methods take a lot of time and come with layers of red tape.",
               newWayDescription:
                 "Utilize advanced solutions like OCR technology and approval systems to streamline the reimbursement procedure.",
             },
             {
-              item: "Utility Analysis",
+              itemArray: ["Utility", "Analysis"],
               oldWayDescription:
-                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
               newWayDescription:
                 "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Revenue Forecasting",
+              itemArray: ["Revenue", "Forecasting"],
               oldWayDescription:
                 "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:

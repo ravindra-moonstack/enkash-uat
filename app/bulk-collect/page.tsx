@@ -90,35 +90,35 @@ const bulkcollect = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Collection Process",
+              itemArray: ["Collection", "Process"],
               oldWayDescription:
-                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+                "Digitize the collection process with the help of automation tools and improve your customer experience to quicken your collection process.",
             },
             {
-              item: "Time & Effort",
+              itemArray: ["Time", "&", "Effort"],
               oldWayDescription:
                 "Traditional methods take a lot of time and come with layers of red tape.",
               newWayDescription:
                 "Utilize advanced solutions like OCR technology and approval systems to streamline the reimbursement procedure.",
             },
             {
-              item: "Reconciliation",
+              itemArray: ["Reconciliation"],
               oldWayDescription:
-                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
               newWayDescription:
                 "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Accuracy & Speed",
+              itemArray: ["Accuracy", "&", "Speed"],
               oldWayDescription:
                 "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
                 "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
             },
             {
-              item: "Business Cash Flow",
+              itemArray: ["Business", "Cash", "Flow"],
               oldWayDescription:
                 "Without a payment link, customers need to manually enter payment information or visit a physical location to make a payment which is prone to errors and delays.",
               newWayDescription:

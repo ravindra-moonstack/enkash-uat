@@ -91,42 +91,42 @@ const brandVoucher = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Management",
+              itemArray: ["Management"],
               oldWayDescription:
-                "Paper-based coupons are challenging to manage and carry everywhere ",
+                "Paper-based coupons are challenging to manage and carry everywhere",
               newWayDescription:
                 "Prepaid digital cards are preloaded with a particular amount and can be easily managed",
             },
             {
-              item: "Security",
+              itemArray: ["Security"],
               oldWayDescription:
                 "Paper coupons are always at risk of loss or expiry, with the balance remaining discarded",
               newWayDescription:
                 "Secure and easy-to-track cards to prevent loss or misuse by others. The balance remaining can be carried forward",
             },
             {
-              item: "Accessibility",
+              itemArray: ["Accessibility"],
               oldWayDescription:
                 "Food vouchers are allocated manually, making it a time-consuming process",
               newWayDescription:
                 "EnKash meal card can be accessed on the platform after KYC",
             },
             {
-              item: "Limitations",
+              itemArray: ["Limitations"],
               oldWayDescription:
                 "Face limitations due to restrictions of certain food shops",
               newWayDescription:
                 "Fewer restrictions due to the broader acceptability of meal cards across outlets",
             },
             {
-              item: "Tracking",
+              itemArray: ["Tracking"],
               oldWayDescription:
                 "Difficult to keep track of the balance remaining due to paper coupons",
               newWayDescription:
                 "Automatic updates from the card-issuing entities on balance available",
             },
             {
-              item: "Allocation of Funds",
+              itemArray: ["Allocation", "of", "Funds"],
               oldWayDescription:
                 "Limitations to dynamically allocate funds or control the transactions",
               newWayDescription:

@@ -95,31 +95,31 @@ const rentalPayments = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Data Processing",
-              oldWayDescription: "Data loss due to manual payment processing ",
+              itemArray: ["Data", "Processing"],
+              oldWayDescription: "Data loss due to manual payment processing",
               newWayDescription:
                 "The records and receipts are digitally stored; low or no chance of data loss",
             },
             {
-              item: "Payments Charges",
+              itemArray: ["Payments", "Charges"],
               oldWayDescription:
                 "Late payment charges are incurred due to delays in making payments",
               newWayDescription:
                 "Automated reminders ensure timely payments; no penalties or late payment charges",
             },
             {
-              item: "Bulk Payments",
+              itemArray: ["Bulk", "Payments"],
               oldWayDescription:
                 "Prepare paperwork to get the payment approved from the right person",
               newWayDescription:
                 "Upload GST challan to EnKash portal. Challan will be read and verified digitally",
             },
             {
-              item: "Payment Modes",
+              itemArray: ["Payment", "Modes"],
               oldWayDescription:
                 "Challenging to make bulk rental payments in real time",
               newWayDescription:
-                "Bulk rental payments can be made  seamlessly and hassle-free",
+                "Bulk rental payments can be made seamlessly and hassle-free",
             },
           ]}
         />

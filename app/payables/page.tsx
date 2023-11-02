@@ -276,37 +276,37 @@ const payables = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Data Entry Techniques",
+              itemArray: ["Data", "Entry", "Techniques"],
               oldWayDescription:
-                "Manual invoice processing and data entries impedes the reconciliation process. It is time-consuming, error-prone, and can result in delayed payments.",
+                "Manual invoice processing and data entries impede the reconciliation process. It is time-consuming, error-prone, and can result in delayed payments.",
               newWayDescription:
                 "Harness technology to process invoices digitally; Save time and money. Automating the invoicing process can help reduce manual efforts, increase efficiency, and improve productivity.",
             },
             {
-              item: "Process & Hierarchy",
+              itemArray: ["Process", "&", "Hierarchy"],
               oldWayDescription:
-                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
               newWayDescription:
                 "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Risk and Errors",
+              itemArray: ["Risk", "and", "Errors"],
               oldWayDescription:
                 "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
                 "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
             },
             {
-              item: "Financial Control",
+              itemArray: ["Financial", "Control"],
               oldWayDescription:
-                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
                 "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
             },
             {
-              item: "Bulk Vendor Payments",
+              itemArray: ["Bulk", "Vendor", "Payments"],
               oldWayDescription:
-                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
                 "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
             },

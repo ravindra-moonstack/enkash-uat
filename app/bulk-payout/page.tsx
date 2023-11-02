@@ -98,46 +98,46 @@ const bulkPayout = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Processing Time",
+              itemArray: ["Processing", "Time"],
               oldWayDescription:
-                "Single payments take longer time  to process since each transaction is processed separately",
+                "Single payments take longer time to process since each transaction is processed separately",
               newWayDescription:
                 "Multiple payments are processed much faster with a single click",
             },
             {
-              item: "Type of Payment",
+              itemArray: ["Type", "of", "Payment"],
               oldWayDescription:
                 "Payments are typically used for one-off transactions such as purchases",
               newWayDescription:
                 "Solves hassle of recurring payments such as vendor payments, GST, rental and utility",
             },
             {
-              item: "Flexibility",
+              itemArray: ["Flexibility"],
               oldWayDescription:
                 "Single payments offer lesser flexibility and control over each individual transaction",
               newWayDescription:
                 "Bulk payments offer greater flexibility since all payments are in the batch and are processed together",
             },
             {
-              item: "Vendor Relationships",
+              itemArray: ["Vendor", "Relationships"],
               oldWayDescription:
                 "Businesses fail to build stronger relationships with vendors and suppliers as payments are not timely processed",
               newWayDescription:
                 "Businesses build stronger relationships with vendors and suppliers by providing timely or early payments",
             },
             {
-              item: "Payment Tracking",
+              itemArray: ["Payment", "Tracking"],
               oldWayDescription:
                 "Since payments are mostly done manually, the chances of loss of payment receipts are very high, making it difficult to track",
               newWayDescription:
-                "Bulk payments are easier to track and manage as they are processed as a batch, making it simpler to reconcile accounts and track ",
+                "Bulk payments are easier to track and manage as they are processed as a batch, making it simpler to reconcile accounts and track",
             },
             {
-              item: "Payables Managemen",
+              itemArray: ["Payables", "Management"],
               oldWayDescription:
                 "Paying numerous vendor invoices, utility bills, rental bills, or multiple GST challans is a cumbersome process with a risk of errors or missed deadlines",
               newWayDescription:
-                "outstanding invoices, bills, rentals, and GST challans simplifies managing company payables, and minimizes errors and potential delays",
+                "Outstanding invoices, bills, rentals, and GST challans simplifies managing company payables and minimizes errors and potential delays",
             },
           ]}
         />

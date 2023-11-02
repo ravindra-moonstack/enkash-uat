@@ -269,30 +269,30 @@ const receivables = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Collection Process",
+              itemArray: ["Collection", "Process"],
               oldWayDescription:
                 "Manually keeping track of receivables and customer payments creates unnecessary confusion.",
               newWayDescription:
                 "Leverage virtual accounts to streamline the reconciliation process by linking received payments to customer accounts.",
             },
             {
-              item: "Payment Methods",
+              itemArray: ["Payment", "Methods"],
               oldWayDescription:
                 "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
               newWayDescription:
                 "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Collection Method",
+              itemArray: ["Collection", "Method"],
               oldWayDescription:
                 "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
                 "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
             },
             {
-              item: "Invoice Generation",
+              itemArray: ["Invoice", "Generation"],
               oldWayDescription:
-                "Manually keeping track of receivables and and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
               newWayDescription:
                 "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
             },

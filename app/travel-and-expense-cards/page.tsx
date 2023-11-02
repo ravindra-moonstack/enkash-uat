@@ -85,28 +85,28 @@ const travelAndExpenseCards = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Spend Visibility",
+              itemArray: ["Spend", "Visibility"],
               oldWayDescription:
                 "Without a centralized system to track and manage expenses, organizations have limited visibility into how much is being spent on travel, who is spending the money, and on what.",
               newWayDescription:
                 "EnKash travel and expenses corporate cards, along with the DIY management platform gives you full control over your business’ travel expenditure, in real-time, so that you can be in the know, on the go.",
             },
             {
-              item: "Fund Disbursement",
+              itemArray: ["Fund", "Disbursement"],
               oldWayDescription:
                 "Traditional methods take a lot of time and come with layers of red tape.",
               newWayDescription:
                 "Utilize advanced solutions like OCR technology and approval systems to streamline the reimbursement procedure.",
             },
             {
-              item: "Budget Compliance",
+              itemArray: ["Budget", "Compliance"],
               oldWayDescription:
-                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
               newWayDescription:
                 "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
             },
             {
-              item: "Fraud & Misuse",
+              itemArray: ["Fraud", "&", "Misuse"],
               oldWayDescription:
                 "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:

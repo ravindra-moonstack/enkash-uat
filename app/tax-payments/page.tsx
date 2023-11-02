@@ -95,39 +95,39 @@ const taxPayments = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Manual Intervention",
+              itemArray: ["Manual", "Intervention"],
               oldWayDescription:
                 "Set a reminder for tax payments to make sure it is paid on time",
               newWayDescription:
                 "Go to the government portal - Create GST challan",
             },
             {
-              item: "Mode of Payment",
+              itemArray: ["Mode", "of", "Payment"],
               oldWayDescription:
                 "Log in to the portal to get access to the invoice and check it",
               newWayDescription:
-                "Choose payment mode like NEFT/RTGS - Remitting bank -Axis bank",
+                "Choose payment mode like NEFT/RTGS - Remitting bank - Axis bank",
             },
             {
-              item: "Late Payment Charges",
+              itemArray: ["Late", "Payment", "Charges"],
               oldWayDescription:
                 "Prepare paperwork to get the payment approved from the right person",
               newWayDescription:
                 "Upload GST challan to EnKash portal. Challan will be read and verified digitally",
             },
             {
-              item: "Bulk or Multiple Payments",
+              itemArray: ["Bulk", "or", "Multiple", "Payments"],
               oldWayDescription:
                 "Arrange funds or ensure limits to make the payment",
               newWayDescription:
                 "Set unlimited hierarchy approvals and pay using any mode",
             },
             {
-              item: "Chances of Loss",
+              itemArray: ["Chances", "of", "Loss"],
               oldWayDescription:
                 "Make the payment and file the paperwork for future reference",
               newWayDescription:
-                "Automatic real time entry of the payment record",
+                "Automatic real-time entry of the payment record",
             },
           ]}
         />

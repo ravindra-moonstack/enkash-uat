@@ -98,35 +98,35 @@ const brandVoucher = () => {
         <EnkashWay
           progressData={[
             {
-              item: "Voucher Access",
+              itemArray: ["Voucher", "Access"],
               oldWayDescription:
                 "Buying physical vouchers can take time and effort",
               newWayDescription:
                 "Vouchers instantly come in your mail. You can easily access these brand vouchers anytime and anywhere with your EnKash account",
             },
             {
-              item: "Redemption Process",
+              itemArray: ["Redemption", "Process"],
               oldWayDescription:
                 "Redeeming vouchers may require in-person visits or lengthy online processes",
               newWayDescription:
                 "Redeem vouchers effortlessly with just a few clicks during online purchases or in-store transactions",
             },
             {
-              item: "Freedom of Choice",
+              itemArray: ["Freedom", "of", "Choice"],
               oldWayDescription:
                 "Voucher limitations and restrictions can hinder your ability to choose freely",
               newWayDescription:
                 "Enjoy the flexibility to choose from a diverse range of vouchers tailored to your preferences",
             },
             {
-              item: "Voucher Management",
+              itemArray: ["Voucher", "Management"],
               oldWayDescription:
                 "Keeping track of multiple paper vouchers can be troublesome",
               newWayDescription:
                 "No more clutter or misplacement, these gift vouchers for employees can be easily accessed and managed online",
             },
             {
-              item: "Personalization",
+              itemArray: ["Personalization"],
               oldWayDescription:
                 "Limited personalization options for physical vouchers",
               newWayDescription:
