@@ -18,6 +18,7 @@ import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 
 export const metadata: Metadata = {
   title: "Bill Payment | Billing Payment Solution | EnKash",
@@ -263,6 +264,108 @@ const billPayments = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard />
+      </div>
+
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Seeking further understanding of bill payments online? Explore the
+        comprehensive guide"
+          maxHeight="1500px"
+          innerHtml={
+            <>
+              <div className="mb-5">
+                <Heading
+                  size="h4"
+                  color="black"
+                  weight="6"
+                  title="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted. "
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How to make bill payments on EnKash platform?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="You can upload all the relevant bills on EnKash, and set internal processes to get the relevant approvals from different departments. Once you do that, every time the bill is due, you will be notified by email to take action like approve, reject, or pay, based on which you can take action. Once it is approved, you can use personal or business-provided credit cards or other payment modes like internet banking or connected banking to make payments on the portal. "
+                />
+              </div>
+
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How does department management help with bill pay solutions?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Different departments have different types of expenses, some of which are urgent, and some of them are only required for a certain period of time. With department management, you can set budgets, approval hierarchies, and other processes to ensure that bill payments happen without compromising business operations while ensuring spend is as per budgets."
+                />
+              </div>
+
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the types of utility bills I can pay?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="You can pay various utility bills like electricity, water, internet bills, etc. using EnKash platform."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How do I know my bills are paid?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Once the bills are paid, you can log in to the platform and check the status of the bills paid on the dashboard including the date of bill payment and amount paid. "
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the different modes used for online bill payment?"
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The different modes you can use for online bill payment include NEFT, credit cards, debit cards, and connected banking.  Each of the modes of payment has its own set of features and benefits. However, one of the quicker and smarter ways for online bill payment is to use your corporate credit card, which provides you with an additional line of funds and a longer repayment period when used smartly."
+                />
+              </div>
+            </>
+          }
+        />
       </div>
     </div>
   );

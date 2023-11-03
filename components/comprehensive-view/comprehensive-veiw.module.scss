@@ -1,0 +1,70 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.more_text {
+  color: $color-black;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.action_container {
+  padding: 20px 30px;
+  @include bp-md {
+    padding: 30px 80px;
+  }
+}
+
+.explore_text {
+  font-size: 15px;
+  line-height: 20px;
+  padding-right: 10px;
+  margin: 0;
+  @include bp-md {
+    font-size: 30px;
+    line-height: 35px;
+  }
+}
+
+.normal {
+  width: 30px;
+  height: auto;
+  @include bp-md {
+    width: 40px;
+  }
+  transform: rotate(0deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.rotated {
+  width: 30px;
+  height: auto;
+  @include bp-md {
+    width: 40px;
+  }
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.padding {
+  opacity: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  transition: padding 0.3s ease 0s;
+
+  @include bp-md {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
+
+.expanded {
+  opacity: 1;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  transition: padding 0.3s ease 0s;
+  @include bp-md {
+    padding-top: 70px;
+    padding-bottom: 50px;
+  }
+}
