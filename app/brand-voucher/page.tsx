@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
@@ -18,7 +16,15 @@ import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-import Lottie from "lottie-react";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import { Metadata } from "next";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+
+export const metadata: Metadata = {
+  title: "Brand Voucher – Corporate Gift Vouchers for Employees | EnKash",
+  description:
+    "Explore Brand Vouchers and Buy Gift Vouchers. Discover a thoughtful and versatile way to recognize and motivate your team with our selection of brand vouchers",
+};
 
 const brandVoucher = () => {
   return (
@@ -83,11 +89,9 @@ const brandVoucher = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Lottie
-            animationData={bannerLottie}
-            loop={true}
-            className={styles.lottie_container}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -249,6 +253,125 @@ const brandVoucher = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard />
+      </div>
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Seeking further understanding of brand vouchers? Explore the comprehensive guide"
+          maxHeight="1500px"
+          innerHtml={
+            <>
+              <div className="mb-5">
+                <Heading
+                  size="h4"
+                  color="black"
+                  weight="6"
+                  title="Brand vouchers are prepaid instruments created to provide discounts on purchasing specific products and services following their terms and conditions."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How does a gift voucher or brand voucher work?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="A gift or brand voucher works like a debit card. It is preloaded with money, and the receiver can use it wherever specified up to the limit of the gift voucher. It comes with specific terms and conditions and has an expiration date."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Can you claim GST on gift vouchers to employees?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Businesses cannot claim GST on employee gift vouchers if they are not considered a business expense."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Are there any restrictions on using brand vouchers?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Brand vouchers intend to provide discounts to the receiver. However, specific associated terms and conditions could be termed as restrictions."
+                />
+              </div>
+              <div className="mb-2 d-inline">
+                <div className="me-2 d-inline">
+                  <Heading
+                    size="h6"
+                    color="black"
+                    weight="6"
+                    title="Applicability:"
+                  />
+                </div>
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="It is crucial to check whether the brand voucher can be redeemed online, offline, or both. The brand can decide whether the voucher they have provided can be used once or multiple times."
+                />
+              </div>
+              <br />
+              <br />
+              <div className="mb-2 d-inline mt-2">
+                <div className="me-2 d-inline">
+                  <Heading
+                    size="h6"
+                    color="black"
+                    weight="6"
+                    title="Non-refundable, non-transferable, or exchanged against cash"
+                  />
+                </div>
+
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title=" Typically, brand vouchers cannot be refunded, transferred, or exchanged for cash."
+                />
+              </div>
+              <br /> <br />
+              <div className="mb-2 d-inline mt-2">
+                <div className="me-2 d-inline">
+                  <Heading
+                    size="h6"
+                    color="black"
+                    weight="6"
+                    title="Expiry date:"
+                  />
+                </div>
+
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title=" Brand vouchers are usually valid for one year from the date of issuance. Check the last date of usage to be able to utilize the discount available."
+                />
+              </div>
+            </>
+          }
+        />
       </div>
     </div>
   );
