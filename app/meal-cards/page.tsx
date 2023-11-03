@@ -360,7 +360,6 @@ const mealCard = () => {
                 </ul>
               </div>
 
-              {/* //first */}
 
               <div className="mb-3">
                 <Heading

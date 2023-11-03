@@ -1,43 +1,44 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
+import iconSix from "./img/icon-six.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
-    alt: "Making gst tax payments",
+    image: iconOne,
+    alt: "Log in to EnKash",
     title:
       "Log in to EnKash using your registered mobile number or email address",
   },
   {
-    image: sampleIconOne,
-    alt: "Get an overview of payments",
+    image: iconTwo,
+    alt: "Complete your KYC",
     title:
       "Complete your KYC by entering company details like type, sub-category and PAN",
   },
   {
-    image: sampleIconTwo,
-    alt: "Centralize gst tax payments",
+    image: iconThree,
+    alt: "Add the required owner details",
     title:
       "Add the required owner details like name, mobile number, bank account, PAN, etc",
   },
   {
-    image: sampleIconFour,
-    alt: "Ensure that you have all the approvals",
+    image: iconFour,
+    alt: "Pay your rent using the “Quick Rents",
     title:
       "Pay your rent using the “Quick Rent Pay” option if the amount is up to 1 lacs",
   },
   {
-    image: calenderIcon,
-    alt: "Cuts down the paperwork",
+    image: iconFive,
+    alt: "For an amount exceeding 1 lacs",
     title:
       "For an amount exceeding 1 lacs, you can pay by adding the property details and setting the maker-checker approval process.",
   },
   {
-    image: calenderIcon,
-    alt: "Uses options like reminders",
+    image: iconSix,
+    alt: "And lastly pay your rent",
     title:
       "And lastly pay your rent using any payment mode of your convenience",
   },
