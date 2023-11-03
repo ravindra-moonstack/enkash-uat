@@ -1,39 +1,35 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
+    image: iconOne,
     alt: "Login to EnKash or register",
-    title:
-      "Login to your EnKash account or register and complete your KYC",
+    title: "Login to your EnKash account or register and complete your KYC",
   },
   {
-    image: sampleIconOne,
+    image: iconTwo,
     alt: "wide range of brand vouchers",
-    title:
-      "Go to “Bolt” and browse the wide range of brand vouchers",
+    title: "Go to “Bolt” and browse the wide range of brand vouchers",
   },
   {
-    image: sampleIconTwo,
+    image: iconThree,
     alt: "Select the brand voucher",
     title:
       "Select the brand voucher and specify the quantity along with the preferred denomination",
   },
   {
-    image: sampleIconFour,
+    image: iconFour,
     alt: "Redeem the brand voucher",
-    title:
-      "Redeem the brand voucher on the brand's website or physical store",
+    title: "Redeem the brand voucher on the brand's website or physical store",
   },
   {
-    image: calenderIcon,
-    alt: "Select multiple invoices and make bulk payments",
-    title:
-      "Select multiple invoices and make bulk payments using any payment mode - credit card, net banking, and virtual cards",
+    image: iconFive,
+    alt: "Redeem the brand voucher",
+    title: "Redeem the brand voucher on the brand's website or physical store",
   },
 ];
 
