@@ -1,33 +1,33 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
+    image: iconOne,
     alt: "Login to EnKash or register",
     title:
       "Login to EnKash or register using a valid mobile number, and complete your KYC",
   },
   {
-    image: sampleIconOne,
+    image: iconTwo,
     alt: "wide range of brand vouchers",
     title: "Issue meal cards to employees with preloaded funds",
   },
   {
-    image: sampleIconTwo,
+    image: iconThree,
     alt: "Select the brand voucher",
     title: "Notify employees via SMS/email about card activation",
   },
   {
-    image: sampleIconFour,
+    image: iconFour,
     alt: "Redeem the brand voucher",
     title: "Employees must complete KYC to activate their meal cards",
   },
   {
-    image: calenderIcon,
+    image: iconFive,
     alt: "Select multiple invoices and make bulk payments",
     title:
       "These cards can be used across multiple food retail outlets, food chains, and food delivery apps.",

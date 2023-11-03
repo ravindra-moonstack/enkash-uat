@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
@@ -19,8 +17,17 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import Lottie from "lottie-react";
+import { Metadata } from "next";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 
-const brandVoucher = () => {
+export const metadata: Metadata = {
+  title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
+  description:
+    "Unlock the convenience of corporate meal cards online. Streamline employee benefits and expense management effortlessly with our secure and efficient solution.",
+};
+
+const mealCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -76,11 +83,9 @@ const brandVoucher = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Lottie
-            animationData={bannerLottie}
-            loop={true}
-            className={styles.lottie_container}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -126,7 +131,7 @@ const brandVoucher = () => {
                 "Automatic updates from the card-issuing entities on balance available",
             },
             {
-              itemArray: ["Allocation", "of", "Funds"],
+              itemArray: ["Allocation of", "Funds"],
               oldWayDescription:
                 "Limitations to dynamically allocate funds or control the transactions",
               newWayDescription:
@@ -261,8 +266,263 @@ const brandVoucher = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard />
       </div>
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Seeking further understanding of meal cards? Explore the comprehensive guide"
+          maxHeight="5000px"
+          innerHtml={
+            <>
+              <div className="mb-5">
+                <Heading
+                  size="h4"
+                  color="black"
+                  weight="6"
+                  title="Meal cards are prepaid cards provided by employers to enhance employees' morale. These cards are used for food-related purchases on various retail outlets or apps and help in tax redemption for employees."
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How do meal cards work?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="Meal cards are often used to purchase food and groceries from a network of authorized restaurants, cafes, or food outlets. Here's how meal cards typically work:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Employers issue meal cards to their employees as a part of
+                    their remuneration package. These cards are preloaded with a
+                    specific amount of money.
+                  </li>
+                  <li>
+                    Employees will be informed via SMS/mail regarding their meal
+                    card activation after issuance.
+                  </li>
+                  <li>
+                    Employees must log in to the EnKash portal to do their KYC
+                    to activate their meal card.
+                  </li>
+                  <li>
+                    A request can be raised for a physical meal card as well.
+                  </li>
+                  <li>
+                    These cards can be used across multiple food retail outlets,
+                    food chains, and food delivery apps.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the different types of meal cards"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="There are three different types of meal cards:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Prepaid meal cards: These are generic meal cards that can be
+                    used at multiple restaurants, convenience stores, and food
+                    outlets. They allow employees to choose from various
+                    options.
+                  </li>
+                  <li>
+                    Employer-provided meal cards: Employers partner with
+                    specific restaurants or food providers to offer meal cards
+                    exclusively for their employees. These cards can only be
+                    used at specific locations.
+                  </li>
+                  <li>
+                    Restaurant-specific meal cards: Some companies issue meal
+                    cards to be used at in-house cafeterias or dining
+                    facilities. These cards can be used only inside the
+                    company's premises.
+                  </li>
+                </ul>
+              </div>
+
+              {/* //first */}
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Advantages of meal cards for employees"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="Meal cards have many benefits for employees:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Tax Benefits: Meal cards are often exempt from income tax up
+                    to a specified limit, reducing the taxable income of
+                    employees.
+                  </li>
+                  <li>
+                    Convenience: Meal cards can easily replace debit cards for
+                    food-related purchases, eliminating the cash quotient.
+                  </li>
+                  <li>
+                    Freedom of choice: Meal cards give access to a network of
+                    approved restaurants, food chains, and retail outlets
+                    offering various food options.
+                  </li>
+                  <li>
+                    No more lunch stress: Employees can save time and effort
+                    spent preparing meals at home and order food at their
+                    workplace as per their preference.
+                  </li>
+                  <li>
+                    Food expense management: Employees can manage their food
+                    expenses with meal cards as they have preset limits.
+                  </li>
+                  <li>
+                    Food reimbursement not required: Employees don't have to
+                    complete the reimbursement process with meal cards.
+                  </li>
+                  <li>
+                    Easy management: Employees can easily manage their meal
+                    cards online and check their balance and expiration date.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the benefits of meal cards for employers?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="Meal cards can benefit employers in the following ways:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Employee Retention: Employers can increase employee
+                    retention by providing meal cards to employees and making
+                    their salary package more attractive.
+                  </li>
+                  <li>
+                    Increased Productivity: Employees with meal cards can focus
+                    more on work without worrying about lunch preparations and
+                    breaks.
+                  </li>
+                  <li>
+                    Easy Management: Employers can streamline the process of
+                    meal cards and reduce the hassle of food coupons and
+                    reimbursements.
+                  </li>
+                  <li>
+                    Competitive Edge: Employers with meal cards have the edge
+                    over other companies hiring, setting them apart in the
+                    market.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the best practices when implementing meal cards in the workplace"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="While implementing meal cards at the workplace, employees should keep the following things in mind:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Choose the right provider: Decide a reputable meal card
+                    provider with a user-friendly platform and a vast network of
+                    partnership across food restaurants, apps, and retail
+                    outlets.
+                  </li>
+                  <li>
+                    Efficient communication: Educate your employees about meal
+                    cards in detail including where and how to use them.
+                  </li>
+                  <li>
+                    Employee training: Conduct training sessions for employees
+                    to understand and use the meal card and acknowledge their
+                    doubts during these sessions.
+                  </li>
+                  <li>
+                    Feedback: Ensure collection of feedback from employees about
+                    their experience.
+                  </li>
+                  <li>
+                    Compliance management: Stay updated on local tax regulations
+                    and compliance requirements to ensure meal cards align with
+                    the tax implications to employees and the company’s finance
+                    department.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What is meal allowance?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="Meal allowance is the money the employer provides to employees to cover their meal costs. Meal allowance can be provided as prepaid cards, which can be used at food outlets, restaurants, convenience stores, and supermarkets. Employees can use these prepaid cards to cover their food expenses and save their taxes, as these cards are exempted from taxes up to a certain limit."
+                />
+              </div>
+            </>
+          }
+        />
+      </div>
     </div>
   );
 };
 
-export default brandVoucher;
+export default mealCard;

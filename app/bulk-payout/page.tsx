@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
@@ -18,7 +16,14 @@ import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-import Lottie from "lottie-react";
+import { Metadata } from "next";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+
+export const metadata: Metadata = {
+  title: "Bulk Payout | Corporate Bulk Payment Solution | EnKash",
+  description:
+    "Revolutionize your financial processes with our advanced bulk payout solution. Experience the ease of managing large-scale payments through our efficient bulk payment system.",
+};
 
 const bulkPayout = () => {
   return (
@@ -83,11 +88,9 @@ const bulkPayout = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Lottie
-            animationData={bannerLottie}
-            loop={true}
-            className={styles.lottie_container}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />

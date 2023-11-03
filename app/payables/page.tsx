@@ -412,6 +412,7 @@ const payables = () => {
       <div className="row">
         <ContactUsCard />
       </div>
+      
     </div>
   );
 };
