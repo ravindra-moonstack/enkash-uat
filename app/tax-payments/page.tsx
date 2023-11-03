@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
@@ -8,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { bannerLottie, caraouselBg, faqBg, heroImage, whiteArrow } from ".";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -18,7 +16,14 @@ import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-import Lottie from "lottie-react";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "GST Payment - GST Bill Payment Online for Businesses | EnKash",
+  description:
+    "Simplify GST Payment and Bill Payment Online - Seamlessly manage your GST payments and bills with our convenient online platform. Save time, stay compliant, and experience hassle-free transactions.",
+};
 
 const taxPayments = () => {
   return (
@@ -80,11 +85,9 @@ const taxPayments = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Lottie
-            animationData={bannerLottie}
-            loop={true}
-            className={styles.lottie_container}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -102,7 +105,7 @@ const taxPayments = () => {
                 "Go to the government portal - Create GST challan",
             },
             {
-              itemArray: ["Mode", "of", "Payment"],
+              itemArray: ["Mode of", "Payment"],
               oldWayDescription:
                 "Log in to the portal to get access to the invoice and check it",
               newWayDescription:
@@ -116,14 +119,14 @@ const taxPayments = () => {
                 "Upload GST challan to EnKash portal. Challan will be read and verified digitally",
             },
             {
-              itemArray: ["Bulk", "or", "Multiple", "Payments"],
+              itemArray: ["Bulk or", "Multiple", "Payments"],
               oldWayDescription:
                 "Arrange funds or ensure limits to make the payment",
               newWayDescription:
                 "Set unlimited hierarchy approvals and pay using any mode",
             },
             {
-              itemArray: ["Chances", "of", "Loss"],
+              itemArray: ["Chances of", "Loss"],
               oldWayDescription:
                 "Make the payment and file the paperwork for future reference",
               newWayDescription:

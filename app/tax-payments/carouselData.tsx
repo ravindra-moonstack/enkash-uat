@@ -1,48 +1,50 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
+import iconSix from "./img/icon-six.svg";
+import iconSeven from "./img/icon-seven.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
+    image: iconOne,
     alt: "Making gst tax payments",
     title:
       "Making gst tax payments online via EnKash helps you access extra funds if required",
   },
   {
-    image: sampleIconOne,
+    image: iconTwo,
     alt: "Get an overview of payments",
     title:
       "Get an overview of payments due in order to plan your cash flow around it",
   },
   {
-    image: sampleIconTwo,
+    image: iconThree,
     alt: "Centralize gst tax payments",
     title:
       "Centralize gst tax payments across the organization for all branches and cost centres",
   },
   {
-    image: sampleIconFour,
+    image: iconFour,
     alt: "Ensure that you have all the approvals",
     title:
       "Ensure that you have all the approvals and paperwork in place for future audit purposes",
   },
   {
-    image: calenderIcon,
+    image: iconFive,
     alt: "Cuts down the paperwork",
     title:
       "Cuts down the paperwork connected to paying business GST online to a large extent",
   },
   {
-    image: calenderIcon,
+    image: iconSix,
     alt: "Uses options like reminders",
     title:
       "Uses options like reminders and auto-fetch to make the process easier",
   },
   {
-    image: calenderIcon,
+    image: iconSeven,
     alt: "Provide access to CA/Auditor",
     title: "Provide access to CA/Auditor for online GST Payment management.",
   },

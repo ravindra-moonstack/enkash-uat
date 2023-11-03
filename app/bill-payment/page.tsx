@@ -17,8 +17,9 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Bill Payment | Billing Payment Solution | EnKash",
   description:
     "Streamline your financial management with an advanced bill payment platform.  Simplify bill payment processes and stay organized effortlessly. Discover efficient bill pay solutions for seamless financial tracking and timely payments",
