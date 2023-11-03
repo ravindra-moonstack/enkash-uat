@@ -105,3 +105,9 @@
     }
   }
 }
+
+.seventh_row {
+  background-color: $color-white;
+  @include bp-md {
+  }
+}
