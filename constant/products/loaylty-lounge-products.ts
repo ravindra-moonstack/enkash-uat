@@ -56,7 +56,7 @@ const loyaltyLoungeProducts = [
         link: "/404",
       },
     ],
-    footerText: "Streamline with Loyalty",
+    footerText: "Experience a world of rewards for your employees",
     footerMobileText: "Explore Loyalty Lounge",
     footerImg: "loyalty_footer_bg",
     footerLink: "/loyalty",

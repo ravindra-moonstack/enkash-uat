@@ -63,11 +63,12 @@ const freedomProducts = [
         link: "/travel-and-expense-cards",
       },
       {
-        name: "Virtual Cards*",
-        description: "Unlimited cards with centralized controls",
-        imageSrc: virtualCard,
-        imageSrcHovered: virtualCardFilled,
-        link: "/virtual-cards",
+        name: "Digital Marketing Cards*",
+        description:
+          "Pay for digital marketing campaigns and subscriptions with ease",
+        imageSrc: digitalMarketingCard,
+        imageSrcHovered: digitalMarketingCardFilled,
+        link: "/digital-marketing-cards",
       },
       {
         name: "Fuel Cards*",
@@ -85,12 +86,11 @@ const freedomProducts = [
         link: "/purchase-cards",
       },
       {
-        name: "Digital Marketing Cards*",
-        description:
-          "Pay for digital marketing campaigns and subscriptions with ease",
-        imageSrc: digitalMarketingCard,
-        imageSrcHovered: digitalMarketingCardFilled,
-        link: "/digital-marketing-cards",
+        name: "Virtual Cards*",
+        description: "Unlimited cards with centralized controls",
+        imageSrc: virtualCard,
+        imageSrcHovered: virtualCardFilled,
+        link: "/virtual-cards",
       },
 
       {
@@ -101,7 +101,7 @@ const freedomProducts = [
         link: "/multi-currency-forex-cards",
       },
     ],
-    footerText: "Streamline with Freedom",
+    footerText: "Empower your finances with purpose-based cards",
     footerMobileText: "Explore Freedom",
     footerImg: "freedom_footer_bg",
     footerLink: "/freedom",
