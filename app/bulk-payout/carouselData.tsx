@@ -1,36 +1,33 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
+    image: iconOne,
     alt: "Login to EnKash or register",
     title:
       "Login to EnKash or register using a valid mobile number and complete your KYC",
   },
   {
-    image: sampleIconOne,
+    image: iconTwo,
     alt: "Choose the specific type of bulk business payment",
-    title:
-      "Choose the specific type of bulk business payment you'd like to make, such as vendor, rental, or utility",
+    title: "Choose the specific type of bulk business payment you'd like to make, such as vendor, rental, or utility",
   },
   {
-    image: sampleIconTwo,
-    alt: "Download the sample format, enter the mandatory details and upload",
-    title:
-      "Download the sample format, enter the mandatory details and upload, it will create a list of transactions on the dashboard",
+    image: iconThree,
+    alt: "Download the sample format",
+    title: "Download the sample format, enter the mandatory details and upload, it will create a list of transactions on the dashboard",
   },
   {
-    image: sampleIconFour,
+    image: iconFour,
     alt: "If you have defined, maker checker approver workflow",
-    title:
-      "If you have defined, maker checker approver workflow, send it for approval",
+    title: "If you have defined, maker checker approver workflow, send it for approval",
   },
   {
-    image: calenderIcon,
+    image: iconFive,
     alt: "Select multiple invoices and make bulk payments",
     title:
       "Select multiple invoices and make bulk payments using any payment mode - credit card, net banking, and virtual cards",

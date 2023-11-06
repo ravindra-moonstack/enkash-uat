@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import carouselData from "./carouselData";
-import { bannerLottie, caraouselBg, faqBg, heroImage, whiteArrow } from ".";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -18,9 +18,10 @@ import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 
 export const metadata: Metadata = {
-  title: "Bulk Payout | Corporate Bulk Payment Solution | EnKash",
+  title: " Bulk Payout | Corporate Bulk Payment Solution | EnKash",
   description:
     "Revolutionize your financial processes with our advanced bulk payout solution. Experience the ease of managing large-scale payments through our efficient bulk payment system.",
 };
@@ -51,30 +52,35 @@ const bulkPayout = () => {
             size="h2"
             weight="7"
           />
-          <div className="d-line">
+
+          <div className="d-inline">
             <Heading
-              title="Bulk Payouts"
+              title={`Bulk Payouts${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`${space}for All Your Business Needs`}
+              title={`for All Your${space}`}
               color="white"
               size="h2"
               weight="7"
             />
           </div>
 
+          <Heading title="Business Needs" color="white" size="h2" weight="7" />
+
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Receive automated reminders and approvals for recurring business expenses, such as rent, utilities, vendors, and more"
+              title="Get auto-reminders and approvals for regularly occurring business expenses like rent, utilities, vendors, and more"
               color="white"
               size="h6"
               weight="5"
             />
           </div>
-          <div className="my-5 d-flex flex-row justify-content-start align-items-center">
+          <div
+            className={`${styles.button_container} my-5 d-flex flex-row justify-content-start align-items-center`}
+          >
             <div className="me-2">
               <PrimaryButton title="EnKash Now" theme="theme-blue" />
             </div>
@@ -103,12 +109,12 @@ const bulkPayout = () => {
             {
               itemArray: ["Processing", "Time"],
               oldWayDescription:
-                "Single payments take longer time to process since each transaction is processed separately",
+                "Single payments take longer time  to process since each transaction is processed separately",
               newWayDescription:
                 "Multiple payments are processed much faster with a single click",
             },
             {
-              itemArray: ["Type", "of", "Payment"],
+              itemArray: ["Type of", "Payment"],
               oldWayDescription:
                 "Payments are typically used for one-off transactions such as purchases",
               newWayDescription:
@@ -117,12 +123,12 @@ const bulkPayout = () => {
             {
               itemArray: ["Flexibility"],
               oldWayDescription:
-                "Single payments offer lesser flexibility and control over each individual transaction",
+                "Single payments offer lesser flexibility and control over each individual transaction.",
               newWayDescription:
-                "Bulk payments offer greater flexibility since all payments are in the batch and are processed together",
+                "Bulk payments offer greater flexibility since all payments are in the batch and are processed together.",
             },
             {
-              itemArray: ["Vendor", "Relationships"],
+              itemArray: [" Vendor", "Relationships"],
               oldWayDescription:
                 "Businesses fail to build stronger relationships with vendors and suppliers as payments are not timely processed",
               newWayDescription:
@@ -140,7 +146,7 @@ const bulkPayout = () => {
               oldWayDescription:
                 "Paying numerous vendor invoices, utility bills, rental bills, or multiple GST challans is a cumbersome process with a risk of errors or missed deadlines",
               newWayDescription:
-                "Outstanding invoices, bills, rentals, and GST challans simplifies managing company payables and minimizes errors and potential delays",
+                "Streamlining payments with a one-click option for all outstanding invoices, bills, rentals, and GST challans simplifies managing company payables, and minimizes errors and potential delays",
             },
           ]}
         />
@@ -149,24 +155,22 @@ const bulkPayout = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-inline text-center">
+        <div className="d-inline text-center mb-5">
           <Heading title="Facing the" color="black" size="h1" weight="6" />
           <Heading
-            title={`${space}Complexities`}
+            title={`${space}complexities`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}Involved in`}
+            title={`${space}involved in`}
             color="black"
             size="h1"
             weight="6"
           />
-        </div>
-        <div className="text-center mb-5">
           <Heading
-            title={`${space}Bulk Processing?`}
+            title={`${space}bulk processing?`}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -176,13 +180,13 @@ const bulkPayout = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Repeat Payments"
-              description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies"
+              description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Reduce Payment Processing Time"
-              description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow"
+              description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -211,15 +215,15 @@ const bulkPayout = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex flex-column">
+                <Heading
+                  title={`Simplify your Business Payouts with our${space}`}
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
+                <div>
                   <Heading
-                    title={`Simplify your Payouts with our${space}`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Bulk Processing Solution"
+                    title={`Bulk Processing Solution${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -244,7 +248,7 @@ const bulkPayout = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about bulk payout in detail"
+            title=" Don't worry! Our FAQs section will help you learn about bulk payout in detail"
             color="black"
             size="h4"
           />
@@ -262,6 +266,244 @@ const bulkPayout = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard />
+      </div>
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Seeking further understanding of bulk payouts? Explore the comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-5">
+                <Heading
+                  size="h4"
+                  color="black"
+                  weight="6"
+                  title="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment. EnKash provides bulk payment solutions to businesses"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Why is a bulk payment solution needed?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="In order to make business transactions smooth, efficient, safe, and faster, companies can use bulk payment solutions provided by EnKash. It can help businesses with the following advantages"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Faster and safe payments:"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Bulk payment solutions ensure that all the vendors associated with the business get their payments timely so that there should not be any gaps in product supply. These payments are made with encryption technology, ensuring data is secured"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Automation:"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Automating bulk payments eliminates the scope of manual error and helps in easier processing of larger transactions on a frequent basis"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Negligible payment failure rate:"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Bulk payment solutions verify each account before initiating any transfer. Any invalid accounts with potential risks of payment failure will be eliminated, and bulk payments will be made to valid accounts"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Multiple modes of payment:"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="EnKash supports multiple modes of payment, including bank transfers, credit cards, debit cards, and virtual cards"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Different types of bulk payments"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="There are two types of bulk payments: Standard Domestic Bulk Payment and Bulk Inter Account Transfer (IAT). 
+                  Standard Domestic Bulk Payment lets you make bulk payments to multiple beneficiaries from a single account. You can use it on EnKash and make secure bulk payments.
+                  This bulk payment is further classified into three categories:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Immediate bulk payments (IBULK): These payments are
+                    immediately processed when you create payments for the bulk
+                    list. Payment can be done via a virtual account.
+                  </li>
+                  <li>
+                    Next-day bulk payments (NBULK): This type will credit the
+                    recipients’ account after the day the payment has been made.
+                    This can be done using net banking or credit cards for bulk
+                    payment via our portal.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Bulk Inter Account Transfer (IAT) "
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="This bulk payment type enables you to make payments to multiple credit accounts from a single debit account. You can also use IAT to make international payments, unlike standard bulk payments. It is fast, dependable, and secure. However, it has a complicated procedure depending on the company’s location and target demographics"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title=" What are the payment modes for bulk payout?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Bulk payment can be done through bank transfers, and via credit or debit card"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Bank Transfers"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="EnKash facilitates bank transfers using NEFT and RTGS. These days, banks facilitate corporate bulk payments. When making vendor payments in bulk, you will be redirected to the bank’s Internet banking portal, where payment can be made in bulk."
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Credit Card"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Vendor, utility or rental payments in bulk can be made using a credit card on EnKash. Businesses can use their credit card to make bulk payments"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Virtual Account"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="You can create a virtual account on EnKash and make payments anytime without linking it to a particular bank's operating system"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What is the future of bulk financial services?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Bulk payment is taking the lead in the B2B space. Businesses need to send and receive money in bulk on a daily basis. Products like EnKash Olympus make bulk payments easy, safe, convenient, and traceable. 
+                  Companies can easily integrate Olympus with their existing ERP and use it to make bulk business payments. This transformation has lessened the work for the finance teams as their burden of receiving invoices, verifying them manually, and then processing payment for every single vendor has reduced. Adopting bulk payment as a way to make recurring payments can help businesses save their time and resources and become more efficient"
+                />
+              </div>
+            </>
+          }
+        />
       </div>
     </div>
   );
