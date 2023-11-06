@@ -70,7 +70,6 @@ import {
   cureFoodsLogo,
   infraMarketLogo,
   integration,
-  manageAnimationData,
   automateAnimation,
   optimizeAnimation,
   trackAnimation,
@@ -541,7 +540,7 @@ const home = () => {
           <Lottie
             animationData={
               activeAnimation === "manage"
-                ? manageAnimationData
+                ? dashBoardAnimationData
                 : dashBoardAnimationData
             }
             loop={true}

@@ -47,7 +47,7 @@ export { default as infraMarketLogo } from "./img/infra-market-logo.png";
 export { default as integration } from "./img/Integration.png";
 
 //Animations import
-export { default as manageAnimationData } from "./img/lottie/manage.json";
+// export { default as manageAnimationData } from "./img/lottie/manage.json";
 export const manageAnimation = () => import("./img/lottie/manage.json");
 export const automateAnimation = () => import("./img/lottie/automate.json");
 export const trackAnimation = () => import("./img/lottie/track.json");
