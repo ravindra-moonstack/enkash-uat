@@ -1,39 +1,49 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
+import iconSix from "./img/icon-six.svg";
+import iconSeven from "./img/icon-seven.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
-    alt: "reimbursement image",
+    image: iconOne,
+    alt: "Login to EnKash",
     title:
-      "Concentrate on making the collection process customer-focused and improving their experience to ensure better DSO.",
+      "Login to EnKash with your registered number or create an account if not registered",
   },
   {
-    image: sampleIconOne,
-    alt: "reimbursement image",
-    title:
-      "Issue a corporate card for digital marketing purposes and set customized limits for campaign expenditure and subscription renewals based on your marketing budget.",
+    image: iconTwo,
+    alt: "Go to “Collect Payments” on the dashboard",
+    title: "Go to “Collect Payments” on the dashboard",
   },
   {
-    image: sampleIconTwo,
-    alt: "reimbursement image",
-    title:
-      "Automated invoice generation results in reduced manual efforts, increased efficiency, and improved productivity within your business.",
+    image: iconThree,
+    alt: "Click on the “Manage Invoices",
+    title: "Click on the “Manage Invoices” icon as visible on the left",
   },
   {
-    image: sampleIconThree,
-    alt: "reimbursement image",
-    title:
-      "Quick payment links embedded within your invoices can help improve your customer experience by enabling them to make payments from anywhere, on any device.",
+    image: iconFour,
+    alt: "Make sure the invoices are maker",
+    title: "Make sure the invoices are maker, checker approved",
   },
   {
-    image: sampleIconFour,
-    alt: "reimbursement image",
+    image: iconFive,
+    alt: "Upload invoices in bulk",
+    title: "Upload invoices in bulk or individually",
+  },
+  {
+    image: iconSix,
+    alt: "Select the invoice numbe",
     title:
-      "Concentrate on making the collection process customer-focused and improving their experience to ensure better DSO.",
+      "Select the invoice number against which you want to use the smart payment collection feature",
+  },
+  {
+    image: iconSeven,
+    alt: "Click on “Dispatch Invoices,”",
+    title:
+      "Click on “Dispatch Invoices,” and all your customers will receive their invoices in one click",
   },
 ];
 

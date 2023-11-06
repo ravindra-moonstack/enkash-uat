@@ -336,24 +336,21 @@ const xpenz = () => {
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              title1="Simplified Card Creation"
-              title2=""
+              whiteTitle="Simplified Card Creation"
               description="Onboard and issue purpose-based corporate cards in a few simple steps with basic KYC documents."
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Set Card Spend Limits"
-              title2=""
+              whiteTitle="Set Card Spend Limits"
               description="Use the DIY card platform to set limits on expenditure and types of expenses to enhance spending for your teams and employees."
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Enhanced Savings"
-              title2=""
+              whiteTitle="Enhanced Savings"
               description="Maximize savings by ensuring that your spends are optimized, and benefit from on-time payment rebates and better payment terms."
               ctaColor="blue"
             />

@@ -160,43 +160,37 @@ const rentalPayments = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Quick and Easy Onboarding"
-              title2=""
+              whiteTitle="Quick and Easy Onboarding"
               description="Complete the onboarding with a few simple steps to ensure that rent payments go on time"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automated Payment Reminders"
-              title2=""
+              whiteTitle="Automated Payment Reminders"
               description="Enables automated reminders to track due dates, reduce late payments, and improve business cash flow"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Easy Payment Tracking"
-              title2=""
+              whiteTitle="Easy Payment Tracking"
               description="Track what’s paid, due, and pending on a single dashboard to improve visibility, control payment activity, and increase efficiency"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Centralized Approval"
-              title2=""
+              whiteTitle="Centralized Approval"
               description="Easily pay rent online for all locations with a centralized approval process with all due checks and approvals"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Pay Using Credit Cards"
-              title2=""
+              whiteTitle="Pay Using Credit Cards"
               description="Get the option to pay rentals on time using any credit card and keep your business cash flow steady"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Auto-Generated Records"
-              title2=""
+              whiteTitle="Auto-Generated Records"
               description="The platform auto-generates monthly rental bills on specified dates as per rental agreements that you feed into the system"
             />
           </div>
@@ -263,7 +257,6 @@ const rentalPayments = () => {
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Seeking further understanding of rent payment software online? Explore the comprehensive guide"
-          maxHeight="5000px"
           innerHtml={
             <>
               <div className="mb-5">

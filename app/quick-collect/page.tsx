@@ -151,30 +151,26 @@ const invoices = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Quicker Collections"
-              title2=""
+              whiteTitle="Quicker Collections"
               description="With the added power of payment links and digital invoices, the likelihood of quicker collections increases significantly."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Payment Options"
-              title2=""
+              whiteTitle="Payment Options"
               description="Enable more and easy-to-access payment options in your invoices and reminders for quicker collections."
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Better Tracking"
-              title2=""
+              whiteTitle="Better Tracking"
               description="With EnKash’s quick collect, all information about payments received, amounts paid, due accounts, and the mode of payments is consolidated in one place."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Lesser Follow-ups"
-              title2=""
+              whiteTitle="Lesser Follow-ups"
               description="Administrative costs like the cost of collection calls, and other collection mechanisms can be reduced due to decreased manual follow-ups."
             />
           </div>

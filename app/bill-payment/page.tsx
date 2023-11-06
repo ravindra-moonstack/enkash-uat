@@ -162,37 +162,32 @@ const billPayments = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Regulate Payments"
-              title2=""
+              whiteTitle="Regulate Payments"
               description="Carry out a one-time process to ensure that you have a regulated payment process that helps you make payments smoothly without any risk"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automated Reminders"
-              title2=""
+              whiteTitle="Automated Reminders"
               description="Ensure that you do not miss any of the regularly recurring bill payments’ deadlines, with automatic reminders. This ensures continuity, helps cut down penalties, and improves savings"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Approval Flow"
-              title2=""
+              whiteTitle="Approval Flow"
               description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
               prevent errors, unauthorized payments and reduce the risk of fraud"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Complete Transparency"
-              title2=""
+              whiteTitle="Complete Transparency"
               description="Clearly view the status of your bill payments, including confirmation of payment processing, the date of payment, and upcoming bills to pay"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Secured Payments"
-              title2=""
+              whiteTitle="Secured Payments"
               description="Billing automation helps protect your privacy and identity by eliminating any risks associated with lost paperwork using encryption to protect the transmission of sensitive data."
             />
           </div>
@@ -270,7 +265,6 @@ const billPayments = () => {
         <ComprehensiveView
           title="Seeking further understanding of bill payments online? Explore the
         comprehensive guide"
-          maxHeight="1500px"
           innerHtml={
             <>
               <div className="mb-5">

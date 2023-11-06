@@ -137,30 +137,26 @@ const travelAndExpenseCards = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Spend Smarter"
-              title2=""
+              whiteTitle="Spend Smarter"
               description="Comprehensive business travel solution that scale your travel programs smartly by providing end-to-end visibility into your employees' travel expenditure."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Streamline Travel Expenses"
-              title2=""
+              whiteTitle="Streamline Travel Expenses"
               description="Discover purpose-based corporate cards that have rules and policies built into them that can be managed from anywhere, anytime."
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Real-time Management"
-              title2=""
+              whiteTitle="Real-time Management"
               description="Set up rules, limits and approval matrices for better budget control, on-the-go. Enable or disable certain types of expenditure or block and unblock cards in cases of an emergency."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Complete Overview"
-              title2=""
+              whiteTitle="Complete Overview"
               description="Get actionable insights about where expenses can be reduced, or where spend limits might need to be increased. Maximize travel expense visibility."
             />
           </div>

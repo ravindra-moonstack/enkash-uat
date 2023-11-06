@@ -74,9 +74,7 @@
   height: 85px;
   width: 102%;
   color: $color-electric-green;
-  font-size: 27px;
   font-weight: 600;
-  line-height: 23px;
   background-color: $color-equity-blue;
   .explore {
     cursor: pointer;
@@ -84,6 +82,9 @@
   }
   a {
     text-decoration: none;
+  }
+  .footer_text {
+    font-size: 23px;
   }
 }
 

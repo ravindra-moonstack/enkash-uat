@@ -147,53 +147,46 @@ const vendorPayment = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Vendor KYC"
-              title2=""
+              whiteTitle="Vendor KYC"
               description="Collect and verify essential information about your vendors and suppliers before onboarding them onto the platform to ensure hassle-free transactions"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Bank Account validation"
-              title2=""
+              whiteTitle="Bank Account validation"
               description="Validate the bank account details of the vendors by using the penny-drop method before processing transactions to prevent payment errors"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Multi-Branch Payments"
-              title2=""
+              whiteTitle="Multi-Branch Payments"
               description="Simplify vendor payments across multiple branches with a single click, while maintaining transparency through real-time updates on approvals and notifications via a centralized dashboard"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="PO Management"
-              title2=""
+              whiteTitle="PO Management"
               description="Hassle-free PO (Purchase Order) management against the invoices on a single dashboard"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automate Payment Reminders"
-              title2=""
+              whiteTitle="Automate Payment Reminders"
               description="Make sure that all vendor payments are processed on time and without errors. Get automated reminders to track outstanding vendor payments"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Seamless Integration"
-              title2=""
+              whiteTitle="Seamless Integration"
               description="Seamless integration with your existing ERP system and banking partners for smooth vendor payments"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Virtual Cards"
-              title2=""
+              whiteTitle="Virtual Cards"
               description="Access to a virtual card for payment decentralization/ branch payments/department-wise payments"
             />
           </div>
@@ -268,7 +261,6 @@ const vendorPayment = () => {
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Seeking further understanding of vendor payments? Explore the comprehensive guide."
-          maxHeight="5000px"
           innerHtml={
             <>
               <div className="mb-5">

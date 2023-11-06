@@ -330,8 +330,7 @@ const xpenz = () => {
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              title1="Digital Receipt Management"
-              title2=""
+              whiteTitle="Digital Receipt Management"
               description="Leverage OCR technology to create a seamless reimbursement process 
             for your employees. Scan or photograph receipts, and upload them for immediate approvals."
               ctaColor="blue"
@@ -339,8 +338,7 @@ const xpenz = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Approval Process"
-              title2=""
+              whiteTitle="Approval Process"
               description="Configure approval processes as per the requirements of your business.
              Plan your cash flow better, optimize savings, and accelerate your reimbursement process."
               ctaColor="blue"
@@ -348,8 +346,7 @@ const xpenz = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Departmental Hierarchy"
-              title2=""
+              whiteTitle="Departmental Hierarchy"
               description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
               ctaColor="blue"
             />

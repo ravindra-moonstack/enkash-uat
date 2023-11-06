@@ -325,24 +325,21 @@ const receivables = () => {
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              title1="Proactive Collection"
-              title2=""
+              whiteTitle="Proactive Collection"
               description="Build collection strategies that work for both you, and your customer. Get details about each and every transaction, linked seamlessly with virtual accounts for better insights."
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Improved Cashflow"
-              title2=""
+              whiteTitle="Improved Cashflow"
               description="Improve your businesses overall cashflow with an automated collection strategy that does most of the work for you."
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Departmental Hierarchy"
-              title2=""
+              whiteTitle="Departmental Hierarchy"
               description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
               ctaColor="blue"
             />

@@ -164,37 +164,32 @@ const taxPayments = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Easy Payments"
-              title2=""
+              whiteTitle="Easy Payments"
               description=" Set and manage a simple and intuitive process to ensure that all aspects are checked and payments are quick and easy."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Easy Monitoring"
-              title2=""
+              whiteTitle="Easy Monitoring"
               description="Benefit from centralized view and control over all GST bill payments across your company on a single platform"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Approval Flow"
-              title2=""
+              whiteTitle="Approval Flow"
               description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
               prevent errors, unauthorized payments and reduce the risk of fraud"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Digital Challans"
-              title2=""
+              whiteTitle="Digital Challans"
               description="Auto read the challans and convert them into paper records for audits and other purposes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Manage Approvals"
-              title2=""
+              whiteTitle="Manage Approvals"
               description="Set multi-level hierarchical approvals"
             />
           </div>
@@ -265,7 +260,6 @@ const taxPayments = () => {
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Seeking Further Understanding of GST Payment Online? Explore the Comprehensive Guide"
-          maxHeight="8000px"
           innerHtml={
             <>
               <div className="mb-5">

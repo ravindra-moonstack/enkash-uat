@@ -175,36 +175,31 @@ const bulkPayout = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Repeat Payments"
-              title2=""
+              whiteTitle="Repeat Payments"
               description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Reduce Payment Processing Time"
-              title2=""
+              whiteTitle="Reduce Payment Processing Time"
               description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Centralized Payment Processing"
-              title2=""
+              whiteTitle="Centralized Payment Processing"
               description="By centralizing payment processing through a bulk payout system, you can have better visibility and control over processes to prevent errors"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automate Payment Reminders"
-              title2=""
+              whiteTitle="Automate Payment Reminders"
               description="Enable an automated reminder engine to keep track of all your outstanding business payments"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Checks and Approvals"
-              title2=""
+              whiteTitle="Checks and Approvals"
               description="Finance is all about timely payments with the right checks and approvals to ensure negligible misuse of funds. The process of bulk payout for your recurring payments ensures speed and efficiency"
             />
           </div>

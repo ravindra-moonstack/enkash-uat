@@ -168,10 +168,10 @@ const SubProduct = (props: any) => {
               styles.footer
             } ${styles[activeGroup.footerImg]}`}
           >
-            <div>{activeGroup.footerText}</div>
+            <div className={styles.footer_text}>{activeGroup.footerText}</div>
             <Link href={activeGroup.footerLink}>
-              <div className={`${styles.explore} d-flex`}>
-                <div className="px-2">Explore</div>
+              <div className={`d-flex align-items-center ${styles.explore}`}>
+                <div className={`${styles.footer_text} px-2`}>Explore</div>
                 <Image src={footerArrow} alt="explore arrow image" />
               </div>
             </Link>

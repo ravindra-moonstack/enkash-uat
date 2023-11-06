@@ -146,29 +146,25 @@ const digitalMarketingCards = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Subscription Management"
-              title2=""
+              whiteTitle="Subscription Management"
               description="Effectively manage your recurring digital marketing expenses such as subscriptions that recur monthly or annually."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Spend Optimization"
-              title2=""
+              whiteTitle="Spend Optimization"
               description="Enhance your organization's performance by implementing a robust purchasing oversight process that helps to reduce costs and streamlines your payment process."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Marketing Budgets"
-              title2=""
+              whiteTitle="Marketing Budgets"
               description="EnKash lets you set customized usage limits that ensure there is no scope for overspending. You’ll have the flexibility to set the limit based on your marketing budget."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Run Campaigns"
-              title2=""
+              whiteTitle="Run Campaigns"
               description="Seamlessly add your card for digital marketing expenses onto the platform and select the desired campaigns you wish to run."
             />
           </div>

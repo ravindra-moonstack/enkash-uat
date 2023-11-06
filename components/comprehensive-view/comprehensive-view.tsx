@@ -7,15 +7,10 @@ import arrowDown from "./arrow.png";
 
 interface comprehensiveViewProp {
   innerHtml: any;
-  maxHeight: string;
   title: string;
 }
 
-const ComprehensiveView = ({
-  innerHtml,
-  maxHeight,
-  title,
-}: comprehensiveViewProp) => {
+const ComprehensiveView = ({ innerHtml, title }: comprehensiveViewProp) => {
   const [expanded, setExpanded] = useState(false);
 
   const handleButtonClick = () => {
@@ -29,7 +24,7 @@ const ComprehensiveView = ({
   };
 
   const expandedStyle = {
-    maxHeight: expanded ? maxHeight : "0",
+    maxHeight: expanded ? "100%" : "0",
     overflow: "hidden",
     transition: "max-height 0.5s ease-in-out",
   };

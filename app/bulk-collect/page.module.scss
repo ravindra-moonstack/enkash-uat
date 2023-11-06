@@ -1,10 +1,11 @@
 @import "../../styles/variables";
 @import "../../styles/mixin";
 
-
 .first_row {
   margin-bottom: 80px;
-
+  @include bp-md {
+    padding-top: 170px;
+  }
   .three_step_container {
     padding-top: 80px;
     padding-left: 40px;
@@ -21,6 +22,13 @@
     @include bp-md {
       width: auto;
       height: auto;
+    }
+  }
+
+  .lottie_container {
+    width: 300px;
+    @include bp-md {
+      width: 450px;
     }
   }
 }
@@ -82,7 +90,7 @@
   text-align: center;
   padding-bottom: 50px;
   @include bp-md {
-    padding-bottom: 270px;
+    padding-bottom: 220px;
   }
 
   .faq_bg {
@@ -96,5 +104,11 @@
         display: flex;
       }
     }
+  }
+}
+
+.seventh_row {
+  background-color: $color-white;
+  @include bp-md {
   }
 }

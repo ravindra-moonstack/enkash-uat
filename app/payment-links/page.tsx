@@ -149,30 +149,26 @@ const paymentlinks = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Quicker Collections"
-              title2=""
+              whiteTitle="Quicker Collections"
               description="Payment links embedded in digital invoices or other forms of communication quickens the collection or payment process."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Payment Options"
-              title2=""
+              whiteTitle="Payment Options"
               description="Embedded payment links also ensures that the customer has various payment options to choose from once they click on the embedded payment link."
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Easily Accessible"
-              title2=""
+              whiteTitle="Easily Accessible"
               description="EnKash lets you set customized usage limits that ensure there is no scope for overspending. You’ll have the flexibility to set the limit based on your marketing budget."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Simplified Tracking"
-              title2=""
+              whiteTitle="Simplified Tracking"
               description="Seamlessly add your card for digital marketing expenses onto the platform and select the desired campaigns you wish to run."
             />
           </div>

@@ -150,30 +150,26 @@ const invoices = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automated Invoicing"
-              title2=""
+              whiteTitle="Automated Invoicing"
               description="Automate the invoicing process - From invoice generation to deployment - for recurring transactions and save countless work hours."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Complete Visibility"
-              title2=""
+              whiteTitle="Complete Visibility"
               description="Enable more and easy-to-access payment options in your invoices and reminders for quicker collections."
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Tracking & Monitoring"
-              title2=""
+              whiteTitle="Tracking & Monitoring"
               description="Digital invoices provide simplified tracking and monitoring, enabling easy identification of outstanding payments and optimized collections."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Bulk Invoicing"
-              title2=""
+              whiteTitle="Bulk Invoicing"
               description="Create bulk invoices with all necessary details for regular purchases to save time and employee bandwidth in just a few clicks."
             />
           </div>

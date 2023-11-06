@@ -142,30 +142,26 @@ const saas = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Recurring Subscription"
-              title2=""
+              whiteTitle="Recurring Subscription"
               description="Manage all your recurring expenses on one platform with total visibility over your entire subscription spend. Track renewal dates, previous payments and get automated reminders about upcoming renewals."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Greater Visibility"
-              title2=""
+              whiteTitle="Greater Visibility"
               description="EnKash offers a seamless and rich experience with real-time visibility into your SaaS purchases, that’ll help you make better decisions for your business."
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Purchasing Insights"
-              title2=""
+              whiteTitle="Purchasing Insights"
               description="Improve your organization's performance by increasing your purchasing oversight, which also helps with reducing costs and streamlining your payment process."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Full Control"
-              title2=""
+              whiteTitle="Full Control"
               description="EnKash provides easy monitoring, analysis, and control of corporate SaaS expenses, ensuring SaaS policy compliance within your organization."
             />
           </div>

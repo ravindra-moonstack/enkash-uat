@@ -339,24 +339,21 @@ const payables = () => {
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              title1="Regulate Payments"
-              title2=""
+              whiteTitle="Regulate Payments"
               description="Set checking and approval matrices for timely payments, discover improved spend control and eliminate manual errors."
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Automate Reminders"
-              title2=""
+              whiteTitle="Automate Reminders"
               description="Never miss a payment again with auto-fetch and timely reminders. Make on-time payments towards vendors, rent, taxes and more, every time."
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              title1="Approval Flow"
-              title2=""
+              whiteTitle="Approval Flow"
               description="Approval workflows make managing and optimizing expenses easier. Set approval limits, create hierarchies, avoid delays and reduce errors with set rules."
               ctaColor="blue"
             />
@@ -412,7 +409,6 @@ const payables = () => {
       <div className="row">
         <ContactUsCard />
       </div>
-      
     </div>
   );
 };

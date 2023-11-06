@@ -1136,8 +1136,8 @@ const home = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 scroll_container`}>
           <div className={styles.card}>
             <GetStartedCard
-              title1="Optimize Spending;"
-              title2="save more."
+              whiteTitle="Optimize Spending;"
+              blueTitle="save more."
               description="Power your business with a centralized spend management
                platform & save countless working hours."
             />
@@ -1145,8 +1145,8 @@ const home = () => {
 
           <div className={styles.card}>
             <GetStartedCard
-              title1="Total Visibility;"
-              title2="smarter controls."
+              whiteTitle="Total Visibility;"
+              blueTitle="smarter controls."
               description="Power your business with a centralized spend management
                platform & save countless working hours."
             />
@@ -1154,8 +1154,8 @@ const home = () => {
 
           <div className={styles.card}>
             <GetStartedCard
-              title1="Convenient solutions to scale faster."
-              title2="to scale faster."
+              whiteTitle="Convenient solutions to scale faster."
+              blueTitle="to scale faster."
               description="Power your business with a centralized spend management
                platform & save countless working hours."
             />
@@ -1163,8 +1163,8 @@ const home = () => {
 
           <div className={styles.card}>
             <GetStartedCard
-              title1="Optimize Spending;"
-              title2="save more."
+              whiteTitle="Optimize Spending;"
+              blueTitle="save more."
               description="Power your business with a centralized spend management
                platform & save countless working hours."
             />

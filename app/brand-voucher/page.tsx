@@ -160,29 +160,25 @@ const brandVoucher = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Instant Delivery"
-              title2=""
+              whiteTitle="Instant Delivery"
               description="Brand vouchers are available with a snap of a finger and can be accessed anytime and anywhere"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Flexible Denominations"
-              title2=""
+              whiteTitle="Flexible Denominations"
               description="Brand vouchers can be availed in multiple flexible denominations as per budget."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Exclusive Discount on Bulk Ordering"
-              title2=""
+              whiteTitle="Exclusive Discount on Bulk Ordering"
               description="Exclusive savings can be availed on employee gift vouchers ordered in bulk for rewards and recognition"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="R&R Management"
-              title2=""
+              whiteTitle="R&R Management"
               description="HR managers can manage points allocation to employees on a single platform"
             />
           </div>
@@ -257,7 +253,6 @@ const brandVoucher = () => {
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Seeking further understanding of brand vouchers? Explore the comprehensive guide"
-          maxHeight="1500px"
           innerHtml={
             <>
               <div className="mb-5">

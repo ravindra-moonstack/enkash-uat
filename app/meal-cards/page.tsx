@@ -161,29 +161,25 @@ const mealCard = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Issue and Refill"
-              title2=""
+              whiteTitle="Issue and Refill"
               description="Meal cards are easy to issue with a specific limit towards food purchases and easier to refill"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Easy Management"
-              title2=""
+              whiteTitle="Easy Management"
               description="In case of loss or misuse, it is easy to manage the card from the platform to restrict or block usage"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1=" Track and Control"
-              title2=""
+              whiteTitle=" Track and Control"
               description="Due to the features that mimic debit cards, the meal card is easy to keep track of and control for the end user"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Wider Acceptance"
-              title2=""
+              whiteTitle="Wider Acceptance"
               description="Various supermarkets, food delivery apps, and other eating establishments widely accept meal cards"
             />
           </div>
@@ -269,7 +265,6 @@ const mealCard = () => {
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Seeking further understanding of meal cards? Explore the comprehensive guide"
-          maxHeight="5000px"
           innerHtml={
             <>
               <div className="mb-5">
@@ -359,7 +354,6 @@ const mealCard = () => {
                   </li>
                 </ul>
               </div>
-
 
               <div className="mb-3">
                 <Heading

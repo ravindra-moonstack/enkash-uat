@@ -160,30 +160,26 @@ const reimbursement = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Automated Processes"
-              title2=""
+              whiteTitle="Automated Processes"
               description="A digitized end-to-end solution, automate checking, approvals, invoice generation and submission to ensure speed and accuracy."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Better Documentation"
-              title2=""
+              whiteTitle="Better Documentation"
               description="Ensure employee compliance with easy-to-use capture modes which captures payments made on behalf of the business in a few simple steps"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Real time tracking"
-              title2=""
+              whiteTitle="Real time tracking"
               description="Track spends made on behalf of the business by employees in real time."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              title1="Correct Entries"
-              title2=""
+              whiteTitle="Correct Entries"
               description="Automated reimbursement procedures eliminate the scope for delayed or incorrect data entries."
             />
           </div>
