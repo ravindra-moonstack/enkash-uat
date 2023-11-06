@@ -111,14 +111,14 @@ const billPayments = () => {
                 "EnKash supports different modes of payments like credit cards, net banking, debit cards, and connected banking",
             },
             {
-              itemArray: ["Late", "Payment", "Charges"],
+              itemArray: ["Late Payment", "Charges"],
               oldWayDescription:
                 "In case you miss the payment date, late payment charges will incur",
               newWayDescription:
                 "With EnKash, you will not incur any penalties or late payments as chances of making late payments will be negligible",
             },
             {
-              itemArray: ["Bulk or", "Multiple", "Payments"],
+              itemArray: ["Bulk or Multiple", " Payments"],
               oldWayDescription: "Only one bill can be paid at a time",
               newWayDescription:
                 "Bill payments in bulk can be automated in one click",

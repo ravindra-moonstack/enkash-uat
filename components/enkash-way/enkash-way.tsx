@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Heading from "../heading/heading";
 import { space } from "../../constant/common";
@@ -17,6 +17,20 @@ interface EnkashWayProps {
 
 const EnkashWay = ({ progressData }: EnkashWayProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
+
+  let oldWayAnimationClassName = "";
+  let newWayAnimationClassName = "";
+  let arrowClassName = "";
+
+  if (selectedItemIndex >= -1) {
+    oldWayAnimationClassName = styles.left_to_right;
+  }
+  if (selectedItemIndex >= -1) {
+    arrowClassName = styles.left_to_right_arrow;
+  }
+  if (selectedItemIndex >= -1) {
+    newWayAnimationClassName = styles.right_to_left;
+  }
 
   const getProgressBarStyle = (
     selectedItem: number,
@@ -94,7 +108,10 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
         ></div>
 
         <div className="d-flex flex-column flex-lg-row my-5 align-items-center justify-content-center">
-          <div className={styles.old_way_container}>
+          <div
+            key={selectedItemIndex + "old-way"}
+            className={`${styles.old_way_container} ${oldWayAnimationClassName}`}
+          >
             <Image
               className="img-fluid"
               src={oldWay}
@@ -108,11 +125,15 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
           </div>
 
           <Image
-            className={`img-fluid ${styles.arrow}`}
+            key={selectedItemIndex}
+            className={`img-fluid ${styles.arrow} ${arrowClassName}`}
             src={blueArrowForward}
             alt="enkash steps"
           />
-          <div className={styles.new_way_container}>
+          <div
+            key={selectedItemIndex + "new-way"}
+            className={`${styles.new_way_container} ${newWayAnimationClassName}`}
+          >
             <Image
               className="img-fluid"
               src={newWay}

@@ -81,6 +81,7 @@
 
 .old_way_container {
   position: relative;
+  transition: transform 0.5s; /* Add other necessary transition properties */
 
   .old_way_text {
     z-index: 1;
@@ -110,4 +111,49 @@
     top: -400px;
     left: -200px;
   }
+}
+
+@keyframes left-to-right {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes right-to-left {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes left-to-right-arrow {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.left_to_right {
+  animation: left-to-right 0.5s ease-in-out forwards;
+}
+
+.left_to_right_arrow {
+  animation: left-to-right-arrow 1.5s ease-in-out forwards;
+}
+
+.right_to_left {
+  animation: right-to-left 0.5s ease-in-out forwards;
 }

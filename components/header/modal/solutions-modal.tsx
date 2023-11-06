@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import solutions from "../../../constant/solutions";
-import { productModalEmptyStateImg, solutionModalEmptyStateImg } from "..";
+import { solutionModalEmptyStateImg } from "..";
 
 const SolutionsModal = () => {
   const [hoveredSolutionIndex, setHoveredSolutionIndex] = useState<
