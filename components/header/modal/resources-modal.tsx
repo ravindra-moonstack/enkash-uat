@@ -2,13 +2,27 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import resources from "../../../constant/resources";
-import { blueforwardArrow, officeDiscussionPic } from "..";
+import { blueforwardArrow } from "..";
+import resourcesData from "../blog-data.json";
+
+type Resource = {
+  image: string;
+  imageAlt: string;
+  title: string;
+  date: string;
+  description: string;
+  link: string;
+};
 
 const ResourcesModal = () => {
   const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
-    null | number
+    number | null
   >(null);
-  const refs = resources.map(() => useRef<HTMLDivElement>(null));
+  const refs = resources.map(() => useRef<HTMLDivElement | null>(null));
+
+  // Use the blog data from resourcesData
+  const blogData: Resource = resourcesData;
+
   return (
     <div className={`row mt-5 ${styles.container}`}>
       <div
@@ -32,7 +46,7 @@ const ResourcesModal = () => {
           <div
             key={product.name}
             className={`${styles.product_row} ${
-              hoveredResourceIndex == index
+              hoveredResourceIndex === index
                 ? styles.opacity_selected
                 : styles.opacity_normal
             }`}
@@ -50,37 +64,47 @@ const ResourcesModal = () => {
         <div className={styles.box_shadow_left}></div>
         <div className="d-flex flex-column ps-4">
           <div>
-            <div className="mb-3 d-flex align-items-center">
+            <div
+              className={`${styles.resource_latest_read_container} mb-3 d-flex align-items-center`}
+            >
               <div className={styles.latest_read_text}>Latest Reads</div>
               <Image
                 className="ms-3"
                 src={blueforwardArrow}
                 alt="Read Enkash blog post"
-                width={80}
+                width={60}
               />
             </div>
           </div>
           <div>
-            <Image src={officeDiscussionPic} alt="Blog post Pic" height={200} />
-          </div>
-          <div className={`mb-2 mt-2 ${styles.resource_modal_blog_title}`}>
-            Lorem ipsum dolor sit amet, consectetur.
-          </div>
-          <div className="color-slate-grey mb-2">Dec 21, 2023</div>
-          <div className={`mb-3 ${styles.resource_modal_blog_descrption}`}>
-            Lorem ipsum dolor sit amet consectetur. Magna malesuada imperdiet
-            fames feugiat nulla vitae aliquet. Sit purus sociis vitae in mi.
-            Fames et diam quis urna vestibulum ipsum. Nibh vestibulum ut viverra
-            mattis.
-          </div>
-          <div className="mb-2 color-equity-blue">
-            Read more
             <Image
-              className="ms-3"
-              width={50}
-              src={blueforwardArrow}
-              alt="Read Enkash blog post"
+              src={blogData.image}
+              alt={blogData.imageAlt}
+              width={450}
+              height={250}
             />
+          </div>
+          <div
+            className={`mb-2 mt-2 cursor-pointer ${styles.resource_modal_blog_title}`}
+          >
+            {blogData.title}
+          </div>
+          <div className="color-slate-grey mb-2">{blogData.date}</div>
+          <div className={`mb-3 ${styles.resource_modal_blog_descrption}`}>
+            {blogData.description}
+          </div>
+          <div
+            className={`${styles.resource_arrow_icon} mb-2 color-equity-blue`}
+          >
+            Read more
+            <a href={blogData.link}>
+              <Image
+                className="ms-2"
+                width={40}
+                src={blueforwardArrow}
+                alt="Read Enkash blog post"
+              />
+            </a>
           </div>
         </div>
       </div>

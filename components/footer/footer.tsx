@@ -41,7 +41,7 @@ const Footer = () => {
                   </div>
                 </li>
                 <li>
-                  <a href="/bill-payables/">Bill Payment</a>
+                  <a href="/bill-payment/">Bill Payment</a>
                 </li>
                 <li>
                   <a href="/bulk-payout/">Bulk Payout</a>
@@ -117,9 +117,7 @@ const Footer = () => {
                     <a href="/saas-cards/">SaaS Cards*</a>
                   </li>
                   <li>
-                    <a href="/travel-and-expense-cards">
-                    T&E Cards*
-                    </a>
+                    <a href="/travel-and-expense-cards">T&E Cards*</a>
                   </li>
                 </ul>
               </div>

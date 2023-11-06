@@ -96,13 +96,13 @@ const WebHeader = () => {
                   setHoveredIndex(index);
                   setIsHeaderBgWhite(true);
 
-                  if (index === 3) {
+                  if (index === 2) {
                     setIsHeaderBgWhite(false);
                   }
                 }}
               >
                 {item.name}
-                {index !== 3 && (
+                {index !== 2 && (
                   <>
                     <Image
                       src={getArrowImageSource(index)}
@@ -131,8 +131,8 @@ const WebHeader = () => {
       </nav>
 
       {hoveredIndex === 0 && <ProductModal onLinkClick={handleLinkClick} />}
-      {hoveredIndex === 1 && <SolutionsModal />}
-      {hoveredIndex === 2 && <ResourcesModal />}
+      {/* {hoveredIndex === 1 && <SolutionsModal />} */}
+      {hoveredIndex === 1 && <ResourcesModal />}
       {/* {hoveredIndex === 3 && <EmptyModal />} */}
     </header>
   );
