@@ -17,20 +17,17 @@ interface EnkashWayProps {
 
 const EnkashWay = ({ progressData }: EnkashWayProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0);
+  const [oldWayAnimationClassName, setOldWayAnimationClassName] = useState("");
+  const [newWayAnimationClassName, setNewWayAnimationClassName] = useState("");
+  const [arrowClassName, setArrowClassName] = useState("");
 
-  let oldWayAnimationClassName = "";
-  let newWayAnimationClassName = "";
-  let arrowClassName = "";
-
-  if (selectedItemIndex >= -1) {
-    oldWayAnimationClassName = styles.left_to_right;
-  }
-  if (selectedItemIndex >= -1) {
-    arrowClassName = styles.left_to_right_arrow;
-  }
-  if (selectedItemIndex >= -1) {
-    newWayAnimationClassName = styles.right_to_left;
-  }
+  useEffect(() => {
+    if (selectedItemIndex >= -1) {
+      setOldWayAnimationClassName(styles.left_to_right);
+      setArrowClassName(styles.left_to_right_arrow);
+      setNewWayAnimationClassName(styles.right_to_left);
+    }
+  }, [selectedItemIndex]);
 
   const getProgressBarStyle = (
     selectedItem: number,
@@ -118,14 +115,17 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
               alt="enkash steps"
               width={550}
             />
-            <div className={styles.old_way_text}>
+            <div
+              key={selectedItemIndex + "old-way-text"}
+              className={styles.old_way_text}
+            >
               {progressData &&
                 progressData[selectedItemIndex].oldWayDescription}
             </div>
           </div>
 
           <Image
-            key={selectedItemIndex}
+            key={selectedItemIndex + "arrow"}
             className={`img-fluid ${styles.arrow} ${arrowClassName}`}
             src={blueArrowForward}
             alt="enkash steps"
