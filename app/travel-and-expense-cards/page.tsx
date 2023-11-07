@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faqData";
+import blogData from "./blog-data";
 import carouselData from "./carouselData";
 import { carouselBg, faqBg, heroImage, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -14,8 +15,8 @@ import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import WebHeader from "@/components/header/web-header";
 
 const travelAndExpenseCards = () => {
   return (
@@ -191,7 +192,7 @@ const travelAndExpenseCards = () => {
       </div>
 
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Travel Expense Insights" />
+        <BlogWrapper blogData={blogData} title="Travel Expense Insights" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}

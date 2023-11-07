@@ -16,6 +16,7 @@ import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import blogData from "./blog-data";
 
 const digitalMarketingCards = () => {
   return (
@@ -197,7 +198,7 @@ const digitalMarketingCards = () => {
         />
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Digital Marketing Insights" />
+        <BlogWrapper blogData={blogData} title="Digital Marketing Insights" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}

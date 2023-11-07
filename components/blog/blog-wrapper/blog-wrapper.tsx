@@ -1,6 +1,5 @@
 import React from "react";
 import BlogCard from "../blog-card/blog-card";
-import blogData from "../blogData.json";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
 import Heading from "@/components/heading/heading";
 import Link from "next/link";
@@ -14,21 +13,12 @@ type BlogItem = {
   link: string;
 };
 
-type BlogData = {
-  [pageName: string]: BlogItem[];
-};
-
 type BlogWrapperProps = {
   title: string;
-  pageName?: string;
+  blogData: BlogItem[];
 };
 
-const BlogWrapper: React.FC<BlogWrapperProps> = ({
-  title,
-  pageName = "tax-payment",
-}) => {
-  const filteredData = (blogData as BlogData)[pageName] || [];
-
+const BlogWrapper = ({ title, blogData }: BlogWrapperProps) => {
   return (
     <>
       <div className="col-12 d-flex justify-content-center">
@@ -49,8 +39,8 @@ const BlogWrapper: React.FC<BlogWrapperProps> = ({
         </Link>
       </div>
 
-      <div className={`col-12 d-flex  mt-5 pb-3 scroll_container`}>
-        {filteredData.map((blog, index) => (
+      <div className={`col-12 d-flex mt-5 pb-3 scroll_container`}>
+        {blogData.map((blog, index) => (
           <div className="me-4" key={index}>
             <BlogCard
               title={blog.title}

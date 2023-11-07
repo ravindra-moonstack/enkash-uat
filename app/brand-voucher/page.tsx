@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faqData";
+import blogData from "./blog-data";
 import carouselData from "./carouselData";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -14,11 +15,11 @@ import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import WebHeader from "@/components/header/web-header";
 
 export const metadata: Metadata = {
   title: "Brand Voucher – Corporate Gift Vouchers for Employees | EnKash",
@@ -221,7 +222,9 @@ const brandVoucher = () => {
         />
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Learn how Brand Vouchers offer many benefits for your business and employees!" />
+      <BlogWrapper
+        
+          blogData={blogData} title="Learn how Brand Vouchers offer many benefits for your business and employees!" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}

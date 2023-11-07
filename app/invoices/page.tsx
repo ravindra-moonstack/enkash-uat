@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faqData";
+import blogData from "./blog-data";
 import carouselData from "./carouselData";
 import { faqBg, heroImage, whiteArrow, carasoulBg } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -202,7 +203,7 @@ const invoices = () => {
         />
       </div>
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Invoices Insights" />
+        <BlogWrapper blogData={blogData} title="Invoices Insights" />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}

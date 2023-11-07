@@ -26,7 +26,7 @@ import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import BlogCard from "@/components/blog/blog-card/blog-card";
+import blogData from "./blog-data";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
@@ -359,7 +359,7 @@ const xpenz = () => {
       </div>
 
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Corporate Cards Insights" />
+        <BlogWrapper blogData={blogData} title="Corporate Cards Insights" />
       </div>
 
       <div

@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faqData";
+import blogData from "./blog-data";
 import carouselData from "./carouselData";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -15,10 +16,10 @@ import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
 export const metadata: Metadata = {
   title: "Bill Payment | Billing Payment Solution | EnKash",
@@ -229,7 +230,7 @@ const billPayments = () => {
       </div>
       <div className="row bg-white row-padding text-center">
         <BlogWrapper
-          pageName="bill-payment"
+          blogData={blogData}
           title="Learn how bill payments could revolutionize the way you work!"
         />
       </div>

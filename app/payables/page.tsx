@@ -6,6 +6,7 @@ import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/constant/common";
+import blogData from "./blog-data";
 import {
   cardBg,
   faqBg,
@@ -35,6 +36,7 @@ import faqData from "./faqData";
 import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+
 import ActionCard from "@/components/action-card/action-card";
 
 const payables = () => {
@@ -362,7 +364,7 @@ const payables = () => {
       </div>
 
       <div className="row bg-white row-padding text-center">
-        <BlogWrapper title="Payables Insights" />
+        <BlogWrapper blogData={blogData} title="Payables Insights" />
       </div>
 
       <div

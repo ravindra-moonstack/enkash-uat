@@ -90,7 +90,7 @@ const olympusProducts = [
         description: "Reconcile invoices and streamline collections",
         imageSrc: virtualAccounts,
         imageSrcHovered: virtualAccountsFilled,
-        link: "/404",
+        link: "/virtual-accounts",
       },
       {
         name: "Payment Links",

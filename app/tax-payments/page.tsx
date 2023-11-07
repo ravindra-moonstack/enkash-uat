@@ -5,6 +5,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faqData";
+import blogData from "./blog-data";
 import carouselData from "./carouselData";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -225,8 +226,8 @@ const taxPayments = () => {
       </div>
       <div className="row bg-white row-padding text-center">
         <BlogWrapper
+          blogData={blogData}
           title="How does Tax Payment Help Your Finance Team Become More Efficient?"
-          pageName="tax-payment"
         />
       </div>
 
