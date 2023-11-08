@@ -102,14 +102,14 @@ const Footer = () => {
                   <li>
                     <a href="/meal-card/">Meal Cards*</a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="/multi-currency-forex-cards/">
                       Multi-Currency Forex Cards*
                     </a>
-                  </li>
-                  <li>
+                  </li> */}
+                  {/* <li>
                     <a href="/payroll-cards/">Payroll Cards*</a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href="/purchase-cards/">Purchase Cards*</a>
                   </li>
@@ -149,9 +149,9 @@ const Footer = () => {
                       Scan and Drop Receipts
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="/spend-control/">Spend Control</a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

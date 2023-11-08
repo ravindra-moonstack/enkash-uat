@@ -48,13 +48,13 @@ const freedomProducts = [
         imageSrcHovered: mealCardFilled,
         link: "/meal-cards",
       },
-      {
-        name: "Payroll Cards*",
-        description: "Pay your employees quickly and easily with payroll cards",
-        imageSrc: payrollCard,
-        imageSrcHovered: payrollCardFilled,
-        link: "/payroll-cards",
-      },
+      // {
+      //   name: "Payroll Cards*",
+      //   description: "Pay your employees quickly and easily with payroll cards",
+      //   imageSrc: payrollCard,
+      //   imageSrcHovered: payrollCardFilled,
+      //   link: "/payroll-cards",
+      // },
       {
         name: "T&E Cards*",
         description: "Simplify travel and entertainment expenses for employees",
@@ -92,14 +92,13 @@ const freedomProducts = [
         imageSrcHovered: virtualCardFilled,
         link: "/virtual-cards",
       },
-
-      {
-        name: "Multi-Currency Forex Cards*",
-        description: "Hassle-free international travel and business",
-        imageSrc: multiForexCard,
-        imageSrcHovered: multiForexCardFilled,
-        link: "/multi-currency-forex-cards",
-      },
+      // {
+      //   name: "Multi-Currency Forex Cards*",
+      //   description: "Hassle-free international travel and business",
+      //   imageSrc: multiForexCard,
+      //   imageSrcHovered: multiForexCardFilled,
+      //   link: "/multi-currency-forex-cards",
+      // },
     ],
     footerText: "Empower your finances with purpose-based cards",
     footerMobileText: "Explore Freedom",

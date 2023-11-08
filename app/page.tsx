@@ -409,7 +409,7 @@ const home = () => {
             className={`me-3 ${styles.steps_image}`}
           />
           <div>
-            <Heading title="Sign Up" size="h5" />
+            <div className={styles.three_steps_text}>Sign Up</div>
           </div>
         </motion.div>
         <motion.div
@@ -433,7 +433,7 @@ const home = () => {
             className={`me-3 ${styles.steps_image}`}
           />
           <div>
-            <Heading title="Complete KYC Process" size="h5" />
+            <div className={styles.three_steps_text}>Complete KYC Process</div>
           </div>
         </motion.div>
         <motion.div
@@ -457,7 +457,7 @@ const home = () => {
             className={`me-3 ${styles.steps_image}`}
           />
           <div>
-            <Heading title="Get Started" size="h5" />
+            <div className={styles.three_steps_text}>Get Started</div>
           </div>
         </motion.div>
         <div className="col-12 d-flex justify-content-center align-items-center">

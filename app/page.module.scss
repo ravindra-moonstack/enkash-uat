@@ -172,6 +172,13 @@
       display: none;
     }
   }
+
+  .three_steps_text {
+    font-size: 16px;
+    @include bp-md {
+      font-size: 18px;
+    }
+  }
 }
 
 .second_row {

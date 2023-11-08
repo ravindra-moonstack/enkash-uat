@@ -1,12 +1,7 @@
-// External imports
 import Image from "next/image";
-import { Fragment, useState } from "react";
-
-// Component imports
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-
-// Constant imports
 import { enkashWhiteLogo, hamnburgerIcon, enkashBlueLogo, crossMenu } from "..";
+import styles from "./mobile-header.module.scss";
 
 interface HamburgerProps {
   currentStep: number;
@@ -36,8 +31,7 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
           <Image
             src={enkashWhiteLogo}
             alt="Enkash White logo"
-            width={100}
-            className="ps-4"
+            className={styles.enkash_logo}
           />
         </div>
         <PrimaryButton title="Sign Up" url={"singupUrl"} theme="theme-blue" />
