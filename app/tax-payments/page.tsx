@@ -224,7 +224,7 @@ const taxPayments = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="row bg-white row-padding text-center">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="How does Tax Payment Help Your Finance Team Become More Efficient?"

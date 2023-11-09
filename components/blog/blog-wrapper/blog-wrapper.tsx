@@ -21,11 +21,11 @@ type BlogWrapperProps = {
 const BlogWrapper = ({ title, blogData }: BlogWrapperProps) => {
   return (
     <>
-      <div className="col-12 d-flex justify-content-center">
+      <div className="d-flex justify-content-center">
         <Heading title={title} size="h1" color="black" weight="6" />
       </div>
 
-      <div className="col-12 d-flex justify-content-center mt-4">
+      <div className="d-flex justify-content-center mt-4">
         <Heading
           title="Blogs on Related Topics"
           size="h4"
@@ -33,13 +33,14 @@ const BlogWrapper = ({ title, blogData }: BlogWrapperProps) => {
         />
       </div>
 
-      <div className="col-12 d-flex justify-content-center mt-4">
+      <div className="d-flex justify-content-center mt-4">
         <Link href={"https://www.enkash.com/resources/"} target="_blank">
           <MenuButton title="See all" theme="light" />
         </Link>
       </div>
 
-        <div className={`col-12 d-flex mt-5 pb-3 scroll_container`}>
+      <div className="d-flex justify-content-center">
+        <div className={`d-flex mt-5 pb-3 scroll_container`}>
           {blogData.map((blog, index) => (
             <div className="me-4" key={index}>
               <BlogCard
@@ -53,6 +54,7 @@ const BlogWrapper = ({ title, blogData }: BlogWrapperProps) => {
             </div>
           ))}
         </div>
+      </div>
     </>
   );
 };

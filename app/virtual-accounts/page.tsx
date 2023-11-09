@@ -225,7 +225,7 @@ const virtualAccounts = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="row bg-white row-padding text-center">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how Virtual Accounts will change the way you approach collections and receivables!"

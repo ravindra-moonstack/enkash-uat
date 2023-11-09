@@ -160,52 +160,54 @@ const billPayments = () => {
           />
         </div>
 
-        <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Regulate Payments"
-              description="Carry out a one-time process to ensure that you have a regulated payment process that helps you make payments smoothly without any risk"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Automated Reminders"
-              description="Ensure that you do not miss any of the regularly recurring bill payments’ deadlines, with automatic reminders. This ensures continuity, helps cut down penalties, and improves savings"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              titleHtml={
-                <>
-                  <Heading
-                    title="Approval"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Flow"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </>
-              }
-              description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
+        <div className="d-flex justify-content-center">
+          <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Regulate Payments"
+                description="Carry out a one-time process to ensure that you have a regulated payment process that helps you make payments smoothly without any risk"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Automated Reminders"
+                description="Ensure that you do not miss any of the regularly recurring bill payments’ deadlines, with automatic reminders. This ensures continuity, helps cut down penalties, and improves savings"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                titleHtml={
+                  <>
+                    <Heading
+                      title="Approval"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                    <Heading
+                      title="Flow"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                  </>
+                }
+                description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
               prevent errors, unauthorized payments and reduce the risk of fraud"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Complete Transparency"
-              description="Clearly view the status of your bill payments, including confirmation of payment processing, the date of payment, and upcoming bills to pay"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Secured Payments"
-              description="Billing automation helps protect your privacy and identity by eliminating any risks associated with lost paperwork using encryption to protect the transmission of sensitive data"
-            />
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Complete Transparency"
+                description="Clearly view the status of your bill payments, including confirmation of payment processing, the date of payment, and upcoming bills to pay"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Secured Payments"
+                description="Billing automation helps protect your privacy and identity by eliminating any risks associated with lost paperwork using encryption to protect the transmission of sensitive data"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -243,7 +245,7 @@ const billPayments = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="row bg-white row-padding text-center">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how bill payments could revolutionize the way you work!"

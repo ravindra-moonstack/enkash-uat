@@ -209,7 +209,7 @@ const invoices = () => {
           carouselBg={carouselBg}
         />
       </div>
-      <div className="row bg-white row-padding text-center">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper blogData={blogData} title="Quick Collect Insights" />
       </div>
       <div

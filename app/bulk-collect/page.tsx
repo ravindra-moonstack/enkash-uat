@@ -241,7 +241,7 @@ const bulkCollect = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="row bg-white row-padding text-center">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how bulk collect benefits for your business and employees!"

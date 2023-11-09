@@ -176,37 +176,56 @@ const bulkPayout = () => {
             size="h1"
             weight="6"
           />
+          <div className="mt-2">
+            <Heading
+              title="Don’t worry; EnKash will fix them for you."
+              color="black"
+              size="h1"
+              weight="6"
+            />
+          </div>
         </div>
-        <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Repeat Payments"
-              description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies."
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Reduce Payment Processing Time"
-              description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow."
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Centralized Payment Processing"
-              description="By centralizing payment processing through a bulk payout system, you can have better visibility and control over processes to prevent errors"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Automate Payment Reminders"
-              description="Enable an automated reminder engine to keep track of all your outstanding business payments"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Checks and Approvals"
-              description="Finance is all about timely payments with the right checks and approvals to ensure negligible misuse of funds. The process of bulk payout for your recurring payments ensures speed and efficiency"
-            />
+        <div className="d-flex justify-content-center">
+          <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Repeat Payments"
+                description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies."
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                titleHtml={
+                  <>
+                    <Heading
+                      title="Reduce Payment Processing Time"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                  </>
+                }
+                description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow."
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Centralized Payment Processing"
+                description="By centralizing payment processing through a bulk payout system, you can have better visibility and control over processes to prevent errors"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Automate Payment Reminders"
+                description="Enable an automated reminder engine to keep track of all your outstanding business payments"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Checks and Approvals"
+                description="Finance is all about timely payments with the right checks and approvals to ensure negligible misuse of funds. The process of bulk payout for your recurring payments ensures speed and efficiency"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -217,14 +236,14 @@ const bulkPayout = () => {
             <>
               <div className="text-center">
                 <Heading
-                  title={`Simplify your Business Payouts with our${space}`}
+                  title={`Simplify your business payouts with our${space}`}
                   color="white"
                   size="h1"
                   weight="6"
                 />
                 <div>
                   <Heading
-                    title={`Bulk Processing Solution${space}`}
+                    title={`bulk processing solution${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -238,7 +257,7 @@ const bulkPayout = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="row bg-white row-padding text-center">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how Bulk Payouts could revolutionize the way you work!"
@@ -274,23 +293,16 @@ const bulkPayout = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of bulk payouts?"
+          description="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment. EnKash provides bulk payment solutions to businesses"
+        />{" "}
+      </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Seeking further understanding of bulk payouts? Explore the comprehensive guide"
+          title="Explore the comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h4"
-                  color="black"
-                  weight="6"
-                  title="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment. EnKash provides bulk payment solutions to businesses"
-                />
-              </div>
               <div className="mb-3">
                 <Heading
                   size="h5"

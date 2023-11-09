@@ -191,7 +191,7 @@ const travelAndExpenseCards = () => {
         />
       </div>
 
-      <div className="row bg-white row-padding text-center">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper blogData={blogData} title="Travel Expense Insights" />
       </div>
       <div

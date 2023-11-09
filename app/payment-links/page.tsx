@@ -201,7 +201,7 @@ const paymentlinks = () => {
           carouselBg={carasoulBg}
         />
       </div>
-      <div className="row bg-white row-padding text-center">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper blogData={blogData} title="Payment Links Insights" />
       </div>
       <div

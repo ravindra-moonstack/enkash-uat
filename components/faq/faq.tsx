@@ -43,7 +43,7 @@ const FAQ = ({ question, answer, answerVisible }: faq) => {
             }`}
           >
             {answer.map((item, index) => (
-              <div key={index}>
+              <div key={index} className="mb-4">
                 {item.heading && (
                   <h4 className={styles.heading}>{item.heading}</h4>
                 )}
