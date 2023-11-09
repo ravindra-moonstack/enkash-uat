@@ -2,6 +2,8 @@
 @import "../../styles/variables";
 
 .footer {
+  z-index: 1;
+  position: relative;
   background: linear-gradient(
     282deg,
     #1c5af4 -10.83%,
