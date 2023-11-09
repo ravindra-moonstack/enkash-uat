@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { arrow, contactUsMobile, contactUsSpiralImg } from ".";
+import { arrow, enkashStack } from ".";
 import styles from "./contact-us-card.module.scss";
 
 interface contactUsProps {
@@ -10,9 +10,6 @@ interface contactUsProps {
 const ContactUsCard = ({ title, description }: contactUsProps) => {
   return (
     <div className={`row-padding-x-only ${styles.contact_us_body}`}>
-      <div className={styles.web_image_container}>
-        <Image src={contactUsSpiralImg} alt="contact us spiral" />
-      </div>
       <div className={styles.text_container}>
         <div className="mt-md-5 mt-3">
           <div>
@@ -29,18 +26,9 @@ const ContactUsCard = ({ title, description }: contactUsProps) => {
           <Image src={arrow} alt="arrow image" className="ms-2" width={50} />
         </div>
       </div>
-      {/* <div className={styles.image_container}>
-        <Image
-          src={contactUsSpiralImg}
-          alt="contact us spiral"
-          className={styles.web}
-        />
-        <Image
-          src={contactUsMobile}
-          alt="contact us spiral"
-          className={styles.mobile}
-        />
-      </div> */}
+      <div className={styles.image_container}>
+        <Image src={enkashStack} alt="contact us spiral" />
+      </div>
     </div>
   );
 };

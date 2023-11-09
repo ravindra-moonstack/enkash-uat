@@ -2,22 +2,37 @@
 @import "/styles/mixin";
 
 .contact_us_body {
+  height: 270px;
   display: flex;
+  align-items: center;
   background: $color-white;
   border-top: 1px solid $color-black;
 
+  @include bp-md {
+    height: 500px;
+  }
+
   .text_container {
-    width: 45%;
+    padding-top: 40px;
+    padding-bottom: 40px;
+
+    @include bp-md {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      padding-right: 50px;
+    }
+
+    width: 42%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     font-weight: 600;
     @include bp-md {
-      width: 45%;
+      width: 55%;
     }
     .title {
       color: $color-equity-blue;
-      font-size: 17px;
+      font-size: 16px;
       width: 80%;
       @include bp-md {
         font-size: 54px;
@@ -25,49 +40,51 @@
     }
     .description {
       color: $color-black;
-      font-size: 14px;
-      height: 90px;
+      font-size: 10px;
+      height: 50px;
       overflow-y: auto;
       padding-right: 5px;
 
+      @include bp-md {
+        height: 110px;
+      }
+
       &::-webkit-scrollbar {
-        width: 8px;
+        @include bp-md {
+          width: 8px;
+        }
+        width: 4px;
         background-color: transparent;
       }
 
       &::-webkit-scrollbar-thumb {
-        border-radius: 4px;
+        @include bp-md {
+          border-radius: 4px;
+        }
+        border-radius: 2px;
         background-color: $color-equity-blue;
       }
 
       @include bp-md {
-        font-size: 28px;
+        font-size: 24px;
       }
     }
   }
 
-  .web_image_container {
-    display: none;
+  .image_container {
+    width: 58%;
+    padding-left: 10px;
     @include bp-md {
-      display: block;
+      padding-left: 10px;
       width: 55%;
     }
-    img {
-    }
-  }
-
-  .mobile_image_container {
-    position: relative;
-    @include bp-md {
-      width: 50%;
-    }
 
     img {
-      position: absolute;
-      right: -10px;
-      height: 100%;
+      height: 280px;
+      width: 200px;
       @include bp-md {
-        display: none;
+        width: auto;
+        height: 700px;
       }
     }
   }
@@ -83,7 +100,10 @@
     }
 
     img:hover {
-      width: 65px;
+      width: 35px;
+      @include bp-md {
+        width: 65px;
+      }
     }
 
     .contact_us {
@@ -103,6 +123,9 @@
 
 .action_container:hover {
   img {
-    width: 65px;
+    width: 35px;
+    @include bp-md {
+      width: 65px;
+    }
   }
 }

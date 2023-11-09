@@ -72,8 +72,17 @@
 
 .social_icons_row {
   width: 75%;
+
   @include bp-md {
     width: 50%;
+  }
+
+  img {
+    width: 20px;
+    height: auto;
+    @include bp-md {
+      width: 25px;
+    }
   }
 }
 
