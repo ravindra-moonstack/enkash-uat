@@ -15,12 +15,12 @@ const signupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["foote
 
 const Footer = () => {
   return (
-    <div className={`bg-dark-midnight-blue ${styles.footer}`}>
+    <div className={` ${styles.footer}`}>
       <div className={`row ${styles.footer_padding}`}>
         <div className="col-12 mb-4">
           <h2 className="color-white mb-4">
             Spend Smart, Collect Fast, <br />{" "}
-            <span className="color-baby-blue">Grow More</span>
+            <span className="color-equity-blue">Grow More</span>
           </h2>
           <PrimaryButton
             title="Get Started"
@@ -59,7 +59,7 @@ const Footer = () => {
             </div>
             <div className="col-6 col-md-12">
               <ul>
-                <li>
+                <li className="mt-0 mt-md-2">
                   <div className={`color-white ${styles.sub_title}`}>
                     Receivables
                   </div>
@@ -89,6 +89,11 @@ const Footer = () => {
                 </div>
                 <ul>
                   <li>
+                    <div className={`color-white ${styles.sub_title}`}>
+                      Prepaid Cards
+                    </div>
+                  </li>
+                  <li>
                     <a href="/virtual-cards/">Virtual Cards*</a>
                   </li>
                   <li>
@@ -102,20 +107,26 @@ const Footer = () => {
                   <li>
                     <a href="/meal-card/">Meal Cards*</a>
                   </li>
+                  <li>
+                    <a href="/saas-cards/">SaaS Cards*</a>
+                  </li>
                   {/* <li>
                     <a href="/multi-currency-forex-cards/">
                       Multi-Currency Forex Cards*
                     </a>
                   </li> */}
-                  {/* <li>
-                    <a href="/payroll-cards/">Payroll Cards*</a>
-                  </li> */}
+                  <li className="mt-2 ">
+                    <div className={`color-white ${styles.sub_title}`}>
+                      Corporate Credit Cards
+                    </div>
+                  </li>
+                  <li>
+                    <a href="/business-cards/">Business Cards*</a>
+                  </li>
                   <li>
                     <a href="/purchase-cards/">Purchase Cards*</a>
                   </li>
-                  <li>
-                    <a href="/saas-cards/">SaaS Cards*</a>
-                  </li>
+
                   <li>
                     <a href="/travel-and-expense-cards">T&E Cards*</a>
                   </li>
@@ -343,7 +354,6 @@ const Footer = () => {
           by Banks
         </div>
         <div className={`col-12 color-white ${styles.copyright}`}>
-          {" "}
           Copyright © 2023 | EnKash. All right reserved.
         </div>
       </div>

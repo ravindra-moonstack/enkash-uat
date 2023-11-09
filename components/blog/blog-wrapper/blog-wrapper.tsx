@@ -39,20 +39,20 @@ const BlogWrapper = ({ title, blogData }: BlogWrapperProps) => {
         </Link>
       </div>
 
-      <div className={`col-12 d-flex mt-5 pb-3 scroll_container`}>
-        {blogData.map((blog, index) => (
-          <div className="me-4" key={index}>
-            <BlogCard
-              title={blog.title}
-              date={blog.date}
-              description={blog.description}
-              image={blog.image}
-              imageAlt={blog.imageAlt}
-              link={blog.link}
-            />
-          </div>
-        ))}
-      </div>
+        <div className={`col-12 d-flex mt-5 pb-3 scroll_container`}>
+          {blogData.map((blog, index) => (
+            <div className="me-4" key={index}>
+              <BlogCard
+                title={blog.title}
+                date={blog.date}
+                description={blog.description}
+                image={blog.image}
+                imageAlt={blog.imageAlt}
+                link={blog.link}
+              />
+            </div>
+          ))}
+        </div>
     </>
   );
 };

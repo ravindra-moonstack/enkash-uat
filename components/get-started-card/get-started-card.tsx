@@ -4,8 +4,9 @@ import styles from "./get-started-card.module.scss";
 import Heading from "../heading/heading";
 
 export interface CardProps {
-  whiteTitle: string;
+  whiteTitle?: any;
   blueTitle?: any;
+  titleHtml?: any;
   description: string;
   ctaColor?: string;
 }
@@ -13,6 +14,7 @@ export interface CardProps {
 const GetStartedCard = ({
   whiteTitle,
   blueTitle,
+  titleHtml,
   description,
   ctaColor,
 }: CardProps) => {
@@ -20,8 +22,14 @@ const GetStartedCard = ({
     <div
       className={`d-flex flex-column bg-indi-volt position-relative m-1 ${styles.card_body}`}
     >
-      <Heading title={whiteTitle} color="rainy-blue" size="h2" weight="6" />
-      <Heading title={blueTitle} color="white" size="h2" weight="6" />
+      {titleHtml && <>{titleHtml}</>}
+      {!titleHtml && (
+        <>
+          <Heading title={whiteTitle} color="rainy-blue" size="h2" weight="6" />
+          <Heading title={blueTitle} color="white" size="h2" weight="6" />
+        </>
+      )}
+
       <div className="my-3">
         <Heading title={description} color="white" size="h6" weight="4" />
       </div>

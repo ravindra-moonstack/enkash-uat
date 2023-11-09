@@ -2,6 +2,13 @@
 @import "../../styles/variables";
 
 .footer {
+  background: linear-gradient(
+    282deg,
+    #1c5af4 -10.83%,
+    #092093 15.75%,
+    rgba(11, 11, 40, 0) 41.74%
+  );
+  background-color: #0c0e4a;
   li {
     list-style-type: none;
   }
@@ -13,7 +20,7 @@
     line-height: 16px;
     text-decoration: none;
     @include bp-sm {
-      font-size: 16px;
+      font-size: 15px;
       line-height: 32px;
     }
     color: $color-quick-silver;
@@ -96,7 +103,8 @@
 }
 
 .locations_row {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: $color-equity-blue;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +119,7 @@
     padding: 0 8px;
 
     @include bp-sm {
-      font-size: 15px;
+      font-size: 18px;
       padding: 0 16px;
     }
   }

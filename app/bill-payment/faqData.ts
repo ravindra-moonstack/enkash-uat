@@ -27,10 +27,10 @@ const faqData = [
       heading:
         "It is essential for startups to consider streamlining their bill payments for the following reasons:",
       bullets: [
-        "Bill payments are processed faster and seamlessly.",
-        "It helps to gain a competitive advantage in the industry.",
-        "It positively increases your market reputation.",
-        "Possibility of acquiring more consumers increases marginally.",
+        "Bill payments are processed faster and seamlessly",
+        "It helps to gain a competitive advantage in the industry",
+        "It positively increases your market reputation",
+        "Possibility of acquiring more consumers increases marginally",
       ],
     },
   },
@@ -39,7 +39,7 @@ const faqData = [
       "How does digitized bill payment module help cut down business frauds?",
     answer: {
       heading:
-        "The digitized bill payment module works on verified and encrypted payments through different payment modes like net banking, credit cards, connected banking, etc., and is preferable over other manual modes, which helps in cutting down business fraud.",
+        "The digitized bill payment module works on verified and encrypted payments through different payment modes to name a few, net banking, credit cards, connected banking, etc, and is preferable over other manual modes, which helps in cutting down the business fraud.",
     },
   },
 ];

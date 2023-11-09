@@ -368,7 +368,12 @@ const receivables = () => {
 
         <div>
           {faqData.map((item, index) => (
-            <FAQ key={index} question={item.question} answer={item.answer} />
+            <FAQ
+              key={index}
+              question={item.question}
+              answer={item.answer}
+              answerVisible={index === 0}
+            />
           ))}
         </div>
         <div className={styles.faq_bg}>

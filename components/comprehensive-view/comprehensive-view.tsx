@@ -32,7 +32,7 @@ const ComprehensiveView = ({ innerHtml, title }: comprehensiveViewProp) => {
   return (
     <>
       <div
-        className={` ${styles.action_container} d-flex bg-indi-volt justify-content-between align-items-start color-white`}
+        className={` ${styles.action_container} d-flex   align-items-start color-white`}
       >
         <h1 className={styles.explore_text}>{title}</h1>
         <Image

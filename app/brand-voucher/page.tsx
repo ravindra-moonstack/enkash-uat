@@ -222,9 +222,10 @@ const brandVoucher = () => {
         />
       </div>
       <div className="row bg-white row-padding text-center">
-      <BlogWrapper
-        
-          blogData={blogData} title="Learn how Brand Vouchers offer many benefits for your business and employees!" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how Brand Vouchers offer many benefits for your business and employees!"
+        />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -242,7 +243,12 @@ const brandVoucher = () => {
 
         <div>
           {faqData.map((item, index) => (
-            <FAQ key={index} question={item.question} answer={item.answer} />
+            <FAQ
+              key={index}
+              question={item.question}
+              answer={item.answer}
+              answerVisible={index === 0}
+            />
           ))}
         </div>
         <div className={styles.faq_bg}>

@@ -1,4 +1,4 @@
-export { default as twitterLogo } from "./img/twitter.png";
+export { default as twitterLogo } from "./img/twitter.svg";
 export { default as linkedinLogo } from "./img/linkedin.png";
 export { default as fbLogo } from "./img/fb.png";
 export { default as instLogo } from "./img/insta.png";

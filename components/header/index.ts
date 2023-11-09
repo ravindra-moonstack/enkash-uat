@@ -82,3 +82,5 @@ export { default as payrollCard } from "./img/payroll-card.svg";
 export { default as payrollCardFilled } from "./img/payroll-card-filled.svg";
 export { default as multiForexCard } from "./img/multi-currency.svg";
 export { default as multiForexCardFilled } from "./img/multi-currency-filled.svg";
+export { default as businessCard } from "./img/business-card.svg";
+export { default as businessCardFilled } from "./img/business-card-filled.svg";

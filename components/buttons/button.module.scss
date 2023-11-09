@@ -27,11 +27,21 @@ $font-size-mobile: 12px;
   @include bp-md {
     font-size: 17px;
   }
+  transition: box-shadow 0.3s ease;
+  transition: width 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 7px 7px rgba(28, 90, 244, 0.5);
+  }
 }
 
 .theme-blue {
   background-color: $color-equity-blue;
   color: $color-white;
+  transition: box-shadow 0.3s ease;
+  &:hover {
+    box-shadow: 0 0 7px 7px rgba(28, 90, 244, 0.5);
+  }
 }
 
 .theme-green {

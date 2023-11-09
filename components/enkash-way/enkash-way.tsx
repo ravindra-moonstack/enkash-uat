@@ -61,7 +61,7 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
           weight="6"
         />
         <Heading
-          title="the better way."
+          title="the better way"
           size="h1"
           color="equity-blue"
           weight="6"

@@ -11,10 +11,11 @@ export interface faq {
     heading: string;
     bullets?: string[];
   };
+  answerVisible?: boolean;
 }
 
-const FAQ = ({ question, answer }: faq) => {
-  const [isAnswerVisible, setIsAnswerVisible] = useState(false);
+const FAQ = ({ question, answer, answerVisible }: faq) => {
+  const [isAnswerVisible, setIsAnswerVisible] = useState(answerVisible);
 
   const toggleAnswerVisibility = () => {
     setIsAnswerVisible((prevState) => !prevState);
@@ -22,11 +23,12 @@ const FAQ = ({ question, answer }: faq) => {
 
   return (
     <div>
-      <div className={styles.faq_row} onClick={toggleAnswerVisibility}>
+      <div className={styles.faq_row}>
         <div className={styles.faq_inner_row}>
           <div className={`d-flex justify-content-between `}>
             <h3 className={styles.question}>{question}</h3>
             <Image
+              onClick={toggleAnswerVisibility}
               src={arrowDown}
               alt="faq arrow icon"
               className={`${isAnswerVisible ? styles.rotated : styles.normal} ${
@@ -44,7 +46,9 @@ const FAQ = ({ question, answer }: faq) => {
             {answer.bullets && (
               <ul>
                 {answer.bullets.map((item, index) => (
-                  <li key={index}>{item}</li>
+                  <li key={index}>
+                    <h4 className={styles.heading}>{item}</h4>
+                  </li>
                 ))}
               </ul>
             )}

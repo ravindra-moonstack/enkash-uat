@@ -45,7 +45,7 @@ const billPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Bill Payments" size="h4" weight="4" />
+            <Heading title="Bill Payment" size="h4" weight="4" />
           </div>
 
           <div className="">
@@ -67,7 +67,7 @@ const billPayments = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Pay all your business-related bills digitally from a single dashboard. Experience exclusive features like auto-fetch and automated reminders to avoid late payment charges."
+              title="Pay all your business-related bills digitally from a single dashboard. Experience exclusive features like auto-fetch and automated reminders to avoid late payment charges"
               color="white"
               size="h6"
               weight="5"
@@ -175,7 +175,22 @@ const billPayments = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Approval Flow"
+              titleHtml={
+                <>
+                  <Heading
+                    title="Approval"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Flow"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </>
+              }
               description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
               prevent errors, unauthorized payments and reduce the risk of fraud"
             />
@@ -189,7 +204,7 @@ const billPayments = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Secured Payments"
-              description="Billing automation helps protect your privacy and identity by eliminating any risks associated with lost paperwork using encryption to protect the transmission of sensitive data."
+              description="Billing automation helps protect your privacy and identity by eliminating any risks associated with lost paperwork using encryption to protect the transmission of sensitive data"
             />
           </div>
         </div>
@@ -208,13 +223,13 @@ const billPayments = () => {
                     weight="6"
                   />
                   <Heading
-                    title="Billl Payments"
+                    title="Bill Payment"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title={`${space}seamlessly with Enkash!`}
+                    title={`${space}seamlessly with EnKash`}
                     color="white"
                     size="h1"
                     weight="6"
@@ -223,7 +238,7 @@ const billPayments = () => {
               </div>
             </>
           }
-          mainTitle="How do Bill Payments Cards work?"
+          mainTitle="How do Bill Payments work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -250,7 +265,12 @@ const billPayments = () => {
 
         <div>
           {faqData.map((item, index) => (
-            <FAQ key={index} question={item.question} answer={item.answer} />
+            <FAQ
+              key={index}
+              question={item.question}
+              answer={item.answer}
+              answerVisible={index === 0}
+            />
           ))}
         </div>
         <div className={styles.faq_bg}>
@@ -259,23 +279,18 @@ const billPayments = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-        <ContactUsCard />
+        <ContactUsCard
+          title="Seeking further understanding of bill payments online?"
+          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
+        />
       </div>
 
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Seeking further understanding of bill payments online? Explore the
+          title="Explore the
         comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h4"
-                  color="black"
-                  weight="6"
-                  title="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted. "
-                />
-              </div>
               <div className="mb-2">
                 <Heading
                   size="h5"

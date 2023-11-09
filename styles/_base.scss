@@ -263,9 +263,14 @@ body {
 /* Common Vertical scroll*/
 
 .scroll_container {
+  display: flex;
   overflow-x: auto;
+  overflow-y: hidden;
   white-space: nowrap;
   overflow-y: hidden;
+  @include bp-md {
+    justify-content: center;
+  }
 
   &::-webkit-scrollbar {
     height: 6px;

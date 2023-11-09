@@ -1,9 +1,4 @@
 import {
-  vendorPayment,
-  vendorPaymentFilled,
-  bulkPayout,
-  taxPayment,
-  taxPaymentFilled,
   digitalMarketingCard,
   digitalMarketingCardFilled,
   saas,
@@ -13,20 +8,19 @@ import {
   virtualCard,
   virtualCardFilled,
   mealCard,
-  payrollCard,
   mealCardFilled,
-  payrollCardFilled,
   fuelCard,
   fuelCardFilled,
   purchaseCard,
   purchaseCardFilled,
-  multiForexCard,
-  multiForexCardFilled,
+  businessCard,
+  businessCardFilled,
 } from "@/components/header";
 
 const freedomProducts = [
   {
-    subtitle: "Default",
+    subtitle: "Prepaid Cards",
+    subtitleLink: "/freedom",
     currentHeading: {
       name: "Freedom",
       description: "Simplify corporate spending with flexible card solutions",
@@ -56,13 +50,6 @@ const freedomProducts = [
       //   link: "/payroll-cards",
       // },
       {
-        name: "T&E Cards*",
-        description: "Simplify travel and entertainment expenses for employees",
-        imageSrc: tne,
-        imageSrcHovered: tneFilled,
-        link: "/travel-and-expense-cards",
-      },
-      {
         name: "Digital Marketing Cards*",
         description:
           "Pay for digital marketing campaigns and subscriptions with ease",
@@ -78,14 +65,6 @@ const freedomProducts = [
         link: "/fuel-cards",
       },
       {
-        name: "Purchase Cards*",
-        description:
-          "Empower employees to make purchases and track spends in real time",
-        imageSrc: purchaseCard,
-        imageSrcHovered: purchaseCardFilled,
-        link: "/purchase-cards",
-      },
-      {
         name: "Virtual Cards*",
         description: "Unlimited cards with centralized controls",
         imageSrc: virtualCard,
@@ -99,6 +78,44 @@ const freedomProducts = [
       //   imageSrcHovered: multiForexCardFilled,
       //   link: "/multi-currency-forex-cards",
       // },
+    ],
+    footerText: "Empower your finances with purpose-based cards",
+    footerMobileText: "Explore Freedom",
+    footerImg: "freedom_footer_bg",
+    footerLink: "/freedom",
+    parentLink: "/freedom",
+  },
+  {
+    subtitle: "Corporate Credit Cards",
+    subtitleLink: "/freedom",
+    currentHeading: {
+      name: "Freedom",
+      description: "Simplify corporate spending with flexible card solutions",
+    },
+    list: [
+      {
+        name: "T&E Cards*",
+        description: "Simplify travel and entertainment expenses for employees",
+        imageSrc: tne,
+        imageSrcHovered: tneFilled,
+        link: "/travel-and-expense-cards",
+      },
+      {
+        name: "Purchase Cards*",
+        description:
+          "Empower employees to make purchases and track spends in real time",
+        imageSrc: purchaseCard,
+        imageSrcHovered: purchaseCardFilled,
+        link: "/purchase-cards",
+      },
+      {
+        name: "Business Cards*",
+        description:
+          "Empower employees to make purchases and track spends in real time",
+        imageSrc: businessCard,
+        imageSrcHovered: businessCardFilled,
+        link: "/purchase-cards",
+      },
     ],
     footerText: "Empower your finances with purpose-based cards",
     footerMobileText: "Explore Freedom",
