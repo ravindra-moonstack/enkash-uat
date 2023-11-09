@@ -407,7 +407,10 @@ const xpenz = () => {
       </div>
 
       <div className="row">
-        <ContactUsCard />
+        <ContactUsCard
+          title="Seeking further understanding of bill payments online?"
+          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
+        />
       </div>
     </div>
   );

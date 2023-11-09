@@ -110,8 +110,7 @@ const freedomProducts = [
       },
       {
         name: "Business Cards*",
-        description:
-          "Empower employees to make purchases and track spends in real time",
+        description: "Your go-to cards for all business-related expenses",
         imageSrc: businessCard,
         imageSrcHovered: businessCardFilled,
         link: "/purchase-cards",

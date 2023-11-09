@@ -8,9 +8,9 @@ import arrowDown from "./img/arrow-down.png";
 export interface faq {
   question: string;
   answer: {
-    heading: string;
+    heading?: string;
     bullets?: string[];
-  };
+  }[];
   answerVisible?: boolean;
 }
 
@@ -42,16 +42,22 @@ const FAQ = ({ question, answer, answerVisible }: faq) => {
               isAnswerVisible ? styles.visible : ""
             }`}
           >
-            <h4 className={styles.heading}>{answer.heading}</h4>
-            {answer.bullets && (
-              <ul>
-                {answer.bullets.map((item, index) => (
-                  <li key={index}>
-                    <h4 className={styles.heading}>{item}</h4>
-                  </li>
-                ))}
-              </ul>
-            )}
+            {answer.map((item, index) => (
+              <div key={index}>
+                {item.heading && (
+                  <h4 className={styles.heading}>{item.heading}</h4>
+                )}
+                {item.bullets && item.bullets.length > 0 && (
+                  <ul>
+                    {item.bullets.map((bullet, bulletIndex) => (
+                      <li key={bulletIndex}>
+                        <h4 className={styles.heading}>{bullet}</h4>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </div>
