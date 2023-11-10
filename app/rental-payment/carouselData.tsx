@@ -39,8 +39,7 @@ const carouselData = [
   {
     image: iconSix,
     alt: "And lastly pay your rent",
-    title:
-      "And lastly pay your rent using any payment mode of your convenience",
+    title: "Lastly pay your rent using any payment mode of your convenience",
   },
 ];
 

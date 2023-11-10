@@ -46,7 +46,7 @@ const rentalPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Rental Payments" size="h4" weight="4" />
+            <Heading title="Rental Payment" size="h4" weight="4" />
           </div>
 
           <div className="d-line">
@@ -57,13 +57,13 @@ const rentalPayments = () => {
               weight="7"
             />
             <Heading
-              title="Rental Payments"
+              title="rental payments"
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`${space}Has Never Been this Seamless!`}
+              title={`${space}has never been this seamless!`}
               color="white"
               size="h2"
               weight="7"
@@ -118,16 +118,16 @@ const rentalPayments = () => {
             {
               itemArray: ["Bulk", "Payments"],
               oldWayDescription:
-                "Prepare paperwork to get the payment approved from the right person",
+                "Challenging to make bulk rental payments in real time",
               newWayDescription:
-                "Upload GST challan to EnKash portal. Challan will be read and verified digitally",
+                "Bulk rental payments can be made  seamlessly and hassle-free",
             },
             {
               itemArray: ["Payment", "Modes"],
               oldWayDescription:
-                "Challenging to make bulk rental payments in real time",
+                "Lack of flexibility for multiple modes of payments",
               newWayDescription:
-                "Bulk rental payments can be made seamlessly and hassle-free",
+                "Flexibility with multiple modes of payment such as credit card, net banking, etc",
             },
           ]}
         />
@@ -206,13 +206,13 @@ const rentalPayments = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Rental Payments${space}`}
+                    title={`Rental payments${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="are Now Fast, Easy, and Safe!"
+                    title="are fast, easy, and safe with us"
                     color="white"
                     size="h1"
                     weight="6"
@@ -262,23 +262,16 @@ const rentalPayments = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of rent payment software online??"
+          description="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments. You can use this software to keep a record of all the premises your business rents with details including the number of premises, the rental agreements, the amounts due, the dates on which rents are due, and the details of the landlords. Furthermore, you can also set up the process workflows for rent payments to make the process quicker and more efficient"
+        />
+      </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Seeking further understanding of rent payment software online? Explore the comprehensive guide"
+          title="Explore the comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h4"
-                  color="black"
-                  weight="6"
-                  title="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments. You can use this software to keep a record of all the premises your business rents with details including the number of premises, the rental agreements, the amounts due, the dates on which rents are due, and the details of the landlords. Furthermore, you can also set up the process workflows for rent payments to make the process quicker and more efficient."
-                />
-              </div>
               <div className="mb-3">
                 <Heading
                   size="h5"
@@ -291,7 +284,7 @@ const rentalPayments = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="There are many reasons to pay rent using a credit card."
                 />
               </div>
@@ -299,16 +292,16 @@ const rentalPayments = () => {
                 <ul>
                   <li>
                     Using your credit card and getting a credit period to make
-                    rental payments helps manage your cash flow.
+                    rental payments helps manage your cash flow
                   </li>
                   <li>
                     It is easy to create records and set processes while using a
-                    card to make rental payments.
+                    card to make rental payments
                   </li>
                   <li>
                     It helps to pay rent using credit cards when you are facing
                     a temporary funds crunch and helps in short-term working
-                    capital management.
+                    capital management
                   </li>
                 </ul>
               </div>
@@ -325,29 +318,27 @@ const rentalPayments = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="Here are some of the main reasons to pay rent using the EnKash portal."
                 />
               </div>
               <div className="mb-5">
                 <ul>
                   <li>
-                    It offers an intuitive and quick method of paying rent.
+                    It offers an intuitive and quick method of paying rent
                   </li>
                   <li>
                     The charges to use your credit card on the EnKash portal are
-                    reasonable.
+                    reasonable
                   </li>
                   <li>
                     It is possible to create approval processes to meet auditory
-                    requirements.
+                    requirements
                   </li>
                   <li>
-                    Syncing with your existing ERP or accounting system is easy.
+                    Syncing with your existing ERP or accounting system is easy
                   </li>
-                  <li>
-                    You can generate MIS reports with a few simple clicks.
-                  </li>
+                  <li>You can generate MIS reports with a few simple clicks</li>
                 </ul>
               </div>
 
@@ -363,18 +354,18 @@ const rentalPayments = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="Here are a few one-time steps to set up the process:"
                 />
               </div>
               <div className="mb-5">
                 <ul>
-                  <li>Set up processes and workflows and upload records.</li>
-                  <li>Set maker-checker-approver matrices.</li>
-                  <li>Define centralized and decentralized processes.</li>
+                  <li>Set up processes and workflows and upload records</li>
+                  <li>Set maker-checker-approver matrices</li>
+                  <li>Define centralized and decentralized processes</li>
                   <li>
                     Include details like GST, TDS, and other factors applicable
-                    to your rental amounts.
+                    to your rental amounts
                   </li>
                 </ul>
               </div>
@@ -391,7 +382,7 @@ const rentalPayments = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="You can make multiple rental payment for business through credit cards on the EnKash portal by using our bulk payment option. To do that, ensure that all rental agreements and details are uploaded. Once the records are uploaded, it is simply a matter of setting limits and getting approvals to pay using the card as described above. 
 
                   Before making the payment, fetch rental records, view the records, adjust for deductions, advance payments, taxes, etc, and get approvals for payments
@@ -401,10 +392,10 @@ const rentalPayments = () => {
               </div>
               <div className="mb-5">
                 <ul>
-                  <li>Select the rental bills you want to pay.</li>
-                  <li>Input your credit card details and request OTP.</li>
+                  <li>Select the rental bills you want to pay</li>
+                  <li>Input your credit card details and request OTP</li>
                   <li>
-                    Enter OTP and complete the bulk rental payment in one click.
+                    Enter OTP and complete the bulk rental payment in one click
                   </li>
                 </ul>
               </div>
@@ -421,7 +412,7 @@ const rentalPayments = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="There are many benefits of rent payment through credit card, which include the following:"
                 />
               </div>
@@ -429,14 +420,14 @@ const rentalPayments = () => {
                 <ul>
                   <li>
                     Smart utilization of funds by getting access to additional
-                    working capital easily.
+                    working capital easily
                   </li>
                   <li>
                     With well-timed payments, you can get a free credit period
-                    to repay the amount.
+                    to repay the amount
                   </li>
                   <li>
-                    Automatic recording of payments with a portal like EnKash.
+                    Automatic recording of payments with a portal like EnKash
                   </li>
                 </ul>
               </div>
@@ -453,7 +444,7 @@ const rentalPayments = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="If you are using EnKash portal to make online rent payments, it is a matter of a few clicks to download the rental payment receipts. You will be intimated via email of your rental payment along with an attached receipt."
                 />
               </div>
@@ -470,7 +461,7 @@ const rentalPayments = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="Automated rental payments are a convenient and efficient way for businesses to collect payments. These can reduce the late payment charges and eliminate the need to pay cheques or cash each month manually. Additionally, automated rental payments help businesses save time and simplify accounting and record-keeping."
                 />
               </div>
