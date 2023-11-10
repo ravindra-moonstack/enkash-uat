@@ -1,36 +1,33 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Open-a-virtual-bank-account-now-to-manage-your-business-expenses.jpg",
-    imageAlt:
-      "Open a Virtual Bank Account for Business and Manage Expense Better",
-    title: "Open a Virtual Bank Account for Business and Manage Expense Better",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/12/What-is-Vendor-payment.jpg",
+    imageAlt: "What is Vendor Payment and How Does It Work?",
+    title: "What is Vendor Payment and How Does It Work?",
     date: "Dec 21, 2023",
     description:
-      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
+      "Accounts payable is a vital part of a firm’s operation and is responsible for processing the payment to the vendors. In addition, it is responsible for making virtual payments that...",
+    link: "https://www.enkash.com/resources/blog/how-does-vendor-payment-work/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
-    imageAlt:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
-    title:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_37.5e69915c-scaled.jpg",
+    imageAlt: "Enhance your Productivity with Vendor Payment Automation",
+    title: "Enhance your Productivity with Vendor Payment Automation",
     date: "Dec 21, 2023",
     description:
-      "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
-    link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
+      "It is rightly said that one must have a supplier relationship of continuous improvement to create an agile process of procuring to pay process flow and in turn, boost business growth...",
+    link: "https://www.enkash.com/resources/blog/enhance-productivity-with-vendor-payment-automation/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
-    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
-    title: "Learn How Virtual Accounts Can Benefit Your Business",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Role-of-vendor-payments-in-customer-experience.jpg",
+    imageAlt: "The Role of Vendor Payments in Customer Experience",
+    title: "The Role of Vendor Payments in Customer Experience",
     date: "Dec 21, 2023",
     description:
-      "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
-    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+      "If you are a startup, small or medium-sized business, then your main concern is ensuring that you continue to serve your customers seamlessly. As simple as it sounds,...",
+    link: "https://www.enkash.com/resources/blog/role-of-vendor-payments/",
   },
 ];
 

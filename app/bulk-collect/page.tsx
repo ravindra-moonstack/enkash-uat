@@ -124,13 +124,7 @@ const bulkCollect = () => {
               newWayDescription:
                 "Simplify the reconciliation process with bulk collect by tracking and consolidating payments, making it easier for businesses to track and manage their finances",
             },
-            {
-              itemArray: ["Limitations"],
-              oldWayDescription:
-                "Face limitations due to restrictions of certain food shops",
-              newWayDescription:
-                "Fewer restrictions due to the broader acceptability of meal cards across outlets",
-            },
+
             {
               itemArray: ["Accuracy &", "Speed"],
               oldWayDescription:
@@ -277,23 +271,16 @@ const bulkCollect = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of bulk collect?"
+          description="Bulk collect is an automation feature in EnKash Olympus that sends invoices to multiple customers in one click. This enables businesses to quickly follow up with the customer and keep a check on their business cash flow"
+        />
+      </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Seeking further understanding of bulk collect? Explore the comprehensive guide"
+          title="Explore the comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Bulk collect is an automation feature in EnKash Olympus that sends invoices to multiple customers in one click. This enables businesses to quickly follow up with the customer and keep a check on their business cash flow"
-                />
-              </div>
               <div className="mb-3">
                 <Heading
                   size="h5"

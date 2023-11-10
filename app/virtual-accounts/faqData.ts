@@ -13,7 +13,11 @@ const faqData = [
     answer: [
       {
         heading:
-          "A virtual account is not a traditional bank account, but it is a financial tool used by banks, fintechs, and businesses to manage funds and transactions. Virtual account is used for various purposes, such as receivables and payables, segregating funds, simplifying reconciliation, and improving cash flow management.\nUnder receivables, it lets the account holders and those interacting with it make and receive payments quickly. For instance, if you have several customers who have to make payments to your account, you can create virtual accounts within your business bank account and embed the link in the invoice that you send to customers. When customers remit the payment using the link, it will make it easier to track the payment to the customer and reconcile accounts.",
+          "A virtual account is not a traditional bank account, but it is a financial tool used by banks, fintechs, and businesses to manage funds and transactions. Virtual account is used for various purposes, such as receivables and payables, segregating funds, simplifying reconciliation, and improving cash flow management.",
+      },
+      {
+        heading:
+          "Under receivables, it lets the account holders and those interacting with it make and receive payments quickly. For instance, if you have several customers who have to make payments to your account, you can create virtual accounts within your business bank account and embed the link in the invoice that you send to customers. When customers remit the payment using the link, it will make it easier to track the payment to the customer and reconcile accounts.",
       },
     ],
   },

@@ -1,36 +1,34 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Open-a-virtual-bank-account-now-to-manage-your-business-expenses.jpg",
-    imageAlt:
-      "Open a Virtual Bank Account for Business and Manage Expense Better",
-    title: "Open a Virtual Bank Account for Business and Manage Expense Better",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/09/How-to-Collect-Payment-on-Time-for-Business-Success-1.jpg",
+    imageAlt: "How to Collect Payment on Time for Business Success",
+    title: "How to Collect Payment on Time for Business Success",
     date: "Dec 21, 2023",
     description:
-      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
+      "An effective business model, whether business-to-customer, online, retail, wholesale, or business-to-business, requires a solid solution to collect payments. In most cases...",
+    link: "https://www.enkash.com/resources/blog/how-to-collect-payment-on-time-for-business-success/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Can-technology-make-the-collect-and-track-payment-process-easier.jpg",
     imageAlt:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
-    title:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+      "Can Technology Make the Collect and Track Payment Process Easier?",
+    title: "Can Technology Make the Collect and Track Payment Process Easier?",
     date: "Dec 21, 2023",
     description:
-      "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
-    link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
+      "f you are part of the finance team in a startup, you know that collections are probably the lifeblood of the company apart from being the toughest function.  Thankfully today...",
+    link: "https://www.enkash.com/resources/blog/can-technology-make-collect-and-track-process-easier/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
-    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
-    title: "Learn How Virtual Accounts Can Benefit Your Business",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Possibilities-of-bulk-payment.jpg",
+    imageAlt: "Explore a Wide Range of Possibilities with Bulk Payment",
+    title: "Explore a Wide Range of Possibilities with Bulk Payment",
     date: "Dec 21, 2023",
     description:
-      "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
-    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+      "As the name suggests, a bulk payment refers to a payment method that lets the payer make multiple debit payments to a bulk list. A bulk list is a list of beneficiaries or accounts..",
+    link: "https://www.enkash.com/resources/blog/possibilities-with-bulk-payment/",
   },
 ];
 

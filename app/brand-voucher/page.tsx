@@ -54,7 +54,7 @@ const brandVoucher = () => {
             weight="7"
           />
           <Heading
-            title={`a wide range of Exclusive${space}`}
+            title={`a wide range of exclusive${space}`}
             color="white"
             size="h2"
             weight="7"
@@ -117,7 +117,7 @@ const brandVoucher = () => {
                 "Redeem vouchers effortlessly with just a few clicks during online purchases or in-store transactions",
             },
             {
-              itemArray: ["Freedom", "of", "Choice"],
+              itemArray: ["Freedom of", "Choice"],
               oldWayDescription:
                 "Voucher limitations and restrictions can hinder your ability to choose freely",
               newWayDescription:
@@ -146,13 +146,13 @@ const brandVoucher = () => {
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Let them Choose their Adventure with our Exclusive Range of"
+            title="Let them choose their adventure with our exclusive range of"
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}Brand Vouchers`}
+            title={`${space}brand vouchers`}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -168,7 +168,7 @@ const brandVoucher = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Flexible Denominations"
-              description="Brand vouchers can be availed in multiple flexible denominations as per budget."
+              description="Brand vouchers can be availed in multiple flexible denominations as per budget"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -193,13 +193,13 @@ const brandVoucher = () => {
               <div className="text-center">
                 <div className="text-center d-inline flex-column">
                   <Heading
-                    title={`EnKash makes it easy to${space}`}
+                    title={`Explore exclusive${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="purchase and use"
+                    title="brand vouchers"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -207,7 +207,7 @@ const brandVoucher = () => {
                 </div>
                 <div>
                   <Heading
-                    title="brand vouchers"
+                    title="with huge discounts across various categories"
                     color="white"
                     size="h1"
                     weight="6"
@@ -257,23 +257,16 @@ const brandVoucher = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of brand vouchers?"
+          description="Brand vouchers are prepaid instruments created to provide discounts on purchasing specific products and services following their terms and conditions."
+        />
+      </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Seeking further understanding of brand vouchers? Explore the comprehensive guide"
+          title="Explore the comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h4"
-                  color="black"
-                  weight="6"
-                  title="Brand vouchers are prepaid instruments created to provide discounts on purchasing specific products and services following their terms and conditions."
-                />
-              </div>
               <div className="mb-2">
                 <Heading
                   size="h5"

@@ -7,7 +7,7 @@ const blogData = [
     title: "Open a Virtual Bank Account for Business and Manage Expense Better",
     date: "Dec 21, 2023",
     description:
-      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
+      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts. Open a virtual bank...",
     link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
   },
   {

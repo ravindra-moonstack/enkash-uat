@@ -185,7 +185,22 @@ const virtualAccounts = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Overall Visibility"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Overall"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Visibility"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Virtual accounts ensure you have overall visibility into activities like collections and cash flow usage in a few simple clicks"
             />
           </div>
@@ -211,7 +226,7 @@ const virtualAccounts = () => {
                     weight="6"
                   />
                   <Heading
-                    title="Bsuiness Collection Processes"
+                    title="Business Collection Processes"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -239,7 +254,7 @@ const virtualAccounts = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about meal cards in detail"
+            title="Don't worry! Our FAQs section will help you learn about virtual accounts in detail"
             color="black"
             size="h4"
           />
@@ -261,23 +276,17 @@ const virtualAccounts = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of virtual accounts?"
+          description="Virtual accounts basically function as an electronically usable payment and collection instrument, which can be formed as a subset of your core bank account. A virtual account contains a series of unique sets of codes that in most instances are numerical"
+        />
+      </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Seeking further understanding of virtual accounts? Explore the comprehensive guide"
+          title="Explore the comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h4"
-                  color="black"
-                  weight="6"
-                  title="Virtual accounts basically function as an electronically usable payment and collection instrument, which can be formed as a subset of your core bank account. A virtual account contains a series of unique sets of codes that in most instances are numerical"
-                />
-              </div>
+              
               <div className="mb-3">
                 <Heading
                   size="h5"

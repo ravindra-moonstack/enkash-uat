@@ -5,11 +5,14 @@ const faqData = [
       {
         heading:
           "A brand voucher or gift voucher is a promotional offer by brands to provide discounts on specified products and services. We feature a curated selection of brands, including Amazon Gift Vouchers, Flipkart Gift Vouchers, Myntra Gift Vouchers, Lifestyle Vouchers, and more.",
-        bullets: [
+      },
+      {
+        heading:
           "Leverage your employee reward points to acquire these E-gift vouchers.",
-          "Each brand has its unique redemption guidelines. To ensure a seamless experience, take a moment to read the 'Terms & Conditions' and 'How to Redeem' sections specific to the brand of your choice.",
-          "Elevate your game with E-gift vouchers, available exclusively on EnKash.",
-        ],
+      },
+      {
+        heading:
+          "It's essential to note that each brand has its unique redemption guidelines. To ensure a seamless experience, take a moment to read the 'Terms & Conditions' and 'How to Redeem' sections specific to the brand of your choice. Elevate your game with E-gift vouchers, available exclusively on EnKash.",
       },
     ],
   },

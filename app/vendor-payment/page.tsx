@@ -46,7 +46,7 @@ const vendorPayment = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Vendor Payments" size="h4" weight="4" />
+            <Heading title="Vendor Payment" size="h4" weight="4" />
           </div>
           <Heading
             title={`Transform your business today with automated${space}`}
@@ -101,29 +101,29 @@ const vendorPayment = () => {
             {
               itemArray: ["Data", "Entry"],
               oldWayDescription:
-                "Manual data entry delays the entire payment process.",
+                "Manual data entry delays the entire payment process",
               newWayDescription:
-                "Saves time and money by processing all invoices digitally.",
+                "Saves time and money by processing all invoices digitally",
             },
             {
               itemArray: ["Approval", "Workflows"],
               oldWayDescription:
-                "Scattered process to track approval of invoices via emails or verbally.",
+                "Scattered process to track approval of invoices via emails or verbally",
               newWayDescription:
-                "Streamlined process with defined roles like maker, checker, and approvers.",
+                "Streamlined process with defined roles like maker, checker, and approvers",
             },
             {
               itemArray: ["Risk and", "Errors"],
               oldWayDescription:
-                "Difficult to catch errors and discrepancies in each invoice.",
+                "Difficult to catch errors and discrepancies in each invoice",
               newWayDescription:
-                "Low or zero chances of errors in invoices due to automation.",
+                "Low or zero chances of errors in invoices due to automation",
             },
             {
               itemArray: ["Bulk", "Payments"],
               oldWayDescription:
-                "Manual intervention for bulk payments and limited payment options.",
-              newWayDescription: "Make bulk vendor payments with a single OTP.",
+                "Manual intervention for bulk payments and limited payment options",
+              newWayDescription: "Make bulk vendor payments with a single OTP",
             },
           ]}
         />
@@ -149,7 +149,22 @@ const vendorPayment = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Vendor KYC"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Vendor"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="KYC"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Collect and verify essential information about your vendors and suppliers before onboarding them onto the platform to ensure hassle-free transactions"
             />
           </div>
@@ -188,7 +203,22 @@ const vendorPayment = () => {
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Virtual Cards"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Virtual"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Cards"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Access to a virtual card for payment decentralization/ branch payments/department-wise payments"
             />
           </div>
@@ -244,7 +274,7 @@ const vendorPayment = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about brand vouchers in detail"
+            title="Don't worry! Our FAQs section will help you learn about vendor payment in detail"
             color="black"
             size="h4"
           />
@@ -266,23 +296,16 @@ const vendorPayment = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of vendor payments?"
+          description="Vendor payments are accounts payable or invoices to pay, which refer to compensating suppliers for the goods or services they provide to your business. Maintaining a good relationship with your suppliers while ensuring you don’t have responsibilities for an extended time is possible by managing your vendor payments methodically and timely. This keeps businesses of all kinds running as efficiently & effectively as possible."
+        />
+      </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Seeking further understanding of vendor payments? Explore the comprehensive guide."
+          title="Explore the comprehensive guide."
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h4"
-                  color="black"
-                  weight="6"
-                  title="Vendor payments are accounts payable or invoices to pay, which refer to compensating suppliers for the goods or services they provide to your business. Maintaining a good relationship with your suppliers while ensuring you don’t have responsibilities for an extended time is possible by managing your vendor payments methodically and timely. This keeps businesses of all kinds running as efficiently & effectively as possible."
-                />
-              </div>
               <div className="mb-2">
                 <Heading
                   size="h5"

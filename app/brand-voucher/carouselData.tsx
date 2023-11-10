@@ -23,8 +23,8 @@ const carouselData = [
   },
   {
     image: iconFour,
-    alt: "Redeem the brand voucher",
-    title: "Redeem the brand voucher on the brand's website or physical store",
+    alt: "Go to the cart and pay using any of the available payment methods",
+    title: "Go to the cart and pay using any of the available payment methods",
   },
   {
     image: iconFive,

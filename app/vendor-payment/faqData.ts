@@ -4,7 +4,11 @@ const faqData = [
     answer: [
       {
         heading:
-          "Vendor payment refers to the process of disbursing funds from a business or organization to its suppliers or vendors in exchange for goods or services that have been provided. It's a critical aspect of the procure-to-pay cycle in business operations. EnKash’s vendor payment solution focuses on helping businesses manage vendors end-to-end. You can use the bulk payout option for regular and repetitive vendor payments.Efficient vendor pay systems help organizations maintain strong vendor relationships, optimize cash flow, negotiate favorable payment terms, and ensure compliance with contractual agreements.Automation and integration with financial systems enhance the accuracy and efficiency of the vendor payment process.",
+          "Vendor payment refers to the process of disbursing funds from a business or organization to its suppliers or vendors in exchange for goods or services that have been provided. It's a critical aspect of the procure-to-pay cycle in business operations. EnKash’s vendor payment solution focuses on helping businesses manage vendors end-to-end. You can use the bulk payout option for regular and repetitive vendor payments.",
+      },
+      {
+        heading:
+          "Efficient vendor pay systems help organizations maintain strong vendor relationships, optimize cash flow, negotiate favorable payment terms, and ensure compliance with contractual agreements. Automation and integration with financial systems enhance the accuracy and efficiency of the vendor payment process.",
       },
     ],
   },
@@ -72,7 +76,11 @@ const faqData = [
     answer: [
       {
         heading:
-          "Vendor reconciliation, also known as supplier reconciliation, is the process of comparing and verifying the financial records and transactions between a company and its vendors or suppliers. The goal of vendor reconciliation is to ensure that the financial statements of both parties align and that any discrepancies or differences are identified and resolved accurately.Vendor reconciliation is a critical aspect of maintaining financial integrity, controlling costs, and managing relationships with suppliers.It helps in detecting errors, avoiding overpayments or underpayments, and ensuring that the financial statements accurately represent the company's liabilities and financial position concerning its vendors.",
+          "Vendor reconciliation, also known as supplier reconciliation, is the process of comparing and verifying the financial records and transactions between a company and its vendors or suppliers. The goal of vendor reconciliation is to ensure that the financial statements of both parties align and that any discrepancies or differences are identified and resolved accurately.",
+      },
+      {
+        heading:
+          "Moreover, vendor reconciliation is a critical aspect of maintaining financial integrity, controlling costs, and managing relationships with suppliers. It helps in detecting errors, avoiding overpayments or underpayments, and ensuring that the financial statements accurately represent the company's liabilities and financial position concerning its vendors.",
       },
     ],
   },
