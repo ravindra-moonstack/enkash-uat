@@ -46,7 +46,7 @@ const loyaltyLoungeProducts = [
         description: "Easy to use gifting solution",
         imageSrc: giftCards,
         imageSrcHovered: giftCardFilled,
-        link: "/404",
+        link: "/gift-cards",
       },
       {
         name: "Offers",
