@@ -72,7 +72,7 @@
   }
 
   .section {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     @include bp-md {
       margin-bottom: 50px;
     }
@@ -138,7 +138,6 @@
 
 .fourth_row {
   background-color: $color-indi-volt;
-
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 36px;
@@ -151,8 +150,10 @@
   }
 
   .lottie_container {
-    padding-left: 50px;
-    padding-right: 50px;
+    @include bp-md {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
   }
   .lottie_second_container {
     padding-top: 30px;

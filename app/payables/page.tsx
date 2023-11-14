@@ -168,7 +168,7 @@ const payables = () => {
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 px-5 my-md-5 my-3">
+          <div className="col-md-6 col-12  my-md-5 my-3">
             <ExploreCard
               title="Bulk Payouts"
               description="Enable bulk payouts and make payments to vendors, billers & more via payment modes of your choice"
