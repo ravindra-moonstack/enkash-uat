@@ -1,25 +1,41 @@
-import rupeeIcon from "./img/rupee-icon.png";
-import watch from "./img/watch-icon.png";
-import cubeIcon from "./img/cube-icon.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
 
 const dataSets = [
   {
-    imageSrc: rupeeIcon,
-    altText: "Automate repetitive and other payments",
+    imageSrc: iconOne,
+    altText:
+      "Easy automation and quick validation: Automate all your business-related payments",
     heading:
-      "Automate repetitive and other payments that occur at regular intervals",
+      "Easy automation and quick validation: Automate all your business-related payments after validating the receiver’s information",
   },
   {
-    imageSrc: watch,
-    altText: "Ensure timely payments",
+    imageSrc: iconTwo,
+    altText: "Smooth transactions: Pay your monthly vendor bills",
     heading:
-      "Ensure timely payments, spend optimization, and reduced paperwork.",
+      "Smooth transactions: Pay your monthly vendor bills, utility bills, and rental bills directly to the recipient’s account",
   },
   {
-    imageSrc: cubeIcon,
-    altText: "Simplify your payables systems",
+    imageSrc: iconThree,
+    altText:
+      "One-click payment: Pay multiple bills and vendors in a single-click simultaneously",
     heading:
-      "Simplify your payables systems and focus on the core of your business.",
+      "One-click payment: Pay multiple bills and vendors in a single-click simultaneously",
+  },
+  {
+    imageSrc: iconFour,
+    altText: "Timely payments: Pay all your business-related utility bills",
+    heading:
+      "Timely payments: Pay all your business-related utility bills, rental payments, vendor payments, and GST payments by easily uploading them.Single dashboard: View, track, and reconcile all the payments made from a single dashboard",
+  },
+  {
+    imageSrc: iconFive,
+    altText: "Single dashboard: View, track, and reconcile all the payments",
+    heading:
+      "Single dashboard: View, track, and reconcile all the payments made from a single dashboard",
   },
 ];
 

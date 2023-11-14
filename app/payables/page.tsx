@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./page.module.scss";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -11,37 +9,43 @@ import {
   cardBg,
   faqBg,
   whiteArrow,
-  bannerAnimation,
-  virtualCardAnimation,
-  travelCardAnimation,
-  spendAnimation,
-  digitalAnimation,
-  saasAnimation,
   office,
   settingIcon,
   cashAndTime,
   coinIcon,
   officeImg,
+  bannerAnimation,
+  vendorPayAnimation,
+  rentalPayAnimation,
+  bulkPayAnimation,
+  billPayAnimation,
+  taxPayAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import BlogCard from "@/components/blog/blog-card/blog-card";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import Lottie from "lottie-react";
 import faqData from "./faqData";
 import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-
 import ActionCard from "@/components/action-card/action-card";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Account Payable: Streamline your Outgoing Payments | Enkash",
+  description:
+    "Streamline Your Accounts Payable Process with Our Expert Service. From Invoice Verification to Timely Payments, Trust Us for Efficient Financial Management. Get Started Today",
+};
 
 const payables = () => {
   return (
-    <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+    <div className={`color-white ${styles.home_container}`}>
       <div className="mobile-header">
         <MobileHeader />
       </div>
@@ -59,7 +63,7 @@ const payables = () => {
           </div>
           <div className="d-iline">
             <Heading
-              title={`Streamline all your business payments${space}`}
+              title={`Streamline all accounts payable${space}`}
               color="white"
               size="h2"
               weight="7"
@@ -73,7 +77,7 @@ const payables = () => {
           </div>
           <div className={`mt-4 ${styles.desktop_description}`}>
             <Heading
-              title="Pay vendors, utility bills, taxes and more using payment methods of your choice. When you work on EnKash, cost reductions, optimized workflows and timely payments come to your business naturally."
+              title="Pay vendors, utility bills, rental payments, taxes, and more using payment methods of your choice. With EnKash, cost reductions, optimized workflows, and timely payments come to your business naturally"
               color="white"
               size="h6"
               weight="5"
@@ -81,7 +85,7 @@ const payables = () => {
           </div>
           <div className={`mt-4 ${styles.mobile_description}`}>
             <Heading
-              title="Choose from unique card offerings and solutions that cover a range of business spends such as travel, subscriptions, marketing, GST, procurement, and more."
+              title="Pay vendors, utility bills, rental payments, taxes, and more using payment methods of your choice. With EnKash, cost reductions, optimized workflows, and timely payments come to your business naturally"
               color="white"
               size="h5"
               weight="5"
@@ -102,11 +106,12 @@ const payables = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <Lottie
-            animationData={bannerAnimation}
-            loop={true}
-            className={styles.lottie_container}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent
+              animationData={bannerAnimation}
+              loop={true}
+            />
+          </div>
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
@@ -117,7 +122,7 @@ const payables = () => {
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
               title="Vendor Payments"
-              description="Keep track of all your vendor bills, get automated updates about upcoming payments, and simplify bulk vendor payments with a single click."
+              description="Keep track of all your vendor bills, get automated updates about upcoming payments, and simplify bulk vendor payments with a single click"
               theme="blue"
             />
           </div>
@@ -129,11 +134,12 @@ const payables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie
-              animationData={virtualCardAnimation}
-              loop={true}
-              className={styles.lottie_container}
-            />
+            <div className={styles.lottie_container}>
+              <LottieClientComponent
+                animationData={vendorPayAnimation}
+                loop={true}
+              />
+            </div>
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
@@ -146,11 +152,12 @@ const payables = () => {
               className={styles.card_bg}
             />
 
-            <Lottie
-              animationData={travelCardAnimation}
-              loop={true}
-              className={styles.lottie_container}
-            />
+            <div className={styles.lottie_container}>
+              <LottieClientComponent
+                animationData={rentalPayAnimation}
+                loop={true}
+              />
+            </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
@@ -164,7 +171,7 @@ const payables = () => {
           <div className="col-md-6 col-12 px-5 my-md-5 my-3">
             <ExploreCard
               title="Bulk Payouts"
-              description="Enable bulk payouts and make payments to vendors, billers & more via payment modes of your choice."
+              description="Enable bulk payouts and make payments to vendors, billers & more via payment modes of your choice"
               theme="blue"
             />
           </div>
@@ -176,7 +183,10 @@ const payables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={spendAnimation} loop={true} />
+            <LottieClientComponent
+              animationData={bulkPayAnimation}
+              loop={true}
+            />
           </div>
         </div>
       </div>
@@ -184,13 +194,16 @@ const payables = () => {
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
           <div className={styles.lottie_container}>
-            <Lottie animationData={saasAnimation} loop={true} />
+            <LottieClientComponent
+              animationData={billPayAnimation}
+              loop={true}
+            />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="Bill Payments"
-            description="Automate different kinds of bill payments and ensure on-time payments. Every time."
+            title="Bill payments"
+            description=" Easily manage recurring bills like utility, electricity, etc"
             theme="green"
           />
         </div>
@@ -198,13 +211,16 @@ const payables = () => {
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
             title="Tax Payments"
-            description="Ensure an audit-compliant and seamless tax payment process for timely remittance."
+            description="Ensure an audit-compliant and seamless GST payment process for timely remittance"
             theme="green"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
-            <Lottie animationData={digitalAnimation} loop={true} />
+            <LottieClientComponent
+              animationData={taxPayAnimation}
+              loop={true}
+            />
           </div>
         </div>
       </div>
@@ -213,15 +229,9 @@ const payables = () => {
         <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
           <div className="d-inline text-center">
             <Heading
-              title={`Streamlined and expedited payouts,${space}`}
+              title={`Streamline your accounts payable${space}`}
               size="h1"
               color="black"
-              weight="6"
-            />
-            <Heading
-              title={`with no delays.${space}`}
-              size="h1"
-              color="equity-blue"
               weight="6"
             />
           </div>
@@ -235,9 +245,9 @@ const payables = () => {
           <div className="md:mb-0 mb-4 text-md-center">
             <Image src={coinIcon} alt="coins icon" className="md:mb-0 mb-4" />
             <div className="d-flex flex-md-column flex-row">
-              <Heading title="Enhanced" size="h5" color="white" weight="7" />
+              <Heading title="Cost" size="h5" color="white" weight="7" />
               <Heading
-                title={`${space}Savings`}
+                title={`${space}reduction`}
                 size="h5"
                 color="white"
                 weight="7"
@@ -249,7 +259,7 @@ const payables = () => {
             <div className="d-flex flex-md-column flex-row">
               <Heading title="Optimized" size="h5" color="white" weight="7" />
               <Heading
-                title={`${space}Workflow`}
+                title={`${space}workflow`}
                 size="h5"
                 color="white"
                 weight="7"
@@ -265,7 +275,7 @@ const payables = () => {
             <div className="d-flex flex-md-column flex-row">
               <Heading title="Timely" size="h5" color="white" weight="7" />
               <Heading
-                title={`${space}Payouts`}
+                title={`${space}payments`}
                 size="h5"
                 color="white"
                 weight="7"
@@ -278,39 +288,33 @@ const payables = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Data", "Entry", "Techniques"],
+              itemArray: ["Data Entry", "Techniques"],
               oldWayDescription:
-                "Manual invoice processing and data entries impede the reconciliation process. It is time-consuming, error-prone, and can result in delayed payments.",
+                "Manual invoice processing and data entries are time-consuming, error-prone, and can result in delayed payments",
               newWayDescription:
-                "Harness technology to process invoices digitally; Save time and money. Automating the invoicing process can help reduce manual efforts, increase efficiency, and improve productivity.",
+                "Automate vendor onboarding, check incoming invoices, and get approvals to help reduce manual efforts and save time and money",
             },
             {
-              itemArray: ["Process", "&", "Hierarchy"],
+              itemArray: ["Process &", "Hierarchy"],
               oldWayDescription:
-                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
+                "Traditional payment in accounting processes requires contacting multiple POCs, which can be time-consuming",
               newWayDescription:
-                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
+                "Set up online approval matrices with an accounts payable automation platform, which enables easy approvals in just a few clicks",
             },
             {
-              itemArray: ["Risk", "and", "Errors"],
+              itemArray: ["Risk &", "Errors"],
               oldWayDescription:
-                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
+                "Manual data entries cause errors in the reconciliation process. It can lead to discrepancies in accounting records, making the reconciliation process time-consuming and challenging",
               newWayDescription:
-                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+                "Automating data entry and receipt management can eliminate errors, improve accuracy, and save time during the reconciliation process",
             },
+
             {
-              itemArray: ["Financial", "Control"],
+              itemArray: ["Bulk Vendor", "Payments"],
               oldWayDescription:
-                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Making vendor payments individually causes unnecessary delays",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
-            },
-            {
-              itemArray: ["Bulk", "Vendor", "Payments"],
-              oldWayDescription:
-                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
-              newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+                "Make bulk payouts to vendors and billers with a single-click OTP system",
             },
           ]}
         />
@@ -324,7 +328,7 @@ const payables = () => {
               <div className="d-flex flex-column">
                 <Heading title="Complete" color="white" size="h1" weight="5" />
                 <Heading
-                  title={`${space}Transparency`}
+                  title="Transparency"
                   color="electric-green"
                   size="h1"
                   weight="5"
@@ -341,22 +345,58 @@ const payables = () => {
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Regulate Payments"
-              description="Set checking and approval matrices for timely payments, discover improved spend control and eliminate manual errors."
+              whiteTitle="Faster & Accurate Payments"
+              description="Automating the payables process fastens it by eliminating manual intervention. It also reduces the chances of errors"
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Automate Reminders"
-              description="Never miss a payment again with auto-fetch and timely reminders. Make on-time payments towards vendors, rent, taxes and more, every time."
+              titleHtml={
+                <>
+                  <Heading
+                    title="Spend"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="visibility"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </>
+              }
+              description="A centralized view of the business spend trends can be checked on the same dashboard"
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Approval Flow"
-              description="Approval workflows make managing and optimizing expenses easier. Set approval limits, create hierarchies, avoid delays and reduce errors with set rules."
+              whiteTitle="Remote Operations"
+              description="Teams from different locations can access and share files from anywhere and process payments easily"
+              ctaColor="blue"
+            />
+          </div>
+          <div className="me-4">
+            <GetStartedCard
+              whiteTitle="Effective invoice & vendor management"
+              description="Easily upload vendor invoices, do vendor KYC and review vendor performance to manage them better"
+              ctaColor="blue"
+            />
+          </div>
+          <div className="me-4">
+            <GetStartedCard
+              whiteTitle="Early payment discount"
+              description="Set payment reminders and make vendor payments early to avail trade discount"
+              ctaColor="blue"
+            />
+          </div>
+          <div className="me-4">
+            <GetStartedCard
+              whiteTitle="Streamlining approval workflows"
+              description="A streamlined approval process can significantly reduce processing time and minimize the risk of delayed payments"
               ctaColor="blue"
             />
           </div>
@@ -375,7 +415,7 @@ const payables = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about expense in detail."
+            title="Don't worry! Our FAQs Section will Help you Learn about Accounts Payables in detail."
             color="black"
             size="h4"
           />
@@ -414,10 +454,238 @@ const payables = () => {
       </div>
 
       <div className="row">
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Learn about account payables automation for enhanced efficiency"
+          description="Accounts payable automation is the process by which a business pays its suppliers, service providers, and vendors online"
+        />
+      </div>
+      <div className="row">
+        <ComprehensiveView
+          title="Explore the comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What is accounts payable automation?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Accounts payable automation means using technology to make business payments, which include vendor payments, rental payments, bill payments, tax payments, and utility payments. Accounts payable automation helps make business payments easy and efficient."
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What is accounts payable process?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The accounts payable process in most businesses starts with the request to source a vendor or supplier to provide either goods or services."
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Vendor evaluation, assessment of landlords and service
+                    providers
+                  </li>
+                  <li>
+                    Onboard vendors, add rental properties, register utility
+                    providers, and more
+                  </li>
+                  <li>
+                    Start the process of obtaining goods and the start of
+                    services
+                  </li>
+                  <li>
+                    Collect all the bills and invoices for payments due when the
+                    time for payment is due
+                  </li>
+                  <li>
+                    Check if the invoices, bills, and rent amounts due are
+                    correct
+                  </li>
+                  <li>
+                    Complete the payments to utilities, vendors, rentals, etc.,
+                    after checks and approvals
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the benefits of accounts payable automation"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The benefits of accounts payable automation include:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Reduced prices and on-time payment rebates due to long-term
+                    contracts and better negotiation
+                  </li>
+
+                  <li>
+                    Better productivity of the finance team as accounts payable
+                    automation reduces the amount of mundane manual work
+                  </li>
+
+                  <li>
+                    Streamlined spend and better audit preparation due to the
+                    approval matrices and checks in place
+                  </li>
+
+                  <li>
+                    Increased ability to meet the needs of internal and external
+                    customers
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What is an accounts payable invoice?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="An accounts payable invoice is a bill raised for the goods or services your company has availed. In most instances, it is a continued service or purchase that occurs at regular intervals rather than a singular purchase. Accounts payable invoices are raised once the agreed-upon credit period agreed upon comes to an end, and the payment becomes due."
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="An ideal accounts payable invoice contains details like the name, address, and other details of the vendor or supplier. It also includes the order number or ID to ensure that you can trace it back to get the payment process started. The invoice also includes documents like goods received acknowledgment as proof of delivery completion."
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The accounts payable invoice has details of any changes to the order in terms of quality and quantity. Once these details are covered, the invoice will state the rate agreed upon, the quantity delivered, and the total amount due. Details like service charges, GST, and other taxes can also be added."
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The accounts payable invoice also includes details on how to make the payment, like the bank name, name of the bank account holder, bank account number, the IFSC code, and the various options to complete the payment. Businesses can use accounts payable invoice automation with a payment link to speed up the process of completing payment."
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What is an example of accounts payable?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="show with design"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What is the invoice management process?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="the invoice management process involves various steps. It starts with retrieving invoices from vendors, collecting bills from utility providers and rental dues, and then parsing the invoice or bills for details to confirm it is correct. After this, the invoice, bill, or payment request is sent to the department, which requests to confirm that the goods or services were received or services used as stated in the bill or invoice."
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="In case of any discrepancies, a request is made to change the amount due on the invoice. Once all the details are settled, a final check is made, a payment approval request is raised, and once approved, payment is made. After the payment, proof of payment and invoice is filed with the order reference numbers in place, along with the approval trail for future reference."
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h4"
+                  color="black"
+                  weight="4"
+                  title="What is the relationship between cash flow and accounts payable?"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Accounts payable relates to all the short-term payment
+                    obligations a business has, which results in the outflow of
+                    funds from a business, impacting the cash flow
+                  </li>
+
+                  <li>
+                    Businesses can optimize their accounts payable rebates from
+                    vendors on purchases, which can positively impact the cash
+                    flow
+                  </li>
+
+                  <li>
+                    The accounts payable process constitutes proper negotiation,
+                    and the ability to negotiate prices has a positive impact on
+                    cash flow
+                  </li>
+
+                  <li>
+                    Businesses can establish credit terms in the accounts
+                    payable process, and this can help optimize their cash flow
+                  </li>
+                </ul>
+              </div>
+            </>
+          }
+        />
+      </div>
     </div>
   );
 };

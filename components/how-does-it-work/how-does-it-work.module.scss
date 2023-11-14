@@ -16,7 +16,7 @@
       border-radius: 14.51px;
       background: #0b0b28;
       background: $color-indi-volt;
-      height: 350px;
+      height: 380px;
       border: 2px solid $color-night-blue;
       @include bp-md {
         height: 400px;
@@ -48,13 +48,13 @@
       }
       .icon_img {
         height: 60px;
-        width: 70px;
+        width: auto;
         margin-bottom: 20px;
         margin-top: 20px;
 
         @include bp-md {
-          height: 85px;
-          width: 150px;
+          height: 70px;
+          width: auto;
           margin-bottom: 0px;
           margin-right: 25px;
           margin-top: 0px;

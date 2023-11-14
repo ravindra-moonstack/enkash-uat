@@ -1,47 +1,84 @@
 const faqData = [
   {
-    question: "What are Payables?",
+    question:
+      "How can EnKash improve the efficiency of our accounts payable department?",
     answer: [
       {
         heading:
-          "Payables refer to the financial obligations a business owes to its suppliers, vendors, or creditors. These can include bills, invoices, and other amounts that need to be paid. Managing payables effectively is crucial for maintaining healthy supplier relationships and ensuring timely payments.",
+          "EnKash helps improve the efficiency of the accounts department at all levels, starting from an easy and thorough process from onboarding vendors to making payments to them at the end of each billing cycle. With EnKash, you can be sure that your vendor details are captured accurately, along with the details of the department requesting the goods or services. You can set hierarchies for approvals for quicker payment. Any disputes with vendors can also be raised if required.",
       },
     ],
   },
   {
-    question: "How can Payables streamline business payments?",
+    question: "What accounting systems does EnKash integrate with?",
     answer: [
       {
         heading:
-          "Payables systems streamline business payments by providing a centralized platform for managing and tracking all outgoing payments. This enables businesses to pay invoices, bills, and other financial obligations efficiently, while also optimizing cash flow and taking advantage of early payment discounts.",
+          "EnKash integrates easily with platforms like Tally and enhances your existing banking and accounting experience. Our dedicated technical and customer support team will support you during the time of purchase to understand the integration requirements.",
       },
     ],
   },
   {
-    question: "What are the key benefits of automating Payables?",
+    question: "Does EnKash support automated invoice capture?",
     answer: [
       {
         heading:
-          "Automating Payables offers numerous advantages, including reducing manual data entry, eliminating errors, ensuring compliance with payment terms, and gaining better control over cash flow. It also provides real-time insights into financial obligations, helping businesses make informed payment decisions.",
+          "Once an invoice has been uploaded and scanned using our advanced OCR technology, the EnKash platform will parse through the documents and capture the details in the invoice. The captured invoice information can be used to process the payables further as required.",
+      },
+    ],
+  },
+  {
+    question: "How does the EnKash platform help you manage tax payments?",
+    answer: [
+      {
+        heading:
+          "GST, or Goods and Services Tax, is a consolidated tax that replaced many state-level, central-level and value-added taxes. For any business to continue functioning, it is crucial to pay GST on time and file the return. Moreover, the non-payment of GST can lead to penalties, causing further issues. For the tax payment to go on time, there are various steps involved, which need to take place quickly and without any errors. The process starts by logging into the GST portal, checking the details of the tax amount due, and preparing and downloading a challan. Once the challan is ready, you need to internally get it checked and approved by the requisite authorities and make the payment. Once the payment is completed, it is a good idea to record the maker-checker-approval trail and the related documents.",
+      },
+    ],
+  },
+  {
+    question: "How to manage bill payments with EnKash?",
+    answer: [
+      {
+        heading:
+          "The accounts payable workflow lets you upload and scan the bill or invoice received into the system to create a record against the payment to be made. After this, the approval process begins, depending on the department hierarchy, the criticality of the invoice, and the approval levels set in the system. Once approved, payment can be made using any preferred mode, and the transaction status can be viewed on the dashboard for future reference.",
       },
     ],
   },
   {
     question:
-      "How can businesses improve supplier relationships through Payables?",
+      "How does the EnKash payables solution enable complete transparency?",
     answer: [
       {
         heading:
-          "By using Payables systems, businesses can pay their suppliers on time, establish clear communication channels, and maintain accurate payment records. This fosters trust and reliability, which is essential for building strong, long-term supplier relationships.",
+          "With EnKash, we give total visibility into your spending with smarter controls so that you can make better business decisions. The process of payments starts with recognizing the source to which you make the payment. In this case, it could be a vendor, landlord, utility provider, or trader. Onboarding the vendor ensures that all the relevant departments in the business know who to approach if there are any quality issues or changes in the quantity and quality of supplies. You also have access to a dashboard to get insights on the type of spends that occur and where you can optimize the spends for maximum benefit to the business.",
       },
     ],
   },
   {
-    question: "Can Payables systems help in cost management?",
+    question: "How can a business regulate payments?",
     answer: [
       {
         heading:
-          "Absolutely. Payables systems enable businesses to track expenses, identify spending patterns, and negotiate favorable terms with suppliers. This, in turn, can lead to cost savings and better financial planning.",
+          "By setting up custom approval matrices during accounts payable automation, you can discover improved spend control and eliminate manual errors for timely payments. The platform helps in regulating payments while keeping in mind factors like control, timing, audit trail, and quality. You also get a complete overview of your accounts payable and receivable, which can help you manage your funds better and minimize the stress of arranging working capital.",
+      },
+    ],
+  },
+  {
+    question: "How do automatic reminders work?",
+    answer: [
+      {
+        heading:
+          "Never miss a payment again with auto-fetch and timely reminders. Make on-time payments towards vendors, rent, taxes, and more every time. Most businesses follow a particular cycle and need to be paid at a particular time. EnKash ensures that you get a reminder of when your payments are due so that you can quickly get approvals and make payments to get on-time rebates and ensure continuity.",
+      },
+    ],
+  },
+  {
+    question: "What is the meaning and use of approval flows?",
+    answer: [
+      {
+        heading:
+          "Approval workflows make managing and optimizing expenses easier. Set approval limits, create hierarchies, avoid delays, and reduce errors with set rules. Any business-related payment or the accounts payable cycle starts with approvals. Approval flows are the backbone of sound financial management as they ensure accountability and help you face compliance issues. With accounts payable systems like EnKash, you can choose from various approval matrices and set the approval levels within the system. The idea is to balance spends without sacrificing timely payments or meeting statutory requirements like audit queries.",
       },
     ],
   },

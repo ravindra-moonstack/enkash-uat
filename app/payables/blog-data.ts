@@ -1,36 +1,33 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Open-a-virtual-bank-account-now-to-manage-your-business-expenses.jpg",
-    imageAlt:
-      "Open a Virtual Bank Account for Business and Manage Expense Better",
-    title: "Open a Virtual Bank Account for Business and Manage Expense Better",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/08/account-payable-process.jpg",
+    imageAlt: "A Guide to the Accounts Payable Process",
+    title: "A Guide to the Accounts Payable Process",
     date: "Dec 21, 2023",
     description:
-      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
+      "Efficient cash flow management is the cornerstone of financial success for any business. One crucial aspect of this process is the effective management of accounts payable...",
+    link: "https://www.enkash.com/resources/blog/account-payable-process/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
-    imageAlt:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
-    title:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_1.8652a187.png",
+    imageAlt: "Optimize Your Accounts Payable and Receivable with Automation",
+    title: "Optimize Your Accounts Payable and Receivable with Automation",
     date: "Dec 21, 2023",
     description:
-      "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
-    link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
+      "A successful business is dependent on a variety of factors. While most of those factors can be controlled from within the company itself, cash-flow remains the most pivotal...",
+    link: "https://www.enkash.com/resources/blog/optimize-your-accounts-payable-receivable/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
-    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
-    title: "Learn How Virtual Accounts Can Benefit Your Business",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_13.c5f87d66.png",
+    imageAlt: "Why SMBs Need to Automate Accounts Payables and Receivables",
+    title: "Why SMBs Need to Automate Accounts Payables and Receivables",
     date: "Dec 21, 2023",
     description:
-      "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
-    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+      "Businesses- big or small, need a steady account receivable and payable flow to function. A business’ bottom line may be green at the end of the quarter, but if the cash flow is not...",
+    link: "https://www.enkash.com/resources/blog/why-choose-automated-account-payable-platform/",
   },
 ];
 

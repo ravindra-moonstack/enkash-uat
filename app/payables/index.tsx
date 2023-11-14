@@ -14,9 +14,9 @@ export { default as cashAndTime } from "./img/cash-and-time.png";
 export { default as settingIcon } from "./img/setting-icon.png";
 
 //Animations import
-export { default as travelCardAnimation } from "./img/lottie/travel.json";
-export { default as saasAnimation } from "./img/lottie/saas.json";
-export { default as virtualCardAnimation } from "./img/lottie/virtual.json";
+export { default as billPayAnimation } from "./img/lottie/bill-pay.json";
+export { default as bulkPayAnimation } from "./img/lottie/bulk-pay.json";
+export { default as rentalPayAnimation } from "./img/lottie/rental-pay.json";
 export { default as bannerAnimation } from "./img/lottie/banner.json";
-export { default as spendAnimation } from "./img/lottie/spend.json";
-export { default as digitalAnimation } from "./img/lottie/digital-marketing.json";
+export { default as taxPayAnimation } from "./img/lottie/tax-pay.json";
+export { default as vendorPayAnimation } from "./img/lottie/vendor-pay.json";
