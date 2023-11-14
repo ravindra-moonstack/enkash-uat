@@ -12,6 +12,14 @@
     padding: 20px 60px;
   }
 
+  h4 {
+    font-size: 14px;
+    @include bp-md {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+
   img {
     width: 25px;
     height: 25px;

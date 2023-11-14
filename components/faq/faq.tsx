@@ -7,14 +7,15 @@ import arrowDown from "./img/arrow-down.png";
 
 export interface faq {
   question: string;
-  answer: {
+  answerHTML?: any;
+  answer?: {
     heading?: string;
     bullets?: string[];
   }[];
   answerVisible?: boolean;
 }
 
-const FAQ = ({ question, answer, answerVisible }: faq) => {
+const FAQ = ({ question, answer, answerVisible, answerHTML }: faq) => {
   const [isAnswerVisible, setIsAnswerVisible] = useState(answerVisible);
 
   const toggleAnswerVisibility = () => {
@@ -42,22 +43,25 @@ const FAQ = ({ question, answer, answerVisible }: faq) => {
               isAnswerVisible ? styles.visible : ""
             }`}
           >
-            {answer.map((item, index) => (
-              <div key={index} className="mb-4">
-                {item.heading && (
-                  <h4 className={styles.heading}>{item.heading}</h4>
-                )}
-                {item.bullets && item.bullets.length > 0 && (
-                  <ul>
-                    {item.bullets.map((bullet, bulletIndex) => (
-                      <li key={bulletIndex}>
-                        <h4 className={styles.heading}>{bullet}</h4>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            ))}
+            {!answerHTML &&
+              answer !== undefined &&
+              answer.map((item, index) => (
+                <div key={index} className="mb-4">
+                  {item.heading && (
+                    <h4 className={styles.heading}>{item.heading}</h4>
+                  )}
+                  {item.bullets && item.bullets.length > 0 && (
+                    <ul>
+                      {item.bullets.map((bullet, bulletIndex) => (
+                        <li key={bulletIndex}>
+                          <h4 className={styles.heading}>{bullet}</h4>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            {answerHTML && <>{answerHTML}</>}
           </div>
         </div>
       </div>

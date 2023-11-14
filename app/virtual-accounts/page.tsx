@@ -21,6 +21,7 @@ import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Virtual Account - Open a virtual business account| EnKash",
@@ -261,15 +262,42 @@ const virtualAccounts = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          {faqData.map((item, index) =>
+            index !== 3 ? (
+              <FAQ
+                key={index}
+                question={item.question}
+                answer={item.answer}
+                answerVisible={index === 0}
+              />
+            ) : (
+              <FAQ
+                key={index}
+                question={item.question}
+                answerHTML={
+                  <div key={index} className="mb-4 asas">
+                    <h4 className={styles.heading}>
+                      There are many
+                      <Link
+                        href="https://www.enkash.com/resources/blog/what-is-virtual-account-number/"
+                        target="_blank"
+                      >
+                        {`${space}advantages that virtual accounts offer`}
+                      </Link>
+                      , including ease of use, the ability to offer better
+                      customer service, real-time updating of their accounts
+                      with the payments received, prevention of fraud, and, most
+                      important of all, how traceable virtual accounts are to
+                      specific customer accounts and their payments
+                    </h4>
+                  </div>
+                }
+                answerVisible={true}
+              />
+            )
+          )}
         </div>
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
@@ -286,7 +314,6 @@ const virtualAccounts = () => {
           title="Explore the comprehensive guide"
           innerHtml={
             <>
-              
               <div className="mb-3">
                 <Heading
                   size="h5"

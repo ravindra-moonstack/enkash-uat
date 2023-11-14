@@ -17,7 +17,6 @@ import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-import Lottie from "lottie-react";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
@@ -55,16 +54,15 @@ const mealCard = () => {
             weight="7"
           />
           <Heading
-            title={`Experience with${space}`}
+            title="Experience with Meal Cards"
             color="white"
             size="h2"
             weight="7"
           />
-          <Heading title="Meal Cards" color="white" size="h2" weight="7" />
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Provide your employees tax-free meal cards to purchase food and grocery-related items across multiple food chains, retail outlets, and supermarkets"
+              title="Provide your employees with tax-free meal cards to purchase food and grocery-related items across multiple food chains, retail outlets, and supermarkets"
               color="white"
               size="h6"
               weight="5"
@@ -136,7 +134,7 @@ const mealCard = () => {
               oldWayDescription:
                 "Limitations to dynamically allocate funds or control the transactions",
               newWayDescription:
-                "Limitations to dynamically allocate funds or control the transactions",
+                "Seamless transfer of funds online and complete control over all transactions",
             },
           ]}
         />
@@ -162,7 +160,22 @@ const mealCard = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Issue and Refill"
+              titleHtml={
+                <>
+                  <Heading
+                    title="Issue and"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Refill"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </>
+              }
               description="Meal cards are easy to issue with a specific limit towards food purchases and easier to refill"
             />
           </div>
@@ -182,6 +195,12 @@ const mealCard = () => {
             <GetStartedCard
               whiteTitle="Wider Acceptance"
               description="Various supermarkets, food delivery apps, and other eating establishments widely accept meal cards"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Complete Overview"
+              description="Meal cards offer a complete overview of what is spent and what remains in balance"
             />
           </div>
         </div>
@@ -269,23 +288,16 @@ const mealCard = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of meal cards?"
+          description="Meal cards are prepaid cards provided by employers to enhance employees' morale. These cards are used for food-related purchases on various retail outlets or apps and help in tax redemption for employees"
+        />
+      </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Seeking further understanding of meal cards? Explore the comprehensive guide"
+          title="Explore the comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h4"
-                  color="black"
-                  weight="6"
-                  title="Meal cards are prepaid cards provided by employers to enhance employees' morale. These cards are used for food-related purchases on various retail outlets or apps and help in tax redemption for employees."
-                />
-              </div>
               <div className="mb-3">
                 <Heading
                   size="h5"
@@ -517,7 +529,7 @@ const mealCard = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="Meal allowance is the money the employer provides to employees to cover their meal costs. Meal allowance can be provided as prepaid cards, which can be used at food outlets, restaurants, convenience stores, and supermarkets. Employees can use these prepaid cards to cover their food expenses and save their taxes, as these cards are exempted from taxes up to a certain limit."
                 />
               </div>

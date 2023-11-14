@@ -13,24 +13,18 @@ const carouselData = [
   },
   {
     image: iconTwo,
-    alt: "wide range of brand vouchers",
+    alt: "Issue meal cards to employees",
     title: "Issue meal cards to employees with preloaded funds",
   },
   {
     image: iconThree,
-    alt: "Select the brand voucher",
+    alt: "Notify employees via SMS/email about card activation",
     title: "Notify employees via SMS/email about card activation",
   },
   {
     image: iconFour,
-    alt: "Redeem the brand voucher",
+    alt: "Employees must complete KYC to activate their meal cards",
     title: "Employees must complete KYC to activate their meal cards",
-  },
-  {
-    image: iconFive,
-    alt: "Select multiple invoices and make bulk payments",
-    title:
-      "These cards can be used across multiple food retail outlets, food chains, and food delivery apps.",
   },
 ];
 
