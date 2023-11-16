@@ -1,34 +1,53 @@
 "use client";
 
 import Lottie from "lottie-react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import {
+  phoneAndTabAnimation,
+  payablesAnimation,
+  recieveableAnimation,
+  expenseManagementAnimation,
+  corporateCardAnimation,
+  diyCardAnimation,
+  phoneAnimation,
+} from "./index";
 
-interface LottieProps {
-  animationData: any;
+const animationMap: Record<string, () => Promise<any>> = {
+  HomePagePhoneAndTab: phoneAndTabAnimation,
+  HomePagePayables: payablesAnimation,
+  HomePageRecieveable: recieveableAnimation,
+  HomePageExpenseManagement: expenseManagementAnimation,
+  HomePageCorporateCard: corporateCardAnimation,
+  HomePageDiyCard: diyCardAnimation,
+  HomePagePhone: phoneAnimation,
+};
+
+interface LottieDynamicLoadComponentProps {
+  animationName: string;
   loop: boolean;
 }
 
-const LottieDynamicLoadComponent = ({
-  animationData,
+const LottieDynamicLoadComponent: React.FC<LottieDynamicLoadComponentProps> = ({
+  animationName,
   loop = true,
-}: LottieProps) => {
-  type LottieAnimationData = any;
-
-  const [phoneAndTabAnimationData, setPhoneAndTabAnimationData] =
-    useState<LottieAnimationData | null>(null);
+}) => {
+  const [animationData, setAnimationData] = useState<any | null>(null);
 
   useEffect(() => {
     const loadAnimation = async () => {
-      const phoneAndTabAnimationModule = await animationData();
-      setPhoneAndTabAnimationData(phoneAndTabAnimationModule.default);
+      if (animationMap.hasOwnProperty(animationName)) {
+        const dynamicAnimationModule = await animationMap[animationName]();
+        setAnimationData(dynamicAnimationModule.default);
+      } else {
+        console.error(`Animation "${animationName}" not found.`);
+      }
     };
 
     loadAnimation();
-  }, []);
+  }, [animationName]);
+
   return (
-    <>
-      <Lottie animationData={phoneAndTabAnimationData} loop={loop} />
-    </>
+    <>{animationData && <Lottie animationData={animationData} loop={loop} />}</>
   );
 };
 

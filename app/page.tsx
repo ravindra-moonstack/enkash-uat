@@ -1,5 +1,6 @@
 import { space } from "@/constant/common";
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
 import PrimaryButton from "../components/buttons/primary-button/primary-button";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
@@ -29,16 +30,10 @@ import {
   userImg,
   blueBlackLine,
   mobileTestimonial,
-  expenseManagementAnimation,
-  payablesAnimation,
-  recieveableAnimation,
-  diyCardAnimation,
   leftBlueGradient,
   leftCardGradient,
   rightCardGradient,
-  phoneAndTabAnimation,
   greenBg,
-  corporateCardAnimation,
   integration,
 } from ".";
 import RainbowSection from "@/components/homepage/rainbow";
@@ -50,9 +45,14 @@ import LoungeAnimationSection from "@/components/homepage/lounge-section";
 import TextAnimation from "@/components/framer-motion/text-animation";
 import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
 
-const loginUrl = "https://home.enkash.com/login";
+export const metadata: Metadata = {
+  title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
+  description:
+    "Enkash is now Asia's 1st and Smartest Spend Management Platform that offer services like Account Payable, Accounts Receivable, Expense Management & many more.",
+};
 
 const home = () => {
+  const loginUrl = "https://home.enkash.com/login";
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -343,7 +343,7 @@ const home = () => {
         >
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
-              animationData={phoneAndTabAnimation}
+              animationName={"HomePagePhoneAndTab"}
               loop={true}
             />
           </div>
@@ -390,7 +390,7 @@ const home = () => {
         <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
-              animationData={payablesAnimation}
+              animationName={"HomePagePayables"}
               loop={true}
             />
           </div>
@@ -419,7 +419,7 @@ const home = () => {
         <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
-              animationData={recieveableAnimation}
+              animationName={"HomePageRecieveable"}
               loop={true}
             />
           </div>
@@ -436,7 +436,7 @@ const home = () => {
         <div className={`col-md-6 col-12 d-flex mb-5`}>
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
-              animationData={expenseManagementAnimation}
+              animationName={"HomePageExpenseManagement"}
               loop={true}
             />
           </div>
@@ -537,7 +537,7 @@ const home = () => {
           <div className={styles.left_image_container}>
             <div className={styles.overlay_image}>
               <LottieDynamicLoadComponent
-                animationData={corporateCardAnimation}
+                animationName={"HomePageCorporateCard"}
                 loop={true}
               />
             </div>
@@ -572,7 +572,7 @@ const home = () => {
             <div className={styles.lottie_container}>
               <div className={styles.overlay_image}>
                 <LottieDynamicLoadComponent
-                  animationData={diyCardAnimation}
+                  animationName={"HomePageDiyCard"}
                   loop={true}
                 />
               </div>

@@ -46,19 +46,7 @@ export { default as cureFoodsLogo } from "./img/curefoods-logo.png";
 export { default as infraMarketLogo } from "./img/infra-market-logo.png";
 export { default as integration } from "./img/Integration.png";
 
-//Animations import
-// export { default as manageAnimationData } from "./img/lottie/manage.json";
 export const manageAnimation = () => import("./img/lottie/manage.json");
 export const automateAnimation = () => import("./img/lottie/automate.json");
 export const trackAnimation = () => import("./img/lottie/track.json");
 export const optimizeAnimation = () => import("./img/lottie/optimize.json");
-export const phoneAndTabAnimation = () => import("./img/lottie/group.json");
-export const payablesAnimation = () => import("./img/lottie/payables.json");
-export const recieveableAnimation = () =>
-  import("./img/lottie/recievables.json");
-export const expenseManagementAnimation = () =>
-  import("./img/lottie/expense-management.json");
-export const corporateCardAnimation = () =>
-  import("./img/lottie/credit-card.json");
-export const diyCardAnimation = () => import("./img/lottie/diy.json");
-export const phoneAnimation = () => import("./img/lottie/phone.json");
