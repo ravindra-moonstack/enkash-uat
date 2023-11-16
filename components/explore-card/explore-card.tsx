@@ -1,8 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import { greenArrow, blueArrow } from ".";
 import Heading from "../heading/heading";
 import styles from "./explore-card.module.scss";
 import Link from "next/link";
+import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
+import { useRef } from "react";
 
 export interface CardProps {
   title: string;
@@ -18,8 +22,21 @@ const ExploreCard = ({ title, description, theme, link }: CardProps) => {
   const getSecondaryColor = () => (isBlueTheme() ? "black" : "white");
   const getArrowSrc = () => (isBlueTheme() ? blueArrow : greenArrow);
 
+  const ref = useRef<HTMLDivElement>(null);
+
+  const scrollData = useScroll({
+    target: ref,
+    offset: ["0% 90%", "0% 50%"],
+  }) as { scrollYProgress: MotionValue<number> };
+
   return (
-    <div className="d-flex flex-column">
+    <motion.div
+      className="d-flex flex-column"
+      ref={ref}
+      style={{
+        opacity: scrollData.scrollYProgress,
+      }}
+    >
       <div className="mb-3">
         <Heading title={title} color={getPrimaryColor()} size="h1" weight="6" />
       </div>
@@ -47,7 +64,7 @@ const ExploreCard = ({ title, description, theme, link }: CardProps) => {
           />
         </div>
       </Link>
-    </div>
+    </motion.div>
   );
 };
 

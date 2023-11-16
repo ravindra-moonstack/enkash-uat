@@ -1,17 +1,11 @@
-"use client";
-
-import { SetStateAction, useEffect, useRef, useState } from "react";
 import { space } from "@/constant/common";
-import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
 import Image from "next/image";
 import styles from "./page.module.scss";
 import PrimaryButton from "../components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
 import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Lottie from "lottie-react";
 import Heading from "@/components/heading/heading";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
@@ -33,21 +27,7 @@ import {
   nasscom,
   testimonials,
   userImg,
-  axisBankLogo,
-  iciciBankLogo,
-  rupayLogo,
-  sbmLogo,
-  visaLogo,
-  playButton,
-  rainbowOne,
-  rainbowTwo,
-  rainbowThree,
-  polygonOne,
-  polygonOneShadow,
-  polygonTwo,
-  polygonThree,
   blueBlackLine,
-  threeDownArrow,
   mobileTestimonial,
   expenseManagementAnimation,
   payablesAnimation,
@@ -56,315 +36,30 @@ import {
   leftBlueGradient,
   leftCardGradient,
   rightCardGradient,
-  kotakLogo,
-  hdfcLogo,
-  masterCardLogo,
-  phoneAnimation,
   phoneAndTabAnimation,
   greenBg,
   corporateCardAnimation,
-  box8Logo,
-  firstCryLogo,
-  landmarkLogo,
-  everestLogo,
-  cureFoodsLogo,
-  infraMarketLogo,
   integration,
-  automateAnimation,
-  optimizeAnimation,
-  trackAnimation,
-  manageAnimation,
 } from ".";
+import RainbowSection from "@/components/homepage/rainbow";
+import BankSection from "@/components/homepage/bank-section";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+import DashBoardAnimation from "@/components/homepage/dashboard-animation";
+import PolygonSection from "@/components/homepage/polygon-section";
+import LoungeAnimationSection from "@/components/homepage/lounge-section";
+import TextAnimation from "@/components/framer-motion/text-animation";
+import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
 
 const loginUrl = "https://home.enkash.com/login";
 
 const home = () => {
-  //Framer motion reference
-  const loungeImgRef = useRef<HTMLDivElement>(null);
-  const polygonOneRef = useRef<HTMLImageElement>(null);
-  const polygonTwoRef = useRef<HTMLImageElement>(null);
-  const polygonThreeRef = useRef<HTMLImageElement>(null);
-  const descTextScrollRef = useRef<HTMLDivElement>(null);
-  const payableCardRef = useRef<HTMLDivElement>(null);
-  const recieveCardRef = useRef<HTMLDivElement>(null);
-
-  //Framer motion scroll progress
-  const loungeScrollData = useScroll({
-    target: loungeImgRef,
-    offset: ["0.5 1.5", "1 1"],
-  }) as { scrollYProgress: MotionValue<number> };
-
-  const polygonOneScrollData = useScroll({
-    target: polygonOneRef,
-    offset: ["0.2 1.2", "0.5 1.2"],
-  }) as { scrollYProgress: MotionValue<number> };
-
-  const polygonTwoScrollData = useScroll({
-    target: polygonTwoRef,
-    offset: ["0.2 1.3", "0.7 1.3"],
-  }) as { scrollYProgress: MotionValue<number> };
-
-  const polygonThreeScrollData = useScroll({
-    target: polygonThreeRef,
-    offset: ["0.2 1.4", "1.1 1.4"],
-  }) as { scrollYProgress: MotionValue<number> };
-
-  const descTextScrollData = useScroll({
-    target: descTextScrollRef,
-    offset: ["0% 85%", "0% 50%"],
-  }) as { scrollYProgress: MotionValue<number> };
-
-  const payableCardScrollData = useScroll({
-    target: payableCardRef,
-    offset: ["0% 90%", "0% 50%"],
-  }) as { scrollYProgress: MotionValue<number> };
-
-  const recieveCardData = useScroll({
-    target: recieveCardRef,
-    offset: ["0% 90%", "0% 50%"],
-  }) as { scrollYProgress: MotionValue<number> };
-
-  //Framer motion transform values
-  const loungeTranslateY = useTransform(
-    loungeScrollData.scrollYProgress,
-    [0, 1],
-    ["100%", "0%"]
-  );
-  const polygonOneTranslateY = useTransform(
-    polygonOneScrollData.scrollYProgress,
-    [0, 1],
-    ["50%", "0%"]
-  );
-
-  const polygonTwoTranslateY = useTransform(
-    polygonTwoScrollData.scrollYProgress,
-    [0, 1],
-    ["100", "0%"]
-  );
-  const polygonThreeTranslateY = useTransform(
-    polygonThreeScrollData.scrollYProgress,
-    [0, 1],
-    ["100%", "0%"]
-  );
-
-  //Below code is animation which are custom built and any lib is not used
-  //Stack animation custom built
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  let largeScreen;
-  let posTopRainbowOneImg, posTopRainbowTwoImg, posTopRainbowThreeImg;
-  let maxScrollForFullAdjustment;
-  let maxAdjustment;
-
-  if (typeof window !== "undefined") {
-    largeScreen = window.matchMedia("(min-width:786px)");
-
-    if (largeScreen.matches) {
-      posTopRainbowOneImg = 136;
-      posTopRainbowTwoImg = 236;
-      posTopRainbowThreeImg = 346;
-      maxScrollForFullAdjustment = 400;
-      maxAdjustment = 45;
-    } else {
-      posTopRainbowOneImg = 120;
-      posTopRainbowTwoImg = 170;
-      posTopRainbowThreeImg = 215;
-      maxScrollForFullAdjustment = 250;
-      maxAdjustment = 15;
-    }
-
-    const segmentLength = maxScrollForFullAdjustment / 3;
-
-    const computeAdjustment = (
-      currentScroll: number,
-      segmentLength: number,
-      maxAdj: number
-    ) => {
-      return Math.min((currentScroll / segmentLength) * maxAdj, maxAdj);
-    };
-
-    if (scrollY < segmentLength) {
-      posTopRainbowOneImg -= computeAdjustment(
-        scrollY,
-        segmentLength,
-        maxAdjustment
-      );
-    } else if (scrollY < segmentLength * 2) {
-      posTopRainbowOneImg -= maxAdjustment;
-      posTopRainbowTwoImg -= computeAdjustment(
-        scrollY - segmentLength,
-        segmentLength,
-        maxAdjustment
-      );
-    } else {
-      posTopRainbowOneImg -= maxAdjustment;
-      posTopRainbowTwoImg -= maxAdjustment;
-      posTopRainbowThreeImg -= computeAdjustment(
-        scrollY - 2 * segmentLength,
-        segmentLength,
-        maxAdjustment
-      );
-    }
-  }
-
-  //functions
-  const [selectedTab, setSelectedTab] = useState("partners");
-  const [activeAnimation, setActiveAnimation] = useState("manage");
-
-  type LottieAnimationData = any;
-  const [dashBoardAnimationData, setDashBoardAnimationData] =
-    useState<LottieAnimationData | null>(null);
-  const [phoneAndTabAnimationData, setPhoneAndTabAnimationData] =
-    useState<LottieAnimationData | null>(null);
-  const [payablesAnimationData, setPayablesAnimationData] =
-    useState<LottieAnimationData | null>(null);
-  const [recieveableAnimationData, setRecieveableAnimationData] =
-    useState<LottieAnimationData | null>(null);
-  const [expenseManagementAnimationData, setExpenseManagementAnimationData] =
-    useState<LottieAnimationData | null>(null);
-  const [corporateCardAnimationData, setCorporateCardAnimationData] =
-    useState<LottieAnimationData | null>(null);
-  const [diyCardAnimationData, setDiyCardAnimationData] =
-    useState<LottieAnimationData | null>(null);
-  const [phoneAnimationData, setPhoneAnimationData] =
-    useState<LottieAnimationData | null>(null);
-
-  const ANIMATION_MAP: any = {
-    automate: automateAnimation,
-    manage: manageAnimation,
-    track: trackAnimation,
-    optimize: optimizeAnimation,
-  };
-
-  useEffect(() => {
-    const loadAnimation = async () => {
-      const dashboardAnimationModule = await ANIMATION_MAP[activeAnimation]();
-      const phoneAndTabAnimationModule = await phoneAndTabAnimation();
-      const payablesAnimationModule = await payablesAnimation();
-      const recieveableAnimationModule = await recieveableAnimation();
-      const expenseManagementAnimationModule =
-        await expenseManagementAnimation();
-      const corporateCardAnimationModule = await corporateCardAnimation();
-      const diyCardAnimationModule = await diyCardAnimation();
-      const phoneAnimationModule = await phoneAnimation();
-
-      setPhoneAndTabAnimationData(phoneAndTabAnimationModule.default);
-      setDashBoardAnimationData(dashboardAnimationModule.default);
-      setPayablesAnimationData(payablesAnimationModule.default);
-      setRecieveableAnimationData(recieveableAnimationModule.default);
-      setExpenseManagementAnimationData(
-        expenseManagementAnimationModule.default
-      );
-      setCorporateCardAnimationData(corporateCardAnimationModule.default);
-      setDiyCardAnimationData(diyCardAnimationModule.default);
-      setPhoneAnimationData(phoneAnimationModule.default);
-    };
-
-    loadAnimation();
-  }, [activeAnimation]);
-
-  const handleTabClick = (tab: SetStateAction<string>) => {
-    setSelectedTab(tab);
-  };
-
-  //Start of HTML code
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
         <MobileHeader />
       </div>
       <div className="desktop-header">{<WebHeader />}</div>
-
-      <div
-        className={`${styles.first_row} row  text-center color-white bg-indi-volt`}
-      >
-        <span className={`col-12  ${styles.first_text}`}>
-          <Heading title="A Spend" size="h0" />
-        </span>
-        <Image
-          src={rainbowOne}
-          alt="background image"
-          className={styles.rainbow_one}
-          style={{ top: `${posTopRainbowOneImg}px` }}
-        />
-        <span className={`col-12  ${styles.second_text}`}>
-          <Heading title="Management Solution" size="h0" />
-        </span>
-
-        <Image
-          src={rainbowTwo}
-          alt="background image 2"
-          className={styles.rainbow_two}
-          style={{ top: `${posTopRainbowTwoImg}px` }}
-        />
-
-        <span className={`col-12  ${styles.third_text}`}>
-          <Heading title="That Does it All" size="h0" />
-        </span>
-
-        <Image
-          src={rainbowThree}
-          alt="background image 3"
-          className={styles.rainbow_three}
-          style={{ top: `${posTopRainbowThreeImg}px` }}
-        />
-
-        <div className={`col-12 ${styles.description_text}`}>
-          <div>
-            <Heading
-              title="Now streamline buisiness spend and optimize your cashflow"
-              size="h4"
-              weight="4"
-            />
-          </div>
-          <div>
-            <Heading
-              title="with real-time data and insights."
-              size="h4"
-              weight="4"
-            />
-          </div>
-        </div>
-        <div className={`col-12 ${styles.description_text_mobile}`}>
-          <div>
-            <Heading
-              title="Now streamline buisiness spend and optimize your cashflow"
-              size="h3"
-              weight="4"
-            />
-          </div>
-          <div>
-            <Heading
-              title="with real-time data and insights."
-              size="h3"
-              weight="4"
-            />
-          </div>
-        </div>
-        <div className={`col-12 ${styles.button_container}`}>
-          <PrimaryButton title="Get a Demo" url={loginUrl} theme="theme-blue" />
-          <span className="mx-2"></span>
-          <SecondryButton
-            title="Watch Video"
-            actionImage={playButton}
-            url={loginUrl}
-            iconSize={25}
-          />
-        </div>
-        <div className={`col-12 ${styles.down_arrow}`}>
-          <Image src={threeDownArrow} alt="arrow icon" />
-        </div>
-      </div>
-
+      <RainbowSection />
       <div
         className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center
        text-center color-white bg-indi-volt`}
@@ -387,79 +82,96 @@ const home = () => {
             />
           </div>
         </div>
+        <div className={`col-md-4 col-12 ${styles.steps}`}>
+          <WhileInViewAnimation
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 0.5,
+              ease: "easeInOut",
+            }}
+            innerHtml={
+              <div className="d-flex align-items-center justify-content-start justify-content-md-center">
+                <Image
+                  src={userPlus}
+                  alt="signup image"
+                  className={`me-3 img-fluid ${styles.action_image_user_plus}`}
+                />
+                <Image
+                  src={numberOne}
+                  alt="step one image"
+                  className={`me-3 ${styles.steps_image}`}
+                />
+                <div>
+                  <div className={styles.three_steps_text}>Sign Up</div>
+                </div>
+              </div>
+            }
+          />
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.5,
-            ease: "easeInOut",
-          }}
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-        >
-          <Image
-            src={userPlus}
-            alt="signup image"
-            className={`me-3 img-fluid ${styles.action_image_user_plus}`}
+        <div className={`col-md-4 col-12 ${styles.steps}`}>
+          <WhileInViewAnimation
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 0.6,
+              ease: "easeInOut",
+            }}
+            innerHtml={
+              <div className="d-flex align-items-center justify-content-start justify-content-md-center">
+                {" "}
+                <Image
+                  src={userTick}
+                  alt="kyc image"
+                  className={`me-3 img-fluid ${styles.action_image_user_tick}`}
+                />
+                <Image
+                  src={numberTwo}
+                  alt="step one image"
+                  className={`me-3 ${styles.steps_image}`}
+                />
+                <div>
+                  <div className={styles.three_steps_text}>
+                    Complete KYC Process
+                  </div>
+                </div>
+              </div>
+            }
           />
-          <Image
-            src={numberOne}
-            alt="step one image"
-            className={`me-3 ${styles.steps_image}`}
+        </div>
+
+        <div className={`col-md-4 col-12 ${styles.steps}`}>
+          <WhileInViewAnimation
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{
+              duration: 1,
+              delay: 0.7,
+              ease: "easeInOut",
+            }}
+            innerHtml={
+              <div className="d-flex align-items-center justify-content-start justify-content-md-center">
+                <Image
+                  src={stack}
+                  alt="get started image"
+                  className={`me-3 img-fluid ${styles.action_image_stack}`}
+                />
+                <Image
+                  src={numberThree}
+                  alt="step one image"
+                  className={`me-3 ${styles.steps_image}`}
+                />
+                <div>
+                  <div className={styles.three_steps_text}>Get Started</div>
+                </div>
+              </div>
+            }
           />
-          <div>
-            <div className={styles.three_steps_text}>Sign Up</div>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.6,
-            ease: "easeInOut",
-          }}
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-        >
-          <Image
-            src={userTick}
-            alt="kyc image"
-            className={`me-3 img-fluid ${styles.action_image_user_tick}`}
-          />
-          <Image
-            src={numberTwo}
-            alt="step one image"
-            className={`me-3 ${styles.steps_image}`}
-          />
-          <div>
-            <div className={styles.three_steps_text}>Complete KYC Process</div>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 1,
-            delay: 0.7,
-            ease: "easeInOut",
-          }}
-          className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
-        >
-          <Image
-            src={stack}
-            alt="get started image"
-            className={`me-3 img-fluid ${styles.action_image_stack}`}
-          />
-          <Image
-            src={numberThree}
-            alt="step one image"
-            className={`me-3 ${styles.steps_image}`}
-          />
-          <div>
-            <div className={styles.three_steps_text}>Get Started</div>
-          </div>
-        </motion.div>
+        </div>
+
         <div className="col-12 d-flex justify-content-center align-items-center">
           <div className={styles.email_box}>
             <div className="w-50 d-flex align-items-center">
@@ -473,98 +185,30 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.third_row} row color-white`}>
-        <motion.img
-          ref={polygonOneRef}
-          style={{ y: polygonOneTranslateY }}
-          src={polygonOne.src}
-          alt="background image"
-          className={styles.polygon_one}
-        />
-        <motion.img
-          ref={polygonOneRef}
-          style={{ y: polygonOneTranslateY }}
-          src={polygonOneShadow.src}
-          alt="background image"
-          className={styles.polygon_one_shadow}
-        />
-        <motion.img
-          ref={polygonTwoRef}
-          style={{ y: polygonTwoTranslateY }}
-          src={polygonTwo.src}
-          alt="background image"
-          className={styles.polygon_two}
-        />
-        <motion.img
-          ref={polygonThreeRef}
-          style={{ y: polygonThreeTranslateY }}
-          src={polygonThree.src}
-          alt="background image"
-          className={styles.polygon_three}
-        />
-
-        <div className={`col-md-12 col-4  ${styles.action_container}`}>
-          <div className="d-flex flex-column flex-md-row justify-content-center w-100">
-            <div className="me-2" onClick={() => setActiveAnimation("manage")}>
-              <MenuButton
-                title="Manage"
-                theme={activeAnimation === "manage" ? "dark" : "disabled"}
-              />
-            </div>
-            <div className={styles.space}></div>
-            <div className="me-2" onClick={() => setActiveAnimation("track")}>
-              <MenuButton
-                title="Track"
-                theme={activeAnimation === "track" ? "dark" : "disabled"}
-              />
-            </div>
-            <div className={styles.space}></div>
-            <div
-              className="me-2"
-              onClick={() => setActiveAnimation("optimize")}
-            >
-              <MenuButton
-                title="Optimize"
-                theme={activeAnimation === "optimize" ? "dark" : "disabled"}
-              />
-            </div>
-            <div className={styles.space}></div>
-            <div onClick={() => setActiveAnimation("automate")}>
-              <MenuButton
-                title="Automate"
-                theme={activeAnimation === "automate" ? "dark" : "disabled"}
-              />
-            </div>
-          </div>
-        </div>
-        <div className={`col-md-12 col-8 ${styles.image_container}`}>
-          <Lottie
-            animationData={
-              activeAnimation === "manage"
-                ? dashBoardAnimationData
-                : dashBoardAnimationData
+        <PolygonSection />
+        <DashBoardAnimation />
+        <div className={`col-12  ${styles.descrption_container}`}>
+          <TextAnimation
+            innerHtml={
+              <>
+                <div>
+                  <Heading
+                    title="Solutions that let you"
+                    size="h2"
+                    weight="3"
+                  />
+                </div>
+                <div>
+                  <Heading
+                    title="streamline cashflow and optimize workflow."
+                    size="h2"
+                    weight="7"
+                  />
+                </div>
+              </>
             }
-            loop={true}
-            autoplay={true}
           />
         </div>
-        <motion.div
-          ref={descTextScrollRef}
-          className={`col-12  ${styles.descrption_container}`}
-          style={{
-            opacity: descTextScrollData.scrollYProgress,
-          }}
-        >
-          <div>
-            <Heading title="Solutions that let you" size="h2" weight="3" />
-          </div>
-          <div>
-            <Heading
-              title="streamline cashflow and optimize workflow."
-              size="h2"
-              weight="7"
-            />
-          </div>
-        </motion.div>
       </div>
       <div className={`${styles.fourth_row} bg-white row`}>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-start row-padding">
@@ -698,7 +342,10 @@ const home = () => {
           className={`col-md-6 col-12 d-flex position-relative  ${styles.img_container}`}
         >
           <div className={styles.lottie_container}>
-            <Lottie animationData={phoneAndTabAnimationData} loop={true} />
+            <LottieDynamicLoadComponent
+              animationData={phoneAndTabAnimation}
+              loop={true}
+            />
           </div>
           <Image
             className={styles.green_bg}
@@ -736,74 +383,19 @@ const home = () => {
           </div>
         </div>
         <div className="col-12 row-padding-x-only">
-          <div className="d-flex mb-4">
-            <div
-              className="ms-3 me-5 cursor-pointer"
-              onClick={() => handleTabClick("partners")}
-            >
-              <Heading
-                title="Our Partners"
-                size="h4"
-                color={selectedTab === "partners" ? "equity-blue" : "black"}
-                weight="6"
-              />
-            </div>
-            <div
-              className="cursor-pointer"
-              onClick={() => handleTabClick("customers")}
-            >
-              <Heading
-                title="Happy Customers"
-                size="h4"
-                color={selectedTab === "partners" ? "black" : "equity-blue"}
-                weight="6"
-              />
-            </div>
-          </div>
-
-          {selectedTab === "partners" && (
-            <div
-              className={`${styles.bank_logo} 
-            animate__animated mb-3 d-flex align-items-center justify-content-between`}
-            >
-              <Image src={axisBankLogo} width={150} alt="axis bank logo" />
-              <Image width={150} src={iciciBankLogo} alt="axis bank logo" />
-              <Image width={150} src={sbmLogo} alt="axis bank logo" />
-              <Image width={70} src={visaLogo} alt="axis bank logo" />
-              <Image width={130} src={kotakLogo} alt="axis bank logo" />
-              <Image width={65} src={hdfcLogo} alt="axis bank logo" />
-              <Image width={100} src={rupayLogo} alt="axis bank logo" />
-              <Image width={90} src={masterCardLogo} alt="axis bank logo" />
-            </div>
-          )}
-          {selectedTab === "customers" && (
-            <div
-              className={`${styles.customer_logo} 
-            animate__animated mb-3 d-flex align-items-center justify-content-between`}
-            >
-              <Image width={100} src={box8Logo} alt="axis bank logo" />
-              <Image width={100} src={firstCryLogo} alt="axis bank logo" />
-              <Image width={100} src={landmarkLogo} alt="axis bank logo" />
-              <Image width={120} src={everestLogo} alt="axis bank logo" />
-              <Image width={120} src={cureFoodsLogo} alt="axis bank logo" />
-              <Image width={140} src={infraMarketLogo} alt="axis bank logo" />
-            </div>
-          )}
+          <BankSection />
         </div>
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
         <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
           <div className={styles.lottie_container}>
-            <Lottie animationData={payablesAnimationData} loop={true} />
+            <LottieDynamicLoadComponent
+              animationData={payablesAnimation}
+              loop={true}
+            />
           </div>
         </div>
-        <motion.div
-          ref={payableCardRef}
-          className="col-md-6 col-12 mb-5 order-1 order-md-2"
-          style={{
-            opacity: payableCardScrollData.scrollYProgress,
-          }}
-        >
+        <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
           <ExploreCard
             title="Payables"
             description=" Manage all outgoing expenses in one place. Our online platform
@@ -813,14 +405,8 @@ const home = () => {
             theme="green"
             link="/payables"
           />
-        </motion.div>
-        <motion.div
-          className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5"
-          ref={recieveCardRef}
-          style={{
-            opacity: recieveCardData.scrollYProgress,
-          }}
-        >
+        </div>
+        <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
           <ExploreCard
             title="Receivables"
             description="EnKash empowers your business by providing intelligent
@@ -829,10 +415,13 @@ const home = () => {
             theme="green"
             link="/receivables"
           />
-        </motion.div>
+        </div>
         <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
           <div className={styles.lottie_container}>
-            <Lottie animationData={recieveableAnimationData} loop={true} />
+            <LottieDynamicLoadComponent
+              animationData={recieveableAnimation}
+              loop={true}
+            />
           </div>
         </div>
       </div>
@@ -846,8 +435,8 @@ const home = () => {
         />
         <div className={`col-md-6 col-12 d-flex mb-5`}>
           <div className={styles.lottie_container}>
-            <Lottie
-              animationData={expenseManagementAnimationData}
+            <LottieDynamicLoadComponent
+              animationData={expenseManagementAnimation}
               loop={true}
             />
           </div>
@@ -914,7 +503,7 @@ const home = () => {
       <div
         className={`${styles.eigth_row}row d-flex d-flex bg-white row-padding`}
       >
-        <motion.div className="d-flex flex-column justify-content-center align-items-center w-100">
+        <div className="d-flex flex-column justify-content-center align-items-center w-100">
           <div>
             <Heading
               title="Discover full control."
@@ -939,18 +528,19 @@ const home = () => {
               weight="5"
             />
           </div>
-        </motion.div>
+        </div>
       </div>
       <div className={`${styles.ninth_row} row bg-white`}>
         <div
           className={`col-md-6 col-12 row-padding-x-only d-flex d-flex justify-content-center order-2 order-md-1 ${styles.section_padding}`}
         >
           <div className={styles.left_image_container}>
-            <Lottie
-              animationData={corporateCardAnimationData}
-              loop={true}
-              className={styles.overlay_image}
-            />
+            <div className={styles.overlay_image}>
+              <LottieDynamicLoadComponent
+                animationData={corporateCardAnimation}
+                loop={true}
+              />
+            </div>
 
             <Image
               src={rightCardGradient}
@@ -980,11 +570,12 @@ const home = () => {
         >
           <div className={styles.right_image_container}>
             <div className={styles.lottie_container}>
-              <Lottie
-                animationData={diyCardAnimationData}
-                loop={true}
-                className={styles.overlay_image}
-              />
+              <div className={styles.overlay_image}>
+                <LottieDynamicLoadComponent
+                  animationData={diyCardAnimation}
+                  loop={true}
+                />
+              </div>
             </div>
 
             <Image
@@ -1045,15 +636,9 @@ const home = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center mt-5">
-          <motion.div
-            ref={loungeImgRef}
-            style={{
-              y: loungeTranslateY,
-            }}
-            className={styles.lottie_container}
-          >
-            <Lottie animationData={phoneAnimationData} loop={true} />
-          </motion.div>
+          <div className={styles.lottie_container}>
+            <LoungeAnimationSection />
+          </div>
         </div>
       </div>
       <div
@@ -1331,7 +916,7 @@ const home = () => {
         </div>
       </div>
       <div className={`row bg-white ${styles.sixteenth_row}`}>
-      <ContactUsCard
+        <ContactUsCard
           title="Seeking further understanding of bill payments online?"
           description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
         />
