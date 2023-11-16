@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import styles from "./page.module.scss";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -16,11 +14,6 @@ import {
   whiteArrow,
   officeImg,
   bannerAnimation,
-  virtualCardAnimation,
-  travelCardAnimation,
-  spendAnimation,
-  digitalAnimation,
-  saasAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -30,12 +23,13 @@ import blogData from "./blog-data";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import Lottie from "lottie-react";
 import faqData from "./faqData";
 import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
 
 const xpenz = () => {
   return (
@@ -94,11 +88,13 @@ const xpenz = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <Lottie
-            animationData={bannerAnimation}
-            loop={true}
-            className={styles.lottie_container}
-          />
+          <div className={styles.lottie_container}>
+            {" "}
+            <LottieClientComponent
+              animationData={bannerAnimation}
+              loop={true}
+            />
+          </div>
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
@@ -124,11 +120,13 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie
-              animationData={virtualCardAnimation}
-              loop={true}
-              className={styles.lottie_container}
-            />
+
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"FreedomVirtualAnimation"}
+                loop={true}
+              />
+            </div>
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
@@ -140,12 +138,12 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-
-            <Lottie
-              animationData={travelCardAnimation}
-              loop={true}
-              className={styles.lottie_container}
-            />
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"FreedomTravelAnimation"}
+                loop={true}
+              />
+            </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
@@ -171,7 +169,10 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={spendAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"FreedomSpendAnimation"}
+              loop={true}
+            />
           </div>
         </div>
       </div>
@@ -179,7 +180,10 @@ const xpenz = () => {
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
           <div className={styles.lottie_container}>
-            <Lottie animationData={saasAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"FreedomSaasAnimation"}
+              loop={true}
+            />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
@@ -199,7 +203,10 @@ const xpenz = () => {
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
-            <Lottie animationData={digitalAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"FreedomDigitalAnimation"}
+              loop={true}
+            />
           </div>
         </div>
       </div>
@@ -409,10 +416,11 @@ const xpenz = () => {
       </div>
 
       <div className="row">
-      <ContactUsCard
+        <ContactUsCard
           title="Seeking further understanding of bill payments online?"
           description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        />{" "}
+      </div>
     </div>
   );
 };

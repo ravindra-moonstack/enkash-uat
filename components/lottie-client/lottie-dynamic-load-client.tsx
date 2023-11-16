@@ -10,6 +10,11 @@ import {
   corporateCardAnimation,
   diyCardAnimation,
   phoneAnimation,
+  travelCardAnimation,
+  saasAnimation,
+  digitalAnimation,
+  spendAnimation,
+  virtualCardAnimation,
 } from "./index";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -20,6 +25,11 @@ const animationMap: Record<string, () => Promise<any>> = {
   HomePageCorporateCard: corporateCardAnimation,
   HomePageDiyCard: diyCardAnimation,
   HomePagePhone: phoneAnimation,
+  FreedomTravelAnimation: travelCardAnimation,
+  FreedomSaasAnimation: saasAnimation,
+  FreedomVirtualAnimation: virtualCardAnimation,
+  FreedomSpendAnimation: spendAnimation,
+  FreedomDigitalAnimation: digitalAnimation,
 };
 
 interface LottieDynamicLoadComponentProps {

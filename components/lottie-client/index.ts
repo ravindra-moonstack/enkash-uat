@@ -11,3 +11,27 @@ export const corporateCardAnimation = () =>
   import("../../app/img/lottie/credit-card.json");
 export const diyCardAnimation = () => import("../../app/img/lottie/diy.json");
 export const phoneAnimation = () => import("../../app/img/lottie/phone.json");
+
+//Freedom Animation
+export const travelCardAnimation = () =>
+  import("../../app/freedom/img/lottie/travel.json");
+export const saasAnimation = () =>
+  import("../../app/freedom/img/lottie/saas.json");
+export const virtualCardAnimation = () =>
+  import("../../app/freedom/img/lottie/virtual.json");
+export const spendAnimation = () =>
+  import("../../app/freedom/img/lottie/spend.json");
+export const digitalAnimation = () =>
+  import("../../app/freedom/img/lottie/digital-marketing.json");
+
+//Recievables Animation
+export const invoiceAnimation = () =>
+  import("../../app/receivables/img/lottie/invoice.json");
+export const bulkCollectAnimation = () =>
+  import("../../app/receivables/img/lottie/bulk-collect.json");
+export const paymentLinkAnimation = () =>
+  import("../../app/receivables/img/lottie/payment-link.json");
+export const quickCollectAnimation = () =>
+  import("../../app/receivables/img/lottie/quick-collect.json");
+export const virtualAccountAnimation = () =>
+  import("../../app/receivables/img/lottie/virtual.json");

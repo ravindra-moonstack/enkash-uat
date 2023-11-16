@@ -14,8 +14,4 @@ export { default as searchIcon } from "./img/search-icon.png";
 
 //Animations import
 export { default as receivablesAnimation } from "./img/lottie/receivables.json";
-export { default as invoiceAnimation } from "./img/lottie/invoice.json";
-export { default as bulkCollectAnimation } from "./img/lottie/bulk-collect.json";
-export { default as paymentLinkAnimation } from "./img/lottie/payment-link.json";
-export { default as quickCollectAnimation } from "./img/lottie/quick-collect.json";
-export { default as virtualAccountAnimation } from "./img/lottie/virtual.json";
+
