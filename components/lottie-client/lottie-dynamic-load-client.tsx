@@ -15,6 +15,16 @@ import {
   digitalAnimation,
   spendAnimation,
   virtualCardAnimation,
+  bulkCollectAnimation,
+  invoiceAnimation,
+  paymentLinkAnimation,
+  quickCollectAnimation,
+  virtualAccountAnimation,
+  budgetAndAdvanceAnimation,
+  heirarchyControlAnimation,
+  policyAnimation,
+  reimbursementAnimation,
+  scanAndDropAnimation,
 } from "./index";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -30,6 +40,16 @@ const animationMap: Record<string, () => Promise<any>> = {
   FreedomVirtualAnimation: virtualCardAnimation,
   FreedomSpendAnimation: spendAnimation,
   FreedomDigitalAnimation: digitalAnimation,
+  RecievablesInvoiceAnimation: invoiceAnimation,
+  RecievablesBulkAnimation: bulkCollectAnimation,
+  RecievablesPaymentAnimation: paymentLinkAnimation,
+  RecievablesQuickAnimation: quickCollectAnimation,
+  RecievablesVirtualAnimation: virtualAccountAnimation,
+  XpenzHeirarchyAnimation:heirarchyControlAnimation,
+  XpenzBudgetAnimation:budgetAndAdvanceAnimation,
+  XpenzReimbursementAnimation:reimbursementAnimation,
+  XpenzScanAnimation:scanAndDropAnimation,
+  XpenzPolicyAnimation: policyAnimation,
 };
 
 interface LottieDynamicLoadComponentProps {

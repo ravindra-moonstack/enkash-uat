@@ -13,12 +13,6 @@ import {
   officeImg,
   regualation,
   whiteArrow,
-  greenArrow,
-  heirarchyControlAnimation,
-  budgetAndAdvanceAnimation,
-  reimbursementAnimation,
-  scanAndDropAnimation,
-  policyAnimation,
   cardBg,
   faqBg,
   expense,
@@ -30,13 +24,13 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import Lottie from "lottie-react";
 import faqData from "./faqData";
 import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-
 import ActionCard from "@/components/action-card/action-card";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 
 const xpenz = () => {
   return (
@@ -94,7 +88,7 @@ const xpenz = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <Lottie animationData={expense} loop={true} />
+          <LottieClientComponent animationData={expense} loop={true} />
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
@@ -117,7 +111,10 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={budgetAndAdvanceAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"XpenzBudgetAnimation"}
+              loop={true}
+            />
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
@@ -129,7 +126,10 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={heirarchyControlAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"XpenzHeirarchyAnimation"}
+              loop={true}
+            />
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
@@ -155,20 +155,22 @@ const xpenz = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <Lottie animationData={reimbursementAnimation} loop={true} />
+
+            <LottieDynamicLoadComponent
+              animationName={"XpenzReimbursementAnimation"}
+              loop={true}
+            />
           </div>
         </div>
       </div>
 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
-          {/* <Image
-            src={scanAndDrop}
-            alt="policy and approval flows image"
-            className="img-fluid"
-          /> */}
           <div className={styles.lottie_container}>
-            <Lottie animationData={policyAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"XpenzPolicyAnimation"}
+              loop={true}
+            />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
@@ -193,7 +195,10 @@ const xpenz = () => {
             className="img-fluid"
           /> */}
           <div className={styles.lottie_second_container}>
-            <Lottie animationData={scanAndDropAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"XpenzScanAnimation"}
+              loop={true}
+            />
           </div>
         </div>
       </div>

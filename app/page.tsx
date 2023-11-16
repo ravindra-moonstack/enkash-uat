@@ -10,6 +10,14 @@ import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
+import RainbowSection from "@/components/homepage/rainbow";
+import BankSection from "@/components/homepage/bank-section";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+import DashBoardAnimation from "@/components/homepage/dashboard-animation";
+import PolygonSection from "@/components/homepage/polygon-section";
+import LoungeAnimationSection from "@/components/homepage/lounge-section";
+import TextAnimation from "@/components/framer-motion/text-animation";
+import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
 
 import {
   numberOne,
@@ -36,14 +44,6 @@ import {
   greenBg,
   integration,
 } from ".";
-import RainbowSection from "@/components/homepage/rainbow";
-import BankSection from "@/components/homepage/bank-section";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import DashBoardAnimation from "@/components/homepage/dashboard-animation";
-import PolygonSection from "@/components/homepage/polygon-section";
-import LoungeAnimationSection from "@/components/homepage/lounge-section";
-import TextAnimation from "@/components/framer-motion/text-animation";
-import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
 
 export const metadata: Metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -122,7 +122,6 @@ const home = () => {
             }}
             innerHtml={
               <div className="d-flex align-items-center justify-content-start justify-content-md-center">
-                {" "}
                 <Image
                   src={userTick}
                   alt="kyc image"

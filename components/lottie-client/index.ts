@@ -35,3 +35,19 @@ export const quickCollectAnimation = () =>
   import("../../app/receivables/img/lottie/quick-collect.json");
 export const virtualAccountAnimation = () =>
   import("../../app/receivables/img/lottie/virtual.json");
+
+  //Xpenz Animation
+
+  export const heirarchyControlAnimation = () =>
+  import("../../app/xpenz/img/lottie/hierarchy-v2.json");
+  export const budgetAndAdvanceAnimation = () =>
+  import("../../app/xpenz/img/lottie/budget-and-advances-v2.json");
+  export const reimbursementAnimation = () =>
+  import("../../app/xpenz/img/lottie/reimbursement-v2.json");
+  export const scanAndDropAnimation = () =>
+  import("../../app/xpenz/img/lottie/scan-and-drop.json");
+  export const policyAnimation = () =>
+  import("../../app/xpenz/img/lottie/policy-v2.json");
+
+
+  

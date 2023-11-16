@@ -13,15 +13,10 @@ import {
   cardBg,
   faqBg,
   bannerImage,
-  bulkCollectAnimation,
-  invoiceAnimation,
-  quickCollectAnimation,
-  paymentLinkAnimation,
-  receivablesAnimation,
-  virtualAccountAnimation,
   cashInHandIcon,
   clickIcon,
   searchIcon,
+  receivablesAnimation,
 } from ".";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -30,13 +25,14 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import Lottie from "lottie-react";
 import faqData from "./faqData";
 import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
 import ActionCard from "@/components/action-card/action-card";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 
 const receivables = () => {
   return (
@@ -96,11 +92,12 @@ const receivables = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <Lottie
-            animationData={receivablesAnimation}
-            loop={true}
-            className={styles.lottie_container}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent
+              animationData={receivablesAnimation}
+              loop={true}
+            />
+          </div>
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
@@ -124,7 +121,10 @@ const receivables = () => {
               className={styles.card_bg}
             />
             <div className={styles.lottie_container}>
-              <Lottie animationData={virtualAccountAnimation} loop={true} />
+              <LottieDynamicLoadComponent
+                animationName={"RecievablesVirtualAnimation"}
+                loop={true}
+              />
             </div>
           </div>
         </div>
@@ -138,7 +138,10 @@ const receivables = () => {
               className={styles.card_bg}
             />
             <div className={styles.lottie_container}>
-              <Lottie animationData={paymentLinkAnimation} loop={true} />
+              <LottieDynamicLoadComponent
+                animationName={"RecievablesPaymentAnimation"}
+                loop={true}
+              />
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
@@ -166,7 +169,10 @@ const receivables = () => {
               className={styles.card_bg}
             />
             <div className={styles.lottie_container}>
-              <Lottie animationData={bulkCollectAnimation} loop={true} />
+              <LottieDynamicLoadComponent
+                animationName={"RecievablesBulkAnimation"}
+                loop={true}
+              />
             </div>
           </div>
         </div>
@@ -175,7 +181,10 @@ const receivables = () => {
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
           <div className={styles.lottie_container}>
-            <Lottie animationData={quickCollectAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"RecievablesQuickAnimation"}
+              loop={true}
+            />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
@@ -195,7 +204,10 @@ const receivables = () => {
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
-            <Lottie animationData={invoiceAnimation} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"RecievablesInvoiceAnimation"}
+              loop={true}
+            />
           </div>
         </div>
       </div>
@@ -399,10 +411,11 @@ const receivables = () => {
       </div>
 
       <div className="row">
-      <ContactUsCard
+        <ContactUsCard
           title="Seeking further understanding of bill payments online?"
           description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        />{" "}
+      </div>
     </div>
   );
 };

@@ -15,19 +15,19 @@
     padding-left: 70px;
     padding-right: 30px;
     padding-top: 190px;
-    padding-bottom: 80px;
+    padding-bottom: 36px;
   }
 
   .lottie_container {
     position: absolute;
-    width: auto;
+    width: 350px;
     bottom: 0;
-    height: 350px;
+    height: auto;
 
     @include bp-md {
       bottom: 0;
       right: 0;
-      height: 550px;
+      width: 800px;
     }
   }
 
