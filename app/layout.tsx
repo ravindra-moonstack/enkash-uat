@@ -1,5 +1,6 @@
 import Footer from "@/components/footer/footer";
 import "../styles/_base.scss";
+import "bootstrap/dist/css/bootstrap.css";
 
 export interface RootProps {
   children: any;

@@ -5,7 +5,7 @@ import { greenArrow, blueArrow } from ".";
 import Heading from "../heading/heading";
 import styles from "./explore-card.module.scss";
 import Link from "next/link";
-import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
+import { motion, useScroll, MotionValue } from "framer-motion";
 import { useRef } from "react";
 
 export interface CardProps {
