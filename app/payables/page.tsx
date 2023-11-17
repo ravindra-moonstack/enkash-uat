@@ -612,23 +612,6 @@ const payables = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What is an example of accounts payable?"
-                />
-              </div>
-              <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="show with design"
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
                   title="What is the invoice management process?"
                 />
               </div>

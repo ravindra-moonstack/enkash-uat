@@ -235,26 +235,26 @@ const giftCards = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-inline">
+                <div>
                   <Heading
-                    title={`Choose to make${space}`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Bill Payment"
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title={`${space}seamlessly with EnKash`}
+                    title={`Encourage your employees with these${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                 </div>
+                <Heading
+                  title={`easy-to-use${space}`}
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
+                <Heading
+                  title="gift cards"
+                  color="rainy-blue"
+                  size="h1"
+                  weight="6"
+                />
               </div>
             </>
           }
