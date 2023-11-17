@@ -7,10 +7,10 @@ export interface ButtonProps {
   title: string;
   url?: string;
   theme?: "theme-blue" | "theme-green" | "theme-black";
-  size?: "small" | "medium";
 }
 
 const PrimaryButton = ({ isDisabled, title, url, theme }: ButtonProps) => {
+  
   const handleClick = () => {
     if (url) {
       window.open(url, "_blank");

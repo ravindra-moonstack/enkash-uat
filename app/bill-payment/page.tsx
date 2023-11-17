@@ -39,13 +39,13 @@ const billPayments = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Olympus |${space}`}
+                title={`Olympus${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <Heading title="Bill Payment" size="h4" weight="4" />
+            <Heading title="| Bill Payment" size="h4" weight="4" />
           </div>
 
           <div className="">

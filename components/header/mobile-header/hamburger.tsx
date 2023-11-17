@@ -41,7 +41,6 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
           title="Sign Up"
           url={"singupUrl"}
           theme="theme-blue"
-          size="medium"
         />
       </div>
 

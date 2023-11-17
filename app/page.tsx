@@ -487,7 +487,6 @@ const home = () => {
               <div className="mt-4">
                 <PrimaryButton
                   title="Get a Demo"
-                  size="medium"
                   url={loginUrl}
                   theme="theme-green"
                 />
@@ -646,7 +645,6 @@ const home = () => {
               isDisabled={false}
               url=""
               theme="theme-blue"
-              size="medium"
             />
           </div>
         </div>
@@ -818,7 +816,6 @@ const home = () => {
               isDisabled={false}
               url=""
               theme="theme-blue"
-              size="medium"
             />
           </div>
         </div>
@@ -877,7 +874,7 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fifthteen_row} row color-white`}>
-        <div className={`${styles.title} col-12 mb-md-5 text-center d-md-flex d-inline`}>
+        <div className={`${styles.title} col-12 mb-md-5 text-center`}>
           <Heading
             title={`Trusted by${space}`}
             color="white"

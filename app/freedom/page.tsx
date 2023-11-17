@@ -77,7 +77,6 @@ const xpenz = () => {
             <PrimaryButton
               title="EnKash Now"
               theme="theme-blue"
-              size="medium"
             />
             <span className="mx-2"></span>
             <SecondryButton
@@ -409,7 +408,6 @@ const xpenz = () => {
             <PrimaryButton
               title="Know More"
               theme="theme-black"
-              size="medium"
             />
           </div>
         </div>
