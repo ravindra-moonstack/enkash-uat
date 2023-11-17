@@ -1,6 +1,10 @@
 @import "../../../styles/mixin";
 @import "../../../styles/variables";
 
+.main_padding {
+  padding: 35px 30px;
+}
+
 .mobile_modal {
   background-color: $color-white;
   height: 100%;
@@ -87,4 +91,16 @@
   margin-left: 20px;
   width: 120px;
   height: auto;
+}
+
+.secondary_button {
+  border-radius: 20px;
+  border: 2px solid $color-equity-blue;
+  background-color: $color-indi-volt;
+  color: $color-white;
+  padding: 3px 20px;
+}
+.active {
+  color: $color-black;
+  background-color: $color-white;
 }

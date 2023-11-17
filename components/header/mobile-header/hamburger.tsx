@@ -2,6 +2,7 @@ import Image from "next/image";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { enkashWhiteLogo, hamnburgerIcon, enkashBlueLogo, crossMenu } from "..";
 import styles from "./mobile-header.module.scss";
+import Link from "next/link";
 
 interface HamburgerProps {
   currentStep: number;
@@ -16,7 +17,7 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
   return (
     <>
       <div
-        className={`d-flex justify-content-between p-3 ${
+        className={`d-flex justify-content-between ${styles.main_padding} ${
           currentStep === 0 ? "d-flex" : "d-none"
         }`}
       >
@@ -28,13 +29,20 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
               setCurrentStep(1);
             }}
           />
-          <Image
-            src={enkashWhiteLogo}
-            alt="Enkash White logo"
-            className={styles.enkash_logo}
-          />
+          <Link href={"/"}>
+            <Image
+              src={enkashWhiteLogo}
+              alt="Enkash White logo"
+              className={styles.enkash_logo}
+            />
+          </Link>
         </div>
-        <PrimaryButton title="Sign Up" url={"singupUrl"} theme="theme-blue" />
+        <PrimaryButton
+          title="Sign Up"
+          url={"singupUrl"}
+          theme="theme-blue"
+          size="medium"
+        />
       </div>
 
       <div
@@ -45,12 +53,14 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
             <Image src={crossMenu} alt="Close menu icon" onClick={resetState} />
           </div>
           <div className="col-9 d-flex align-items-center">
-            <Image
-              src={enkashBlueLogo}
-              alt="Enkash Blue logo"
-              width={100}
-              className="ps-4"
-            />
+            <Link href={"/"}>
+              <Image
+                src={enkashBlueLogo}
+                alt="Enkash Blue logo"
+                width={100}
+                className={`${styles.enkash_logo} ps-4`}
+              />
+            </Link>
           </div>
         </div>
       </div>

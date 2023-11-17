@@ -281,3 +281,18 @@ body {
     background: linear-gradient(90deg, #61d6ff, transparent);
   }
 }
+
+/* Other Classes */
+
+.mobile-only {
+  @include bp-md {
+    display: none;
+  }
+}
+
+.desktop-only {
+  display: none;
+  @include bp-md {
+    display: block;
+  }
+}

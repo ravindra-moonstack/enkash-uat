@@ -2,10 +2,7 @@ import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import utmSources from "@/constant/utm-source";
 import { Fragment, useState } from "react";
-import motherProducts from "@/constant/products/mother-products";
 import SubProductListView from "./sub-product-list-view";
-import resources from "@/constant/resources";
-import solutions from "@/constant/solutions";
 import { forwardArrowBlue } from "..";
 import Image from "next/image";
 const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
@@ -62,7 +59,11 @@ const ProductListView = ({
           >
             <PrimaryButton title="Sign Up" url={singupUrl} theme="theme-blue" />
             <span className="mx-2"></span>
-            <PrimaryButton title="Log In" url={loginUrl} theme="theme-blue" />
+            <div>
+              <button className={`${styles.secondary_button} ${styles.active}`}>
+                Login
+              </button>
+            </div>
           </div>
         </div>
       )}

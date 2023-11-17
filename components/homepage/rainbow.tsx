@@ -10,6 +10,9 @@ import {
   rainbowThree,
   playButton,
   threeDownArrow,
+  rainbowOneMobile,
+  rainbowThreeMobile,
+  rainbowTwoMobile,
 } from "@/app/index";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
@@ -43,9 +46,9 @@ const RainbowSection = () => {
       maxScrollForFullAdjustment = 400;
       maxAdjustment = 45;
     } else {
-      posTopRainbowOneImg = 120;
-      posTopRainbowTwoImg = 170;
-      posTopRainbowThreeImg = 215;
+      posTopRainbowOneImg = 105;
+      posTopRainbowTwoImg = 160;
+      posTopRainbowThreeImg = 210;
       maxScrollForFullAdjustment = 250;
       maxAdjustment = 15;
     }
@@ -92,20 +95,36 @@ const RainbowSection = () => {
         <span className={`col-12  ${styles.first_text}`}>
           <Heading title="A Spend" size="h0" />
         </span>
+
+        <Image
+          src={rainbowOneMobile}
+          alt="background image"
+          className={`${styles.rainbow_one} mobile-only`}
+          style={{ top: `${posTopRainbowOneImg}px` }}
+        />
+
         <Image
           src={rainbowOne}
           alt="background image"
-          className={styles.rainbow_one}
+          className={`${styles.rainbow_one} desktop-only`}
           style={{ top: `${posTopRainbowOneImg}px` }}
         />
+
         <span className={`col-12  ${styles.second_text}`}>
           <Heading title="Management Solution" size="h0" />
         </span>
 
         <Image
+          src={rainbowTwoMobile}
+          alt="background image 2"
+          className={`${styles.rainbow_two} mobile-only`}
+          style={{ top: `${posTopRainbowTwoImg}px` }}
+        />
+
+        <Image
           src={rainbowTwo}
           alt="background image 2"
-          className={styles.rainbow_two}
+          className={`${styles.rainbow_two} desktop-only`}
           style={{ top: `${posTopRainbowTwoImg}px` }}
         />
 
@@ -114,9 +133,16 @@ const RainbowSection = () => {
         </span>
 
         <Image
+          src={rainbowThreeMobile}
+          alt="background image 3"
+          className={`${styles.rainbow_three} mobile-only`}
+          style={{ top: `${posTopRainbowThreeImg}px` }}
+        />
+
+        <Image
           src={rainbowThree}
           alt="background image 3"
-          className={styles.rainbow_three}
+          className={`${styles.rainbow_three} desktop-only`}
           style={{ top: `${posTopRainbowThreeImg}px` }}
         />
 

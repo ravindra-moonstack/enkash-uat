@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { forwardArrowBlue, productModalEmptyStateImg } from "..";
+import { forwardArrowBlue, mobileStack, productModalEmptyStateImg } from "..";
 import utmSources from "@/constant/utm-source";
 import navBarTopTtitle from "@/constant/nav-bar";
 import { Fragment, useState } from "react";
@@ -40,7 +40,6 @@ const resourcesList = [
 ];
 
 const MobileHeader = () => {
-
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
 
@@ -64,7 +63,7 @@ const MobileHeader = () => {
                     }}
                   >
                     <div className={styles.title}> {item.name}</div>
-                    {index !== 3 && (
+                    {index !== 2 && (
                       <>
                         <Image src={forwardArrowBlue} alt="arrow down icon" />
                       </>
@@ -78,10 +77,10 @@ const MobileHeader = () => {
 
           <div className="d-flex justify-content-end">
             <Image
-              src={productModalEmptyStateImg}
-              height={450}
-              width={1200}
-              alt="product empty state image"
+              src={mobileStack}
+              alt="enkash blue stack image"
+              height={300}
+              width={580}
             />
           </div>
           <div className={styles.line}></div>
@@ -90,7 +89,11 @@ const MobileHeader = () => {
           >
             <PrimaryButton title="Sign Up" url={singupUrl} theme="theme-blue" />
             <span className="mx-2"></span>
-            <PrimaryButton title="Log In" url={loginUrl} theme="theme-blue" />
+            <div>
+              <button className={`${styles.secondary_button} ${styles.active}`}>
+                Login
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -100,14 +103,14 @@ const MobileHeader = () => {
             selectedItemIndex === 0
               ? motherProducts
               : selectedItemIndex === 1
-              ? solutions
+              ? resources
               : resources
           }
           childProducts={
             selectedItemIndex === 0
               ? motherProductsList
               : selectedItemIndex === 1
-              ? solutionsList
+              ? resourcesList
               : resourcesList
           }
           setCurrentStep={setCurrentStep}

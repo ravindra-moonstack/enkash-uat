@@ -54,7 +54,7 @@ const SubProductListView = (props: {
                           activeSubtitleIndex === index
                             ? "color-equity-blue"
                             : "color-secondry-grey"
-                        }`}
+                        } {${styles.title}}`}
                       >
                         {category.subtitle}
                       </div>
@@ -119,7 +119,11 @@ const SubProductListView = (props: {
         >
           <PrimaryButton title="Sign Up" url={singupUrl} theme="theme-blue" />
           <span className="mx-2"></span>
-          <PrimaryButton title="Log In" url={loginUrl} theme="theme-blue" />
+          <div>
+            <button className={`${styles.secondary_button} ${styles.active}`}>
+              Login
+            </button>
+          </div>
         </div>
       </div>
     </div>
