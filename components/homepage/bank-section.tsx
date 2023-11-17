@@ -60,14 +60,34 @@ const BankSection = () => {
           className={`${styles.bank_logo} 
             animate__animated mb-3 d-flex align-items-center justify-content-between`}
         >
-          <Image src={axisBankLogo} width={150} alt="axis bank logo" />
-          <Image width={150} src={iciciBankLogo} alt="axis bank logo" />
-          <Image width={150} src={sbmLogo} alt="axis bank logo" />
-          <Image width={70} src={visaLogo} alt="axis bank logo" />
-          <Image width={130} src={kotakLogo} alt="axis bank logo" />
-          <Image width={65} src={hdfcLogo} alt="axis bank logo" />
-          <Image width={100} src={rupayLogo} alt="axis bank logo" />
-          <Image width={90} src={masterCardLogo} alt="axis bank logo" />
+          <Image
+            className={styles.axis}
+            src={axisBankLogo}
+            alt="axis bank logo"
+          />
+          <Image
+            className={styles.icici}
+            src={iciciBankLogo}
+            alt="icici bank logo"
+          />
+          <Image className={styles.sbm} src={sbmLogo} alt="sbm bank logo" />
+          <Image className={styles.visa} src={visaLogo} alt="visa bank logo" />
+          <Image
+            className={styles.kotak}
+            src={kotakLogo}
+            alt="kotak bank logo"
+          />
+          <Image className={styles.hdfc} src={hdfcLogo} alt="hdfc bank logo" />
+          <Image
+            className={styles.rupay}
+            src={rupayLogo}
+            alt="rupay bank logo"
+          />
+          <Image
+            className={styles.master}
+            src={masterCardLogo}
+            alt="master card logo"
+          />
         </div>
       )}
       {selectedTab === "customers" && (
@@ -75,12 +95,32 @@ const BankSection = () => {
           className={`${styles.customer_logo} 
             animate__animated mb-3 d-flex align-items-center justify-content-between`}
         >
-          <Image width={100} src={box8Logo} alt="axis bank logo" />
-          <Image width={100} src={firstCryLogo} alt="axis bank logo" />
-          <Image width={100} src={landmarkLogo} alt="axis bank logo" />
-          <Image width={120} src={everestLogo} alt="axis bank logo" />
-          <Image width={120} src={cureFoodsLogo} alt="axis bank logo" />
-          <Image width={140} src={infraMarketLogo} alt="axis bank logo" />
+          <Image className={styles.box} src={box8Logo} alt="box8 logo" />
+          <Image
+            className={styles.firstcry}
+            src={firstCryLogo}
+            alt="first cry logo"
+          />
+          <Image
+            className={styles.landmark}
+            src={landmarkLogo}
+            alt="landmark logo"
+          />
+          <Image
+            className={styles.everest}
+            src={everestLogo}
+            alt="everest logo"
+          />
+          <Image
+            className={styles.cure}
+            src={cureFoodsLogo}
+            alt="cure food logo"
+          />
+          <Image
+            className={styles.infra}
+            src={infraMarketLogo}
+            alt="infra market logo"
+          />
         </div>
       )}
     </>

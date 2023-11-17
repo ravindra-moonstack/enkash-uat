@@ -33,7 +33,7 @@ const DashBoardAnimation = () => {
   }, [activeAnimation]);
   return (
     <>
-      <div className={`col-md-12 col-4  ${styles.action_container}`}>
+      <div className={`col-md-12 col-3  ${styles.action_container}`}>
         <div className="d-flex flex-column flex-md-row justify-content-center w-100">
           <div className="me-2" onClick={() => setActiveAnimation("manage")}>
             <MenuButton
@@ -64,7 +64,7 @@ const DashBoardAnimation = () => {
           </div>
         </div>
       </div>
-      <div className={`col-md-12 col-8 ${styles.image_container}`}>
+      <div className={`col-md-12 col-9 ${styles.image_container}`}>
         <Lottie
           animationData={dashBoardAnimationData}
           loop={true}

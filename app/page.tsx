@@ -246,7 +246,7 @@ const home = () => {
               />
             </div>
           </div>
-          <div className="d-flex flex-column my-3 ps-3 mt-5">
+          <div className="d-flex flex-column my-3 ps-md-3 mt-5">
             <div className="row d-flex my-4">
               <div className="col-6 d-flex">
                 <Image
@@ -367,15 +367,19 @@ const home = () => {
                 color="black"
                 weight="6"
               />
-              <Heading title="and" size="h2" color="equity-blue" weight="6" />
-            </div>
-            <div>
+              <span className="mobile-only">
+                <br />
+              </span>
               <Heading
-                title="Customers."
+                title={`and${space}`}
                 size="h2"
                 color="equity-blue"
                 weight="6"
               />
+              <span className="desktop-only">
+                <br />
+              </span>
+              <Heading title="Customers." size="h2" color="black" weight="6" />
             </div>
 
             <Image src={blueBlackLine} alt="underline image" />
@@ -432,7 +436,7 @@ const home = () => {
           src={leftBlueGradient}
           alt="gradient image"
         />
-        <div className={`col-md-6 col-12 d-flex mb-5`}>
+        <div className="col-md-6 col-12 d-flex mb-5 order-2 order-md-1">
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
               animationName={"HomePageExpenseManagement"}
@@ -440,7 +444,7 @@ const home = () => {
             />
           </div>
         </div>
-        <div className="col-md-6 col-12 mb-5">
+        <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
           <ExploreCard
             title="Expense Management"
             description="Gain control over your business spends with a complete overview
@@ -519,7 +523,7 @@ const home = () => {
               weight="7"
             />
           </div>
-          <div className="mt-2 text-center">
+          <div className="mt-2 text-center px-4 px-m-0">
             <Heading
               title="Leverage the power of purpose-based cards with smart controls."
               color="equity-blue"
@@ -595,24 +599,36 @@ const home = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex flex-column mt-3">
-          <div className="d-flex  justify-content-md-start">
-            <div className="me-2">
-              <MenuButton isDisabled={false} title="Vouchers" theme="light" />
-            </div>
-            <div className="me-2">
-              <MenuButton isDisabled={false} title="Reward" theme="disabled" />
-            </div>
-            <MenuButton isDisabled={false} title="Incentive" theme="disabled" />
+          <div className="d-flex justify-content-start">
+            <button className={styles.button} disabled={true}>
+              Vouchers
+            </button>
+            <button
+              className={`${styles.button} ${styles.disabled}`}
+              disabled={true}
+            >
+              Reward
+            </button>
+            <button
+              className={`${styles.button} ${styles.disabled}`}
+              disabled={true}
+            >
+              Incentive
+            </button>
           </div>
-          <div className="d-flex mt-3  justify-content-md-start">
-            <div className="me-2">
-              <MenuButton
-                isDisabled={false}
-                title="Gift Card"
-                theme="disabled"
-              />
-            </div>
-            <MenuButton isDisabled={false} title="Offers" theme="disabled" />
+          <div className="d-flex justify-content-start mt-3">
+            <button
+              className={`${styles.button} ${styles.disabled}`}
+              disabled={true}
+            >
+              Gift Card
+            </button>
+            <button
+              className={`${styles.button} ${styles.disabled}`}
+              disabled={true}
+            >
+              Offers
+            </button>
           </div>
           <div className="d-flex mt-3 text-md-start">
             <Heading
@@ -818,7 +834,7 @@ const home = () => {
             <div
               className={`d-flex flex-column justify-content-between ${styles.box_item}`}
             >
-              <div className="mb-5 py-2">
+              <div className="mb-3 mb-m-5 py-2">
                 <Heading title="Startups to Watch" color="black" size="h5" />
               </div>
               <div>
@@ -842,7 +858,7 @@ const home = () => {
             <div
               className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
             >
-              <div className="mb-5 py-2">
+              <div className="mb-3 mb-m-5 py-2">
                 <Heading
                   title="Best B2B Solution Provider"
                   color="black"
@@ -861,7 +877,7 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fifthteen_row} row color-white`}>
-        <div className={`${styles.title} col-12 mb-md-5 text-center`}>
+        <div className={`${styles.title} col-12 mb-md-5 text-center d-md-flex d-inline`}>
           <Heading
             title={`Trusted by${space}`}
             color="white"

@@ -117,6 +117,7 @@
     top: 210px;
     z-index: 6;
     opacity: 0;
+    height: auto;
     animation: slideFromBottom 0.6s ease-out forwards;
     animation-delay: 0.6s;
     @include bp-md {
@@ -142,6 +143,12 @@
     position: absolute;
     top: 310px;
     z-index: 7;
+    color: #fff;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 20px;
+    padding: 0px 20px;
+
     @include bp-md {
       display: none;
     }
@@ -227,15 +234,18 @@
   }
   .email_box {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
     border: 2px solid $color-equity-blue;
     border-radius: 30px;
     color: $color-white;
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px 10px;
     font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
     @include bp-md {
+      padding: 10px;
       font-size: 20px;
       margin-top: 100px;
       width: fit-content;
@@ -269,7 +279,7 @@
 
 .third_row {
   position: relative;
-  height: 400px;
+  height: 500px;
   display: flex;
   justify-content: center;
   @include bp-md {
@@ -301,8 +311,8 @@
     z-index: 0;
     top: 60px;
     z-index: 4;
-    width: 250px;
-    left: 30px;
+    width: 450px;
+    left: -70px;
     z-index: 5;
     @include bp-md {
       left: auto;
@@ -340,7 +350,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    top: 270px;
+    top: 370px;
     padding: 0 20px;
     @include bp-md {
       top: 970px;
@@ -410,9 +420,73 @@
     justify-content: space-evenly;
     overflow-x: auto;
     img {
-      margin-right: 20px;
       @include bp-md {
         margin-right: 0px;
+      }
+    }
+
+    .axis {
+      height: 30px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 40px;
+      }
+    }
+    .icici {
+      height: 25px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 30px;
+      }
+    }
+    .sbm {
+      height: 30px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 40px;
+      }
+    }
+    .visa {
+      height: 20px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 30px;
+      }
+    }
+    .kotak {
+      height: 30px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 40px;
+      }
+    }
+    .hdfc {
+      height: 30px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 40px;
+      }
+    }
+    .rupay {
+      height: 20px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 30px;
+      }
+    }
+    .master {
+      height: 30px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 40px;
       }
     }
   }
@@ -426,6 +500,57 @@
       margin-right: 20px;
       @include bp-md {
         margin-right: 0px;
+      }
+    }
+
+    .box {
+      height: 20px;
+      width: 120px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 30px;
+      }
+    }
+
+    .firstcry {
+      height: 20px;
+      width: 120px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 30px;
+      }
+    }
+
+    .landmark {
+      height: 60px;
+      width: 150px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 80px;
+      }
+    }
+    .everest {
+      height: 20px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 30px;
+      }
+    }
+    .cure {
+      height: 20px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 30px;
+      }
+    }
+    .infra {
+      height: 20px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 30px;
       }
     }
   }
@@ -462,7 +587,7 @@
       position: absolute;
       right: 0;
       top: 150px;
-      width: 230px;
+      width: 250px;
       height: auto;
       z-index: 1;
       @include bp-md {
@@ -656,6 +781,26 @@
       width: 300px;
     }
   }
+
+  .button {
+    border-radius: 20px;
+    border: none;
+    font-size: 12px;
+    font-weight: 700px;
+    padding: 5px 20px;
+    color: $color-secondry-grey;
+    border: 1px solid;
+    margin-right: 10px;
+    @include bp-md {
+      margin-right: 15px;
+      padding: 5px 50px;
+      font-size: 16px;
+    }
+  }
+
+  .disabled {
+    background-color: $color-pale-grey;
+  }
 }
 
 .eleventh_row {
@@ -747,13 +892,13 @@
       margin: 0;
     }
   }
+
   .box_item {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 20px 30px;
     @include bp-md {
-      padding: 20px 30px;
       width: 33%;
     }
   }
