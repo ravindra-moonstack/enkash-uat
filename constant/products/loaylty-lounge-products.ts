@@ -39,7 +39,7 @@ const loyaltyLoungeProducts = [
         description: "Automated platform for employee appreciation",
         imageSrc: rewardsPlatform,
         imageSrcHovered: rewardsPlatformFilled,
-        link: "/404",
+        link: "/employee-Rewards",
       },
       {
         name: "Gift Cards",
