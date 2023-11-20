@@ -32,7 +32,7 @@ const loyaltyLoungeProducts = [
         description: "Enable automated trade incentives easily",
         imageSrc: channelIncentive,
         imageSrcHovered: channelIncentiveFilled,
-        link: "/brand-voucher",
+        link: "/channel-incentive",
       },
       {
         name: "Employee Rewards",
