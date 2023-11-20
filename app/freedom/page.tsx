@@ -88,7 +88,6 @@ const xpenz = () => {
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
-            {" "}
             <LottieClientComponent
               animationData={bannerAnimation}
               loop={true}

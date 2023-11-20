@@ -39,14 +39,14 @@
   .lottie_container {
     position: absolute;
     z-index: 1;
-    width: auto;
-    bottom: -100px;
+    height: auto;
+    bottom: -50px;
     right: -120px;
-    height: 350px;
+    width: 450px;
     @include bp-md {
       bottom: -140px;
       right: -220px;
-      height: 600px;
+      width: 850px;
     }
   }
 
