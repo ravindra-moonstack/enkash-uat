@@ -36,18 +36,26 @@ export const quickCollectAnimation = () =>
 export const virtualAccountAnimation = () =>
   import("../../app/receivables/img/lottie/virtual.json");
 
-  //Xpenz Animation
+//Xpenz Animation
 
-  export const heirarchyControlAnimation = () =>
+export const heirarchyControlAnimation = () =>
   import("../../app/xpenz/img/lottie/hierarchy.json");
-  export const budgetAndAdvanceAnimation = () =>
+export const budgetAndAdvanceAnimation = () =>
   import("../../app/xpenz/img/lottie/budget-and-advances.json");
-  export const reimbursementAnimation = () =>
+export const reimbursementAnimation = () =>
   import("../../app/xpenz/img/lottie/reimbursement.json");
-  export const scanAndDropAnimation = () =>
+export const scanAndDropAnimation = () =>
   import("../../app/xpenz/img/lottie/scan-and-drop.json");
-  export const policyAnimation = () =>
+export const policyAnimation = () =>
   import("../../app/xpenz/img/lottie/policy.json");
 
+//Loyalty Animation
 
-  
+export const employeeeRewardAnimation = () =>
+  import("../../app/loyalty-lounge/img/lottie/employee-reward.json");
+export const giftCardAnimation = () =>
+  import("../../app/loyalty-lounge/img/lottie/gift-card.json");
+export const channelIncentiveAnimation = () =>
+  import("../../app/loyalty-lounge/img/lottie/channel-incentive.json");
+export const brandVoucherAnimation = () =>
+  import("../../app/loyalty-lounge/img/lottie/brand-voucher.json");

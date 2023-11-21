@@ -2,12 +2,8 @@
 @import "../../styles/mixin";
 
 .first_row {
-  background-image: url(./img/bg-image.png);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: contain;
+  position: relative;
   background-color: $color-indi-volt;
-
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 36px;
@@ -19,13 +15,21 @@
     padding-bottom: 80px;
   }
 
-  .dashboard_img {
-    max-width: 100%;
+  .button_container {
+    margin-top: 20px;
+    margin-bottom: 350px;
+    @include bp-md {
+      margin-bottom: 0;
+    }
+  }
+
+  .lottie_container {
+    position: absolute;
+    bottom: 0;
+    width: 250px;
     height: auto;
     @include bp-md {
-      max-width: none;
-      height: fit-content;
-      width: 800px;
+      width: 420px;
     }
   }
 }
@@ -60,6 +64,12 @@
         left: 200px;
       }
     }
+    .first_lottie_container {
+      width: 200px;
+      @include bp-md {
+        width: 330px;
+      }
+    }
   }
 
   .second_container {
@@ -73,6 +83,15 @@
       @include bp-md {
         top: -100px;
         left: -100px;
+      }
+    }
+    .second_lottie_container {
+      display: flex;
+      width: 250px;
+      height: auto;
+      @include bp-md {
+        margin-top: -70px;
+        width: 400px;
       }
     }
   }
@@ -107,11 +126,6 @@
   }
 
   .lottie_container {
-    padding-left: 50px;
-    padding-right: 50px;
-  }
-  .lottie_second_container {
-    padding-top: 30px;
     padding-left: 50px;
     padding-right: 50px;
   }

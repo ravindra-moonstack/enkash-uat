@@ -63,7 +63,7 @@ const xpenz = () => {
             <Heading title="with advanced AI and ML" color="white" size="h2" />
             <Heading title="powered technology" color="white" size="h2" />
           </div>
-          <div className={`mt-4 ${styles.desktop_description}`}>
+          <div className="mt-4 mobile-only">
             <Heading
               title="Get a detailed analysis of where, when, and how your business is spending, and automate the expense management process for your business"
               color="white"
@@ -71,7 +71,7 @@ const xpenz = () => {
               weight="5"
             />
           </div>
-          <div className={`mt-4 ${styles.mobile_description}`}>
+          <div className="mt-4 desktop-only">
             <Heading
               title="Get a detailed analysis of where, when, and how your business is spending, and automate the expense management process for your business"
               color="white"
@@ -142,7 +142,7 @@ const xpenz = () => {
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 px-5 my-md-5 my-3">
+          <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
               title="Reimbursements"
               description="Keep employees happy and ensure uninterrupted business-related activities with streamlined reimbursement processes"

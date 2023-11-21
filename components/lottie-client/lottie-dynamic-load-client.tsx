@@ -25,6 +25,10 @@ import {
   policyAnimation,
   reimbursementAnimation,
   scanAndDropAnimation,
+  employeeeRewardAnimation,
+  channelIncentiveAnimation,
+  giftCardAnimation,
+  brandVoucherAnimation,
 } from "./index";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -50,6 +54,10 @@ const animationMap: Record<string, () => Promise<any>> = {
   XpenzReimbursementAnimation:reimbursementAnimation,
   XpenzScanAnimation:scanAndDropAnimation,
   XpenzPolicyAnimation: policyAnimation,
+  LoyaltyEmployeeAnimation:employeeeRewardAnimation,
+  LoyaltyChannelAnimation:channelIncentiveAnimation,
+  LoyaltyGiftCardAnimation:giftCardAnimation,
+  LoyaltyBrandVoucherAnimation: brandVoucherAnimation,
 };
 
 interface LottieDynamicLoadComponentProps {
