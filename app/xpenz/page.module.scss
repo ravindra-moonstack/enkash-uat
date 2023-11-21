@@ -6,6 +6,7 @@
   background-repeat: no-repeat;
   background-position: right bottom;
   background-size: contain;
+  background-color: $color-indi-volt;
 
   padding-left: 25px;
   padding-right: 25px;
@@ -109,6 +110,7 @@
   padding-right: 40px;
   padding-top: 36px;
   padding-bottom: 36px;
+  background-color: $color-indi-volt;
   @include bp-md {
     padding-left: 90px;
     padding-right: 90px;
@@ -176,6 +178,15 @@
   @include bp-md {
     background: url(./img/circle-stack-desktop.png);
     background-size: 100%;
+  }
+  .container {
+    img {
+      width: auto;
+      height: 50px;
+      @include bp-md {
+        height: 70px;
+      }
+    }
   }
 }
 

@@ -39,15 +39,15 @@ export const virtualAccountAnimation = () =>
   //Xpenz Animation
 
   export const heirarchyControlAnimation = () =>
-  import("../../app/xpenz/img/lottie/hierarchy-v2.json");
+  import("../../app/xpenz/img/lottie/hierarchy.json");
   export const budgetAndAdvanceAnimation = () =>
-  import("../../app/xpenz/img/lottie/budget-and-advances-v2.json");
+  import("../../app/xpenz/img/lottie/budget-and-advances.json");
   export const reimbursementAnimation = () =>
-  import("../../app/xpenz/img/lottie/reimbursement-v2.json");
+  import("../../app/xpenz/img/lottie/reimbursement.json");
   export const scanAndDropAnimation = () =>
   import("../../app/xpenz/img/lottie/scan-and-drop.json");
   export const policyAnimation = () =>
-  import("../../app/xpenz/img/lottie/policy-v2.json");
+  import("../../app/xpenz/img/lottie/policy.json");
 
 
   

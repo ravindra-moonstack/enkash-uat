@@ -241,8 +241,8 @@ const payables = () => {
         <div
           className={`d-flex flex-column flex-md-row tex-center justify-content-evenly  ${styles.container}`}
         >
-          <div className="md:mb-0 mb-4 text-md-center">
-            <Image src={coinIcon} alt="coins icon" className="md:mb-0 mb-4" />
+          <div className="mb-4 text-md-center">
+            <Image src={coinIcon} alt="coins icon" className="mb-4" />
             <div className="d-flex flex-md-column flex-row">
               <Heading title="Cost" size="h5" color="white" weight="7" />
               <Heading
@@ -269,7 +269,7 @@ const payables = () => {
             <Image
               src={cashAndTime}
               alt="cash and coin icon"
-              className="md:mb-0 mb-4"
+              className="mb-4"
             />
             <div className="d-flex flex-md-column flex-row">
               <Heading title="Timely" size="h5" color="white" weight="7" />

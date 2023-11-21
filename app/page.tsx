@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 import PrimaryButton from "../components/buttons/primary-button/primary-button";
-import MenuButton from "@/components/buttons/menu-button/menu-button";
 import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
