@@ -111,7 +111,7 @@ const RainbowSection = () => {
         />
 
         <span className={`col-12  ${styles.second_text}`}>
-          <Heading title="Management Solution" size="h0" />
+          <Heading title="Management Platform" size="h0" />
         </span>
 
         <Image

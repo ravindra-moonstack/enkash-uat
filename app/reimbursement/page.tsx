@@ -4,19 +4,28 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
-import faqData from "./faqData";
+import faqData from "./faq-data";
 import blogData from "./blog-data";
-import carouselData from "./carouselData";
-import { carouselBg, faqBg, heroImage, whiteArrow } from ".";
+import carouselData from "./carousel-data";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import { Metadata } from "next";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import WebHeader from "@/components/header/web-header";
+import MobileHeader from "@/components/header/mobile-header/mobile-header";
+
+export const metadata: Metadata = {
+  title: "Expense Reimbursement - Business & Travel  - EnKash",
+  description:
+    "Automate and improve your productivity within your organization with an Enkash smart reimbursement system that helps you track, process, and sync data in real-time.",
+};
 
 const reimbursement = () => {
   return (
@@ -29,35 +38,37 @@ const reimbursement = () => {
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
-              <Heading title="X" color="rainy-blue" size="h4" weight="7" />
               <Heading
-                title={`penz ${space}`}
-                color="white"
+                title={`Xpenz |${space}`}
+                color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-
-            <Heading title="| Reimbursements" size="h4" weight="4" />
+            <Heading title="Reimbursements" size="h4" weight="4" />
           </div>
-
-          <div className="">
-            <div className="d-flex flex-wrap">
-              <Heading title="EnKash" color="white" size="h2" weight="7" />
+          <div className="d-flex flex-column">
+            <Heading
+              title={`Simplify expense${space}`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`management with hassle-${space}`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <div>
               <Heading
-                title="minimizes distractions,"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title={`so that${space}`}
+                title={`free${space}`}
                 color="white"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title="you can take action."
+                title="reimbursements"
                 color="rainy-blue"
                 size="h2"
                 weight="7"
@@ -67,7 +78,7 @@ const reimbursement = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Maximize productivity within your organization with an easier reimbursement system that helps you track, process and sync data in real-time."
+              title="Maximize productivity within your organization with a more straightforward reimbursement system that helps you track, process, and sync data in real time"
               color="white"
               size="h6"
               weight="5"
@@ -87,11 +98,9 @@ const reimbursement = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Image
-            src={heroImage}
-            alt="reimbursement dashboard"
-            className={styles.hero_image}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -102,39 +111,39 @@ const reimbursement = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Process"],
+              itemArray: ["Manual", "Process"],
               oldWayDescription:
-                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
+                "Manual procedures are time-consuming for everyone involved. Employees fill out paper forms, attach receipts, and submit them to their managers for approval. Then, the finance team takes action.",
               newWayDescription:
-                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
+                "Leverage smart tools, such as OCR technology and approval matrices, to automate the reimbursement process and save time and money across the business.",
             },
             {
               itemArray: ["Timelines"],
               oldWayDescription:
-                "Traditional methods take a lot of time and come with layers of red tape.",
+                "Manual processes can cause delays in reimbursing employees, which can be demotivating and might create cash flow issues.",
               newWayDescription:
-                "Utilize advanced solutions like OCR technology and approval systems to streamline the reimbursement procedure.",
+                "Pre-loaded corporate cards and automated approval flows ensure that employees don’t have to pay out of their pocket and reduce the workload on your finance team.",
             },
             {
               itemArray: ["Spend", "Visibility"],
               oldWayDescription:
-                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
+                "Without automated systems, businesses have limited visibility of their reimbursement processes.",
               newWayDescription:
-                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+                "EnKash’s automated reimbursement system tracks expenses and monitors business spends for you.",
             },
             {
               itemArray: ["Tax", "Compliance"],
               oldWayDescription:
-                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Manually tracking expenses and ensuring they comply with tax laws is time-consuming and error-prone.",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools and improve your customer experience to quicken your collection process.",
+                "Audit and tax compliance become effortless with real-time and automatic data entries",
             },
             {
-              itemArray: ["Budgets", "&", "Policies"],
+              itemArray: ["Budgets &", "Policies"],
               oldWayDescription:
-                "Without a payment link, customers need to manually enter payment information or visit a physical location to make a payment, which is prone to errors and delays.",
+                "Enforcing reimbursement policies manually across an organization can cause compliance issues and unnecessary friction among teams.",
               newWayDescription:
-                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment.",
+                "Automated online reimbursement policies provide clarity to everyone involved, from the finance team to managers and their employees.",
             },
           ]}
         />
@@ -143,45 +152,64 @@ const reimbursement = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex justify-content-center text-center flex-wrap mb-5">
+        <div className="d-flex flex-column text-center mb-5">
+          <div>
+            <Heading
+              title={`Streamline your${space}`}
+              color="black"
+              size="h1"
+              weight="6"
+            />
+            <Heading
+              title="reimbursement process"
+              color="equity-blue"
+              size="h1"
+              weight="6"
+            />
+          </div>
+
           <Heading
-            title="Streamline Your Reimbursement Process"
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}with Automated Solutions.`}
+            title="with automated solutions"
             color="black"
             size="h1"
             weight="6"
           />
         </div>
-
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Processes"
-              description="A digitized end-to-end solution, automate checking, approvals, invoice generation and submission to ensure speed and accuracy."
+              whiteTitle="Automated processes"
+              description="A digitized end-to-end solution automates checking, approvals, invoice generation, and submission to ensure speed and accuracy"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Better Documentation"
-              description="Ensure employee compliance with easy-to-use capture modes which captures payments made on behalf of the business in a few simple steps"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Real time tracking"
-              description="Track spends made on behalf of the business by employees in real time."
+              whiteTitle="OCR Technology"
+              description="Automatically scan and collect details from receipts using OCR, eliminating the need for manual entry"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Correct Entries"
-              description="Automated reimbursement procedures eliminate the scope for delayed or incorrect data entries."
+              whiteTitle="WhatsApp Integration"
+              description="Seamless Whatsapp integration to approve/reject expenses at one go without logging into the dashboard "
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Alerts"
+              description="Receive a policy deviation warning if an employee submits an expense outside set limits"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Real-time tracking"
+              description="Track spends made on behalf of the business by employees in real-time"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Insightful data"
+              description=" Benefit from a complete overview of reimbursements and plan your business’ cash flow accordingly"
             />
           </div>
         </div>
@@ -191,29 +219,34 @@ const reimbursement = () => {
         <HowDoesCarousel
           titleContent={
             <>
-              <div className="text-center d-flex justify-content-center flex-wrap">
-                <Heading
-                  title={`EnKash Makes Your Business${space}`}
-                  color="white"
-                  size="h1"
-                  weight="6"
-                />
-                <Heading
-                  title="Reimbursement Process Effortless."
-                  color="rainy-blue"
-                  size="h1"
-                  weight="6"
-                />
+              <div className="text-center">
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="EnKash makes your business’"
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title="reimbursement process effortless"
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                </div>
               </div>
             </>
           }
-          mainTitle="How do Reimbursements work?"
+          mainTitle="How Does Reimbursements Work?"
           carouselData={carouselData}
-          carouselBg={carouselBg}
+          carouselBg={caraouselBg}
         />
       </div>
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Reimbursement Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how Reimbursements benefits for your business and employees!"
+        />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -223,7 +256,7 @@ const reimbursement = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about Reimbursements in detail."
+            title="Don't worry! Our FAQs section will help you learn about reimbursements in detail."
             color="black"
             size="h4"
           />
@@ -245,10 +278,138 @@ const reimbursement = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Want to understand reimbursements better?"
+          description="In the context of a business or company, reimbursement is the process of paying back expenses employees or others have undertaken on behalf of the business. It can be as simple as paying the employee back for the business travel expenses he or she has incurred or paying back the amount spent on fuel for business purposes."
+        />
+      </div>
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Explore the comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How do I pay expense reimbursements?"
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="A business can pay expense reimbursements via many methods. Here are some options to consider."
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Provide an advance for business expenses and keep
+                    replenishing it when the employee submits paperwork for the
+                    expenses incurred
+                  </li>
+                  <li>
+                    Let the employee pay all expenses from out of pocket, and
+                    when they submit an expense report, reimburse the approved
+                    amounts to the employee’s bank account
+                  </li>
+                  <li>
+                    Provide the employee with a credit card (virtual card)
+                    specifically for business purposes. You can specify the
+                    limit of usage and the purposes from the back end
+                  </li>
+                </ul>
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Are there alternatives to expense reimbursements?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="If you do not want to bother with the entire process of expense reimbursements, the best alternative is to issue virtual cards to employees for business expenses. And if you have a smart spend management platform like EnKash, you can control the limits, the type of usage, track the movement, and so on with a few clicks. This way, the employee can keep submitting the relevant documents once the expense has been paid off."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What expenses are reimbursable?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="In most businesses, the expenses incurred for business purposes can be reimbursed. These generally include meals and entertainment, travel expenses, fuel charges, advertising expenses, business gift expenses, educational costs, employees’ meals, daily travel allowance if applicable, local commutes (taxis, etc), event-related expenses, etc."
+                />
+              </div>
+
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What counts as employee business expenses?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Employee business expenses are those that an employee undertakes to further the business purposes. It could be anything from public relations, marketing, advertising, events, entertainment, travel, gifts or merchandise, displays, advertising, food, entertainment, etc., as long as they are for the business."
+                />
+              </div>
+
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How to manage expense reimbursements?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The management of expense reimbursements starts with clearly understanding the budget allocations. Then comes the creation of a clearly defined policy that helps everyone understand how the process works, the limits for each expense, the process to get approvals, exceptions to the rule, and the documents required to process the reimbursements. Once policies are in place, educating your employees about the same is essential. Keeping the policies updated per the organization's changing needs is also crucial."
+                />
+              </div>
+
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How to simplify your expense reimbursement process?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The best way to simplify your expense reimbursement process is to invest in a spend management platform that will help you at every step. Whether it is budgeting, controls, approvals, or reporting, all these aspects will be part of the platform."
+                />
+              </div>
+            </>
+          }
+        />
+      </div>
     </div>
   );
 };

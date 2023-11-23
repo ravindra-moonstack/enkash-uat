@@ -16,12 +16,11 @@
     }
   }
 
-  .hero_image {
+  .lottie_container {
     width: 300px;
-    height: auto;
     @include bp-md {
-      width: auto;
-      height: auto;
+      width: 450px;
+      margin-right: -50px;
     }
   }
 }
@@ -97,5 +96,11 @@
         display: flex;
       }
     }
+  }
+}
+
+.seventh_row {
+  background-color: $color-white;
+  @include bp-md {
   }
 }
