@@ -8,6 +8,7 @@
   transition: max-height 0.3s ease-in-out;
 
   li,
+  table,
   ul {
     font-size: 14px;
     @include bp-md {

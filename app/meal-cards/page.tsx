@@ -310,7 +310,7 @@ const mealCard = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="Meal cards are often used to purchase food and groceries from a network of authorized restaurants, cafes, or food outlets. Here's how meal cards typically work:"
                 />
               </div>
@@ -351,7 +351,7 @@ const mealCard = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="There are three different types of meal cards:"
                 />
               </div>
@@ -390,7 +390,7 @@ const mealCard = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="Meal cards have many benefits for employees:"
                 />
               </div>
@@ -442,7 +442,7 @@ const mealCard = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="Meal cards can benefit employers in the following ways:"
                 />
               </div>
@@ -483,7 +483,7 @@ const mealCard = () => {
                 <Heading
                   size="h6"
                   color="black"
-                  weight="6"
+                  weight="4"
                   title="While implementing meal cards at the workplace, employees should keep the following things in mind:"
                 />
               </div>
