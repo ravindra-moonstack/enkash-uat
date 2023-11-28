@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../constant/common";
 import faqData from "./faqData";
 import blogData from "./blog-data";
-import carouselData from "./carouselData";
+import carouselData from "./carousel-data";
 import { faqBg, heroImage, whiteArrow, carasoulBg } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";

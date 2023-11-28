@@ -4,20 +4,19 @@ import Image from "next/image";
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { forwardArrowBlue, mobileStack, productModalEmptyStateImg } from "..";
-import utmSources from "@/constant/utm-source";
-import navBarTopTtitle from "@/constant/nav-bar";
+import navBarTopTtitle from "@/components/header/data/nav-bar";
 import { Fragment, useState } from "react";
 import ProductListView from "./product-list-view";
 import Hamburger from "./hamburger";
-import olympusProducts from "@/constant/products/olympus-products";
-import freedomProducts from "@/constant/products/freedom-products";
-import xpenzProducts from "@/constant/products/xpenz-products";
-import loyaltyLoungeProducts from "@/constant/products/loaylty-lounge-products";
-import motherProducts from "@/constant/products/mother-products";
-import { solutions } from "@/constant/solutions";
-import resources from "@/constant/resources";
+import olympusProducts from "@/components/header/data/olympus-products";
+import freedomProducts from "@/components/header/data/freedom-products";
+import xpenzProducts from "@/components/header/data/xpenz-products";
+import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-products";
+import motherProducts from "@/components/header/data/mother-products";
+import { solutions } from "@/components/header/data/solutions";
+import resources from "@/components/header/data/resources";
 
-const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
+const singupUrl = "";
 const loginUrl = "https://home.enkash.com/login";
 
 const motherProductsList = [

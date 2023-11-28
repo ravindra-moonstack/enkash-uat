@@ -9,9 +9,8 @@ import {
   call,
   locationPin,
 } from ".";
-import utmSources from "@/constant/utm-source";
 
-const signupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["footer"]}`;
+const signupUrl = "";
 
 const Footer = () => {
   return (

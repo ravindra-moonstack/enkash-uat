@@ -28,7 +28,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import faqData from "./faqData";
+import faqData from "./faq-data";
 import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";

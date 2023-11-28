@@ -4,8 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from "./header.module.scss";
-import navBarTopTtitle from "../../constant/nav-bar";
-import utmSources from "@/constant/utm-source";
+import navBarTopTtitle from "./data/nav-bar";
 import {
   enkashWhiteLogo,
   enkashBlueLogo,
@@ -17,7 +16,7 @@ import SolutionsModal from "./modal/solutions-modal";
 import ResourcesModal from "./modal/resources-modal";
 import EmptyModal from "./modal/empty-modal";
 
-const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
+const singupUrl = "";
 const loginUrl = "https://home.enkash.com/login";
 
 const WebHeader = () => {

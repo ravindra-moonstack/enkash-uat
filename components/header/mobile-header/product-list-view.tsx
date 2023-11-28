@@ -1,11 +1,10 @@
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import utmSources from "@/constant/utm-source";
 import { Fragment, useState } from "react";
 import SubProductListView from "./sub-product-list-view";
 import { forwardArrowBlue } from "..";
 import Image from "next/image";
-const singupUrl = `https://home.enkash.com/signup?utm_source=${utmSources["nav_bar"]}`;
+const singupUrl = "";
 const loginUrl = "https://home.enkash.com/login";
 
 interface ProductListViewProps {

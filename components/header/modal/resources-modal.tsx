@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
-import resources from "../../../constant/resources";
+import resources from "../data/resources";
 import { blueforwardArrow } from "..";
 import resourcesData from "../blog-data.json";
 

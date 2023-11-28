@@ -1,11 +1,11 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from "./modal.module.scss";
-import motherProducts from "../../../constant/products/mother-products";
-import olympusProducts from "../../../constant/products/olympus-products";
-import freedomProducts from "../../../constant/products/freedom-products";
-import xpenzProducts from "../../../constant/products/xpenz-products";
-import loyaltyLoungeProducts from "../../../constant/products/loaylty-lounge-products";
+import motherProducts from "../data/mother-products";
+import olympusProducts from "../data/olympus-products";
+import freedomProducts from "../data/freedom-products";
+import xpenzProducts from "../data/xpenz-products";
+import loyaltyLoungeProducts from "../data/loaylty-lounge-products";
 import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";
 import Link from "next/link";
