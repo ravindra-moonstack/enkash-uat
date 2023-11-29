@@ -275,7 +275,7 @@ const virtualAccounts = () => {
                 key={index}
                 question={item.question}
                 answerHTML={
-                  <div key={index} className="mb-4 asas">
+                  <div key={index} className="mb-4">
                     <h4 className={styles.heading}>
                       There are many
                       <Link

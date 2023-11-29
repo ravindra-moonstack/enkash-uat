@@ -1,50 +1,51 @@
 const faqData = [
   {
-    question: "What is Digital Marketing?",
+    question:
+      "What is digital marketing, and how does the digital marketing card aid its management?",
     answer: [
       {
         heading:
-          "To apply for a meal card, you can visit click here or contact our customer service team (sales@freedomcard.io) to initiate the application process. We'll guide you through the necessary steps, which typically involve providing personal information and completing the application form.",
+          "Digital marketing promotes products or services using digital channels like search engines, social media, email, and websites. Digital marketing cards serve as financial control tools in this landscape, consolidating expenses scattered across platforms. These purpose-based cards enable businesses to manage digital marketing expenses efficiently in a centralized place, simplifying financial oversight and offering a comprehensive view of their digital marketing activities.",
       },
     ],
   },
   {
     question:
-      "Can I set usage limits on my card to ensure I don't overspend on digital marketing?",
+      "Can I implement usage limits on my digital marketing card to safeguard against overspending?",
     answer: [
       {
         heading:
-          "Yes, there may be a maximum limit for loading funds onto your meal card. The specific limit can vary depending on the type of meal card and your account status. Please reach out to us here (hyperlink req demo) or reach out to us at sales@freedomcard.io for more information.",
+          "These cards offer a highly flexible solution to customize usage limits on their digital marketing budgets, ensuring a stringent check against overspending. The best part is that these limits can be aligned with your business’s specific marketing budget, making it easier to stay within financial boundaries. This feature empowers companies to maintain strict financial control, preventing unintentional or excessive expenditures in their digital marketing efforts.",
       },
     ],
   },
   {
     question:
-      "How can I run campaigns on EnKash for digital marketing purposes?",
+      "How can digital marketing cards simplify the process of running marketing campaigns?",
     answer: [
       {
         heading:
-          "No, Freedom meal cards do not have any fees associated with it.*\n*Standard T&C applicable",
+          "Running marketing campaigns has become effortless and efficient with digital marketing cards. You can easily select and execute campaigns by seamlessly integrating this card into your digital marketing platform. The card's setup allows you to manage all expenses related to your campaigns in one central location. This simplifies both the initiation and tracking of campaigns, enhancing your ability to manage and optimize your digital marketing efforts effectively.",
       },
     ],
   },
   {
     question:
-      "Can I set specific limits on my EnKash card for different types of expenditures?",
+      "Can I set specific limits on my digital marketing card for various expenditures?",
     answer: [
       {
         heading:
-          "You can easily check your meal card balance through the Freedom online portal. Additionally, you can check them by contacting our customer service team. We prioritize convenience to ensure you have quick access to your card balance information.",
+          "Companies can issue this corporate card for digital marketing purposes and establish specific spending limits for distinct categories of expenditures. For instance, you can set limits for campaign-related expenses and subscription renewals based on your marketing budget. Furthermore, you can manage the types of expenditures you want to allow, ensuring that payments to specific websites or services align with your predefined financial boundaries.",
       },
     ],
   },
   {
     question:
-      "How can I prevent the misuse of my card for digital marketing expenses?",
+      "How to prevent the misuse of its digital marketing card for marketing expenses?",
     answer: [
       {
         heading:
-          "Yes, tracking your meal card expenses is a straightforward process. You can view your transaction history and monitor expenses through our online portal. This feature allows you to keep tabs on your spending, review past purchases, and manage your budget effectively. You can also build workflows, create policies, and issue new cards. If you have any further questions or need assistance with your meal card, please don't hesitate to reach out to our customer support team. We're here to help you make the most of your meal card experience.",
+          "These digital marketing cards employ a well-defined usage policy to prevent misuse. This policy acts as a safeguard, ensuring that only specific types of expenditures pre-approved by the marketing team are allowed on the card. These cards offer a secure and efficient way to protect against unauthorized or inappropriate spending by controlling and restricting card usage through predefined parameters. This level of control ultimately contributes to enhanced financial discipline and transparency in managing your digital marketing expenses.",
       },
     ],
   },

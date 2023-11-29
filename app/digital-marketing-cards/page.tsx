@@ -5,8 +5,9 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faq-data";
+import blogData from "./blog-data";
 import carouselData from "./carousel-data";
-import { caraouselBg, faqBg, heroImage, whiteArrow } from ".";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -14,11 +15,21 @@ import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-import blogData from "./blog-data";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import { Metadata } from "next";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import WebHeader from "@/components/header/web-header";
+import Link from "next/link";
 
-const digitalMarketingCards = () => {
+export const metadata: Metadata = {
+  title:
+    "Digital Marketing Corporate Card for Businesses | Corporate Card for Ad Spend- EnKash",
+  description:
+    "Digital marketing Corporate card is a specialized financial tool designed to streamline and enhance the management of digital marketing expenses. It empowers businesses to centralize their spending, set customized limits, and control their budget effectively",
+};
+
+const digitalMarketingCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -30,36 +41,41 @@ const digitalMarketingCards = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Freedom${space}`}
+                title={`Freedom |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <Heading title="| Digital Marketing Cards" size="h4" weight="4" />
+            <Heading title="Digital Marketing Cards" size="h4" weight="4" />
           </div>
-
-          <div className="">
-            <div className="d-flex flex-wrap">
+          <div className="d-flex flex-column">
+            <Heading
+              title={`Your go-to card for all${space}`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <div>
               <Heading
-                title={`Never exceed your${space}`}
+                title={`your${space}`}
                 color="white"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title=" Digital Marketing budget."
+                title={`digital marketing${space}`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
-              <Heading title="again" color="white" size="h2" weight="7" />
+              <Heading title="needs" color="white" size="h2" weight="7" />
             </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage your business’ digital marketing expenses with smart corporate cards with flexible controls. Load your marketing budget into the card, select the types of campaigns you want to run and keep track of expenditure in real-time."
+              title="Take control of your digital marketing budget with easy-to-use and customizable cards. Load your marketing budget into the card, select the campaigns you want to run, and keep track of expenditures in real-time."
               color="white"
               size="h6"
               weight="5"
@@ -79,11 +95,9 @@ const digitalMarketingCards = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Image
-            src={heroImage}
-            alt="reimbursement dashboard"
-            className={styles.hero_image}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -96,30 +110,30 @@ const digitalMarketingCards = () => {
             {
               itemArray: ["Budget", "Allocation"],
               oldWayDescription:
-                "Verbally specifying budgets, or even having them in writing does not guarantee that your digital marketing spends will not cross said budget, especially when you’re using one corporate card for all spends.",
+                "Verbally specifying budgets, or even having them in writing, does not guarantee that your digital marketing spends will not cross the specified budget, especially when using one corporate card for all spends.",
               newWayDescription:
-                "Having a purpose-based corporate card for digital marketing with a predefined limit ensures that your digital marketing spends cannot exceed your intended budget.",
+                "A purpose-based corporate card with a predefined limit ensures that your digital marketing expenses do not exceed your intended budget.",
             },
             {
               itemArray: ["Expense", "Tracking"],
               oldWayDescription:
-                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy",
+                "Tracking digital marketing expenses means tallying invoices with actual card spends and going through multiple dashboards and campaigns to calculate the amount spent.",
               newWayDescription:
-                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
+                "Track and manage all your digital marketing expenses on a single platform, including ad spends, marketing software purchases, and more.",
             },
             {
               itemArray: ["Campaign", "Management"],
               oldWayDescription:
-                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
+                "Managing and optimizing campaign performance across multiple channels and platforms is complex, and enforcing consistent budgets is even more challenging.",
               newWayDescription:
-                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+                "In your digital marketing card, set customized limits for campaign expenditures based on your budget and select any campaigns you wish to run.",
             },
             {
               itemArray: ["Spend", "Overview"],
               oldWayDescription:
-                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Getting a comprehensive view of your business’s digital marketing spending is challenging",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+                "Get a complete overview of your marketing spends that helps reduce costs and streamline your payment process.",
             },
           ]}
         />
@@ -128,45 +142,59 @@ const digitalMarketingCards = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex justify-content-center text-center flex-wrap mb-5">
-          <Heading title="EnKash is the" color="black" size="h1" weight="6" />
+        <div className="d-inline text-center mb-5">
           <Heading
-            title={`${space}key to boosting${space}`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title="your Digital Marketing performance."
+            title="Simplify your business’s"
             color="black"
             size="h1"
             weight="6"
           />
+          <Heading
+            title={`${space}digital marketing`}
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading title={`${space}needs`} color="black" size="h1" weight="6" />
         </div>
-
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Subscription Management"
-              description="Effectively manage your recurring digital marketing expenses such as subscriptions that recur monthly or annually."
+              description="Effectively manage your recurring digital marketing expenses, such as subscriptions that recur monthly or annually"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Spend Optimization"
-              description="Enhance your organization's performance by implementing a robust purchasing oversight process that helps to reduce costs and streamlines your payment process."
+              description="Enhance your organization's performance by implementing a robust purchasing oversight process that helps reduce cost and streamlines your payment process"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Marketing Budgets"
-              description="EnKash lets you set customized usage limits that ensure there is no scope for overspending. You’ll have the flexibility to set the limit based on your marketing budget."
+              description="A digital marketing business card lets you set customized usage limits, ensuring no overspending"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Run Campaigns"
-              description="Seamlessly add your card for digital marketing expenses onto the platform and select the desired campaigns you wish to run."
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Easy"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Usage"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description=" You can seamlessly add your card for digital marketing expenses to the desired platform and select the campaigns you wish to run"
             />
           </div>
         </div>
@@ -176,19 +204,29 @@ const digitalMarketingCards = () => {
         <HowDoesCarousel
           titleContent={
             <>
-              <div className="text-center d-flex justify-content-center flex-wrap">
-                <Heading
-                  title={`Master Your Digital Marketing Expenditure with greater${space}`}
-                  color="white"
-                  size="h1"
-                  weight="6"
-                />
-                <Heading
-                  title="Control and Visibility."
-                  color="rainy-blue"
-                  size="h1"
-                  weight="6"
-                />
+              <div className="text-center">
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Master Your Digital Marketing Expenditure with"
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
+                  <div>
+                    <Heading
+                      title={`greater${space}`}
+                      color="white"
+                      size="h1"
+                      weight="6"
+                    />
+                    <Heading
+                      title="Control and Visibility."
+                      color="rainy-blue"
+                      size="h1"
+                      weight="6"
+                    />
+                  </div>
+                </div>
               </div>
             </>
           }
@@ -198,7 +236,10 @@ const digitalMarketingCards = () => {
         />
       </div>
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Digital Marketing Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how Brand Vouchers offer many benefits for your business and employees!"
+        />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -208,7 +249,7 @@ const digitalMarketingCards = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about Reimbursements in detail."
+            title="Don't worry! Our FAQs section will help you learn about digital marketing in detail."
             color="black"
             size="h4"
           />
@@ -219,7 +260,50 @@ const digitalMarketingCards = () => {
             <FAQ
               key={index}
               question={item.question}
-              answer={item.answer}
+              answer={index !== 0 && index !== 3 ? item.answer : undefined}
+              answerHTML={
+                (index === 0 && (
+                  <div key={index} className="mb-4">
+                    <h4 className={styles.heading}>
+                      Digital marketing promotes products or services using
+                      digital channels like search engines, social media, email,
+                      and websites. Digital marketing cards serve as financial
+                      control tools in this landscape, consolidating expenses
+                      scattered across platforms. These purpose-based cards
+                      enable businesses to manage{" "}
+                      <Link
+                        href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
+                        target="_blank"
+                      >
+                        digital marketing expenses
+                      </Link>{" "}
+                      efficiently in a centralized place, simplifying financial
+                      oversight and offering a comprehensive view of their
+                      digital marketing activities.
+                    </h4>
+                  </div>
+                )) ||
+                (index === 3 && (
+                  <div key={index} className="mb-4">
+                    <h4 className={styles.heading}>
+                      Companies can issue this{" "}
+                      <Link
+                        href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
+                        target="_blank"
+                      >
+                        corporate card for digital marketing
+                      </Link>{" "}
+                      purposes and establish specific spending limits for
+                      distinct categories of expenditures. For instance, you can
+                      set limits for campaign-related expenses and subscription
+                      renewals based on your marketing budget. Furthermore, you
+                      can manage the types of expenditures you want to allow,
+                      ensuring that payments to specific websites or services
+                      align with your predefined financial boundaries.
+                    </h4>
+                  </div>
+                ))
+              }
               answerVisible={index === 0}
             />
           ))}
@@ -230,12 +314,104 @@ const digitalMarketingCards = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of digital marketing cards?"
+          description="A digital marketing card is a specialized financial tool designed to streamline and enhance the management of digital marketing expenses. It empowers businesses to centralize their spending, set customized limits, and control their budget effectively."
+        />
+      </div>
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Explore the comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Why are digital marketing expenditures necessary for any business?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="A digital marketing team is crucial for shaping a business's online presence, handling website management, social media engagement, content syndication, and more. Expenditures in digital marketing are unavoidable, covering software subscriptions, search engine optimization tools, and investments in paid advertising. Spending varies based on campaign frequency and tools used."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are typical marketing expenditures that companies may encounter?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Businesses typically incur marketing costs in specific categories, including expenses for content and design improvement tools to enhance quality. Pay-per-click or advertising costs are typical for channel-specific campaigns. Optimization tools are essential for website and blog content. Other costs include event-related expenses like sponsorship, booth graphics, giveaways, and travel. Consultancy fees and occasional one-time charges may also contribute to overall expenditures."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the key elements in managing digital marketing expenses with a credit card?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Effectively managing digital marketing expenses involves
+                  establishing budgets aligned with annual spending plans and
+                  allocating funds to individuals for designated expenses.
+                  Setting up approval processes within the department is
+                  critical to financial control. Leveraging mass payment
+                  discounts is pivotal for efficient expense management. The
+                  digital marketing card simplifies these aspects, enabling
+                  businesses to maintain financial discipline and streamline
+                  marketing operations effectively."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What is the role of a corporate card in business expenses?"
+                />
+              </div>
+              <div className="mb-5">
+                <p>
+                  A{" "}
+                  <Link
+                    href="https://www.enkash.com/resources/blog/corporate-card-for-business-expenses/"
+                    target="_blank"
+                  >
+                    corporate card for business
+                  </Link>{" "}
+                  expenses, supported by an intelligent spend management
+                  platform, streamlines financial outlays, ensuring operational
+                  continuity. These cards enable businesses to allocate funds,
+                  set spending limits, establish approval matrices, and track
+                  usage comprehensively. Digital marketing cards extend this
+                  concept, offering specialized features for controlling and
+                  monitoring <Link href="/">digital marketing spends.</Link>
+                </p>
+              </div>
+            </>
+          }
+        />
+      </div>
     </div>
   );
 };
 
-export default digitalMarketingCards;
+export default digitalMarketingCard;

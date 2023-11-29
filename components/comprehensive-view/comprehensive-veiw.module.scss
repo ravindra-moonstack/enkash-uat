@@ -9,7 +9,9 @@
 
   li,
   table,
-  ul {
+  ul,
+  p,
+  a {
     font-size: 14px;
     @include bp-md {
       font-size: 18px;
