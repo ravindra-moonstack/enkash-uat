@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Unlock the convenience of corporate meal cards online. Streamline employee benefits and expense management effortlessly with our secure and efficient solution.",
 };
 
-const mealCard = () => {
+const fuelCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -245,12 +245,12 @@ const mealCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="bg-white row-padding text-center d-flex flex-column">
+      {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how Fuel Cards offer a host of benefits for your business and employees!"
         />
-      </div>
+      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -366,4 +366,4 @@ const mealCard = () => {
   );
 };
 
-export default mealCard;
+export default fuelCard;

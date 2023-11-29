@@ -234,12 +234,12 @@ const giftCards = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="bg-white row-padding text-center d-flex flex-column">
+      {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how our partner offers can benefit your business!"
         />
-      </div>
+      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
