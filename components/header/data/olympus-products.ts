@@ -112,7 +112,7 @@ const olympusProducts = [
           "Manage invoices with complete details with quicker payment options",
         imageSrc: invoices,
         imageSrcHovered: invoicesFilled,
-        link: "/quick-collect",
+        link: "/invoices",
       },
     ],
     footerText: "Optimize your collections with receivables",
