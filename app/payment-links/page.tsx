@@ -23,9 +23,10 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 
 export const metadata: Metadata = {
-  title: "Rent Payment - Pay Rent Through Credit Card | EnKash",
+  title:
+    "Payment Link: Create Payment Links & Collect Bulk Payments Online - EnKash",
   description:
-    "Decentralize rent payment by credit card to your different offices and pay rent online. Get TDS benefits and record approval hierarchy and make audits easy with Enkash's Rental Portal",
+    "Effortlessly Create Payment Links & Securely Accept Payments Online. Explore hassle-free transaction management for your business and revolutionize your payment collection methods",
 };
 
 const paymentLinks = () => {
