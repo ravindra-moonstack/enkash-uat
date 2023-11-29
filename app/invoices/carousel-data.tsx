@@ -1,39 +1,39 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
+
+
+
+
 
 const carouselData = [
   {
-    image: calenderIcon,
-    alt: "reimbursement image",
-    title:
-      "Automated invoice generation results in reduced manual efforts, increased efficiency, and improved productivity within your business.",
+    image: iconOne,
+    alt: "Digital invoicing results in reduced manual efforts",
+    title: "Digital invoicing results in reduced manual efforts, increased efficiency, and improved productivity within your business",
   },
   {
-    image: sampleIconOne,
-    alt: "reimbursement image",
-    title:
-      "Issue a corporate card for digital marketing purposes and set customized limits for campaign expenditure and subscription renewals based on your marketing budget.",
+    image: iconTwo,
+    alt: "With digital invoice dispatch, you can eliminate human error",
+    title: "With digital invoice dispatch, you can eliminate human error, which can occur during manual data entry or calculation",
   },
   {
-    image: sampleIconTwo,
-    alt: "reimbursement image",
+    image: iconThree,
+    alt: "Streamlining the invoicing process allows businesses to process invoices",
     title:
-      "Automated invoice generation results in reduced manual efforts, increased efficiency, and improved productivity within your business.",
+      "Streamlining the invoicing process allows businesses to process invoices faster and more efficiently. This can lead to faster payments and improved cash flow",
   },
   {
-    image: sampleIconThree,
-    alt: "reimbursement image",
-    title:
-      "Quick payment links embedded within your invoices can help improve your customer experience by enabling them to make payments from anywhere, on any device.",
+    image: iconFour,
+    alt: "EnKash stores and organizes invoices electronically",
+    title: "EnKash stores and organizes invoices electronically, making it easy to search for and retrieve invoices when needed",
   },
   {
-    image: sampleIconFour,
-    alt: "reimbursement image",
-    title:
-      "Concentrate on making the collection process customer-focused and improving their experience to ensure better DSO.",
+    image: iconFive,
+    alt: "Significantly reduce the costs associated with manual invoicing",
+    title: "Significantly reduce the costs associated with manual invoicing, such as labor costs and the cost of printing and mailing invoices",
   },
 ];
 

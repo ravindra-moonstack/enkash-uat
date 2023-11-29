@@ -1,22 +1,32 @@
-import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../constant/common";
-import faqData from "./faqData";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { faqBg, heroImage, whiteArrow, carasoulBg } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
+import MobileHeader from "@/components/header/mobile-header/mobile-header";
+import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
+import WebHeader from "@/components/header/web-header";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import { space } from "../../constant/common";
+import faqData from "./faq-data";
+import blogData from "./blog-data";
+import carouselData from "./carousel-data";
+import { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+
+export const metadata: Metadata = {
+  title: "Automated Invoicing Processing & Software for Business - EnKash",
+  description:
+    "Simplify your invoicing process with our cutting-edge invoicebill management software for businesses.  Get complete visibility of sales and payments & create bulk invoices with embedded payment links",
+};
 
 const invoices = () => {
   return (
@@ -27,26 +37,33 @@ const invoices = () => {
       <div className="desktop-header">{<WebHeader />}</div>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
-          <div className="d-flex mb-5 flex-column">
+          <div className="d-flex mb-5 flex-column flex-md-row">
+            <div className="d-flex">
+              <Heading
+                title={`Olympus |${space}`}
+                color="rainy-blue"
+                size="h4"
+                weight="7"
+              />
+            </div>
+            <Heading title="Invoices" size="h4" weight="4" />
+          </div>
+          <div className="d-flex flex-column">
             <Heading
-              title="Olympus | Receivables"
-              color="rainy-blue"
-              size="h4"
+              title="Transform your business"
+              color="white"
+              size="h2"
               weight="7"
             />
-            <Heading title="| Invoices" size="h4" weight="4" />
-          </div>
-
-          <div className="">
-            <div className="d-flex flex-wrap">
+            <div>
               <Heading
-                title="Transform your business operations with"
+                title="operations with"
                 color="white"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title="automated invoicing."
+                title={`${space}digital invoicing`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
@@ -76,11 +93,9 @@ const invoices = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Image
-            src={heroImage}
-            alt="reimbursement dashboard"
-            className={styles.hero_image}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -91,39 +106,33 @@ const invoices = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Invoice", "Generation"],
+              itemArray: ["Invoice", "Management"],
               oldWayDescription:
-                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
+                "When businesses generate paper-based or manual invoices, the process is lengthy, resource-intensive, and poses risks of errors or lost invoices.",
               newWayDescription:
-                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+                "With EnKash, you can digitally upload your invoices, which are scanned using OCR technology. This helps save time and reduces the risk of human error.",
             },
             {
               itemArray: ["Processing", "Time"],
               oldWayDescription:
-                "Traditional methods take a lot of time and come with layers of red tape.",
+                "Paper invoices can take days or even weeks to be delivered and processed.",
               newWayDescription:
-                "Utilize advanced solutions like OCR technology and approval systems to streamline the reimbursement procedure.",
+                "Digital invoices can be processed quicker, meaning your business can get paid faster and have better cash flow.",
             },
+
             {
               itemArray: ["Accuracy"],
               oldWayDescription:
-                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
+                "Paper-based invoices pose several risks, such as incorrect data entry or lost invoices.",
               newWayDescription:
-                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
+                "Digital invoices can help reduce manual errors. This can help your business avoid costly disputes and delays in payment.",
             },
             {
-              itemArray: ["Tracking", "&", "Reporting"],
+              itemArray: ["Tracking &", "Reporting"],
               oldWayDescription:
-                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Invoices were tracked manually using ledgers or spreadsheets, which was cumbersome and error-prone. This made it difficult to view financial performance and follow up on collections accurately.",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools and improve your customer experience to quicken your collection process.",
-            },
-            {
-              itemArray: ["Associated", "Costs"],
-              oldWayDescription:
-                "Without a payment link, customers need to manually enter payment information or visit a physical location to make a payment, which is prone to errors and delays.",
-              newWayDescription:
-                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment.",
+                "On EnKash, invoices can be easily tracked and monitored, making it easier to identify outstanding invoices and improve collections. With advanced reporting capabilities, you analyze your business’s financial performance and make informed decisions.",
             },
           ]}
         />
@@ -132,46 +141,80 @@ const invoices = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex justify-content-center text-center flex-wrap mb-5">
-          <Heading title="Discover" color="black" size="h1" weight="6" />
+        <div className="d-inline text-center mb-5">
+          <Heading title="Discover the" color="black" size="h1" weight="6" />
           <Heading
-            title={`${space}ease of operations${space}`}
+            title={`${space}ease of operations`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title=" with digital invoices."
+            title={`${space}with digital invoices`}
             color="black"
             size="h1"
             weight="6"
           />
         </div>
-
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Invoicing"
-              description="Automate the invoicing process - From invoice generation to deployment - for recurring transactions and save countless work hours."
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Digital"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Process"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Make the invoicing process easier by digitizing everything, from invoice upload to dispatch, and save countless work hours"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Complete Visibility"
-              description="Enable more and easy-to-access payment options in your invoices and reminders for quicker collections."
+              description="Get a holistic view of your business’s sales and payments to plan better and create optimized financial strategies"
             />
           </div>
-
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Tracking & Monitoring"
-              description="Digital invoices provide simplified tracking and monitoring, enabling easy identification of outstanding payments and optimized collections."
+              description="Digital invoices provide simplified tracking and monitoring, enabling easy identification of outstanding payments and optimized collections. EnKash’s enhanced reporting capabilities allow for in-depth financial analysis, empowering businesses to make data-driven decisions"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Bulk Invoicing"
-              description="Create bulk invoices with all necessary details for regular purchases to save time and employee bandwidth in just a few clicks."
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Bulk"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Invoicing"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Create bulk invoices with all necessary details for regular purchases to save time and employee bandwidth in just a few clicks"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Payment Options"
+              description="Embed a payment link in your invoices and enable multiple payment options for added customer convenience"
             />
           </div>
         </div>
@@ -181,29 +224,34 @@ const invoices = () => {
         <HowDoesCarousel
           titleContent={
             <>
-              <div className="text-center d-flex justify-content-center flex-wrap">
-                <Heading
-                  title={`Streamline your Invoicing process with${space}`}
-                  color="white"
-                  size="h1"
-                  weight="6"
-                />
-                <Heading
-                  title="Automated Invoice Generation."
-                  color="rainy-blue"
-                  size="h1"
-                  weight="6"
-                />
+              <div className="text-center">
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Streamline your Invoicing process with"
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Automated Invoice Generation"
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                </div>
               </div>
             </>
           }
           mainTitle="How do Invoices work?"
           carouselData={carouselData}
-          carouselBg={carasoulBg}
+          carouselBg={caraouselBg}
         />
       </div>
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Invoices Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how Brand Vouchers offer many benefits for your business and employees!"
+        />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -213,7 +261,7 @@ const invoices = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about invoices in detail."
+            title="Don't worry! Our FAQs section will help you learn about invoices in detail"
             color="black"
             size="h4"
           />
@@ -224,7 +272,39 @@ const invoices = () => {
             <FAQ
               key={index}
               question={item.question}
-              answer={item.answer}
+              answer={index !== 0 && index !== 1 ? item.answer : undefined}
+              answerHTML={
+                (index === 0 && (
+                  <div key={index} className="mb-4">
+                    <h4 className={styles.heading}>
+                      Opting for{" "}
+                      <Link
+                        href="https://www.enkash.com/resources/blog/what-is-enkash-olympus/"
+                        target="_blank"
+                      >
+                        Olympus's automated invoicing
+                      </Link>{" "}
+                      has many benefits. It reduces the time and cost associated
+                      with manual invoicing, enhances accuracy, and ensures
+                      prompt payments. Moreover, it eliminates the risk of human
+                      errors during manual data entry and calculations.
+                    </h4>
+                  </div>
+                )) ||
+                (index === 1 && (
+                  <div key={index} className="mb-4">
+                    <h4 className={styles.heading}>
+                      Automated reminders are notifications sent to customers to
+                      prompt them to{" "}
+                      <Link href="/invoices" target="_blank">
+                        pay their invoices on time.
+                      </Link>{" "}
+                      These reminders can be scheduled to run automatically,
+                      reducing the need for labor-intensive manual follow-ups.
+                    </h4>
+                  </div>
+                ))
+              }
               answerVisible={index === 0}
             />
           ))}
@@ -235,10 +315,92 @@ const invoices = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of invoices?"
+          description="Invoices are the lifeblood of any business, serving as the formal documentation of financial transactions between sellers and buyers. These documents comprehensively record goods or services rendered, payment terms, and crucial contact information. In essence, invoices ensure that businesses are compensated for their offerings and play a vital role in financial management, accounting, and taxation."
+        />
+      </div>
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Explore the comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What does digital invoice processing entail?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Digital Invoice Processing involves streamlining invoice uploading, distribution, and management. Olympus's Invoice Feature can assist by automating the entire invoicing process, from uploading to deployment, making it more efficient and error-free for recurring transactions. This translates into saved time and enhanced productivity, which can greatly benefit your business."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How does the process of digital invoicing work?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The digital invoicing process scans and sends invoices. It streamlines the invoicing workflow by extracting relevant data using Optical Character Recognition (OCR), recording the same, and sending them to customers electronically."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How can I assess and select an automated invoice processing software?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Evaluating an automated invoice processing software requires considering factors like efficiency and cost reduction. Olympus's Invoice Feature excels in these aspects by eliminating manual efforts, reducing the likelihood of human error, and reducing costs associated with manual invoicing."
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What strategies can I employ to improve the digitization of invoices?"
+                />
+              </div>
+              <div className="mb-5">
+                <p>
+                  To{" "}
+                  <Link
+                    href="https://www.enkash.com/resources/blog/e-invoicing-under-gst/"
+                    target="_blank"
+                  >
+                    digitize invoices
+                  </Link>{" "}
+                  more effectively, you need streamlined processes and cost
+                  reduction. Olympus's Invoice Feature supports this by
+                  electronically storing and organizing invoices, making them
+                  easy to access. This feature also helps reduce labor,
+                  printing, and mailing invoice costs.
+                </p>
+              </div>
+            </>
+          }
+        />
+      </div>
     </div>
   );
 };

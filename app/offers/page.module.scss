@@ -16,10 +16,12 @@
     }
   }
 
-  .lottie_container {
-    width: 350px;
+  .hero_image {
+    width: 300px;
+    height: auto;
     @include bp-md {
-      width: 500px;
+      width: auto;
+      height: auto;
     }
   }
 }

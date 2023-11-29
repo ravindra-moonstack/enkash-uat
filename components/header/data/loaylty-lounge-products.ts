@@ -53,7 +53,7 @@ const loyaltyLoungeProducts = [
         description: "Get discounts on partnered subscriptions and more",
         imageSrc: offers,
         imageSrcHovered: offersFilled,
-        link: "/404",
+        link: "/offers",
       },
     ],
     footerText: "Experience a world of rewards for your employees",
