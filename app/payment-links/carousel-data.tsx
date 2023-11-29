@@ -1,39 +1,39 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
-    alt: "reimbursement image",
+    image: iconOne,
+    alt: "Embed payment links into digital invoices",
     title:
-      "Embed payment links into digital invoices so that your customers can conveniently pay their due amount, whenever required.",
+      "Embed payment links into digital invoices so that customers can conveniently pay their due amount whenever required.",
   },
   {
-    image: sampleIconOne,
-    alt: "reimbursement image",
+    image: iconTwo,
+    alt: "Integrated payment links are easier to track",
     title:
-      "Issue a corporate card for digital marketing purposes and set customized limits for campaign expenditure and subscription renewals based on your marketing budget.",
+      "Integrated payment links are easier to track, and provide multiple payment options for the user to choose from to make their payment.",
   },
   {
-    image: sampleIconTwo,
-    alt: "reimbursement image",
+    image: iconThree,
+    alt: "Our payment links use secure encryption to protect sensitive payment",
     title:
-      "Automated invoice generation results in reduced manual efforts, increased efficiency, and improved productivity within your business.",
+      "Our payment links use secure encryption to protect sensitive payment information. This reduces the risk of fraud and helps protect both the payer and the payee.",
   },
   {
-    image: sampleIconThree,
-    alt: "reimbursement image",
+    image: iconFour,
+    alt: "Payment links enable businesses to receive payments faster",
     title:
-      "Quick payment links embedded within your invoices can help improve your customer experience by enabling them to make payments from anywhere, on any device.",
+      "Payment links enable businesses to receive payments faster, making initiating payments easier for their customers. This helps improve the business’ cash flow",
   },
   {
-    image: sampleIconFour,
-    alt: "reimbursement image",
+    image: iconFive,
+    alt: "Payment links also reduce the need for manual invoicing",
     title:
-      "Concentrate on making the collection process customer-focused and improving their experience to ensure better DSO.",
+      "Payment links also reduce the need for manual invoicing and follow-up, saving time and money",
   },
 ];
 

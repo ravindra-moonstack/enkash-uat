@@ -7,7 +7,7 @@ import { space } from "../../constant/common";
 import faqData from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
-import { carasoulBg, faqBg, heroImage, whiteArrow } from ".";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -18,7 +18,17 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 
-const paymentlinks = () => {
+import { Metadata } from "next";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+
+export const metadata: Metadata = {
+  title: "Rent Payment - Pay Rent Through Credit Card | EnKash",
+  description:
+    "Decentralize rent payment by credit card to your different offices and pay rent online. Get TDS benefits and record approval hierarchy and make audits easy with Enkash's Rental Portal",
+};
+
+const paymentLinks = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -27,20 +37,28 @@ const paymentlinks = () => {
       <div className="desktop-header">{<WebHeader />}</div>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
-          <div className="d-flex mb-5 flex-column">
-            <Heading
-              title="Olympus | Receivables"
-              color="rainy-blue"
-              size="h4"
-              weight="7"
-            />
-            <Heading title="| Travel and Expense Cards" size="h4" weight="4" />
+          <div className="d-flex mb-5 flex-column flex-md-row">
+            <div className="d-flex">
+              <Heading
+                title={`Olympus |${space}`}
+                color="rainy-blue"
+                size="h4"
+                weight="7"
+              />
+            </div>
+            <Heading title="Payment Links" size="h4" weight="4" />
           </div>
 
-          <div className="">
-            <div className="d-flex flex-wrap">
+          <div className="d-flex flex-column">
+            <Heading
+              title="Pace up your collection"
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <div>
               <Heading
-                title="Pace up your collection process"
+                title={`process${space}`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
@@ -56,7 +74,7 @@ const paymentlinks = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Quicken the collection process with embedded payment links in invoices. Build stronger relationships with your customers and improve your DSO."
+              title="Quicken the collection process with embedded payment links in invoices. Build stronger relationships with your customers and improve your DSO"
               color="white"
               size="h6"
               weight="5"
@@ -76,11 +94,9 @@ const paymentlinks = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Image
-            src={heroImage}
-            alt="reimbursement dashboard"
-            className={styles.hero_image}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -93,37 +109,37 @@ const paymentlinks = () => {
             {
               itemArray: ["Payment", "Process"],
               oldWayDescription:
-                "Without a payment link, customers need to manually enter payment information or visit a physical location to make a payment, which is prone to errors and delays.",
+                "Without a payment link, customers had to manually enter transaction details to make a payment, which is prone to errors and delays",
               newWayDescription:
-                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment.",
+                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment",
             },
             {
-              itemArray: ["Security", "&", "Convenience"],
+              itemArray: ["Security"],
               oldWayDescription:
-                "Traditional methods take a lot of time and come with layers of red tape.",
+                "Traditional methods lack the secure framework needed for payments, increasing the risk of breaches. Manual entry and physical transactions expose sensitive data to errors and delays",
               newWayDescription:
-                "Utilize advanced solutions like OCR technology and approval systems to streamline the reimbursement procedure.",
+                "Payment links offer more security than traditional payment methods. Our payment links use encryption and other security measures to protect business and customer payment information",
             },
             {
               itemArray: ["Payment", "Tracking"],
               oldWayDescription:
-                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
+                "Manually tracking customer payments is time-consuming",
               newWayDescription:
-                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
+                "Payment links provide businesses with better tracking and record-keeping capabilities. Payments made through payment links are automatically recorded and easily tracked on the EnKash platform",
             },
             {
               itemArray: ["Customer", "Experience"],
               oldWayDescription:
-                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
+                "Incessantly following up with customers to make payments without providing them an easy way to do so can cause friction between the customer and your business",
               newWayDescription:
-                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+                "Payment links can improve the overall customer experience by providing a convenient and easy-to-use payment option. This helps businesses build stronger customer relationships, increase customer satisfaction, and improve DSO",
             },
             {
-              itemArray: ["Cash", "Flow", "Optimization"],
+              itemArray: ["Cash Flow", "Optimization"],
               oldWayDescription:
-                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Traditional banking methods require much processing time, hindering your business’s cash flow even if the payment is made on time",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+                "Payment links can help businesses improve their cash flow by reducing the time it takes to receive payments",
             },
           ]}
         />
@@ -132,15 +148,24 @@ const paymentlinks = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex justify-content-center text-center flex-wrap mb-5">
+        <div className="d-flex flex-column align-items-center mb-5">
+          <div>
+            <Heading
+              title={`Enable payment links${space}`}
+              color="equity-blue"
+              size="h1"
+              weight="6"
+            />
+            <Heading
+              title="in your invoices for"
+              color="black"
+              size="h1"
+              weight="6"
+            />
+          </div>
+
           <Heading
-            title="Enable payment links"
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}in your invoices for better collections.`}
+            title="better collections"
             color="black"
             size="h1"
             weight="6"
@@ -151,26 +176,31 @@ const paymentlinks = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Quicker Collections"
-              description="Payment links embedded in digital invoices or other forms of communication quickens the collection or payment process."
+              description="Payment links embedded in digital invoices or other forms of communication quicken the collection or payment process"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Payment Options"
-              description="Embedded payment links also ensures that the customer has various payment options to choose from once they click on the embedded payment link."
+              description=" Embedded payment links ensure customers have various payment options once they click the embedded payment link"
             />
           </div>
-
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Easily Accessible"
-              description="EnKash lets you set customized usage limits that ensure there is no scope for overspending. You’ll have the flexibility to set the limit based on your marketing budget."
+              description="Since invoices are sent online, they can be accessed anywhere, anytime, without hassle"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Simplified Tracking"
-              description="Seamlessly add your card for digital marketing expenses onto the platform and select the desired campaigns you wish to run."
+              description="Online payments or collections through payment links create a trail of the entire process, which helps with tracking and analysis"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Improved Cashflow"
+              description="Payment links enable quicker collections and payments so that your business’s cash flow always stays healthy"
             />
           </div>
         </div>
@@ -180,29 +210,34 @@ const paymentlinks = () => {
         <HowDoesCarousel
           titleContent={
             <>
-              <div className="text-center d-flex justify-content-center flex-wrap">
-                <Heading
-                  title="Improve your business’ cash flow with"
-                  color="white"
-                  size="h1"
-                  weight="6"
-                />
-                <Heading
-                  title={`${space}automated payment tools.${space}`}
-                  color="rainy-blue"
-                  size="h1"
-                  weight="6"
-                />
+              <div className="text-center">
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Improve your business’s cash flow with"
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title="automated payment tools"
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                </div>
               </div>
             </>
           }
           mainTitle="How do Payment Links work?"
           carouselData={carouselData}
-          carouselBg={carasoulBg}
+          carouselBg={caraouselBg}
         />
       </div>
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Payment Links Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how Rental Payments could revolutionize the way you work!"
+        />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -212,7 +247,7 @@ const paymentlinks = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about payment links in detail."
+            title="Don't worry! Our FAQs section will help you learn about payment links in detail"
             color="black"
             size="h4"
           />
@@ -234,12 +269,70 @@ const paymentlinks = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of payment link?"
+          description="Payment links are a convenient and straightforward way to collect payments online. They are unique URLs that direct customers to a secure payment page, where they can enter their payment information and complete the transaction quickly and securely"
+        />
+      </div>
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Explore the comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Which approach is the most optimal for online payments?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The most optimal approach for online payments combines simplicity, security, and convenience. Payment links provide a streamlined solution. They offer various payment options and real-time tracking, ensuring quick and secure transactions. This approach simplifies the payment process for customers and businesses, making it the preferred choice for online payments."
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How can small and medium businesses effectively acquire payments?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Small and medium businesses can effectively acquire payments by implementing digital payment solutions.  These solutions offer easy access, multiple payment choices, and streamlined tracking. They enhance operational efficiency, save time, and facilitate prompt payment collection, which is crucial for small and medium businesses' success."
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title=" What methods do companies employ for the acceptance of payments?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Companies employ various methods for accepting payments, with embedded payment links becoming increasingly popular. These links can be used on websites, social media, apps, and more. They simplify the payment process, enhancing customer convenience and ensuring quick, secure transactions. This method has become a key component of modern payment acceptance strategies."
+                />
+              </div>
+            </>
+          }
+        />
+      </div>
     </div>
   );
 };
 
-export default paymentlinks;
+export default paymentLinks;
