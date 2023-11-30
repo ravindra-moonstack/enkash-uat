@@ -1,24 +1,21 @@
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
+import iconFour from "./img/icon-four-updated.svg";
 import iconFive from "./img/icon-five.svg";
-
-
-
-
-
 
 const carouselData = [
   {
     image: iconOne,
     alt: "Control SaaS spends",
-    title: "Control SaaS spends and security like never before - Monitor and take action on subscription renewals and expenditures at your convenience",
+    title:
+      "Control SaaS spends and security like never before - Monitor and take action on subscription renewals and expenditures at your convenience",
   },
   {
     image: iconTwo,
     alt: "Works best with all leading, IT-approved tools",
-    title: "Works best with all leading, IT-approved tools. Integrate your entire SaaS stack to get valuable insights for your business",
+    title:
+      "Works best with all leading, IT-approved tools. Integrate your entire SaaS stack to get valuable insights for your business",
   },
   {
     image: iconThree,
