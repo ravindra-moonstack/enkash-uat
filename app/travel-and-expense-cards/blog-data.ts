@@ -1,34 +1,34 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/WhatsApp-Image-2023-09-13-at-4.23.23-PM-1.jpeg",
-    imageAlt: "Tax-free Meals For Your Employees With EnKash Meal Cards",
-    title: "Tax-free Meals For Your Employees With EnKash Meal Cards",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_17.052944ba.png",
+    imageAlt: "Short-Term Corporate Credit Management With Credit Card",
+    title: "Short-Term Corporate Credit Management With Credit Card",
     date: "Dec 21, 2023",
     description:
-      "Employee satisfaction is one of the cornerstones of a successful business. To keep your employees happy, just paying salaries on time is not enough anymore...",
-    link: "https://www.enkash.com/resources/blog/tax-free-meal-cards/",
+      "For any business to flourish, a corporate credit management and a steady cash flow are crucial. The more working capital your business has, the more strategic decisions can be made concerning...",
+    link: "https://www.enkash.com/resources/blog/enkash-corporate-credit-cards/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/Types-of-corporate-credit-cards-to-manage-expenses.jpg",
-    imageAlt: "9 types of corporate credit cards to manage expenses",
-    title: "9 types of corporate credit cards to manage expenses",
-    date: "Dec 21, 2023",
-    description:
-      "The corporate credit card has been around the business industry for a while now. While popular banks have been issuing many types of corporate credit cards for years, FinTech platforms...",
-    link: "https://www.enkash.com/resources/blog/smart-business-expenses-managment/",
-  },
-  {
-    image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_7.1b7b0500.jpg",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/12/How-business-credit-cards-boost-your-expense-management.jpg",
     imageAlt:
-      "What is Business Expense Card & Benefits of Business Prepaid Cards",
-    title: "What is Business Expense Card & Benefits of Business Prepaid Cards",
+      "Understand How Business Credit Cards Boost Your Expense Management",
+    title: "Understand How Business Credit Cards Boost Your Expense Management",
     date: "Dec 21, 2023",
     description:
-      "Prepaid cards or corporate expense cards have emerged as cutting-edge expense management tools, offering a range of innovative features to simplify your life. From handling business...",
-    link: "https://www.enkash.com/resources/blog/prepaid-card-for-business-expenses/",
+      "A business credit card is a specially designed card for business owners and provides unique benefits to a business or an organization. Business cards come with high credit limits, more significant reward potential...",
+    link: "https://www.enkash.com/resources/blog/how-business-credit-cards-boost-expense-management/",
+  },
+  {
+    image:
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_5.d5042859.jpg",
+    imageAlt: "How to Manage Business Expenses With Corporate Cards?",
+    title: "How to Manage Business Expenses With Corporate Cards?",
+    date: "Dec 21, 2023",
+    description:
+      "Over the past couple of years, corporate cards have garnered a massive response. They are slowly but steadily becoming an indispensable tool in the arsenal of a successful businessman...",
+    link: "https://www.enkash.com/resources/blog/corporate-card-for-business-expenses/",
   },
 ];
 

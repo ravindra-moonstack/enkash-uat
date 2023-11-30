@@ -23,9 +23,9 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
+  title: "SaaS Subscription Management Platform - EnKash",
   description:
-    "Unlock the convenience of corporate meal cards online. Streamline employee benefits and expense management effortlessly with our secure and efficient solution.",
+    "Manage all your SaaS subscriptions on a single software platform. Enhance your spend strategies with actionable insights & smart controls with EnKash",
 };
 
 const saasCard = () => {
@@ -270,7 +270,7 @@ const saasCard = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of SaaS cards?"
-          description="Travel and Expense cards, often called T&E cards are specialized financial instruments designed to streamline and enhance business travel expenses"
+          description="Businesses can avail SaaS cards for subscription purposes and use them as required. For the smooth functioning of subscriptions, the respective teams can be allocated cards, and budgets can be assigned"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

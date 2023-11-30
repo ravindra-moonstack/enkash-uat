@@ -239,7 +239,7 @@ const travelAndExpenseCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how meal cards offer a host of benefits for your business and employees!"
+          title="Learn how travel and expense cards offer a host of benefits for your business and employees!"
         />
       </div>
       <div

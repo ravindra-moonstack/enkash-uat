@@ -208,24 +208,24 @@ const giftCards = () => {
               <div className="text-center">
                 <div>
                   <Heading
-                    title={`Encourage your employees with these${space}`}
+                    title={`Make your ${space}`}
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title={`business processes smooth${space}`}
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title="with these special offers"
                     color="white"
                     size="h1"
                     weight="6"
                   />
                 </div>
-                <Heading
-                  title={`easy-to-use${space}`}
-                  color="white"
-                  size="h1"
-                  weight="6"
-                />
-                <Heading
-                  title="gift cards"
-                  color="rainy-blue"
-                  size="h1"
-                  weight="6"
-                />
               </div>
             </>
           }
@@ -271,8 +271,8 @@ const giftCards = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of gift cards?"
-          description="Corporate gift cards in India are among the best ways to encourage and retain employees. They allow employees to choose from various options and then decide for themselves. A transparent and easy way of appreciating employees, corporate gifts are customizable, convenient, and secure"
+          title="Seeking further understanding of offers?"
+          description="Make your business function smoothly and advance toward growth with exclusive offers from EnKash. These offers on partnered services can help grow your business"
         />
       </div>
 
@@ -287,7 +287,7 @@ const giftCards = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What is a corporate gift card?"
+                  title="How will these offers benefit my business?"
                 />
               </div>
               <div className="mb-5">
@@ -295,7 +295,7 @@ const giftCards = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="A corporate gift card is a prepaid card organizations use to gift their employees, clients, customers, or partners. These cards are loaded with money up to a certain specified amount and are among the best ways to appreciate employees. These cards can be redeemed online or in-store."
+                  title="These offers can benefit your business by providing significant savings on SaaS products through curated deals with trusted partners. With a seamless process and real-time visibility, businesses can easily access top-notch deals, streamline subscriptions, and stay ahead of new offers"
                 />
               </div>
               <div className="mb-2">
@@ -303,37 +303,8 @@ const giftCards = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="How to access a corporate gift card?"
-                />
-              </div>
-
-              <div className="mb-5">
-                <ul>
-                  <li>
-                    Register on EnKash and enter all the company details
-                    required
-                  </li>
-                  <li>
-                    After all the details are validated, the company becomes
-                    eligible for gift cards
-                  </li>
-                  <li>
-                    The company can load money into their account and request
-                    the cards as required
-                  </li>
-                  <li>
-                    These gift cards can be allocated to employees with a
-                    preloaded amount as per the occasion
-                  </li>
-                </ul>
-              </div>
-
-              <div className="mb-2">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="What are the rules for corporate gifting?"
+                  title="What are the different categories of offers available?
+                  "
                 />
               </div>
               <div className="mb-5">
@@ -341,7 +312,8 @@ const giftCards = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Corporate gifts should be aligned with the company's ethics and policies. These gifts must be legal. There must be transparency in corporate gifting and sensitivity towards all cultures."
+                  title="Various offers are available across diverse categories such as travel, health & fitness, finance, insurance, recruitment, cloud computing, sales & marketing, and more. These offers encompass various services from brands like Nimbbl, AWS, ClearTax, Alibaba Cloud, and more.
+                  "
                 />
               </div>
               <div className="mb-2">
@@ -349,7 +321,7 @@ const giftCards = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Is corporate gifting profitable?"
+                  title="How can I contact EnKash customer support?"
                 />
               </div>
               <div className="mb-5">
@@ -357,39 +329,7 @@ const giftCards = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Corporations have noticed an increase in employee retention with corporate gifting. This retention has helped increase the company’s profits quite considerably. Therefore, investing in corporate gift cards by EnKash for employees is a win-win situation. On the one hand, you are motivating your employees with secure, convenient, and easy-to-manage cards, giving access across multiple categories, and they are also producing better results for the organization."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="What is the TDS rate for corporate gifting?"
-                />
-              </div>
-              <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="A corporate gift can attract a TDS of 10% if the gift value exceeds Rs 20,000 in a year. This is decided under Section 194R of the Income Tax Act, 1961."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="How do I avoid gift tax as an employer?"
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="You can avoid gift tax by keeping the value of employee gifts within the tax-free limit of 5000 INR within a calendar year."
+                  title="To reach us, you can send an email to support@enkash.com or contact us at (+91) 853 049 0475"
                 />
               </div>
             </>
