@@ -1,33 +1,43 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Heres-everything-you-need-to-know-about-rental-payment.jpg",
-    imageAlt: "Here’s Everything You Need to Know About Rental Payments",
-    title: "Here’s Everything You Need to Know About Rental Payments",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Tips-for-choosing-the-right-payment-link-generator-for-your-business.jpg",
+    imageAlt: "Tips for Choosing the Right Payment Link Generator for Your Business",
+    title: "Tips for Choosing the Right Payment Link Generator for Your Business",
     date: "Dec 21, 2023",
     description:
-      "If you are new to the corporate ecosystem or planning for a start-up, then understanding the nuances of rental payment is crucial. It is important for corporates to understand their...",
-    link: "https://www.enkash.com/resources/blog/how-rental-payment-can-help-your-company/",
+      "In today’s world, businesses have gone digital, and with that comes the need to facilitate online payments. One of the best ways to do this is by using a payment link generator....",
+    link: "https://www.enkash.com/resources/blog/tips-for-choosing-the-right-payment-link-generator/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/09/How-to-pay-rent-with-a-credit-card-1.jpg",
-    imageAlt: "How to pay rent with a credit card?",
-    title: "How to pay rent with a credit card?",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/03/How-to-Generate-Payment-Link-for-Seamless-Payments.jpg",
+    imageAlt: "Learn How to Generate Payment Link for Seamless Payments",
+    title: "Learn How to Generate Payment Link for Seamless Payments",
     date: "Dec 21, 2023",
     description:
-      "Running a business often means juggling priorities and allocating funds without disrupting the flow of business. Often, this would mean that you have to find funds for...",
-    link: "https://www.enkash.com/resources/blog/how-to-pay-rent-with-credit-card-online-know-about-the-benefits/",
+      "Online transactions have become a part of our daily lives in today’s digital world. With the rise of e-commerce, numerous ways exist to purchase goods and services online. One of the most suitable...",
+    link: "https://www.enkash.com/resources/blog/how-to-generate-payment-link/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/02/Things-you-must-know-about-credit-card-rent-payment-charges.jpg",
-    imageAlt: "Things You Must Know About Credit Card Rent Payment Charges",
-    title: "Things You Must Know About Credit Card Rent Payment Charges",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Setup-digital-transaction-account-and-accept-payment-online.jpg",
+    imageAlt: "Set Up Digital Transaction Account and Accept Payments Online",
+    title: "Set Up Digital Transaction Account and Accept Payments Online",
     date: "Dec 21, 2023",
     description:
-      "Credit and debt are the basic processes that form the pillars of accounting. They are essential to the working of any business and act as important factor while evaluating the success of a business....",
-    link: "https://www.enkash.com/resources/blog/credit-card-rent-payment-charges/",
+      "The world is going digital, and the latest development in the financial sector is the unceasing rise of online payments. Pertaining to the aftereffects of COVID-19 and ease of payment, making any transaction...",
+    link: "https://www.enkash.com/resources/blog/accepting-payments-online-for-business/",
+  },
+  {
+    image:
+      "https://www.enkash.com/resources/wp-content/uploads/2023/09/How-to-Collect-Payment-on-Time-for-Business-Success-1.jpg",
+    imageAlt: "How to Collect Payment on Time for Business Success",
+    title: "How to Collect Payment on Time for Business Success",
+    date: "Dec 21, 2023",
+    description:
+      "An effective business model, whether business-to-customer, online, retail, wholesale, or business-to-business, requires a solid solution to collect payments. In most cases, the payment happens...",
+    link: "https://www.enkash.com/resources/blog/how-to-collect-payment-on-time-for-business-success/",
   },
 ];
 

@@ -1,39 +1,43 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
+import iconSix from "./img/icon-six.svg";
 
 const carouselData = [
   {
-    image: calenderIcon,
-    alt: "reimbursement image",
-    title:
-      "Set daily, monthly, and annual usage limits with DIY corporate access as per your team or employees requirements.",
+    image: iconOne,
+    alt: "Log in to EnKash and complete your KYC",
+    title: "Log in to EnKash and complete your KYC",
   },
   {
-    image: sampleIconOne,
-    alt: "reimbursement image",
-    title:
-      "Issue a corporate card for digital marketing purposes and set customized limits for campaign expenditure and subscription renewals based on your marketing budget.",
+    image: iconTwo,
+    alt: "Navigate to 'Manage Cards' in the Freedom section",
+    title: "Navigate to 'Manage Cards' in the Freedom section",
   },
   {
-    image: sampleIconTwo,
-    alt: "reimbursement image",
+    image: iconThree,
+    alt: "Click on 'Add Card' and fill in user details such as Card label, PAN, address, etc",
     title:
-      "Automated invoice generation results in reduced manual efforts, increased efficiency, and improved productivity within your business.",
+      "Click on 'Add Card' and fill in user details such as Card label, PAN, address, etc",
   },
   {
-    image: sampleIconThree,
-    alt: "reimbursement image",
+    image: iconFour,
+    alt: "To assign a card to a new user, select 'Add User' from the 'Select User' drop-down and input user details",
     title:
-      "Quick payment links embedded within your invoices can help improve your customer experience by enabling them to make payments from anywhere, on any device.",
+      "To assign a card to a new user, select 'Add User' from the 'Select User' drop-down and input user details",
   },
   {
-    image: sampleIconFour,
-    alt: "reimbursement image",
+    image: iconFive,
+    alt: "You can also set custom limits on currency, amount, category, etc.",
+    title: "You can also set custom limits on currency, amount, category, etc.",
+  },
+  {
+    image: iconSix,
+    alt: "Users can easily access their cards after completing their KYC on the platform",
     title:
-      "Concentrate on making the collection process customer-focused and improving their experience to ensure better DSO.",
+      "Users can easily access their cards after completing their KYC on the platform",
   },
 ];
 

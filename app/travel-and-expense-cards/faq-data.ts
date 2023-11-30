@@ -1,49 +1,56 @@
 const faqData = [
   {
-    question: "What is a Travel and Expense Card?",
+    question: "What is a travel and expense card?",
     answer: [
       {
         heading:
-          "To apply for a meal card, you can visit click here or contact our customer service team (sales@freedomcard.io) to initiate the application process. We'll guide you through the necessary steps, which typically involve providing personal information and completing the application form.",
+          "A travel and expense card is a specialized corporate credit card designed to streamline and simplify expenses related to business travel.",
+        content:
+          "These purpose-built cards allow employees to make travel-related expenditures, such as booking flights, hotels, and dining, while enabling businesses to monitor and manage these expenses effectively. These cards eliminate the need for employees to use their personal funds for business expenses with features like spending limits, automated tracking, and centralized expense reporting, reducing the administrative burden and offering greater control over budgets.",
       },
     ],
   },
   {
-    question: "Will I get a dashboard to manage my Travel and Expense cards?",
+    question: "Can I access a dedicated dashboard for managing my travel and expense cards?",
     answer: [
       {
         heading:
-          "Yes, there may be a maximum limit for loading funds onto your meal card. The specific limit can vary depending on the type of meal card and your account status. Please reach out to us here (hyperlink req demo) or reach out to us at sales@freedomcard.io for more information.",
+          "Yes, you can access a user-friendly dashboard as your control center for managing travel and expense cards.",
+        content:
+          "This dashboard offers real-time visibility and control over your virtual/physical card usage, allowing you to set spending limits, block or cancel cards, review transaction history, and easily manage user access. It's a seamless and efficient way to oversee your travel and expense card features, ensuring you have complete control over your corporate expenses.",
       },
     ],
   },
   {
-    question:
-      "What happens if a Travel and Expense card is lost while traveling?",
+    question: "What should I do if I lose my travel and expense card while traveling or notice suspicious activity on it?",
     answer: [
       {
         heading:
-          "No, Freedom meal cards do not have any fees associated with it.*\n*Standard T&C applicable",
+          "If your travel and expense card is lost during traveling or if you suspect any unauthorized activity, you can instantly block the card.",
+        content:
+          "For added convenience and security, in case of emergencies, you can also request the issuance of a virtual card to replace the lost or compromised one. This feature is a part of our commitment to provide you with a hassle-free and secure experience.",
       },
     ],
   },
   {
-    question:
-      "How do I prevent fraud on Travel and Expense cards that my teams use?",
+    question: "What measures can I take to prevent fraud and ensure the security of travel and expense cards?",
     answer: [
       {
         heading:
-          "You can easily check your meal card balance through the Freedom online portal. Additionally, you can check them by contacting our customer service team. We prioritize convenience to ensure you have quick access to your card balance information.",
+          "Travel and Expense cards are designed to offer robust control and visibility over your business travel expenses, ensuring security and preventing fraud.",
+        content:
+          "To bolster security, you can define spending limits to restrict excessive or unauthorized expenditures and closely monitor transaction history to identify suspicious activities. By leveraging these features and more within the EnKash platform, you can significantly enhance the security and integrity of your corporate expenses.",
       },
     ],
   },
   {
-    question:
-      "How will Travel and Expense cards help me optimize my travel spends?",
+    question: "How can travel and expense cards assist me in managing my traveling expenses?",
     answer: [
       {
         heading:
-          "Yes, tracking your meal card expenses is a straightforward process. You can view your transaction history and monitor expenses through our online portal. This feature allows you to keep tabs on your spending, review past purchases, and manage your budget effectively. You can also build workflows, create policies, and issue new cards. If you have any further questions or need assistance with your meal card, please don't hesitate to reach out to our customer support team. We're here to help you make the most of your meal card experience.",
+          "Travel and Expense cards serve as an effective tool for maximizing control over your entire travel expenditure.",
+        content:
+          "These cards offer a multi-faceted approach to optimization: first, you can establish limits and approval policies to prevent overspending. Additionally, you'll benefit from comprehensive spend visibility. This visibility lets you gain actionable insights into your travel expenses, highlighting areas where expenditure can be reduced or optimized.",
       },
     ],
   },
