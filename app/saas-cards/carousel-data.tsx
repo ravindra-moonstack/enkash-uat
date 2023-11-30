@@ -1,39 +1,42 @@
-import calenderIcon from "./img/calender.png";
-import sampleIconOne from "./img/sample-icon-one.png";
-import sampleIconTwo from "./img/sample-icon-two.png";
-import sampleIconThree from "./img/sample-icon-three.png";
-import sampleIconFour from "./img/sample-icon-four.png";
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
+
+
+
+
+
 
 const carouselData = [
   {
-    image: calenderIcon,
-    alt: "reimbursement image",
-    title:
-      "Control SaaS spends and security like never before - Keep track of and take action on subscription renewal and expenditure as per your convenience.",
+    image: iconOne,
+    alt: "Control SaaS spends",
+    title: "Control SaaS spends and security like never before - Monitor and take action on subscription renewals and expenditures at your convenience",
   },
   {
-    image: sampleIconOne,
-    alt: "reimbursement image",
-    title:
-      "Issue a corporate card for digital marketing purposes and set customized limits for campaign expenditure and subscription renewals based on your marketing budget.",
+    image: iconTwo,
+    alt: "Works best with all leading, IT-approved tools",
+    title: "Works best with all leading, IT-approved tools. Integrate your entire SaaS stack to get valuable insights for your business",
   },
   {
-    image: sampleIconTwo,
-    alt: "reimbursement image",
+    image: iconThree,
+    alt: "Get real-time visibility into your SaaS corporate card",
     title:
-      "Automated invoice generation results in reduced manual efforts, increased efficiency, and improved productivity within your business.",
+      "Get real-time visibility into your SaaS corporate card/virtual account balance so that you can stop worrying about overpaying or expense fraud",
   },
   {
-    image: sampleIconThree,
-    alt: "reimbursement image",
+    image: iconFour,
+    alt: "Save countless work hours by automating your SaaS billing",
     title:
-      "Quick payment links embedded within your invoices can help improve your customer experience by enabling them to make payments from anywhere, on any device.",
+      "Save countless work hours by automating your SaaS billing, invoicing, and receipt matching process",
   },
   {
-    image: sampleIconFour,
-    alt: "reimbursement image",
+    image: iconFive,
+    alt: "Ensure uninterrupted business operations with seamless payment processing",
     title:
-      "Concentrate on making the collection process customer-focused and improving their experience to ensure better DSO.",
+      "Ensure uninterrupted business operations with seamless payment processing for your SaaS subscriptions",
   },
 ];
 

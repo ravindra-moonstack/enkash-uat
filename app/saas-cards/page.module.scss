@@ -1,7 +1,6 @@
 @import "../../styles/variables";
 @import "../../styles/mixin";
 
-
 .first_row {
   margin-bottom: 80px;
   @include bp-md {
@@ -23,6 +22,13 @@
     @include bp-md {
       width: auto;
       height: auto;
+    }
+  }
+
+  .lottie_container {
+    width: 300px;
+    @include bp-md {
+      width: 500px;
     }
   }
 }
@@ -84,7 +90,7 @@
   text-align: center;
   padding-bottom: 50px;
   @include bp-md {
-    padding-bottom: 250px;
+    padding-bottom: 220px;
   }
 
   .faq_bg {
@@ -98,5 +104,11 @@
         display: flex;
       }
     }
+  }
+}
+
+.seventh_row {
+  background-color: $color-white;
+  @include bp-md {
   }
 }

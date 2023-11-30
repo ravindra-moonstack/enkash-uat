@@ -3,8 +3,9 @@ const faqData = [
     question: "What is SaaS?",
     answer: [
       {
-        heading:
-          "To apply for a meal card, you can visit click here or contact our customer service team (sales@freedomcard.io) to initiate the application process. We'll guide you through the necessary steps, which typically involve providing personal information and completing the application form.",
+        heading: "SaaS is an abbreviation for Software as a Service.",
+        content:
+          "It is a software delivery model in which a third-party provider hosts applications and makes them available to customers online. SaaS is used for business applications such as CRM, project management, accounting, etc. Its benefits include lower upfront costs, faster deployment, and easier access to the latest software features.",
       },
     ],
   },
@@ -14,34 +15,42 @@ const faqData = [
     answer: [
       {
         heading:
-          "Yes, there may be a maximum limit for loading funds onto your meal card. The specific limit can vary depending on the type of meal card and your account status. Please reach out to us here (hyperlink req demo) or reach out to us at sales@freedomcard.io for more information.",
+          "Managing all your recurring expenses on one platform provides total visibility over your entire subscription spend.",
+        content:
+          "You can track renewal dates and previous payments and get automated reminders about upcoming renewals, which makes it easier to manage your expenses and reduces the risk of missing payments.",
       },
     ],
   },
   {
-    question: "Can I control my SaaS expenditure on EnKash?",
+    question: "How can I control my SaaS expenditure?",
     answer: [
       {
         heading:
-          "No, Freedom meal cards do not have any fees associated with it.*\n*Standard T&C applicable",
+          "To effectively manage your SaaS expenditure, consider implementing various strategies.",
+        content:
+          "Utilize specialized tools and insights to track essential information like renewal dates and subscription prices. Additionally, leverage virtual cards and accounts with predefined limits to prevent overspending on SaaS subscriptions.",
       },
     ],
   },
   {
-    question: "How will SaaS subscription management help save time?",
+    question: "How does SaaS subscription management help save time?",
     answer: [
       {
         heading:
-          "You can easily check your meal card balance through the Freedom online portal. Additionally, you can check them by contacting our customer service team. We prioritize convenience to ensure you have quick access to your card balance information.",
+          "You can use a SaaS management platform to streamline and manage all your subscriptions.",
+        content:
+          "This way, you can avoid manually tracking renewal dates and previous payments. This means you can spend less time on administrative tasks and more time focusing on other aspects of your business.",
       },
     ],
   },
   {
-    question: "How does EnKash provide greater visibility into SaaS purchases?",
+    question: "How can you get greater visibility into SaaS purchases?",
     answer: [
       {
         heading:
-          "Yes, tracking your meal card expenses is a straightforward process. You can view your transaction history and monitor expenses through our online portal. This feature allows you to keep tabs on your spending, review past purchases, and manage your budget effectively. You can also build workflows, create policies, and issue new cards. If you have any further questions or need assistance with your meal card, please don't hesitate to reach out to our customer support team. We're here to help you make the most of your meal card experience.",
+          "Various SaaS management platforms offer real-time visibility into SaaS purchases, which can help you make better business decisions.",
+        content:
+          "They let you see all your SaaS purchases in one place and gain insights into your spending patterns.",
       },
     ],
   },

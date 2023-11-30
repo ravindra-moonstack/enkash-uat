@@ -7,7 +7,7 @@ import { space } from "../../constant/common";
 import faqData from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
-import { carouselBg, faqBg, heroImage, whiteArrow } from ".";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -17,8 +17,18 @@ import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import { Metadata } from "next";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import Link from "next/link";
 
-const saas = () => {
+export const metadata: Metadata = {
+  title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
+  description:
+    "Unlock the convenience of corporate meal cards online. Streamline employee benefits and expense management effortlessly with our secure and efficient solution.",
+};
+
+const saasCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -27,26 +37,35 @@ const saas = () => {
       <div className="desktop-header">{<WebHeader />}</div>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
-          <div className="d-flex mb-5">
-            <Heading
-              title={`Freedom ${space}`}
-              color="rainy-blue"
-              size="h4"
-              weight="7"
-            />
-            <Heading title="| SaaS" size="h4" weight="4" />
-          </div>
-
-          <div className="">
-            <div className="d-flex flex-wrap">
+          <div className="d-flex mb-5 flex-column flex-md-row">
+            <div className="d-flex">
               <Heading
-                title="Simplified SaaS subscription management, now"
-                color="white"
-                size="h2"
+                title={`Freedom |${space}`}
+                color="rainy-blue"
+                size="h4"
                 weight="7"
               />
+            </div>
+            <Heading title="SaaS" size="h4" weight="4" />
+          </div>
+
+          <div className="d-flex flex-column">
+            <Heading
+              title="Simplified SaaS"
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="subscription management"
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <div>
+              <Heading title="now" color="white" size="h2" weight="7" />{" "}
               <Heading
-                title={`at your fingertips`}
+                title="now at your fingertips"
                 color="rainy-blue"
                 size="h2"
                 weight="7"
@@ -56,7 +75,7 @@ const saas = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage all your SaaS subscriptions on a single platform. Enhance your spend strategies with actionable insights and smart controls."
+              title="Manage all your SaaS subscriptions on a single platform. Enhance your spend strategies with actionable insights and smart controls"
               color="white"
               size="h6"
               weight="5"
@@ -76,11 +95,9 @@ const saas = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <Image
-            src={heroImage}
-            alt="reimbursement dashboard"
-            className={styles.hero_image}
-          />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -93,30 +110,23 @@ const saas = () => {
             {
               itemArray: ["Subscription", "Management"],
               oldWayDescription:
-                "Multiple platforms to keep track of individual SaaS subscription renewal dates and spends causes confusion and amplifies the risk of missed payments.",
+                "Using multiple platforms to track individual SaaS subscription renewal dates can be confusing and amplifies the risk of missed payments",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+                "Manage and pay for all your SaaS subscriptions on a unified platform, from renewal to expenditure",
             },
             {
-              itemArray: ["Billing", "&", "Invoicing"],
+              itemArray: ["Billing &", "Invoicing"],
               oldWayDescription:
-                "Traditional methods take a lot of time and come with layers of red tape.",
+                "Manual billing & invoicing can amplify the risk of missed payments and put an extra burden on your finance teams",
               newWayDescription:
-                "Utilize advanced solutions like OCR technology and approval systems to streamline the reimbursement procedure.",
+                "SaaS subscription management platform automates the billing and invoicing process",
             },
             {
               itemArray: ["Utility", "Analysis"],
               oldWayDescription:
-                "Manual procedures are quite time-consuming and involve multiple levels of bureaucracy.",
+                "Difficult to understand whether you are getting the most out of your SaaS subscription",
               newWayDescription:
-                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
-            },
-            {
-              itemArray: ["Revenue", "Forecasting"],
-              oldWayDescription:
-                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
-              newWayDescription:
-                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing subscriptions, consolidating overlapping subscriptions, or canceling underutilized subscriptions",
             },
           ]}
         />
@@ -125,45 +135,65 @@ const saas = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex justify-content-center text-center flex-wrap mb-5">
+        <div className="d-inline text-center mb-5">
           <Heading
-            title="Streamline your SaaS"
+            title={`Effortlessly${space}`}
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}subscription management with EnKash.`}
+            title={`streamline your SaaS subscription${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
+          <Heading title="management" color="black" size="h1" weight="6" />
         </div>
-
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Recurring Subscription"
-              description="Manage all your recurring expenses on one platform with total visibility over your entire subscription spend. Track renewal dates, previous payments and get automated reminders about upcoming renewals."
+              whiteTitle="Recurring Subscriptions"
+              description=" Manage all your recurring expenses on one platform with total visibility over your subscription spend. Track renewal dates and previous payments and get automated reminders about upcoming renewals"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Greater Visibility"
-              description="EnKash offers a seamless and rich experience with real-time visibility into your SaaS purchases, that’ll help you make better decisions for your business."
+              description="A seamless and rich experience with real-time visibility into your SaaS purchases, helping you make better business decisions"
             />
           </div>
-
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Purchasing Insights"
-              description="Improve your organization's performance by increasing your purchasing oversight, which also helps with reducing costs and streamlining your payment process."
+              description="Improve your organization's performance by increasing your purchasing oversight, which helps reduce costs and streamline your payment process"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Full Control"
-              description="EnKash provides easy monitoring, analysis, and control of corporate SaaS expenses, ensuring SaaS policy compliance within your organization."
+              whiteTitle="Complete Control"
+              description="Easy monitoring, analysis, and control of corporate SaaS expenses, ensuring SaaS policy compliance within your organization"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Set"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Limits"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="For DIY corporate access, you can set daily, monthly, and annual usage limits to spend only your allocated budget on SaaS"
             />
           </div>
         </div>
@@ -173,31 +203,40 @@ const saas = () => {
         <HowDoesCarousel
           titleContent={
             <>
-              <div className="text-center d-flex justify-content-center flex-wrap">
-                <Heading title={`Enjoy`} color="white" size="h1" weight="6" />
-                <Heading
-                  title={`${space}full control${space}`}
-                  color="rainy-blue"
-                  size="h1"
-                  weight="6"
-                />
-                <Heading
-                  title="over your SaaS subscriptions."
-                  color="white"
-                  size="h1"
-                  weight="6"
-                />
+              <div className="text-center">
+                <div className="text-center d-inline">
+                  <Heading
+                    title={`Enjoy${space}`}
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title={`full control${space}`}
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title="over your SaaS subscriptions"
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
+                </div>
               </div>
             </>
           }
           mainTitle="How do Saas Subscriptions work?"
           carouselData={carouselData}
-          carouselBg={carouselBg}
+          carouselBg={caraouselBg}
         />
       </div>
-
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Saas Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how SaaS cards offer a host of benefits for your business and employees!"
+        />
       </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -207,7 +246,7 @@ const saas = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about SaaS in detail."
+            title="Don't worry! Our FAQs section will help you learn about SaaS in detail"
             color="black"
             size="h4"
           />
@@ -229,12 +268,167 @@ const saas = () => {
       </div>
 
       <div className={`${styles.sixth_row} row`}>
-      <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />      </div>
+        <ContactUsCard
+          title="Seeking further understanding of SaaS cards?"
+          description="Travel and Expense cards, often called T&E cards are specialized financial instruments designed to streamline and enhance business travel expenses"
+        />
+      </div>
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Explore the comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What does SaaS stand for?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="SaaS stands for software as a service and relates to all the costs related to software-related expenses. These SaaS costs include hosting the website, software licensing fees, fees related to cloud storage, software subscriptions, website maintenance costs, and the salaries of the customer support teams"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How does the SaaS expense management platform work?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Your SaaS expense management platform will collate all the costs associated with SaaS spend and provide IT and finance teams with complete visibility over software-related payments. These costs can be annual, quarterly, or monthly. In most companies, the marketing department works with the IT department to finalize the SaaS tools required and negotiate the costs for maximum advantage"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Why do companies need SaaS expense management?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="SaaS expenses often pertain to the aspects of the business that are external-facing, like the website, blog, visuals, etc. To ensure these aspects run smoothly, you must choose the right SaaS tool, get the optimum cost, and pay the fees on time. With the SaaS expense management platform, you can track the cost and ensure you get the approvals to renew the subscriptions on time."
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How does SaaS expense management help businesses?"
+                />
+              </div>
+              <div className="mb-5">
+                <p>
+                  <Link
+                    href="https://www.enkash.com/resources/blog/saas-subscription-management-with-virtual-cards/"
+                    target="_blank"
+                  >
+                    SaaS subscription management
+                  </Link>{" "}
+                  helps to optimize the expenses by timing the subscription
+                  right. Sometimes, a particular SaaS subscription will be
+                  cheaper when taken annually, and the platform will help you
+                  analyze this. In other instances, you may not have to take an
+                  annual subscription because the tool is used only for a short
+                  period, thus reducing the expenses.
+                </p>
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How to build a SaaS expense management strategy?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="A smart platform can help you build an effective SaaS expense management strategy in the following ways:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Discover: Get an overview of the subscriptions and costs
+                    related to SaaS within your company
+                  </li>
+                  <li>
+                    Dig deeper: The next step is to discover the purpose of the
+                    cost
+                  </li>
+                  <li>
+                    Reduce: Look at the usage patterns and reduce the
+                    subscription time if required
+                  </li>
+                  <li>
+                    Negotiate: For bulk usage and annual packages, you can
+                    negotiate better rates
+                  </li>
+                  <li>
+                    Approve and pay: Set up checking mechanisms to regulate
+                    payments and monitor new spends
+                  </li>
+                </ul>
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How does a SaaS expense management platform provide value?"
+                />
+              </div>
+              <div className="mb-3">
+                <p>
+                  our SaaS expense management platform or{" "}
+                  <Link
+                    href="https://www.enkash.com/resources/blog/enkash-spend-management-software-for-smb/"
+                    target="_blank"
+                  >
+                    subscription management platform
+                  </Link>{" "}
+                  will ensure the following:
+                </p>
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>Make payments on time and get rebates</li>
+                  <li>
+                    Reduce unnecessary spend by consolidating subscriptions
+                  </li>
+                  <li>Ensure there is an approval trail for audit purposes</li>
+                  <li>
+                    Enable your various teams to function without any
+                    interruptions
+                  </li>
+                </ul>
+              </div>
+            </>
+          }
+        />
+      </div>
     </div>
   );
 };
 
-export default saas;
+export default saasCard;

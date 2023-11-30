@@ -1,36 +1,33 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Open-a-virtual-bank-account-now-to-manage-your-business-expenses.jpg",
-    imageAlt:
-      "Open a Virtual Bank Account for Business and Manage Expense Better",
-    title: "Open a Virtual Bank Account for Business and Manage Expense Better",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_4.cf1aca79.jpg",
+    imageAlt: "Top 5 Reasons to Adopt B2B Payment Automation",
+    title: "Top 5 Reasons to Adopt B2B Payment Automation",
     date: "Dec 21, 2023",
     description:
-      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
+      "Digital is the new normal. This mantra of B2B payment automation has been ingrained in our post-pandemic world which gave us a rude awakening in terms of how we used to function....",
+    link: "  https://www.enkash.com/resources/blog/why-use-automation-in-b2b-payments/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
-    imageAlt:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
-    title:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Keep-things-simple-with-EnKash.jpg",
+    imageAlt: "Keep Things Strategic & Simple with Spend Management Software",
+    title: "Keep Things Strategic & Simple with Spend Management Software",
     date: "Dec 21, 2023",
     description:
-      "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
-    link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
+      "From startup expenditure to sourcing business assets to improvement costs, a huge expense is involved in running a business. Moreover, the expenditure may vary depending on the business type...",
+    link: "https://www.enkash.com/resources/blog/keep-things-simple-with-spend-management-software/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
-    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
-    title: "Learn How Virtual Accounts Can Benefit Your Business",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_30.2b14ff38.jpg",
+    imageAlt: "Automate Your Spends with SaaS Spend Management Software",
+    title: "Automate Your Spends with SaaS Spend Management Software",
     date: "Dec 21, 2023",
     description:
-      "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
-    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+      "Prepaid cards or corporate expense cards have emerged as cutting-edge expense management tools, offering a range of innovative features to simplify your life. From handling business...",
+    link: "https://www.enkash.com/resources/blog/saas-subscription-management-with-virtual-cards/",
   },
 ];
 
