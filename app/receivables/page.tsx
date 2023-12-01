@@ -1,23 +1,10 @@
-"use client";
-
 import Image from "next/image";
-import styles from "./page.module.scss";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
+import { Metadata } from "next";
 import { space } from "@/constant/common";
+import styles from "./page.module.scss";
 import blogData from "./blog-data";
-import {
-  officeImg,
-  whiteArrow,
-  cardBg,
-  faqBg,
-  bannerImage,
-  cashInHandIcon,
-  clickIcon,
-  searchIcon,
-  receivablesAnimation,
-} from ".";
+import faqData from "./faq-data";
+import howDoesItWorkData from "./how-does-It-work-data";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -25,63 +12,92 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import faqData from "./faq-data";
-import howDoesItWorkData from "./howDoesItWorkData";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-
 import ActionCard from "@/components/action-card/action-card";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+import ContactUsCard from "@/components/contact-us-card/contact-us-card";
+import PrimaryButton from "@/components/buttons/primary-button/primary-button";
+import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import {
+  officeImg,
+  whiteArrow,
+  cardBg,
+  faqBg,
+  banner,
+  heavyLiftingIconOne,
+  heavyLiftingIconTwo,
+  heavyLiftingIconThree,
+} from ".";
+
+export const metadata: Metadata = {
+  title: " Accounts Receivables Automation Software for Business - EnKash",
+  description:
+    "Save cost of your business with Accounts Receivables Automation Software. Automate your invoicing, reduce payment delays & improve financial efficiency. Sign up for Free Trial Now!!",
+};
 
 const receivables = () => {
   return (
-    <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+    <div className={`color-white ${styles.home_container}`}>
       <div className="mobile-header">
         <MobileHeader />
       </div>
       <div className="desktop-header">{<WebHeader />}</div>
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
-          <div className="d-flex mb-4">
+          <div className="d-inline mb-4">
             <Heading
-              title={`Olympus${space}`}
+              title="Olympus |"
               color="rainy-blue"
               size="h1"
               weight="7"
             />
-            <Heading title="| Receivables" size="h1" weight="7" />
+            <Heading title={`${space}Receivable`} size="h1" weight="7" />
           </div>
-          <div>
+          <div className="d-flex flex-column">
             <Heading
-              title={`Digitize and optimize${space}`}
-              color="rainy-blue"
+              title="Digitize and optimize"
+              color="white"
               size="h2"
               weight="7"
             />
-            <Heading title="your collection process." color="white" size="h2" />
+
+            <div>
+              <Heading
+                title="your business"
+                color="white"
+                size="h2"
+                weight="7"
+              />
+              <Heading
+                title={`${space}collection process`}
+                color="rainy-blue"
+                size="h2"
+                weight="7"
+              />
+            </div>
           </div>
-          <div className={`mt-4 ${styles.desktop_description}`}>
+
+          <div className="mt-4 mobile-only">
             <Heading
-              title="With EnKash, you’ll build collection strategies that work for both you and your customers with smart automation tools, actionable data and smart invoices."
+              title="Use smart automation tools, actionable data, and smart invoices for enhanced business collection"
               color="white"
               size="h6"
               weight="5"
             />
           </div>
-          <div className={`mt-4 ${styles.mobile_description}`}>
+          <div className="mt-4 desktop-only">
             <Heading
-              title="With EnKash, you’ll build collection strategies that work for both you and your customers with smart automation tools, actionable data and smart invoices."
+              title="Use smart automation tools, actionable data, and smart invoices for enhanced business collection"
               color="white"
               size="h5"
               weight="5"
             />
           </div>
           <div className={`my-5 ${styles.button_container}`}>
-            <PrimaryButton
-              title="EnKash Now"
-              theme="theme-blue"
-            />
+            <PrimaryButton title="EnKash Now" theme="theme-blue" />
             <span className="mx-2"></span>
             <SecondryButton
               title="Book a Demo"
@@ -92,22 +108,19 @@ const receivables = () => {
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
-            <LottieClientComponent
-              animationData={receivablesAnimation}
-              loop={true}
-            />
+            <LottieClientComponent animationData={banner} loop={true} />
           </div>
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={bannerImage} />
+        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={officeImg} />
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
               title="Virtual Accounts"
-              description="Steamline the collection process by creating virtual accounts for your customers "
+              description="Streamline the collection process by creating virtual accounts for your customers"
               theme="blue"
             />
           </div>
@@ -119,7 +132,7 @@ const receivables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <div className={styles.lottie_container}>
+            <div className={styles.lottie_first_container}>
               <LottieDynamicLoadComponent
                 animationName={"RecievablesVirtualAnimation"}
                 loop={true}
@@ -136,26 +149,26 @@ const receivables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <div className={styles.lottie_container}>
+            <div className={styles.lottie_second_container}>
               <LottieDynamicLoadComponent
                 animationName={"RecievablesPaymentAnimation"}
                 loop={true}
-              />
+              />{" "}
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
               title="Payment Links"
-              description="Embed payment links within digital invoices for quicker collections."
+              description="Embed payment links within digital invoices for quicker collections"
               theme="blue"
             />
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 px-5 my-md-5 my-3">
+          <div className="col-md-6 col-12 ">
             <ExploreCard
               title="Bulk Collect"
-              description="Create an improved, customer-focused collection experience while ensuring better DSO."
+              description="Create an improved, customer-focused collection experience while ensuring better DSO"
               theme="blue"
             />
           </div>
@@ -167,7 +180,8 @@ const receivables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <div className={styles.lottie_container}>
+
+            <div className={styles.lottie_third_container}>
               <LottieDynamicLoadComponent
                 animationName={"RecievablesBulkAnimation"}
                 loop={true}
@@ -179,17 +193,17 @@ const receivables = () => {
 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
-          <div className={styles.lottie_container}>
+          <div className={styles.lottie_first_container}>
             <LottieDynamicLoadComponent
-              animationName={"RecievablesQuickAnimation"}
+              animationName={"RecievablesPaymentAnimation"}
               loop={true}
             />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="Quick Collect"
-            description="Choose an approval matrix that works best for your business and create and maintain an aligned approval process for all kinds of spends."
+            title="Payment Links"
+            description="Reduce follow-ups and speed up collections by easily tracking embedded payment links"
             theme="green"
           />
         </div>
@@ -197,7 +211,7 @@ const receivables = () => {
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
             title="Invoices"
-            description="Automate invoice fetching seamlessly and discover hassle free invoice sharing."
+            description="Reduce follow-ups and collect on time with digital invoice dispatch"
             theme="green"
           />
         </div>
@@ -211,69 +225,57 @@ const receivables = () => {
         </div>
       </div>
 
-      <div className="row bg-white row-padding text-center">
-        <div className="d-flex flex-column flex-md-row align-items-center justify-content-md-center">
+      <div className="row bg-white row-padding">
+        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
           <Heading
-            title={`Quick Collection,${space}`}
-            size="h1"
-            color="equity-blue"
-            weight="6"
-          />
-          <Heading
-            title={`Seamless Invoice Sharing${space}`}
+            title={`EnKash does${space}`}
             size="h1"
             color="black"
             weight="6"
           />
+          <Heading
+            title={`the heavy lifting${space}`}
+            size="h1"
+            color="equity-blue"
+            weight="6"
+          />
+          <Heading title="for you." size="h1" color="black" weight="6" />
         </div>
       </div>
 
       <div className={`row bg-indi-volt ${styles.fifth_row}`}>
         <div
-          className={`d-flex flex-column flex-md-row tex-center justify-content-evenly  ${styles.container}`}
+          className={`d-flex flex-column flex-md-row tex-center justify-content-evenly ${styles.container}`}
         >
-          <div className="md:mb-0 mb-4 text-md-center">
-            <Image
-              src={cashInHandIcon}
-              alt="cash icon"
-              className="md:mb-0 mb-4"
-            />
-            <div className="d-flex flex-md-column flex-row">
+          <div className="mb-4 text-md-center">
+            <Image src={heavyLiftingIconOne} alt="icon" className="mb-4" />
+            <div className="d-flex flex-column">
               <Heading title="Quick" size="h5" color="white" weight="7" />
-              <Heading
-                title={`${space}Collections`}
-                size="h5"
-                color="white"
-                weight="7"
-              />
+              <Heading title="Collections" size="h5" color="white" weight="7" />
             </div>
           </div>
-          <div className="mb-4 text-md-center">
-            <Image src={clickIcon} alt="click icon" className="mb-4" />
-            <div className="d-flex flex-md-column flex-row">
-              <Heading title="One-click" size="h5" color="white" weight="7" />
-              <Heading
-                title={`${space}Sharing`}
-                size="h5"
-                color="white"
-                weight="7"
-              />
-            </div>
-          </div>
+
           <div className="mb-4 text-md-center">
             <Image
-              src={searchIcon}
-              alt="search icon"
-              className="md:mb-0 mb-4"
+              src={heavyLiftingIconTwo}
+              alt="coins icon"
+              className="mb-4"
             />
-            <div className="d-flex flex-md-column flex-row">
+            <div className="d-flex flex-column">
+              <Heading title="One-click" size="h5" color="white" weight="7" />
+              <Heading title="Deployment" size="h5" color="white" weight="7" />
+            </div>
+          </div>
+
+          <div className="mb-4 text-md-center">
+            <Image
+              src={heavyLiftingIconThree}
+              alt="coins icon"
+              className="mb-4"
+            />
+            <div className="d-flex flex-column">
               <Heading title="Easy" size="h5" color="white" weight="7" />
-              <Heading
-                title={`${space}Tracking`}
-                size="h5"
-                color="white"
-                weight="7"
-              />
+              <Heading title="Tracking" size="h5" color="white" weight="7" />
             </div>
           </div>
         </div>
@@ -284,35 +286,34 @@ const receivables = () => {
             {
               itemArray: ["Collection", "Process"],
               oldWayDescription:
-                "Manually keeping track of receivables and customer payments creates unnecessary confusion.",
+                "Manually keeping track of receivables and customer payments creates unnecessary confusion",
               newWayDescription:
-                "Leverage virtual accounts to streamline the reconciliation process by linking received payments to customer accounts.",
+                "Manually keeping track of receivables and customer payments creates unnecessary confusion",
             },
             {
               itemArray: ["Payment", "Methods"],
               oldWayDescription:
-                "Manual procedures are quite time consuming and involve multiple levels of bureaucracy",
+                "Restricting payment methods can cause even more delays in the collection process",
               newWayDescription:
-                "Leverage smart tools like OCR technology and approval matrices to automate the reimbursement process.",
+                "Enable customers to pay amounts due with embedded payment links quickly",
             },
             {
               itemArray: ["Collection", "Method"],
               oldWayDescription:
-                "When businesses generate paper invoices manually, the process is time-consuming, resource-intensive, and poses risks of errors or lost invoices.",
+                "Manual or traditional banking collection processes are rigid and restrictive",
               newWayDescription:
-                "EnKash generates and sends invoices automatically, which saves time and reduces the risk of human error. This means your teams can focus on other important tasks and improve their overall efficiency.",
+                "Digitize the collection process with a seamless invoicing process, payment links, quick collection, and more",
             },
             {
-              itemArray: ["Invoice", "Generation"],
+              itemArray: ["Invoice", "Dispatch"],
               oldWayDescription:
-                "Manually keeping track of receivables and following-up with customers for payments can take up a lot of your collection team's bandwidth, slowing down the collection process.",
+                "Generating and dispatching invoices manually is a time-consuming process, which, if not done, can hinder collections",
               newWayDescription:
-                "Digitize the collection process with the help of automation tools, and improve your customer experience to quicken your collection process.",
+                "Never miss out on timely deployment of invoices and reminders with digital invoicing",
             },
           ]}
         />
       </div>
-
       <div
         className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
       >
@@ -320,9 +321,9 @@ const receivables = () => {
           mainTitle={
             <>
               <div className="d-flex flex-column">
-                <Heading title="Automate." color="white" size="h1" weight="5" />
+                <Heading title="Total" color="white" size="h1" weight="5" />
                 <Heading
-                  title="Accelerate."
+                  title="Control"
                   color="electric-green"
                   size="h1"
                   weight="5"
@@ -331,34 +332,57 @@ const receivables = () => {
             </>
           }
           mainImage={officeImg}
-          description="Put repetitive and mundane tasks on auto-pilot and significantly reduce your team’s efforts in the invoicing and reconciliation process."
+          description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
         />
       </div>
       <div className="bg-white row-padding d-flex justify-content-center">
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
+              whiteTitle="Automate and Accelerate"
+              description="Put repetitive and mundane tasks on auto-pilot and significantly reduce your team’s efforts in the invoicing and reconciliation process"
+              ctaColor="blue"
+            />
+          </div>
+          <div className="me-4">
+            <GetStartedCard
               whiteTitle="Proactive Collection"
-              description="Build collection strategies that work for both you, and your customer. Get details about each and every transaction, linked seamlessly with virtual accounts for better insights."
+              description="Build collection strategies that work for both you and your customer. Get details about each transaction linked seamlessly with virtual accounts for better insights"
+              ctaColor="blue"
+            />
+          </div>
+          <div className="me-4">
+            <GetStartedCard
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Smart"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Invoices"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Leverage the power of embedded payment links within invoices and other forms of communication to quicken the collection process"
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
               whiteTitle="Improved Cashflow"
-              description="Improve your businesses overall cashflow with an automated collection strategy that does most of the work for you."
-              ctaColor="blue"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              whiteTitle="Departmental Hierarchy"
-              description="Choose an approval matrix that’s best for your business, down to the departmental level. More transparency means increased efficiency and nullified delays."
+              description="An automated collection strategy that does most of your work and can improve your business's overall cash flow"
               ctaColor="blue"
             />
           </div>
         </div>
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper blogData={blogData} title="Receivables Insights" />
       </div>
@@ -371,7 +395,7 @@ const receivables = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about expense in detail."
+            title="Don't worry! Our FAQs section will help you learn about receivables in detail."
             color="black"
             size="h4"
           />
@@ -395,24 +419,230 @@ const receivables = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Receivables?"
+            title="Have Questions about Expense Management?"
             size="h3"
             color="white"
           />
           <div>
-            <PrimaryButton
-              title="Know More"
-              theme="theme-black"
-            />
+            <PrimaryButton title="Know More" theme="theme-black" />
           </div>
         </div>
       </div>
 
       <div className="row">
         <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
-        />{" "}
+          title="Seeking Further Understanding of Accounts Receivables?"
+          description="Accounts Receivable is the outstanding amount customers or clients owe to a business. This amount is against any good or service availed from the business"
+        />
+      </div>
+
+      <div className="row">
+        <ComprehensiveView
+          title="Explore the comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the advantages of accounts receivable?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="AR helps improve a business's cash flow by speeding up incoming funds, ensuring a steady cash flow"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Accounts receivable improve liquidity and support working capital and day-to-day business operations"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Businesses can enhance customer relationships by allowing flexibility in credit offerings and building customer relationships"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="With accounts receivable managed properly, businesses can get valuable data to understand their financial health"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are examples of receivables?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="One of the examples to understand accounts receivable would be"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="A clothing manufacturer delivering the raw material to a retail store on credit. The payment can be made to the manufacturer within 30 days as both parties agree"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How accounts receivable is different from accounts payable?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Accounts receivable and accounts payable are two different aspects of a business. Accounts receivable is the money a business will receive from its customers against the goods or services it has provided. On the other hand, accounts payable is the money a business has to pay its vendors or suppliers for the goods or services they have purchased from them"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How companies recognize accounts receivable?"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="When a business delivers goods or services on credit, that is when their accounts receivable is created. Further, this transaction is recorded in the balance sheet as revenue against accounts receivable entry. As and when the payment is received, the amount is deducted from the accounts receivable balance."
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title=" What are the steps in the accounts receivable process?"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    The AR process starts when a good or service and a detailed
+                    invoice are delivered to the customer
+                  </li>
+                  <li>
+                    The sale is recorded in the company’s accounting books
+                  </li>
+                  <li>This entry is regularly monitored</li>
+                  <li>
+                    Upon receiving payment, the accounts receivable ledger is
+                    updated
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the 4 functions of accounts receivable?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The four accounts receivable functions are:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Establishing credit limits to reduce the risk of non-payment
+                  </li>
+                  <li>
+                    Sending invoices to customers for goods and services
+                    delivered with payment details and terms specified
+                  </li>
+                  <li>
+                    Recording the payment received from the customer to their
+                    respective accounts
+                  </li>
+                  <li>
+                    Following up on overdue accounts and implementing collection
+                    strategies
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="How can businesses manage accounts receivable?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Businesses can manage accounts receivable by following the steps below:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Companies can automate their invoicing, payment tracking,
+                    and reminders with accounting software like EnKash
+                  </li>
+                  <li>
+                    Businesses can establish credit policies with credit limits,
+                    terms, and conditions for customers
+                  </li>
+                  <li>
+                    Conduct checks on customers for their creditworthiness
+                  </li>
+                  <li>
+                    Implement effective collection strategies and fast-track
+                    their receivables process
+                  </li>
+                  <li>
+                    Maintain good customer relationships by openly addressing
+                    their grievances
+                  </li>
+                </ul>
+              </div>
+            </>
+          }
+        />
       </div>
     </div>
   );

@@ -2,11 +2,8 @@
 @import "../../styles/mixin";
 
 .first_row {
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: contain;
+  background-color: $color-indi-volt;
   position: relative;
-
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 36px;
@@ -15,46 +12,25 @@
     padding-left: 70px;
     padding-right: 30px;
     padding-top: 190px;
-    padding-bottom: 36px;
+    padding-bottom: 80px;
   }
 
   .lottie_container {
     position: absolute;
-    width: 350px;
-    bottom: 0;
+    z-index: 1;
     height: auto;
-
+    bottom: 0px;
+    right: -10px;
+    width: 450px;
     @include bp-md {
-      bottom: 0;
-      right: 0;
-      width: 800px;
-    }
-  }
-
-  .dashboard_img {
-    max-width: 100%;
-    height: auto;
-    @include bp-md {
-      max-width: none;
-      height: fit-content;
-      width: 800px;
-    }
-  }
-  .desktop_description {
-    display: none;
-    @include bp-md {
-      display: block;
-    }
-  }
-  .mobile_description {
-    display: block;
-    @include bp-md {
-      display: none;
+      bottom: 0px;
+      right: -100px;
+      width: 850px;
     }
   }
 
   .button_container {
-    padding-bottom: 270px;
+    padding-bottom: 230px;
     @include bp-md {
       padding-bottom: 0px;
     }
@@ -65,36 +41,37 @@
   background-color: $color-white;
   padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 50px;
+  padding-top: 50px;
   @include bp-md {
     padding-left: 200px;
     padding-right: 200px;
   }
 
   .section {
-    margin-bottom: 50px;
+    margin-bottom: 150px;
     @include bp-md {
-      margin-bottom: 50px;
+      margin-bottom: 150px;
     }
   }
 
   .first_container {
     position: relative;
     z-index: 2;
+
+    .lottie_first_container {
+      width: 350px;
+      @include bp-md {
+        margin-left: 50px;
+      }
+    }
     .card_bg {
       position: absolute;
       z-index: 2;
-      top: -150px;
+      top: -100px;
       left: -50px;
       @include bp-md {
-        top: -120px;
-        left: 70px;
-      }
-    }
-    .lottie_container {
-      @include bp-md {
-        margin-top: -30px;
-        margin-left: 50px;
+        top: -50px;
+        left: 200px;
       }
     }
   }
@@ -102,6 +79,15 @@
   .second_container {
     position: relative;
     z-index: 2;
+
+    .lottie_second_container {
+      width: 300px;
+      @include bp-md {
+        margin-left: 50px;
+        width: 350px;
+      }
+    }
+
     .card_bg {
       position: absolute;
       z-index: 2;
@@ -112,18 +98,20 @@
         left: -100px;
       }
     }
-    .lottie_container {
-      @include bp-md {
-        margin-top: -30px;
-        margin-right: 50px;
-        width: 300px;
-      }
-    }
   }
 
   .third_container {
     position: relative;
     z-index: 2;
+
+    .lottie_third_container {
+      width: 250px;
+      @include bp-md {
+        margin-top: -50px;
+        margin-left: 50px;
+        width: 400px;
+      }
+    }
     .card_bg {
       position: absolute;
       z-index: 2;
@@ -131,14 +119,7 @@
       left: -50px;
       @include bp-md {
         top: -130px;
-        left: 220px;
-      }
-    }
-    .lottie_container {
-      @include bp-md {
-        margin-top: -30px;
-        margin-left: 50px;
-        width: 400px;
+        left: 200px;
       }
     }
   }
@@ -149,21 +130,25 @@
   padding-right: 40px;
   padding-top: 36px;
   padding-bottom: 36px;
+  background-color: $color-indi-volt;
   @include bp-md {
-    padding-left: 90px;
-    padding-right: 90px;
+    padding-left: 110px;
+    padding-right: 110px;
     padding-top: 110px;
     padding-bottom: 110px;
   }
 
-  .lottie_container {
-    padding-left: 50px;
-    padding-right: 50px;
+  .lottie_first_container {
+    width: 250px;
+    @include bp-md {
+      width: 350px;
+    }
   }
   .lottie_second_container {
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 300px;
+    @include bp-md {
+      width: 350px;
+    }
   }
 }
 
@@ -209,19 +194,52 @@
 
 .fifth_row {
   position: relative;
-  background: url(./img/stack-bg-mobile.png);
+  background: url(./img/circle-stack.png);
   background-size: cover;
   padding: 50px;
   z-index: 1;
   @include bp-md {
-    background: url(./img/stack-bg.png);
+    background: url(./img/circle-stack-desktop.png);
     background-size: 100%;
   }
-
   .container {
     img {
-      width: 100px;
-      height: 100px;
+      width: auto;
+      height: 50px;
+      @include bp-md {
+        height: 70px;
+      }
+    }
+  }
+}
+
+.seventh_row {
+  .container {
+    @include bp-md {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+  }
+  .left_row {
+    padding: 40px;
+    margin-top: -20px;
+    border-radius: 10px;
+    border: 2px solid $color-night-blue;
+    @include bp-md {
+      padding: 40px;
+      width: 50%;
+      margin-top: 0px;
+    }
+  }
+  .right_row {
+    @include bp-md {
+      margin-left: -20px;
+      margin-top: 0;
+      width: 50%;
+    }
+    margin-top: -10px;
+    img {
+      height: 100%;
     }
   }
 }

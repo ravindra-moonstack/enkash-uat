@@ -1,47 +1,73 @@
 const faqData = [
   {
-    question: "What are receivables?",
+    question: "What is a business’s Accounts Receivable (AR)?",
     answer: [
       {
         heading:
-          "Receivables refer to the outstanding invoices a company has or the money clients owe the company. The term can be understood as an asset amounting to the future payments a company expects to receive from its clients for goods or services delivered.",
+          "Accounts receivable are the funds customers owe the company for products or services that have been invoiced. These usually exist when the goods or services are given to the customer on credit",
       },
     ],
   },
   {
-    question: "Why is it important to manage receivables efficiently?",
+    question: "Where to locate a company’s accounts receivable?",
     answer: [
       {
         heading:
-          "Efficient management of receivables ensures timely collection of revenues, improves cash flow, and reduces the risk of bad debts. By optimizing the incoming payments, a company can maintain a healthy working capital and reinvest in its growth and operations.",
+          "Accounts receivable are listed as current assets on the balance sheet and include invoices that customers owe for goods purchased, or services availed on credit. This amount will be credited to the company’s account",
       },
     ],
   },
   {
-    question: "How can automation help in receivables management?",
+    question: "Can accounts receivable be classified as business income?",
     answer: [
       {
         heading:
-          "Automation in receivables management can streamline invoice generation, payment reminders, reconciliation processes, and more. It minimizes manual errors, offers real-time insights into outstanding amounts, and accelerates the overall collection process, leading to improved financial health.",
+          "Accounts receivable can be classified as business income in accrual accounting.",
+        content:
+          "AR is considered revenue as the amount that will come to the company.",
+      },
+    ],
+  },
+
+  {
+    question: "What makes a favorable AR turnover ratio?",
+    answer: [
+      {
+        heading:
+          "Accounts receivable turnover ratio, or ART, is the number of times a business collects its accounts receivable balance in a year. It represents an organization's effectiveness in collecting outstanding amounts from its customers",
+      },
+      {
+        heading:
+          "The ART is directly proportional to the efficiency of the organization. The higher the ART, the more efficient the organization, and a lower ratio implies the organization is inefficient. This comparison is usually done within the same industry. A decent ART is around 7.8",
       },
     ],
   },
   {
-    question:
-      "What strategies can businesses use to optimize incoming payments?",
+    question: "What are accounts receivable types? ",
     answer: [
       {
+        heading: "There are three types of accounts receivable:",
+      },
+      {
         heading:
-          "Businesses can offer early payment discounts, set clear payment terms, regularly review their credit policies, employ digital payment methods, and leverage analytics to understand payment patterns. Automated reminders and robust communication can also play a crucial role in ensuring timely collections.",
+          "Trade receivable/Accounts receivable: The accounts receivable, also known as trade receivables, is the outstanding amount owed to an organization by its clients for their goods or services. It reflects the amount the company is bound to receive",
+      },
+      {
+        heading:
+          "Other receivables: These receivables consist of interest receivables, salary receivables, employee advances, tax refunds, loans, and advances given to employees and other companies",
+      },
+      {
+        heading:
+          "Notes receivable: This is similar to the traditional accounts receivable, except a two-month payment window is given to the customer. However, if both parties agree, this timeline can be extended to a year or more",
       },
     ],
   },
   {
-    question: "Why is it crucial to monitor and analyze receivables regularly?",
+    question: "How do accounts receivable affect my business?",
     answer: [
       {
         heading:
-          "Regular monitoring and analysis of receivables help in identifying potential bad debts, understanding client payment behaviors, and forecasting cash flows. It aids in timely decision-making, ensuring that the company's liquidity position remains strong and supports ongoing operations and investments.",
+          "Accounts receivable can directly impact an organization's cash flow. It showcases the amount owed by the customer to the company and, if not paid timely, can affect the financial health of a business. Keeping track of your company’s accounts receivable can help you with better cash flow management",
       },
     ],
   },
