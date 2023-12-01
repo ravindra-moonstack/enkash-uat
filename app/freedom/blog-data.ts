@@ -1,37 +1,37 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Open-a-virtual-bank-account-now-to-manage-your-business-expenses.jpg",
-    imageAlt:
-      "Open a Virtual Bank Account for Business and Manage Expense Better",
-    title: "Open a Virtual Bank Account for Business and Manage Expense Better",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/09/How-to-pay-rent-with-a-credit-card-1.jpg",
+    imageAlt: "How to pay rent with a credit card?",
+    title: "How to pay rent with a credit card?",
     date: "Dec 21, 2023",
     description:
-      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
+      "Running a business often means juggling priorities and allocating funds without disrupting the flow of business. Often, this would mean that you have to find funds for non-core business-related...",
+    link: "https://www.enkash.com/resources/blog/how-to-pay-rent-with-credit-card-online-know-about-the-benefits/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Managing-redit-card-for-company-and-its-spending.jpg",
     imageAlt:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
-    title:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+      "Managing Credit Card for Company and its Spending: Tips and Strategies",
+    title: "Managing Credit Card for Company and its Spending: Tips and Strategies",
     date: "Dec 21, 2023",
     description:
-      "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
-    link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
+      "Does your company have its very own credit card? If not, how do you make and track all the expenses for your business? Well, are you aware of the fact that credit card for company have become an essential...",
+    link: "https://www.enkash.com/resources/blog/tips-manage-credit-card-for-companies/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
-    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
-    title: "Learn How Virtual Accounts Can Benefit Your Business",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/02/A-step-by-step-guide-for-virtual-card-business.jpg",
+    imageAlt:
+      "A Step-by-Step Guide for Virtual Card Business",
+    title: "A Step-by-Step Guide for Virtual Card Business",
     date: "Dec 21, 2023",
     description:
-      "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
-    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+      "A fascinating step towards sound business spending are virtual credit cards. They provide businesses with a safer, more personalized, and transparent way to pay for rent, vendors, GST, bills, and many other things...",
+    link: "https://www.enkash.com/resources/blog/guide-for-virtual-card-business/",
   },
+
 ];
 
 export default blogData;

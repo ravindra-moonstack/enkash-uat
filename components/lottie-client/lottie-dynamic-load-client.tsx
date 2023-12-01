@@ -13,7 +13,6 @@ import {
   travelCardAnimation,
   saasAnimation,
   digitalAnimation,
-  spendAnimation,
   virtualCardAnimation,
   bulkCollectAnimation,
   invoiceAnimation,
@@ -29,7 +28,10 @@ import {
   channelIncentiveAnimation,
   giftCardAnimation,
   brandVoucherAnimation,
-} from "./index";
+  mealCardAnimation,
+  fuelAnimation,
+  purchaseCardAnimation,
+} from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
   HomePagePhoneAndTab: phoneAndTabAnimation,
@@ -39,24 +41,30 @@ const animationMap: Record<string, () => Promise<any>> = {
   HomePageCorporateCard: corporateCardAnimation,
   HomePageDiyCard: diyCardAnimation,
   HomePagePhone: phoneAnimation,
+
   FreedomTravelAnimation: travelCardAnimation,
   FreedomSaasAnimation: saasAnimation,
   FreedomVirtualAnimation: virtualCardAnimation,
-  FreedomSpendAnimation: spendAnimation,
   FreedomDigitalAnimation: digitalAnimation,
+  FreedomMealAnimation: mealCardAnimation,
+  FreedomFuelAnimation: fuelAnimation,
+  FreedomPurchaseAnimation: purchaseCardAnimation,
+
   RecievablesInvoiceAnimation: invoiceAnimation,
   RecievablesBulkAnimation: bulkCollectAnimation,
   RecievablesPaymentAnimation: paymentLinkAnimation,
   RecievablesQuickAnimation: quickCollectAnimation,
   RecievablesVirtualAnimation: virtualAccountAnimation,
-  XpenzHeirarchyAnimation:heirarchyControlAnimation,
-  XpenzBudgetAnimation:budgetAndAdvanceAnimation,
-  XpenzReimbursementAnimation:reimbursementAnimation,
-  XpenzScanAnimation:scanAndDropAnimation,
+
+  XpenzHeirarchyAnimation: heirarchyControlAnimation,
+  XpenzBudgetAnimation: budgetAndAdvanceAnimation,
+  XpenzReimbursementAnimation: reimbursementAnimation,
+  XpenzScanAnimation: scanAndDropAnimation,
   XpenzPolicyAnimation: policyAnimation,
-  LoyaltyEmployeeAnimation:employeeeRewardAnimation,
-  LoyaltyChannelAnimation:channelIncentiveAnimation,
-  LoyaltyGiftCardAnimation:giftCardAnimation,
+
+  LoyaltyEmployeeAnimation: employeeeRewardAnimation,
+  LoyaltyChannelAnimation: channelIncentiveAnimation,
+  LoyaltyGiftCardAnimation: giftCardAnimation,
   LoyaltyBrandVoucherAnimation: brandVoucherAnimation,
 };
 

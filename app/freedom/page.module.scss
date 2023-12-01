@@ -2,6 +2,7 @@
 @import "../../styles/mixin";
 
 .first_row {
+  background-color: $color-indi-volt;
   position: relative;
   padding-left: 25px;
   padding-right: 25px;
@@ -62,8 +63,79 @@
   position: relative;
   z-index: 2;
 }
+
 .third_row {
   background-color: $color-white;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  @include bp-md {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .section {
+    margin-bottom: 50px;
+    @include bp-md {
+      margin-bottom: 50px;
+    }
+  }
+
+  .first_container {
+    position: relative;
+    z-index: 2;
+    @include bp-md {
+      padding-left: 50px;
+    }
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -80px;
+      @include bp-md {
+        top: -50px;
+        left: 200px;
+      }
+    }
+  }
+
+  .second_container {
+    position: relative;
+    z-index: 2;
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -50px;
+      @include bp-md {
+        top: -100px;
+        left: -100px;
+      }
+    }
+  }
+
+  .third_container {
+    position: relative;
+    z-index: 2;
+    @include bp-md {
+      padding-left: 50px;
+    }
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -50px;
+      @include bp-md {
+        top: -50px;
+        left: 200px;
+      }
+    }
+  }
+}
+
+.more_cards {
+  background-color: $color-white;
+  padding-top: 100px;
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
@@ -88,13 +160,8 @@
       top: -100px;
       left: -50px;
       @include bp-md {
-        top: -100px;
+        top: -50px;
         left: 200px;
-      }
-    }
-    .lottie_container {
-      @include bp-md {
-        margin-top: -50px;
       }
     }
   }
@@ -110,11 +177,6 @@
       @include bp-md {
         top: -100px;
         left: -100px;
-      }
-    }
-    .lottie_container {
-      @include bp-md {
-        margin-top: -50px;
       }
     }
   }
@@ -140,6 +202,7 @@
   padding-right: 40px;
   padding-top: 36px;
   padding-bottom: 36px;
+  background-color: $color-indi-volt;
   @include bp-md {
     padding-left: 90px;
     padding-right: 90px;
@@ -200,18 +263,21 @@
 
 .fifth_row {
   position: relative;
-  background: url(./img/stack-mobile-bg.png);
+  background: url(./img/circle-stack.png);
   background-size: cover;
   padding: 50px;
   z-index: 1;
   @include bp-md {
-    background: url(./img/stack-bg.png);
+    background: url(./img/circle-stack-desktop.png);
     background-size: 100%;
   }
   .container {
     img {
-      width: 100px;
-      height: 100px;
+      width: auto;
+      height: 50px;
+      @include bp-md {
+        height: 70px;
+      }
     }
   }
 }

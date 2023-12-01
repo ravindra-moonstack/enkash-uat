@@ -19,10 +19,16 @@ export const saasAnimation = () =>
   import("../../app/freedom/img/lottie/saas.json");
 export const virtualCardAnimation = () =>
   import("../../app/freedom/img/lottie/virtual.json");
-export const spendAnimation = () =>
-  import("../../app/freedom/img/lottie/spend.json");
 export const digitalAnimation = () =>
   import("../../app/freedom/img/lottie/digital-marketing.json");
+export const mealCardAnimation = () =>
+  import("../../app/freedom/img/lottie/meal.json");
+
+export const fuelAnimation = () =>
+  import("../../app/freedom/img/lottie/fuel.json");
+
+export const purchaseCardAnimation = () =>
+  import("../../app/freedom/img/lottie/purchase.json");
 
 //Recievables Animation
 export const invoiceAnimation = () =>

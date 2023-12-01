@@ -27,14 +27,6 @@ const freedomProducts = [
     },
     list: [
       {
-        name: "SaaS Cards*",
-        description:
-          "Manage all your SaaS subscriptions with our dedicated SaaS Cards",
-        imageSrc: saas,
-        imageSrcHovered: saasFilled,
-        link: "/saas-cards",
-      },
-      {
         name: "Meal Cards*",
         description:
           "Let your employees choose their favorite meals and save on taxes",
@@ -49,14 +41,7 @@ const freedomProducts = [
       //   imageSrcHovered: payrollCardFilled,
       //   link: "/payroll-cards",
       // },
-      {
-        name: "Digital Marketing Cards*",
-        description:
-          "Pay for digital marketing campaigns and subscriptions with ease",
-        imageSrc: digitalMarketingCard,
-        imageSrcHovered: digitalMarketingCardFilled,
-        link: "/digital-marketing-cards",
-      },
+
       {
         name: "Fuel Cards*",
         description: "Track and manage fuel expenses for your business travels",
@@ -94,6 +79,23 @@ const freedomProducts = [
     },
     list: [
       {
+        name: "Digital Marketing Cards*",
+        description:
+          "Pay for digital marketing campaigns and subscriptions with ease",
+        imageSrc: digitalMarketingCard,
+        imageSrcHovered: digitalMarketingCardFilled,
+        link: "/digital-marketing-cards",
+      },
+      {
+        name: "SaaS Cards*",
+        description:
+          "Manage all your SaaS subscriptions with our dedicated SaaS Cards",
+        imageSrc: saas,
+        imageSrcHovered: saasFilled,
+        link: "/saas-cards",
+      },
+      ,
+      {
         name: "T&E Cards*",
         description: "Simplify travel and entertainment expenses for employees",
         imageSrc: tne,
@@ -108,13 +110,13 @@ const freedomProducts = [
         imageSrcHovered: purchaseCardFilled,
         link: "/purchase-cards",
       },
-      {
-        name: "Business Cards*",
-        description: "Your go-to cards for all business-related expenses",
-        imageSrc: businessCard,
-        imageSrcHovered: businessCardFilled,
-        link: "/purchase-cards",
-      },
+      // {
+      //   name: "Business Cards*",
+      //   description: "Your go-to cards for all business-related expenses",
+      //   imageSrc: businessCard,
+      //   imageSrcHovered: businessCardFilled,
+      //   link: "/purchase-cards",
+      // },
     ],
     footerText: "Empower your finances with purpose-based cards",
     footerMobileText: "Explore Freedom",
