@@ -11,12 +11,12 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import RainbowSection from "@/components/homepage/rainbow";
 import BankSection from "@/components/homepage/bank-section";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+import LoyaltyLoungeSection from "@/components/homepage/loyalty-lounge-section";
 import DashBoardAnimation from "@/components/homepage/dashboard-animation";
 import PolygonSection from "@/components/homepage/polygon-section";
-import LoungeAnimationSection from "@/components/homepage/lounge-section";
 import TextAnimation from "@/components/framer-motion/text-animation";
 import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 
 import {
   numberOne,
@@ -191,14 +191,14 @@ const home = () => {
               <>
                 <div>
                   <Heading
-                    title="Solutions that let you"
+                    title="Solutions for businesses to"
                     size="h2"
                     weight="3"
                   />
                 </div>
                 <div>
                   <Heading
-                    title="streamline cashflow and optimize workflow."
+                    title="streamline their cash flow and optimize their workflow"
                     size="h2"
                     weight="7"
                   />
@@ -211,10 +211,15 @@ const home = () => {
       <div className={`${styles.fourth_row} bg-white row`}>
         <div className="col-12 col-md-6 d-flex flex-column justify-content-start row-padding">
           <div className="ps-3">
-            <Heading title="Ultimate" color="black" size="h1" weight="6" />
+            <Heading
+              title="Gain comprehensive"
+              color="black"
+              size="h1"
+              weight="6"
+            />
             <div>
               <Heading
-                title={`productivity${space}`}
+                title={`control${space}`}
                 color="equity-blue"
                 size="h1"
                 weight="6"
@@ -223,26 +228,12 @@ const home = () => {
             </div>
             <div>
               <Heading
-                title={`control${space}`}
+                title={`transparency${space}`}
                 color="equity-blue"
                 size="h1"
                 weight="6"
               />
-              <Heading title="Now at" color="black" size="h1" weight="6" />
-            </div>
-            <div>
-              <Heading
-                title={`your${space}`}
-                color="equity-blue"
-                size="h1"
-                weight="6"
-              />
-              <Heading
-                title="fingertips."
-                color="equity-blue"
-                size="h1"
-                weight="6"
-              />
+              <Heading title="of business" color="black" size="h1" weight="6" />
             </div>
           </div>
           <div className="d-flex flex-column my-3 ps-md-3 mt-5">
@@ -255,7 +246,7 @@ const home = () => {
                 />
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Intelligent"
+                    title="Smart"
                     color="equity-blue"
                     size="h6"
                     weight="6"
@@ -271,7 +262,7 @@ const home = () => {
               <div className="col-6 d-flex">
                 <Image
                   src={twoBoxIcon}
-                  alt="automate icon"
+                  alt="real time data icon"
                   className={`me-4 ${styles.icons}`}
                 />
                 <div className="d-flex flex-column">
@@ -294,7 +285,7 @@ const home = () => {
               <div className="col-6 d-flex">
                 <Image
                   src={blueBoxIcon}
-                  alt="automate icon"
+                  alt="productivity icon"
                   className={`me-4 ${styles.icons}`}
                 />
                 <div className="d-flex flex-column">
@@ -320,7 +311,7 @@ const home = () => {
                 />
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Unparalleled"
+                    title="Exceptional"
                     color="equity-blue"
                     size="h6"
                     weight="6"
@@ -400,10 +391,7 @@ const home = () => {
         <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
           <ExploreCard
             title="Payables"
-            description=" Manage all outgoing expenses in one place. Our online platform
-              keeps track of all your business expenditures, and gives you
-              timely reminders that ensure all necessary payments are paid,
-              with no delays."
+            description="A centralized online platform to manage all outgoing business expenses. Record and track all the transactions along with timely reminders to avoid delays in business payments"
             theme="green"
             link="/payables"
           />
@@ -411,9 +399,7 @@ const home = () => {
         <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
           <ExploreCard
             title="Receivables"
-            description="EnKash empowers your business by providing intelligent
-                automation tools that help you end time-consuming manual
-                follow-ups and create better collection strategies."
+            description="An intelligent automation tool to empower your business by removing manual and time-consuming follow-ups. It helps create better collection strategies"
             theme="green"
             link="/receivables"
           />
@@ -446,9 +432,7 @@ const home = () => {
         <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
           <ExploreCard
             title="Expense Management"
-            description="Gain control over your business spends with a complete overview
-              of all your expenses. Analyze data to create efficient budgets,
-              optimize expenses and scale your business."
+            description="A platform to gain complete control over business spending and expenses. Analyze data to create efficient budgets, optimize expenses, and scale your business"
             theme="blue"
             link="/xpenz"
           />
@@ -461,7 +445,7 @@ const home = () => {
           <div className="d-flex flex-column-reverse flex-md-row">
             <div className={`d-flex flex-column ${styles.card_container}`}>
               <Heading
-                title="Say yes to better"
+                title="Switch to better"
                 color="electric-green"
                 size="h2"
                 weight="5"
@@ -474,9 +458,7 @@ const home = () => {
               />
               <div className="mt-2">
                 <Heading
-                  title="Choose an approval matrix that’s best for your business, down to
-                the departmental level. Transparent approval processes increase
-                efficiency and nullify delays."
+                  title="Adopt an approval matrix that’s best for your business at all levels. Establish transparency in the approval processes and increase efficiency with no delays"
                   color="white"
                   size="h5"
                   weight="4"
@@ -555,14 +537,14 @@ const home = () => {
         >
           <ExploreCard
             title="Corporate Cards"
-            description="Issue cards for different purposes, and manage them all on a single platform with smart controls. Enable or disable spend categories as and when required."
+            description="Issue cards for different business needs and manage them on a single platform with smart controls. Enable or disable across spend categories as and when required"
             theme="blue"
           />
         </div>
         <div className="col-md-6 col-12 row-padding-x-only order-3 order-md-3">
           <ExploreCard
             title="DIY Card Module"
-            description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
+            description="Generate purpose-made company cards and empower departments and employees to use them while setting usage limits and tracking for better spend control"
             theme="blue"
           />
         </div>
@@ -590,69 +572,9 @@ const home = () => {
       <div
         className={`${styles.tenth_row} row bg-white row-padding-bottom-none `}
       >
-        <div className="col-12 d-flex justify-content-center">
-          <div className="pb-md-5 pb-3">
-            <Heading title={`Loyalty${space}`} color="black" size="h1" />
-            <Heading title="Lounge" color="equity-blue" size="h1" />
-          </div>
-        </div>
-        <div className="col-md-6 col-12 d-flex flex-column mt-3">
-          <div className="d-flex justify-content-start">
-            <button className={styles.button} disabled={true}>
-              Vouchers
-            </button>
-            <button
-              className={`${styles.button} ${styles.disabled}`}
-              disabled={true}
-            >
-              Reward
-            </button>
-            <button
-              className={`${styles.button} ${styles.disabled}`}
-              disabled={true}
-            >
-              Incentive
-            </button>
-          </div>
-          <div className="d-flex justify-content-start mt-3">
-            <button
-              className={`${styles.button} ${styles.disabled}`}
-              disabled={true}
-            >
-              Gift Card
-            </button>
-            <button
-              className={`${styles.button} ${styles.disabled}`}
-              disabled={true}
-            >
-              Offers
-            </button>
-          </div>
-          <div className="d-flex mt-3 text-md-start">
-            <Heading
-              title="200+ brand vouchers for corporate gifting. The more you spend, the
-              more you’ll earn, and the closer you’ll get to unlocking more and
-              more rewards."
-              color="black"
-              size="h4"
-              weight="4"
-            />
-          </div>
-          <div className="d-flex mt-3 justify-content-center justify-content-md-start">
-            <PrimaryButton
-              title="Get a Demo"
-              isDisabled={false}
-              url=""
-              theme="theme-blue"
-            />
-          </div>
-        </div>
-        <div className="col-md-6 col-12 d-flex justify-content-center mt-5">
-          <div className={styles.lottie_container}>
-            <LoungeAnimationSection />
-          </div>
-        </div>
+        <LoyaltyLoungeSection />
       </div>
+
       <div
         className={`${styles.eleventh_row} row row-padding d-flex justify-content-center align-items-center
        text-center color-white bg-indi-volt`}
@@ -735,35 +657,54 @@ const home = () => {
             <GetStartedCard
               whiteTitle="Optimize Spending;"
               blueTitle="save more."
-              description="Power your business with a centralized spend management
-               platform & save countless working hours."
+              description="Empower your business with a centralized spend management platform & save countless working hours across payables, expenses, collections, and accounting"
             />
           </div>
 
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Total Visibility;"
-              blueTitle="smarter controls."
-              description="Power your business with a centralized spend management
-               platform & save countless working hours."
+              whiteTitle="Access Powerful Tools;"
+              blueTitle=" Empower Teams."
+              description="Use modern and powerful tools to generate savings in payments. Process multiple payments with one click. Pace up your collections with our customizable modules and set up predefined follow-ups with payment links"
             />
           </div>
 
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Convenient solutions to scale faster."
-              blueTitle="to scale faster."
-              description="Power your business with a centralized spend management
-               platform & save countless working hours."
+              whiteTitle="Experience New Age Company Cards;"
+              blueTitle="Spend Better."
+              description="Access multiple company cards to meet all business needs powered by state-of-the-art card management modules. Issue unlimited virtual or physical cards and use them instantly. Conveniently manage all your cards and spend on the go."
             />
           </div>
 
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Optimize Spending;"
-              blueTitle="save more."
-              description="Power your business with a centralized spend management
-               platform & save countless working hours."
+              whiteTitle="Do It Yourself Easily;"
+              blueTitle="Customize Your Way."
+              description="Manage all your finances in one place. Get customized workflows across unlimited users with 99+ combinations of approval matrices."
+            />
+          </div>
+
+          <div className={styles.card}>
+            <GetStartedCard
+              whiteTitle="Convenience of Credit on Demand;"
+              blueTitle="Scale Faster."
+              description="Get high credit for your enterprise with specially designed cards for businesses. Enjoy quick processing with digital KYC & collateral-free access."
+            />
+          </div>
+
+          <div className={styles.card}>
+            <GetStartedCard
+              whiteTitle="Total Visibility into Your Spending;"
+              blueTitle="Smarter Controls."
+              description="Zoom in to as many details as you want across functions, levels, and teams—a single view to see all the spends done across the organization. Get real-time transaction records so you can have an updated picture any time of the day or night."
+            />
+          </div>
+
+          <div className={styles.card}>
+            <GetStartedCard
+              whiteTitle="Seamless Integration"
+              description="It readily connects with any accounting or ERP solution like Tally, Quickbooks, and SAP. This helps with continuous reconciliation that is audit-ready with real-time views."
             />
           </div>
         </div>
@@ -928,8 +869,8 @@ const home = () => {
       </div>
       <div className={`row bg-white ${styles.sixteenth_row}`}>
         <ContactUsCard
-          title="Seeking further understanding of bill payments online?"
-          description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
+          title="Ready to cash in this platform for your business?"
+          description="Explore all these products on the same platform and empower your business and employees with efficient spend management, transparency, and control across all departments."
         />
       </div>
     </div>

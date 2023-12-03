@@ -37,6 +37,11 @@ import {
   olympusMultiBankAnimation,
   olympusCollectAnimation,
   olympusUtilityAnimation,
+  loyaltyFive,
+  loyaltyFour,
+  loyaltyOne,
+  loyaltyThree,
+  loyaltyTwo,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -46,7 +51,12 @@ const animationMap: Record<string, () => Promise<any>> = {
   HomePageExpenseManagement: expenseManagementAnimation,
   HomePageCorporateCard: corporateCardAnimation,
   HomePageDiyCard: diyCardAnimation,
-  HomePagePhone: phoneAnimation,
+
+  LoyaltyOne: loyaltyOne,
+  LoyaltyTwo: loyaltyTwo,
+  LoyaltyThree: loyaltyThree,
+  LoyaltyFour: loyaltyFour,
+  LoyaltyFive: loyaltyFive,
 
   FreedomTravelAnimation: travelCardAnimation,
   FreedomSaasAnimation: saasAnimation,

@@ -66,27 +66,24 @@ export const channelIncentiveAnimation = () =>
 export const brandVoucherAnimation = () =>
   import("../../app/loyalty-lounge/img/lottie/brand-voucher.json");
 
-
 //Olympus Animation
 
 export const olympusVendorAnimation = () =>
-import("../../app/olympus/img/lottie/vendor.json");
-
+  import("../../app/olympus/img/lottie/vendor.json");
 export const olympusGSTAnimation = () =>
-import("../../app/olympus/img/lottie/gst.json");
-
+  import("../../app/olympus/img/lottie/gst.json");
 export const olympusUtilityAnimation = () =>
-import("../../app/olympus/img/lottie/utility.json");
-
+  import("../../app/olympus/img/lottie/utility.json");
 export const olympusRentalAnimation = () =>
-import("../../app/olympus/img/lottie/utility.json");
-
+  import("../../app/olympus/img/lottie/utility.json");
 export const olympusMultiBankAnimation = () =>
-import("../../app/olympus/img/lottie/multi-bank.json");
-
+  import("../../app/olympus/img/lottie/multi-bank.json");
 export const olympusCollectAnimation = () =>
-import("../../app/olympus/img/lottie/collect.json");
+  import("../../app/olympus/img/lottie/collect.json");
 
-
-
-
+//Loyalty Section Homepage
+export const loyaltyOne = () => import("../../app/img/lottie/loyalty-1.json");
+export const loyaltyTwo = () => import("../../app/img/lottie/loyalty-2.json");
+export const loyaltyThree = () => import("../../app/img/lottie/loyalty-3.json");
+export const loyaltyFour = () => import("../../app/img/lottie/loyalty-4.json");
+export const loyaltyFive = () => import("../../app/img/lottie/loyalty-5.json");

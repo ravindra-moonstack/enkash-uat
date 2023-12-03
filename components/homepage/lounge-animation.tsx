@@ -4,12 +4,7 @@ import { useRef } from "react";
 import { motion, useTransform, useScroll, MotionValue } from "framer-motion";
 import LottieDynamicLoadComponent from "../lottie-client/lottie-dynamic-load-client";
 
-const LoungeAnimationSection = () => {
-  const phoneAnimationData = async () => {
-    const dynamicAnimationModule = await import("@/app/img/lottie/phone.json");
-    return dynamicAnimationModule;
-  };
-
+const LoungeAnimationSection = ({ animationName }: any) => {
   const loungeImgRef = useRef<HTMLDivElement>(null);
 
   //Framer motion scroll progress
@@ -32,10 +27,7 @@ const LoungeAnimationSection = () => {
           y: loungeTranslateY,
         }}
       >
-        <LottieDynamicLoadComponent
-          animationName={"HomePagePhone"}
-          loop={true}
-        />
+        <LottieDynamicLoadComponent animationName={animationName} loop={true} />
       </motion.div>
     </>
   );
