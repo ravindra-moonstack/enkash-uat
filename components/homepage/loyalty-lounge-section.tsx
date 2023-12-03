@@ -10,6 +10,19 @@ import PrimaryButton from "../buttons/primary-button/primary-button";
 const LoyaltyLoungeSection = () => {
   const [activeAnimation, setActiveAnimation] = useState("LoyaltyOne");
 
+  const loyaltyTexts = {
+    LoyaltyOne:
+      "400+ brand vouchers across multiple categories. These gift vouchers are the best way to encourage employees during R&R programs",
+    LoyaltyTwo:
+      "Establish a culture of employee engagement and retention with these rewards",
+    LoyaltyThree:
+      "Boost channel partner engagement, loyalty, and revenue with these incentives",
+    LoyaltyFour:
+      "Acknowledge your valued employees with these easy-to-access and use gift cards",
+    LoyaltyFive:
+      "Explore exclusive offers and discounts on various partnered subscriptions from popular services ",
+  };
+
   return (
     <>
       <div className="col-12 d-flex justify-content-center">
@@ -70,9 +83,7 @@ const LoyaltyLoungeSection = () => {
         </div>
         <div className="d-flex mt-3 text-md-start mt-4">
           <Heading
-            title="200+ brand vouchers for corporate gifting. The more you spend, the
-              more you’ll earn, and the closer you’ll get to unlocking more and
-              more rewards."
+            title={loyaltyTexts[activeAnimation]}
             color="black"
             size="h4"
             weight="4"
