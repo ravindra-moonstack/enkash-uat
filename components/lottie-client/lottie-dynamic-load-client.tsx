@@ -31,6 +31,12 @@ import {
   mealCardAnimation,
   fuelAnimation,
   purchaseCardAnimation,
+  olympusVendorAnimation,
+  olympusGSTAnimation,
+  olympusRentalAnimation,
+  olympusMultiBankAnimation,
+  olympusCollectAnimation,
+  olympusUtilityAnimation,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -66,6 +72,13 @@ const animationMap: Record<string, () => Promise<any>> = {
   LoyaltyChannelAnimation: channelIncentiveAnimation,
   LoyaltyGiftCardAnimation: giftCardAnimation,
   LoyaltyBrandVoucherAnimation: brandVoucherAnimation,
+
+  OlympusVendorAnimation: olympusVendorAnimation,
+  OlympusGSTAnimation: olympusGSTAnimation,
+  OlympusUtilityAnimation: olympusUtilityAnimation,
+  OlympusRentalAnimation: olympusRentalAnimation,
+  OlympusMultiBanAnimation: olympusMultiBankAnimation,
+  OlympusCollectAnimation: olympusCollectAnimation,
 };
 
 interface LottieDynamicLoadComponentProps {
@@ -98,3 +111,6 @@ const LottieDynamicLoadComponent: React.FC<LottieDynamicLoadComponentProps> = ({
 };
 
 export default LottieDynamicLoadComponent;
+function olympusUtilitynimation(): Promise<any> {
+  throw new Error("Function not implemented.");
+}

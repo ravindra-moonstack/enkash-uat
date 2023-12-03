@@ -92,10 +92,7 @@ const payables = () => {
             />
           </div>
           <div className={`my-5 ${styles.button_container}`}>
-            <PrimaryButton
-              title="EnKash Now"
-              theme="theme-blue"
-            />
+            <PrimaryButton title="EnKash Now" theme="theme-blue" />
             <span className="mx-2"></span>
             <SecondryButton
               title="Book a Demo"
@@ -443,10 +440,7 @@ const payables = () => {
             color="white"
           />
           <div>
-            <PrimaryButton
-              title="Know More"
-              theme="theme-black"
-            />
+            <PrimaryButton title="Know More" theme="theme-black" />
           </div>
         </div>
       </div>

@@ -65,3 +65,28 @@ export const channelIncentiveAnimation = () =>
   import("../../app/loyalty-lounge/img/lottie/channel-incentive.json");
 export const brandVoucherAnimation = () =>
   import("../../app/loyalty-lounge/img/lottie/brand-voucher.json");
+
+
+//Olympus Animation
+
+export const olympusVendorAnimation = () =>
+import("../../app/olympus/img/lottie/vendor.json");
+
+export const olympusGSTAnimation = () =>
+import("../../app/olympus/img/lottie/gst.json");
+
+export const olympusUtilityAnimation = () =>
+import("../../app/olympus/img/lottie/utility.json");
+
+export const olympusRentalAnimation = () =>
+import("../../app/olympus/img/lottie/utility.json");
+
+export const olympusMultiBankAnimation = () =>
+import("../../app/olympus/img/lottie/multi-bank.json");
+
+export const olympusCollectAnimation = () =>
+import("../../app/olympus/img/lottie/collect.json");
+
+
+
+

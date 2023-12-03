@@ -1,0 +1,26 @@
+@import "/styles/variables";
+@import "/styles/mixin";
+
+.card_body {
+  display: flex;
+  flex-direction: column;
+  
+  width: 250px;
+  height: 100%;
+  border-radius: 15px;
+  padding-top: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
+  padding-bottom: 70px;
+  white-space: normal;
+  transition: all 0.3s ease;
+  background-color: $color-indi-volt;
+  cursor: pointer;
+  @include bp-md {
+    width: 400px;
+    padding-top: 40px;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 50px;
+  }
+}
