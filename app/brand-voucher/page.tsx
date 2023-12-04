@@ -61,7 +61,7 @@ const brandVoucher = () => {
           />
           <div className="d-line">
             <Heading
-              title="Brand Vouchers"
+              title="brand vouchers"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -107,7 +107,7 @@ const brandVoucher = () => {
               oldWayDescription:
                 "Buying physical vouchers can take time and effort.",
               newWayDescription:
-                "Vouchers instantly come in your mail. You can easily access these brand vouchers anytime and anywhere with your EnKash account.",
+                "Vouchers are promptly delivered to your email. You can easily access these brand vouchers anytime and anywhere with your EnKash account.",
             },
             {
               itemArray: ["Redemption", "Process"],
@@ -224,7 +224,7 @@ const brandVoucher = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Brand Vouchers offer many benefits for your business and employees!"
+          title="Learn how brand vouchers can benefit your business and employees!"
         />
       </div>
       <div
@@ -332,7 +332,7 @@ const brandVoucher = () => {
                     size="h6"
                     color="black"
                     weight="6"
-                    title="Non-refundable, non-transferable, or exchanged against cash"
+                    title="Non-refundable, non-transferable, or exchanged against cash:"
                   />
                 </div>
 
@@ -340,7 +340,7 @@ const brandVoucher = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title=" Typically, brand vouchers cannot be refunded, transferred, or exchanged for cash."
+                  title="Typically, brand vouchers cannot be refunded, transferred, or exchanged for cash."
                 />
               </div>
               <br /> <br />
@@ -358,7 +358,7 @@ const brandVoucher = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title=" Brand vouchers are usually valid for one year from the date of issuance. Check the last date of usage to be able to utilize the discount available."
+                  title="Brand vouchers are usually valid for one year from the date of issuance. Check the last date of usage to be able to utilize the discount available."
                 />
               </div>
             </>
