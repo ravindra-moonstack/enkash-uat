@@ -121,23 +121,23 @@ const hierarchyAndControls = () => {
             {
               itemArray: ["Approval", "Process"],
               oldWayDescription:
-                "The traditional paper or email-based multi-level approval process is tedious and time-consuming",
+                "The traditional paper or email-based multi-level approval process is tedious and time-consuming.",
               newWayDescription:
-                "Xpenz's automatic approval flow can be set up on the dashboard based on organizational roles, departments, and designations",
+                "Xpenz's automatic approval flow can be set up on the dashboard based on organizational roles, departments, and designations.",
             },
             {
               itemArray: ["Privacy", "Concerns"],
               oldWayDescription:
-                "Limited control over who could access financial data leads to security concerns",
+                "Limited control over who could access financial data leads to security concerns.",
               newWayDescription:
-                "EnKash allows you to have role-based access and control with increased security",
+                "EnKash allows you to have role-based access and control with increased security.",
             },
             {
               itemArray: ["Compliance &", "Auditing"],
               oldWayDescription:
-                "The compliance tracking in line with the company or department-wise policy requires extensive manual effort",
+                "The compliance tracking in line with the company or department-wise policy requires extensive manual effort.",
               newWayDescription:
-                "Built-in compliance checks for automatic alerts and tracking across hierarchical levels for policy violations",
+                "Built-in compliance checks for automatic alerts and tracking across hierarchical levels for policy violations.",
             },
           ]}
         />
@@ -218,7 +218,7 @@ const hierarchyAndControls = () => {
               </div>
             </>
           }
-          mainTitle="How Does Hierarchy and Controls Work?"
+          mainTitle="How does Hierarchy and Controls work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -233,7 +233,7 @@ const hierarchyAndControls = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -266,7 +266,7 @@ const hierarchyAndControls = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-2">

@@ -116,30 +116,30 @@ const giftCards = () => {
             {
               itemArray: ["Accessibility"],
               oldWayDescription:
-                "The traditional way of issuing gift cards to employees or partners was quite cumbersome and paper-based, making it a long-drawn and time-consuming process",
+                "The traditional way of issuing gift cards to employees or partners was quite cumbersome and paper-based, making it a long-drawn and time-consuming process.",
               newWayDescription:
-                "The EnKash way of issuing gift cards is simplified, making it easy to access digital cards from anywhere",
+                "The EnKash way of issuing gift cards is simplified, making it easy to access digital cards from anywhere.",
             },
             {
               itemArray: ["Easy to", "Track"],
               oldWayDescription:
-                "The usage of traditional gift cards cannot be tracked, with high chances of loss and misplacement",
+                "The usage of traditional gift cards cannot be tracked, with high chances of loss and misplacement.",
               newWayDescription:
-                "Gift cards on EnKash can be easily tracked and blocked to avoid loss and misuse",
+                "Gift cards on EnKash can be easily tracked and blocked to avoid loss and misuse.",
             },
             {
               itemArray: ["Multiple", "Denominations"],
               oldWayDescription:
-                "Traditional gift cards may have restrictions regarding their availability in specific amount limits",
+                "Traditional gift cards may have restrictions regarding their availability in specific amount limits.",
               newWayDescription:
-                "Corporate gift cards are available in multiple denominations of up to Rs.10,000; one can choose the card value per their requirement. Limits are configurable based on your choice",
+                "Corporate gift cards are available in multiple denominations of up to Rs.10,000; one can choose the card value per their requirement. Limits are configurable based on your choice.",
             },
             {
               itemArray: ["Acceptability"],
               oldWayDescription:
-                "Traditional gift cards may have a limitation on usage",
+                "Traditional gift cards may have a limitation on usage.",
               newWayDescription:
-                "Gift cards by EnKash are widely accepted across many places",
+                "Gift cards by EnKash are widely accepted across many places.",
             },
           ]}
         />
@@ -273,7 +273,7 @@ const giftCards = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading

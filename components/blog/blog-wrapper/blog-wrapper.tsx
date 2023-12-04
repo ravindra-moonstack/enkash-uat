@@ -27,7 +27,7 @@ const BlogWrapper = ({ title, blogData }: BlogWrapperProps) => {
 
       <div className="d-flex justify-content-center mt-4">
         <Heading
-          title="Blogs on Related Topics"
+          title="Blogs on Related topics"
           size="h4"
           color="equity-blue"
         />

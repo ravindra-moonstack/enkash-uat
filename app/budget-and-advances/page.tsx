@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Optimize your financial stability with expert budget control management and cash flow strategies. Effectively allocate resources, track expenditures, and manage your cash flow to achieve sustainable financial success",
 };
 
-const billPayments = () => {
+const budgetAndAdvance = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -115,30 +115,30 @@ const billPayments = () => {
             {
               itemArray: ["Control", "Budgeting"],
               oldWayDescription:
-                "Traditionally, there was no way to follow a disciplined budgeting for each department and project",
+                "Traditionally, there was no way to follow a disciplined budgeting for each department and project.",
               newWayDescription:
-                "With EnKash, businesses can designate budgets for each department to avoid overspending",
+                "With EnKash, businesses can designate budgets for each department to avoid overspending.",
             },
             {
               itemArray: ["Easy", "Management"],
               oldWayDescription:
-                "Managing budgets for each department and tracking them manually can be a heavy task",
+                "Managing budgets for each department and tracking them manually can be a heavy task.",
               newWayDescription:
-                "Businesses can easily track the budget allocated to each department and project from a single dashboard",
+                "Businesses can easily track the budget allocated to each department and project from a single dashboard.",
             },
             {
               itemArray: ["Smooth", "Approvals"],
               oldWayDescription:
-                "Taking approval for each advance request can be very difficult",
+                "Taking approval for each advance request can be very difficult.",
               newWayDescription:
-                "There is no need to take approval on each advance payment. Managers can approve them in one go, provided they match the actual budget allocated and within the policy framework",
+                "There is no need to take approval on each advance payment. Managers can approve them in one go, provided they match the actual budget allocated and within the policy framework.",
             },
             {
               itemArray: ["Financial", "Calculations"],
               oldWayDescription:
-                "Complex financial calculations are required to track budget utilization and make informed financial decisions",
+                "Complex financial calculations are required to track budget utilization and make informed financial decisions.",
               newWayDescription:
-                "EnKash's automated system performs all the complex financial calculations, providing you with real-time insights and analytics",
+                "EnKash's automated system performs all the complex financial calculations, providing you with real-time insights and analytics.",
             },
           ]}
         />
@@ -216,7 +216,7 @@ const billPayments = () => {
               </div>
             </>
           }
-          mainTitle="How do Budget and Advances work?"
+          mainTitle="How does Budget and Advances work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -231,7 +231,7 @@ const billPayments = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -377,4 +377,4 @@ const billPayments = () => {
   );
 };
 
-export default billPayments;
+export default budgetAndAdvance;

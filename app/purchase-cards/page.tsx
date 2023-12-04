@@ -119,37 +119,37 @@ const purchaseCard = () => {
             {
               itemArray: ["Procurement", "Process"],
               oldWayDescription:
-                "The procurement process is time-consuming because it often involves a lot of paperwork, including purchase requisitions, purchase orders, and invoices",
+                "The procurement process is time-consuming because it often involves a lot of paperwork, including purchase requisitions, purchase orders, and invoices.",
               newWayDescription:
-                "Purchase cards make the procurement process faster and more efficient, with fewer paperwork and approval requirements",
+                "Purchase cards make the procurement process faster and more efficient, with fewer paperwork and approval requirements.",
             },
             {
               itemArray: ["Spends", "Control"],
               oldWayDescription:
-                "Limited control makes it difficult for organizations to monitor and control spending",
+                "Limited control makes it difficult for organizations to monitor and control spending.",
               newWayDescription:
-                "Purchase cards allow organizations to better monitor and control spending with real-time transaction tracking and preset spending limits",
+                "Purchase cards allow organizations to better monitor and control spending with real-time transaction tracking and preset spending limits.",
             },
             {
               itemArray: ["Procurement", "Cost"],
               oldWayDescription:
-                "The traditional procurement process required more administrative resources, which led to higher costs",
+                "The traditional procurement process required more administrative resources, which led to higher costs.",
               newWayDescription:
-                "With less paperwork and streamlined processes, procurement and expense management costs can be reduced",
+                "With less paperwork and streamlined processes, procurement and expense management costs can be reduced.",
             },
             {
               itemArray: ["Risk of", "Fraud"],
               oldWayDescription:
-                "With manual processes and less oversight, there is a higher risk of fraudulent purchases or misuse of company funds",
+                "With manual processes and less oversight, there is a higher risk of fraudulent purchases or misuse of company funds.",
               newWayDescription:
-                "P-cards provide greater visibility and control over spending, reducing the risk of fraud or misuse of company funds",
+                "P-cards provide greater visibility and control over spending, reducing the risk of fraud or misuse of company funds.",
             },
             {
               itemArray: ["Payment", "Cycles"],
               oldWayDescription:
-                "The traditional procurement process often involves longer payment cycles, which could impact cash flow and vendor relationships",
+                "The traditional procurement process often involves longer payment cycles, which could impact cash flow and vendor relationships.",
               newWayDescription:
-                "Purchase credit cards speed up payment cycles, which helps to maintain positive vendor relationships and improve cash flow",
+                "Purchase credit cards speed up payment cycles, which helps to maintain positive vendor relationships and improve cash flow.",
             },
           ]}
         />
@@ -219,7 +219,7 @@ const purchaseCard = () => {
               </div>
             </>
           }
-          mainTitle="How Does purchase cards Work?"
+          mainTitle="How does purchase cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -234,7 +234,7 @@ const purchaseCard = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -267,7 +267,7 @@ const purchaseCard = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

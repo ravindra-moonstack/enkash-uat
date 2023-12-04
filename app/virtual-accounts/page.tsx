@@ -107,30 +107,30 @@ const virtualAccounts = () => {
             {
               itemArray: ["Repetitive", "Follow-up"],
               oldWayDescription:
-                "The traditional way of collections requires numerous follow-ups and paper trails",
+                "The traditional way of collections requires numerous follow-ups and paper trails.",
               newWayDescription:
-                "The creation of virtual accounts for various customers ensures that follow-ups are on a need-to-basis",
+                "The creation of virtual accounts for various customers ensures that follow-ups are on a need-to-basis.",
             },
             {
               itemArray: ["Invoice", "Matching"],
               oldWayDescription:
-                "Matching payments received against invoice reference numbers is a long-drawn and manual process",
+                "Matching payments received against invoice reference numbers is a long-drawn and manual process.",
               newWayDescription:
-                "With smart data parsing, the invoice generated for payment is easily matched with the payment received",
+                "With smart data parsing, the invoice generated for payment is easily matched with the payment received.",
             },
             {
               itemArray: ["Payment", "Links"],
               oldWayDescription:
-                "With the lack of virtual accounts, the possibility of providing payment links for easy collection becomes difficult",
+                "With the lack of virtual accounts, the possibility of providing payment links for easy collection becomes difficult.",
               newWayDescription:
-                "Embedded payment links encourage customers to make timely payments using their preferred mode of payment",
+                "Embedded payment links encourage customers to make timely payments using their preferred mode of payment.",
             },
             {
               itemArray: ["Cash Flow", "Management"],
               oldWayDescription:
-                "Due to lack of insights into the amount collected and the payments due, cash flow management becomes difficult",
+                "Due to lack of insights into the amount collected and the payments due, cash flow management becomes difficult.",
               newWayDescription:
-                "With clear tracking of payments and insights into financial patterns, cash flow management becomes easier",
+                "With clear tracking of payments and insights into financial patterns, cash flow management becomes easier.",
             },
           ]}
         />
@@ -236,7 +236,7 @@ const virtualAccounts = () => {
               </div>
             </>
           }
-          mainTitle="How Does Virtual Accounts Work?"
+          mainTitle="How does Virtual Accounts work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -251,7 +251,7 @@ const virtualAccounts = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -311,7 +311,7 @@ const virtualAccounts = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

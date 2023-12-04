@@ -242,7 +242,7 @@ const invoices = () => {
               </div>
             </>
           }
-          mainTitle="How do Invoices work?"
+          mainTitle="How does Invoices work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -257,7 +257,7 @@ const invoices = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -322,7 +322,7 @@ const invoices = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-2">

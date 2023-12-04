@@ -104,30 +104,30 @@ const rentalPayments = () => {
           progressData={[
             {
               itemArray: ["Data", "Processing"],
-              oldWayDescription: "Data loss due to manual payment processing",
+              oldWayDescription: "Data loss due to manual payment processing.",
               newWayDescription:
-                "The records and receipts are digitally stored; low or no chance of data loss",
+                "The records and receipts are digitally stored; low or no chance of data loss.",
             },
             {
               itemArray: ["Payments", "Charges"],
               oldWayDescription:
-                "Late payment charges are incurred due to delays in making payments",
+                "Late payment charges are incurred due to delays in making payments.",
               newWayDescription:
-                "Automated reminders ensure timely payments; no penalties or late payment charges",
+                "Automated reminders ensure timely payments; no penalties or late payment charges.",
             },
             {
               itemArray: ["Bulk", "Payments"],
               oldWayDescription:
-                "Challenging to make bulk rental payments in real time",
+                "Challenging to make bulk rental payments in real time.",
               newWayDescription:
-                "Bulk rental payments can be made  seamlessly and hassle-free",
+                "Bulk rental payments can be made  seamlessly and hassle-free.",
             },
             {
               itemArray: ["Payment", "Modes"],
               oldWayDescription:
-                "Lack of flexibility for multiple modes of payments",
+                "Lack of flexibility for multiple modes of payments.",
               newWayDescription:
-                "Flexibility with multiple modes of payment such as credit card, net banking, etc",
+                "Flexibility with multiple modes of payment such as credit card, net banking, etc.",
             },
           ]}
         />
@@ -221,7 +221,7 @@ const rentalPayments = () => {
               </div>
             </>
           }
-          mainTitle="How Does Rental Payments Work?"
+          mainTitle="How does Rental Payments work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -236,7 +236,7 @@ const rentalPayments = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -269,7 +269,7 @@ const rentalPayments = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

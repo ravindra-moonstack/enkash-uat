@@ -123,7 +123,7 @@ const employeeRewards = () => {
             {
               itemArray: ["Rewards", "Options"],
               oldWayDescription:
-                "Limited reward options, often restricted to cash or physical gifts",
+                "Limited reward options, often restricted to cash or physical gifts.",
               newWayDescription:
                 "Diverse reward options, including personalized rewards, experiences, or benefits, enhancing employee satisfaction.",
             },
@@ -139,7 +139,7 @@ const employeeRewards = () => {
               oldWayDescription:
                 "Rewards are often generic and do not consider individual employee preferences.",
               newWayDescription:
-                "Employees can choose rewards based on their interests and needs",
+                "Employees can choose rewards based on their interests and needs.",
             },
             {
               itemArray: ["Employee", " Engagement"],
@@ -261,7 +261,7 @@ const employeeRewards = () => {
               </div>
             </>
           }
-          mainTitle="How Does Employee Rewards Work?"
+          mainTitle="How does Employee Rewards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -276,7 +276,7 @@ const employeeRewards = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -310,7 +310,7 @@ const employeeRewards = () => {
 
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-2">

@@ -100,43 +100,43 @@ const billPayments = () => {
             {
               itemArray: ["Manual", "Intervention"],
               oldWayDescription:
-                "The old way to make bill payments is time-consuming and requires manual intervention that leads to errors, misses, and losses of bills",
+                "The old way to make bill payments is time-consuming and requires manual intervention that leads to errors, misses, and losses of bills.",
               newWayDescription:
-                "With the EnKash way, make instant bill payments in a few clicks from a single dashboard and reduce manual efforts extensively",
+                "With the EnKash way, make instant bill payments in a few clicks from a single dashboard and reduce manual efforts extensively.",
             },
             {
               itemArray: ["Mode of", "Payment"],
               oldWayDescription:
-                "The traditional way doesn’t allow you to use multiple modes of payment to pay bills",
+                "The traditional way doesn’t allow you to use multiple modes of payment to pay bills.",
               newWayDescription:
-                "EnKash supports different modes of payments like credit cards, net banking, debit cards, and connected banking",
+                "EnKash supports different modes of payments like credit cards, net banking, debit cards, and connected banking.",
             },
             {
               itemArray: ["Late Payment", "Charges"],
               oldWayDescription:
-                "In case you miss the payment date, late payment charges will incur",
+                "In case you miss the payment date, late payment charges will incur.",
               newWayDescription:
-                "With EnKash, you will not incur any penalties or late payments as chances of making late payments will be negligible",
+                "With EnKash, you will not incur any penalties or late payments as chances of making late payments will be negligible.",
             },
             {
               itemArray: ["Bulk or Multiple", " Payments"],
-              oldWayDescription: "Only one bill can be paid at a time",
+              oldWayDescription: "Only one bill can be paid at a time.",
               newWayDescription:
-                "Bill payments in bulk can be automated in one click",
+                "Bill payments in bulk can be automated in one click.",
             },
             {
               itemArray: ["Chances of", "Loss"],
               oldWayDescription:
-                "Managing paper-made bills is a hassle and comes with its own set of challenges like loss, storage, and depreciation",
+                "Managing paper-made bills is a hassle and comes with its own set of challenges like loss, storage, and depreciation.",
               newWayDescription:
-                "All bills are digitally stored for future records and reconciliation",
+                "All bills are digitally stored for future records and reconciliation.",
             },
             {
               itemArray: ["Timely", "Reminders"],
               oldWayDescription:
-                "There is no way to send timely reminders to customers",
+                "There is no way to send timely reminders to customers.",
               newWayDescription:
-                "With EnKash, you can send timely reminders to customers",
+                "With EnKash, you can send timely reminders to customers.",
             },
           ]}
         />
@@ -240,7 +240,7 @@ const billPayments = () => {
               </div>
             </>
           }
-          mainTitle="How do Bill Payments work?"
+          mainTitle="How does Bill Payments work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -255,7 +255,7 @@ const billPayments = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading

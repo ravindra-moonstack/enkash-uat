@@ -114,24 +114,24 @@ const travelAndExpenseCard = () => {
             {
               itemArray: ["Fund", "Disbursement"],
               oldWayDescription:
-                "Providing last-minute funds via traditional banking methods for travel expenses is a hassle",
+                "Providing last-minute funds via traditional banking methods for travel expenses is a hassle.",
               newWayDescription:
-                "Enable sudden expenses for unexpected travel from anywhere for anyone with smart controls, anytime",
+                "Enable sudden expenses for unexpected travel from anywhere for anyone with smart controls, anytime.",
             },
 
             {
               itemArray: ["Budget", "Compliance"],
               oldWayDescription:
-                "With no strict rules or policies for travel budgeting, the risk of overspending is high",
+                "With no strict rules or policies for travel budgeting, the risk of overspending is high.",
               newWayDescription:
-                "Employees have pre-approved budgets for travel and more with automated rules and limits",
+                "Employees have pre-approved budgets for travel and more with automated rules and limits.",
             },
             {
               itemArray: ["Fraud &", "Misuse"],
               oldWayDescription:
-                "Organizations are vulnerable to fraud and misuse of funds, as it is easy to manipulate expense reports or claim illegitimate expenses with fake receipts and invoices",
+                "Organizations are vulnerable to fraud and misuse of funds, as it is easy to manipulate expense reports or claim illegitimate expenses with fake receipts and invoices.",
               newWayDescription:
-                "Eliminate the need for expense reports and paper receipts with corporate cards, which track your expenses digitally, as all transactions are being made on the card itself",
+                "Eliminate the need for expense reports and paper receipts with corporate cards, which track your expenses digitally, as all transactions are being made on the card itself.",
             },
           ]}
         />
@@ -231,7 +231,7 @@ const travelAndExpenseCard = () => {
               </div>
             </>
           }
-          mainTitle="How do Travel and Expense Cards work?"
+          mainTitle="How does Travel and Expense Cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -246,11 +246,11 @@ const travelAndExpenseCard = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
-            title="Got Questions? Don't worry! Our FAQs section will help you learn about travel cards in detail."
+            title="Don't worry! Our FAQs section will help you learn about travel cards in detail."
             color="black"
             size="h4"
           />
@@ -279,7 +279,7 @@ const travelAndExpenseCard = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

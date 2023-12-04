@@ -97,44 +97,44 @@ const mealCard = () => {
             {
               itemArray: ["Management"],
               oldWayDescription:
-                "Paper-based coupons are challenging to manage and carry everywhere",
+                "Paper-based coupons are challenging to manage and carry everywhere.",
               newWayDescription:
-                "Prepaid digital cards are preloaded with a particular amount and can be easily managed",
+                "Prepaid digital cards are preloaded with a particular amount and can be easily managed.",
             },
             {
               itemArray: ["Security"],
               oldWayDescription:
-                "Paper coupons are always at risk of loss or expiry, with the balance remaining discarded",
+                "Paper coupons are always at risk of loss or expiry, with the balance remaining discarded.",
               newWayDescription:
-                "Secure and easy-to-track cards to prevent loss or misuse by others. The balance remaining can be carried forward",
+                "Secure and easy-to-track cards to prevent loss or misuse by others. The balance remaining can be carried forward.",
             },
             {
               itemArray: ["Accessibility"],
               oldWayDescription:
-                "Food vouchers are allocated manually, making it a time-consuming process",
+                "Food vouchers are allocated manually, making it a time-consuming process.",
               newWayDescription:
-                "EnKash meal card can be accessed on the platform after KYC",
+                "EnKash meal card can be accessed on the platform after KYC.",
             },
             {
               itemArray: ["Limitations"],
               oldWayDescription:
-                "Face limitations due to restrictions of certain food shops",
+                "Face limitations due to restrictions of certain food shops.",
               newWayDescription:
-                "Fewer restrictions due to the broader acceptability of meal cards across outlets",
+                "Fewer restrictions due to the broader acceptability of meal cards across outlets.",
             },
             {
               itemArray: ["Tracking"],
               oldWayDescription:
-                "Difficult to keep track of the balance remaining due to paper coupons",
+                "Difficult to keep track of the balance remaining due to paper coupons.",
               newWayDescription:
-                "Automatic updates from the card-issuing entities on balance available",
+                "Automatic updates from the card-issuing entities on balance available.",
             },
             {
               itemArray: ["Allocation of", "Funds"],
               oldWayDescription:
-                "Limitations to dynamically allocate funds or control the transactions",
+                "Limitations to dynamically allocate funds or control the transactions.",
               newWayDescription:
-                "Seamless transfer of funds online and complete control over all transactions",
+                "Seamless transfer of funds online and complete control over all transactions.",
             },
           ]}
         />
@@ -247,7 +247,7 @@ const mealCard = () => {
               </div>
             </>
           }
-          mainTitle="How Does Meal Cards Work?"
+          mainTitle="How does Meal Cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -262,7 +262,7 @@ const mealCard = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -295,7 +295,7 @@ const mealCard = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

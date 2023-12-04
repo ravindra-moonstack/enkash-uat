@@ -107,16 +107,16 @@ const virtualCard = () => {
             {
               itemArray: ["Safety", "Concerns"],
               oldWayDescription:
-                "Physical cards are often at a high risk of getting lost or stolen",
+                "Physical cards are often at a high risk of getting lost or stolen.",
               newWayDescription:
-                "A virtual card is always available on your device, reducing its chances of getting lost or stolen",
+                "A virtual card is always available on your device, reducing its chances of getting lost or stolen.",
             },
             {
               itemArray: ["Convenience"],
               oldWayDescription:
-                "It is challenging to have a physical card handy whenever making online payments",
+                "It is challenging to have a physical card handy whenever making online payments.",
               newWayDescription:
-                "Access to a virtual card anytime and from anywhere makes it convenient",
+                "Access to a virtual card anytime and from anywhere makes it convenient.",
             },
 
             {
@@ -124,14 +124,14 @@ const virtualCard = () => {
               oldWayDescription:
                 "The process of getting a physical card is often time-consuming and may take a week’s time to reach you.",
               newWayDescription:
-                "A virtual card can be issued instantly after the admin’s approval",
+                "A virtual card can be issued instantly after the admin’s approval.",
             },
             {
               itemArray: ["Payment", "Processing"],
               oldWayDescription:
-                "This card requires a longer time to process payment",
+                "This card requires a longer time to process payment.",
               newWayDescription:
-                "This card can be immediately blocked in case of fraud or misuse",
+                "This card can be immediately blocked in case of fraud or misuse.",
             },
           ]}
         />
@@ -235,7 +235,7 @@ const virtualCard = () => {
               </div>
             </>
           }
-          mainTitle="How Does Virtual cards Work?"
+          mainTitle="How does Virtual cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -250,7 +250,7 @@ const virtualCard = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -307,7 +307,7 @@ const virtualCard = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

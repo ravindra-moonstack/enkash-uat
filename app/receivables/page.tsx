@@ -286,30 +286,30 @@ const receivables = () => {
             {
               itemArray: ["Collection", "Process"],
               oldWayDescription:
-                "Manually keeping track of receivables and customer payments creates unnecessary confusion",
+                "Manually keeping track of receivables and customer payments creates unnecessary confusion.",
               newWayDescription:
-                "Manually keeping track of receivables and customer payments creates unnecessary confusion",
+                "Manually keeping track of receivables and customer payments creates unnecessary confusion.",
             },
             {
               itemArray: ["Payment", "Methods"],
               oldWayDescription:
-                "Restricting payment methods can cause even more delays in the collection process",
+                "Restricting payment methods can cause even more delays in the collection process.",
               newWayDescription:
-                "Enable customers to pay amounts due with embedded payment links quickly",
+                "Enable customers to pay amounts due with embedded payment links quickly.",
             },
             {
               itemArray: ["Collection", "Method"],
               oldWayDescription:
-                "Manual or traditional banking collection processes are rigid and restrictive",
+                "Manual or traditional banking collection processes are rigid and restrictive.",
               newWayDescription:
-                "Digitize the collection process with a seamless invoicing process, payment links, quick collection, and more",
+                "Digitize the collection process with a seamless invoicing process, payment links, quick collection, and more.",
             },
             {
               itemArray: ["Invoice", "Dispatch"],
               oldWayDescription:
-                "Generating and dispatching invoices manually is a time-consuming process, which, if not done, can hinder collections",
+                "Generating and dispatching invoices manually is a time-consuming process, which, if not done, can hinder collections.",
               newWayDescription:
-                "Never miss out on timely deployment of invoices and reminders with digital invoicing",
+                "Never miss out on timely deployment of invoices and reminders with digital invoicing.",
             },
           ]}
         />
@@ -391,7 +391,7 @@ const receivables = () => {
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -438,7 +438,7 @@ const receivables = () => {
 
       <div className="row">
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

@@ -106,38 +106,38 @@ const bulkCollect = () => {
             {
               itemArray: ["Collection", "Process"],
               oldWayDescription:
-                "Manually following up with customers for payments can be tiresome and challenging, often leading to confusion",
+                "Manually following up with customers for payments can be tiresome and challenging, often leading to confusion.",
               newWayDescription:
-                "Automate the bulk collection process by integrating your existing system with EnKash",
+                "Automate the bulk collection process by integrating your existing system with EnKash.",
             },
             {
               itemArray: ["Time &", "Effort"],
               oldWayDescription:
-                "Maintaining collections by hand takes a lot of time and resources, which could be efficiently utilized elsewhere if the procedure were automated",
+                "Maintaining collections by hand takes a lot of time and resources, which could be efficiently utilized elsewhere if the procedure were automated.",
               newWayDescription:
-                "Bulk collect allows businesses to collect multiple payments simultaneously, saving time and effort compared to collecting payments individually",
+                "Bulk collect allows businesses to collect multiple payments simultaneously, saving time and effort compared to collecting payments individually.",
             },
             {
               itemArray: ["Reconciliation"],
               oldWayDescription:
-                "Traditional reconciliation processes require manual entries of every payment the business receives, which is a time-consuming and error-prone process",
+                "Traditional reconciliation processes require manual entries of every payment the business receives, which is a time-consuming and error-prone process.",
               newWayDescription:
-                "Simplify the reconciliation process with bulk collect by tracking and consolidating payments, making it easier for businesses to track and manage their finances",
+                "Simplify the reconciliation process with bulk collect by tracking and consolidating payments, making it easier for businesses to track and manage their finances.",
             },
 
             {
               itemArray: ["Accuracy &", "Speed"],
               oldWayDescription:
-                "With manual collection, businesses may increase the risk of errors associated with manual payment collection processes, reducing accuracy and increasing the risk of financial losses",
+                "With manual collection, businesses may increase the risk of errors associated with manual payment collection processes, reducing accuracy and increasing the risk of financial losses.",
               newWayDescription:
-                "With automated bulk collection, businesses can reduce the risk of errors associated with manual payment collection processes, improving accuracy and reducing the risk of financial losses",
+                "With automated bulk collection, businesses can reduce the risk of errors associated with manual payment collection processes, improving accuracy and reducing the risk of financial losses.",
             },
             {
               itemArray: ["Business Cash", "Flow"],
               oldWayDescription:
-                "Due to the time taken in manual collection strategies and transaction processing, your business’s cash flow can be hindered if payments are not made on time",
+                "Due to the time taken in manual collection strategies and transaction processing, your business’s cash flow can be hindered if payments are not made on time.",
               newWayDescription:
-                "Collecting payments in bulk can improve cash flow by reducing the time it takes to receive payments, allowing businesses to allocate funds more efficiently",
+                "Collecting payments in bulk can improve cash flow by reducing the time it takes to receive payments, allowing businesses to allocate funds more efficiently.",
             },
           ]}
         />
@@ -230,7 +230,7 @@ const bulkCollect = () => {
               </div>
             </>
           }
-          mainTitle="How Does Bulk Collect Work?"
+          mainTitle="How does Bulk Collect work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -245,7 +245,7 @@ const bulkCollect = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -278,7 +278,7 @@ const bulkCollect = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

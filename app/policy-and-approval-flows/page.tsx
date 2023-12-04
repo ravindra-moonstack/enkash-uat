@@ -284,7 +284,7 @@ const policyApprovalFlow = () => {
               </div>
             </>
           }
-          mainTitle="How Does Policies and Approval flow Work?"
+          mainTitle="How does Policies and Approval flow work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -299,7 +299,7 @@ const policyApprovalFlow = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading

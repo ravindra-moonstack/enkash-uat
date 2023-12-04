@@ -287,37 +287,37 @@ const xpenz = () => {
             {
               itemArray: ["Expense", "Reporting"],
               oldWayDescription:
-                "Manual expense reporting is time-consuming and prone to errors",
+                "Manual expense reporting is time-consuming and prone to errors.",
               newWayDescription:
-                "EnKash’s Xpenz platform automates the expense recording, leading to zero errors",
+                "EnKash’s Xpenz platform automates the expense recording, leading to zero errors.",
             },
             {
               itemArray: ["Operational", "Efficiency"],
               oldWayDescription:
-                "Manual expense management is tedious, prone to errors, and leads to inefficiency",
+                "Manual expense management is tedious, prone to errors, and leads to inefficiency.",
               newWayDescription:
-                "Automating expense management saves time, efficiency, and transparency as you no longer need to track expenses manually",
+                "Automating expense management saves time, efficiency, and transparency as you no longer need to track expenses manually.",
             },
             {
               itemArray: ["Spend", "Overview"],
               oldWayDescription:
-                "It is challenging to identify department-wise spending patterns, cost-saving opportunities, and compliance issues",
+                "It is challenging to identify department-wise spending patterns, cost-saving opportunities, and compliance issues.",
               newWayDescription:
-                "EnKash provides real-time insights into your employee expenses by departments, cost centre, projects & expense heads spend patterns for better forecasting & allocation",
+                "EnKash provides real-time insights into your employee expenses by departments, cost centre, projects & expense heads spend patterns for better forecasting & allocation.",
             },
             {
               itemArray: ["Expense", "Approvals"],
               oldWayDescription:
-                "Traditional reimbursement approval systems lead to delays in processing expense reports",
+                "Traditional reimbursement approval systems lead to delays in processing expense reports.",
               newWayDescription:
-                "With automated approval workflows, you can enforce expense policies and check whether spend complies with policies",
+                "With automated approval workflows, you can enforce expense policies and check whether spend complies with policies.",
             },
             {
               itemArray: ["Accessibility"],
               oldWayDescription:
-                "The old reimbursement processes require form filling, paperwork, and proof of expenditure as receipts, causing delays",
+                "The old reimbursement processes require form filling, paperwork, and proof of expenditure as receipts, causing delays.",
               newWayDescription:
-                "EnKash’s Xpenz drop receipts feature  enables you and your employees to capture and submit expenses on the go from anywhere easily",
+                "EnKash’s Xpenz drop receipts feature  enables you and your employees to capture and submit expenses on the go from anywhere easily.",
             },
           ]}
         />
@@ -405,7 +405,7 @@ const xpenz = () => {
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -452,7 +452,7 @@ const xpenz = () => {
 
       <div className="row">
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

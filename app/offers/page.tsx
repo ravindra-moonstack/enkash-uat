@@ -109,30 +109,30 @@ const giftCards = () => {
             {
               itemArray: ["Finding", "Offers"],
               oldWayDescription:
-                "It’s difficult for businesses to find SaaS offers that fulfill their needs and help them save big",
+                "It’s difficult for businesses to find SaaS offers that fulfill their needs and help them save big.",
               newWayDescription:
-                "Access a curated selection of the best SaaS offers from our partner brands on various business SaaS products",
+                "Access a curated selection of the best SaaS offers from our partner brands on various business SaaS products.",
             },
             {
               itemArray: ["Time", "Investment"],
               oldWayDescription:
-                "Businesses had to spend hours negotiating for the best deals",
+                "Businesses had to spend hours negotiating for the best deals.",
               newWayDescription:
-                "On EnKash, exclusive discounts and best deals are just a click away",
+                "On EnKash, exclusive discounts and best deals are just a click away.",
             },
             {
               itemArray: ["Missed", "Opportunities"],
               oldWayDescription:
-                "Lack of awareness leads to missing out on great deals",
+                "Lack of awareness leads to missing out on great deals.",
               newWayDescription:
-                "Real-time visibility of offers on the dashboard gives you access to better deals and more savings",
+                "Real-time visibility of offers on the dashboard gives you access to better deals and more savings.",
             },
             {
               itemArray: ["Managing", "Subscriptions"],
               oldWayDescription:
-                "Handling subscriptions and payments on different platforms often leads to chaos and inconvenience",
+                "Handling subscriptions and payments on different platforms often leads to chaos and inconvenience.",
               newWayDescription:
-                "Easily consolidate and manage all partnered subscriptions on a single platform",
+                "Easily consolidate and manage all partnered subscriptions on a single platform.",
             },
             {
               itemArray: ["Tracking"],
@@ -229,7 +229,7 @@ const giftCards = () => {
               </div>
             </>
           }
-          mainTitle="How do Offers work?"
+          mainTitle="How does Offers work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -244,7 +244,7 @@ const giftCards = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading

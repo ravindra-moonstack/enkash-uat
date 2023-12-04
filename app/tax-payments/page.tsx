@@ -102,37 +102,37 @@ const taxPayments = () => {
             {
               itemArray: ["Manual", "Intervention"],
               oldWayDescription:
-                "Set a reminder for tax payments to make sure it is paid on time",
+                "Set a reminder for tax payments to make sure it is paid on time.",
               newWayDescription:
-                "Go to the government portal - Create GST challan",
+                "Go to the government portal - Create GST challan.",
             },
             {
               itemArray: ["Mode of", "Payment"],
               oldWayDescription:
-                "Log in to the portal to get access to the invoice and check it",
+                "Log in to the portal to get access to the invoice and check it.",
               newWayDescription:
-                "Choose payment mode like NEFT/RTGS - Remitting bank - Axis bank",
+                "Choose payment mode like NEFT/RTGS - Remitting bank - Axis bank.",
             },
             {
               itemArray: ["Late", "Payment", "Charges"],
               oldWayDescription:
-                "Prepare paperwork to get the payment approved from the right person",
+                "Prepare paperwork to get the payment approved from the right person.",
               newWayDescription:
-                "Upload GST challan to EnKash portal. Challan will be read and verified digitally",
+                "Upload GST challan to EnKash portal. Challan will be read and verified digitally.",
             },
             {
               itemArray: ["Bulk or", "Multiple", "Payments"],
               oldWayDescription:
-                "Arrange funds or ensure limits to make the payment",
+                "Arrange funds or ensure limits to make the payment.",
               newWayDescription:
-                "Set unlimited hierarchy approvals and pay using any mode",
+                "Set unlimited hierarchy approvals and pay using any mode.",
             },
             {
               itemArray: ["Chances of", "Loss"],
               oldWayDescription:
-                "Make the payment and file the paperwork for future reference",
+                "Make the payment and file the paperwork for future reference.",
               newWayDescription:
-                "Automatic real-time entry of the payment record",
+                "Automatic real-time entry of the payment record.",
             },
           ]}
         />
@@ -219,7 +219,7 @@ const taxPayments = () => {
               </div>
             </>
           }
-          mainTitle="How do Tax Payments Cards work?"
+          mainTitle="How does Tax Payments Cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -235,7 +235,7 @@ const taxPayments = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -268,7 +268,7 @@ const taxPayments = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the Comprehensive Guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-2">

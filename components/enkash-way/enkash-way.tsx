@@ -55,7 +55,7 @@ const EnkashWay = ({ progressData }: EnkashWayProps) => {
           className={styles.gradient}
         />
         <Heading
-          title={`The EnKash Way is${space}`}
+          title={`The EnKash way is${space}`}
           color="black"
           size="h1"
           weight="6"

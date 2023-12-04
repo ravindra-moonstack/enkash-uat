@@ -227,7 +227,7 @@ const channelIncentive = () => {
               </div>
             </>
           }
-          mainTitle="How Does Channel Incentives Work?"
+          mainTitle="How does Channel Incentives work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -242,7 +242,7 @@ const channelIncentive = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading

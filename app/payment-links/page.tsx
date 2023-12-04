@@ -110,37 +110,37 @@ const paymentLinks = () => {
             {
               itemArray: ["Payment", "Process"],
               oldWayDescription:
-                "Without a payment link, customers had to manually enter transaction details to make a payment, which is prone to errors and delays",
+                "Without a payment link, customers had to manually enter transaction details to make a payment, which is prone to errors and delays.",
               newWayDescription:
-                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment",
+                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment.",
             },
             {
               itemArray: ["Security"],
               oldWayDescription:
-                "Traditional methods lack the secure framework needed for payments, increasing the risk of breaches. Manual entry and physical transactions expose sensitive data to errors and delays",
+                "Traditional methods lack the secure framework needed for payments, increasing the risk of breaches. Manual entry and physical transactions expose sensitive data to errors and delays.",
               newWayDescription:
-                "Payment links offer more security than traditional payment methods. Our payment links use encryption and other security measures to protect business and customer payment information",
+                "Payment links offer more security than traditional payment methods. Our payment links use encryption and other security measures to protect business and customer payment information.",
             },
             {
               itemArray: ["Payment", "Tracking"],
               oldWayDescription:
-                "Manually tracking customer payments is time-consuming",
+                "Manually tracking customer payments is time-consuming.",
               newWayDescription:
-                "Payment links provide businesses with better tracking and record-keeping capabilities. Payments made through payment links are automatically recorded and easily tracked on the EnKash platform",
+                "Payment links provide businesses with better tracking and record-keeping capabilities. Payments made through payment links are automatically recorded and easily tracked on the EnKash platform.",
             },
             {
               itemArray: ["Customer", "Experience"],
               oldWayDescription:
-                "Incessantly following up with customers to make payments without providing them an easy way to do so can cause friction between the customer and your business",
+                "Incessantly following up with customers to make payments without providing them an easy way to do so can cause friction between the customer and your business.",
               newWayDescription:
-                "Payment links can improve the overall customer experience by providing a convenient and easy-to-use payment option. This helps businesses build stronger customer relationships, increase customer satisfaction, and improve DSO",
+                "Payment links can improve the overall customer experience by providing a convenient and easy-to-use payment option. This helps businesses build stronger customer relationships, increase customer satisfaction, and improve DSO.",
             },
             {
               itemArray: ["Cash Flow", "Optimization"],
               oldWayDescription:
-                "Traditional banking methods require much processing time, hindering your business’s cash flow even if the payment is made on time",
+                "Traditional banking methods require much processing time, hindering your business’s cash flow even if the payment is made on time.",
               newWayDescription:
-                "Payment links can help businesses improve their cash flow by reducing the time it takes to receive payments",
+                "Payment links can help businesses improve their cash flow by reducing the time it takes to receive payments.",
             },
           ]}
         />
@@ -229,7 +229,7 @@ const paymentLinks = () => {
               </div>
             </>
           }
-          mainTitle="How do Payment Links work?"
+          mainTitle="How does Payment Links work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -244,7 +244,7 @@ const paymentLinks = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -277,7 +277,7 @@ const paymentLinks = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

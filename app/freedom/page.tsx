@@ -317,44 +317,44 @@ const freedom = () => {
             {
               itemArray: ["Card", "Issuance"],
               oldWayDescription:
-                "Slow and time-consuming, involving multiple steps and paperwork",
+                "Slow and time-consuming, involving multiple steps and paperwork.",
               newWayDescription:
-                "Instant and digital, both physical and virtual cards can be issued within minutes of approval and can be activated immediately, providing quick access to funds",
+                "Instant and digital, both physical and virtual cards can be issued within minutes of approval and can be activated immediately, providing quick access to funds.",
             },
             {
               itemArray: ["Expense", "tracking"],
               oldWayDescription:
-                "Manual and tedious, requiring employees to collect and submit receipts",
+                "Manual and tedious, requiring employees to collect and submit receipts.",
               newWayDescription:
-                "Automated and real-time, with all transactions automatically captured and synced to the platform",
+                "Automated and real-time, with all transactions automatically captured and synced to the platform.",
             },
             {
               itemArray: ["Reconciliation"],
               oldWayDescription:
-                "Complex and error-prone, requiring manual matching of transactions against receipts and expense reports",
+                "Complex and error-prone, requiring manual matching of transactions against receipts and expense reports.",
               newWayDescription:
-                "Automated and seamless, automatically reconciling transactions against receipts and expense reports",
+                "Automated and seamless, automatically reconciling transactions against receipts and expense reports.",
             },
             {
               itemArray: ["Visibility &", "Control"],
               oldWayDescription:
-                "Finance teams have limited visibility into employee spending",
+                "Finance teams have limited visibility into employee spending.",
               newWayDescription:
-                "Finance teams have complete visibility and control over employee spending",
+                "Finance teams have complete visibility and control over employee spending.",
             },
             {
               itemArray: ["Employee", "experience"],
               oldWayDescription:
-                "Employees have to submit expense reports and wait for reimbursement",
+                "Employees have to submit expense reports and wait for reimbursement.",
               newWayDescription:
-                "Employees can use their EnKash enabled credit, prepaid, and virtual cards to make purchases without having to worry about reimbursement",
+                "Employees can use their EnKash enabled credit, prepaid, and virtual cards to make purchases without having to worry about reimbursement.",
             },
             {
               itemArray: ["Card	", "Controls"],
               oldWayDescription:
-                "No way to set spending limits, track transactions, or prevent employees from using their cards in unauthorized ways",
+                "No way to set spending limits, track transactions, or prevent employees from using their cards in unauthorized ways.",
               newWayDescription:
-                "Easily set spending limits, restrict card usage to certain merchants or categories, and even block cards if necessary",
+                "Easily set spending limits, restrict card usage to certain merchants or categories, and even block cards if necessary.",
             },
           ]}
         />
@@ -450,7 +450,7 @@ const freedom = () => {
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -498,7 +498,7 @@ const freedom = () => {
 
       <div className="row">
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

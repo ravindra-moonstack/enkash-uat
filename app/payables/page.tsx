@@ -286,31 +286,31 @@ const payables = () => {
             {
               itemArray: ["Data Entry", "Techniques"],
               oldWayDescription:
-                "Manual invoice processing and data entries are time-consuming, error-prone, and can result in delayed payments",
+                "Manual invoice processing and data entries are time-consuming, error-prone, and can result in delayed payments.",
               newWayDescription:
-                "Automate vendor onboarding, check incoming invoices, and get approvals to help reduce manual efforts and save time and money",
+                "Automate vendor onboarding, check incoming invoices, and get approvals to help reduce manual efforts and save time and money.",
             },
             {
               itemArray: ["Process &", "Hierarchy"],
               oldWayDescription:
-                "Traditional payment in accounting processes requires contacting multiple POCs, which can be time-consuming",
+                "Traditional payment in accounting processes requires contacting multiple POCs, which can be time-consuming.",
               newWayDescription:
-                "Set up online approval matrices with an accounts payable automation platform, which enables easy approvals in just a few clicks",
+                "Set up online approval matrices with an accounts payable automation platform, which enables easy approvals in just a few clicks.",
             },
             {
               itemArray: ["Risk &", "Errors"],
               oldWayDescription:
-                "Manual data entries cause errors in the reconciliation process. It can lead to discrepancies in accounting records, making the reconciliation process time-consuming and challenging",
+                "Manual data entries cause errors in the reconciliation process. It can lead to discrepancies in accounting records, making the reconciliation process time-consuming and challenging.",
               newWayDescription:
-                "Automating data entry and receipt management can eliminate errors, improve accuracy, and save time during the reconciliation process",
+                "Automating data entry and receipt management can eliminate errors, improve accuracy, and save time during the reconciliation process.",
             },
 
             {
               itemArray: ["Bulk Vendor", "Payments"],
               oldWayDescription:
-                "Making vendor payments individually causes unnecessary delays",
+                "Making vendor payments individually causes unnecessary delays.",
               newWayDescription:
-                "Make bulk payouts to vendors and billers with a single-click OTP system",
+                "Make bulk payouts to vendors and billers with a single-click OTP system.",
             },
           ]}
         />
@@ -407,7 +407,7 @@ const payables = () => {
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -453,7 +453,7 @@ const payables = () => {
       </div>
       <div className="row">
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

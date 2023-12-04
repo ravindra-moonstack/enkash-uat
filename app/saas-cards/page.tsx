@@ -110,23 +110,23 @@ const saasCard = () => {
             {
               itemArray: ["Subscription", "Management"],
               oldWayDescription:
-                "Using multiple platforms to track individual SaaS subscription renewal dates can be confusing and amplifies the risk of missed payments",
+                "Using multiple platforms to track individual SaaS subscription renewal dates can be confusing and amplifies the risk of missed payments.",
               newWayDescription:
-                "Manage and pay for all your SaaS subscriptions on a unified platform, from renewal to expenditure",
+                "Manage and pay for all your SaaS subscriptions on a unified platform, from renewal to expenditure.",
             },
             {
               itemArray: ["Billing &", "Invoicing"],
               oldWayDescription:
-                "Manual billing & invoicing can amplify the risk of missed payments and put an extra burden on your finance teams",
+                "Manual billing & invoicing can amplify the risk of missed payments and put an extra burden on your finance teams.",
               newWayDescription:
-                "SaaS subscription management platform automates the billing and invoicing process",
+                "SaaS subscription management platform automates the billing and invoicing process.",
             },
             {
               itemArray: ["Utility", "Analysis"],
               oldWayDescription:
-                "Difficult to understand whether you are getting the most out of your SaaS subscription",
+                "Difficult to understand whether you are getting the most out of your SaaS subscription.",
               newWayDescription:
-                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing subscriptions, consolidating overlapping subscriptions, or canceling underutilized subscriptions",
+                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing subscriptions, consolidating overlapping subscriptions, or canceling underutilized subscriptions.",
             },
           ]}
         />
@@ -227,7 +227,7 @@ const saasCard = () => {
               </div>
             </>
           }
-          mainTitle="How do Saas Subscriptions work?"
+          mainTitle="How does Saas Subscriptions work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -242,7 +242,7 @@ const saasCard = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -275,7 +275,7 @@ const saasCard = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

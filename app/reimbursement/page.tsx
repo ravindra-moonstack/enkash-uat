@@ -136,7 +136,7 @@ const reimbursement = () => {
               oldWayDescription:
                 "Manually tracking expenses and ensuring they comply with tax laws is time-consuming and error-prone.",
               newWayDescription:
-                "Audit and tax compliance become effortless with real-time and automatic data entries",
+                "Audit and tax compliance become effortless with real-time and automatic data entries.",
             },
             {
               itemArray: ["Budgets &", "Policies"],
@@ -237,7 +237,7 @@ const reimbursement = () => {
               </div>
             </>
           }
-          mainTitle="How Does Reimbursements Work?"
+          mainTitle="How does Reimbursements work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -252,7 +252,7 @@ const reimbursement = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -285,7 +285,7 @@ const reimbursement = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-2">

@@ -356,44 +356,44 @@ const freedom = () => {
             {
               itemArray: ["Payment", "Solution"],
               oldWayDescription:
-                "Handling business payments one by one leads to unnecessary burden and delays",
+                "Handling business payments one by one leads to unnecessary burden and delays.",
               newWayDescription:
-                "Efficiently processes multiple business payments in bulk with one-click OTP",
+                "Efficiently processes multiple business payments in bulk with one-click OTP.",
             },
             {
               itemArray: ["Approval", "Process"],
               oldWayDescription:
-                "Approvals need numerous POCs to check and approve, delaying the process",
+                "Approvals need numerous POCs to check and approve, delaying the process.",
               newWayDescription:
-                "Custom approval matrices with different hierarchies enable easy approvals with a few clicks",
+                "Custom approval matrices with different hierarchies enable easy approvals with a few clicks.",
             },
             {
               itemArray: ["Collection", "Approach"],
               oldWayDescription:
-                "Manual or traditional banking collection processes are rigid and restrictive",
+                "Manual or traditional banking collection processes are rigid and restrictive.",
               newWayDescription:
-                "Digitize the payment collection process with the help of automatically generated invoices, payment links, quick collection and more",
+                "Digitize the payment collection process with the help of automatically generated invoices, payment links, quick collection and more.",
             },
             {
               itemArray: ["Cash Flow", "Planning"],
               oldWayDescription:
-                "Checking payments due and accounts receivables to plan for cash flow can be slow",
+                "Checking payments due and accounts receivables to plan for cash flow can be slow.",
               newWayDescription:
-                "EnKash provides you with real-time analytics on your payables and receivables to enable planning your cash flow",
+                "EnKash provides you with real-time analytics on your payables and receivables to enable planning your cash flow.",
             },
             {
               itemArray: ["Collaboration"],
               oldWayDescription:
-                "Collaboration is typically confined to internal stakeholders within the organization and is often restricted even within different departments",
+                "Collaboration is typically confined to internal stakeholders within the organization and is often restricted even within different departments.",
               newWayDescription:
-                "Work closely with internal and external stakeholders, like vendors, customers, auditors, and your team, for improved results",
+                "Work closely with internal and external stakeholders, like vendors, customers, auditors, and your team, for improved results.",
             },
             {
               itemArray: ["Reconciliation	"],
               oldWayDescription:
-                "Manual data processing can lead to discrepancies during reconciliation",
+                "Manual data processing can lead to discrepancies during reconciliation.",
               newWayDescription:
-                "The accuracy of the data generated makes the reconciliation process more manageable for the finance team",
+                "The accuracy of the data generated makes the reconciliation process more manageable for the finance team.",
             },
             // {
             //   itemArray: ["Operational", "and", "Process Efficiency "],
@@ -599,7 +599,7 @@ const freedom = () => {
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -647,7 +647,7 @@ const freedom = () => {
 
       <div className="row">
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

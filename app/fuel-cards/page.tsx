@@ -5,8 +5,6 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
@@ -20,6 +18,7 @@ import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import carouselData from "./carousel-data";
 
 export const metadata: Metadata = {
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
@@ -112,23 +111,23 @@ const fuelCard = () => {
             {
               itemArray: ["Expense", "Tracking"],
               oldWayDescription:
-                "Manual tracking and management of fuel receipts",
+                "Manual tracking and management of fuel receipts.",
               newWayDescription:
                 "Easily automate tracking and reporting of fuel expenses by employees in real time.",
             },
             {
               itemArray: ["Set", "Limits"],
               oldWayDescription:
-                "No effective means of setting limits on employee fuel expenses, leading to potential overspending and a lack of control",
+                "No effective means of setting limits on employee fuel expenses, leading to potential overspending and a lack of control.",
               newWayDescription:
-                "Set and manage precise spending limits for each employee card, ensuring fuel expenses are within the defined budget",
+                "Set and manage precise spending limits for each employee card, ensuring fuel expenses are within the defined budget.",
             },
             {
               itemArray: ["Visibility"],
               oldWayDescription:
-                "Getting a comprehensive view of the business's fuel costs is extremely challenging",
+                "Getting a comprehensive view of the business's fuel costs is extremely challenging.",
               newWayDescription:
-                "Gain a holistic overview of your employees' fuel expenses through a single dashboard that can help you reduce costs",
+                "Gain a holistic overview of your employees' fuel expenses through a single dashboard that can help you reduce costs.",
             },
           ]}
         />
@@ -240,7 +239,7 @@ const fuelCard = () => {
               </div>
             </>
           }
-          mainTitle="How Does Fuel Cards Work?"
+          mainTitle="How does Fuel Cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -255,7 +254,7 @@ const fuelCard = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -288,7 +287,7 @@ const fuelCard = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

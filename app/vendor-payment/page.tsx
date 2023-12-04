@@ -101,29 +101,29 @@ const vendorPayment = () => {
             {
               itemArray: ["Data", "Entry"],
               oldWayDescription:
-                "Manual data entry delays the entire payment process",
+                "Manual data entry delays the entire payment process.",
               newWayDescription:
-                "Saves time and money by processing all invoices digitally",
+                "Saves time and money by processing all invoices digitally.",
             },
             {
               itemArray: ["Approval", "Workflows"],
               oldWayDescription:
-                "Scattered process to track approval of invoices via emails or verbally",
+                "Scattered process to track approval of invoices via emails or verbally.",
               newWayDescription:
-                "Streamlined process with defined roles like maker, checker, and approvers",
+                "Streamlined process with defined roles like maker, checker, and approvers.",
             },
             {
               itemArray: ["Risk and", "Errors"],
               oldWayDescription:
-                "Difficult to catch errors and discrepancies in each invoice",
+                "Difficult to catch errors and discrepancies in each invoice.",
               newWayDescription:
-                "Low or zero chances of errors in invoices due to automation",
+                "Low or zero chances of errors in invoices due to automation.",
             },
             {
               itemArray: ["Bulk", "Payments"],
               oldWayDescription:
-                "Manual intervention for bulk payments and limited payment options",
-              newWayDescription: "Make bulk vendor payments with a single OTP",
+                "Manual intervention for bulk payments and limited payment options.",
+              newWayDescription: "Make bulk vendor payments with a single OTP.",
             },
           ]}
         />
@@ -255,7 +255,7 @@ const vendorPayment = () => {
               </div>
             </>
           }
-          mainTitle="How Does Vendor Payments Work?"
+          mainTitle="How does Vendor Payments work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -270,7 +270,7 @@ const vendorPayment = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -303,7 +303,7 @@ const vendorPayment = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide."
+          title="Explore our comprehensive guide."
           innerHtml={
             <>
               <div className="mb-2">

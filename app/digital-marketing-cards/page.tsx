@@ -131,7 +131,7 @@ const digitalMarketingCard = () => {
             {
               itemArray: ["Spend", "Overview"],
               oldWayDescription:
-                "Getting a comprehensive view of your business’s digital marketing spending is challenging",
+                "Getting a comprehensive view of your business’s digital marketing spending is challenging.",
               newWayDescription:
                 "Get a complete overview of your marketing spends that helps reduce costs and streamline your payment process.",
             },
@@ -230,7 +230,7 @@ const digitalMarketingCard = () => {
               </div>
             </>
           }
-          mainTitle="How do Digital Marketing Cards work?"
+          mainTitle="How does Digital Marketing Cards work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -245,7 +245,7 @@ const digitalMarketingCard = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -321,7 +321,7 @@ const digitalMarketingCard = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-2">

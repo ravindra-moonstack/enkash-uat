@@ -290,36 +290,36 @@ const loyaltyLounge = () => {
             {
               itemArray: ["Rewards", "Options"],
               oldWayDescription:
-                "Limited reward options, like cash or gift cards",
+                "Limited reward options, like cash or gift cards.",
               newWayDescription:
-                "Variety of reward options, including gift cards, brand vouchers, subscriptions, discounts, offers, and more",
+                "Variety of reward options, including gift cards, brand vouchers, subscriptions, discounts, offers, and more.",
             },
             {
               itemArray: ["Redemption", "Process"],
-              oldWayDescription: "Long and complex processes to redeem rewards",
+              oldWayDescription: "Long and complex processes to redeem rewards.",
               newWayDescription:
-                "Automated notifications of awarded points and redemption process via WhatsApp, email, and SMS",
+                "Automated notifications of awarded points and redemption process via WhatsApp, email, and SMS.",
             },
             {
               itemArray: ["Ease", "of use"],
               oldWayDescription:
-                "Rewards programs can be complex and time-consuming to administer",
+                "Rewards programs can be complex and time-consuming to administer.",
               newWayDescription:
-                "EnKash's Loyalty Lounge is user-friendly and easy to manage",
+                "EnKash's Loyalty Lounge is user-friendly and easy to manage.",
             },
             {
               itemArray: ["Personalization"],
               oldWayDescription:
-                "Rewards are often generic and do not take into account individual preferences",
+                "Rewards are often generic and do not take into account individual preferences.",
               newWayDescription:
-                "Ability to tailor rewards to individual preferences, promoting a more personalized and thoughtful approach",
+                "Ability to tailor rewards to individual preferences, promoting a more personalized and thoughtful approach.",
             },
             {
               itemArray: ["Rewards", "Tracking"],
               oldWayDescription:
-                "Difficult to track rewards and redemption history",
+                "Difficult to track rewards and redemption history.",
               newWayDescription:
-                "Easy to track rewards and redemption history on the EnKash platform",
+                "Easy to track rewards and redemption history on the EnKash platform.",
             },
           ]}
         />
@@ -394,7 +394,7 @@ const loyaltyLounge = () => {
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading

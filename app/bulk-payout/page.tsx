@@ -110,16 +110,16 @@ const bulkPayout = () => {
             {
               itemArray: ["Processing", "Time"],
               oldWayDescription:
-                "Single payments take longer time  to process since each transaction is processed separately",
+                "Single payments take longer time  to process since each transaction is processed separately.",
               newWayDescription:
-                "Multiple payments are processed much faster with a single click",
+                "Multiple payments are processed much faster with a single click.",
             },
             {
               itemArray: ["Type of", "Payment"],
               oldWayDescription:
-                "Payments are typically used for one-off transactions such as purchases",
+                "Payments are typically used for one-off transactions such as purchases.",
               newWayDescription:
-                "Solves hassle of recurring payments such as vendor payments, GST, rental and utility",
+                "Solves hassle of recurring payments such as vendor payments, GST, rental and utility.",
             },
             {
               itemArray: ["Flexibility"],
@@ -131,23 +131,23 @@ const bulkPayout = () => {
             {
               itemArray: [" Vendor", "Relationships"],
               oldWayDescription:
-                "Businesses fail to build stronger relationships with vendors and suppliers as payments are not timely processed",
+                "Businesses fail to build stronger relationships with vendors and suppliers as payments are not timely processed.",
               newWayDescription:
-                "Businesses build stronger relationships with vendors and suppliers by providing timely or early payments",
+                "Businesses build stronger relationships with vendors and suppliers by providing timely or early payments.",
             },
             {
               itemArray: ["Payment", "Tracking"],
               oldWayDescription:
-                "Since payments are mostly done manually, the chances of loss of payment receipts are very high, making it difficult to track",
+                "Since payments are mostly done manually, the chances of loss of payment receipts are very high, making it difficult to track.",
               newWayDescription:
-                "Bulk payments are easier to track and manage as they are processed as a batch, making it simpler to reconcile accounts and track",
+                "Bulk payments are easier to track and manage as they are processed as a batch, making it simpler to reconcile accounts and track.",
             },
             {
               itemArray: ["Payables", "Management"],
               oldWayDescription:
-                "Paying numerous vendor invoices, utility bills, rental bills, or multiple GST challans is a cumbersome process with a risk of errors or missed deadlines",
+                "Paying numerous vendor invoices, utility bills, rental bills, or multiple GST challans is a cumbersome process with a risk of errors or missed deadlines.",
               newWayDescription:
-                "Streamlining payments with a one-click option for all outstanding invoices, bills, rentals, and GST challans simplifies managing company payables, and minimizes errors and potential delays",
+                "Streamlining payments with a one-click option for all outstanding invoices, bills, rentals, and GST challans simplifies managing company payables, and minimizes errors and potential delays.",
             },
           ]}
         />
@@ -252,7 +252,7 @@ const bulkPayout = () => {
               </div>
             </>
           }
-          mainTitle="How Does Bulk Payout Work?"
+          mainTitle="How does Bulk Payout Work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -267,7 +267,7 @@ const bulkPayout = () => {
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
-          <Heading title="Got Questions ?" color="equity-blue" size="h1" />
+          <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
@@ -300,7 +300,7 @@ const bulkPayout = () => {
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">

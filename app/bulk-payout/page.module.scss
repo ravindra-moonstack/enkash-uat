@@ -17,14 +17,7 @@
     }
   }
 
-  .hero_image {
-    width: 300px;
-    height: auto;
-    @include bp-md {
-      width: auto;
-      height: auto;
-    }
-  }
+
 
   .lottie_container {
     width: 600px;
