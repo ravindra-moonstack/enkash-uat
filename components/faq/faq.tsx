@@ -5,7 +5,7 @@ import styles from "./faq.module.scss";
 import Image from "next/image";
 import arrowDown from "./img/arrow-down.png";
 
-export interface faq {
+export interface FAQProps {
   question: string;
   answerHTML?: any;
   answer?: {
@@ -13,13 +13,20 @@ export interface faq {
     bullets?: string[];
   }[];
   answerVisible?: boolean;
+  onToggleAnswerVisibility?: () => void;
 }
 
-const FAQ = ({ question, answer, answerVisible, answerHTML }: faq) => {
-  const [isAnswerVisible, setIsAnswerVisible] = useState(answerVisible);
-
+const FAQ = ({
+  question,
+  answer,
+  answerVisible,
+  answerHTML,
+  onToggleAnswerVisibility,
+}: FAQProps) => {
   const toggleAnswerVisibility = () => {
-    setIsAnswerVisible((prevState) => !prevState);
+    if (onToggleAnswerVisibility) {
+      onToggleAnswerVisibility();
+    }
   };
 
   return (
@@ -32,7 +39,7 @@ const FAQ = ({ question, answer, answerVisible, answerHTML }: faq) => {
               onClick={toggleAnswerVisibility}
               src={arrowDown}
               alt="faq arrow icon"
-              className={`${isAnswerVisible ? styles.rotated : styles.normal} ${
+              className={`${answerVisible ? styles.rotated : styles.normal} ${
                 styles.arrow
               }`}
             />
@@ -40,7 +47,7 @@ const FAQ = ({ question, answer, answerVisible, answerHTML }: faq) => {
 
           <div
             className={`${styles.answer} ${
-              isAnswerVisible ? styles.visible : ""
+              answerVisible ? styles.visible : ""
             }`}
           >
             {!answerHTML &&

@@ -12,7 +12,6 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 import WebHeader from "@/components/header/web-header";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import { space } from "../../constant/common";
 import faqData from "./faq-data";
 import blogData from "./blog-data";
@@ -21,6 +20,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title: "Automated Invoicing Processing & Software for Business - EnKash",
@@ -242,7 +242,7 @@ const invoices = () => {
               </div>
             </>
           }
-          mainTitle="How does Invoices work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -268,47 +268,10 @@ const invoices = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={index !== 0 && index !== 1 ? item.answer : undefined}
-              answerHTML={
-                (index === 0 && (
-                  <div key={index} className="mb-4">
-                    <h4 className={styles.heading}>
-                      Opting for{" "}
-                      <Link
-                        href="https://www.enkash.com/resources/blog/what-is-enkash-olympus/"
-                        target="_blank"
-                      >
-                        Olympus's automated invoicing
-                      </Link>{" "}
-                      has many benefits. It reduces the time and cost associated
-                      with manual invoicing, enhances accuracy, and ensures
-                      prompt payments. Moreover, it eliminates the risk of human
-                      errors during manual data entry and calculations.
-                    </h4>
-                  </div>
-                )) ||
-                (index === 1 && (
-                  <div key={index} className="mb-4">
-                    <h4 className={styles.heading}>
-                      Automated reminders are notifications sent to customers to
-                      prompt them to{" "}
-                      <Link href="/invoices" target="_blank">
-                        pay their invoices on time.
-                      </Link>{" "}
-                      These reminders can be scheduled to run automatically,
-                      reducing the need for labor-intensive manual follow-ups.
-                    </h4>
-                  </div>
-                ))
-              }
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
+
+        <div></div>
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

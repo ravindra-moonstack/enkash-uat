@@ -12,7 +12,6 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -31,6 +30,7 @@ import {
   heavyLiftingIconThree,
   bannerAnimation,
 } from ".";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title:
@@ -296,7 +296,8 @@ const loyaltyLounge = () => {
             },
             {
               itemArray: ["Redemption", "Process"],
-              oldWayDescription: "Long and complex processes to redeem rewards.",
+              oldWayDescription:
+                "Long and complex processes to redeem rewards.",
               newWayDescription:
                 "Automated notifications of awarded points and redemption process via WhatsApp, email, and SMS.",
             },
@@ -405,15 +406,9 @@ const loyaltyLounge = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

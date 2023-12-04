@@ -20,6 +20,7 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import WebHeader from "@/components/header/web-header";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title:
@@ -230,7 +231,7 @@ const scanAndDropReceipts = () => {
               </div>
             </>
           }
-          mainTitle="How does Scan & Drop Receipts work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -256,15 +257,9 @@ const scanAndDropReceipts = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
+        
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

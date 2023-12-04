@@ -13,13 +13,13 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title: "Bill Payment | Billing Payment Solution | EnKash",
@@ -225,7 +225,7 @@ const billPayments = () => {
                     weight="6"
                   />
                   <Heading
-                    title="Bill Payment"
+                    title="bill payment"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -240,7 +240,7 @@ const billPayments = () => {
               </div>
             </>
           }
-          mainTitle="How does Bill Payments work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -248,7 +248,7 @@ const billPayments = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how bill payments could revolutionize the way you work!"
+          title="Learn how bill payments can revolutionize the way you work!"
         />
       </div>
       <div
@@ -266,14 +266,7 @@ const billPayments = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x

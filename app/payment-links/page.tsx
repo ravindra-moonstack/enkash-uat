@@ -13,7 +13,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
@@ -21,6 +20,7 @@ import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title:
@@ -229,7 +229,7 @@ const paymentLinks = () => {
               </div>
             </>
           }
-          mainTitle="How does Payment Links work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -255,15 +255,9 @@ const paymentLinks = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
+        
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

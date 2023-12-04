@@ -21,6 +21,7 @@ import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import Link from "next/link";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
@@ -231,7 +232,7 @@ const travelAndExpenseCard = () => {
               </div>
             </>
           }
-          mainTitle="How does Travel and Expense Cards work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -257,15 +258,9 @@ const travelAndExpenseCard = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

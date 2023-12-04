@@ -20,6 +20,7 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import WebHeader from "@/components/header/web-header";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title: "Expense Reimbursement - Business & Travel  - EnKash",
@@ -237,7 +238,7 @@ const reimbursement = () => {
               </div>
             </>
           }
-          mainTitle="How does Reimbursements work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -263,15 +264,9 @@ const reimbursement = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

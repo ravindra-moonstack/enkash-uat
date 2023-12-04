@@ -21,6 +21,7 @@ import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title: "Vendor Payment – Automated Multiple Vendor Payment | EnKash",
@@ -255,7 +256,7 @@ const vendorPayment = () => {
               </div>
             </>
           }
-          mainTitle="How does Vendor Payments work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -281,15 +282,9 @@ const vendorPayment = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
+        
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

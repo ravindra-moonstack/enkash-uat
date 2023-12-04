@@ -21,6 +21,7 @@ import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import Link from "next/link";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title:
@@ -235,7 +236,7 @@ const virtualCard = () => {
               </div>
             </>
           }
-          mainTitle="How does Virtual cards work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -260,39 +261,9 @@ const virtualCard = () => {
           />
         </div>
         <div>
-          {faqData.map((item, index) =>
-            index !== 5 ? (
-              <FAQ
-                key={index}
-                question={item.question}
-                answer={item.answer}
-                answerVisible={index === 0}
-              />
-            ) : (
-              <FAQ
-                key={index}
-                question={item.question}
-                answerHTML={
-                  <>
-                    <p>
-                      For now, you cannot use a virtual card for international
-                      transactions. However, you can customize these cards
-                      according to your business needs and use them for bill
-                      payments, rental payments, and marketing purposes, such as{" "}
-                      <Link
-                        href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
-                        target="_black"
-                      >
-                        digital marketing spends.
-                      </Link>
-                    </p>
-                  </>
-                }
-                answerVisible={false}
-              />
-            )
-          )}
+          <FAQHtml faqData={faqData} />
         </div>
+       
 
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x

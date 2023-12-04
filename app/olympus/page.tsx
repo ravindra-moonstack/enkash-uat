@@ -35,6 +35,7 @@ import {
   authorOne,
 } from ".";
 import TestimonialCard from "@/components/testimonial-card/testimonial-card";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title:
@@ -610,14 +611,7 @@ const freedom = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={item.answer}
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
 
         <div className={styles.faq_bg}>

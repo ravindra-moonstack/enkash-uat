@@ -13,7 +13,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -21,6 +20,7 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import WebHeader from "@/components/header/web-header";
 import Link from "next/link";
+import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
   title:
@@ -230,7 +230,7 @@ const digitalMarketingCard = () => {
               </div>
             </>
           }
-          mainTitle="How does Digital Marketing Cards work?"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -256,57 +256,7 @@ const digitalMarketingCard = () => {
         </div>
 
         <div>
-          {faqData.map((item, index) => (
-            <FAQ
-              key={index}
-              question={item.question}
-              answer={index !== 0 && index !== 3 ? item.answer : undefined}
-              answerHTML={
-                (index === 0 && (
-                  <div key={index} className="mb-4">
-                    <h4 className={styles.heading}>
-                      Digital marketing promotes products or services using
-                      digital channels like search engines, social media, email,
-                      and websites. Digital marketing cards serve as financial
-                      control tools in this landscape, consolidating expenses
-                      scattered across platforms. These purpose-based cards
-                      enable businesses to manage{" "}
-                      <Link
-                        href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
-                        target="_blank"
-                      >
-                        digital marketing expenses
-                      </Link>{" "}
-                      efficiently in a centralized place, simplifying financial
-                      oversight and offering a comprehensive view of their
-                      digital marketing activities.
-                    </h4>
-                  </div>
-                )) ||
-                (index === 3 && (
-                  <div key={index} className="mb-4">
-                    <h4 className={styles.heading}>
-                      Companies can issue this{" "}
-                      <Link
-                        href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
-                        target="_blank"
-                      >
-                        corporate card for digital marketing
-                      </Link>{" "}
-                      purposes and establish specific spending limits for
-                      distinct categories of expenditures. For instance, you can
-                      set limits for campaign-related expenses and subscription
-                      renewals based on your marketing budget. Furthermore, you
-                      can manage the types of expenditures you want to allow,
-                      ensuring that payments to specific websites or services
-                      align with your predefined financial boundaries.
-                    </h4>
-                  </div>
-                ))
-              }
-              answerVisible={index === 0}
-            />
-          ))}
+          <FAQHtml faqData={faqData} />
         </div>
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
