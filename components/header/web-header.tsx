@@ -54,7 +54,7 @@ const WebHeader = () => {
         setIsHeaderBgWhite(false);
       }}
     >
-      <nav className="d-flex justify-content-between">
+      <nav className="d-flex justify-content-between mb-2">
         <div className="d-flex">
           <Link href="/" className={styles.logo_container}>
             <Image
