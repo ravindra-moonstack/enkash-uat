@@ -149,19 +149,19 @@ const RainbowSection = () => {
         <div className={`col-12 ${styles.description_text}`}>
           <div>
             <Heading
-              title="Simplify business spending and improve cash flow with enhanced technology and"
+              title="Simplify business spends and improve cash flow with advanced technology and"
               size="h4"
               weight="4"
             />
           </div>
           <div>
-            <Heading title="in-depth real-time insight" size="h4" weight="4" />
+            <Heading title="in-depth real-time insights" size="h4" weight="4" />
           </div>
         </div>
         <div className={`col-12 ${styles.description_text_mobile}`}>
           <div>
             <Heading
-              title="Simplify business spending and improve cash flow with enhanced technology and"
+              title="Simplify business spends and improve cash flow with advanced technology and"
               size="h3"
               weight="4"
             />

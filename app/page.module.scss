@@ -8,47 +8,6 @@
   }
 }
 
-@keyframes slideFromBottom {
-  from {
-    opacity: 0;
-    transform: translateY(70px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes revealFromBottom {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.hidden {
-  opacity: 0;
-  transform: translateY(100%);
-}
-
-.reveal {
-  animation: revealFromBottom 1s ease-out forwards;
-  z-index: 0;
-}
-
 .first_row {
   position: relative;
   height: 650px;
@@ -414,6 +373,19 @@
   width: auto;
   position: relative;
   z-index: 4;
+
+  .title {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 18px;
+    padding-bottom: 36px;
+    @include bp-md {
+      padding-left: 90px;
+      padding-right: 90px;
+      padding-top: 60px;
+      padding-bottom: 80px;
+    }
+  }
 
   .bank_logo {
     display: flex;
@@ -948,5 +920,63 @@
     @include bp-md {
       display: block;
     }
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes revealFromBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.reveal {
+  animation: revealFromBottom 1s ease-out forwards;
+  z-index: 0;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.arrow_icon {
+  cursor: pointer;
+  img {
+    transition: width 0.3s ease-in-out;
+  }
+}
+
+.arrow_icon:hover {
+  img {
+    width: 65px;
   }
 }

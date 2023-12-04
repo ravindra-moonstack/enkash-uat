@@ -1,24 +1,31 @@
 import Image from "next/image";
 import { arrow, enkashStack } from ".";
 import styles from "./contact-us-card.module.scss";
+import Heading from "../heading/heading";
 
 interface contactUsProps {
-  title: string;
+  title?: any;
   description: string;
+  titleHtml?: any;
 }
 
-const ContactUsCard = ({ title, description }: contactUsProps) => {
+const ContactUsCard = ({ title, description, titleHtml }: contactUsProps) => {
   return (
     <div className={`row-padding-x-only ${styles.contact_us_body}`}>
       <div className={styles.text_container}>
         <div className="mt-md-5 mt-3">
           <div>
-            <h1 className={styles.title}>{title}</h1>
+            {titleHtml && <>{titleHtml}</>}
+            {!titleHtml && (
+              <>
+                <Heading title={title} color="equity-blue" size="h2" />
+              </>
+            )}
           </div>
         </div>
         <div className="mt-md-3 mt-2">
           <div>
-            <h1 className={styles.description}>{description}</h1>
+            <h2 className={styles.description}>{description}</h2>
           </div>
         </div>
         <div className={`d-flex mt-3 mb-md-5 mb-3 ${styles.action_container}`}>

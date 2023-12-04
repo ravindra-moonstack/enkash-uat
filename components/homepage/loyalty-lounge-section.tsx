@@ -5,7 +5,9 @@ import { useState } from "react";
 import LoungeAnimationSection from "./lounge-animation";
 import Heading from "../heading/heading";
 import { space } from "@/constant/common";
-import PrimaryButton from "../buttons/primary-button/primary-button";
+import Image from "next/image";
+import Link from "next/link";
+import blueArrow from "./blue-arrow.png";
 
 const LoyaltyLoungeSection = () => {
   const [activeAnimation, setActiveAnimation] = useState("LoyaltyOne");
@@ -90,12 +92,24 @@ const LoyaltyLoungeSection = () => {
           />
         </div>
         <div className="d-flex mt-4 justify-content-center justify-content-md-start">
-          <PrimaryButton
-            title="Get a Demo"
-            isDisabled={false}
-            url=""
-            theme="theme-blue"
-          />
+          <Link href="/loyalty-lounge" className={styles.link}>
+            <div
+              className={`${styles.arrow_icon} d-flex align-items-center mt-2`}
+            >
+              <Heading
+                title="Explore Now"
+                color="equity-blue"
+                size="h6"
+                weight="6"
+              />
+              <Image
+                className={` m-2`}
+                src={blueArrow}
+                alt="arrow icon"
+                width={50}
+              />
+            </div>
+          </Link>
         </div>
       </div>
       <div className="col-md-6 col-12 d-flex justify-content-center">

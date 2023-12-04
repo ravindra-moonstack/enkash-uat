@@ -49,13 +49,13 @@ const mealCard = () => {
             <Heading title="Meal Cards" size="h4" weight="4" />
           </div>
           <Heading
-            title={`Enhance Employee${space}`}
+            title={`Enhance employee${space}`}
             color="rainy-blue"
             size="h2"
             weight="7"
           />
           <Heading
-            title="Experience with Meal Cards"
+            title="experience with meal cards"
             color="white"
             size="h2"
             weight="7"
@@ -212,39 +212,43 @@ const mealCard = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-inline flex-column">
-                  <Heading
-                    title={`Explore${space}`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title={`secure, convenient${space}`}
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title={`and${space}`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title={`widely accepted${space}`}
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title="EnKash meal cards"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
+                <div className="d-flex flex-column">
+                  <div>
+                    <Heading
+                      title={`Enhance${space}`}
+                      color="white"
+                      size="h1"
+                      weight="6"
+                    />
+                    <Heading
+                      title={`employee satisfaction${space}`}
+                      color="rainy-blue"
+                      size="h1"
+                      weight="6"
+                    />
+                    <Heading
+                      title={`with${space}`}
+                      color="white"
+                      size="h1"
+                      weight="6"
+                    />
+                  </div>
+
+                  <div>
+                    <Heading
+                      title={`secure and convenient${space}`}
+                      color="rainy-blue"
+                      size="h1"
+                      weight="6"
+                    />
+                    <Heading
+                      title="meal cards"
+                      color="white"
+                      size="h1"
+                      weight="6"
+                    />
+                  </div>
                 </div>
-                <div></div>
               </div>
             </>
           }
@@ -256,7 +260,7 @@ const mealCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how meal cards offer a host of benefits for your business and employees!"
+          title="Learn how meal cards can benefit your business and employees!"
         />
       </div>
       <div
@@ -338,7 +342,7 @@ const mealCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the different types of meal cards"
+                  title="What are the different types of meal cards?"
                 />
               </div>
               <div className="mb-3">
@@ -377,7 +381,7 @@ const mealCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Advantages of meal cards for employees"
+                  title="What are the advantages of meal cards for employees?"
                 />
               </div>
               <div className="mb-3">
@@ -470,7 +474,7 @@ const mealCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the best practices when implementing meal cards in the workplace"
+                  title="What are the best practices when implementing meal cards in the workplace?"
                 />
               </div>
               <div className="mb-3">

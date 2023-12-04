@@ -209,31 +209,38 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fourth_row} bg-white row`}>
-        <div className="col-12 col-md-6 d-flex flex-column justify-content-start row-padding">
+        <div
+          className={`col-12 col-md-6 d-flex flex-column justify-content-start ${styles.title}`}
+        >
           <div className="ps-3">
-            <Heading
-              title="Gain comprehensive"
-              color="black"
-              size="h1"
-              weight="6"
-            />
+            <Heading title="Accelerate" color="black" size="h1" weight="6" />
             <div>
               <Heading
-                title={`control${space}`}
+                title={`business${space}`}
                 color="equity-blue"
                 size="h1"
                 weight="6"
               />
-              <Heading title="and" color="black" size="h1" weight="6" />
+              <Heading
+                title="growth"
+                color="equity-blue"
+                size="h1"
+                weight="6"
+              />
             </div>
             <div>
               <Heading
-                title={`transparency${space}`}
-                color="equity-blue"
+                title={`like${space}`}
+                color="black"
                 size="h1"
                 weight="6"
               />
-              <Heading title="of business" color="black" size="h1" weight="6" />
+              <Heading
+                title="never before!"
+                color="black"
+                size="h1"
+                weight="6"
+              />
             </div>
           </div>
           <div className="d-flex flex-column my-3 ps-md-3 mt-5">
@@ -369,7 +376,7 @@ const home = () => {
               <span className="desktop-only">
                 <br />
               </span>
-              <Heading title="Customers." size="h2" color="black" weight="6" />
+              <Heading title="Customers" size="h2" color="black" weight="6" />
             </div>
 
             <Image src={blueBlackLine} alt="underline image" />
@@ -451,7 +458,7 @@ const home = () => {
                 weight="5"
               />
               <Heading
-                title="approval flows."
+                title="approval flows"
                 color="white"
                 size="h2"
                 weight="6"
@@ -489,7 +496,7 @@ const home = () => {
         <div className="d-flex flex-column justify-content-center align-items-center w-100">
           <div>
             <Heading
-              title="Discover full control."
+              title="Discover full control"
               color="black"
               size="h1"
               weight="7"
@@ -497,7 +504,7 @@ const home = () => {
           </div>
           <div>
             <Heading
-              title="Discover freedom."
+              title="Discover freedom"
               color="equity-blue"
               size="h1"
               weight="7"
@@ -505,7 +512,7 @@ const home = () => {
           </div>
           <div className="mt-2 text-center px-4 px-m-0">
             <Heading
-              title="Leverage the power of purpose-based cards with smart controls."
+              title="Leverage the power of purpose-based cards with smart controls"
               color="equity-blue"
               size="h4"
               weight="5"
@@ -539,6 +546,7 @@ const home = () => {
             title="Corporate Cards"
             description="Issue cards for different business needs and manage them on a single platform with smart controls. Enable or disable across spend categories as and when required"
             theme="blue"
+            link="/freedom"
           />
         </div>
         <div className="col-md-6 col-12 row-padding-x-only order-3 order-md-3">
@@ -546,6 +554,7 @@ const home = () => {
             title="DIY Card Module"
             description="Generate purpose-made company cards and empower departments and employees to use them while setting usage limits and tracking for better spend control"
             theme="blue"
+            link="/"
           />
         </div>
         <div
@@ -655,62 +664,64 @@ const home = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 scroll_container`}>
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Optimize Spending;"
-              blueTitle="save more."
+              whiteTitle="Optimize Spending"
               description="Empower your business with a centralized spend management platform & save countless working hours across payables, expenses, collections, and accounting"
             />
           </div>
 
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Access Powerful Tools;"
-              blueTitle=" Empower Teams."
+              whiteTitle="Access Powerful Tools"
               description="Use modern and powerful tools to generate savings in payments. Process multiple payments with one click. Pace up your collections with our customizable modules and set up predefined follow-ups with payment links"
             />
           </div>
 
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Experience New Age Company Cards;"
-              blueTitle="Spend Better."
-              description="Access multiple company cards to meet all business needs powered by state-of-the-art card management modules. Issue unlimited virtual or physical cards and use them instantly. Conveniently manage all your cards and spend on the go."
+              whiteTitle="New Age Company Cards"
+              description="Access multiple company cards to meet all business needs powered by state-of-the-art card management modules. Issue unlimited virtual or physical cards and use them instantly. Conveniently manage all your cards and spend on the go"
             />
           </div>
 
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Do It Yourself Easily;"
-              blueTitle="Customize Your Way."
-              description="Manage all your finances in one place. Get customized workflows across unlimited users with 99+ combinations of approval matrices."
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Do It"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Yourself"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Manage all your finances in one place. Get customized workflows across unlimited users with 99+ combinations of approval matrices"
             />
           </div>
 
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Convenience of Credit on Demand;"
-              blueTitle="Scale Faster."
-              description="Get high credit for your enterprise with specially designed cards for businesses. Enjoy quick processing with digital KYC & collateral-free access."
+              whiteTitle="Credit On Demand"
+              description="Get high credit for your enterprise with specially designed cards for businesses. Enjoy quick processing with digital KYC & collateral-free access"
             />
           </div>
 
           <div className={styles.card}>
             <GetStartedCard
-              whiteTitle="Total Visibility into Your Spending;"
-              blueTitle="Smarter Controls."
-              description="Zoom in to as many details as you want across functions, levels, and teams—a single view to see all the spends done across the organization. Get real-time transaction records so you can have an updated picture any time of the day or night."
-            />
-          </div>
-
-          <div className={styles.card}>
-            <GetStartedCard
-              whiteTitle="Seamless Integration"
-              description="It readily connects with any accounting or ERP solution like Tally, Quickbooks, and SAP. This helps with continuous reconciliation that is audit-ready with real-time views."
+              whiteTitle="Transparency Into Spends"
+              description="Zoom in to as many details as you want across functions, levels, and teams—a single view to see all the spends done across the organization. Get real-time transaction records so you can have an updated picture any time of the day or night"
             />
           </div>
         </div>
       </div>
       <div
-        className={`${styles.thirteenth_row} row row-padding-top-none bg-white`}
+        className={`${styles.thirteenth_row} row row-padding-x-only bg-white`}
       >
         <div
           className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
@@ -721,36 +732,25 @@ const home = () => {
         </div>
         <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">
           <div className="mt-3">
-            <div>
+            <div className="d-flex flex-column">
               <Heading
-                title="Integrate Seamlessly;"
+                title="Seamless"
                 color="equity-blue"
                 size="h1"
                 weight="6"
               />
+              <Heading title="Integration" color="black" size="h1" weight="6" />
             </div>
-            <Heading
-              title="Connect Systems Readily."
-              color="black"
-              size="h1"
-              weight="6"
-            />
           </div>
-          <div className="mt-2 d-flex flex-column">
+          <div className="mt-4 d-flex flex-column">
             <Heading
-              title="Our platform links seamlessly with any accounting, ERP solution you currently use like Tally, Quickbooks, SAP amongst others."
-              color="black"
-              size="h4"
-              weight="4"
-            />
-            <Heading
-              title="Ensure your books are always audit ready and view real-time up-to-the-minute data."
+              title="It readily connects with any accounting or ERP solution like Tally, Quickbooks, and SAP. This helps with continuous reconciliation that is audit-ready with real-time views"
               color="black"
               size="h4"
               weight="4"
             />
           </div>
-          <div className="d-flex mt-3">
+          <div className="d-flex mt-4">
             <PrimaryButton
               title="Get a Demo"
               isDisabled={false}
@@ -837,9 +837,8 @@ const home = () => {
           </div>
           <div className="mb-md-5">
             <Heading
-              title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              quis, ornare metus nec, feugiat erat."
-              size="h3"
+              title="One of the key benefits of Olympus was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management."
+              size="h5"
               weight="6"
               color="electric-green"
             />
@@ -849,8 +848,8 @@ const home = () => {
               <Image src={userImg} alt="enkash user image" />
             </div>
             <div className="d-flex flex-column">
-              <Heading title="- Manoj Day, CEO," size="h4" weight="4" />
-              <Heading title=" NTech Media" size="h4" weight="4" />
+              <Heading title="Deep Sehgal, Founder," size="h4" weight="4" />
+              <Heading title="Vianet" size="h4" weight="4" />
             </div>
           </div>
         </div>
@@ -869,7 +868,21 @@ const home = () => {
       </div>
       <div className={`row bg-white ${styles.sixteenth_row}`}>
         <ContactUsCard
-          title="Ready to cash in this platform for your business?"
+          titleHtml={
+            <div className="d-inline">
+              <Heading title="Ready to" color="equity-blue" size="h2" />
+              <Heading
+                title={`${space}cash in${space}`}
+                color="black"
+                size="h2"
+              />
+              <Heading
+                title="this platform for your business?"
+                color="equity-blue"
+                size="h2"
+              />
+            </div>
+          }
           description="Explore all these products on the same platform and empower your business and employees with efficient spend management, transparency, and control across all departments."
         />
       </div>

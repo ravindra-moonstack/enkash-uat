@@ -30,12 +30,10 @@
     @include bp-md {
       width: 55%;
     }
-    .title {
-      color: $color-equity-blue;
+    h1 {
       font-size: 16px;
-      width: 80%;
       @include bp-md {
-        font-size: 50px;
+        font-size: 43px;
       }
     }
     .description {

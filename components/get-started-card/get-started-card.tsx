@@ -5,7 +5,6 @@ import Heading from "../heading/heading";
 
 export interface CardProps {
   whiteTitle?: any;
-  blueTitle?: any;
   titleHtml?: any;
   description: string;
   ctaColor?: string;
@@ -13,7 +12,6 @@ export interface CardProps {
 
 const GetStartedCard = ({
   whiteTitle,
-  blueTitle,
   titleHtml,
   description,
   ctaColor,
@@ -26,7 +24,6 @@ const GetStartedCard = ({
       {!titleHtml && (
         <>
           <Heading title={whiteTitle} color="rainy-blue" size="h2" weight="6" />
-          <Heading title={blueTitle} color="white" size="h2" weight="6" />
         </>
       )}
 

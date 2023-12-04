@@ -25,8 +25,8 @@ const carouselData = [
   },
   {
     image: iconFour,
-    alt: "Make sure the invoices are maker",
-    title: "Make sure the invoices are maker, checker approved",
+    alt: "Make sure the invoices are maker-checker approved",
+    title: "Make sure the invoices are maker-checker approved",
   },
   {
     image: iconFive,

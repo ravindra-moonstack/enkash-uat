@@ -238,7 +238,7 @@ const bulkCollect = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how bulk collect benefits for your business and employees!"
+          title="Learn how bulk collect can benefit your business and employees!"
         />
       </div>
       <div
@@ -279,7 +279,7 @@ const bulkCollect = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Understanding bulk collect"
+                  title="How does bulk collect revolutionize payment collection for businesses and employees?"
                 />
               </div>
               <div className="mb-3">
@@ -296,7 +296,7 @@ const bulkCollect = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="The essence of collecting payments"
+                  title="What is the essence of payment collections, and how does bulk collect contribute?"
                 />
               </div>
               <div className="mb-3">
@@ -313,7 +313,7 @@ const bulkCollect = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="The role of bulk collect"
+                  title="How does bulk collect enhance the payment collection process?"
                 />
               </div>
               <div className="mb-3">
@@ -330,7 +330,7 @@ const bulkCollect = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Exploring bulk collect limits"
+                  title="What are the limits of bulk collect?"
                 />
               </div>
               <div className="mb-3">
@@ -338,7 +338,7 @@ const bulkCollect = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Understanding the limits of bulk collect is essential for businesses. While the Olympus Platform's bulk collect feature offers numerous advantages, it's essential to know the limits specific to your business needs. These limits can vary depending on your payment collection requirements and the type of payments you are managing. However, rest assured that the feature is designed to accommodate a wide range of businesses, offering flexibility and scalability to meet your unique needs."
+                  title="Understanding the limits of bulk collect is essential for businesses. While the Olympus platform’s bulk collect feature offers numerous advantages, it's essential to know the limits specific to your business needs. These limits can vary depending on your payment collection requirements and the type of payments you are managing. However, rest assured that the feature is designed to accommodate a wide range of businesses, offering flexibility and scalability to meet your unique needs."
                 />
               </div>
 
@@ -347,7 +347,7 @@ const bulkCollect = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Unraveling the bulk collect process"
+                  title="What is the process of bulk collect?"
                 />
               </div>
               <div className="mb-3">
@@ -364,7 +364,7 @@ const bulkCollect = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="All about E-collect accounts"
+                  title="What are E-collect accounts?"
                 />
               </div>
               <div className="mb-3">
