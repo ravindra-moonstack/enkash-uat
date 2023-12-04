@@ -10,7 +10,7 @@ import PrimaryButton from "../buttons/primary-button/primary-button";
 const LoyaltyLoungeSection = () => {
   const [activeAnimation, setActiveAnimation] = useState("LoyaltyOne");
 
-  const loyaltyTexts = {
+  const loyaltyTexts: any = {
     LoyaltyOne:
       "400+ brand vouchers across multiple categories. These gift vouchers are the best way to encourage employees during R&R programs",
     LoyaltyTwo:
