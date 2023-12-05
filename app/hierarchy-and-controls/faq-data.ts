@@ -23,7 +23,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Yes, the department management significantly enhances the finance team's performance by eliminating the repetitive tasks of checking payment requests, chasing approvals, and collecting invoices. With easy onboarding of employees to the expense management platform, the finance team's workload is reduced, making the auditing process quicker and more efficient.",
+          "Yes, it enhances the finance team's performance by eliminating the repetitive tasks of checking payment requests, chasing approvals, and collecting invoices. With the easy onboarding of employees on Xpenz, the finance team's workload is reduced, making the auditing process quicker and more efficient.",
       },
     ],
   },
@@ -36,9 +36,9 @@ const faqData = [
           "Businesses can benefit from Xpenz's department management module in several ways:",
         bullets: [
           "Quick approvals: All expense-related issues can be resolved at the first level of approval",
-          "Easy Onboarding: Xpenz sets up a user-friendly onboarding process, making it easy to follow and assess when required.",
+          "Easy Onboarding: A user-friendly onboarding process that is easy to follow and assess when required",
           "Transparency: Ensures that the auditing and reconciliation process occurs without delays",
-          "Efficiency: Makes sure that expenses are supported by the correct approval, reducing the risk of overspending",
+          "Efficiency: Expenses are supported by the correct approval, reducing the risk of overspending",
         ],
       },
     ],
@@ -49,7 +49,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Xpenz's Department Management module acts as a safeguard against business fraud. Ensuring that teams do not exceed their budgets and that all expenses are monitored and approved effectively reduces unnecessary expenses and financial discrepancies.",
+          "Xpenz's Department Management module acts as a safeguard against business fraud. Ensuring that teams do not exceed their budgets and that all expenses are monitored and approved effectively reduces unnecessary expenses and financial discrepancies",
       },
     ],
   },

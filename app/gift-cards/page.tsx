@@ -13,7 +13,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -49,7 +48,7 @@ const giftCards = () => {
             <Heading title="Gift Cards" size="h4" weight="4" />
           </div>
 
-          <div className="d-flex flex-column">
+          <div className="d-inline d-md-flex flex-column">
             <div className="d-inline">
               <Heading
                 title={`Make your${space}`}
@@ -58,7 +57,7 @@ const giftCards = () => {
                 weight="7"
               />
               <Heading
-                title="employees feel"
+                title="employees feel "
                 color="rainy-blue"
                 size="h2"
                 weight="7"
@@ -67,15 +66,20 @@ const giftCards = () => {
 
             <div className="d-inline">
               <Heading
-                title={`recognized${space}`}
+                title="recognized "
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
-              <Heading title="at the" color="white" size="h2" weight="7" />
+              <Heading
+                title="at the workplace "
+                color="white"
+                size="h2"
+                weight="7"
+              />
             </div>
             <Heading
-              title="workplace with these gift cards"
+              title="with these gift cards"
               color="white"
               size="h2"
               weight="7"
@@ -104,7 +108,9 @@ const giftCards = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <LottieClientComponent animationData={bannerLottie} loop={true} />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -211,7 +217,7 @@ const giftCards = () => {
                     />
                   </>
                 }
-                description="Gift Cards are prepaid cards and are safe as they can be frozen in case of loss or theft without losing money with the self-PIN generation feature"
+                description="Gift cards are prepaid cards and are safe as they can be frozen in case of loss or theft without losing money with the self-PIN generation feature"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -236,26 +242,28 @@ const giftCards = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div>
+                <div className="d-inline d-md-flex flex-column">
                   <Heading
                     title={`Encourage your employees with these${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
+                  <div className="d-inline">
+                    <Heading
+                      title={`easy-to-use${space}`}
+                      color="white"
+                      size="h1"
+                      weight="6"
+                    />
+                    <Heading
+                      title="gift cards"
+                      color="rainy-blue"
+                      size="h1"
+                      weight="6"
+                    />
+                  </div>
                 </div>
-                <Heading
-                  title={`easy-to-use${space}`}
-                  color="white"
-                  size="h1"
-                  weight="6"
-                />
-                <Heading
-                  title="gift cards"
-                  color="rainy-blue"
-                  size="h1"
-                  weight="6"
-                />
               </div>
             </>
           }
@@ -267,7 +275,7 @@ const giftCards = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how gift cards offer many benefits for your business and employees!"
+          title="Learn how gift cards can benefit your business and employees!"
         />
       </div>
       <div

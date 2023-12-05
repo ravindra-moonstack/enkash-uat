@@ -9,7 +9,7 @@ const faqData = [
     ],
   },
   {
-    question: "Why is a corporate gift card important for business?",
+    question: "Why are corporate gift cards important for businesses?",
     answer: [
       {
         heading:

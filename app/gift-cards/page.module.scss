@@ -15,7 +15,13 @@
       padding-right: 70px;
     }
   }
-
+  .lottie_container {
+    margin-top: 20px;
+    width: 350px;
+    @include bp-md {
+      width: 570px;
+    }
+  }
 }
 
 .second_row {

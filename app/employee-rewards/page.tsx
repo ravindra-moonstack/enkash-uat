@@ -180,7 +180,7 @@ const employeeRewards = () => {
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Streamlined Program Administration"
+                whiteTitle="Program Administration"
                 description="Manage and customize programs, define eligibility criteria, automate policy adherence, and track participation—all in one place"
               />
             </div>
@@ -192,13 +192,13 @@ const employeeRewards = () => {
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Wide Redemption Choices"
+                whiteTitle="Diverse Redemption"
                 description="Redeem from 400+ brands like Myntra, Amazon, Zomato, and Nykaa across 20+ categories like entertainment, fashion, travel, etc"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Integration with HRMS Platforms"
+                whiteTitle="HRMS Integration"
                 description="Streamline user onboarding and reward allocation by seamlessly integrating with HRMS platforms, eliminating manual processes"
               />
             </div>

@@ -175,13 +175,13 @@ const hierarchyAndControls = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Efficient Decision Making"
+              whiteTitle="Fast Decision Making"
               description="The system provides real-time insights into the expense pattern for businesses to identify areas that can be managed better"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Better Resource Management"
+              whiteTitle="Resource Management"
               description="The AI and ML-powered technology allows setting automated rules for expense approval and categorization, helping reduce the burden on managers and accounting teams"
             />
           </div>
@@ -195,7 +195,22 @@ const hierarchyAndControls = () => {
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Scalability"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Highly"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Scalable"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Add new departments and employee roles without any hassle"
             />
           </div>
@@ -226,7 +241,7 @@ const hierarchyAndControls = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how hierarchy and control benefit your business and employees!"
+          title="Learn how hierarchy and control can benefit your business and employees!"
         />
       </div>
       <div
@@ -254,7 +269,7 @@ const hierarchyAndControls = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking Further Understanding of Hierarchy and Control?"
+          title="Seeking further understanding of hierarchy and control?"
           description="Hierarchy and control within an organization are critical elements that define the structure, authority, and decision-making processes. Understanding hierarchy in a company is crucial as it defines the flow of authority and responsibility. In practice, countless businesses exemplify various forms of hierarchy, each tailored to their unique needs."
         />
       </div>
@@ -392,7 +407,7 @@ const hierarchyAndControls = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title=" How do approval hierarchies impact decision decision-making in businesses?"
+                  title=" How do approval hierarchies impact decision-making in businesses?"
                 />
               </div>
               <div className="mb-3">
