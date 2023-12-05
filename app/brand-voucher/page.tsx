@@ -161,7 +161,22 @@ const brandVoucher = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Instant Delivery"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Instant"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Delivery"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Brand vouchers are available with a snap of a finger and can be accessed anytime and anywhere"
             />
           </div>
@@ -173,7 +188,7 @@ const brandVoucher = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Exclusive Discount on Bulk Ordering"
+              whiteTitle="Bulk Order Discount"
               description="Exclusive savings can be availed on employee gift vouchers ordered in bulk for rewards and recognition"
             />
           </div>

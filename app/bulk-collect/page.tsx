@@ -130,7 +130,7 @@ const bulkCollect = () => {
               oldWayDescription:
                 "With manual collection, businesses may increase the risk of errors associated with manual payment collection processes, reducing accuracy and increasing the risk of financial losses.",
               newWayDescription:
-                "With automated bulk collection, businesses can reduce the risk of errors associated with manual payment collection processes, improving accuracy and reducing the risk of financial losses.",
+                "With automated bulk collection, businesses can reduce the risk of errors involved in manual collection processes, improving accuracy and reducing the risk of financial losses.",
             },
             {
               itemArray: ["Business Cash", "Flow"],

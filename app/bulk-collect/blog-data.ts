@@ -17,7 +17,7 @@ const blogData = [
     title: "Can Technology Make the Collect and Track Payment Process Easier?",
     date: "May 11, 2023",
     description:
-      "f you are part of the finance team in a startup, you know that collections are probably the lifeblood of the company apart from being the toughest function.  Thankfully today...",
+      "if you are part of the finance team in a startup, you know that collections are probably the lifeblood of the company apart from being the toughest function.  Thankfully today...",
     link: "https://www.enkash.com/resources/blog/can-technology-make-collect-and-track-process-easier/",
   },
   {
