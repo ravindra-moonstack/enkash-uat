@@ -131,22 +131,26 @@ const vendorPayment = () => {
       </div>
 
       <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
+        className={`${styles.third_row} row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex flex-column text-center mb-5">
-          <Heading
-            title="We understand the challenges involved in vendor payments"
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}Don’t worry; EnKash will fix them for you!`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
+        <div className="text-center mb-5">
+          <div className="d-inline">
+            <Heading title="We ensure" color="black" size="h1" weight="6" />
+            <Heading
+              title={`${space}fast, easy, and safe${space}`}
+              color="equity-blue"
+              size="h1"
+              weight="6"
+            />
+            <Heading
+              title="vendor payments"
+              color="black"
+              size="h1"
+              weight="6"
+            />
+          </div>
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
@@ -284,7 +288,7 @@ const vendorPayment = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
-        
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

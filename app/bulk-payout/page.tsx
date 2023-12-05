@@ -13,7 +13,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
@@ -49,7 +48,7 @@ const bulkPayout = () => {
             <Heading title="Bulk Payout" size="h4" weight="4" />
           </div>
           <Heading
-            title={`Fast and Secure${space}`}
+            title={`Fast and secure${space}`}
             color="white"
             size="h2"
             weight="7"
@@ -57,20 +56,20 @@ const bulkPayout = () => {
 
           <div className="d-inline">
             <Heading
-              title={`Bulk Payouts${space}`}
+              title={`bulk payouts${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`for All Your${space}`}
+              title={`for all your${space}`}
               color="white"
               size="h2"
               weight="7"
             />
           </div>
 
-          <Heading title="Business Needs" color="white" size="h2" weight="7" />
+          <Heading title="business needs" color="white" size="h2" weight="7" />
 
           <div className="d-flex mt-4 pe-5">
             <Heading
@@ -155,43 +154,36 @@ const bulkPayout = () => {
       </div>
 
       <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
+        className={`${styles.third_row} row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-inline text-center mb-5">
-          <Heading title="Facing the" color="black" size="h1" weight="6" />
-          <Heading
-            title={`${space}complexities`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}involved in`}
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}bulk processing?`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <div className="mt-2">
+        <div className="text-center">
+          <div className="d-flex flex-column mb-5">
+            <div>
+              <Heading title="Streamline" color="black" size="h1" weight="6" />
+              <Heading
+                title={`${space}bulk processing${space}`}
+                color="equity-blue"
+                size="h1"
+                weight="6"
+              />
+              <Heading title="challenges" color="black" size="h1" weight="6" />
+            </div>
+
             <Heading
-              title="Don’t worry; EnKash will fix them for you."
+              title="with EnKash solutions"
               color="black"
               size="h1"
               weight="6"
             />
           </div>
         </div>
-        <div className="d-flex justify-content-center">
+
+        <div className="d-flex text-left">
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Repeat Payments"
-                description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies."
+                description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -199,25 +191,25 @@ const bulkPayout = () => {
                 titleHtml={
                   <>
                     <Heading
-                      title="Reduce Payment Processing Time"
+                      title="Processing Time"
                       color="rainy-blue"
                       size="h2"
                       weight="6"
                     />
                   </>
                 }
-                description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow."
+                description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Centralized Payment Processing"
+                whiteTitle="Centralized System"
                 description="By centralizing payment processing through a bulk payout system, you can have better visibility and control over processes to prevent errors"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Automate Payment Reminders"
+                whiteTitle="Automate Reminders"
                 description="Enable an automated reminder engine to keep track of all your outstanding business payments"
               />
             </div>
@@ -261,7 +253,7 @@ const bulkPayout = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Bulk Payouts could revolutionize the way you work!"
+          title="Learn how bulk payouts can revolutionize the way you work!"
         />
       </div>
       <div
@@ -272,7 +264,7 @@ const bulkPayout = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title=" Don't worry! Our FAQs section will help you learn about bulk payout in detail"
+            title="Don't worry! Our FAQs section will help you learn about bulk payout in detail"
             color="black"
             size="h4"
           />
@@ -290,7 +282,7 @@ const bulkPayout = () => {
         <ContactUsCard
           title="Seeking further understanding of bulk payouts?"
           description="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment. EnKash provides bulk payment solutions to businesses"
-        />{" "}
+        />
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
@@ -387,7 +379,7 @@ const bulkPayout = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Different types of bulk payments"
+                  title="What are the different types of bulk payments?"
                 />
               </div>
               <div className="mb-3">
