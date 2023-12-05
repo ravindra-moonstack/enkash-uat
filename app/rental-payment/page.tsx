@@ -230,7 +230,7 @@ const rentalPayments = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Rental Payments could revolutionize the way you work!"
+          title="Learn how rental payments can revolutionize the way you work!"
         />
       </div>
       <div
@@ -241,7 +241,7 @@ const rentalPayments = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about rental payments in detail."
+            title="Don't worry! Our FAQs section will help you learn about rental payments in detail"
             color="black"
             size="h4"
           />
@@ -258,7 +258,7 @@ const rentalPayments = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of rent payment software online??"
+          title="Seeking further understanding of rent payment software?"
           description="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments. You can use this software to keep a record of all the premises your business rents with details including the number of premises, the rental agreements, the amounts due, the dates on which rents are due, and the details of the landlords. Furthermore, you can also set up the process workflows for rent payments to make the process quicker and more efficient"
         />
       </div>

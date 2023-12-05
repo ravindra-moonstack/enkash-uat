@@ -108,7 +108,7 @@ const virtualAccounts = () => {
             {
               itemArray: ["Repetitive", "Follow-up"],
               oldWayDescription:
-                "The traditional way of collections requires numerous follow-ups and paper trails.",
+                "The traditional way of collections require numerous follow-ups and paper trails.",
               newWayDescription:
                 "The creation of virtual accounts for various customers ensures that follow-ups are on a need-to-basis.",
             },
@@ -222,13 +222,13 @@ const virtualAccounts = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Use Virtual Accounts To Simplify${space}`}
+                    title={`Use virtual accounts to simplify${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="Business Collection Processes"
+                    title="business collection processes"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -245,7 +245,7 @@ const virtualAccounts = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Virtual Accounts will change the way you approach collections and receivables!"
+          title="Learn how virtual accounts can revolutionize the way you work!"
         />
       </div>
       <div

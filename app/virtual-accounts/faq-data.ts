@@ -1,6 +1,6 @@
 const faqData = [
   {
-    question: "What is virtual account?",
+    question: "What is a virtual account?",
     answer: [
       {
         heading:
