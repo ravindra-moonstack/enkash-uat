@@ -175,7 +175,7 @@ const vendorPayment = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Bank Account validation"
+              whiteTitle="Bank Account Validation"
               description="Validate the bank account details of the vendors by using the penny-drop method before processing transactions to prevent payment errors"
             />
           </div>
