@@ -13,7 +13,7 @@ const carouselData = [
   {
     image: iconTwo,
     alt: "wide range of brand vouchers",
-    title: "Go to “Bolt” and browse the wide range of brand vouchers",
+    title: "Explore our wide range of brand vouchers from the dashboard",
   },
   {
     image: iconThree,
