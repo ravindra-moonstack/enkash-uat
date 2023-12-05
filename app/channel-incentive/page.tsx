@@ -51,13 +51,22 @@ const channelIncentive = () => {
 
           <div className="">
             <div className="d-flex flex-column">
-              <Heading
-                title="Easily manage channel"
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <div className="d-inline">
+              <div>
+                <Heading
+                  title="Easily manage"
+                  color="white"
+                  size="h2"
+                  weight="7"
+                />
+                <Heading
+                  title={`${space}channel`}
+                  color="rainy-blue"
+                  size="h2"
+                  weight="7"
+                />
+              </div>
+
+              <div>
                 <Heading
                   title={`partner incentives${space}`}
                   color="rainy-blue"
@@ -109,14 +118,14 @@ const channelIncentive = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Manual", "Processes"],
+              itemArray: ["Manual Processes"],
               oldWayDescription:
                 "The traditional channel incentive programs involve manual tasks such as calculating incentives and sending physical cheques, leading to delays.",
               newWayDescription:
                 "Automated and streamlined channel incentive processes reduce manual work and ensure quicker reward delivery.",
             },
             {
-              itemArray: ["Incentive", "Options"],
+              itemArray: ["Incentive Options"],
               oldWayDescription:
                 "Limited options for channel partners to choose their rewards, often resulting in generic rewards.",
               newWayDescription:
@@ -160,31 +169,31 @@ const channelIncentive = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Add Channel Partners In Bulk"
-                description="Add multiple channel partners as individuals or bulk upload them all for easy incentive distribution."
+                description="Add multiple channel partners as individuals or bulk upload them all for easy incentive distribution"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Wide Redemptions Choices"
-                description="Redeem from leading 400+ brands across 20+ categories."
+                description="Redeem from leading 400+ brands across 20+ categories"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Automatic Alerts"
-                description="Integrated platform to automatically inform users via SMS, WhatsApp, and e-mail about incentives and how to redeem points."
+                description="Integrated platform to automatically inform users via SMS, WhatsApp, and e-mail about incentives and how to redeem points"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Real-Time Analytics"
-                description="Quickly share vouchers, track redemption status, and create advanced expiry alerts to maximize user adoption."
+                description="Quickly share vouchers, track redemption status, and create advanced expiry alerts to maximize user adoption"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Security"
-                description="100% safe and authenticated platform designed for businesses & their partners."
+                description="100% safe and authenticated platform designed for businesses & their partners"
               />
             </div>
           </div>
@@ -235,7 +244,7 @@ const channelIncentive = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how channel incentives offer many benefits for your business!"
+          title="Learn how channel incentives can benefit your business and partners!"
         />
       </div>
       <div

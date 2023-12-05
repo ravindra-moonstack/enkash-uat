@@ -13,9 +13,9 @@ const carouselData = [
   },
   {
     image: iconTwo,
-    alt:  "Go to “Reward Account” under Employee Rewards",
+    alt:  "Go to reward account under employee rewards",
     title:
-      "Go to “Reward Account” under Employee Rewards",
+      "Go to reward account under employee rewards",
   },
   {
     image: iconThree,

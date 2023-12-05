@@ -48,7 +48,7 @@ const budgetAndAdvance = () => {
             <Heading title="| Budgets and Advances" size="h4" weight="4" />
           </div>
 
-          <div className="d-flex flex-column">
+          <div className="d-inline d-md-flex flex-column">
             <div>
               <Heading
                 title={`Ensure${space}`}
@@ -148,7 +148,7 @@ const budgetAndAdvance = () => {
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
-          <Heading title="Set Up" color="equity-blue" size="h1" weight="6" />
+          <Heading title="Set up" color="equity-blue" size="h1" weight="6" />
           <Heading
             title={`${space}budgets and advances smoothly`}
             color="black"
@@ -174,7 +174,7 @@ const budgetAndAdvance = () => {
 
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Request Project-Wise Advance"
+                whiteTitle="Advance For Projects"
                 description="Simplified advance process to secure immediate funds when required for a specific project or category"
               />
             </div>
@@ -224,7 +224,7 @@ const budgetAndAdvance = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Budget and Advances could revolutionize the way you work!"
+          title="Learn how budget and advances can revolutionize the way you work!"
         />
       </div>
       <div
@@ -272,6 +272,14 @@ const budgetAndAdvance = () => {
                 />
               </div>
               <div className="mb-2">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="The objectives of budgeting include:"
+                />
+              </div>
+              <div className="mb-5">
                 <ul>
                   <li>
                     Giving direction as to where the company is going and
@@ -287,14 +295,7 @@ const budgetAndAdvance = () => {
                   <li>It helps measure employee performance</li>
                 </ul>
               </div>
-              <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="The objectives of budgeting include:"
-                />
-              </div>
+              
 
               <div className="mb-2">
                 <Heading

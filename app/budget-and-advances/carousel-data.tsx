@@ -11,8 +11,8 @@ const carouselData = [
   },
   {
     image: iconTwo,
-    alt: "Go to Advances and add details like advance name, amount, and date",
-    title: "Go to Advances and add details like advance name, amount, and date",
+    alt: "Go to advances and add details like advance name, amount, and date",
+    title: "Go to advances and add  add details like advance name, amount, and date",
   },
   {
     image: iconThree,

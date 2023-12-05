@@ -7,7 +7,7 @@
     padding-top: 170px;
   }
   .three_step_container {
-    padding-top: 80px;
+    padding-top: 100px;
     padding-left: 40px;
     padding-right: 40px;
     @include bp-md {
@@ -17,7 +17,7 @@
   }
 
   .lottie_container {
-    width: 300px;
+    width: 250px;
     height: auto;
     @include bp-md {
       width: 400px;

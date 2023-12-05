@@ -48,42 +48,39 @@ const employeeRewards = () => {
             <Heading title="| Employee Rewards" size="h4" weight="4" />
           </div>
 
-          <div className="">
-            <div className="d-flex flex-column">
+          <div className="d-inline d-md-flex flex-column">
+            <Heading
+              title={`Rewards management${space}`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <div>
               <Heading
-                title={`Rewards management${space}`}
+                title={`platform for${space}`}
                 color="white"
                 size="h2"
                 weight="7"
               />
-              <div>
-                <Heading
-                  title={`platform for${space}`}
-                  color="white"
-                  size="h2"
-                  weight="7"
-                />
-                <Heading
-                  title="effortless"
-                  color="rainy-blue"
-                  size="h2"
-                  weight="7"
-                />
-              </div>
-
               <Heading
-                title="recognition and"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="redemption"
+                title="effortless"
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
             </div>
+            <Heading
+              title="recognition and "
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="redemption"
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
           </div>
 
           <div className="d-flex mt-4 pe-5">
@@ -184,29 +181,13 @@ const employeeRewards = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Streamlined Program Administration"
-                description="Manage and customize programs, define eligibility criteria, automate policy adherence, and track participation—all in one place."
+                description="Manage and customize programs, define eligibility criteria, automate policy adherence, and track participation—all in one place"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Easy Allocation & Redemption"
-                // titleHtml={
-                //   <>
-                //     <Heading
-                //       title="Approval"
-                //       color="rainy-blue"
-                //       size="h2"
-                //       weight="6"
-                //     />
-                //     <Heading
-                //       title="Flow"
-                //       color="rainy-blue"
-                //       size="h2"
-                //       weight="6"
-                //     />
-                //   </>
-                // }
-                description="Effortlessly allocate rewards by bulk uploading employee data and sending automated alerts for awarded points and redemption via WhatsApp, email, and SMS."
+                description="Effortlessly allocate rewards by bulk uploading employee data and sending automated alerts for awarded points and redemption via WhatsApp, email, and SMS"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -218,21 +199,21 @@ const employeeRewards = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Integration with HRMS Platforms"
-                description="Streamline user onboarding and reward allocation by seamlessly integrating with HRMS platforms, eliminating manual processes."
+                description="Streamline user onboarding and reward allocation by seamlessly integrating with HRMS platforms, eliminating manual processes"
               />
             </div>
 
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Open Voucher Function"
-                description="Issue open vouchers on the dashboard & reward winners on the spot by sharing QR Codes via WhatsApp or email, integrated with their login codes. The recipient can redeem the reward by scanning the QR code received."
+                description="Issue open vouchers on the dashboard & reward winners on the spot by sharing QR Codes via WhatsApp or email, integrated with their login codes. The recipient can redeem the reward by scanning the QR code received"
               />
             </div>
 
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Realtime Updates"
-                description="Stay informed about redemption and account actions on a single dashboard for better managing your R&R program."
+                description="Stay informed about redemption and account actions on a single dashboard for better managing your R&R program"
               />
             </div>
           </div>
@@ -269,7 +250,7 @@ const employeeRewards = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how employee rewards offer many benefits for your business and employees!"
+          title="Learn how employee rewards can benefit your business and employees!"
         />
       </div>
       <div

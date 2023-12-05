@@ -1,7 +1,7 @@
 const faqData = [
   {
     question:
-      "What is EnKash's channel incentive platform different from others?",
+      "How EnKash's channel incentive platform is different from others?",
     answer: [
       {
         heading:
