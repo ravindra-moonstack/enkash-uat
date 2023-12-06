@@ -130,9 +130,9 @@ const invoices = () => {
             {
               itemArray: ["Tracking &", "Reporting"],
               oldWayDescription:
-                "Invoices were tracked manually using ledgers or spreadsheets, which was cumbersome and error-prone. This made it difficult to view financial performance and follow up on collections accurately.",
+                "Invoices were tracked manually using ledgers or spreadsheets. This made it difficult to view financial performance and follow up on collections accurately.",
               newWayDescription:
-                "On EnKash, invoices can be easily tracked and monitored, making it easier to identify outstanding invoices and improve collections. With advanced reporting capabilities, you analyze your business’s financial performance and make informed decisions.",
+                "On EnKash, invoices can be easily tracked and monitored, making it easier to identify outstanding invoices and improve collections.",
             },
           ]}
         />
@@ -208,7 +208,7 @@ const invoices = () => {
                   />
                 </div>
               }
-              description="Create bulk invoices with all necessary details for regular purchases to save time and employee bandwidth in just a few clicks"
+              description="Upload bulk invoices with all necessary details of regular purchases to save time and employee bandwidth in just a few clicks"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -233,7 +233,7 @@ const invoices = () => {
                     weight="6"
                   />
                   <Heading
-                    title="Automated Invoice Generation"
+                    title="with bulk actionsn"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -250,7 +250,7 @@ const invoices = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Brand Vouchers offer many benefits for your business and employees!"
+          title="Learn how digital invoicing can revolutionize the way you work!"
         />
       </div>
       <div
@@ -301,7 +301,7 @@ const invoices = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Digital Invoice Processing involves streamlining invoice uploading, distribution, and management. Olympus's Invoice Feature can assist by automating the entire invoicing process, from uploading to deployment, making it more efficient and error-free for recurring transactions. This translates into saved time and enhanced productivity, which can greatly benefit your business."
+                  title="Digital invoice processing involves streamlining invoice uploading, distribution, and management. Olympus's Invoice Feature can assist by automating the entire invoicing process, from uploading to deployment, making it more efficient and error-free for recurring transactions. This translates into saved time and enhanced productivity, which can greatly benefit your business."
                 />
               </div>
               <div className="mb-2">
@@ -333,7 +333,8 @@ const invoices = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Evaluating an automated invoice processing software requires considering factors like efficiency and cost reduction. Olympus's Invoice Feature excels in these aspects by eliminating manual efforts, reducing the likelihood of human error, and reducing costs associated with manual invoicing."
+                  title="Evaluating an automated invoice processing software requires considering factors like efficiency and cost reduction. Olympus's invoice feature
+                  excels in these aspects by eliminating manual efforts, reducing the likelihood of human error, and reducing costs associated with manual invoicing."
                 />
               </div>
               <div className="mb-2">
@@ -354,7 +355,7 @@ const invoices = () => {
                     digitize invoices
                   </Link>{" "}
                   more effectively, you need streamlined processes and cost
-                  reduction. Olympus's Invoice Feature supports this by
+                  reduction. Olympus's invoice feature supports this by
                   electronically storing and organizing invoices, making them
                   easy to access. This feature also helps reduce labor,
                   printing, and mailing invoice costs.

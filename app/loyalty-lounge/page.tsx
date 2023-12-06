@@ -13,7 +13,6 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
-import ActionCard from "@/components/action-card/action-card";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -90,7 +89,7 @@ const loyaltyLounge = () => {
               weight="5"
             />
           </div>
-          <div className={styles.button_container}>
+          <div className="mt-5">
             <PrimaryButton title="EnKash Now" theme="theme-blue" />
             <span className="mx-2"></span>
             <SecondryButton
@@ -114,7 +113,7 @@ const loyaltyLounge = () => {
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 my-md-5 my-3">
+          <div className="col-md-6 col-12 my-md-5 my-5">
             <ExploreCard
               title="Employee Rewards"
               description="Make your employees feel valued with our comprehensive recognition and redemption solution"
@@ -122,7 +121,7 @@ const loyaltyLounge = () => {
             />
           </div>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.first_container}`}
+            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-center ${styles.first_container}`}
           >
             <Image
               src={cardBg}
@@ -139,7 +138,7 @@ const loyaltyLounge = () => {
         </div>
         <div className={`row bg-white ${styles.section}`}>
           <div
-            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start  ${styles.second_container}`}
+            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-  ${styles.second_container}`}
           >
             <Image
               src={cardBg}
@@ -170,7 +169,7 @@ const loyaltyLounge = () => {
             />
           </div>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.third_container}`}
+            className={`col-md-6 col-12 d-flex my-md-5 my-5 d-flex justify-content-end ${styles.third_container}`}
           >
             <Image
               src={cardBg}
@@ -331,7 +330,7 @@ const loyaltyLounge = () => {
           ]}
         />
       </div>
-      <div
+      {/* <div
         className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
       >
         <ActionCard
@@ -351,7 +350,7 @@ const loyaltyLounge = () => {
           mainImage={officeImg}
           description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
         />
-      </div>
+      </div> */}
       <div className="bg-white row-padding d-flex justify-content-center">
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
@@ -363,7 +362,22 @@ const loyaltyLounge = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Bulk Allocation"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Bulk"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Allocation"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Employers can simultaneously allocate rewards to their employees in bulk, making this product relevant for large companies"
               ctaColor="blue"
             />
@@ -394,7 +408,10 @@ const loyaltyLounge = () => {
       </div>
 
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Loyalty Lounge Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how loyalty lounge can revolutionize the way you work!"
+        />
       </div>
 
       <div
@@ -405,7 +422,7 @@ const loyaltyLounge = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don’t worry! Our FAQs Section will Help you Learn about Xpenz in detail"
+            title="Don’t worry! Our FAQs section will help you learn about loyalty lounge in detail"
             color="black"
             size="h4"
           />
@@ -435,8 +452,59 @@ const loyaltyLounge = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Seeking Further Understanding of Loyalty Lounge?"
-          description="Get a seamless solution for rewards, corporate gifting &  incentives management platform designed to engage and motivate employees, channel partners, and stakeholders. Book a Demo Now !!"
+          title="Seeking further understanding of loyalty lounge?"
+          description="Loyalty Lounge is a solution that offers rewards, corporate gifting, and incentives management. It provides a centralized redemption platform for rewards such as brand vouchers, gift cards, offers, and employee recognition."
+        />
+      </div>
+
+      <div className={`${styles.seventh_row} row`}>
+        <ComprehensiveView
+          title="Explore our comprehensive guide"
+          innerHtml={
+            <>
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="What are the benefits of loyalty lounge?"
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="There are many benefits to using EnKash's loyalty lounge. These benefits include:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>Increased employee engagement and morale</li>
+                  <li>Improved customer engagement and retention</li>
+                  <li>Strengthened relationships with partners</li>
+                  <li>Increased brand awareness</li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Is the loyalty lounge suitable for large companies?"
+                />
+              </div>
+              <div className="mb-2">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Absolutely. Loyalty lounge offers bulk allocation features, making it relevant and efficient for large companies. Employers can simultaneously allocate rewards to a large number of employees, streamlining the process for businesses with diverse workforce sizes."
+                />
+              </div>
+            </>
+          }
         />
       </div>
     </div>

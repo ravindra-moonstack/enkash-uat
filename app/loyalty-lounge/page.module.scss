@@ -15,20 +15,12 @@
     padding-bottom: 80px;
   }
 
-  .button_container {
-    margin-top: 20px;
-    margin-bottom: 350px;
-    @include bp-md {
-      margin-bottom: 0;
-    }
-  }
-
   .lottie_container {
-    position: absolute;
-    bottom: 0;
-    width: 250px;
+    width: 350px;
+    margin-top: 20px;
     height: auto;
     @include bp-md {
+      margin-top: -60px;
       width: 650px;
     }
   }
@@ -54,11 +46,11 @@
   .first_container {
     position: relative;
     z-index: 2;
+
     .card_bg {
       position: absolute;
       z-index: 2;
-      top: -100px;
-      left: -50px;
+      top: -150px;
       @include bp-md {
         top: -50px;
         left: 200px;
@@ -103,7 +95,7 @@
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -70px;
       @include bp-md {
         top: -50px;
         left: 200px;

@@ -14,7 +14,6 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
@@ -75,7 +74,7 @@ const digitalMarketingCard = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Take control of your digital marketing budget with easy-to-use and customizable cards. Load your marketing budget into the card, select the campaigns you want to run, and keep track of expenditures in real-time."
+              title="Take control of your digital marketing budget with easy-to-use and customizable cards. Load your marketing budget into the card, select the campaigns you want to run, and keep track of expenditures in real-time"
               color="white"
               size="h6"
               weight="5"
@@ -207,7 +206,7 @@ const digitalMarketingCard = () => {
               <div className="text-center">
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Master Your Digital Marketing Expenditure with"
+                    title="Master your digital marketing expenditure with"
                     color="white"
                     size="h1"
                     weight="6"
@@ -220,7 +219,7 @@ const digitalMarketingCard = () => {
                       weight="6"
                     />
                     <Heading
-                      title="Control and Visibility."
+                      title="control and visibility"
                       color="rainy-blue"
                       size="h1"
                       weight="6"
@@ -249,7 +248,7 @@ const digitalMarketingCard = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about digital marketing in detail."
+            title="Don't worry! Our FAQs section will help you learn about digital marketing in detail"
             color="black"
             size="h4"
           />
@@ -353,7 +352,7 @@ const digitalMarketingCard = () => {
                   set spending limits, establish approval matrices, and track
                   usage comprehensively. Digital marketing cards extend this
                   concept, offering specialized features for controlling and
-                  monitoring <Link href="/">digital marketing spends.</Link>
+                  monitoring digital marketing spends.
                 </p>
               </div>
             </>

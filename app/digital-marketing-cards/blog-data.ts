@@ -5,7 +5,7 @@ const blogData = [
     imageAlt:
       "Open a Virtual Bank Account for Business and Manage Expense Better",
     title: "Open a Virtual Bank Account for Business and Manage Expense Better",
-    date: "Dec 21, 2023",
+    date: "Dec 26, 2023",
     description:
       "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
     link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
@@ -17,7 +17,7 @@ const blogData = [
       "What Is a Virtual Account, and How Your Business Can Benefit from It?",
     title:
       "What Is a Virtual Account, and How Your Business Can Benefit from It?",
-    date: "Dec 21, 2023",
+    date: "Jan 01, 2023",
     description:
       "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
     link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
@@ -27,7 +27,7 @@ const blogData = [
       "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
     imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
     title: "Learn How Virtual Accounts Can Benefit Your Business",
-    date: "Dec 21, 2023",
+    date: "Jan 09, 2023",
     description:
       "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
     link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
