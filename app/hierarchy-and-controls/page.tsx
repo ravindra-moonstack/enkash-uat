@@ -40,7 +40,7 @@ const hierarchyAndControls = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Xpenz |${space}`}
+                title={`OfEx |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
@@ -119,21 +119,21 @@ const hierarchyAndControls = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Approval", "Process"],
+              itemArray: ["Approval Process"],
               oldWayDescription:
                 "The traditional paper or email-based multi-level approval process is tedious and time-consuming.",
               newWayDescription:
-                "Xpenz's automatic approval flow can be set up on the dashboard based on organizational roles, departments, and designations.",
+                "OfEx automatic approval flow can be set up on the dashboard based on organizational roles, departments, and designations.",
             },
             {
-              itemArray: ["Privacy", "Concerns"],
+              itemArray: ["Privacy Concerns"],
               oldWayDescription:
                 "Limited control over who could access financial data leads to security concerns.",
               newWayDescription:
                 "EnKash allows you to have role-based access and control with increased security.",
             },
             {
-              itemArray: ["Compliance &", "Auditing"],
+              itemArray: ["Compliance & Auditing"],
               oldWayDescription:
                 "The compliance tracking in line with the company or department-wise policy requires extensive manual effort.",
               newWayDescription:
@@ -291,7 +291,7 @@ const hierarchyAndControls = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Establishing an approval hierarchy in expense management provides a defined structure to determine how expense reports will be reviewed and approved within the organization.It helps state the levels of authority an individual needs to gain approval on expenses. Businesses can initiate a transparent process for managing expenses with approval hierarchies and reduce the risk of unauthorized expenses."
+                  title="Approval hierarchies provide a defined structure to determine how expense reports will be reviewed and approved within the organization. Businesses can initiate a transparent process for managing expenses with approval hierarchies and reduce the risk of unauthorized expenses."
                 />
               </div>
               <div className="mb-2">
@@ -307,7 +307,7 @@ const hierarchyAndControls = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Businesses can bring transparency using approval hierarchies and enhance decision-making abilities within the organization. Here are some more benefits:"
+                  title="Here are some benefits of expense approval hierarchies:"
                 />
               </div>
               <div className="mb-2 d-inline">
@@ -323,7 +323,7 @@ const hierarchyAndControls = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="The immediate manager reviews an expense report, which is then sent to the next level for further review and approval."
+                  title=" The immediate manager reviews an expense report, which is then sent to the next level for further review and approval."
                 />
               </div>
               <br />
@@ -342,7 +342,7 @@ const hierarchyAndControls = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="This gives insights into spend patterns and helps make better budget and cost savings decisions."
+                  title="This gives insights into spend patterns and helps make better budget and saving decisions"
                 />
               </div>
               <br /> <br />
@@ -360,7 +360,7 @@ const hierarchyAndControls = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Businesses can define the authority levels and associated spend limits, allowing the employees to make decisions within the limits."
+                  title="Businesses can define the authority levels and associated spend limits, allowing the employees to make decisions within the limits"
                 />
               </div>
               <div className="mb-2 mt-5">
@@ -368,7 +368,7 @@ const hierarchyAndControls = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title=" How do approval hierarchies help reduce financial risks?"
+                  title="How do approval hierarchies help reduce financial risks?"
                 />
               </div>
               <div className="mb-3">
@@ -376,29 +376,27 @@ const hierarchyAndControls = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Implementing a hierarchy within the organization can establish a system of checks and balances, reducing the risk of financial fraud."
+                  title=" Approval hierarchies help reduce financial risks in the following ways:"
                 />
               </div>
               <div className="mb-5">
                 <ul>
                   <li>
                     Multiple individuals review and verify the expense claims,
-                    leaving no room for errors in the approval hierarchy process
+                    leaving no room for errors
                   </li>
                   <li>
                     Since expenses are accessible to multiple departments, there
-                    is less opportunity to manipulate the documents, ensuring
-                    there is no fraud
+                    is less opportunity to manipulate the documents
                   </li>
                   <li>
                     Businesses can impose spend guidelines and prevent
-                    non-compliant expenses. The hierarchical approval can stop
-                    reimbursement if there is overspending
+                    non-compliant expenses by stopping reimbursement if there is
+                    overspending
                   </li>
                   <li>
                     The approvers in the hierarchy process are accountable for
-                    approved expenses. This accountability benefits the
-                    organization and helps establish trust
+                    approved expenses
                   </li>
                 </ul>
               </div>
@@ -407,7 +405,7 @@ const hierarchyAndControls = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title=" How do approval hierarchies impact decision-making in businesses?"
+                  title="How do approval hierarchies impact decision decision-making in businesses?"
                 />
               </div>
               <div className="mb-3">

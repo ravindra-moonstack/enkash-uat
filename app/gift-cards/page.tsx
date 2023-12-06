@@ -310,8 +310,7 @@ const giftCards = () => {
 
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the
-        comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
               <div className="mb-2">

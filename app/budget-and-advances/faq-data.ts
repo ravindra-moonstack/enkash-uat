@@ -22,7 +22,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Automating budget management in Xpenz involves leveraging technology to streamline financial planning, syncing policies for different departments and projects, and tracking processes. It simplifies data entry, enhances accuracy, and provides real-time expense insights.",
+          "Automating budget management in OfEx involves leveraging technology to streamline financial planning, syncing policies for different departments and projects, and tracking processes. It simplifies data entry, enhances accuracy, and provides real-time expense insights.",
       },
     ],
   },
@@ -40,7 +40,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Xpenz empowers each department to allocate annual project budgets, fostering effective budget management for impactful cash flow control. With customizable budgets, real-time expense tracking, and streamlined advance and claim management, Xpenz easily optimizes your financial strategy.",
+          "OfEx empowers each department to allocate annual project budgets, fostering effective budget management for impactful cash flow control. With customizable budgets, real-time expense tracking, and streamlined advance and claim management, OfEx easily optimizes your financial strategy.",
       },
     ],
   },
@@ -49,7 +49,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Tracking expenditures against the budget involves consistently reviewing policies and financial statements and comparing actual expenses with budgeted amounts. With Xpenz, you can promptly identify discrepancies, policy deviations, overspending, and areas where resources need reallocation, ensuring a healthy financial balance.",
+          "Tracking expenditures against the budget involves consistently reviewing policies and financial statements and comparing actual expenses with budgeted amounts. With OfEx, you can promptly identify discrepancies, policy deviations, overspending, and areas where resources need reallocation, ensuring a healthy financial balance.",
       },
     ],
   },

@@ -7,7 +7,7 @@ const carouselData = [
   {
     image: iconOne,
     alt: "Login to EnKash or register",
-    title: "Login to EnKash and go to Xpenz",
+    title: "Login to EnKash and go to OfEx",
   },
   {
     image: iconTwo,

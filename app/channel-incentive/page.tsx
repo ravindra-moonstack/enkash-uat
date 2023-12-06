@@ -168,31 +168,53 @@ const channelIncentive = () => {
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Add Channel Partners In Bulk"
+                titleHtml={
+                  <div className="d-flex flex-column">
+                    <Heading
+                      title="Add Partners"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                    <Heading
+                      title="In Bulk"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                  </div>
+                }
                 description="Add multiple channel partners as individuals or bulk upload them all for easy incentive distribution"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Wide Redemptions Choices"
+                whiteTitle="Diverse Redemptions"
                 description="Redeem from leading 400+ brands across 20+ categories"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Automatic Alerts"
+                whiteTitle="Non-Reloadable Cards"
                 description="Integrated platform to automatically inform users via SMS, WhatsApp, and e-mail about incentives and how to redeem points"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Real-Time Analytics"
+                whiteTitle="Automatic Alerts
+                "
                 description="Quickly share vouchers, track redemption status, and create advanced expiry alerts to maximize user adoption"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Security"
+                whiteTitle="Real-Time Analytics"
+                description="100% safe and authenticated platform designed for businesses & their partners"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Bulk UPI for Incentives"
                 description="100% safe and authenticated platform designed for businesses & their partners"
               />
             </div>
@@ -278,11 +300,10 @@ const channelIncentive = () => {
 
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the
-        comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -295,11 +316,11 @@ const channelIncentive = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Channel incentive programs will motivate channel partners to prioritize the sales of your products or services so that they can win additional rewards. Channel partners develop their discounts and offers for customers using the additional rewards they get from channel incentives to get more customers onboard. The channel partner may also set up an internal reward system for their salespeople to increase sales. Using a channel incentive program helps increase sales, build your brand, and increase awareness of your products or services."
+                  title="Channel incentive programs will motivate channel partners to prioritize the sales of your products or services so that they can win additional rewards. Channel partners develop their discounts and offers for customers using the additional rewards they get from channel incentives to get more customers onboard. The channel partner may also set up an internal reward system for their salespeople to increase sales. Using a channel incentive program helps increase sales, build your brand, and increase awareness of your products or services"
                 />
               </div>
 
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -308,7 +329,7 @@ const channelIncentive = () => {
                 />
               </div>
 
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h6"
                   color="black"
@@ -332,7 +353,7 @@ const channelIncentive = () => {
                 </ul>
               </div>
 
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -340,7 +361,7 @@ const channelIncentive = () => {
                   title="How do you plan an incentive program?"
                 />
               </div>
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h6"
                   color="black"
@@ -356,7 +377,7 @@ const channelIncentive = () => {
                   title="Businesses often offer incentives to channel partners and their salespeople directly. Define the slabs for channel partners and salespeople and other conditions they must fulfill to qualify for the rewards. Take the time to explain the incentive program clearly to the channel partners and the sales team, along with the payout timelines. You can also consider tying up with a platform that makes channel incentives easier and faster."
                 />
               </div>
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"

@@ -163,7 +163,7 @@ const virtualAccounts = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Simplified Collection Tracking"
+              whiteTitle="Simplified Tracking"
               description="With a virtual account, the process of tracking customer payments made and due can be checked easily"
             />
           </div>

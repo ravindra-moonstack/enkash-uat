@@ -20,6 +20,7 @@ import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: " Bulk Payout | Corporate Bulk Payment Solution | EnKash",
@@ -302,108 +303,33 @@ const bulkPayout = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="In order to make business transactions smooth, efficient, safe, and faster, companies can use bulk payment solutions provided by EnKash. It can help businesses with the following advantages"
+                  title="Our bulk payment solutions help businesses with the following advantages:"
                 />
               </div>
 
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Faster and safe payments:"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Bulk payment solutions ensure that all the vendors associated with the business get their payments timely so that there should not be any gaps in product supply. These payments are made with encryption technology, ensuring data is secured"
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Automation:"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Automating bulk payments eliminates the scope of manual error and helps in easier processing of larger transactions on a frequent basis"
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Negligible payment failure rate:"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Bulk payment solutions verify each account before initiating any transfer. Any invalid accounts with potential risks of payment failure will be eliminated, and bulk payments will be made to valid accounts"
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Multiple modes of payment:"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="EnKash supports multiple modes of payment, including bank transfers, credit cards, debit cards, and virtual cards"
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="What are the different types of bulk payments?"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="There are two types of bulk payments: Standard Domestic Bulk Payment and Bulk Inter Account Transfer (IAT). 
-                  Standard Domestic Bulk Payment lets you make bulk payments to multiple beneficiaries from a single account. You can use it on EnKash and make secure bulk payments.
-                  This bulk payment is further classified into three categories:"
-                />
-              </div>
               <div className="mb-5">
                 <ul>
                   <li>
-                    Immediate bulk payments (IBULK): These payments are
-                    immediately processed when you create payments for the bulk
-                    list. Payment can be done via a virtual account.
+                    Faster and secure payments, made with encryption technology,
+                    ensuring data is secured
                   </li>
                   <li>
-                    Next-day bulk payments (NBULK): This type will credit the
-                    recipients’ account after the day the payment has been made.
-                    This can be done using net banking or credit cards for bulk
-                    payment via our portal.
+                    Automation eliminates manual error and helps in easier
+                    processing of larger transactions
+                  </li>
+                  <li>
+                    Low payment failure rate as all accounts are validated
+                    before initiating the payments
+                  </li>
+                  <li>
+                    Supports{" "}
+                    <Link
+                      href="https://www.google.com/url?q=https://www.enkash.com/resources/blog/modes-of-payment/"
+                      target="_blank"
+                    >
+                      multiple modes of payment
+                    </Link>
+                    , including bank transfers, credit cards, and more
                   </li>
                 </ul>
               </div>
@@ -413,15 +339,49 @@ const bulkPayout = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Bulk Inter Account Transfer (IAT) "
+                  title="Different types of bulk payments"
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-5">
                 <Heading
                   size="h6"
                   color="black"
                   weight="4"
-                  title="This bulk payment type enables you to make payments to multiple credit accounts from a single debit account. You can also use IAT to make international payments, unlike standard bulk payments. It is fast, dependable, and secure. However, it has a complicated procedure depending on the company’s location and target demographics"
+                  title="There are two types of bulk payments: Standard Domestic Bulk Payment and Bulk Inter Account Transfer (IAT)."
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Standard Domestic Bulk Payment"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Standard Domestic Bulk Payment lets you make bulk payments to multiple beneficiaries from a single account. This bulk payment is further classified into two categories i.e., immediate bulk payments (IBULK) and next-day bulk payments (NBULK)"
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Bulk Inter Account Transfer (IAT)"
+                />
+              </div>
+              <div className="mb-5">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="This bulk payment type enables you to make payments to multiple credit accounts from a single debit account. You can also use IAT to make international payments."
                 />
               </div>
 
@@ -433,63 +393,12 @@ const bulkPayout = () => {
                   title=" What are the payment modes for bulk payout?"
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-5">
                 <Heading
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Bulk payment can be done through bank transfers, and via credit or debit card"
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Bank Transfers"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="EnKash facilitates bank transfers using NEFT and RTGS. These days, banks facilitate corporate bulk payments. When making vendor payments in bulk, you will be redirected to the bank’s Internet banking portal, where payment can be made in bulk."
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Credit Card"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Vendor, utility or rental payments in bulk can be made using a credit card on EnKash. Businesses can use their credit card to make bulk payments"
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Virtual Account"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="You can create a virtual account on EnKash and make payments anytime without linking it to a particular bank's operating system"
+                  title="Bulk payment can be done through bank transfers, credit cards, debit cards and virtual account."
                 />
               </div>
 
@@ -501,13 +410,12 @@ const bulkPayout = () => {
                   title="What is the future of bulk financial services?"
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-5">
                 <Heading
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Bulk payment is taking the lead in the B2B space. Businesses need to send and receive money in bulk on a daily basis. Products like EnKash Olympus make bulk payments easy, safe, convenient, and traceable. 
-                  Companies can easily integrate Olympus with their existing ERP and use it to make bulk business payments. This transformation has lessened the work for the finance teams as their burden of receiving invoices, verifying them manually, and then processing payment for every single vendor has reduced. Adopting bulk payment as a way to make recurring payments can help businesses save their time and resources and become more efficient"
+                  title="Bulk payment is taking the lead in the B2B space. Businesses need to send and receive money in bulk on a daily basis. Products like EnKash Olympus make bulk payments easy, safe, convenient, and traceable. Integrating bulk payments with existing ERP systems reduces the workload for finance teams, making recurring payments efficient and saving time and resources for businesses."
                 />
               </div>
             </>

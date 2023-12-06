@@ -13,7 +13,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Efficient department management with Xpenz ensures that all departments can manage their payments and expenses without overloading the central finance team. Xpenz's designation management and customizable roles provide the necessary checks and approvals, meeting auditing requirements seamlessly.",
+          "Efficient department management with OfEx ensures that all departments can manage their payments and expenses without overloading the central finance team. OfEx designation management and customizable roles provide the necessary checks and approvals, meeting auditing requirements seamlessly.",
       },
     ],
   },
@@ -23,7 +23,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Yes, it enhances the finance team's performance by eliminating the repetitive tasks of checking payment requests, chasing approvals, and collecting invoices. With the easy onboarding of employees on Xpenz, the finance team's workload is reduced, making the auditing process quicker and more efficient.",
+          "Yes, it enhances the finance team's performance by eliminating the repetitive tasks of checking payment requests, chasing approvals, and collecting invoices. With the easy onboarding of employees on OfEx, the finance team's workload is reduced, making the auditing process quicker and more efficient.",
       },
     ],
   },
@@ -33,7 +33,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Businesses can benefit from Xpenz's department management module in several ways:",
+          "Businesses can benefit from OfEx department management module in several ways:",
         bullets: [
           "Quick approvals: All expense-related issues can be resolved at the first level of approval",
           "Easy Onboarding: A user-friendly onboarding process that is easy to follow and assess when required",
@@ -49,7 +49,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Xpenz's Department Management module acts as a safeguard against business fraud. Ensuring that teams do not exceed their budgets and that all expenses are monitored and approved effectively reduces unnecessary expenses and financial discrepancies",
+          "OfEx Department Management module acts as a safeguard against business fraud. Ensuring that teams do not exceed their budgets and that all expenses are monitored and approved effectively reduces unnecessary expenses and financial discrepancies",
       },
     ],
   },

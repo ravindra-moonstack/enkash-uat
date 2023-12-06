@@ -24,8 +24,8 @@ const carouselData = [
   },
   {
     image: iconFour,
-    alt: "Go to Xpenz and configure user roles based on their grades, designation, and department",
-    title: "Go to Xpenz and configure user roles based on their grades, designation, and department",
+    alt: "Go to OfEx and configure user roles based on their grades, designation, and department",
+    title: "Go to OfEx and configure user roles based on their grades, designation, and department",
   },
 
 ];

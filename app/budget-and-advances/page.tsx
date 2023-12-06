@@ -39,7 +39,7 @@ const budgetAndAdvance = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Xpenz${space}`}
+                title={`OfEx${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
@@ -253,17 +253,16 @@ const budgetAndAdvance = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of budget and advances?"
-          description="Budget management allows businesses to monitor their financial planning, use their financial tools, and achieve business goals, making the business sustainable in the long run"
+          description="Budget management allows businesses to monitor their financial planning, use their financial tools, and achieve business goals, making the business sustainable in the long run."
         />
       </div>
 
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore the
-        comprehensive guide"
+          title="Explore our comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -295,7 +294,6 @@ const budgetAndAdvance = () => {
                   <li>It helps measure employee performance</li>
                 </ul>
               </div>
-              
 
               <div className="mb-2">
                 <Heading
@@ -310,7 +308,7 @@ const budgetAndAdvance = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Budgets are critical for maintaining financial stability and achieving long-term objectives. Xpenz emphasizes their importance by streamlining budgetary control, enabling businesses to promptly make informed decisions and respond to financial challenges"
+                  title="Budgets are critical for maintaining financial stability and achieving long-term objectives. OfEx emphasizes their importance by streamlining budgetary control, enabling businesses to promptly make informed decisions and respond to financial challenges."
                 />
               </div>
 
@@ -327,7 +325,7 @@ const budgetAndAdvance = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Effective budgeting is essential for management to ensure that resources are used efficiently. Xpenz reinforces this importance by simplifying budgeting tasks, making it an integral part of management's daily operations"
+                  title="Effective budgeting is essential for management to ensure that resources are used efficiently. OfEx reinforces this importance by simplifying budgeting tasks, making it an integral part of management's daily operations."
                 />
               </div>
 
@@ -344,7 +342,7 @@ const budgetAndAdvance = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="A budget's primary purpose is to serve as a financial plan, providing guidance on revenue and expenditures. Xpenz aligns with this purpose by offering a user-friendly platform for budget management"
+                  title="A budget's primary purpose is to serve as a financial plan, providing guidance on revenue and expenditures. OfEx aligns with this purpose by offering a user-friendly platform for budget management."
                 />
               </div>
               <div className="mb-2">
@@ -360,7 +358,7 @@ const budgetAndAdvance = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="While budgeting is essential, it does have limitations, such as being based on assumptions and historical data. Xpenz addresses these limitations by offering real-time data and analytics, enabling businesses to adapt to changing circumstances swiftly"
+                  title="While budgeting is essential, it does have limitations, such as being based on assumptions and historical data. OfEx addresses these limitations by offering real-time data and analytics, enabling businesses to adapt to changing circumstances swiftly."
                 />
               </div>
             </>

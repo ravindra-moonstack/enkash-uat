@@ -54,23 +54,29 @@ const loyaltyLounge = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Unlock the Power of"
+              title="Unlock the power of"
               color="white"
               size="h2"
               weight="7"
             />
 
             <Heading
-              title="Personalized Rewards"
+              title="personalized rewards"
               color="rainy-blue"
               size="h2"
+              weight="7"
             />
-            <Heading title="and Recognition with" color="white" size="h2" />
-            <Heading title="EnKash" color="white" size="h2" />
+            <Heading
+              title="and recognition with"
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading title="EnKash" color="white" size="h2" weight="7" />
           </div>
           <div className="mt-4 mobile-only">
             <Heading
-              title="An all-in-one rewards, corporate gifting, and incentives management platform that helps businesses boost loyalty and enhance the experience for their employees, channel partners, and other stakeholders."
+              title="An all-in-one rewards, corporate gifting, and incentives management platform that helps businesses boost loyalty and enhance the experience for their employees, channel partners, and other stakeholders"
               color="white"
               size="h6"
               weight="5"
@@ -78,7 +84,7 @@ const loyaltyLounge = () => {
           </div>
           <div className="mt-4 desktop-only">
             <Heading
-              title="An all-in-one rewards, corporate gifting, and incentives management platform that helps businesses boost loyalty and enhance the experience for their employees, channel partners, and other stakeholders."
+              title="An all-in-one rewards, corporate gifting, and incentives management platform that helps businesses boost loyalty and enhance the experience for their employees, channel partners, and other stakeholders"
               color="white"
               size="h5"
               weight="5"
@@ -215,13 +221,13 @@ const loyaltyLounge = () => {
         <div className="d-flex flex-column align-items-center justify-content-center">
           <div>
             <Heading
-              title={`Elevate Your${space}`}
+              title={`Elevate your${space}`}
               size="h1"
               color="black"
               weight="6"
             />
             <Heading
-              title={`Rewards Program${space}`}
+              title={`rewards program${space}`}
               size="h1"
               color="equity-blue"
               weight="6"
@@ -230,7 +236,7 @@ const loyaltyLounge = () => {
           </div>
 
           <Heading
-            title={`Next Level with EnKash${space}`}
+            title={`next level with EnKash${space}`}
             size="h1"
             color="black"
             weight="6"

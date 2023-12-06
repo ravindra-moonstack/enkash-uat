@@ -194,7 +194,7 @@ const vendorPayment = () => {
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automate Payment Reminders"
+              whiteTitle="Automated Reminders"
               description="Make sure that all vendor payments are processed on time and without errors. Get automated reminders to track outstanding vendor payments"
             />
           </div>
