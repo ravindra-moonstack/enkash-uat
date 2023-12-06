@@ -441,7 +441,7 @@ const home = () => {
             title="Expense Management"
             description="A platform to gain complete control over business spending and expenses. Analyze data to create efficient budgets, optimize expenses, and scale your business"
             theme="blue"
-            link="/xpenz"
+            link="/ofex"
           />
         </div>
       </div>
@@ -546,7 +546,7 @@ const home = () => {
             title="Corporate Cards"
             description="Issue cards for different business needs and manage them on a single platform with smart controls. Enable or disable across spend categories as and when required"
             theme="blue"
-            link="/freedom"
+            link="/slash"
           />
         </div>
         <div className="col-md-6 col-12 row-padding-x-only order-3 order-md-3">
@@ -764,51 +764,53 @@ const home = () => {
         <div className="col-12 text-center mb-5">
           <Heading title="Awards & Accolades" color="equity-blue" size="h1" />
         </div>
-        <div className="">
+        <div
+          className={`d-flex flex-column flex-md-row justify-content-center text-center ${styles.box}`}
+        >
           <div
-            className={`d-flex flex-column flex-md-row justify-content-center ${styles.box}`}
+            className={`d-flex flex-column justify-content-between ${styles.box_item}`}
           >
-            <div
-              className={`d-flex flex-column justify-content-between ${styles.box_item}`}
-            >
-              <div className="mb-3 mb-m-5 py-2">
-                <Heading title="Startups to Watch" color="black" size="h5" />
-              </div>
-              <div>
-                <Image src={inc42} alt="inc42 logo" className="img-fluid" />
-              </div>
+            <div className="mb-3 mb-m-5 py-2">
+              <Heading
+                title="Preferred Partner by NPCI"
+                color="black"
+                size="h6"
+              />
             </div>
-            <div
-              className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
-            >
-              <div className="mb-5 py-2">
-                <Heading
-                  title="Winner - India Fintech Awards 2020"
-                  color="electric-green"
-                  size="h5"
-                />
-              </div>
-              <div>
-                <Image src={nasscom} alt="nasscom logo" className="img-fluid" />
-              </div>
+            <div>
+              <Image src={inc42} alt="inc42 logo" className="img-fluid" />
             </div>
-            <div
-              className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
-            >
-              <div className="mb-3 mb-m-5 py-2">
-                <Heading
-                  title="Best B2B Solution Provider"
-                  color="black"
-                  size="h5"
-                />
-              </div>
-              <div>
-                <Image
-                  src={paymentAndCardSummit}
-                  alt="payment and card summit logo"
-                  className="img-fluid"
-                />
-              </div>
+          </div>
+          <div
+            className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
+          >
+            <div className="mb-5 py-2">
+              <Heading
+                title="Best Platform for SME Financial Growth at the 4th Annual BFSI Excellence Award"
+                color="electric-green"
+                size="h6"
+              />
+            </div>
+            <div>
+              <Image src={nasscom} alt="nasscom logo" className="img-fluid" />
+            </div>
+          </div>
+          <div
+            className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
+          >
+            <div className="mb-3 mb-m-5 py-2">
+              <Heading
+                title="Fintech Festival India Award"
+                color="black"
+                size="h6"
+              />
+            </div>
+            <div>
+              <Image
+                src={paymentAndCardSummit}
+                alt="payment and card summit logo"
+                className="img-fluid"
+              />
             </div>
           </div>
         </div>
@@ -868,21 +870,7 @@ const home = () => {
       </div>
       <div className={`row bg-white ${styles.sixteenth_row}`}>
         <ContactUsCard
-          titleHtml={
-            <div className="d-inline">
-              <Heading title="Ready to" color="equity-blue" size="h2" />
-              <Heading
-                title={`${space}cash in${space}`}
-                color="black"
-                size="h2"
-              />
-              <Heading
-                title="this platform for your business?"
-                color="equity-blue"
-                size="h2"
-              />
-            </div>
-          }
+          title="Ready to upgrade with our new-age business solutions?"
           description="Explore all these products on the same platform and empower your business and employees with efficient spend management, transparency, and control across all departments."
         />
       </div>

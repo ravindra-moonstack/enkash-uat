@@ -30,6 +30,14 @@
   }
 }
 
+.second_row {
+  padding: 56px 36px;
+  background-color: $color-indi-volt;
+  @include bp-md {
+    padding: 110px 90px;
+  }
+}
+
 .third_row {
   background-color: $color-white;
   padding-left: 50px;
@@ -94,26 +102,23 @@
 }
 
 .fourth_row {
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding: 36px 40px;
   background-color: $color-indi-volt;
   @include bp-md {
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding: 110px 90px;
   }
 
   .lottie_container {
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 300px;
+    @include bp-md {
+      width: 450px;
+    }
   }
   .lottie_second_container {
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 300px;
+    @include bp-md {
+      width: 450px;
+    }
   }
 }
 

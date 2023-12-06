@@ -95,12 +95,17 @@
     img {
       cursor: pointer;
       transition: width 0.3s ease-in-out;
-    }
-
-    img:hover {
       width: 35px;
+      height: 10px;
       @include bp-md {
-        width: 65px;
+        height: 15px;
+        width: 55px;
+      }
+      &:hover {
+        width: 35px;
+        @include bp-md {
+          width: 70px;
+        }
       }
     }
 
@@ -115,15 +120,6 @@
       @include bp-md {
         font-size: 22.5px;
       }
-    }
-  }
-}
-
-.action_container:hover {
-  img {
-    width: 35px;
-    @include bp-md {
-      width: 65px;
     }
   }
 }

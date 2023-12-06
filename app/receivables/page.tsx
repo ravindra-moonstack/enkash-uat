@@ -396,7 +396,7 @@ const receivables = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about receivables in detail."
+            title="Don't worry! Our FAQs section will help you learn about receivables in detail"
             color="black"
             size="h4"
           />

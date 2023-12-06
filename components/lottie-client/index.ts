@@ -12,23 +12,23 @@ export const corporateCardAnimation = () =>
 export const diyCardAnimation = () => import("../../app/img/lottie/diy.json");
 export const phoneAnimation = () => import("../../app/img/lottie/phone.json");
 
-//Freedom Animation
+//Slash Animation
 export const travelCardAnimation = () =>
-  import("../../app/freedom/img/lottie/travel.json");
+  import("../../app/slash/img/lottie/travel.json");
 export const saasAnimation = () =>
-  import("../../app/freedom/img/lottie/saas.json");
+  import("../../app/slash/img/lottie/saas.json");
 export const virtualCardAnimation = () =>
-  import("../../app/freedom/img/lottie/virtual.json");
+  import("../../app/slash/img/lottie/virtual.json");
 export const digitalAnimation = () =>
-  import("../../app/freedom/img/lottie/digital-marketing.json");
+  import("../../app/slash/img/lottie/digital-marketing.json");
 export const mealCardAnimation = () =>
-  import("../../app/freedom/img/lottie/meal.json");
+  import("../../app/slash/img/lottie/meal.json");
 
 export const fuelAnimation = () =>
-  import("../../app/freedom/img/lottie/fuel.json");
+  import("../../app/slash/img/lottie/fuel.json");
 
 export const purchaseCardAnimation = () =>
-  import("../../app/freedom/img/lottie/purchase.json");
+  import("../../app/slash/img/lottie/purchase.json");
 
 //Recievables Animation
 export const invoiceAnimation = () =>
@@ -42,18 +42,18 @@ export const quickCollectAnimation = () =>
 export const virtualAccountAnimation = () =>
   import("../../app/receivables/img/lottie/virtual.json");
 
-//Xpenz Animation
+//ofex Animation
 
 export const heirarchyControlAnimation = () =>
-  import("../../app/xpenz/img/lottie/hierarchy.json");
+  import("../../app/ofex/img/lottie/hierarchy.json");
 export const budgetAndAdvanceAnimation = () =>
-  import("../../app/xpenz/img/lottie/budget-and-advances.json");
+  import("../../app/ofex/img/lottie/budget-and-advances.json");
 export const reimbursementAnimation = () =>
-  import("../../app/xpenz/img/lottie/reimbursement.json");
+  import("../../app/ofex/img/lottie/reimbursement.json");
 export const scanAndDropAnimation = () =>
-  import("../../app/xpenz/img/lottie/scan-and-drop.json");
+  import("../../app/ofex/img/lottie/scan-and-drop.json");
 export const policyAnimation = () =>
-  import("../../app/xpenz/img/lottie/policy.json");
+  import("../../app/ofex/img/lottie/policy.json");
 
 //Loyalty Animation
 

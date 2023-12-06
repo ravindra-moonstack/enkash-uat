@@ -51,7 +51,7 @@ const virtualCard = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Secure, easy-to-use"
+              title="Secure & easy-to-use"
               color="white"
               size="h2"
               weight="7"
@@ -131,7 +131,7 @@ const virtualCard = () => {
               oldWayDescription:
                 "This card requires a longer time to process payment.",
               newWayDescription:
-                "Payments are processed instantly in this card and it can also be blocked immediately in case of fraud or misuse",
+                "Payments are processed instantly on this card, and can be blocked immediately in case of fraud or misuse.",
             },
           ]}
         />
@@ -167,14 +167,13 @@ const virtualCard = () => {
                     weight="6"
                   />
                   <Heading
-                    title="Savings"
+                    title="Saving"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              whiteTitle="Cost Savings"
               description="Virtual cards can help businesses save money by reducing processing costs, eliminating the need for physical cards or checks, and reducing the risk of fraud"
             />
           </div>
@@ -193,7 +192,7 @@ const virtualCard = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Reduced Risk of Fraud"
+              whiteTitle="Reduced Risk Of Fraud"
               description="It can be set up with spending limits and other controls, reducing the risk of unauthorized or fraudulent transactions. It 
               helps protect your privacy by eliminating any risk associated with lost paperwork"
             />
@@ -307,7 +306,7 @@ const virtualCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="You must register on EnKash to get your business virtual cards"
+                  title="You must register on EnKash to get your business virtual cards."
                 />
               </div>
               <div className="mb-3">
@@ -321,7 +320,7 @@ const virtualCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="These virtual cards can be used for rental payments, tax payments, and other business-related expenses"
+                  title="These virtual cards can be used for rental payments, tax payments, and other business-related expenses."
                 />
               </div>
               <div className="mb-3">
@@ -335,7 +334,7 @@ const virtualCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Virtual cards are a convenient and secure mode of payment"
+                  title="Virtual cards are a convenient and secure mode of payment."
                 />
               </div>
               <div className="mb-3">
@@ -492,15 +491,15 @@ const virtualCard = () => {
               <div className="mb-5">
                 <ul>
                   <li>
-                    Sign up on EnKash with your valid number or email address.
+                    Sign up on EnKash with your valid number or email address
                   </li>
                   <li>
-                    Generate a virtual card number, CVV, and expiration date.
+                    Generate a virtual card number, CVV, and expiration date
                   </li>
-                  <li>Create a pin to keep it secure.</li>
-                  <li>Use your virtual card like a debit card.</li>
+                  <li>Create a pin to keep it secure</li>
+                  <li>Use your virtual card like a debit card</li>
                   <li>
-                    Manage your virtual card from the EnKash dashboard easily.
+                    Manage your virtual card from the EnKash dashboard easily
                   </li>
                 </ul>
               </div>
@@ -525,7 +524,7 @@ const virtualCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Business owners can restrict virtual cards to manage expenses. They are safe for business-related transactions and can be accessed from anywhere while traveling for work. They can also be easily revoked in case of business fraud and misuse"
+                  title="Business owners can restrict virtual cards to manage expenses. They are safe for business-related transactions and can be accessed from anywhere while traveling for work. They can also be easily revoked in case of business fraud and misuse."
                 />
               </div>
             </>

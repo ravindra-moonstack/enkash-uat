@@ -117,23 +117,23 @@ const paymentLinks = () => {
             {
               itemArray: ["Security"],
               oldWayDescription:
-                "Traditional methods lack the secure framework needed for payments, increasing the risk of breaches. Manual entry and physical transactions expose sensitive data to errors and delays.",
+                "Traditional methods lack the secure framework needed for payments; increasing the risk of data breaches.",
               newWayDescription:
-                "Payment links offer more security than traditional payment methods. Our payment links use encryption and other security measures to protect business and customer payment information.",
+                "Payment links offer more security than traditional payment methods. Our payment links use encryption and other security measures to protect payment information.",
             },
             {
               itemArray: ["Payment", "Tracking"],
               oldWayDescription:
                 "Manually tracking customer payments is time-consuming.",
               newWayDescription:
-                "Payment links provide businesses with better tracking and record-keeping capabilities. Payments made through payment links are automatically recorded and easily tracked on the EnKash platform.",
+                "Payment links from EnKash provide businesses with better tracking and record-keeping capabilities.",
             },
             {
               itemArray: ["Customer", "Experience"],
               oldWayDescription:
                 "Incessantly following up with customers to make payments without providing them an easy way to do so can cause friction between the customer and your business.",
               newWayDescription:
-                "Payment links can improve the overall customer experience by providing a convenient and easy-to-use payment option. This helps businesses build stronger customer relationships, increase customer satisfaction, and improve DSO.",
+                "Payment links improve the overall customer experience by bringing in convenience. This helps businesses build stronger customer relationships, and improve DSO.",
             },
             {
               itemArray: ["Cash Flow", "Optimization"],
@@ -150,7 +150,7 @@ const paymentLinks = () => {
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-flex flex-column align-items-center mb-5">
-          <div>
+          <div className="text-center">
             <Heading
               title={`Enable payment links${space}`}
               color="equity-blue"
@@ -212,20 +212,21 @@ const paymentLinks = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="d-flex flex-column">
+                <div>
                   <Heading
                     title="Improve your business’s cash flow with"
                     color="white"
                     size="h1"
                     weight="6"
                   />
-                  <Heading
-                    title="automated payment tools"
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
                 </div>
+
+                <Heading
+                  title="payment links"
+                  color="rainy-blue"
+                  size="h1"
+                  weight="6"
+                />
               </div>
             </>
           }
@@ -237,7 +238,7 @@ const paymentLinks = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Rental Payments could revolutionize the way you work!"
+          title="Learn how payment links could revolutionize the way you work!"
         />
       </div>
       <div
@@ -257,7 +258,7 @@ const paymentLinks = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
-        
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
@@ -265,8 +266,8 @@ const paymentLinks = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of payment link?"
-          description="Payment links are a convenient and straightforward way to collect payments online. They are unique URLs that direct customers to a secure payment page, where they can enter their payment information and complete the transaction quickly and securely"
+          title="Seeking further understanding of payment links?"
+          description="Payment links are a convenient and straightforward way to collect payments online. These are unique URLs that direct customers to a secure payment page, where they can enter their payment information and complete the transaction quickly and securely"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

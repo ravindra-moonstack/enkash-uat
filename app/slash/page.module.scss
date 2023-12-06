@@ -106,7 +106,7 @@
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -80px;
       @include bp-md {
         top: -100px;
         left: -100px;
@@ -124,7 +124,7 @@
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -80px;
       @include bp-md {
         top: -50px;
         left: 200px;
@@ -135,13 +135,9 @@
 
 .more_cards {
   background-color: $color-white;
-  padding-top: 100px;
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
+  padding: 100px 50px 50px 50px;
   @include bp-md {
-    padding-left: 200px;
-    padding-right: 200px;
+    padding: 0px 200px;
   }
 
   .section {
@@ -158,7 +154,7 @@
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -80px;
       @include bp-md {
         top: -50px;
         left: 200px;
@@ -173,7 +169,7 @@
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -80px;
       @include bp-md {
         top: -100px;
         left: -100px;
@@ -198,26 +194,23 @@
 }
 
 .fourth_row {
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding: 56px 40px;
   background-color: $color-indi-volt;
   @include bp-md {
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding: 110px 90px;
   }
 
   .lottie_container {
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 300px;
+    @include bp-md {
+      width: 400px;
+    }
   }
   .lottie_second_container {
-    padding-top: 30px;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 300px;
+    @include bp-md {
+      width: 450px;
+    }
   }
 }
 

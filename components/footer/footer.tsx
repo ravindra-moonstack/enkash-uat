@@ -79,7 +79,7 @@ const Footer = () => {
           <div className={` ${styles.footer_links_col}`}>
             <div>
               <div className={styles.freedom_card_box}>
-                <h4 className={`${styles.title}`}>Freedom</h4>
+                <h4 className={`${styles.title}`}>Slash</h4>
               </div>
               <ul>
                 <li>
@@ -131,7 +131,7 @@ const Footer = () => {
         <div className="col-6 col-md-3">
           <div className={`${styles.footer_links_col}`}>
             <div>
-              <h4 className={`col-12 ${styles.title}`}>Xpenz</h4>
+              <h4 className={`col-12 ${styles.title}`}>OfEx</h4>
 
               <ul>
                 <li>

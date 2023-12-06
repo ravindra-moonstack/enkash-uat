@@ -26,7 +26,7 @@ export { default as rewardsPlatformFilled } from "./img/employee-reward-filled.s
 export { default as channelIncentive } from "./img/channel-filled.svg";
 export { default as channelIncentiveFilled } from "./img/channel-incentive-filled.svg";
 
-//Xpenz
+//ofex
 export { default as budgetAndAndvances } from "./img/budgets-and-advances.png";
 export { default as budgetAndAndvancesFilled } from "./img/budget-and-advances-filled.png";
 export { default as hierarchyAndControls } from "./img/hierarchy-and-controls.png";
@@ -64,7 +64,7 @@ export { default as taxPaymentFilled } from "./img/tax-payment-filled.png";
 export { default as rentalPayments } from "./img/rental-payments.png";
 export { default as rentalPaymentsFilled } from "./img/rental-payments-filled.png";
 
-//freedom
+//slash
 export { default as saas } from "./img/saas.svg";
 export { default as saasFilled } from "./img/saas-filled.svg";
 export { default as tne } from "./img/tne.svg";

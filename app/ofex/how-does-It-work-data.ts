@@ -9,8 +9,8 @@ import iconSeven from "./img/icon-seven.svg";
 const dataSets = [
   {
     imageSrc: iconOne,
-    altText: "Xpenz makes sure that your business expenses are paid on time",
-    heading: "Xpenz makes sure that your business expenses are paid on time",
+    altText: "OfEx makes sure that your business expenses are paid on time",
+    heading: "OfEx makes sure that your business expenses are paid on time",
   },
   {
     imageSrc: iconTwo,

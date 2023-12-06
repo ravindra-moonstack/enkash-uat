@@ -165,61 +165,31 @@
 /* Padding Classes */
 
 .row-padding {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding: 36px 25px;
   @include bp-md {
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 110px;
-    padding-bottom: 80px;
+    padding: 110px 90px;
   }
 }
 
 .row-padding-bottom-none {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 36px;
-  padding-bottom: 0px;
+  padding: 36px 25px 0px 25px;
   @include bp-md {
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 110px;
-    padding-bottom: 0px;
+    padding: 110px 90px 0px 90px;
   }
 }
 
 .row-padding-top-none {
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 0px;
-  padding-bottom: 36px;
+  padding: 0px 25px 36px 25px;
   @include bp-md {
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 0px;
-    padding-bottom: 80px;
+    padding: 0px 90px 80px 90px;
   }
 }
 
 .row-padding-x-only {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding: 0px 25px;
   @include bp-md {
-    padding-left: 90px;
-    padding-right: 90px;
+    padding: 0px 90px;
   }
-}
-
-/* Gradient Classes */
-
-.blue_grad_bg_one {
-  background: radial-gradient(
-    20% 70% at 50% 50%,
-    #1c5af4 0%,
-    rgba(28, 90, 244, 0) 86.87%
-  );
 }
 
 /* Header Configuration */
@@ -252,12 +222,6 @@
 
 body {
   font-family: "Bricolage Grotesque", sans-serif;
-}
-
-/* Other Classes */
-
-.cursor-pointer {
-  cursor: pointer;
 }
 
 /* Common Vertical scroll*/
@@ -295,4 +259,8 @@ body {
   @include bp-md {
     display: block;
   }
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }

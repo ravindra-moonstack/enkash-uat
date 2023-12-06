@@ -13,7 +13,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -41,7 +40,7 @@ const scanAndDropReceipts = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Xpenz |${space}`}
+                title={`OfEx |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
@@ -130,11 +129,18 @@ const scanAndDropReceipts = () => {
                 "Simply take a photo of the receipt and drop it on EnKash. Use an integrated WhatsApp bot to create expenses on the go.",
             },
             {
-              itemArray: ["View and check", "Compliance"],
+              itemArray: ["View and", "check"],
               oldWayDescription:
-                "It is difficult to search invoices to match them with the manual record.Written notations have to be made to trace the payment and approvals.",
+                "It is difficult to search invoices to match them with the manual record.",
               newWayDescription:
-                "Conduct a smart search on the system to view and check receipts.Clear checking and approval trails for compliance and audits.",
+                "Conduct a smart search on the system to view and check receipts.",
+            },
+            {
+              itemArray: ["Compliance"],
+              oldWayDescription:
+                "Written notations have to be made to trace the payment and approvals.",
+              newWayDescription:
+                "Clear checking and approval trails for compliance and audits.",
             },
           ]}
         />
@@ -161,13 +167,13 @@ const scanAndDropReceipts = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="OCR Technology"
-              description="Automatically scan and collect details from receipts using OCR, eliminating the need for manual entry."
+              description="Automatically scan and collect details from receipts using OCR, eliminating the need for manual entry"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="WhatsApp Integration"
-              description="Make it easy for employees to submit receipts on the go using WhatsApp."
+              description="Make it easy for employees to submit receipts on the go using WhatsApp"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -190,20 +196,20 @@ const scanAndDropReceipts = () => {
                   </div>
                 </>
               }
-              description="Streamline record-keeping by dropping receipts at your convenience."
+              description="Streamline record-keeping by dropping receipts at your convenience"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Link Receipts to Expenses"
-              description="Easily link your dropped electronic receipts to expenses anytime."
+              description="Easily link your dropped electronic receipts to expenses anytime"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Download Receipts in One Click"
-              description="Gain overall control over the business expense reimbursement process by downloading all receipts in just one click."
+              whiteTitle="One-click receipt download"
+              description="Gain overall control over the business expense reimbursement process by downloading all receipts in just one click"
             />
           </div>
         </div>
@@ -239,7 +245,7 @@ const scanAndDropReceipts = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how digital receipt management will change the way you track and record spends!"
+          title="Learn how digital receipt management can revolutionize the way you work!"
         />
       </div>
       <div
@@ -250,7 +256,7 @@ const scanAndDropReceipts = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about digital receipt management in detail."
+            title="Don’t worry! Our FAQs section will help you learn about digital receipt management in detail"
             color="black"
             size="h4"
           />
@@ -259,7 +265,7 @@ const scanAndDropReceipts = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
-        
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
@@ -289,7 +295,7 @@ const scanAndDropReceipts = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Managing digital receipts effectively can be achieved through Xpenz's comprehensive digital receipt management solution. With this technology, you can effortlessly capture, store, and organize digital receipts, ensuring they are readily accessible when needed. This system, including the scan & drop receipt feature, allows for quick and easy digitization of paper-based receipts, saving time and reducing the risk of losing critical financial records."
+                  title="Managing digital receipts effectively can be achieved through OfEx's comprehensive digital receipt management solution. This technology allows for the effortless capture, storage, and organization of digital receipts. It includes the scan & drop receipt feature for quick digitization of paper-based receipts, saving time and reducing the risk of losing critical financial records."
                 />
               </div>
               <div className="mb-2">
@@ -305,7 +311,7 @@ const scanAndDropReceipts = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Receipt management involves digitizing and organizing various receipts and invoices related to business expenses. This process helps convert paper-based receipts into digital format, making them easily accessible and searchable. The primary goal of receipt management is to simplify the record-keeping process, provide quick access, ensure accurate data tracking, and enhance overall financial control for businesses."
+                  title="Receipt management involves digitizing and organizing various receipts and invoices related to business expenses. This process helps convert paper-based receipts into digital format, making them easily accessible and searchable, simplifying record-keeping, providing quick access, ensuring accurate data tracking, and enhancing overall financial control."
                 />
               </div>
 
@@ -322,7 +328,7 @@ const scanAndDropReceipts = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Digital receipts are vital in modern business operations due to their efficiency and convenience. With Xpenz's digital receipt management, businesses can benefit from streamlined expense management, reduced paperwork, and better compliance. These digital records provide a clear trail of all financial transactions, making audits and compliance requirements easier to handle. In addition, digital receipts are crucial in improving expense reporting and ensuring minimal manual intervention in the financial processes."
+                  title="Digital receipts are vital in modern business operations due to their efficiency and convenience. With OfEx's digital receipt management, businesses can benefit from streamlined expense processes, reduced paperwork, compliance checks, and a clear trail of financial transactions for audits. They also improve expense reporting and minimize manual intervention."
                 />
               </div>
 
@@ -356,7 +362,7 @@ const scanAndDropReceipts = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Receipt management and invoice management, although related, serve different purposes. Receipt management by Xpenz primarily focuses on capturing and organizing various receipts related to business expenses. It streamlines converting paper-based receipts into digital format for efficient tracking and compliance. On the other hand, invoice management typically involves handling and processing invoices from vendors, ensuring timely payments, and tracking accounts payable."
+                  title="Receipt management by OfEx primarily focuses on capturing and organizing various receipts related to business expenses. It streamlines converting paper-based receipts into digital format. On the other hand, invoice management typically involves handling and processing invoices from vendors, ensuring timely payments, and tracking accounts payable."
                 />
               </div>
             </>

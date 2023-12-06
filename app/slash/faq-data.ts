@@ -23,7 +23,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "In most instances, corporate business credit cards are considered to be credit cards for business purposes, and business cards are issued to smaller and larger businesses. In many instances, the other difference could be the credit limit provided and the fees charged on each card type. Other than these differences, corporate cards and business cards offer more or less the same features",
+          "In most instances, corporate business credit cards are considered to be credit cards for business purposes, and business cards are issued to smaller and larger businesses. In many instances, the other difference could be the credit limit provided and the fees charged on each card type. Other than these differences, corporate cards and business cards offer more or less the same features.",
       },
     ],
   },
@@ -85,7 +85,7 @@ const faqData = [
           "Reloadable: Users can reload funds onto the card, allowing for continued use over time",
           "Security: Prepaid cards offer enhanced security compared to cash, minimizing the risk of loss or theft. In case of loss or theft, the card can be promptly deactivated",
           "Budget Control: Prepaid cards promote budget control by limiting spending to the amount loaded onto the card",
-          "Convenience: Prepaid cards can be used for a variety of transactions, including online and in-store purchases, bill payments, etc.",
+          "Convenience: Prepaid cards can be used for a variety of transactions, including online and in-store purchases, bill payments, etc",
         ],
       },
     ],

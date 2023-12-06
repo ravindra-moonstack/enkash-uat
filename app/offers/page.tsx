@@ -5,7 +5,6 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -13,13 +12,11 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
@@ -49,23 +46,20 @@ const giftCards = () => {
             </div>
             <Heading title="Offers" size="h4" weight="4" />
           </div>
-
-          <div className="d-flex flex-column">
+          <div>
             <Heading
-              title="Unlock exclusive"
+              title="Unlock exclusive "
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading
-                title={`offers${space}`}
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading title="on SaaS" color="white" size="h2" weight="7" />
-            </div>
+            <Heading
+              title={`offers${space}`}
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading title="on SaaS" color="white" size="h2" weight="7" />
 
             <Heading
               title={`subscriptions${space}`}
@@ -195,7 +189,7 @@ const giftCards = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Regularly Updated Offers"
-                description="Stay ahead of the curve with the best deals for your business needs."
+                description="Stay ahead of the curve with the best deals for your business needs"
               />
             </div>
           </div>
@@ -209,7 +203,7 @@ const giftCards = () => {
               <div className="text-center">
                 <div>
                   <Heading
-                    title={`Make your ${space}`}
+                    title={`Make your${space}`}
                     color="white"
                     size="h1"
                     weight="6"

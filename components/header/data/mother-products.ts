@@ -6,14 +6,14 @@ export const motherProducts = [
     link: "/olympus",
   },
   {
-    name: "Freedom",
+    name: "Slash",
     description: "Simplify corporate spending with flexible card solutions",
-    link: "/freedom",
+    link: "/slash",
   },
   {
-    name: "Xpenz",
+    name: "ofEx",
     description: "Track employee expenses with a highly customizable platform",
-    link: "/xpenz",
+    link: "/ofex",
   },
   {
     name: "Loyalty Lounge",

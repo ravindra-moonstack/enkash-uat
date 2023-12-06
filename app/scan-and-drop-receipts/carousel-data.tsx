@@ -6,13 +6,14 @@ import iconFour from "./img/icon-four.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Login to EnKash and go to the Xpenz section",
-    title: "Login to EnKash and go to the Xpenz section",
+    alt: "Login to EnKash and go to the OfEx section",
+    title: "Login to EnKash and go to the OfEx section",
   },
   {
     image: iconTwo,
     alt: "Go to Drop Receipts as visible on the top and store all your receipts on the go",
-    title: "Go to Drop Receipts as visible on the top",
+    title:
+      "Go to Drop Receipts as visible on the top and store all your receipts on the go",
   },
   {
     image: iconThree,

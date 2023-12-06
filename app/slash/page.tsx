@@ -48,28 +48,33 @@ const freedom = () => {
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="F" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="reedom" size="h1" weight="7" />
+            <Heading title="S" color="rainy-blue" size="h1" weight="7" />
+            <Heading title="lash" size="h1" weight="7" />
           </div>
-          <div className="d-flex flex-column">
+          <div>
             <Heading
-              title=" Purpose-built business cards"
+              title="Purpose-built corporate cards"
               color="white"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading title={`for all your${space}`} color="white" size="h2" />
-              <Heading
-                title="credit and prepaid needs"
-                color="rainy-blue"
-                size="h2"
-              />
-            </div>
+            <Heading
+              title={`for all your${space}`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="credit and prepaid"
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
           </div>
           <div className="mt-4 mobile-only">
             <Heading
-              title="Issue purpose-built corporate cards to your employees. Set spending limits and controls, track spending in real-time to optimize cash flow, streamline operations, reduce paperwork, and save more"
+              title="Set spend limits and controls, track real-time cash flow spends, streamline 
+              operations and reduce paperwork along with a DIY-card module"
               color="white"
               size="h6"
               weight="5"
@@ -77,7 +82,7 @@ const freedom = () => {
           </div>
           <div className="mt-4 desktop-only">
             <Heading
-              title="Issue purpose-built corporate cards to your employees. Set spending limits and controls, track spending in real-time to optimize cash flow, streamline operations, reduce paperwork, and save more"
+              title="Set spend limits and controls, track real-time cash flow spends, streamline operations and reduce paperwork along with a DIY-card module"
               color="white"
               size="h5"
               weight="5"
@@ -106,8 +111,8 @@ const freedom = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Purchase or P Cards"
-              description="Streamline procurement, control expenses, and enhance efficiency for your business, all while reducing paperwork and risk of fraud"
+              title="Corporate Credit Cards"
+              description="Simplify business payments, optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions powered by banks and financial institutions"
               theme="blue"
             />
           </div>
@@ -141,8 +146,8 @@ const freedom = () => {
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
-              title="Travel and Expense Cards"
-              description="Control corporate travel expenses effortlessly, ensure budget compliance, and eliminate fraud risk with smart travel and expense physical and virtual cards for streamlined travel expense management"
+              title="Prepaid Cards"
+              description="Allocate easy-to-use prepaid cards like meal and fuel cards to your employees and simplify your business processes"
               theme="blue"
             />
           </div>
@@ -150,8 +155,8 @@ const freedom = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Meal Cards"
-              description="Simplify food expenses for your employees with secure, easy-to-track prepaid physical and virtual meal cards, offering control, convenience, and tax savings, an all-in-one solution"
+              title="Virtual Cards"
+              description="Make it easy for your modern business to track and reconcile all payments with the new-age and innovative virtual cards"
               theme="blue"
             />
           </div>
@@ -182,16 +187,16 @@ const freedom = () => {
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="Digital Marketing Cards"
-            description="Take control of your digital marketing budget with purpose-based corporate business credit cards, set custom limits, and streamline campaign management for better performance and cost management"
+            title="DIY card module"
+            description="A unique feature that helps you customize cards, workflow, and dashboard as per business needs"
             theme="green"
           />
         </div>
 
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
-            title="SaaS Cards"
-            description="Simplify SaaS subscription with unified billing, automated invoicing, and actionable insights to optimize spending for your organization"
+            title="Spend Control"
+            description="It ensures timely payments with decentralization of spend with total control"
             theme="green"
           />
         </div>
@@ -253,20 +258,19 @@ const freedom = () => {
       </div>
 
       <div className="row bg-white row-padding">
-        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
+        <div className="text-center">
           <Heading
-            title={`EnKash does${space}`}
+            title={`Slash the hassle of${space}`}
             size="h1"
             color="black"
             weight="6"
           />
           <Heading
-            title={`the heavy lifting${space}`}
+            title={`managing business expenses with EnKash${space}`}
             size="h1"
             color="equity-blue"
             weight="6"
           />
-          <Heading title="for you." size="h1" color="black" weight="6" />
         </div>
       </div>
 
@@ -322,7 +326,7 @@ const freedom = () => {
                 "Instant and digital, both physical and virtual cards can be issued within minutes of approval and can be activated immediately, providing quick access to funds.",
             },
             {
-              itemArray: ["Expense", "tracking"],
+              itemArray: ["Expense", "Tracking"],
               oldWayDescription:
                 "Manual and tedious, requiring employees to collect and submit receipts.",
               newWayDescription:
@@ -333,7 +337,7 @@ const freedom = () => {
               oldWayDescription:
                 "Complex and error-prone, requiring manual matching of transactions against receipts and expense reports.",
               newWayDescription:
-                "Automated and seamless, automatically reconciling transactions against receipts and expense reports.",
+                "Automated and seamless, reconciling transactions against receipts and expense reports.",
             },
             {
               itemArray: ["Visibility &", "Control"],
@@ -343,7 +347,7 @@ const freedom = () => {
                 "Finance teams have complete visibility and control over employee spending.",
             },
             {
-              itemArray: ["Employee", "experience"],
+              itemArray: ["Employee", "Experience"],
               oldWayDescription:
                 "Employees have to submit expense reports and wait for reimbursement.",
               newWayDescription:
@@ -384,7 +388,7 @@ const freedom = () => {
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Streamline Card Management "
+              whiteTitle="Card Management"
               description="You can easily issue and manage business credit, prepaid, and virtual cards for your team. To make spending easier and more accountable"
               ctaColor="blue"
             />
@@ -428,7 +432,7 @@ const freedom = () => {
           <div className="me-4">
             <GetStartedCard
               whiteTitle="Quick Disbursement"
-              description="Do you need to issue a card for an unexpected expense? The quick disbursement feature makes it easy. You can issue a virtual card in minutes, and your team can start spending immediatel"
+              description="The quick disbursement feature helps issue a virtual card in minutes, and your team can start spending immediately"
               ctaColor="blue"
             />
           </div>
@@ -443,7 +447,10 @@ const freedom = () => {
       </div>
 
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Freedom Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how Slash can benefit your business and employees!"
+        />
       </div>
 
       <div
@@ -472,7 +479,7 @@ const freedom = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Expense Management?"
+            title="Seeking further understanding of slash?"
             size="h3"
             color="white"
           />
@@ -484,7 +491,7 @@ const freedom = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Seeking further understanding of freedom cards?"
+          title="Customizable cards for corporate expenses"
           description="'Freedom Cards' are purpose-built business credit, prepaid, and virtual cards designed for various corporate needs such as travel, marketing, SaaS, fuel, meals, etc. Powered by banks and financial institutions, these cards enable businesses to issue customized corporate cards, set spending limits, and track expenses in real time."
         />
       </div>
@@ -553,7 +560,7 @@ const freedom = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="These virtual cards can be used for rental payments, tax payments, and other business-related expenses"
+                  title="These virtual cards can be used for rental payments, tax payments, and other business-related expenses."
                 />
               </div>
 

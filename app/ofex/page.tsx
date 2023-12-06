@@ -12,7 +12,6 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -40,7 +39,7 @@ export const metadata: Metadata = {
     "EnKash automated expense management platform keeps track of budgets and ensures that spends are within limits. Automating expense management saves time & transparency.Book Demo Now !!",
 };
 
-const xpenz = () => {
+const OfEx = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -50,19 +49,22 @@ const xpenz = () => {
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="X" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="penz" size="h1" weight="7" />
+            <Heading title="O" color="rainy-blue" size="h1" weight="7" />
+            <Heading title="fEx" size="h1" weight="7" />
           </div>
-          <div className="d-flex flex-column">
+          <div className="d-inline">
             <Heading
-              title="Improve expense management"
+              title="Improve business expense management "
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-
-            <Heading title="with advanced AI and ML" color="white" size="h2" />
-            <Heading title="powered technology" color="white" size="h2" />
+            <Heading
+              title="with advanced technology"
+              color="white"
+              size="h2"
+              weight="7"
+            />
           </div>
           <div className="mt-4 mobile-only">
             <Heading
@@ -94,14 +96,14 @@ const xpenz = () => {
           <LottieClientComponent animationData={expense} loop={true} />
         </div>
       </div>
-      <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
+      <div className={`${styles.second_row} bg-white row d-flex`}>
         <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={officeImg} />
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Budgets and advances"
+              title="Budget and Advances"
               description="Set budgets for each department or function and provide advances as per projections and past usage"
               theme="blue"
             />
@@ -136,7 +138,7 @@ const xpenz = () => {
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
-              title="Hierarchy and controls"
+              title="Hierarchy and Controls"
               description="Use proper controls using department hierarchies to manage your expenses with ease and without delays"
               theme="blue"
             />
@@ -179,7 +181,7 @@ const xpenz = () => {
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
             title="Policy and Approval Flows"
-            description="Choose an approval matrix(auto, multi, custom, hierarchical) that works best for your business and create and maintain an aligned approval process for all kinds of spends"
+            description="Choose an approval matrix (auto, multi, custom, hierarchical) that works best for your business and create and maintain an aligned approval process for all kinds of spends"
             theme="green"
           />
         </div>
@@ -268,18 +270,6 @@ const xpenz = () => {
               <Heading title="Visibility" size="h5" color="white" weight="7" />
             </div>
           </div>
-
-          <div className="mb-4 text-md-center">
-            <Image
-              src={heavyLiftingIconFour}
-              alt="coins icon"
-              className="mb-4"
-            />
-            <div className="d-flex flex-column">
-              <Heading title="Spend" size="h5" color="white" weight="7" />
-              <Heading title="Control" size="h5" color="white" weight="7" />
-            </div>
-          </div>
         </div>
       </div>
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
@@ -290,7 +280,7 @@ const xpenz = () => {
               oldWayDescription:
                 "Manual expense reporting is time-consuming and prone to errors.",
               newWayDescription:
-                "EnKash’s Xpenz platform automates the expense recording, leading to zero errors.",
+                "EnKash’s OfEx platform automates the expense recording, leading to zero errors.",
             },
             {
               itemArray: ["Operational", "Efficiency"],
@@ -318,7 +308,7 @@ const xpenz = () => {
               oldWayDescription:
                 "The old reimbursement processes require form filling, paperwork, and proof of expenditure as receipts, causing delays.",
               newWayDescription:
-                "EnKash’s Xpenz drop receipts feature  enables you and your employees to capture and submit expenses on the go from anywhere easily.",
+                "EnKash’s OfEx drop receipts feature  enables you and your employees to capture and submit expenses on the go from anywhere easily.",
             },
           ]}
         />
@@ -355,42 +345,57 @@ const xpenz = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Smart audits"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Smart"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Audits"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Automatic expense data extraction with OCR technology and smart audit alerts for duplicate entries by submitters and approvers"
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Real-time alerts"
+              whiteTitle="Real-Time Alerts"
               description="Enforcing expense policy compliance and fraud risk reduction with real-time alerts across the approval hierarchy"
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Customized approval workflow"
+              whiteTitle="Customized Approval Flow"
               description="Empowering businesses to create customized expense approval processes based on employee roles, expense categories, hierarchy, and single or multiple levels"
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Corporate credit card integration"
+              whiteTitle="Credit Card Integration"
               description="Seamless integration with corporate credit cards, enabling businesses to track and manage credit card expenses"
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Integration with HRMS, accounting, and ERP systems"
+              whiteTitle="HRMS and ERP Integration"
               description="Seamless Integration with HRMS, accounting softwares like Zoho, Tally, Quickbooks, and ERP Systems- SAP and Oracle Netsuite, for automated data exchange and elimination of manual data entry and reconciliation"
               ctaColor="blue"
             />
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Robust business intelligence and custom reporting"
+              whiteTitle="Custom Reporting"
               description="Rich business intelligence for custom reports, insights dashboard, and expense analytics for informed decision-making"
               ctaColor="blue"
             />
@@ -399,7 +404,10 @@ const xpenz = () => {
       </div>
 
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Expense Management Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how OfEX can revolutionize the way you work!"
+        />
       </div>
 
       <div
@@ -410,7 +418,7 @@ const xpenz = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don’t worry! Our FAQs Section will Help you Learn about Xpenz in detail"
+            title="Don’t worry! Our FAQs Section will Help you Learn about OfEx in detail"
             color="black"
             size="h4"
           />
@@ -419,7 +427,7 @@ const xpenz = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
-        
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
@@ -428,7 +436,7 @@ const xpenz = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Expense Management?"
+            title="Seeking further understanding of OfEx?"
             size="h3"
             color="white"
           />
@@ -440,7 +448,7 @@ const xpenz = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Seeking Further Understanding of Xpenz?"
+          title="Seeking Further Understanding of OfEx?"
           description="Expense management is the process of working around a company’s budget and expenses, managing approval, reports, and reimbursements raised by employees."
         />
       </div>
@@ -455,95 +463,89 @@ const xpenz = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Types of expense management"
+                  title="What are the different types of expense management?"
                 />
               </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Expense management can be divided into the following categories."
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="Advance and adjust expenses: "
+                />
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Employees draw advances for business expenses, submitting supporting documents for reimbursement. Advances may be replenished as needed."
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="Spend and claim reimbursement: "
+                />
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Employees pay expenses upfront and claim reimbursement with approved paperwork, ensuring a seamless reimbursement process."
+                />
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="Ordering, invoicing, and payment: "
+                />
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Ideal for planned purchases, this involves raising a request, procurement sourcing vendors, and payment upon completion, ensuring efficient expense control."
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="6"
+                  title="Ad-hoc and emergency: "
+                />
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Senior employees with discretionary powers can incur and get reimbursed for ad-hoc or emergency expenses."
+                />
+              </div>
+
               <div className="mb-5">
                 <Heading
                   size="h6"
                   color="black"
-                  weight="4"
-                  title="While expenses can be classified into fixed, variable, intermittent, and discretionary, the management of expenses can be more complex. Expense management can be divided into the following categories."
+                  weight="6"
+                  title="Advanced card and spend management platform: "
                 />
-              </div>
-              <div className="mb-2">
                 <Heading
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Advance and adjust expenses"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Under this expense, employees or teams who incur business expenses can draw an advance from the company. Once the expense is paid for, they can submit the supporting documents to support the spend. The advance may be replenished to continue the expense payment if required."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Spend and claim reimbursement"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Under this type of expense, the team or employee will pay for the expense out of pocket (after taking approvals to go ahead with the expense) and then claim the amount by submitting the supporting paperwork to get reimbursed."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Ordering, invoicing, and payment"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="For this expense, a request is raised, the procurement department sources vendors and payment is made once the work is completed and details are checked. This type of expense management works best for planned purchases for more significant expenses."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Ad-hoc and emergency"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Only senior employees with discretionary powers can sanction or undertake such expenses during emergencies and get them reimbursed."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Advanced card and spend management platform"
-                />
-              </div>
-              <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="A spend management platform with the option to issue, track, and manage virtual cards to employees supports all the above types of expense management while providing complete control and visibility."
+                  title="Utilizing virtual cards, this platform supports all expense management types, offering complete control and visibility over expenditures."
                 />
               </div>
 
@@ -560,34 +562,26 @@ const xpenz = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Expense management is crucial to ensure that the financial health of the business is at an optimum level. Here are some aspects that are affected by expense management."
+                  title="Expense management is crucial to ensure that the business's financial health is at an optimum level. Here are some aspects that are affected by expense management."
                 />
               </div>
               <div className="mb-5">
                 <ul>
                   <li>
-                    Expense management keeps track of budgets and ensures that
-                    spends are within limits
+                    Expense management is crucial for maintaining optimal
+                    financial health
                   </li>
                   <li>
-                    It affects the cash flow of the business and regulates the
-                    business’s ability to control the cost of finance
+                    It helps businesses control costs, improve cash flow, and
+                    mitigate risks
                   </li>
                   <li>
-                    Optimum expense management helps keep the business running
-                    and ensures rebates and discounts
+                    It ensures compliance with regulations and enhances employee
+                    morale
                   </li>
                   <li>
-                    Mitigates any instances of fraud, minimizes risks, and
-                    ensures that your business meets compliance requirements
-                  </li>
-                  <li>
-                    Efficient expense management helps you keep employee morale
-                    up with timely reimbursements
-                  </li>
-                  <li>
-                    Helps improve profit margin by pinpointing unnecessary or
-                    excessive spending and controlling costs
+                    It helps businesses pinpoint unnecessary spending and
+                    control costs, improving profit margins
                   </li>
                 </ul>
               </div>
@@ -597,7 +591,7 @@ const xpenz = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Challenges in the expense management process"
+                  title="What are the challenges in the expense management process?"
                 />
               </div>
               <div className="mb-3">
@@ -610,17 +604,23 @@ const xpenz = () => {
               </div>
               <div className="mb-5">
                 <ul>
-                  <li>Poor visibility into data around expenses</li>
-                  <li>Manual errors or missing data</li>
-                  <li>Complicated work processes</li>
-                  <li>Poor expense reporting processes</li>
+                  <li>
+                    Poor visibility into data around expenses and manual errors
+                    or missing data
+                  </li>
+                  <li>
+                    Complicated work processes and poor expense reporting
+                    processes
+                  </li>
                   <li>Instances of fraud and increased risk</li>
-                  <li>Lack of compliance with expense policies</li>
+                  <li>
+                    Lack of compliance with expense policies and poor visibility
+                    into budgets
+                  </li>
                   <li>
                     Poor employee morale due to complicated reimbursement
                     processes
                   </li>
-                  <li>No control or poor visibility into budgets</li>
                 </ul>
               </div>
 
@@ -637,7 +637,7 @@ const xpenz = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="An expense report is an itemized report that contains the details of expenses that have been incurred and paid for on behalf of the company. An expense report can either be created by an employee or a department to showcase the expense details and categories that they have incurred for a particular period."
+                  title="An expense report is an itemized report that contains the details of expenses that have been incurred and paid for on behalf of the company. An employee or a department can create an expense report to showcase the expense details and categories they have incurred for a particular period."
                 />
               </div>
             </>
@@ -648,4 +648,4 @@ const xpenz = () => {
   );
 };
 
-export default xpenz;
+export default OfEx;

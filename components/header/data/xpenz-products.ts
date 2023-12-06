@@ -17,7 +17,7 @@ const xpenzProducts = [
   {
     subtitle: "Default",
     currentHeading: {
-      name: "Xpenz ",
+      name: "ofEx ",
       description:
         "Automate your company's AP, AR, and bank reconciliation seamlessly",
     },
@@ -65,11 +65,11 @@ const xpenzProducts = [
       //   link: "/spend-control",
       // },
     ],
-    footerText: "Optimize business spends with xpenz",
-    footerMobileText: "Explore Xpenz",
+    footerText: "Optimize business spends with ofEx",
+    footerMobileText: "Explore ofEx",
     footerImg: "xpenz_footer_bg",
-    footerLink: "/xpenz",
-    parentLink: "/xpenz",
+    footerLink: "/ofex",
+    parentLink: "/",
   },
 ];
 

@@ -18,7 +18,7 @@ const faqObject = [
     ],
   },
   {
-    question: "What can I do with a Payment Link sent through EnKash platform?",
+    question: "What can I do with a payment link sent through EnKash platform?",
     answer: [
       {
         heading:
@@ -27,11 +27,11 @@ const faqObject = [
     ],
   },
   {
-    question: "How can I send a Payment Link?",
+    question: "How can I send a payment link?",
     answer: [
       {
         heading:
-          "Sending a Payment Link is a breeze. You can distribute these links through various digital platforms, including email, messaging apps, social media, and websites. This versatility ensures that your customers can easily access and utilize payment links, making it a convenient and efficient way to receive payments.",
+          "Sending a payment link is a breeze. You can distribute these links through various digital platforms, including email, messaging apps, social media, and websites. This versatility ensures that your customers can easily access and utilize payment links, making it a convenient and efficient way to receive payments.",
       },
     ],
   },
@@ -40,7 +40,7 @@ const faqObject = [
     answer: [
       {
         heading:
-          "Yes, EnKash prioritizes security. They employ secure encryption and robust security measures to safeguard sensitive payment information. This protects your business and ensures the security of your customers' data, mitigating the risk of fraud and guaranteeing safe and reliable transactions.",
+          "Yes, EnKash prioritizes security. We employ secure encryption and robust security measures to safeguard sensitive payment information. This protects your business and ensures the security of your customers' data, mitigating the risk of fraud and guaranteeing safe and reliable transactions.",
       },
     ],
   },
@@ -49,7 +49,7 @@ const faqObject = [
     answer: [
       {
         heading:
-          "Online payment tracking through Payment Links creates a comprehensive audit trail of the entire payment process. This invaluable feature simplifies tracking and analysis, providing businesses with the tools to reconcile payments efficiently. The integrated tracking system ensures transparency and accountability in your payment collections.",
+          "Online payment tracking through payment links creates a comprehensive audit trail of the entire payment process. This invaluable feature simplifies tracking and analysis, providing businesses with the tools to reconcile payments efficiently. The integrated tracking system ensures transparency and accountability in your payment collections.",
       },
     ],
   },

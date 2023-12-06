@@ -18,7 +18,7 @@ const dataSets = [
     imageSrc: iconTwo,
     altText: "Customize these corporate business cards for specific purposes",
     heading:
-      "Customize these corporate business cards for specific purposes, such as travel, marketing, SaaS, fuel, meal, etc",
+      "Customize these corporate business cards with a DIY card module for purposes like travel, marketing, SaaS, fuel, meal, etc",
   },
   {
     imageSrc: iconThree,

@@ -13,7 +13,6 @@ import freedomProducts from "@/components/header/data/freedom-products";
 import xpenzProducts from "@/components/header/data/xpenz-products";
 import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-products";
 import motherProducts from "@/components/header/data/mother-products";
-import { solutions } from "@/components/header/data/solutions";
 import resources from "@/components/header/data/resources";
 
 const singupUrl = "";

@@ -18,6 +18,7 @@
 
   .lottie_container {
     width: 350px;
+    margin-top: 30px;
     @include bp-md {
       margin-top: 50px;
       width: 500px;
