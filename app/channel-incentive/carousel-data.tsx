@@ -13,8 +13,8 @@ const carouselData = [
   },
   {
     image: iconTwo,
-    alt: "Go to the channel incentives program under Loyalty Lounge",
-    title: "Go to the channel incentives program under Loyalty Lounge",
+    alt: "Go to the channel incentives program under loyalty lounge",
+    title: "Go to the channel incentives program under loyalty lounge",
   },
   {
     image: iconThree,

@@ -6,8 +6,8 @@ import iconFour from "./img/icon-four.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Login to EnKash and go to the Xpenz section to add policy",
-    title: "Login to EnKash and go to the Xpenz section to add policy",
+    alt: "Login to EnKash and go to the OfEx section to add policy",
+    title: "Login to EnKash and go to the OfEx section to add policy",
   },
   {
     image: iconTwo,

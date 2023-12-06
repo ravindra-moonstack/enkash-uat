@@ -266,7 +266,7 @@ const bulkCollect = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of bulk collect?"
-          description="Bulk collect is an automation feature in EnKash Olympus that sends invoices to multiple customers in one click. This enables businesses to quickly follow up with the customer and keep a check on their business cash flow"
+          description="Bulk collect is an automation feature in EnKash Olympus that sends invoices to multiple customers in one click. This enables businesses to quickly follow up with the customer and keep a check on their business cash flow."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

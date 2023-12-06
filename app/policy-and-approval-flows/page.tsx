@@ -13,7 +13,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -41,7 +40,7 @@ const policyApprovalFlow = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Loyalty Lounge${space}`}
+                title={`OfEx${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
@@ -91,7 +90,7 @@ const policyApprovalFlow = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage expenses effectively, maintain compliance, and optimize the approval processes."
+              title="Manage expenses effectively, maintain compliance, and optimize the approval processes"
               color="white"
               size="h6"
               weight="5"
@@ -173,30 +172,22 @@ const policyApprovalFlow = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex flex-column text-center mb-5">
-          <div>
-            <Heading
-              title={`We understand the${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title="complexities of policies"
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-          </div>
-
+        <div className="d-inline flex-column text-center mb-5">
           <Heading
-            title="and approval workflows"
-            color="equity-blue"
+            title={`Navigate${space}`}
+            color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title="Don’t worry; we will fix them for you!"
+            title="policies and approvals seamlessly "
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading title="with our " color="black" size="h1" weight="6" />
+          <Heading
+            title="smart solutions "
             color="black"
             size="h1"
             weight="6"
@@ -207,27 +198,26 @@ const policyApprovalFlow = () => {
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Customizable Expense Policies"
-                description="Set up your policies for multiple departments/ grades based on expense categories and limits, selecting monthly/yearly frequency
-                "
+                whiteTitle="Customizable Policies"
+                description="Set up your policies for multiple departments/ grades based on expense categories and limits, selecting monthly/yearly frequency"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Seamless Linking"
-                description="Link policies to approval flow without any hassle and avoid rework in creating approval processes."
+                description="Link policies to approval flow without any hassle and avoid rework in creating approval processes"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Flexible Approval Flow"
-                description="Create auto-approval, single-level approval, or multi-level approval flows and use them across policies."
+                description="Create auto-approval, single-level approval, or multi-level approval flows and use them across policies"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Default Approval Flow"
-                description="Apply default approval flow according to user roles if no approval flow is created."
+                description="Apply default approval flow according to user roles if no approval flow is created"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -248,15 +238,14 @@ const policyApprovalFlow = () => {
                     />
                   </>
                 }
-                description="Managers can approve the expenses in bulk at the same time."
+                description="Managers can approve the expenses in bulk at the same time"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Real-Time Alerts"
                 description="
-                Real-time alerts for expense policy violations, enabling businesses to enforce compliance
-               and reduce the risk of fraud"
+                Real-time alerts for expense policy violations, enabling businesses to enforce compliance and reduce the risk of fraud"
               />
             </div>
           </div>
@@ -293,7 +282,7 @@ const policyApprovalFlow = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how our policies and approval flow will revolutionize the way you work!"
+          title="Learn how policies and approval flow can revolutionize the way you work!"
         />
       </div>
       <div
@@ -304,7 +293,7 @@ const policyApprovalFlow = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about approvals in detail."
+            title="Don't worry! Our FAQs section will help you learn about approvals in detail"
             color="black"
             size="h4"
           />
@@ -313,7 +302,7 @@ const policyApprovalFlow = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
-        
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
@@ -322,7 +311,7 @@ const policyApprovalFlow = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of policy and approval flow?"
-          description="Policy and approval flow is a fundamental component of modern business operations, ensuring a well-structured and efficient approach to managing expenses and financial decisions"
+          description="Policy and approval flow is a fundamental component of modern business operations, ensuring a well-structured and efficient approach to managing expenses and financial decisions."
         />
       </div>
 
@@ -331,7 +320,7 @@ const policyApprovalFlow = () => {
           title="Explore our comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -344,34 +333,31 @@ const policyApprovalFlow = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Approval workflows offer many benefits, like"
+                  title="Approval workflows offer many benefits, like:"
                 />
               </div>
               <div className="mb-5">
                 <ul>
-                  <li>The workflows improve control over expenses</li>
-                  <li>Workflows bring transparency across the organization</li>
                   <li>
-                    Approval workflows help prevent resource misuse and promote
-                    adherence to policies and regulations
+                    The workflows improve control over expenses and bring
+                    transparency across the organization
                   </li>
                   <li>
-                    Approval workflows provide structured and well-documented
-                    processes, which prove invaluable during audits
+                    Help in preventing resource misuse and promote adherence to
+                    policies and regulations
                   </li>
                   <li>
-                    They empower organizations to reduce inefficiencies and
-                    streamline processes
+                    Provides structured and well-documented processes, which
+                    prove invaluable during audits
                   </li>
                   <li>
-                    Xpenz's approval flow module is customizable, automates
-                    processes, and ensures compliance while facilitating timely
-                    payments
+                    Is customizable, automates processes, and ensures compliance
+                    while facilitating timely payments
                   </li>
                 </ul>
               </div>
 
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -384,35 +370,27 @@ const policyApprovalFlow = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Approval workflows come in various types, including single-level approvals, multi-level approvals, and auto-approvals. Each type serves a specific purpose, allowing businesses to tailor their approval processes to match the complexity and nature of the expenses or projects."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Auto-approval: This allows you to get approval without intervention—for example, leadership expenses."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Single or multi-level approval: This is an approval flow requiring one or more approvers to approve or reject the expense for the whole department."
+                  title="Approval workflows come in various types, including single-level approvals, multi-level approvals, hierarchical approvals, and auto-approvals."
                 />
               </div>
               <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Hierarchical approval: You can set this approval flow to add submitters, managers, and another admin"
-                />
+                <ul>
+                  <li>
+                    Auto-approval: This allows you to get approval without
+                    intervention—for example, leadership expenses
+                  </li>
+                  <li>
+                    Single or multi-level approval: This flow requires one or
+                    more approvers to approve or reject the department's expense
+                  </li>
+                  <li>
+                    Hierarchical approval: You can set this approval flow to add
+                    submitters, managers, and another admin
+                  </li>
+                </ul>
               </div>
 
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -429,10 +407,10 @@ const policyApprovalFlow = () => {
                 />
               </div>
               <div className="mb-5">
-                <ul>
-                  <li>Create a policy by providing the details required</li>
+                <ol>
                   <li>
-                    Select the category for which the policy will be applicable
+                    Create a policy with the details required and select the
+                    category for the policy
                   </li>
                   <li>
                     Select the range of employee grades along with the amount
@@ -447,13 +425,10 @@ const policyApprovalFlow = () => {
                     linked to the policy
                   </li>
                   <li>
-                    Select the type of approval flow and link it to the policy
-                  </li>
-                  <li>
                     If you do not set the approval flow, default approval will
                     be applicable
                   </li>
-                </ul>
+                </ol>
               </div>
               <div className="mb-2">
                 <Heading
@@ -463,20 +438,12 @@ const policyApprovalFlow = () => {
                   title="Why is approval workflow important?"
                 />
               </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Approval workflows are paramount in modern business operations for several compelling reasons. These structured processes, which facilitate the review and authorization of expenses and financial decisions, serve as a linchpin for organizations seeking efficient control, compliance, and financial accountability. Their importance lies in enabling businesses to curb unnecessary expenditures, ensuring that spending remains within defined limits and complies with company policies and regulations."
-                />
-              </div>
               <div className="mb-5">
                 <Heading
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Moreover, approval workflows promote transparency, granting organizations real-time insights into their financial landscape and fostering better decision-making and resource allocation."
+                  title="The primary reason is that they serve as a linchpin for organizations seeking efficient control, compliance, and financial accountability. Their importance lies in enabling businesses to curb unnecessary expenditures, ensuring that spending remains within defined limits and complies with company policies and regulations."
                 />
               </div>
             </>

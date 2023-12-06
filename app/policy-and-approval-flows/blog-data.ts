@@ -1,36 +1,33 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/04/How-to-modernize-manual-invoice-processing-with-automation.jpg",
-    imageAlt:
-      "From Manual to Automation: How to Modernize Your Invoice Processing Workflow",
-    title: "From Manual to Automation: How to Modernize Your Invoice Processing Workflow",
-    date: "Dec 21, 2021",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Tips-to-improve-business-expense-reimbursement-processes.jpg",
+    imageAlt: "7 Tips to Improve Business Expense Reimbursement Processes",
+    title: "7 Tips to Improve Business Expense Reimbursement Processes",
+    date: "May 09, 2023",
     description:
-      "Invoice processing is a critical component of any organization’s financial operations. However, the traditional manual method of processing invoices can be time-consuming and error-prone...",
-    link: "https://www.enkash.com/resources/blog/how-to-modernize-invoice-processing-workflow/",
+      "A business without any expenses is impossible because you need to spend on various aspects. These include the raw materials that you need to run your core business, the vendors who keep your office working...",
+    link: "https://www.enkash.com/resources/blog/tips-to-improve-expense-reimbursement-processes/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
-    imageAlt:
-      "The Importance of Timely Payment of Tax Under GST",
-    title:
-      "The Importance of Timely Payment of Tax Under GST",
-    date: "Jan 27, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/Types-of-corporate-credit-cards-to-manage-expenses.jpg",
+    imageAlt: "9 types of corporate credit cards to manage expenses",
+    title: "9 types of corporate credit cards to manage expenses",
+    date: "Sep 23, 2022",
     description:
-      "The Goods and Services Tax is a comprehensive tax system introduced in India in 2017 to replace a multitude of indirect taxes. The GST is levied on the supply of goods and services and is collected...",
-    link: "https://www.enkash.com/resources/blog/importance-of-timely-payment-of-tax/",
+      "The corporate credit card has been around the business industry for a while now. While popular banks have been issuing many types of corporate credit cards for years, FinTech platforms are now offering...",
+    link: "https://www.enkash.com/resources/blog/smart-business-expenses-managment/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/04/How-to-file-GST-accurately-on-timely.jpg",
-    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
-    title: "Learn How Virtual Accounts Can Benefit Your Business",
-    date: "Jan 9, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/02/All-you-need-to-know-about-employee-expense-reimbursement.jpg",
+    imageAlt: "All You Need to Know about Employee Expense Reimbursement",
+    title: "All You Need to Know about Employee Expense Reimbursement",
+    date: "Feb 17, 2023",
     description:
-      "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
-    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+      "Employee expense reimbursement is a process where an employer reimburses an employee for expenses incurred while performing job-related tasks. These expenses may include travel, training...",
+    link: "https://www.enkash.com/resources/blog/employee-expense-reimbursement/",
   },
 ];
 

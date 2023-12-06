@@ -13,7 +13,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
@@ -106,7 +105,7 @@ const virtualCard = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Safety", "Concerns"],
+              itemArray: ["Safety Concerns"],
               oldWayDescription:
                 "Physical cards are often at a high risk of getting lost or stolen.",
               newWayDescription:
@@ -128,11 +127,11 @@ const virtualCard = () => {
                 "A virtual card can be issued instantly after the admin’s approval.",
             },
             {
-              itemArray: ["Payment", "Processing"],
+              itemArray: ["Payment Processing"],
               oldWayDescription:
                 "This card requires a longer time to process payment.",
               newWayDescription:
-                "This card can be immediately blocked in case of fraud or misuse.",
+                "Payments are processed instantly in this card and it can also be blocked immediately in case of fraud or misuse",
             },
           ]}
         />
@@ -202,19 +201,20 @@ const virtualCard = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Customizable Cards"
-              description="Virtual cards can be customized for different use cases like vendor payments, rental, GST, and even for business-related expenses like digital marketing, travel and fuel cards, etc"
+              description="Virtual cards can be customized for different use cases like vendor payments, rental, GST, and even for other business-related
+              expenses like digital marketing, travel and fuel cards, etc"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="No Additional cost"
-              description="Having a virtual cost doesn’t come with an extra cost"
+              description="Having a virtual card doesn’t come with an extra cost"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Improved Vendor Relationships"
-              description="Virtual cards allow your businesses to make payments quickly and securely, which improves relations with your vendors and helps you negotiate better deals"
+              whiteTitle="Vendor Relationships"
+              description="Virtual cards enable your business to make payments quickly and securely, which improves relations with your vendors and helps you negotiate better deals"
             />
           </div>
         </div>
@@ -263,7 +263,6 @@ const virtualCard = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
-       
 
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x

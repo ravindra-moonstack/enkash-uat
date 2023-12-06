@@ -50,7 +50,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Expense reimbursement is typically not considered part of an individual's salary. Salaries are fixed amounts paid regularly for the work performed, while expense reimbursement involves compensating employees for out-of-pocket expenses incurred while performing job-related tasks. Reimbursements are separate from the base salary and are meant to cover specific, documented expenses such as travel, meals, or other business-related costs.",
+          "Expense reimbursement is typically not considered part of an individual's salary. Salaries are fixed amounts paid regularly for the work performed, while expense reimbursement involves compensating employees for out-of-pocket expenses incurred while performing job-related tasks.",
       },
     ],
   },

@@ -73,7 +73,7 @@ const invoices = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Automate and streamline your invoicing process for recurring transactions, gain complete visibility of sales and payments, and create bulk invoices with embedded payment links."
+              title="Automate and streamline your invoicing process for recurring transactions, gain complete visibility of sales and payments, and create bulk invoices with embedded payment links"
               color="white"
               size="h6"
               weight="5"
@@ -227,13 +227,13 @@ const invoices = () => {
               <div className="text-center">
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Streamline your Invoicing process with"
+                    title="Streamline your invoicing process with"
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="with bulk actionsn"
+                    title="with bulk actions"
                     color="rainy-blue"
                     size="h1"
                     weight="6"

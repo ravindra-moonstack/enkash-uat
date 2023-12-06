@@ -4,30 +4,30 @@ const blogData = [
       "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_26.d1a8b0d7.jpg",
     imageAlt: "Rewards Programs -The Way to Pay More, Earn More",
     title: "Rewards Programs -The Way to Pay More, Earn More",
-    date: "Aug 02, 2023",
+    date: "Sep 26, 2022",
     description:
       "Corporate cards with attractive rewards programs are one of the most popular choices in the business world these days. Their ease of usage coupled with their immense flexibility makes...",
     link: "https://www.enkash.com/resources/blog/corporate-cards-benefits-rewards-program/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Tips-to-improve-business-expense-reimbursement-processes.jpg",
-    imageAlt: "7 Tips to Improve Business Expense Reimbursement Processes",
-    title: "7 Tips to Improve Business Expense Reimbursement Processes",
-    date: "May 09, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/06/Employee-Retention-Strategies-to-Help-Your-Startup-Thrive.jpg",
+    imageAlt: "8 Employee Retention Strategies for Startup Success",
+    title: "8 Employee Retention Strategies for Startup Success",
+    date: "June 15, 2023",
     description:
-      "A business without any expenses is impossible because you need to spend on various aspects. These include the raw materials that you need to run your core business, the vendors who keep...",
-    link: "https://www.enkash.com/resources/blog/tips-to-improve-expense-reimbursement-processes/",
+      "Running a successful startup requires more than just innovative ideas and cutting-edge technology. It also relies on having a team of talented and dedicated employees who are committed...",
+    link: "https://www.enkash.com/resources/blog/employee-retention-strategies/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Payment-process-guide-for-2023.jpg",
-    imageAlt: "Payment Processing Guide for 2023",
-    title: "Payment Processing Guide for 2023",
-    date: "Aug 10, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/12/HR-Policies.jpg",
+    imageAlt: "Essential HR Policies for a Startup Company",
+    title: "Essential HR Policies for a Startup Company",
+    date: "Dec 20, 2022",
     description:
-      "A business owner needs to perform numerous tedious tasks for the smooth and efficient functioning of their business. Whatever the type of business you own, making your customers..",
-    link: "https://www.enkash.com/resources/blog/payment-processing-guide/",
+      "Human Resources (HR) is an important department for every profitable business. The human resource department forms the organization’s backbone by hiring suitable people. The success of any...",
+    link: "https://www.enkash.com/resources/blog/hr-policies-for-startups/",
   },
 ];
 

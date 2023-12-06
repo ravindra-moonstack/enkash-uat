@@ -22,13 +22,13 @@ const blogData = [
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Possibilities-of-bulk-payment.jpg",
-    imageAlt: "Explore a Wide Range of Possibilities with Bulk Payment",
-    title: "Explore a Wide Range of Possibilities with Bulk Payment",
-    date: "Aug 15, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/07/how-to-handle-overdue-bill-invoices-best-practices-for-collections.jpg",
+    imageAlt: "How to Handle Overdue Invoices: Best Practices for Collections",
+    title: "How to Handle Overdue Invoices: Best Practices for Collections",
+    date: "July 27, 2023",
     description:
-      "As the name suggests, a bulk payment refers to a payment method that lets the payer make multiple debit payments to a bulk list. A bulk list is a list of beneficiaries or accounts..",
-    link: "https://www.enkash.com/resources/blog/possibilities-with-bulk-payment/",
+      "Managing finances is a critical aspect of running any business. Amidst all the challenges a business faces, one of the most common ones is overdue invoices. This is a serious issue as unpaid invoices disrupt...",
+    link: "https://www.enkash.com/resources/blog/how-to-handle-overdue-invoices-best-practices-for-collections/",
   },
 ];
 

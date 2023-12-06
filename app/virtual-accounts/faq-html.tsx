@@ -42,7 +42,7 @@ const FAQHtml = ({ faqData }: any) => {
                   service, real-time updating of their accounts with the
                   payments received, prevention of fraud, and, most important of
                   all, how traceable virtual accounts are to specific customer
-                  accounts and their payments
+                  accounts and their payments.
                 </h4>
               </div>
             }

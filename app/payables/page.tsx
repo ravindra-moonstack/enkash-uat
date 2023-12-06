@@ -29,7 +29,7 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import faqData from "./faq-data";
-import howDoesItWorkData from "./howDoesItWorkData";
+import howDoesItWorkData from "./how-does-It-work-data";
 import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
@@ -37,6 +37,7 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import FAQHtml from "./faq-html";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",
@@ -55,14 +56,14 @@ const payables = () => {
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
             <Heading
-              title={`olympus${space}`}
+              title={`Olympus${space}`}
               color="rainy-blue"
               size="h1"
               weight="7"
             />
-            <Heading title="| payables" size="h1" weight="7" />
+            <Heading title="| Payables" size="h1" weight="7" />
           </div>
-          <div className="d-iline">
+          <div className="d-inline">
             <Heading
               title={`Streamline all accounts payable${space}`}
               color="white"
@@ -70,7 +71,7 @@ const payables = () => {
               weight="7"
             />
             <Heading
-              title="on one platform."
+              title="on one platform"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -159,7 +160,7 @@ const payables = () => {
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
               title="Rental Payments"
-              description="Maintain rental records, manage TDS benefits & pay rent for several locations, all on one platform."
+              description="Maintain rental records, manage TDS benefits & pay rent for several locations, all on one platform"
               theme="blue"
             />
           </div>
@@ -190,7 +191,7 @@ const payables = () => {
 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
-          <div className={styles.lottie_container}>
+          <div className={styles.lottie_first_container}>
             <LottieClientComponent
               animationData={billPayAnimation}
               loop={true}
@@ -199,7 +200,7 @@ const payables = () => {
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="Bill payments"
+            title="Bill Payments"
             description=" Easily manage recurring bills like utility, electricity, etc"
             theme="green"
           />
@@ -289,7 +290,7 @@ const payables = () => {
               oldWayDescription:
                 "Manual invoice processing and data entries are time-consuming, error-prone, and can result in delayed payments.",
               newWayDescription:
-                "Automate vendor onboarding, check incoming invoices, and get approvals to help reduce manual efforts and save time and money.",
+                "Automate vendor onboarding, check incoming invoices, and get approvals to help reduce manual efforts and save time & money.",
             },
             {
               itemArray: ["Process &", "Hierarchy"],
@@ -301,7 +302,7 @@ const payables = () => {
             {
               itemArray: ["Risk &", "Errors"],
               oldWayDescription:
-                "Manual data entries cause errors in the reconciliation process. It can lead to discrepancies in accounting records, making the reconciliation process time-consuming and challenging.",
+                "Manual data entries can cause errors in the reconciliation process leading to discrepancies in accounting records making the process time-consuming and challenging.",
               newWayDescription:
                 "Automating data entry and receipt management can eliminate errors, improve accuracy, and save time during the reconciliation process.",
             },
@@ -316,7 +317,7 @@ const payables = () => {
           ]}
         />
       </div>
-      <div
+      {/* <div
         className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
       >
         <ActionCard
@@ -336,13 +337,13 @@ const payables = () => {
           mainImage={officeImg}
           description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
         />
-      </div>
+      </div> */}
 
       <div className="bg-white row-padding d-flex justify-content-center">
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Faster & Accurate Payments"
+              whiteTitle="Faster Payments"
               description="Automating the payables process fastens it by eliminating manual intervention. It also reduces the chances of errors"
               ctaColor="blue"
             />
@@ -378,7 +379,7 @@ const payables = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Effective invoice & vendor management"
+              whiteTitle="Vendor Management"
               description="Easily upload vendor invoices, do vendor KYC and review vendor performance to manage them better"
               ctaColor="blue"
             />
@@ -392,7 +393,7 @@ const payables = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Streamlining approval workflows"
+              whiteTitle="Streamlined Workflows"
               description="A streamlined approval process can significantly reduce processing time and minimize the risk of delayed payments"
               ctaColor="blue"
             />
@@ -401,7 +402,10 @@ const payables = () => {
       </div>
 
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Payables Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how accounts payable can revolutionize the way you work! "
+        />
       </div>
 
       <div
@@ -412,7 +416,7 @@ const payables = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs Section will Help you Learn about Accounts Payables in detail."
+            title="Don’t worry! Our FAQs section will help you learn about accounts payable in detail."
             color="black"
             size="h4"
           />
@@ -421,7 +425,7 @@ const payables = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
-        
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
@@ -430,7 +434,7 @@ const payables = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Payables?"
+            title="Seeking further understanding of accounts payable?"
             size="h3"
             color="white"
           />
@@ -442,7 +446,7 @@ const payables = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Learn about account payables automation for enhanced efficiency"
+          title="Efficient and easy business payments"
           description="Accounts payable automation is the process by which a business pays its suppliers, service providers, and vendors online"
         />
       </div>
@@ -460,12 +464,13 @@ const payables = () => {
                 />
               </div>
               <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Accounts payable automation means using technology to make business payments, which include vendor payments, rental payments, bill payments, tax payments, and utility payments. Accounts payable automation helps make business payments easy and efficient."
-                />
+                <p>
+                  Accounts payable automation means using technology to make
+                  business payments, which include vendor payments,{" "}
+                  <Link href="/rental-payment">rental payments</Link> , bill
+                  payments, tax payments, and utility payments. Accounts payable
+                  automation helps make business payments easy and efficient.
+                </p>
               </div>
 
               <div className="mb-3">
@@ -518,7 +523,7 @@ const payables = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the benefits of accounts payable automation"
+                  title="What are the benefits of accounts payable automation?"
                 />
               </div>
               <div className="mb-3">
@@ -620,9 +625,9 @@ const payables = () => {
               </div>
               <div className="mb-3">
                 <Heading
-                  size="h4"
+                  size="h5"
                   color="black"
-                  weight="4"
+                  weight="6"
                   title="What is the relationship between cash flow and accounts payable?"
                 />
               </div>

@@ -169,7 +169,7 @@ const rentalPayments = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Payment Reminders"
+              whiteTitle="Automated Reminders"
               description="Enables automated reminders to track due dates, reduce late payments, and improve business cash flow"
             />
           </div>
@@ -259,7 +259,7 @@ const rentalPayments = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of rent payment software?"
-          description="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments. You can use this software to keep a record of all the premises your business rents with details including the number of premises, the rental agreements, the amounts due, the dates on which rents are due, and the details of the landlords. Furthermore, you can also set up the process workflows for rent payments to make the process quicker and more efficient"
+          description="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments. You can use this software to keep a record of all the premises your business rents with details including the number of premises, the rental agreements, the amounts due, the dates on which rents are due, and the details of the landlords. Furthermore, you can also set up the process workflows for rent payments to make the process quicker and more efficient."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
@@ -280,7 +280,7 @@ const rentalPayments = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="There are many reasons to pay rent using a credit card."
+                  title="There are many reasons to pay rent using a credit card:"
                 />
               </div>
               <div className="mb-5">
@@ -314,7 +314,7 @@ const rentalPayments = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Here are some of the main reasons to pay rent using the EnKash portal."
+                  title="Here are some of the main reasons to pay rent using the EnKash portal:"
                 />
               </div>
               <div className="mb-5">
@@ -378,11 +378,7 @@ const rentalPayments = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="You can make multiple rental payment for business through credit cards on the EnKash portal by using our bulk payment option. To do that, ensure that all rental agreements and details are uploaded. Once the records are uploaded, it is simply a matter of setting limits and getting approvals to pay using the card as described above. 
-
-                  Before making the payment, fetch rental records, view the records, adjust for deductions, advance payments, taxes, etc, and get approvals for payments
-                  
-                  Pay rent via any credit card:"
+                  title="You can make multiple rental payment for business through credit cards on the EnKash portal by using our bulk payment option. To do that, ensure that all rental agreements and details are uploaded. Once the records are uploaded, it is simply a matter of setting limits and getting approvals to pay using the card as described above. Before making the payment, fetch rental records, view the records, adjust for deductions, advance payments, taxes, etc, and get approvals for payments. You can pay rent via any credit card in the following way:"
                 />
               </div>
               <div className="mb-5">

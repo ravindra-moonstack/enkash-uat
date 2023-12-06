@@ -4,7 +4,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "EnKash has designed a loyalty lounge for businesses to reward their employees, partners, and other stakeholders. It comprises solutions like brand vouchers, employee rewards, channel incentives, gift cards, and offers. Businesses can use these solutions to appreciate their employees, boost their morale, and also establish long-term business relationships with their partners",
+          "EnKash has designed a loyalty lounge for businesses to reward their employees, partners, and other stakeholders. It comprises solutions like brand vouchers, employee rewards, channel incentives, gift cards, and offers. Businesses can use these solutions to appreciate their employees, boost their morale, and also establish long-term business relationships with their partners.",
       },
     ],
   },

@@ -304,7 +304,7 @@ const giftCards = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of gift cards?"
-          description="Corporate gift cards in India are among the best ways to encourage and retain employees. They allow employees to choose from various options and then decide for themselves. A transparent and easy way of appreciating employees, corporate gifts are customizable, convenient, and secure"
+          description="Corporate gift cards in India are among the best ways to encourage and retain employees. They allow employees to choose from various options and then decide for themselves. A transparent and easy way of appreciating employees, corporate gifts are customizable, convenient, and secure."
         />
       </div>
 

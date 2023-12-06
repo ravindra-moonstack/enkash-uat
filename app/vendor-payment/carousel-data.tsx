@@ -12,8 +12,8 @@ const carouselData = [
   },
   {
     image: iconTwo,
-    alt: "Go to Vendor Payments",
-    title: "Go to Vendor Payments under Olympus and complete KYC",
+    alt: "Go to vendor payments",
+    title: "Go to vendor payments under Olympus and complete KYC",
   },
   {
     image: iconThree,

@@ -262,12 +262,12 @@ const channelIncentive = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="bg-white row-padding text-center d-flex flex-column">
+      {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how channel incentives can benefit your business and partners!"
         />
-      </div>
+      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -315,7 +315,7 @@ const channelIncentive = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Channel incentive programs will motivate channel partners to prioritize the sales of your products or services so that they can win additional rewards. Channel partners develop their discounts and offers for customers using the additional rewards they get from channel incentives to get more customers onboard. The channel partner may also set up an internal reward system for their salespeople to increase sales. Using a channel incentive program helps increase sales, build your brand, and increase awareness of your products or services"
+                  title="Channel incentive programs will motivate channel partners to prioritize the sales of your products or services so that they can win additional rewards. Channel partners develop their discounts and offers for customers using the additional rewards they get from channel incentives to get more customers onboard. The channel partner may also set up an internal reward system for their salespeople to increase sales. Using a channel incentive program helps increase sales, build your brand, and increase awareness of your products or services."
                 />
               </div>
 

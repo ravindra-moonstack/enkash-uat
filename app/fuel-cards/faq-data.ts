@@ -23,7 +23,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Fuel Cards are a boon for finance teams. Instead of laboriously reviewing numerous fuel receipts, seeking approvals, and processing employee claims manually, EnKash offers a streamlined approach. With EnKash, you can issue cards to your employees for fuel expenses. They can effortlessly scan their receipts for approval, and the card balance can be topped off based on usage. Monitoring, blocking, unblocking, and usage restrictions become simple tasks.",
+          "Fuel cards are a boon for finance teams. Instead of laboriously reviewing numerous fuel receipts, seeking approvals, and processing employee claims manually, EnKash offers a streamlined approach. With EnKash, you can issue cards to your employees for fuel expenses. They can effortlessly scan their receipts for approval, and the card balance can be topped off based on usage. Monitoring, blocking, unblocking, and usage restrictions become simple tasks.",
       },
     ],
   },
@@ -78,7 +78,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Fuel Cards are designed for authorized fuel outlets, ensuring employees can access fuel conveniently and securely. These cards give businesses control over where and how they spend on fuel, optimizing their expenses.",
+          "Fuel cards are designed for authorized fuel outlets, ensuring employees can access fuel conveniently and securely. These cards give businesses control over where and how they spend on fuel, optimizing their expenses.",
       },
     ],
   },

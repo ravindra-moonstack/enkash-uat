@@ -288,7 +288,7 @@ const mealCard = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of meal cards?"
-          description="Meal cards are prepaid cards provided by employers to enhance employees' morale. These cards are used for food-related purchases on various retail outlets or apps and help in tax redemption for employees"
+          description="Meal cards are prepaid cards provided by employers to enhance employees' morale. These cards are used for food-related purchases on various retail outlets or apps and help in tax redemption for employees."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
@@ -317,22 +317,22 @@ const mealCard = () => {
                   <li>
                     Employers issue meal cards to their employees as a part of
                     their remuneration package. These cards are preloaded with a
-                    specific amount of money.
+                    specific amount of money
                   </li>
                   <li>
                     Employees will be informed via SMS/mail regarding their meal
-                    card activation after issuance.
+                    card activation after issuance
                   </li>
                   <li>
                     Employees must log in to the EnKash portal to do their KYC
-                    to activate their meal card.
+                    to activate their meal card
                   </li>
                   <li>
-                    A request can be raised for a physical meal card as well.
+                    A request can be raised for a physical meal card as well
                   </li>
                   <li>
                     These cards can be used across multiple food retail outlets,
-                    food chains, and food delivery apps.
+                    food chains, and food delivery apps
                   </li>
                 </ul>
               </div>
@@ -359,19 +359,19 @@ const mealCard = () => {
                     Prepaid meal cards: These are generic meal cards that can be
                     used at multiple restaurants, convenience stores, and food
                     outlets. They allow employees to choose from various
-                    options.
+                    options
                   </li>
                   <li>
                     Employer-provided meal cards: Employers partner with
                     specific restaurants or food providers to offer meal cards
                     exclusively for their employees. These cards can only be
-                    used at specific locations.
+                    used at specific locations
                   </li>
                   <li>
                     Restaurant-specific meal cards: Some companies issue meal
                     cards to be used at in-house cafeterias or dining
                     facilities. These cards can be used only inside the
-                    company's premises.
+                    company's premises
                   </li>
                 </ul>
               </div>
@@ -397,33 +397,33 @@ const mealCard = () => {
                   <li>
                     Tax Benefits: Meal cards are often exempt from income tax up
                     to a specified limit, reducing the taxable income of
-                    employees.
+                    employees
                   </li>
                   <li>
                     Convenience: Meal cards can easily replace debit cards for
-                    food-related purchases, eliminating the cash quotient.
+                    food-related purchases, eliminating the cash quotient
                   </li>
                   <li>
                     Freedom of choice: Meal cards give access to a network of
                     approved restaurants, food chains, and retail outlets
-                    offering various food options.
+                    offering various food options
                   </li>
                   <li>
                     No more lunch stress: Employees can save time and effort
                     spent preparing meals at home and order food at their
-                    workplace as per their preference.
+                    workplace as per their preference
                   </li>
                   <li>
                     Food expense management: Employees can manage their food
-                    expenses with meal cards as they have preset limits.
+                    expenses with meal cards as they have preset limits
                   </li>
                   <li>
                     Food reimbursement not required: Employees don't have to
-                    complete the reimbursement process with meal cards.
+                    complete the reimbursement process with meal cards
                   </li>
                   <li>
                     Easy management: Employees can easily manage their meal
-                    cards online and check their balance and expiration date.
+                    cards online and check their balance and expiration date
                   </li>
                 </ul>
               </div>
@@ -449,22 +449,22 @@ const mealCard = () => {
                   <li>
                     Employee Retention: Employers can increase employee
                     retention by providing meal cards to employees and making
-                    their salary package more attractive.
+                    their salary package more attractive
                   </li>
                   <li>
                     Increased Productivity: Employees with meal cards can focus
                     more on work without worrying about lunch preparations and
-                    breaks.
+                    breaks
                   </li>
                   <li>
                     Easy Management: Employers can streamline the process of
                     meal cards and reduce the hassle of food coupons and
-                    reimbursements.
+                    reimbursements
                   </li>
                   <li>
                     Competitive Edge: Employers with meal cards have the edge
                     over other companies hiring, setting them apart in the
-                    market.
+                    market
                   </li>
                 </ul>
               </div>
@@ -491,26 +491,26 @@ const mealCard = () => {
                     Choose the right provider: Decide a reputable meal card
                     provider with a user-friendly platform and a vast network of
                     partnership across food restaurants, apps, and retail
-                    outlets.
+                    outlets
                   </li>
                   <li>
                     Efficient communication: Educate your employees about meal
-                    cards in detail including where and how to use them.
+                    cards in detail including where and how to use them
                   </li>
                   <li>
                     Employee training: Conduct training sessions for employees
                     to understand and use the meal card and acknowledge their
-                    doubts during these sessions.
+                    doubts during these sessions
                   </li>
                   <li>
                     Feedback: Ensure collection of feedback from employees about
-                    their experience.
+                    their experience
                   </li>
                   <li>
                     Compliance management: Stay updated on local tax regulations
                     and compliance requirements to ensure meal cards align with
                     the tax implications to employees and the company’s finance
-                    department.
+                    department
                   </li>
                 </ul>
               </div>

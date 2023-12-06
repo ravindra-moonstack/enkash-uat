@@ -49,7 +49,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "OfEx Department Management module acts as a safeguard against business fraud. Ensuring that teams do not exceed their budgets and that all expenses are monitored and approved effectively reduces unnecessary expenses and financial discrepancies",
+          "OfEx Department Management module acts as a safeguard against business fraud. Ensuring that teams do not exceed their budgets and that all expenses are monitored and approved effectively reduces unnecessary expenses and financial discrepancies.",
       },
     ],
   },

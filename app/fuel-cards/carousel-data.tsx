@@ -13,7 +13,7 @@ const carouselData = [
   {
     image: iconTwo,
     alt: "Issue fuel cards to employees with preloaded funds",
-    title: "Issue meal cards to employees with preloaded funds",
+    title: "Issue fuel cards to employees with preloaded funds",
   },
   {
     image: iconThree,

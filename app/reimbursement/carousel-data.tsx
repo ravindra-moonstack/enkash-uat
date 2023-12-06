@@ -7,8 +7,8 @@ import iconFive from "./img/icon-five.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Login to EnKash and go to the Xpenz section",
-    title: "Login to EnKash and go to the Xpenz section",
+    alt: "Login to EnKash and go to the OfEx section",
+    title: "Login to EnKash and go to the OfEx section",
   },
   {
     image: iconTwo,

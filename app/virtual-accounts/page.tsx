@@ -274,7 +274,7 @@ const virtualAccounts = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of virtual accounts?"
-          description="Virtual accounts basically function as an electronically usable payment and collection instrument, which can be formed as a subset of your core bank account. A virtual account contains a series of unique sets of codes that in most instances are numerical"
+          description="Virtual accounts basically function as an electronically usable payment and collection instrument, which can be formed as a subset of your core bank account. A virtual account contains a series of unique sets of codes that in most instances are numerical."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
@@ -296,7 +296,7 @@ const virtualAccounts = () => {
                   color="black"
                   weight="4"
                   title="With the creation of virtual accounts, you will find it easier to manage payments you receive from your customers. Since the virtual account will be different for different customers, you will know when a customer has delayed their payment, allowing you to intensify your collection efforts. 
-                  Virtual account management ensures your finance team spends less time on mundane and repetitive tasks. Virtual accounts ease the process of receivables"
+                  Virtual account management ensures your finance team spends less time on mundane and repetitive tasks. Virtual accounts ease the process of receivables."
                 />
               </div>
 
@@ -313,7 +313,7 @@ const virtualAccounts = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Yes, it does. With virtual accounts being tagged to each customer account, the tracking of payments received and the reconciliation process that follows becomes much easier. The finance team spends less time tracing which payments belong to which customer account and can support the sales team"
+                  title="Yes, it does. With virtual accounts being tagged to each customer account, the tracking of payments received and the reconciliation process that follows becomes much easier. The finance team spends less time tracing which payments belong to which customer account and can support the sales team."
                 />
               </div>
 
@@ -380,7 +380,7 @@ const virtualAccounts = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="With the virtual accounts module, it becomes easier to track which customers are habitual late payers and the ones that often mislead you about the payment status. It also ensures that customers who are habitual defaulters do not continue to avail goods or services on credit terms. It removes the personal bias factor when it comes to deciding on credit terms for customers"
+                  title="With the virtual accounts module, it becomes easier to track which customers are habitual late payers and the ones that often mislead you about the payment status. It also ensures that customers who are habitual defaulters do not continue to avail goods or services on credit terms. It removes the personal bias factor when it comes to deciding on credit terms for customers."
                 />
               </div>
             </>

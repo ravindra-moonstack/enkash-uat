@@ -268,7 +268,7 @@ const vendorPayment = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how our vendor payments platforms could revolutionize the way you work!"
+          title="Learn how our vendor payments platform can revolutionize the way you work!"
         />
       </div>
       <div
@@ -340,16 +340,16 @@ const vendorPayment = () => {
               <div className="mb-5">
                 <ul>
                   <li>
-                    Ensure their payments are quick, accurate, and made on time.
+                    Ensure their payments are quick, accurate, and made on time
                   </li>
                   <li>
                     Establish a rapport in the industry with timely vendor
-                    payments.
+                    payments
                   </li>
-                  <li>Improve vendor relations in the longer run.</li>
+                  <li>Improve vendor relations in the longer run</li>
                   <li>
                     Pay before the due date and avail trade discount, if both
-                    parties agree.
+                    parties agree
                   </li>
                 </ul>
               </div>
@@ -401,7 +401,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Errors in payment amounts, duplicate payments, or incorrect payment details can lead to financial inaccuracies and reconciliation challenges"
+                  title="Errors in payment amounts, duplicate payments, or incorrect payment details can lead to financial inaccuracies and reconciliation challenges."
                 />
               </div>
               <br /> <br />
@@ -419,7 +419,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Inadequate cash flow management due to inconsistent or delayed payments can potentially affect the company's ability to meet its financial obligations"
+                  title="Inadequate cash flow management due to inconsistent or delayed payments can potentially affect the company's ability to meet its financial obligations."
                 />
               </div>
               <br /> <br />
@@ -489,7 +489,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Validates and verifies vendor invoices against purchase orders, contracts, or other agreements to ensure accuracy and authenticity"
+                  title="Validates and verifies vendor invoices against purchase orders, contracts, or other agreements to ensure accuracy and authenticity."
                 />
               </div>
               <br /> <br />
@@ -507,7 +507,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Facilitates the approval workflow for vendor payments, ensuring that authorized personnel review and approve payments in accordance with company policies"
+                  title="Facilitates the approval workflow for vendor payments, ensuring that authorized personnel review and approve payments in accordance with company policies."
                 />
               </div>
               <br /> <br />
@@ -525,7 +525,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Allows for the scheduling of vendor payments based on agreed-upon payment terms, ensuring timely and accurate disbursement of funds to vendors"
+                  title="Allows for the scheduling of vendor payments based on agreed-upon payment terms, ensuring timely and accurate disbursement of funds to vendors."
                 />
               </div>
               <br /> <br />
@@ -561,7 +561,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Integrates with bank statements and reconciles payments made with bank transactions, minimizing errors and discrepancies in financial records"
+                  title="Integrates with bank statements and reconciles payments made with bank transactions, minimizing errors and discrepancies in financial records."
                 />
               </div>
               <br></br>
@@ -579,7 +579,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="You can use a virtual card to make quick, easy, and reliable vendor invoice payments. As soon as you register on the platform, you will get access to a virtual card with an account number"
+                  title="You can use a virtual card to make quick, easy, and reliable vendor invoice payments. As soon as you register on the platform, you will get access to a virtual card with an account number."
                 />
               </div>
               <div className="mb-2 d-inline">
@@ -632,7 +632,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title=" It allows vendor payment through credit cards and provides convenience and potential rewards (e.g., cashback, reward points). Not only this, there’s another best option available, i.e., making vendor payments through Corporate Cards that come with a simplified onboarding process, complete transparency, and so much more, offering cash flow management seamlessly"
+                  title="It allows vendor payment through credit cards and provides convenience and potential rewards (e.g., cashback, reward points). Not only this, there’s another best option available, i.e., making vendor payments through Corporate Cards that come with a simplified onboarding process, complete transparency, and so much more, offering cash flow management seamlessly."
                 />
               </div>
               <br /> <br />
@@ -669,7 +669,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="It enables real-time funds transfer from one bank to another in India"
+                  title="It enables real-time funds transfer from one bank to another in India."
                 />
               </div>
               <br /> <br />

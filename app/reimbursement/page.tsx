@@ -40,7 +40,7 @@ const reimbursement = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Xpenz |${space}`}
+                title={`OfEx |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
@@ -56,14 +56,14 @@ const reimbursement = () => {
               weight="7"
             />
             <Heading
-              title={`management with hassle-${space}`}
+              title={`management with${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <div>
               <Heading
-                title={`free${space}`}
+                title="hassle-free "
                 color="white"
                 size="h2"
                 weight="7"
@@ -79,7 +79,7 @@ const reimbursement = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Maximize productivity within your organization with a more straightforward reimbursement system that helps you track, process, and sync data in real time"
+              title="Maximize productivity within your organization with a straightforward reimbursement system that helps you track, process, and sync data in real-time"
               color="white"
               size="h6"
               weight="5"
@@ -114,7 +114,7 @@ const reimbursement = () => {
             {
               itemArray: ["Manual", "Process"],
               oldWayDescription:
-                "Manual procedures are time-consuming for everyone involved. Employees fill out paper forms, attach receipts, and submit them to their managers for approval. Then, the finance team takes action.",
+                "Manual procedures are time-consuming for everyone involved. Employees fill out paper forms, attach receipts, and submit to their managers for approval. Then, the finance team takes action.",
               newWayDescription:
                 "Leverage smart tools, such as OCR technology and approval matrices, to automate the reimbursement process and save time and money across the business.",
             },
@@ -191,13 +191,28 @@ const reimbursement = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="WhatsApp Integration"
+              whiteTitle="Whatsapp Integration"
               description="Seamless Whatsapp integration to approve/reject expenses at one go without logging into the dashboard "
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Alerts"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Deviation"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Alerts"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Receive a policy deviation warning if an employee submits an expense outside set limits"
             />
           </div>
@@ -209,7 +224,22 @@ const reimbursement = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Insightful data"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Insightful"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="data"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description=" Benefit from a complete overview of reimbursements and plan your business’ cash flow accordingly"
             />
           </div>
@@ -246,7 +276,7 @@ const reimbursement = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Reimbursements benefits for your business and employees!"
+          title="Learn how reimbursements can benefit your business and employees"
         />
       </div>
       <div
@@ -257,7 +287,7 @@ const reimbursement = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about reimbursements in detail."
+            title="Don’t worry! Our FAQs section will help you learn about reimbursements in detail"
             color="black"
             size="h4"
           />
@@ -274,7 +304,7 @@ const reimbursement = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Want to understand reimbursements better?"
+          title="Seeking further understanding of reimbursements?"
           description="In the context of a business or company, reimbursement is the process of paying back expenses employees or others have undertaken on behalf of the business. It can be as simple as paying the employee back for the business travel expenses he or she has incurred or paying back the amount spent on fuel for business purposes."
         />
       </div>
@@ -283,7 +313,7 @@ const reimbursement = () => {
           title="Explore our comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -296,29 +326,26 @@ const reimbursement = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="A business can pay expense reimbursements via many methods. Here are some options to consider."
+                  title="To pay expense reimbursements, businesses can:"
                 />
               </div>
               <div className="mb-5">
-                <ul>
+                <ol>
                   <li>
-                    Provide an advance for business expenses and keep
-                    replenishing it when the employee submits paperwork for the
-                    expenses incurred
+                    Offer advance funds for expenses, replenishing when the
+                    employee submits paperwork
                   </li>
                   <li>
-                    Let the employee pay all expenses from out of pocket, and
-                    when they submit an expense report, reimburse the approved
-                    amounts to the employee’s bank account
+                    Have employees pay out of pocket and reimburse approved
+                    amounts upon expense report submission
                   </li>
                   <li>
-                    Provide the employee with a credit card (virtual card)
-                    specifically for business purposes. You can specify the
-                    limit of usage and the purposes from the back end
+                    Issue a business-specific credit card with set limits and
+                    designated purposes
                   </li>
-                </ul>
+                </ol>
               </div>
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -334,7 +361,7 @@ const reimbursement = () => {
                   title="If you do not want to bother with the entire process of expense reimbursements, the best alternative is to issue virtual cards to employees for business expenses. And if you have a smart spend management platform like EnKash, you can control the limits, the type of usage, track the movement, and so on with a few clicks. This way, the employee can keep submitting the relevant documents once the expense has been paid off."
                 />
               </div>
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -351,7 +378,7 @@ const reimbursement = () => {
                 />
               </div>
 
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -368,7 +395,7 @@ const reimbursement = () => {
                 />
               </div>
 
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -385,7 +412,7 @@ const reimbursement = () => {
                 />
               </div>
 
-              <div className="mb-2">
+              <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"

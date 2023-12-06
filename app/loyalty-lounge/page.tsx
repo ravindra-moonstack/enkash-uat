@@ -410,7 +410,7 @@ const loyaltyLounge = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how loyalty lounge can revolutionize the way you work!"
+          title="Learn how loyalty lounge can benefit your business and employees!"
         />
       </div>
 
@@ -440,7 +440,7 @@ const loyaltyLounge = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Expense Management?"
+            title="Seeking further understanding of loyalty lounge?"
             size="h3"
             color="white"
           />
@@ -452,7 +452,7 @@ const loyaltyLounge = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Seeking further understanding of loyalty lounge?"
+          title="Revolutionize your rewards programs with EnKash"
           description="Loyalty Lounge is a solution that offers rewards, corporate gifting, and incentives management. It provides a centralized redemption platform for rewards such as brand vouchers, gift cards, offers, and employee recognition."
         />
       </div>

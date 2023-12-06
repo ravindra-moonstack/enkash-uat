@@ -78,7 +78,11 @@ const faqData = [
     answer: [
       {
         heading:
-          "Approval workflows make managing and optimizing expenses easier. Set approval limits, create hierarchies, avoid delays, and reduce errors with set rules. Any business-related payment or the accounts payable cycle starts with approvals. Approval flows are the backbone of sound financial management as they ensure accountability and help you face compliance issues. With accounts payable systems like EnKash, you can choose from various approval matrices and set the approval levels within the system. The idea is to balance spends without sacrificing timely payments or meeting statutory requirements like audit queries.",
+          "Approval workflows make managing and optimizing expenses easier. Set approval limits, create hierarchies, avoid delays, and reduce errors with set rules. Any business-related payment or the accounts payable cycle starts with approvals.",
+      },
+      {
+        heading:
+          " Approval flows are the backbone of sound financial management as they ensure accountability and help you face compliance issues. With accounts payable systems like EnKash, you can choose from various approval matrices and set the approval levels within the system. The idea is to balance spends without sacrificing timely payments or meeting statutory requirements like audit queries.",
       },
     ],
   },
