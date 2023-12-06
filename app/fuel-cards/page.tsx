@@ -13,7 +13,6 @@ import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
@@ -102,21 +101,21 @@ const fuelCard = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Ease of", "Use"],
+              itemArray: ["Ease of Use"],
               oldWayDescription:
                 "Previously, employees bore the burden of covering fuel expenses and navigating a cumbersome paper-based reimbursement system.",
               newWayDescription:
                 "With EnKash, fuel cards can be used across a vast network of fuel stations, eliminating the hassle of personal upfront costs and a long reimbursement process.",
             },
             {
-              itemArray: ["Expense", "Tracking"],
+              itemArray: ["Expense Tracking"],
               oldWayDescription:
                 "Manual tracking and management of fuel receipts.",
               newWayDescription:
                 "Easily automate tracking and reporting of fuel expenses by employees in real time.",
             },
             {
-              itemArray: ["Set", "Limits"],
+              itemArray: ["Set Limits"],
               oldWayDescription:
                 "No effective means of setting limits on employee fuel expenses, leading to potential overspending and a lack of control.",
               newWayDescription:
@@ -136,22 +135,19 @@ const fuelCard = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex flex-column text-center mb-5">
-          <div>
-            <Heading
-              title="Efficiency, control, and savings"
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`${space}in every mile`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-          </div>
-
+        <div className="d-inline text-center mb-5">
+          <Heading
+            title="Efficiency, control, and savings"
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title=" in every mile "
+            color="black"
+            size="h1"
+            weight="6"
+          />
           <Heading
             title="with prepaid fuel cards"
             color="black"
@@ -183,7 +179,7 @@ const fuelCard = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Acceptance"
+              whiteTitle="Wider Acceptance"
               description="Utilize your fuel card at a vast network of authorized fuel stations without incurring additional charges"
             />
           </div>
@@ -267,7 +263,7 @@ const fuelCard = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
-        
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
@@ -297,7 +293,7 @@ const fuelCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="EnKash streamlines the process of obtaining fuel cards for your business with a straightforward approach. Begin by signing up on EnKash and completing KYC; then, link your company's bank account and load the necessary funds for business expenses. Subsequently, issue fuel cards to employees preloaded with funds and notify them about card activation via SMS/email"
+                  title="EnKash streamlines the process of obtaining fuel cards for your business with a straightforward approach. Begin by signing up on EnKash and completing KYC; then, link your company's bank account and load the necessary funds for business expenses. Subsequently, issue fuel cards to employees preloaded with funds and notify them about card activation via SMS/email."
                 />
               </div>
 
@@ -314,7 +310,7 @@ const fuelCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Fuel cards are a valuable asset for small businesses. These cards simplify the often cumbersome reimbursement process, significantly reducing paperwork and administrative overhead. They offer cost-effective benefits, enabling businesses to optimize their fuel-related expenses efficiently. For small businesses seeking streamlined processes and cost savings, fuel cards like EnKash's are undoubtedly worth considering"
+                  title="Fuel cards are a valuable asset for small businesses. These cards simplify the often cumbersome reimbursement process, significantly reducing paperwork and administrative overhead. They offer cost-effective benefits, enabling businesses to optimize their fuel-related expenses efficiently. For small businesses seeking streamlined processes and cost savings, fuel cards like EnKash's are undoubtedly worth considering."
                 />
               </div>
 
@@ -331,7 +327,7 @@ const fuelCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="While fuel cards are designed to mitigate misuse through authorized outlets, there are inherent risks, particularly in unauthorized usage. Fuel cards by EnKash address this concern with robust security features like passcodes and OTPs, ensuring that only authorized individuals can use the cards. These security measures help prevent unauthorized usage and control fuel expenses"
+                  title="While fuel cards are designed to mitigate misuse through authorized outlets, there are inherent risks, particularly in unauthorized usage. Fuel cards by EnKash address this concern with robust security features like passcodes and OTPs, ensuring that only authorized individuals can use the cards. These security measures help prevent unauthorized usage and control fuel expenses."
                 />
               </div>
 
@@ -348,7 +344,7 @@ const fuelCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="A dedicated fuel card, such as EnKash's offering, is generally a superior choice for managing fuel expenses. Fuel cards provide targeted control over fuel-related spending, efficient tracking of transactions, and cost-saving benefits that credit cards lack. They streamline the management of fuel expenses and offer a more cost-effective solution than traditional credit cards"
+                  title="A dedicated fuel card, such as EnKash's offering, is generally a superior choice for managing fuel expenses. Fuel cards provide targeted control over fuel-related spending, efficient tracking of transactions, and cost-saving benefits that credit cards lack. They streamline the management of fuel expenses and offer a more cost-effective solution than traditional credit cards."
                 />
               </div>
             </>

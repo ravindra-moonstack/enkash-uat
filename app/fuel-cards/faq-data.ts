@@ -9,7 +9,7 @@ const faqData = [
     ],
   },
   {
-    question: "Why are fuel cards Important for my business?",
+    question: "Why are fuel cards important for my business?",
     answer: [
       {
         heading:
