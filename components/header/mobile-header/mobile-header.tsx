@@ -3,7 +3,7 @@
 import Image from "next/image";
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { forwardArrowBlue, mobileStack, productModalEmptyStateImg } from "..";
+import { forwardArrowBlue, mobileStack } from "..";
 import navBarTopTtitle from "@/components/header/data/nav-bar";
 import { Fragment, useState } from "react";
 import ProductListView from "./product-list-view";
@@ -24,12 +24,7 @@ const motherProductsList = [
   xpenzProducts,
   loyaltyLoungeProducts,
 ];
-const solutionsList = [
-  olympusProducts,
-  freedomProducts,
-  xpenzProducts,
-  loyaltyLoungeProducts,
-];
+
 const resourcesList = [
   olympusProducts,
   freedomProducts,

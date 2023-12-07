@@ -47,6 +47,9 @@ import {
   optimize,
   track,
   ofexBannerAnimation,
+  freedomBannerAnimation,
+  olympusBannerAnimation,
+  recievablesBannerAnimation,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -68,6 +71,7 @@ const animationMap: Record<string, () => Promise<any>> = {
   optimize: optimize,
   automate: automate,
 
+  FreedomBannerAnimation: freedomBannerAnimation,
   FreedomTravelAnimation: travelCardAnimation,
   FreedomSaasAnimation: saasAnimation,
   FreedomVirtualAnimation: virtualCardAnimation,
@@ -76,12 +80,14 @@ const animationMap: Record<string, () => Promise<any>> = {
   FreedomFuelAnimation: fuelAnimation,
   FreedomPurchaseAnimation: purchaseCardAnimation,
 
+
+  RecievablesBannerAnimation:  recievablesBannerAnimation,
   RecievablesInvoiceAnimation: invoiceAnimation,
   RecievablesBulkAnimation: bulkCollectAnimation,
   RecievablesPaymentAnimation: paymentLinkAnimation,
   RecievablesQuickAnimation: quickCollectAnimation,
   RecievablesVirtualAnimation: virtualAccountAnimation,
-
+  
   OfexBannerAnimation: ofexBannerAnimation,
   XpenzHeirarchyAnimation: heirarchyControlAnimation,
   XpenzBudgetAnimation: budgetAndAdvanceAnimation,
@@ -95,6 +101,7 @@ const animationMap: Record<string, () => Promise<any>> = {
   LoyaltyGiftCardAnimation: giftCardAnimation,
   LoyaltyBrandVoucherAnimation: brandVoucherAnimation,
 
+  OlympusBannerAnimation: olympusBannerAnimation,
   OlympusVendorAnimation: olympusVendorAnimation,
   OlympusGSTAnimation: olympusGSTAnimation,
   OlympusUtilityAnimation: olympusUtilityAnimation,

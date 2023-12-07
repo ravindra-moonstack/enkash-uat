@@ -9,17 +9,15 @@ import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import HeaderWrapper from "@/components/header/header-wrapper";
 import {
   officeImg,
   whiteArrow,
@@ -38,13 +36,11 @@ export const metadata: Metadata = {
     "Empower your workforce with Enkash Freedom: Tailored corporate cards offering customizable spending limits and real-time expense tracking for enhanced cash flow management, operational efficiency, and paperless processes",
 };
 
-const freedom = () => {
+const slash = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className="mobile-header">
-        <MobileHeader />
-      </div>
-      <div className="desktop-header">{<WebHeader />}</div>
+      <HeaderWrapper />
+
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
@@ -100,7 +96,10 @@ const freedom = () => {
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
-            <LottieClientComponent animationData={banner} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"freedomBannerAnimation"}
+              loop={true}
+            />
           </div>
         </div>
       </div>
@@ -694,4 +693,4 @@ const freedom = () => {
   );
 };
 
-export default freedom;
+export default slash;

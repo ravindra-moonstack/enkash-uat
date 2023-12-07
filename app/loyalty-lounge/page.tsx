@@ -9,8 +9,6 @@ import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -19,6 +17,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+import HeaderWrapper from "@/components/header/header-wrapper";
 import {
   officeImg,
   whiteArrow,
@@ -40,10 +39,8 @@ export const metadata: Metadata = {
 const loyaltyLounge = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className="mobile-header">
-        <MobileHeader />
-      </div>
-      <div className="desktop-header">{<WebHeader />}</div>
+           <HeaderWrapper />
+
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">

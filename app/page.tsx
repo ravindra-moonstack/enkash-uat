@@ -7,8 +7,6 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import RainbowSection from "@/components/homepage/rainbow";
 import BankSection from "@/components/homepage/bank-section";
 import LoyaltyLoungeSection from "@/components/homepage/loyalty-lounge-section";
@@ -43,6 +41,7 @@ import {
   integration,
 } from ".";
 import DashBoardAnimation from "@/components/homepage/dashboard-animation";
+import HeaderWrapper from "@/components/header/header-wrapper";
 
 export const metadata: Metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -51,13 +50,10 @@ export const metadata: Metadata = {
 };
 
 const home = () => {
-  const loginUrl = "https://home.enkash.com/login";
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <div className="mobile-header">
-        <MobileHeader />
-      </div>
-      <div className="desktop-header">{<WebHeader />}</div>
+      <HeaderWrapper />
+
       <RainbowSection />
       <div
         className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center
@@ -475,7 +471,6 @@ const home = () => {
               <div className="mt-4">
                 <PrimaryButton
                   title="Get a Demo"
-                  url={loginUrl}
                   theme="theme-green"
                 />
               </div>

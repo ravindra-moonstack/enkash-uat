@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import motherProducts from "../data/mother-products";
 import olympusProducts from "../data/olympus-products";
@@ -14,19 +14,12 @@ const ProductModal = ({ onLinkClick }: any) => {
   const [hoveredProductIndex, setHoveredProductIndex] = useState<null | number>(
     null
   );
-  const [rowHeight, setRowHeight] = useState(0);
   const productRowRef = useRef<HTMLDivElement | null>(null);
   const refs = motherProducts.map(() => useRef<HTMLDivElement>(null));
 
   const [prevHoveredProductIndex, setPrevHoveredProductIndex] = useState<
     null | number
   >(null);
-
-  useEffect(() => {
-    if (productRowRef.current) {
-      setRowHeight(productRowRef.current.offsetHeight);
-    }
-  }, [productRowRef]);
 
   function assignRef(
     ref: React.MutableRefObject<HTMLDivElement | null>,

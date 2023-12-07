@@ -12,6 +12,8 @@ export const corporateCardAnimation = () =>
 export const diyCardAnimation = () => import("../../app/img/lottie/diy.json");
 
 //Slash Animation
+export const freedomBannerAnimation = () =>
+  import("../../app/slash/img/lottie/banner.json");
 export const travelCardAnimation = () =>
   import("../../app/slash/img/lottie/travel.json");
 export const saasAnimation = () =>
@@ -30,6 +32,9 @@ export const purchaseCardAnimation = () =>
   import("../../app/slash/img/lottie/purchase.json");
 
 //Recievables Animation
+
+export const recievablesBannerAnimation = () =>
+  import("../../app/receivables/img/lottie/banner.json");
 export const invoiceAnimation = () =>
   import("../../app/receivables/img/lottie/invoice.json");
 export const bulkCollectAnimation = () =>
@@ -70,7 +75,8 @@ export const brandVoucherAnimation = () =>
   import("../../app/loyalty-lounge/img/lottie/brand-voucher.json");
 
 //Olympus Animation
-
+export const olympusBannerAnimation = () =>
+  import("../../app/olympus/img/lottie/ERP Integration.json");
 export const olympusVendorAnimation = () =>
   import("../../app/olympus/img/lottie/vendor.json");
 export const olympusGSTAnimation = () =>

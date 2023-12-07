@@ -11,13 +11,12 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import carouselData from "./carousel-data";
 import FAQHtml from "./faq-html";
+import HeaderWrapper from "@/components/header/header-wrapper";
 
 export const metadata: Metadata = {
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
@@ -28,16 +27,14 @@ export const metadata: Metadata = {
 const fuelCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <div className="mobile-header">
-        <MobileHeader />
-      </div>
-      <div className="desktop-header">{<WebHeader />}</div>
+            <HeaderWrapper />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Freedom |${space}`}
+                title={`Slash |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"

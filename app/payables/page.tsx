@@ -5,6 +5,20 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/constant/common";
 import blogData from "./blog-data";
+import Heading from "@/components/heading/heading";
+import ExploreCard from "@/components/explore-card/explore-card";
+import EnkashWay from "@/components/enkash-way/enkash-way";
+import GetStartedCard from "@/components/get-started-card/get-started-card";
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
+import faqData from "./faq-data";
+import howDoesItWorkData from "./how-does-It-work-data";
+import BlogWrapper from "@/components/blog/blog-wrapper";
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import { Metadata } from "next";
+import FAQHtml from "./faq-html";
+import Link from "next/link";
+import HeaderWrapper from "@/components/header/header-wrapper";
 import {
   cardBg,
   faqBg,
@@ -21,23 +35,6 @@ import {
   billPayAnimation,
   taxPayAnimation,
 } from ".";
-import Heading from "@/components/heading/heading";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import faqData from "./faq-data";
-import howDoesItWorkData from "./how-does-It-work-data";
-import FAQ from "@/components/faq/faq";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import ActionCard from "@/components/action-card/action-card";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import { Metadata } from "next";
-import FAQHtml from "./faq-html";
-import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",
@@ -48,10 +45,8 @@ export const metadata: Metadata = {
 const payables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <div className="mobile-header">
-        <MobileHeader />
-      </div>
-      <div className="desktop-header">{<WebHeader />}</div>
+      <HeaderWrapper />
+
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">

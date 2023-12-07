@@ -3,13 +3,11 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
-import WebHeader from "@/components/header/web-header";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import { space } from "../../constant/common";
@@ -21,6 +19,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import FAQHtml from "./faq-html";
+import HeaderWrapper from "@/components/header/header-wrapper";
 
 export const metadata: Metadata = {
   title: "Automated Invoicing Processing & Software for Business - EnKash",
@@ -31,10 +30,7 @@ export const metadata: Metadata = {
 const invoices = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <div className="mobile-header">
-        <MobileHeader />
-      </div>
-      <div className="desktop-header">{<WebHeader />}</div>
+      <HeaderWrapper />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">

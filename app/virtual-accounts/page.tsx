@@ -13,15 +13,11 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
-import MobileHeader from "@/components/header/mobile-header/mobile-header";
-import WebHeader from "@/components/header/web-header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
-
+import HeaderWrapper from "@/components/header/header-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import Link from "next/link";
 import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {
@@ -33,10 +29,7 @@ export const metadata: Metadata = {
 const virtualAccounts = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <div className="mobile-header">
-        <MobileHeader />
-      </div>
-      <div className="desktop-header">{<WebHeader />}</div>
+      <HeaderWrapper />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">

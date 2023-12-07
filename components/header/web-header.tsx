@@ -12,9 +12,7 @@ import {
   arrowDownWhite,
 } from ".";
 import ProductModal from "./modal/product-modal";
-import SolutionsModal from "./modal/solutions-modal";
 import ResourcesModal from "./modal/resources-modal";
-import EmptyModal from "./modal/empty-modal";
 
 const singupUrl = "";
 const loginUrl = "https://home.enkash.com/login";
