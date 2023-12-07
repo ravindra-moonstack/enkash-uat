@@ -101,6 +101,7 @@ const RainbowSection = () => {
           alt="background image"
           className={`${styles.rainbow_one} mobile-only`}
           style={{ top: `${posTopRainbowOneImg}px` }}
+          loading="lazy"
         />
 
         <Image
@@ -108,6 +109,7 @@ const RainbowSection = () => {
           alt="background image"
           className={`${styles.rainbow_one} desktop-only`}
           style={{ top: `${posTopRainbowOneImg}px` }}
+          loading="lazy"
         />
 
         <span className={`col-12  ${styles.second_text}`}>
@@ -119,6 +121,7 @@ const RainbowSection = () => {
           alt="background image 2"
           className={`${styles.rainbow_two} mobile-only`}
           style={{ top: `${posTopRainbowTwoImg}px` }}
+          loading="lazy"
         />
 
         <Image
@@ -126,6 +129,7 @@ const RainbowSection = () => {
           alt="background image 2"
           className={`${styles.rainbow_two} desktop-only`}
           style={{ top: `${posTopRainbowTwoImg}px` }}
+          loading="lazy"
         />
 
         <span className={`col-12  ${styles.third_text}`}>
@@ -137,6 +141,7 @@ const RainbowSection = () => {
           alt="background image 3"
           className={`${styles.rainbow_three} mobile-only`}
           style={{ top: `${posTopRainbowThreeImg}px` }}
+          loading="lazy"
         />
 
         <Image
@@ -144,6 +149,7 @@ const RainbowSection = () => {
           alt="background image 3"
           className={`${styles.rainbow_three} desktop-only`}
           style={{ top: `${posTopRainbowThreeImg}px` }}
+          loading="lazy"
         />
 
         <div className={`col-12 ${styles.description_text}`}>

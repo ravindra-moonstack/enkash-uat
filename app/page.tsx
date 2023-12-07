@@ -469,10 +469,7 @@ const home = () => {
               </div>
 
               <div className="mt-4">
-                <PrimaryButton
-                  title="Get a Demo"
-                  theme="theme-green"
-                />
+                <PrimaryButton title="Get a Demo" theme="theme-green" />
               </div>
             </div>
             <div className={styles.img_container}>
@@ -722,7 +719,11 @@ const home = () => {
           className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
         >
           <div className={styles.image_container}>
-            <Image src={integration} alt="enkash phone integration image" />
+            <Image
+              src={integration}
+              alt="enkash phone integration image"
+              loading="lazy"
+            />
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex flex-column  mt-3 order-1 order-md-2">
@@ -773,7 +774,12 @@ const home = () => {
               />
             </div>
             <div>
-              <Image src={inc42} alt="inc42 logo" className="img-fluid" />
+              <Image
+                src={inc42}
+                alt="inc42 logo"
+                className="img-fluid"
+                loading="lazy"
+              />
             </div>
           </div>
           <div
@@ -787,7 +793,12 @@ const home = () => {
               />
             </div>
             <div>
-              <Image src={nasscom} alt="nasscom logo" className="img-fluid" />
+              <Image
+                src={nasscom}
+                alt="nasscom logo"
+                className="img-fluid"
+                loading="lazy"
+              />
             </div>
           </div>
           <div
@@ -805,6 +816,7 @@ const home = () => {
                 src={paymentAndCardSummit}
                 alt="payment and card summit logo"
                 className="img-fluid"
+                loading="lazy"
               />
             </div>
           </div>
@@ -843,7 +855,7 @@ const home = () => {
           </div>
           <div className="d-flex mt-4 align-items-center">
             <div className="me-4">
-              <Image src={userImg} alt="enkash user image" />
+              <Image src={userImg} alt="enkash user image" loading="lazy" />
             </div>
             <div className="d-flex flex-column">
               <Heading title="Deep Sehgal, Founder," size="h4" weight="4" />
@@ -856,11 +868,13 @@ const home = () => {
             src={testimonials}
             alt="enkash testimonials"
             className={`img-fluid ${styles.desktop_testimonial}`}
+            loading="lazy"
           />
           <Image
             src={mobileTestimonial}
             alt="enkash testimonials"
             className={styles.mobile_testimonial}
+            loading="lazy"
           />
         </div>
       </div>
