@@ -47,4 +47,4 @@ export { default as everestLogo } from "./img/everest-logo.png";
 export { default as pristynCareLogo } from "./img/pristyn-care-logo.png";
 export { default as cureFoodsLogo } from "./img/curefoods-logo.png";
 export { default as infraMarketLogo } from "./img/infra-market-logo.png";
-export { default as integration } from "./img/integration.png";
+export { default as integration } from "./img/enkash-integrations.png";
