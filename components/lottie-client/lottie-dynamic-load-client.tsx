@@ -1,6 +1,6 @@
 "use client";
 
-import Lottie from "lottie-react";
+import Lottie from "@novemberfiveco/lottie-react-light";
 import React, { useEffect, useState } from "react";
 import {
   phoneAndTabAnimation,
@@ -9,7 +9,6 @@ import {
   expenseManagementAnimation,
   corporateCardAnimation,
   diyCardAnimation,
-  phoneAnimation,
   travelCardAnimation,
   saasAnimation,
   digitalAnimation,
@@ -42,6 +41,7 @@ import {
   loyaltyOne,
   loyaltyThree,
   loyaltyTwo,
+  loyaltyBannerAnimation,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -78,6 +78,7 @@ const animationMap: Record<string, () => Promise<any>> = {
   XpenzScanAnimation: scanAndDropAnimation,
   XpenzPolicyAnimation: policyAnimation,
 
+  LoyaltyBannerAnimation: loyaltyBannerAnimation,
   LoyaltyEmployeeAnimation: employeeeRewardAnimation,
   LoyaltyChannelAnimation: channelIncentiveAnimation,
   LoyaltyGiftCardAnimation: giftCardAnimation,

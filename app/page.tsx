@@ -12,7 +12,6 @@ import WebHeader from "@/components/header/web-header";
 import RainbowSection from "@/components/homepage/rainbow";
 import BankSection from "@/components/homepage/bank-section";
 import LoyaltyLoungeSection from "@/components/homepage/loyalty-lounge-section";
-import DashBoardAnimation from "@/components/homepage/dashboard-animation";
 import PolygonSection from "@/components/homepage/polygon-section";
 import TextAnimation from "@/components/framer-motion/text-animation";
 import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
@@ -43,6 +42,7 @@ import {
   greenBg,
   integration,
 } from ".";
+import DashBoardAnimation from "@/components/homepage/dashboard-animation";
 
 export const metadata: Metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",

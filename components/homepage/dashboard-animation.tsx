@@ -7,7 +7,7 @@ import {
 } from "@/app/index";
 import styles from "@/app/page.module.scss";
 import { useEffect, useState } from "react";
-import Lottie from "lottie-react";
+import Lottie from "@novemberfiveco/lottie-react-light";
 import MenuButton from "../buttons/menu-button/menu-button";
 
 const DashBoardAnimation = () => {

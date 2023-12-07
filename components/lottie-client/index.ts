@@ -10,7 +10,6 @@ export const expenseManagementAnimation = () =>
 export const corporateCardAnimation = () =>
   import("../../app/img/lottie/credit-card.json");
 export const diyCardAnimation = () => import("../../app/img/lottie/diy.json");
-export const phoneAnimation = () => import("../../app/img/lottie/phone.json");
 
 //Slash Animation
 export const travelCardAnimation = () =>
@@ -57,6 +56,8 @@ export const policyAnimation = () =>
 
 //Loyalty Animation
 
+export const loyaltyBannerAnimation = () =>
+  import("../../app/loyalty-lounge/img/lottie/banner.json");
 export const employeeeRewardAnimation = () =>
   import("../../app/loyalty-lounge/img/lottie/employee-reward.json");
 export const giftCardAnimation = () =>
