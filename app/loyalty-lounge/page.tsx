@@ -28,7 +28,6 @@ import {
   heavyLiftingIconThree,
 } from ".";
 
-
 export const metadata: Metadata = {
   title:
     "All-in-one Rewards, Corporate Gifting & incentives Management Platform - EnKash",
@@ -39,7 +38,7 @@ export const metadata: Metadata = {
 const loyaltyLounge = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-           <HeaderWrapper />
+      <HeaderWrapper />
 
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
@@ -184,7 +183,7 @@ const loyaltyLounge = () => {
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
-              animationName={"XpenzPolicyAnimation"}
+              animationName={"LoyaltyOfferAnimation"}
               loop={true}
             />
           </div>
@@ -205,10 +204,12 @@ const loyaltyLounge = () => {
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
-          <LottieDynamicLoadComponent
-            animationName={"LoyaltyChannelAnimation"}
-            loop={true}
-          />
+          <div className={styles.second_lottie_container}>
+            <LottieDynamicLoadComponent
+              animationName={"LoyaltyChannelAnimation"}
+              loop={true}
+            />{" "}
+          </div>
         </div>
       </div>
 

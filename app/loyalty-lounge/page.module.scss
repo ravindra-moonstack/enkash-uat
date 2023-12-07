@@ -118,8 +118,16 @@
   }
 
   .lottie_container {
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 250px;
+    @include bp-md {
+      width: 450px;
+    }
+  }
+  .second_lottie_container {
+    width: 250px;
+    @include bp-md {
+      width: 500px;
+    }
   }
 }
 

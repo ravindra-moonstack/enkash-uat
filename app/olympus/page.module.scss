@@ -19,7 +19,7 @@
     height: auto;
     width: 250px;
     @include bp-md {
-      width: 450px;
+      width: 600px;
     }
   }
 }
@@ -137,28 +137,6 @@
     }
   }
 
-  .first_container {
-    position: relative;
-    z-index: 2;
-    .card_bg {
-      position: absolute;
-      z-index: 2;
-      top: -100px;
-      left: -80px;
-      @include bp-md {
-        top: -50px;
-        left: 200px;
-      }
-    }
-    .lottie_container {
-      width: 400px;
-      @include bp-md {
-        width: 400px;
-        margin-left: 70px;
-      }
-    }
-  }
-
   .second_container {
     position: relative;
     z-index: 2;
@@ -170,6 +148,14 @@
       @include bp-md {
         top: -100px;
         left: -100px;
+      }
+    }
+
+    .lottie_container {
+      height: auto;
+      width: 250px;
+      @include bp-md {
+        width: 400px;
       }
     }
   }
@@ -189,18 +175,16 @@
   }
 
   .lottie_container {
+    width: 250px;
     @include bp-md {
-      padding-left: 50px;
-      padding-right: 50px;
-      margin-top: -50px;
+      width: 350px;
     }
   }
 
   .lottie_second_container {
+    width: 250px;
     @include bp-md {
-      padding-top: 30px;
-      padding-left: 50px;
-      padding-right: 50px;
+      width: 500px;
     }
   }
 }

@@ -128,9 +128,7 @@ const WebHeader = () => {
       </nav>
 
       {hoveredIndex === 0 && <ProductModal onLinkClick={handleLinkClick} />}
-      {/* {hoveredIndex === 1 && <SolutionsModal />} */}
       {hoveredIndex === 1 && <ResourcesModal />}
-      {/* {hoveredIndex === 3 && <EmptyModal />} */}
     </header>
   );
 };

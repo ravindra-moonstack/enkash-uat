@@ -10,6 +10,3 @@ export { default as faqBg } from "./img/faq-bg.png";
 export { default as heavyLiftingIconOne } from "./img/heavy-lifting-icon-one.svg";
 export { default as heavyLiftingIconTwo } from "./img/heavy-lifting-icon-two.svg";
 export { default as heavyLiftingIconThree } from "./img/heavy-lifting-icon-three.svg";
-
-//Animations import
-export { default as banner } from "./img/lottie/ERP Integration.json";

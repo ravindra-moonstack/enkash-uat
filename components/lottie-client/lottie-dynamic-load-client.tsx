@@ -50,6 +50,7 @@ import {
   freedomBannerAnimation,
   olympusBannerAnimation,
   recievablesBannerAnimation,
+  loyaltyOfferAnimation,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -100,6 +101,7 @@ const animationMap: Record<string, () => Promise<any>> = {
   LoyaltyChannelAnimation: channelIncentiveAnimation,
   LoyaltyGiftCardAnimation: giftCardAnimation,
   LoyaltyBrandVoucherAnimation: brandVoucherAnimation,
+  LoyaltyOfferAnimation:loyaltyOfferAnimation,
 
   OlympusBannerAnimation: olympusBannerAnimation,
   OlympusVendorAnimation: olympusVendorAnimation,

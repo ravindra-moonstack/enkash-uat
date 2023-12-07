@@ -27,7 +27,6 @@ import {
   heavyLiftingIconOne,
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
-  banner,
   officeImg3,
   authorOne,
 } from ".";
@@ -52,30 +51,22 @@ const olympus = () => {
             <Heading title="O" color="rainy-blue" size="h1" weight="7" />
             <Heading title="lympus" size="h1" weight="7" />
           </div>
-          <div className="d-inline">
-            <div className="d-inline">
-              <Heading
-                title={`The${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title={`Smart One-Stop Platform${space}`}
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-            </div>
-
+          <div>
+            <Heading title={`The${space}`} color="white" size="h2" weight="7" />
             <Heading
-              title={`for Faster, Efficient, and Effortless${space}`}
+              title={`smart one-stop platform${space}`}
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`for faster, efficient, and${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="Business Banking"
+              title="effortless business banking"
               color="white"
               weight="7"
               size="h2"
@@ -83,8 +74,7 @@ const olympus = () => {
           </div>
           <div className="mt-4 mobile-only">
             <Heading
-              title="Unlock 
-              2X Growth | 3X Efficiency | 100% Transparency"
+              title="Unlock 2X growth | 3X efficiency | 100% transparency"
               color="white"
               size="h6"
               weight="5"
@@ -92,8 +82,7 @@ const olympus = () => {
           </div>
           <div className="mt-4 desktop-only">
             <Heading
-              title="Unlock 
-              2X Growth | 3X Efficiency | 100% Transparency"
+              title="Unlock 2X growth | 3X efficiency | 100% transparency"
               color="white"
               size="h5"
               weight="5"
@@ -112,7 +101,7 @@ const olympus = () => {
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
-              animationName={"olympusBannerAnimation"}
+              animationName={"OlympusBannerAnimation"}
               loop={true}
             />
           </div>
@@ -232,16 +221,8 @@ const olympus = () => {
 
       <div className={styles.more_cards}>
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 my-md-5 my-3">
-            <ExploreCard
-              title="Collect Payments"
-              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links
-              ERP Integration"
-              theme="blue"
-            />
-          </div>
           <div
-            className={`col-md-6 col-12 d-flex my-md-0 my-5 d-flex justify-content-end ${styles.first_container}`}
+            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-5 d-flex justify-content-start  ${styles.second_container}`}
           >
             <Image
               src={cardBg}
@@ -252,32 +233,18 @@ const olympus = () => {
               <LottieDynamicLoadComponent
                 animationName={"OlympusCollectAnimation"}
                 loop={true}
-              />{" "}
+              />
             </div>
-          </div>
-        </div>
-        {/* <div className={`row bg-white ${styles.section}`}>
-          <div
-            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-5 d-flex justify-content-start  ${styles.second_container}`}
-          >
-            <Image
-              src={cardBg}
-              alt="card background"
-              className={styles.card_bg}
-            />
-            <LottieDynamicLoadComponent
-              animationName={"FreedomVirtualAnimation"}
-              loop={true}
-            />
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
-              title="Virtual Cards"
-              description="Make it easy for your modern business to track and reconcile all payments with the new-age and innovative virtual cards."
+              title="Collect Payments"
+              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links
+              ERP Integration"
               theme="blue"
             />
           </div>
-        </div> */}
+        </div>
       </div>
 
       <div className="row bg-white row-padding">
@@ -480,7 +447,7 @@ const olympus = () => {
                   />
                 </div>
               }
-              description="EnKash provides a detailed audit trail against each transaction made on the platform, bringing transparency to the business."
+              description="EnKash provides a detailed audit trail against each transaction made on the platform, bringing transparency to the business"
               ctaColor="blue"
             />
           </div>

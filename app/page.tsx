@@ -434,7 +434,7 @@ const home = () => {
         </div>
         <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
           <ExploreCard
-            title="Expense Management"
+            title="ofEx"
             description="A platform to gain complete control over business spending and expenses. Analyze data to create efficient budgets, optimize expenses, and scale your business"
             theme="blue"
             link="/ofex"
@@ -543,7 +543,7 @@ const home = () => {
         </div>
         <div className="col-md-6 col-12 row-padding-x-only order-3 order-md-3">
           <ExploreCard
-            title="DIY Card Module"
+            title="DIY-card Module"
             description="Generate purpose-made company cards and empower departments and employees to use them while setting usage limits and tracking for better spend control"
             theme="blue"
             link="/"
@@ -836,7 +836,7 @@ const home = () => {
             size="h1"
             weight="6"
           />
-          <Heading title="companies." color="white" size="h1" weight="6" />
+          <Heading title="companies" color="white" size="h1" weight="6" />
         </div>
         <div
           className={`col-md-6 col-12 d-flex flex-column ${styles.testimonials_section}`}
@@ -881,7 +881,7 @@ const home = () => {
       <div className={`row bg-white ${styles.sixteenth_row}`}>
         <ContactUsCard
           title="Ready to upgrade with our new-age business solutions?"
-          description="Explore all these products on the same platform and empower your business and employees with efficient spend management, transparency, and control across all departments."
+          description="Explore all these products on the same platform and empower your business and employees with efficient spend management, transparency, and control across all departments"
         />
       </div>
     </div>

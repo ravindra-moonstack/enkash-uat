@@ -114,9 +114,9 @@ const Footer = () => {
                     Corporate Credit Cards
                   </div>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/business-cards/">Business Cards*</a>
-                </li>
+                </li> */}
                 <li>
                   <a href="/purchase-cards/">Purchase Cards*</a>
                 </li>
@@ -220,18 +220,18 @@ const Footer = () => {
                 <li>
                   <a href="/sales?source=getstarted_footer">Sales</a>
                 </li>
-                <li>
+                {/* <li>
                   <a href="/career-team-and-openings/">Career</a>
                 </li>
                 <li>
                   <a href="/support/">Support</a>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="col-6 col-md-3">
+        {/* <div className="col-6 col-md-3">
           {" "}
           <div className={`col-6 col-md-4 ${styles.footer_links_col}`}>
             <div className="mt-2">
@@ -251,7 +251,7 @@ const Footer = () => {
                 <li>
                   <a href="/term-condition/">Terms & Conditions</a>
                 </li>
-                <li>
+                 <li>
                   <a
                     rel="noopener noreferrer"
                     target="_blank"
@@ -263,11 +263,11 @@ const Footer = () => {
                       <span>- SBM Bank India</span>
                     </div>
                   </a>
-                </li>
+                </li> 
               </ul>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
           <div className={styles.contact_list}>
