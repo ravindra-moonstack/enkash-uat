@@ -16,7 +16,7 @@ import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import BlogWrapper from "@/components/blog/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
@@ -358,8 +358,7 @@ const mealCard = () => {
                   <li>
                     Prepaid meal cards: These are generic meal cards that can be
                     used at multiple restaurants, convenience stores, and food
-                    outlets. They allow employees to choose from various
-                    options
+                    outlets. They allow employees to choose from various options
                   </li>
                   <li>
                     Employer-provided meal cards: Employers partner with

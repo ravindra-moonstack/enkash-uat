@@ -1,5 +1,5 @@
 import React from "react";
-import BlogCard from "../blog-card/blog-card";
+import BlogCard from "./blog-card";
 import MenuButton from "@/components/buttons/menu-button/menu-button";
 import Heading from "@/components/heading/heading";
 import Link from "next/link";
@@ -26,11 +26,7 @@ const BlogWrapper = ({ title, blogData }: BlogWrapperProps) => {
       </div>
 
       <div className="d-flex justify-content-center mt-4">
-        <Heading
-          title="Read Blogs"
-          size="h4"
-          color="equity-blue"
-        />
+        <Heading title="Read Blogs" size="h4" color="equity-blue" />
       </div>
 
       <div className="d-flex justify-content-center mt-4">

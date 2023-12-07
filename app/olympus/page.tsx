@@ -13,7 +13,7 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import FAQ from "@/components/faq/faq";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";

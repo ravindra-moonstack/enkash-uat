@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./blog-card.module.scss";
-import Heading from "../../heading/heading";
-import { arrow } from ".";
+import Heading from "../heading/heading";
+import arrow from "./img/arrow.png";
 import Link from "next/link";
 
 export interface BlogProps {

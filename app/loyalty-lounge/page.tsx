@@ -12,7 +12,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import BlogWrapper from "@/components/blog/blog-wrapper";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";

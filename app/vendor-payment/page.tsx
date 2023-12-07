@@ -16,7 +16,7 @@ import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
 import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import BlogWrapper from "@/components/blog/blog-wrapper";
 
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";

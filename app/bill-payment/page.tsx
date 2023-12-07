@@ -18,7 +18,7 @@ import WebHeader from "@/components/header/web-header";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
 
 export const metadata: Metadata = {

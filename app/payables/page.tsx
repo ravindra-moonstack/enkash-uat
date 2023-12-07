@@ -31,7 +31,7 @@ import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import faqData from "./faq-data";
 import howDoesItWorkData from "./how-does-It-work-data";
 import FAQ from "@/components/faq/faq";
-import BlogWrapper from "@/components/blog/blog-wrapper/blog-wrapper";
+import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
