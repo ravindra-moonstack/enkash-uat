@@ -31,7 +31,7 @@ const purchaseCard = () => {
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <HeaderWrapper />
       <div className={`${styles.first_row} row row-padding color-white`}>
-        <div className="col-12 col-md-6 d-flex flex-column">
+        <div className="col-12 col-md-6 d-flex flex-column px-2">
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
@@ -43,39 +43,37 @@ const purchaseCard = () => {
             </div>
             <Heading title="Purchase Cards" size="h4" weight="4" />
           </div>
-          <div className="d-flex flex-column">
+          <div>
             <Heading
-              title="Manage business"
+              title="Business procurement "
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="procurement costs with"
+              title={`made easy with${space}`}
               color="white"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading
-                title={`smart and${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title={`easy-to-use${space}`}
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="purchase cards"
-                color="white"
-                size="h2"
-                weight="7"
-              />
-            </div>
+            <Heading
+              title={`smart and${space}`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`easy-to-use${space}`}
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="purchase cards"
+              color="white"
+              size="h2"
+              weight="7"
+            />
           </div>
 
           <div className="d-flex mt-4 pe-5">
@@ -192,7 +190,7 @@ const purchaseCard = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="No Dependency"
+              whiteTitle="No Dependency For Expenses"
               description="With purchase cards, the authorized individual does not have to depend on the finance team for business-related expenses and can make decisions if the expense is aligned with company policies"
             />
           </div>
@@ -223,7 +221,7 @@ const purchaseCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Fuel Cards offer a host of benefits for your business and employees!"
+          title="Learn how purchase cards can benefit your business and employees!"
         />
       </div>
       <div
@@ -234,7 +232,7 @@ const purchaseCard = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs Section will Help you Learn about Purchase Cards in detail"
+            title="Don’t worry! Our FAQs section will help you learn about purchase cards in detail"
             color="black"
             size="h4"
           />
