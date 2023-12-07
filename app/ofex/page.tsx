@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const OfEx = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-           <HeaderWrapper />
+      <HeaderWrapper />
 
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
@@ -201,20 +201,19 @@ const OfEx = () => {
       </div>
 
       <div className="row bg-white row-padding">
-        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
+        <div className="d-flex flex-column align-items-center justify-content-center">
           <Heading
-            title={`EnKash does${space}`}
+            title={`Unlock the power of streamlined${space}`}
             size="h1"
             color="black"
             weight="6"
           />
           <Heading
-            title={`the heavy lifting${space}`}
+            title={`expense management${space}`}
             size="h1"
             color="equity-blue"
             weight="6"
           />
-          <Heading title="for you." size="h1" color="black" weight="6" />
         </div>
       </div>
 

@@ -17,6 +17,8 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import carouselData from "./carousel-data";
 import FAQHtml from "./faq-html";
 import HeaderWrapper from "@/components/header/header-wrapper";
+import BlogWrapper from "@/components/blog/blog-wrapper";
+import blogData from "./blog-data";
 
 export const metadata: Metadata = {
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
 const fuelCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-            <HeaderWrapper />
+      <HeaderWrapper />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -139,12 +141,7 @@ const fuelCard = () => {
             size="h1"
             weight="6"
           />
-          <Heading
-            title=" in every mile "
-            color="black"
-            size="h1"
-            weight="6"
-          />
+          <Heading title=" in every mile " color="black" size="h1" weight="6" />
           <Heading
             title="with prepaid fuel cards"
             color="black"
@@ -237,12 +234,12 @@ const fuelCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how Fuel Cards offer a host of benefits for your business and employees!"
         />
-      </div> */}
+      </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

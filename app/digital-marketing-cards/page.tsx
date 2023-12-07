@@ -18,6 +18,8 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import Link from "next/link";
 import FAQHtml from "./faq-html";
 import HeaderWrapper from "@/components/header/header-wrapper";
+import BlogWrapper from "@/components/blog/blog-wrapper";
+import blogData from "./blog-data";
 
 export const metadata: Metadata = {
   title:
@@ -29,7 +31,7 @@ export const metadata: Metadata = {
 const digitalMarketingCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-           <HeaderWrapper />
+      <HeaderWrapper />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -230,12 +232,12 @@ const digitalMarketingCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how Brand Vouchers offer many benefits for your business and employees!"
         />
-      </div> */}
+      </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

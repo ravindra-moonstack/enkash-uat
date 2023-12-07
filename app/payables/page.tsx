@@ -14,7 +14,6 @@ import faqData from "./faq-data";
 import howDoesItWorkData from "./how-does-It-work-data";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import FAQHtml from "./faq-html";
 import Link from "next/link";
@@ -27,14 +26,12 @@ import {
   settingIcon,
   cashAndTime,
   coinIcon,
-  officeImg,
-  bannerAnimation,
   vendorPayAnimation,
   rentalPayAnimation,
   bulkPayAnimation,
   billPayAnimation,
-  taxPayAnimation,
 } from ".";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 
 export const metadata: Metadata = {
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",
@@ -100,8 +97,8 @@ const payables = () => {
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
-            <LottieClientComponent
-              animationData={bannerAnimation}
+            <LottieDynamicLoadComponent
+              animationName={"PayablesBannerAnimation"}
               loop={true}
             />
           </div>
@@ -128,8 +125,8 @@ const payables = () => {
               className={styles.card_bg}
             />
             <div className={styles.lottie_container}>
-              <LottieClientComponent
-                animationData={vendorPayAnimation}
+              <LottieDynamicLoadComponent
+                animationName={"PayablesVendorAnimation"}
                 loop={true}
               />
             </div>
@@ -146,8 +143,8 @@ const payables = () => {
             />
 
             <div className={styles.lottie_container}>
-              <LottieClientComponent
-                animationData={rentalPayAnimation}
+              <LottieDynamicLoadComponent
+                animationName={"PayablesRentalAnimation"}
                 loop={true}
               />
             </div>
@@ -176,10 +173,11 @@ const payables = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <LottieClientComponent
-              animationData={bulkPayAnimation}
-              loop={true}
-            />
+            
+              <LottieDynamicLoadComponent
+                animationName={"PayablesBulkAnimation"}
+                loop={true}
+              />
           </div>
         </div>
       </div>
@@ -187,10 +185,11 @@ const payables = () => {
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
           <div className={styles.lottie_first_container}>
-            <LottieClientComponent
-              animationData={billPayAnimation}
-              loop={true}
-            />
+           
+             <LottieDynamicLoadComponent
+                animationName={"PayablesBillAnimation"}
+                loop={true}
+              />
           </div>
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
@@ -210,8 +209,8 @@ const payables = () => {
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
-            <LottieClientComponent
-              animationData={taxPayAnimation}
+            <LottieDynamicLoadComponent
+              animationName={"PayablesTaxAnimation"}
               loop={true}
             />
           </div>

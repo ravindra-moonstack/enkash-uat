@@ -97,7 +97,7 @@ const slash = () => {
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
-              animationName={"freedomBannerAnimation"}
+              animationName={"FreedomBannerAnimation"}
               loop={true}
             />
           </div>

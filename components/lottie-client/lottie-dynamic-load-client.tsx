@@ -51,6 +51,12 @@ import {
   olympusBannerAnimation,
   recievablesBannerAnimation,
   loyaltyOfferAnimation,
+  payablesBannerAnimation,
+  payablesBillAnimation,
+  payablesBulkAnimation,
+  payablesRentalAnimation,
+  payablesTaxAnimation,
+  payablesVendorAnimation,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -81,14 +87,13 @@ const animationMap: Record<string, () => Promise<any>> = {
   FreedomFuelAnimation: fuelAnimation,
   FreedomPurchaseAnimation: purchaseCardAnimation,
 
-
-  RecievablesBannerAnimation:  recievablesBannerAnimation,
+  RecievablesBannerAnimation: recievablesBannerAnimation,
   RecievablesInvoiceAnimation: invoiceAnimation,
   RecievablesBulkAnimation: bulkCollectAnimation,
   RecievablesPaymentAnimation: paymentLinkAnimation,
   RecievablesQuickAnimation: quickCollectAnimation,
   RecievablesVirtualAnimation: virtualAccountAnimation,
-  
+
   OfexBannerAnimation: ofexBannerAnimation,
   XpenzHeirarchyAnimation: heirarchyControlAnimation,
   XpenzBudgetAnimation: budgetAndAdvanceAnimation,
@@ -101,7 +106,14 @@ const animationMap: Record<string, () => Promise<any>> = {
   LoyaltyChannelAnimation: channelIncentiveAnimation,
   LoyaltyGiftCardAnimation: giftCardAnimation,
   LoyaltyBrandVoucherAnimation: brandVoucherAnimation,
-  LoyaltyOfferAnimation:loyaltyOfferAnimation,
+  LoyaltyOfferAnimation: loyaltyOfferAnimation,
+
+  PayablesBannerAnimation: payablesBannerAnimation,
+  PayablesTaxAnimation: payablesTaxAnimation,
+  PayablesVendorAnimation: payablesVendorAnimation,
+  PayablesRentalAnimation: payablesRentalAnimation,
+  PayablesBulkAnimation: payablesBulkAnimation,
+  PayablesBillAnimation: payablesBillAnimation,
 
   OlympusBannerAnimation: olympusBannerAnimation,
   OlympusVendorAnimation: olympusVendorAnimation,

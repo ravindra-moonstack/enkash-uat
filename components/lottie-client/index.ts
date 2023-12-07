@@ -105,3 +105,17 @@ export const manage = () => import("../../app/img/lottie/manage.json");
 export const track = () => import("../../app/img/lottie/track.json");
 export const optimize = () => import("../../app/img/lottie/optimize.json");
 export const automate = () => import("../../app/img/lottie/automate.json");
+
+//Payables Animation
+export const payablesBannerAnimation = () =>
+  import("../../app/payables/img/lottie/banner.json");
+export const payablesTaxAnimation = () =>
+  import("../../app/payables/img/lottie/tax-pay.json");
+export const payablesVendorAnimation = () =>
+  import("../../app/payables/img/lottie/vendor-pay.json");
+export const payablesRentalAnimation = () =>
+  import("../../app/payables/img/lottie/rental-pay.json");
+export const payablesBulkAnimation = () =>
+  import("../../app/payables/img/lottie/bulk-pay.json");
+export const payablesBillAnimation = () =>
+  import("../../app/payables/img/lottie/bill-pay.json");

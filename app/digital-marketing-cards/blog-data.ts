@@ -1,36 +1,33 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Open-a-virtual-bank-account-now-to-manage-your-business-expenses.jpg",
-    imageAlt:
-      "Open a Virtual Bank Account for Business and Manage Expense Better",
-    title: "Open a Virtual Bank Account for Business and Manage Expense Better",
-    date: "Dec 26, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/08/blog_10G.c8939210.jpg",
+    imageAlt: "Why Is Digital Marketing Important for Small Businesses?",
+    title: "Why Is Digital Marketing Important for Small Businesses?",
+    date: "Aug 08, 2022",
     description:
-      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
+      "We live in a digital world, where the importance of digital marketing is likely to only increase in the future. According to industry research, there were over 700 million internet users in India in 2020 which is expected to grow to...",
+    link: "https://www.enkash.com/resources/blog/importance-of-digital-marketing/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
-    imageAlt:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
-    title:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
-    date: "Jan 01, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/05/How-startups-can-leverage-digital-marketing.jpg",
+    imageAlt: "Digital Marketing for Startups: Advantages and Opportunities",
+    title: "Digital Marketing for Startups: Advantages and Opportunities",
+    date: "May 05, 2023",
     description:
-      "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
-    link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
+      "While traditional marketing methods still hold value, digital marketing has emerged as a game-changer for startups. With its unparalleled reach, cost-effectiveness, and precise targeting capabilities...",
+    link: "https://www.enkash.com/resources/blog/digital-marketing-for-startups/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
-    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
-    title: "Learn How Virtual Accounts Can Benefit Your Business",
-    date: "Jan 09, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_27.dc4a6280.jpg",
+    imageAlt: "Manage Digital Marketing Expenses with Corporate Cards",
+    title: "Manage Digital Marketing Expenses with Corporate Cards",
+    date: "Sep 026, 2022",
     description:
       "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
-    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+    link: "https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/",
   },
 ];
 

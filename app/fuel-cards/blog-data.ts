@@ -1,34 +1,34 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/WhatsApp-Image-2023-09-13-at-4.23.23-PM-1.jpeg",
-    imageAlt: "Tax-free Meals For Your Employees With EnKash Meal Cards",
-    title: "Tax-free Meals For Your Employees With EnKash Meal Cards",
-    date: "Dec 21, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/5-Reasons-you-need-prepaid-credit-card-for-your-business-1.jpg",
+    imageAlt: "5 Reasons You Need Prepaid Credit Cards For Your Business",
+    title: "5 Reasons You Need Prepaid Credit Cards For Your Business",
+    date: "Sep 29, 2022",
     description:
-      "Employee satisfaction is one of the cornerstones of a successful business. To keep your employees happy, just paying salaries on time is not enough anymore...",
-    link: "https://www.enkash.com/resources/blog/tax-free-meal-cards/",
+      "Many businesses that operate on a small and medium level have gained huge success and have been able to scale their company profitably with prepaid credit cards, as they are regarded as a powerful financial...",
+    link: "https://www.enkash.com/resources/blog/prepaid-credit-card-for-business/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/Types-of-corporate-credit-cards-to-manage-expenses.jpg",
-    imageAlt: "9 types of corporate credit cards to manage expenses",
-    title: "9 types of corporate credit cards to manage expenses",
-    date: "Dec 21, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_31.568a8412.jpg",
+    imageAlt: "Corporate Prepaid Cards Vs Corporate Credit Cards",
+    title: "Corporate Prepaid Cards Vs Corporate Credit Cards",
+    date: "Sep 26, 2022",
     description:
-      "The corporate credit card has been around the business industry for a while now. While popular banks have been issuing many types of corporate credit cards for years, FinTech platforms...",
-    link: "https://www.enkash.com/resources/blog/smart-business-expenses-managment/",
+      "Businesses – big or small, still heavily rely on business credit cards for their finances. It’s a practice that’s been adopted for years, and while it does give a certain degree of freedom to conduct business transactions, there are...",
+    link: "https://www.enkash.com/resources/blog/employee-prepaid-vs-corporate-credit-cards/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_7.1b7b0500.jpg",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/10/Prepaid-Cards-A-definitive-guide-to-growth-and-profitibility.jpg",
     imageAlt:
-      "What is Business Expense Card & Benefits of Business Prepaid Cards",
-    title: "What is Business Expense Card & Benefits of Business Prepaid Cards",
-    date: "Dec 21, 2023",
+      "Prepaid Cards – A Guide to Growth",
+    title: "Prepaid Cards – A Guide to Growth",
+    date: "Oct 10, 2022",
     description:
-      "Prepaid cards or corporate expense cards have emerged as cutting-edge expense management tools, offering a range of innovative features to simplify your life. From handling business...",
-    link: "https://www.enkash.com/resources/blog/prepaid-card-for-business-expenses/",
+      "The growth of a business depends on various factors, one of which is the way a company makes payments. With the country rapidly moving towards digitization in different industries, digital payments in India have become",
+    link: "https://www.enkash.com/resources/blog/prepaid-cards-a-defintive-guide-to-growth/",
   },
 ];
 

@@ -22,31 +22,31 @@ const dataSets = [
     imageSrc: iconThree,
     altText: "Setting up of budgets",
     heading:
-      "Setting up of budgets: The automated expense management platform helps define budgets for all departments & projects as per employee allocation",
+      "The automated expense management platform helps define budgets for all departments & projects as per employee allocation",
   },
   {
     imageSrc: iconFour,
     altText: "Simplified expense submission",
     heading:
-      "Simplified expense submission: A user-friendly interface ensuring that employees can effortlessly submit expenses from their mobile devices at any time and from any location",
+      "A user-friendly interface ensuring that employees can effortlessly submit expenses from their mobile devices at any time and from any location",
   },
   {
     imageSrc: iconFive,
     altText: "Automated approval workflow",
     heading:
-      "Automated approval workflow: On-click approval process based on predefined budgets or policies",
+      "On-click approval process based on predefined budgets or policies",
   },
   {
     imageSrc: iconSix,
     altText: "Faster expense tracking",
     heading:
-      "Faster expense tracking: AI-powered WhatsApp bot helps report expenses and enables managers to give on-the-go approvals",
+      "AI-powered WhatsApp bot helps report expenses and enables managers to give on-the-go approvals",
   },
   {
     imageSrc: iconSeven,
     altText: "Ensure timely payment image",
     heading:
-      "Real-time visibility:  Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
+      "Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
   },
 ];
 

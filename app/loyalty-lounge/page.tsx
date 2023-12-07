@@ -404,12 +404,12 @@ const loyaltyLounge = () => {
         </div>
       </div>
 
-      <div className="bg-white row-padding text-center d-flex flex-column">
+      {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how loyalty lounge can benefit your business and employees!"
         />
-      </div>
+      </div> */}
 
       <div
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
