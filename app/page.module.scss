@@ -842,11 +842,12 @@
       #1c5af4 0%,
       rgba(255, 255, 255, 0) 100%
     );
-    .lottie_container {
+    .image_container {
       display: flex;
       align-items: center;
       @include bp-md {
-        padding-right: 40px;
+        padding-right: 60px;
+        margin-top: -50px;
       }
       img {
         width: 100%;

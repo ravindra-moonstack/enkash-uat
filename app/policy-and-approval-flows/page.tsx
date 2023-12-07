@@ -47,7 +47,7 @@ const policyApprovalFlow = () => {
               />
             </div>
             <Heading
-              title="| Policies and Approval flow"
+              title="| Policy and Approval Flows"
               size="h4"
               weight="4"
             />
@@ -282,7 +282,7 @@ const policyApprovalFlow = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how policies and approval flow can revolutionize the way you work!"
+          title="Learn how policy and approval flows can revolutionize the way you work!"
         />
       </div>
       <div

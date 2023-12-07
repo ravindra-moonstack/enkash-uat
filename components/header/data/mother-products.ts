@@ -18,7 +18,7 @@ export const motherProducts = [
   {
     name: "Loyalty Lounge",
     description:
-      "Seamlessly automate & manage rewards, incentives, and payouts",
+      "Seamlessly automate & manage rewards, incentives",
     link: "/loyalty-lounge",
   },
 ];

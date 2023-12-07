@@ -208,7 +208,7 @@ const scanAndDropReceipts = () => {
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="One-click receipt download"
+              whiteTitle="One-Click Download"
               description="Gain overall control over the business expense reimbursement process by downloading all receipts in just one click"
             />
           </div>

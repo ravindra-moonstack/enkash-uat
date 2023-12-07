@@ -1,36 +1,36 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Open-a-virtual-bank-account-now-to-manage-your-business-expenses.jpg",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/06/Employee-Retention-Strategies-to-Help-Your-Startup-Thrive.jpg",
     imageAlt:
-      "Open a Virtual Bank Account for Business and Manage Expense Better",
-    title: "Open a Virtual Bank Account for Business and Manage Expense Better",
-    date: "Dec 26, 2022",
+      "8 Employee Retention Strategies for Startup Success",
+    title: "8 Employee Retention Strategies for Startup Success",
+    date: "Jun 16, 2023",
     description:
-      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
+      "Running a successful startup requires more than just innovative ideas and cutting-edge technology. It also relies on having a team of talented and dedicated employees who are committed to the company’s...",
+    link: "https://www.enkash.com/resources/blog/employee-retention-strategies/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/12/HR-Policies.jpg",
     imageAlt:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+      "Essential HR Policies for a Startup Company",
     title:
-      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+      "Essential HR Policies for a Startup Company",
     date: "Jab 27, 2023",
     description:
-      "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
-    link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
+      "Human Resources (HR) is an important department for every profitable business. The human resource department forms the organization’s backbone by hiring suitable people. The success of any business...",
+    link: "https://www.enkash.com/resources/blog/hr-policies-for-startups/",
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
-    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
-    title: "Learn How Virtual Accounts Can Benefit Your Business",
-    date: "Jan 09, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_26.d1a8b0d7.jpg",
+    imageAlt: "Rewards Programs -The Way to Pay More, Earn More",
+    title: "Rewards Programs -The Way to Pay More, Earn More",
+    date: "Aug 02, 2023",
     description:
-      "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
-    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+      "Corporate cards with attractive rewards programs are one of the most popular choices in the business world these days. Their ease of usage coupled with their immense flexibility makes them a prime choice...",
+    link: "https://www.enkash.com/resources/blog/corporate-cards-benefits-rewards-program/",
   },
 ];
 

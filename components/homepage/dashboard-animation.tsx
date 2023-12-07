@@ -1,36 +1,13 @@
 "use client";
-import {
-  automateAnimation,
-  manageAnimation,
-  trackAnimation,
-  optimizeAnimation,
-} from "@/app/index";
+
 import styles from "@/app/page.module.scss";
-import { useEffect, useState } from "react";
-import Lottie from "@novemberfiveco/lottie-react-light";
+import { useState } from "react";
 import MenuButton from "../buttons/menu-button/menu-button";
+import LottieDynamicLoadComponent from "../lottie-client/lottie-dynamic-load-client";
 
 const DashBoardAnimation = () => {
   const [activeAnimation, setActiveAnimation] = useState("manage");
 
-  type LottieAnimationData = any;
-  const [dashBoardAnimationData, setDashBoardAnimationData] =
-    useState<LottieAnimationData | null>(null);
-
-  const ANIMATION_MAP: any = {
-    automate: automateAnimation,
-    manage: manageAnimation,
-    track: trackAnimation,
-    optimize: optimizeAnimation,
-  };
-
-  useEffect(() => {
-    const loadAnimation = async () => {
-      const dashboardAnimationModule = await ANIMATION_MAP[activeAnimation]();
-      setDashBoardAnimationData(dashboardAnimationModule.default);
-    };
-    loadAnimation();
-  }, [activeAnimation]);
   return (
     <>
       <div className={`col-md-12 col-3  ${styles.action_container}`}>
@@ -65,10 +42,9 @@ const DashBoardAnimation = () => {
         </div>
       </div>
       <div className={`col-md-12 col-9 ${styles.image_container}`}>
-        <Lottie
-          animationData={dashBoardAnimationData}
+        <LottieDynamicLoadComponent
+          animationName={activeAnimation}
           loop={true}
-          autoplay={true}
         />
       </div>
     </>

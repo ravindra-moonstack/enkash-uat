@@ -276,7 +276,7 @@ const reimbursement = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how reimbursements can benefit your business and employees"
+          title="Learn how reimbursements can benefit your business and employees!"
         />
       </div>
       <div

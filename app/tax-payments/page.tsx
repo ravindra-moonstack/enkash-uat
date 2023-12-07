@@ -239,7 +239,7 @@ const taxPayments = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs Section will Help you Learn about Tax Payments in detail."
+            title="Don't worry! Our FAQs Section will Help you Learn about Tax Payments in detail"
             color="black"
             size="h4"
           />

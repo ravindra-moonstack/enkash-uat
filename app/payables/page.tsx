@@ -416,7 +416,7 @@ const payables = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don’t worry! Our FAQs section will help you learn about accounts payable in detail."
+            title="Don’t worry! Our FAQs section will help you learn about accounts payable in detail"
             color="black"
             size="h4"
           />
@@ -447,7 +447,7 @@ const payables = () => {
       <div className="row">
         <ContactUsCard
           title="Efficient and easy business payments"
-          description="Accounts payable automation is the process by which a business pays its suppliers, service providers, and vendors online"
+          description="Accounts payable automation is the process by which a business pays its suppliers, service providers, and vendors online."
         />
       </div>
       <div className="row">

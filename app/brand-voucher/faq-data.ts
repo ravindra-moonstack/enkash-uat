@@ -23,11 +23,11 @@ const faqData = [
         heading:
           "Using a brand voucher is pretty simple. Here’s how you can do it the right way:",
         bullets: [
-          "Read the amount it is valid for and whether it can be redeemed online or offline.",
-          "Know for which products and services it can be utilized and the last date to use it.",
-          "Check all the terms and conditions mentioned on the brand voucher.",
-          "Enter the code or coupon as given during checkout when making a purchase on the brand's website or in-store.",
-          "If in doubt, reach out to the brand via their customer service.",
+          "Read the amount it is valid for and whether it can be redeemed online or offline",
+          "Know for which products and services it can be utilized and the last date to use it",
+          "Check all the terms and conditions mentioned on the brand voucher",
+          "Enter the code or coupon as given during checkout when making a purchase on the brand's website or in-store",
+          "If in doubt, reach out to the brand via their customer service",
         ],
       },
     ],

@@ -43,6 +43,8 @@ export const virtualAccountAnimation = () =>
 
 //ofex Animation
 
+export const ofexBannerAnimation = () =>
+  import("../../app/ofex/img/lottie/expense.json");
 export const heirarchyControlAnimation = () =>
   import("../../app/ofex/img/lottie/hierarchy.json");
 export const budgetAndAdvanceAnimation = () =>
@@ -88,3 +90,10 @@ export const loyaltyTwo = () => import("../../app/img/lottie/loyalty-2.json");
 export const loyaltyThree = () => import("../../app/img/lottie/loyalty-3.json");
 export const loyaltyFour = () => import("../../app/img/lottie/loyalty-4.json");
 export const loyaltyFive = () => import("../../app/img/lottie/loyalty-5.json");
+
+//Dashbaord Section Homepage
+export const manage = () => import("../../app/img/lottie/manage.json");
+export const track = () => import("../../app/img/lottie/track.json");
+export const optimize = () => import("../../app/img/lottie/optimize.json");
+export const automate = () => import("../../app/img/lottie/automate.json");
+

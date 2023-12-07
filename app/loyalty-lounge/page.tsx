@@ -13,11 +13,12 @@ import MobileHeader from "@/components/header/mobile-header/mobile-header";
 import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import BlogWrapper from "@/components/blog/blog-wrapper";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import FAQHtml from "./faq-html";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import {
   officeImg,
   whiteArrow,
@@ -26,9 +27,8 @@ import {
   heavyLiftingIconOne,
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
-  bannerAnimation,
 } from ".";
-import FAQHtml from "./faq-html";
+
 
 export const metadata: Metadata = {
   title:

@@ -27,7 +27,7 @@ const blogData = [
     title: "9 types of corporate credit cards to manage expenses",
     date: "Sep 23, 2022",
     description:
-      "The corporate credit card has been around the business industry for a while now. While popular banks have been issuing many types of corporate credit cards for years, FinTech platforms are..",
+      "The corporate credit card has been around the business industry for a while now. While popular banks have been issuing many types of corporate credit cards for years, FinTech platforms are now offering more evolved payment...",
     link: "https://www.enkash.com/resources/blog/smart-business-expenses-managment/",
   },
 ];

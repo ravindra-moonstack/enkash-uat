@@ -243,7 +243,7 @@ const virtualCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how virtual cards could revolutionize the way you work!"
+          title="Learn how virtual cards can revolutionize the way you work!"
         />
       </div>
       <div
@@ -271,7 +271,7 @@ const virtualCard = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of virtual cards?"
-          description="Virtual cards are digital, secure tools for making online transactions. They are readily available via EnKash and are user-friendly, convenient, and customizable"
+          description="Virtual cards are digital, secure tools for making online transactions. They are readily available via EnKash and are user-friendly, convenient, and customizable."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

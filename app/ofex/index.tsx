@@ -8,6 +8,3 @@ export { default as heavyLiftingIconOne } from "./img/heavy-lifting-icon-one.svg
 export { default as heavyLiftingIconTwo } from "./img/heavy-lifting-icon-two.svg";
 export { default as heavyLiftingIconThree } from "./img/heavy-lifting-icon-three.svg";
 export { default as heavyLiftingIconFour } from "./img/heavy-lifting-icon-four.svg";
-
-//Animations import
-export { default as expense } from "./img/lottie/expense.json";

@@ -12,7 +12,7 @@ const carouselData = [
   {
     image: iconTwo,
     alt: "Go to Partnered Services on the dashboard",
-    title: "Go to Partnered Services on the dashboard",
+    title: 'Go to "Partnered Services" on the dashboard',
   },
   {
     image: iconThree,
@@ -23,7 +23,7 @@ const carouselData = [
     image: iconFour,
     alt: "Carefully read the terms and conditions and click on Apply Now to get the offer",
     title:
-      "Carefully read the terms and conditions and click on Apply Now to get the offer",
+      'Carefully read the terms and conditions and click on "Apply Now" to get the offer',
   },
 ];
 

@@ -42,6 +42,11 @@ import {
   loyaltyThree,
   loyaltyTwo,
   loyaltyBannerAnimation,
+  automate,
+  manage,
+  optimize,
+  track,
+  ofexBannerAnimation,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -58,6 +63,11 @@ const animationMap: Record<string, () => Promise<any>> = {
   LoyaltyFour: loyaltyFour,
   LoyaltyFive: loyaltyFive,
 
+  manage: manage,
+  track: track,
+  optimize: optimize,
+  automate: automate,
+
   FreedomTravelAnimation: travelCardAnimation,
   FreedomSaasAnimation: saasAnimation,
   FreedomVirtualAnimation: virtualCardAnimation,
@@ -72,6 +82,7 @@ const animationMap: Record<string, () => Promise<any>> = {
   RecievablesQuickAnimation: quickCollectAnimation,
   RecievablesVirtualAnimation: virtualAccountAnimation,
 
+  OfexBannerAnimation: ofexBannerAnimation,
   XpenzHeirarchyAnimation: heirarchyControlAnimation,
   XpenzBudgetAnimation: budgetAndAdvanceAnimation,
   XpenzReimbursementAnimation: reimbursementAnimation,
@@ -97,10 +108,10 @@ interface LottieDynamicLoadComponentProps {
   loop: boolean;
 }
 
-const LottieDynamicLoadComponent: React.FC<LottieDynamicLoadComponentProps> = ({
+const LottieDynamicLoadComponent = ({
   animationName,
   loop = true,
-}) => {
+}: LottieDynamicLoadComponentProps) => {
   const [animationData, setAnimationData] = useState<any | null>(null);
 
   useEffect(() => {
@@ -122,6 +133,3 @@ const LottieDynamicLoadComponent: React.FC<LottieDynamicLoadComponentProps> = ({
 };
 
 export default LottieDynamicLoadComponent;
-function olympusUtilitynimation(): Promise<any> {
-  throw new Error("Function not implemented.");
-}

@@ -1,13 +1,13 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_30.2b14ff38.jpg",
-    imageAlt: "Automate Your Spends with SaaS Spend Management Software",
-    title: "Automate Your Spends with SaaS Spend Management Software",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/09/Virtual-credit-cards-enable-quiker-payments-scaled.jpg",
+    imageAlt: "Virtual Credit Cards Enable Quicker Payments",
+    title: "Virtual Credit Cards Enable Quicker Payments",
     date: "Aug 02, 2023",
     description:
-      "The number of SaaS-based start-ups in India has seen an astonishing rise over the past couple of years. Demand for SaaS products is increasing day by day among industries like e-commerce, healthcare...",
-    link: "https://www.enkash.com/resources/blog/saas-subscription-management-with-virtual-cards/",
+      "Managing the company’s accounts payable on time ensures the business maintains healthy relationships with merchants, creditors, employees, and customers. However, for SMEs delayed disbursements can affect the overall...",
+    link: "https://www.enkash.com/resources/blog/enable-payments-with-virtual-cards-for-business/",
   },
   {
     image:

@@ -238,7 +238,7 @@ const paymentLinks = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how payment links could revolutionize the way you work!"
+          title="Learn how payment links can revolutionize the way you work!"
         />
       </div>
       <div
@@ -267,7 +267,7 @@ const paymentLinks = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of payment links?"
-          description="Payment links are a convenient and straightforward way to collect payments online. These are unique URLs that direct customers to a secure payment page, where they can enter their payment information and complete the transaction quickly and securely"
+          description="Payment links are a convenient and straightforward way to collect payments online. These are unique URLs that direct customers to a secure payment page, where they can enter their payment information and complete the transaction quickly and securely."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

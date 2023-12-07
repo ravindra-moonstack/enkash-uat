@@ -65,7 +65,7 @@ const freedom = () => {
               weight="7"
             />
             <Heading
-              title="credit and prepaid"
+              title="credit and prepaid needs"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -187,7 +187,7 @@ const freedom = () => {
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="DIY card module"
+            title="DIY-card module"
             description="A unique feature that helps you customize cards, workflow, and dashboard as per business needs"
             theme="green"
           />
@@ -210,7 +210,7 @@ const freedom = () => {
         </div>
       </div>
 
-      <div className={styles.more_cards}>
+      {/* <div className={styles.more_cards}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
@@ -255,7 +255,7 @@ const freedom = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="row bg-white row-padding">
         <div className="text-center">

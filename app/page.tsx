@@ -726,7 +726,7 @@ const home = () => {
         <div
           className={`col-md-6 col-12 d-flex justify-content-center  mt-3 order-2 order-md-1 ${styles.blue_grad_bg}`}
         >
-          <div className={styles.lottie_container}>
+          <div className={styles.image_container}>
             <Image src={integration} alt="enkash phone integration image" />
           </div>
         </div>
@@ -744,7 +744,7 @@ const home = () => {
           </div>
           <div className="mt-4 d-flex flex-column">
             <Heading
-              title="It readily connects with any accounting or ERP solution like Tally, Quickbooks, and SAP. This helps with continuous reconciliation that is audit-ready with real-time views"
+              title="It readily connects with any accounting or ERP solution like Tally, Zoho, and SAP. This helps with continuous reconciliation that is audit-ready with real-time views"
               color="black"
               size="h4"
               weight="4"

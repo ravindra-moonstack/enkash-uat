@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Unlock a world of savings and exclusive perks with our rewards and offers. Explore the benefits of our program and start enjoying the offer with EnKash today!",
 };
 
-const giftCards = () => {
+const offers = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <div className="mobile-header">
@@ -62,7 +62,7 @@ const giftCards = () => {
             <Heading title="on SaaS" color="white" size="h2" weight="7" />
 
             <Heading
-              title={`subscriptions${space}`}
+              title={`${space}subscriptions${space}`}
               color="white"
               size="h2"
               weight="7"
@@ -261,7 +261,7 @@ const giftCards = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of offers?"
-          description="Make your business function smoothly and advance toward growth with exclusive offers from EnKash. These offers on partnered services can help grow your business"
+          description="Make your business function smoothly and advance toward growth with exclusive offers from EnKash. These offers on partnered services can help grow your business."
         />
       </div>
 
@@ -283,7 +283,7 @@ const giftCards = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="These offers can benefit your business by providing significant savings on SaaS products through curated deals with trusted partners. With a seamless process and real-time visibility, businesses can easily access top-notch deals, streamline subscriptions, and stay ahead of new offers"
+                  title="These offers can benefit your business by providing significant savings on SaaS products through curated deals with trusted partners. With a seamless process and real-time visibility, businesses can easily access top-notch deals, streamline subscriptions, and stay ahead of new offers."
                 />
               </div>
               <div className="mb-2">
@@ -317,7 +317,7 @@ const giftCards = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="To reach us, you can send an email to support@enkash.com or contact us at (+91) 853 049 0475"
+                  title="To reach us, you can send an email to support@enkash.com or contact us at (+91) 853 049 0475."
                 />
               </div>
             </>
@@ -328,4 +328,4 @@ const giftCards = () => {
   );
 };
 
-export default giftCards;
+export default offers;

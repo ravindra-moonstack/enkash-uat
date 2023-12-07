@@ -47,9 +47,4 @@ export { default as everestLogo } from "./img/everest-logo.png";
 export { default as pristynCareLogo } from "./img/pristyn-care-logo.png";
 export { default as cureFoodsLogo } from "./img/curefoods-logo.png";
 export { default as infraMarketLogo } from "./img/infra-market-logo.png";
-export { default as integration } from "./img/Integration.png";
-
-export const manageAnimation = () => import("./img/lottie/manage.json");
-export const automateAnimation = () => import("./img/lottie/automate.json");
-export const trackAnimation = () => import("./img/lottie/track.json");
-export const optimizeAnimation = () => import("./img/lottie/optimize.json");
+export { default as integration } from "./img/integration.png";

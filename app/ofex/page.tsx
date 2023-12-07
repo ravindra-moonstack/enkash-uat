@@ -14,7 +14,6 @@ import WebHeader from "@/components/header/web-header";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
@@ -25,10 +24,8 @@ import {
   whiteArrow,
   cardBg,
   faqBg,
-  expense,
   heavyLiftingIconOne,
   heavyLiftingIconTwo,
-  heavyLiftingIconFour,
   heavyLiftingIconThree,
 } from ".";
 import FAQHtml from "./faq-html";
@@ -93,7 +90,10 @@ const OfEx = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <LottieClientComponent animationData={expense} loop={true} />
+          <LottieDynamicLoadComponent
+            animationName={"ofexBannerAnimation"}
+            loop={true}
+          />
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex`}>
@@ -418,7 +418,7 @@ const OfEx = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don’t worry! Our FAQs Section will Help you Learn about OfEx in detail"
+            title="Don’t worry! Our FAQs section will help you learn about expense management in detail"
             color="black"
             size="h4"
           />
@@ -448,7 +448,7 @@ const OfEx = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Seeking Further Understanding of OfEx?"
+          title="Manage your office expenses like never before!"
           description="Expense management is the process of working around a company’s budget and expenses, managing approval, reports, and reimbursements raised by employees."
         />
       </div>
