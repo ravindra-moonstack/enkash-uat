@@ -88,7 +88,7 @@ const OfEx = () => {
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <LottieDynamicLoadComponent
-            animationName={"ofexBannerAnimation"}
+            animationName={"OfexBannerAnimation"}
             loop={true}
           />
         </div>

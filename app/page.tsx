@@ -30,18 +30,18 @@ import {
   inc42,
   paymentAndCardSummit,
   nasscom,
-  testimonials,
-  userImg,
   blueBlackLine,
-  mobileTestimonial,
   leftBlueGradient,
   leftCardGradient,
   rightCardGradient,
   greenBg,
   integration,
+  authorOne,
+  authorTwo,
 } from ".";
 import DashBoardAnimation from "@/components/homepage/dashboard-animation";
 import HeaderWrapper from "@/components/header/header-wrapper";
+import AwardSection from "@/components/homepage/award-section";
 
 export const metadata: Metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -487,16 +487,11 @@ const home = () => {
       >
         <div className="d-flex flex-column justify-content-center align-items-center w-100">
           <div>
-            <Heading
-              title="Discover full control"
-              color="black"
-              size="h1"
-              weight="7"
-            />
+            <Heading title="Explore slash" color="black" size="h1" weight="7" />
           </div>
           <div>
             <Heading
-              title="Discover freedom"
+              title="Experience savings"
               color="equity-blue"
               size="h1"
               weight="7"
@@ -757,73 +752,10 @@ const home = () => {
         </div>
       </div>
       <div className={`${styles.fourteenth_row} row bg-white row-padding`}>
-        <div className="col-12 text-center mb-5">
-          <Heading title="Awards & Accolades" color="equity-blue" size="h1" />
-        </div>
-        <div
-          className={`d-flex flex-column flex-md-row justify-content-center text-center ${styles.box}`}
-        >
-          <div
-            className={`d-flex flex-column justify-content-between ${styles.box_item}`}
-          >
-            <div className="mb-3 mb-m-5 py-2">
-              <Heading
-                title="Preferred Partner by NPCI"
-                color="black"
-                size="h6"
-              />
-            </div>
-            <div>
-              <Image
-                src={inc42}
-                alt="inc42 logo"
-                className="img-fluid"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div
-            className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
-          >
-            <div className="mb-5 py-2">
-              <Heading
-                title="Best Platform for SME Financial Growth at the 4th Annual BFSI Excellence Award"
-                color="electric-green"
-                size="h6"
-              />
-            </div>
-            <div>
-              <Image
-                src={nasscom}
-                alt="nasscom logo"
-                className="img-fluid"
-                loading="lazy"
-              />
-            </div>
-          </div>
-          <div
-            className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
-          >
-            <div className="mb-3 mb-m-5 py-2">
-              <Heading
-                title="Fintech Festival India Award"
-                color="black"
-                size="h6"
-              />
-            </div>
-            <div>
-              <Image
-                src={paymentAndCardSummit}
-                alt="payment and card summit logo"
-                className="img-fluid"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
+        <AwardSection />
       </div>
       <div className={`${styles.fifthteen_row} row color-white`}>
-        <div className={`${styles.title} col-12 mb-md-5 text-center`}>
+        <div className={`${styles.title} text-center`}>
           <Heading
             title={`Trusted by${space}`}
             color="white"
@@ -837,45 +769,65 @@ const home = () => {
             weight="6"
           />
           <Heading title="companies" color="white" size="h1" weight="6" />
-        </div>
-        <div
-          className={`col-md-6 col-12 d-flex flex-column ${styles.testimonials_section}`}
-        >
-          <div className="mb-3">
-            <Heading title="NTech Media" color="white" size="h4" weight="6" />
-          </div>
-          <div className="mb-md-5">
+          <div>
+            {" "}
             <Heading
-              title='"One of the key benefits of Olympus was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management."'
-              size="h5"
+              title="( Prakash is working on this testimonial section - this is not final )"
+              color="white"
+              size="h6"
               weight="6"
-              color="electric-green"
-              italic={true}
             />
           </div>
-          <div className="d-flex mt-4 align-items-center">
-            <div className="me-4">
-              <Image src={userImg} alt="enkash user image" loading="lazy" />
+        </div>
+
+        <div></div>
+        <div
+          className={`d-flex justify-content-between ${styles.testimonials_section}`}
+        >
+          <div className="testimonial-one px-5">
+            <div className="mb-md-5">
+              <Heading
+                title='"One of the key benefits of Olympus was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management."'
+                size="h6"
+                weight="6"
+                color="electric-green"
+                italic={true}
+              />
             </div>
-            <div className="d-flex flex-column">
-              <Heading title="Deep Sehgal, Founder," size="h4" weight="4" />
-              <Heading title="Vianet" size="h4" weight="4" />
+            <div className="d-flex mt-4 align-items-center">
+              <div className="me-4">
+                <Image src={authorOne} alt="enkash user image" loading="lazy" />
+              </div>
+              <div className="d-flex flex-column">
+                <Heading title="Deep Sehgal, Founder," size="h4" weight="4" />
+                <Heading title="Vianet" size="h4" weight="4" />
+              </div>
             </div>
           </div>
-        </div>
-        <div className={`col-md-6 col-12 ${styles.image_section}`}>
-          <Image
-            src={testimonials}
-            alt="enkash testimonials"
-            className={`img-fluid ${styles.desktop_testimonial}`}
-            loading="lazy"
-          />
-          <Image
-            src={mobileTestimonial}
-            alt="enkash testimonials"
-            className={styles.mobile_testimonial}
-            loading="lazy"
-          />
+          <div className="testimonial-two px-5">
+            <div className="mb-md-5">
+              <Heading
+                title='"In integrated marketing communications, agencies need to allocate budgets for different verticals. Through Olympus’ virtual cards, we were able to manage our budget allocation for various departments, streamline approvals seamlessly, and gain real-time visibility of all our department-wise expenses to our finance department."'
+                size="h6"
+                weight="6"
+                color="electric-green"
+                italic={true}
+              />
+            </div>
+            <div className="d-flex mt-4 align-items-center">
+              <div className="me-4">
+                <Image src={authorTwo} alt="enkash user image" loading="lazy" />
+              </div>
+              <div className="d-flex flex-column">
+                <Heading
+                  title=" Noufel Anamala, Founder,"
+                  size="h4"
+                  weight="4"
+                />
+                <Heading title="Honeycomb Creative" size="h4" weight="4" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div className={`row bg-white ${styles.sixteenth_row}`}>
