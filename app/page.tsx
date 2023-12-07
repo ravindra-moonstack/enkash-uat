@@ -839,10 +839,11 @@ const home = () => {
           </div>
           <div className="mb-md-5">
             <Heading
-              title="One of the key benefits of Olympus was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management."
+              title='"One of the key benefits of Olympus was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management."'
               size="h5"
               weight="6"
               color="electric-green"
+              italic={true}
             />
           </div>
           <div className="d-flex mt-4 align-items-center">

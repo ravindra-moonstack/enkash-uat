@@ -5,16 +5,18 @@ export interface HeadingProps {
   title: string;
   color?: "black" | "electric-green" | "white" | "equity-blue" | "rainy-blue";
   weight?: "3" | "4" | "5" | "6" | "7";
+  italic?: boolean; // Add the italic prop
 }
 
-const Heading = ({ size, title, color, weight }: HeadingProps) => {
+const Heading = ({ size, title, color, weight, italic }: HeadingProps) => {
   const colorClass = color ? `color-${color}` : "";
   const fontWeight = `f-${weight}` || "f-5";
   const sizeClass = size || "h6";
+  const fontStyle = italic ? styles.italic : "";
 
   return (
     <h1
-      className={`${styles[sizeClass]} ${colorClass} ${styles[fontWeight]}`}
+      className={`${styles[sizeClass]} ${colorClass} ${styles[fontWeight]} ${fontStyle}`}
     >
       {title}
     </h1>
