@@ -23,12 +23,10 @@ const BlogCard = ({
 }: BlogProps) => {
   return (
     <div className={`d-flex flex-column ${styles.card_body}`}>
-      <div className={styles.desktop_image_container}>
-        <Image src={image} alt={imageAlt} width={500} height={300} />
+      <div className={styles.image_container}>
+        <img src={image} alt={imageAlt} />
       </div>
-      <div className={styles.mobile_image_container}>
-        <Image src={image} alt={imageAlt} width={330} height={200} />
-      </div>
+
       <div className="d-flex flex-column p-4">
         <Heading title={title} color="black" size="h4" weight="7" />
         <div className="mt-3">

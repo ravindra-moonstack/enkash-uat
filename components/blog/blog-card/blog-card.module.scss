@@ -12,35 +12,30 @@
   text-align: left;
   padding-bottom: 30px;
   @include bp-md {
-    width: 400px;
+    width: 450px;
   }
 
   a {
     text-decoration: none;
   }
 
-  .desktop_image_container {
-    display: none;
-    @include bp-md {
-      display: block;
-      margin-top: -3px;
-      width: 396px;
-      height: 300px;
-      border-top-left-radius: 22.5px;
-      border-top-right-radius: 22.5px;
-      overflow: hidden;
-    }
-  }
-
-  .mobile_image_container {
-    margin-top: -3px;
-    width: 246px;
-    height: 200px;
+  .image_container {
+    padding: 10px 10px;
+    width: 100%;
     border-top-left-radius: 22.5px;
     border-top-right-radius: 22.5px;
     overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
     @include bp-md {
-      display: none;
+      display: block;
+      width: auto;
+      height: auto;
     }
   }
 
