@@ -39,7 +39,6 @@ const loyaltyLounge = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <HeaderWrapper />
-
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
@@ -327,27 +326,6 @@ const loyaltyLounge = () => {
           ]}
         />
       </div>
-      {/* <div
-        className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
-      >
-        <ActionCard
-          mainTitle={
-            <>
-              <div className="d-flex flex-column">
-                <Heading title="Total" color="white" size="h1" weight="5" />
-                <Heading
-                  title="Control"
-                  color="electric-green"
-                  size="h1"
-                  weight="5"
-                />
-              </div>
-            </>
-          }
-          mainImage={officeImg}
-          description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
-        />
-      </div> */}
       <div className="bg-white row-padding d-flex justify-content-center">
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">

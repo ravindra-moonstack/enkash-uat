@@ -1,6 +1,6 @@
 "use client";
 
-import Lottie from "@novemberfiveco/lottie-react-light";
+import dynamic from "next/dynamic";
 import React, { useEffect, useState } from "react";
 import {
   phoneAndTabAnimation,
@@ -123,6 +123,8 @@ const animationMap: Record<string, () => Promise<any>> = {
   OlympusMultiBanAnimation: olympusMultiBankAnimation,
   OlympusCollectAnimation: olympusCollectAnimation,
 };
+
+const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"));
 
 interface LottieDynamicLoadComponentProps {
   animationName: string;

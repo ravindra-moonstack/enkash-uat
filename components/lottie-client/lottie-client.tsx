@@ -1,6 +1,8 @@
 "use client";
 
-import Lottie from "@novemberfiveco/lottie-react-light";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"));
 
 interface LottieProps {
   animationData: any;
