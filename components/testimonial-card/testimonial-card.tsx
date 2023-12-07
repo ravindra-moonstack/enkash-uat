@@ -18,7 +18,7 @@ const TestimonialCard = ({
   return (
     <div className={styles.card_body}>
       <div className="d-flex mb-5">
-        <div>
+        <div className="d-flex align-items-center">
           <Image src={authorImage} alt="testimonial image" className="me-4" />
           <Heading title={authorName} color="rainy-blue" weight="4" size="h6" />
         </div>

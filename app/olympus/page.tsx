@@ -29,6 +29,7 @@ import {
   heavyLiftingIconThree,
   officeImg3,
   authorOne,
+  authorTwo,
 } from ".";
 import TestimonialCard from "@/components/testimonial-card/testimonial-card";
 import FAQHtml from "./faq-html";
@@ -115,7 +116,7 @@ const olympus = () => {
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
               title="Vendor Payments"
-              description="Instantly add, verify, digitally validate, pay, and manage invoices with multiple vendors with one-click automation and clear visibility."
+              description="Instantly add, verify, digitally validate, pay, and manage invoices with multiple vendors with one-click automation and clear visibility"
               theme="blue"
             />
           </div>
@@ -154,7 +155,7 @@ const olympus = () => {
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
               title="GST Payments"
-              description="Pay GST easily with our 3-step process. Get reminders, convert challans digitally, and monitor payments in one place."
+              description="Pay GST easily with our 3-step process. Get reminders, convert challans digitally, and monitor payments in one place"
               theme="blue"
             />
           </div>
@@ -196,8 +197,8 @@ const olympus = () => {
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title=" Rental Payments"
-            description="Pay and manage your office/home rent seamlessly directly into your landlord’s bank account."
+            title="Rental Payments"
+            description="Pay and manage your office/home rent seamlessly directly into your landlord’s bank account"
             theme="green"
           />
         </div>
@@ -205,7 +206,7 @@ const olympus = () => {
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
             title="Multi-Bank Reconciliation"
-            description="Easily automate the reconciliation process across multiple bank accounts, saving time and reducing errors."
+            description="Easily automate the reconciliation process across multiple bank accounts, saving time and reducing errors"
             theme="green"
           />
         </div>
@@ -239,8 +240,7 @@ const olympus = () => {
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
               title="Collect Payments"
-              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links
-              ERP Integration"
+              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links"
               theme="blue"
             />
           </div>
@@ -250,18 +250,17 @@ const olympus = () => {
       <div className="row bg-white row-padding">
         <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
           <Heading
-            title={`EnKash does${space}`}
+            title={`One Platform |${space}`}
             size="h1"
             color="black"
             weight="6"
           />
           <Heading
-            title={`the heavy lifting${space}`}
+            title={`Endless Solutions${space}`}
             size="h1"
             color="equity-blue"
             weight="6"
           />
-          <Heading title="for you." size="h1" color="black" weight="6" />
         </div>
       </div>
 
@@ -396,13 +395,6 @@ const olympus = () => {
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Multiple Branch Banking"
-              description="One business account can be used for multiple branch payments, collections, accounting, and expense management on a single interface"
-              ctaColor="blue"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
               whiteTitle=" Multiple User Management"
               description="Streamline branch finances with role-based access in one platform. Ensure that teams that are situated at various locations can function efficiently"
               ctaColor="blue"
@@ -417,7 +409,7 @@ const olympus = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Multiple-Payment Modes"
+              whiteTitle="Multiple Modes Of Payment"
               description="Enjoy the freedom of using flexible payment solutions, including credit cards and dedicated virtual cards, with the EnKash Olympus solution"
               ctaColor="blue"
             />
@@ -431,22 +423,7 @@ const olympus = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Audit"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Trail"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
+              whiteTitle="Audit Trail"
               description="EnKash provides a detailed audit trail against each transaction made on the platform, bringing transparency to the business"
               ctaColor="blue"
             />
@@ -499,31 +476,24 @@ const olympus = () => {
           />
         </div>
       </div>
-      <div className={`${styles.testimonial_row} scroll_container`}>
-        <div className="me-4 me-m-0">
-          <TestimonialCard
-            companyName="Enkash"
-            authorName="Prakash Shukla"
-            testimonialText="“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan in turpis vitae faucibus. Vestibulum interdum nulla et consectetur ullamcorper. Vivamus pellentesque tincidunt consectetur."
-            authorImage={authorOne}
-          />
-        </div>
-
-        <div className="me-4 me-m-0">
-          <TestimonialCard
-            companyName="Enkash"
-            authorName="Prakash Shukla"
-            testimonialText="“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan in turpis vitae faucibus. Vestibulum interdum nulla et consectetur ullamcorper. Vivamus pellentesque tincidunt consectetur."
-            authorImage={authorOne}
-          />{" "}
-        </div>
-        <div className="me-4 me-m-0">
-          <TestimonialCard
-            companyName="Enkash"
-            authorName="Prakash Shukla"
-            testimonialText="“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum accumsan in turpis vitae faucibus. Vestibulum interdum nulla et consectetur ullamcorper. Vivamus pellentesque tincidunt consectetur."
-            authorImage={authorOne}
-          />
+      <div className={`${styles.testimonial_row}`}>
+        <div className="scroll_container pb-md-5 pb-3">
+          <div className="me-4 me-m-0">
+            <TestimonialCard
+              companyName="Founder & CEO, Vianet"
+              authorName="Deep Sehgal"
+              testimonialText='"We encountered significant challenges in our Accounts Receivables processes, as everything was handled manually. However, with the implementation of EnKash’s Olympus, there has been a substantial reduction in man-hours invested, achieving 100% accuracy in accounting and auditing and an impressive 40% improvement in overall process efficiency."'
+              authorImage={authorOne}
+            />
+          </div>
+          <div className="me-4 me-m-0">
+            <TestimonialCard
+              companyName="Founder, Honeycomb Creative"
+              authorName="Noufel Anamala"
+              testimonialText='"In integrated marketing communications, agencies need to allocate budgets for different verticals. Through Olympus’ virtual cards, we were able to manage our budget allocation for various departments, streamline approvals seamlessly, and gain real-time visibility of all our department-wise expenses to our finance department"'
+              authorImage={authorTwo}
+            />
+          </div>
         </div>
       </div>
 
@@ -558,7 +528,10 @@ const olympus = () => {
       </div>
 
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Powerful Analytics" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how olympus can revolutionize the way you work!"
+        />
       </div>
 
       <div
@@ -587,7 +560,7 @@ const olympus = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Expense Management?"
+            title="Seeking further understanding of EnKash Olympus?"
             size="h3"
             color="white"
           />
@@ -599,8 +572,8 @@ const olympus = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Seeking further understanding of EnKash Olympus?"
-          description="EnKash Olympus is an industry-first, robust technology stack that streamlines financial operations and drives growth through increased efficiency, transparency, and adaptability. This innovative solution includes features for automating accounts payable, accounts receivable, auditing, analytics, and reconciliation. EnKash Olympus is primarily designed to cater to traditional mid-size businesses that may be new to digital payments or lack accessibility to modern financial tools."
+          title="Business payment management was never this easy!"
+          description="EnKash Olympus is an industry-first, robust technology stack that streamlines financial operations and drives growth through increased efficiency, transparency, and adaptability. This innovative solution includes features for automating accounts payable, accounts receivable, auditing, analytics, and reconciliation. EnKash Olympus is primarily designed to cater to traditional mid-size businesses that may be new to digital payments or lack accessibility to modern financial tools"
         />
       </div>
 
@@ -673,7 +646,7 @@ const olympus = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Analytics play a vital role in understanding many aspects of business operations. Whether it is the type of expense or any quality issue that customers may have, sales trends as per different seasons, or even any unnecessary expenses, analytics can help you dive deeper and make the right decision to improve the business. Analytics form the fuel to run the machinery of decision-making at all levels of the business"
+                  title="Analytics play a vital role in understanding many aspects of business operations. Whether it is the type of expense or any quality issue that customers may have, sales trends as per different seasons, or even any unnecessary expenses, analytics can help you dive deeper and make the right decision to improve the business. Analytics form the fuel to run the machinery of decision-making at all levels of the business."
                 />
               </div>
             </>

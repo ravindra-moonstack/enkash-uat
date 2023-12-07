@@ -13,7 +13,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -181,7 +180,7 @@ const travelAndExpenseCard = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Real-time Management"
+              whiteTitle="Real-Time Management"
               description="Set up rules, limits, and approval matrices for better budget control on the go. Easily block and unblock cards in cases of any misuse or emergency"
             />
           </div>
@@ -193,7 +192,7 @@ const travelAndExpenseCard = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="DIY with Separate Control"
+              whiteTitle="DIY with Control"
               description="Use separate controls for categories like Admin and cardholder. This reduces fraud with automation tools such as approval matrices"
             />
           </div>
@@ -236,7 +235,7 @@ const travelAndExpenseCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how travel and expense cards offer a host of benefits for your business and employees!"
+          title="Learn how travel and expense cards can revolutionize the way you work!"
         />
       </div>
       <div
@@ -265,7 +264,7 @@ const travelAndExpenseCard = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of travel & expense cards?"
-          description="Travel and Expense cards, often called T&E cards are specialized financial instruments designed to streamline and enhance business travel expenses"
+          description="Travel and Expense cards, often called T&E cards are specialized financial instruments designed to streamline and enhance business travel expenses."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
@@ -278,7 +277,7 @@ const travelAndExpenseCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the benefits of travel & Expense cards?"
+                  title="What are the benefits of travel and expense cards"
                 />
               </div>
               <div className="mb-5">
@@ -299,7 +298,7 @@ const travelAndExpenseCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="These cards can be managed in real-time, allowing you to define rules, limits, and approval matrices and enabling efficient budget management. The cards also offer a complete overview of travel expenses, providing actionable insights for reducing costs and optimizing budgets. At the same time, smart controls help prevent expense fraud and hold everyone accountable in real-time"
+                  title="These cards can be managed in real-time, allowing you to define rules, limits, and approval matrices and enabling efficient budget management. The cards also offer a complete overview of travel expenses, providing actionable insights for reducing costs and optimizing budgets. At the same time, smart controls help prevent expense fraud and hold everyone accountable in real-time."
                 />
               </div>
 
@@ -340,7 +339,7 @@ const travelAndExpenseCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="It is easy to check the balance on your travel card. With a user-friendly dashboard, you can access real-time transaction information and view your card's current balance anytime. This feature provides transparency and control over your travel expenses, ensuring you are aware of the funds available on your card"
+                  title="It is easy to check the balance on your travel card. With a user-friendly dashboard, you can access real-time transaction information and view your card's current balance anytime. This feature provides transparency and control over your travel expenses, ensuring you are aware of the funds available on your card."
                 />
               </div>
             </>

@@ -17,6 +17,7 @@
       background: #0b0b28;
       background: $color-indi-volt;
       height: 400px;
+      align-items: center;
       border: 2px solid $color-night-blue;
       @include bp-md {
         margin-left: -60px;

@@ -14,24 +14,24 @@ const blogData = [
       "https://www.enkash.com/resources/wp-content/uploads/2023/05/Feature-Image-6.jpg",
     imageAlt:
       "Benefits of Enabling Auto Reminder for Bill Payments for Businesses",
-    title: "Benefits of Enabling Auto Reminder for Bill Payments for Businesses",
+    title:
+      "Benefits of Enabling Auto Reminder for Bill Payments for Businesses",
     date: "Aug 10, 2023",
     description:
-      "Managing bill payments efficiently is crucial for maintaining healthy financial operations. Auto reminders for bill payments in businesses provide a valuable solution for streamlining financial operations...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-enabling-auto-reminder-for-bill-payments/"
+      "Managing bill payments efficiently is crucial for maintaining healthy financial operations. Auto reminders for bill payments in businesses provide a valuable solution...",
+    link: "https://www.enkash.com/resources/blog/benefits-of-enabling-auto-reminder-for-bill-payments/",
   },
+
   {
     image:
       "https://www.enkash.com/resources/wp-content/uploads/2023/05/Accounts-payable-vs-accounts-receivable-Understanding-the-differences.jpg",
-    imageAlt:
-      "Accounts Payable v/s Accounts Receivable",
+    imageAlt: "Accounts Payable v/s Accounts Receivable",
     title: "Accounts Payable v/s Accounts Receivable",
     date: "Oct 13, 2023",
     description:
-      "Accounts payable (AP) and accounts receivable (AR) are crucial elements of business accounting for any business owner...",
+      "Accounts Payable is the money owed to vendors and suppliers by the business. This results in the cash outflow of the business. Whereas AR is the exact opposite, which is the money a business owes to...",
     link: "https://www.enkash.com/resources/blog/accounts-payable-vs-accounts-receivable/",
   },
-
 ];
 
 export default blogData;

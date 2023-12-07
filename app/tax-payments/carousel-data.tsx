@@ -3,50 +3,35 @@ import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
 import iconFour from "./img/icon-four.svg";
 import iconFive from "./img/icon-five.svg";
-import iconSix from "./img/icon-six.svg";
-import iconSeven from "./img/icon-seven.svg";
 
 const carouselData = [
   {
     image: iconOne,
-    alt: "Making gst tax payments",
+    alt: "Login to EnKash using your registered mobile number/email and complete your KYC",
     title:
-      "Making gst tax payments online via EnKash helps you access extra funds if required",
+      "Login to EnKash using your registered mobile number/email and complete your KYC",
   },
   {
     image: iconTwo,
-    alt: "Get an overview of payments",
+    alt: "Go to the “GST Payment” tab under the Olympus section and click on “Upload GST Challan.” (Note: Generate challan with Axis Bank as the remitting bank)",
     title:
-      "Get an overview of payments due in order to plan your cash flow around it",
+      'Go to the "GST Payment" tab under the Olympus section and click on “Upload GST Challan.” (Note: Generate challan with Axis Bank as the remitting bank)',
   },
   {
     image: iconThree,
-    alt: "Centralize gst tax payments",
-    title:
-      "Centralize gst tax payments across the organization for all branches and cost centres",
+    alt: "Select the uploaded challan and click on “Pay”",
+    title: 'Select the uploaded challan and click on "Pay"',
   },
   {
     image: iconFour,
-    alt: "Ensure that you have all the approvals",
+    alt: "Choose “Pay Online” and enter your credit card details like name, number, DOB, CVV",
     title:
-      "Ensure that you have all the approvals and paperwork in place for future audit purposes",
+      'Choose "Pay Online" and enter your credit card details like name, number, DOB, CVV',
   },
   {
     image: iconFive,
-    alt: "Cuts down the paperwork",
-    title:
-      "Cuts down the paperwork connected to paying business GST online to a large extent",
-  },
-  {
-    image: iconSix,
-    alt: "Uses options like reminders",
-    title:
-      "Uses options like reminders and auto-fetch to make the process easier",
-  },
-  {
-    image: iconSeven,
-    alt: "Provide access to CA/Auditor",
-    title: "Provide access to CA/Auditor for online GST Payment management.",
+    alt: "Lastly, click on “Pay Now”",
+    title: 'Lastly, click on "Pay Now"',
   },
 ];
 

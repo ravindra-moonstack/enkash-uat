@@ -58,15 +58,12 @@ const saasCard = () => {
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading title="now" color="white" size="h2" weight="7" />{" "}
-              <Heading
-                title="at your fingertips"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-            </div>
+            <Heading
+              title="for your business"
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
           </div>
 
           <div className="d-flex mt-4 pe-5">
@@ -115,14 +112,14 @@ const saasCard = () => {
               oldWayDescription:
                 "Manual billing & invoicing can amplify the risk of missed payments and put an extra burden on your finance teams.",
               newWayDescription:
-                "SaaS subscription management platform automates the billing and invoicing process.",
+                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing, overlapping, or canceling underutilized subscriptions.",
             },
             {
               itemArray: ["Utility", "Analysis"],
               oldWayDescription:
                 "Difficult to understand whether you are getting the most out of your SaaS subscription.",
               newWayDescription:
-                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing subscriptions, consolidating overlapping subscriptions, or canceling underutilized subscriptions.",
+                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing, overlapping, or canceling underutilized subscriptions.",
             },
           ]}
         />
@@ -131,20 +128,24 @@ const saasCard = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-inline text-center mb-5">
-          <Heading
-            title={`Effortlessly${space}`}
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`streamline your SaaS subscription${space}`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading title="management" color="black" size="h1" weight="6" />
+        <div className="d-flex flex-column mb-5">
+          <div className="text-center">
+            <div>
+              <Heading
+                title={`Effortlessly${space}`}
+                color="black"
+                size="h1"
+                weight="6"
+              />
+              <Heading
+                title={`streamline your SaaS subscription${space}`}
+                color="equity-blue"
+                size="h1"
+                weight="6"
+              />
+            </div>
+            <Heading title="management" color="black" size="h1" weight="6" />
+          </div>
         </div>
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
@@ -231,7 +232,7 @@ const saasCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how SaaS cards offer a host of benefits for your business and employees!"
+          title="Learn how saas cards can benefit your business and employees!"
         />
       </div>
       <div

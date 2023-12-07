@@ -13,14 +13,14 @@ const carouselData = [
   },
   {
     image: iconTwo,
-    alt: "Navigate to 'Manage Cards' in the Freedom section",
-    title: "Navigate to 'Manage Cards' in the Freedom section",
+    alt: "Navigate to 'Manage Cards' in the slash section",
+    title: "Navigate to 'Manage Cards' in the slash section",
   },
   {
     image: iconThree,
-    alt: "Click on 'Add Card' and fill in user details such as Card label, PAN, address, etc",
+    alt: "Click on 'Add Card' and fill in user details such as card label, PAN, address, etc",
     title:
-      "Click on 'Add Card' and fill in user details such as Card label, PAN, address, etc",
+      "Click on 'Add Card' and fill in user details such as card label, PAN, address, etc",
   },
   {
     image: iconFour,
@@ -30,8 +30,8 @@ const carouselData = [
   },
   {
     image: iconFive,
-    alt: "You can also set custom limits on currency, amount, category, etc.",
-    title: "You can also set custom limits on currency, amount, category, etc.",
+    alt: "You can also set custom limits on currency, amount, category, etc",
+    title: "You can also set custom limits on currency, amount, category, etc",
   },
   {
     image: iconSix,

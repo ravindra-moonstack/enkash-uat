@@ -1,7 +1,8 @@
 export { default as officeImg } from "./img/office-img.png";
 export { default as officeImg2 } from "./img/office-img-two.png";
 export { default as officeImg3 } from "./img/office-img-three.png";
-export { default as authorOne } from "./img/author-one.png";
+export { default as authorOne } from "./img/testimonial-image-one.jpeg";
+export { default as authorTwo } from "./img/testimonial-image-two.png";
 export { default as whiteArrow } from "./img/white-arrow.png";
 export { default as greenArrow } from "./img/green-arrow.svg";
 export { default as gradientBg } from "./img/gradient-bg.png";

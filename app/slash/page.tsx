@@ -49,7 +49,7 @@ const slash = () => {
           </div>
           <div>
             <Heading
-              title="Purpose-built corporate cards"
+              title="Purpose-built corporate cards "
               color="white"
               size="h2"
               weight="7"

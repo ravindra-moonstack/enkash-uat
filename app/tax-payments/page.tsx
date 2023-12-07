@@ -20,7 +20,6 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import HeaderWrapper from "@/components/header/header-wrapper";
 
-
 export const metadata: Metadata = {
   title: "GST Payment - GST Bill Payment Online for Businesses | EnKash",
   description:
@@ -48,7 +47,7 @@ const taxPayments = () => {
           <div className="">
             <div className="d-flex flex-wrap">
               <Heading
-                title={`GST Payments with Complete${space}`}
+                title={`Make GST payments with complete${space}`}
                 color="white"
                 size="h2"
                 weight="7"
@@ -97,39 +96,32 @@ const taxPayments = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Manual", "Intervention"],
+              itemArray: ["Timely", "Payments"],
               oldWayDescription:
+                "Traditionally, there was a high chance of missing the payment deadline as there was no way to get reminders on time.",
+              newWayDescription:
                 "Set a reminder for tax payments to make sure it is paid on time.",
-              newWayDescription:
-                "Go to the government portal - Create GST challan.",
             },
             {
-              itemArray: ["Mode of", "Payment"],
+              itemArray: ["Approval", "Process"],
               oldWayDescription:
-                "Log in to the portal to get access to the invoice and check it.",
+                "Manually prepare paperwork to get approval from the concerned person, often leading to late payment.",
               newWayDescription:
-                "Choose payment mode like NEFT/RTGS - Remitting bank - Axis bank.",
+                "Customize maker checker approver as per your organization’s needs and get payment approvals in no time.",
             },
             {
-              itemArray: ["Late", "Payment", "Charges"],
+              itemArray: ["Payment", "Method"],
               oldWayDescription:
-                "Prepare paperwork to get the payment approved from the right person.",
+                "Earlier businesses had to use their working capital or arrange funds externally to make the payment.",
               newWayDescription:
-                "Upload GST challan to EnKash portal. Challan will be read and verified digitally.",
+                "With EnKash, make GST payments using flexible payment methods, including your credit card.",
             },
             {
-              itemArray: ["Bulk or", "Multiple", "Payments"],
+              itemArray: ["Record", "Keeping"],
               oldWayDescription:
-                "Arrange funds or ensure limits to make the payment.",
+                "Traditionally, businesses had to maintain a stack of paper-based GST payment receipts, making auditing and reconciliation difficult.",
               newWayDescription:
-                "Set unlimited hierarchy approvals and pay using any mode.",
-            },
-            {
-              itemArray: ["Chances of", "Loss"],
-              oldWayDescription:
-                "Make the payment and file the paperwork for future reference.",
-              newWayDescription:
-                "Automatic real-time entry of the payment record.",
+                "Easily view all your previous GST payment receipts in a single dashboard, making it easy to audit and reconcile.",
             },
           ]}
         />
@@ -146,24 +138,34 @@ const taxPayments = () => {
             weight="6"
           />
           <Heading
-            title={`${space}Automatic and Easy${space}`}
+            title={`${space}automatic and easy${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
-          <Heading
-            title="GST Tax Payments"
-            color="black"
-            size="h1"
-            weight="6"
-          />
+          <Heading title="GST payments" color="black" size="h1" weight="6" />
         </div>
 
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easy Payments"
-              description=" Set and manage a simple and intuitive process to ensure that all aspects are checked and payments are quick and easy."
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Easy"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Payments"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description=" Set and manage a simple and intuitive process to ensure that all aspects are checked and payments are quick and easy"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -172,23 +174,48 @@ const taxPayments = () => {
               description="Benefit from centralized view and control over all GST bill payments across your company on a single platform"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Approval Flow"
-              description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
-              prevent errors, unauthorized payments and reduce the risk of fraud"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Digital Challans"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Digital"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Challans"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Auto read the challans and convert them into paper records for audits and other purposes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Manage Approvals"
-              description="Set multi-level hierarchical approvals"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Approval"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Flow"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
+              prevent errors, unauthorized payments and reduce the risk of fraud"
             />
           </div>
         </div>
@@ -201,13 +228,13 @@ const taxPayments = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`How Tax Payments Help with${space}`}
+                    title={`Paying GST has never been this${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="Expense Monitoring and Audit Trails"
+                    title="easy and convenient"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -224,7 +251,7 @@ const taxPayments = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="How does Tax Payment Help Your Finance Team Become More Efficient?"
+          title="Learn how gst payments can revolutionize the way you work!"
         />
       </div>
 
@@ -236,7 +263,7 @@ const taxPayments = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs Section will Help you Learn about Tax Payments in detail"
+            title="Don't worry! Our FAQs section will help you learn about tax payments in detail"
             color="black"
             size="h4"
           />

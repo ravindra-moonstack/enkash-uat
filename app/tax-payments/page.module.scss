@@ -16,10 +16,11 @@
     }
   }
 
-
   .lottie_container {
+    width: 400px;
     @include bp-md {
       margin-top: -100px;
+      width: 500px;
     }
   }
 }

@@ -17,7 +17,7 @@
 
   .lottie_container {
     height: auto;
-    width: 250px;
+    width: 350px;
     @include bp-md {
       width: 600px;
     }
@@ -58,13 +58,12 @@
       top: -100px;
       left: -80px;
       @include bp-md {
-        top: -50px;
+        top: -100px;
         left: 200px;
       }
     }
     .lottie_container {
       @include bp-md {
-        width: 500px;
         margin-top: -30px;
         margin-left: 50px;
       }
@@ -85,6 +84,7 @@
       }
     }
     .lottie_container {
+      width: 300px;
       @include bp-md {
         width: 500px;
         margin-top: -50px;
@@ -110,6 +110,7 @@
       }
     }
     .lottie_container {
+      width: 300px;
       @include bp-md {
         width: 500px;
         margin-top: -50px;
@@ -144,7 +145,7 @@
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -80px;
       @include bp-md {
         top: -100px;
         left: -100px;
@@ -382,6 +383,7 @@
   flex-direction: row;
   background-color: $color-indi-volt;
   width: 100%;
+  margin-top: 30px;
   @include bp-md {
     padding-top: 60px;
     padding-bottom: 60px;

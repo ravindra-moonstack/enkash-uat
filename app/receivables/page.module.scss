@@ -68,9 +68,9 @@
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -80px;
       @include bp-md {
-        top: -50px;
+        top: -100px;
         left: 200px;
       }
     }
@@ -84,7 +84,7 @@
       width: 300px;
       @include bp-md {
         margin-left: 50px;
-        width: 350px;
+        width: 300px;
       }
     }
 
@@ -92,7 +92,7 @@
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -80px;
       @include bp-md {
         top: -150px;
         left: -100px;
@@ -109,14 +109,14 @@
       @include bp-md {
         margin-top: -50px;
         margin-left: 50px;
-        width: 400px;
+        width: 350px;
       }
     }
     .card_bg {
       position: absolute;
       z-index: 2;
       top: -100px;
-      left: -50px;
+      left: -80px;
       @include bp-md {
         top: -130px;
         left: 200px;
@@ -126,28 +126,22 @@
 }
 
 .fourth_row {
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding: 46px 40px;
   background-color: $color-indi-volt;
   @include bp-md {
-    padding-left: 110px;
-    padding-right: 110px;
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding: 110px;
   }
 
   .lottie_first_container {
     width: 250px;
     @include bp-md {
-      width: 350px;
+      width: 300px;
     }
   }
   .lottie_second_container {
     width: 300px;
     @include bp-md {
-      width: 350px;
+      width: 400px;
     }
   }
 }

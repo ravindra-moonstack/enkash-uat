@@ -82,11 +82,11 @@ const Footer = () => {
                 <h4 className={`${styles.title}`}>Slash</h4>
               </div>
               <ul>
-                <li>
+                {/* <li>
                   <div className={`color-white ${styles.sub_title}`}>
                     Prepaid Cards
                   </div>
-                </li>
+                </li> */}
                 <li>
                   <a href="/virtual-cards/">Virtual Cards*</a>
                 </li>
@@ -104,19 +104,6 @@ const Footer = () => {
                 <li>
                   <a href="/saas-cards/">SaaS Cards*</a>
                 </li>
-                {/* <li>
-                    <a href="/multi-currency-forex-cards/">
-                      Multi-Currency Forex Cards*
-                    </a>
-                  </li> */}
-                <li className="mt-2 ">
-                  <div className={`color-white ${styles.sub_title}`}>
-                    Corporate Credit Cards
-                  </div>
-                </li>
-                {/* <li>
-                  <a href="/business-cards/">Business Cards*</a>
-                </li> */}
                 <li>
                   <a href="/purchase-cards/">Purchase Cards*</a>
                 </li>
@@ -124,6 +111,19 @@ const Footer = () => {
                 <li>
                   <a href="/travel-and-expense-cards">T&E Cards*</a>
                 </li>
+                {/* <li>
+                    <a href="/multi-currency-forex-cards/">
+                      Multi-Currency Forex Cards*
+                    </a>
+                  </li> */}
+                {/* <li className="mt-2 ">
+                  <div className={`color-white ${styles.sub_title}`}>
+                    Corporate Credit Cards
+                  </div>
+                </li> */}
+                {/* <li>
+                  <a href="/business-cards/">Business Cards*</a>
+                </li> */}
               </ul>
             </div>
           </div>

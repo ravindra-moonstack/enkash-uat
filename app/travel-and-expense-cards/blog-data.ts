@@ -1,13 +1,13 @@
 const blogData = [
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/blog_17.052944ba.png",
-    imageAlt: "Short-Term Corporate Credit Management With Credit Card",
-    title: "Short-Term Corporate Credit Management With Credit Card",
-    date: "Dec 21, 2023",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Feature-Image-42-1.jpg",
+    imageAlt: "A Detailed Guide about Travel and Expense Management",
+    title: "A Detailed Guide about Travel and Expense Management",
+    date: "Mar 08, 2023",
     description:
-      "For any business to flourish, a corporate credit management and a steady cash flow are crucial. The more working capital your business has, the more strategic decisions can be made concerning...",
-    link: "https://www.enkash.com/resources/blog/enkash-corporate-credit-cards/",
+      "Traveling for business purposes is a common practice in today’s globalized world. As employees traverse the globe to attend meetings, conferences, and client visits, managing travel expenses efficiently becomes a crucial...",
+    link: "https://www.enkash.com/resources/blog/guide-about-travel-and-expense-management/",
   },
   {
     image:

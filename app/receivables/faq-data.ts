@@ -22,9 +22,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Accounts receivable can be classified as business income in accrual accounting.",
-        content:
-          "AR is considered revenue as the amount that will come to the company.",
+          "AR is considered revenue as the amount that will come to the company. AR is considered revenue as the amount that will come to the company.",
       },
     ],
   },
@@ -54,11 +52,11 @@ const faqData = [
       },
       {
         heading:
-          "Other receivables: These receivables consist of interest receivables, salary receivables, employee advances, tax refunds, loans, and advances given to employees and other companies",
+          "Notes receivable: This is similar to the traditional accounts receivable, except a two-month payment window is given to the customer. However, if both parties agree, this timeline can be extended to a year or more",
       },
       {
         heading:
-          "Notes receivable: This is similar to the traditional accounts receivable, except a two-month payment window is given to the customer. However, if both parties agree, this timeline can be extended to a year or more",
+          "Other receivables: These receivables consist of interest receivables, salary receivables, employee advances, tax refunds, loans, and advances given to employees and other companies",
       },
     ],
   },

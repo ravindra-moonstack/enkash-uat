@@ -48,7 +48,7 @@ const receivables = () => {
               size="h1"
               weight="7"
             />
-            <Heading title={`${space}Receivable`} size="h1" weight="7" />
+            <Heading title={`${space}Receivables`} size="h1" weight="7" />
           </div>
           <div className="d-flex flex-column">
             <Heading
@@ -102,7 +102,10 @@ const receivables = () => {
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
-            <LottieDynamicLoadComponent animationName={"RecievablesBannerAnimation"} loop={true} />
+            <LottieDynamicLoadComponent
+              animationName={"RecievablesBannerAnimation"}
+              loop={true}
+            />
           </div>
         </div>
       </div>
@@ -219,21 +222,31 @@ const receivables = () => {
         </div>
       </div>
 
-      <div className="row bg-white row-padding">
-        <div className="d-flex flex-column flex-md-row align-items-center justify-content-center">
-          <Heading
-            title={`EnKash does${space}`}
-            size="h1"
-            color="black"
-            weight="6"
-          />
-          <Heading
-            title={`the heavy lifting${space}`}
-            size="h1"
-            color="equity-blue"
-            weight="6"
-          />
-          <Heading title="for you." size="h1" color="black" weight="6" />
+      <div className="row bg-white row-padding text-center">
+        <div className="d-flex flex-column">
+          <div>
+            <Heading
+              title={`Make business${space}`}
+              size="h1"
+              color="black"
+              weight="6"
+            />
+            <Heading
+              title={`collections${space}`}
+              size="h1"
+              color="black"
+              weight="6"
+            />
+          </div>
+          <div>
+            <Heading
+              title={`easy and smooth${space}`}
+              size="h1"
+              color="equity-blue"
+              weight="6"
+            />
+            <Heading title="with EnKash!" size="h1" color="black" weight="6" />
+          </div>
         </div>
       </div>
 
@@ -282,7 +295,7 @@ const receivables = () => {
               oldWayDescription:
                 "Manually keeping track of receivables and customer payments creates unnecessary confusion.",
               newWayDescription:
-                "Manually keeping track of receivables and customer payments creates unnecessary confusion.",
+                "Leverage virtual accounts to streamline reconciliation by linking received payments to customer accounts.",
             },
             {
               itemArray: ["Payment", "Methods"],
@@ -378,7 +391,10 @@ const receivables = () => {
       </div>
 
       <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper blogData={blogData} title="Receivables Insights" />
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how receivables can revolutionize the way you work!"
+        />
       </div>
 
       <div
@@ -407,7 +423,7 @@ const receivables = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Have Questions about Expense Management?"
+            title="Seeking further understanding of accounts receivables?"
             size="h3"
             color="white"
           />
@@ -419,7 +435,7 @@ const receivables = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Seeking Further Understanding of Accounts Receivables?"
+          title="Speed up business collections for easy cash flow"
           description="Accounts Receivable is the outstanding amount customers or clients owe to a business. This amount is against any good or service availed from the business"
         />
       </div>
@@ -437,37 +453,26 @@ const receivables = () => {
                   title="What are the advantages of accounts receivable?"
                 />
               </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="AR helps improve a business's cash flow by speeding up incoming funds, ensuring a steady cash flow"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Accounts receivable improve liquidity and support working capital and day-to-day business operations"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Businesses can enhance customer relationships by allowing flexibility in credit offerings and building customer relationships"
-                />
-              </div>
               <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="With accounts receivable managed properly, businesses can get valuable data to understand their financial health"
-                />
+                <ul>
+                  <li>
+                    AR helps improve a business's cash flow by speeding up
+                    incoming funds, ensuring a steady cash flow
+                  </li>
+                  <li>
+                    Accounts receivable improve liquidity and support working
+                    capital and day-to-day business operations
+                  </li>
+                  <li>
+                    Businesses can enhance customer relationships by allowing
+                    flexibility in credit offerings and building customer
+                    relationships
+                  </li>
+                  <li>
+                    With accounts receivable managed properly, businesses can
+                    get valuable data to understand their financial health
+                  </li>
+                </ul>
               </div>
 
               <div className="mb-3">
@@ -483,7 +488,7 @@ const receivables = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="One of the examples to understand accounts receivable would be"
+                  title="One of the examples to understand accounts receivable would be:"
                 />
               </div>
               <div className="mb-5">
@@ -491,7 +496,7 @@ const receivables = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="A clothing manufacturer delivering the raw material to a retail store on credit. The payment can be made to the manufacturer within 30 days as both parties agree"
+                  title="A clothing manufacturer delivering the raw material to a retail store on credit. The payment can be made to the manufacturer within 30 days as both parties agree."
                 />
               </div>
               <div className="mb-3">
@@ -507,7 +512,7 @@ const receivables = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Accounts receivable and accounts payable are two different aspects of a business. Accounts receivable is the money a business will receive from its customers against the goods or services it has provided. On the other hand, accounts payable is the money a business has to pay its vendors or suppliers for the goods or services they have purchased from them"
+                  title="Accounts receivable and accounts payable are two different aspects of a business. Accounts receivable is the money a business will receive from its customers against the goods or services it has provided. On the other hand, accounts payable is the money a business has to pay its vendors or suppliers for the goods or services they have purchased from them."
                 />
               </div>
 

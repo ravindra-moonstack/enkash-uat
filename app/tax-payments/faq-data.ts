@@ -14,22 +14,13 @@ const faqData = [
     answer: [
       {
         heading:
-          "The process to make a GST payment is simple and involves the following steps:",
+          "Making a GST payment is simple and involves the following steps:",
         bullets: [
-          "As a registered GST payer, you will need to login to the official GST portal with your credentials.",
-          "In the GST section, you need to click on the payments tab, which you will find under the ‘Services’ section.",
-          "Once you are in, click on ‘Create Challan’ section.",
-          "Enter the amounts under each head correctly.",
-          "Select the payment method.",
-          "Once you finish filling in the details under headings like CGST, IGST, CESS, and other sections, click on ‘Create Challan’. If you have any doubts, then go for the ‘Save’ option. Make changes and then create the challan later.",
-          "Go to the GST payment option once you are done with the above step. You have 3 options for GST direct payment that include a payment at your bank over-the-counter, online payments like net banking, debit card, credit card or making payment via NEFT or RTGS.",
-          "Select credit card as the option to pay.",
-          "Upload the challan for payment created on the GST payment portal on the EnKash portal and invite your audit team to verify and approve. You can also set workflows for ongoing GST payment online approvals.",
-          "Get the challan checked and get approvals.",
-          "Have your card ready for payment, enter the card number, cardholder’s name, card validity/expiry date, and the CVV code at the back of the card.",
-          "Check that the amount entered is correct and ask for OTP (one-time password) to be generated.",
-          "Enter OTP and complete the payment.",
-          "Once you complete GST tax payment, you will get an acknowledgement to download the challan.",
+          "Log in to the official GST portal and navigate to the payments tab under 'Services'",
+          "Click 'Create Challan,' enter amounts under sections like CGST, IGST, CESS, etc., and choose the credit card payment option",
+          "Upload the created challan on EnKash portal for audit team verification",
+          "Once your challan is verified and approved, enter credit card details like number, name, validity, and CVV",
+          "Confirm the amount, request OTP, and complete payment",
         ],
       },
     ],
@@ -39,8 +30,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Central Goods and Services Tax (CGST) is the tax that is implemented on sales of goods and services intrastate by the central government. State Goods and Services Tax (SGST) is the tax that is imposed on the intrastate sales of goods and services by the state government. Integrated Goods and Services Tax (IGST) is the tax that is levied on interstate sales of goods and services. This is shared between the state and central governments.",
-        bullets: [],
+          "Central Goods and Services Tax (CGST) is the tax implemented on intrastate sales of goods and services by the central government. State Goods and Services Tax (SGST) is the tax imposed on the intrastate sales of goods and services by the state government. Integrated Goods and Services Tax (IGST) is the tax levied on interstate sales of goods and services. This is shared between the state and central governments.",
       },
     ],
   },
@@ -59,34 +49,27 @@ const faqData = [
     answer: [
       {
         heading:
-          "The link for GST payment is: https://services.gst.gov.in/services/quicklinks/payments",
-        bullets: [],
+          "You need to click on this link for GST payment -  https://services.gst.gov.in/services/quicklinks/payments",
       },
     ],
   },
   {
-    question: "Can we pay GST tax payment online using a debit or credit card?",
+    question: "Can we pay GST payment online using a credit card?",
     answer: [
       {
         heading:
-          "Debit and credit card payment is not allowed on the GST portal. However, you can pay GST using a debit or credit card on EnKash Portal. Here is the process to do so:",
+          "Credit card payments are not allowed on the GST portal. However, you can pay GST using a debit or credit card on the EnKash portal. Here is the process:",
         bullets: [
-          "Once you have created the challan on the GST portal, upload the challan on to the EnKash card portal with a couple of clicks. GST Challan to be generated with AXIS Bank as the remittance bank.",
-          "If applicable, you will get an OCR-based auto-read and verification for maker and checker approvals.",
-          "Complete the same.",
-          "Before you start the process, keep the card details handy.",
-          "Enter cardholder’s name and card number.",
-          "Then fill out the validity date (month and year, in that order).",
-          "Enter the 3-digit CVV number from the back of your credit card.",
-          "Check all details and request for the one-time password (OTP).",
-          "Enter the OTP.",
-          "Download the challan for your own reference.",
+          "Generate challan on the GST portal with Axis Bank as the remitting bank",
+          "Login to EnKash and click on 'Upload GST challan' in the 'GST Payment' tab",
+          "Select the challan and click on 'Pay'. Choose 'Pay Online' and enter your credit card details",
+          "Verify details, request OTP, enter it and click on 'Pay Now'",
         ],
       },
     ],
   },
   {
-    question: "What Is Enkash GST Tax Payment?",
+    question: "What is EnKash GST payment?",
     answer: [
       {
         heading:
@@ -96,49 +79,46 @@ const faqData = [
     ],
   },
   {
-    question: "Why Is Tax Payment Critical for My Business?",
+    question: "Why is tax payment critical for my business?",
     answer: [
       {
         heading:
           "Tax payments are mandatory by law, and the government requires businesses like yours to pay taxes on time to reap the benefits associated with it, avoid penalties, and keep the business going. Olympus’ tax payment module facilitates the whole process and reduces manual errors and makes a record trail for future audit/reference.",
-        bullets: [],
       },
     ],
   },
   {
     question:
-      "Does the Tax Payment Module help Improve the Finance Team’s Performance? If Yes, How?",
+      "Does the tax payment module help improve the finance team’s performance? If yes, how?",
     answer: [
       {
         heading:
           "Olympus’ tax payment module improves the efficiency of your finance team by ensuring that the payments are not missed, the approval process is clear and fast, and by ensuring that the digital records for tax payments are stored in the right place. Olympus’ tax payment module ensures that your business meets compliance and audit-related requirements.",
-        bullets: [],
       },
     ],
   },
   {
-    question: "Why Should a Startup Consider GST Tax Payment?",
+    question: "Why should a startup consider GST payment?",
     answer: [
       {
         heading:
           "Tax Payment is critical for a startup because it helps them with the following aspects:",
-        bullets: [
-          "They can ensure that they make tax payments on time and avoid penalties.",
-          "Have a seamless trail of approvals and the relevant paperwork in place.",
-          "It enables the finance team to concentrate on more strategic work.",
-          "It improves the overall efficiency of all the related teams.",
-        ],
+        bullets:  [
+          "Ensure timely tax payments to avoid penalties",
+          "Have a seamless trail of approvals and the relevant paperwork in place",
+          "Enable the finance team to concentrate on more strategic work",
+          "Improve the overall efficiency of all the related teams"
+        ]
       },
     ],
   },
   {
     question:
-      "How does the GST Tax Payment Online Module Help Create Clear Records?",
+      "How does the GST payment online module help create clear records?",
     answer: [
       {
         heading:
-          "With Olympus’ tax payment module, much of the process is online with a clear process laid out. This ensures that the payments are made on time with the right people checking the details and giving their approvals. Once the payment is made, a digital record is created for future reference in case it is required to provide proof of payment or answer audit-related questions.",
-        bullets: [],
+          "With Olympus’ tax payment module, much of the process is online with a transparent process laid out. This ensures that the payments are made on time with the right people checking the details and giving their approvals. Once the payment is made, a digital record is created for future reference in case it is required to provide proof of payment or answer audit-related questions.",
       },
     ],
   },
