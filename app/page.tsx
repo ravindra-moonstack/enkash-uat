@@ -750,7 +750,7 @@ const home = () => {
       <div className={`${styles.fourteenth_row} row bg-white`}>
         <AwardSection />
       </div>
-      <div className={`${styles.fifthteen_row} row color-white`}>
+      {/* <div className={`${styles.fifthteen_row} row color-white`}>
         <div className={`${styles.title} text-center`}>
           <Heading
             title={`Trusted by${space}`}
@@ -766,7 +766,7 @@ const home = () => {
           />
           <Heading title="companies" color="white" size="h1" weight="6" />
           <div>
-            {" "}
+
             <Heading
               title="( Prakash is working on this testimonial section - this is not final )"
               color="white"
@@ -825,7 +825,7 @@ const home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={`row bg-white ${styles.sixteenth_row}`}>
         <ContactUsCard
           title="Ready to upgrade with our new-age business solutions?"

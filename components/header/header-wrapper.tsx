@@ -4,7 +4,7 @@ import WebHeader from "./web-header";
 const HeaderWrapper = () => {
   return (
     <>
-      <div className="desktop-only">
+      <div className="desktop-only desktop-header">
         <WebHeader />
       </div>
       <div className="mobile-only">
