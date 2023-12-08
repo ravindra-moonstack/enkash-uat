@@ -14,6 +14,9 @@ import PolygonSection from "@/components/homepage/polygon-section";
 import TextAnimation from "@/components/framer-motion/text-animation";
 import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+import DashBoardAnimation from "@/components/homepage/dashboard-animation";
+import HeaderWrapper from "@/components/header/header-wrapper";
+import AwardSection from "@/components/homepage/award-section";
 
 import {
   numberOne,
@@ -27,9 +30,6 @@ import {
   blueBoxIcon,
   circleRupeeIcon,
   teamImg,
-  inc42,
-  paymentAndCardSummit,
-  nasscom,
   blueBlackLine,
   leftBlueGradient,
   leftCardGradient,
@@ -39,9 +39,6 @@ import {
   authorOne,
   authorTwo,
 } from ".";
-import DashBoardAnimation from "@/components/homepage/dashboard-animation";
-import HeaderWrapper from "@/components/header/header-wrapper";
-import AwardSection from "@/components/homepage/award-section";
 
 export const metadata: Metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -53,7 +50,6 @@ const home = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <HeaderWrapper />
-
       <RainbowSection />
       <div
         className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center
@@ -751,7 +747,7 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className={`${styles.fourteenth_row} row bg-white row-padding`}>
+      <div className={`${styles.fourteenth_row} row bg-white`}>
         <AwardSection />
       </div>
       <div className={`${styles.fifthteen_row} row color-white`}>

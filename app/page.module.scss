@@ -861,6 +861,12 @@
 }
 
 .fourteenth_row {
+  padding: 36px 25px;
+  @include bp-md {
+    padding: 110px 90px;
+  }
+
+  position: relative;
   .box {
     border: 2px solid $color-black;
     border-radius: 20px;
@@ -873,9 +879,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
     padding: 20px 30px;
-    @include bp-md {
-      width: 33%;
+  }
+
+  img {
+    height: 220px;
+    width: 100%;
+  }
+
+  .arrow_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .left {
+      width: 50px;
+      height: auto;
+      padding-left: 0 10px;
+    }
+    .right {
+      position: absolute;
+      width: 50px;
+      height: auto;
+      padding-left: 0 20px;
     }
   }
 }
