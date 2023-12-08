@@ -36,9 +36,32 @@ const AwardSection = () => {
         <div className="d-flex flex-column">
           <Heading title="Awards & Accolades" color="equity-blue" size="h1" />
         </div>
+
+        <div className={styles.arrow_mobile_container}>
+          <Image
+            src={forwardBackward}
+            alt="forward arrow"
+            className={styles.left}
+            onClick={handleBackwardClick}
+            style={{
+              cursor: currentRow === 1 ? "not-allowed" : "pointer",
+              opacity: currentRow === 1 ? 0.5 : 1,
+            }}
+          />
+          <Image
+            src={forwardArrow}
+            alt="forward arrow"
+            className={styles.right}
+            onClick={handleForwardClick}
+            style={{
+              cursor: currentRow === 3 ? "not-allowed" : "pointer",
+              opacity: currentRow === 3 ? 0.5 : 1,
+            }}
+          />
+        </div>
       </div>
-      <div className="d-flex justify-content-between">
-        <div className={styles.arrow_container}>
+      <div className="d-flex justify-content-md-between justify-content-center">
+        <div className={styles.arrow_desktop_container}>
           <Image
             src={forwardBackward}
             alt="forward arrow"
@@ -50,7 +73,7 @@ const AwardSection = () => {
             }}
           />
         </div>
-        <div className={currentRow !== 3 ? "px-md-5" : ""}>
+        <div className={`px-md-5 ${currentRow !== 3 ? "" : "flex-grow-1"}`}>
           {currentRow === 1 && (
             <div
               className={`d-flex flex-column flex-md-row justify-content-center text-center ${styles.box}`}
@@ -62,7 +85,7 @@ const AwardSection = () => {
                   <Heading
                     title="Amongst top 200 global fintech companies by CNBC"
                     color="black"
-                    size="h5"
+                    size="h6"
                   />
                 </div>
                 <div>
@@ -76,7 +99,7 @@ const AwardSection = () => {
                   <Heading
                     title="Best Platform for SME Financial Growth at the 4th Annual BFSI Excellence Award"
                     color="electric-green"
-                    size="h5"
+                    size="h6"
                   />
                 </div>
                 <div>
@@ -94,7 +117,7 @@ const AwardSection = () => {
                   <Heading
                     title="Preferred Partner by NPCI"
                     color="black"
-                    size="h5"
+                    size="h6"
                   />
                 </div>
                 <div>
@@ -114,7 +137,7 @@ const AwardSection = () => {
                   <Heading
                     title="Best B2B Solution Provider at 8th Edition of Payments and Cards Summit"
                     color="black"
-                    size="h5"
+                    size="h6"
                   />
                 </div>
                 <div className="px-5">
@@ -132,7 +155,7 @@ const AwardSection = () => {
                   <Heading
                     title="Winner under the Payments Category at NASSCOM India Fintech 2020"
                     color="electric-green"
-                    size="h5"
+                    size="h6"
                   />
                 </div>
                 <div>
@@ -146,7 +169,7 @@ const AwardSection = () => {
                   <Heading
                     title="Best White Label Technology Provider of the Year for CardX by Fintech Festival India Awards 2022"
                     color="black"
-                    size="h5"
+                    size="h6"
                   />
                 </div>
                 <div>
@@ -170,7 +193,7 @@ const AwardSection = () => {
                   <Heading
                     title="Startups to Watch for by Inc42"
                     color="black"
-                    size="h5"
+                    size="h6"
                   />
                 </div>
                 <div className="px-5">
@@ -180,7 +203,7 @@ const AwardSection = () => {
             </div>
           )}
         </div>
-        <div className={styles.arrow_container}>
+        <div className={styles.arrow_desktop_container}>
           <Image
             src={forwardArrow}
             alt="forward arrow"
