@@ -42,7 +42,7 @@ const saasCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="SaaS" size="h4" weight="4" />
+            <Heading title="SaaS Cards" size="h4" weight="4" />
           </div>
 
           <div className="d-flex flex-column">
@@ -143,8 +143,8 @@ const saasCard = () => {
                 size="h1"
                 weight="6"
               />
+              <Heading title="management" color="black" size="h1" weight="6" />
             </div>
-            <Heading title="management" color="black" size="h1" weight="6" />
           </div>
         </div>
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
@@ -243,7 +243,7 @@ const saasCard = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about SaaS in detail"
+            title="Don't worry! Our FAQs section will help you learn about SaaS cards in detail"
             color="black"
             size="h4"
           />
@@ -261,7 +261,7 @@ const saasCard = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of SaaS cards?"
-          description="Businesses can avail SaaS cards for subscription purposes and use them as required. For the smooth functioning of subscriptions, the respective teams can be allocated cards, and budgets can be assigned"
+          description="Businesses can avail SaaS cards for subscription purposes and use them as required. For the smooth functioning of subscriptions, the respective teams can be allocated cards, and budgets can be assigned."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
@@ -282,7 +282,7 @@ const saasCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="SaaS stands for software as a service and relates to all the costs related to software-related expenses. These SaaS costs include hosting the website, software licensing fees, fees related to cloud storage, software subscriptions, website maintenance costs, and the salaries of the customer support teams"
+                  title="SaaS stands for software as a service and relates to all the costs related to software-related expenses. These SaaS costs include hosting the website, software licensing fees, fees related to cloud storage, software subscriptions, website maintenance costs, and the salaries of the customer support teams."
                 />
               </div>
               <div className="mb-3">
@@ -298,7 +298,7 @@ const saasCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Your SaaS expense management platform will collate all the costs associated with SaaS spend and provide IT and finance teams with complete visibility over software-related payments. These costs can be annual, quarterly, or monthly. In most companies, the marketing department works with the IT department to finalize the SaaS tools required and negotiate the costs for maximum advantage"
+                  title="Your SaaS expense management platform will collate all the costs associated with SaaS spend and provide IT and finance teams with complete visibility over software-related payments. These costs can be annual, quarterly, or monthly. In most companies, the marketing department works with the IT department to finalize the SaaS tools required and negotiate the costs for maximum advantage."
                 />
               </div>
               <div className="mb-3">

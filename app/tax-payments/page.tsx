@@ -53,7 +53,7 @@ const taxPayments = () => {
                 weight="7"
               />
               <Heading
-                title="Visibility and Approvals"
+                title="visibility and approvals"
                 color="rainy-blue"
                 size="h2"
                 weight="7"

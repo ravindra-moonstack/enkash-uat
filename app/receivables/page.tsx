@@ -137,7 +137,7 @@ const receivables = () => {
             </div>
           </div>
         </div>
-        <div className={`row bg-white ${styles.section}`}>
+        {/* <div className={`row bg-white ${styles.section}`}>
           <div
             className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start  ${styles.second_container}`}
           >
@@ -156,11 +156,11 @@ const receivables = () => {
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
               title="Payment Links"
-              description="Embed payment links within digital invoices for quicker collections"
+              description="Reduce follow-ups and speed up collections by embedding payment links within digital invoices"
               theme="blue"
             />
           </div>
-        </div>
+        </div> */}
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 ">
             <ExploreCard
@@ -200,7 +200,7 @@ const receivables = () => {
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
             title="Payment Links"
-            description="Reduce follow-ups and speed up collections by easily tracking embedded payment links"
+            description="Reduce follow-ups and speed up collections by embedding payment links within digital invoices"
             theme="green"
           />
         </div>

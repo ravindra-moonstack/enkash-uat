@@ -21,14 +21,14 @@ const blogData = [
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/02/Improve-your-cash-flow-with-the-best-expense-management-software.jpg",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Accounts-payable-vs-accounts-receivable-Understanding-the-differences.jpg",
     imageAlt:
-      "Improve Your Cash Flow with The Best Expense Management Software",
-    title: "Improve Your Cash Flow with The Best Expense Management Software",
-    date: "Dec 21, 2023",
+      "Accounts Payable v/s Accounts Receivable",
+    title: "Accounts Payable v/s Accounts Receivable",
+    date: "Oct 13, 2023",
     description:
-      "The foundation for any business’s efficient operation consists of creating precise budget, keeping close check on the business expenses, and streamlining...",
-    link: "https://www.enkash.com/resources/blog/role-of-accounts-receivable-in-financial-management/",
+      "Accounts Payable is the money owed to vendors and suppliers by the business. This results in the cash outflow of the business. Whereas AR is the exact opposite, which is the money a business owes to its customers or...",
+    link: "https://www.enkash.com/resources/blog/accounts-payable-vs-accounts-receivable/",
   },
 ];
 

@@ -174,7 +174,7 @@ const travelAndExpenseCard = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Streamline Travel Expenses"
+              whiteTitle="Streamline Expenses"
               description="Bid adieu to complicated expenditure reports with purpose-based corporate cards that can be managed from anywhere, anytime"
             />
           </div>

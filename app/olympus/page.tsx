@@ -423,7 +423,22 @@ const olympus = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Audit Trail"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Audit"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Trail"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="EnKash provides a detailed audit trail against each transaction made on the platform, bringing transparency to the business"
               ctaColor="blue"
             />
@@ -435,7 +450,7 @@ const olympus = () => {
           <div className="d-flex flex-column">
             <div className="mb-3">
               <Heading
-                title="Seamless onboarding"
+                title="Seamless Onboarding"
                 color="electric-green"
                 size="h1"
                 weight="6"
@@ -463,13 +478,13 @@ const olympus = () => {
             weight="6"
           />
           <Heading
-            title={`Empowers Growth${space}`}
+            title={`empowers growth${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title="– Hear It From The Users!"
+            title="- Hear it from the users!"
             color="black"
             size="h1"
             weight="6"
@@ -501,13 +516,13 @@ const olympus = () => {
         <div className="d-flex flex-column">
           <div>
             <Heading
-              title="Integrate, Automate & Accelerate"
+              title="Integrate, automate & accelerate"
               size="h2"
               color="rainy-blue"
               weight="6"
             />
             <Heading
-              title={`${space}Your`}
+              title={`${space}your`}
               size="h2"
               color="white"
               weight="6"
@@ -515,7 +530,7 @@ const olympus = () => {
           </div>
           <div className="mb-3">
             <Heading
-              title="Business with Olympus"
+              title="business with Olympus"
               size="h2"
               color="white"
               weight="6"
@@ -573,7 +588,7 @@ const olympus = () => {
       <div className="row">
         <ContactUsCard
           title="Business payment management was never this easy!"
-          description="EnKash Olympus is an industry-first, robust technology stack that streamlines financial operations and drives growth through increased efficiency, transparency, and adaptability. This innovative solution includes features for automating accounts payable, accounts receivable, auditing, analytics, and reconciliation. EnKash Olympus is primarily designed to cater to traditional mid-size businesses that may be new to digital payments or lack accessibility to modern financial tools"
+          description="EnKash Olympus is an industry-first, robust technology stack that streamlines financial operations and drives growth through increased efficiency, transparency, and adaptability. This innovative solution includes features for automating accounts payable, accounts receivable, auditing, analytics, and reconciliation. EnKash Olympus is primarily designed to cater to traditional mid-size businesses that may be new to digital payments or lack accessibility to modern financial tools."
         />
       </div>
 

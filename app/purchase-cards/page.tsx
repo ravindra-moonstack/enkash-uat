@@ -250,7 +250,7 @@ const purchaseCard = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of purchase cards?"
-          description="Purchase cards make the business procurement process accessible, convenient, and manageable. Businesses can use these cards to streamline the process of purchasing"
+          description="Purchase cards make the business procurement process accessible, convenient, and manageable. Businesses can use these cards to streamline the process of purchasing."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
@@ -271,7 +271,7 @@ const purchaseCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Most goods and services, including office supplies and minor equipment purchases, can be purchased using a purchase card. However, depending on the organization's policies, some restrictions may exist"
+                  title="Most goods and services, including office supplies and minor equipment purchases, can be purchased using a purchase card. However, depending on the organization's policies, some restrictions may exist."
                 />
               </div>
               <div className="mb-3">
@@ -287,7 +287,7 @@ const purchaseCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="If there are disputes or issues with a purchase card transaction, the employee who made the purchase should contact the company's finance or procurement department for assistance. The department can work with the card issuer to resolve the issue and ensure the transaction is properly recorded and documented"
+                  title="If there are disputes or issues with a purchase card transaction, the employee who made the purchase should contact the company's finance or procurement department for assistance. The department can work with the card issuer to resolve the issue and ensure the transaction is properly recorded and documented."
                 />
               </div>
             </>

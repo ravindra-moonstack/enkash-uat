@@ -448,7 +448,7 @@ const slash = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Slash can benefit your business and employees!"
+          title="Learn how corporate cards can benefit your business and employees!"
         />
       </div>
 
