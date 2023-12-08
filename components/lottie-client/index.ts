@@ -49,7 +49,7 @@ export const virtualAccountAnimation = () =>
 //ofex Animation
 
 export const ofexBannerAnimation = () =>
-  import("../../app/ofex/img/lottie/expense.json");
+  import("../../app/ofex/img/lottie/banner.json");
 export const heirarchyControlAnimation = () =>
   import("../../app/ofex/img/lottie/hierarchy.json");
 export const budgetAndAdvanceAnimation = () =>

@@ -28,6 +28,13 @@
       width: 800px;
     }
   }
+
+  .lottie_container {
+    width: 500px;
+    @include bp-md {
+      width: 900px;
+    }
+  }
 }
 
 .second_row {

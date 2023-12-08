@@ -87,10 +87,12 @@ const OfEx = () => {
           </div>
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-          <LottieDynamicLoadComponent
-            animationName={"OfexBannerAnimation"}
-            loop={true}
-          />
+          <div className={styles.lottie_container}>
+            <LottieDynamicLoadComponent
+              animationName={"OfexBannerAnimation"}
+              loop={true}
+            />
+          </div>
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex`}>
