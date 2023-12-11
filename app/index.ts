@@ -9,19 +9,9 @@ export { default as blueBoxIcon } from "./img/blue-box-icon.png";
 export { default as twoBoxIcon } from "./img/two-box-icon.png";
 export { default as circleRupeeIcon } from "./img/circle-rupee-icon.png";
 export { default as teamImg } from "./img/team-img.png";
-export { default as inc42 } from "./img/inc42-logo.png";
-export { default as cnbc } from "./img/cnbc.png";
-export { default as npci } from "./img/npci-logo.png";
-export { default as paymentAndCardSummit } from "./img/payment-and-card-summit.png";
-export { default as nasscom } from "./img/nasscom.png";
-export { default as bfsi } from "./img/bfsi-logo.png";
 export { default as fintectFestival } from "./img/fintect-festival.png";
 export { default as testimonials } from "./img/testimonials.png";
-export { default as axisBankLogo } from "./img/axis-bank-logo.png";
-export { default as iciciBankLogo } from "./img/icici-bank-logo.png";
-export { default as rupayLogo } from "./img/rupay-logo.png";
-export { default as sbmLogo } from "./img/sbm-logo.png";
-export { default as visaLogo } from "./img/visa-logo.png";
+;
 export { default as playButton } from "./img/watch.png";
 export { default as rainbowOne } from "./img/stack-one.png";
 export { default as rainbowOneMobile } from "./img/stack-one-mobile.png";
@@ -39,10 +29,17 @@ export { default as polygonOneShadow } from "./img/polygon-one-shadow.png";
 export { default as leftBlueGradient } from "./img/left-blue-gradient.png";
 export { default as leftCardGradient } from "./img/left-card-gradient.png";
 export { default as rightCardGradient } from "./img/right-card-gradient.png";
+export { default as greenBg } from "./img/green-gradient-bg.png";
+export { default as integration } from "./img/enkash-integrations.png";
+export { default as authorOne } from "./img/testimonial-image-one.jpeg";
+export { default as authorTwo } from "./img/testimonial-image-two.png";
+export { default as forwardArrow } from "./img/blue-arrow-forward.png";
+export { default as forwardBackward } from "./img/blue-arrow-backward.png";
+
+//Logos
+export { default as pristynLogo } from "./img/pristyn-logo.png";
 export { default as kotakLogo } from "./img/kotak-bank-logo.png";
 export { default as hdfcLogo } from "./img/hdfc-logo.png";
-export { default as masterCardLogo } from "./img/master-card-logo.png";
-export { default as greenBg } from "./img/green-gradient-bg.png";
 export { default as box8Logo } from "./img/box-eight-logo.png";
 export { default as firstCryLogo } from "./img/first-cry-logo.png";
 export { default as landmarkLogo } from "./img/landmark-group.webp";
@@ -50,8 +47,21 @@ export { default as everestLogo } from "./img/everest-logo.png";
 export { default as pristynCareLogo } from "./img/pristyn-care-logo.png";
 export { default as cureFoodsLogo } from "./img/curefoods-logo.png";
 export { default as infraMarketLogo } from "./img/infra-market-logo.png";
-export { default as integration } from "./img/enkash-integrations.png";
-export { default as authorOne } from "./img/testimonial-image-one.jpeg";
-export { default as authorTwo } from "./img/testimonial-image-two.png";
-export { default as forwardArrow } from "./img/blue-arrow-forward.png";
-export { default as forwardBackward } from "./img/blue-arrow-backward.png";
+export { default as masterCardLogo } from "./img/master-card-logo.png";
+export { default as axisBankLogo } from "./img/axis-bank-logo.png";
+export { default as iciciBankLogo } from "./img/icici-bank-logo.png";
+export { default as rupayLogo } from "./img/rupay-logo.png";
+export { default as sbmLogo } from "./img/sbm-logo.png";
+export { default as visaLogo } from "./img/visa-logo.png"
+export { default as bfsi } from "./img/bfsi-logo.png";
+export { default as inc42 } from "./img/inc42-logo.png";
+export { default as cnbc } from "./img/cnbc.png";
+export { default as npci } from "./img/npci-logo.png";
+export { default as paymentAndCardSummit } from "./img/payment-and-card-summit.png";
+export { default as nasscom } from "./img/nasscom.png";
+export { default as relianceRetail } from "./img/reliance-retail-logo.png";
+export { default as dtdcLogo } from "./img/dtdc-logo.png";
+export { default as starBucksLogo } from "./img/starbucks-logo.svg";
+
+
+

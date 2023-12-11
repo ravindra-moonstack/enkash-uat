@@ -341,42 +341,7 @@ const home = () => {
             alt="background image"
           />
         </div>
-        <div className="col-md-6">
-          <div className={`row-padding-x-only mb-3 mt-5`}>
-            <div>
-              <Heading
-                title={`Financial${space}`}
-                size="h2"
-                color="equity-blue"
-                weight="6"
-              />
-              <Heading
-                title={`Partners${space}`}
-                size="h2"
-                color="black"
-                weight="6"
-              />
-              <span className="mobile-only">
-                <br />
-              </span>
-              <Heading
-                title={`and${space}`}
-                size="h2"
-                color="equity-blue"
-                weight="6"
-              />
-              <span className="desktop-only">
-                <br />
-              </span>
-              <Heading title="Customers" size="h2" color="black" weight="6" />
-            </div>
-
-            <Image src={blueBlackLine} alt="underline image" />
-          </div>
-        </div>
-        <div className="col-12 row-padding-x-only">
-          <BankSection />
-        </div>
+        <BankSection />
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
         <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>

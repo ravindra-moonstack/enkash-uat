@@ -374,6 +374,28 @@
   position: relative;
   z-index: 4;
 
+  .progress_bar {
+    height: 7px;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  .partner {
+    background: linear-gradient(
+      to right,
+      $color-equity-blue 50%,
+      $color-black 50%
+    );
+  }
+  .customer {
+    background: linear-gradient(
+      to right,
+      $color-black 50%,
+      $color-equity-blue 50%
+    );
+  }
+
   .title {
     padding-left: 25px;
     padding-right: 25px;
@@ -438,7 +460,7 @@
       }
     }
     .hdfc {
-      height: 30px;
+      height: 40px;
       width: 170px;
       margin-right: 50px;
       @include bp-md {
@@ -476,29 +498,29 @@
     }
 
     .box {
-      height: 20px;
+      height: 23px;
       width: 120px;
       margin-right: 50px;
       @include bp-md {
-        height: 30px;
+        height: 35px;
       }
     }
 
-    .firstcry {
-      height: 20px;
+    .reliance {
+      height: 65px;
       width: 120px;
       margin-right: 50px;
       @include bp-md {
-        height: 30px;
+        height: 100px;
       }
     }
 
-    .landmark {
-      height: 60px;
-      width: 150px;
+    .pristyn {
+      height: 35px;
+      width: 200px;
       margin-right: 50px;
       @include bp-md {
-        height: 80px;
+        height: 50px;
       }
     }
     .everest {
@@ -522,7 +544,23 @@
       width: 170px;
       margin-right: 50px;
       @include bp-md {
-        height: 30px;
+        height: 28px;
+      }
+    }
+    .dtdc {
+      height: 20px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 28px;
+      }
+    }
+    .starbucks {
+      height: 50px;
+      width: 170px;
+      margin-right: 50px;
+      @include bp-md {
+        height: 65px;
       }
     }
   }

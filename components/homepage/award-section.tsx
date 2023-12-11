@@ -141,24 +141,25 @@ const AwardSection = () => {
                   />
                 </div>
                 <div className="px-5">
+                <div className="px-5">
                   <Image
                     src={paymentAndCardSummit}
                     alt="8th Edition of Payments and Cards Summit"
                     loading="lazy"
                   />
-                </div>
+                </div> </div>
               </div>
               <div
                 className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
               >
-                <div className="mb-5 py-2 ">
+                <div className="mb-5 py-2">
                   <Heading
                     title="Winner under the Payments Category at NASSCOM India Fintech 2020"
                     color="electric-green"
                     size="h6"
                   />
                 </div>
-                <div>
+                <div className="px-5">
                   <Image src={nasscom} alt="nasscom logo" loading="lazy" />
                 </div>
               </div>

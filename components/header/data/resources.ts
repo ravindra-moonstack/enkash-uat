@@ -1,12 +1,13 @@
 export const resources = [
   {
-    name: "Case Study (Customer Stories)",
-    description: "Know what our customers have to say after using our products",
-  },
-  {
     name: "Blogs",
     description:
       "Read our product-related blogs and learn how they can transform your business",
+  },
+  {
+    name: "News & Media",
+    description:
+      "Stay updated with the latest news and developments from EnKash",
   },
   {
     name: "Product Videos",
@@ -18,9 +19,14 @@ export const resources = [
     description: "Enhance your knowledge with the latest fintech know-how",
   },
   {
-    name: "News & Media",
+    name: "Customer Stories",
+    description: "Know what our customers have to say after using our products",
+  },
+
+  {
+    name: "Press Release",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Eleifend at interdum massa vitae nunc.",
+      "Know how EnKash is disrupting the industry with technology and innovation",
   },
 ];
 
