@@ -2,7 +2,7 @@
 
 import dynamic from "next/dynamic";
 
-const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"));
+const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"), { ssr: false });
 
 interface LottieProps {
   animationData: any;

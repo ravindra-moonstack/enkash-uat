@@ -28,28 +28,30 @@ const Footer = () => {
           />
         </div>
         <div className={`col-md-3 col-6 ${styles.footer_links_col}`}>
-          <h4 className={` ${styles.title}`}>Olympus</h4>
+          <a href="/olympus">
+            <h4 className={` ${styles.title}`}>Olympus</h4>
+          </a>
           <div className="">
             <ul className="mb-0">
               <li>
                 <div className={`color-white ${styles.sub_title}`}>
-                  Payables
+                  <a href="/olympus/payables">Payables</a>
                 </div>
               </li>
               <li>
-                <a href="/bill-payment/">Bill Payment</a>
+                <a href="/olympus/payables/bill-payment/">Bill Payment</a>
               </li>
               <li>
-                <a href="/bulk-payout/">Bulk Payout</a>
+                <a href="/olympus/payables/bulk-payout/">Bulk Payout</a>
               </li>
               <li>
-                <a href="/tax-payments/">GST Payment</a>
+                <a href="/olympus/payables/tax-payments/">GST Payment</a>
               </li>
               <li>
-                <a href="/vendor-payments/">Vendor Payment</a>
+                <a href="/olympus/payables/vendor-payment/">Vendor Payment</a>
               </li>
               <li>
-                <a href="/rental-payment/">Rental Payment</a>
+                <a href="/olympus/payables/rental-payment/">Rental Payment</a>
               </li>
             </ul>
           </div>
@@ -57,20 +59,22 @@ const Footer = () => {
             <ul>
               <li className="mt-2">
                 <div className={`color-white ${styles.sub_title}`}>
-                  Receivables
+                  <a href="/olympus/receivables">Receivables</a>
                 </div>
               </li>
               <li>
-                <a href="/virtual-accounts/">Virtual Accounts</a>
+                <a href="/olympus/receivables/virtual-accounts/">
+                  Virtual Accounts
+                </a>
               </li>
               <li>
-                <a href="/payment-links/"> Payment Links</a>
+                <a href="/olympus/receivables/payment-links/"> Payment Links</a>
               </li>
               <li>
-                <a href="/bulk-collect/">Bulk Collect</a>
+                <a href="/olympus/receivables/bulk-collect/">Bulk Collect</a>
               </li>
               <li>
-                <a href="/invoices/">Invoices</a>
+                <a href="/olympus/receivables/invoices/">Invoices</a>
               </li>
             </ul>
           </div>
@@ -79,51 +83,35 @@ const Footer = () => {
           <div className={` ${styles.footer_links_col}`}>
             <div>
               <div className={styles.freedom_card_box}>
-                <h4 className={`${styles.title}`}>Slash</h4>
+                <a href="/slash">
+                  <h4 className={`${styles.title}`}>Slash</h4>
+                </a>
               </div>
               <ul>
-                {/* <li>
-                  <div className={`color-white ${styles.sub_title}`}>
-                    Prepaid Cards
-                  </div>
-                </li> */}
                 <li>
-                  <a href="/virtual-cards/">Virtual Cards*</a>
+                  <a href="/slash/virtual-cards/">Virtual Cards*</a>
                 </li>
                 <li>
-                  <a href="/digital-marketing-cards/">
+                  <a href="/slash/digital-marketing-cards/">
                     Digital Marketing Cards*
                   </a>
                 </li>
                 <li>
-                  <a href="/fuel-cards/">Fuel Cards*</a>
+                  <a href="/slash/fuel-cards/">Fuel Cards*</a>
                 </li>
                 <li>
-                  <a href="/meal-card/">Meal Cards*</a>
+                  <a href="/slash/meal-cards/">Meal Cards*</a>
                 </li>
                 <li>
-                  <a href="/saas-cards/">SaaS Cards*</a>
+                  <a href="/slash/saas-cards/">SaaS Cards*</a>
                 </li>
                 <li>
-                  <a href="/purchase-cards/">Purchase Cards*</a>
+                  <a href="/slash/purchase-cards/">Purchase Cards*</a>
                 </li>
 
                 <li>
-                  <a href="/travel-and-expense-cards">T&E Cards*</a>
+                  <a href="/slash/travel-and-expense-cards">T&E Cards*</a>
                 </li>
-                {/* <li>
-                    <a href="/multi-currency-forex-cards/">
-                      Multi-Currency Forex Cards*
-                    </a>
-                  </li> */}
-                {/* <li className="mt-2 ">
-                  <div className={`color-white ${styles.sub_title}`}>
-                    Corporate Credit Cards
-                  </div>
-                </li> */}
-                {/* <li>
-                  <a href="/business-cards/">Business Cards*</a>
-                </li> */}
               </ul>
             </div>
           </div>
@@ -131,30 +119,32 @@ const Footer = () => {
         <div className="col-6 col-md-3">
           <div className={`${styles.footer_links_col}`}>
             <div>
-              <h4 className={`col-12 ${styles.title}`}>OfEx</h4>
-
+              <a href="/ofex">
+                <h4 className={`col-12 ${styles.title}`}>OfEx</h4>
+              </a>
               <ul>
                 <li>
-                  <a href="/budget-and-advances/">Budgets and Advances</a>
+                  <a href="ofex/budget-and-advances/">Budgets and Advances</a>
                 </li>
                 <li>
-                  <a href="/hierarchy-and-controls/">Hierarchy and Controls</a>
+                  <a href="ofex/hierarchy-and-controls/">
+                    Hierarchy and Controls
+                  </a>
                 </li>
                 <li>
-                  <a href="/policy-and-approval-flow/">
+                  <a href="ofex/policy-and-approval-flows/">
                     Policy and Approval Flows
                   </a>
                 </li>
                 <li>
-                  <a href="/reimbursement/">Reimbursement</a>
+                  <a href="ofex/reimbursement/">Reimbursement</a>
                 </li>
 
                 <li>
-                  <a href="/scan-and-drop-receipts/">Scan and Drop Receipts</a>
+                  <a href="ofex/scan-and-drop-receipts/">
+                    Scan and Drop Receipts
+                  </a>
                 </li>
-                {/* <li>
-                    <a href="/spend-control/">Spend Control</a>
-                  </li> */}
               </ul>
             </div>
           </div>
@@ -162,23 +152,29 @@ const Footer = () => {
         <div className="col-6 col-md-3">
           <div className={`col-6 col-md-4 ${styles.footer_links_col}`}>
             <div>
-              <h4 className={`col-12 ${styles.title}`}>Loyalty Lounge</h4>
+              <a href="/loyalty-lounge">
+                <h4 className={`col-12 ${styles.title}`}>Loyalty Lounge</h4>
+              </a>
               <ul>
                 <li>
-                  <a href="/brand-gift-vouchers/">Brand Voucher</a>
+                  <a href="loyalty-lounge/brand-voucher/">
+                    Brand Voucher
+                  </a>
                 </li>
                 <li>
-                  <a href="/channel-incentive/">Channel Incentives</a>
+                  <a href="loyalty-lounge/channel-incentive/">
+                    Channel Incentives
+                  </a>
                 </li>
                 <li>
-                  <a href="/employee-reward/">Employee Rewards</a>
+                  <a href="loyalty-lounge/employee-rewards/">Employee Rewards</a>
                 </li>
 
                 <li>
-                  <a href="/brand-gift-vouchers/">Gift Cards</a>
+                  <a href="loyalty-lounge/gift-cards/">Gift Cards</a>
                 </li>
                 <li>
-                  <a href="/offers/">Offers</a>
+                  <a href="loyalty-lounge/offers/">Offers</a>
                 </li>
               </ul>
             </div>
@@ -345,7 +341,10 @@ const Footer = () => {
           </div>
         </div>
         <div className={`col-12 text-left color-white ${styles.disclaimer}`}>
-        *Corporate cards, payments, or other related services are provided by RBI-licensed banks and/ or in accordance with RBI regulations and/ or RBI compliance maintained by banks & regulated entities. EnKash is not a bank and doesn’t hold or claim to hold a banking license.
+          *Corporate cards, payments, or other related services are provided by
+          RBI-licensed banks and/ or in accordance with RBI regulations and/ or
+          RBI compliance maintained by banks & regulated entities. EnKash is not
+          a bank and doesn’t hold or claim to hold a banking license.
         </div>
         <div className={`col-12 color-white ${styles.copyright}`}>
           Copyright © 2023 | EnKash. All right reserved.

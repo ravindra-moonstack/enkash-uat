@@ -10,7 +10,7 @@ import ProductListView from "./product-list-view";
 import Hamburger from "./hamburger";
 import olympusProducts from "@/components/header/data/olympus-products";
 import freedomProducts from "@/components/header/data/freedom-products";
-import xpenzProducts from "@/components/header/data/xpenz-products";
+import xpenzProducts from "@/components/header/data/ofex-products";
 import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-products";
 import motherProducts from "@/components/header/data/mother-products";
 import resources from "@/components/header/data/resources";

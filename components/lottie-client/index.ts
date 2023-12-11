@@ -34,17 +34,17 @@ export const purchaseCardAnimation = () =>
 //Recievables Animation
 
 export const recievablesBannerAnimation = () =>
-  import("../../app/receivables/img/lottie/banner.json");
+  import("../../app/olympus/receivables/img/lottie/banner.json");
 export const invoiceAnimation = () =>
-  import("../../app/receivables/img/lottie/invoice.json");
+  import("../../app/olympus/receivables/img/lottie/invoice.json");
 export const bulkCollectAnimation = () =>
-  import("../../app/receivables/img/lottie/bulk-collect.json");
+  import("../../app/olympus/receivables/img/lottie/bulk-collect.json");
 export const paymentLinkAnimation = () =>
-  import("../../app/receivables/img/lottie/payment-link.json");
+  import("../../app/olympus/receivables/img/lottie/payment-link.json");
 export const quickCollectAnimation = () =>
-  import("../../app/receivables/img/lottie/quick-collect.json");
+  import("../../app/olympus/receivables/img/lottie/quick-collect.json");
 export const virtualAccountAnimation = () =>
-  import("../../app/receivables/img/lottie/virtual.json");
+  import("../../app/olympus/receivables/img/lottie/virtual.json");
 
 //ofex Animation
 
@@ -114,14 +114,14 @@ export const automate = () => import("../../app/img/lottie/automate.json");
 
 //Payables Animation
 export const payablesBannerAnimation = () =>
-  import("../../app/payables/img/lottie/banner.json");
+  import("../../app/olympus/payables/img/lottie/banner.json");
 export const payablesTaxAnimation = () =>
-  import("../../app/payables/img/lottie/tax-pay.json");
+  import("../../app/olympus/payables/img/lottie/tax-pay.json");
 export const payablesVendorAnimation = () =>
-  import("../../app/payables/img/lottie/vendor-pay.json");
+  import("../../app/olympus/payables/img/lottie/vendor-pay.json");
 export const payablesRentalAnimation = () =>
-  import("../../app/payables/img/lottie/rental-pay.json");
+  import("../../app/olympus/payables/img/lottie/rental-pay.json");
 export const payablesBulkAnimation = () =>
-  import("../../app/payables/img/lottie/bulk-pay.json");
+  import("../../app/olympus/payables/img/lottie/bulk-pay.json");
 export const payablesBillAnimation = () =>
-  import("../../app/payables/img/lottie/bill-pay.json");
+  import("../../app/olympus/payables/img/lottie/bill-pay.json");

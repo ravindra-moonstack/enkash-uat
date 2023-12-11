@@ -60,12 +60,15 @@
 }
 
 .sub_title {
-  font-size: 11px;
-  line-height: 16px;
-  white-space: nowrap;
-  @include bp-md{
-    font-size: 16px;
-    line-height: 32px;
+  a {
+    color: #fff !important;
+    font-size: 11px;
+    line-height: 16px;
+    white-space: nowrap;
+    @include bp-md {
+      font-size: 16px;
+      line-height: 32px;
+    }
   }
 }
 

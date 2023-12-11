@@ -4,7 +4,7 @@ import styles from "./modal.module.scss";
 import motherProducts from "../data/mother-products";
 import olympusProducts from "../data/olympus-products";
 import freedomProducts from "../data/freedom-products";
-import xpenzProducts from "../data/xpenz-products";
+import xpenzProducts from "../data/ofex-products";
 import loyaltyLoungeProducts from "../data/loaylty-lounge-products";
 import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";
