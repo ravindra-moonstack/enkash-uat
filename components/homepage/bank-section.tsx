@@ -184,19 +184,8 @@ const BankSection = () => {
           {selectedTab === "customers" && (
             <div
               className={`${styles.customer_logo} 
-            d-flex align-items-center justify-content-between`}
+            ps-2 d-flex align-items-center justify-content-between`}
             >
-              <Image className={styles.box} src={box8Logo} alt="box8 logo" />
-              <Image
-                className={styles.reliance}
-                src={relianceRetail}
-                alt="reliance retail cry logo"
-              />
-              <Image
-                className={styles.pristyn}
-                src={pristynCareLogo}
-                alt="pristyn care logo"
-              />
               <Image
                 className={styles.everest}
                 src={everestLogo}
@@ -214,10 +203,23 @@ const BankSection = () => {
               />
               <Image className={styles.dtdc} src={dtdcLogo} alt="dtdc logo" />
               <Image
+                className={styles.pristyn}
+                src={pristynCareLogo}
+                alt="pristyn care logo"
+              />
+              
+              <Image className={styles.box} src={box8Logo} alt="box8 logo" />
+              <Image
+                className={styles.reliance}
+                src={relianceRetail}
+                alt="reliance retail cry logo"
+              />
+              <Image
                 className={styles.starbucks}
                 src={starBucksLogo}
                 alt="star bucks logo"
               />
+             
             </div>
           )}
         </motion.div>
