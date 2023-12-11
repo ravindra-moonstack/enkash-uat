@@ -600,7 +600,8 @@
       width: 90%;
       z-index: 2;
       @include bp-md {
-        width: 50%;
+        margin-top: 50px;
+        width: 70%;
       }
     }
 
@@ -668,7 +669,6 @@
     @include bp-md {
       width: 450px;
     }
-
     @include bp-extra-lg {
       width: 500px;
     }
