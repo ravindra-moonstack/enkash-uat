@@ -22,7 +22,7 @@ import {
 const olympusProducts = [
   {
     subtitle: "Payables",
-    subtitleLink: "/payables",
+    subtitleLink: "/olympus/payables",
     currentHeading: {
       name: "Olympus",
       description:
@@ -72,12 +72,12 @@ const olympusProducts = [
       "Effortlessly streamline your business payments and collections",
     footerMobileText: "Explore Payables",
     footerImg: "olympus_footer_bg",
-    footerLink: "/payables",
+    footerLink: "/olympus/payables",
     parentLink: "/olympus",
   },
   {
     subtitle: "Receivables",
-    subtitleLink: "/receivables",
+    subtitleLink: "olympus/receivables",
     currentHeading: {
       name: "Olympus",
       description:
@@ -118,7 +118,7 @@ const olympusProducts = [
       "Effortlessly streamline your business payments and collections",
     footerMobileText: "Explore Receivables",
     footerImg: "olympus_footer_bg",
-    footerLink: "/receivables",
+    footerLink: "olympus/receivables",
     parentLink: "/olympus",
   },
 ];

@@ -357,7 +357,7 @@ const home = () => {
             title="Payables"
             description="A centralized online platform to manage all outgoing business expenses. Record and track all the transactions along with timely reminders to avoid delays in business payments"
             theme="green"
-            link="/payables"
+            link="/olympus/payables"
           />
         </div>
         <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
@@ -365,7 +365,7 @@ const home = () => {
             title="Receivables"
             description="An intelligent automation tool to empower your business by removing manual and time-consuming follow-ups. It helps create better collection strategies"
             theme="green"
-            link="/receivables"
+            link="/olympus/receivables"
           />
         </div>
         <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
