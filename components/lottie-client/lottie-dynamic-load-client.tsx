@@ -57,6 +57,9 @@ import {
   payablesRentalAnimation,
   payablesTaxAnimation,
   payablesVendorAnimation,
+  olympusInvoicesAnimation,
+  olympusBulkCollectAnimation,
+  olympusPaymentAnimation,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -122,6 +125,9 @@ const animationMap: Record<string, () => Promise<any>> = {
   OlympusRentalAnimation: olympusRentalAnimation,
   OlympusMultiBanAnimation: olympusMultiBankAnimation,
   OlympusCollectAnimation: olympusCollectAnimation,
+  OlympusInvoicesAnimation: olympusInvoicesAnimation,
+  OlympusPaymentAnimation: olympusPaymentAnimation,
+  OlympusBulkCollectAnimation: olympusBulkCollectAnimation,
 };
 
 const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"));

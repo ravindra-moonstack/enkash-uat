@@ -5,7 +5,6 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../constant/common";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -29,7 +28,7 @@ export const metadata: Metadata = {
 const giftCards = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-           <HeaderWrapper />
+      <HeaderWrapper />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -45,39 +44,16 @@ const giftCards = () => {
             <Heading title="Gift Cards" size="h4" weight="4" />
           </div>
 
-          <div className="d-inline d-md-flex flex-column">
-            <div className="d-inline">
-              <Heading
-                title={`Make your${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="employees feel "
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-            </div>
-
-            <div className="d-inline">
-              <Heading
-                title="recognized "
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="at the workplace "
-                color="white"
-                size="h2"
-                weight="7"
-              />
-            </div>
+          <div>
             <Heading
-              title="with these gift cards"
+              title={`Foster a culture of recognition with these flexible${space}`}
               color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`gift cards${space}`}
+              color="rainy-blue"
               size="h2"
               weight="7"
             />
@@ -85,7 +61,7 @@ const giftCards = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Easy to access, monitor, and control corporate gift cards for your valuable employees"
+              title="Easy to access, monitor, and control gift cards for seamless gifting"
               color="white"
               size="h6"
               weight="5"
@@ -120,7 +96,7 @@ const giftCards = () => {
             {
               itemArray: ["Accessibility"],
               oldWayDescription:
-                "The traditional way of issuing gift cards to employees or partners was quite cumbersome and paper-based, making it a long-drawn and time-consuming process.",
+                "The traditional way of issuing gift cards was quite cumbersome and paper-based, making it a long-drawn and time-consuming process.",
               newWayDescription:
                 "The EnKash way of issuing gift cards is simplified, making it easy to access digital cards from anywhere.",
             },
@@ -136,7 +112,7 @@ const giftCards = () => {
               oldWayDescription:
                 "Traditional gift cards may have restrictions regarding their availability in specific amount limits.",
               newWayDescription:
-                "Corporate gift cards are available in multiple denominations of up to Rs.10,000; one can choose the card value per their requirement. Limits are configurable based on your choice.",
+                "Gift cards are available in multiple denominations of up to Rs.10,000; one can choose the card value per their requirement. Limits are configurable based on your choice.",
             },
             {
               itemArray: ["Acceptability"],
@@ -220,7 +196,7 @@ const giftCards = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Easy to Distribute"
-                description="Employers can easily gift these cards to their employees as per the occasion"
+                description="These gift cards can be easily distributed as per the occasion"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -241,25 +217,17 @@ const giftCards = () => {
               <div className="text-center">
                 <div className="d-inline d-md-flex flex-column">
                   <Heading
-                    title={`Encourage your employees with these${space}`}
+                    title="User-friendly and convenient solution for"
                     color="white"
                     size="h1"
                     weight="6"
                   />
-                  <div className="d-inline">
-                    <Heading
-                      title={`easy-to-use${space}`}
-                      color="white"
-                      size="h1"
-                      weight="6"
-                    />
-                    <Heading
-                      title="gift cards"
-                      color="rainy-blue"
-                      size="h1"
-                      weight="6"
-                    />
-                  </div>
+                  <Heading
+                    title="every gifting need"
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
                 </div>
               </div>
             </>
@@ -301,7 +269,7 @@ const giftCards = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of gift cards?"
-          description="Corporate gift cards in India are among the best ways to encourage and retain employees. They allow employees to choose from various options and then decide for themselves. A transparent and easy way of appreciating employees, corporate gifts are customizable, convenient, and secure."
+          description="Gift cards in India offer a versatile and effective way to express appreciation and foster positive connections. They offer recipients the flexibility to select from a range of options and make their own choices. A transparent and straightforward method of expressing gratitude, these gift cards are adaptable, user-friendly, and secure."
         />
       </div>
 
@@ -323,7 +291,7 @@ const giftCards = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="A corporate gift card is a prepaid card organizations use to gift their employees, clients, customers, or partners. These cards are loaded with money up to a certain specified amount and are among the best ways to appreciate employees. These cards can be redeemed online or in-store."
+                  title="A corporate gift card is a prepaid card organizations use to gift their employees, clients, customers, or partners. These cards are loaded with money up to a certain specified amount and are among the best ways to appreciate people. These cards can be redeemed online or in-store."
                 />
               </div>
               <div className="mb-2">
@@ -336,24 +304,12 @@ const giftCards = () => {
               </div>
 
               <div className="mb-5">
-                <ul>
-                  <li>
-                    Register on EnKash and enter all the company details
-                    required
-                  </li>
-                  <li>
-                    After all the details are validated, the company becomes
-                    eligible for gift cards
-                  </li>
-                  <li>
-                    The company can load money into their account and request
-                    the cards as required
-                  </li>
-                  <li>
-                    These gift cards can be allocated to employees with a
-                    preloaded amount as per the occasion
-                  </li>
-                </ul>
+              <ul>
+      <li>Register on EnKash and enter all the company details required</li>
+      <li>After all the details are validated, the company becomes eligible for gift cards</li>
+      <li>The company can load money into their account and request the cards as required</li>
+      <li>These gift cards can be allocated to the recipient with a preloaded amount as per the occasion</li>
+    </ul>
               </div>
 
               <div className="mb-2">
@@ -385,7 +341,7 @@ const giftCards = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Corporations have noticed an increase in employee retention with corporate gifting. This retention has helped increase the company’s profits quite considerably. Therefore, investing in corporate gift cards by EnKash for employees is a win-win situation. On the one hand, you are motivating your employees with secure, convenient, and easy-to-manage cards, giving access across multiple categories, and they are also producing better results for the organization."
+                  title="Organizations have observed enhanced retention rates through the implementation of corporate gifting strategies. Hence, opting for gift cards, such as those offered by EnKash, proves to be a mutually beneficial strategy. By motivating stakeholders with secure, convenient, and easily manageable gift cards that offer access across various categories, organizations can expect improved outcomes and increased productivity."
                 />
               </div>
               <div className="mb-2">
@@ -417,7 +373,7 @@ const giftCards = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="You can avoid gift tax by keeping the value of employee gifts within the tax-free limit of 5000 INR within a calendar year."
+                  title="You can avoid gift tax by keeping the value of gifts within the tax-free limit of 5000 INR within a calendar year."
                 />
               </div>
             </>

@@ -13,8 +13,6 @@ import {
   fuelCardFilled,
   purchaseCard,
   purchaseCardFilled,
-  businessCard,
-  businessCardFilled,
 } from "@/components/header";
 
 const freedomProducts = [
@@ -34,14 +32,6 @@ const freedomProducts = [
         imageSrcHovered: mealCardFilled,
         link: "/meal-cards",
       },
-      // {
-      //   name: "Payroll Cards*",
-      //   description: "Pay your employees quickly and easily with payroll cards",
-      //   imageSrc: payrollCard,
-      //   imageSrcHovered: payrollCardFilled,
-      //   link: "/payroll-cards",
-      // },
-
       {
         name: "Fuel Cards*",
         description: "Track and manage fuel expenses for your business travels",

@@ -138,6 +138,32 @@
     }
   }
 
+  .first_container {
+    position: relative;
+    z-index: 2;
+    @include bp-md {
+      padding-left: 50px;
+    }
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -80px;
+      @include bp-md {
+        top: -100px;
+        left: 200px;
+      }
+    }
+    .lottie_container {
+      width: 300px;
+      @include bp-md {
+        width: 500px;
+        margin-top: -30px;
+        margin-left: 50px;
+      }
+    }
+  }
+
   .second_container {
     position: relative;
     z-index: 2;
@@ -151,28 +177,46 @@
         left: -100px;
       }
     }
-
     .lottie_container {
-      height: auto;
       width: 250px;
       @include bp-md {
-        width: 400px;
+        width: 350px;
+        margin-right: 70px;
+      }
+    }
+  }
+
+  .third_container {
+    position: relative;
+    z-index: 2;
+    @include bp-md {
+      padding-left: 50px;
+    }
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -80px;
+      @include bp-md {
+        top: -50px;
+        left: 200px;
+      }
+    }
+    .lottie_container {
+      width: 300px;
+      @include bp-md {
+        width: 500px;
+        margin-left: 70px;
       }
     }
   }
 }
 
 .fourth_row {
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 36px;
-  padding-bottom: 36px;
+  padding: 56px 40px;
   background-color: $color-indi-volt;
   @include bp-md {
-    padding-left: 90px;
-    padding-right: 90px;
-    padding-top: 110px;
-    padding-bottom: 110px;
+    padding: 110px 90px;
   }
 
   .lottie_container {
@@ -185,7 +229,7 @@
   .lottie_second_container {
     width: 250px;
     @include bp-md {
-      width: 500px;
+      width: 450px;
     }
   }
 }

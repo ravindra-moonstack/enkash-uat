@@ -345,11 +345,7 @@ const Footer = () => {
           </div>
         </div>
         <div className={`col-12 text-left color-white ${styles.disclaimer}`}>
-          Corporate cards, payments, or other related services are provided by
-          RBI-licensed banks and/ or in accordance with RBI regulations and/ or
-          RBI compliance maintained by banks & regulated entities. EnKash is not
-          a bank and doesn’t hold or claim to hold a banking license. *Powered
-          by Banks
+        *Corporate cards, payments, or other related services are provided by RBI-licensed banks and/ or in accordance with RBI regulations and/ or RBI compliance maintained by banks & regulated entities. EnKash is not a bank and doesn’t hold or claim to hold a banking license.
         </div>
         <div className={`col-12 color-white ${styles.copyright}`}>
           Copyright © 2023 | EnKash. All right reserved.

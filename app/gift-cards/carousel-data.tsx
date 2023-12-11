@@ -25,7 +25,7 @@ const carouselData = [
     image: iconFour,
     alt: "Select the bill you want to pay",
     title:
-      "These gift cards can be distributed to employees with preset amounts based on the occasion",
+      "These gift cards can be distributed with preset amounts based on the occasion",
   },
 ];
 

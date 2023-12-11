@@ -92,6 +92,12 @@ export const olympusMultiBankAnimation = () =>
   import("../../app/olympus/img/lottie/multi-bank.json");
 export const olympusCollectAnimation = () =>
   import("../../app/olympus/img/lottie/collect.json");
+  export const olympusPaymentAnimation = () =>
+  import("../../app/olympus/img/lottie/payment-links.json");
+  export const olympusBulkCollectAnimation = () =>
+  import("../../app/olympus/img/lottie/bulk-collect.json");
+  export const olympusInvoicesAnimation = () =>
+  import("../../app/olympus/img/lottie/invoices.json");
 
 //Loyalty Section Homepage
 export const loyaltyOne = () => import("../../app/img/lottie/loyalty-1.json");

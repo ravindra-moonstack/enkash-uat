@@ -67,7 +67,7 @@ const olympus = () => {
               weight="7"
             />
             <Heading
-              title="effortless business banking"
+              title="effortless payments and banking"
               color="white"
               weight="7"
               size="h2"
@@ -163,7 +163,7 @@ const olympus = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Utility Payments"
+              title="Bill Payments"
               description="Add multiple utility providers, automate recurring payments, and ensure on-time payments with features like Auto-Fetch and Auto-Pay"
               theme="blue"
             />
@@ -187,7 +187,7 @@ const olympus = () => {
       </div>
 
       <div className={`${styles.fourth_row} row row-padding`}>
-        <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
+        <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1">
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
               animationName={"OlympusRentalAnimation"}
@@ -204,16 +204,18 @@ const olympus = () => {
         </div>
 
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
-          <ExploreCard
-            title="Multi-Bank Reconciliation"
-            description="Easily automate the reconciliation process across multiple bank accounts, saving time and reducing errors"
-            theme="green"
-          />
+          <div className="mt-5">
+            <ExploreCard
+              title="Collect Payments"
+              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links"
+              theme="green"
+            />
+          </div>
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
             <LottieDynamicLoadComponent
-              animationName={"OlympusMultiBanAnimation"}
+              animationName={"OlympusCollectAnimation"}
               loop={true}
             />
           </div>
@@ -222,8 +224,33 @@ const olympus = () => {
 
       <div className={styles.more_cards}>
         <div className={`row bg-white ${styles.section}`}>
+          <div className="col-md-6 col-12 my-md-5 my-3">
+            <ExploreCard
+              title="Payment Links"
+              description="Expedite your collection process by embedding payment links with digital invoices"
+              theme="blue"
+            />
+          </div>
           <div
-            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-5 d-flex justify-content-start  ${styles.second_container}`}
+            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.first_container}`}
+          >
+            <Image
+              src={cardBg}
+              alt="card background"
+              className={styles.card_bg}
+            />
+
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"OlympusPaymentAnimation"}
+                loop={true}
+              />
+            </div>
+          </div>
+        </div>
+        <div className={`row bg-white ${styles.section}`}>
+          <div
+            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start  ${styles.second_container}`}
           >
             <Image
               src={cardBg}
@@ -232,17 +259,42 @@ const olympus = () => {
             />
             <div className={styles.lottie_container}>
               <LottieDynamicLoadComponent
-                animationName={"OlympusCollectAnimation"}
+                animationName={"OlympusBulkCollectAnimation"}
                 loop={true}
               />
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
-              title="Collect Payments"
-              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links"
+              title="Bulk Collect"
+              description="Streamline business collections through automated payment reminders, and bulk invoice dispatch in one click"
               theme="blue"
             />
+          </div>
+        </div>
+        <div className={`row bg-white ${styles.section}`}>
+          <div className="col-md-6 col-12 my-md-5 my-3">
+            <ExploreCard
+              title="Invoices"
+              description="Digitize the entire invoicing process from uploading to dispatching invoices electronically
+              Effortlessly streamline your business payments and collections"
+              theme="blue"
+            />
+          </div>
+          <div
+            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.third_container}`}
+          >
+            <Image
+              src={cardBg}
+              alt="card background"
+              className={styles.card_bg}
+            />
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"OlympusInvoicesAnimation"}
+                loop={true}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const offers = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-           <HeaderWrapper />
+      <HeaderWrapper />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -50,16 +50,15 @@ const offers = () => {
               size="h2"
               weight="7"
             />
+
             <Heading
               title={`offers${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <Heading title="on SaaS" color="white" size="h2" weight="7" />
-
             <Heading
-              title={`${space}subscriptions${space}`}
+              title="on business products"
               color="white"
               size="h2"
               weight="7"
@@ -68,7 +67,7 @@ const offers = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Explore our curated offers from trusted partners and get exclusive discounts on a wide range of business SaaS products"
+              title="Explore our curated offers from trusted partners and get exclusive discounts on a wide range of business products and services"
               color="white"
               size="h6"
               weight="5"
@@ -101,9 +100,9 @@ const offers = () => {
             {
               itemArray: ["Finding", "Offers"],
               oldWayDescription:
-                "It’s difficult for businesses to find SaaS offers that fulfill their needs and help them save big.",
+                "It’s difficult for businesses to find offers that fulfill their needs and help them save big.",
               newWayDescription:
-                "Access a curated selection of the best SaaS offers from our partner brands on various business SaaS products.",
+                "Access a curated selection of the best offers from our partner brands on various business products and services.",
             },
             {
               itemArray: ["Time", "Investment"],
@@ -118,13 +117,6 @@ const offers = () => {
                 "Lack of awareness leads to missing out on great deals.",
               newWayDescription:
                 "Real-time visibility of offers on the dashboard gives you access to better deals and more savings.",
-            },
-            {
-              itemArray: ["Managing", "Subscriptions"],
-              oldWayDescription:
-                "Handling subscriptions and payments on different platforms often leads to chaos and inconvenience.",
-              newWayDescription:
-                "Easily consolidate and manage all partnered subscriptions on a single platform.",
             },
             {
               itemArray: ["Tracking"],
@@ -168,7 +160,7 @@ const offers = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Maximize Savings"
-                description="Unlock significant savings on business SaaS products with exclusive discounts on our partnered services"
+                description="Unlock significant savings on various business products with exclusive discounts on our partnered services"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -280,7 +272,7 @@ const offers = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="These offers can benefit your business by providing significant savings on SaaS products through curated deals with trusted partners. With a seamless process and real-time visibility, businesses can easily access top-notch deals, streamline subscriptions, and stay ahead of new offers."
+                  title="These offers can benefit your business by providing significant savings on business products and services through curated deals with trusted partners. With a seamless process and real-time visibility, businesses can easily access top-notch deals, streamline subscriptions, and stay ahead of new offers."
                 />
               </div>
               <div className="mb-2">

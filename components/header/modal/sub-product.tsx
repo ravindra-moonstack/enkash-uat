@@ -160,7 +160,7 @@ const SubProduct = (props: any) => {
 
           {/* only for freedom products */}
           {props.index === 1 && (
-            <div className={styles.powered}>*Powered By Bank</div>
+            <div className={styles.powered}>*Issued by Banks/REs</div>
           )}
 
           <div

@@ -13,7 +13,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Gift cards for employees are vital for business organizations as they help boost employee morale. They act as a token of recognition and make employees feel valued. Corporate gift cards allow employees to choose from various products and services and help them save money. Giving your employees gift cards on special occasions induces a positive work culture and further motivates them to showcase their work dedication.",
+          "Gift cards are essential for businesses as they are a versatile and convenient way to show appreciation and offer rewards. They allow recipients the freedom to choose something they truly desire, making them a more personalized and meaningful gift than traditional options.",
       },
     ],
   },
@@ -22,7 +22,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Startups should consider offering gift cards to employees to incentivize and recognize their performance. This can help motivate employees and improve their overall productivity. Gift cards are a cost-effective way to reward employees, as they can be purchased in bulk at a discounted rate. Gift cards can boost employee morale by providing a tangible reward for their efforts. This can create a positive and supportive workplace culture.",
+          "Startups should consider offering gift cards to incentivize and recognize the performance of their employees and partners. This can help motivate and improve their overall productivity. Gift cards are a cost-effective way to reward employees and partners, as they can be purchased in bulk at a discounted rate. Gift cards can boost morale by providing a tangible reward for the efforts put in by the people. This can create a positive and supportive workplace culture.",
       },
     ],
   },
