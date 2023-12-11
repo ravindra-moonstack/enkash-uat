@@ -141,13 +141,15 @@ const AwardSection = () => {
                   />
                 </div>
                 <div className="px-5">
-                <div className="px-5">
-                  <Image
-                    src={paymentAndCardSummit}
-                    alt="8th Edition of Payments and Cards Summit"
-                    loading="lazy"
-                  />
-                </div> </div>
+                  <div className="px-5">
+                    <Image
+                      className="py-5"
+                      src={paymentAndCardSummit}
+                      alt="8th Edition of Payments and Cards Summit"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
               </div>
               <div
                 className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
@@ -160,7 +162,12 @@ const AwardSection = () => {
                   />
                 </div>
                 <div className="px-5">
-                  <Image src={nasscom} alt="nasscom logo" loading="lazy" />
+                  <Image
+                    src={nasscom}
+                    alt="nasscom logo"
+                    loading="lazy"
+                    className="py-5"
+                  />
                 </div>
               </div>
               <div
@@ -175,6 +182,7 @@ const AwardSection = () => {
                 </div>
                 <div>
                   <Image
+                    className="py-5"
                     src={fintectFestival}
                     alt="Fintech Festival India Awards 2022"
                     loading="lazy"

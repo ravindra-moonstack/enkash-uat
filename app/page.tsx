@@ -715,7 +715,7 @@ const home = () => {
       <div className={`${styles.fourteenth_row} row bg-white`}>
         <AwardSection />
       </div>
-      {/* <div className={`${styles.fifthteen_row} row color-white`}>
+      <div className={`${styles.fifthteen_row} row color-white`}>
         <div className={`${styles.title} text-center`}>
           <Heading
             title={`Trusted by${space}`}
@@ -730,26 +730,17 @@ const home = () => {
             weight="6"
           />
           <Heading title="companies" color="white" size="h1" weight="6" />
-          <div>
-
-            <Heading
-              title="( Prakash is working on this testimonial section - this is not final )"
-              color="white"
-              size="h6"
-              weight="6"
-            />
-          </div>
         </div>
 
         <div></div>
         <div
           className={`d-flex justify-content-between ${styles.testimonials_section}`}
         >
-          <div className="testimonial-one px-5">
+          <div className="testimonial-one px-md-5 mb-5">
             <div className="mb-md-5">
               <Heading
                 title='"One of the key benefits of Olympus was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management."'
-                size="h6"
+                size="h5"
                 weight="6"
                 color="electric-green"
                 italic={true}
@@ -765,11 +756,11 @@ const home = () => {
               </div>
             </div>
           </div>
-          <div className="testimonial-two px-5">
+          <div className="testimonial-two px-md-5 mb-5">
             <div className="mb-md-5">
               <Heading
                 title='"In integrated marketing communications, agencies need to allocate budgets for different verticals. Through Olympus’ virtual cards, we were able to manage our budget allocation for various departments, streamline approvals seamlessly, and gain real-time visibility of all our department-wise expenses to our finance department."'
-                size="h6"
+                size="h5"
                 weight="6"
                 color="electric-green"
                 italic={true}
@@ -790,7 +781,8 @@ const home = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
+
       <div className={`row bg-white ${styles.sixteenth_row}`}>
         <ContactUsCard
           title="Ready to upgrade with our new-age business solutions?"

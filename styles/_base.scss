@@ -196,14 +196,14 @@
 
 .mobile-header {
   display: block;
-  @include bp-sm {
+  @include bp-md {
     display: none;
   }
 }
 
 .desktop-header {
   display: none;
-  @include bp-sm {
+  @include bp-md {
     display: block;
     position: fixed;
     top: 0;

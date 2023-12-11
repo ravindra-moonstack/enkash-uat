@@ -33,7 +33,7 @@ const DashBoardAnimation = () => {
             />
           </div>
           <div className={styles.space}></div>
-          <div onClick={() => setActiveAnimation("automate")}>
+          <div className="me-2" onClick={() => setActiveAnimation("automate")}>
             <MenuButton
               title="Automate"
               theme={activeAnimation === "automate" ? "dark" : "disabled"}

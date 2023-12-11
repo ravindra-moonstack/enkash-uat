@@ -413,6 +413,12 @@
     display: flex;
     justify-content: space-evenly;
     overflow-x: auto;
+
+    padding-left: 20px;
+    @include bp-md {
+      padding-left: 20px;
+    }
+
     img {
       @include bp-md {
         margin-right: 0px;
@@ -489,6 +495,11 @@
     display: flex;
     justify-content: space-evenly;
     overflow-x: auto;
+    padding-left: 20px;
+    @include bp-md {
+      padding-left: 20px;
+    }
+
     img {
       filter: grayscale(1);
       margin-right: 20px;
@@ -524,7 +535,7 @@
       }
     }
     .everest {
-      height: 20px;
+      height: 17px;
       width: 170px;
       margin-right: 50px;
       @include bp-md {
@@ -540,7 +551,7 @@
       }
     }
     .infra {
-      height: 20px;
+      height: 17px;
       width: 170px;
       margin-right: 50px;
       @include bp-md {
@@ -589,7 +600,7 @@
       width: 90%;
       z-index: 2;
       @include bp-md {
-        width: 580px;
+        width: 50%;
       }
     }
 
@@ -975,8 +986,10 @@
 }
 
 .fifthteen_row {
+  padding-top: 50px;
   background-color: $color-indi-volt;
   position: relative;
+
   .title {
     background: url(img/black-rectangle-top.png);
     z-index: 2;
@@ -995,9 +1008,17 @@
   }
 
   .testimonials_section {
+    display: flex;
+    flex-direction: column;
+
+    @include bp-md {
+      flex-direction: row;
+    }
+
     padding-left: 50px;
     padding-right: 50px;
     padding-bottom: 50px;
+
     @include bp-md {
       padding-left: 110px;
       padding-right: 110px;
@@ -1005,23 +1026,9 @@
     }
 
     img {
-      width: 100px;
-      height: 100px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
-    }
-  }
-  .mobile_testimonial {
-    padding-bottom: 20px;
-    padding-top: 20px;
-    margin-left: 40px;
-    @include bp-md {
-      display: none;
-    }
-  }
-  .desktop_testimonial {
-    display: none;
-    @include bp-md {
-      display: block;
     }
   }
 }
