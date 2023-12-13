@@ -11,7 +11,7 @@ export { default as circleRupeeIcon } from "./img/circle-rupee-icon.png";
 export { default as teamImg } from "./img/team-img.png";
 export { default as fintectFestival } from "./img/fintect-festival.png";
 export { default as testimonials } from "./img/testimonials.png";
-;
+
 export { default as playButton } from "./img/watch.png";
 export { default as rainbowOne } from "./img/stack-one.png";
 export { default as rainbowOneMobile } from "./img/stack-one-mobile.png";
@@ -62,6 +62,3 @@ export { default as nasscom } from "./img/nasscom.png";
 export { default as relianceRetail } from "./img/reliance-retail-logo.png";
 export { default as dtdcLogo } from "./img/dtdc-logo.png";
 export { default as starBucksLogo } from "./img/starbucks-logo.svg";
-
-
-

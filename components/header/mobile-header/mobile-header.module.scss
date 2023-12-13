@@ -104,3 +104,11 @@
   color: $color-black;
   background-color: $color-white;
 }
+
+.powered {
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+  color: $color-secondry-grey;
+}

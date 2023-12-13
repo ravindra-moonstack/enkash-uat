@@ -206,8 +206,8 @@ const olympus = () => {
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <div className="mt-5">
             <ExploreCard
-              title="Collect Payments"
-              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links"
+              title="Payment Links"
+              description="Expedite your collection process by embedding payment links with digital invoices"
               theme="green"
             />
           </div>
@@ -215,7 +215,7 @@ const olympus = () => {
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
             <LottieDynamicLoadComponent
-              animationName={"OlympusCollectAnimation"}
+              animationName={"OlympusPaymentAnimation"}
               loop={true}
             />
           </div>
@@ -224,33 +224,8 @@ const olympus = () => {
 
       <div className={styles.more_cards}>
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 my-md-5 my-3">
-            <ExploreCard
-              title="Payment Links"
-              description="Expedite your collection process by embedding payment links with digital invoices"
-              theme="blue"
-            />
-          </div>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.first_container}`}
-          >
-            <Image
-              src={cardBg}
-              alt="card background"
-              className={styles.card_bg}
-            />
-
-            <div className={styles.lottie_container}>
-              <LottieDynamicLoadComponent
-                animationName={"OlympusPaymentAnimation"}
-                loop={true}
-              />
-            </div>
-          </div>
-        </div>
-        <div className={`row bg-white ${styles.section}`}>
-          <div
-            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start  ${styles.second_container}`}
+            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 d-flex justify-content-start  ${styles.first_container}`}
           >
             <Image
               src={cardBg}
@@ -273,7 +248,7 @@ const olympus = () => {
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 my-md-5 my-3">
+          <div className="col-md-6 col-12 my-md-5">
             <ExploreCard
               title="Invoices"
               description="Digitize the entire invoicing process from uploading to dispatching invoices electronically
@@ -282,7 +257,7 @@ const olympus = () => {
             />
           </div>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.third_container}`}
+            className={`col-md-6 col-12 d-flex my-md-5 d-flex justify-content-end ${styles.second_container}`}
           >
             <Image
               src={cardBg}
@@ -295,6 +270,31 @@ const olympus = () => {
                 loop={true}
               />
             </div>
+          </div>
+        </div>
+
+        <div className={`row bg-white ${styles.section}`}>
+          <div
+            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 d-flex justify-content-start  ${styles.third_container}`}
+          >
+            <Image
+              src={cardBg}
+              alt="card background"
+              className={styles.card_bg}
+            />
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"OlympusCollectAnimation"}
+                loop={true}
+              />
+            </div>
+          </div>
+          <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
+            <ExploreCard
+              title="Collect Payments"
+              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links"
+              theme="blue"
+            />
           </div>
         </div>
       </div>

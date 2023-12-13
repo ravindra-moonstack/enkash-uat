@@ -113,6 +113,10 @@ const SubProductListView = (props: {
             </Link>
           ))}
         </div>
+        {props.setSelectedItemIndex === 1 && (
+          <div className={styles.powered}>*Issued by Banks/REs</div>
+        )}
+
         <div
           className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
         >

@@ -4,6 +4,7 @@ import styles from "./modal.module.scss";
 import resources from "../data/resources";
 import { blueforwardArrow } from "..";
 import resourcesData from "../blog-data.json";
+import Link from "next/link";
 
 type Resource = {
   image: string;
@@ -53,10 +54,12 @@ const ResourcesModal = () => {
             onMouseEnter={() => setHoveredResourceIndex(index)}
             ref={refs[index]}
           >
-            <div className={styles.product_name}>{product.name}</div>
-            <div className={styles.product_description}>
-              {product.description}
-            </div>
+            <Link href={product.link}>
+              <div className={styles.product_name}>{product.name}</div>
+              <div className={styles.product_description}>
+                {product.description}
+              </div>
+            </Link>
           </div>
         ))}
       </div>

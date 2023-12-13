@@ -36,6 +36,7 @@ const ProductListView = ({
                       setSelectedItemIndex(index);
                     }}
                   >
+                    {item.link && <>sasasasasasas</>}
                     <div className="d-flex flex-column">
                       <div className={styles.title}>{item.name}</div>
                       <div className={styles.description}>
