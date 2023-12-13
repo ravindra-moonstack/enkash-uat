@@ -10,7 +10,7 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";

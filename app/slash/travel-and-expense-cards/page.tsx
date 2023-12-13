@@ -19,7 +19,7 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import Link from "next/link";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",

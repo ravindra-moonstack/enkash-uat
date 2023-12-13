@@ -1,7 +1,7 @@
 import MobileHeader from "./mobile-header/mobile-header";
 import WebHeader from "./web-header";
 
-const HeaderWrapper = () => {
+const Header = () => {
   return (
     <>
       <div className="desktop-only desktop-header">
@@ -13,4 +13,4 @@ const HeaderWrapper = () => {
     </>
   );
 };
-export default HeaderWrapper;
+export default Header;

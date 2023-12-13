@@ -15,7 +15,7 @@ import TextAnimation from "@/components/framer-motion/text-animation";
 import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import DashBoardAnimation from "@/components/homepage/dashboard-animation";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 import AwardSection from "@/components/homepage/award-section";
 
 import {

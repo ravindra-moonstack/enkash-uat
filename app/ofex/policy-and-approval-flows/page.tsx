@@ -18,7 +18,7 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 
 export const metadata: Metadata = {
   title:
@@ -42,11 +42,7 @@ const policyApprovalFlow = () => {
                 weight="7"
               />
             </div>
-            <Heading
-              title="| Policy and Approval Flows"
-              size="h4"
-              weight="4"
-            />
+            <Heading title="| Policy and Approval Flows" size="h4" weight="4" />
           </div>
 
           <div className="">

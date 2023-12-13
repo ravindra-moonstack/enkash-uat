@@ -17,7 +17,7 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import Link from "next/link";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import blogData from "./blog-data";
 

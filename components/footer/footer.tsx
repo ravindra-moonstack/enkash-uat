@@ -157,9 +157,7 @@ const Footer = () => {
               </a>
               <ul>
                 <li>
-                  <a href="loyalty-lounge/brand-voucher/">
-                    Brand Voucher
-                  </a>
+                  <a href="loyalty-lounge/brand-voucher/">Brand Voucher</a>
                 </li>
                 <li>
                   <a href="loyalty-lounge/channel-incentive/">
@@ -167,7 +165,9 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="loyalty-lounge/employee-rewards/">Employee Rewards</a>
+                  <a href="loyalty-lounge/employee-rewards/">
+                    Employee Rewards
+                  </a>
                 </li>
 
                 <li>
@@ -189,7 +189,9 @@ const Footer = () => {
                   <a href="https://www.enkash.com/resources/">Blogs</a>
                 </li>
                 <li>
-                  <a href="https://www.enkash.com/resources/videos/">Videos</a>
+                  <a href="https://www.enkash.com/resources/videos/">
+                    Product Videos
+                  </a>
                 </li>
                 <li>
                   <a href="https://www.enkash.com/resources/press-release/">
@@ -198,7 +200,12 @@ const Footer = () => {
                 </li>
                 <li>
                   <a href="https://www.enkash.com/resources/media-coverage/">
-                    Media Coverage
+                    News & Media
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.enkash.com/resources/customer-stories/">
+                    Customer Stories
                   </a>
                 </li>
               </ul>

@@ -18,7 +18,7 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "GST Payment - GST Bill Payment Online for Businesses | EnKash",

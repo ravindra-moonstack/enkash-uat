@@ -18,7 +18,7 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "Employee Rewards & Recognition Management Platform  - EnKash",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
 const employeeRewards = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-           <HeaderWrapper />
+      <HeaderWrapper />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

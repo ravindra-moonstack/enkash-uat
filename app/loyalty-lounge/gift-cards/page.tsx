@@ -17,7 +17,7 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "Corporate Gift Cards for Employees for Every Occasion with EnKash",
@@ -304,12 +304,24 @@ const giftCards = () => {
               </div>
 
               <div className="mb-5">
-              <ul>
-      <li>Register on EnKash and enter all the company details required</li>
-      <li>After all the details are validated, the company becomes eligible for gift cards</li>
-      <li>The company can load money into their account and request the cards as required</li>
-      <li>These gift cards can be allocated to the recipient with a preloaded amount as per the occasion</li>
-    </ul>
+                <ul>
+                  <li>
+                    Register on EnKash and enter all the company details
+                    required
+                  </li>
+                  <li>
+                    After all the details are validated, the company becomes
+                    eligible for gift cards
+                  </li>
+                  <li>
+                    The company can load money into their account and request
+                    the cards as required
+                  </li>
+                  <li>
+                    These gift cards can be allocated to the recipient with a
+                    preloaded amount as per the occasion
+                  </li>
+                </ul>
               </div>
 
               <div className="mb-2">

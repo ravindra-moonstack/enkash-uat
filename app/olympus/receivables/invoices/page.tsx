@@ -19,7 +19,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "Automated Invoicing Processing & Software for Business - EnKash",

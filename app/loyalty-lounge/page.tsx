@@ -17,7 +17,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 import {
   officeImg,
   whiteArrow,

@@ -19,7 +19,7 @@ import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const mealCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-           <HeaderWrapper />
+      <HeaderWrapper />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

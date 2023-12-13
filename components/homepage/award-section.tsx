@@ -140,10 +140,10 @@ const AwardSection = () => {
                     size="h6"
                   />
                 </div>
-                <div className="px-5">
-                  <div className="px-5">
+                <div className="px-md-5">
+                  <div className="px-md-5">
                     <Image
-                      className="py-5"
+                      className="py-md-5"
                       src={paymentAndCardSummit}
                       alt="8th Edition of Payments and Cards Summit"
                       loading="lazy"
@@ -166,7 +166,7 @@ const AwardSection = () => {
                     src={nasscom}
                     alt="nasscom logo"
                     loading="lazy"
-                    className="py-5"
+                    className="py-md-5"
                   />
                 </div>
               </div>
@@ -182,7 +182,7 @@ const AwardSection = () => {
                 </div>
                 <div>
                   <Image
-                    className="py-5"
+                    className="py-md-5"
                     src={fintectFestival}
                     alt="Fintech Festival India Awards 2022"
                     loading="lazy"

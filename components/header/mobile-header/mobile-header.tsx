@@ -25,13 +25,6 @@ const motherProductsList = [
   loyaltyLoungeProducts,
 ];
 
-const resourcesList = [
-  olympusProducts,
-  freedomProducts,
-  xpenzProducts,
-  loyaltyLoungeProducts,
-];
-
 const MobileHeader = () => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
@@ -103,8 +96,8 @@ const MobileHeader = () => {
             selectedItemIndex === 0
               ? motherProductsList
               : selectedItemIndex === 1
-              ? resourcesList
-              : resourcesList
+              ? []
+              : []
           }
           setCurrentStep={setCurrentStep}
           currentStep={currentStep}

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.168" height="61.103" viewBox="0 0 76.168 61.103">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.595" y1="1" x2="0.6" y2="-1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#60d6ff"/>
+      <stop offset="1" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="gray" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_31914" data-name="Group 31914" transform="translate(-832.579 -237.449)">
+    <path id="Union_157" data-name="Union 157" d="M-2259.052-15562.5h-24.243v-33.916l-2.313,1.6-11.39-11.395,16.491-16.793h7.826l13.346,14.429,13.08-14.429h8.089l16.491,16.793-11.394,11.395-2.313-1.6v33.916Zm-12.488-60.5h3.368l8.834,9.786,8.834-9.786h3.117l-11.955,13.186Z" transform="translate(3130 15860.75)" fill="url(#linear-gradient)"/>
+    <path id="Union_157_-_Outline" data-name="Union 157 - Outline" d="M-2235.082-15562.2h-48.513v-33.644l-2.049,1.417-.177-.177-11.6-11.6.208-.212,16.579-16.883h8.083l.089.1,13.124,14.188,12.949-14.284h8.348l.088.09,16.7,17-.21.21-11.571,11.571-.206-.142-1.843-1.275Zm-47.913-.6h47.313v-34.188l2.578,1.784,11.007-11.008-16.195-16.491h-7.83l-13.211,14.573-.222-.24-13.257-14.333h-7.569l-16.195,16.491,11,11.008,2.578-1.784Zm23.655-46.573-.222-.24-12.664-13.689h4.188l.089.1,8.611,9.54,8.7-9.639h3.927l-.455.5Zm-11.514-13.33,11.509,12.441,11.28-12.441h-2.307l-8.967,9.934-.223-.246-8.744-9.687Z" transform="translate(3130 15860.75)" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>

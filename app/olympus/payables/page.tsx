@@ -17,7 +17,7 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import { Metadata } from "next";
 import FAQHtml from "./faq-html";
 import Link from "next/link";
-import HeaderWrapper from "@/components/header/header-wrapper";
+import HeaderWrapper from "@/components/header/header";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 
 import {

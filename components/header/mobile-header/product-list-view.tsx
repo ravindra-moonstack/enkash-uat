@@ -33,10 +33,13 @@ const ProductListView = ({
                     key={item.name}
                     className={`py-4 px-4 align-items-center`}
                     onClick={() => {
-                      setSelectedItemIndex(index);
+                      if (childProducts.length === 0) {
+                        window.open(item.link, "_blank");
+                      } else {
+                        setSelectedItemIndex(index);
+                      }
                     }}
                   >
-                    {item.link && <>sasasasasasas</>}
                     <div className="d-flex flex-column">
                       <div className={styles.title}>{item.name}</div>
                       <div className={styles.description}>
