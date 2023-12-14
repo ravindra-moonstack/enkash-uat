@@ -291,17 +291,17 @@ const olympus = () => {
             />
             <div className={styles.lottie_container}>
               <LottieDynamicLoadComponent
-                animationName={"OlympusCollectAnimation"}
+                animationName={"RecievablesVirtualAnimation"}
                 loop={true}
               />
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
-              title="Collect Payments"
-              description="Effortlessly manage collections with instant settlement, auto-reminders, and payment links"
+              title="Virtual Accounts"
+              description="Streamline the collection process by creating virtual accounts for your customers"
               theme="blue"
-              link="/olympus/receivables/invoices"
+              link="/olympus/receivables/virtual-accounts"
             />
           </div>
         </div>

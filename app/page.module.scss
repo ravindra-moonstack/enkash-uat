@@ -682,6 +682,7 @@
   .lottie_container {
     display: flex;
     align-items: center;
+    width: 500px;
     @include bp-md {
       margin-top: -50px;
       width: 800px;
@@ -755,17 +756,18 @@
 
     .background_image {
       position: absolute;
-      top: -30px;
+      top: -80px;
       left: 0px;
       height: 350px;
       width: 350px;
       @include bp-md {
+        top: -30px;
         left: 0px;
-        height: 500px;
+        height: 550px;
         width: auto;
       }
       @include bp-extra-lg {
-        height: 600px;
+        height: 550px;
       }
     }
     .overlay_image {
@@ -793,7 +795,7 @@
       @include bp-md {
         top: -150px;
         left: -150px;
-        height: 700px;
+        height: 550px;
         width: auto;
       }
     }
@@ -801,7 +803,7 @@
       width: 250px;
       @include bp-md {
         margin-top: -250px;
-        width: 500px;
+        width: 400px;
       }
 
       @include bp-extra-lg {
@@ -809,9 +811,20 @@
       }
     }
   }
+  .padding {
+    margin-top: 160px;
+    @include bp-md {
+      margin-top: 0px;
+    }
+  }
 }
 
 .tenth_row {
+  padding: 70px 25px 0 25px;
+  @include bp-md {
+    padding: 0px 90px;
+  }
+
   .lottie_container {
     width: 200px;
     @include bp-md {

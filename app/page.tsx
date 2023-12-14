@@ -397,7 +397,7 @@ const home = () => {
         <div
           className={`${styles.eigth_row}row d-flex d-flex bg-white row-padding-top-none`}
         >
-          <div className="d-flex flex-column justify-content-center align-items-center w-100 mb-5">
+          <div className="d-flex flex-column justify-content-center align-items-center text-center w-100 mb-5">
             <div>
               <Heading
                 title="Explore Slash"
@@ -475,10 +475,38 @@ const home = () => {
           </div>
         </div>
       </div>
+      <div className="row d-flex d-flex bg-white row-padding-bottom-none">
+        <div className="d-flex flex-column justify-content-center align-items-center w-100 mb-5">
+          <div>
+            <Heading
+              title="Empower Control "
+              color="equity-blue"
+              size="h1"
+              weight="7"
+            />
+          </div>
+          <div>
+            <Heading
+              title="Optimize Expenses"
+              color="black"
+              size="h1"
+              weight="7"
+            />
+          </div>
+          <div className="mt-2 text-center px-4 px-m-0">
+            <Heading
+              title="Manage your business expenses the smart way with OfEx"
+              color="equity-blue"
+              size="h4"
+              weight="5"
+            />
+          </div>
+        </div>
+      </div>
 
       <div className={`${styles.ninth_row} row bg-white`}>
         <div
-          className={`col-md-6 col-12 row-padding-x-only d-flex d-flex justify-content-center order-2 order-md-1 ${styles.section_padding}`}
+          className={`col-md-6 col-12 row-padding-x-only d-flex d-flex justify-content-center order-2 order-md-1`}
         >
           <div className={styles.left_image_container}>
             <div className={styles.lottie_container}>
@@ -495,8 +523,10 @@ const home = () => {
             />
           </div>
         </div>
-        <div className={`col-md-6 col-12 mb-5 order-1 order-md-2`}>
-          <div className="mb-5">
+        <div
+          className={`col-md-6 col-12 mb-5 order-1 order-md-2 d-flex align-items-center`}
+        >
+          <div className="ps-md-5">
             <ExploreCard
               title="Expense Management"
               description="A platform to gain complete control over business spending and expenses. Analyze data to create efficient budgets, optimize expenses, and scale your business"
@@ -505,16 +535,20 @@ const home = () => {
             />
           </div>
         </div>
-        <div className="col-md-6 col-12 row-padding-x-only order-3 order-md-3">
-          <ExploreCard
-            title="DIY-card Module"
-            description="Generate purpose-made company cards and empower departments and employees to use them while setting usage limits and tracking for better spend control"
-            theme="blue"
-            link="/"
-          />
+        <div
+          className={`col-md-6 col-12 row-padding-x-only order-3 order-md-3`}
+        >
+          <div className={styles.padding}>
+            <ExploreCard
+              title="DIY-card Module"
+              description="Generate purpose-made company cards and empower departments and employees to use them while setting usage limits and tracking for better spend control"
+              theme="blue"
+              link="/"
+            />
+          </div>
         </div>
         <div
-          className={`col-md-6 col-12 mb-5 mb-m-0 row-padding-x-only d-flex d-flex justify-content-center order-4 order-md-4`}
+          className={`col-md-6 col-12 mb-5 mb-m-0 mt-5 row-padding-x-only d-flex d-flex justify-content-center order-4 order-md-4`}
         >
           <div className={styles.right_image_container}>
             <div className={styles.lottie_container}>
@@ -534,9 +568,7 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div
-        className={`${styles.tenth_row} row bg-white row-padding-bottom-none `}
-      >
+      <div className={`${styles.tenth_row} row bg-white`}>
         <LoyaltyLoungeSection />
       </div>
 

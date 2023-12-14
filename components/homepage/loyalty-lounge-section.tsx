@@ -91,7 +91,7 @@ const LoyaltyLoungeSection = () => {
             weight="4"
           />
         </div>
-        <div className="d-flex mt-4 justify-content-center justify-content-md-start">
+        <div className="d-flex mt-4 justify-content-md-start">
           <Link href="/loyalty-lounge" className={styles.link}>
             <div
               className={`${styles.arrow_icon} d-flex align-items-center mt-2`}
