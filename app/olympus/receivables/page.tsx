@@ -119,6 +119,7 @@ const receivables = () => {
               title="Virtual Accounts"
               description="Streamline the collection process by creating virtual accounts for your customers"
               theme="blue"
+              link="/olympus/receivables/virtual-accounts"
             />
           </div>
           <div
@@ -167,6 +168,7 @@ const receivables = () => {
               title="Bulk Collect"
               description="Create an improved, customer-focused collection experience while ensuring better DSO"
               theme="blue"
+              link="/olympus/receivables/bulk-collect"
             />
           </div>
           <div
@@ -202,6 +204,7 @@ const receivables = () => {
             title="Payment Links"
             description="Reduce follow-ups and speed up collections by embedding payment links within digital invoices"
             theme="green"
+            link="/olympus/receivables/payment-links"
           />
         </div>
 
@@ -210,6 +213,7 @@ const receivables = () => {
             title="Invoices"
             description="Reduce follow-ups and collect on time with digital invoice dispatch"
             theme="green"
+            link="/olympus/receivables/invoices"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">

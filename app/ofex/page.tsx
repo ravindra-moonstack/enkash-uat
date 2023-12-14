@@ -105,6 +105,7 @@ const OfEx = () => {
               title="Budget and Advances"
               description="Set budgets for each department or function and provide advances as per projections and past usage"
               theme="blue"
+              link="/ofex/budget-and-advances"
             />
           </div>
           <div
@@ -140,6 +141,7 @@ const OfEx = () => {
               title="Hierarchy and Controls"
               description="Use proper controls using department hierarchies to manage your expenses with ease and without delays"
               theme="blue"
+              link="/ofex/hierarchy-and-controls"
             />
           </div>
         </div>
@@ -149,6 +151,7 @@ const OfEx = () => {
               title="Reimbursements"
               description="Keep employees happy and ensure uninterrupted business-related activities with streamlined reimbursement processes"
               theme="blue"
+              link="/ofex/reimbursement"
             />
           </div>
           <div
@@ -182,6 +185,7 @@ const OfEx = () => {
             title="Policy and Approval Flows"
             description="Choose an approval matrix (auto, multi, custom, hierarchical) that works best for your business and create and maintain an aligned approval process for all kinds of spends"
             theme="green"
+            link="/ofex/policy-and-approval-flows"
           />
         </div>
 
@@ -190,6 +194,7 @@ const OfEx = () => {
             title="Scan and Drop Receipts"
             description="Leverage OCR for digital receipt management, reporting  & reconciliation"
             theme="green"
+            link="/ofex/policy-and-approval-flows"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">

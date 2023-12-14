@@ -111,6 +111,7 @@ const payables = () => {
               title="Vendor Payments"
               description="Keep track of all your vendor bills, get automated updates about upcoming payments, and simplify bulk vendor payments with a single click"
               theme="blue"
+              link="/olympus/payables/vendor-payment"
             />
           </div>
           <div
@@ -151,6 +152,7 @@ const payables = () => {
               title="Rental Payments"
               description="Maintain rental records, manage TDS benefits & pay rent for several locations, all on one platform"
               theme="blue"
+              link="/olympus/payables/rental-payment"
             />
           </div>
         </div>
@@ -160,6 +162,7 @@ const payables = () => {
               title="Bulk Payouts"
               description="Enable bulk payouts and make payments to vendors, billers & more via payment modes of your choice"
               theme="blue"
+              link="/olympus/payables/bulk-payout"
             />
           </div>
           <div
@@ -193,6 +196,7 @@ const payables = () => {
             title="Bill Payments"
             description=" Easily manage recurring bills like utility, electricity, etc"
             theme="green"
+            link="/olympus/payables/bill-payment"
           />
         </div>
 
@@ -201,6 +205,7 @@ const payables = () => {
             title="Tax Payments"
             description="Ensure an audit-compliant and seamless GST payment process for timely remittance"
             theme="green"
+            link="/olympus/payables/tax-payments"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">

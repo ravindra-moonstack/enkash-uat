@@ -112,6 +112,7 @@ const loyaltyLounge = () => {
               title="Employee Rewards"
               description="Make your employees feel valued with our comprehensive recognition and redemption solution"
               theme="blue"
+              link="/loyalty-lounge/employee-rewards"
             />
           </div>
           <div
@@ -151,6 +152,7 @@ const loyaltyLounge = () => {
               title="Brand Vouchers"
               description="Unlock a world of savings and convenience with exclusive brand vouchers; they are instant, personalized, and hassle-free"
               theme="blue"
+              link="/loyalty-lounge/brand-voucher"
             />
           </div>
         </div>
@@ -160,6 +162,7 @@ const loyaltyLounge = () => {
               title="Gift Cards"
               description="User-friendly gifting solutions with a wide range of gift cards that empower your employees to choose the perfect gift for themselves or their loved ones"
               theme="blue"
+              link="/loyalty-lounge/gift-cards"
             />
           </div>
           <div
@@ -192,6 +195,7 @@ const loyaltyLounge = () => {
             title="Offers"
             description="Unlock exclusive offers and enjoy discounts on various partnered subscriptions from popular services such as Amazon, ClearTax, Canva, and numerous others"
             theme="green"
+            link-="/loyalty-lounge/offers"
           />
         </div>
 
@@ -200,6 +204,7 @@ const loyaltyLounge = () => {
             title="Channel Incentives"
             description="A cutting-edge solution that helps businesses automate and streamline their channel incentive programs, boosting channel partner engagement, loyalty, and revenue"
             theme="green"
+            link="/loyalty-lounge/channel-incentive"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">

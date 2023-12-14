@@ -113,6 +113,7 @@ const slash = () => {
               title="Corporate Credit Cards"
               description="Simplify business payments, optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions powered by banks and financial institutions"
               theme="blue"
+              link=""
             />
           </div>
           <div
@@ -157,6 +158,7 @@ const slash = () => {
               title="Virtual Cards"
               description="Make it easy for your modern business to track and reconcile all payments with the new-age and innovative virtual cards"
               theme="blue"
+              link="/slash/virtual-cards"
             />
           </div>
           <div
