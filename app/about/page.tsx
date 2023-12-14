@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import {
   aboutBanner,
@@ -29,7 +27,6 @@ import {
 import Header from "@/components/header/header";
 import styles from "./page.module.scss";
 import Heading from "@/components/heading/heading";
-import { useEffect, useState } from "react";
 
 // export const metadata = {
 //   title: "EnKash | About Page",
@@ -172,275 +169,277 @@ const About = () => {
 
             {/* Fifth Row */}
             <div className={styles.leadership}>
-            <div className="enkash-abt-title mb-20">
-              <h4 className="underline-text">Our Founders</h4>
+              <div className="enkash-abt-title mb-20">
+                <h4 className="underline-text">Our Founders</h4>
+              </div>
+
+              <div className="parent-cards mt-24">
+                <div
+                  className="enkash-card text-center mb-12 -mt-6  wow zoomIn"
+                  data-wow-delay="500ms"
+                >
+                  <div className="user-img" id="hemant-vishnoi"></div>
+                  <div className="enkash-card-details">
+                    <div className="card-txt">Hemant Vishnoi</div>
+                    <div>
+                      <a
+                        className="mr-2"
+                        href="https://www.linkedin.com/in/hemantvishnoi/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <Image src={linkedin} alt="Hemant Vishnoi Linkedin" />
+                      </a>
+                      <a
+                        className="ml-2"
+                        href="https://twitter.com/h_vishnoi"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <Image src={twitter} alt="Hemant Vishnoi Twitter" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className="enkash-card text-center mb-12 -mt-6 wow zoomIn"
+                  data-wow-delay="500ms"
+                >
+                  <div className="user-img" id="naveen-bindal"></div>
+                  <div className="enkash-card-details">
+                    <div className="card-txt">Naveen Bindal</div>
+                    <div>
+                      <a
+                        className="mr-2"
+                        href="https://www.linkedin.com/in/naveenbindal/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <Image src={linkedin} alt="Naveen Bindal Linkedin" />
+                      </a>
+                      <a
+                        className="ml-2"
+                        href="https://twitter.com/bindal_naveen"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <Image src={twitter} alt="Naveen Bindal Twitter" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className="enkash-card text-center mb-12 -mt-6 wow zoomIn"
+                  data-wow-delay="500ms"
+                >
+                  <div className="user-img" id="yadvendra-tyagi"></div>
+                  <div className="enkash-card-details">
+                    <div className="card-txt">Yadvendra Tyagi</div>
+                    <div>
+                      <a
+                        className="mr-2"
+                        href="https://www.linkedin.com/in/yadvendratyagi/"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <Image src={linkedin} alt="Yadvendra Tyagi Linkedin" />
+                      </a>
+                      <a
+                        className="ml-2"
+                        href="https://twitter.com/ystyagi"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <Image src={twitter} alt="Yadvendra Tyagi" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="enkash-family-container pt-12 mt-12 px-md-6 px-md-24">
+                <div className="enkash-abt-title">
+                  <h4 className="underline-text">Our Leadership</h4>
+                </div>
+
+                <div className="grid mb-md-4 mt-md-24">
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="himanshu-vyas"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="card-txt">Himanshu Vyas</div>
+                      <div className="card-designation">
+                        Vice President <br />
+                        New Business Initiatives
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="lalit-arun"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Lalit Arun</div>
+                        <div className="card-designation">
+                          Senior Vice President <br />
+                          Banks & Financial Institutions
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="atishree-jindal"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Atishree Jindal</div>
+                        <div className="card-designation">Director Product</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="vibhor-chugh"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Vibhor Chugh</div>
+                        <div className="card-designation">
+                          Chief Risk Officer
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="nagesh-shet"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Nagesh Shet</div>
+                        <div className="card-designation">Head Finance</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="amandeep-arora"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Amandeep Arora</div>
+                        <div className="card-designation">
+                          Head Communications & Content
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="manish-kumawat"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Manish Kumawat</div>
+                        <div className="card-designation">
+                          Technical Architect
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="anurag-darira"></div>
+                    <div className="enkash-card-details  px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Anurag Darira</div>
+                        <div className="card-designation">
+                          Head Human Capital
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="krishnakumar-sv"></div>
+                    <div className="enkash-card-details  px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Krishnakumar SV</div>
+                        <div className="card-designation">Head Operations</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="ankur-gupta"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Ankur Gupta</div>
+                        <div className="card-designation">
+                          Director Engineering
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="martin-arockiaraj"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Martin Arockiaraj</div>
+                        <div className="card-designation">
+                          Associate Director <br />
+                          Product and Technology
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    data-wow-delay="500ms"
+                  >
+                    <div className="user-img" id="vijayanand-srinivasan"></div>
+                    <div className="enkash-card-details px-2">
+                      <div className="enkash-card-details">
+                        <div className="card-txt">Vijayanand Srinivasan</div>
+                        <div className="card-designation">Director Product</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-
-            <div className="parent-cards mt-24">
-              <div
-                className="enkash-card text-center mb-12 -mt-6  wow zoomIn"
-                data-wow-delay="500ms"
-              >
-                <div className="user-img" id="hemant-vishnoi"></div>
-                <div className="enkash-card-details">
-                  <div className="card-txt">Hemant Vishnoi</div>
-                  <div>
-                    <a
-                      className="mr-2"
-                      href="https://www.linkedin.com/in/hemantvishnoi/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <Image src={linkedin} alt="Hemant Vishnoi Linkedin" />
-                    </a>
-                    <a
-                      className="ml-2"
-                      href="https://twitter.com/h_vishnoi"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <Image src={twitter} alt="Hemant Vishnoi Twitter" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="enkash-card text-center mb-12 -mt-6 wow zoomIn"
-                data-wow-delay="500ms"
-              >
-                <div className="user-img" id="naveen-bindal"></div>
-                <div className="enkash-card-details">
-                  <div className="card-txt">Naveen Bindal</div>
-                  <div>
-                    <a
-                      className="mr-2"
-                      href="https://www.linkedin.com/in/naveenbindal/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <Image src={linkedin} alt="Naveen Bindal Linkedin" />
-                    </a>
-                    <a
-                      className="ml-2"
-                      href="https://twitter.com/bindal_naveen"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <Image src={twitter} alt="Naveen Bindal Twitter" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div
-                className="enkash-card text-center mb-12 -mt-6 wow zoomIn"
-                data-wow-delay="500ms"
-              >
-                <div className="user-img" id="yadvendra-tyagi"></div>
-                <div className="enkash-card-details">
-                  <div className="card-txt">Yadvendra Tyagi</div>
-                  <div>
-                    <a
-                      className="mr-2"
-                      href="https://www.linkedin.com/in/yadvendratyagi/"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <Image src={linkedin} alt="Yadvendra Tyagi Linkedin" />
-                    </a>
-                    <a
-                      className="ml-2"
-                      href="https://twitter.com/ystyagi"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <Image src={twitter} alt="Yadvendra Tyagi" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="enkash-family-container pt-12 mt-12 px-md-6 px-md-24">
-              <div className="enkash-abt-title">
-                <h4 className="underline-text">Our Leadership</h4>
-              </div>
-
-              <div className="grid mb-md-4 mt-md-24">
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="himanshu-vyas"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="card-txt">Himanshu Vyas</div>
-                    <div className="card-designation">
-                      Vice President <br />
-                      New Business Initiatives
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="lalit-arun"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Lalit Arun</div>
-                      <div className="card-designation">
-                        Senior Vice President <br />
-                        Banks & Financial Institutions
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="atishree-jindal"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Atishree Jindal</div>
-                      <div className="card-designation">Director Product</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="vibhor-chugh"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Vibhor Chugh</div>
-                      <div className="card-designation">Chief Risk Officer</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="nagesh-shet"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Nagesh Shet</div>
-                      <div className="card-designation">Head Finance</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="amandeep-arora"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Amandeep Arora</div>
-                      <div className="card-designation">
-                        Head Communications & Content
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="manish-kumawat"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Manish Kumawat</div>
-                      <div className="card-designation">
-                        Technical Architect
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="anurag-darira"></div>
-                  <div className="enkash-card-details  px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Anurag Darira</div>
-                      <div className="card-designation">Head Human Capital</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="krishnakumar-sv"></div>
-                  <div className="enkash-card-details  px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Krishnakumar SV</div>
-                      <div className="card-designation">Head Operations</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="ankur-gupta"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Ankur Gupta</div>
-                      <div className="card-designation">
-                        Director Engineering
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="martin-arockiaraj"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Martin Arockiaraj</div>
-                      <div className="card-designation">
-                        Associate Director <br />
-                        Product and Technology
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className="enkash-card text-center gray-scale mb-12 wow zoomIn"
-                  data-wow-delay="500ms"
-                >
-                  <div className="user-img" id="vijayanand-srinivasan"></div>
-                  <div className="enkash-card-details px-2">
-                    <div className="enkash-card-details">
-                      <div className="card-txt">Vijayanand Srinivasan</div>
-                      <div className="card-designation">Director Product</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
-
-
           </div>
 
           <div className="enkash-second-conatiner">
