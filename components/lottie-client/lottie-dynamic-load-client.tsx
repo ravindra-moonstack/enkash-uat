@@ -90,7 +90,7 @@ const animationMap: Record<string, () => Promise<any>> = {
   FreedomMealAnimation: mealCardAnimation,
   FreedomFuelAnimation: fuelAnimation,
   FreedomPurchaseAnimation: purchaseCardAnimation,
-  FreedomVirtualAnimation: virtualAnimation,
+  FreedomVirtualCardAnimation: virtualAnimation,
 
   RecievablesBannerAnimation: recievablesBannerAnimation,
   RecievablesInvoiceAnimation: invoiceAnimation,

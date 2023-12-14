@@ -176,7 +176,7 @@ const slash = () => {
               className={styles.card_bg}
             />
             <LottieDynamicLoadComponent
-              animationName={"FreedomVirtualAnimation"}
+              animationName={"FreedomVirtualCardAnimation"}
               loop={true}
             />
           </div>
