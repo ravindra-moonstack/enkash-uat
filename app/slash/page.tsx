@@ -148,12 +148,14 @@ const slash = () => {
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
-            <ExploreCard
-              title="Prepaid Cards"
-              description="Allocate easy-to-use prepaid cards like meal and fuel cards to your employees and simplify your business processes"
-              theme="blue"
-              link="/slash/meal-cards"
-            />
+            <div className="ps-md-5">
+              <ExploreCard
+                title="Prepaid Cards"
+                description="Allocate easy-to-use prepaid cards like meal and fuel cards to your employees and simplify your business processes"
+                theme="blue"
+                link="/slash/meal-cards"
+              />
+            </div>
           </div>
         </div>
         <div className={`row bg-white ${styles.section}`}>
