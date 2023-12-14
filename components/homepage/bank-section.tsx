@@ -33,6 +33,7 @@ import {
   blueBlackLine,
   dtdcLogo,
   starBucksLogo,
+  auBankLogo,
 } from "@/app/index";
 import { space } from "@/constant/common";
 
@@ -153,7 +154,7 @@ const BankSection = () => {
                 src={iciciBankLogo}
                 alt="icici bank logo"
               />
-              <Image className={styles.sbm} src={sbmLogo} alt="sbm bank logo" />
+
               <Image
                 className={styles.visa}
                 src={visaLogo}
@@ -168,6 +169,11 @@ const BankSection = () => {
                 className={styles.hdfc}
                 src={hdfcLogo}
                 alt="hdfc bank logo"
+              />
+              <Image
+                className={styles.sbm}
+                src={auBankLogo}
+                alt="au bank logo"
               />
               <Image
                 className={styles.rupay}

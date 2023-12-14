@@ -195,7 +195,7 @@ const loyaltyLounge = () => {
             title="Offers"
             description="Unlock exclusive offers and enjoy discounts on various partnered subscriptions from popular services such as Amazon, ClearTax, Canva, and numerous others"
             theme="green"
-            link-="/loyalty-lounge/offers"
+            link="/loyalty-lounge/offers"
           />
         </div>
 

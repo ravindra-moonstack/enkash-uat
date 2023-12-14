@@ -20,9 +20,9 @@ const LoyaltyLoungeSection = () => {
     LoyaltyThree:
       "Boost channel partner engagement, loyalty, and revenue with these incentives",
     LoyaltyFour:
-      "Acknowledge your valued employees with these easy-to-access and use gift cards",
+      "Acknowledge your people your way. Customized gift cards for every gifting need, be it personal or professional",
     LoyaltyFive:
-      "Explore exclusive offers and discounts on various partnered subscriptions from popular services ",
+      "Explore exclusive discounts and benefits on business products and services from trusted partners",
   };
 
   return (

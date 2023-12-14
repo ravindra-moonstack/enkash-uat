@@ -11,14 +11,13 @@ export const motherProducts = [
     link: "/slash",
   },
   {
-    name: "ofEx",
+    name: "OfEx",
     description: "Track employee expenses with a highly customizable platform",
     link: "/ofex",
   },
   {
     name: "Loyalty Lounge",
-    description:
-      "Seamlessly automate & manage rewards, incentives",
+    description: "Seamlessly automate & manage rewards, incentives",
     link: "/loyalty-lounge",
   },
 ];

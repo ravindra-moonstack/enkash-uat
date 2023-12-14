@@ -41,7 +41,7 @@ const taxPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Tax Payments" size="h4" weight="4" />
+            <Heading title="GST Payments" size="h4" weight="4" />
           </div>
 
           <div className="">

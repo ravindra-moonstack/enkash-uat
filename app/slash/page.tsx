@@ -111,9 +111,9 @@ const slash = () => {
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
               title="Corporate Credit Cards"
-              description="Simplify business payments, optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions powered by banks and financial institutions"
+              description="Simplify business payments, optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions like T&E cards"
               theme="blue"
-              link=""
+              link="/slash/travel-and-expense-cards"
             />
           </div>
           <div
@@ -125,7 +125,8 @@ const slash = () => {
               className={styles.card_bg}
             />
             <LottieDynamicLoadComponent
-              animationName={"FreedomPurchaseAnimation"}
+              animationName={"FreedomTravelAnimation"}
+              // animationName={"FreedomPurchaseAnimation"}
               loop={true}
             />
           </div>
@@ -139,16 +140,19 @@ const slash = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <LottieDynamicLoadComponent
-              animationName={"FreedomTravelAnimation"}
-              loop={true}
-            />
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"FreedomMealAnimation"}
+                loop={true}
+              />
+            </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
               title="Prepaid Cards"
               description="Allocate easy-to-use prepaid cards like meal and fuel cards to your employees and simplify your business processes"
               theme="blue"
+              link="/slash/meal-cards"
             />
           </div>
         </div>
@@ -170,7 +174,7 @@ const slash = () => {
               className={styles.card_bg}
             />
             <LottieDynamicLoadComponent
-              animationName={"FreedomMealAnimation"}
+              animationName={"FreedomVirtualAnimation"}
               loop={true}
             />
           </div>
@@ -204,7 +208,8 @@ const slash = () => {
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
             <LottieDynamicLoadComponent
-              animationName={"FreedomSaasAnimation"}
+              animationName={"FreedomPurchaseAnimation"}
+              // animationName={"FreedomSaasAnimation"}
               loop={true}
             />
           </div>

@@ -59,8 +59,8 @@ const loyaltyLoungeProducts = [
     footerText: "Effortless recognition, and endless rewards in one place",
     footerMobileText: "Explore Loyalty Lounge",
     footerImg: "loyalty_footer_bg",
-    footerLink: "/loyalty",
-    parentLink: "/loyalty",
+    footerLink: "/loyalty-lounge",
+    parentLink: "/loyalty-lounge",
   },
 ];
 

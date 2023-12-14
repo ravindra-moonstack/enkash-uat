@@ -46,7 +46,7 @@ const giftCards = () => {
 
           <div>
             <Heading
-              title={`Foster a culture of recognition with these flexible${space}`}
+              title={`Foster a culture of recognition with these customized${space}`}
               color="white"
               size="h2"
               weight="7"

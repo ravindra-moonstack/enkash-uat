@@ -49,7 +49,7 @@ const olympusProducts = [
         description: "Pay GST with any card, get reminders, and track payments",
         imageSrc: taxPayment,
         imageSrcHovered: taxPaymentFilled,
-        link: "/olympus/payables/tax-payments",
+        link: "/olympus/payables/gst-payments",
       },
       {
         name: "Vendor Payment",

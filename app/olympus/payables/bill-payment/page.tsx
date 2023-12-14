@@ -44,21 +44,19 @@ const billPayments = () => {
             <Heading title="| Bill Payment" size="h4" weight="4" />
           </div>
 
-          <div className="">
-            <div className="d-flex flex-wrap">
-              <Heading
-                title={`Digital bill payments to enjoy${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="convenience, flexibility, and control"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-            </div>
+          <div className="d-inline">
+            <Heading
+              title="Digital bill payments to enjoy "
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="convenience, flexibility, and control"
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
           </div>
 
           <div className="d-flex mt-4 pe-5">

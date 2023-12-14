@@ -138,41 +138,11 @@ const receivables = () => {
             </div>
           </div>
         </div>
-        {/* <div className={`row bg-white ${styles.section}`}>
-          <div
-            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start  ${styles.second_container}`}
-          >
-            <Image
-              src={cardBg}
-              alt="card background"
-              className={styles.card_bg}
-            />
-            <div className={styles.lottie_second_container}>
-              <LottieDynamicLoadComponent
-                animationName={"RecievablesPaymentAnimation"}
-                loop={true}
-              />{" "}
-            </div>
-          </div>
-          <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
-            <ExploreCard
-              title="Payment Links"
-              description="Reduce follow-ups and speed up collections by embedding payment links within digital invoices"
-              theme="blue"
-            />
-          </div>
-        </div> */}
+
         <div className={`row bg-white ${styles.section}`}>
-          <div className="col-md-6 col-12 ">
-            <ExploreCard
-              title="Bulk Collect"
-              description="Create an improved, customer-focused collection experience while ensuring better DSO"
-              theme="blue"
-              link="/olympus/receivables/bulk-collect"
-            />
-          </div>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex justify-content-end ${styles.third_container}`}
+            className={`col-md-6 col-12 d-flex my-md-5 my-3
+             justify-content-start ${styles.third_container}`}
           >
             <Image
               src={cardBg}
@@ -186,6 +156,14 @@ const receivables = () => {
                 loop={true}
               />
             </div>
+          </div>
+          <div className="col-md-6 col-12 px-5">
+            <ExploreCard
+              title="Bulk Collect"
+              description="Create an improved, customer-focused collection experience while ensuring better DSO"
+              theme="blue"
+              link="/olympus/receivables/bulk-collect"
+            />
           </div>
         </div>
       </div>

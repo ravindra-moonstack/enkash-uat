@@ -194,7 +194,7 @@ const OfEx = () => {
             title="Scan and Drop Receipts"
             description="Leverage OCR for digital receipt management, reporting  & reconciliation"
             theme="green"
-            link="/ofex/policy-and-approval-flows"
+            link="/ofex/scan-and-drop-receipts"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">

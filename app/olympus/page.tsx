@@ -158,7 +158,7 @@ const olympus = () => {
               title="GST Payments"
               description="Pay GST easily with our 3-step process. Get reminders, convert challans digitally, and monitor payments in one place"
               theme="blue"
-              link="/olympus/payables/tax-payments"
+              link="/olympus/payables/gst-payments"
             />
           </div>
         </div>

@@ -33,12 +33,14 @@ const SecondryButton = ({
       onClick={handleClick}
     >
       {title}
-      <Image
-        className={`ms-2  ${styles[iconClass]} `}
-        src={actionImage}
-        alt="action image"
-        width={iconSize}
-      />
+      {actionImage && (
+        <Image
+          className={`ms-2  ${styles[iconClass]} `}
+          src={actionImage}
+          alt="action image"
+          width={iconSize}
+        />
+      )}
     </button>
   );
 };
