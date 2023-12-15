@@ -202,7 +202,7 @@ const payables = () => {
 
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
-            title="Tax Payments"
+            title="GST Payments"
             description="Ensure an audit-compliant and seamless GST payment process for timely remittance"
             theme="green"
             link="/olympus/payables/gst-payments"
