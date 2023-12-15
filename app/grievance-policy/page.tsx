@@ -638,7 +638,6 @@ const grievancePolicy = () => {
                       </p>
                       <h5 className="c18 c161" id="h.1fob9te">
                         <span>3.</span>
-                        <span className="c80">&nbsp;</span>
                         <span className="c125 c15 c3">
                           Merchant Onboarding Process{" "}
                         </span>
@@ -653,14 +652,10 @@ const grievancePolicy = () => {
                           below:{" "}
                         </span>
                       </p>
-                      <ol className="c79 lst-kix_list_2-0 start">
-                        <li className="c99 li-bullet-1">
-                          <span className="c6 c3">
-                            Merchant Onboarding Process in relation to Spend
-                            Management Solutions{" "}
-                          </span>
-                        </li>
-                      </ol>
+                      <span className="c6 c3">
+                        1. Merchant Onboarding Process in relation to Spend
+                        Management Solutions{" "}
+                      </span>
                       <p className="c122">
                         <span className="c2">
                           Merchants interested in availing the Spend Management
@@ -688,9 +683,7 @@ const grievancePolicy = () => {
                                     Merchant along with the respective bank.
                                   </span>
                                 </p>
-                                <p className="c11">
-                                  <span className="c10">&nbsp;</span>
-                                </p>
+
                                 <p className="c41">
                                   <span className="c10">
                                     In other scenarios, the Company has a direct
@@ -723,10 +716,9 @@ const grievancePolicy = () => {
                             <tr className="c224">
                               <td className="c55">
                                 <p className="c37">
-                                  <span className="c3 c39">Adding </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c3 c39">Beneficiary </span>
+                                  <span className="c3 c39">
+                                    Adding Beneficiary{" "}
+                                  </span>
                                 </p>
                               </td>
                               <td className="c9">
@@ -745,10 +737,9 @@ const grievancePolicy = () => {
                             <tr className="c226">
                               <td className="c55">
                                 <p className="c37">
-                                  <span className="c3 c39">Beneficiary </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c3 c39">Validation </span>
+                                  <span className="c3 c39">
+                                    Beneficiary Validation{" "}
+                                  </span>
                                 </p>
                               </td>
                               <td className="c9">
@@ -799,7 +790,7 @@ const grievancePolicy = () => {
                       <p className="c26 c74">
                         <span className="c2"></span>
                       </p>
-                      <span className="c6 c3 ps-4">
+                      <span className="c6 c3">
                         2. Merchant Onboarding Process in relation to
                         Receivable/ Payment Collection:
                       </span>
@@ -816,9 +807,7 @@ const grievancePolicy = () => {
                       </p>
                       <h5 className="c18 c173">
                         <span className="c148">I.</span>
-                        <span className="c80 c148">&nbsp;</span>
                         <span>Merchant management</span>
-                        <span className="c148">&nbsp;</span>
                       </h5>
                       <p className="c229">
                         <span className="c2">
@@ -829,9 +818,7 @@ const grievancePolicy = () => {
                       </p>
                       <h5 className="c11 c18">
                         <span className="c148">II.</span>
-                        <span className="c80 c148">&nbsp;</span>
                         <span>Onboarding / registration</span>
-                        <span className="c148">&nbsp;</span>
                       </h5>
                       <ul className="c79 lst-kix_list_3-0 start">
                         <li className="c185 li-bullet-4">
@@ -905,11 +892,8 @@ const grievancePolicy = () => {
                         </li>
                       </ul>
                       <h5 className="c11 c18 mt-4">
-                        <span className="c106">&nbsp;</span>
                         <span className="c148">III.</span>
-                        <span className="c80 c148">&nbsp;</span>
                         <span>Continuous monitoring</span>
-                        <span className="c148">&nbsp;</span>
                       </h5>
                       <p className="c40">
                         <span className="c2">
@@ -931,9 +915,7 @@ const grievancePolicy = () => {
                           on the risk category of the Merchant.
                         </span>
                       </p>
-                      <p className="c11">
-                        <span className="c27">&nbsp;</span>
-                      </p>
+
                       <p className="c140">
                         <span className="c2">
                           Based on the indications/ alerts received as part of
@@ -943,12 +925,11 @@ const grievancePolicy = () => {
                           will also follow up with obtaining additional
                           documents/ information from the Merchant. In some
                           cases, the Company may also decide to terminate the
-                          agreement with the Merchant.{" "}
+                          agreement with the Merchant.
                         </span>
                       </p>
                       <h5 className="c18 c29" id="h.3znysh7">
                         <span>4.</span>
-                        <span className="c80">&nbsp;</span>
                         <span>
                           Exit / termination process of the Merchant agreement{" "}
                         </span>
@@ -984,7 +965,6 @@ const grievancePolicy = () => {
                       </ol>
                       <h5 className="c178 c18 c222">
                         <span className="c93">i.</span>
-                        <span className="c93 c80">&nbsp;</span>
                         <span className="c93">
                           Termination requested by the Merchant{" "}
                         </span>
@@ -1003,12 +983,9 @@ const grievancePolicy = () => {
                           subsequent termination of the Merchant id.
                         </span>
                       </p>
-                      <p className="c11">
-                        <span className="c100">&nbsp;</span>
-                      </p>
+
                       <h5 className="c178 c18 c244">
                         <span className="c93">ii.</span>
-                        <span className="c93 c80">&nbsp;</span>
                         <span className="c93">
                           The Company chooses to terminate the Merchant{" "}
                         </span>
@@ -1039,12 +1016,9 @@ const grievancePolicy = () => {
                           </span>
                         </li>
                       </ul>
-                      <p className="c11">
-                        <span className="c142">&nbsp;</span>
-                      </p>
+
                       <h5 className="c18 c194" id="h.2et92p0">
                         <span>5.</span>
-                        <span className="c80">&nbsp;</span>
                         <span>Annexure 1</span>
                       </h5>
                       <p className="c156 c234">
@@ -1073,10 +1047,8 @@ const grievancePolicy = () => {
                         <li className="c225 li-bullet-10">
                           <span>Tech related information; </span>
                           <span className="c88">&bull;</span>
-                          <span className="c80">&nbsp;</span>
                           <span>Financial information; and </span>
                           <span className="c88">&bull;</span>
-                          <span className="c80">&nbsp;</span>
                           <span className="c2">Declarations; if any. </span>
                         </li>
                       </ul>
@@ -1107,23 +1079,16 @@ const grievancePolicy = () => {
 
                             <tr className="c181">
                               <td className="c115">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c14">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
+                               
+                               
                                 <p className="c37">
-                                  <span className="c2">ID Proof &amp; </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Address Proof </span>
+                                  <span className="c2">
+                                    ID Proof &amp;Address Proof{" "}
+                                  </span>
                                 </p>
                               </td>
                               <td className="c">
-                                <p className="c11 c47">
-                                  <span className="c27">&nbsp;</span>
-                                </p>
+                               
                                 <p className="c62 c56">
                                   <span className="c2">
                                     ID PROOF &ndash; Certified copy of PAN
@@ -1143,19 +1108,12 @@ const grievancePolicy = () => {
                             <tr className="c134">
                               <td className="c115">
                                 <p className="c37">
-                                  <span className="c2">Bank Letter / </span>
-                                </p>
-                                <p className="c187 c56">
-                                  <span className="c2">Cancelled </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Cheque </span>
+                                  <span className="c2">
+                                    Bank Letter / Cancelled Cheque
+                                  </span>
                                 </p>
                               </td>
                               <td className="c">
-                                <p className="c11 c47">
-                                  <span className="c27">&nbsp;</span>
-                                </p>
                                 <p className="c11 c56">
                                   <span className="c2">
                                     Cancelled Cheque or Bank Statement{" "}
@@ -1190,9 +1148,6 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c205">
                               <td className="c115">
-                                <p className="c11">
-                                  <span className="c27">&nbsp;</span>
-                                </p>
                                 <p className="c11 c56">
                                   <span className="c2">Other documents </span>
                                 </p>
@@ -1225,9 +1180,6 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c240">
                               <td className="c30">
-                                <p className="c11">
-                                  <span className="c27">&nbsp;</span>
-                                </p>
                                 <p className="c36">
                                   <span className="c2">Individual ID </span>
                                 </p>
@@ -1239,9 +1191,6 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c176">
-                                <p className="c11 c47">
-                                  <span className="c27">&nbsp;</span>
-                                </p>
                                 <p className="c62 c56">
                                   <span className="c2">
                                     ID PROOF &ndash; Certified copy of PAN
@@ -1260,54 +1209,6 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c231">
                               <td className="c30">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c221">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c27">&nbsp;</span>
-                                </p>
                                 <p className="c11 c56">
                                   <span className="c2">Others </span>
                                 </p>
@@ -1322,9 +1223,7 @@ const grievancePolicy = () => {
                                 </p>
                                 <p className="c56 c67">
                                   <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">
                                     Self-attested copy of GST certificate or
                                     letter of registration document issued by
@@ -1335,9 +1234,7 @@ const grievancePolicy = () => {
                                 </p>
                                 <p className="c16">
                                   <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">
                                     Self-attested copy of Shop and Establishment
                                     License Certificate issued by the municipal
@@ -1345,10 +1242,6 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c53">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
                                   <span className="c2">
                                     Last and complete income tax return (not
                                     acknowledgment) in the name of the sole
@@ -1359,9 +1252,7 @@ const grievancePolicy = () => {
                                 </p>
                                 <p className="c56 c75">
                                   <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Valid business license of certificate of
                                     registration issued by state / Central
@@ -1370,9 +1261,7 @@ const grievancePolicy = () => {
                                 </p>
                                 <p className="c56 c159">
                                   <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Letter issued by Registering authority like
                                     certificate of practice issued by instate of
@@ -1384,72 +1273,50 @@ const grievancePolicy = () => {
                                 </p>
                                 <p className="c56 c132">
                                   <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span>
                                     Trade License (Provisional is not accepted){" "}
                                   </span>
                                   <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Small Scale Industrial Certificate{" "}
                                   </span>
                                 </p>
                                 <p className="c33">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Certificate issued by Tourism Department.{" "}
                                   </span>
                                 </p>
                                 <p className="c33">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Liquor/License/Certificate in the name of
                                     Firm.{" "}
                                   </span>
                                 </p>
                                 <p className="c107 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">
                                     IRDA license for Insurance business.{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c259">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     SEBI registration for Stock market broking.{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c211">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Permission from local government authority
                                     to run Nursing home/Clinic.{" "}
                                   </span>
                                 </p>
                                 <p className="c11 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Passport sized photo (Authorized Person){" "}
                                   </span>
@@ -1458,9 +1325,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c191">
                               <td className="c30">
-                                <p className="c11">
-                                  <span className="c2">&nbsp;</span>
-                                </p>
+                              
                                 <p className="c37">
                                   <span className="c2">Company </span>
                                 </p>
@@ -1493,18 +1358,12 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c113">
                               <td className="c12">
-                                <p className="c11">
-                                  <span className="c42">&nbsp;</span>
-                                </p>
+                               
                                 <p className="c103 c262">
                                   <span className="c2">Cancelled cheque </span>
                                 </p>
                               </td>
-                              <td className="c45">
-                                <p className="c11 c47">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-
+                              <td className="c45">                         
                                 <p className="c11 c56">
                                   <span className="c2">
                                     Current A/c or savings A/c on proprietor
@@ -1537,12 +1396,8 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c11 c47">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11 c47">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
+                               
+                               
                                 <p className="c37">
                                   <span className="c2">
                                     ID PROOF &ndash; Certified Copy of PAN
@@ -1560,22 +1415,7 @@ const grievancePolicy = () => {
                               </td>
                             </tr>
                             <tr className="c91">
-                              <td className="c12">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c129">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
+                              <td className="c12">                              
                                 <p className="c11 c56">
                                   <span className="c2">Firm Proofs </span>
                                 </p>
@@ -1588,54 +1428,36 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c33">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Self-attested copy of PAN Card{" "}
                                   </span>
                                 </p>
                                 <p className="c107 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Partnership/ LLP Agreement Deed and COP{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c107">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Authorization letter{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c90">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">Cancelled Cheque </span>
                                 </p>
                                 <p className="c56 c77">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Board Resolution (should be signed by at
                                     least 2 partners/ CS can certify true copy{" "}
                                   </span>
                                 </p>
                                 <p className="c11 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">
                                     Passport size photo (Authorized Person){" "}
                                   </span>
@@ -1643,22 +1465,7 @@ const grievancePolicy = () => {
                               </td>
                             </tr>
                             <tr className="c87">
-                              <td className="c12">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c220">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c118">&nbsp;</span>
-                                </p>
+                              <td className="c12">                            
                                 <p className="c11 c56">
                                   <span>Firm proof of e</span>
                                   <span className="c17">x</span>
@@ -1674,19 +1481,13 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c56 c112">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Partnership Registration Certificate{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c131">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Self-attested copy of GST Tax certificate or
                                     letter of registration document issued by
@@ -1696,82 +1497,55 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c13">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     IT return in the name of partnership firm,
                                     acknowledged by Income Tax Department.{" "}
                                   </span>
                                 </p>
                                 <p className="c128 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Shops and Establishment Certificate issued
                                     by the Civic Authority.{" "}
                                   </span>
                                 </p>
                                 <p className="c11 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">Trade License</span>
                                 </p>
                                 <p className="c107 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     License issued by Municipal Corporation.{" "}
                                   </span>
                                 </p>
                                 <p className="c33">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Copy of VAT / TIN allotment certificates{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c81">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span>
                                     Small Scale Industrial Certificate{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c81">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">
                                     Trade license from labor department.{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c109">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Professional tax certificate.{" "}
                                   </span>
                                 </p>
                                 <p className="c11 c59">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     License issued by Food &amp; Drug
                                     administration for Medical Dealers.{" "}
@@ -1781,12 +1555,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c31">
                               <td className="c208">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c121">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
+                              
                                 <p className="c187 c56">
                                   <span className="c2">Company </span>
                                 </p>
@@ -1795,24 +1564,16 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c68">
-                                <p className="c11 c47">
-                                  <span className="c15">&nbsp;</span>
-                                </p>
+                               
                                 <p className="c62 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Address on partnership deed (current
                                     address){" "}
                                   </span>
                                 </p>
                                 <p className="c56 c216">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Self-attested copy of Telephone/
                                     Electricity/ Water bill on Firm name (Not
@@ -1820,10 +1581,7 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c160">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Bank Statement with cancelled chq holding
                                     minimum 3 transactions{" "}
@@ -1866,9 +1624,7 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c68">
-                                <p className="c11 c47">
-                                  <span className="c27">&nbsp;</span>
-                                </p>
+                               
                                 <p className="c36">
                                   <span className="c2">
                                     ID PROOF &ndash; Certified Copy of PAN
@@ -1887,30 +1643,8 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c153">
                               <td className="c208">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c230">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c142">&nbsp;</span>
-                                </p>
+                               
+                               
                                 <p className="c35 c120">
                                   <span className="c2">Company proof </span>
                                 </p>
@@ -1923,10 +1657,7 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c75 c56 c195">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">
                                     Self-attested copy of GST Tax certificate or
                                     letter of registration document issued by
@@ -1936,17 +1667,11 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c44">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">Pan Card</span>
                                 </p>
                                 <p className="c56 c71">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Board Resolution (should not be older than 5
                                     months, Should be signed by at least 2
@@ -1954,56 +1679,38 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c128 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Certificate of Incorporation{" "}
                                   </span>
                                 </p>
                                 <p className="c141">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                              
                                   <span className="c2">
                                     Certificate of Commencement of Business (in
                                     case of Public ltd co.){" "}
                                   </span>
                                 </p>
                                 <p className="c56 c128">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     MOA &amp; AOA (attested with first 8. last
                                     pages){" "}
                                   </span>
                                 </p>
                                 <p className="c52 c251">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Form-32 (If directors different from MOA)
                                     latest MCA website copy.{" "}
                                   </span>
                                 </p>
                                 <p className="c11 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">Cancelled Cheque </span>
                                 </p>
                                 <p className="c11 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Passport size Photo (Authorized Person){" "}
                                   </span>
@@ -2012,15 +1719,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c116">
                               <td className="c12">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c218">
-                                  <span className="c114">&nbsp;</span>
-                                </p>
+                                
                                 <p className="c98 c249">
                                   <span className="c2">Company </span>
                                 </p>
@@ -2074,12 +1773,7 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c11 c47">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c47 c121">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
+                               
                                 <p className="c37">
                                   <span className="c2">
                                     ID PROOF &ndash; Certified Copy of PAN
@@ -2098,24 +1792,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c247">
                               <td className="c12">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c107">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
+                               
                                 <p className="c11 c56">
                                   <span className="c2">Others </span>
                                 </p>
@@ -2131,19 +1808,13 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c44">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Self-attested copy of PAN Card{" "}
                                   </span>
                                 </p>
                                 <p className="c56 c256">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Board Resolution (Should be signed by at
                                     least 2 trustees / Company secretary can
@@ -2151,33 +1822,21 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c33">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Registration Certificate{" "}
                                   </span>
                                 </p>
                                 <p className="c107 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">Bye Laws</span>
                                 </p>
                                 <p className="c107 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">Cancelled Cheque </span>
                                 </p>
                                 <p className="c11 c56">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Passport size Photo (Authorized Person){" "}
                                   </span>
@@ -2186,9 +1845,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c186">
                               <td className="c12">
-                                <p className="c11">
-                                  <span className="c27">&nbsp;</span>
-                                </p>
+                               
                                 <p className="c37">
                                   <span className="c2">Company </span>
                                 </p>
@@ -2197,9 +1854,7 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c47 c245">
-                                  <span className="c97">&nbsp;</span>
-                                </p>
+                               
                                 <p className="c50 c264">
                                   <span className="c2">
                                     Self-attested copy of Telephone /
@@ -2221,9 +1876,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c137">
                               <td className="c12">
-                                <p className="c11">
-                                  <span className="c43">&nbsp;</span>
-                                </p>
+                               
                               </td>
                               <td className="c8">
                                 <p className="c11 c56">
@@ -2260,28 +1913,7 @@ const grievancePolicy = () => {
                               </td>
                             </tr>
                             <tr className="c143">
-                              <td className="c12">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c117">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
-                                <p className="c11">
-                                  <span className="c124">&nbsp;</span>
-                                </p>
+                              <td className="c12">                              
                                 <p className="c35">
                                   <span className="c2">Company proof </span>
                                 </p>
@@ -2295,9 +1927,7 @@ const grievancePolicy = () => {
                                 </p>
                                 <p className="c0">
                                   <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">
                                     Self-attested copy of GST Tax certificate or
                                     letter of registration document issued by
@@ -2307,66 +1937,42 @@ const grievancePolicy = () => {
                                   </span>
                                 </p>
                                 <p className="c98 c162">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">Company Pan Card </span>
                                 </p>
                                 <p className="c162 c98">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">Board Resolution </span>
                                 </p>
                                 <p className="c98 c138">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                
                                   <span className="c2">
                                     Registration Certificate{" "}
                                   </span>
                                 </p>
                                 <p className="c107 c98">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">Trust Deed</span>
                                 </p>
                                 <p className="c162 c98">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+
                                   <span>Income Tax E</span>
                                   <span className="c17">X</span>
                                   <span className="c2">emption (12A) </span>
                                 </p>
                                 <p className="c162 c98">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">
                                     Affiliation of Entity in case of Health
                                     &amp; Education sector{" "}
                                   </span>
                                 </p>
                                 <p className="c162 c98">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                 
                                   <span className="c2">Cancelled Cheque </span>
                                 </p>
                                 <p className="c11 c98">
-                                  <span></span>
-                                  <span className="c5">
-                                    &nbsp; &nbsp; &nbsp;
-                                  </span>
+                                  
                                   <span className="c2">
                                     Passport size Photo (Authorize Person){" "}
                                   </span>
@@ -2383,9 +1989,7 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c11">
-                                  <span className="c6">&nbsp;</span>
-                                </p>
+                              
                                 <p className="c11 c98">
                                   <span className="c2">As per the format </span>
                                 </p>
@@ -2560,12 +2164,9 @@ const grievancePolicy = () => {
                         <span className="c35">● </span>
                         <span className="c0">Cryptocurrency</span>
                       </p>
-                      <p className="c11">
-                        <span className="c15 c3">&nbsp;</span>
-                      </p>
+                     
                       <h5 className="c19 c18">
                         <span>7.</span>
-                        <span className="c80">&nbsp;</span>
                         <span className="c125 c15 c3">Review of Policy </span>
                       </h5>
                       <p className="c156 c242">
