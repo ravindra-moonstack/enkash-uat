@@ -9,10 +9,9 @@
   background: url(./bg.png);
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-position: center right;
-  @include bp-md{
+  background-position: right;
+  @include bp-md {
     background-size: contain;
-
   }
 
   position: relative;
@@ -45,5 +44,10 @@
 
   h1 {
     font-weight: 600;
+  }
+
+  .chart {
+    width: 70%;
+    height: auto;
   }
 }
