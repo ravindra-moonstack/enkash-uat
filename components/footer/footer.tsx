@@ -234,8 +234,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* <div className="col-6 col-md-3">
-          {" "}
+        <div className="col-6 col-md-3">
           <div className={`col-6 col-md-4 ${styles.footer_links_col}`}>
             <div className="mt-2">
               <h4 className={`col-12 ${styles.title}`}>Policies</h4>
@@ -254,23 +253,19 @@ const Footer = () => {
                 <li>
                   <a href="/term-condition/">Terms & Conditions</a>
                 </li>
-                 <li>
+                <li>
                   <a
                     rel="noopener noreferrer"
                     target="_blank"
                     href="https://www.sbmbank.co.in/aboutus/grievance-redressal-mechanism.php"
                   >
-                    SBM Grievances
-                    <div className={styles.grievance_text}>
-                      <span>Grievance Redressal Mechanism</span>
-                      <span>- SBM Bank India</span>
-                    </div>
+                    Partner Bank Grievances
                   </a>
-                </li> 
+                </li>
               </ul>
             </div>
           </div>
-        </div> */}
+        </div>
 
         <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
           <div className={styles.contact_list}>

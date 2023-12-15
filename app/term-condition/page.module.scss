@@ -1,0 +1,53 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.parent_container {
+  padding: 100px 0 40px 0;
+  @include bp-md {
+    padding: 250px 0 100px 0;
+  }
+  background: url(./bg.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center right;
+  background-size: cover;
+  @include bp-md {
+    background-size: contain;
+  }
+
+  position: relative;
+  z-index: 2;
+
+  .gradient {
+    position: absolute;
+    top: -150px;
+    z-index: -1;
+  }
+
+  .inner_container {
+    margin: 0 20px;
+    padding: 10px 15px;
+    @include bp-md {
+      margin: 0 130px;
+      padding: 30px 40px;
+    }
+
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1019607843);
+
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  h5 {
+    margin-top: 20px !important;
+  }
+
+  h1 {
+    font-weight: 600;
+  }
+
+  li {
+    margin-bottom: 15px;
+  }
+}
