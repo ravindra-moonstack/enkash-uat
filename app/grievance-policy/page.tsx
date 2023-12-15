@@ -7,9 +7,15 @@ import Image from "next/image";
 const grievancePolicy = () => {
   return (
     <>
-      <Header />
+      <div className={styles.header_container}>
+        <Header />
+      </div>
       <div className={styles.parent_container}>
-        <Image src={leftBlueGradient} alt="gradient image"  className={styles.gradient}/>
+        <Image
+          src={leftBlueGradient}
+          alt="gradient image"
+          className={styles.gradient}
+        />
         <div className="enkash-banking-maincontainer">
           <div className="enkash-blog-detail">
             <div className={styles.inner_container}>

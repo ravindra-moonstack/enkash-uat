@@ -3,23 +3,25 @@
 
 .parent_container {
   padding: 100px 0 40px 0;
+  background: url(./bg.png);
+
   @include bp-md {
     padding: 250px 0 100px 0;
-  }
-  background: url(./bg.png);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position: right;
-  background-size: cover;
-
-  @include bp-md {
     background-size: contain;
   }
-
+  background-position: center right;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 
   .gradient {
+    display: none;
+    @include bp-md {
+      display: block;
+    }
+    z-index: -1;
     position: absolute;
     top: -150px;
     z-index: -1;

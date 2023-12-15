@@ -93,7 +93,7 @@ const RainbowSection = () => {
         className={`${styles.first_row} row  text-center color-white bg-indi-volt`}
       >
         <span className={`col-12  ${styles.first_text}`}>
-          <Heading title="A Platform" size="h0" />
+          <Heading title="A Platform For" size="h0" />
         </span>
 
         <Image
@@ -113,7 +113,7 @@ const RainbowSection = () => {
         />
 
         <span className={`col-12  ${styles.second_text}`}>
-          <Heading title="For Businesses" size="h0" />
+          <Heading title="Businesses" size="h0" />
         </span>
 
         <Image
