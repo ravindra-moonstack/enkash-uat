@@ -60,7 +60,7 @@ const xpenzProducts = [
     footerMobileText: "Explore ofEx",
     footerImg: "xpenz_footer_bg",
     footerLink: "/ofex",
-    parentLink: "/",
+    parentLink: "/ofex",
   },
 ];
 
