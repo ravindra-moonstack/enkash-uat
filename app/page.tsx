@@ -475,7 +475,7 @@ const home = () => {
           </div>
         </div>
       </div>
-      <div className="row d-flex d-flex bg-white row-padding-bottom-none">
+      <div className={`row d-flex d-flex bg-white ${styles.ofex_padding}`}>
         <div className="d-flex flex-column justify-content-center align-items-center w-100 mb-5">
           <div>
             <Heading
@@ -536,7 +536,7 @@ const home = () => {
           </div>
         </div>
         <div
-          className={`col-md-6 col-12 row-padding-x-only order-3 order-md-3`}
+          className={`col-md-6 col-12 row-padding-x-only order-3 order-md-3  mt-md-3`}
         >
           <div className={styles.padding}>
             <ExploreCard

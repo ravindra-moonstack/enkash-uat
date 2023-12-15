@@ -683,12 +683,16 @@
     display: flex;
     align-items: center;
     width: 500px;
+    margin-left: -100px;
     @include bp-md {
       margin-top: -50px;
+      margin-left: 0;
+
       width: 800px;
     }
     @include bp-extra-lg {
       width: 900px;
+      margin-left: 0;
     }
   }
 }
@@ -731,6 +735,13 @@
   }
 }
 
+.ofex_padding {
+  padding: 36px 25px 50px 25px;
+  @include bp-md {
+    padding: 90x 90px 90px 90px;
+  }
+}
+
 .ninth_row {
   padding-left: 30px;
   padding-right: 30px;
@@ -758,13 +769,12 @@
       position: absolute;
       top: -80px;
       left: 0px;
-      height: 350px;
-      width: 350px;
+      height: 400px;
+      width: auto;
       @include bp-md {
         top: -30px;
         left: 0px;
-        height: 550px;
-        width: auto;
+        height: 450px;
       }
       @include bp-extra-lg {
         height: 550px;
@@ -774,11 +784,11 @@
       width: 470px;
       @include bp-md {
         margin-top: 0px;
-        width: 850px;
+        width: 500px;
         margin-top: -10px;
       }
       @include bp-extra-lg {
-        width: 1000px;
+        width: 600px;
       }
     }
   }
@@ -790,8 +800,8 @@
       position: absolute;
       top: -10px;
       left: -50px;
-      height: 350px;
-      width: 350px;
+      height: 450px;
+      width: 450px;
       @include bp-md {
         top: -150px;
         left: -150px;
@@ -800,7 +810,7 @@
       }
     }
     .overlay_image {
-      width: 250px;
+      width: 300px;
       @include bp-md {
         margin-top: -250px;
         width: 400px;
@@ -812,7 +822,7 @@
     }
   }
   .padding {
-    margin-top: 160px;
+    margin-top: 100px;
     @include bp-md {
       margin-top: 0px;
     }
@@ -820,7 +830,7 @@
 }
 
 .tenth_row {
-  padding: 70px 25px 0 25px;
+  padding: 120px 25px 0 25px;
   @include bp-md {
     padding: 0px 90px;
   }
