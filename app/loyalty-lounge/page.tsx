@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 import styles from "./page.module.scss";
 import blogData from "./blog-data";
 import faqData from "./faq-data";
@@ -17,7 +17,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import HeaderWrapper from "@/components/header/header";
+import Header from "@/components/header/header";
 import {
   officeImg,
   whiteArrow,
@@ -27,6 +27,7 @@ import {
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
 } from ".";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title:
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const loyaltyLounge = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <HeaderWrapper />
+      <Header />
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
@@ -84,12 +85,17 @@ const loyaltyLounge = () => {
             />
           </div>
           <div className="mt-5">
-            <PrimaryButton title="EnKash Now" theme="theme-blue" />
+            <PrimaryButton
+              title="EnKash Now"
+              theme="theme-blue"
+              url="https://home.enkash.com/signup?utm_source=Loyalty_lounge"
+            />
             <span className="mx-2"></span>
             <SecondryButton
               title="Book a Demo"
               actionImage={whiteArrow}
               iconSize={15}
+              url="/sales/?source=Loyalty_lounge"
             />
           </div>
         </div>
@@ -425,7 +431,7 @@ const loyaltyLounge = () => {
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" />
+            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
           </div>
         </div>
       </div>
@@ -487,6 +493,7 @@ const loyaltyLounge = () => {
           }
         />
       </div>
+      <Footer />
     </div>
   );
 };

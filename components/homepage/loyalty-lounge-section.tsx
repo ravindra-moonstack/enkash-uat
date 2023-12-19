@@ -4,7 +4,7 @@ import styles from "@/app/page.module.scss";
 import { useState } from "react";
 import LoungeAnimationSection from "./lounge-animation";
 import Heading from "../heading/heading";
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 import Image from "next/image";
 import Link from "next/link";
 import blueArrow from "./blue-arrow.png";

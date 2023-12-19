@@ -2,6 +2,7 @@ import Image from "next/image";
 import { arrow, enkashStack } from ".";
 import styles from "./contact-us-card.module.scss";
 import Heading from "../heading/heading";
+import Link from "next/link";
 
 interface contactUsProps {
   title?: any;
@@ -28,10 +29,14 @@ const ContactUsCard = ({ title, description, titleHtml }: contactUsProps) => {
             <h2 className={styles.description}>{description}</h2>
           </div>
         </div>
-        <div className={`d-flex mt-3 mb-md-5 mb-3 ${styles.action_container}`}>
-          <h1 className={styles.contact_us}>Contact us</h1>
-          <Image src={arrow} alt="arrow image" className="ms-2" />
-        </div>
+        <Link href="/sales">
+          <div
+            className={`d-flex mt-3 mb-md-5 mb-3 ${styles.action_container}`}
+          >
+            <h1 className={styles.contact_us}>Contact us</h1>
+            <Image src={arrow} alt="arrow image" className="ms-2" />
+          </div>
+        </Link>
       </div>
       <div className={styles.image_container}>
         <Image src={enkashStack} alt="contact us spiral" />

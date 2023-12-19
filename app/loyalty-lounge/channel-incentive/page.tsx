@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../constant/common";
+import { space } from "../../../common/constant";
 import faqData from "./faq-data";
 import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
@@ -15,8 +15,9 @@ import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import HeaderWrapper from "@/components/header/header";
+import Header from "@/components/header/header";
 import FAQHtml from "./faq-html";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title:
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
 const channelIncentive = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <HeaderWrapper />
+      <Header />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -90,13 +91,18 @@ const channelIncentive = () => {
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
-              <PrimaryButton title="EnKash Now" theme="theme-blue" />
+              <PrimaryButton
+                title="EnKash Now"
+                theme="theme-blue"
+                url="https://home.enkash.com/signup?utm_source=Loyalty_lounge"
+              />
             </div>
             <div>
               <SecondryButton
                 title="Book a Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
+                url="/sales/?source=Loyalty_lounge"
               />
             </div>
           </div>
@@ -391,6 +397,7 @@ const channelIncentive = () => {
           }
         />
       </div>
+      <Footer />
     </div>
   );
 };

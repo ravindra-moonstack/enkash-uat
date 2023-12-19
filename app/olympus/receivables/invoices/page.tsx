@@ -10,7 +10,7 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import { space } from "../../../../constant/common";
+import { space } from "../../../../common/constant";
 import faqData from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
@@ -19,7 +19,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header";
+import Header from "@/components/header/header";
 
 export const metadata: Metadata = {
   title: "Automated Invoicing Processing & Software for Business - EnKash",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const invoices = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <HeaderWrapper />
+      <Header />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -76,14 +76,19 @@ const invoices = () => {
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-            <div className="me-2">
-              <PrimaryButton title="EnKash Now" theme="theme-blue" />
+          <div className="me-2">
+              <PrimaryButton
+                title="EnKash Now"
+                theme="theme-blue"
+                url="https://home.enkash.com/signup?utm_source=receivables"
+              />
             </div>
             <div>
               <SecondryButton
                 title="Book a Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
+                url="/sales/?source=receivables"
               />
             </div>
           </div>

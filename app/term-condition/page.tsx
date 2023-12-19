@@ -3,6 +3,7 @@ import React from "react";
 import styles from "./page.module.scss";
 import leftBlueGradient from "./gradient.png";
 import Image from "next/image";
+import Footer from "@/components/footer/footer";
 
 const termCondition = () => {
   return (
@@ -1931,9 +1932,10 @@ const termCondition = () => {
                   </div>
                 </div>
               </div>
-            </div>{" "}
+            </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

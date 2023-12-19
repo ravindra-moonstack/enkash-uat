@@ -98,7 +98,14 @@ const WebHeader = () => {
                   }
                 }}
               >
-                {item.name}
+                {index === 2 ? (
+                  <Link className={styles.link} href="">
+                    {item.name}
+                  </Link>
+                ) : (
+                  item.name
+                )}
+
                 {index !== 2 && (
                   <>
                     <Image

@@ -4,7 +4,7 @@ import FAQ from "@/components/faq/faq";
 import styles from "./page.module.scss";
 import Link from "next/link";
 import { Key, useState } from "react";
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 
 const FAQHtml = ({ faqData }: any) => {
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);

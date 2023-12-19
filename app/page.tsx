@@ -1,4 +1,4 @@
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 import Image from "next/image";
 import { Metadata } from "next";
 import styles from "./page.module.scss";
@@ -15,7 +15,7 @@ import TextAnimation from "@/components/framer-motion/text-animation";
 import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import DashBoardAnimation from "@/components/homepage/dashboard-animation";
-import HeaderWrapper from "@/components/header/header";
+import Header from "@/components/header/header";
 import AwardSection from "@/components/homepage/award-section";
 
 import {
@@ -30,7 +30,6 @@ import {
   blueBoxIcon,
   circleRupeeIcon,
   teamImg,
-  blueBlackLine,
   leftBlueGradient,
   leftCardGradient,
   rightCardGradient,
@@ -39,6 +38,7 @@ import {
   authorOne,
   authorTwo,
 } from ".";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 const home = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <HeaderWrapper />
+      <Header />
       <RainbowSection />
       <div
         className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center
@@ -829,6 +829,7 @@ const home = () => {
           description="Explore all these products on the same platform and empower your business and employees with efficient spend management, transparency, and control across all departments"
         />
       </div>
+      <Footer />
     </div>
   );
 };

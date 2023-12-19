@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Heading from "../heading/heading";
-import { space } from "../../constant/common";
+import { space } from "../../common/constant";
 import { blueArrowForward, gradient, newWay, oldWay } from ".";
 import styles from "./enkash-way.module.scss";
 

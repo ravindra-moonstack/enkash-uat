@@ -26,7 +26,6 @@ const RootLayout = ({ children }: RootProps) => {
       <body>
         <main className={`app main`}>
           {children}
-          <Footer />
         </main>
       </body>
     </html>

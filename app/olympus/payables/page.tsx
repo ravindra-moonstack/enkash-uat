@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 import blogData from "./blog-data";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -17,7 +17,7 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import { Metadata } from "next";
 import FAQHtml from "./faq-html";
 import Link from "next/link";
-import HeaderWrapper from "@/components/header/header";
+import Header from "@/components/header/header";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 
 import {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const payables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <HeaderWrapper />
+      <Header />
 
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
@@ -434,7 +434,7 @@ const payables = () => {
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" />
+            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
           </div>
         </div>
       </div>

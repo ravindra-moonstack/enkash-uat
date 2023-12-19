@@ -1,7 +1,7 @@
 import styles from "./action.card.module.scss";
 import Heading from "../heading/heading";
 import Image from "next/image";
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 import greenArrow from "./green-arrow.svg";
 
 interface data {

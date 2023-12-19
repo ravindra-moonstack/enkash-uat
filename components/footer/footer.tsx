@@ -13,8 +13,7 @@ import {
   securityThree,
 } from ".";
 import Heading from "../heading/heading";
-
-const signupUrl = "";
+import Link from "next/link";
 
 const Footer = () => {
   return (
@@ -43,35 +42,39 @@ const Footer = () => {
           </h2>
           <PrimaryButton
             title="Get Started"
-            url={signupUrl}
             theme="theme-blue"
+            url="/sales/?source=corporate_cards"
           />
         </div>
         <div className={`col-md-3 col-6 ${styles.footer_links_col}`}>
-          <a href="/olympus">
+          <Link href="/olympus">
             <h4 className={` ${styles.title}`}>Olympus</h4>
-          </a>
+          </Link>
           <div className="">
             <ul className="mb-0">
               <li>
                 <div className={`color-white ${styles.sub_title}`}>
-                  <a href="/olympus/payables">Payables</a>
+                  <Link href="/olympus/payables">Payables</Link>
                 </div>
               </li>
               <li>
-                <a href="/olympus/payables/bill-payment/">Bill Payment</a>
+                <Link href="/olympus/payables/bill-payment/">Bill Payment</Link>
               </li>
               <li>
-                <a href="/olympus/payables/bulk-payout/">Bulk Payout</a>
+                <Link href="/olympus/payables/bulk-payout/">Bulk Payout</Link>
               </li>
               <li>
-                <a href="/olympus/payables/tax-payments/">GST Payment</a>
+                <Link href="/olympus/payables/tax-payments/">GST Payment</Link>
               </li>
               <li>
-                <a href="/olympus/payables/vendor-payment/">Vendor Payment</a>
+                <Link href="/olympus/payables/vendor-payment/">
+                  Vendor Payment
+                </Link>
               </li>
               <li>
-                <a href="/olympus/payables/rental-payment/">Rental Payment</a>
+                <Link href="/olympus/payables/rental-payment/">
+                  Rental Payment
+                </Link>
               </li>
             </ul>
           </div>
@@ -79,22 +82,27 @@ const Footer = () => {
             <ul>
               <li className="mt-2">
                 <div className={`color-white ${styles.sub_title}`}>
-                  <a href="/olympus/receivables">Receivables</a>
+                  <Link href="/olympus/receivables">Receivables</Link>
                 </div>
               </li>
               <li>
-                <a href="/olympus/receivables/virtual-accounts/">
+                <Link href="/olympus/receivables/virtual-accounts/">
                   Virtual Accounts
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/olympus/receivables/payment-links/"> Payment Links</a>
+                <Link href="/olympus/receivables/payment-links/">
+                  {" "}
+                  Payment Links
+                </Link>
               </li>
               <li>
-                <a href="/olympus/receivables/bulk-collect/">Bulk Collect</a>
+                <Link href="/olympus/receivables/bulk-collect/">
+                  Bulk Collect
+                </Link>
               </li>
               <li>
-                <a href="/olympus/receivables/invoices/">Invoices</a>
+                <Link href="/olympus/receivables/invoices/">Invoices</Link>
               </li>
             </ul>
           </div>
@@ -103,34 +111,34 @@ const Footer = () => {
           <div className={` ${styles.footer_links_col}`}>
             <div>
               <div className={styles.freedom_card_box}>
-                <a href="/slash">
+                <Link href="/slash">
                   <h4 className={`${styles.title}`}>Slash</h4>
-                </a>
+                </Link>
               </div>
               <ul>
                 <li>
-                  <a href="/slash/virtual-cards/">Virtual Cards*</a>
+                  <Link href="/slash/virtual-cards/">Virtual Cards*</Link>
                 </li>
                 <li>
-                  <a href="/slash/digital-marketing-cards/">
+                  <Link href="/slash/digital-marketing-cards/">
                     Digital Marketing Cards*
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/slash/fuel-cards/">Fuel Cards*</a>
+                  <Link href="/slash/fuel-cards/">Fuel Cards*</Link>
                 </li>
                 <li>
-                  <a href="/slash/meal-cards/">Meal Cards*</a>
+                  <Link href="/slash/meal-cards/">Meal Cards*</Link>
                 </li>
                 <li>
-                  <a href="/slash/saas-cards/">SaaS Cards*</a>
+                  <Link href="/slash/saas-cards/">SaaS Cards*</Link>
                 </li>
                 <li>
-                  <a href="/slash/purchase-cards/">Purchase Cards*</a>
+                  <Link href="/slash/purchase-cards/">Purchase Cards*</Link>
                 </li>
 
                 <li>
-                  <a href="/slash/travel-and-expense-cards">T&E Cards*</a>
+                  <Link href="/slash/travel-and-expense-cards">T&E Cards*</Link>
                 </li>
               </ul>
             </div>
@@ -139,31 +147,33 @@ const Footer = () => {
         <div className="col-6 col-md-3">
           <div className={`${styles.footer_links_col}`}>
             <div>
-              <a href="/ofex">
+              <Link href="/ofex">
                 <h4 className={`col-12 ${styles.title}`}>OfEx</h4>
-              </a>
+              </Link>
               <ul>
                 <li>
-                  <a href="ofex/budget-and-advances/">Budgets and Advances</a>
+                  <Link href="ofex/budget-and-advances/">
+                    Budgets and Advances
+                  </Link>
                 </li>
                 <li>
-                  <a href="ofex/hierarchy-and-controls/">
+                  <Link href="ofex/hierarchy-and-controls/">
                     Hierarchy and Controls
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="ofex/policy-and-approval-flows/">
+                  <Link href="ofex/policy-and-approval-flows/">
                     Policy and Approval Flows
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="ofex/reimbursement/">Reimbursement</a>
+                  <Link href="ofex/reimbursement/">Reimbursement</Link>
                 </li>
 
                 <li>
-                  <a href="ofex/scan-and-drop-receipts/">
+                  <Link href="ofex/scan-and-drop-receipts/">
                     Scan and Drop Receipts
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -172,29 +182,31 @@ const Footer = () => {
         <div className="col-6 col-md-3">
           <div className={`col-6 col-md-4 ${styles.footer_links_col}`}>
             <div>
-              <a href="/loyalty-lounge">
+              <Link href="/loyalty-lounge">
                 <h4 className={`col-12 ${styles.title}`}>Loyalty Lounge</h4>
-              </a>
+              </Link>
               <ul>
                 <li>
-                  <a href="loyalty-lounge/brand-voucher/">Brand Voucher</a>
+                  <Link href="loyalty-lounge/brand-voucher/">
+                    Brand Voucher
+                  </Link>
                 </li>
                 <li>
-                  <a href="loyalty-lounge/channel-incentive/">
+                  <Link href="loyalty-lounge/channel-incentive/">
                     Channel Incentives
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="loyalty-lounge/employee-rewards/">
+                  <Link href="loyalty-lounge/employee-rewards/">
                     Employee Rewards
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a href="loyalty-lounge/gift-cards/">Gift Cards</a>
+                  <Link href="loyalty-lounge/gift-cards/">Gift Cards</Link>
                 </li>
                 <li>
-                  <a href="loyalty-lounge/offers/">Offers</a>
+                  <Link href="loyalty-lounge/offers/">Offers</Link>
                 </li>
               </ul>
             </div>
@@ -206,27 +218,27 @@ const Footer = () => {
               <h4 className={`${styles.title}`}>Resources</h4>
               <ul>
                 <li>
-                  <a href="https://www.enkash.com/resources/">Blogs</a>
+                  <Link href="https://www.enkash.com/resources/">Blogs</Link>
                 </li>
                 <li>
-                  <a href="https://www.enkash.com/resources/videos/">
+                  <Link href="https://www.enkash.com/resources/videos/">
                     Product Videos
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://www.enkash.com/resources/press-release/">
+                  <Link href="https://www.enkash.com/resources/press-release/">
                     Press Release
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://www.enkash.com/resources/media-coverage/">
+                  <Link href="https://www.enkash.com/resources/media-coverage/">
                     News & Media
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="https://www.enkash.com/resources/customer-stories/">
+                  <Link href="https://www.enkash.com/resources/customer-stories/">
                     Customer Stories
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -238,16 +250,16 @@ const Footer = () => {
               <h4 className={`${styles.title}`}>Company</h4>
               <ul>
                 <li>
-                  <a href="/about/">About Us</a>
+                  <Link href="">About Us</Link>
                 </li>
                 <li>
-                  <a href="/sales?source=getstarted_footer">Sales</a>
+                  <Link href="/sales?source=getstarted_footer">Sales</Link>
                 </li>
                 {/* <li>
-                  <a href="/career-team-and-openings/">Career</a>
+                  <Link href="/career-team-and-openings/">Career</Link>
                 </li>
                 <li>
-                  <a href="/support/">Support</a>
+                  <Link href="/support/">Support</Link>
                 </li> */}
               </ul>
             </div>
@@ -260,27 +272,29 @@ const Footer = () => {
               <h4 className={`col-12 ${styles.title}`}>Policies</h4>
               <ul>
                 <li>
-                  <a href="/grievance-policy/">Grievances and Redressal</a>
+                  <Link href="/grievance-policy/">
+                    Grievances and Redressal
+                  </Link>
                 </li>
                 <li>
-                  <a href="/chargeback-dispute-management-policy/">
+                  <Link href="/chargeback-dispute-management-policy/">
                     Dispute Management
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/privacy-legal/">Privacy & Legal</a>
+                  <Link href="/privacy-legal/">Privacy & Legal</Link>
                 </li>
                 <li>
-                  <a href="/term-condition/">Terms & Conditions</a>
+                  <Link href="/term-condition/">Terms & Conditions</Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     rel="noopener noreferrer"
                     target="_blank"
                     href="https://www.sbmbank.co.in/aboutus/grievance-redressal-mechanism.php"
                   >
                     Partner Bank Grievances
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -291,7 +305,7 @@ const Footer = () => {
           <div className={styles.contact_list}>
             <ul>
               <li>
-                <a
+                <Link
                   rel="noopener noreferrer"
                   target="_top"
                   href="tel:+91 8530490475"
@@ -303,13 +317,13 @@ const Footer = () => {
                     width={25}
                   />
                   +91 8530490475
-                </a>
+                </Link>
               </li>
               <li>
                 <div
                   className={`d-flex justify-content-between pt-3 ${styles.social_icons_row}`}
                 >
-                  <a
+                  <Link
                     href="https://www.facebook.com/Enkashbusiness"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -320,8 +334,8 @@ const Footer = () => {
                       height={25}
                       width={25}
                     />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://twitter.com/EnkashBusiness"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -332,8 +346,8 @@ const Footer = () => {
                       height={25}
                       width={25}
                     />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://www.linkedin.com/company/enkashbusiness"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -344,8 +358,8 @@ const Footer = () => {
                       height={25}
                       width={25}
                     />
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="https://www.instagram.com/Enkashbusiness"
                     target="_blank"
                     rel="noreferrer noopener"
@@ -356,7 +370,7 @@ const Footer = () => {
                       height={25}
                       width={25}
                     />
-                  </a>
+                  </Link>
                 </div>
               </li>
             </ul>

@@ -4,6 +4,7 @@ import styles from "./page.module.scss";
 import leftBlueGradient from "./gradient.png";
 import chart from "./chart.png";
 import Image from "next/image";
+import Footer from "@/components/footer/footer";
 
 const disputeManagement = () => {
   return (
@@ -318,6 +319,7 @@ const disputeManagement = () => {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

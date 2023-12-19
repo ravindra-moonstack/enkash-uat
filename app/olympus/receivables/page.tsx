@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 import styles from "./page.module.scss";
 import blogData from "./blog-data";
 import faqData from "./faq-data";
@@ -10,7 +10,7 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import HeaderWrapper from "@/components/header/header";
+import Header from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
 const receivables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <HeaderWrapper />
+      <Header />
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-inline mb-4">
@@ -410,7 +410,7 @@ const receivables = () => {
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" />
+            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
           </div>
         </div>
       </div>

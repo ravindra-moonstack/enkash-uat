@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../constant/common";
+import { space } from "../../../common/constant";
 import faqData from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -16,9 +16,10 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import carouselData from "./carousel-data";
 import FAQHtml from "./faq-html";
-import HeaderWrapper from "@/components/header/header";
+import Header from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import blogData from "./blog-data";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 const fuelCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <HeaderWrapper />
+      <Header />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -75,13 +76,18 @@ const fuelCard = () => {
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
-              <PrimaryButton title="EnKash Now" theme="theme-blue" />
+              <PrimaryButton
+                title="EnKash Now"
+                theme="theme-blue"
+                url="https://home.enkash.com/signup?utm_source=corporate_cards"
+              />
             </div>
             <div>
               <SecondryButton
                 title="Book a Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
+                url="/sales/?source=corporate_cards"
               />
             </div>
           </div>
@@ -345,6 +351,7 @@ const fuelCard = () => {
           }
         />
       </div>
+      <Footer />
     </div>
   );
 };

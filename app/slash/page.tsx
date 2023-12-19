@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Metadata } from "next";
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 import styles from "./page.module.scss";
 import blogData from "./blog-data";
 import faqData from "./faq-data";
@@ -17,7 +17,7 @@ import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import HeaderWrapper from "@/components/header/header";
+import Header from "@/components/header/header";
 import {
   officeImg,
   whiteArrow,
@@ -29,6 +29,7 @@ import {
   banner,
 } from ".";
 import FAQHtml from "./faq-html";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Corporate Credit and Prepaid Cards in India| Apply Now - EnKash",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 const slash = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <HeaderWrapper />
+      <Header />
 
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
@@ -84,13 +85,19 @@ const slash = () => {
               weight="5"
             />
           </div>
+
           <div className={`my-5 ${styles.button_container}`}>
-            <PrimaryButton title="EnKash Now" theme="theme-blue" />
+            <PrimaryButton
+              title="EnKash Now"
+              theme="theme-blue"
+              url="https://home.enkash.com/signup?utm_source=corporate_cards"
+            />
             <span className="mx-2"></span>
             <SecondryButton
               title="Book a Demo"
               actionImage={whiteArrow}
               iconSize={15}
+              url="/sales/?source=corporate_cards"
             />
           </div>
         </div>
@@ -492,7 +499,7 @@ const slash = () => {
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" />
+            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
           </div>
         </div>
       </div>
@@ -698,6 +705,7 @@ const slash = () => {
           }
         />
       </div>
+      <Footer />
     </div>
   );
 };

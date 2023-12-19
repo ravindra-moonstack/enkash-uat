@@ -35,7 +35,7 @@ import {
   starBucksLogo,
   auBankLogo,
 } from "@/app/index";
-import { space } from "@/constant/common";
+import { space } from "@/common/constant";
 
 const BankSection = () => {
   const [selectedTab, setSelectedTab] = useState("partners");

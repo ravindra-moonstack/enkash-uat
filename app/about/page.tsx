@@ -27,6 +27,7 @@ import {
 import Header from "@/components/header/header";
 import styles from "./page.module.scss";
 import Heading from "@/components/heading/heading";
+import Footer from "@/components/footer/footer";
 
 // export const metadata = {
 //   title: "EnKash | About Page",
@@ -794,7 +795,8 @@ previousStep();
 
   </script> */}
         </div>
-      </div>{" "}
+        <Footer />
+      </div>
     </>
   );
 };
