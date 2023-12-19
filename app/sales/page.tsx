@@ -7,6 +7,7 @@ import teamImage from "./enkash-sales-team.svg";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import Footer from "@/components/footer/footer";
+import bgImage from "./bg.png";
 
 const sales = () => {
   const validationSales = () => {
@@ -46,9 +47,14 @@ const sales = () => {
       <div className={styles.container}>
         <Header />
         <div className={styles.inner_container}>
+        
           <div className="d-flex justify-content-center flex-column align-items-center">
             <div className="mb-5">
-              <Heading title="Contact Our Sales Team" size="h3" color="black" />
+              <Heading
+                title="Contact Our Sales Team"
+                size="h3"
+                color="equity-blue"
+              />
             </div>
 
             {/* First Row */}

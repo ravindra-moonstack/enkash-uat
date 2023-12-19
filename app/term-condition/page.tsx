@@ -1935,8 +1935,8 @@ const termCondition = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

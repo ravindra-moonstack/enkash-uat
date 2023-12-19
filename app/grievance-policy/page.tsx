@@ -2131,8 +2131,8 @@ const grievancePolicy = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

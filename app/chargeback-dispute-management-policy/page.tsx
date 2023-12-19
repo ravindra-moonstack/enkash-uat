@@ -319,8 +319,8 @@ const disputeManagement = () => {
             </div>
           </div>
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

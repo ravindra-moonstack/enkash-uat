@@ -169,7 +169,11 @@ const home = () => {
             </div>
 
             <div>
-              <PrimaryButton title="Get Started Now" theme="theme-blue" />
+              <PrimaryButton
+                title="Get Started Now"
+                theme="theme-blue"
+                url="/sales"
+              />
             </div>
           </div>
         </div>

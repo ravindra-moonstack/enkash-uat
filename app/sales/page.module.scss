@@ -1,12 +1,24 @@
 @import "../../styles/variables";
+@import "../../styles/mixin";
 
 .container {
-  padding: 140px 200px 200px 200px;
+  padding: 140px 200px 100px 200px;
+  background: url(./bg.png);
+
+  @include bp-md {
+    background-position: center right;
+    background-size: contain;
+  }
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-size: cover;
 
   .inner_container {
-    background-color: $color-white;
     box-shadow: 4px 8px 31px rgba(0, 0, 0, 0.0901960784);
     border-radius: 15px;
+    background-color: $color-white;
     padding: 30px 100px 30px 100px;
   }
 }
