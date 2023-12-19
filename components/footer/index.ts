@@ -4,3 +4,6 @@ export { default as fbLogo } from "./img/fb.png";
 export { default as instLogo } from "./img/insta.png";
 export { default as call } from "./img/call.png";
 export { default as locationPin } from "./img/location-pin.png";
+export { default as securityOne } from "./img/security1.png";
+export { default as securityTwo } from "./img/security2.png";
+export { default as securityThree } from "./img/security3.png";

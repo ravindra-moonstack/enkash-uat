@@ -113,7 +113,7 @@ const RainbowSection = () => {
         />
 
         <span className={`col-12  ${styles.second_text}`}>
-          <Heading title="Businesses" size="h0" />
+          <Heading title="Businesses That" size="h0" />
         </span>
 
         <Image
@@ -133,7 +133,7 @@ const RainbowSection = () => {
         />
 
         <span className={`col-12  ${styles.third_text}`}>
-          <Heading title="That Does It All" size="h0" />
+          <Heading title="Does It All" size="h0" />
         </span>
 
         <Image

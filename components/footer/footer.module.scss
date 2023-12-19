@@ -30,6 +30,21 @@
   }
 }
 
+.security_section {
+  padding: 200px 90px 50px 90px;
+  background-color: $color-white;
+  padding-top: 50px;
+  @include bp-md {
+    padding-top: 50px;
+    padding-bottom: 70px;
+  }
+
+  img {
+    height: 150px;
+    width: auto;
+  }
+}
+
 .footer_padding {
   padding: 16px 32px;
   @include bp-md {

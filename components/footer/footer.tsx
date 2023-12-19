@@ -8,13 +8,33 @@ import {
   instLogo,
   call,
   locationPin,
+  securityTwo,
+  securityOne,
+  securityThree,
 } from ".";
+import Heading from "../heading/heading";
 
 const signupUrl = "";
 
 const Footer = () => {
   return (
-    <div className={` ${styles.footer}`}>
+    <div className={`${styles.footer}`}>
+      {/* <div className={styles.security_section}>
+        <div className="color-white mb-5 d-flex justify-content-center">
+          <Heading
+            title="Your data security is our priority"
+            size="h1"
+            color="equity-blue"
+          />
+        </div>
+        <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
+          <Image className="me-5" src={securityOne} alt="security1" />
+          <Image className="me-5" src={securityTwo} alt="security1" />
+
+          <Image src={securityThree} alt="security3" />
+        </div>
+      </div> */}
+
       <div className={`row ${styles.footer_padding}`}>
         <div className="col-12 mb-4">
           <h2 className="color-white mb-4">

@@ -41,7 +41,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "EnKash's expense management software simplifies expense report management by capturing expense-related information at every stage. It parses through information from receipts and invoices, matches them with expense details, and stores them securely in the cloud. It also allows users to sort expenses by type, department, or other criteria to generate reports as needed.",
+          "EnKash's expense management software simplifies expense report management by capturing expense-related information at every stage. It parses through information from receipts and invoices, matches them with expense details, and stores them securely in the cloud. It also allows users to sort expenses by type, department, or other criteria to generate reports as needed. Additionally, it hosts a deep insights dashboard for all types of reporting across departments, categories, cost centres for defined intervals",
       },
     ],
   },
