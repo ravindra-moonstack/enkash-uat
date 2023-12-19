@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const loyaltyLounge = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header />
+      <Header utmSource="Loyalty_lounge" />
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
@@ -493,7 +493,7 @@ const loyaltyLounge = () => {
           }
         />
       </div>
-      <Footer />
+      <Footer utmSource="Loyalty_lounge" />
     </div>
   );
 };

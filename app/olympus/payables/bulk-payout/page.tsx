@@ -20,6 +20,7 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Link from "next/link";
 import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: " Bulk Payout | Corporate Bulk Payment Solution | EnKash",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 const bulkPayout = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <Header  utmSource="payables"/>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -423,6 +424,7 @@ const bulkPayout = () => {
           }
         />
       </div>
+      <Footer  utmSource="payables"/>
     </div>
   );
 };

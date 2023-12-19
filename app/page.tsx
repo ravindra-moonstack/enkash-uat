@@ -543,7 +543,7 @@ const home = () => {
               title="DIY-card Module"
               description="Generate purpose-made company cards and empower departments and employees to use them while setting usage limits and tracking for better spend control"
               theme="blue"
-              link="/"
+              link="/diy"
             />
           </div>
         </div>

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 const slash = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header />
+      <Header utmSource="corporate_cards" />
 
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
@@ -204,6 +204,7 @@ const slash = () => {
             title="DIY-card module"
             description="A unique feature that helps you customize cards, workflow, and dashboard as per business needs"
             theme="green"
+            link="/diy"
           />
         </div>
 
@@ -212,6 +213,7 @@ const slash = () => {
             title="Spend Control"
             description="It ensures timely payments with decentralization of spend with total control"
             theme="green"
+            link="diy"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
@@ -705,7 +707,7 @@ const slash = () => {
           }
         />
       </div>
-      <Footer />
+      <Footer utmSource="corporate_cards" />
     </div>
   );
 };

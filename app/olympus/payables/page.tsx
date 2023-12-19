@@ -29,6 +29,7 @@ import {
   cashAndTime,
   coinIcon,
 } from ".";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
 const payables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header />
+      <Header  utmSource="payables"/>
 
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
@@ -83,12 +84,17 @@ const payables = () => {
             />
           </div>
           <div className={`my-5 ${styles.button_container}`}>
-            <PrimaryButton title="EnKash Now" theme="theme-blue" />
+            <PrimaryButton
+              title="EnKash Now"
+              theme="theme-blue"
+              url="https://home.enkash.com/signup?utm_source=payables"
+            />
             <span className="mx-2"></span>
             <SecondryButton
               title="Book a Demo"
               actionImage={whiteArrow}
               iconSize={15}
+              url="/sales/?source=payables"
             />
           </div>
         </div>
@@ -656,6 +662,7 @@ const payables = () => {
           }
         />
       </div>
+      <Footer  utmSource="payables"/>
     </div>
   );
 };

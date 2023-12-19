@@ -54,7 +54,7 @@ const ResourcesModal = () => {
             onMouseEnter={() => setHoveredResourceIndex(index)}
             ref={refs[index]}
           >
-            <Link href={product.link}>
+            <Link href={product.link} target="_blank">
               <div className={styles.product_name}>{product.name}</div>
               <div className={styles.product_description}>
                 {product.description}

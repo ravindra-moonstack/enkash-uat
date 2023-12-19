@@ -19,6 +19,7 @@ import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title:
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 const paymentLinks = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <Header  utmSource="receivables"/>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -327,6 +328,7 @@ const paymentLinks = () => {
           }
         />
       </div>
+      <Footer  utmSource="receivables"/>
     </div>
   );
 };

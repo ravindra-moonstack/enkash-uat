@@ -19,6 +19,7 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import BlogWrapper from "@/components/blog/blog-wrapper";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Rent Payment - Pay Rent Through Credit Card | EnKash",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 const rentalPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <Header  utmSource="payables"/>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -459,6 +460,7 @@ const rentalPayments = () => {
           }
         />
       </div>
+      <Footer  utmSource="payables"/>
     </div>
   );
 };

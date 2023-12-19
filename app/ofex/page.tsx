@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const OfEx = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header />
+      <Header utmSource="expense_management" />
 
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
@@ -451,7 +451,7 @@ const OfEx = () => {
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" url="/sales"/>
+            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
           </div>
         </div>
       </div>
@@ -654,7 +654,7 @@ const OfEx = () => {
           }
         />
       </div>
-      <Footer />
+      <Footer utmSource="expense_management" />
     </div>
   );
 };

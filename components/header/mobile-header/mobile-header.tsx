@@ -15,9 +15,6 @@ import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-produ
 import motherProducts from "@/components/header/data/mother-products";
 import resources from "@/components/header/data/resources";
 
-const singupUrl = "";
-const loginUrl = "https://home.enkash.com/login";
-
 const motherProductsList = [
   olympusProducts,
   freedomProducts,
@@ -73,7 +70,11 @@ const MobileHeader = () => {
           <div
             className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
           >
-            <PrimaryButton title="Sign Up" url={singupUrl} theme="theme-blue" />
+            <PrimaryButton
+              title="Sign Up"
+              theme="theme-blue"
+              url="https://home.enkash.com/signup"
+            />
             <span className="mx-2"></span>
             <div>
               <button className={`${styles.secondary_button} ${styles.active}`}>

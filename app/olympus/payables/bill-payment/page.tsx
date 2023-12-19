@@ -19,6 +19,7 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Bill Payment | Billing Payment Solution | EnKash",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 const billPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -370,6 +371,7 @@ const billPayments = () => {
           }
         />
       </div>
+      <Footer utmSource="payables" />
     </div>
   );
 };

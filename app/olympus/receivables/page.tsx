@@ -28,6 +28,7 @@ import {
   heavyLiftingIconThree,
 } from ".";
 import FAQHtml from "./faq-html";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: " Accounts Receivables Automation Software for Business - EnKash",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 const receivables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header />
+      <Header  utmSource="receivables"/>
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-inline mb-4">
@@ -91,12 +92,17 @@ const receivables = () => {
             />
           </div>
           <div className={`my-5 ${styles.button_container}`}>
-            <PrimaryButton title="EnKash Now" theme="theme-blue" />
+            <PrimaryButton
+              title="EnKash Now"
+              theme="theme-blue"
+              url="https://home.enkash.com/signup?utm_source=receivables"
+            />
             <span className="mx-2"></span>
             <SecondryButton
               title="Book a Demo"
               actionImage={whiteArrow}
               iconSize={15}
+              url="/sales/?source=receivables"
             />
           </div>
         </div>
@@ -619,6 +625,7 @@ const receivables = () => {
           }
         />
       </div>
+      <Footer  utmSource="receivables"/>
     </div>
   );
 };

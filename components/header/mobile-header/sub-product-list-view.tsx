@@ -5,8 +5,6 @@ import { Fragment, useState } from "react";
 import Link from "next/link";
 import { footerArrow, forwardArrowBlue } from "..";
 
-const singupUrl = "";
-const loginUrl = "https://home.enkash.com/login";
 
 const SubProductListView = (props: {
   setSelectedItemIndex: any;
@@ -120,7 +118,11 @@ const SubProductListView = (props: {
         <div
           className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
         >
-          <PrimaryButton title="Sign Up" url={singupUrl} theme="theme-blue" />
+          <PrimaryButton
+            title="Sign Up"
+            theme="theme-blue"
+            url="https://home.enkash.com/signup"
+          />
           <span className="mx-2"></span>
           <div>
             <button className={`${styles.secondary_button} ${styles.active}`}>

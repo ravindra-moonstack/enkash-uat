@@ -39,8 +39,8 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
         </div>
         <PrimaryButton
           title="Sign Up"
-          url={"singupUrl"}
           theme="theme-blue"
+          url="https://home.enkash.com/signup"
         />
       </div>
 

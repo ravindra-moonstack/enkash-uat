@@ -1,11 +1,11 @@
 import MobileHeader from "./mobile-header/mobile-header";
 import WebHeader from "./web-header";
 
-const Header = () => {
+const Header = ({ utmSource = "" }: any) => {
   return (
     <>
       <div className="desktop-only desktop-header">
-        <WebHeader />
+        <WebHeader utmSource={utmSource} />
       </div>
       <div className="mobile-only">
         <MobileHeader />

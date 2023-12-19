@@ -15,7 +15,7 @@ import {
 import Heading from "../heading/heading";
 import Link from "next/link";
 
-const Footer = () => {
+const Footer = ({ utmSource = "" }: any) => {
   return (
     <div className={`${styles.footer}`}>
       {/* <div className={styles.security_section}>
@@ -40,11 +40,12 @@ const Footer = () => {
             Spend Smart, Collect Fast, <br />
             <span className="color-equity-blue">Grow More</span>
           </h2>
-          <PrimaryButton
-            title="Get Started"
-            theme="theme-blue"
-            url="/sales/?source=corporate_cards"
-          />
+          <Link
+            href={"https://home.enkash.com/signup?utm_source=" + utmSource}
+            target="_blank"
+          >
+            <PrimaryButton title="Get Started" theme="theme-blue" />
+          </Link>
         </div>
         <div className={`col-md-3 col-6 ${styles.footer_links_col}`}>
           <Link href="/olympus">
@@ -218,25 +219,42 @@ const Footer = () => {
               <h4 className={`${styles.title}`}>Resources</h4>
               <ul>
                 <li>
-                  <Link href="https://www.enkash.com/resources/">Blogs</Link>
+                  <Link
+                    target="_blank"
+                    href="https://www.enkash.com/resources/"
+                  >
+                    Blogs
+                  </Link>
                 </li>
                 <li>
-                  <Link href="https://www.enkash.com/resources/videos/">
+                  <Link
+                    target="_blank"
+                    href="https://www.enkash.com/resources/videos/"
+                  >
                     Product Videos
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.enkash.com/resources/press-release/">
+                  <Link
+                    target="_blank"
+                    href="https://www.enkash.com/resources/press-release/"
+                  >
                     Press Release
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.enkash.com/resources/media-coverage/">
+                  <Link
+                    target="_blank"
+                    href="https://www.enkash.com/resources/media-coverage/"
+                  >
                     News & Media
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://www.enkash.com/resources/customer-stories/">
+                  <Link
+                    target="_blank"
+                    href="https://www.enkash.com/resources/customer-stories/"
+                  >
                     Customer Stories
                   </Link>
                 </li>
@@ -250,7 +268,7 @@ const Footer = () => {
               <h4 className={`${styles.title}`}>Company</h4>
               <ul>
                 <li>
-                  <Link href="">About Us</Link>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li>
                   <Link href="/sales?source=getstarted_footer">Sales</Link>

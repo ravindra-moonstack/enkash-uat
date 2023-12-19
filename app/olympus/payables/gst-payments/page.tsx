@@ -19,6 +19,7 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "GST Payment - GST Bill Payment Online for Businesses | EnKash",
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
 const taxPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <Header  utmSource="payables"/>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -664,6 +665,7 @@ const taxPayments = () => {
           }
         />
       </div>
+      <Footer  utmSource="payables"/>
     </div>
   );
 };

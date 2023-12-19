@@ -20,6 +20,7 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
+import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
   title: "Vendor Payment – Automated Multiple Vendor Payment | EnKash",
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 const vendorPayment = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <Header  utmSource="payables"/>
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -695,6 +696,7 @@ const vendorPayment = () => {
           }
         />
       </div>
+      <Footer   utmSource="payables"/>
     </div>
   );
 };

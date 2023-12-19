@@ -14,10 +14,11 @@ import {
 import ProductModal from "./modal/product-modal";
 import ResourcesModal from "./modal/resources-modal";
 
-const singupUrl = "";
-const loginUrl = "https://home.enkash.com/login";
+interface props {
+  utmSource?: string;
+}
 
-const WebHeader = () => {
+const WebHeader = ({ utmSource }: props) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false);
   const [itemWidth, setItemWidth] = useState(0);
@@ -119,17 +120,24 @@ const WebHeader = () => {
           </ul>
         </div>
         <div className={styles.buttons_container}>
+          <Link
+            href={"https://home.enkash.com/signup?utm_source=" + utmSource}
+            target="_blank"
+          >
+            <div>
+              <button className={styles.primary_button}>Sign Up</button>
+            </div>
+          </Link>
           <div>
-            <button className={styles.primary_button}>Sign Up</button>
-          </div>
-          <div>
-            <button
-              className={`${styles.secondary_button} ${
-                isHeaderBgWhite ? styles.active : ""
-              }`}
-            >
-              Login
-            </button>
+            <Link href="https://home.enkash.com/login" target="_blank">
+              <button
+                className={`${styles.secondary_button} ${
+                  isHeaderBgWhite ? styles.active : ""
+                }`}
+              >
+                Login
+              </button>
+            </Link>
           </div>
         </div>
       </nav>

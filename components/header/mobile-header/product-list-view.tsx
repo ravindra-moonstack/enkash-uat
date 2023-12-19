@@ -4,8 +4,6 @@ import { Fragment, useState } from "react";
 import SubProductListView from "./sub-product-list-view";
 import { forwardArrowBlue } from "..";
 import Image from "next/image";
-const singupUrl = "";
-const loginUrl = "https://home.enkash.com/login";
 
 interface ProductListViewProps {
   childProducts: any[];
@@ -60,7 +58,11 @@ const ProductListView = ({
           <div
             className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
           >
-            <PrimaryButton title="Sign Up" url={singupUrl} theme="theme-blue" />
+            <PrimaryButton
+              title="Sign Up"
+              url="https://home.enkash.com/signup"
+              theme="theme-blue"
+            />
             <span className="mx-2"></span>
             <div>
               <button className={`${styles.secondary_button} ${styles.active}`}>

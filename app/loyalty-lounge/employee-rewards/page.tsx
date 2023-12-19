@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const employeeRewards = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <Header  utmSource="Loyalty_lounge"/>
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -415,7 +415,7 @@ const employeeRewards = () => {
           }
         />
       </div>
-      <Footer />
+      <Footer  utmSource="Loyalty_lounge"/>
     </div>
   );
 };
