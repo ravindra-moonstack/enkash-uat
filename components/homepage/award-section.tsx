@@ -81,7 +81,7 @@ const AwardSection = () => {
               <div
                 className={`d-flex flex-column justify-content-between ${styles.box_item}`}
               >
-                <div className="mb-3 mb-m-5 py-2">
+                <div className="mb-3">
                   <Heading
                     title="Amongst top 200 global fintech companies by CNBC"
                     color="black"
@@ -93,9 +93,9 @@ const AwardSection = () => {
                 </div>
               </div>
               <div
-                className={`d-flex flex-column bg-black justify-content-betweens ${styles.box_item}`}
+                className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
               >
-                <div className="mb-3 mb-m-5 py-2">
+                <div className="mb-3">
                   <Heading
                     title="Best Platform for SME Financial Growth at the 4th Annual BFSI Excellence Award"
                     color="electric-green"
@@ -103,17 +103,13 @@ const AwardSection = () => {
                   />
                 </div>
                 <div>
-                  <Image
-                    src={bfsi}
-                    alt="BFSI Excellence Award image"
-                    loading="lazy"
-                  />
+                  <Image src={bfsi} alt="BFSI Excellence Award image" />
                 </div>
               </div>
               <div
-                className={`d-flex flex-column  justify-content-between ${styles.box_item}`}
+                className={`d-flex flex-column justify-content-between ${styles.box_item}`}
               >
-                <div className="mb-5 py-2">
+                <div className="mb-3">
                   <Heading
                     title="Preferred Partner by NPCI"
                     color="black"
@@ -131,49 +127,41 @@ const AwardSection = () => {
               className={`d-flex flex-column flex-md-row justify-content-center text-center ${styles.box}`}
             >
               <div
-                className={`d-flex flex-column justify-content-betwee ${styles.box_item}`}
+                className={`d-flex flex-column justify-content-between ${styles.box_item}`}
               >
-                <div className="mb-3 mb-m-5 py-2">
+                <div className="mb-3">
                   <Heading
                     title="Best B2B Solution Provider at 8th Edition of Payments and Cards Summit"
                     color="black"
                     size="h6"
                   />
                 </div>
-                <div className="px-md-5">
-                  <div className="px-md-5">
-                    <Image
-                      className="py-md-5"
-                      src={paymentAndCardSummit}
-                      alt="8th Edition of Payments and Cards Summit"
-                      loading="lazy"
-                    />
-                  </div>
+                <div>
+                  <Image
+                    src={paymentAndCardSummit}
+                    alt="8th Edition of Payments and Cards Summit"
+                    loading="lazy"
+                  />
                 </div>
               </div>
               <div
                 className={`d-flex flex-column bg-black justify-content-between ${styles.box_item}`}
               >
-                <div className="mb-5 py-2">
+                <div className="mb-3">
                   <Heading
                     title="Winner under the Payments Category at NASSCOM India Fintech 2020"
                     color="electric-green"
                     size="h6"
                   />
                 </div>
-                <div className="px-5">
-                  <Image
-                    src={nasscom}
-                    alt="nasscom logo"
-                    loading="lazy"
-                    className="py-md-5"
-                  />
+                <div>
+                  <Image src={nasscom} alt="nasscom logo" loading="lazy" />
                 </div>
               </div>
               <div
-                className={`d-flex flex-column  justify-content-betweens ${styles.box_item}`}
+                className={`d-flex flex-column  justify-content-between ${styles.box_item}`}
               >
-                <div className="mb-3 mb-m-5 py-2">
+                <div className="mb-3">
                   <Heading
                     title="Best White Label Technology Provider of the Year for CardX by Fintech Festival India Awards 2022"
                     color="black"
@@ -182,7 +170,6 @@ const AwardSection = () => {
                 </div>
                 <div>
                   <Image
-                    className="py-md-5"
                     src={fintectFestival}
                     alt="Fintech Festival India Awards 2022"
                     loading="lazy"
@@ -196,16 +183,16 @@ const AwardSection = () => {
               className={`d-flex flex-column flex-md-row  justify-content-center text-center ${styles.box}`}
             >
               <div
-                className={`d-flex flex-column justify-content-betweens ${styles.box_item}`}
+                className={`d-flex flex-column justify-content-between ${styles.box_item}`}
               >
-                <div className="mb-3 mb-m-5 py-2">
+                <div className="mb-3">
                   <Heading
                     title="Startups to Watch for by Inc42"
                     color="black"
                     size="h6"
                   />
                 </div>
-                <div className="px-5">
+                <div>
                   <Image src={inc42} alt="Inc42 logo" loading="lazy" />
                 </div>
               </div>
