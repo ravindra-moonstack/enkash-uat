@@ -454,6 +454,7 @@ const olympus = () => {
             </>
           }
           mainImage={officeImg2}
+          link="https://home.enkash.com/signup?utm_source=payables"
           description="Create accounts in multiple branches and manage payables, receivables, accounting, and expenses with a single interface"
         />
       </div>

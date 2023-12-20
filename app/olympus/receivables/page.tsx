@@ -39,7 +39,7 @@ export const metadata: Metadata = {
 const receivables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header  utmSource="receivables"/>
+      <Header utmSource="receivables" />
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-inline mb-4">
@@ -327,6 +327,8 @@ const receivables = () => {
             </>
           }
           mainImage={officeImg}
+          link="https://home.enkash.com/signup?utm_source=receivables"
+
           description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
         />
       </div>
@@ -625,7 +627,7 @@ const receivables = () => {
           }
         />
       </div>
-      <Footer  utmSource="receivables"/>
+      <Footer utmSource="receivables" />
     </div>
   );
 };

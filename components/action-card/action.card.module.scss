@@ -6,6 +6,10 @@
     padding-left: 150px;
     padding-right: 150px;
   }
+
+  a {
+    text-decoration: none;
+  }
 }
 .left_row {
   padding: 40px;
@@ -27,5 +31,23 @@
   margin-top: -10px;
   img {
     height: 100%;
+  }
+}
+
+.action_container {
+  cursor: pointer;
+  img {
+    width: 50px;
+    transition: width 0.3s ease-in-out;
+  }
+
+  img:hover {
+    width: 65px;
+  }
+}
+
+.action_container:hover {
+  img {
+    width: 65px;
   }
 }

@@ -442,7 +442,7 @@ const home = () => {
         <div
           className={`d-flex col-12 flex-column flex-md-row align-items-center ${styles.card}`}
         >
-          <div className="d-flex flex-column-reverse flex-md-row">
+          <div className={`d-flex flex-column-reverse flex-md-row ${styles.box}`}>
             <div className={`d-flex flex-column ${styles.card_container}`}>
               <Heading
                 title="Switch to better"

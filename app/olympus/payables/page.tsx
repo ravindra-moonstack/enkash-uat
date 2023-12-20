@@ -318,27 +318,7 @@ const payables = () => {
           ]}
         />
       </div>
-      {/* <div
-        className={`row d-flex bg-white row-padding-top-none ${styles.seventh_row}`}
-      >
-        <ActionCard
-          mainTitle={
-            <>
-              <div className="d-flex flex-column">
-                <Heading title="Complete" color="white" size="h1" weight="5" />
-                <Heading
-                  title="Transparency"
-                  color="electric-green"
-                  size="h1"
-                  weight="5"
-                />
-              </div>
-            </>
-          }
-          mainImage={officeImg}
-          description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
-        />
-      </div> */}
+
 
       <div className="bg-white row-padding d-flex justify-content-center">
         <div className="ps-md-5 scroll_container d-flex pb-4">

@@ -712,25 +712,30 @@
       padding-right: 200px;
     }
   }
-  .card_container {
-    z-index: 2;
-    padding: 30px 50px;
-    border-radius: 14.51px;
-    border: 1.935px solid #092093;
-    background: #0b0b28;
-    background: $color-indi-volt;
-    margin-top: -20px;
-    @include bp-md {
-      width: 57%;
-      margin-top: 0;
-      margin-right: -20px;
-      height: 400px;
+  .box {
+    height: 100%;
+    .card_container {
+      z-index: 2;
+      padding: 30px 50px;
+      border-radius: 14.51px;
+      border: 1.935px solid #092093;
+      background: #0b0b28;
+      background: $color-indi-volt;
+      margin-top: -20px;
+      height: 100%;
+
+      @include bp-md {
+        width: 57%;
+        margin-top: 0;
+        margin-right: -20px;
+      }
     }
-  }
-  .img_container {
-    z-index: 1;
-    @include bp-md {
-      height: 400px;
+    .img_container {
+      z-index: 1;
+      height: 100%;
+
+      @include bp-md {
+      }
     }
   }
 }

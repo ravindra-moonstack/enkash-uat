@@ -47,7 +47,6 @@ const sales = () => {
       <div className={styles.container}>
         <Header />
         <div className={styles.inner_container}>
-        
           <div className="d-flex justify-content-center flex-column align-items-center">
             <div className="mb-5">
               <Heading
@@ -181,7 +180,7 @@ const sales = () => {
             {/* Fifth Row */}
             <div className="d-flex align-items-center w-100 mt-4">
               <Heading
-                title="Additional products you are interested in:"
+                title="Descrtiption of your request"
                 size="h6"
                 color="black"
                 weight="5"

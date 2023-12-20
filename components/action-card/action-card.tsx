@@ -3,14 +3,16 @@ import Heading from "../heading/heading";
 import Image from "next/image";
 import { space } from "@/common/constant";
 import greenArrow from "./green-arrow.svg";
+import Link from "next/link";
 
 interface data {
   mainTitle: any;
   mainImage: any;
   description: string;
+  link?: any;
 }
 
-const ActionCard = ({ mainTitle, mainImage, description }: data) => {
+const ActionCard = ({ mainTitle, mainImage, description, link = "" }: data) => {
   return (
     <div
       className={`d-flex col-12 flex-column-reverse flex-md-row ${styles.container}`}
@@ -21,20 +23,24 @@ const ActionCard = ({ mainTitle, mainImage, description }: data) => {
           <div className="my-4">
             <Heading title={description} color="white" size="h6" weight="4" />
           </div>
-          <div className="d-flex align-items-center mt-2">
-            <Heading
-              title="Get Started"
-              color="electric-green"
-              size="h6"
-              weight="4"
-            />
-            <Image
-              className="m-2"
-              src={greenArrow}
-              alt="arrow icon"
-              width={50}
-            />
-          </div>
+          <Link href={link} target="_blank">
+            <div
+              className={`d-flex align-items-center mt-2 ${styles.action_container}`}
+            >
+              <Heading
+                title="Get Started"
+                color="electric-green"
+                size="h6"
+                weight="4"
+              />
+              <Image
+                className="m-2"
+                src={greenArrow}
+                alt="arrow icon"
+                width={50}
+              />
+            </div>
+          </Link>
         </div>
       </div>
       <div className={styles.right_row}>

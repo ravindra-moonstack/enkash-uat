@@ -398,6 +398,7 @@ const slash = () => {
             </>
           }
           mainImage={officeImg}
+          link="https://home.enkash.com/signup?utm_source=corporate_cards"
           description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
         />
       </div>

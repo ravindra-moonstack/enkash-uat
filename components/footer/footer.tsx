@@ -8,9 +8,9 @@ import {
   instLogo,
   call,
   locationPin,
-  securityTwo,
-  securityOne,
-  securityThree,
+  pci,
+  soc,
+  rbi,
 } from ".";
 import Heading from "../heading/heading";
 import Link from "next/link";
@@ -389,6 +389,14 @@ const Footer = ({ utmSource = "" }: any) => {
                       width={25}
                     />
                   </Link>
+                </div>
+                <div className="mt-4 d-flex flex-column">
+                  <Heading title="Certifications" color="white" size="h6" />
+                  <div className={styles.certifications}>
+                    <Image src={soc} alt="security1" />
+                    <Image src={rbi} alt="security1" />
+                    <Image src={pci} alt="security1" />
+                  </div>
                 </div>
               </li>
             </ul>
