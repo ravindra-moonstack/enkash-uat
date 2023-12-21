@@ -37,8 +37,8 @@ const Footer = ({ utmSource = "" }: any) => {
       <div className={`row ${styles.footer_padding}`}>
         <div className="col-12 mb-4">
           <h2 className="color-white mb-4">
-            Spend Smart, Collect Fast, <br />
-            <span className="color-equity-blue">Grow More</span>
+            Spend Smart. Collect Fast. <br />
+            <span className="color-equity-blue">Grow More.</span>
           </h2>
           <Link
             href={"https://home.enkash.com/signup?utm_source=" + utmSource}
@@ -65,7 +65,7 @@ const Footer = ({ utmSource = "" }: any) => {
                 <Link href="/olympus/payables/bulk-payout/">Bulk Payout</Link>
               </li>
               <li>
-                <Link href="/olympus/payables/tax-payments/">GST Payment</Link>
+                <Link href="/olympus/payables/gst-payments/">GST Payment</Link>
               </li>
               <li>
                 <Link href="/olympus/payables/vendor-payment/">
@@ -267,9 +267,10 @@ const Footer = ({ utmSource = "" }: any) => {
             <div className="mt-2">
               <h4 className={`${styles.title}`}>Company</h4>
               <ul>
-                <li>
+                {/* <li>
                   <Link href="/about">About Us</Link>
-                </li>
+                </li> */}
+
                 <li>
                   <Link href="/sales?source=getstarted_footer">Sales</Link>
                 </li>
@@ -393,9 +394,9 @@ const Footer = ({ utmSource = "" }: any) => {
                 <div className="mt-4 d-flex flex-column">
                   <Heading title="Certifications" color="white" size="h6" />
                   <div className={styles.certifications}>
-                    <Image src={soc} alt="security1" />
-                    <Image src={rbi} alt="security1" />
-                    <Image src={pci} alt="security1" />
+                    <Image src={soc} alt="soc logo" />
+                    {/* <Image src={rbi} alt="security1" /> */}
+                    <Image src={pci} alt="pci logo" />
                   </div>
                 </div>
               </li>

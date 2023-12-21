@@ -7,7 +7,7 @@ export const motherProducts = [
   },
   {
     name: "Slash",
-    description: "Simplify corporate spending with flexible card solutions",
+    description: "Manage employee expenses and reimbursements with a highly customizable platform",
     link: "/slash",
   },
   {

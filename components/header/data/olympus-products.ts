@@ -118,7 +118,7 @@ const olympusProducts = [
       "Effortlessly streamline your business payments and collections",
     footerMobileText: "Explore Receivables",
     footerImg: "olympus_footer_bg",
-    footerLink: "olympus",
+    footerLink: "/olympus",
     parentLink: "/olympus",
   },
 ];

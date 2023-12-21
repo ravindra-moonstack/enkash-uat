@@ -56,7 +56,7 @@ const xpenzProducts = [
         link: "/ofex/scan-and-drop-receipts",
       },
     ],
-    footerText: "Optimize business spends with ofEx",
+    footerText: "Optimize business spends with OfEx",
     footerMobileText: "Explore ofEx",
     footerImg: "xpenz_footer_bg",
     footerLink: "/ofex",

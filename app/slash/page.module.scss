@@ -349,3 +349,16 @@
     padding-right: 80px;
   }
 }
+
+.title_row{
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include bp-md {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

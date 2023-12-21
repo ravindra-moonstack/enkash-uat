@@ -696,7 +696,7 @@ const vendorPayment = () => {
           }
         />
       </div>
-      <Footer   utmSource="payables"/>
+      <Footer utmSource="payables"/>
     </div>
   );
 };

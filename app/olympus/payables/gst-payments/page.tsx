@@ -64,7 +64,7 @@ const taxPayments = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Make GST challan payments on time every time with an optimized process and easy approvals via EnKash"
+              title="Enable quicker GST challan payment on time every time with an optimized process and easy approvals via EnKash"
               color="white"
               size="h6"
               weight="5"
@@ -257,7 +257,7 @@ const taxPayments = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how gst payments can revolutionize the way you work!"
+          title="Learn how GST payments can revolutionize the way you work!"
         />
       </div>
 
@@ -269,7 +269,7 @@ const taxPayments = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about tax payments in detail"
+            title="Don't worry! Our FAQs section will help you learn about gst payments in detail"
             color="black"
             size="h4"
           />
@@ -582,7 +582,7 @@ const taxPayments = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="If you are making the payments online, you have access to it around the clock but if you want transaction for the same day, it is better to time your payments between 08:00 AM to 08:00 PM."
+                  title="If you are making the payments online, you have access to it around the clock but if you want transaction for the same day, it is better to time your payments between 08:00 am to 08:00 pm."
                 />
               </div>
               <div className="mb-2">

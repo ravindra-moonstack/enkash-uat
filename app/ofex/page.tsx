@@ -417,7 +417,7 @@ const OfEx = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how OfEX can revolutionize the way you work!"
+          title="Learn how OfEx can revolutionize the way you work!"
         />
       </div>
 

@@ -284,7 +284,7 @@ const bulkPayout = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of bulk payouts?"
-          description="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment. EnKash provides bulk payment solutions to businesses"
+          description="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

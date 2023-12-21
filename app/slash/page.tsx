@@ -189,7 +189,7 @@ const slash = () => {
           </div>
         </div>
       </div>
-
+{/* 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
           <div className={styles.lottie_container}>
@@ -225,7 +225,7 @@ const slash = () => {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* <div className={styles.more_cards}>
         <div className={`row bg-white ${styles.section}`}>
@@ -274,8 +274,8 @@ const slash = () => {
         </div>
       </div> */}
 
-      <div className="row bg-white row-padding">
-        <div className="text-center">
+      <div className={`row bg-white ${styles.title_row}`}>
+        <div className="text-center d-flex flex-column">
           <Heading
             title={`Slash the hassle of${space}`}
             size="h1"
@@ -510,7 +510,7 @@ const slash = () => {
       <div className="row">
         <ContactUsCard
           title="Customizable cards for corporate expenses"
-          description="'Freedom Cards' are purpose-built business credit, prepaid, and virtual cards designed for various corporate needs such as travel, marketing, SaaS, fuel, meals, etc. Powered by banks and financial institutions, these cards enable businesses to issue customized corporate cards, set spending limits, and track expenses in real time."
+          description="These purpose-built business credit, prepaid, and virtual cards have been designed for various corporate needs such as travel, marketing, SaaS, fuel, meals, etc. Powered by banks and financial institutions, these cards enable customization along with setting spending limits and tracking in real time."
         />
       </div>
 

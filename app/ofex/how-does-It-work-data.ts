@@ -34,7 +34,7 @@ const dataSets = [
     imageSrc: iconFive,
     altText: "Automated approval workflow",
     heading:
-      "On-click approval process based on predefined budgets or policies",
+      "One-click approval process based on predefined budgets or policies",
   },
   {
     imageSrc: iconSix,

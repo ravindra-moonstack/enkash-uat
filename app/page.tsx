@@ -466,7 +466,7 @@ const home = () => {
               </div>
 
               <div className="mt-4">
-                <PrimaryButton title="Get a Demo" theme="theme-green" />
+                <PrimaryButton title="Get a Demo" url="/sales" theme="theme-green" />
               </div>
             </div>
             <div className={styles.img_container}>
@@ -539,7 +539,7 @@ const home = () => {
             />
           </div>
         </div>
-        <div
+        {/* <div
           className={`col-md-6 col-12 row-padding-x-only order-3 order-md-3  mt-md-3`}
         >
           <div className={styles.padding}>
@@ -550,8 +550,8 @@ const home = () => {
               link="/diy"
             />
           </div>
-        </div>
-        <div
+        </div> */}
+        {/* <div
           className={`col-md-6 col-12 mb-5 mb-m-0 mt-5 row-padding-x-only d-flex d-flex justify-content-center order-4 order-md-4`}
         >
           <div className={styles.right_image_container}>
@@ -570,7 +570,7 @@ const home = () => {
               className={styles.background_image}
             />
           </div>
-        </div>
+        </div> */}
       </div>
       <div className={`${styles.tenth_row} row bg-white`}>
         <LoyaltyLoungeSection />
@@ -750,7 +750,7 @@ const home = () => {
             <PrimaryButton
               title="Get a Demo"
               isDisabled={false}
-              url=""
+              url="/sales"
               theme="theme-blue"
             />
           </div>
@@ -795,7 +795,7 @@ const home = () => {
                 <Image src={authorOne} alt="enkash user image" loading="lazy" />
               </div>
               <div className="d-flex flex-column">
-                <Heading title="Deep Sehgal, Founder," size="h4" weight="4" />
+                <Heading title="Deep Sehgal, Founder & CEO," size="h4" weight="4" />
                 <Heading title="Vianet" size="h4" weight="4" />
               </div>
             </div>

@@ -226,7 +226,7 @@ const sales = () => {
                   <option value="none">Open this select menu</option>
                   <option value="Payables">Payables</option>
                   <option value="Receievables">Receievables</option>
-                  <option value="Ofex">Ofex</option>
+                  <option value="Ofex">OfEx</option>
                   <option value="Slash">Slash</option>
                   <option value="Reward & Offers">Reward & Offers</option>
                   <option value="Channel Incentive">Channel Incentive</option>
@@ -253,8 +253,8 @@ const sales = () => {
                 >
                    <option value="">Open this select menu</option>
                   <option value="Payables">Payables</option>
-                  <option value="Receievables">Receievables</option>
-                  <option value="Ofex">Ofex</option>
+                  <option value="Receievables">Receivables</option>
+                  <option value="Ofex">OfEx</option>
                   <option value="Slash">Slash</option>
                   <option value="Reward & Offers">Reward & Offers</option>
                   <option value="Channel Incentive">Channel Incentive</option>

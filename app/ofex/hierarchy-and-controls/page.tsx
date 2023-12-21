@@ -240,12 +240,12 @@ const hierarchyAndControls = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="bg-white row-padding text-center d-flex flex-column">
+      {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how hierarchy and control can benefit your business and employees!"
         />
-      </div>
+      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

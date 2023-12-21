@@ -259,7 +259,7 @@ const rentalPayments = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of rent payment software?"
-          description="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments. You can use this software to keep a record of all the premises your business rents with details including the number of premises, the rental agreements, the amounts due, the dates on which rents are due, and the details of the landlords. Furthermore, you can also set up the process workflows for rent payments to make the process quicker and more efficient."
+          description="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

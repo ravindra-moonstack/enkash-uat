@@ -55,12 +55,7 @@ const digitalMarketingCard = () => {
               weight="7"
             />
             <div>
-              <Heading
-                title={`your${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
+          
               <Heading
                 title={`digital marketing${space}`}
                 color="rainy-blue"
@@ -241,7 +236,7 @@ const digitalMarketingCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Brand Vouchers offer many benefits for your business and employees!"
+          title="Learn how digital marketing cards offer many benefits for your business and employees!"
         />
       </div>
       <div

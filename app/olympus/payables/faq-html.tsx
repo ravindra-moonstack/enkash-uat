@@ -31,7 +31,7 @@ const FAQHtml = ({ faqData }: any) => {
                   issues.
                 </h4>
                 <h4>
-                  For the <Link href="/tax-payments">tax payment</Link> to go on
+                  For the <Link href="/olympus/payables/gst-payments">gst payment</Link> to go on
                   time, there are various steps involved, which need to take
                   place quickly and without any errors. The process starts by
                   logging into the GST portal, checking the details of the tax

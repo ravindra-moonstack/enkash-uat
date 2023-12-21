@@ -238,7 +238,7 @@ const saasCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how saas cards can benefit your business and employees!"
+          title="Learn how SaaS cards can benefit your business and employees!"
         />
       </div>
       <div
@@ -397,13 +397,7 @@ const saasCard = () => {
               </div>
               <div className="mb-3">
                 <p>
-                  our SaaS expense management platform or{" "}
-                  <Link
-                    href="https://www.enkash.com/resources/blog/enkash-spend-management-software-for-smb/"
-                    target="_blank"
-                  >
-                    subscription management platform
-                  </Link>{" "}
+                  Our SaaS expense management platform or subscription management platform
                   will ensure the following:
                 </p>
               </div>

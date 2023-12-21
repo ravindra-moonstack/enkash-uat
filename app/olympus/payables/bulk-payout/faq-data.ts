@@ -68,7 +68,7 @@ const faqData = [
     ],
   },
   {
-    question: "What does the future hold for Bulk Payments?",
+    question: "What does the future hold for bulk payments?",
     answer: [
       {
         heading:

@@ -1,7 +1,6 @@
 import Footer from "@/components/footer/footer";
 import "../styles/_base.scss";
-import "../styles/_about_old.scss";
-
+// import "../styles/_about_old.scss";
 import "bootstrap/dist/css/bootstrap.css";
 import Script from "next/script";
 

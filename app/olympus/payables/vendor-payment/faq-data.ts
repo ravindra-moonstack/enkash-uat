@@ -19,10 +19,10 @@ const faqData = [
         heading:
           "Follow the below steps to make vendor payments via EnKash platform:",
         bullets: [
-          "Log in to EnKash with valid credentials and complete KYC.",
-          "Go to Vendor Payments under Olympus and upload invoices.",
-          "Add maker-checker approval workflow.",
-          "Select vendor invoices to be paid individually or in bulk with one click with the preferred payment mode.",
+          "Log in to EnKash with valid credentials and complete KYC",
+          "Go to Vendor Payments under Olympus and upload invoices",
+          "Add maker-checker approval workflow",
+          "Select vendor invoices to be paid individually or in bulk with one click with the preferred payment mode",
         ],
       },
     ],
@@ -34,9 +34,9 @@ const faqData = [
         heading:
           "There are three different ways through which TDS on vendor payments can be deducted. The same are mentioned below:",
         bullets: [
-          "By creating an invoice on the EnKash platform.",
-          "After uploading a vendor invoice and editing it, or.",
-          "By syncing your Tally integrated system with the EnKash portal.",
+          "By creating an invoice on the EnKash platform",
+          "After uploading a vendor invoice and editing it, or",
+          "By syncing your Tally integrated system with the EnKash portal",
         ],
       },
     ],

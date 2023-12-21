@@ -277,12 +277,12 @@ const policyApprovalFlow = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="bg-white row-padding text-center d-flex flex-column">
+      {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how policy and approval flows can revolutionize the way you work!"
         />
-      </div>
+      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
