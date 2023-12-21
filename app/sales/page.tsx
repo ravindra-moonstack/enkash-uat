@@ -14,7 +14,7 @@ const sales = () => {
   const [companyEmail, setCompanyEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState("none");
   const [selectedAdditionalProduct, setSelectedAdditionalProduct] =
     useState("");
   const [description, setDescription] = useState("");
@@ -98,10 +98,10 @@ const sales = () => {
 
   return (
     <div>
+<Header />
       <div className={styles.container}>
-        <Header />
         <div className={styles.inner_container}>
-          <div className="mb-5 d-flex justify-content-center">
+          <div className="mb-5 d-flex justify-content-md-center">
             <Heading
               title="Contact Our Sales Team"
               size="h3"
@@ -117,8 +117,8 @@ const sales = () => {
                 color="black"
                 weight="5"
               />
-              <div className="d-flex w-40 mt-3 justify-content-start">
-                <div className="me-5">
+              <div className="d-flex w-40 mt-3 flex-column flex-md-row justify-content-start">
+                <div className="me-5 mb-2 mb-m-0">
                   <input
                     type="text"
                     value={fullName}
@@ -135,7 +135,7 @@ const sales = () => {
                     </span>
                   )}
                 </div>
-                <div className="me-5">
+                <div className="me-5 mb-2 mb-m-0">
                   <input
                     type="email"
                     value={companyEmail}
@@ -150,7 +150,7 @@ const sales = () => {
                     </span>
                   )}
                 </div>
-                <div>
+                <div className="me-5 me-m-0">
                   <input
                     type="tel"
                     value={mobileNumber}
@@ -176,8 +176,8 @@ const sales = () => {
                 color="black"
                 weight="5"
               />
-              <div className="d-flex w-40 mt-3 justify-content-start">
-                <div className="me-5">
+              <div className="d-flex w-40 mt-3 flex-column flex-md-row justify-content-start">
+                <div className="me-5 mb-2 mb-m-0">
                   <input
                     type="text"
                     value={companyName}
@@ -192,7 +192,7 @@ const sales = () => {
                     </span>
                   )}
                 </div>
-                <div>
+                <div className="mb-2 mb-m-0">
                   <input
                     type="url"
                     value={companyWebsite}
@@ -205,14 +205,14 @@ const sales = () => {
             </div>
 
             {/* Third Row */}
-            <div className="d-flex align-items-center w-100 mt-4">
+            <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
               <Heading
                 title="Primary product you are interested in:"
                 size="h6"
                 color="black"
                 weight="5"
               />
-              <div className="d-flex w-40 ms-3 justify-content-start">
+              <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
                 <select
                   value={selectedProduct}
                   onChange={(e) => {
@@ -237,14 +237,14 @@ const sales = () => {
             </div>
 
             {/* Fourth Row */}
-            <div className="d-flex align-items-center w-100 mt-4">
+            <div className="d-flex flex-column flex-md-row  align-items-md-center w-100 mt-4">
               <Heading
                 title="Additional products you are interested in:"
                 size="h6"
                 color="black"
                 weight="5"
               />
-              <div className="d-flex w-40 ms-3 justify-content-start">
+              <div className="d-flex w-40 ms-md-3 mt-2 mt-m-0 flex-column flex-md-row justify-content-start">
                 <select
                   value={selectedAdditionalProduct}
                   onChange={(e) => setSelectedAdditionalProduct(e.target.value)}
@@ -265,14 +265,14 @@ const sales = () => {
             </div>
 
             {/* Fifth Row (Description) */}
-            <div className="d-flex align-items-center w-100 mt-4">
+            <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
               <Heading
                 title="Description of your request"
                 size="h6"
                 color="black"
                 weight="5"
               />
-              <div className="ms-3 flex-grow-1">
+              <div className="ms-md-3 flex-grow-1 mt-3 mt-m-0">
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}

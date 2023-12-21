@@ -2,8 +2,12 @@
 @import "../../styles/mixin";
 
 .container {
-  padding: 140px 200px 100px 200px;
+  padding: 35px 30px 25px 30px;
   background: url(./bg.png);
+
+  @include bp-md{
+    padding: 140px 200px 100px 200px;
+  }
 
   @include bp-md {
     background-position: center right;
@@ -19,15 +23,30 @@
     box-shadow: 4px 8px 31px rgba(0, 0, 0, 0.0901960784);
     border-radius: 15px;
     background-color: $color-white;
-    padding: 30px 100px 30px 100px;
+    padding: 10px 30px 10px 30px;
+
+    @include bp-md{
+      padding: 30px 100px 30px 100px;
+    }
   }
 
   .danger {
-    font-size: 13px;
+    font-size: 11px;
+    @include bp-md{
+      font-size: 13px;
+    }
   }
 
   .select_box_error {
     border: 1px solid red;
     opacity: 0.7;
+  }
+
+  .form-control{
+    font-size: 16px !important;
+    @include bp-md{
+      font-size: 12px !important;
+
+    }
   }
 }
