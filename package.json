@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
     "@novemberfiveco/lottie-react-light": "^2.4.0",
     "@types/node": "18.17.1",
     "@types/react": "18.2.14",
