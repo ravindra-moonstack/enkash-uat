@@ -78,7 +78,7 @@ const olympusProducts = [
   },
   {
     subtitle: "Receivables",
-    subtitleLink: "olympus/receivables",
+    subtitleLink: "/olympus/receivables",
     currentHeading: {
       name: "Olympus",
       description:

@@ -39,8 +39,8 @@ const MobileHeader = () => {
               width={20}
               className="me-2"
             />
-            OlympysTM, an EnKash** product, is now licensed online payment
-            aggregator authorised by the RBI
+            Olympus™, an EnKash** product, is a licensed online payment
+            aggregator authorized by the RBI
           </div>
           <Link className={styles.button} href={"/sales"}>
             Join the waitlist
