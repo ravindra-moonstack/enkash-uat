@@ -190,7 +190,7 @@ const OfEx = () => {
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
             title="Policy and Approval Flows"
-            description="Choose an approval matrix (auto, multi, custom, hierarchical) that works best for your business and create and maintain an aligned approval process for all kinds of spends"
+            description="Choose an approval matrix (auto, multi, custom, hierarchical) that works best for your business to create and maintain an aligned approval process for all kinds of spends"
             theme="green"
             link="/ofex/policy-and-approval-flows"
           />
@@ -288,7 +288,7 @@ const OfEx = () => {
             {
               itemArray: ["Expense", "Reporting"],
               oldWayDescription:
-                "Manual expense reporting is time-consuming and prone to errors.",
+                "Traditional expense reporting was paper-based and managing it consumed a lot of manhours, leading to discrepancy in data",
               newWayDescription:
                 "EnKash’s OfEx platform automates the expense recording, leading to zero errors.",
             },
@@ -316,7 +316,7 @@ const OfEx = () => {
             {
               itemArray: ["Accessibility"],
               oldWayDescription:
-                "The old reimbursement processes require form filling, paperwork, and proof of expenditure as receipts, causing delays.",
+                "The old reimbursement processes required form filling, paperwork, and proof of expenditures as receipts, causing delays in reimbursements.",
               newWayDescription:
                 "EnKash’s OfEx drop receipts feature  enables you and your employees to capture and submit expenses on the go from anywhere easily.",
             },

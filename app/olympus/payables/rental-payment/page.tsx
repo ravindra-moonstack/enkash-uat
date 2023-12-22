@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const rentalPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="payables"/>
+      <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -151,14 +151,7 @@ const rentalPayments = () => {
             weight="6"
           />
         </div>
-        <div className="d-flex justify-content-center text-center mb-5">
-          <Heading
-            title="We ensure fast, easy, and safe payments!"
-            color="black"
-            size="h5"
-            weight="6"
-          />
-        </div>
+        <div className="d-flex justify-content-center text-center mb-5"></div>
 
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
@@ -460,7 +453,7 @@ const rentalPayments = () => {
           }
         />
       </div>
-      <Footer  utmSource="payables"/>
+      <Footer utmSource="payables" />
     </div>
   );
 };

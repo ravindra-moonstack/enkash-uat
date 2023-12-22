@@ -276,3 +276,17 @@ body {
 .cursor-pointer {
   cursor: pointer;
 }
+
+.sup-symbol {
+  display: inline;
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: normal;
+  margin-left: 2px;
+  @include for-laptops {
+    font-size: 17px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 14px;
+  }
+}

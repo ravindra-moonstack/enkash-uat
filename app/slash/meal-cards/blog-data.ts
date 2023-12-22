@@ -23,13 +23,13 @@ const blogData = [
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2022/09/Types-of-corporate-credit-cards-to-manage-expenses.jpg",
-    imageAlt: "9 types of corporate credit cards to manage expenses",
-    title: "9 types of corporate credit cards to manage expenses",
-    date: "Sep 23, 2022",
+      "https://www.enkash.com/resources/wp-content/uploads/2022/10/Prepaid-Cards-A-definitive-guide-to-growth-and-profitibility.jpg",
+    imageAlt: "Prepaid Cards – A Guide to Growth",
+    title: "Prepaid Cards – A Guide to Growth",
+    date: "Oct 20, 2022",
     description:
-      "The corporate credit card has been around the business industry for a while now. While popular banks have been issuing many types of corporate credit cards for years, FinTech platforms...",
-    link: "https://www.enkash.com/resources/blog/smart-business-expenses-managment/",
+      "The growth of a business depends on various factors, one of which is the way a company makes payments. With the country rapidly moving towards digitization in different industries, digital payment...",
+    link: "https://www.enkash.com/resources/blog/prepaid-cards-a-defintive-guide-to-growth/",
   },
 ];
 

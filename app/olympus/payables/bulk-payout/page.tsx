@@ -23,15 +23,15 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: " Bulk Payout | Corporate Bulk Payment Solution | EnKash",
+  title: " Express Pay | Corporate Bulk Payment Solution | EnKash",
   description:
-    "Revolutionize your financial processes with our advanced bulk payout solution. Experience the ease of managing large-scale payments through our efficient bulk payment system.",
+    "Revolutionize your financial processes with our advanced express pay solution. Experience the ease of managing large-scale payments through our efficient bulk payment system.",
 };
 
 const bulkPayout = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="payables"/>
+      <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -43,7 +43,7 @@ const bulkPayout = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Bulk Payout" size="h4" weight="4" />
+            <Heading title="Express Pay" size="h4" weight="4" />
           </div>
           <Heading
             title={`Fast and secure${space}`}
@@ -54,7 +54,7 @@ const bulkPayout = () => {
 
           <div className="d-inline">
             <Heading
-              title={`bulk payouts${space}`}
+              title={`express pay${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -201,13 +201,13 @@ const bulkPayout = () => {
                     />
                   </>
                 }
-                description="Processing payments individually can be time-consuming and can cause delays. By using bulk payout, you can reduce payment processing time and improve cash flow"
+                description="Processing payments individually can be time-consuming and can cause delays. By using express pay, you can reduce payment processing time and improve cash flow"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Centralized System"
-                description="By centralizing payment processing through a bulk payout system, you can have better visibility and control over processes to prevent errors"
+                description="By centralizing payment processing through a express pay system, you can have better visibility and control over processes to prevent errors"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -219,7 +219,7 @@ const bulkPayout = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Checks and Approvals"
-                description="Finance is all about timely payments with the right checks and approvals to ensure negligible misuse of funds. The process of bulk payout for your recurring payments ensures speed and efficiency"
+                description="Finance is all about timely payments with the right checks and approvals to ensure negligible misuse of funds. The process of express pay for your recurring payments ensures speed and efficiency"
               />
             </div>
           </div>
@@ -256,7 +256,7 @@ const bulkPayout = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how bulk payouts can revolutionize the way you work!"
+          title="Learn how express pay can revolutionize the way you work!"
         />
       </div>
       <div
@@ -267,7 +267,7 @@ const bulkPayout = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about bulk payout in detail"
+            title="Don't worry! Our FAQs section will help you learn about express pay in detail"
             color="black"
             size="h4"
           />
@@ -283,7 +283,7 @@ const bulkPayout = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of bulk payouts?"
+          title="Seeking further understanding of express pay?"
           description="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment."
         />
       </div>
@@ -326,7 +326,7 @@ const bulkPayout = () => {
                   <li>
                     Supports{" "}
                     <Link
-                      href="https://www.google.com/url?q=https://www.enkash.com/resources/blog/modes-of-payment/"
+                      href="https://www.enkash.com/resources/blog/modes-of-payment/"
                       target="_blank"
                     >
                       multiple modes of payment
@@ -392,7 +392,7 @@ const bulkPayout = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title=" What are the payment modes for bulk payout?"
+                  title=" What are the payment modes for express pay?"
                 />
               </div>
               <div className="mb-5">
@@ -424,7 +424,7 @@ const bulkPayout = () => {
           }
         />
       </div>
-      <Footer  utmSource="payables"/>
+      <Footer utmSource="payables" />
     </div>
   );
 };

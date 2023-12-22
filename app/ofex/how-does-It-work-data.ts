@@ -14,9 +14,9 @@ const dataSets = [
   },
   {
     imageSrc: iconTwo,
-    altText: "Allocates hierarchy roles It supports and allocates",
+    altText: "It supports and allocates",
     heading:
-      "Allocates hierarchy roles It supports and allocates customized approval hierarchy aligned to the company’s policies",
+      "It supports and allocates customized approval hierarchy aligned to the company’s policies",
   },
   {
     imageSrc: iconThree,

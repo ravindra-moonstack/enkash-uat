@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 const virtualAccounts = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="receivables"/>
+      <Header utmSource="receivables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -43,6 +43,7 @@ const virtualAccounts = () => {
               />
             </div>
             <Heading title="Virtual Accounts" size="h4" weight="4" />
+            <span className="sup-symbol">#</span>
           </div>
           <div className="d-flex flex-column">
             {" "}
@@ -386,7 +387,7 @@ const virtualAccounts = () => {
           }
         />
       </div>
-      <Footer  utmSource="receivables"/>
+      <Footer utmSource="receivables" />
     </div>
   );
 };

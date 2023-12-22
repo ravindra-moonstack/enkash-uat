@@ -314,7 +314,7 @@ const loyaltyLounge = () => {
                 "Automated notifications of awarded points and redemption process via WhatsApp, email, and SMS.",
             },
             {
-              itemArray: ["Ease", "of use"],
+              itemArray: ["Ease", "of Use"],
               oldWayDescription:
                 "Rewards programs can be complex and time-consuming to administer.",
               newWayDescription:
@@ -439,7 +439,7 @@ const loyaltyLounge = () => {
       <div className="row">
         <ContactUsCard
           title="Revolutionize your rewards programs with EnKash"
-          description="Loyalty Lounge is a solution that offers rewards, corporate gifting, and incentives management. It provides a centralized redemption platform for rewards such as brand vouchers, gift cards, offers, and employee recognition."
+          description="Loyalty lounge is a solution that offers rewards, corporate gifting, and incentives management. It provides a centralized redemption platform for rewards such as brand vouchers, gift cards, offers, and employee recognition."
         />
       </div>
 
