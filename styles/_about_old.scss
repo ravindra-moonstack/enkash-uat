@@ -29,10 +29,7 @@ $abt-li-color: #231e1e;
   background-color: $color-indi-volt;
   padding: 50px 40px 480px 40px;
   @include for-laptops {
-    padding: 150px 90px 50px 90px;
-  }
-  @include for-laptops {
-    padding: 150px 90px 50px 90px;
+    padding: 150px 90px 120px 90px;
   }
 }
 
