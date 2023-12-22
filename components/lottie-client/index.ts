@@ -127,3 +127,8 @@ export const payablesBulkAnimation = () =>
   import("../../app/olympus/payables/img/lottie/bulk-pay.json");
 export const payablesBillAnimation = () =>
   import("../../app/olympus/payables/img/lottie/bill-pay.json");
+
+
+  //About
+  export const aboutBanner = () =>
+  import("../../app/about/img/lottie/group.json");
