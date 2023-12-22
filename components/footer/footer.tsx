@@ -411,7 +411,7 @@ const Footer = ({ utmSource = "" }: any) => {
           RBI compliance maintained by banks & regulated entities. EnKash is not
           a bank and doesn’t hold or claim to hold a banking license.{" "}
           <span className="color-electric-green">
-            *Powered by Banks. <sup># </sup> Launching soon as per RBI's PA
+            *Powered by Banks/REs. <sup># </sup> Launching soon as per RBI's PA
             (Online) authorization
           </span>
         </div>
@@ -424,7 +424,7 @@ const Footer = ({ utmSource = "" }: any) => {
         <div className="d-flex flex-column me-5 color-white">
           <div className={styles.main_title}>
             Olympus™, an EnKash** product, is a licensed online payment
-            aggregator authorized by the RBI.
+            aggregator authorized by the RBI
           </div>
           <div className={styles.sub_title}>
             **EnKash is a commercial trade name owned by the legal entity, Nehat

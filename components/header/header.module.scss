@@ -12,12 +12,15 @@
   backdrop-filter: blur(30px);
 }
 
-.header {
+.header_wrapper {
   position: absolute;
   z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
+}
+
+.header {
   padding: 30px 30px 0px 30px;
 
   ul {
@@ -104,4 +107,39 @@
 
 .link {
   color: inherit;
+}
+
+.desktop_banner {
+  background-color: $color-equity-blue;
+  display: flex;
+  padding: 15px 20px 15px 70px;
+  justify-content: space-evenly;
+  align-items: center;
+
+  .button {
+    background-color: $color-white;
+    color: $color-equity-blue;
+    border: none;
+    border-radius: 20px;
+    padding: 2px 20px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .text {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: $color-white;
+  }
+
+  .cross_image {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    width: auto;
+    opacity: 0.7;
+    cursor: pointer;
+  }
 }
