@@ -50,6 +50,7 @@ const receivables = () => {
               weight="7"
             />
             <Heading title={`${space}Receivables`} size="h1" weight="7" />
+            <sup className="sup-symbol-large">#</sup>
           </div>
           <div className="d-flex flex-column">
             <Heading
@@ -328,7 +329,6 @@ const receivables = () => {
           }
           mainImage={officeImg}
           link="https://home.enkash.com/signup?utm_source=receivables"
-
           description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
         />
       </div>

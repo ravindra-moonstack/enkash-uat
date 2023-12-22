@@ -290,3 +290,17 @@ body {
     font-size: 14px;
   }
 }
+
+.sup-symbol-large {
+  display: inline;
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: normal;
+  margin-left: 2px;
+  @include for-laptops {
+    font-size: 35px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 30px;
+  }
+}

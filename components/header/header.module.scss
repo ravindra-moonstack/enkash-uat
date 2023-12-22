@@ -110,6 +110,8 @@
 }
 
 .desktop_banner {
+  position: relative;
+  height: 100%;
   background-color: $color-equity-blue;
   display: flex;
   padding: 15px 20px 15px 90px;
@@ -150,7 +152,7 @@
   }
 
   .banner_stack {
-    height: 70%;
+    height: 100%;
     width: 60%;
     position: absolute;
     left: 0;
