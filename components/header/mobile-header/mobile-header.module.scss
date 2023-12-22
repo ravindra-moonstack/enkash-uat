@@ -113,3 +113,46 @@
   font-size: 14px;
   color: $color-secondry-grey;
 }
+
+.mobile_banner {
+  position: relative;
+  background-color: $color-equity-blue;
+  display: flex;
+  padding: 15px 20px;
+  justify-content: space-evenly;
+  flex-direction: column;
+
+  .button {
+    margin-top: 10px;
+    margin-left: 25px;
+    background-color: $color-white;
+    color: $color-equity-blue;
+    border: none;
+    border-radius: 20px;
+    padding: 2px 20px;
+    font-weight: 500;
+    text-decoration: none;
+    width: max-content;
+    cursor: pointer;
+  }
+
+  .text {
+    display: inline;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: $color-white;
+  }
+
+  .cross_image {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    height: 20px;
+    width: auto;
+    opacity: 0.7;
+    cursor: pointer;
+  }
+}
