@@ -58,7 +58,7 @@ const xpenzProducts = [
       },
     ],
     footerText: "Optimize business spends with OfEx",
-    footerMobileText: "Explore ofEx",
+    footerMobileText: "Explore OfEx",
     footerImg: "xpenz_footer_bg",
     footerLink: "/ofex",
     parentLink: "/ofex",
