@@ -58,7 +58,6 @@ const SubProductListView = (props: {
                     </li>
                   </>
                 )}
-                s
               </div>
             ))}
           </div>
@@ -114,7 +113,11 @@ const SubProductListView = (props: {
         </div>
         {props.setSelectedItemIndex === 1 && (
           <div className={styles.powered}>*Powered by Banks/REs</div>
-    
+        )}
+        {props.setSelectedItemIndex === 0 && (
+          <div className={styles.powered}>
+            #Launching soon 🚀 as per RBI's PA (Online) authorization
+          </div>
         )}
 
         <div

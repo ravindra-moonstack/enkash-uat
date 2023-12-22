@@ -82,7 +82,7 @@ const olympusProducts = [
     currentHeading: {
       name: "Olympus",
       description:
-        "Automate your company's AP, AR, and bank reconciliation seamlessly",
+        "Automate your company’s accounts payable, accounts receivables, and bank reconciliation seamlessly",
     },
     list: [
       {
