@@ -755,18 +755,6 @@
     padding-right: 100px;
   }
 
-  .lottie_container {
-    display: flex;
-    align-items: center;
-    @include for-laptops {
-      height: 525px;
-    }
-
-    @include for-large-screen {
-      height: 600px;
-    }
-  }
-
   .left_image_container {
     position: relative;
 
@@ -776,6 +764,7 @@
       left: 0px;
       height: 400px;
       width: auto;
+      z-index: 1;
       @include for-laptops {
         top: -30px;
         left: 0px;
@@ -785,15 +774,18 @@
         height: 550px;
       }
     }
-    .overlay_image {
-      width: 470px;
+
+    .lottie_container {
+      position: relative;
+      display: flex;
+      align-items: center;
+      z-index: 2;
       @include for-laptops {
-        margin-top: 0px;
-        width: 500px;
-        margin-top: -10px;
+        height: 525px;
       }
+
       @include for-large-screen {
-        width: 600px;
+        height: 600px;
       }
     }
   }
