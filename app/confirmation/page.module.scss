@@ -4,7 +4,7 @@
 .enkash_confirmation_container {
   padding-top: 700px;
 
-  @include bp-md {
+  @include for-laptops {
     padding-top: 500px;
     padding-bottom: 200px;
   }
@@ -12,7 +12,7 @@
   .confirmation_box {
     text-align: center;
     width: 320px;
-    @include bp-md {
+    @include for-laptops {
       width: 400px;
     }
     height: 360px;
@@ -25,13 +25,13 @@
     bottom: 0;
     top: 70px;
     margin: auto;
-    @include bp-md {
+    @include for-laptops {
       margin: auto;
     }
     .confirmation_img {
       margin-top: -105px;
       width: 80%;
-      @include bp-md {
+      @include for-laptops {
         margin-top: -96px;
         width: auto;
       }

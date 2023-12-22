@@ -8,7 +8,7 @@
   background: $color-white;
   border-top: 1px solid $color-black;
 
-  @include bp-md {
+  @include for-laptops {
     height: 600px;
   }
 
@@ -20,7 +20,7 @@
     padding-top: 40px;
     padding-bottom: 40px;
 
-    @include bp-md {
+    @include for-laptops {
       padding-top: 30px;
       padding-bottom: 30px;
       padding-right: 50px;
@@ -31,12 +31,12 @@
     justify-content: center;
     flex-direction: column;
     font-weight: 600;
-    @include bp-md {
+    @include for-laptops {
       width: 55%;
     }
     h1 {
       font-size: 16px;
-      @include bp-md {
+      @include for-laptops {
         font-size: 43px;
       }
     }
@@ -47,12 +47,12 @@
       overflow-y: auto;
       padding-right: 5px;
 
-      @include bp-md {
+      @include for-laptops {
         height: 150px;
       }
 
       &::-webkit-scrollbar {
-        @include bp-md {
+        @include for-laptops {
           width: 8px;
         }
         width: 4px;
@@ -60,14 +60,14 @@
       }
 
       &::-webkit-scrollbar-thumb {
-        @include bp-md {
+        @include for-laptops {
           border-radius: 4px;
         }
         border-radius: 2px;
         background-color: $color-equity-blue;
       }
 
-      @include bp-md {
+      @include for-laptops {
         font-size: 24px;
       }
     }
@@ -76,7 +76,7 @@
   .image_container {
     width: 58%;
     padding-left: 10px;
-    @include bp-md {
+    @include for-laptops {
       padding-left: 10px;
       width: 55%;
     }
@@ -84,7 +84,7 @@
     img {
       height: 280px;
       width: 200px;
-      @include bp-md {
+      @include for-laptops {
         width: auto;
         height: 700px;
       }
@@ -101,13 +101,13 @@
       transition: width 0.3s ease-in-out;
       width: 35px;
       height: 10px;
-      @include bp-md {
+      @include for-laptops {
         height: 15px;
         width: 55px;
       }
       &:hover {
         width: 35px;
-        @include bp-md {
+        @include for-laptops {
           width: 70px;
         }
       }
@@ -121,7 +121,7 @@
       color: $color-equity-blue;
       text-decoration: underline;
       text-underline-offset: 5px;
-      @include bp-md {
+      @include for-laptops {
         font-size: 22.5px;
       }
     }

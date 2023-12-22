@@ -26,7 +26,7 @@
       0px 187px 52px 0px rgba(0, 0, 0, 0);
   }
 
-  @include bp-md {
+  @include for-laptops {
     width: 400px;
     padding-top: 40px;
     padding-right: 40px;
@@ -42,7 +42,7 @@
   font-weight: 400;
   margin-bottom: 0;
   line-height: normal;
-  @include bp-md {
+  @include for-laptops {
     font-size: 18px;
   }
 }
@@ -57,7 +57,7 @@
 .action_container {
   position: absolute;
   bottom: 30px;
-  @include bp-md {
+  @include for-laptops {
     bottom: 50px;
   }
   cursor: pointer;

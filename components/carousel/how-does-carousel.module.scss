@@ -6,7 +6,7 @@
   padding-top: 80px;
   padding-bottom: 250px;
 
-  @include bp-md {
+  @include for-laptops {
     padding-bottom: 150px;
   }
 
@@ -27,13 +27,13 @@
     );
     backdrop-filter: blur(3.210831880569458px);
     display: flex;
-    @include bp-md {
+    @include for-laptops {
       flex-direction: column;
     }
     .left_row {
       width: 100%;
       padding-left: 20px;
-      @include bp-md {
+      @include for-laptops {
         padding: 0;
         padding: 40px 40px 40px 80px;
         width: 43%;
@@ -46,13 +46,13 @@
     right: 0;
     top: 250px;
     width: 100%;
-    @include bp-md {
+    @include for-laptops {
       top: -70px;
       width: 57%;
     }
     img {
       height: 300px;
-      @include bp-md {
+      @include for-laptops {
         height: 550px;
       }
     }
@@ -66,14 +66,14 @@
       flex-direction: column;
       justify-content: center;
 
-      @include bp-md {
+      @include for-laptops {
         left: 30%;
         width: 57%;
       }
       img {
         height: 50px;
         width: 70px;
-        @include bp-md {
+        @include for-laptops {
           height: 100px;
           width: 120px;
         }
@@ -83,7 +83,7 @@
 
   .card_img {
     width: 40px;
-    @include bp-md {
+    @include for-laptops {
       width: 100px;
     }
   }

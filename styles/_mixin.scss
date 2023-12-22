@@ -1,17 +1,54 @@
-@mixin bp-md {
+//Order of writing media quries will matter , please write in below order
+
+@mixin for-laptops {
   @media (min-width: 768px) {
     @content;
   }
 }
 
-@mixin bp-lg {
-  @media (min-width: 992px) {
+@mixin for-tablet {
+  @media (min-width: 800px) and (max-width: 1200px) {
     @content;
   }
 }
 
-@mixin bp-extra-lg {
+@mixin for-window-zoomed-screens {
+  @media (min-width: 1200px) and (max-width: 1350px) {
+    @content;
+  }
+}
+
+@mixin for-large-screen {
   @media (min-width: 1600px) {
     @content;
   }
 }
+
+
+
+//Example Usage 
+// Order writing media quries matters
+
+// lor-laptops - 1
+// for-tablet - 2
+// for-window-zoomed-screens - 3
+// for-large-screen - 3
+
+// lor-laptops is set to 1 because it serves as a fallback style for included queries and has a wide width range.
+
+// .demo-container {
+//   font-size: 10px; -  for mobile - this dont require media queries as we are using mobile first approach
+
+//   @include for-laptops {
+//     font-size: 30px;
+//   }
+//   @include for-tablet {
+//     font-size: 20px;
+//   }
+//   @include for-window-zoomed-screens {
+//     font-size: 25px;
+//   }
+//   @include for-large-screen {
+//     font-size: 35px;
+//   }
+// }

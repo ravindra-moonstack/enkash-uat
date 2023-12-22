@@ -8,7 +8,7 @@
   padding-right: 25px;
   padding-top: 36px;
   padding-bottom: 36px;
-  @include bp-md {
+  @include for-laptops {
     padding-left: 70px;
     padding-right: 30px;
     padding-top: 190px;
@@ -19,7 +19,7 @@
     width: 350px;
     margin-top: 20px;
     height: auto;
-    @include bp-md {
+    @include for-laptops {
       margin-top: -60px;
       width: 650px;
     }
@@ -31,14 +31,14 @@
   padding-left: 50px;
   padding-right: 50px;
   padding-bottom: 50px;
-  @include bp-md {
+  @include for-laptops {
     padding-left: 130px;
     padding-right: 150px;
   }
 
   .section {
     margin-bottom: 50px;
-    @include bp-md {
+    @include for-laptops {
       margin-bottom: 50px;
     }
   }
@@ -51,14 +51,14 @@
       position: absolute;
       z-index: 2;
       top: -150px;
-      @include bp-md {
+      @include for-laptops {
         top: -50px;
         left: 200px;
       }
     }
     .first_lottie_container {
       width: 200px;
-      @include bp-md {
+      @include for-laptops {
         width: 330px;
       }
     }
@@ -72,7 +72,7 @@
       z-index: 2;
       top: -100px;
       left: -50px;
-      @include bp-md {
+      @include for-laptops {
         top: -100px;
         left: -100px;
       }
@@ -81,7 +81,7 @@
       display: flex;
       width: 250px;
       height: auto;
-      @include bp-md {
+      @include for-laptops {
         margin-top: -70px;
         width: 400px;
       }
@@ -96,7 +96,7 @@
       z-index: 2;
       top: -100px;
       left: -70px;
-      @include bp-md {
+      @include for-laptops {
         top: -50px;
         left: 200px;
       }
@@ -110,7 +110,7 @@
   padding-top: 36px;
   padding-bottom: 36px;
   background-color: $color-indi-volt;
-  @include bp-md {
+  @include for-laptops {
     padding-left: 90px;
     padding-right: 90px;
     padding-top: 110px;
@@ -119,13 +119,13 @@
 
   .lottie_container {
     width: 250px;
-    @include bp-md {
+    @include for-laptops {
       width: 450px;
     }
   }
   .second_lottie_container {
     width: 250px;
-    @include bp-md {
+    @include for-laptops {
       width: 500px;
     }
   }
@@ -142,18 +142,18 @@
       $color-equity-blue 15%,
       $color-black 30%
     );
-    @include bp-md {
+    @include for-laptops {
       height: 8px;
     }
   }
   .progress_items {
     margin-right: 30px;
-    @include bp-md {
+    @include for-laptops {
       margin-right: 0;
     }
   }
   .progress_container {
-    @include bp-md {
+    @include for-laptops {
       justify-content: space-evenly;
     }
   }
@@ -162,7 +162,7 @@
     height: 30px;
     width: 30px;
     margin-top: -10px;
-    @include bp-md {
+    @include for-laptops {
       height: 50px;
       width: 50px;
       transform: none;
@@ -177,7 +177,7 @@
   background-size: cover;
   padding: 50px;
   z-index: 1;
-  @include bp-md {
+  @include for-laptops {
     background: url(./img/circle-stack-desktop.png);
     background-size: 100%;
   }
@@ -185,7 +185,7 @@
     img {
       width: auto;
       height: 50px;
-      @include bp-md {
+      @include for-laptops {
         height: 70px;
       }
     }
@@ -194,7 +194,7 @@
 
 .seventh_row {
   .container {
-    @include bp-md {
+    @include for-laptops {
       padding-left: 150px;
       padding-right: 150px;
     }
@@ -204,14 +204,14 @@
     margin-top: -20px;
     border-radius: 10px;
     border: 2px solid $color-night-blue;
-    @include bp-md {
+    @include for-laptops {
       padding: 40px;
       width: 50%;
       margin-top: 0px;
     }
   }
   .right_row {
-    @include bp-md {
+    @include for-laptops {
       margin-left: -20px;
       margin-top: 0;
       width: 50%;
@@ -229,7 +229,7 @@
   justify-content: center;
   text-align: center;
   padding-bottom: 50px;
-  @include bp-md {
+  @include for-laptops {
     padding-bottom: 250px;
   }
 
@@ -239,7 +239,7 @@
       bottom: 0;
       left: 0;
       display: none;
-      @include bp-md {
+      @include for-laptops {
         height: 300px;
         display: flex;
       }
@@ -253,7 +253,7 @@
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  @include bp-md {
+  @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
     padding-left: 80px;

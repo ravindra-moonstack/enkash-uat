@@ -1,8 +1,5 @@
-export const space = '\u00A0';
+export const space = "\u00A0";
 export const olympusTemplateId = "template_q8nwwim";
 export const defaultTemplateId = "template_grtqiop";
 export const emailjs_service_id = "service_ggwkn2o";
 export const emailjs_public_key = "user_BjlWRs4gHdZBah1IBle91";
-
-
-

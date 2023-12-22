@@ -24,7 +24,7 @@
 // .enkash-first-conatiner .first-container {
 //   background-color: $color-indi-volt;
 //   padding: 50px 40px;
-//   @include bp-md {
+//   @include for-laptops {
 //     padding: 150px 90px 50px 90px;
 //   }
 // }
@@ -74,7 +74,7 @@
 //   p {
 //     letter-spacing: 0.22px;
 //     font-size: 15px;
-//     @include bp-md {
+//     @include for-laptops {
 //       font-size: 17px;
 //     }
 //   }
@@ -82,7 +82,7 @@
 
 // .about-mobile-titile {
 //   display: block;
-//   @include bp-md {
+//   @include for-laptops {
 //     display: none;
 //   }
 // }
@@ -90,7 +90,7 @@
 // .enkash-team-container {
 //   background-color: $color-white;
 //   padding: 28px 40px 56px 40px;
-//   @include bp-md {
+//   @include for-laptops {
 //     padding: 50px 90px 110px 90px;
 //   }
 // }
@@ -101,13 +101,13 @@
 //   color: #26283a;
 //   opacity: 1;
 //   font-size: 25px;
-//   @include bp-md {
+//   @include for-laptops {
 //     font-size: 30px;
 //   }
 //   h4 {
 //     font-size: 25px;
 //     line-height: 30px;
-//     @include bp-md {
+//     @include for-laptops {
 //       // letter-spacing: 8px;
 //       line-height: 40px;
 //       font-size: 30px;
@@ -122,11 +122,11 @@
 //   grid-template-columns: repeat(2, minmax(0, 1fr));
 //   align-items: center;
 //   justify-items: center; /* adjusted */
-//   @include bp-md {
+//   @include for-laptops {
 //     grid-template-columns: repeat(3, minmax(0, 1fr));
 //   }
 //   .enkash-card {
-//     @include bp-md {
+//     @include for-laptops {
 //       width: 300px;
 //     }
 //   }
@@ -138,7 +138,7 @@
 //   border-radius: 8px;
 //   height: 240px;
 //   width: 90%;
-//   @include bp-md {
+//   @include for-laptops {
 //     margin-left: 80px;
 //     border-radius: 20px;
 //     width: 230px;
@@ -154,7 +154,7 @@
 //     height: 140px;
 //     top: -20px;
 //     height: 210px;
-//     @include bp-md {
+//     @include for-laptops {
 //       width: 190px;
 //       height: 230px;
 //       // -webkit-transform: scale(1);
@@ -172,28 +172,28 @@
 //   .user-img#naveen-bindal {
 //     background: url("../app/about/img/naveen-bindal.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
 //   .user-img#yadvendra-tyagi {
 //     background: url("../app/about/img/yadvendra-tyagi.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
 //   .user-img#hemant-vishnoi {
 //     background: url("../app/about/img/hemant-vishnoi.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
 //   .user-img#himanshu-vyas {
 //     background: url("../app/about/img/himanshu-vyas.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -201,7 +201,7 @@
 //   .user-img#lalit-arun {
 //     background: url("../app/about/img/lalit-arun.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -209,7 +209,7 @@
 //   .user-img#abhishek-miglani {
 //     background: url("../app/about/img/abhishek-miglani.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -217,7 +217,7 @@
 //   .user-img#atishree-jindal {
 //     background: url("../app/about/img/atishree-jindal.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -225,7 +225,7 @@
 //   .user-img#hitesh-jain {
 //     background: url("../app/about/img/hitesh-jain.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -233,7 +233,7 @@
 //   .user-img#vibhor-chugh {
 //     background: url("../app/about/img/vibhor-chugh.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -241,7 +241,7 @@
 //   .user-img#nagesh-shet {
 //     background: url("../app/about/img/nagesh-shet.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -249,7 +249,7 @@
 //   .user-img#amandeep-arora {
 //     background: url("../app/about/img/amandeep-arora.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -257,7 +257,7 @@
 //   .user-img#manish-kumawat {
 //     background: url("../app/about/img/manish-kumawat.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -265,7 +265,7 @@
 //   .user-img#anurag-darira {
 //     background: url("../app/about/img/anurag-darira.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -273,7 +273,7 @@
 //   .user-img#krishnakumar-sv {
 //     background: url("../app/about/img/krishna-kumar-sv.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -281,7 +281,7 @@
 //   .user-img#ankur-gupta {
 //     background: url("../app/about/img/ankur-gupta.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -289,7 +289,7 @@
 //   .user-img#martin-arockiaraj {
 //     background: url("../app/about/img/martin-arockiaraj.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -297,7 +297,7 @@
 //   .user-img#vijayanand-srinivasan {
 //     background: url("../app/about/img/vijay-srinivasan.png");
 //     @include background-mixin;
-//     @include bp-md {
+//     @include for-laptops {
 //       background-size: 100%;
 //     }
 //   }
@@ -305,7 +305,7 @@
 //   .enkash-card-details {
 //     position: relative;
 //     margin-top: 8px;
-//     @include bp-md {
+//     @include for-laptops {
 //       margin-top: -24px;
 //     }
 //     .card-txt {
@@ -315,7 +315,7 @@
 //       opacity: 1;
 //       font-size: 13px;
 //       padding: 0px 0 10px 0;
-//       @include bp-md {
+//       @include for-laptops {
 //         font-size: 16px;
 //       }
 //     }
@@ -325,7 +325,7 @@
 //       color: #26283a;
 //       opacity: 1;
 //       font-size: 11px;
-//       @include bp-md {
+//       @include for-laptops {
 //         font-size: 14px;
 //       }
 //       padding: 0px 0 10px 0;
@@ -345,7 +345,7 @@
 //   margin-bottom: 40px;
 //   text-align: center;
 //   width: 100%;
-//   @include bp-md {
+//   @include for-laptops {
 //     width: 230px;
 //     font-size: 16px;
 //   }
@@ -357,7 +357,7 @@
 //   right: 0;
 //   left: 0;
 //   margin-top: 40px;
-//   @include bp-md {
+//   @include for-laptops {
 //     height: 385px;
 //     right: -20px;
 //     margin-top: 0px;
@@ -376,7 +376,7 @@
 //   display: flex;
 //   flex-direction: column;
 //   justify-content: center;
-//   @include bp-md {
+//   @include for-laptops {
 //     flex-direction: row;
 //   }
 //   background: $color-white 0% 0% no-repeat padding-box;
@@ -400,7 +400,7 @@
 //   // text-transform: uppercase;
 //   opacity: 1;
 //   margin-bottom: 1rem;
-//   @include bp-md {
+//   @include for-laptops {
 //     display: flex;
 //     flex-direction: row;
 //     align-items: center;
@@ -410,7 +410,7 @@
 // .enkash-space {
 //   position: relative;
 //   height: 5px;
-//   @include bp-md {
+//   @include for-laptops {
 //     width: 80px;
 //     height: 80px;
 //     &:before {
@@ -427,7 +427,7 @@
 //   flex-direction: column;
 //   padding-left: 30px;
 //   padding-right: 30px;
-//   @include bp-md {
+//   @include for-laptops {
 //     padding-left: 0px;
 //     padding-right: 0px;
 //     flex-direction: row;
@@ -441,7 +441,7 @@
 //     display: inline-block;
 //     padding: 10px 20px;
 //     margin-bottom: 10px;
-//     @include bp-md {
+//     @include for-laptops {
 //       margin-bottom: 0px;
 //     }
 //     img {
@@ -483,7 +483,7 @@
 //   display: flex;
 //   flex-direction: column;
 //   align-items: center;
-//   @include bp-md {
+//   @include for-laptops {
 //     flex-direction: row;
 //     justify-content: center;
 //   }
@@ -513,14 +513,14 @@
 
 // .active.middle-journey-process:before {
 //   height: 94%;
-//   @include bp-md {
+//   @include for-laptops {
 //     height: 88%;
 //   }
 // }
 
 // .create-io-img img {
 //   height: auto;
-//   @include bp-md {
+//   @include for-laptops {
 //     height: 400px;
 //   }
 // }
@@ -812,13 +812,13 @@
 //   text-underline-offset: 12px;
 //   text-decoration-thickness: 4px;
 //   text-decoration-color: $color-black;
-//   @include bp-md {
+//   @include for-laptops {
 //     text-decoration: none;
 //     border-left: 15px solid $color-equity-blue;
 //   }
 //   h4 {
 //     text-align: center;
-//     @include bp-md {
+//     @include for-laptops {
 //       text-align: left;
 //     }
 //   }
@@ -827,13 +827,13 @@
 // .story-description {
 //   padding-bottom: 50px;
 
-//   @include bp-md {
+//   @include for-laptops {
 //     padding-bottom: 100px;
 //   }
 //   padding-bottom: 100px;
 //   text-align: center;
 //   font-size: 14px;
-//   @include bp-md {
+//   @include for-laptops {
 //     text-align: left;
 //     font-size: 18px;
 //   }
@@ -841,7 +841,7 @@
 
 // .enkash-card-blank {
 //   display: none;
-//   @include bp-md {
+//   @include for-laptops {
 //     display: block;
 //     width: 100%;
 //   }
@@ -855,7 +855,7 @@
 //     font-size: 13px;
 //     font-weight: 500;
 //     padding-left: 8px;
-//     @include bp-md {
+//     @include for-laptops {
 //       margin: 5px;
 //       font-size: 19px;
 //       padding: 10px;
@@ -873,7 +873,7 @@
 //     img {
 //       height: 20px;
 //       width: 20px;
-//       @include bp-md {
+//       @include for-laptops {
 //         display: none;
 //       }
 //     }
@@ -884,7 +884,7 @@
 //   flex-grow: 1;
 //   height: 3px;
 //   background-color: #0050ff;
-//   @include bp-md {
+//   @include for-laptops {
 //     margin: 0 10px;
 //   }
 // }
@@ -896,20 +896,20 @@
 //   align-items: center;
 //   padding-left: 10px;
 //   padding-right: 10px;
-//   @include bp-md {
+//   @include for-laptops {
 //     padding-left: 40px;
 //     padding-right: 40px;
 //   }
 //   .icon {
 //     display: none;
-//     @include bp-md {
+//     @include for-laptops {
 //       display: block;
 //       width: 30px;
 //       height: 30px;
 //       img {
 //         width: 10px;
 //         height: 10px;
-//         @include bp-md {
+//         @include for-laptops {
 //           width: 30px;
 //           height: 30px;
 //         }
@@ -924,7 +924,7 @@
 //   border-radius: 10px;
 //   color: $color-white;
 //   font-weight: 700;
-//   @include bp-md {
+//   @include for-laptops {
 //     font-weight: 500;
 //     font-size: 18px;
 //   }
@@ -934,7 +934,7 @@
 //   text-align: center;
 //   font-size: 8.5px;
 //   font-weight: 700;
-//   @include bp-md {
+//   @include for-laptops {
 //     font-weight: 500;
 //     font-size: 14px;
 //     word-break: normal;
@@ -970,7 +970,7 @@
 
 // .mobile-nopadding {
 //   padding-left: 0 !important;
-//   @include bp-md {
+//   @include for-laptops {
 //     padding-left: 15px !important;
 //     padding-right: 15px !important;
 //   }
@@ -978,7 +978,7 @@
 // .icon-forward,
 // .icon-backward {
 //   display: none;
-//   @include bp-md {
+//   @include for-laptops {
 //     display: block;
 //   }
 // }
@@ -988,28 +988,28 @@
 //   text-underline-offset: 12px;
 //   text-decoration-thickness: 4px;
 //   text-decoration-color: $color-equity-blue;
-//   @include bp-md {
+//   @include for-laptops {
 //     text-decoration-thickness: 8px;
 //   }
 // }
 
 // .story-container {
 //   margin-top: 30px;
-//   @include bp-md {
+//   @include for-laptops {
 //     margin-top: 50px;
 //   }
 // }
 
 // .bottom-line-sm {
 //   display: flex;
-//   @include bp-md {
+//   @include for-laptops {
 //     display: none;
 //   }
 // }
 
 // .bottom-line-lg {
 //   display: none;
-//   @include bp-md {
+//   @include for-laptops {
 //     display: flex;
 //   }
 // }
@@ -1017,7 +1017,7 @@
 // .celebration-icon {
 //   width: 60px;
 //   margin-left: -10px;
-//   @include bp-md {
+//   @include for-laptops {
 //     margin-left: 20px;
 //     width: 100px;
 //   }

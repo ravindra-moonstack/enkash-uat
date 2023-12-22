@@ -3,14 +3,14 @@
 
 .first_row {
   margin-bottom: 80px;
-  @include bp-md {
+  @include for-laptops {
     padding-top: 170px;
   }
   .three_step_container {
     padding-top: 80px;
     padding-left: 40px;
     padding-right: 40px;
-    @include bp-md {
+    @include for-laptops {
       padding-left: 70px;
       padding-right: 70px;
     }
@@ -19,7 +19,7 @@
   .lottie_container {
     margin-top: 50px;
     width: 300px;
-    @include bp-md {
+    @include for-laptops {
       width: 450px;
       margin-right: -50px;
     }
@@ -28,7 +28,7 @@
 .third_row {
   padding-bottom: 50px;
   padding-top: 20px;
-  @include bp-md {
+  @include for-laptops {
     padding-bottom: 150px;
     padding-top: 20px;
   }
@@ -40,7 +40,7 @@
   justify-content: center;
   text-align: center;
   padding-bottom: 50px;
-  @include bp-md {
+  @include for-laptops {
     padding-bottom: 220px;
   }
 
@@ -50,7 +50,7 @@
       bottom: 0;
       left: 0;
       display: none;
-      @include bp-md {
+      @include for-laptops {
         height: 300px;
         display: flex;
       }
@@ -60,6 +60,6 @@
 
 .seventh_row {
   background-color: $color-white;
-  @include bp-md {
+  @include for-laptops {
   }
 }

@@ -3,14 +3,14 @@
 
 .first_row {
   margin-bottom: 80px;
-  @include bp-md {
+  @include for-laptops {
     padding-top: 170px;
   }
   .three_step_container {
     padding-top: 80px;
     padding-left: 40px;
     padding-right: 40px;
-    @include bp-md {
+    @include for-laptops {
       padding-left: 70px;
       padding-right: 70px;
     }
@@ -18,7 +18,7 @@
 
   .lottie_container {
     width: 400px;
-    @include bp-md {
+    @include for-laptops {
       margin-top: -100px;
       width: 500px;
     }
@@ -36,18 +36,18 @@
       $color-equity-blue 15%,
       $color-black 30%
     );
-    @include bp-md {
+    @include for-laptops {
       height: 8px;
     }
   }
   .progress_items {
     margin-right: 30px;
-    @include bp-md {
+    @include for-laptops {
       margin-right: 0;
     }
   }
   .progress_container {
-    @include bp-md {
+    @include for-laptops {
       justify-content: space-evenly;
     }
   }
@@ -57,7 +57,7 @@
     width: 30px;
     margin-top: -10px;
 
-    @include bp-md {
+    @include for-laptops {
       height: 50px;
       width: 50px;
       transform: none;
@@ -69,7 +69,7 @@
 .third_row {
   padding-bottom: 50px;
   padding-top: 20px;
-  @include bp-md {
+  @include for-laptops {
     padding-bottom: 150px;
     padding-top: 20px;
   }
@@ -81,7 +81,7 @@
   justify-content: center;
   text-align: center;
   padding-bottom: 50px;
-  @include bp-md {
+  @include for-laptops {
     padding-bottom: 220px;
   }
 
@@ -91,7 +91,7 @@
       bottom: 0;
       left: 0;
       display: none;
-      @include bp-md {
+      @include for-laptops {
         height: 300px;
         display: flex;
       }
@@ -101,6 +101,6 @@
 
 .seventh_row {
   background-color: $color-white;
-  @include bp-md {
+  @include for-laptops {
   }
 }

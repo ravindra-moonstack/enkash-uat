@@ -13,7 +13,7 @@
   p,
   a {
     font-size: 14px;
-    @include bp-md {
+    @include for-laptops {
       font-size: 18px;
     }
   }
@@ -28,7 +28,7 @@
   );
   background-color: #0c0e4a;
   padding: 20px 30px;
-  @include bp-md {
+  @include for-laptops {
     padding: 30px 80px;
   }
 }
@@ -40,7 +40,7 @@
   line-height: 20px;
   padding-right: 10px;
   margin: 0;
-  @include bp-md {
+  @include for-laptops {
     font-size: 40px;
     line-height: 35px;
   }
@@ -49,7 +49,7 @@
 .normal {
   width: 25px;
   height: auto;
-  @include bp-md {
+  @include for-laptops {
     width: 40px;
   }
   transform: rotate(0deg);
@@ -59,7 +59,7 @@
 .rotated {
   width: 30px;
   height: auto;
-  @include bp-md {
+  @include for-laptops {
     width: 40px;
   }
   transform: rotate(180deg);
@@ -72,7 +72,7 @@
   padding-right: 40px;
   transition: padding 0.3s ease 0s;
 
-  @include bp-md {
+  @include for-laptops {
     padding-left: 90px;
     padding-right: 90px;
   }
@@ -83,7 +83,7 @@
   padding-top: 36px;
   padding-bottom: 36px;
   transition: padding 0.3s ease 0s;
-  @include bp-md {
+  @include for-laptops {
     padding-top: 70px;
     padding-bottom: 50px;
   }

@@ -11,7 +11,7 @@
   white-space: normal;
   text-align: left;
   padding-bottom: 30px;
-  @include bp-md {
+  @include for-laptops {
     width: 450px;
   }
 
@@ -32,7 +32,7 @@
       object-fit: contain;
     }
 
-    @include bp-md {
+    @include for-laptops {
       display: block;
       width: auto;
       height: auto;

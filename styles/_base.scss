@@ -166,29 +166,41 @@
 
 .row-padding {
   padding: 36px 25px;
-  @include bp-md {
+  @include for-laptops {
     padding: 110px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding: 80px 60px;
   }
 }
 
 .row-padding-bottom-none {
   padding: 36px 25px 0px 25px;
-  @include bp-md {
+  @include for-laptops {
     padding: 110px 90px 0px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding: 80px 60px 0px 60px;
   }
 }
 
 .row-padding-top-none {
   padding: 0px 25px 36px 25px;
-  @include bp-md {
+  @include for-laptops {
     padding: 0px 90px 80px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding: 0px 60px 50px 60px;
   }
 }
 
 .row-padding-x-only {
   padding: 0px 25px;
-  @include bp-md {
+  @include for-laptops {
     padding: 0px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding: 0px 60px;
   }
 }
 
@@ -196,14 +208,14 @@
 
 .mobile-header {
   display: block;
-  @include bp-md {
+  @include for-laptops {
     display: none;
   }
 }
 
 .desktop-header {
   display: none;
-  @include bp-md {
+  @include for-laptops {
     display: block;
     position: fixed;
     top: 0;
@@ -249,14 +261,14 @@ body {
 /* Other Classes */
 
 .mobile-only {
-  @include bp-md {
+  @include for-laptops {
     display: none;
   }
 }
 
 .desktop-only {
   display: none;
-  @include bp-md {
+  @include for-laptops {
     display: block;
   }
 }

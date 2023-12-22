@@ -5,9 +5,13 @@
   font-size: 35px;
   line-height: 50px;
   margin-bottom: 0;
-  @include bp-md {
+  @include for-laptops {
     font-size: 100px;
     line-height: 100px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 90px;
+    line-height: 90px;
   }
 }
 
@@ -16,8 +20,11 @@
   font-size: 31px;
   margin-bottom: 0;
   line-height: normal;
-  @include bp-md {
+  @include for-laptops {
     font-size: 57px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 52px;
   }
 }
 
@@ -26,8 +33,11 @@
   font-size: 25px;
   margin-bottom: 0;
   line-height: normal;
-  @include bp-md {
+  @include for-laptops {
     font-size: 43px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 38px;
   }
 }
 
@@ -37,8 +47,11 @@
   line-height: 22px;
   margin-bottom: 0;
   line-height: normal;
-  @include bp-md {
+  @include for-laptops {
     font-size: 35px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 30px;
   }
 }
 
@@ -47,8 +60,11 @@
   font-size: 16px;
   margin-bottom: 0;
   line-height: normal;
-  @include bp-md {
+  @include for-laptops {
     font-size: 24px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 21px;
   }
 }
 
@@ -59,8 +75,11 @@
   margin-bottom: 0;
   white-space: normal;
   line-height: normal;
-  @include bp-md {
+  @include for-laptops {
     font-size: 21px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 19px;
   }
 }
 
@@ -71,8 +90,11 @@
   font-weight: 400;
   margin-bottom: 0;
   line-height: normal;
-  @include bp-md {
+  @include for-laptops {
     font-size: 18px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 16px;
   }
 }
 
