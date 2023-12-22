@@ -180,7 +180,7 @@ const home = () => {
                 </div>
                 <div>
                   <Heading
-                    title="streamline their cash flow and optimize their workflow"
+                    title="streamline cash flow and optimize workflow"
                     size="h2"
                     weight="7"
                   />

@@ -62,7 +62,7 @@ const Footer = ({ utmSource = "" }: any) => {
                 <Link href="/olympus/payables/bill-payment/">Bill Payment</Link>
               </li>
               <li>
-                <Link href="/olympus/payables/bulk-payout/">Bulk Payout</Link>
+                <Link href="/olympus/payables/bulk-payout/">Express Pay</Link>
               </li>
               <li>
                 <Link href="/olympus/payables/gst-payments/">GST Payment</Link>

@@ -46,7 +46,7 @@ const olympusProducts = [
         link: "/olympus/payables/bill-payment",
       },
       {
-        name: "Bulk Payout",
+        name: "Express Pay",
         description: "Pay multiple bills & invoices with a single click",
         imageSrc: bulkPayout,
         imageSrcHovered: bulkPayoutFilled,

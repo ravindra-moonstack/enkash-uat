@@ -44,6 +44,8 @@ const invoices = () => {
               />
             </div>
             <Heading title="Invoices" size="h4" weight="4" />
+            <span className="sup-symbol">#</span>
+
           </div>
           <div className="d-flex flex-column">
             <Heading

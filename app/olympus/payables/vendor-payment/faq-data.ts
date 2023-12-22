@@ -4,7 +4,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Vendor payment refers to the process of disbursing funds from a business or organization to its suppliers or vendors in exchange for goods or services that have been provided. It's a critical aspect of the procure-to-pay cycle in business operations. EnKash’s vendor payment solution focuses on helping businesses manage vendors end-to-end. You can use the bulk payout option for regular and repetitive vendor payments.",
+          "Vendor payment refers to the process of disbursing funds from a business or organization to its suppliers or vendors in exchange for goods or services that have been provided. It's a critical aspect of the procure-to-pay cycle in business operations. EnKash’s vendor payment solution focuses on helping businesses manage vendors end-to-end. You can use the express pay option for regular and repetitive vendor payments.",
       },
       {
         heading:

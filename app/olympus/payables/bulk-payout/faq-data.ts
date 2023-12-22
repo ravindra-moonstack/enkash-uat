@@ -1,18 +1,18 @@
 const faqData = [
   {
-    question: "What is bulk payout?",
+    question: "What is express pay?",
     answer: [
       {
         heading:
-          "Payments from a single account to multiple beneficiaries simultaneously define bulk payout. EnKash automates this process for businesses, allowing efficient, accurate payments to multiple vendors with a single click.",
+          "Payments from a single account to multiple beneficiaries simultaneously define express pay. EnKash automates this process for businesses, allowing efficient, accurate payments to multiple vendors with a single click.",
       },
     ],
   },
   {
-    question: "Why does a business need bulk payout?",
+    question: "Why does a business need express pay?",
     answer: [
       {
-        heading: "A few reasons why businesses should adopt bulk payout:",
+        heading: "A few reasons why businesses should adopt express pay:",
         bullets: [
           "It’s error-free, helps save time and resources involved in making multiple payments manually",
           "Bulk payouts follow security layers for data encryption",
@@ -23,7 +23,7 @@ const faqData = [
     ],
   },
   {
-    question: "How can bulk payout improve business cash flow?",
+    question: "How can express pay improve business cash flow?",
     answer: [
       {
         heading:
@@ -32,16 +32,16 @@ const faqData = [
     ],
   },
   {
-    question: "What losses can a business face due to a lack of bulk payout?",
+    question: "What losses can a business face due to a lack of express pay?",
     answer: [
       {
         heading:
-          "Manual business payments lead to monotony, increased chances of errors, underutilization of resources, and inefficiency. Automating tasks with bulk payout can encourage innovation and growth in businesses.",
+          "Manual business payments lead to monotony, increased chances of errors, underutilization of resources, and inefficiency. Automating tasks with express pay can encourage innovation and growth in businesses.",
       },
     ],
   },
   {
-    question: "How can bulk payout help the finance team at work?",
+    question: "How can express pay help the finance team at work?",
     answer: [
       {
         heading:
@@ -94,15 +94,15 @@ const faqData = [
       },
     ],
   },
-  {
-    question: "What is the difference between bulk and batch payments?",
-    answer: [
-      {
-        heading:
-          "A bulk payment file has multiple instructions of different types, whereas a batch payment file has multiple instructions of the same type as they are categorized together. The major difference between the two is that you can have multiple batches in bulk, but you cannot have multiple bulks in a batch.",
-      },
-    ],
-  },
+  // {
+  //   question: "What is the difference between bulk and batch payments?",
+  //   answer: [
+  //     {
+  //       heading:
+  //         "A bulk payment file has multiple instructions of different types, whereas a batch payment file has multiple instructions of the same type as they are categorized together. The major difference between the two is that you can have multiple batches in bulk, but you cannot have multiple bulks in a batch.",
+  //     },
+  //   ],
+  // },
   {
     question: "What is a bulk faster payment?",
     answer: [

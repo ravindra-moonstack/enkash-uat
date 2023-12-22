@@ -165,8 +165,8 @@ const payables = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12  my-md-5 my-3">
             <ExploreCard
-              title="Bulk Payouts"
-              description="Enable bulk payouts and make payments to vendors, billers & more via payment modes of your choice"
+              title="Express Pay"
+              description="Enable express pay and make payments to vendors, billers & more via payment modes of your choice"
               theme="blue"
               link="/olympus/payables/bulk-payout"
             />
@@ -313,7 +313,7 @@ const payables = () => {
               oldWayDescription:
                 "Making vendor payments individually causes unnecessary delays.",
               newWayDescription:
-                "Make bulk payouts to vendors and billers with a single-click OTP system.",
+                "Make express pay to vendors and billers with a single-click OTP system.",
             },
           ]}
         />
