@@ -24,8 +24,8 @@ const grievancePolicy = () => {
                 <div className="col-md-12">
                   <div className="enkash-term-condtions">
                     <h1 className="term-condition-title mb-5 mt-0 mt-md-12 color-equity-blue">
-                      Nehat Tech Solutions Private Limited (EnKash)’s Grievance
-                      Redressal & Merchant On-Boarding Policy
+                      Nehat Tech Solutions Private Limited’s Grievance Redressal
+                      & Merchant On-Boarding Policy
                     </h1>
                     <h2 className="term-condition-subtitle mb-5 mt-0 mt-md-12 color-equity-blue">
                       A. Grievance Redressal Policy
@@ -36,13 +36,13 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          Nehat Tech Solutions Private Limited (EnKash) as a
-                          technology focussed and service-oriented organization
-                          considers customer service and customer satisfaction
-                          both as prime concern. The Company believes that
-                          providing prompt and efficient service is essential
-                          not only to attract new customers, but also to retain
-                          existing clientele base.
+                          Nehat Tech Solutions Private Limited as a technology
+                          focussed and service-oriented organization considers
+                          customer service and customer satisfaction both as
+                          prime concern. The Company believes that providing
+                          prompt and efficient service is essential not only to
+                          attract new customers, but also to retain existing
+                          clientele base.
                         </span>
                       </p>
                       <p className="c3 c9">
@@ -61,7 +61,7 @@ const grievancePolicy = () => {
                       </p>
 
                       <h5 className="c15 mt-6">
-                        1. EnKash Grievance Redressal Mechanism:
+                        1.Grievance Redressal Mechanism:
                       </h5>
 
                       <p className="c3 c9">
@@ -193,19 +193,17 @@ const grievancePolicy = () => {
                       <p className="c3 c9">
                         <span className="c15"></span>
                       </p>
-                      <h5 className="c15">
-                        3. EnKash Grievance Escalation Matrix:
-                      </h5>
+                      <h5 className="c15">3. Grievance Escalation Matrix:</h5>
 
                       <p className="c3 c9">
                         <span className="c15"></span>
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          EnKash has formulated an Escalation Matrix to ensure
-                          that Customer complaints/ grievances are routed and
-                          addressed in a proper and reasonable manner within the
-                          organization.
+                          Nehat Tech Solutions Private Limited has formulated an
+                          Escalation Matrix to ensure that Customer complaints/
+                          grievances are routed and addressed in a proper and
+                          reasonable manner within the organization.
                         </span>
                       </p>
                       <p className="c3 c9">
@@ -458,11 +456,11 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c0 c24">
-                          EnKash ensures that complaints are disposed of within
-                          a period of thirty (30) business days of its receipt.
-                          The details of the resolution or rejection of the
-                          complaint will be shared, with reasons thereof in
-                          writing.{" "}
+                          Nehat Tech Solutions Private Limited ensures that
+                          complaints are disposed of within a period of thirty
+                          (30) business days of its receipt. The details of the
+                          resolution or rejection of the complaint will be
+                          shared, with reasons thereof in writing.{" "}
                         </span>
                       </p>
                       <p className="c3 c9">
