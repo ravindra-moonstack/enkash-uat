@@ -7,7 +7,7 @@ export { default as purpleArrowBackWard } from "./img/purple-arrow-backward.svg"
 export { default as circleArrowBackWard } from "./img/circle-arrow-backword.svg";
 export { default as teamPic } from "./img/team-pic.png";
 export { default as linkedin } from "./img/linkedin.svg";
-export { default as twitter } from "./img/linkedin.svg";
+export { default as twitter } from "./img/twitter.svg";
 export { default as ascentCapital } from "./img/ascent-capital.png";
 export { default as baringPrivate } from "./img/baring-private.png";
 export { default as mayfeild } from "./img/mayfield.png";

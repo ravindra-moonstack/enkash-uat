@@ -267,9 +267,9 @@ const Footer = ({ utmSource = "" }: any) => {
             <div className="mt-2">
               <h4 className={`${styles.title}`}>Company</h4>
               <ul>
-                {/* <li>
+                <li>
                   <Link href="/about">About Us</Link>
-                </li> */}
+                </li>
 
                 <li>
                   <Link href="/sales?source=getstarted_footer">Sales</Link>

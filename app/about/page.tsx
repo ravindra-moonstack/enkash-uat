@@ -4,8 +4,6 @@ import {
   ascentCapital,
   axilor,
   baringPrivate,
-  celebration,
-  circleArrowBackWard,
   hotel,
   insurance,
   linkedin,
@@ -19,7 +17,6 @@ import {
   purpleArrowForward,
   teamPic,
   texttile,
-  tieIcon,
   travel,
   twitter,
   whiteVenture,
@@ -28,6 +25,8 @@ import Header from "@/components/header/header";
 import styles from "./page.module.scss";
 import Heading from "@/components/heading/heading";
 import Footer from "@/components/footer/footer";
+import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 
 // export const metadata = {
 //   title: "EnKash | About Page",
@@ -90,11 +89,13 @@ const About = () => {
                       className="create-io-img wow zoomIn"
                       data-wow-delay="500ms"
                     >
-                      <Image
-                        alt="icon"
-                        className="img-fluid"
-                        src={aboutBanner}
+                      <div className="about-lottie">
+                      <LottieDynamicLoadComponent
+                        animationName={"AboutBanner"}
+                        loop={true}
                       />
+                      </div>
+                    
                     </div>
                   </div>
                 </div>
@@ -176,7 +177,7 @@ const About = () => {
 
               <div className="parent-cards mt-24">
                 <div
-                  className="enkash-card text-center mb-12 -mt-6  wow zoomIn"
+                  className="enkash-card text-center mb-5 -mt-6  wow zoomIn"
                   data-wow-delay="500ms"
                 >
                   <div className="user-img" id="hemant-vishnoi"></div>
@@ -184,7 +185,7 @@ const About = () => {
                     <div className="card-txt">Hemant Vishnoi</div>
                     <div>
                       <a
-                        className="mr-2"
+                        className="me-2"
                         href="https://www.linkedin.com/in/hemantvishnoi/"
                         target="_blank"
                         rel="noreferrer noopener"
@@ -204,7 +205,7 @@ const About = () => {
                 </div>
 
                 <div
-                  className="enkash-card text-center mb-12 -mt-6 wow zoomIn"
+                  className="enkash-card text-center mb-5 -mt-6 wow zoomIn"
                   data-wow-delay="500ms"
                 >
                   <div className="user-img" id="naveen-bindal"></div>
@@ -212,7 +213,7 @@ const About = () => {
                     <div className="card-txt">Naveen Bindal</div>
                     <div>
                       <a
-                        className="mr-2"
+                        className="me-2"
                         href="https://www.linkedin.com/in/naveenbindal/"
                         target="_blank"
                         rel="noreferrer noopener"
@@ -232,7 +233,7 @@ const About = () => {
                 </div>
 
                 <div
-                  className="enkash-card text-center mb-12 -mt-6 wow zoomIn"
+                  className="enkash-card text-center mb-5 -mt-6 wow zoomIn"
                   data-wow-delay="500ms"
                 >
                   <div className="user-img" id="yadvendra-tyagi"></div>
@@ -240,7 +241,7 @@ const About = () => {
                     <div className="card-txt">Yadvendra Tyagi</div>
                     <div>
                       <a
-                        className="mr-2"
+                        className="me-2"
                         href="https://www.linkedin.com/in/yadvendratyagi/"
                         target="_blank"
                         rel="noreferrer noopener"
@@ -260,14 +261,14 @@ const About = () => {
                 </div>
               </div>
 
-              <div className="enkash-family-container pt-12 mt-12 px-md-6 px-md-24">
+              <div className="enkash-family-container row-padding-bottom-none">
                 <div className="enkash-abt-title">
                   <h4 className="underline-text">Our Leadership</h4>
                 </div>
 
                 <div className="grid mb-md-4 mt-md-24">
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="himanshu-vyas"></div>
@@ -281,7 +282,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="lalit-arun"></div>
@@ -297,7 +298,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="atishree-jindal"></div>
@@ -310,7 +311,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="vibhor-chugh"></div>
@@ -325,7 +326,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="nagesh-shet"></div>
@@ -338,7 +339,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="amandeep-arora"></div>
@@ -353,7 +354,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="manish-kumawat"></div>
@@ -368,7 +369,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="anurag-darira"></div>
@@ -383,7 +384,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="krishnakumar-sv"></div>
@@ -396,7 +397,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="ankur-gupta"></div>
@@ -411,7 +412,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="martin-arockiaraj"></div>
@@ -427,7 +428,7 @@ const About = () => {
                   </div>
 
                   <div
-                    className="enkash-card text-center gray-scale mb-12 wow zoomIn"
+                    className="enkash-card text-center gray-scale mb-5 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <div className="user-img" id="vijayanand-srinivasan"></div>
@@ -443,7 +444,7 @@ const About = () => {
             </div>
           </div>
 
-          <div className="enkash-second-conatiner">
+          <div className="enkash-second-conatiner bg-white">
             <div className="container">
               <div className="enkash-investor">
                 <div
@@ -512,12 +513,12 @@ const About = () => {
                 </div>
               </div>
               <div
-                className="enkash-abt-title pt-10 wow fadeInDown"
+                className="enkash-abt-title pt-10 mb-5 wow fadeInDown"
                 data-wow-delay="500ms"
               >
                 <h4>Industries We Have Served</h4>
               </div>
-              <div className="row text-center lg:mx-16 lg:px-16">
+              <div className="row text-center  mb-5">
                 <div className="col-4 col-lg-3 my-8">
                   <div
                     className="enkash-client-serve wow zoomIn"
@@ -609,7 +610,7 @@ const About = () => {
               </div>
             </div>
 
-            <div
+            {/* <div
               className="enkash-abt-title pt-10 wow fadeInDown mb-10"
               data-wow-delay="500ms"
             >
@@ -639,7 +640,7 @@ const About = () => {
                 The future of your business is in our hands, propelled by
                 technology, transparency, and mutual trust.
               </h5>
-            </div>
+            </div> */}
           </div>
 
           {/* 
@@ -795,8 +796,8 @@ previousStep();
 
   </script> */}
         </div>
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 };

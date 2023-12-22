@@ -1,1029 +1,1054 @@
-// @import "./variables";
-// @import "./mixin";
-
-// $breadcrumb-active: #0050ff;
-// $journey-border: rgba(131, 143, 174, 0.55);
-// $about-box-shadow: #0070c224;
-// $abot-dark-black: #33333342;
-// $color-balck: #000000;
-// $abt-date-color: #0070c217;
-// $process-color: #e7eeff;
-// $abt-li-color: #231e1e;
-
-// @mixin before-mixin {
-//   position: absolute;
-//   content: "";
-// }
-
-// @mixin background-mixin {
-//   background-size: contain;
-//   background-repeat: no-repeat;
-//   background-position: center;
-// }
-
-// .enkash-first-conatiner .first-container {
-//   background-color: $color-indi-volt;
-//   padding: 50px 40px;
-//   @include for-laptops {
-//     padding: 150px 90px 50px 90px;
-//   }
-// }
-
-// .about-container .enkash-banking-maincontainer {
-//   float: left;
-//   width: 100%;
-//   position: relative;
-// }
-
-// .gradiant {
-//   position: absolute;
-//   height: 100%;
-//   width: 100%;
-//   background-color: #fff;
-// }
-// .about-container .enkash-first-conatiner {
-//   float: left;
-//   width: 100%;
-//   padding-bottom: 20px;
-//   position: relative;
-//   z-index: 9;
-// }
-
-// .enkash-client-serve {
-//   a {
-//     cursor: default;
-//     img {
-//       height: 50px;
-//     }
-//     p {
-//       padding-top: 1rem;
-//       text-align: center;
-//       font-size: 16px;
-//       letter-spacing: 0.15px;
-//       color: #26283a;
-//       opacity: 1;
-//     }
-//     &:hover {
-//       text-decoration: none;
-//       cursor: default;
-//     }
-//   }
-// }
-
-// .enkash-abt-banner-text {
-//   p {
-//     letter-spacing: 0.22px;
-//     font-size: 15px;
-//     @include for-laptops {
-//       font-size: 17px;
-//     }
-//   }
-// }
-
-// .about-mobile-titile {
-//   display: block;
-//   @include for-laptops {
-//     display: none;
-//   }
-// }
-
-// .enkash-team-container {
-//   background-color: $color-white;
-//   padding: 28px 40px 56px 40px;
-//   @include for-laptops {
-//     padding: 50px 90px 110px 90px;
-//   }
-// }
-
-// .enkash-abt-title {
-//   text-align: center;
-//   font-weight: 500;
-//   color: #26283a;
-//   opacity: 1;
-//   font-size: 25px;
-//   @include for-laptops {
-//     font-size: 30px;
-//   }
-//   h4 {
-//     font-size: 25px;
-//     line-height: 30px;
-//     @include for-laptops {
-//       // letter-spacing: 8px;
-//       line-height: 40px;
-//       font-size: 30px;
-//     }
-//   }
-//   position: relative;
-//   margin-bottom: 60px;
-// }
-
-// .grid {
-//   display: grid;
-//   grid-template-columns: repeat(2, minmax(0, 1fr));
-//   align-items: center;
-//   justify-items: center; /* adjusted */
-//   @include for-laptops {
-//     grid-template-columns: repeat(3, minmax(0, 1fr));
-//   }
-//   .enkash-card {
-//     @include for-laptops {
-//       width: 300px;
-//     }
-//   }
-// }
-
-// .enkash-card {
-//   background: $color-white 0% 0% no-repeat padding-box;
-//   box-shadow: 0px 20px 50px $about-box-shadow;
-//   border-radius: 8px;
-//   height: 240px;
-//   width: 90%;
-//   @include for-laptops {
-//     margin-left: 80px;
-//     border-radius: 20px;
-//     width: 230px;
-//     height: 300px;
-//     width: 100%;
-//   }
-//   &:hover {
-//     filter: grayscale(0%);
-//   }
-//   .user-img {
-//     position: relative;
-//     width: 100%;
-//     height: 140px;
-//     top: -20px;
-//     height: 210px;
-//     @include for-laptops {
-//       width: 190px;
-//       height: 230px;
-//       // -webkit-transform: scale(1);
-//       // transform: scale(1);
-//       // -webkit-transition: .2s ease-in-out;
-//       // transition: .2s ease-in-out;
-//       display: inline-block;
-//       background-repeat: no-repeat;
-//       // &:hover{
-//       //     -webkit-transform: scale(1.1);
-//       //     transform: scale(1.1);
-//       // }
-//     }
-//   }
-//   .user-img#naveen-bindal {
-//     background: url("../app/about/img/naveen-bindal.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-//   .user-img#yadvendra-tyagi {
-//     background: url("../app/about/img/yadvendra-tyagi.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-//   .user-img#hemant-vishnoi {
-//     background: url("../app/about/img/hemant-vishnoi.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-//   .user-img#himanshu-vyas {
-//     background: url("../app/about/img/himanshu-vyas.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#lalit-arun {
-//     background: url("../app/about/img/lalit-arun.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#abhishek-miglani {
-//     background: url("../app/about/img/abhishek-miglani.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#atishree-jindal {
-//     background: url("../app/about/img/atishree-jindal.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#hitesh-jain {
-//     background: url("../app/about/img/hitesh-jain.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#vibhor-chugh {
-//     background: url("../app/about/img/vibhor-chugh.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#nagesh-shet {
-//     background: url("../app/about/img/nagesh-shet.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#amandeep-arora {
-//     background: url("../app/about/img/amandeep-arora.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#manish-kumawat {
-//     background: url("../app/about/img/manish-kumawat.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#anurag-darira {
-//     background: url("../app/about/img/anurag-darira.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#krishnakumar-sv {
-//     background: url("../app/about/img/krishna-kumar-sv.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#ankur-gupta {
-//     background: url("../app/about/img/ankur-gupta.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#martin-arockiaraj {
-//     background: url("../app/about/img/martin-arockiaraj.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .user-img#vijayanand-srinivasan {
-//     background: url("../app/about/img/vijay-srinivasan.png");
-//     @include background-mixin;
-//     @include for-laptops {
-//       background-size: 100%;
-//     }
-//   }
-
-//   .enkash-card-details {
-//     position: relative;
-//     margin-top: 8px;
-//     @include for-laptops {
-//       margin-top: -24px;
-//     }
-//     .card-txt {
-//       font-weight: 500;
-//       letter-spacing: 0.15px;
-//       color: #26283a;
-//       opacity: 1;
-//       font-size: 13px;
-//       padding: 0px 0 10px 0;
-//       @include for-laptops {
-//         font-size: 16px;
-//       }
-//     }
-//     .card-designation {
-//       font-weight: 400;
-//       letter-spacing: 0.15px;
-//       color: #26283a;
-//       opacity: 1;
-//       font-size: 11px;
-//       @include for-laptops {
-//         font-size: 14px;
-//       }
-//       padding: 0px 0 10px 0;
-//     }
-//     a:hover {
-//       text-decoration: none;
-//     }
-//   }
-// }
-
-// .enkash-founder {
-//   font-weight: 500;
-//   font-size: 14px;
-//   letter-spacing: 0.25px;
-//   color: #26283a;
-//   opacity: 1;
-//   margin-bottom: 40px;
-//   text-align: center;
-//   width: 100%;
-//   @include for-laptops {
-//     width: 230px;
-//     font-size: 16px;
-//   }
-// }
-
-// .enkash-family-img {
-//   position: relative;
-//   height: 290px;
-//   right: 0;
-//   left: 0;
-//   margin-top: 40px;
-//   @include for-laptops {
-//     height: 385px;
-//     right: -20px;
-//     margin-top: 0px;
-//   }
-
-//   @include bp-lg {
-//     right: 0px;
-//     height: 510px;
-//   }
-// }
-
-// .enkash-investor {
-//   padding-top: 20px;
-//   padding-bottom: 20px;
-//   padding-left: 10px;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   @include for-laptops {
-//     flex-direction: row;
-//   }
-//   background: $color-white 0% 0% no-repeat padding-box;
-//   box-shadow: 0px 20px 50px $about-box-shadow;
-//   border-radius: 20px;
-//   margin-top: 80px;
-//   margin-bottom: 80px;
-//   text-align: center;
-//   clear: both;
-//   position: relative;
-//   margin-top: 20px;
-//   z-index: 99;
-// }
-
-// .investor-title {
-//   text-align: center;
-//   font-size: 30px;
-//   font-weight: 500;
-//   // letter-spacing: 8px;
-//   color: #26283a;
-//   // text-transform: uppercase;
-//   opacity: 1;
-//   margin-bottom: 1rem;
-//   @include for-laptops {
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     margin-bottom: 0;
-//   }
-// }
-// .enkash-space {
-//   position: relative;
-//   height: 5px;
-//   @include for-laptops {
-//     width: 80px;
-//     height: 80px;
-//     &:before {
-//       @include before-mixin;
-//       height: 100%;
-//       width: 1px;
-//       background: $abot-dark-black;
-//     }
-//   }
-// }
-
-// .investor-list {
-//   display: flex;
-//   flex-direction: column;
-//   padding-left: 30px;
-//   padding-right: 30px;
-//   @include for-laptops {
-//     padding-left: 0px;
-//     padding-right: 0px;
-//     flex-direction: row;
-//     align-items: center;
-//   }
-//   a {
-//     background: $color-white 0% 0% no-repeat padding-box;
-//     border: 1px solid $abot-dark-black;
-//     border-radius: 500px;
-//     opacity: 0.96;
-//     display: inline-block;
-//     padding: 10px 20px;
-//     margin-bottom: 10px;
-//     @include for-laptops {
-//       margin-bottom: 0px;
-//     }
-//     img {
-//       width: 115px;
-//       height: 30px;
-//     }
-//   }
-// }
-
-// .enkash-second-conatiner {
-//   position: relative;
-//   width: 100%;
-//   float: left;
-//   // background: $color-white;
-//   .enkash-abt-title {
-//     margin-bottom: 20px;
-//   }
-// }
-
-// .enkash-sub-title {
-//   text-align: center;
-//   letter-spacing: 0.32px;
-//   color: $color-balck;
-//   font-weight: 400;
-//   font-size: 17px;
-// }
-
-// .about-container .mCSB_scrollTools .mCSB_draggerRail {
-//   width: 1px;
-// }
-// .about-container .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
-//   //   background-color: #2DCC40 !important;
-//   background-color: #5250de;
-//   width: 13px;
-//   height: 13px;
-// }
-
-// .parent-cards {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   @include for-laptops {
-//     flex-direction: row;
-//     justify-content: center;
-//   }
-// }
-
-// .about-container .footer-social-links {
-//   a img {
-//     transform: scale(1);
-//     -webkit-transition: transform 2s ease-out;
-//     transition: transform 2s ease-out;
-//   }
-//   a img:hover {
-//     -webkit-transition: transform 2s ease;
-//     transition: transform 2s ease;
-//     transform: scale(1.2);
-//   }
-// }
-// .about-container .footer-links {
-//   a {
-//     -webkit-transition: opacity 1.5s ease;
-//     transition: opacity 1.5s ease;
-//   }
-//   a:hover {
-//     opacity: 0.5;
-//   }
-// }
-
-// .active.middle-journey-process:before {
-//   height: 94%;
-//   @include for-laptops {
-//     height: 88%;
-//   }
-// }
-
-// .create-io-img img {
-//   height: auto;
-//   @include for-laptops {
-//     height: 400px;
-//   }
-// }
-
-// .about-container .mCSB_scrollTools .mCSB_dragger {
-//   height: 15px !important;
-// }
-
-// .news-section-slider {
-//   .enkash-reward-card-small {
-//     border-radius: 100%;
-//     cursor: pointer;
-//     position: relative;
-//     overflow: hidden;
-//     width: 140px !important;
-//     height: 140px !important;
-//     padding: 10px;
-//     .data-news {
-//       transition: all 0.3s;
-//       transform: scale(1);
-//       height: 80px;
-//       width: 100%;
-//       display: flex;
-//       align-content: center;
-//       align-items: center;
-//     }
-//   }
-//   .enkash-reward-card-small:hover .data-news {
-//     transform: scale(1.1);
-//   }
-
-//   .overlay {
-//     position: absolute;
-//     display: block;
-//     width: 100%;
-//     height: 100%;
-//     left: 0;
-//     top: 0;
-//     opacity: 0;
-//     visibility: hidden;
-//   }
-
-//   .simple-overlay {
-//     opacity: 0;
-//     visibility: hidden;
-//   }
-//   .enkash-reward-card-small:hover .simple-overlay {
-//     visibility: visible;
-//     opacity: 1;
-//   }
-// }
-// .counter {
-//   background: #fff;
-//   padding: 25px;
-//   border-radius: 20px;
-//   margin-top: 1.5rem;
-//   .count-number {
-//     font-size: 3.5rem;
-//     font-weight: 100;
-//     color: #000847;
-//     opacity: 0.3;
-//   }
-//   .plus-text {
-//     font-size: 3.5rem;
-//     font-weight: 100;
-//     color: #000847;
-//     opacity: 0.3;
-//     position: relative;
-//     top: -4px;
-//   }
-//   .count-text {
-//     font-size: 1.2rem;
-//     font-weight: 400;
-//     color: #26283a;
-//   }
-// }
-
-// .margin-5rem {
-//   margin-top: 5rem;
-//   margin-bottom: 2rem;
-// }
-// .margin-bottom-12 {
-//   margin-bottom: 3rem;
-// }
-
-// .home-banner-content {
-//   margin-top: 3rem;
-// }
-// // .align-center-ele{
-// //     margin-top: 1rem;
-// // }
-
-// .margin-align {
-//   padding-left: 7rem;
-// }
-
-// .padding-remove {
-//   padding-right: 15px !important;
-// }
-// .idex-bg {
-//   background-size: 90% !important;
-// }
-
-// .margin-align.footer-social-links {
-//   margin-top: 2rem;
-// }
-
-// @media (min-width: 1300px) {
-//   .container {
-//     max-width: 1270px;
-//   }
-// }
-
-// @media (max-width: 640px) {
-//   .mobile-space-top {
-//     margin-top: -25px;
-//   }
-//   .align-center-ele {
-//     justify-content: center;
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-//   .slider-content {
-//     padding-left: 0 !important;
-//     padding-right: 0 !important;
-//   }
-//   .trusted-partner {
-//     margin-top: 0;
-//   }
-//   .margin-5rem {
-//     margin-top: 2rem;
-//     margin-bottom: 0rem;
-//   }
-//   .margin-bottom-12 {
-//     margin-bottom: 0;
-//   }
-//   .growing-platform {
-//     margin-top: 50px;
-//   }
-//   .product-best {
-//     margin: 3rem auto 3rem auto;
-//     padding: 0 15px;
-//   }
-//   .middle-journey-process .middle-sub-container {
-//     height: 700px;
-//     // height: 590px;
-//   }
-//   .feature-section .section-heading img {
-//     width: 40px;
-//   }
-
-//   .growing-platform .top-wrapper .ctw-flag {
-//     width: 100% !important;
-//     font-size: 24px;
-//     line-height: 30px;
-//     height: 4.5rem;
-//   }
-//   .counter {
-//     padding: 0;
-//   }
-//   .innovations {
-//     line-height: 26px !important;
-//     font-size: 1.2rem;
-//     margin: auto;
-//     padding: 2rem 1rem 0 1rem;
-//     text-align: center;
-//   }
-//   .growing-platform {
-//     padding-bottom: 2.5rem;
-//     margin-bottom: 3.5rem;
-//   }
-//   .news-container {
-//     margin-bottom: 3rem;
-//   }
-//   .feature-section .right-layout .section-text-container,
-//   .feature-section .left-layout .section-text-container {
-//     padding-right: 15px !important;
-//     padding-left: 15px !important;
-//   }
-//   .feature-section .section-text-container {
-//     padding-top: 0px !important;
-//   }
-//   .footer-section .footer-left-heading {
-//     font-size: 1.3rem !important;
-//     line-height: 30px !important;
-//     margin-top: 0 !important;
-//   }
-//   .flx-col {
-//     flex-wrap: wrap;
-//   }
-//   .margin-align {
-//     padding-left: 0;
-//   }
-// }
-
-// @media (max-width: 540px) {
-//   .footer-section .footer-right {
-//     padding-right: 15px !important;
-//     padding-top: 0rem !important;
-//   }
-//   .mobile-test-wrap {
-//     padding-top: 45px;
-//     margin-bottom: 25px;
-//   }
-//   .idex-bg {
-//     background-size: 165% !important;
-//     background-position: top 70px right -90px !important;
-//   }
-// }
-
-// .hover-effect {
-//   -webkit-transition: all 200ms ease-in;
-//   -ms-transition: all 200ms ease-in;
-//   -moz-transition: all 200ms ease-in;
-//   transition: all 200ms ease-in;
-//   &:hover {
-//     background: linear-gradient(
-//       0deg,
-//       rgba(53, 231, 235, 1) 0%,
-//       rgba(149, 81, 246, 1) 100%
-//     );
-//     text-decoration: none;
-//     color: $color-white;
-//     -webkit-transition: all 200ms ease-in;
-//     -ms-transition: all 200ms ease-in;
-//     -moz-transition: all 200ms ease-in;
-//     transition: all 200ms ease-in;
-//     border: 1px solid #f5f5f5;
-//   }
-// }
-
-// .hover-effect-bg {
-//   -webkit-transition: all 200ms ease-in;
-//   -ms-transition: all 200ms ease-in;
-//   -moz-transition: all 200ms ease-in;
-//   transition: all 200ms ease-in;
-//   background: linear-gradient(
-//     0deg,
-//     rgba(53, 231, 235, 1) 0%,
-//     rgba(149, 81, 246, 1) 100%
-//   );
-//   text-decoration: none;
-//   color: $color-white !important;
-//   -webkit-transition: all 200ms ease-in;
-//   -ms-transition: all 200ms ease-in;
-//   -moz-transition: all 200ms ease-in;
-//   transition: all 200ms ease-in;
-//   border: 1px solid #f5f5f5;
-//   padding: 10px 15px;
-
-//   @include bp-lg {
-//     padding: 10px 30px;
-//   }
-// }
-
-// .hover-sign {
-//   -webkit-transition: all 200ms ease-in;
-//   -ms-transition: all 200ms ease-in;
-//   -moz-transition: all 200ms ease-in;
-//   transition: all 200ms ease-in;
-//   margin-left: 0.2rem;
-//   /*border-radius: 500px;*/
-//   padding: 10px 10px;
-//   border: 2px solid #9551f6;
-
-//   @include bp-lg {
-//     margin-left: 1rem;
-//     padding: 10px 30px;
-//   }
-
-//   &:hover {
-//     background: linear-gradient(
-//       0deg,
-//       rgba(53, 231, 235, 1) 0%,
-//       rgba(149, 81, 246, 1) 100%
-//     );
-//     text-decoration: none;
-//     color: $color-white;
-//     -webkit-transition: all 200ms ease-in;
-//     -ms-transition: all 200ms ease-in;
-//     -moz-transition: all 200ms ease-in;
-//     transition: all 200ms ease-in;
-//     border: 2px solid #9551f6;
-//   }
-// }
-
-// .story-title {
-//   text-decoration: underline;
-//   text-underline-offset: 12px;
-//   text-decoration-thickness: 4px;
-//   text-decoration-color: $color-black;
-//   @include for-laptops {
-//     text-decoration: none;
-//     border-left: 15px solid $color-equity-blue;
-//   }
-//   h4 {
-//     text-align: center;
-//     @include for-laptops {
-//       text-align: left;
-//     }
-//   }
-// }
-
-// .story-description {
-//   padding-bottom: 50px;
-
-//   @include for-laptops {
-//     padding-bottom: 100px;
-//   }
-//   padding-bottom: 100px;
-//   text-align: center;
-//   font-size: 14px;
-//   @include for-laptops {
-//     text-align: left;
-//     font-size: 18px;
-//   }
-// }
-
-// .enkash-card-blank {
-//   display: none;
-//   @include for-laptops {
-//     display: block;
-//     width: 100%;
-//   }
-// }
-
-// .year-container {
-//   display: flex;
-//   justify-content: space-evenly;
-//   .name {
-//     margin: 5px;
-//     font-size: 13px;
-//     font-weight: 500;
-//     padding-left: 8px;
-//     @include for-laptops {
-//       margin: 5px;
-//       font-size: 19px;
-//       padding: 10px;
-//     }
-//     &:hover {
-//       font-weight: bold;
-//       color: $color-black;
-//     }
-//   }
-//   .name.active {
-//     font-weight: bold;
-//     color: $color-black;
-//   }
-//   .icon {
-//     img {
-//       height: 20px;
-//       width: 20px;
-//       @include for-laptops {
-//         display: none;
-//       }
-//     }
-//   }
-// }
-
-// .growth-progress-bar {
-//   flex-grow: 1;
-//   height: 3px;
-//   background-color: #0050ff;
-//   @include for-laptops {
-//     margin: 0 10px;
-//   }
-// }
-
-// .growth-progress {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-//   padding-left: 10px;
-//   padding-right: 10px;
-//   @include for-laptops {
-//     padding-left: 40px;
-//     padding-right: 40px;
-//   }
-//   .icon {
-//     display: none;
-//     @include for-laptops {
-//       display: block;
-//       width: 30px;
-//       height: 30px;
-//       img {
-//         width: 10px;
-//         height: 10px;
-//         @include for-laptops {
-//           width: 30px;
-//           height: 30px;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// .month {
-//   width: 80px;
-//   font-size: 12px;
-//   border-radius: 10px;
-//   color: $color-white;
-//   font-weight: 700;
-//   @include for-laptops {
-//     font-weight: 500;
-//     font-size: 18px;
-//   }
-// }
-
-// .month-text {
-//   text-align: center;
-//   font-size: 8.5px;
-//   font-weight: 700;
-//   @include for-laptops {
-//     font-weight: 500;
-//     font-size: 14px;
-//     word-break: normal;
-//   }
-// }
-
-// .month-tie-icon {
-//   display: flex;
-// }
-
-// .dotted-line {
-//   border-top: 0.8px dashed;
-//   margin-bottom: -18px;
-// }
-
-// .dotted-line-vertical {
-//   border-right: 0.8px dashed;
-//   margin-bottom: -37px;
-// }
-
-// .arrow-row {
-//   display: flex;
-//   justify-content: space-evenly;
-// }
-
-// .growth-content {
-//   .first-row {
-//     margin-bottom: 20px;
-//   }
-//   margin-left: -8px;
-//   margin-right: -8px;
-// }
-
-// .mobile-nopadding {
-//   padding-left: 0 !important;
-//   @include for-laptops {
-//     padding-left: 15px !important;
-//     padding-right: 15px !important;
-//   }
-// }
-// .icon-forward,
-// .icon-backward {
-//   display: none;
-//   @include for-laptops {
-//     display: block;
-//   }
-// }
-
-// .underline-text {
-//   text-decoration: underline;
-//   text-underline-offset: 12px;
-//   text-decoration-thickness: 4px;
-//   text-decoration-color: $color-equity-blue;
-//   @include for-laptops {
-//     text-decoration-thickness: 8px;
-//   }
-// }
-
-// .story-container {
-//   margin-top: 30px;
-//   @include for-laptops {
-//     margin-top: 50px;
-//   }
-// }
-
-// .bottom-line-sm {
-//   display: flex;
-//   @include for-laptops {
-//     display: none;
-//   }
-// }
-
-// .bottom-line-lg {
-//   display: none;
-//   @include for-laptops {
-//     display: flex;
-//   }
-// }
-
-// .celebration-icon {
-//   width: 60px;
-//   margin-left: -10px;
-//   @include for-laptops {
-//     margin-left: 20px;
-//     width: 100px;
-//   }
-// }
-
-// .team-pic {
-//   border-radius: 32px;
-//   width: 100%;
-// }
+@import "./variables";
+@import "./mixin";
+
+//This is copied code from old website
+//TODO : Shift this code to module scss file in about folder
+
+$breadcrumb-active: #0050ff;
+$journey-border: rgba(131, 143, 174, 0.55);
+$about-box-shadow: #0070c224;
+$abot-dark-black: #33333342;
+$color-balck: #000000;
+$abt-date-color: #0070c217;
+$process-color: #e7eeff;
+$abt-li-color: #231e1e;
+
+@mixin before-mixin {
+  position: absolute;
+  content: "";
+}
+
+@mixin background-mixin {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.enkash-first-conatiner .first-container {
+  position: relative;
+  background-color: $color-indi-volt;
+  padding: 50px 40px 480px 40px;
+  @include for-laptops {
+    padding: 150px 90px 50px 90px;
+  }
+  @include for-laptops {
+    padding: 150px 90px 50px 90px;
+  }
+}
+
+.about-container .enkash-banking-maincontainer {
+  float: left;
+  width: 100%;
+  position: relative;
+}
+
+.gradiant {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+.about-container {
+  position: relative;
+  z-index: 3;
+}
+.about-container .enkash-first-conatiner {
+  float: left;
+  width: 100%;
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 9;
+}
+
+.enkash-client-serve {
+  a {
+    text-decoration: none;
+    cursor: default;
+    img {
+      height: 50px;
+    }
+    p {
+      padding-top: 1rem;
+      text-align: center;
+      font-size: 16px;
+      letter-spacing: 0.15px;
+      color: #26283a;
+      opacity: 1;
+    }
+    &:hover {
+      text-decoration: none;
+      cursor: default;
+    }
+  }
+}
+
+.enkash-abt-banner-text {
+  p {
+    letter-spacing: 0.22px;
+    font-size: 15px;
+    @include for-laptops {
+      font-size: 17px;
+    }
+  }
+}
+
+.about-mobile-titile {
+  display: block;
+  @include for-laptops {
+    display: none;
+  }
+}
+
+.enkash-team-container {
+  background-color: $color-white;
+  padding: 28px 40px 20px 40px;
+  @include for-laptops {
+    padding: 50px 90px 110px 90px;
+  }
+}
+
+.enkash-abt-title {
+  text-align: center;
+  font-weight: 500;
+  color: #26283a;
+  opacity: 1;
+  font-size: 25px;
+  @include for-laptops {
+    font-size: 30px;
+  }
+  h4 {
+    font-size: 25px;
+    line-height: 30px;
+    @include for-laptops {
+      // letter-spacing: 8px;
+      line-height: 40px;
+      font-size: 30px;
+    }
+  }
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center; /* adjusted */
+  @include for-laptops {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .enkash-card {
+    @include for-laptops {
+      width: 300px;
+    }
+  }
+}
+
+.enkash-card {
+  background: $color-white 0% 0% no-repeat padding-box;
+  box-shadow: 0px 20px 50px $about-box-shadow;
+  border-radius: 8px;
+  height: 320px;
+  width: 90%;
+  @include for-laptops {
+    margin-left: 80px;
+    border-radius: 20px;
+    width: 230px;
+    height: 300px;
+    width: 100%;
+  }
+  &:hover {
+    filter: grayscale(0%);
+  }
+  .user-img {
+    position: relative;
+    width: 100%;
+    height: 140px;
+    top: -20px;
+    height: 210px;
+    @include for-laptops {
+      width: 190px;
+      height: 230px;
+      // -webkit-transform: scale(1);
+      // transform: scale(1);
+      // -webkit-transition: .2s ease-in-out;
+      // transition: .2s ease-in-out;
+      display: inline-block;
+      background-repeat: no-repeat;
+      // &:hover{
+      //     -webkit-transform: scale(1.1);
+      //     transform: scale(1.1);
+      // }
+    }
+  }
+  .user-img#naveen-bindal {
+    background: url("../app/about/img/naveen-bindal.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+  .user-img#yadvendra-tyagi {
+    background: url("../app/about/img/yadvendra-tyagi.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+  .user-img#hemant-vishnoi {
+    background: url("../app/about/img/hemant-vishnoi.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+  .user-img#himanshu-vyas {
+    background: url("../app/about/img/himanshu-vyas.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#lalit-arun {
+    background: url("../app/about/img/lalit-arun.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#abhishek-miglani {
+    background: url("../app/about/img/abhishek-miglani.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#atishree-jindal {
+    background: url("../app/about/img/atishree-jindal.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#hitesh-jain {
+    background: url("../app/about/img/hitesh-jain.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#vibhor-chugh {
+    background: url("../app/about/img/vibhor-chugh.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#nagesh-shet {
+    background: url("../app/about/img/nagesh-shet.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#amandeep-arora {
+    background: url("../app/about/img/amandeep-arora.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#manish-kumawat {
+    background: url("../app/about/img/manish-kumawat.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#anurag-darira {
+    background: url("../app/about/img/anurag-darira.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#krishnakumar-sv {
+    background: url("../app/about/img/krishna-kumar-sv.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#ankur-gupta {
+    background: url("../app/about/img/ankur-gupta.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#martin-arockiaraj {
+    background: url("../app/about/img/martin-arockiaraj.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .user-img#vijayanand-srinivasan {
+    background: url("../app/about/img/vijay-srinivasan.png");
+    @include background-mixin;
+    @include for-laptops {
+      background-size: 100%;
+    }
+  }
+
+  .enkash-card-details {
+    position: relative;
+    margin-top: 8px;
+    @include for-laptops {
+      margin-top: -24px;
+    }
+    .card-txt {
+      font-weight: 500;
+      letter-spacing: 0.15px;
+      color: #26283a;
+      opacity: 1;
+      font-size: 13px;
+      padding: 0px 0 10px 0;
+      @include for-laptops {
+        font-size: 16px;
+      }
+    }
+    .card-designation {
+      font-weight: 400;
+      letter-spacing: 0.15px;
+      color: #26283a;
+      opacity: 1;
+      font-size: 11px;
+      @include for-laptops {
+        font-size: 14px;
+      }
+      padding: 0px 0 10px 0;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.enkash-founder {
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.25px;
+  color: #26283a;
+  opacity: 1;
+  margin-bottom: 40px;
+  text-align: center;
+  width: 100%;
+  @include for-laptops {
+    width: 230px;
+    font-size: 16px;
+  }
+}
+
+.enkash-family-img {
+  position: relative;
+  height: 290px;
+  right: 0;
+  left: 0;
+  margin-top: 40px;
+  @include for-laptops {
+    height: 385px;
+    right: -20px;
+    margin-top: 0px;
+  }
+
+  @include for-laptops {
+    right: 0px;
+    height: 510px;
+  }
+}
+
+.enkash-investor {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @include for-laptops {
+    flex-direction: row;
+  }
+  background: $color-white 0% 0% no-repeat padding-box;
+  box-shadow: 0px 20px 50px $about-box-shadow;
+  border-radius: 20px;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+  clear: both;
+  position: relative;
+  margin-top: 20px;
+  z-index: 99;
+}
+
+.investor-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  // letter-spacing: 8px;
+  color: #26283a;
+  // text-transform: uppercase;
+  opacity: 1;
+  margin-bottom: 1rem;
+  @include for-laptops {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+.enkash-space {
+  position: relative;
+  height: 5px;
+  @include for-laptops {
+    width: 80px;
+    height: 80px;
+    &:before {
+      @include before-mixin;
+      height: 100%;
+      width: 1px;
+      background: $abot-dark-black;
+    }
+  }
+}
+
+.investor-list {
+  display: flex;
+  flex-direction: column;
+  padding-left: 30px;
+  padding-right: 30px;
+  @include for-laptops {
+    padding-left: 0px;
+    padding-right: 0px;
+    flex-direction: row;
+    align-items: center;
+  }
+  a {
+    background: $color-white 0% 0% no-repeat padding-box;
+    border: 1px solid $abot-dark-black;
+    border-radius: 500px;
+    opacity: 0.96;
+    display: inline-block;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    @include for-laptops {
+      margin-bottom: 0px;
+    }
+    img {
+      width: 115px;
+      height: 30px;
+    }
+  }
+}
+
+.enkash-second-conatiner {
+  position: relative;
+  width: 100%;
+  float: left;
+  // background: $color-white;
+  .enkash-abt-title {
+    margin-bottom: 20px;
+  }
+}
+
+.enkash-sub-title {
+  text-align: center;
+  letter-spacing: 0.32px;
+  color: $color-balck;
+  font-weight: 400;
+  font-size: 17px;
+}
+
+.about-container .mCSB_scrollTools .mCSB_draggerRail {
+  width: 1px;
+}
+.about-container .mCS-dark.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  //   background-color: #2DCC40 !important;
+  background-color: #5250de;
+  width: 13px;
+  height: 13px;
+}
+
+.parent-cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include for-laptops {
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+.about-container .footer-social-links {
+  a img {
+    transform: scale(1);
+    -webkit-transition: transform 2s ease-out;
+    transition: transform 2s ease-out;
+  }
+  a img:hover {
+    -webkit-transition: transform 2s ease;
+    transition: transform 2s ease;
+    transform: scale(1.2);
+  }
+}
+.about-container .footer-links {
+  a {
+    -webkit-transition: opacity 1.5s ease;
+    transition: opacity 1.5s ease;
+  }
+  a:hover {
+    opacity: 0.5;
+  }
+}
+
+.active.middle-journey-process:before {
+  height: 94%;
+  @include for-laptops {
+    height: 88%;
+  }
+}
+
+.create-io-img img {
+  height: auto;
+  @include for-laptops {
+    height: 400px;
+  }
+}
+
+.about-container .mCSB_scrollTools .mCSB_dragger {
+  height: 15px !important;
+}
+
+.news-section-slider {
+  .enkash-reward-card-small {
+    border-radius: 100%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 140px !important;
+    height: 140px !important;
+    padding: 10px;
+    .data-news {
+      transition: all 0.3s;
+      transform: scale(1);
+      height: 80px;
+      width: 100%;
+      display: flex;
+      align-content: center;
+      align-items: center;
+    }
+  }
+  .enkash-reward-card-small:hover .data-news {
+    transform: scale(1.1);
+  }
+
+  .overlay {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .simple-overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+  .enkash-reward-card-small:hover .simple-overlay {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+.counter {
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  margin-top: 1.5rem;
+  .count-number {
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #000847;
+    opacity: 0.3;
+  }
+  .plus-text {
+    font-size: 3.5rem;
+    font-weight: 100;
+    color: #000847;
+    opacity: 0.3;
+    position: relative;
+    top: -4px;
+  }
+  .count-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #26283a;
+  }
+}
+
+.margin-5rem {
+  margin-top: 5rem;
+  margin-bottom: 2rem;
+}
+.margin-bottom-12 {
+  margin-bottom: 3rem;
+}
+
+.home-banner-content {
+  margin-top: 3rem;
+}
+// .align-center-ele{
+//     margin-top: 1rem;
+// }
+
+.margin-align {
+  padding-left: 7rem;
+}
+
+.padding-remove {
+  padding-right: 15px !important;
+}
+.idex-bg {
+  background-size: 90% !important;
+}
+
+.margin-align.footer-social-links {
+  margin-top: 2rem;
+}
+
+@media (min-width: 1300px) {
+  .container {
+    max-width: 1270px;
+  }
+}
+
+@media (max-width: 640px) {
+  .mobile-space-top {
+    margin-top: -25px;
+  }
+  .align-center-ele {
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .slider-content {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .trusted-partner {
+    margin-top: 0;
+  }
+  .margin-5rem {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+  }
+  .margin-bottom-12 {
+    margin-bottom: 0;
+  }
+  .growing-platform {
+    margin-top: 50px;
+  }
+  .product-best {
+    margin: 3rem auto 3rem auto;
+    padding: 0 15px;
+  }
+  .middle-journey-process .middle-sub-container {
+    height: 700px;
+    // height: 590px;
+  }
+  .feature-section .section-heading img {
+    width: 40px;
+  }
+
+  .growing-platform .top-wrapper .ctw-flag {
+    width: 100% !important;
+    font-size: 24px;
+    line-height: 30px;
+    height: 4.5rem;
+  }
+  .counter {
+    padding: 0;
+  }
+  .innovations {
+    line-height: 26px !important;
+    font-size: 1.2rem;
+    margin: auto;
+    padding: 2rem 1rem 0 1rem;
+    text-align: center;
+  }
+  .growing-platform {
+    padding-bottom: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+  .news-container {
+    margin-bottom: 3rem;
+  }
+  .feature-section .right-layout .section-text-container,
+  .feature-section .left-layout .section-text-container {
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+  .feature-section .section-text-container {
+    padding-top: 0px !important;
+  }
+  .footer-section .footer-left-heading {
+    font-size: 1.3rem !important;
+    line-height: 30px !important;
+    margin-top: 0 !important;
+  }
+  .flx-col {
+    flex-wrap: wrap;
+  }
+  .margin-align {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 540px) {
+  .footer-section .footer-right {
+    padding-right: 15px !important;
+    padding-top: 0rem !important;
+  }
+  .mobile-test-wrap {
+    padding-top: 45px;
+    margin-bottom: 25px;
+  }
+  .idex-bg {
+    background-size: 165% !important;
+    background-position: top 70px right -90px !important;
+  }
+}
+
+.hover-effect {
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  &:hover {
+    background: linear-gradient(
+      0deg,
+      rgba(53, 231, 235, 1) 0%,
+      rgba(149, 81, 246, 1) 100%
+    );
+    text-decoration: none;
+    color: $color-white;
+    -webkit-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    border: 1px solid #f5f5f5;
+  }
+}
+
+.hover-effect-bg {
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  background: linear-gradient(
+    0deg,
+    rgba(53, 231, 235, 1) 0%,
+    rgba(149, 81, 246, 1) 100%
+  );
+  text-decoration: none;
+  color: $color-white !important;
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  border: 1px solid #f5f5f5;
+  padding: 10px 15px;
+
+  @include for-laptops {
+    padding: 10px 30px;
+  }
+}
+
+.hover-sign {
+  -webkit-transition: all 200ms ease-in;
+  -ms-transition: all 200ms ease-in;
+  -moz-transition: all 200ms ease-in;
+  transition: all 200ms ease-in;
+  margin-left: 0.2rem;
+  /*border-radius: 500px;*/
+  padding: 10px 10px;
+  border: 2px solid #9551f6;
+
+  @include for-laptops {
+    margin-left: 1rem;
+    padding: 10px 30px;
+  }
+
+  &:hover {
+    background: linear-gradient(
+      0deg,
+      rgba(53, 231, 235, 1) 0%,
+      rgba(149, 81, 246, 1) 100%
+    );
+    text-decoration: none;
+    color: $color-white;
+    -webkit-transition: all 200ms ease-in;
+    -ms-transition: all 200ms ease-in;
+    -moz-transition: all 200ms ease-in;
+    transition: all 200ms ease-in;
+    border: 2px solid #9551f6;
+  }
+}
+
+.story-title {
+  text-decoration: underline;
+  text-underline-offset: 12px;
+  text-decoration-thickness: 4px;
+  text-decoration-color: $color-black;
+  @include for-laptops {
+    text-decoration: none;
+    border-left: 15px solid $color-equity-blue;
+  }
+  h4 {
+    text-align: center;
+    @include for-laptops {
+      text-align: left;
+    }
+  }
+}
+
+.story-description {
+  padding-bottom: 30px;
+
+  @include for-laptops {
+    padding-bottom: 100px;
+  }
+  text-align: center;
+  font-size: 14px;
+  @include for-laptops {
+    text-align: left;
+    font-size: 18px;
+  }
+}
+
+.enkash-card-blank {
+  display: none;
+  @include for-laptops {
+    display: block;
+    width: 100%;
+  }
+}
+
+.year-container {
+  display: flex;
+  justify-content: space-evenly;
+  .name {
+    margin: 5px;
+    font-size: 13px;
+    font-weight: 500;
+    padding-left: 8px;
+    @include for-laptops {
+      margin: 5px;
+      font-size: 19px;
+      padding: 10px;
+    }
+    &:hover {
+      font-weight: bold;
+      color: $color-black;
+    }
+  }
+  .name.active {
+    font-weight: bold;
+    color: $color-black;
+  }
+  .icon {
+    img {
+      height: 20px;
+      width: 20px;
+      @include for-laptops {
+        display: none;
+      }
+    }
+  }
+}
+
+.growth-progress-bar {
+  flex-grow: 1;
+  height: 3px;
+  background-color: #0050ff;
+  @include for-laptops {
+    margin: 0 10px;
+  }
+}
+
+.growth-progress {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  @include for-laptops {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  .icon {
+    display: none;
+    @include for-laptops {
+      display: block;
+      width: 30px;
+      height: 30px;
+      img {
+        width: 10px;
+        height: 10px;
+        @include for-laptops {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+.month {
+  width: 80px;
+  font-size: 12px;
+  border-radius: 10px;
+  color: $color-white;
+  font-weight: 700;
+  @include for-laptops {
+    font-weight: 500;
+    font-size: 18px;
+  }
+}
+
+.month-text {
+  text-align: center;
+  font-size: 8.5px;
+  font-weight: 700;
+  @include for-laptops {
+    font-weight: 500;
+    font-size: 14px;
+    word-break: normal;
+  }
+}
+
+.month-tie-icon {
+  display: flex;
+}
+
+.dotted-line {
+  border-top: 0.8px dashed;
+  margin-bottom: -18px;
+}
+
+.dotted-line-vertical {
+  border-right: 0.8px dashed;
+  margin-bottom: -37px;
+}
+
+.arrow-row {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.growth-content {
+  .first-row {
+    margin-bottom: 20px;
+  }
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.mobile-nopadding {
+  padding-left: 0 !important;
+  @include for-laptops {
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+  }
+}
+.icon-forward,
+.icon-backward {
+  display: none;
+  @include for-laptops {
+    display: block;
+  }
+}
+
+.underline-text {
+  text-decoration: underline;
+  text-underline-offset: 12px;
+  text-decoration-thickness: 4px;
+  text-decoration-color: $color-equity-blue;
+  @include for-laptops {
+    text-decoration-thickness: 8px;
+  }
+}
+
+.story-container {
+  margin-top: 30px;
+  @include for-laptops {
+    margin-top: 50px;
+  }
+}
+
+.bottom-line-sm {
+  display: flex;
+  @include for-laptops {
+    display: none;
+  }
+}
+
+.bottom-line-lg {
+  display: none;
+  @include for-laptops {
+    display: flex;
+  }
+}
+
+.celebration-icon {
+  width: 60px;
+  margin-left: -10px;
+  @include for-laptops {
+    margin-left: 20px;
+    width: 100px;
+  }
+}
+
+.team-pic {
+  border-radius: 32px;
+  width: 100%;
+}
+
+.about-lottie {
+  position: absolute;
+  right: 0px;
+  width: 350px;
+  top: 550px;
+  @include for-laptops {
+    top: 150px;
+    width: 450px;
+  }
+  @include for-large-screen {
+    width: 400px;
+  }
+}
