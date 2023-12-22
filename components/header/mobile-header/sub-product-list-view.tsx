@@ -46,14 +46,18 @@ const SubProductListView = (props: {
                   <>
                     <li>
                       <div
-                        className={`my-3 ${styles.underline_text} ${
+                        className={`my-3  ${
                           activeSubtitleIndex === index
                             ? "color-equity-blue"
                             : "color-secondry-grey"
                         } {${styles.title}}`}
                       >
-                        {category.subtitle}
-                        {category.subtitle === "Receivables" && <sup>#</sup>}
+                        <span className={styles.underline_text}>
+                          {category.subtitle}
+                        </span>
+                        {category.subtitle === "Receivables" && (
+                          <sup className={styles.sup}>#</sup>
+                        )}
                       </div>
                     </li>
                   </>
