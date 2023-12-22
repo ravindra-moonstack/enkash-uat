@@ -120,13 +120,22 @@ const nextConfig = {
         permanent: false,
       },
       { source: "/support", destination: "/", permanent: false },
+      { source: "/about", destination: "/", permanent: false },
     ];
   },
   async rewrites() {
     return [
+      // {
+      //   source: "/resources",
+      //   destination: "https://blogs.enkash.com/",
+      // },
+      // {
+      //   source: "/resources/videos",
+      //   destination: "https://blogs.enkash.com/videos",
+      // },
       {
-        source: "/resources",
-        destination: "https://blogs.enkash.com/",
+        source: "/resources/:path*",
+        destination: "https://blogs.enkash.com/videos/:path*", // The :path parameter is used here so will not be automatically passed in the query
       },
     ];
   },

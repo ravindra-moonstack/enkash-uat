@@ -80,12 +80,11 @@ const freedomProducts = [
       },
     ],
     footerText: "Empower your finances with purpose-based cards",
-    footerMobileText: "Explore Freedom",
+    footerMobileText: "Explore Slash",
     footerImg: "freedom_footer_bg",
     footerLink: "/slash",
     parentLink: "/slash",
   },
-
 ];
 
 export default freedomProducts;

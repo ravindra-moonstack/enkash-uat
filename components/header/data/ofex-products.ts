@@ -14,10 +14,11 @@ import {
 const xpenzProducts = [
   {
     subtitle: "Default",
+    subtitleLink: "/ofex",
     currentHeading: {
-      name: "ofEx ",
+      name: "OfEx ",
       description:
-        "Automate your company's AP, AR, and bank reconciliation seamlessly",
+        "Manage employee expenses and reimbursements with a highly customizable platform",
     },
     list: [
       {
