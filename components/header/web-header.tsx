@@ -73,11 +73,11 @@ const WebHeader = ({ utmSource }: props) => {
               setShowBanner(false);
             }}
           />
-          {/* <Image
+          <Image
             className={styles.banner_stack}
             src={bannerStack}
             alt="stack image"
-          /> */}
+          />
         </div>
       )}
 
