@@ -1,14 +1,21 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "@/components/header/header";
 import styles from "./page.module.scss";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import Footer from "@/components/footer/footer";
 import emailjs from "@emailjs/browser";
+import {
+  defaultTemplateId,
+  emailjs_public_key,
+  emailjs_service_id,
+  olympusTemplateId,
+} from "@/common/constant";
 
 const sales = () => {
+  //Form Variables
   const [fullName, setFullName] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [companyEmail, setCompanyEmail] = useState("");
@@ -21,24 +28,35 @@ const sales = () => {
   const [isFormValid, setIsFormValid] = useState(true);
   const [selectedProductValid, setSelectedProductValid] = useState(true);
 
+  //Url parameters
+  let urlParams;
+  let source;
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      urlParams = new URLSearchParams(window.location.search);
+      source = urlParams.get("source");
+      const emailParam = urlParams.get("email");
+      if (emailParam !== null) {
+        setCompanyEmail(emailParam);
+      }
+    }
+    emailjs.init(emailjs_public_key);
+  }, []);
+
+  //Submit functionality
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-
-
-    console.log(selectedProduct,"selectedProduct")
-    if(selectedProduct ==="none")
-    {
-      setSelectedProductValid(false)
-    }else{
-      setSelectedProductValid(false)
-    }
+    selectedProduct === "none"
+      ? setSelectedProductValid(false)
+      : setSelectedProductValid(true);
 
     if (
       fullName.length > 1 &&
       isValidEmail(companyEmail) &&
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
-      selectedProduct !=="none"
+      selectedProduct !== "none"
     ) {
       setIsFormValid(true);
       sendEmailToEnkash();
@@ -47,6 +65,7 @@ const sales = () => {
     }
   };
 
+  //Email validation
   function isValidEmail(val: string): boolean {
     const regEmail: RegExp =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -57,9 +76,7 @@ const sales = () => {
     return string && string.startsWith("olympus");
   }
 
-  const olympusTemplateId = "template_q8nwwim";
-  const defaultTemplateId = "template_grtqiop";
-
+  //Email Send to EmailJs
   function sendEmailToEnkash() {
     const urlParams = new URLSearchParams(window.location.search);
     const source = urlParams.get("source");
@@ -85,20 +102,20 @@ const sales = () => {
 
     console.log(templateParams);
 
-    // emailjs.send("service_ggwkn2o", templateId, templateParams).then(
-    //   (response) => {
-    //     window.location.href = "/confirmation/";
-    //     console.log("form submit successful");
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   }
-    // );
+    emailjs.send(emailjs_service_id, templateId, templateParams).then(
+      (response) => {
+        window.location.href = "/confirmation/";
+        console.log("form submit successful");
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 
   return (
     <div>
-<Header />
+      <Header />
       <div className={styles.container}>
         <div className={styles.inner_container}>
           <div className="mb-5 d-flex justify-content-md-center">
@@ -217,6 +234,9 @@ const sales = () => {
                   value={selectedProduct}
                   onChange={(e) => {
                     setSelectedProduct(e.target.value);
+                    e.target.value === "none"
+                      ? setSelectedProductValid(false)
+                      : setSelectedProductValid(true);
                   }}
                   className={`form-select ${
                     !selectedProductValid ? styles.select_box_error : ""
@@ -251,7 +271,7 @@ const sales = () => {
                   className="form-select"
                   required
                 >
-                   <option value="">Open this select menu</option>
+                  <option value="">Open this select menu</option>
                   <option value="Payables">Payables</option>
                   <option value="Receievables">Receivables</option>
                   <option value="Ofex">OfEx</option>

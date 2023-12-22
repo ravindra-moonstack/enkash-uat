@@ -39,6 +39,7 @@ import {
   authorTwo,
 } from ".";
 import Footer from "@/components/footer/footer";
+import EmailBox from "@/components/homepage/email-box";
 
 export const metadata: Metadata = {
   title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
@@ -161,22 +162,7 @@ const home = () => {
             }
           />
         </div>
-
-        <div className="col-12 d-flex justify-content-center align-items-center">
-          <div className={styles.email_box}>
-            <div className="w-50 d-flex align-items-center">
-              <input type="text" placeholder="Enter your work email"></input>
-            </div>
-
-            <div>
-              <PrimaryButton
-                title="Get Started Now"
-                theme="theme-blue"
-                url="/sales"
-              />
-            </div>
-          </div>
-        </div>
+        <EmailBox />
       </div>
       <div className={`${styles.third_row} row color-white`}>
         <PolygonSection />
@@ -442,7 +428,9 @@ const home = () => {
         <div
           className={`d-flex col-12 flex-column flex-md-row align-items-center ${styles.card}`}
         >
-          <div className={`d-flex flex-column-reverse flex-md-row ${styles.box}`}>
+          <div
+            className={`d-flex flex-column-reverse flex-md-row ${styles.box}`}
+          >
             <div className={`d-flex flex-column ${styles.card_container}`}>
               <Heading
                 title="Switch to better"
@@ -466,7 +454,11 @@ const home = () => {
               </div>
 
               <div className="mt-4">
-                <PrimaryButton title="Get a Demo" url="/sales" theme="theme-green" />
+                <PrimaryButton
+                  title="Get a Demo"
+                  url="/sales"
+                  theme="theme-green"
+                />
               </div>
             </div>
             <div className={styles.img_container}>
@@ -795,7 +787,11 @@ const home = () => {
                 <Image src={authorOne} alt="enkash user image" loading="lazy" />
               </div>
               <div className="d-flex flex-column">
-                <Heading title="Deep Sehgal, Founder & CEO," size="h4" weight="4" />
+                <Heading
+                  title="Deep Sehgal, Founder & CEO,"
+                  size="h4"
+                  weight="4"
+                />
                 <Heading title="Vianet" size="h4" weight="4" />
               </div>
             </div>
