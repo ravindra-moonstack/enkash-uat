@@ -43,8 +43,11 @@ const paymentLinks = () => {
                 weight="7"
               />
             </div>
+            <div>
             <Heading title="Payment Links" size="h4" weight="4" />
             <span className="sup-symbol">#</span>
+            </div>
+
           </div>
 
           <div className="d-flex flex-column">

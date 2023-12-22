@@ -279,14 +279,16 @@ body {
 
 .sup-symbol {
   display: inline;
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 0;
   line-height: normal;
   margin-left: 2px;
   @include for-laptops {
+    display: inline;
     font-size: 17px;
   }
   @include for-window-zoomed-screens {
+    display: inline;
     font-size: 14px;
   }
 }

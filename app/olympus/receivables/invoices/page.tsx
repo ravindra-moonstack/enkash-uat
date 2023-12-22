@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const invoices = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="receivables"/>
+      <Header utmSource="receivables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -43,9 +43,10 @@ const invoices = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Invoices" size="h4" weight="4" />
-            <span className="sup-symbol">#</span>
-
+            <div>
+              <Heading title="Invoices" size="h4" weight="4" />
+              <span className="sup-symbol">#</span>
+            </div>
           </div>
           <div className="d-flex flex-column">
             <Heading
@@ -79,7 +80,7 @@ const invoices = () => {
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-          <div className="me-2">
+            <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
                 theme="theme-blue"
@@ -369,7 +370,7 @@ const invoices = () => {
           }
         />
       </div>
-      <Footer  utmSource="receivables"/>
+      <Footer utmSource="receivables" />
     </div>
   );
 };

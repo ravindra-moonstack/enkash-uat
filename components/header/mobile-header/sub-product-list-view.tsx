@@ -5,7 +5,6 @@ import { Fragment, useState } from "react";
 import Link from "next/link";
 import { footerArrow, forwardArrowBlue } from "..";
 
-
 const SubProductListView = (props: {
   setSelectedItemIndex: any;
   products: any;
@@ -54,10 +53,12 @@ const SubProductListView = (props: {
                         } {${styles.title}}`}
                       >
                         {category.subtitle}
+                        {category.subtitle === "Receivables" && <sup>#</sup>}
                       </div>
                     </li>
                   </>
                 )}
+                s
               </div>
             ))}
           </div>
@@ -70,7 +71,7 @@ const SubProductListView = (props: {
                   }`}
                 >
                   <div className="mx-4">{category.footerMobileText}</div>
-                  <Link href={category.footerLink}>
+                  <Link href={category.subtitleLink}>
                     <div className={`${styles.explore} d-flex`}>
                       <Image
                         src={footerArrow}
@@ -112,7 +113,8 @@ const SubProductListView = (props: {
           ))}
         </div>
         {props.setSelectedItemIndex === 1 && (
-          <div className={styles.powered}>*Issued by Banks/REs</div>
+          <div className={styles.powered}>*Powered by Banks/REs</div>
+    
         )}
 
         <div

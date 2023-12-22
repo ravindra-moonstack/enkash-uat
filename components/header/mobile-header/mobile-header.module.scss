@@ -37,6 +37,10 @@
   text-decoration: underline;
   text-decoration-thickness: 3px;
   text-underline-offset: 8px;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .line {
@@ -46,6 +50,9 @@
 
 .buttons_container {
   flex-grow: 4;
+  a {
+    text-decoration: none;
+  }
 }
 
 .olympus_footer_bg {

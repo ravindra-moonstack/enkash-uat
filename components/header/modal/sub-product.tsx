@@ -161,7 +161,7 @@ const SubProduct = (props: any) => {
 
           {/* only for freedom products */}
           {props.index === 1 && (
-            <div className={styles.powered}>*Issued by Banks/REs</div>
+            <div className={styles.powered}>*Powered by Banks/REs</div>
           )}
           {props.index === 0 && activeSubtitle === "Receivables" && (
             <div className={styles.powered}>

@@ -42,8 +42,10 @@ const virtualAccounts = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Virtual Accounts" size="h4" weight="4" />
-            <span className="sup-symbol">#</span>
+            <div>
+              <Heading title="Virtual Accounts" size="h4" weight="4" />
+              <span className="sup-symbol">#</span>
+            </div>
           </div>
           <div className="d-flex flex-column">
             {" "}

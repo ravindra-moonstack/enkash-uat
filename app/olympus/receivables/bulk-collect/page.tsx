@@ -42,8 +42,10 @@ const bulkCollect = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Bulk Collect" size="h4" weight="4" />
-            <span className="sup-symbol">#</span>
+            <div>
+              <Heading title="Bulk Collect" size="h4" weight="4" />
+              <span className="sup-symbol">#</span>
+            </div>
           </div>
           <Heading
             title={`No more outstanding${space}`}

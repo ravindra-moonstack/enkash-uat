@@ -114,11 +114,13 @@ const MobileHeader = () => {
               />
               <span className="mx-2"></span>
               <div>
-                <button
-                  className={`${styles.secondary_button} ${styles.active}`}
-                >
-                  Login
-                </button>
+                <Link href={"https://home.enkash.com/signup"}>
+                  <button
+                    className={`${styles.secondary_button} ${styles.active}`}
+                  >
+                    Login
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
