@@ -90,12 +90,11 @@ const About = () => {
                       data-wow-delay="500ms"
                     >
                       <div className="about-lottie">
-                      <LottieDynamicLoadComponent
-                        animationName={"AboutBanner"}
-                        loop={true}
-                      />
+                        <LottieDynamicLoadComponent
+                          animationName={"AboutBanner"}
+                          loop={true}
+                        />
                       </div>
-                    
                     </div>
                   </div>
                 </div>
@@ -459,7 +458,7 @@ const About = () => {
                     href="https://ascentcapital.in/"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="ml-md-3 wow zoomIn"
+                    className="ms-md-3 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <Image src={ascentCapital} alt="Investors Ascent Capital" />
@@ -469,7 +468,7 @@ const About = () => {
                     href="https://www.bpeasia.com/"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="ml-md-3 wow zoomIn"
+                    className="ms-md-3 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <Image
@@ -482,7 +481,7 @@ const About = () => {
                     href="https://www.mayfield.com/"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="ml-md-3 wow zoomIn"
+                    className="ms-md-3 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <Image src={mayfeild} alt="Investors Mayfield" />
@@ -502,7 +501,7 @@ const About = () => {
                     href="https://www.whiteventurecap.com/"
                     target="_blank"
                     rel="noreferrer noopener"
-                    className="ml-md-3 wow zoomIn"
+                    className="ms-md-3 wow zoomIn"
                     data-wow-delay="500ms"
                   >
                     <Image
