@@ -126,24 +126,24 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: "/resources",
-        destination: "https://blogs.enkash.com/",
+        source: "/resources/videos/",
+        destination: "https://blogs.enkash.com/videos/",
       },
       {
-        source: "/resources/videos",
-        destination: "https://blogs.enkash.com/videos",
-      },
-      {
-        source: "/resources/press-release",
+        source: "/resources/press-release/",
         destination: "https://blogs.enkash.com/press-release/",
       },
       {
-        source: "/resources/media-coverage",
-        destination: "https://www.enkash.com/resources/media-coverage/",
+        source: "/resources/media-coverage/",
+        destination: "https://blogs.enkash.com/media-coverage/",
       },
       {
-        source: "/resources/customer-stories",
+        source: "/resources/customer-stories/",
         destination: "https://blogs.enkash.com/customer-stories/",
+      },
+      {
+        source: "/resources/",
+        destination: "https://blogs.enkash.com/",
       },
     ];
   },
