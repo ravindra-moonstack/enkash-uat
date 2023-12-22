@@ -7,12 +7,12 @@ export const motherProducts = [
   },
   {
     name: "Slash",
-    description: "Manage employee expenses and reimbursements with a highly customizable platform",
+    description: "Simplify corporate spending with flexible card solutions",
     link: "/slash",
   },
   {
     name: "OfEx",
-    description: "Track employee expenses with a highly customizable platform",
+    description: "Manage employee expenses and reimbursements with a highly customizable platform",
     link: "/ofex",
   },
   {

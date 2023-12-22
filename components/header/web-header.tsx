@@ -100,7 +100,7 @@ const WebHeader = ({ utmSource }: props) => {
                 }}
               >
                 {index === 2 ? (
-                  <Link className={styles.link} href="">
+                  <Link className={styles.link} href={item.link}>
                     {item.name}
                   </Link>
                 ) : (

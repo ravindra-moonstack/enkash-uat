@@ -14,6 +14,7 @@ import xpenzProducts from "@/components/header/data/ofex-products";
 import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-products";
 import motherProducts from "@/components/header/data/mother-products";
 import resources from "@/components/header/data/resources";
+import Link from "next/link";
 
 const motherProductsList = [
   olympusProducts,
@@ -41,11 +42,21 @@ const MobileHeader = () => {
                     key={item.name}
                     className={`py-4 px-4`}
                     onClick={() => {
-                      setSelectedItemIndex(index);
-                      setCurrentStep(2);
+                      if (index != 2) {
+                        setSelectedItemIndex(index);
+                        setCurrentStep(2);
+                      } else {
+                        window.location.href = "/olympus/";
+                      }
                     }}
                   >
-                    <div className={styles.title}> {item.name}</div>
+                    {index === 2 ? (
+                      <Link className={styles.title} href={item.link}>
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <div className={styles.title}>{item.name}</div>
+                    )}
                     {index !== 2 && (
                       <>
                         <Image src={forwardArrowBlue} alt="arrow down icon" />
