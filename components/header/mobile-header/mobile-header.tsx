@@ -45,8 +45,6 @@ const MobileHeader = () => {
                       if (index != 2) {
                         setSelectedItemIndex(index);
                         setCurrentStep(2);
-                      } else {
-                        window.location.href = "/olympus/";
                       }
                     }}
                   >
