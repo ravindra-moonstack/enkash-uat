@@ -83,7 +83,9 @@ const Footer = ({ utmSource = "" }: any) => {
             <ul>
               <li className="mt-2">
                 <div className={`color-white ${styles.sub_title}`}>
-                  <Link href="/olympus/receivables">Receivables</Link>
+                  <Link href="/olympus/receivables">
+                    Receivables<sup>#</sup>
+                  </Link>
                 </div>
               </li>
               <li>
@@ -404,30 +406,48 @@ const Footer = ({ utmSource = "" }: any) => {
           </div>
         </div>
         <div className={`col-12 text-left color-white ${styles.disclaimer}`}>
-          *Corporate cards, payments, or other related services are provided by
+          Corporate cards, payments, or other related services are provided by
           RBI-licensed banks and/ or in accordance with RBI regulations and/ or
           RBI compliance maintained by banks & regulated entities. EnKash is not
-          a bank and doesn’t hold or claim to hold a banking license.
+          a bank and doesn’t hold or claim to hold a banking license.{" "}
+          <span className="color-electric-green">
+            *Powered by Banks. <sup># </sup> Launching soon as per RBI's PA
+            (Online) authorization
+          </span>
         </div>
         <div className={`col-12 color-white ${styles.copyright}`}>
-          Copyright © 2023 | EnKash. All right reserved.
+          Copyright © 2023 | Nehat Tech Solutions Pvt. Ltd. All right reserved.
         </div>
       </div>
 
       <div className={styles.locations_row}>
-        <Image
-          className={styles.footer_location_pin}
-          src={locationPin}
-          alt="Enkash Office Location"
-          width={20}
-        />
-        <p>Gurgaon</p>
-        <div className="vr"></div>
-        <p>Mumbai</p>
-        <div className="vr"></div>
-        <p> Pune</p>
-        <div className="vr"></div>
-        <p>Bengaluru</p>
+        <div className="d-flex flex-column me-5 color-white">
+          <div className={styles.main_title}>
+            Olympus™, an EnKash** product, is a licensed online payment
+            aggregator authorized by the RBI.
+          </div>
+          <div className={styles.sub_title}>
+            **EnKash is a commercial trade name owned by the legal entity, Nehat
+            Tech Solutions Pvt. Ltd.
+          </div>
+        </div>
+
+        <div className="d-flex me-5">
+          {" "}
+          <Image
+            className={styles.footer_location_pin}
+            src={locationPin}
+            alt="Enkash Office Location"
+            width={20}
+          />
+          <p>Gurgaon</p>
+          <div className="vr"></div>
+          <p>Mumbai</p>
+          <div className="vr"></div>
+          <p> Pune</p>
+          <div className="vr"></div>
+          <p>Bengaluru</p>
+        </div>
       </div>
     </div>
   );

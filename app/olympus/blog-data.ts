@@ -11,15 +11,15 @@ const blogData = [
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Feature-Image-6.jpg",
+      "https://www.enkash.com/resources/wp-content/uploads/2023/08/Transformative-Product-by-EnKash-Delivers-scaled.jpg",
     imageAlt:
-      "Benefits of Enabling Auto Reminder for Bill Payments for Businesses",
+      "Transformative Product by EnKash Delivers 40% Process Improvement and 50% Cost Savings for Beta Customers",
     title:
-      "Benefits of Enabling Auto Reminder for Bill Payments for Businesses",
+      "Transformative Product by EnKash Delivers 40% Process Improvement and 50% Cost Savings for Beta Customers",
     date: "Aug 10, 2023",
     description:
       "Managing bill payments efficiently is crucial for maintaining healthy financial operations. Auto reminders for bill payments in businesses provide a valuable solution...",
-    link: "https://www.enkash.com/resources/blog/benefits-of-enabling-auto-reminder-for-bill-payments/",
+    link: "https://www.enkash.com/resources/blog/transformative-product-by-enkash-delivers-improvement-and-cost-savings/",
   },
 
   {

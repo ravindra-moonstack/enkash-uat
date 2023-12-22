@@ -272,7 +272,7 @@ const fuelCard = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of fuel cards?"
-          description="Fuel or fleet cards simplify business fuel purchases, offering a streamlined and secure payment process. These cards optimize budgets, reduce administrative overhead, and enhance accountability, making them essential tools for organizations' efficient and cost-effective fuel management"
+          description="Fuel cards simplify business fuel purchases, offering a streamlined and secure payment process. These cards optimize budgets, reduce administrative overhead, and enhance accountability, making them essential tools for organizations' efficient and cost-effective fuel management."
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

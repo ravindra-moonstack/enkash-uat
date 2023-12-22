@@ -30,6 +30,14 @@ const olympusProducts = [
     },
     list: [
       {
+        name: "Vendor Payment",
+        description:
+          "Instantaneously add, verify, pay, and manage vendors with ease",
+        imageSrc: vendorPayment,
+        imageSrcHovered: vendorPaymentFilled,
+        link: "/olympus/payables/vendor-payment",
+      },
+      {
         name: "Bill Payment",
         description:
           "Pay utilities on time, every time, with Auto-Fetch and Auto-Pay",
@@ -51,14 +59,7 @@ const olympusProducts = [
         imageSrcHovered: taxPaymentFilled,
         link: "/olympus/payables/gst-payments",
       },
-      {
-        name: "Vendor Payment",
-        description:
-          "Instantaneously add, verify, pay, and manage vendors with ease",
-        imageSrc: vendorPayment,
-        imageSrcHovered: vendorPaymentFilled,
-        link: "/olympus/payables/vendor-payment",
-      },
+
       {
         name: "Rental Payment",
         description:
@@ -85,28 +86,28 @@ const olympusProducts = [
     },
     list: [
       {
-        name: "Virtual Accounts*",
+        name: "Virtual Accounts",
         description: "Reconcile invoices and streamline collections",
         imageSrc: virtualAccounts,
         imageSrcHovered: virtualAccountsFilled,
         link: "/olympus/receivables/virtual-accounts",
       },
       {
-        name: "Payment Links*",
+        name: "Payment Links",
         description: "Embed payments, quicken collections, improve sales",
         imageSrc: paymentLinks,
         imageSrcHovered: paymentLinksFilled,
         link: "/olympus/receivables/payment-links",
       },
       {
-        name: "Bulk Collect*",
+        name: "Bulk Collect",
         description: "Simplify bulk collections, invoicing, data quality",
         imageSrc: bulkCollect,
         imageSrcHovered: bulkCollectFilled,
         link: "/olympus/receivables/bulk-collect",
       },
       {
-        name: "Invoices*",
+        name: "Invoices",
         description:
           "Manage invoices with complete details with quicker payment options",
         imageSrc: invoices,

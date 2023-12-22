@@ -41,12 +41,9 @@ const FAQHtml = ({ faqData }: any) => {
               <div key={index} className="mb-4">
                 <h4 className={styles.heading}>
                   Automated reminders are notifications sent to customers to
-                  prompt them to{" "}
-                  <Link href="/invoices" target="_blank">
-                    pay their invoices on time.
-                  </Link>{" "}
-                  These reminders can be scheduled to run automatically,
-                  reducing the need for labor-intensive manual follow-ups.
+                  prompt them to pay their invoices on time. These reminders can
+                  be scheduled to run automatically, reducing the need for
+                  labor-intensive manual follow-ups.
                 </h4>
               </div>
             ))

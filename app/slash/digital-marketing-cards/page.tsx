@@ -236,7 +236,7 @@ const digitalMarketingCard = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how digital marketing cards offer many benefits for your business and employees!"
+          title="Learn how digital marketing cards can revolutionize the way you work!"
         />
       </div>
       <div

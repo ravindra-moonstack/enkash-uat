@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const travelAndExpenseCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header   utmSource="corporate_cards"/>
+      <Header utmSource="corporate_cards" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -76,7 +76,7 @@ const travelAndExpenseCard = () => {
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-          <div className="me-2">
+            <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
                 theme="theme-blue"
@@ -290,7 +290,7 @@ const travelAndExpenseCard = () => {
                 <p>
                   Travel & Expense cards offer a range of benefits that enhance{" "}
                   <Link
-                    href="https://www.google.com/url?q=https://www.enkash.com/resources/blog/guide-about-travel-and-expense-management"
+                    href="https://www.enkash.com/resources/blog/guide-about-travel-and-expense-management"
                     target="_blank"
                   >
                     corporate travel management
@@ -352,7 +352,7 @@ const travelAndExpenseCard = () => {
           }
         />
       </div>
-      <Footer  utmSource="corporate_cards"/>
+      <Footer utmSource="corporate_cards" />
     </div>
   );
 };

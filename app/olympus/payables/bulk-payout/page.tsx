@@ -326,7 +326,7 @@ const bulkPayout = () => {
                   <li>
                     Supports{" "}
                     <Link
-                      href="https://www.google.com/url?q=https://www.enkash.com/resources/blog/modes-of-payment/"
+                      href="https://www.enkash.com/resources/blog/modes-of-payment/"
                       target="_blank"
                     >
                       multiple modes of payment

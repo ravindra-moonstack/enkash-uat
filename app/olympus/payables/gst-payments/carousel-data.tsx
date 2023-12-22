@@ -26,7 +26,7 @@ const carouselData = [
     image: iconFour,
     alt: "Choose “Pay Online” and enter your credit card details like name, number, DOB, CVV",
     title:
-      'Choose "Pay Online" and enter your credit card details like name, number, DOB, CVV',
+      'Choose "Pay Online" and enter your credit card details like name, number, DOB & CVV',
   },
   {
     image: iconFive,

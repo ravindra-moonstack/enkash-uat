@@ -34,7 +34,7 @@ const carouselData = [
     image: iconFive,
     alt: "For an amount exceeding 1 lacs",
     title:
-      "For an amount exceeding 1 lacs, you can pay by adding the property details and setting the maker-checker approval process.",
+      "For an amount exceeding 1 lacs, you can pay by adding the property details and setting the maker-checker approval process",
   },
   {
     image: iconSix,

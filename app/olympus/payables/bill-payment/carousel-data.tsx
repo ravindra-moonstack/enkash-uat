@@ -26,7 +26,7 @@ const carouselData = [
   {
     image: iconFour,
     alt: "Select the bill you want to pay",
-    title: "Select the bill you want to pay and click on pay button",
+    title: 'Select the bill you want to pay and click on "Pay"',
   },
   {
     image: iconFive,
