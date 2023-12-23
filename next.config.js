@@ -124,27 +124,34 @@ const nextConfig = {
     ];
   },
   async rewrites() {
-    console.log("rewrite");
     return [
       {
-        source: "/resources/videos/",
+        source: "/resources/videos",
         destination: "https://blogs.enkash.com/videos/",
       },
       {
-        source: "/resources/press-release/",
+        source: "/resources/press-release",
         destination: "https://blogs.enkash.com/press-release/",
       },
       {
-        source: "/resources/media-coverage/",
+        source: "/resources/media-coverage",
         destination: "https://blogs.enkash.com/media-coverage/",
       },
       {
-        source: "/resources/customer-stories/",
+        source: "/resources/customer-stories",
         destination: "https://blogs.enkash.com/customer-stories/",
       },
       {
-        source: "/resources/",
+        source: "/resources",
         destination: "https://blogs.enkash.com/",
+      },
+      {
+        source: "/resources/:slug",
+        destination: "https://blogs.enkash.com/:slug",
+      },
+      {
+        source: "/resources/blog/:slug",
+        destination: "https://blogs.enkash.com/blog/:slug",
       },
     ];
   },
