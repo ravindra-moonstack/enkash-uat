@@ -42,9 +42,9 @@ import Footer from "@/components/footer/footer";
 import EmailBox from "@/components/homepage/email-box";
 
 export const metadata: Metadata = {
-  title: "Asia's 1st and Smartest Spend Management Platform | EnKash",
+  title: "EnKash - The Ultimate Platform for Businesses",
   description:
-    "Enkash is now Asia's 1st and Smartest Spend Management Platform that offer services like Account Payable, Accounts Receivable, Expense Management & many more.",
+    "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more.",
 };
 
 const home = () => {
