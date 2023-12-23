@@ -146,8 +146,8 @@ const nextConfig = {
         destination: "https://blogs.enkash.com/",
       },
       {
-        source: "/resources/:slug",
-        destination: "https://blogs.enkash.com/:slug",
+        source: "/resources/:slug*",
+        destination: "https://blogs.enkash.com/:slug*",
       },
       {
         source: "/resources/blog/:slug",
