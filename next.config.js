@@ -124,6 +124,7 @@ const nextConfig = {
     ];
   },
   async rewrites() {
+    console.log("rewrite");
     return [
       {
         source: "/resources",
