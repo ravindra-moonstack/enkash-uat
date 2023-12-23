@@ -123,6 +123,7 @@ const nextConfig = {
       { source: "/about", destination: "/", permanent: false },
     ];
   },
+  trailingSlash: true,
   async rewrites() {
     return [
       {
@@ -146,12 +147,12 @@ const nextConfig = {
         destination: "https://blogs.enkash.com/",
       },
       {
-        source: "/resources/:slug*",
-        destination: "https://blogs.enkash.com/:slug*",
+        source: "/resources/:slug*/",
+        destination: "https://blogs.enkash.com/:slug*/",
       },
       {
-        source: "/resources/blog/:slug",
-        destination: "https://blogs.enkash.com/blog/:slug",
+        source: "/resources/blog/:slug/",
+        destination: "https://blogs.enkash.com/blog/:slug/",
       },
     ];
   },
