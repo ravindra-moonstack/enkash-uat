@@ -390,7 +390,7 @@ const home = () => {
           <div className="d-flex flex-column justify-content-center align-items-center text-center w-100 mb-5">
             <div>
               <Heading
-                title="Explore Slash"
+                title="Explore Corporate Cards"
                 color="equity-blue"
                 size="h1"
                 weight="7"
