@@ -15,7 +15,7 @@ const faqData = [
         heading: "A few reasons why businesses should adopt express pay:",
         bullets: [
           "It’s error-free, helps save time and resources involved in making multiple payments manually",
-          "Bulk payouts follow security layers for data encryption",
+          "Express pays follow security layers for data encryption",
           "There are fewer chances of payment failure and it supports different payment methods",
           "Bulk payments in advance help to avoid penalties and get trade discounts",
         ],
@@ -27,16 +27,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Bulk payout can help businesses schedule monthly payments in advance and get trade discounts from their vendors and suppliers. This early payment can ensure businesses save expenses and have an easy monthly cash flow.",
-      },
-    ],
-  },
-  {
-    question: "What losses can a business face due to a lack of express pay?",
-    answer: [
-      {
-        heading:
-          "Manual business payments lead to monotony, increased chances of errors, underutilization of resources, and inefficiency. Automating tasks with express pay can encourage innovation and growth in businesses.",
+          "Express pay can help businesses schedule monthly payments in advance and get trade discounts from their vendors and suppliers. This early payment can ensure businesses save expenses and have an easy monthly cash flow.",
       },
     ],
   },
@@ -45,7 +36,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Bulk payout helps the finance team reduce errors in individual payments, such as double payments or incorrect details. It also streamlines the payment process, minimizing the need for manual data entry.",
+          "Express pay helps the finance team reduce errors in individual payments, such as double payments or incorrect details. It also streamlines the payment process, minimizing the need for manual data entry.",
       },
     ],
   },

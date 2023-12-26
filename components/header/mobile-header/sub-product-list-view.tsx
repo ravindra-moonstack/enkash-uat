@@ -129,7 +129,7 @@ const SubProductListView = (props: {
         >
           <PrimaryButton
             title="Sign Up"
-            theme="theme-blue"
+            theme="blue"
             url="https://home.enkash.com/signup"
           />
           <span className="mx-2"></span>

@@ -89,7 +89,7 @@ const slash = () => {
           <div className={`my-5 ${styles.button_container}`}>
             <PrimaryButton
               title="EnKash Now"
-              theme="theme-blue"
+              theme="blue"
               url="https://home.enkash.com/signup?utm_source=corporate_cards"
             />
             <span className="mx-2"></span>
@@ -120,7 +120,7 @@ const slash = () => {
               title="Corporate Credit Cards"
               description="Simplify business payments, optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions like T&E cards"
               theme="blue"
-              link="/slash/travel-and-expense-cards"
+              link="/corporate-cards/travel-and-expense-cards"
             />
           </div>
           <div
@@ -160,7 +160,7 @@ const slash = () => {
                 title="Prepaid Cards"
                 description="Allocate easy-to-use prepaid cards like meal and fuel cards to your employees and simplify your business processes"
                 theme="blue"
-                link="/slash/meal-cards"
+                link="/corporate-cards/meal-cards"
               />
             </div>
           </div>
@@ -171,7 +171,7 @@ const slash = () => {
               title="Virtual Cards"
               description="Make it easy for your modern business to track and reconcile all payments with the new-age and innovative virtual cards"
               theme="blue"
-              link="/slash/virtual-cards"
+              link="/corporate-cards/virtual-cards"
             />
           </div>
           <div
@@ -277,13 +277,13 @@ const slash = () => {
       <div className={`row bg-white ${styles.title_row}`}>
         <div className="text-center d-flex flex-column">
           <Heading
-            title={`Slash the hassle of${space}`}
+            title={` Manage business${space}`}
             size="h1"
             color="black"
             weight="6"
           />
           <Heading
-            title={`managing business expenses with EnKash${space}`}
+            title={`expenses easily with EnKash${space}`}
             size="h1"
             color="equity-blue"
             weight="6"
@@ -497,12 +497,12 @@ const slash = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Seeking further understanding of slash?"
+            title="Seeking further understanding of corporate cards?"
             size="h3"
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
+            <PrimaryButton title="Know More" theme="black" url="/sales" />
           </div>
         </div>
       </div>

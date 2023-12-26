@@ -247,7 +247,7 @@ const sales = () => {
                   <option value="Payables">Payables</option>
                   <option value="Receievables">Receivables</option>
                   <option value="Ofex">Expense Management</option>
-                  <option value="Slash">Corporate Cards</option>
+                  <option value="Corporate Cards">Corporate Cards</option>
                   <option value="Reward & Offers">Reward & Offers</option>
                   <option value="Channel Incentive">Channel Incentive</option>
                   <option value="Employee Reward">Employee Reward</option>
@@ -275,7 +275,7 @@ const sales = () => {
                   <option value="Payables">Payables</option>
                   <option value="Receievables">Receivables</option>
                   <option value="Ofex">Expense Management</option>
-                  <option value="Slash">Corporate Cards</option>
+                  <option value="Corporate Cards">Corporate Cards</option>
                   <option value="Reward & Offers">Reward & Offers</option>
                   <option value="Channel Incentive">Channel Incentive</option>
                   <option value="Employee Reward">Employee Reward</option>
@@ -308,7 +308,7 @@ const sales = () => {
               className="d-flex align-items-center w-100 mt-4"
               onClick={handleSubmit}
             >
-              <PrimaryButton title="Submit" theme="theme-blue" />
+              <PrimaryButton title="Submit" theme="blue" />
             </div>
           </form>
         </div>

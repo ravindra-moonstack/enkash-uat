@@ -14,7 +14,7 @@
     font-size: 17px;
   }
 
-  &.theme-blue {
+  &.blue {
     background-color: $color-equity-blue;
     color: $color-white;
     transition: box-shadow 0.3s ease;
@@ -23,12 +23,12 @@
     }
   }
 
-  &.theme-green {
+  &.green {
     background-color: $color-electric-green;
     color: $color-black;
   }
 
-  &.theme-black {
+  &.black {
     background-color: $color-black;
     color: white;
   }

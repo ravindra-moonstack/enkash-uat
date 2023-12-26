@@ -45,7 +45,7 @@ const invoices = () => {
             </div>
             <div>
               <Heading title="Invoices" size="h4" weight="4" />
-              <span className="sup-symbol">#</span>
+              <sup className="sup-symbol">#</sup>
             </div>
           </div>
           <div className="d-flex flex-column">
@@ -83,7 +83,7 @@ const invoices = () => {
             <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
-                theme="theme-blue"
+                theme="blue"
                 url="https://home.enkash.com/signup?utm_source=receivables"
               />
             </div>

@@ -390,7 +390,7 @@ const home = () => {
           <div className="d-flex flex-column justify-content-center align-items-center text-center w-100 mb-5">
             <div>
               <Heading
-                title="Explore Slash"
+                title="Explore Corporate Cards"
                 color="equity-blue"
                 size="h1"
                 weight="7"
@@ -420,7 +420,7 @@ const home = () => {
             title="Corporate Cards"
             description="Issue cards for different business needs and manage them on a single platform with smart controls. Enable or disable across spend categories as and when required"
             theme="blue"
-            link="/slash"
+            link="/corporate-cards"
           />
         </div>
       </div>
@@ -454,11 +454,7 @@ const home = () => {
               </div>
 
               <div className="mt-4">
-                <PrimaryButton
-                  title="Get a Demo"
-                  url="/sales"
-                  theme="theme-green"
-                />
+                <PrimaryButton title="Get a Demo" url="/sales" theme="green" />
               </div>
             </div>
             <div className={styles.img_container}>
@@ -743,7 +739,7 @@ const home = () => {
               title="Get a Demo"
               isDisabled={false}
               url="/sales"
-              theme="theme-blue"
+              theme="blue"
             />
           </div>
         </div>
@@ -760,15 +756,22 @@ const home = () => {
             weight="6"
           />
           <Heading
-            title={`1000+${space}`}
+            title={`250,000+${space}`}
             color="electric-green"
             size="h1"
             weight="6"
           />
-          <Heading title="companies" color="white" size="h1" weight="6" />
+
+          <div>
+            <Heading
+              title="network members & companies"
+              color="white"
+              size="h1"
+              weight="6"
+            />
+          </div>
         </div>
 
-        <div></div>
         <div
           className={`d-flex justify-content-between ${styles.testimonials_section}`}
         >

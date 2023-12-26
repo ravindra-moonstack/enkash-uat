@@ -81,7 +81,7 @@ const OfEx = () => {
           <div className="my-5">
             <PrimaryButton
               title="EnKash Now"
-              theme="theme-blue"
+              theme="blue"
               url="https://home.enkash.com/signup?utm_source=expense_management"
             />
             <span className="mx-2"></span>
@@ -452,7 +452,7 @@ const OfEx = () => {
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
+            <PrimaryButton title="Know More" theme="black" url="/sales" />
           </div>
         </div>
       </div>

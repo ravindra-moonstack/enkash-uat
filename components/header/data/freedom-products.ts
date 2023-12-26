@@ -18,9 +18,9 @@ import {
 const freedomProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/slash",
+    subtitleLink: "/corporate-cards",
     currentHeading: {
-      name: "Slash",
+      name: "Corporate Cards",
       description: "Simplify corporate spending with flexible card solutions",
     },
     list: [
@@ -30,21 +30,21 @@ const freedomProducts = [
           "Let your employees choose their favorite meals and save on taxes",
         imageSrc: mealCard,
         imageSrcHovered: mealCardFilled,
-        link: "/slash/meal-cards",
+        link: "/corporate-cards/meal-cards",
       },
       {
         name: "Fuel Cards*",
         description: "Track and manage fuel expenses for your business travels",
         imageSrc: fuelCard,
         imageSrcHovered: fuelCardFilled,
-        link: "/slash/fuel-cards",
+        link: "/corporate-cards/fuel-cards",
       },
       {
         name: "Virtual Cards*",
         description: "Unlimited cards with centralized controls",
         imageSrc: virtualCard,
         imageSrcHovered: virtualCardFilled,
-        link: "/slash/virtual-cards",
+        link: "/corporate-cards/virtual-cards",
       },
       {
         name: "Digital Marketing Cards*",
@@ -52,7 +52,7 @@ const freedomProducts = [
           "Pay for digital marketing campaigns and subscriptions with ease",
         imageSrc: digitalMarketingCard,
         imageSrcHovered: digitalMarketingCardFilled,
-        link: "/slash/digital-marketing-cards",
+        link: "/corporate-cards/digital-marketing-cards",
       },
       {
         name: "SaaS Cards*",
@@ -60,7 +60,7 @@ const freedomProducts = [
           "Manage all your SaaS subscriptions with our dedicated SaaS Cards",
         imageSrc: saas,
         imageSrcHovered: saasFilled,
-        link: "/slash/saas-cards",
+        link: "/corporate-cards/saas-cards",
       },
       ,
       {
@@ -68,7 +68,7 @@ const freedomProducts = [
         description: "Simplify travel and entertainment expenses for employees",
         imageSrc: tne,
         imageSrcHovered: tneFilled,
-        link: "/slash/travel-and-expense-cards",
+        link: "/corporate-cards/travel-and-expense-cards",
       },
       {
         name: "Purchase Cards*",
@@ -76,14 +76,14 @@ const freedomProducts = [
           "Empower employees to make purchases and track spends in real time",
         imageSrc: purchaseCard,
         imageSrcHovered: purchaseCardFilled,
-        link: "/slash/purchase-cards",
+        link: "/corporate-cards/purchase-cards",
       },
     ],
     footerText: "Empower your finances with purpose-based cards",
-    footerMobileText: "Explore Slash",
+    footerMobileText: "Explore Corporate Cards",
     footerImg: "freedom_footer_bg",
-    footerLink: "/slash",
-    parentLink: "/slash",
+    footerLink: "/corporate-cards",
+    parentLink: "/corporate-cards",
   },
 ];
 

@@ -44,7 +44,7 @@ const Footer = ({ utmSource = "" }: any) => {
             href={"https://home.enkash.com/signup?utm_source=" + utmSource}
             target="_blank"
           >
-            <PrimaryButton title="Get Started" theme="theme-blue" />
+            <PrimaryButton title="Get Started" theme="blue" />
           </Link>
         </div>
         <div className={`col-md-3 col-6 ${styles.footer_links_col}`}>
@@ -114,34 +114,34 @@ const Footer = ({ utmSource = "" }: any) => {
           <div className={` ${styles.footer_links_col}`}>
             <div>
               <div className={styles.freedom_card_box}>
-                <Link href="/slash">
-                  <h4 className={`${styles.title}`}>Slash</h4>
+                <Link href="/corporate-cards">
+                  <h4 className={`${styles.title}`}>Corporate Cards</h4>
                 </Link>
               </div>
               <ul>
                 <li>
-                  <Link href="/slash/virtual-cards/">Virtual Cards*</Link>
+                  <Link href="/corporate-cards/virtual-cards/">Virtual Cards*</Link>
                 </li>
                 <li>
-                  <Link href="/slash/digital-marketing-cards/">
+                  <Link href="/corporate-cards/digital-marketing-cards/">
                     Digital Marketing Cards*
                   </Link>
                 </li>
                 <li>
-                  <Link href="/slash/fuel-cards/">Fuel Cards*</Link>
+                  <Link href="/corporate-cards/fuel-cards/">Fuel Cards*</Link>
                 </li>
                 <li>
-                  <Link href="/slash/meal-cards/">Meal Cards*</Link>
+                  <Link href="/corporate-cards/meal-cards/">Meal Cards*</Link>
                 </li>
                 <li>
-                  <Link href="/slash/saas-cards/">SaaS Cards*</Link>
+                  <Link href="/corporate-cards/saas-cards/">SaaS Cards*</Link>
                 </li>
                 <li>
-                  <Link href="/slash/purchase-cards/">Purchase Cards*</Link>
+                  <Link href="/corporate-cards/purchase-cards/">Purchase Cards*</Link>
                 </li>
 
                 <li>
-                  <Link href="/slash/travel-and-expense-cards">T&E Cards*</Link>
+                  <Link href="/corporate-cards/travel-and-expense-cards">T&E Cards*</Link>
                 </li>
               </ul>
             </div>
@@ -155,26 +155,26 @@ const Footer = ({ utmSource = "" }: any) => {
               </Link>
               <ul>
                 <li>
-                  <Link href="ofex/budget-and-advances/">
+                  <Link href="/ofex/budget-and-advances/">
                     Budgets and Advances
                   </Link>
                 </li>
                 <li>
-                  <Link href="ofex/hierarchy-and-controls/">
+                  <Link href="/ofex/hierarchy-and-controls/">
                     Hierarchy and Controls
                   </Link>
                 </li>
                 <li>
-                  <Link href="ofex/policy-and-approval-flows/">
+                  <Link href="/ofex/policy-and-approval-flows/">
                     Policy and Approval Flows
                   </Link>
                 </li>
                 <li>
-                  <Link href="ofex/reimbursement/">Reimbursement</Link>
+                  <Link href="/ofex/reimbursement/">Reimbursement</Link>
                 </li>
 
                 <li>
-                  <Link href="ofex/scan-and-drop-receipts/">
+                  <Link href="/ofex/scan-and-drop-receipts/">
                     Scan and Drop Receipts
                   </Link>
                 </li>
@@ -190,26 +190,26 @@ const Footer = ({ utmSource = "" }: any) => {
               </Link>
               <ul>
                 <li>
-                  <Link href="loyalty-lounge/brand-voucher/">
+                  <Link href="/loyalty-lounge/brand-voucher/">
                     Brand Voucher
                   </Link>
                 </li>
                 <li>
-                  <Link href="loyalty-lounge/channel-incentive/">
+                  <Link href="/loyalty-lounge/channel-incentive/">
                     Channel Incentives
                   </Link>
                 </li>
                 <li>
-                  <Link href="loyalty-lounge/employee-rewards/">
+                  <Link href="/loyalty-lounge/employee-rewards/">
                     Employee Rewards
                   </Link>
                 </li>
 
                 <li>
-                  <Link href="loyalty-lounge/gift-cards/">Gift Cards</Link>
+                  <Link href="/loyalty-lounge/gift-cards/">Gift Cards</Link>
                 </li>
                 <li>
-                  <Link href="loyalty-lounge/offers/">Offers</Link>
+                  <Link href="/loyalty-lounge/offers/">Offers</Link>
                 </li>
               </ul>
             </div>

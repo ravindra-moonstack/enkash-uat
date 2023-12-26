@@ -13,8 +13,8 @@ const carouselData = [
   },
   {
     image: iconTwo,
-    alt: "Navigate to 'Manage Cards' in the slash section",
-    title: "Navigate to 'Manage Cards' in the slash section",
+    alt: "Navigate to 'Manage Cards' in the corporate cards section",
+    title: "Navigate to 'Manage Cards' in the corporate cards section",
   },
   {
     image: iconThree,
