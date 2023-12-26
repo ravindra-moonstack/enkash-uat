@@ -6,7 +6,7 @@ export const motherProducts = [
     link: "/olympus",
   },
   {
-    name: "Slash",
+    name: "Corporate Cards",
     description: "Simplify corporate spending with flexible card solutions",
     link: "/slash",
   },

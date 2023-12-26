@@ -44,7 +44,7 @@ const Footer = ({ utmSource = "" }: any) => {
             href={"https://home.enkash.com/signup?utm_source=" + utmSource}
             target="_blank"
           >
-            <PrimaryButton title="Get Started" theme="theme-blue" />
+            <PrimaryButton title="Get Started" theme="blue" />
           </Link>
         </div>
         <div className={`col-md-3 col-6 ${styles.footer_links_col}`}>
@@ -115,7 +115,7 @@ const Footer = ({ utmSource = "" }: any) => {
             <div>
               <div className={styles.freedom_card_box}>
                 <Link href="/slash">
-                  <h4 className={`${styles.title}`}>Slash</h4>
+                  <h4 className={`${styles.title}`}>Corporate Cards</h4>
                 </Link>
               </div>
               <ul>

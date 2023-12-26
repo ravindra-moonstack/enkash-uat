@@ -20,7 +20,7 @@ const freedomProducts = [
     subtitle: "Default",
     subtitleLink: "/slash",
     currentHeading: {
-      name: "Slash",
+      name: "Corporate Cards",
       description: "Simplify corporate spending with flexible card solutions",
     },
     list: [
@@ -80,7 +80,7 @@ const freedomProducts = [
       },
     ],
     footerText: "Empower your finances with purpose-based cards",
-    footerMobileText: "Explore Slash",
+    footerMobileText: "Explore Corporate Cards",
     footerImg: "freedom_footer_bg",
     footerLink: "/slash",
     parentLink: "/slash",

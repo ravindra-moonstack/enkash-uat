@@ -24,7 +24,7 @@ const EmailBox = () => {
         <div>
           <PrimaryButton
             title="Get Started Now"
-            theme="theme-blue"
+            theme="blue"
             url={"/sales?email=" + email}
           />
         </div>

@@ -72,7 +72,7 @@ const billPayments = () => {
             <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
-                theme="theme-blue"
+                theme="blue"
                 url="https://home.enkash.com/signup?utm_source=payables"
               />
             </div>

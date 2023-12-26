@@ -61,7 +61,7 @@ const ProductListView = ({
             <PrimaryButton
               title="Sign Up"
               url="https://home.enkash.com/signup"
-              theme="theme-blue"
+              theme="blue"
             />
             <span className="mx-2"></span>
             <div>

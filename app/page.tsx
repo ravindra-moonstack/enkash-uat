@@ -743,7 +743,7 @@ const home = () => {
               title="Get a Demo"
               isDisabled={false}
               url="/sales"
-              theme="theme-blue"
+              theme="blue"
             />
           </div>
         </div>

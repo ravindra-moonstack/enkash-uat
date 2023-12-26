@@ -86,7 +86,7 @@ const payables = () => {
           <div className={`my-5 ${styles.button_container}`}>
             <PrimaryButton
               title="EnKash Now"
-              theme="theme-blue"
+              theme="blue"
               url="https://home.enkash.com/signup?utm_source=payables"
             />
             <span className="mx-2"></span>
@@ -420,7 +420,7 @@ const payables = () => {
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
+            <PrimaryButton title="Know More" theme="black" url="/sales" />
           </div>
         </div>
       </div>

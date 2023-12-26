@@ -38,7 +38,7 @@ const mealCard = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Slash |${space}`}
+                title={`Corporate Cards |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
@@ -71,7 +71,7 @@ const mealCard = () => {
             <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
-                theme="theme-blue"
+                theme="blue"
                 url="https://home.enkash.com/signup?utm_source=corporate_cards"
               />
             </div>

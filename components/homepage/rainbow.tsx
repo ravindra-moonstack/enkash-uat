@@ -177,7 +177,7 @@ const RainbowSection = () => {
           </div>
         </div>
         <div className={`col-12 ${styles.button_container}`}>
-          <PrimaryButton title="Get a Demo" url="/sales" theme="theme-blue" />
+          <PrimaryButton title="Get a Demo" url="/sales" theme="blue" />
           <span className="mx-2"></span>
           <SecondryButton
             title="Sign Up"

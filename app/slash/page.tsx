@@ -89,7 +89,7 @@ const slash = () => {
           <div className={`my-5 ${styles.button_container}`}>
             <PrimaryButton
               title="EnKash Now"
-              theme="theme-blue"
+              theme="blue"
               url="https://home.enkash.com/signup?utm_source=corporate_cards"
             />
             <span className="mx-2"></span>
@@ -277,13 +277,13 @@ const slash = () => {
       <div className={`row bg-white ${styles.title_row}`}>
         <div className="text-center d-flex flex-column">
           <Heading
-            title={`Slash the hassle of${space}`}
+            title={` Manage business${space}`}
             size="h1"
             color="black"
             weight="6"
           />
           <Heading
-            title={`managing business expenses with EnKash${space}`}
+            title={`expenses easily with EnKash${space}`}
             size="h1"
             color="equity-blue"
             weight="6"
@@ -497,12 +497,12 @@ const slash = () => {
       <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
-            title="Seeking further understanding of slash?"
+            title="Seeking further understanding of corporate cards?"
             size="h3"
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="theme-black" url="/sales" />
+            <PrimaryButton title="Know More" theme="black" url="/sales" />
           </div>
         </div>
       </div>

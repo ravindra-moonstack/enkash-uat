@@ -3,6 +3,7 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { enkashWhiteLogo, hamnburgerIcon, enkashBlueLogo, crossMenu } from "..";
 import styles from "./mobile-header.module.scss";
 import Link from "next/link";
+import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 
 interface HamburgerProps {
   currentStep: number;
@@ -38,9 +39,9 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
           </Link>
         </div>
         <PrimaryButton
-          title="Sign Up"
-          theme="theme-blue"
-          url="https://home.enkash.com/signup"
+          title="Log In"
+          theme="blue"
+          url="https://home.enkash.com/login"
         />
       </div>
 
