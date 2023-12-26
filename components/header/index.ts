@@ -67,7 +67,7 @@ export { default as taxPaymentFilled } from "./img/tax-payment-filled.png";
 export { default as rentalPayments } from "./img/rental-payments.png";
 export { default as rentalPaymentsFilled } from "./img/rental-payments-filled.png";
 
-//slash
+//corporate-cards
 export { default as saas } from "./img/saas.svg";
 export { default as saasFilled } from "./img/saas-filled.svg";
 export { default as tne } from "./img/tne.svg";

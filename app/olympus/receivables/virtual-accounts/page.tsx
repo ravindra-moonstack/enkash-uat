@@ -44,11 +44,10 @@ const virtualAccounts = () => {
             </div>
             <div>
               <Heading title="Virtual Accounts" size="h4" weight="4" />
-              <span className="sup-symbol">#</span>
+              <sup className="sup-symbol">#</sup>
             </div>
           </div>
           <div className="d-flex flex-column">
-            {" "}
             <Heading
               title={`Harness the power of${space}`}
               color="white"

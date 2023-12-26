@@ -8,7 +8,7 @@ export const motherProducts = [
   {
     name: "Corporate Cards",
     description: "Simplify corporate spending with flexible card solutions",
-    link: "/slash",
+    link: "/corporate-cards",
   },
   {
     name: "OfEx",
@@ -17,7 +17,7 @@ export const motherProducts = [
   },
   {
     name: "Loyalty Lounge",
-    description: "Seamlessly automate & manage rewards, incentives",
+    description: "Seamlessly automate & manage rewards, incentives and offers",
     link: "/loyalty-lounge",
   },
 ];

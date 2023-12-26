@@ -11,27 +11,27 @@ export const corporateCardAnimation = () =>
   import("../../app/img/lottie/credit-card.json");
 export const diyCardAnimation = () => import("../../app/img/lottie/diy.json");
 
-//Slash Animation
+//corporate-cards Animation
 export const freedomBannerAnimation = () =>
-  import("../../app/slash/img/lottie/banner.json");
+  import("../../app/corporate-cards/img/lottie/banner.json");
 export const travelCardAnimation = () =>
-  import("../../app/slash/img/lottie/travel.json");
+  import("../../app/corporate-cards/img/lottie/travel.json");
 export const saasAnimation = () =>
-  import("../../app/slash/img/lottie/saas.json");
+  import("../../app/corporate-cards/img/lottie/saas.json");
 export const virtualCardAnimation = () =>
-  import("../../app/slash/img/lottie/virtual.json");
+  import("../../app/corporate-cards/img/lottie/virtual.json");
 export const digitalAnimation = () =>
-  import("../../app/slash/img/lottie/digital-marketing.json");
+  import("../../app/corporate-cards/img/lottie/digital-marketing.json");
 export const mealCardAnimation = () =>
-  import("../../app/slash/img/lottie/meal.json");
+  import("../../app/corporate-cards/img/lottie/meal.json");
 
 export const fuelAnimation = () =>
-  import("../../app/slash/img/lottie/fuel.json");
+  import("../../app/corporate-cards/img/lottie/fuel.json");
 
 export const purchaseCardAnimation = () =>
-  import("../../app/slash/img/lottie/purchase.json");
+  import("../../app/corporate-cards/img/lottie/purchase.json");
 export const virtualAnimation = () =>
-  import("../../app/slash/img/lottie/virtual-card.json");
+  import("../../app/corporate-cards/img/lottie/virtual-card.json");
 
 //Recievables Animation
 

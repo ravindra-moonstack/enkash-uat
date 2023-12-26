@@ -44,7 +44,7 @@ const bulkCollect = () => {
             </div>
             <div>
               <Heading title="Bulk Collect" size="h4" weight="4" />
-              <span className="sup-symbol">#</span>
+              <sup className="sup-symbol">#</sup>
             </div>
           </div>
           <Heading
