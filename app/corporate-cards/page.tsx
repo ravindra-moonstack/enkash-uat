@@ -45,8 +45,8 @@ const slash = () => {
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="S" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="lash" size="h1" weight="7" />
+            <Heading title="C" color="rainy-blue" size="h1" weight="7" />
+            <Heading title="orporate cards" size="h1" weight="7" />
           </div>
           <div>
             <Heading
@@ -189,7 +189,7 @@ const slash = () => {
           </div>
         </div>
       </div>
-{/* 
+      {/* 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
           <div className={styles.lottie_container}>
@@ -524,7 +524,7 @@ const slash = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are corporate business credit cards?"
+                  title="What are corporate credit cards?"
                 />
               </div>
               <div className="mb-5">
@@ -532,7 +532,7 @@ const slash = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Corporate business credit cards are credit cards for business purposes based on financial credibility. Once the company gets a credit limit on the corporate card, it can allocate limits to other employees and issue them virtual card for business-related expenses. However, this is only possible when the corporate cards are supported by smart spend management, which helps you allocate limits, set usage rules, and control, monitor, and manage the cards issued with a few simple clicks."
+                  title="Corporate credit cards are credit cards for business purposes based on financial credibility. Once the company gets a credit limit on the corporate card, it can allocate limits to other employees and issue them virtual card for business-related expenses. However, this is only possible when the corporate cards are supported by smart spend management, which helps you allocate limits, set usage rules, and control, monitor, and manage the cards issued with a few simple clicks."
                 />
               </div>
 

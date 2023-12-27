@@ -398,7 +398,7 @@ const home = () => {
             </div>
             <div>
               <Heading
-                title="Experience Savings"
+                title="Experience Ease of Use"
                 color="black"
                 size="h1"
                 weight="7"

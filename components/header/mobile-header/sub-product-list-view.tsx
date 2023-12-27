@@ -74,7 +74,7 @@ const SubProductListView = (props: {
                   }`}
                 >
                   <div className="mx-4">{category.footerMobileText}</div>
-                  <Link href={category.subtitleLink}>
+                  <Link href={category.footerLink}>
                     <div className={`${styles.explore} d-flex`}>
                       <Image
                         src={footerArrow}

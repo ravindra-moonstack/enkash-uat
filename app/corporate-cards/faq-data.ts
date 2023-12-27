@@ -18,16 +18,6 @@ const faqData = [
     ],
   },
   {
-    question:
-      "What is the difference between a business card and a corporate business credit card?",
-    answer: [
-      {
-        heading:
-          "In most instances, corporate business credit cards are considered to be credit cards for business purposes, and business cards are issued to smaller and larger businesses. In many instances, the other difference could be the credit limit provided and the fees charged on each card type. Other than these differences, corporate cards and business cards offer more or less the same features.",
-      },
-    ],
-  },
-  {
     question: "What is a virtual card?",
     answer: [
       {
