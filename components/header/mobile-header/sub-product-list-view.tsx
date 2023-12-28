@@ -69,6 +69,7 @@ const SubProductListView = (props: {
             (category: any, index: any) =>
               activeSubtitleIndex === index && (
                 <div
+                  key={category.subtitleLink}
                   className={`d-flex align-items-center ${styles.footer} ${
                     styles[category.footerImg]
                   }`}
@@ -91,6 +92,7 @@ const SubProductListView = (props: {
           {productsToUse[activeSubtitleIndex]?.list.map((item: any) => (
             <Link
               href={item.link}
+              key={item.name}
               onClick={() => {
                 props.setCurrentStep(0);
               }}

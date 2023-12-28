@@ -1,0 +1,110 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.popup_container {
+  position: fixed;
+  z-index: 10001;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: fit-content;
+  background-color: $color-white;
+  box-shadow: 0px 3px 6px #00000029;
+  border-radius: 21px;
+  width: 80%;
+  height: fit-content;
+  @include for-laptops {
+    width: 800px;
+    height: auto;
+  }
+
+  button {
+    font-size: 17px !important;
+    font-weight: 500;
+    @include for-laptops {
+      padding: 5px 20px;
+      font-size: 17px;
+    }
+  }
+}
+
+.popup {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-right: 20px;
+
+  @include for-laptops {
+    flex-direction: row;
+  }
+}
+
+.left_container {
+  img {
+    height: 40%;
+    border-radius: 21px;
+    @include for-laptops {
+      height: auto;
+      border: radius 0;
+    }
+  }
+}
+
+.right_container {
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: $color-black;
+  font-weight: 600;
+  padding-left: 20px;
+  @include for-laptops {
+    padding-top: 100px;
+  }
+
+  .main_text {
+    font-size: 20px;
+    line-height: 27px;
+    padding-bottom: 10px;
+    @include for-laptops {
+      font-size: 32px;
+      line-height: 39px;
+      padding-bottom: 25px;
+    }
+  }
+  .hightlighted_text {
+    color: $color-equity-blue;
+    font-size: 20px;
+    line-height: 27px;
+    @include for-laptops {
+      font-size: 32px;
+      line-height: 39px;
+    }
+  }
+  .description {
+    padding-bottom: 30px;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .powered_by {
+    margin-right: 8px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.bolt_logo {
+  width: 50px;
+  height: auto;
+  @include for-laptops {
+    width: 70px;
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  cursor: pointer;
+}
