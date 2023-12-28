@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
   description:
     "Unlock the convenience of corporate meal cards online. Streamline employee benefits and expense management effortlessly with our secure and efficient solution.",
+  alternates: {
+    canonical: "https://enkash.com/corporate-cards/meal-cards/",
+  },
 };
 
 const mealCard = () => {

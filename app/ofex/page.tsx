@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   title: "Automated AI Expense Management Software for your Business- EnKash",
   description:
     "EnKash automated expense management platform keeps track of budgets and ensures that spends are within limits. Automating expense management saves time & transparency.Book Demo Now !!",
+  alternates: {
+    canonical: "https://enkash.com/ofex/",
+  },
 };
 
 const OfEx = () => {

@@ -35,6 +35,9 @@ export const metadata: Metadata = {
   title: "Corporate Credit and Prepaid Cards in India| Apply Now - EnKash",
   description:
     "Empower your workforce with Enkash Freedom: Tailored corporate cards offering customizable spending limits and real-time expense tracking for enhanced cash flow management, operational efficiency, and paperless processes",
+  alternates: {
+    canonical: "https://enkash.com/corporate-cards/",
+  },
 };
 
 const slash = () => {
@@ -189,7 +192,7 @@ const slash = () => {
           </div>
         </div>
       </div>
-{/* 
+      {/* 
       <div className={`${styles.fourth_row} row row-padding`}>
         <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
           <div className={styles.lottie_container}>

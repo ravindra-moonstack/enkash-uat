@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Budget Management Platform | Budget Control for Business - EnKash",
   description:
     "Optimize your financial stability with expert budget control management and cash flow strategies. Effectively allocate resources, track expenditures, and manage your cash flow to achieve sustainable financial success",
+  alternates: {
+    canonical: "https://enkash.com/ofex/budget-and-advances/",
+  },
 };
 
 const budgetAndAdvance = () => {

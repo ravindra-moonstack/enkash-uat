@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: " Express Pay | Corporate Bulk Payment Solution | EnKash",
   description:
     "Revolutionize your financial processes with our advanced express pay solution. Experience the ease of managing large-scale payments through our efficient bulk payment system.",
+  alternates: {
+    canonical: "https://enkash.com/olympus/payables/bulk-payout/",
+  },
 };
 
 const bulkPayout = () => {

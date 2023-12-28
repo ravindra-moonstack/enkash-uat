@@ -5,6 +5,17 @@ import leftBlueGradient from "./gradient.png";
 import Image from "next/image";
 import Footer from "@/components/footer/footer";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Privacy & Legal | EnKash",
+  description:
+    "Privacy & Legal",
+  alternates: {
+    canonical: "https://enkash.com/privacy-legal/",
+  },
+};
+
 const privacyPolicy = () => {
   return (
     <>

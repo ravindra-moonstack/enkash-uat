@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Virtual Account - Open a virtual business account| EnKash",
   description:
     "Optimize Your Financial Operations with Virtual Account Solutions. Explore virtual accounts designed to streamline receivables, enhance cash flow management, and boost financial efficiency",
+  alternates: {
+    canonical: "https://enkash.com/olympus/receivables/virtual-accounts",
+  },
 };
 
 const virtualAccounts = () => {

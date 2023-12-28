@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "Digital Receipt & Control Management : Store your Documents Online - EnKash",
   description:
     "Digital Receipt Management - Take control of your scanned receipts with our intuitive solution. Organize, store, and track digital receipts efficiently, making financial record-keeping a breeze",
+  alternates: {
+    canonical: "https://enkash.com/ofex/scan-and-drop-receipts/",
+  },
 };
 
 const scanAndDropReceipts = () => {

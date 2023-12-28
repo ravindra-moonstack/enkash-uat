@@ -25,12 +25,15 @@ export const metadata: Metadata = {
   title: "GST Payment - GST Bill Payment Online for Businesses | EnKash",
   description:
     "Simplify GST Payment and Bill Payment Online - Seamlessly manage your GST payments and bills with our convenient online platform. Save time, stay compliant, and experience hassle-free transactions.",
+  alternates: {
+    canonical: "https://enkash.com/olympus/payables/gst-payments/",
+  },
 };
 
 const taxPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="payables"/>
+      <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -71,7 +74,7 @@ const taxPayments = () => {
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-          <div className="me-2">
+            <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
@@ -665,7 +668,7 @@ const taxPayments = () => {
           }
         />
       </div>
-      <Footer  utmSource="payables"/>
+      <Footer utmSource="payables" />
     </div>
   );
 };

@@ -35,12 +35,15 @@ export const metadata: Metadata = {
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",
   description:
     "Streamline Your Accounts Payable Process with Our Expert Service. From Invoice Verification to Timely Payments, Trust Us for Efficient Financial Management. Get Started Today",
+  alternates: {
+    canonical: "https://enkash.com/olympus/payables/",
+  },
 };
 
 const payables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header  utmSource="payables"/>
+      <Header utmSource="payables" />
 
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
@@ -318,7 +321,6 @@ const payables = () => {
           ]}
         />
       </div>
-
 
       <div className="bg-white row-padding d-flex justify-content-center">
         <div className="ps-md-5 scroll_container d-flex pb-4">
@@ -642,7 +644,7 @@ const payables = () => {
           }
         />
       </div>
-      <Footer  utmSource="payables"/>
+      <Footer utmSource="payables" />
     </div>
   );
 };

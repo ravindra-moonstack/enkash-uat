@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: "Corporate Gift Cards for Employees for Every Occasion with EnKash",
   description:
     "Unlock the power of corporate gifting with our versatile gift cards. Delight clients, employees, and partners with a world of choices. Explore our corporate gift card solutions now!",
+    alternates: {
+      canonical: "https://enkash.com/loyalty-lounge/gift-cards/",
+    },
 };
 
 const giftCards = () => {

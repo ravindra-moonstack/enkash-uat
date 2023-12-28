@@ -6,6 +6,17 @@ import chart from "./chart.png";
 import Image from "next/image";
 import Footer from "@/components/footer/footer";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Chargeback or Dispute Management Policy | EnKash",
+  description:
+    "The purpose of this policy is to provide guidelines on how settlements would be done to Merchants by Nehat Tech Solutions Private Ltd.",
+  alternates: {
+    canonical: "https://enkash.com/chargeback-dispute-management-policy/",
+  },
+};
+
 const disputeManagement = () => {
   return (
     <>
@@ -49,11 +60,11 @@ const disputeManagement = () => {
                         <h5 className="c6">2. Dispute Management Cycle :</h5>
                         <p className="c12">
                           <span className="c13">
-                          Nehat Tech Solutions Private Limited will follow a fair and transparent policy to
-                            manage and process disputes by forcing that both
-                            parties of the transaction (Customer and Merchant )
-                            hold up to their obligation of the
-                            transaction.&nbsp;
+                            Nehat Tech Solutions Private Limited will follow a
+                            fair and transparent policy to manage and process
+                            disputes by forcing that both parties of the
+                            transaction (Customer and Merchant ) hold up to
+                            their obligation of the transaction.&nbsp;
                           </span>
                         </p>
                         <p className="c12">
@@ -76,8 +87,8 @@ const disputeManagement = () => {
                             acceptance or rejection need to be sent across to
                             the Issuer via the network &amp; Acquirer.&nbsp;
                             Given the same, the merchant is also expected to
-                            update the same to the Nehat Tech Solutions Private Limited with the
-                            timelines.&nbsp;
+                            update the same to the Nehat Tech Solutions Private
+                            Limited with the timelines.&nbsp;
                           </span>
                         </p>
                         <p className="c12">
@@ -113,10 +124,10 @@ const disputeManagement = () => {
                         </p>
                         <p className="c5">
                           <span className="c1">
-                            Accordingly Nehat Tech Solutions Private Limited has prescribed the timelines for
-                            the merchants to respond with documents/details of
-                            the transactions and delivery details of
-                            service/product.&nbsp;{" "}
+                            Accordingly Nehat Tech Solutions Private Limited has
+                            prescribed the timelines for the merchants to
+                            respond with documents/details of the transactions
+                            and delivery details of service/product.&nbsp;{" "}
                           </span>
                         </p>
                         <p className="c5 c8">
@@ -124,13 +135,14 @@ const disputeManagement = () => {
                         </p>
                         <p className="c5">
                           <span className="c13">
-                          Nehat Tech Solutions Private Limited would require merchants to share documents
-                            pertaining to the dispute within 5 business days
-                            in-case the merchant wants to defend the Dispute.
-                            Communication of the dispute would be sent through
-                            Email to the merchant pertaining to the dispute. In
-                            case of non-receipt of documents, Nehat Tech Solutions Private Limited would send
-                            across reminders to the Merchant on the 3
+                            Nehat Tech Solutions Private Limited would require
+                            merchants to share documents pertaining to the
+                            dispute within 5 business days in-case the merchant
+                            wants to defend the Dispute. Communication of the
+                            dispute would be sent through Email to the merchant
+                            pertaining to the dispute. In case of non-receipt of
+                            documents, Nehat Tech Solutions Private Limited
+                            would send across reminders to the Merchant on the 3
                           </span>
                           <span className="c25">rd</span>
                           <span className="c13">
@@ -289,9 +301,9 @@ const disputeManagement = () => {
                         </p>
                         <p className="c12">
                           <span className="c13">
-                            Further to the above, Nehat Tech Solutions Private Limited may levy an
-                            administrative charge for managing disputes on
-                            behalf of the merchant.&nbsp;
+                            Further to the above, Nehat Tech Solutions Private
+                            Limited may levy an administrative charge for
+                            managing disputes on behalf of the merchant.&nbsp;
                           </span>
                         </p>
                         <p className="c5 c8">

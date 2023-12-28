@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "Control your Business Expenses with Policies & Approval Flow  - EnKash",
   description:
     "Explore how our approval workflow solutions can optimize decision-making processes, enhance accountability, and improve efficiency in your organization. Take control of your workflow management today",
+  alternates: {
+    canonical: "https://enkash.com/ofex/policy-and-approval-flows/",
+  },
 };
 
 const policyApprovalFlow = () => {

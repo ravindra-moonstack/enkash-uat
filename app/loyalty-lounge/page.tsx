@@ -34,6 +34,9 @@ export const metadata: Metadata = {
     "All-in-one Rewards, Corporate Gifting & incentives Management Platform - EnKash",
   description:
     "Get a seamless solution for rewards, corporate gifting &  incentives management platform designed to engage and motivate employees, channel partners, and stakeholders. Book a Demo Now !!",
+  alternates: {
+    canonical: "https://enkash.com/loyalty-lounge/",
+  },
 };
 
 const loyaltyLounge = () => {

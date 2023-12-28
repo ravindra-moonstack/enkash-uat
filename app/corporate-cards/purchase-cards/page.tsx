@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Purchase Cards | Benefits of P Cards for Businesses  - EnKash",
   description:
     "Purchasing cards allow employees to quickly and efficiently buy what they need, and automatically record all transactions.",
+  alternates: {
+    canonical: "https://enkash.com/corporate-cards/purchase-cards/",
+  },
 };
 
 const purchaseCard = () => {

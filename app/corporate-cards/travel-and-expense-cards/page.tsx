@@ -23,9 +23,12 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
+  title: "Best Travel and Expenses Corporate Cards for Business - EnKash",
   description:
-    "Unlock the convenience of corporate meal cards online. Streamline employee benefits and expense management effortlessly with our secure and efficient solution.",
+    "Travel & expense cards offer benefits that enhance corporate travel management. Use these cards and avail amazing travel perks and rewards.",
+    alternates: {
+      canonical: "https://enkash.com/corporate-cards/travel-and-expense-cards/",
+    },
 };
 
 const travelAndExpenseCard = () => {

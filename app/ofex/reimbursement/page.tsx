@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Expense Reimbursement - Business & Travel  - EnKash",
   description:
     "Automate and improve your productivity within your organization with an Enkash smart reimbursement system that helps you track, process, and sync data in real-time.",
+  alternates: {
+    canonical: "https://enkash.com/ofex/reimbursement/",
+  },
 };
 
 const reimbursement = () => {
