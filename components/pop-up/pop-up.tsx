@@ -74,7 +74,7 @@ const PopUp = () => {
                   <PrimaryButton
                     title="Buy Now"
                     theme="blue"
-                    url="https://home.enkash.com/signup?utm_source=corporate_cards"
+                    url="https://home.enkash.com/signup?utm_source=gift_voucher_website_popup&utm_medium=website&utm_campaign=bolt_popup_banner_website"
                   />
                 </div>
               </div>
@@ -85,7 +85,7 @@ const PopUp = () => {
                 setShowPopup(false);
               }}
             >
-              <Image src={cross} alt="cross icon" />
+              <Image src={cross} alt="cross icon" className="cursor-pointer" />
             </div>
           </div>
         </div>
