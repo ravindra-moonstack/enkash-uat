@@ -15,18 +15,6 @@ import {
 } from "@/common/constant";
 
 
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Contact Sales Team | EnKash",
-  description:
-    "Contact Sales Team",
-  alternates: {
-    canonical: "https://enkash.com/sales/",
-  },
-};
-
-
 const sales = () => {
   //Form Variables
   const [fullName, setFullName] = useState("");
