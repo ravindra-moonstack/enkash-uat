@@ -40,6 +40,9 @@ export const metadata: Metadata = {
     "Automate your Business Account Payable & Receivable with Enkash Olympus  ",
   description:
     "EnKash Olympus helps small and medium businesses to solve their daily vendor, user and invoice management needs for Financial Success. Book a Free Demo to know how Enkash saves your money & time",
+  alternates: {
+    canonical: "https://enkash.com/olympus/",
+  },
 };
 
 const olympus = () => {

@@ -26,6 +26,9 @@ export const metadata: Metadata = {
     "Hierarchy & Control : Manage Hierarchy, Work & Task  Management - EnKash",
   description:
     "Businesses can bring transparency using approval hierarchies and enhance decision-making abilities within the organization.  How you can save time & money with Enkash.  Book a Demo",
+  alternates: {
+    canonical: "https://enkash.com/ofex/hierarchy-and-controls/",
+  },
 };
 
 const hierarchyAndControls = () => {

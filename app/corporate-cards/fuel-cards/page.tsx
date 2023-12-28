@@ -22,9 +22,12 @@ import blogData from "./blog-data";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
+  title: "Corporate Fuel Cards for Businesses - Optimize Your Fleet with EnKash",
   description:
-    "Unlock the convenience of corporate meal cards online. Streamline employee benefits and expense management effortlessly with our secure and efficient solution.",
+    "Enhance your company's bottom line with our corporate fuel cards for business. Enjoy cost savings, detailed reporting, and convenient fuel management. Discover the benefits today",
+  alternates: {
+    canonical: "https://enkash.com/corporate-cards/fuel-cards/",
+  },
 };
 
 const fuelCard = () => {

@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Employee Rewards & Recognition Management Platform  - EnKash",
   description:
     "Explore our Employee Rewards and Recognition Program for businesses. Discover how our program can boost morale, enhance productivity, and create a culture of appreciation within your organization",
+    alternates: {
+      canonical: "https://enkash.com/loyalty-lounge/employee-rewards/",
+    },
 };
 
 const employeeRewards = () => {

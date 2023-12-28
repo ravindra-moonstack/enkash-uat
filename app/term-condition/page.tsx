@@ -5,6 +5,16 @@ import leftBlueGradient from "./gradient.png";
 import Image from "next/image";
 import Footer from "@/components/footer/footer";
 
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: " Terms And Conditions For Use Of The Enkash Services | EnKash",
+  description: " Terms And Conditions For Use Of The Enkash Services",
+  alternates: {
+    canonical: "https://enkash.com/term-condition/",
+  },
+};
+
 const termCondition = () => {
   return (
     <>

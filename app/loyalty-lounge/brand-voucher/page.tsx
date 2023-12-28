@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Brand Voucher – Corporate Gift Vouchers for Employees | EnKash",
   description:
     "Explore Brand Vouchers and Buy Gift Vouchers. Discover a thoughtful and versatile way to recognize and motivate your team with our selection of brand vouchers",
+  alternates: {
+    canonical: "https://enkash.com/loyalty-lounge/brand-voucher/",
+  },
 };
 
 const brandVoucher = () => {

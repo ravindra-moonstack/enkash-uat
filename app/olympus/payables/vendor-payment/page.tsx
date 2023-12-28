@@ -26,12 +26,15 @@ export const metadata: Metadata = {
   title: "Vendor Payment – Automated Multiple Vendor Payment | EnKash",
   description:
     "Explore how our vendor payment solutions streamline transactions, improve financial control, and enhance supplier relationships. Discover the ease and effectiveness of managing vendor payments",
+  alternates: {
+    canonical: "https://enkash.com/olympus/payables/vendor-payment/",
+  },
 };
 
 const vendorPayment = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="payables"/>
+      <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -696,7 +699,7 @@ const vendorPayment = () => {
           }
         />
       </div>
-      <Footer utmSource="payables"/>
+      <Footer utmSource="payables" />
     </div>
   );
 };

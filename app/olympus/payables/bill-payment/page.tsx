@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Bill Payment | Billing Payment Solution | EnKash",
   description:
     "Streamline your financial management with an advanced bill payment platform.  Simplify bill payment processes and stay organized effortlessly. Discover efficient bill pay solutions for seamless financial tracking and timely payments",
+  alternates: {
+    canonical: "https://enkash.com/olympus/payables/bill-payment/",
+  },
 };
 
 const billPayments = () => {

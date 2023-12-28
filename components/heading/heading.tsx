@@ -15,11 +15,11 @@ const Heading = ({ size, title, color, weight, italic }: HeadingProps) => {
   const fontStyle = italic ? styles.italic : "";
 
   return (
-    <h1
+    <p
       className={`${styles[sizeClass]} ${colorClass} ${styles[fontWeight]} ${fontStyle}`}
     >
       {title}
-    </h1>
+    </p>
   );
 };
 

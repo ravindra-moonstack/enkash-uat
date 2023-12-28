@@ -27,6 +27,9 @@ export const metadata: Metadata = {
     "Digital Marketing Corporate Card for Businesses | Corporate Card for Ad Spend- EnKash",
   description:
     "Digital marketing Corporate card is a specialized financial tool designed to streamline and enhance the management of digital marketing expenses. It empowers businesses to centralize their spending, set customized limits, and control their budget effectively",
+  alternates: {
+    canonical: "https://enkash.com/corporate-cards/digital-marketing-cards/",
+  },
 };
 
 const digitalMarketingCard = () => {
@@ -55,7 +58,6 @@ const digitalMarketingCard = () => {
               weight="7"
             />
             <div>
-          
               <Heading
                 title={`digital marketing${space}`}
                 color="rainy-blue"

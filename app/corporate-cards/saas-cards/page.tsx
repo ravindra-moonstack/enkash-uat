@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "SaaS Subscription Management Platform - EnKash",
   description:
     "Manage all your SaaS subscriptions on a single software platform. Enhance your spend strategies with actionable insights & smart controls with EnKash",
+    alternates: {
+      canonical: "https://enkash.com/corporate-cards/saas-cards/",
+    },
 };
 
 const saasCard = () => {

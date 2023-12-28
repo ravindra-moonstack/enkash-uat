@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   title: "Bulk Collect – Corporate E-Collect and Payment Collection | EnKash",
   description:
     "Revolutionize your business payment collection with Bulk Collect. Streamline data management, enhance efficiency, and ensure seamless payment processes. Explore the benefits with EnKash today",
+  alternates: {
+    canonical: "https://enkash.com/olympus/receivables/bulk-collect",
+  },
 };
 
 const bulkCollect = () => {

@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "Automated Invoicing Processing & Software for Business - EnKash",
   description:
     "Simplify your invoicing process with our cutting-edge invoicebill management software for businesses.  Get complete visibility of sales and payments & create bulk invoices with embedded payment links",
+  alternates: {
+    canonical: "https://enkash.com/olympus/receivables/invoices",
+  },
 };
 
 const invoices = () => {

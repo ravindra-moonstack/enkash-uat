@@ -27,12 +27,15 @@ export const metadata: Metadata = {
     "Virtual Cards – Prepaid Virtual Cards for Businesses in India - EnKash",
   description:
     "Choose best Prepaid Virtual cards for businesses to manage employee expenses and spending. Enkash offers prepaid virtual cards for businesses in India",
+  alternates: {
+    canonical: "https://enkash.com/corporate-cards/virtual-cards/",
+  },
 };
 
 const virtualCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="corporate_cards"/>
+      <Header utmSource="corporate_cards" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -76,7 +79,7 @@ const virtualCard = () => {
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-          <div className="me-2">
+            <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
@@ -533,7 +536,7 @@ const virtualCard = () => {
           }
         />
       </div>
-      <Footer  utmSource="corporate_cards"/>
+      <Footer utmSource="corporate_cards" />
     </div>
   );
 };

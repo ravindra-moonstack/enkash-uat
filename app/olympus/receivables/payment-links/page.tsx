@@ -26,12 +26,15 @@ export const metadata: Metadata = {
     "Payment Link: Create Payment Links & Collect Bulk Payments Online - EnKash",
   description:
     "Effortlessly Create Payment Links & Securely Accept Payments Online. Explore hassle-free transaction management for your business and revolutionize your payment collection methods",
+  alternates: {
+    canonical: "https://enkash.com/olympus/receivables/payment-links",
+  },
 };
 
 const paymentLinks = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="receivables"/>
+      <Header utmSource="receivables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -44,10 +47,9 @@ const paymentLinks = () => {
               />
             </div>
             <div>
-            <Heading title="Payment Links" size="h4" weight="4" />
-            <sup className="sup-symbol">#</sup>
+              <Heading title="Payment Links" size="h4" weight="4" />
+              <sup className="sup-symbol">#</sup>
             </div>
-
           </div>
 
           <div className="d-flex flex-column">
@@ -82,7 +84,7 @@ const paymentLinks = () => {
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-          <div className="me-2">
+            <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
@@ -332,7 +334,7 @@ const paymentLinks = () => {
           }
         />
       </div>
-      <Footer  utmSource="receivables"/>
+      <Footer utmSource="receivables" />
     </div>
   );
 };

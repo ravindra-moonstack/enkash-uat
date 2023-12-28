@@ -45,6 +45,9 @@ export const metadata: Metadata = {
   title: "EnKash - The Ultimate Platform for Businesses",
   description:
     "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more.",
+  alternates: {
+    canonical: "www.enkash.com",
+  },
 };
 
 const home = () => {
