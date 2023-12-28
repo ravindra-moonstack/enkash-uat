@@ -14,7 +14,7 @@ import {
 const loyaltyLoungeProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/loaylty-lounge",
+    subtitleLink: "/loyalty-lounge",
     currentHeading: {
       name: "Loyalty Lounge ",
       description:

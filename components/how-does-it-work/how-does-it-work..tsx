@@ -15,7 +15,7 @@ const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentData((prevData: number) => (prevData + 1) % dataSets.length);
-    }, 3000);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
@@ -23,8 +23,11 @@ const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
   const [currentData, setCurrentData] = useState(0);
 
   const defaultImageSrc: StaticImageData = laptop;
-
   const imageToDisplay: StaticImageData = bannerImage || defaultImageSrc;
+
+  const handleSpanClick = (index: number) => {
+    setCurrentData(index);
+  };
 
   return (
     <div className={styles.home_container}>
@@ -64,7 +67,8 @@ const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
                   key={index}
                   className={`${styles.bar} ${
                     currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
-                  }`}
+                  } cursor-pointer`}
+                  onClick={() => handleSpanClick(index as number)}
                 ></span>
               ))}
             </div>

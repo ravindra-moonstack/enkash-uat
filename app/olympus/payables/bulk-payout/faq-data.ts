@@ -15,7 +15,7 @@ const faqData = [
         heading: "A few reasons why businesses should adopt express pay:",
         bullets: [
           "It’s error-free, helps save time and resources involved in making multiple payments manually",
-          "Express pays follow security layers for data encryption",
+          "Express pay follow security layers for data encryption",
           "There are fewer chances of payment failure and it supports different payment methods",
           "Bulk payments in advance help to avoid penalties and get trade discounts",
         ],

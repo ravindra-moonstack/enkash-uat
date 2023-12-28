@@ -30,6 +30,10 @@ const WebHeader = ({ utmSource }: props) => {
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
   const [showBanner, setShowBanner] = useState(true);
 
+  const signupUrl = utmSource
+    ? `https://home.enkash.com/signup?utm_source=${utmSource}`
+    : "https://home.enkash.com/get-started";
+
   useEffect(() => {
     if (itemRef.current) {
       setItemWidth(itemRef.current.offsetWidth);
@@ -157,14 +161,12 @@ const WebHeader = ({ utmSource }: props) => {
             </ul>
           </div>
           <div className={styles.buttons_container}>
-            <Link
-              href={"https://home.enkash.com/signup?utm_source=" + utmSource}
-              target="_blank"
-            >
+            <Link href={signupUrl} target="_blank">
               <div>
                 <button className={styles.primary_button}>Sign Up</button>
               </div>
             </Link>
+
             <div>
               <Link href="https://home.enkash.com/login" target="_blank">
                 <button
