@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Simplify GST Payment and Bill Payment Online - Seamlessly manage your GST payments and bills with our convenient online platform. Save time, stay compliant, and experience hassle-free transactions.",
   alternates: {
-    canonical: "https://enkash.com/olympus/payables/gst-payments/",
+    canonical: "https://www.enkash.com/olympus/payables/gst-payments/",
   },
 };
 

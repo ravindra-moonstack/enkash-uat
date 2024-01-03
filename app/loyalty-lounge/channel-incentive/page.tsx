@@ -24,15 +24,15 @@ export const metadata: Metadata = {
     "Channel Incentive Platform | Channel Incentive Program for Businesses",
   description:
     "Channel Incentive Program for Businesses - Know how EnKash incentive programs can drive engagement, increase sales, and foster strong relationships with your channel partners",
-    alternates: {
-      canonical: "https://enkash.com/loyalty-lounge/channel-incentive/",
-    },
+  alternates: {
+    canonical: "https://www.enkash.com/loyalty-lounge/channel-incentive/",
+  },
 };
 
 const channelIncentive = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="Loyalty_lounge"/>
+      <Header utmSource="Loyalty_lounge" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -400,7 +400,7 @@ const channelIncentive = () => {
           }
         />
       </div>
-      <Footer  utmSource="Loyalty_lounge"/>
+      <Footer utmSource="Loyalty_lounge" />
     </div>
   );
 };

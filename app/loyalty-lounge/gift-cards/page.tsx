@@ -24,15 +24,15 @@ export const metadata: Metadata = {
   title: "Corporate Gift Cards for Employees for Every Occasion with EnKash",
   description:
     "Unlock the power of corporate gifting with our versatile gift cards. Delight clients, employees, and partners with a world of choices. Explore our corporate gift card solutions now!",
-    alternates: {
-      canonical: "https://enkash.com/loyalty-lounge/gift-cards/",
-    },
+  alternates: {
+    canonical: "https://www.enkash.com/loyalty-lounge/gift-cards/",
+  },
 };
 
 const giftCards = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="Loyalty_lounge"/>
+      <Header utmSource="Loyalty_lounge" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -72,7 +72,7 @@ const giftCards = () => {
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-          <div className="me-2">
+            <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
@@ -401,7 +401,7 @@ const giftCards = () => {
           }
         />
       </div>
-      <Footer  utmSource="Loyalty_lounge"/>
+      <Footer utmSource="Loyalty_lounge" />
     </div>
   );
 };

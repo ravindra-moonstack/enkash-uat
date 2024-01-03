@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description:
     "Nehat Tech Solutions Private Limited’s Grievance Redressal & Merchant On-Boarding Policy",
   alternates: {
-    canonical: "https://enkash.com/grievance-policy/",
+    canonical: "https://www.enkash.com/grievance-policy/",
   },
 };
 

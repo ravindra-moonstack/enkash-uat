@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     "Businesses can bring transparency using approval hierarchies and enhance decision-making abilities within the organization.  How you can save time & money with Enkash.  Book a Demo",
   alternates: {
-    canonical: "https://enkash.com/ofex/hierarchy-and-controls/",
+    canonical: "https://www.enkash.com/ofex/hierarchy-and-controls/",
   },
 };
 

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   description:
     "Streamline Your Accounts Payable Process with Our Expert Service. From Invoice Verification to Timely Payments, Trust Us for Efficient Financial Management. Get Started Today",
   alternates: {
-    canonical: "https://enkash.com/olympus/payables/",
+    canonical: "https://www.enkash.com/olympus/payables/",
   },
 };
 

@@ -22,11 +22,12 @@ import blogData from "./blog-data";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Corporate Fuel Cards for Businesses - Optimize Your Fleet with EnKash",
+  title:
+    "Corporate Fuel Cards for Businesses - Optimize Your Fleet with EnKash",
   description:
     "Enhance your company's bottom line with our corporate fuel cards for business. Enjoy cost savings, detailed reporting, and convenient fuel management. Discover the benefits today",
   alternates: {
-    canonical: "https://enkash.com/corporate-cards/fuel-cards/",
+    canonical: "https://www.enkash.com/corporate-cards/fuel-cards/",
   },
 };
 

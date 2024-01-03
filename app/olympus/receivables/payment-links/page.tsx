@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     "Effortlessly Create Payment Links & Securely Accept Payments Online. Explore hassle-free transaction management for your business and revolutionize your payment collection methods",
   alternates: {
-    canonical: "https://enkash.com/olympus/receivables/payment-links",
+    canonical: "https://www.enkash.com/olympus/receivables/payment-links",
   },
 };
 

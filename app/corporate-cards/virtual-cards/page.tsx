@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   description:
     "Choose best Prepaid Virtual cards for businesses to manage employee expenses and spending. Enkash offers prepaid virtual cards for businesses in India",
   alternates: {
-    canonical: "https://enkash.com/corporate-cards/virtual-cards/",
+    canonical: "https://www.enkash.com/corporate-cards/virtual-cards/",
   },
 };
 

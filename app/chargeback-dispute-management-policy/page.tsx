@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description:
     "The purpose of this policy is to provide guidelines on how settlements would be done to Merchants by Nehat Tech Solutions Private Ltd.",
   alternates: {
-    canonical: "https://enkash.com/chargeback-dispute-management-policy/",
+    canonical: "https://www.enkash.com/chargeback-dispute-management-policy/",
   },
 };
 

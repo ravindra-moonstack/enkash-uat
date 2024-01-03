@@ -26,9 +26,10 @@ export const metadata: Metadata = {
   title: "Best Travel and Expenses Corporate Cards for Business - EnKash",
   description:
     "Travel & expense cards offer benefits that enhance corporate travel management. Use these cards and avail amazing travel perks and rewards.",
-    alternates: {
-      canonical: "https://enkash.com/corporate-cards/travel-and-expense-cards/",
-    },
+  alternates: {
+    canonical:
+      "https://www.enkash.com/corporate-cards/travel-and-expense-cards/",
+  },
 };
 
 const travelAndExpenseCard = () => {

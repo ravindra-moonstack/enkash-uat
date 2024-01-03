@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     "Explore how our approval workflow solutions can optimize decision-making processes, enhance accountability, and improve efficiency in your organization. Take control of your workflow management today",
   alternates: {
-    canonical: "https://enkash.com/ofex/policy-and-approval-flows/",
+    canonical: "https://www.enkash.com/ofex/policy-and-approval-flows/",
   },
 };
 

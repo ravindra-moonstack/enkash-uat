@@ -26,9 +26,9 @@ export const metadata: Metadata = {
   title: "SaaS Subscription Management Platform - EnKash",
   description:
     "Manage all your SaaS subscriptions on a single software platform. Enhance your spend strategies with actionable insights & smart controls with EnKash",
-    alternates: {
-      canonical: "https://enkash.com/corporate-cards/saas-cards/",
-    },
+  alternates: {
+    canonical: "https://www.enkash.com/corporate-cards/saas-cards/",
+  },
 };
 
 const saasCard = () => {
@@ -400,8 +400,8 @@ const saasCard = () => {
               </div>
               <div className="mb-3">
                 <p>
-                  Our SaaS expense management platform or subscription management platform
-                  will ensure the following:
+                  Our SaaS expense management platform or subscription
+                  management platform will ensure the following:
                 </p>
               </div>
               <div className="mb-5">
