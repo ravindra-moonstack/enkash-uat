@@ -25,15 +25,15 @@ export const metadata: Metadata = {
   title: "Employee Rewards & Recognition Management Platform  - EnKash",
   description:
     "Explore our Employee Rewards and Recognition Program for businesses. Discover how our program can boost morale, enhance productivity, and create a culture of appreciation within your organization",
-    alternates: {
-      canonical: "https://enkash.com/loyalty-lounge/employee-rewards/",
-    },
+  alternates: {
+    canonical: "https://www.enkash.com/loyalty-lounge/employee-rewards/",
+  },
 };
 
 const employeeRewards = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header  utmSource="Loyalty_lounge"/>
+      <Header utmSource="Loyalty_lounge" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
@@ -93,7 +93,7 @@ const employeeRewards = () => {
             />
           </div>
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-          <div className="me-2">
+            <div className="me-2">
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
@@ -418,7 +418,7 @@ const employeeRewards = () => {
           }
         />
       </div>
-      <Footer  utmSource="Loyalty_lounge"/>
+      <Footer utmSource="Loyalty_lounge" />
     </div>
   );
 };

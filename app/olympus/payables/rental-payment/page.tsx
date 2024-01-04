@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Decentralize rent payment by credit card to your different offices and pay rent online. Get TDS benefits and record approval hierarchy and make audits easy with Enkash's Rental Portal",
   alternates: {
-    canonical: "https://enkash.com/olympus/payables/rental-payment/",
+    canonical: "https://www.enkash.com/olympus/payables/rental-payment/",
   },
 };
 

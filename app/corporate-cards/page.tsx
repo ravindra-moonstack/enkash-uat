@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   description:
     "Empower your workforce with Enkash Freedom: Tailored corporate cards offering customizable spending limits and real-time expense tracking for enhanced cash flow management, operational efficiency, and paperless processes",
   alternates: {
-    canonical: "https://enkash.com/corporate-cards/",
+    canonical: "https://www.enkash.com/corporate-cards/",
   },
 };
 

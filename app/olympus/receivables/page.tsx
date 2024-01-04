@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   description:
     "Save cost of your business with Accounts Receivables Automation Software. Automate your invoicing, reduce payment delays & improve financial efficiency. Sign up for Free Trial Now!!",
   alternates: {
-    canonical: "https://enkash.com/olympus/receivables/",
+    canonical: "https://www.enkash.com/olympus/receivables/",
   },
 };
 

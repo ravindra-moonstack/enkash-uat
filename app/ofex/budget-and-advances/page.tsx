@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Optimize your financial stability with expert budget control management and cash flow strategies. Effectively allocate resources, track expenditures, and manage your cash flow to achieve sustainable financial success",
   alternates: {
-    canonical: "https://enkash.com/ofex/budget-and-advances/",
+    canonical: "https://www.enkash.com/ofex/budget-and-advances/",
   },
 };
 

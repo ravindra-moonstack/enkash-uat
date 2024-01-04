@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   description:
     "Digital marketing Corporate card is a specialized financial tool designed to streamline and enhance the management of digital marketing expenses. It empowers businesses to centralize their spending, set customized limits, and control their budget effectively",
   alternates: {
-    canonical: "https://enkash.com/corporate-cards/digital-marketing-cards/",
+    canonical:
+      "https://www.enkash.com/corporate-cards/digital-marketing-cards/",
   },
 };
 

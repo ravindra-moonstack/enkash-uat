@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Automate and improve your productivity within your organization with an Enkash smart reimbursement system that helps you track, process, and sync data in real-time.",
   alternates: {
-    canonical: "https://enkash.com/ofex/reimbursement/",
+    canonical: "https://www.enkash.com/ofex/reimbursement/",
   },
 };
 

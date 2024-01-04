@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Purchasing cards allow employees to quickly and efficiently buy what they need, and automatically record all transactions.",
   alternates: {
-    canonical: "https://enkash.com/corporate-cards/purchase-cards/",
+    canonical: "https://www.enkash.com/corporate-cards/purchase-cards/",
   },
 };
 

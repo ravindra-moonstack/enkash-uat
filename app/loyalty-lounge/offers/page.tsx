@@ -24,9 +24,9 @@ export const metadata: Metadata = {
     " Rewards & Offers- Get Exclusive offers on SaaS subscriptions | EnKash",
   description:
     "Unlock a world of savings and exclusive perks with our rewards and offers. Explore the benefits of our program and start enjoying the offer with EnKash today!",
-    alternates: {
-      canonical: "https://enkash.com/loyalty-lounge/offers/",
-    },
+  alternates: {
+    canonical: "https://www.enkash.com/loyalty-lounge/offers/",
+  },
 };
 
 const offers = () => {

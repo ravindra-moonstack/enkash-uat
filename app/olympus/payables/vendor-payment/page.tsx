@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   description:
     "Explore how our vendor payment solutions streamline transactions, improve financial control, and enhance supplier relationships. Discover the ease and effectiveness of managing vendor payments",
   alternates: {
-    canonical: "https://enkash.com/olympus/payables/vendor-payment/",
+    canonical: "https://www.enkash.com/olympus/payables/vendor-payment/",
   },
 };
 

@@ -9,10 +9,9 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy & Legal | EnKash",
-  description:
-    "Privacy & Legal",
+  description: "Privacy & Legal",
   alternates: {
-    canonical: "https://enkash.com/privacy-legal/",
+    canonical: "https://www.enkash.com/privacy-legal/",
   },
 };
 
