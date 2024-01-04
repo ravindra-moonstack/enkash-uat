@@ -36,13 +36,13 @@ const GetStartedCard = ({
           className={`d-flex align-items-center mt-5 ${styles.action_container}`}
         >
           <div className={styles.underline}>
-            <h1
+            <div
               className={`${styles.get_started_text} ${
                 ctaColor ? "color-cyan-blue" : "color-white"
               }`}
             >
               Get Started
-            </h1>
+            </div>
           </div>
           {!ctaColor && (
             <Image

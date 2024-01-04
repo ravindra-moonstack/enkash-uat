@@ -34,7 +34,7 @@ const ComprehensiveView = ({ innerHtml, title }: comprehensiveViewProp) => {
       <div
         className={` ${styles.action_container} d-flex   align-items-start color-white`}
       >
-        <h1 className={styles.explore_text}>{title}</h1>
+        <div className={styles.explore_text}>{title}</div>
         <Image
           onClick={handleButtonClick}
           src={arrowDown}

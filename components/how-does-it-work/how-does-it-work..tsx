@@ -54,9 +54,9 @@ const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
                 alt={dataSets[currentData].altText}
                 className={`${styles.icon_img}`}
               />
-              <h1 className={styles.heading}>
+              <div className={styles.heading}>
                 {dataSets[currentData].heading}
-              </h1>
+              </div>
             </div>
 
             <div

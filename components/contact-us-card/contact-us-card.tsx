@@ -33,7 +33,7 @@ const ContactUsCard = ({ title, description, titleHtml }: contactUsProps) => {
           <div
             className={`d-flex mt-3 mb-md-5 mb-3 ${styles.action_container}`}
           >
-            <h1 className={styles.contact_us}>Contact us</h1>
+            <div className={styles.contact_us}>Contact us</div>
             <Image src={arrow} alt="arrow image" className="ms-2" />
           </div>
         </Link>
