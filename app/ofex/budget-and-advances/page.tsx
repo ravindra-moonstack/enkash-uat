@@ -168,12 +168,14 @@ const budgetAndAdvance = () => {
               <GetStartedCard
                 whiteTitle=" Customize Budgets"
                 description="Create budgets that are aligned with your business finances and goals to achieve"
+                source="expense_management"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Track Budget Utilization"
                 description="Track and compare actual expenses against budgeted amounts, ensuring your financial plans are not disturbed"
+                source="expense_management"
               />
             </div>
 
@@ -181,12 +183,14 @@ const budgetAndAdvance = () => {
               <GetStartedCard
                 whiteTitle="Advance For Projects"
                 description="Simplified advance process to secure immediate funds when required for a specific project or category"
+                source="expense_management"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Multiple Categories"
                 description="Raise advances under category groups that allow you to combine multiple categories while submitting advances"
+                source="expense_management"
               />
             </div>
           </div>
@@ -259,6 +263,7 @@ const budgetAndAdvance = () => {
         <ContactUsCard
           title="Seeking further understanding of budget and advances?"
           description="Budget management allows businesses to monitor their financial planning, use their financial tools, and achieve business goals, making the business sustainable in the long run."
+          source="expense_management"
         />
       </div>
 

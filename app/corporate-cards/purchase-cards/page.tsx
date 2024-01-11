@@ -182,6 +182,7 @@ const purchaseCard = () => {
               whiteTitle="
               Streamlined Procurement"
               description="Purchase credit cards can simplify your procurement process, allowing authorized employees to quickly and easily purchase goods and services"
+              source="corporate_cards"
             />
           </div>
 
@@ -189,18 +190,21 @@ const purchaseCard = () => {
             <GetStartedCard
               whiteTitle=" Increased Control"
               description="Purchase cards provide greater visibility and control over spending, allowing your business to manage expenses better and prevent fraud"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Better Reporting"
               description="Purchase cards often provide detailed reporting and analytics, allowing you to identify spending trends and areas of cost savings"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="No Dependency For Expenses"
               description="With purchase cards, the authorized individual does not have to depend on the finance team for business-related expenses and can make decisions if the expense is aligned with company policies"
+              source="corporate_cards"
             />
           </div>
         </div>
@@ -260,6 +264,7 @@ const purchaseCard = () => {
         <ContactUsCard
           title="Seeking further understanding of purchase cards?"
           description="Purchase cards make the business procurement process accessible, convenient, and manageable. Businesses can use these cards to streamline the process of purchasing."
+          source="corporate_cards"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

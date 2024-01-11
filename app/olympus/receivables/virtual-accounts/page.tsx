@@ -169,24 +169,28 @@ const virtualAccounts = () => {
             <GetStartedCard
               whiteTitle="Simplified Tracking"
               description="With a virtual account, the process of tracking customer payments made and due can be checked easily"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Real-Time Updates"
               description="Records are updated in real-time as and when payment is received from the customer"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Outstanding Management"
               description="With complete insight into payments made by customers, outstanding management becomes easy"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Automated Reconciliation"
               description="Virtual accounts make the bank reconciliation process automated,  fast, and accurate with source information"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -207,6 +211,7 @@ const virtualAccounts = () => {
                   />
                 </div>
               }
+              source="receivables"
               description="Virtual accounts ensure you have overall visibility into activities like collections and cash flow usage in a few simple clicks"
             />
           </div>
@@ -214,6 +219,7 @@ const virtualAccounts = () => {
             <GetStartedCard
               whiteTitle="Easy Payment Collection"
               description="The payment collection becomes easy and faster with unique virtual account numbers"
+              source="receivables"
             />
           </div>
         </div>

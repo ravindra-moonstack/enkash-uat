@@ -9,6 +9,7 @@ export interface CardProps {
   titleHtml?: any;
   description: string;
   ctaColor?: string;
+  source: string;
 }
 
 const GetStartedCard = ({
@@ -16,6 +17,7 @@ const GetStartedCard = ({
   titleHtml,
   description,
   ctaColor,
+  source,
 }: CardProps) => {
   return (
     <div
@@ -31,7 +33,7 @@ const GetStartedCard = ({
       <div className="my-3">
         <Heading title={description} color="white" size="h6" weight="4" />
       </div>
-      <Link href="/sales">
+      <Link href={"/sales/?source=" + source}>
         <div
           className={`d-flex align-items-center mt-5 ${styles.action_container}`}
         >

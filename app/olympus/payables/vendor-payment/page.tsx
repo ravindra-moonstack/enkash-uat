@@ -174,6 +174,7 @@ const vendorPayment = () => {
                   />
                 </div>
               }
+              source="payables"
               description="Collect and verify essential information about your vendors and suppliers before onboarding them onto the platform to ensure hassle-free transactions"
             />
           </div>
@@ -181,18 +182,21 @@ const vendorPayment = () => {
             <GetStartedCard
               whiteTitle="Bank Account Validation"
               description="Validate the bank account details of the vendors by using the penny-drop method before processing transactions to prevent payment errors"
+              source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Multi-Branch Payments"
               description="Simplify vendor payments across multiple branches with a single click, while maintaining transparency through real-time updates on approvals and notifications via a centralized dashboard"
+              source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="PO Management"
               description="Hassle-free PO (Purchase Order) management against the invoices on a single dashboard"
+              source="payables"
             />
           </div>
 
@@ -200,6 +204,7 @@ const vendorPayment = () => {
             <GetStartedCard
               whiteTitle="Automated Reminders"
               description="Make sure that all vendor payments are processed on time and without errors. Get automated reminders to track outstanding vendor payments"
+              source="payables"
             />
           </div>
 
@@ -207,6 +212,7 @@ const vendorPayment = () => {
             <GetStartedCard
               whiteTitle="Seamless Integration"
               description="Seamless integration with your existing ERP system and banking partners for smooth vendor payments"
+              source="payables"
             />
           </div>
 
@@ -228,6 +234,7 @@ const vendorPayment = () => {
                   />
                 </div>
               }
+              source="payables"
               description="Access to a virtual card for payment decentralization/ branch payments/department-wise payments"
             />
           </div>
@@ -302,6 +309,8 @@ const vendorPayment = () => {
         <ContactUsCard
           title="Seeking further understanding of vendor payments?"
           description="Vendor payments are accounts payable or invoices to pay, which refer to compensating suppliers for the goods or services they provide to your business. Maintaining a good relationship with your suppliers while ensuring you don’t have responsibilities for an extended time is possible by managing your vendor payments methodically and timely. This keeps businesses of all kinds running as efficiently & effectively as possible."
+          source="payables"
+
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

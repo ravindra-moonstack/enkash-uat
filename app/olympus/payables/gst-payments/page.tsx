@@ -174,6 +174,7 @@ const taxPayments = () => {
                   />
                 </div>
               }
+              source="payables"
               description=" Set and manage a simple and intuitive process to ensure that all aspects are checked and payments are quick and easy"
             />
           </div>
@@ -181,6 +182,7 @@ const taxPayments = () => {
             <GetStartedCard
               whiteTitle="Easy Monitoring"
               description="Benefit from centralized view and control over all GST bill payments across your company on a single platform"
+              source="payables"
             />
           </div>
 
@@ -202,6 +204,7 @@ const taxPayments = () => {
                   />
                 </div>
               }
+              source="payables"
               description="Auto read the challans and convert them into paper records for audits and other purposes"
             />
           </div>
@@ -223,6 +226,7 @@ const taxPayments = () => {
                   />
                 </div>
               }
+              source="payables"
               description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
               prevent errors, unauthorized payments and reduce the risk of fraud"
             />
@@ -291,6 +295,8 @@ const taxPayments = () => {
         <ContactUsCard
           title="Seeking further understanding of GST payment online?"
           description="GST, or Goods and Services Tax, is an indirect tax implemented to consolidate many excise duties, VAT,  and other indirect taxes. GST is applicable at every level at which the sale occurs."
+          source="payables"
+
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

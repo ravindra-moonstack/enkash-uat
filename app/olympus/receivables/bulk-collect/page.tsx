@@ -172,30 +172,35 @@ const bulkCollect = () => {
             <GetStartedCard
               whiteTitle="Improved Experience"
               description="With bulk collection, your team can focus on improving customer experience rather than doing manual follow-ups and other mundane tasks"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Simplified Communication"
               description="The flow of data and information between all stakeholders becomes seamless, simpler, and faster"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Automated Process"
               description="Automate the collection process from end to end. Benefit from bulk reading of accounts, amounts due, and more"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Insights and Analytics"
               description="Plan ahead for any shortfalls in cash flow by analyzing previous data and identifying recurring patterns in slow collections"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Better Operations"
               description="Ease the pressure on your invoicing and collections team with automation and improved bulk invoicing with complete and updated details"
+              source="receivables"
             />
           </div>
         </div>

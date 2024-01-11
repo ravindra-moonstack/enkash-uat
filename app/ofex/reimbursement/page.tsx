@@ -185,18 +185,21 @@ const reimbursement = () => {
             <GetStartedCard
               whiteTitle="Automated processes"
               description="A digitized end-to-end solution automates checking, approvals, invoice generation, and submission to ensure speed and accuracy"
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="OCR Technology"
               description="Automatically scan and collect details from receipts using OCR, eliminating the need for manual entry"
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Whatsapp Integration"
               description="Seamless Whatsapp integration to approve/reject expenses at one go without logging into the dashboard "
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -217,6 +220,7 @@ const reimbursement = () => {
                   />
                 </div>
               }
+              source="expense_management"
               description="Receive a policy deviation warning if an employee submits an expense outside set limits"
             />
           </div>
@@ -224,6 +228,7 @@ const reimbursement = () => {
             <GetStartedCard
               whiteTitle="Real-time tracking"
               description="Track spends made on behalf of the business by employees in real-time"
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -244,6 +249,7 @@ const reimbursement = () => {
                   />
                 </div>
               }
+              source="expense_management"
               description=" Benefit from a complete overview of reimbursements and plan your business’ cash flow accordingly"
             />
           </div>

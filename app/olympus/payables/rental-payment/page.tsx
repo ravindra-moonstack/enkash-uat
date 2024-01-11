@@ -161,36 +161,42 @@ const rentalPayments = () => {
             <GetStartedCard
               whiteTitle="Quick and Easy Onboarding"
               description="Complete the onboarding with a few simple steps to ensure that rent payments go on time"
+              source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Automated Reminders"
               description="Enables automated reminders to track due dates, reduce late payments, and improve business cash flow"
+              source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Easy Payment Tracking"
               description="Track what’s paid, due, and pending on a single dashboard to improve visibility, control payment activity, and increase efficiency"
+              source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Centralized Approval"
               description="Easily pay rent online for all locations with a centralized approval process with all due checks and approvals"
+              source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Pay Using Credit Cards"
               description="Get the option to pay rentals on time using any credit card and keep your business cash flow steady"
+              source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Auto-Generated Records"
               description="The platform auto-generates monthly rental bills on specified dates as per rental agreements that you feed into the system"
+              source="payables"
             />
           </div>
         </div>
@@ -256,6 +262,8 @@ const rentalPayments = () => {
         <ContactUsCard
           title="Seeking further understanding of rent payment software?"
           description="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments."
+          source="payables"
+
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

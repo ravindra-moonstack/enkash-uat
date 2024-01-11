@@ -188,6 +188,7 @@ const channelIncentive = () => {
                     />
                   </div>
                 }
+                source="Loyalty_lounge"
                 description="Add multiple channel partners as individuals or bulk upload them all for easy incentive distribution"
               />
             </div>
@@ -195,30 +196,35 @@ const channelIncentive = () => {
               <GetStartedCard
                 whiteTitle="Diverse Redemptions"
                 description="Redeem from a diverse range of incentive options from 400+ brand vouchers like Amazon, Flipkart, Myntra, etc, across 25+ categories"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Non-Reloadable Cards"
                 description="It comes preloaded with a specific monetary value, offering partners the flexibility to redeem their incentives across e-commerce or in-store shopping"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Automatic Alerts"
                 description="Integrated platform to automatically inform users via SMS, WhatsApp, and e-mail about incentives and how to redeem points"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Real-Time Analytics"
                 description="Quickly share vouchers, track redemption status, and create advanced expiry alerts to maximize user adoption"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Bulk UPI for Incentives"
                 description=" Transfer incentives directly, nationwide, and in a hassle-free way, empowering seamless incentives for all"
+                source="Loyalty_lounge"
               />
             </div>
           </div>
@@ -298,6 +304,8 @@ const channelIncentive = () => {
         <ContactUsCard
           title="Seeking further understanding of channel incentives?"
           description="Channel incentives is a reward program that incentivizes channel partners and their teams to increase sales or subscriptions. In most cases, a channel incentive is paid over and above the base remuneration paid on each sale or subscription completed by the channel partner. Channel incentives not only add monetary value but also a matter of pride. Channel partners covet the incentives and will use them to offer customers better service or increase their reach."
+          source="Loyalty_lounge"
+
         />
       </div>
 

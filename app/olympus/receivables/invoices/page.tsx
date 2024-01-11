@@ -183,6 +183,7 @@ const invoices = () => {
                   />
                 </div>
               }
+              source="receivables"
               description="Make the invoicing process easier by digitizing everything, from invoice upload to dispatch, and save countless work hours"
             />
           </div>
@@ -190,12 +191,14 @@ const invoices = () => {
             <GetStartedCard
               whiteTitle="Complete Visibility"
               description="Get a holistic view of your business’s sales and payments to plan better and create optimized financial strategies"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Tracking & Monitoring"
               description="Digital invoices provide simplified tracking and monitoring, enabling easy identification of outstanding payments and optimized collections. EnKash’s enhanced reporting capabilities allow for in-depth financial analysis, empowering businesses to make data-driven decisions"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -216,6 +219,7 @@ const invoices = () => {
                   />
                 </div>
               }
+              source="receivables"
               description="Upload bulk invoices with all necessary details of regular purchases to save time and employee bandwidth in just a few clicks"
             />
           </div>
@@ -223,6 +227,7 @@ const invoices = () => {
             <GetStartedCard
               whiteTitle="Payment Options"
               description="Embed a payment link in your invoices and enable multiple payment options for added customer convenience"
+              source="receivables"
             />
           </div>
         </div>

@@ -173,12 +173,14 @@ const scanAndDropReceipts = () => {
             <GetStartedCard
               whiteTitle="OCR Technology"
               description="Automatically scan and collect details from receipts using OCR, eliminating the need for manual entry"
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="WhatsApp Integration"
               description="Make it easy for employees to submit receipts on the go using WhatsApp"
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -201,6 +203,7 @@ const scanAndDropReceipts = () => {
                   </div>
                 </>
               }
+              source="expense_management"
               description="Streamline record-keeping by dropping receipts at your convenience"
             />
           </div>
@@ -208,6 +211,7 @@ const scanAndDropReceipts = () => {
             <GetStartedCard
               whiteTitle="Link Receipts to Expenses"
               description="Easily link your dropped electronic receipts to expenses anytime"
+              source="expense_management"
             />
           </div>
 
@@ -215,6 +219,7 @@ const scanAndDropReceipts = () => {
             <GetStartedCard
               whiteTitle="One-Click Download"
               description="Gain overall control over the business expense reimbursement process by downloading all receipts in just one click"
+              source="expense_management"
             />
           </div>
         </div>
