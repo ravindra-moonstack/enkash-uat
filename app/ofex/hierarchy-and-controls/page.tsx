@@ -282,6 +282,7 @@ const hierarchyAndControls = () => {
         <ContactUsCard
           title="Seeking further understanding of hierarchy and control?"
           description="Hierarchy and control within an organization are critical elements that define the structure, authority, and decision-making processes. Understanding hierarchy in a company is crucial as it defines the flow of authority and responsibility. In practice, countless businesses exemplify various forms of hierarchy, each tailored to their unique needs."
+          source="expense_management"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

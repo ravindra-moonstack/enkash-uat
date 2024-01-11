@@ -294,6 +294,7 @@ const invoices = () => {
         <ContactUsCard
           title="Seeking further understanding of invoices?"
           description="Invoices are the lifeblood of any business, serving as the formal documentation of financial transactions between sellers and buyers. These documents comprehensively record goods or services rendered, payment terms, and crucial contact information. In essence, invoices ensure that businesses are compensated for their offerings and play a vital role in financial management, accounting, and taxation."
+          source="receivables"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

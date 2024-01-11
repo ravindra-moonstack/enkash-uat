@@ -285,6 +285,7 @@ const scanAndDropReceipts = () => {
         <ContactUsCard
           title="Seeking further understanding of scan & drop receipts"
           description="Scan & drop receipts is a cutting-edge solution designed to streamline the process of capturing and managing receipts and invoices in a digital format. This innovative technology allows businesses to convert their paper-based invoices into electronic receipts effortlessly."
+          source="expense_management"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

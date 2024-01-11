@@ -280,6 +280,7 @@ const paymentLinks = () => {
         <ContactUsCard
           title="Seeking further understanding of payment links?"
           description="Payment links are a convenient and straightforward way to collect payments online. These are unique URLs that direct customers to a secure payment page, where they can enter their payment information and complete the transaction quickly and securely."
+          source="receivables"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

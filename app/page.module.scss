@@ -409,6 +409,14 @@
     }
   }
 
+  .marquee_box {
+    filter: grayscale(1);
+    cursor: pointer;
+    &:hover {
+      filter: none;
+    }
+  }
+
   .bank_logo::-webkit-scrollbar {
     display: none;
   }
@@ -427,11 +435,6 @@
     }
 
     img {
-      filter: grayscale(1);
-      cursor: pointer;
-      &:hover {
-        filter: none;
-      }
       @include for-laptops {
         margin-right: 0px;
       }
@@ -521,11 +524,6 @@
     }
 
     img {
-      filter: grayscale(1);
-      cursor: pointer;
-      &:hover {
-        filter: none;
-      }
       margin-right: 20px;
       @include for-laptops {
         margin-right: 0px;

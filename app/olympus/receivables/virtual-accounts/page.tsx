@@ -285,6 +285,7 @@ const virtualAccounts = () => {
         <ContactUsCard
           title="Seeking further understanding of virtual accounts?"
           description="Virtual accounts basically function as an electronically usable payment and collection instrument, which can be formed as a subset of your core bank account. A virtual account contains a series of unique sets of codes that in most instances are numerical."
+          source="receivables"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
