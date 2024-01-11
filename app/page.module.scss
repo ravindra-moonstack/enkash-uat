@@ -427,6 +427,11 @@
     }
 
     img {
+      filter: grayscale(1);
+      cursor: pointer;
+      &:hover {
+        filter: none;
+      }
       @include for-laptops {
         margin-right: 0px;
       }
@@ -434,7 +439,7 @@
 
     .axis {
       height: 30px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 40px;
@@ -442,23 +447,23 @@
     }
     .icici {
       height: 25px;
-      width: 170px;
-      margin-right: 50px;
+      width: auto;
+      margin-right: 40px;
       @include for-laptops {
-        height: 30px;
+        height: 35px;
       }
     }
-    .sbm {
+    .au {
       height: 30px;
-      width: 170px;
-      margin-right: 50px;
+      width: auto;
+      margin-right: 40px;
       @include for-laptops {
-        height: 50px;
+        height: 40px;
       }
     }
     .visa {
       height: 20px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 30px;
@@ -466,7 +471,7 @@
     }
     .kotak {
       height: 30px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 40px;
@@ -474,23 +479,23 @@
     }
     .hdfc {
       height: 40px;
-      width: 170px;
-      margin-right: 50px;
+      width: auto;
+      margin-right: 60px;
       @include for-laptops {
         height: 40px;
       }
     }
     .rupay {
       height: 20px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
-        height: 30px;
+        height: 55px;
       }
     }
     .master {
       height: 30px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 45px;
@@ -517,6 +522,10 @@
 
     img {
       filter: grayscale(1);
+      cursor: pointer;
+      &:hover {
+        filter: none;
+      }
       margin-right: 20px;
       @include for-laptops {
         margin-right: 0px;
@@ -525,7 +534,7 @@
 
     .box {
       height: 23px;
-      width: 120px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 35px;
@@ -534,16 +543,16 @@
 
     .reliance {
       height: 65px;
-      width: 120px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
-        height: 100px;
+        height: 50px;
       }
     }
 
     .pristyn {
       height: 35px;
-      width: 200px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 50px;
@@ -551,7 +560,7 @@
     }
     .everest {
       height: 17px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 30px;
@@ -559,7 +568,7 @@
     }
     .cure {
       height: 20px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 30px;
@@ -567,7 +576,7 @@
     }
     .infra {
       height: 17px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 28px;
@@ -575,7 +584,7 @@
     }
     .dtdc {
       height: 20px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
         height: 28px;
@@ -583,10 +592,10 @@
     }
     .starbucks {
       height: 50px;
-      width: 170px;
+      width: auto;
       margin-right: 50px;
       @include for-laptops {
-        height: 65px;
+        height: 50px;
       }
     }
   }
