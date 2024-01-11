@@ -190,6 +190,7 @@ const bulkPayout = () => {
               <GetStartedCard
                 whiteTitle="Repeat Payments"
                 description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies"
+                source="payables"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -204,6 +205,7 @@ const bulkPayout = () => {
                     />
                   </>
                 }
+                source="payables"
                 description="Processing payments individually can be time-consuming and can cause delays. By using express pay, you can reduce payment processing time and improve cash flow"
               />
             </div>
@@ -211,18 +213,21 @@ const bulkPayout = () => {
               <GetStartedCard
                 whiteTitle="Centralized System"
                 description="By centralizing payment processing through a express pay system, you can have better visibility and control over processes to prevent errors"
+                source="payables"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Automate Reminders"
                 description="Enable an automated reminder engine to keep track of all your outstanding business payments"
+                source="payables"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Checks and Approvals"
                 description="Finance is all about timely payments with the right checks and approvals to ensure negligible misuse of funds. The process of express pay for your recurring payments ensures speed and efficiency"
+                source="payables"
               />
             </div>
           </div>
@@ -288,6 +293,8 @@ const bulkPayout = () => {
         <ContactUsCard
           title="Seeking further understanding of express pay?"
           description="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment."
+          source="payables"
+
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

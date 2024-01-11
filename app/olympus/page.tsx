@@ -468,6 +468,7 @@ const olympus = () => {
               whiteTitle=" Multiple User Management"
               description="Streamline branch finances with role-based access in one platform. Ensure that teams that are situated at various locations can function efficiently"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -475,6 +476,7 @@ const olympus = () => {
               whiteTitle="Workflow Management"
               description="With EnKash Olympus, you can create custom workflows with an advanced maker-checker model to meet regulatory and audit-based requirements"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -482,6 +484,7 @@ const olympus = () => {
               whiteTitle="Multiple Modes Of Payment"
               description="Enjoy the freedom of using flexible payment solutions, including credit cards and dedicated virtual cards, with the EnKash Olympus solution"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -489,6 +492,7 @@ const olympus = () => {
               whiteTitle="Easy Integration"
               description="Businesses can easily use EnKash with their existing accounting software integrations like Tally. There is zero tech investment involved"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -511,6 +515,7 @@ const olympus = () => {
               }
               description="EnKash provides a detailed audit trail against each transaction made on the platform, bringing transparency to the business"
               ctaColor="blue"
+              source="payables"
             />
           </div>
         </div>
@@ -663,6 +668,7 @@ const olympus = () => {
         <ContactUsCard
           title="Business payment management was never this easy!"
           description="EnKash Olympus is an industry-first, robust technology stack that streamlines financial operations and drives growth through increased efficiency, transparency, and adaptability. This innovative solution includes features for automating accounts payable, accounts receivable, auditing, analytics, and reconciliation. EnKash Olympus is primarily designed to cater to traditional mid-size businesses that may be new to digital payments or lack accessibility to modern financial tools."
+          source="payables"
         />
       </div>
 

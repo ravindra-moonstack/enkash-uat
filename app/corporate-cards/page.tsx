@@ -412,6 +412,7 @@ const slash = () => {
               whiteTitle="Card Management"
               description="You can easily issue and manage business credit, prepaid, and virtual cards for your team. To make spending easier and more accountable"
               ctaColor="blue"
+              source="corporate_cards"
             />
           </div>
           <div className="me-4">
@@ -419,6 +420,7 @@ const slash = () => {
               whiteTitle="Customizable Cards"
               description="Both physical and virtual cards can be customized for different use cases like vendor payments, rental, and GST, and you can even set spending limits for individual cards or categories of expenses"
               ctaColor="blue"
+              source="corporate_cards"
             />
           </div>
           <div className="me-4">
@@ -426,6 +428,7 @@ const slash = () => {
               whiteTitle="Allocate Credit Limit"
               description="Empower your team with the credit they need for business-related expenses, simplifying cash-flow management"
               ctaColor="blue"
+              source="corporate_cards"
             />
           </div>
           <div className="me-4">
@@ -448,6 +451,7 @@ const slash = () => {
               }
               description="Gain complete visibility into your team's spending with our smart platform. See where money is going in real-time and track spending trends over time"
               ctaColor="blue"
+              source="corporate_cards"
             />
           </div>
           <div className="me-4">
@@ -455,6 +459,7 @@ const slash = () => {
               whiteTitle="Quick Disbursement"
               description="The quick disbursement feature helps issue a virtual card in minutes, and your team can start spending immediately"
               ctaColor="blue"
+              source="corporate_cards"
             />
           </div>
           <div className="me-4">
@@ -462,6 +467,7 @@ const slash = () => {
               whiteTitle="Purposeful Prepaid Cards"
               description="Leverage prepaid business corporate card to pre-load a specific amount onto each card,  facilitating easy tracking and control of employee expenses, such as fuel and meals"
               ctaColor="blue"
+              source="corporate_cards"
             />
           </div>
         </div>
@@ -505,7 +511,11 @@ const slash = () => {
             color="white"
           />
           <div>
-            <PrimaryButton title="Know More" theme="black" url="/sales" />
+            <PrimaryButton
+              title="Know More"
+              theme="black"
+              url="/sales/?source=corporate_cards"
+            />
           </div>
         </div>
       </div>
@@ -514,6 +524,7 @@ const slash = () => {
         <ContactUsCard
           title="Customizable cards for corporate expenses"
           description="These purpose-built business credit, prepaid, and virtual cards have been designed for various corporate needs such as travel, marketing, SaaS, fuel, meals, etc. Powered by banks and financial institutions, these cards enable customization along with setting spending limits and tracking in real time."
+          source="corporate_cards"
         />
       </div>
 

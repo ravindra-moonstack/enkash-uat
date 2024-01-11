@@ -179,6 +179,7 @@ const travelAndExpenseCard = () => {
                   />
                 </div>
               }
+              source="corporate_cards"
               description="This comprehensive business travel solution enables companies to smoothen their business-related travel by providing end-to-end visibility into their employees' travel expenditures"
             />
           </div>
@@ -186,24 +187,28 @@ const travelAndExpenseCard = () => {
             <GetStartedCard
               whiteTitle="Streamline Expenses"
               description="Bid adieu to complicated expenditure reports with purpose-based corporate cards that can be managed from anywhere, anytime"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Real-Time Management"
               description="Set up rules, limits, and approval matrices for better budget control on the go. Easily block and unblock cards in cases of any misuse or emergency"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Complete Overview"
               description="Maximize visibility and insights on travel expenses with a comprehensive overview on a single dashboard"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="DIY with Control"
               description="Use separate controls for categories like Admin and cardholder. This reduces fraud with automation tools such as approval matrices"
+              source="corporate_cards"
             />
           </div>
         </div>
@@ -275,6 +280,7 @@ const travelAndExpenseCard = () => {
         <ContactUsCard
           title="Seeking further understanding of travel & expense cards?"
           description="Travel and Expense cards, often called T&E cards are specialized financial instruments designed to streamline and enhance business travel expenses."
+          source="corporate_cards"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

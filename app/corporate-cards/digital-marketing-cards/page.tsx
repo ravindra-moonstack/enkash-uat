@@ -163,18 +163,21 @@ const digitalMarketingCard = () => {
             <GetStartedCard
               whiteTitle="Subscription Management"
               description="Effectively manage your recurring digital marketing expenses, such as subscriptions that recur monthly or annually"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Spend Optimization"
               description="Enhance your organization's performance by implementing a robust purchasing oversight process that helps reduce cost and streamlines your payment process"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Marketing Budgets"
               description="A digital marketing business card lets you set customized usage limits, ensuring no overspending"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -196,6 +199,7 @@ const digitalMarketingCard = () => {
                 </div>
               }
               description=" You can seamlessly add your card for digital marketing expenses to the desired platform and select the campaigns you wish to run"
+              source="corporate_cards"
             />
           </div>
         </div>
@@ -268,6 +272,7 @@ const digitalMarketingCard = () => {
         <ContactUsCard
           title="Seeking further understanding of digital marketing cards?"
           description="A digital marketing card is a specialized financial tool designed to streamline and enhance the management of digital marketing expenses. It empowers businesses to centralize their spending, set customized limits, and control their budget effectively."
+          source="corporate_cards"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

@@ -649,6 +649,7 @@ const home = () => {
             <GetStartedCard
               whiteTitle="Optimize Spending"
               description="Empower your business with a centralized spend management platform & save countless working hours across payables, expenses, collections, and accounting"
+              source="home_page"
             />
           </div>
 
@@ -656,6 +657,7 @@ const home = () => {
             <GetStartedCard
               whiteTitle="Access Powerful Tools"
               description="Use modern and powerful tools to generate savings in payments. Process multiple payments with one click. Pace up your collections with our customizable modules and set up predefined follow-ups with payment links"
+              source="home_page"
             />
           </div>
 
@@ -663,6 +665,7 @@ const home = () => {
             <GetStartedCard
               whiteTitle="New Age Company Cards"
               description="Access multiple company cards to meet all business needs powered by state-of-the-art card management modules. Issue unlimited virtual or physical cards and use them instantly. Conveniently manage all your cards and spend on the go"
+              source="home_page"
             />
           </div>
 
@@ -684,6 +687,7 @@ const home = () => {
                   />
                 </div>
               }
+              source="home_page"
               description="Manage all your finances in one place. Get customized workflows across unlimited users with 99+ combinations of approval matrices"
             />
           </div>
@@ -692,6 +696,7 @@ const home = () => {
             <GetStartedCard
               whiteTitle="Credit On Demand"
               description="Get high credit for your enterprise with specially designed cards for businesses. Enjoy quick processing with digital KYC & collateral-free access"
+              source="home_page"
             />
           </div>
 
@@ -699,6 +704,7 @@ const home = () => {
             <GetStartedCard
               whiteTitle="Transparency Into Spends"
               description="Zoom in to as many details as you want across functions, levels, and teams—a single view to see all the spends done across the organization. Get real-time transaction records so you can have an updated picture any time of the day or night"
+              source="home_page"
             />
           </div>
         </div>
@@ -741,7 +747,7 @@ const home = () => {
             <PrimaryButton
               title="Get a Demo"
               isDisabled={false}
-              url="/sales"
+              url="/sales/?source=home_page"
               theme="blue"
             />
           </div>
@@ -833,6 +839,7 @@ const home = () => {
         <ContactUsCard
           title="Ready to upgrade with our new-age business solutions?"
           description="Explore all these products on the same platform and empower your business and employees with efficient spend management, transparency, and control across all departments"
+          source="home_page"
         />
       </div>
       <Footer />

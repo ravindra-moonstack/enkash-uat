@@ -185,30 +185,35 @@ const paymentLinks = () => {
             <GetStartedCard
               whiteTitle="Quicker Collections"
               description="Payment links embedded in digital invoices or other forms of communication quicken the collection or payment process"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Payment Options"
               description=" Embedded payment links ensure customers have various payment options once they click the embedded payment link"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Easily Accessible"
               description="Since invoices are sent online, they can be accessed anywhere, anytime, without hassle"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Simplified Tracking"
               description="Online payments or collections through payment links create a trail of the entire process, which helps with tracking and analysis"
+              source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Improved Cashflow"
               description="Payment links enable quicker collections and payments so that your business’s cash flow always stays healthy"
+              source="receivables"
             />
           </div>
         </div>
@@ -275,6 +280,7 @@ const paymentLinks = () => {
         <ContactUsCard
           title="Seeking further understanding of payment links?"
           description="Payment links are a convenient and straightforward way to collect payments online. These are unique URLs that direct customers to a secure payment page, where they can enter their payment information and complete the transaction quickly and securely."
+          source="receivables"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

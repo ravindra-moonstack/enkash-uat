@@ -201,24 +201,28 @@ const policyApprovalFlow = () => {
               <GetStartedCard
                 whiteTitle="Customizable Policies"
                 description="Set up your policies for multiple departments/ grades based on expense categories and limits, selecting monthly/yearly frequency"
+                source="expense_management"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Seamless Linking"
                 description="Link policies to approval flow without any hassle and avoid rework in creating approval processes"
+                source="expense_management"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Flexible Approval Flow"
                 description="Create auto-approval, single-level approval, or multi-level approval flows and use them across policies"
+                source="expense_management"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Default Approval Flow"
                 description="Apply default approval flow according to user roles if no approval flow is created"
+                source="expense_management"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -239,6 +243,7 @@ const policyApprovalFlow = () => {
                     />
                   </>
                 }
+                source="expense_management"
                 description="Managers can approve the expenses in bulk at the same time"
               />
             </div>
@@ -247,6 +252,7 @@ const policyApprovalFlow = () => {
                 whiteTitle="Real-Time Alerts"
                 description="
                 Real-time alerts for expense policy violations, enabling businesses to enforce compliance and reduce the risk of fraud"
+                source="expense_management"
               />
             </div>
           </div>
@@ -313,6 +319,7 @@ const policyApprovalFlow = () => {
         <ContactUsCard
           title="Seeking further understanding of policy and approval flow?"
           description="Policy and approval flow is a fundamental component of modern business operations, ensuring a well-structured and efficient approach to managing expenses and financial decisions."
+          source="expense_management"
         />
       </div>
 

@@ -184,30 +184,35 @@ const mealCard = () => {
                 </>
               }
               description="Meal cards are easy to issue with a specific limit towards food purchases and easier to refill"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Easy Management"
               description="In case of loss or misuse, it is easy to manage the card from the platform to restrict or block usage"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle=" Track and Control"
               description="Due to the features that mimic debit cards, the meal card is easy to keep track of and control for the end user"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Wider Acceptance"
               description="Various supermarkets, food delivery apps, and other eating establishments widely accept meal cards"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Complete Overview"
               description="Meal cards offer a complete overview of what is spent and what remains in balance"
+              source="corporate_cards"
             />
           </div>
         </div>
@@ -295,6 +300,7 @@ const mealCard = () => {
         <ContactUsCard
           title="Seeking further understanding of meal cards?"
           description="Meal cards are prepaid cards provided by employers to enhance employees' morale. These cards are used for food-related purchases on various retail outlets or apps and help in tax redemption for employees."
+          source="corporate_cards"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

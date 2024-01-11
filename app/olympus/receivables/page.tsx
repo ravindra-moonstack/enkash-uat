@@ -342,6 +342,7 @@ const receivables = () => {
               whiteTitle="Automate and Accelerate"
               description="Put repetitive and mundane tasks on auto-pilot and significantly reduce your team’s efforts in the invoicing and reconciliation process"
               ctaColor="blue"
+              source="receivables"
             />
           </div>
           <div className="me-4">
@@ -349,6 +350,7 @@ const receivables = () => {
               whiteTitle="Proactive Collection"
               description="Build collection strategies that work for both you and your customer. Get details about each transaction linked seamlessly with virtual accounts for better insights"
               ctaColor="blue"
+              source="receivables"
             />
           </div>
           <div className="me-4">
@@ -371,6 +373,7 @@ const receivables = () => {
               }
               description="Leverage the power of embedded payment links within invoices and other forms of communication to quicken the collection process"
               ctaColor="blue"
+              source="receivables"
             />
           </div>
           <div className="me-4">
@@ -378,6 +381,7 @@ const receivables = () => {
               whiteTitle="Improved Cashflow"
               description="An automated collection strategy that does most of your work and can improve your business's overall cash flow"
               ctaColor="blue"
+              source="receivables"
             />
           </div>
         </div>
@@ -430,6 +434,8 @@ const receivables = () => {
         <ContactUsCard
           title="Speed up business collections for easy cash flow"
           description="Accounts Receivable is the outstanding amount customers or clients owe to a business. This amount is against any good or service availed from the business"
+          source="receivables"
+
         />
       </div>
 

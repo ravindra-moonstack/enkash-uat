@@ -11,6 +11,7 @@ import {
   pci,
   soc,
   rbi,
+  email,
 } from ".";
 import Heading from "../heading/heading";
 import Link from "next/link";
@@ -120,7 +121,9 @@ const Footer = ({ utmSource = "" }: any) => {
               </div>
               <ul>
                 <li>
-                  <Link href="/corporate-cards/virtual-cards/">Virtual Cards*</Link>
+                  <Link href="/corporate-cards/virtual-cards/">
+                    Virtual Cards*
+                  </Link>
                 </li>
                 <li>
                   <Link href="/corporate-cards/digital-marketing-cards/">
@@ -137,11 +140,15 @@ const Footer = ({ utmSource = "" }: any) => {
                   <Link href="/corporate-cards/saas-cards/">SaaS Cards*</Link>
                 </li>
                 <li>
-                  <Link href="/corporate-cards/purchase-cards/">Purchase Cards*</Link>
+                  <Link href="/corporate-cards/purchase-cards/">
+                    Purchase Cards*
+                  </Link>
                 </li>
 
                 <li>
-                  <Link href="/corporate-cards/travel-and-expense-cards">T&E Cards*</Link>
+                  <Link href="/corporate-cards/travel-and-expense-cards">
+                    T&E Cards*
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -264,28 +271,6 @@ const Footer = ({ utmSource = "" }: any) => {
             </div>
           </div>
         </div>
-        <div className="col-6 col-md-3">
-          <div className={`${styles.footer_links_col}`}>
-            <div className="mt-2">
-              <h4 className={`${styles.title}`}>Company</h4>
-              <ul>
-                {/* <li>
-                  <Link href="/about">About Us</Link>
-                </li> */}
-
-                <li>
-                  <Link href="/sales?source=getstarted_footer">Sales</Link>
-                </li>
-                {/* <li>
-                  <Link href="/career-team-and-openings/">Career</Link>
-                </li>
-                <li>
-                  <Link href="/support/">Support</Link>
-                </li> */}
-              </ul>
-            </div>
-          </div>
-        </div>
 
         <div className="col-6 col-md-3">
           <div className={`col-6 col-md-4 ${styles.footer_links_col}`}>
@@ -321,11 +306,62 @@ const Footer = ({ utmSource = "" }: any) => {
             </div>
           </div>
         </div>
+        <div className="col-6 col-md-3">
+          <div className={`${styles.footer_links_col}`}>
+            <div className="mt-2">
+              <h4 className={`${styles.title}`}>Company</h4>
+              <ul>
+                {/* <li>
+                  <Link href="/about">About Us</Link>
+                </li> */}
+
+                <li>
+                  <Link href="/sales?source=getstarted_footer">Sales</Link>
+                </li>
+                {/* <li>
+                  <Link href="/career-team-and-openings/">Career</Link>
+                </li>
+                <li>
+                  <Link href="/support/">Support</Link>
+                </li> */}
+              </ul>
+              <h4 className={`${styles.title}`}>Help and Support</h4>
+              <ul>
+                <li>
+                  <div>
+                    <Image
+                      src={call}
+                      alt="Contact Enkash"
+                      height={20}
+                      width={20}
+                    />
+                    <span className={`ms-md-3 ms-1 ${styles.support_text}`}>
+                      +91 8530490475
+                    </span>
+                  </div>
+                </li>
+                <li>
+                  <div>
+                    <Image
+                      src={email}
+                      alt="Contact Enkash"
+                      height={20}
+                      width={20}
+                    />
+                    <span className={`ms-md-3 ms-1 ${styles.support_text}`}>
+                      support@enkash.com
+                    </span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
 
         <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
           <div className={styles.contact_list}>
             <ul>
-              <li>
+              {/* <li>
                 <Link
                   rel="noopener noreferrer"
                   target="_top"
@@ -339,7 +375,7 @@ const Footer = ({ utmSource = "" }: any) => {
                   />
                   +91 8530490475
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <div
                   className={`d-flex justify-content-between pt-3 ${styles.social_icons_row}`}

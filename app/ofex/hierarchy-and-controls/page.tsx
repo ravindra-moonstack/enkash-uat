@@ -170,24 +170,28 @@ const hierarchyAndControls = () => {
             <GetStartedCard
               whiteTitle="Define Custom Roles"
               description="Assign specific permissions and accessibility to multiple hierarchies based on their department structure"
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Reduces Financial Risks"
               description="Multiple individuals can be involved in the approval hierarchy. This ensures that expenses are verified multiple times and that there is no inaccuracy, duplication, or fraud"
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Fast Decision Making"
               description="The system provides real-time insights into the expense pattern for businesses to identify areas that can be managed better"
+              source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Resource Management"
               description="The AI and ML-powered technology allows setting automated rules for expense approval and categorization, helping reduce the burden on managers and accounting teams"
+              source="expense_management"
             />
           </div>
 
@@ -195,6 +199,7 @@ const hierarchyAndControls = () => {
             <GetStartedCard
               whiteTitle="Easy Configuration"
               description="Seamlessly integrating software like Zoho, Tally, SAP, and Oracle Netsuite with EnKash eliminates the need for manual data entry"
+              source="expense_management"
             />
           </div>
 
@@ -216,6 +221,7 @@ const hierarchyAndControls = () => {
                   />
                 </div>
               }
+              source="expense_management"
               description="Add new departments and employee roles without any hassle"
             />
           </div>
@@ -276,6 +282,7 @@ const hierarchyAndControls = () => {
         <ContactUsCard
           title="Seeking further understanding of hierarchy and control?"
           description="Hierarchy and control within an organization are critical elements that define the structure, authority, and decision-making processes. Understanding hierarchy in a company is crucial as it defines the flow of authority and responsibility. In practice, countless businesses exemplify various forms of hierarchy, each tailored to their unique needs."
+          source="expense_management"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

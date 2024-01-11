@@ -347,6 +347,7 @@ const loyaltyLounge = () => {
               whiteTitle="Creation And Customization"
               description="Businesses can easily create and customize their rewards programs to meet their specific needs, including setting up different reward tiers, point structures, and redemption options"
               ctaColor="blue"
+              source="Loyalty_lounge"
             />
           </div>
           <div className="me-4">
@@ -369,6 +370,7 @@ const loyaltyLounge = () => {
               }
               description="Employers can simultaneously allocate rewards to their employees in bulk, making this product relevant for large companies"
               ctaColor="blue"
+              source="Loyalty_lounge"
             />
           </div>
           <div className="me-4">
@@ -376,6 +378,7 @@ const loyaltyLounge = () => {
               whiteTitle="Open Voucher Policy"
               description="Businesses can issue open vouchers on the dashboard by simply integrating with the login code during redemption"
               ctaColor="blue"
+              source="Loyalty_lounge"
             />
           </div>
           <div className="me-4">
@@ -383,6 +386,7 @@ const loyaltyLounge = () => {
               whiteTitle="Seamless Integration"
               description="This product can be seamlessly integrated with HRMS platforms, WhatsApp and e-mails for hassle-free redemption"
               ctaColor="blue"
+              source="Loyalty_lounge"
             />
           </div>
 
@@ -391,6 +395,7 @@ const loyaltyLounge = () => {
               whiteTitle="Reporting and Analytics"
               description="Download comprehensive reports and check analytics anytime to track the performance of your rewards programs"
               ctaColor="blue"
+              source="Loyalty_lounge"
             />
           </div>
         </div>
@@ -443,6 +448,7 @@ const loyaltyLounge = () => {
         <ContactUsCard
           title="Revolutionize your rewards programs with EnKash"
           description="Loyalty lounge is a solution that offers rewards, corporate gifting, and incentives management. It provides a centralized redemption platform for rewards such as brand vouchers, gift cards, offers, and employee recognition."
+          source="Loyalty_lounge"
         />
       </div>
 

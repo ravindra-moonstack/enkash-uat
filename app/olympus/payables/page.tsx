@@ -329,6 +329,7 @@ const payables = () => {
               whiteTitle="Faster Payments"
               description="Automating the payables process fastens it by eliminating manual intervention. It also reduces the chances of errors"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -351,6 +352,7 @@ const payables = () => {
               }
               description="A centralized view of the business spend trends can be checked on the same dashboard"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -358,6 +360,7 @@ const payables = () => {
               whiteTitle="Remote Operations"
               description="Teams from different locations can access and share files from anywhere and process payments easily"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -365,6 +368,7 @@ const payables = () => {
               whiteTitle="Vendor Management"
               description="Easily upload vendor invoices, do vendor KYC and review vendor performance to manage them better"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -372,6 +376,7 @@ const payables = () => {
               whiteTitle="Early payment discount"
               description="Set payment reminders and make vendor payments early to avail trade discount"
               ctaColor="blue"
+              source="payables"
             />
           </div>
           <div className="me-4">
@@ -379,6 +384,7 @@ const payables = () => {
               whiteTitle="Streamlined Workflows"
               description="A streamlined approval process can significantly reduce processing time and minimize the risk of delayed payments"
               ctaColor="blue"
+              source="payables"
             />
           </div>
         </div>
@@ -431,6 +437,8 @@ const payables = () => {
         <ContactUsCard
           title="Efficient and easy business payments"
           description="Accounts payable automation is the process by which a business pays its suppliers, service providers, and vendors online."
+          source="payables"
+
         />
       </div>
       <div className="row">

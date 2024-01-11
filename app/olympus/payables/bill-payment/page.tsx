@@ -169,12 +169,14 @@ const billPayments = () => {
               <GetStartedCard
                 whiteTitle="Regulate Payments"
                 description="Carry out a one-time process to ensure that you have a regulated payment process that helps you make payments smoothly without any risk"
+                source="payables"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Automated Reminders"
                 description="Ensure that you do not miss any of the regularly recurring bill payments’ deadlines, with automatic reminders. This ensures continuity, helps cut down penalties, and improves savings"
+                source="payables"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -195,6 +197,7 @@ const billPayments = () => {
                     />
                   </>
                 }
+                source="payables"
                 description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
               prevent errors, unauthorized payments and reduce the risk of fraud"
               />
@@ -203,12 +206,14 @@ const billPayments = () => {
               <GetStartedCard
                 whiteTitle="Complete Transparency"
                 description="Clearly view the status of your bill payments, including confirmation of payment processing, the date of payment, and upcoming bills to pay"
+                source="payables"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Secured Payments"
                 description="Billing automation helps protect your privacy and identity by eliminating any risks associated with lost paperwork using encryption to protect the transmission of sensitive data"
+                source="payables"
               />
             </div>
           </div>
@@ -280,6 +285,8 @@ const billPayments = () => {
         <ContactUsCard
           title="Seeking further understanding of bill payments online?"
           description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
+          source="payables"
+
         />
       </div>
 

@@ -208,3 +208,10 @@
     }
   }
 }
+
+.support_text {
+  font-size: 11px;
+  @include for-laptops {
+    font-size: 14px;
+  }
+}

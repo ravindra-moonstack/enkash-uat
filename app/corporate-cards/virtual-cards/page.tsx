@@ -179,6 +179,7 @@ const virtualCard = () => {
                   />
                 </div>
               }
+              source="corporate_cards"
               description="Virtual cards can help businesses save money by reducing processing costs, eliminating the need for physical cards or checks, and reducing the risk of fraud"
             />
           </div>
@@ -187,12 +188,14 @@ const virtualCard = () => {
             <GetStartedCard
               whiteTitle="Streamline Operations"
               description="Virtual cards ensure that your financial operations are streamlined and spend less time tracking payments, getting approvals, and recordkeeping"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Enhanced Tracking"
               description="Offers detailed tracking capabilities, providing businesses with real-time insights into your spending to identify areas to save money"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -200,6 +203,7 @@ const virtualCard = () => {
               whiteTitle="Reduced Risk Of Fraud"
               description="It can be set up with spending limits and other controls, reducing the risk of unauthorized or fraudulent transactions. It 
               helps protect your privacy by eliminating any risk associated with lost paperwork"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -207,18 +211,21 @@ const virtualCard = () => {
               whiteTitle="Customizable Cards"
               description="Virtual cards can be customized for different use cases like vendor payments, rental, GST, and even for other business-related
               expenses like digital marketing, travel and fuel cards, etc"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="No Additional cost"
               description="Having a virtual card doesn’t come with an extra cost"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Vendor Relationships"
               description="Virtual cards enable your business to make payments quickly and securely, which improves relations with your vendors and helps you negotiate better deals"
+              source="corporate_cards"
             />
           </div>
         </div>
@@ -277,6 +284,7 @@ const virtualCard = () => {
         <ContactUsCard
           title="Seeking further understanding of virtual cards?"
           description="Virtual cards are digital, secure tools for making online transactions. They are readily available via EnKash and are user-friendly, convenient, and customizable."
+          source="corporate_cards"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
