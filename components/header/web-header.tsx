@@ -107,7 +107,7 @@ const WebHeader = ({ utmSource }: props) => {
             <ul>
               {hoveredIndex !== null && (
                 <div
-                  className={styles.background_slide}
+                  className={styles.nav_background_slide}
                   style={{
                     transform: `translateX(${slidePosition}px)`,
                     width: `${itemWidth}px`,
@@ -149,7 +149,7 @@ const WebHeader = ({ utmSource }: props) => {
                     item.name
                   )}
 
-                  {index !== 2 && (
+                  {index !== 3 && (
                     <>
                       <Image
                         src={getArrowImageSource(index)}
