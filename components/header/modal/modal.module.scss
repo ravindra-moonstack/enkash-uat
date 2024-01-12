@@ -118,7 +118,8 @@
   grid-template-columns: repeat(3, 1fr);
   grid-auto-flow: column;
   grid-template-rows: repeat(4, auto);
-  gap: 25px;
+  row-gap: 10px; /* Vertical gap */
+  column-gap: 25px; /* Horizontal gap */
 }
 
 .solution_stack {
