@@ -161,24 +161,28 @@ const saasCard = () => {
             <GetStartedCard
               whiteTitle="Recurring Subscriptions"
               description=" Manage all your recurring expenses on one platform with total visibility over your subscription spend. Track renewal dates and previous payments and get automated reminders about upcoming renewals"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Greater Visibility"
               description="A seamless and rich experience with real-time visibility into your SaaS purchases, helping you make better business decisions"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Purchasing Insights"
               description="Improve your organization's performance by increasing your purchasing oversight, which helps reduce costs and streamline your payment process"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Complete Control"
               description="Easy monitoring, analysis, and control of corporate SaaS expenses, ensuring SaaS policy compliance within your organization"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -199,6 +203,7 @@ const saasCard = () => {
                   />
                 </div>
               }
+              source="corporate_cards"
               description="For DIY corporate access, you can set daily, monthly, and annual usage limits to spend only your allocated budget on SaaS"
             />
           </div>
@@ -271,6 +276,7 @@ const saasCard = () => {
         <ContactUsCard
           title="Seeking further understanding of SaaS cards?"
           description="Businesses can avail SaaS cards for subscription purposes and use them as required. For the smooth functioning of subscriptions, the respective teams can be allocated cards, and budgets can be assigned."
+          source="corporate_cards"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

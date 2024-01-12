@@ -158,6 +158,7 @@ const giftCards = () => {
               <GetStartedCard
                 whiteTitle="Freedom to Choose"
                 description="Gift cards allow the recipient to choose products or services per their preference and convenience from a retail store or online"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -179,6 +180,7 @@ const giftCards = () => {
                   </>
                 }
                 description="Gift cards are prepaid cards that can be easily and safely accessed anywhere and anytime"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -199,6 +201,7 @@ const giftCards = () => {
                     />
                   </>
                 }
+                source="Loyalty_lounge"
                 description="Gift cards are prepaid cards and are safe as they can be frozen in case of loss or theft without losing money with the self-PIN generation feature"
               />
             </div>
@@ -206,6 +209,7 @@ const giftCards = () => {
               <GetStartedCard
                 whiteTitle="Easy to Distribute"
                 description="These gift cards can be easily distributed as per the occasion"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
@@ -213,6 +217,7 @@ const giftCards = () => {
                 whiteTitle="Multiple Denominations"
                 description="Available in multiple denominations of up to 
                 Rs.10,000, ensuring the option to choose the card value as per your requirements"
+                source="Loyalty_lounge"
               />
             </div>
           </div>
@@ -279,6 +284,8 @@ const giftCards = () => {
         <ContactUsCard
           title="Seeking further understanding of gift cards?"
           description="Gift cards in India offer a versatile and effective way to express appreciation and foster positive connections. They offer recipients the flexibility to select from a range of options and make their own choices. A transparent and straightforward method of expressing gratitude, these gift cards are adaptable, user-friendly, and secure."
+          source="Loyalty_lounge"
+
         />
       </div>
 

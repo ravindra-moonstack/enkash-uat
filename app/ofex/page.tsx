@@ -355,6 +355,7 @@ const OfEx = () => {
               whiteTitle="Streamlined process"
               description="Effortless expense submission and approval process supported via  WhatsApp"
               ctaColor="blue"
+              source="expense_management"
             />
           </div>
           <div className="me-4">
@@ -375,6 +376,7 @@ const OfEx = () => {
                   />
                 </div>
               }
+              source="expense_management"
               description="Automatic expense data extraction with OCR technology and smart audit alerts for duplicate entries by submitters and approvers"
               ctaColor="blue"
             />
@@ -384,6 +386,7 @@ const OfEx = () => {
               whiteTitle="Real-Time Alerts"
               description="Enforcing expense policy compliance and fraud risk reduction with real-time alerts across the approval hierarchy"
               ctaColor="blue"
+              source="expense_management"
             />
           </div>
           <div className="me-4">
@@ -391,6 +394,7 @@ const OfEx = () => {
               whiteTitle="Customized Approval Flow"
               description="Empowering businesses to create customized expense approval processes based on employee roles, expense categories, hierarchy, and single or multiple levels"
               ctaColor="blue"
+              source="expense_management"
             />
           </div>
           <div className="me-4">
@@ -398,6 +402,7 @@ const OfEx = () => {
               whiteTitle="Credit Card Integration"
               description="Seamless integration with corporate credit cards, enabling businesses to track and manage credit card expenses"
               ctaColor="blue"
+              source="expense_management"
             />
           </div>
           <div className="me-4">
@@ -405,6 +410,7 @@ const OfEx = () => {
               whiteTitle="HRMS and ERP Integration"
               description="Seamless Integration with HRMS, accounting softwares like Zoho, Tally, Quickbooks, and ERP Systems- SAP and Oracle Netsuite, for automated data exchange and elimination of manual data entry and reconciliation"
               ctaColor="blue"
+              source="expense_management"
             />
           </div>
           <div className="me-4">
@@ -412,6 +418,7 @@ const OfEx = () => {
               whiteTitle="Custom Reporting"
               description="Rich business intelligence for custom reports, insights dashboard, and expense analytics for informed decision-making"
               ctaColor="blue"
+              source="expense_management"
             />
           </div>
         </div>
@@ -464,6 +471,7 @@ const OfEx = () => {
         <ContactUsCard
           title="Manage your office expenses like never before!"
           description="Expense management is the process of working around a company’s budget and expenses, managing approval, reports, and reimbursements raised by employees."
+          source="expense_management"
         />
       </div>
 

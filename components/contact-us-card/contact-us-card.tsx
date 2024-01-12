@@ -8,9 +8,15 @@ interface contactUsProps {
   title?: any;
   description: string;
   titleHtml?: any;
+  source: string;
 }
 
-const ContactUsCard = ({ title, description, titleHtml }: contactUsProps) => {
+const ContactUsCard = ({
+  title,
+  description,
+  titleHtml,
+  source,
+}: contactUsProps) => {
   return (
     <div className={`row-padding-x-only ${styles.contact_us_body}`}>
       <div className={styles.text_container}>
@@ -29,7 +35,7 @@ const ContactUsCard = ({ title, description, titleHtml }: contactUsProps) => {
             <h2 className={styles.description}>{description}</h2>
           </div>
         </div>
-        <Link href="/sales">
+        <Link href={"/sales/?source=" + source}>
           <div
             className={`d-flex mt-3 mb-md-5 mb-3 ${styles.action_container}`}
           >

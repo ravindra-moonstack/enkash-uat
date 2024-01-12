@@ -170,24 +170,28 @@ const offers = () => {
               <GetStartedCard
                 whiteTitle="Maximize Savings"
                 description="Unlock significant savings on various business products with exclusive discounts on our partnered services"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Top Partnered Deals"
                 description="Explore the finest deals from our esteemed partner brands like AWS, ClearTax, Canva, and more"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle=" Effortless Process"
                 description="Enjoy a seamless experience with just a few clicks, making it quick and easy to access exclusive deals and offers"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Regularly Updated Offers"
                 description="Stay ahead of the curve with the best deals for your business needs"
+                source="Loyalty_lounge"
               />
             </div>
           </div>
@@ -260,6 +264,8 @@ const offers = () => {
         <ContactUsCard
           title="Seeking further understanding of offers?"
           description="Make your business function smoothly and advance toward growth with exclusive offers from EnKash. These offers on partnered services can help grow your business."
+          source="Loyalty_lounge"
+
         />
       </div>
 

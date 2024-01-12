@@ -179,12 +179,14 @@ const fuelCard = () => {
                 </div>
               }
               description="Establish daily and monthly payment limits to align with your budget and spend habits"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Wider Acceptance"
               description="Utilize your fuel card at a vast network of authorized fuel stations without incurring additional charges"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
@@ -206,12 +208,14 @@ const fuelCard = () => {
                 </div>
               }
               description="Receive real-time alerts, enhance security, and block the card instantly for any suspicious activity to ensure protection against misuse and fraud"
+              source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Smart Monitoring"
               description="Various supermarkets, food delivery apps, and other eating establishments widely accept meal cards"
+              source="corporate_cards"
             />
           </div>
         </div>
@@ -277,6 +281,7 @@ const fuelCard = () => {
         <ContactUsCard
           title="Seeking further understanding of fuel cards?"
           description="Fuel cards simplify business fuel purchases, offering a streamlined and secure payment process. These cards optimize budgets, reduce administrative overhead, and enhance accountability, making them essential tools for organizations' efficient and cost-effective fuel management."
+          source="corporate_cards"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

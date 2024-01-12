@@ -183,6 +183,7 @@ const brandVoucher = () => {
                   />
                 </div>
               }
+              source="Loyalty_lounge"
               description="Brand vouchers are available with a snap of a finger and can be accessed anytime and anywhere"
             />
           </div>
@@ -190,18 +191,21 @@ const brandVoucher = () => {
             <GetStartedCard
               whiteTitle="Flexible Denominations"
               description="Brand vouchers can be availed in multiple flexible denominations as per budget"
+              source="Loyalty_lounge"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Bulk Order Discount"
               description="Exclusive savings can be availed on employee gift vouchers ordered in bulk for rewards and recognition"
+              source="Loyalty_lounge"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="R&R Management"
               description="HR managers can manage points allocation to employees on a single platform"
+              source="Loyalty_lounge"
             />
           </div>
         </div>
@@ -274,6 +278,8 @@ const brandVoucher = () => {
         <ContactUsCard
           title="Seeking further understanding of brand vouchers?"
           description="Brand vouchers are prepaid instruments created to provide discounts on purchasing specific products and services following their terms and conditions."
+          source="Loyalty_lounge"
+
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

@@ -188,24 +188,28 @@ const employeeRewards = () => {
               <GetStartedCard
                 whiteTitle="Program Administration"
                 description="Manage and customize programs, define eligibility criteria, automate policy adherence, and track participation—all in one place"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Easy Allocation & Redemption"
                 description="Effortlessly allocate rewards by bulk uploading employee data and sending automated alerts for awarded points and redemption via WhatsApp, email, and SMS"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Diverse Redemption"
                 description="Redeem from 400+ brands like Myntra, Amazon, Zomato, and Nykaa across 20+ categories like entertainment, fashion, travel, etc"
+                source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="HRMS Integration"
                 description="Streamline user onboarding and reward allocation by seamlessly integrating with HRMS platforms, eliminating manual processes"
+                source="Loyalty_lounge"
               />
             </div>
 
@@ -213,6 +217,7 @@ const employeeRewards = () => {
               <GetStartedCard
                 whiteTitle="Open Voucher Function"
                 description="Issue open vouchers on the dashboard & reward winners on the spot by sharing QR Codes via WhatsApp or email, integrated with their login codes. The recipient can redeem the reward by scanning the QR code received"
+                source="Loyalty_lounge"
               />
             </div>
 
@@ -220,6 +225,7 @@ const employeeRewards = () => {
               <GetStartedCard
                 whiteTitle="Realtime Updates"
                 description="Stay informed about redemption and account actions on a single dashboard for better managing your R&R program"
+                source="Loyalty_lounge"
               />
             </div>
           </div>
@@ -285,6 +291,8 @@ const employeeRewards = () => {
         <ContactUsCard
           title="Seeking further understanding of employee rewards?"
           description="Employee rewards in an organization are recognition and compensation strategies and benefits offered to employees to acknowledge and encourage their contributions, enhance job satisfaction, and drive motivation, ultimately fostering a positive workplace culture and employee retention."
+          source="Loyalty_lounge"
+
         />
       </div>
 
