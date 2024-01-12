@@ -81,7 +81,7 @@ const ProductModal = ({ onLinkClick }: any) => {
           <Image
             src={productModalEmptyStateImg}
             alt="Enkash product modal image"
-            className="position-absolute end-0 bottom-0"
+            className={`position-absolute end-0 bottom-0 ${styles.product_stack}`}
             height={450}
             width={1200}
           />

@@ -16,6 +16,7 @@ import {
 } from ".";
 import ProductModal from "./modal/product-modal";
 import ResourcesModal from "./modal/resources-modal";
+import SolutionsModal from "./modal/solutions-modal";
 
 interface props {
   utmSource?: string;
@@ -93,7 +94,7 @@ const WebHeader = ({ utmSource }: props) => {
           setIsHeaderBgWhite(false);
         }}
       >
-        <nav className="d-flex justify-content-between mb-2">
+        <nav className="d-flex justify-content-between mb-2 pe-5">
           <div className="d-flex">
             <Link href="/" className={styles.logo_container}>
               <Image
@@ -118,7 +119,7 @@ const WebHeader = ({ utmSource }: props) => {
                 <li
                   ref={(el) => (itemRefs.current[index] = el)}
                   key={item.name}
-                  className={`px-3 d-flex justify-content-center align-items-center cursor-pointer `}
+                  className={`px-3 d-flex justify-content-center align-items-center cursor-pointer`}
                   onMouseEnter={() => {
                     const position =
                       itemRefs.current[index]?.getBoundingClientRect().left ||
@@ -135,12 +136,12 @@ const WebHeader = ({ utmSource }: props) => {
                     setHoveredIndex(index);
                     setIsHeaderBgWhite(true);
 
-                    if (index === 2) {
+                    if (index === 3) {
                       setIsHeaderBgWhite(false);
                     }
                   }}
                 >
-                  {index === 2 ? (
+                  {index === 3 ? (
                     <Link className={styles.link} href={item.link}>
                       {item.name}
                     </Link>
@@ -182,7 +183,8 @@ const WebHeader = ({ utmSource }: props) => {
         </nav>
 
         {hoveredIndex === 0 && <ProductModal onLinkClick={handleLinkClick} />}
-        {hoveredIndex === 1 && <ResourcesModal />}
+        {hoveredIndex === 1 && <SolutionsModal />}
+        {hoveredIndex === 2 && <ResourcesModal />}
       </header>
     </div>
   );

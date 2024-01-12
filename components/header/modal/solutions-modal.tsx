@@ -2,59 +2,72 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import solutions from "../data/solutions";
-import { solutionModalEmptyStateImg } from "..";
+import { blueforwardArrow, solutionModalEmptyStateImg } from "..";
+import resourcesData from "../blog-data.json";
+import Link from "next/link";
+
+type Resource = {
+  image: string;
+  imageAlt: string;
+  title: string;
+  date: string;
+  description: string;
+  link: string;
+};
 
 const SolutionsModal = () => {
-  const [hoveredSolutionIndex, setHoveredSolutionIndex] = useState<
-    null | number
+  const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
+    number | null
   >(null);
-  const refs = solutions.map(() => useRef<HTMLDivElement>(null));
+  const refs = solutions.map(() => useRef<HTMLDivElement | null>(null));
+
+  // Use the blog data from resourcesData
+  const blogData: Resource = resourcesData;
 
   return (
     <div className={`row mt-5 ${styles.container}`}>
-      <div className="col-4 d-flex flex-column align-items-right px-5 pb-5 mb-2 position-relative">
-        {hoveredSolutionIndex !== null &&
-          refs[hoveredSolutionIndex].current && (
+      <div
+        className={`${styles.solutions_grid_row}  px-5 pb-5 mb-2 position-relative`}
+      >
+        {hoveredResourceIndex !== null &&
+          refs[hoveredResourceIndex].current && (
             <div
               className={styles.background_slide}
               style={{
                 transform: `
-        translateY(${refs[hoveredSolutionIndex].current!.offsetTop}px) 
-        translateX(${refs[hoveredSolutionIndex].current!.offsetLeft}px)
-      `,
-                height: `${refs[hoveredSolutionIndex].current!.offsetHeight}px`,
-                width: `${refs[hoveredSolutionIndex].current!.offsetWidth}px`,
+              translateY(${refs[hoveredResourceIndex].current!.offsetTop}px) 
+              translateX(${refs[hoveredResourceIndex].current!.offsetLeft}px)
+            `,
+                height: `${refs[hoveredResourceIndex].current!.offsetHeight}px`,
+                width: `${refs[hoveredResourceIndex].current!.offsetWidth}px`,
               }}
             ></div>
           )}
-        {solutions.map((solution: any, index: any) => (
+        {solutions.map((product: any, index: any) => (
           <div
-            key={solution.name}
+            key={product.name}
             className={`${styles.product_row} ${
-              hoveredSolutionIndex == index
+              hoveredResourceIndex === index
                 ? styles.opacity_selected
                 : styles.opacity_normal
             }`}
-            onMouseEnter={() => setHoveredSolutionIndex(index)}
+            onMouseEnter={() => setHoveredResourceIndex(index)}
             ref={refs[index]}
           >
-            <div className={styles.product_name}>{solution.name}</div>
-            <div className={styles.product_description}>
-              {solution.description}
-            </div>
+            <Link href={product.link} target="_blank">
+              <div className={styles.product_name}>{product.name}</div>
+              <div className={styles.product_description}>
+                {product.description}
+              </div>
+            </Link>
           </div>
         ))}
       </div>
-
-      <div className={`col-8 d-flex`}>
-        <Image
-          src={solutionModalEmptyStateImg}
-          alt="Enkash product modal image"
-          className="position-absolute end-0 bottom-0"
-          height={450}
-          width={1200}
-        />
-      </div>
+      <Image
+        src={solutionModalEmptyStateImg}
+        alt="stack image"
+        className={styles.solution_stack}
+      />
     </div>
   );
 };
