@@ -22,15 +22,15 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Pay Bill Payments by Credit & Debit Card Online - EnKash",
+  title: "Rent Payment - Pay Rent Through Credit Card | EnKash",
   description:
-    "Pay by any card offers flexibility to users, allowing them to make various business payments using their preferred card.",
+    "Decentralize rent payment by credit card to your different offices and pay rent online. Get TDS benefits and record approval hierarchy and make audits easy with Enkash's Rental Portal",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/rental-payment/",
   },
 };
 
-const payByAnyCard = () => {
+const rentalPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="payables" />
@@ -45,33 +45,30 @@ const payByAnyCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Pay By Any Card" size="h4" weight="4" />
+            <Heading title="Invoice Management" size="h4" weight="4" />
           </div>
 
           <div className="d-flex flex-column">
             <Heading
-              title="Make effortless"
+              title="Enhance invoice"
               color="white"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading
-                title={`business${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="payments with"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-            </div>
-
             <Heading
-              title="your preferred card"
+              title="management with"
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="automation, transparency"
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="& customization "
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -80,7 +77,7 @@ const payByAnyCard = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage your working capital and cash flow better with the flexibility to pay by any card, for your business transactions like vendor, rental, utility, and GST payments"
+              title="Pay all your vendors seamlessly from a single dashboard with complete visibility and a flexible approval flow."
               color="white"
               size="h6"
               weight="5"
@@ -105,7 +102,9 @@ const payByAnyCard = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <LottieClientComponent animationData={bannerLottie} loop={true} />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -116,39 +115,39 @@ const payByAnyCard = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Access", "to Capital"],
+              itemArray: ["Automation &", "Reconciliation"],
               oldWayDescription:
-                "Earlier, businesses either missed payments due to lack of funds or had to rely on loans for immediate access to capital.",
+                "The traditional way of vendor invoice management has been paper-based making it tedious and unmanageable, especially during reconciliation.",
               newWayDescription:
-                "With our card payment solution, you can get instant access to unutilized funds available on your credit card, to make business payments.",
+                "EnKash enables you to automate all vendor payments reducing manual intervention and eventually simplifying reconciliation.",
             },
             {
-              itemArray: ["Payment", "Methods"],
+              itemArray: ["Approval", "Flow"],
               oldWayDescription:
-                "Earlier, payment options were limited to cash, bank transfers, or specific cards approved by the supplier, posing challenges for users, where preferred payment methods were not accepted.",
+                "The approval flow in the traditional invoice management system is manual, time taking, and not clearly defined leading to approval issues and delays.",
               newWayDescription:
-                "EnKash gives flexibility to users by enabling them to make business payments using any card of their choice, including credit cards.",
+                "With EnKash, companies can depend on robust and fast approval. They can configure their approval workflow as per business requirements; basis hierarchy, department, projects with automation leading the way.",
             },
             {
-              itemArray: ["Card", "Acceptance"],
+              itemArray: ["Data Extraction &", "Accuracy"],
               oldWayDescription:
-                "Limited to suppliers who accept debit/credit cards or have online payment gateways in place.",
+                "Manually extracting data is tedious and can lead to discrepancies, bringing inaccuracy at the forefront.",
               newWayDescription:
-                "EnKash eliminates this constraint. Users can pay any supplier directly into their bank accounts even without direct card acceptance with our card payment solution.",
+                "Invoice automation makes data extraction easy ensuring that the data produced is accurate to the core and that there is no room for disparity.",
             },
             {
-              itemArray: ["Cash Flow", "Management"],
+              itemArray: ["Safety"],
               oldWayDescription:
-                "The potential for ups and downs in the cash flow cycle necessitated careful planning and coordination to ensure timely business payments.",
+                "Data handling in the traditional way is prone to breaching, misplacement, and even loss.",
               newWayDescription:
-                "Easily extend payment cycles by leveraging the credit period of your card and optimize cash flow.",
+                "The digital and secure database stores everything in the cloud making it completely safe and accessible to authorized individuals.",
             },
             {
-              itemArray: ["Control"],
+              itemArray: ["Integration"],
               oldWayDescription:
-                "Manual tracking and reconciliation used to take up a lot of man-hours and were prone to errors.",
+                "Traditional integration can be tedious and has to be done manually.",
               newWayDescription:
-                "With EnKash, effortlessly track and manage all payments in one centralized location, saving time and enhancing accuracy.",
+                "EnKash enables easy integration with existing accounting softwares for efficient workflows.",
             },
           ]}
         />
@@ -159,13 +158,13 @@ const payByAnyCard = () => {
       >
         <div className="d-inline text-center mb-2">
           <Heading
-            title="Unlock a smarter way"
+            title="Manage vendor invoices"
             color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}to make business payments`}
+            title={`${space}with ease, efficiency, and accuracy`}
             color="black"
             size="h1"
             weight="6"
@@ -176,48 +175,15 @@ const payByAnyCard = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Extended Credit Period"
-              description="Gain a credit period of up to 52 days*, allowing you to optimize your cash flow and manage expenses more efficiently"
+              whiteTitle="Seamless Tech Management"
+              description="Businesses can easily integrate their existing ERPs like Tally, SAP, and Zoho with the invoice management platform at zero technical cost and negligible efforts"
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading title="No" color="rainy-blue" size="h2" weight="6" />
-                  <Heading
-                    title="Limit"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Get the flexibility to transfer any amount from your credit card to the beneficiary’s bank account with any restriction at any time, and anywhere"
-              source="payables"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="More"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Savings"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Save on interest costs and optimize your working capital by leveraging the benefits of contactless card payment with pay by any card"
+              whiteTitle="Easy Handling & Transparency"
+              description="The invoice management is simplified for everyone’s usage and understanding. Smooth interface and easy-to-understand flow with clear visibility and transparency for all the stakeholders"
               source="payables"
             />
           </div>
@@ -226,30 +192,37 @@ const payByAnyCard = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Improved"
+                    title="Digital"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Cash Flow"
+                    title="Invoices"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="Experience enhanced liquidity with reduced immediate cash outflows, leading to better cash flow management"
+              description="Enterprises can digitize invoices right from their uploading to dispatching. This saves time and effort while reducing the workload"
               source="payables"
             />
           </div>
-        </div>
-        <div className="mt-5">
-          <Heading
-            size="h5"
-            title="(*Terms and conditions apply. The credit period is subject to approval and may vary based on individual banking arrangements.)"
-            color="black"
-          />
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="End-to-end Visibility"
+              description="All the details related to sales and payments can be viewed on a single dashboard, enabling better planning and strategizing for the business"
+              source="payables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Simplified Tracking & Monitoring"
+              description="With digital invoices, one can easily track and monitor details of each vendor payment making the process more efficient and advanced"
+              source="payables"
+            />
+          </div>
         </div>
       </div>
 
@@ -260,13 +233,13 @@ const payByAnyCard = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Experience enhanced${space}`}
+                    title={`Invoice management made easy for${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="cash flow, flexible payments, and more"
+                    title="better decision-making"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -280,12 +253,12 @@ const payByAnyCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how our pay by any card can revolutionize the way you work!"
+          title="Learn how invoice management can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -294,7 +267,7 @@ const payByAnyCard = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about our pay by any card in detail"
+            title="Don't worry! Our FAQs section will help you learn about invoice management in detail."
             color="black"
             size="h4"
           />
@@ -311,8 +284,8 @@ const payByAnyCard = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of pay by any card?"
-          description='"Pay by any card" typically refers to the ability to make a payment using any valid credit or debit card, regardless of the issuing bank or financial institution. It offers flexibility to users, allowing them to make various business payments by cards.'
+          title="Seeking Further Understanding about Invoice Management?"
+          description="Invoice management is the process in which businesses receive an invoice from a vendor from whom they have availed any goods or services, validate the legitimacy of the invoice, pay the vendor, and record the payment in their accounts for reconciliation."
           source="payables"
         />
       </div>
@@ -326,16 +299,37 @@ const payByAnyCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="How long does the settlement process usually take when we make payments using a card?"
+                  title="Why is invoice management important?"
                 />
               </div>
-              <div className="mb-5">
+              <div className="mb-3">
                 <Heading
                   size="h6"
                   color="black"
                   weight="4"
-                  title="We aim to provide fast and efficient services, which is why the settlement process only takes T+1 day which means the beneficiary will swiftly receive the money on the next business day."
+                  title="Invoice management is important:"
                 />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    To prevent delays and errors in paying for goods and
+                    services
+                  </li>
+                  <li>
+                    To keep track of supplies and prevent wastage and delays
+                  </li>
+                  <li>To help regulate inventory</li>
+                  <li>
+                    As the data from invoice management can be used in planning
+                    and reviewing financial and performance data of the company;
+                    enabling better decision making
+                  </li>
+                  <li>
+                    To ease tax documentation, audits, and taxation activities
+                  </li>
+                  <li>To establish better vendor relationships</li>
+                </ul>
               </div>
 
               <div className="mb-3">
@@ -343,7 +337,7 @@ const payByAnyCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="How can I get an extended credit period using my credit card?"
+                  title="Does invoice management help prevent fraud?"
                 />
               </div>
               <div className="mb-5">
@@ -351,24 +345,23 @@ const payByAnyCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="By utilizing a credit card for payments, you ensure timely payment to your recipient, while delaying the actual cash outflow until your credit card bill's due date. This strategy grants you an extended payment term of up to 52* days."
+                  title="The KYC for vendor verification is the most crucial part of EnKash’s invoice management. This ensures that there is no fraud and if GST, PAN, or bank account provided by the vendor are not verified, they are immediately rejected from the system."
                 />
               </div>
-
               <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Are there any additional fees associated with pay by any card?"
+                  title="Should I expect faster processing with invoice management software?"
                 />
               </div>
-              <div className="mb-3">
+              <div className="mb-5">
                 <Heading
                   size="h6"
                   color="black"
                   weight="4"
-                  title="No, there are no additional fees, but you just have to pay a basic transaction fee at the time of making the payment."
+                  title="The invoice management softwares has a centralized platform where invoices can be automatically routed for approval, helping reduce the processing time. This workflow enables faster invoice processing, allowing timely payments to avoid penalties."
                 />
               </div>
             </>
@@ -380,4 +373,4 @@ const payByAnyCard = () => {
   );
 };
 
-export default payByAnyCard;
+export default rentalPayments;
