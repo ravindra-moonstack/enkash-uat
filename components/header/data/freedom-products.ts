@@ -78,6 +78,14 @@ const freedomProducts = [
         imageSrcHovered: purchaseCardFilled,
         link: "/corporate-cards/purchase-cards",
       },
+      {
+        name: "DIY Card Module*",
+        description:
+          "Empower employees to make purchases and track spends in real time",
+        imageSrc: purchaseCard,
+        imageSrcHovered: purchaseCardFilled,
+        link: "/corporate-cards/diy-card-module",
+      },
     ],
     footerText: "Empower your finances with purpose-based cards",
     footerMobileText: "Explore Corporate Cards",

@@ -78,6 +78,21 @@ const Footer = ({ utmSource = "" }: any) => {
                   Rental Payment
                 </Link>
               </li>
+              <li>
+                <Link href="/olympus/payables/invoice-management/">
+                  Invoice Management
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/payables/pay-by-any-card/">
+                  Pay By Any Card
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/payables/vendor-management/">
+                  Vendor Management
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="">
@@ -148,6 +163,11 @@ const Footer = ({ utmSource = "" }: any) => {
                 <li>
                   <Link href="/corporate-cards/travel-and-expense-cards">
                     T&E Cards*
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/corporate-cards/diy-card-module">
+                    DIY Card Module*
                   </Link>
                 </li>
               </ul>
