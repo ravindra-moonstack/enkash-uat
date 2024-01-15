@@ -22,15 +22,15 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Pay Bill Payments by Credit & Debit Card Online - EnKash",
+  title: "Best Vendor Management Platform for Businesses in India - EnKash",
   description:
-    "Pay by any card offers flexibility to users, allowing them to make various business payments using their preferred card.",
+    "Enhance Efficiency with EnKash Vendor Management platform: Discover how implementing a vendor management system can streamline operations, improve supplier relationships, and boost your business's overall success.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/payables/pay-by-any-card/",
+    canonical: "https://www.enkash.com/olympus/payables/vendor-management/",
   },
 };
 
-const payByAnyCard = () => {
+const vendorManagement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="payables" />
@@ -45,42 +45,39 @@ const payByAnyCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Pay By Any Card" size="h4" weight="4" />
+            <Heading title="Vendor Management" size="h4" weight="4" />
           </div>
 
           <div className="d-flex flex-column">
-            <Heading
-              title="Make effortless"
-              color="white"
-              size="h2"
-              weight="7"
-            />
             <div>
               <Heading
-                title={`business${space}`}
+                title="Streamline your"
                 color="white"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title="payments with"
+                title={`${space}vendor`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
             </div>
 
-            <Heading
-              title="your preferred card"
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
+            <div>
+              <Heading
+                title={`management${space}`}
+                color="rainy-blue"
+                size="h2"
+                weight="7"
+              />
+              <Heading title="with ease" color="white" size="h2" weight="7" />
+            </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage your working capital and cash flow better with the flexibility to pay by any card, for your business transactions like vendor, rental, utility, and GST payments"
+              title="Redefine your vendor management strategy with advanced features. Centralize vendor data, streamline onboarding, and guarantee timely payments for better relationships"
               color="white"
               size="h6"
               weight="5"
@@ -105,7 +102,9 @@ const payByAnyCard = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <LottieClientComponent animationData={bannerLottie} loop={true} />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -116,39 +115,39 @@ const payByAnyCard = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Access", "to Capital"],
+              itemArray: ["Vendor", "Data"],
               oldWayDescription:
-                "Earlier, businesses either missed payments due to lack of funds or had to rely on loans for immediate access to capital.",
+                "Manually entered and unverified details, leading to inconsistent data which causes inefficiencies.",
               newWayDescription:
-                "With our card payment solution, you can get instant access to unutilized funds available on your credit card, to make business payments.",
+                "Centralized platform with a unified repository for all vendor-related information, ensuring accuracy and easy access.",
             },
             {
-              itemArray: ["Payment", "Methods"],
+              itemArray: ["Verification", "Process"],
               oldWayDescription:
-                "Earlier, payment options were limited to cash, bank transfers, or specific cards approved by the supplier, posing challenges for users, where preferred payment methods were not accepted.",
+                "Extensive, manual verification processes that used to involve multiple people, plenty of paperwork, and back-and-forth communication.",
               newWayDescription:
-                "EnKash gives flexibility to users by enabling them to make business payments using any card of their choice, including credit cards.",
+                "Streamlined verification process through automation, collect and verify essential information about your vendors or suppliers instantly with vendor eKYC.",
             },
             {
-              itemArray: ["Card", "Acceptance"],
+              itemArray: ["Visibility"],
               oldWayDescription:
-                "Limited to suppliers who accept debit/credit cards or have online payment gateways in place.",
+                "Difficult to track invoices and expenses. There was no visibility of spending patterns and historical data, which led to a lack of strategic insights while making decisions.",
               newWayDescription:
-                "EnKash eliminates this constraint. Users can pay any supplier directly into their bank accounts even without direct card acceptance with our card payment solution.",
+                "Real-time insights into all vendor-related data.  Transparent dashboards and reports on spend patterns, and compliance enabling cost optimization and data-driven decision making.",
             },
             {
-              itemArray: ["Cash Flow", "Management"],
+              itemArray: ["Workflows"],
               oldWayDescription:
-                "The potential for ups and downs in the cash flow cycle necessitated careful planning and coordination to ensure timely business payments.",
+                "Getting payment approvals for vendor payments was very hectic, requiring numerous email follow-ups with the manager.",
               newWayDescription:
-                "Easily extend payment cycles by leveraging the credit period of your card and optimize cash flow.",
+                "With EnKash, you can automate your payment approvals by setting up a customized maker-checker workflow, wherein you can directly send the pending invoices to the manager for approval.",
             },
             {
-              itemArray: ["Control"],
+              itemArray: ["Collaboration"],
               oldWayDescription:
-                "Manual tracking and reconciliation used to take up a lot of man-hours and were prone to errors.",
+                "There were limited collaboration tools, often relying on email communication and manual updates.",
               newWayDescription:
-                "With EnKash, effortlessly track and manage all payments in one centralized location, saving time and enhancing accuracy.",
+                "Integrated collaboration features, enabling seamless communication among teams involved in vendor management. Shared dashboards and updates enhance team coordination and decision-making.",
             },
           ]}
         />
@@ -159,14 +158,14 @@ const payByAnyCard = () => {
       >
         <div className="d-inline text-center mb-2">
           <Heading
-            title="Unlock a smarter way"
-            color="equity-blue"
+            title="Enhance vendor relationships with"
+            color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}to make business payments`}
-            color="black"
+            title={`${space}better features`}
+            color="equity-blue"
             size="h1"
             weight="6"
           />
@@ -176,8 +175,8 @@ const payByAnyCard = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Extended Credit Period"
-              description="Gain a credit period of up to 52 days*, allowing you to optimize your cash flow and manage expenses more efficiently"
+              whiteTitle="Vendor Onboarding"
+              description="Easily add multiple vendors on the platform by providing basic details like their name, email, phone number, PAN, GST, and Bank Account"
               source="payables"
             />
           </div>
@@ -185,16 +184,21 @@ const payByAnyCard = () => {
             <GetStartedCard
               titleHtml={
                 <div className="d-flex flex-column">
-                  <Heading title="No" color="rainy-blue" size="h2" weight="6" />
                   <Heading
-                    title="Limit"
+                    title="Invoicing"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Process"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="Get the flexibility to transfer any amount from your credit card to the beneficiary’s bank account with any restriction at any time, and anywhere"
+              description="Upload single or bulk invoices in the dashboard and effortlessly manage and process them in a centralized system, ensuring a streamlined workflow."
               source="payables"
             />
           </div>
@@ -204,20 +208,14 @@ const payByAnyCard = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="More"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Savings"
+                    title="Advances"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="Save on interest costs and optimize your working capital by leveraging the benefits of contactless card payment with pay by any card"
+              description="Facilitate advance payments with the “Add Advance” option to give payment upfront as and when needed"
               source="payables"
             />
           </div>
@@ -226,30 +224,30 @@ const payByAnyCard = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Improved"
+                    title="Payment"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Cash Flow"
+                    title="Management"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="Experience enhanced liquidity with reduced immediate cash outflows, leading to better cash flow management"
+              description="Streamline the entire payment process, from approval to execution, and get flexible payment modes like NEFT, IMPS, virtual, debit, and credit cards to ensure timely payments"
               source="payables"
             />
           </div>
-        </div>
-        <div className="mt-5">
-          <Heading
-            size="h5"
-            title="(*Terms and conditions apply. The credit period is subject to approval and may vary based on individual banking arrangements.)"
-            color="black"
-          />
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Tracking and Reporting"
+              description="Gain real-time insights into spending patterns, track expenses, and generate comprehensive reports for informed decision-making"
+              source="payables"
+            />
+          </div>
         </div>
       </div>
 
@@ -260,13 +258,13 @@ const payByAnyCard = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Experience enhanced${space}`}
+                    title={`One platform for effortless${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="cash flow, flexible payments, and more"
+                    title="collaboration and cost control"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -280,12 +278,12 @@ const payByAnyCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how our pay by any card can revolutionize the way you work!"
+          title="Learn how our vendor management can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -294,7 +292,7 @@ const payByAnyCard = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about our pay by any card in detail"
+            title="Don't worry! Our FAQs section will help you learn about vendor management in detail"
             color="black"
             size="h4"
           />
@@ -311,8 +309,8 @@ const payByAnyCard = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of pay by any card?"
-          description='"Pay by any card" typically refers to the ability to make a payment using any valid credit or debit card, regardless of the issuing bank or financial institution. It offers flexibility to users, allowing them to make various business payments by cards.'
+          title="Seeking further understanding of vendor management?"
+          description="Vendor management involves overseeing relationships with external suppliers, ensuring efficient collaboration, and monitoring performance to optimize operational processes and control costs. It aims to foster positive and productive partnerships between a company and its vendors."
           source="payables"
         />
       </div>
@@ -326,7 +324,52 @@ const payByAnyCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="How long does the settlement process usually take when we make payments using a card?"
+                  title="What are the benefits of a vendor management system?"
+                />
+              </div>
+              <div className="mb-3">
+                <Heading
+                  size="h6"
+                  color="black"
+                  weight="4"
+                  title="Benefits of using EnKash vendor management system:"
+                />
+              </div>
+              <div className="mb-5">
+                <ul>
+                  <li>
+                    Streamlined Operations: EnKash centralizes vendor data,
+                    onboarding, invoicing, and payments, eliminating manual
+                    processes and saving time.
+                  </li>
+                  <li>
+                    Improved Cost Efficiency: Gain real-time insights into
+                    spending patterns, and identify discounts and early payment
+                    opportunities.
+                  </li>
+                  <li>
+                    Enhanced Transparency and Compliance: Ensure accuracy and
+                    consistency in vendor data, and maintain complete audit
+                    trails.
+                  </li>
+                  <li>
+                    Reduced Risks and Fraud: Automate vendor verification
+                    through eKYC to minimize the risk of fraudulent activity.
+                  </li>
+                  <li>
+                    Stronger Vendor Relationships: Improve communication and
+                    collaboration with vendors through integrated dashboards and
+                    shared updates, fostering trust and transparency.
+                  </li>
+                </ul>
+              </div>
+
+              <div className="mb-3">
+                <Heading
+                  size="h5"
+                  color="black"
+                  weight="6"
+                  title="Is vendor management a part of ITIL?"
                 />
               </div>
               <div className="mb-5">
@@ -334,7 +377,7 @@ const payByAnyCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="We aim to provide fast and efficient services, which is why the settlement process only takes T+1 day which means the beneficiary will swiftly receive the money on the next business day."
+                  title="Yes, vendor management is a crucial component of ITIL (Information Technology Infrastructure Library) practices, ensuring effective management of external service providers."
                 />
               </div>
 
@@ -343,24 +386,7 @@ const payByAnyCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="How can I get an extended credit period using my credit card?"
-                />
-              </div>
-              <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="By utilizing a credit card for payments, you ensure timely payment to your recipient, while delaying the actual cash outflow until your credit card bill's due date. This strategy grants you an extended payment term of up to 52* days."
-                />
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Are there any additional fees associated with pay by any card?"
+                  title="Who is responsible for vendor management?"
                 />
               </div>
               <div className="mb-3">
@@ -368,7 +394,7 @@ const payByAnyCard = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="No, there are no additional fees, but you just have to pay a basic transaction fee at the time of making the payment."
+                  title="Vendor management is a collaborative effort involving various stakeholders, with responsibility often falling on procurement, supply chain, or vendor management teams."
                 />
               </div>
             </>
@@ -380,4 +406,4 @@ const payByAnyCard = () => {
   );
 };
 
-export default payByAnyCard;
+export default vendorManagement;

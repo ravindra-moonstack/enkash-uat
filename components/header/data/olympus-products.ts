@@ -76,6 +76,22 @@ const olympusProducts = [
         imageSrcHovered: rentalPaymentsFilled,
         link: "/olympus/payables/pay-by-any-card",
       },
+      {
+        name: "Invoice Management",
+        description:
+          "Pay & manage your office/home rent directly into your landlord’s bank",
+        imageSrc: rentalPayments,
+        imageSrcHovered: rentalPaymentsFilled,
+        link: "/olympus/payables/invoice-management",
+      },
+      {
+        name: "Vendor Management",
+        description:
+          "Pay & manage your office/home rent directly into your landlord’s bank",
+        imageSrc: rentalPayments,
+        imageSrcHovered: rentalPaymentsFilled,
+        link: "/olympus/payables/vendor-management",
+      },
     ],
     footerText:
       "Effortlessly streamline your business payments and collections",

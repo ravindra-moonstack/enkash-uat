@@ -22,15 +22,15 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Rent Payment - Pay Rent Through Credit Card | EnKash",
+  title: "Invoice Processing & Software: Streamline Invoicing - EnKash",
   description:
-    "Decentralize rent payment by credit card to your different offices and pay rent online. Get TDS benefits and record approval hierarchy and make audits easy with Enkash's Rental Portal",
+    "Efficiently manage invoices with our advanced invoicing software. Simplify your invoice processing tasks and streamline your business operations",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/payables/rental-payment/",
+    canonical: "https://www.enkash.com/olympus/payables/invoice-management/",
   },
 };
 
-const rentalPayments = () => {
+const invoiceManagement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="payables" />
@@ -373,4 +373,4 @@ const rentalPayments = () => {
   );
 };
 
-export default rentalPayments;
+export default invoiceManagement;
