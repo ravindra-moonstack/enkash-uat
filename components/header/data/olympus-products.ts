@@ -17,6 +17,10 @@ import {
   rentalPaymentsFilled,
   billPayments,
   billPaymentsFilled,
+  payByAnyCard,
+  payByAnyCardFilled,
+  invoiceManegement,
+  invoiceManegementFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -72,16 +76,16 @@ const olympusProducts = [
         name: "Pay By Any Card",
         description:
           "Pay & manage your office/home rent directly into your landlord’s bank",
-        imageSrc: rentalPayments,
-        imageSrcHovered: rentalPaymentsFilled,
+        imageSrc: payByAnyCard,
+        imageSrcHovered: payByAnyCardFilled,
         link: "/olympus/payables/pay-by-any-card",
       },
       {
         name: "Invoice Management",
         description:
           "Pay & manage your office/home rent directly into your landlord’s bank",
-        imageSrc: rentalPayments,
-        imageSrcHovered: rentalPaymentsFilled,
+        imageSrc: invoiceManegement,
+        imageSrcHovered: invoiceManegementFilled,
         link: "/olympus/payables/invoice-management",
       },
       {
