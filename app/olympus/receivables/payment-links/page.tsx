@@ -47,7 +47,7 @@ const paymentLinks = () => {
               />
             </div>
             <div>
-              <Heading title="Payment Links" size="h4" weight="4" />
+              <Heading title="Payment Links" size="h4" weight="4" useH1TagInHtml={true}/>
               <sup className="sup-symbol">#</sup>
             </div>
           </div>

@@ -45,7 +45,7 @@ const payByAnyCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Pay By Any Card" size="h4" weight="4" />
+            <Heading title="Pay By Any Card" size="h4" weight="4" useH1TagInHtml={true}/>
           </div>
 
           <div className="d-flex flex-column">

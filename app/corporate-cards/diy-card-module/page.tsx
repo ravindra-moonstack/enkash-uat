@@ -48,7 +48,12 @@ const diyCardModule = () => {
                 weight="7"
               />
             </div>
-            <Heading title="DIY Card Module" size="h4" weight="4" />
+            <Heading
+              title="DIY Card Module"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <div className="d-inline">
             <Heading

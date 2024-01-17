@@ -63,6 +63,7 @@ const olympus = () => {
               color="rainy-blue"
               size="h2"
               weight="7"
+              useH1TagInHtml={true}
             />
             <Heading
               title={`for faster, efficient, and${space}`}

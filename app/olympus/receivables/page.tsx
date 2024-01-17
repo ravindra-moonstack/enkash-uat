@@ -52,7 +52,7 @@ const receivables = () => {
               size="h1"
               weight="7"
             />
-            <Heading title={`${space}Receivables`} size="h1" weight="7" />
+            <Heading title={`${space}Receivables`} size="h1" weight="7" useH1TagInHtml={true}/>
             <sup className="sup-symbol-large">#</sup>
           </div>
           <div className="d-flex flex-column">

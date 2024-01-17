@@ -45,7 +45,7 @@ const invoiceManagement = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Invoice Management" size="h4" weight="4" />
+            <Heading title="Invoice Management" size="h4" weight="4" useH1TagInHtml={true}/>
           </div>
 
           <div className="d-flex flex-column">

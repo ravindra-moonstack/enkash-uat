@@ -45,7 +45,12 @@ const channelIncentive = () => {
                 weight="7"
               />
             </div>
-            <Heading title="| Channel Incentive" size="h4" weight="4" />
+            <Heading
+              title="| Channel Incentive"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="">
@@ -305,7 +310,6 @@ const channelIncentive = () => {
           title="Seeking further understanding of channel incentives?"
           description="Channel incentives is a reward program that incentivizes channel partners and their teams to increase sales or subscriptions. In most cases, a channel incentive is paid over and above the base remuneration paid on each sale or subscription completed by the channel partner. Channel incentives not only add monetary value but also a matter of pride. Channel partners covet the incentives and will use them to offer customers better service or increase their reach."
           source="Loyalty_lounge"
-
         />
       </div>
 

@@ -45,7 +45,7 @@ const billPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="| Bill Payment" size="h4" weight="4" />
+            <Heading title="| Bill Payment" size="h4" weight="4" useH1TagInHtml={true}/>
           </div>
 
           <div className="d-inline">

@@ -47,7 +47,12 @@ const virtualCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Virtual Cards" size="h4" weight="4" />
+            <Heading
+              title="Virtual Cards"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <div className="d-flex flex-column">
             <Heading

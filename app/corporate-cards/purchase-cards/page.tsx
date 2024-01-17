@@ -45,7 +45,12 @@ const purchaseCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Purchase Cards" size="h4" weight="4" />
+            <Heading
+              title="Purchase Cards"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <div>
             <Heading

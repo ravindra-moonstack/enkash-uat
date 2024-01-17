@@ -57,6 +57,7 @@ const slash = () => {
               color="white"
               size="h2"
               weight="7"
+              useH1TagInHtml={true}
             />
             <Heading
               title={`for all your${space}`}

@@ -46,7 +46,7 @@ const vendorPayment = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Vendor Payment" size="h4" weight="4" />
+            <Heading title="Vendor Payment" size="h4" weight="4" useH1TagInHtml={true}/>
           </div>
           <Heading
             title={`Transform your business today with automated${space}`}

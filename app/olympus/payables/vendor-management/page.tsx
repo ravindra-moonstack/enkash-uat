@@ -45,7 +45,7 @@ const vendorManagement = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Vendor Management" size="h4" weight="4" />
+            <Heading title="Vendor Management" size="h4" weight="4" useH1TagInHtml={true}/>
           </div>
 
           <div className="d-flex flex-column">

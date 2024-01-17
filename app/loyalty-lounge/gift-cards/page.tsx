@@ -45,7 +45,12 @@ const giftCards = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Gift Cards" size="h4" weight="4" />
+            <Heading
+              title="Gift Cards"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div>
@@ -285,7 +290,6 @@ const giftCards = () => {
           title="Seeking further understanding of gift cards?"
           description="Gift cards in India offer a versatile and effective way to express appreciation and foster positive connections. They offer recipients the flexibility to select from a range of options and make their own choices. A transparent and straightforward method of expressing gratitude, these gift cards are adaptable, user-friendly, and secure."
           source="Loyalty_lounge"
-
         />
       </div>
 
