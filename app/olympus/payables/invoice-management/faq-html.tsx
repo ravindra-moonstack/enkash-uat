@@ -30,7 +30,7 @@ const FAQHtml = ({ faqData }: any) => {
             question={item.question}
             answerHTML={
               <>
-                <p>
+                <h4>
                   The quicker processing of invoices with the{" "}
                   <Link
                     href="https://www.enkash.com/olympus/receivables/"
@@ -43,7 +43,7 @@ const FAQHtml = ({ faqData }: any) => {
                   In fact, with EnKash bulk payments can also be made with a
                   single click. These quick payments can also help avail early
                   payment discounts enabling savings for the business.
-                </p>
+                </h4>
               </>
             }
             answerVisible={index === openFAQIndex}

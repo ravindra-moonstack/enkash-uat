@@ -1,6 +1,6 @@
 const faqData = [
   {
-    question: "What is vendor management system (VMS)?",
+    question: "What is Vendor Management System (VMS)?",
     answer: [
       {
         heading:

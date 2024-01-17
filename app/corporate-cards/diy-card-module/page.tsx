@@ -23,7 +23,8 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "DIY Corporate Card & Module : Simplify Corporate Cards Payments - EnKash",
+  title:
+    "DIY Corporate Card & Module : Simplify Corporate Cards Payments - EnKash",
   description:
     "Elevate your business expenses with EnKash’s personalized DIY corporate card for business. Customized for your company's unique needs. Book Demo Now !!",
   alternates: {
@@ -51,13 +52,13 @@ const diyCardModule = () => {
           </div>
           <div className="d-inline">
             <Heading
-              title={`Empower your Business with${space}`}
+              title={`Empower your business with${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="DIY Card Control"
+              title="DIY card module"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -317,8 +318,7 @@ const diyCardModule = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Where can our customers use these cards?
-                  "
+                  title="Where can our customers use these cards?"
                 />
               </div>
               <div className="mb-3">
@@ -332,13 +332,13 @@ const diyCardModule = () => {
               </div>
               <div className="mb-5">
                 <ul>
-                  <li>Pay AWS, Azure, & Google cloud bills.</li>
-                  <li>Procure business inventory online.</li>
-                  <li>Group employee Insurance through partners.</li>
-                  <li>Landlord details and rental payments.</li>
-                  <li>Subscribe to MS Office, Adobe, JIRA, CRM.</li>
-                  <li>Spends on Google, Facebook, LinkedIn, etc.</li>
-                  <li>Utility, broadband & communication bills.</li>
+                  <li>Pay AWS, Azure, & Google Cloud bills</li>
+                  <li>Procure business inventory online</li>
+                  <li>Group employee Insurance through partners</li>
+                  <li>Landlord details and rental payments</li>
+                  <li>Subscribe to MS Office, Adobe, JIRA and CRM</li>
+                  <li>Spends on Google, Facebook, LinkedIn, etc</li>
+                  <li>Utility, broadband & communication bills</li>
                   <li>POS and ATM transactions.</li>
                 </ul>
               </div>

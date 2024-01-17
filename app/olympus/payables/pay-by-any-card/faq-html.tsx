@@ -30,7 +30,7 @@ const FAQHtml = ({ faqData }: any) => {
             question={item.question}
             answerHTML={
               <>
-                <p>
+                <h4>
                   Pay by any card is a feature offered by EnKash that provides
                   great flexibility in payment options by enabling businesses to
                   make contactless card payments, such as{" "}
@@ -49,7 +49,7 @@ const FAQHtml = ({ faqData }: any) => {
                   </Link>
                   , and GST payments, using any card of their choice, including
                   their personal credit card.
-                </p>
+                </h4>
               </>
             }
             answerVisible={index === openFAQIndex}

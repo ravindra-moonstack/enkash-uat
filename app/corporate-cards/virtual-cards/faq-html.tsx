@@ -30,7 +30,7 @@ const FAQHtml = ({ faqData }: any) => {
             question={item.question}
             answerHTML={
               <>
-                <p>
+                <h4>
                   For now, you cannot use a virtual card for international
                   transactions. However, you can customize these cards according
                   to your business needs and use them for bill payments, rental
@@ -41,7 +41,7 @@ const FAQHtml = ({ faqData }: any) => {
                   >
                     digital marketing spends.
                   </Link>
-                </p>
+                </h4>
               </>
             }
             answerVisible={index === openFAQIndex}

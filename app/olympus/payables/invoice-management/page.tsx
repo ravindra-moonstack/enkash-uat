@@ -77,7 +77,7 @@ const invoiceManagement = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Pay all your vendors seamlessly from a single dashboard with complete visibility and a flexible approval flow."
+              title="Pay all your vendors seamlessly from a single dashboard with complete visibility and a flexible approval flow"
               color="white"
               size="h6"
               weight="5"

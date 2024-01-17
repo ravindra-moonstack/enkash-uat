@@ -29,22 +29,40 @@ const faqData = [
         bullets: [
           "Create an EnKash account by completing a simple registration process and verify your account with KYC details.",
           "Choose the type of business entity: Sole Proprietorship, Partnership, Private Limited Company, Public Limited Company, or others.",
-          "Provide the following documents:",
-          " - GSTIN certificate",
-          " - PAN details of the business",
-          " - Owner/Partner/Director details",
-          "Submit financials based on your business type:",
-          " - Sole Proprietorship: Business financial statements for the past two years, along with owner's credentials.",
-          " - Partnership: Business financial statements for the past two years and personal financial statements of the partners.",
-          " - Private Limited Company: Business financial statements for the past two years and finances of the directors.",
-          " - Public Limited Company: Audited financial statements for the past two years, details of the company structure, and board of directors.",
-          "Provide credit scores for the company or proprietor/partner/directors.",
-          "Include additional documents such as:",
-          " - Partnership deed for partnership firms",
-          " - Shareholding structure for private limited companies",
-          " - Shareholding pattern for public limited companies",
-          "Submit any other relevant documents requested during the final credit assessment to ensure the best possible credit limit for your business.",
         ],
+      },
+      {
+        heading: "Provide the following documents:",
+        bullets: [
+          "Sole Proprietorship: Business financial statements for the past two years, along with owner's credentials.",
+          "Partnership: Business financial statements for the past two years and personal financial statements of the partners.",
+          "Private Limited Company: Business financial statements for the past two years and finances of the directors.",
+          "Public Limited Company: Audited financial statements for the past two years, details of the company structure, and board of directors.",
+        ],
+      },
+      {
+        heading: "Submit financials based on your business type:",
+        bullets: [
+          "GSTIN certificate",
+          "PAN details of the business",
+          "Owner/Partner/Director details",
+        ],
+      },
+      {
+        heading:
+          "Provide credit scores for the company or proprietor/partner/directors.",
+      },
+      {
+        heading: "Include additional documents such as:",
+        bullets: [
+          "Partnership deed for partnership firms",
+          "Shareholding structure for private limited companies",
+          "Shareholding pattern for public limited companies",
+        ],
+      },
+      {
+        heading:
+          "Submit any other relevant documents requested during the final credit assessment to ensure the best possible credit limit for your business.",
       },
     ],
   },

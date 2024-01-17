@@ -75,7 +75,7 @@ const olympusProducts = [
       {
         name: "Pay By Any Card",
         description:
-          "Pay & manage your office/home rent directly into your landlord’s bank",
+          "Pay your business utility bills, GST and other bills via any card",
         imageSrc: payByAnyCard,
         imageSrcHovered: payByAnyCardFilled,
         link: "/olympus/payables/pay-by-any-card",

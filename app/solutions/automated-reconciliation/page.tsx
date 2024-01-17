@@ -257,15 +257,18 @@ const mealCard = () => {
             <>
               <div className="text-center">
                 <div className="d-flex flex-column">
-                  <Heading
-                    title="Automate reconciliation and focus"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
                   <div>
                     <Heading
-                      title="on"
+                      title="Automate reconciliation and focus"
+                      color="white"
+                      size="h1"
+                      weight="6"
+                    />
+                  </div>
+
+                  <div>
+                    <Heading
+                      title={`on${space}`}
                       color="rainy-blue"
                       size="h1"
                       weight="6"
@@ -301,7 +304,8 @@ const mealCard = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about meal cards in detail"
+            title="Don't worry! Our FAQs section will help you learn about automated reconciliation
+            in detail"
             color="black"
             size="h4"
           />
@@ -349,8 +353,7 @@ const mealCard = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the benefits of automated bank reconciliation
-                  "
+                  title="What are the benefits of automated bank reconciliation"
                 />
               </div>
               <div className="mb-2">

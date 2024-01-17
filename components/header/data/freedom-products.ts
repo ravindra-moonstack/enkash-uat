@@ -84,7 +84,7 @@ const freedomProducts = [
       {
         name: "DIY Card Module*",
         description:
-          "Empower employees to make purchases and track spends in real time",
+          "Control your business spends with customizable cards",
         imageSrc: diyCard,
         imageSrcHovered: diyCardFilled,
         link: "/corporate-cards/diy-card-module",

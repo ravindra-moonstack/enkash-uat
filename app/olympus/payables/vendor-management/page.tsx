@@ -147,7 +147,7 @@ const vendorManagement = () => {
               oldWayDescription:
                 "There were limited collaboration tools, often relying on email communication and manual updates.",
               newWayDescription:
-                "Integrated collaboration features, enabling seamless communication among teams involved in vendor management. Shared dashboards and updates enhance team coordination and decision-making.",
+                "Integrated collaboration features, enabling seamless communication among teams involved in vendor management. Shared dashboards and updates enhance team coordination & decision-making.",
             },
           ]}
         />
@@ -176,7 +176,7 @@ const vendorManagement = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Vendor Onboarding"
-              description="Easily add multiple vendors on the platform by providing basic details like their name, email, phone number, PAN, GST, and Bank Account"
+              description="Easily add multiple vendors on the platform by providing basic details like their name, email, phone number, PAN, GST, and bank account"
               source="payables"
             />
           </div>
@@ -198,7 +198,7 @@ const vendorManagement = () => {
                   />
                 </div>
               }
-              description="Upload single or bulk invoices in the dashboard and effortlessly manage and process them in a centralized system, ensuring a streamlined workflow."
+              description="Upload single or bulk invoices in the dashboard and effortlessly manage and process them in a centralized system, ensuring a streamlined workflow"
               source="payables"
             />
           </div>
@@ -324,7 +324,7 @@ const vendorManagement = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the benefits of a vendor management system?"
+                  title="What are the benefits of a Vendor Management System?"
                 />
               </div>
               <div className="mb-3">
