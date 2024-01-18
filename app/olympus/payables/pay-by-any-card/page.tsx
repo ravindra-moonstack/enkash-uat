@@ -20,6 +20,7 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Pay Bill Payments by Credit & Debit Card Online - EnKash",
@@ -45,7 +46,12 @@ const payByAnyCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Pay By Any Card" size="h4" weight="4" useH1TagInHtml={true}/>
+            <Heading
+              title="Pay By Any Card"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="d-flex flex-column">
@@ -347,12 +353,19 @@ const payByAnyCard = () => {
                 />
               </div>
               <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="By utilizing a credit card for payments, you ensure timely payment to your recipient, while delaying the actual cash outflow until your credit card bill's due date. This strategy grants you an extended payment term of up to 52* days."
-                />
+                <p>
+                  By utilizing a{" "}
+                  <Link
+                    href="https://www.enkash.com/resources/blog/enable-payments-with-virtual-cards-for-business/"
+                    target="_blank"
+                  >
+                    credit card for payments
+                  </Link>
+                  , you ensure timely payment to your recipient, while delaying
+                  the actual cash outflow until your credit card bill's due
+                  date. This strategy grants you an extended payment term of up
+                  to 52* days."
+                </p>
               </div>
 
               <div className="mb-3">

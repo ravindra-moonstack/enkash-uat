@@ -21,6 +21,7 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title:
@@ -357,12 +358,23 @@ const diyCardModule = () => {
                 />
               </div>
               <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="A card module is essential for efficiently handling your business corporate cards and distributing funds to your team. It simplifies the tracking and management of purpose-specific cards assigned to team members. If an employee leaves or misplaces a card, blocking or putting it on hold is a quick process with just a few clicks. The card module also allows you to set card usage parameters and spending limits easily, providing precise control. Overall, it streamlines card management tasks with its user-friendly functionalities."
-                />
+                <p>
+                  A card module is essential for efficiently handling your{" "}
+                  <Link
+                    href="https://www.enkash.com/corporate-cards/"
+                    target="_blank"
+                  >
+                    business corporate cards
+                  </Link>{" "}
+                  and distributing funds to your team. It simplifies the
+                  tracking and management of purpose-specific cards assigned to
+                  team members. If an employee leaves or misplaces a card,
+                  blocking or putting it on hold is a quick process with just a
+                  few clicks. The card module also allows you to set card usage
+                  parameters and spending limits easily, providing precise
+                  control. Overall, it streamlines card management tasks with
+                  its user-friendly functionalities.
+                </p>
               </div>
 
               <div className="mb-3">
@@ -374,12 +386,19 @@ const diyCardModule = () => {
                 />
               </div>
               <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Credit card DIY helps you manage all activities related to your corporate credit card and ensures that you have the right checks and approvals in place to ensure that the usage of the cards is as per your corporate spend policy."
-                />
+                <p>
+                  Credit card DIY helps you manage all activities related to
+                  your{" "}
+                  <Link
+                    href="https://www.enkash.com/resources/blog/all-about-corporate-credit-card/"
+                    target="_blank"
+                  >
+                    corporate credit card
+                  </Link>{" "}
+                  and ensures that you have the right checks and approvals in
+                  place to ensure that the usage of the cards is as per your
+                  corporate spend policy.
+                </p>
               </div>
             </>
           }

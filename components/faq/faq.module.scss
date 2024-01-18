@@ -14,6 +14,9 @@
 
   h4 {
     font-size: 14px;
+    a {
+      text-decoration: none;
+    }
     @include for-laptops {
       font-size: 20px;
       font-weight: 400;

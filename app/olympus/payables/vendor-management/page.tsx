@@ -20,6 +20,7 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Best Vendor Management Platform for Businesses in India - EnKash",
@@ -45,7 +46,12 @@ const vendorManagement = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Vendor Management" size="h4" weight="4" useH1TagInHtml={true}/>
+            <Heading
+              title="Vendor Management"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="d-flex flex-column">
@@ -353,7 +359,13 @@ const vendorManagement = () => {
                     trails.
                   </li>
                   <li>
-                    Reduced Risks and Fraud: Automate vendor verification
+                    Reduced Risks and Fraud:{" "}
+                    <Link
+                      href="https://www.enkash.com/resources/blog/enhance-productivity-with-vendor-payment-automation/"
+                      target="_blank"
+                    >
+                      Automate vendor verification
+                    </Link>{" "}
                     through eKYC to minimize the risk of fraudulent activity.
                   </li>
                   <li>
