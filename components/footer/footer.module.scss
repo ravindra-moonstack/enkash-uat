@@ -211,7 +211,20 @@
 
 .support_text {
   font-size: 11px;
+  color: #b5bbcb;
+  white-space: nowrap;
   @include for-laptops {
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 32px;
+  }
+}
+
+.help_icons {
+  width: 15px;
+  height: 15px;
+  
+  @include for-laptops {
+    width: 20px;
+    height: 20px;
   }
 }

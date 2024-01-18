@@ -173,6 +173,23 @@ const Footer = ({ utmSource = "" }: any) => {
               </ul>
             </div>
           </div>
+
+          <div className={` ${styles.footer_links_col}`}>
+            <div>
+              <div className={styles.freedom_card_box}>
+                <Link href="/corporate-cards">
+                  <h4 className={`${styles.title}`}>Solutions</h4>
+                </Link>
+              </div>
+              <ul>
+                <li>
+                  <Link href="/solutions/automated-reconciliation/">
+                    Automated Reconciliation
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="col-6 col-md-3">
           <div className={`${styles.footer_links_col}`}>
@@ -348,27 +365,23 @@ const Footer = ({ utmSource = "" }: any) => {
               <h4 className={`${styles.title}`}>Help and Support</h4>
               <ul>
                 <li>
-                  <div>
-                    <Image
-                      src={call}
-                      alt="Contact Enkash"
-                      height={20}
-                      width={20}
-                    />
-                    <span className={`ms-md-3 ms-1 ${styles.support_text}`}>
-                      +91 8530490475
-                    </span>
-                  </div>
+                  <Image
+                    src={call}
+                    alt="Contact Enkash"
+                    className={styles.help_icons}
+                  />
+                  <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
+                    +91 8530490475
+                  </span>
                 </li>
                 <li>
                   <div>
                     <Image
                       src={email}
                       alt="Contact Enkash"
-                      height={20}
-                      width={20}
+                      className={styles.help_icons}
                     />
-                    <span className={`ms-md-3 ms-1 ${styles.support_text}`}>
+                    <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
                       support@enkash.com
                     </span>
                   </div>

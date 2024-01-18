@@ -86,7 +86,7 @@ const payByAnyCard = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage your working capital and cash flow better with the flexibility to pay by any card, for your business transactions like vendor, rental, utility, and GST payments"
+              title="Optimize working capital by easily paying for business transactions, like vendor, rental, utility, and GST payments, using any card"
               color="white"
               size="h6"
               weight="5"

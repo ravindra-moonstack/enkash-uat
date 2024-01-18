@@ -2,7 +2,7 @@ export const solutions = [
   {
     name: "Automated Reconciliation",
     description:
-      "Effortlessly streamline your company's Accounts Payable (AP), Accounts Receivable (AR), and bank reconciliation processes.",
+      "Motivate your finance team to upgrade their skills by  automating tasks like reconciliation",
     link: "/solutions/automated-reconciliation",
   },
   // {

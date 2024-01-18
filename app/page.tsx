@@ -88,11 +88,13 @@ const home = () => {
             }}
             innerHtml={
               <div className="d-flex align-items-center justify-content-start justify-content-md-center">
-                <Image
-                  src={userPlus}
-                  alt="signup image"
-                  className={`me-3 img-fluid ${styles.action_image_user_plus}`}
-                />
+                <div className={styles.three_step_image_container}>
+                  <Image
+                    src={userPlus}
+                    alt="signup image"
+                    className={`me-3 img-fluid ${styles.action_image_user_plus}`}
+                  />{" "}
+                </div>
                 <Image
                   src={numberOne}
                   alt="step one image"
@@ -117,11 +119,13 @@ const home = () => {
             }}
             innerHtml={
               <div className="d-flex align-items-center justify-content-start justify-content-md-center">
-                <Image
-                  src={userTick}
-                  alt="kyc image"
-                  className={`me-3 img-fluid ${styles.action_image_user_tick}`}
-                />
+                <div className={styles.three_step_image_container}>
+                  <Image
+                    src={userTick}
+                    alt="kyc image"
+                    className={`me-3 img-fluid ${styles.action_image_user_tick}`}
+                  />
+                </div>
                 <Image
                   src={numberTwo}
                   alt="step one image"
@@ -148,11 +152,13 @@ const home = () => {
             }}
             innerHtml={
               <div className="d-flex align-items-center justify-content-start justify-content-md-center">
-                <Image
-                  src={stack}
-                  alt="get started image"
-                  className={`me-3 img-fluid ${styles.action_image_stack}`}
-                />
+                <div className={styles.three_step_image_container}>
+                  <Image
+                    src={stack}
+                    alt="get started image"
+                    className={`me-3 img-fluid ${styles.action_image_stack}`}
+                  />
+                </div>
                 <Image
                   src={numberThree}
                   alt="step one image"
@@ -592,11 +598,13 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image
-            src={userPlus}
-            alt="signup image"
-            className={`me-3 ${styles.action_image_user_plus}`}
-          />
+          <div className={styles.three_step_image_container}>
+            <Image
+              src={userPlus}
+              alt="signup image"
+              className={`me-3 ${styles.action_image_user_plus}`}
+            />
+          </div>
           <Image
             src={numberOne}
             alt="step one image"
@@ -609,11 +617,14 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image
-            src={userTick}
-            alt="kyc image"
-            className={`me-3 ${styles.action_image_user_tick}`}
-          />
+          {" "}
+          <div className={styles.three_step_image_container}>
+            <Image
+              src={userTick}
+              alt="kyc image"
+              className={`me-3 ${styles.action_image_user_tick}`}
+            />
+          </div>
           <Image
             src={numberTwo}
             alt="step one image"
@@ -626,11 +637,13 @@ const home = () => {
         <div
           className={`col-md-4 col-12 d-flex align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
-          <Image
-            src={stack}
-            alt="get started image"
-            className={`me-3 ${styles.action_image_stack}`}
-          />
+          <div className={styles.three_step_image_container}>
+            <Image
+              src={stack}
+              alt="get started image"
+              className={`me-3 ${styles.action_image_stack}`}
+            />
+          </div>
           <Image
             src={numberThree}
             alt="step one image"

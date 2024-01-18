@@ -27,6 +27,7 @@
     opacity: 0;
     animation: slideFromBottom 0.6s ease-out forwards;
     animation-delay: 0.2s;
+    width: 100%;
     @include for-laptops {
       top: 136px;
       height: auto;
@@ -168,7 +169,7 @@
     }
   }
   .action_image_stack {
-    width: 35px;
+    width: auto;
     height: 37px;
     @include for-laptops {
       width: 100px;
@@ -176,7 +177,7 @@
     }
   }
   .action_image_user_tick {
-    width: 35px;
+    width: auto;
     height: 37px;
     @include for-laptops {
       width: 90px;
@@ -184,7 +185,7 @@
     }
   }
   .action_image_user_plus {
-    width: 35px;
+    width: auto;
     height: 37px;
     @include for-laptops {
       width: 71px;
@@ -441,7 +442,7 @@
     }
 
     .axis {
-      height: 30px;
+      height: 33px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -449,7 +450,7 @@
       }
     }
     .icici {
-      height: 25px;
+      height: 30px;
       width: auto;
       margin-right: 40px;
       @include for-laptops {
@@ -465,7 +466,7 @@
       }
     }
     .visa {
-      height: 20px;
+      height: 25px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -473,7 +474,7 @@
       }
     }
     .kotak {
-      height: 30px;
+      height: 33px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -481,7 +482,7 @@
       }
     }
     .hdfc {
-      height: 40px;
+      height: 30px;
       width: auto;
       margin-right: 60px;
       @include for-laptops {
@@ -489,7 +490,7 @@
       }
     }
     .rupay {
-      height: 20px;
+      height: 38px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -497,7 +498,7 @@
       }
     }
     .master {
-      height: 30px;
+      height: 35px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -531,7 +532,7 @@
     }
 
     .box {
-      height: 23px;
+      height: 30px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -540,7 +541,7 @@
     }
 
     .reliance {
-      height: 65px;
+      height: 30px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -557,7 +558,7 @@
       }
     }
     .everest {
-      height: 17px;
+      height: 22px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -565,7 +566,7 @@
       }
     }
     .cure {
-      height: 20px;
+      height: 25px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -589,7 +590,7 @@
       }
     }
     .starbucks {
-      height: 50px;
+      height: 40px;
       width: auto;
       margin-right: 50px;
       @include for-laptops {
@@ -882,7 +883,7 @@
     }
   }
   .action_image_stack {
-    width: 35px;
+    width: auto;
     height: 37px;
     @include for-laptops {
       width: 100px;
@@ -890,7 +891,7 @@
     }
   }
   .action_image_user_tick {
-    width: 35px;
+    width: auto;
     height: 37px;
     @include for-laptops {
       width: 90px;
@@ -898,7 +899,7 @@
     }
   }
   .action_image_user_plus {
-    width: 35px;
+    width: auto;
     height: 37px;
     @include for-laptops {
       width: 71px;
@@ -1126,5 +1127,12 @@
 .arrow_icon:hover {
   img {
     width: 65px;
+  }
+}
+
+.three_step_image_container {
+  width: 80px;
+  @include for-laptops {
+    width: auto;
   }
 }
