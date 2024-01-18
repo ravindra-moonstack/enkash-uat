@@ -66,12 +66,12 @@ export { default as taxPayment } from "./img/tax-payment.png";
 export { default as taxPaymentFilled } from "./img/tax-payment-filled.png";
 export { default as rentalPayments } from "./img/rental-payments.png";
 export { default as rentalPaymentsFilled } from "./img/rental-payments-filled.png";
-export { default as payByAnyCard } from "./img/pay-by-any-card.png";
+export { default as payByAnyCard } from "./img/pay-by-any-card.svg";
 export { default as payByAnyCardFilled } from "./img/pay-by-any-card-filled.png";
 export { default as payrollCards } from "./img/payroll-filled.png";
 export { default as payrollCardsFilled } from "./img/payroll-cards.png";
-export { default as invoiceManegement } from "./img/invoice-management.png";
-export { default as invoiceManegementFilled } from "./img/invoice-management-filled.png";
+export { default as invoiceManegement } from "./img/invoice-management.svg";
+export { default as invoiceManegementFilled } from "./img/invoice-management-filled.svg";
 
 //corporate-cards
 export { default as diyCard } from "./img/diy-card.png";
