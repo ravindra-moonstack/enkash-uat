@@ -56,6 +56,7 @@ const OfEx = () => {
               color="rainy-blue"
               size="h2"
               weight="7"
+              useH1TagInHtml={true}
             />
             <Heading
               title="with advanced technology"

@@ -12,7 +12,8 @@ export const motherProducts = [
   },
   {
     name: "OfEx",
-    description: "Manage employee expenses and reimbursements with a highly customizable platform",
+    description:
+      "Manage employee expenses and reimbursements with a highly customizable platform",
     link: "/ofex",
   },
   {

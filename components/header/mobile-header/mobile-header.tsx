@@ -23,10 +23,14 @@ const motherProductsList = [
   loyaltyLoungeProducts,
 ];
 
-const MobileHeader = () => {
+const MobileHeader = ({ utmSource }: any) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [showBanner, setShowBanner] = useState(true);
+
+  const signupUrl = utmSource
+    ? `https://home.enkash.com/signup?utm_source=${utmSource}`
+    : "https://home.enkash.com/get-started";
 
   return (
     <div>
@@ -107,14 +111,10 @@ const MobileHeader = () => {
             <div
               className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
             >
-              <PrimaryButton
-                title="Sign Up"
-                theme="blue"
-                url="https://home.enkash.com/signup"
-              />
+              <PrimaryButton title="Sign Up" theme="blue" url={signupUrl} />
               <span className="mx-2"></span>
               <div>
-                <Link href={"https://home.enkash.com/signup"}>
+                <Link href={signupUrl}>
                   <button
                     className={`${styles.secondary_button} ${styles.active}`}
                   >

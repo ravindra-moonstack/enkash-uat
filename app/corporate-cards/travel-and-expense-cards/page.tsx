@@ -47,7 +47,12 @@ const travelAndExpenseCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Travel And Expense Cards" size="h4" weight="4" />
+            <Heading
+              title="Travel And Expense Cards"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div>

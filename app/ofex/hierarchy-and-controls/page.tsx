@@ -46,7 +46,12 @@ const hierarchyAndControls = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Hierarchy and Controls" size="h4" weight="4" />
+            <Heading
+              title="Hierarchy and Controls"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <div className="d-flex flex-column">
             <Heading

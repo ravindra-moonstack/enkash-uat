@@ -45,7 +45,12 @@ const offers = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Offers" size="h4" weight="4" />
+            <Heading
+              title="Offers"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <div>
             <Heading
@@ -265,7 +270,6 @@ const offers = () => {
           title="Seeking further understanding of offers?"
           description="Make your business function smoothly and advance toward growth with exclusive offers from EnKash. These offers on partnered services can help grow your business."
           source="Loyalty_lounge"
-
         />
       </div>
 

@@ -1,3 +1,4 @@
+import diyCardModule from "@/app/corporate-cards/diy-card-module/page";
 import {
   digitalMarketingCard,
   digitalMarketingCardFilled,
@@ -13,6 +14,8 @@ import {
   fuelCardFilled,
   purchaseCard,
   purchaseCardFilled,
+  diyCard,
+  diyCardFilled,
 } from "@/components/header";
 
 const freedomProducts = [
@@ -77,6 +80,14 @@ const freedomProducts = [
         imageSrc: purchaseCard,
         imageSrcHovered: purchaseCardFilled,
         link: "/corporate-cards/purchase-cards",
+      },
+      {
+        name: "DIY Card Module*",
+        description:
+          "Control your business spends with customizable cards",
+        imageSrc: diyCard,
+        imageSrcHovered: diyCardFilled,
+        link: "/corporate-cards/diy-card-module",
       },
     ],
     footerText: "Empower your finances with purpose-based cards",

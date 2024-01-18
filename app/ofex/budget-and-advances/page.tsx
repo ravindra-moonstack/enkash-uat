@@ -45,7 +45,12 @@ const budgetAndAdvance = () => {
                 weight="7"
               />
             </div>
-            <Heading title="| Budgets and Advances" size="h4" weight="4" />
+            <Heading
+              title="| Budgets and Advances"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="d-inline d-md-flex flex-column">

@@ -46,7 +46,12 @@ const employeeRewards = () => {
                 weight="7"
               />
             </div>
-            <Heading title="| Employee Rewards" size="h4" weight="4" />
+            <Heading
+              title="| Employee Rewards"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="d-inline d-md-flex flex-column">
@@ -292,7 +297,6 @@ const employeeRewards = () => {
           title="Seeking further understanding of employee rewards?"
           description="Employee rewards in an organization are recognition and compensation strategies and benefits offered to employees to acknowledge and encourage their contributions, enhance job satisfaction, and drive motivation, ultimately fostering a positive workplace culture and employee retention."
           source="Loyalty_lounge"
-
         />
       </div>
 

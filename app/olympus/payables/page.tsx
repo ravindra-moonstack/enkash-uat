@@ -54,7 +54,12 @@ const payables = () => {
               size="h1"
               weight="7"
             />
-            <Heading title="| Payables" size="h1" weight="7" />
+            <Heading
+              title="| Payables"
+              size="h1"
+              weight="7"
+              useH1TagInHtml={true}
+            />
           </div>
           <div className="d-inline">
             <Heading
@@ -438,7 +443,6 @@ const payables = () => {
           title="Efficient and easy business payments"
           description="Accounts payable automation is the process by which a business pays its suppliers, service providers, and vendors online."
           source="payables"
-
         />
       </div>
       <div className="row">

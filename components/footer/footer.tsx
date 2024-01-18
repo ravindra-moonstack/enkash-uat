@@ -78,6 +78,21 @@ const Footer = ({ utmSource = "" }: any) => {
                   Rental Payment
                 </Link>
               </li>
+              <li>
+                <Link href="/olympus/payables/invoice-management/">
+                  Invoice Management
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/payables/pay-by-any-card/">
+                  Pay By Any Card
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/payables/vendor-management/">
+                  Vendor Management
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="">
@@ -148,6 +163,28 @@ const Footer = ({ utmSource = "" }: any) => {
                 <li>
                   <Link href="/corporate-cards/travel-and-expense-cards">
                     T&E Cards*
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/corporate-cards/diy-card-module">
+                    DIY Card Module*
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className={` ${styles.footer_links_col}`}>
+            <div>
+              <div className={styles.freedom_card_box}>
+                <Link href="/corporate-cards">
+                  <h4 className={`${styles.title}`}>Solutions</h4>
+                </Link>
+              </div>
+              <ul>
+                <li>
+                  <Link href="/solutions/automated-reconciliation/">
+                    Automated Reconciliation
                   </Link>
                 </li>
               </ul>
@@ -328,27 +365,23 @@ const Footer = ({ utmSource = "" }: any) => {
               <h4 className={`${styles.title}`}>Help and Support</h4>
               <ul>
                 <li>
-                  <div>
-                    <Image
-                      src={call}
-                      alt="Contact Enkash"
-                      height={20}
-                      width={20}
-                    />
-                    <span className={`ms-md-3 ms-1 ${styles.support_text}`}>
-                      +91 8530490475
-                    </span>
-                  </div>
+                  <Image
+                    src={call}
+                    alt="Contact Enkash"
+                    className={styles.help_icons}
+                  />
+                  <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
+                    +91 8530490475
+                  </span>
                 </li>
                 <li>
                   <div>
                     <Image
                       src={email}
                       alt="Contact Enkash"
-                      height={20}
-                      width={20}
+                      className={styles.help_icons}
                     />
-                    <span className={`ms-md-3 ms-1 ${styles.support_text}`}>
+                    <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
                       support@enkash.com
                     </span>
                   </div>

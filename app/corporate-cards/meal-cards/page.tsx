@@ -47,7 +47,12 @@ const mealCard = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Meal Cards" size="h4" weight="4" />
+            <Heading
+              title="Meal Cards"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <Heading
             title={`Enhance employee${space}`}

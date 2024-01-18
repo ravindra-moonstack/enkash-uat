@@ -17,6 +17,10 @@ import {
   rentalPaymentsFilled,
   billPayments,
   billPaymentsFilled,
+  payByAnyCard,
+  payByAnyCardFilled,
+  invoiceManegement,
+  invoiceManegementFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -67,6 +71,30 @@ const olympusProducts = [
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
         link: "/olympus/payables/rental-payment",
+      },
+      {
+        name: "Pay By Any Card",
+        description:
+          "Pay your business utility bills, GST and other bills via any card",
+        imageSrc: payByAnyCard,
+        imageSrcHovered: payByAnyCardFilled,
+        link: "/olympus/payables/pay-by-any-card",
+      },
+      {
+        name: "Invoice Management",
+        description:
+          "Pay & manage your office/home rent directly into your landlord’s bank",
+        imageSrc: invoiceManegement,
+        imageSrcHovered: invoiceManegementFilled,
+        link: "/olympus/payables/invoice-management",
+      },
+      {
+        name: "Vendor Management",
+        description:
+          "Pay & manage your office/home rent directly into your landlord’s bank",
+        imageSrc: rentalPayments,
+        imageSrcHovered: rentalPaymentsFilled,
+        link: "/olympus/payables/vendor-management",
       },
     ],
     footerText:

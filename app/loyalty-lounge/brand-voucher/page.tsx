@@ -45,7 +45,12 @@ const brandVoucher = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Brand Vouchers" size="h4" weight="4" />
+            <Heading
+              title="Brand Vouchers"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <Heading
             title={`Unlock huge savings on${space}`}
@@ -279,7 +284,6 @@ const brandVoucher = () => {
           title="Seeking further understanding of brand vouchers?"
           description="Brand vouchers are prepaid instruments created to provide discounts on purchasing specific products and services following their terms and conditions."
           source="Loyalty_lounge"
-
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

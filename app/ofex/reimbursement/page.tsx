@@ -45,7 +45,12 @@ const reimbursement = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Reimbursements" size="h4" weight="4" />
+            <Heading
+              title="Reimbursements"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <div className="d-flex flex-column">
             <Heading

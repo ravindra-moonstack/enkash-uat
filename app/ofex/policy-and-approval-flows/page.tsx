@@ -46,7 +46,12 @@ const policyApprovalFlow = () => {
                 weight="7"
               />
             </div>
-            <Heading title="| Policy and Approval Flows" size="h4" weight="4" />
+            <Heading
+              title="| Policy and Approval Flows"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="">

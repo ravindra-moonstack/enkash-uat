@@ -1,4 +1,3 @@
-
 import styles from "./faq.module.scss";
 import Image from "next/image";
 import arrowDown from "./img/arrow-down.png";
@@ -45,7 +44,7 @@ const FAQ = ({
 
           <div
             className={`${styles.answer} ${
-              answerVisible ? styles.visible : ""
+              answerVisible ? styles.visible : styles.reverse_visible
             }`}
           >
             {!answerHTML &&

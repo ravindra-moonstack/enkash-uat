@@ -8,7 +8,7 @@ const Header = ({ utmSource = "" }: any) => {
         <WebHeader utmSource={utmSource} />
       </div>
       <div className="mobile-only">
-        <MobileHeader />
+        <MobileHeader utmSource={utmSource} />
       </div>
     </>
   );

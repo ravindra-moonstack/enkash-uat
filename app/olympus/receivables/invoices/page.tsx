@@ -47,7 +47,7 @@ const invoices = () => {
               />
             </div>
             <div>
-              <Heading title="Invoices" size="h4" weight="4" />
+              <Heading title="Invoices" size="h4" weight="4" useH1TagInHtml={true}/>
               <sup className="sup-symbol">#</sup>
             </div>
           </div>

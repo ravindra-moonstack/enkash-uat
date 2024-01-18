@@ -1,24 +1,59 @@
 export const solutions = [
   {
-    name: "Analytics",
-    description:
-      "Automate your company's AP, AR, and bank reconciliation seamlessly",
-  },
-  {
     name: "Automated Reconciliation",
     description:
-      "Lorem ipsum dolor sit amet consectetur. Eleifend at interdum massa vitae nunc.",
+      "Motivate your finance team to upgrade their skills by  automating tasks like reconciliation",
+    link: "/solutions/automated-reconciliation",
   },
-  {
-    name: "FinOps Digitization",
-    description:
-      "Automate your company's AP, AR, and bank reconciliation seamlessly",
-  },
-  {
-    name: "Connected Banks",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Eleifend at interdum massa vitae nunc.",
-  },
+  // {
+  //   name: "APIs & Modules",
+  //   description:
+  //     "Enhance your system's functionality with our comprehensive set of APIs and modular solutions.",
+  //   link: "/not-found",
+  // },
+
+  // {
+  //   name: "CardX",
+  //   description:
+  //     "Experience secure and seamless card transactions with our advanced CardX technology.",
+  //   link: "/not-found",
+  // },
+  // {
+  //   name: "Cashflow Analytics",
+  //   description:
+  //     "Gain valuable insights into your company's financial health through our advanced Cashflow Analytics tools.",
+  //   link: "/not-found",
+  // },
+  // {
+  //   name: "Customized Reporting",
+  //   description:
+  //     "Create tailored reports to meet your specific business needs with our flexible reporting solutions.",
+  //   link: "/not-found",
+  // },
+  // {
+  //   name: "Integrations",
+  //   description:
+  //     "Effortlessly integrate our solutions into your existing systems for a seamless workflow.",
+  //   link: "/not-found",
+  // },
+  // {
+  //   name: "Loan Management Solution",
+  //   description:
+  //     "Simplify and optimize the management of loans with our comprehensive Loan Management Solution.",
+  //   link: "/not-found",
+  // },
+  // {
+  //   name: "Loan Origination Solution",
+  //   description:
+  //     "Streamline the loan origination process with our advanced Loan Origination Solution.",
+  //   link: "/not-found",
+  // },
+  // {
+  //   name: "Workflow Management",
+  //   description:
+  //     "Efficiently manage and optimize your workflows with our advanced Workflow Management tools.",
+  //   link: "/not-found",
+  // },
 ];
 
 export default solutions;
