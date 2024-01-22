@@ -93,6 +93,11 @@ const Footer = ({ utmSource = "" }: any) => {
                   Vendor Management
                 </Link>
               </li>
+              <li>
+                <Link href="/olympus/payables/seamless-banking/">
+                  Seamless Banking
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="">
@@ -116,6 +121,11 @@ const Footer = ({ utmSource = "" }: any) => {
                 </Link>
               </li>
               <li>
+                <Link href="/olympus/receivables/collection-analytics">
+                  Collection Analytics
+                </Link>
+              </li>
+              <li>
                 <Link href="/olympus/receivables/bulk-collect/">
                   Bulk Collect
                 </Link>
@@ -123,6 +133,9 @@ const Footer = ({ utmSource = "" }: any) => {
               <li>
                 <Link href="/olympus/receivables/invoices/">Invoices</Link>
               </li>
+              <li>
+                <Link href="/olympus/receivables/e-nach">E Nach</Link>
+              </li>{" "}
             </ul>
           </div>
         </div>
