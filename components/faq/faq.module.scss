@@ -12,7 +12,16 @@
     padding: 20px 60px;
   }
 
-  h4 {
+  th {
+    font-weight: 700;
+    font-size: 14px;
+    @include for-laptops {
+      font-size: 20px;
+    }
+  }
+
+  h4,
+  td {
     font-size: 14px;
     a {
       text-decoration: none;

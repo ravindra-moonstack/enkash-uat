@@ -142,6 +142,14 @@ const olympusProducts = [
         imageSrcHovered: invoicesFilled,
         link: "/olympus/receivables/invoices",
       },
+      {
+        name: "e-NACH",
+        description:
+          "Manage invoices with complete details with quicker payment options",
+        imageSrc: invoices,
+        imageSrcHovered: invoicesFilled,
+        link: "/olympus/receivables/invoices",
+      },
     ],
     footerText:
       "Effortlessly streamline your business payments and collections",
