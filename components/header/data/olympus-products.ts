@@ -21,6 +21,12 @@ import {
   payByAnyCardFilled,
   invoiceManegement,
   invoiceManegementFilled,
+  collectionAnalyticsFilled,
+  collectionAnalytics,
+  eNach,
+  eNachFilled,
+  seamlessBankingFilled,
+  seamlessBanking,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -96,6 +102,14 @@ const olympusProducts = [
         imageSrcHovered: rentalPaymentsFilled,
         link: "/olympus/payables/vendor-management",
       },
+      {
+        name: "Seamless Banking",
+        description:
+          "Pay & manage your office/home rent directly into your landlord’s bank",
+        imageSrc: seamlessBanking,
+        imageSrcHovered: seamlessBankingFilled,
+        link: "/olympus/payables/seamless-banking/",
+      },
     ],
     footerText:
       "Effortlessly streamline your business payments and collections",
@@ -146,9 +160,17 @@ const olympusProducts = [
         name: "e-NACH",
         description:
           "Manage invoices with complete details with quicker payment options",
-        imageSrc: invoices,
-        imageSrcHovered: invoicesFilled,
-        link: "/olympus/receivables/invoices",
+        imageSrc: eNach,
+        imageSrcHovered: eNachFilled,
+        link: "/olympus/receivables/e-nach",
+      },
+      {
+        name: "Collection Analytics",
+        description:
+          "Manage invoices with complete details with quicker payment options",
+        imageSrc: collectionAnalytics,
+        imageSrcHovered: collectionAnalyticsFilled,
+        link: "/olympus/receivables/collection-analytics",
       },
     ],
     footerText:

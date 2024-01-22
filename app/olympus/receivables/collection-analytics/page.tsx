@@ -12,7 +12,6 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import Header from "@/components/header/header";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
