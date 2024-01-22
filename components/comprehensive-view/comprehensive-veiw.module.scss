@@ -49,6 +49,7 @@
 .normal {
   width: 25px;
   height: auto;
+  cursor: pointer;
   @include for-laptops {
     width: 40px;
   }
@@ -59,6 +60,7 @@
 .rotated {
   width: 30px;
   height: auto;
+  cursor: pointer;
   @include for-laptops {
     width: 40px;
   }
