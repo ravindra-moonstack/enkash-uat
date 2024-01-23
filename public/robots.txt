@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /resources/wp-admin/
 Disallow: /resources/wp-login.php
+Disallow: /_next/static/chunks/*

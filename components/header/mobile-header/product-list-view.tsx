@@ -32,7 +32,7 @@ const ProductListView = ({
                     className={`py-4 px-4 align-items-center`}
                     onClick={() => {
                       if (childProducts.length === 0) {
-                        window.open(item.link, "_blank");
+                        window.location.href = item.link;
                       } else {
                         setSelectedItemIndex(index);
                       }
