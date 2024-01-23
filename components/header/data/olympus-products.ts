@@ -81,7 +81,7 @@ const olympusProducts = [
       {
         name: "Pay By Any Card",
         description:
-          "Pay your business utility bills, GST and other bills via any card",
+          "Pay your business utility bills, GST and vendor payments via any card",
         imageSrc: payByAnyCard,
         imageSrcHovered: payByAnyCardFilled,
         link: "/olympus/payables/pay-by-any-card",
@@ -89,7 +89,7 @@ const olympusProducts = [
       {
         name: "Invoice Management",
         description:
-          "Pay & manage your office/home rent directly into your landlord’s bank",
+          "Upload and manage all the vendor invoices from a single dashboard",
         imageSrc: invoiceManegement,
         imageSrcHovered: invoiceManegementFilled,
         link: "/olympus/payables/invoice-management",
@@ -97,7 +97,7 @@ const olympusProducts = [
       {
         name: "Vendor Management",
         description:
-          "Pay & manage your office/home rent directly into your landlord’s bank",
+          "Onboard, verify, and manage all business vendors easily",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
         link: "/olympus/payables/vendor-management",
