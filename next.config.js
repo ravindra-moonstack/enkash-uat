@@ -60,21 +60,9 @@ const nextConfig = {
         destination: "/corporate-cards/virtual-cards",
         permanent: true,
       },
-      {
-        source: "/integrated-cards",
-        destination: "/corporate-cards",
-        permanent: false,
-      },
-      {
-        source: "/diy-card",
-        destination: "/corporate-cards",
-        permanent: false,
-      },
-      {
-        source: "/spend-control",
-        destination: "/corporate-cards",
-        permanent: false,
-      },
+      { source: "/integrated-cards", destination: "/corporate-cards", permanent: false },
+      { source: "/diy-card", destination: "/corporate-cards", permanent: false },
+      { source: "/spend-control", destination: "/corporate-cards", permanent: false },
       {
         source: "/budget-management",
         destination: "/ofex/budget-and-advances",
@@ -132,6 +120,39 @@ const nextConfig = {
       },
       { source: "/support", destination: "/", permanent: false },
       { source: "/about", destination: "/", permanent: false },
+    ];
+  },
+  trailingSlash: true,
+  async rewrites() {
+    return [
+      {
+        source: "/resources/videos",
+        destination: "https://blogs.enkash.com/videos/",
+      },
+      {
+        source: "/resources/press-release",
+        destination: "https://blogs.enkash.com/press-release/",
+      },
+      {
+        source: "/resources/media-coverage",
+        destination: "https://blogs.enkash.com/media-coverage/",
+      },
+      {
+        source: "/resources/customer-stories",
+        destination: "https://blogs.enkash.com/customer-stories/",
+      },
+      {
+        source: "/resources",
+        destination: "https://blogs.enkash.com/",
+      },
+      {
+        source: "/resources/blog/:slug/",
+        destination: "https://blogs.enkash.com/blog/:slug/",
+      },
+      {
+        source: "/resources/:slug*",
+        destination: "https://blogs.enkash.com/:slug*",
+      },
     ];
   },
 };

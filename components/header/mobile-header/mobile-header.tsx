@@ -15,6 +15,7 @@ import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-produ
 import motherProducts from "@/components/header/data/mother-products";
 import resources from "@/components/header/data/resources";
 import Link from "next/link";
+import solutions from "../data/solutions";
 
 const motherProductsList = [
   olympusProducts,
@@ -74,20 +75,20 @@ const MobileHeader = ({ utmSource }: any) => {
                       key={item.name}
                       className={`py-4 px-4`}
                       onClick={() => {
-                        if (index != 2) {
+                        if (index !== 3) {
                           setSelectedItemIndex(index);
                           setCurrentStep(2);
                         }
                       }}
                     >
-                      {index === 2 ? (
+                      {index === 3 ? (
                         <Link className={styles.title} href={item.link}>
                           {item.name}
                         </Link>
                       ) : (
                         <div className={styles.title}>{item.name}</div>
                       )}
-                      {index !== 2 && (
+                      {index !== 3 && (
                         <>
                           <Image src={forwardArrowBlue} alt="arrow down icon" />
                         </>
@@ -131,8 +132,10 @@ const MobileHeader = ({ utmSource }: any) => {
               selectedItemIndex === 0
                 ? motherProducts
                 : selectedItemIndex === 1
+                ? solutions
+                : selectedItemIndex === 2
                 ? resources
-                : resources
+                : []
             }
             childProducts={
               selectedItemIndex === 0
