@@ -33,6 +33,6 @@
     "app/layout.tsx",
     "app/page.tsx",
     ".next/types/**/*.ts"
-  ],
+, "middleware.ts"  ],
   "exclude": ["node_modules"]
 }
