@@ -129,7 +129,7 @@ const MobileHeader = ({ utmSource }: any) => {
         {currentStep === 2 && (
           <ProductListView
             products={
-              selectedItemIndex === 1
+              selectedItemIndex === 0
                 ? motherProducts
                 : selectedItemIndex === 1
                 ? solutions
