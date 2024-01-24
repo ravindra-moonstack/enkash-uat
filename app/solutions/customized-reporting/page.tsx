@@ -5,7 +5,6 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-const automatedReconcilation = () => {
+const customizedReporting = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="" />
@@ -48,7 +47,7 @@ const automatedReconcilation = () => {
               />
             </div>
             <Heading
-              title="Automated Reconciliation"
+              title="Customized Reporting"
               size="h4"
               weight="4"
               useH1TagInHtml={true}
@@ -56,28 +55,37 @@ const automatedReconcilation = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Free up your team’s"
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="bandwidth with"
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="automated reconciliation"
+              title="Unlock intelligent"
               color="rainy-blue"
               size="h2"
+              weight="7"
+            />
+            <div>
+              <Heading
+                title={`insights${space}`}
+                color="rainy-blue"
+                size="h2"
+                weight="7"
+              />
+              <Heading
+                title="with customized"
+                color="white"
+                size="h2"
+                weight="7"
+              />
+            </div>
+
+            <Heading
+              title="reporting solutions"
+              size="h2"
+              color="white"
               weight="7"
             />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Leverage automated reconciliation to make cash flow management easier and enable your finance team to focus on more strategic tasks"
+              title="Transform your financial data into actionable intelligence. Gain unparalleled control over your business finances and make informed decisions like never before"
               color="white"
               size="h6"
               weight="5"
@@ -115,40 +123,33 @@ const automatedReconcilation = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Accuracy"],
+              itemArray: ["Data", "Compilation"],
               oldWayDescription:
-                "The manual nature of data entry in the traditional method increases the likelihood of errors, such as typos, incorrect amounts, or misplaced entries. These errors can lead to discrepancies in reconciliation.",
+                "Earlier, the finance team used to manually compile data from disparate sources and do spend analysis, leading to inefficiencies, errors, and delayed decision-making.",
               newWayDescription:
-                "EnKash's automated system significantly improves accuracy by minimizing human intervention. The advanced algorithms ensure precise data extraction and validation, contributing to a more reliable reconciliation process.",
+                "With EnKash, seamlessly integrate and analyze your financial data in real-time with our advanced reporting feature. Streamline your reporting process, reduce errors, and gain instant access to critical insights.",
             },
             {
-              itemArray: ["Visibility"],
+              itemArray: ["Customization", "Options"],
               oldWayDescription:
-                "The lack of visibility into financial transactions often resulted in challenges in making timely payments to vendors and meeting other financial obligations.",
+                "Limited customization options restricted businesses from tailoring reports to their specific needs. This lack of flexibility hindered organizations from showcasing data in a manner aligned with their unique requirements.",
               newWayDescription:
-                "With EnKash, get clear visibility into your cash flow status and ensure all your business payments are processed on time, fostering better relationships.",
+                "With EnKash, get various filtration options on the dashboard, empowering you to filter and customize reports based on your specific preferences like date, status, UTR, EnKash ID, vendor name, etc.",
             },
 
             {
-              itemArray: ["Cost", "Efficiency"],
+              itemArray: ["Real-time", "Updates"],
               oldWayDescription:
-                "The conventional method relies on manual labor for data entry, which incurs higher operational costs. The need for skilled personnel and the time spent on repetitive tasks contribute to increased expenses.",
+                "Businesses had to wait for scheduled reporting cycles due to a lack of real-time updates, leading to delays in accessing crucial information. In fast-paced business environments, this lag was detrimental.",
               newWayDescription:
-                "With EnKash, you can make the whole process more cost-effective, as it reduces the reliance on manual labor. The streamlined process leads to operational efficiency, minimizing the risk of costly errors.",
+                "Get instant real-time updates and insights, meaning you can know what's happening as it happens, allowing you to make informed decisions promptly and stay ahead of the competition.",
             },
             {
-              itemArray: ["Integration"],
+              itemArray: ["Visibility", "And Access"],
               oldWayDescription:
-                "Traditional systems often face challenges in integrating with other platforms and systems, leading to isolated data and potential data silos.",
+                "Earlier one significant challenge was the existence of data silos and limited access, which hindered the flow of information across different departments or stakeholders within an organization.",
               newWayDescription:
-                "EnKash offers seamless integration with various accounting and ERP systems. This interoperability ensures a smooth flow of information across different platforms, enhancing overall efficiency and connectivity.",
-            },
-            {
-              itemArray: ["Scalability"],
-              oldWayDescription:
-                "Traditional methods may struggle to handle growing volumes of transactions, making scalability challenging.",
-              newWayDescription:
-                "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. This scalability feature ensures that the reconciliation process remains robust even as business operations expand.",
+                "EnKash provides a centralized hub for financial data enhancing visibility throughout the organization. Share reports easily with stakeholders, and ensure all relevant parties have access to critical insights.",
             },
           ]}
         />
@@ -157,99 +158,59 @@ const automatedReconcilation = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex flex-column text-center mb-5">
+        <div className="d-inline text-center mb-5">
+          <Heading title="Switch to smart" color="black" size="h1" weight="6" />
           <Heading
-            title="Reconcile records in real-time to"
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title="speed up decision-making"
+            title={`${space}data reporting${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
+          <Heading title="with EnKash" color="black" size="h1" weight="6" />
         </div>
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Multi-Bank Reconciliation"
-              description="Automatically map transactions with bank statements using names, dates, and amounts. Effortlessly reconcile unmatched transactions, review mappings, and update transactions in your ERP"
+              whiteTitle="Tailored Dashboards"
+              description='Create personalized dashboards with "Quick Filters" like name, date, etc to filter transactions swiftly. Add advanced filters like UTR, EnKash ID, etc., for further customization'
               source=""
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              titleHtml={
-                <>
-                  <Heading
-                    title="Track and"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Control"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </>
-              }
-              description="Manage records of vendor, rental, utilities, and tax payments from end to end, and easily track the payment status directly on the platform"
+              whiteTitle="Automated Report Generation"
+              description="Effortlessly generate and download comprehensive reports from a centralized dashboard, ensuring offline access to vital information anytime"
               source=""
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Manage Receivables"
-              description="Improve overall customer experience by optimizing collection reminders via the platform with real-time updates of who has paid and who has not"
+              whiteTitle="Holistic Financial Insights"
+              description="Monitor all invoices and spending, gaining a comprehensive overview with real-time and automated data refresh for informed decisions impacting cash flow"
               source=""
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              titleHtml={
-                <>
-                  <Heading
-                    title="Accelerate"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Audits"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </>
-              }
-              description="Access detailed transaction history, ensuring clear audit trails for enhanced accountability and compliance. Maintain thorough records of transactions and changes, promoting transparency and traceability"
-              source=""
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              titleHtml={
-                <>
-                  <Heading
-                    title="Reduce"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Fraud"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </>
-              }
-              description="Gain a clear view of all the transactions, easily identify duplicate invoices, and flag suspicious transactions. Enhancing security and reducing the risk of fraud"
+              whiteTitle="Enhance Collaboration"
+              // titleHtml={
+              //   <>
+              //     <Heading
+              //       title="Accelerate"
+              //       color="rainy-blue"
+              //       size="h2"
+              //       weight="6"
+              //     />
+              //     <Heading
+              //       title="Audits"
+              //       color="rainy-blue"
+              //       size="h2"
+              //       weight="6"
+              //     />
+              //   </>
+              // }
+              description="Boost teamwork with customizable access controls based on department, location, or branch codes, optimizing productivity by tailoring user permissions to specific teams"
               source=""
             />
           </div>
@@ -262,30 +223,19 @@ const automatedReconcilation = () => {
             <>
               <div className="text-center">
                 <div className="d-flex flex-column">
-                  <div>
-                    <Heading
-                      title="Automate reconciliation and focus"
-                      color="white"
-                      size="h1"
-                      weight="6"
-                    />
-                  </div>
+                  <Heading
+                    title="Elevate your financial insights, and"
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
 
-                  <div>
-                    <Heading
-                      title={`on${space}`}
-                      color="rainy-blue"
-                      size="h1"
-                      weight="6"
-                    />
-
-                    <Heading
-                      title="more strategic tasks"
-                      color="rainy-blue"
-                      size="h1"
-                      weight="6"
-                    />
-                  </div>
+                  <Heading
+                    title="empower your decisions"
+                    color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
                 </div>
               </div>
             </>
@@ -444,4 +394,4 @@ const automatedReconcilation = () => {
   );
 };
 
-export default automatedReconcilation;
+export default customizedReporting;
