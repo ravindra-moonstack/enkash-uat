@@ -256,7 +256,7 @@ const customizedReporting = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about automated reconciliation
+            title="Don't worry! Our FAQs section will help you learn about customized reporting
             in detail"
             color="black"
             size="h4"

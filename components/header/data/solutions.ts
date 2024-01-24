@@ -11,6 +11,12 @@ export const solutions = [
       "Motivate your finance team to upgrade their skills by  automating tasks like reconciliation",
     link: "/solutions/customized-reporting",
   },
+  {
+    name: "Workflow Management",
+    description:
+      "Motivate your finance team to upgrade their skills by  automating tasks like reconciliation",
+    link: "/solutions/workflow-management",
+  },
   // {
   //   name: "APIs & Modules",
   //   description:
