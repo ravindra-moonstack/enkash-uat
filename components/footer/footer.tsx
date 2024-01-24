@@ -200,6 +200,11 @@ const Footer = ({ utmSource = "" }: any) => {
                     Automated Reconciliation
                   </Link>
                 </li>
+                <li>
+                  <Link href="/solutions/customized-reporting">
+                    Customized Reporting
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>

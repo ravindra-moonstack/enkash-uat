@@ -22,12 +22,9 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Automated Accounts Reconciliation & Bank Reconciliation - EnKash",
+  title: "Optimizing Cost with Customized Reporting Solutions for Businesses  - EnKash",
   description:
-    "EnKash automated reconciliation solutions streamline your financial processes, reduce errors, and enhance efficiency. make cash flow management easier & your finance team focused on more strategic tasks.",
-  alternates: {
-    canonical: "https://www.enkash.com/solutions/automated-reconciliation/",
-  },
+    "EnKash intelligent customized reporting solution helps businesses transform raw spend data into actionable insights to enable better business decisions, optimize costs and maximize savings.",
 };
 
 const customizedReporting = () => {
@@ -276,8 +273,8 @@ const customizedReporting = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of automated reconciliation?"
-          description="The reconciliation process is essential to ensure optimum cash flow planning, meet accounts payable obligations seamlessly, and optimize the accounts receivable function. Automated reconciliation cuts down manual efforts and reduces errors to help improve customer experience, cut down interest costs, and ensure that you meet your business payment obligations."
+          title="Seeking further understanding of customized reporting?"
+          description="Customized reporting in EnKash refers to the ability to generate and download reports tailored to your specific needs. This allows you to gain deeper insights into your company's spend analysis, identify areas for cost optimization, and make more informed financial decisions."
           source=""
         />
       </div>
@@ -291,7 +288,7 @@ const customizedReporting = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="Is it possible to automate bank reconciliation?"
+                  title="What are the benefits of customized reporting?"
                 />
               </div>
               <div className="mb-5">
@@ -299,7 +296,7 @@ const customizedReporting = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="It is possible to automate bank reconciliation with the right software. The process of bank reconciliation involves going through each entry in the account statement and matching it against payments made and the payments received. The right software solution will go through all the entries from the bank statement and match them with the records your system has and the entries to identify where the payments have been made and the parties from which you have received payments."
+                  title="There are many benefits of customized reporting on EnKash. Firstly, it enables users to focus on the specific metrics and insights that are most relevant to their business objectives, providing a more targeted and actionable view of performance. Secondly, it enhances decision-making by presenting information in a format that aligns with the user's preferences and priorities. Additionally, customized reporting can improve efficiency by eliminating the need to sift through irrelevant data, saving time and resources."
                 />
               </div>
 
@@ -308,56 +305,7 @@ const customizedReporting = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the benefits of automated bank reconciliation"
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Automating bank reconciliation has many benefits, both direct and indirect."
-                />
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Here are some direct benefits:"
-                />
-              </div>
-              <div className="mb-3">
-                <ul>
-                  <li>Quicker reconciliation</li>
-                  <li>More accurate matching of records</li>
-                  <li>Saving the team’s time</li>
-                  <li>Quicker update of internal financial statement</li>
-                </ul>
-              </div>
-              <div className="mb-2">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Indirect benefits include:"
-                />
-              </div>
-              <div className="mb-5">
-                <ul>
-                  <li>Better customer experience</li>
-                  <li>Lesser follow-up on collections</li>
-                  <li>Improved payables management</li>
-                  <li>Compliance with audits</li>
-                </ul>
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Who prepares bank reconciliation?"
+                  title="What kind of business benefits from customized reporting?"
                 />
               </div>
               <div className="mb-5">
@@ -365,7 +313,7 @@ const customizedReporting = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="The finance department is in charge of the bank accounts reconciliation process. In earlier times, the whole process of gathering records, seeking inputs, and asking for documentation was done manually. However, today the process of bank reconciliation has been automated. While it is a matter of using your spend management platform to run the bank reconciliation process. However, the finance department still has ownership of the entire process and is in charge of checking if the final bank accounts reconciliation is done properly."
+                  title="Customized reporting is beneficial for businesses of all sizes and industries. Whether you are a small startup or a large enterprise customize reports can help you make better financial decisions."
                 />
               </div>
 
@@ -374,7 +322,7 @@ const customizedReporting = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What is the use of bank accounts reconciliation in Tally?"
+                  title=" What level of technical expertise is required to create and maintain customized reports?"
                 />
               </div>
               <div className="mb-5">
@@ -382,12 +330,13 @@ const customizedReporting = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Bank accounts reconciliation within your core financial system like Tally helps ensure that all financial records are updated and all your financial stakeholders have a single source of truth. For instance, the finance controller will be able to access the current cash flow status with a few clicks. Your sales department will be able to check if all the customer accounts that were due to make payments against their respective sales have done so and take decisions on further credit sales. Your purchase manager can assess whether a particular vendor’s contract is worth renewing and if he or she is defaulting on the delivery of goods or services."
+                  title="EnKash's customized reporting feature is designed to be user-friendly, requiring no advanced technical expertise."
                 />
               </div>
             </>
           }
         />
+        
       </div>
       <Footer utmSource="" />
     </div>
