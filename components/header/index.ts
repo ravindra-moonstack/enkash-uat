@@ -58,6 +58,8 @@ export { default as collectionAnalytics } from "./img/collection-analytics.svg";
 export { default as collectionAnalyticsFilled } from "./img/collection-analytics-filled.svg";
 export { default as eNach } from "./img/e-nach.svg";
 export { default as eNachFilled } from "./img/e-nach-filled.svg";
+export { default as reminderEngine } from "./img/reminder-engine.png";
+export { default as reminderEngineFilled } from "./img/reminder-engine-filled.png";
 
 //paybles
 export { default as billPayments } from "./img/bill-payments.png";

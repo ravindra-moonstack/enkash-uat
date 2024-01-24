@@ -6,7 +6,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../../common/constant";
 import faqData from "./faq-data";
 import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import { banner, bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -22,7 +22,8 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Optimizing Cost with Customized Reporting Solutions for Businesses  - EnKash",
+  title:
+    "Optimizing Cost with Customized Reporting Solutions for Businesses  - EnKash",
   description:
     "EnKash intelligent customized reporting solution helps businesses transform raw spend data into actionable insights to enable better business decisions, optimize costs and maximize savings.",
 };
@@ -108,7 +109,9 @@ const customizedReporting = () => {
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
-            <LottieClientComponent animationData={bannerLottie} loop={true} />
+            <Image src={banner} alt="reminder flow image" />
+
+            {/* <LottieClientComponent animationData={bannerLottie} loop={true} /> */}
           </div>
         </div>
         <div className={styles.three_step_container}>
@@ -336,7 +339,6 @@ const customizedReporting = () => {
             </>
           }
         />
-        
       </div>
       <Footer utmSource="" />
     </div>

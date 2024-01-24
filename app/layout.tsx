@@ -15,7 +15,7 @@ const RootLayout = ({ children }: RootProps) => {
     <html lang="en">
       <Head />
       <body>
-        {/* <PopUp /> */}
+        <PopUp />
         <main className={`app main`}>{children}</main>
       </body>
     </html>

@@ -27,6 +27,8 @@ import {
   eNachFilled,
   seamlessBankingFilled,
   seamlessBanking,
+  reminderEngineFilled,
+  reminderEngine,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -96,8 +98,7 @@ const olympusProducts = [
       },
       {
         name: "Vendor Management",
-        description:
-          "Onboard, verify, and manage all business vendors easily",
+        description: "Onboard, verify, and manage all business vendors easily",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
         link: "/olympus/payables/vendor-management",
@@ -171,6 +172,14 @@ const olympusProducts = [
         imageSrc: collectionAnalytics,
         imageSrcHovered: collectionAnalyticsFilled,
         link: "/olympus/receivables/collection-analytics",
+      },
+      {
+        name: "Reminder Engine",
+        description:
+          "Automate reminders for efficient collections and improve cash flow",
+        imageSrc: reminderEngine,
+        imageSrcHovered: reminderEngineFilled,
+        link: "/olympus/receivables/reminder-engine",
       },
     ],
     footerText:

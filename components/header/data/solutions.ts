@@ -8,13 +8,13 @@ export const solutions = [
   {
     name: "Customized Reporting",
     description:
-      "Motivate your finance team to upgrade their skills by  automating tasks like reconciliation",
+      "Gain deeper insights into your company’s finances with tailored reports",
     link: "/solutions/customized-reporting",
   },
   {
     name: "Workflow Management",
     description:
-      "Motivate your finance team to upgrade their skills by  automating tasks like reconciliation",
+      "Easily design and manage workflows that suit your organizational hierarchy",
     link: "/solutions/workflow-management",
   },
   // {
