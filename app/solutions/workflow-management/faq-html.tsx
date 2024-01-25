@@ -21,14 +21,41 @@ const FAQHtml = ({ faqData }: any) => {
             index === 2 ? (
               <>
                 <h4>
-                  As inferred above, the process of reconciliation can be
-                  long-drawn and detail-oriented, taking a lot of effort and
-                  time of the finance team when done manually. Automating the{" "}
-                  <Link href="https://www.enkash.com/" target="_blank">
-                    accounting reconciliation process
-                  </Link>{" "}
-                  makes it easier for them to manage audits and plan cash flows.
+                  The workflow management cycle encompasses the entire journey
+                  of an invoice, starting from its submission to final approval,
+                  the steps involve:
                 </h4>
+                <ul className="mt-3">
+                  <li>
+                    <h4>
+                      Add Users: Assigning roles while adding a user on the
+                      dashboard to create workflow hierarchy
+                    </h4>
+                  </li>
+                  <li>
+                    <h4>
+                      Initiation: Submitting a request or invoice for approval
+                    </h4>
+                  </li>
+                  <li>
+                    <h4>
+                      Routing: Assigning the request to specific individuals
+                      based on predefined rules
+                    </h4>
+                  </li>
+                  <li>
+                    <h4>
+                      Review: Each approver evaluates the request and provides a
+                      decision (approve or reject)
+                    </h4>
+                  </li>
+                  <li>
+                    <h4>
+                      Payment: Once all required approvals are obtained, the
+                      maker can proceed to make the paymen
+                    </h4>
+                  </li>
+                </ul>
               </>
             ) : null
           }

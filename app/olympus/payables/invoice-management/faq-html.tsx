@@ -84,18 +84,12 @@ const FAQHtml = ({ faqData }: any) => {
               <>
                 {/* Your answerhtml content for index 2 */}
                 <h4>
-                  The quicker processing of invoices with the{" "}
-                  <Link
-                    href="https://www.enkash.com/olympus/receivables/"
-                    target="_blank"
-                  >
-                    automation software
-                  </Link>{" "}
-                  enables quicker payments. Businesses can make immediate
-                  payments for the invoices uploaded on the automation software.
-                  In fact, with EnKash bulk payments can also be made with a
-                  single click. These quick payments can also help avail early
-                  payment discounts enabling savings for the business.
+                  The quicker processing of invoices with the automation
+                  software enables quicker payments. Businesses can make
+                  immediate payments for the invoices uploaded on the automation
+                  software. In fact, with EnKash bulk payments can also be made
+                  with a single click. These quick payments can also help avail
+                  early payment discounts enabling savings for the business.
                 </h4>
               </>
             ) : index === 6 ? (

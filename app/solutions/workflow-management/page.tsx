@@ -149,14 +149,14 @@ const workflowManagement = () => {
               oldWayDescription:
                 "In the traditional approach, approval workflows often involved complex, manual processes. Users had to navigate through piles of paper-based invoices and manually route documents or bills for approval.",
               newWayDescription:
-                "EnKash revolutionizes the approval workflow with an intuitive dashboard, enhancing the user experience. It not only automates the entire process but is also super easy to use, so there is no need for any complex training",
+                "EnKash revolutionizes the approval workflow with an intuitive dashboard, enhancing the user experience. It not only automates the entire process but is also super easy to use, so there is no need for any complex training.",
             },
             {
               itemArray: ["Collaboration"],
               oldWayDescription:
-                "Before there were delays in payment approval due to prolonged communication lines and multiple decision-makers. Accessibility to approval workflows was also restricted, particularly beyond the office, impeding collaboration among remote team members.",
+                "Payment approvals were often delayed due to prolonged communication lines and multiple decision-makers. Restricted accessibility to approval flows, particularly beyond the office, impeding collaboration among remote team members.",
               newWayDescription:
-                "EnKash streamlines the approval process by automating the routing of invoices to designated checkers. Utilizing a user-friendly dashboard, makers, and checkers can conveniently create, review, and approve payments, promoting collaboration across remote teams.",
+                "Easily automate the routing of invoices to designated checkers. Utilizing a user-friendly dashboard, makers, and checkers can conveniently create, review, and approve payments, promoting collaboration across remote teams.",
             },
           ]}
         />
@@ -182,7 +182,7 @@ const workflowManagement = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customizable Approval Hierarchies"
+              whiteTitle="Customizable Approval Flow"
               description="Design workflows that suit your organizational hierarchy, delegate responsibilities across teams, and ensure each invoice reaches the right person for authorization"
               source=""
             />

@@ -16,15 +16,27 @@ const FAQHtml = ({ faqData }: any) => {
   return (
     <div>
       {faqData.map((item: { question: string; answer: any }, index: number) =>
-        index !== 2 ? (
+        index === 0 ? (
           <FAQ
             key={index}
             question={item.question}
-            answer={item.answer}
+            answerHTML={
+              <div key={index} className="my-2">
+                <h4>
+                  Electronic National Automated Clearing House or, e-NACH is a
+                  way to{" "}
+                  <Link href="https://www.enkash.com/" target="_blank">
+                    automate recurring payments
+                  </Link>{" "}
+                  like electricity bills, insurance premiums, SIPs, telephone
+                  bills, and other utility bills with a bank account.
+                </h4>
+              </div>
+            }
             answerVisible={index === openFAQIndex}
             onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
           />
-        ) : (
+        ) : index === 2 ? (
           <FAQ
             key={index}
             question={item.question}
@@ -83,6 +95,14 @@ const FAQHtml = ({ faqData }: any) => {
                 </div>
               </div>
             }
+            answerVisible={index === openFAQIndex}
+            onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
+          />
+        ) : (
+          <FAQ
+            key={index}
+            question={item.question}
+            answer={item.answer}
             answerVisible={index === openFAQIndex}
             onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
           />

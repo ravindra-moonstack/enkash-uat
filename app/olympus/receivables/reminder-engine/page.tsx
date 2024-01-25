@@ -182,7 +182,7 @@ const reminderEngine = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Embedded Links"
-              description="Payment reminders are sent to the customer with embedded links making it easier for them to pay. This facilitates the cash flow of the business."
+              description="Payment reminders are sent to the customer with embedded links making it easier for them to pay. This facilitates the cash flow of the business"
               source="receivables"
             />
           </div>
@@ -205,7 +205,7 @@ const reminderEngine = () => {
                 </div>
               }
               whiteTitle="Total Control"
-              description="Enterprises have complete freedom to decide when to send the reminders and which channel to use to collect payments — email, SMS, or WhatsApp."
+              description="Enterprises have complete freedom to decide when to send the reminders and which channel to use to collect payments — email, SMS, or WhatsApp"
               source="receivables"
             />
           </div>
@@ -213,7 +213,7 @@ const reminderEngine = () => {
             <GetStartedCard
               whiteTitle="Multiple Reminders at Once"
               source="receivables"
-              description="With invoice reminders, businesses can select and dispatch multiple reminders using a single click at the same time. This helps save time and hassle of sending individual reminders."
+              description="With invoice reminders, businesses can select and dispatch multiple reminders using a single click at the same time. This helps save time and hassle of sending individual reminders"
             />
           </div>
         </div>
@@ -319,22 +319,7 @@ const reminderEngine = () => {
                   title="Enterprises can define the reminders as per their convenience. They can set reminders for pre-payment and late payments"
                 />
               </div>
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="How to set up an automated payment reminder?"
-                />
-              </div>
-              <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Define the reminder timeline, it could be before or after the due date. Certain businesses give early payment discounts which can be availed if reminders are received before the date of payment."
-                />
-              </div>
+
               <div className="mb-3">
                 <Heading
                   size="h5"

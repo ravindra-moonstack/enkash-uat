@@ -77,6 +77,9 @@
     color: $color-white;
     font-size: 12px;
     font-weight: 500;
+    @include for-window-zoomed-screens {
+      top: 30%;
+    }
     @include for-laptops {
       font-size: 16.5px;
       padding-right: 30px;
@@ -99,6 +102,9 @@
     color: $color-black;
     font-size: 12px;
     font-weight: 500;
+    @include for-window-zoomed-screens {
+      top: 30%;
+    }
     @include for-laptops {
       font-size: 16.5px;
     }

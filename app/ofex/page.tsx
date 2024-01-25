@@ -31,7 +31,7 @@ import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title: "Automated AI Expense Management Software for your Business- EnKash",
+  title: "Automated Expense Management Software for your Business- EnKash",
   description:
     "EnKash automated expense management platform keeps track of budgets and ensures that spends are within limits. Automating expense management saves time & transparency.Book Demo Now !!",
   alternates: {

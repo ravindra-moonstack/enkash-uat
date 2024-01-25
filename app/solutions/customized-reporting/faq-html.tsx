@@ -25,15 +25,14 @@ const FAQHtml = ({ faqData }: any) => {
                   <Link href="https://www.enkash.com/" target="_blank">
                     EnKash's
                   </Link>{" "}
-                  EnKash's customized reporting feature supports the integration
-                  of data from multiple sources into a single report. This
-                  capability is invaluable for businesses that gather
-                  information from various platforms or departments, as it
-                  enables a holistic view of performance by consolidating
-                  diverse datasets into a unified report. This integration
-                  ensures that decision-makers have access to comprehensive and
-                  interconnected insights, fostering a more informed and
-                  strategic approach to business management.
+                  customized reporting feature supports the integration of data
+                  from multiple sources into a single report. This capability is
+                  invaluable for businesses that gather information from various
+                  platforms or departments, as it enables a holistic view of
+                  performance by consolidating diverse datasets into a unified
+                  report. This integration ensures that decision-makers have
+                  access to comprehensive and interconnected insights, fostering
+                  a more informed and strategic approach to business management.
                 </h4>
               </>
             ) : null

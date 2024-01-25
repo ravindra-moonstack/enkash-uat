@@ -47,22 +47,6 @@ const faqData = [
     ],
   },
   {
-    question: "What are the steps to open a virtual account?",
-    answer: [
-      {
-        bullets: [
-          "Both e-NACH and e-Mandate bring efficiency to payment processing in businesses",
-          "E-NACH has replaced the manual methods of authorization and e-Mandate has eliminated the need for paperwork, reducing workload",
-          "e-NACH ensures timely collection with predetermined schedules and removes the need to be involved manually",
-          "Both these automation processes have fastened the transaction processing enabling quicker cash flow",
-          "Customers can easily make recurring payments without any friction in the process",
-          "e-NACH and e-Mandate can be customized as per business requirements and can be scaled easily as the business grows without disrupting the payment processing",
-          "Transactions processed via e-NACH and e-Mandate are digitally encrypted which eliminates the risk of data violation",
-        ],
-      },
-    ],
-  },
-  {
     question: "How do I cancel my e-NACH mandate?",
     answer: [
       {

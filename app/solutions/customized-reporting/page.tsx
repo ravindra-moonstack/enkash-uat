@@ -179,14 +179,29 @@ const customizedReporting = () => {
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Report Generation"
+              whiteTitle="Report Generation"
               description="Effortlessly generate and download comprehensive reports from a centralized dashboard, ensuring offline access to vital information anytime"
               source=""
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Holistic Financial Insights"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Holistic"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Insights"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Monitor all invoices and spending, gaining a comprehensive overview with real-time and automated data refresh for informed decisions impacting cash flow"
               source=""
             />
