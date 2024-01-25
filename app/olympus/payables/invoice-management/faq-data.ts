@@ -14,17 +14,12 @@ const faqData = [
       {
         heading: "Top reasons to automate invoice processing:",
         bullets: [
-          "No manual entry: Automated invoice management eliminates the need for manual entry into accounting systems.",
-
-          "Easy verification: Accounting softwares verifies vendors and approves and rejects them based on the information provided. This helps in removing fraudulent cases.",
-
-          "Access to information: The data on invoices can be easily viewed anytime and anywhere.",
-
-          "Customized workflows: Businesses can define and customize their workflows as per their needs.",
-
-          "Enhanced visibility: The visibility of invoice management is improved with real-time data availability for decision-making.",
-
-          "Better vendor relationship management: The automation of invoices gives payment notifications and alerts ensuring vendor payments are done on time; improving relationships.",
+          "No manual entry: Automated invoice management eliminates the need for manual entry into accounting systems",
+          "Easy verification: Accounting softwares verifies vendors and approves and rejects them based on the information provided. This helps in removing fraudulent cases",
+          "Access to information: The data on invoices can be easily viewed anytime and anywhere",
+          "Customized workflows: Businesses can define and customize their workflows as per their needs",
+          "Enhanced visibility: The visibility of invoice management is improved with real-time data availability for decision-making",
+          "Better vendor relationship management: The automation of invoices gives payment notifications and alerts ensuring vendor payments are done on time; improving relationships",
         ],
       },
     ],

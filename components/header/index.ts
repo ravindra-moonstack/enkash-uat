@@ -54,6 +54,12 @@ export { default as quickCollect } from "./img/quick-collect.png";
 export { default as quickCollectFilled } from "./img/quick-collect-filled.png";
 export { default as virtualAccounts } from "./img/virtual-accounts.png";
 export { default as virtualAccountsFilled } from "./img/virtual-accounts-filled.png";
+export { default as collectionAnalytics } from "./img/collection-analytics.svg";
+export { default as collectionAnalyticsFilled } from "./img/collection-analytics-filled.svg";
+export { default as eNach } from "./img/e-nach.svg";
+export { default as eNachFilled } from "./img/e-nach-filled.svg";
+export { default as reminderEngine } from "./img/reminder-engine.png";
+export { default as reminderEngineFilled } from "./img/reminder-engine-filled.png";
 
 //paybles
 export { default as billPayments } from "./img/bill-payments.png";
@@ -72,6 +78,8 @@ export { default as payrollCards } from "./img/payroll-filled.png";
 export { default as payrollCardsFilled } from "./img/payroll-cards.png";
 export { default as invoiceManegement } from "./img/invoice-management.svg";
 export { default as invoiceManegementFilled } from "./img/invoice-management-filled.svg";
+export { default as seamlessBanking } from "./img/seamless-banking.svg";
+export { default as seamlessBankingFilled } from "./img/seamless-banking-filled.svg";
 
 //corporate-cards
 export { default as diyCard } from "./img/diy-card.png";

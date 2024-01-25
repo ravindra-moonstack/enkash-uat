@@ -21,6 +21,14 @@ import {
   payByAnyCardFilled,
   invoiceManegement,
   invoiceManegementFilled,
+  collectionAnalyticsFilled,
+  collectionAnalytics,
+  eNach,
+  eNachFilled,
+  seamlessBankingFilled,
+  seamlessBanking,
+  reminderEngineFilled,
+  reminderEngine,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -90,11 +98,18 @@ const olympusProducts = [
       },
       {
         name: "Vendor Management",
-        description:
-          "Onboard, verify, and manage all business vendors easily",
+        description: "Onboard, verify, and manage all business vendors easily",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
         link: "/olympus/payables/vendor-management",
+      },
+      {
+        name: "Seamless Banking",
+        description:
+          "Personalize digital banking services based on customer preferences",
+        imageSrc: seamlessBanking,
+        imageSrcHovered: seamlessBankingFilled,
+        link: "/olympus/payables/seamless-banking/",
       },
     ],
     footerText:
@@ -141,6 +156,30 @@ const olympusProducts = [
         imageSrc: invoices,
         imageSrcHovered: invoicesFilled,
         link: "/olympus/receivables/invoices",
+      },
+      {
+        name: "e-NACH",
+        description:
+          "Automate recurring payments and collections, ensuring efficient cash-flow management",
+        imageSrc: eNach,
+        imageSrcHovered: eNachFilled,
+        link: "/olympus/receivables/e-nach",
+      },
+      {
+        name: "Collection Analytics",
+        description:
+          "Analyze and enhance your collection process with smart analytics",
+        imageSrc: collectionAnalytics,
+        imageSrcHovered: collectionAnalyticsFilled,
+        link: "/olympus/receivables/collection-analytics",
+      },
+      {
+        name: "Reminder Engine",
+        description:
+          "Automate reminders for efficient collections and improve cash flow",
+        imageSrc: reminderEngine,
+        imageSrcHovered: reminderEngineFilled,
+        link: "/olympus/receivables/reminder-engine",
       },
     ],
     footerText:

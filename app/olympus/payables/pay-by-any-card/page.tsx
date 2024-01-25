@@ -183,7 +183,7 @@ const payByAnyCard = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Extended Credit Period"
-              description="Gain a credit period of up to 52 days*, allowing you to optimize your cash flow and manage expenses more efficiently"
+              description="Gain a credit period of up to 52 days†, allowing you to optimize your cash flow and manage expenses more efficiently"
               source="payables"
             />
           </div>
@@ -253,7 +253,7 @@ const payByAnyCard = () => {
         <div className="mt-5">
           <Heading
             size="h5"
-            title="(*Terms and conditions apply. The credit period is subject to approval and may vary based on individual banking arrangements.)"
+            title="(†Terms and conditions apply. The credit period is subject to approval and may vary based on individual banking arrangements.)"
             color="black"
           />
         </div>
@@ -359,12 +359,13 @@ const payByAnyCard = () => {
                     href="https://www.enkash.com/resources/blog/enable-payments-with-virtual-cards-for-business/"
                     target="_blank"
                   >
-                    credit card for payments
-                  </Link>
-                  , you ensure timely payment to your recipient, while delaying
+                    credit card for payments,
+                  </Link>{" "}
+                  you ensure timely payment to your recipient, while delaying
                   the actual cash outflow until your credit card bill's due
                   date. This strategy grants you an extended payment term of up
-                  to 52* days."
+                  to 52 days. The credit period is subject to approval and may
+                  vary based on individual banking arrangements.
                 </p>
               </div>
 

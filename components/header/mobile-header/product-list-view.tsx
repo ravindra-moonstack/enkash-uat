@@ -4,18 +4,21 @@ import { Fragment, useState } from "react";
 import SubProductListView from "./sub-product-list-view";
 import { forwardArrowBlue } from "..";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProductListViewProps {
   childProducts: any[];
   products: any[];
   setCurrentStep: (step: number) => void;
   currentStep: number;
+  signupUrl: any;
 }
 
 const ProductListView = ({
   products,
   childProducts,
   setCurrentStep,
+  signupUrl,
 }: ProductListViewProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   return (
@@ -65,9 +68,13 @@ const ProductListView = ({
             />
             <span className="mx-2"></span>
             <div>
-              <button className={`${styles.secondary_button} ${styles.active}`}>
-                Login
-              </button>
+              <Link href={signupUrl}>
+                <button
+                  className={`${styles.secondary_button} ${styles.active}`}
+                >
+                  Login
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -79,6 +86,7 @@ const ProductListView = ({
             setSelectedItemIndex={selectedItemIndex}
             products={childProducts[0]}
             setCurrentStep={setCurrentStep}
+            signupUrl={signupUrl}
           />
         </div>
       )}
@@ -88,6 +96,7 @@ const ProductListView = ({
           setSelectedItemIndex={selectedItemIndex}
           products={childProducts[1]}
           setCurrentStep={setCurrentStep}
+          signupUrl={signupUrl}
         />
       )}
 
@@ -96,6 +105,7 @@ const ProductListView = ({
           setSelectedItemIndex={selectedItemIndex}
           products={childProducts[2]}
           setCurrentStep={setCurrentStep}
+          signupUrl={signupUrl}
         />
       )}
       {selectedItemIndex === 3 && (
@@ -103,6 +113,7 @@ const ProductListView = ({
           setSelectedItemIndex={selectedItemIndex}
           products={childProducts[3]}
           setCurrentStep={setCurrentStep}
+          signupUrl={signupUrl}
         />
       )}
     </div>

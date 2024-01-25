@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-const mealCard = () => {
+const automatedReconcilation = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="" />
@@ -148,7 +148,7 @@ const mealCard = () => {
               oldWayDescription:
                 "Traditional methods may struggle to handle growing volumes of transactions, making scalability challenging.",
               newWayDescription:
-                "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. This scalability feature ensures that the reconciliation process remains robust even as business operations expand.",
+                "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency.",
             },
           ]}
         />
@@ -444,4 +444,4 @@ const mealCard = () => {
   );
 };
 
-export default mealCard;
+export default automatedReconcilation;

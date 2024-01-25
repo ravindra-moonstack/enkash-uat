@@ -43,23 +43,23 @@ const FAQHtml = ({ faqData }: any) => {
 
                 <h4 className="ms-2 mb-3">
                   - No manual entry: Automated invoice management eliminates the
-                  need for manual entry into accounting systems.{" "}
+                  need for manual entry into accounting systems{" "}
                 </h4>
 
                 <h4 className="ms-2 mb-3">
                   - Easy verification: Accounting softwares verifies vendors and
                   approves and rejects them based on the information provided.
-                  This helps in removing fraudulent cases.
+                  This helps in removing fraudulent cases
                 </h4>
 
                 <h4 className="ms-2 mb-3">
                   - Access to information: The data on invoices can be easily
-                  viewed anytime and anywhere.
+                  viewed anytime and anywhere
                 </h4>
 
                 <h4 className="ms-2 mb-3">
                   - Customized workflows: Businesses can define and customize
-                  their workflows as per their needs.
+                  their workflows as per their needs
                 </h4>
 
                 <h4 className="ms-2 mb-3">
@@ -71,31 +71,25 @@ const FAQHtml = ({ faqData }: any) => {
                     invoice management
                   </Link>{" "}
                   is improved with real-time data availability for
-                  decision-making.
+                  decision-making
                 </h4>
 
                 <h4 className="ms-2 mb-3">
                   - Better vendor relationship management: The automation of
                   invoices gives payment notifications and alerts ensuring
-                  vendor payments are done on time; improving relationships.
+                  vendor payments are done on time; improving relationships
                 </h4>
               </>
             ) : index === 2 ? (
               <>
                 {/* Your answerhtml content for index 2 */}
                 <h4>
-                  The quicker processing of invoices with the{" "}
-                  <Link
-                    href="https://www.enkash.com/olympus/receivables/"
-                    target="_blank"
-                  >
-                    automation software
-                  </Link>{" "}
-                  enables quicker payments. Businesses can make immediate
-                  payments for the invoices uploaded on the automation software.
-                  In fact, with EnKash bulk payments can also be made with a
-                  single click. These quick payments can also help avail early
-                  payment discounts enabling savings for the business.
+                  The quicker processing of invoices with the automation
+                  software enables quicker payments. Businesses can make
+                  immediate payments for the invoices uploaded on the automation
+                  software. In fact, with EnKash bulk payments can also be made
+                  with a single click. These quick payments can also help avail
+                  early payment discounts enabling savings for the business.
                 </h4>
               </>
             ) : index === 6 ? (

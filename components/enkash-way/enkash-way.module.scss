@@ -77,8 +77,12 @@
     color: $color-white;
     font-size: 12px;
     font-weight: 500;
+    @include for-window-zoomed-screens {
+      top: 27%;
+    }
     @include for-laptops {
-      font-size: 17px;
+      font-size: 16.5px;
+      padding-right: 30px;
     }
   }
 }
@@ -98,8 +102,11 @@
     color: $color-black;
     font-size: 12px;
     font-weight: 500;
+    @include for-window-zoomed-screens {
+      top: 27%;
+    }
     @include for-laptops {
-      font-size: 17px;
+      font-size: 16.5px;
     }
   }
 }

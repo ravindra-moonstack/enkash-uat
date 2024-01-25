@@ -4,7 +4,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "A vendor management system (VMS) is a centralized platform designed to streamline and optimize the management of vendors or suppliers. Our vendor management offers advanced features to centralize vendor data, automate verification processes, and provide real-time insights into spending patterns.",
+          "A Vendor Management System (VMS) is a centralized platform designed to streamline and optimize the management of vendors or suppliers. Our vendor management offers advanced features to centralize vendor data, automate verification processes, and provide real-time insights into spending patterns.",
         bullets: [],
       },
     ],

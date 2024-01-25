@@ -45,7 +45,12 @@ const invoiceManagement = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Invoice Management" size="h4" weight="4" useH1TagInHtml={true}/>
+            <Heading
+              title="Invoice Management"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="d-flex flex-column">
@@ -218,7 +223,7 @@ const invoiceManagement = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Simplified Tracking & Monitoring"
+              whiteTitle="Tracking & Monitoring"
               description="With digital invoices, one can easily track and monitor details of each vendor payment making the process more efficient and advanced"
               source="payables"
             />
@@ -267,7 +272,7 @@ const invoiceManagement = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about invoice management in detail."
+            title="Don't worry! Our FAQs section will help you learn about invoice management in detail"
             color="black"
             size="h4"
           />
@@ -284,7 +289,7 @@ const invoiceManagement = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking Further Understanding about Invoice Management?"
+          title="Seeking further understanding about invoice management?"
           description="Invoice management is the process in which businesses receive an invoice from a vendor from whom they have availed any goods or services, validate the legitimacy of the invoice, pay the vendor, and record the payment in their accounts for reconciliation."
           source="payables"
         />
