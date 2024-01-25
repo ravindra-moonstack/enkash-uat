@@ -154,7 +154,7 @@ const workflowManagement = () => {
             {
               itemArray: ["Collaboration"],
               oldWayDescription:
-                "Payment approvals were often delayed due to prolonged communication lines and multiple decision-makers. Restricted accessibility to approval flows, particularly beyond the office, impeding collaboration among remote team members.",
+                "Payment approvals were delayed due to prolonged communication and multiple decision-makers. Restricted accessibility to approval flows, particularly beyond the office, impeding collaboration among remote team members.",
               newWayDescription:
                 "Easily automate the routing of invoices to designated checkers. Utilizing a user-friendly dashboard, makers, and checkers can conveniently create, review, and approve payments, promoting collaboration across remote teams.",
             },

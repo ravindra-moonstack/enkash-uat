@@ -148,7 +148,7 @@ const seamlessBanking = () => {
             weight="6"
           />
           <Heading
-            title={`${space} got smoother & simplified${space}`}
+            title={`${space}got smoother & simplified${space}`}
             color="equity-blue"
             size="h1"
             weight="6"

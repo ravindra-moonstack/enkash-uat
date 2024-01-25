@@ -139,7 +139,7 @@ const collectionAnalytics = () => {
               oldWayDescription:
                 "Earlier, DSO management was often a challenging task due to the lack of real-time data and manual processes. This resulted in delayed identification of overdue payments and hindered the optimization of cash flow.",
               newWayDescription:
-                "Get up-to-the-minute tracking of payment statuses, and implement proactive strategies for reducing DSO. By leveraging real-time insights, EnKash empowers organizations to enhance their collection efforts, and maintain a healthier cash flow position.",
+                "Get up-to-the-minute tracking of payment statuses, and implement proactive strategies for reducing DSO. By leveraging real-time insights, EnKash enables organizations to maintain a healthier cash flow position.",
             },
             {
               itemArray: ["Real-Time", "Insights"],

@@ -124,7 +124,7 @@ const reminderEngine = () => {
             {
               itemArray: ["Instant", "Collection"],
               oldWayDescription:
-                "The conventional way of collection leads to delays and ultimately affects the cash flow of the business.",
+                "The conventional way of collection led to delays and ultimately affects the cash flow of the business.",
               newWayDescription:
                 "Businesses can embed payment links within the reminder engine channel and collections can be done instantly.",
             },

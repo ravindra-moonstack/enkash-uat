@@ -206,7 +206,22 @@ const eNach = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Cost Savings"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Cost"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Savings"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="It helps eliminate variable costs required for follow-ups, invoicing, operations, etc"
               source="receivables"
             />

@@ -366,12 +366,12 @@ const vendorManagement = () => {
                     >
                       Automate vendor verification
                     </Link>{" "}
-                    through eKYC to minimize the risk of fraudulent activity.
+                    through eKYC to minimize the risk of fraudulent activity
                   </li>
                   <li>
                     Stronger Vendor Relationships: Improve communication and
                     collaboration with vendors through integrated dashboards and
-                    shared updates, fostering trust and transparency.
+                    shared updates, fostering trust and transparency
                   </li>
                 </ul>
               </div>

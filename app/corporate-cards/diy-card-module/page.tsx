@@ -220,8 +220,8 @@ const diyCardModule = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Integration"
-              description="Seamless Integration Easily sync up with your existing accounting softwares like Tally, Zoho, etc"
+              whiteTitle="Seamless Integration"
+              description="Easily sync up with your existing accounting softwares like Tally, Zoho, etc"
               source="corporate_cards"
             />
           </div>

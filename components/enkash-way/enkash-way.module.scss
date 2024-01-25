@@ -78,7 +78,7 @@
     font-size: 12px;
     font-weight: 500;
     @include for-window-zoomed-screens {
-      top: 30%;
+      top: 27%;
     }
     @include for-laptops {
       font-size: 16.5px;
@@ -103,7 +103,7 @@
     font-size: 12px;
     font-weight: 500;
     @include for-window-zoomed-screens {
-      top: 30%;
+      top: 27%;
     }
     @include for-laptops {
       font-size: 16.5px;
