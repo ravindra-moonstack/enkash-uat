@@ -8,6 +8,7 @@ import { footerArrow, forwardArrowBlue } from "..";
 const SubProductListView = (props: {
   setSelectedItemIndex: any;
   products: any;
+  signupUrl: any;
   setCurrentStep: (step: number) => void; // Receive this prop
 }) => {
   const [activeSubtitleIndex, setActiveSubtitleIndex] = useState(0);
@@ -136,9 +137,11 @@ const SubProductListView = (props: {
           />
           <span className="mx-2"></span>
           <div>
-            <button className={`${styles.secondary_button} ${styles.active}`}>
-              Login
-            </button>
+            <Link href={props.signupUrl}>
+              <button className={`${styles.secondary_button} ${styles.active}`}>
+                Login
+              </button>
+            </Link>
           </div>
         </div>
       </div>

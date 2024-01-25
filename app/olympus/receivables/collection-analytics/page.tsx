@@ -137,9 +137,9 @@ const collectionAnalytics = () => {
             {
               itemArray: ["DSO", "Management"],
               oldWayDescription:
-                "In the traditional approach, Days Sales Outstanding (DSO) management was often a challenging task due to the lack of real-time data and manual processes. This resulted in delayed identification of overdue payments and hindered the optimization of cash flow.",
+                "Earlier, DSO management was often a challenging task due to the lack of real-time data and manual processes. This resulted in delayed identification of overdue payments and hindered the optimization of cash flow.",
               newWayDescription:
-                "EnKash revolutionizes DSO management by offering dynamic and up-to-the-minute tracking of payment statuses, allowing businesses to implement proactive strategies for reducing DSO. By leveraging real-time insights, EnKash empowers organizations to enhance their collection efforts, minimize outstanding receivables, and maintain a healthier cash flow position.",
+                "Get up-to-the-minute tracking of payment statuses, and implement proactive strategies for reducing DSO. By leveraging real-time insights, EnKash empowers organizations to enhance their collection efforts, and maintain a healthier cash flow position.",
             },
             {
               itemArray: ["Real-Time", "Insights"],
@@ -211,7 +211,7 @@ const collectionAnalytics = () => {
                   />
                 </div>
               }
-              description="Measure and manage Days Sales Outstanding (DSO) efficiently to gain insights into the average time it takes to collect payments. Improve your receivables management with a clear understanding of payment cycle trends, helping you optimize your cash flow further."
+              description="Measure and manage Days Sales Outstanding (DSO) efficiently to gain insights into the average time it takes to collect payments. Improve your receivables management with a clear understanding of payment cycle trends, helping you optimize your cash flow further"
               source="receivables"
             />
           </div>
@@ -277,7 +277,7 @@ const collectionAnalytics = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of collection analytics?"
-          description="Collection Analytics involves leveraging data analysis techniques to enhance debt collection processes. It utilizes historical data to predict and manage customer payment behavior, ultimately benefiting businesses by improving efficiency and cash flow."
+          description="Collection analytics involves leveraging data analysis techniques to enhance debt collection processes. It utilizes historical data to predict and manage customer payment behavior, ultimately benefiting businesses by improving efficiency and cash flow."
           source="receivables"
         />
       </div>
@@ -356,7 +356,7 @@ const collectionAnalytics = () => {
                   it takes for a company to collect payments from its customers.
                   A lower DSO indicates that a business is efficient in{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/recievables/"
+                    href="https://www.enkash.com/olympus/receivables/"
                     target="_blank"
                   >
                     collecting receivables,

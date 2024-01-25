@@ -43,23 +43,23 @@ const FAQHtml = ({ faqData }: any) => {
 
                 <h4 className="ms-2 mb-3">
                   - No manual entry: Automated invoice management eliminates the
-                  need for manual entry into accounting systems.{" "}
+                  need for manual entry into accounting systems{" "}
                 </h4>
 
                 <h4 className="ms-2 mb-3">
                   - Easy verification: Accounting softwares verifies vendors and
                   approves and rejects them based on the information provided.
-                  This helps in removing fraudulent cases.
+                  This helps in removing fraudulent cases
                 </h4>
 
                 <h4 className="ms-2 mb-3">
                   - Access to information: The data on invoices can be easily
-                  viewed anytime and anywhere.
+                  viewed anytime and anywhere
                 </h4>
 
                 <h4 className="ms-2 mb-3">
                   - Customized workflows: Businesses can define and customize
-                  their workflows as per their needs.
+                  their workflows as per their needs
                 </h4>
 
                 <h4 className="ms-2 mb-3">
@@ -71,13 +71,13 @@ const FAQHtml = ({ faqData }: any) => {
                     invoice management
                   </Link>{" "}
                   is improved with real-time data availability for
-                  decision-making.
+                  decision-making
                 </h4>
 
                 <h4 className="ms-2 mb-3">
                   - Better vendor relationship management: The automation of
                   invoices gives payment notifications and alerts ensuring
-                  vendor payments are done on time; improving relationships.
+                  vendor payments are done on time; improving relationships
                 </h4>
               </>
             ) : index === 2 ? (

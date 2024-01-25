@@ -148,7 +148,7 @@ const automatedReconcilation = () => {
               oldWayDescription:
                 "Traditional methods may struggle to handle growing volumes of transactions, making scalability challenging.",
               newWayDescription:
-                "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. This scalability feature ensures that the reconciliation process remains robust even as business operations expand.",
+                "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency",
             },
           ]}
         />

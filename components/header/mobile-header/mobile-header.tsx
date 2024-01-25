@@ -146,6 +146,7 @@ const MobileHeader = ({ utmSource }: any) => {
             }
             setCurrentStep={setCurrentStep}
             currentStep={currentStep}
+            signupUrl={signupUrl}
           />
         )}
       </div>

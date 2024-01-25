@@ -221,7 +221,7 @@ const diyCardModule = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Integration"
-              description="Seamless Integration with accounting softwares like Tally, Zoho, etc"
+              description="Seamless Integration Easily sync up with your existing accounting softwares like Tally, Zoho, etc"
               source="corporate_cards"
             />
           </div>
@@ -345,7 +345,7 @@ const diyCardModule = () => {
                   <li>Subscribe to MS Office, Adobe, JIRA and CRM</li>
                   <li>Spends on Google, Facebook, LinkedIn, etc</li>
                   <li>Utility, broadband & communication bills</li>
-                  <li>POS and ATM transactions.</li>
+                  <li>POS and ATM transactions</li>
                 </ul>
               </div>
 

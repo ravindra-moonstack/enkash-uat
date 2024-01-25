@@ -2,7 +2,7 @@ export const solutions = [
   {
     name: "Automated Reconciliation",
     description:
-      "Motivate your finance team to upgrade their skills by  automating tasks like reconciliation",
+      "Automatically match and reconcile your business financial transactions easily",
     link: "/solutions/automated-reconciliation",
   },
   {

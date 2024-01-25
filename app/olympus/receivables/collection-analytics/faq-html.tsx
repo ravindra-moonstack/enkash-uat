@@ -25,7 +25,7 @@ const FAQHtml = ({ faqData }: any) => {
                   data and can gain insights into patterns, trends, and
                   potential risks related to{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/recievables/"
+                    href="https://www.enkash.com/olympus/receivables/"
                     target="_blank"
                   >
                     business accounts receivable
@@ -65,10 +65,10 @@ const FAQHtml = ({ faqData }: any) => {
                   daily sales. It is a key indicator of a company's efficiency
                   in managing its{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/recievables/"
+                    href="https://www.enkash.com/olympus/receivables/"
                     target="_blank"
                   >
-                    paccounts receivable
+                    accounts receivable
                   </Link>{" "}
                   and collecting payments from customers.
                 </h4>

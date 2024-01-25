@@ -85,15 +85,7 @@ const faqData = [
       },
     ],
   },
-  // {
-  //   question: "What is the difference between bulk and batch payments?",
-  //   answer: [
-  //     {
-  //       heading:
-  //         "A bulk payment file has multiple instructions of different types, whereas a batch payment file has multiple instructions of the same type as they are categorized together. The major difference between the two is that you can have multiple batches in bulk, but you cannot have multiple bulks in a batch.",
-  //     },
-  //   ],
-  // },
+
   {
     question: "What is a bulk faster payment?",
     answer: [

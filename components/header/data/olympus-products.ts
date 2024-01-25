@@ -106,7 +106,7 @@ const olympusProducts = [
       {
         name: "Seamless Banking",
         description:
-          "Pay & manage your office/home rent directly into your landlord’s bank",
+          "Personalize digital banking services based on customer preferences",
         imageSrc: seamlessBanking,
         imageSrcHovered: seamlessBankingFilled,
         link: "/olympus/payables/seamless-banking/",
@@ -160,7 +160,7 @@ const olympusProducts = [
       {
         name: "e-NACH",
         description:
-          "Manage invoices with complete details with quicker payment options",
+          "Automate recurring payments and collections, ensuring efficient cash-flow management",
         imageSrc: eNach,
         imageSrcHovered: eNachFilled,
         link: "/olympus/receivables/e-nach",
@@ -168,7 +168,7 @@ const olympusProducts = [
       {
         name: "Collection Analytics",
         description:
-          "Manage invoices with complete details with quicker payment options",
+          "Analyze and enhance your collection process with smart analytics",
         imageSrc: collectionAnalytics,
         imageSrcHovered: collectionAnalyticsFilled,
         link: "/olympus/receivables/collection-analytics",

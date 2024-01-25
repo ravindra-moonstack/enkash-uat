@@ -184,7 +184,7 @@ const eNach = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Simplifies Recurring Payments"
+              whiteTitle="Streamlines Payments"
               description="It automates recurring payments and collections and simplifies business processes"
               source="receivables"
             />
@@ -206,7 +206,7 @@ const eNach = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Saves Operational Costs"
+              whiteTitle="Cost Savings"
               description="It helps eliminate variable costs required for follow-ups, invoicing, operations, etc"
               source="receivables"
             />
@@ -272,7 +272,7 @@ const eNach = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about e-Nach in detail."
+            title="Don't worry! Our FAQs section will help you learn about e-Nach in detail"
             color="black"
             size="h4"
           />

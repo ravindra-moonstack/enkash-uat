@@ -51,18 +51,18 @@ const seamlessBanking = () => {
 
           <div className="d-flex flex-column">
             <Heading
-              title="Leverage Business"
+              title="Leverage business"
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title="Banking With Your"
+              title="banking with your"
               color="white"
               size="h2"
               weight="7"
             />
-            <Heading title="Existing Bank" color="white" size="h2" weight="7" />
+            <Heading title="existing Bank" color="white" size="h2" weight="7" />
           </div>
 
           <div className="d-flex mt-4 pe-5">
@@ -142,19 +142,19 @@ const seamlessBanking = () => {
       >
         <div className="d-inline text-center mb-2">
           <Heading
-            title="Business Banking Just"
+            title="Business banking just"
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space} Got Smoother & Simplified${space}`}
+            title={`${space} got smoother & simplified${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title="With Greater Visibility & Security"
+            title="with greater visibility & security"
             color="black"
             size="h1"
             weight="6"
@@ -165,14 +165,14 @@ const seamlessBanking = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customization"
+              whiteTitle="Customize As Per Need"
               description="Businesses can define a customized logic for decentralized payments as per their requirements"
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Visibility"
+              whiteTitle="Visibility & Tracking"
               description="It becomes easier for businesses to have clear visibility of all their transactions on a single dashboard. This facilitates data-based decision-making and avoids overspending"
               source="payables"
             />
@@ -186,7 +186,22 @@ const seamlessBanking = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Define Limits"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Define"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Limits"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
               description="Businesses can define velocity control by defining a limit for the amount to be used and also set approval limits"
               source="payables"
             />
@@ -257,7 +272,7 @@ const seamlessBanking = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about seamless banking in detail."
+            title="Don't worry! Our FAQs section will help you learn about seamless banking in detail"
             color="black"
             size="h4"
           />
@@ -298,7 +313,10 @@ const seamlessBanking = () => {
                   payments from their respective department vendors and
                   customers is what makes a decentralized accounting system. The
                   automation leading the system facilitates{" "}
-                  <Link href="https://www.enkash.com/" target="_blank">
+                  <Link
+                    href="https://www.enkash.com/olympus/receivables/invoices/"
+                    target="_blank"
+                  >
                     invoice uploading,
                   </Link>{" "}
                   data collection, and reconciliation with enhanced visibility
@@ -331,7 +349,7 @@ const seamlessBanking = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="How EnKash seamless payment solutions benefit small businesses?"
+                  title="How does EnKash’s seamless payment solutions benefits small businesses?"
                 />
               </div>
               <div className="mb-5">

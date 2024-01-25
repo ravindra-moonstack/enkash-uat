@@ -27,17 +27,17 @@ const faqData = [
       {
         heading: "To apply for this solution, follow these steps:",
         bullets: [
-          "Create an EnKash account by completing a simple registration process and verify your account with KYC details.",
-          "Choose the type of business entity: Sole Proprietorship, Partnership, Private Limited Company, Public Limited Company, or others.",
+          "Create an EnKash account by completing a simple registration process and verify your account with KYC details",
+          "Choose the type of business entity: Sole Proprietorship, Partnership, Private Limited Company, Public Limited Company, or others",
         ],
       },
       {
         heading: "Provide the following documents:",
         bullets: [
-          "Sole Proprietorship: Business financial statements for the past two years, along with owner's credentials.",
-          "Partnership: Business financial statements for the past two years and personal financial statements of the partners.",
-          "Private Limited Company: Business financial statements for the past two years and finances of the directors.",
-          "Public Limited Company: Audited financial statements for the past two years, details of the company structure, and board of directors.",
+          "Sole Proprietorship: Business financial statements for the past two years, along with owner's credentials",
+          "Partnership: Business financial statements for the past two years and personal financial statements of the partners",
+          "Private Limited Company: Business financial statements for the past two years and finances of the directors",
+          "Public Limited Company: Audited financial statements for the past two years, details of the company structure, and board of directors",
         ],
       },
       {

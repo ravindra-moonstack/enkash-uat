@@ -214,7 +214,7 @@ const vendorManagement = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Advances"
+                    title="Advance Payments"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -330,7 +330,7 @@ const vendorManagement = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the benefits of a Vendor Management System?"
+                  title="What are the benefits of a vendor management system?"
                 />
               </div>
               <div className="mb-3">
@@ -346,17 +346,17 @@ const vendorManagement = () => {
                   <li>
                     Streamlined Operations: EnKash centralizes vendor data,
                     onboarding, invoicing, and payments, eliminating manual
-                    processes and saving time.
+                    processes and saving time
                   </li>
                   <li>
                     Improved Cost Efficiency: Gain real-time insights into
                     spending patterns, and identify discounts and early payment
-                    opportunities.
+                    opportunities
                   </li>
                   <li>
                     Enhanced Transparency and Compliance: Ensure accuracy and
                     consistency in vendor data, and maintain complete audit
-                    trails.
+                    trails
                   </li>
                   <li>
                     Reduced Risks and Fraud:{" "}
