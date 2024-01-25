@@ -31,7 +31,7 @@ const faqData = [
       {
         bullets: [
           "Login to EnKash",
-          "Go to the Collect Payments tab",
+          "Go to the collect payments tab",
           "If the customer is new, define the journey by first registering ",
           "Following that, configure the reminder engine. This will automatically send reminders to the customer as per the defined timeline and channel selected ",
           "If the invoice is already in the system, select it and send a reminder to the customer from the dashboard",

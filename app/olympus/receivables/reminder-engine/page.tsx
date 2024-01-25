@@ -124,7 +124,7 @@ const reminderEngine = () => {
             {
               itemArray: ["Instant", "Collection"],
               oldWayDescription:
-                "The conventional way of collection allows delay and work as per convenience.",
+                "The conventional way of collection leads to delays and ultimately affects the cash flow of the business.",
               newWayDescription:
                 "Businesses can embed payment links within the reminder engine channel and collections can be done instantly.",
             },
@@ -211,7 +211,7 @@ const reminderEngine = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Multiple Reminders at Once"
+              whiteTitle="Multiple Reminders"
               source="receivables"
               description="With invoice reminders, businesses can select and dispatch multiple reminders using a single click at the same time. This helps save time and hassle of sending individual reminders"
             />
