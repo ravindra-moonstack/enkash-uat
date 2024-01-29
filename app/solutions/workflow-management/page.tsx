@@ -110,8 +110,8 @@ const workflowManagement = () => {
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
-            <Image src={banner} alt="workflow image" />
-            {/* <LottieClientComponent animationData={bannerLottie} loop={true} /> */}
+            {/* <Image src={banner} alt="workflow image" /> */}
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
         <div className={styles.three_step_container}>
