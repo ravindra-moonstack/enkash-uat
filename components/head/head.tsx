@@ -46,7 +46,7 @@ const Head = () => {
       />
       <meta
         property="og:image"
-        content="https://www.enkash.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fteam-img.93be91fd.png&w=1920&q=75"
+        content="https://www.enkash.com/og-image.png"
       />
 
       {/* <!-- Twitter Meta Tags --> */}
@@ -63,7 +63,7 @@ const Head = () => {
       />
       <meta
         name="twitter:image"
-        content="https://www.enkash.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fteam-img.93be91fd.png&w=1920&q=75"
+        content="https://www.enkash.com/og-image.png"
       />
 
       {/* <!-- Meta Tags Generated via https://www.opengraph.xyz --> */}
