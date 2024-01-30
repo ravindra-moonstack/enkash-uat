@@ -25,52 +25,48 @@ const Head = () => {
           </Script>
         </>
       )}
-      {/* Twitter */}
-      {/* <meta content="summary" property="twitter:card" />
-      <meta
-        content="EnKash - The Ultimate Platform for Businesses"
-        property="twitter:title"
-      />
-      <meta
-        content="EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more."
-        property="twitter:description"
-      />
-      <meta content="@EnkashBusiness" property="twitter:site" />
-      <meta content="@EnkashBusiness" property="twitter:creator" />
-      <meta
-        content="https://www.enkash.com/enkash-logo.png"
-        name="twitter:image:src"
-      /> */}
 
-      {/* Facebook and Others */}
-      {/* <meta
-        content="EnKash - The Ultimate Platform for Businesses"
-        property="og:title"
-      />
+      {/* <!-- HTML Meta Tags --> */}
+      <title>EnKash - The Ultimate Platform for Businesses</title>
       <meta
+        name="description"
         content="EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more."
-        property="og:description"
       />
+
+      {/* <!-- Facebook Meta Tags --> */}
+      <meta property="og:url" content="https://www.enkash.com/" />
+      <meta property="og:type" content="website" />
       <meta
-        name="image"
-        property="og:image"
-        content="https://www.enkash.com/enkash-logo.png"
-      />
-      <meta content="https://www.enkash.com/{{urlPath}}" property="og:url" />
-      <meta
+        property="og:title"
         content="EnKash - The Ultimate Platform for Businesses"
-        property="og:site_name"
       />
-      <meta content="website" property="og:type" />
       <meta
-        content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        name="viewport"
+        property="og:description"
+        content="EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more."
       />
-      <meta content="#ffffff" name="theme-color" />
       <meta
-        name="facebook-domain-verification"
-        content="4ddju6t091u1tktgqszeltsh8guiq5"
-      /> */}
+        property="og:image"
+        content="https://www.enkash.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fteam-img.93be91fd.png&w=1920&q=75"
+      />
+
+      {/* <!-- Twitter Meta Tags --> */}
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta property="twitter:domain" content="enkash.com" />
+      <meta property="twitter:url" content="https://www.enkash.com/" />
+      <meta
+        name="twitter:title"
+        content="EnKash - The Ultimate Platform for Businesses"
+      />
+      <meta
+        name="twitter:description"
+        content="EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more."
+      />
+      <meta
+        name="twitter:image"
+        content="https://www.enkash.com/_next/image/?url=%2F_next%2Fstatic%2Fmedia%2Fteam-img.93be91fd.png&w=1920&q=75"
+      />
+
+      {/* <!-- Meta Tags Generated via https://www.opengraph.xyz --> */}
     </head>
   );
 };
