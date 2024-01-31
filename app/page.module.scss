@@ -390,7 +390,11 @@
 
 .fourth_row {
   padding-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 65px;
+
+  @include for-laptops {
+    padding-bottom: 100px;
+  }
   overflow: hidden;
   width: auto;
   position: relative;

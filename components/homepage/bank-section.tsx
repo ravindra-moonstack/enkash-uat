@@ -4,7 +4,7 @@ import Heading from "@/components/heading/heading";
 import React, { SetStateAction, useState } from "react";
 import Image from "next/image";
 import styles from "@/app/page.module.scss";
-import { Marquee } from "dynamic-marquee-react";
+import Marquee from "react-fast-marquee";
 
 import {
   axisBankLogo,
@@ -97,133 +97,7 @@ const BankSection = () => {
           </div>
         </div>
 
-        <div className={styles.marquee_box}>
-          <div id="marquee">
-            <Marquee rate={-100} startOnScreen={true}>
-              <div
-                className={`${styles.bank_logo} ${styles.customer_logo}
-              d-flex align-items-center justify-content-between mt-3`}
-              >
-                {selectedTab === "partners" && (
-                  <Image
-                    className={styles.axis}
-                    src={axisBankLogo}
-                    alt="axis bank logo"
-                  />
-                )}
-
-                {selectedTab === "partners" && (
-                  <Image
-                    className={styles.icici}
-                    src={iciciBankLogo}
-                    alt="icici bank logo"
-                  />
-                )}
-                {selectedTab === "partners" && (
-                  <Image
-                    className={styles.visa}
-                    src={visaLogo}
-                    alt="visa bank logo"
-                  />
-                )}
-                {selectedTab === "partners" && (
-                  <Image
-                    className={styles.kotak}
-                    src={kotakLogo}
-                    alt="kotak bank logo"
-                  />
-                )}
-                {selectedTab === "partners" && (
-                  <Image
-                    className={styles.hdfc}
-                    src={hdfcLogo}
-                    alt="hdfc bank logo"
-                  />
-                )}
-                {selectedTab === "partners" && (
-                  <Image
-                    className={styles.au}
-                    src={auBankLogo}
-                    alt="au bank logo"
-                  />
-                )}
-                {selectedTab === "partners" && (
-                  <Image
-                    className={styles.rupay}
-                    src={rupayLogo}
-                    alt="rupay bank logo"
-                  />
-                )}
-                {selectedTab === "partners" && (
-                  <Image
-                    className={styles.master}
-                    src={masterCardLogo}
-                    alt="master card logo"
-                  />
-                )}
-
-                {selectedTab === "customers" && (
-                  <Image
-                    className={styles.everest}
-                    src={everestLogo}
-                    alt="everest logo"
-                  />
-                )}
-                {selectedTab === "customers" && (
-                  <Image
-                    className={styles.cure}
-                    src={cureFoodsLogo}
-                    alt="cure food logo"
-                  />
-                )}
-                {selectedTab === "customers" && (
-                  <Image
-                    className={styles.infra}
-                    src={infraMarketLogo}
-                    alt="infra market logo"
-                  />
-                )}
-                {selectedTab === "customers" && (
-                  <Image
-                    className={styles.dtdc}
-                    src={dtdcLogo}
-                    alt="dtdc logo"
-                  />
-                )}
-                {selectedTab === "customers" && (
-                  <Image
-                    className={styles.pristyn}
-                    src={pristynCareLogo}
-                    alt="pristyn care logo"
-                  />
-                )}
-                {selectedTab === "customers" && (
-                  <Image
-                    className={styles.box}
-                    src={box8Logo}
-                    alt="box8 logo"
-                  />
-                )}
-                {selectedTab === "customers" && (
-                  <Image
-                    className={styles.reliance}
-                    src={relianceRetail}
-                    alt="reliance retail cry logo"
-                  />
-                )}
-                {selectedTab === "customers" && (
-                  <Image
-                    className={styles.starbucks}
-                    src={starBucksLogo}
-                    alt="star bucks logo"
-                  />
-                )}
-              </div>
-            </Marquee>
-          </div>
-        </div>
-
-        <div className={styles.marquee_box_mobile}>
+        <div className="mobile-only">
           <div>
             <div
               className={`${styles.bank_logo} ${styles.customer_logo}
@@ -335,6 +209,133 @@ const BankSection = () => {
                   alt="star bucks logo"
                 />
               )}
+            </div>
+          </div>
+        </div>
+        <div className="desktop-only">
+          <div className={styles.marquee_box}>
+            <div id="marquee">
+              <Marquee speed={80}>
+                <div
+                  className={`${styles.bank_logo} ${styles.customer_logo}
+              d-flex align-items-center justify-content-between mt-3`}
+                >
+                  {selectedTab === "partners" && (
+                    <Image
+                      className={styles.axis}
+                      src={axisBankLogo}
+                      alt="axis bank logo"
+                    />
+                  )}
+
+                  {selectedTab === "partners" && (
+                    <Image
+                      className={styles.icici}
+                      src={iciciBankLogo}
+                      alt="icici bank logo"
+                    />
+                  )}
+                  {selectedTab === "partners" && (
+                    <Image
+                      className={styles.visa}
+                      src={visaLogo}
+                      alt="visa bank logo"
+                    />
+                  )}
+                  {selectedTab === "partners" && (
+                    <Image
+                      className={styles.kotak}
+                      src={kotakLogo}
+                      alt="kotak bank logo"
+                    />
+                  )}
+                  {selectedTab === "partners" && (
+                    <Image
+                      className={styles.hdfc}
+                      src={hdfcLogo}
+                      alt="hdfc bank logo"
+                    />
+                  )}
+                  {selectedTab === "partners" && (
+                    <Image
+                      className={styles.au}
+                      src={auBankLogo}
+                      alt="au bank logo"
+                    />
+                  )}
+                  {selectedTab === "partners" && (
+                    <Image
+                      className={styles.rupay}
+                      src={rupayLogo}
+                      alt="rupay bank logo"
+                    />
+                  )}
+                  {selectedTab === "partners" && (
+                    <Image
+                      className={styles.master}
+                      src={masterCardLogo}
+                      alt="master card logo"
+                    />
+                  )}
+
+                  {selectedTab === "customers" && (
+                    <Image
+                      className={styles.everest}
+                      src={everestLogo}
+                      alt="everest logo"
+                    />
+                  )}
+                  {selectedTab === "customers" && (
+                    <Image
+                      className={styles.cure}
+                      src={cureFoodsLogo}
+                      alt="cure food logo"
+                    />
+                  )}
+                  {selectedTab === "customers" && (
+                    <Image
+                      className={styles.infra}
+                      src={infraMarketLogo}
+                      alt="infra market logo"
+                    />
+                  )}
+                  {selectedTab === "customers" && (
+                    <Image
+                      className={styles.dtdc}
+                      src={dtdcLogo}
+                      alt="dtdc logo"
+                    />
+                  )}
+                  {selectedTab === "customers" && (
+                    <Image
+                      className={styles.pristyn}
+                      src={pristynCareLogo}
+                      alt="pristyn care logo"
+                    />
+                  )}
+                  {selectedTab === "customers" && (
+                    <Image
+                      className={styles.box}
+                      src={box8Logo}
+                      alt="box8 logo"
+                    />
+                  )}
+                  {selectedTab === "customers" && (
+                    <Image
+                      className={styles.reliance}
+                      src={relianceRetail}
+                      alt="reliance retail cry logo"
+                    />
+                  )}
+                  {selectedTab === "customers" && (
+                    <Image
+                      className={styles.starbucks}
+                      src={starBucksLogo}
+                      alt="star bucks logo"
+                    />
+                  )}
+                </div>
+              </Marquee>
             </div>
           </div>
         </div>
