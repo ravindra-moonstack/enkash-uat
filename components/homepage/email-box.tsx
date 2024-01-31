@@ -26,7 +26,7 @@ const EmailBox = () => {
 
   return (
     <div className="col-12 d-flex justify-content-center align-items-center">
-      <div className={`${styles.email_box} ${isError ? styles.error : ""}`}>
+      <div className={`${styles.email_box} ${isError ? styles.shake : ""}`}>
         <div className="w-50 d-flex align-items-center">
           <input
             type="text"

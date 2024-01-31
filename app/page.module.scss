@@ -228,8 +228,25 @@
       color: $color-white;
     }
   }
-  .error {
-    border: 2px solid red;
+
+  .shake {
+    animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 0.5em red;
+  }
+
+  @keyframes shake {
+    0% {
+      margin-left: 0rem;
+    }
+    25% {
+      margin-left: 1rem;
+    }
+    75% {
+      margin-left: -1rem;
+    }
+    100% {
+      margin-left: 0rem;
+    }
   }
 
   .steps {
@@ -414,7 +431,17 @@
     }
   }
 
+  .marquee_box_mobile {
+    @include for-laptops {
+      display: none;
+    }
+  }
+
   .marquee_box {
+    display: none;
+    @include for-laptops {
+      display: block;
+    }
     filter: grayscale(1);
     cursor: pointer;
     &:hover {
