@@ -20,6 +20,7 @@
     height: auto;
     margin-top: 50px;
     @include for-laptops {
+      margin-top: 80px;
       width: 500px;
       height: auto;
     }

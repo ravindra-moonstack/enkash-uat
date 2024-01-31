@@ -46,7 +46,12 @@ const bulkPayout = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Express Pay" size="h4" weight="4" useH1TagInHtml={true}/>
+            <Heading
+              title="Express Pay"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <Heading
             title={`Fast and secure${space}`}
@@ -92,7 +97,7 @@ const bulkPayout = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=payables"
@@ -294,7 +299,6 @@ const bulkPayout = () => {
           title="Seeking further understanding of express pay?"
           description="A system that enables organizations or individuals to make payments to multiple beneficiaries at the same time is called bulk payment."
           source="payables"
-
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

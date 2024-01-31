@@ -92,7 +92,7 @@ const offers = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=Loyalty_lounge"
@@ -101,7 +101,9 @@ const offers = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <LottieClientComponent animationData={bannerLottie} loop={true} />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />

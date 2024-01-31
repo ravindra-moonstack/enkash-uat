@@ -52,7 +52,12 @@ const receivables = () => {
               size="h1"
               weight="7"
             />
-            <Heading title={`${space}Receivables`} size="h1" weight="7" useH1TagInHtml={true}/>
+            <Heading
+              title={`${space}Receivables`}
+              size="h1"
+              weight="7"
+              useH1TagInHtml={true}
+            />
             <sup className="sup-symbol-large">#</sup>
           </div>
           <div className="d-flex flex-column">
@@ -103,7 +108,7 @@ const receivables = () => {
             />
             <span className="mx-2"></span>
             <SecondryButton
-              title="Book a Demo"
+              title="Get Free Demo"
               actionImage={whiteArrow}
               iconSize={15}
               url="/sales/?source=receivables"
@@ -435,7 +440,6 @@ const receivables = () => {
           title="Speed up business collections for easy cash flow"
           description="Accounts Receivable is the outstanding amount customers or clients owe to a business. This amount is against any good or service availed from the business"
           source="receivables"
-
         />
       </div>
 

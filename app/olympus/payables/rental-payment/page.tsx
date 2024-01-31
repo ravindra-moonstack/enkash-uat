@@ -45,7 +45,12 @@ const rentalPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Rental Payment" size="h4" weight="4" useH1TagInHtml={true} />
+            <Heading
+              title="Rental Payment"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="d-line">
@@ -87,7 +92,7 @@ const rentalPayments = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=payables"
@@ -263,7 +268,6 @@ const rentalPayments = () => {
           title="Seeking further understanding of rent payment software?"
           description="Rent payment software or platform is often a part of your overall business spend management platform and helps you manage and automate your business rental payments."
           source="payables"
-
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

@@ -58,7 +58,7 @@ const xpenzProducts = [
       },
       {
         name: "Insights",
-        description: "Automate receipt management with OCR",
+        description: "Get complete control over employee expenses with insights driven by data analytics",
         imageSrc: scanAndDrop,
         imageSrcHovered: scanAndDropFilled,
         link: "/ofex/insights",

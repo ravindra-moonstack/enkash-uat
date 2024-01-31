@@ -45,7 +45,12 @@ const taxPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="GST Payments" size="h4" weight="4" useH1TagInHtml={true}/>
+            <Heading
+              title="GST Payments"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="">
@@ -83,7 +88,7 @@ const taxPayments = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=payables"
@@ -296,7 +301,6 @@ const taxPayments = () => {
           title="Seeking further understanding of GST payment online?"
           description="GST, or Goods and Services Tax, is an indirect tax implemented to consolidate many excise duties, VAT,  and other indirect taxes. GST is applicable at every level at which the sale occurs."
           source="payables"
-
         />
       </div>
       <div className={`${styles.seventh_row} row`}>

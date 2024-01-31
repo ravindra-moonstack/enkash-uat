@@ -12,7 +12,7 @@
     padding-left: 70px;
     padding-right: 30px;
     padding-top: 190px;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
   }
 
   .lottie_container {
@@ -24,8 +24,8 @@
     width: 450px;
     @include for-laptops {
       bottom: 0px;
-      right: -100px;
-      width: 850px;
+      right: -50px;
+      width: 800px;
     }
   }
 

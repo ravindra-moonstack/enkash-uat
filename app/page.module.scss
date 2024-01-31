@@ -228,6 +228,10 @@
       color: $color-white;
     }
   }
+  .error {
+    border: 2px solid red;
+  }
+
   .steps {
     margin-bottom: 10px;
     margin-left: 80px;

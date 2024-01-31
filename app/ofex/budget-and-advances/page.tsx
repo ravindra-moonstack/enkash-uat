@@ -101,7 +101,7 @@ const budgetAndAdvance = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=expense_management"

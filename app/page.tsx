@@ -463,7 +463,7 @@ const home = () => {
               </div>
 
               <div className="mt-4">
-                <PrimaryButton title="Get a Demo" url="/sales" theme="green" />
+                <PrimaryButton title="Get Free Demo" url="/sales" theme="green" />
               </div>
             </div>
             <div className={styles.img_container}>
@@ -758,7 +758,7 @@ const home = () => {
           </div>
           <div className="d-flex mt-4">
             <PrimaryButton
-              title="Get a Demo"
+              title="Get Free Demo"
               isDisabled={false}
               url="/sales/?source=home_page"
               theme="blue"

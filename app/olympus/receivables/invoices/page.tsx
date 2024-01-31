@@ -47,7 +47,12 @@ const invoices = () => {
               />
             </div>
             <div>
-              <Heading title="Invoices" size="h4" weight="4" useH1TagInHtml={true}/>
+              <Heading
+                title="Invoices"
+                size="h4"
+                weight="4"
+                useH1TagInHtml={true}
+              />
               <sup className="sup-symbol">#</sup>
             </div>
           </div>
@@ -92,7 +97,7 @@ const invoices = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=receivables"

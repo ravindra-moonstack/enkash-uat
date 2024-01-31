@@ -46,7 +46,12 @@ const vendorPayment = () => {
                 weight="7"
               />
             </div>
-            <Heading title="Vendor Payment" size="h4" weight="4" useH1TagInHtml={true}/>
+            <Heading
+              title="Vendor Payment"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <Heading
             title={`Transform your business today with automated${space}`}
@@ -82,7 +87,7 @@ const vendorPayment = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=payables"
@@ -310,7 +315,6 @@ const vendorPayment = () => {
           title="Seeking further understanding of vendor payments?"
           description="Vendor payments are accounts payable or invoices to pay, which refer to compensating suppliers for the goods or services they provide to your business. Maintaining a good relationship with your suppliers while ensuring you don’t have responsibilities for an extended time is possible by managing your vendor payments methodically and timely. This keeps businesses of all kinds running as efficiently & effectively as possible."
           source="payables"
-
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
