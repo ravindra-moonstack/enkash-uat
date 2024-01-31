@@ -56,6 +56,13 @@ const xpenzProducts = [
         imageSrcHovered: scanAndDropFilled,
         link: "/ofex/scan-and-drop-receipts",
       },
+      {
+        name: "Insights",
+        description: "Automate receipt management with OCR",
+        imageSrc: scanAndDrop,
+        imageSrcHovered: scanAndDropFilled,
+        link: "/ofex/insights",
+      },
     ],
     footerText: "Optimize business spends with OfEx",
     footerMobileText: "Explore OfEx",
