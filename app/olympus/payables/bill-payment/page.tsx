@@ -45,7 +45,12 @@ const billPayments = () => {
                 weight="7"
               />
             </div>
-            <Heading title="| Bill Payment" size="h4" weight="4" useH1TagInHtml={true}/>
+            <Heading
+              title="| Bill Payment"
+              size="h4"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
 
           <div className="d-inline">
@@ -81,7 +86,7 @@ const billPayments = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=payables"
@@ -90,7 +95,9 @@ const billPayments = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <LottieClientComponent animationData={bannerLottie} loop={true} />
+          <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div>
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
@@ -286,7 +293,6 @@ const billPayments = () => {
           title="Seeking further understanding of bill payments online?"
           description="Bill payments refer to those regularly occurring expenses that a business has. These could include utilities like electricity, water, and other regular payments you need to make on time to ensure your business operations continue uninterrupted."
           source="payables"
-
         />
       </div>
 

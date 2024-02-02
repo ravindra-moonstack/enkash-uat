@@ -53,15 +53,21 @@ const giftCards = () => {
             />
           </div>
 
-          <div>
+          <div className="d-flex flex-column">
             <Heading
-              title={`Foster a culture of recognition with these customized${space}`}
+              title={`Foster a culture of${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`gift cards${space}`}
+              title={`recognition with these ${space}`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`customized gift cards${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -86,7 +92,7 @@ const giftCards = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=Loyalty_lounge"

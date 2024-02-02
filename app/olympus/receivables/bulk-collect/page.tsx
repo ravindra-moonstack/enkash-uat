@@ -46,7 +46,12 @@ const bulkCollect = () => {
               />
             </div>
             <div>
-              <Heading title="Bulk Collect" size="h4" weight="4" useH1TagInHtml={true}/>
+              <Heading
+                title="Bulk Collect"
+                size="h4"
+                weight="4"
+                useH1TagInHtml={true}
+              />
               <sup className="sup-symbol">#</sup>
             </div>
           </div>
@@ -89,7 +94,7 @@ const bulkCollect = () => {
             </div>
             <div>
               <SecondryButton
-                title="Book a Demo"
+                title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
                 url="/sales/?source=receivables"

@@ -17,8 +17,6 @@ import {
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 
-const loginUrl = "https://home.enkash.com/login";
-
 const RainbowSection = () => {
   const [scrollY, setScrollY] = useState(0);
 
@@ -177,7 +175,7 @@ const RainbowSection = () => {
           </div>
         </div>
         <div className={`col-12 ${styles.button_container}`}>
-          <PrimaryButton title="Get a Demo" url="/sales" theme="blue" />
+          <PrimaryButton title="Get Free Demo" url="/sales" theme="blue" />
           <span className="mx-2"></span>
           <SecondryButton
             title="Sign Up"

@@ -56,6 +56,13 @@ const xpenzProducts = [
         imageSrcHovered: scanAndDropFilled,
         link: "/ofex/scan-and-drop-receipts",
       },
+      {
+        name: "Insights",
+        description: "Get complete control over employee expenses with insights driven by data analytics",
+        imageSrc: scanAndDrop,
+        imageSrcHovered: scanAndDropFilled,
+        link: "/ofex/insights",
+      },
     ],
     footerText: "Optimize business spends with OfEx",
     footerMobileText: "Explore OfEx",

@@ -19,7 +19,8 @@
     margin-top: 20px;
     width: 350px;
     @include for-laptops {
-      width: 570px;
+      margin-top: 80px;
+      width: 520px;
     }
   }
 }

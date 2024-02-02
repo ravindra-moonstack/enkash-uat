@@ -19,6 +19,7 @@
   .lottie_container {
     width: 350px;
     @include for-laptops {
+      margin-top: 60px;
       width: 500px;
     }
   }

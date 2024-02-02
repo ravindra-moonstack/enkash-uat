@@ -228,6 +228,27 @@
       color: $color-white;
     }
   }
+
+  .shake {
+    animation: shake 0.2s ease-in-out 0s 2;
+    box-shadow: 0 0 0.5em red;
+  }
+
+  @keyframes shake {
+    0% {
+      margin-left: 0rem;
+    }
+    25% {
+      margin-left: 1rem;
+    }
+    75% {
+      margin-left: -1rem;
+    }
+    100% {
+      margin-left: 0rem;
+    }
+  }
+
   .steps {
     margin-bottom: 10px;
     margin-left: 80px;
@@ -369,7 +390,11 @@
 
 .fourth_row {
   padding-top: 50px;
-  padding-bottom: 100px;
+  padding-bottom: 65px;
+
+  @include for-laptops {
+    padding-bottom: 100px;
+  }
   overflow: hidden;
   width: auto;
   position: relative;
@@ -410,7 +435,17 @@
     }
   }
 
+  .marquee_box_mobile {
+    @include for-laptops {
+      display: none;
+    }
+  }
+
   .marquee_box {
+    display: none;
+    @include for-laptops {
+      display: block;
+    }
     filter: grayscale(1);
     cursor: pointer;
     &:hover {
