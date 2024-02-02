@@ -58,7 +58,8 @@ const xpenzProducts = [
       },
       {
         name: "Insights",
-        description: "Get complete control over employee expenses with insights driven by data analytics",
+        description:
+          "Control employee expenses with insights driven by data analytics",
         imageSrc: scanAndDrop,
         imageSrcHovered: scanAndDropFilled,
         link: "/ofex/insights",

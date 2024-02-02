@@ -64,7 +64,7 @@ const insights = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Gain strategic control over employee expenses with data-driven insights. Revolutionize the way you manage and analyze expenditures for enhanced financial efficiency."
+              title="Gain strategic control over employee expenses with data-driven insights. Revolutionize the way you manage and analyze expenditures for enhanced financial efficiency"
               color="white"
               size="h6"
               weight="5"
