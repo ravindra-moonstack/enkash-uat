@@ -64,17 +64,11 @@ const loyaltyLounge = () => {
               weight="7"
               useH1TagInHtml={true}
             />
-            <Heading
-              title="and recognition with"
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading title="EnKash" color="white" size="h2" weight="7" />
+            <Heading title="& recognition" color="white" size="h2" weight="7" />
           </div>
           <div className="mt-4 mobile-only">
             <Heading
-              title="An all-in-one rewards, corporate gifting, and incentives management platform that helps businesses boost loyalty and enhance the experience for their employees, channel partners, and other stakeholders"
+              title="An all-in-one R&R platform that helps businesses boost loyalty and enhance the experience of employees, partners & stakeholders"
               color="white"
               size="h6"
               weight="5"
@@ -82,7 +76,7 @@ const loyaltyLounge = () => {
           </div>
           <div className="mt-4 desktop-only">
             <Heading
-              title="An all-in-one rewards, corporate gifting, and incentives management platform that helps businesses boost loyalty and enhance the experience for their employees, channel partners, and other stakeholders"
+              title="An all-in-one R&R platform that helps businesses boost loyalty and enhance the experience of employees, partners & stakeholders"
               color="white"
               size="h5"
               weight="5"

@@ -23,7 +23,7 @@ const FAQHtml = ({ faqData }: any) => {
                 <h4>
                   An employee insight dashboard is a centralized analytics
                   dashboard provided by <Link href="/">EnKash</Link> for the
-                  Admin or Finance teams that offers a comprehensive view of
+                  admin or finance teams that offers a comprehensive view of
                   employee business expenses dissected by department, expense
                   heads, and employee grades providing detailed analytics and
                   visualizations. It allows businesses to track and analyze

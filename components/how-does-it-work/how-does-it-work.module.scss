@@ -41,7 +41,10 @@
         color: $color-white;
         font-size: 14px;
         @include for-laptops {
-          font-size: 22px;
+          font-size: 21px;
+        }
+        @include for-window-zoomed-screens {
+          font-size: 18px;
         }
       }
       .icon_img {
