@@ -35,7 +35,7 @@ const BlogCard = ({
         <div className="my-3">
           <Heading title={description} color="black" size="h6" weight="4" />
         </div>
-        <Link href={link} target="_blank">
+        <Link href={link}>
           <div
             className={`d-flex align-items-center mt-2 ${styles.underline} ${styles.action_container}`}
           >

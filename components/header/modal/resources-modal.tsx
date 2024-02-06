@@ -100,7 +100,7 @@ const ResourcesModal = () => {
             className={`${styles.resource_arrow_icon} mb-2 color-equity-blue`}
           >
             Read more
-            <a href={blogData.link} target="_blank">
+            <a href={blogData.link}>
               <Image
                 className="ms-2"
                 width={40}
