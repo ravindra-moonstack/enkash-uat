@@ -17,12 +17,12 @@ export const solutions = [
       "Easily design and manage workflows that suit your organizational hierarchy",
     link: "/solutions/workflow-management",
   },
-  // {
-  //   name: "APIs & Modules",
-  //   description:
-  //     "Enhance your system's functionality with our comprehensive set of APIs and modular solutions.",
-  //   link: "/not-found",
-  // },
+  {
+    name: "Cashflow Analytics",
+    description:
+      "Enhance your system's functionality with our comprehensive set of APIs and modular solutions.",
+    link: "/cashflow-analytics",
+  },
 
   // {
   //   name: "CardX",
