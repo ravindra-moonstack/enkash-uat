@@ -4,7 +4,7 @@
 .container {
   padding-right: 30px;
   position: relative;
-  height: 450px;
+  height: 485px;
   .left_container {
     width: 28%;
   }
@@ -35,10 +35,14 @@
 }
 
 .product_name {
-  font-size: 27px;
-  line-height: 31px;
+  font-size: 26px;
+  line-height: 30px;
   font-weight: 600;
   color: $color-equity-blue;
+  @include for-window-zoomed-screens {
+    font-size: 23px;
+    line-height: 27px;
+  }
 }
 
 .product_description {

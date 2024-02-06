@@ -47,7 +47,7 @@ const SubProduct = (props: any) => {
   };
 
   return (
-    <div className={`d-flex mb-5 ${styles.container}`}>
+    <div className={`d-flex ${styles.container}`}>
       {hasActiveGroup ? (
         <>
           <div className={styles.box_shadow_left}></div>
@@ -122,8 +122,8 @@ const SubProduct = (props: any) => {
                         <Image
                           src={product.imageSrc}
                           alt={product.name}
-                          width={50}
-                          height={50}
+                          width={47}
+                          height={47}
                           className={
                             hoveredProductIndex === index
                               ? styles.image_hidden
@@ -135,8 +135,8 @@ const SubProduct = (props: any) => {
                         <Image
                           src={product.imageSrcHovered}
                           alt={`${product.name} hovered`}
-                          width={50}
-                          height={50}
+                          width={47}
+                          height={47}
                           className={
                             hoveredProductIndex === index
                               ? styles.color_image_visible

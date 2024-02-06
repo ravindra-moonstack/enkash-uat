@@ -29,6 +29,8 @@ import {
   seamlessBanking,
   reminderEngineFilled,
   reminderEngine,
+  payablesAnalytics,
+  payablesAnalyticsFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -111,6 +113,14 @@ const olympusProducts = [
         imageSrcHovered: seamlessBankingFilled,
         link: "/olympus/payables/seamless-banking/",
       },
+      {
+        name: "Payable Analytics",
+        description:
+          "Personalize digital banking services based on customer preferences",
+        imageSrc: payablesAnalytics,
+        imageSrcHovered: payablesAnalyticsFilled,
+        link: "/olympus/payables/payable-analytics/",
+      },
     ],
     footerText:
       "Effortlessly streamline your business payments and collections",
@@ -157,14 +167,7 @@ const olympusProducts = [
         imageSrcHovered: invoicesFilled,
         link: "/olympus/receivables/invoices",
       },
-      {
-        name: "e-NACH",
-        description:
-          "Automate recurring payments and collections, ensuring efficient cash-flow management",
-        imageSrc: eNach,
-        imageSrcHovered: eNachFilled,
-        link: "/olympus/receivables/e-nach",
-      },
+
       {
         name: "Collection Analytics",
         description:
@@ -180,6 +183,14 @@ const olympusProducts = [
         imageSrc: reminderEngine,
         imageSrcHovered: reminderEngineFilled,
         link: "/olympus/receivables/reminder-engine",
+      },
+      {
+        name: "e-NACH",
+        description:
+          "Automate recurring payments and collections, ensuring efficient cash-flow management",
+        imageSrc: eNach,
+        imageSrcHovered: eNachFilled,
+        link: "/olympus/receivables/e-nach",
       },
     ],
     footerText:

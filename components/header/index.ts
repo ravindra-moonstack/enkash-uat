@@ -80,6 +80,8 @@ export { default as invoiceManegement } from "./img/invoice-management.svg";
 export { default as invoiceManegementFilled } from "./img/invoice-management-filled.svg";
 export { default as seamlessBanking } from "./img/seamless-banking.svg";
 export { default as seamlessBankingFilled } from "./img/seamless-banking-filled.svg";
+export { default as payablesAnalytics } from "./img/payables-analytics.svg";
+export { default as payablesAnalyticsFilled } from "./img/payables-analytics-filled.svg";
 
 //corporate-cards
 export { default as diyCard } from "./img/diy-card.png";
