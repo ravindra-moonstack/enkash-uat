@@ -31,6 +31,8 @@ import {
   reminderEngine,
   payablesAnalytics,
   payablesAnalyticsFilled,
+  subscriptionManagement,
+  subscriptionManagementFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -191,6 +193,14 @@ const olympusProducts = [
         imageSrc: eNach,
         imageSrcHovered: eNachFilled,
         link: "/olympus/receivables/e-nach",
+      },
+      {
+        name: "Subscription Management",
+        description:
+          "Automate recurring payments and collections, ensuring efficient cash-flow management",
+        imageSrc: subscriptionManagement,
+        imageSrcHovered: subscriptionManagementFilled,
+        link: "/olympus/receivables/subscription-management",
       },
     ],
     footerText:
