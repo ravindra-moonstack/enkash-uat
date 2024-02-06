@@ -18,7 +18,7 @@ export const solutions = [
     link: "/solutions/workflow-management",
   },
   {
-    name: "Cashflow Analytics",
+    name: "Cash Flow Analytics",
     description:
       "Enhance your system's functionality with our comprehensive set of APIs and modular solutions.",
     link: "/cashflow-analytics",
