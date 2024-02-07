@@ -11,12 +11,12 @@ export const resources = [
       "Watch our product videos for an easy, engaging, and quick understanding",
     link: "/resources/videos/",
   },
-  {
-    name: "Press Release",
-    description:
-      "Know how EnKash is disrupting the industry with technology and innovation",
-    link: "/resources/press-release/",
-  },
+  // {
+  //   name: "Press Release",
+  //   description:
+  //     "Know how EnKash is disrupting the industry with technology and innovation",
+  //   link: "/resources/press-release/",
+  // },
   {
     name: "News & Media",
     description:

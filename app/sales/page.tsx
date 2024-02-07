@@ -14,7 +14,6 @@ import {
   olympusTemplateId,
 } from "@/common/constant";
 
-
 const sales = () => {
   //Form Variables
   const [fullName, setFullName] = useState("");
@@ -172,7 +171,11 @@ const sales = () => {
                   <input
                     type="tel"
                     value={mobileNumber}
-                    onChange={(e) => setMobileNumber(e.target.value)}
+                    onChange={(e) => {
+                      const sanitizedValue = e.target.value.replace(/\D/g, "");
+                      if (sanitizedValue.length > 10) return;
+                      setMobileNumber(sanitizedValue);
+                    }}
                     className="form-control"
                     placeholder="Mobile Number"
                     required
