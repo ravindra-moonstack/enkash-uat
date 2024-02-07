@@ -27,11 +27,6 @@ const Head = () => {
       )}
 
       {/* <!-- HTML Meta Tags --> */}
-      <title>EnKash - The Ultimate Platform for Businesses</title>
-      <meta
-        name="description"
-        content="EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more."
-      />
 
       {/* <!-- Facebook Meta Tags --> */}
       <meta property="og:url" content="https://www.enkash.com/" />
