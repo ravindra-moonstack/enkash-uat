@@ -4,6 +4,4 @@ export { default as whiteArrow } from "./img/white-arrow.png";
 export { default as faqBg } from "./img/faq-bg.png";
 export { default as caraouselBg } from "./img/carousel-bg.png";
 
-export { default as banner } from "./img/banner.jpeg";
-
-
+export { default as banner } from "./img/banner.png";

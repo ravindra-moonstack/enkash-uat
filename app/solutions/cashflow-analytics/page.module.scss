@@ -21,7 +21,8 @@
       width: 300px;
       height: auto;
       @include for-laptops {
-        width: 400px;
+        margin-top: -70px;
+        width: 550px;
       }
     }
   }
