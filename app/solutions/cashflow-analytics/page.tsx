@@ -269,7 +269,7 @@ const cashflowAnalytics = () => {
                   />
                 </>
               }
-              description="Cash flow analytics help ensure compliance with financial regulations. This facilitates timely financial reporting and reduces the risks of regulatory issues."
+              description="Cash flow analytics help ensure compliance with financial regulations. This facilitates timely financial reporting and reduces the risks of regulatory issues"
               source=""
             />
           </div>

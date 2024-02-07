@@ -277,7 +277,7 @@ const payableAnalytics = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of payable analytics?"
-          description="Payable analytics facilitates businesses in better decision making with payables data in hand and improves their overall performance"
+          description="Payable analytics facilitates businesses in better decision making with payables data in hand and improves their overall performance."
           source="payables"
         />
       </div>
@@ -299,7 +299,7 @@ const payableAnalytics = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="EnKash’s payable analytics provides you all the insights about payments made across different categories and vendors, approval time requiredfor payments, cash-in-hand in real-time, payments that are yet to be made and payments are made from which bank branch. This enables businesses to gain insights about their spending and its management. Businesses can decipher their spend patterns and identify the gaps for better and more informed decision-making."
+                  title="EnKash’s payable analytics provides you all the insights about payments made across different categories and vendors, approval time required for payments, cash-in-hand in real-time, payments that are yet to be made and payments made from a specific bank branch. This enables businesses to gain insights about their spending and its management. Businesses can decipher their spend patterns and identify the gaps for better and more informed decision-making."
                 />
               </div>
               <div className="mb-3">

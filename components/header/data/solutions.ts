@@ -20,7 +20,7 @@ export const solutions = [
   {
     name: "Cash Flow Analytics",
     description:
-      "Enhance your system's functionality with our comprehensive set of APIs and modular solutions.",
+      "Gain real-time insights into cash movement of your business for informed decision-making",
     link: "/solutions/cashflow-analytics",
   },
 

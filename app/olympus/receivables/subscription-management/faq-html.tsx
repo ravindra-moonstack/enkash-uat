@@ -30,8 +30,8 @@ const FAQHtml = ({ faqData }: any) => {
                   target="_blank"
                 >
                   invoice generation
-                </Link>{" "}
-                invoice generation, customer management, recurring payments, and
+                </Link>
+                , customer management, recurring payments, and
                 change in plans. Everything from e-commerce platforms, payment
                 gateways, and accounting software can be integrated with EnKash
                 for subscription management.

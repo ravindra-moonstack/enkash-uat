@@ -23,8 +23,7 @@ import Footer from "@/components/footer/footer";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title:
-    "Customize Subscription Management Solutions - EnKash",
+  title: "Customize Subscription Management Solutions - EnKash",
   description:
     "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. Book a Free demo Now !!",
   alternates: {
@@ -157,13 +156,13 @@ const subscriptionManagement = () => {
         <div className="d-inline align-items-center mb-5">
           <div className="text-center">
             <Heading
-              title="A SaaS Subscription Management"
+              title="A SaaS subscription management"
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`${space}Platform For Collections`}
+              title={`${space}platform for collections`}
               color="equity-blue"
               size="h1"
               weight="6"
@@ -209,14 +208,14 @@ const subscriptionManagement = () => {
             <>
               <div className="text-center d-flex flex-column">
                 <Heading
-                  title="Manage Business"
+                  title="Manage business"
                   color="white"
                   size="h1"
                   weight="6"
                 />
 
                 <Heading
-                  title="Subscriptions Efficiently"
+                  title="subscriptions efficiently"
                   color="rainy-blue"
                   size="h1"
                   weight="6"
@@ -337,7 +336,7 @@ const subscriptionManagement = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title=" Can we customize subscription payments?"
+                  title="Can we customize subscription payments?"
                 />
               </div>
               <div className="mb-5">

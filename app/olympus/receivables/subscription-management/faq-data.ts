@@ -22,7 +22,7 @@ const faqObject = [
     answer: [
       {
         heading:
-          "The alerts are sent to the customers as and when their defined payment timelines. These alerts can be customized for daily, weekly, and monthly, the way the business wants to make collections.",
+          "The alerts are sent to the customers as per their defined payment timelines. These alerts can be customized for daily, weekly, and monthly reminders, the way the business wants to make collections.",
       },
     ],
   },

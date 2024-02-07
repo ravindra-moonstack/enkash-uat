@@ -110,7 +110,7 @@ const olympusProducts = [
       {
         name: "Seamless Banking",
         description:
-          "Personalize digital banking services based on customer preferences",
+          "A personalized business banking experience",
         imageSrc: seamlessBanking,
         imageSrcHovered: seamlessBankingFilled,
         link: "/olympus/payables/seamless-banking/",
@@ -118,7 +118,7 @@ const olympusProducts = [
       {
         name: "Payable Analytics",
         description:
-          "Personalize digital banking services based on customer preferences",
+          "Stay informed about your business’s accounts payable for better financial planning",
         imageSrc: payablesAnalytics,
         imageSrcHovered: payablesAnalyticsFilled,
         link: "/olympus/payables/payable-analytics/",
@@ -197,7 +197,7 @@ const olympusProducts = [
       {
         name: "Subscription Management",
         description:
-          "Automate recurring payments and collections, ensuring efficient cash-flow management",
+          "Track and handle recurring subscriptions with utmost ease",
         imageSrc: subscriptionManagement,
         imageSrcHovered: subscriptionManagementFilled,
         link: "/olympus/receivables/subscription-management",
