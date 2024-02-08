@@ -26,8 +26,7 @@ export const solutions = [
 
   {
     name: "APIs & Modules",
-    description:
-      "Experience secure and seamless card transactions with our advanced CardX technology.",
+    description: "Tailor our robust APIs to fit unique business requirements",
     link: "/solutions//apis-modules",
   },
   // {

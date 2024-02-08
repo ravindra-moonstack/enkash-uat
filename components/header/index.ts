@@ -84,7 +84,7 @@ export { default as seamlessBanking } from "./img/seamless-banking.svg";
 export { default as seamlessBankingFilled } from "./img/seamless-banking-filled.svg";
 export { default as payablesAnalytics } from "./img/payables-analytics.svg";
 export { default as payablesAnalyticsFilled } from "./img/payables-analytics-filled.svg";
-export { default as payrollProcessing } from "./img/payroll-processing.svg";
+export { default as payrollProcessing } from "./img/payroll-processing.png";
 export { default as payrollProcessingFilled } from "./img/payroll-processing-filled.svg";
 
 //corporate-cards

@@ -119,7 +119,7 @@ const olympusProducts = [
       {
         name: "Payable Analytics",
         description:
-          "Stay informed about your business’s accounts payable for better financial planning",
+          "Stay informed about business’s accounts payable for better financial planning",
         imageSrc: payablesAnalytics,
         imageSrcHovered: payablesAnalyticsFilled,
         link: "/olympus/payables/payable-analytics/",
@@ -127,7 +127,7 @@ const olympusProducts = [
       {
         name: "Payroll Processing",
         description:
-          "Stay informed about your business’s accounts payable for better financial planning",
+          "Simplify salary disbursement process with efficient payroll processing",
         imageSrc: payrollProcessing,
         imageSrcHovered: payrollProcessingFilled,
         link: "/olympus/payables/payroll-processing/",
