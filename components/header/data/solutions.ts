@@ -24,12 +24,12 @@ export const solutions = [
     link: "/solutions/cashflow-analytics",
   },
 
-  // {
-  //   name: "CardX",
-  //   description:
-  //     "Experience secure and seamless card transactions with our advanced CardX technology.",
-  //   link: "/not-found",
-  // },
+  {
+    name: "APIs & Modules",
+    description:
+      "Experience secure and seamless card transactions with our advanced CardX technology.",
+    link: "/solutions//apis-modules",
+  },
   // {
   //   name: "Cashflow Analytics",
   //   description:
