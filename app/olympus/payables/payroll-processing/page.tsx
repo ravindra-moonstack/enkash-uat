@@ -7,7 +7,7 @@ import { space } from "../../../../common/constant";
 import faqData from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import { banner, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -115,7 +115,8 @@ const payrollProcessing = () => {
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
-            <LottieClientComponent animationData={bannerLottie} loop={true} />
+            <Image src={banner} alt="banner image" />
+            {/* <LottieClientComponent animationData={bannerLottie} loop={true} /> */}
           </div>
         </div>
         <div className={styles.three_step_container}>
@@ -129,9 +130,9 @@ const payrollProcessing = () => {
             {
               itemArray: ["Process"],
               oldWayDescription:
-                "Sending out employee salaries used to be a drawn-out and manual task. With traditional methods, errors and delays were not uncommon in calculating salaries",
+                "Sending out employee salaries used to be a drawn-out and manual task. With traditional methods, errors and delays were not uncommon in calculating salaries.",
               newWayDescription:
-                "With EnKash, quickly calculate and send employees their accurate salaries directly to their bank accounts, giving them quick access to their funds",
+                "With EnKash, quickly calculate and send employees their accurate salaries directly to their bank accounts, giving them quick access to their funds.",
             },
             {
               itemArray: ["Bulk", "Payment"],
@@ -203,7 +204,7 @@ const payrollProcessing = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Seamless ERP Integration"
-              description="Integrate effortlessly with your existing ERP system and banking partners to streamline the entire payroll processing workflow."
+              description="Integrate effortlessly with your existing ERP system and banking partners to streamline the entire payroll processing workflow"
               source="payables"
             />
           </div>
@@ -247,7 +248,7 @@ const payrollProcessing = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how our vendor management can revolutionize the way you work!"
+          title="Learn how our payroll processing can revolutionize the way you work!"
         />
       </div>
       <div

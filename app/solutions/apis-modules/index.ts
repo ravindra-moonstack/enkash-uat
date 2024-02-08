@@ -4,4 +4,4 @@ export { default as whiteArrow } from "./img/white-arrow.png";
 export { default as faqBg } from "./img/faq-bg.png";
 export { default as caraouselBg } from "./img/carousel-bg.png";
 
-export { default as bannerLottie } from "./img/lottie/banner.json";
+export { default as banner } from "./img/lottie/banner.png";

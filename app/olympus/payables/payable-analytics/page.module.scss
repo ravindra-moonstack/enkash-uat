@@ -15,6 +15,16 @@
       padding-right: 70px;
     }
   }
+
+  .lottie_container {
+    img {
+      width: 300px;
+      height: auto;
+      @include for-laptops {
+        width: 500px;
+      }
+    }
+  }
 }
 
 .second_row {

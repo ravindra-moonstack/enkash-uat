@@ -7,7 +7,7 @@ import { space } from "../../../../common/constant";
 import faqData from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import { banner, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -117,7 +117,10 @@ const payableAnalytics = () => {
           </div>
         </div>
         <div className="col-12 col-md-6 d-flex justify-content-center">
-          <LottieClientComponent animationData={bannerLottie} loop={true} />
+          <div className={styles.lottie_container}>
+            <Image src={banner} alt="banner image" />
+          </div>
+          {/* <LottieClientComponent animationData={bannerLottie} loop={true} /> */}
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps />
