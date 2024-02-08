@@ -33,6 +33,8 @@ import {
   payablesAnalyticsFilled,
   subscriptionManagement,
   subscriptionManagementFilled,
+  payrollProcessing,
+  payrollProcessingFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -109,8 +111,7 @@ const olympusProducts = [
       },
       {
         name: "Seamless Banking",
-        description:
-          "A personalized business banking experience",
+        description: "A personalized business banking experience",
         imageSrc: seamlessBanking,
         imageSrcHovered: seamlessBankingFilled,
         link: "/olympus/payables/seamless-banking/",
@@ -122,6 +123,14 @@ const olympusProducts = [
         imageSrc: payablesAnalytics,
         imageSrcHovered: payablesAnalyticsFilled,
         link: "/olympus/payables/payable-analytics/",
+      },
+      {
+        name: "Payroll Processing",
+        description:
+          "Stay informed about your business’s accounts payable for better financial planning",
+        imageSrc: payrollProcessing,
+        imageSrcHovered: payrollProcessingFilled,
+        link: "/olympus/payables/payroll-processing/",
       },
     ],
     footerText:
