@@ -279,33 +279,30 @@ const subscriptionManagement = () => {
                 />
               </div>
               <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Customization: Businesses can customize the subscription management as per their requirements and save costs accordingly."
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Easy integration: Enterprises can easily integrate with EnKash to manage their subscriptions efficiently."
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Single dashboard access: Easy access to a user-friendly dashboard to track invoices, check customer history, and understand their behavior."
-                />
+                <p>
+                  <strong>Customization:</strong> Businesses can customize the
+                  subscription management as per their requirements and save
+                  costs accordingly.
+                </p>
               </div>
               <div className="mb-3">
                 <p>
-                  Recurring payments: Define recurring payments for your
-                  customers with{" "}
+                  <strong>Easy integration:</strong> Enterprises can easily
+                  integrate with EnKash to manage their subscriptions
+                  efficiently.{" "}
+                </p>
+              </div>
+              <div className="mb-3">
+                <p>
+                  <strong> Single dashboard access:</strong> Easy access to a
+                  user-friendly dashboard to track invoices, check customer
+                  history, and understand their behavior.
+                </p>
+              </div>
+              <div className="mb-3">
+                <p>
+                  <strong>Recurring payments: </strong>Define recurring payments
+                  for your customers with{" "}
                   <Link href="https://www.enkash.com/" target="_blank">
                     EnKash’s subscription management.
                   </Link>{" "}
@@ -313,7 +310,8 @@ const subscriptionManagement = () => {
               </div>
               <div className="mb-3">
                 <p>
-                  Automated invoice generation: Businesses can{" "}
+                  <strong> Automated invoice generation: </strong> Businesses
+                  can{" "}
                   <Link
                     href="https://www.enkash.com/olympus/receivables/invoices/"
                     target="_blank"
@@ -325,12 +323,12 @@ const subscriptionManagement = () => {
                 </p>
               </div>
               <div className="mb-5">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Customer management: EnKash helps manage customers efficiently by providing them with timely reminders, automated invoices, and easy communication."
-                />
+                <p>
+                  {" "}
+                  <strong> Customer management: </strong> EnKash helps manage
+                  customers efficiently by providing them with timely reminders,
+                  automated invoices, and easy communication.
+                </p>
               </div>
               <div className="mb-3">
                 <Heading
