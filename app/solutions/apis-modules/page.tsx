@@ -64,7 +64,7 @@ const apiAndModules = () => {
               weight="7"
             />
             <div>
-              <Heading title="innovate " color="white" size="h2" weight="7" />
+              <Heading title="innovate" color="white" size="h2" weight="7" />
               <Heading
                 title={`${space}with our`}
                 color="rainy-blue"

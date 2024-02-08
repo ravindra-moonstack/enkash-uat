@@ -299,7 +299,7 @@ const payrollProcessing = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="End-to-end payroll processing refers to the complete process of managing payroll from start to finish, including tasks such as collecting employee data, calculating wages, deducting taxes, processing payments, and generating reports. EnKash provides end-to-end payroll processing by offering a comprehensive platform that covers all aspects of payroll management"
+                  title="End-to-end payroll processing refers to the complete process of managing payroll from start to finish, including tasks such as collecting employee data, calculating wages, deducting taxes, processing payments, and generating reports. EnKash provides end-to-end payroll processing by offering a comprehensive platform that covers all aspects of payroll management."
                 />
               </div>
 
@@ -316,7 +316,7 @@ const payrollProcessing = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Key components of an effective payroll processing software include automation of tasks, accuracy in calculations, compliance with regulations, security of financial data, scalability to handle varying volumes of transactions, integration with other systems such as ERP and banking partners, and robust reporting and analytics capabilities"
+                  title="Key components of an effective payroll processing software include automation of tasks, accuracy in calculations, compliance with regulations, security of financial data, scalability to handle varying volumes of transactions, integration with other systems such as ERP and banking partners, and robust reporting and analytics capabilities."
                 />
               </div>
 
