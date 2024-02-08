@@ -98,6 +98,16 @@ const Footer = ({ utmSource = "" }: any) => {
                   Seamless Banking
                 </Link>
               </li>
+              <li>
+                <Link href="/olympus/payables/payroll-processing/">
+                  Payroll Processing
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/payables/payable-analytics/">
+                  Payable Analytics
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="">
@@ -135,10 +145,20 @@ const Footer = ({ utmSource = "" }: any) => {
               </li>
               <li>
                 <Link href="/olympus/receivables/e-nach">E Nach</Link>
-              </li>{" "}
+              </li>
               <li>
-                <Link href="/olympus/receivables/reminder-engine">Reminder Engine</Link>
-              </li>{" "}
+                <Link href="/olympus/receivables/reminder-engine">
+                  Reminder Engine
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
+              </li>
+              <li>
+                <Link href="/olympus/receivables/subscription-management/">
+                  Subscription Management
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -208,6 +228,19 @@ const Footer = ({ utmSource = "" }: any) => {
                     Customized Reporting
                   </Link>
                 </li>
+                <li>
+                  <Link href="/solutions/workflow-management">
+                    Workflow Management
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/cashflow-analytics/">
+                    Cash Flow Analytics
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/apis-modules/">APIs & Modules</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -242,6 +275,9 @@ const Footer = ({ utmSource = "" }: any) => {
                   <Link href="/ofex/scan-and-drop-receipts/">
                     Scan and Drop Receipts
                   </Link>
+                </li>
+                <li>
+                  <Link href="/ofex/insights/">Insights</Link>
                 </li>
               </ul>
             </div>
