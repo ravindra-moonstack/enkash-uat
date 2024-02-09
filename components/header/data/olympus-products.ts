@@ -29,6 +29,12 @@ import {
   seamlessBanking,
   reminderEngineFilled,
   reminderEngine,
+  payablesAnalytics,
+  payablesAnalyticsFilled,
+  subscriptionManagement,
+  subscriptionManagementFilled,
+  payrollProcessing,
+  payrollProcessingFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -105,11 +111,26 @@ const olympusProducts = [
       },
       {
         name: "Seamless Banking",
-        description:
-          "Personalize digital banking services based on customer preferences",
+        description: "A personalized business banking experience",
         imageSrc: seamlessBanking,
         imageSrcHovered: seamlessBankingFilled,
         link: "/olympus/payables/seamless-banking/",
+      },
+      {
+        name: "Payable Analytics",
+        description:
+          "Stay informed about business’s accounts payable for better financial planning",
+        imageSrc: payablesAnalytics,
+        imageSrcHovered: payablesAnalyticsFilled,
+        link: "/olympus/payables/payable-analytics/",
+      },
+      {
+        name: "Payroll Processing",
+        description:
+          "Simplify salary disbursement process with efficient payroll processing",
+        imageSrc: payrollProcessing,
+        imageSrcHovered: payrollProcessingFilled,
+        link: "/olympus/payables/payroll-processing/",
       },
     ],
     footerText:
@@ -157,14 +178,7 @@ const olympusProducts = [
         imageSrcHovered: invoicesFilled,
         link: "/olympus/receivables/invoices",
       },
-      {
-        name: "e-NACH",
-        description:
-          "Automate recurring payments and collections, ensuring efficient cash-flow management",
-        imageSrc: eNach,
-        imageSrcHovered: eNachFilled,
-        link: "/olympus/receivables/e-nach",
-      },
+
       {
         name: "Collection Analytics",
         description:
@@ -180,6 +194,22 @@ const olympusProducts = [
         imageSrc: reminderEngine,
         imageSrcHovered: reminderEngineFilled,
         link: "/olympus/receivables/reminder-engine",
+      },
+      {
+        name: "e-NACH",
+        description:
+          "Automate recurring payments and collections, ensuring efficient cash-flow management",
+        imageSrc: eNach,
+        imageSrcHovered: eNachFilled,
+        link: "/olympus/receivables/e-nach",
+      },
+      {
+        name: "Subscription Management",
+        description:
+          "Track and handle recurring subscriptions with utmost ease",
+        imageSrc: subscriptionManagement,
+        imageSrcHovered: subscriptionManagementFilled,
+        link: "/olympus/receivables/subscription-management",
       },
     ],
     footerText:

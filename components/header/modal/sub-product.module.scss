@@ -2,7 +2,7 @@
 @import "../../../styles/variables";
 
 .container {
-  height: 450px;
+  height: 500px;
   position: relative;
   width: 72%;
 }
@@ -39,15 +39,19 @@
 }
 
 .sub_product_title {
-  font-size: 27px;
+  font-size: 26px;
   padding-right: 30px;
   text-decoration: underline !important;
   text-underline-offset: 8px;
+  @include for-window-zoomed-screens {
+    font-size: 23px;
+    line-height: 27px;
+  }
 }
 
 .sub_product_name {
-  font-size: 19px;
-  line-height: 25px;
+  font-size: 18px;
+  line-height: 20px;
 }
 
 .sub_product_description {
@@ -145,7 +149,7 @@
   z-index: -1;
   border-radius: 10px;
   transition: transform 0.3s ease, width 0.3s ease, height 0.3s ease;
-  padding: 20px;
+  padding: 15px;
 }
 
 .color_highlight {

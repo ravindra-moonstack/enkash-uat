@@ -60,6 +60,8 @@ export { default as eNach } from "./img/e-nach.svg";
 export { default as eNachFilled } from "./img/e-nach-filled.svg";
 export { default as reminderEngine } from "./img/reminder-engine.png";
 export { default as reminderEngineFilled } from "./img/reminder-engine-filled.png";
+export { default as subscriptionManagement } from "./img/subscrption-management.svg";
+export { default as subscriptionManagementFilled } from "./img/subscrption-management-filled.svg";
 
 //paybles
 export { default as billPayments } from "./img/bill-payments.png";
@@ -80,6 +82,10 @@ export { default as invoiceManegement } from "./img/invoice-management.svg";
 export { default as invoiceManegementFilled } from "./img/invoice-management-filled.svg";
 export { default as seamlessBanking } from "./img/seamless-banking.svg";
 export { default as seamlessBankingFilled } from "./img/seamless-banking-filled.svg";
+export { default as payablesAnalytics } from "./img/payables-analytics.svg";
+export { default as payablesAnalyticsFilled } from "./img/payables-analytics-filled.svg";
+export { default as payrollProcessing } from "./img/payroll-processing.png";
+export { default as payrollProcessingFilled } from "./img/payroll-processing-filled.svg";
 
 //corporate-cards
 export { default as diyCard } from "./img/diy-card.png";

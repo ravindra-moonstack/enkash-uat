@@ -35,13 +35,7 @@ const xpenzProducts = [
         imageSrcHovered: hierarchyAndControlsFilled,
         link: "/ofex/hierarchy-and-controls",
       },
-      {
-        name: "Policy and Approval Flows",
-        description: " Create policies and approval flows on the go",
-        imageSrc: policyAndApproval,
-        imageSrcHovered: policyAndApprovalFilled,
-        link: "/ofex/policy-and-approval-flows",
-      },
+
       {
         name: "Reimbursements",
         description: "Get reimbursed for your expenses quickly and easily",
@@ -63,6 +57,13 @@ const xpenzProducts = [
         imageSrc: scanAndDrop,
         imageSrcHovered: scanAndDropFilled,
         link: "/ofex/insights",
+      },
+      {
+        name: "Policy and Approval Flows",
+        description: " Create policies and approval flows on the go",
+        imageSrc: policyAndApproval,
+        imageSrcHovered: policyAndApprovalFilled,
+        link: "/ofex/policy-and-approval-flows",
       },
     ],
     footerText: "Optimize business spends with OfEx",
