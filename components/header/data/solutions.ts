@@ -26,7 +26,7 @@ export const solutions = [
 
   {
     name: "APIs & Modules",
-    description: "Tailor our robust APIs to fit unique business requirements",
+    description: "Integrate our robust APIs and empower your business",
     link: "/solutions//apis-modules",
   },
 ];
