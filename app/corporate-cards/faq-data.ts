@@ -4,7 +4,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Corporate cards in India are primarily similar to personal credit cards. However, corporate cards are used exclusively for business-related purposes. With corporate cards, businesses can have easy access to funds. With smart usage, the business can enjoy a certain period of free credit within the billing cycle to pay for immediate requirements without having to arrange for working capital funds. You can use corporate cards in India to pay for business expenses like travel and entertainment, fuel, rent, tax payments, etc. ",
+          "Corporate cards in India are primarily similar to personal credit cards. However, corporate cards are used exclusively for business-related purposes. With corporate cards, businesses can have easy access to funds. With smart usage, the business can enjoy a certain period of free credit within the billing cycle to pay for immediate requirements without having to arrange for working capital funds.",
       },
     ],
   },

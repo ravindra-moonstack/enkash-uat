@@ -128,7 +128,7 @@ const taxPayments = () => {
               oldWayDescription:
                 "Earlier businesses had to use their working capital or arrange funds externally to make the payment.",
               newWayDescription:
-                "With EnKash, make GST payments using flexible payment methods, including your credit card.",
+                "With EnKash, make GST payments using flexible payment methods",
             },
             {
               itemArray: ["Record", "Keeping"],

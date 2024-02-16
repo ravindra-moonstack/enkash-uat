@@ -15,40 +15,15 @@ const FAQHtml = ({ faqData }: any) => {
 
   return (
     <div>
-      {faqData.map((item: { question: string; answer: any }, index: number) =>
-        index !== 5 ? (
-          <FAQ
-            key={index}
-            question={item.question}
-            answer={item.answer}
-            answerVisible={index === openFAQIndex}
-            onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
-          />
-        ) : (
-          <FAQ
-            key={index}
-            question={item.question}
-            answerHTML={
-              <>
-                <h4>
-                  For now, you cannot use a virtual card for international
-                  transactions. However, you can customize these cards according
-                  to your business needs and use them for bill payments, rental
-                  payments, and marketing purposes, such as{" "}
-                  <Link
-                    href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
-                    target="_black"
-                  >
-                    digital marketing spends.
-                  </Link>
-                </h4>
-              </>
-            }
-            answerVisible={index === openFAQIndex}
-            onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
-          />
-        )
-      )}
+      {faqData.map((item: { question: string; answer: any }, index: number) => (
+        <FAQ
+          key={index}
+          question={item.question}
+          answer={item.answer}
+          answerVisible={index === openFAQIndex}
+          onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
+        />
+      ))}
     </div>
   );
 };

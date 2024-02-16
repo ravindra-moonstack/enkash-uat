@@ -19,7 +19,6 @@ const faqData = [
           "Log in to the official GST portal and navigate to the payments tab under 'Services'",
           "Click 'Create Challan,' enter amounts under sections like CGST, IGST, CESS, etc., and choose the credit card payment option",
           "Upload the created challan on EnKash portal for audit team verification",
-          "Once your challan is verified and approved, enter credit card details like number, name, validity, and CVV",
           "Confirm the amount, request OTP, and complete payment",
         ],
       },
@@ -54,26 +53,11 @@ const faqData = [
     ],
   },
   {
-    question: "Can we pay GST payment online using a credit card?",
-    answer: [
-      {
-        heading:
-          "Credit card payments are not allowed on the GST portal. However, you can pay GST using a debit or credit card on the EnKash portal. Here is the process:",
-        bullets: [
-          "Generate challan on the GST portal with Axis Bank as the remitting bank",
-          "Login to EnKash and click on 'Upload GST challan' in the 'GST Payment' tab",
-          "Select the challan and click on 'Pay'. Choose 'Pay Online' and enter your credit card details",
-          "Verify details, request OTP, enter it and click on 'Pay Now'",
-        ],
-      },
-    ],
-  },
-  {
     question: "What is EnKash GST payment?",
     answer: [
       {
         heading:
-          "The tax payment module helps you deal with business-related taxes like GST without going through repetitive and manual processes. You can easily fetch the challan from the government portal, create challan for payment, get maker and approver approvals on record, and use the credit limit you have from EnKash to make the payment. You also have the option to use a prepaid card, debit card, NEFT, or connected banking option to make the payment. Once the payment is completed, the payment proof will be scanned and filed digitally in your records for future reference.",
+          "The tax payment module helps you deal with business-related taxes like GST without going through repetitive and manual processes. You can easily fetch the challan from the government portal, create challan for payment, get maker and approver approvals on record.You have the option to use a prepaid card, debit card, NEFT, or connected banking option to make the payment. Once the payment is completed, the payment proof will be scanned and filed digitally in your records for future reference.",
         bullets: [],
       },
     ],

@@ -122,7 +122,7 @@ const slash = () => {
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
               title="Corporate Credit Cards"
-              description="Simplify business payments, optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions like T&E cards"
+              description="Optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions like T&E cards"
               theme="blue"
               link="/corporate-cards/travel-and-expense-cards"
             />
@@ -372,7 +372,7 @@ const slash = () => {
               oldWayDescription:
                 "Employees have to submit expense reports and wait for reimbursement.",
               newWayDescription:
-                "Employees can use their EnKash enabled credit, prepaid, and virtual cards to make purchases without having to worry about reimbursement.",
+                "Employees can use their EnKash enabled cards to make purchases without having to worry about reimbursement.",
             },
             {
               itemArray: ["Card	", "Controls"],
