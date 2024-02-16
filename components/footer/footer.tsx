@@ -83,11 +83,11 @@ const Footer = ({ utmSource = "" }: any) => {
                   Invoice Management
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link href="/olympus/payables/pay-by-any-card/">
                   Pay By Any Card
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link href="/olympus/payables/vendor-management/">
                   Vendor Management
