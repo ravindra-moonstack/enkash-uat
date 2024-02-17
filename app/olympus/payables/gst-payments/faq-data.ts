@@ -17,7 +17,6 @@ const faqData = [
           "Making a GST payment is simple and involves the following steps:",
         bullets: [
           "Log in to the official GST portal and navigate to the payments tab under 'Services'",
-          "Click 'Create Challan,' enter amounts under sections like CGST, IGST, CESS, etc., and choose the credit card payment option",
           "Upload the created challan on EnKash portal for audit team verification",
           "Confirm the amount, request OTP, and complete payment",
         ],
@@ -87,12 +86,12 @@ const faqData = [
       {
         heading:
           "Tax Payment is critical for a startup because it helps them with the following aspects:",
-        bullets:  [
+        bullets: [
           "Ensure timely tax payments to avoid penalties",
           "Have a seamless trail of approvals and the relevant paperwork in place",
           "Enable the finance team to concentrate on more strategic work",
-          "Improve the overall efficiency of all the related teams"
-        ]
+          "Improve the overall efficiency of all the related teams",
+        ],
       },
     ],
   },

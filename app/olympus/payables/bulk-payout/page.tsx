@@ -345,7 +345,8 @@ const bulkPayout = () => {
                     >
                       multiple modes of payment
                     </Link>
-                    , including bank transfers, credit cards, and more
+                    , including NEFT, RTGS, IMPS, UPI, debit cards, connected
+                    banking, and more
                   </li>
                 </ul>
               </div>
@@ -414,7 +415,8 @@ const bulkPayout = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Bulk payment can be done through bank transfers, credit cards, debit cards and virtual account."
+                  title="Bulk payment can be done through bank transfers, 
+                  NEFT, RTGS, IMPS, UPI, debit cards, connected banking, and more."
                 />
               </div>
 

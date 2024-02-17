@@ -4,7 +4,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "The DIY card module by EnKash is a solution for businesses to manage corporate card expenses. It offers customizable spending limits, real-time expense tracking, and easy card management with a user-friendly dashboard. This centralized solution simplifies processes like issuing purpose-specific cards and disabling cards, ensuring efficient control and optimization of overall business expenditure.",
+          "The DIY card module is a solution for businesses to manage corporate card expenses. It offers customizable spending limits, real-time expense tracking, and easy card management with a user-friendly dashboard. This centralized solution simplifies processes like issuing purpose-specific cards and disabling cards, ensuring efficient control and optimization of overall business expenditure.",
         bullets: [],
       },
     ],
