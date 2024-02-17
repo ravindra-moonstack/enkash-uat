@@ -17,6 +17,7 @@ const faqData = [
           "Making a GST payment is simple and involves the following steps:",
         bullets: [
           "Log in to the official GST portal and navigate to the payments tab under 'Services'",
+          "Click “Create Challan”, enter amounts under sections like CGST, IGST, CESS, etc, and choose the NEFT/RTGS options and select AXIS bank as the remitting bank",
           "Upload the created challan on EnKash portal for audit team verification",
           "Confirm the amount, request OTP, and complete payment",
         ],
@@ -56,7 +57,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "The tax payment module helps you deal with business-related taxes like GST without going through repetitive and manual processes. You can easily fetch the challan from the government portal, create challan for payment, get maker and approver approvals on record.You have the option to use a prepaid card, debit card, NEFT, or connected banking option to make the payment. Once the payment is completed, the payment proof will be scanned and filed digitally in your records for future reference.",
+          "The tax payment module helps you deal with business-related taxes like GST without going through repetitive and manual processes. You can easily fetch the challan from the government portal, create challan for payment, get maker and approver approvals on record. You have the option to use a prepaid card, debit card, NEFT, or connected banking option to make the payment. Once the payment is completed, the payment proof will be scanned and filed digitally in your records for future reference.",
         bullets: [],
       },
     ],

@@ -21,13 +21,9 @@ const FAQHtml = ({ faqData }: any) => {
             index === 0 ? (
               <>
                 <h4>
-                  The DIY card module by{" "}
-                  <Link href="https://www.enkash.com/" target="_blank">
-                    EnKash
-                  </Link>{" "}
-                  is a solution for businesses to manage corporate card
-                  expenses. It offers customizable spending limits, real-time
-                  expense tracking, and{" "}
+                  The DIY card module is a solution for businesses to manage
+                  corporate card expenses. It offers customizable spending
+                  limits, real-time expense tracking, and{" "}
                   <Link
                     href="https://www.enkash.com/resources/blog/manage-business-expenses-with-enkash-corporate-card/"
                     target="_blank"

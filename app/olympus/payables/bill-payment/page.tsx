@@ -314,7 +314,7 @@ const billPayments = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="You can upload all the relevant bills on EnKash, and set internal processes to get the relevant approvals from different departments. Once you do that, every time the bill is due, you will be notified by email to take action like approve, reject, or pay, based on which you can take action. Once it is approved , you can pay using different payment methods on EnKash Platform."
+                  title="You can upload all the relevant bills on EnKash, and set internal processes to get the relevant approvals from different departments. Once you do that, every time the bill is due, you will be notified by email to take action like approve, reject, or pay, based on which you can take action. Once it is approved, you can pay using different payment methods on EnKash Platform."
                 />
               </div>
 
