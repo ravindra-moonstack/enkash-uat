@@ -211,6 +211,30 @@ const olympusProducts = [
         imageSrcHovered: subscriptionManagementFilled,
         link: "/olympus/receivables/subscription-management",
       },
+      {
+        name: "Payment gateway",
+        description:
+          "Track and handle recurring subscriptions with utmost ease",
+        imageSrc: subscriptionManagement,
+        imageSrcHovered: subscriptionManagementFilled,
+        link: "/olympus/receivables/payment-gateway",
+      },
+      {
+        name: "Payment button",
+        description:
+          "Track and handle recurring subscriptions with utmost ease",
+        imageSrc: subscriptionManagement,
+        imageSrcHovered: subscriptionManagementFilled,
+        link: "/olympus/receivables/payment-button",
+      },
+      {
+        name: "Customized Payment",
+        description:
+          "Track and handle recurring subscriptions with utmost ease",
+        imageSrc: subscriptionManagement,
+        imageSrcHovered: subscriptionManagementFilled,
+        link: "/olympus/receivables/customized-payment",
+      },
     ],
     footerText:
       "Effortlessly streamline your business payments and collections",

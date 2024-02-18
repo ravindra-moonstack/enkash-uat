@@ -123,7 +123,8 @@ const SubProductListView = (props: {
         )}
         {props.setSelectedItemIndex === 0 && (
           <div className={styles.powered}>
-            #Launching soon 🚀 as per RBI's PA (Online) authorization
+            #Launching soon 🚀 as per
+            <br /> RBI's PA (Online) authorization
           </div>
         )}
 

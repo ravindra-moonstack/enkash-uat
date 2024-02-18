@@ -165,7 +165,8 @@ const SubProduct = (props: any) => {
           )}
           {props.index === 0 && activeSubtitle === "Receivables" && (
             <div className={styles.powered}>
-              #Launching soon 🚀 as per RBI's PA (Online) authorization
+              #Launching soon 🚀 as per
+              <br /> RBI's PA (Online) authorization
             </div>
           )}
 

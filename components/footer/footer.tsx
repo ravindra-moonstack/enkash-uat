@@ -157,6 +157,21 @@ const Footer = ({ utmSource = "" }: any) => {
                   Subscription Management
                 </Link>
               </li>
+              <li>
+                <Link href="/olympus/receivables/payment-gateway/">
+                  Payment gateway
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/receivables/customized-payment/">
+                  Customized Payment
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/receivables/payment-button/">
+                  Payment button
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
