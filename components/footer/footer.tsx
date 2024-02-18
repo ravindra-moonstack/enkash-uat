@@ -555,7 +555,7 @@ const Footer = ({ utmSource = "" }: any) => {
           </span>
         </div>
         <div className={`col-12 color-white ${styles.copyright}`}>
-          Copyright © 2023 | Nehat Tech Solutions Pvt. Ltd. All right reserved.
+          Copyright © 2024 | Nehat Tech Solutions Pvt. Ltd. All right reserved.
         </div>
       </div>
 
