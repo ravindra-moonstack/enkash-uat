@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     "Customise Payment Pages and send different versions of the same Payment Page to different customers. Book Demo now !!",
 };
 
-const eNach = () => {
+const page = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="receivables" />
@@ -332,4 +332,4 @@ const eNach = () => {
   );
 };
 
-export default eNach;
+export default page;
