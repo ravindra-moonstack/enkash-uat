@@ -97,6 +97,9 @@
     opacity: 0;
     overflow: hidden;
     height: 0;
+    @include for-laptops {
+      padding-right: 30%;
+    }
 
     &.visible {
       opacity: 1;

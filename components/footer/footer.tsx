@@ -143,9 +143,7 @@ const Footer = ({ utmSource = "" }: any) => {
               <li>
                 <Link href="/olympus/receivables/invoices/">Invoices</Link>
               </li>
-              <li>
-                <Link href="/olympus/receivables/e-nach">E Nach</Link>
-              </li>
+
               <li>
                 <Link href="/olympus/receivables/reminder-engine">
                   Reminder Engine
