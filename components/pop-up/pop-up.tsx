@@ -20,12 +20,27 @@ const PopUp = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const currentUrl =
+    typeof window !== "undefined" ? window.location.pathname : "";
+  const smallPopupUrls = ["/", "/sales/"];
+  const isSmallUrls = smallPopupUrls.includes(currentUrl);
+
   return (
     <div>
       {showPopup && (
-        <div className={styles.popup_container}>
+        <div
+          className={
+            isSmallUrls ? styles.popup_container_small : styles.popup_container
+          }
+        >
           <div className={styles.popup}>
-            <div className={styles.left_container}>
+            <div
+              className={
+                isSmallUrls
+                  ? styles.left_container_small
+                  : styles.left_container
+              }
+            >
               <Image
                 src={boltImage}
                 alt="bolt image"
@@ -37,7 +52,13 @@ const PopUp = () => {
                 className="mobile-only w-100"
               />
             </div>
-            <div className={styles.right_container}>
+            <div
+              className={
+                isSmallUrls
+                  ? styles.right_container_small
+                  : styles.right_container
+              }
+            >
               <div>
                 {" "}
                 <div className="mb-2">
@@ -60,7 +81,7 @@ const PopUp = () => {
                   brand gift vouchers
                 </div>
               </div>
-              <div className="d-flex flex-column flex-md-row justify-content-between pe-5 align-items-md-center">
+              <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
                 <div className="d-flex align-items-center">
                   <div className={styles.powered_by}>Powered By</div>
                   <Image src={enkashLogo} alt="bolt image" />
@@ -74,7 +95,7 @@ const PopUp = () => {
                   <PrimaryButton
                     title="Buy Now"
                     theme="blue"
-                    url="https://home.enkash.com/signup?utm_source=gift_voucher_website_popup&utm_medium=website&utm_campaign=bolt_popup_banner_website"
+                    url="https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=website_popup"
                   />
                 </div>
               </div>
