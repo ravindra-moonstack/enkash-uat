@@ -20,16 +20,7 @@ const faqData = [
       },
     ],
   },
-  {
-    question: "What details are required to pay rent via credit card?",
-    answer: [
-      {
-        heading:
-          "To pay rent using credit cards on the EnKash portal, you need to start by adding owner details and property details as well as uploading rental records (Optional). You can set maker-checker-approver matrices, and these can either be centralized or decentralized as per the requirements of your organization. Also include details like GST, TDS, and other factors applicable to your rental amounts.",
-        bullets: [],
-      },
-    ],
-  },
+
   {
     question:
       "How long does it take to make rent payments through a credit card?",

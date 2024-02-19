@@ -483,7 +483,7 @@ const olympus = () => {
           <div className="me-4">
             <GetStartedCard
               whiteTitle="Multiple Modes Of Payment"
-              description="Enjoy the freedom of using flexible payment solutions, including credit cards and dedicated virtual cards, with the EnKash Olympus solution"
+              description="Enjoy the freedom of using flexible payment solutions with EnKash Olympus"
               ctaColor="blue"
               source="payables"
             />

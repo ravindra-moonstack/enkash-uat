@@ -293,7 +293,7 @@ const diyCardModule = () => {
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of DIY card module?"
-          description="Do-It-Your Way or DIY card module by EnKash is a centralized solution for businesses to manage corporate card expenses. It revolutionizes corporate card management by offering a user-friendly dashboard for easy setup and usage."
+          description="Do-It-Your Way or DIY card module is a centralized solution for businesses to manage corporate card expenses. It revolutionizes corporate card management by offering a user-friendly dashboard for easy setup and usage."
           source="corporate_cards"
         />
       </div>
@@ -302,7 +302,7 @@ const diyCardModule = () => {
           title="Explore our comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -317,7 +317,7 @@ const diyCardModule = () => {
                   weight="4"
                   title="A 'DIY credit card' refers to a Do-It-Yourself approach in managing the allocation and usage of funds on a business credit card. Unlike traditional credit cards that come in physical form with predefined details like name, expiry date, and CVV code, a DIY credit card allows the cardholder, often a business owner, to customize and allocate credit limits to different team members. This customization enables efficient fund management for specific purposes within the business, contributing to smoother operations."
                 />
-              </div>
+              </div> */}
 
               <div className="mb-3">
                 <Heading
@@ -377,7 +377,7 @@ const diyCardModule = () => {
                 </p>
               </div>
 
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -399,7 +399,7 @@ const diyCardModule = () => {
                   place to ensure that the usage of the cards is as per your
                   corporate spend policy.
                 </p>
-              </div>
+              </div> */}
             </>
           }
         />

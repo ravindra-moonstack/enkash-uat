@@ -53,4 +53,12 @@
   li {
     margin-bottom: 15px;
   }
+
+  p,
+  ol,
+  li {
+    color: $color-black;
+    font-size: 18px;
+    font-weight: 400;
+  }
 }

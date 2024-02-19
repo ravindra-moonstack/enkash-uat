@@ -243,7 +243,8 @@ const vendorManagement = () => {
                   />
                 </div>
               }
-              description="Streamline the entire payment process, from approval to execution, and get flexible payment modes like NEFT, IMPS, virtual, debit, and credit cards to ensure timely payments"
+              description="Streamline the entire payment process, from approval to execution, and get flexible payment modes 
+              like NEFT, IMPS, RTGS, UPI, debit cards virtual cards, and more to ensure timely payment"
               source="payables"
             />
           </div>

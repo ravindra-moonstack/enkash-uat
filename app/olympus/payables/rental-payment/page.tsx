@@ -190,13 +190,13 @@ const rentalPayments = () => {
               source="payables"
             />
           </div>
-          <div className="mb-2 mb-md-0 me-3">
+          {/* <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Pay Using Credit Cards"
               description="Get the option to pay rentals on time using any credit card and keep your business cash flow steady"
               source="payables"
             />
-          </div>
+          </div> */}
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Auto-Generated Records"
@@ -309,7 +309,7 @@ const rentalPayments = () => {
                 </ul>
               </div>
 
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -343,7 +343,7 @@ const rentalPayments = () => {
                   </li>
                   <li>You can generate MIS reports with a few simple clicks</li>
                 </ul>
-              </div>
+              </div> */}
 
               <div className="mb-3">
                 <Heading
@@ -373,7 +373,7 @@ const rentalPayments = () => {
                 </ul>
               </div>
 
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -397,9 +397,9 @@ const rentalPayments = () => {
                     Enter OTP and complete the bulk rental payment in one click
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
-              <div className="mb-3">
+              {/* <div className="mb-3">
                 <Heading
                   size="h5"
                   color="black"
@@ -429,7 +429,7 @@ const rentalPayments = () => {
                     Automatic recording of payments with a portal like EnKash
                   </li>
                 </ul>
-              </div>
+              </div> */}
 
               <div className="mb-3">
                 <Heading

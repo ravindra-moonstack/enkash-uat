@@ -560,7 +560,7 @@ const vendorPayment = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Initiates the actual payment transactions using selected payment methods, such as electronic transfers, net banking, or credit cards."
+                  title="Initiates the actual payment transactions using selected payment methods, such as electronic transfers, net banking, or UPI."
                 />
               </div>
               <br /> <br />
@@ -635,7 +635,7 @@ const vendorPayment = () => {
               </div>
               <br />
               <br />
-              <div className="mb-2 d-inline mt-2">
+              {/* <div className="mb-2 d-inline mt-2">
                 <div className="me-2 d-inline">
                   <Heading
                     size="h6"
@@ -651,8 +651,7 @@ const vendorPayment = () => {
                   weight="4"
                   title="It allows vendor payment through credit cards and provides convenience and potential rewards (e.g., cashback, reward points). Not only this, there’s another best option available, i.e., making vendor payments through Corporate Cards that come with a simplified onboarding process, complete transparency, and so much more, offering cash flow management seamlessly."
                 />
-              </div>
-              <br /> <br />
+              </div> */}
               <div className="mb-2 d-inline mt-2">
                 <div className="me-2 d-inline">
                   <Heading

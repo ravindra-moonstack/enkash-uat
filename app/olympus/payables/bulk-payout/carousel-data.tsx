@@ -14,23 +14,26 @@ const carouselData = [
   {
     image: iconTwo,
     alt: "Choose the specific type of bulk business payment",
-    title: "Choose the specific type of bulk business payment you'd like to make, such as vendor, rental, or utility",
+    title:
+      "Choose the specific type of bulk business payment you'd like to make, such as vendor, rental, or utility",
   },
   {
     image: iconThree,
     alt: "Download the sample format",
-    title: "Download the sample format, enter the mandatory details and upload, it will create a list of transactions on the dashboard",
+    title:
+      "Download the sample format, enter the mandatory details and upload, it will create a list of transactions on the dashboard",
   },
   {
     image: iconFour,
     alt: "If you have defined, maker checker approver workflow",
-    title: "If you have defined, maker checker approver workflow, send it for approval",
+    title:
+      "If you have defined, maker checker approver workflow, send it for approval",
   },
   {
     image: iconFive,
     alt: "Select multiple invoices and make bulk payments",
     title:
-      "Select multiple invoices and make bulk payments using any payment mode - credit card, net banking, and virtual cards",
+      "Select multiple invoices and make bulk payments using any payment mode",
   },
 ];
 

@@ -119,7 +119,7 @@ const billPayments = () => {
               oldWayDescription:
                 "The traditional way doesn’t allow you to use multiple modes of payment to pay bills.",
               newWayDescription:
-                "EnKash supports different modes of payments like credit cards, net banking, debit cards, and connected banking.",
+                "EnKash supports different modes of payments like netbanking, debit cards, connected banking and more.",
             },
             {
               itemArray: ["Late Payment", "Charges"],
@@ -314,7 +314,7 @@ const billPayments = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="You can upload all the relevant bills on EnKash, and set internal processes to get the relevant approvals from different departments. Once you do that, every time the bill is due, you will be notified by email to take action like approve, reject, or pay, based on which you can take action. Once it is approved, you can use personal or business-provided credit cards or other payment modes like internet banking or connected banking to make payments on the portal. "
+                  title="You can upload all the relevant bills on EnKash, and set internal processes to get the relevant approvals from different departments. Once you do that, every time the bill is due, you will be notified by email to take action like approve, reject, or pay, based on which you can take action. Once it is approved, you can pay using different payment methods on EnKash Platform."
                 />
               </div>
 
@@ -380,7 +380,9 @@ const billPayments = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="The different modes you can use for online bill payment include NEFT, credit cards, debit cards, and connected banking.  Each of the modes of payment has its own set of features and benefits. However, one of the quicker and smarter ways for online bill payment is to use your corporate credit card, which provides you with an additional line of funds and a longer repayment period when used smartly."
+                  title="The different modes you can use for online bill payment include
+                  NEFT, RTGS, IMPS, UPI, debit cards, connected banking, and more.  
+                  Each of the modes of payment has its own set of features and benefits."
                 />
               </div>
             </>

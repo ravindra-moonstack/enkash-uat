@@ -26,7 +26,7 @@ const carouselData = [
     image: iconFour,
     alt: "Make payments instantly using flexible payment",
     title:
-      "Make payments instantly using flexible payment options like NEFT, IMPS, credit, debit, and virtual cards",
+      "Make payments instantly using flexible payment options like NEFT, IMPS, RTGS, UPI, debit cards, virtual cards, and more",
   },
 ];
 

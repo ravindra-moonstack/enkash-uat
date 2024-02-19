@@ -48,7 +48,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "The digitized bill payment module works on verified and encrypted payments through different payment modes to name a few, net banking, credit cards, connected banking, etc, and is preferable over other manual modes, which helps in cutting down the business fraud.",
+          "The digitized bill payment module works on verified and encrypted payments through different payment modes to name a few, net banking, NEFT, RTGS, IMPS, UPI, debit cards, connected banking, and more, and is preferable over other manual modes, which helps in cutting down the business fraud.",
       },
     ],
   },

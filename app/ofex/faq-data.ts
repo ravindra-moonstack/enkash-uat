@@ -66,7 +66,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Issuing virtual corporate cards with spending limits is an effective way to manage employee expenses. Other general steps for managing employee expenses include:",
+          "Issuing virtual cards with spending limits is an effective way to manage employee expenses. Other general steps for managing employee expenses include:",
         bullets: [
           "Creating and sharing an expense policy",
           "Setting budgets for each type of expense and designing approval hierarchies",

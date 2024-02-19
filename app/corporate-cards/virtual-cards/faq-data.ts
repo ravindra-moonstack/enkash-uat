@@ -44,15 +44,7 @@ const faqData = [
       },
     ],
   },
-  {
-    question: "Can I use a virtual credit card for an international payment?",
-    answer: [
-      {
-        heading:
-          "For now, you cannot use a virtual card for international transactions. However, you can customize these cards according to your business needs and use them for bill payments, rental payments, and marketing purposes, such as digital marketing spends.",
-      },
-    ],
-  },
+
 ];
 
 export default faqData;
