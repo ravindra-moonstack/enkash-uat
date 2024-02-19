@@ -20,7 +20,8 @@ const PopUp = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const currentUrl = window.location.pathname;
+  const currentUrl =
+    typeof window !== "undefined" ? window.location.pathname : "";
   const smallPopupUrls = ["/", "/sales/"];
   const isSmallUrls = smallPopupUrls.includes(currentUrl);
 
@@ -54,7 +55,7 @@ const PopUp = () => {
             <div
               className={
                 isSmallUrls
-                  ? styles.right_container_small 
+                  ? styles.right_container_small
                   : styles.right_container
               }
             >
