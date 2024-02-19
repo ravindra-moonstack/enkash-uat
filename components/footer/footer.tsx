@@ -159,17 +159,17 @@ const Footer = ({ utmSource = "" }: any) => {
               </li>
               <li>
                 <Link href="/olympus/receivables/payment-gateway/">
-                  Payment gateway
+                  Payment Gateway
                 </Link>
               </li>
               <li>
                 <Link href="/olympus/receivables/customized-payment/">
-                  Customized Payment
+                  Customized Payment Page
                 </Link>
               </li>
               <li>
                 <Link href="/olympus/receivables/payment-button/">
-                  Payment button
+                  Payment Button
                 </Link>
               </li>
             </ul>

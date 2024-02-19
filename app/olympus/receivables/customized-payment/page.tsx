@@ -246,7 +246,7 @@ const page = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about customized payment in detail"
+            title="Don't worry! Our FAQs section will help you learn about customized payment page in detail"
             color="black"
             size="h4"
           />
