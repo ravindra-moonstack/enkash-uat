@@ -45,7 +45,7 @@ const page = () => {
             </div>
             <div>
               <Heading
-                title="Payment Buttons"
+                title="Payment Button"
                 size="h4"
                 weight="4"
                 useH1TagInHtml={true}
@@ -55,27 +55,29 @@ const page = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Make your customers"
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="experience seamless"
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="transactions with a readily"
-              size="h2"
+              title="Easy-to-integrate"
               color="white"
+              size="h2"
               weight="7"
             />
+            <div>
+              <Heading
+                title="payment button"
+                color="rainy-blue"
+                size="h2"
+                weight="7"
+              />
+              <Heading
+                title={`${space}for`}
+                color="white"
+                size="h2"
+                weight="7"
+              />
+            </div>
             <Heading
-              title="available payment button"
-              size="h2"
+              title="seamless collections"
               color="white"
+              size="h2"
               weight="7"
             />
           </div>
@@ -235,7 +237,7 @@ const page = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about Payment Buttons in detail"
+            title="Don't worry! Our FAQs section will help you learn about payment buttons in detail"
             color="black"
             size="h4"
           />

@@ -2,6 +2,7 @@ import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
 import iconFour from "./img/icon-four.svg";
+import iconFive from "./img/icon-five.svg";
 
 const carouselData = [
   {
@@ -25,7 +26,7 @@ const carouselData = [
     title: "Embed the payment button code on your business website",
   },
   {
-    image: iconFour,
+    image: iconFive,
     alt: "Use it to collect payments from customers",
     title: "Use it to collect payments from customers",
   },

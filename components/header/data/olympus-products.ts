@@ -212,17 +212,16 @@ const olympusProducts = [
         link: "/olympus/receivables/subscription-management",
       },
       {
-        name: "Payment gateway",
-        description:
-          "Track and handle recurring subscriptions with utmost ease",
+        name: "Payment Gateway",
+        description: "Accelerate business growth with security & ease",
         imageSrc: subscriptionManagement,
         imageSrcHovered: subscriptionManagementFilled,
         link: "/olympus/receivables/payment-gateway",
       },
       {
-        name: "Payment button",
+        name: "Payment Button",
         description:
-          "Track and handle recurring subscriptions with utmost ease",
+          "Collect business payments with complete security and zero tech integration",
         imageSrc: subscriptionManagement,
         imageSrcHovered: subscriptionManagementFilled,
         link: "/olympus/receivables/payment-button",
@@ -230,7 +229,7 @@ const olympusProducts = [
       {
         name: "Customized Payment",
         description:
-          "Track and handle recurring subscriptions with utmost ease",
+          "Tailor payment pages as per your brand and collect payments",
         imageSrc: subscriptionManagement,
         imageSrcHovered: subscriptionManagementFilled,
         link: "/olympus/receivables/customized-payment",

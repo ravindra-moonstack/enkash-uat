@@ -55,19 +55,25 @@ const page = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Quick, safe, and convenient"
+              title="Enable swift business"
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="business transactions with a"
+              title="transactions with our"
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="secure and efficient payment gateway"
+              title="secure and efficient"
+              size="h2"
+              color="rainy-blue"
+              weight="7"
+            />
+            <Heading
+              title="payment gateway"
               size="h2"
               color="rainy-blue"
               weight="7"
@@ -76,7 +82,7 @@ const page = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Include a convenient, easy, and modern way of making payments in daily business transactions"
+              title="Modernize your business with a quick, convenient and easy way of payment collections"
               size="h6"
               weight="5"
             />
@@ -148,7 +154,7 @@ const page = () => {
             weight="6"
           />
           <Heading
-            title={`${space}Secure Business Transactions`}
+            title={`${space}quick and easy payment collections`}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -195,13 +201,6 @@ const page = () => {
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="One-Time Authentication"
-              source="receivables"
-              description="The automated payments made via E-NACH require one-time authentication"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
               whiteTitle="Easy Integration"
               description="EnKash’s payment gateway can be easily integrated using API. This seamless integration can help businesses make quick and secure transactions"
               source="receivables"
@@ -239,13 +238,13 @@ const page = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Seamless Integration With${space}`}
+                    title={`Seamless integration with${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="Enhanced Security & Customer Experience"
+                    title="enhanced security & customer experience"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -372,17 +371,18 @@ const page = () => {
               <div className="mb-5">
                 <ul>
                   <li>
-                    The business website must be live in the public domain.
+                    The business website must be live in the public domain
                   </li>
                   <li>
-                    The website needs to have: A Contact Us section with an
-                    email address and phone number. A Privacy Policy section.
-                    <br /> A Refund Policy section. A Terms and Condition
-                    section.
+                    The website needs to have: A{" "}
+                    <strong>Contact Us section</strong> with an email address
+                    and phone number. A <strong>Privacy Policy</strong> section.
+                    <br /> A Refund Policy section. A{" "}
+                    <strong>Terms and Condition</strong> section
                   </li>
                   <li>
                     The website must not be dealing in banned products and
-                    services.
+                    services
                   </li>
                 </ul>
               </div>

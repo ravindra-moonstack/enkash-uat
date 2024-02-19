@@ -162,21 +162,21 @@ const page = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Minimal Integration"
-              description="Businesses can easily create their customized payment page with payment gateways to collect payments online with negligible technical integration. Both one-time and recurring payments can be collected with these payment pages."
+              description="Businesses can easily create their customized payment page with payment gateways to collect payments online with negligible technical integration. Both one-time and recurring payments can be collected with these payment pages"
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Multiple Payment Pages"
-              description="Enterprises can create multiple payment pages for each type of transaction. For instance, one payment page can be created for a charity and one for collection from customers."
+              description="Enterprises can create multiple payment pages for each type of transaction. For instance, one payment page can be created for a charity and one for collection from customers"
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Security"
-              description="EnKash does not store your customer card details. This information can only be seen by the customer, the payment gateway, and the bank. This ensures data security."
+              description="EnKash does not store your customer card details. This information can only be seen by the customer, the payment gateway, and the bank. This ensures data security"
               source="receivables"
             />
           </div>
@@ -185,20 +185,20 @@ const page = () => {
             <GetStartedCard
               whiteTitle="Customize Your Brand"
               source="receivables"
-              description="Businesses can customize their payment page as per their requirements and give their customer a seamless experience."
+              description="Businesses can customize their payment page as per their requirements and give their customer a seamless experience"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Automated Receipts"
-              description="Send automated receipts to customers on payment confirmation without any manual intervention."
+              description="Send automated receipts to customers on payment confirmation without any manual intervention"
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Custom Fields"
-              description="Businesses can customize their payment page by modifying fields to collect information relevant to them."
+              description="Businesses can customize their payment page by modifying fields to collect information relevant to them"
               source="receivables"
             />
           </div>
@@ -246,7 +246,7 @@ const page = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about e-Nach in detail"
+            title="Don't worry! Our FAQs section will help you learn about customized payment in detail"
             color="black"
             size="h4"
           />
