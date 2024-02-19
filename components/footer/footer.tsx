@@ -143,9 +143,7 @@ const Footer = ({ utmSource = "" }: any) => {
               <li>
                 <Link href="/olympus/receivables/invoices/">Invoices</Link>
               </li>
-              <li>
-                <Link href="/olympus/receivables/e-nach">E Nach</Link>
-              </li>
+
               <li>
                 <Link href="/olympus/receivables/reminder-engine">
                   Reminder Engine
@@ -157,6 +155,21 @@ const Footer = ({ utmSource = "" }: any) => {
               <li>
                 <Link href="/olympus/receivables/subscription-management/">
                   Subscription Management
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/receivables/payment-gateway/">
+                  Payment Gateway
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/receivables/customized-payment/">
+                  Customized Payment Page
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/receivables/payment-button/">
+                  Payment Button
                 </Link>
               </li>
             </ul>
@@ -542,7 +555,7 @@ const Footer = ({ utmSource = "" }: any) => {
           </span>
         </div>
         <div className={`col-12 color-white ${styles.copyright}`}>
-          Copyright © 2023 | Nehat Tech Solutions Pvt. Ltd. All right reserved.
+          Copyright © 2024 | Nehat Tech Solutions Pvt. Ltd. All right reserved.
         </div>
       </div>
 

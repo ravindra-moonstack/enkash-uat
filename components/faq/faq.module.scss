@@ -54,6 +54,7 @@
 
     @include for-laptops {
       font-size: 25px;
+      padding-right: 20%;
     }
 
     img {
@@ -97,6 +98,9 @@
     opacity: 0;
     overflow: hidden;
     height: 0;
+    @include for-laptops {
+      padding-right: 20%;
+    }
 
     &.visible {
       opacity: 1;
