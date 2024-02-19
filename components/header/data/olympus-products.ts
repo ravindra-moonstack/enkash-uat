@@ -35,6 +35,12 @@ import {
   subscriptionManagementFilled,
   payrollProcessing,
   payrollProcessingFilled,
+  customizedPayment,
+  customizedPaymentFilled,
+  paymentButton,
+  paymentButtonFilled,
+  paymentGateaway,
+  paymentGateawayFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -214,24 +220,24 @@ const olympusProducts = [
       {
         name: "Payment Gateway",
         description: "Accelerate business growth with security & ease",
-        imageSrc: subscriptionManagement,
-        imageSrcHovered: subscriptionManagementFilled,
+        imageSrc: paymentGateaway,
+        imageSrcHovered: paymentGateawayFilled,
         link: "/olympus/receivables/payment-gateway",
       },
       {
         name: "Payment Button",
         description:
           "Collect business payments with complete security and zero tech integration",
-        imageSrc: subscriptionManagement,
-        imageSrcHovered: subscriptionManagementFilled,
+        imageSrc: paymentButton,
+        imageSrcHovered: paymentButtonFilled,
         link: "/olympus/receivables/payment-button",
       },
       {
         name: "Customized Payment",
         description:
           "Tailor payment pages as per your brand and collect payments",
-        imageSrc: subscriptionManagement,
-        imageSrcHovered: subscriptionManagementFilled,
+        imageSrc: customizedPayment,
+        imageSrcHovered: customizedPaymentFilled,
         link: "/olympus/receivables/customized-payment",
       },
     ],

@@ -62,6 +62,12 @@ export { default as reminderEngine } from "./img/reminder-engine.png";
 export { default as reminderEngineFilled } from "./img/reminder-engine-filled.png";
 export { default as subscriptionManagement } from "./img/subscrption-management.svg";
 export { default as subscriptionManagementFilled } from "./img/subscrption-management-filled.svg";
+export { default as paymentGateaway } from "./img/payment-gateaway.svg";
+export { default as paymentGateawayFilled } from "./img/payment-gateway-filled.svg";
+export { default as paymentButton } from "./img/payment-button.svg";
+export { default as paymentButtonFilled } from "./img/payment-button-filled.svg";
+export { default as customizedPayment } from "./img/customized-payment.svg";
+export { default as customizedPaymentFilled } from "./img/customized-payment-filled.svg";
 
 //paybles
 export { default as billPayments } from "./img/bill-payments.png";
