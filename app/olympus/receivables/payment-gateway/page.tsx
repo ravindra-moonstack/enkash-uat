@@ -148,7 +148,7 @@ const page = () => {
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Payment Gateway For"
+            title="Payment Gateway for"
             color="black"
             size="h1"
             weight="6"

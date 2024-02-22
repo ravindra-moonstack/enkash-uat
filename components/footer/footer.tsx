@@ -110,7 +110,10 @@ const Footer = ({ utmSource = "" }: any) => {
               </li>
             </ul>
           </div>
-          <div className="">
+        </div>
+        <div className="col-6 col-md-3">
+          <div className={` ${styles.footer_links_col}`}>
+            {" "}
             <ul>
               <li className="mt-2">
                 <div className={`color-white ${styles.sub_title}`}>
@@ -222,41 +225,6 @@ const Footer = ({ utmSource = "" }: any) => {
               </ul>
             </div>
           </div>
-
-          <div className={` ${styles.footer_links_col}`}>
-            <div>
-              <div className={styles.freedom_card_box}>
-                <Link href="/corporate-cards">
-                  <h4 className={`${styles.title}`}>Solutions</h4>
-                </Link>
-              </div>
-              <ul>
-                <li>
-                  <Link href="/solutions/automated-reconciliation/">
-                    Automated Reconciliation
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/solutions/customized-reporting">
-                    Customized Reporting
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/solutions/workflow-management">
-                    Workflow Management
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/solutions/cashflow-analytics/">
-                    Cash Flow Analytics
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/solutions/apis-modules/">APIs & Modules</Link>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
         <div className="col-6 col-md-3">
           <div className={`${styles.footer_links_col}`}>
@@ -328,6 +296,40 @@ const Footer = ({ utmSource = "" }: any) => {
               </ul>
             </div>
           </div>
+          <div className={` ${styles.footer_links_col}`}>
+            <div>
+              <div className={styles.freedom_card_box}>
+                <Link href="/corporate-cards">
+                  <h4 className={`${styles.title}`}>Solutions</h4>
+                </Link>
+              </div>
+              <ul>
+                <li>
+                  <Link href="/solutions/automated-reconciliation/">
+                    Automated Reconciliation
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/customized-reporting">
+                    Customized Reporting
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/workflow-management">
+                    Workflow Management
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/cashflow-analytics/">
+                    Cash Flow Analytics
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/solutions/apis-modules/">APIs & Modules</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="col-6 col-md-3">
           <div className={`${styles.footer_links_col}`}>
@@ -377,43 +379,6 @@ const Footer = ({ utmSource = "" }: any) => {
               </ul>
             </div>
           </div>
-        </div>
-
-        <div className="col-6 col-md-3">
-          <div className={`col-6 col-md-4 ${styles.footer_links_col}`}>
-            <div className="mt-2">
-              <h4 className={`col-12 ${styles.title}`}>Policies</h4>
-              <ul>
-                <li>
-                  <Link href="/grievance-policy/">
-                    Grievances and Redressal
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/chargeback-dispute-management-policy/">
-                    Dispute Management
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/privacy-legal/">Privacy & Legal</Link>
-                </li>
-                <li>
-                  <Link href="/term-condition/">Terms & Conditions</Link>
-                </li>
-                <li>
-                  <Link
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href="https://www.sbmbank.co.in/aboutus/grievance-redressal-mechanism.php"
-                  >
-                    Partner Bank Grievances
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div className="col-6 col-md-3">
           <div className={`${styles.footer_links_col}`}>
             <div className="mt-2">
               <h4 className={`${styles.title}`}>Company</h4>
@@ -455,6 +420,41 @@ const Footer = ({ utmSource = "" }: any) => {
                       support@enkash.com
                     </span>
                   </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="col-6 col-md-3">
+          <div className={`col-6 col-md-4 ${styles.footer_links_col}`}>
+            <div className="mt-2">
+              <h4 className={`col-12 ${styles.title}`}>Policies</h4>
+              <ul>
+                <li>
+                  <Link href="/grievance-policy/">
+                    Grievances and Redressal
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/chargeback-dispute-management-policy/">
+                    Dispute Management
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy-legal/">Privacy & Legal</Link>
+                </li>
+                <li>
+                  <Link href="/term-condition/">Terms & Conditions</Link>
+                </li>
+                <li>
+                  <Link
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href="https://www.sbmbank.co.in/aboutus/grievance-redressal-mechanism.php"
+                  >
+                    Partner Bank Grievances
+                  </Link>
                 </li>
               </ul>
             </div>
