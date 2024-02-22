@@ -233,7 +233,7 @@ const olympusProducts = [
         link: "/olympus/receivables/payment-button",
       },
       {
-        name: "Customized Payment",
+        name: "Customized Payment Page",
         description:
           "Tailor payment pages as per your brand and collect payments",
         imageSrc: customizedPayment,
