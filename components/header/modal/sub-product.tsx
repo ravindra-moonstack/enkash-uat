@@ -17,6 +17,7 @@ const SubProduct = (props: any) => {
   );
 
   const hasActiveGroup = !!activeGroup;
+  const scrollingDivRef = useRef<HTMLDivElement>(null);
 
   const maxRefsLength = props.subProducts.reduce(
     (acc: any, curr: { list: string | any[] }) => {
@@ -81,18 +82,28 @@ const SubProduct = (props: any) => {
               }`}
             >
               <div
-                className={styles.sub_products_container}
+                className={`${styles.sub_products_container} ${
+                  activeSubtitle == "Receivables"
+                    ? styles.receivablesScroll
+                    : ""
+                }`}
                 onMouseLeave={() => sethoveredProductIndex(null)}
+                ref={scrollingDivRef}
               >
                 {hoveredProductIndex !== null &&
                   refs[hoveredProductIndex].current && (
                     <div
                       className={styles.background_slide}
                       style={{
-                        transform: `
-                translateY(${refs[hoveredProductIndex].current!.offsetTop}px) 
-                translateX(${refs[hoveredProductIndex].current!.offsetLeft}px)
-              `,
+                        transform: scrollingDivRef.current
+                          ? `
+              translateY(${
+                refs[hoveredProductIndex].current!.offsetTop -
+                scrollingDivRef.current.scrollTop
+              }px) 
+              translateX(${refs[hoveredProductIndex].current!.offsetLeft}px)
+            `
+                          : "",
                         height: `${
                           refs[hoveredProductIndex].current!.offsetHeight
                         }px`,
@@ -163,12 +174,12 @@ const SubProduct = (props: any) => {
           {props.index === 1 && (
             <div className={styles.powered}>*Powered by Banks/REs</div>
           )}
-          {props.index === 0 && activeSubtitle === "Receivables" && (
+          {/* {props.index === 0 && activeSubtitle === "Receivables" && (
             <div className={styles.powered}>
               #Launching soon 🚀 as per
               <br /> RBI's PA (Online) authorization
             </div>
-          )}
+          )} */}
 
           <div
             className={`d-flex align-items-center justify-content-between ${

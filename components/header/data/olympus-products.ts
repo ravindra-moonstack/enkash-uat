@@ -41,6 +41,10 @@ import {
   paymentButtonFilled,
   paymentGateaway,
   paymentGateawayFilled,
+  autoCollect,
+  autoCollectFilled,
+  instantSettlements,
+  instantSettlementsFilled,
 } from "@/components/header";
 
 const olympusProducts = [
@@ -239,6 +243,20 @@ const olympusProducts = [
         imageSrc: customizedPayment,
         imageSrcHovered: customizedPaymentFilled,
         link: "/olympus/receivables/customized-payment",
+      },
+      {
+        name: "Auto Collect",
+        description: "Easily receive payments through diverse channels",
+        imageSrc: autoCollect,
+        imageSrcHovered: autoCollectFilled,
+        link: "/olympus/receivables/auto-collect",
+      },
+      {
+        name: "Instant-settlements",
+        description: "Instantly access your earnings with quick settlements",
+        imageSrc: instantSettlements,
+        imageSrcHovered: instantSettlementsFilled,
+        link: "/olympus/receivables/instant-settlements",
       },
     ],
     footerText:

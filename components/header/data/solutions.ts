@@ -29,6 +29,13 @@ export const solutions = [
     description: "Integrate our robust APIs and empower your business",
     link: "/solutions//apis-modules",
   },
+
+  {
+    name: "Integrations",
+    description:
+      "Boost efficiency, connectivity, and business agility for growth",
+    link: "/solutions//integrations",
+  },
 ];
 
 export default solutions;

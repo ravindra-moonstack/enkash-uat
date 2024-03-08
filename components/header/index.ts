@@ -68,6 +68,10 @@ export { default as paymentButton } from "./img/payment-button.svg";
 export { default as paymentButtonFilled } from "./img/payment-button-filled.svg";
 export { default as customizedPayment } from "./img/customized-payment.svg";
 export { default as customizedPaymentFilled } from "./img/customized-payment-filled.svg";
+export { default as autoCollect } from "./img/auto-collect.svg";
+export { default as autoCollectFilled } from "./img/auto-collect-filled.svg";
+export { default as instantSettlements } from "./img/instant-settlements.svg";
+export { default as instantSettlementsFilled } from "./img/instant-settlements-filled.svg";
 
 //paybles
 export { default as billPayments } from "./img/bill-payments.png";

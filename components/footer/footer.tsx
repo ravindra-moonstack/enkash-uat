@@ -115,7 +115,7 @@ const Footer = ({ utmSource = "" }: any) => {
           <div className={` ${styles.footer_links_col}`}>
             {" "}
             <ul>
-              <li className="mt-2">
+              <li className="mt-4">
                 <div className={`color-white ${styles.sub_title}`}>
                   <Link href="/olympus/receivables">
                     Receivables<sup>#</sup>
@@ -326,6 +326,9 @@ const Footer = ({ utmSource = "" }: any) => {
                 </li>
                 <li>
                   <Link href="/solutions/apis-modules/">APIs & Modules</Link>
+                </li>
+                <li>
+                  <Link href="/solutions/integrations/">Integrations</Link>
                 </li>
               </ul>
             </div>

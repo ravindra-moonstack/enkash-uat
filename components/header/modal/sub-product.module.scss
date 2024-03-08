@@ -12,10 +12,14 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 10px;
   column-gap: 7px;
-
   a {
     text-decoration: none;
   }
+}
+
+.receivablesScroll{
+  max-height: 365px;
+  overflow-y: scroll;
 }
 
 .sub_product_row {
