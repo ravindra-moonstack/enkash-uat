@@ -246,14 +246,14 @@ const olympusProducts = [
       },
       {
         name: "Auto Collect",
-        description: "Get paid faster and boost cash flow with auto collect",
+        description: "Easily receive payments through diverse channels",
         imageSrc: autoCollect,
         imageSrcHovered: autoCollectFilled,
         link: "/olympus/receivables/auto-collect",
       },
       {
         name: "Instant-settlements",
-        description: "Get paid immediately with instant settlements",
+        description: "Instantly access your earnings with quick settlements",
         imageSrc: instantSettlements,
         imageSrcHovered: instantSettlementsFilled,
         link: "/olympus/receivables/instant-settlements",

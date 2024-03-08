@@ -31,18 +31,10 @@ const FAQHtml = ({ faqData }: any) => {
             answerHTML={
               <div key={index} className="mb-4">
                 <h4 className={styles.heading}>
-                  There are many
-                  <Link
-                    href="https://www.enkash.com/resources/blog/what-is-virtual-account-number/"
-                    target="_blank"
-                  >
-                    {`${space}advantages that virtual accounts offer`}
-                  </Link>
-                  , including ease of use, the ability to offer better customer
-                  service, real-time updating of their accounts with the
-                  payments received, prevention of fraud, and, most important of
-                  all, how traceable virtual accounts are to specific customer
-                  accounts and their payments.
+                  Any business that wants faster access to its cash flow can
+                  benefit from instant settlements. This includes businesses of
+                  all sizes, from freelancers and small businesses to large
+                  enterprises.
                 </h4>
               </div>
             }

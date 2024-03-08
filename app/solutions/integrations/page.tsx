@@ -135,7 +135,7 @@ const Integrations = () => {
               oldWayDescription:
                 "Employee expense management is paper-based in a traditional business setup. It includes manual approval and reimbursement without any transparency in the workflow.",
               newWayDescription:
-                "Businesses can seamlessly manage their employee expenses by automating with EnKash. The system can help streamline their approval flow and provide real-time data for better finance management. capture, submit, and track expenses on the go with our expense management API. Enjoy features like OCR, policies & approval flow, etc., and gain real-time visibility through smart analytics.",
+                "Businesses can seamlessly manage their employee expenses by automating with EnKash. The system can help streamline their approval flow and provide real-time data for better finance management.",
             },
 
             {
@@ -180,13 +180,13 @@ const Integrations = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Integration Across"
+                    title=" Multiple Systems"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title=" Multiple Systems"
+                    title="Integration"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -229,13 +229,13 @@ const Integrations = () => {
                 <div className="d-flex flex-column">
                   <div>
                     <Heading
-                      title="Business Integrations "
+                      title="Business integrations "
                       color="rainy-blue"
                       size="h1"
                       weight="6"
                     />
                     <Heading
-                      title={"Made Easy"}
+                      title={"made easy"}
                       color="white"
                       size="h1"
                       weight="6"

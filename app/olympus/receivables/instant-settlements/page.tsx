@@ -57,13 +57,13 @@ const InstantSettlement = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Get paid${space}`}
+              title={`Accelerate your${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`immediately with${space}`}
+              title={`cash flow with${space}`}
               color="white"
               size="h2"
               weight="7"
@@ -117,7 +117,7 @@ const InstantSettlement = () => {
             {
               itemArray: ["Waiting", "Period"],
               oldWayDescription:
-                "Earlier, payments used to take 2-3 business days to settle in your account, hindering your cash flow",
+                "Earlier, payments used to take 2-3 business days to settle in your account, hindering your cash flow.",
               newWayDescription:
                 "With EnKash’s instant payment settlement process, receive funds instantly after every successful transaction.",
             },
@@ -142,7 +142,7 @@ const InstantSettlement = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-inline text-center">
+        <div className="d-inline text-center pb-2">
           <Heading
             title="Fast-track your cash flow with"
             color="black"
@@ -174,7 +174,7 @@ const InstantSettlement = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Enhanced Supplier Relations"
+              whiteTitle="Enhanced Relations"
               description="Pay vendors/suppliers faster, build stronger relationships, potentially secure better deals, and avoid late fees"
               source="receivables"
             />
@@ -223,12 +223,12 @@ const InstantSettlement = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="bg-white row-padding text-center d-flex flex-column">
+      {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how instant settlements can revolutionize the way you work!"
         />
-      </div>
+      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

@@ -131,7 +131,7 @@ const AutoCollect = () => {
             {
               itemArray: ["Multi-Branch ", "Management"],
               oldWayDescription:
-                "Difficult to manage multiple branches/departments as there was no way to track transactions for individual units effectively	",
+                "Difficult to manage multiple branches/departments as there was no way to track transactions for individual units effectively.	",
               newWayDescription:
                 "Tailored for businesses with multiple branches or franchises, EnKash auto collect offers centralized control with individualized tracking for each unit.",
             },
@@ -149,9 +149,9 @@ const AutoCollect = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-inline text-center">
+        <div className="d-inline text-center pb-2">
           <Heading
-            title="Business auto collections made easy and efficient"
+            title="Business auto collections made"
             color="black"
             size="h1"
             weight="6"
@@ -240,7 +240,7 @@ const AutoCollect = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how virtual accounts can revolutionize the way you work!"
+          title="Learn how Auto Collect can revolutionize the way you work!"
         />
       </div>
       <div
@@ -334,7 +334,10 @@ const AutoCollect = () => {
                   </li>
                   <li>
                     The business gets real-time notifications when the payment
-                    is received in their virtual bank account
+                    is received in their{" "}
+                    <a href="https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/ ">
+                      virtual bank account
+                    </a>
                   </li>
                   <li>
                     All the transactions can then be reconciled by automatically

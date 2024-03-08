@@ -5,11 +5,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Settlement in a payment gateway refers to the process of transferring funds from the customer's account to the merchant's account after a successful transaction.",
-        bullets: [
-          "When a customer makes a purchase using a payment gateway with instant settlement, the transaction is initially authorized.",
-          "Then the funds are settled or transferred to the merchant's account, typically within a certain timeframe.",
-        ],
+          "Settlement in a payment gateway refers to the process of transferring funds from the customer's account to the merchant's account after a successful transaction. When a customer makes a purchase using a payment gateway with instant settlement, the transaction is initially authorized, and then the funds are settled or transferred to the merchant's account, typically within a certain timeframe.",
       },
     ],
   },
@@ -36,10 +32,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Any business that wants faster access to its cash flow can benefit from instant settlements.",
-        bullets: [
-          "This includes businesses of all sizes, from freelancers and small businesses to large enterprises.",
-        ],
+          "Any business that wants faster access to its cash flow can benefit from instant settlements. This includes businesses of all sizes, from freelancers and small businesses to large enterprises.",
       },
     ],
   },
@@ -47,10 +40,8 @@ const faqData = [
     question: "Is there a waiting period for settlements with EnKash?",
     answer: [
       {
-        heading: "No, there is no waiting period.",
-        bullets: [
-          "EnKash offers super-fast settlements, allowing you to receive your customer payments straight into your bank account every day.",
-        ],
+        heading:
+          "No, there is no waiting period. EnKash offers super-fast settlements, allowing you to receive your customer payments straight into your bank account every day.",
       },
     ],
   },

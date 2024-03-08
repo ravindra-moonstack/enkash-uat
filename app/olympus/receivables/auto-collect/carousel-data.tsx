@@ -5,15 +5,15 @@ import iconThree from "./img/icon-three.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Generate unique virtual payment addresses for each customer, branch, or department, effortlessly.",
+    alt: "Generate unique virtual payment addresses for each customer, branch, or department, effortlessly",
     title:
-      "Generate unique virtual payment addresses for each customer, branch, or department, effortlessly.",
+      "Generate unique virtual payment addresses for each customer, branch, or department, effortlessly",
   },
   {
     image: iconTwo,
-    alt: "Receive payments via NEFT, RTGS, IMPS, or other channels directly to your virtual bank accounts.",
+    alt: "Receive payments via NEFT, RTGS, IMPS, or other channels directly to your virtual bank accounts",
     title:
-      "Receive payments via NEFT, RTGS, IMPS, or other channels directly to your virtual bank accounts.",
+      "Receive payments via NEFT, RTGS, IMPS, or other channels directly to your virtual bank accounts",
   },
   {
     image: iconThree,

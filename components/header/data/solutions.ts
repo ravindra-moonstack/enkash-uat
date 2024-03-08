@@ -32,7 +32,8 @@ export const solutions = [
 
   {
     name: "Integrations",
-    description: "Enhance business processes with integrations",
+    description:
+      "Boost efficiency, connectivity, and business agility for growth",
     link: "/solutions//integrations",
   },
 ];

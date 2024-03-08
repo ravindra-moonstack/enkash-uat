@@ -16,7 +16,7 @@ const FAQHtml = ({ faqData }: any) => {
   return (
     <div>
       {faqData.map((item: { question: string; answer: any }, index: number) =>
-        index !== 3 ? (
+        index !== 2 ? (
           <FAQ
             key={index}
             question={item.question}
@@ -31,18 +31,15 @@ const FAQHtml = ({ faqData }: any) => {
             answerHTML={
               <div key={index} className="mb-4">
                 <h4 className={styles.heading}>
-                  There are many
-                  <Link
-                    href="https://www.enkash.com/resources/blog/what-is-virtual-account-number/"
-                    target="_blank"
-                  >
-                    {`${space}advantages that virtual accounts offer`}
+                  You can view all the settlements for payments that are
+                  collected via the auto-collect solution through
+                  <Link href="https://www.enkash.com/ " target="_blank">
+                    {`${space}EnKash’s `}
                   </Link>
-                  , including ease of use, the ability to offer better customer
-                  service, real-time updating of their accounts with the
-                  payments received, prevention of fraud, and, most important of
-                  all, how traceable virtual accounts are to specific customer
-                  accounts and their payments.
+                  reporting dashboard. This centralized dashboard offers
+                  comprehensive insights into your payment settlements, enabling
+                  efficient monitoring and management of your financial
+                  transactions.
                 </h4>
               </div>
             }
