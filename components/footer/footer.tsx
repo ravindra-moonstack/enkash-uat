@@ -175,6 +175,16 @@ const Footer = ({ utmSource = "" }: any) => {
                   Payment Button
                 </Link>
               </li>
+              <li>
+                <Link href="/olympus/receivables/auto-collect/">
+                  Auto Collect
+                </Link>
+              </li>
+              <li>
+                <Link href="/olympus/receivables/instant-settlements/">
+                  Instant Settlements
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

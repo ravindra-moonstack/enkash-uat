@@ -11,8 +11,8 @@ import { productModalEmptyStateImg } from "../.";
 import Link from "next/link";
 
 const ProductModal = ({ onLinkClick }: any) => {
-  const [hoveredProductIndex, setHoveredProductIndex] = useState<null | number>(
-    null
+  const [hoveredProductIndex, setHoveredProductIndex] = useState<number | null>(
+    0
   );
   const productRowRef = useRef<HTMLDivElement | null>(null);
   const refs = motherProducts.map(() => useRef<HTMLDivElement>(null));
@@ -33,7 +33,7 @@ const ProductModal = ({ onLinkClick }: any) => {
       <div
         className={`${styles.left_container} d-flex flex-column align-items-right pe-5 pb-5 mb-2 position-relative`}
       >
-        {hoveredProductIndex !== null && (
+        {hoveredProductIndex !== null && refs[hoveredProductIndex].current && (
           <div
             className={styles.background_slide}
             style={{
@@ -50,7 +50,7 @@ const ProductModal = ({ onLinkClick }: any) => {
           <div
             key={product.name}
             className={`${styles.product_row} ${
-              hoveredProductIndex == index
+              hoveredProductIndex === index
                 ? styles.opacity_selected
                 : styles.opacity_normal
             }`}
