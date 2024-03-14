@@ -156,8 +156,11 @@ const SubProduct = (props: any) => {
                         />
                       </div>
                       <div className={`d-flex flex-column ms-3`}>
-                        <div className={styles.sub_product_name}>
+                        <div className={`d-flex ${styles.sub_product_name}`}>
                           {product.name}
+                          {product?.new && (
+                            <div className={styles.new_badge}> NEW</div>
+                          )}
                         </div>
                         <div className={styles.sub_product_description}>
                           {product.description}

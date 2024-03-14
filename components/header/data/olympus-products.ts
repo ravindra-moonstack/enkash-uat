@@ -63,6 +63,7 @@ const olympusProducts = [
         imageSrc: paymentGateaway,
         imageSrcHovered: paymentGateawayFilled,
         link: "/olympus/receivables/payment-gateway",
+        new: true,
       },
       {
         name: "Virtual Accounts",

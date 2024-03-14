@@ -49,16 +49,16 @@ const Footer = ({ utmSource = "" }: any) => {
           </Link>
         </div>
 
-        <div className="d-flex">
+        <div className="d-flex flex-column flex-md-row">
           {/* parent olympus */}
-          <div className={`col-md-3 col-6 ${styles.dummy}`}>
-            <div className={`col-md-3 col-6 ${styles.footer_links_col}`}>
+          <div className={`col-md-3 col-12 ${styles.dummy}`}>
+            <div className={`col-md-3 col-12 ${styles.footer_links_col}`}>
               <Link href="/olympus">
                 <h4 className={` ${styles.title}`}>Olympus</h4>
               </Link>
 
-              <div className="">
-                <div className={``}>
+              <div className="d-flex flex-md-column ">
+                <div className={`col-6`}>
                   {" "}
                   <ul>
                     <li className="">
@@ -68,10 +68,11 @@ const Footer = ({ utmSource = "" }: any) => {
                         </Link>
                       </div>
                     </li>
-                    <li>
+                    <li className="d-flex">
                       <Link href="/olympus/receivables/payment-gateway">
                         Payment Gateway
                       </Link>
+                      <div className={`my-auto ${styles.new_badge}`}> NEW</div>
                     </li>
                     <li>
                       <Link href="/olympus/receivables/virtual-accounts/">
