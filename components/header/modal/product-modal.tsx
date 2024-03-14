@@ -2,13 +2,16 @@ import Image from "next/image";
 import { useRef, useState } from "react";
 import styles from "./modal.module.scss";
 import motherProducts from "../data/mother-products";
-import olympusProducts from "../data/olympus-products";
+import olympusProducts from "../data/receivable-products";
 import freedomProducts from "../data/freedom-products";
 import xpenzProducts from "../data/ofex-products";
 import loyaltyLoungeProducts from "../data/loaylty-lounge-products";
 import SubProduct from "./sub-product";
 import { productModalEmptyStateImg } from "../.";
 import Link from "next/link";
+import ReceivableProducts from "../data/receivable-products";
+import payableProducts from "../data/payable-products";
+import brandVouchersProducts from "../data/brand-voucher-products";
 
 const ProductModal = ({ onLinkClick }: any) => {
   const [hoveredProductIndex, setHoveredProductIndex] = useState<number | null>(
@@ -29,9 +32,9 @@ const ProductModal = ({ onLinkClick }: any) => {
   }
 
   return (
-    <div className={`row mt-5 ${styles.container}`}>
+    <div className={`row mt-3 ${styles.container}`}>
       <div
-        className={`${styles.left_container} d-flex flex-column align-items-right pe-5 pb-5 mb-2 position-relative`}
+        className={`${styles.left_container} d-flex flex-column align-items-right pe-2 pb-5 mb-2 position-relative`}
       >
         {hoveredProductIndex !== null && refs[hoveredProductIndex].current && (
           <div
@@ -68,7 +71,9 @@ const ProductModal = ({ onLinkClick }: any) => {
             }}
           >
             <Link href={product.link}>
-              <div className={styles.product_name}>{product.name}</div>
+              <div className={styles.product_name}>
+                {product.name} {product.name === "Receivables" && <sup>#</sup>}
+              </div>
               <div className={styles.product_description}>
                 {product.description}
               </div>
@@ -90,7 +95,7 @@ const ProductModal = ({ onLinkClick }: any) => {
 
       {hoveredProductIndex === 0 && (
         <SubProduct
-          subProducts={olympusProducts}
+          subProducts={ReceivableProducts}
           index={0}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
@@ -99,16 +104,17 @@ const ProductModal = ({ onLinkClick }: any) => {
       )}
       {hoveredProductIndex === 1 && (
         <SubProduct
-          subProducts={freedomProducts}
+          subProducts={payableProducts}
           index={1}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
           onLinkClick={onLinkClick}
         />
       )}
+
       {hoveredProductIndex === 2 && (
         <SubProduct
-          subProducts={xpenzProducts}
+          subProducts={freedomProducts}
           index={2}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
@@ -117,6 +123,26 @@ const ProductModal = ({ onLinkClick }: any) => {
       )}
 
       {hoveredProductIndex === 3 && (
+        <SubProduct
+          subProducts={xpenzProducts}
+          index={3}
+          hoveredProductIndex={hoveredProductIndex}
+          prevHoveredProductIndex={prevHoveredProductIndex}
+          onLinkClick={onLinkClick}
+        />
+      )}
+
+      {hoveredProductIndex === 4 && (
+        <SubProduct
+          subProducts={brandVouchersProducts}
+          index={3}
+          hoveredProductIndex={hoveredProductIndex}
+          prevHoveredProductIndex={prevHoveredProductIndex}
+          onLinkClick={onLinkClick}
+        />
+      )}
+
+      {hoveredProductIndex === 5 && (
         <SubProduct
           subProducts={loyaltyLoungeProducts}
           index={3}

@@ -4,13 +4,13 @@
 .container {
   padding-right: 30px;
   position: relative;
-  height: 600px;
+  height: 500px;
   // border: solid 1px red;
   .left_container {
-    width: 28%;
+    width: 22%;
   }
   .right_container {
-    width: 72%;
+    width: 78%;
   }
 }
 
@@ -36,7 +36,7 @@
 }
 
 .product_name {
-  font-size: 26px;
+  font-size: 22px;
   line-height: 30px;
   font-weight: 600;
   color: $color-equity-blue;
@@ -47,8 +47,8 @@
 }
 
 .product_description {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 14px;
   font-weight: 400;
   color: $color-secondry-grey;
 }

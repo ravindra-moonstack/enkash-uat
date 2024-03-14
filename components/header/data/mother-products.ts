@@ -1,8 +1,14 @@
 export const motherProducts = [
   {
-    name: "Olympus",
+    name: "Receivables",
     description:
-      "Automate your company’s accounts payable, accounts receivables, and bank reconciliation seamlessly",
+      "Collect payments via payment gateway, payment links, page, and button",
+    link: "/olympus",
+  },
+  {
+    name: "Payables",
+    description:
+      "Manage utility payments and vendor payments with digital invoicing",
     link: "/olympus",
   },
   {
@@ -11,10 +17,15 @@ export const motherProducts = [
     link: "/corporate-cards",
   },
   {
-    name: "OfEx",
+    name: "Expense Management",
     description:
       "Manage employee expenses and reimbursements with a highly customizable platform",
     link: "/ofex",
+  },
+  {
+    name: "Brand Voucher",
+    description: "Seamlessly automate & manage rewards, incentives and offers",
+    link: "/loyalty-lounge",
   },
   {
     name: "Loyalty Lounge",

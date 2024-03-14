@@ -121,3 +121,17 @@ export { default as multiForexCard } from "./img/multi-currency.svg";
 export { default as multiForexCardFilled } from "./img/multi-currency-filled.svg";
 export { default as businessCard } from "./img/business-card.svg";
 export { default as businessCardFilled } from "./img/business-card-filled.svg";
+
+//brand-voucher (BOLT)
+export { default as eCommerce } from "./img/e-commerce.svg";
+export { default as eCommerceFilled } from "./img/e-commerce-filled.svg";
+export { default as movieAndMusic } from "./img/movie-and-music.svg";
+export { default as movieAndMusicFilled } from "./img/movie-and-music-filled.svg";
+export { default as apparels } from "./img/apparels.svg";
+export { default as apparelsFilled } from "./img/apparels-filled.svg";
+export { default as foodAndBeverages } from "./img/food-and-beverages.svg";
+export { default as foodAndBeveragesFilled } from "./img/food-and-beverages-filled.svg";
+export { default as health } from "./img/health.svg";
+export { default as healthFilled } from "./img/health-filled.svg";
+export { default as occasion } from "./img/occasion.svg";
+export { default as occasionFilled } from "./img/occasion-filled.svg";

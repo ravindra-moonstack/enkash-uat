@@ -47,130 +47,14 @@ import {
   instantSettlementsFilled,
 } from "@/components/header";
 
-const olympusProducts = [
-  {
-    subtitle: "Receivables",
-    subtitleLink: "/olympus/receivables",
-    currentHeading: {
-      name: "Olympus",
-      description:
-        "Automate your company’s accounts payable, accounts receivables, and bank reconciliation seamlessly",
-    },
-    list: [
-      {
-        name: "Payment Gateway",
-        description: "Accelerate business growth with security & ease",
-        imageSrc: paymentGateaway,
-        imageSrcHovered: paymentGateawayFilled,
-        link: "/olympus/receivables/payment-gateway",
-        new: true,
-      },
-      {
-        name: "Virtual Accounts",
-        description: "Reconcile invoices and streamline collections",
-        imageSrc: virtualAccounts,
-        imageSrcHovered: virtualAccountsFilled,
-        link: "/olympus/receivables/virtual-accounts",
-      },
-      {
-        name: "Invoices",
-        description:
-          "Manage invoices with complete details with quicker payment options",
-        imageSrc: invoices,
-        imageSrcHovered: invoicesFilled,
-        link: "/olympus/receivables/invoices",
-      },
-      {
-        name: "Payment Links",
-        description: "Embed payments, quicken collections, improve sales",
-        imageSrc: paymentLinks,
-        imageSrcHovered: paymentLinksFilled,
-        link: "/olympus/receivables/payment-links",
-      },
-      {
-        name: "e-NACH",
-        description:
-          "Automate recurring payments and collections, ensuring efficient cash-flow management",
-        imageSrc: eNach,
-        imageSrcHovered: eNachFilled,
-        link: "/olympus/receivables/e-nach",
-      },
-      {
-        name: "Bulk Collect",
-        description: "Simplify bulk collections, invoicing, data quality",
-        imageSrc: bulkCollect,
-        imageSrcHovered: bulkCollectFilled,
-        link: "/olympus/receivables/bulk-collect",
-      },
-      {
-        name: "Payment Button",
-        description:
-          "Collect business payments with complete security and zero tech integration",
-        imageSrc: paymentButton,
-        imageSrcHovered: paymentButtonFilled,
-        link: "/olympus/receivables/payment-button",
-      },
-      {
-        name: "Subscription Management",
-        description:
-          "Track and handle recurring subscriptions with utmost ease",
-        imageSrc: subscriptionManagement,
-        imageSrcHovered: subscriptionManagementFilled,
-        link: "/olympus/receivables/subscription-management",
-      },
-      {
-        name: "Auto Collect",
-        description: "Easily receive payments through diverse channels",
-        imageSrc: autoCollect,
-        imageSrcHovered: autoCollectFilled,
-        link: "/olympus/receivables/auto-collect",
-      },
-      {
-        name: "Customized Payment Page",
-        description:
-          "Tailor payment pages as per your brand and collect payments",
-        imageSrc: customizedPayment,
-        imageSrcHovered: customizedPaymentFilled,
-        link: "/olympus/receivables/customized-payment",
-      },
-      {
-        name: "Instant-settlements",
-        description: "Instantly access your earnings with quick settlements",
-        imageSrc: instantSettlements,
-        imageSrcHovered: instantSettlementsFilled,
-        link: "/olympus/receivables/instant-settlements",
-      },
-      {
-        name: "Collection Analytics",
-        description:
-          "Analyze and enhance your collection process with smart analytics",
-        imageSrc: collectionAnalytics,
-        imageSrcHovered: collectionAnalyticsFilled,
-        link: "/olympus/receivables/collection-analytics",
-      },
-      {
-        name: "Reminder Engine",
-        description:
-          "Automate reminders for efficient collections and improve cash flow",
-        imageSrc: reminderEngine,
-        imageSrcHovered: reminderEngineFilled,
-        link: "/olympus/receivables/reminder-engine",
-      },
-    ],
-    footerText:
-      "Effortlessly streamline your business payments and collections",
-    footerMobileText: "Explore Receivables",
-    footerImg: "olympus_footer_bg",
-    footerLink: "/olympus",
-    parentLink: "/olympus",
-  },
+const payableProducts = [
   {
     subtitle: "Payables",
     subtitleLink: "/olympus/payables",
     currentHeading: {
       name: "Olympus",
       description:
-        "Automate your company’s accounts payable, accounts receivables, and bank reconciliation seamlessly",
+        "Manage utility payments and vendor payments with digital invoicing",
     },
     list: [
       {
@@ -268,4 +152,4 @@ const olympusProducts = [
   },
 ];
 
-export default olympusProducts;
+export default payableProducts;

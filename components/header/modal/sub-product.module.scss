@@ -2,14 +2,14 @@
 @import "../../../styles/variables";
 
 .container {
-  height: 600px;
+  height: 500px;
   position: relative;
-  width: 72%;
+  width: 78%;
 }
 
 .sub_products_container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 10px;
   column-gap: 7px;
   a {
@@ -17,7 +17,7 @@
   }
 }
 
-.receivablesScroll{
+.receivablesScroll {
   // max-height: 365px;
   // overflow-y: scroll;
 }
@@ -54,13 +54,14 @@
 }
 
 .sub_product_name {
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 20px;
 }
 
 .sub_product_description {
   font-size: 11px;
-  line-height: 16px;
+  line-height: 14px;
   margin-top: 3px;
 }
 
@@ -184,7 +185,9 @@
   background-size: 100% 100%;
 }
 
-.new_badge{
+.new_badge {
+  position: absolute;
+  left: 216px;
   background-color: $color-equity-blue;
   padding: 0px 6px;
   margin-left: 5px;
@@ -192,4 +195,7 @@
   color: white;
   font-size: 10px;
   font-weight: 500;
+  @include for-window-zoomed-screens {
+    left: 200px;
+  }
 }

@@ -8,7 +8,7 @@ import navBarTopTtitle from "@/components/header/data/nav-bar";
 import { Fragment, useState } from "react";
 import ProductListView from "./product-list-view";
 import Hamburger from "./hamburger";
-import olympusProducts from "@/components/header/data/olympus-products";
+import olympusProducts from "@/components/header/data/receivable-products";
 import freedomProducts from "@/components/header/data/freedom-products";
 import xpenzProducts from "@/components/header/data/ofex-products";
 import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-products";
