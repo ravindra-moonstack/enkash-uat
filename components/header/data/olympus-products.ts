@@ -58,25 +58,18 @@ const olympusProducts = [
     },
     list: [
       {
+        name: "Payment Gateway",
+        description: "Accelerate business growth with security & ease",
+        imageSrc: paymentGateaway,
+        imageSrcHovered: paymentGateawayFilled,
+        link: "/olympus/receivables/payment-gateway",
+      },
+      {
         name: "Virtual Accounts",
         description: "Reconcile invoices and streamline collections",
         imageSrc: virtualAccounts,
         imageSrcHovered: virtualAccountsFilled,
         link: "/olympus/receivables/virtual-accounts",
-      },
-      {
-        name: "Payment Links",
-        description: "Embed payments, quicken collections, improve sales",
-        imageSrc: paymentLinks,
-        imageSrcHovered: paymentLinksFilled,
-        link: "/olympus/receivables/payment-links",
-      },
-      {
-        name: "Bulk Collect",
-        description: "Simplify bulk collections, invoicing, data quality",
-        imageSrc: bulkCollect,
-        imageSrcHovered: bulkCollectFilled,
-        link: "/olympus/receivables/bulk-collect",
       },
       {
         name: "Invoices",
@@ -86,7 +79,66 @@ const olympusProducts = [
         imageSrcHovered: invoicesFilled,
         link: "/olympus/receivables/invoices",
       },
-
+      {
+        name: "Payment Links",
+        description: "Embed payments, quicken collections, improve sales",
+        imageSrc: paymentLinks,
+        imageSrcHovered: paymentLinksFilled,
+        link: "/olympus/receivables/payment-links",
+      },
+      {
+        name: "e-NACH",
+        description:
+          "Automate recurring payments and collections, ensuring efficient cash-flow management",
+        imageSrc: eNach,
+        imageSrcHovered: eNachFilled,
+        link: "/olympus/receivables/e-nach",
+      },
+      {
+        name: "Bulk Collect",
+        description: "Simplify bulk collections, invoicing, data quality",
+        imageSrc: bulkCollect,
+        imageSrcHovered: bulkCollectFilled,
+        link: "/olympus/receivables/bulk-collect",
+      },
+      {
+        name: "Payment Button",
+        description:
+          "Collect business payments with complete security and zero tech integration",
+        imageSrc: paymentButton,
+        imageSrcHovered: paymentButtonFilled,
+        link: "/olympus/receivables/payment-button",
+      },
+      {
+        name: "Subscription Management",
+        description:
+          "Track and handle recurring subscriptions with utmost ease",
+        imageSrc: subscriptionManagement,
+        imageSrcHovered: subscriptionManagementFilled,
+        link: "/olympus/receivables/subscription-management",
+      },
+      {
+        name: "Auto Collect",
+        description: "Easily receive payments through diverse channels",
+        imageSrc: autoCollect,
+        imageSrcHovered: autoCollectFilled,
+        link: "/olympus/receivables/auto-collect",
+      },
+      {
+        name: "Customized Payment Page",
+        description:
+          "Tailor payment pages as per your brand and collect payments",
+        imageSrc: customizedPayment,
+        imageSrcHovered: customizedPaymentFilled,
+        link: "/olympus/receivables/customized-payment",
+      },
+      {
+        name: "Instant-settlements",
+        description: "Instantly access your earnings with quick settlements",
+        imageSrc: instantSettlements,
+        imageSrcHovered: instantSettlementsFilled,
+        link: "/olympus/receivables/instant-settlements",
+      },
       {
         name: "Collection Analytics",
         description:
@@ -102,59 +154,6 @@ const olympusProducts = [
         imageSrc: reminderEngine,
         imageSrcHovered: reminderEngineFilled,
         link: "/olympus/receivables/reminder-engine",
-      },
-      {
-        name: "e-NACH",
-        description:
-          "Automate recurring payments and collections, ensuring efficient cash-flow management",
-        imageSrc: eNach,
-        imageSrcHovered: eNachFilled,
-        link: "/olympus/receivables/e-nach",
-      },
-      {
-        name: "Subscription Management",
-        description:
-          "Track and handle recurring subscriptions with utmost ease",
-        imageSrc: subscriptionManagement,
-        imageSrcHovered: subscriptionManagementFilled,
-        link: "/olympus/receivables/subscription-management",
-      },
-      {
-        name: "Payment Gateway",
-        description: "Accelerate business growth with security & ease",
-        imageSrc: paymentGateaway,
-        imageSrcHovered: paymentGateawayFilled,
-        link: "/olympus/receivables/payment-gateway",
-      },
-      {
-        name: "Payment Button",
-        description:
-          "Collect business payments with complete security and zero tech integration",
-        imageSrc: paymentButton,
-        imageSrcHovered: paymentButtonFilled,
-        link: "/olympus/receivables/payment-button",
-      },
-      {
-        name: "Customized Payment Page",
-        description:
-          "Tailor payment pages as per your brand and collect payments",
-        imageSrc: customizedPayment,
-        imageSrcHovered: customizedPaymentFilled,
-        link: "/olympus/receivables/customized-payment",
-      },
-      {
-        name: "Auto Collect",
-        description: "Easily receive payments through diverse channels",
-        imageSrc: autoCollect,
-        imageSrcHovered: autoCollectFilled,
-        link: "/olympus/receivables/auto-collect",
-      },
-      {
-        name: "Instant-settlements",
-        description: "Instantly access your earnings with quick settlements",
-        imageSrc: instantSettlements,
-        imageSrcHovered: instantSettlementsFilled,
-        link: "/olympus/receivables/instant-settlements",
       },
     ],
     footerText:

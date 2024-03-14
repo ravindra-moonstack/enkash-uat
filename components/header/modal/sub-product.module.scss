@@ -2,7 +2,7 @@
 @import "../../../styles/variables";
 
 .container {
-  height: 500px;
+  height: 600px;
   position: relative;
   width: 72%;
 }
@@ -18,8 +18,8 @@
 }
 
 .receivablesScroll{
-  max-height: 365px;
-  overflow-y: scroll;
+  // max-height: 365px;
+  // overflow-y: scroll;
 }
 
 .sub_product_row {

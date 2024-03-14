@@ -57,145 +57,147 @@ const Footer = ({ utmSource = "" }: any) => {
                 <h4 className={` ${styles.title}`}>Olympus</h4>
               </Link>
 
-              <div className={``}>
-                {" "}
-                <ul>
-                  <li className="">
-                    <div className={`color-white ${styles.sub_title}`}>
-                      <Link href="/olympus/receivables">
-                        Receivables<sup>#</sup>
-                      </Link>
-                    </div>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/virtual-accounts/">
-                      Virtual Accounts
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/payment-links/">
-                      {" "}
-                      Payment Links
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/collection-analytics">
-                      Collection Analytics
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/bulk-collect/">
-                      Bulk Collect
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/invoices/">Invoices</Link>
-                  </li>
-
-                  <li>
-                    <Link href="/olympus/receivables/reminder-engine">
-                      Reminder Engine
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/subscription-management/">
-                      Subscription Management
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/payment-gateway/">
-                      Payment Gateway
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/customized-payment/">
-                      Customized Payment Page
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/payment-button/">
-                      Payment Button
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/auto-collect/">
-                      Auto Collect
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/receivables/instant-settlements/">
-                      Instant Settlements
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-
               <div className="">
-                <ul className="mb-0">
-                  <li>
-                    <div className={`color-white ${styles.sub_title}`}>
-                      <Link href="/olympus/payables">Payables</Link>
-                    </div>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/bill-payment/">
-                      Bill Payment
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/bulk-payout/">
-                      Express Pay
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/gst-payments/">
-                      GST Payment
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/vendor-payment/">
-                      Vendor Payment
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/rental-payment/">
-                      Rental Payment
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/invoice-management/">
-                      Invoice Management
-                    </Link>
-                  </li>
-                  {/* <li>
+                <div className={``}>
+                  {" "}
+                  <ul>
+                    <li className="">
+                      <div className={`color-white ${styles.sub_title}`}>
+                        <Link href="/olympus/receivables">
+                          Receivables<sup>#</sup>
+                        </Link>
+                      </div>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/payment-gateway">
+                        Payment Gateway
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/virtual-accounts/">
+                        Virtual Accounts
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/invoices/">
+                        Invoices
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/payment-links/">
+                        Payment Links
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/bulk-collect/">
+                        Bulk Collect
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/payment-button/">
+                        Payment Button
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/subscription-management/">
+                        Subscription Management
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/auto-collect/">
+                        Auto Collect
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/customized-payment/">
+                        Customized Payment Page
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/instant-settlements/">
+                        Instant-settlements
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/collection-analytics/">
+                        Collection Analytics
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/reminder-engine/">
+                        Reminder Engine
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="">
+                  <ul className="mb-0">
+                    <li>
+                      <div className={`color-white ${styles.sub_title}`}>
+                        <Link href="/olympus/payables">Payables</Link>
+                      </div>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/bill-payment/">
+                        Bill Payment
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/bulk-payout/">
+                        Express Pay
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/gst-payments/">
+                        GST Payment
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/vendor-payment/">
+                        Vendor Payment
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/rental-payment/">
+                        Rental Payment
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/invoice-management/">
+                        Invoice Management
+                      </Link>
+                    </li>
+                    {/* <li>
                 <Link href="/olympus/payables/pay-by-any-card/">
                   Pay By Any Card
                 </Link>
               </li> */}
-                  <li>
-                    <Link href="/olympus/payables/vendor-management/">
-                      Vendor Management
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/seamless-banking/">
-                      Seamless Banking
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/payroll-processing/">
-                      Payroll Processing
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/olympus/payables/payable-analytics/">
-                      Payable Analytics
-                    </Link>
-                  </li>
-                </ul>
+                    <li>
+                      <Link href="/olympus/payables/vendor-management/">
+                        Vendor Management
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/seamless-banking/">
+                        Seamless Banking
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/payroll-processing/">
+                        Payroll Processing
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/payables/payable-analytics/">
+                        Payable Analytics
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
             <div className="col-6 col-md-3"></div>
