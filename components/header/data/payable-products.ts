@@ -39,8 +39,8 @@ import {
   customizedPaymentFilled,
   paymentButton,
   paymentButtonFilled,
-  paymentGateaway,
-  paymentGateawayFilled,
+  paymentGateway,
+  paymentGatewayFilled,
   autoCollect,
   autoCollectFilled,
   instantSettlements,
@@ -52,9 +52,9 @@ const payableProducts = [
     subtitle: "Payables",
     subtitleLink: "/olympus/payables",
     currentHeading: {
-      name: "Olympus",
+      name: "Payables",
       description:
-        "Manage utility payments and vendor payments with digital invoicing",
+        "Easily pay and manage all your vendors, bills, rentals, taxes, and more in one platform",
     },
     list: [
       {
@@ -143,8 +143,7 @@ const payableProducts = [
         link: "/olympus/payables/payroll-processing/",
       },
     ],
-    footerText:
-      "Effortlessly streamline your business payments and collections",
+    footerText: "Manage all your business payments seamlessly",
     footerMobileText: "Explore Payables",
     footerImg: "olympus_footer_bg",
     footerLink: "/olympus",

@@ -66,7 +66,7 @@ const xpenzProducts = [
         link: "/ofex/policy-and-approval-flows",
       },
     ],
-    footerText: "Optimize business spends with OfEx",
+    footerText: "Optimize business spends efficiently",
     footerMobileText: "Explore OfEx",
     footerImg: "xpenz_footer_bg",
     footerLink: "/ofex",

@@ -24,7 +24,8 @@ const freedomProducts = [
     subtitleLink: "/corporate-cards",
     currentHeading: {
       name: "Corporate Cards",
-      description: "Simplify corporate spending with flexible card solutions",
+      description:
+        "Simplify corporate spending with flexible credit and prepaid cards",
     },
     list: [
       {
@@ -83,8 +84,7 @@ const freedomProducts = [
       },
       {
         name: "DIY Card Module*",
-        description:
-          "Control your business spends with customizable cards",
+        description: "Control your business spends with customizable cards",
         imageSrc: diyCard,
         imageSrcHovered: diyCardFilled,
         link: "/corporate-cards/diy-card-module",

@@ -25,7 +25,7 @@ const ResourcesModal = () => {
   const blogData: Resource = resourcesData;
 
   return (
-    <div className={`row mt-3 ${styles.container}`}>
+    <div className={`row mt-5 ${styles.container}`}>
       <div
         className={`${styles.resources_grid_row} col-7 px-5 pb-5 mb-2 position-relative`}
       >

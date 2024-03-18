@@ -1,35 +1,32 @@
 export const motherProducts = [
   {
     name: "Receivables",
-    description:
-      "Collect payments via payment gateway, payment links, page, and button",
+    description: "Digitize your business collections",
     link: "/olympus",
   },
   {
     name: "Payables",
-    description:
-      "Manage utility payments and vendor payments with digital invoicing",
+    description: "Pay & manage all business payments",
     link: "/olympus",
   },
   {
     name: "Corporate Cards",
-    description: "Simplify corporate spending with flexible card solutions",
+    description: "Flexible card solutions for corporate needs",
     link: "/corporate-cards",
   },
   {
     name: "Expense Management",
-    description:
-      "Manage employee expenses and reimbursements with a highly customizable platform",
+    description: "Expense & reimbursement solution",
     link: "/ofex",
   },
   {
     name: "Brand Voucher",
-    description: "Seamlessly automate & manage rewards, incentives and offers",
+    description: "Shop smart and unlock exclusive savings",
     link: "/loyalty-lounge",
   },
   {
     name: "Loyalty Lounge",
-    description: "Seamlessly automate & manage rewards, incentives and offers",
+    description: "Automate rewards, incentives & offers",
     link: "/loyalty-lounge",
   },
 ];

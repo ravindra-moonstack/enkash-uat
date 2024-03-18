@@ -20,7 +20,7 @@ const brandVouchersProducts = [
     currentHeading: {
       name: "Brand Vouchers",
       description:
-        "Seamlessly automate & manage rewards, incentives and offers",
+        "Shop smart and unlock exclusive savings with 400+ brand voucher",
     },
     list: [
       {
@@ -71,7 +71,7 @@ const brandVouchersProducts = [
         link: "/loyalty-lounge/offers",
       },
     ],
-    footerText: "Effortless recognition, and endless rewards in one place",
+    footerText: "Save big on 400+ brand vouchers across multiple categories",
     footerMobileText: "Explore Loyalty Lounge",
     footerImg: "loyalty_footer_bg",
     footerLink: "/loyalty-lounge",

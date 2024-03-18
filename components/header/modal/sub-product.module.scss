@@ -2,7 +2,7 @@
 @import "../../../styles/variables";
 
 .container {
-  height: 500px;
+  height: 425px;
   position: relative;
   width: 78%;
 }
@@ -57,6 +57,10 @@
   font-size: 16px;
   font-weight: 500;
   line-height: 20px;
+  sup {
+    font-size: 6px;
+    top: 0px;
+  }
 }
 
 .sub_product_description {
@@ -80,7 +84,7 @@
   padding-right: 10%;
   position: absolute;
   bottom: 0px;
-  height: 85px;
+  height: 50px;
   width: 102%;
   color: $color-electric-green;
   font-weight: 600;

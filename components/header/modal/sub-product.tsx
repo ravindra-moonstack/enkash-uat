@@ -133,8 +133,8 @@ const SubProduct = (props: any) => {
                         <Image
                           src={product.imageSrc}
                           alt={product.name}
-                          width={47}
-                          height={47}
+                          width={25}
+                          height={25}
                           className={
                             hoveredProductIndex === index
                               ? styles.image_hidden
@@ -146,8 +146,8 @@ const SubProduct = (props: any) => {
                         <Image
                           src={product.imageSrcHovered}
                           alt={`${product.name} hovered`}
-                          width={47}
-                          height={47}
+                          width={25}
+                          height={25}
                           className={
                             hoveredProductIndex === index
                               ? styles.color_image_visible
@@ -157,7 +157,16 @@ const SubProduct = (props: any) => {
                       </div>
                       <div className={`d-flex flex-column ms-3`}>
                         <div className={`d-flex ${styles.sub_product_name}`}>
-                          {product.name}
+                          {product.name !== "Olympus PG" && <>{product.name}</>}
+
+                          {/* new tag with json */}
+                          {product.name === "Olympus PG" && (
+                            <>
+                              Olympus<sup>TM</sup> PG
+                            </>
+                          )}
+
+                          {/* new tag with json */}
                           {product?.new && (
                             <div className={styles.new_badge}> NEW</div>
                           )}

@@ -32,7 +32,7 @@ const ProductModal = ({ onLinkClick }: any) => {
   }
 
   return (
-    <div className={`row mt-3 ${styles.container}`}>
+    <div className={`row mt-5 ${styles.container}`}>
       <div
         className={`${styles.left_container} d-flex flex-column align-items-right pe-2 pb-5 mb-2 position-relative`}
       >
