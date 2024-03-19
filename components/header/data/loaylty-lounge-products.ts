@@ -17,8 +17,7 @@ const loyaltyLoungeProducts = [
     subtitleLink: "/loyalty-lounge",
     currentHeading: {
       name: "Loyalty Lounge ",
-      description:
-        "Seamlessly automate & manage rewards, incentives and offers",
+      description: "Automate & manage rewards, incentives & offers",
     },
     list: [
       {

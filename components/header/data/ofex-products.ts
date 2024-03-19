@@ -16,9 +16,8 @@ const xpenzProducts = [
     subtitle: "Default",
     subtitleLink: "/ofex",
     currentHeading: {
-      name: "OfEx ",
-      description:
-        "Manage employee expenses and reimbursements with a highly customizable platform",
+      name: "Expense Management ", //previously it was Ofex
+      description: "Manage employee expenses & reimbursements ",
     },
     list: [
       {

@@ -11,22 +11,22 @@ export const motherProducts = [
   },
   {
     name: "Corporate Cards",
-    description: "Flexible card solutions for corporate needs",
+    description: "Credit and prepaid cards solution",
     link: "/corporate-cards",
   },
   {
     name: "Expense Management",
-    description: "Expense & reimbursement solution",
+    description: "Manage employee expenses & reimbursements ",
     link: "/ofex",
   },
   {
-    name: "Brand Voucher",
+    name: "Brand Vouchers",
     description: "Shop smart and unlock exclusive savings",
     link: "/loyalty-lounge",
   },
   {
     name: "Loyalty Lounge",
-    description: "Automate rewards, incentives & offers",
+    description: "Automate & manage rewards, incentives & offers",
     link: "/loyalty-lounge",
   },
 ];

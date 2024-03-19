@@ -19,8 +19,7 @@ const brandVouchersProducts = [
     subtitleLink: "/loyalty-lounge",
     currentHeading: {
       name: "Brand Vouchers",
-      description:
-        "Shop smart and unlock exclusive savings with 400+ brand voucher",
+      description: "Shop smart and unlock exclusive savings",
     },
     list: [
       {

@@ -49,7 +49,7 @@ import {
 
 const payableProducts = [
   {
-    subtitle: "Payables",
+    subtitle: "Default",
     subtitleLink: "/olympus/payables",
     currentHeading: {
       name: "Payables",
