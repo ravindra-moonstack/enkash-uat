@@ -199,7 +199,7 @@ const ReceivableProducts = [
     footerMobileText: "Explore Receivables",
     footerImg: "olympus_footer_bg",
     footerLink: "/olympus/receivables",
-    parentLink: "/olympus",
+    parentLink: "/olympus/receivables",
   },
 ];
 
