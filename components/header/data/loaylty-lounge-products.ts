@@ -21,7 +21,7 @@ const loyaltyLoungeProducts = [
     },
     list: [
       {
-        name: "Channel Incentive",
+        name: "Channel Incentives",
         description: "Enable automated trade incentives easily",
         imageSrc: channelIncentive,
         imageSrcHovered: channelIncentiveFilled,

@@ -70,27 +70,9 @@ const Footer = ({ utmSource = "" }: any) => {
                     </li>
                     <li className="d-flex">
                       <Link href="/olympus/receivables/payment-gateway">
-                        Payment Gateway
+                        Olympus PG
                       </Link>
-                      <div className={`my-auto ${styles.new_badge}`}> NEW</div>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/virtual-accounts/">
-                        Virtual Accounts
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/invoices/">
-                        Invoices
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/payment-links/">
-                        Payment Links
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
+                      {/* <div className={`my-auto ${styles.new_badge}`}> NEW</div> */}
                     </li>
                     <li>
                       <Link href="/olympus/receivables/bulk-collect/">
@@ -98,23 +80,8 @@ const Footer = ({ utmSource = "" }: any) => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/payment-button/">
-                        Payment Button
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/subscription-management/">
-                        Subscription Management
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/auto-collect/">
-                        Auto Collect
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/customized-payment/">
-                        Customized Payment Page
+                      <Link href="/olympus/receivables/virtual-accounts/">
+                        Virtual Accounts
                       </Link>
                     </li>
                     <li>
@@ -123,13 +90,69 @@ const Footer = ({ utmSource = "" }: any) => {
                       </Link>
                     </li>
                     <li>
+                      <Link href="/olympus/receivables/payment-links/">
+                        Payment Links
+                      </Link>
+                    </li>
+                    <li className="d-flex">
+                      <Link href="/olympus/receivables/payment-gateway">
+                        UPI Payments
+                      </Link>
+                      <div className={`my-auto ${styles.new_badge}`}>
+                        {" "}
+                        Coming Soon
+                      </div>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/invoices/">
+                        Invoices
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/payment-button/">
+                        Payment Button
+                      </Link>
+                    </li>
+                    <li className="d-flex">
+                      <Link href="/olympus/receivables/payment-gateway">
+                        QR Codes
+                      </Link>
+                      <div className={`my-auto ${styles.new_badge}`}>
+                        {" "}
+                        Coming Soon
+                      </div>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/subscription-management/">
+                        Subscription Management
+                      </Link>
+                    </li>
+                    <li>
                       <Link href="/olympus/receivables/collection-analytics/">
                         Collection Analytics
                       </Link>
                     </li>
                     <li>
+                      <Link href="/olympus/receivables/customized-payment/">
+                        Payment Page
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/auto-collect/">
+                        Auto Collect
+                      </Link>
+                    </li>
+                    <li>
                       <Link href="/olympus/receivables/reminder-engine/">
                         Reminder Engine
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/reminder-engine/">
+                        Auto Reconcilliation
                       </Link>
                     </li>
                   </ul>

@@ -222,20 +222,23 @@
 .help_icons {
   width: 15px;
   height: 15px;
-  
+
   @include for-laptops {
     width: 20px;
     height: 20px;
   }
 }
 
-.new_badge{
+.new_badge {
+  display: flex;
+  align-items: center;
   background-color: $color-white;
   padding: 0px 6px;
   margin-left: 5px;
   border-radius: 10px;
   color: $color-equity-blue;
-  font-size: 10px;
+  font-size: 7px;
   font-weight: 700;
   height: 14px;
+  text-wrap: nowrap;
 }
