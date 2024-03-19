@@ -245,7 +245,7 @@ const invoices = () => {
               <div className="text-center">
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Streamline your invoicing process with"
+                    title="Streamline your invoicing process"
                     color="white"
                     size="h1"
                     weight="6"
