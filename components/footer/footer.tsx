@@ -72,26 +72,26 @@ const Footer = ({ utmSource = "" }: any) => {
                       <Link href="/olympus/receivables/payment-gateway">
                         Olympus PG
                       </Link>
-                      {/* <div className={`my-auto ${styles.new_badge}`}> NEW</div> */}
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/bulk-collect/">
-                        Bulk Collect
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/virtual-accounts/">
-                        Virtual Accounts
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/instant-settlements/">
-                        Instant-settlements
-                      </Link>
+                      {/* <div className={'my-auto '}> NEW</div> */}
                     </li>
                     <li>
                       <Link href="/olympus/receivables/payment-links/">
                         Payment Links
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/payment-button/">
+                        Payment Button
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/customized-payment/">
+                        Payment Page
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/bulk-collect/">
+                        Bulk Collect
                       </Link>
                     </li>
                     <li className="d-flex">
@@ -103,19 +103,6 @@ const Footer = ({ utmSource = "" }: any) => {
                         Coming Soon
                       </div>
                     </li>
-                    <li>
-                      <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/invoices/">
-                        Invoices
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/payment-button/">
-                        Payment Button
-                      </Link>
-                    </li>
                     <li className="d-flex">
                       <Link href="/olympus/receivables/payment-gateway">
                         QR Codes
@@ -126,23 +113,21 @@ const Footer = ({ utmSource = "" }: any) => {
                       </div>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/subscription-management/">
-                        Subscription Management
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/collection-analytics/">
-                        Collection Analytics
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/olympus/receivables/customized-payment/">
-                        Payment Page
-                      </Link>
-                    </li>
-                    <li>
                       <Link href="/olympus/receivables/auto-collect/">
                         Auto Collect
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/virtual-accounts/">
+                        Virtual Accounts
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/subscription-management/">
+                        Subscription Management
                       </Link>
                     </li>
                     <li>
@@ -151,8 +136,23 @@ const Footer = ({ utmSource = "" }: any) => {
                       </Link>
                     </li>
                     <li>
+                      <Link href="/olympus/receivables/instant-settlements/">
+                        Instant-settlements
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/invoices/">
+                        Invoices
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/olympus/receivables/collection-analytics/">
+                        Collection Analytics
+                      </Link>
+                    </li>
+                    <li>
                       <Link href="/olympus/receivables/reminder-engine/">
-                        Auto Reconcilliation
+                        Auto Reconciliation
                       </Link>
                     </li>
                   </ul>
