@@ -115,7 +115,15 @@ const SubProduct = (props: any) => {
                   )}
 
                 {activeGroup.list.map((product: any, index: any) => (
-                  <Link href={product.link}>
+                  <Link
+                    href={product.link}
+                    //to make coming soon pages non-clickable
+                    onClick={(e) => {
+                      if (product?.comingSoon) {
+                        e.preventDefault();
+                      }
+                    }}
+                  >
                     <div
                       key={product.name}
                       className={`${styles.sub_product_row} ${

@@ -74,6 +74,10 @@ export { default as instantSettlements } from "./img/instant-settlements.svg";
 export { default as instantSettlementsFilled } from "./img/instant-settlements-filled.svg";
 export { default as upiPayments } from "./img/upi-payment.svg";
 export { default as upiPaymentsFilled } from "./img/upi-payment-filled.svg";
+export { default as qrCode } from "./img/qr-code.svg";
+export { default as qrCodeFilled } from "./img/qr-code-filled.svg";
+export { default as autoReconciliation } from "./img/auto-reconciliation.svg";
+export { default as autoReconciliationFilled } from "./img/auto-reconciliation-filled.svg";
 
 //paybles
 export { default as billPayments } from "./img/bill-payments.png";
