@@ -9,6 +9,8 @@ import {
   policyAndApprovalFilled,
   scanAndDrop,
   scanAndDropFilled,
+  insights,
+  insightsFilled,
 } from "@/components/header";
 
 const xpenzProducts = [
@@ -53,8 +55,8 @@ const xpenzProducts = [
         name: "Insights",
         description:
           "Control employee expenses with insights driven by data analytics",
-        imageSrc: scanAndDrop,
-        imageSrcHovered: scanAndDropFilled,
+        imageSrc: insights,
+        imageSrcHovered: insightsFilled,
         link: "/ofex/insights",
       },
       {

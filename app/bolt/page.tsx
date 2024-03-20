@@ -532,7 +532,7 @@ const boltPage = () => {
         </div>
       </div>
 
-      <div className={`row ${styles.ninth_row} bg-equity-blue`}>
+      {/* <div className={`row ${styles.ninth_row} bg-equity-blue`}>
         <div className="d-flex justify-content-evenly align-items-center">
           <Heading
             title="Seeking further understanding of loyalty lounge?"
@@ -543,7 +543,7 @@ const boltPage = () => {
             <PrimaryButton title="Know More" theme="black" url="/sales" />
           </div>
         </div>
-      </div>
+      </div> */}
 
       <div className="row">
         <ContactUsCard

@@ -17,6 +17,8 @@ import {
   payablesAnalyticsFilled,
   payrollProcessing,
   payrollProcessingFilled,
+  vendorManagement,
+  vendorManagementFilled,
 } from "@/components/header";
 
 const payableProducts = [
@@ -87,8 +89,8 @@ const payableProducts = [
       {
         name: "Vendor Management",
         description: "Onboard, verify, and manage all business vendors easily",
-        imageSrc: rentalPayments,
-        imageSrcHovered: rentalPaymentsFilled,
+        imageSrc: vendorManagement,
+        imageSrcHovered: vendorManagementFilled,
         link: "/olympus/payables/vendor-management",
       },
       {
