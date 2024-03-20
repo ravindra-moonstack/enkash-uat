@@ -2,12 +2,12 @@ export const motherProducts = [
   {
     name: "Receivables",
     description: "Digitize your business collections",
-    link: "/olympus",
+    link: "/olympus/receivables",
   },
   {
     name: "Payables",
     description: "Pay & manage all business payments",
-    link: "/olympus",
+    link: "/olympus/payables",
   },
   {
     name: "Corporate Cards",
