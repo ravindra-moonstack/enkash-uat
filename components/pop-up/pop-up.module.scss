@@ -51,11 +51,11 @@
   }
 
   button {
-    font-size: 17px !important;
+    font-size: 13px !important;
     font-weight: 500;
     @include for-laptops {
       padding: 5px 20px;
-      font-size: 17px;
+      font-size: 13px;
     }
   }
 }
@@ -170,6 +170,9 @@
     color: $color-equity-blue;
     font-size: 15px;
     line-height: 27px;
+    display: inline;
+    background-color: $color-equity-blue;
+    color: $color-white;
     @include for-laptops {
       font-size: 22px;
       line-height: 39px;

@@ -23,7 +23,7 @@ const PopUpPaymentGateway = () => {
 
   const currentUrl =
     typeof window !== "undefined" ? window.location.pathname : "";
-  const smallPopupUrls = ["/sales/"];
+  const smallPopupUrls = ["/", "/sales/"];
   const isSmallUrls = smallPopupUrls.includes(currentUrl);
 
   return (
