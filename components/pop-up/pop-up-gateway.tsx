@@ -12,7 +12,7 @@ import cross from "./cross.svg";
 import { useEffect, useState } from "react";
 
 const PopUpPaymentGateway = () => {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -97,7 +97,7 @@ const PopUpPaymentGateway = () => {
                   <PrimaryButton
                     title="Switch to Olympus PG today"
                     theme="blue"
-                    url="https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=website_popup"
+                    url="/sales"
                   />
                 </div>
               </div>

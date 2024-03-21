@@ -19,11 +19,11 @@ export const motherProducts = [
     description: "Manage employee expenses & reimbursements ",
     link: "/ofex",
   },
-  {
-    name: "Brand Vouchers",
-    description: "Shop smart and unlock exclusive savings",
-    link: "/loyalty-lounge",
-  },
+  // {
+  //   name: "Brand Vouchers",
+  //   description: "Shop smart and unlock exclusive savings",
+  //   link: "/loyalty-lounge",
+  // },
   {
     name: "Loyalty Lounge",
     description: "Automate & manage rewards, incentives & offers",
