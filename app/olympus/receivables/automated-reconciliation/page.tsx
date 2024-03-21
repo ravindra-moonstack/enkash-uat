@@ -27,7 +27,8 @@ export const metadata: Metadata = {
   description:
     "EnKash automated reconciliation solutions streamline your financial processes, reduce errors, and enhance efficiency. make cash flow management easier & your finance team focused on more strategic tasks.",
   alternates: {
-    canonical: "https://www.enkash.com/solutions/automated-reconciliation/",
+    canonical:
+      "https://www.enkash.com/olympus/receivables/automated-reconciliation/",
   },
 };
 
@@ -41,7 +42,7 @@ const automatedReconcilation = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Solutions |${space}`}
+                title={`Reveivables |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
