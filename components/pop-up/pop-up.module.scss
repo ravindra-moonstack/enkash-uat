@@ -13,6 +13,7 @@
   border-radius: 21px;
   width: 80%;
   height: fit-content;
+  padding: 10px;
   @include for-laptops {
     width: 800px;
     height: auto;
@@ -98,7 +99,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  color: $color-black;
+  color: $color-equity-blue;
   font-weight: 600;
   padding-left: 20px;
   @include for-laptops {
@@ -110,24 +111,33 @@
     line-height: 27px;
     padding-bottom: 10px;
     @include for-laptops {
-      font-size: 32px;
+      font-size: 26px;
       line-height: 39px;
       padding-bottom: 25px;
     }
   }
   .hightlighted_text {
-    color: $color-equity-blue;
+    color: $color-white;
+    display: inline-block;
+    background-color: $color-equity-blue;
     font-size: 20px;
     line-height: 27px;
     @include for-laptops {
-      font-size: 32px;
-      line-height: 39px;
+      font-size: 25px;
+      line-height: 35px;
     }
   }
   .description {
-    padding-bottom: 30px;
-    font-size: 16px;
-    font-weight: 400;
+    color: $color-black;
+    padding-bottom: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    @include for-laptops {
+      padding-bottom: 30px;
+      font-size: 18px;
+      text-align: inherit;
+    }
   }
 
   .powered_by {
