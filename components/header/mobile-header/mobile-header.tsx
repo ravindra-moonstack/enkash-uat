@@ -40,7 +40,7 @@ const MobileHeader = ({ utmSource }: any) => {
   return (
     <div>
       {showBanner && (
-        <div className={styles.mobile_banner}>
+        <div className={styles.mobile_banner_light_blue}>
           <div className={styles.text}>
             <Image
               src={confetti}
@@ -48,11 +48,13 @@ const MobileHeader = ({ utmSource }: any) => {
               width={20}
               className="me-2"
             />
-            Olympus™, an EnKash** product, is a licensed online payment
-            aggregator authorized by the RBI
+            <div className="d-flex flex-column align-items-end">
+              <div>Enjoy upto 30% savings on 400+ top brands</div>
+              <div className={styles.bottom_powered}>Powered by EnKash</div>
+            </div>
           </div>
           <Link className={styles.button} href={"/sales"}>
-            Join the waitlist
+            Buy Now
           </Link>
           <Image
             className={styles.cross_image}

@@ -37,6 +37,10 @@ import {
   integration,
   authorOne,
   authorTwo,
+  highSuccessIcon,
+  customizedSolutionsIcon,
+  allPaymentModesIcon,
+  easyReconIcon,
 } from ".";
 import Footer from "@/components/footer/footer";
 import EmailBox from "@/components/homepage/email-box";
@@ -233,24 +237,32 @@ const home = () => {
                 weight="6"
               />
             </div>
+            <div>
+              <Heading
+                title="Scale up with our industry best payment gateway solutions "
+                color="black"
+                size="h6"
+                weight="4"
+              />
+            </div>
           </div>
           <div className="d-flex flex-column my-3 ps-md-3 mt-5">
             <div className="row d-flex my-4">
               <div className="col-6 d-flex">
                 <Image
-                  src={automateIcon}
-                  alt="automate icon"
+                  src={highSuccessIcon}
+                  alt="high success rate icon"
                   className={`me-4 ${styles.icons}`}
                 />
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Smart"
+                    title="Highest"
                     color="equity-blue"
                     size="h6"
                     weight="6"
                   />
                   <Heading
-                    title="Automation Tools"
+                    title="Success Rates"
                     color="equity-blue"
                     size="h6"
                     weight="6"
@@ -259,19 +271,19 @@ const home = () => {
               </div>
               <div className="col-6 d-flex">
                 <Image
-                  src={twoBoxIcon}
-                  alt="real time data icon"
+                  src={customizedSolutionsIcon}
+                  alt="customized solutions icon"
                   className={`me-4 ${styles.icons}`}
                 />
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Real-Time Data"
+                    title="Customized "
                     color="equity-blue"
                     size="h6"
                     weight="6"
                   />
                   <Heading
-                    title="& Insights"
+                    title="Solutions"
                     color="equity-blue"
                     size="h6"
                     weight="6"
@@ -282,19 +294,19 @@ const home = () => {
             <div className="row d-flex my-4">
               <div className="col-6 d-flex">
                 <Image
-                  src={blueBoxIcon}
-                  alt="productivity icon"
+                  src={allPaymentModesIcon}
+                  alt="all payment mode icon"
                   className={`me-4 ${styles.icons}`}
                 />
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Optimized Business"
+                    title="All Payments"
                     color="equity-blue"
                     size="h6"
                     weight="6"
                   />
                   <Heading
-                    title="Productivity"
+                    title="Modes"
                     color="equity-blue"
                     size="h6"
                     weight="6"
@@ -303,19 +315,19 @@ const home = () => {
               </div>
               <div className="col-6 d-flex">
                 <Image
-                  src={circleRupeeIcon}
-                  alt="automate icon"
+                  src={easyReconIcon}
+                  alt="easy Reconcilliation icon"
                   className={`me-4 ${styles.icons}`}
                 />
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Exceptional"
+                    title="Easy Reconciliation "
                     color="equity-blue"
                     size="h6"
                     weight="6"
                   />
                   <Heading
-                    title="Savings"
+                    title="& Reporting"
                     color="equity-blue"
                     size="h6"
                     weight="6"
@@ -330,7 +342,7 @@ const home = () => {
         >
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
-              animationName={"HomePagePhoneAndTab"}
+              animationName={"HomePagePaymentGateway"}
               loop={true}
             />
           </div>
@@ -463,7 +475,11 @@ const home = () => {
               </div>
 
               <div className="mt-4">
-                <PrimaryButton title="Get Free Demo" url="/sales" theme="green" />
+                <PrimaryButton
+                  title="Get Free Demo"
+                  url="/sales"
+                  theme="green"
+                />
               </div>
             </div>
             <div className={styles.img_container}>
