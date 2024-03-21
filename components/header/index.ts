@@ -15,7 +15,8 @@ export { default as crossMenu } from "./img/cross-menu.png";
 export { default as forwardArrowBlue } from "./img/forward-arrow-blue.png";
 export { default as confetti } from "./img/confetti.png";
 export { default as crossIcon } from "./img/cross-icon.png";
-export { default as bannerStack } from "./img/banner-stack.png";
+export { default as bannerStackBlue } from "./img/banner-stack-light-blue.png";
+export { default as bannerBrands } from "./img/banner-brands.png";
 
 //loyalty lounge
 export { default as giftCards } from "./img/gift-rewards.svg";
