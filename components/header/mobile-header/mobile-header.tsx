@@ -8,7 +8,6 @@ import navBarTopTtitle from "@/components/header/data/nav-bar";
 import { Fragment, useState } from "react";
 import ProductListView from "./product-list-view";
 import Hamburger from "./hamburger";
-import olympusProducts from "@/components/header/data/olympus-products";
 import freedomProducts from "@/components/header/data/freedom-products";
 import xpenzProducts from "@/components/header/data/ofex-products";
 import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-products";
@@ -16,11 +15,16 @@ import motherProducts from "@/components/header/data/mother-products";
 import resources from "@/components/header/data/resources";
 import Link from "next/link";
 import solutions from "../data/solutions";
+import ReceivableProducts from "@/components/header/data/receivable-products";
+import payableProducts from "../data/payable-products";
+import brandVouchersProducts from "../data/brand-voucher-products";
 
 const motherProductsList = [
-  olympusProducts,
+  ReceivableProducts,
+  payableProducts,
   freedomProducts,
   xpenzProducts,
+  brandVouchersProducts,
   loyaltyLoungeProducts,
 ];
 
@@ -36,7 +40,7 @@ const MobileHeader = ({ utmSource }: any) => {
   return (
     <div>
       {showBanner && (
-        <div className={styles.mobile_banner}>
+        <div className={styles.mobile_banner_light_blue}>
           <div className={styles.text}>
             <Image
               src={confetti}
@@ -44,11 +48,13 @@ const MobileHeader = ({ utmSource }: any) => {
               width={20}
               className="me-2"
             />
-            Olympus™, an EnKash** product, is a licensed online payment
-            aggregator authorized by the RBI
+            <div className="d-flex flex-column align-items-end">
+              <div>Enjoy upto 30% savings on 400+ top brands</div>
+              <div className={styles.bottom_powered}>Powered by EnKash</div>
+            </div>
           </div>
           <Link className={styles.button} href={"/sales"}>
-            Join the waitlist
+            Buy Now
           </Link>
           <Image
             className={styles.cross_image}

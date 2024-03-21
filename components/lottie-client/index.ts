@@ -10,6 +10,8 @@ export const expenseManagementAnimation = () =>
 export const corporateCardAnimation = () =>
   import("../../app/img/lottie/credit-card.json");
 export const diyCardAnimation = () => import("../../app/img/lottie/diy.json");
+export const paymentGatewayHomepageAnimation = () =>
+  import("../../app/img/lottie/payment-gateway.json");
 
 //corporate-cards Animation
 export const freedomBannerAnimation = () =>
@@ -34,7 +36,8 @@ export const virtualAnimation = () =>
   import("../../app/corporate-cards/img/lottie/virtual-card.json");
 
 //Recievables Animation
-
+export const paymentGatewayAnimation = () =>
+  import("../../app/olympus/receivables/img/lottie/payment-gateway.json");
 export const recievablesBannerAnimation = () =>
   import("../../app/olympus/receivables/img/lottie/banner.json");
 export const invoiceAnimation = () =>
@@ -49,7 +52,6 @@ export const virtualAccountAnimation = () =>
   import("../../app/olympus/receivables/img/lottie/virtual.json");
 
 //ofex Animation
-
 export const ofexBannerAnimation = () =>
   import("../../app/ofex/img/lottie/banner.json");
 export const heirarchyControlAnimation = () =>
@@ -127,5 +129,3 @@ export const payablesBulkAnimation = () =>
   import("../../app/olympus/payables/img/lottie/bulk-pay.json");
 export const payablesBillAnimation = () =>
   import("../../app/olympus/payables/img/lottie/bill-pay.json");
-
-

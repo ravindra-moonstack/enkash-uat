@@ -7,7 +7,6 @@ import styles from "@/app/page.module.scss";
 import Marquee from "react-fast-marquee";
 
 import {
-  axisBankLogo,
   iciciBankLogo,
   rupayLogo,
   visaLogo,
@@ -103,13 +102,6 @@ const BankSection = () => {
               className={`${styles.bank_logo} ${styles.customer_logo}
               d-flex align-items-center justify-content-between mt-3`}
             >
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.axis}
-                  src={axisBankLogo}
-                  alt="axis bank logo"
-                />
-              )}
 
               {selectedTab === "partners" && (
                 <Image
@@ -220,14 +212,6 @@ const BankSection = () => {
                   className={`${styles.bank_logo} ${styles.customer_logo}
               d-flex align-items-center justify-content-between mt-3`}
                 >
-                  {selectedTab === "partners" && (
-                    <Image
-                      className={styles.axis}
-                      src={axisBankLogo}
-                      alt="axis bank logo"
-                    />
-                  )}
-
                   {selectedTab === "partners" && (
                     <Image
                       className={styles.icici}

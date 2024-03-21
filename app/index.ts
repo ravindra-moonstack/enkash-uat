@@ -11,6 +11,10 @@ export { default as circleRupeeIcon } from "./img/circle-rupee-icon.png";
 export { default as teamImg } from "./img/team-img.png";
 export { default as fintectFestival } from "./img/fintect-festival.png";
 export { default as testimonials } from "./img/testimonials.png";
+export { default as highSuccessIcon } from "./img/high-success-icon.svg";
+export { default as easyReconIcon } from "./img/easy-recon-icon.svg";
+export { default as customizedSolutionsIcon } from "./img/customized-solutions-icon.svg";
+export { default as allPaymentModesIcon } from "./img/all-payment-mode-icon.svg";
 
 export { default as playButton } from "./img/watch.png";
 export { default as rainbowOne } from "./img/stack-one.png";
@@ -52,7 +56,7 @@ export { default as axisBankLogo } from "./img/axis-bank-logo.png";
 export { default as iciciBankLogo } from "./img/icici-bank-logo.png";
 export { default as rupayLogo } from "./img/rupay-logo.png";
 export { default as sbmLogo } from "./img/sbm-logo.png";
-export { default as visaLogo } from "./img/visa-logo.png"
+export { default as visaLogo } from "./img/visa-logo.png";
 export { default as bfsi } from "./img/bfsi-logo.png";
 export { default as inc42 } from "./img/inc42-logo.png";
 export { default as cnbc } from "./img/cnbc.png";

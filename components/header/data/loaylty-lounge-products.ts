@@ -1,6 +1,4 @@
 import {
-  brandVouchers,
-  brandVouchersFilled,
   offers,
   offersFilled,
   giftCards,
@@ -17,19 +15,11 @@ const loyaltyLoungeProducts = [
     subtitleLink: "/loyalty-lounge",
     currentHeading: {
       name: "Loyalty Lounge ",
-      description:
-        "Seamlessly automate & manage rewards, incentives and offers",
+      description: "Automate & manage rewards, incentives & offers",
     },
     list: [
       {
-        name: "Brand Vouchers",
-        description: "400+ brand vouchers for corporate gifting ",
-        imageSrc: brandVouchers,
-        imageSrcHovered: brandVouchersFilled,
-        link: "/loyalty-lounge/brand-voucher",
-      },
-      {
-        name: "Channel Incentive",
+        name: "Channel Incentives",
         description: "Enable automated trade incentives easily",
         imageSrc: channelIncentive,
         imageSrcHovered: channelIncentiveFilled,

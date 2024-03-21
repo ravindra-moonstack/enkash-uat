@@ -12,7 +12,8 @@ import {
   arrowDownWhite,
   crossIcon,
   confetti,
-  bannerStack,
+  bannerStackBlue,
+  bannerBrands,
 } from ".";
 import ProductModal from "./modal/product-modal";
 import ResourcesModal from "./modal/resources-modal";
@@ -56,19 +57,23 @@ const WebHeader = ({ utmSource }: props) => {
   return (
     <div className={styles.header_wrapper}>
       {showBanner && (
-        <div className={styles.desktop_banner}>
+        <div
+          className={`${styles.desktop_banner_light_blue} `} //ADD this for blue banner ${styles.desktop_banner}
+        >
           <div className={styles.text}>
             <Image
-              src={confetti}
-              alt="graffeti icon"
-              width={20}
-              className="me-2"
+              src={bannerBrands}
+              alt="brands"
+              width={230}
+              className="me-4"
             />
-            Olympus<sup>TM</sup>, an EnKash** product, is a licensed online
-            payment aggregator authorized by the RBI
+            <div className="d-flex flex-column align-items-end">
+              <div>Enjoy upto 30% savings on 400+ top brands</div>
+              <div className={styles.bottom_powered}>Powered by EnKash</div>
+            </div>
           </div>
-          <Link className={styles.button} href={"/sales"}>
-            Join the waitlist
+          <Link className={styles.button} href={"https://bolt.enkash.com/"}>
+            Buy Now
           </Link>
           <Image
             className={styles.cross_image}
@@ -80,7 +85,7 @@ const WebHeader = ({ utmSource }: props) => {
           />
           <Image
             className={styles.banner_stack}
-            src={bannerStack}
+            src={bannerStackBlue}
             alt="stack image"
           />
         </div>

@@ -36,6 +36,7 @@ const SubProductListView = (props: {
           </li>
         </Link>
         <div className="list">
+          {/* was used for web-navbar olympus section */}
           <div className="d-flex flex-row">
             {productsToUse.map((category: any, index: any) => (
               <div
@@ -66,6 +67,7 @@ const SubProductListView = (props: {
               </div>
             ))}
           </div>
+
           {productsToUse.map(
             (category: any, index: any) =>
               activeSubtitleIndex === index && (

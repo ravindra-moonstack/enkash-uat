@@ -61,9 +61,12 @@ import {
   olympusBulkCollectAnimation,
   olympusPaymentAnimation,
   virtualAnimation,
+  paymentGatewayAnimation,
+  paymentGatewayHomepageAnimation,
 } from ".";
 
 const animationMap: Record<string, () => Promise<any>> = {
+  HomePagePaymentGateway: paymentGatewayHomepageAnimation,
   HomePagePhoneAndTab: phoneAndTabAnimation,
   HomePagePayables: payablesAnimation,
   HomePageRecieveable: recieveableAnimation,
@@ -98,6 +101,7 @@ const animationMap: Record<string, () => Promise<any>> = {
   RecievablesPaymentAnimation: paymentLinkAnimation,
   RecievablesQuickAnimation: quickCollectAnimation,
   RecievablesVirtualAnimation: virtualAccountAnimation,
+  RecievablesPGAnimation: paymentGatewayAnimation,
 
   OfexBannerAnimation: ofexBannerAnimation,
   XpenzHeirarchyAnimation: heirarchyControlAnimation,

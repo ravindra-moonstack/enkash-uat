@@ -267,7 +267,7 @@ const olympus = () => {
           <div className="col-md-6 col-12 my-md-5">
             <ExploreCard
               title="Invoices"
-              description="Digitize the entire invoicing process from uploading to dispatching invoices electronically
+              description="Digitize the entire invoicing process from uploading to dispatching invoices electronically.
               Effortlessly streamline your business payments and collections"
               theme="blue"
               link="/olympus/receivables/invoices"

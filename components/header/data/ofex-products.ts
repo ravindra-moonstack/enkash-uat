@@ -9,6 +9,8 @@ import {
   policyAndApprovalFilled,
   scanAndDrop,
   scanAndDropFilled,
+  insights,
+  insightsFilled,
 } from "@/components/header";
 
 const xpenzProducts = [
@@ -16,9 +18,8 @@ const xpenzProducts = [
     subtitle: "Default",
     subtitleLink: "/ofex",
     currentHeading: {
-      name: "OfEx ",
-      description:
-        "Manage employee expenses and reimbursements with a highly customizable platform",
+      name: "Expense Management ", //previously it was Ofex
+      description: "Manage employee expenses & reimbursements ",
     },
     list: [
       {
@@ -54,8 +55,8 @@ const xpenzProducts = [
         name: "Insights",
         description:
           "Control employee expenses with insights driven by data analytics",
-        imageSrc: scanAndDrop,
-        imageSrcHovered: scanAndDropFilled,
+        imageSrc: insights,
+        imageSrcHovered: insightsFilled,
         link: "/ofex/insights",
       },
       {
@@ -66,7 +67,7 @@ const xpenzProducts = [
         link: "/ofex/policy-and-approval-flows",
       },
     ],
-    footerText: "Optimize business spends with OfEx",
+    footerText: "Optimize business spends efficiently",
     footerMobileText: "Explore OfEx",
     footerImg: "xpenz_footer_bg",
     footerLink: "/ofex",

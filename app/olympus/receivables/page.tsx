@@ -129,6 +129,34 @@ const receivables = () => {
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
+          <div
+            className={`col-md-6 col-12 d-flex my-md-5 my-3
+             justify-content-start ${styles.third_container}`}
+          >
+            <Image
+              src={cardBg}
+              alt="card background"
+              className={styles.card_bg}
+            />
+
+            <div className={styles.lottie_third_container}>
+              <LottieDynamicLoadComponent
+                animationName={"RecievablesPGAnimation"}
+                loop={true}
+              />
+            </div>
+          </div>
+          <div className="col-md-6 col-12 px-5">
+            <ExploreCard
+              title="Olympus Payment Gateway"
+              description="Upgrade your checkout experience and accelerate collections."
+              theme="blue"
+              link="/olympus/receivables/payment-gateway/"
+            />
+          </div>
+        </div>
+
+        <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
               title="Virtual Accounts"

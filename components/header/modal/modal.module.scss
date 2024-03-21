@@ -4,12 +4,13 @@
 .container {
   padding-right: 30px;
   position: relative;
-  height: 500px;
+  height: 425px;
+  // border: solid 1px red;
   .left_container {
-    width: 28%;
+    width: 22%;
   }
   .right_container {
-    width: 72%;
+    width: 78%;
   }
 }
 
@@ -35,26 +36,29 @@
 }
 
 .product_name {
-  font-size: 26px;
+  font-size: 18px;
   line-height: 30px;
   font-weight: 600;
-  color: $color-equity-blue;
+  color: $color-indi-volt;
   @include for-window-zoomed-screens {
-    font-size: 23px;
+    font-size: 18px;
     line-height: 27px;
+  }
+  sup {
+    font-size: 10px;
   }
 }
 
 .product_description {
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 14px;
   font-weight: 400;
   color: $color-secondry-grey;
 }
 
 .opacity_selected {
   .product_description {
-    color: $color-equity-blue;
+    color: $color-indi-volt;
   }
 }
 
