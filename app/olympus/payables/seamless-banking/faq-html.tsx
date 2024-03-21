@@ -40,7 +40,7 @@ const FAQHtml = ({ faqData }: any) => {
                 <h4>
                   The{" "}
                   <Link
-                    href="https://www.enkash.com/solutions/automated-reconciliation/"
+                    href="https://www.enkash.com/olympus/receivables/automated-reconciliation/"
                     target="_black"
                   >
                     reconciliation

@@ -1,11 +1,5 @@
 export const solutions = [
   {
-    name: "Automated Reconciliation",
-    description:
-      "Automatically match and reconcile your business financial transactions easily",
-    link: "/solutions/automated-reconciliation",
-  },
-  {
     name: "Customized Reporting",
     description:
       "Gain deeper insights into your company’s finances with tailored reports",

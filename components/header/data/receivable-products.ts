@@ -158,7 +158,7 @@ const ReceivableProducts = [
         description: "Reconcile multiple invoices automatically in one go",
         imageSrc: autoReconciliation,
         imageSrcHovered: autoReconciliationFilled,
-        link: "/olympus/receivables/reminder-engine",
+        link: "/olympus/receivables/automated-reconciliation",
       },
 
       // {
