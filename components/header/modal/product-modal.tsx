@@ -132,7 +132,7 @@ const ProductModal = ({ onLinkClick }: any) => {
         />
       )}
 
-      {hoveredProductIndex === 4 && (
+      {/* {hoveredProductIndex === 4 && (
         <SubProduct
           subProducts={brandVouchersProducts}
           index={3}
@@ -140,9 +140,9 @@ const ProductModal = ({ onLinkClick }: any) => {
           prevHoveredProductIndex={prevHoveredProductIndex}
           onLinkClick={onLinkClick}
         />
-      )}
+      )} */}
 
-      {hoveredProductIndex === 5 && (
+      {hoveredProductIndex === 4 && (
         <SubProduct
           subProducts={loyaltyLoungeProducts}
           index={3}

@@ -30,7 +30,7 @@ const motherProductsList = [
   payableProducts,
   freedomProducts,
   xpenzProducts,
-  brandVouchersProducts,
+  // brandVouchersProducts,
   loyaltyLoungeProducts,
 ];
 

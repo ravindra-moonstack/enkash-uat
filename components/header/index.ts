@@ -20,6 +20,8 @@ export { default as bannerBrands } from "./img/banner-brands.png";
 export { default as bannerBrandsMobile } from "./img/banner-brands-mobile.png";
 
 //loyalty lounge
+export { default as brandVouchers } from "./img/brand-vouchers.svg";
+export { default as brandVouchersFilled } from "./img/brand-vouchers-filled.svg";
 export { default as giftCards } from "./img/gift-rewards.svg";
 export { default as giftCardFilled } from "./img/gift-rewards-filled.svg";
 export { default as offers } from "./img/offers.svg";
