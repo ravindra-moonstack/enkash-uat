@@ -17,6 +17,7 @@ export { default as confetti } from "./img/confetti.png";
 export { default as crossIcon } from "./img/cross-icon.png";
 export { default as bannerStackBlue } from "./img/banner-stack-light-blue.png";
 export { default as bannerBrands } from "./img/banner-brands.png";
+export { default as bannerBrandsMobile } from "./img/banner-brands-mobile.png";
 
 //loyalty lounge
 export { default as giftCards } from "./img/gift-rewards.svg";

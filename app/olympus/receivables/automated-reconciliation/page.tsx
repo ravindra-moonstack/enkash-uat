@@ -3,7 +3,6 @@ import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../common/constant";
 import faqData from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
@@ -21,13 +20,15 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import { space } from "@/common/constant";
 
 export const metadata: Metadata = {
   title: "Automated Accounts Reconciliation & Bank Reconciliation - EnKash",
   description:
     "EnKash automated reconciliation solutions streamline your financial processes, reduce errors, and enhance efficiency. make cash flow management easier & your finance team focused on more strategic tasks.",
   alternates: {
-    canonical: "https://www.enkash.com/solutions/automated-reconciliation/",
+    canonical:
+      "https://www.enkash.com/olympus/receivables/automated-reconciliation/",
   },
 };
 
@@ -41,7 +42,7 @@ const automatedReconcilation = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Solutions |${space}`}
+                title={`Reveivables |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"

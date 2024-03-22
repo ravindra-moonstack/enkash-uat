@@ -5,13 +5,14 @@ import boltImage from "./bolt-img.png";
 import boltLogo from "./bolt-logo.png";
 import boltImageMobile from "./bolt-img-mobile.jpg";
 import enkashLogo from "./enkash-logo.png";
+import gatewayGirl from "./gateway-girl.png";
 import Image from "next/image";
 import PrimaryButton from "../buttons/primary-button/primary-button";
 import cross from "./cross.svg";
 import { useEffect, useState } from "react";
 
-const PopUp = () => {
-  const [showPopup, setShowPopup] = useState(true);
+const PopUpPaymentGateway = () => {
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -42,12 +43,12 @@ const PopUp = () => {
               }
             >
               <Image
-                src={boltImage}
+                src={gatewayGirl}
                 alt="bolt image"
                 className="desktop-only"
               />
               <Image
-                src={boltImageMobile}
+                src={gatewayGirl}
                 alt="bolt image"
                 className="mobile-only w-100"
               />
@@ -60,32 +61,33 @@ const PopUp = () => {
               }
             >
               <div>
-                {" "}
-                <div className="mb-2">
-                  <Image
-                    src={boltLogo}
-                    alt="bolt image"
-                    className={styles.bolt_logo}
-                  />
-                </div>
                 <div className={styles.main_text}>
-                  Enjoy{" "}
-                  <span className={styles.hightlighted_text}>up to 30%</span>{" "}
-                  savings on{" "}
+                  When you are{" "}
                   <span className={styles.hightlighted_text}>
-                    400+ top brands
-                  </span>
+                    not ordinary,
+                  </span>{" "}
+                  why your{" "}
+                  <span className={styles.hightlighted_text}>
+                    payment gateway
+                  </span>{" "}
+                  should be?
                 </div>
+                {/* <div className={styles.main_text}>
+                  why your{" "}
+                  <span className={styles.hightlighted_text}>
+                    payment gateway
+                  </span>{" "}
+                </div> */}
+                {/* <div className={styles.main_text}>should be?</div> */}
                 <div className={styles.description}>
-                  Join the league of 5 million+ buyers for instant discounts on
-                  brand gift vouchers
+                  Time to upgrade to the new age payment gateway
                 </div>
               </div>
               <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-                <div className="d-flex align-items-center">
+                {/* <div className="d-flex align-items-center">
                   <div className={styles.powered_by}>Powered By</div>
                   <Image src={enkashLogo} alt="bolt image" />
-                </div>
+                </div> */}
                 <div
                   className="mb-3 mb-md-0 mt-4 mt-md-0"
                   onClick={() => {
@@ -93,9 +95,9 @@ const PopUp = () => {
                   }}
                 >
                   <PrimaryButton
-                    title="Buy Now"
+                    title="Switch to Olympus PG today"
                     theme="blue"
-                    url="https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=website_popup"
+                    url="/sales"
                   />
                 </div>
               </div>
@@ -115,4 +117,4 @@ const PopUp = () => {
   );
 };
 
-export default PopUp;
+export default PopUpPaymentGateway;

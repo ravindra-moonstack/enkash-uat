@@ -1,32 +1,32 @@
 export const motherProducts = [
   {
     name: "Receivables",
-    description: "Digitize your business collections",
+    description: "Get paid faster with customised PG solutions",
     link: "/olympus/receivables",
   },
   {
     name: "Payables",
-    description: "Pay & manage all business payments",
+    description: "Manage all types of business payments",
     link: "/olympus/payables",
   },
   {
     name: "Corporate Cards",
-    description: "Credit and prepaid cards solution",
+    description: "Flexible credit & prepaid card solutions",
     link: "/corporate-cards",
   },
   {
     name: "Expense Management",
-    description: "Manage employee expenses & reimbursements ",
+    description: "Digitze employee spends & reimbursements",
     link: "/ofex",
   },
-  {
-    name: "Brand Vouchers",
-    description: "Shop smart and unlock exclusive savings",
-    link: "/loyalty-lounge",
-  },
+  // {
+  //   name: "Brand Vouchers",
+  //   description: "Shop smart and unlock exclusive savings",
+  //   link: "/loyalty-lounge",
+  // },
   {
     name: "Loyalty Lounge",
-    description: "Automate & manage rewards, incentives & offers",
+    description: "Build exciting rewards, incentives & offers",
     link: "/loyalty-lounge",
   },
 ];

@@ -3,7 +3,13 @@
 import Image from "next/image";
 import styles from "./mobile-header.module.scss";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { confetti, crossIcon, forwardArrowBlue, mobileStack } from "..";
+import {
+  bannerBrandsMobile,
+  confetti,
+  crossIcon,
+  forwardArrowBlue,
+  mobileStack,
+} from "..";
 import navBarTopTtitle from "@/components/header/data/nav-bar";
 import { Fragment, useState } from "react";
 import ProductListView from "./product-list-view";
@@ -42,18 +48,18 @@ const MobileHeader = ({ utmSource }: any) => {
       {showBanner && (
         <div className={styles.mobile_banner_light_blue}>
           <div className={styles.text}>
-            <Image
-              src={confetti}
-              alt="graffeti icon"
-              width={20}
-              className="me-2"
-            />
-            <div className="d-flex flex-column align-items-end">
+            <div className="d-flex flex-column align-items-start">
               <div>Enjoy upto 30% savings on 400+ top brands</div>
               <div className={styles.bottom_powered}>Powered by EnKash</div>
             </div>
+            <Image
+              src={bannerBrandsMobile}
+              alt="graffeti icon"
+              width={80}
+              className={styles.brand_imges}
+            />
           </div>
-          <Link className={styles.button} href={"/sales"}>
+          <Link className={styles.button} href={"https://bolt.enkash.com/"}>
             Buy Now
           </Link>
           <Image

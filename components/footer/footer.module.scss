@@ -239,6 +239,9 @@
   color: $color-equity-blue;
   font-size: 7px;
   font-weight: 700;
-  height: 14px;
   text-wrap: nowrap;
+  height: 10px;
+  @include for-laptops {
+    height: 14px;
+  }
 }

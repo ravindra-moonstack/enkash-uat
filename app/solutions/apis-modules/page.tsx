@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   description:
     "EnKash API integrations support a wide range of platforms, enabling seamless connectivity and data exchange between various business systems and applications.",
   alternates: {
-    canonical: "https://www.enkash.com/solutions/automated-reconciliation/",
+    canonical: "https://www.enkash.com/solutions/apis-modules/",
   },
 };
 
