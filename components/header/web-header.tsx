@@ -72,7 +72,12 @@ const WebHeader = ({ utmSource }: props) => {
               <div className={styles.bottom_powered}>Powered by EnKash</div>
             </div>
           </div>
-          <Link className={styles.button} href={"https://bolt.enkash.com/"}>
+          <Link
+            className={styles.button}
+            href={
+              "https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=bolt_top_banner"
+            }
+          >
             Buy Now
           </Link>
           <Image
