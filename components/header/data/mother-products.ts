@@ -1,7 +1,7 @@
 export const motherProducts = [
   {
     name: "Receivables",
-    description: "Get paid faster with customised PG solutions",
+    description: "Get paid faster with customized PG solutions",
     link: "/olympus/receivables",
   },
   {
@@ -16,7 +16,7 @@ export const motherProducts = [
   },
   {
     name: "Expense Management",
-    description: "Digitze employee spends & reimbursements",
+    description: "Digitize employee spends & reimbursements",
     link: "/ofex",
   },
   // {

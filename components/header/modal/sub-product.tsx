@@ -191,10 +191,10 @@ const SubProduct = (props: any) => {
           </div>
 
           {/* only for freedom products */}
-          {props.index === 1 && (
+          {props.index === 2 && (
             <div className={styles.powered}>*Powered by Banks/REs</div>
           )}
-          {/* {props.index === 0 && activeSubtitle === "Receivables" && (
+          {/* {props.index === 0 && (
             <div className={styles.powered}>
               #Launching soon 🚀 as per
               <br /> RBI's PA (Online) authorization

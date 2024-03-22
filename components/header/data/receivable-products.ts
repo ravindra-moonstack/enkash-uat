@@ -119,8 +119,8 @@ const ReceivableProducts = [
         comingSoon: true,
       },
       {
-        name: "Subscription Management",
-        description: "Manage subscriptions and renewals seamlessly",
+        name: "Subscriptions",
+        description: "Manage & renew seamlessly",
         imageSrc: subscriptionManagement,
         imageSrcHovered: subscriptionManagementFilled,
         link: "/olympus/receivables/subscription-management",
@@ -134,14 +134,14 @@ const ReceivableProducts = [
       },
       {
         name: "Payment Page",
-        description: "Create customisable pages or tailored made payment pages",
+        description: "Create customizable pages",
         imageSrc: customizedPayment,
         imageSrcHovered: customizedPaymentFilled,
         link: "/olympus/receivables/customized-payment",
       },
       {
         name: "Auto Collect",
-        description: "Decentralised collections with easy reconciliation",
+        description: "Decentralized collections with easy reconciliation",
         imageSrc: autoCollect,
         imageSrcHovered: autoCollectFilled,
         link: "/olympus/receivables/auto-collect",
@@ -154,7 +154,7 @@ const ReceivableProducts = [
         link: "/olympus/receivables/reminder-engine",
       },
       {
-        name: "Auto Reconcilliation",
+        name: "Auto Reconciliation",
         description: "Reconcile multiple invoices & payments in one go",
         imageSrc: autoReconciliation,
         imageSrcHovered: autoReconciliationFilled,

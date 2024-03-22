@@ -24,14 +24,14 @@ const xpenzProducts = [
     list: [
       {
         name: "Budget and Advances",
-        description: "Track and manage your budget with ease",
+        description: "Track & manage your budget with ease",
         imageSrc: budgetAndAndvances,
         imageSrcHovered: budgetAndAndvancesFilled,
         link: "/ofex/budget-and-advances",
       },
       {
         name: "Hierarchy and Controls",
-        description: "DIY hierarchy for approval, policies, and expenses",
+        description: "Customizable hierarchies for expenses & approvals",
         imageSrc: hierarchyAndControls,
         imageSrcHovered: hierarchyAndControlsFilled,
         link: "/ofex/hierarchy-and-controls",
@@ -39,7 +39,7 @@ const xpenzProducts = [
 
       {
         name: "Reimbursements",
-        description: "Get reimbursed for your expenses quickly and easily",
+        description: "Reimburse employee expenses quickly",
         imageSrc: reimbursements,
         imageSrcHovered: reimbursementsFilled,
         link: "/ofex/reimbursement",
@@ -53,15 +53,14 @@ const xpenzProducts = [
       },
       {
         name: "Insights",
-        description:
-          "Control employee expenses with insights driven by data analytics",
+        description: "Control employee expenses with data analytics",
         imageSrc: insights,
         imageSrcHovered: insightsFilled,
         link: "/ofex/insights",
       },
       {
         name: "Policy and Approval Flows",
-        description: " Create policies and approval flows on the go",
+        description: "Create policies & approval flows as per need",
         imageSrc: policyAndApproval,
         imageSrcHovered: policyAndApprovalFilled,
         link: "/ofex/policy-and-approval-flows",
