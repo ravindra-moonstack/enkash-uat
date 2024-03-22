@@ -47,7 +47,7 @@
     left: unset;
     bottom: 20px;
     right: 10px;
-    width: 40%;
+    width: 580px;
   }
 
   button {
@@ -88,7 +88,9 @@
     border-radius: 21px;
     @include for-laptops {
       width: auto;
-      height: 300px;
+      margin-top: 15px;
+      margin-left: 15px;
+      height: 260px;
       border: radius 0;
     }
   }
@@ -161,8 +163,8 @@
     line-height: 27px;
     padding-bottom: 10px;
     @include for-laptops {
-      font-size: 22px;
-      line-height: 39px;
+      font-size: 20px;
+      line-height: 30px;
       padding-bottom: 25px;
     }
   }
@@ -174,8 +176,8 @@
     background-color: $color-equity-blue;
     color: $color-white;
     @include for-laptops {
-      font-size: 22px;
-      line-height: 39px;
+      font-size: 20px;
+      line-height: 30px;
     }
   }
   .description {

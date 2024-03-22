@@ -137,7 +137,7 @@ const Footer = ({ utmSource = "" }: any) => {
                     </li>
                     <li>
                       <Link href="/olympus/receivables/instant-settlements/">
-                        Instant-settlements
+                        Instant Settlements
                       </Link>
                     </li>
                     <li>
@@ -238,7 +238,7 @@ const Footer = ({ utmSource = "" }: any) => {
                   <ul>
                     <li>
                       <Link href="/loyalty-lounge/brand-voucher/">
-                        Brand Voucher
+                        Brand Vouchers
                       </Link>
                     </li>
                     <li>

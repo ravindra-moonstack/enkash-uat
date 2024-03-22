@@ -30,15 +30,14 @@ const freedomProducts = [
     list: [
       {
         name: "Meal Cards*",
-        description:
-          "Let your employees choose their favorite meals and save on taxes",
+        description: "Empower employees to take tax break on meals",
         imageSrc: mealCard,
         imageSrcHovered: mealCardFilled,
         link: "/corporate-cards/meal-cards",
       },
       {
         name: "Fuel Cards*",
-        description: "Track and manage fuel expenses for your business travels",
+        description: "Track & manage fuel expenses for business travels",
         imageSrc: fuelCard,
         imageSrcHovered: fuelCardFilled,
         link: "/corporate-cards/fuel-cards",
@@ -52,16 +51,14 @@ const freedomProducts = [
       },
       {
         name: "Digital Marketing Cards*",
-        description:
-          "Pay for digital marketing campaigns and subscriptions with ease",
+        description: "Easily pay for all your digital marketing needs",
         imageSrc: digitalMarketingCard,
         imageSrcHovered: digitalMarketingCardFilled,
         link: "/corporate-cards/digital-marketing-cards",
       },
       {
         name: "SaaS Cards*",
-        description:
-          "Manage all your SaaS subscriptions with our dedicated SaaS Cards",
+        description: "Manage all your SaaS subscriptions with ease",
         imageSrc: saas,
         imageSrcHovered: saasFilled,
         link: "/corporate-cards/saas-cards",
@@ -69,22 +66,21 @@ const freedomProducts = [
       ,
       {
         name: "T&E Cards*",
-        description: "Simplify travel and entertainment expenses for employees",
+        description: "Simplify Travel & Entertainment expenses",
         imageSrc: tne,
         imageSrcHovered: tneFilled,
         link: "/corporate-cards/travel-and-expense-cards",
       },
       {
         name: "Purchase Cards*",
-        description:
-          "Empower employees to make purchases and track spends in real time",
+        description: "Track employee purchases in real time",
         imageSrc: purchaseCard,
         imageSrcHovered: purchaseCardFilled,
         link: "/corporate-cards/purchase-cards",
       },
       {
         name: "DIY Card Module*",
-        description: "Control your business spends with customizable cards",
+        description: "Customizable cards for business spends",
         imageSrc: diyCard,
         imageSrcHovered: diyCardFilled,
         link: "/corporate-cards/diy-card-module",

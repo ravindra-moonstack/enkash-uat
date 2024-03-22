@@ -167,7 +167,7 @@ const AutoCollect = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Virtual Payment Solutions"
+              whiteTitle="Virtual Solutions"
               description="Utilize the power of unique virtual payment addresses and virtual bank accounts to automatically collect and reconcile all bank transfers, including UPI, NEFT, IMPS, and RTGS"
               source="receivables"
             />

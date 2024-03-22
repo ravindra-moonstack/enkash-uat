@@ -33,30 +33,28 @@ const payableProducts = [
     list: [
       {
         name: "Vendor Payment",
-        description:
-          "Instantaneously add, verify, pay, and manage vendors with ease",
+        description: "Add, verify, manage & pay instantly",
         imageSrc: vendorPayment,
         imageSrcHovered: vendorPaymentFilled,
         link: "/olympus/payables/vendor-payment",
       },
       {
         name: "Bill Payment",
-        description:
-          "Pay utilities on time, every time, with Auto-Fetch and Auto-Pay",
+        description: "Auto fetch & auto pay utility bills on time",
         imageSrc: billPayments,
         imageSrcHovered: billPaymentsFilled,
         link: "/olympus/payables/bill-payment",
       },
       {
         name: "Express Pay",
-        description: "Pay multiple bills & invoices with a single click",
+        description: "Pay multiple vendors & bills with a single click",
         imageSrc: bulkPayout,
         imageSrcHovered: bulkPayoutFilled,
         link: "/olympus/payables/bulk-payout",
       },
       {
         name: "GST Payment",
-        description: "Pay GST with any card, get reminders, and track payments",
+        description: "Easily pay and track GST payments in one place",
         imageSrc: taxPayment,
         imageSrcHovered: taxPaymentFilled,
         link: "/olympus/payables/gst-payments",
@@ -64,8 +62,7 @@ const payableProducts = [
 
       {
         name: "Rental Payment",
-        description:
-          "Pay & manage your office/home rent directly into your landlord’s bank",
+        description: "Make rental payments directly into landlord's account",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
         link: "/olympus/payables/rental-payment",
@@ -80,15 +77,14 @@ const payableProducts = [
       // },
       {
         name: "Invoice Management",
-        description:
-          "Upload and manage all the vendor invoices from a single dashboard",
+        description: "Upload & manage all vendor invoices at one place",
         imageSrc: invoiceManegement,
         imageSrcHovered: invoiceManegementFilled,
         link: "/olympus/payables/invoice-management",
       },
       {
         name: "Vendor Management",
-        description: "Onboard, verify, and manage all business vendors easily",
+        description: "Verify & manage multiple vendors across branches",
         imageSrc: vendorManagement,
         imageSrcHovered: vendorManagementFilled,
         link: "/olympus/payables/vendor-management",
@@ -102,16 +98,14 @@ const payableProducts = [
       },
       {
         name: "Payable Analytics",
-        description:
-          "Stay informed about business’s accounts payable for better financial planning",
+        description: "Stay informed for better financial planning",
         imageSrc: payablesAnalytics,
         imageSrcHovered: payablesAnalyticsFilled,
         link: "/olympus/payables/payable-analytics/",
       },
       {
         name: "Payroll Processing",
-        description:
-          "Simplify salary disbursement process with efficient payroll processing",
+        description: "Simplified salary disbursement process",
         imageSrc: payrollProcessing,
         imageSrcHovered: payrollProcessingFilled,
         link: "/olympus/payables/payroll-processing/",
