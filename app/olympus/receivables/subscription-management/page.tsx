@@ -53,7 +53,6 @@ const subscriptionManagement = () => {
                 weight="4"
                 useH1TagInHtml={true}
               />
-              <sup className="sup-symbol">#</sup>
             </div>
           </div>
 

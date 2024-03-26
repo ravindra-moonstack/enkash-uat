@@ -42,7 +42,12 @@ const ProductListView = ({
                     }}
                   >
                     <div className="d-flex flex-column">
-                      <div className={styles.title}>{item.name}</div>
+                      <div className={styles.title}>
+                        {item.name}
+                        {item.name == "Receivables" && (
+                          <sup className={styles.sup}>#</sup>
+                        )}
+                      </div>
                       <div className={styles.description}>
                         {item.description}
                       </div>

@@ -523,7 +523,7 @@ const home = () => {
 
       <div className={`${styles.ninth_row} row bg-white`}>
         <div
-          className={`col-md-6 col-12 row-padding-x-only d-flex d-flex justify-content-center order-2 order-md-1`}
+          className={`col-md-6 col-12 row-padding-x-only mt-5 d-flex d-flex justify-content-center order-2 order-md-1`}
         >
           <div className={styles.left_image_container}>
             <div className={styles.lottie_container}>

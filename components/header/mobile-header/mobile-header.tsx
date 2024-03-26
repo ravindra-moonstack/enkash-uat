@@ -34,14 +34,19 @@ const motherProductsList = [
   loyaltyLoungeProducts,
 ];
 
-const MobileHeader = ({ utmSource }: any) => {
+interface props {
+  utmSource?: string;
+}
+
+const MobileHeader = ({ utmSource }: props) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null);
   const [currentStep, setCurrentStep] = useState(0);
   const [showBanner, setShowBanner] = useState(true);
 
-  const signupUrl = utmSource
-    ? `https://home.enkash.com/signup?utm_source=${utmSource}`
-    : "https://home.enkash.com/get-started";
+  const signupUrl =
+    utmSource !== ""
+      ? `https://home.enkash.com/signup?utm_source=${utmSource}`
+      : "https://home.enkash.com/get-started";
 
   return (
     <div>
@@ -127,7 +132,7 @@ const MobileHeader = ({ utmSource }: any) => {
               <PrimaryButton title="Sign Up" theme="blue" url={signupUrl} />
               <span className="mx-2"></span>
               <div>
-                <Link href={signupUrl}>
+                <Link href="https://home.enkash.com/login" target="_blank">
                   <button
                     className={`${styles.secondary_button} ${styles.active}`}
                   >

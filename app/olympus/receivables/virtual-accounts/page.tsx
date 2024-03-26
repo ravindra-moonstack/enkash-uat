@@ -52,7 +52,6 @@ const virtualAccounts = () => {
                 weight="4"
                 useH1TagInHtml={true}
               />
-              <sup className="sup-symbol">#</sup>
             </div>
           </div>
           <div className="d-flex flex-column">
