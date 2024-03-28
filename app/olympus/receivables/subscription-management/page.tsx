@@ -48,7 +48,7 @@ const subscriptionManagement = () => {
             </div>
             <div>
               <Heading
-                title="Subscription Management"
+                title="Subscriptions"
                 size="h4"
                 weight="4"
                 useH1TagInHtml={true}

@@ -433,7 +433,7 @@ const page = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Yes, EnKash’s product Olympus is a licensed online payment aggregator authorized by the RBI. EnKash happens to be the first new applicant to get the license."
+                  title="Yes, EnKash’s product Olympus Payment Gateway is a licensed online payment aggregator authorized by the RBI. EnKash happens to be the first new applicant to get the license."
                 />
               </div>
             </>
