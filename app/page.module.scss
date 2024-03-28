@@ -292,8 +292,8 @@
     z-index: 0;
     top: 60px;
     z-index: 4;
-    width: 450px;
-    left: -70px;
+    width: 350px;
+    left: -7px;
     z-index: 5;
     @include for-laptops {
       left: auto;
@@ -653,11 +653,16 @@
 
     .lottie_container {
       position: absolute;
-      right: 0;
+      right: 50%;
       top: 0px;
       width: 90%;
       z-index: 2;
+      -ms-transform: translate(50%, 50%);
+      transform: translate(50%, 50%);
       @include for-laptops {
+        right: 0;
+        -ms-transform: translate(0%, 0%);
+        transform: translate(0%, 0%);
         margin-top: 140px;
         width: 85%;
       }
@@ -666,7 +671,7 @@
     .green_bg {
       position: absolute;
       right: 0;
-      top: 150px;
+      top: 35px;
       width: 250px;
       height: auto;
       z-index: 1;

@@ -23,7 +23,12 @@ const SubProductListView = (props: {
         <Link href={link}>
           <li className="d-flex align-items-center pe-4 pt-2">
             <div className="d-flex flex-column justify-content-center px-4 py-2 ">
-              <div className={styles.title}>{currentHeading?.name}</div>
+              <div className={styles.title}>
+                {currentHeading?.name}
+                {currentHeading?.name == "Receivables" && (
+                  <sup className={styles.sup}>#</sup>
+                )}
+              </div>
               <div className={styles.description}>
                 {currentHeading?.description}
               </div>

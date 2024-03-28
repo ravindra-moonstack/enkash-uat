@@ -50,7 +50,6 @@ const page = () => {
                 weight="4"
                 useH1TagInHtml={true}
               />
-              <sup className="sup-symbol">#</sup>
             </div>
           </div>
           <div className="d-flex flex-column">
@@ -137,7 +136,7 @@ const page = () => {
               oldWayDescription:
                 "Be it cash, cheque, or bank transfers, security is at risk for businesses that include traditional ways of payment.",
               newWayDescription:
-                "EnKash’s payment gateway is secure.  It enables payments by encrypting information ensuring it is secure from any violation.",
+                "Olympus payment gateway is secure.  It enables payments by encrypting information ensuring it is secure from any violation.",
             },
           ]}
         />
@@ -202,7 +201,7 @@ const page = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Easy Integration"
-              description="EnKash’s payment gateway can be easily integrated using API. This seamless integration can help businesses make quick and secure transactions"
+              description="Olympus payment gateway can be easily integrated using API. This seamless integration can help businesses make quick and secure transactions"
               source="receivables"
             />
           </div>
@@ -356,7 +355,7 @@ const page = () => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What are the terms and conditions for integrating EnKash’s payment gateway with their business?"
+                  title="What are the terms and conditions for integrating Olympus payment gateway with their business?"
                 />
               </div>
 
@@ -365,7 +364,7 @@ const page = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Businesses need to follow these terms and conditions to activate EnKash’s payment gateway:"
+                  title="Businesses need to follow these terms and conditions to activate Olympus payment gateway:"
                 />
               </div>
               <div className="mb-5">
@@ -434,7 +433,7 @@ const page = () => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Yes, EnKash’s product Olympus is a licensed online payment aggregator authorized by the RBI. EnKash happens to be the first new applicant to get the license."
+                  title="Yes, EnKash’s product Olympus Payment Gateway is a licensed online payment aggregator authorized by the RBI. EnKash happens to be the first new applicant to get the license."
                 />
               </div>
             </>

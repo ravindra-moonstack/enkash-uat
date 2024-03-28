@@ -27,8 +27,7 @@ const payableProducts = [
     subtitleLink: "/olympus/payables",
     currentHeading: {
       name: "Payables",
-      description:
-        "Easily pay and manage all your vendors, bills, rentals, taxes, and more in one platform",
+      description: "Manage all types of business payments",
     },
     list: [
       {
