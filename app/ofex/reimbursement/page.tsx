@@ -188,7 +188,7 @@ const reimbursement = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated processes"
+              whiteTitle="Automated Processes"
               description="A digitized end-to-end solution automates checking, approvals, invoice generation, and submission to ensure speed and accuracy"
               source="expense_management"
             />
@@ -202,7 +202,7 @@ const reimbursement = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Whatsapp Integration"
+              whiteTitle="WhatsApp Integration"
               description="Seamless Whatsapp integration to approve/reject expenses at one go without logging into the dashboard "
               source="expense_management"
             />

@@ -39,7 +39,7 @@ const ReceivableProducts = [
     subtitleLink: "/olympus/receivables",
     currentHeading: {
       name: "Receivables",
-      description: "Digitize your business collections",
+      description: "Get paid faster with customized PG solutions",
     },
     list: [
       {

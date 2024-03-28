@@ -24,8 +24,7 @@ const freedomProducts = [
     subtitleLink: "/corporate-cards",
     currentHeading: {
       name: "Corporate Cards",
-      description:
-        "Simplify corporate spending with flexible credit and prepaid cards",
+      description: "Flexible credit & prepaid card solutions",
     },
     list: [
       {

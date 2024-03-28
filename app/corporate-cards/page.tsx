@@ -49,7 +49,7 @@ const slash = () => {
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
             <Heading title="C" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="orporate cards" size="h1" weight="7" />
+            <Heading title="orporate Cards" size="h1" weight="7" />
           </div>
           <div>
             <Heading
