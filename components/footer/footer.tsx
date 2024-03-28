@@ -127,7 +127,7 @@ const Footer = ({ utmSource = "" }: any) => {
                     </li>
                     <li>
                       <Link href="/olympus/receivables/subscription-management/">
-                        Subscription Management
+                        Subscriptions
                       </Link>
                     </li>
                     <li>
@@ -152,7 +152,7 @@ const Footer = ({ utmSource = "" }: any) => {
                     </li>
                     <li>
                       <Link href="/olympus/receivables/automated-reconciliation/">
-                        Automated Reconciliation
+                        Auto Reconciliation
                       </Link>
                     </li>
                   </ul>

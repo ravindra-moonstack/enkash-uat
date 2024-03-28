@@ -64,7 +64,12 @@ const MobileHeader = ({ utmSource }: props) => {
               className={styles.brand_imges}
             />
           </div>
-          <Link className={styles.button} href={"https://bolt.enkash.com/"}>
+          <Link
+            className={styles.button}
+            href={
+              "https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=bolt_top_banner"
+            }
+          >
             Buy Now
           </Link>
           <Image
