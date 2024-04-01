@@ -41,12 +41,6 @@ const categoryPage = ({ params }: { params: { category: string } }) => {
   const categoryData = CategoryData[categoryName];
   const voucherIds = categoryData?.voucherIds ?? [];
 
-  const voucherMap: Record<string, Voucher> = {};
-
-  VoucherData.forEach((voucher) => {
-    voucherMap[voucher.voucherId] = voucher;
-  });
-
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="voucher-category" />
@@ -122,7 +116,7 @@ const categoryPage = ({ params }: { params: { category: string } }) => {
         {voucherIds &&
           voucherIds.map((id, index) => (
             <div>
-              {voucherMap[id] && <VoucherCard voucher={voucherMap[id]} />}
+              {VoucherData[id] && <VoucherCard voucher={VoucherData[id]} />}
               <Heading title={id} size="h3" color="black" />
             </div>
           ))}

@@ -9,9 +9,8 @@ type Voucher = {
   howToRedeem: string[];
 };
 
-const VoucherData: Voucher[] = [
-  // Travel Category
-  {
+const VoucherData: Record<string, Voucher> = {
+  tv001: {
     voucherId: "tv001",
     name: "10% Off Flights",
     category: "travel",
@@ -25,7 +24,7 @@ const VoucherData: Voucher[] = [
       "Discount will be applied automatically.",
     ],
   },
-  {
+  tv002: {
     voucherId: "tv002",
     name: "Free Hotel Night Stay",
     category: "travel",
@@ -39,41 +38,8 @@ const VoucherData: Voucher[] = [
       "Discount will be applied to the final bill.",
     ],
   },
-  // Add more travel vouchers as needed...
-
-  // Entertainment Category
-  {
-    voucherId: "et001",
-    name: "50% Off Movie Tickets",
-    category: "entertainment",
-    discount: 50,
-    description: "Get 50% off on movie tickets at participating cinemas.",
-    aboutCompany: "CinemaZ is a popular chain of cinemas known for...",
-    backgroundImg: "url_to_image",
-    howToRedeem: [
-      "Visit CinemaZ's website or app.",
-      "Select the movie and showtime of your choice.",
-      "Apply voucher code ET001 during checkout.",
-    ],
-  },
-  {
-    voucherId: "et002",
-    name: "Buy 1 Get 1 Free Concert Tickets",
-    category: "entertainment",
-    discount: 100,
-    description: "Buy one concert ticket and get another one for free.",
-    aboutCompany: "ConcertX hosts live concerts featuring top artists...",
-    backgroundImg: "url_to_image",
-    howToRedeem: [
-      "Browse upcoming concerts on ConcertX's website.",
-      "Add two tickets to your cart.",
-      "Use voucher code ET002 during checkout.",
-    ],
-  },
-  // Add more entertainment vouchers as needed...
-
-  // E-commerce Category
-  {
+  // Add more vouchers here...
+  vc001: {
     voucherId: "vc001",
     name: "$20 Off Electronics",
     category: "e-commerce",
@@ -87,7 +53,7 @@ const VoucherData: Voucher[] = [
       "Apply voucher code EC001 during checkout.",
     ],
   },
-  {
+  vc002: {
     voucherId: "vc002",
     name: "Free Shipping on Orders Over $50",
     category: "e-commerce",
@@ -101,21 +67,7 @@ const VoucherData: Voucher[] = [
       "Shipping discount will be applied automatically.",
     ],
   },
-  {
-    voucherId: "vc003",
-    name: "Free Shipping on Orders Over $50",
-    category: "e-commerce",
-    discount: 100,
-    description: "Enjoy free shipping on orders over $50.",
-    aboutCompany: "FashionHub offers trendy clothing and accessories...",
-    backgroundImg: "url_to_image",
-    howToRedeem: [
-      "Browse products on FashionHub's website.",
-      "Add items worth $50 or more to your cart.",
-      "Shipping discount will be applied automatically.",
-    ],
-  },
   // Add more e-commerce vouchers as needed...
-];
+};
 
 export default VoucherData;

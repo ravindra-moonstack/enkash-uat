@@ -1,0 +1,10 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.category_menu {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  background-color: $color-baby-blue;
+  padding: 30px 0;
+}

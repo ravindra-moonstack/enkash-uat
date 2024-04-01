@@ -1,3 +1,5 @@
+import VoucherData from "@/app/bolt/data/voucher-data";
+import Link from "next/link";
 import React from "react";
 
 interface Voucher {
@@ -23,7 +25,9 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
         <div className="card-body text-primary">
           <h5 className="card-title">Discount: {voucher.discount}%</h5>
           <p className="card-text">{voucher.description}</p>
-          <button className="btn btn-primary">Buy Now</button>
+          <Link href={`/bolt/voucher/${voucher.voucherId}`}>
+            <button className="btn btn-primary">Buy Now</button>
+          </Link>
         </div>
       </div>
 

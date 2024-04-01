@@ -1,5 +1,6 @@
 import { CategoryData } from "@/app/bolt/data/category-data";
 import Link from "next/link";
+import styles from "./voucher-page.module.scss";
 
 interface CategoryMenuProps {
   currentPageCategory: string;
@@ -7,7 +8,7 @@ interface CategoryMenuProps {
 
 const CategoryMenu: React.FC<CategoryMenuProps> = ({ currentPageCategory }) => {
   return (
-    <div className="d-flex justify-content-around">
+    <div className={` ${styles.category_menu}`}>
       {Object.values(CategoryData).map((category) => (
         <Link
           key={category.name}
