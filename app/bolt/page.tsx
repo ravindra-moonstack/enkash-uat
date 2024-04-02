@@ -125,7 +125,7 @@ const boltPage = () => {
               title="E-commerce"
               description="Get enticing deals on a diverse range of e-commerce brands. Whether you're searching for the latest gadgets, trendy fashion items, or household essentials, get all in one place"
               theme="blue"
-              link="/loyalty-lounge/employee-rewards"
+              link="/bolt/category/e-commerce"
             />
           </div>
           <div

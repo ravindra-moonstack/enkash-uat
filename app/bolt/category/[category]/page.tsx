@@ -14,6 +14,7 @@ import Link from "next/link";
 import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import VoucherCard from "@/components/voucher-page/voucher-card";
+import { GetServerSideProps } from "next";
 
 export const metadata: Metadata = {
   title:
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Get a seamless solution for rewards, corporate gifting &  incentives management platform designed to engage and motivate employees, channel partners, and stakeholders. Book a Demo Now !!",
   alternates: {
-    canonical: "https://www.enkash.com/loyalty-lounge/",
+    canonical: "https://www.enkash.com/bolt/",
   },
 };
 
@@ -36,11 +37,57 @@ type Voucher = {
   howToRedeem: string[];
 };
 
-const categoryPage = ({ params }: { params: { category: string } }) => {
+const fetchVouchers = async (categoryName: string) => {
+  // local vouchers for the current category
+  const localVouchers: Voucher[] = Object.values(VoucherData).filter(
+    (voucher: Voucher) => voucher.category === categoryName
+  );
+
+  try {
+    // bolt open api
+    const apiResponse = await fetch(
+      "https://marketplaceuat.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({}),
+      }
+    );
+    const apiData = await apiResponse.json();
+
+    const validVouchers: Voucher[] = localVouchers.filter((localVoucher) =>
+      apiData.payload.data.some(
+        (product: any) => product.productCatalogId === localVoucher.voucherId
+      )
+    );
+
+    //map for discount update
+    const apiDiscounts: Record<string, string> = {};
+    apiData.payload.data.forEach((product: any) => {
+      apiDiscounts[product.productCatalogId] = product.discount;
+    });
+
+    validVouchers.map(
+      (validVoucher, index) =>
+        (validVoucher.discount = parseFloat(
+          apiDiscounts[validVoucher.voucherId]
+        ))
+    );
+
+    return validVouchers;
+  } catch (error) {
+    console.error("Error fetching vouchers:", error);
+    const emptyVouchers: Voucher[] = [];
+    return emptyVouchers;
+  }
+};
+
+const categoryPage = async ({ params }: { params: { category: string } }) => {
   const categoryName = params.category;
   const categoryData = CategoryData[categoryName];
-  const voucherIds = categoryData?.voucherIds ?? [];
-
+  const vouchers: Voucher[] = await fetchVouchers(categoryName);
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="voucher-category" />
@@ -113,13 +160,15 @@ const categoryPage = ({ params }: { params: { category: string } }) => {
 
       {/* render each voucher */}
       <div className="vouchers m-4 d-flex flex-wrap justify-content-around">
-        {voucherIds &&
-          voucherIds.map((id, index) => (
-            <div>
-              {VoucherData[id] && <VoucherCard voucher={VoucherData[id]} />}
-              <Heading title={id} size="h3" color="black" />
-            </div>
-          ))}
+        {vouchers && (
+          <div>
+            {Object.values(vouchers).map((voucher: Voucher, index) => (
+              <div key={index}>
+                <VoucherCard voucher={voucher} />
+              </div>
+            ))}
+          </div>
+        )}
       </div>
 
       <Footer utmSource="Loyalty_lounge" />

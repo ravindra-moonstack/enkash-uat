@@ -39,8 +39,8 @@ const VoucherData: Record<string, Voucher> = {
     ],
   },
   // Add more vouchers here...
-  vc001: {
-    voucherId: "vc001",
+  PC021192942SON59: {
+    voucherId: "PC021192942SON59",
     name: "$20 Off Electronics",
     category: "e-commerce",
     discount: 20,
@@ -53,8 +53,8 @@ const VoucherData: Record<string, Voucher> = {
       "Apply voucher code EC001 during checkout.",
     ],
   },
-  vc002: {
-    voucherId: "vc002",
+  PC609726254IR7DN: {
+    voucherId: "PC609726254IR7DN",
     name: "Free Shipping on Orders Over $50",
     category: "e-commerce",
     discount: 100,
