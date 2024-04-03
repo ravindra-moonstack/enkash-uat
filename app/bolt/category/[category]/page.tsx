@@ -53,13 +53,15 @@ const fetchVouchers = async (categoryName: string) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({}),
+        next: { revalidate: 3600 },
       }
     );
     const apiData = await apiResponse.json();
 
     const validVouchers: Voucher[] = localVouchers.filter((localVoucher) =>
       apiData.payload.data.some(
-        (product: any) => product.productCatalogId === localVoucher.voucherId
+        (product: any) =>
+          product.productCatalogId === localVoucher.voucherId && product.active
       )
     );
 
