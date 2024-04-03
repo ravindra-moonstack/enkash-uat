@@ -14,7 +14,6 @@ import Link from "next/link";
 import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import VoucherCard from "@/components/voucher-page/voucher-card";
-import { GetServerSideProps } from "next";
 
 export const metadata: Metadata = {
   title:
@@ -87,91 +86,114 @@ const fetchVouchers = async (categoryName: string) => {
 };
 
 const categoryPage = async ({ params }: { params: { category: string } }) => {
-  const categoryName = params.category;
+  const validCategories: string[] = ["e-commerce", "travel", "finance"];
+  const categoryName: string = params.category;
+  let isValidCategory: boolean = true;
+  if (!validCategories.includes(categoryName)) {
+    isValidCategory = false;
+  }
+
   const categoryData = CategoryData[categoryName];
   const vouchers: Voucher[] = await fetchVouchers(categoryName);
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="voucher-category" />
 
-      {/* category Head Page */}
-      {categoryData && (
-        <div className={`${styles.first_row} row color-white`}>
-          <div className="col-md-6 col-12 d-flex flex-column">
-            <div className="d-flex mb-4">
-              <Heading
-                title={categoryData.name}
-                color="rainy-blue"
-                size="h1"
-                weight="7"
-              />
-              {/* <Heading title="B" color="rainy-blue" size="h1" weight="7" />
+      {isValidCategory ? (
+        <>
+          {categoryData && (
+            <div className={`${styles.first_row} row color-white`}>
+              <div className="col-md-6 col-12 d-flex flex-column">
+                <div className="d-flex mb-4">
+                  <Heading
+                    title={categoryData.name}
+                    color="rainy-blue"
+                    size="h1"
+                    weight="7"
+                  />
+                  {/* <Heading title="B" color="rainy-blue" size="h1" weight="7" />
             <Heading title="olt" size="h1" weight="7" /> */}
-            </div>
-            <div className="d-flex flex-column">
-              <Heading
-                title={categoryData.title}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <div className={styles.discount_text}>
-                {categoryData.discount}%
+                </div>
+                <div className="d-flex flex-column">
+                  <Heading
+                    title={categoryData.title}
+                    color="white"
+                    size="h2"
+                    weight="7"
+                  />
+                  <div className={styles.discount_text}>
+                    {categoryData.discount}%
+                  </div>
+                </div>
+                <div className="mt-4 mobile-only">
+                  <Heading
+                    title={categoryData.description}
+                    color="white"
+                    size="h6"
+                    weight="4"
+                  />
+                </div>
+                <div className="mt-4 desktop-only">
+                  <Heading
+                    title={categoryData.description}
+                    color="white"
+                    size="h5"
+                    weight="5"
+                  />
+                </div>
+                <div className="mt-5">
+                  <PrimaryButton
+                    title="Explore More"
+                    theme="blue"
+                    url="/bolt"
+                  />
+                  <span className="mx-2"></span>
+                  <SecondryButton
+                    title="Redeem Now"
+                    actionImage={whiteArrow}
+                    iconSize={15}
+                    url="https://bolt.enkash.com/"
+                  />
+                </div>
+              </div>
+              <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
+                <div className={styles.lottie_container}>
+                  <LottieDynamicLoadComponent
+                    animationName={"LoyaltyBannerAnimation"}
+                    loop={true}
+                  />
+                </div>
               </div>
             </div>
-            <div className="mt-4 mobile-only">
-              <Heading
-                title={categoryData.description}
-                color="white"
-                size="h6"
-                weight="4"
-              />
-            </div>
-            <div className="mt-4 desktop-only">
-              <Heading
-                title={categoryData.description}
-                color="white"
-                size="h5"
-                weight="5"
-              />
-            </div>
-            <div className="mt-5">
-              <PrimaryButton title="Explore More" theme="blue" url="/bolt" />
-              <span className="mx-2"></span>
-              <SecondryButton
-                title="Redeem Now"
-                actionImage={whiteArrow}
-                iconSize={15}
-                url="https://bolt.enkash.com/"
-              />
-            </div>
+          )}
+
+          {/* show all vouchers menu*/}
+          <CategoryMenu currentPageCategory={categoryName} />
+
+          {/* render each voucher */}
+          <div className="vouchers m-4 d-flex flex-wrap justify-content-around">
+            {vouchers && (
+              <div>
+                {Object.values(vouchers).map((voucher: Voucher, index) => (
+                  <div key={index}>
+                    <VoucherCard voucher={voucher} />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
-          <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
-            <div className={styles.lottie_container}>
-              <LottieDynamicLoadComponent
-                animationName={"LoyaltyBannerAnimation"}
-                loop={true}
-              />
-            </div>
+        </>
+      ) : (
+        <div className={`color-white ${styles.error_container}`}>
+          <div className={`color-white ${styles.error_message}`}>
+            <h2>Sorry, this voucher is not available.</h2>
+            <p>Please try again later or explore other vouchers.</p>
+            <Link href="/bolt/" className={styles.explore_button}>
+              Explore More
+            </Link>
           </div>
         </div>
       )}
-
-      {/* show all vouchers menu*/}
-      <CategoryMenu currentPageCategory={categoryName} />
-
-      {/* render each voucher */}
-      <div className="vouchers m-4 d-flex flex-wrap justify-content-around">
-        {vouchers && (
-          <div>
-            {Object.values(vouchers).map((voucher: Voucher, index) => (
-              <div key={index}>
-                <VoucherCard voucher={voucher} />
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
 
       <Footer utmSource="Loyalty_lounge" />
     </div>
