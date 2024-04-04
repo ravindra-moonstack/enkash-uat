@@ -92,17 +92,19 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
           </div>
 
           <div className={`color-white ${styles.second_row}`}>
-            <h2>{voucherData.name}</h2>
-            <p>Category: {voucherData.category}</p>
-            <p>Discount: {voucherData.discount}%</p>
-            <p>Description: {voucherData.description}</p>
-            <p>About Company: {voucherData.aboutCompany}</p>
-            <h3>How to Redeem:</h3>
-            <ul>
-              {voucherData.howToRedeem.map((step, index) => (
-                <li key={index}>{step}</li>
-              ))}
-            </ul>
+            <div className={styles.voucher_card}>
+              <h2>{voucherData.name}</h2>
+              <p>Category: {voucherData.category}</p>
+              <p>Discount: {voucherData.discount}%</p>
+              <p>Description: {voucherData.description}</p>
+              <p>About Company: {voucherData.aboutCompany}</p>
+              <h3>How to Redeem:</h3>
+              <ul>
+                {voucherData.howToRedeem.map((step, index) => (
+                  <li key={index}>{step}</li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       ) : (

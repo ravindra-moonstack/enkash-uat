@@ -1,5 +1,6 @@
 type Category = {
   name: string;
+  heading: string;
   title: string;
   description: string;
   discount: number;
@@ -11,39 +12,44 @@ type Categories = {
 };
 export const CategoryData: Categories = {
   "e-commerce": {
-    name: "E-Commerce",
+    name: "e-commerce",
+    heading: "E-Commerce",
     title: "Shop to your heart’s content with up to",
     description:
       "Get the best deals on online shopping with our e-commerce vouchers.",
     discount: 20,
     backgroundImage: "url_to_image",
   },
-  entertainment: {
-    name: "entertainment",
+  "movies-and-music": {
+    name: "movies-and-music",
+    heading: "Movies & Music",
     title: "Entertainment Vouchers",
     description:
       "Enjoy discounts on movies, concerts, and more with our entertainment vouchers.",
     discount: 15,
     backgroundImage: "url_to_image",
   },
-  travel: {
-    name: "travel",
+  apparels: {
+    name: "apparels",
+    heading: "Apparels",
     title: "Travel Vouchers",
     description:
       "Explore the world with our travel vouchers and save big on your next trip.",
     discount: 25,
     backgroundImage: "url_to_image",
   },
-  finance: {
-    name: "finance",
+  "food-and-beverages": {
+    name: "food-and-beverages",
+    heading: "Food & Beverages",
     title: "finance",
     description:
       "Explore the world with our travel vouchers and save big on your next trip.",
     discount: 25,
     backgroundImage: "url_to_image",
   },
-  enkash: {
-    name: "enkash",
+  "health-and-wellness": {
+    name: "health-and-wellness",
+    heading: "Health & Wellness",
     title: "enkash",
     description:
       "Explore the world with our travel vouchers and save big on your next trip.",

@@ -42,6 +42,7 @@ const fetchVouchers = async (categoryName: string) => {
     (voucher: Voucher) => voucher.category === categoryName
   );
 
+  return localVouchers;
   try {
     // bolt open api
     const apiResponse = await fetch(
@@ -86,7 +87,13 @@ const fetchVouchers = async (categoryName: string) => {
 };
 
 const categoryPage = async ({ params }: { params: { category: string } }) => {
-  const validCategories: string[] = ["e-commerce", "travel", "finance"];
+  const validCategories: string[] = [
+    "e-commerce",
+    "food-and-beverages",
+    "health-and-wellness",
+    "apparels",
+    "movies-and-music",
+  ];
   const categoryName: string = params.category;
   let isValidCategory: boolean = true;
   if (!validCategories.includes(categoryName)) {
@@ -94,6 +101,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
   }
 
   const categoryData = CategoryData[categoryName];
+  // const vouchers: Voucher[] = [];
   const vouchers: Voucher[] = await fetchVouchers(categoryName);
   return (
     <div className={`color-white ${styles.home_container}`}>

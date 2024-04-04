@@ -1,6 +1,9 @@
 import VoucherData from "@/app/bolt/data/voucher-data";
 import Link from "next/link";
 import React from "react";
+import Image from "next/image";
+import styles from "./voucher-page.module.scss";
+import { apparels } from "../header";
 
 interface Voucher {
   voucherId: string;
@@ -19,21 +22,13 @@ interface VoucherCardProps {
 
 const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
   return (
-    <div className="">
-      <div className="card border-primary mb-3" style={{ maxWidth: "18rem" }}>
-        <div className="card-header">{voucher.name}</div>
-        <div className="card-body text-primary">
-          <h5 className="card-title">Discount: {voucher.discount}%</h5>
-          <p className="card-text">{voucher.description}</p>
-          <Link href={`/bolt/voucher/${voucher.voucherId}`}>
-            <button className="btn btn-primary">Buy Now</button>
-          </Link>
-        </div>
-      </div>
-
-      {/* <h2>{voucher.name}</h2>
-      <p>Discount: {voucher.discount}%</p>
-      <button>Buy Now</button> */}
+    <div className={styles.voucher_card}>
+      <div className={styles.discount}>Up to {voucher.discount}% OFF</div>
+      <Image src={apparels} alt={voucher.name} />
+      <Link href={"https://bolt.enkash.com/"} className={styles.buy_now_button}>
+        Buy Now
+      </Link>
+      <div className={styles.voucher_name}>{voucher.name}</div>
     </div>
   );
 };

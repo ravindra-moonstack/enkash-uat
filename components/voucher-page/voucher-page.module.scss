@@ -4,7 +4,34 @@
 .category_menu {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  background-color: $color-baby-blue;
-  padding: 30px 0;
+  gap: 25px;
+  background-color: $color-bolt-light;
+  padding: 33px 0;
+}
+
+.category_button {
+  text-decoration: none;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: $color-white;
+    color: $color-equity-blue;
+    padding: 4px 5px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    width: 190px;
+
+    img {
+      width: 17px;
+      height: auto;
+    }
+  }
+
+  .active {
+    border: solid 1px $color-equity-blue;
+  }
 }
