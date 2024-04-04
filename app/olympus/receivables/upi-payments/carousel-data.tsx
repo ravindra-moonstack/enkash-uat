@@ -1,6 +1,7 @@
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
 
 const carouselData = [
   {
@@ -20,7 +21,7 @@ const carouselData = [
       "Enable your business to accept UPI payments via the Olympus payment gateway",
   },
   {
-    image: iconThree,
+    image: iconFour,
     alt: "Start collecting payments with UPI directly into your bank account",
     title: "Start collecting payments with UPI directly into your bank account",
   },

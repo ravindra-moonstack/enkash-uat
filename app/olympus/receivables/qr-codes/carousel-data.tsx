@@ -1,6 +1,7 @@
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
 
 const carouselData = [
   {
@@ -21,7 +22,7 @@ const carouselData = [
       "Receive real-time payment confirmation and update on your EnKash account",
   },
   {
-    image: iconThree,
+    image: iconFour,
     alt: "Transactions are automatically reconciled, providing accurate financial reports",
     title:
       "Transactions are automatically reconciled, providing accurate financial reports",
