@@ -95,22 +95,20 @@ const Footer = ({ utmSource = "" }: any) => {
                       </Link>
                     </li>
                     <li className="d-flex">
-                      <Link href="/olympus/receivables/payment-gateway">
+                      <Link href="/olympus/receivables/upi-payments">
                         UPI Payments
                       </Link>
-                      <div className={`my-auto ${styles.new_badge}`}>
+                      {/* <div className={`my-auto ${styles.new_badge}`}>
                         {" "}
                         Coming Soon
-                      </div>
+                      </div> */}
                     </li>
                     <li className="d-flex">
-                      <Link href="/olympus/receivables/payment-gateway">
-                        QR Codes
-                      </Link>
-                      <div className={`my-auto ${styles.new_badge}`}>
+                      <Link href="/olympus/receivables/qr-codes">QR Codes</Link>
+                      {/* <div className={`my-auto ${styles.new_badge}`}>
                         {" "}
                         Coming Soon
-                      </div>
+                      </div> */}
                     </li>
                     <li>
                       <Link href="/olympus/receivables/auto-collect/">

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-const AutoCollect = () => {
+const QRCodes = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="receivables" />
@@ -39,7 +39,7 @@ const AutoCollect = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`UPI${space}`}
+                title={`QR${space}`}
                 color="rainy-blue"
                 size="h1"
                 weight="7"
@@ -47,7 +47,7 @@ const AutoCollect = () => {
             </div>
             <div>
               <Heading
-                title="Payments"
+                title="Codes"
                 size="h1"
                 weight="7"
                 useH1TagInHtml={true}
@@ -57,15 +57,14 @@ const AutoCollect = () => {
           <div className="d-flex flex-column">
             <div>
               <Heading
-                title={`Collect payments directly${space}`}
+                title={`Make secure, contactless${space}`}
                 color="rainy-blue"
                 size="h3"
                 weight="7"
               />
-              <Heading title={`in your`} color="white" size="h3" weight="7" />
             </div>
             <Heading
-              title="bank account with UPI Payments"
+              title=" payments using QR codes"
               color="white"
               size="h3"
               weight="7"
@@ -74,7 +73,7 @@ const AutoCollect = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Enable easy and secure business collections with real-time settlement and two-factor authentication"
+              title="Empower your business to accept instant payments through QR codes. Offer a seamless customer experience and streamline your collection process"
               size="h6"
               weight="5"
             />
@@ -111,32 +110,32 @@ const AutoCollect = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Quick", " Payments"],
+              itemArray: ["Payment", "Process"],
               oldWayDescription:
-                "The traditional way of making B2B collections involved cash and cheques often leading to cumbersome processes.",
+                "Previously, making purchases required carrying a card or cash at all times, resulting in inconvenience.",
               newWayDescription:
-                "UPI payments on the other hand offer a convenient way for B2B transactions as payments can be made instantly with virtual IDs.",
+                "Now, with Olympus, customers can effortlessly scan QR codes using their mobile phones, leading to a quicker, more secure, and more convenient payment process.",
             },
             {
-              itemArray: ["Instant", "Settlements"],
+              itemArray: ["Settlement", "Time"],
               oldWayDescription:
-                "The conventional way of payment collection led to delayed payment settlement.",
+                "Funds used to take days to settle in merchant's account, with no option to settle on holidays or weekends, causing a cashflow crunch.",
               newWayDescription:
-                "UPI payments enable real-time settlements, facilitating instant inflow of cash for the business.",
+                "Olympus enables 365-day instant settlements of funds after successful payment, even on bank holidays, for improved cash flow.",
             },
             {
-              itemArray: ["Improved", "Transparency"],
+              itemArray: ["Accounting", "Software Integration"],
               oldWayDescription:
-                "Manually tracking offline payments is a task in itself often leading to confusion and double or missed entries during record-keeping.",
+                "Integration with accounting software was challenging due to transactions occurring in various modes such as cash, cards, and cheques.",
               newWayDescription:
-                "Payments made via UPI can be tracked easily, facilitating convenient record-keeping and reconciliation.",
+                "With Olympus, seamlessly integrate with accounting softwares like Tally, and automate reconciliation for both online and offline payments.",
             },
             {
-              itemArray: ["Automating", "Recurring Collections"],
+              itemArray: ["Cost"],
               oldWayDescription:
-                "Recurring payment collections manually for utility, bills, rentals, and subscriptions often leads to delays and late fees.",
+                "Use of cash, card, or cheques, typically incurred high transaction fees, equipment costs for POS systems, and maintenance expenses.",
               newWayDescription:
-                "UPI AutoPay or mandates can be set for recurring payment collections helping avoid late fees and delays.",
+                "The use of QR codes offers lower transaction fees, minimal setup costs, and reduced maintenance expenses, making it a cost-effective solution for businesses.",
             },
           ]}
         />
@@ -145,16 +144,10 @@ const AutoCollect = () => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-inline text-center pb-2">
+        <div className="d-inline text-center mb-5">
           <Heading
-            title="Facilitate convenient B2B collections"
+            title=" Collect payments with QR codes"
             color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}with UPI payments `}
-            color="black"
             size="h1"
             weight="6"
           />
@@ -163,46 +156,44 @@ const AutoCollect = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Economical"
-              description="UPI transactions are usually free or with minimal charges. This leads to higher profit margins for your business."
-              source="receivables"
+              whiteTitle="Static QR Codes"
+              description="Generate a single QR code for your business. Customers scan and pay the pre-defined amount using any UPI app. Ideal for displaying at stores or on invoices"
+              source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Virtual UPI ID"
-              description="Businesses can create their UPI ID and accept B2B payments via the UPI payment gateway. The ID can be used to track and automate the reconciliation process with UPI payments."
-              source="receivables"
+              whiteTitle="Dynamic QR Codes"
+              description="Generate unique QR codes for each transaction. Perfect for online payments, allowing you to capture specific invoice details for easy reconciliation and can be left open-ended for variable payment amounts"
+              source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Ease of Use"
-              description="UPI uses Virtual Payment Addresses or VPAs eliminating the need for lengthy bank account details. This establishes convenience as customers only need the merchant’s UPI ID to make payment."
-              source="receivables"
+              whiteTitle="Universal Acceptance"
+              description="Accept payments via popular UPI apps like Google Pay, Phonepe, etc"
+              source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Recurring Payments with UPI AutoPay"
-              description="Businesses following subscription models can collect payments with UPI AutoPay as it allows customers to enable automatic recurring payments."
-              source="receivables"
+              whiteTitle="Real-time Tracking"
+              description="Create different QR codes for multiple branches or customers and easily track and reconcile all the incoming payments"
+              source="qr-codes"
             />
           </div>
-
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Two-Factor Authentication"
-              description="To avoid fraud, UPI transactions are secured with two-factor authentication. This protects businesses from financial losses."
-              source="receivables"
+              whiteTitle="Customizable Design"
+              description="Tailor and collect payment with QR codes with your brand logo and colors, creating a seamless payment experience for your customers"
+              source="qr-codes"
             />
           </div>
-
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Real-Time Settlement"
-              description="UPI transactions are settled in real-time implying the bank account receives the money instantly; thus improving business cash flow."
-              source="receivables"
+              whiteTitle="Enhanced Security"
+              description="PCI DSS-compliant platform ensures secure transactions"
+              source="qr-codes"
             />
           </div>
         </div>
@@ -215,14 +206,20 @@ const AutoCollect = () => {
               <div className="text-center">
                 <div className="text-center d-flex justify-content-center">
                   <Heading
-                    title={`Payment${space}`}
+                    title={`Leverage`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="collections made easy via UPI"
+                    title={`${space}QR Code integration${space}`}
                     color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title="for your business"
+                    color="white"
                     size="h1"
                     weight="6"
                   />
@@ -238,7 +235,7 @@ const AutoCollect = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how UPI Payment will change the way you approach collections and receivables!"
+          title="Learn how our QR codes can revolutionize the way you work!"
         />
       </div>
       <div
@@ -266,8 +263,8 @@ const AutoCollect = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of UPI payment?"
-          description="UPI payments enable efficient and convenient business collections making it easier for them to manage their cash inflow and make better financial decisions."
+          title="Seeking further understanding of QR codes?"
+          description="A QR code, short for Quick Response code, is a type of two-dimensional barcode that contains information in a machine-readable format. A QR code acts as a digital bridge between a customer and a business to initiate a contactless payment by helping users to pay and accept payments using the QR code scanner. "
           source="receivables"
         />
       </div>
@@ -281,47 +278,13 @@ const AutoCollect = () => {
                   size="h3"
                   color="black"
                   weight="6"
-                  title="Q. How to use UPI for B2B collections?"
-                />
-              </div>
-              <div className="mb-5">
-                <ul>
-                  <li>
-                    <strong>Generate UPI VPA:</strong> Ensure your business bank
-                    account supports UPI. Generate a VPA through your bank's
-                    mobile app or website.
-                  </li>
-                  <li>
-                    <strong>Share your VPA:</strong> Provide your VPA details to
-                    your customers via invoice, email, or any preferred
-                    communication channel.
-                  </li>
-                  <li>
-                    <strong>Payment Initiates:</strong> Your customer can
-                    initiate the payment through their UPI app using your VPA
-                    and the invoice amount.
-                  </li>
-                  <li>
-                    <strong>Receive instant notification:</strong> You will
-                    receive a notification on your UPI app upon payment
-                    completion.
-                  </li>
-                </ul>
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h3"
-                  color="black"
-                  weight="6"
-                  title="Q. Is UPI widely used for B2B payments now?"
+                  title="Q. How do I reconcile payments received through QR codes?"
                 />
               </div>
               <div className="mb-5">
                 <p>
-                  UPI in B2B payments is currently used in a limited manner,
-                  however, businesses will soon adapt to it considering the
-                  benefits it offers.
+                  EnKash provides a user-friendly dashboard for real-time
+                  transaction tracking and automated reconciliation reports.
                 </p>
               </div>
 
@@ -330,34 +293,37 @@ const AutoCollect = () => {
                   size="h3"
                   color="black"
                   weight="6"
-                  title="Q. How safe is UPI to receive payments for my business, especially for B2B transactions?"
+                  title="Q. How to scan QR code with Google Pay?"
                 />
               </div>
               <div className="mb-5">
+                <p>
+                  While Google Pay doesn't directly generate QR codes for
+                  businesses, you can leverage our QR code solution to accept
+                  payments through Google Pay. Here's how you can scan QR code
+                  online:
+                </p>
                 <ul>
                   <li>
-                    <strong>Two-Factor Authentication:</strong> UPI transactions
-                    require a UPI PIN and a one-time password to complete a
-                    payment. This two-factor authentication provides a double
-                    layer of verification making it difficult for unauthorized
-                    access.
+                    <strong>Customers initiate payment:</strong> The customer
+                    visits your store or receives an invoice with a static QR
+                    code which can be generated on our platform.
                   </li>
                   <li>
-                    <strong>Real-time Verification:</strong> UPI transactions
-                    take place instantly prompting a notification confirming
-                    payment status. This eliminates the risk of delayed payment
-                    enabling quick reconciliation.
+                    <strong>Scan the QR code:</strong> The customer opens their
+                    Google Pay app and accesses the QR scanner to scan QR code
+                    online (refer to Google Pay's guide for specific steps).
                   </li>
                   <li>
-                    <strong>Transparency:</strong> UPI transactions provide
-                    details like the sender's name and UPI ID associated with
-                    each payment. This establishes transparency during the audit
-                    trail for B2B transactions.
+                    <strong>Complete the payment:</strong> Google Pay will
+                    display the pre-defined payment amount associated with the
+                    static QR code. The customer confirms the payment using
+                    their Google Pay PIN or fingerprint.
                   </li>
                   <li>
-                    <strong>Efficiency:</strong> Customers can pay using the
-                    business’s VPA eliminating the need for lengthy bank
-                    transfers. This saves time and reduces effort.
+                    <strong>Payment confirmation:</strong> You'll receive
+                    real-time notification of the successful payment on your
+                    EnKash account.
                   </li>
                 </ul>
               </div>
@@ -370,4 +336,4 @@ const AutoCollect = () => {
   );
 };
 
-export default AutoCollect;
+export default QRCodes;
