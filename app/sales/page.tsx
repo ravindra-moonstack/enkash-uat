@@ -27,11 +27,10 @@ const sales = () => {
   const [description, setDescription] = useState("");
   const [isFormValid, setIsFormValid] = useState(true);
   const [selectedProductValid, setSelectedProductValid] = useState(true);
-
+  const [interestedPG, setInterestedPG] = useState(false);
   //Url parameters
   let urlParams;
   let source;
-  let interestedPG: boolean = false; //for showing PG product menu
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -42,7 +41,7 @@ const sales = () => {
         setCompanyEmail(emailParam);
       }
       if (source == "interested-payment-gateway") {
-        interestedPG = true;
+        setInterestedPG(true);
       }
     }
     emailjs.init(emailjs_public_key);
@@ -234,6 +233,56 @@ const sales = () => {
               <div>
                 <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
                   <Heading
+                    title="Receivable solutions you are in interested in:"
+                    size="h6"
+                    color="black"
+                    weight="5"
+                  />
+                  <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
+                    <select
+                      value={selectedProduct}
+                      onChange={(e) => {
+                        setSelectedProduct(e.target.value);
+                        e.target.value === "none"
+                          ? setSelectedProductValid(false)
+                          : setSelectedProductValid(true);
+                      }}
+                      className={`form-select ${
+                        !selectedProductValid ? styles.select_box_error : ""
+                      }`}
+                      required
+                    >
+                      <option value="none">Open this select menu</option>
+                      <option value="Payment Gateway">Payment Gateway</option>
+                      <option value="Payment Links">Payment Links</option>
+                      <option value="Payment Buttons">Payment Buttons</option>
+                      <option value="Payment Page">Payment Page</option>
+                      <option value="Bulk Collect">Bulk Collect</option>
+                      <option value="UPI Payments">UPI Payments</option>
+                      <option value="QR Codes">QR Codes</option>
+                      <option value="Auto Collect">Auto Collect</option>
+                      <option value="Virtual Accounts">Virtual Accounts</option>
+                      <option value="E-Nach">E-Nach</option>
+                      <option value="Subscriptions">Subscriptions</option>
+                      <option value="Reminder Engine">Reminder Engine</option>
+                      <option value="Instant Settlements">
+                        Instant Settlements
+                      </option>
+                      <option value="Invoices">Invoices</option>
+                      <option value="Collection Analytics">
+                        Collection Analytics
+                      </option>
+                      <option value="Auto Reconciliation">
+                        Auto Reconciliation
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
+                  <Heading
                     title="Primary product you are interested in:"
                     size="h6"
                     color="black"
@@ -299,56 +348,6 @@ const sales = () => {
                       <option value="Employee Reward">Employee Reward</option>
                       <option value="Brand Gift Voucher">
                         Brand Gift Voucher
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div>
-                <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
-                  <Heading
-                    title="Primary product you are interested in:"
-                    size="h6"
-                    color="black"
-                    weight="5"
-                  />
-                  <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
-                    <select
-                      value={selectedProduct}
-                      onChange={(e) => {
-                        setSelectedProduct(e.target.value);
-                        e.target.value === "none"
-                          ? setSelectedProductValid(false)
-                          : setSelectedProductValid(true);
-                      }}
-                      className={`form-select ${
-                        !selectedProductValid ? styles.select_box_error : ""
-                      }`}
-                      required
-                    >
-                      <option value="none">Open this select menu</option>
-                      <option value="Payment Gateway">Payment Gateway</option>
-                      <option value="Payment Links">Payment Links</option>
-                      <option value="Payment Buttons">Payment Buttons</option>
-                      <option value="Payment Page">Payment Page</option>
-                      <option value="Bulk Collect">Bulk Collect</option>
-                      <option value="UPI Payments">UPI Payments</option>
-                      <option value="QR Codes">QR Codes</option>
-                      <option value="Auto Collect">Auto Collect</option>
-                      <option value="Virtual Accounts">Virtual Accounts</option>
-                      <option value="E-Nach">E-Nach</option>
-                      <option value="Subscriptions">Subscriptions</option>
-                      <option value="Reminder Engine">Reminder Engine</option>
-                      <option value="Instant Settlements">
-                        Instant Settlements
-                      </option>
-                      <option value="Invoices">Invoices</option>
-                      <option value="Collection Analytics">
-                        Collection Analytics
-                      </option>
-                      <option value="Auto Reconciliation">
-                        Auto Reconciliation
                       </option>
                     </select>
                   </div>
