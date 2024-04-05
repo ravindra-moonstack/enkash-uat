@@ -31,6 +31,7 @@ const sales = () => {
   //Url parameters
   let urlParams;
   let source;
+  let interestedPG: boolean = false; //for showing PG product menu
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -39,6 +40,9 @@ const sales = () => {
       const emailParam = urlParams.get("email");
       if (emailParam !== null) {
         setCompanyEmail(emailParam);
+      }
+      if (source == "interested-payment-gateway") {
+        interestedPG = true;
       }
     }
     emailjs.init(emailjs_public_key);
@@ -226,67 +230,131 @@ const sales = () => {
             </div>
 
             {/* Third Row */}
-            <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
-              <Heading
-                title="Primary product you are interested in:"
-                size="h6"
-                color="black"
-                weight="5"
-              />
-              <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
-                <select
-                  value={selectedProduct}
-                  onChange={(e) => {
-                    setSelectedProduct(e.target.value);
-                    e.target.value === "none"
-                      ? setSelectedProductValid(false)
-                      : setSelectedProductValid(true);
-                  }}
-                  className={`form-select ${
-                    !selectedProductValid ? styles.select_box_error : ""
-                  }`}
-                  required
-                >
-                  <option value="none">Open this select menu</option>
-                  <option value="Payables">Payables</option>
-                  <option value="Receievables">Receivables</option>
-                  <option value="Ofex">Expense Management</option>
-                  <option value="Corporate Cards">Corporate Cards</option>
-                  <option value="Reward & Offers">Reward & Offers</option>
-                  <option value="Channel Incentive">Channel Incentive</option>
-                  <option value="Employee Reward">Employee Reward</option>
-                  <option value="Brand Gift Voucher">Brand Gift Voucher</option>
-                </select>
-              </div>
-            </div>
+            {interestedPG ? (
+              <div>
+                <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
+                  <Heading
+                    title="Primary product you are interested in:"
+                    size="h6"
+                    color="black"
+                    weight="5"
+                  />
+                  <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
+                    <select
+                      value={selectedProduct}
+                      onChange={(e) => {
+                        setSelectedProduct(e.target.value);
+                        e.target.value === "none"
+                          ? setSelectedProductValid(false)
+                          : setSelectedProductValid(true);
+                      }}
+                      className={`form-select ${
+                        !selectedProductValid ? styles.select_box_error : ""
+                      }`}
+                      required
+                    >
+                      <option value="none">Open this select menu</option>
+                      <option value="Payables">Payables</option>
+                      <option value="Receievables">Receivables</option>
+                      <option value="Ofex">Expense Management</option>
+                      <option value="Corporate Cards">Corporate Cards</option>
+                      <option value="Reward & Offers">Reward & Offers</option>
+                      <option value="Channel Incentive">
+                        Channel Incentive
+                      </option>
+                      <option value="Employee Reward">Employee Reward</option>
+                      <option value="Brand Gift Voucher">
+                        Brand Gift Voucher
+                      </option>
+                    </select>
+                  </div>
+                </div>
 
-            {/* Fourth Row */}
-            <div className="d-flex flex-column flex-md-row  align-items-md-center w-100 mt-4">
-              <Heading
-                title="Additional products you are interested in:"
-                size="h6"
-                color="black"
-                weight="5"
-              />
-              <div className="d-flex w-40 ms-md-3 mt-2 mt-m-0 flex-column flex-md-row justify-content-start">
-                <select
-                  value={selectedAdditionalProduct}
-                  onChange={(e) => setSelectedAdditionalProduct(e.target.value)}
-                  className="form-select"
-                  required
-                >
-                  <option value="">Open this select menu</option>
-                  <option value="Payables">Payables</option>
-                  <option value="Receievables">Receivables</option>
-                  <option value="Ofex">Expense Management</option>
-                  <option value="Corporate Cards">Corporate Cards</option>
-                  <option value="Reward & Offers">Reward & Offers</option>
-                  <option value="Channel Incentive">Channel Incentive</option>
-                  <option value="Employee Reward">Employee Reward</option>
-                  <option value="Brand Gift Voucher">Brand Gift Voucher</option>
-                </select>
+                {/* Fourth Row (Description) */}
+                <div className="d-flex flex-column flex-md-row  align-items-md-center w-100 mt-4">
+                  <Heading
+                    title="Additional products you are interested in:"
+                    size="h6"
+                    color="black"
+                    weight="5"
+                  />
+                  <div className="d-flex w-40 ms-md-3 mt-2 mt-m-0 flex-column flex-md-row justify-content-start">
+                    <select
+                      value={selectedAdditionalProduct}
+                      onChange={(e) =>
+                        setSelectedAdditionalProduct(e.target.value)
+                      }
+                      className="form-select"
+                      required
+                    >
+                      <option value="">Open this select menu</option>
+                      <option value="Payables">Payables</option>
+                      <option value="Receievables">Receivables</option>
+                      <option value="Ofex">Expense Management</option>
+                      <option value="Corporate Cards">Corporate Cards</option>
+                      <option value="Reward & Offers">Reward & Offers</option>
+                      <option value="Channel Incentive">
+                        Channel Incentive
+                      </option>
+                      <option value="Employee Reward">Employee Reward</option>
+                      <option value="Brand Gift Voucher">
+                        Brand Gift Voucher
+                      </option>
+                    </select>
+                  </div>
+                </div>
               </div>
-            </div>
+            ) : (
+              <div>
+                <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
+                  <Heading
+                    title="Primary product you are interested in:"
+                    size="h6"
+                    color="black"
+                    weight="5"
+                  />
+                  <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
+                    <select
+                      value={selectedProduct}
+                      onChange={(e) => {
+                        setSelectedProduct(e.target.value);
+                        e.target.value === "none"
+                          ? setSelectedProductValid(false)
+                          : setSelectedProductValid(true);
+                      }}
+                      className={`form-select ${
+                        !selectedProductValid ? styles.select_box_error : ""
+                      }`}
+                      required
+                    >
+                      <option value="none">Open this select menu</option>
+                      <option value="Payment Gateway">Payment Gateway</option>
+                      <option value="Payment Links">Payment Links</option>
+                      <option value="Payment Buttons">Payment Buttons</option>
+                      <option value="Payment Page">Payment Page</option>
+                      <option value="Bulk Collect">Bulk Collect</option>
+                      <option value="UPI Payments">UPI Payments</option>
+                      <option value="QR Codes">QR Codes</option>
+                      <option value="Auto Collect">Auto Collect</option>
+                      <option value="Virtual Accounts">Virtual Accounts</option>
+                      <option value="E-Nach">E-Nach</option>
+                      <option value="Subscriptions">Subscriptions</option>
+                      <option value="Reminder Engine">Reminder Engine</option>
+                      <option value="Instant Settlements">
+                        Instant Settlements
+                      </option>
+                      <option value="Invoices">Invoices</option>
+                      <option value="Collection Analytics">
+                        Collection Analytics
+                      </option>
+                      <option value="Auto Reconciliation">
+                        Auto Reconciliation
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Fifth Row (Description) */}
             <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">

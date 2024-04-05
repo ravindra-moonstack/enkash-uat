@@ -97,7 +97,7 @@ const PopUpPaymentGateway = () => {
                   <PrimaryButton
                     title="Switch to Olympus PG today"
                     theme="blue"
-                    url="/sales"
+                    url="/sales?source=interested-payment-gateway"
                   />
                 </div>
               </div>
