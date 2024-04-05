@@ -6,8 +6,8 @@ import iconFour from "./img/icon-four.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Create a static or dynamic QR code instantly using Olympus",
-    title: "Create a static or dynamic QR code instantly using Olympus",
+    alt: "Create a static or dynamic QR code instantly",
+    title: "Create a static or dynamic QR code instantly",
   },
   {
     image: iconTwo,

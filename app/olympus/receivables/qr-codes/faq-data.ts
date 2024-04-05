@@ -12,8 +12,7 @@ const faqData = [
     ],
   },
   {
-    question:
-      "Can I use QR codes for online transactions on the Olympus platform?",
+    question: "Can I use QR codes for online transactions?",
     answer: [
       {
         heading:

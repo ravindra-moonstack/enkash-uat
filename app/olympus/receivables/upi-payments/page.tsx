@@ -75,7 +75,7 @@ const AutoCollect = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Enable easy and secure business collections with real-time settlement and two-factor authentication"
+              title="Enable easy and secure business collections with real-time settlement for instant cash flow"
               size="h6"
               weight="5"
             />
@@ -85,7 +85,7 @@ const AutoCollect = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=upi_payments"
+                url="https://home.enkash.com/signup?utm_source=receivables"
               />
             </div>
             <div>
@@ -191,13 +191,13 @@ const AutoCollect = () => {
             />
           </div>
 
-          <div className="mb-2 mb-md-0 me-3">
+          {/* <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Two-Factor Authentication"
               description="To avoid fraud, UPI transactions are secured with two-factor authentication. This protects businesses from financial losses."
               source="receivables"
             />
-          </div>
+          </div> */}
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
@@ -239,7 +239,7 @@ const AutoCollect = () => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how UPI Payment will change the way you approach collections and receivables!"
+          title="Learn how UPI Payment will change the way you approach collections!"
         />
       </div>
       <div
@@ -250,7 +250,7 @@ const AutoCollect = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about auto collect in detail"
+            title="Don't worry! Our FAQs section will help you learn about UPI Payments in detail"
             color="black"
             size="h4"
           />

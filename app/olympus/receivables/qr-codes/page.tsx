@@ -96,7 +96,7 @@ const QRCodes = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=qr_codes"
+                url="https://home.enkash.com/signup?utm_source=receivables"
               />
             </div>
             <div>
@@ -127,21 +127,21 @@ const QRCodes = () => {
               oldWayDescription:
                 "Previously, making purchases required carrying a card or cash at all times, resulting in inconvenience.",
               newWayDescription:
-                "Now, with Olympus, customers can effortlessly scan QR codes using their mobile phones, leading to a quicker, more secure, and more convenient payment process.",
+                "Now customers can effortlessly scan QR codes using their mobile phones, leading to a quicker, more secure, and more convenient payment process.",
             },
             {
               itemArray: ["Settlement", "Time"],
               oldWayDescription:
                 "Funds used to take days to settle in merchant's account, with no option to settle on holidays or weekends, causing a cashflow crunch.",
               newWayDescription:
-                "Olympus enables 365-day instant settlements of funds after successful payment, even on bank holidays, for improved cash flow.",
+                "With us, experience 365-days of instant settlements of funds after successful payment, even on bank holidays, for improved cash flow.",
             },
             {
               itemArray: ["Accounting", "Software Integration"],
               oldWayDescription:
                 "Integration with accounting software was challenging due to transactions occurring in various modes such as cash, cards, and cheques.",
               newWayDescription:
-                "With Olympus, seamlessly integrate with accounting softwares like Tally, and automate reconciliation for both online and offline payments.",
+                "Seamlessly integrate with accounting softwares like Tally, and automate reconciliation for both online and offline payments.",
             },
             {
               itemArray: ["Cost"],

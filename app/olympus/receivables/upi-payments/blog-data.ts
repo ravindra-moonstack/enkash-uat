@@ -25,7 +25,7 @@ const blogData = [
   {
     image: "https://www.enkash.com/resources/wp-content/uploads/2024/03/37.png",
     imageAlt: "MPIN",
-    title: "What is MPIN? How to Generate and Use MPIN in UPI? - EnKash",
+    title: "What is MPIN? How to Generate and Use MPIN in UPI?",
     date: "Mar 20, 2024",
     description:
       "Explore the significance of Mobile Personal Identification Number (MPIN) in securing UPI and mobile banking transactions. Learn how to generate, change, and use your MPIN for enhanced online payment security.",
