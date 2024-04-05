@@ -22,9 +22,23 @@ const PopUpPaymentGateway = () => {
       const timer = setTimeout(() => {
         setShowPopup(true);
       }, 4000);
-      return () => clearTimeout(timer);
+      window.addEventListener("beforeunload", handleBeforeUnload);
+
+      return () => {
+        localStorage.removeItem("popupShown");
+        clearTimeout(timer);
+        window.removeEventListener("beforeunload", handleBeforeUnload);
+      };
+    } else {
+      return () => {
+        localStorage.removeItem("popupShown");
+      };
     }
   }, []);
+
+  const handleBeforeUnload = () => {
+    localStorage.removeItem("popupShown");
+  };
 
   const currentUrl =
     typeof window !== "undefined" ? window.location.pathname : "";
