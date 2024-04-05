@@ -39,41 +39,54 @@ const QRCodes = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`QR${space}`}
+                title={`Olympus |${space}`}
                 color="rainy-blue"
-                size="h1"
+                size="h4"
                 weight="7"
               />
             </div>
             <div>
               <Heading
-                title="Codes"
-                size="h1"
-                weight="7"
+                title="QR Codes"
+                size="h4"
+                weight="4"
                 useH1TagInHtml={true}
               />
+              <sup className="sup-symbol"></sup>
             </div>
           </div>
           <div className="d-flex flex-column">
-            <div>
+            <Heading
+              title={`Make secure${space}`}
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <div className="d-inline">
               <Heading
-                title={`Make secure, contactless${space}`}
+                title={`contactless${space}`}
                 color="rainy-blue"
-                size="h3"
+                size="h2"
+                weight="7"
+              />
+              <Heading
+                title={`payments${space}`}
+                color="white"
+                size="h2"
                 weight="7"
               />
             </div>
             <Heading
-              title=" payments using QR codes"
+              title="using QR codes"
               color="white"
-              size="h3"
+              size="h2"
               weight="7"
             />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Accept instant payments through QR Codes and streamline your collection process"
+              title="Empower your business to accept instant payments through QR codes. Offer a seamless customer experience and streamline your collection process"
               size="h6"
               weight="5"
             />
@@ -83,7 +96,7 @@ const QRCodes = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=receivables"
+                url="https://home.enkash.com/signup?utm_source=qr_codes"
               />
             </div>
             <div>
@@ -91,7 +104,7 @@ const QRCodes = () => {
                 title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=upi-payments"
+                url="/sales/?source=receivables"
               />
             </div>
           </div>

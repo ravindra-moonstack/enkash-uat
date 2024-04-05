@@ -35,7 +35,7 @@ const seamlessBanking = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Payables |${space}`}
+                title={`Olympus |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"

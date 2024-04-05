@@ -40,37 +40,37 @@ const AutoCollect = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`UPI${space}`}
+                title={`Olympus |${space}`}
                 color="rainy-blue"
-                size="h1"
+                size="h4"
                 weight="7"
               />
             </div>
             <div>
               <Heading
-                title="Payments"
-                size="h1"
-                weight="7"
+                title="UPI Payments"
+                size="h4"
+                weight="4"
                 useH1TagInHtml={true}
               />
             </div>
           </div>
           <div className="d-flex flex-column">
-            <div>
-              <Heading
-                title={`Collect payments directly${space}`}
-                color="rainy-blue"
-                size="h3"
-                weight="7"
-              />
-              <Heading title={`in your`} color="white" size="h3" weight="7" />
-            </div>
             <Heading
-              title="bank account with UPI Payments"
-              color="white"
-              size="h3"
+              title={`Collect payments directly${space}`}
+              color="rainy-blue"
+              size="h2"
               weight="7"
             />
+            <div className="d-inline">
+              <Heading
+                title={`in your bank account with${space}`}
+                color="white"
+                size="h2"
+                weight="7"
+              />
+            </div>
+            <Heading title="UPI payments" color="white" size="h2" weight="7" />
           </div>
 
           <div className="d-flex mt-4 pe-5">
@@ -85,7 +85,7 @@ const AutoCollect = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=receivables"
+                url="https://home.enkash.com/signup?utm_source=upi_payments"
               />
             </div>
             <div>
@@ -93,7 +93,7 @@ const AutoCollect = () => {
                 title="Get Free Demo"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=upi-payments"
+                url="/sales/?source=receivables"
               />
             </div>
           </div>
