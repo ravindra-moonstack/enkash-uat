@@ -15,10 +15,15 @@ const PopUpPaymentGateway = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowPopup(true);
-    }, 4000);
-    return () => clearTimeout(timer);
+    const hasPopupBeenShown = localStorage.getItem("popupShown");
+
+    if (!hasPopupBeenShown) {
+      localStorage.setItem("popupShown", "true");
+      const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 4000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const currentUrl =
