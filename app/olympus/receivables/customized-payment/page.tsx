@@ -36,7 +36,7 @@ const page = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Olympus |${space}`}
+                title={`Receivables |${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
@@ -44,7 +44,7 @@ const page = () => {
             </div>
             <div>
               <Heading
-                title="Customized Payment"
+                title="Customized Payment Page"
                 size="h4"
                 weight="4"
                 useH1TagInHtml={true}
