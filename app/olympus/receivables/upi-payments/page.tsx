@@ -185,7 +185,7 @@ const AutoCollect = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Recurring Payments with UPI AutoPay"
+              whiteTitle="UPI AutoPay"
               description="Businesses following subscription models can collect payments with UPI AutoPay as it allows customers to enable automatic recurring payments."
               source="receivables"
             />

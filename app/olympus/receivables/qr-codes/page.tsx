@@ -73,7 +73,7 @@ const QRCodes = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Empower your business to accept instant payments through QR codes. Offer a seamless customer experience and streamline your collection process"
+              title="Accept instant payments through QR Codes and streamline your collection process"
               size="h6"
               weight="5"
             />
@@ -232,12 +232,6 @@ const QRCodes = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper
-          blogData={blogData}
-          title="Learn how our QR codes can revolutionize the way you work!"
-        />
-      </div>
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -246,7 +240,7 @@ const QRCodes = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about auto collect in detail"
+            title="Don't worry! Our FAQs section will help you learn about QR Codes in detail"
             color="black"
             size="h4"
           />
@@ -303,29 +297,28 @@ const QRCodes = () => {
                   payments through Google Pay. Here's how you can scan QR code
                   online:
                 </p>
-                <ul>
-                  <li>
-                    <strong>Customers initiate payment:</strong> The customer
-                    visits your store or receives an invoice with a static QR
-                    code which can be generated on our platform.
-                  </li>
-                  <li>
-                    <strong>Scan the QR code:</strong> The customer opens their
-                    Google Pay app and accesses the QR scanner to scan QR code
-                    online (refer to Google Pay's guide for specific steps).
-                  </li>
-                  <li>
-                    <strong>Complete the payment:</strong> Google Pay will
-                    display the pre-defined payment amount associated with the
-                    static QR code. The customer confirms the payment using
-                    their Google Pay PIN or fingerprint.
-                  </li>
-                  <li>
-                    <strong>Payment confirmation:</strong> You'll receive
-                    real-time notification of the successful payment on your
-                    EnKash account.
-                  </li>
-                </ul>
+
+                <p>
+                  <strong>Customers initiate payment:</strong> The customer
+                  visits your store or receives an invoice with a static QR code
+                  which can be generated on our platform.
+                </p>
+                <p>
+                  <strong>Scan the QR code:</strong> The customer opens their
+                  Google Pay app and accesses the QR scanner to scan QR code
+                  online (refer to Google Pay's guide for specific steps).
+                </p>
+                <p>
+                  <strong>Complete the payment:</strong> Google Pay will display
+                  the pre-defined payment amount associated with the static QR
+                  code. The customer confirms the payment using their Google Pay
+                  PIN or fingerprint.
+                </p>
+                <p>
+                  <strong>Payment confirmation:</strong> You'll receive
+                  real-time notification of the successful payment on your
+                  EnKash account.
+                </p>
               </div>
             </>
           }
