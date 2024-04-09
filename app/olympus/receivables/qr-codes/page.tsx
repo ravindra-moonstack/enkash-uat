@@ -13,21 +13,24 @@ import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
+import BlogWrapper from "@/components/blog/blog-wrapper";
 import Header from "@/components/header/header";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
-import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Customise Payment Page: Accept Payments with Payment Page | EnKash",
+  title: "Accept Instant Payments through QR codes for your Business",
   description:
-    "Customise Payment Pages and send different versions of the same Payment Page to different customers. Book Demo now !!",
+    "QR codes help enterprises accept contactless and error-free in-store payments from customers using any UPI app.",
+  alternates: {
+    canonical: "https://www.enkash.com/olympus/receivables/qr-codes",
+  },
 };
 
-const page = () => {
+const QRCodes = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="receivables" />
@@ -44,46 +47,46 @@ const page = () => {
             </div>
             <div>
               <Heading
-                title="Customized Payment Page"
+                title="QR Codes"
                 size="h4"
                 weight="4"
                 useH1TagInHtml={true}
               />
+              <sup className="sup-symbol"></sup>
             </div>
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Collect payments from"
+              title={`Make secure${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <div>
+            <div className="d-inline">
               <Heading
-                title="customers"
+                title={`contactless${space}`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title={`${space}with a`}
+                title={`payments${space}`}
                 color="white"
                 size="h2"
                 weight="7"
               />
             </div>
-
             <Heading
-              title="customized payment page"
-              size="h2"
+              title="using QR codes"
               color="white"
+              size="h2"
               weight="7"
             />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Accept payments with automated payment receipts, customized branding, and zero coding"
+              title="Empower your business to accept instant payments through QR codes. Offer a seamless customer experience and streamline your collection process"
               size="h6"
               weight="5"
             />
@@ -120,25 +123,32 @@ const page = () => {
         <EnkashWay
           progressData={[
             {
-              itemArray: ["Lack of", "Personalization"],
+              itemArray: ["Payment", "Process"],
               oldWayDescription:
-                "The traditional payment pages are basic and lack any kind of personalization giving no value to the customer experience.",
+                "Previously, making purchases required carrying a card or cash at all times, resulting in inconvenience.",
               newWayDescription:
-                "With EnKash, businesses can customize their payment pages with their brand standards and give a personalized feel to customers making them feel valued.",
+                "Now customers can effortlessly scan QR codes using their mobile phones, leading to a quicker, more secure, and more convenient payment process.",
             },
             {
-              itemArray: ["Technical", "Integration & Cost"],
+              itemArray: ["Settlement", "Time"],
               oldWayDescription:
-                "Businesses had to invest in resources to integrate payment pages. Technical integration is usually complicated and time-taking.",
+                "Funds used to take days to settle in merchant's account, with no option to settle on holidays or weekends, causing a cashflow crunch.",
               newWayDescription:
-                "EnKash payment pages require no integration. Businesses can go online with minimal integration and tech efforts. We create and operate for you.",
+                "With us, experience 365-days of instant settlements of funds after successful payment, even on bank holidays, for improved cash flow.",
             },
             {
-              itemArray: ["Hassle-free", "payments"],
+              itemArray: ["Accounting", "Software Integration"],
               oldWayDescription:
-                "Conventional businesses lack security and do not accept payments from multiple modes.",
+                "Integration with accounting software was challenging due to transactions occurring in various modes such as cash, cards, and cheques.",
               newWayDescription:
-                "Businesses can securely accept payments from a wide range of payment methods and send automated receipts.",
+                "Seamlessly integrate with accounting softwares like Tally, and automate reconciliation for both online and offline payments.",
+            },
+            {
+              itemArray: ["Cost"],
+              oldWayDescription:
+                "Use of cash, card, or cheques, typically incurred high transaction fees, equipment costs for POS systems, and maintenance expenses.",
+              newWayDescription:
+                "The use of QR codes offers lower transaction fees, minimal setup costs, and reduced maintenance expenses, making it a cost-effective solution for businesses.",
             },
           ]}
         />
@@ -148,9 +158,8 @@ const page = () => {
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
-          <Heading title="Create your" color="black" size="h1" weight="6" />
           <Heading
-            title={`${space}custom-branded payment page`}
+            title=" Collect payments with QR codes"
             color="equity-blue"
             size="h1"
             weight="6"
@@ -160,45 +169,44 @@ const page = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Minimal Integration"
-              description="Businesses can easily create their customized payment page with payment gateways to collect payments online with negligible technical integration. Both one-time and recurring payments can be collected with these payment pages"
-              source="receivables"
+              whiteTitle="Static QR Codes"
+              description="Generate a single QR code for your business. Customers scan and pay the pre-defined amount using any UPI app. Ideal for displaying at stores or on invoices"
+              source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Multiple Payment Pages"
-              description="Enterprises can create multiple payment pages for each type of transaction. For instance, one payment page can be created for a charity and one for collection from customers"
-              source="receivables"
+              whiteTitle="Dynamic QR Codes"
+              description="Generate unique QR codes for each transaction. Perfect for online payments, allowing you to capture specific invoice details for easy reconciliation and can be left open-ended for variable payment amounts"
+              source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Security"
-              description="EnKash does not store your customer card details. This information can only be seen by the customer, the payment gateway, and the bank. This ensures data security"
-              source="receivables"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Customize Your Brand"
-              source="receivables"
-              description="Businesses can customize their payment page as per their requirements and give their customer a seamless experience"
+              whiteTitle="Universal Acceptance"
+              description="Accept payments via popular UPI apps like Google Pay, Phonepe, etc"
+              source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Receipts"
-              description="Send automated receipts to customers on payment confirmation without any manual intervention"
-              source="receivables"
+              whiteTitle="Real-time Tracking"
+              description="Create different QR codes for multiple branches or customers and easily track and reconcile all the incoming payments"
+              source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Custom Fields"
-              description="Businesses can customize their payment page by modifying fields to collect information relevant to them"
-              source="receivables"
+              whiteTitle="Customizable Design"
+              description="Tailor and collect payment with QR codes with your brand logo and colors, creating a seamless payment experience for your customers"
+              source="qr-codes"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Enhanced Security"
+              description="PCI DSS-compliant platform ensures secure transactions"
+              source="qr-codes"
             />
           </div>
         </div>
@@ -209,16 +217,22 @@ const page = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex flex-column">
+                <div className="text-center d-flex justify-content-center">
                   <Heading
-                    title={`Payment pages that align with your${space}`}
+                    title={`Leverage`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="business requirements"
+                    title={`${space}QR Code integration${space}`}
                     color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title="for your business"
+                    color="white"
                     size="h1"
                     weight="6"
                   />
@@ -231,12 +245,6 @@ const page = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper
-          blogData={blogData}
-          title="Learn how virtual accounts can revolutionize the way you work!"
-        />
-      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -245,7 +253,7 @@ const page = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about customized payment page in detail"
+            title="Don't worry! Our FAQs section will help you learn about QR Codes in detail"
             color="black"
             size="h4"
           />
@@ -262,65 +270,68 @@ const page = () => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of customized payment page?"
-          description="Businesses can create customized payment pages for their customers and collect payments from them. These payments can be easily incorporated into business websites and functioning can start instantly."
+          title="Seeking further understanding of QR codes?"
+          description="A QR code, short for Quick Response code, is a type of two-dimensional barcode that contains information in a machine-readable format. A QR code acts as a digital bridge between a customer and a business to initiate a contactless payment by helping users to pay and accept payments using the QR code scanner. "
           source="receivables"
         />
       </div>
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
-          title="Explore our comprehensive guide"
+          title="Explore the comprehensive guide"
           innerHtml={
             <>
               <div className="mb-3">
                 <Heading
-                  size="h5"
+                  size="h3"
                   color="black"
                   weight="6"
-                  title="What is EnKash's customized payment page?"
+                  title="Q. How do I reconcile payments received through QR codes?"
                 />
               </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="EnKash provides customized payment pages to businesses to collect their payments from customers for across different business models."
-                />
+              <div className="mb-5">
+                <p>
+                  EnKash provides a user-friendly dashboard for real-time
+                  transaction tracking and automated reconciliation reports.
+                </p>
               </div>
 
               <div className="mb-3">
                 <Heading
-                  size="h5"
+                  size="h3"
                   color="black"
                   weight="6"
-                  title="How can I customize the payment pages to reflect my brand's identity professionally?"
+                  title="Q. How to scan QR code with Google Pay?"
                 />
               </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Brand colors, fonts, and logos can be incorporated into payment pages to align with the brand’s identity."
-                />
-              </div>
+              <div className="mb-5">
+                <p>
+                  While Google Pay doesn't directly generate QR codes for
+                  businesses, you can leverage our QR code solution to accept
+                  payments through Google Pay. Here's how you can scan QR code
+                  online:
+                </p>
 
-              <div className="mb-3">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="Can I add custom fields or additional information on the payment pages to gather specific customer data?"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Yes, businesses can add or modify custom fields as per their requirements and gather information beneficial to them."
-                />
+                <p>
+                  <strong>Customers initiate payment:</strong> The customer
+                  visits your store or receives an invoice with a static QR code
+                  which can be generated on our platform.
+                </p>
+                <p>
+                  <strong>Scan the QR code:</strong> The customer opens their
+                  Google Pay app and accesses the QR scanner to scan QR code
+                  online (refer to Google Pay's guide for specific steps).
+                </p>
+                <p>
+                  <strong>Complete the payment:</strong> Google Pay will display
+                  the pre-defined payment amount associated with the static QR
+                  code. The customer confirms the payment using their Google Pay
+                  PIN or fingerprint.
+                </p>
+                <p>
+                  <strong>Payment confirmation:</strong> You'll receive
+                  real-time notification of the successful payment on your
+                  EnKash account.
+                </p>
               </div>
             </>
           }
@@ -331,4 +342,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default QRCodes;

@@ -81,12 +81,12 @@ const ReceivableProducts = [
       },
       {
         name: "UPI Payments",
-        description: "Coming Soon",
+        description: "Facilitate effortless business collections",
         imageSrc: upiPayments,
         imageSrcHovered: upiPaymentsFilled,
-        link: "/olympus/receivables/payment-gateway",
+        link: "/olympus/receivables/upi-payments",
         new: false,
-        comingSoon: true,
+        comingSoon: false,
       },
       {
         name: "e-NACH",
@@ -111,12 +111,12 @@ const ReceivableProducts = [
       },
       {
         name: "QR Codes",
-        description: "Coming Soon",
+        description: "Accept payments quick & easy",
         imageSrc: qrCode,
         imageSrcHovered: qrCodeFilled,
-        link: "/olympus/receivables/payment-gateway",
+        link: "/olympus/receivables/qr-codes",
         new: false,
-        comingSoon: true,
+        comingSoon: false,
       },
       {
         name: "Subscriptions",
