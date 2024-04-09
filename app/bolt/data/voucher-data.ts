@@ -41,12 +41,12 @@ const VoucherData: Record<string, Voucher> = {
   // Add more vouchers here...
   PC021192942SON59: {
     voucherId: "PC021192942SON59",
-    name: "$20 Off Electronics",
+    name: "myntra brand voucher",
     category: "e-commerce",
     discount: 20,
     description: "Get $20 off on electronics purchases over $100.",
     aboutCompany: "ElectronicsWorld offers a wide range of electronic...",
-    backgroundImg: "url_to_image",
+    backgroundImg: "tata.png",
     howToRedeem: [
       "Shop for electronics on ElectronicsWorld's website.",
       "Add items worth $100 or more to your cart.",
@@ -55,12 +55,12 @@ const VoucherData: Record<string, Voucher> = {
   },
   PC609726254IR7DN: {
     voucherId: "PC609726254IR7DN",
-    name: "Free Shipping on Orders Over $50",
+    name: "Amazon gift voucher",
     category: "e-commerce",
     discount: 100,
     description: "Enjoy free shipping on orders over $50.",
     aboutCompany: "FashionHub offers trendy clothing and accessories...",
-    backgroundImg: "url_to_image",
+    backgroundImg: "tata.png",
     howToRedeem: [
       "Browse products on FashionHub's website.",
       "Add items worth $50 or more to your cart.",

@@ -21,10 +21,18 @@ interface VoucherCardProps {
 }
 
 const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
+  const backgroundImage = require(`./../../app/bolt/data/voucher-bg/${voucher.backgroundImg}`);
+
   return (
     <div className={styles.voucher_card}>
-      <div className={styles.discount}>Up to {voucher.discount}% OFF</div>
-      <Image src={apparels} alt={voucher.name} />
+      <div className={styles.discount}>
+        Up to <strong>{voucher.discount}%</strong> OFF
+      </div>
+      <Image
+        src={backgroundImage}
+        alt={voucher.name}
+        className={styles.background_img}
+      />
       <Link href={"https://bolt.enkash.com/"} className={styles.buy_now_button}>
         Buy Now
       </Link>
