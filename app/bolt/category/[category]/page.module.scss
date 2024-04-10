@@ -35,8 +35,13 @@
 .vouchers_container {
   max-width: 1200px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 20px 90px;
-  padding: 0 60px;
+  padding: 0 0px;
+
+  @include for-laptops {
+    padding: 0 60px;
+    justify-content: flex-start;
+  }
 }

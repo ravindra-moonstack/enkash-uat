@@ -4,9 +4,15 @@
 .category_menu {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 10px;
   background-color: $color-bolt-light;
   padding: 33px 0;
+  flex-wrap: wrap;
+
+  @include for-laptops {
+    flex-wrap: nowrap;
+    gap: 25px;
+  }
 }
 
 .category_button {
@@ -15,18 +21,25 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 5px;
     background-color: $color-white;
     color: $color-equity-blue;
     padding: 4px 5px;
     border: none;
-    border-radius: 10px;
+    border-radius: 4px;
     font-weight: 500;
-    font-size: 16px;
-    width: 190px;
+    font-size: 10px;
+    width: 115px;
+
+    @include for-laptops {
+      width: 190px;
+      font-size: 16px;
+      gap: 10px;
+      border-radius: 10px;
+    }
 
     img {
-      width: 17px;
+      width: 12px;
       height: auto;
     }
   }
