@@ -67,6 +67,48 @@ const VoucherData: Record<string, Voucher> = {
       "Shipping discount will be applied automatically.",
     ],
   },
+  PC609726254IR7DM: {
+    voucherId: "PC609726254IR7DM",
+    name: "Amazon gift voucher",
+    category: "e-commerce",
+    discount: 100,
+    description: "Enjoy free shipping on orders over $50.",
+    aboutCompany: "FashionHub offers trendy clothing and accessories...",
+    backgroundImg: "tata.png",
+    howToRedeem: [
+      "Browse products on FashionHub's website.",
+      "Add items worth $50 or more to your cart.",
+      "Shipping discount will be applied automatically.",
+    ],
+  },
+  PC609726254IR7DQ: {
+    voucherId: "PC609726254IR7DQ",
+    name: "Amazon gift voucher",
+    category: "e-commerce",
+    discount: 100,
+    description: "Enjoy free shipping on orders over $50.",
+    aboutCompany: "FashionHub offers trendy clothing and accessories...",
+    backgroundImg: "tata.png",
+    howToRedeem: [
+      "Browse products on FashionHub's website.",
+      "Add items worth $50 or more to your cart.",
+      "Shipping discount will be applied automatically.",
+    ],
+  },
+  PC609726254IR7DL: {
+    voucherId: "PC609726254IR7DL",
+    name: "Amazon gift voucher",
+    category: "e-commerce",
+    discount: 100,
+    description: "Enjoy free shipping on orders over $50.",
+    aboutCompany: "FashionHub offers trendy clothing and accessories...",
+    backgroundImg: "tata.png",
+    howToRedeem: [
+      "Browse products on FashionHub's website.",
+      "Add items worth $50 or more to your cart.",
+      "Shipping discount will be applied automatically.",
+    ],
+  },
   // Add more e-commerce vouchers as needed...
 };
 

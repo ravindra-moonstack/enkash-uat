@@ -9,11 +9,11 @@ import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { CategoryData } from "../../data/category-data";
-import { whiteArrow } from "../..";
 import Link from "next/link";
 import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import VoucherCard from "@/components/voucher-page/voucher-card";
+import { whiteArrow } from "./../../index";
 
 export const metadata: Metadata = {
   title:
@@ -179,9 +179,9 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
           <CategoryMenu currentPageCategory={categoryName} />
 
           {/* render each voucher */}
-          <div className="vouchers m-4 d-flex flex-wrap justify-content-around">
+          <div className={`m-4 ${styles.vouchers_cont}`}>
             {vouchers && (
-              <div>
+              <div className={`m-4 my-5 mx-auto ${styles.vouchers_container}`}>
                 {Object.values(vouchers).map((voucher: Voucher, index) => (
                   <div key={index}>
                     <VoucherCard voucher={voucher} />
