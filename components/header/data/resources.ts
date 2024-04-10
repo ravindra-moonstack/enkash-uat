@@ -3,13 +3,13 @@ export const resources = [
     name: "Blogs",
     description:
       "Read our product-related blogs and learn how they can transform your business",
-    link: "/resources/",
+    link: "https://www.enkash.com/resources/",
   },
   {
     name: "Product Videos",
     description:
       "Watch our product videos for an easy, engaging, and quick understanding",
-    link: "/resources/videos/",
+    link: "https://www.enkash.com/resources/videos/",
   },
   // {
   //   name: "Press Release",
@@ -21,12 +21,12 @@ export const resources = [
     name: "News & Media",
     description:
       "Stay updated with the latest news and developments from EnKash",
-    link: "/resources/media-coverage/",
+    link: "https://www.enkash.com/resources/media-coverage/",
   },
   {
     name: "Customer Stories",
     description: "Know what our customers have to say after using our products",
-    link: "/resources/customer-stories/",
+    link: "https://www.enkash.com/resources/customer-stories/",
   },
 ];
 
