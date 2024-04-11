@@ -24,19 +24,27 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
   const backgroundImage = require(`./../../app/bolt/data/voucher-bg/${voucher.backgroundImg}`);
 
   return (
-    <div className={styles.voucher_card}>
-      <div className={styles.discount}>
-        Up to <strong>{voucher.discount}%</strong> OFF
+    <div>
+      <div className={styles.voucher_card}>
+        <div className={styles.discount}>
+          Up to <strong>{voucher.discount}%</strong> OFF
+        </div>
+        <Link href={`/bolt/voucher/${voucher.voucherId}`}>
+          <Image
+            src={backgroundImage}
+            alt={voucher.name}
+            className={styles.background_img}
+          />
+        </Link>
+        <Link
+          href={"https://bolt.enkash.com/"}
+          className={styles.buy_now_button}
+          target="_blank"
+        >
+          Buy Now
+        </Link>
+        <div className={styles.voucher_name}>{voucher.name}</div>
       </div>
-      <Image
-        src={backgroundImage}
-        alt={voucher.name}
-        className={styles.background_img}
-      />
-      <Link href={"https://bolt.enkash.com/"} className={styles.buy_now_button}>
-        Buy Now
-      </Link>
-      <div className={styles.voucher_name}>{voucher.name}</div>
     </div>
   );
 };

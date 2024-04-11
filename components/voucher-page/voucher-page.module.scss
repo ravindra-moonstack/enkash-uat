@@ -68,7 +68,7 @@
     color: white;
     font-style: italic;
     strong {
-      color: #70ff9b;
+      color: $color-bolt-green;
     }
   }
 
@@ -98,5 +98,6 @@
     font-weight: 700;
     text-align: center;
     color: $color-bolt-title-grey;
+    text-decoration: none;
   }
 }

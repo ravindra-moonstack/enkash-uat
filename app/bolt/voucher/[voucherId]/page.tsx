@@ -6,6 +6,7 @@ import Footer from "@/components/footer/footer";
 import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import Link from "next/link";
+import { backArrow, zigZagBottom, zigZagTop } from "../..";
 
 export const metadata: Metadata = {
   title:
@@ -33,6 +34,7 @@ const fetchVoucher = async (voucherId: string) => {
   let localVoucher: Voucher = VoucherData[voucherId];
   let isActive: boolean = false;
 
+  return localVoucher;
   if (!localVoucher) {
     return null;
   }
@@ -51,7 +53,6 @@ const fetchVoucher = async (voucherId: string) => {
       }
     );
     const apiData = await apiResponse.json();
-
     //map for discount update
     apiData.payload.data.forEach((product: any) => {
       if (
@@ -73,12 +74,23 @@ const fetchVoucher = async (voucherId: string) => {
 const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
   const voucherId = params.voucherId;
   const localVoucherData = VoucherData[voucherId];
-  const voucherData = await fetchVoucher(localVoucherData?.voucherId);
 
-  if (!voucherData) {
+  if (!localVoucherData) {
     console.log("No voucher present");
   }
+  const voucherData = await fetchVoucher(localVoucherData?.voucherId);
   //   const voucherData = VoucherData[voucherId];
+
+  let categoryNameMap = new Map<string, string>([
+    ["e-commerce", "E-Commerce"],
+    ["food-and-beverages", "Food & Beverages"],
+    ["health-and-wellness", "Health & Wellness"],
+    ["apparels", "Apparels"],
+    ["movies-and-music", "Movies & Music"],
+  ]);
+  const voucherImage = voucherData
+    ? require(`./../../data/voucher-bg/${voucherData.backgroundImg}`)
+    : null;
   return (
     <>
       <Header utmSource="voucher-category" />
@@ -91,7 +103,74 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
             />
           </div>
 
-          <div className={`color-white ${styles.second_row}`}>
+          <div className={`mx-auto ${styles.voucher_detail_container}`}>
+            <div className={`mt-3 ${styles.top_container}`}>
+              <div className={`my-3 ${styles.back_button}`}>
+                <Link href={`/bolt/category/${voucherData.category}`}>
+                  <Image src={backArrow} alt="back" />
+                  <div className={`mx-3`}>
+                    {categoryNameMap.get(voucherData.category)}
+                  </div>
+                </Link>
+              </div>
+
+              <div className={`${styles.voucher_image_section}`}>
+                <div className={styles.discount_bar}>
+                  <div className={styles.discount_}>
+                    Up to <span>{voucherData.discount}%</span> OFF
+                  </div>
+                  {/* <div className={styles.brand_name}>{voucherData.name}</div> */}
+                </div>
+
+                <div className={styles.voucher_name}>{voucherData.name}</div>
+                <div className={styles.voucher_image}>
+                  <Image src={voucherImage} alt={voucherData.name} />
+                </div>
+                <div className={styles.buy_now_button}>
+                  <Link href="bolt">BUY NOW</Link>
+                </div>
+              </div>
+
+              <div className={styles.detail_section}>
+                <div className={`mb-1 ${styles.description_title}`}>
+                  Description: {voucherData.name}{" "}
+                </div>
+                <div className={`mb-4 ${styles.description}`}>
+                  {voucherData.description}
+                </div>
+
+                <div className={`mb-1 ${styles.description_title}`}>
+                  How to redeem{" "}
+                </div>
+                <div className={`mb-4 ${styles.description}`}>
+                  <ul>
+                    {voucherData.howToRedeem.map((step, index) => (
+                      <li key={index}>{step}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+              <div className={styles.bottom_zigzag}>
+                <Image src={zigZagTop} alt="zig-zag" />
+              </div>
+            </div>
+
+            <div className={`mt-4 mb-5 ${styles.bottom_container}`}>
+              <div className={styles.detail_section}>
+                <div className={`mb-1 ${styles.description_title}`}>
+                  About {voucherData.name}
+                </div>
+                <div className={`mb-1 ${styles.description}`}>
+                  {voucherData.aboutCompany}
+                </div>
+              </div>
+              <div className={styles.bottom_zigzag}>
+                <Image src={zigZagBottom} alt="zig-zag" />
+              </div>
+            </div>
+          </div>
+
+          {/* <div className={`color-white ${styles.second_row}`}>
             <div className={styles.voucher_card}>
               <h2>{voucherData.name}</h2>
               <p>Category: {voucherData.category}</p>
@@ -105,7 +184,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                 ))}
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       ) : (
         <div className={`color-white ${styles.error_container}`}>

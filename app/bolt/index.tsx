@@ -10,3 +10,8 @@ export { default as heavyLiftingIconThree } from "./img/heavy-lifting-icon-three
 
 //Animations import
 export { default as bannerAnimation } from "./img/lottie/banner.json";
+
+//bolt voucher pages
+export { default as backArrow } from "./img/back-arrow.svg";
+export { default as zigZagBottom } from "./img/zig-zag-bottom.png";
+export { default as zigZagTop } from "./img/zig-zag-top.png";
