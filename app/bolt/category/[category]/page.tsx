@@ -28,6 +28,7 @@ export const metadata: Metadata = {
 type Voucher = {
   voucherId: string;
   name: string;
+  brandName?: string;
   category: string;
   discount: number;
   description: string;

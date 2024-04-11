@@ -1,6 +1,7 @@
 type Voucher = {
   voucherId: string;
   name: string;
+  brandName?: string;
   category: string;
   discount: number;
   description: string;
@@ -13,6 +14,7 @@ const VoucherData: Record<string, Voucher> = {
   PC453798961AR6LP: {
     voucherId: "PC453798961AR6LP",
     name: "Nykaa Fashion E-Gift Card",
+    brandName: "Nykaa",
     category: "e-commerce",
     discount: 7,
     description:
@@ -33,6 +35,7 @@ const VoucherData: Record<string, Voucher> = {
   PC272920797HGB6I: {
     voucherId: "PC272920797HGB6I",
     name: "Nykaa Fashion E-Gift Card",
+    brandName: "Nykaa",
     category: "e-commerce",
     discount: 7,
     description:
@@ -53,6 +56,7 @@ const VoucherData: Record<string, Voucher> = {
   PC20013745371T7J: {
     voucherId: "PC20013745371T7J",
     name: "Myntra E-Gift Card",
+    brandName: "Myntra",
     category: "e-commerce",
     discount: 6,
     description:
@@ -69,6 +73,7 @@ const VoucherData: Record<string, Voucher> = {
   PC033846095QLM6I: {
     voucherId: "PC033846095QLM6I",
     name: "Nykaa E-Gift Card",
+    brandName: "Nykaa",
     category: "e-commerce",
     discount: 5.5,
     description:
@@ -89,6 +94,7 @@ const VoucherData: Record<string, Voucher> = {
   PC974927165CGD4J: {
     voucherId: "PC974927165CGD4J",
     name: "Tata CliQ E-Gift Card",
+    brandName: "Tata CliQ",
     category: "e-commerce",
     discount: 4,
     description:
@@ -109,6 +115,7 @@ const VoucherData: Record<string, Voucher> = {
   PC156384302G3B1F: {
     voucherId: "PC156384302G3B1F",
     name: "Tata CliQ Luxury E-Gift Card",
+    brandName: "Tata CliQ",
     category: "e-commerce",
     discount: 4,
     description:
@@ -128,6 +135,7 @@ const VoucherData: Record<string, Voucher> = {
   PC977733912CJIW7: {
     voucherId: "PC977733912CJIW7",
     name: "109F E-Gift Card",
+    brandName: "109F",
     category: "apparels",
     discount: 13,
     description:
@@ -146,6 +154,7 @@ const VoucherData: Record<string, Voucher> = {
   PC676551930WQQZN: {
     voucherId: "PC676551930WQQZN",
     name: "Max(Online) E-Gift Card",
+    brandName: "Max(Online)",
     category: "apparels",
     discount: 11,
     description:
@@ -165,6 +174,7 @@ const VoucherData: Record<string, Voucher> = {
   PC802928170X7UE7: {
     voucherId: "PC802928170X7UE7",
     name: "JACK & JONES E-Gift Card",
+    brandName: "JACK & JONES",
     category: "apparels",
     discount: 11,
     description:
@@ -181,6 +191,7 @@ const VoucherData: Record<string, Voucher> = {
   PC782550452IQCV8: {
     voucherId: "PC782550452IQCV8",
     name: "Westside E-Gift Card",
+    brandName: "Westside",
     category: "apparels",
     discount: 10,
     description:
@@ -198,6 +209,7 @@ const VoucherData: Record<string, Voucher> = {
   PC1940310122W3V7: {
     voucherId: "PC1940310122W3V7",
     name: "Shoppers Stop E-Gift Card",
+    brandName: "Shoppers Stop",
     category: "apparels",
     discount: 10,
     description:
@@ -217,6 +229,7 @@ const VoucherData: Record<string, Voucher> = {
   PC7513531244A681: {
     voucherId: "PC7513531244A681",
     name: "AJIO Gift-card",
+    brandName: "AJIO",
     category: "e-commerce",
     discount: 1.25,
     description:
@@ -234,6 +247,7 @@ const VoucherData: Record<string, Voucher> = {
   PC698625467AYGL0: {
     voucherId: "PC698625467AYGL0",
     name: "KFC E-Gift Card",
+    brandName: "KFC",
     category: "food-and-beverages",
     discount: 6,
     description:
@@ -255,6 +269,7 @@ const VoucherData: Record<string, Voucher> = {
   PC532779359SCEX6: {
     voucherId: "PC532779359SCEX6",
     name: "McDonald's Value Club Gift Voucher",
+    brandName: "McDonald's",
     category: "food-and-beverages",
     discount: 13,
     description:
@@ -272,6 +287,7 @@ const VoucherData: Record<string, Voucher> = {
   PC072491319U46GD: {
     voucherId: "PC072491319U46GD",
     name: "Pizza Hut E-Gift Card",
+    brandName: "Pizza Hut",
     category: "food-and-beverages",
     discount: 8,
     description:
@@ -292,6 +308,7 @@ const VoucherData: Record<string, Voucher> = {
   PC41810865901M3H: {
     voucherId: "PC41810865901M3H",
     name: "Starbucks E-Gift Card",
+    brandName: "Starbucks",
     category: "food-and-beverages",
     discount: 9,
     description:
@@ -309,6 +326,7 @@ const VoucherData: Record<string, Voucher> = {
   PC372405820GELTK: {
     voucherId: "PC372405820GELTK",
     name: "Swiggy Money E-Gift Card",
+    brandName: "Swiggy",
     category: "food-and-beverages",
     discount: 5,
     description:
@@ -327,6 +345,7 @@ const VoucherData: Record<string, Voucher> = {
   PC946708564DIAYO: {
     voucherId: "PC946708564DIAYO",
     name: "Zomato Gift Card",
+    brandName: "Zomato",
     category: "food-and-beverages",
     discount: 6,
     description:
@@ -344,6 +363,7 @@ const VoucherData: Record<string, Voucher> = {
   PC279528599CMINK: {
     voucherId: "PC279528599CMINK",
     name: "MyGlamm E-Gift Card",
+    brandName: "MyGlamm",
     category: "health-and-wellness",
     discount: 16,
     description:
@@ -362,6 +382,7 @@ const VoucherData: Record<string, Voucher> = {
   PC612840985SZK5Y: {
     voucherId: "PC612840985SZK5Y",
     name: "Healthians E-Gift Card",
+    brandName: "Healthians",
     category: "health-and-wellness",
     discount: 58,
     description:
@@ -381,6 +402,7 @@ const VoucherData: Record<string, Voucher> = {
   PC075280109BSKFI: {
     voucherId: "PC075280109BSKFI",
     name: "Himalaya E-Gift Card",
+    brandName: "Himalaya",
     category: "health-and-wellness",
     discount: 6,
     description:
@@ -398,6 +420,7 @@ const VoucherData: Record<string, Voucher> = {
   PC499909568YMAR1: {
     voucherId: "PC499909568YMAR1",
     name: "Mamaearth E-Gift Card",
+    brandName: "Mamaearth",
     category: "health-and-wellness",
     discount: 8,
     description:
@@ -415,6 +438,7 @@ const VoucherData: Record<string, Voucher> = {
   PC0150611084TAMU: {
     voucherId: "PC0150611084TAMU",
     name: "The Body Shop E-Gift Card",
+    brandName: "The Body Shop",
     category: "health-and-wellness",
     discount: 4,
     description:
@@ -437,6 +461,7 @@ const VoucherData: Record<string, Voucher> = {
   PC3042371245PULT: {
     voucherId: "PC3042371245PULT",
     name: "Amazon Prime 12 month",
+    brandName: "Amazon",
     category: "movies-and-music",
     discount: 12,
     description:
@@ -453,6 +478,7 @@ const VoucherData: Record<string, Voucher> = {
   PC585610538R56E2: {
     voucherId: "PC585610538R56E2",
     name: "Amazon Prime Voucher 3 months membership",
+    brandName: "Amazon Prime",
     category: "movies-and-music",
     discount: 12,
     description:
@@ -469,6 +495,7 @@ const VoucherData: Record<string, Voucher> = {
   PC957513993K8X8B: {
     voucherId: "PC957513993K8X8B",
     name: "BookMyShow E-Gift Card",
+    brandName: "BookMyShow",
     category: "movies-and-music",
     discount: 5,
     description:
@@ -487,6 +514,7 @@ const VoucherData: Record<string, Voucher> = {
   PC727329978UT2C8: {
     voucherId: "PC727329978UT2C8",
     name: "PVR Cinemas E-Gift Card",
+    brandName: "PVR Cinemas",
     category: "movies-and-music",
     discount: 8,
     description:
@@ -502,38 +530,11 @@ const VoucherData: Record<string, Voucher> = {
       "5. Present your Gift Card details to the cashier during billing & pay any balance amount by cash or card",
     ],
   },
-  tv001: {
-    voucherId: "tv001",
-    name: "10% Off Flights",
-    category: "travel",
-    discount: 10,
-    description: "Get 10% off on domestic and international flights.",
-    aboutCompany: "AirlineX is a leading airline company providing...",
-    backgroundImg: "url_to_image",
-    howToRedeem: [
-      "Select your preferred flight on AirlineX's website.",
-      "Apply voucher code TV001 during checkout.",
-      "Discount will be applied automatically.",
-    ],
-  },
-  tv002: {
-    voucherId: "tv002",
-    name: "Free Hotel Night Stay",
-    category: "travel",
-    discount: 100,
-    description: "Get one night stay free with every two nights booked.",
-    aboutCompany: "HotelY offers luxurious accommodations with...",
-    backgroundImg: "url_to_image",
-    howToRedeem: [
-      "Book your stay directly on HotelY's website or app.",
-      "Use voucher code TV002 at the time of booking.",
-      "Discount will be applied to the final bill.",
-    ],
-  },
-  // Add more vouchers here...
+
   PC021192942SON59: {
     voucherId: "PC021192942SON59",
-    name: "myntra brand voucher",
+    name: "Myntra brand voucher",
+    brandName: "Myntra",
     category: "e-commerce",
     discount: 20,
     description: "Get $20 off on electronics purchases over $100.",

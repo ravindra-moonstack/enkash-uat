@@ -7,6 +7,7 @@ import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import Link from "next/link";
 import { backArrow, zigZagBottom, zigZagTop } from "../..";
+import VoucherCard from "@/components/voucher-page/voucher-card";
 
 export const metadata: Metadata = {
   title:
@@ -21,6 +22,7 @@ export const metadata: Metadata = {
 type Voucher = {
   voucherId: string;
   name: string;
+  brandName?: string;
   category: string;
   discount: number;
   description: string;
@@ -114,21 +116,28 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                 </Link>
               </div>
 
-              <div className={`${styles.voucher_image_section}`}>
-                <div className={styles.discount_bar}>
-                  <div className={styles.discount_}>
-                    Up to <span>{voucherData.discount}%</span> OFF
+              <div className={styles.web_only}>
+                <div className={`${styles.voucher_image_section}`}>
+                  <div className={styles.discount_bar}>
+                    <div className={styles.discount_}>
+                      Up to <span>{voucherData.discount}%</span> OFF
+                    </div>
+                    <div className={styles.brand_name}>
+                      {voucherData.brandName}
+                    </div>
                   </div>
-                  {/* <div className={styles.brand_name}>{voucherData.name}</div> */}
-                </div>
 
-                <div className={styles.voucher_name}>{voucherData.name}</div>
-                <div className={styles.voucher_image}>
-                  <Image src={voucherImage} alt={voucherData.name} />
+                  <div className={styles.voucher_name}>{voucherData.name}</div>
+                  <div className={styles.voucher_image}>
+                    <Image src={voucherImage} alt={voucherData.name} />
+                  </div>
+                  <div className={styles.buy_now_button}>
+                    <Link href="bolt">BUY NOW</Link>
+                  </div>
                 </div>
-                <div className={styles.buy_now_button}>
-                  <Link href="bolt">BUY NOW</Link>
-                </div>
+              </div>
+              <div className={styles.mobile_only}>
+                <VoucherCard voucher={voucherData} />
               </div>
 
               <div className={styles.detail_section}>
