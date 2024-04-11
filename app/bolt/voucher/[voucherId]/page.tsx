@@ -132,7 +132,9 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                     <Image src={voucherImage} alt={voucherData.name} />
                   </div>
                   <div className={styles.buy_now_button}>
-                    <Link href="bolt">BUY NOW</Link>
+                    <Link href="https://bolt.enkash.com/" target="_blank">
+                      BUY NOW
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -200,7 +202,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
           <div className={`color-white ${styles.error_message}`}>
             <h2>Sorry, this voucher is not available.</h2>
             <p>Please try again later or explore other vouchers.</p>
-            <Link href="/bolt/" className={styles.explore_button}>
+            <Link href="/bolt" className={styles.explore_button}>
               Explore More
             </Link>
           </div>
