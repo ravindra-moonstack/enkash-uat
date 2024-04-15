@@ -111,6 +111,24 @@ const VoucherData: Record<string, Voucher> = {
       "6. Please note, this Gift Card can only be redeemed on certain eligible products",
     ],
   },
+  PC7513531244A681: {
+    voucherId: "PC7513531244A681",
+    name: "AJIO Gift-card",
+    brandName: "AJIO",
+    category: "e-commerce",
+    discount: 1.25,
+    description:
+      "A perfect gift for all occasions like birthdays, weddings, anniversaries, and festivities, the AJIO E-Gift Card is available in multiple denominations. This gift card can be personalized with a message or a greeting. Use it for yourself or gift it to your special ones for shopping across multiple categories and brands. Get everything on one platform for men, women, and kids across beauty, apparel, home & kitchen, and clothing categories.",
+    aboutCompany:
+      "A Style Treat For Everyone! Welcome to AJIO - India's favorite online shopping destination. Indulge in the world of fashion with the best of global brands, home-grown labels, and the trendiest international styles, with just a click. From a vast collection of looks, brands, home décor, and accessories, AJIO has something for everyone. Treat your loved ones with the finest of fashion and lifestyle from our selection of premium international brands. Be it a birthday or an anniversary AJIO's E-Gift Card will help ensure big smiles and happy hearts, with a seamless online shopping experience.",
+    backgroundImg: "PC7513531244A681.png",
+    howToRedeem: [
+      "1.Visit https://www.ajio.com/ to redeem the E-Gift Card",
+      "2.Add the E-Gift Card value into the AJIO wallet as AJIO cash",
+      "3.Buy the products of your choice and pay using cash during checkout",
+      "4.If the cart value exceeds the AJIO cash, pay the balance amount with the available prepaid payment modes",
+    ],
+  },
   PC977733912CJIW7: {
     voucherId: "PC977733912CJIW7",
     name: "109F E-Gift Card",
@@ -203,24 +221,6 @@ const VoucherData: Record<string, Voucher> = {
       "4. Present the E-Gift Card details to the cashier during billing",
       "5. Pay using the E-Gift Card at the store",
       "6. If there is any balance remaining, pay it using cash or a card",
-    ],
-  },
-  PC7513531244A681: {
-    voucherId: "PC7513531244A681",
-    name: "AJIO Gift-card",
-    brandName: "AJIO",
-    category: "e-commerce",
-    discount: 1.25,
-    description:
-      "A perfect gift for all occasions like birthdays, weddings, anniversaries, and festivities, the AJIO E-Gift Card is available in multiple denominations. This gift card can be personalized with a message or a greeting. Use it for yourself or gift it to your special ones for shopping across multiple categories and brands. Get everything on one platform for men, women, and kids across beauty, apparel, home & kitchen, and clothing categories.",
-    aboutCompany:
-      "A Style Treat For Everyone! Welcome to AJIO - India's favorite online shopping destination. Indulge in the world of fashion with the best of global brands, home-grown labels, and the trendiest international styles, with just a click. From a vast collection of looks, brands, home décor, and accessories, AJIO has something for everyone. Treat your loved ones with the finest of fashion and lifestyle from our selection of premium international brands. Be it a birthday or an anniversary AJIO's E-Gift Card will help ensure big smiles and happy hearts, with a seamless online shopping experience.",
-    backgroundImg: "PC7513531244A681.png",
-    howToRedeem: [
-      "1.Visit https://www.ajio.com/ to redeem the E-Gift Card",
-      "2.Add the E-Gift Card value into the AJIO wallet as AJIO cash",
-      "3.Buy the products of your choice and pay using cash during checkout",
-      "4.If the cart value exceeds the AJIO cash, pay the balance amount with the available prepaid payment modes",
     ],
   },
   PC698625467AYGL0: {
