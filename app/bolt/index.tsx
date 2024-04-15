@@ -15,3 +15,10 @@ export { default as bannerAnimation } from "./img/lottie/banner.json";
 export { default as backArrow } from "./img/back-arrow.svg";
 export { default as zigZagBottom } from "./img/zig-zag-bottom.png";
 export { default as zigZagTop } from "./img/zig-zag-top.png";
+
+export { default as eCommerceImg } from "./img/temp-img/e-commerce.png";
+export { default as foodAndBeverages } from "./img/temp-img/food-and-beverages.png";
+export { default as healthAndWellness } from "./img/temp-img/health-and-wellness.png";
+export { default as apparels } from "./img/temp-img/apparels.png";
+export { default as moviesAndMusic } from "./img/temp-img/movies-and-music.png";
+export { default as boltHero } from "./img/temp-img/bolt-hero.png";

@@ -26,16 +26,21 @@ import {
   heavyLiftingIconOne,
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
+  eCommerceImg,
+  foodAndBeverages,
+  apparels,
+  moviesAndMusic,
+  healthAndWellness,
+  boltHero,
 } from ".";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title:
-    "All-in-one Rewards, Corporate Gifting & incentives Management Platform - EnKash",
+  title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
   description:
-    "Get a seamless solution for rewards, corporate gifting &  incentives management platform designed to engage and motivate employees, channel partners, and stakeholders. Book a Demo Now !!",
+    "Buy e-Gifts cards online with our exclusively curated 400+ brand E-gift cards & vouchers available across various categories. Customize the Corporate gift vouchers without any Hassle with EnKash.",
   alternates: {
-    canonical: "https://www.enkash.com/loyalty-lounge/",
+    canonical: "https://www.enkash.com/bolt/",
   },
 };
 
@@ -108,10 +113,11 @@ const boltPage = () => {
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
-            <LottieDynamicLoadComponent
+            <Image src={boltHero} alt="bolt" />
+            {/* <LottieDynamicLoadComponent
               animationName={"LoyaltyBannerAnimation"}
               loop={true}
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -137,10 +143,11 @@ const boltPage = () => {
               className={styles.card_bg}
             />
             <div className={styles.first_lottie_container}>
-              <LottieDynamicLoadComponent
+              <Image src={eCommerceImg} alt="E-commerce" />
+              {/* <LottieDynamicLoadComponent
                 animationName={"LoyaltyEmployeeAnimation"}
                 loop={true}
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -155,10 +162,11 @@ const boltPage = () => {
               className={styles.card_bg}
             />
             <div className={styles.second_lottie_container}>
-              <LottieDynamicLoadComponent
+              <Image src={foodAndBeverages} alt="Food and Beverages" />
+              {/* <LottieDynamicLoadComponent
                 animationName={"LoyaltyBrandVoucherAnimation"}
                 loop={true}
-              />{" "}
+              />{" "} */}
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
@@ -166,7 +174,7 @@ const boltPage = () => {
               title="Food & Beverages"
               description="Treat your taste buds to good food, from gourmet delicacies to everyday essentials, and relish in discounts that make every meal more satisfying"
               theme="blue"
-              link="/loyalty-lounge/brand-voucher"
+              link="/bolt/category/food-and-beverages"
             />
           </div>
         </div>
@@ -177,7 +185,7 @@ const boltPage = () => {
               title="Apparels"
               description="Elevate your style quotient without breaking the bank by availing discounted shopping gift vouchers from famous apparel brands"
               theme="blue"
-              link="/loyalty-lounge/gift-cards"
+              link="/bolt/category/apparels"
             />
           </div>
           <div
@@ -188,10 +196,14 @@ const boltPage = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <LottieDynamicLoadComponent
+            <div className={styles.third_lottie_container}>
+              <Image src={apparels} alt="apparels" />
+            </div>
+
+            {/* <LottieDynamicLoadComponent
               animationName={"LoyaltyGiftCardAnimation"}
               loop={true}
-            />
+            /> */}
           </div>
         </div>
 
@@ -205,10 +217,11 @@ const boltPage = () => {
               className={styles.card_bg}
             />
             <div className={styles.second_lottie_container}>
-              <LottieDynamicLoadComponent
+              <Image src={moviesAndMusic} alt="movies and music" />
+              {/* <LottieDynamicLoadComponent
                 animationName={"LoyaltyBrandVoucherAnimation"}
                 loop={true}
-              />{" "}
+              />{" "} */}
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
@@ -216,7 +229,7 @@ const boltPage = () => {
               title="Movies & Music"
               description="Immerse yourself in a world of entertainment at a fraction of the cost with gift vouchers from leading movies and music providers"
               theme="blue"
-              link="/loyalty-lounge/brand-voucher"
+              link="/bolt/category/movies-and-music"
             />
           </div>
         </div>
@@ -224,10 +237,10 @@ const boltPage = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Occasion Crafted"
-              description="Celebrate birthdays, anniversaries, & special occasions with our occasion-based gift vouchers categories."
+              title="Health and wellness"
+              description="Prioritize your well-being with our range of savings on health and wellness brands. Our discounted gift vouchers empower you to invest in your health without straining your budget"
               theme="blue"
-              link="/loyalty-lounge/gift-cards"
+              link="/bolt/category/health-and-wellness"
             />
           </div>
           <div
@@ -238,36 +251,13 @@ const boltPage = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <LottieDynamicLoadComponent
+            <div className={styles.fourth_lottie_container}>
+              <Image src={healthAndWellness} alt="Health and wellness" />
+            </div>
+            {/* <LottieDynamicLoadComponent
               animationName={"LoyaltyGiftCardAnimation"}
               loop={true}
-            />
-          </div>
-        </div>
-
-        <div className={`row bg-white ${styles.section}`}>
-          <div
-            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-  ${styles.second_container}`}
-          >
-            <Image
-              src={cardBg}
-              alt="card background"
-              className={styles.card_bg}
-            />
-            <div className={styles.second_lottie_container}>
-              <LottieDynamicLoadComponent
-                animationName={"LoyaltyBrandVoucherAnimation"}
-                loop={true}
-              />{" "}
-            </div>
-          </div>
-          <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
-            <ExploreCard
-              title="Health & Wellness"
-              description="Prioritize your well-being with our range of savings on health and wellness brands. Our discounted gift vouchers empower you to invest in your health without straining your budget"
-              theme="blue"
-              link="/loyalty-lounge/brand-voucher"
-            />
+            /> */}
           </div>
         </div>
       </div>
