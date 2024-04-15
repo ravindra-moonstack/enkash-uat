@@ -23,38 +23,37 @@ export const CategoryData: Categories = {
   "movies-and-music": {
     name: "movies-and-music",
     heading: "Movies & Music",
-    title: "Entertainment Vouchers",
+    title: "Unlock endless entertainment with up to",
     description:
       "Enjoy discounts on movies, concerts, and more with our entertainment vouchers.",
-    discount: 15,
+    discount: 16,
     backgroundImage: "url_to_image",
   },
   apparels: {
     name: "apparels",
     heading: "Apparels",
-    title:
-      "Upgrade your wardrobe with up to 13% off on latest trends & collections ",
+    title: "Rock the latest trends & collections with up to",
     description:
-      "Explore our exclusive offers on the best shopping outlets and websites ",
-    discount: 25,
+      "Explore our exclusive offers on the best shopping outlets and websites and upgrade your wardrobe",
+    discount: 13,
     backgroundImage: "url_to_image",
   },
   "food-and-beverages": {
     name: "food-and-beverages",
     heading: "Food & Beverages",
-    title: "finance",
+    title: " Indulge in your favorite cravings with up to",
     description:
-      "Explore the world with our travel vouchers and save big on your next trip.",
-    discount: 25,
+      "Explore our irresistible offers on everyone’s favorite food outlets and enjoy delicacies to your heart’s content.",
+    discount: 13,
     backgroundImage: "url_to_image",
   },
   "health-and-wellness": {
     name: "health-and-wellness",
     heading: "Health & Wellness",
-    title: "enkash",
+    title: " Invest in your with up to",
     description:
-      "At EnKash, we understand the importance of maintaining a healthy lifestyle. That's why we offer a curated selection of discounted vouchers from top health and wellness brands, allowing you to invest in your well-being without compromising your budget.",
-    discount: 25,
+      "For all your healthcare and wellness needs, we bring you a curated selection of discounted vouchers from the top brands.",
+    discount: 58,
     backgroundImage: "url_to_image",
   },
 };

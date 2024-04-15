@@ -115,7 +115,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
               <div className="col-md-6 col-12 d-flex flex-column">
                 <div className="d-flex mb-4">
                   <Heading
-                    title={categoryData.name}
+                    title={categoryData.heading}
                     color="rainy-blue"
                     size="h1"
                     weight="7"
