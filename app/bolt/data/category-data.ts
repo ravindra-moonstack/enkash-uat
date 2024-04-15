@@ -16,8 +16,8 @@ export const CategoryData: Categories = {
     heading: "E-Commerce",
     title: "Shop to your heart’s content with up to",
     description:
-      "Get the best deals on online shopping with our e-commerce vouchers.",
-    discount: 20,
+      "From daily needs to occasional shopping, get yourself everything in one place without spending too much.",
+    discount: 8,
     backgroundImage: "url_to_image",
   },
   "movies-and-music": {
@@ -32,9 +32,10 @@ export const CategoryData: Categories = {
   apparels: {
     name: "apparels",
     heading: "Apparels",
-    title: "Travel Vouchers",
+    title:
+      "Upgrade your wardrobe with up to 13% off on latest trends & collections ",
     description:
-      "Explore the world with our travel vouchers and save big on your next trip.",
+      "Explore our exclusive offers on the best shopping outlets and websites ",
     discount: 25,
     backgroundImage: "url_to_image",
   },
@@ -52,7 +53,7 @@ export const CategoryData: Categories = {
     heading: "Health & Wellness",
     title: "enkash",
     description:
-      "Explore the world with our travel vouchers and save big on your next trip.",
+      "At EnKash, we understand the importance of maintaining a healthy lifestyle. That's why we offer a curated selection of discounted vouchers from top health and wellness brands, allowing you to invest in your well-being without compromising your budget.",
     discount: 25,
     backgroundImage: "url_to_image",
   },

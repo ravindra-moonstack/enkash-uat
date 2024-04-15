@@ -131,7 +131,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                     weight="7"
                   />
                   <div className={styles.discount_text}>
-                    {categoryData.discount}%
+                    {categoryData.discount}% OFF
                   </div>
                 </div>
                 <div className="mt-4 mobile-only">
