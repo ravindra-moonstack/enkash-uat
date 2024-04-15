@@ -34,7 +34,7 @@ export const CategoryData: Categories = {
     heading: "Apparels",
     title: "Rock the latest trends & collections with up to",
     description:
-      "Explore our exclusive offers on the best shopping outlets and websites and upgrade your wardrobe",
+      "Upgrade your wardrobe with exclusive offers on the best shopping outlets and websites",
     discount: 13,
     backgroundImage: "url_to_image",
   },

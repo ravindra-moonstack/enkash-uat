@@ -19,9 +19,15 @@
     width: 350px;
     margin-top: 20px;
     height: auto;
+    padding: 40px 0;
     @include for-laptops {
+      padding: 0 20px; //remove this also
       margin-top: -60px;
       width: 650px;
+    }
+    img {
+      width: 100%;
+      height: auto;
     }
   }
 }

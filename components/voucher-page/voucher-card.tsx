@@ -37,7 +37,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
           />
         </Link>
         <Link
-          href={"https://bolt.enkash.com/"}
+          href={`/bolt/voucher/${voucher.voucherId}`}
           className={styles.buy_now_button}
           target="_blank"
         >

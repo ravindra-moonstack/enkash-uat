@@ -13,7 +13,15 @@ import Link from "next/link";
 import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import VoucherCard from "@/components/voucher-page/voucher-card";
-import { whiteArrow } from "./../../index";
+import {
+  apparels,
+  eCommerceImg,
+  foodAndBeverages,
+  healthAndWellness,
+  moviesAndMusic,
+  whiteArrow,
+} from "./../../index";
+import { movieAndMusic } from "@/components/header";
 
 export const metadata: Metadata = {
   title:
@@ -87,14 +95,23 @@ const fetchVouchers = async (categoryName: string) => {
   }
 };
 
+let CategoryPhoto = new Map<string, any>([
+  ["e-commerce", eCommerceImg],
+  ["apparels", apparels],
+  ["food-and-beverages", foodAndBeverages],
+  ["movies-and-music", moviesAndMusic],
+  ["health-and-wellness", healthAndWellness],
+]);
+
+const validCategories: string[] = [
+  "e-commerce",
+  "food-and-beverages",
+  "health-and-wellness",
+  "apparels",
+  "movies-and-music",
+];
+
 const categoryPage = async ({ params }: { params: { category: string } }) => {
-  const validCategories: string[] = [
-    "e-commerce",
-    "food-and-beverages",
-    "health-and-wellness",
-    "apparels",
-    "movies-and-music",
-  ];
   const categoryName: string = params.category;
   let isValidCategory: boolean = true;
   if (!validCategories.includes(categoryName)) {
@@ -102,6 +119,8 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
   }
 
   const categoryData = CategoryData[categoryName];
+  const currentCategoryPhoto = CategoryPhoto.get(categoryName);
+
   // const vouchers: Voucher[] = [];
   const vouchers: Voucher[] = await fetchVouchers(categoryName);
   return (
@@ -152,13 +171,13 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                 </div>
                 <div className="mt-5">
                   <PrimaryButton
-                    title="Explore More"
+                    title="Explore Bolt"
                     theme="blue"
                     url="/bolt"
                   />
                   <span className="mx-2"></span>
                   <SecondryButton
-                    title="Redeem Now"
+                    title="Buy Now"
                     actionImage={whiteArrow}
                     iconSize={15}
                     url="https://bolt.enkash.com/"
@@ -167,10 +186,11 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
               </div>
               <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
                 <div className={styles.lottie_container}>
-                  <LottieDynamicLoadComponent
+                  <Image src={currentCategoryPhoto} alt={categoryName} />
+                  {/* <LottieDynamicLoadComponent
                     animationName={"LoyaltyBannerAnimation"}
                     loop={true}
-                  />
+                  /> */}
                 </div>
               </div>
             </div>
