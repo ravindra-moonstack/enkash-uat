@@ -32,7 +32,7 @@ const ProductModal = ({ onLinkClick }: any) => {
   }
 
   return (
-    <div className={`row mt-5 ${styles.container}`}>
+    <div className={`row mt-4 ${styles.container}`}>
       <div
         className={`${styles.left_container} d-flex flex-column align-items-right pe-2 pb-5 mb-2 position-relative`}
       >
@@ -132,19 +132,19 @@ const ProductModal = ({ onLinkClick }: any) => {
         />
       )}
 
-      {/* {hoveredProductIndex === 4 && (
+      {hoveredProductIndex === 4 && (
         <SubProduct
-          subProducts={brandVouchersProducts}
+          subProducts={loyaltyLoungeProducts}
           index={3}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
           onLinkClick={onLinkClick}
         />
-      )} */}
+      )}
 
-      {hoveredProductIndex === 4 && (
+      {hoveredProductIndex === 5 && (
         <SubProduct
-          subProducts={loyaltyLoungeProducts}
+          subProducts={brandVouchersProducts}
           index={3}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}

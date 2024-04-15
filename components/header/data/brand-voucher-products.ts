@@ -16,7 +16,7 @@ import {
 const brandVouchersProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/loyalty-lounge",
+    subtitleLink: "/bolt",
     currentHeading: {
       name: "Brand Vouchers",
       description: "Shop smart and unlock exclusive savings",
@@ -27,31 +27,28 @@ const brandVouchersProducts = [
         description: "Avail heavy discounts on leading eCommerce websites",
         imageSrc: eCommerce,
         imageSrcHovered: eCommerceFilled,
-        link: "/loyalty-lounge/channel-incentive",
+        link: "/bolt/category/e-commerce",
       },
       {
         name: "Movies & Music",
-        description:
-          "Binge-watch shows and movies with exclusive discounts on streaming services and movie tickets",
+        description: "Binge-watch shows and movies with distinctive discounts",
         imageSrc: movieAndMusic,
         imageSrcHovered: movieAndMusicFilled,
-        link: "/loyalty-lounge/employee-rewards",
+        link: "/bolt/category/movies-and-music",
       },
       {
         name: "Apparels",
-        description:
-          "Bring home new trends with amazing offers on apparel and clothing",
+        description: "Bring home new trends with amazing offers on clothing",
         imageSrc: apparels,
         imageSrcHovered: apparelsFilled,
-        link: "/loyalty-lounge/gift-cards",
+        link: "/bolt/category/apparels",
       },
       {
         name: "Food & Beverages",
-        description:
-          "Dig into savoury delights at your favourite food joints with exclusive discounts",
+        description: "Dig into savory delights with exclusive discounts",
         imageSrc: foodAndBeverages,
         imageSrcHovered: foodAndBeveragesFilled,
-        link: "/loyalty-lounge/offers",
+        link: "/bolt/category/food-and-beverages",
       },
       {
         name: "Health & Wellness",
@@ -59,22 +56,22 @@ const brandVouchersProducts = [
           "Take care of yourself with our specially curated fitness offers",
         imageSrc: health,
         imageSrcHovered: healthFilled,
-        link: "/loyalty-lounge/offers",
+        link: "/bolt/category/health-and-wellness",
       },
-      {
-        name: "Occasion Crafted",
-        description:
-          "Celebrate birthdays, anniversaries, & special occasions with our occasion-based gift vouchers",
-        imageSrc: occasion,
-        imageSrcHovered: occasionFilled,
-        link: "/loyalty-lounge/offers",
-      },
+      // {
+      //   name: "Occasion Crafted",
+      //   description:
+      //     "Celebrate birthdays, anniversaries, & special occasions with our occasion-based gift vouchers",
+      //   imageSrc: occasion,
+      //   imageSrcHovered: occasionFilled,
+      //   link: "/loyalty-lounge/offers",
+      // },
     ],
     footerText: "Save big on 400+ brand vouchers across multiple categories",
-    footerMobileText: "Explore Loyalty Lounge",
+    footerMobileText: "Explote Bolt",
     footerImg: "loyalty_footer_bg",
-    footerLink: "/loyalty-lounge",
-    parentLink: "/loyalty-lounge",
+    footerLink: "/bolt",
+    parentLink: "/bolt",
   },
 ];
 
