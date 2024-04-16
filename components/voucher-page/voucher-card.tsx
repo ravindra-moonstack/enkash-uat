@@ -21,7 +21,8 @@ interface VoucherCardProps {
 }
 
 const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
-  const backgroundImage = require(`./../../app/bolt/data/voucher-bg/${voucher.backgroundImg}`);
+  //for metadata image url fetch from public
+  const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
 
   return (
     <div>

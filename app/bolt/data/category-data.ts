@@ -16,7 +16,7 @@ export const CategoryData: Categories = {
     heading: "E-Commerce",
     title: "Shop to your heart’s content with up to",
     description:
-      "From daily needs to occasional shopping, get yourself everything in one place without spending too much.",
+      "From daily needs to occasional shopping, get yourself everything in one place without spending too much",
     discount: 8,
     backgroundImage: "url_to_image",
   },
@@ -25,8 +25,8 @@ export const CategoryData: Categories = {
     heading: "Movies & Music",
     title: "Unlock endless entertainment with up to",
     description:
-      "Enjoy discounts on movies, concerts, and more with our entertainment vouchers.",
-    discount: 16,
+      "From streaming services to movie tickets, enjoy discounts on premier entertainment experiences",
+    discount: 19,
     backgroundImage: "url_to_image",
   },
   apparels: {

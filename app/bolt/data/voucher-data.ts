@@ -24,7 +24,7 @@ const VoucherData: Record<string, Voucher> = {
     backgroundImg: "PC272920797HGB6I.png",
     howToRedeem: [
       "1. This E-Gift Card can be redeemed both online and offline",
-      "2. For online redemption, visit Nykaa, Nykaaman, Nykaafashion",
+      "2. For online redemption, visit Nykaa, Nykaa Man, Nykaa Fashion",
       "3.Add the Gift Card amount to the payment page",
       "4.Use it to pay for the item purchased",
       "5.For offline redemption, visit any Nykka retail store",
@@ -113,7 +113,7 @@ const VoucherData: Record<string, Voucher> = {
   },
   PC7513531244A681: {
     voucherId: "PC7513531244A681",
-    name: "AJIO Gift-card",
+    name: "AJIO Gift Card",
     brandName: "AJIO",
     category: "e-commerce",
     discount: 1.25,

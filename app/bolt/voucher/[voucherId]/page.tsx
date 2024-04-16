@@ -8,6 +8,8 @@ import VoucherData from "../../data/voucher-data";
 import Link from "next/link";
 import { backArrow, zigZagBottom, zigZagTop } from "../..";
 import VoucherCard from "@/components/voucher-page/voucher-card";
+import Heading from "@/components/heading/heading";
+import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 
 export const metadata: Metadata = {
   title:
@@ -31,12 +33,73 @@ type Voucher = {
   howToRedeem: string[];
 };
 
+export function generateMetadata({
+  params,
+}: {
+  params: { voucherId: string };
+}): Metadata {
+  const voucherId: string = params.voucherId;
+
+  if (!VoucherData[voucherId]) {
+    return {
+      title: `Voucher not found - EnKash`,
+      description:
+        "The voucher you are looking for is not available, explore more in Bolt section.",
+      alternates: {
+        canonical: `https://www.enkash.com/bolt/voucher/404`,
+      },
+    };
+  }
+
+  const voucher: Voucher = VoucherData[voucherId];
+
+  return {
+    title: `${voucher.name} - EnKash`,
+    description: `${voucher.description}`,
+    alternates: {
+      canonical: `https://www.enkash.com/bolt/voucher/${voucher.voucherId}`,
+    },
+  };
+}
+
+const generateVoucherSchema = (voucher: Voucher): string => {
+  const schema = {
+    "@context": "https://schema.org/",
+    "@type": "Offer",
+    name: voucher.name,
+    description: voucher.description,
+    category: voucher.category,
+    discount: `${voucher.discount}%`,
+    image: `https://www.enkash.com/images/vouchers/${voucher.backgroundImg}`,
+    seller: {
+      "@type": "Organization",
+      name: voucher.brandName || "",
+    },
+    sku: voucher.voucherId,
+    url: `https://www.enkash.com/bolt/voucher/${voucher.voucherId}`,
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(
+    schema
+  )}</script>`;
+};
+
+const sanitizeStep = (step: string): string => {
+  const containsOnlyLetters = /^[a-zA-Z]+$/;
+  let myStep = step;
+  //removing any special character from front (current data is not formatted)
+  while (!containsOnlyLetters.test(myStep[0]) && myStep) {
+    myStep = myStep.slice(1);
+  }
+  return myStep;
+};
+
 const fetchVoucher = async (voucherId: string) => {
   // local voucher
   let localVoucher: Voucher = VoucherData[voucherId];
   let isActive: boolean = false;
 
-  return localVoucher;
+  // return localVoucher;
   if (!localVoucher) {
     return null;
   }
@@ -44,7 +107,7 @@ const fetchVoucher = async (voucherId: string) => {
   try {
     // bolt open api
     const apiResponse = await fetch(
-      "https://marketplaceuat.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
+      "https://marketplaces.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
       {
         method: "POST",
         headers: {
@@ -91,7 +154,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
     ["movies-and-music", "Movies & Music"],
   ]);
   const voucherImage = voucherData
-    ? require(`./../../data/voucher-bg/${voucherData.backgroundImg}`)
+    ? require(`./../../../../public/images/voucher-bg/${voucherData.backgroundImg}`)
     : null;
   return (
     <>
@@ -144,7 +207,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
 
               <div className={styles.detail_section}>
                 <div className={`mb-1 ${styles.description_title}`}>
-                  Description: {voucherData.name}{" "}
+                  {voucherData.name}{" "}
                 </div>
                 <div className={`mb-4 ${styles.description}`}>
                   {voucherData.description}
@@ -156,7 +219,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                 <div className={`mb-4 ${styles.description}`}>
                   <ul>
                     {voucherData.howToRedeem.map((step, index) => (
-                      <li key={index}>{step}</li>
+                      <li key={index}>{sanitizeStep(step)}</li>
                     ))}
                   </ul>
                 </div>
@@ -169,7 +232,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
             <div className={`mt-4 mb-5 ${styles.bottom_container}`}>
               <div className={styles.detail_section}>
                 <div className={`mb-1 ${styles.description_title}`}>
-                  About {voucherData.name}
+                  About {voucherData.brandName}
                 </div>
                 <div className={`mb-1 ${styles.description}`}>
                   {voucherData.aboutCompany}
@@ -180,36 +243,46 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
               </div>
             </div>
           </div>
-
-          {/* <div className={`color-white ${styles.second_row}`}>
-            <div className={styles.voucher_card}>
-              <h2>{voucherData.name}</h2>
-              <p>Category: {voucherData.category}</p>
-              <p>Discount: {voucherData.discount}%</p>
-              <p>Description: {voucherData.description}</p>
-              <p>About Company: {voucherData.aboutCompany}</p>
-              <h3>How to Redeem:</h3>
-              <ul>
-                {voucherData.howToRedeem.map((step, index) => (
-                  <li key={index}>{step}</li>
-                ))}
-              </ul>
-            </div>
-          </div> */}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: generateVoucherSchema(voucherData),
+            }}
+          />
         </div>
       ) : (
-        <div className={`color-white ${styles.error_container}`}>
-          <div className={`color-white ${styles.error_message}`}>
-            <h2>Sorry, this voucher is not available.</h2>
-            <p>Please try again later or explore other vouchers.</p>
-            <Link href="/bolt" className={styles.explore_button}>
-              Explore More
-            </Link>
+        <div className={` py-5 ${styles.error_container}`}>
+          <div className={`${styles.first_row} row color-white`}>
+            <div className="col-md-10 mx-auto col-12 d-flex flex-column align-items-center py-5">
+              <div className="d-flex mb-4 text-center">
+                <Heading
+                  title="The Voucher you are looking for is currently not available"
+                  color="black"
+                  size="h2"
+                  weight="7"
+                />
+                {/* <Heading title="B" color="rainy-blue" size="h1" weight="7" />
+            <Heading title="olt" size="h1" weight="7" /> */}
+              </div>
+              <div className="d-flex">
+                <Heading
+                  title="Explore more on Bolt"
+                  color="equity-blue"
+                  size="h2"
+                  weight="7"
+                />
+              </div>
+
+              <div className="mt-4 desktop-only"></div>
+              <div className="mt-5">
+                <PrimaryButton title="Explore Bolt" theme="blue" url="/bolt" />
+                <span className="mx-2"></span>
+              </div>
+            </div>
           </div>
         </div>
       )}
 
-      <Footer utmSource="Loyalty_lounge" />
+      <Footer utmSource="Bolt" />
     </>
   );
 };

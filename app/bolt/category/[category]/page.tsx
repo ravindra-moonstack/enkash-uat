@@ -23,16 +23,6 @@ import {
 } from "./../../index";
 import { movieAndMusic } from "@/components/header";
 
-export const metadata: Metadata = {
-  title:
-    "All-in-one Rewards, Corporate Gifting & incentives Management Platform - EnKash",
-  description:
-    "Get a seamless solution for rewards, corporate gifting &  incentives management platform designed to engage and motivate employees, channel partners, and stakeholders. Book a Demo Now !!",
-  alternates: {
-    canonical: "https://www.enkash.com/bolt/",
-  },
-};
-
 type Voucher = {
   voucherId: string;
   name: string;
@@ -45,17 +35,77 @@ type Voucher = {
   howToRedeem: string[];
 };
 
+interface CategoryData {
+  name: string;
+  heading: string;
+  title: string;
+  description: string;
+  discount: number;
+  backgroundImage: string;
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { category: string };
+}): Metadata {
+  const categoryName: string = params.category;
+  let isValidCategory: boolean = true;
+  if (!validCategories.includes(categoryName)) {
+    return {
+      title: `Category not found - EnKash`,
+      description:
+        "The category you are looking for is not available, explore more in Bolt section.",
+      alternates: {
+        canonical: `https://www.enkash.com/bolt/category/404`,
+      },
+    };
+  }
+
+  const categoryData = CategoryData[categoryName];
+
+  return {
+    title: `${categoryData.heading} - EnKash`,
+    description: categoryData.title,
+    alternates: {
+      canonical: `https://www.enkash.com/bolt/category/${categoryData.name}`,
+    },
+  };
+}
+
+const generateVoucherSchema = (voucher: Voucher): string => {
+  const schema = {
+    "@context": "https://schema.org/",
+    "@type": "Offer",
+    name: voucher.name,
+    description: voucher.description,
+    category: voucher.category,
+    discount: `${voucher.discount}%`,
+    image: `https://www.enkash.com/images/vouchers/${voucher.backgroundImg}`,
+    seller: {
+      "@type": "Organization",
+      name: voucher.brandName || "",
+    },
+    sku: voucher.voucherId,
+    url: `https://www.enkash.com/bolt/voucher/${voucher.voucherId}`,
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(
+    schema
+  )}</script>`;
+};
+
 const fetchVouchers = async (categoryName: string) => {
   // local vouchers for the current category
   const localVouchers: Voucher[] = Object.values(VoucherData).filter(
     (voucher: Voucher) => voucher.category === categoryName
   );
 
-  return localVouchers;
+  // return localVouchers;
   try {
     // bolt open api
     const apiResponse = await fetch(
-      "https://marketplaceuat.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
+      "https://marketplaces.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
       {
         method: "POST",
         headers: {
@@ -206,6 +256,11 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                 {Object.values(vouchers).map((voucher: Voucher, index) => (
                   <div key={index}>
                     <VoucherCard voucher={voucher} />
+                    <div
+                      dangerouslySetInnerHTML={{
+                        __html: generateVoucherSchema(voucher),
+                      }}
+                    />
                   </div>
                 ))}
               </div>
@@ -214,17 +269,38 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
         </>
       ) : (
         <div className={`color-white ${styles.error_container}`}>
-          <div className={`color-white ${styles.error_message}`}>
-            <h2>Sorry, this voucher is not available.</h2>
-            <p>Please try again later or explore other vouchers.</p>
-            <Link href="/bolt/" className={styles.explore_button}>
-              Explore More
-            </Link>
+          <div className={`${styles.first_row} row color-white`}>
+            <div className="col-md-10 mx-auto col-12 d-flex flex-column align-items-center py-5">
+              <div className="d-flex mb-4">
+                <Heading
+                  title="The Category you are looking for is not present"
+                  color="white"
+                  size="h2"
+                  weight="7"
+                />
+                {/* <Heading title="B" color="rainy-blue" size="h1" weight="7" />
+            <Heading title="olt" size="h1" weight="7" /> */}
+              </div>
+              <div className="d-flex flex-column">
+                <Heading
+                  title="Explore more on Bolt"
+                  color="white"
+                  size="h2"
+                  weight="7"
+                />
+              </div>
+
+              <div className="mt-4 desktop-only"></div>
+              <div className="mt-5">
+                <PrimaryButton title="Explore Bolt" theme="blue" url="/bolt" />
+                <span className="mx-2"></span>
+              </div>
+            </div>
           </div>
         </div>
       )}
 
-      <Footer utmSource="Loyalty_lounge" />
+      <Footer utmSource="Bolt" />
     </div>
   );
 };
