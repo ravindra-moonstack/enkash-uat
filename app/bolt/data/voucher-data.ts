@@ -247,7 +247,7 @@ const VoucherData: Record<string, Voucher> = {
   },
   PC532779359SCEX6: {
     voucherId: "PC532779359SCEX6",
-    name: "McDonald's Value Club Gift Voucher",
+    name: "McDonald's Club Gift Voucher",
     brandName: "McDonald's",
     category: "food-and-beverages",
     discount: 13,
