@@ -206,6 +206,9 @@
   @include for-laptops {
     padding: 0 40px;
   }
+  a {
+    color: $color-black;
+  }
 }
 
 .bottom_container {

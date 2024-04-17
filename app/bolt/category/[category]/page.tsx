@@ -194,14 +194,9 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
             <Heading title="olt" size="h1" weight="7" /> */}
                 </div>
                 <div className="d-flex flex-column">
-                  <Heading
-                    title={categoryData.title}
-                    color="white"
-                    size="h2"
-                    weight="7"
-                  />
                   <div className={styles.discount_text}>
-                    {categoryData.discount}% OFF
+                    {categoryData.title}
+                    <span>&nbsp;{categoryData.discount}% OFF</span>
                   </div>
                 </div>
                 <div className="mt-4 mobile-only">
@@ -231,7 +226,6 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                   <span className="mx-2"></span>
                   <SecondryButton
                     title="Buy Now"
-                    actionImage={whiteArrow}
                     iconSize={15}
                     url="https://bolt.enkash.com/"
                   />

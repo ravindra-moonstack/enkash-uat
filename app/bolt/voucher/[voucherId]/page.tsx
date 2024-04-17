@@ -84,6 +84,20 @@ const sanitizeStep = (step: string): string => {
   return myStep;
 };
 
+const linkifyText = (text: string): string => {
+  // Regular expression to match URLs
+  const urlRegex =
+    /(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/\S*)?/g;
+
+  return text.replace(urlRegex, (url) => {
+    // Check if the URL has a protocol, if not, prepend it with http://
+    if (!url.match(/^https?:\/\//i)) {
+      url = "http://" + url;
+    }
+    return `<a href="${url}" target="_blank">${url}</a>`;
+  });
+};
+
 const fetchVoucher = async (voucherId: string) => {
   // local voucher
   let localVoucher: Voucher = VoucherData[voucherId];
@@ -210,7 +224,14 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                 <div className={`mb-4 ${styles.description}`}>
                   <ul>
                     {voucherData.howToRedeem.map((step, index) => (
-                      <li key={index}>{sanitizeStep(step)}</li>
+                      <li key={index}>
+                        <div
+                          dangerouslySetInnerHTML={{
+                            __html: linkifyText(sanitizeStep(step)),
+                          }}
+                        ></div>
+                        {}
+                      </li>
                     ))}
                   </ul>
                 </div>

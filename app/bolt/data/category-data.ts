@@ -43,7 +43,7 @@ export const CategoryData: Categories = {
     heading: "Food & Beverages",
     title: " Indulge in your favorite cravings with up to",
     description:
-      "Explore our irresistible offers on everyone’s favorite food outlets and enjoy delicacies to your heart’s content.",
+      "Explore our irresistible offers on everyone’s favorite food outlets and enjoy delicacies to your heart’s content",
     discount: 13,
     backgroundImage: "url_to_image",
   },
@@ -52,7 +52,7 @@ export const CategoryData: Categories = {
     heading: "Health & Wellness",
     title: " Invest in your health with up to",
     description:
-      "For all your healthcare and wellness needs, we bring you a curated selection of discounted vouchers from the top brands.",
+      "For all your healthcare and wellness needs, we bring you a curated selection of discounted vouchers from the top brands",
     discount: 58,
     backgroundImage: "url_to_image",
   },

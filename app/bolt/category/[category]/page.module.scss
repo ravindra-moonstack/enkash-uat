@@ -35,7 +35,10 @@
 .discount_text {
   font-size: 36px;
   font-weight: 700;
-  color: $color-electric-green;
+  color: $color-white;
+  span {
+    color: $color-electric-green;
+  }
 }
 
 .vouchers_container {
