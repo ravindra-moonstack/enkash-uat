@@ -91,6 +91,7 @@ const fetchVoucher = async (voucherId: string) => {
 
   // return localVoucher;
   if (!localVoucher) {
+    console.log("local voucher not found");
     return null;
   }
 
@@ -197,7 +198,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
 
               <div className={styles.detail_section}>
                 <div className={`mb-1 ${styles.description_title}`}>
-                  {voucherData.name}{" "}
+                  {voucherData.name}
                 </div>
                 <div className={`mb-4 ${styles.description}`}>
                   {voucherData.description}

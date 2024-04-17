@@ -509,6 +509,40 @@ const VoucherData: Record<string, Voucher> = {
       "5. Present your Gift Card details to the cashier during billing & pay any balance amount by cash or card",
     ],
   },
+  PC063249106DH0LA: {
+    voucherId: "PC063249106DH0LA",
+    name: "Discovery Plus Gift Voucher",
+    brandName: "Discovery Plus",
+    category: "movies-and-music",
+    discount: 8,
+    description:
+      "Enter a world of factual entertainment with a Discovery Plus Gift Voucher! A perfect gift for documentary and reality TV lovers. The voucher gives access to stream shows about science, nature, adventure, and more on Discovery Plus.",
+    aboutCompany:
+      "Dive into reality TV, documentaries & more on Discovery Plus! This streaming service offers shows about science, nature, adventure & more.",
+    backgroundImg: "PC063249106DH0LA.png", // Insert the image URL here
+    howToRedeem: [
+      "1. Visit www.discoveryplus.in or the Discovery Plus application on Android",
+      "2. Use the voucher code to redeem on android or website",
+      "3. Login from the same ID on iOS and enjoy",
+    ],
+  },
+  PC476876900A5IOL: {
+    voucherId: "PC476876900A5IOL",
+    name: "ZEE5 Insta Gift Voucher",
+    brandName: "ZEE5",
+    category: "movies-and-music",
+    discount: 8,
+    description:
+      "Give the gift of streaming! A ZEE5 Insta Gift Voucher lets someone access ZEE5's movies, shows, and live TV in India. Buy it online, pick a denomination, redeem it on the ZEE5 app, and enjoy.",
+    aboutCompany:
+      "An Indian subscription video on-demand and over-the-top streaming service, run by Zee Entertainment Enterprises. Access content in 12 languages and watch your favorite TV show episodes a day before the telecast on ZEE5.",
+    backgroundImg: "PC476876900A5IOL.png", // Insert the image URL here
+    howToRedeem: [
+      "1. Visit https://www.zee5.com/ or the ZEE5 application to redeem the voucher",
+      "2. Apply the gift voucher code on the subscription offerings page: https://www.zee5.com/myaccount/subscription",
+      "3. Enjoy the content on the streaming platform",
+    ],
+  },
 
   // Add more e-commerce vouchers as needed...
 };

@@ -188,6 +188,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                     color="rainy-blue"
                     size="h1"
                     weight="7"
+                    useH1TagInHtml={true}
                   />
                   {/* <Heading title="B" color="rainy-blue" size="h1" weight="7" />
             <Heading title="olt" size="h1" weight="7" /> */}
@@ -209,6 +210,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                     color="white"
                     size="h6"
                     weight="4"
+                    useH2TagInHtml={true}
                   />
                 </div>
                 <div className="mt-4 desktop-only">
@@ -217,6 +219,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                     color="white"
                     size="h5"
                     weight="5"
+                    useH2TagInHtml={true}
                   />
                 </div>
                 <div className="mt-5">

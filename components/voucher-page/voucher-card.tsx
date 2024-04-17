@@ -3,7 +3,6 @@ import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import styles from "./voucher-page.module.scss";
-import { apparels } from "../header";
 
 interface Voucher {
   voucherId: string;
@@ -30,20 +29,19 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
         <div className={styles.discount}>
           Up to <strong>{voucher.discount}%</strong> OFF
         </div>
-        <Link href={`/bolt/voucher/${voucher.voucherId}`}>
+        <a href={`/bolt/voucher/${voucher.voucherId}`}>
           <Image
             src={backgroundImage}
             alt={voucher.name}
             className={styles.background_img}
           />
-        </Link>
-        <Link
+        </a>
+        <a
           href={`/bolt/voucher/${voucher.voucherId}`}
           className={styles.buy_now_button}
-          target="_blank"
         >
           Buy Now
-        </Link>
+        </a>
         <div className={styles.voucher_name}>{voucher.name}</div>
       </div>
     </div>
