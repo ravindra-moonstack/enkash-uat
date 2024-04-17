@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-const termCondition = () => {
+const termConditionPlatform = () => {
   return (
     <>
       <Header />
@@ -1175,182 +1175,198 @@ const termCondition = () => {
                         </p>
                         <p></p>
                         <p>
-                          “Acquiring Banks” shall mean various banks, financial
-                          institutions, Card Associations, payment system
-                          providers who are defined and licenced under the
-                          Payment and Settlement Systems Act, 2007.
+                          <strong>“Acquiring Banks” </strong> shall mean various
+                          banks, financial institutions, Card Associations,
+                          payment system providers who are defined and licenced
+                          under the Payment and Settlement Systems Act, 2007.
                         </p>
                         <p>
-                          “Acquiring Bank Services” shall mean the payment
-                          gateway system and services provided by the Acquiring
-                          Banks such as to (i) route internet based Valid Card
-                          transactions; (ii) offer various facilities through
-                          the internet, including Net Banking facilities; (iii)
-                          provide Authentication and Authorization from Card
-                          Associations or other third party clearing houses; and
-                          (iv) provide settlement facilities in respect of
-                          payment instructions initiated by the customers.
+                          <strong>“Acquiring Bank Services” </strong> shall mean
+                          the payment gateway system and services provided by
+                          the Acquiring Banks such as to (i) route internet
+                          based Valid Card transactions; (ii) offer various
+                          facilities through the internet, including Net Banking
+                          facilities; (iii) provide Authentication and
+                          Authorization from Card Associations or other third
+                          party clearing houses; and (iv) provide settlement
+                          facilities in respect of payment instructions
+                          initiated by the customers.
                         </p>
                         <p>
-                          "Authentication" shall mean the process by which the
-                          Customer’s identification is authenticated by the
-                          Acquiring Banks.
+                          <strong>“Authentication”</strong>
+                          shall mean the process by which the Customer’s
+                          identification is authenticated by the Acquiring
+                          Banks.
                         </p>
                         <p>
-                          “Agreement” shall mean an agreement executed by and
-                          between Olympus and the Merchant;
+                          <strong>“Agreement”</strong>
+                          shall mean an agreement executed by and between
+                          Olympus and the Merchant;
                         </p>
                         <p>
-                          “Beneficiaries” means the individuals or businesses
-                          (i) to whom the Merchant will make payment by using
-                          the Olympus Services; or (ii) whose account details
-                          the Merchants wants to validate via the Verification
-                          Suite Services.
+                          <strong>“Beneficiaries” </strong>
+                          means the individuals or businesses (i) to whom the
+                          Merchant will make payment by using the Olympus
+                          Services; or (ii) whose account details the Merchants
+                          wants to validate via the Verification Suite Services.
                         </p>
                         <p>
-                          “Business Days” shall mean any day on which Acquiring
-                          Banks are open for business in India, other than
-                          Saturday, Sunday and any days declared by Olympus
-                          and/or Acquiring Bank as a Holidays
+                          <strong>“Business Days” </strong>
+                          shall mean any day on which Acquiring Banks are open
+                          for business in India, other than Saturday, Sunday and
+                          any days declared by Olympus and/or Acquiring Bank as
+                          a Holidays
                         </p>
                         <p>
-                          “Olympus” shall mean Nehat Tech Solutions Private
-                          Limited a company incorporated in accordance with the
-                          provisions of the (Indian) Companies Act, 2013;
+                          <strong>“Olympus” </strong>
+                          shall mean Nehat Tech Solutions Private Limited a
+                          company incorporated in accordance with the provisions
+                          of the (Indian) Companies Act, 2013;
                         </p>
                         <p>
-                          “Consideration” shall mean Transaction Discount Rate
-                          or Merchant Discount Rate or Platform Fee as may be
-                          agreed in terms of the Agreement by the Parties;
+                          <strong>“Consideration” </strong>
+                          shall mean Transaction Discount Rate or Merchant
+                          Discount Rate or Platform Fee as may be agreed in
+                          terms of the Agreement by the Parties;
                         </p>
                         <p>
-                          "Card Association(s)" shall mean any of Visa,
-                          MasterCard, Visa Electron, Maestro, Diners, American
-                          Express or any other card association as may be
-                          specified by Olympus from time to time.
+                          <strong>"Card Association(s)" </strong>
+                          shall mean any of Visa, MasterCard, Visa Electron,
+                          Maestro, Diners, American Express or any other card
+                          association as may be specified by Olympus from time
+                          to time.
                         </p>
                         <p>
-                          “Card Association Rules” shall mean the written rules,
-                          regulations, releases, guidelines, processes,
-                          interpretations and other requirements (whether
-                          contractual or otherwise) imposed or adopted by any
-                          Card Association.
+                          <strong>“Card Association Rules” </strong>
+                          shall mean the written rules, regulations, releases,
+                          guidelines, processes, interpretations and other
+                          requirements (whether contractual or otherwise)
+                          imposed or adopted by any Card Association.
                         </p>
                         <p>
-                          “Chargeback” shall mean an approved and settled
-                          Transaction that an Issuer, upon receiving a
-                          chargeback request from a Customer, reverses to a
-                          Acquiring Bank for the Transaction value to be
-                          ultimately reversed to the Customer, subject to the
-                          Merchant being unable to provide an explanation along
-                          with documentary evidence as to why the chargeback
-                          request should be rejected in accordance with
-                          applicable laws.
+                          <strong>“Chargeback” </strong>
+                          shall mean an approved and settled Transaction that an
+                          Issuer, upon receiving a chargeback request from a
+                          Customer, reverses to a Acquiring Bank for the
+                          Transaction value to be ultimately reversed to the
+                          Customer, subject to the Merchant being unable to
+                          provide an explanation along with documentary evidence
+                          as to why the chargeback request should be rejected in
+                          accordance with applicable laws.
                         </p>
                         <p>
-                          “Confidential Information” shall mean any and all
-                          written, oral or other tangible or intangible form of
-                          information, discoveries, ideas, concepts, know-how
-                          (whether patentable or copyrightable or not),
-                          research, development, designs, drawings, blueprints,
-                          diagrams, models, samples, flow charts, data, computer
-                          programs, disks, diskettes, tapes, algorithms,
-                          software programs, marketing plans or techniques,
-                          technical, financial, or business information, Olympus
-                          Fees as mentioned in Annexure - A” trade secrets which
-                          includes but is not restricted to any portion or
-                          scientific or technical or proprietary information,
-                          design, process, procedure, formula or improvement
-                          which is not generally available to the public as
-                          delivered by either Party (“Disclosing Party” to the
-                          other Party (“Receiving Party”) within the framework
-                          of this Agreement or resulting therefrom. Provided
-                          that confidential information disclosed orally or
-                          those produced by electronic media or through any
-                          other intangible means shall be deemed confidential if
-                          it is identified as being confidential if it is
-                          reduced in writing within (30) thirty days of the date
-                          of disclosure. Such writing shall specify the date,
-                          time, place, persons involved and the substance of the
-                          confidential information so disclosed.
+                          <strong>“Confidential Information” </strong>
+                          shall mean any and all written, oral or other tangible
+                          or intangible form of information, discoveries, ideas,
+                          concepts, know-how (whether patentable or
+                          copyrightable or not), research, development, designs,
+                          drawings, blueprints, diagrams, models, samples, flow
+                          charts, data, computer programs, disks, diskettes,
+                          tapes, algorithms, software programs, marketing plans
+                          or techniques, technical, financial, or business
+                          information, Olympus Fees as mentioned in Annexure -
+                          A” trade secrets which includes but is not restricted
+                          to any portion or scientific or technical or
+                          proprietary information, design, process, procedure,
+                          formula or improvement which is not generally
+                          available to the public as delivered by either Party
+                          (“Disclosing Party” to the other Party (“Receiving
+                          Party”) within the framework of this Agreement or
+                          resulting therefrom. Provided that confidential
+                          information disclosed orally or those produced by
+                          electronic media or through any other intangible means
+                          shall be deemed confidential if it is identified as
+                          being confidential if it is reduced in writing within
+                          (30) thirty days of the date of disclosure. Such
+                          writing shall specify the date, time, place, persons
+                          involved and the substance of the confidential
+                          information so disclosed.
                         </p>
                         <p>
-                          "Customer" shall mean any person who is availing
-                          services or products of the Merchant using Olympus
-                          Services to make the payment/remittance.
+                          <strong>"Customer" </strong>
+                          shall mean any person who is availing services or
+                          products of the Merchant using Olympus Services to
+                          make the payment/remittance.
                         </p>
                         <p>
-                          “Customer Bank Account” shall mean a bank account or
-                          credit/ prepaid/ cash card account of the Customer
-                          with Issuer.
+                          <strong>“Customer Bank Account” </strong>
+                          shall mean a bank account or credit/ prepaid/ cash
+                          card account of the Customer with Issuer.
                         </p>
                         <p>
-                          “Customer Payment Amount” shall mean the total amount
-                          paid by the Customer towards the Merchant Services
-                          which will include, inter alia, charges and other
-                          taxes, duties, costs, charges, Olympus Fees and
-                          expenses in respect of the Merchant Services.
+                          <strong>“Customer Payment Amount” </strong>
+                          shall mean the total amount paid by the Customer
+                          towards the Merchant Services which will include,
+                          inter alia, charges and other taxes, duties, costs,
+                          charges, Olympus Fees and expenses in respect of the
+                          Merchant Services.
                         </p>
                         <p>
-                          “Olympus Platform” a technology platform that connects
-                          Acquiring Banks, Merchants and Issuer Banks and
-                          facilitates initiation and completion of the Services
-                          rendered by Olympus.
+                          <strong>“Olympus Platform” </strong>a technology
+                          platform that connects Acquiring Banks, Merchants and
+                          Issuer Banks and facilitates initiation and completion
+                          of the Services rendered by Olympus.
                         </p>
                         <p>
-                          “Credit Card” is a credit card issued by the bank and
-                          that bank is a part of the Card Network;
+                          <strong>“Credit Card” </strong>
+                          is a credit card issued by the bank and that bank is a
+                          part of the Card Network;
                         </p>
                         <p>
-                          “Delivery” shall mean (i) in respect of a good,
-                          delivery of the good by a courier /parcel service
-                          appointed by the Merchant or its vendors, to the
-                          Customer within delivery due date at the address
-                          specified by the Customer in this behalf; or (ii) in
-                          respect of a service, delivery or performance of
-                          provisions of service within the delivery due date.
+                          <strong>“Delivery” </strong>
+                          shall mean (i) in respect of a good, delivery of the
+                          good by a courier /parcel service appointed by the
+                          Merchant or its vendors, to the Customer within
+                          delivery due date at the address specified by the
+                          Customer in this behalf; or (ii) in respect of a
+                          service, delivery or performance of provisions of
+                          service within the delivery due date.
                         </p>
                         <p>
-                          “Designated Bank Account” shall mean a bank account
-                          designated by the Merchant for settlement of funds;
+                          <strong>“Designated Bank Account” </strong>
+                          shall mean a bank account designated by the Merchant
+                          for settlement of funds;
                         </p>
                         <p>
-                          “Debit Card” is a debit card issued by the bank and
-                          that bank is a part of the Card Network;
+                          <strong>“Debit Card” </strong>
+                          is a debit card issued by the bank and that bank is a
+                          part of the Card Network;
                         </p>
                         <p>
-                          “Effective Date” shall be the date on which the
-                          Merchant and Olympus agreed to make the Agreement
-                          effective.
+                          <strong>“Effective Date” </strong>
+                          shall be the date on which the Merchant and Olympus
+                          agreed to make the Agreement effective.
                         </p>
                         <p>
-                          “eMandate” shall mean the system which facilitates
-                          issuance and confirmation of mandate by the Customers
-                          through alternate channels to paper-based mandate. The
-                          mandate will be routed by the destination bank, after
-                          due authentication, to the sponsor bank or by
-                          corporate through their sponsor bank to the
-                          destination bank with the attributes of customer
-                          authentication depending upon the variant of eMandate.
-                          The objectives of eMandate are: 1. Creation an
-                          authenticated mandate by the Customer himself through
-                          electronic channels. 2. Shorter mandate acceptance
-                          cycle or auto acceptance of mandates. 3. Secured and
-                          assured mandate acceptance e-mandates are initiated by
-                          the customer or his banker.
+                          <strong>“eMandate” </strong>
+                          shall mean the system which facilitates issuance and
+                          confirmation of mandate by the Customers through
+                          alternate channels to paper-based mandate. The mandate
+                          will be routed by the destination bank, after due
+                          authentication, to the sponsor bank or by corporate
+                          through their sponsor bank to the destination bank
+                          with the attributes of customer authentication
+                          depending upon the variant of eMandate. The objectives
+                          of eMandate are: 1. Creation an authenticated mandate
+                          by the Customer himself through electronic channels.
+                          2. Shorter mandate acceptance cycle or auto acceptance
+                          of mandates. 3. Secured and assured mandate acceptance
+                          e-mandates are initiated by the customer or his
+                          banker.
                         </p>
                         <p>
-                          “Escrow/Nodal Account” shall mean an account
-                          maintained by Olympus with any of the scheduled
-                          commercial bank for the purpose of pooling the monies
-                          collected from Customers on behalf of the Merchant and
-                          facilitating the transfer of these funds in final
-                          settlement to the Merchant in accordance with the
-                          Terms and Conditions;
+                          <strong>“Escrow/Nodal Account” </strong>
+                          shall mean an account maintained by Olympus with any
+                          of the scheduled commercial bank for the purpose of
+                          pooling the monies collected from Customers on behalf
+                          of the Merchant and facilitating the transfer of these
+                          funds in final settlement to the Merchant in
+                          accordance with the Terms and Conditions;
                         </p>
                         <p>
-                          "Issuer" shall mean a bank or financial institution or
-                          other legal entity, with which the Customer has a Net
+                          <strong>"Issuer" </strong>
+                          shall mean a bank or financial institution or other
+                          legal entity, with which the Customer has a Net
                           Banking account and/or which has issued the Valid Card
                           to the Customers and/or which has provided loan
                           facility to the Customers (explanation: except for
@@ -1359,127 +1375,146 @@ const termCondition = () => {
                           the same).
                         </p>
                         <p>
-                          “Merchant” is an entity that would be party to the
-                          Agreement with Olympus;
+                          <strong>“Merchant” </strong>
+                          is an entity that would be party to the Agreement with
+                          Olympus;
                         </p>
                         <p>
-                          “Merchant Discount Rate” shall mean a rate at which
-                          settlement amount is discounted and charged to
-                          Merchant by Olympus;
+                          <strong>“Merchant Discount Rate” </strong>
+                          shall mean a rate at which settlement amount is
+                          discounted and charged to Merchant by Olympus;
                         </p>
                         <p>
-                          “Merchant Site” shall mean the active Website/Platform
-                          bearing the domain name as specified in Agreement
-                          and/or the mobile application, the contents of which
-                          are controlled, operated and owned by the Merchant and
+                          <strong>“Merchant Site” </strong>
+                          shall mean the active Website/Platform bearing the
+                          domain name as specified in Agreement and/or the
+                          mobile application, the contents of which are
+                          controlled, operated and owned by the Merchant and
                           established for the purposes of enabling the Customers
                           to avail the services offered on the Website/Platform
                           or mobile application for which the Merchant shall be
                           availing Olympus Services.
                         </p>
                         <p>
-                          “Merchant Services” the services or products provided
-                          by the Merchant through Merchant Site to its
-                          Customer/s, the remittance/payment for which is to be
-                          made through the Customer’s valid accounts / Card/s or
-                          bank account, using Olympus Services.
+                          <strong>“Merchant Services” </strong>
+                          the services or products provided by the Merchant
+                          through Merchant Site to its Customer/s, the
+                          remittance/payment for which is to be made through the
+                          Customer’s valid accounts / Card/s or bank account,
+                          using Olympus Services.
                         </p>
                         <p>
-                          “Net Banking” shall mean the facility and internet
-                          account provided by the Issuer to Customers holding a
-                          bank account or digital wallet account with the
-                          Issuers. Provided that the bank account is not listed
-                          in current warning or restricted bank account
-                          bulletins or notices.
+                          <strong>“Net Banking” </strong>
+                          shall mean the facility and internet account provided
+                          by the Issuer to Customers holding a bank account or
+                          digital wallet account with the Issuers. Provided that
+                          the bank account is not listed in current warning or
+                          restricted bank account bulletins or notices.
                         </p>
                         <p>
-                          “Outstanding Amount” shall mean the amount payable by
-                          the Merchant to Olympus, Acquiring Banks and/or
-                          Customers for any losses, costs, damages, penalties,
-                          Chargebacks, Refund, overdraft or credit problems
-                          suffered or incurred by the Customers, Olympus and/or
-                          Acquiring Banks; any fees and other payments owed to
-                          Olympus by the Merchant; and any claims or proceedings
-                          filed against Olympus and/or Acquiring Banks by the
+                          <strong>“Outstanding Amount” </strong>
+                          shall mean the amount payable by the Merchant to
+                          Olympus, Acquiring Banks and/or Customers for any
+                          losses, costs, damages, penalties, Chargebacks,
+                          Refund, overdraft or credit problems suffered or
+                          incurred by the Customers, Olympus and/or Acquiring
+                          Banks; any fees and other payments owed to Olympus by
+                          the Merchant; and any claims or proceedings filed
+                          against Olympus and/or Acquiring Banks by the
                           Customers or any third Party.
                         </p>
                         <p>
-                          “Order” shall mean Customer placing order to purchase
-                          the products/services offered for sale by the
-                          Merchant.
+                          <strong>“Order” </strong>
+                          shall mean Customer placing order to purchase the
+                          products/services offered for sale by the Merchant.
                         </p>
                         <p>
-                          “Partner” shall mean various banks, financial
-                          institutions and other entities engaged with Olympus
-                          to facilitate the Merchant to Disburse the Payout
-                          Amount/ payments to the Beneficiaries.
+                          <strong>“Partner” </strong>
+                          shall mean various banks, financial institutions and
+                          other entities engaged with Olympus to facilitate the
+                          Merchant to Disburse the Payout Amount/ payments to
+                          the Beneficiaries.
                         </p>
                         <p>
-                          “Payment Aggregation Services” shall mean the payments
-                          collection services that are rendered by Olympus to
-                          Merchants by integrating the payments solution on the
-                          Website/Platform or web application of a Merchant.
+                          <strong>“Payment Aggregation Services” </strong>
+                          shall mean the payments collection services that are
+                          rendered by Olympus to Merchants by integrating the
+                          payments solution on the Website/Platform or web
+                          application of a Merchant.
                         </p>
                         <p>
-                          “Payment Instruments” shall mean (i) in case of
-                          payment aggregation services, any instrument used for
-                          making payments by the Customer such as Debit Card,
-                          Credit Card, Net Banking, UPI, eMandate etc. and (ii)
-                          in case of Payout Services, a bank account, UPI or
-                          wallets of beneficiaries that can receive money via
-                          Payout Services.
+                          <strong>“Payment Instruments” </strong>
+                          shall mean (i) in case of payment aggregation
+                          services, any instrument used for making payments by
+                          the Customer such as Debit Card, Credit Card, Net
+                          Banking, UPI, eMandate etc. and (ii) in case of Payout
+                          Services, a bank account, UPI or wallets of
+                          beneficiaries that can receive money via Payout
+                          Services.
                         </p>
                         <p>
-                          “Platform Fee” shall mean a fee other than the MDR or
-                          TDR which is charged by Olympus for rendering services
-                          other than the services relating to transfer of
-                          amounts from Issuing Bank to Acquiring Bank and
-                          includes services relating to on-boarding of client,
-                          facilitating technology for transaction monitoring,
-                          facilitating merchant dashboard, resolving complaints
-                          and other technology and administrative services.
+                          <strong>“Platform Fee” </strong>
+                          shall mean a fee other than the MDR or TDR which is
+                          charged by Olympus for rendering services other than
+                          the services relating to transfer of amounts from
+                          Issuing Bank to Acquiring Bank and includes services
+                          relating to on-boarding of client, facilitating
+                          technology for transaction monitoring, facilitating
+                          merchant dashboard, resolving complaints and other
+                          technology and administrative services.
                         </p>
                         <p>
-                          “Refunds” shall mean the refund as provided for in the
-                          Terms & Conditions;
-                        </p>
-                        <p>"RBI" shall mean the Reserve Bank of India.</p>
-                        <p>
-                          “Services” shall mean and include services in relation
-                          to the processing of payments including Payment
-                          Aggregation Services and Payout Services or any other
-                          ancillary and incidental services rendered thereto to
-                          the Merchant by Olympus with or without the use of
-                          Olympus Platform.
+                          <strong>“Refunds” </strong>
+                          shall mean the refund as provided for in the Terms &
+                          Conditions;
                         </p>
                         <p>
-                          “Settlement Amount” shall mean Customer Payment Amount
-                          minus the TDR and any other charges/fees payable by
-                          the Merchant to Olympus under this Agreement.
+                          <strong>"RBI" </strong>
+                          shall mean the Reserve Bank of India.
                         </p>
                         <p>
-                          “Terms & Conditions” shall include the general terms
-                          and conditions to the Services and special terms and
-                          conditions with regard to a particular Service
-                          rendered by Olympus to the Merchant;
+                          <strong>“Services” </strong>
+                          shall mean and include services in relation to the
+                          processing of payments including Payment Aggregation
+                          Services and Payout Services or any other ancillary
+                          and incidental services rendered thereto to the
+                          Merchant by Olympus with or without the use of Olympus
+                          Platform.
                         </p>
                         <p>
-                          "Transaction" shall mean (i) every payment
-                          request/order placed by the Customer on the Merchant
-                          Site for purchasing products/services from the
-                          Merchant; or (ii) any Disbursement or Verification
-                          Services request placed by the Merchant with Olympus.
+                          <strong>“Settlement Amount” </strong>
+                          shall mean Customer Payment Amount minus the TDR and
+                          any other charges/fees payable by the Merchant to
+                          Olympus under this Agreement.
                         </p>
                         <p>
-                          “Transaction Discount Rate” or “TDR” shall mean the
-                          total fee per transaction agreed between Olympus and
-                          the Merchant as specified in Agreement.
+                          <strong>“Terms & Conditions” </strong>
+                          shall include the general terms and conditions to the
+                          Services and special terms and conditions with regard
+                          to a particular Service rendered by Olympus to the
+                          Merchant;
                         </p>
                         <p>
-                          “Third Party” means any entity/person who is not a
-                          party to the Agreement.
+                          <strong>"Transaction" </strong>
+                          shall mean (i) every payment request/order placed by
+                          the Customer on the Merchant Site for purchasing
+                          products/services from the Merchant; or (ii) any
+                          Disbursement or Verification Services request placed
+                          by the Merchant with Olympus.
                         </p>
                         <p>
+                          <strong> “Transaction Discount Rate” </strong>
+                          or “TDR” shall mean the total fee per transaction
+                          agreed between Olympus and the Merchant as specified
+                          in Agreement.
+                        </p>
+                        <p>
+                          <strong>“Third Party” </strong>
+                          means any entity/person who is not a party to the
+                          Agreement.
+                        </p>
+                        <p>
+                          <strong>“Unified Payment Interface” or “UPI” </strong>
                           “Unified Payment Interface” or “UPI” is a payment
                           system that powers multiple bank accounts into a
                           single payment network of any participating bank which
@@ -1487,18 +1522,19 @@ const termCondition = () => {
                           fund routing & merchant payments into one hood.
                         </p>
                         <p>
-                          "Valid Card" shall mean any unexpired credit card or
-                          debit card which is issued by an Issuer designated to
-                          issue a Visa, MasterCard, Visa Electron or a Maestro
-                          or cash card, prepaid card, or other cards as may be
-                          specified by Olympus from time to time. Provided that
-                          the card is not listed in current warning or
-                          restricted card bulletins or notices and bears the
-                          signature of the person in whose name the card is
-                          issued.
+                          <strong>"Valid Card" </strong>
+                          shall mean any unexpired credit card or debit card
+                          which is issued by an Issuer designated to issue a
+                          Visa, MasterCard, Visa Electron or a Maestro or cash
+                          card, prepaid card, or other cards as may be specified
+                          by Olympus from time to time. Provided that the card
+                          is not listed in current warning or restricted card
+                          bulletins or notices and bears the signature of the
+                          person in whose name the card is issued.
                         </p>
                         <p>
-                          “Wallet” is one such pre-paid payment instrument that
+                          <strong>“Wallet” </strong>
+                          is one such pre-paid payment instrument that
                           facilitates the purchase of goods and services against
                           the value stored on these instruments. The value
                           stored on such instruments represents the value paid
@@ -3556,4 +3592,4 @@ const termCondition = () => {
   );
 };
 
-export default termCondition;
+export default termConditionPlatform;
