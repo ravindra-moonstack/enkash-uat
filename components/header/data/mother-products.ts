@@ -20,14 +20,14 @@ export const motherProducts = [
     link: "/ofex",
   },
   {
-    name: "Loyalty Lounge",
-    description: "Build exciting rewards, incentives & offers",
-    link: "/loyalty-lounge",
-  },
-  {
     name: "Brand Vouchers",
     description: "Shop smart and unlock exclusive savings",
     link: "/bolt",
+  },
+  {
+    name: "Loyalty Lounge",
+    description: "Build exciting rewards, incentives & offers",
+    link: "/loyalty-lounge",
   },
 ];
 
