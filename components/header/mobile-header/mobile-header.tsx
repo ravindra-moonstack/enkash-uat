@@ -30,8 +30,8 @@ const motherProductsList = [
   payableProducts,
   freedomProducts,
   xpenzProducts,
-  loyaltyLoungeProducts,
   brandVouchersProducts,
+  loyaltyLoungeProducts,
 ];
 
 interface props {

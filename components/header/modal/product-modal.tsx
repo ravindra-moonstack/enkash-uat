@@ -134,7 +134,7 @@ const ProductModal = ({ onLinkClick }: any) => {
 
       {hoveredProductIndex === 4 && (
         <SubProduct
-          subProducts={loyaltyLoungeProducts}
+          subProducts={brandVouchersProducts}
           index={3}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}
@@ -144,7 +144,7 @@ const ProductModal = ({ onLinkClick }: any) => {
 
       {hoveredProductIndex === 5 && (
         <SubProduct
-          subProducts={brandVouchersProducts}
+          subProducts={loyaltyLoungeProducts}
           index={3}
           hoveredProductIndex={hoveredProductIndex}
           prevHoveredProductIndex={prevHoveredProductIndex}

@@ -11,16 +11,6 @@ import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 
-export const metadata: Metadata = {
-  title:
-    "All-in-one Rewards, Corporate Gifting & incentives Management Platform - EnKash",
-  description:
-    "Get a seamless solution for rewards, corporate gifting &  incentives management platform designed to engage and motivate employees, channel partners, and stakeholders. Book a Demo Now !!",
-  alternates: {
-    canonical: "https://www.enkash.com/loyalty-lounge/",
-  },
-};
-
 type Voucher = {
   voucherId: string;
   name: string;
@@ -162,7 +152,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
 
       {voucherData ? (
         <div className={`color-white ${styles.home_container}`}>
-          <div className={`color-white ${styles.first_row}`}>
+          <div className={`color-white ${styles.first_row_category}`}>
             <CategoryMenu
               currentPageCategory={voucherData?.category || "e-commerce"}
             />

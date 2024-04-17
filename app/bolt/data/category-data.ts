@@ -50,7 +50,7 @@ export const CategoryData: Categories = {
   "health-and-wellness": {
     name: "health-and-wellness",
     heading: "Health & Wellness",
-    title: " Invest in your with up to",
+    title: " Invest in your health with up to",
     description:
       "For all your healthcare and wellness needs, we bring you a curated selection of discounted vouchers from the top brands.",
     discount: 58,
