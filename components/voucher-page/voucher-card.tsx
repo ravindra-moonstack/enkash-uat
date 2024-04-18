@@ -1,19 +1,18 @@
-import VoucherData from "@/app/bolt/data/voucher-data";
-import Link from "next/link";
 import React from "react";
 import Image from "next/image";
 import styles from "./voucher-page.module.scss";
 
-interface Voucher {
+type Voucher = {
   voucherId: string;
   name: string;
+  brandName?: string;
   category: string;
   discount: number;
   description: string;
   aboutCompany: string;
   backgroundImg: string;
   howToRedeem: string[];
-}
+};
 
 interface VoucherCardProps {
   voucher: Voucher;

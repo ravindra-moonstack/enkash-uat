@@ -236,7 +236,7 @@ const VoucherData: Record<string, Voucher> = {
     backgroundImg: "PC698625467AYGL0.png",
     howToRedeem: [
       "1. This E-Gift Card can be redeemed both online and offline",
-      "2.For online redemption, visit www.online.kfc.co.in",
+      "2.For online redemption, visit online.kfc.co.in",
       "3. Select your preferred food item",
       "4. Make payment using the E-Gift Card during the checkout",
       "5. For offline redemption, visit your nearby KFC outlet to redeem the E-Gift Card",

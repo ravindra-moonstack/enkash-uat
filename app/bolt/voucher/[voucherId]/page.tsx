@@ -85,7 +85,6 @@ const sanitizeStep = (step: string): string => {
 };
 
 const linkifyText = (text: string): string => {
-  // Regular expression to match URLs
   const urlRegex =
     /(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/\S*)?/g;
 
@@ -123,7 +122,7 @@ const fetchVoucher = async (voucherId: string) => {
       }
     );
     const apiData = await apiResponse.json();
-    //map for discount update
+    //discount update
     apiData.payload.data.forEach((product: any) => {
       if (
         product.productCatalogId === localVoucher.voucherId &&
@@ -190,12 +189,22 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                     <div className={styles.discount_}>
                       Up to <span>{voucherData.discount}%</span> OFF
                     </div>
-                    <div className={styles.brand_name}>
+                    <div className={`${styles.brand_name}`}>
                       {voucherData.brandName}
                     </div>
                   </div>
 
-                  <div className={styles.voucher_name}>{voucherData.name}</div>
+                  <div
+                    className={`${styles.voucher_name} ${
+                      voucherData.name.length > 30
+                        ? voucherData.name.length > 35
+                          ? styles.voucher_name_widest
+                          : styles.voucher_name_wide
+                        : ""
+                    }`}
+                  >
+                    {voucherData.name}
+                  </div>
                   <div className={styles.voucher_image}>
                     <Image src={voucherImage} alt={voucherData.name} />
                   </div>
