@@ -16,9 +16,13 @@ type Voucher = {
 
 interface VoucherCardProps {
   voucher: Voucher;
+  routeToBolt?: boolean;
 }
 
-const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
+const VoucherCard: React.FC<VoucherCardProps> = ({
+  voucher,
+  routeToBolt = false,
+}) => {
   //for metadata image url fetch from public
   const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
 
@@ -35,12 +39,23 @@ const VoucherCard: React.FC<VoucherCardProps> = ({ voucher }) => {
             className={styles.background_img}
           />
         </a>
-        <a
-          href={`/bolt/voucher/${voucher.voucherId}`}
-          className={styles.buy_now_button}
-        >
-          Buy Now
-        </a>
+        {routeToBolt ? (
+          <a
+            href="https://bolt.enkash.com/"
+            target="_blank"
+            className={styles.buy_now_button}
+          >
+            Buy Now
+          </a>
+        ) : (
+          <a
+            href={`/bolt/voucher/${voucher.voucherId}`}
+            className={styles.buy_now_button}
+          >
+            Buy Now
+          </a>
+        )}
+
         <div className={styles.voucher_name}>{voucher.name}</div>
       </div>
     </div>

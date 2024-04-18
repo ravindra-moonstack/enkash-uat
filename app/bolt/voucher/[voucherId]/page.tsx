@@ -216,7 +216,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                 </div>
               </div>
               <div className={styles.mobile_only}>
-                <VoucherCard voucher={voucherData} />
+                <VoucherCard voucher={voucherData} routeToBolt={true} />
               </div>
 
               <div className={styles.detail_section}>
