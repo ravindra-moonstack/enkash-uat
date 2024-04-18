@@ -164,8 +164,8 @@ const CfoSuite = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Policy Compliance Assurance"
-              description="CFO Admin controls make it simple to enforce expense policies, ensuring adherence and budget compliance."
+              whiteTitle="Policy Adherence"
+              description="CFO Admin controls make it simple to enforce expense policies, ensuring adherence and budget compliance"
               source=""
             />
           </div>
@@ -173,7 +173,7 @@ const CfoSuite = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Operational Efficiency"
-              description="Streamlined processes reduce administrative overhead, allowing CFOs to allocate resources more efficiently."
+              description="Streamlined processes reduce administrative overhead, allowing CFOs to allocate resources more efficiently"
               source=""
             />
           </div>
@@ -181,15 +181,15 @@ const CfoSuite = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Tracking & Reporting"
-              description="Daily reports and alerts enable CFOs to maintain a detailed overview of spending, enhancing budget management."
+              description="Daily reports and alerts enable CFOs to maintain a detailed overview of spending, enhancing budget management"
               source=""
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Scalable Financial Solutions"
-              description="Virtual and physical card ecosystems can seamlessly adapt to company growth and financial needs."
+              whiteTitle="Scalable Solutions"
+              description="Virtual and physical card ecosystems can seamlessly adapt to company growth and financial needs"
               source=""
             />
           </div>
@@ -197,7 +197,7 @@ const CfoSuite = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Cost Optimization"
-              description="CFOs can fine-tune spending to align with financial goals and eliminate unnecessary costs."
+              description="CFOs can fine-tune spending to align with financial goals and eliminate unnecessary costs"
               source=""
             />
           </div>

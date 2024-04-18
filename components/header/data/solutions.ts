@@ -40,7 +40,7 @@ export const solutions = [
 
   {
     name: "Instant Card Management",
-    description: "Manage access to your cards from anywhere, anytime.",
+    description: "Manage access to your cards from anywhere, anytime",
     link: "/solutions/instant-card-management",
   },
 ];

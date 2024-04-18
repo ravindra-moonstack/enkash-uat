@@ -5,9 +5,9 @@ import iconThree from "./img/icon-three.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Simply log in to your EnKash account, complete your KYC process, and manage your cards with ease.",
+    alt: "Simply log in to your EnKash account, complete your KYC process, and manage your cards with ease",
     title:
-      "Simply log in to your EnKash account, complete your KYC process, and manage your cards with ease.",
+      "Simply log in to your EnKash account, complete your KYC process, and manage your cards with ease",
   },
   {
     image: iconTwo,

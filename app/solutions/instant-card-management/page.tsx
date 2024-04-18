@@ -162,7 +162,7 @@ const InstantCardManagement = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Physical Delivery"
-              description="Eliminate the delay associated with physical card delivery; activate cards instantly, reducing downtime."
+              description="Eliminate the delay associated with physical card delivery; activate cards instantly, reducing downtime"
               source=""
             />
           </div>
@@ -185,7 +185,7 @@ const InstantCardManagement = () => {
                   />
                 </div>
               }
-              description="Set access levels for users or departments to ensure only authorized personnel can manage cards."
+              description="Set access levels for users or departments to ensure only authorized personnel can manage cards"
               source=""
             />
           </div>
@@ -208,7 +208,7 @@ const InstantCardManagement = () => {
                   />
                 </div>
               }
-              description="Receive instant notifications of card activity, allowing you to take action promptly."
+              description="Receive instant notifications of card activity, allowing you to take action promptly"
               source=""
             />
           </div>
@@ -216,7 +216,7 @@ const InstantCardManagement = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Emergency Response"
-              description="In the event of a security breach or compromised card, use instant card blocking to deactivate it immediately to prevent further unauthorized use."
+              description="In the event of a security breach or compromised card, use instant card blocking to deactivate it immediately to prevent further unauthorized use"
               source=""
             />
           </div>
