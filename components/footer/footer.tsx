@@ -290,6 +290,14 @@ const Footer = ({ utmSource = "" }: any) => {
                     <li>
                       <Link href="/solutions/integrations/">Integrations</Link>
                     </li>
+                    <li>
+                      <Link href="/solutions/cfo-suite/">CFO Suite</Link>
+                    </li>
+                    <li>
+                      <Link href="/solutions/instant-card-management/">
+                        Instant Card Management
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>

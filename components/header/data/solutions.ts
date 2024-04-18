@@ -30,6 +30,19 @@ export const solutions = [
       "Boost efficiency, connectivity, and business agility for growth",
     link: "/solutions//integrations",
   },
+
+  {
+    name: "CFO Suite",
+    description:
+      "An extensive finance software designed for CFOs to streamline financial processes",
+    link: "/solutions//cfo-suite",
+  },
+
+  {
+    name: "Instant Card Management",
+    description: "Manage access to your cards from anywhere, anytime",
+    link: "/solutions/instant-card-management",
+  },
 ];
 
 export default solutions;
