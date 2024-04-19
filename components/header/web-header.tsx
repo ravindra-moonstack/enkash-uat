@@ -18,6 +18,7 @@ import {
 import ProductModal from "./modal/product-modal";
 import ResourcesModal from "./modal/resources-modal";
 import SolutionsModal from "./modal/solutions-modal";
+import TopBanner from "../top-banner/top-banner";
 
 interface props {
   utmSource?: string;
@@ -30,7 +31,6 @@ const WebHeader = ({ utmSource }: props) => {
   const itemRef = useRef<HTMLLIElement | null>(null);
   const [slidePosition, setSlidePosition] = useState<number | null>(null);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
-  const [showBanner, setShowBanner] = useState(true);
 
   const signupUrl = utmSource
     ? `https://home.enkash.com/signup?utm_source=${utmSource}`
@@ -56,45 +56,7 @@ const WebHeader = ({ utmSource }: props) => {
 
   return (
     <div className={styles.header_wrapper}>
-      {showBanner && (
-        <div
-          className={`${styles.desktop_banner_light_blue} `} //ADD this for blue banner ${styles.desktop_banner}
-        >
-          <div className={styles.text}>
-            <Image
-              src={bannerBrands}
-              alt="brands"
-              width={230}
-              className="me-4"
-            />
-            <div className="d-flex flex-column align-items-end">
-              <div>Enjoy upto 30% savings on 400+ top brands</div>
-              <div className={styles.bottom_powered}>Powered by EnKash</div>
-            </div>
-          </div>
-          <Link
-            className={styles.button}
-            href={
-              "https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=bolt_top_banner"
-            }
-          >
-            Buy Now
-          </Link>
-          <Image
-            className={styles.cross_image}
-            src={crossIcon}
-            alt="cross icon"
-            onClick={() => {
-              setShowBanner(false);
-            }}
-          />
-          <Image
-            className={styles.banner_stack}
-            src={bannerStackBlue}
-            alt="stack image"
-          />
-        </div>
-      )}
+      <TopBanner />
 
       <header
         className={`w-full absolute z-10 d-flex flex-column ${styles.header}
