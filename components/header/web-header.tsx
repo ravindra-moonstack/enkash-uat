@@ -18,7 +18,7 @@ import {
 import ProductModal from "./modal/product-modal";
 import ResourcesModal from "./modal/resources-modal";
 import SolutionsModal from "./modal/solutions-modal";
-import TopBanner from "../top-banner/top-banner";
+import TopBannerWeb from "../top-banner/top-banner-web";
 
 interface props {
   utmSource?: string;
@@ -56,7 +56,7 @@ const WebHeader = ({ utmSource }: props) => {
 
   return (
     <div className={styles.header_wrapper}>
-      <TopBanner />
+      <TopBannerWeb />
 
       <header
         className={`w-full absolute z-10 d-flex flex-column ${styles.header}

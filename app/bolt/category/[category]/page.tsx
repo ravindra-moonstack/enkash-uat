@@ -223,7 +223,8 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                     theme="blue"
                     url="/bolt"
                   />
-                  <span className="mx-2"></span>
+                  {/* tag-id while navigating through category-menu to land on same position */}
+                  <span id="category-menu" className="mx-2"></span>
                   <SecondryButton
                     title="Buy Now"
                     iconSize={15}
@@ -242,10 +243,10 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
               </div>
             </div>
           )}
-
           {/* show all vouchers menu*/}
-          <CategoryMenu currentPageCategory={categoryName} />
-
+          <div>
+            <CategoryMenu currentPageCategory={categoryName} />
+          </div>
           {/* render each voucher */}
           <div className={`m-4 ${styles.vouchers_cont}`}>
             {vouchers && (

@@ -10,7 +10,7 @@ interface TopBannerProps {
   name?: string;
 }
 
-const TopBanner: React.FC<TopBannerProps> = ({ name = "temp" }) => {
+const TopBannerWeb: React.FC<TopBannerProps> = ({ name = "temp" }) => {
   const [showBanner, setShowBanner] = useState(false);
 
   const POPUP_INTERVAL_HOURS = 1;
@@ -26,15 +26,18 @@ const TopBanner: React.FC<TopBannerProps> = ({ name = "temp" }) => {
 
       //check if last session was within POPUP_INTERVAL_HOURS
       if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
+        console.log(timeSinceLastPopup + "  >  " + POPUP_INTERVAL_MS);
         return;
       }
     }
 
     localStorage.setItem("lastBannerTimestamp", currentTime.toString());
     setShowBanner(true);
+  }, [POPUP_INTERVAL_HOURS, POPUP_INTERVAL_MS]);
 
-    return () => {};
-  }, []);
+  useEffect(() => {
+    console.log("I changed to " + showBanner);
+  }, [showBanner]);
 
   return (
     <>
@@ -81,4 +84,4 @@ const TopBanner: React.FC<TopBannerProps> = ({ name = "temp" }) => {
   );
 };
 
-export default TopBanner;
+export default TopBannerWeb;
