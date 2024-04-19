@@ -45,6 +45,8 @@ export const metadata: Metadata = {
 };
 
 const boltPage = () => {
+  const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="Loyalty_lounge" />
@@ -97,11 +99,7 @@ const boltPage = () => {
             />
           </div>
           <div className="mt-5">
-            <PrimaryButton
-              title="Explore Bolt"
-              theme="blue"
-              url="https://home.enkash.com/signup?utm_source=Bolt"
-            />
+            <PrimaryButton title="Explore Bolt" theme="blue" url={boltUTM} />
             <span className="mx-2"></span>
             <SecondryButton
               title="Get Free Demo"
