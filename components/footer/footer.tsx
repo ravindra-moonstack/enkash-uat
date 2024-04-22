@@ -235,11 +235,6 @@ const Footer = ({ utmSource = "" }: any) => {
                   </Link>
                   <ul>
                     <li>
-                      <Link href="/loyalty-lounge/brand-voucher/">
-                        Brand Vouchers
-                      </Link>
-                    </li>
-                    <li>
                       <Link href="/loyalty-lounge/channel-incentive/">
                         Channel Incentives
                       </Link>

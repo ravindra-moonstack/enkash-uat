@@ -20,13 +20,13 @@ const loyaltyLoungeProducts = [
       description: "Build exciting rewards, incentives & offers",
     },
     list: [
-      {
-        name: "Brand Vouchers",
-        description: "400+ brand vouchers for corporate gifting",
-        imageSrc: brandVouchers,
-        imageSrcHovered: brandVouchersFilled,
-        link: "/loyalty-lounge/brand-voucher",
-      },
+      // {
+      //   name: "Brand Vouchers",
+      //   description: "400+ brand vouchers for corporate gifting",
+      //   imageSrc: brandVouchers,
+      //   imageSrcHovered: brandVouchersFilled,
+      //   link: "/loyalty-lounge/brand-voucher",
+      // },
       {
         name: "Channel Incentives",
         description: "Enable automated trade incentives easily",

@@ -210,13 +210,13 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                   <div
                     className={`${styles.voucher_name} ${
                       voucherData.name.length > 30
-                        ? voucherData.name.length > 35
+                        ? voucherData.name.length > 33
                           ? styles.voucher_name_widest
                           : styles.voucher_name_wide
                         : ""
                     }`}
                   >
-                    {voucherData.name}
+                    {voucherData.name.replace("-", "\u2011")}
                   </div>
                   <div className={styles.voucher_image}>
                     <Image src={voucherImage} alt={voucherData.name} />

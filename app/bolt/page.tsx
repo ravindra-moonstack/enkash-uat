@@ -58,29 +58,21 @@ const boltPage = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Unlock huge savings on a wide"
+              title="Unlock huge savings on"
               color="white"
               size="h2"
               weight="7"
             />
             <div className="d-flex">
               <Heading
-                title={`range of${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-                useH1TagInHtml={true}
-              />
-              <Heading
-                title=" exclusive brand"
+                title={`exclusive brand${space}`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
                 useH1TagInHtml={true}
               />
+              <Heading title="vouchers" color="white" size="h2" weight="7" />
             </div>
-
-            <Heading title="vouchers" color="white" size="h2" weight="7" />
           </div>
           <div className="mt-4 mobile-only">
             <Heading
@@ -99,7 +91,7 @@ const boltPage = () => {
             />
           </div>
           <div className="mt-5">
-            <PrimaryButton title="Explore Bolt" theme="blue" url={boltUTM} />
+            <PrimaryButton title="Buy Now" theme="blue" url={boltUTM} />
             <span className="mx-2"></span>
             <SecondryButton
               title="Get Free Demo"
@@ -235,7 +227,7 @@ const boltPage = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Health and wellness"
+              title="Health and Wellness"
               description="Prioritize your well-being with our range of savings on health and wellness brands. Our discounted gift vouchers empower you to invest in your health without straining your budget"
               theme="blue"
               link="/bolt/category/health-and-wellness"
@@ -461,13 +453,13 @@ const boltPage = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Exclusive Discount"
+                    title="Discount on"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="on Bulk Ordering"
+                    title="Bulk Ordering"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -546,15 +538,6 @@ const boltPage = () => {
           title="Explore our comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="4"
-                  title="Bolt is a revolutionary platform that provides access to a curated selection of brand vouchers across various categories, offering exclusive discounts."
-                />
-              </div>
-
               <div className="mb-2">
                 <Heading
                   size="h2"
@@ -627,7 +610,7 @@ const boltPage = () => {
                     <strong>Applicability:</strong> It is crucial to check
                     whether the brand voucher can be redeemed online, offline,
                     or both. The brand can decide whether their voucher can be
-                    used once or multiple times.
+                    used once or multiple times
                   </li>
                   <li>
                     <strong>
@@ -635,12 +618,12 @@ const boltPage = () => {
                       cash:
                     </strong>{" "}
                     Typically, brand vouchers cannot be refunded, transferred,
-                    or exchanged for cash.
+                    or exchanged for cash
                   </li>
                   <li>
                     <strong>Expiry date:</strong> Brand vouchers are usually
                     valid for one year from the date of issuance. Check the last
-                    date of usage to utilize the online discount available.
+                    date of usage to utilize the online discount available
                   </li>
                 </ul>
               </div>
