@@ -456,7 +456,7 @@ const VoucherData: Record<string, Voucher> = {
   },
   PC585610538R56E2: {
     voucherId: "PC585610538R56E2",
-    name: "Amazon Prime Voucher 3 Months Membership",
+    name: "Amazon Prime 3 Months Membership",
     brandName: "Amazon Prime",
     category: "movies-and-music",
     discount: 12,

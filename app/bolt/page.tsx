@@ -631,7 +631,7 @@ const boltPage = () => {
           }
         />
       </div>
-      <Footer utmSource="Loyalty_lounge" />
+      <Footer utmSource="Bolt" />
     </div>
   );
 };
