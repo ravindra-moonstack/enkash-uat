@@ -49,7 +49,7 @@ const boltPage = () => {
 
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="Loyalty_lounge" />
+      <Header utmSource="Bolt" />
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">

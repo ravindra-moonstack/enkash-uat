@@ -1,0 +1,180 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.container {
+  position: relative;
+  background-color: $color-indi-volt;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  @include for-laptops {
+    height: fit-content;
+  }
+
+  .lottie_container {
+    width: 350px;
+    margin-top: 20px;
+    height: auto;
+    @include for-laptops {
+      // margin-top: -60px;
+      // width: 650px;
+      margin-top: -80px;
+      width: 440px;
+    }
+
+    //remove only for images
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.calculator {
+  // styles.module.scss
+  padding: 40px 0px;
+  width: 75%;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  .container_calc {
+    // Your custom styles for the container
+  }
+
+  .form_label {
+    color: $color-white;
+    font-size: 12px;
+    // Your custom styles for form labels
+  }
+
+  .form_select {
+    padding: 10px 120px 10px 10px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    // border: none;
+    appearance: auto;
+    border-bottom: 1px solid $color-white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    & option {
+      color: $color-secondry-black;
+    }
+    // Your custom styles for select elements
+  }
+
+  .form_control {
+    padding: 10px 20px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    border-bottom: 1px solid $color-white;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    // Your custom styles for form controls (input fields)
+  }
+
+  .form_check-input {
+    // Your custom styles for form check inputs (radio buttons)
+  }
+
+  .form_check-label {
+    // Your custom styles for form check labels
+  }
+
+  .btn_primary {
+    padding: 10px 100px;
+    background: transparent;
+    border: solid 1px $color-white;
+  }
+
+  .radio_buttons {
+    display: flex;
+    gap: 40px;
+    font-size: 20px;
+  }
+}
+
+.tax_results_container {
+  position: relative;
+  padding: 60px 10px;
+  margin-left: 60px;
+
+  .tax_results {
+    background-image: url("./img/gst-calculator-bg.svg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 450px;
+    width: 550px;
+  }
+
+  .data_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: $color-white;
+    color: $color-secondry-black;
+    width: 260px;
+    strong {
+      font-weight: 700;
+    }
+  }
+
+  .individual_data {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    overflow: visible;
+    flex-wrap: wrap;
+    padding-top: 125px;
+  }
+
+  .business_data_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 55px;
+    .business_blue_strip {
+      background-color: $color-equity-blue;
+      color: $color-white;
+      width: 350px;
+      padding: 12px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .selling_price {
+      font-size: 36px;
+      font-weight: 600;
+      text-align: center;
+      margin-top: 11px;
+    }
+    .business_data {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      overflow: visible;
+      flex-wrap: wrap;
+      padding-top: 15px;
+    }
+    .full_breakup {
+      margin-top: 20px;
+      height: 30px;
+      cursor: pointer;
+    }
+  }
+}
