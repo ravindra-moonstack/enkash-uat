@@ -13,32 +13,34 @@ import { useEffect, useState } from "react";
 
 const PopUpPaymentGateway = () => {
   const [showPopup, setShowPopup] = useState(false);
+  const POPUP_INTERVAL_HOURS = 1;
+  const POPUP_INTERVAL_MS = POPUP_INTERVAL_HOURS * 60 * 60 * 1000;
+  // const POPUP_INTERVAL_MS = 15 * 1000;
+  const POPUP_DELAY_MS = 4000;
 
   useEffect(() => {
-    const hasPopupBeenShown = localStorage.getItem("popupShown");
+    const lastPopupTimestamp = localStorage.getItem("lastPopupTimestamp");
+    const currentTime = new Date().getTime();
 
-    if (!hasPopupBeenShown) {
-      localStorage.setItem("popupShown", "true");
-      const timer = setTimeout(() => {
-        setShowPopup(true);
-      }, 4000);
-      window.addEventListener("beforeunload", handleBeforeUnload);
-
-      return () => {
-        localStorage.removeItem("popupShown");
-        clearTimeout(timer);
-        window.removeEventListener("beforeunload", handleBeforeUnload);
-      };
-    } else {
-      return () => {
-        localStorage.removeItem("popupShown");
-      };
+    if (lastPopupTimestamp) {
+      const timeSinceLastPopup = currentTime - parseInt(lastPopupTimestamp, 10);
+      // console.log(lastPopupTimestamp, currentTime, timeSinceLastPopup);
+      if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
+        // console.log("already present so returning");
+        return;
+      }
     }
-  }, []);
 
-  const handleBeforeUnload = () => {
-    localStorage.removeItem("popupShown");
-  };
+    const timer = setTimeout(() => {
+      // console.log("setting timeouttt");
+      localStorage.setItem("lastPopupTimestamp", currentTime.toString());
+      setShowPopup(true);
+    }, POPUP_DELAY_MS);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, []);
 
   const currentUrl =
     typeof window !== "undefined" ? window.location.pathname : "";

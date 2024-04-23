@@ -18,7 +18,7 @@ const FAQHtml = ({ faqData }: any) => {
           key={index}
           question={item.question}
           answerHTML={
-            index === 1 ? (
+            index === 10 ? (
               <>
                 <h4>
                   <strong>Improved Efficiency:</strong> Automate tasks,

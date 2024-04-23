@@ -170,6 +170,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
 
   const categoryData = CategoryData[categoryName];
   const currentCategoryPhoto = CategoryPhoto.get(categoryName);
+  const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`;
 
   // const vouchers: Voucher[] = [];
   const vouchers: Voucher[] = await fetchVouchers(categoryName);
@@ -223,12 +224,9 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                     theme="blue"
                     url="/bolt"
                   />
-                  <span className="mx-2"></span>
-                  <SecondryButton
-                    title="Buy Now"
-                    iconSize={15}
-                    url="https://bolt.enkash.com/"
-                  />
+                  {/* tag-id while navigating through category-menu to land on same position */}
+                  <span id="category-menu" className="mx-2"></span>
+                  <SecondryButton title="Buy Now" iconSize={15} url={boltUTM} />
                 </div>
               </div>
               <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
@@ -242,10 +240,10 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
               </div>
             </div>
           )}
-
           {/* show all vouchers menu*/}
-          <CategoryMenu currentPageCategory={categoryName} />
-
+          <div>
+            <CategoryMenu currentPageCategory={categoryName} />
+          </div>
           {/* render each voucher */}
           <div className={`m-4 ${styles.vouchers_cont}`}>
             {vouchers && (

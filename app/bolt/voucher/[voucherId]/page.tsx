@@ -97,6 +97,12 @@ const linkifyText = (text: string): string => {
   });
 };
 
+const sanitizeUTM = (utm: string): string => {
+  utm = utm.toLowerCase();
+  utm = utm.replace(/ /g, "_");
+  return utm;
+};
+
 const fetchVoucher = async (voucherId: string) => {
   // local voucher
   let localVoucher: Voucher = VoucherData[voucherId];
@@ -160,6 +166,13 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
   const voucherImage = voucherData
     ? require(`./../../../../public/images/voucher-bg/${voucherData.backgroundImg}`)
     : null;
+
+  const boltUTM = voucherData
+    ? `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
+        voucherData.name.toLowerCase()
+      )}`
+    : "https://bolt.enkash.com/";
+
   return (
     <>
       <Header utmSource="voucher-category" />
@@ -197,19 +210,19 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
                   <div
                     className={`${styles.voucher_name} ${
                       voucherData.name.length > 30
-                        ? voucherData.name.length > 35
+                        ? voucherData.name.length > 33
                           ? styles.voucher_name_widest
                           : styles.voucher_name_wide
                         : ""
                     }`}
                   >
-                    {voucherData.name}
+                    {voucherData.name.replace("-", "\u2011")}
                   </div>
                   <div className={styles.voucher_image}>
                     <Image src={voucherImage} alt={voucherData.name} />
                   </div>
                   <div className={styles.buy_now_button}>
-                    <Link href="https://bolt.enkash.com/" target="_blank">
+                    <Link href={boltUTM} target="_blank">
                       BUY NOW
                     </Link>
                   </div>

@@ -19,12 +19,21 @@ interface VoucherCardProps {
   routeToBolt?: boolean;
 }
 
+const sanitizeUTM = (utm: string): string => {
+  utm = utm.toLowerCase();
+  utm = utm.replace(/ /g, "_");
+  return utm;
+};
+
 const VoucherCard: React.FC<VoucherCardProps> = ({
   voucher,
   routeToBolt = false,
 }) => {
   //for metadata image url fetch from public
   const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
+  const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
+    voucher.name
+  )}`;
 
   return (
     <div>
@@ -40,11 +49,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
           />
         </a>
         {routeToBolt ? (
-          <a
-            href="https://bolt.enkash.com/"
-            target="_blank"
-            className={styles.buy_now_button}
-          >
+          <a href={boltUTM} target="_blank" className={styles.buy_now_button}>
             Buy Now
           </a>
         ) : (

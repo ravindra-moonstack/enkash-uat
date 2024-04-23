@@ -8,11 +8,16 @@
   padding-right: 25px;
   padding-top: 36px;
   padding-bottom: 36px;
+  height: 85vh;
   @include for-laptops {
     padding-left: 70px;
     padding-right: 30px;
     padding-top: 190px;
     padding-bottom: 80px;
+    height: 100vh;
+  }
+  @include for-window-zoomed-screens {
+    height: 105vh;
   }
 
   .lottie_container {
@@ -28,6 +33,7 @@
     img {
       width: 100%;
       height: auto;
+      max-height: 100%;
     }
   }
 }
