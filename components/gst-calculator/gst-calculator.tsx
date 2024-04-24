@@ -10,25 +10,60 @@ import Link from "next/link";
 import arrowRight from "./img/right-arrow-gst.svg";
 
 const GSTCalculator = () => {
-  const [userType, setUserType] = useState("");
-  const [amount, setAmount] = useState(0);
-  const [taxRate, setTaxRate] = useState(0);
-  const [profitRatio, setProfitRatio] = useState(0);
-  const [isBusiness, setIsBusiness] = useState(false);
-  const [inclusiveGST, setInclusiveGST] = useState(false);
-  const [result, setResult] = useState(0);
+  const [userType, setUserType] = useState<string>("");
+  const [amount, setAmount] = useState<number>(0);
+  const [taxRate, setTaxRate] = useState<number>(0);
+  const [profitRatio, setProfitRatio] = useState<number>(0);
+  const [isBusiness, setIsBusiness] = useState<boolean>(false);
+  const [inclusiveGST, setInclusiveGST] = useState<boolean>(false);
+  const [totalAmount, setTotalAmount] = useState<number>(0);
+  const [totalTax, setTotalTax] = useState<number>(0);
+  const [cgstAmount, setCGSTAmount] = useState<number>(0);
+  const [sgstAmount, setSGSTAmount] = useState<number>(0);
+  const [totalProfit, setTotalProfit] = useState<number>(0);
+  const [netTaxableAmount, setNetTaxableAmount] = useState<number>(0);
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
     let taxableAmount = amount;
-    if (isBusiness) {
-      taxableAmount *= 1 + profitRatio / 100;
-    }
-    let gstAmount = (taxableAmount * taxRate) / 100;
+    let totalProfit = 0;
+    let gstAmount = 0;
+    let costprice = 0;
+
     if (inclusiveGST) {
-      gstAmount = taxableAmount - taxableAmount / (1 + taxRate / 100);
+      setTotalAmount(Number(amount.toFixed(2)));
+      taxableAmount = amount / (1 + taxRate / 100);
+      setNetTaxableAmount(Number(taxableAmount.toFixed(2)));
+
+      gstAmount = amount - taxableAmount;
+      setTotalTax(Number(gstAmount.toFixed(2)));
+
+      totalProfit = taxableAmount * (profitRatio / 100);
+      setTotalProfit(Number(totalProfit.toFixed(2)));
+    } else {
+      totalProfit = amount * (profitRatio / 100);
+      setTotalProfit(Number(totalProfit.toFixed(2)));
+
+      taxableAmount = amount + totalProfit;
+      setNetTaxableAmount(Number(taxableAmount.toFixed(2)));
+
+      gstAmount = taxableAmount * (taxRate / 100);
+      setTotalTax(Number(gstAmount.toFixed(2)));
+
+      const grossAmount = amount + totalProfit + gstAmount;
+      setTotalAmount(Number(grossAmount.toFixed(2)));
     }
-    setResult(taxableAmount + gstAmount);
+
+    // Calculate CGST Amount and SGST Amount
+    if (!inclusiveGST) {
+      const cgst = gstAmount / 2;
+      setCGSTAmount(Number(cgst.toFixed(2))); // Limit CGST amount to 2 decimal places
+      setSGSTAmount(Number(cgst.toFixed(2))); // Limit SGST amount to 2 decimal places
+    } else {
+      setCGSTAmount(0);
+      setSGSTAmount(0);
+    }
   };
 
   const handleSetUser = (type: string) => {
@@ -198,20 +233,20 @@ const GSTCalculator = () => {
                 <div className={styles.business_blue_strip}>
                   Total Selling Price
                 </div>
-                <div className={styles.selling_price}>₹{result}</div>
+                <div className={styles.selling_price}>₹{totalAmount}</div>
                 <div className={styles.business_data}>
                   <div className={styles.data_item}>
-                    <div>CGST amout</div>
+                    <div>Total Tax</div>
                     <div>
                       {" "}
-                      <strong>₹ {result}</strong>
+                      <strong>₹ {totalTax}</strong>
                     </div>
                   </div>
                   <div className={styles.data_item}>
-                    <div>CGST amout</div>
+                    <div>Total Profit</div>
                     <div>
                       {" "}
-                      <strong>₹ {result}</strong>
+                      <strong>₹ {totalProfit}</strong>
                     </div>
                   </div>
                   <div
@@ -226,31 +261,42 @@ const GSTCalculator = () => {
             ) : (
               <div className={styles.individual_data}>
                 <div className={styles.data_item}>
-                  <div>CGST amout</div>
-                  <div>
-                    {" "}
-                    <strong>₹ {result}</strong>
-                  </div>
+                  {inclusiveGST ? (
+                    <>
+                      <div>Taxable Amount</div>
+                      <div>
+                        <strong>₹ {netTaxableAmount}</strong>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div>Total Price</div>
+                      <div>
+                        <strong>₹ {totalAmount}</strong>
+                      </div>
+                    </>
+                  )}
                 </div>
+
                 <div className={styles.data_item}>
                   <div>CGST amout</div>
                   <div>
                     {" "}
-                    <strong>₹ {result}</strong>
+                    <strong>₹ {cgstAmount}</strong>
                   </div>
                 </div>
                 <div className={styles.data_item}>
-                  <div>CGST amout</div>
+                  <div>Total Tax/GST Amount</div>
                   <div>
                     {" "}
-                    <strong>₹ {result}</strong>
+                    <strong>₹ {totalTax}</strong>
                   </div>
                 </div>
                 <div className={styles.data_item}>
-                  <div>CGST amout</div>
+                  <div>SGST Amount</div>
                   <div>
                     {" "}
-                    <strong>₹ {result}</strong>
+                    <strong>₹ {sgstAmount}</strong>
                   </div>
                 </div>
               </div>
