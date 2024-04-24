@@ -39,7 +39,8 @@ const GSTCalculator = () => {
       gstAmount = amount - taxableAmount;
       setTotalTax(Number(gstAmount.toFixed(2)));
 
-      totalProfit = taxableAmount * (profitRatio / 100);
+      costprice = taxableAmount / (1 + profitRatio / 100);
+      totalProfit = taxableAmount - costprice;
       setTotalProfit(Number(totalProfit.toFixed(2)));
     } else {
       totalProfit = amount * (profitRatio / 100);
