@@ -170,13 +170,14 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
 
   const categoryData = CategoryData[categoryName];
   const currentCategoryPhoto = CategoryPhoto.get(categoryName);
-  const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`;
+  const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`;
+  const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`;
 
   // const vouchers: Voucher[] = [];
   const vouchers: Voucher[] = await fetchVouchers(categoryName);
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="voucher-category" />
+      <Header utmSource={halfBoltUTM} />
 
       {isValidCategory ? (
         <>
@@ -295,7 +296,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
         </div>
       )}
 
-      <Footer utmSource="Bolt" />
+      <Footer utmSource={halfBoltUTM} />
     </div>
   );
 };

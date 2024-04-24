@@ -168,14 +168,20 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
     : null;
 
   const boltUTM = voucherData
-    ? `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
+    ? `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
+        voucherData.name.toLowerCase()
+      )}`
+    : "https://bolt.enkash.com/";
+
+  const halfBoltUTM = voucherData
+    ? `bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
         voucherData.name.toLowerCase()
       )}`
     : "https://bolt.enkash.com/";
 
   return (
     <>
-      <Header utmSource="voucher-category" />
+      <Header utmSource={halfBoltUTM} />
 
       {voucherData ? (
         <div className={`color-white ${styles.home_container}`}>
@@ -316,7 +322,7 @@ const voucherPage = async ({ params }: { params: { voucherId: string } }) => {
         </div>
       )}
 
-      <Footer utmSource="Bolt" />
+      <Footer utmSource={halfBoltUTM} />
     </>
   );
 };
