@@ -1,0 +1,104 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.category_menu {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  background-color: $color-bolt-light;
+  padding: 33px 0;
+  flex-wrap: wrap;
+
+  @include for-laptops {
+    flex-wrap: nowrap;
+    gap: 25px;
+  }
+}
+
+.category_button {
+  text-decoration: none;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    background-color: $color-white;
+    color: $color-equity-blue;
+    padding: 4px 5px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 10px;
+    width: 115px;
+    text-wrap: nowrap;
+
+    @include for-laptops {
+      width: 190px;
+      font-size: 16px;
+      gap: 10px;
+      border-radius: 10px;
+    }
+
+    img {
+      width: 12px;
+      height: auto;
+    }
+  }
+
+  .active {
+    border: solid 1px $color-equity-blue;
+  }
+}
+
+//voucher styling
+.voucher_card {
+  position: relative;
+  color: black;
+  border-radius: 20px;
+  width: 300px;
+
+  .discount {
+    position: absolute;
+    z-index: 1;
+    background: linear-gradient(to right, #1c5af4, #1c5af4, transparent);
+    padding: 5px 20px;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    font-style: italic;
+    strong {
+      color: $color-bolt-green;
+    }
+  }
+
+  .background_img {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    filter: drop-shadow(#d9d9d9 9px 10px 5px);
+  }
+
+  .buy_now_button {
+    position: absolute;
+    left: 50%;
+    top: 170px;
+    transform: translateX(-50%);
+    background: #1c5af4;
+    padding: 5px 15px;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .voucher_name {
+    padding: 30px;
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: $color-bolt-title-grey;
+    text-decoration: none;
+  }
+}

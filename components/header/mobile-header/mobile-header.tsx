@@ -24,13 +24,14 @@ import solutions from "../data/solutions";
 import ReceivableProducts from "@/components/header/data/receivable-products";
 import payableProducts from "../data/payable-products";
 import brandVouchersProducts from "../data/brand-voucher-products";
+import TopBannerMobile from "@/components/top-banner/top-banner-mobile";
 
 const motherProductsList = [
   ReceivableProducts,
   payableProducts,
   freedomProducts,
   xpenzProducts,
-  // brandVouchersProducts,
+  brandVouchersProducts,
   loyaltyLoungeProducts,
 ];
 
@@ -50,38 +51,7 @@ const MobileHeader = ({ utmSource }: props) => {
 
   return (
     <div>
-      {showBanner && (
-        <div className={styles.mobile_banner_light_blue}>
-          <div className={styles.text}>
-            <div className="d-flex flex-column align-items-start">
-              <div>Enjoy upto 30% savings on 400+ top brands</div>
-              <div className={styles.bottom_powered}>Powered by EnKash</div>
-            </div>
-            <Image
-              src={bannerBrandsMobile}
-              alt="graffeti icon"
-              width={80}
-              className={styles.brand_imges}
-            />
-          </div>
-          <Link
-            className={styles.button}
-            href={
-              "https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=bolt_top_banner"
-            }
-          >
-            Buy Now
-          </Link>
-          <Image
-            className={styles.cross_image}
-            src={crossIcon}
-            alt="cross icon"
-            onClick={() => {
-              setShowBanner(false);
-            }}
-          />
-        </div>
-      )}
+      <TopBannerMobile />
 
       <div className={`w-100 absolute z-10 bg-indi-volt`}>
         <Hamburger setCurrentStep={setCurrentStep} currentStep={currentStep} />

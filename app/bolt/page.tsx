@@ -26,20 +26,27 @@ import {
   heavyLiftingIconOne,
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
+  eCommerceImg,
+  foodAndBeverages,
+  apparels,
+  moviesAndMusic,
+  healthAndWellness,
+  boltHero,
 } from ".";
 import Footer from "@/components/footer/footer";
 
 export const metadata: Metadata = {
-  title:
-    "All-in-one Rewards, Corporate Gifting & incentives Management Platform - EnKash",
+  title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
   description:
-    "Get a seamless solution for rewards, corporate gifting &  incentives management platform designed to engage and motivate employees, channel partners, and stakeholders. Book a Demo Now !!",
+    "Buy e-Gifts cards online with our exclusively curated 400+ brand E-gift cards & vouchers available across various categories. Customize the Corporate gift vouchers without any Hassle with EnKash.",
   alternates: {
-    canonical: "https://www.enkash.com/loyalty-lounge/",
+    canonical: "https://www.enkash.com/bolt/",
   },
 };
 
 const boltPage = () => {
+  const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
+
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="Loyalty_lounge" />
@@ -51,29 +58,21 @@ const boltPage = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Unlock huge savings on a wide"
+              title="Unlock huge savings on"
               color="white"
               size="h2"
               weight="7"
             />
             <div className="d-flex">
               <Heading
-                title={`range of${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-                useH1TagInHtml={true}
-              />
-              <Heading
-                title=" exclusive brand"
+                title={`exclusive brand${space}`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
                 useH1TagInHtml={true}
               />
+              <Heading title="vouchers" color="white" size="h2" weight="7" />
             </div>
-
-            <Heading title="vouchers" color="white" size="h2" weight="7" />
           </div>
           <div className="mt-4 mobile-only">
             <Heading
@@ -92,11 +91,7 @@ const boltPage = () => {
             />
           </div>
           <div className="mt-5">
-            <PrimaryButton
-              title="Explore Bolt"
-              theme="blue"
-              url="https://home.enkash.com/signup?utm_source=Bolt"
-            />
+            <PrimaryButton title="Buy Now" theme="blue" url={boltUTM} />
             <span className="mx-2"></span>
             <SecondryButton
               title="Get Free Demo"
@@ -108,10 +103,11 @@ const boltPage = () => {
         </div>
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
-            <LottieDynamicLoadComponent
+            <Image src={boltHero} alt="bolt" />
+            {/* <LottieDynamicLoadComponent
               animationName={"LoyaltyBannerAnimation"}
               loop={true}
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -125,7 +121,7 @@ const boltPage = () => {
               title="E-commerce"
               description="Get enticing deals on a diverse range of e-commerce brands. Whether you're searching for the latest gadgets, trendy fashion items, or household essentials, get all in one place"
               theme="blue"
-              link="/loyalty-lounge/employee-rewards"
+              link="/bolt/category/e-commerce"
             />
           </div>
           <div
@@ -137,10 +133,11 @@ const boltPage = () => {
               className={styles.card_bg}
             />
             <div className={styles.first_lottie_container}>
-              <LottieDynamicLoadComponent
+              <Image src={eCommerceImg} alt="E-commerce" />
+              {/* <LottieDynamicLoadComponent
                 animationName={"LoyaltyEmployeeAnimation"}
                 loop={true}
-              />
+              /> */}
             </div>
           </div>
         </div>
@@ -155,10 +152,11 @@ const boltPage = () => {
               className={styles.card_bg}
             />
             <div className={styles.second_lottie_container}>
-              <LottieDynamicLoadComponent
+              <Image src={foodAndBeverages} alt="Food and Beverages" />
+              {/* <LottieDynamicLoadComponent
                 animationName={"LoyaltyBrandVoucherAnimation"}
                 loop={true}
-              />{" "}
+              />{" "} */}
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
@@ -166,7 +164,7 @@ const boltPage = () => {
               title="Food & Beverages"
               description="Treat your taste buds to good food, from gourmet delicacies to everyday essentials, and relish in discounts that make every meal more satisfying"
               theme="blue"
-              link="/loyalty-lounge/brand-voucher"
+              link="/bolt/category/food-and-beverages"
             />
           </div>
         </div>
@@ -177,7 +175,7 @@ const boltPage = () => {
               title="Apparels"
               description="Elevate your style quotient without breaking the bank by availing discounted shopping gift vouchers from famous apparel brands"
               theme="blue"
-              link="/loyalty-lounge/gift-cards"
+              link="/bolt/category/apparels"
             />
           </div>
           <div
@@ -188,10 +186,14 @@ const boltPage = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <LottieDynamicLoadComponent
+            <div className={styles.third_lottie_container}>
+              <Image src={apparels} alt="apparels" />
+            </div>
+
+            {/* <LottieDynamicLoadComponent
               animationName={"LoyaltyGiftCardAnimation"}
               loop={true}
-            />
+            /> */}
           </div>
         </div>
 
@@ -205,10 +207,11 @@ const boltPage = () => {
               className={styles.card_bg}
             />
             <div className={styles.second_lottie_container}>
-              <LottieDynamicLoadComponent
+              <Image src={moviesAndMusic} alt="movies and music" />
+              {/* <LottieDynamicLoadComponent
                 animationName={"LoyaltyBrandVoucherAnimation"}
                 loop={true}
-              />{" "}
+              />{" "} */}
             </div>
           </div>
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
@@ -216,7 +219,7 @@ const boltPage = () => {
               title="Movies & Music"
               description="Immerse yourself in a world of entertainment at a fraction of the cost with gift vouchers from leading movies and music providers"
               theme="blue"
-              link="/loyalty-lounge/brand-voucher"
+              link="/bolt/category/movies-and-music"
             />
           </div>
         </div>
@@ -224,10 +227,10 @@ const boltPage = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
-              title="Occasion Crafted"
-              description="Celebrate birthdays, anniversaries, & special occasions with our occasion-based gift vouchers categories."
+              title="Health and Wellness"
+              description="Prioritize your well-being with our range of savings on health and wellness brands. Our discounted gift vouchers empower you to invest in your health without straining your budget"
               theme="blue"
-              link="/loyalty-lounge/gift-cards"
+              link="/bolt/category/health-and-wellness"
             />
           </div>
           <div
@@ -238,36 +241,13 @@ const boltPage = () => {
               alt="card background"
               className={styles.card_bg}
             />
-            <LottieDynamicLoadComponent
+            <div className={styles.fourth_lottie_container}>
+              <Image src={healthAndWellness} alt="Health and wellness" />
+            </div>
+            {/* <LottieDynamicLoadComponent
               animationName={"LoyaltyGiftCardAnimation"}
               loop={true}
-            />
-          </div>
-        </div>
-
-        <div className={`row bg-white ${styles.section}`}>
-          <div
-            className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-  ${styles.second_container}`}
-          >
-            <Image
-              src={cardBg}
-              alt="card background"
-              className={styles.card_bg}
-            />
-            <div className={styles.second_lottie_container}>
-              <LottieDynamicLoadComponent
-                animationName={"LoyaltyBrandVoucherAnimation"}
-                loop={true}
-              />{" "}
-            </div>
-          </div>
-          <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
-            <ExploreCard
-              title="Health & Wellness"
-              description="Prioritize your well-being with our range of savings on health and wellness brands. Our discounted gift vouchers empower you to invest in your health without straining your budget"
-              theme="blue"
-              link="/loyalty-lounge/brand-voucher"
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -473,13 +453,13 @@ const boltPage = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Exclusive Discount"
+                    title="Discount on"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="on Bulk Ordering"
+                    title="Bulk Ordering"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -558,15 +538,6 @@ const boltPage = () => {
           title="Explore our comprehensive guide"
           innerHtml={
             <>
-              <div className="mb-5">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="4"
-                  title="Bolt is a revolutionary platform that provides access to a curated selection of brand vouchers across various categories, offering exclusive discounts."
-                />
-              </div>
-
               <div className="mb-2">
                 <Heading
                   size="h2"
@@ -639,7 +610,7 @@ const boltPage = () => {
                     <strong>Applicability:</strong> It is crucial to check
                     whether the brand voucher can be redeemed online, offline,
                     or both. The brand can decide whether their voucher can be
-                    used once or multiple times.
+                    used once or multiple times
                   </li>
                   <li>
                     <strong>
@@ -647,12 +618,12 @@ const boltPage = () => {
                       cash:
                     </strong>{" "}
                     Typically, brand vouchers cannot be refunded, transferred,
-                    or exchanged for cash.
+                    or exchanged for cash
                   </li>
                   <li>
                     <strong>Expiry date:</strong> Brand vouchers are usually
                     valid for one year from the date of issuance. Check the last
-                    date of usage to utilize the online discount available.
+                    date of usage to utilize the online discount available
                   </li>
                 </ul>
               </div>
@@ -660,7 +631,7 @@ const boltPage = () => {
           }
         />
       </div>
-      <Footer utmSource="Loyalty_lounge" />
+      <Footer utmSource="Bolt" />
     </div>
   );
 };

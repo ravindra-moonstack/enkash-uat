@@ -53,21 +53,23 @@ const Footer = ({ utmSource = "" }: any) => {
           {/* parent olympus */}
           <div className={`col-md-3 col-12 ${styles.dummy}`}>
             <div className={`col-md-3 col-12 ${styles.footer_links_col}`}>
-              <Link href="/olympus">
-                <h4 className={` ${styles.title}`}>Olympus</h4>
+              <Link href="/olympus/receivables">
+                <h4 className={` ${styles.title}`}>
+                  Receivables<sup>#</sup>
+                </h4>
               </Link>
 
               <div className="d-flex flex-md-column ">
                 <div className={`col-6`}>
                   {" "}
                   <ul>
-                    <li className="">
+                    {/* <li className="">
                       <div className={`color-white ${styles.sub_title}`}>
                         <Link href="/olympus/receivables">
                           Receivables<sup>#</sup>
                         </Link>
                       </div>
-                    </li>
+                    </li> */}
                     <li className="d-flex">
                       <Link href="/olympus/receivables/payment-gateway">
                         Olympus PG
@@ -159,9 +161,9 @@ const Footer = ({ utmSource = "" }: any) => {
                 <div className="">
                   <ul className="mb-0">
                     <li>
-                      <div className={`color-white ${styles.sub_title}`}>
-                        <Link href="/olympus/payables">Payables</Link>
-                      </div>
+                      <Link href="/olympus/receivables">
+                        <h4 className={` ${styles.title}`}>Payables</h4>
+                      </Link>
                     </li>
                     <li>
                       <Link href="/olympus/payables/bill-payment/">
@@ -235,11 +237,6 @@ const Footer = ({ utmSource = "" }: any) => {
                   </Link>
                   <ul>
                     <li>
-                      <Link href="/loyalty-lounge/brand-voucher/">
-                        Brand Vouchers
-                      </Link>
-                    </li>
-                    <li>
                       <Link href="/loyalty-lounge/channel-incentive/">
                         Channel Incentives
                       </Link>
@@ -289,6 +286,14 @@ const Footer = ({ utmSource = "" }: any) => {
                     </li>
                     <li>
                       <Link href="/solutions/integrations/">Integrations</Link>
+                    </li>
+                    <li>
+                      <Link href="/solutions/cfo-suite/">CFO Suite</Link>
+                    </li>
+                    <li>
+                      <Link href="/solutions/instant-card-management/">
+                        Instant Card Management
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -352,7 +357,9 @@ const Footer = ({ utmSource = "" }: any) => {
               <div className={`${styles.footer_links_col}`}>
                 <div>
                   <Link href="/ofex">
-                    <h4 className={`col-12 ${styles.title}`}>OfEx</h4>
+                    <h4 className={`col-12 ${styles.title}`}>
+                      Expense Management
+                    </h4>
                   </Link>
                   <ul>
                     <li>
