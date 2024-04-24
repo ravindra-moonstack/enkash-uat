@@ -8,6 +8,7 @@ import { gstCalculatorBG } from "@/app/gst-calculator";
 import { useState } from "react";
 import Link from "next/link";
 import arrowRight from "./img/right-arrow-gst.svg";
+import GSTBreakDownModal from "./gst-modal";
 
 const GSTCalculator = () => {
   const [userType, setUserType] = useState<string>("");
@@ -22,6 +23,7 @@ const GSTCalculator = () => {
   const [sgstAmount, setSGSTAmount] = useState<number>(0);
   const [totalProfit, setTotalProfit] = useState<number>(0);
   const [netTaxableAmount, setNetTaxableAmount] = useState<number>(0);
+  const [costOfGoods, setCostOfGoods] = useState<number>(0);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,9 +42,12 @@ const GSTCalculator = () => {
       setTotalTax(Number(gstAmount.toFixed(2)));
 
       costprice = taxableAmount / (1 + profitRatio / 100);
+      setCostOfGoods(Number(costprice.toFixed(2)));
+
       totalProfit = taxableAmount - costprice;
       setTotalProfit(Number(totalProfit.toFixed(2)));
     } else {
+      setCostOfGoods(Number(amount.toFixed(2)));
       totalProfit = amount * (profitRatio / 100);
       setTotalProfit(Number(totalProfit.toFixed(2)));
 
@@ -254,8 +259,14 @@ const GSTCalculator = () => {
                     className={styles.full_breakup}
                     onClick={(e) => handleFullBreakup()}
                   >
-                    Check full breakup
-                    <Image src={arrowRight} alt="" />
+                    <GSTBreakDownModal
+                      costOfGoods={costOfGoods}
+                      profitPercentage={profitRatio}
+                      profitAmount={totalProfit}
+                      gstPercentage={taxRate}
+                      gstAmount={totalTax}
+                      totalSellingPrice={totalAmount}
+                    />
                   </div>
                 </div>
               </div>

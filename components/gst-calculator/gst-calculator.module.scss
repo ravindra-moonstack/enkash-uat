@@ -178,3 +178,42 @@
     }
   }
 }
+
+//breakdown modal css
+.breakdown_modal {
+  color: $color-secondry-black;
+  .modal_title {
+    color: $color-equity-blue !important;
+    display: flex;
+    gap: 10px;
+    font-weight: 700;
+    img {
+      width: 28px;
+    }
+  }
+
+  .switch {
+    padding: 20px;
+    background-color: $color-light-blue-bg;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  p {
+    margin-bottom: 0px;
+  }
+  .data_row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    padding: 5px 10px;
+  }
+  .data_value {
+    font-weight: 700;
+  }
+  .last_row {
+    margin-top: 40px;
+    background-color: $color-light-blue-bg;
+  }
+}
