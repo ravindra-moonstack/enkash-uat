@@ -27,7 +27,7 @@ const page = () => {
       </div>
 
       <div className={styles.second_row}>
-        <div className={styles.second_container}>
+        <div className={` mx-auto ${styles.second_container}`}>
           <div className={styles.text_container}>
             <div className={`${styles.title_container} d-flex`}>
               <div className={styles.icon_div}>

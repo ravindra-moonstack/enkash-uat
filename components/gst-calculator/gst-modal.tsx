@@ -64,9 +64,10 @@ const GSTBreakDownModal: React.FC<ModalProps> = ({
           <div className={styles.breakdown_modal}>
             <div>
               <div className={styles.switch}>
+                <p>State of Billing is same as the State of Production</p>
                 <Form.Check
                   type="switch"
-                  label="State of Billing is same as the State of Production"
+                  label=""
                   checked={billingStateSameAsProduction}
                   onChange={handleSwitchChange}
                 />

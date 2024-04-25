@@ -7,7 +7,8 @@
   padding-left: 25px;
   padding-right: 25px;
   padding-top: 36px;
-  padding-bottom: 36px;
+  padding-bottom: 0px;
+  max-width: 1250px;
   @include for-laptops {
     height: fit-content;
   }
@@ -53,6 +54,7 @@
   .form_label {
     color: $color-white;
     font-size: 12px;
+    margin-bottom: 0px;
     // Your custom styles for form labels
   }
 
@@ -102,7 +104,7 @@
   .radio_buttons {
     display: flex;
     gap: 40px;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 

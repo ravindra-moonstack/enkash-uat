@@ -13,7 +13,7 @@ import GSTBreakDownModal from "./gst-modal";
 const GSTCalculator = () => {
   const [userType, setUserType] = useState<string>("");
   const [amount, setAmount] = useState<number>(0);
-  const [taxRate, setTaxRate] = useState<number>(0);
+  const [taxRate, setTaxRate] = useState<number>(8);
   const [profitRatio, setProfitRatio] = useState<number>(0);
   const [isBusiness, setIsBusiness] = useState<boolean>(false);
   const [inclusiveGST, setInclusiveGST] = useState<boolean>(false);
@@ -83,7 +83,7 @@ const GSTCalculator = () => {
 
   return (
     <div>
-      <div className={`${styles.container} row color-white`}>
+      <div className={`${styles.container} row color-white mx-auto`}>
         <div className="col-md-5 col-12 d-flex flex-column">
           <div className="mb-4 d-flex flex-column">
             <Heading
@@ -160,10 +160,11 @@ const GSTCalculator = () => {
                     value={taxRate}
                     onChange={(e) => setTaxRate(parseInt(e.target.value))}
                   >
-                    <option value={8}>8%</option>
+                    <option value={3}>3%</option>
+                    <option value={5}>5%</option>
                     <option value={12}>12%</option>
                     <option value={18}>18%</option>
-                    <option value={24}>24%</option>
+                    <option value={28}>28%</option>
                   </select>
                 </div>
 
@@ -232,7 +233,9 @@ const GSTCalculator = () => {
             </div>
           </div>
         </div>
-        <div className={`col-md-6 col-12 ${styles.tax_results_container}`}>
+        <div
+          className={`col-md-6 col-12 ${styles.tax_results_container} mx-auto`}
+        >
           <div className={styles.tax_results}>
             {isBusiness ? (
               <div className={styles.business_data_div}>
