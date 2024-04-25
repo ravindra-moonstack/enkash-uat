@@ -45,11 +45,11 @@ export const metadata: Metadata = {
 };
 
 const boltPage = () => {
-  const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
-
+  const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
+  const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="Bolt" />
+      <Header utmSource={halfBoltUTM} />
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
@@ -631,7 +631,7 @@ const boltPage = () => {
           }
         />
       </div>
-      <Footer utmSource="Bolt" />
+      <Footer utmSource={halfBoltUTM} />
     </div>
   );
 };
