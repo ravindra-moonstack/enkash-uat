@@ -1,14 +1,10 @@
 "use client";
 
-import { space } from "@/common/constant";
 import Heading from "../heading/heading";
 import styles from "./gst-calculator.module.scss";
-import Image from "next/image";
-import { gstCalculatorBG } from "@/app/gst-calculator";
 import { useState } from "react";
-import Link from "next/link";
-import arrowRight from "./img/right-arrow-gst.svg";
 import GSTBreakDownModal from "./gst-modal";
+import { space } from "@/common/constant";
 
 const GSTCalculator = () => {
   const [userType, setUserType] = useState<string>("");
@@ -84,21 +80,21 @@ const GSTCalculator = () => {
   return (
     <div>
       <div className={`${styles.container} row color-white mx-auto`}>
-        <div className="col-md-5 col-12 d-flex flex-column">
-          <div className="mb-4 d-flex flex-column">
+        <div className="col-md-8">
+          <div className="mb-4 d-flex flex-column flex-md-row">
             <Heading
-              title="Free Indian Online"
+              title={`Free Indian Online${space}`}
               color="rainy-blue"
-              size="h3"
+              size="h2"
               weight="7"
             />
-            <Heading title="GST Calculator" size="h3" weight="7" />
+            <Heading title="GST Calculator" size="h2" weight="7" />
           </div>
           <div className=" mobile-only">
             <Heading
               title="Whether you're a business owner or an individual, calculate your GST instantly with this easy GST calculator online"
               color="white"
-              size="h0"
+              size="h6"
               weight="5"
             />
           </div>
@@ -110,6 +106,8 @@ const GSTCalculator = () => {
               weight="5"
             />
           </div>
+        </div>
+        <div className="col-md-5 col-12 d-flex flex-column">
           <div className={styles.calculator}>
             <div className={`container ${styles.container_calc}`}>
               <form onSubmit={handleSubmit}>
