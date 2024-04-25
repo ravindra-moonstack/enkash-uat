@@ -81,9 +81,9 @@ const taxPayments = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="GST Calculator"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=payables"
+                url="/gst-calculator"
               />
             </div>
             <div>
