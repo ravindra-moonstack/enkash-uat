@@ -55,12 +55,12 @@ const page = () => {
               <ul>
                 <li>
                   <strong>Central Goods and Services Tax (CGST):</strong> This
-                  applies to sales of goods and services within a single state.
+                  applies to sales of goods and services within the same state.
                   The central government collects this tax.
                 </li>
                 <li>
                   <strong>State Goods and Services Tax (SGST):</strong> This
-                  applies to sales of goods and services within a single state.
+                  applies to sales of goods and services within the same state.
                   The state government where the sale happens collects this tax.
                 </li>
                 <li>
@@ -125,7 +125,7 @@ const page = () => {
                   <ul>
                     <li>
                       <strong>GST</strong> Amount = (Taxable Value x{" "}
-                      <strong>GST</strong> Rate) / 100
+                      <strong>GST Rate %</strong>)
                     </li>
                     <li>
                       Total Price = Taxable Value + <strong>GST</strong> Amount
@@ -161,8 +161,8 @@ const page = () => {
               quick guide:
               <ul className="mt-3">
                 <li>
-                  If you are a buyer/individual, in the designated field, enter
-                  the base price of your good or service
+                  If you are a Proprietor/Business, in the designated field,
+                  enter the base price of your good or service
                 </li>
                 <li>
                   Choose the applicable GST rate from the dropdown menu (e.g.,
@@ -173,9 +173,7 @@ const page = () => {
                   exclusive of GST
                 </li>
                 <li>
-                  For business owners, select “I am a business”, follow the
-                  above given instructions plus add the profit ratio if you want
-                  to see the profit amount.
+                  Add the profit ratio if you want to see the profit amount.
                 </li>
               </ul>
               Our GST calculator will instantly display the total GST payable on
