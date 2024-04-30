@@ -166,25 +166,21 @@ const GSTCalculator = () => {
                   </select>
                 </div>
 
-                {userType === "business" && (
-                  <div className={`mb-3 ${styles.mb3}`}>
-                    <label
-                      htmlFor="profitRatio"
-                      className={`form-label ${styles.form_label}`}
-                    >
-                      Profit Ratio (%)
-                    </label>
-                    <input
-                      type="number"
-                      className={`form-control ${styles.form_control}`}
-                      id="profitRatio"
-                      value={profitRatio}
-                      onChange={(e) =>
-                        setProfitRatio(parseFloat(e.target.value))
-                      }
-                    />
-                  </div>
-                )}
+                <div className={`mb-3 ${styles.mb3}`}>
+                  <label
+                    htmlFor="profitRatio"
+                    className={`form-label ${styles.form_label}`}
+                  >
+                    Profit Ratio (%)
+                  </label>
+                  <input
+                    type="number"
+                    className={`form-control ${styles.form_control}`}
+                    id="profitRatio"
+                    value={profitRatio}
+                    onChange={(e) => setProfitRatio(parseFloat(e.target.value))}
+                  />
+                </div>
 
                 <div className={`mb-3 d-flex ${styles.radio_buttons}`}>
                   <div className="form-check">
@@ -310,6 +306,13 @@ const GSTCalculator = () => {
                   <div>
                     {" "}
                     <strong>₹ {sgstAmount}</strong>
+                  </div>
+                </div>
+                <div className={styles.data_item}>
+                  <div>Profit Amount</div>
+                  <div>
+                    {" "}
+                    <strong>₹ {totalProfit}</strong>
                   </div>
                 </div>
               </div>

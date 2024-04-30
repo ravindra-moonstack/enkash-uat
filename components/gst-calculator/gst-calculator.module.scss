@@ -160,10 +160,10 @@
     gap: 15px;
     overflow: visible;
     flex-wrap: wrap;
-    padding-top: 80px;
+    padding-top: 60px;
     @include for-laptops {
       gap: 20px;
-      padding-top: 125px;
+      padding-top: 100px;
     }
   }
 
