@@ -46,7 +46,7 @@
 }
 
 .footer_padding {
-  padding: 16px 32px;
+  padding: 30px 32px 16px;
   @include for-laptops {
     padding: 16px 64px;
   }
@@ -108,10 +108,14 @@
 }
 
 .copyright {
-  font-size: 11px;
-  padding-top: 45px;
+  font-size: 9px;
+  padding-top: 0px;
   padding-bottom: 16px;
   text-align: right;
+  @include for-laptops {
+    padding-top: 45px;
+    font-size: 11px;
+  }
 }
 
 .footer_location_pin {
@@ -120,10 +124,12 @@
 
 .disclaimer {
   text-align: left;
-  font-size: 11px;
-  padding: 32px 0;
+  font-size: 9px;
+  padding: 32px 0 10px;
+
   @include for-laptops {
     padding: 48px 0;
+    font-size: 11px;
   }
 }
 
@@ -150,10 +156,11 @@
   }
 
   .sub_title {
-    font-size: 12px;
+    font-size: 9px;
     margin-bottom: 20px;
     @include for-laptops {
       margin-bottom: 0;
+      font-size: 12px;
     }
   }
 
@@ -270,32 +277,58 @@
       margin-bottom: 20px;
       border-radius: 10px 0 0 10px;
       background-color: #223392;
+      @include for-laptops {
+        border-radius: 0px;
+        border-radius: 10px 0 0 10px;
+      }
     }
     .info_header_two {
       width: 100%;
       padding: 7px 0px 1px 30px;
       margin-bottom: 20px;
       background-color: #223392;
+      border-radius: 0 10px 10px 0;
+      @include for-laptops {
+        border-radius: 0px;
+        border-radius: 0px 0px 0px 0px;
+      }
     }
     .info_header_three {
-      padding: 7px 0px 1px;
-      margin-bottom: 20px;
-      border-radius: 0px 10px 10px 0px;
+      padding: 10px 0px 1px;
+      margin-bottom: -10px;
+      border-radius: 10px 10px 0 0;
       background-color: #223392;
+      text-align: center;
+      @include for-laptops {
+        padding: 7px 0px 1px;
+        margin-bottom: 20px;
+        border-radius: 0px 10px 10px 0px;
+        text-align: left;
+      }
     }
 
     .info_body_one {
-      padding-left: 50px;
-      padding-top: 10px;
+      padding-left: 25px;
+      padding-top: 5px;
+      @include for-laptops {
+        padding-left: 50px;
+        padding-top: 10px;
+      }
       .soc_logo {
         border-radius: 5px;
         overflow: hidden;
-        height: 50px;
+        height: 35px;
+        @include for-laptops {
+          height: 50px;
+        }
       }
       .pci_logo {
         border-radius: 5px;
         overflow: hidden;
-        height: 50px;
+        height: 35px;
+        @include for-laptops {
+          height: 50px;
+        }
       }
       img {
         height: 100%;
@@ -309,11 +342,30 @@
   }
   .info_div_three {
     width: 100%;
+    margin-top: 30px;
+
+    border-radius: 10px 10px 0 0;
+    background-color: #223392;
+
+    @include for-laptops {
+      margin-top: 0px;
+      background-color: transparent;
+    }
     .info_body_three {
       padding-right: 50px;
-      width: 50px;
+      padding-bottom: 15px;
+      width: 192px;
       display: flex;
       justify-content: flex-end;
+      @include for-laptops {
+        width: 50px;
+      }
     }
+  }
+}
+
+.location_mobile {
+  p {
+    margin: 0;
   }
 }

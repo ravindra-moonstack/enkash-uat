@@ -464,8 +464,12 @@ const FooterV2 = ({ utmSource = "" }: any) => {
           </div>
         </div>
 
-        <div className={`d-flex ${styles.info_container}`}>
-          <div className={`col-3 ${styles.info_div} ${styles.info_div_one}`}>
+        <div
+          className={`d-flex flex-wrap flex-md-nowrap ${styles.info_container}`}
+        >
+          <div
+            className={`col-6 col-md-3 ${styles.info_div} ${styles.info_div_one}`}
+          >
             <div className={` ${styles.info_header_one}`}>
               <h4 className={`${styles.title}`}>Certification</h4>
             </div>
@@ -482,8 +486,10 @@ const FooterV2 = ({ utmSource = "" }: any) => {
             </div>
           </div>
 
-          <div className={` col-7 ${styles.info_div} ${styles.info_div_two}`}>
-            <div className={`col-3 ${styles.info_header_two}`}>
+          <div
+            className={`col-6 col-md-7 ${styles.info_div} ${styles.info_div_two}`}
+          >
+            <div className={`col-6 col-md-3 ${styles.info_header_two}`}>
               <h4 className={`${styles.title}`}>Help and Support</h4>
             </div>
             <div className={`d-flex ${styles.info_body}`}>
@@ -516,11 +522,15 @@ const FooterV2 = ({ utmSource = "" }: any) => {
             </div>
           </div>
 
-          <div className={` col-2 ${styles.info_div} ${styles.info_div_three}`}>
+          <div
+            className={`col-12 col-md-2 ${styles.info_div} ${styles.info_div_three}`}
+          >
             <div className={` ${styles.info_header_three}`}>
               <h4 className={`${styles.title}`}>CONNECT US ON</h4>
             </div>
-            <div className={`d-flex ${styles.info_body}`}>
+            <div
+              className={`d-flex justify-content-center justify-content-md-start ${styles.info_body}`}
+            >
               <div className={` ${styles.info_body_three}`}>
                 <div
                   className={`d-flex justify-content-between pt-3 ${styles.social_icons_row}`}
@@ -579,8 +589,10 @@ const FooterV2 = ({ utmSource = "" }: any) => {
           </div>
         </div>
 
-        <div className="d-flex">
-          <div className={`col-8 text-left color-white ${styles.disclaimer}`}>
+        <div className="d-flex flex-wrap flex-md-nowrap">
+          <div
+            className={`col-12 col-md-8 text-left color-white ${styles.disclaimer}`}
+          >
             Corporate cards, payments, or other related services are provided by
             RBI-licensed banks and/ or in accordance with RBI regulations and/
             or RBI compliance maintained by banks & regulated entities. EnKash
@@ -590,26 +602,47 @@ const FooterV2 = ({ utmSource = "" }: any) => {
               PA (Online) authorization
             </span>
           </div>
-          <div className={`col-4 color-white ${styles.copyright}`}>
+          <div className={`col-12 col-md-4 color-white ${styles.copyright}`}>
             Copyright © 2024 | Nehat Tech Solutions Pvt. Ltd. All right
             reserved.
           </div>
         </div>
       </div>
 
+      <div className="d-block d-md-none">
+        <div
+          className={`d-flex justify-content-between mx-5 mb-4 ${styles.location_mobile} `}
+        >
+          {" "}
+          <Image
+            className={styles.footer_location_pin}
+            src={locationPin}
+            alt="Enkash Office Location"
+            width={20}
+          />
+          <p>Gurgaon</p>
+          <div className="vr"></div>
+          <p>Mumbai</p>
+          <div className="vr"></div>
+          <p> Pune</p>
+          <div className="vr"></div>
+          <p>Bengaluru</p>
+        </div>
+      </div>
+
       <div className={styles.locations_row}>
-        <div className="d-flex flex-column me-5 color-white">
-          <div className={styles.main_title}>
+        <div className="d-flex flex-column me-0 me-md-5 color-white">
+          <div className={` ${styles.main_title}`}>
             Olympus™, an EnKash** product, is a licensed online payment
             aggregator authorized by the RBI
           </div>
-          <div className={styles.sub_title}>
+          <div className={`mt-2 ${styles.sub_title}`}>
             **EnKash is a commercial trade name owned by the legal entity, Nehat
             Tech Solutions Pvt. Ltd.
           </div>
         </div>
 
-        <div className="d-flex me-5">
+        <div className="d-none d-md-flex mx-0 me-md-5">
           {" "}
           <Image
             className={styles.footer_location_pin}
