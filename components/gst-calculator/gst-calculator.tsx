@@ -92,7 +92,7 @@ const GSTCalculator = () => {
           </div>
           <div className=" mobile-only">
             <Heading
-              title="Whether you're a business owner or an individual, calculate your GST instantly with this easy GST calculator online"
+              title="Whether you're a business owner or an proprietor, calculate your GST instantly with this easy GST calculator online"
               color="white"
               size="h6"
               weight="5"
@@ -100,7 +100,7 @@ const GSTCalculator = () => {
           </div>
           <div className=" desktop-only">
             <Heading
-              title="Whether you're a business owner or an individual, calculate your GST instantly with this easy GST calculator online"
+              title="Whether you're a business owner or an proprietor, calculate your GST instantly with this easy GST calculator online"
               color="white"
               size="h6"
               weight="5"
@@ -124,7 +124,7 @@ const GSTCalculator = () => {
                     value={userType}
                     onChange={(e) => handleSetUser(e.target.value)}
                   >
-                    <option value="individual">Individual</option>
+                    <option value="individual">Proprietor</option>
                     <option value="business">Business</option>
                   </select>
                 </div>
