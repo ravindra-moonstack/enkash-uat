@@ -462,9 +462,12 @@ const payables = () => {
                 <p>
                   Accounts payable automation means using technology to make
                   business payments, which include vendor payments,{" "}
-                  <Link href="/rental-payment">rental payments</Link> , bill
-                  payments, tax payments, and utility payments. Accounts payable
-                  automation helps make business payments easy and efficient.
+                  <Link href="/olympus/payables/rental-payment">
+                    rental payments
+                  </Link>{" "}
+                  , bill payments, tax payments, and utility payments. Accounts
+                  payable automation helps make business payments easy and
+                  efficient.
                 </p>
               </div>
 
