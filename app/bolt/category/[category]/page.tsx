@@ -87,7 +87,10 @@ const generateVoucherSchema = (voucher: Voucher): string => {
       name: voucher.brandName || "",
     },
     sku: voucher.voucherId,
-    url: `https://www.enkash.com/bolt/voucher/${voucher.voucherId}`,
+    url: `https://www.enkash.com/bolt/voucher/${voucher.name.replaceAll(
+      " ",
+      "-"
+    )}?voucherId=${voucher.voucherId}`,
   };
 
   return `<script type="application/ld+json">${JSON.stringify(
