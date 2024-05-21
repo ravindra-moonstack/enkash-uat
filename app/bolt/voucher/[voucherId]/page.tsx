@@ -25,12 +25,14 @@ type Voucher = {
 
 export function generateMetadata({
   params,
+  searchParams,
 }: {
-  params: { voucherId: string };
+  params: { voucherName?: string };
+  searchParams: { voucherId: string };
 }): Metadata {
-  const voucherId: string = params.voucherId;
-
-  if (!VoucherData[voucherId]) {
+  const voucherId: string = searchParams.voucherId;
+  const voucher: Voucher = VoucherData[voucherId];
+  if (!voucher) {
     return {
       title: `Voucher not found - EnKash`,
       description:
@@ -40,9 +42,6 @@ export function generateMetadata({
       },
     };
   }
-
-  const voucher: Voucher = VoucherData[voucherId];
-
   return {
     title: `${voucher.name} - EnKash`,
     description: `${voucher.description}`,
