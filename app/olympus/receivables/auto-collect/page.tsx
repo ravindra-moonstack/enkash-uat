@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   description:
     "Auto Collect enables you to collect payments from customers via bank transfers (NEFT, RTGS, IMPS ) and UPI. Book Demo Now !!",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/auto-correct",
+    canonical: "https://www.enkash.com/olympus/receivables/auto-collect",
   },
 };
 

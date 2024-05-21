@@ -31,6 +31,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
 }) => {
   //for metadata image url fetch from public
   const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
+  const voucherNameUrl = voucher.name.replaceAll(" ", "-");
   const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
     voucher.name
   )}`;
@@ -54,7 +55,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
           </a>
         ) : (
           <a
-            href={`/bolt/voucher/${voucher.voucherId}`}
+            href={`/bolt/voucher/${voucherNameUrl}?voucherId=${voucher.voucherId}`}
             className={styles.buy_now_button}
           >
             Buy Now
