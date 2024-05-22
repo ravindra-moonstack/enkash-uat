@@ -23,6 +23,8 @@ type Voucher = {
   howToRedeem: string[];
 };
 
+let discountPercentage: null | number = null;
+
 export function generateMetadata({
   params,
   searchParams,
@@ -42,11 +44,30 @@ export function generateMetadata({
       },
     };
   }
+  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucherId}.png`;
   return {
     title: `${voucher.name} - EnKash`,
     description: `${voucher.description}`,
     alternates: {
       canonical: `https://www.enkash.com/bolt/voucher/${voucher.voucherId}`,
+    },
+    openGraph: {
+      title: `${voucher.name} - EnKash`,
+      description: `${discountPercentage}% OFF - ${voucher.description}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200, // Recommended width for Open Graph
+          height: 630, // Recommended height for Open Graph
+          alt: `${voucher.name} image`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${voucher.name} - EnKash`,
+      description: `${voucher.description}`,
+      images: [imageUrl],
     },
   };
 }
@@ -105,7 +126,7 @@ const sanitizeUTM = (utm: string): string => {
   return utm;
 };
 
-const fetchVoucher = async (voucherId: string) => {
+const fetchVoucher = async (voucherId: string): Promise<Voucher | null> => {
   // local voucher
   let localVoucher: Voucher = VoucherData[voucherId];
   let isActive: boolean = false;
@@ -138,6 +159,7 @@ const fetchVoucher = async (voucherId: string) => {
       ) {
         isActive = true;
         localVoucher.discount = parseFloat(product.discount);
+        discountPercentage = parseFloat(product.discount);
       }
     });
 
