@@ -87,15 +87,20 @@ const generateVoucherSchema = (voucher: Voucher): string => {
       name: voucher.brandName || "",
     },
     sku: voucher.voucherId,
-    url: `https://www.enkash.com/bolt/voucher/${voucher.name.replaceAll(
-      " ",
-      "-"
-    )}?voucherId=${voucher.voucherId}`,
+    url: `https://www.enkash.com/${voucherUrlGenerate(voucher.voucherId)}`,
   };
 
   return `<script type="application/ld+json">${JSON.stringify(
     schema
   )}</script>`;
+};
+
+export const voucherUrlGenerate = (voucherId: string): string => {
+  const voucher = VoucherData[voucherId];
+  const url = `bolt/voucher/${voucher.name.replaceAll(" ", "-")}?voucherId=${
+    voucher.voucherId
+  }`;
+  return url;
 };
 
 const fetchVouchers = async (categoryName: string) => {

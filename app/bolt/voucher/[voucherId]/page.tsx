@@ -10,6 +10,7 @@ import { backArrow, zigZagBottom, zigZagTop } from "../..";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
+import { voucherUrlGenerate } from "../../category/[category]/page";
 
 type Voucher = {
   voucherId: string;
@@ -86,10 +87,7 @@ const generateVoucherSchema = (voucher: Voucher): string => {
       name: voucher.brandName || "",
     },
     sku: voucher.voucherId,
-    url: `https://www.enkash.com/bolt/voucher/${voucher.name.replaceAll(
-      " ",
-      "-"
-    )}?voucherId=${voucher.voucherId}`,
+    url: `https://www.enkash.com/${voucherUrlGenerate(voucher.voucherId)}`,
   };
 
   return `<script type="application/ld+json">${JSON.stringify(
