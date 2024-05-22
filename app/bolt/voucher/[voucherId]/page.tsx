@@ -24,8 +24,6 @@ type Voucher = {
   howToRedeem: string[];
 };
 
-let discountPercentage: null | number = null;
-
 export function generateMetadata({
   params,
   searchParams,
@@ -50,11 +48,11 @@ export function generateMetadata({
     title: `${voucher.name} - EnKash`,
     description: `${voucher.description}`,
     alternates: {
-      canonical: `https://www.enkash.com/bolt/voucher/${voucher.voucherId}`,
+      canonical: `https://www.enkash.com/${voucherUrlGenerate(voucherId)}`,
     },
     openGraph: {
       title: `${voucher.name} - EnKash`,
-      description: `${discountPercentage}% OFF - ${voucher.description}`,
+      description: `${voucher.description}`,
       images: [
         {
           url: imageUrl,
@@ -157,7 +155,6 @@ const fetchVoucher = async (voucherId: string): Promise<Voucher | null> => {
       ) {
         isActive = true;
         localVoucher.discount = parseFloat(product.discount);
-        discountPercentage = parseFloat(product.discount);
       }
     });
 
