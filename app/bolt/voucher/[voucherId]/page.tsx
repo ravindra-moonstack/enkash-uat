@@ -10,6 +10,7 @@ import { backArrow, zigZagBottom, zigZagTop } from "../..";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
+import { voucherUrlGenerate } from "../../category/[category]/page";
 
 type Voucher = {
   voucherId: string;
@@ -25,12 +26,14 @@ type Voucher = {
 
 export function generateMetadata({
   params,
+  searchParams,
 }: {
-  params: { voucherId: string };
+  params: { voucherName?: string };
+  searchParams: { voucherId: string };
 }): Metadata {
-  const voucherId: string = params.voucherId;
-
-  if (!VoucherData[voucherId]) {
+  const voucherId: string = searchParams.voucherId;
+  const voucher: Voucher = VoucherData[voucherId];
+  if (!voucher) {
     return {
       title: `Voucher not found - EnKash`,
       description:
@@ -40,14 +43,30 @@ export function generateMetadata({
       },
     };
   }
-
-  const voucher: Voucher = VoucherData[voucherId];
-
+  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucherId}.png`;
   return {
     title: `${voucher.name} - EnKash`,
     description: `${voucher.description}`,
     alternates: {
-      canonical: `https://www.enkash.com/bolt/voucher/${voucher.voucherId}`,
+      canonical: `https://www.enkash.com/${voucherUrlGenerate(voucherId)}`,
+    },
+    openGraph: {
+      title: `${voucher.name} - EnKash`,
+      description: `${voucher.description}`,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200, // Recommended width for Open Graph
+          height: 630, // Recommended height for Open Graph
+          alt: `${voucher.name} image`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${voucher.name} - EnKash`,
+      description: `${voucher.description}`,
+      images: [imageUrl],
     },
   };
 }
@@ -66,10 +85,7 @@ const generateVoucherSchema = (voucher: Voucher): string => {
       name: voucher.brandName || "",
     },
     sku: voucher.voucherId,
-    url: `https://www.enkash.com/bolt/voucher/${voucher.name.replaceAll(
-      " ",
-      "-"
-    )}?voucherId=${voucher.voucherId}`,
+    url: `https://www.enkash.com/${voucherUrlGenerate(voucher.voucherId)}`,
   };
 
   return `<script type="application/ld+json">${JSON.stringify(
@@ -106,7 +122,7 @@ const sanitizeUTM = (utm: string): string => {
   return utm;
 };
 
-const fetchVoucher = async (voucherId: string) => {
+const fetchVoucher = async (voucherId: string): Promise<Voucher | null> => {
   // local voucher
   let localVoucher: Voucher = VoucherData[voucherId];
   let isActive: boolean = false;
