@@ -30,19 +30,19 @@ const TopBannerMobile: React.FC<TopBannerProps> = ({ name = "temp" }) => {
       const timeSinceLastPopup = currentTime - parseInt(lastPopupTimestamp, 10);
 
       //check if last session was within POPUP_INTERVAL_HOURS
-      if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
-        console.log(timeSinceLastPopup + "  >  " + POPUP_INTERVAL_MS);
-        return;
-      }
+      // if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
+      //   console.log(timeSinceLastPopup + "  >  " + POPUP_INTERVAL_MS);
+      //   return;
+      // }
     }
 
     localStorage.setItem("lastBannerTimestamp", currentTime.toString());
     setShowBanner(true);
   }, [POPUP_INTERVAL_HOURS, POPUP_INTERVAL_MS]);
 
-  useEffect(() => {
-    console.log("I changed to " + showBanner);
-  }, [showBanner]);
+  // useEffect(() => {
+  //   console.log("I changed to " + showBanner);
+  // }, [showBanner]);
 
   return (
     <>
