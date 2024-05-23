@@ -1,15 +1,15 @@
 const faqData = [
   {
-    question: "What is EnKash's CFO suite?",
+    question: "What is EnKash's CFO Insights?",
     answer: [
       {
         heading:
-          "EnKash's CFO suite is a comprehensive finance software for CFOs (Chief Financial Officers) designed to automate tasks, make data-backed decisions, and streamline financial processes within their organizations. It provides curated information for controlled and informed decision-making.",
+          "EnKash's CFO Insights is a comprehensive finance software for CFOs (Chief Financial Officers) designed to automate tasks, make data-backed decisions, and streamline financial processes within their organizations. It provides curated information for controlled and informed decision-making.",
       },
     ],
   },
   {
-    question: "What are the key benefits of using EnKash's CFO Suite?",
+    question: "What are the key benefits of using EnKash's CFO Insights?",
     answer: [
       {
         heading: "Improved Efficiency",
@@ -23,7 +23,7 @@ const faqData = [
     ],
   },
   {
-    question: "How can I get started with EnKash's CFO Suite?",
+    question: "How can I get started with EnKash's CFO Insights?",
     answer: [
       {
         heading:
@@ -32,11 +32,11 @@ const faqData = [
     ],
   },
   {
-    question: "Is EnKash's CFO Suite suitable for businesses of all sizes?",
+    question: "Is EnKash's CFO Insights suitable for businesses of all sizes?",
     answer: [
       {
         heading:
-          "Yes, EnKash's CFO Suite offers scalable financial solutions that can adapt to the needs of businesses, whether they are small startups or large enterprises.",
+          "Yes, EnKash's CFO Insights offers scalable financial solutions that can adapt to the needs of businesses, whether they are small startups or large enterprises.",
       },
     ],
   },
