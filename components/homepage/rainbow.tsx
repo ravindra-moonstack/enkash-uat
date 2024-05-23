@@ -153,7 +153,7 @@ const RainbowSection = () => {
         <div className={`col-12 ${styles.description_text}`}>
           <div>
             <Heading
-              title="Simplify business spends and improve cash flow with advanced technology and"
+              title="A unique 360° platform for simplified finances, spends & collections backed by"
               size="h4"
               weight="4"
             />

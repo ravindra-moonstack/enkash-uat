@@ -21,21 +21,21 @@ export const solutions = [
   {
     name: "APIs & Modules",
     description: "Integrate our robust APIs and empower your business",
-    link: "/solutions//apis-modules",
+    link: "/solutions/apis-modules",
   },
 
   {
     name: "Integrations",
     description:
       "Boost efficiency, connectivity, and business agility for growth",
-    link: "/solutions//integrations",
+    link: "/solutions/integrations",
   },
 
   {
-    name: "CFO Suite",
+    name: "CFO Insights",
     description:
       "An extensive finance software designed for CFOs to streamline financial processes",
-    link: "/solutions//cfo-suite",
+    link: "/solutions/cfo-insights",
   },
 
   {

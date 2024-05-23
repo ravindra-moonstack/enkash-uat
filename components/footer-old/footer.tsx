@@ -288,7 +288,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       <Link href="/solutions/integrations/">Integrations</Link>
                     </li>
                     <li>
-                      <Link href="/solutions/cfo-suite/">CFO Suite</Link>
+                      <Link href="/solutions/cfo-insights/">CFO Insights</Link>
                     </li>
                     <li>
                       <Link href="/solutions/instant-card-management/">
