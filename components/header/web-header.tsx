@@ -32,9 +32,13 @@ const WebHeader = ({ utmSource }: props) => {
   const [slidePosition, setSlidePosition] = useState<number | null>(null);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
 
+  // const signupUrl = utmSource
+  //   ? `https://home.enkash.com/signup?utm_source=${utmSource}`
+  //   : "https://home.enkash.com/get-started";
+
   const signupUrl = utmSource
-    ? `https://home.enkash.com/signup?utm_source=${utmSource}`
-    : "https://home.enkash.com/get-started";
+    ? `/sales/?source=home_page?utm_source=${utmSource}`
+    : "/sales/?source=home_page";
 
   useEffect(() => {
     if (itemRef.current) {
