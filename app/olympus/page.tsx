@@ -98,7 +98,7 @@ const olympus = () => {
             <PrimaryButton
               title="EnKash Now"
               theme="blue"
-              url="https://home.enkash.com/signup?utm_source=payables"
+              url="/sales/?source=payables"
             />
             <span className="mx-2"></span>
             <SecondryButton
@@ -458,7 +458,7 @@ const olympus = () => {
             </>
           }
           mainImage={officeImg2}
-          link="https://home.enkash.com/signup?utm_source=payables"
+          link="/sales/?source=payables"
           description="Create accounts in multiple branches and manage payables, receivables, accounting, and expenses with a single interface"
         />
       </div>
@@ -616,7 +616,7 @@ const olympus = () => {
             <PrimaryButton
               title="Get your free account"
               theme="blue"
-              url="https://home.enkash.com/signup?utm_source=payables"
+              url="/sales/?source=payables"
             />
           </div>
         </div>

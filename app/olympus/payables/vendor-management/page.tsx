@@ -94,7 +94,7 @@ const vendorManagement = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=payables"
+                url="/sales/?source=payables"
               />
             </div>
             <div>

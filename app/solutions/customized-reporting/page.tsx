@@ -94,7 +94,7 @@ const customizedReporting = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source="
+                url="/sales/?source="
               />
             </div>
             <div>

@@ -45,9 +45,7 @@ const MobileHeader = ({ utmSource }: props) => {
   const [showBanner, setShowBanner] = useState(true);
 
   const signupUrl =
-    utmSource !== ""
-      ? `https://home.enkash.com/signup?utm_source=${utmSource}`
-      : "https://home.enkash.com/get-started";
+    utmSource !== "" ? `/sales/?source=${utmSource}` : "/sales/?source";
 
   return (
     <div>

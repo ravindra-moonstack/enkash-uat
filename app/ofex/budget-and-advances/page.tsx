@@ -96,7 +96,7 @@ const budgetAndAdvance = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=expense_management"
+                url="/sales/?source=expense_management"
               />
             </div>
             <div>

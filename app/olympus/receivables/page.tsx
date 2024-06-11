@@ -104,7 +104,7 @@ const receivables = () => {
             <PrimaryButton
               title="EnKash Now"
               theme="blue"
-              url="https://home.enkash.com/signup?utm_source=receivables"
+              url="/sales/?source=receivables"
             />
             <span className="mx-2"></span>
             <SecondryButton
@@ -364,7 +364,7 @@ const receivables = () => {
             </>
           }
           mainImage={officeImg}
-          link="https://home.enkash.com/signup?utm_source=receivables"
+          link="/sales/?source=receivables"
           description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
         />
       </div>

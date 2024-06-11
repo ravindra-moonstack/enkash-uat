@@ -177,11 +177,7 @@ const RainbowSection = () => {
         <div className={`col-12 ${styles.button_container}`}>
           <PrimaryButton title="Get Free Demo" url="/sales" theme="blue" />
           <span className="mx-2"></span>
-          <SecondryButton
-            title="Sign Up"
-            url="https://home.enkash.com/signup"
-            iconSize={25}
-          />
+          <SecondryButton title="Sign Up" url="/sales/" iconSize={25} />
         </div>
         <div className={`col-12 ${styles.down_arrow}`}>
           <Image src={threeDownArrow} alt="arrow icon" />

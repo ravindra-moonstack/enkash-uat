@@ -66,11 +66,7 @@ const ProductListView = ({
           <div
             className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
           >
-            <PrimaryButton
-              title="Sign Up"
-              url="https://home.enkash.com/signup"
-              theme="blue"
-            />
+            <PrimaryButton title="Sign Up" url="/sales" theme="blue" />
             <span className="mx-2"></span>
             <div>
               <Link href={signupUrl}>

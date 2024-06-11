@@ -88,7 +88,7 @@ const virtualCard = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=corporate_cards"
+                url="/sales/?source=corporate_cards"
               />
             </div>
             <div>
@@ -478,7 +478,7 @@ const virtualCard = () => {
               <div className="mb-5">
                 <p>
                   You can{" "}
-                  <Link href="https://home.enkash.com/signup" target="_blank">
+                  <Link href="/sales" target="_blank">
                     {" "}
                     sign up on EnKash
                   </Link>{" "}

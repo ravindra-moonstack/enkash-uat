@@ -102,7 +102,7 @@ const employeeRewards = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=Loyalty_lounge"
+                url="/sales/?source=Loyalty_lounge"
               />
             </div>
             <div>

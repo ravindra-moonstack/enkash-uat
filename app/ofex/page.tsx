@@ -86,7 +86,7 @@ const OfEx = () => {
             <PrimaryButton
               title="EnKash Now"
               theme="blue"
-              url="https://home.enkash.com/signup?utm_source=expense_management"
+              url="/sales/?source=expense_management"
             />
             <span className="mx-2"></span>
             <SecondryButton
@@ -345,7 +345,7 @@ const OfEx = () => {
             </>
           }
           mainImage={officeImg}
-          link="https://home.enkash.com/signup?utm_source=expense_management"
+          link="/sales/?source=expense_management"
           description="Gain control over your business spends with a complete overview of all your expenses. Analyze data to create efficient budgets, optimize expenses and increase your savings."
         />
       </div>
