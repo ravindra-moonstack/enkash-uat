@@ -1,6 +1,6 @@
 import Script from "next/script";
 
-const Head = () => {
+const CustomHead = () => {
   return (
     <head>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -66,4 +66,4 @@ const Head = () => {
   );
 };
 
-export default Head;
+export default CustomHead;
