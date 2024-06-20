@@ -87,7 +87,7 @@ const digitalMarketingCard = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=corporate_cards"
+                url="/sales/?source=corporate_cards"
               />
             </div>
             <div>

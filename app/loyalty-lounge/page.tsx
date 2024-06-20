@@ -86,7 +86,7 @@ const loyaltyLounge = () => {
             <PrimaryButton
               title="EnKash Now"
               theme="blue"
-              url="https://home.enkash.com/signup?utm_source=Loyalty_lounge"
+              url="/sales/?source=Loyalty_lounge"
             />
             <span className="mx-2"></span>
             <SecondryButton

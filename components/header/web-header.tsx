@@ -19,6 +19,7 @@ import ProductModal from "./modal/product-modal";
 import ResourcesModal from "./modal/resources-modal";
 import SolutionsModal from "./modal/solutions-modal";
 import TopBannerWeb from "../top-banner/top-banner-web";
+import { usePathname } from "next/navigation";
 
 interface props {
   utmSource?: string;
@@ -31,10 +32,16 @@ const WebHeader = ({ utmSource }: props) => {
   const itemRef = useRef<HTMLLIElement | null>(null);
   const [slidePosition, setSlidePosition] = useState<number | null>(null);
   const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+  // let signupUrl = utmSource
+  //   ? `https://home.enkash.com/signup?utm_source=${utmSource}`
+  //   : "https://home.enkash.com/get-started";
 
-  const signupUrl = utmSource
-    ? `https://home.enkash.com/signup?utm_source=${utmSource}`
-    : "https://home.enkash.com/get-started";
+  let signupUrl = `/sales/?source=${utmSource}`;
+
+  const isHomePage = usePathname();
+  if (isHomePage == "/") {
+    signupUrl = "https://home.enkash.com/get-started";
+  }
 
   useEffect(() => {
     if (itemRef.current) {

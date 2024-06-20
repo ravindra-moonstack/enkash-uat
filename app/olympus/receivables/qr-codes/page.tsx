@@ -96,7 +96,7 @@ const QRCodes = () => {
               <PrimaryButton
                 title="EnKash Now"
                 theme="blue"
-                url="https://home.enkash.com/signup?utm_source=receivables"
+                url="/sales/?source=receivables"
               />
             </div>
             <div>

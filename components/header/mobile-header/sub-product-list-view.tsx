@@ -138,11 +138,7 @@ const SubProductListView = (props: {
         <div
           className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
         >
-          <PrimaryButton
-            title="Sign Up"
-            theme="blue"
-            url="https://home.enkash.com/signup"
-          />
+          <PrimaryButton title="Sign Up" theme="blue" url="/sales/" />
           <span className="mx-2"></span>
           <div>
             <Link href={props.signupUrl}>

@@ -41,10 +41,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
             Spend Smart. Collect Fast. <br />
             <span className="color-equity-blue">Grow More.</span>
           </h2>
-          <Link
-            href={"https://home.enkash.com/signup?utm_source=" + utmSource}
-            target="_blank"
-          >
+          <Link href={"/sales/?source=" + utmSource} target="_blank">
             <PrimaryButton title="Get Started" theme="blue" />
           </Link>
         </div>
