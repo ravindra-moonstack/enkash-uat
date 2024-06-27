@@ -45,7 +45,7 @@ const termConditionPlatform = () => {
                           platform.
                         </p>
                         <p className="mb-3 mt-4">
-                          <strong>General Policy</strong>
+                          <strong>1. General Policy</strong>
                         </p>
                         <p>
                           Brand vouchers purchased on Bolt are issued and
