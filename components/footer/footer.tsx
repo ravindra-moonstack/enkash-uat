@@ -455,6 +455,9 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                       Partner Bank Grievances
                     </Link>
                   </li>
+                  <li>
+                    <Link href="/refund-policy/">Refund Policy</Link>
+                  </li>
                 </ul>
               </div>
             </div>
