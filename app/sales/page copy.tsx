@@ -12,39 +12,7 @@ import {
   emailjs_public_key,
   emailjs_service_id,
   olympusTemplateId,
-  space,
 } from "@/common/constant";
-import { backArrow } from "../bolt";
-import { arrowDown } from "@/components/faq";
-import Image from "next/image";
-
-type Category = {
-  name: string;
-  products: Product[];
-};
-
-type Product = {
-  name: string;
-  icon: any;
-};
-
-// Define our data
-const categoryData: Category[] = [
-  {
-    name: "Expense Management",
-    products: [
-      { name: "Vendor Payment", icon: backArrow },
-      { name: "Bulk Payout", icon: backArrow },
-    ],
-  },
-  {
-    name: "Receivables",
-    products: [
-      { name: "Utility Payment", icon: backArrow },
-      { name: "Payout APIs", icon: backArrow },
-    ],
-  },
-];
 
 const sales = () => {
   //Form Variables
@@ -53,8 +21,6 @@ const sales = () => {
   const [companyEmail, setCompanyEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
-  const [selectedCategory, setSelectedCategory] =
-    useState("Expense Management");
   const [selectedProduct, setSelectedProduct] = useState("none");
   const [selectedAdditionalProduct, setSelectedAdditionalProduct] =
     useState("");
@@ -62,7 +28,6 @@ const sales = () => {
   const [isFormValid, setIsFormValid] = useState(true);
   const [selectedProductValid, setSelectedProductValid] = useState(true);
   const [interestedPG, setInterestedPG] = useState(false);
-  const [isExistingCustomer, setIsExistingCustomer] = useState(false);
   //Url parameters
   let urlParams;
   let source;
@@ -101,11 +66,6 @@ const sales = () => {
     } else {
       setIsFormValid(false);
     }
-  };
-
-  //toggle is existing customer
-  const handleExistingCustomer = () => {
-    setIsExistingCustomer(!isExistingCustomer);
   };
 
   //Email validation
@@ -232,30 +192,7 @@ const sales = () => {
               </div>
             </div>
 
-            {/* second Row */}
-            <div className="d-flex flex-column w-100 mt-4">
-              <div className="d-flex w-40 mt-3 flex-column flex-md-row justify-content-start">
-                <Heading
-                  title="Existing Customer:"
-                  size="h6"
-                  color="black"
-                  weight="5"
-                />
-                <div className="mx-4 mb-m-0">
-                  <label className={styles.switch_toggle_container}>
-                    <input
-                      className={styles.switch_toggle_input}
-                      checked={isExistingCustomer}
-                      onChange={handleExistingCustomer}
-                      type="checkbox"
-                    />
-                    <span className={styles.switch_toggle}></span>
-                  </label>
-                </div>
-              </div>
-            </div>
-
-            {/* third Row */}
+            {/* Second Row */}
             <div className="d-flex flex-column w-100 mt-4">
               <Heading
                 title="What are your company details?"
@@ -291,48 +228,195 @@ const sales = () => {
               </div>
             </div>
 
-            <div>
-              {!isExistingCustomer && (
-                <div className="d-flex flex-column w-100 mt-4">
+            {/* Third Row */}
+            {interestedPG ? (
+              <div>
+                <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
+                  <Heading
+                    title="Receivable solutions you are in interested in:"
+                    size="h6"
+                    color="black"
+                    weight="5"
+                  />
+                  <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
+                    <select
+                      value={selectedProduct}
+                      onChange={(e) => {
+                        setSelectedProduct(e.target.value);
+                        e.target.value === "none"
+                          ? setSelectedProductValid(false)
+                          : setSelectedProductValid(true);
+                      }}
+                      className={`form-select ${
+                        !selectedProductValid ? styles.select_box_error : ""
+                      }`}
+                      required
+                    >
+                      <option value="none">Open this select menu</option>
+                      <option value="Payment Gateway">Payment Gateway</option>
+                      <option value="Payment Links">Payment Links</option>
+                      <option value="Payment Buttons">Payment Buttons</option>
+                      <option value="Payment Page">Payment Page</option>
+                      <option value="Bulk Collect">Bulk Collect</option>
+                      <option value="UPI Payments">UPI Payments</option>
+                      <option value="QR Codes">QR Codes</option>
+                      <option value="Auto Collect">Auto Collect</option>
+                      <option value="Virtual Accounts">Virtual Accounts</option>
+                      <option value="E-Nach">E-Nach</option>
+                      <option value="Subscriptions">Subscriptions</option>
+                      <option value="Reminder Engine">Reminder Engine</option>
+                      <option value="Instant Settlements">
+                        Instant Settlements
+                      </option>
+                      <option value="Invoices">Invoices</option>
+                      <option value="Collection Analytics">
+                        Collection Analytics
+                      </option>
+                      <option value="Auto Reconciliation">
+                        Auto Reconciliation
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <div>
+                <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
                   <Heading
                     title="Primary product you are interested in:"
                     size="h6"
                     color="black"
                     weight="5"
                   />
-                  <div className="d-flex flex-column w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
-                    <div className="d-flex gap-2 mb-4">
-                      {categoryData.map((category) => (
-                        <div
-                          key={category.name}
-                          className={`flex items-center justify-between px-4 py-2 rounded ${
-                            selectedCategory === category.name
-                              ? styles.activeButton
-                              : ""
-                          } ${styles.categoryButton}`}
-                          onClick={() => setSelectedCategory(category.name)}
-                        >
-                          {category.name} {space}v
-                        </div>
-                      ))}
-                    </div>
-                    <div className="d-flex flex-wrap gap-2">
-                      {categoryData
-                        .find((category) => category.name === selectedCategory)
-                        ?.products.map((product) => (
-                          <div
-                            key={product.name}
-                            className={`${styles.product_button} d-flex align-items-center justify-content-center bg-white border border-gray-200 rounded shadow-sm hover:bg-gray-50`}
-                            onClick={() => setSelectedProduct(product.name)}
-                          >
-                            <span>{product.name}</span>
-                          </div>
-                        ))}
-                    </div>
+                  <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
+                    <select
+                      value={selectedProduct}
+                      onChange={(e) => {
+                        setSelectedProduct(e.target.value);
+                        e.target.value === "none"
+                          ? setSelectedProductValid(false)
+                          : setSelectedProductValid(true);
+                      }}
+                      className={`form-select ${
+                        !selectedProductValid ? styles.select_box_error : ""
+                      }`}
+                      required
+                    >
+                      <option value="none">Open this select menu</option>
+                      <option value="Payables">Payables</option>
+                      <option value="Receievables">Receivables</option>
+                      <option value="Ofex">Expense Management</option>
+                      <option value="Corporate Cards">Corporate Cards</option>
+                      <option value="Reward & Offers">Reward & Offers</option>
+                      <option value="Channel Incentive">
+                        Channel Incentive
+                      </option>
+                      <option value="Employee Reward">Employee Reward</option>
+                      <option value="Brand Gift Voucher">
+                        Brand Gift Voucher
+                      </option>
+                    </select>
                   </div>
                 </div>
-              )}
-            </div>
+
+                {/* additional products / receivables (receivables) */}
+                {selectedProduct == "Receievables" ? (
+                  <>
+                    <div className="d-flex flex-column flex-md-row  align-items-md-center w-100 mt-4">
+                      <Heading
+                        title="Receievables products you are interested in:"
+                        size="h6"
+                        color="black"
+                        weight="5"
+                      />
+                      <div className="d-flex w-40 ms-md-3 mt-2 mt-m-0 flex-column flex-md-row justify-content-start">
+                        <select
+                          value={selectedAdditionalProduct}
+                          onChange={(e) =>
+                            setSelectedAdditionalProduct(e.target.value)
+                          }
+                          className="form-select"
+                          required
+                        >
+                          <option value="none">Open this select menu</option>
+                          <option value="Payment Gateway">
+                            Payment Gateway
+                          </option>
+                          <option value="Payment Links">Payment Links</option>
+                          <option value="Payment Buttons">
+                            Payment Buttons
+                          </option>
+                          <option value="Payment Page">Payment Page</option>
+                          <option value="Bulk Collect">Bulk Collect</option>
+                          <option value="UPI Payments">UPI Payments</option>
+                          <option value="QR Codes">QR Codes</option>
+                          <option value="Auto Collect">Auto Collect</option>
+                          <option value="Virtual Accounts">
+                            Virtual Accounts
+                          </option>
+                          <option value="E-Nach">E-Nach</option>
+                          <option value="Subscriptions">Subscriptions</option>
+                          <option value="Reminder Engine">
+                            Reminder Engine
+                          </option>
+                          <option value="Instant Settlements">
+                            Instant Settlements
+                          </option>
+                          <option value="Invoices">Invoices</option>
+                          <option value="Collection Analytics">
+                            Collection Analytics
+                          </option>
+                          <option value="Auto Reconciliation">
+                            Auto Reconciliation
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <div className="d-flex flex-column flex-md-row  align-items-md-center w-100 mt-4">
+                      <Heading
+                        title="Additional products you are interested in:"
+                        size="h6"
+                        color="black"
+                        weight="5"
+                      />
+                      <div className="d-flex w-40 ms-md-3 mt-2 mt-m-0 flex-column flex-md-row justify-content-start">
+                        <select
+                          value={selectedAdditionalProduct}
+                          onChange={(e) =>
+                            setSelectedAdditionalProduct(e.target.value)
+                          }
+                          className="form-select"
+                          required
+                        >
+                          <option value="">Open this select menu</option>
+                          <option value="Payables">Payables</option>
+                          <option value="Receievables">Receivables</option>
+                          <option value="Ofex">Expense Management</option>
+                          <option value="Corporate Cards">
+                            Corporate Cards
+                          </option>
+                          <option value="Reward & Offers">
+                            Reward & Offers
+                          </option>
+                          <option value="Channel Incentive">
+                            Channel Incentive
+                          </option>
+                          <option value="Employee Reward">
+                            Employee Reward
+                          </option>
+                          <option value="Brand Gift Voucher">
+                            Brand Gift Voucher
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
+            )}
 
             {/* Fifth Row (Description) */}
             <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
