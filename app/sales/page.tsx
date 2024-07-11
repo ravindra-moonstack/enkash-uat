@@ -379,11 +379,15 @@ const sales = () => {
                               {category.name}
                             </div>
 
-                            <Image
-                              src={blueArrow}
-                              alt="down-arrow"
-                              className={styles.blue_down_arrow}
-                            />
+                            {category.name !== "Expense Management" && (
+                              <div>
+                                <Image
+                                  src={blueArrow}
+                                  alt="down-arrow"
+                                  className={styles.blue_down_arrow}
+                                />
+                              </div>
+                            )}
                           </div>
                           <div className="d-block d-md-none">
                             {selectedCategory == category.name && (
