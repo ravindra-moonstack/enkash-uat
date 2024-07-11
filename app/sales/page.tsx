@@ -15,8 +15,30 @@ import {
   space,
 } from "@/common/constant";
 import { backArrow } from "../bolt";
-import { arrowDown } from "@/components/faq";
 import Image from "next/image";
+import { blueArrow, corporateCreditCardFilled, prepaidCardFilled } from ".";
+import {
+  billPaymentsFilled,
+  brandVouchersFilled,
+  bulkPayoutFilled,
+  channelIncentiveFilled,
+  digitalMarketingCardFilled,
+  fuelCardFilled,
+  giftCardFilled,
+  mealCardFilled,
+  paymentGatewayFilled,
+  paymentLinksFilled,
+  purchaseCardFilled,
+  qrCodeFilled,
+  rentalPaymentsFilled,
+  rewardsPlatformFilled,
+  saasFilled,
+  taxPaymentFilled,
+  tneFilled,
+  upiPaymentsFilled,
+  vendorPaymentFilled,
+  virtualCardFilled,
+} from "@/components/header";
 
 type Category = {
   name: string;
@@ -31,17 +53,50 @@ type Product = {
 // Define our data
 const categoryData: Category[] = [
   {
-    name: "Expense Management",
+    name: "Payables",
     products: [
-      { name: "Vendor Payment", icon: backArrow },
-      { name: "Bulk Payout", icon: backArrow },
+      { name: "Vendor Payment", icon: vendorPaymentFilled },
+      { name: "Utility Payment", icon: billPaymentsFilled },
+      { name: "Rental Payment", icon: rentalPaymentsFilled },
+      { name: "GST Payment", icon: taxPaymentFilled },
+      { name: "Bulk Payouts", icon: bulkPayoutFilled },
     ],
   },
   {
     name: "Receivables",
     products: [
-      { name: "Utility Payment", icon: backArrow },
-      { name: "Payout APIs", icon: backArrow },
+      { name: "Payment Gateway", icon: paymentGatewayFilled },
+      { name: "Payment Links", icon: paymentLinksFilled },
+      { name: "UPI Payments", icon: upiPaymentsFilled },
+      { name: "QR Code", icon: qrCodeFilled },
+      { name: "APIs", icon: vendorPaymentFilled }, //replace
+    ],
+  },
+  {
+    name: "Corporate Cards",
+    products: [
+      { name: "Corporate Credit Card", icon: corporateCreditCardFilled },
+      { name: "Prepaid Card", icon: prepaidCardFilled },
+      { name: "Virtual Card", icon: virtualCardFilled },
+      { name: "Meal Card", icon: mealCardFilled },
+      { name: "Fuel Card", icon: fuelCardFilled },
+      { name: "Gift Card", icon: giftCardFilled },
+      { name: "T&E Card", icon: tneFilled },
+      { name: "SaaS Card", icon: saasFilled },
+      { name: "Purchase Card", icon: purchaseCardFilled },
+      { name: "Digital Marketing Card", icon: digitalMarketingCardFilled },
+    ],
+  },
+  {
+    name: "Expense Management",
+    products: [],
+  },
+  {
+    name: "Loyalty Lounge",
+    products: [
+      { name: "Brand Vouchers", icon: brandVouchersFilled },
+      { name: "Channel Incentives", icon: channelIncentiveFilled },
+      { name: "Rewards and Recognition", icon: rewardsPlatformFilled },
     ],
   },
 ];
@@ -53,8 +108,7 @@ const sales = () => {
   const [companyEmail, setCompanyEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
-  const [selectedCategory, setSelectedCategory] =
-    useState("Expense Management");
+  const [selectedCategory, setSelectedCategory] = useState("Payables");
   const [selectedProduct, setSelectedProduct] = useState("none");
   const [selectedAdditionalProduct, setSelectedAdditionalProduct] =
     useState("");
@@ -85,7 +139,7 @@ const sales = () => {
   //Submit functionality
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    selectedProduct === "none"
+    selectedProduct === "none" && isExistingCustomer
       ? setSelectedProductValid(false)
       : setSelectedProductValid(true);
 
@@ -94,7 +148,7 @@ const sales = () => {
       isValidEmail(companyEmail) &&
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
-      selectedProduct !== "none"
+      (selectedProduct !== "none" || isExistingCustomer)
     ) {
       setIsFormValid(true);
       sendEmailToEnkash();
@@ -108,6 +162,9 @@ const sales = () => {
     setIsExistingCustomer(!isExistingCustomer);
   };
 
+  useEffect(() => {
+    console.log(selectedProduct);
+  }, [selectedProduct, selectedCategory]);
   //Email validation
   function isValidEmail(val: string): boolean {
     const regEmail: RegExp =
@@ -131,19 +188,22 @@ const sales = () => {
       templateId = olympusTemplateId;
     }
 
-    const templateParams = {
+    let templateParams = {
       name: fullName,
       email: companyEmail,
       phone: mobileNumber,
       company: companyName,
       website: companyWebsite,
-      products: selectedProduct,
-      additional_products: selectedAdditionalProduct,
+      products: selectedCategory,
+      additional_products: selectedProduct,
       query: description,
       source: source,
     };
 
-    console.log(templateParams);
+    if (isExistingCustomer) {
+      templateParams.products = "Existing Customers";
+      templateParams.additional_products = "";
+    }
 
     emailjs.send(emailjs_service_id, templateId, templateParams).then(
       (response) => {
@@ -234,13 +294,15 @@ const sales = () => {
 
             {/* second Row */}
             <div className="d-flex flex-column w-100 mt-4">
-              <div className="d-flex w-40 mt-3 flex-column flex-md-row justify-content-start">
-                <Heading
-                  title="Existing Customer:"
-                  size="h6"
-                  color="black"
-                  weight="5"
-                />
+              <div className="d-flex w-40 mt-3 flex-row justify-content-start">
+                <div className="">
+                  <Heading
+                    title="Existing Customer:"
+                    size="h6"
+                    color="black"
+                    weight="5"
+                  />
+                </div>
                 <div className="mx-4 mb-m-0">
                   <label className={styles.switch_toggle_container}>
                     <input
@@ -301,30 +363,82 @@ const sales = () => {
                     weight="5"
                   />
                   <div className="d-flex flex-column w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
-                    <div className="d-flex gap-2 mb-4">
+                    <div className="d-md-flex gap-2 mb-4 mt-2 flex-wrap flex-md-nowrap">
                       {categoryData.map((category) => (
-                        <div
-                          key={category.name}
-                          className={`flex items-center justify-between px-4 py-2 rounded ${
-                            selectedCategory === category.name
-                              ? styles.activeButton
-                              : ""
-                          } ${styles.categoryButton}`}
-                          onClick={() => setSelectedCategory(category.name)}
-                        >
-                          {category.name} {space}v
+                        <div className="d-flex flex-column my-2 my-md-0">
+                          <div
+                            key={category.name}
+                            className={` py-2 rounded ${
+                              selectedCategory === category.name
+                                ? styles.activeButton
+                                : ""
+                            } ${styles.categoryButton}`}
+                            onClick={() => setSelectedCategory(category.name)}
+                          >
+                            <div className="w-100 d-flex justify-content-center">
+                              {category.name}
+                            </div>
+
+                            <Image
+                              src={blueArrow}
+                              alt="down-arrow"
+                              className={styles.blue_down_arrow}
+                            />
+                          </div>
+                          <div className="d-block d-md-none">
+                            {selectedCategory == category.name && (
+                              <div className="d-flex flex-column justofy-content-center d-md-none flex-wrap gap-2 mt-2">
+                                {categoryData
+                                  .find(
+                                    (category) =>
+                                      category.name === selectedCategory
+                                  )
+                                  ?.products.map((product) => (
+                                    <div
+                                      key={product.name}
+                                      className={`flex items-center justify-between py-2 rounded ${
+                                        selectedProduct === product.name
+                                          ? styles.activeButton
+                                          : ""
+                                      } ${styles.product_button} ${
+                                        styles.product_button_mobile
+                                      }`}
+                                      onClick={() =>
+                                        setSelectedProduct(product.name)
+                                      }
+                                    >
+                                      <div className={styles.product_icon}>
+                                        <Image
+                                          src={product.icon}
+                                          alt={product.name}
+                                        />
+                                      </div>
+                                      <span>{product.name}</span>
+                                    </div>
+                                  ))}
+                              </div>
+                            )}
+                          </div>
                         </div>
                       ))}
                     </div>
-                    <div className="d-flex flex-wrap gap-2">
+                    <div className="d-none d-md-flex flex-wrap gap-2 mt-2">
                       {categoryData
                         .find((category) => category.name === selectedCategory)
                         ?.products.map((product) => (
                           <div
                             key={product.name}
-                            className={`${styles.product_button} d-flex align-items-center justify-content-center bg-white border border-gray-200 rounded shadow-sm hover:bg-gray-50`}
+                            className={`flex items-center justify-between py-2 rounded ${
+                              selectedProduct === product.name
+                                ? styles.activeButton
+                                : ""
+                            } ${styles.product_button}`}
                             onClick={() => setSelectedProduct(product.name)}
                           >
+                            <div className={styles.product_icon}>
+                              <Image src={product.icon} alt={product.name} />
+                            </div>
+
                             <span>{product.name}</span>
                           </div>
                         ))}
