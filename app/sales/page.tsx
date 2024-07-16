@@ -172,14 +172,20 @@ const sales = () => {
     setIsExistingCustomer(!isExistingCustomer);
   };
 
-  useEffect(() => {
-    console.log(selectedProduct);
-  }, [selectedProduct, selectedCategory]);
   //Email validation
   function isValidEmail(val: string): boolean {
     const regEmail: RegExp =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regEmail.test(val);
+  }
+
+  function isValidWebsite(val : string) : boolean {
+    if(!val){
+      return true;
+    }
+    const regWebsite: RegExp = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:[0-9]{1,5})?(\/[^\s]*)?$/i;
+    console.log(val , regWebsite.test(val));
+    return regWebsite.test(val);
   }
 
   function hasOlympusPrefix(string: string | null) {
@@ -359,6 +365,11 @@ const sales = () => {
                     className="form-control"
                     placeholder="Company Website"
                   />
+                  {!isFormValid && !isValidWebsite(companyWebsite) && (companyWebsite.length > 0) && (
+                    <span className={`${styles.danger} text-danger`}>
+                      Invalid Company website
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
@@ -373,11 +384,11 @@ const sales = () => {
                     weight="5"
                   />
                   <div className="d-flex flex-column w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
-                    <div className="d-md-flex gap-2 mb-4 mt-2 flex-wrap flex-md-nowrap">
-                      {categoryData.map((category) => (
+                    <div className="d-md-flex gap-2 mb-4 mt-2 flex-wrap">
+                      {categoryData.map((category , index) => (
                         <div className="d-flex flex-column my-2 my-md-0">
                           <div
-                            key={category.name}
+                            key={index}
                             className={` py-2 rounded ${
                               selectedCategory === category.name
                                 ? styles.activeButton
@@ -407,9 +418,9 @@ const sales = () => {
                                     (category) =>
                                       category.name === selectedCategory
                                   )
-                                  ?.products.map((product) => (
+                                  ?.products.map((product , index) => (
                                     <div
-                                      key={product.name}
+                                      key={index}
                                       className={`flex items-center justify-between py-2 rounded ${
                                         selectedProduct === product.name
                                           ? styles.activeButton
@@ -439,9 +450,9 @@ const sales = () => {
                     <div className="d-none d-md-flex flex-wrap gap-2 mt-2">
                       {categoryData
                         .find((category) => category.name === selectedCategory)
-                        ?.products.map((product) => (
+                        ?.products.map((product , index) => (
                           <div
-                            key={product.name}
+                            key={index}
                             className={`flex items-center justify-between py-2 rounded ${
                               selectedProduct === product.name
                                 ? styles.activeButton
@@ -486,7 +497,7 @@ const sales = () => {
               className="d-flex align-items-center w-100 mt-4"
               onClick={handleSubmit}
             >
-              <PrimaryButton title="Submit" theme="blue" />
+              <PrimaryButton title="Submit" theme="blue" isDisabled={!isFormValid} />
             </div>
           </form>
         </div>
