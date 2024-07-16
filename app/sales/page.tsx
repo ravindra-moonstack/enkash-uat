@@ -18,14 +18,18 @@ import { backArrow } from "../bolt";
 import Image from "next/image";
 import { blueArrow, corporateCreditCardFilled, prepaidCardFilled } from ".";
 import {
+  autoCollectFilled,
   billPaymentsFilled,
   brandVouchersFilled,
+  bulkCollectFilled,
   bulkPayoutFilled,
   channelIncentiveFilled,
+  customizedPaymentFilled,
   digitalMarketingCardFilled,
   fuelCardFilled,
   giftCardFilled,
   mealCardFilled,
+  paymentButtonFilled,
   paymentGatewayFilled,
   paymentLinksFilled,
   purchaseCardFilled,
@@ -67,8 +71,13 @@ const categoryData: Category[] = [
     products: [
       { name: "Payment Gateway", icon: paymentGatewayFilled },
       { name: "Payment Links", icon: paymentLinksFilled },
-      { name: "UPI Payments", icon: upiPaymentsFilled },
       { name: "QR Code", icon: qrCodeFilled },
+      { name: "UPI Payments", icon: upiPaymentsFilled },
+      { name: "Payment Button" , icon : paymentButtonFilled},
+      { name: "Payment Page" , icon : customizedPaymentFilled },
+      { name: "Bulk Collect" , icon : bulkCollectFilled },
+      { name: "Auto Collect" , icon : autoCollectFilled},
+      { name: "Virtual Account", icon : autoCollectFilled},
       { name: "APIs", icon: vendorPaymentFilled }, //replace
     ],
   },
@@ -94,9 +103,10 @@ const categoryData: Category[] = [
   {
     name: "Loyalty Lounge",
     products: [
+      { name: "Gift Crad", icon: giftCardFilled},
       { name: "Brand Vouchers", icon: brandVouchersFilled },
       { name: "Channel Incentives", icon: channelIncentiveFilled },
-      { name: "Rewards and Recognition", icon: rewardsPlatformFilled },
+      { name: "Employee Rewards", icon: rewardsPlatformFilled },
     ],
   },
 ];
