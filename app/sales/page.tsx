@@ -12,7 +12,104 @@ import {
   emailjs_public_key,
   emailjs_service_id,
   olympusTemplateId,
+  space,
 } from "@/common/constant";
+import { backArrow } from "../bolt";
+import Image from "next/image";
+import { blueArrow, corporateCreditCardFilled, prepaidCardFilled } from ".";
+import {
+  autoCollectFilled,
+  billPaymentsFilled,
+  brandVouchersFilled,
+  bulkCollectFilled,
+  bulkPayoutFilled,
+  channelIncentiveFilled,
+  customizedPaymentFilled,
+  digitalMarketingCardFilled,
+  fuelCardFilled,
+  giftCardFilled,
+  mealCardFilled,
+  paymentButtonFilled,
+  paymentGatewayFilled,
+  paymentLinksFilled,
+  purchaseCardFilled,
+  qrCodeFilled,
+  rentalPaymentsFilled,
+  rewardsPlatformFilled,
+  saasFilled,
+  taxPaymentFilled,
+  tneFilled,
+  upiPaymentsFilled,
+  vendorPaymentFilled,
+  virtualCardFilled,
+} from "@/components/header";
+
+type Category = {
+  name: string;
+  products: Product[];
+};
+
+type Product = {
+  name: string;
+  icon: any;
+};
+
+// Define our data
+const categoryData: Category[] = [
+  {
+    name: "Payables",
+    products: [
+      { name: "Vendor Payment", icon: vendorPaymentFilled },
+      { name: "Utility Payment", icon: billPaymentsFilled },
+      { name: "Rental Payment", icon: rentalPaymentsFilled },
+      { name: "GST Payment", icon: taxPaymentFilled },
+      { name: "Bulk Payouts", icon: bulkPayoutFilled },
+    ],
+  },
+  {
+    name: "Receivables",
+    products: [
+      { name: "Payment Gateway", icon: paymentGatewayFilled },
+      { name: "Payment Links", icon: paymentLinksFilled },
+      { name: "QR Code", icon: qrCodeFilled },
+      { name: "UPI Payments", icon: upiPaymentsFilled },
+      { name: "Payment Button" , icon : paymentButtonFilled},
+      { name: "Payment Page" , icon : customizedPaymentFilled },
+      { name: "Bulk Collect" , icon : bulkCollectFilled },
+      { name: "Auto Collect" , icon : autoCollectFilled},
+      { name: "Virtual Account", icon : autoCollectFilled},
+      { name: "APIs", icon: vendorPaymentFilled }, //replace
+    ],
+  },
+  {
+    name: "Corporate Cards",
+    products: [
+      { name: "Corporate Credit Card", icon: corporateCreditCardFilled },
+      { name: "Prepaid Card", icon: prepaidCardFilled },
+      { name: "Virtual Card", icon: virtualCardFilled },
+      { name: "Meal Card", icon: mealCardFilled },
+      { name: "Fuel Card", icon: fuelCardFilled },
+      { name: "Gift Card", icon: giftCardFilled },
+      { name: "T&E Card", icon: tneFilled },
+      { name: "SaaS Card", icon: saasFilled },
+      { name: "Purchase Card", icon: purchaseCardFilled },
+      { name: "Digital Marketing Card", icon: digitalMarketingCardFilled },
+    ],
+  },
+  {
+    name: "Expense Management",
+    products: [],
+  },
+  {
+    name: "Loyalty Lounge",
+    products: [
+      { name: "Gift Crad", icon: giftCardFilled},
+      { name: "Brand Vouchers", icon: brandVouchersFilled },
+      { name: "Channel Incentives", icon: channelIncentiveFilled },
+      { name: "Employee Rewards", icon: rewardsPlatformFilled },
+    ],
+  },
+];
 
 const sales = () => {
   //Form Variables
@@ -21,6 +118,7 @@ const sales = () => {
   const [companyEmail, setCompanyEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("Payables");
   const [selectedProduct, setSelectedProduct] = useState("none");
   const [selectedAdditionalProduct, setSelectedAdditionalProduct] =
     useState("");
@@ -28,6 +126,7 @@ const sales = () => {
   const [isFormValid, setIsFormValid] = useState(true);
   const [selectedProductValid, setSelectedProductValid] = useState(true);
   const [interestedPG, setInterestedPG] = useState(false);
+  const [isExistingCustomer, setIsExistingCustomer] = useState(false);
   //Url parameters
   let urlParams;
   let source;
@@ -50,7 +149,7 @@ const sales = () => {
   //Submit functionality
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    selectedProduct === "none"
+    selectedProduct === "none" && isExistingCustomer
       ? setSelectedProductValid(false)
       : setSelectedProductValid(true);
 
@@ -59,7 +158,7 @@ const sales = () => {
       isValidEmail(companyEmail) &&
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
-      selectedProduct !== "none"
+      (selectedProduct !== "none" || isExistingCustomer)
     ) {
       setIsFormValid(true);
       sendEmailToEnkash();
@@ -68,11 +167,25 @@ const sales = () => {
     }
   };
 
+  //toggle is existing customer
+  const handleExistingCustomer = () => {
+    setIsExistingCustomer(!isExistingCustomer);
+  };
+
   //Email validation
   function isValidEmail(val: string): boolean {
     const regEmail: RegExp =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return regEmail.test(val);
+  }
+
+  function isValidWebsite(val : string) : boolean {
+    if(!val){
+      return true;
+    }
+    const regWebsite: RegExp = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:[0-9]{1,5})?(\/[^\s]*)?$/i;
+    console.log(val , regWebsite.test(val));
+    return regWebsite.test(val);
   }
 
   function hasOlympusPrefix(string: string | null) {
@@ -91,19 +204,22 @@ const sales = () => {
       templateId = olympusTemplateId;
     }
 
-    const templateParams = {
+    let templateParams = {
       name: fullName,
       email: companyEmail,
       phone: mobileNumber,
       company: companyName,
       website: companyWebsite,
-      products: selectedProduct,
-      additional_products: selectedAdditionalProduct,
+      products: selectedCategory,
+      additional_products: selectedProduct,
       query: description,
       source: source,
     };
 
-    console.log(templateParams);
+    if (isExistingCustomer) {
+      templateParams.products = "Existing Customers";
+      templateParams.additional_products = "";
+    }
 
     emailjs.send(emailjs_service_id, templateId, templateParams).then(
       (response) => {
@@ -192,7 +308,32 @@ const sales = () => {
               </div>
             </div>
 
-            {/* Second Row */}
+            {/* second Row */}
+            <div className="d-flex flex-column w-100 mt-4">
+              <div className="d-flex w-40 mt-3 flex-row justify-content-start">
+                <div className="">
+                  <Heading
+                    title="Existing Customer:"
+                    size="h6"
+                    color="black"
+                    weight="5"
+                  />
+                </div>
+                <div className="mx-4 mb-m-0">
+                  <label className={styles.switch_toggle_container}>
+                    <input
+                      className={styles.switch_toggle_input}
+                      checked={isExistingCustomer}
+                      onChange={handleExistingCustomer}
+                      type="checkbox"
+                    />
+                    <span className={styles.switch_toggle}></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            {/* third Row */}
             <div className="d-flex flex-column w-100 mt-4">
               <Heading
                 title="What are your company details?"
@@ -224,199 +365,113 @@ const sales = () => {
                     className="form-control"
                     placeholder="Company Website"
                   />
+                  {!isFormValid && !isValidWebsite(companyWebsite) && (companyWebsite.length > 0) && (
+                    <span className={`${styles.danger} text-danger`}>
+                      Invalid Company website
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
 
-            {/* Third Row */}
-            {interestedPG ? (
-              <div>
-                <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
-                  <Heading
-                    title="Receivable solutions you are in interested in:"
-                    size="h6"
-                    color="black"
-                    weight="5"
-                  />
-                  <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
-                    <select
-                      value={selectedProduct}
-                      onChange={(e) => {
-                        setSelectedProduct(e.target.value);
-                        e.target.value === "none"
-                          ? setSelectedProductValid(false)
-                          : setSelectedProductValid(true);
-                      }}
-                      className={`form-select ${
-                        !selectedProductValid ? styles.select_box_error : ""
-                      }`}
-                      required
-                    >
-                      <option value="none">Open this select menu</option>
-                      <option value="Payment Gateway">Payment Gateway</option>
-                      <option value="Payment Links">Payment Links</option>
-                      <option value="Payment Buttons">Payment Buttons</option>
-                      <option value="Payment Page">Payment Page</option>
-                      <option value="Bulk Collect">Bulk Collect</option>
-                      <option value="UPI Payments">UPI Payments</option>
-                      <option value="QR Codes">QR Codes</option>
-                      <option value="Auto Collect">Auto Collect</option>
-                      <option value="Virtual Accounts">Virtual Accounts</option>
-                      <option value="E-Nach">E-Nach</option>
-                      <option value="Subscriptions">Subscriptions</option>
-                      <option value="Reminder Engine">Reminder Engine</option>
-                      <option value="Instant Settlements">
-                        Instant Settlements
-                      </option>
-                      <option value="Invoices">Invoices</option>
-                      <option value="Collection Analytics">
-                        Collection Analytics
-                      </option>
-                      <option value="Auto Reconciliation">
-                        Auto Reconciliation
-                      </option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <div>
-                <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
+            <div>
+              {!isExistingCustomer && (
+                <div className="d-flex flex-column w-100 mt-4">
                   <Heading
                     title="Primary product you are interested in:"
                     size="h6"
                     color="black"
                     weight="5"
                   />
-                  <div className="d-flex w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
-                    <select
-                      value={selectedProduct}
-                      onChange={(e) => {
-                        setSelectedProduct(e.target.value);
-                        e.target.value === "none"
-                          ? setSelectedProductValid(false)
-                          : setSelectedProductValid(true);
-                      }}
-                      className={`form-select ${
-                        !selectedProductValid ? styles.select_box_error : ""
-                      }`}
-                      required
-                    >
-                      <option value="none">Open this select menu</option>
-                      <option value="Payables">Payables</option>
-                      <option value="Receievables">Receivables</option>
-                      <option value="Ofex">Expense Management</option>
-                      <option value="Corporate Cards">Corporate Cards</option>
-                      <option value="Reward & Offers">Reward & Offers</option>
-                      <option value="Channel Incentive">
-                        Channel Incentive
-                      </option>
-                      <option value="Employee Reward">Employee Reward</option>
-                      <option value="Brand Gift Voucher">
-                        Brand Gift Voucher
-                      </option>
-                    </select>
+                  <div className="d-flex flex-column w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
+                    <div className="d-md-flex gap-2 mb-4 mt-2 flex-wrap">
+                      {categoryData.map((category , index) => (
+                        <div className="d-flex flex-column my-2 my-md-0">
+                          <div
+                            key={index}
+                            className={` py-2 rounded ${
+                              selectedCategory === category.name
+                                ? styles.activeButton
+                                : ""
+                            } ${styles.categoryButton}`}
+                            onClick={() => setSelectedCategory(category.name)}
+                          >
+                            <div className="w-100 d-flex justify-content-center">
+                              {category.name}
+                            </div>
+
+                            {category.name !== "Expense Management" && (
+                              <div>
+                                <Image
+                                  src={blueArrow}
+                                  alt="down-arrow"
+                                  className={styles.blue_down_arrow}
+                                />
+                              </div>
+                            )}
+                          </div>
+                          <div className="d-block d-md-none">
+                            {selectedCategory == category.name && (
+                              <div className="d-flex flex-column justofy-content-center d-md-none flex-wrap gap-2 mt-2">
+                                {categoryData
+                                  .find(
+                                    (category) =>
+                                      category.name === selectedCategory
+                                  )
+                                  ?.products.map((product , index) => (
+                                    <div
+                                      key={index}
+                                      className={`flex items-center justify-between py-2 rounded ${
+                                        selectedProduct === product.name
+                                          ? styles.activeButton
+                                          : ""
+                                      } ${styles.product_button} ${
+                                        styles.product_button_mobile
+                                      }`}
+                                      onClick={() =>
+                                        setSelectedProduct(product.name)
+                                      }
+                                    >
+                                      <div className={styles.product_icon}>
+                                        <Image
+                                          src={product.icon}
+                                          alt={product.name}
+                                        />
+                                      </div>
+                                      <span>{product.name}</span>
+                                    </div>
+                                  ))}
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="d-none d-md-flex flex-wrap gap-2 mt-2">
+                      {categoryData
+                        .find((category) => category.name === selectedCategory)
+                        ?.products.map((product , index) => (
+                          <div
+                            key={index}
+                            className={`flex items-center justify-between py-2 rounded ${
+                              selectedProduct === product.name
+                                ? styles.activeButton
+                                : ""
+                            } ${styles.product_button}`}
+                            onClick={() => setSelectedProduct(product.name)}
+                          >
+                            <div className={styles.product_icon}>
+                              <Image src={product.icon} alt={product.name} />
+                            </div>
+
+                            <span>{product.name}</span>
+                          </div>
+                        ))}
+                    </div>
                   </div>
                 </div>
-
-                {/* additional products / receivables (receivables) */}
-                {selectedProduct == "Receievables" ? (
-                  <>
-                    <div className="d-flex flex-column flex-md-row  align-items-md-center w-100 mt-4">
-                      <Heading
-                        title="Receievables products you are interested in:"
-                        size="h6"
-                        color="black"
-                        weight="5"
-                      />
-                      <div className="d-flex w-40 ms-md-3 mt-2 mt-m-0 flex-column flex-md-row justify-content-start">
-                        <select
-                          value={selectedAdditionalProduct}
-                          onChange={(e) =>
-                            setSelectedAdditionalProduct(e.target.value)
-                          }
-                          className="form-select"
-                          required
-                        >
-                          <option value="none">Open this select menu</option>
-                          <option value="Payment Gateway">
-                            Payment Gateway
-                          </option>
-                          <option value="Payment Links">Payment Links</option>
-                          <option value="Payment Buttons">
-                            Payment Buttons
-                          </option>
-                          <option value="Payment Page">Payment Page</option>
-                          <option value="Bulk Collect">Bulk Collect</option>
-                          <option value="UPI Payments">UPI Payments</option>
-                          <option value="QR Codes">QR Codes</option>
-                          <option value="Auto Collect">Auto Collect</option>
-                          <option value="Virtual Accounts">
-                            Virtual Accounts
-                          </option>
-                          <option value="E-Nach">E-Nach</option>
-                          <option value="Subscriptions">Subscriptions</option>
-                          <option value="Reminder Engine">
-                            Reminder Engine
-                          </option>
-                          <option value="Instant Settlements">
-                            Instant Settlements
-                          </option>
-                          <option value="Invoices">Invoices</option>
-                          <option value="Collection Analytics">
-                            Collection Analytics
-                          </option>
-                          <option value="Auto Reconciliation">
-                            Auto Reconciliation
-                          </option>
-                        </select>
-                      </div>
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div className="d-flex flex-column flex-md-row  align-items-md-center w-100 mt-4">
-                      <Heading
-                        title="Additional products you are interested in:"
-                        size="h6"
-                        color="black"
-                        weight="5"
-                      />
-                      <div className="d-flex w-40 ms-md-3 mt-2 mt-m-0 flex-column flex-md-row justify-content-start">
-                        <select
-                          value={selectedAdditionalProduct}
-                          onChange={(e) =>
-                            setSelectedAdditionalProduct(e.target.value)
-                          }
-                          className="form-select"
-                          required
-                        >
-                          <option value="">Open this select menu</option>
-                          <option value="Payables">Payables</option>
-                          <option value="Receievables">Receivables</option>
-                          <option value="Ofex">Expense Management</option>
-                          <option value="Corporate Cards">
-                            Corporate Cards
-                          </option>
-                          <option value="Reward & Offers">
-                            Reward & Offers
-                          </option>
-                          <option value="Channel Incentive">
-                            Channel Incentive
-                          </option>
-                          <option value="Employee Reward">
-                            Employee Reward
-                          </option>
-                          <option value="Brand Gift Voucher">
-                            Brand Gift Voucher
-                          </option>
-                        </select>
-                      </div>
-                    </div>
-                  </>
-                )}
-              </div>
-            )}
+              )}
+            </div>
 
             {/* Fifth Row (Description) */}
             <div className="d-flex flex-column flex-md-row align-items-md-center w-100 mt-4">
@@ -442,7 +497,7 @@ const sales = () => {
               className="d-flex align-items-center w-100 mt-4"
               onClick={handleSubmit}
             >
-              <PrimaryButton title="Submit" theme="blue" />
+              <PrimaryButton title="Submit" theme="blue" isDisabled={!isFormValid} />
             </div>
           </form>
         </div>
