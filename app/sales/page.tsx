@@ -103,7 +103,7 @@ const categoryData: Category[] = [
   {
     name: "Loyalty Lounge",
     products: [
-      { name: "Gift Crad", icon: giftCardFilled},
+      { name: "Gift Card", icon: giftCardFilled},
       { name: "Brand Vouchers", icon: brandVouchersFilled },
       { name: "Channel Incentives", icon: channelIncentiveFilled },
       { name: "Employee Rewards", icon: rewardsPlatformFilled },
