@@ -8,3 +8,4 @@ export { default as pci } from "./img/pci.png";
 export { default as soc } from "./img/soc.png";
 export { default as rbi } from "./img/rbi.png";
 export { default as email } from "./img/email.png";
+export { default as onlineDispute} from "./img/online-dispute.svg";

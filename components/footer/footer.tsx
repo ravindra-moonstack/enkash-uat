@@ -12,6 +12,7 @@ import {
   soc,
   rbi,
   email,
+  onlineDispute,
 } from ".";
 import Heading from "../heading/heading";
 import Link from "next/link";
@@ -515,6 +516,24 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                       <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
                         support@enkash.com
                       </span>
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                    <Link
+                      href="https://forms.zohopublic.in/Enkash/form/CustomerSupport/formperma/pjPz5nSAEeSmWhIuHW2VOCiTgm8b6uHeYQyU1XhkW8E "
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      <Image
+                        src={onlineDispute}
+                        alt="Online Dispute Resolution"
+                        className={styles.help_icons}
+                      />
+                      <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
+                        Online Dispute Resolution
+                      </span>
+                      </Link>
                     </div>
                   </li>
                 </ul>
