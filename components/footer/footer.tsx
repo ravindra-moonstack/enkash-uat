@@ -56,7 +56,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
               </h4>
             </Link>
 
-            <div className="d-flex flex-md-column ">
+            <div className="d-flex flex-column ">
               <div className={`col-6`}>
                 {" "}
                 <ul>
@@ -152,6 +152,53 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                   </li>
                 </ul>
               </div>
+
+              {/* col-1 resources */}
+              <div className="mt-3">
+                <h4 className={`${styles.title}`}>Resources</h4>
+                <ul>
+                  <li>
+                    <Link
+                      target="_blank"
+                      href="https://www.enkash.com/resources/"
+                    >
+                      Blogs
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      target="_blank"
+                      href="https://www.enkash.com/resources/videos/"
+                    >
+                      Product Videos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      target="_blank"
+                      href="https://www.enkash.com/resources/press-release/"
+                    >
+                      Press Release
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      target="_blank"
+                      href="https://www.enkash.com/resources/media-coverage/"
+                    >
+                      News & Media
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      target="_blank"
+                      href="https://www.enkash.com/resources/customer-stories/"
+                    >
+                      Customer Stories
+                    </Link>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -218,26 +265,53 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                 </ul>
               </div>
               <div className="mt-3">
-                <Link href="/loyalty-lounge">
-                  <h4 className={`col-12 ${styles.title}`}>Loyalty Lounge</h4>
+                <Link href="https://docs.enkash.com/" target="_blank">
+                  <h4 className={`col-12 ${styles.title}`}>Developer Docs</h4>
                 </Link>
                 <ul>
                   <li>
-                    <Link href="/loyalty-lounge/channel-incentive/">
-                      Channel Incentives
-                    </Link>
+                    <a href="https://docs.enkash.com/payouts" target="_blank">
+                      Payout
+                    </a>
                   </li>
                   <li>
-                    <Link href="/loyalty-lounge/employee-rewards/">
+                    <a
+                      href="https://docs.enkash.com/payment-gateway"
+                      target="_blank"
+                    >
+                      Payment Gateway
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://docs.enkash.com/corporate-cards"
+                      target="_blank"
+                    >
+                      Corporate Cards
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://docs.enkash.com/expense-management"
+                      target="_blank"
+                    >
+                      Expense Management
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://docs.enkash.com/loyalty" target="_blank">
                       Employee Rewards
-                    </Link>
-                  </li>
-
-                  <li>
-                    <Link href="/loyalty-lounge/gift-cards/">Gift Cards</Link>
+                    </a>
                   </li>
                   <li>
-                    <Link href="/loyalty-lounge/offers/">Offers</Link>
+                    <a href="https://docs.enkash.com/loyalty" target="_blank">
+                      Channel Incentives
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://docs.enkash.com/loyalty" target="_blank">
+                      Vouchers
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -384,47 +458,26 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                 </ul>
               </div>
               <div className="mt-3">
-                <h4 className={`${styles.title}`}>Resources</h4>
+                <Link href="/loyalty-lounge">
+                  <h4 className={`col-12 ${styles.title}`}>Loyalty Lounge</h4>
+                </Link>
                 <ul>
                   <li>
-                    <Link
-                      target="_blank"
-                      href="https://www.enkash.com/resources/"
-                    >
-                      Blogs
+                    <Link href="/loyalty-lounge/channel-incentive/">
+                      Channel Incentives
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      target="_blank"
-                      href="https://www.enkash.com/resources/videos/"
-                    >
-                      Product Videos
+                    <Link href="/loyalty-lounge/employee-rewards/">
+                      Employee Rewards
                     </Link>
                   </li>
+
                   <li>
-                    <Link
-                      target="_blank"
-                      href="https://www.enkash.com/resources/press-release/"
-                    >
-                      Press Release
-                    </Link>
+                    <Link href="/loyalty-lounge/gift-cards/">Gift Cards</Link>
                   </li>
                   <li>
-                    <Link
-                      target="_blank"
-                      href="https://www.enkash.com/resources/media-coverage/"
-                    >
-                      News & Media
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      target="_blank"
-                      href="https://www.enkash.com/resources/customer-stories/"
-                    >
-                      Customer Stories
-                    </Link>
+                    <Link href="/loyalty-lounge/offers/">Offers</Link>
                   </li>
                 </ul>
               </div>
@@ -520,19 +573,19 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                   </li>
                   <li>
                     <div>
-                    <Link
-                      href="https://forms.zohopublic.in/Enkash/form/CustomerSupport/formperma/pjPz5nSAEeSmWhIuHW2VOCiTgm8b6uHeYQyU1XhkW8E "
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      <Image
-                        src={onlineDispute}
-                        alt="Online Dispute Resolution"
-                        className={styles.help_icons}
-                      />
-                      <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
-                        Online Dispute Resolution
-                      </span>
+                      <Link
+                        href="https://forms.zohopublic.in/Enkash/form/CustomerSupport/formperma/pjPz5nSAEeSmWhIuHW2VOCiTgm8b6uHeYQyU1XhkW8E "
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <Image
+                          src={onlineDispute}
+                          alt="Online Dispute Resolution"
+                          className={styles.help_icons}
+                        />
+                        <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
+                          Online Dispute Resolution
+                        </span>
                       </Link>
                     </div>
                   </li>
