@@ -73,11 +73,11 @@ const categoryData: Category[] = [
       { name: "Payment Links", icon: paymentLinksFilled },
       { name: "QR Code", icon: qrCodeFilled },
       { name: "UPI Payments", icon: upiPaymentsFilled },
-      { name: "Payment Button" , icon : paymentButtonFilled},
-      { name: "Payment Page" , icon : customizedPaymentFilled },
-      { name: "Bulk Collect" , icon : bulkCollectFilled },
-      { name: "Auto Collect" , icon : autoCollectFilled},
-      { name: "Virtual Account", icon : autoCollectFilled},
+      { name: "Payment Button", icon: paymentButtonFilled },
+      { name: "Payment Page", icon: customizedPaymentFilled },
+      { name: "Bulk Collect", icon: bulkCollectFilled },
+      { name: "Auto Collect", icon: autoCollectFilled },
+      { name: "Virtual Account", icon: autoCollectFilled },
       { name: "APIs", icon: vendorPaymentFilled }, //replace
     ],
   },
@@ -103,7 +103,7 @@ const categoryData: Category[] = [
   {
     name: "Loyalty Lounge",
     products: [
-      { name: "Gift Card", icon: giftCardFilled},
+      { name: "Gift Card", icon: giftCardFilled },
       { name: "Brand Vouchers", icon: brandVouchersFilled },
       { name: "Channel Incentives", icon: channelIncentiveFilled },
       { name: "Employee Rewards", icon: rewardsPlatformFilled },
@@ -179,12 +179,12 @@ const sales = () => {
     return regEmail.test(val);
   }
 
-  function isValidWebsite(val : string) : boolean {
-    if(!val){
+  function isValidWebsite(val: string): boolean {
+    if (!val) {
       return true;
     }
-    const regWebsite: RegExp = /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:[0-9]{1,5})?(\/[^\s]*)?$/i;
-    console.log(val , regWebsite.test(val));
+    const regWebsite: RegExp =
+      /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:[0-9]{1,5})?(\/[^\s]*)?$/i;
     return regWebsite.test(val);
   }
 
@@ -365,11 +365,13 @@ const sales = () => {
                     className="form-control"
                     placeholder="Company Website"
                   />
-                  {!isFormValid && !isValidWebsite(companyWebsite) && (companyWebsite.length > 0) && (
-                    <span className={`${styles.danger} text-danger`}>
-                      Invalid Company website
-                    </span>
-                  )}
+                  {!isFormValid &&
+                    !isValidWebsite(companyWebsite) &&
+                    companyWebsite.length > 0 && (
+                      <span className={`${styles.danger} text-danger`}>
+                        Invalid Company website
+                      </span>
+                    )}
                 </div>
               </div>
             </div>
@@ -385,7 +387,7 @@ const sales = () => {
                   />
                   <div className="d-flex flex-column w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
                     <div className="d-md-flex gap-2 mb-4 mt-2 flex-wrap">
-                      {categoryData.map((category , index) => (
+                      {categoryData.map((category, index) => (
                         <div className="d-flex flex-column my-2 my-md-0">
                           <div
                             key={index}
@@ -418,7 +420,7 @@ const sales = () => {
                                     (category) =>
                                       category.name === selectedCategory
                                   )
-                                  ?.products.map((product , index) => (
+                                  ?.products.map((product, index) => (
                                     <div
                                       key={index}
                                       className={`flex items-center justify-between py-2 rounded ${
@@ -450,7 +452,7 @@ const sales = () => {
                     <div className="d-none d-md-flex flex-wrap gap-2 mt-2">
                       {categoryData
                         .find((category) => category.name === selectedCategory)
-                        ?.products.map((product , index) => (
+                        ?.products.map((product, index) => (
                           <div
                             key={index}
                             className={`flex items-center justify-between py-2 rounded ${
@@ -497,7 +499,11 @@ const sales = () => {
               className="d-flex align-items-center w-100 mt-4"
               onClick={handleSubmit}
             >
-              <PrimaryButton title="Submit" theme="blue" isDisabled={!isFormValid} />
+              <PrimaryButton
+                title="Submit"
+                theme="blue"
+                isDisabled={!isFormValid}
+              />
             </div>
           </form>
         </div>
