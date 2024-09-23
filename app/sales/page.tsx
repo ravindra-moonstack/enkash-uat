@@ -163,6 +163,7 @@ const sales = () => {
       isValidEmail(companyEmail) &&
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
+      isValidWebsite(companyWebsite) &&
       (selectedProduct !== "none" || isExistingCustomer)
     ) {
       setIsFormValid(true);
