@@ -126,6 +126,7 @@ const sales = () => {
   const [isFormValid, setIsFormValid] = useState(true);
   const [interestedPG, setInterestedPG] = useState(false);
   const [isExistingCustomer, setIsExistingCustomer] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   //Url parameters
   let urlParams;
   let source;
@@ -153,6 +154,9 @@ const sales = () => {
   //Submit functionality
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    if(isDisabled){
+      return;
+    }
 
     if (
       fullName.length > 1 &&
@@ -195,6 +199,7 @@ const sales = () => {
 
   //Email Send to EmailJs
   function sendEmailToEnkash() {
+    setIsDisabled(true);
     const urlParams = new URLSearchParams(window.location.search);
     const source = urlParams.get("source");
 
@@ -230,7 +235,9 @@ const sales = () => {
       (error) => {
         console.log(error);
       }
-    );
+    ).finally(()=>{
+      setIsDisabled(false);
+    });
   }
 
   return (
@@ -508,7 +515,7 @@ const sales = () => {
               <PrimaryButton
                 title="Submit"
                 theme="blue"
-                // isDisabled={!isFormValid}
+                isDisabled={isDisabled}
               />
             </div>
           </form>
