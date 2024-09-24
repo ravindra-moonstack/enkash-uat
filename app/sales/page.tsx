@@ -124,12 +124,17 @@ const sales = () => {
     useState("");
   const [description, setDescription] = useState("");
   const [isFormValid, setIsFormValid] = useState(true);
-  const [selectedProductValid, setSelectedProductValid] = useState(true);
   const [interestedPG, setInterestedPG] = useState(false);
   const [isExistingCustomer, setIsExistingCustomer] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
   //Url parameters
   let urlParams;
   let source;
+
+  //reset the product everytime category is changed
+  useEffect(()=>{
+    setSelectedProduct("none");
+  },[selectedCategory]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -149,15 +154,16 @@ const sales = () => {
   //Submit functionality
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    selectedProduct === "none" && isExistingCustomer
-      ? setSelectedProductValid(false)
-      : setSelectedProductValid(true);
+    if(isDisabled){
+      return;
+    }
 
     if (
       fullName.length > 1 &&
       isValidEmail(companyEmail) &&
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
+      isValidWebsite(companyWebsite) &&
       (selectedProduct !== "none" || isExistingCustomer)
     ) {
       setIsFormValid(true);
@@ -167,7 +173,7 @@ const sales = () => {
     }
   };
 
-  //toggle is existing customer
+  //toggle existing customer
   const handleExistingCustomer = () => {
     setIsExistingCustomer(!isExistingCustomer);
   };
@@ -194,6 +200,7 @@ const sales = () => {
 
   //Email Send to EmailJs
   function sendEmailToEnkash() {
+    setIsDisabled(true);
     const urlParams = new URLSearchParams(window.location.search);
     const source = urlParams.get("source");
 
@@ -229,7 +236,9 @@ const sales = () => {
       (error) => {
         console.log(error);
       }
-    );
+    ).finally(()=>{
+      setIsDisabled(false);
+    });
   }
 
   return (
@@ -470,6 +479,11 @@ const sales = () => {
                           </div>
                         ))}
                     </div>
+                    {!isFormValid && !isExistingCustomer && selectedProduct==="none" && (
+                    <span className={`${styles.danger} text-danger mt-2`}>
+                      Please select a product
+                    </span>
+                  )}
                   </div>
                 </div>
               )}
@@ -502,7 +516,7 @@ const sales = () => {
               <PrimaryButton
                 title="Submit"
                 theme="blue"
-                isDisabled={!isFormValid}
+                isDisabled={isDisabled}
               />
             </div>
           </form>

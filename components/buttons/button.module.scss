@@ -32,6 +32,10 @@
     background-color: $color-black;
     color: white;
   }
+
+  &.disabled{
+    background-color: $color-night-blue;
+  }
 }
 
 /* Secondry Button */

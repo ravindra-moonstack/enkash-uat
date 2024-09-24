@@ -20,7 +20,8 @@ const PrimaryButton = ({ isDisabled, title, url, theme }: ButtonProps) => {
     <>
       <button
         disabled={isDisabled}
-        className={`${styles.primary_button} ${theme ? styles[theme] : ""}`}
+        className={`${styles.primary_button} ${theme ? styles[theme] : ""}
+        ${isDisabled ? styles.disabled : ""}`}
         onClick={handleClick}
       >
         {title}
