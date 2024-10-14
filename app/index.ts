@@ -67,3 +67,5 @@ export { default as relianceRetail } from "./img/reliance-retail-logo.png";
 export { default as dtdcLogo } from "./img/dtdc-logo.png";
 export { default as starBucksLogo } from "./img/starbucks-logo.svg";
 export { default as auBankLogo } from "./img/au-bank-logo.png";
+
+export { default as pageNotFound } from "./img/404.png";
