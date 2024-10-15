@@ -11,6 +11,7 @@ import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { voucherUrlGenerate } from "../../category/[category]/page";
+import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator";
 
 type Voucher = {
   voucherId: string;
@@ -262,6 +263,15 @@ const voucherPage = async ({
               </div>
               <div className={styles.mobile_only}>
                 <VoucherCard voucher={voucherData} routeToBolt={true} />
+              </div>
+
+              <div className={`my-5 ${styles.top_zigzag}`}>
+                <SavingsCalculator
+                  voucherName={voucherData.name}
+                  category={voucherData.category}
+                  savingsPercentage={voucherData.discount}
+                  voucherImg={voucherImage}
+                />
               </div>
 
               <div className={styles.detail_section}>

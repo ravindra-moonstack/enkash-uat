@@ -1,0 +1,36 @@
+@import "/styles/variables";
+@import "/styles/mixin";
+
+.main_section {
+  width: 100%;
+  height: 100vh;
+  background-color: $color-dark-midnight-blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .error_image {
+    margin-top: 60px;
+    margin-bottom: 45px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      width: 100%;
+      max-width: 600px !important;
+      height: auto;
+    }
+
+    h1 {
+      color: $color-white !important;
+      font-size: 24px;
+      font-weight: 300;
+    }
+  }
+
+  .other_options {
+    display: flex;
+    gap: 20px;
+  }
+}
