@@ -217,13 +217,22 @@
   }
 }
 
-.bottom_container {
+.mid_container {
   position: relative;
-  background-color: #d5f4ff;
+  background-color: $color-light-blue-bg;
   padding: 40px 30px 80px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
+
+.bottom_container {
+  position: relative;
+  background-color: #8f8f8f;
+  padding: 40px 30px 80px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
 .bottom_zigzag {
   position: absolute;
   bottom: -23px;
@@ -231,5 +240,29 @@
   img {
     height: 85px;
     width: auto;
+  }
+}
+
+.fifth_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  @include for-laptops {
+    padding-bottom: 220px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: none;
+      @include for-laptops {
+        height: 300px;
+        display: flex;
+      }
+    }
   }
 }

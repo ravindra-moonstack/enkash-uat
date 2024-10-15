@@ -36,7 +36,7 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
     const newQuantities = [...quantities];
     newQuantities[index] = Math.max(0, newQuantities[index] + change);
     setQuantities(newQuantities);
-    setTotalCount(totalCount + change);
+    setTotalCount(Math.max(0,totalCount + change));
   };
 
   const calculateSavings = (mrp: number) => {

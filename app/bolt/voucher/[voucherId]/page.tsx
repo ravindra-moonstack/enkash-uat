@@ -6,12 +6,14 @@ import Footer from "@/components/footer/footer";
 import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import Link from "next/link";
-import { backArrow, zigZagBottom, zigZagTop } from "../..";
+import { backArrow, faqBg, zigZagBottom, zigZagTop } from "../..";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { voucherUrlGenerate } from "../../category/[category]/page";
 import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator";
+import FAQHtml from "@/app/ofex/faq-html";
+import faqData from "@/app/ofex/insights/faq-data";
 
 type Voucher = {
   voucherId: string;
@@ -265,39 +267,46 @@ const voucherPage = async ({
                 <VoucherCard voucher={voucherData} routeToBolt={true} />
               </div>
 
-              <div className={`my-5 ${styles.top_zigzag}`}>
-                <SavingsCalculator
-                  voucherName={voucherData.name}
-                  category={voucherData.category}
-                  savingsPercentage={voucherData.discount}
-                  voucherImg={voucherImage}
-                />
-              </div>
-
               <div className={styles.detail_section}>
-                <div className={`mb-1 ${styles.description_title}`}>
-                  {voucherData.name}
-                </div>
-                <div className={`mb-4 ${styles.description}`}>
-                  {voucherData.description}
+                {/* Gift card main title */}
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    {voucherData.name}
+                  </div>
+                  <div className={`mb-4 ${styles.description}`}>
+                    {voucherData.description}
+                  </div>
                 </div>
 
-                <div className={`mb-1 ${styles.description_title}`}>
-                  How to redeem{" "}
+                {/* About company section */}
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    About {voucherData.brandName}
+                  </div>
+                  <div className={`mb-1 ${styles.description}`}>
+                    {voucherData.aboutCompany}
+                  </div>
                 </div>
-                <div className={`mb-4 ${styles.description}`}>
-                  <ul>
-                    {voucherData.howToRedeem.map((step, index) => (
-                      <li key={index}>
-                        <div
-                          dangerouslySetInnerHTML={{
-                            __html: linkifyText(sanitizeStep(step)),
-                          }}
-                        ></div>
-                        {}
-                      </li>
-                    ))}
-                  </ul>
+
+                {/* Savings Calculator section */}
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    Best {voucherData.name}
+                  </div>
+                  <div className={`mb-1 ${styles.description}`}>
+                    BookMyShow Gift Cards are a popular choice for presents,
+                    whether for a special occasion or a thoughtful gesture.
+                    These gift cards are a convenient and appreciated option
+                    that suits any budget and preference.
+                  </div>
+                  <div className={`mb-5 mt-4`}>
+                    <SavingsCalculator
+                      voucherName={voucherData.name}
+                      category={voucherData.category}
+                      savingsPercentage={voucherData.discount}
+                      voucherImg={voucherImage}
+                    />
+                  </div>
                 </div>
               </div>
               <div className={styles.bottom_zigzag}>
@@ -305,20 +314,158 @@ const voucherPage = async ({
               </div>
             </div>
 
-            <div className={`mt-4 mb-5 ${styles.bottom_container}`}>
+            <div className={`mt-4 mb-5 ${styles.mid_container}`}>
               <div className={styles.detail_section}>
-                <div className={`mb-1 ${styles.description_title}`}>
-                  About {voucherData.brandName}
+                {/* Use and Redeem section */}
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    <Heading
+                      title="How to "
+                      color="black"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title="Use or Redeem "
+                      color="equity-blue"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title={`${voucherData.name}?`}
+                      color="black"
+                      size="h3"
+                      weight="7"
+                    />
+                  </div>
+                  <div className={`mb-4 ${styles.description}`}>
+                    <div className={`mb-3`}>{voucherData.description}</div>
+                    <ul>
+                      {voucherData.howToRedeem.map((step, index) => (
+                        <li key={index}>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: linkifyText(sanitizeStep(step)),
+                            }}
+                          ></div>
+                          {}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-                <div className={`mb-1 ${styles.description}`}>
-                  {voucherData.aboutCompany}
+
+                {/* Use and Redeem section */}
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    <Heading
+                      title="How to Check "
+                      color="black"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title={`${voucherData.name} `}
+                      color="black"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title="Balance?"
+                      color="equity-blue"
+                      size="h3"
+                      weight="7"
+                    />
+                  </div>
+                  <div className={`mb-4 ${styles.description}`}>
+                    <div className={`mb-3`}>{voucherData.description}</div>
+                    <ul>
+                      {voucherData.howToRedeem.map((step, index) => (
+                        <li key={index}>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: linkifyText(sanitizeStep(step)),
+                            }}
+                          ></div>
+                          {}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
+
+              <div className={styles.bottom_zigzag}>
+                <Image src={zigZagTop} alt="zig-zag" />
+              </div>
+            </div>
+
+            <div className={`mt-4 mb-5 ${styles.mid_container}`}>
+              <div className={styles.detail_section}>
+                {/* Terms and Conditions section */}
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    <Heading
+                      title="Terms & Conditions "
+                      color="equity-blue"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title={`for ${voucherData.name}`}
+                      color="black"
+                      size="h3"
+                      weight="7"
+                    />
+                  </div>
+                  <div className={`mb-4 ${styles.description}`}>
+                    <ul>
+                      {voucherData.howToRedeem.map((step, index) => (
+                        <li key={index}>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: linkifyText(sanitizeStep(step)),
+                            }}
+                          ></div>
+                          {}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
               <div className={styles.bottom_zigzag}>
                 <Image src={zigZagBottom} alt="zig-zag" />
               </div>
             </div>
           </div>
+
+          {/* FAQ Section */}
+          <div
+            className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+          >
+            <div className="mb-5">
+              <Heading title="Got Questions?" color="equity-blue" size="h1" />
+            </div>
+            <div className="mb-5">
+              <Heading
+                title="Don't worry! Our FAQs section will help you learn about QR Codes in detail"
+                color="black"
+                size="h4"
+              />
+            </div>
+
+            <div>
+              <FAQHtml faqData={faqData} />
+            </div>
+
+            <div className={styles.faq_bg}>
+              <Image src={faqBg} alt="background image" />x
+            </div>
+          </div>
+
+          {/* METADATA for voucher */}
           <div
             dangerouslySetInnerHTML={{
               __html: generateVoucherSchema(voucherData),
