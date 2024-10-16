@@ -6,7 +6,15 @@ import Footer from "@/components/footer/footer";
 import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import Link from "next/link";
-import { backArrow, faqBg, zigZagBottom, zigZagTop } from "../..";
+import {
+  backArrow,
+  blueStepTick,
+  faqBg,
+  myntraPopular,
+  popularArrow,
+  zigZagBottom,
+  zigZagTop,
+} from "../..";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
@@ -182,8 +190,8 @@ const voucherPage = async ({
   if (!localVoucherData) {
     console.log("No voucher present");
   }
-  const voucherData = await fetchVoucher(localVoucherData?.voucherId);
-  //   const voucherData = VoucherData[voucherId];
+  // const voucherData = await fetchVoucher(localVoucherData?.voucherId);
+  const voucherData = VoucherData[voucherId];
 
   let categoryNameMap = new Map<string, string>([
     ["e-commerce", "E-Commerce"],
@@ -316,8 +324,115 @@ const voucherPage = async ({
 
             <div className={`mt-4 mb-5 ${styles.mid_container}`}>
               <div className={styles.detail_section}>
-                {/* Use and Redeem section */}
+                {/* How to Buy Section */}
                 <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    <Heading
+                      title="How to "
+                      color="black"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title="Buy "
+                      color="equity-blue"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title={`a ${voucherData.name}?`}
+                      color="black"
+                      size="h3"
+                      weight="7"
+                    />
+                  </div>
+                  <div className={`mb-4 ${styles.description}`}>
+                    <div className={`mb-3`}>
+                      Purchasing a {voucherData.name} from the EnKash platform
+                      is straightforward and can help you save money. Here's a
+                      detailed guide on how to do it:
+                    </div>
+
+                    <div className={styles.progressSteps}>
+                      <div className={styles.step}>
+                        <div className={styles.iconContainer}>
+                          <Image src={blueStepTick} alt="tick" />
+                        </div>
+                        <div className={styles.content}>
+                          <h3 className={styles.title}>Login</h3>
+                          <p className={styles.description}>
+                            Login to
+                            <br />
+                            bolt.enkash.com
+                          </p>
+                        </div>
+                        <div className={styles.line} />
+                      </div>
+                      <div className={styles.step}>
+                        <div className={styles.iconContainer}>
+                          <Image src={blueStepTick} alt="tick" />
+                        </div>
+                        <div className={styles.content}>
+                          <h3 className={styles.title}>Select</h3>
+                          <p className={styles.description}>
+                            Select brand voucher, denomination & quantity
+                          </p>
+                        </div>
+                        <div className={styles.line} />
+                      </div>
+                      <div className={styles.step}>
+                        <div className={styles.iconContainer}>
+                          <Image src={blueStepTick} alt="tick" />
+                        </div>
+                        <div className={styles.content}>
+                          <h3 className={styles.title}>Checkout</h3>
+                          <p className={styles.description}>Checkout and pay</p>
+                        </div>
+                      </div>
+                    </div>
+                    <ul>
+                      <li>
+                        <div>
+                          Go to bolt.enkash.com or{" "}
+                          <a href="https://bolt.enkash.com/" target="_blank">
+                            click here
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div>Login with your mobile number</div>
+                      </li>
+                      <li>
+                        <div>
+                          Explore a wide selection of vouchers or select your
+                          preferred category.
+                        </div>
+                      </li>
+                      <li>
+                        <div>Select the brand voucher</div>
+                      </li>
+                      <li>
+                        <div>
+                          Choose the {voucherData.name} voucher denomination and
+                          quantity you wish to purchase.
+                        </div>
+                      </li>
+                      <li>
+                        <div>
+                          Once ready, head to your cart and click "Buy Now" to
+                          proceed with the purchase
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className={`mt-4 mb-5 ${styles.mid_container}`}>
+              <div className={styles.detail_section}>
+                {/* Use and Redeem section */}
+                <div className={`mt-4 mb-5`}>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
                       title="How to "
@@ -400,7 +515,7 @@ const voucherPage = async ({
               </div>
             </div>
 
-            <div className={`mt-4 mb-5 ${styles.mid_container}`}>
+            <div className={`mt-4 mb-5 ${styles.bottom_container}`}>
               <div className={styles.detail_section}>
                 {/* Terms and Conditions section */}
                 <div className={`my-4`}>
@@ -437,6 +552,48 @@ const voucherPage = async ({
 
               <div className={styles.bottom_zigzag}>
                 <Image src={zigZagBottom} alt="zig-zag" />
+              </div>
+            </div>
+
+            <div className={`mt-4 mb-5 ${styles.mid_container}`}>
+              <div className={styles.popularVouchers}>
+                <h2 className={styles.title}>
+                  Explore Our Most Popular Gift Vouchers
+                </h2>
+                <div className={styles.list}>
+                  <div className={styles.voucherCard}>
+                    <div className={styles.logoImg}>
+                      <Image src={myntraPopular} alt="Myntra" />
+                    </div>
+                    <span className={styles.arrow}>
+                      <Image src={popularArrow} alt="arrow" />
+                    </span>
+                  </div>
+                  <div className={styles.voucherCard}>
+                    <div className={styles.logoImg}>
+                      <Image src={myntraPopular} alt="Myntra" />
+                    </div>
+                    <span className={styles.arrow}>
+                      <Image src={popularArrow} alt="arrow" />
+                    </span>
+                  </div>
+                  <div className={styles.voucherCard}>
+                    <div className={styles.logoImg}>
+                      <Image src={myntraPopular} alt="Myntra" />
+                    </div>
+                    <span className={styles.arrow}>
+                      <Image src={popularArrow} alt="arrow" />
+                    </span>
+                  </div>
+                  <div className={styles.voucherCard}>
+                    <div className={styles.logoImg}>
+                      <Image src={myntraPopular} alt="Myntra" />
+                    </div>
+                    <span className={styles.arrow}>
+                      <Image src={popularArrow} alt="arrow" />
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
