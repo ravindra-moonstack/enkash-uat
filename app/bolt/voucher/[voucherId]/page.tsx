@@ -13,6 +13,7 @@ import {
   myntraPopular,
   popularArrow,
   zigZagBottom,
+  zigZagGrey,
   zigZagTop,
 } from "../..";
 import VoucherCard from "@/components/voucher-page/voucher-card";
@@ -22,6 +23,7 @@ import { voucherUrlGenerate } from "../../category/[category]/page";
 import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator";
 import FAQHtml from "@/app/ofex/faq-html";
 import faqData from "@/app/ofex/insights/faq-data";
+import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher";
 
 type Voucher = {
   voucherId: string;
@@ -307,7 +309,7 @@ const voucherPage = async ({
                     These gift cards are a convenient and appreciated option
                     that suits any budget and preference.
                   </div>
-                  <div className={`mb-5 mt-4`}>
+                  <div className={`my-5`}>
                     <SavingsCalculator
                       voucherName={voucherData.name}
                       category={voucherData.category}
@@ -317,9 +319,9 @@ const voucherPage = async ({
                   </div>
                 </div>
               </div>
-              <div className={styles.bottom_zigzag}>
+              {/* <div className={styles.bottom_zigzag}>
                 <Image src={zigZagTop} alt="zig-zag" />
-              </div>
+              </div> */}
             </div>
 
             <div className={`mt-4 mb-5 ${styles.mid_container}`}>
@@ -551,8 +553,18 @@ const voucherPage = async ({
               </div>
 
               <div className={styles.bottom_zigzag}>
-                <Image src={zigZagBottom} alt="zig-zag" />
+                <Image src={zigZagGrey} alt="zig-zag" />
               </div>
+            </div>
+
+            <div className={`${styles.mid_container}`}>
+              <OccasionVoucher
+                voucherName={voucherData.name}
+                corporateGifting="Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break."
+                festivals="Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break."
+                anniversary="Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break."
+                birthdays="Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break."
+              />
             </div>
 
             <div className={`mt-4 mb-5 ${styles.mid_container}`}>
@@ -561,38 +573,49 @@ const voucherPage = async ({
                   Explore Our Most Popular Gift Vouchers
                 </h2>
                 <div className={styles.list}>
-                  <div className={styles.voucherCard}>
-                    <div className={styles.logoImg}>
-                      <Image src={myntraPopular} alt="Myntra" />
+                  <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
+                    <div className={styles.voucherCard}>
+                      <div className={styles.logoImg}>
+                        <Image src={myntraPopular} alt="Myntra" />
+                      </div>
+                      <span className={styles.arrow}>
+                        <Image src={popularArrow} alt="arrow" />
+                      </span>
                     </div>
-                    <span className={styles.arrow}>
-                      <Image src={popularArrow} alt="arrow" />
-                    </span>
-                  </div>
-                  <div className={styles.voucherCard}>
-                    <div className={styles.logoImg}>
-                      <Image src={myntraPopular} alt="Myntra" />
+                  </Link>
+
+                  <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
+                    <div className={styles.voucherCard}>
+                      <div className={styles.logoImg}>
+                        <Image src={myntraPopular} alt="Myntra" />
+                      </div>
+                      <span className={styles.arrow}>
+                        <Image src={popularArrow} alt="arrow" />
+                      </span>
                     </div>
-                    <span className={styles.arrow}>
-                      <Image src={popularArrow} alt="arrow" />
-                    </span>
-                  </div>
-                  <div className={styles.voucherCard}>
-                    <div className={styles.logoImg}>
-                      <Image src={myntraPopular} alt="Myntra" />
+                  </Link>
+
+                  <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
+                    <div className={styles.voucherCard}>
+                      <div className={styles.logoImg}>
+                        <Image src={myntraPopular} alt="Myntra" />
+                      </div>
+                      <span className={styles.arrow}>
+                        <Image src={popularArrow} alt="arrow" />
+                      </span>
                     </div>
-                    <span className={styles.arrow}>
-                      <Image src={popularArrow} alt="arrow" />
-                    </span>
-                  </div>
-                  <div className={styles.voucherCard}>
-                    <div className={styles.logoImg}>
-                      <Image src={myntraPopular} alt="Myntra" />
+                  </Link>
+
+                  <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
+                    <div className={styles.voucherCard}>
+                      <div className={styles.logoImg}>
+                        <Image src={myntraPopular} alt="Myntra" />
+                      </div>
+                      <span className={styles.arrow}>
+                        <Image src={popularArrow} alt="arrow" />
+                      </span>
                     </div>
-                    <span className={styles.arrow}>
-                      <Image src={popularArrow} alt="arrow" />
-                    </span>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>

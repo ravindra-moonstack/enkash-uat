@@ -27,8 +27,9 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
   savingsPercentage,
   voucherImg,
 }) => {
+  // Intially Select 2 vouchers
   const [quantities, setQuantities] = useState<number[]>(
-    new Array(voucherOptions.length).fill(0)
+    new Array(voucherOptions.length - 1).fill(0).concat(2)
   );
   const [totalCount, setTotalCount] = useState(0);
 
@@ -36,7 +37,7 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
     const newQuantities = [...quantities];
     newQuantities[index] = Math.max(0, newQuantities[index] + change);
     setQuantities(newQuantities);
-    setTotalCount(Math.max(0,totalCount + change));
+    setTotalCount(Math.max(0, totalCount + change));
   };
 
   const calculateSavings = (mrp: number) => {
@@ -54,7 +55,7 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
   return (
     <div className={styles.savingsCalculator}>
       <div className={styles.header}>
-        <h2>Voucher Details</h2>
+        <h2>Voucher Calculator</h2>
       </div>
       <div className={styles.voucherInfo}>
         <div className={styles.voucherInfoLeft}>
@@ -100,7 +101,7 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
               <td>₹{option.mrp}</td>
               <td>{savingsPercentage}%</td>
               <td className={styles.savings}>
-                ₹{calculateSavings(option.mrp).toFixed(2)}
+                ₹{calculateSavings(option.mrp * quantities[index]).toFixed(2)}
               </td>
               <td>
                 <div className={styles.quantityControl}>

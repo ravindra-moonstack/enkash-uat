@@ -15,6 +15,7 @@ export { default as bannerAnimation } from "./img/lottie/banner.json";
 export { default as backArrow } from "./img/back-arrow.svg";
 export { default as zigZagBottom } from "./img/zig-zag-bottom.png";
 export { default as zigZagTop } from "./img/zig-zag-top.png";
+export { default as zigZagGrey } from "./img/zig-zag-grey.png";
 export { default as blueStepTick } from "./img/blue-step-tick.svg";
 
 export { default as eCommerceImg } from "./img/temp-img/e-commerce.svg";

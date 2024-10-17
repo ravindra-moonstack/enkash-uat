@@ -93,12 +93,12 @@
 .top_container {
   position: relative;
   background-color: #f4fcff;
-  padding: 10px 20px 80px;
+  padding: 10px 20px 40px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 
   @include for-laptops {
-    padding: 30px 30px 80px;
+    padding: 30px 30px 40px;
   }
   .back_button {
     padding: 0px 0px;
@@ -218,9 +218,10 @@
 }
 
 .mid_container {
+  width: 100%;
   position: relative;
   background-color: $color-light-blue-bg;
-  padding: 40px 30px 80px;
+  padding: 40px 30px 40px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
@@ -229,7 +230,7 @@
   width: 100%;
   position: relative;
   background-color: #f9f9f9;
-  padding: 40px 30px 80px;
+  padding: 40px 30px 40px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
 }
@@ -358,9 +359,11 @@
   margin: 0 auto;
   padding: 20px;
   display: flex;
+  justify-content: space-around;
 
   .title {
     font-size: 18px;
+    margin-top: 8px;
     margin-bottom: 20px;
     width: 210px;
   }
@@ -380,7 +383,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    min-width: 160px;
+    min-width: 170px;
     cursor: pointer;
     transition: box-shadow 0.3s ease;
 
