@@ -3,7 +3,13 @@ import styles from "./heading.module.scss";
 export interface HeadingProps {
   size: "h0" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
   title: string;
-  color?: "black" | "electric-green" | "white" | "equity-blue" | "rainy-blue";
+  color?:
+    | "black"
+    | "secondry-black"
+    | "electric-green"
+    | "white"
+    | "equity-blue"
+    | "rainy-blue";
   weight?: "3" | "4" | "5" | "6" | "7";
   italic?: boolean;
   useH1TagInHtml?: boolean; // New prop for using h1 tag

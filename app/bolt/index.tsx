@@ -26,4 +26,7 @@ export { default as moviesAndMusic } from "./img/temp-img/movies-and-music.svg";
 export { default as boltHero } from "./img/temp-img/bolt-hero.png";
 
 export { default as myntraPopular } from "./img/myntra-popular.svg";
+export { default as amazonPopular } from "./img/amazon-popular.svg";
+export { default as ajioPopular } from "./img/ajio-popular.svg";
+export { default as zomatoPopular } from "./img/zomato-popular.svg";
 export { default as popularArrow } from "./img/popular-arrow.svg";

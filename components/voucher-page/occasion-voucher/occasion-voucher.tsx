@@ -31,7 +31,7 @@ const OccasionVoucher: React.FC<OccasionVoucherProps> = ({
           <Heading title={voucherName} color="black" size="h3" weight="7" />
           <Heading
             title="s for different Occasions"
-            color="black"
+            color="secondry-black"
             size="h3"
             weight="7"
           />

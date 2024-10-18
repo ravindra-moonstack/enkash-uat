@@ -7,6 +7,8 @@ import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
 import Link from "next/link";
 import {
+  ajioPopular,
+  amazonPopular,
   backArrow,
   blueStepTick,
   faqBg,
@@ -15,6 +17,7 @@ import {
   zigZagBottom,
   zigZagGrey,
   zigZagTop,
+  zomatoPopular,
 } from "../..";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
@@ -247,9 +250,9 @@ const voucherPage = async ({
                     <div className={styles.discount_}>
                       Up to <span>{voucherData.discount}%</span> OFF
                     </div>
-                    <div className={`${styles.brand_name}`}>
+                    {/* <div className={`${styles.brand_name}`}>
                       {voucherData.brandName}
-                    </div>
+                    </div> */}
                   </div>
 
                   <div
@@ -281,7 +284,12 @@ const voucherPage = async ({
                 {/* Gift card main title */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    {voucherData.name}
+                    <Heading
+                      title={voucherData.name}
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
                     {voucherData.description}
@@ -291,7 +299,18 @@ const voucherPage = async ({
                 {/* About company section */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    About {voucherData.brandName}
+                    <Heading
+                      title="About "
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title={voucherData.brandName}
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
                   </div>
                   <div className={`mb-1 ${styles.description}`}>
                     {voucherData.aboutCompany}
@@ -301,7 +320,18 @@ const voucherPage = async ({
                 {/* Savings Calculator section */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    Best {voucherData.name}
+                    <Heading
+                      title="About "
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title={voucherData.name}
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
                   </div>
                   <div className={`mb-1 ${styles.description}`}>
                     BookMyShow Gift Cards are a popular choice for presents,
@@ -331,7 +361,7 @@ const voucherPage = async ({
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
                       title="How to "
-                      color="black"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -343,7 +373,7 @@ const voucherPage = async ({
                     />
                     <Heading
                       title={`a ${voucherData.name}?`}
-                      color="black"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -438,7 +468,7 @@ const voucherPage = async ({
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
                       title="How to "
-                      color="black"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -450,7 +480,7 @@ const voucherPage = async ({
                     />
                     <Heading
                       title={`${voucherData.name}?`}
-                      color="black"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -477,13 +507,13 @@ const voucherPage = async ({
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
                       title="How to Check "
-                      color="black"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
                     <Heading
                       title={`${voucherData.name} `}
-                      color="black"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -530,7 +560,7 @@ const voucherPage = async ({
                     />
                     <Heading
                       title={`for ${voucherData.name}`}
-                      color="black"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -587,7 +617,7 @@ const voucherPage = async ({
                   <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                        <Image src={myntraPopular} alt="Myntra" />
+                        <Image src={amazonPopular} alt="Amazon Pay" />
                       </div>
                       <span className={styles.arrow}>
                         <Image src={popularArrow} alt="arrow" />
@@ -598,7 +628,7 @@ const voucherPage = async ({
                   <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                        <Image src={myntraPopular} alt="Myntra" />
+                        <Image src={zomatoPopular} alt="Zomato" />
                       </div>
                       <span className={styles.arrow}>
                         <Image src={popularArrow} alt="arrow" />
@@ -609,7 +639,7 @@ const voucherPage = async ({
                   <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                        <Image src={myntraPopular} alt="Myntra" />
+                        <Image src={ajioPopular} alt="Ajio" />
                       </div>
                       <span className={styles.arrow}>
                         <Image src={popularArrow} alt="arrow" />
@@ -631,7 +661,7 @@ const voucherPage = async ({
             <div className="mb-5">
               <Heading
                 title="Don't worry! Our FAQs section will help you learn about QR Codes in detail"
-                color="black"
+                color="secondry-black"
                 size="h4"
               />
             </div>
@@ -659,7 +689,7 @@ const voucherPage = async ({
               <div className="d-flex mb-4 text-center">
                 <Heading
                   title="The Voucher you are looking for is currently not available"
-                  color="black"
+                  color="secondry-black"
                   size="h2"
                   weight="7"
                 />

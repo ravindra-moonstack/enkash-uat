@@ -55,7 +55,7 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
   return (
     <div className={styles.savingsCalculator}>
       <div className={styles.header}>
-        <h2>Voucher Calculator</h2>
+        <h2>Savings Calculator</h2>
       </div>
       <div className={styles.voucherInfo}>
         <div className={styles.voucherInfoLeft}>
@@ -72,16 +72,18 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
             <span className={styles.category}>Category: {category}</span>
           </div>
         </div>
-        <div className={styles.totalContainer}>
-          <div className={styles.total}>
-            <span>Total ₹{totalAmount.toFixed(2)}</span>
-            <span className={styles.savings}>
-              Savings ₹{totalSavings.toFixed(2)}
-            </span>
-          </div>
-          <div className={styles.cartButton}>
-            <div>{totalCount}</div>
-            <Image src={whiteCart} alt="Cart Icon" />
+        <div className="desktop-only">
+          <div className={`${styles.totalContainer}`}>
+            <div className={styles.total}>
+              <span>Total ₹{totalAmount.toFixed(2)}</span>
+              <span className={styles.savings}>
+                Savings ₹{totalSavings.toFixed(2)}
+              </span>
+            </div>
+            <div className={styles.cartButton}>
+              <div className={styles.item_count}>{totalCount}</div>
+              <Image src={whiteCart} alt="Cart Icon" />
+            </div>
           </div>
         </div>
       </div>
@@ -89,17 +91,17 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
         <thead>
           <tr>
             <th>MRP</th>
-            <th>Discount</th>
+            <th className="desktop-only">Discount</th>
             <th>Your Savings</th>
             <th>Quantity</th>
-            <th>Total</th>
+            <th className="desktop-only">Total</th>
           </tr>
         </thead>
         <tbody>
           {voucherOptions.map((option, index) => (
             <tr key={index}>
               <td>₹{option.mrp}</td>
-              <td>{savingsPercentage}%</td>
+              <td className="desktop-only">{savingsPercentage}%</td>
               <td className={styles.savings}>
                 ₹{calculateSavings(option.mrp * quantities[index]).toFixed(2)}
               </td>
@@ -114,11 +116,27 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
                   </button>
                 </div>
               </td>
-              <td>₹{(option.mrp * quantities[index]).toFixed(2)}</td>
+              <td className="desktop-only">
+                ₹{(option.mrp * quantities[index]).toFixed(2)}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
+      <div className="mobile-only">
+        <div className={`${styles.totalContainer}`}>
+          <div className={styles.total}>
+            <span>Total ₹{totalAmount.toFixed(2)}</span>
+            <span className={styles.savings}>
+              Savings ₹{totalSavings.toFixed(2)}
+            </span>
+          </div>
+          <div className={styles.cartButton}>
+            <div className={styles.item_count}>{totalCount}</div>
+            <Image src={whiteCart} alt="Cart Icon" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

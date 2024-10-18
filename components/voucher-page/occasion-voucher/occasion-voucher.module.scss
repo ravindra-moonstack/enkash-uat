@@ -2,7 +2,10 @@
 @import "../../../styles/variables";
 
 .main_container {
-  padding: 0 40px;
+  padding: 0px;
+  @include for-laptops {
+    padding: 0 40px;
+  }
 }
 
 .detail_section {
@@ -21,50 +24,75 @@
 }
 
 .occasions_container {
-  padding: 0px 20px;
+  padding: 0px 0px;
+  @include for-laptops {
+    padding: 0px 20px;
+  }
 }
 
 .occasion_div {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  margin: 30px 30px;
+  margin: 30px 0px;
+  @include for-laptops {
+    flex-direction: row;
+    margin: 30px 0px;
+  }
 }
 
 .text_container {
-  width: 45%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  margin-right: 40px;
-  margin-top: 40px;
+
+  @include for-laptops {
+    width: 45%;
+    margin-right: 40px;
+    margin-top: 40px;
+  }
 
   .description {
-    margin-top: 20px;
+    margin-top: 15px;
+    @include for-laptops {
+      margin-top: 20px;
+    }
   }
 }
 
 .image_container {
-  width: 40%;
-  margin-left: 40px;
-  width: 360px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  @include for-laptops {
+    width: 40%;
+    margin-left: 40px;
+    width: 360px;
+  }
 
   img {
-    width: 100%;
+    width: 70%;
     height: auto;
+    @include for-laptops {
+      width: 100%;
+    }
   }
 }
 
 //It reverses the row
-.reverse_div {
-  flex-direction: row-reverse !important;
+@include for-laptops {
+  .reverse_div {
+    flex-direction: row-reverse !important;
 
-  .text_container {
-    margin-right: 0px;
-    margin-left: 40px;
-  }
+    .text_container {
+      margin-right: 0px;
+      margin-left: 40px;
+    }
 
-  .image_container {
-    margin-left: 0px;
-    margin-right: 40px;
+    .image_container {
+      margin-left: 0px;
+      margin-right: 40px;
+    }
   }
 }

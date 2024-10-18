@@ -1,0 +1,60 @@
+@import "../../../../styles/variables";
+@import "../../../../styles/mixin";
+// Breadcrumb.module.scss
+.breadcrumb {
+  background-color: #f0f8ff;
+  padding: 12px 20px;
+  border-radius: 8px;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #333;
+}
+
+.backIcon {
+  margin-right: 8px;
+  color: #007bff;
+}
+
+.link {
+  color: #007bff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.current {
+  font-weight: 600;
+  color: #333;
+}
+
+.separator {
+  margin: 0 8px;
+  color: #666;
+}
+
+@media (max-width: 600px) {
+  .breadcrumb {
+    padding: 8px 12px;
+  }
+
+  .item {
+    font-size: 12px;
+  }
+
+  .separator {
+    margin: 0 4px;
+  }
+}
