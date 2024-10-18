@@ -367,7 +367,7 @@ const voucherPage = async ({
                     />
                     <Heading
                       title="Buy "
-                      color="equity-blue"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -474,7 +474,7 @@ const voucherPage = async ({
                     />
                     <Heading
                       title="Use or Redeem "
-                      color="equity-blue"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -519,7 +519,7 @@ const voucherPage = async ({
                     />
                     <Heading
                       title="Balance?"
-                      color="equity-blue"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -554,7 +554,7 @@ const voucherPage = async ({
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
                       title="Terms & Conditions "
-                      color="equity-blue"
+                      color="secondry-black"
                       size="h3"
                       weight="7"
                     />
@@ -597,7 +597,7 @@ const voucherPage = async ({
               />
             </div>
 
-            <div className={`mt-4 mb-5 ${styles.mid_container}`}>
+            <div className={`mt-4 mb-5 desktop-only ${styles.mid_container}`}>
               <div className={styles.popularVouchers}>
                 <h2 className={styles.title}>
                   Explore Our Most Popular Gift Vouchers
