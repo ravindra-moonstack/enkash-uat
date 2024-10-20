@@ -5,6 +5,7 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import CategoryMenu from "@/components/voucher-page/category-menu";
 import VoucherData from "../../data/voucher-data";
+import { Voucher, VoucherDataV2 } from "../../data/voucher-data-V2";
 import Link from "next/link";
 import {
   ajioPopular,
@@ -28,18 +29,6 @@ import FAQHtml from "@/app/ofex/faq-html";
 import faqData from "@/app/ofex/insights/faq-data";
 import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher";
 
-type Voucher = {
-  voucherId: string;
-  name: string;
-  brandName?: string;
-  category: string;
-  discount: number;
-  description: string;
-  aboutCompany: string;
-  backgroundImg: string;
-  howToRedeem: string[];
-};
-
 export function generateMetadata({
   params,
   searchParams,
@@ -48,7 +37,7 @@ export function generateMetadata({
   searchParams: { voucherId: string };
 }): Metadata {
   const voucherId: string = searchParams.voucherId;
-  const voucher: Voucher = VoucherData[voucherId];
+  const voucher: Voucher = VoucherDataV2[voucherId];
   if (!voucher) {
     return {
       title: `Voucher not found - EnKash`,
@@ -140,7 +129,7 @@ const sanitizeUTM = (utm: string): string => {
 
 const fetchVoucher = async (voucherId: string): Promise<Voucher | null> => {
   // local voucher
-  let localVoucher: Voucher = VoucherData[voucherId];
+  let localVoucher: Voucher = VoucherDataV2[voucherId];
   let isActive: boolean = false;
 
   // return localVoucher;
@@ -196,7 +185,8 @@ const voucherPage = async ({
     console.log("No voucher present");
   }
   // const voucherData = await fetchVoucher(localVoucherData?.voucherId);
-  const voucherData = VoucherData[voucherId];
+  // const voucherData = VoucherData[voucherId];
+  const voucherData = VoucherDataV2["PC272920797HGB6I"];
 
   let categoryNameMap = new Map<string, string>([
     ["e-commerce", "E-Commerce"],
@@ -321,23 +311,14 @@ const voucherPage = async ({
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
-                      title="About "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title={voucherData.name}
+                      title={voucherData.calculatorTitle}
                       color="secondry-black"
                       size="h3"
                       weight="7"
                     />
                   </div>
                   <div className={`mb-1 ${styles.description}`}>
-                    BookMyShow Gift Cards are a popular choice for presents,
-                    whether for a special occasion or a thoughtful gesture.
-                    These gift cards are a convenient and appreciated option
-                    that suits any budget and preference.
+                    {voucherData.calculatorDescription}
                   </div>
                   <div className={`my-5`}>
                     <SavingsCalculator
@@ -360,19 +341,7 @@ const voucherPage = async ({
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
-                      title="How to "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title="Buy "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title={`a ${voucherData.name}?`}
+                      title={voucherData.howToBuyTitle}
                       color="secondry-black"
                       size="h3"
                       weight="7"
@@ -467,28 +436,16 @@ const voucherPage = async ({
                 <div className={`mt-4 mb-5`}>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
-                      title="How to "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title="Use or Redeem "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title={`${voucherData.name}?`}
+                      title={voucherData.howToRedeemTitle}
                       color="secondry-black"
                       size="h3"
                       weight="7"
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
-                    <div className={`mb-3`}>{voucherData.description}</div>
+                    <div className={`mb-3`}>{voucherData.howToRedeemDesc}</div>
                     <ul>
-                      {voucherData.howToRedeem.map((step, index) => (
+                      {voucherData.howToRedeemSteps.map((step, index) => (
                         <li key={index}>
                           <div
                             dangerouslySetInnerHTML={{
@@ -502,32 +459,20 @@ const voucherPage = async ({
                   </div>
                 </div>
 
-                {/* Use and Redeem section */}
+                {/* Check Balance section */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
-                      title="How to Check "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title={`${voucherData.name} `}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title="Balance?"
+                      title={voucherData.checkBalanceTitle}
                       color="secondry-black"
                       size="h3"
                       weight="7"
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
-                    <div className={`mb-3`}>{voucherData.description}</div>
+                    <div className={`mb-3`}>{voucherData.checkBalanceDesc}</div>
                     <ul>
-                      {voucherData.howToRedeem.map((step, index) => (
+                      {voucherData.checkBalanceSteps.map((step, index) => (
                         <li key={index}>
                           <div
                             dangerouslySetInnerHTML={{
@@ -553,13 +498,7 @@ const voucherPage = async ({
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
-                      title="Terms & Conditions "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title={`for ${voucherData.name}`}
+                      title={voucherData.termsAndConditionsTitle}
                       color="secondry-black"
                       size="h3"
                       weight="7"
@@ -567,7 +506,7 @@ const voucherPage = async ({
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
                     <ul>
-                      {voucherData.howToRedeem.map((step, index) => (
+                      {voucherData.termsAndConditionSteps.map((step, index) => (
                         <li key={index}>
                           <div
                             dangerouslySetInnerHTML={{
@@ -590,10 +529,10 @@ const voucherPage = async ({
             <div className={`${styles.mid_container}`}>
               <OccasionVoucher
                 voucherName={voucherData.name}
-                corporateGifting="Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break."
-                festivals="Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break."
-                anniversary="Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break."
-                birthdays="Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break."
+                corporateGifting={voucherData.corporateGifting}
+                festivals={voucherData.festivals}
+                anniversary={voucherData.anniversary}
+                birthdays={voucherData.birthdays}
               />
             </div>
 
