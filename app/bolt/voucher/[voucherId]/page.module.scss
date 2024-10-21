@@ -100,17 +100,17 @@
   @include for-laptops {
     padding: 30px 30px 40px;
   }
-  .back_button {
+  .breadcrumb {
     padding: 0px 0px;
+    margin: 10px -20px 15px;
+
     @include for-laptops {
       padding: 0px 30px;
+      margin: -10px -60px 15px;
     }
     a {
       display: flex;
       text-decoration: none;
-      font-size: 18px;
-      color: $color-bolt-title-grey;
-
       img {
         width: 25px;
         height: auto;
@@ -126,7 +126,7 @@
 
     .discount_bar {
       position: absolute;
-      top: 125px;
+      top: 105px;
       left: 98px;
       display: flex;
       font-size: 28px;
@@ -153,7 +153,7 @@
       width: 326px;
       height: 205px;
       position: absolute;
-      top: 164px;
+      top: 144px;
       right: 142px;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -165,7 +165,7 @@
 
     .voucher_name {
       position: absolute;
-      top: 190px;
+      top: 170px;
       left: 100px;
       font-size: 38px;
       font-weight: 700;
@@ -184,7 +184,7 @@
       background: $color-equity-blue;
       padding: 7px 18px;
       border-radius: 4px;
-      top: 340px;
+      top: 320px;
       left: 101px;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);

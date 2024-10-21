@@ -12,7 +12,7 @@ interface SavingsCalculatorProps {
   voucherName: string;
   category: string;
   savingsPercentage: number;
-  voucherImg: string;
+  voucherImg?: string;
 }
 
 const voucherOptions: VoucherOption[] = [
@@ -60,11 +60,15 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
       <div className={styles.voucherInfo}>
         <div className={styles.voucherInfoLeft}>
           <div className={styles.voucherImageContainer}>
-            <Image
-              src={voucherImg}
-              alt="BookMyShow Logo"
-              className={styles.voucherImage}
-            />
+            {voucherImg && (
+              <Image
+                src={voucherImg}
+                alt={voucherName}
+                className={styles.voucherImage}
+                width={100}
+                height={60}
+              />
+            )}
           </div>
           <div className={styles.voucherDetails}>
             <h3>{voucherName}</h3>

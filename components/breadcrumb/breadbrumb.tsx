@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Head from "next/head";
 import styles from "./Breadcrumb.module.scss";
+import { backArrowWhiteBg } from ".";
+import Image from "next/image";
 
 interface BreadcrumbItem {
   name: string;
@@ -13,10 +15,11 @@ interface BreadcrumbProps {
   domain?: string;
 }
 
-const Breadcrumb: React.FC<BreadcrumbProps> = ({
+const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
   items,
   domain = "https://www.enkash.com/",
 }) => {
+  const backLink = items[items.length - 2]?.url || "/";
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -27,7 +30,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
       item: `${domain}${item.url}`,
     })),
   };
-  
+
   return (
     <>
       <Head>
@@ -39,7 +42,13 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
         <ol className={styles.list}>
           {items.map((item, index) => (
             <li key={index} className={styles.item}>
-              {index === 0 && <span className={styles.backIcon}>←</span>}
+              {index === 0 && (
+                <Link href={backLink} className={styles.link}>
+                  <div className={styles.backIcon}>
+                    <Image src={backArrowWhiteBg} alt="Back" />
+                  </div>
+                </Link>
+              )}
               {index < items.length - 1 ? (
                 <Link href={item.url} className={styles.link}>
                   {item.name}
@@ -60,4 +69,4 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({
   );
 };
 
-export default Breadcrumb;
+export default CustomBreadcrumb;

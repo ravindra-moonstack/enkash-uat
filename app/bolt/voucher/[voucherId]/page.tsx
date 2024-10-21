@@ -28,6 +28,8 @@ import SavingsCalculator from "@/components/voucher-page/voucher-calculator/vouc
 import FAQHtml from "@/app/ofex/faq-html";
 import faqData from "@/app/ofex/insights/faq-data";
 import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher";
+import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
+import { titleCae, toCamelCase } from "@/common/utils/stringUtils";
 
 export function generateMetadata({
   params,
@@ -196,7 +198,7 @@ const voucherPage = async ({
     ["movies-and-music", "Movies & Music"],
   ]);
   const voucherImage = voucherData
-    ? require(`./../../../../public/images/voucher-bg/${voucherData.backgroundImg}`)
+    ? `/images/voucher-bg/${voucherData.backgroundImg}`
     : null;
 
   const boltUTM = voucherData
@@ -210,6 +212,16 @@ const voucherPage = async ({
         voucherData.name.toLowerCase()
       )}`
     : "https://bolt.enkash.com/";
+
+  const breadcrumbItems = [
+    { name: "Home", url: "/" },
+    { name: "Bolt", url: "/bolt" },
+    {
+      name: `${titleCae(voucherData.category)}`,
+      url: `/bolt/category/${voucherData.category}`,
+    },
+    { name: voucherData?.name || "Voucher", url: `/bolt/voucher/${voucherId}` },
+  ];
 
   return (
     <>
@@ -225,13 +237,17 @@ const voucherPage = async ({
 
           <div className={`mx-auto ${styles.voucher_detail_container}`}>
             <div className={`mt-3 ${styles.top_container}`}>
-              <div className={`my-3 ${styles.back_button}`}>
+              {/* <div className={`my-3 ${styles.back_button}`}>
                 <Link href={`/bolt/category/${voucherData.category}`}>
                   <Image src={backArrow} alt="back" />
                   <div className={`mx-3`}>
                     {categoryNameMap.get(voucherData.category)}
                   </div>
                 </Link>
+              </div> */}
+
+              <div className={`${styles.breadcrumb}`}>
+                <CustomBreadcrumb items={breadcrumbItems} />
               </div>
 
               <div className={styles.web_only}>
@@ -257,7 +273,14 @@ const voucherPage = async ({
                     {voucherData.name.replace("-", "\u2011")}
                   </div>
                   <div className={styles.voucher_image}>
-                    <Image src={voucherImage} alt={voucherData.name} />
+                    {voucherImage && (
+                      <Image
+                        src={voucherImage}
+                        alt={voucherData.name}
+                        width={330}
+                        height={300}
+                      />
+                    )}
                   </div>
                   <div className={styles.buy_now_button}>
                     <Link href={boltUTM} target="_blank">
@@ -325,7 +348,7 @@ const voucherPage = async ({
                       voucherName={voucherData.name}
                       category={voucherData.category}
                       savingsPercentage={voucherData.discount}
-                      voucherImg={voucherImage}
+                      voucherImg={`/images/voucher-bg/${voucherData.backgroundImg}`}
                     />
                   </div>
                 </div>

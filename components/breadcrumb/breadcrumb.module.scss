@@ -1,15 +1,24 @@
-@import "../../../../styles/variables";
-@import "../../../../styles/mixin";
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
 // Breadcrumb.module.scss
 .breadcrumb {
-  background-color: #f0f8ff;
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 5px 10px 5px 10px;
+  background-image: url("/images/assets/breadcrum-bg.svg");
+  background-repeat: no-repeat;
+  background-position: 100%;
+
+  @include for-laptops {
+    height: auto;
+    padding: 5px 10px 5px 50px;
+    background-position: -30%;
+    height: 40px;
+  }
 }
 
 .list {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -18,17 +27,27 @@
 .item {
   display: flex;
   align-items: center;
-  font-size: 14px;
+  text-wrap: nowrap !important;
+  font-size: 12px !important;
   color: #333;
+
+  @include for-laptops {
+    font-size: 16px !important;
+  }
 }
 
 .backIcon {
-  margin-right: 8px;
+  margin-right: 16px;
   color: #007bff;
+  width: 20px;
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .link {
-  color: #007bff;
+  color: $color-secondry-black;
   text-decoration: none;
   &:hover {
     text-decoration: underline;
@@ -36,25 +55,19 @@
 }
 
 .current {
+  color: $color-equity-blue;
+  font-size: 12px;
   font-weight: 600;
-  color: #333;
+
+  @include for-laptops {
+    font-size: 16px;
+  }
 }
 
 .separator {
-  margin: 0 8px;
+  margin: 0 2px;
   color: #666;
-}
-
-@media (max-width: 600px) {
-  .breadcrumb {
-    padding: 8px 12px;
-  }
-
-  .item {
-    font-size: 12px;
-  }
-
-  .separator {
-    margin: 0 4px;
+  @include for-laptops {
+    margin: 0 8px;
   }
 }
