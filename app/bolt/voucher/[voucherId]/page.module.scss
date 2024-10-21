@@ -355,6 +355,32 @@
   }
 }
 
+.need_container {
+  display: flex;
+  padding: 20px 0px;
+  @include for-laptops {
+    padding: 20px 40px 0;
+  }
+
+  .need_img {
+    width: 100px;
+    @include for-laptops {
+      width: 50px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .need_content {
+    padding: 0px 0px 0px 20px;
+    @include for-laptops {
+      padding: 0 20px;
+    }
+  }
+}
+
 .popularVouchers {
   margin: 0 auto;
   padding: 20px;

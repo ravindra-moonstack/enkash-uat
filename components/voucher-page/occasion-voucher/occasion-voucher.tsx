@@ -11,7 +11,6 @@ import {
 
 interface OccasionVoucherProps {
   voucherName: string;
-  corporateGifting?: string;
   festivals?: string;
   anniversary?: string;
   birthdays?: string;
@@ -19,7 +18,6 @@ interface OccasionVoucherProps {
 
 const OccasionVoucher: React.FC<OccasionVoucherProps> = ({
   voucherName,
-  corporateGifting,
   festivals,
   anniversary,
   birthdays,
@@ -48,21 +46,6 @@ const OccasionVoucher: React.FC<OccasionVoucherProps> = ({
           </div>
         </div>
         <div className={styles.occasions_container}>
-          <div className={`${styles.occasion_div}`}>
-            <div className={styles.text_container}>
-              <Heading
-                title="Corporate Gifting"
-                size="h4"
-                weight="7"
-                color="equity-blue"
-              />
-              <div className={styles.description}>{corporateGifting}</div>
-            </div>
-            <div className={styles.image_container}>
-              <Image src={corporateGiftingImg} alt="corporate gifting" />
-            </div>
-          </div>
-
           <div className={`${styles.occasion_div} ${styles.reverse_div}`}>
             <div className={styles.text_container}>
               <Heading

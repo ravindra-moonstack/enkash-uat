@@ -30,3 +30,6 @@ export { default as amazonPopular } from "./img/amazon-popular.svg";
 export { default as ajioPopular } from "./img/ajio-popular.svg";
 export { default as zomatoPopular } from "./img/zomato-popular.svg";
 export { default as popularArrow } from "./img/popular-arrow.svg";
+
+export { default as individualNeed } from "./img/individual-need.svg";
+export { default as corporateNeed } from "./img/corporate-need.svg";

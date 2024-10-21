@@ -12,7 +12,9 @@ import {
   amazonPopular,
   backArrow,
   blueStepTick,
+  corporateNeed,
   faqBg,
+  individualNeed,
   myntraPopular,
   popularArrow,
   zigZagBottom,
@@ -549,10 +551,67 @@ const voucherPage = async ({
               </div>
             </div>
 
+            <div className={`mb-4 ${styles.mid_container}`}>
+              <div className={styles.detail_section}>
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    <Heading
+                      title="Who can use "
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title={voucherData.name}
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className={`mb-4 ${styles.description}`}>
+                <div className={styles.need_container}>
+                  <div className={styles.need_img}>
+                    <Image src={individualNeed} alt="Individual Need" />
+                  </div>
+                  <div className={`${styles.need_content}`}>
+                    <Heading
+                      title="Individual Need"
+                      color="secondry-black"
+                      size="h4"
+                      weight="7"
+                    />
+                    <div className={`mb-4 ml-2 ${styles.description}`}>
+                      Getting your hands on {voucherData.name}s will enable you
+                      to get exclusive discounts.
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles.need_container}>
+                  <div className={styles.need_img}>
+                    <Image src={corporateNeed} alt="Corporate Need" />
+                  </div>
+                  <div className={`${styles.need_content}`}>
+                    <Heading
+                      title="Corporate Need"
+                      color="secondry-black"
+                      size="h4"
+                      weight="7"
+                    />
+                    <div className={`mb-4 ml-2 ${styles.description}`}>
+                      Enterprises can save big annually with an exclusive 
+                      {voucherData.name}s for their employees.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className={`${styles.mid_container}`}>
               <OccasionVoucher
                 voucherName={voucherData.name}
-                corporateGifting={voucherData.corporateGifting}
                 festivals={voucherData.festivals}
                 anniversary={voucherData.anniversary}
                 birthdays={voucherData.birthdays}

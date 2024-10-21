@@ -28,7 +28,6 @@ export type Voucher = {
   termsAndConditionsTitle: string;
   termsAndConditionSteps: string[];
   occasionsTitle: string;
-  corporateGifting: string;
   festivals: string;
   anniversary: string;
   birthdays: string;
@@ -86,8 +85,6 @@ export const VoucherDataV2: Record<string, Voucher> = {
       "7. Use the Gift Card amount to pay for the purchase.",
     ],
     occasionsTitle: "Nykaa Fashion E-Gift Cards for different Occasions",
-    corporateGifting:
-      "Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break.",
     festivals:
       "Consider gifting your employees BookMyShow gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break.",
     anniversary:
