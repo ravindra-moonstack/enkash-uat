@@ -11,7 +11,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { CategoryData } from "../../data/category-data";
 import Link from "next/link";
 import CategoryMenu from "@/components/voucher-page/category-menu";
-import VoucherData from "../../data/voucher-data";
+import { VoucherDataV2 } from "../../data/voucher-data-V2";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import {
   apparels,
@@ -22,18 +22,7 @@ import {
   whiteArrow,
 } from "./../../index";
 import { movieAndMusic } from "@/components/header";
-
-type Voucher = {
-  voucherId: string;
-  name: string;
-  brandName?: string;
-  category: string;
-  discount: number;
-  description: string;
-  aboutCompany: string;
-  backgroundImg: string;
-  howToRedeem: string[];
-};
+import { Voucher } from "../../data/voucher-data-V2";
 
 interface CategoryData {
   name: string;
@@ -96,7 +85,7 @@ const generateVoucherSchema = (voucher: Voucher): string => {
 };
 
 export const voucherUrlGenerate = (voucherId: string): string => {
-  const voucher = VoucherData[voucherId];
+  const voucher = VoucherDataV2[voucherId];
   const url = `bolt/voucher/${voucher.name.replaceAll(" ", "-")}?voucherId=${
     voucher.voucherId
   }`;
@@ -105,7 +94,7 @@ export const voucherUrlGenerate = (voucherId: string): string => {
 
 const fetchVouchers = async (categoryName: string) => {
   // local vouchers for the current category
-  const localVouchers: Voucher[] = Object.values(VoucherData).filter(
+  const localVouchers: Voucher[] = Object.values(VoucherDataV2).filter(
     (voucher: Voucher) => voucher.category === categoryName
   );
 
