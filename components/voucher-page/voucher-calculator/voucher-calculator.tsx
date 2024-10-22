@@ -31,14 +31,14 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
   const [quantities, setQuantities] = useState<number[]>(
     new Array(voucherOptions.length - 1).fill(0).concat(2)
   );
-  const [totalCount, setTotalCount] = useState(0);
 
   const handleQuantityChange = (index: number, change: number) => {
     const newQuantities = [...quantities];
     newQuantities[index] = Math.max(0, newQuantities[index] + change);
     setQuantities(newQuantities);
-    setTotalCount(Math.max(0, totalCount + change));
   };
+
+  const totalCount = quantities.reduce((acc, quantity) => acc + quantity, 0);
 
   const calculateSavings = (mrp: number) => {
     return (mrp * savingsPercentage) / 100;
