@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Head from "next/head";
-import styles from "./Breadcrumb.module.scss";
+import styles from "./breadcrumb.module.scss";
 import { backArrowWhiteBg } from ".";
 import Image from "next/image";
 
