@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /resources/wp-admin/
-Disallow: /resources/wp-login.php
-Disallow: /_next/static/chunks/*
-Disallow: /olympus/payables/pay-by-any-card-old/
