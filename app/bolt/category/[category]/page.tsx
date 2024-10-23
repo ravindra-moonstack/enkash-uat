@@ -87,9 +87,7 @@ const generateVoucherSchema = (voucher: Voucher): string => {
 
 export const voucherUrlGenerate = (voucherId: string): string => {
   const voucher = VoucherDataV2[voucherId];
-  const url = `voucher/${nameToUrl(voucher.name)}?voucherId=${
-    voucher.voucherId
-  }`;
+  const url = `voucher/${nameToUrl(voucher.name)}`;
   return url;
 };
 

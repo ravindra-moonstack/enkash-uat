@@ -31,7 +31,7 @@ import FAQHtml from "@/app/ofex/faq-html";
 import faqData from "@/app/ofex/insights/faq-data";
 import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher";
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
-import { titleCae, toCamelCase } from "@/common/utils/stringUtils";
+import { nameToUrl, titleCae, toCamelCase } from "@/common/utils/stringUtils";
 
 export function generateMetadata({
   params,
@@ -131,12 +131,18 @@ const sanitizeUTM = (utm: string): string => {
   return utm;
 };
 
-const fetchVoucher = async (voucherId: string): Promise<Voucher | null> => {
+const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   // local voucher
-  let localVoucher: Voucher = VoucherDataV2[voucherId];
+  console.log("voucherName", voucherName);
+  let localVoucher: Voucher | any = Object.values(VoucherDataV2).find(
+    (voucher) => {
+      console.log("Checking voucher:", voucher.name);
+      return nameToUrl(voucher.name) === voucherName;
+    }
+  );
   let isActive: boolean = false;
 
-  // return localVoucher;
+  return localVoucher;
   if (!localVoucher) {
     console.log("local voucher not found");
     return null;
@@ -174,23 +180,20 @@ const fetchVoucher = async (voucherId: string): Promise<Voucher | null> => {
   }
 };
 
-const voucherPage = async ({
-  params,
-  searchParams,
-}: {
-  params: { voucherName?: string };
-  searchParams: { voucherId: string };
-}) => {
+const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
   const voucherName = params.voucherName;
-  const { voucherId } = searchParams;
-  const localVoucherData = VoucherData[voucherId];
+
+  const localVoucherData = Object.values(VoucherDataV2).find(
+    (voucher) => nameToUrl(voucher.name) === voucherName
+  );
 
   if (!localVoucherData) {
     console.log("No voucher present");
   }
-  // const voucherData = await fetchVoucher(localVoucherData?.voucherId);
+  const voucherData = await fetchVoucher(voucherName);
+  const voucherCategory = voucherData?.category || "";
   // const voucherData = VoucherData[voucherId];
-  const voucherData = VoucherDataV2["PC272920797HGB6I"];
+  // const voucherData = VoucherDataV2[voucherName];
 
   let categoryNameMap = new Map<string, string>([
     ["e-commerce", "E-Commerce"],
@@ -219,10 +222,10 @@ const voucherPage = async ({
     { name: "Home", url: "/" },
     { name: "Voucher", url: "/bolt" },
     {
-      name: `${titleCae(voucherData.category)}`,
-      url: `/bolt/category/${voucherData.category}`,
+      name: `${categoryNameMap.get(voucherCategory)}`,
+      url: `/voucher/category/${voucherData?.category}`,
     },
-    { name: voucherData?.name || "Voucher", url: `/voucher/${voucherId}` },
+    { name: voucherData?.name || "Voucher", url: `/voucher/${voucherName}` },
   ];
 
   return (
