@@ -27,7 +27,7 @@ const CategoryMenu: React.FC<CategoryMenuProps> = ({ currentPageCategory }) => {
       {Object.values(CategoryData).map((category) => (
         <Link
           key={category.name}
-          href={`/bolt/category/${category.name}#category-menu`}
+          href={`/voucher/category/${category.name}#category-menu`}
           className={` ${styles.category_button}`}
         >
           <button

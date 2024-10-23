@@ -25,7 +25,7 @@ import {
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { voucherUrlGenerate } from "../../bolt/category/[category]/page";
+import { voucherUrlGenerate } from "../category/[category]/page";
 import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator";
 import FAQHtml from "@/app/ofex/faq-html";
 import faqData from "@/app/ofex/insights/faq-data";

@@ -8,10 +8,10 @@ import Footer from "@/components/footer/footer";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { CategoryData } from "../../data/category-data";
+import { CategoryData } from "../../../bolt/data/category-data";
 import Link from "next/link";
 import CategoryMenu from "@/components/voucher-page/category-menu";
-import { VoucherDataV2 } from "../../data/voucher-data-V2";
+import { VoucherDataV2 } from "../../../bolt/data/voucher-data-V2";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import {
   apparels,
@@ -20,9 +20,9 @@ import {
   healthAndWellness,
   moviesAndMusic,
   whiteArrow,
-} from "./../../index";
+} from "../../../bolt/index";
 import { movieAndMusic } from "@/components/header";
-import { Voucher } from "../../data/voucher-data-V2";
+import { Voucher } from "../../../bolt/data/voucher-data-V2";
 import { nameToUrl } from "@/common/utils/stringUtils";
 
 interface CategoryData {

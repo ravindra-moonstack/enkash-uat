@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./voucher-page.module.scss";
-import { voucherUrlGenerate } from "@/app/bolt/category/[category]/page";
+import { voucherUrlGenerate } from "@/app/voucher/category/[category]/page";
 import { Voucher } from "@/app/bolt/data/voucher-data-V2";
 
 interface VoucherCardProps {
