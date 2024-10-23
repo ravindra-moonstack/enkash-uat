@@ -4,8 +4,8 @@ import styles from "./page.module.scss";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import CategoryMenu from "@/components/voucher-page/category-menu";
-import VoucherData from "../../data/voucher-data";
-import { Voucher, VoucherDataV2 } from "../../data/voucher-data-V2";
+import VoucherData from "../../bolt/data/voucher-data";
+import { Voucher, VoucherDataV2 } from "../../bolt/data/voucher-data-V2";
 import Link from "next/link";
 import {
   ajioPopular,
@@ -21,11 +21,11 @@ import {
   zigZagGrey,
   zigZagTop,
   zomatoPopular,
-} from "../..";
+} from "../../bolt";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { voucherUrlGenerate } from "../../category/[category]/page";
+import { voucherUrlGenerate } from "../../bolt/category/[category]/page";
 import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator";
 import FAQHtml from "@/app/ofex/faq-html";
 import faqData from "@/app/ofex/insights/faq-data";
@@ -217,12 +217,12 @@ const voucherPage = async ({
 
   const breadcrumbItems = [
     { name: "Home", url: "/" },
-    { name: "Bolt", url: "/bolt" },
+    { name: "Voucher", url: "/bolt" },
     {
       name: `${titleCae(voucherData.category)}`,
       url: `/bolt/category/${voucherData.category}`,
     },
-    { name: voucherData?.name || "Voucher", url: `/bolt/voucher/${voucherId}` },
+    { name: voucherData?.name || "Voucher", url: `/voucher/${voucherId}` },
   ];
 
   return (
@@ -304,6 +304,7 @@ const voucherPage = async ({
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH1TagInHtml={true}
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import styles from "./voucher-calculator.module.scss";
 import { whiteCart } from "..";
 import Image from "next/image";
+import { titleCae } from "@/common/utils/stringUtils";
 
 interface VoucherOption {
   mrp: number;
@@ -73,7 +74,9 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
           <div className={styles.voucherDetails}>
             <h3>{voucherName}</h3>
             <span className={styles.discount}>{savingsPercentage}% Off</span>
-            <span className={styles.category}>Category: {category}</span>
+            <span className={styles.category}>
+              Category: {titleCae(category)}
+            </span>
           </div>
         </div>
         <div className="desktop-only">

@@ -23,6 +23,7 @@ import {
 } from "./../../index";
 import { movieAndMusic } from "@/components/header";
 import { Voucher } from "../../data/voucher-data-V2";
+import { nameToUrl } from "@/common/utils/stringUtils";
 
 interface CategoryData {
   name: string;
@@ -86,7 +87,7 @@ const generateVoucherSchema = (voucher: Voucher): string => {
 
 export const voucherUrlGenerate = (voucherId: string): string => {
   const voucher = VoucherDataV2[voucherId];
-  const url = `bolt/voucher/${voucher.name.replaceAll(" ", "-")}?voucherId=${
+  const url = `voucher/${nameToUrl(voucher.name)}?voucherId=${
     voucher.voucherId
   }`;
   return url;

@@ -1,5 +1,5 @@
-@import "../../../../styles/variables";
-@import "../../../../styles/mixin";
+@import "../../../styles/variables";
+@import "../../../styles/mixin";
 
 .web_only {
   display: none;
@@ -119,14 +119,14 @@
   }
 
   .voucher_image_section {
-    background-image: url(./../../img/voucher-detail-bg.svg);
+    background-image: url(./../../bolt/img/voucher-detail-bg.svg);
     background-size: 100%;
     height: 330px;
     margin: 0 0px 40px;
 
     .discount_bar {
       position: absolute;
-      top: 105px;
+      top: 109px;
       left: 98px;
       display: flex;
       font-size: 28px;
@@ -153,7 +153,7 @@
       width: 326px;
       height: 205px;
       position: absolute;
-      top: 144px;
+      top: 150px;
       right: 142px;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -165,7 +165,7 @@
 
     .voucher_name {
       position: absolute;
-      top: 170px;
+      top: 175px;
       left: 100px;
       font-size: 38px;
       font-weight: 700;
@@ -184,7 +184,7 @@
       background: $color-equity-blue;
       padding: 7px 18px;
       border-radius: 4px;
-      top: 320px;
+      top: 325px;
       left: 101px;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
