@@ -121,7 +121,7 @@ const boltPage = () => {
               title="E-commerce"
               description="Get enticing deals on a diverse range of e-commerce brands. Whether you're searching for the latest gadgets, trendy fashion items, or household essentials, get all in one place"
               theme="blue"
-              link="/bolt/category/e-commerce"
+              link="/voucher/category/e-commerce"
             />
           </div>
           <div
@@ -164,7 +164,7 @@ const boltPage = () => {
               title="Food & Beverages"
               description="Treat your taste buds to good food, from gourmet delicacies to everyday essentials, and relish in discounts that make every meal more satisfying"
               theme="blue"
-              link="/bolt/category/food-and-beverages"
+              link="/voucher/category/food-and-beverages"
             />
           </div>
         </div>
@@ -175,7 +175,7 @@ const boltPage = () => {
               title="Apparels"
               description="Elevate your style quotient without breaking the bank by availing discounted shopping gift vouchers from famous apparel brands"
               theme="blue"
-              link="/bolt/category/apparels"
+              link="/voucher/category/apparels"
             />
           </div>
           <div
@@ -219,7 +219,7 @@ const boltPage = () => {
               title="Movies & Music"
               description="Immerse yourself in a world of entertainment at a fraction of the cost with gift vouchers from leading movies and music providers"
               theme="blue"
-              link="/bolt/category/movies-and-music"
+              link="/voucher/category/movies-and-music"
             />
           </div>
         </div>
@@ -230,7 +230,7 @@ const boltPage = () => {
               title="Health and Wellness"
               description="Prioritize your well-being with our range of savings on health and wellness brands. Our discounted gift vouchers empower you to invest in your health without straining your budget"
               theme="blue"
-              link="/bolt/category/health-and-wellness"
+              link="/voucher/category/health-and-wellness"
             />
           </div>
           <div
