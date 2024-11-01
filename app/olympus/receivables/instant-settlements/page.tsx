@@ -27,7 +27,8 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Get cash in hand instantly after accepting online payments with Instant Settlement whenever you want. You don’t need to wait for days to get your customer payments to grow your business with EnKash.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/instant-settlements",
+    canonical:
+      "https://www.enkash.com/olympus/receivables/instant-settlements/",
   },
   faqData: faqData,
 });

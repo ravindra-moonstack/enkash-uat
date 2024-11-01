@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Customise Payment Pages and send different versions of the same Payment Page to different customers. Book Demo now !!",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/bulk-collect",
+    canonical: "https://www.enkash.com/olympus/receivables/customized-payment/",
   },
   faqData: faqData,
 });

@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     " UPI is a digital payment system that allows instant money transfers between bank accounts using a Virtual Payment Address (VPA). Try UPI Payments to ease business collections.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/upi-payments",
+    canonical: "https://www.enkash.com/olympus/receivables/upi-payments/",
   },
   faqData: faqData,
 });

@@ -23,12 +23,11 @@ import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
 
 export const metadata: Metadata = generateMetaData({
-  title:
-    " Best Payment Gateway in India : Manage your Payments Online - EnKash",
+  title: "Best Payment Gateway in India : Manage your Payments Online - EnKash",
   description:
     "Best Payment Gateway in India - EnKash Payment Gateway supports many payment modes. Accept payments from all domestic cards, UPI, Netbanking and Wallets with Lowest Fees. Book Free Demo !!",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/payment-gateway",
+    canonical: "https://www.enkash.com/olympus/receivables/payment-gateway/",
   },
   faqData: faqData,
 });

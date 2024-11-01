@@ -33,15 +33,13 @@ import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
 import { nameToUrl, titleCae, toCamelCase } from "@/common/utils/stringUtils";
 
-export function createMetadata({
+export function generateMetadata({
   params,
-  searchParams,
 }: {
   params: { voucherName?: string };
-  searchParams: { voucherId: string };
 }): Metadata {
-  const voucherId: string = searchParams.voucherId;
-  const voucher: Voucher = VoucherDataV2[voucherId];
+  const voucherName = nameToUrl(params.voucherName ?? "");
+  const voucher: Voucher = VoucherDataV2[voucherName];
   if (!voucher) {
     return {
       title: `Voucher not found - EnKash`,
@@ -52,12 +50,14 @@ export function createMetadata({
       },
     };
   }
-  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucherId}.png`;
+  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.voucherId}.png`;
   return {
     title: `${voucher.name} - EnKash`,
     description: `${voucher.description}`,
     alternates: {
-      canonical: `https://www.enkash.com/${voucherUrlGenerate(voucherId)}`,
+      canonical: `https://www.enkash.com/${voucherUrlGenerate(
+        voucher.voucherId
+      )}`,
     },
     openGraph: {
       title: `${voucher.name} - EnKash`,

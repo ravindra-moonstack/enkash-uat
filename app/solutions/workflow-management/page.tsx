@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "EnKash workflow management platform provides an infrastructure for the set-up, automated payment reminders over email, sms & WhatsApp. Book a Free Demo Now !!",
   alternates: {
-    canonical: "https://www.enkash.com/solutions/integrations/",
+    canonical: "https://www.enkash.com/solutions/workflow-management/",
   },
   faqData: faqData,
 });

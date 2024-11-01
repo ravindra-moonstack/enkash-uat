@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "QR codes help enterprises accept contactless and error-free in-store payments from customers using any UPI app.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/qr-codes",
+    canonical: "https://www.enkash.com/olympus/receivables/qr-codes/",
   },
   faqData: faqData,
 });

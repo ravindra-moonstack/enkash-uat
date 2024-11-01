@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. Book a Free demo Now !!",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/payment-links",
+    canonical: "https://www.enkash.com/olympus/receivables/payment-links/",
   },
   faqData: faqData,
 });

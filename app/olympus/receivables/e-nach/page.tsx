@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify collections payments, reduce paperwork & enhance financial efficiency with our e-NACH Solution. Explore the benefits of Electronic National Automated Clearing House (eNach) & eMandate.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/bulk-collect",
+    canonical: "https://www.enkash.com/olympus/receivables/e-nach/",
   },
   faqData: faqData,
 });

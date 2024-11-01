@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Integrate the Payment Button and accept payments instantly from Debit Card, Credit Card, Net Banking, UPI and Wallets. Book a free demo now !!",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/invoices",
+    canonical: "https://www.enkash.com/olympus/receivables/payment-button/",
   },
   faqData: faqData,
 });

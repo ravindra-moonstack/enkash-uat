@@ -27,7 +27,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Optimize Your Financial Operations with Virtual Account Solutions. Explore virtual accounts designed to streamline receivables, enhance cash flow management, and boost financial efficiency",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/virtual-accounts",
+    canonical: "https://www.enkash.com/olympus/receivables/virtual-accounts/",
   },
   faqData: faqData,
 });

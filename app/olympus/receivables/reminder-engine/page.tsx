@@ -29,7 +29,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Reminder engines help businesses keep track of the payments to be received by the customer. Businesses can use these reminders to collect payments timely and facilitate their cash flow.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/reminder-engine",
+    canonical: "https://www.enkash.com/olympus/receivables/reminder-engine/",
   },
   faqData: faqData,
 });
