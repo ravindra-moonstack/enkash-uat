@@ -20,8 +20,9 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Control your Business Expenses with Policies & Approval Flow  - EnKash",
   description:
@@ -29,7 +30,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/ofex/policy-and-approval-flows/",
   },
-};
+  faqData: faqData,
+});
 
 const policyApprovalFlow = () => {
   return (

@@ -20,15 +20,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Bulk Collect – Corporate E-Collect and Payment Collection | EnKash",
   description:
     "Revolutionize your business payment collection with Bulk Collect. Streamline data management, enhance efficiency, and ensure seamless payment processes. Explore the benefits with EnKash today",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/bulk-collect",
   },
-};
+  faqData: faqData,
+});
 
 const bulkCollect = () => {
   return (

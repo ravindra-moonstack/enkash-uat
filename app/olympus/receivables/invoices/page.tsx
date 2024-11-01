@@ -21,15 +21,17 @@ import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Automated Invoicing Processing & Software for Business - EnKash",
   description:
     "Simplify your invoicing process with our cutting-edge invoicebill management software for businesses.  Get complete visibility of sales and payments & create bulk invoices with embedded payment links",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/invoices",
   },
-};
+  faqData: faqData,
+});
 
 const invoices = () => {
   return (

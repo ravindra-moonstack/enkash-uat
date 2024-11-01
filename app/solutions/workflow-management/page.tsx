@@ -22,12 +22,17 @@ import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Save Time with Workflow Management Software for Businesses - EnKash",
   description:
     "EnKash workflow management platform provides an infrastructure for the set-up, automated payment reminders over email, sms & WhatsApp. Book a Free Demo Now !!",
-};
+  alternates: {
+    canonical: "https://www.enkash.com/solutions/integrations/",
+  },
+  faqData: faqData,
+});
 
 const workflowManagement = () => {
   return (

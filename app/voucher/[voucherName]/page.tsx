@@ -33,7 +33,7 @@ import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
 import { nameToUrl, titleCae, toCamelCase } from "@/common/utils/stringUtils";
 
-export function generateMetadata({
+export function createMetadata({
   params,
   searchParams,
 }: {

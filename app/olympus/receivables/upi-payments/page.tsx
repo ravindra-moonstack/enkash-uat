@@ -20,8 +20,9 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "UPI Payments - Accept Payments Online into your Bank Account - EnKash.com",
   description:
@@ -29,7 +30,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/upi-payments",
   },
-};
+  faqData: faqData,
+});
 
 const AutoCollect = () => {
   return (

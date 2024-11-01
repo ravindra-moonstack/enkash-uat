@@ -29,15 +29,17 @@ import {
 } from ".";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Automated Expense Management Software for your Business- EnKash",
   description:
     "EnKash automated expense management platform keeps track of budgets and ensures that spends are within limits. Automating expense management saves time & transparency.Book Demo Now !!",
   alternates: {
     canonical: "https://www.enkash.com/ofex/",
   },
-};
+  faqData: faqData,
+});
 
 const OfEx = () => {
   return (

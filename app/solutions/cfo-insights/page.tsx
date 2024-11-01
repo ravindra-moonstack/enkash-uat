@@ -22,8 +22,9 @@ import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "CFO Insights: Empowers CFOs with Approval Workflows & Admin Controls - EnKash",
   description:
@@ -31,7 +32,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/solutions/cfo-insights/",
   },
-};
+  faqData: faqData,
+});
 
 const CfoSuite = () => {
   return (

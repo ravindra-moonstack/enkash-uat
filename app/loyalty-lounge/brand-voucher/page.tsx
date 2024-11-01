@@ -20,15 +20,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Brand Voucher – Corporate Gift Vouchers for Employees | EnKash",
   description:
     "Explore Brand Vouchers and Buy Gift Vouchers. Discover a thoughtful and versatile way to recognize and motivate your team with our selection of brand vouchers",
   alternates: {
     canonical: "https://www.enkash.com/loyalty-lounge/brand-voucher/",
   },
-};
+  faqData: faqData,
+});
 
 const brandVoucher = () => {
   return (

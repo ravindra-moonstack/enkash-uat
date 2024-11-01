@@ -28,8 +28,9 @@ import {
   heavyLiftingIconThree,
 } from ".";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "All-in-one Rewards, Corporate Gifting & incentives Management Platform - EnKash",
   description:
@@ -37,7 +38,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/loyalty-lounge/",
   },
-};
+  faqData: faqData,
+});
 
 const loyaltyLounge = () => {
   return (

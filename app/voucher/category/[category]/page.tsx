@@ -34,7 +34,7 @@ interface CategoryData {
   backgroundImage: string;
 }
 
-export function generateMetadata({
+export function createMetadata({
   params,
 }: {
   params: { category: string };

@@ -20,13 +20,18 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Collect Payments Online on Websites with Customized Payment Buttons - EnKash",
   description:
     "Integrate the Payment Button and accept payments instantly from Debit Card, Credit Card, Net Banking, UPI and Wallets. Book a free demo now !!",
-};
+  alternates: {
+    canonical: "https://www.enkash.com/olympus/receivables/invoices",
+  },
+  faqData: faqData,
+});
 
 const page = () => {
   return (

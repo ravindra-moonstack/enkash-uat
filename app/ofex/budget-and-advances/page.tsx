@@ -20,15 +20,17 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Budget Management Platform | Budget Control for Business - EnKash",
   description:
     "Optimize your financial stability with expert budget control management and cash flow strategies. Effectively allocate resources, track expenditures, and manage your cash flow to achieve sustainable financial success",
   alternates: {
     canonical: "https://www.enkash.com/ofex/budget-and-advances/",
   },
-};
+  faqData: faqData,
+});
 
 const budgetAndAdvance = () => {
   return (

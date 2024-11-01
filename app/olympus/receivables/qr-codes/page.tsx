@@ -20,15 +20,17 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Accept Instant Payments through QR codes for your Business",
   description:
     "QR codes help enterprises accept contactless and error-free in-store payments from customers using any UPI app.",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/qr-codes",
   },
-};
+  faqData: faqData,
+});
 
 const QRCodes = () => {
   return (

@@ -44,15 +44,16 @@ import {
 } from ".";
 import Footer from "@/components/footer/footer";
 import EmailBox from "@/components/homepage/email-box";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "EnKash - The Ultimate Platform for Businesses",
   description:
     "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more.",
   alternates: {
     canonical: "https://www.enkash.com",
   },
-};
+});
 
 const home = () => {
   return (

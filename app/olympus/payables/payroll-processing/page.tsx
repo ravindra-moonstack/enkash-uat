@@ -21,15 +21,17 @@ import FAQHtml from "./faq-html";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: " Payroll Processing & Management Software for Businesses - EnKash",
   description:
     "EnKash provides end-to-end payroll processing by offering a comprehensive platform that covers all aspects of payroll management. Book a Free Demo",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/payroll-processing/",
   },
-};
+  faqData: faqData,
+});
 
 const payrollProcessing = () => {
   return (

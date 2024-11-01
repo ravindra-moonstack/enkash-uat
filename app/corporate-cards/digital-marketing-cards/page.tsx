@@ -21,8 +21,9 @@ import Header from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import blogData from "./blog-data";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Digital Marketing Corporate Card for Businesses | Corporate Card for Ad Spend- EnKash",
   description:
@@ -31,7 +32,8 @@ export const metadata: Metadata = {
     canonical:
       "https://www.enkash.com/corporate-cards/digital-marketing-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const digitalMarketingCard = () => {
   return (

@@ -21,8 +21,9 @@ import Link from "next/link";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Best Travel and Expenses Corporate Cards for Business - EnKash",
   description:
     "Travel & expense cards offer benefits that enhance corporate travel management. Use these cards and avail amazing travel perks and rewards.",
@@ -30,7 +31,8 @@ export const metadata: Metadata = {
     canonical:
       "https://www.enkash.com/corporate-cards/travel-and-expense-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const travelAndExpenseCard = () => {
   return (

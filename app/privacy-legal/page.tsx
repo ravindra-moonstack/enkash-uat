@@ -6,14 +6,15 @@ import Image from "next/image";
 import Footer from "@/components/footer/footer";
 
 import { Metadata } from "next";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Privacy & Legal | EnKash",
   description: "Privacy & Legal",
   alternates: {
     canonical: "https://www.enkash.com/privacy-legal/",
   },
-};
+});
 
 const privacyPolicy = () => {
   return (

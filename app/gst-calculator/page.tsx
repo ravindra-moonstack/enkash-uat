@@ -8,15 +8,18 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import { gstCalculatorBG, gstIconOne, gstIconWhite } from ".";
 import GSTCalculator from "@/components/gst-calculator/gst-calculator";
+import faqData from "../bolt/faq-data";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
   description:
     "Buy e-Gifts cards online with our exclusively curated 400+ brand E-gift cards & vouchers available across various categories. Customize the Corporate gift vouchers without any Hassle with EnKash.",
   alternates: {
     canonical: "https://www.enkash.com/bolt/",
   },
-};
+  faqData: faqData,
+});
 
 const page = () => {
   return (

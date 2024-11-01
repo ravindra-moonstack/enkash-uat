@@ -20,12 +20,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Customise Payment Page: Accept Payments with Payment Page | EnKash",
   description:
     "Customise Payment Pages and send different versions of the same Payment Page to different customers. Book Demo now !!",
-};
+  alternates: {
+    canonical: "https://www.enkash.com/olympus/receivables/bulk-collect",
+  },
+  faqData: faqData,
+});
 
 const page = () => {
   return (

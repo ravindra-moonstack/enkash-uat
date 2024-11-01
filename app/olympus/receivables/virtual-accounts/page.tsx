@@ -20,15 +20,17 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Virtual Account - Open a virtual business account| EnKash",
   description:
     "Optimize Your Financial Operations with Virtual Account Solutions. Explore virtual accounts designed to streamline receivables, enhance cash flow management, and boost financial efficiency",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/virtual-accounts",
   },
-};
+  faqData: faqData,
+});
 
 const virtualAccounts = () => {
   return (

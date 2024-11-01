@@ -29,15 +29,17 @@ import {
 } from ".";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: " Accounts Receivables Automation Software for Business - EnKash",
   description:
     "Save cost of your business with Accounts Receivables Automation Software. Automate your invoicing, reduce payment delays & improve financial efficiency. Sign up for Free Trial Now!!",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/",
   },
-};
+  faqData: faqData,
+});
 
 const receivables = () => {
   return (

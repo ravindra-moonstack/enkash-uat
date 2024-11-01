@@ -20,15 +20,17 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Accept Online Payments with Instant Settlements - EnKash",
   description:
     "Get cash in hand instantly after accepting online payments with Instant Settlement whenever you want. You don’t need to wait for days to get your customer payments to grow your business with EnKash.",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/instant-settlements",
   },
-};
+  faqData: faqData,
+});
 
 const InstantSettlement = () => {
   return (

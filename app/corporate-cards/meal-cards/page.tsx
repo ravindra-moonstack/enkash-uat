@@ -21,15 +21,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
   description:
     "Unlock the convenience of corporate meal cards online. Streamline employee benefits and expense management effortlessly with our secure and efficient solution.",
   alternates: {
     canonical: "https://www.enkash.com/corporate-cards/meal-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const mealCard = () => {
   return (

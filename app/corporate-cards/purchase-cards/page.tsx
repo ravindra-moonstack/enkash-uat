@@ -20,15 +20,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
-  title: "Purchase Cards | Benefits of P Cards for Businesses  - EnKash",
+export const metadata: Metadata = generateMetaData({
+  title: "Purchase Cards | Benefits of Purchase Cards for Businesses  - EnKash",
   description:
     "Purchasing cards allow employees to quickly and efficiently buy what they need, and automatically record all transactions.",
   alternates: {
     canonical: "https://www.enkash.com/corporate-cards/purchase-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const purchaseCard = () => {
   return (

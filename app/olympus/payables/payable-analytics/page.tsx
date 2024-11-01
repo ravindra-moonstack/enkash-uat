@@ -21,15 +21,17 @@ import FAQHtml from "./faq-html";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Payable Analytics Automation Solution for Business - EnKash",
   description:
     "Track your AP metrics and KPIs is an excellent way to improve operations and make data-driven business decisions with EnKash Payable Analytics. Book a Free Demo !!",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/payable-analytics/",
   },
-};
+  faqData: faqData,
+});
 
 const payableAnalytics = () => {
   return (

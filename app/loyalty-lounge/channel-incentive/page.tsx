@@ -18,8 +18,9 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import Header from "@/components/header/header";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Channel Incentive Platform | Channel Incentive Program for Businesses",
   description:
@@ -27,7 +28,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/loyalty-lounge/channel-incentive/",
   },
-};
+  faqData: faqData,
+});
 
 const channelIncentive = () => {
   return (

@@ -18,12 +18,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Employee Expense Management : Get Data Driven Insight - EnKash.com",
   description:
     "Employee Expense Management tracks employee business expenses with data-driven insights. Revolutionize the way you manage and analyze expenditures for enhanced financial efficiency",
-};
+  alternates: {
+    canonical: "https://www.enkash.com/ofex/insights/",
+  },
+  faqData: faqData,
+});
 
 const insights = () => {
   return (

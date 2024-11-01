@@ -6,15 +6,16 @@ import Image from "next/image";
 import Footer from "@/components/footer/footer";
 
 import { Metadata } from "next";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Grievance Redressal Policy | EnKash",
   description:
     "Nehat Tech Solutions Private Limited’s Grievance Redressal & Merchant On-Boarding Policy",
   alternates: {
     canonical: "https://www.enkash.com/grievance-policy/",
   },
-};
+});
 
 const grievancePolicy = () => {
   return (

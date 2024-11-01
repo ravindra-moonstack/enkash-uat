@@ -20,15 +20,17 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Auto Payment Collection Platform | What is Auto Collect  - EnKash",
   description:
     "Auto Collect enables you to collect payments from customers via bank transfers (NEFT, RTGS, IMPS ) and UPI. Book Demo Now !!",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/auto-collect",
   },
-};
+  faqData: faqData,
+});
 
 const AutoCollect = () => {
   return (

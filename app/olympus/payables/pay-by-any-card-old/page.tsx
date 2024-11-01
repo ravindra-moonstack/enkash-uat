@@ -21,15 +21,17 @@ import FAQHtml from "./faq-html";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Pay Bill Payments by Credit & Debit Card Online - EnKash",
   description:
     "Pay by any card offers flexibility to users, allowing them to make various business payments using their preferred card.",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/pay-by-any-card/",
   },
-};
+  faqData: faqData,
+});
 
 const payByAnyCard = () => {
   return (

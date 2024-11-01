@@ -22,15 +22,17 @@ import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Integrating Business Systems with Automated Workflows - EnKash",
   description:
     "With integrations, operational tasks in business can be automated bringing efficiency to the system. Integrations help streamline business processes.",
   alternates: {
     canonical: "https://www.enkash.com/solutions/integrations/",
   },
-};
+  faqData: faqData,
+});
 
 const Integrations = () => {
   return (

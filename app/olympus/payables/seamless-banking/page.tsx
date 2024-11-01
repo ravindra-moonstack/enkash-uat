@@ -19,12 +19,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Decentralized Finance Payment Solutions for Businesses - EnKash",
   description:
     "Decentralized Payment is an emerging digital ecosystem that allows people to send, purchase, and exchange financial assets without relying on banks, brokerages, or exchanges.",
-};
+  alternates: {
+    canonical: "https://www.enkash.com/olympus/payables/seamless-banking/",
+  },
+  faqData: faqData,
+});
 
 const seamlessBanking = () => {
   return (

@@ -20,8 +20,9 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Digital Receipt & Control Management : Store your Documents Online - EnKash",
   description:
@@ -29,7 +30,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/ofex/scan-and-drop-receipts/",
   },
-};
+  faqData: faqData,
+});
 
 const scanAndDropReceipts = () => {
   return (

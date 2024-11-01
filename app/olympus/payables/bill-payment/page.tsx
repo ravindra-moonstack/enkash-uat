@@ -20,15 +20,17 @@ import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Bill Payment | Billing Payment Solution | EnKash",
   description:
     "Streamline your financial management with an advanced bill payment platform.  Simplify bill payment processes and stay organized effortlessly. Discover efficient bill pay solutions for seamless financial tracking and timely payments",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/bill-payment/",
   },
-};
+  faqData: faqData,
+});
 
 const billPayments = () => {
   return (

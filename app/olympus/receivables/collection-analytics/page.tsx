@@ -19,13 +19,18 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Collection Analytics & DSO Management Platform for Businesses - EnKash",
   description:
     "Seamless experience with our cutting-edge Collection analytics Solutions for corporate and small businesses. Explore the benefits of the Data collection analytics platform. Book Free Demo !!",
-};
+  alternates: {
+    canonical: "https://www.enkash.com/olympus/receivables/bulk-collect",
+  },
+  faqData: faqData,
+});
 
 const collectionAnalytics = () => {
   return (

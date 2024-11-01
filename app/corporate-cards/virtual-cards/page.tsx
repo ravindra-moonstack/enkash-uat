@@ -21,8 +21,9 @@ import Link from "next/link";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Virtual Cards – Prepaid Virtual Cards for Businesses in India - EnKash",
   description:
@@ -30,7 +31,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/corporate-cards/virtual-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const virtualCard = () => {
   return (

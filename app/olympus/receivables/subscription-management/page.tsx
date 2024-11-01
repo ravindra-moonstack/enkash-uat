@@ -21,15 +21,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Customize Subscription Management Solutions - EnKash",
   description:
     "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. Book a Free demo Now !!",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/payment-links",
   },
-};
+  faqData: faqData,
+});
 
 const subscriptionManagement = () => {
   return (

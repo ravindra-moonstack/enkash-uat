@@ -34,15 +34,17 @@ import {
   boltHero,
 } from ".";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
   description:
     "Buy e-Gifts cards online with our exclusively curated 400+ brand E-gift cards & vouchers available across various categories. Customize the Corporate gift vouchers without any Hassle with EnKash.",
   alternates: {
     canonical: "https://www.enkash.com/bolt/",
   },
-};
+  faqData: faqData,
+});
 
 const boltPage = () => {
   const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;

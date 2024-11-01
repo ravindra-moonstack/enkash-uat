@@ -21,15 +21,17 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import Link from "next/link";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "SaaS Subscription Management Platform - EnKash",
   description:
     "Manage all your SaaS subscriptions on a single software platform. Enhance your spend strategies with actionable insights & smart controls with EnKash",
   alternates: {
     canonical: "https://www.enkash.com/corporate-cards/saas-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const saasCard = () => {
   return (

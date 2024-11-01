@@ -21,15 +21,17 @@ import FAQHtml from "./faq-html";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Best Vendor Management Platform for Businesses in India - EnKash",
   description:
     "Enhance Efficiency with EnKash Vendor Management platform: Discover how implementing a vendor management system can streamline operations, improve supplier relationships, and boost your business's overall success.",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/vendor-management/",
   },
-};
+  faqData: faqData,
+});
 
 const vendorManagement = () => {
   return (
