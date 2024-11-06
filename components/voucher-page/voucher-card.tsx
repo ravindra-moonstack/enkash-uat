@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./voucher-page.module.scss";
-import { voucherUrlGenerate } from "@/app/voucher/category/[category]/page";
 import { Voucher } from "@/app/bolt/data/voucher-data-V2";
+import { nameToUrl } from "@/common/utils/stringUtils";
 
 interface VoucherCardProps {
   voucher: Voucher;
@@ -20,11 +20,12 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
   routeToBolt = false,
 }) => {
   //for metadata image url fetch from public
-  const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
+  // const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
+  const backgroundImage = require(`./../../public/images/voucher-bg/PC033846095QLM6I.png`);
   const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
     voucher.name
   )}`;
-  const voucherURL = `/${voucherUrlGenerate(voucher.voucherId)}`;
+  const voucherURL = `/voucher/${nameToUrl(voucher.name)}`;
   return (
     <div>
       <div className={styles.voucher_card}>

@@ -11,7 +11,6 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { CategoryData } from "../../../bolt/data/category-data";
 import Link from "next/link";
 import CategoryMenu from "@/components/voucher-page/category-menu";
-import { VoucherDataV2 } from "../../../bolt/data/voucher-data-V2";
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import {
   apparels,
@@ -22,7 +21,7 @@ import {
   whiteArrow,
 } from "../../../bolt/index";
 import { movieAndMusic } from "@/components/header";
-import { Voucher } from "../../../bolt/data/voucher-data-V2";
+import VoucherData, { Voucher } from "../../../bolt/data/voucher-data-V2";
 import { nameToUrl } from "@/common/utils/stringUtils";
 
 interface CategoryData {
@@ -77,7 +76,7 @@ const generateVoucherSchema = (voucher: Voucher): string => {
       name: voucher.brandName || "",
     },
     sku: voucher.voucherId,
-    url: `https://www.enkash.com/${voucherUrlGenerate(voucher.voucherId)}`,
+    url: `https://www.enkash.com/voucher/${nameToUrl(voucher.name)}`,
   };
 
   return `<script type="application/ld+json">${JSON.stringify(
@@ -85,18 +84,19 @@ const generateVoucherSchema = (voucher: Voucher): string => {
   )}</script>`;
 };
 
-export const voucherUrlGenerate = (voucherId: string): string => {
-  const voucher = VoucherDataV2[voucherId];
+export const voucherUrlGenerate = (voucherName: string): string => {
+  return `voucher/${voucherName}`;
+  voucherName = nameToUrl(voucherName);
+  const voucher = VoucherData[voucherName];
   const url = `voucher/${nameToUrl(voucher.name)}`;
   return url;
 };
 
 const fetchVouchers = async (categoryName: string) => {
   // local vouchers for the current category
-  const localVouchers: Voucher[] = Object.values(VoucherDataV2).filter(
+  const localVouchers: Voucher[] = Object.values(VoucherData).filter(
     (voucher: Voucher) => voucher.category === categoryName
   );
-
   // return localVouchers;
   try {
     // bolt open api
@@ -114,22 +114,25 @@ const fetchVouchers = async (categoryName: string) => {
     const apiData = await apiResponse.json();
 
     const validVouchers: Voucher[] = localVouchers.filter((localVoucher) =>
-      apiData.payload.data.some(
-        (product: any) =>
-          product.productCatalogId === localVoucher.voucherId && product.active
-      )
+      apiData.payload.data.some((product: any) => {
+        return (
+          nameToUrl(product.brand) === nameToUrl(localVoucher.name) &&
+          product.active &&
+          product.enabled
+        );
+      })
     );
 
-    //map for discount update
+    //store the voucherName and it's discount from API data
     const apiDiscounts: Record<string, string> = {};
     apiData.payload.data.forEach((product: any) => {
-      apiDiscounts[product.productCatalogId] = product.discount;
+      apiDiscounts[nameToUrl(product.brand)] = product.discount;
     });
 
     validVouchers.map(
       (validVoucher, index) =>
         (validVoucher.discount = parseFloat(
-          apiDiscounts[validVoucher.voucherId]
+          apiDiscounts[nameToUrl(validVoucher.name)]
         ))
     );
 

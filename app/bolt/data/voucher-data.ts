@@ -10,7 +10,7 @@ type Voucher = {
   howToRedeem: string[];
 };
 
-const VoucherData: Record<string, Voucher> = {
+const VoucherDataOld: Record<string, Voucher> = {
   PC272920797HGB6I: {
     voucherId: "PC272920797HGB6I",
     name: "Nykaa Fashion E-Gift Card",
@@ -547,4 +547,4 @@ const VoucherData: Record<string, Voucher> = {
   // Add more e-commerce vouchers as needed...
 };
 
-export default VoucherData;
+export default VoucherDataOld;

@@ -4,8 +4,7 @@ import styles from "./page.module.scss";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import CategoryMenu from "@/components/voucher-page/category-menu";
-import VoucherData from "../../bolt/data/voucher-data";
-import { Voucher, VoucherDataV2 } from "../../bolt/data/voucher-data-V2";
+import VoucherData, { Voucher } from "../../bolt/data/voucher-data-V2";
 import Link from "next/link";
 import {
   ajioPopular,
@@ -39,7 +38,7 @@ export function generateMetadata({
   params: { voucherName?: string };
 }): Metadata {
   const voucherName = nameToUrl(params.voucherName ?? "");
-  const voucher: Voucher = VoucherDataV2[voucherName];
+  const voucher: Voucher = VoucherData[voucherName];
   if (!voucher) {
     return {
       title: `Voucher not found - EnKash`,
@@ -134,15 +133,9 @@ const sanitizeUTM = (utm: string): string => {
 const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   // local voucher
   console.log("voucherName", voucherName);
-  let localVoucher: Voucher | any = Object.values(VoucherDataV2).find(
-    (voucher) => {
-      console.log("Checking voucher:", voucher.name);
-      return nameToUrl(voucher.name) === voucherName;
-    }
-  );
+  let localVoucher: Voucher | any = VoucherData[voucherName];
   let isActive: boolean = false;
 
-  return localVoucher;
   if (!localVoucher) {
     console.log("local voucher not found");
     return null;
@@ -165,8 +158,9 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
     //discount update
     apiData.payload.data.forEach((product: any) => {
       if (
-        product.productCatalogId === localVoucher.voucherId &&
-        product.active
+        nameToUrl(product.brand) === nameToUrl(localVoucher.name) &&
+        product.active &&
+        product.enabled
       ) {
         isActive = true;
         localVoucher.discount = parseFloat(product.discount);
@@ -183,7 +177,7 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
 const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
   const voucherName = params.voucherName;
 
-  const localVoucherData = Object.values(VoucherDataV2).find(
+  const localVoucherData = Object.values(VoucherData).find(
     (voucher) => nameToUrl(voucher.name) === voucherName
   );
 
@@ -242,15 +236,6 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
           <div className={`mx-auto ${styles.voucher_detail_container}`}>
             <div className={`mt-3 ${styles.top_container}`}>
-              {/* <div className={`my-3 ${styles.back_button}`}>
-                <Link href={`/bolt/category/${voucherData.category}`}>
-                  <Image src={backArrow} alt="back" />
-                  <div className={`mx-3`}>
-                    {categoryNameMap.get(voucherData.category)}
-                  </div>
-                </Link>
-              </div> */}
-
               <div className={`${styles.breadcrumb}`}>
                 <CustomBreadcrumb items={breadcrumbItems} />
               </div>
