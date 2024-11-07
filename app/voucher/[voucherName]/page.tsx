@@ -4,7 +4,7 @@ import styles from "./page.module.scss";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import CategoryMenu from "@/components/voucher-page/category-menu";
-import VoucherData, { Voucher } from "../../bolt/data/voucher-data-V2";
+import VoucherData, { Voucher } from "../../bolt/data/voucher-data";
 import Link from "next/link";
 import {
   ajioPopular,

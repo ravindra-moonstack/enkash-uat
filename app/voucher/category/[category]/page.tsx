@@ -21,7 +21,7 @@ import {
   whiteArrow,
 } from "../../../bolt/index";
 import { movieAndMusic } from "@/components/header";
-import VoucherData, { Voucher } from "../../../bolt/data/voucher-data-V2";
+import VoucherData, { Voucher } from "../../../bolt/data/voucher-data";
 import { nameToUrl } from "@/common/utils/stringUtils";
 
 interface CategoryData {

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./voucher-page.module.scss";
-import { Voucher } from "@/app/bolt/data/voucher-data-V2";
+import { Voucher } from "@/app/bolt/data/voucher-data";
 import { nameToUrl } from "@/common/utils/stringUtils";
 
 interface VoucherCardProps {
