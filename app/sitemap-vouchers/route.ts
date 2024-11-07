@@ -1,13 +1,13 @@
 // app/sitemap-vouchers/route.ts
 // Generates the sitemap dynamically when you visit /sitemap-vouchers
 import { nameToUrl } from "@/common/utils/stringUtils";
-import VoucherData from "../bolt/data/voucher-data";
 import { MetadataRoute } from "next";
+import VoucherData from "../bolt/data/voucher-data-V2";
 
 export async function GET() {
   // Convert voucher object to array of URLs
   const voucherUrls = Object.values(VoucherData).map((voucher) => ({
-    url: encodeURI(`https://enkash.com/voucher/${nameToUrl(voucher.name)}`), // Use voucherId instead of name
+    url: encodeURI(`https://enkash.com/voucher/${voucher.urlName}`),
     lastModified: new Date().toISOString(),
     changeFrequency: "daily" as const,
     priority: 0.7,

@@ -24,7 +24,6 @@ import {
 import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { voucherUrlGenerate } from "../category/[category]/page";
 import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator";
 import FAQHtml from "@/app/ofex/faq-html";
 import faqData from "@/app/ofex/insights/faq-data";
@@ -49,14 +48,12 @@ export function generateMetadata({
       },
     };
   }
-  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.voucherId}.png`;
+  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.png`;
   return {
     title: `${voucher.name} - EnKash`,
     description: `${voucher.description}`,
     alternates: {
-      canonical: `https://www.enkash.com/${voucherUrlGenerate(
-        voucher.voucherId
-      )}`,
+      canonical: `https://www.enkash.com/voucher/${voucher.urlName}`,
     },
     openGraph: {
       title: `${voucher.name} - EnKash`,
@@ -92,8 +89,7 @@ const generateVoucherSchema = (voucher: Voucher): string => {
       "@type": "Organization",
       name: voucher.brandName || "",
     },
-    sku: voucher.voucherId,
-    url: `https://www.enkash.com/${voucherUrlGenerate(voucher.voucherId)}`,
+    url: `https://www.enkash.com/voucher/${voucher.urlName}`,
   };
 
   return `<script type="application/ld+json">${JSON.stringify(
@@ -132,7 +128,6 @@ const sanitizeUTM = (utm: string): string => {
 
 const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   // local voucher
-  console.log("voucherName", voucherName);
   let localVoucher: Voucher | any = VoucherData[voucherName];
   let isActive: boolean = false;
 
@@ -158,7 +153,7 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
     //discount update
     apiData.payload.data.forEach((product: any) => {
       if (
-        nameToUrl(product.brand) === nameToUrl(localVoucher.name) &&
+        nameToUrl(product.brand) === localVoucher.urlName &&
         product.active &&
         product.enabled
       ) {
@@ -178,7 +173,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
   const voucherName = params.voucherName;
 
   const localVoucherData = Object.values(VoucherData).find(
-    (voucher) => nameToUrl(voucher.name) === voucherName
+    (voucher) => voucher.urlName === voucherName
   );
 
   if (!localVoucherData) {
@@ -186,7 +181,6 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
   }
   const voucherData = await fetchVoucher(voucherName);
   const voucherCategory = voucherData?.category || "";
-  // const voucherData = VoucherData[voucherId];
   // const voucherData = VoucherDataV2[voucherName];
 
   let categoryNameMap = new Map<string, string>([
@@ -613,7 +607,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   Explore Our Most Popular Gift Vouchers
                 </h2>
                 <div className={styles.list}>
-                  <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
+                  <Link href="/bolt/voucher/nykaa-fashion-e-gift-card">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={myntraPopular} alt="Myntra" />
@@ -624,7 +618,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
+                  <Link href="/bolt/voucher/amazon-shopping-vouchers">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={amazonPopular} alt="Amazon Pay" />
@@ -635,7 +629,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
+                  <Link href="/bolt/voucher/zomato-e-gift-voucher">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={zomatoPopular} alt="Zomato" />
@@ -646,7 +640,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/bolt/voucher/Nykaa-Fashion-E-Gift-Card/?voucherId=PC272920797HGB6I">
+                  <Link href="/bolt/voucher/ajio-e-gift-card">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={ajioPopular} alt="Ajio" />

@@ -75,21 +75,12 @@ const generateVoucherSchema = (voucher: Voucher): string => {
       "@type": "Organization",
       name: voucher.brandName || "",
     },
-    sku: voucher.voucherId,
-    url: `https://www.enkash.com/voucher/${nameToUrl(voucher.name)}`,
+    url: `https://www.enkash.com/voucher/${voucher.urlName}`,
   };
 
   return `<script type="application/ld+json">${JSON.stringify(
     schema
   )}</script>`;
-};
-
-export const voucherUrlGenerate = (voucherName: string): string => {
-  return `voucher/${voucherName}`;
-  voucherName = nameToUrl(voucherName);
-  const voucher = VoucherData[voucherName];
-  const url = `voucher/${nameToUrl(voucher.name)}`;
-  return url;
 };
 
 const fetchVouchers = async (categoryName: string) => {
@@ -116,7 +107,7 @@ const fetchVouchers = async (categoryName: string) => {
     const validVouchers: Voucher[] = localVouchers.filter((localVoucher) =>
       apiData.payload.data.some((product: any) => {
         return (
-          nameToUrl(product.brand) === nameToUrl(localVoucher.name) &&
+          nameToUrl(product.brand) === localVoucher.urlName &&
           product.active &&
           product.enabled
         );
@@ -131,9 +122,7 @@ const fetchVouchers = async (categoryName: string) => {
 
     validVouchers.map(
       (validVoucher, index) =>
-        (validVoucher.discount = parseFloat(
-          apiDiscounts[nameToUrl(validVoucher.name)]
-        ))
+        (validVoucher.discount = parseFloat(apiDiscounts[validVoucher.urlName]))
     );
 
     return validVouchers;

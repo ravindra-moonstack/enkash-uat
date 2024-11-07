@@ -7,8 +7,8 @@ type FAQ = {
 };
 
 export type Voucher = {
-  voucherId: string;
   name: string;
+  urlName: string;
   brandName: string;
   category: string;
   discount: number;
@@ -35,8 +35,8 @@ export type Voucher = {
 
 const VoucherData: Record<string, Voucher> = {
   "nykaa-fashion-e-gift-card": {
-    voucherId: "PC272920797HGB6I",
     name: "Nykaa Fashion E-Gift Card",
+    urlName: "nykaa-fashion-e-gift-card",
     brandName: "Nykaa",
     category: "e-commerce",
     discount: 7.0,
@@ -93,10 +93,10 @@ const VoucherData: Record<string, Voucher> = {
       "Consider gifting your employees Nykaa gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break.",
   },
   "ajio-e-gift-card": {
-    voucherId: "nan",
     name: "AJIO E-Gift Card",
+    urlName: "ajio-e-gift-card",
     brandName: "AJIO",
-    category: "e-commerce",
+    category: "e-commerce ",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "AJIO E- Gift Card ",
@@ -152,10 +152,10 @@ const VoucherData: Record<string, Voucher> = {
       "Turn up your fashionable friend’s birthday by allowing them to go and shop for outfits of their choice rather than giving them clothes as a gift.",
   },
   "reliance-gift-card": {
-    voucherId: "nan",
     name: "Reliance Gift Card",
+    urlName: "reliance-gift-card",
     brandName: "Reliance ",
-    category: "e-commerce",
+    category: "",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "Reliance E-Gift Card",
@@ -211,10 +211,10 @@ const VoucherData: Record<string, Voucher> = {
       "A birthday stands to hold great significance and therein lies the need of a Reliance Gift Card. Why not let the receiver enjoy the comprehensive range of products at Reliance and get an ideal birthday present of his or her choice.\n",
   },
   "swiggy-gift-card": {
-    voucherId: "nan",
     name: "Swiggy Gift Card",
+    urlName: "swiggy-gift-card",
     brandName: "Swiggy",
-    category: "e-commerce",
+    category: "Foods & Beverages ",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "Swiggy Money E-Gift Card ",
@@ -268,10 +268,10 @@ const VoucherData: Record<string, Voucher> = {
       "This makes perfect sense for birthdays; consider a Swiggy Gift Card, so that the person celebrating their birthday can enjoy their favourite food any time they want. This approach allows the beneficiaries to choose for themselves, adding to making the day even better.",
   },
   "mmt-wedding-e-gift-card": {
-    voucherId: "nan",
     name: "MMT Wedding E-Gift Card",
+    urlName: "mmt-wedding-e-gift-card",
     brandName: "MMT",
-    category: "e-commerce",
+    category: "Travel",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "MMT E-Gift Card",
@@ -321,10 +321,10 @@ const VoucherData: Record<string, Voucher> = {
       "Including the MMT gift card in the birthday presents given to close friends or family members would be an excellent idea.",
   },
   "luxe-e-gift-card": {
-    voucherId: "nan",
     name: "LUXE E-Gift Card ",
+    urlName: "luxe-e-gift-card",
     brandName: "LUXE",
-    category: "e-commerce",
+    category: "Fashion and Luxury ",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "LUXE E-Gift Card ",
@@ -378,10 +378,10 @@ const VoucherData: Record<string, Voucher> = {
       "\n Celebrate a loved one's birthday by gifting them with something that enables them to indulge in luxurious retail or dining experiences and more.\n",
   },
   "dominos-pizza-e-gift-card": {
-    voucherId: "nan",
     name: "Dominos Pizza E-Gift Card",
+    urlName: "dominos-pizza-e-gift-card",
     brandName: "Domino's ",
-    category: "e-commerce",
+    category: "Food and Beverages ",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "Domino's Pizza E-Gift Card ",
@@ -436,10 +436,10 @@ const VoucherData: Record<string, Voucher> = {
       "Domino's gift cards are a pleasant addition because the person can order any pizzas, sides, and desserts they want. It doesn’t matter whether it is a friend or family or a colleague, this gift understands each and every person's need \n",
   },
   "bookmyshow-e-gift-card": {
-    voucherId: "nan",
     name: "BookMyShow E-Gift Card ",
+    urlName: "bookmyshow-e-gift-card",
     brandName: "BookMyShow ",
-    category: "e-commerce",
+    category: "Movies and Music ",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "BookMyShow E-Gift Card ",
@@ -492,10 +492,10 @@ const VoucherData: Record<string, Voucher> = {
       "Surprise your loved ones with a gift card on their birthday, allowing them to indulge in their special day",
   },
   "starbucks-e-gift-card": {
-    voucherId: "nan",
     name: "Starbucks E-Gift Card ",
+    urlName: "starbucks-e-gift-card",
     brandName: "Starbucks ",
-    category: "e-commerce",
+    category: "Food and Beverages",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "Starbucks E-Gift Card ",
@@ -541,10 +541,10 @@ const VoucherData: Record<string, Voucher> = {
       "Starbucks gift cards are ideal for coffee lovers on their birthdays. You can choose to send an e-gift card directly to your loved one's inbox or mobile",
   },
   "myntra-e-gift-card": {
-    voucherId: "nan",
     name: "Myntra E-Gift Card ",
+    urlName: "myntra-e-gift-card",
     brandName: "Myntra ",
-    category: "e-commerce",
+    category: "e-commerce ",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "Myntra E-Gift Card ",
@@ -592,10 +592,10 @@ const VoucherData: Record<string, Voucher> = {
       "Get this exclusive Myntra E-Gift Card to surprise your loved ones on their birthdays.\n",
   },
   "zomato-e-gift-voucher": {
-    voucherId: "nan",
     name: "Zomato E-Gift Voucher",
+    urlName: "zomato-e-gift-voucher",
     brandName: "Zomato ",
-    category: "e-commerce",
+    category: "Food and Beverages ",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "Zomato E-Gift Voucher ",
@@ -655,10 +655,10 @@ const VoucherData: Record<string, Voucher> = {
       "Celebrate their special day with the gift of food! Zomato gift cards make birthdays better, because recipients get to choose the meals they love.",
   },
   "flipkart-e-gift-voucher": {
-    voucherId: "nan",
     name: "Flipkart E-Gift Voucher",
+    urlName: "flipkart-e-gift-voucher",
     brandName: "Flipkart ",
-    category: "e-commerce",
+    category: "e-commerce ",
     discount: 0,
     backgroundImg: "\n",
     descriptionTitle: "Flipkart E-Gift Card ",
@@ -716,10 +716,10 @@ const VoucherData: Record<string, Voucher> = {
       "A Flipkart Gift Card is one of the best gifts one can receive on their birthday, as the recipient can shop from a curated list of quality products.  ",
   },
   "amazon-shopping-vouchers": {
-    voucherId: "nan",
     name: "Amazon Shopping Vouchers",
+    urlName: "amazon-shopping-vouchers",
     brandName: "Amazon",
-    category: "e-commerce",
+    category: "e-commerce ",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "Amazon Shopping Vouchers ",
@@ -778,10 +778,10 @@ const VoucherData: Record<string, Voucher> = {
       "Celebrate birthdays by gifting an Amazon Pay Gift Card, allowing recipients to select from millions of products.\n",
   },
   "decathlon-sports-india-e-gift-card": {
-    voucherId: "nan",
     name: "Decathlon Sports India E-Gift Card",
+    urlName: "decathlon-sports-india-e-gift-card",
     brandName: "Decathlon ",
-    category: "e-commerce",
+    category: " Sports",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "Decathlon Sports India E-Gift Card\n\n",
