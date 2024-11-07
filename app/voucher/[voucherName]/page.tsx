@@ -25,11 +25,10 @@ import VoucherCard from "@/components/voucher-page/voucher-card";
 import Heading from "@/components/heading/heading";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator";
-import FAQHtml from "@/app/ofex/faq-html";
-import faqData from "@/app/ofex/insights/faq-data";
 import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher";
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
-import { nameToUrl, titleCae, toCamelCase } from "@/common/utils/stringUtils";
+import { nameToUrl } from "@/common/utils/stringUtils";
+import VoucherFaqComponent from "@/components/voucher-page/voucher-faq";
 
 export function generateMetadata({
   params,
@@ -179,8 +178,12 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
   if (!localVoucherData) {
     console.log("No voucher present");
   }
+
   const voucherData = await fetchVoucher(voucherName);
   const voucherCategory = voucherData?.category || "";
+  const voucherImage = voucherData
+    ? `/images/voucher-bg/${voucherData.urlName}.png`
+    : null;
   // const voucherData = VoucherDataV2[voucherName];
 
   let categoryNameMap = new Map<string, string>([
@@ -190,9 +193,6 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
     ["apparels", "Apparels"],
     ["movies-and-music", "Movies & Music"],
   ]);
-  const voucherImage = voucherData
-    ? `/images/voucher-bg/${voucherData.backgroundImg}`
-    : null;
 
   const boltUTM = voucherData
     ? `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
@@ -333,7 +333,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       voucherName={voucherData.name}
                       category={voucherData.category}
                       savingsPercentage={voucherData.discount}
-                      voucherImg={`/images/voucher-bg/${voucherData.backgroundImg}`}
+                      voucherImg={`/images/voucher-bg/${voucherData.urlName}.png`}
                     />
                   </div>
                 </div>
@@ -671,7 +671,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
             </div>
 
             <div>
-              <FAQHtml faqData={faqData} />
+              <VoucherFaqComponent voucherName={voucherName} />
             </div>
 
             <div className={styles.faq_bg}>
