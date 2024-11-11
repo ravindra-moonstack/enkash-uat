@@ -26,23 +26,19 @@ const OccasionVoucher: React.FC<OccasionVoucherProps> = ({
     <div className={styles.main_container}>
       <div className={`mt-4 mb-5`}>
         <div className={`mb-1 ${styles.description_title}`}>
-          <Heading title={voucherName} color="black" size="h3" weight="7" />
           <Heading
-            title="s for different Occasions"
-            color="secondry-black"
+            title={`${voucherName}s for different Occasions`}
+            color="black"
             size="h3"
             weight="7"
           />
         </div>
         <div className={`mb-4 ${styles.description}`}>
           <div className={`mb-3`}>
-            A perfect gift for all occasions like birthdays, weddings,
-            anniversaries, and festivities, the AJIO E-Gift Card is available in
-            multiple BookMyShow Gift Cards are the perfect present for any
-            special occasion, offering a delightful way to share the joy with
-            friends, family, or colleagues. Whether it's a birthday,
-            anniversary, holiday, or just to say thank you, BookMyShow Gift
-            Cards are sure to bring a smile denominations.
+            {voucherName}s are the perfect present for any special occasion,
+            offering a delightful way to share the joy with friends, family, or
+            colleagues. Whether it's a birthday, anniversary, holiday, or just
+            to say thank you, {voucherName}s are sure to bring a smile.
           </div>
         </div>
         <div className={styles.occasions_container}>

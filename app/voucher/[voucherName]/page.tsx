@@ -500,6 +500,64 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
               </div>
             </div>
 
+            <div className={`mb-4 ${styles.mid_container}`}>
+              <div className={styles.detail_section}>
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    <Heading
+                      title="Who can use "
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
+                    <Heading
+                      title={voucherData.name}
+                      color="secondry-black"
+                      size="h3"
+                      weight="7"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className={`mb-4 ${styles.description}`}>
+                <div className={styles.need_container}>
+                  <div className={styles.need_img}>
+                    <Image src={individualNeed} alt="Individuals Need" />
+                  </div>
+                  <div className={`${styles.need_content}`}>
+                    <Heading
+                      title="Individuals Need"
+                      color="secondry-black"
+                      size="h4"
+                      weight="7"
+                    />
+                    <div className={`mb-4 ml-2 ${styles.description}`}>
+                      Getting your hands on {voucherData.name}s will enable you
+                      to get exclusive discounts.
+                    </div>
+                  </div>
+                </div>
+
+                <div className={styles.need_container}>
+                  <div className={styles.need_img}>
+                    <Image src={corporateNeed} alt="Companies Need" />
+                  </div>
+                  <div className={`${styles.need_content}`}>
+                    <Heading
+                      title="Companies Need"
+                      color="secondry-black"
+                      size="h4"
+                      weight="7"
+                    />
+                    <div className={`mb-4 ml-2 ${styles.description}`}>
+                      Enterprises can save big annually with an exclusive 
+                      {voucherData.name}s for their employees.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className={`mt-4 mb-5 ${styles.bottom_container}`}>
               <div className={styles.detail_section}>
                 {/* Terms and Conditions section */}
@@ -531,64 +589,6 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
               <div className={styles.bottom_zigzag}>
                 <Image src={zigZagGrey} alt="zig-zag" />
-              </div>
-            </div>
-
-            <div className={`mb-4 ${styles.mid_container}`}>
-              <div className={styles.detail_section}>
-                <div className={`my-4`}>
-                  <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title="Who can use "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                    <Heading
-                      title={voucherData.name}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className={`mb-4 ${styles.description}`}>
-                <div className={styles.need_container}>
-                  <div className={styles.need_img}>
-                    <Image src={individualNeed} alt="Individual Need" />
-                  </div>
-                  <div className={`${styles.need_content}`}>
-                    <Heading
-                      title="Individual Need"
-                      color="secondry-black"
-                      size="h4"
-                      weight="7"
-                    />
-                    <div className={`mb-4 ml-2 ${styles.description}`}>
-                      Getting your hands on {voucherData.name}s will enable you
-                      to get exclusive discounts.
-                    </div>
-                  </div>
-                </div>
-
-                <div className={styles.need_container}>
-                  <div className={styles.need_img}>
-                    <Image src={corporateNeed} alt="Corporate Need" />
-                  </div>
-                  <div className={`${styles.need_content}`}>
-                    <Heading
-                      title="Corporate Need"
-                      color="secondry-black"
-                      size="h4"
-                      weight="7"
-                    />
-                    <div className={`mb-4 ml-2 ${styles.description}`}>
-                      Enterprises can save big annually with an exclusive 
-                      {voucherData.name}s for their employees.
-                    </div>
-                  </div>
-                </div>
               </div>
             </div>
 
@@ -664,7 +664,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
             </div>
             <div className="mb-5">
               <Heading
-                title="Don't worry! Our FAQs section will help you learn about QR Codes in detail"
+                title="Don’t worry! Our FAQs section will help you learn more about Brand Gift Vouchers in detail"
                 color="secondry-black"
                 size="h4"
               />

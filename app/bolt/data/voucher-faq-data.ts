@@ -555,7 +555,7 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
         answer: [
           {
             heading:
-              "Redeem your Luxe Gift Card at a participating brand of your choice by providing the physical gift card.",
+              "Redeem your Luxe Gift Card at a participating brand of your choice by using the physical gift card or virtually by using the gift card code.",
             bullets: [],
           },
         ],
