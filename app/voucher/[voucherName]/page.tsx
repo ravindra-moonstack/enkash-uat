@@ -522,11 +522,11 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
               <div className={`mb-4 ${styles.description}`}>
                 <div className={styles.need_container}>
                   <div className={styles.need_img}>
-                    <Image src={individualNeed} alt="Individuals Need" />
+                    <Image src={individualNeed} alt="Individuals" />
                   </div>
                   <div className={`${styles.need_content}`}>
                     <Heading
-                      title="Individuals Need"
+                      title="Individuals"
                       color="secondry-black"
                       size="h4"
                       weight="7"
@@ -540,11 +540,11 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
                 <div className={styles.need_container}>
                   <div className={styles.need_img}>
-                    <Image src={corporateNeed} alt="Companies Need" />
+                    <Image src={corporateNeed} alt="Companies" />
                   </div>
                   <div className={`${styles.need_content}`}>
                     <Heading
-                      title="Companies Need"
+                      title="Companies"
                       color="secondry-black"
                       size="h4"
                       weight="7"

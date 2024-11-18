@@ -321,7 +321,7 @@ const VoucherData: Record<string, Voucher> = {
       "Including the MMT gift card in the birthday presents given to close friends or family members would be an excellent idea.",
   },
   "luxe-e-gift-card": {
-    name: "LUXE E-Gift Card ",
+    name: "LUXE E-Gift Card",
     urlName: "luxe-e-gift-card",
     brandName: "LUXE",
     category: "e-commerce",
@@ -436,7 +436,7 @@ const VoucherData: Record<string, Voucher> = {
       "Domino's gift cards are a pleasant addition because the person can order any pizzas, sides, and desserts they want. It doesn’t matter whether it is a friend or family or a colleague, this gift understands each and every person's need \n",
   },
   "bookmyshow-e-gift-card": {
-    name: "BookMyShow E-Gift Card ",
+    name: "BookMyShow E-Gift Card",
     urlName: "bookmyshow-e-gift-card",
     brandName: "BookMyShow ",
     category: "e-commerce",
@@ -492,7 +492,7 @@ const VoucherData: Record<string, Voucher> = {
       "Surprise your loved ones with a gift card on their birthday, allowing them to indulge in their special day",
   },
   "starbucks-e-gift-card": {
-    name: "Starbucks E-Gift Card ",
+    name: "Starbucks E-Gift Card",
     urlName: "starbucks-e-gift-card",
     brandName: "Starbucks ",
     category: "e-commerce",
@@ -541,7 +541,7 @@ const VoucherData: Record<string, Voucher> = {
       "Starbucks gift cards are ideal for coffee lovers on their birthdays. You can choose to send an e-gift card directly to your loved one's inbox or mobile",
   },
   "myntra-e-gift-card": {
-    name: "Myntra E-Gift Card ",
+    name: "Myntra E-Gift Card",
     urlName: "myntra-e-gift-card",
     brandName: "Myntra ",
     category: "e-commerce",
