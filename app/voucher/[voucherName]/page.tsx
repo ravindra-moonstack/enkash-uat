@@ -607,7 +607,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   Explore Our Most Popular Gift Vouchers
                 </h2>
                 <div className={styles.list}>
-                  <Link href="/bolt/voucher/nykaa-fashion-e-gift-card">
+                  <Link href="/voucher/myntra-e-gift-card">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={myntraPopular} alt="Myntra" />
@@ -618,7 +618,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/bolt/voucher/amazon-shopping-vouchers">
+                  <Link href="/voucher/amazon-shopping-vouchers">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={amazonPopular} alt="Amazon Pay" />
@@ -629,7 +629,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/bolt/voucher/zomato-e-gift-voucher">
+                  <Link href="/voucher/zomato-e-gift-voucher">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={zomatoPopular} alt="Zomato" />
@@ -640,7 +640,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/bolt/voucher/ajio-e-gift-card">
+                  <Link href="/voucher/ajio-e-gift-card">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={ajioPopular} alt="Ajio" />
