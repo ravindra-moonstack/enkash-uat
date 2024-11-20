@@ -49,14 +49,14 @@ export function generateMetadata({
   }
   const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.png`;
   return {
-    title: `${voucher.name} - EnKash`,
-    description: `${voucher.description}`,
+    title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
+    description: `Get the best {Brand Name} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
     alternates: {
       canonical: `https://www.enkash.com/voucher/${voucher.urlName}`,
     },
     openGraph: {
-      title: `${voucher.name} - EnKash`,
-      description: `${voucher.description}`,
+      title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
+      description: `Get the best {Brand Name} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
       images: [
         {
           url: imageUrl,
@@ -68,8 +68,8 @@ export function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: `${voucher.name} - EnKash`,
-      description: `${voucher.description}`,
+      title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
+      description: `Get the best {Brand Name} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
       images: [imageUrl],
     },
   };
@@ -302,12 +302,14 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                     <Heading
                       title={voucherData.brandName}
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                   </div>
                   <div className={`mb-1 ${styles.description}`}>
@@ -323,6 +325,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                   </div>
                   <div className={`mb-1 ${styles.description}`}>
@@ -353,6 +356,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -448,6 +452,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -475,6 +480,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -509,12 +515,14 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                     <Heading
                       title={voucherData.name}
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                   </div>
                 </div>
@@ -530,6 +538,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h4"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                     <div className={`mb-4 ml-2 ${styles.description}`}>
                       Getting your hands on {voucherData.name}s will enable you
@@ -548,6 +557,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h4"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                     <div className={`mb-4 ml-2 ${styles.description}`}>
                       Enterprises can save big annually with an exclusive 
@@ -568,6 +578,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       color="secondry-black"
                       size="h3"
                       weight="7"
+                      useH2TagInHtml={true}
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -607,18 +618,18 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   Explore Our Most Popular Gift Vouchers
                 </h2>
                 <div className={styles.list}>
-                  <Link href="/voucher/myntra-e-gift-card">
+                    <Link href="/voucher/myntra-e-gift-card" title="Myntra E-Gift Card">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                        <Image src={myntraPopular} alt="Myntra" />
+                      <Image src={myntraPopular} alt="Myntra" />
                       </div>
                       <span className={styles.arrow}>
-                        <Image src={popularArrow} alt="arrow" />
+                      <Image src={popularArrow} alt="arrow" />
                       </span>
                     </div>
-                  </Link>
+                    </Link>
 
-                  <Link href="/voucher/amazon-shopping-vouchers">
+                  <Link href="/voucher/amazon-shopping-vouchers" title="Amazon Pay E-Gift Card">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={amazonPopular} alt="Amazon Pay" />
@@ -629,7 +640,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/voucher/zomato-e-gift-voucher">
+                  <Link href="/voucher/zomato-e-gift-voucher" title="Zomato E-Gift Card">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={zomatoPopular} alt="Zomato" />
@@ -640,7 +651,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/voucher/ajio-e-gift-card">
+                  <Link href="/voucher/ajio-e-gift-card" title="Ajio E-Gift Card">
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={ajioPopular} alt="Ajio" />
@@ -660,13 +671,14 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
             className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
           >
             <div className="mb-5">
-              <Heading title="Got Questions?" color="equity-blue" size="h1" />
+              <Heading title="Got Questions?" color="equity-blue" size="h1" useH2TagInHtml={true}/>
             </div>
             <div className="mb-5">
               <Heading
                 title="Don’t worry! Our FAQs section will help you learn more about Brand Gift Vouchers in detail"
                 color="secondry-black"
                 size="h4"
+                useH2TagInHtml={true}
               />
             </div>
 
@@ -696,6 +708,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   color="secondry-black"
                   size="h2"
                   weight="7"
+                  useH1TagInHtml={true}
                 />
                 {/* <Heading title="B" color="rainy-blue" size="h1" weight="7" />
             <Heading title="olt" size="h1" weight="7" /> */}
@@ -706,6 +719,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   color="equity-blue"
                   size="h2"
                   weight="7"
+                  useH2TagInHtml={true}
                 />
               </div>
 
