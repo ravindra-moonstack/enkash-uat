@@ -32,7 +32,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
         <div className={styles.discount}>
           Up to <strong>{voucher.discount}%</strong> OFF
         </div>
-        <a href={voucherURL}>
+        <a href={voucherURL} title={`${voucher.name}`}>
           <Image
             src={backgroundImage}
             alt={voucher.name}

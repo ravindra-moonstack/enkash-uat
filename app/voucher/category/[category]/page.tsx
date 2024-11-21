@@ -23,6 +23,8 @@ import {
 import { movieAndMusic } from "@/components/header";
 import VoucherData, { Voucher } from "../../../bolt/data/voucher-data";
 import { nameToUrl } from "@/common/utils/stringUtils";
+import StructuredData from "@/components/head/structuredData";
+import { generateVoucherSchema } from "@/common/utils/metaData";
 
 interface CategoryData {
   name: string;
@@ -61,27 +63,6 @@ export function generateMetadata({
     },
   };
 }
-
-const generateVoucherSchema = (voucher: Voucher): string => {
-  const schema = {
-    "@context": "https://schema.org/",
-    "@type": "Offer",
-    name: voucher.name,
-    description: voucher.description,
-    category: voucher.category,
-    discount: `${voucher.discount}%`,
-    image: `https://www.enkash.com/images/vouchers/${voucher.backgroundImg}`,
-    seller: {
-      "@type": "Organization",
-      name: voucher.brandName || "",
-    },
-    url: `https://www.enkash.com/voucher/${voucher.urlName}`,
-  };
-
-  return `<script type="application/ld+json">${JSON.stringify(
-    schema
-  )}</script>`;
-};
 
 const fetchVouchers = async (categoryName: string) => {
   // local vouchers for the current category
@@ -165,6 +146,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
   const vouchers: Voucher[] = await fetchVouchers(categoryName);
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData url={`https://www.enkash.com/voucher/${categoryName}`} />
       <Header utmSource={halfBoltUTM} />
 
       {isValidCategory ? (
