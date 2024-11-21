@@ -23,6 +23,7 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -38,6 +39,10 @@ export const metadata: Metadata = generateMetaData({
 const CfoSuite = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/solutions/cfo-insights/`}
+        faqData={faqData}
+      />
       <Header utmSource="" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

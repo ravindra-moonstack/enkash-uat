@@ -24,6 +24,7 @@ import generateMetaData, {
   generateBreadcrumbSchema,
   generateFaqSchema,
 } from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -43,20 +44,10 @@ const fuelCard = () => {
   const faqSchema = generateFaqSchema(faqData);
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/fuel-cards/`}
+        faqData={faqData}
       />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
-      )}
 
       <Header utmSource="corporate_cards" />
 

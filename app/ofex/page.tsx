@@ -30,6 +30,7 @@ import {
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title: "Automated Expense Management Software for your Business- EnKash",
@@ -44,6 +45,7 @@ export const metadata: Metadata = generateMetaData({
 const OfEx = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData url={`https://www.enkash.com/ofex/`} faqData={faqData} />
       <Header utmSource="expense_management" />
 
       <div className={`${styles.first_row} row color-white`}>

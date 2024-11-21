@@ -1,3 +1,5 @@
+import { Voucher } from "@/app/bolt/data/voucher-data";
+
 interface MetadataInput {
   title: string;
   description: string;
@@ -84,6 +86,27 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
         .join(" "),
     },
   }));
+};
+
+export const generateVoucherSchema = (voucher: Voucher): string => {
+  const schema = {
+    "@context": "https://schema.org/",
+    "@type": "Offer",
+    name: voucher.name,
+    description: voucher.description,
+    category: voucher.category,
+    discount: `${voucher.discount}%`,
+    image: `https://www.enkash.com/images/vouchers/${voucher.backgroundImg}`,
+    seller: {
+      "@type": "Organization",
+      name: voucher.brandName || "",
+    },
+    url: `https://www.enkash.com/voucher/${voucher.urlName}`,
+  };
+
+  return `<script type="application/ld+json">${JSON.stringify(
+    schema
+  )}</script>`;
 };
 
 const generateMetaData = ({

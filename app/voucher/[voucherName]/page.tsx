@@ -30,8 +30,13 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
 import { nameToUrl } from "@/common/utils/stringUtils";
 import VoucherFaqComponent from "@/components/voucher-page/voucher-faq";
 import { VoucherFaqData } from "@/app/bolt/data/voucher-faq-data";
-import { generateFaqSchema } from "@/common/utils/metaData";
+import {
+  generateBreadcrumbSchema,
+  generateFaqSchema,
+  generateVoucherSchema,
+} from "@/common/utils/metaData";
 import Head from "next/head";
+import StructuredData from "@/components/head/structuredData";
 
 export function generateMetadata({
   params,
@@ -77,27 +82,6 @@ export function generateMetadata({
     },
   };
 }
-
-const generateVoucherSchema = (voucher: Voucher): string => {
-  const schema = {
-    "@context": "https://schema.org/",
-    "@type": "Offer",
-    name: voucher.name,
-    description: voucher.description,
-    category: voucher.category,
-    discount: `${voucher.discount}%`,
-    image: `https://www.enkash.com/images/vouchers/${voucher.backgroundImg}`,
-    seller: {
-      "@type": "Organization",
-      name: voucher.brandName || "",
-    },
-    url: `https://www.enkash.com/voucher/${voucher.urlName}`,
-  };
-
-  return `<script type="application/ld+json">${JSON.stringify(
-    schema
-  )}</script>`;
-};
 
 const sanitizeStep = (step: string): string => {
   const containsOnlyLetters = /^[a-zA-Z]+$/;
@@ -219,13 +203,12 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
     { name: voucherData?.name || "Voucher", url: `/voucher/${voucherName}` },
   ];
   const faqData = VoucherFaqData[voucherName].faqData;
-  const jsonLdFaq = generateFaqSchema(faqData);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      <StructuredData
+        url={`https://www.enkash.com/voucher/${voucherData?.urlName}`}
+        faqData={faqData}
       />
 
       <Header utmSource={halfBoltUTM} />

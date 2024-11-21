@@ -31,6 +31,7 @@ import {
 } from ".";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",
@@ -45,6 +46,10 @@ export const metadata: Metadata = generateMetaData({
 const payables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/payables/`}
+        faqData={faqData}
+      />
       <Header utmSource="payables" />
 
       <div className={`${styles.first_row} row color-white`}>

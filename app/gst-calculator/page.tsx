@@ -10,6 +10,7 @@ import { gstCalculatorBG, gstIconOne, gstIconWhite } from ".";
 import GSTCalculator from "@/components/gst-calculator/gst-calculator";
 import faqData from "../bolt/faq-data";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
@@ -24,7 +25,9 @@ export const metadata: Metadata = generateMetaData({
 const page = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData url={`https://www.enkash.com/bolt/`} faqData={faqData} />
       <Header utmSource="gst_calculator" />
+
       <div className={`${styles.first_row} row color-white`}>
         <GSTCalculator />
       </div>

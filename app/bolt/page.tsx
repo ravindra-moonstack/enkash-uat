@@ -35,6 +35,7 @@ import {
 } from ".";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
@@ -51,7 +52,9 @@ const boltPage = () => {
   const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData url={`https://www.enkash.com/bolt/`} faqData={faqData} />
       <Header utmSource={halfBoltUTM} />
+
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">

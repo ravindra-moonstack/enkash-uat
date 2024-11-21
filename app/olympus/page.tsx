@@ -35,6 +35,7 @@ import TestimonialCard from "@/components/testimonial-card/testimonial-card";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -50,6 +51,10 @@ export const metadata: Metadata = generateMetaData({
 const olympus = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/`}
+        faqData={faqData}
+      />
       <Header utmSource="payables" />
 
       <div className={`${styles.first_row} row color-white`}>

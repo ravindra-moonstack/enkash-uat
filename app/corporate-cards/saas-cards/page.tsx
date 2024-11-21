@@ -22,6 +22,7 @@ import Link from "next/link";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title: "SaaS Subscription Management Platform - EnKash",
@@ -36,6 +37,10 @@ export const metadata: Metadata = generateMetaData({
 const saasCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/saas-cards/`}
+        faqData={faqData}
+      />
       <Header utmSource="corporate_cards" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

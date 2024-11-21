@@ -29,6 +29,7 @@ import {
 } from ".";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -44,6 +45,10 @@ export const metadata: Metadata = generateMetaData({
 const loyaltyLounge = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/loyalty-lounge/`}
+        faqData={faqData}
+      />
       <Header utmSource="Loyalty_lounge" />
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">

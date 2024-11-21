@@ -21,11 +21,9 @@ import Header from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import blogData from "./blog-data";
 import Footer from "@/components/footer/footer";
-import generateMetaData, {
-  generateBreadcrumbSchema,
-  generateFaqSchema,
-} from "@/common/utils/metaData";
+import generateMetaData from "@/common/utils/metaData";
 import Head from "next/head";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -40,28 +38,12 @@ export const metadata: Metadata = generateMetaData({
 });
 
 const digitalMarketingCard = () => {
-  const breadcrumbSchema = generateBreadcrumbSchema(
-    "https://www.enkash.com/corporate-cards/digital-marketing-cards/"
-  );
-  const faqSchema = generateFaqSchema(faqData);
-  console.log(breadcrumbSchema);
-  console.log(faqSchema);
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/digital-marketing-cards/`}
+        faqData={faqData}
       />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
-      )}
 
       <Header utmSource="corporate_cards" />
 

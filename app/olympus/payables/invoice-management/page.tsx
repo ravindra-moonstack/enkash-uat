@@ -21,6 +21,7 @@ import FAQHtml from "./faq-html";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title: "Invoice Processing & Software: Streamline Invoicing - EnKash",
@@ -35,6 +36,10 @@ export const metadata: Metadata = generateMetaData({
 const invoiceManagement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/payables/invoice-management/`}
+        faqData={faqData}
+      />
       <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
