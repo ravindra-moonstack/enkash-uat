@@ -30,7 +30,10 @@ import {
 } from ".";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
-import generateMetaData from "@/common/utils/metaData";
+import generateMetaData, {
+  generateBreadcrumbSchema,
+  generateFaqSchema,
+} from "@/common/utils/metaData";
 
 export const metadata: Metadata = generateMetaData({
   title: "Corporate Credit and Prepaid Cards in India| Apply Now - EnKash",
@@ -43,8 +46,27 @@ export const metadata: Metadata = generateMetaData({
 });
 
 const slash = () => {
+  const breadcrumbSchema = generateBreadcrumbSchema(
+    "https://www.enkash.com/corporate-cards/"
+  );
+  const faqSchema = generateFaqSchema(faqData);
   return (
-    <div className={`color-white ${styles.home_container}`}>
+    <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(faqSchema),
+          }}
+        />
+      )}
+
       <Header utmSource="corporate_cards" />
 
       <div className={`${styles.first_row} row color-white`}>

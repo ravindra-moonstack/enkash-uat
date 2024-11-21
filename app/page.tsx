@@ -44,7 +44,10 @@ import {
 } from ".";
 import Footer from "@/components/footer/footer";
 import EmailBox from "@/components/homepage/email-box";
-import generateMetaData from "@/common/utils/metaData";
+import generateMetaData, {
+  generateBreadcrumbSchema,
+  generateFaqSchema,
+} from "@/common/utils/metaData";
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash - The Ultimate Platform for Businesses",
@@ -56,9 +59,17 @@ export const metadata: Metadata = generateMetaData({
 });
 
 const home = () => {
+  const breadcrumbSchema = generateBreadcrumbSchema("https://www.enkash.com");
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
+      <Header utmSource="corporate_cards" />
       <RainbowSection />
       <div
         className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center

@@ -13,7 +13,7 @@ interface MetadataInput {
   }>;
 }
 
-const generateBreadcrumbSchema = (canonicalUrl: string) => {
+export const generateBreadcrumbSchema = (canonicalUrl: string) => {
   // Remove trailing slash if exists and split the path
   const url = new URL(canonicalUrl);
   const pathSegments = url.pathname.replace(/^\/|\/$/g, "").split("/");
@@ -62,6 +62,30 @@ const generateBreadcrumbSchema = (canonicalUrl: string) => {
   };
 };
 
+// Your existing generateFaqSchema function remains the same
+export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
+  if (!faqData) {
+    return [];
+  }
+
+  return faqData.map((faq, index) => ({
+    "@type": "Question",
+    name: faq.question,
+    position: index + 1,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer
+        .map((ans) => {
+          if (ans.bullets?.length) {
+            return `${ans.heading || ""} ${ans.bullets.join(". ")}`;
+          }
+          return ans.heading || "";
+        })
+        .join(" "),
+    },
+  }));
+};
+
 const generateMetaData = ({
   title,
   description,
@@ -69,48 +93,26 @@ const generateMetaData = ({
   faqData,
 }: MetadataInput) => {
   const canonicalUrl = alternates.canonical;
-  const baseUrl = new URL(canonicalUrl).origin;
+  const faqldJSON = generateFaqSchema(faqData);
 
-  // Generate FAQ structured data
-  const faqSchema = faqData
-    ? faqData.map((faq, index) => ({
-        "@type": "Question",
-        name: faq.question,
-        position: index + 1,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: faq.answer
-            .map((ans) => {
-              if (ans.bullets?.length) {
-                return `${ans.heading || ""} ${ans.bullets.join(". ")}`;
-              }
-              return ans.heading || "";
-            })
-            .join(" "),
-        },
-      }))
-    : [];
-
-  // Generate breadcrumb structured data
-  const breadcrumbSchema = generateBreadcrumbSchema(canonicalUrl);
-
-  // Return combined metadata
   return {
     title,
     description,
     alternates,
-    other: {
-      "script:ld+json": JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "@id": canonicalUrl,
-        url: canonicalUrl,
-        name: title,
-        description: description,
-        breadcrumb: breadcrumbSchema,
-        mainEntity: faqSchema,
-      }),
-    },
+    structuredDataScript: `
+      <script type="application/ld+json">
+        ${JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "@id": canonicalUrl,
+          url: canonicalUrl,
+          name: title,
+          description,
+          breadcrumb: generateBreadcrumbSchema(canonicalUrl),
+          mainEntity: faqldJSON,
+        })}
+      </script>
+    `,
   };
 };
 

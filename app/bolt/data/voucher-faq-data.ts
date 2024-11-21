@@ -3,7 +3,7 @@ export type FAQ = {
   question: string;
   answer: {
     heading: string;
-    bullets: string[];
+    bullets?: string[];
   }[];
 };
 

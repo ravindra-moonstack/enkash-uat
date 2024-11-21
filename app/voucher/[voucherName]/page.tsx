@@ -29,6 +29,9 @@ import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
 import { nameToUrl } from "@/common/utils/stringUtils";
 import VoucherFaqComponent from "@/components/voucher-page/voucher-faq";
+import { VoucherFaqData } from "@/app/bolt/data/voucher-faq-data";
+import { generateFaqSchema } from "@/common/utils/metaData";
+import Head from "next/head";
 
 export function generateMetadata({
   params,
@@ -215,9 +218,16 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
     },
     { name: voucherData?.name || "Voucher", url: `/voucher/${voucherName}` },
   ];
+  const faqData = VoucherFaqData[voucherName].faqData;
+  const jsonLdFaq = generateFaqSchema(faqData);
 
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+
       <Header utmSource={halfBoltUTM} />
 
       {voucherData ? (
@@ -227,6 +237,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
               currentPageCategory={voucherData?.category || "e-commerce"}
             />
           </div>
+          <div></div>
 
           <div className={`mx-auto ${styles.voucher_detail_container}`}>
             <div className={`mt-3 ${styles.top_container}`}>
@@ -618,18 +629,24 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   Explore Our Most Popular Gift Vouchers
                 </h2>
                 <div className={styles.list}>
-                    <Link href="/voucher/myntra-e-gift-card" title="Myntra E-Gift Card">
+                  <Link
+                    href="/voucher/myntra-e-gift-card"
+                    title="Myntra E-Gift Card"
+                  >
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                      <Image src={myntraPopular} alt="Myntra" />
+                        <Image src={myntraPopular} alt="Myntra" />
                       </div>
                       <span className={styles.arrow}>
-                      <Image src={popularArrow} alt="arrow" />
+                        <Image src={popularArrow} alt="arrow" />
                       </span>
                     </div>
-                    </Link>
+                  </Link>
 
-                  <Link href="/voucher/amazon-shopping-vouchers" title="Amazon Pay E-Gift Card">
+                  <Link
+                    href="/voucher/amazon-shopping-vouchers"
+                    title="Amazon Pay E-Gift Card"
+                  >
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={amazonPopular} alt="Amazon Pay" />
@@ -640,7 +657,10 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/voucher/zomato-e-gift-voucher" title="Zomato E-Gift Card">
+                  <Link
+                    href="/voucher/zomato-e-gift-voucher"
+                    title="Zomato E-Gift Card"
+                  >
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={zomatoPopular} alt="Zomato" />
@@ -651,7 +671,10 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     </div>
                   </Link>
 
-                  <Link href="/voucher/ajio-e-gift-card" title="Ajio E-Gift Card">
+                  <Link
+                    href="/voucher/ajio-e-gift-card"
+                    title="Ajio E-Gift Card"
+                  >
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
                         <Image src={ajioPopular} alt="Ajio" />
@@ -671,7 +694,12 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
             className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
           >
             <div className="mb-5">
-              <Heading title="Got Questions?" color="equity-blue" size="h1" useH2TagInHtml={true}/>
+              <Heading
+                title="Got Questions?"
+                color="equity-blue"
+                size="h1"
+                useH2TagInHtml={true}
+              />
             </div>
             <div className="mb-5">
               <Heading
