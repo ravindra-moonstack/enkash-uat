@@ -108,19 +108,26 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
 };
 
 export const generateVoucherSchema = (voucher: Voucher): string => {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.enkash.com";
+
   const schema = {
-    "@context": "https://schema.org/",
+    "@context": "https://schema.org",
     "@type": "Offer",
     name: voucher.name,
-    description: voucher.description,
+    description: `${voucher.discount}% discount voucher. ${voucher.description}`
+      .substring(0, 5000)
+      .trim(),
     category: voucher.category,
-    discount: `${voucher.discount}%`,
-    image: `https://www.enkash.com/images/vouchers/${voucher.backgroundImg}`,
+    image: `${baseUrl}/images/vouchers/${voucher.backgroundImg}`,
     seller: {
       "@type": "Organization",
-      name: voucher.brandName || "",
+      name: voucher.brandName,
+      description: voucher.aboutCompany,
     },
-    url: `https://www.enkash.com/voucher/${voucher.urlName}`,
+    availability: "https://schema.org/InStock",
+    url: `${baseUrl}/voucher/${voucher.urlName}`,
+    itemCondition: "https://schema.org/NewCondition",
+    warranty: voucher.termsAndConditionSteps.join(". "),
   };
 
   return `<script type="application/ld+json">${JSON.stringify(
