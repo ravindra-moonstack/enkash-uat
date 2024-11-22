@@ -14,54 +14,73 @@ interface MetadataInput {
     }>;
   }>;
 }
+export interface BreadcrumbItem {
+  "@type": "ListItem";
+  position: number;
+  name: string;
+  item: string;
+}
 
-export const generateBreadcrumbSchema = (canonicalUrl: string) => {
-  // Remove trailing slash if exists and split the path
-  const url = new URL(canonicalUrl);
-  const pathSegments = url.pathname.replace(/^\/|\/$/g, "").split("/");
+export interface BreadcrumbSchema {
+  "@context": "https://schema.org";
+  "@type": "BreadcrumbList";
+  itemListElement: BreadcrumbItem[];
+}
 
-  // Format segment to title case and replace hyphens with spaces
-  const formatSegmentName = (segment: string) => {
-    return segment
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-  };
+export const generateBreadcrumbSchema = (
+  canonicalUrl: string
+): BreadcrumbSchema => {
+  if (!canonicalUrl) {
+    throw new Error("Canonical URL is required");
+  }
 
-  // Generate breadcrumb items
-  const breadcrumbItems = pathSegments.reduce<
-    Array<{
-      "@type": string;
-      position: number;
-      name: string;
-      item: string;
-    }>
-  >((items, segment, index) => {
-    // Always add Home as first item if this is the start of the list
-    if (index === 0) {
-      items.push({
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: `${url.origin}/`,
-      });
-    }
+  try {
+    const url = new URL(canonicalUrl);
 
-    // Add current segment
-    items.push({
+    const pathSegments = url.pathname
+      .replace(/^\/|\/$/g, "")
+      .split("/")
+      .filter(Boolean);
+
+    // Format segment to title case and replace hyphens with spaces
+    const formatSegmentName = (segment: string): string => {
+      return segment
+        .split(/[-_]/) // Also handle underscores
+        .map(
+          (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        )
+        .join(" ")
+        .trim();
+    };
+
+    const breadcrumbItems: BreadcrumbItem[] = [];
+
+    // Always add Home as first item
+    breadcrumbItems.push({
       "@type": "ListItem",
-      position: items.length + 1,
-      name: formatSegmentName(segment),
-      item: `${url.origin}/${pathSegments.slice(0, index + 1).join("/")}/`,
+      position: 1,
+      name: "Home",
+      item: `${url.origin}/`,
     });
 
-    return items;
-  }, []);
+    // Add subsequent segments
+    pathSegments.forEach((segment, index) => {
+      breadcrumbItems.push({
+        "@type": "ListItem",
+        position: index + 2, // +2 because Home is position 1
+        name: formatSegmentName(segment),
+        item: `${url.origin}/${pathSegments.slice(0, index + 1).join("/")}/`,
+      });
+    });
 
-  return {
-    "@type": "BreadcrumbList",
-    itemListElement: breadcrumbItems,
-  };
+    return {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: breadcrumbItems,
+    };
+  } catch (error) {
+    throw new Error(`Failed to generate breadcrumb schema }`);
+  }
 };
 
 // Your existing generateFaqSchema function remains the same

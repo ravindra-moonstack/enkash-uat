@@ -22,10 +22,8 @@ import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
-import generateMetaData, {
-  generateBreadcrumbSchema,
-  generateFaqSchema,
-} from "@/common/utils/metaData";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -39,27 +37,12 @@ export const metadata: Metadata = generateMetaData({
 });
 
 const diyCardModule = () => {
-  const breadcrumbSchema = generateBreadcrumbSchema(
-    "https://www.enkash.com/corporate-cards/diy-card-module/"
-  );
-  const faqSchema = generateFaqSchema(faqData);
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/diy-card-module/`}
+        faqData={faqData}
       />
-      {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(faqSchema),
-          }}
-        />
-      )}
-
       <Header utmSource="corporate_cards" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

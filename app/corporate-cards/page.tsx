@@ -30,10 +30,7 @@ import {
 } from ".";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
-import generateMetaData, {
-  generateBreadcrumbSchema,
-  generateFaqSchema,
-} from "@/common/utils/metaData";
+import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
@@ -47,10 +44,6 @@ export const metadata: Metadata = generateMetaData({
 });
 
 const slash = () => {
-  const breadcrumbSchema = generateBreadcrumbSchema(
-    "https://www.enkash.com/corporate-cards/"
-  );
-  const faqSchema = generateFaqSchema(faqData);
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData

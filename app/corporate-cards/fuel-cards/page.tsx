@@ -20,10 +20,7 @@ import Header from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import blogData from "./blog-data";
 import Footer from "@/components/footer/footer";
-import generateMetaData, {
-  generateBreadcrumbSchema,
-  generateFaqSchema,
-} from "@/common/utils/metaData";
+import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
@@ -38,17 +35,12 @@ export const metadata: Metadata = generateMetaData({
 });
 
 const fuelCard = () => {
-  const breadcrumbSchema = generateBreadcrumbSchema(
-    "https://www.enkash.com/corporate-cards/fuel-cards/"
-  );
-  const faqSchema = generateFaqSchema(faqData);
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/corporate-cards/fuel-cards/`}
         faqData={faqData}
       />
-
       <Header utmSource="corporate_cards" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
