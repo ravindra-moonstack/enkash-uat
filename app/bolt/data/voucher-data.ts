@@ -265,7 +265,7 @@ const VoucherData: Record<string, Voucher> = {
   "dominos-pizza-e-gift-card": {
     name: "Dominos Pizza E-Gift Card",
     urlName: "dominos-pizza-e-gift-card",
-    brandName: "Domino's ",
+    brandName: "Domino's",
     category: "food-and-beverages",
     discount: 0,
     backgroundImg: "hehe",
@@ -321,7 +321,7 @@ const VoucherData: Record<string, Voucher> = {
   "bookmyshow-e-gift-card": {
     name: "BookMyShow E-Gift Card",
     urlName: "bookmyshow-e-gift-card",
-    brandName: "BookMyShow ",
+    brandName: "BookMyShow",
     category: "movies-and-music",
     discount: 0,
     backgroundImg: "hehe",
@@ -377,7 +377,7 @@ const VoucherData: Record<string, Voucher> = {
   "starbucks-e-gift-card": {
     name: "Starbucks E-Gift Card",
     urlName: "starbucks-e-gift-card",
-    brandName: "Starbucks ",
+    brandName: "Starbucks",
     category: "food-and-beverages",
     discount: 0,
     backgroundImg: "hehe",
@@ -426,7 +426,7 @@ const VoucherData: Record<string, Voucher> = {
   "myntra-e-gift-card": {
     name: "Myntra E-Gift Card",
     urlName: "myntra-e-gift-card",
-    brandName: "Myntra ",
+    brandName: "Myntra",
     category: "e-commerce",
     discount: 0,
     backgroundImg: "hehe",
@@ -477,7 +477,7 @@ const VoucherData: Record<string, Voucher> = {
   "zomato-e-gift-voucher": {
     name: "Zomato E-Gift Voucher",
     urlName: "zomato-e-gift-voucher",
-    brandName: "Zomato ",
+    brandName: "Zomato",
     category: "food-and-beverages",
     discount: 0,
     backgroundImg: "hehe",
@@ -600,7 +600,7 @@ const VoucherData: Record<string, Voucher> = {
   "decathlon-sports-india-e-gift-card": {
     name: "Decathlon Sports India E-Gift Card",
     urlName: "decathlon-sports-india-e-gift-card",
-    brandName: "Decathlon ",
+    brandName: "Decathlon",
     category: "e-commerce",
     discount: 0,
     backgroundImg: "hehe",

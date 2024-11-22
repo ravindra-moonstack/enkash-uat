@@ -108,26 +108,43 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
 };
 
 export const generateVoucherSchema = (voucher: Voucher): string => {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://www.enkash.com";
+  const baseUrl = "https://www.enkash.com";
 
   const schema = {
     "@context": "https://schema.org",
-    "@type": "Offer",
-    name: voucher.name,
-    description: `${voucher.discount}% discount voucher. ${voucher.description}`
-      .substring(0, 5000)
-      .trim(),
-    category: voucher.category,
-    image: `${baseUrl}/images/vouchers/${voucher.backgroundImg}`,
-    seller: {
-      "@type": "Organization",
+    "@type": "Product",
+    name: `${voucher.name} - ${voucher.discount}% Value`,
+    description: `${voucher.description}`.substring(0, 5000).trim(),
+    brand: {
+      "@type": "Brand",
       name: voucher.brandName,
       description: voucher.aboutCompany,
     },
-    availability: "https://schema.org/InStock",
-    url: `${baseUrl}/voucher/${voucher.urlName}`,
-    itemCondition: "https://schema.org/NewCondition",
-    warranty: voucher.termsAndConditionSteps.join(". "),
+    category: voucher.category,
+    image: `${baseUrl}/images/vouchers/${voucher.urlName}.png`,
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      url: `${baseUrl}/voucher/${voucher.urlName}/`,
+      itemCondition: "https://schema.org/NewCondition",
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        priceCurrency: "INR",
+        minPrice: "100",
+      },
+    },
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "redemptionInstructions",
+        value: voucher.howToRedeemDesc,
+      },
+      // {
+      //   "@type": "PropertyValue",
+      //   name: "termsAndConditions",
+      //   value: voucher.termsAndConditionSteps.join(". "),
+      // },
+    ],
   };
 
   return `<script type="application/ld+json">${JSON.stringify(

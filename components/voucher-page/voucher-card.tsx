@@ -49,7 +49,11 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
           </a>
         )}
 
-        <div className={styles.voucher_name}>{voucher.name}</div>
+        <div className={styles.voucher_name}>
+          <a href={voucherURL} title={`${voucher.name}`}>
+            {voucher.name}
+          </a>
+        </div>
       </div>
     </div>
   );

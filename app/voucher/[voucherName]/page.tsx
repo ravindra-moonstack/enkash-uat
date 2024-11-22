@@ -54,13 +54,13 @@ export function generateMetadata({
   const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.png`;
   return {
     title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
-    description: `Get the best {Brand Name} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
+    description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
     alternates: {
       canonical: `https://www.enkash.com/voucher/${voucher.urlName}`,
     },
     openGraph: {
       title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
-      description: `Get the best {Brand Name} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
+      description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
       images: [
         {
           url: imageUrl,
@@ -73,7 +73,7 @@ export function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
-      description: `Get the best {Brand Name} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
+      description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
       images: [imageUrl],
     },
   };

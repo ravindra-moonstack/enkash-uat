@@ -56,8 +56,8 @@ export function generateMetadata({
   const categoryData = CategoryData[categoryName];
 
   return {
-    title: `${categoryData.heading} - EnKash`,
-    description: categoryData.title,
+    title: `${categoryData.heading} - ${categoryData.title} ${categoryData.discount}% OFF - EnKash`,
+    description: categoryData.description,
     alternates: {
       canonical: `https://www.enkash.com/bolt/category/${categoryData.name}`,
     },

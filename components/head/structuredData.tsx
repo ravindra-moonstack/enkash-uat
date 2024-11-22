@@ -22,7 +22,7 @@ const StructuredData: React.FC<StructuredDataProps> = ({ url, faqData }) => {
           }}
         />
       )}
-      {faqSchema && (
+      {faqData && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
