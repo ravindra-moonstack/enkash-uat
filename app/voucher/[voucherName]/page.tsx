@@ -30,11 +30,7 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
 import { nameToUrl } from "@/common/utils/stringUtils";
 import VoucherFaqComponent from "@/components/voucher-page/voucher-faq";
 import { VoucherFaqData } from "@/app/bolt/data/voucher-faq-data";
-import {
-  generateBreadcrumbSchema,
-  generateFaqSchema,
-  generateVoucherSchema,
-} from "@/common/utils/metaData";
+import { generateVoucherSchema } from "@/common/utils/metaData";
 import Head from "next/head";
 import StructuredData from "@/components/head/structuredData";
 
@@ -215,6 +211,13 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
       {voucherData ? (
         <div className={`color-white ${styles.home_container}`}>
+          {/* METADATA for voucher */}
+          <div
+            dangerouslySetInnerHTML={{
+              __html: generateVoucherSchema(voucherData),
+            }}
+          />
+
           <div className={`color-white ${styles.first_row_category}`}>
             <CategoryMenu
               currentPageCategory={voucherData?.category || "e-commerce"}
@@ -701,13 +704,6 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
               <Image src={faqBg} alt="background image" />x
             </div>
           </div>
-
-          {/* METADATA for voucher */}
-          <div
-            dangerouslySetInnerHTML={{
-              __html: generateVoucherSchema(voucherData),
-            }}
-          />
         </div>
       ) : (
         <div className={` py-5 ${styles.error_container}`}>
