@@ -44,20 +44,24 @@ import {
 } from ".";
 import Footer from "@/components/footer/footer";
 import EmailBox from "@/components/homepage/email-box";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "EnKash - The Ultimate Platform for Businesses",
   description:
     "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more.",
   alternates: {
     canonical: "https://www.enkash.com",
   },
-};
+});
 
 const home = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <Header />
+      <StructuredData url={`https://www.enkash.com/`} />
+
+      <Header utmSource="corporate_cards" />
       <RainbowSection />
       <div
         className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center

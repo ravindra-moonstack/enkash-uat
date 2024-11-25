@@ -21,19 +21,26 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import Link from "next/link";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "SaaS Subscription Management Platform - EnKash",
   description:
     "Manage all your SaaS subscriptions on a single software platform. Enhance your spend strategies with actionable insights & smart controls with EnKash",
   alternates: {
     canonical: "https://www.enkash.com/corporate-cards/saas-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const saasCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/saas-cards/`}
+        faqData={faqData}
+      />
       <Header utmSource="corporate_cards" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

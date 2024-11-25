@@ -100,5 +100,9 @@
     text-align: center;
     color: $color-bolt-title-grey;
     text-decoration: none;
+    a {
+      color: $color-bolt-title-grey;
+      text-decoration: none;
+    }
   }
 }

@@ -22,8 +22,10 @@ import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "What is API integrations? | Empower your Business with Powerful API - EnKash",
   description:
@@ -31,11 +33,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/solutions/apis-modules/",
   },
-};
+  faqData: faqData,
+});
 
 const apiAndModules = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/solutions/apis-modules/`}
+        faqData={faqData}
+      />
       <Header utmSource="" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

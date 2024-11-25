@@ -19,19 +19,26 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Corporate Gift Cards for Employees for Every Occasion with EnKash",
   description:
     "Unlock the power of corporate gifting with our versatile gift cards. Delight clients, employees, and partners with a world of choices. Explore our corporate gift card solutions now!",
   alternates: {
     canonical: "https://www.enkash.com/loyalty-lounge/gift-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const giftCards = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/loyalty-lounge/gift-cards/`}
+        faqData={faqData}
+      />
       <Header utmSource="Loyalty_lounge" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

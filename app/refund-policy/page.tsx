@@ -6,18 +6,23 @@ import Image from "next/image";
 import Footer from "@/components/footer/footer";
 
 import { Metadata } from "next";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: " Terms & Conditions for Usage of Platform | EnKash",
   description: " Terms & Conditions for Usage of Platform",
   alternates: {
     canonical: "https://www.enkash.com/terms-condition-platform/",
   },
-};
+});
 
 const termConditionPlatform = () => {
   return (
     <>
+      <StructuredData
+        url={`https://www.enkash.com/terms-condition-platform/`}
+      />
       <Header />
       <div className={styles.parent_container}>
         <Image

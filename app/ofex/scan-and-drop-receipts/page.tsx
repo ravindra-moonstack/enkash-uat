@@ -20,8 +20,10 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Digital Receipt & Control Management : Store your Documents Online - EnKash",
   description:
@@ -29,11 +31,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/ofex/scan-and-drop-receipts/",
   },
-};
+  faqData: faqData,
+});
 
 const scanAndDropReceipts = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/ofex/scan-and-drop-receipts/`}
+        faqData={faqData}
+      />
       <Header utmSource="expense_management" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

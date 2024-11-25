@@ -34,8 +34,10 @@ import {
 import TestimonialCard from "@/components/testimonial-card/testimonial-card";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Automate your Business Account Payable & Receivable with Enkash Olympus  ",
   description:
@@ -43,11 +45,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/olympus/",
   },
-};
+  faqData: faqData,
+});
 
 const olympus = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/`}
+        faqData={faqData}
+      />
       <Header utmSource="payables" />
 
       <div className={`${styles.first_row} row color-white`}>

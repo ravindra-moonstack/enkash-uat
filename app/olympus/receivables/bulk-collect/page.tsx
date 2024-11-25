@@ -20,19 +20,26 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Bulk Collect – Corporate E-Collect and Payment Collection | EnKash",
   description:
     "Revolutionize your business payment collection with Bulk Collect. Streamline data management, enhance efficiency, and ensure seamless payment processes. Explore the benefits with EnKash today",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/bulk-collect",
+    canonical: "https://www.enkash.com/olympus/receivables/bulk-collect/",
   },
-};
+  faqData: faqData,
+});
 
 const bulkCollect = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/receivables/bulk-collect/`}
+        faqData={faqData}
+      />
       <Header utmSource="receivables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

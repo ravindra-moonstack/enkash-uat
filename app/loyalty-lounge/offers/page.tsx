@@ -18,20 +18,27 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
-    " Rewards & Offers- Get Exclusive offers on SaaS subscriptions | EnKash",
+    "Rewards & Offers- Get Exclusive offers on SaaS subscriptions | EnKash",
   description:
     "Unlock a world of savings and exclusive perks with our rewards and offers. Explore the benefits of our program and start enjoying the offer with EnKash today!",
   alternates: {
     canonical: "https://www.enkash.com/loyalty-lounge/offers/",
   },
-};
+  faqData: faqData,
+});
 
 const offers = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/loyalty-lounge/offers/`}
+        faqData={faqData}
+      />
       <Header utmSource="Loyalty_lounge" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

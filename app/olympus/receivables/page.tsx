@@ -29,19 +29,26 @@ import {
 } from ".";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: " Accounts Receivables Automation Software for Business - EnKash",
   description:
     "Save cost of your business with Accounts Receivables Automation Software. Automate your invoicing, reduce payment delays & improve financial efficiency. Sign up for Free Trial Now!!",
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/",
   },
-};
+  faqData: faqData,
+});
 
 const receivables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/receivables/`}
+        faqData={faqData}
+      />
       <Header utmSource="receivables" />
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">

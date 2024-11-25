@@ -21,19 +21,26 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Customize Subscription Management Solutions - EnKash",
   description:
     "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. Book a Free demo Now !!",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/payment-links",
+    canonical: "https://www.enkash.com/olympus/receivables/payment-links/",
   },
-};
+  faqData: faqData,
+});
 
 const subscriptionManagement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/receivables/subscription-management/`}
+        faqData={faqData}
+      />
       <Header utmSource="receivables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

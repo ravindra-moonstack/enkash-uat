@@ -21,8 +21,10 @@ import Link from "next/link";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Best Travel and Expenses Corporate Cards for Business - EnKash",
   description:
     "Travel & expense cards offer benefits that enhance corporate travel management. Use these cards and avail amazing travel perks and rewards.",
@@ -30,12 +32,18 @@ export const metadata: Metadata = {
     canonical:
       "https://www.enkash.com/corporate-cards/travel-and-expense-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const travelAndExpenseCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="corporate_cards" />
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/travel-and-expense-cards/`}
+        faqData={faqData}
+      />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">

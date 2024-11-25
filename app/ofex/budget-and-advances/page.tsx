@@ -20,19 +20,26 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Budget Management Platform | Budget Control for Business - EnKash",
   description:
     "Optimize your financial stability with expert budget control management and cash flow strategies. Effectively allocate resources, track expenditures, and manage your cash flow to achieve sustainable financial success",
   alternates: {
     canonical: "https://www.enkash.com/ofex/budget-and-advances/",
   },
-};
+  faqData: faqData,
+});
 
 const budgetAndAdvance = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/ofex/budget-and-advances/`}
+        faqData={faqData}
+      />
       <Header utmSource="expense_management" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

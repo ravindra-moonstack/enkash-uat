@@ -7,7 +7,7 @@ const blogData = [
     date: "Sep 29, 2022",
     description:
       "Many businesses that operate on a small and medium level have gained huge success and have been able to scale their company profitably with prepaid credit cards, as they are regarded as a powerful financial tool to manage...",
-    link: "https://www.enkash.com/resources/blog/prepaid-credit-card-for-business/&sa=D&source=editors&ust=1701944522679810&usg=AOvVaw1EAsw_grv1U-FCuC-joNXb ",
+    link: "https://www.enkash.com/resources/blog/prepaid-credit-card-for-business/",
   },
   {
     image:

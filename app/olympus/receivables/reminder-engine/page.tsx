@@ -21,17 +21,27 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
-    " Payment Reminders: Automate Payment Collection Reminders - EnKash.com",
+    "Payment Reminders: Automate Payment Collection Reminders - EnKash.com",
   description:
     "Reminder engines help businesses keep track of the payments to be received by the customer. Businesses can use these reminders to collect payments timely and facilitate their cash flow.",
-};
+  alternates: {
+    canonical: "https://www.enkash.com/olympus/receivables/reminder-engine/",
+  },
+  faqData: faqData,
+});
 
 const reminderEngine = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/receivables/reminder-engine/`}
+        faqData={faqData}
+      />
       <Header utmSource="receivables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

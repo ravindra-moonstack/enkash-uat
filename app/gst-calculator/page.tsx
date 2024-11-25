@@ -8,20 +8,26 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import { gstCalculatorBG, gstIconOne, gstIconWhite } from ".";
 import GSTCalculator from "@/components/gst-calculator/gst-calculator";
+import faqData from "../bolt/faq-data";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
   description:
     "Buy e-Gifts cards online with our exclusively curated 400+ brand E-gift cards & vouchers available across various categories. Customize the Corporate gift vouchers without any Hassle with EnKash.",
   alternates: {
     canonical: "https://www.enkash.com/bolt/",
   },
-};
+  faqData: faqData,
+});
 
 const page = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData url={`https://www.enkash.com/bolt/`} faqData={faqData} />
       <Header utmSource="gst_calculator" />
+
       <div className={`${styles.first_row} row color-white`}>
         <GSTCalculator />
       </div>

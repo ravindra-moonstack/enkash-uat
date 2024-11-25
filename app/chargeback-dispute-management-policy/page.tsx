@@ -7,15 +7,16 @@ import Image from "next/image";
 import Footer from "@/components/footer/footer";
 
 import { Metadata } from "next";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Chargeback or Dispute Management Policy | EnKash",
   description:
     "The purpose of this policy is to provide guidelines on how settlements would be done to Merchants by Nehat Tech Solutions Private Ltd.",
   alternates: {
     canonical: "https://www.enkash.com/chargeback-dispute-management-policy/",
   },
-};
+});
 
 const disputeManagement = () => {
   return (

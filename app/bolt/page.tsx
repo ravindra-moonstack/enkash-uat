@@ -34,22 +34,27 @@ import {
   boltHero,
 } from ".";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
   description:
     "Buy e-Gifts cards online with our exclusively curated 400+ brand E-gift cards & vouchers available across various categories. Customize the Corporate gift vouchers without any Hassle with EnKash.",
   alternates: {
     canonical: "https://www.enkash.com/bolt/",
   },
-};
+  faqData: faqData,
+});
 
 const boltPage = () => {
   const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
   const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData url={`https://www.enkash.com/bolt/`} faqData={faqData} />
       <Header utmSource={halfBoltUTM} />
+
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
@@ -121,7 +126,7 @@ const boltPage = () => {
               title="E-commerce"
               description="Get enticing deals on a diverse range of e-commerce brands. Whether you're searching for the latest gadgets, trendy fashion items, or household essentials, get all in one place"
               theme="blue"
-              link="/bolt/category/e-commerce"
+              link="/voucher/category/e-commerce"
             />
           </div>
           <div
@@ -164,7 +169,7 @@ const boltPage = () => {
               title="Food & Beverages"
               description="Treat your taste buds to good food, from gourmet delicacies to everyday essentials, and relish in discounts that make every meal more satisfying"
               theme="blue"
-              link="/bolt/category/food-and-beverages"
+              link="/voucher/category/food-and-beverages"
             />
           </div>
         </div>
@@ -175,7 +180,7 @@ const boltPage = () => {
               title="Apparels"
               description="Elevate your style quotient without breaking the bank by availing discounted shopping gift vouchers from famous apparel brands"
               theme="blue"
-              link="/bolt/category/apparels"
+              link="/voucher/category/apparels"
             />
           </div>
           <div
@@ -219,7 +224,7 @@ const boltPage = () => {
               title="Movies & Music"
               description="Immerse yourself in a world of entertainment at a fraction of the cost with gift vouchers from leading movies and music providers"
               theme="blue"
-              link="/bolt/category/movies-and-music"
+              link="/voucher/category/movies-and-music"
             />
           </div>
         </div>
@@ -230,7 +235,7 @@ const boltPage = () => {
               title="Health and Wellness"
               description="Prioritize your well-being with our range of savings on health and wellness brands. Our discounted gift vouchers empower you to invest in your health without straining your budget"
               theme="blue"
-              link="/bolt/category/health-and-wellness"
+              link="/voucher/category/health-and-wellness"
             />
           </div>
           <div

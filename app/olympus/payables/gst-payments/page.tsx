@@ -20,19 +20,26 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "GST Payment - GST Bill Payment Online for Businesses | EnKash",
   description:
     "Simplify GST Payment and Bill Payment Online - Seamlessly manage your GST payments and bills with our convenient online platform. Save time, stay compliant, and experience hassle-free transactions.",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/gst-payments/",
   },
-};
+  faqData: faqData,
+});
 
 const taxPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/payables/gst-payments/`}
+        faqData={faqData}
+      />
       <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

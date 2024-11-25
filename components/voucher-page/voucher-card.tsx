@@ -1,19 +1,8 @@
 import React from "react";
 import Image from "next/image";
 import styles from "./voucher-page.module.scss";
-import { voucherUrlGenerate } from "@/app/bolt/category/[category]/page";
-
-type Voucher = {
-  voucherId: string;
-  name: string;
-  brandName?: string;
-  category: string;
-  discount: number;
-  description: string;
-  aboutCompany: string;
-  backgroundImg: string;
-  howToRedeem: string[];
-};
+import { Voucher } from "@/app/bolt/data/voucher-data";
+import { nameToUrl } from "@/common/utils/stringUtils";
 
 interface VoucherCardProps {
   voucher: Voucher;
@@ -31,18 +20,19 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
   routeToBolt = false,
 }) => {
   //for metadata image url fetch from public
-  const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
+  // const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
+  const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.urlName}.png`);
   const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
     voucher.name
   )}`;
-  const voucherURL = `/${voucherUrlGenerate(voucher.voucherId)}`;
+  const voucherURL = `/voucher/${nameToUrl(voucher.name)}`;
   return (
     <div>
       <div className={styles.voucher_card}>
         <div className={styles.discount}>
           Up to <strong>{voucher.discount}%</strong> OFF
         </div>
-        <a href={voucherURL}>
+        <a href={voucherURL} title={`${voucher.name}`}>
           <Image
             src={backgroundImage}
             alt={voucher.name}
@@ -59,7 +49,11 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
           </a>
         )}
 
-        <div className={styles.voucher_name}>{voucher.name}</div>
+        <div className={styles.voucher_name}>
+          <a href={voucherURL} title={`${voucher.name}`}>
+            {voucher.name}
+          </a>
+        </div>
       </div>
     </div>
   );

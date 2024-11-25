@@ -30,19 +30,27 @@ import {
 } from ".";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Corporate Credit and Prepaid Cards in India| Apply Now - EnKash",
   description:
     "Empower your workforce with Enkash Freedom: Tailored corporate cards offering customizable spending limits and real-time expense tracking for enhanced cash flow management, operational efficiency, and paperless processes",
   alternates: {
     canonical: "https://www.enkash.com/corporate-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const slash = () => {
   return (
-    <div className={`color-white ${styles.home_container}`}>
+    <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/`}
+        faqData={faqData}
+      />
+
       <Header utmSource="corporate_cards" />
 
       <div className={`${styles.first_row} row color-white`}>

@@ -20,20 +20,27 @@ import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "UPI Payments - Accept Payments Online into your Bank Account - EnKash.com",
   description:
     " UPI is a digital payment system that allows instant money transfers between bank accounts using a Virtual Payment Address (VPA). Try UPI Payments to ease business collections.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/upi-payments",
+    canonical: "https://www.enkash.com/olympus/receivables/upi-payments/",
   },
-};
+  faqData: faqData,
+});
 
 const AutoCollect = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/receivables/upi-payments/`}
+        faqData={faqData}
+      />
       <Header utmSource="receivables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

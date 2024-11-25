@@ -21,8 +21,11 @@ import Header from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import blogData from "./blog-data";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import Head from "next/head";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Digital Marketing Corporate Card for Businesses | Corporate Card for Ad Spend- EnKash",
   description:
@@ -31,11 +34,17 @@ export const metadata: Metadata = {
     canonical:
       "https://www.enkash.com/corporate-cards/digital-marketing-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const digitalMarketingCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/digital-marketing-cards/`}
+        faqData={faqData}
+      />
+
       <Header utmSource="corporate_cards" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

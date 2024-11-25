@@ -21,19 +21,26 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Vendor Payment – Automated Multiple Vendor Payment | EnKash",
   description:
     "Explore how our vendor payment solutions streamline transactions, improve financial control, and enhance supplier relationships. Discover the ease and effectiveness of managing vendor payments",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/vendor-payment/",
   },
-};
+  faqData: faqData,
+});
 
 const vendorPayment = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/payables/vendor-payment/`}
+        faqData={faqData}
+      />
       <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">

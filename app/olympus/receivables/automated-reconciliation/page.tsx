@@ -21,8 +21,10 @@ import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import { space } from "@/common/constant";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Automated Accounts Reconciliation & Bank Reconciliation - EnKash",
   description:
     "EnKash automated reconciliation solutions streamline your financial processes, reduce errors, and enhance efficiency. make cash flow management easier & your finance team focused on more strategic tasks.",
@@ -30,11 +32,16 @@ export const metadata: Metadata = {
     canonical:
       "https://www.enkash.com/olympus/receivables/automated-reconciliation/",
   },
-};
+  faqData: faqData,
+});
 
 const automatedReconcilation = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/receivables/automated-reconciliation/`}
+        faqData={faqData}
+      />
       <Header utmSource="" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

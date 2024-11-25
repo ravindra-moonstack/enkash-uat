@@ -20,15 +20,17 @@ import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Expense Reimbursement - Business & Travel  - EnKash",
   description:
     "Automate and improve your productivity within your organization with an Enkash smart reimbursement system that helps you track, process, and sync data in real-time.",
   alternates: {
     canonical: "https://www.enkash.com/ofex/reimbursement/",
   },
-};
+  faqData: faqData,
+});
 
 const reimbursement = () => {
   return (

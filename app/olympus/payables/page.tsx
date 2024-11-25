@@ -30,19 +30,26 @@ import {
   coinIcon,
 } from ".";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",
   description:
     "Streamline Your Accounts Payable Process with Our Expert Service. From Invoice Verification to Timely Payments, Trust Us for Efficient Financial Management. Get Started Today",
   alternates: {
     canonical: "https://www.enkash.com/olympus/payables/",
   },
-};
+  faqData: faqData,
+});
 
 const payables = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/olympus/payables/`}
+        faqData={faqData}
+      />
       <Header utmSource="payables" />
 
       <div className={`${styles.first_row} row color-white`}>

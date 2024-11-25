@@ -20,8 +20,10 @@ import Header from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import blogData from "./blog-data";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Corporate Fuel Cards for Businesses - Optimize Your Fleet with EnKash",
   description:
@@ -29,11 +31,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.enkash.com/corporate-cards/fuel-cards/",
   },
-};
+  faqData: faqData,
+});
 
 const fuelCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/corporate-cards/fuel-cards/`}
+        faqData={faqData}
+      />
       <Header utmSource="corporate_cards" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

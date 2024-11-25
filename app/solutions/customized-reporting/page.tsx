@@ -20,17 +20,27 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title:
     "Optimizing Cost with Customized Reporting Solutions for Businesses  - EnKash",
   description:
     "EnKash intelligent customized reporting solution helps businesses transform raw spend data into actionable insights to enable better business decisions, optimize costs and maximize savings.",
-};
+  alternates: {
+    canonical: "https://www.enkash.com/solutions/customized-reporting/",
+  },
+  faqData: faqData,
+});
 
 const customizedReporting = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/solutions/customized-reporting/`}
+        faqData={faqData}
+      />
       <Header utmSource="" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>

@@ -262,14 +262,14 @@ body {
 
 .mobile-only {
   @include for-laptops {
-    display: none;
+    display: none !important;
   }
 }
 
 .desktop-only {
-  display: none;
+  display: none !important;
   @include for-laptops {
-    display: block;
+    display: revert !important;
   }
 }
 

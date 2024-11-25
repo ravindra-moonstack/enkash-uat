@@ -20,19 +20,26 @@ import FAQHtml from "./faq-html";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import generateMetaData from "@/common/utils/metaData";
+import StructuredData from "@/components/head/structuredData";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = generateMetaData({
   title: "Instant Card Management: Control your Card from Anywhere - EnKash",
   description:
     "Card Management Solution: EnKash enables real-time transaction monitoring and instant notifications so that you can take quick actions.",
   alternates: {
     canonical: "https://www.enkash.com/solutions/instant-card-management/",
   },
-};
+  faqData: faqData,
+});
 
 const InstantCardManagement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
+      <StructuredData
+        url={`https://www.enkash.com/solutions/instant-card-management/`}
+        faqData={faqData}
+      />
       <Header utmSource="" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
