@@ -18,6 +18,7 @@ import {
   foodAndBeverages,
   healthAndWellness,
   moviesAndMusic,
+  noVoucherFoundImg,
   whiteArrow,
 } from "../../../bolt/index";
 import { movieAndMusic } from "@/components/header";
@@ -229,6 +230,33 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                     />
                   </div>
                 ))}
+              </div>
+            )}
+            {/* When No vouchers are available in a category */}
+            {vouchers && (
+              <div className={`mt-2 mb-5 mx-auto ${styles.vouchers_container}`}>
+                <div className={`${styles.no_voucher_container}`}>
+                  <div className={styles.no_voucher_img}>
+                    <Image
+                      src={noVoucherFoundImg}
+                      alt="white-arrow"
+                      width={500}
+                      height={500}
+                    />
+                  </div>
+                  <Heading
+                    title="Currently unavailable!"
+                    color="secondry-black"
+                    size="h4"
+                    weight="7"
+                  />
+                  <Heading
+                    title="Please come back soon."
+                    color="black"
+                    size="h5"
+                    weight="3"
+                  />
+                </div>
               </div>
             )}
           </div>
