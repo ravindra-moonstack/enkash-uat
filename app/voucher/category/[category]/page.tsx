@@ -218,7 +218,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
           </div>
           {/* render each voucher */}
           <div className={`m-4 ${styles.vouchers_cont}`}>
-            {vouchers && (
+            {vouchers.length > 0 && (
               <div className={`m-4 my-5 mx-auto ${styles.vouchers_container}`}>
                 {Object.values(vouchers).map((voucher: Voucher, index) => (
                   <div key={index}>
@@ -233,9 +233,9 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
               </div>
             )}
             {/* When No vouchers are available in a category */}
-            {vouchers && (
+            {vouchers.length === 0 && (
               <div className={`mt-2 mb-5 mx-auto ${styles.vouchers_container}`}>
-                <div className={`${styles.no_voucher_container}`}>
+                <div className={`mt-4 ${styles.no_voucher_container}`}>
                   <div className={styles.no_voucher_img}>
                     <Image
                       src={noVoucherFoundImg}
