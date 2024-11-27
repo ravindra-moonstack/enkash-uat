@@ -85,26 +85,36 @@ export const generateBreadcrumbSchema = (
 
 // Your existing generateFaqSchema function remains the same
 export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
-  if (!faqData) {
-    return [];
+  if (!faqData || faqData.length === 0) {
+    return null;
   }
 
-  return faqData.map((faq, index) => ({
-    "@type": "Question",
-    name: faq.question,
-    position: index + 1,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer
-        .map((ans) => {
-          if (ans.bullets?.length) {
-            return `${ans.heading || ""} ${ans.bullets.join(". ")}`;
-          }
-          return ans.heading || "";
-        })
-        .join(" "),
-    },
-  }));
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqData.map((faq, index) => ({
+      "@type": "Question",
+      name: faq.question,
+      position: index + 1,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer
+          .map((ans) => {
+            // Construct answer text with heading and bullets
+            const parts = [];
+            if (ans.heading) {
+              parts.push(ans.heading);
+            }
+            if (ans.bullets?.length) {
+              parts.push(ans.bullets.join(". "));
+            }
+            return parts.join(". ");
+          })
+          .filter(Boolean)
+          .join(" "),
+      },
+    })),
+  };
 };
 
 export const generateVoucherSchema = (voucher: Voucher): string => {

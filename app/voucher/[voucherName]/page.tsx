@@ -295,14 +295,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
-                      title="About "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
-                    />
-                    <Heading
-                      title={voucherData.brandName}
+                      title={`About ${voucherData.brandName}`}
                       color="secondry-black"
                       size="h3"
                       weight="7"
@@ -508,14 +501,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <Heading
-                      title="Who can use "
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
-                    />
-                    <Heading
-                      title={voucherData.name}
+                      title={`Who can use ${voucherData.name}`}
                       color="secondry-black"
                       size="h3"
                       weight="7"

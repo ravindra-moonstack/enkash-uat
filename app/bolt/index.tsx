@@ -33,3 +33,6 @@ export { default as popularArrow } from "./img/popular-arrow.svg";
 
 export { default as individualNeed } from "./img/individual-need.svg";
 export { default as corporateNeed } from "./img/corporate-need.svg";
+
+//category page
+export { default as noVoucherFoundImg } from "./img/no-voucher.png";
