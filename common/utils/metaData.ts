@@ -141,6 +141,7 @@ export const generateVoucherSchema = (voucher: Voucher): string => {
         "@type": "PriceSpecification",
         priceCurrency: "INR",
         minPrice: "100",
+        price: "500",
       },
     },
     additionalProperty: [
@@ -149,11 +150,6 @@ export const generateVoucherSchema = (voucher: Voucher): string => {
         name: "redemptionInstructions",
         value: voucher.howToRedeemDesc,
       },
-      // {
-      //   "@type": "PropertyValue",
-      //   name: "termsAndConditions",
-      //   value: voucher.termsAndConditionSteps.join(". "),
-      // },
     ],
   };
 
