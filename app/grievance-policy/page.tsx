@@ -8,6 +8,8 @@ import Footer from "@/components/footer/footer";
 import { Metadata } from "next";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import Link from "next/link";
+import { space } from "@/common/constant";
 
 export const metadata: Metadata = generateMetaData({
   title: "Grievance Redressal Policy | EnKash",
@@ -475,6 +477,17 @@ const grievancePolicy = () => {
                           (30) business days of its receipt. The details of the
                           resolution or rejection of the complaint will be
                           shared, with reasons thereof in writing.{" "}
+                        </span>
+                      </p>
+                      <p className="c3">
+                        <span className="c0 c24">
+                          In case no resolution to your complaint is provided
+                          within 30 days or if the resolution is unsatisfactory,
+                          you may escalate your concern on the RBI CMS portal:
+                          {space}
+                          <Link href="https://cms.rbi.org.in/." target="_blank">
+                            https://cms.rbi.org.in/
+                          </Link>
                         </span>
                       </p>
                       <p className="c3 c9">
