@@ -285,12 +285,11 @@ const grievancePolicy = () => {
                                 <ul className="c25 lst-kix_list_1-0 start">
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="">
-                                      ● +91 85304 90475&nbsp;
+                                      +91 85304 90475&nbsp;
                                     </span>
                                   </li>
                                   <li className="c2 li-bullet-0">
                                     <span className="c27">
-                                      ●{" "}
                                       <a
                                         className="c17"
                                         href="mailto:support@enkash.com"
@@ -301,7 +300,7 @@ const grievancePolicy = () => {
                                   </li>
                                   <li className="c30 li-bullet-0">
                                     <span className="">
-                                      ● 91 SpringBoard, 175, Kagalwala House,
+                                      91 SpringBoard, 175, Kagalwala House,
                                       2nd&nbsp; Floor, Kalina, Santacruz (E),
                                       Mumbai- 400 098, Maharashtra , India
                                     </span>
@@ -335,11 +334,10 @@ const grievancePolicy = () => {
                                 <ul className="c25 lst-kix_list_4-0 start">
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="">
-                                      ● +91 85304 90475&nbsp;
+                                      +91 85304 90475&nbsp;
                                     </span>
                                   </li>
                                   <li className="c3 c44 li-bullet-0">
-                                    ●{" "}
                                     <a
                                       href="mailto:csmanager@enkash.com"
                                       className="c18"
@@ -349,7 +347,7 @@ const grievancePolicy = () => {
                                   </li>
                                   <li className="c30 li-bullet-0">
                                     <span className="">
-                                      ● 91 SpringBoard, 175, Kagalwala House,
+                                      91 SpringBoard, 175, Kagalwala House,
                                       2nd&nbsp; Floor, Kalina, Santacruz (E),
                                       Mumbai- 400 098, Maharashtra , India
                                     </span>
@@ -382,17 +380,16 @@ const grievancePolicy = () => {
                               <td className="c22">
                                 <ul className="c25 lst-kix_list_6-0 start">
                                   <li className="c3 c12 li-bullet-0">
-                                    <span className="">● +91 9513251477</span>
+                                    <span className="">+91 9513251477</span>
                                   </li>
                                   <li className="c3 c12 li-bullet-0">
-                                    ●{" "}
                                     <a href="mailto:grievanceofficer@enkash.com">
                                       grievanceofficer@enkash.com
                                     </a>
                                   </li>
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="">
-                                      ● 91 SpringBoard, 175, Kagalwala House,
+                                      91 SpringBoard, 175, Kagalwala House,
                                       2nd&nbsp; Floor, Kalina, Santacruz (E),
                                       Mumbai- 400 098, Maharashtra , India
                                     </span>
@@ -426,11 +423,10 @@ const grievancePolicy = () => {
                               <td className="c22">
                                 <ul className="c25 lst-kix_list_8-0 start">
                                   <li className="c3 c12 li-bullet-0">
-                                    <span className="">● +91 9513251499</span>
+                                    <span className="">+91 9513251499</span>
                                   </li>
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="c27">
-                                      ●{" "}
                                       <a
                                         className="c17"
                                         href="mailto:nodalofficer@enkash.com"
@@ -441,7 +437,7 @@ const grievancePolicy = () => {
                                   </li>
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="">
-                                      ● 91 SpringBoard, 175, Kagalwala House,
+                                      91 SpringBoard, 175, Kagalwala House,
                                       2nd&nbsp; Floor, Kalina, Santacruz (E),
                                       Mumbai- 400 098, Maharashtra , India
                                     </span>
