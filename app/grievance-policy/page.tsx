@@ -8,6 +8,8 @@ import Footer from "@/components/footer/footer";
 import { Metadata } from "next";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import Link from "next/link";
+import { space } from "@/common/constant";
 
 export const metadata: Metadata = generateMetaData({
   title: "Grievance Redressal Policy | EnKash",
@@ -283,12 +285,11 @@ const grievancePolicy = () => {
                                 <ul className="c25 lst-kix_list_1-0 start">
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="">
-                                      ● +91 85304 90475&nbsp;
+                                      +91 85304 90475&nbsp;
                                     </span>
                                   </li>
                                   <li className="c2 li-bullet-0">
                                     <span className="c27">
-                                      ●{" "}
                                       <a
                                         className="c17"
                                         href="mailto:support@enkash.com"
@@ -299,7 +300,7 @@ const grievancePolicy = () => {
                                   </li>
                                   <li className="c30 li-bullet-0">
                                     <span className="">
-                                      ● 91 SpringBoard, 175, Kagalwala House,
+                                      91 SpringBoard, 175, Kagalwala House,
                                       2nd&nbsp; Floor, Kalina, Santacruz (E),
                                       Mumbai- 400 098, Maharashtra , India
                                     </span>
@@ -333,11 +334,10 @@ const grievancePolicy = () => {
                                 <ul className="c25 lst-kix_list_4-0 start">
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="">
-                                      ● +91 85304 90475&nbsp;
+                                      +91 85304 90475&nbsp;
                                     </span>
                                   </li>
                                   <li className="c3 c44 li-bullet-0">
-                                    ●{" "}
                                     <a
                                       href="mailto:csmanager@enkash.com"
                                       className="c18"
@@ -347,7 +347,7 @@ const grievancePolicy = () => {
                                   </li>
                                   <li className="c30 li-bullet-0">
                                     <span className="">
-                                      ● 91 SpringBoard, 175, Kagalwala House,
+                                      91 SpringBoard, 175, Kagalwala House,
                                       2nd&nbsp; Floor, Kalina, Santacruz (E),
                                       Mumbai- 400 098, Maharashtra , India
                                     </span>
@@ -380,17 +380,16 @@ const grievancePolicy = () => {
                               <td className="c22">
                                 <ul className="c25 lst-kix_list_6-0 start">
                                   <li className="c3 c12 li-bullet-0">
-                                    <span className="">● +91 9513251477</span>
+                                    <span className="">+91 9513251477</span>
                                   </li>
                                   <li className="c3 c12 li-bullet-0">
-                                    ●{" "}
                                     <a href="mailto:grievanceofficer@enkash.com">
                                       grievanceofficer@enkash.com
                                     </a>
                                   </li>
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="">
-                                      ● 91 SpringBoard, 175, Kagalwala House,
+                                      91 SpringBoard, 175, Kagalwala House,
                                       2nd&nbsp; Floor, Kalina, Santacruz (E),
                                       Mumbai- 400 098, Maharashtra , India
                                     </span>
@@ -424,11 +423,10 @@ const grievancePolicy = () => {
                               <td className="c22">
                                 <ul className="c25 lst-kix_list_8-0 start">
                                   <li className="c3 c12 li-bullet-0">
-                                    <span className="">● +91 9513251499</span>
+                                    <span className="">+91 9513251499</span>
                                   </li>
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="c27">
-                                      ●{" "}
                                       <a
                                         className="c17"
                                         href="mailto:nodalofficer@enkash.com"
@@ -439,7 +437,7 @@ const grievancePolicy = () => {
                                   </li>
                                   <li className="c3 c12 li-bullet-0">
                                     <span className="">
-                                      ● 91 SpringBoard, 175, Kagalwala House,
+                                      91 SpringBoard, 175, Kagalwala House,
                                       2nd&nbsp; Floor, Kalina, Santacruz (E),
                                       Mumbai- 400 098, Maharashtra , India
                                     </span>
@@ -475,6 +473,17 @@ const grievancePolicy = () => {
                           (30) business days of its receipt. The details of the
                           resolution or rejection of the complaint will be
                           shared, with reasons thereof in writing.{" "}
+                        </span>
+                      </p>
+                      <p className="c3">
+                        <span className="c0 c24">
+                          In case no resolution to your complaint is provided
+                          within 30 days or if the resolution is unsatisfactory,
+                          you may escalate your concern on the RBI CMS portal:
+                          {space}
+                          <Link href="https://cms.rbi.org.in/." target="_blank">
+                            https://cms.rbi.org.in/
+                          </Link>
                         </span>
                       </p>
                       <p className="c3 c9">
