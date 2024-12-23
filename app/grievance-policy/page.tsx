@@ -77,7 +77,7 @@ const grievancePolicy = () => {
                       </p>
 
                       <h5 className="c15 mt-6">
-                        1.Grievance Redressal Mechanism:
+                        1. Grievance Redressal Mechanism:
                       </h5>
 
                       <p className="c3 c9">
@@ -107,35 +107,16 @@ const grievancePolicy = () => {
                       <p className="c3">
                         <span className="c15">
                           ● Customers are made completely aware of their rights
-                          so that they can opt for
+                          so that they can opt for alternative remedies if they
+                          are Customers mean and include Merchants and Vendors.
                         </span>
                       </p>
+
                       <p className="c3">
                         <span className="c15">
-                          alternative remedies if they are
-                        </span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          Customers mean and include Merchants and Vendors.
-                        </span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          ● Complaint / Grievance- A complaint is a
-                          communication alleging deficiency in
-                        </span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          service and seeking relief by the customer for a
-                          service deficiency.
+                          ● Complaint/Grievance- A complaint is a communication
+                          alleging deficiency in service and seeking relief by
+                          the customer for a service deficiency.
                         </span>
                       </p>
                       <p className="c3">
@@ -146,7 +127,7 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● Escalation Levels will mean the three level ( Level
+                          ● Escalation Levels will mean the three level (Level
                           1, Level 2 and Level 3)
                         </span>
                       </p>
@@ -403,10 +384,9 @@ const grievancePolicy = () => {
                                   <span className="c5">
                                     from the date of receipt of&nbsp;
                                   </span>
-                                </p>
-                                <p className="c28">
                                   <span className="c5">complaint</span>
                                 </p>
+                                <p className="c28"></p>
                               </td>
                             </tr>
                             <tr className="c29">
@@ -451,8 +431,6 @@ const grievancePolicy = () => {
                                   <span className="c5">
                                     from the date of receipt of&nbsp;
                                   </span>
-                                </p>
-                                <p className="c47">
                                   <span className="c5">complaint</span>
                                 </p>
                               </td>
@@ -512,7 +490,7 @@ const grievancePolicy = () => {
                         <span className="c35">● </span>
                         <span className="c0">
                           Internal factors (changes in organizational structure
-                          or products /services offered)&nbsp;
+                          or products/services offered)&nbsp;
                         </span>
                       </p>
                       <p className="c26">
@@ -536,7 +514,7 @@ const grievancePolicy = () => {
                       <p className="c10 c9">
                         <span className="c0 c24"></span>
                       </p>
-                      <p className="c10">
+                      <p className="c0">
                         <span className="c0">
                           Any such updates/changes to this Policy will be
                           approved by the Board and communicated to the relevant
@@ -668,7 +646,7 @@ const grievancePolicy = () => {
                         <span className="c15"></span>
                       </p>
                       <h5 className="c18 c161" id="h.1fob9te">
-                        <span>3.</span>
+                        <span>3. </span>
                         <span className="c125 c15 c3">
                           Merchant Onboarding Process{" "}
                         </span>
@@ -738,7 +716,7 @@ const grievancePolicy = () => {
                                     As part of due diligence, the Merchant is
                                     required to register on the Company&rsquo;s
                                     platform by providing the below information
-                                    / document:
+                                    / document.
                                   </span>
                                 </p>
                                 {/* ... (similar adjustments for other paragraphs and lists) */}
@@ -759,7 +737,7 @@ const grievancePolicy = () => {
                                     now add their beneficiaries to whom the
                                     payments need to be made. Such beneficiaries
                                     can be added in the below mentioned
-                                    categories:
+                                    categories.
                                   </span>
                                 </p>
                                 {/* ... (similar adjustments for other paragraphs and lists) */}
@@ -837,7 +815,7 @@ const grievancePolicy = () => {
                         </span>
                       </p>
                       <h5 className="c18 c173">
-                        <span className="c148">I.</span>
+                        <span className="c148">I.{space}</span>
                         <span>Merchant management</span>
                       </h5>
                       <p className="c229">
@@ -848,8 +826,8 @@ const grievancePolicy = () => {
                         </span>
                       </p>
                       <h5 className="c11 c18">
-                        <span className="c148">II.</span>
-                        <span>Onboarding / registration</span>
+                        <span className="c148">II.{space}</span>
+                        <span>Onboarding/Registration</span>
                       </h5>
                       <ul className="c79 lst-kix_list_3-0 start">
                         <li className="c185 li-bullet-4">
@@ -923,7 +901,7 @@ const grievancePolicy = () => {
                         </li>
                       </ul>
                       <h5 className="c11 c18 mt-4">
-                        <span className="c148">III.</span>
+                        <span className="c148">III.{space}</span>
                         <span>Continuous monitoring</span>
                       </h5>
                       <p className="c40">
@@ -960,7 +938,7 @@ const grievancePolicy = () => {
                         </span>
                       </p>
                       <h5 className="c18 c29" id="h.3znysh7">
-                        <span>4.</span>
+                        <span>4.{space}</span>
                         <span>
                           Exit / termination process of the Merchant agreement{" "}
                         </span>
@@ -968,20 +946,13 @@ const grievancePolicy = () => {
                       <p className="c167">
                         <span className="c2">
                           Termination of the agreement with the Merchant can be
-                          initiated by either of the parties{" "}
+                          initiated by either of the parties i.e., the Company
+                          or the Merchant upon giving prior notice to the other
+                          party. The exit / termination process of the Merchant
+                          can occur in two scenarios:{" "}
                         </span>
                       </p>
-                      <p className="c237">
-                        <span>
-                          i.e., the Company or the Merchant upon giving prior
-                          notice to the other party. The e
-                        </span>
-                        <span className="c17">X</span>
-                        <span className="c2">
-                          it / termination process of the Merchant can occur in
-                          two scenarios:{" "}
-                        </span>
-                      </p>
+
                       <ol className="c79 lst-kix_list_4-0 start">
                         <li className="c126 li-bullet-7">
                           <span className="c2">
@@ -995,7 +966,7 @@ const grievancePolicy = () => {
                         </li>
                       </ol>
                       <h5 className="c178 c18 c222">
-                        <span className="c93">i.</span>
+                        <span className="c93">i.{space}</span>
                         <span className="c93">
                           Termination requested by the Merchant{" "}
                         </span>
@@ -1016,7 +987,7 @@ const grievancePolicy = () => {
                       </p>
 
                       <h5 className="c178 c18 c244">
-                        <span className="c93">ii.</span>
+                        <span className="c93">ii.{space}</span>
                         <span className="c93">
                           The Company chooses to terminate the Merchant{" "}
                         </span>
@@ -1049,7 +1020,7 @@ const grievancePolicy = () => {
                       </ul>
 
                       <h5 className="c18 c194" id="h.2et92p0">
-                        <span>5.</span>
+                        <span>5.{space}</span>
                         <span>Annexure 1</span>
                       </h5>
                       <p className="c156 c234">
@@ -2110,7 +2081,7 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c26">
                         <span className="c35">● </span>
-                        <span className="c0">EXtortion</span>
+                        <span className="c0">Extortion</span>
                       </p>
                       <p className="c26">
                         <span className="c35">● </span>
@@ -2128,7 +2099,7 @@ const grievancePolicy = () => {
                       </p>
 
                       <h5 className="c19 c18">
-                        <span>7.</span>
+                        <span>7.{space}</span>
                         <span className="c125 c15 c3">Review of Policy </span>
                       </h5>
                       <p className="c156 c242">
