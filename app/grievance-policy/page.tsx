@@ -94,40 +94,42 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● All customers are treated fairly and without bias at
-                          all times
+                          i. All customers are treated fairly and without bias
+                          at all times
                         </span>
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● All issues raised by customers are dealt with
+                          ii. All issues raised by customers are dealt with
                           courtesy and resolved on time
                         </span>
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● Customers are made completely aware of their rights
-                          so that they can opt for alternative remedies if they
-                          are Customers mean and include Merchants and Vendors.
+                          iii. Customers are made completely aware of their
+                          rights so that they can opt for alternative remedies
+                          if they are Customers mean and include Merchants and
+                          Vendors.
                         </span>
                       </p>
 
                       <p className="c3">
                         <span className="c15">
-                          ● Complaint/Grievance- A complaint is a communication
-                          alleging deficiency in service and seeking relief by
-                          the customer for a service deficiency.
+                          iv. Complaint/Grievance- A complaint is a
+                          communication alleging deficiency in service and
+                          seeking relief by the customer for a service
+                          deficiency.
                         </span>
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● Turn Around Time (TAT) – Timeline to resolve the
+                          v. Turn Around Time (TAT) – Timeline to resolve the
                           issue,
                         </span>
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● Escalation Levels will mean the three level (Level
+                          vi. Escalation Levels will mean the three level (Level
                           1, Level 2 and Level 3)
                         </span>
                       </p>
@@ -156,7 +158,7 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● Customer support/ Helpline no.– Customers can reach
+                          i. Customer support/ Helpline no.– Customers can reach
                           out to our customer support on our helpline no.+91
                           85304 90475 available 12x6.
                         </span>
@@ -166,8 +168,8 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● Email – Customers can choose to send their complaint
-                          via email to{" "}
+                          ii. Email – Customers can choose to send their
+                          complaint via email to{" "}
                           <a
                             className="c17"
                             href="mailto:grievanceofficer@enkash.com"
@@ -181,10 +183,10 @@ const grievancePolicy = () => {
                       </p>
                       <p className="c3">
                         <span className="c15">
-                          ● Letter (via courier)– Customers can choose to submit
-                          their complaint/grievance or feedback in writing, in
-                          person/via mail to the office address displayed at the
-                          website.
+                          iii. Letter (via courier)– Customers can choose to
+                          submit their complaint/grievance or feedback in
+                          writing, in person/via mail to the office address
+                          displayed at the website.
                         </span>
                       </p>
                       <p className="c3 c9">
@@ -222,7 +224,7 @@ const grievancePolicy = () => {
                         <table className="table table-bordered">
                           <tbody>
                             <tr className="c11">
-                              <td className="">
+                              <td className="" style={{ width: "80px" }}>
                                 <p className="c23">
                                   <span className="c8 c24">Level</span>
                                 </p>
@@ -487,14 +489,14 @@ const grievancePolicy = () => {
                         </span>
                       </p>
                       <p className="c26">
-                        <span className="c35">● </span>
+                        <span className="c35">i.{space}</span>
                         <span className="c0">
                           Internal factors (changes in organizational structure
                           or products/services offered)&nbsp;
                         </span>
                       </p>
                       <p className="c26">
-                        <span className="c35">● </span>
+                        <span className="c35">ii.{space}</span>
                         <span className="c0">
                           The overall performance of the grievance redressal
                           mechanism, and{" "}
@@ -502,7 +504,7 @@ const grievancePolicy = () => {
                       </p>
 
                       <p className="c6">
-                        <span className="c35">●</span>
+                        <span className="c35">iii.{space}</span>
                         <span className="c0 c24">
                           The results of the audit/review, if any conducted
                           during the year.&nbsp;
@@ -662,7 +664,7 @@ const grievancePolicy = () => {
                         </span>
                       </p>
                       <span className="c6 c3">
-                        1. Merchant Onboarding Process in relation to Spend
+                        i. Merchant Onboarding Process in relation to Spend
                         Management Solutions{" "}
                       </span>
                       <p className="c122">
@@ -800,7 +802,7 @@ const grievancePolicy = () => {
                         <span className="c2"></span>
                       </p>
                       <span className="c6 c3">
-                        2. Merchant Onboarding Process in relation to
+                        ii. Merchant Onboarding Process in relation to
                         Receivable/ Payment Collection:
                       </span>
                       <p className="c32">
@@ -814,10 +816,10 @@ const grievancePolicy = () => {
                           isting Merchants as well as new Merchants:{" "}
                         </span>
                       </p>
-                      <h5 className="c18 c173">
-                        <span className="c148">I.{space}</span>
+                      <p className="c18">
+                        <span className="c148">a.{space}</span>
                         <span>Merchant management</span>
-                      </h5>
+                      </p>
                       <p className="c229">
                         <span className="c2">
                           Merchant Onboarding will entail a three-step process
@@ -825,10 +827,10 @@ const grievancePolicy = () => {
                           comprise of the following steps therein:{" "}
                         </span>
                       </p>
-                      <h5 className="c11 c18">
-                        <span className="c148">II.{space}</span>
+                      <p className="c11 c18">
+                        <span className="c148">b.{space}</span>
                         <span>Onboarding/Registration</span>
-                      </h5>
+                      </p>
                       <ul className="c79 lst-kix_list_3-0 start">
                         <li className="c185 li-bullet-4">
                           <span>
@@ -900,10 +902,10 @@ const grievancePolicy = () => {
                           </span>
                         </li>
                       </ul>
-                      <h5 className="c11 c18 mt-4">
-                        <span className="c148">III.{space}</span>
+                      <p className="c11 c18 mt-4">
+                        <span className="c148">c.{space}</span>
                         <span>Continuous monitoring</span>
-                      </h5>
+                      </p>
                       <p className="c40">
                         <span className="c2">
                           A registered Merchant will be continuously monitored
@@ -953,7 +955,10 @@ const grievancePolicy = () => {
                         </span>
                       </p>
 
-                      <ol className="c79 lst-kix_list_4-0 start">
+                      <ol
+                        className="c79 lst-kix_list_4-0 start"
+                        style={{ listStyleType: "lower-roman" }}
+                      >
                         <li className="c126 li-bullet-7">
                           <span className="c2">
                             Termination requested by the Merchant{" "}
@@ -999,21 +1004,24 @@ const grievancePolicy = () => {
                           scenarios (listed below) and as deemed fit.{" "}
                         </span>
                       </p>
-                      <ul className="c79 lst-kix_list_5-0 start">
+                      <ul
+                        className="c79 lst-kix_list_5-0 start"
+                        style={{ listStyleType: "lower-alpha" }}
+                      >
                         <li className="c250 li-bullet-8">
                           <span className="c2">
-                            Merchant has indulged in a fraudulent activity; or{" "}
+                            merchant has indulged in a fraudulent activity; or{" "}
                           </span>
                         </li>
                         <li className="c250 li-bullet-8">
                           <span className="c2">
-                            Merchant is involved in criminal or illegal
+                            merchant is involved in criminal or illegal
                             activity; or{" "}
                           </span>
                         </li>
                         <li className="c175 li-bullet-9">
                           <span className="c2">
-                            Merchant has misused the platform for collecting
+                            merchant has misused the platform for collecting
                             payments for any illegal / prohibited goods.{" "}
                           </span>
                         </li>
@@ -1026,7 +1034,10 @@ const grievancePolicy = () => {
                       <p className="c156 c234">
                         <span className="c6 c3">General Information: </span>
                       </p>
-                      <ul className="c79 lst-kix_list_6-0 start">
+                      <ul
+                        className="c79 lst-kix_list_6-0 start"
+                        style={{ listStyleType: "lower-roman" }}
+                      >
                         <li className="c108 li-bullet-10">
                           <span className="c2">
                             Personal details: Name, email id, phone number,
@@ -1088,20 +1099,22 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c">
-                                <p className="c62 c56">
-                                  <span className="c2">
-                                    ID PROOF &ndash; Certified copy of PAN
-                                    mandatory{" "}
-                                  </span>
-                                </p>
-                                <p className="c50 c64">
-                                  <span className="c2">
-                                    Certified copy of the Proof of possession of
-                                    Aadhaar number or any OVD or the equivalent
-                                    e-document thereof containing the details of
-                                    identity and address{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      ID PROOF &ndash; Certified copy of PAN
+                                      mandatory
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Certified copy of the Proof of possession
+                                      of Aadhaar number or any OVD or the
+                                      equivalent e-document thereof containing
+                                      the details of identity and address
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c134">
@@ -1113,36 +1126,37 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c">
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    Cancelled Cheque or Bank Statement{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Cancelled Cheque or Bank Statement
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c48">
                               <td className="c115">
                                 <p className="c37">
-                                  <span className="c2">For </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Professional </span>
+                                  <span className="c2">For Professional</span>
                                 </p>
                               </td>
                               <td className="c">
-                                <p className="c56 c62">
-                                  <span className="c2">
-                                    For Doctors &ndash; Valid Registration
-                                    Certificate{" "}
-                                  </span>
-                                </p>
-                                <p className="c50">
-                                  <span className="c2">
-                                    For Cab Service &ndash; Valid Registration
-                                    Certificate on the name of Vehicle owner
-                                    &amp; current year insurance copy{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      For Doctors &ndash; Valid Registration
+                                      Certificate
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      For Cab Service &ndash; Valid Registration
+                                      Certificate on the name of Vehicle owner
+                                      &amp; current year insurance copy
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c205">
@@ -1152,22 +1166,22 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c">
-                                <p className="c56 c127">
-                                  <span className="c2">
-                                    Any other documents including in respect of
-                                    the nature of work/business/profession,
-                                    financial status of the Merchant, or the
-                                    equivalent e-documents thereof as may be
-                                    required by the Company{" "}
-                                  </span>
-                                  <span></span>
-                                </p>
-                                <p className="c11 c46">
-                                  <span className="c2">
-                                    Passport size Photo (Authorized Person){" "}
-                                  </span>
-                                  <span></span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Any other documents including in respect
+                                      of the nature of work/business/profession,
+                                      financial status of the Merchant, or the
+                                      equivalent e-documents thereof as may be
+                                      required by the Company
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Passport size Photo (Authorized Person)
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c152">
@@ -1180,30 +1194,28 @@ const grievancePolicy = () => {
                             <tr className="c240">
                               <td className="c30">
                                 <p className="c36">
-                                  <span className="c2">Individual ID </span>
-                                </p>
-                                <p className="c37">
-                                  <span className="c2">Proof &amp; </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Address Proof </span>
+                                  <span className="c2">
+                                    Individual ID Proof &amp; Address Proof
+                                  </span>
                                 </p>
                               </td>
                               <td className="c176">
-                                <p className="c62 c56">
-                                  <span className="c2">
-                                    ID PROOF &ndash; Certified copy of PAN
-                                    mandatory{" "}
-                                  </span>
-                                </p>
-                                <p className="c50 c64">
-                                  <span className="c2">
-                                    Certified copy of the Proof of possession of
-                                    Aadhaar number or any OVD or the equivalent
-                                    e-document thereof containing the details of
-                                    identity and address{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      ID PROOF &ndash; Certified copy of PAN
+                                      mandatory
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Certified copy of the Proof of possession
+                                      of Aadhaar number or any OVD or the
+                                      equivalent e-document thereof containing
+                                      the details of identity and address
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c231">
@@ -1220,131 +1232,129 @@ const grievancePolicy = () => {
                                     from the below list{" "}
                                   </span>
                                 </p>
-                                <p className="c56 c67">
-                                  <span></span>
-
-                                  <span className="c2">
-                                    Self-attested copy of GST certificate or
-                                    letter of registration document issued by
-                                    GST authorities/ Declaration of non-GST in
-                                    case not applicable or GST Tax duly
-                                    acknowledged{" "}
-                                  </span>
-                                </p>
-                                <p className="c16">
-                                  <span></span>
-
-                                  <span className="c2">
-                                    Self-attested copy of Shop and Establishment
-                                    License Certificate issued by the municipal
-                                    authorities.{" "}
-                                  </span>
-                                </p>
-                                <p className="c53">
-                                  <span className="c2">
-                                    Last and complete income tax return (not
-                                    acknowledgment) in the name of the sole
-                                    proprietor where the inform income is
-                                    reflected duly authenticated / acknowledge
-                                    by income tax authorities.{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c75">
-                                  <span></span>
-
-                                  <span className="c2">
-                                    Valid business license of certificate of
-                                    registration issued by state / Central
-                                    government authority.{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c159">
-                                  <span></span>
-
-                                  <span className="c2">
-                                    Letter issued by Registering authority like
-                                    certificate of practice issued by instate of
-                                    Charted Accountants of India, Cost
-                                    accountants of India, Company secretaries of
-                                    India, Indian medical council and food a
-                                    Drug Control Authorities.{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c132">
-                                  <span></span>
-
-                                  <span>
-                                    Trade License (Provisional is not accepted){" "}
-                                  </span>
-                                  <span></span>
-
-                                  <span className="c2">
-                                    Small Scale Industrial Certificate{" "}
-                                  </span>
-                                </p>
-                                <p className="c33">
-                                  <span className="c2">
-                                    Certificate issued by Tourism Department.{" "}
-                                  </span>
-                                </p>
-                                <p className="c33">
-                                  <span className="c2">
-                                    Liquor/License/Certificate in the name of
-                                    Firm.{" "}
-                                  </span>
-                                </p>
-                                <p className="c107 c56">
-                                  <span className="c2">
-                                    IRDA license for Insurance business.{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c259">
-                                  <span className="c2">
-                                    SEBI registration for Stock market broking.{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c211">
-                                  <span className="c2">
-                                    Permission from local government authority
-                                    to run Nursing home/Clinic.{" "}
-                                  </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    Passport sized photo (Authorized Person){" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of GST certificate or
+                                      letter of registration document issued by
+                                      GST authorities/ Declaration of non-GST in
+                                      case not applicable or GST Tax duly
+                                      acknowledged
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of Shop and
+                                      Establishment License Certificate issued
+                                      by the municipal authorities.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Last and complete income tax return (not
+                                      acknowledgment) in the name of the sole
+                                      proprietor where the inform income is
+                                      reflected duly authenticated / acknowledge
+                                      by income tax authorities.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Valid business license of certificate of
+                                      registration issued by state / Central
+                                      government authority.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Letter issued by Registering authority
+                                      like certificate of practice issued by
+                                      instate of Charted Accountants of India,
+                                      Cost accountants of India, Company
+                                      secretaries of India, Indian medical
+                                      council and food a Drug Control
+                                      Authorities.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Trade License (Provisional is not
+                                      accepted)
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Small Scale Industrial Certificate
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Certificate issued by Tourism Department.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Liquor/License/Certificate in the name of
+                                      Firm.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      IRDA license for Insurance business.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      SEBI registration for Stock market
+                                      broking.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Permission from local government authority
+                                      to run Nursing home/Clinic.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Passport sized photo (Authorized Person)
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c191">
                               <td className="c30">
                                 <p className="c37">
-                                  <span className="c2">Company </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">address proof </span>
+                                  <span className="c2">
+                                    Company address proof
+                                  </span>
                                 </p>
                               </td>
                               <td className="c63">
-                                <p className="c56 c198">
-                                  <span className="c2">
-                                    Any one document from the below list (if
-                                    Installation address is different){" "}
-                                  </span>
-                                </p>
-                                <p className="c50">
-                                  <span className="c2">
-                                    Self-attested copy of Telephone /
-                                    Electricity bill/ Water on Firm name (Not
-                                    older than 3 months){" "}
-                                  </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    Bank Statement with cancelled cheque holding
-                                    minimum 3 transaction statement not older
-                                    than 3 months){" "}
-                                  </span>
+                                <p>
+                                  <ul>
+                                    <li>
+                                      <span className="c2">
+                                        Any one document from the below list (if
+                                        Installation address is different)
+                                      </span>
+                                    </li>
+                                    <li>
+                                      <span className="c2">
+                                        Self-attested copy of Telephone /
+                                        Electricity bill/ Water on Firm name
+                                        (Not older than 3 months)
+                                      </span>
+                                    </li>
+                                    <li>
+                                      <span className="c2">
+                                        Bank Statement with cancelled cheque
+                                        holding minimum 3 transaction statement
+                                        not older than 3 months)
+                                      </span>
+                                    </li>
+                                  </ul>
                                 </p>
                               </td>
                             </tr>
@@ -1355,12 +1365,12 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c11 c56">
-                                  <span className="c2">
+                                <ul className="c11 c56">
+                                  <li className="c2">
                                     Current A/c or savings A/c on proprietor
                                     name.{" "}
-                                  </span>
-                                </p>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c72">
@@ -1373,34 +1383,29 @@ const grievancePolicy = () => {
                             <tr className="c196">
                               <td className="c12">
                                 <p className="c92">
-                                  <span className="c2">ID proof &amp; </span>
-                                </p>
-                                <p className="c155">
                                   <span className="c2">
-                                    Address proof of all the partners{" "}
-                                  </span>
-                                </p>
-                                <p className="c103">
-                                  <span className="c2">
-                                    (including authorized signatory){" "}
+                                    ID proof &amp; Address proof of all the
+                                    partners (including authorized signatory){" "}
                                   </span>
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c37">
-                                  <span className="c2">
-                                    ID PROOF &ndash; Certified Copy of PAN
-                                    mandatory{" "}
-                                  </span>
-                                </p>
-                                <p className="c50 c171">
-                                  <span className="c2">
-                                    Certified copy of the Proof of possession of
-                                    Aadhaar number or any OVD or the equivalent
-                                    e-document thereof containing the details of
-                                    identity and address{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      ID PROOF &ndash; Certified Copy of PAN
+                                      mandatory
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Certified copy of the Proof of possession
+                                      of Aadhaar number or any OVD or the
+                                      equivalent e-document thereof containing
+                                      the details of identity and address
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c91">
@@ -1416,43 +1421,43 @@ const grievancePolicy = () => {
                                     mandatory:{" "}
                                   </span>
                                 </p>
-                                <p className="c33">
-                                  <span className="c2">
-                                    Self-attested copy of PAN Card{" "}
-                                  </span>
-                                </p>
-                                <p className="c107 c56">
-                                  <span className="c2">
-                                    Partnership/ LLP Agreement Deed and COP{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c107">
-                                  <span className="c2">
-                                    Authorization letter{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c90">
-                                  <span className="c2">Cancelled Cheque </span>
-                                </p>
-                                <p className="c56 c77">
-                                  <span className="c2">
-                                    Board Resolution (should be signed by at
-                                    least 2 partners/ CS can certify true copy{" "}
-                                  </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    Passport size photo (Authorized Person){" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of PAN Card
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Partnership/ LLP Agreement Deed and COP
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Authorization letter
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Cancelled Cheque</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Board Resolution (should be signed by at
+                                      least 2 partners/ CS can certify true copy
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Passport size photo (Authorized Person)
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c87">
                               <td className="c12">
                                 <p className="c11 c56">
-                                  <span>Firm proof of e</span>
-                                  <span className="c17">x</span>
-                                  <span className="c2">istence</span>
+                                  <span>Firm proof of existance</span>
                                 </p>
                               </td>
                               <td className="c8">
@@ -1463,105 +1468,101 @@ const grievancePolicy = () => {
                                     from the below list:{" "}
                                   </span>
                                 </p>
-                                <p className="c56 c112">
-                                  <span className="c2">
-                                    Partnership Registration Certificate{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c131">
-                                  <span className="c2">
-                                    Self-attested copy of GST Tax certificate or
-                                    letter of registration document issued by
-                                    GST Tax authorities or Declaration of
-                                    non-GST in case not applicable or GST Tax
-                                    duly acknowledged{" "}
-                                  </span>
-                                </p>
-                                <p className="c13">
-                                  <span className="c2">
-                                    IT return in the name of partnership firm,
-                                    acknowledged by Income Tax Department.{" "}
-                                  </span>
-                                </p>
-                                <p className="c128 c56">
-                                  <span className="c2">
-                                    Shops and Establishment Certificate issued
-                                    by the Civic Authority.{" "}
-                                  </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Trade License</span>
-                                </p>
-                                <p className="c107 c56">
-                                  <span className="c2">
-                                    License issued by Municipal Corporation.{" "}
-                                  </span>
-                                </p>
-                                <p className="c33">
-                                  <span className="c2">
-                                    Copy of VAT / TIN allotment certificates{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c81">
-                                  <span>
-                                    Small Scale Industrial Certificate{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c81">
-                                  <span className="c2">
-                                    Trade license from labor department.{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c109">
-                                  <span className="c2">
-                                    Professional tax certificate.{" "}
-                                  </span>
-                                </p>
-                                <p className="c11 c59">
-                                  <span className="c2">
-                                    License issued by Food &amp; Drug
-                                    administration for Medical Dealers.{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Partnership Registration Certificate
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of GST Tax certificate
+                                      or letter of registration document issued
+                                      by GST Tax authorities or Declaration of
+                                      non-GST in case not applicable or GST Tax
+                                      duly acknowledged
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      IT return in the name of partnership firm,
+                                      acknowledged by Income Tax Department.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Shops and Establishment Certificate issued
+                                      by the Civic Authority.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Trade License</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      License issued by Municipal Corporation.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Copy of VAT / TIN allotment certificates
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Small Scale Industrial Certificate
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Trade license from labor department.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Professional tax certificate.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      License issued by Food &amp; Drug
+                                      administration for Medical Dealers.
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c31">
                               <td className="c208">
                                 <p className="c187 c56">
-                                  <span className="c2">Company </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">address proof </span>
+                                  <span className="c2">
+                                    Company address proof
+                                  </span>
                                 </p>
                               </td>
                               <td className="c68">
-                                <p className="c62 c56">
-                                  <span className="c2">
-                                    Address on partnership deed (current
-                                    address){" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c216">
-                                  <span className="c2">
-                                    Self-attested copy of Telephone/
-                                    Electricity/ Water bill on Firm name (Not
-                                    older than 3 months){" "}
-                                  </span>
-                                </p>
-                                <p className="c160">
-                                  <span className="c2">
-                                    Bank Statement with cancelled chq holding
-                                    minimum 3 transactions{" "}
-                                  </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    (statement not older than 3 months){" "}
-                                  </span>
-                                </p>
-                                <p className="c11 c26 c56">
-                                  <span className="c2"></span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Address on partnership deed (current
+                                      address)
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of Telephone/
+                                      Electricity/ Water bill on Firm name (Not
+                                      older than 3 months)
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Bank Statement with cancelled chq holding
+                                      minimum 3 transactions (statement not
+                                      older than 3 months)
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c72">
@@ -1578,33 +1579,27 @@ const grievancePolicy = () => {
                                 <p className="c227">
                                   <span className="c2">
                                     ID proof &amp; Address proofs of all
-                                    Directors{" "}
-                                  </span>
-                                </p>
-                                <p className="c130">
-                                  <span className="c2">(Including </span>
-                                </p>
-                                <p className="c103">
-                                  <span className="c2">
-                                    Authorized signatory){" "}
+                                    Directors (Including Authorized signatory){" "}
                                   </span>
                                 </p>
                               </td>
                               <td className="c68">
-                                <p className="c36">
-                                  <span className="c2">
-                                    ID PROOF &ndash; Certified Copy of PAN
-                                    mandatory{" "}
-                                  </span>
-                                </p>
-                                <p className="c50 c102">
-                                  <span className="c2">
-                                    Certified copy of the Proof of possession of
-                                    Aadhaar number or any OVD or the equivalent
-                                    e-document thereof containing the details of
-                                    identity and address{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      ID PROOF &ndash; Certified Copy of PAN
+                                      mandatory
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Certified copy of the Proof of possession
+                                      of Aadhaar number or any OVD or the
+                                      equivalent e-document thereof containing
+                                      the details of identity and address
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c153">
@@ -1620,82 +1615,78 @@ const grievancePolicy = () => {
                                     mandatory:{" "}
                                   </span>
                                 </p>
-                                <p className="c75 c56 c195">
-                                  <span className="c2">
-                                    Self-attested copy of GST Tax certificate or
-                                    letter of registration document issued by
-                                    GST Tax authorities or Declaration of
-                                    non-GST in case not applicable GST Tax duly
-                                    acknowledged{" "}
-                                  </span>
-                                </p>
-                                <p className="c44">
-                                  <span className="c2">Pan Card</span>
-                                </p>
-                                <p className="c56 c71">
-                                  <span className="c2">
-                                    Board Resolution (should not be older than 5
-                                    months, Should be signed by at least 2
-                                    directors/ CS can certify true copy{" "}
-                                  </span>
-                                </p>
-                                <p className="c128 c56">
-                                  <span className="c2">
-                                    Certificate of Incorporation{" "}
-                                  </span>
-                                </p>
-                                <p className="c141">
-                                  <span className="c2">
-                                    Certificate of Commencement of Business (in
-                                    case of Public ltd co.){" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c128">
-                                  <span className="c2">
-                                    MOA &amp; AOA (attested with first 8. last
-                                    pages){" "}
-                                  </span>
-                                </p>
-                                <p className="c52 c251">
-                                  <span className="c2">
-                                    Form-32 (If directors different from MOA)
-                                    latest MCA website copy.{" "}
-                                  </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Cancelled Cheque </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    Passport size Photo (Authorized Person){" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of GST Tax certificate
+                                      or letter of registration document issued
+                                      by GST Tax authorities or Declaration of
+                                      non-GST in case not applicable GST Tax
+                                      duly acknowledged
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Pan Card</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Board Resolution (should not be older than
+                                      5 months, Should be signed by at least 2
+                                      directors/ CS can certify true copy
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Certificate of Incorporation
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Certificate of Commencement of Business
+                                      (in case of Public ltd co.)
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      MOA &amp; AOA (attested with first 8. last
+                                      pages)
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Form-32 (If directors different from MOA)
+                                      latest MCA website copy.
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Cancelled Cheque</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Passport size Photo (Authorized Person)
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c116">
                               <td className="c12">
                                 <p className="c98 c249">
-                                  <span className="c2">Company </span>
-                                </p>
-                                <p className="c11 c84">
-                                  <span className="c2">Address proof </span>
+                                  <span className="c2">
+                                    Company Address proof
+                                  </span>
                                 </p>
                               </td>
                               <td className="c45">
                                 <p className="c56 c163">
                                   <span className="c2">
                                     In case of address is different from
-                                    (certificate of incorporation)
-                                  </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    Self-attested copy of Telephone or
-                                    Electricity or Water bill on Company name
-                                    (Not older than 3 months) (OR) Bank
-                                    Statement with cancelled cheque holding
-                                    minimum 3 transactions (statement not older
-                                    than 3 months){" "}
+                                    (certificate of incorporation) Self-attested
+                                    copy of Telephone or Electricity or Water
+                                    bill on Company name (Not older than 3
+                                    months) (OR) Bank Statement with cancelled
+                                    cheque holding minimum 3 transactions
+                                    (statement not older than 3 months){" "}
                                   </span>
                                 </p>
                               </td>
@@ -1710,37 +1701,30 @@ const grievancePolicy = () => {
                             <tr className="c83">
                               <td className="c12">
                                 <p className="c111">
-                                  <span className="c2">ID proof &amp; </span>
-                                </p>
-                                <p className="c64 c193">
                                   <span className="c2">
-                                    Address proof of all society management team{" "}
-                                  </span>
-                                </p>
-                                <p className="c111">
-                                  <span className="c2">(including </span>
-                                </p>
-                                <p className="c103">
-                                  <span className="c2">
-                                    Authorized signatory){" "}
+                                    ID proof &amp; Address proof of all society
+                                    management team (including Authorized
+                                    signatory)
                                   </span>
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c37">
-                                  <span className="c2">
-                                    ID PROOF &ndash; Certified Copy of PAN
-                                    mandatory{" "}
-                                  </span>
-                                </p>
-                                <p className="c50 c57">
-                                  <span className="c2">
-                                    Certified copy of the Proof of possession of
-                                    Aadhaar number or any OVD or the equivalent
-                                    e-document thereof containing the details of
-                                    identity and address{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      ID PROOF &ndash; Certified Copy of PAN
+                                      mandatory
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Certified copy of the Proof of possession
+                                      of Aadhaar number or any OVD or the
+                                      equivalent e-document thereof containing
+                                      the details of identity and address
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c247">
@@ -1750,52 +1734,53 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c56 c149">
-                                  <span className="c2">
-                                    Self-attested copy of GST Tax certificate or
-                                    letter of registration document issued by
-                                    GST Tax authorities or Declaration of
-                                    non-GST in case not applicable or GST Tax
-                                    duly acknowledged{" "}
-                                  </span>
-                                </p>
-                                <p className="c44">
-                                  <span className="c2">
-                                    Self-attested copy of PAN Card{" "}
-                                  </span>
-                                </p>
-                                <p className="c56 c256">
-                                  <span className="c2">
-                                    Board Resolution (Should be signed by at
-                                    least 2 trustees / Company secretary can
-                                    certify true copy.
-                                  </span>
-                                </p>
-                                <p className="c33">
-                                  <span className="c2">
-                                    Registration Certificate{" "}
-                                  </span>
-                                </p>
-                                <p className="c107 c56">
-                                  <span className="c2">Bye Laws</span>
-                                </p>
-                                <p className="c107 c56">
-                                  <span className="c2">Cancelled Cheque </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    Passport size Photo (Authorized Person){" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of GST Tax certificate
+                                      or letter of registration document issued
+                                      by GST Tax authorities or Declaration of
+                                      non-GST in case not applicable or GST Tax
+                                      duly acknowledged
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of PAN Card
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Board Resolution (Should be signed by at
+                                      least 2 trustees / Company secretary can
+                                      certify true copy)
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Registration Certificate
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Bye Laws</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Cancelled Cheque</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Passport size Photo (Authorized Person)
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c186">
                               <td className="c12">
                                 <p className="c37">
-                                  <span className="c2">Company </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Address proof </span>
+                                  <span className="c2">
+                                    Company Address proof
+                                  </span>
                                 </p>
                               </td>
                               <td className="c45">
@@ -1819,28 +1804,22 @@ const grievancePolicy = () => {
                               </td>
                             </tr>
                             <tr className="c137">
-                              <td className="c12"></td>
+                              <td className="c12">ID PROOF</td>
                               <td className="c8">
                                 <p className="c11 c56">
                                   <span className="c2">
-                                    ID PROOF &ndash; Certified Copy of PAN
-                                    mandatory{" "}
+                                    Certified Copy of PAN mandatory{" "}
                                   </span>
                                 </p>
                               </td>
                             </tr>
                             <tr className="c166">
                               <td className="c12">
-                                <p className="c92">
-                                  <span className="c2">ID proof &amp; </span>
-                                </p>
-                                <p className="c164">
+                                <p className="c92 c164 c103 c56">
                                   <span className="c2">
-                                    Address proof of all the{" "}
+                                    ID proof &amp; Address proof of all the
+                                    Trustees
                                   </span>
-                                </p>
-                                <p className="c103 c56">
-                                  <span className="c2">Trustees </span>
                                 </p>
                               </td>
                               <td className="c89">
@@ -1867,59 +1846,58 @@ const grievancePolicy = () => {
                                     mandatory:{" "}
                                   </span>
                                 </p>
-                                <p className="c0">
-                                  <span></span>
-
-                                  <span className="c2">
-                                    Self-attested copy of GST Tax certificate or
-                                    letter of registration document issued by
-                                    GST Tax authorities / Declaration of non-GST
-                                    in case not applicable or GST Tax duly
-                                    acknowledged{" "}
-                                  </span>
-                                </p>
-                                <p className="c98 c162">
-                                  <span className="c2">Company Pan Card </span>
-                                </p>
-                                <p className="c162 c98">
-                                  <span className="c2">Board Resolution </span>
-                                </p>
-                                <p className="c98 c138">
-                                  <span className="c2">
-                                    Registration Certificate{" "}
-                                  </span>
-                                </p>
-                                <p className="c107 c98">
-                                  <span className="c2">Trust Deed</span>
-                                </p>
-                                <p className="c162 c98">
-                                  <span>Income Tax E</span>
-                                  <span className="c17">X</span>
-                                  <span className="c2">emption (12A) </span>
-                                </p>
-                                <p className="c162 c98">
-                                  <span className="c2">
-                                    Affiliation of Entity in case of Health
-                                    &amp; Education sector{" "}
-                                  </span>
-                                </p>
-                                <p className="c162 c98">
-                                  <span className="c2">Cancelled Cheque </span>
-                                </p>
-                                <p className="c11 c98">
-                                  <span className="c2">
-                                    Passport size Photo (Authorize Person){" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of GST Tax certificate
+                                      or letter of registration document issued
+                                      by GST Tax authorities / Declaration of
+                                      non-GST in case not applicable or GST Tax
+                                      duly acknowledged
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Company Pan Card</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Board Resolution</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Registration Certificate
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Trust Deed</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Income Tax Exemption (12A)
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Affiliation of Entity in case of Health &
+                                      Education sector
+                                    </span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">Cancelled Cheque</span>
+                                  </li>
+                                  <li>
+                                    <span className="c2">
+                                      Passport size Photo (Authorized Person)
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c61">
                               <td className="c12">
                                 <p className="c36">
-                                  <span className="c2">Letter with </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Trustee details </span>
+                                  <span className="c2">
+                                    Letter with Trustee details
+                                  </span>
                                 </p>
                               </td>
                               <td className="c45">
@@ -1951,27 +1929,16 @@ const grievancePolicy = () => {
                             <tr className="c70">
                               <td className="c12">
                                 <p className="c56 c187">
-                                  <span>E</span>
-                                  <span className="c17">x</span>
-                                  <span className="c2">hibition </span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c2">Merchants </span>
+                                  <span>Exhibition Merchants</span>
                                 </p>
                               </td>
                               <td className="c45">
                                 <p className="c23">
-                                  <span>Request Letter indicating the E</span>
-                                  <span className="c17">X</span>
                                   <span>
-                                    hibition he/she is participating from the e
-                                  </span>
-                                  <span className="c17">X</span>
-                                  <span className="c2">hibitor and</span>
-                                </p>
-                                <p className="c11 c98">
-                                  <span className="c2">
-                                    What kind of product sales he/she is into.{" "}
+                                    Request Letter indicating the Exhibition
+                                    he/she is participating from the exhibitor
+                                    and What kind of product sales he/she is
+                                    into.
                                   </span>
                                 </p>
                               </td>
@@ -1990,7 +1957,10 @@ const grievancePolicy = () => {
                           OVDs for the limited purpose of proof of address:{" "}
                         </span>
                       </p>
-                      <ul className="c79 lst-kix_list_6-0">
+                      <ol
+                        className="c79 lst-kix_list_6-0"
+                        style={{ listStyleType: "lower-roman" }}
+                      >
                         <li className="c123 li-bullet-12">
                           <span className="c2">
                             Utility bill which is not more than two months old
@@ -2009,14 +1979,17 @@ const grievancePolicy = () => {
                             issued to retired employees by Government{" "}
                           </span>
                         </li>
-                      </ul>
+                      </ol>
                       <p className="c223">
                         <span className="c2">
                           Departments or Public Sector Undertakings, if they
                           contain the address;{" "}
                         </span>
                       </p>
-                      <ul className="c79 lst-kix_list_6-0">
+                      <ul
+                        className="c79 lst-kix_list_6-0"
+                        style={{ listStyleType: "lower-roman" }}
+                      >
                         <li className="c151 li-bullet-13">
                           <span className="c2">
                             Letter of allotment of accommodation from employer
@@ -2047,56 +2020,53 @@ const grievancePolicy = () => {
                           List of Restricted businesses:{" "}
                         </span>
                       </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Illegal arms trading</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Gambling</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Smuggling</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Child abuse</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Human trafficking</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Pornography</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Hawala</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Organs trading</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Extortion</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Illegal trading of animals</span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">
-                          Illegal drugs supply and handling
-                        </span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">● </span>
-                        <span className="c0">Cryptocurrency</span>
-                      </p>
+                      <ul
+                        className="c79 lst-kix_list_6-0"
+                        style={{ listStyleType: "lower-roman" }}
+                      >
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Illegal arms trading</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Gambling</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Smuggling</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Child abuse</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Human trafficking</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Pornography</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Hawala</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Organs trading</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Hawala</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Extortion</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">Illegal trading of animals</span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2">
+                            {" "}
+                            Illegal drugs supply and handling
+                          </span>{" "}
+                        </li>
+                        <li className="c108 li-bullet-8">
+                          <span className="c2"> Cryptocurrency</span>{" "}
+                        </li>
+                      </ul>
 
                       <h5 className="c19 c18">
                         <span>7.{space}</span>
