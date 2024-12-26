@@ -89,58 +89,49 @@ const grievancePolicy = () => {
                           that:
                         </span>
                       </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          i. All customers are treated fairly and without bias
-                          at all times
-                        </span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          ii. All issues raised by customers are dealt with
-                          courtesy and resolved on time
-                        </span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          iii. Customers are made completely aware of their
-                          rights so that they can opt for alternative remedies
-                          if they are Customers mean and include Merchants and
-                          Vendors.
-                        </span>
-                      </p>
 
-                      <p className="c3">
-                        <span className="c15">
-                          iv. Complaint/Grievance- A complaint is a
-                          communication alleging deficiency in service and
-                          seeking relief by the customer for a service
-                          deficiency.
-                        </span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          v. Turn Around Time (TAT) – Timeline to resolve the
-                          issue,
-                        </span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          vi. Escalation Levels will mean the three level (Level
-                          1, Level 2 and Level 3)
-                        </span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          process for redressing Customer grievance
-                        </span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
+                      <ol style={{ listStyleType: "lower-roman" }}>
+                        <li className="c3">
+                          <span className="c15">
+                            All customers are treated fairly and without bias at
+                            all times
+                          </span>
+                        </li>
+                        <li className="c3">
+                          <span className="c15">
+                            All issues raised by customers are dealt with
+                            courtesy and resolved on time
+                          </span>
+                        </li>
+                        <li className="c3">
+                          <span className="c15">
+                            Customers are made completely aware of their rights
+                            so that they can opt for alternative remedies if
+                            they are Customers mean and include Merchants and
+                            Vendors.
+                          </span>
+                        </li>
+                        <li className="c3">
+                          <span className="c15">
+                            Complaint/Grievance- A complaint is a communication
+                            alleging deficiency in service and seeking relief by
+                            the customer for a service deficiency.
+                          </span>
+                        </li>
+                        <li className="c3">
+                          <span className="c15">
+                            Turn Around Time (TAT) – Timeline to resolve the
+                            issue,
+                          </span>
+                        </li>
+                        <li className="c3">
+                          <span className="c15">
+                            Escalation Levels will mean the three level (Level
+                            1, Level 2 and Level 3) process for redressing
+                            Customer grievance
+                          </span>
+                        </li>
+                      </ol>
 
                       <h5 className="c15">2. Grievance Filling Mechanism:</h5>
 
@@ -153,42 +144,36 @@ const grievancePolicy = () => {
                           complaint with us:
                         </span>
                       </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          i. Customer support/ Helpline no.– Customers can reach
-                          out to our customer support on our helpline no.+91
-                          85304 90475 available 12x6.
-                        </span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          ii. Email – Customers can choose to send their
-                          complaint via email to{" "}
-                          <a
-                            className="c17"
-                            href="mailto:grievanceofficer@enkash.com"
-                          >
-                            grievanceofficer@enkash.com
-                          </a>
-                        </span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          iii. Letter (via courier)– Customers can choose to
-                          submit their complaint/grievance or feedback in
-                          writing, in person/via mail to the office address
-                          displayed at the website.
-                        </span>
-                      </p>
+
+                      <ol style={{ listStyleType: "lower-roman" }}>
+                        <li className="c3">
+                          <span className="c15">
+                            Customer support/ Helpline no.– Customers can reach
+                            out to our customer support on our helpline no.+91
+                            85304 90475 available 12x6.
+                          </span>
+                        </li>
+                        <li className="c3">
+                          <span className="c15">
+                            Email – Customers can choose to send their complaint
+                            via email to{" "}
+                            <a
+                              className="c17"
+                              href="mailto:grievanceofficer@enkash.com"
+                            >
+                              grievanceofficer@enkash.com
+                            </a>
+                          </span>
+                        </li>
+                        <li className="c3">
+                          <span className="c15">
+                            Letter (via courier)– Customers can choose to submit
+                            their complaint/grievance or feedback in writing, in
+                            person/via mail to the office address displayed at
+                            the website.
+                          </span>
+                        </li>
+                      </ol>
                       <p className="c3 c9">
                         <span className="c15"></span>
                       </p>
@@ -488,34 +473,27 @@ const grievancePolicy = () => {
                           The reviews will consider the following:&nbsp;
                         </span>
                       </p>
-                      <p className="c26">
-                        <span className="c35">i.{space}</span>
-                        <span className="c0">
-                          Internal factors (changes in organizational structure
-                          or products/services offered)&nbsp;
-                        </span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">ii.{space}</span>
-                        <span className="c0">
-                          The overall performance of the grievance redressal
-                          mechanism, and{" "}
-                        </span>
-                      </p>
+                      <ol style={{ listStyleType: "lower-roman" }}>
+                        <li className="c26">
+                          <span className="c0">
+                            Internal factors (changes in organizational
+                            structure or products/services offered)&nbsp;
+                          </span>
+                        </li>
+                        <li className="c26">
+                          <span className="c0">
+                            The overall performance of the grievance redressal
+                            mechanism, and{" "}
+                          </span>
+                        </li>
+                        <li className="c6">
+                          <span className="c0 c24">
+                            The results of the audit/review, if any conducted
+                            during the year.&nbsp;
+                          </span>
+                        </li>
+                      </ol>
 
-                      <p className="c6">
-                        <span className="c35">iii.{space}</span>
-                        <span className="c0 c24">
-                          The results of the audit/review, if any conducted
-                          during the year.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c10 c9">
-                        <span className="c0 c24"></span>
-                      </p>
-                      <p className="c10 c9">
-                        <span className="c0 c24"></span>
-                      </p>
                       <p className="c0">
                         <span className="c0">
                           Any such updates/changes to this Policy will be
@@ -573,65 +551,58 @@ const grievancePolicy = () => {
                         <span className="c0 c24"></span>
                       </p>
                       <h5 className="c32">2. Definitions:</h5>
-                      <p className="c26">
-                        <span className="c35">i. </span>
-                        <span className="c0">
-                          <span className="font-weight-600">Merchant</span>{" "}
-                          means individuals or legal entities with whom the
-                          Company has entered into a contract for the purpose of
-                          providing payment solutions.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c26">
-                        <span className="c35">ii. </span>
-                        <span className="c0">
-                          <span className="font-weight-600">
-                            Officially Valid Document (OVD)
-                          </span>{" "}
-                          means the passport, the driving license, proof of
-                          possession of Aadhaar number, the Voter's Identity
-                          Card issued by the Election Commission of India, job
-                          card issued by NREGA duly signed by an officer of the
-                          State Government and letter issued by the National
-                          Population Register containing details of name and
-                          address.
-                        </span>
-                      </p>
-                      <p className="c6">
-                        <span className="c35">iii. </span>
-                        <span className="c0 c24">
-                          <span className="font-weight-600">
-                            Politically Exposed Persons (PEPs)
-                          </span>{" "}
-                          means individuals who are or have been entrusted with
-                          prominent public functions in a foreign country e.g.,
-                          Heads of States / Governments, senior politicians,
-                          senior government / judicial / military officers,
-                          senior executives of state-owned corporations,
-                          important political party officials, etc&nbsp;
-                        </span>
-                      </p>
-                      <p className="c10 c9">
-                        <span className="c0 c24"></span>
-                      </p>
-                      <p className="c10 c9">
-                        <span className="c0 c24"></span>
-                      </p>
-                      <p className="c6">
-                        <span className="c35">iv. </span>
-                        <span className="c0 c24">
-                          <span className="font-weight-600">
-                            Equivalent e-document
-                          </span>{" "}
-                          means an electronic equivalent of a document, issued
-                          by the issuing authority of such document with its
-                          valid digital signature including documents issued to
-                          the digital locker account of the customer as per rule
-                          9 of the Information Technology (Preservation and
-                          Retention of Information by Intermediaries Providing
-                          Digital Locker Facilities) Rules, 2016.
-                        </span>
-                      </p>
+                      <ol style={{ listStyleType: "lower-roman" }}>
+                        <li className="c26">
+                          <span className="c0">
+                            <span className="font-weight-600">Merchant</span>{" "}
+                            means individuals or legal entities with whom the
+                            Company has entered into a contract for the purpose
+                            of providing payment solutions.&nbsp;
+                          </span>
+                        </li>
+                        <li className="c26">
+                          <span className="c0">
+                            <span className="font-weight-600">
+                              Officially Valid Document (OVD)
+                            </span>{" "}
+                            means the passport, the driving license, proof of
+                            possession of Aadhaar number, the Voter's Identity
+                            Card issued by the Election Commission of India, job
+                            card issued by NREGA duly signed by an officer of
+                            the State Government and letter issued by the
+                            National Population Register containing details of
+                            name and address.
+                          </span>
+                        </li>
+                        <li className="c6">
+                          <span className="c0 c24">
+                            <span className="font-weight-600">
+                              Politically Exposed Persons (PEPs)
+                            </span>{" "}
+                            means individuals who are or have been entrusted
+                            with prominent public functions in a foreign country
+                            e.g., Heads of States / Governments, senior
+                            politicians, senior government / judicial / military
+                            officers, senior executives of state-owned
+                            corporations, important political party officials,
+                            etc&nbsp;
+                          </span>
+                        </li>
+                        <li className="c6">
+                          <span className="c0 c24">
+                            <span className="font-weight-600">
+                              Equivalent e-document
+                            </span>{" "}
+                            means an electronic equivalent of a document, issued
+                            by the issuing authority of such document with its
+                            valid digital signature including documents issued
+                            to the digital locker account of the customer as per
+                            rule 9 of the Information Technology (Preservation
+                            and Retention of Information by Intermediaries
+                            Providing Digital Locker Facilities) Rules, 2016.
+                          </span>
+                        </li>
+                      </ol>
                       <p className="c10 c9">
                         <span className="c0 c24"></span>
                       </p>
@@ -663,282 +634,281 @@ const grievancePolicy = () => {
                           below:{" "}
                         </span>
                       </p>
-                      <span className="c6 c3">
-                        i. Merchant Onboarding Process in relation to Spend
-                        Management Solutions{" "}
-                      </span>
-                      <p className="c122">
-                        <span className="c2">
-                          Merchants interested in availing the Spend Management
-                          Solutions through the Company&rsquo;s platform follow
-                          the below process:{" "}
-                        </span>
-                      </p>
-                      <div className="table-responsive">
-                        <table className="table table-bordered">
-                          <tbody>
-                            <tr className="c201">
-                              <td className="c189">
-                                <p className="c11 c56">
-                                  <span className="c3 c39">Contract </span>
-                                </p>
-                              </td>
-                              <td className="c168">
-                                <p className="c13 c177">
-                                  <span className="c10">
-                                    The Merchants for Spend Management Solutions
-                                    are either sourced through the banks or
-                                    directly by the Company. In the event the
-                                    Merchant is sourced through the bank, the
-                                    Company enters into an agreement with the
-                                    Merchant along with the respective bank.
-                                  </span>
-                                </p>
+                      <ol
+                        className="c79 lst-kix_list_4-0 start"
+                        style={{ listStyleType: "lower-roman" }}
+                      >
+                        <li className="c6 c3">
+                          Merchant Onboarding Process in relation to Spend
+                          Management Solutions{" "}
+                          <p className="c122">
+                            <span className="c2">
+                              Merchants interested in availing the Spend
+                              Management Solutions through the Company&rsquo;s
+                              platform follow the below process:{" "}
+                            </span>
+                            <div className="table-responsive">
+                              <table className="table table-bordered">
+                                <tbody>
+                                  <tr className="c201">
+                                    <td className="c189">
+                                      <p className="c11 c56">
+                                        <span className="c3 c39">
+                                          Contract{" "}
+                                        </span>
+                                      </p>
+                                    </td>
+                                    <td className="c168">
+                                      <p className="c13 c177">
+                                        <span className="c10">
+                                          The Merchants for Spend Management
+                                          Solutions are either sourced through
+                                          the banks or directly by the Company.
+                                          In the event the Merchant is sourced
+                                          through the bank, the Company enters
+                                          into an agreement with the Merchant
+                                          along with the respective bank.
+                                        </span>
+                                      </p>
 
-                                <p className="c41">
-                                  <span className="c10">
-                                    In other scenarios, the Company has a direct
-                                    contractual agreement with the Merchant.
-                                    These agreements are digitally signed, and
-                                    the Terms and Conditions are accepted by the
-                                    Merchant as part of the onboarding process.
-                                  </span>
-                                </p>
-                              </td>
-                            </tr>
-                            <tr className="c235">
-                              <td className="c189">
-                                <p className="c11 c56">
-                                  <span className="c3 c39">Registration </span>
-                                </p>
-                              </td>
-                              <td className="c168">
-                                <p className="c96 c56 c215">
-                                  <span className="c10">
-                                    As part of due diligence, the Merchant is
-                                    required to register on the Company&rsquo;s
-                                    platform by providing the below information
-                                    / document.
-                                  </span>
-                                </p>
-                                {/* ... (similar adjustments for other paragraphs and lists) */}
-                              </td>
-                            </tr>
-                            <tr className="c224">
-                              <td className="c55">
-                                <p className="c37">
-                                  <span className="c3 c39">
-                                    Adding Beneficiary{" "}
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c9">
-                                <p className="c56 c158">
-                                  <span className="c10">
-                                    The admin user / maker of the Merchant can
-                                    now add their beneficiaries to whom the
-                                    payments need to be made. Such beneficiaries
-                                    can be added in the below mentioned
-                                    categories.
-                                  </span>
-                                </p>
-                                {/* ... (similar adjustments for other paragraphs and lists) */}
-                              </td>
-                            </tr>
-                            <tr className="c226">
-                              <td className="c55">
-                                <p className="c37">
-                                  <span className="c3 c39">
-                                    Beneficiary Validation{" "}
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c9">
-                                <p className="c96 c56 c154">
-                                  <span className="c10">
-                                    In this stage, the beneficiary added by the
-                                    Merchant for making vendor payments are
-                                    checked for authenticity. The Company has
-                                    tied up with entities providing such
-                                    validation services.
-                                  </span>
-                                </p>
-                                {/* ... (similar adjustments for other paragraphs) */}
-                              </td>
-                            </tr>
-                            <tr className="c95">
-                              <td className="c55">
-                                <p className="c11 c26 c56">
-                                  <span className="c125 c3 c39"></span>
-                                </p>
-                                <p className="c11 c56">
-                                  <span className="c3 c39">
-                                    Beneficiary activation
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c9">
-                                <p className="c50 c96">
-                                  <span className="c10">
-                                    Upon successful match, the Company shares
-                                    the list of validated beneficiaries with the
-                                    bank. The bank then activates the
-                                    beneficiary for payment purposes. Payments
-                                    cannot be disbursed to beneficiaries that
-                                    are not activated at the nodal bank&rsquo;s
-                                    end.
-                                  </span>
-                                </p>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                                      <p className="c41">
+                                        <span className="c10">
+                                          In other scenarios, the Company has a
+                                          direct contractual agreement with the
+                                          Merchant. These agreements are
+                                          digitally signed, and the Terms and
+                                          Conditions are accepted by the
+                                          Merchant as part of the onboarding
+                                          process.
+                                        </span>
+                                      </p>
+                                    </td>
+                                  </tr>
+                                  <tr className="c235">
+                                    <td className="c189">
+                                      <p className="c11 c56">
+                                        <span className="c3 c39">
+                                          Registration{" "}
+                                        </span>
+                                      </p>
+                                    </td>
+                                    <td className="c168">
+                                      <p className="c96 c56 c215">
+                                        <span className="c10">
+                                          As part of due diligence, the Merchant
+                                          is required to register on the
+                                          Company&rsquo;s platform by providing
+                                          the below information / document.
+                                        </span>
+                                      </p>
+                                      {/* ... (similar adjustments for other paragraphs and lists) */}
+                                    </td>
+                                  </tr>
+                                  <tr className="c224">
+                                    <td className="c55">
+                                      <p className="c37">
+                                        <span className="c3 c39">
+                                          Adding Beneficiary{" "}
+                                        </span>
+                                      </p>
+                                    </td>
+                                    <td className="c9">
+                                      <p className="c56 c158">
+                                        <span className="c10">
+                                          The admin user / maker of the Merchant
+                                          can now add their beneficiaries to
+                                          whom the payments need to be made.
+                                          Such beneficiaries can be added in the
+                                          below mentioned categories.
+                                        </span>
+                                      </p>
+                                      {/* ... (similar adjustments for other paragraphs and lists) */}
+                                    </td>
+                                  </tr>
+                                  <tr className="c226">
+                                    <td className="c55">
+                                      <p className="c37">
+                                        <span className="c3 c39">
+                                          Beneficiary Validation{" "}
+                                        </span>
+                                      </p>
+                                    </td>
+                                    <td className="c9">
+                                      <p className="c96 c56 c154">
+                                        <span className="c10">
+                                          In this stage, the beneficiary added
+                                          by the Merchant for making vendor
+                                          payments are checked for authenticity.
+                                          The Company has tied up with entities
+                                          providing such validation services.
+                                        </span>
+                                      </p>
+                                      {/* ... (similar adjustments for other paragraphs) */}
+                                    </td>
+                                  </tr>
+                                  <tr className="c95">
+                                    <td className="c55">
+                                      <p className="c11 c26 c56">
+                                        <span className="c125 c3 c39"></span>
+                                      </p>
+                                      <p className="c11 c56">
+                                        <span className="c3 c39">
+                                          Beneficiary activation
+                                        </span>
+                                      </p>
+                                    </td>
+                                    <td className="c9">
+                                      <p className="c50 c96">
+                                        <span className="c10">
+                                          Upon successful match, the Company
+                                          shares the list of validated
+                                          beneficiaries with the bank. The bank
+                                          then activates the beneficiary for
+                                          payment purposes. Payments cannot be
+                                          disbursed to beneficiaries that are
+                                          not activated at the nodal
+                                          bank&rsquo;s end.
+                                        </span>
+                                      </p>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </p>
+                        </li>
 
-                      <p className="c26 c165">
-                        <span className="c2"></span>
-                      </p>
-                      <p className="c26 c74">
-                        <span className="c2"></span>
-                      </p>
-                      <span className="c6 c3">
-                        ii. Merchant Onboarding Process in relation to
-                        Receivable/ Payment Collection:
-                      </span>
-                      <p className="c32">
-                        <span>
-                          The Company will ensure the proposed process flow for
-                          facilitating its Receivable/ Payment Collection
-                          Services for e
-                        </span>
-                        <span className="c17">x</span>
-                        <span className="c2">
-                          isting Merchants as well as new Merchants:{" "}
-                        </span>
-                      </p>
-                      <p className="c18">
-                        <span className="c148">a.{space}</span>
-                        <span>Merchant management</span>
-                      </p>
-                      <p className="c229">
-                        <span className="c2">
-                          Merchant Onboarding will entail a three-step process
-                          during the life cycle of the Merchant and will
-                          comprise of the following steps therein:{" "}
-                        </span>
-                      </p>
-                      <p className="c11 c18">
-                        <span className="c148">b.{space}</span>
-                        <span>Onboarding/Registration</span>
-                      </p>
-                      <ul className="c79 lst-kix_list_3-0 start">
-                        <li className="c185 li-bullet-4">
-                          <span>
-                            Obtaining of the requisite details from the Merchant
-                            either physically or digitally through web/mobile
-                            interface (Refer to{" "}
-                          </span>
-                          <span className="c3">Anne</span>
-                          <span className="c17 c3">x</span>
-                          <span className="c3">ure 1</span>
-                          <span className="c2">
-                            ) along with the Merchant application form.{" "}
-                          </span>
+                        <li className="c6 c3">
+                          Merchant Onboarding Process in relation to Receivable/
+                          Payment Collection:
+                          <p className="c32">
+                            <span>
+                              The Company will ensure the proposed process flow
+                              for facilitating its Receivable/ Payment
+                              Collection Services for existing Merchants as well
+                              as new Merchants:{" "}
+                            </span>
+                          </p>
+                          <ol style={{ listStyleType: "lower-alpha" }}>
+                            <li>
+                              <span>Merchant management</span>
+                              <p className="c229">
+                                <span className="c2">
+                                  Merchant Onboarding will entail a three-step
+                                  process during the life cycle of the Merchant
+                                  and will comprise of the following steps
+                                  therein:{" "}
+                                </span>
+                              </p>
+                            </li>
+                            <li>
+                              <span>Onboarding/Registration</span>
+                              <ul>
+                                <li>
+                                  <span>
+                                    Obtaining of the requisite details from the
+                                    Merchant either physically or digitally
+                                    through web/mobile interface (Refer to
+                                    Annexure 1) along with the Merchant
+                                    application form.
+                                  </span>
+                                </li>
+                                <li>
+                                  <span className="c2">
+                                    Verification and scrutinization of the of
+                                    the duly filled application form and the
+                                    requisite documents by the onboarding team{" "}
+                                  </span>
+                                </li>
+                                <li>
+                                  <span>
+                                    Undertaking of various checks such as
+                                    background, negative business list, PEP,
+                                    restricted business list (Refer to Annexure
+                                    2), UN sanctions list, etc. using the
+                                    information and documents provided.
+                                  </span>
+                                </li>
+                                <li className="c192 li-bullet-6">
+                                  <span className="c2">
+                                    Granting of approval for onboarding of the
+                                    Merchant by the Company upon satisfaction of
+                                    checks and authenticity of the information /
+                                    documents provided by the Merchant.
+                                  </span>
+                                </li>
+                                <li className="c252 li-bullet-6">
+                                  <span>
+                                    Agreement of the terms and conditions
+                                    between both the parties i.e., the Company
+                                    and the Merchant, and finalization of the
+                                    commercials by way of executing a Merchant
+                                    agreement.{" "}
+                                  </span>
+                                </li>
+                                <li>
+                                  <span className="c2">
+                                    Undertaking of the risk categorization of
+                                    the Merchant onboarded (either low / medium
+                                    / high category depending upon the type of
+                                    business, any adverse / discouraging
+                                    feedback etc.) post signing of the agreement{" "}
+                                  </span>
+                                </li>
+                                <li className="c51 li-bullet-5">
+                                  <span className="c2">
+                                    Registration of the Merchant upon successful
+                                    completion of all the above steps and
+                                    sharing of the activation details /
+                                    credentials for login.{" "}
+                                  </span>
+                                </li>
+                              </ul>
+                              <br />
+                            </li>
+                            <li>
+                              <span>Continuous monitoring</span>
+                              <p className="c40">
+                                <span className="c2">
+                                  A registered Merchant will be continuously
+                                  monitored and supervised by the Company in
+                                  order to prevent any unlawful or malicious
+                                  activity. Such evaluation and ongoing due
+                                  diligence is typically based on risk
+                                  categorization assigned to any Merchant or its
+                                  business model, etc. and include checking the
+                                  transaction history, refunds initiated,
+                                  transaction volumes in line of business,
+                                  transaction amount of the Merchant,
+                                  scrutinizing the Merchant&rsquo;s disputes,
+                                  verifying Merchant URL from where the
+                                  transactions are undertaken, detecting any
+                                  spike in transactions, total chargebacks,
+                                  monitoring the Merchant website for any
+                                  unwarranted business, checking social media
+                                  for any adverse comments on the Merchants,
+                                  etc. These business rules for monitoring /
+                                  identification vary depending on the risk
+                                  category of the Merchant.
+                                </span>
+                              </p>
+                              <p className="c140">
+                                <span className="c2">
+                                  Based on the indications/ alerts received as
+                                  part of the monitoring activity, risk
+                                  categorisation of the Merchant may be changed
+                                  from low to medium or medium to high as the
+                                  case may be if there is a need. This will also
+                                  follow up with obtaining additional documents/
+                                  information from the Merchant. In some cases,
+                                  the Company may also decide to terminate the
+                                  agreement with the Merchant.
+                                </span>
+                              </p>
+                            </li>
+                          </ol>
                         </li>
-                        <li className="c206 li-bullet-4">
-                          <span className="c2">
-                            Verification and scrutinization of the of the duly
-                            filled application form and the requisite documents
-                            by the onboarding team{" "}
-                          </span>
-                        </li>
-                        <li className="c51 li-bullet-5">
-                          <span>
-                            Undertaking of various checks such as background,
-                            negative business list, PEP, restricted business
-                            list (Refer to{" "}
-                          </span>
-                          <span className="c3">Anne</span>
-                          <span className="c17 c3">x</span>
-                          <span className="c3">ure 2</span>
-                          <span className="c2">
-                            ), UN sanctions list, etc. using the information and
-                            documents provided{" "}
-                          </span>
-                        </li>
-                        <li className="c192 li-bullet-6">
-                          <span className="c2">
-                            Granting of approval for onboarding of the Merchant
-                            by the Company upon satisfaction of checks and
-                            authenticity of the information / documents provided
-                            by the Merchant.
-                          </span>
-                        </li>
-                        <li className="c252 li-bullet-6">
-                          <span>
-                            Agreement of the terms and conditions between both
-                            the parties i.e., the Company and the Merchant, and
-                            finalization of the commercials by way of e
-                          </span>
-                          <span className="c17">x</span>
-                          <span className="c2">
-                            ecuting a Merchant agreement.{" "}
-                          </span>
-                        </li>
-                        <li className="c206 li-bullet-4">
-                          <span className="c2">
-                            Undertaking of the risk categorization of the
-                            Merchant onboarded (either low / medium / high
-                            category depending upon the type of business, any
-                            adverse / discouraging feedback etc.) post signing
-                            of the agreement{" "}
-                          </span>
-                        </li>
-                        <li className="c51 li-bullet-5">
-                          <span className="c2">
-                            Registration of the Merchant upon successful
-                            completion of all the above steps and sharing of the
-                            activation details / credentials for login.{" "}
-                          </span>
-                        </li>
-                      </ul>
-                      <p className="c11 c18 mt-4">
-                        <span className="c148">c.{space}</span>
-                        <span>Continuous monitoring</span>
-                      </p>
-                      <p className="c40">
-                        <span className="c2">
-                          A registered Merchant will be continuously monitored
-                          and supervised by the Company in order to prevent any
-                          unlawful or malicious activity. Such evaluation and
-                          ongoing due diligence is typically based on risk
-                          categorization assigned to any Merchant or its
-                          business model, etc. and include checking the
-                          transaction history, refunds initiated, transaction
-                          volumes in line of business, transaction amount of the
-                          Merchant, scrutinizing the Merchant&rsquo;s disputes,
-                          verifying Merchant URL from where the transactions are
-                          undertaken, detecting any spike in transactions, total
-                          chargebacks, monitoring the Merchant website for any
-                          unwarranted business, checking social media for any
-                          adverse comments on the Merchants, etc. These business
-                          rules for monitoring / identification vary depending
-                          on the risk category of the Merchant.
-                        </span>
-                      </p>
-
-                      <p className="c140">
-                        <span className="c2">
-                          Based on the indications/ alerts received as part of
-                          the monitoring activity, risk categorisation of the
-                          Merchant may be changed from low to medium or medium
-                          to high as the case may be if there is a need. This
-                          will also follow up with obtaining additional
-                          documents/ information from the Merchant. In some
-                          cases, the Company may also decide to terminate the
-                          agreement with the Merchant.
-                        </span>
-                      </p>
+                      </ol>
                       <h5 className="c18 c29" id="h.3znysh7">
                         <span>4.{space}</span>
                         <span>
@@ -959,73 +929,66 @@ const grievancePolicy = () => {
                         className="c79 lst-kix_list_4-0 start"
                         style={{ listStyleType: "lower-roman" }}
                       >
-                        <li className="c126 li-bullet-7">
-                          <span className="c2">
+                        <li className="c178 c18 c222">
+                          <span className="c93">
                             Termination requested by the Merchant{" "}
                           </span>
+
+                          <p className="c258">
+                            <span className="c2">
+                              In case the Merchant wishes to culminate his
+                              contract with the Company, the same may be done by
+                              giving a notice to the Company. The Company
+                              assesses the account of the said Merchant and
+                              checks for any pending / outstanding dues. The
+                              Company also verifies any chargebacks / refunds
+                              pending on the Merchant&rsquo;s account.
+                              Successful verification of the termination notice
+                              and the account of the Merchant will entail
+                              settlements of due with the Merchant and
+                              subsequent termination of the Merchant id.
+                            </span>
+                          </p>
                         </li>
-                        <li className="c179 li-bullet-7">
-                          <span className="c2">
-                            Company chooses to terminate the Merchant{" "}
+
+                        <li className="c178 c18 c244">
+                          <span className="c93">
+                            The Company chooses to terminate the Merchant{" "}
                           </span>
+
+                          <p className="c243">
+                            <span className="c2">
+                              The Company at its own discretion can terminate
+                              the Merchant agreement with immediate effect in
+                              certain scenarios (listed below) and as deemed
+                              fit.{" "}
+                            </span>
+                          </p>
+                          <ul
+                            className="c79 lst-kix_list_5-0 start"
+                            style={{ listStyleType: "lower-alpha" }}
+                          >
+                            <li className="c250 li-bullet-8">
+                              <span className="c2">
+                                merchant has indulged in a fraudulent activity;
+                                or{" "}
+                              </span>
+                            </li>
+                            <li className="c250 li-bullet-8">
+                              <span className="c2">
+                                merchant is involved in criminal or illegal
+                                activity; or{" "}
+                              </span>
+                            </li>
+                            <li className="c175 li-bullet-9">
+                              <span className="c2">
+                                merchant has misused the platform for collecting
+                                payments for any illegal / prohibited goods.{" "}
+                              </span>
+                            </li>
+                          </ul>
                         </li>
                       </ol>
-                      <h5 className="c178 c18 c222">
-                        <span className="c93">i.{space}</span>
-                        <span className="c93">
-                          Termination requested by the Merchant{" "}
-                        </span>
-                      </h5>
-                      <p className="c258">
-                        <span className="c2">
-                          In case the Merchant wishes to culminate his contract
-                          with the Company, the same may be done by giving a
-                          notice to the Company. The Company assesses the
-                          account of the said Merchant and checks for any
-                          pending / outstanding dues. The Company also verifies
-                          any chargebacks / refunds pending on the
-                          Merchant&rsquo;s account. Successful verification of
-                          the termination notice and the account of the Merchant
-                          will entail settlements of due with the Merchant and
-                          subsequent termination of the Merchant id.
-                        </span>
-                      </p>
-
-                      <h5 className="c178 c18 c244">
-                        <span className="c93">ii.{space}</span>
-                        <span className="c93">
-                          The Company chooses to terminate the Merchant{" "}
-                        </span>
-                      </h5>
-                      <p className="c243">
-                        <span className="c2">
-                          The Company at its own discretion can terminate the
-                          Merchant agreement with immediate effect in certain
-                          scenarios (listed below) and as deemed fit.{" "}
-                        </span>
-                      </p>
-                      <ul
-                        className="c79 lst-kix_list_5-0 start"
-                        style={{ listStyleType: "lower-alpha" }}
-                      >
-                        <li className="c250 li-bullet-8">
-                          <span className="c2">
-                            merchant has indulged in a fraudulent activity; or{" "}
-                          </span>
-                        </li>
-                        <li className="c250 li-bullet-8">
-                          <span className="c2">
-                            merchant is involved in criminal or illegal
-                            activity; or{" "}
-                          </span>
-                        </li>
-                        <li className="c175 li-bullet-9">
-                          <span className="c2">
-                            merchant has misused the platform for collecting
-                            payments for any illegal / prohibited goods.{" "}
-                          </span>
-                        </li>
-                      </ul>
 
                       <h5 className="c18 c194" id="h.2et92p0">
                         <span>5.{space}</span>
@@ -1678,17 +1641,20 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c56 c163">
-                                  <span className="c2">
-                                    In case of address is different from
-                                    (certificate of incorporation) Self-attested
-                                    copy of Telephone or Electricity or Water
-                                    bill on Company name (Not older than 3
-                                    months) (OR) Bank Statement with cancelled
-                                    cheque holding minimum 3 transactions
-                                    (statement not older than 3 months){" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li className="c56 c163">
+                                    <span className="c2">
+                                      In case of address is different from
+                                      (certificate of incorporation)
+                                      Self-attested copy of Telephone or
+                                      Electricity or Water bill on Company name
+                                      (Not older than 3 months) (OR) Bank
+                                      Statement with cancelled cheque holding
+                                      minimum 3 transactions (statement not
+                                      older than 3 months){" "}
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c72">
@@ -1784,16 +1750,18 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c50 c264">
-                                  <span className="c2">
-                                    Self-attested copy of Telephone /
-                                    Electricity/ Water bill on Society Name (Not
-                                    older than 3 months) (OR) Bank Statement
-                                    with cancelled cheque holding minimum 3
-                                    transactions (statement not older than 3
-                                    months){" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li className="c50 c264">
+                                    <span className="c2">
+                                      Self-attested copy of Telephone /
+                                      Electricity/ Water bill on Society Name
+                                      (Not older than 3 months) (OR) Bank
+                                      Statement with cancelled cheque holding
+                                      minimum 3 transactions (statement not
+                                      older than 3 months){" "}
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c72">
@@ -1806,11 +1774,13 @@ const grievancePolicy = () => {
                             <tr className="c137">
                               <td className="c12">ID PROOF</td>
                               <td className="c8">
-                                <p className="c11 c56">
-                                  <span className="c2">
-                                    Certified Copy of PAN mandatory{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Certified Copy of PAN mandatory
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c166">
@@ -1823,14 +1793,16 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c89">
-                                <p className="c98 c170">
-                                  <span className="c2">
-                                    Certified copy of the Proof of possession of
-                                    Aadhaar number or any OVD or the equivalent
-                                    e-document thereof containing the details of
-                                    identity and address{" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Certified copy of the Proof of possession
+                                      of Aadhaar number or any OVD or the
+                                      equivalent e-document thereof containing
+                                      the details of identity and address
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c143">
@@ -1901,9 +1873,13 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c11 c98">
-                                  <span className="c2">As per the format </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      As per the format
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c70">
@@ -1915,15 +1891,18 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c98 c241">
-                                  <span className="c2">
-                                    Self-attested copy of Telephone or
-                                    Electricity or Water bill on Trust name (Not
-                                    older than 3 months) (OR)Bank Statement with
-                                    cancelled chq holding minimum 3 transactions
-                                    (statement not older than 3months){" "}
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span className="c2">
+                                      Self-attested copy of Telephone or
+                                      Electricity or Water bill on Trust name
+                                      (Not older than 3 months) (OR) Bank
+                                      Statement with cancelled cheque holding
+                                      minimum 3 transactions (statement not
+                                      older than 3 months)
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                             <tr className="c70">
@@ -1933,14 +1912,16 @@ const grievancePolicy = () => {
                                 </p>
                               </td>
                               <td className="c45">
-                                <p className="c23">
-                                  <span>
-                                    Request Letter indicating the Exhibition
-                                    he/she is participating from the exhibitor
-                                    and What kind of product sales he/she is
-                                    into.
-                                  </span>
-                                </p>
+                                <ul>
+                                  <li>
+                                    <span>
+                                      Request Letter indicating the Exhibition
+                                      he/she is participating from the exhibitor
+                                      and what kind of product sales he/she is
+                                      into.
+                                    </span>
+                                  </li>
+                                </ul>
                               </td>
                             </tr>
                           </tbody>
