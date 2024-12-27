@@ -218,27 +218,29 @@ const grievancePolicy = () => {
                             <tr className="c11">
                               <td className="" style={{ width: "80px" }}>
                                 <p className="c23">
-                                  <span className="c8 c24">Level</span>
+                                  <span className="c8 c24">
+                                    <b>Level</b>
+                                  </span>
                                 </p>
                               </td>
                               <td className="c13">
                                 <p className="c3 c36">
                                   <span className="c1 c24">
-                                    Responsible Person
+                                    <b>Responsible Person</b>
                                   </span>
                                 </p>
                               </td>
                               <td className="c22">
                                 <p className="c3 c37">
                                   <span className="c1 c24">
-                                    Modes Available
+                                    <b>Modes Available</b>
                                   </span>
                                 </p>
                               </td>
                               <td className="">
                                 <p className="c43">
                                   <span className="c1 c24">
-                                    Estimated TAT for Resolution
+                                    <b>Estimated TAT for Resolution</b>
                                   </span>
                                 </p>
                               </td>
@@ -1039,12 +1041,10 @@ const grievancePolicy = () => {
                         <span className="c6 c3"></span>
                       </p>
                       <p className="c11 c156">
-                        <span className="c6 c3">List of KYC documents: </span>
-                      </p>
-                      <p className="c156 c246">
-                        <span className="c2">
-                          Below listed are the set of documents collected from
-                          the merchant along with the application form:{" "}
+                        <span className="c6 c3">
+                          List of KYC documents: Below listed are the set of
+                          documents collected from the merchant along with the
+                          application form.
                         </span>
                       </p>
                       <div className="table-responsive">
@@ -1052,7 +1052,7 @@ const grievancePolicy = () => {
                           <tbody>
                             <tr className="c181">
                               <td className="c94">
-                                <p className="c11 c255 text-center mb-0">
+                                <p className="c11 c255 mb-0">
                                   <span className="c3">
                                     <b>INDIVIDUALS</b>
                                   </span>
@@ -1156,7 +1156,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c152">
                               <td className="c147">
-                                <p className="c49 text-center mb-0">
+                                <p className="c49 mb-0">
                                   <b className="c3">SOLE PROPRIETORSHIP </b>
                                 </p>
                               </td>
@@ -1345,7 +1345,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c72">
                               <td className="c85">
-                                <p className="c103 c200 text-center mb-0">
+                                <p className="c103 c200 mb-0">
                                   <b className="c3">PARTNERSHIP / LLP </b>
                                 </p>
                               </td>
@@ -1537,7 +1537,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c72">
                               <td className="c65">
-                                <p className="c103 c248 text-center mb-0">
+                                <p className="c103 c248 mb-0">
                                   <b className="c3">
                                     PUBLIC LIMITED/ PRIVATE LIMITED{" "}
                                   </b>
@@ -1666,7 +1666,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c72">
                               <td className="c85">
-                                <p className="c103 c139 text-center mb-0">
+                                <p className="c103 c139 mb-0">
                                   <b className="c3">SOCIETY </b>
                                 </p>
                               </td>
@@ -1773,7 +1773,7 @@ const grievancePolicy = () => {
                             </tr>
                             <tr className="c72">
                               <td className="c136">
-                                <p className="c103 c202 text-center mb-0">
+                                <p className="c103 c202 mb-0">
                                   <b className="c3">TRUST</b>
                                 </p>
                               </td>
