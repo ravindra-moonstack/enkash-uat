@@ -86,6 +86,22 @@ const faqData = [
       },
     ],
   },
+  {
+    question: "How can I close the account and claim a refund?",
+    answer: [
+      {
+        heading:
+          " If you wish to request the closure of your card/wallet, please click on the link below to proceed:",
+        bullets: [
+          "Register on EnKash, your meal card provider",
+          "Define the value of the card according to your organization’s budget",
+          "Create a network of authorized food chains, apps, outlets where all card will be valid",
+          "Educate your employees about the KYC and usage of the meal card",
+          "Distribute the cards among your employees and encourage them to use it for food purchases and tax-redemption",
+        ],
+      },
+    ],
+  },
 ];
 
 export default faqData;
