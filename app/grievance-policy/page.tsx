@@ -2037,9 +2037,6 @@ const grievancePolicy = () => {
                           <span className="c2">Organs trading</span>{" "}
                         </li>
                         <li className="c108 li-bullet-8">
-                          <span className="c2">Hawala</span>{" "}
-                        </li>
-                        <li className="c108 li-bullet-8">
                           <span className="c2">Extortion</span>{" "}
                         </li>
                         <li className="c108 li-bullet-8">
@@ -2074,6 +2071,23 @@ const grievancePolicy = () => {
                       <p className="c10 c9">
                         <span className="c0 c24"></span>
                       </p>
+
+                      <h5 className="c19 c18">
+                        <span>8.{space}</span>
+                        <span className="c125 c15 c3">Our Partners</span>
+                      </h5>
+                      <ol style={{ listStyleType: "lower-roman" }}>
+                        <li className="partner-name">
+                          Transcorp International Ltd
+                          <p>
+                            {" "}
+                            +91 7597182222{"  |  "}
+                            <a href="mailto:cards@transcorpint.com">
+                              cards@transcorpint.com
+                            </a>
+                          </p>
+                        </li>
+                      </ol>
                     </div>
                   </div>
                 </div>
