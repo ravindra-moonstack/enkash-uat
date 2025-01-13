@@ -46,42 +46,22 @@ const page = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Olympus |${space}`}
+                title={`Payment Gateway${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <div>
-              <Heading
-                title="Payment Gateway"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Enable swift business"
+              title="Simple. Secure. Fast - The"
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="transactions with our"
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="secure and efficient"
-              size="h2"
-              color="rainy-blue"
-              weight="7"
-            />
-            <Heading
-              title="payment gateway"
+              title="Best Payment Gateway"
               size="h2"
               color="rainy-blue"
               weight="7"
@@ -90,7 +70,7 @@ const page = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Modernize your business with a quick, convenient and easy way of payment collections"
+              title="Seamless integration, faster onboarding, and 100s of payment modes for your website & mobile app. Get a wide range of checkout options with developer-friendly integration kits, enabling higher conversions & success rates. "
               size="h6"
               weight="5"
             />
@@ -98,17 +78,17 @@ const page = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com/payment-gateway"
               />
             </div>
           </div>
@@ -123,7 +103,66 @@ const page = () => {
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
+      <div
+        className={`${styles.second_row}  row d-flex bg-white row-padding-x-only mb-5`}
+      >
+        <div className="d-inline text-center my-5">
+          <Heading title="All-in-One " color="black" size="h1" weight="6" />
+          <Heading
+            title="Payment Gateway "
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title={`for Your Business`}
+            color="black"
+            size="h1"
+            weight="6"
+          />
+        </div>
+
+        <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="All Payment Methods"
+              description="Give your customers the flexibility to choose from a range of online payment options. Easily process domestic and international card payments, enable instant UPI transactions, and support seamless net banking with over 50 major banks. You can also accept payments through popular digital wallets for quicker checkouts and offer flexible EMI and PayLater options to improve affordability and boost conversions."
+              source="receivables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Developer First Integration"
+              description="Our robust SDKs, APIs, and plugins are designed for developers, offering seamless integration with major languages like Python, Java, and PHP. With ready-to-use plugins for platforms such as Shopify, WooCommerce, and Magento, along with detailed API documentation and step-by-step guides, we make onboarding easy. You can also test your integration thoroughly in a secure sandbox environment before going live."
+              source="receivables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Robust Security"
+              description="Enjoy enterprise-grade security to ensure safe and reliable payment transactions. Our PCI DSS compliance protects sensitive payment data, while end-to-end encryption safeguards transactions against breaches. With tokenization, we replace card details with secure tokens to boost privacy and reduce fraud risks. Continuous monitoring and real-time threat assessments further strengthen security, keeping your transactions secure at all times."
+              source="receivables"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Checkout and Card Saving"
+              description="Enhance your checkout with features that prioritize convenience and efficiency. Offer a frictionless, intuitive interface for smooth payments, and let customers securely save their card details for faster future purchases. Support global card saving with tokenization compliance and provide personalized payment options based on customer preferences for quicker decisions."
+              source="receivables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Powerful Dashboards"
+              description="Access detailed statistics and reports to make informed decisions. Track transactions over different time frames, dive into transaction history for payment statuses, refunds, and more, and stay on top of settlement reconciliation with a breakdown of reversals, disputes, and commissions. Our user-friendly interface makes it easy to manage payments, refunds, API keys, invoices, and more, all in one place."
+              source="receivables"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* <div className={`${styles.third_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
             {
@@ -149,97 +188,9 @@ const page = () => {
             },
           ]}
         />
-      </div>
+      </div> */}
 
-      <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
-      >
-        <div className="d-inline text-center mb-5">
-          <Heading
-            title="Payment Gateway for"
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}quick and easy payment collections`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-        </div>
-
-        <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Real-Time Transactions"
-              description="Payment gateway enables transactions in real-time making them quick and on-the-go"
-              source="receivables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Data"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Security"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Transactions done via payment gateways are secure and digitally encrypted to avoid data leakage"
-              source="receivables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Payment Options"
-              description="A payment gateway allows you to use multiple modes of payment like debit cards/credit cards, UPI, Wallets,  and bank transfers to make payments"
-              source="receivables"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Easy Integration"
-              description="Olympus payment gateway can be easily integrated using API. This seamless integration can help businesses make quick and secure transactions"
-              source="receivables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Prevents"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Fraud"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Payment gateway detects fraud with tools to identify and mitigate the risk of online transactions"
-              source="receivables"
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className={`${styles.fourth_row} row`}>
+      {/* <div className={`${styles.fourth_row} row mt-5`}>
         <HowDoesCarousel
           titleContent={
             <>
@@ -265,7 +216,7 @@ const page = () => {
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
-      </div>
+      </div> */}
       {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}

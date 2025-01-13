@@ -16,9 +16,14 @@ const ThreeSteps = () => {
     <>
       <div className={styles.home_container}>
         <div className="d-flex align-items-center flex-column text-center">
-          <Heading title="3 Easy Steps to" color="white" size="h2" weight="6" />
           <Heading
-            title="Get Started with EnKash"
+            title="Say hello to a smarter, faster,"
+            color="white"
+            size="h2"
+            weight="6"
+          />
+          <Heading
+            title=" and secure way to handle transactions"
             color="white"
             size="h2"
             weight="3"
@@ -34,13 +39,13 @@ const ThreeSteps = () => {
               alt="signup image"
               className={`mx-2 ${styles.action_image_user_plus}`}
             />
-            <Image
+            {/* <Image
               src={numberOne}
               alt="step one image"
               className={`mx-2 ${styles.steps_image}`}
-            />
+            /> */}
             <div>
-              <Heading title="Sign Up" size="h6" />
+              <Heading title="Transaction Success Rate" size="h6" />
             </div>
           </div>
           <div
@@ -51,13 +56,13 @@ const ThreeSteps = () => {
               alt="kyc image"
               className={`mx-2 ${styles.action_image_user_tick}`}
             />
-            <Image
+            {/* <Image
               src={numberTwo}
               alt="step one image"
               className={`mx-2 ${styles.steps_image}`}
-            />
+            /> */}
             <div>
-              <Heading title="Complete KYC Process" size="h6" />
+              <Heading title="Uptime" size="h6" />
             </div>
           </div>
           <div
@@ -68,13 +73,13 @@ const ThreeSteps = () => {
               alt="get started image"
               className={`mx-2 ${styles.action_image_stack}`}
             />
-            <Image
+            {/* <Image
               src={numberThree}
               alt="step one image"
               className={`mx-2 ${styles.steps_image}`}
-            />
+            /> */}
             <div>
-              <Heading title="Get Started" size="h6" />
+              <Heading title="Payment Options" size="h6" />
             </div>
           </div>
         </div>
