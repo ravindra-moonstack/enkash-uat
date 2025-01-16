@@ -29,6 +29,7 @@ import Footer from "@/components/footer/footer";
 import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Payment Gateway in India : Manage your Payments Online - EnKash",
@@ -127,7 +128,7 @@ const page = () => {
       </div>
 
       <div
-        className={`${styles.second_row}  row d-flex bg-white row-padding-x-only mb-5`}
+        className={`${styles.second_row}  row d-flex bg-white px-5 mb-5 pt-5`}
       >
         <div className="d-inline text-center my-5">
           <Heading title="All-in-One " color="black" size="h1" weight="6" />
@@ -149,40 +150,43 @@ const page = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="All Payment Methods"
-              description="Give your customers the flexibility to choose from a range of online payment options. Easily process domestic and international card payments, enable instant UPI transactions, and support seamless net banking with over 50 major banks. You can also accept payments through popular digital wallets for quicker checkouts and offer flexible EMI and PayLater options to improve affordability and boost conversions."
+              description="Provide your customers with the freedom to choose from a variety of payment methods: <span>Credit and Debit Cards</span> for domestic and international transactions, <span>UPI</span> for instant payments, <span>Net Banking</span> with 50+ major banks, <span>Digital Wallets</span> for quick checkouts, and flexible options like <span>EMI and PayLater</span>."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Developer First Integration"
-              description="Our robust SDKs, APIs, and plugins are designed for developers, offering seamless integration with major languages like Python, Java, and PHP. With ready-to-use plugins for platforms such as Shopify, WooCommerce, and Magento, along with detailed API documentation and step-by-step guides, we make onboarding easy. You can also test your integration thoroughly in a secure sandbox environment before going live."
+              description="Designed with developers in mind, our powerful <span>SDKs, APIs</span>, and <span>plugins</span> support major languages and platforms. Enjoy seamless integration with comprehensive tools, ready-to-use plugins for <span>Shopify</span> and <span>WooCommerce</span>, detailed API documentation, and a secure <span>sandbox environment</span> for testing."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Robust Security"
-              description="Enjoy enterprise-grade security to ensure safe and reliable payment transactions. Our PCI DSS compliance protects sensitive payment data, while end-to-end encryption safeguards transactions against breaches. With tokenization, we replace card details with secure tokens to boost privacy and reduce fraud risks. Continuous monitoring and real-time threat assessments further strengthen security, keeping your transactions secure at all times."
-              source="receivables"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Checkout and Card Saving"
-              description="Enhance your checkout with features that prioritize convenience and efficiency. Offer a frictionless, intuitive interface for smooth payments, and let customers securely save their card details for faster future purchases. Support global card saving with tokenization compliance and provide personalized payment options based on customer preferences for quicker decisions."
+              whiteTitle="Advanced Checkout Experience"
+              description="Enhance your checkout experience with features designed for convenience and efficiency: Frictionless Checkout for a clean, intuitive interface, <span>saved cards</span> across businesses for faster repeat payments, and personalized payment options tailored to customer preferences for seamless transactions."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Powerful Dashboards"
-              description="Access detailed statistics and reports to make informed decisions. Track transactions over different time frames, dive into transaction history for payment statuses, refunds, and more, and stay on top of settlement reconciliation with a breakdown of reversals, disputes, and commissions. Our user-friendly interface makes it easy to manage payments, refunds, API keys, invoices, and more, all in one place."
+              description="Detailed statistics on payments, settlements, and refunds. Gain insights with a Financial Overview, Transaction History, and Settlement Reconciliation, all managed effortlessly through a user-friendly interface for seamless payment operations."
+              source="receivables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Robust Security"
+              description="Ensure secure and reliable payment transactions with enterprise-grade security features: <spa>PCI DSS Compliance</span> for data protection, <span>end-to-end encryption</span> to prevent breaches, <span>tokenization</span> for enhanced privacy, and <span>continuous monitoring</span> with real-time threat assessments and audits."
               source="receivables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts />
       </div>
 
       {/* <div className={`${styles.third_row} row d-flex bg-white row-padding`}>

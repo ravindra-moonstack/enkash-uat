@@ -30,9 +30,10 @@ const GetStartedCard = ({
         </>
       )}
 
-      <div className="my-3">
-        <Heading title={description} color="white" size="h6" weight="4" />
-      </div>
+      <div
+        className={`my-3 ${styles.description}`}
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></div>
       <Link href={"/sales/?source=" + source}>
         <div
           className={`d-flex align-items-center mt-5 ${styles.action_container}`}
