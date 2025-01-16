@@ -47,45 +47,23 @@ const page = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Olympus |${space}`}
+                title={`Payment Button`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <div>
-              <Heading
-                title="Payment Button"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
           </div>
-          <div className="d-flex flex-column">
+          <div className="">
             <Heading
-              title="Easy-to-integrate"
+              title={`Sell smarter, not harder with`}
               color="white"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading
-                title="payment button"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title={`${space}for`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="seamless collections"
-              color="white"
+              title={`${space}EnKash Payment Button`}
+              color="rainy-blue"
               size="h2"
               weight="7"
             />
@@ -93,7 +71,7 @@ const page = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Access a pre-designed payment button with a plug-and-play integration on your website"
+              title="Embed a secure, customizable payment button on your website and collect payments in minutes."
               size="h6"
               weight="5"
             />
@@ -101,17 +79,17 @@ const page = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com/payment-gateway"
               />
             </div>
           </div>
@@ -126,7 +104,7 @@ const page = () => {
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
+      {/* <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
             {
@@ -152,20 +130,14 @@ const page = () => {
             },
           ]}
         />
-      </div>
+      </div> */}
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Convenient business transactions"
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}with enhanced customer experience `}
+            title={`A Click is All it Takes`}
             color="black"
             size="h1"
             weight="6"
@@ -175,29 +147,43 @@ const page = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Facilitate Collections"
-              description="Businesses can make their collections easy by adding a payment button on their website for one-time and recurring payments"
+              whiteTitle="Setup in under 5 minutes"
+              description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Zero Integration Cost"
-              description="The EnKash payment button comes with a plug-and-play integration which means zero technical cost and manual effort required"
+              whiteTitle="Ctrl C + Ctrl V = Payment Ready"
+              description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="User-Friendly Experience"
-              description="Payment button templates have been created for users to easily interact with the website and have a seamless experience while making payments"
+              whiteTitle="Accept Payments Anytime, Anywhere"
+              description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="DIY Payment Button Creation"
-              description="Businesses can choose a payment button template or create their payment button from scratch as per their brand requirements"
+              whiteTitle="Match Your Style"
+              description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
+              source="receivables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Optimized for the Mobile"
+              description="Designed for optimal performance on all devices. Provide a seamless payment experience for users of smartphones, tablets, or desktops, catering to the growing mobile commerce trends."
+              source="receivables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Don’t Compromise on Security"
+              description="Industry-leading security and compliance standards ensure safe payments. Protect your customers’ data with advanced encryption and fraud detection, building trust and credibility for your business."
               source="receivables"
             />
           </div>

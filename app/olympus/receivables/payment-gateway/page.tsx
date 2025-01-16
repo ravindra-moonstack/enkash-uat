@@ -7,7 +7,14 @@ import { space } from "../../../../common/constant";
 import faqData from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import {
+  bannerLottie,
+  faqBg,
+  stepOne,
+  stepThree,
+  stepTwo,
+  whiteArrow,
+} from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -64,7 +71,7 @@ const page = () => {
               title="Best Payment Gateway"
               size="h2"
               color="rainy-blue"
-              weight="7"
+              weight="5"
             />
           </div>
 
@@ -99,7 +106,23 @@ const page = () => {
           </div>
         </div>
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Say hello to a smarter, faster, and secure way to handle transactions"
+            steps={[
+              {
+                icon: stepOne,
+                text: "Transaction Success Rate",
+              },
+              {
+                icon: stepTwo,
+                text: "Uptime",
+              },
+              {
+                icon: stepThree,
+                text: "Payment Options",
+              },
+            ]}
+          />
         </div>
       </div>
 

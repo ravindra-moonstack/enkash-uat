@@ -47,48 +47,33 @@ const paymentLinks = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Olympus |${space}`}
+                title={`Payment Links`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <div>
-              <Heading
-                title="Payment Links"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
           </div>
 
-          <div className="d-flex flex-column">
+          <div className="">
             <Heading
-              title="Pace up your collection"
+              title="Accept Payments Instantly with"
+              color="white"
+              size="h2"
+              weight="7"
+            />
+
+            <Heading
+              title={` EnKash Payment Links`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading
-                title={`process${space}`}
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="with EnKash’s payment links"
-                color="white"
-                size="h2"
-                weight="7"
-              />
-            </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Quicken the collection process with embedded payment links in invoices. Build stronger relationships with your customers and improve your DSO"
+              title="Create payment link effortlessly—no website or app needed. Share via SMS, WhatsApp, email, or social media, and accept payments through 100+ methods - no coding required."
               color="white"
               size="h6"
               weight="5"
@@ -97,17 +82,17 @@ const paymentLinks = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com/payment-gateway"
               />
             </div>
           </div>
@@ -122,7 +107,7 @@ const paymentLinks = () => {
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
+      {/* <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
             {
@@ -162,68 +147,61 @@ const paymentLinks = () => {
             },
           ]}
         />
-      </div>
+      </div> */}
 
       <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
+        className={`${styles.third}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex flex-column align-items-center mb-5">
+        <div className="d-flex flex-column align-items-center my-5">
           <div className="text-center">
             <Heading
-              title={`Enable payment links${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title="in your invoices for"
+              title={`Get Paid with a${space}`}
               color="black"
               size="h1"
               weight="6"
             />
+            <Heading
+              title="Single Link"
+              color="equity-blue"
+              size="h1"
+              weight="6"
+            />
           </div>
-
-          <Heading
-            title="better collections"
-            color="black"
-            size="h1"
-            weight="6"
-          />
         </div>
 
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Quicker Collections"
-              description="Payment links embedded in digital invoices or other forms of communication quicken the collection or payment process"
+              whiteTitle="Quick and Easy Setup"
+              description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Payment Options"
-              description=" Embedded payment links ensure customers have various payment options once they click the embedded payment link"
+              whiteTitle="No Website Needed"
+              description="EnKash Payment Links are perfect for businesses without an online presence. Collect payments via SMS, WhatsApp, email, or social media, eliminating the need for a website or app. This solution bridges the gap between offline and online payment experiences seamlessly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easily Accessible"
-              description="Since invoices are sent online, they can be accessed anywhere, anytime, without hassle"
+              whiteTitle="100+ Payment Options"
+              description="Offer your customers the flexibility to pay using their preferred method, including UPI, net banking, credit/debit cards, wallets, and more. EnKash Payment Links ensure a smooth checkout experience for everyone, boosting customer satisfaction and increasing conversions"
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Simplified Tracking"
-              description="Online payments or collections through payment links create a trail of the entire process, which helps with tracking and analysis"
+              whiteTitle="Real-Time Notifications"
+              description="Stay in the loop with instant alerts for every successful payment. Gain better control and visibility into your transactions, enabling faster decision-making and improved financial management. Receive updates across all devices to keep your operations running smoothly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Improved Cashflow"
-              description="Payment links enable quicker collections and payments so that your business’s cash flow always stays healthy"
+              whiteTitle="Secure Transactions"
+              description="Built on a foundation of PCI DSS compliance and advanced encryption protocols, EnKash Payment Links ensure every transaction is safe and secure. Protect sensitive customer data while providing a trustworthy payment experience, strengthening customer confidence in your business."
               source="receivables"
             />
           </div>
@@ -258,12 +236,12 @@ const paymentLinks = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      <div className="bg-white row-padding text-center d-flex flex-column">
+      {/* <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how payment links can revolutionize the way you work!"
         />
-      </div>
+      </div> */}
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
