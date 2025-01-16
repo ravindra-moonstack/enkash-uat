@@ -81,7 +81,9 @@ const AllProducts = () => {
   return (
     <div>
       <div className={`${styles.integration_row} row mt-5 pt-5`}>
-        <div className={`d-inline text-center mb-5 ${styles.title_container}`}>
+        <div
+          className={`d-inline text-center pt-5 mb-5 ${styles.title_container}`}
+        >
           <Heading
             title="Check out our other payment products at"
             color="black"

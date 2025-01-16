@@ -165,12 +165,12 @@ const SubProduct = (props: any) => {
                       </div>
                       <div className={`d-flex flex-column ms-3`}>
                         <div className={`d-flex ${styles.sub_product_name}`}>
-                          {product.name !== "Olympus PG" && <>{product.name}</>}
+                          {product.name !== "EnKash PG" && <>{product.name}</>}
 
                           {/* new tag with json */}
-                          {product.name === "Olympus PG" && (
+                          {product.name === "EnKash PG" && (
                             <>
-                              Olympus<sup>TM</sup> PG
+                              EnKash<sup>TM</sup> PG
                             </>
                           )}
 

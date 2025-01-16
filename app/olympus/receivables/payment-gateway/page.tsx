@@ -128,7 +128,7 @@ const page = () => {
       </div>
 
       <div
-        className={`${styles.second_row}  row d-flex bg-white px-5 mb-5 pt-5`}
+        className={`${styles.second_row}  row d-flex bg-white px-md-5 px-0 mb-5 pt-5`}
       >
         <div className="d-inline text-center my-5">
           <Heading title="All-in-One " color="black" size="h1" weight="6" />

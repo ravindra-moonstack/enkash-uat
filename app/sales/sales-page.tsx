@@ -57,7 +57,7 @@ type Product = {
 // Define our data
 const categoryData: Category[] = [
   {
-    name: "Payables",
+    name: "Make Payment",
     products: [
       { name: "Vendor Payment", icon: vendorPaymentFilled },
       { name: "Utility Payment", icon: billPaymentsFilled },
@@ -67,7 +67,7 @@ const categoryData: Category[] = [
     ],
   },
   {
-    name: "Receivables",
+    name: "Collect Payment",
     products: [
       { name: "Payment Gateway", icon: paymentGatewayFilled },
       { name: "Payment Links", icon: paymentLinksFilled },
@@ -82,7 +82,7 @@ const categoryData: Category[] = [
     ],
   },
   {
-    name: "Corporate Cards",
+    name: "Cards",
     products: [
       { name: "Corporate Credit Card", icon: corporateCreditCardFilled },
       { name: "Prepaid Card", icon: prepaidCardFilled },
@@ -97,11 +97,11 @@ const categoryData: Category[] = [
     ],
   },
   {
-    name: "Expense Management",
+    name: "Expenses",
     products: [],
   },
   {
-    name: "Loyalty Lounge",
+    name: "Rewards",
     products: [
       { name: "Gift Card", icon: giftCardFilled },
       { name: "Brand Vouchers", icon: brandVouchersFilled },
@@ -401,7 +401,7 @@ const SalesPage = () => {
                   <div className="d-flex gap-2">
                     <div className="pt-3">
                       <Heading
-                        title="Primary product you are interested in:"
+                        title="What are you looking for:"
                         size="h6"
                         color="black"
                         weight="5"
