@@ -205,6 +205,14 @@ const SalesPage = () => {
     }
   }
 
+  function categorySelected(category: string) {
+    if (selectedCategory === category) {
+      setSelectedCategory("");
+    } else {
+      setSelectedCategory(category);
+    }
+  }
+
   //Email Send to EmailJs
   function sendEmailToEnkash() {
     setIsDisabled(true);
@@ -438,15 +446,13 @@ const SalesPage = () => {
                                     ? styles.activeButton
                                     : ""
                                 } ${styles.categoryButton}`}
-                                onClick={() =>
-                                  setSelectedCategory(category.name)
-                                }
+                                onClick={() => categorySelected(category.name)}
                               >
                                 <div className="w-100 d-flex justify-content-center">
                                   {category.name}
                                 </div>
 
-                                {category.name !== "Expense Management" && (
+                                {category.name !== "Expenses" && (
                                   <div>
                                     <Image
                                       src={blueArrow}
@@ -556,7 +562,7 @@ const SalesPage = () => {
 
             {/* Seventh Row (Submit Button) */}
             <div
-              className="d-flex align-items-center w-100 mt-4"
+              className="d-flex align-items-center w-100 mt-4 justify-content-center justify-content-md-start"
               onClick={handleSubmit}
             >
               <PrimaryButton

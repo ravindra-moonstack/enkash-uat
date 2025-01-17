@@ -82,7 +82,7 @@ const AllProducts = () => {
     <div>
       <div className={`${styles.integration_row} row mt-5 pt-5`}>
         <div
-          className={`d-inline text-center pt-5 mb-5 ${styles.title_container}`}
+          className={`d-inline text-center pt-5 mb-5 mb-md-2 px-3 px-md-5 ${styles.title_container}`}
         >
           <Heading
             title="Check out our other payment products at"
@@ -98,7 +98,7 @@ const AllProducts = () => {
           />
         </div>
         <div className={`${styles.container}`}>
-          <Marquee speed={100} pauseOnClick={true}>
+          <Marquee speed={70} pauseOnClick={true}>
             {cardData.map((card, index) => (
               <div
                 key={index}
