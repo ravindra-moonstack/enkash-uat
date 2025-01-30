@@ -179,7 +179,7 @@ const home = () => {
             }
           />
         </div>
-        <EmailBox />
+        {/* <EmailBox /> */}
       </div>
       <div className={`${styles.third_row} row color-white`}>
         <PolygonSection />
@@ -190,14 +190,14 @@ const home = () => {
               <>
                 <div>
                   <Heading
-                    title="Solutions for businesses to"
+                    title="All-in-One Payments & Financial Solutions"
                     size="h2"
                     weight="3"
                   />
                 </div>
                 <div>
                   <Heading
-                    title="streamline cash flow and optimize workflow"
+                    title="to Power Your Business Growth"
                     size="h2"
                     weight="7"
                   />
@@ -359,30 +359,145 @@ const home = () => {
         <BankSection />
       </div>
       <div className={`${styles.fifth_row} row row-padding`}>
-        <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
-          <div className={styles.lottie_container}>
-            <LottieDynamicLoadComponent
-              animationName={"HomePagePayables"}
-              loop={true}
+        <div className="d-flex">
+          <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"HomePagePayables"}
+                loop={true}
+              />
+            </div>
+          </div>
+          <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
+            <ExploreCard
+              title="Collect Payments"
+              description="A modern payment gateway with easy-to-integrate APIs, supporting cards, net banking, EMIs, BNPL, and UPI for standalone and recurring payments. It also integrates with ERP systems for complete accounts receivable management."
+              theme="green"
+              link="/olympus/receivables"
             />
           </div>
         </div>
-        <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
-          <ExploreCard
-            title="Payables"
-            description="A centralized online platform to manage all outgoing business expenses. Record and track all the transactions along with timely reminders to avoid delays in business payments"
-            theme="green"
-            link="/olympus/payables"
-          />
+
+        <div className="d-flex">
+          <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
+            <ExploreCard
+              title="Make Payments"
+              description="A single platform to manage vendor payments, payroll, taxes, utilities, and more. Built for all businesses, it integrates via APIs or works standalone with ERP and accounting systems, requiring no tech setup."
+              theme="green"
+              link="/olympus/payables"
+            />
+          </div>
+          <div
+            className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}
+          >
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"HomePageRecieveable"}
+                loop={true}
+              />
+            </div>
+          </div>
         </div>
-        <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
-          <ExploreCard
-            title="Receivables"
-            description="An intelligent automation tool to empower your business by removing manual and time-consuming follow-ups. It helps create better collection strategies"
-            theme="green"
-            link="/olympus/receivables"
-          />
+
+        <div className="d-flex">
+          <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"HomePagePayables"}
+                loop={true}
+              />
+            </div>
+          </div>
+          <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
+            <ExploreCard
+              title="Expense Management"
+              description="Gain full control of business spending with a comprehensive platform. Track, analyze, and optimize expenses across employees, departments, and petty cash—empowering smarter budgeting and driving efficiency across every business expense."
+              theme="green"
+              link="/olympus/receivables"
+            />
+          </div>
         </div>
+
+        <div className="d-flex">
+          <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
+            <ExploreCard
+              title="Corporate Credit Cards"
+              description="Enhance cash flow and streamline expense management with customized corporate credit cards. Leverage T&E cards, procurement card, and other solutions for better control, real-time tracking, and seamless integration with your financial systems."
+              theme="green"
+              link="/olympus/payables"
+            />
+          </div>
+          <div
+            className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}
+          >
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"HomePageRecieveable"}
+                loop={true}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="d-flex">
+          <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"HomePagePayables"}
+                loop={true}
+              />
+            </div>
+          </div>
+          <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
+            <ExploreCard
+              title="Prepaid Cards"
+              description="Simplify operations by distributing prepaid cards for meal, SaaS, travel, marketing, petty cash, gifting, employee-specific use cases, and other expenses. Set spending limits, track usage in real-time, and optimize budgeting for employee perks and project-related expenses."
+              theme="green"
+              link="/olympus/receivables"
+            />
+          </div>
+        </div>
+
+        <div className="d-flex">
+          <div className="col-md-6 col-12 mt-5  order-3 order-md-3 pe-5">
+            <ExploreCard
+              title="Vouchers"
+              description="400+ brand vouchers across various categories, offering versatile gifting options for every need. Perfect for creating memorable experiences and adding value to your business initiatives."
+              theme="green"
+              link="/olympus/payables"
+            />
+          </div>
+          <div
+            className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}
+          >
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"HomePageRecieveable"}
+                loop={true}
+              />
+            </div>
+          </div>
+        </div>
+
+        <div className="d-flex">
+          <div className={`col-md-6 col-12 d-flex mb-5 order-2 order-md-1`}>
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"HomePagePayables"}
+                loop={true}
+              />
+            </div>
+          </div>
+          <div className="col-md-6 col-12 mb-5 order-1 order-md-2">
+            <ExploreCard
+              title="Rewards"
+              description="Recognize top performers and partners while fostering a culture of recognition, boosting engagement and motivation to drive productivity and long-term success."
+              theme="green"
+              link="/olympus/receivables"
+            />
+          </div>
+        </div>
+
         <div className={`col-md-6 col-12 d-flex mt-5 order-4 order-md-4 ps-5`}>
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent

@@ -91,7 +91,7 @@ const RainbowSection = () => {
         className={`${styles.first_row} row  text-center color-white bg-indi-volt`}
       >
         <span className={`col-12  ${styles.first_text}`}>
-          <Heading title="A Platform For" size="h0" />
+          <Heading title="Save." size="h0" />
         </span>
 
         <Image
@@ -111,7 +111,7 @@ const RainbowSection = () => {
         />
 
         <span className={`col-12  ${styles.second_text}`}>
-          <Heading title="Businesses That" size="h0" />
+          <Heading title="Scale." size="h0" />
         </span>
 
         <Image
@@ -131,7 +131,7 @@ const RainbowSection = () => {
         />
 
         <span className={`col-12  ${styles.third_text}`}>
-          <Heading title="Does It All" size="h0" />
+          <Heading title="Succeed" size="h0" />
         </span>
 
         <Image
@@ -153,13 +153,17 @@ const RainbowSection = () => {
         <div className={`col-12 ${styles.description_text}`}>
           <div>
             <Heading
-              title="A unique 360° platform for simplified finances, spends & collections backed by"
+              title="Simplifying payments, expenses, cards, reward & loyalty programs"
               size="h4"
               weight="4"
             />
           </div>
           <div>
-            <Heading title="in-depth real-time insights" size="h4" weight="4" />
+            <Heading
+              title="for businesses, financial institutions & partners."
+              size="h4"
+              weight="4"
+            />
           </div>
         </div>
         <div className={`col-12 ${styles.description_text_mobile}`}>
@@ -175,9 +179,13 @@ const RainbowSection = () => {
           </div>
         </div>
         <div className={`col-12 ${styles.button_container}`}>
-          <PrimaryButton title="Get Free Demo" url="/sales" theme="blue" />
-          <span className="mx-2"></span>
-          <SecondryButton title="Sign Up" url="/sales/" iconSize={25} />
+          {/* <PrimaryButton title="Get Free Demo" url="/sales" theme="blue" />
+          <span className="mx-2"></span> */}
+          <SecondryButton
+            title="See it in Action"
+            url="/sales/"
+            iconSize={25}
+          />
         </div>
         <div className={`col-12 ${styles.down_arrow}`}>
           <Image src={threeDownArrow} alt="arrow icon" />
