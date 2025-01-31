@@ -48,3 +48,27 @@
     }
   }
 }
+
+.custom_step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  max-width: 25%;
+  height: fit-content;
+
+  @include for-laptops {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .image_div {
+    width: 125px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

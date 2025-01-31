@@ -69,3 +69,7 @@ export { default as starBucksLogo } from "./img/starbucks-logo.svg";
 export { default as auBankLogo } from "./img/au-bank-logo.png";
 
 export { default as pageNotFound } from "./img/404.png";
+
+export { default as ppiIcon } from "./img/ppi-icon.svg";
+export { default as paIcon } from "./img/pa-icon.svg";
+export { default as bbpsIcon } from "./img/bbps-icon.svg";

@@ -25,15 +25,15 @@ import {
 } from "@/app/index";
 import { space } from "@/common/constant";
 
-const BankSection = () => {
-  const [selectedTab, setSelectedTab] = useState("partners");
+const BankSection = ({ type }: { type: "partners" | "customers" }) => {
+  const [selectedTab, setSelectedTab] = useState(type);
 
-  const handleTabClick = (tab: SetStateAction<string>) => {
-    setSelectedTab(tab);
-  };
+  // const handleTabClick = (tab: SetStateAction<string>) => {
+  //   setSelectedTab(tab);
+  // };
   return (
     <>
-      <div className="col-md-6">
+      {/* <div className="col-md-6">
         <div className={`row-padding-x-only mb-3 mt-5`}>
           <div>
             <Heading
@@ -69,9 +69,9 @@ const BankSection = () => {
             }`}
           ></div>
         </div>
-      </div>
-      <div className="col-12 row-padding-x-only">
-        <div className="d-flex mb-4">
+      </div> */}
+      <div className="col-12">
+        {/* <div className="d-flex mb-4">
           <div
             className="ms-3 me-5 cursor-pointer"
             onClick={() => handleTabClick("partners")}
@@ -94,7 +94,7 @@ const BankSection = () => {
               weight="6"
             />
           </div>
-        </div>
+        </div> */}
 
         <div className="mobile-only">
           <div>
