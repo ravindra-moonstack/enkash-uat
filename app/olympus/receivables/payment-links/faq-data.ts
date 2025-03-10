@@ -1,67 +1,126 @@
-const faqObject = [
+const faqData = [
   {
-    question: "How will payment links help my business?",
+    question: "What is a Payment Link?",
     answer: [
       {
         heading:
-          "Payment links are valuable for businesses seeking quick and secure payment processing. They offer convenience to customers who prefer online payments over traditional methods, ensuring that your business receives payments more promptly. By incorporating payment links, you can benefit from faster collections, improved cash flow, and streamlined payment processes, as highlighted in our features and benefits.",
+          "Payment Link is a secure, no-code solution that allows businesses to collect payments quickly and easily across platforms like WhatsApp, SMS, email, and social media. Simply share the link, and your customers can make payments instantly.",
       },
     ],
   },
   {
-    question: "How do I use payment links?",
+    question: "What are the benefits of Payment Links for a business?",
     answer: [
       {
         heading:
-          "Utilizing payment links is simple and versatile. They can be shared through various communication channels, including email, messaging apps, social media, and websites. Customers only need to click on the link and enter their payment details. The payment is then securely processed and transferred to your account, ensuring a smooth and efficient payment experience.",
+          "EnKash Payment Links offer several advantages for businesses:",
+      },
+      {
+        bullets: [
+          "Easy to Use: No technical setup or coding required. You can create and share payment links in just a few clicks.",
+          "Convenient Payment Collection: Accept payments via SMS, email, WhatsApp, social media, and more, making it easy for customers to pay.",
+          "Secure Transactions: Payment Links are fully secure, ensuring customer data protection and compliance with PCI DSS standards.",
+          "Faster Cash Flow: Speed up payment collections and improve cash flow with instant payments.",
+          "Global Reach: Accept payments from anywhere in the world, with support for international transactions.",
+          "Cost-Effective: Eliminate the need for expensive POS systems or infrastructure, making Payment Links an affordable solution for businesses of all sizes.",
+          "Automation: Automate reminders and invoicing for recurring payments, saving time and reducing manual effort.",
+        ],
       },
     ],
   },
   {
-    question: "What can I do with a payment link sent through EnKash platform?",
+    question: "How to send a Payment Link?",
     answer: [
       {
         heading:
-          "It offers a wide range of capabilities, providing businesses the means to collect payments quickly and securely. They enhance the convenience of online payment processes, streamline payment tracking, and significantly contribute to maintaining a healthy cash flow. These multifaceted links empower your business with efficient tools for hassle-free payment collections and management.",
+          "You can enter your customer’s mobile number and email address during creation to send through various channels such as email, SMS, WhatsApp, Facebook, or any messaging platform.",
+      },
+      {
+        heading:
+          "Alternatively, you can copy the Payment Link and paste it into social media messages, WhatsApp, or any other digital messaging platform. It’s a seamless way to request payments and ensures a smooth customer experience.",
       },
     ],
   },
   {
-    question: "How can I send a payment link?",
+    question: "Is EnKash Payment Link secure?",
     answer: [
       {
         heading:
-          "Sending a payment link is a breeze. You can distribute these links through various digital platforms, including email, messaging apps, social media, and websites. This versatility ensures that your customers can easily access and utilize payment links, making it a convenient and efficient way to receive payments.",
+          "Yes, EnKash Payment Links are highly secure. We ensure the encryption of sensitive customer data and comply with PCI DSS standards to protect all transactions. Your customers' information remains secure at all times.",
       },
     ],
   },
   {
-    question: "Are payment links safe?",
+    question: "What are the features of an EnKash Payment Link?",
     answer: [
       {
         heading:
-          "Yes, EnKash prioritizes security. We employ secure encryption and robust security measures to safeguard sensitive payment information. This protects your business and ensures the security of your customers' data, mitigating the risk of fraud and guaranteeing safe and reliable transactions.",
+          "EnKash Payment Links offer an easy, efficient way to collect payments with no coding or technical setup required.",
+      },
+      {
+        heading:
+          "Packed with powerful features such as automated invoicing, support for international payments, customizable messages, bulk payment link creation, and automated reminders, EnKash ensures a smooth, streamlined payment collection process. Whether you need to set payment terms or send notifications, our Payment Links are designed to help your business collect payments quickly and effortlessly. Perfect for businesses looking to move fast and simplify their payment process.",
       },
     ],
   },
   {
-    question: "Why is online payment tracking important?",
+    question: "How can I use a Payment Link?",
     answer: [
       {
         heading:
-          "Online payment tracking through payment links creates a comprehensive audit trail of the entire payment process. This invaluable feature simplifies tracking and analysis, providing businesses with the tools to reconcile payments efficiently. The integrated tracking system ensures transparency and accountability in your payment collections.",
+          "You can use an EnKash Payment Link in any way that works for you—just share it with your customers, and they can click to make the payment.",
+      },
+      {
+        heading:
+          "Creating a Payment Link takes only two simple steps, and it can be automatically sent to your customer’s email and phone number. To share it on other platforms like WhatsApp, social media, or chatbots, simply copy the link from the dashboard and paste it where needed.",
       },
     ],
   },
   {
-    question: "How do payment links improve cash flow for businesses?",
+    question: "Can I send Payment Links in bulk?",
     answer: [
       {
         heading:
-          "Payment links significantly enhance cash flow by expediting payment collections and processing. They simplify the customer payment process, reducing the time it takes to receive and record payments. This improved efficiency ensures that your business maintains a consistently healthy cash flow, ultimately contributing to financial stability and growth.",
+          "Yes, EnKash allows you to generate and share Payment Links in bulk. You can upload an XLSX or CSV file containing customer contact details and payment amounts, streamlining the process and improving efficiency for large-scale collections.",
+      },
+    ],
+  },
+  {
+    question: "Are Payment Links suitable for my business?",
+    answer: [
+      {
+        heading:
+          "Yes, payment links are perfect for businesses of all sizes—whether you're a small startup, a growing SMB, or a large enterprise. EnKash payment links offer a secure, easy, and scalable way to collect payments across multiple channels, ensuring a seamless payment experience for both you and your customers.",
+      },
+    ],
+  },
+  {
+    question: "Can I create a Payment Link for a specific amount?",
+    answer: [
+      {
+        heading:
+          "Absolutely! You can create a Payment Link for any amount you choose. Whether it’s a fixed payment or an invoice, the link can be customized to match the specific transaction value.",
+      },
+    ],
+  },
+  {
+    question: "Can my customers make partial payments using Payment Links?",
+    answer: [
+      {
+        heading:
+          "Yes, you can enable partial payments on a Payment Link by specifying the minimum amount you wish to collect. Customers can then make multiple payments between the minimum amount and the total link amount. EnKash will notify you of all partial payments made.",
+      },
+    ],
+  },
+  {
+    question: "How can I accept payments without a website?",
+    answer: [
+      {
+        heading:
+          "With EnKash Payment Links, you can easily create a payment link in just a few clicks and share it with your customers via SMS, email, WhatsApp, or any other messaging platform. There’s no need for a website—just send the link, and your customers can make secure payments instantly, streamlining the payment collection process for businesses of any size.",
       },
     ],
   },
 ];
 
-export default faqObject;
+export default faqData;

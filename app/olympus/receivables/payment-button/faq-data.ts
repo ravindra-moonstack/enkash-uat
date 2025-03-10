@@ -4,54 +4,76 @@ const faqData = [
     answer: [
       {
         heading:
-          "A payment button is a template designed to help small and medium enterprises to add to their website and use it to collect payments from their customers.",
+          "A simple tool that allows you to collect payments on your website without redirects or complex integrations.",
       },
     ],
   },
   {
-    question: "How to add a payment button on my website?",
-    answer: [
-      {
-        bullets: [
-          "Login to EnKash",
-          "Select the payment button from the template or create from scratch",
-          "Add button details like title and button type",
-          "Generate the button and copy the code",
-          "Embed the payment button code on your business website",
-          "Customers will be redirected to the EnKash payment gateway by clicking on the payment button",
-        ],
-      },
-    ],
-  },
-  {
-    question: "How do payment buttons work?",
+    question: "How does the EnKash payment button work?",
     answer: [
       {
         heading:
-          "Payment buttons are readily available buttons that can be embedded by any small or medium business on their website and can be used to collect payment from customers.",
+          "Simply copy and paste the provided code snippet onto your website or blog.",
       },
       {
         heading:
-          "These buttons can be made using predesigned templates and an HTML code will be generated which can be embedded on the website clicking on which, users will be redirected to the payment gateway.",
+          "The button will appear on your page, allowing customers to make payments easily and securely.",
+      },
+      {
+        heading:
+          "EnKash handles the entire payment process, from capturing customer information to processing the transaction.",
       },
     ],
   },
   {
     question:
-      "How secure are payment buttons for processing customer transactions?",
+      "Can I accept international payments with the EnKash payment button?",
     answer: [
       {
-        heading:
-          "Payment buttons are designed to be secure and use encryption and security protocols to protect customer data.",
+        heading: "Yes, EnKash payment buttons support international payments.",
       },
     ],
   },
   {
-    question: "Can businesses set up offers on their payment button?",
+    question: "Can I customize the payment button?",
     answer: [
       {
         heading:
-          "Businesses can set up offers on the payment button which can be availed by the user during checkout.",
+          "Yes, you can customize the appearance of the payment button to match your brand's style. You can choose colors, and fonts, and even add your logo.",
+      },
+    ],
+  },
+  {
+    question: "Is EnKash payment button secure?",
+    answer: [
+      {
+        heading:
+          "Absolutely! EnKash employs industry-leading security measures, including PCI DSS compliance and advanced fraud prevention technologies, to ensure the safety of your customers.",
+      },
+    ],
+  },
+  {
+    question: "What is the cost of the payment button?",
+    answer: [
+      {
+        heading:
+          "EnKash believes in transparent pricing. Talk to our experts to get more details.",
+      },
+    ],
+  },
+  {
+    question: "What sort of customer support is available?",
+    answer: [
+      {
+        heading:
+          "EnKash payment buttons are the easiest to integrate - without any assistance.",
+      },
+      {
+        heading:
+          "However, we provide excellent customer support through various channels, including email, chat, and phone. Our team is always ready to assist you with any questions or issues.",
+      },
+      {
+        heading: "Connect with our team at support@enkash.com.",
       },
     ],
   },

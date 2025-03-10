@@ -23,10 +23,10 @@
     box-shadow: 4px 8px 31px rgba(0, 0, 0, 0.0901960784);
     border-radius: 15px;
     background-color: $color-white;
-    padding: 10px 30px 10px 30px;
+    padding: 30px;
 
     @include for-laptops {
-      padding: 30px 100px 30px 100px;
+      padding: 50px 100px 50px 100px;
     }
   }
 

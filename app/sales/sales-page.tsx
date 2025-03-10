@@ -57,7 +57,7 @@ type Product = {
 // Define our data
 const categoryData: Category[] = [
   {
-    name: "Payables",
+    name: "Make Payment",
     products: [
       { name: "Vendor Payment", icon: vendorPaymentFilled },
       { name: "Utility Payment", icon: billPaymentsFilled },
@@ -67,7 +67,7 @@ const categoryData: Category[] = [
     ],
   },
   {
-    name: "Receivables",
+    name: "Collect Payment",
     products: [
       { name: "Payment Gateway", icon: paymentGatewayFilled },
       { name: "Payment Links", icon: paymentLinksFilled },
@@ -82,7 +82,7 @@ const categoryData: Category[] = [
     ],
   },
   {
-    name: "Corporate Cards",
+    name: "Cards",
     products: [
       { name: "Corporate Credit Card", icon: corporateCreditCardFilled },
       { name: "Prepaid Card", icon: prepaidCardFilled },
@@ -97,11 +97,11 @@ const categoryData: Category[] = [
     ],
   },
   {
-    name: "Expense Management",
+    name: "Expenses",
     products: [],
   },
   {
-    name: "Loyalty Lounge",
+    name: "Rewards",
     products: [
       { name: "Gift Card", icon: giftCardFilled },
       { name: "Brand Vouchers", icon: brandVouchersFilled },
@@ -118,10 +118,9 @@ const SalesPage = () => {
   const [companyEmail, setCompanyEmail] = useState("");
   const [companyWebsite, setCompanyWebsite] = useState("");
   const [mobileNumber, setMobileNumber] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Payables");
-  const [selectedProduct, setSelectedProduct] = useState("none");
-  const [selectedAdditionalProduct, setSelectedAdditionalProduct] =
-    useState("");
+  const [showProducts, setShowProducts] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState<string[]>([]);
   const [description, setDescription] = useState("");
   const [isFormValid, setIsFormValid] = useState(true);
   const [interestedPG, setInterestedPG] = useState(false);
@@ -133,7 +132,7 @@ const SalesPage = () => {
 
   //reset the product everytime category is changed
   useEffect(() => {
-    setSelectedProduct("none");
+    setSelectedProduct([]);
   }, [selectedCategory]);
 
   useEffect(() => {
@@ -164,7 +163,7 @@ const SalesPage = () => {
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
       isValidWebsite(companyWebsite) &&
-      (selectedProduct !== "none" || isExistingCustomer)
+      (selectedProduct.length || isExistingCustomer)
     ) {
       setIsFormValid(true);
       sendEmailToEnkash();
@@ -198,6 +197,22 @@ const SalesPage = () => {
     return string && string.startsWith("olympus");
   }
 
+  function productSelected(product: string) {
+    if (selectedProduct.includes(product)) {
+      setSelectedProduct(selectedProduct.filter((item) => item !== product));
+    } else {
+      setSelectedProduct([...selectedProduct, product]);
+    }
+  }
+
+  function categorySelected(category: string) {
+    if (selectedCategory === category) {
+      setSelectedCategory("");
+    } else {
+      setSelectedCategory(category);
+    }
+  }
+
   //Email Send to EmailJs
   function sendEmailToEnkash() {
     setIsDisabled(true);
@@ -225,7 +240,7 @@ const SalesPage = () => {
 
     if (isExistingCustomer) {
       templateParams.products = "Existing Customers";
-      templateParams.additional_products = "";
+      templateParams.additional_products = [];
     }
 
     emailjs
@@ -391,100 +406,132 @@ const SalesPage = () => {
             <div>
               {!isExistingCustomer && (
                 <div className="d-flex flex-column w-100 mt-4">
-                  <Heading
-                    title="Primary product you are interested in:"
-                    size="h6"
-                    color="black"
-                    weight="5"
-                  />
-                  <div className="d-flex flex-column w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
-                    <div className="d-md-flex gap-2 mb-4 mt-2 flex-wrap">
-                      {categoryData.map((category, index) => (
-                        <div className="d-flex flex-column my-2 my-md-0">
-                          <div
-                            key={index}
-                            className={` py-2 rounded ${
-                              selectedCategory === category.name
-                                ? styles.activeButton
-                                : ""
-                            } ${styles.categoryButton}`}
-                            onClick={() => setSelectedCategory(category.name)}
-                          >
-                            <div className="w-100 d-flex justify-content-center">
-                              {category.name}
-                            </div>
-
-                            {category.name !== "Expense Management" && (
-                              <div>
-                                <Image
-                                  src={blueArrow}
-                                  alt="down-arrow"
-                                  className={styles.blue_down_arrow}
-                                />
-                              </div>
-                            )}
-                          </div>
-                          <div className="d-block d-md-none">
-                            {selectedCategory == category.name && (
-                              <div className="d-flex flex-column justofy-content-center d-md-none flex-wrap gap-2 mt-2">
-                                {categoryData
-                                  .find(
-                                    (category) =>
-                                      category.name === selectedCategory
-                                  )
-                                  ?.products.map((product, index) => (
-                                    <div
-                                      key={index}
-                                      className={`flex items-center justify-between py-2 rounded ${
-                                        selectedProduct === product.name
-                                          ? styles.activeButton
-                                          : ""
-                                      } ${styles.product_button} ${
-                                        styles.product_button_mobile
-                                      }`}
-                                      onClick={() =>
-                                        setSelectedProduct(product.name)
-                                      }
-                                    >
-                                      <div className={styles.product_icon}>
-                                        <Image
-                                          src={product.icon}
-                                          alt={product.name}
-                                        />
-                                      </div>
-                                      <span>{product.name}</span>
-                                    </div>
-                                  ))}
-                              </div>
-                            )}
-                          </div>
+                  <div className="d-flex gap-2">
+                    <div className="pt-3">
+                      <Heading
+                        title="What are you looking for:"
+                        size="h6"
+                        color="black"
+                        weight="5"
+                      />
+                    </div>
+                    <div className="d-md-flex mb-2 mt-2">
+                      <div
+                        className={` py-2 rounded  ${styles.categoryButton}`}
+                        onClick={() => setShowProducts(!showProducts)}
+                      >
+                        <div className="w-100 d-flex justify-content-center">
+                          Select from below
                         </div>
-                      ))}
+                        <div>
+                          <Image
+                            src={blueArrow}
+                            alt="down-arrow"
+                            className={styles.blue_down_arrow}
+                          />
+                        </div>
+                      </div>
                     </div>
-                    <div className="d-none d-md-flex flex-wrap gap-2 mt-2">
-                      {categoryData
-                        .find((category) => category.name === selectedCategory)
-                        ?.products.map((product, index) => (
-                          <div
-                            key={index}
-                            className={`flex items-center justify-between py-2 rounded ${
-                              selectedProduct === product.name
-                                ? styles.activeButton
-                                : ""
-                            } ${styles.product_button}`}
-                            onClick={() => setSelectedProduct(product.name)}
-                          >
-                            <div className={styles.product_icon}>
-                              <Image src={product.icon} alt={product.name} />
-                            </div>
+                  </div>
+                  <div className="d-flex flex-column w-40 ms-md-3 justify-content-start mt-2 mt-m-0">
+                    {showProducts && (
+                      <div>
+                        <div className="d-md-flex gap-2 mb-4 mt-2 flex-wrap">
+                          {categoryData.map((category, index) => (
+                            <div className="d-flex flex-column my-2 my-md-0">
+                              <div
+                                key={index}
+                                className={` py-2 rounded ${
+                                  selectedCategory === category.name
+                                    ? styles.activeButton
+                                    : ""
+                                } ${styles.categoryButton}`}
+                                onClick={() => categorySelected(category.name)}
+                              >
+                                <div className="w-100 d-flex justify-content-center">
+                                  {category.name}
+                                </div>
 
-                            <span>{product.name}</span>
-                          </div>
-                        ))}
-                    </div>
+                                {category.name !== "Expenses" && (
+                                  <div>
+                                    <Image
+                                      src={blueArrow}
+                                      alt="down-arrow"
+                                      className={styles.blue_down_arrow}
+                                    />
+                                  </div>
+                                )}
+                              </div>
+                              <div className="d-block d-md-none">
+                                {selectedCategory == category.name && (
+                                  <div className="d-flex flex-column justofy-content-center d-md-none flex-wrap gap-2 mt-2">
+                                    {categoryData
+                                      .find(
+                                        (category) =>
+                                          category.name === selectedCategory
+                                      )
+                                      ?.products.map((product, index) => (
+                                        <div
+                                          key={index}
+                                          className={`flex items-center justify-between py-2 rounded ${
+                                            selectedProduct.includes(
+                                              product.name
+                                            )
+                                              ? styles.activeButton
+                                              : ""
+                                          } ${styles.product_button} ${
+                                            styles.product_button_mobile
+                                          }`}
+                                          onClick={() =>
+                                            productSelected(product.name)
+                                          }
+                                        >
+                                          <div className={styles.product_icon}>
+                                            <Image
+                                              src={product.icon}
+                                              alt={product.name}
+                                            />
+                                          </div>
+                                          <span>{product.name}</span>
+                                        </div>
+                                      ))}
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="d-none d-md-flex flex-wrap gap-2 mt-2">
+                          {categoryData
+                            .find(
+                              (category) => category.name === selectedCategory
+                            )
+                            ?.products.map((product, index) => (
+                              <div
+                                key={index}
+                                className={`flex items-center justify-between py-2 rounded ${
+                                  selectedProduct.includes(product.name)
+                                    ? styles.activeButton
+                                    : ""
+                                } ${styles.product_button}`}
+                                onClick={() => productSelected(product.name)}
+                              >
+                                <div className={styles.product_icon}>
+                                  <Image
+                                    src={product.icon}
+                                    alt={product.name}
+                                  />
+                                </div>
+
+                                <span>{product.name}</span>
+                              </div>
+                            ))}
+                        </div>
+                      </div>
+                    )}
                     {!isFormValid &&
                       !isExistingCustomer &&
-                      selectedProduct === "none" && (
+                      selectedProduct.length === 0 && (
                         <span className={`${styles.danger} text-danger mt-2`}>
                           Please select a product
                         </span>
@@ -515,7 +562,7 @@ const SalesPage = () => {
 
             {/* Seventh Row (Submit Button) */}
             <div
-              className="d-flex align-items-center w-100 mt-4"
+              className="d-flex align-items-center w-100 mt-4 justify-content-center justify-content-md-start"
               onClick={handleSubmit}
             >
               <PrimaryButton

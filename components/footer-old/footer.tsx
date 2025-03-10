@@ -69,7 +69,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                     </li> */}
                     <li className="d-flex">
                       <Link href="/olympus/receivables/payment-gateway">
-                        Olympus PG
+                        EnKash PG
                       </Link>
                       {/* <div className={'my-auto '}> NEW</div> */}
                     </li>

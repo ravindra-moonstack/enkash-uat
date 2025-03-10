@@ -37,8 +37,8 @@ const FooterV2 = ({ utmSource = "" }: any) => {
       </div> */}
 
       <div className={`row ${styles.footer_padding}`}>
-        <div className="col-12 mb-4">
-          <h2 className="color-white mb-4">
+        <div className="col-12 mb-4 d-flex flex-column align-items-center align-items-md-start">
+          <h2 className="color-white mb-4 text-center text-md-start">
             Spend Smart. Collect Fast. <br />
             <span className="color-equity-blue">Grow More.</span>
           </h2>
@@ -69,7 +69,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     </li> */}
                   <li className="d-flex">
                     <Link href="/olympus/receivables/payment-gateway">
-                      Olympus PG
+                      EnKash PG
                     </Link>
                     {/* <div className={'my-auto '}> NEW</div> */}
                   </li>

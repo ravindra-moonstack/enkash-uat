@@ -43,7 +43,7 @@ const ReceivableProducts = [
     },
     list: [
       {
-        name: "Olympus PG",
+        name: "EnKash PG",
         description: "Collect payments with the safest payment gateway",
         imageSrc: paymentGateway,
         imageSrcHovered: paymentGatewayFilled,

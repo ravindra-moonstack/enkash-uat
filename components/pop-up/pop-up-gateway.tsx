@@ -117,7 +117,7 @@ const PopUpPaymentGateway = () => {
                   }}
                 >
                   <PrimaryButton
-                    title="Switch to Olympus PG today"
+                    title="Switch to EnKash PG today"
                     theme="blue"
                     url="/sales?source=interested-payment-gateway"
                   />
