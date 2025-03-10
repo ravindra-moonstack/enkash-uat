@@ -6,26 +6,27 @@ import iconFour from "./img/icon-four.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Create a static or dynamic QR code instantly",
-    title: "Create a static or dynamic QR code instantly",
+    alt: "Generate QR Code: Use EnKash dashboard or API to create a QR code for your business",
+    title:
+      "Generate QR Code: Use EnKash dashboard or API to create a QR code for your business",
   },
   {
     image: iconTwo,
-    alt: "Customers scan the QR code using the QR code scanner on mobile payment apps",
+    alt: "Display and Share: Print it for your storefront, share it digitally, or include it on invoices.",
     title:
-      "Customers scan the QR code using the QR code scanner on mobile payment apps",
+      "Display and Share: Print it for your storefront, share it digitally, or include it on invoices.",
   },
   {
     image: iconThree,
-    alt: "Receive real-time payment confirmation and update on your EnKash account",
+    alt: "Accept Payments: Customers scan the code using their preferred UPI app or wallet.",
     title:
-      "Receive real-time payment confirmation and update on your EnKash account",
+      "Accept Payments: Customers scan the code using their preferred UPI app or wallet.",
   },
   {
     image: iconFour,
-    alt: "Transactions are automatically reconciled, providing accurate financial reports",
+    alt: "Track and Reconcile: Automatically match payments with orders and generate detailed reports.",
     title:
-      "Transactions are automatically reconciled, providing accurate financial reports",
+      "Track and Reconcile: Automatically match payments with orders and generate detailed reports.",
   },
 ];
 
