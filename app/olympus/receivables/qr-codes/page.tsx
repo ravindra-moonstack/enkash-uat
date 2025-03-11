@@ -23,6 +23,7 @@ import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
 
@@ -47,14 +48,6 @@ const QRCodes = (): React.JSX.Element => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <div>
               <Heading
                 title="QR Codes"
@@ -167,7 +160,7 @@ const QRCodes = (): React.JSX.Element => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="QR Codes for Fixed and Dynamic Amounts"
+              whiteTitle="Dynamic QR Codes"
               description="Generate fixed-amount QR codes for specific transactions or dynamic codes for flexible payments. Perfect for recurring billing or varied purchases, our solution adapts to your business needs, ensuring convenience for you and your customers."
               source="qr-codes"
             />
@@ -203,19 +196,19 @@ const QRCodes = (): React.JSX.Element => {
               <div className="text-center">
                 <div className="text-center d-flex justify-content-center">
                   <Heading
-                    title={`Leverage`}
+                    title={`Accepting Payments via`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title={`${space}QR Code integration${space}`}
+                    title={`${space}QR Codes${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="for your business"
+                    title="was Never This Easy"
                     color="white"
                     size="h1"
                     weight="6"
@@ -231,7 +224,11 @@ const QRCodes = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.second_row}  bg-white `}>
-        <AllProducts />
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div

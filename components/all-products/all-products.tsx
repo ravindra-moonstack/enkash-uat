@@ -77,29 +77,46 @@ const cardData = [
   },
 ];
 
-const AllProducts = () => {
+export type AllProductsDataProp = {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+};
+
+export type AllProductsProp = {
+  title?: string;
+  subtitle?: string;
+  data?: Array<AllProductsDataProp>;
+};
+
+const AllProducts = ({
+  title = "Check out our other payment products at",
+  subtitle,
+  data = cardData,
+}: AllProductsProp): React.JSX.Element => {
+  //
+
   return (
     <div>
       <div className={`${styles.integration_row} row mt-5 pt-5`}>
         <div
           className={`d-inline text-center pt-5 mb-5 mb-md-2 px-3 px-md-5 ${styles.title_container}`}
         >
-          <Heading
-            title="Check out our other payment products at"
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}EnKash`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
+          <Heading title={title} color="black" size="h1" weight="6" />
+          {subtitle && (
+            <Heading
+              title={`${space}${subtitle}`}
+              color="equity-blue"
+              size="h1"
+              weight="6"
+            />
+          )}
         </div>
+
         <div className={`${styles.container}`}>
           <Marquee speed={70} pauseOnClick={true}>
-            {cardData.map((card, index) => (
+            {data?.map((card, index) => (
               <div
                 key={index}
                 className={`${styles.card} col-md-4 ${

@@ -1,16 +1,20 @@
 "use client";
-
 import React, { useState } from "react";
 import styles from "./how-does-carousel.module.scss";
 import Heading from "../heading/heading";
 import Image from "next/image";
 import { blueArrowBackward, blueArrowForward, laptop } from ".";
 
-interface CarouselData {
+export interface CarouselData {
   titleContent: any;
   mainTitle: string;
   carouselBg: any;
-  carouselData: any;
+  carouselData: {
+    heading?: string;
+    title: string;
+    alt: string;
+    image: string;
+  }[];
 }
 
 const HowDoesCarousel = ({
@@ -85,6 +89,15 @@ const HowDoesCarousel = ({
               className="mb-2"
             />
             <div className="mt-3">
+              {carouselData[count - 1]?.heading && (
+                <Heading
+                  title={carouselData[count - 1].heading ?? ""}
+                  color="rainy-blue"
+                  size="h4"
+                  weight="6"
+                />
+              )}
+
               <Heading
                 title={carouselData[count - 1].title}
                 color="white"

@@ -111,11 +111,11 @@ const bulkCollect = () => {
             steps={[
               {
                 icon: userPlus,
-                text: "Fast",
+                text: "Instant",
               },
               {
                 icon: stack,
-                text: "Economical",
+                text: "Smart",
               },
               {
                 icon: numberOne,
@@ -152,7 +152,7 @@ const bulkCollect = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Bulk Invoice Dispatch"
+              whiteTitle="Bulk Invoice Distribution"
               description="Send multiple invoices in one click, reduce errors, and ensure accurate details. Simplify workflows and accelerate cash flow with this smart, efficient invoicing solution."
               source="receivables"
             />
@@ -224,7 +224,7 @@ const bulkCollect = () => {
       </div>
 
       <div className={`${styles.second_row}  bg-white `}>
-        <AllProducts />
+        <AllProducts title="Check Out EnKash’s Other Payment Products and Solutions" />
       </div>
 
       <div

@@ -186,7 +186,7 @@ const page = () => {
       </div>
 
       <div className={`${styles.second_row}  bg-white `}>
-        <AllProducts />
+        <AllProducts subtitle="EnKash" />
       </div>
 
       {/* <div className={`${styles.third_row} row d-flex bg-white row-padding`}>
