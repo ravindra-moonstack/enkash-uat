@@ -22,7 +22,9 @@ import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
-
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 export const metadata: Metadata = generateMetaData({
   title: "Auto Payment Collection Platform | What is Auto Collect  - EnKash",
   description:
@@ -33,25 +35,21 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const AutoCollect = () => {
+const AutoCollect = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/olympus/receivables/auto-collect/`}
         faqData={faqData}
       />
+
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <div>
               <Heading
                 title="Auto Collect"
@@ -64,19 +62,19 @@ const AutoCollect = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Get paid faster${space}`}
+              title={`Automatic Payment Collection${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`and boost cash flow${space}`}
+              title={`Simplified with EnKash${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="with auto collect"
+              title="Auto Collect"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -85,7 +83,7 @@ const AutoCollect = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Effortlessly collect payments through diverse channels like NEFT, IMPS, and RTGS, leveraging auto collect for real-time reconciliation via dedicated customer virtual accounts"
+              title="Automate reconciliation for all incoming NEFT, RTGS, IMPS, and UPI payments using EnKash Customer Identifiers and Virtual UPI IDs. Receive real-time alerts and enjoy seamless multi-bank support."
               size="h6"
               weight="5"
             />
@@ -93,16 +91,8 @@ const AutoCollect = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=receivables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=receivables"
               />
             </div>
@@ -114,61 +104,41 @@ const AutoCollect = () => {
           </div>
         </div>
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            steps={[
+              {
+                icon: userPlus,
+                text: "Fast",
+              },
+              {
+                icon: stack,
+                text: "Economical",
+              },
+              {
+                icon: numberOne,
+                text: "Secure",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Reconciliation ", "Process"],
-              oldWayDescription:
-                "Reconciliation was a labor-intensive process that involved manually matching incoming payments with invoices/records. ",
-              newWayDescription:
-                "With EnKash, enjoy instant reconciliation capabilities, ensuring that incoming payments are automatically matched with invoices.",
-            },
-            {
-              itemArray: ["Payment ", "Settlements"],
-              oldWayDescription:
-                "Slow payment settlements hindered cash flow, causing operational challenges. And the inability to settle on holidays or weekends also added to the delays.",
-              newWayDescription:
-                "EnKash enables 365-day payment settlements, meaning you can access funds at your convenience, even on bank holidays, giving flexibility to better manage your cash flow and operational needs.",
-            },
-            {
-              itemArray: ["Multi-Branch ", "Management"],
-              oldWayDescription:
-                "Difficult to manage multiple branches/departments as there was no way to track transactions for individual units effectively.	",
-              newWayDescription:
-                "Tailored for businesses with multiple branches or franchises, EnKash auto collect offers centralized control with individualized tracking for each unit.",
-            },
-            {
-              itemArray: ["Notification ", "and Alerts"],
-              oldWayDescription:
-                "With the old way, businesses had to rely on manual checks to stay informed about successful payments.",
-              newWayDescription:
-                "With EnKash, get real-time alerts through webhooks and dashboards. So that you can get immediate notification of successful payments, enabling you to stay on top of your financial transactions effortlessly.",
-            },
-          ]}
-        />
-      </div>
+      <div
+        className={`${styles.second_row} row d-flex bg-white row-padding`}
+      ></div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center pb-2">
+          <Heading title="Best Automatic" color="black" size="h1" weight="6" />
           <Heading
-            title="Business auto collections made"
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}easy and efficient`}
+            title={`${space}Payment Collection Solution${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
+          <Heading title="for Businesses" color="black" size="h1" weight="6" />
         </div>
 
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
@@ -222,16 +192,22 @@ const AutoCollect = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex flex-column">
+                <div className="d-inline text-center">
                   <Heading
-                    title={`Easily speed up your ${space}`}
+                    title={`How EnKash${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="collection efforts with auto collect"
+                    title="Auto Collect"
                     color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title={`${space}Works`}
+                    color="white"
                     size="h1"
                     weight="6"
                   />
@@ -244,12 +220,14 @@ const AutoCollect = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how Auto Collect can revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -266,6 +244,13 @@ const AutoCollect = () => {
 
         <div>
           <FAQHtml faqData={faqData} />
+        </div>
+
+        <div className={`${styles.second_row}  bg-white `}>
+          <AllProducts
+            title="Check Out EnKash’s Other Payment Products and Solutions"
+            data={productData}
+          />
         </div>
 
         <div className={styles.faq_bg}>

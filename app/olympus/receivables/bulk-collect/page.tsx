@@ -127,7 +127,7 @@ const bulkCollect = () => {
       </div>
 
       <div
-        className={`${styles.second_row} row d-flex bg-white row-padding`}
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
       ></div>
 
       <div

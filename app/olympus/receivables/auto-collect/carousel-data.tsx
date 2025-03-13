@@ -1,25 +1,29 @@
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
+import { CarouselData } from "@/components/carousel/how-does-carousel";
 
-const carouselData = [
+const carouselData: CarouselData["carouselData"] = [
   {
     image: iconOne,
-    alt: "Generate unique virtual payment addresses for each customer, branch, or department, effortlessly",
+    alt: "Instantly set up unique virtual payment addresses for each customer, branch, or department.",
     title:
-      "Generate unique virtual payment addresses for each customer, branch, or department, effortlessly",
+      "Instantly set up unique virtual payment addresses for each customer, branch, or department.",
+    heading: "Virtual Account Creation: ",
   },
   {
     image: iconTwo,
     alt: "Receive payments via NEFT, RTGS, IMPS, or other channels directly to your virtual bank accounts",
     title:
       "Receive payments via NEFT, RTGS, IMPS, or other channels directly to your virtual bank accounts",
+    heading: "Collect Payment: ",
   },
   {
     image: iconThree,
-    alt: "Stay informed with real-time alerts and centralized dashboards, enabling seamless reconciliation and transparency",
+    alt: "Real-time alerts and centralized dashboards, for smooth reconciliation and transparency.",
     title:
-      "Stay informed with real-time alerts and centralized dashboards, enabling seamless reconciliation and transparency",
+      "Real-time alerts and centralized dashboards, for smooth reconciliation and transparency.",
+    heading: "Stay Informed: ",
   },
 ];
 

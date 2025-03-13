@@ -47,6 +47,14 @@
       height: 74px;
     }
   }
+  .action_image {
+    width: 35px;
+    height: 37px;
+    @include for-laptops {
+      width: 71px;
+      height: 74px;
+    }
+  }
 }
 
 .custom_step {

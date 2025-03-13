@@ -22,6 +22,10 @@ import Footer from "@/components/footer/footer";
 import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import BlogWrapper from "@/components/blog/blog-wrapper";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -47,7 +51,7 @@ const page = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Payment Button`}
+                title={`Payment Buttons`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
@@ -100,45 +104,43 @@ const page = () => {
           </div>
         </div>
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="The Best Payment Button for Businesses"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Fast",
+              },
+              {
+                icon: stack,
+                text: "Customizable",
+              },
+              {
+                icon: numberOne,
+                text: "Secure",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      {/* <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Manual Payment", "Processing"],
-              oldWayDescription:
-                "The absence of payment buttons makes businesses rely on manual payment processing like bank transfers or cheques.",
-              newWayDescription:
-                "Businesses can easily add a payment button on their website and collect payments easily.",
-            },
-            {
-              itemArray: ["Customer", "Experience"],
-              oldWayDescription:
-                "Traditional businesses fail to provide a smooth customer experience without a payment button.",
-              newWayDescription:
-                "Payment buttons provide a seamless checkout for customers enhancing their experience.",
-            },
-            {
-              itemArray: ["Data", "Management"],
-              oldWayDescription:
-                "Data management is hindered without payment buttons as there is no transaction tracking and automated record-keeping which is essential for financial operations.",
-              newWayDescription:
-                "Payment buttons are integrated with payment processors which help streamline data facilitating efficient record keeping.",
-            },
-          ]}
-        />
-      </div> */}
+      <div
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
+      ></div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title={`A Click is All it Takes`}
+            title={`Convenient business transactions with `}
             color="black"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title="enhanced customer experience "
+            color="rainy-blue"
             size="h1"
             weight="6"
           />
@@ -195,38 +197,35 @@ const page = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex flex-column">
-                  <Heading
-                    title="Facilitate collections with a secure"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-
-                  <Heading
-                    title="payment button for your business "
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
+                <Heading
+                  title="Facilitate collections with a secure"
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
+                <Heading
+                  title="payment button for your business "
+                  color="rainy-blue"
+                  size="h1"
+                  weight="6"
+                />
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="How to Make a Payment Button?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how virtual accounts can revolutionize the way you work!"
         />
-      </div> */}
-      <div
-        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
-      >
+      </div>
+
+      <div className={`${styles.fifth_row} row row-padding-x-only bg-white`}>
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
@@ -245,6 +244,14 @@ const page = () => {
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.sixth_row} row`}>

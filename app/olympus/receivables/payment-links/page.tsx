@@ -10,7 +10,6 @@ import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import BlogWrapper from "@/components/blog/blog-wrapper";
@@ -22,6 +21,9 @@ import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -34,25 +36,27 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const paymentLinks = () => {
+const PaymentLinks = () => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/olympus/receivables/payment-links/`}
         faqData={faqData}
       />
+
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Payment Links`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
+            <Heading
+              title={`Payment Links`}
+              color="rainy-blue"
+              size="h4"
+              weight="7"
+            />
           </div>
 
           <div className="">
@@ -97,76 +101,54 @@ const paymentLinks = () => {
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Simplify Payments, Amplify Business"
+            steps={[
+              {
+                icon: userPlus,
+                text: "100+ Payment Options",
+              },
+              {
+                icon: stack,
+                text: "Instant Activation",
+              },
+              {
+                icon: numberOne,
+                text: "Real-time Monitoring",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      {/* <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Payment", "Process"],
-              oldWayDescription:
-                "Without a payment link, customers had to manually enter transaction details to make a payment, which is prone to errors and delays.",
-              newWayDescription:
-                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment.",
-            },
-            {
-              itemArray: ["Security"],
-              oldWayDescription:
-                "Traditional methods lack the secure framework needed for payments; increasing the risk of data breaches.",
-              newWayDescription:
-                "Payment links offer more security than traditional payment methods. Our payment links use encryption and other security measures to protect payment information.",
-            },
-            {
-              itemArray: ["Payment", "Tracking"],
-              oldWayDescription:
-                "Manually tracking customer payments is time-consuming.",
-              newWayDescription:
-                "Payment links from EnKash provide businesses with better tracking and record-keeping capabilities.",
-            },
-            {
-              itemArray: ["Customer", "Experience"],
-              oldWayDescription:
-                "Incessantly following up with customers to make payments without providing them an easy way to do so can cause friction between the customer and your business.",
-              newWayDescription:
-                "Payment links improve the overall customer experience by bringing in convenience. This helps businesses build stronger customer relationships, and improve DSO.",
-            },
-            {
-              itemArray: ["Cash Flow", "Optimization"],
-              oldWayDescription:
-                "Traditional banking methods require much processing time, hindering your business’s cash flow even if the payment is made on time.",
-              newWayDescription:
-                "Payment links can help businesses improve their cash flow by reducing the time it takes to receive payments.",
-            },
-          ]}
-        />
-      </div> */}
+      <div
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
+      ></div>
 
       <div
-        className={`${styles.third}  row d-flex bg-white row-padding-x-only`}
+        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex flex-column align-items-center my-5">
-          <div className="text-center">
-            <Heading
-              title={`Get Paid with a${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title="Single Link"
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-          </div>
+        <div className="d-inline text-center mb-5">
+          <Heading
+            title={`Get Paid with a${space}`}
+            color="black"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title="Single Link"
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
         </div>
 
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
@@ -213,17 +195,14 @@ const paymentLinks = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div>
-                  <Heading
-                    title="Improve your business’s cash flow with"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
-
                 <Heading
-                  title="payment links"
+                  title="How to Create "
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />{" "}
+                <Heading
+                  title={`${space}Payment Link${space}`}
                   color="rainy-blue"
                   size="h1"
                   weight="6"
@@ -231,17 +210,19 @@ const paymentLinks = () => {
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="HOW IT WORKS"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how payment links can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -265,6 +246,13 @@ const paymentLinks = () => {
         </div>
       </div>
 
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
+      </div>
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of payment links?"
@@ -272,6 +260,7 @@ const paymentLinks = () => {
           source="receivables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -329,9 +318,10 @@ const paymentLinks = () => {
           }
         />
       </div>
+
       <Footer utmSource="receivables" />
     </div>
   );
 };
 
-export default paymentLinks;
+export default PaymentLinks;

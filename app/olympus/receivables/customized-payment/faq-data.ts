@@ -1,5 +1,14 @@
 const faqData = [
   {
+    question: "What is a Payment Page?",
+    answer: [
+      {
+        heading:
+          "A payment page is a hosted page where businesses can securely collect payments online without technical integration.",
+      },
+    ],
+  },
+  {
     question: "How do payment pages work?",
     answer: [
       {
@@ -27,6 +36,15 @@ const faqData = [
     ],
   },
   {
+    question: "What payment methods are supported?",
+    answer: [
+      {
+        heading:
+          "EnKash supports UPI, net banking, credit/debit cards, and wallet payment methods.",
+      },
+    ],
+  },
+  {
     question: "Are payment pages secure?",
     answer: [
       {
@@ -36,11 +54,11 @@ const faqData = [
     ],
   },
   {
-    question: "How can I send automated payment receipts?",
+    question: "Can I get automated payment receipts?",
     answer: [
       {
         heading:
-          "As you start using the payment page, automated payment receipts will be set by default and sent to customers.",
+          "Yes. As you start using the payment page, automated payment receipts will be set by default and sent to customers.",
       },
     ],
   },

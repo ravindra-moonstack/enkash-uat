@@ -45,6 +45,7 @@ const QRCodes = (): React.JSX.Element => {
         faqData={faqData}
       />
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -128,7 +129,7 @@ const QRCodes = (): React.JSX.Element => {
       </div>
 
       <div
-        className={`${styles.second_row} row d-flex bg-white row-padding`}
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
       ></div>
 
       <div
@@ -194,26 +195,24 @@ const QRCodes = (): React.JSX.Element => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex justify-content-center">
-                  <Heading
-                    title={`Accepting Payments via`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title={`${space}QR Codes${space}`}
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title="was Never This Easy"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
+                <Heading
+                  title={`Accepting Payments via`}
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
+                <Heading
+                  title={`${space}QR Codes${space}`}
+                  color="rainy-blue"
+                  size="h1"
+                  weight="6"
+                />
+                <Heading
+                  title="was Never This Easy"
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
               </div>
             </>
           }
@@ -223,7 +222,7 @@ const QRCodes = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.second_row}  bg-white `}>
+      <div className={`${styles.second_row}  bg-white`}>
         <AllProducts
           title="Check out other payment products at"
           subtitle="EnKash"
@@ -261,6 +260,7 @@ const QRCodes = (): React.JSX.Element => {
           source="receivables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore the comprehensive guide"
@@ -323,6 +323,7 @@ const QRCodes = (): React.JSX.Element => {
           }
         />
       </div>
+
       <Footer utmSource="receivables" />
     </div>
   );

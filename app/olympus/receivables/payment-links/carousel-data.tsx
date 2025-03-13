@@ -7,33 +7,23 @@ import iconFive from "./img/icon-five.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Embed payment links into digital invoices",
+    alt: "Use the EnKash dashboard or APIs to generate payment links with ease.",
     title:
-      "Embed payment links into digital invoices so that customers can conveniently pay their due amount whenever required",
+      "Use the EnKash dashboard or APIs to generate payment links with ease.",
+    heading: "Generate Payment Link: ",
   },
   {
     image: iconTwo,
-    alt: "Integrated payment links are easier to track",
-    title:
-      "Integrated payment links are easier to track, and provide multiple payment options for the user to choose from to make their payment",
+    alt: "Send the links via SMS, email, WhatsApp, or social media.",
+    title: "Send the links via SMS, email, WhatsApp, or social media.",
+    heading: "Share Payment Link: ",
   },
   {
     image: iconThree,
-    alt: "Our payment links use secure encryption to protect sensitive payment",
+    alt: "Customers pay using their preferred payment method, and you get notified instantly.",
     title:
-      "Our payment links use secure encryption to protect sensitive payment information. This reduces the risk of fraud and helps protect both the payer and the payee",
-  },
-  {
-    image: iconFour,
-    alt: "Payment links enable businesses to receive payments faster",
-    title:
-      "Payment links enable businesses to receive payments faster, making initiating payments easier for their customers. This helps improve the business’ cash flow",
-  },
-  {
-    image: iconFive,
-    alt: "Payment links also reduce the need for manual invoicing",
-    title:
-      "Payment links also reduce the need for manual invoicing and follow-up, saving time and money",
+      "Customers pay using their preferred payment method, and you get notified instantly.",
+    heading: "Get Paid: ",
   },
 ];
 

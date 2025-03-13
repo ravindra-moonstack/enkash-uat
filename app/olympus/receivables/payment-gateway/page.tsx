@@ -9,6 +9,7 @@ import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import {
   bannerLottie,
+  caraouselBg,
   faqBg,
   stepOne,
   stepThree,
@@ -30,6 +31,8 @@ import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import AllProducts from "@/components/all-products/all-products";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import BlogWrapper from "@/components/blog/blog-wrapper";
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Payment Gateway in India : Manage your Payments Online - EnKash",
@@ -149,7 +152,7 @@ const page = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="All Payment Methods"
+              whiteTitle="Accept Payment Methods"
               description="Provide your customers with the freedom to choose from a variety of payment methods: <span>Credit and Debit Cards</span> for domestic and international transactions, <span>UPI</span> for instant payments, <span>Net Banking</span> with 50+ major banks, <span>Digital Wallets</span> for quick checkouts, and flexible options like <span>EMI and PayLater</span>."
               source="receivables"
             />
@@ -185,57 +188,17 @@ const page = () => {
         </div>
       </div>
 
-      <div className={`${styles.second_row}  bg-white `}>
-        <AllProducts subtitle="EnKash" />
-      </div>
-
-      {/* <div className={`${styles.third_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Payment", "Methods"],
-              oldWayDescription:
-                "Businesses rely on traditional payment methods like cash, cheques, and direct bank transfers.",
-              newWayDescription:
-                "With EnKash, businesses can integrate a payment gateway onto their websites  and make digital payments.",
-            },
-            {
-              itemArray: ["Limitations"],
-              oldWayDescription:
-                "The traditional payment methods had their limitations in storing and losing them while transporting. Moreover, bank transfers involve delays hampering businesses.",
-              newWayDescription:
-                "Payment gateway enables instant payments in real-time without storing any information offline.",
-            },
-            {
-              itemArray: ["Security"],
-              oldWayDescription:
-                "Be it cash, cheque, or bank transfers, security is at risk for businesses that include traditional ways of payment.",
-              newWayDescription:
-                "Olympus payment gateway is secure.  It enables payments by encrypting information ensuring it is secure from any violation.",
-            },
-          ]}
-        />
-      </div> */}
-
-      {/* <div className={`${styles.fourth_row} row mt-5`}>
+      <div className={`${styles.fourth_row} row`}>
         <HowDoesCarousel
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex flex-column">
-                  <Heading
-                    title={`Seamless integration with${space}`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title="enhanced security & customer experience"
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
+                <Heading
+                  title="Seamless Integration With Enhanced Security & Customer Experience "
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
               </div>
             </>
           }
@@ -243,13 +206,8 @@ const page = () => {
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
-      </div> */}
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
-        <BlogWrapper
-          blogData={blogData}
-          title="Learn how virtual accounts can revolutionize the way you work!"
-        />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -273,6 +231,16 @@ const page = () => {
         </div>
       </div>
 
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts subtitle="EnKash" />
+      </div>
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how virtual accounts can revolutionize the way you work!"
+        />
+      </div>
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of payment gateway?"

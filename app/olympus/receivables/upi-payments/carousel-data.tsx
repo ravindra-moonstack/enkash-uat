@@ -6,24 +6,24 @@ import iconFour from "./img/icon-four.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Sign up on EnKash for the Olympus payment gateway",
-    title: "Sign up on EnKash for the Olympus payment gateway",
+    alt: " Register with EnKash and integrate the UPI payment gateway on your website or app.",
+    title:
+      " Register with EnKash and integrate the UPI payment gateway on your website or app.",
+    heading: "Sign-up: ",
   },
   {
     image: iconTwo,
-    alt: "Integrate your business website with the payment gateway",
-    title: "Integrate your business website with the payment gateway",
+    alt: "Ensure compliance and enable secure transactions by completing the simple KYC process.",
+    title:
+      "Ensure compliance and enable secure transactions by completing the simple KYC process.",
+    heading: "KYC: ",
   },
   {
     image: iconThree,
-    alt: "Enable your business to accept UPI payments via the Olympus payment gateway",
+    alt: "Start receiving payments through UPI apps—directly into your bank account.",
     title:
-      "Enable your business to accept UPI payments via the Olympus payment gateway",
-  },
-  {
-    image: iconFour,
-    alt: "Start collecting payments with UPI directly into your bank account",
-    title: "Start collecting payments with UPI directly into your bank account",
+      "Start receiving payments through UPI apps—directly into your bank account.",
+    heading: "Collect: ",
   },
 ];
 
