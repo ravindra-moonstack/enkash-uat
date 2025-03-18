@@ -1,0 +1,145 @@
+import { FAQProps } from "@/components/faq/faq";
+
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+
+const blogData = [
+  {
+    image:
+      "https://www.enkash.com/resources/wp-content/uploads/2022/12/Open-a-virtual-bank-account-now-to-manage-your-business-expenses.jpg",
+    imageAlt:
+      "Open a Virtual Bank Account for Business and Manage Expense Better",
+    title: "Open a Virtual Bank Account for Business and Manage Expense Better",
+    date: "Dec 26, 2022",
+    description:
+      "Virtual bank accounts have been in high demand for the past couple of decades, offering unique advantages to users compared to traditional bank accounts. Open a virtual bank...",
+    link: "https://www.enkash.com/resources/blog/benefits-of-virtual-bank-account/",
+  },
+  {
+    image:
+      "https://www.enkash.com/resources/wp-content/uploads/2023/01/What-is-a-virtual-account-and-how-your-business-can-benefit-for-it.jpg",
+    imageAlt:
+      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+    title:
+      "What Is a Virtual Account, and How Your Business Can Benefit from It?",
+    date: "Jan 27, 2023",
+    description:
+      "Virtual banking has penetrated the large-scale sector, and every small-scale and medium-scale business is also moving towards virtual banking. Virtual bank accounts are trending because of...",
+    link: "https://www.enkash.com/resources/blog/what-is-virtual-account-number/",
+  },
+  {
+    image:
+      "https://www.enkash.com/resources/wp-content/uploads/2023/01/Witness-an-era-of-financial-ease-with-with-virtual-accounts.jpg",
+    imageAlt: "Learn How Virtual Accounts Can Benefit Your Business",
+    title: "Learn How Virtual Accounts Can Benefit Your Business",
+    date: "Jan 09, 2023",
+    description:
+      "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
+    link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
+  },
+];
+
+const faqData: FAQProps[] = [
+  {
+    question: "What is a payment button?",
+    answer: [
+      {
+        heading:
+          "A simple tool that allows you to collect payments on your website without redirects or complex integrations.",
+      },
+    ],
+  },
+  {
+    question: "How does the EnKash payment button work?",
+    answer: [
+      {
+        heading:
+          "Simply copy and paste the provided code snippet onto your website or blog.",
+      },
+      {
+        heading:
+          "The button will appear on your page, allowing customers to make payments easily and securely.",
+      },
+      {
+        heading:
+          "EnKash handles the entire payment process, from capturing customer information to processing the transaction.",
+      },
+    ],
+  },
+  {
+    question:
+      "Can I accept international payments with the EnKash payment button?",
+    answer: [
+      {
+        heading: "Yes, EnKash payment buttons support international payments.",
+      },
+    ],
+  },
+  {
+    question: "Can I customize the payment button?",
+    answer: [
+      {
+        heading:
+          "Yes, you can customize the appearance of the payment button to match your brand's style. You can choose colors, and fonts, and even add your logo.",
+      },
+    ],
+  },
+  {
+    question: "Is EnKash payment button secure?",
+    answer: [
+      {
+        heading:
+          "Absolutely! EnKash employs industry-leading security measures, including PCI DSS compliance and advanced fraud prevention technologies, to ensure the safety of your customers.",
+      },
+    ],
+  },
+  {
+    question: "What is the cost of the payment button?",
+    answer: [
+      {
+        heading:
+          "EnKash believes in transparent pricing. Talk to our experts to get more details.",
+      },
+    ],
+  },
+  {
+    question: "What sort of customer support is available?",
+    answer: [
+      {
+        heading:
+          "EnKash payment buttons are the easiest to integrate - without any assistance.",
+      },
+      {
+        heading:
+          "However, we provide excellent customer support through various channels, including email, chat, and phone. Our team is always ready to assist you with any questions or issues.",
+      },
+      {
+        heading: "Connect with our team at support@enkash.com.",
+      },
+    ],
+  },
+];
+
+const carouselData = [
+  {
+    image: iconOne,
+    alt: "Use EnKash’s intuitive dashboard to design your button",
+    title: "Use EnKash’s intuitive dashboard to design your button",
+    heading: "Create: ",
+  },
+  {
+    image: iconTwo,
+    alt: "Generate an auto-created code tailored to your button.",
+    title: "Generate an auto-created code tailored to your button.",
+    heading: "Copy: ",
+  },
+  {
+    image: iconThree,
+    alt: " Paste the code on your website or blog.",
+    title: " Paste the code on your website or blog.",
+    heading: "Integrate: ",
+  },
+];
+
+export { blogData, faqData, carouselData };

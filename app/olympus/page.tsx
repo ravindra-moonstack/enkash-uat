@@ -2,8 +2,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { space } from "@/common/constant";
 import styles from "./page.module.scss";
-import blogData from "./blog-data";
-import faqData from "./faq-data";
+import { blogData, faqData } from "./data";
 import howDoesItWorkData from "./how-does-It-work-data";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
@@ -32,7 +31,7 @@ import {
   authorTwo,
 } from ".";
 import TestimonialCard from "@/components/testimonial-card/testimonial-card";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";

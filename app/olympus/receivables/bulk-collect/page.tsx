@@ -4,20 +4,17 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { blogData, faqData, carouselData, productData } from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
@@ -127,7 +124,6 @@ const bulkCollect = () => {
             ]}
           />
         </div>
-        
       </div>
 
       <div
@@ -215,7 +211,10 @@ const bulkCollect = () => {
       </div>
 
       <div className={`${styles.second_row}  bg-white `}>
-        <AllProducts title="Check Out EnKash’s Other Payment Products and Solutions" data={productData} />
+        <AllProducts
+          title="Check Out EnKash’s Other Payment Products and Solutions"
+          data={productData}
+        />
       </div>
 
       <div
