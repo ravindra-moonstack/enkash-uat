@@ -1,12 +1,22 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+import Link from "next/link";
+
+const faqData: FAQProps[] = [
   {
     question: "What is an e-NACH mandate?",
-    answer: [
-      {
-        heading:
-          "Electronic National Automated Clearing House or, e-NACH is a way to automate recurring payments like electricity bills, insurance premiums, SIPs, telephone bills, and other utility bills with a bank account.",
-      },
-    ],
+    answer: [],
+    answerHTML: (
+      <div className="my-2">
+        <h4>
+          Electronic National Automated Clearing House or, e-NACH is a way to{" "}
+          <Link href="https://www.enkash.com/" target="_blank">
+            automate recurring payments
+          </Link>{" "}
+          like electricity bills, insurance premiums, SIPs, telephone bills, and
+          other utility bills with a bank account.
+        </h4>
+      </div>
+    ),
   },
   {
     question: " How do I register for e-NACH online?",
@@ -23,12 +33,59 @@ const faqData = [
   },
   {
     question: "How are e-NACH and e-Mandate different?",
-    answer: [
-      {
-        heading:
-          "Any person who is above legal age, which is 18 years old, can open a virtual account as long as they have access to the internet and have an internet-connectible digital device to support transactions.",
-      },
-    ],
+    answer: [],
+    answerHTML: (
+      <div className="my-5">
+        <div className="container">
+          <table className="table table-bordered table-responsive">
+            <thead>
+              <tr>
+                <th>Basis of Differences</th>
+                <th>e-NACH</th>
+                <th>e-Mandate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Governing Authority</td>
+                <td>
+                  e-NACH is governed by the National Payments Corporation of
+                  India (NPCI) and covers over 40+ banks.
+                </td>
+                <td>e-Mandates are governed by individual banks.</td>
+              </tr>
+              <tr>
+                <td>Types of Payments</td>
+                <td>e-NACH excels in automating recurring payments.</td>
+                <td>
+                  e-Mandate provides versatility, accommodating both recurring
+                  and one-time transactions.
+                </td>
+              </tr>
+              <tr>
+                <td>Control</td>
+                <td>
+                  It offers automated processing with predetermined schedules.
+                </td>
+                <td>
+                  It provides flexibility to initiate transactions as needed.
+                </td>
+              </tr>
+              <tr>
+                <td>Usage</td>
+                <td>
+                  It is commonly used for subscriptions, loan repayments, and
+                  utilities.
+                </td>
+                <td>
+                  It is used for various payments including ad-hoc payments.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    ),
   },
   {
     question: "What are the advantages of e-NACH and e-Mandate?",
@@ -101,7 +158,8 @@ const faqData = [
     ],
   },
 ];
-const secondFaqData = [
+
+const secondFaqData: FAQProps[] = [
   {
     question: " What do recurring payments mean?",
     answer: [

@@ -49,6 +49,7 @@ const FAQ = ({
           >
             {!answerHTML &&
               answer !== undefined &&
+              answer.length > 0 &&
               answer.map((item, index) => (
                 <div key={index} className="mb-4">
                   {item.heading && (

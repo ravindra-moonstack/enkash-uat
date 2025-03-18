@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import faqData from "./faq-data";
+import { faqData, secondFaqData } from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
@@ -17,7 +17,7 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import { space } from "@/common/constant";
@@ -307,8 +307,32 @@ const automatedReconcilation = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
+      </div>
+
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding of automated reconciliation? Explore our comprehensive guide"
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="The reconciliation process is essential to ensure optimum cash flow planning, meet accounts payable obligations seamlessly, and optimize the accounts receivable function. Automated reconciliation cuts down manual efforts and reduces errors to help improve customer experience, cut down interest costs, and ensure that you meet your business payment obligations.
+            in detail"
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
+        </div>
         <div className={styles.faq_bg}>
-          <Image src={faqBg} alt="background image" />x
+          <Image src={faqBg} alt="background image" />
         </div>
       </div>
 
@@ -319,6 +343,7 @@ const automatedReconcilation = () => {
           source=""
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"

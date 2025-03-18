@@ -1,12 +1,51 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+import Link from "next/link";
+import { space } from "@/common/constant";
+
+const faqData: FAQProps[] = [
   {
     question: "What is a subscription management platform?",
-    answer: [
-      {
-        heading:
-          "Subscription management helps businesses keep track of their subscription-based services. Everything from recurring invoice management, customer management, recurring payments, and changes in plans, the subscription model takes care of everything.",
-      },
-    ],
+    answer: [],
+    answerHTML: (
+      <div>
+        <h4 className="mb-3 mt-2">
+          <b>Customization:</b> Businesses can customize the subscription
+          management as per their requirements and save costs accordingly..{" "}
+        </h4>
+        <h4 className="mb-3">
+          <b>Easy integration:</b> Enterprises can easily integrate with EnKash
+          to manage their subscriptions efficiently.
+        </h4>
+        <h4 className="mb-3">
+          <b>Single dashboard access:</b> Easy access to a user-friendly
+          dashboard to track invoices, check customer history, and understand
+          their behavior.{" "}
+        </h4>
+        <h4>
+          <b>Recurring payments: </b>
+          Define recurring payments for your customers with
+          <Link href="https://www.enkash.com/" target="_blank">
+            {`${space}invoice generation ${space}`}
+          </Link>
+        </h4>
+        <h4 className="mb-4">
+          <b> Automated invoice generation:</b> Businesses can
+          <Link
+            href="https://www.enkash.com/olympus/receivables/invoices/"
+            target="_blank"
+          >
+            {`${space} automate invoice generation ${space}`}
+          </Link>
+          for recurring payments by defining the timeline and frequency for
+          their customers.
+        </h4>
+        <h4 className="mb-3">
+          <b>Customer management: </b>EnKash helps manage customers efficiently
+          by providing them with timely reminders, automated recurring invoices,
+          and easy communication.
+        </h4>
+      </div>
+    ),
   },
   {
     question: "What are the benefits of using subscription management systems?",
@@ -31,12 +70,23 @@ const faqData = [
   },
   {
     question: "Are there any subscription alerts?",
-    answer: [
-      {
-        heading:
-          "The alerts are sent to the customers as per their defined payment timelines. These alerts can be customized for daily, weekly, and monthly reminders, the way the business wants to make collections.",
-      },
-    ],
+    answer: [],
+    answerHTML: (
+      <div>
+        <h4 className="mb-3 mt-2">
+          Automated subscriptions enable businesses to{" "}
+          <Link
+            href="https://www.enkash.com/olympus/receivables/bulk-collect/"
+            target="_blank"
+          >
+            {`${space} track and collect payments ${space}`}
+          </Link>
+          for their product or service automatically with various payment
+          gateways. In case, a customer doesn’t have sufficient funds, they will
+          be automatically notified.
+        </h4>
+      </div>
+    ),
   },
   {
     question: "How does EnKash subscription management help my business?",
@@ -99,7 +149,8 @@ const faqData = [
     ],
   },
 ];
-const secondFaqData = [
+
+const secondFaqData: FAQProps[] = [
   {
     question: "How does EnKash subscription management help my business? ",
     answer: [

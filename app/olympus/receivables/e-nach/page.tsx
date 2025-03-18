@@ -17,7 +17,7 @@ import Header from "@/components/header/header";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import Footer from "@/components/footer/footer";
 import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";

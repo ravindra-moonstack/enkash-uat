@@ -1,12 +1,33 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+import styles from "./page.module.scss";
+import { space } from "@/common/constant";
+import Link from "next/link";
+
+const faqData: FAQProps[] = [
   {
     question: "What is a virtual account?",
-    answer: [
-      {
-        heading:
-          "Virtual account means a digital account that is designed to streamline the financial processes of businesses. These are similar to bank accounts with various other added benefits. Virtual accounts are commonly used for collecting payments from customers. Each customer is assigned a unique virtual account number. When they make a payment, the funds are automatically routed to the company's actual bank account associated with that virtual account.",
-      },
-    ],
+    answer: [],
+    answerHTML: (
+      <div className="mb-4">
+        <h4 className={styles.heading}>
+          A virtual account is a digital account created to simplify the
+          financial processes of businesses.Similar to bank accounts, virtual
+          accounts are mostly used in payment collection from customers.{" "}
+        </h4>
+        <h4 className={styles.heading}>
+          Every customer is given a unique{" "}
+          <Link
+            href="https://www.enkash.com/resources/blog/what-is-virtual-account-number/"
+            target="_blank"
+          >
+            {`${space}virtual account number${space}`}
+          </Link>{" "}
+          as and when their virtual account is created.As soon as they make a
+          payment, the funds are routed to the company's actual bank account
+          associated with that virtual account.
+        </h4>
+      </div>
+    ),
   },
   {
     question:
@@ -89,10 +110,9 @@ const faqData = [
       },
     ],
   },
- 
 ];
-const secondFaqData = [
 
+const secondFaqData: FAQProps[] = [
   {
     question: "Why are virtual accounts essential for my business?",
     answer: [

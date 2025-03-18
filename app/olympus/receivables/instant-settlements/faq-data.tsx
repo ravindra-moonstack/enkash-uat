@@ -1,4 +1,7 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+import styles from "./page.module.scss";
+
+const faqData: FAQProps[] = [
   {
     question:
       "What is an instant settlement in a payment gateway, and how does it benefit businesses?",
@@ -33,12 +36,16 @@ const faqData = [
   },
   {
     question: "Who can benefit from instant settlements?",
-    answer: [
-      {
-        heading:
-          "Any business that wants faster access to its cash flow can benefit from instant settlements. This includes businesses of all sizes, from freelancers and small businesses to large enterprises.",
-      },
-    ],
+    answer: [],
+    answerHTML: (
+      <div className="mb-4">
+        <h4 className={styles.heading}>
+          Any business that wants faster access to its cash flow can benefit
+          from instant settlements. This includes businesses of all sizes, from
+          freelancers and small businesses to large enterprises.
+        </h4>
+      </div>
+    ),
   },
   {
     question: "Is there a waiting period for settlements with EnKash?",
@@ -88,4 +95,4 @@ const secondFaqData = [
   },
 ];
 
-export { faqData,secondFaqData };
+export { faqData, secondFaqData };
