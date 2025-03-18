@@ -5,21 +5,24 @@ import iconThree from "./img/icon-three.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Upon completing a transaction, EnKash swiftly processes the payment and initiates the settlement process",
+    alt: "Connect bank accounts or payment gateways to EnKash for seamless transfers.",
     title:
-      "Upon completing a transaction, EnKash swiftly processes the payment and initiates the settlement process",
+      "Connect bank accounts or payment gateways to EnKash for seamless transfers.",
+    heading: "Link Payment Accounts:  ",
   },
   {
     image: iconTwo,
-    alt: "Funds from your transactions are instantly transferred to your designated account, ensuring immediate availability",
+    alt: "Select the preferred settlement method and frequency (instant, daily, or custom).",
     title:
-      "Funds from your transactions are instantly transferred to your designated account, ensuring immediate availability",
+      "Select the preferred settlement method and frequency (instant, daily, or custom).",
+    heading: "Choose Settlement Preferences::  ",
   },
   {
     image: iconThree,
     alt: "EnKash automates the reconciliation process, providing real-time updates and insights into your financial transactions",
     title:
-      "EnKash automates the reconciliation process, providing real-time updates and insights into your financial transactions",
+      " Once set, activate instant settlements and start receiving funds in real time.",
+    heading: "Confirm & Activate:  ",
   },
 ];
 

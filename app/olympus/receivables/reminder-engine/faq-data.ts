@@ -1,32 +1,36 @@
 const faqData = [
   {
-    question: "What is an automated payment reminder and how does it work?",
+    question: "What is an automated payment reminder?",
     answer: [
       {
         heading:
-          "Businesses deal with many customers daily and it becomes impossible to manually follow up with each one of them to collect due payments from them. In such a case, automation comes into the picture which can be used to remind customers of the payment that is due to them. EnKash’s automated payment reminder enables businesses to remind their customers that the payment is yet to be made.",
+          "EnKash’s automated payment reminder allows businesses to remind their customers regarding their due payment.",
       },
       {
         heading:
-          "These payment reminders can be customized by businesses as per their requirements. They have to upload the invoice, feed in the dates on which the reminder needs to go along with the embedded payment link and decide on the channel via which they want to send the reminder to collect the payment.",
+          "Businesses can customize these reminders as per their requirements. They need to upload the invoice, feed in the dates on which the reminder needs to go along with the embedded payment link and decide on the channel via which they want to send the reminder to collect the payment.",
       },
     ],
   },
   {
-    question: "How can I set up an automated payment reminder for my business?",
+    question: "How to set up an automated payment reminder for my business?",
     answer: [
       {
         heading:
-          "A virtual account is not a traditional bank account, but it is a financial tool used by banks, fintechs, and businesses to manage funds and transactions. Virtual account is used for various purposes, such as receivables and payables, segregating funds, simplifying reconciliation, and improving cash flow management.",
+          "Use EnKash’s payment reminder to collect payments from customers. Register on the platform and choose between two types of payment reminders - invoice reminders and automatic reminders.",
       },
       {
         heading:
-          "Under receivables, it lets the account holders and those interacting with it make and receive payments quickly. For instance, if you have several customers who have to make payments to your account, you can create virtual accounts within your business bank account and embed the link in the invoice that you send to customers. When customers remit the payment using the link, it will make it easier to track the payment to the customer and reconcile accounts.",
+          "Invoice reminders allow you to access invoices from the dashboard against which payments are due and select them all at once or one after the other to send reminders to the customers.",
+      },
+      {
+        heading:
+          "Automated reminders are created when a customer is onboarded. These reminders eliminate the need to manually follow up with the customer as they extract data and dispatch invoices automatically, reminding them of the due dates to make payment.",
       },
     ],
   },
   {
-    question: "How do you schedule payment reminders with EnKash?",
+    question: "How to schedule payment reminders with EnKash?",
     answer: [
       {
         bullets: [
@@ -39,6 +43,65 @@ const faqData = [
       },
     ],
   },
+  {
+    question:
+      "Seeking further understanding of the reminder engine? Explore our comprehensive guide.",
+    answer: [
+      {
+        heading:
+          "Reminder engines help businesses keep track of the payments to be received by the customer. Businesses can use these reminders to collect payments timely and facilitate their cash flow.",
+      },
+    ],
+  },
 ];
+const secondFaqData = [
+  {
+    question: "How do payment reminders work?",
+    answer: [
+      {
+        heading:
+          "Payment reminders are automated messages that help businesses collect payments from their customers timely. They facilitate easy payment collection and enable businesses to fulfil their demands related to cash flow and other business processes.",
+      },
+    ],
+  },
+  {
+    question: "Can we set payment reminders before the due date?",
+    answer: [
+      {
+        heading:
+          "Enterprises can define the reminders as per their convenience. They can set reminders for pre-payment and late payments.",
+      },
+    ],
+  },
+  {
+    question: "How to set up an automated payment reminder?",
+    answer: [
+      {
+        heading:
+          "Define the reminder timeline, it could be before or after the due date. Certain businesses give early payment discounts which can be availed if reminders are received before the date of payment.",
+      },
+    ],
+  },
+  {
+    question: "What is the benefit of payment reminders in a business?",
+    answer: [
+      {
+        heading:
+          "Automated payment reminders can facilitate cash flow in a business in the following ways:",
+      },
+      {
+        heading:
+          "Reducing late payments: Businesses can reduce late payments by reminding customers of their due payments and settling their outstanding amounts instantly.",
+      },
+      {
+        heading:
+          "Define the reminder timeline, it could be before or after the due date. Certain businesses give early payment discounts which can be availed if reminders are received before the date of payment.",
+      },
+      {
+        heading:
+          "Define the reminder timeline, it could be before or after the due date. Certain businesses give early payment discounts which can be availed if reminders are received before the date of payment.",
+      },
+    ],
+  },];
 
-export default faqData;
+export { faqData,secondFaqData };

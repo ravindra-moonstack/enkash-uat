@@ -15,27 +15,27 @@ const productData: AllProductsDataProp[] = [
     title: "Payment Gateway",
     description: "Seamlessly collect payments with no-code solutions.",
     image: paymentLink,
-    link: "/olympus/receivables/payment-page/",
+    link: "/olympus/receivables/payment-links/",
   },
   {
     title: "Payment Page",
     description: "Create stunning, branded checkout experiences in minutes.",
     image: paymentPage,
-    link: "/olympus/receivables/payment-page/",
+    link: "/olympus/receivables/customized-payment/",
   },
   {
     title: "Payment Link",
     description:
       "Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links",
     image: paymentButton,
-    link: "/olympus/receivables/payment-button/",
+    link: "/olympus/receivables/payment-links/",
   },
   {
     title: "QR Codes",
     description:
       "Enable secure, contactless and instant payments for your customers.",
     image: qrCode,
-    link: "/olympus/receivables/payment-button/",
+    link: "/olympus/receivables/qr-codes/",
   },
   {
     title: "Auto Collect",

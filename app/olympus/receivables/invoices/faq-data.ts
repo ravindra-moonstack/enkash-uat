@@ -1,15 +1,15 @@
 const faqData = [
   {
-    question: "Why opt for automated invoicing?",
+    question: "Why opt for automated invoice processing software?",
     answer: [
       {
         heading:
-          "Opting for Olympus's automated invoicing has many benefits. It reduces the time and cost associated with manual invoicing, enhances accuracy, and ensures prompt payments. Moreover, it eliminates the risk of human errors during manual data entry and calculations.",
+          "Automated invoice processing software reduces the time and cost associated with manual invoicing, helps enhance accuracy, and ensures prompt payments. It also eliminates the risk of human errors during manual data entry and calculations.",
       },
     ],
   },
   {
-    question: "What do automated reminders in invoicing entail?",
+    question: " What do automated reminders in invoicing entail?",
     answer: [
       {
         heading:
@@ -18,7 +18,8 @@ const faqData = [
     ],
   },
   {
-    question: "How does optimizing invoicing processes contribute to improved collections?",
+    question:
+      "How does optimizing invoicing processes contribute to improved collections?",
     answer: [
       {
         heading:
@@ -27,7 +28,8 @@ const faqData = [
     ],
   },
   {
-    question: "What's the significance of providing multiple payment options in invoicing?",
+    question:
+      "What's the significance of providing multiple payment options in invoicing?",
     answer: [
       {
         heading:
@@ -36,7 +38,8 @@ const faqData = [
     ],
   },
   {
-    question: "In what ways does automated invoice processing enhance invoice management?",
+    question:
+      "In what ways does automated invoice processing enhance invoice management?",
     answer: [
       {
         heading:
@@ -45,5 +48,45 @@ const faqData = [
     ],
   },
 ];
+const secondFaqData = [
+  {
+    question: "What does digital invoice processing entail?",
+    answer: [
+      {
+        heading:
+          "Digital Invoice Processing involves streamlining invoice uploading, distribution, and management.EnKash's Invoice Feature can assist by automating the entire invoicing process, from uploading to deployment, making it more efficient and error-free for recurring transactions. This translates into saved time and enhanced productivity, which can greatly benefit your business.",
+      },
+    ],
+  },
+  {
+    question: "How does the process of digital invoicing work?",
+    answer: [
+      {
+        heading:
+          "The digital invoicing process scans and sends invoices. It streamlines the invoicing workflow by extracting relevant data using Optical Character Recognition (OCR), recording the same, and sending them to customers electronically.",
+      },
+    ],
+  },
+  {
+    question:
+      "How can I assess and select an automated invoice processing software?",
+    answer: [
+      {
+        heading:
+          "Evaluating an automated invoice processing software requires considering factors like efficiency and cost reduction. EnKash's Invoice Feature excels in these aspects by eliminating manual efforts, reducing the likelihood of human error, and reducing costs associated with manual invoicing. ",
+      },
+    ],
+  },
+  {
+    question:
+      "What strategies can I employ to improve the digitization of invoices?",
+    answer: [
+      {
+        heading:
+          "To digitize invoices more effectively, you need streamlined processes and cost reduction. EnKash’s Invoice Feature supports this by electronically storing and organizing invoices, making them easy to access. This feature also helps reduce labor, printing, and mailing invoice costs.",
+      },
+    ],
+  },
+];
 
-export default faqData;
+export { faqData, secondFaqData };

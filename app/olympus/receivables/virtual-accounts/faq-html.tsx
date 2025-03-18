@@ -16,7 +16,7 @@ const FAQHtml = ({ faqData }: any) => {
   return (
     <div>
       {faqData.map((item: { question: string; answer: any }, index: number) =>
-        index !== 3 ? (
+        index !== 0 ? (
           <FAQ
             key={index}
             question={item.question}
@@ -31,18 +31,22 @@ const FAQHtml = ({ faqData }: any) => {
             answerHTML={
               <div key={index} className="mb-4">
                 <h4 className={styles.heading}>
-                  There are many
+                  A virtual account is a digital account created to simplify the
+                  financial processes of businesses. Similar to bank accounts,
+                  virtual accounts are mostly used in payment collection from
+                  customers.{" "}
+                </h4>
+                <h4 className={styles.heading}>
+                  Every customer is given a unique{" "}
                   <Link
                     href="https://www.enkash.com/resources/blog/what-is-virtual-account-number/"
                     target="_blank"
                   >
-                    {`${space}advantages that virtual accounts offer`}
-                  </Link>
-                  , including ease of use, the ability to offer better customer
-                  service, real-time updating of their accounts with the
-                  payments received, prevention of fraud, and, most important of
-                  all, how traceable virtual accounts are to specific customer
-                  accounts and their payments.
+                    {`${space}virtual account number${space}`}
+                  </Link>{" "}
+                  as and when their virtual account is created. As soon as they
+                  make a payment, the funds are routed to the company's actual
+                  bank account associated with that virtual account.
                 </h4>
               </div>
             }

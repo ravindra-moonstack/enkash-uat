@@ -4,36 +4,26 @@ import iconThree from "./img/icon-three.svg";
 import iconFour from "./img/icon-four.svg";
 import iconFive from "./img/icon-five.svg";
 
-
-
-
-
 const carouselData = [
   {
     image: iconOne,
-    alt: "Digital invoicing results in reduced manual efforts",
-    title: "Digital invoicing results in reduced manual efforts, increased efficiency, and improved productivity within your business",
+    alt: "Create your account on EnKash and add your business details.",
+    title: "Create your account on EnKash and add your business details.",
+    heading: "Sign Up: ",
   },
   {
     image: iconTwo,
-    alt: "With digital invoice dispatch, you can eliminate human error",
-    title: "With digital invoice dispatch, you can eliminate human error, which can occur during manual data entry or calculation",
+    alt: "Choose or design invoice templates with your branding, payment terms, and logo.",
+    title:
+      "Choose or design invoice templates with your branding, payment terms, and logo.",
+    heading: "Customize Invoice Templates: ",
   },
   {
     image: iconThree,
-    alt: "Streamlining the invoicing process allows businesses to process invoices",
+    alt: "Create automated invoices instantly and send them to clients via your preferred channel.",
     title:
-      "Streamlining the invoicing process allows businesses to process invoices faster and more efficiently. This can lead to faster payments and improved cash flow",
-  },
-  {
-    image: iconFour,
-    alt: "EnKash stores and organizes invoices electronically",
-    title: "EnKash stores and organizes invoices electronically, making it easy to search for and retrieve invoices when needed",
-  },
-  {
-    image: iconFive,
-    alt: "Significantly reduce the costs associated with manual invoicing",
-    title: "Significantly reduce the costs associated with manual invoicing, such as labor costs and the cost of printing and mailing invoices",
+      "Create automated invoices instantly and send them to clients via your preferred channel.",
+    heading: "Send Invoices: ",
   },
 ];
 

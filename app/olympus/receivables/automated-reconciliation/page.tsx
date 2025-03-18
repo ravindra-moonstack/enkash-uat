@@ -23,6 +23,9 @@ import Footer from "@/components/footer/footer";
 import { space } from "@/common/constant";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Automated Accounts Reconciliation & Bank Reconciliation - EnKash",
@@ -47,36 +50,29 @@ const automatedReconcilation = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Automated Reconciliation"
+              title={`Automated Reconciliation${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
+
           <div className="d-flex flex-column">
             <Heading
-              title="Free up your team’s"
+              title="Make Cash Flow"
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="bandwidth with"
+              title="Management Easy with"
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="automated reconciliation"
+              title="Automated Reconciliation"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -85,7 +81,7 @@ const automatedReconcilation = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Leverage automated reconciliation to make cash flow management easier and enable your finance team to focus on more strategic tasks"
+              title="Allow your finance team to focus on strategic tasks and automate the process of reconciliation."
               color="white"
               size="h6"
               weight="5"
@@ -94,72 +90,47 @@ const automatedReconcilation = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source="
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source="
+                url="https://docs.enkash.com/"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Precise Finance Processes With Automated Reconciliation "
+            steps={[
+              {
+                icon: userPlus,
+                text: "Real-Time Matching",
+              },
+              {
+                icon: stack,
+                text: "Zero Errors",
+              },
+              {
+                icon: numberOne,
+                text: "Multi-Channel Integration",
+              },
+            ]}
+          />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Accuracy"],
-              oldWayDescription:
-                "The manual nature of data entry in the traditional method increases the likelihood of errors, such as typos, incorrect amounts, or misplaced entries. These errors can lead to discrepancies in reconciliation.",
-              newWayDescription:
-                "EnKash's automated system significantly improves accuracy by minimizing human intervention. The advanced algorithms ensure precise data extraction and validation, contributing to a more reliable reconciliation process.",
-            },
-            {
-              itemArray: ["Visibility"],
-              oldWayDescription:
-                "The lack of visibility into financial transactions often resulted in challenges in making timely payments to vendors and meeting other financial obligations.",
-              newWayDescription:
-                "With EnKash, get clear visibility into your cash flow status and ensure all your business payments are processed on time, fostering better relationships.",
-            },
-
-            {
-              itemArray: ["Cost", "Efficiency"],
-              oldWayDescription:
-                "The conventional method relies on manual labor for data entry, which incurs higher operational costs. The need for skilled personnel and the time spent on repetitive tasks contribute to increased expenses.",
-              newWayDescription:
-                "With EnKash, you can make the whole process more cost-effective, as it reduces the reliance on manual labor. The streamlined process leads to operational efficiency, minimizing the risk of costly errors.",
-            },
-            {
-              itemArray: ["Integration"],
-              oldWayDescription:
-                "Traditional systems often face challenges in integrating with other platforms and systems, leading to isolated data and potential data silos.",
-              newWayDescription:
-                "EnKash offers seamless integration with various accounting and ERP systems. This interoperability ensures a smooth flow of information across different platforms, enhancing overall efficiency and connectivity.",
-            },
-            {
-              itemArray: ["Scalability"],
-              oldWayDescription:
-                "Traditional methods may struggle to handle growing volumes of transactions, making scalability challenging.",
-              newWayDescription:
-                "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency.",
-            },
-          ]}
-        />
       </div>
 
       <div
@@ -167,13 +138,13 @@ const automatedReconcilation = () => {
       >
         <div className="d-flex flex-column text-center mb-5">
           <Heading
-            title="Reconcile records in real-time to"
+            title="Manage Finances Better With "
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title="speed up decision-making"
+            title="Automated Reconciliation "
             color="equity-blue"
             size="h1"
             weight="6"
@@ -182,8 +153,8 @@ const automatedReconcilation = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Multi-Bank Reconciliation"
-              description="Automatically map transactions with bank statements using names, dates, and amounts. Effortlessly reconcile unmatched transactions, review mappings, and update transactions in your ERP"
+              whiteTitle="Automated Bank Reconciliation"
+              description="Automatically map transactions with bank statements using names, dates, and amounts. Effortlessly reconcile unmatched transactions, review mappings, and update transactions in your ERP."
               source=""
             />
           </div>
@@ -264,6 +235,13 @@ const automatedReconcilation = () => {
         </div>
       </div>
 
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check out other payment products at EnKash"
+          data={productData}
+        />
+      </div>
+
       <div className={`${styles.fourth_row} row`}>
         <HowDoesCarousel
           titleContent={
@@ -303,12 +281,14 @@ const automatedReconcilation = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how meal cards can benefit your business and employees!"
+          title="Learn how our automated reconciliation can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

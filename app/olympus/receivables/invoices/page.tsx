@@ -11,7 +11,7 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
+import { faqData, secondFaqData } from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import { Metadata } from "next";
@@ -23,6 +23,9 @@ import Header from "@/components/header/header";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Automated Invoicing Processing & Software for Business - EnKash",
@@ -45,30 +48,22 @@ const invoices = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
-            <div>
-              <Heading
-                title="Invoices"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
+            <Heading
+              title={`Invoices${space}`}
+              color="rainy-blue"
+              size="h4"
+              weight="7"
+            />
           </div>
+
           <div className="d-flex flex-column">
             <Heading
-              title="Transform your business"
+              title="Enhance business "
               color="white"
               size="h2"
               weight="7"
             />
+
             <div>
               <Heading
                 title="operations with"
@@ -76,8 +71,9 @@ const invoices = () => {
                 size="h2"
                 weight="7"
               />
+
               <Heading
-                title={`${space}digital invoicing`}
+                title={`${space}Digital Invoicing`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
@@ -87,12 +83,13 @@ const invoices = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Automate and streamline your invoicing process for recurring transactions, gain complete visibility of sales and payments, and create bulk invoices with embedded payment links"
+              title="Transform your invoicing process with EnKash Digital Invoicing, a smart and automated solution designed to save time, eliminate errors, and streamline payments."
               color="white"
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
@@ -101,6 +98,7 @@ const invoices = () => {
                 url="/sales/?source=receivables"
               />
             </div>
+
             <div>
               <SecondryButton
                 title="Get Free Demo"
@@ -111,83 +109,68 @@ const invoices = () => {
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Simplify Business Payments With Digital Invoicing"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Automated Invoice Processing",
+              },
+              {
+                icon: stack,
+                text: "Real-Time Tracking",
+              },
+              {
+                icon: numberOne,
+                text: "Enhanced Payment Collection",
+              },
+            ]}
+          />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Invoice", "Management"],
-              oldWayDescription:
-                "When businesses generate paper-based or manual invoices, the process is lengthy, resource-intensive, and poses risks of errors or lost invoices.",
-              newWayDescription:
-                "With EnKash, you can digitally upload your invoices, which are scanned using OCR technology. This helps save time and reduces the risk of human error.",
-            },
-            {
-              itemArray: ["Processing", "Time"],
-              oldWayDescription:
-                "Paper invoices can take days or even weeks to be delivered and processed.",
-              newWayDescription:
-                "Digital invoices can be processed quicker, meaning your business can get paid faster and have better cash flow.",
-            },
-
-            {
-              itemArray: ["Accuracy"],
-              oldWayDescription:
-                "Paper-based invoices pose several risks, such as incorrect data entry or lost invoices.",
-              newWayDescription:
-                "Digital invoices can help reduce manual errors. This can help your business avoid costly disputes and delays in payment.",
-            },
-            {
-              itemArray: ["Tracking &", "Reporting"],
-              oldWayDescription:
-                "Invoices were tracked manually using ledgers or spreadsheets. This made it difficult to view financial performance and follow up on collections accurately.",
-              newWayDescription:
-                "On EnKash, invoices can be easily tracked and monitored, making it easier to identify outstanding invoices and improve collections.",
-            },
-          ]}
-        />
       </div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
-          <Heading title="Discover the" color="black" size="h1" weight="6" />
+          <Heading title="Effortless  " color="black" size="h1" weight="6" />
+
           <Heading
-            title={`${space}ease of operations`}
+            title={`${space}Invoicing,`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
+
           <Heading
-            title={`${space}with digital invoices`}
+            title={`${space}Faster Payments`}
             color="black"
             size="h1"
             weight="6"
           />
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Digital"
+                    title="Bulk Invoice"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Process"
+                    title="Uploads"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -195,35 +178,53 @@ const invoices = () => {
                 </div>
               }
               source="receivables"
-              description="Make the invoicing process easier by digitizing everything, from invoice upload to dispatch, and save countless work hours"
+              description="Upload multiple invoices in one go, minimizing manual work and saving valuable time. Ideal for businesses handling high transaction volumes, recurring billing, or vendor payments with ease."
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Complete Visibility"
-              description="Get a holistic view of your business’s sales and payments to plan better and create optimized financial strategies"
+              whiteTitle="OCR Technology"
+              description="With EnKash, you can digitally upload your invoices, which are scanned using OCR technology. This helps save time and reduces the risk of human error."
               source="receivables"
             />
           </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Tracking & Monitoring"
-              description="Digital invoices provide simplified tracking and monitoring, enabling easy identification of outstanding payments and optimized collections. EnKash’s enhanced reporting capabilities allow for in-depth financial analysis, empowering businesses to make data-driven decisions"
-              source="receivables"
-            />
-          </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Bulk"
+                    title="Seamless "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Invoicing"
+                    title="Payment Collection "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Embed secure payment links directly within invoices, allowing customers to pay instantly using multiple payment methods. Improve cash flow, reduce payment delays, and provide a frictionless payment experience."
+              source="receivables"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Effortlessly "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Track Invoices"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -234,14 +235,37 @@ const invoices = () => {
               description="Upload bulk invoices with all necessary details of regular purchases to save time and employee bandwidth in just a few clicks"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Payment Options"
-              description="Embed a payment link in your invoices and enable multiple payment options for added customer convenience"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Partial and "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Recurring Payments "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Give customers the flexibility to make partial payments or schedule automated recurring invoices. Enhance convenience, maintain predictable revenue streams, and improve payment cycle consistency for your business."
               source="receivables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check Out EnKash’s Other Payment Products and Solutions"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -271,12 +295,14 @@ const invoices = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how digital invoicing can revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -285,7 +311,7 @@ const invoices = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about invoices in detail"
+            title="Don't worry! Our FAQs section will help you learn about instant settlements in detail"
             color="black"
             size="h4"
           />
@@ -294,8 +320,30 @@ const invoices = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
+      </div>
 
-        <div></div>
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none pt-0 bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding of invoices? Explore the comprehensive guide"
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="Invoices are the lifeblood of any business, serving as the formal documentation of financial transactions between sellers and buyers. These documents comprehensively record goods or services rendered, payment terms, and crucial contact information. In essence, invoices ensure that businesses are compensated for their offerings and play a vital role in financial management, accounting, and taxation. "
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
+        </div>
+
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>

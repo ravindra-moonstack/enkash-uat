@@ -14,28 +14,28 @@ const productData: AllProductsDataProp[] = [
   {
     title: "Payment Gateway",
     description:
-      "A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction.",
-    image: paymentLink,
-    link: "/olympus/receivables/payment-links/",
+      "Effortlessly collect payments across various channels with this no-code solution",
+    image: paymentPage,
+    link: "/olympus/receivables/payment-gateway/",
   },
   {
     title: "Payment Link",
     description:
-      "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
-    image: paymentPage,
+      "Send payment links on WhatsApp, SMS, Facebook, Twitter, and more to collect payments",
+    image: paymentLink,
     link: "/olympus/receivables/payment-links/",
   },
   {
     title: "Payment Button",
     description:
-      "Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
+      "A pre-designed easy-to-integrate payment button for your website to collect payments.",
     image: paymentButton,
     link: "/olympus/receivables/payment-button/",
   },
   {
     title: "QR Codes",
     description:
-      "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+      "Allow secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
     image: qrCode,
     link: "/olympus/receivables/qr-codes/",
   },
@@ -49,16 +49,16 @@ const productData: AllProductsDataProp[] = [
   {
     title: "Invoices",
     description:
-      "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links",
+      "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links.",
     image: invoices,
     link: "/olympus/receivables/invoices/",
   },
   {
-    title: "Instant Settlement",
+    title: "UPI Payments",
     description:
-      "Get instant access to your funds, skip traditional settlement cycles, and take full control of your cash flow.",
-    image: instantSettlement,
-    link: "/olympus/receivables/instant-settlement/",
+      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
+    image: qrCode,
+    link: "/olympus/receivables/upi-payments/",
   },
   {
     title: "Reminder Engine",

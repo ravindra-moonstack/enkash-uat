@@ -1,11 +1,15 @@
 const faqData = [
   {
     question:
-      "What is settlement in a payment gateway, and how does it benefit me?",
+      "What is an instant settlement in a payment gateway, and how does it benefit businesses?",
     answer: [
       {
         heading:
-          "Settlement in a payment gateway refers to the process of transferring funds from the customer's account to the merchant's account after a successful transaction. When a customer makes a purchase using a payment gateway with instant settlement, the transaction is initially authorized, and then the funds are settled or transferred to the merchant's account, typically within a certain timeframe.",
+          "Instant Settlement gateway refers to the process of transferring funds from the customer's account to the merchant's account after a successful transaction. ",
+      },
+      {
+        heading:
+          "When a customer makes a purchase using a payment gateway with instant settlement, the transaction is initially authorized, and then the funds are settled or transferred to the merchant's account, typically within a certain timeframe.",
       },
     ],
   },
@@ -47,4 +51,41 @@ const faqData = [
   },
 ];
 
-export default faqData;
+const secondFaqData = [
+  {
+    question: " What are the benefits of real-time settlements?",
+    answer: [
+      {
+        heading: "Real-time settlements offer several advantages, including:",
+      },
+      {
+        bullets: [
+          "Improved cash flow management: Instant access to funds allows for better financial planning and the ability to seize opportunities promptly.",
+          "Enhanced flexibility: With funds available immediately, businesses can react swiftly to changing circumstances and make timely decisions.",
+          "Streamlined operations: Real-time settlements reduce administrative burdens associated with tracking and reconciling payments, leading to increased efficiency.",
+          "Better customer relations: Prompt settlement of transactions can enhance customer satisfaction and loyalty by providing a seamless payment experience.",
+        ],
+      },
+    ],
+  },
+  {
+    question: " What is the settlement schedule for same-day Settlements?",
+    answer: [
+      {
+        heading:
+          "Same-day settlements with EnKash follow a T+0 schedule, meaning funds from transactions are transferred to your designated account on the same day the transaction occurs. This ensures quick and consistent cash flow, allowing you to access your earnings without delay.",
+      },
+    ],
+  },
+  {
+    question: "How secure are instant settlements?",
+    answer: [
+      {
+        heading:
+          "EnKash employs robust security measures and follows industry best practices to ensure the safety and security of your financial transactions.",
+      },
+    ],
+  },
+];
+
+export { faqData,secondFaqData };

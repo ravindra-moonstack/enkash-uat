@@ -6,25 +6,27 @@ import iconFour from "./img/icon-four.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Log in to EnKash and register the business for e-NACH",
-    title: "Log in to EnKash and register the business for e-NACH",
+    alt: " Login to EnKash and initiate eNACH registration",
+    title: " Login to EnKash and initiate eNACH registration",
+    heading: "Login: ",
   },
   {
     image: iconTwo,
-    alt: "Fill in all the necessary details like personal information, bank account details, and the amount to be authorized for transactions",
-    title:
-      "Fill in all the necessary details like personal information, bank account details, and the amount to be authorized for transactions",
+    alt: "Provide required personal and bank information",
+    title: "Provide required personal and bank information",
+    heading: "Details: ",
   },
   {
     image: iconThree,
-    alt: "Submit the details and wait for verification",
-    title: "Submit the details and wait for verification",
+    alt: "Verify using net banking, debit card, or Aadhaar OTP.",
+    title: "Provide required personal and bank information",
+    heading: "Authenticate: ",
   },
   {
     image: iconFour,
-    alt: "An intimation regarding registration approval will be received on the registered email ID and phone number",
-    title:
-      "An intimation regarding registration approval will be received on the registered email ID and phone number",
+    alt: "eNACH is setup for recurring payments, once approved",
+    title: "eNACH is setup for recurring payments, once approved",
+    heading: "Activation: ",
   },
 ];
 

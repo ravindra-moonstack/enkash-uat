@@ -4,28 +4,27 @@ import iconThree from "./img/icon-three.svg";
 import iconFour from "./img/icon-four.svg";
 import iconFive from "./img/icon-five.svg";
 
-
-
 const carouselData = [
   {
     image: iconOne,
-    alt: "Integrate your business with EnKash",
-    title:
-      "Integrate your business with EnKash",
+    alt: "Sign up on EnKash for its subscription management model",
+    title: "Sign up on EnKash for its subscription management model",
+    heading: "Get Started: ",
   },
   {
     image: iconTwo,
-    alt: "Define relationship, configure a frequency, and a time period for automatic invoice generation as per business requirements",
+    alt: "Seamlessly integrate your business website with EnKash without any technical efforts.",
     title:
-      "Define relationship, configure a frequency, and a time period for automatic invoice generation as per business requirements",
+      "Seamlessly integrate your business website with EnKash without any technical efforts.",
+    heading: "Integrate: ",
   },
   {
     image: iconThree,
-    alt: "Use it for efficient customer management",
+    alt: "Start receiving recurring payments from your customers as per their subscription plans.",
     title:
-      "Use it for efficient customer management",
+      "Start receiving recurring payments from your customers as per their subscription plans.",
+    heading: "Collect: ",
   },
- 
 ];
 
 export default carouselData;

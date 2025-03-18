@@ -16,14 +16,14 @@ const productData: AllProductsDataProp[] = [
     description:
       "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
     image: paymentLink,
-    link: "/olympus/receivables/payment-links/",
+    link: "/olympus/receivables/payment-gateway/",
   },
   {
     title: "Payment Page",
     description:
       "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments",
     image: paymentPage,
-    link: "/olympus/receivables/customized-payment/",
+    link: "/olympus/receivables/payment-page/",
   },
   {
     title: "Payment Button",
@@ -40,18 +40,18 @@ const productData: AllProductsDataProp[] = [
     link: "/olympus/receivables/upi-payments/",
   },
   {
+    title: "QR Codes",
+    description:
+      "Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions.",
+    image: reminderEngine,
+    link: "/olympus/receivables/qr-codes/",
+  },
+  {
     title: "Auto Collect",
     description:
       "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
     image: autoCollect,
     link: "/olympus/receivables/auto-collect/",
-  },
-  {
-    title: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    image: invoices,
-    link: "/olympus/receivables/invoices/",
   },
   {
     title: "Instant Settlement",
@@ -61,11 +61,11 @@ const productData: AllProductsDataProp[] = [
     link: "/olympus/receivables/instant-settlement/",
   },
   {
-    title: "Reminder Engine",
+    title: "Invoices",
     description:
-      "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
-    image: reminderEngine,
-    link: "/olympus/receivables/reminder-engine/",
+      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
+    image: invoices,
+    link: "/olympus/receivables/invoices/",
   },
 ];
 

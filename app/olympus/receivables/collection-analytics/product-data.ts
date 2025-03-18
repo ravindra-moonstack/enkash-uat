@@ -14,56 +14,56 @@ const productData: AllProductsDataProp[] = [
   {
     title: "Payment Gateway",
     description:
-      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
+      "Collect payments across various channels, guaranteeing you never miss a transaction.",
     image: paymentLink,
     link: "/olympus/receivables/payment-links/",
   },
   {
-    title: "Payment Page",
+    title: "Payment Link",
     description:
-      "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments",
+      "Use WhatsApp, SMS, Facebook, Twitter, and more with no-code payment links.",
     image: paymentPage,
-    link: "/olympus/receivables/customized-payment/",
+    link: "/olympus/receivables/payment-links/",
   },
   {
     title: "Payment Button",
     description:
-      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
+      "Integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
     image: paymentButton,
     link: "/olympus/receivables/payment-button/",
   },
   {
-    title: "UPI Payments",
+    title: "QR Codes",
     description:
-      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
+      "Use secure, contactless payments using QR codes, empowering businesses to process transactions instantly",
     image: qrCode,
-    link: "/olympus/receivables/upi-payments/",
+    link: "/olympus/receivables/qr-codes/",
   },
   {
     title: "Auto Collect",
     description:
-      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
+      "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
     image: autoCollect,
     link: "/olympus/receivables/auto-collect/",
   },
   {
     title: "Invoices",
     description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
+      "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links",
     image: invoices,
     link: "/olympus/receivables/invoices/",
   },
   {
     title: "Instant Settlement",
     description:
-      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
+      "Get instant access to your funds, skip traditional settlement cycles, and take full control of your cash flow.",
     image: instantSettlement,
     link: "/olympus/receivables/instant-settlement/",
   },
   {
     title: "Reminder Engine",
     description:
-      "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
+      "Eliminate manual reminders and automate your business collections effortlessly for smoother cash flow management.",
     image: reminderEngine,
     link: "/olympus/receivables/reminder-engine/",
   },

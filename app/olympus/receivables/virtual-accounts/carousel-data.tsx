@@ -5,21 +5,23 @@ import iconThree from "./img/icon-three.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Businesses have the flexibility to receive payments",
-    title:
-      "Businesses have the flexibility to receive payments through various methods, including debit or credit cards, net banking, and UPI",
+    alt: "Sign up on EnKash and create a virtual account for your business.",
+    title: "Sign up on EnKash and create a virtual account for your business.",
+    heading: "Create: ",
   },
   {
     image: iconTwo,
-    alt: "Customers can establish a virtual account",
+    alt: "Collect funds from customers across multiple branches via different modes of payment to the virtual account.",
     title:
-      "Customers can establish a virtual account by connecting their current bank account",
+      "Collect funds from customers across multiple branches via different modes of payment to the virtual account.",
+    heading: "Collect: ",
   },
   {
     image: iconThree,
-    alt: "They can initiate payments using NEFT",
+    alt: "Get instant notifications for payment collection. Reconcile the amount with the invoice generated in real time.",
     title:
-      "They can initiate payments using NEFT, RTGS, IMPS, and other available modes. As soon as a payment is successfully processed and credited to the company's account, the business promptly receives transaction notifications",
+      "Get instant notifications for payment collection. Reconcile the amount with the invoice generated in real time.",
+    heading: "Reconcile: ",
   },
 ];
 

@@ -4,7 +4,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
+import { faqData, secondFaqData } from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
@@ -22,6 +22,9 @@ import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Accept Online Payments with Instant Settlements - EnKash",
@@ -45,27 +48,20 @@ const InstantSettlement = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
+            <div>
               <Heading
-                title={`Olympus |${space}`}
+                title={`Instant Settlements${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
-            </div>
-            <div>
-              <Heading
-                title="Instant Settlements"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
               <sup className="sup-symbol"></sup>
             </div>
           </div>
+
           <div className="d-flex flex-column">
             <Heading
-              title={`Accelerate your${space}`}
+              title={`Accelerate business ${space}`}
               color="white"
               size="h2"
               weight="7"
@@ -86,65 +82,48 @@ const InstantSettlement = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Get quick access to your funds immediately. Don’t wait for standard settlement cycles, get more control over your cash flow and the freedom to manage your business better"
+              title="Say goodbye to traditional settlement cycles that take days. Access funds immediately and have better control over your business cash flow."
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get started"
                 theme="blue"
-                url="/sales/?source=receivables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=receivables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+        
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Instant Settlement for Better Cash Flow"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Real-Time Payment",
+              },
+              {
+                icon: stack,
+                text: "24/7 Availability",
+              },
+              {
+                icon: numberOne,
+                text: "Multiple Settlement Options ",
+              },
+            ]}
+          />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Waiting", "Period"],
-              oldWayDescription:
-                "Earlier, payments used to take 2-3 business days to settle in your account, hindering your cash flow.",
-              newWayDescription:
-                "With EnKash’s instant payment settlement process, receive funds instantly after every successful transaction.",
-            },
-            {
-              itemArray: ["Limited", "Access"],
-              oldWayDescription:
-                "In the old way, settlements often used to occur only within specific banking hours, impacting your flexibility.",
-              newWayDescription:
-                "EnKash enables you to access your funds 24/7, 365 days a year, even on weekends and holidays.",
-            },
-            {
-              itemArray: ["Cash Flow", "Management"],
-              oldWayDescription:
-                "Traditional payment settlement process often restricted cash flow, hindering the ability to seize opportunities. Facing unexpected cash flow gaps also disrupted smooth operations and growth.",
-              newWayDescription:
-                "Gain complete control over your cash flow, allowing you to invest, pay suppliers, or manage expenses instantly. Eliminate cash flow gaps and seize time-sensitive deals with readily available funds.",
-            },
-          ]}
-        />
       </div>
 
       <div
@@ -152,13 +131,13 @@ const InstantSettlement = () => {
       >
         <div className="d-inline text-center pb-2">
           <Heading
-            title="Fast-track your cash flow with"
+            title="Get Paid Instantly."
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space} seamless settlements`}
+            title={`${space}  No Delays. No Hassles.`}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -168,40 +147,59 @@ const InstantSettlement = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customized Settlements"
-              description="Empower yourself to decide when your customer payments should transfer into your bank account. With customized payment settlement process, you have full control to settle the needed amount within a few seconds"
+              whiteTitle="Real-time Access to Funds"
+              description="No more waiting for your hard-earned money. Get payments settled instantly after every transaction, ensuring smooth operations and eliminating financial uncertainties that could impact business growth."
               source="receivables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Simplified Budgeting"
-              description="Faster access to capital empowers you to make quicker decisions, invest in inventory, and seize strategic opportunities without delays"
+              whiteTitle="Round the Clock Availability"
+              description="Unlike traditional banking systems, EnKash Instant Settlements work 24x7, including weekends and bank holidays, so you can access your funds anytime, even outside standard banking hours."
               source="receivables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Enhanced Relations"
-              description="Pay vendors/suppliers faster, build stronger relationships, potentially secure better deals, and avoid late fees"
+              whiteTitle="Flexible Payment Options"
+              description="Whether you need funds instantly, multiple times a day, or at specific times, choose from on-demand, scheduled, or same-day settlements to align with your business needs and cash flow cycle."
               source="receivables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Super Fast Settlements"
-              description="Instantly get your customer payments straight into your bank account every day with same-day settlements which are settled at T+O, for a quick and consistent cash flow experience"
+              whiteTitle="Better Efficiency and Business Growth"
+              description="With immediate access to working capital, reinvest in your business, scale up faster, optimize inventory, and execute marketing strategies without relying on external financing or credit facilities."
               source="receivables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Increased Efficiency"
-              description="Eliminate the need to track settlement schedules and manage cash flow fluctuations, freeing up valuable time and resources for other business-critical tasks"
+              whiteTitle="Better Relationships"
+              description="Paying vendors and suppliers on time fosters trust, strengthens business relationships, and opens doors to better deals, potential discounts, and improved credit terms, reducing financial strain."
+              source="receivables"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Seamless Integration"
+              description="EnKash offers simple API and no-code solutions, allowing you to integrate instant settlements effortlessly into your existing payment infrastructure without technical complexities or operational disruptions."
               source="receivables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check Out EnKash’s Other Payment Products and Solutions"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -231,12 +229,14 @@ const InstantSettlement = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how instant settlements can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -254,6 +254,29 @@ const InstantSettlement = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
+      </div>
+
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none pt-0 bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding of instant settlements? Explore our comprehensive guide"
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="Instant settlement refers to the process of settling financial transactions immediately or in real-time. Instead of waiting for a certain period (like days or weeks) for funds to clear and settle between parties, instant settlement allows for the immediate transfer of funds."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
+        </div>
 
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
@@ -267,6 +290,7 @@ const InstantSettlement = () => {
           source="receivables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -345,6 +369,7 @@ const InstantSettlement = () => {
           }
         />
       </div>
+
       <Footer utmSource="receivables" />
     </div>
   );

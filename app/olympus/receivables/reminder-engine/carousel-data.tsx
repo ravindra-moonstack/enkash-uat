@@ -6,23 +6,22 @@ import iconFour from "./img/icon-four.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Login to EnKash",
-    title: "Login to EnKash",
+    alt: "Create your account on EnKash and get payment links. ",
+    title: "Create your account on EnKash and get payment links.",
+    heading: "Sign Up: ",
   },
   {
     image: iconTwo,
-    alt: "Register the customer and add a key contact person",
-    title: "Register the customer and add a key contact person",
+    alt: "Send these payment links via different channels as automated payment reminders instantly.",
+    title:
+      "Send these payment links via different channels as automated payment reminders instantly.",
+    heading: "Send Reminders: ",
   },
   {
     image: iconThree,
-    alt: "Configure automatic reminders",
-    title: "Configure automatic reminders",
-  },
-  {
-    image: iconFour,
-    alt: "With a single click, dispatch reminders to multiple customers",
-    title: "With a single click, dispatch reminders to multiple customers",
+    alt: " Accept payments from your customers.",
+    title: " Accept payments from your customers.",
+    heading: "Send Reminders:",
   },
 ];
 

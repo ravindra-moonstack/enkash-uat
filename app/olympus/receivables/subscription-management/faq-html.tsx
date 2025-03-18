@@ -3,6 +3,8 @@
 import FAQ from "@/components/faq/faq";
 import Link from "next/link";
 import { useState } from "react";
+import { space } from "@/common/constant";
+import { secondFaqData } from "./faq-data";
 
 const FAQHtml = ({ faqData }: any) => {
   const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
@@ -13,65 +15,79 @@ const FAQHtml = ({ faqData }: any) => {
 
   return (
     <div>
-      {faqData.map((item: { question: string; answer: any }, index: number) => (
-        <FAQ
-          key={index}
-          question={item.question}
-          answer={item.answer}
-          answerHTML={
-            index === 0 ? (
-              <h4>
-                EnKash helps businesses manage their subscriptions efficiently.
-                Businesses can easily integrate with EnKash and keep track of
-                all activities where subscription-based services are involved
-                including{" "}
-                <Link
-                  href="https://www.enkash.com/olympus/payables/invoice-management/"
-                  target="_blank"
-                >
-                  invoice generation
-                </Link>
-                , customer management, recurring payments, and
-                change in plans. Everything from e-commerce platforms, payment
-                gateways, and accounting software can be integrated with EnKash
-                for subscription management.
-              </h4>
-            ) : index === 1 ? (
-              <div>
-                {" "}
-                <h4 className="mb-3 mt-2">
-                  <b>Automates recurring invoices:</b> EnKash’s subscription
-                  management system facilitates recurring invoices as it
-                  automatically sends invoices to customers each month as per
-                  the defined timeline.{" "}
-                </h4>
-                <h4 className="mb-3">
-                  <b>Enables seamless payment:</b> Businesses can send reminders
-                  to their customers with the help of subscription management.
-                  The need to follow up with customers manually for payment is
-                  eliminated with automation.
-                </h4>
-                <h4 className="mb-3">
-                  <b>Cost saving with customization:</b> Enterprises can
-                  customize their subscription management as per their needs.
-                  This enables them to decide integration at their convenient
-                  cost.{" "}
-                </h4>
-                <h4 className="mb-4">
-                  <b> Access to automatic reports:</b> It becomes easy to track
-                  new customers and existing subscribers along with their
-                  transaction history on a single platform. This facilitates
-                  decision-making in a business.
-                </h4>
-              </div>
-            ) : (
-              ""
-            )
-          }
-          answerVisible={index === openFAQIndex}
-          onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
-        />
-      ))}
+      {secondFaqData.map(
+        (item: { question: string; answer: any }, index: number) => (
+          <FAQ
+            key={index}
+            question={item.question}
+            answer={item.answer}
+            answerHTML={
+              index === 0 ? (
+                <div>
+                  {" "}
+                  <h4 className="mb-3 mt-2">
+                    <b>Customization:</b> Businesses can customize the
+                    subscription management as per their requirements and save
+                    costs accordingly..{" "}
+                  </h4>
+                  <h4 className="mb-3">
+                    <b>Easy integration:</b> Enterprises can easily integrate
+                    with EnKash to manage their subscriptions efficiently.
+                  </h4>
+                  <h4 className="mb-3">
+                    <b>Single dashboard access:</b> Easy access to a
+                    user-friendly dashboard to track invoices, check customer
+                    history, and understand their behavior.{" "}
+                  </h4>
+                  <h4>
+                    <b>Recurring payments: </b>
+                    Define recurring payments for your customers with
+                    <Link href="https://www.enkash.com/" target="_blank">
+                      {`${space}invoice generation ${space}`}
+                    </Link>
+                  </h4>
+                  <h4 className="mb-4">
+                    <b> Automated invoice generation:</b> Businesses can
+                    <Link
+                      href="https://www.enkash.com/olympus/receivables/invoices/"
+                      target="_blank"
+                    >
+                      {`${space} automate invoice generation ${space}`}
+                    </Link>
+                    for recurring payments by defining the timeline and
+                    frequency for their customers.
+                  </h4>
+                  <h4 className="mb-3">
+                    <b>Customer management: </b>EnKash helps manage customers
+                    efficiently by providing them with timely reminders,
+                    automated recurring invoices, and easy communication.
+                  </h4>
+                </div>
+              ) : index === 2 ? (
+                <div>
+                  {" "}
+                  <h4 className="mb-3 mt-2">
+                    Automated subscriptions enable businesses to{" "}
+                    <Link
+                      href="https://www.enkash.com/olympus/receivables/bulk-collect/"
+                      target="_blank"
+                    >
+                      {`${space} track and collect payments ${space}`}
+                    </Link>
+                    for their product or service automatically with various
+                    payment gateways. In case, a customer doesn’t have
+                    sufficient funds, they will be automatically notified.
+                  </h4>
+                </div>
+              ) : (
+                ""
+              )
+            }
+            answerVisible={index === openFAQIndex}
+            onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
+          />
+        )
+      )}
     </div>
   );
 };

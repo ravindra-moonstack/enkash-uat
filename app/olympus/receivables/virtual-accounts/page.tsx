@@ -4,7 +4,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
+import { faqData, secondFaqData } from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
@@ -22,6 +22,9 @@ import FAQHtml from "./faq-html";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Virtual Account - Open a virtual business account| EnKash",
@@ -30,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/virtual-accounts/",
   },
-  faqData: faqData,
+  // faqData: faqData,
 });
 
 const virtualAccounts = () => {
@@ -40,42 +43,34 @@ const virtualAccounts = () => {
         url={`https://www.enkash.com/olympus/receivables/virtual-accounts/`}
         faqData={faqData}
       />
+
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
-            <div>
-              <Heading
-                title="Virtual Accounts"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
+            <Heading
+              title={`Virtual Accounts${space}`}
+              color="rainy-blue"
+              size="h4"
+              weight="7"
+            />
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Harness the power of${space}`}
+              title={`Make business collections  ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`virtual accounts for${space}`}
+              title={`faster and easier with${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title=" quicker collections"
+              title=" Virtual Account"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -84,92 +79,72 @@ const virtualAccounts = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Streamline your payment collection process by mapping customer payments against respective invoices in real-time"
+              title="Receive funds via multiple payment modes seamlessly and simplify the reconciliation process by mapping collections with invoices in real time."
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
+
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Repetitive", "Follow-up"],
-              oldWayDescription:
-                "The traditional way of collections require numerous follow-ups and paper trails.",
-              newWayDescription:
-                "The creation of virtual accounts for various customers ensures that follow-ups are on a need-to-basis.",
-            },
-            {
-              itemArray: ["Invoice", "Matching"],
-              oldWayDescription:
-                "Matching payments received against invoice reference numbers is a long-drawn and manual process.",
-              newWayDescription:
-                "With smart data parsing, the invoice generated for payment is easily matched with the payment received.",
-            },
-            {
-              itemArray: ["Payment", "Links"],
-              oldWayDescription:
-                "With the lack of virtual accounts, the possibility of providing payment links for easy collection becomes difficult.",
-              newWayDescription:
-                "Embedded payment links encourage customers to make timely payments using their preferred mode of payment.",
-            },
-            {
-              itemArray: ["Cash Flow", "Management"],
-              oldWayDescription:
-                "Due to lack of insights into the amount collected and the payments due, cash flow management becomes difficult.",
-              newWayDescription:
-                "With clear tracking of payments and insights into financial patterns, cash flow management becomes easier.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Enables payment collection with real-time reconciliation"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Unique Account Numbers",
+              },
+              {
+                icon: stack,
+                text: "Real-Time Reconciliation",
+              },
+              {
+                icon: numberOne,
+                text: "Easy Activation Control",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
+        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only `}
       >
         <div className="d-inline text-center">
-          <Heading title="Improve your" color="black" size="h1" weight="6" />
           <Heading
-            title={`${space}business collections`}
-            color="equity-blue"
+            title="Ensure Timely Collections With  "
+            color="black"
             size="h1"
             weight="6"
           />
-          <Heading title={`${space}with`} color="black" size="h1" weight="6" />
-        </div>
-
-        <div className="mb-5 text-center">
           <Heading
-            title={`${space}virtual accounts`}
-            color="black"
+            title={`${space}Virtual Account`}
+            color="equity-blue"
             size="h1"
             weight="6"
           />
@@ -178,62 +153,64 @@ const virtualAccounts = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Simplified Tracking"
-              description="With a virtual account, the process of tracking customer payments made and due can be checked easily"
+              whiteTitle="Instant Payment Collection"
+              description="Businesses can embed payment links in virtual accounts and encourage customers to make payments instantly with their preferred payment mode."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Real-Time Updates"
-              description="Records are updated in real-time as and when payment is received from the customer"
+              whiteTitle="Accurate Reconciliation in Real-Time"
+              description="Business payments from multiple branches and departments can be reconciled in real time with a user-friendly dashboard."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Outstanding Management"
-              description="With complete insight into payments made by customers, outstanding management becomes easy"
+              whiteTitle="Access Centralized Dashboard "
+              description="Get access to the centralized dashboard with downloadable reports to know daily, weekly, and monthly collections of business. "
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Reconciliation"
-              description="Virtual accounts make the bank reconciliation process automated,  fast, and accurate with source information"
+              whiteTitle="Quick Activation & Deactivation "
+              description="Easily create and deactivate virtual accounts in real-time. In case of transfers to a disabled account, the amount will be auto-rejected."
               source="receivables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Overall"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Visibility"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
+                <Heading
+                  title="Settle Funds Easily"
+                  color="rainy-blue"
+                  size="h2"
+                  weight="6"
+                />
               }
               source="receivables"
-              description="Virtual accounts ensure you have overall visibility into activities like collections and cash flow usage in a few simple clicks"
+              description="Businesses can receive payments via Auto Collect and split them among multiple parties as per their defined percentages and settlement cycles."
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easy Payment Collection"
-              description="The payment collection becomes easy and faster with unique virtual account numbers"
+              whiteTitle="Receive KYC Approved Payments "
+              description="Get funds from KYC-approved customers by allowing amount and remitter lock to enhance the reconciliation process accuracy."
               source="receivables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Check out other payment products at "
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -263,10 +240,11 @@ const virtualAccounts = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how virtual accounts can revolutionize the way you work!"
+          title="Learn how Virtual Accounts will change the way you approach collections and receivables!"
         />
       </div>
       <div
@@ -277,7 +255,7 @@ const virtualAccounts = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about virtual accounts in detail"
+            title="Don't worry! Our FAQs section will help you learn about instant settlements in detail"
             color="black"
             size="h4"
           />
@@ -285,6 +263,29 @@ const virtualAccounts = () => {
 
         <div>
           <FAQHtml faqData={faqData} />
+        </div>
+      </div>
+
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none pt-0 bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding about e-NACH? Explore the Comprehensive Guide."
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="The automated process of collecting funds from customers regularly for monthly subscriptions, loan repayments, utility bills, and insurance premiums with electronic authorization is e-NACH. It helps streamline the payment process by eliminating human interaction and reducing errors, promising timely collections."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
         </div>
 
         <div className={styles.faq_bg}>
@@ -299,6 +300,7 @@ const virtualAccounts = () => {
           source="receivables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -312,6 +314,7 @@ const virtualAccounts = () => {
                   title="Why are virtual accounts essential for my business?"
                 />
               </div>
+
               <div className="mb-5">
                 <Heading
                   size="h6"
@@ -330,6 +333,7 @@ const virtualAccounts = () => {
                   title="Does the virtual account module help improve the finance team’s performance? If yes, how?"
                 />
               </div>
+
               <div className="mb-5">
                 <Heading
                   size="h6"
@@ -347,6 +351,7 @@ const virtualAccounts = () => {
                   title="Why should a business consider virtual accounts?"
                 />
               </div>
+
               <div className="mb-3">
                 <Heading
                   size="h6"
@@ -356,6 +361,7 @@ const virtualAccounts = () => {
                   Virtual accounts are essential for any growing business because they help them with the following aspects:"
                 />
               </div>
+
               <div className="mb-5">
                 <ul>
                   <li>They provide a better customer experience</li>
@@ -397,6 +403,7 @@ const virtualAccounts = () => {
                   title="How does the virtual accounts module curb misuse?"
                 />
               </div>
+
               <div className="mb-3">
                 <Heading
                   size="h6"
@@ -409,6 +416,7 @@ const virtualAccounts = () => {
           }
         />
       </div>
+
       <Footer utmSource="receivables" />
     </div>
   );

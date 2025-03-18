@@ -101,5 +101,63 @@ const faqData = [
     ],
   },
 ];
+const secondFaqData = [
+  {
+    question: " What do recurring payments mean?",
+    answer: [
+      {
+        heading:
+          "A payment model where customers authorize the payment of funds from their accounts automatically at regular intervals for goods, services, or bill payments on an ongoing basis is called recurring payments.",
+      },
+    ],
+  },
+  {
+    question: " What is the difference between NACH and e-NACH?",
+    answer: [
+      {
+        heading:
+          "National Payments Corporation of India (NPCI) incorporated the National Automated Clearing House or NACH for banks to make bulk transactions for subsidy distribution, dividends, and salaries.",
+      },
+      {
+        heading:
+          "NACH enables repetitive transactions that take place in bulk. It can be further used for payment collection like electricity bills, water bills, insurance premium payments, and other utility bills.To automate these recurring payments, NPCI introduced the Electronic National Automated Clearing House, or e-NACH. ",
+      },
+      {
+        heading:
+          "The need to fill the NACH forms and involvement in paperwork is eliminated due to e-NACH. The mandate registration process for e-NACH can be completed within a few hours and requires minimum human intervention.",
+      },
+    ],
+  },
+  {
+    question: "How does e-Mandate works?",
+    answer: [
+      {
+        heading:
+          "E-mandate works by allowing individuals to provide their consent digitally for businesses to deduct payments directly from their bank accounts. These are directly set up through a net banking transaction from merchant websites. To enable this, a customer would have to complete a one-time net banking transaction authorization after which all subsequent payments will not require customer intervention.",
+      },
+    ],
+  },
+  {
+    question: "How does e-NACH works?",
+    answer: [
+      {
+        heading:
+          "E-NACH works via electronic mandates, where customers are supposed to provide their authorization for automated debits from their bank accounts. These mandates enable businesses to initiate payments on pre-determined dates. The automated nature of e-NACH minimizes the administrative burden on businesses and customers, ensuring a secure and seamless payment experience.",
+      },
+    ],
+  },
+  {
+    question: "How to enable e-NACH with EnKash?",
+    answer: [
+      {
+        bullets: [
+          "Register on EnKash",
+          "You will be provided with e-NACH with an API integration which can done easily with a plug-and-play method",
+          "You can set the recurring payment for both your monthly payments and collections",
+        ],
+      },
+    ],
+  },
+];
 
-export default faqData;
+export { faqData, secondFaqData };

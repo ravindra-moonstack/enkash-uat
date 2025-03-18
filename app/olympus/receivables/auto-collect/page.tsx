@@ -105,14 +105,15 @@ const AutoCollect = (): React.JSX.Element => {
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps
+            title="Automating Payment Collection"
             steps={[
               {
                 icon: userPlus,
-                text: "Fast",
+                text: "Instant ",
               },
               {
                 icon: stack,
-                text: "Economical",
+                text: "Smart ",
               },
               {
                 icon: numberOne,
@@ -124,7 +125,7 @@ const AutoCollect = (): React.JSX.Element => {
       </div>
 
       <div
-        className={`${styles.second_row} row d-flex bg-white row-padding`}
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
       ></div>
 
       <div
@@ -144,29 +145,29 @@ const AutoCollect = (): React.JSX.Element => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Virtual Solutions"
-              description="Utilize the power of unique virtual payment addresses and virtual bank accounts to automatically collect and reconcile all bank transfers, including UPI, NEFT, IMPS, and RTGS"
+              whiteTitle="Multiple Modes Payment Collection"
+              description="EnKash Auto-Collect supports UPI, NEFT, IMPS, and RTGS, enabling seamless branch-specific or individual customer payments. Simplify collections and accelerate your business growth with frictionless transactions."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Zero Cost Creation"
-              description="Enjoy the convenience of creating unlimited virtual payment addresses at zero cost"
+              whiteTitle="Real-time Transaction Notification"
+              description="Stay informed with instant alerts every time a payment is made. Real-time webhook updates and our dashboard ensure complete transparency and keep your financial operations running smoothly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Multiple Virtual Bank Accounts"
-              description="Manage collections from diverse sources seamlessly by creating unique virtual bank accounts for each business unit or customer, enhancing financial transparency"
+              whiteTitle="Zero Setup Cos"
+              description="Create unlimited virtual accounts and payment addresses at no additional cost. Eliminate the manual efforts of assigning account numbers, and let our automation simplify your financial workflows."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Personalized Branding"
-              description="Add a personal touch to your VPAs with a custom brand prefix, reinforcing your brand identity with every transaction"
+              whiteTitle="Tailored for Every Business"
+              description="Whether you’re managing multiple branches, customer touchpoints, or financial services, EnKash Auto-Collect provides flexible virtual accounts tailored to each business unit, department, or individual customer"
               source="receivables"
             />
           </div>
@@ -179,8 +180,8 @@ const AutoCollect = (): React.JSX.Element => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Account Management"
-              description="Take control of your virtual accounts in real-time. Activate or deactivate accounts as needed, ensuring seamless fund transfers"
+              whiteTitle="Advanced Security & Compliance"
+              description="Rest easy knowing that every transaction is secure. EnKash adheres to industry-leading compliance standards and encryption protocols to protect your data and funds."
               source="receivables"
             />
           </div>
@@ -224,7 +225,7 @@ const AutoCollect = (): React.JSX.Element => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Auto Collect can revolutionize the way you work!"
+          title="Learn how our auto collect can revolutionize the way you work!"
         />
       </div>
 
@@ -246,16 +247,16 @@ const AutoCollect = (): React.JSX.Element => {
           <FAQHtml faqData={faqData} />
         </div>
 
-        <div className={`${styles.second_row}  bg-white `}>
-          <AllProducts
-            title="Check Out EnKash’s Other Payment Products and Solutions"
-            data={productData}
-          />
-        </div>
-
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check Out EnKash’s Other Payment Products and Solutions"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.sixth_row} row`}>

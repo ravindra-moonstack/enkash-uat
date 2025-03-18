@@ -248,6 +248,7 @@ const page = () => {
           <Image src={faqBg} alt="background image" />x
         </div>
       </div>
+
       <div className={`${styles.second_row}  bg-white `}>
         <AllProducts
           title="Check out other payment products at"
@@ -255,6 +256,7 @@ const page = () => {
           data={productData}
         />
       </div>
+      
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of customized payment page?"

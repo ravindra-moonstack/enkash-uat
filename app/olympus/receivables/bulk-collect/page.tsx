@@ -24,6 +24,7 @@ import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Collect – Corporate E-Collect and Payment Collection | EnKash",
@@ -100,11 +101,13 @@ const bulkCollect = () => {
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
           <ThreeSteps
             title="No More Payment Delays"
@@ -124,6 +127,7 @@ const bulkCollect = () => {
             ]}
           />
         </div>
+        
       </div>
 
       <div
@@ -181,36 +185,23 @@ const bulkCollect = () => {
               <div className="text-center">
                 <div className="text-center d-inline flex-column">
                   <Heading
-                    title={`Business${space}`}
+                    title={`How EnKash  ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title={`bulk collections${space}`}
+                    title={`Bulk Collect ${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
-                  <Heading
-                    title="made easy"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
-                <div>
-                  <Heading
-                    title="and efficient"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
+                  <Heading title="Works" color="white" size="h1" weight="6" />
                 </div>
               </div>
             </>
           }
-          mainTitle="How EnKash Bulk Collect Works"
+          mainTitle="How does it work?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -224,7 +215,7 @@ const bulkCollect = () => {
       </div>
 
       <div className={`${styles.second_row}  bg-white `}>
-        <AllProducts title="Check Out EnKash’s Other Payment Products and Solutions" />
+        <AllProducts title="Check Out EnKash’s Other Payment Products and Solutions" data={productData} />
       </div>
 
       <div

@@ -4,7 +4,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
+import { faqData, secondFaqData } from "./faq-data";
 import blogData from "./blog-data";
 import carouselData from "./carousel-data";
 import { banner, caraouselBg, faqBg, whiteArrow } from ".";
@@ -23,6 +23,9 @@ import Footer from "@/components/footer/footer";
 import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Customize Subscription Management Solutions - EnKash",
@@ -47,128 +50,100 @@ const subscriptionManagement = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Olympus |${space}`}
+                title={`Subscription Management${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <div>
-              <Heading
-                title="Subscriptions"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
           </div>
 
           <div className="d-flex flex-column">
+            <Heading title="Trusted" color="white" size="h2" weight="7" />
             <Heading
-              title="Automate invoices, billing"
+              title="Subscription Management"
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title="and renewal processes"
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="with subscription"
+              title="Software for Growth-oriented "
               color="white"
               size="h2"
               weight="7"
             />
-            <Heading title="management" color="white" size="h2" weight="7" />
+            <Heading title="Businesses" color="white" size="h2" weight="7" />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Eliminate manual intervention and ensure timely payments from customers with a smooth and efficient process"
+              title="Keep cash flow for your subscription-based business steady by collecting recurring payments via multiple payment methods like eNACH, autopay, standing instruction on credit & debit cards"
               color="white"
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
+
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={banner} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Time to scale subscription business with automated renewals and billing cycles"
+            steps={[
+              {
+                icon: userPlus,
+                text: "RBI Compliant",
+              },
+              {
+                icon: stack,
+                text: "Automated Subscription Management",
+              },
+              {
+                icon: numberOne,
+                text: "Customizable Subscription Plans",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Automates Invoices", "& Recurring Payments"],
-              oldWayDescription:
-                "The conventional way includes manual invoice generation and reminders and multiple follow-ups for recurring subscription payments.",
-              newWayDescription:
-                "With EnKash, businesses can automate invoice generation and collect recurring payments for subscriptions.",
-            },
-            {
-              itemArray: ["Automates", "Billing Cycles"],
-              oldWayDescription:
-                "The manual task of billing for different subscription models is not efficient and appropriate.",
-              newWayDescription:
-                "With EnKash, billing cycles can be configured for varying subscription revenue models.",
-            },
-            {
-              itemArray: ["Single", "Dashboard"],
-              oldWayDescription:
-                "Data can be scattered and mismanaged when handled manually.",
-              newWayDescription:
-                "Businesses can easily access a single dashboard to analyze their entire  subscriptions and reconciliation data.",
-            },
-            {
-              itemArray: ["Customer", "Retention"],
-              oldWayDescription:
-                "Manually handling customers cannot be feasible for businesses in the long term which in turn witnesses customer churn.",
-              newWayDescription:
-                "Subscription management platform   ensures customer retention by providing free trials and customizing the pricing as per their requirements.",
-            },
-          ]}
-        />
-      </div>
-
       <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
+        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only mb-0`}
       >
         <div className="d-inline align-items-center mb-5">
           <div className="text-center">
             <Heading
-              title="A SaaS subscription management"
+              title="Manage Collections Business "
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`${space}platform for collections`}
+              title={`${space}Subscriptions Efficiently `}
               color="equity-blue"
               size="h1"
               weight="6"
@@ -179,35 +154,42 @@ const subscriptionManagement = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easy Integration"
-              description="Enterprises can easily integrate their website with EnKash’s subscription management model without much technical hassle. The dashboard gives a user-friendly experience"
+              whiteTitle="Smooth Integration"
+              description="Businesses can integrate their payment gateways with the subscription management model with minimal technical effort. The user-friendly dashboard ensures a smooth experience"
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Efficient Renewal"
-              description="Businesses can eliminate the hassle of sending reminders for collections and renewal. These can be automated with subscription management and communicated to the user easily"
+              whiteTitle="Automate Billing Cycles "
+              description="Businesses can integrate their payment gateways with the subscription management model with minimal technical effort. The user-friendly dashboard ensures a smooth experience"
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customer History"
-              description="Businesses can easily access customer transaction history and use it to analyze their behavior to provide them with solutions that suit their needs. This data also helps in reconciliation"
+              whiteTitle="Easy Renewal"
+              description="Simply link the customer to a subscription plan and automate the invoicing, billing and renewal processes with the EnKash subscription model."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Customizations"
-              description="Customize the subscription management as per your business requirements and get paid on time"
+              description="With EnKash, billing cycles can be configured as per business subscription revenue models"
               source="receivables"
             />
           </div>
         </div>
       </div>
 
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
+      </div>
       <div className={`${styles.fourth_row} row`}>
         <HowDoesCarousel
           titleContent={
@@ -234,12 +216,14 @@ const subscriptionManagement = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how payment links can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -248,7 +232,7 @@ const subscriptionManagement = () => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about subscription management in detail"
+            title="Don't worry! Our FAQs section will help you learn about instant settlements in detail"
             color="black"
             size="h4"
           />
@@ -256,6 +240,29 @@ const subscriptionManagement = () => {
 
         <div>
           <FAQHtml faqData={faqData} />
+        </div>
+      </div>
+
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none pt-0 bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding about e-NACH? Explore the Comprehensive Guide."
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="The automated process of collecting funds from customers regularly for monthly subscriptions, loan repayments, utility bills, and insurance premiums with electronic authorization is e-NACH. It helps streamline the payment process by eliminating human interaction and reducing errors, promising timely collections."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
         </div>
 
         <div className={styles.faq_bg}>

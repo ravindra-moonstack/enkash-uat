@@ -5,21 +5,24 @@ import iconThree from "./img/icon-three.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Leverage data analytics and create targeted and personalized collection strategies for different customer segments",
+    alt: "Connect your payment systems, bank accounts, and invoicing tools to EnKash for seamless data flow.",
     title:
-      "Leverage data analytics and create targeted and personalized collection strategies for different customer segments",
+      "Connect your payment systems, bank accounts, and invoicing tools to EnKash for seamless data flow.",
+    heading: "Integrate Payment Data: ",
   },
   {
     image: iconTwo,
-    alt: "Effectively predict and manage your Days Sales Outstanding (DSO) by tracking the average number of days it takes to collect payment after a sale",
+    alt: "Set up personalized filters and segmentation to track and analyze collections by customer, region, or payment status.",
     title:
-      "Effectively predict and manage your Days Sales Outstanding (DSO) by tracking the average number of days it takes to collect payment after a sale",
+      "Set up personalized filters and segmentation to track and analyze collections by customer, region, or payment status.",
+    heading: "Customize Analytics Dashboard: ",
   },
   {
     image: iconThree,
-    alt: "Easily comprehend complex data through intuitive visualizations like charts and tables, making it easy for everyone to understand",
+    alt: "Access real-time insights, identify trends, and adjust your collection strategy based on actionable data.",
     title:
-      "Easily comprehend complex data through intuitive visualizations like charts and tables, making it easy for everyone to understand",
+      "Access real-time insights, identify trends, and adjust your collection strategy based on actionable data.",
+    heading: "Review & Optimize: ",
   },
 ];
 

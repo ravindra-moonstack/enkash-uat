@@ -16,14 +16,14 @@ const productData: AllProductsDataProp[] = [
     description:
       "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
     image: paymentLink,
-    link: "/olympus/receivables/payment-page/",
+    link: "/olympus/receivables/payment-links/",
   },
   {
     title: "Payment Page",
     description:
       "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online.",
     image: paymentPage,
-    link: "/olympus/receivables/payment-page/",
+    link: "/olympus/receivables/customized-payment/",
   },
   {
     title: "Payment Button",
@@ -37,7 +37,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions.",
     image: qrCode,
-    link: "/olympus/receivables/payment-button/",
+    link: "/olympus/receivables/qr-codes/",
   },
   {
     title: "Auto Collect",
