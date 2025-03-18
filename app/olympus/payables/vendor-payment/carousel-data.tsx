@@ -7,29 +7,29 @@ import iconFive from "./img/icon-five.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Login to EnKash or register",
-    title: "Log in to EnKash with your registered mobile number or email address",
+    alt: "Upload invoices in bulk, or sync them directly from your accounting software.",
+    title:
+      "Upload invoices in bulk, or sync them directly from your accounting software.",
+    heading: "Add Invoices: ",
   },
   {
     image: iconTwo,
-    alt: "Go to vendor payments",
-    title: "Go to vendor payments under Olympus and complete KYC",
+    alt: "Set up approval workflows, assign roles, and get real-time notifications.",
+    title:
+      "Set up approval workflows, assign roles, and get real-time notifications.",
+    heading: "Approve with Ease: ",
   },
   {
     image: iconThree,
-    alt: "Once completed, upload/add vendor invoices",
-    title:
-      "Once completed, upload/add vendor invoices or fetch from Tally if integrated into the system",
+    alt: "Select payment options and process payments in just a few clicks.",
+    title: "Select payment options and process payments in just a few clicks.",
+    heading: "Make Payments: ",
   },
   {
     image: iconFour,
-    alt: "Add custom maker-checker approval",
-    title: "Add custom maker-checker approval workflow if needed",
-  },
-  {
-    image: iconFive,
-    alt: "Select vendor payment invoices",
-    title: "Select vendor payment invoices and pay individually or in bulk with one click with any payment mode of your choice",
+    alt: "Track payment statuses and generate detailed reports.",
+    title: "Track payment statuses and generate detailed reports.",
+    heading: "Reconcile Instantly: ",
   },
 ];
 

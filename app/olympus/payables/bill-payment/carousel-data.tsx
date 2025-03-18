@@ -7,31 +7,28 @@ import iconFive from "./img/icon-five.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Login to EnKash or register",
-    title:
-      "Login to EnKash or register with your valid mobile number or email address",
+    alt: "Sign up and link your business locations to our platform.",
+    title: "Sign up and link your business locations to our platform.",
+    heading: "Onboard in Minutes: ",
   },
   {
     image: iconTwo,
-    alt: "Go to bill payments and enter company details",
-    title:
-      "Go to bill payments and enter company details like type/sub-category and PAN",
+    alt: "Add utility bill details or let EnKash auto-fetch them for you.",
+    title: "Add utility bill details or let EnKash auto-fetch them for you.",
+    heading: "Add and Auto-Fetch Bills: ",
   },
   {
     image: iconThree,
-    alt: "Upload your bills on the platform",
+    alt: "Make single or bulk payments instantly with robust security measures.",
     title:
-      "Upload your bills on the platform in bulk or individually as per your convenience",
+      "Make single or bulk payments instantly with robust security measures.",
+    heading: "Pay in One Click: ",
   },
   {
     image: iconFour,
-    alt: "Select the bill you want to pay",
-    title: 'Select the bill you want to pay and click on "Pay"',
-  },
-  {
-    image: iconFive,
-    alt: "Make payment using any mode",
-    title: "Make payment using any mode as per your convenience",
+    alt: "Monitor all payment statuses and reconcile them effortlessly.",
+    title: "Monitor all payment statuses and reconcile them effortlessly.",
+    heading: "Track & Reconcile: ",
   },
 ];
 

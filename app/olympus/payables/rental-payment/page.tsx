@@ -17,11 +17,14 @@ import Header from "@/components/header/header";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Rent Payment - Pay Rent Through Credit Card | EnKash",
@@ -44,109 +47,73 @@ const rentalPayments = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Rental Payment"
+              title={`Rental Payments${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div className="d-line">
             <Heading
-              title={`Making${space}`}
+              title={`Hassle-Free ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="rental payments"
+              title="Rent Payments "
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <Heading
-              title={`${space}has never been this seamless!`}
-              color="white"
-              size="h2"
-              weight="7"
-            />
+            <Heading title={`with EnKash`} color="white" size="h2" weight="7" />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="With EnKash, make rental payments in just a few clicks and easy steps with no delays or hassles"
+              title="Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient"
               color="white"
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=payables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <LottieClientComponent animationData={bannerLottie} loop={true} />
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Data", "Processing"],
-              oldWayDescription: "Data loss due to manual payment processing.",
-              newWayDescription:
-                "The records and receipts are digitally stored; low or no chance of data loss.",
-            },
-            {
-              itemArray: ["Payments", "Charges"],
-              oldWayDescription:
-                "Late payment charges are incurred due to delays in making payments.",
-              newWayDescription:
-                "Automated reminders ensure timely payments; no penalties or late payment charges.",
-            },
-            {
-              itemArray: ["Bulk", "Payments"],
-              oldWayDescription:
-                "Challenging to make bulk rental payments in real time.",
-              newWayDescription:
-                "Bulk rental payments can be made  seamlessly and hassle-free.",
-            },
-            {
-              itemArray: ["Payment", "Modes"],
-              oldWayDescription:
-                "Lack of flexibility for multiple modes of payments.",
-              newWayDescription:
-                "Flexibility with multiple modes of payment such as credit card, net banking, etc.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Never Miss Your Rent Payment"
+            steps={[
+              {
+                icon: userPlus,
+                text: "No Late Payments",
+              },
+              {
+                icon: stack,
+                text: "Secure Transactions",
+              },
+              {
+                icon: numberOne,
+                text: "Payment Tracking",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -154,13 +121,13 @@ const rentalPayments = () => {
       >
         <div className="d-inline text-center mb-2">
           <Heading
-            title="Simple, smooth & hassle-free rental payments"
+            title="Put an End to Rental Payment Woes "
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}for your business`}
+            title={`${space}with EnKash`}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -171,47 +138,60 @@ const rentalPayments = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Quick and Easy Onboarding"
-              description="Complete the onboarding with a few simple steps to ensure that rent payments go on time"
+              whiteTitle="Eliminate Late Payment Penalties"
+              description="Avoid late fees with EnKash’s automated reminders and recurring payments. Ensure your rent is paid on time, every time, improving cash flow and eliminating the need for constant follow-ups."
               source="payables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Reminders"
-              description="Enables automated reminders to track due dates, reduce late payments, and improve business cash flow"
+              whiteTitle="Multiple Payment Modes"
+              description="Pay your rent your way with EnKash. Choose from UPI, NEFT, RTGS, credit cards, or digital wallets for instant processing or flexible fund management—ensuring convenience for you and satisfaction for your landlord."
               source="payables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easy Payment Tracking"
-              description="Track what’s paid, due, and pending on a single dashboard to improve visibility, control payment activity, and increase efficiency"
+              whiteTitle="Streamlined Payment Tracking"
+              description="Say goodbye to messy spreadsheets with EnKash’s centralized dashboard. Get a real-time view of all your rent transactions—paid, pending, and overdue—on one intuitive platform, giving you control and transparency like never before."
               source="payables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Centralized Approval"
-              description="Easily pay rent online for all locations with a centralized approval process with all due checks and approvals"
+              whiteTitle="Instant Reconciliation"
+              description="Save hours with automatic reconciliation on EnKash. Seamlessly link payments to invoices, eliminating manual matching and errors. Enjoy accurate records and peace of mind as rent settlements are tracked effortlessly."
               source="payables"
             />
           </div>
-          {/* <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Pay Using Credit Cards"
-              description="Get the option to pay rentals on time using any credit card and keep your business cash flow steady"
-              source="payables"
-            />
-          </div> */}
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Auto-Generated Records"
-              description="The platform auto-generates monthly rental bills on specified dates as per rental agreements that you feed into the system"
+              whiteTitle="Secure Transactions"
+              description="Your security is our priority. EnKash employs multi-layered encryption, fraud detection, and bank-grade protocols to protect every transaction, ensuring your data and funds are safe whether paying rent via credit card, UPI, or other methods."
+              source="payables"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Fast Onboarding"
+              description="Get started effortlessly with EnKash. Complete your KYC, set up rental payment preferences, and you're ready to go in a few simple steps—no steep learning curve, just seamless functionality from day one"
               source="payables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle="Smarter"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -221,13 +201,13 @@ const rentalPayments = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Rental payments${space}`}
+                    title={`How To Setup ${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="are fast, easy, and safe with us"
+                    title="Rent Payments Automation"
                     color="white"
                     size="h1"
                     weight="6"
@@ -241,12 +221,14 @@ const rentalPayments = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how rental payments can revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -277,6 +259,7 @@ const rentalPayments = () => {
           source="payables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
