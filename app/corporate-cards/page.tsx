@@ -1,10 +1,11 @@
+import React from "react";
 import Image from "next/image";
 import { Metadata } from "next";
+
 import { space } from "@/common/constant";
 import styles from "./page.module.scss";
-import blogData from "./blog-data";
-import faqData from "./faq-data";
-import howDoesItWorkData from "./how-does-It-work-data";
+import { blogData, faqData, howDoesItWorkData } from "./data";
+
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
@@ -28,7 +29,7 @@ import {
   heavyLiftingIconThree,
   banner,
 } from ".";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
@@ -43,7 +44,9 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const slash = () => {
+const Slash = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -736,4 +739,4 @@ const slash = () => {
   );
 };
 
-export default slash;
+export default Slash;

@@ -59,6 +59,7 @@ const productData: AllProductsDataProp[] = [
     link: "/corporate-cards/diy-card-module/",
   },
 ];
+
 const faqData: FAQProps[] = [
   {
     question: "What are fuel cards?",

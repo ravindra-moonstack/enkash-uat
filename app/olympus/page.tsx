@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { Metadata } from "next";
+
 import { space } from "@/common/constant";
 import styles from "./page.module.scss";
-import { blogData, faqData } from "./data";
-import howDoesItWorkData from "./how-does-It-work-data";
+import { blogData, faqData, howDoesItWorkData } from "./data";
+
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";

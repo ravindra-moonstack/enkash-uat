@@ -179,6 +179,7 @@ const fuelCard = () => {
               source="corporate_cards"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Streamlined Reimbursements"
@@ -186,6 +187,7 @@ const fuelCard = () => {
               source="corporate_cards"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Cost Control and Savings"
@@ -238,12 +240,14 @@ const fuelCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how Fuel Cards offer a host of benefits for your business and employees!"
         />
       </div>
+      
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

@@ -4,9 +4,9 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+
+import { blogData, faqData, carouselData } from "./data";
+
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
@@ -17,9 +17,9 @@ import BlogWrapper from "@/components/blog/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import { FAQHtml } from "@/components/faq";
+import { Header, Footer } from "@/components";
+
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 
@@ -41,6 +41,7 @@ const brandVoucher = () => {
         faqData={faqData}
       />
       <Header utmSource="Loyalty_lounge" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -176,6 +177,7 @@ const brandVoucher = () => {
             weight="6"
           />
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
@@ -293,6 +295,7 @@ const brandVoucher = () => {
           source="Loyalty_lounge"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -403,6 +406,7 @@ const brandVoucher = () => {
           }
         />
       </div>
+
       <Footer utmSource="Loyalty_lounge" />
     </div>
   );

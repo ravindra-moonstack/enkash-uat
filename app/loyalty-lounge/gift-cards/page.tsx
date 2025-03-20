@@ -2,8 +2,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -19,6 +17,7 @@ import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import { FAQHtml } from "@/components/faq";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title: "Corporate Gift Cards for Employees for Every Occasion with EnKash",
@@ -37,42 +36,35 @@ const GiftCards = (): React.JSX.Element => {
         url={`https://www.enkash.com/loyalty-lounge/gift-cards/`}
         faqData={faqData}
       />
+      
       <Header utmSource="Loyalty_lounge" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Loyalty Lounge |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Gift Cards"
+              title={`Gift Cards${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div className="d-flex flex-column">
             <Heading
-              title={`Foster a culture of${space}`}
+              title={`Build a culture of  ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`recognition with these ${space}`}
+              title={`recognition with customized ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`customized gift cards${space}`}
+              title={`Gift Cards${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -81,88 +73,55 @@ const GiftCards = (): React.JSX.Element => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Easy to access, monitor, and control gift cards for seamless gifting"
+              title="Make corporate gifting seamless for businesses with these easy-to-access and control gift cards."
               color="white"
               size="h6"
               weight="5"
             />
           </div>
-          <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-            <div className="me-2">
-              <PrimaryButton
-                title="EnKash Now"
-                theme="blue"
-                url="/sales/?source=Loyalty_lounge"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
-                url="/sales/?source=Loyalty_lounge"
-              />
-            </div>
-          </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Accessibility"],
-              oldWayDescription:
-                "The traditional way of issuing gift cards was quite cumbersome and paper-based, making it a long-drawn and time-consuming process.",
-              newWayDescription:
-                "The EnKash way of issuing gift cards is simplified, making it easy to access digital cards from anywhere.",
-            },
-            {
-              itemArray: ["Easy to", "Track"],
-              oldWayDescription:
-                "The usage of traditional gift cards cannot be tracked, with high chances of loss and misplacement.",
-              newWayDescription:
-                "Gift cards on EnKash can be easily tracked and blocked to avoid loss and misuse.",
-            },
-            {
-              itemArray: ["Multiple", "Denominations"],
-              oldWayDescription:
-                "Traditional gift cards may have restrictions regarding their availability in specific amount limits.",
-              newWayDescription:
-                "Gift cards are available in multiple denominations of up to Rs.10,000; one can choose the card value per their requirement. Limits are configurable based on your choice.",
-            },
-            {
-              itemArray: ["Acceptability"],
-              oldWayDescription:
-                "Traditional gift cards may have a limitation on usage.",
-              newWayDescription:
-                "Gift cards by EnKash are widely accepted across many places.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Best Corporate Gift Cards Online"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Easily Accessible",
+              },
+              {
+                icon: stack,
+                text: "Trackable ",
+              },
+              {
+                icon: numberOne,
+                text: "Multiple Denominations",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex flex-column text-center mb-5">
+        <div className="d-inline  flex-column text-center mb-5">
+          <Heading title="One" color="black" size="h1" weight="6" />
           <Heading
-            title="Gift cards from EnKash are"
-            color="black"
+            title={`${space} Corporate Gift Card;${space}`}
+            color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}quick, simple, and automatic!`}
-            color="equity-blue"
+            title=" Endless Choices"
+            color="black"
             size="h1"
             weight="6"
           />
@@ -172,8 +131,8 @@ const GiftCards = (): React.JSX.Element => {
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Freedom to Choose"
-                description="Gift cards allow the recipient to choose products or services per their preference and convenience from a retail store or online"
+                whiteTitle="Instant Digital Delivery"
+                description="Send and receive gift cards instantly via email or SMS, ensuring a seamless gifting experience. No physical handling, no delays—just instant rewards, perfect for every occasion."
                 source="Loyalty_lounge"
               />
             </div>
@@ -182,20 +141,20 @@ const GiftCards = (): React.JSX.Element => {
                 titleHtml={
                   <>
                     <Heading
-                      title="Easy"
+                      title="Freedom"
                       color="rainy-blue"
                       size="h2"
                       weight="6"
                     />
                     <Heading
-                      title="Access"
+                      title="of Choice"
                       color="rainy-blue"
                       size="h2"
                       weight="6"
                     />
                   </>
                 }
-                description="Gift cards are prepaid cards that can be easily and safely accessed anywhere and anytime"
+                description="Empower recipients with the flexibility to redeem gift cards for products and services across a wide range of top brands, ensuring a personalized and satisfying gifting experience."
                 source="Loyalty_lounge"
               />
             </div>
@@ -204,13 +163,13 @@ const GiftCards = (): React.JSX.Element => {
                 titleHtml={
                   <>
                     <Heading
-                      title="Ensures"
+                      title="Personalized"
                       color="rainy-blue"
                       size="h2"
                       weight="6"
                     />
                     <Heading
-                      title="Safety"
+                      title="Gifting Experience"
                       color="rainy-blue"
                       size="h2"
                       weight="6"
@@ -218,26 +177,40 @@ const GiftCards = (): React.JSX.Element => {
                   </>
                 }
                 source="Loyalty_lounge"
-                description="Gift cards are prepaid cards and are safe as they can be frozen in case of loss or theft without losing money with the self-PIN generation feature"
+                description="Customize gift cards with your company’s logo, branding, and personalized messages, enhancing engagement while creating a memorable and meaningful gifting experience for employees and customers"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Easy to Distribute"
-                description="These gift cards can be easily distributed as per the occasion"
+                whiteTitle="Highly Secure and Reliable"
+                description="Prepaid and protected, EnKash Gift Cards can be securely frozen in case of loss or theft. The self-PIN generation feature adds an extra layer of security for peace of mind"
+                source="Loyalty_lounge"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Bulk Distribution with Ease"
+                description="Easily distribute multiple gift cards in bulk with just a few clicks. Ideal for corporate gifting, rewards programs, and promotions, saving time and effort for large-scale campaigns."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Multiple Denominations"
-                description="Available in multiple denominations of up to 
-                Rs.10,000, ensuring the option to choose the card value as per your requirements"
+                description="Choose from a variety of denominations up to ₹10,000, making it easy to cater to different gifting needs—whether it’s a small appreciation or a grand reward."
                 source="Loyalty_lounge"
               />
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Products to Encourage Loyalty and Reward "
+          subtitle="Employees"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -267,12 +240,14 @@ const GiftCards = (): React.JSX.Element => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how gift cards can benefit your business and employees!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

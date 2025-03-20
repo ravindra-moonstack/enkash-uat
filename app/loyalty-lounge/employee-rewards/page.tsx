@@ -1,25 +1,22 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { blogData, faqData, carouselData, productData } from "./data";
+import { Header, Footer, BlogWrapper } from "@/components";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import { FAQHtml } from "@/components/faq";
+import AllProducts from "@/components/all-products/all-products";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 
@@ -33,7 +30,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const employeeRewards = () => {
+const employeeRewards = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -45,52 +42,25 @@ const employeeRewards = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Loyalty Lounge${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="| Employee Rewards"
+              title={`Employee Rewards${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div className="d-inline d-md-flex flex-column">
             <Heading
-              title={`Rewards management${space}`}
+              title={` Motivate Your Valuable Workforce with${space}`}
               color="white"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading
-                title={`platform for${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="effortless"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-            </div>
+
             <Heading
-              title="recognition and "
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="redemption"
-              color="rainy-blue"
+              title={` Employee Rewards${space}`}
+              color="white"
               size="h2"
               weight="7"
             />
@@ -98,7 +68,7 @@ const employeeRewards = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Build a culture of employee engagement, productivity, and retention with our comprehensive rewards programs"
+              title="Recognize achievements, celebrate milestones, and boost morale with EnKash’s all-in-one employee rewards and recognition platform."
               color="white"
               size="h6"
               weight="5"
@@ -107,64 +77,39 @@ const employeeRewards = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=Loyalty_lounge"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=Loyalty_lounge"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Rewards", "Options"],
-              oldWayDescription:
-                "Limited reward options, often restricted to cash or physical gifts.",
-              newWayDescription:
-                "Diverse reward options, including personalized rewards, experiences, or benefits, enhancing employee satisfaction.",
-            },
-            {
-              itemArray: ["Manual", "Recognition"],
-              oldWayDescription:
-                "Employee recognition and rewards often rely on manual processes, which can be inconsistent and time-consuming.",
-              newWayDescription:
-                "Automated recognition and reward system that tracks employee achievements and delivers rewards efficiently and consistently.",
-            },
-            {
-              itemArray: ["Personalization"],
-              oldWayDescription:
-                "Rewards are often generic and do not consider individual employee preferences.",
-              newWayDescription:
-                "Employees can choose rewards based on their interests and needs.",
-            },
-            {
-              itemArray: ["Employee", " Engagement"],
-              oldWayDescription:
-                "Traditional methods may not always foster employee engagement or a positive work environment.",
-              newWayDescription:
-                "Promotes employee engagement via customized recognition programs, leading to enhanced employee satisfaction.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Recognize & Retain Employees"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Extensive Reward Options",
+              },
+              {
+                icon: stack,
+                text: "Instant Reward Redemption",
+              },
+              {
+                icon: numberOne,
+                text: "Easy Reward Disbursement",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -173,13 +118,13 @@ const employeeRewards = () => {
         <div className="d-flex flex-column text-center mb-5">
           <div>
             <Heading
-              title="Discover why EnKash is the"
+              title="Promote Productivity & "
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`${space}best employee`}
+              title={`${space}Engagement With `}
               color="equity-blue"
               size="h1"
               weight="6"
@@ -187,7 +132,7 @@ const employeeRewards = () => {
           </div>
 
           <Heading
-            title={`${space}rewards and recognition platform`}
+            title={`${space}Employee Rewards `}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -198,29 +143,29 @@ const employeeRewards = () => {
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Program Administration"
-                description="Manage and customize programs, define eligibility criteria, automate policy adherence, and track participation—all in one place"
+                whiteTitle="Personalized Recognition"
+                description="Tailor rewards to individual preferences by offering flexible and customizable options, creating a more meaningful experience that fosters loyalty, boosts morale, and strengthens workplace culture."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Easy Allocation & Redemption"
-                description="Effortlessly allocate rewards by bulk uploading employee data and sending automated alerts for awarded points and redemption via WhatsApp, email, and SMS"
+                description="Reward employees in real time using WhatsApp, email, and SMS, making the process seamless, efficient, and instantly gratifying for recipients, encouraging a more engaged and motivated workforce."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Diverse Redemption"
-                description="Redeem from 400+ brands like Myntra, Amazon, Zomato, and Nykaa across 20+ categories like entertainment, fashion, travel, etc"
+                description="Choose from 400+ brands across entertainment, fashion, travel, dining, and more, ensuring every employee finds something they truly value and appreciate, enhancing their motivation and job satisfaction"
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="HRMS Integration"
-                description="Streamline user onboarding and reward allocation by seamlessly integrating with HRMS platforms, eliminating manual processes"
+                description="Automate reward allocation by integrating seamlessly with your HRMS, eliminating manual processes, reducing administrative workload, and ensuring accurate, hassle-free employee recognition at every stage."
                 source="Loyalty_lounge"
               />
             </div>
@@ -228,7 +173,7 @@ const employeeRewards = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Open Voucher Function"
-                description="Issue open vouchers on the dashboard & reward winners on the spot by sharing QR Codes via WhatsApp or email, integrated with their login codes. The recipient can redeem the reward by scanning the QR code received"
+                description="Issue open vouchers on the dashboard & reward winners on the spot by sharing QR Codes via WhatsApp or email, integrated with their login codes. The recipient can redeem the reward by scanning the QR code received."
                 source="Loyalty_lounge"
               />
             </div>
@@ -236,12 +181,20 @@ const employeeRewards = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Realtime Updates"
-                description="Stay informed about redemption and account actions on a single dashboard for better managing your R&R program"
+                description="Track engagement, monitor reward effectiveness, and optimize your recognition strategy with comprehensive analytics and reporting tools that provide actionable insights for enhancing employee motivation and performance."
                 source="Loyalty_lounge"
               />
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Other Products to Build High-Performing "
+          subtitle="Teams"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>

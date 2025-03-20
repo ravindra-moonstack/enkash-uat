@@ -14,72 +14,48 @@ import { AllProductsDataProp } from "@/components/all-products/all-products";
 
 const productData: AllProductsDataProp[] = [
   {
-    title: "Fuel Card",
+    title: "Channel Incentives",
     description:
-      "Manage fuel expenses effortlessly with a card designed for streamlined tracking and cost control.",
+      "Motivate partners and distributors with tailored rewards, driving sales and long-term engagement.",
     image: paymentLink,
-    link: "/corporate-cards/fuel-cards/",
+    link: "/loyalty-lounge/channel-incentive/",
   },
   {
-    title: "Virtual Card",
+    title: "Employee Rewards",
     description:
-      "Generate secure, single-use virtual cards for online payments, reducing fraud risk and improving accountability.",
+      "Recognize and retain top talent with instant, meaningful, and customizable reward solutions.",
     image: paymentButton,
-    link: "/corporate-cards/virtual-cards/",
+    link: "/loyalty-lounge/employee-rewards/",
   },
   {
-    title: "Travel and Expense",
+    title: "Offers",
     description:
-      "Simplify travel expense management with dedicated cards, ensuring transparency and easy reconciliation",
+      "Unlock exclusive deals and discounts to enhance loyalty, boost engagement, and drive satisfaction.",
     image: paymentButton,
-    link: "/corporate-cards/travel-and-expense-cards/",
-  },
-  {
-    title: "Purchase Card",
-    description:
-      "Empower your team to make secure business purchases while maintaining full control over spending limits.",
-    image: qrCode,
-    link: "/corporate-cards/purchase-cards/",
-  },
-  {
-    title: "Digital Marketing Card",
-    description:
-      "Optimize digital ad spends with a card tailored for marketing expenses, offering real-time tracking and control.",
-    image: autoCollect,
-    link: "/corporate-cards/digital-marketing-cards/",
-  },
-  {
-    title: "Meal Card",
-    description:
-      "Provide employees with tax-saving meal benefits using a dedicated card accepted at restaurants and grocery stores.",
-    image: paymentButton,
-    link: "/corporate-cards/meal-cards/",
+    link: "/loyalty-lounge/offers/",
   },
 ];
 
 const carouselData = [
   {
     image: iconOne,
-    alt: "Sign up on EnKash and provide all the necessary company details",
-    title: "Sign up on EnKash and provide all the necessary company details",
+    alt: "Sign up on EnKash with all the necessary company details.",
+    title: "Sign up on EnKash with all the necessary company details.",
+    heading: "Sign Up: ",
   },
   {
     image: iconTwo,
-    alt: "Go to bill payments and enter company details",
+    alt: "Add funds to the company account and request gift cards whenever necessary.",
     title:
-      "Once the given details are validated, the company becomes eligible for gift cards",
+      "Add funds to the company account and request gift cards whenever necessary.",
+    heading: "Add Funds: ",
   },
   {
     image: iconThree,
-    alt: "Upload your bills on the platform",
+    alt: "Enterprises can distribute these gift cards with preset amounts based on the occasion.",
     title:
-      "Companies can deposit funds into their accounts and request gift cards whenever necessary",
-  },
-  {
-    image: iconFour,
-    alt: "Select the bill you want to pay",
-    title:
-      "These gift cards can be distributed with preset amounts based on the occasion",
+      "Enterprises can distribute these gift cards with preset amounts based on the occasion.",
+    heading: "Distribution: ",
   },
 ];
 
@@ -118,6 +94,64 @@ const faqData: FAQProps[] = [
       {
         heading:
           "The taxability of corporate gifting depends on the value of the gift. If the gift is within or less than the taxable limit, then there is no need to pay any tax. However, if the gift card limit exceeds Rs 5000, it will be taxable.",
+      },
+    ],
+  },
+  {
+    question: "What is a corporate gift card?",
+    answer: [
+      {
+        heading:
+          "A corporate gift card is a prepaid card organizations use to gift their employees, clients, customers, or partners. These cards are loaded with money up to a certain specified amount and are among the best ways to appreciate people. These cards can be redeemed online or in-store.",
+      },
+    ],
+  },
+  {
+    question: "How to access a corporate gift card?",
+    answer: [
+      {
+        bullets: [
+          "Register on EnKash and enter all the company details requiredr",
+          "After all the details are validated, the company becomes eligible for gift cards",
+          "The company can load money into their account and request the cards as required",
+          "These gift cards can be allocated to the recipient with a preloaded amount as per the occasion",
+        ],
+      },
+    ],
+  },
+  {
+    question: "What are the rules for corporate gifting?",
+    answer: [
+      {
+        heading:
+          "Corporate gifts should be aligned with the company's ethics and policies. These gifts must be legal. There must be transparency in corporate gifting and sensitivity towards all cultures",
+      },
+    ],
+  },
+  {
+    question: "Is corporate gifting profitable?",
+    answer: [
+      {
+        heading:
+          "Organizations have observed enhanced retention rates through the implementation of corporate gifting strategies. Hence, opting for gift cards, such as those offered by EnKash, proves to be a mutually beneficial strategy. By motivating stakeholders with secure, convenient, and easily manageable gift cards that offer access across various categories, organizations can expect improved outcomes and increased productivity.",
+      },
+    ],
+  },
+  {
+    question: "What is the TDS rate for corporate gifting?",
+    answer: [
+      {
+        heading:
+          "A corporate gift can attract a TDS of 10% if the gift value exceeds Rs 20,000 in a year. This is decided under Section 194R of the Income Tax Act, 1961.",
+      },
+    ],
+  },
+  {
+    question: "How to avoid gift tax as an employer?",
+    answer: [
+      {
+        heading:
+          "Businesses can avoid gift tax by keeping the value of gifts within the tax-free limit of 5000 INR in a calendar year.",
       },
     ],
   },

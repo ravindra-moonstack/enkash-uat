@@ -1,11 +1,15 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import carouselData from "./carousel-data";
+
+import { blogData, faqData, carouselData, productData } from "./data";
+import { Header, Footer, BlogWrapper } from "@/components";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
@@ -13,11 +17,9 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import Header from "@/components/header/header";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
+import { FAQHtml } from "@/components/faq";
+import AllProducts from "@/components/all-products/all-products";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 
@@ -32,7 +34,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const channelIncentive = () => {
+const ChannelIncentive = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -44,19 +46,11 @@ const channelIncentive = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Loyalty Lounge${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="| Channel Incentive"
+              title={`Channel Incentives`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
@@ -64,14 +58,14 @@ const channelIncentive = () => {
             <div className="d-flex flex-column">
               <div>
                 <Heading
-                  title="Easily manage"
+                  title="Boost Channel "
                   color="white"
                   size="h2"
                   weight="7"
                 />
                 <Heading
-                  title={`${space}channel`}
-                  color="rainy-blue"
+                  title={`${space} Sales Partner `}
+                  color="white"
                   size="h2"
                   weight="7"
                 />
@@ -79,26 +73,24 @@ const channelIncentive = () => {
 
               <div>
                 <Heading
-                  title={`partner incentives${space}`}
+                  title={`Engagement with ${space}`}
+                  color="white"
+                  size="h2"
+                  weight="7"
+                />
+                <Heading
+                  title="Channel Incentives Platform"
                   color="rainy-blue"
                   size="h2"
                   weight="7"
                 />
-                <Heading title="from" color="white" size="h2" weight="7" />
               </div>
-
-              <Heading
-                title="a single dashboard"
-                color="white"
-                size="h2"
-                weight="7"
-              />
             </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="A game-changing platform for channel incentive programs that helps businesses boost their channel partner engagement, loyalty, and revenue by automating and streamlining their process"
+              title="Automate channel partner incentives program and encourage partners to deliver better. Use a single dashboard to manage, track performance and distribute channel sales incentives."
               color="white"
               size="h6"
               weight="5"
@@ -107,57 +99,47 @@ const channelIncentive = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=Loyalty_lounge"
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=Loyalty_lounge"
+                url="https://docs.enkash.com/"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Manual Processes"],
-              oldWayDescription:
-                "The traditional channel incentive programs involve manual tasks such as calculating incentives and sending physical cheques, leading to delays.",
-              newWayDescription:
-                "Automated and streamlined channel incentive processes reduce manual work and ensure quicker reward delivery.",
-            },
-            {
-              itemArray: ["Incentive Options"],
-              oldWayDescription:
-                "Limited options for channel partners to choose their rewards, often resulting in generic rewards.",
-              newWayDescription:
-                "Diverse reward options allow channel partners to choose as per their preference and motivate them effectively.",
-            },
-            {
-              itemArray: ["Scalability"],
-              oldWayDescription:
-                "Traditional methods may not easily accommodate the needs of a growing partner network.",
-              newWayDescription:
-                "Scalable architecture that can adapt to the changing size and dynamics of the partner network.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Best Platform For Channel Incentives "
+            steps={[
+              {
+                icon: userPlus,
+                text: "Easy Onboarding",
+              },
+              {
+                icon: stack,
+                text: "Performance Tracking",
+              },
+              {
+                icon: numberOne,
+                text: "Rewards Payout",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -166,20 +148,18 @@ const channelIncentive = () => {
         <div className="d-flex flex-column text-center mb-5">
           <div>
             <Heading
-              title={`Partner rewards made${space}`}
+              title={`Motivate Partners & ${space}`}
               color="black"
               size="h1"
               weight="6"
             />
-            <Heading title="easy," color="equity-blue" size="h1" weight="6" />
+            <Heading
+              title="Improve Productivity"
+              color="equity-blue"
+              size="h1"
+              weight="6"
+            />
           </div>
-
-          <Heading
-            title={`${space}convenient, and secure`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
         </div>
 
         <div className="d-flex justify-content-center">
@@ -203,46 +183,54 @@ const channelIncentive = () => {
                   </div>
                 }
                 source="Loyalty_lounge"
-                description="Add multiple channel partners as individuals or bulk upload them all for easy incentive distribution"
+                description="Easily onboard and manage a large number of channel partners at once, significantly reducing the time and effort needed for setup, and ensuring streamlined reward distribution across all partners."
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Diverse Redemptions"
-                description="Redeem from a diverse range of incentive options from 400+ brand vouchers like Amazon, Flipkart, Myntra, etc, across 25+ categories"
+                whiteTitle="Bulk UPI for Incentives"
+                description="Easily transfer incentives to multiple partners at once via UPI, ensuring instant payments with no delays, and providing a smooth and efficient experience for both businesses and their channel partners."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Non-Reloadable Cards"
-                description="It comes preloaded with a specific monetary value, offering partners the flexibility to redeem their incentives across e-commerce or in-store shopping"
+                whiteTitle="Diverse Redemptions Options"
+                description="Give partners the flexibility to redeem their incentives from over 400 popular brands like Amazon, Flipkart, Myntra, and many more, offering a wide variety of choices to suit diverse preferences."
+                source="Loyalty_lounge"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Pre-loaded Cards"
+                description="Provide preloaded cards that allow partners to redeem their incentives seamlessly both online and offline, ensuring a hassle-free and secure redemption experience."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Automatic Alerts"
-                description="Integrated platform to automatically inform users via SMS, WhatsApp, and e-mail about incentives and how to redeem points"
+                description="Send real-time notifications via SMS, WhatsApp, and email to keep partners up-to-date on reward status, ensuring they are always informed of important updates and actions related to their incentives."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Real-Time Analytics"
-                description="Quickly share vouchers, track redemption status, and create advanced expiry alerts to maximize user adoption"
-                source="Loyalty_lounge"
-              />
-            </div>
-            <div className="mb-2 mb-md-0 me-3">
-              <GetStartedCard
-                whiteTitle="Bulk UPI for Incentives"
-                description=" Transfer incentives directly, nationwide, and in a hassle-free way, empowering seamless incentives for all"
+                description="Gain access to real-time data and insights on redemptions, partner engagement, and overall program performance, helping businesses optimize incentive strategies for better outcomes and higher partner satisfaction."
                 source="Loyalty_lounge"
               />
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Check out our other loyalty lounge products at "
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -286,12 +274,14 @@ const channelIncentive = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how channel incentives can benefit your business and partners!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -426,4 +416,4 @@ const channelIncentive = () => {
   );
 };
 
-export default channelIncentive;
+export default ChannelIncentive;
