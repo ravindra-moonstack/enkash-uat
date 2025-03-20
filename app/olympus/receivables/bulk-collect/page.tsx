@@ -21,7 +21,7 @@ import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import AllProducts from "@/components/all-products/all-products";
-import productData from "./product-data";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Collect – Corporate E-Collect and Payment Collection | EnKash",

@@ -1,28 +1,32 @@
+import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import Header from "@/components/header/header";
-import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
-import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { space } from "../../../../common/constant";
+import {
+  blogData,
+  faqData,
+  carouselData,
+  secondFaqData,
+  productData,
+} from "./data";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Vendor Management Platform for Businesses in India - EnKash",
@@ -45,33 +49,25 @@ const vendorManagement = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Vendor Management"
+              title={`Vendor Management ${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div className="d-flex flex-column">
             <div>
               <Heading
-                title="Streamline your"
-                color="white"
+                title="Manage Vendors "
+                color="rainy-blue"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title={`${space}vendor`}
-                color="rainy-blue"
+                title={`${space}with Confidence `}
+                color="white"
                 size="h2"
                 weight="7"
               />
@@ -79,91 +75,59 @@ const vendorManagement = () => {
 
             <div>
               <Heading
-                title={`management${space}`}
-                color="rainy-blue"
+                title={`Using EnKash${space}`}
+                color="white"
                 size="h2"
                 weight="7"
               />
-              <Heading title="with ease" color="white" size="h2" weight="7" />
             </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Redefine your vendor management strategy with advanced features. Centralize vendor data, streamline onboarding, and guarantee timely payments for better relationships"
+              title="Gain complete control of vendor relationships. From onboarding to payments and compliance, our platform empowers businesses to work faster, reduce risks, and maintain healthy supplier partnerships."
               color="white"
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=payables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Vendor", "Data"],
-              oldWayDescription:
-                "Manually entered and unverified details, leading to inconsistent data which causes inefficiencies.",
-              newWayDescription:
-                "Centralized platform with a unified repository for all vendor-related information, ensuring accuracy and easy access.",
-            },
-            {
-              itemArray: ["Verification", "Process"],
-              oldWayDescription:
-                "Extensive, manual verification processes that used to involve multiple people, plenty of paperwork, and back-and-forth communication.",
-              newWayDescription:
-                "Streamlined verification process through automation, collect and verify essential information about your vendors or suppliers instantly with vendor eKYC.",
-            },
-            {
-              itemArray: ["Visibility"],
-              oldWayDescription:
-                "Difficult to track invoices and expenses. There was no visibility of spending patterns and historical data, which led to a lack of strategic insights while making decisions.",
-              newWayDescription:
-                "Real-time insights into all vendor-related data.  Transparent dashboards and reports on spend patterns, and compliance enabling cost optimization and data-driven decision making.",
-            },
-            {
-              itemArray: ["Workflows"],
-              oldWayDescription:
-                "Getting payment approvals for vendor payments was very hectic, requiring numerous email follow-ups with the manager.",
-              newWayDescription:
-                "With EnKash, you can automate your payment approvals by setting up a customized maker-checker workflow, wherein you can directly send the pending invoices to the manager for approval.",
-            },
-            {
-              itemArray: ["Collaboration"],
-              oldWayDescription:
-                "There were limited collaboration tools, often relying on email communication and manual updates.",
-              newWayDescription:
-                "Integrated collaboration features, enabling seamless communication among teams involved in vendor management. Shared dashboards and updates enhance team coordination & decision-making.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="The Best Vendor Management and Onboarding Platform"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Accurate Verification",
+              },
+              {
+                icon: stack,
+                text: "Fast Onboarding",
+              },
+              {
+                icon: numberOne,
+                text: "Delightful Experience",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -171,13 +135,19 @@ const vendorManagement = () => {
       >
         <div className="d-inline text-center mb-2">
           <Heading
-            title="Enhance vendor relationships with"
+            title="Vendor Management System "
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title={`${space}to Enhance`}
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}better features`}
+            title={`${space} Vendor Relationships  `}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -188,8 +158,8 @@ const vendorManagement = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Vendor Onboarding"
-              description="Easily add multiple vendors on the platform by providing basic details like their name, email, phone number, PAN, GST, and bank account"
+              whiteTitle="Instant Vendor Onboarding"
+              description="Onboard new vendors effortlessly with EnKash’s one-click invite feature. Collect details like PAN, GST, and bank info via pre-set templates, eliminating manual data entry for a faster, error-free process and successful vendor relationships."
               source="payables"
             />
           </div>
@@ -198,46 +168,7 @@ const vendorManagement = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Invoicing"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Process"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Upload single or bulk invoices in the dashboard and effortlessly manage and process them in a centralized system, ensuring a streamlined workflow"
-              source="payables"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Advance Payments"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Facilitate advance payments with the “Add Advance” option to give payment upfront as and when needed"
-              source="payables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Payment"
+                    title="Effortless Invoice "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -250,19 +181,65 @@ const vendorManagement = () => {
                   />
                 </div>
               }
-              description="Streamline the entire payment process, from approval to execution, and get flexible payment modes 
-              like NEFT, IMPS, RTGS, UPI, debit cards virtual cards, and more to ensure timely payment"
+              description="Simplify invoice management with EnKash’s centralized dashboard. Upload and track single or bulk invoices in real time, reduce errors, and ensure timely processing—saving time, improving vendor relationships, and enhancing financial accuracy."
+              source="payables"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Flexible Payment Options"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Provide vendors with multiple payment options—UPI, virtual cards, and bank transfers. Track payment statuses in real time with EnKash, ensuring transparency and trust. Timely, flexible payments improve vendor satisfaction and convenience for everyone."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Tracking and Reporting"
-              description="Gain real-time insights into spending patterns, track expenses, and generate comprehensive reports for informed decision-making"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Advanced Reporting"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="& Insights"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Unlock actionable insights with EnKash’s reporting tools. Monitor vendor performance, analyze payment histories, and identify trends to optimize your supply chain. Use data-driven decisions to enhance financial outcomes and operational efficiency."
+              source="payables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Customizable Approval Flows"
+              description="Design approval workflows tailored to your organization with EnKash. Set role-based access, define thresholds, and create flexible hierarchies to streamline decision-making, ensure compliance, and align transactions with internal policies and business goals."
               source="payables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle="Smarter"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -272,13 +249,13 @@ const vendorManagement = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`One platform for effortless${space}`}
+                    title={`Step-by-Step Guide to ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="collaboration and cost control"
+                    title="Vendor Management Process"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -292,21 +269,24 @@ const vendorManagement = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how our vendor management can revolutionize the way you work!"
         />
       </div>
+
       <div
-        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white pb-0`}
       >
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about vendor management in detail"
+            title="Don't worry! Our FAQs section will help you learn about automated reconciliation
+            in detail"
             color="black"
             size="h4"
           />
@@ -315,9 +295,31 @@ const vendorManagement = () => {
         <div>
           <FAQHtml faqData={faqData} />
         </div>
+      </div>
 
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding of vendor management? Explore our comprehensive guide"
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="Vendor management involves overseeing relationships with external suppliers, ensuring efficient collaboration, and monitoring performance to optimize operational processes and control costs. It aims to foster positive and productive partnerships between a company and its vendors."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
+        </div>
         <div className={styles.faq_bg}>
-          <Image src={faqBg} alt="background image" />x
+          <Image src={faqBg} alt="background image" />
         </div>
       </div>
 

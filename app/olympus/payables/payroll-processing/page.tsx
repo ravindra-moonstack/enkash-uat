@@ -1,12 +1,11 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { blogData, carouselData, faqData, productData } from "./data";
 import { banner, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
@@ -14,15 +13,15 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import Header from "@/components/header/header";
-import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
-import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title: " Payroll Processing & Management Software for Businesses - EnKash",
@@ -34,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const payrollProcessing = () => {
+const PayrollProcessing = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -45,58 +44,29 @@ const payrollProcessing = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Payroll Processing"
+              title={`Payroll Software${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div className="d-flex flex-column">
             <div>
               <Heading
-                title="Leverage the"
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title={`${space}power of`}
+                title="Payroll Processing Software "
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
+              <Heading title={`by EnKash`} color="white" size="h2" weight="7" />
             </div>
-            <div>
-              <Heading
-                title="streamlined"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title={`${space}payroll`}
-                size="h2"
-                color="white"
-                weight="7"
-              />
-            </div>
-
-            <Heading title="processing" color="white" size="h2" weight="7" />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Optimize payroll procedures and guarantee timely payments through our secure and efficient platform for a stress-free salary disbursement experience"
+              title="Your ultimate solution for accurate, compliant, and stress-free salary disbursement. Empower your business with EnKash’s advanced payroll processing solution designed to meet your workforce’s diverse needs"
               color="white"
               size="h6"
               weight="5"
@@ -105,64 +75,39 @@ const payrollProcessing = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=payables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={banner} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Process"],
-              oldWayDescription:
-                "Sending out employee salaries used to be a drawn-out and manual task. With traditional methods, errors and delays were not uncommon in calculating salaries.",
-              newWayDescription:
-                "With EnKash, quickly calculate and send employees their accurate salaries directly to their bank accounts, giving them quick access to their funds.",
-            },
-            {
-              itemArray: ["Bulk", "Payment"],
-              oldWayDescription:
-                "Limited capacity for bulk payments, making it challenging to handle a larger volume of transactions efficiently.",
-              newWayDescription:
-                "EnKash introduces efficiency by facilitating seamless bulk payroll disbursements through streamlined processes, allowing organizations to manage a higher volume of transactions.",
-            },
-            {
-              itemArray: ["Cash-Flow", "Visibility"],
-              oldWayDescription:
-                "Earlier there was no way to track the financial transactions in real-time as all the data used to be scattered, the finance teams had to manually maintain paper records to get a clear view of the cash flow.",
-              newWayDescription:
-                "EnKash provides real-time visibility into the cash flow through tracking and reporting features. Organizations gain immediate insights into their financial transactions.",
-            },
-            {
-              itemArray: ["Approval", "Process"],
-              oldWayDescription:
-                "Traditionally, signatures or email confirmations were required for approvals, which relied on varying response times, introducing delays and also the risk of lost documents or miscommunication.",
-              newWayDescription:
-                "Automate approval workflows with configurable rules, allowing for a faster approval process. Automated systems can route payroll information to designated approvers, ensuring that approvals are obtained promptly.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="The Payroll Solution You Can Trust"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Automated Workflows",
+              },
+              {
+                icon: stack,
+                text: "On-Time Payments",
+              },
+              {
+                icon: numberOne,
+                text: "Seamless Integration",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -176,7 +121,7 @@ const payrollProcessing = () => {
             weight="6"
           />
           <Heading
-            title={`${space}with our advanced solutions`}
+            title={`${space} with our advanced solutions`}
             color="black"
             size="h1"
             weight="6"
@@ -187,43 +132,65 @@ const payrollProcessing = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Employee Data Verification"
-              description="Efficiently collect and validate crucial information about your employees with e-KYC, before initiating the payroll system, ensuring accuracy and compliance with regulatory requirements"
+              whiteTitle="Employee Data Management"
+              description="Efficiently collect and validate crucial information about your employees with e-KYC, before initiating the payroll system, ensuring accuracy and compliance with regulatory requirements."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Salary Account Validation"
-              description="Utilize the penny-drop method to validate salary account details before processing payroll transactions, minimizing the risk of payment errors and enhancing financial security"
+              whiteTitle="Secure Salary Account Validation"
+              description="Validate salary account details with the penny-drop method, reducing payment errors and enhancing financial security. Ensure accurate, hassle-free transactions for smooth processing."
               source="payables"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Multi-Branch Disbursement"
-              description="Simplify the complexity of the payroll system across multiple branches with one click. Easily initiate the employee salaries of different branches with a single dashboard"
+              whiteTitle="Multi-Branch Salary Disbursement"
+              description="Manage payroll across multiple branches from a single dashboard. With a click, initiate accurate salary disbursements for all employees, no matter their location."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Seamless ERP Integration"
-              description="Integrate effortlessly with your existing ERP system and banking partners to streamline the entire payroll processing workflow"
+              description="Seamlessly integrate EnKash’s payroll software with your ERP systems and banking partners, creating a unified, efficient workflow tailored to your business needs."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Flexible Functionality"
-              description="Ensure timely payment for interns, contractors, and full-time employees, handling both regular and off-cycle payroll effortlessly. Additionally, swiftly process reimbursements alongside monthly payroll"
+              whiteTitle="Flexible Payment Solutions"
+              description="Manage payments for full-time employees, contractors, and interns, including regular and off-cycle payroll. Reimburse employee expenses alongside payroll for added convenience."
+              source="payables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Configurable Approval Workflows"
+              description="Set approval hierarchies with customizable rules. Automate payroll information routing to designated approvers, ensuring timely approvals and minimizing delays."
+              source="payables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Advanced Reporting and Analytics"
+              description="Gain real-time insights into payroll trends and employee expenses. Generate customizable reports to support data-driven decisions and strategic planning."
               source="payables"
             />
           </div>
         </div>
       </div>
 
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle="Smarter"
+          data={productData}
+        />
+      </div>
+      
       <div className={`${styles.fourth_row} row`}>
         <HowDoesCarousel
           titleContent={
@@ -231,13 +198,13 @@ const payrollProcessing = () => {
               <div className="text-center">
                 <div className="text-center d-inline">
                   <Heading
-                    title={`Efficient, accurate, and${space}`}
+                    title={`How to Get Started with ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="hassle-free payroll management"
+                    title="EnKash Payroll Processing"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -287,6 +254,7 @@ const payrollProcessing = () => {
           source="payables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -351,4 +319,4 @@ const payrollProcessing = () => {
   );
 };
 
-export default payrollProcessing;
+export default PayrollProcessing;

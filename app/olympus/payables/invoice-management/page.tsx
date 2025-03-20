@@ -2,26 +2,24 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { blogData, faqData, carouselData, productData } from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import Header from "@/components/header/header";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title: "Invoice Processing & Software: Streamline Invoicing - EnKash",
@@ -44,52 +42,33 @@ const invoiceManagement = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Invoice Management"
+              title={`Invoice Management${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div className="d-flex flex-column">
             <Heading
-              title="Enhance invoice"
+              title="Transform your "
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="management with"
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="automation, transparency"
+              title="Invoice Management Process "
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <Heading
-              title="& customization "
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
+            <Heading title="with EnKash" color="white" size="h2" weight="7" />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Pay all your vendors seamlessly from a single dashboard with complete visibility and a flexible approval flow"
+              title="Make invoice management efficient, get greater visibility, and maintain better control over your financial operations."
               color="white"
               size="h6"
               weight="5"
@@ -98,71 +77,39 @@ const invoiceManagement = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=payables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Automation &", "Reconciliation"],
-              oldWayDescription:
-                "The traditional way of vendor invoice management has been paper-based making it tedious and unmanageable, especially during reconciliation.",
-              newWayDescription:
-                "EnKash enables you to automate all vendor payments reducing manual intervention and eventually simplifying reconciliation.",
-            },
-            {
-              itemArray: ["Approval", "Flow"],
-              oldWayDescription:
-                "The approval flow in the traditional invoice management system is manual, time taking, and not clearly defined leading to approval issues and delays.",
-              newWayDescription:
-                "With EnKash, companies can depend on robust and fast approval. They can configure their approval workflow as per business requirements; basis hierarchy, department, projects with automation leading the way.",
-            },
-            {
-              itemArray: ["Data Extraction &", "Accuracy"],
-              oldWayDescription:
-                "Manually extracting data is tedious and can lead to discrepancies, bringing inaccuracy at the forefront.",
-              newWayDescription:
-                "Invoice automation makes data extraction easy ensuring that the data produced is accurate to the core and that there is no room for disparity.",
-            },
-            {
-              itemArray: ["Safety"],
-              oldWayDescription:
-                "Data handling in the traditional way is prone to breaching, misplacement, and even loss.",
-              newWayDescription:
-                "The digital and secure database stores everything in the cloud making it completely safe and accessible to authorized individuals.",
-            },
-            {
-              itemArray: ["Integration"],
-              oldWayDescription:
-                "Traditional integration can be tedious and has to be done manually.",
-              newWayDescription:
-                "EnKash enables easy integration with existing accounting softwares for efficient workflows.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="The Best Invoice Management Platform in India"
+            steps={[
+              {
+                icon: userPlus,
+                text: "End-to-end Digitization",
+              },
+              {
+                icon: stack,
+                text: "Compliance Ready",
+              },
+              {
+                icon: numberOne,
+                text: "Seamless Integration",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -170,32 +117,26 @@ const invoiceManagement = () => {
       >
         <div className="d-inline text-center mb-2">
           <Heading
-            title="Manage vendor invoices"
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}with ease, efficiency, and accuracy`}
+            title="Take Control of Your "
             color="black"
             size="h1"
             weight="6"
           />
+          <Heading
+            title={`${space}Invoice Process `}
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading title="with EnKash " color="black" size="h1" weight="6" />
         </div>
         <div className="d-flex justify-content-center text-center mb-5"></div>
 
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Seamless Tech Management"
-              description="Businesses can easily integrate their existing ERPs like Tally, SAP, and Zoho with the invoice management platform at zero technical cost and negligible efforts"
-              source="payables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Easy Handling & Transparency"
-              description="The invoice management is simplified for everyone’s usage and understanding. Smooth interface and easy-to-understand flow with clear visibility and transparency for all the stakeholders"
+              whiteTitle="Centralized Dashboards"
+              description="Manage vendor invoices effortlessly with EnKash’s intuitive platform. Gain end-to-end visibility into the invoice lifecycle, track statuses, and stay on top of financial obligations efficiently."
               source="payables"
             />
           </div>
@@ -204,38 +145,71 @@ const invoiceManagement = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Digital"
+                    title="Flexible "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Invoices"
+                    title="Approval Process"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="Enterprises can digitize invoices right from their uploading to dispatching. This saves time and effort while reducing the workload"
+              description="Create workflows aligned with your organization’s structure. Assign roles, set authorization levels, and design approval hierarchies to ensure compliance while maintaining speed and accuracy."
               source="payables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="End-to-end Visibility"
-              description="All the details related to sales and payments can be viewed on a single dashboard, enabling better planning and strategizing for the business"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Cashflow Optimization"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Optimization"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Boost liquidity with EnKash’s facilitated credit lines. Strategically extend payment deadlines while ensuring timely payments to maintain smooth operations and strengthen vendor relationships."
               source="payables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Tracking & Monitoring"
-              description="With digital invoices, one can easily track and monitor details of each vendor payment making the process more efficient and advanced"
+              whiteTitle="ERP Integration"
+              description="Sync EnKash with ERPs like Tally, SAP, and Zoho for seamless data flow. Avoid duplications, save time, and ensure accuracy with synchronized invoices and payments, simplifying reconciliation effortlessly."
+              source="payables"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Advanced Reporting"
+              description="Access real-time invoice statuses and generate detailed reports effortlessly. Use actionable data to refine financial planning, identify trends, and make informed decisions to drive business growth."
               source="payables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle="Smarter"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -243,16 +217,22 @@ const invoiceManagement = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex flex-column">
+                <div className="text-center d-inline">
                   <Heading
-                    title={`Invoice management made easy for${space}`}
+                    title={`How EnKash ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="better decision-making"
+                    title="Invoice Management System "
                     color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title={`${space} Works`}
+                    color="white"
                     size="h1"
                     weight="6"
                   />
@@ -265,12 +245,14 @@ const invoiceManagement = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how invoice management can revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -301,6 +283,7 @@ const invoiceManagement = () => {
           source="payables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -380,6 +363,7 @@ const invoiceManagement = () => {
           }
         />
       </div>
+
       <Footer utmSource="payables" />
     </div>
   );

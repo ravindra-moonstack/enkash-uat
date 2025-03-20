@@ -1,27 +1,23 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { FAQHtml } from "@/components/faq";
+import { blogData, faqData, carouselData, productData } from "./data";
+import { Header, Footer, BlogWrapper } from "@/components";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title: "Purchase Cards | Benefits of Purchase Cards for Businesses  - EnKash",
@@ -33,60 +29,44 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const purchaseCard = () => {
+const PurchaseCard = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/corporate-cards/purchase-cards/`}
         faqData={faqData}
       />
+
       <Header utmSource="corporate_cards" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column px-2">
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Corporate Cards |${space}`}
+                title={`Procurement Card${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <Heading
-              title="Purchase Cards"
-              size="h4"
-              weight="4"
-              useH1TagInHtml={true}
-            />
           </div>
           <div>
+            <Heading title="Optimize Your" color="white" size="h2" weight="7" />
             <Heading
-              title="Business procurement "
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title={`made easy with${space}`}
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title={`smart and${space}`}
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title={`easy-to-use${space}`}
+              title={`Business Procurement ${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title="purchase cards"
+              title={`with EnKash ${space}`}
               color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`Purchase Cards (P-Cards) `}
+              color="rainy-blue"
               size="h2"
               weight="7"
             />
@@ -94,80 +74,49 @@ const purchaseCard = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Get your business a purchase card with a pre-defined limit and approvals for procurement purposes"
+              title="Say goodbye to time-consuming paperwork and complicated approval workflows. Empower your team to make purchases within preset limits, while you monitor, manage, and optimize spending in real-time."
               color="white"
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=corporate_cards"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=corporate_cards"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Procurement", "Process"],
-              oldWayDescription:
-                "The procurement process is time-consuming because it often involves a lot of paperwork, including purchase requisitions, purchase orders, and invoices.",
-              newWayDescription:
-                "Purchase cards make the procurement process faster and more efficient, with fewer paperwork and approval requirements.",
-            },
-            {
-              itemArray: ["Spends", "Control"],
-              oldWayDescription:
-                "Limited control makes it difficult for organizations to monitor and control spending.",
-              newWayDescription:
-                "Purchase cards allow organizations to better monitor and control spending with real-time transaction tracking and preset spending limits.",
-            },
-            {
-              itemArray: ["Procurement", "Cost"],
-              oldWayDescription:
-                "The traditional procurement process required more administrative resources, which led to higher costs.",
-              newWayDescription:
-                "With less paperwork and streamlined processes, procurement and expense management costs can be reduced.",
-            },
-            {
-              itemArray: ["Risk of", "Fraud"],
-              oldWayDescription:
-                "With manual processes and less oversight, there is a higher risk of fraudulent purchases or misuse of company funds.",
-              newWayDescription:
-                "P-cards provide greater visibility and control over spending, reducing the risk of fraud or misuse of company funds.",
-            },
-            {
-              itemArray: ["Payment", "Cycles"],
-              oldWayDescription:
-                "The traditional procurement process often involves longer payment cycles, which could impact cash flow and vendor relationships.",
-              newWayDescription:
-                "Purchase credit cards speed up payment cycles, which helps to maintain positive vendor relationships and improve cash flow.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Master Your Business Procurement Process"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Integrated",
+              },
+              {
+                icon: stack,
+                text: "Secure",
+              },
+              {
+                icon: numberOne,
+                text: "Flexible",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -175,14 +124,20 @@ const purchaseCard = () => {
       >
         <div className="d-flex flex-column text-center mb-5">
           <Heading
-            title="Smoothen your business expenses with"
+            title="Get a Handle on Your "
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title="purchase cards from EnKash"
+            title="Business Expenses"
             color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title="with the Best Purchase Card in India "
+            color="black"
             size="h1"
             weight="6"
           />
@@ -192,34 +147,49 @@ const purchaseCard = () => {
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="
-              Streamlined Procurement"
-              description="Purchase credit cards can simplify your procurement process, allowing authorized employees to quickly and easily purchase goods and services"
+              Effortless Procurement Management"
+              description="Transform your business procurement with EnKash purchase cards. Authorized employees can make purchases directly, simplifying the process and bypassing traditional system complexities. Eliminate delays, paperwork, and approval bottlenecks for a smoother, more efficient workflow."
               source="corporate_cards"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle=" Increased Control"
-              description="Purchase cards provide greater visibility and control over spending, allowing your business to manage expenses better and prevent fraud"
+              whiteTitle="Increase Control and Reduce Cost"
+              description="Gain control and reduce costs with EnKash. Set custom spending limits, enforce purchase policies, and track transactions in real-time. Prevent budget overruns and fraud, while merchant category restrictions ensure only relevant purchases are made."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Better Reporting"
-              description="Purchase cards often provide detailed reporting and analytics, allowing you to identify spending trends and areas of cost savings"
+              whiteTitle="Simplify Expense Tracking and Reporting"
+              description="Gain full visibility of your procurement expenses with detailed, real-time reporting. Analyze spending trends, uncover cost savings, and make informed decisions through a centralized dashboard, enhancing supplier negotiations for the best value."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="No Dependency For Expenses"
-              description="With purchase cards, the authorized individual does not have to depend on the finance team for business-related expenses and can make decisions if the expense is aligned with company policies"
+              whiteTitle=" Faster Payment Cycles"
+              description="Accelerate payment cycles and strengthen vendor relationships with EnKash Purchase Cards. Streamline transactions to meet deadlines, improve cash flow, and reduce administrative workload, all while maintaining positive supplier relations."
+              source="corporate_cards"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle=" Risk Management and Compliance"
+              description="Ensure compliance with your procurement policies. Customize spend limits and merchant restrictions to prevent unauthorized purchases and fraud. Automated reporting helps spot and correct policy breaches with ease."
               source="corporate_cards"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="An Array of Corporate Cards by"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -238,7 +208,7 @@ const purchaseCard = () => {
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="How Does EnKash Purchase Card Work"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -325,4 +295,4 @@ const purchaseCard = () => {
   );
 };
 
-export default purchaseCard;
+export default PurchaseCard;

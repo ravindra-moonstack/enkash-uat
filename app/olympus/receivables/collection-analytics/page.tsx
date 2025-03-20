@@ -4,7 +4,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
+import { faqData, secondFaqData } from "./faq-data";
 import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -254,14 +254,14 @@ const collectionAnalytics = () => {
       </div>
 
       <div
-        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white pb-0`}
       >
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about collection analytics in detail"
+            title="Don't worry! Our FAQs section will help you learn about instant settlements in detail"
             color="black"
             size="h4"
           />
@@ -269,6 +269,29 @@ const collectionAnalytics = () => {
 
         <div>
           <FAQHtml faqData={faqData} />
+        </div>
+      </div>
+
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none  bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding about e-NACH? Explore the Comprehensive Guide."
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="The automated process of collecting funds from customers regularly for monthly subscriptions, loan repayments, utility bills, and insurance premiums with electronic authorization is e-NACH. It helps streamline the payment process by eliminating human interaction and reducing errors, promising timely collections."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
         </div>
 
         <div className={styles.faq_bg}>

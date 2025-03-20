@@ -1,22 +1,22 @@
+import { Metadata } from "next";
+import Link from "next/link";
 import Image from "next/image";
+
 import styles from "./page.module.scss";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/common/constant";
-import blogData from "./blog-data";
+import { blogData, faqData, howDoesItWorkData, getStartedData } from "./data";
 import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import faqData from "./faq-data";
-import howDoesItWorkData from "./how-does-It-work-data";
+
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import { Metadata } from "next";
-import FAQHtml from "./faq-html";
-import Link from "next/link";
+import { FAQHtml } from "@/components/faq";
 import Header from "@/components/header/header";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 
@@ -298,6 +298,7 @@ const payables = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
@@ -367,38 +368,17 @@ const payables = () => {
               source="payables"
             />
           </div>
-          <div className="me-4">
-            <GetStartedCard
-              whiteTitle="Remote Operations"
-              description="Teams from different locations can access and share files from anywhere and process payments easily"
-              ctaColor="blue"
-              source="payables"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              whiteTitle="Vendor Management"
-              description="Easily upload vendor invoices, do vendor KYC and review vendor performance to manage them better"
-              ctaColor="blue"
-              source="payables"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              whiteTitle="Early payment discount"
-              description="Set payment reminders and make vendor payments early to avail trade discount"
-              ctaColor="blue"
-              source="payables"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              whiteTitle="Streamlined Workflows"
-              description="A streamlined approval process can significantly reduce processing time and minimize the risk of delayed payments"
-              ctaColor="blue"
-              source="payables"
-            />
-          </div>
+
+          {getStartedData?.map((item, index) => (
+            <div className="me-4" key={index.toString()}>
+              <GetStartedCard
+                whiteTitle={item.title}
+                description={item.description}
+                ctaColor="blue"
+                source="payables"
+              />
+            </div>
+          ))}
         </div>
       </div>
 
@@ -452,6 +432,7 @@ const payables = () => {
           source="payables"
         />
       </div>
+
       <div className="row">
         <ComprehensiveView
           title="Explore our comprehensive guide"

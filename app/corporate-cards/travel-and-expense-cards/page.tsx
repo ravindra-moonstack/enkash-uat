@@ -4,25 +4,23 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { blogData, faqData, carouselData, productData } from "./data";
+import { Header, Footer, BlogWrapper } from "@/components";
+import { FAQHtml } from "@/components/faq";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import Link from "next/link";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Travel and Expenses Corporate Cards for Business - EnKash",
@@ -47,37 +45,29 @@ const travelAndExpenseCard = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Corporate Cards |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Travel And Expense Cards"
+              title={`Travel Expense Cards${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div>
             <Heading
-              title={`All your business${space}`}
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title={`travel and expense needs${space}`}
+              title={`EnKash Travel and Expenses Card${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title="are prioritized in a card"
+              title={`Optimize Your Business`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="Travel Management"
               color="white"
               size="h2"
               weight="7"
@@ -86,89 +76,65 @@ const travelAndExpenseCard = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage all your corporate travel expenses with this go-to card"
+              title="Ensure seamless travel experiences while empowering your team, saving costs, and enhancing compliance— with one smart solution."
               color="white"
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=corporate_cards"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=corporate_cards"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Optimize Travel Budgets with EnKash Travel and Expense Cards"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Expense Monitoring",
+              },
+              {
+                icon: stack,
+                text: "Cashless Convenience",
+              },
+              {
+                icon: numberOne,
+                text: "Employee Empowerment",
+              },
+            ]}
+          />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Spend", "Visibility"],
-              oldWayDescription:
-                "Without a centralized system to track and manage expenses, organizations have limited visibility into how much is spent on travel and by whom.",
-              newWayDescription:
-                "The travel and expenses corporate card, along with the DIY management platform, provides complete control over your business travel expenditure in real-time so that you can be in the know on the go.",
-            },
-            {
-              itemArray: ["Fund", "Disbursement"],
-              oldWayDescription:
-                "Providing last-minute funds via traditional banking methods for travel expenses is a hassle.",
-              newWayDescription:
-                "Enable sudden expenses for unexpected travel from anywhere for anyone with smart controls, anytime.",
-            },
-
-            {
-              itemArray: ["Budget", "Compliance"],
-              oldWayDescription:
-                "With no strict rules or policies for travel budgeting, the risk of overspending is high.",
-              newWayDescription:
-                "Employees have pre-approved budgets for travel and more with automated rules and limits.",
-            },
-            {
-              itemArray: ["Fraud &", "Misuse"],
-              oldWayDescription:
-                "Organizations are vulnerable to fraud and misuse of funds, as it is easy to manipulate expense reports or claim illegitimate expenses with fake receipts and invoices.",
-              newWayDescription:
-                "Eliminate the need for expense reports and paper receipts with corporate cards, which track your expenses digitally, as all transactions are being made on the card itself.",
-            },
-          ]}
-        />
       </div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
+          <Heading title="EnKash " color="equity-blue" size="h1" weight="6" />
           <Heading
-            title="One place to manage"
-            color="equity-blue"
+            title={`${space} Travel and Expense Cards for Delightful ${space} `}
+            color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}all your business travel expenses`}
-            color="black"
+            title="Travel Experiences"
+            color="equity-blue"
             size="h1"
             weight="6"
           />
@@ -179,13 +145,13 @@ const travelAndExpenseCard = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Spend"
+                    title="Comprehensive "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Smarter"
+                    title="Travel Management"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -193,38 +159,69 @@ const travelAndExpenseCard = () => {
                 </div>
               }
               source="corporate_cards"
-              description="This comprehensive business travel solution enables companies to smoothen their business-related travel by providing end-to-end visibility into their employees' travel expenditures"
+              description="Efficiently manage business travel with EnKash’s comprehensive tools. Monitor transactions in real time, integrate travel bookings and approvals into a centralized platform, and enjoy global card acceptance with competitive exchange rates for international travel."
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Streamline Expenses"
-              description="Bid adieu to complicated expenditure reports with purpose-based corporate cards that can be managed from anywhere, anytime"
+              whiteTitle="Cost Saving Simplified"
+              description="Optimize spending and reduce costs with EnKash’s advanced tools. Save up to 15% on travel expenses, ensure policy compliance with automation, and simplify GST claims to save an additional 5-18% on bookings."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Real-Time Management"
-              description="Set up rules, limits, and approval matrices for better budget control on the go. Easily block and unblock cards in cases of any misuse or emergency"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Enhanced "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Employee Experience"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description=" Enhance your team’s travel experience with EnKash. Enjoy faster approvals through real-time alerts, ensure policy adherence, and unlock exclusive perks like travel rewards, lounge access, and travel insurance for a seamless journey."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Complete Overview"
-              description="Maximize visibility and insights on travel expenses with a comprehensive overview on a single dashboard"
-              source="corporate_cards"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="DIY with Control"
-              description="Use separate controls for categories like Admin and cardholder. This reduces fraud with automation tools such as approval matrices"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Unmatched Control"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="and Compliance"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Take control of your spending with EnKash. Set customizable limits, monitor transactions in real-time to prevent fraud, and integrate seamlessly with ERP, HRMS, and accounting tools for streamlined compliance and workflow efficiency."
               source="corporate_cards"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="An Array of Corporate Cards by"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -234,19 +231,19 @@ const travelAndExpenseCard = () => {
               <div className="text-center">
                 <div className="text-center d-inline">
                   <Heading
-                    title={`Business${space}`}
+                    title={`How To Get Started with ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title={`travels made easy${space}`}
+                    title={`EnKash ${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="with EnKash"
+                    title="Travel Expense Cards"
                     color="white"
                     size="h1"
                     weight="6"

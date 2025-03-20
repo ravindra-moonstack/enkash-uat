@@ -248,7 +248,7 @@ const reminderEngine = () => {
       </div>
 
       <div
-        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white pb-0`}
       >
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
@@ -267,7 +267,7 @@ const reminderEngine = () => {
       </div>
 
       <div
-        className={`${styles.fifth_row} row row-padding-bottom-none pt-0 bg-white`}
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
         <div className="mb-5">
           <Heading

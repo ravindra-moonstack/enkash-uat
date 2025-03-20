@@ -1,28 +1,26 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { blogData, faqData, carouselData, productData } from "./data";
+import { Header, Footer, BlogWrapper } from "@/components";
+import { FAQHtml } from "@/components/faq";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import Link from "next/link";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -46,36 +44,28 @@ const virtualCard = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Corporate Cards |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Virtual Cards"
+              title={`Virtual Cards${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Secure & easy-to-use"
+              title="Secure and Efficient"
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="virtual cards for all"
+              title=" Payments with EnKash "
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="your payment needs"
+              title="Virtual Prepaid Card"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -84,7 +74,7 @@ const virtualCard = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Make it easy for your modern business to track and reconcile all payments with the new-age and innovative virtual cards"
+              title="Empower your organization to control, track, and optimize spending like never before."
               color="white"
               size="h6"
               weight="5"
@@ -93,65 +83,39 @@ const virtualCard = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=corporate_cards"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=corporate_cards"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Elevate Digital Transactions with the Best Virtual Card"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Instant",
+              },
+              {
+                icon: stack,
+                text: "Secure",
+              },
+              {
+                icon: numberOne,
+                text: "Trackable",
+              },
+            ]}
+          />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Safety Concerns"],
-              oldWayDescription:
-                "Physical cards are often at a high risk of getting lost or stolen.",
-              newWayDescription:
-                "A virtual card is always available on your device, reducing its chances of getting lost or stolen.",
-            },
-            {
-              itemArray: ["Convenience"],
-              oldWayDescription:
-                "It is challenging to have a physical card handy whenever making online payments.",
-              newWayDescription:
-                "Access to a virtual card anytime and from anywhere makes it convenient.",
-            },
-
-            {
-              itemArray: ["Issuance"],
-              oldWayDescription:
-                "The process of getting a physical card is often time-consuming and may take a week’s time to reach you.",
-              newWayDescription:
-                "A virtual card can be issued instantly after the admin’s approval.",
-            },
-            {
-              itemArray: ["Payment Processing"],
-              oldWayDescription:
-                "This card requires a longer time to process payment.",
-              newWayDescription:
-                "Payments are processed instantly on this card, and can be blocked immediately in case of fraud or misuse.",
-            },
-          ]}
-        />
       </div>
 
       <div
@@ -159,14 +123,14 @@ const virtualCard = () => {
       >
         <div className="d-flex flex-column text-center mb-5">
           <Heading
-            title="Make way for virtual cards & enjoy"
-            color="black"
+            title="Best Virtual Prepaid Cards"
+            color="equity-blue"
             size="h1"
             weight="6"
           />
           <Heading
-            title="greater flexibility, convenience & safety"
-            color="equity-blue"
+            title="in India - Modern Solutions for Managing Business Expenses"
+            color="black"
             size="h1"
             weight="6"
           />
@@ -178,13 +142,13 @@ const virtualCard = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Cost"
+                    title="Reduce Business Costs with "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Saving"
+                    title="Smarter Payment Solutions"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -192,55 +156,107 @@ const virtualCard = () => {
                 </div>
               }
               source="corporate_cards"
-              description="Virtual cards can help businesses save money by reducing processing costs, eliminating the need for physical cards or checks, and reducing the risk of fraud"
+              description="Save costs by eliminating the need for physical cards, including production and maintenance fees. Advanced fraud control features minimize the risk of unauthorized transactions, ensuring secure financial operations without additional expenses."
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Streamline Operations"
-              description="Virtual cards ensure that your financial operations are streamlined and spend less time tracking payments, getting approvals, and recordkeeping"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Stay in Control with "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Real-Time Expense Insights"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Monitor every transaction in real-time with our intuitive dashboard. Access detailed insights into spending trends, helping your business optimize budgets and make informed financial decisions."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Enhanced Tracking"
-              description="Offers detailed tracking capabilities, providing businesses with real-time insights into your spending to identify areas to save money"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Tailor Your Virtual"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Card to Fit Your Needs"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Design virtual cards tailored for specific needs such as vendor payments, SaaS subscriptions, or travel expenses. Set individual or departmental spending limits and usage policies to ensure compliance and efficiency."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Reduced Risk Of Fraud"
-              description="It can be set up with spending limits and other controls, reducing the risk of unauthorized or fraudulent transactions. It 
-              helps protect your privacy by eliminating any risk associated with lost paperwork"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Strengthen Vendor Trust"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="with Timely Payments"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Ensure timely and secure payments to vendors, fostering trust and better business terms. Streamlined payment processes enable quicker transactions, enhancing vendor satisfaction."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customizable Cards"
-              description="Virtual cards can be customized for different use cases like vendor payments, rental, GST, and even for other business-related
-              expenses like digital marketing, travel and fuel cards, etc"
-              source="corporate_cards"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="No Additional cost"
-              description="Having a virtual card doesn’t come with an extra cost"
-              source="corporate_cards"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Vendor Relationships"
-              description="Virtual cards enable your business to make payments quickly and securely, which improves relations with your vendors and helps you negotiate better deals"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="No Expense Oversight"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="with One Dashboard"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Easily manage multiple cards through a centralized, user-friendly interface. Take immediate action by monitoring, blocking, or canceling cards, all while maintaining full control over business expenses."
               source="corporate_cards"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="An Array of Corporate Cards by"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -264,12 +280,14 @@ const virtualCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how virtual cards can revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

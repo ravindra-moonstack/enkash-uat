@@ -1,29 +1,24 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import { blogData, faqData, carouselData, productData } from "./data";
+import { Header, Footer, BlogWrapper } from "@/components";
+import { bannerLottie, caraouselBg, faqBg } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
-import Link from "next/link";
+import { FAQHtml } from "@/components/faq";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -43,35 +38,34 @@ const diyCardModule = () => {
         url={`https://www.enkash.com/corporate-cards/diy-card-module/`}
         faqData={faqData}
       />
+
       <Header utmSource="corporate_cards" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Corporate Cards |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="DIY Card Module"
+              title={`DIY Card Module${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
           <div className="d-inline">
             <Heading
-              title={`Empower your business with${space}`}
+              title={`Take Control of Your${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="DIY card module"
+              title={`Business Expenses with EnKash ${space}`}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`DIY Corporate Card Module`}
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -80,7 +74,7 @@ const diyCardModule = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Experience the flexibility of purpose-made cards, and get unprecedented control over all your business spends like T&E, marketing, vendor payments, rental payments, and much more"
+              title="Design cards for specific needs, enforce spending policies and oversee all transactions with ease."
               color="white"
               size="h6"
               weight="5"
@@ -89,157 +83,134 @@ const diyCardModule = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=corporate_cards"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=corporate_cards"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Card", "Flexibility"],
-              oldWayDescription:
-                "Traditional corporate cards are very generic. They lack the flexibility to adapt to the unique spending requirements of different business functions.",
-              newWayDescription:
-                "Create purpose-made cards that cater to your specific needs and use cases, with the ability to configure each card and set spending rules aligned with organization policies.",
-            },
-            {
-              itemArray: ["Set", "Limits"],
-              oldWayDescription:
-                "There was always a high risk of overspending, as there were no ways to monitor or limit business expenditures, leading to cash-flow disruption.",
-              newWayDescription:
-                "With our DIY card module, you can easily monitor business spends, set department-wise spend limits, and manage spend categories, to align with corporate policies and budgets.",
-            },
-            {
-              itemArray: ["Approval", "Workflows"],
-              oldWayDescription:
-                "Slow process often involved the inconvenience of gathering all the bills and visiting cabins physically or sending repetitive email follow-ups seeking approvals.",
-              newWayDescription:
-                "With EnKash, get an in-built expense management suite to easily streamline approval workflows and enforce policies to ensure your business spends aligns with your budget.",
-            },
-            {
-              itemArray: ["Spend", "Insights"],
-              oldWayDescription:
-                "Traditional cards don’t offer visibility into spending patterns, leading to poor decision-making and inefficient budget management.",
-              newWayDescription:
-                "Gain immediate insights into your spending patterns with detailed analytics and reports, enabling you to maintain centralized control and optimize business spends.",
-            },
-            {
-              itemArray: ["Working Capital", "Management"],
-              oldWayDescription:
-                "Inefficient cash flow, ultimately leading to delayed business payments like vendor payments, impacting relationships, and missing out on potential rebates.",
-              newWayDescription:
-                "With our DIY card module, enhance payment processes for efficient working capital utilization, optimize vendor connections by ensuring timely payments, and unlock favorable payment terms.",
-            },
-            {
-              itemArray: ["Audit", "Trails"],
-              oldWayDescription:
-                "Cumbersome reconciliation processes and inadequate audit trails, making it challenging to maintain transparency and compliance.",
-              newWayDescription:
-                "Effortlessly automate the reconciliation process to maintain clear audit trails and a transparent financial ecosystem.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Design Your Corporate Card Solution with EnKash DIY Module"
+            steps={[
+              {
+                icon: userPlus,
+                text: "No-Code Setup",
+              },
+              {
+                icon: stack,
+                text: "Automated Expense Tracking",
+              },
+              {
+                icon: numberOne,
+                text: "Flexible Spending Controls",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
-          <Heading title="A truly" color="black" size="h1" weight="6" />
+          <Heading title="The Smarter " color="black" size="h1" weight="6" />
           <Heading
-            title={`${space}centralized solution`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}for corporate card management`}
+            title={`${space}Approach to `}
             color="black"
             size="h1"
             weight="6"
           />
+          <Heading
+            title={`${space}Corporate Card Management`}
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
                 <>
                   <Heading
-                    title="Flexible"
+                    title="Purpose-Made Cards"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Spend Controls"
+                    title="for Every Need"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </>
               }
-              description="Tailor authorization rules according to your preferences, including permitted merchant categories and individual spending limits per cardholder"
+              description="Issue cards specifically designed for your unique use cases such as travel, SaaS, or marketing campaigns. Configure individual card settings to match your organization’s requirements."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Real-Time Records"
-              description="Records are updated in real-time as and when any payment is made using a card which makes spending reconciliation a breeze"
+              whiteTitle="Precise Spending Controls"
+              description="Define spending rules for teams or individuals. Customize limits based on categories, amounts, or timeframes to maintain budget discipline."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Expenditure Overview"
-              description="Optimize your business spends with a holistic overview of your overall card expenditure in a single dashboard"
+              whiteTitle="Real-Time Monitoring"
+              description="Track transactions as they happen. Gain instant insights into where and how funds are being used, ensuring better financial decisions."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Block Cards Instantly"
-              description=" Take charge of card security by disabling and enabling cards when needed, all at your fingertips"
+              whiteTitle="Built-In Approval Workflows"
+              description="Simplify internal processes with predefined approval workflows that align with company policies. Save time and reduce repetitive tasks."
+              source="corporate_cards"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Enhanced Vendor Payments"
+              description="Ensure timely payments to vendors, strengthening business relationships and unlocking the potential for better payment terms."
+              source="corporate_cards"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Integrated Audit Support"
+              description="Keep financial operations transparent and compliant with automated reconciliation and comprehensive transaction records."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Seamless Integration"
-              description="Easily sync up with your existing accounting softwares like Tally, Zoho, etc"
-              source="corporate_cards"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Verification Process"
-              description="Simplified onboarding process with our automated eKYC and seamless bank account verification for both suppliers and customers."
+              description="Easily connect with popular accounting tools like Tally and Zoho to simplify data management and reporting."
               source="corporate_cards"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="An Array of Corporate Cards by"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -264,17 +235,19 @@ const diyCardModule = () => {
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="How to DIY Your Corporate Cards"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how meal cards can benefit your business and employees!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

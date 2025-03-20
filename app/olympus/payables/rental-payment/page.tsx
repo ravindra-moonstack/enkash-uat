@@ -1,20 +1,19 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+
+import { blogData, carouselData, faqData, productData } from "./data";
+
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import Header from "@/components/header/header";
-import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import { FAQHtml } from "@/components/faq";
@@ -24,7 +23,6 @@ import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import AllProducts from "@/components/all-products/all-products";
-import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Rent Payment - Pay Rent Through Credit Card | EnKash",

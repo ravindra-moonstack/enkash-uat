@@ -1,26 +1,22 @@
+import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { FAQHtml } from "@/components/faq";
+import { blogData, faqData, carouselData, productData } from "./data";
+import { Header, Footer, BlogWrapper } from "@/components";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import Link from "next/link";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 
@@ -34,30 +30,23 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const saasCard = () => {
+const SaasCard = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/corporate-cards/saas-cards/`}
         faqData={faqData}
       />
+
       <Header utmSource="corporate_cards" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Corporate Cards |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="SaaS Cards"
+              title={`SaaS${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
@@ -113,6 +102,7 @@ const saasCard = () => {
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+        
         <div className={styles.three_step_container}>
           <ThreeSteps />
         </div>
@@ -168,6 +158,7 @@ const saasCard = () => {
             </div>
           </div>
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
@@ -197,6 +188,7 @@ const saasCard = () => {
               source="corporate_cards"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
@@ -255,12 +247,14 @@ const saasCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how SaaS cards can benefit your business and employees!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -291,6 +285,7 @@ const saasCard = () => {
           source="corporate_cards"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -444,4 +439,4 @@ const saasCard = () => {
   );
 };
 
-export default saasCard;
+export default SaasCard;

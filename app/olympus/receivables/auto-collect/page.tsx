@@ -52,10 +52,10 @@ const AutoCollect = (): React.JSX.Element => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div>
               <Heading
-                title="Auto Collect"
+                title={`Auto Collect${space}`}
+                color="rainy-blue"
                 size="h4"
-                weight="4"
-                useH1TagInHtml={true}
+                weight="7"
               />
               <sup className="sup-symbol"></sup>
             </div>

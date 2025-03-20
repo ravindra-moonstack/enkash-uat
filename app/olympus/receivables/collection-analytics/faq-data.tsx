@@ -93,5 +93,75 @@ const faqData: FAQProps[] = [
     ),
   },
 ];
+const secondFaqData: FAQProps[] = [
+  {
+    question: "How EnKash collection analytics works?",
+    answer: [
+      {
+        heading:
+          "EnKash collection analytics employs advanced data analysis and modeling to provide insights into payment patterns, helping businesses proactively manage collections, prioritize accounts, and optimize resource allocation for effective debt recovery.",
+      },
+    ],
+  },
+  {
+    question: "Why is EnKash collection analytics important for your business?",
+    answer: [],
+    answerHTML: (
+      <h4>
+        <Link href="https://www.enkash.com/" target="_blank">
+          EnKash collection analytics
+        </Link>{" "}
+        is crucial for businesses as it empowers them to predict and manage
+        customer payment behavior effectively, leading to reduced bad debt,
+        improved cash flow, and overall financial stability. It provides a
+        strategic advantage in optimizing debt collection processes for
+        sustainable business growth.
+      </h4>
+    ),
+  },
+  {
+    question:
+      "Can collection analytics help in reducing bad debt and improving cash flow?",
+    answer: [
+      {
+        heading:
+          "Yes, collection analytics can significantly contribute to reducing bad debt and improving cash flow.",
+      },
+    ],
+  },
+  {
+    question: "Why is DSO management important for businesses?",
+    answer: [],
+    answerHTML: (
+      <h4>
+        Days Sales Outstanding (DSO) management is crucial for businesses
+        because it provides insight into the average time it takes for a company
+        to collect payments from its customers. A lower DSO indicates that a
+        business is efficient in{" "}
+        <Link
+          href="https://www.enkash.com/olympus/recievables/"
+          target="_blank"
+        >
+          collection processes
+        </Link>{" "}
+        , contributing to improved cash flow. Efficient DSO management allows
+        businesses to optimize working capital, reduce the risk of bad debts,
+        and enhance overall financial stability. It also helps in assessing the
+        effectiveness of credit and collection policies, enabling businesses to
+        make informed decisions to improve their cash conversion cycle.
+      </h4>
+    ),
+  },
+  {
+    question:
+      "Is it necessary to have advanced data analysis skills to implement collection analytics for businesses? ",
+    answer: [
+      {
+        heading:
+          "While having advanced data analysis skills can be beneficial, many collection analytics solutions are designed to be user-friendly and accessible to individuals without extensive technical expertise. Businesses can leverage pre-built models and user-friendly interfaces to implement collection analytics effectively, even without a deep understanding of advanced data analysis.",
+      },
+    ],
+  },
+];
 
-export default faqData;
+export { faqData, secondFaqData };
