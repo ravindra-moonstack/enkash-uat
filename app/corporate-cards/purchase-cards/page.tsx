@@ -53,19 +53,14 @@ const PurchaseCard = (): React.JSX.Element => {
           <div>
             <Heading title="Optimize Your" color="white" size="h2" weight="7" />
             <Heading
-              title={`Business Procurement ${space}`}
+              title={`${space} Business Procurement ${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
+            <Heading title={`with EnKash`} color="white" size="h2" weight="7" />
             <Heading
-              title={`with EnKash ${space}`}
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title={`Purchase Cards (P-Cards) `}
+              title={`${space} Purchase Cards (P-Cards) `}
               color="rainy-blue"
               size="h2"
               weight="7"

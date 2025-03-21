@@ -15,12 +15,9 @@ import EnkashWay from "@/components/enkash-way/enkash-way";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -33,7 +30,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const policyApprovalFlow = () => {
+const PolicyApprovalFlow = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -46,19 +43,11 @@ const policyApprovalFlow = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`OfEx${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="| Policy and Approval Flows"
+              title={`Policies and Approval flow${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
@@ -66,40 +55,30 @@ const policyApprovalFlow = () => {
             <div className="d-flex flex-column">
               <div>
                 <Heading
-                  title={`Create${space}`}
+                  title={`Craft Tailored ${space}`}
                   color="white"
                   size="h2"
                   weight="7"
                 />
                 <Heading
-                  title="customized"
+                  title="Policies and Simplify "
                   color="rainy-blue"
                   size="h2"
                   weight="7"
                 />
-              </div>
-
-              <Heading
-                title="policies and streamlined"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <div>
                 <Heading
-                  title={`approval${space}`}
+                  title={`${space}Approvals`}
                   color="rainy-blue"
                   size="h2"
                   weight="7"
                 />
-                <Heading title="processes" color="white" size="h2" weight="7" />
               </div>
             </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Manage expenses effectively, maintain compliance, and optimize the approval processes"
+              title="Streamline approvals effortlessly by controlling business expenses and ensuring compliance."
               color="white"
               size="h6"
               weight="5"
@@ -135,76 +114,19 @@ const policyApprovalFlow = () => {
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Ease of", "Use"],
-              oldWayDescription:
-                "Traditionally, policies were paper-based. They had to be reviewed and approved manually by different stakeholders.",
-              newWayDescription:
-                "With EnKash, policies can be created on the platform as per the company's requirements and can be viewed easily on the dashboard.",
-            },
-            {
-              itemArray: ["Policy", "Enforcement"],
-              oldWayDescription:
-                "Limits can’t be defined to enforce and track compliance with the company’s budget.",
-              newWayDescription:
-                "Built-in policy enforcement and tracking features for different departments and employee grades to ensure adherence to spending policies.",
-            },
-            {
-              itemArray: ["Alerts on", "Policy Breach"],
-              oldWayDescription:
-                "Traditionally, there was no way to determine if an employee was spending more than the budget allocated, leading to overspending and disbalance in the cash flow.",
-              newWayDescription:
-                "When an employee submits expenses exceeding policy limits, a warning is sent to the submitters and approvers. The approver can then reject the expense or request a correction.",
-            },
-            {
-              itemArray: ["Approval", " Workflows"],
-              oldWayDescription:
-                "Email-based approval processes can be slow and require multiple follow-ups, leading to delays.",
-              newWayDescription:
-                "Automated and customizable workflows streamline the approval process, ensuring faster decision-making and reduced bottlenecks.",
-            },
-
-            {
-              itemArray: ["User", "Permissions"],
-              oldWayDescription:
-                "Limited control over who can initiate, approve, or modify financial transactions.",
-              newWayDescription:
-                "Role-based access control ensures that the designated people have the appropriate level of authority, enhancing security and transparency.",
-            },
-            {
-              itemArray: ["Transparency"],
-              oldWayDescription:
-                "Lack of transparency in approval processes makes it difficult to track the status of transactions.",
-              newWayDescription:
-                "Real-time visibility into the approval status of transactions provides transparency and accountability at every step.",
-            },
-          ]}
-        />
-      </div>
-
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline flex-column text-center mb-5">
           <Heading
-            title={`Navigate${space}`}
+            title={`Create Custom Workflows for  ${space}`}
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title="policies and approvals seamlessly "
+            title="Maker Checker Approval"
             color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading title="with our " color="black" size="h1" weight="6" />
-          <Heading
-            title="smart solutions "
-            color="black"
             size="h1"
             weight="6"
           />
@@ -274,6 +196,14 @@ const policyApprovalFlow = () => {
         </div>
       </div>
 
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Manage business expenses with innovative solutions"
+          subtitle="Employees"
+          data={productData}
+        />
+      </div>
+
       <div className={`${styles.fourth_row} row`}>
         <HowDoesCarousel
           titleContent={
@@ -301,12 +231,14 @@ const policyApprovalFlow = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how policy and approval flows can revolutionize the way you work!"
         />
-      </div> */}
+      </div> 
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -479,4 +411,4 @@ const policyApprovalFlow = () => {
   );
 };
 
-export default policyApprovalFlow;
+export default PolicyApprovalFlow;

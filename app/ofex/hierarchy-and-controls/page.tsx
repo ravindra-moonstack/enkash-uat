@@ -2,8 +2,6 @@ import Image from "next/image";
 import { Metadata } from "next";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
 import { blogData, carouselData, productData } from "./data";
 import faqData from "./faq-data";
@@ -12,15 +10,12 @@ import { FAQHtml } from "@/components/faq";
 import { bannerLottie, caraouselBg, faqBg } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -33,64 +28,42 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const hierarchyAndControls = () => {
+const HierarchyAndControls = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/ofex/hierarchy-and-controls/`}
         faqData={faqData}
       />
+
       <Header utmSource="expense_management" />
 
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`OfEx |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Hierarchy and Controls"
+              title={`Hierarchy and Controls ${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Optimize organizational${space}`}
+              title={`Experience Fast & Efficient ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`hierarchy and control for${space}`}
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <div>
-              <Heading
-                title={`quick and${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="efficient"
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-            </div>
-
-            <Heading
-              title={`expense management${space}`}
+              title={`Expense Management ${space}`}
               color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`with Hierarchy & Control${space}`}
+              color="white"
               size="h2"
               weight="7"
             />
@@ -98,66 +71,39 @@ const hierarchyAndControls = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Effortlessly set up control across departments, sub-departments, and designations"
+              title="Easily establish control across departments, sub-departments, and roles"
               color="white"
               size="h6"
               weight="5"
             />
           </div>
-          <div className="my-5 d-flex flex-row justify-content-start align-items-center">
-            <div className="me-2">
-              <PrimaryButton
-                title="EnKash Now"
-                theme="blue"
-                url="/sales/?source=expense_management"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
-                url="/sales/?source=expense_management"
-              />
-            </div>
-          </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Approval Process"],
-              oldWayDescription:
-                "The traditional paper or email-based multi-level approval process is tedious and time-consuming.",
-              newWayDescription:
-                "OfEx automatic approval flow can be set up on the dashboard based on organizational roles, departments, and designations.",
-            },
-            {
-              itemArray: ["Privacy Concerns"],
-              oldWayDescription:
-                "Limited control over who could access financial data leads to security concerns.",
-              newWayDescription:
-                "EnKash allows you to have role-based access and control with increased security.",
-            },
-            {
-              itemArray: ["Compliance & Auditing"],
-              oldWayDescription:
-                "The compliance tracking in line with the company or department-wise policy requires extensive manual effort.",
-              newWayDescription:
-                "Built-in compliance checks for automatic alerts and tracking across hierarchical levels for policy violations.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Ensure structured authority and decision-making"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Centralized Authority",
+              },
+              {
+                icon: stack,
+                text: "Clear Chain",
+              },
+              {
+                icon: numberOne,
+                text: "Top-down Decision Making",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -165,52 +111,52 @@ const hierarchyAndControls = () => {
       >
         <div className="d-flex flex-column text-center mb-5">
           <Heading
-            title="Delegate authority for better"
+            title="Achieve quicker resolutions "
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title="transparency & faster resolution"
+            title="with enhanced transparency and control"
             color="equity-blue"
             size="h1"
             weight="6"
           />
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Define Custom Roles"
-              description="Assign specific permissions and accessibility to multiple hierarchies based on their department structure"
-              source="expense_management"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Reduces Financial Risks"
-              description="Multiple individuals can be involved in the approval hierarchy. This ensures that expenses are verified multiple times and that there is no inaccuracy, duplication, or fraud"
-              source="expense_management"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Fast Decision Making"
-              description="The system provides real-time insights into the expense pattern for businesses to identify areas that can be managed better"
-              source="expense_management"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Resource Management"
-              description="The AI and ML-powered technology allows setting automated rules for expense approval and categorization, helping reduce the burden on managers and accounting teams"
-              source="expense_management"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
               whiteTitle="Easy Configuration"
-              description="Seamlessly integrating software like Zoho, Tally, SAP, and Oracle Netsuite with EnKash eliminates the need for manual data entry"
+              description="Seamlessly integrating software like Zoho, Tally, SAP, and Oracle Netsuite with EnKash eliminates the need for manual data entry. "
+              source="expense_management"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Define Custom Roles"
+              description="Assign specific permissions and accessibility to multiple hierarchies based on their department structure."
+              source="expense_management"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Efficient Decision Making"
+              description="The system provides real-time insights into the expense pattern for businesses to identify areas that can be managed better. "
+              source="expense_management"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Better Resource Management"
+              description="The AI and ML-powered technology allows setting automated rules for expense tracking, approval and categorization, helping reduce the burden on managers and accounting teams."
+              source="expense_management"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Scalability "
+              description="Add new departments and employee roles without any hassle. "
               source="expense_management"
             />
           </div>
@@ -220,13 +166,13 @@ const hierarchyAndControls = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Highly"
+                    title="Reduces"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Scalable"
+                    title="Financial Risks"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -234,10 +180,41 @@ const hierarchyAndControls = () => {
                 </div>
               }
               source="expense_management"
-              description="Add new departments and employee roles without any hassle"
+              description="Multiple individuals can be involved in the expense approval system. This ensures that expenses are verified multiple times and that there is no inaccuracy, duplication, or fraud."
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Compliance "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Management "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              source="expense_management"
+              description="The built-in compliance management tool enables enterprises to track and define automatic alerts in case of policy violations."
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Simplify expense management with EnKash’s innovative solutions "
+          subtitle="Employees"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -261,12 +238,14 @@ const hierarchyAndControls = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how hierarchy and control can benefit your business and employees!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -452,4 +431,4 @@ const hierarchyAndControls = () => {
   );
 };
 
-export default hierarchyAndControls;
+export default HierarchyAndControls;

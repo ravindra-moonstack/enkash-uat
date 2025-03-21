@@ -3,7 +3,6 @@ import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
 import iconFour from "./img/icon-four.svg";
 
-
 import {
   autoCollect,
   invoices,

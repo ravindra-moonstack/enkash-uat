@@ -1,7 +1,6 @@
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
-
 import {
   autoCollect,
   invoices,

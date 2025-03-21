@@ -56,28 +56,28 @@ const payables = () => {
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
             <Heading
-              title={`Olympus${space}`}
+              title={`Make Payments${space}`}
               color="rainy-blue"
               size="h1"
               weight="7"
             />
-            <Heading
-              title="| Payables"
-              size="h1"
-              weight="7"
-              useH1TagInHtml={true}
-            />
           </div>
           <div className="d-inline">
             <Heading
-              title={`Streamline all accounts payable${space}`}
+              title={`Streamline your${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="on one platform"
+              title=" Accounts Payables"
               color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`${space} on One Platform`}
+              color="white"
               size="h2"
               weight="7"
             />
@@ -100,19 +100,20 @@ const payables = () => {
           </div>
           <div className={`my-5 ${styles.button_container}`}>
             <PrimaryButton
-              title="EnKash Now"
+              title="Talk to Sales"
               theme="blue"
               url="/sales/?source=payables"
             />
             <span className="mx-2"></span>
             <SecondryButton
-              title="Get Free Demo"
+              title="Sign up"
               actionImage={whiteArrow}
               iconSize={15}
-              url="/sales/?source=payables"
+              url="/login"
             />
           </div>
         </div>
+
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
@@ -122,9 +123,11 @@ const payables = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
         <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={office} />
       </div>
+
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
@@ -151,6 +154,7 @@ const payables = () => {
             </div>
           </div>
         </div>
+
         <div className={`row bg-white ${styles.section}`}>
           <div
             className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-start  ${styles.second_container}`}
@@ -168,6 +172,7 @@ const payables = () => {
               />
             </div>
           </div>
+
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
               title="Rental Payments"
@@ -180,8 +185,8 @@ const payables = () => {
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12  my-md-5 my-3">
             <ExploreCard
-              title="Express Pay"
-              description="Enable express pay and make payments to vendors, billers & more via payment modes of your choice"
+              title="Bulk Payouts"
+              description="Enable bulk payouts and make payments to vendors, billers & more via payment modes of your choice."
               theme="blue"
               link="/olympus/payables/bulk-payout"
             />
@@ -214,8 +219,8 @@ const payables = () => {
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="Bill Payments"
-            description=" Easily manage recurring bills like utility, electricity, etc"
+            title="Business Bill Payments"
+            description="Easily manage recurring utility bills for your business."
             theme="green"
             link="/olympus/payables/bill-payment"
           />
@@ -223,13 +228,13 @@ const payables = () => {
 
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
-            title="GST Payments"
+            title="Tax Payments"
             description="Ensure an audit-compliant and seamless GST payment process for timely remittance"
             theme="green"
             link="/olympus/payables/gst-payments"
           />
         </div>
-
+        
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
             <LottieDynamicLoadComponent

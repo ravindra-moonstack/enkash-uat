@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
@@ -10,12 +11,12 @@ import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import { FAQHtml } from "@/components/faq";
 import { Header, Footer, BlogWrapper , Heading, ThreeSteps} from "@/components";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title: "Budget Management Platform | Budget Control for Business - EnKash",
@@ -38,47 +39,39 @@ const budgetAndAdvance = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`OfEx${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="| Budgets and Advances"
+              title={`Budgets and Advances${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div className="d-inline d-md-flex flex-column">
             <div>
               <Heading
-                title={`Ensure${space}`}
+                title={`Keep your ${space}`}
                 color="white"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title={`smooth cashflow${space}`}
-                color="rainy-blue"
+                title={`spends in check ${space}`}
+                color="white"
                 size="h2"
                 weight="7"
               />
             </div>
 
             <Heading
-              title="with easy budget allocation"
+              title="by allocating "
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="and advance management"
-              color="white"
+              title="budgets in advance"
+              color="rainy-blue"
               size="h2"
               weight="7"
             />
@@ -86,12 +79,13 @@ const budgetAndAdvance = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Establish department-wise budgets and release advances as per projections and previous data"
+              title="Define smart budgets and release advances based on projections and past insights."
               color="white"
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
@@ -110,58 +104,30 @@ const budgetAndAdvance = () => {
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+        
         <div className={styles.three_step_container}>
           <ThreeSteps />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Control", "Budgeting"],
-              oldWayDescription:
-                "Traditionally, there was no way to follow a disciplined budgeting for each department and project.",
-              newWayDescription:
-                "With EnKash, businesses can designate budgets for each department to avoid overspending.",
-            },
-            {
-              itemArray: ["Easy", "Management"],
-              oldWayDescription:
-                "Managing budgets for each department and tracking them manually can be a heavy task.",
-              newWayDescription:
-                "Businesses can easily track the budget allocated to each department and project from a single dashboard.",
-            },
-            {
-              itemArray: ["Smooth", "Approvals"],
-              oldWayDescription:
-                "Taking approval for each advance request can be very difficult.",
-              newWayDescription:
-                "There is no need to take approval on each advance payment. Managers can approve them in one go, provided they match the actual budget allocated and within the policy framework.",
-            },
-            {
-              itemArray: ["Financial", "Calculations"],
-              oldWayDescription:
-                "Complex financial calculations are required to track budget utilization and make informed financial decisions.",
-              newWayDescription:
-                "EnKash's automated system performs all the complex financial calculations, providing you with real-time insights and analytics.",
-            },
-          ]}
-        />
       </div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
-          <Heading title="Set up" color="equity-blue" size="h1" weight="6" />
           <Heading
-            title={`${space}budgets and advances smoothly`}
+            title="Effortlessly Allocate Budgets and "
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title={`${space}Approve Advances with EnKash`}
             color="black"
             size="h1"
             weight="6"
@@ -172,8 +138,8 @@ const budgetAndAdvance = () => {
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle=" Customize Budgets"
-                description="Create budgets that are aligned with your business finances and goals to achieve"
+                whiteTitle="Budgeting & Forecasting"
+                description="Budget allocation must be aligned with your business finances and goals to achieve."
                 source="expense_management"
               />
             </div>
@@ -187,8 +153,8 @@ const budgetAndAdvance = () => {
 
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Advance For Projects"
-                description="Simplified advance process to secure immediate funds when required for a specific project or category"
+                whiteTitle="Request Project-Wise Advance"
+                description="Simplify advance process to secure immediate funds when required for a specific project or category. This leads to efficient budgeting control."
                 source="expense_management"
               />
             </div>
@@ -201,6 +167,14 @@ const budgetAndAdvance = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Products to Encourage Loyalty and Reward "
+          subtitle="Employees"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -236,12 +210,32 @@ const budgetAndAdvance = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how budget and advances can revolutionize the way you work!"
         />
       </div>
+
+      <div className={`${styles.seventh_row} row`}>
+        <div
+          className={` ${styles.action_container} d-flex align-items-start color-white`}
+        >
+          <div className={styles.explore_text}>
+            Budgeting under your complete control at all times!
+          </div>
+          <div>
+            <SecondryButton
+              title="Sign Up Now"
+              actionImage={whiteArrow}
+              iconSize={15}
+              url="/login/"
+            />
+          </div>
+        </div>
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

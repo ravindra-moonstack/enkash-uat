@@ -8,14 +8,13 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import { BlogWrapper, Header, Footer, Heading, ThreeSteps } from "@/components";
+import { BlogWrapper, Header, Footer } from "@/components";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import Header from "@/components/header/header";
 import {
   officeImg,
   whiteArrow,
@@ -25,7 +24,6 @@ import {
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
 } from ".";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 
@@ -112,7 +110,7 @@ const loyaltyLounge = () => {
         </div>
       </div>
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={officeImg} />
+        <HowDoesItWork dataSets={dataSets} bannerImage={officeImg} />
       </div>
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>

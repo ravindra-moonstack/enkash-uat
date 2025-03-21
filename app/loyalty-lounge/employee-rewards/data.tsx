@@ -13,6 +13,13 @@ import { AllProductsDataProp } from "@/components/all-products/all-products";
 
 const productData: AllProductsDataProp[] = [
   {
+    title: "Gift Cards",
+    description:
+      "Empower teams with versatile, prepaid gift cards for seamless rewards and recognition.",
+    image: paymentLink,
+    link: "/loyalty-lounge/gift-cards/",
+  },
+  {
     title: "Channel Incentives",
     description:
       "Motivate partners and distributors with tailored rewards, driving sales and long-term engagement.",

@@ -71,7 +71,6 @@ const carouselData = [
 ];
 
 
-
 const blogData = [
   {
     image:
