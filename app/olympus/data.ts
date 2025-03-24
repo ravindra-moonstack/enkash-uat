@@ -80,6 +80,4 @@ const blogData = [
   },
 ];
 
-
-
-export { blogData,howDoesItWorkData };
+export { blogData, howDoesItWorkData };
