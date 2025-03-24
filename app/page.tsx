@@ -307,7 +307,7 @@ const home = () => {
             weight="6"
           />
           <Heading
-            title={`250,000+${space}`}
+            title={`40,000+${space}`}
             color="electric-green"
             size="h1"
             weight="6"
@@ -315,7 +315,7 @@ const home = () => {
 
           <div>
             <Heading
-              title="network members & companies"
+              title="network members &  Customers"
               color="white"
               size="h1"
               weight="6"
@@ -366,7 +366,7 @@ const home = () => {
               </div>
               <div className="d-flex flex-column">
                 <Heading
-                  title=" Noufel Anamala, Founder,"
+                  title="Noufel Anamala, Founder,"
                   size="h4"
                   weight="4"
                 />
@@ -384,6 +384,21 @@ const home = () => {
       <div
         className={`${styles.twelfth_row} row color-white bg-white row-padding`}
       >
+        {" "}
+        <div className="d-flex flex-column text-center mb-5">
+          <Heading
+            title="Tired of Complex Platforms?"
+            size="h1"
+            weight="6"
+            color="black"
+          />
+          <Heading
+            title="Our simple, flexible, and integrated platform is here to help"
+            size="h3"
+            weight="4"
+            color="equity-blue"
+          />
+        </div>
         <div className={`col-12 d-flex flex-md-row mt-3 scroll_container`}>
           <div className={styles.card}>
             <GetStartedCard
@@ -421,8 +436,8 @@ const home = () => {
 
       <div className={`row bg-white ${styles.sixteenth_row} overflow-hidden`}>
         <ContactUsCard
-          title="Ready to upgrade with our new-age business solutions?"
-          description="Explore all these products on the same platform and empower your business and employees with efficient spend management, transparency, and control across all departments"
+          title="Ready to Make the Move?"
+          description="Start collecting payments, making payouts, managing business expenses, rewarding partners, and more. Sign up or consult our experts for tailored solutions."
           source="home_page"
         />
       </div>

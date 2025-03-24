@@ -91,7 +91,7 @@ const RainbowSection = () => {
         className={`${styles.first_row} row  text-center color-white bg-indi-volt`}
       >
         <span className={`col-12  ${styles.first_text}`}>
-          <Heading title="Save." size="h0" />
+          <Heading title="Save Time." size="h0" />
         </span>
 
         <Image
@@ -111,7 +111,7 @@ const RainbowSection = () => {
         />
 
         <span className={`col-12  ${styles.second_text}`}>
-          <Heading title="Scale." size="h0" />
+          <Heading title="Save Money." size="h0" />
         </span>
 
         <Image
@@ -131,7 +131,7 @@ const RainbowSection = () => {
         />
 
         <span className={`col-12  ${styles.third_text}`}>
-          <Heading title="Succeed" size="h0" />
+          <Heading title="Scale Fast." size="h0" />
         </span>
 
         <Image
@@ -152,10 +152,13 @@ const RainbowSection = () => {
 
         <div className={`col-12 ${styles.description_text}`}>
           <div>
+            <Heading title="A platform to simplify " size="h4" weight="4" />
+          </div>
+          <div>
             <Heading
-              title="Simplifying payments, expenses, cards, reward & loyalty programs"
+              title="payments, expenses, cards, reward & loyalty programs"
               size="h4"
-              weight="4"
+              weight="7"
             />
           </div>
           <div>

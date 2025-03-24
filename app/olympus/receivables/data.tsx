@@ -1,3 +1,34 @@
+import iconOne from "./img/icon-one.svg";
+import iconTwo from "./img/icon-two.svg";
+import iconThree from "./img/icon-three.svg";
+
+const dataSets = [
+  {
+    imageSrc: iconOne,
+    altText:
+      "Digitize your customers' invoicing process and ensure timely collection with multiple payment options",
+    heading:
+      "Digitize your customers' invoicing process and ensure timely collection with multiple payment options",
+  },
+  {
+    imageSrc: iconTwo,
+    altText: "Enhance the collection process with real-time updates",
+    heading:
+      "Enhance the collection process with real-time updates on received payments and create better collection strategies with data",
+  },
+  {
+    imageSrc: iconThree,
+    altText: "Send payment reminders to customers along with payment links",
+    heading:
+      "Send payment reminders to customers along with payment links for timely collection",
+  },
+  {
+    imageSrc: iconThree,
+    altText: "Manage the collection process seamlessly on a single dashboard",
+    heading: "Manage the collection process seamlessly on a single dashboard",
+  },
+];
+
 const blogData = [
   {
     image:
@@ -21,9 +52,8 @@ const blogData = [
   },
   {
     image:
-      "https://www.enkash.com/resources/wp-content/uploads/2023/05/Accounts-payable-vs-accounts-receivable-Understanding-the-differences.jpg",
-    imageAlt:
-      "Accounts Payable v/s Accounts Receivable",
+      "https://blogs.enkash.com/wp-content/uploads/2023/05/Accounts-payable-vs-accounts-receivable-Understanding-the-differences.jpg",
+    imageAlt: "Accounts Payable v/s Accounts Receivable",
     title: "Accounts Payable v/s Accounts Receivable",
     date: "Oct 13, 2023",
     description:
@@ -32,4 +62,4 @@ const blogData = [
   },
 ];
 
-export default blogData;
+export { blogData, dataSets };

@@ -1,17 +1,16 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
+import { blogData, carouselData, productData } from "./data";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import { Header, Footer, BlogWrapper, Heading, ThreeSteps } from "@/components";
+import { FAQHtml } from "@/components/faq";
+import { bannerLottie, caraouselBg, faqBg } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -42,6 +41,7 @@ const hierarchyAndControls = () => {
         faqData={faqData}
       />
       <Header utmSource="expense_management" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -273,6 +273,7 @@ const hierarchyAndControls = () => {
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
+
         <div className="mb-5">
           <Heading
             title="Don't worry! Our FAQs section will help you learn about department management in detail"
@@ -297,6 +298,7 @@ const hierarchyAndControls = () => {
           source="expense_management"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -444,6 +446,7 @@ const hierarchyAndControls = () => {
           }
         />
       </div>
+
       <Footer utmSource="expense_management" />
     </div>
   );

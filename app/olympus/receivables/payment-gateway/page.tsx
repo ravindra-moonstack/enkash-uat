@@ -4,7 +4,8 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import { blogData, faqData } from "./data";
+import { blogData } from "./data";
+import faqData from "./faq-data";
 import carouselData from "./carousel-data";
 import {
   bannerLottie,

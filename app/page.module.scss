@@ -540,6 +540,30 @@
         height: 45px;
       }
     }
+    .amex {
+      height: 35px;
+      width: auto;
+      margin-right: 50px;
+      @include for-laptops {
+        height: 45px;
+      }
+    }
+    .axis {
+      height: 35px;
+      width: auto;
+      margin-right: 50px;
+      @include for-laptops {
+        height: 45px;
+      }
+    }
+    .yes {
+      height: 35px;
+      width: auto;
+      margin-right: 50px;
+      @include for-laptops {
+        height: 45px;
+      }
+    }
   }
 
   .customer_logo::-webkit-scrollbar {

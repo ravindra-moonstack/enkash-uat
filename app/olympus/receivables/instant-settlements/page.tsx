@@ -3,13 +3,8 @@ import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { space } from "../../../../common/constant";
-import {
-  blogData,
-  faqData,
-  secondFaqData,
-  carouselData,
-  productData,
-} from "./data";
+import { blogData, carouselData, productData } from "./data";
+import { faqData, secondFaqData } from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";

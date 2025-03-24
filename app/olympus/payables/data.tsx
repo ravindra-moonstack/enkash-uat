@@ -192,9 +192,9 @@ const getStartedData = [
       "Teams from different locations can access and share files from anywhere and process payments easily",
   },
   {
-    title: "Vendor Management",
+    title: "Effective invoice & vendor management",
     description:
-      "Easily upload vendor invoices, do vendor KYC and review vendor performance to manage them better",
+      " Easily upload vendor invoices, do vendor KYC and review vendor performance to manage them better.",
   },
   {
     title: "Early payment discount",

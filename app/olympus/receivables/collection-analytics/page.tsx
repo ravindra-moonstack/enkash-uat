@@ -25,7 +25,7 @@ import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import AllProducts from "@/components/all-products/all-products";
 import productData from "./product-data";
 import BlogWrapper from "@/components/blog/blog-wrapper";
-import blogData from "../blog-data";
+import blogData from "../data";
 
 export const metadata: Metadata = generateMetaData({
   title:

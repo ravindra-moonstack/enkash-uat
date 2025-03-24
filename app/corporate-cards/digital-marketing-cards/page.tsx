@@ -16,7 +16,8 @@ import ComprehensiveView from "@/components/comprehensive-view/comprehensive-vie
 import { FAQHtml } from "@/components/faq";
 import Header from "@/components/header/header";
 import BlogWrapper from "@/components/blog/blog-wrapper";
-import { blogData, faqData, carouselData, productData } from "./data";
+import faqData from "./faq-data";
+import { blogData, carouselData, productData } from "./data";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";

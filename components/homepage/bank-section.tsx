@@ -22,6 +22,10 @@ import {
   dtdcLogo,
   starBucksLogo,
   auBankLogo,
+  amexLogo,
+  idfcLogo,
+  axisLogo,
+  yesLogo,
 } from "@/app/index";
 import { space } from "@/common/constant";
 
@@ -102,12 +106,11 @@ const BankSection = ({ type }: { type: "partners" | "customers" }) => {
               className={`${styles.bank_logo} ${styles.customer_logo}
               d-flex align-items-center justify-content-between mt-3`}
             >
-
               {selectedTab === "partners" && (
                 <Image
-                  className={styles.icici}
-                  src={iciciBankLogo}
-                  alt="icici bank logo"
+                  className={styles.rupay}
+                  src={rupayLogo}
+                  alt="rupay bank logo"
                 />
               )}
               {selectedTab === "partners" && (
@@ -119,11 +122,18 @@ const BankSection = ({ type }: { type: "partners" | "customers" }) => {
               )}
               {selectedTab === "partners" && (
                 <Image
-                  className={styles.kotak}
-                  src={kotakLogo}
-                  alt="kotak bank logo"
+                  className={styles.master}
+                  src={masterCardLogo}
+                  alt="master card logo"
                 />
-              )}
+              )}{" "}
+              {selectedTab === "partners" && (
+                <Image
+                  className={styles.master}
+                  src={amexLogo}
+                  alt="amex bank logo"
+                />
+              )}{" "}
               {selectedTab === "partners" && (
                 <Image
                   className={styles.hdfc}
@@ -133,26 +143,39 @@ const BankSection = ({ type }: { type: "partners" | "customers" }) => {
               )}
               {selectedTab === "partners" && (
                 <Image
-                  className={styles.au}
-                  src={auBankLogo}
-                  alt="au bank logo"
+                  className={styles.icici}
+                  src={iciciBankLogo}
+                  alt="icici bank logo"
                 />
               )}
               {selectedTab === "partners" && (
                 <Image
-                  className={styles.rupay}
-                  src={rupayLogo}
-                  alt="rupay bank logo"
+                  className={styles.icici}
+                  src={idfcLogo}
+                  alt="idfc bank logo"
                 />
               )}
               {selectedTab === "partners" && (
                 <Image
-                  className={styles.master}
-                  src={masterCardLogo}
-                  alt="master card logo"
+                  className={styles.kotak}
+                  src={kotakLogo}
+                  alt="kotak bank logo"
                 />
               )}
-
+              {selectedTab === "partners" && (
+                <Image
+                  className={styles.axis}
+                  src={axisLogo}
+                  alt="axis bank logo"
+                />
+              )}
+              {selectedTab === "partners" && (
+                <Image
+                  className={styles.yes}
+                  src={yesLogo}
+                  alt="yes bank logo"
+                />
+              )}
               {selectedTab === "customers" && (
                 <Image
                   className={styles.everest}
@@ -209,114 +232,101 @@ const BankSection = ({ type }: { type: "partners" | "customers" }) => {
             <div id="marquee">
               <Marquee speed={80}>
                 <div
-                  className={`${styles.bank_logo} ${styles.customer_logo}
-              d-flex align-items-center justify-content-between mt-3`}
+                  className={`${styles.bank_logo} ${styles.customer_logo} d-flex align-items-center justify-content-between mt-3`}
                 >
                   {selectedTab === "partners" && (
-                    <Image
-                      className={styles.icici}
-                      src={iciciBankLogo}
-                      alt="icici bank logo"
-                    />
-                  )}
-                  {selectedTab === "partners" && (
-                    <Image
-                      className={styles.visa}
-                      src={visaLogo}
-                      alt="visa bank logo"
-                    />
-                  )}
-                  {selectedTab === "partners" && (
-                    <Image
-                      className={styles.kotak}
-                      src={kotakLogo}
-                      alt="kotak bank logo"
-                    />
-                  )}
-                  {selectedTab === "partners" && (
-                    <Image
-                      className={styles.hdfc}
-                      src={hdfcLogo}
-                      alt="hdfc bank logo"
-                    />
-                  )}
-                  {selectedTab === "partners" && (
-                    <Image
-                      className={styles.au}
-                      src={auBankLogo}
-                      alt="au bank logo"
-                    />
-                  )}
-                  {selectedTab === "partners" && (
-                    <Image
-                      className={styles.rupay}
-                      src={rupayLogo}
-                      alt="rupay bank logo"
-                    />
-                  )}
-                  {selectedTab === "partners" && (
-                    <Image
-                      className={styles.master}
-                      src={masterCardLogo}
-                      alt="master card logo"
-                    />
+                    <>
+                      <Image
+                        className={styles.rupay}
+                        src={rupayLogo}
+                        alt="rupay bank logo"
+                      />
+                      <Image
+                        className={styles.visa}
+                        src={visaLogo}
+                        alt="visa bank logo"
+                      />
+                      <Image
+                        className={styles.master}
+                        src={masterCardLogo}
+                        alt="master card logo"
+                      />
+                      <Image
+                        className={styles.master}
+                        src={amexLogo}
+                        alt="amex bank logo"
+                      />
+                      <Image
+                        className={styles.hdfc}
+                        src={hdfcLogo}
+                        alt="hdfc bank logo"
+                      />
+                      <Image
+                        className={styles.icici}
+                        src={iciciBankLogo}
+                        alt="icici bank logo"
+                      />
+                      <Image
+                        className={styles.kotak}
+                        src={idfcLogo}
+                        alt="idfc bank logo"
+                      />
+                      <Image
+                        className={styles.kotak}
+                        src={kotakLogo}
+                        alt="kotak bank logo"
+                      />
+                      <Image
+                        className={styles.axis}
+                        src={axisLogo}
+                        alt="axis bank logo"
+                      />
+                      <Image
+                        className={styles.kotak}
+                        src={yesLogo}
+                        alt="yes bank logo"
+                      />
+                    </>
                   )}
 
                   {selectedTab === "customers" && (
-                    <Image
-                      className={styles.everest}
-                      src={everestLogo}
-                      alt="everest logo"
-                    />
-                  )}
-                  {selectedTab === "customers" && (
-                    <Image
-                      className={styles.cure}
-                      src={cureFoodsLogo}
-                      alt="cure food logo"
-                    />
-                  )}
-                  {selectedTab === "customers" && (
-                    <Image
-                      className={styles.infra}
-                      src={infraMarketLogo}
-                      alt="infra market logo"
-                    />
-                  )}
-                  {selectedTab === "customers" && (
-                    <Image
-                      className={styles.dtdc}
-                      src={dtdcLogo}
-                      alt="dtdc logo"
-                    />
-                  )}
-                  {selectedTab === "customers" && (
-                    <Image
-                      className={styles.pristyn}
-                      src={pristynCareLogo}
-                      alt="pristyn care logo"
-                    />
-                  )}
-                  {selectedTab === "customers" && (
-                    <Image
-                      className={styles.box}
-                      src={box8Logo}
-                      alt="box8 logo"
-                    />
-                  )}
-                  {selectedTab === "customers" && (
-                    <Image
-                      className={styles.reliance}
-                      src={relianceRetail}
-                      alt="reliance retail cry logo"
-                    />
-                  )}
-                  {selectedTab === "customers" && (
-                    <Image
-                      className={styles.starbucks}
-                      src={starBucksLogo}
-                      alt="star bucks logo"
-                    />
+                    <>
+                      <Image
+                        className={styles.rupay}
+                        src={rupayLogo}
+                        alt="rupay bank logo"
+                      />
+                      <Image
+                        className={styles.visa}
+                        src={visaLogo}
+                        alt="visa bank logo"
+                      />
+                      <Image
+                        className={styles.master}
+                        src={masterCardLogo}
+                        alt="master card logo"
+                      />
+                      <Image
+                        className={styles.hdfc}
+                        src={hdfcLogo}
+                        alt="hdfc bank logo"
+                      />
+                      <Image
+                        className={styles.icici}
+                        src={iciciBankLogo}
+                        alt="icici bank logo"
+                      />
+                      <Image
+                        className={styles.kotak}
+                        src={kotakLogo}
+                        alt="kotak bank logo"
+                      />
+                      <Image
+                        className={styles.au}
+                        src={auBankLogo}
+                        alt="au bank logo"
+                      />
+                    </>
                   )}
                 </div>
               </Marquee>

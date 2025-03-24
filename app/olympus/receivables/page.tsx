@@ -2,16 +2,12 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { space } from "@/common/constant";
 import styles from "./page.module.scss";
-import blogData from "./blog-data";
+import { blogData, dataSets } from "./data";
 import faqData from "./faq-data";
-import howDoesItWorkData from "./how-does-It-work-data";
-import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import Header from "@/components/header/header";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -27,8 +23,8 @@ import {
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
 } from ".";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
+import { FAQHtml } from "@/components/faq";
+import { Footer, Header, Heading, BlogWrapper } from "@/components";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 
@@ -49,51 +45,38 @@ const receivables = () => {
         url={`https://www.enkash.com/olympus/receivables/`}
         faqData={faqData}
       />
+
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-inline mb-4">
             <Heading
-              title="Olympus |"
+              title="Collect Payments"
               color="rainy-blue"
               size="h1"
               weight="7"
             />
-            <Heading
-              title={`${space}Receivables`}
-              size="h1"
-              weight="7"
-              useH1TagInHtml={true}
-            />
-            <sup className="sup-symbol-large">#</sup>
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Digitize and optimize"
+              title="Fast, Secure, Efficient  "
               color="white"
               size="h2"
               weight="7"
             />
-
-            <div>
-              <Heading
-                title="your business"
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title={`${space}collection process`}
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-            </div>
+            <Heading
+              title={`Payment Collections`}
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <div></div>
           </div>
 
           <div className="mt-4 mobile-only">
             <Heading
-              title="Use smart automation tools, actionable data, and smart invoices for enhanced business collection"
+              title="Automate, streamline, and enhance your payment collection process with cutting-edge solutions tailored to your business needs."
               color="white"
               size="h6"
               weight="5"
@@ -101,7 +84,7 @@ const receivables = () => {
           </div>
           <div className="mt-4 desktop-only">
             <Heading
-              title="Use smart automation tools, actionable data, and smart invoices for enhanced business collection"
+              title="Automate, streamline, and enhance your payment collection process with cutting-edge solutions tailored to your business needs."
               color="white"
               size="h5"
               weight="5"
@@ -109,19 +92,20 @@ const receivables = () => {
           </div>
           <div className={`my-5 ${styles.button_container}`}>
             <PrimaryButton
-              title="EnKash Now"
+              title="Talk to Sales"
               theme="blue"
               url="/sales/?source=receivables"
             />
             <span className="mx-2"></span>
             <SecondryButton
-              title="Get Free Demo"
+              title="Sign Up"
               actionImage={whiteArrow}
               iconSize={15}
-              url="/sales/?source=receivables"
+              url="/login"
             />
           </div>
         </div>
+
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
@@ -131,9 +115,11 @@ const receivables = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={officeImg} />
+        <HowDoesItWork dataSets={dataSets} bannerImage={officeImg} />
       </div>
+
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div
@@ -155,8 +141,8 @@ const receivables = () => {
           </div>
           <div className="col-md-6 col-12 px-5">
             <ExploreCard
-              title="Olympus Payment Gateway"
-              description="Upgrade your checkout experience and accelerate collections."
+              title="Payment Gateway"
+              description="From seamless checkouts to advanced automation, accelerate collections and enhances customer satisfaction."
               theme="blue"
               link="/olympus/receivables/payment-gateway/"
             />

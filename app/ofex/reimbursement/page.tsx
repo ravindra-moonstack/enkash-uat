@@ -4,9 +4,8 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
+import { blogData, carouselData } from "./data";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
@@ -187,6 +186,7 @@ const reimbursement = () => {
             weight="6"
           />
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
@@ -290,12 +290,14 @@ const reimbursement = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how reimbursements can benefit your business and employees!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -326,6 +328,7 @@ const reimbursement = () => {
           source="expense_management"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -450,6 +453,7 @@ const reimbursement = () => {
           }
         />
       </div>
+
       <Footer utmSource="expense_management" />
     </div>
   );

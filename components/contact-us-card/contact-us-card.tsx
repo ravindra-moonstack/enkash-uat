@@ -39,7 +39,7 @@ const ContactUsCard = ({
           <div
             className={`d-flex mt-3 mb-md-5 mb-3 ${styles.action_container}`}
           >
-            <div className={styles.contact_us}>Contact us</div>
+            <div className={styles.contact_us}>Talk to us</div>
             <Image src={arrow} alt="arrow image" className="ms-2" />
           </div>
         </Link>

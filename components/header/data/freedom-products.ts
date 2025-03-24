@@ -21,9 +21,9 @@ import {
 const freedomProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/corporate-cards",
+    subtitleLink: "/cards",
     currentHeading: {
-      name: "Corporate Cards",
+      name: "Cards",
       description: "Flexible credit & prepaid card solutions",
     },
     list: [

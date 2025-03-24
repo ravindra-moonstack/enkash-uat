@@ -229,6 +229,7 @@ const payables = () => {
             link="/olympus/payables/gst-payments"
           />
         </div>
+
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
             <LottieDynamicLoadComponent
@@ -339,7 +340,7 @@ const payables = () => {
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Faster Payments"
+              whiteTitle="Faster & Accurate Payments:"
               description="Automating the payables process fastens it by eliminating manual intervention. It also reduces the chances of errors"
               ctaColor="blue"
               source="payables"

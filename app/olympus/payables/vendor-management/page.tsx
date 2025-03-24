@@ -19,14 +19,14 @@ import StructuredData from "@/components/head/structuredData";
 import { space } from "../../../../common/constant";
 import {
   blogData,
-  faqData,
   carouselData,
-  secondFaqData,
   productData,
 } from "./data";
+import {  faqData, secondFaqData }from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import AllProducts from "@/components/all-products/all-products";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Vendor Management Platform for Businesses in India - EnKash",

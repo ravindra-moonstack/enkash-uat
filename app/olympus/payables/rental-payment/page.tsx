@@ -1,13 +1,11 @@
 import { Metadata } from "next";
 import Image from "next/image";
-
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { space } from "../../../../common/constant";
-
-import { blogData, carouselData, faqData, productData } from "./data";
-
+import { blogData, carouselData, productData } from "./data";
+import faqData from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";

@@ -1,6 +1,5 @@
 import { FAQProps } from "@/components/faq/faq";
 import styles from "./page.module.scss";
-
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
