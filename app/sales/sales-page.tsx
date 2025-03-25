@@ -484,7 +484,8 @@ const SalesPage = () => {
                     </div>
                     {!isFormValid &&
                       !isExistingCustomer &&
-                      selectedProduct === "none" && (
+                      selectedProduct === "none" &&
+                      selectedCategory !== "Expense Management" && (
                         <span className={`${styles.danger} text-danger mt-2`}>
                           Please select a product
                         </span>
