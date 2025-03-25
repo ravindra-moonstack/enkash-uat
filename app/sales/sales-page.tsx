@@ -164,7 +164,9 @@ const SalesPage = () => {
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
       isValidWebsite(companyWebsite) &&
-      (selectedProduct !== "none" || isExistingCustomer)
+      (selectedProduct !== "none" ||
+        selectedCategory === "Expense Management" ||
+        isExistingCustomer)
     ) {
       setIsFormValid(true);
       sendEmailToEnkash();
