@@ -1,14 +1,5 @@
 const faqData = [
   {
-    question: "What is Bolt on EnKash?",
-    answer: [
-      {
-        heading:
-          "EnKash Bolt is a platform that provides access to exclusive brand shopping vouchers across various categories, allowing users to unlock significant savings. Through Bolt, users can explore and buy gift cards, and employee gift vouchers, ranging from e-commerce to food & beverages, apparel, entertainment, and health & wellness, all available at discounted rates.",
-      },
-    ],
-  },
-  {
     question: "What is a brand or a gift voucher?",
     answer: [
       {

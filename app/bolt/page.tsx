@@ -2,22 +2,18 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { space } from "@/common/constant";
 import styles from "./page.module.scss";
-import blogData from "./blog-data";
+import { blogData, dataSets } from "./data";
 import faqData from "./faq-data";
-import howDoesItWorkData from "./how-does-It-work-data";
-import Heading from "@/components/heading/heading";
+import { Heading, BlogWrapper, Header, Footer } from "@/components";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import Header from "@/components/header/header";
 import {
   officeImg,
   whiteArrow,
@@ -33,9 +29,9 @@ import {
   healthAndWellness,
   boltHero,
 } from ".";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 
 export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
@@ -58,8 +54,12 @@ const boltPage = () => {
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="B" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="olt" size="h1" weight="7" />
+            <Heading
+              title="Brand Vouchers"
+              color="rainy-blue"
+              size="h1"
+              weight="7"
+            />
           </div>
           <div className="d-flex flex-column">
             <Heading
@@ -70,15 +70,21 @@ const boltPage = () => {
             />
             <div className="d-flex">
               <Heading
-                title={`exclusive brand${space}`}
-                color="rainy-blue"
+                title={`exclusive ${space}`}
+                color="white"
                 size="h2"
                 weight="7"
                 useH1TagInHtml={true}
               />
-              <Heading title="vouchers" color="white" size="h2" weight="7" />
+              <Heading
+                title="brand vouchers"
+                color="rainy-blue"
+                size="h2"
+                weight="7"
+              />
             </div>
           </div>
+
           <div className="mt-4 mobile-only">
             <Heading
               title="Gain access to a curated selection of brand vouchers across various categories and enjoy huge savings"
@@ -96,16 +102,21 @@ const boltPage = () => {
             />
           </div>
           <div className="mt-5">
-            <PrimaryButton title="Buy Now" theme="blue" url={boltUTM} />
+            <PrimaryButton
+              title="Talk to Sales "
+              theme="blue"
+              url="/sales/?source=Bolt"
+            />
             <span className="mx-2"></span>
             <SecondryButton
-              title="Get Free Demo"
+              title="Sign Up "
               actionImage={whiteArrow}
               iconSize={15}
-              url="/sales/?source=Bolt"
+              url="/login"
             />
           </div>
         </div>
+
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
             <Image src={boltHero} alt="bolt" />
@@ -116,9 +127,11 @@ const boltPage = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={officeImg} />
+        <HowDoesItWork dataSets={dataSets} bannerImage={officeImg} />
       </div>
+
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-5">
@@ -297,17 +310,22 @@ const boltPage = () => {
         <div className="d-flex flex-column align-items-center justify-content-center">
           <div>
             <Heading
-              title={`Elevate your shopping experience with${space}`}
+              title={`Elevate your ${space}`}
               size="h1"
               color="black"
               weight="6"
             />
           </div>
-
           <Heading
-            title={`huge discounts`}
+            title={`shopping experience  ${space}`}
             size="h1"
             color="equity-blue"
+            weight="6"
+          />
+          <Heading
+            title={` with huge discounts`}
+            size="h1"
+            color="black"
             weight="6"
           />
         </div>
@@ -364,6 +382,7 @@ const boltPage = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
@@ -405,94 +424,114 @@ const boltPage = () => {
           ]}
         />
       </div>
-      <div className="bg-white row-padding d-flex justify-content-center">
-        <div className="ps-md-5 scroll_container d-flex pb-4">
-          <div className="me-4">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Instant"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Delivery"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Brand vouchers are available with a snap of a finger and can be accessed anytime and anywhere"
-              ctaColor="blue"
-              source="Loyalty_lounge"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Flexible"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title=" Denominations"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Brand vouchers can be availed in multiple flexible denominations as per budget"
-              ctaColor="blue"
-              source="Loyalty_lounge"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Discount on"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Bulk Ordering"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="Exclusive savings can be availed on our brand gift vouchers for employees if ordered in bulk"
-              ctaColor="blue"
-              source="Loyalty_lounge"
-            />
-          </div>
-          <div className="me-4">
-            <GetStartedCard
-              whiteTitle="Automatic Alerts"
-              description="Integrated platform to automatically inform users via WhatsApp, and e-mail with details of the purchased voucher and instructions on how to redeem it"
-              ctaColor="blue"
-              source="Loyalty_lounge"
-            />
-          </div>
+
+      <div
+        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
+      >
+        <div className="d-inline  flex-column text-center mb-5">
+          <Heading
+            title="Let them choose their adventure with our"
+            size="h1"
+            color="black"
+            weight="6"
+          />
+          <Heading
+            title={`${space} exclusive range of brand vouchers  `}
+            size="h1"
+            color="black"
+            weight="6"
+          />
         </div>
+
+        <div className="d-flex justify-content-center">
+          <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
+            <div className="me-4">
+              <GetStartedCard
+                titleHtml={
+                  <div className="d-flex flex-column">
+                    <Heading
+                      title="Instant"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                    <Heading
+                      title="Delivery"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                  </div>
+                }
+                description="Brand vouchers are available with a snap of a finger and can be accessed anytime and anywhere"
+                ctaColor="blue"
+                source="Loyalty_lounge"
+              />
+            </div>
+            <div className="me-4">
+              <GetStartedCard
+                titleHtml={
+                  <div className="d-flex flex-column">
+                    <Heading
+                      title="Flexible"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                    <Heading
+                      title=" Denominations"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                  </div>
+                }
+                description="Brand vouchers can be availed in multiple flexible denominations as per budget"
+                ctaColor="blue"
+                source="Loyalty_lounge"
+              />
+            </div>
+            <div className="me-4">
+              <GetStartedCard
+                titleHtml={
+                  <div className="d-flex flex-column">
+                    <Heading
+                      title="Discount on"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                    <Heading
+                      title="Bulk Ordering"
+                      color="rainy-blue"
+                      size="h2"
+                      weight="6"
+                    />
+                  </div>
+                }
+                description="Exclusive savings can be availed on our brand gift vouchers for employees if ordered in bulk"
+                ctaColor="blue"
+                source="Loyalty_lounge"
+              />
+            </div>
+            <div className="me-4">
+              <GetStartedCard
+                whiteTitle="Automatic Alerts"
+                description="Integrated platform to automatically inform users via WhatsApp, and e-mail with details of the purchased voucher and instructions on how to redeem it"
+                ctaColor="blue"
+                source="Loyalty_lounge"
+              />
+            </div>
+          </div>
+        </div>{" "}
       </div>
 
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how loyalty lounge can benefit your business and employees!"
         />
-      </div> */}
+      </div>
 
       <div
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
@@ -532,8 +571,8 @@ const boltPage = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Seeking further understanding of bolt?"
-          description="Bolt is a revolutionary platform that provides access to a curated selection of brand vouchers across various categories, offering exclusive discounts."
+          title="Seeking further understanding of brand vouchers? Explore the comprehensive guide"
+          description="Brand vouchers are prepaid instruments created to provide discounts on purchasing specific products and services following their terms and conditions."
           source="Bolt"
         />
       </div>
@@ -553,31 +592,10 @@ const boltPage = () => {
               </div>
               <div className="mb-5">
                 <p>
-                  A brand or gift card voucher works like a debit card. It is
+                  A gift or brand voucher works like a debit card. It is
                   preloaded with money, and the receiver can use it wherever
                   specified up to the limit of the gift voucher. It comes with
                   specific terms and conditions and has an expiration date.
-                </p>
-              </div>
-
-              <div className="mb-3">
-                <Heading
-                  size="h2"
-                  color="black"
-                  weight="6"
-                  title="How to buy a gift card?"
-                />
-              </div>
-              <div className="mb-5">
-                <p>
-                  To buy a gift card from EnKash, simply log in to the portal.
-                  Go to the bolt section and explore the gift cards across
-                  different categories. For instance, you decide to buy an
-                  Amazon gift card. Select the denominations against which you
-                  want to buy the gift card online. Add the quantity of the gift
-                  card to the cart. Go to the cart and pay using any mode of
-                  payment. Use this gift card on Amazon to purchase anything
-                  against the value of the gift card.
                 </p>
               </div>
 
@@ -636,6 +654,7 @@ const boltPage = () => {
           }
         />
       </div>
+      
       <Footer utmSource={halfBoltUTM} />
     </div>
   );

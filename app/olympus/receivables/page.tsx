@@ -188,6 +188,35 @@ const receivables = () => {
 
             <div className={styles.lottie_third_container}>
               <LottieDynamicLoadComponent
+                animationName={"RecievablesPaymentAnimation"}
+                loop={true}
+              />
+            </div>
+          </div>
+
+          <div className="col-md-6 col-12 px-5">
+            <ExploreCard
+              title="Payment Links"
+              description="Embed payment links within digital invoices for quicker collections."
+              theme="blue"
+              link="/olympus/receivables/payment-links"
+            />
+          </div>
+        </div>
+
+        <div className={`row bg-white ${styles.section}`}>
+          <div
+            className={`col-md-6 col-12 d-flex my-md-5 my-3
+             justify-content-start ${styles.third_container}`}
+          >
+            <Image
+              src={cardBg}
+              alt="card background"
+              className={styles.card_bg}
+            />
+
+            <div className={styles.lottie_third_container}>
+              <LottieDynamicLoadComponent
                 animationName={"RecievablesBulkAnimation"}
                 loop={true}
               />
@@ -215,21 +244,22 @@ const receivables = () => {
         </div>
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
-            title="Payment Links"
-            description="Reduce follow-ups and speed up collections by embedding payment links within digital invoices"
+            title="QR Codes"
+            description="Secure, contactless payment with QR codes to enable businesses to accept instant transactions."
             theme="green"
-            link="/olympus/receivables/payment-links"
+            link="/olympus/receivables/qr-codes"
           />
         </div>
 
         <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
           <ExploreCard
-            title="Invoices"
-            description="Reduce follow-ups and collect on time with digital invoice dispatch"
+            title="UPI Payments"
+            description="UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles."
             theme="green"
-            link="/olympus/receivables/invoices"
+            link="/olympus/receivables/upi-payments"
           />
         </div>
+
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
             <LottieDynamicLoadComponent

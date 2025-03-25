@@ -26,7 +26,7 @@ const payableProducts = [
     subtitle: "Default",
     subtitleLink: "/olympus/payables",
     currentHeading: {
-      name: "Payables",
+      name: "Make Payments",
       description: "Manage all types of business payments",
     },
     list: [
@@ -111,7 +111,7 @@ const payableProducts = [
       },
     ],
     footerText: "Manage all your business payments seamlessly",
-    footerMobileText: "Explore Payables",
+    footerMobileText: "Explore More",
     footerImg: "olympus_footer_bg",
     footerLink: "/olympus/payables",
     parentLink: "/olympus/payables",

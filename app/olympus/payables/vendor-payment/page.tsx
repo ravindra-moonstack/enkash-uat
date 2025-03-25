@@ -4,7 +4,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { space } from "../../../../common/constant";
 import faqData from "./faq-data";
-import { blogData,  carouselData } from "./data";
+import { blogData, carouselData } from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
@@ -45,21 +45,14 @@ const vendorPayment = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Vendor Payment"
+              title={`Vendor Payment`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
+
           <Heading
             title={`Faster, Smarter ${space}`}
             color="white"

@@ -7,12 +7,12 @@ import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
 import { FAQHtml } from "@/components/faq";
-import { blogData, faqData, carouselData, productData } from "./data";
+import { blogData, carouselData, productData } from "./data";
+import faqData from "./faq-data";
 import { Header, Footer, BlogWrapper } from "@/components";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
@@ -102,38 +102,10 @@ const SaasCard = (): React.JSX.Element => {
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        
+
         <div className={styles.three_step_container}>
           <ThreeSteps />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Subscription", "Management"],
-              oldWayDescription:
-                "Using multiple platforms to track individual SaaS subscription renewal dates can be confusing and amplifies the risk of missed payments.",
-              newWayDescription:
-                "Manage and pay for all your SaaS subscriptions on a unified platform, from renewal to expenditure.",
-            },
-            {
-              itemArray: ["Billing &", "Invoicing"],
-              oldWayDescription:
-                "Manual billing & invoicing can amplify the risk of missed payments and put an extra burden on your finance teams.",
-              newWayDescription:
-                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing, overlapping, or canceling underutilized subscriptions.",
-            },
-            {
-              itemArray: ["Utility", "Analysis"],
-              oldWayDescription:
-                "Difficult to understand whether you are getting the most out of your SaaS subscription.",
-              newWayDescription:
-                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing, overlapping, or canceling underutilized subscriptions.",
-            },
-          ]}
-        />
       </div>
 
       <div

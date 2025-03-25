@@ -1,57 +1,55 @@
-import { FAQProps } from "@/components/faq/faq";
-
-const faqData: FAQProps[] = [
+const faqData = [
   {
-    question: "What is budget management?",
+    question: "What is department management?",
     answer: [
       {
         heading:
-          "Budget management involves overseeing an organization's revenues and expenditures. It includes analyzing spends, managing purchases, and tracking cash flow to allocate and control financial resources for specific goals.",
+          "Department management involves establishing approval hierarchies within different departments based on the criticality of expenses and the urgency of payment decisions. It enables effective control over how various departments handle their business expenses while maintaining the integrity of approval processes and associated documentation.",
       },
     ],
   },
   {
-    question: "Why is budget management essential for my business?",
+    question: "Why is effective department management vital for your business?",
     answer: [
       {
         heading:
-          "Budget management is crucial for any business. It ensures that there's always sufficient cash to meet both short-term and long-term goals, allowing the business to adapt swiftly to changing circumstances. Moreover, it guarantees resource availability, fosters financial stability, and enhances financial health.",
+          "Efficient department management with OfEx ensures that all departments can manage their payments and expenses without overloading the central finance team. OfEx designation management and customizable roles provide the necessary checks and approvals, meeting auditing requirements seamlessly.",
       },
     ],
   },
   {
-    question: "What does automating budget management entail?",
+    question:
+      "Does the department management module help improve the finance team’s performance? If yes, how?",
     answer: [
       {
         heading:
-          "Automating budget management in OfEx involves leveraging technology to streamline financial planning, syncing policies for different departments and projects, and tracking processes. It simplifies data entry, enhances accuracy, and provides real-time expense insights.",
+          "Yes, it enhances the finance team's performance by eliminating the repetitive tasks of checking payment requests, chasing approvals, and collecting invoices. With the easy onboarding of employees on OfEx, the finance team's workload is reduced, making the auditing process quicker and more efficient.",
       },
     ],
   },
   {
-    question: "What is the need to automate budget management?",
+    question:
+      "Why should every business consider streamlining department management?",
     answer: [
       {
         heading:
-          "The demand for automating budget management arises from the need to improve efficiency and accuracy in financial processes. Automation reduces manual errors and saves time, making budget management more reliable.",
+          "Businesses can benefit from OfEx department management module in several ways:",
+        bullets: [
+          "Quick approvals: All expense-related issues can be resolved at the first level of approval",
+          "Easy Onboarding: A user-friendly onboarding process that is easy to follow and assess when required",
+          "Transparency: Ensures that the auditing and reconciliation process occurs without delays",
+          "Efficiency: Expenses are supported by the correct approval, reducing the risk of overspending",
+        ],
       },
     ],
   },
   {
-    question: "How does budget management impact cash flow management?",
+    question:
+      "How does the department management module reduce business fraud?",
     answer: [
       {
         heading:
-          "OfEx empowers each department to allocate annual project budgets, fostering effective budget management for impactful cash flow control. With customizable budgets, real-time expense tracking, and streamlined advance and claim management, OfEx easily optimizes your financial strategy.",
-      },
-    ],
-  },
-  {
-    question: "How do you monitor spending against the budget?",
-    answer: [
-      {
-        heading:
-          "Tracking expenditures against the budget involves consistently reviewing policies and financial statements and comparing actual expenses with budgeted amounts. With OfEx, you can promptly identify discrepancies, policy deviations, overspending, and areas where resources need reallocation, ensuring a healthy financial balance.",
+          "OfEx Department Management module acts as a safeguard against business fraud. Ensuring that teams do not exceed their budgets and that all expenses are monitored and approved effectively reduces unnecessary expenses and financial discrepancies.",
       },
     ],
   },

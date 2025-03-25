@@ -18,7 +18,7 @@ const xpenzProducts = [
     subtitle: "Default",
     subtitleLink: "/ofex",
     currentHeading: {
-      name: "Expense Management ", //previously it was Ofex
+      name: "Expenses", //previously it was Ofex
       description: "Digitize employee spends & reimbursements",
     },
     list: [
@@ -67,7 +67,7 @@ const xpenzProducts = [
       },
     ],
     footerText: "Optimize business spends efficiently",
-    footerMobileText: "Explore OfEx",
+    footerMobileText: "Explore More",
     footerImg: "xpenz_footer_bg",
     footerLink: "/ofex",
     parentLink: "/ofex",

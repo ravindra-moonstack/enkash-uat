@@ -5,7 +5,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
-import { blogData,carouselData, productData } from "./data";
+import { blogData, carouselData, productData } from "./data";
 import faqData from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -13,7 +13,7 @@ import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import { FAQHtml } from "@/components/faq";
-import { Header, Footer, BlogWrapper , Heading, ThreeSteps} from "@/components";
+import { Header, Footer, BlogWrapper, Heading, ThreeSteps } from "@/components";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import AllProducts from "@/components/all-products/all-products";
@@ -110,7 +110,7 @@ const budgetAndAdvance = () => {
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        
+
         <div className={styles.three_step_container}>
           <ThreeSteps />
         </div>

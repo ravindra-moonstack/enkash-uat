@@ -391,6 +391,7 @@ const olympus = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[

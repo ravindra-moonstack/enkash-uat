@@ -38,7 +38,7 @@ const ReceivableProducts = [
     subtitle: "Default",
     subtitleLink: "/olympus/receivables",
     currentHeading: {
-      name: "Receivables",
+      name: "Collect Payments",
       description: "Get paid faster with customized PG solutions",
     },
     list: [
@@ -196,7 +196,7 @@ const ReceivableProducts = [
       // },
     ],
     footerText: "Effortlessly streamline your business collections",
-    footerMobileText: "Explore Receivables",
+    footerMobileText: "Explore More",
     footerImg: "olympus_footer_bg",
     footerLink: "/olympus/receivables",
     parentLink: "/olympus/receivables",

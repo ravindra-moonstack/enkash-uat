@@ -201,7 +201,7 @@ const page = () => {
                   weight="6"
                 />
                 <Heading
-                  title="payment button for your business "
+                  title={`${space} payment button for your business `}
                   color="rainy-blue"
                   size="h1"
                   weight="6"

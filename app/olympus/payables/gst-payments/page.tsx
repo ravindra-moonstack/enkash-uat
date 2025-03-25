@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { space } from "../../../../common/constant";
-import { blogData,  productData, carouselData } from "./data";
+import { blogData, productData, carouselData } from "./data";
 import faqData from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -126,13 +126,13 @@ const taxPayments = () => {
             weight="6"
           />
           <Heading
-            title={`${space}EnKash ${space}`}
+            title={`${space}EnKash for  ${space}`}
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title="for GST Payments"
+            title="GST Payments"
             color="equity-blue"
             size="h1"
             weight="6"

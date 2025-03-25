@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-
 import styles from "./page.module.scss";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
@@ -13,7 +12,6 @@ import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-
 import BlogWrapper from "@/components/blog/blog-wrapper";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import { FAQHtml } from "@/components/faq";
@@ -217,6 +215,7 @@ const payables = () => {
             />
           </div>
         </div>
+
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
             title="Business Bill Payments"
@@ -234,7 +233,44 @@ const payables = () => {
             link="/olympus/payables/gst-payments"
           />
         </div>
-        
+
+        <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
+          <div className={styles.lottie_second_container}>
+            <LottieDynamicLoadComponent
+              animationName={"PayablesTaxAnimation"}
+              loop={true}
+            />
+          </div>
+        </div>
+      </div>
+      <div className={`${styles.fourth_row} row row-padding`}>
+        <div className="col-md-6 col-12 d-flex mb-5 order-1 order-md-1 justify-content-center">
+          <div className={styles.lottie_first_container}>
+            <LottieDynamicLoadComponent
+              animationName={"PayablesBillAnimation"}
+              loop={true}
+            />
+          </div>
+        </div>
+
+        <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
+          <ExploreCard
+            title="Invoice Management: "
+            description="Digitize and streamline invoice handling to enhance accuracy, compliance, and overall accounts payable efficiency."
+            theme="green"
+            link="/olympus/payables/bill-payment"
+          />
+        </div>
+
+        <div className="col-md-6 col-12 mt-5 order-4 order-md-3 px-md-5">
+          <ExploreCard
+            title="Payroll Processing: "
+            description=" Automate payroll disbursements to pay employees accurately and on time, every single month."
+            theme="green"
+            link="/olympus/payables/gst-payments"
+          />
+        </div>
+
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.lottie_second_container}>
             <LottieDynamicLoadComponent
@@ -433,7 +469,7 @@ const payables = () => {
 
       <div className="row">
         <ContactUsCard
-          title="Efficient and easy business payments"
+          title="Learn about account payables automation for enhanced efficiency."
           description="Accounts payable automation is the process by which a business pays its suppliers, service providers, and vendors online."
           source="payables"
         />

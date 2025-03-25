@@ -1,6 +1,7 @@
 const faqData = [
   {
-    question: "How does OfEx help with budgets and advances?",
+    question:
+      "How does EnKash’s expense management platform help with budgets and advances?",
     answer: [
       {
         heading:
@@ -19,7 +20,8 @@ const faqData = [
     ],
   },
   {
-    question: "How does OfEx help improve reimbursements?",
+    question:
+      "How does expense management platform help improve reimbursements?",
     answer: [
       {
         heading:
@@ -49,14 +51,13 @@ const faqData = [
     question: "What are the benefits of expense management?",
     answer: [
       {
-        heading:
-          "Expense management offers many benefits, which include:",
-        bullets:  [
+        heading: "Expense management offers many benefits, which include:",
+        bullets: [
           "Helps manage costs related to the business with efficiency",
           "Ensures that expenses don’t exceed set budgets",
           "Allows you to meet compliance and risk management requirements",
           "Reduces fraud and speeds up reimbursements to improve employee morale",
-          "It lets you refine and implement the company expenses policy"
+          "It lets you refine and implement the company expenses policy",
         ],
       },
     ],
@@ -72,7 +73,7 @@ const faqData = [
           "Setting budgets for each type of expense and designing approval hierarchies",
           "Implementing easy expense reimbursement processes to enable quick submission of expense-related documents",
           "Ensuring all approvals are in place before reimbursing expenses",
-          "Tracking expenses at all levels to ensure spend is within budgets"
+          "Tracking expenses at all levels to ensure spend is within budgets",
         ],
       },
     ],

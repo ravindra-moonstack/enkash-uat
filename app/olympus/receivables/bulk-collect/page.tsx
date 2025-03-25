@@ -4,7 +4,7 @@ import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import { blogData,  carouselData, productData } from "./data";
+import { blogData, carouselData, productData } from "./data";
 import faqData from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -22,7 +22,6 @@ import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import AllProducts from "@/components/all-products/all-products";
-
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Collect – Corporate E-Collect and Payment Collection | EnKash",
@@ -48,6 +47,7 @@ const bulkCollect = () => {
             <Heading
               title="Bulk Collect"
               size="h4"
+              color="rainy-blue"
               weight="4"
               useH1TagInHtml={true}
             />
