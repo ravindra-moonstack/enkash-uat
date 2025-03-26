@@ -1,12 +1,11 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import { blogData } from "./data";
-import faqData from "./faq-data";
-import carouselData from "./carousel-data";
 import {
   bannerLottie,
   caraouselBg,
@@ -21,7 +20,6 @@ import Heading from "@/components/heading/heading";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import Header from "@/components/header/header";
-import { Metadata } from "next";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import { FAQHtml } from "@/components/faq";
@@ -30,6 +28,10 @@ import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
 import AllProducts from "@/components/all-products/all-products";
 import BlogWrapper from "@/components/blog/blog-wrapper";
+
+import { blogData } from "./data";
+import faqData from "./faq-data";
+import carouselData from "./carousel-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Payment Gateway in India : Manage your Payments Online - EnKash",
@@ -41,7 +43,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const page = () => {
+const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -49,6 +51,7 @@ const page = () => {
         faqData={faqData}
       />
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
@@ -238,6 +241,7 @@ const page = () => {
           title="Learn how virtual accounts can revolutionize the way you work!"
         />
       </div>
+
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of payment gateway?"
@@ -245,6 +249,7 @@ const page = () => {
           source="receivables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -392,9 +397,10 @@ const page = () => {
           }
         />
       </div>
+
       <Footer utmSource="receivables" />
     </div>
   );
 };
 
-export default page;
+export default PaymentGateway;

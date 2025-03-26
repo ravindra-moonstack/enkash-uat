@@ -14,11 +14,11 @@ import { AllProductsDataProp } from "@/components/all-products/all-products";
 
 const productData: AllProductsDataProp[] = [
   {
-    title: "Policy and Approval Flow",
+    title: "Budget & Advance",
     description:
-      "Enterprises can define their policies and set approval flow for easy decision making.",
-    image: paymentLink,
-    link: "/ofex/policy-and-approval-flows/",
+      "Get advances cleared as per the defined budget to get going without any hindrance.",
+    image: qrCode,
+    link: "/ofex/budget-and-advances/",
   },
   {
     title: "Reimbursements",
@@ -28,11 +28,10 @@ const productData: AllProductsDataProp[] = [
     link: "/ofex/reimbursement/",
   },
   {
-    title: "Scan & Drop Receipts",
-    description:
-      "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
-    image: qrCode,
-    link: "/ofex/scan-and-drop-receipts/",
+    title: "Hierarchy and Control",
+    description: "Define hierarchies for better control and transparency.",
+    image: autoCollect,
+    link: "/ofex/hierarchy-and-controls/",
   },
   {
     title: "Insights",
@@ -42,10 +41,11 @@ const productData: AllProductsDataProp[] = [
     link: "/ofex/insights/",
   },
   {
-    title: "Hierarchy and Control",
-    description: "Define hierarchies for better control and transparency.",
-    image: autoCollect,
-    link: "/ofex/hierarchy-and-controls/",
+    title: "Policy and Approval Flow",
+    description:
+      "Enterprises can define their policies and set approval flow for easy decision making.",
+    image: paymentLink,
+    link: "/ofex/policy-and-approval-flows/",
   },
 ];
 
@@ -55,19 +55,19 @@ const carouselData = [
     alt: "Go to Drop Receipts as visible on the top and store all your receipts on the go",
     title:
       "Go to Drop Receipts as visible on the top and store all your receipts on the go",
-    heading: "Scan receipts:",
+    heading: "Scan receipts : ",
   },
   {
     image: iconTwo,
     alt: "Upload receipts as and when you spend",
     title: "Upload receipts as and when you spend",
-    heading: "Upload on the go:",
+    heading: "Upload on the go : ",
   },
   {
     image: iconThree,
     alt: "Link them to expenses anytime as per your convenience ",
     title: "Link them to expenses anytime as per your convenience ",
-    heading: "Reimburse:",
+    heading: "Reimburse : ",
   },
 ];
 

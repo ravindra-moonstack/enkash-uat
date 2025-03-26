@@ -60,14 +60,14 @@ const PaymentLinks = () => {
 
           <div className="">
             <Heading
-              title="Accept Payments Instantly with"
+              title="Accept Payments Instantly with EnKash"
               color="white"
               size="h2"
               weight="7"
             />
 
             <Heading
-              title={` EnKash Payment Links`}
+              title={`  Payment Links`}
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -160,7 +160,7 @@ const PaymentLinks = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="No Website Needed"
+              whiteTitle="No Website Integration"
               description="EnKash Payment Links are perfect for businesses without an online presence. Collect payments via SMS, WhatsApp, email, or social media, eliminating the need for a website or app. This solution bridges the gap between offline and online payment experiences seamlessly."
               source="receivables"
             />

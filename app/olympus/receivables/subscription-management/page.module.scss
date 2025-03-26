@@ -68,11 +68,11 @@
 }
 
 .third_row {
-  padding-bottom: 20px;
-  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-top: 20px;
   @include for-laptops {
-    padding-bottom: 20px;
-    padding-top: 80px;
+    padding-bottom: 150px;
+    padding-top: 20px;
   }
 }
 

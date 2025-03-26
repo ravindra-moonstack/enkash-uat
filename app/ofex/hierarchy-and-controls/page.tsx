@@ -211,8 +211,8 @@ const HierarchyAndControls = (): React.JSX.Element => {
 
       <div className={`${styles.second_row}  bg-white`}>
         <AllProducts
-          title="Simplify expense management with EnKash’s innovative solutions "
-          subtitle="Employees"
+          title="Simplify expense management with EnKash’s innovative  "
+          subtitle="solutions"
           data={productData}
         />
       </div>

@@ -182,23 +182,28 @@ const bulkCollect = () => {
               <div className="text-center">
                 <div className="text-center d-inline flex-column">
                   <Heading
-                    title={`How EnKash  ${space}`}
+                    title={`Business   ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title={`Bulk Collect ${space}`}
+                    title={`bulk collections  ${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
-                  <Heading title="Works" color="white" size="h1" weight="6" />
+                  <Heading
+                    title="made easy and efficient"
+                    color="white"
+                    size="h1"
+                    weight="6"
+                  />
                 </div>
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="How EnKash Bulk Collect Works"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
@@ -208,13 +213,6 @@ const bulkCollect = () => {
         <BlogWrapper
           blogData={blogData}
           title="Learn how bulk collect can benefit your business and employees!"
-        />
-      </div>
-
-      <div className={`${styles.second_row}  bg-white `}>
-        <AllProducts
-          title="Check Out EnKash’s Other Payment Products and Solutions"
-          data={productData}
         />
       </div>
 
@@ -238,6 +236,13 @@ const bulkCollect = () => {
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check Out EnKash’s Other Payment Products and Solutions"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.sixth_row} row`}>

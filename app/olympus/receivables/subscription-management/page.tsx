@@ -77,7 +77,7 @@ const subscriptionManagement = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Keep cash flow for your subscription-based business steady by collecting recurring payments via multiple payment methods like eNACH, autopay, standing instruction on credit & debit cards"
+              title="Keep cash flow for your subscription-based business steady by collecting recurring payments via multiple payment methods like eNACH, autopay, standing instruction on credit & debit cards."
               color="white"
               size="h6"
               weight="5"
@@ -154,29 +154,29 @@ const subscriptionManagement = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Smooth Integration"
-              description="Businesses can integrate their payment gateways with the subscription management model with minimal technical effort. The user-friendly dashboard ensures a smooth experience"
+              whiteTitle="Automate Recurring Payments"
+              description="Streamline recurring payment schedules, take control of billing cycles, and stay informed with instant alerts. Our advanced billing system simplifies subscription management with a reliable solution for card updates, payment retries, email notifications, and more."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automate Billing Cycles "
-              description="Businesses can integrate their payment gateways with the subscription management model with minimal technical effort. The user-friendly dashboard ensures a smooth experience"
+              whiteTitle="UPI AutoPay for Scalability"
+              description="Broaden your audience by including non-cardholders, drive conversions with affordable subscription plans, and foster customer loyalty through visibility and control while enjoying extensive UPI app compatibility."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easy Renewal"
-              description="Simply link the customer to a subscription plan and automate the invoicing, billing and renewal processes with the EnKash subscription model."
+              whiteTitle="Tailored Recurring Payment Models "
+              description="Choose fixed, usage-based, or variable models to automate payments. Support predefined amounts, usage-based billing, or both fixed rentals and ad-hoc charges for complete payment flexibility."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customizations"
-              description="With EnKash, billing cycles can be configured as per business subscription revenue models"
+              whiteTitle="Customize Your Checkout Experience"
+              description="Seamlessly integrate EnKash’s ready-to-use APIs into your app or website to offer a branded, no-redirect checkout experience. Use our dashboard to create plans, manage customers, and share payment links via email or SMS."
               source="receivables"
             />
           </div>
@@ -225,7 +225,7 @@ const subscriptionManagement = () => {
       </div>
 
       <div
-        className={`${styles.fifth_row} row row-padding-bottom-none bg-white pb-0`}
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white `}
       >
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
@@ -240,29 +240,6 @@ const subscriptionManagement = () => {
 
         <div>
           <FAQHtml faqData={faqData} />
-        </div>
-      </div>
-
-      <div
-        className={`${styles.fifth_row} row row-padding-bottom-none  bg-white`}
-      >
-        <div className="mb-5">
-          <Heading
-            title="Seeking further understanding about e-NACH? Explore the Comprehensive Guide."
-            color="equity-blue"
-            size="h1"
-          />
-        </div>
-        <div className="mb-5">
-          <Heading
-            title="The automated process of collecting funds from customers regularly for monthly subscriptions, loan repayments, utility bills, and insurance premiums with electronic authorization is e-NACH. It helps streamline the payment process by eliminating human interaction and reducing errors, promising timely collections."
-            color="black"
-            size="h4"
-          />
-        </div>
-
-        <div>
-          <FAQHtml faqData={secondFaqData} />
         </div>
 
         <div className={styles.faq_bg}>

@@ -112,29 +112,22 @@ const carouselData = [
     image: iconOne,
     alt: "Login to EnKash or register",
     title:
-      "Log in to EnKash using your registered mobile number and complete your KYC",
+      "Log in to EnKash using your registered mobile number and complete your KYC.",
+    heading: "Mandatory KYC : ",
   },
   {
     image: iconTwo,
-    alt: "Go to the channel incentives program under loyalty lounge",
-    title: "Go to the channel incentives program under loyalty lounge",
+    alt: "Add funds to your account via NEFT, IMPS, or RTGS.",
+    title:
+      "Add funds to your account via NEFT, IMPS, or RTGS. Upload channel sales partners list using bulk upload template file.",
+    heading: "Add Funds : ",
   },
   {
     image: iconThree,
-    alt: "Fund your account via NEFT, IMPS, or RTGS",
-    title: "Fund your account via NEFT, IMPS, or RTGS",
-  },
-  {
-    image: iconFour,
-    alt: "Add channel partners one-by-one or through bulk upload template file",
+    alt: "Partners will be notified via SMS, Whatsapp, ",
     title:
-      "Add channel partners one-by-one or through bulk upload template file",
-  },
-  {
-    image: iconFive,
-    alt: "Partners as incentive recipients will be notified via SMS, Whatsapp, and e-mail about their incentive points and redemption process",
-    title:
-      "Partners as incentive recipients will be notified via SMS, Whatsapp, and e-mail about their incentive points and redemption process",
+      "Partners will be notified via SMS, Whatsapp, and e-mail about their incentive points and redemption process.",
+    heading: "Send Rewards : ",
   },
 ];
 

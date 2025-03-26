@@ -101,19 +101,19 @@ const eNach = () => {
 
         <div className={styles.three_step_container}>
           <ThreeSteps
-            title="Simplify Collections for Businesses"
+            title="Powering Recurring Payment Collection"
             steps={[
               {
                 icon: userPlus,
-                text: "Secure Transactions",
+                text: "Quick mandate creation",
               },
               {
                 icon: stack,
-                text: "Seamless Auto-debit",
+                text: "Easy Subscription Management",
               },
               {
                 icon: numberOne,
-                text: "Real-time Notifications",
+                text: "Instant Payment Settlement",
               },
             ]}
           />
@@ -148,28 +148,28 @@ const eNach = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Digital Mandate "
+                    title="Instant Digital"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Saves Time"
+                    title=" Mandate Creation"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="With enach, users can register mandates digitally bringing down the time involved."
+              description="Eliminate paperwork and delays—register mandates digitally for faster processing and hassle-free automation."
               source="receivables"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Optimizes Transactions"
-              description="e-NACH automates recurring collections and simplifies business processes"
+              whiteTitle="Smart Payment Retries for Higher Success Rates"
+              description="Reduce revenue loss with automatic retries on failed payments, ensuring uninterrupted cash flow and improved collection efficiency."
               source="receivables"
             />
           </div>
@@ -192,7 +192,7 @@ const eNach = () => {
                   />
                 </div>
               }
-              description="Businesses can reduce errors and streamline their payment processes to ensure timely collections with enach registration."
+              description="Bulk Subscription Management Made Easy Set up, track, and manage multiple mandates at scale directly to handle larger payments from a single dashboard—saving time and effort."
               source="receivables"
             />
           </div>
@@ -202,13 +202,13 @@ const eNach = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Authentication "
+                    title="One-Time Authentication, "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="for Security"
+                    title="Lifetime Convenience"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -216,7 +216,7 @@ const eNach = () => {
                 </div>
               }
               source="receivables"
-              description="The automated payments made via E-NACH require one-time authentication."
+              description="Secure recurring payments with a simple one-time authentication, offering a frictionless experience for both businesses and customers"
             />
           </div>
 
@@ -225,43 +225,20 @@ const eNach = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Expense "
+                    title="Customizable Checkout for "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Reduction"
+                    title="a Branded Experience"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="enach helps eliminate variable costs required for follow-ups, invoicing, operations, etc"
-              source="receivables"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Easy Plug &  "
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Play Integration"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
-              description="It provides customers hassle-free and smooth authentication as compared to physical NACH and can be easily integrated via plug and play method."
+              description="Choose between a quick plug-and-play checkout or fully customize it with your brand’s identity, colors, and elements for better engagement."
               source="receivables"
             />
           </div>

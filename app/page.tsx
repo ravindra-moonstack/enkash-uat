@@ -39,10 +39,13 @@ const home = () => {
       <StructuredData url={`https://www.enkash.com/`} />
 
       <Header utmSource="corporate_cards" />
+
       <RainbowSection />
+
       <div className="my-5 pb-4 pt-5">
         <BankSection type="customers" />
       </div>
+
       <div
         className={`${styles.second_row} row row-padding d-flex justify-content-center align-items-center
        text-center color-white bg-indi-volt`}

@@ -54,7 +54,7 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
 
           <div className="d-flex flex-column">
             <Heading
-              title={`Scan, submit,and file  ${space}`}
+              title={`Scan, submit, and file  ${space}`}
               color="white"
               size="h2"
               weight="7"
@@ -187,8 +187,8 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
 
       <div className={`${styles.second_row}  bg-white`}>
         <AllProducts
-          title="Simplify expense management with EnKash’s innovative solutions "
-          subtitle="Employees"
+          title="Simplify expense management with EnKash’s innovative  "
+          subtitle="solutions"
           data={productData}
         />
       </div>

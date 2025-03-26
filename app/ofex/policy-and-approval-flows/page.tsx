@@ -7,7 +7,7 @@ import SecondryButton from "@/components/buttons/secondary-button/secondary-butt
 import { space } from "../../../common/constant";
 import { blogData, carouselData, productData } from "./data";
 import faqData from "./faq-data";
-import { Header, Footer, BlogWrapper , Heading, ThreeSteps} from "@/components";
+import { Header, Footer, BlogWrapper, Heading, ThreeSteps } from "@/components";
 import { FAQHtml } from "@/components/faq";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
@@ -198,8 +198,8 @@ const PolicyApprovalFlow = (): React.JSX.Element => {
 
       <div className={`${styles.second_row}  bg-white`}>
         <AllProducts
-          title="Manage business expenses with innovative solutions"
-          subtitle="Employees"
+          title="Manage business expenses with innovative "
+          subtitle="solutions"
           data={productData}
         />
       </div>
@@ -237,7 +237,7 @@ const PolicyApprovalFlow = (): React.JSX.Element => {
           blogData={blogData}
           title="Learn how policy and approval flows can revolutionize the way you work!"
         />
-      </div> 
+      </div>
 
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
@@ -405,7 +405,7 @@ const PolicyApprovalFlow = (): React.JSX.Element => {
           }
         />
       </div>
-      
+
       <Footer utmSource="expense_management" />
     </div>
   );

@@ -99,7 +99,7 @@ const AllProducts = ({
 
   return (
     <div>
-      <div className={`${styles.integration_row} row  pt-5`}>
+      <div className={`${styles.integration_row} row   pt-md-5`}>
         <div
           className={`d-inline text-center pt-5 mb-5 mb-md-2 px-3 px-md-5 ${styles.title_container}`}
         >

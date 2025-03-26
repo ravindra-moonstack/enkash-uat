@@ -57,21 +57,27 @@ const digitalMarketingCard = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Take Control of Your Marketing ${space}`}
+              title={`Take Control of Your  ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
 
             <Heading
-              title={`Budget with EnKash’s ${space}`}
+              title={`Marketing Budget ${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title="Digital Marketing Card"
+              title="  with EnKash’s"
               color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={` Digital Marketing Card${space}`}
+              color="rainy-blue"
               size="h2"
               weight="7"
             />

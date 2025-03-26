@@ -23,6 +23,7 @@ import AllProducts from "@/components/all-products/all-products";
 import productData from "./product-data";
 
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import { BlogWrapper } from "@/components";
 
 export const metadata: Metadata = generateMetaData({
   title: "Accept Instant Payments through QR codes for your Business",
@@ -100,11 +101,13 @@ const QRCodes = (): React.JSX.Element => {
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
           <ThreeSteps
             title="Best Online Payment Solution"
@@ -220,11 +223,10 @@ const QRCodes = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.second_row}  bg-white`}>
-        <AllProducts
-          title="Check out other payment products at"
-          subtitle="EnKash"
-          data={productData}
+      <div className="bg-white row-padding text-center d-flex flex-column">
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how payment links can revolutionize the way you work!"
         />
       </div>
 
@@ -249,6 +251,14 @@ const QRCodes = (): React.JSX.Element => {
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.sixth_row} row`}>

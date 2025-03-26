@@ -50,6 +50,16 @@ const faqData: FAQProps[] = [
         heading:
           "The most effective recognition for employees often involves choice and flexibility. EnKash's employee rewards platform excels by allowing employees to redeem rewards from over 400+ brands across 20+ categories. This extensive choice ensures that employees receive recognition in a form that is most meaningful to them, enhancing the effectiveness of the recognition process.",
       },
+    ],
+  },
+  {
+    question:
+      "Why should mid-to-large company HR professionals choose a customized rewards and recognition program by EnKash?",
+    answer: [
+      {
+        heading:
+          "Here are some of the reasons why HR of mid-size businesses should choose EnKash for their employee rewards and recognition program:",
+      },
       {
         heading:
           "Customizable:EnKash's R&R program is highly customizable, allowing HR professionals to tailor it to the specific needs and culture of their organization",

@@ -18,7 +18,7 @@ const ThreeStepsCustom = ({
         <Heading title="Your Confidence" color="white" size="h2" weight="3" />
       </div>
 
-      <div className="d-flex justify-content-evenly mt-5 flex-md-row flex-column">
+      <div className="d-flex justify-content-evenly mt-5 flex-md-row flex-column align-items-center">
         {steps.map((step, index) => (
           <div key={index} className={`${styles.custom_step}`}>
             <div className={styles.image_div}>

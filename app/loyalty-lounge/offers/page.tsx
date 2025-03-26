@@ -168,8 +168,8 @@ const offers = () => {
 
       <div className={`${styles.second_row}  bg-white`}>
         <AllProducts
-          title="Products to Encourage Loyalty and Reward "
-          subtitle="Employees"
+          title="A loyalty lounge for businesses at "
+          subtitle="EnKash"
           data={productData}
         />
       </div>

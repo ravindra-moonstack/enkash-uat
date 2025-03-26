@@ -23,7 +23,7 @@ const carouselData = [
     alt: "Allow EnKash to automatically match and reconcile transactions, while generating detailed reports for your review",
     title:
       "Allow EnKash to automatically match and reconcile transactions, while generating detailed reports for your review",
-    heading: "Customize Reconciliation Rules: ",
+    heading: "Review & Reconcile: ",
   },
 ];
 
