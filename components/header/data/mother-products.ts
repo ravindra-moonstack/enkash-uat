@@ -1,7 +1,7 @@
 export const motherProducts = [
   {
     name: "Collect Payments",
-    description: "Get paid faster with customized PG solutions",
+    description: "Fastest & secure payment gateway offerings",
     link: "/olympus/receivables",
   },
   {

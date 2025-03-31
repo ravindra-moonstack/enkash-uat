@@ -152,21 +152,17 @@ const RainbowSection = () => {
 
         <div className={`col-12 ${styles.description_text}`}>
           <div>
-            <Heading title="A platform to simplify " size="h4" weight="4" />
+            <Heading title="A unified spend" size="h4" weight="4" />
           </div>
           <div>
             <Heading
-              title="payments, expenses, cards, reward & loyalty programs"
-              size="h4"
-              weight="7"
-            />
-          </div>
-          <div>
-            <Heading
-              title="for businesses, financial institutions & partners."
+              title="management platform simplifying payments,"
               size="h4"
               weight="4"
             />
+          </div>
+          <div>
+            <Heading title="expenses, cards & rewards" size="h4" weight="4" />
           </div>
         </div>
         <div className={`col-12 ${styles.description_text_mobile}`}>
