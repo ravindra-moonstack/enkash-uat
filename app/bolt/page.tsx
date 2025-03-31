@@ -4,15 +4,21 @@ import { space } from "@/common/constant";
 import styles from "./page.module.scss";
 import { blogData, dataSets } from "./data";
 import faqData from "./faq-data";
-import { Heading, BlogWrapper, Header, Footer } from "@/components";
+import {
+  Header,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  ContactUsCard,
+  FAQHtml,
+  StructuredData,
+  SecondryButton,
+} from "@/components";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import { FAQHtml } from "@/components/faq";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
 import {
   officeImg,
@@ -30,8 +36,8 @@ import {
   boltHero,
 } from ".";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",

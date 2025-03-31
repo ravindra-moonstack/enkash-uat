@@ -1,6 +1,7 @@
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
 import {
   autoCollect,
   instantSettlement,
@@ -16,59 +17,89 @@ import { AllProductsDataProp } from "@/components/all-products/all-products";
 const productData: AllProductsDataProp[] = [
   {
     title: "Payment Gateway",
-    description: "Seamlessly collect payments with no-code solutions.",
+    description:
+      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
     image: paymentLink,
-    link: "/olympus/receivables/payment-links/",
+    link: "/olympus/receivables/payment-gateway/",
   },
   {
     title: "Payment Page",
-    description: "Create stunning, branded checkout experiences in minutes.",
+    description:
+      "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments",
     image: paymentPage,
-    link: "/olympus/receivables/customized-payment/",
+    link: "/olympus/receivables/payment-page/",
   },
   {
-    title: "Payment Link",
+    title: "Payment Button",
     description:
-      "Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links",
+      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
     image: paymentButton,
-    link: "/olympus/receivables/payment-links/",
+    link: "/olympus/receivables/payment-button/",
+  },
+  {
+    title: "UPI Payments",
+    description:
+      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
+    image: qrCode,
+    link: "/olympus/receivables/upi-payments/",
   },
   {
     title: "QR Codes",
     description:
-      "Enable secure, contactless and instant payments for your customers.",
-    image: qrCode,
+      "Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions.",
+    image: reminderEngine,
     link: "/olympus/receivables/qr-codes/",
   },
   {
     title: "Auto Collect",
     description:
-      "Accept NEFT, RTGS, and IMPS with advanced reconciliation for large-scale transactions.",
+      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
     image: autoCollect,
     link: "/olympus/receivables/auto-collect/",
   },
   {
-    title: "Invoices",
-    description:
-      "Automate recurring transactions, track sales, and generate bulk invoices with integrated payment links.",
-    image: invoices,
-    link: "/olympus/receivables/invoices/",
-  },
-  {
     title: "Instant Settlement",
     description:
-      "Access funds instantly and break free from settlement delays.",
+      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
     image: instantSettlement,
     link: "/olympus/receivables/instant-settlement/",
   },
   {
-    title: "Reminder Engine",
+    title: "Invoices",
     description:
-      "Automate your collections and say goodbye to manual reminders.",
-    image: reminderEngine,
-    link: "/olympus/receivables/reminder-engine/",
+      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
+    image: invoices,
+    link: "/olympus/receivables/invoices/",
   },
 ];
+
+const carouselData = [
+  {
+    image: iconOne,
+    alt: " Login to EnKash and initiate eNACH registration",
+    title: " Login to EnKash and initiate eNACH registration",
+    heading: "Login: ",
+  },
+  {
+    image: iconTwo,
+    alt: "Provide required personal and bank information",
+    title: "Provide required personal and bank information",
+    heading: "Details: ",
+  },
+  {
+    image: iconThree,
+    alt: "Verify using net banking, debit card, or Aadhaar OTP.",
+    title: "Provide required personal and bank information",
+    heading: "Authenticate: ",
+  },
+  {
+    image: iconFour,
+    alt: "eNACH is setup for recurring payments, once approved",
+    title: "eNACH is setup for recurring payments, once approved",
+    heading: "Activation: ",
+  },
+];
+
 const blogData = [
   {
     image:
@@ -105,26 +136,4 @@ const blogData = [
   },
 ];
 
-
-const carouselData = [
-  {
-    image: iconOne,
-    alt: "Use EnKash’s intuitive dashboard to design your button",
-    title: "Use EnKash’s intuitive dashboard to design your button",
-    heading: "Create: ",
-  },
-  {
-    image: iconTwo,
-    alt: "Generate an auto-created code tailored to your button.",
-    title: "Generate an auto-created code tailored to your button.",
-    heading: "Copy: ",
-  },
-  {
-    image: iconThree,
-    alt: " Paste the code on your website or blog.",
-    title: " Paste the code on your website or blog.",
-    heading: "Integrate: ",
-  },
-];
-
-export { blogData, carouselData, productData };
+export  {blogData, carouselData, productData};

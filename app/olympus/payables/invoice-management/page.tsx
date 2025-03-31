@@ -1,26 +1,29 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { space } from "../../../../common/constant";
 import { blogData,  carouselData, productData } from "./data";
 import faqData from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg} from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml
+} from "@/components";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import { FAQHtml } from "@/components/faq";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
-import AllProducts from "@/components/all-products/all-products";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Invoice Processing & Software: Streamline Invoicing - EnKash",

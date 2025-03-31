@@ -4,19 +4,28 @@ import { space } from "@/common/constant";
 import styles from "./page.module.scss";
 import { blogData, howDoesItWorkData } from "./data";
 import faqData from "./faq-data";
-import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import BlogWrapper from "@/components/blog/blog-wrapper";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml
+} from "@/components";
 import ActionCard from "@/components/action-card/action-card";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import Header from "@/components/header/header";
 import {
   officeImg,
   officeImg2,
@@ -31,10 +40,8 @@ import {
   authorTwo,
 } from ".";
 import TestimonialCard from "@/components/testimonial-card/testimonial-card";
-import { FAQHtml } from "@/components/faq";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+
 
 export const metadata: Metadata = generateMetaData({
   title:

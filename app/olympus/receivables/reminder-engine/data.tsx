@@ -1,6 +1,7 @@
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
+import iconFour from "./img/icon-four.svg";
 import {
   autoCollect,
   instantSettlement,
@@ -16,59 +17,77 @@ import { AllProductsDataProp } from "@/components/all-products/all-products";
 const productData: AllProductsDataProp[] = [
   {
     title: "Payment Gateway",
-    description: "Seamlessly collect payments with no-code solutions.",
-    image: paymentLink,
-    link: "/olympus/receivables/payment-links/",
-  },
-  {
-    title: "Payment Page",
-    description: "Create stunning, branded checkout experiences in minutes.",
+    description:
+      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
     image: paymentPage,
-    link: "/olympus/receivables/customized-payment/",
+    link: "/olympus/receivables/payment-gateway/",
   },
   {
     title: "Payment Link",
     description:
-      "Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links",
-    image: paymentButton,
+      "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
+    image: paymentLink,
     link: "/olympus/receivables/payment-links/",
+  },
+  {
+    title: "Payment Button",
+    description:
+      "Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
+    image: paymentButton,
+    link: "/olympus/receivables/payment-button/",
   },
   {
     title: "QR Codes",
     description:
-      "Enable secure, contactless and instant payments for your customers.",
+      "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
     image: qrCode,
     link: "/olympus/receivables/qr-codes/",
   },
   {
     title: "Auto Collect",
     description:
-      "Accept NEFT, RTGS, and IMPS with advanced reconciliation for large-scale transactions.",
+      "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
     image: autoCollect,
     link: "/olympus/receivables/auto-collect/",
   },
   {
     title: "Invoices",
     description:
-      "Automate recurring transactions, track sales, and generate bulk invoices with integrated payment links.",
+      "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links.",
     image: invoices,
     link: "/olympus/receivables/invoices/",
   },
   {
     title: "Instant Settlement",
     description:
-      "Access funds instantly and break free from settlement delays.",
+      "Get instant access to your funds, skip traditional settlement cycles, and take full control of your cash flow.",
     image: instantSettlement,
     link: "/olympus/receivables/instant-settlement/",
   },
+];
+
+const carouselData = [
   {
-    title: "Reminder Engine",
-    description:
-      "Automate your collections and say goodbye to manual reminders.",
-    image: reminderEngine,
-    link: "/olympus/receivables/reminder-engine/",
+    image: iconOne,
+    alt: "Create your account on EnKash and get payment links. ",
+    title: "Create your account on EnKash and get payment links.",
+    heading: "Sign Up: ",
+  },
+  {
+    image: iconTwo,
+    alt: "Send these payment links via different channels as automated payment reminders instantly.",
+    title:
+      "Send these payment links via different channels as automated payment reminders instantly.",
+    heading: "Send Reminders: ",
+  },
+  {
+    image: iconThree,
+    alt: " Accept payments from your customers.",
+    title: " Accept payments from your customers.",
+    heading: "Send Reminders:",
   },
 ];
+
 const blogData = [
   {
     image:
@@ -102,28 +121,6 @@ const blogData = [
     description:
       "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
     link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
-  },
-];
-
-
-const carouselData = [
-  {
-    image: iconOne,
-    alt: "Use EnKash’s intuitive dashboard to design your button",
-    title: "Use EnKash’s intuitive dashboard to design your button",
-    heading: "Create: ",
-  },
-  {
-    image: iconTwo,
-    alt: "Generate an auto-created code tailored to your button.",
-    title: "Generate an auto-created code tailored to your button.",
-    heading: "Copy: ",
-  },
-  {
-    image: iconThree,
-    alt: " Paste the code on your website or blog.",
-    title: " Paste the code on your website or blog.",
-    heading: "Integrate: ",
   },
 ];
 

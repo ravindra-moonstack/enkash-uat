@@ -2,25 +2,31 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
 import { space } from "../../../../common/constant";
-import { blogData, carouselData } from "./data";
+import { blogData, carouselData, productData } from "./data";
 import faqData from "./faq-data";
 import { banner, caraouselBg, faqBg } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import { FAQHtml } from "@/components/faq";
-import { Header, Footer, BlogWrapper } from "@/components";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml
+} from "@/components";
 import generateMetaData from "@/common/utils/metaData";
 import { userPlus, numberOne, stack } from "@/components/three-steps/";
-import AllProducts from "@/components/all-products/all-products";
-import productData from "../bill-payment/product-data";
+
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Payable Analytics Automation Solution for Business - EnKash",

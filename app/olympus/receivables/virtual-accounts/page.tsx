@@ -1,29 +1,30 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
 import { faqData, secondFaqData } from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import {blogData, productData, carouselData} from "./data";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import Header from "@/components/header/header";
-import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import { FAQHtml } from "@/components/faq";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
-import AllProducts from "@/components/all-products/all-products";
-import productData from "./product-data";
+import { numberOne, stack, userPlus } from "@/app";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Virtual Account - Open a virtual business account| EnKash",
@@ -32,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   alternates: {
     canonical: "https://www.enkash.com/olympus/receivables/virtual-accounts/",
   },
-  // faqData: faqData,
+  faqData: faqData,
 });
 
 const virtualAccounts = () => {

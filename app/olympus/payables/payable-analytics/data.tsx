@@ -132,4 +132,4 @@ const blogData = [
   },
 ];
 
-export { blogData, carouselData };
+export { blogData, carouselData ,productData };

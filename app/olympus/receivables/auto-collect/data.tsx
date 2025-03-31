@@ -1,6 +1,7 @@
 import iconOne from "./img/icon-one.svg";
 import iconTwo from "./img/icon-two.svg";
 import iconThree from "./img/icon-three.svg";
+import { CarouselData } from "@/components/carousel/how-does-carousel";
 import {
   autoCollect,
   instantSettlement,
@@ -16,59 +17,87 @@ import { AllProductsDataProp } from "@/components/all-products/all-products";
 const productData: AllProductsDataProp[] = [
   {
     title: "Payment Gateway",
-    description: "Seamlessly collect payments with no-code solutions.",
+    description:
+      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
     image: paymentLink,
-    link: "/olympus/receivables/payment-links/",
+    link: "/olympus/receivables/payment-gateway/",
   },
   {
     title: "Payment Page",
-    description: "Create stunning, branded checkout experiences in minutes.",
+    description:
+      "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments",
     image: paymentPage,
-    link: "/olympus/receivables/customized-payment/",
+    link: "/olympus/receivables/payment-page/",
   },
   {
-    title: "Payment Link",
+    title: "Payment Button",
     description:
-      "Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links",
+      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
     image: paymentButton,
-    link: "/olympus/receivables/payment-links/",
+    link: "/olympus/receivables/payment-button/",
   },
   {
-    title: "QR Codes",
+    title: "UPI Payments",
     description:
-      "Enable secure, contactless and instant payments for your customers.",
+      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
     image: qrCode,
-    link: "/olympus/receivables/qr-codes/",
+    link: "/olympus/receivables/upi-payments/",
   },
   {
     title: "Auto Collect",
     description:
-      "Accept NEFT, RTGS, and IMPS with advanced reconciliation for large-scale transactions.",
+      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
     image: autoCollect,
     link: "/olympus/receivables/auto-collect/",
   },
   {
     title: "Invoices",
     description:
-      "Automate recurring transactions, track sales, and generate bulk invoices with integrated payment links.",
+      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
     image: invoices,
     link: "/olympus/receivables/invoices/",
   },
   {
     title: "Instant Settlement",
     description:
-      "Access funds instantly and break free from settlement delays.",
+      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
     image: instantSettlement,
     link: "/olympus/receivables/instant-settlement/",
   },
   {
     title: "Reminder Engine",
     description:
-      "Automate your collections and say goodbye to manual reminders.",
+      "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
     image: reminderEngine,
     link: "/olympus/receivables/reminder-engine/",
   },
 ];
+
+const carouselData: CarouselData["carouselData"] = [
+  {
+    image: iconOne,
+    alt: "Instantly set up unique virtual payment addresses for each customer, branch, or department.",
+    title:
+      "Instantly set up unique virtual payment addresses for each customer, branch, or department.",
+    heading: "Virtual Account Creation: ",
+  },
+  {
+    image: iconTwo,
+    alt: "Receive payments via NEFT, RTGS, IMPS, or other channels directly to your virtual bank accounts",
+    title:
+      "Receive payments via NEFT, RTGS, IMPS, or other channels directly to your virtual bank accounts",
+    heading: "Collect Payment: ",
+  },
+  {
+    image: iconThree,
+    alt: "Real-time alerts and centralized dashboards, for smooth reconciliation and transparency.",
+    title:
+      "Real-time alerts and centralized dashboards, for smooth reconciliation and transparency.",
+    heading: "Stay Informed: ",
+  },
+];
+
+
 const blogData = [
   {
     image:
@@ -105,26 +134,4 @@ const blogData = [
   },
 ];
 
-
-const carouselData = [
-  {
-    image: iconOne,
-    alt: "Use EnKash’s intuitive dashboard to design your button",
-    title: "Use EnKash’s intuitive dashboard to design your button",
-    heading: "Create: ",
-  },
-  {
-    image: iconTwo,
-    alt: "Generate an auto-created code tailored to your button.",
-    title: "Generate an auto-created code tailored to your button.",
-    heading: "Copy: ",
-  },
-  {
-    image: iconThree,
-    alt: " Paste the code on your website or blog.",
-    title: " Paste the code on your website or blog.",
-    heading: "Integrate: ",
-  },
-];
-
-export { blogData, carouselData, productData };
+export  {blogData, productData, carouselData };

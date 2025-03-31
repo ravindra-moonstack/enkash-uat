@@ -2,23 +2,25 @@ import { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.scss";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "@/common/constant";
 import { blogData, howDoesItWorkData, getStartedData } from "./data";
 import faqData from "./faq-data";
-import Heading from "@/components/heading/heading";
+import {
+  Header,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  ContactUsCard,
+  StructuredData,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import { FAQHtml } from "@/components/faq";
-import Header from "@/components/header/header";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-
 import {
   cardBg,
   faqBg,
@@ -28,9 +30,8 @@ import {
   cashAndTime,
   coinIcon,
 } from ".";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
 
 export const metadata: Metadata = generateMetaData({
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",

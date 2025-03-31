@@ -16,59 +16,86 @@ import { AllProductsDataProp } from "@/components/all-products/all-products";
 const productData: AllProductsDataProp[] = [
   {
     title: "Payment Gateway",
-    description: "Seamlessly collect payments with no-code solutions.",
+    description:
+      "Collect payments across various channels, guaranteeing you never miss a transaction.",
     image: paymentLink,
     link: "/olympus/receivables/payment-links/",
   },
   {
-    title: "Payment Page",
-    description: "Create stunning, branded checkout experiences in minutes.",
-    image: paymentPage,
-    link: "/olympus/receivables/customized-payment/",
-  },
-  {
     title: "Payment Link",
     description:
-      "Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links",
-    image: paymentButton,
+      "Use WhatsApp, SMS, Facebook, Twitter, and more with no-code payment links.",
+    image: paymentPage,
     link: "/olympus/receivables/payment-links/",
+  },
+  {
+    title: "Payment Button",
+    description:
+      "Integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
+    image: paymentButton,
+    link: "/olympus/receivables/payment-button/",
   },
   {
     title: "QR Codes",
     description:
-      "Enable secure, contactless and instant payments for your customers.",
+      "Use secure, contactless payments using QR codes, empowering businesses to process transactions instantly",
     image: qrCode,
     link: "/olympus/receivables/qr-codes/",
   },
   {
     title: "Auto Collect",
     description:
-      "Accept NEFT, RTGS, and IMPS with advanced reconciliation for large-scale transactions.",
+      "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
     image: autoCollect,
     link: "/olympus/receivables/auto-collect/",
   },
   {
     title: "Invoices",
     description:
-      "Automate recurring transactions, track sales, and generate bulk invoices with integrated payment links.",
+      "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links",
     image: invoices,
     link: "/olympus/receivables/invoices/",
   },
   {
     title: "Instant Settlement",
     description:
-      "Access funds instantly and break free from settlement delays.",
+      "Get instant access to your funds, skip traditional settlement cycles, and take full control of your cash flow.",
     image: instantSettlement,
     link: "/olympus/receivables/instant-settlement/",
   },
   {
     title: "Reminder Engine",
     description:
-      "Automate your collections and say goodbye to manual reminders.",
+      "Eliminate manual reminders and automate your business collections effortlessly for smoother cash flow management.",
     image: reminderEngine,
     link: "/olympus/receivables/reminder-engine/",
   },
 ];
+
+const carouselData = [
+  {
+    image: iconOne,
+    alt: "Connect your payment systems, bank accounts, and invoicing tools to EnKash for seamless data flow.",
+    title:
+      "Connect your payment systems, bank accounts, and invoicing tools to EnKash for seamless data flow.",
+    heading: "Integrate Payment Data: ",
+  },
+  {
+    image: iconTwo,
+    alt: "Set up personalized filters and segmentation to track and analyze collections by customer, region, or payment status.",
+    title:
+      "Set up personalized filters and segmentation to track and analyze collections by customer, region, or payment status.",
+    heading: "Customize Analytics Dashboard: ",
+  },
+  {
+    image: iconThree,
+    alt: "Access real-time insights, identify trends, and adjust your collection strategy based on actionable data.",
+    title:
+      "Access real-time insights, identify trends, and adjust your collection strategy based on actionable data.",
+    heading: "Review & Optimize: ",
+  },
+];
+
 const blogData = [
   {
     image:
@@ -105,26 +132,4 @@ const blogData = [
   },
 ];
 
-
-const carouselData = [
-  {
-    image: iconOne,
-    alt: "Use EnKash’s intuitive dashboard to design your button",
-    title: "Use EnKash’s intuitive dashboard to design your button",
-    heading: "Create: ",
-  },
-  {
-    image: iconTwo,
-    alt: "Generate an auto-created code tailored to your button.",
-    title: "Generate an auto-created code tailored to your button.",
-    heading: "Copy: ",
-  },
-  {
-    image: iconThree,
-    alt: " Paste the code on your website or blog.",
-    title: " Paste the code on your website or blog.",
-    heading: "Integrate: ",
-  },
-];
-
-export { blogData, carouselData, productData };
+export  {blogData, carouselData, productData};
