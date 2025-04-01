@@ -152,11 +152,8 @@ const RainbowSection = () => {
 
         <div className={`col-12 ${styles.description_text}`}>
           <div>
-            <Heading title="A unified spend" size="h4" weight="4" />
-          </div>
-          <div>
             <Heading
-              title="management platform simplifying payments,"
+              title=" A unified spend management platform simplifying payments,"
               size="h4"
               weight="4"
             />
@@ -180,11 +177,7 @@ const RainbowSection = () => {
         <div className={`col-12 mt-4 ${styles.button_container}`}>
           {/* <PrimaryButton title="Get Free Demo" url="/sales" theme="blue" />
           <span className="mx-2"></span> */}
-          <SecondryButton
-            title="See it in Action"
-            url="/sales/"
-            iconSize={25}
-          />
+          <SecondryButton title="Talk to sales" url="/sales/" iconSize={25} />
         </div>
         <div className={`col-12 ${styles.down_arrow}`}>
           <Image src={threeDownArrow} alt="arrow icon" />
