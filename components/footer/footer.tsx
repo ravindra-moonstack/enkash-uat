@@ -669,14 +669,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
             RBI-licensed banks and/ or in accordance with RBI regulations and/
             or RBI compliance maintained by banks & regulated entities. EnKash
             is not a bank and doesn’t hold or claim to hold a banking license.{" "}
-            <span className="color-electric-green">
-              *Powered by Banks/REs. <sup># </sup> Launching soon as per RBI's
-              PA (Online) authorization
-            </span>
-          </div>
-          <div className={`col-12 col-md-4 color-white ${styles.copyright}`}>
-            Copyright © 2024 | Nehat Tech Solutions Pvt. Ltd. All right
-            reserved.
+            <span className="color-electric-green">*Powered by Banks/REs.</span>
           </div>
         </div>
       </div>
@@ -703,17 +696,6 @@ const FooterV2 = ({ utmSource = "" }: any) => {
       </div>
 
       <div className={styles.locations_row}>
-        <div className="d-flex flex-column me-0 me-md-5 color-white">
-          <div className={` ${styles.main_title}`}>
-            Olympus™, an EnKash** product, is a licensed online payment
-            aggregator authorized by the RBI
-          </div>
-          <div className={`mt-2 ${styles.sub_title}`}>
-            **EnKash is a commercial trade name owned by the legal entity, Nehat
-            Tech Solutions Pvt. Ltd.
-          </div>
-        </div>
-
         <div className="d-none d-md-flex mx-0 me-md-5">
           {" "}
           <Image
