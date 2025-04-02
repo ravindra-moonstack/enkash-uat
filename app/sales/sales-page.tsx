@@ -163,7 +163,9 @@ const SalesPage = () => {
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
       isValidWebsite(companyWebsite) &&
-      (selectedProduct.length || isExistingCustomer)
+      (selectedProduct !== "none" ||
+        selectedCategory === "Expense Management" ||
+        isExistingCustomer)
     ) {
       setIsFormValid(true);
       sendEmailToEnkash();
@@ -531,7 +533,8 @@ const SalesPage = () => {
                     )}
                     {!isFormValid &&
                       !isExistingCustomer &&
-                      selectedProduct.length === 0 && (
+                      selectedProduct === "none" &&
+                      selectedCategory !== "Expense Management" && (
                         <span className={`${styles.danger} text-danger mt-2`}>
                           Please select a product
                         </span>
