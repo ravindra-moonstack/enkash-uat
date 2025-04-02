@@ -1,16 +1,16 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
-import { FAQProps } from "@/components/faq/faq";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
+import { FAQProps } from "@/components/faq/faq"
 import {
   autoCollect,
   invoices,
   paymentButton,
   paymentLink,
   qrCode,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -18,14 +18,14 @@ const productData: AllProductsDataProp[] = [
     description:
       "Motivate partners and distributors with tailored rewards, driving sales and long-term engagement.",
     image: paymentLink,
-    link: "/loyalty-lounge/channel-incentive/",
+    link: "/channel-incentives/",
   },
   {
     title: "Employee Rewards",
     description:
       "Recognize and retain top talent with instant, meaningful, and customizable reward solutions.",
     image: paymentButton,
-    link: "/loyalty-lounge/employee-rewards/",
+    link: "/employee-rewards/",
   },
   {
     title: "Offers",
@@ -34,7 +34,7 @@ const productData: AllProductsDataProp[] = [
     image: paymentButton,
     link: "/loyalty-lounge/offers/",
   },
-];
+]
 
 const dataSets = [
   {
@@ -61,7 +61,7 @@ const dataSets = [
     heading:
       "Get a centralized redemption platform where employees, partners, and stakeholders can view their available rewards and redeem them for a variety of products and services",
   },
-];
+]
 
 const faqData: FAQProps[] = [
   {
@@ -97,7 +97,7 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 const blogData = [
   {
     image:
@@ -129,6 +129,6 @@ const blogData = [
       "Human Resources (HR) is an important department for every profitable business. The human resource department forms the organization’s backbone by hiring suitable people. The success of any...",
     link: "/resources/blog/hr-policies-for-startups/",
   },
-];
+]
 
-export { blogData, faqData, dataSets, productData};
+export { blogData, faqData, dataSets, productData }

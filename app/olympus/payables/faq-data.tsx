@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { FAQProps } from "@/components/faq/faq";
-import styles from "./page.module.scss";
+import Link from "next/link"
+import { FAQProps } from "@/components/faq/faq"
+import styles from "./page.module.scss"
 
 const faqData: FAQProps[] = [
   {
@@ -44,15 +44,14 @@ const faqData: FAQProps[] = [
           penalties, causing further issues.
         </h4>
         <h4>
-          For the <Link href="/olympus/payables/gst-payments">gst payment</Link>{" "}
-          to go on time, there are various steps involved, which need to take
-          place quickly and without any errors. The process starts by logging
-          into the GST portal, checking the details of the tax amount due, and
-          preparing and downloading a challan. Once the challan is ready, you
-          need to internally get it checked and approved by the requisite
-          authorities and make the payment. Once the payment is completed, it is
-          a good idea to record the maker-checker-approval trail and the related
-          documents.
+          For the <Link href="/gst-payment">gst payment</Link> to go on time,
+          there are various steps involved, which need to take place quickly and
+          without any errors. The process starts by logging into the GST portal,
+          checking the details of the tax amount due, and preparing and
+          downloading a challan. Once the challan is ready, you need to
+          internally get it checked and approved by the requisite authorities
+          and make the payment. Once the payment is completed, it is a good idea
+          to record the maker-checker-approval trail and the related documents.
         </h4>
       </div>
     ),
@@ -107,6 +106,6 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
-export default faqData;
+export default faqData

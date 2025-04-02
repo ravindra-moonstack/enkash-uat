@@ -1,17 +1,17 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
-import iconFive from "./img/icon-five.svg";
-import { FAQProps } from "@/components/faq/faq";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
+import iconFive from "./img/icon-five.svg"
+import { FAQProps } from "@/components/faq/faq"
 import {
   autoCollect,
   invoices,
   paymentButton,
   paymentLink,
   qrCode,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -19,14 +19,14 @@ const productData: AllProductsDataProp[] = [
     description:
       "Empower teams with versatile, prepaid gift cards for seamless rewards and recognition.",
     image: paymentLink,
-    link: "/loyalty-lounge/gift-cards/",
+    link: "/gift-cards/",
   },
   {
     title: "Channel Incentives",
     description:
       "Motivate partners and distributors with tailored rewards, driving sales and long-term engagement.",
     image: qrCode,
-    link: "/loyalty-lounge/channel-incentive/",
+    link: "/channel-incentives/",
   },
   {
     title: "Brand Vouchers",
@@ -42,7 +42,7 @@ const productData: AllProductsDataProp[] = [
     image: paymentButton,
     link: "/loyalty-lounge/offers/",
   },
-];
+]
 
 const faqData: FAQProps[] = [
   {
@@ -100,7 +100,7 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
 const carouselData = [
   {
@@ -130,7 +130,7 @@ const carouselData = [
     title: "View all expenses in the Expenses tab with their respective status",
     heading: "Know Status: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -164,6 +164,6 @@ const blogData = [
       "Employee expense reimbursement is a process where an employer reimburses an employee for expenses incurred while performing job-related tasks. These expenses may include travel, training, equipment, and other...",
     link: "/resources/blog/employee-expense-reimbursement/",
   },
-];
+]
 
-export { blogData, productData, carouselData };
+export { blogData, productData, carouselData }

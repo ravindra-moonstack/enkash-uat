@@ -180,7 +180,7 @@ const olympus = () => {
               title="GST Payments"
               description="Pay GST easily with our 3-step process. Get reminders, convert challans digitally, and monitor payments in one place"
               theme="blue"
-              link="/olympus/payables/gst-payments"
+              link="/gst-payment"
             />
           </div>
         </div>
@@ -190,7 +190,7 @@ const olympus = () => {
               title="Bill Payments"
               description="Add multiple utility providers, automate recurring payments, and ensure on-time payments with features like Auto-Fetch and Auto-Pay"
               theme="blue"
-              link="/olympus/payables/bill-payment"
+              link="/business-bill-payment"
             />
           </div>
           <div

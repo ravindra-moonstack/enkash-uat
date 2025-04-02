@@ -42,7 +42,7 @@ const payableProducts = [
         description: "Auto fetch & auto pay utility bills on time",
         imageSrc: billPayments,
         imageSrcHovered: billPaymentsFilled,
-        link: "/olympus/payables/bill-payment",
+        link: "/business-bill-payment",
       },
       {
         name: "Express Pay",
@@ -56,7 +56,7 @@ const payableProducts = [
         description: "Easily pay and track GST payments in one place",
         imageSrc: taxPayment,
         imageSrcHovered: taxPaymentFilled,
-        link: "/olympus/payables/gst-payments",
+        link: "/gst-payment",
       },
 
       {
@@ -93,21 +93,21 @@ const payableProducts = [
         description: "A personalized business banking experience",
         imageSrc: seamlessBanking,
         imageSrcHovered: seamlessBankingFilled,
-        link: "/olympus/payables/seamless-banking/",
+        link: "/seamless-banking/",
       },
       {
         name: "Payable Analytics",
         description: "Stay informed for better financial planning",
         imageSrc: payablesAnalytics,
         imageSrcHovered: payablesAnalyticsFilled,
-        link: "/olympus/payables/payable-analytics/",
+        link: "/payable-analytics/",
       },
       {
         name: "Payroll Processing",
         description: "Simplified salary disbursement process",
         imageSrc: payrollProcessing,
         imageSrcHovered: payrollProcessingFilled,
-        link: "/olympus/payables/payroll-processing/",
+        link: "/payroll/",
       },
     ],
     footerText: "Manage all your business payments seamlessly",

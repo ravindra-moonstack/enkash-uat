@@ -1,16 +1,16 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
-import { FAQProps } from "@/components/faq/faq";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
+import { FAQProps } from "@/components/faq/faq"
 import {
   autoCollect,
   invoices,
   paymentButton,
   paymentLink,
   qrCode,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -18,7 +18,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "A prepaid card used by businesses to purchase in bulk for various purposes.",
     image: paymentLink,
-    link: "/loyalty-lounge/gift-cards/",
+    link: "/gift-cards/",
   },
   {
     title: "Brand Vouchers",
@@ -32,14 +32,14 @@ const productData: AllProductsDataProp[] = [
     description:
       "Motivate partners and distributors with tailored rewards, driving sales and long-term engagement.",
     image: paymentLink,
-    link: "/loyalty-lounge/channel-incentive/",
+    link: "/channel-incentives/",
   },
   {
     title: "Employee Rewards",
     description:
       "Recognize and retain top talent with instant, meaningful, and customizable reward solutions.",
     image: paymentButton,
-    link: "/loyalty-lounge/employee-rewards/",
+    link: "/employee-rewards/",
   },
   {
     title: "Offers",
@@ -48,7 +48,7 @@ const productData: AllProductsDataProp[] = [
     image: paymentButton,
     link: "/loyalty-lounge/offers/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -71,7 +71,7 @@ const carouselData = [
       "Read the terms and conditions and click on Apply Now to get the offer.",
     heading: "Apply: ",
   },
-];
+]
 
 const faqData: FAQProps[] = [
   {
@@ -116,7 +116,7 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
 const blogData = [
   {
@@ -149,6 +149,6 @@ const blogData = [
       "Running a successful startup requires more than just innovative ideas and cutting-edge technology. It also relies on having a team of talented and dedicated employees...",
     link: "https://www.enkash.com/resources/blog/employee-retention-strategies/",
   },
-];
+]
 
-export { blogData, faqData, carouselData, productData };
+export { blogData, faqData, carouselData, productData }

@@ -1,17 +1,17 @@
-"use client";
+"use client"
 
-import FAQ from "@/components/faq/faq";
-import styles from "./page.module.scss";
-import Link from "next/link";
-import { Key, useState } from "react";
-import { space } from "@/common/constant";
+import FAQ from "@/components/faq/faq"
+import styles from "./page.module.scss"
+import Link from "next/link"
+import { Key, useState } from "react"
+import { space } from "@/common/constant"
 
 const FAQHtml = ({ faqData }: any) => {
-  const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
+  const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null)
 
   const handleToggleAnswerVisibility = (index: number) => {
-    setOpenFAQIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
+    setOpenFAQIndex((prevIndex) => (prevIndex === index ? null : index))
+  }
 
   return (
     <div>
@@ -35,14 +35,14 @@ const FAQHtml = ({ faqData }: any) => {
                   great flexibility in payment options by enabling businesses to
                   make contactless card payments, such as{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/payables/vendor-payment/"
+                    href="https://www.enkash.com/vendor-payment/"
                     target="_black"
                   >
                     vendor payments
                   </Link>{" "}
                   , rental payments,{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/payables/bill-payment/"
+                    href="https://www.enkash.com/business-bill-payment/"
                     target="_black"
                   >
                     bill payments
@@ -58,7 +58,7 @@ const FAQHtml = ({ faqData }: any) => {
         )
       )}
     </div>
-  );
-};
+  )
+}
 
-export default FAQHtml;
+export default FAQHtml

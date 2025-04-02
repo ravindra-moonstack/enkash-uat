@@ -1,19 +1,17 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four-updated.svg";
-import iconFive from "./img/icon-five.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four-updated.svg"
+import iconFive from "./img/icon-five.svg"
 import {
   autoCollect,
-  instantSettlement,
   invoices,
   paymentButton,
   paymentLink,
   paymentPage,
   qrCode,
-  reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -21,44 +19,44 @@ const productData: AllProductsDataProp[] = [
     description:
       "Manage fuel expenses effortlessly with a card designed for streamlined tracking and cost control.",
     image: paymentLink,
-    link: "/corporate-cards/fuel-cards/",
+    link: "/fuel-card/",
   },
   {
     title: "Virtual Card",
     description:
       "Generate secure, single-use virtual cards for online payments, reducing fraud risk and improving accountability.",
     image: paymentButton,
-    link: "/corporate-cards/virtual-cards/",
+    link: "/virtual-card/",
   },
   {
     title: "Travel and Expense",
     description:
       "Simplify travel expense management with dedicated cards, ensuring transparency and easy reconciliation",
     image: paymentPage,
-    link: "/corporate-cards/travel-and-expense-cards/",
+    link: "/travel-and-expense-card/",
   },
   {
     title: "Purchase Card",
     description:
       "Empower your team to make secure business purchases while maintaining full control over spending limits.",
     image: qrCode,
-    link: "/corporate-cards/purchase-cards/",
+    link: "/purchase-card/",
   },
   {
     title: "Digital Marketing Card",
     description:
       "Optimize digital ad spends with a card tailored for marketing expenses, offering real-time tracking and control.",
     image: autoCollect,
-    link: "/corporate-cards/digital-marketing-cards/",
+    link: "/digital-marketing-card/",
   },
   {
     title: "DIY Card Module",
     description:
       "Customize card settings, limits, and features effortlessly with EnKash’s Do-It-Yourself card module.",
     image: invoices,
-    link: "/corporate-cards/diy-card-module/",
+    link: "/diy-card-module/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -91,9 +89,7 @@ const carouselData = [
     title:
       "Ensure uninterrupted business operations with seamless payment processing for your SaaS subscriptions",
   },
-];
-
-
+]
 
 const blogData = [
   {
@@ -128,6 +124,6 @@ const blogData = [
       "Digital is the new normal. This mantra of B2B payment automation has been ingrained in our post-pandemic world which gave us a rude awakening in terms of how we used to function....",
     link: "https://www.enkash.com/resources/blog/why-use-automation-in-b2b-payments/",
   },
-];
+]
 
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

@@ -191,52 +191,34 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/bill-payment/">
-                      Bill Payment
-                    </Link>
+                    <Link href="/business-bill-payment/">Bill Payment</Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/bulk-payout/">
-                      Express Pay
-                    </Link>
+                    <Link href="express-pay/">Express Pay</Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/gst-payments/">
-                      GST Payment
-                    </Link>
+                    <Link href="/gst-payment/">GST Payment</Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/vendor-payment/">
-                      Vendor Payment
-                    </Link>
+                    <Link href="/vendor-payment/">Vendor Payment</Link>
                   </li>
                   <li>
                     <Link href="/rental-payment/">Rental Payment</Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/invoice-management/">
-                      Invoice Management
-                    </Link>
+                    <Link href="/invoice-management/">Invoice Management</Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/vendor-management/">
-                      Vendor Management
-                    </Link>
+                    <Link href="/vendor-management/">Vendor Management</Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/seamless-banking/">
-                      Seamless Banking
-                    </Link>
+                    <Link href="/seamless-banking/">Seamless Banking</Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/payroll-processing/">
-                      Payroll Processing
-                    </Link>
+                    <Link href="/payroll/">Payroll Processing</Link>
                   </li>
                   <li>
-                    <Link href="/olympus/payables/payable-analytics/">
-                      Payable Analytics
-                    </Link>
+                    <Link href="/payable-analytics/">Payable Analytics</Link>
                   </li>
                 </ul>
               </div>
@@ -305,28 +287,24 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                 </div>
                 <ul>
                   <li>
-                    <Link href="/corporate-cards/virtual-cards/">
-                      Virtual Cards*
-                    </Link>
+                    <Link href="/virtual-card/">Virtual Cards*</Link>
                   </li>
                   <li>
-                    <Link href="/corporate-cards/digital-marketing-cards/">
+                    <Link href="/digital-marketing-card/">
                       Digital Marketing Cards*
                     </Link>
                   </li>
                   <li>
-                    <Link href="/corporate-cards/fuel-cards/">Fuel Cards*</Link>
+                    <Link href="/fuel-card/">Fuel Cards*</Link>
                   </li>
                   <li>
-                    <Link href="/corporate-cards/meal-cards/">Meal Cards*</Link>
+                    <Link href="/meal-card/">Meal Cards*</Link>
                   </li>
                   <li>
                     <Link href="/corporate-cards/saas-cards/">SaaS Cards*</Link>
                   </li>
                   <li>
-                    <Link href="/corporate-cards/purchase-cards/">
-                      Purchase Cards*
-                    </Link>
+                    <Link href="/purchase-card/">Purchase Cards*</Link>
                   </li>
 
                   <li>
@@ -437,18 +415,14 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                 </Link>
                 <ul>
                   <li>
-                    <Link href="/loyalty-lounge/channel-incentive/">
-                      Channel Incentives
-                    </Link>
+                    <Link href="/channel-incentives/">Channel Incentives</Link>
                   </li>
                   <li>
-                    <Link href="/loyalty-lounge/employee-rewards/">
-                      Employee Rewards
-                    </Link>
+                    <Link href="/employee-rewards/">Employee Rewards</Link>
                   </li>
 
                   <li>
-                    <Link href="/loyalty-lounge/gift-cards/">Gift Cards</Link>
+                    <Link href="/gift-cards/">Gift Cards</Link>
                   </li>
                   <li>
                     <Link href="/loyalty-lounge/offers/">Offers</Link>

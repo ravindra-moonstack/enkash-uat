@@ -374,7 +374,7 @@ const eNach = (): React.JSX.Element => {
                   from their accounts automatically at regular intervals for
                   goods, services, or{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/payables/bill-payment/"
+                    href="https://www.enkash.com/business-bill-payment/"
                     target="_blank"
                   >
                     bill payments

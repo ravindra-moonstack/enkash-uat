@@ -223,7 +223,7 @@ const payables = () => {
             title="Business Bill Payments"
             description="Easily manage recurring utility bills for your business."
             theme="green"
-            link="/olympus/payables/bill-payment"
+            link="/business-bill-payment"
           />
         </div>
 
@@ -232,7 +232,7 @@ const payables = () => {
             title="Tax Payments"
             description="Ensure an audit-compliant and seamless GST payment process for timely remittance"
             theme="green"
-            link="/olympus/payables/gst-payments"
+            link="/gst-payment"
           />
         </div>
 
@@ -260,7 +260,7 @@ const payables = () => {
             title="Invoice Management: "
             description="Digitize and streamline invoice handling to enhance accuracy, compliance, and overall accounts payable efficiency."
             theme="green"
-            link="/olympus/payables/bill-payment"
+            link="/business-bill-payment"
           />
         </div>
 
@@ -269,7 +269,7 @@ const payables = () => {
             title="Payroll Processing: "
             description=" Automate payroll disbursements to pay employees accurately and on time, every single month."
             theme="green"
-            link="/olympus/payables/gst-payments"
+            link="/gst-payment"
           />
         </div>
 
