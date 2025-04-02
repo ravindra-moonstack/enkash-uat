@@ -31,7 +31,7 @@ const FAQ = ({
       <div className={styles.faq_row}>
         <div className={styles.faq_inner_row}>
           <div className={`d-flex justify-content-between `}>
-            <h3 className={styles.question}>{question}</h3>
+            <h2 className={styles.question}>{question}</h2>
             <Image
               onClick={toggleAnswerVisibility}
               src={arrowDown}
@@ -49,6 +49,7 @@ const FAQ = ({
           >
             {!answerHTML &&
               answer !== undefined &&
+              answer.length > 0 &&
               answer.map((item, index) => (
                 <div key={index} className="mb-4">
                   {item.heading && (

@@ -1,27 +1,29 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import {blogData , carouselData, productData} from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import Header from "@/components/header/header";
-import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -47,42 +49,30 @@ const AutoCollect = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Olympus |${space}`}
+                title={`UPI Payments${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <div>
-              <Heading
-                title="UPI Payments"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
           </div>
-          <div className="d-flex flex-column">
+          <div className="">
             <Heading
-              title={`Collect payments directly${space}`}
+              title={` Simplify Transactions, Accelerate Growth with EnKash `}
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`UPI Payments `}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <div className="d-inline">
-              <Heading
-                title={`in your bank account with${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
-            </div>
-            <Heading title="UPI payments" color="white" size="h2" weight="7" />
           </div>
-
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Enable easy and secure business collections with real-time settlement for instant cash flow"
+              title="Effortless UPI payment. Whether it's BHIM, PhonePe, WhatsApp, or any UPI-supported app, experience smooth transactions without the hassle of SMS notifications or remembering VPAs."
               size="h6"
               weight="5"
             />
@@ -90,78 +80,60 @@ const AutoCollect = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title=" API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Best UPI Payment Platform for Businesses "
+            steps={[
+              {
+                icon: userPlus,
+                text: "Instant Setup ",
+              },
+              {
+                icon: stack,
+                text: "Real-time Settlement",
+              },
+              {
+                icon: numberOne,
+                text: "Secure Transactions",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Quick", " Payments"],
-              oldWayDescription:
-                "The traditional way of making B2B collections involved cash and cheques often leading to cumbersome processes.",
-              newWayDescription:
-                "UPI payments on the other hand offer a convenient way for B2B transactions as payments can be made instantly with virtual IDs.",
-            },
-            {
-              itemArray: ["Instant", "Settlements"],
-              oldWayDescription:
-                "The conventional way of payment collection led to delayed payment settlement.",
-              newWayDescription:
-                "UPI payments enable real-time settlements, facilitating instant inflow of cash for the business.",
-            },
-            {
-              itemArray: ["Improved", "Transparency"],
-              oldWayDescription:
-                "Manually tracking offline payments is a task in itself often leading to confusion and double or missed entries during record-keeping.",
-              newWayDescription:
-                "Payments made via UPI can be tracked easily, facilitating convenient record-keeping and reconciliation.",
-            },
-            {
-              itemArray: ["Automating", "Recurring Collections"],
-              oldWayDescription:
-                "Recurring payment collections manually for utility, bills, rentals, and subscriptions often leads to delays and late fees.",
-              newWayDescription:
-                "UPI AutoPay or mandates can be set for recurring payment collections helping avoid late fees and delays.",
-            },
-          ]}
-        />
-      </div>
+      <div
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
+      ></div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center pb-2">
+          <Heading title="EnKash" color="equity-blue" size="h1" weight="6" />
           <Heading
-            title="Facilitate convenient B2B collections"
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}with UPI payments `}
+            title={`${space}UPI Payment Gateway for Businesses  `}
             color="black"
             size="h1"
             weight="6"
@@ -171,15 +143,22 @@ const AutoCollect = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Economical"
-              description="UPI transactions are usually free or with minimal charges. This leads to higher profit margins for your business."
+              whiteTitle="Effortless Integration "
+              description="EnKash's easy-to-use SDKs and APIs seamlessly integrate UPI payments into your website or app, eliminating complex setups and saving time, so you can focus on growing your business effortlessly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Virtual UPI ID"
-              description="Businesses can create their UPI ID and accept B2B payments via the UPI payment gateway. The ID can be used to track and automate the reconciliation process with UPI payments."
+              whiteTitle="Instant Settlement"
+              description="Our real-time settlement system ensures instant fund deposits into your bank account after customer payments, improving cash flow and enabling you to reinvest in your business without delays."
+              source="receivables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Prioritize Secure Transactions"
+              description="Security is our priority. EnKash’s advanced infrastructure encrypts every UPI transaction, along with enabling two-factor authentication, safeguarding your business and customer data, reducing fraud risk, and ensuring peace of mind for you and your customers."
               source="receivables"
             />
           </div>
@@ -190,26 +169,19 @@ const AutoCollect = () => {
               source="receivables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="UPI AutoPay"
-              description="Businesses following subscription models can collect payments with UPI AutoPay as it allows customers to enable automatic recurring payments."
+              whiteTitle="No Payment Failures"
+              description="EnKash ensures the highest UPI success rates with optimized payment routing and advanced technology. Enjoy fewer declined payments, smoother transactions, increased customer trust, and higher revenue by never missing a payment."
               source="receivables"
             />
           </div>
 
-          {/* <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Two-Factor Authentication"
-              description="To avoid fraud, UPI transactions are secured with two-factor authentication. This protects businesses from financial losses."
-              source="receivables"
-            />
-          </div> */}
-
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Real-Time Settlement"
-              description="UPI transactions are settled in real-time implying the bank account receives the money instantly; thus improving business cash flow."
+              whiteTitle="Multiple Checkout Options"
+              description="Integrate and use multiple UPI checkout options like dynamic QR code, WhatsApp UPI links, static QR code, virtual UPI ID, UPI autopay and UPI one-time mandate."
               source="receivables"
             />
           </div>
@@ -221,37 +193,30 @@ const AutoCollect = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex justify-content-center">
-                  <Heading
-                    title={`Payment${space}`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title="collections made easy via UPI"
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
+                <Heading
+                  title={`Payment collections made easy via${space}`}
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
+                <Heading title="UPI" color="rainy-blue" size="h1" weight="6" />
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="How UPI Payment Works?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how UPI Payment will change the way you approach collections!"
         />
       </div>
-      <div
-        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
-      >
+
+      <div className={`${styles.fifth_row} row row-padding-x-only bg-white`}>
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
@@ -271,7 +236,13 @@ const AutoCollect = () => {
           <Image src={faqBg} alt="background image" />x
         </div>
       </div>
-
+      <div className={`${styles.second_row}  bg-white  `}>
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
+      </div>
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of UPI payment?"
@@ -279,6 +250,7 @@ const AutoCollect = () => {
           source="receivables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore the comprehensive guide"
@@ -373,6 +345,7 @@ const AutoCollect = () => {
           }
         />
       </div>
+
       <Footer utmSource="receivables" />
     </div>
   );

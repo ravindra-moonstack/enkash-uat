@@ -1,4 +1,6 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+
+const faqData: FAQProps[] = [
   {
     question: " What are the key features of EnKash Olympus?",
     answer: [

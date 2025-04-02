@@ -1,27 +1,28 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import {blogData, productData, carouselData} from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import Header from "@/components/header/header";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+} from "@/components";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 
 export const metadata: Metadata = generateMetaData({
   title: "Auto Payment Collection Platform | What is Auto Collect  - EnKash",
@@ -33,50 +34,46 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const AutoCollect = () => {
+const AutoCollect = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/olympus/receivables/auto-collect/`}
         faqData={faqData}
       />
+
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
+            <div>
               <Heading
-                title={`Olympus |${space}`}
+                title={`Auto Collect${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
-              />
-            </div>
-            <div>
-              <Heading
-                title="Auto Collect"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
               />
               <sup className="sup-symbol"></sup>
             </div>
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Get paid faster${space}`}
+              title={`Automatic Payment Collection${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`and boost cash flow${space}`}
+              title={`Simplified with EnKash${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="with auto collect"
+              title="Auto Collect"
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -85,7 +82,7 @@ const AutoCollect = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Effortlessly collect payments through diverse channels like NEFT, IMPS, and RTGS, leveraging auto collect for real-time reconciliation via dedicated customer virtual accounts"
+              title="Automate reconciliation for all incoming NEFT, RTGS, IMPS, and UPI payments using EnKash Customer Identifiers and Virtual UPI IDs. Receive real-time alerts and enjoy seamless multi-bank support."
               size="h6"
               weight="5"
             />
@@ -93,16 +90,8 @@ const AutoCollect = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=receivables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=receivables"
               />
             </div>
@@ -114,89 +103,70 @@ const AutoCollect = () => {
           </div>
         </div>
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Automating Payment Collection"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Instant ",
+              },
+              {
+                icon: stack,
+                text: "Smart ",
+              },
+              {
+                icon: numberOne,
+                text: "Secure",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Reconciliation ", "Process"],
-              oldWayDescription:
-                "Reconciliation was a labor-intensive process that involved manually matching incoming payments with invoices/records. ",
-              newWayDescription:
-                "With EnKash, enjoy instant reconciliation capabilities, ensuring that incoming payments are automatically matched with invoices.",
-            },
-            {
-              itemArray: ["Payment ", "Settlements"],
-              oldWayDescription:
-                "Slow payment settlements hindered cash flow, causing operational challenges. And the inability to settle on holidays or weekends also added to the delays.",
-              newWayDescription:
-                "EnKash enables 365-day payment settlements, meaning you can access funds at your convenience, even on bank holidays, giving flexibility to better manage your cash flow and operational needs.",
-            },
-            {
-              itemArray: ["Multi-Branch ", "Management"],
-              oldWayDescription:
-                "Difficult to manage multiple branches/departments as there was no way to track transactions for individual units effectively.	",
-              newWayDescription:
-                "Tailored for businesses with multiple branches or franchises, EnKash auto collect offers centralized control with individualized tracking for each unit.",
-            },
-            {
-              itemArray: ["Notification ", "and Alerts"],
-              oldWayDescription:
-                "With the old way, businesses had to rely on manual checks to stay informed about successful payments.",
-              newWayDescription:
-                "With EnKash, get real-time alerts through webhooks and dashboards. So that you can get immediate notification of successful payments, enabling you to stay on top of your financial transactions effortlessly.",
-            },
-          ]}
-        />
-      </div>
+      <div
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
+      ></div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center pb-2">
+          <Heading title="Best Automatic" color="black" size="h1" weight="6" />
           <Heading
-            title="Business auto collections made"
-            color="black"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`${space}easy and efficient`}
+            title={`${space}Payment Collection Solution${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
+          <Heading title="for Businesses" color="black" size="h1" weight="6" />
         </div>
 
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Virtual Solutions"
-              description="Utilize the power of unique virtual payment addresses and virtual bank accounts to automatically collect and reconcile all bank transfers, including UPI, NEFT, IMPS, and RTGS"
+              whiteTitle="Multiple Modes Payment Collection"
+              description="EnKash Auto-Collect supports UPI, NEFT, IMPS, and RTGS, enabling seamless branch-specific or individual customer payments. Simplify collections and accelerate your business growth with frictionless transactions."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Zero Cost Creation"
-              description="Enjoy the convenience of creating unlimited virtual payment addresses at zero cost"
+              whiteTitle="Real-time Transaction Notification"
+              description="Stay informed with instant alerts every time a payment is made. Real-time webhook updates and our dashboard ensure complete transparency and keep your financial operations running smoothly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Multiple Virtual Bank Accounts"
-              description="Manage collections from diverse sources seamlessly by creating unique virtual bank accounts for each business unit or customer, enhancing financial transparency"
+              whiteTitle="Zero Setup Cos"
+              description="Create unlimited virtual accounts and payment addresses at no additional cost. Eliminate the manual efforts of assigning account numbers, and let our automation simplify your financial workflows."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Personalized Branding"
-              description="Add a personal touch to your VPAs with a custom brand prefix, reinforcing your brand identity with every transaction"
+              whiteTitle="Tailored for Every Business"
+              description="Whether you’re managing multiple branches, customer touchpoints, or financial services, EnKash Auto-Collect provides flexible virtual accounts tailored to each business unit, department, or individual customer"
               source="receivables"
             />
           </div>
@@ -209,8 +179,8 @@ const AutoCollect = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Account Management"
-              description="Take control of your virtual accounts in real-time. Activate or deactivate accounts as needed, ensuring seamless fund transfers"
+              whiteTitle="Advanced Security & Compliance"
+              description="Rest easy knowing that every transaction is secure. EnKash adheres to industry-leading compliance standards and encryption protocols to protect your data and funds."
               source="receivables"
             />
           </div>
@@ -222,16 +192,22 @@ const AutoCollect = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex flex-column">
+                <div className="d-inline text-center">
                   <Heading
-                    title={`Easily speed up your ${space}`}
+                    title={`How EnKash${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="collection efforts with auto collect"
+                    title="Auto Collect"
                     color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title={`${space}Works`}
+                    color="white"
                     size="h1"
                     weight="6"
                   />
@@ -244,12 +220,14 @@ const AutoCollect = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how Auto Collect can revolutionize the way you work!"
+          title="Learn how our auto collect can revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -271,6 +249,13 @@ const AutoCollect = () => {
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check Out EnKash’s Other Payment Products and Solutions"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.sixth_row} row`}>

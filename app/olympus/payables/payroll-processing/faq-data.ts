@@ -1,4 +1,6 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+
+const faqData: FAQProps[] = [
   {
     question: "What is payroll processing?",
     answer: [
@@ -45,5 +47,4 @@ const faqData = [
     ],
   },
 ];
-
 export default faqData;

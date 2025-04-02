@@ -1,25 +1,29 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import styles from "./page.module.scss";
+import { space } from "../../../common/constant";
+import {  carouselData, blogData, productData } from "./data";
+import faqData from "./faq-data";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Employee Expense Management : Get Data Driven Insight - EnKash.com",
@@ -31,7 +35,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const insights = () => {
+const Insights = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -42,30 +46,22 @@ const insights = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`OfEx |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Insights"
+              title={`Insights${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Unlock the power of data"
+              title="Make Informed Decisions with "
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title="with intelligent insights"
+              title=" Real-time Data and Actionable Insights"
               color="white"
               size="h2"
               weight="7"
@@ -74,7 +70,7 @@ const insights = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Gain strategic control over employee expenses with data-driven insights. Revolutionize the way you manage and analyze expenditures for enhanced financial efficiency"
+              title="Transform your business’s approach to manage and analyze employee expenses for greater financial efficiency."
               color="white"
               size="h6"
               weight="5"
@@ -103,44 +99,10 @@ const insights = () => {
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
           <ThreeSteps />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Data", "Collection"],
-              oldWayDescription:
-                "Employees used to submit their expense reports manually, either on paper or through a spreadsheet. This data was then manually entered into a financial system, causing delays and hassles for settlements.",
-              newWayDescription:
-                "EnKash uses OCR technology to automatically capture data from receipts and report expenses, eliminating the need for manual data entry. This ensures that data is up-to-date, removes any discrepancies, and is readily available for analysis.",
-            },
-            {
-              itemArray: ["Reporting", "Frequency"],
-              oldWayDescription:
-                "Periodic reporting was often delayed. Monthly/quarterly reports didn’t capture real time insights of expenses, which made it difficult for businesses to make informed decisions and plan better.",
-              newWayDescription:
-                "Get continuous and instant reporting with real-time insights, allowing businesses to have a dynamic view of their expenses, and facilitating quick decision-making based on the latest financial insights.",
-            },
-            {
-              itemArray: ["Expense", "Visibility"],
-              oldWayDescription:
-                "There was limited visibility into individual and overall expenses. Tracking and analyzing expenses on an individual level used to be cumbersome, leading to a lack of transparency.",
-              newWayDescription:
-                "Gain comprehensive insights into expenses with detailed visibility. Admins and finance teams can drill down into specific expense categories, branch codes, departments, projects, etc., to gain a clear view.",
-            },
-            {
-              itemArray: ["Customization"],
-              oldWayDescription:
-                "Traditional systems may offer limited options for customizing reports. Businesses may find it challenging to tailor expense reporting to specific needs and preferences.",
-              newWayDescription:
-                "Customize insights based on specific business needs and tailor reports based on criteria like date range, amount, count, etc., ensuring accurate extraction of the most relevant insights for efficient financial management.",
-            },
-          ]}
-        />
       </div>
 
       <div
@@ -148,7 +110,7 @@ const insights = () => {
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Stay informed about"
+            title="Keep a pulse on "
             color="black"
             size="h1"
             weight="6"
@@ -163,6 +125,7 @@ const insights = () => {
             <Heading title="with EnKash" color="black" size="h1" weight="6" />
           </div>
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
@@ -204,12 +167,20 @@ const insights = () => {
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Real-time Tracking"
+              whiteTitle="Real-time Expense Tracking"
               description="Monitor expenses in real-time, allowing for proactive decision-making and cost control, leading to improved bottom-line results"
               source="expense_management"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Redefine expense tracking with EnKash's cutting-edge "
+          subtitle="solutions"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -239,12 +210,14 @@ const insights = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how digital receipt management can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -321,4 +294,4 @@ const insights = () => {
   );
 };
 
-export default insights;
+export default Insights;

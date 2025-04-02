@@ -1,4 +1,6 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+
+const faqData: FAQProps[] = [
   {
     question: "What is a GST payment?",
     answer: [
@@ -67,7 +69,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Tax payments are mandatory by law, and the government requires businesses like yours to pay taxes on time to reap the benefits associated with it, avoid penalties, and keep the business going. Olympus’ tax payment module facilitates the whole process and reduces manual errors and makes a record trail for future audit/reference.",
+          "Tax payments are mandatory by law, and the government requires businesses like yours to pay taxes on time to reap the benefits associated with it, avoid penalties, and keep the business going. EnKash’ tax payment module facilitates the whole process and reduces manual errors and makes a record trail for future audit/reference.",
       },
     ],
   },
@@ -77,7 +79,7 @@ const faqData = [
     answer: [
       {
         heading:
-          "Olympus’ tax payment module improves the efficiency of your finance team by ensuring that the payments are not missed, the approval process is clear and fast, and by ensuring that the digital records for tax payments are stored in the right place. Olympus’ tax payment module ensures that your business meets compliance and audit-related requirements.",
+          "EnKash’ tax payment module improves the efficiency of your finance team by ensuring that the payments are not missed, the approval process is clear and fast, and by ensuring that the digital records for tax payments are stored in the right place. EnKash’ tax payment module ensures that your business meets compliance and audit-related requirements.",
       },
     ],
   },
@@ -102,10 +104,9 @@ const faqData = [
     answer: [
       {
         heading:
-          "With Olympus’ tax payment module, much of the process is online with a transparent process laid out. This ensures that the payments are made on time with the right people checking the details and giving their approvals. Once the payment is made, a digital record is created for future reference in case it is required to provide proof of payment or answer audit-related questions.",
+          "With EnKash’ tax payment module, much of the process is online with a transparent process laid out. This ensures that the payments are made on time with the right people checking the details and giving their approvals. Once the payment is made, a digital record is created for future reference in case it is required to provide proof of payment or answer audit-related questions.",
       },
     ],
   },
 ];
-
 export default faqData;

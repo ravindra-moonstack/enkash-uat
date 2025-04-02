@@ -38,12 +38,12 @@ const ReceivableProducts = [
     subtitle: "Default",
     subtitleLink: "/olympus/receivables",
     currentHeading: {
-      name: "Receivables",
+      name: "Collect Payments",
       description: "Get paid faster with customized PG solutions",
     },
     list: [
       {
-        name: "Olympus PG",
+        name: "Payment Gateway",
         description: "Collect payments with the safest payment gateway",
         imageSrc: paymentGateway,
         imageSrcHovered: paymentGatewayFilled,
@@ -196,7 +196,7 @@ const ReceivableProducts = [
       // },
     ],
     footerText: "Effortlessly streamline your business collections",
-    footerMobileText: "Explore Receivables",
+    footerMobileText: "Explore More",
     footerImg: "olympus_footer_bg",
     footerLink: "/olympus/receivables",
     parentLink: "/olympus/receivables",

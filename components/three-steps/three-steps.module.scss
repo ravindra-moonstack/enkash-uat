@@ -11,6 +11,7 @@
     rgba(11, 11, 40, 0.25) 85.63%
   );
   backdrop-filter: blur(3.210831880569458px);
+
   @include for-laptops {
     padding: 70px 60px;
   }
@@ -18,33 +19,74 @@
   .steps_image {
     width: 23px;
     height: 23px;
+
     @include for-laptops {
       width: 41px;
       height: 41px;
     }
   }
+
   .action_image_stack {
     width: 35px;
     height: 37px;
+
     @include for-laptops {
       width: 71px;
       height: 74px;
     }
   }
+
   .action_image_user_tick {
     width: 35px;
     height: 40px;
+
     @include for-laptops {
       width: 90px;
       height: 79px;
     }
   }
+
   .action_image_user_plus {
     width: 35px;
     height: 37px;
+
     @include for-laptops {
       width: 71px;
       height: 74px;
     }
+  }
+
+  .action_image {
+    width: 35px;
+    height: 37px;
+
+    @include for-laptops {
+      width: 71px;
+      height: 74px;
+    }
+  }
+}
+
+.custom_step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  max-width: 25%;
+  height: fit-content;
+
+  @include for-laptops {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .image_div {
+    width: 125px;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }

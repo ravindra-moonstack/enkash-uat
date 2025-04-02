@@ -37,8 +37,8 @@ const FooterV2 = ({ utmSource = "" }: any) => {
       </div> */}
 
       <div className={`row ${styles.footer_padding}`}>
-        <div className="col-12 mb-4">
-          <h2 className="color-white mb-4">
+        <div className="col-12 mb-4 d-flex flex-column align-items-center align-items-md-start">
+          <h2 className="color-white mb-4 text-center text-md-start">
             Spend Smart. Collect Fast. <br />
             <span className="color-equity-blue">Grow More.</span>
           </h2>
@@ -52,7 +52,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
           <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
             <Link href="/olympus/receivables">
               <h4 className={` ${styles.title}`}>
-                Receivables<sup>#</sup>
+                Collect Payments<sup>#</sup>
               </h4>
             </Link>
 
@@ -69,7 +69,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     </li> */}
                   <li className="d-flex">
                     <Link href="/olympus/receivables/payment-gateway">
-                      Olympus PG
+                      Payment Gateway
                     </Link>
                     {/* <div className={'my-auto '}> NEW</div> */}
                   </li>
@@ -209,7 +209,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                 <ul className="mb-0">
                   <li>
                     <Link href="/olympus/receivables">
-                      <h4 className={` ${styles.title}`}>Payables</h4>
+                      <h4 className={` ${styles.title}`}>Make Payments</h4>
                     </Link>
                   </li>
                   <li>
@@ -324,7 +324,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
               <div>
                 <div className={styles.freedom_card_box}>
                   <Link href="/corporate-cards">
-                    <h4 className={`${styles.title}`}>Corporate Cards</h4>
+                    <h4 className={`${styles.title}`}>Cards</h4>
                   </Link>
                 </div>
                 <ul>
@@ -423,9 +423,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
             <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
               <div>
                 <Link href="/ofex">
-                  <h4 className={`col-12 ${styles.title}`}>
-                    Expense Management
-                  </h4>
+                  <h4 className={`col-12 ${styles.title}`}>Expenses</h4>
                 </Link>
                 <ul>
                   <li>
@@ -459,7 +457,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
               </div>
               <div className="mt-3">
                 <Link href="/loyalty-lounge">
-                  <h4 className={`col-12 ${styles.title}`}>Loyalty Lounge</h4>
+                  <h4 className={`col-12 ${styles.title}`}>Rewards</h4>
                 </Link>
                 <ul>
                   <li>
@@ -669,10 +667,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
             RBI-licensed banks and/ or in accordance with RBI regulations and/
             or RBI compliance maintained by banks & regulated entities. EnKash
             is not a bank and doesn’t hold or claim to hold a banking license.{" "}
-            <span className="color-electric-green">
-              *Powered by Banks/REs. <sup># </sup> Launching soon as per RBI's
-              PA (Online) authorization
-            </span>
+            <span className="color-electric-green">*Powered by Banks/REs.</span>
           </div>
           <div className={`col-12 col-md-4 color-white ${styles.copyright}`}>
             Copyright © 2024 | Nehat Tech Solutions Pvt. Ltd. All right
@@ -703,17 +698,6 @@ const FooterV2 = ({ utmSource = "" }: any) => {
       </div>
 
       <div className={styles.locations_row}>
-        <div className="d-flex flex-column me-0 me-md-5 color-white">
-          <div className={` ${styles.main_title}`}>
-            Olympus™, an EnKash** product, is a licensed online payment
-            aggregator authorized by the RBI
-          </div>
-          <div className={`mt-2 ${styles.sub_title}`}>
-            **EnKash is a commercial trade name owned by the legal entity, Nehat
-            Tech Solutions Pvt. Ltd.
-          </div>
-        </div>
-
         <div className="d-none d-md-flex mx-0 me-md-5">
           {" "}
           <Image

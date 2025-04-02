@@ -1,25 +1,24 @@
 import Image from "next/image";
+import { Metadata } from "next";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
 import faqData from "./faq-data";
-import carouselData from "./carousel-data";
+import { carouselData, productData, blogData } from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import { FAQHtml } from "@/components/faq";
+import { Header, Footer, BlogWrapper } from "@/components";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -44,38 +43,23 @@ const offers = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Loyalty Lounge |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Offers"
+              title={`Offers${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
           <div>
             <Heading
-              title="Unlock exclusive "
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
-
-            <Heading
-              title={`offers${space}`}
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="on business products"
+              title="Access exclusive offers on "
               color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`${space} business products `}
+              color="rainy-blue"
               size="h2"
               weight="7"
             />
@@ -83,7 +67,7 @@ const offers = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Explore our curated offers from trusted partners and get exclusive discounts on a wide range of business products and services"
+              title="Discover best offers from trusted partners and enjoy special discounts on a variety of business products and services."
               color="white"
               size="h6"
               weight="5"
@@ -92,85 +76,55 @@ const offers = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=Loyalty_lounge"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=Loyalty_lounge"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Finding", "Offers"],
-              oldWayDescription:
-                "It’s difficult for businesses to find offers that fulfill their needs and help them save big.",
-              newWayDescription:
-                "Access a curated selection of the best offers from our partner brands on various business products and services.",
-            },
-            {
-              itemArray: ["Time", "Investment"],
-              oldWayDescription:
-                "Businesses had to spend hours negotiating for the best deals.",
-              newWayDescription:
-                "On EnKash, exclusive discounts and best deals are just a click away.",
-            },
-            {
-              itemArray: ["Missed", "Opportunities"],
-              oldWayDescription:
-                "Lack of awareness leads to missing out on great deals.",
-              newWayDescription:
-                "Real-time visibility of offers on the dashboard gives you access to better deals and more savings.",
-            },
-            {
-              itemArray: ["Tracking"],
-              oldWayDescription:
-                "Difficulty in tracking active offers, savings, and their validity.",
-              newWayDescription:
-                "Get real-time data on your offers, savings, and validity on the go.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Best Offers For You"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Customizable",
+              },
+              {
+                icon: stack,
+                text: "Exclusive Discounts",
+              },
+              {
+                icon: numberOne,
+                text: "Trusted Partners",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-flex flex-column text-center mb-5">
-          <Heading
-            title="Learn more about maximizing"
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
+          <Heading title="Exclusive " color="black" size="h1" weight="6" />
           <div>
             <Heading
-              title="your savings"
+              title="discounts and benefits"
               color="equity-blue"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`${space}with EnKash`}
+              title={`${space} on partnered services`}
               color="black"
               size="h1"
               weight="6"
@@ -183,33 +137,41 @@ const offers = () => {
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Maximize Savings"
-                description="Unlock significant savings on various business products with exclusive discounts on our partnered services"
+                description="Unlock exceptional savings on a variety of essential business products through exclusive discounts from our trusted partners, helping you reduce operational costs and improve your bottom line."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Top Partnered Deals"
-                description="Explore the finest deals from our esteemed partner brands like AWS, ClearTax, Canva, and more"
+                description="Access top-tier offers from renowned partner brands like AWS, ClearTax, Canva, and more, ensuring your business gets the best value on tools and services you rely on daily."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle=" Effortless Process"
-                description="Enjoy a seamless experience with just a few clicks, making it quick and easy to access exclusive deals and offers"
+                description="Enjoy a smooth, hassle-free experience where you can quickly discover and redeem exclusive deals with just a few clicks, saving time and effort while maximizing your savings."
                 source="Loyalty_lounge"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
                 whiteTitle="Regularly Updated Offers"
-                description="Stay ahead of the curve with the best deals for your business needs"
+                description="Stay ahead of the competition with a constantly refreshed list of the most relevant and up-to-date offers for your business needs, ensuring you never miss out on a great deal."
                 source="Loyalty_lounge"
               />
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="A loyalty lounge for businesses at "
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -245,12 +207,14 @@ const offers = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how our partner offers can benefit your business!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

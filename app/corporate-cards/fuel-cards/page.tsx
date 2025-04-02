@@ -1,27 +1,29 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
+import { blogData,  carouselData, productData } from "./data";
 import faqData from "./faq-data";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+} from "@/components";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import carouselData from "./carousel-data";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import blogData from "./blog-data";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -48,35 +50,30 @@ const fuelCard = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Corporate Cards |${space}`}
+                title={`Fuel Cards${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <Heading
-              title="Fuel Cards"
-              size="h4"
-              weight="4"
-              useH1TagInHtml={true}
-            />
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Empower your workforce"
+              title="Transforming Fuel "
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="Expense Management "
               color="rainy-blue"
               size="h2"
               weight="7"
-            />
+            />{" "}
+            <Heading title="with " color="white" size="h2" weight="7" />
             <Heading
-              title="with simplified fuel"
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="expense management"
-              color="white"
+              title="EnKash Fuel Card"
+              color="rainy-blue"
               size="h2"
               weight="7"
             />
@@ -84,7 +81,7 @@ const fuelCard = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Streamline employee fuel expenses, gain real-time visibility into fuel usage, and eliminate the hassles of traditional fuel reimbursement processes"
+              title="Eliminate hassle, gain control, and cut costs with EnKash’s comprehensive fuel card solution for businesses of all sizes."
               color="white"
               size="h6"
               weight="5"
@@ -93,64 +90,39 @@ const fuelCard = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=corporate_cards"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=corporate_cards"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Ease of Use"],
-              oldWayDescription:
-                "Previously, employees bore the burden of covering fuel expenses and navigating a cumbersome paper-based reimbursement system.",
-              newWayDescription:
-                "With EnKash, fuel cards can be used across a vast network of fuel stations, eliminating the hassle of personal upfront costs and a long reimbursement process.",
-            },
-            {
-              itemArray: ["Expense Tracking"],
-              oldWayDescription:
-                "Manual tracking and management of fuel receipts.",
-              newWayDescription:
-                "Easily automate tracking and reporting of fuel expenses by employees in real time.",
-            },
-            {
-              itemArray: ["Set Limits"],
-              oldWayDescription:
-                "No effective means of setting limits on employee fuel expenses, leading to potential overspending and a lack of control.",
-              newWayDescription:
-                "Set and manage precise spending limits for each employee card, ensuring fuel expenses are within the defined budget.",
-            },
-            {
-              itemArray: ["Visibility"],
-              oldWayDescription:
-                "Getting a comprehensive view of the business's fuel costs is extremely challenging.",
-              newWayDescription:
-                "Gain a holistic overview of your employees' fuel expenses through a single dashboard that can help you reduce costs.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Take Control of Fuel Expenses with EnKash Fuel Cards"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Employee Convenience",
+              },
+              {
+                icon: stack,
+                text: "Controlled Usage",
+              },
+              {
+                icon: numberOne,
+                text: "Tax Benefits",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -158,18 +130,12 @@ const fuelCard = () => {
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Efficiency, control, and savings"
+            title="Unlock Savings and Efficiency "
             color="equity-blue"
             size="h1"
             weight="6"
           />
-          <Heading title=" in every mile " color="black" size="h1" weight="6" />
-          <Heading
-            title="with prepaid fuel cards"
-            color="black"
-            size="h1"
-            weight="6"
-          />
+          <Heading title=" on Every Mile " color="black" size="h1" weight="6" />
         </div>
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
@@ -177,60 +143,78 @@ const fuelCard = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Spend"
+                    title="Real-time "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Control"
+                    title="Expense Tracking"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="Establish daily and monthly payment limits to align with your budget and spend habits"
+              description="Monitor fuel expenses in real-time with EnKash Fuel Cards. Track transactions as they happen, gain complete visibility and identify spending patterns to prevent budget overruns. Make data-driven decisions to optimize your fuel budget."
               source="corporate_cards"
             />
           </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Wider Acceptance"
-              description="Utilize your fuel card at a vast network of authorized fuel stations without incurring additional charges"
-              source="corporate_cards"
-            />
-          </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Reduce"
+                    title="Fraud "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Fraud"
+                    title="Protection"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="Receive real-time alerts, enhance security, and block the card instantly for any suspicious activity to ensure protection against misuse and fraud"
+              description="Robust security with PIN protection and real-time alerts for suspicious activity. These features ensure only authorized transactions, reducing fraud risk. Instantly block or freeze cards to prevent unauthorized access and protect your business."
+              source="corporate_cards"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Streamlined Reimbursements"
+              description="Eliminate the hassle of traditional reimbursements with EnKash Fuel Cards. Fuel expenses are automatically managed and settled, no need for receipts or approval waits. This streamlined process boosts efficiency, reduces errors, and frees up your finance team for strategic tasks."
+              source="corporate_cards"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Cost Control and Savings"
+              description="Set daily or monthly spending limits for each employee, ensuring fuel expenses stay within budget. Monitor consumption against approved limits, optimize usage, and identify savings to reduce unnecessary fuel costs."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Smart Monitoring"
-              description="Various supermarkets, food delivery apps, and other eating establishments widely accept meal cards"
+              whiteTitle="Wide Acceptance Network"
+              description="Accepted at a wide network of authorized fuel stations, providing employees the flexibility to refuel locally or nationwide. This broad coverage ensures convenience, minimizes out-of-network charges, and keeps your business protected wherever your team travels."
               source="corporate_cards"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="An Array of Corporate Cards by"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -240,13 +224,13 @@ const fuelCard = () => {
               <div className="text-center">
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Leverage pre-loaded fuel cards for business"
+                    title="Steps to Manage Employee "
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="travel expenses"
+                    title="Fuel Costs"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -260,12 +244,14 @@ const fuelCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how Fuel Cards offer a host of benefits for your business and employees!"
         />
       </div>
+      
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

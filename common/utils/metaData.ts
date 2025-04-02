@@ -1,4 +1,5 @@
 import { Voucher } from "@/app/bolt/data/voucher-data";
+import { FAQProps } from "@/components/faq/faq";
 
 interface MetadataInput {
   title: string;
@@ -6,14 +7,9 @@ interface MetadataInput {
   alternates: {
     canonical: string;
   };
-  faqData?: Array<{
-    question: string;
-    answer: Array<{
-      heading?: string;
-      bullets?: string[];
-    }>;
-  }>;
+  faqData?: Array<FAQProps>;
 }
+
 export interface BreadcrumbItem {
   "@type": "ListItem";
   position: number;
@@ -98,20 +94,23 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
       position: index + 1,
       acceptedAnswer: {
         "@type": "Answer",
-        text: faq.answer
-          .map((ans) => {
-            // Construct answer text with heading and bullets
-            const parts = [];
-            if (ans.heading) {
-              parts.push(ans.heading);
-            }
-            if (ans.bullets?.length) {
-              parts.push(ans.bullets.join(". "));
-            }
-            return parts.join(". ");
-          })
-          .filter(Boolean)
-          .join(" "),
+        text:
+          (faq?.answer &&
+            faq?.answer
+              ?.map((ans) => {
+                // Construct answer text with heading and bullets
+                const parts = [];
+                if (ans.heading) {
+                  parts.push(ans.heading);
+                }
+                if (ans.bullets?.length) {
+                  parts.push(ans.bullets.join(". "));
+                }
+                return parts.join(". ");
+              })
+              .filter(Boolean)
+              .join(" ")) ??
+          "",
       },
     })),
   };

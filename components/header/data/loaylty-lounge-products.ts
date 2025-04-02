@@ -16,7 +16,7 @@ const loyaltyLoungeProducts = [
     subtitle: "Default",
     subtitleLink: "/loyalty-lounge",
     currentHeading: {
-      name: "Loyalty Lounge ",
+      name: "Rewards ",
       description: "Build exciting rewards, incentives & offers",
     },
     list: [
@@ -57,7 +57,7 @@ const loyaltyLoungeProducts = [
       },
     ],
     footerText: "Effortless recognition, and endless rewards in one place",
-    footerMobileText: "Explore Loyalty Lounge",
+    footerMobileText: "Explore More",
     footerImg: "loyalty_footer_bg",
     footerLink: "/loyalty-lounge",
     parentLink: "/loyalty-lounge",

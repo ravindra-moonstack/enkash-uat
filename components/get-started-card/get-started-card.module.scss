@@ -2,7 +2,7 @@
 @import "/styles/mixin";
 
 .card_body {
-  width: 250px;
+  width: 84vw;
   height: 100%;
   background-image: url(./img/rainy-blue-biscuit.png);
   background-size: 200px auto;
@@ -73,5 +73,13 @@
 .action_container:hover {
   img {
     width: 65px;
+  }
+}
+
+.description {
+  font-size: 18px;
+  font-weight: 400;
+  span {
+    font-weight: 700;
   }
 }

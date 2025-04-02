@@ -1,27 +1,31 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import { space } from "../../../../common/constant";
+import { blogData, carouselData ,productData } from "./data";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import Header from "@/components/header/header";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Accept Instant Payments through QR codes for your Business",
@@ -33,7 +37,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const QRCodes = () => {
+const QRCodes = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -41,20 +45,14 @@ const QRCodes = () => {
         faqData={faqData}
       />
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <div>
               <Heading
                 title="QR Codes"
+                color="rainy-blue"
                 size="h4"
                 weight="4"
                 useH1TagInHtml={true}
@@ -64,36 +62,25 @@ const QRCodes = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Make secure${space}`}
+              title={`Contactless${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
             <div className="d-inline">
               <Heading
-                title={`contactless${space}`}
+                title={`Payments with${space}`}
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
-              <Heading
-                title={`payments${space}`}
-                color="white"
-                size="h2"
-                weight="7"
-              />
             </div>
-            <Heading
-              title="using QR codes"
-              color="white"
-              size="h2"
-              weight="7"
-            />
+            <Heading title="UPI QR Code" color="white" size="h2" weight="7" />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Empower your business to accept instant payments through QR codes. Offer a seamless customer experience and streamline your collection process"
+              title="Generate unique QR codes to collect payments via any UPI app while tracking each transaction for your business."
               size="h6"
               weight="5"
             />
@@ -101,72 +88,59 @@ const QRCodes = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=receivables"
+                url="/sales?source=receivables"
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com/"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Best Online Payment Solution"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Fast",
+              },
+              {
+                icon: stack,
+                text: "Economical",
+              },
+              {
+                icon: numberOne,
+                text: "Secure",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Payment", "Process"],
-              oldWayDescription:
-                "Previously, making purchases required carrying a card or cash at all times, resulting in inconvenience.",
-              newWayDescription:
-                "Now customers can effortlessly scan QR codes using their mobile phones, leading to a quicker, more secure, and more convenient payment process.",
-            },
-            {
-              itemArray: ["Settlement", "Time"],
-              oldWayDescription:
-                "Funds used to take days to settle in merchant's account, with no option to settle on holidays or weekends, causing a cashflow crunch.",
-              newWayDescription:
-                "With us, experience 365-days of instant settlements of funds after successful payment, even on bank holidays, for improved cash flow.",
-            },
-            {
-              itemArray: ["Accounting", "Software Integration"],
-              oldWayDescription:
-                "Integration with accounting software was challenging due to transactions occurring in various modes such as cash, cards, and cheques.",
-              newWayDescription:
-                "Seamlessly integrate with accounting softwares like Tally, and automate reconciliation for both online and offline payments.",
-            },
-            {
-              itemArray: ["Cost"],
-              oldWayDescription:
-                "Use of cash, card, or cheques, typically incurred high transaction fees, equipment costs for POS systems, and maintenance expenses.",
-              newWayDescription:
-                "The use of QR codes offers lower transaction fees, minimal setup costs, and reduced maintenance expenses, making it a cost-effective solution for businesses.",
-            },
-          ]}
-        />
-      </div>
+      <div
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
+      ></div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title=" Collect payments with QR codes"
+            title="Why EnKash for Collecting QR Code Payments"
             color="equity-blue"
             size="h1"
             weight="6"
@@ -176,43 +150,43 @@ const QRCodes = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Static QR Codes"
-              description="Generate a single QR code for your business. Customers scan and pay the pre-defined amount using any UPI app. Ideal for displaying at stores or on invoices"
+              whiteTitle="Generate QR Codes in Seconds"
+              description="Generate unique QR codes instantly with EnKash’s user-friendly platform. No complicated steps or delays—just a few clicks to start accepting payments and boosting your business efficiency."
+              source="qr-codes"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Maintain Brand Identity"
+              description="Add your business logo to every QR code with custom branding, promoting trust, and professionalism, and reinforcing your brand identity at every payment interaction—a simple yet impactful way to make your business unforgettable."
               source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Dynamic QR Codes"
-              description="Generate unique QR codes for each transaction. Perfect for online payments, allowing you to capture specific invoice details for easy reconciliation and can be left open-ended for variable payment amounts"
+              description="Generate fixed-amount QR codes for specific transactions or dynamic codes for flexible payments. Perfect for recurring billing or varied purchases, our solution adapts to your business needs, ensuring convenience for you and your customers."
               source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Universal Acceptance"
-              description="Accept payments via popular UPI apps like Google Pay, Phonepe, etc"
+              whiteTitle="Real-time Reconciliation & Tracking"
+              description="Track your finances in real-time with EnKash’s dashboard, offering instant payment updates, detailed reports, and reconciliation tools for clear insights and efficient revenue management."
               source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Real-time Tracking"
-              description="Create different QR codes for multiple branches or customers and easily track and reconcile all the incoming payments"
+              whiteTitle="Enterprise-grade Security"
+              description="Secure your business and customer data with EnKash’s encrypted QR codes, which are compliant with global security standards, ensuring every transaction is safe, reliable, and trustworthy for peace of mind."
               source="qr-codes"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customizable Design"
-              description="Tailor and collect payment with QR codes with your brand logo and colors, creating a seamless payment experience for your customers"
-              source="qr-codes"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Enhanced Security"
-              description="PCI DSS-compliant platform ensures secure transactions"
+              whiteTitle="Unique QRs for Business Chains"
+              description="Generate unique QRs for businesses with franchisees/chains/departments like hospitals, restaurants, travel agencies, jewellery showrooms, theaters, retail stores, pharmacies etc.Use data to reconcile with individual transaction."
               source="qr-codes"
             />
           </div>
@@ -224,26 +198,24 @@ const QRCodes = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex justify-content-center">
-                  <Heading
-                    title={`Leverage`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title={`${space}QR Code integration${space}`}
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title="for your business"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
+                <Heading
+                  title={`Accepting Payments via`}
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
+                <Heading
+                  title={`${space}QR Codes${space}`}
+                  color="rainy-blue"
+                  size="h1"
+                  weight="6"
+                />
+                <Heading
+                  title="was Never This Easy"
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />
               </div>
             </>
           }
@@ -252,6 +224,14 @@ const QRCodes = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
+        <BlogWrapper
+          blogData={blogData}
+          title="Learn how payment links can revolutionize the way you work!"
+        />
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -275,6 +255,14 @@ const QRCodes = () => {
         </div>
       </div>
 
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
+      </div>
+
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of QR codes?"
@@ -282,6 +270,7 @@ const QRCodes = () => {
           source="receivables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore the comprehensive guide"
@@ -344,6 +333,7 @@ const QRCodes = () => {
           }
         />
       </div>
+
       <Footer utmSource="receivables" />
     </div>
   );

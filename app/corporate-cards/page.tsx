@@ -1,23 +1,27 @@
+import React from "react";
 import Image from "next/image";
 import { Metadata } from "next";
 import { space } from "@/common/constant";
 import styles from "./page.module.scss";
-import blogData from "./blog-data";
-import faqData from "./faq-data";
-import howDoesItWorkData from "./how-does-It-work-data";
-import Heading from "@/components/heading/heading";
+import { blogData, faqData, howDoesItWorkData } from "./data";
+import {
+  Header,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  ContactUsCard,
+  StructuredData,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import Header from "@/components/header/header";
 import {
   officeImg,
   whiteArrow,
@@ -28,10 +32,8 @@ import {
   heavyLiftingIconThree,
   banner,
 } from ".";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Corporate Credit and Prepaid Cards in India| Apply Now - EnKash",
@@ -43,7 +45,9 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const slash = () => {
+const Slash = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -736,4 +740,4 @@ const slash = () => {
   );
 };
 
-export default slash;
+export default Slash;

@@ -1,26 +1,29 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
-import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import styles from "./page.module.scss";
+import { space } from "../../../../common/constant";
+import { blogData, carouselData, productData } from "./data";
+import faqData from "./faq-data";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+} from "@/components";
+import { Metadata } from "next";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title: "Decentralized Finance Payment Solutions for Businesses - EnKash",
@@ -43,19 +46,11 @@ const seamlessBanking = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Seamless Banking"
+              title={`Business Banking ${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
@@ -77,7 +72,7 @@ const seamlessBanking = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Experience seamless integration, secure transactions, and customization with your existing bank account and manage business finances efficiently"
+              title="Effortlessly integrate your existing bank accounts with EnKash for a streamlined, secure, and fully customizable banking"
               color="white"
               size="h6"
               weight="5"
@@ -86,65 +81,40 @@ const seamlessBanking = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=payables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             {" "}
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Multiple", "Bank Accounts"],
-              oldWayDescription:
-                "Managing multiple bank accounts manually for payments and collections has been the traditional way of business.",
-              newWayDescription:
-                "With EnKash, businesses can decentralize payments and collections by working with just one branch of their existing bank.",
-            },
-            {
-              itemArray: ["Transparency", "& Control"],
-              oldWayDescription:
-                "The conventional way of banking does not provide transparency as decision-making and payments are controlled by authorized individuals only which operate centrally.",
-              newWayDescription:
-                "Automation via seamless banking reduces the risk of central dependency while it gives total transparency by way of spend controls and enhanced due diligence before payments are remitted.",
-            },
-            {
-              itemArray: ["Define", "Limits"],
-              oldWayDescription:
-                "Businesses can't define approval and spend limits with physical bank accounts.",
-              newWayDescription:
-                "Bulk rental payments can be made  seamlessly and hassle-free.",
-            },
-            {
-              itemArray: ["Real-Time Visibility", "& Reconciliation"],
-              oldWayDescription:
-                "Data accessibility and visibility are rare when handled manually. And, data reconciliation is tedious when done manually and cannot be made available in real-time.",
-              newWayDescription:
-                "Users have 100% visibility of their data across different bank accounts along with real-time reconciliation.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Transform Your Business Banking Experience"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Comprehensive Banking",
+              },
+              {
+                icon: stack,
+                text: "Advanced Security",
+              },
+              {
+                icon: numberOne,
+                text: "Scalable for Growth",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -152,20 +122,14 @@ const seamlessBanking = () => {
       >
         <div className="d-inline text-center mb-2">
           <Heading
-            title="Business banking just"
+            title="Powerful Solution to How You Manage "
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}got smoother & simplified${space}`}
+            title={`${space}Business Finances`}
             color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title="with greater visibility & security"
-            color="black"
             size="h1"
             weight="6"
           />
@@ -175,22 +139,15 @@ const seamlessBanking = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customize As Per Need"
-              description="Businesses can define a customized logic for decentralized payments as per their requirements"
+              whiteTitle="Tailor Banking to Your Business Needs"
+              description="Customize banking workflows to fit your business needs. With EnKash, tailor approval hierarchies, spending categories, and payment flows for maximum efficiency and policy compliance. Streamline processes and gain better control over transactions."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Visibility & Tracking"
-              description="It becomes easier for businesses to have clear visibility of all their transactions on a single dashboard. This facilitates data-based decision-making and avoids overspending"
-              source="payables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle=" Virtual Accounts"
-              description="Decentralized payments for businesses can have dedicated platform debit cards for each branch. This facilitates easy and smooth management"
+              whiteTitle="Transactions Visibility"
+              description="Achieve full transparency into your finances with EnKash’s intuitive dashboard. Track transactions in real time, consolidate data from multiple accounts, and generate insights for smarter decisions. Streamline management and reduce errors with accurate, up-to-date information."
               source="payables"
             />
           </div>
@@ -199,38 +156,53 @@ const seamlessBanking = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Define"
+                    title="Decentralized Payments "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Limits"
+                    title="Virtual Accounts "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="Businesses can define velocity control by defining a limit for the amount to be used and also set approval limits"
+              description="Empower departments with platform-specific debit cards for seamless decentralized payments. EnKash’s virtual accounts simplify payment management, offering branch-level visibility and control. Reduce reliance on central finance teams, boosting efficiency and accountability."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Cashflow Management"
-              description="Enterprises are assured to have a streamlined cash flow as their payables and collections will be in place with receipts captured properly and timely"
+              whiteTitle="Smart Controls"
+              description="Prevent overspending with customizable approval thresholds and velocity controls. EnKash enables businesses to set spending caps and workflows for each department or project, ensuring policy compliance, reducing risk, and enhancing cost control."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Seamless Integration"
-              description="Businesses can easily integrate banking facilities via EnKash without much technical intervention"
+              whiteTitle="Smooth Operations with Better Cashflow"
+              description="Enhance stability by automating payables and collections. EnKash ensures timely invoice processing, payment scheduling, and receipt capturing, streamlining cash flow. Gain better visibility and control to avoid disruptions and maintain financial health."
+              source="payables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Simplify Banking with Effortless Integration"
+              description="Connect EnKash to your banking and financial systems effortlessly. Seamless integration eliminates complex setups, allowing businesses to quickly adopt the solution. Enjoy smooth workflows, reduced manual effort, and increased productivity."
               source="payables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle="Smarter"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -240,21 +212,15 @@ const seamlessBanking = () => {
               <div className="text-center">
                 <div className="text-center d-flex flex-column">
                   <Heading
-                    title={`Experience business banking in a${space}`}
+                    title={`How Business Banking Works ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <div>
                     <Heading
-                      title="digitized way"
+                      title="with EnKash"
                       color="rainy-blue"
-                      size="h1"
-                      weight="6"
-                    />
-                    <Heading
-                      title={`${space}with EnKash`}
-                      color="white"
                       size="h1"
                       weight="6"
                     />
@@ -268,12 +234,14 @@ const seamlessBanking = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how our Seamless Banking can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -304,6 +272,7 @@ const seamlessBanking = () => {
           source="payables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"

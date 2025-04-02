@@ -1,28 +1,29 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
 import Link from "next/link";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import styles from "./page.module.scss";
+import { space } from "../../../../common/constant";
+import { blogData, carouselData, productData } from "./data";
+import faqData from "./faq-data";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml
+} from "@/components";
+import { Metadata } from "next";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 
 export const metadata: Metadata = generateMetaData({
   title: " Express Pay | Corporate Bulk Payment Solution | EnKash",
@@ -45,48 +46,29 @@ const bulkPayout = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Express Pay"
+              title={`Bulk Payout ${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
           <Heading
-            title={`Fast and secure${space}`}
+            title={`Simplify Bulk Payouts with EnKash${space}`}
             color="white"
             size="h2"
             weight="7"
           />
-
-          <div className="d-inline">
-            <Heading
-              title={`express pay${space}`}
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title={`for all your${space}`}
-              color="white"
-              size="h2"
-              weight="7"
-            />
-          </div>
-
-          <Heading title="business needs" color="white" size="h2" weight="7" />
+          <Heading
+            title={`Express Pay${space}`}
+            color="rainy-blue"
+            size="h2"
+            weight="7"
+          />
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Get auto-reminders and approvals for regularly occurring business expenses like rent, utilities, vendors, and more"
+              title="Streamline your business payouts with EnKash’s Express Pay. Automate payments, save time and gain control over your cash flow."
               color="white"
               size="h6"
               weight="5"
@@ -97,78 +79,39 @@ const bulkPayout = () => {
           >
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=payables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Processing", "Time"],
-              oldWayDescription:
-                "Single payments take longer time  to process since each transaction is processed separately.",
-              newWayDescription:
-                "Multiple payments are processed much faster with a single click.",
-            },
-            {
-              itemArray: ["Type of", "Payment"],
-              oldWayDescription:
-                "Payments are typically used for one-off transactions such as purchases.",
-              newWayDescription:
-                "Solves hassle of recurring payments such as vendor payments, GST, rental and utility.",
-            },
-            {
-              itemArray: ["Flexibility"],
-              oldWayDescription:
-                "Single payments offer lesser flexibility and control over each individual transaction.",
-              newWayDescription:
-                "Bulk payments offer greater flexibility since all payments are in the batch and are processed together.",
-            },
-            {
-              itemArray: [" Vendor", "Relationships"],
-              oldWayDescription:
-                "Businesses fail to build stronger relationships with vendors and suppliers as payments are not timely processed.",
-              newWayDescription:
-                "Businesses build stronger relationships with vendors and suppliers by providing timely or early payments.",
-            },
-            {
-              itemArray: ["Payment", "Tracking"],
-              oldWayDescription:
-                "Since payments are mostly done manually, the chances of loss of payment receipts are very high, making it difficult to track.",
-              newWayDescription:
-                "Bulk payments are easier to track and manage as they are processed as a batch, making it simpler to reconcile accounts and track.",
-            },
-            {
-              itemArray: ["Payables", "Management"],
-              oldWayDescription:
-                "Paying numerous vendor invoices, utility bills, rental bills, or multiple GST challans is a cumbersome process with a risk of errors or missed deadlines.",
-              newWayDescription:
-                "Streamlining payments with a one-click option for all outstanding invoices, bills, rentals, and GST challans simplifies managing company payables, and minimizes errors and potential delays.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Unlock Bulk Payments with EnKash"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Multi-Payment Support",
+              },
+              {
+                icon: stack,
+                text: "Scalable for Growth",
+              },
+              {
+                icon: numberOne,
+                text: "Seamless Experience",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -177,22 +120,20 @@ const bulkPayout = () => {
         <div className="text-center">
           <div className="d-flex flex-column mb-5">
             <div>
-              <Heading title="Streamline" color="black" size="h1" weight="6" />
+              <Heading title="Innovative" color="black" size="h1" weight="6" />
               <Heading
-                title={`${space}bulk processing${space}`}
+                title={`${space}Bulk Payments Solutions${space}`}
                 color="equity-blue"
                 size="h1"
                 weight="6"
               />
-              <Heading title="challenges" color="black" size="h1" weight="6" />
+              <Heading
+                title="for Enterprises"
+                color="black"
+                size="h1"
+                weight="6"
+              />
             </div>
-
-            <Heading
-              title="with EnKash solutions"
-              color="black"
-              size="h1"
-              weight="6"
-            />
           </div>
         </div>
 
@@ -200,8 +141,8 @@ const bulkPayout = () => {
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Repeat Payments"
-                description="Ensure that repeat payments that occur monthly, quarterly, or weekly happen as a matter of course. This way, your business can enjoy continued services and facilities with minimal manual dependencies"
+                whiteTitle="Save Time and Boost Efficiency"
+                description="Automate recurring and bulk payments with EnKash to optimize cash flow, reduce manual tasks, ensure timely transactions, and eliminate errors, all through a centralized system that integrates seamlessly with your existing tools."
                 source="payables"
               />
             </div>
@@ -210,7 +151,7 @@ const bulkPayout = () => {
                 titleHtml={
                   <>
                     <Heading
-                      title="Processing Time"
+                      title="Enhance Vendor Relationships"
                       color="rainy-blue"
                       size="h2"
                       weight="6"
@@ -218,32 +159,54 @@ const bulkPayout = () => {
                   </>
                 }
                 source="payables"
-                description="Processing payments individually can be time-consuming and can cause delays. By using express pay, you can reduce payment processing time and improve cash flow"
+                description="Build trust with vendors through on-time payments, foster stronger partnerships, and resolve payment queries quickly using a reliable, transparent payment system."
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Centralized System"
-                description="By centralizing payment processing through a express pay system, you can have better visibility and control over processes to prevent errors"
+                whiteTitle="Strengthen Financial Control"
+                description="Gain real-time visibility into transactions, monitor payment statuses, generate detailed reports, and ensure compliance with customizable approval workflows tailored to your organization’s needs."
                 source="payables"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Automate Reminders"
-                description="Enable an automated reminder engine to keep track of all your outstanding business payments"
+                whiteTitle="Improve Cash Flow Management"
+                description="Streamline operations with faster processing times. Efficiently manage recurring expenses like rent, utilities, and vendor payments to enhance cash flow and maintain operational stability."
                 source="payables"
               />
             </div>
             <div className="mb-2 mb-md-0 me-3">
               <GetStartedCard
-                whiteTitle="Checks and Approvals"
-                description="Finance is all about timely payments with the right checks and approvals to ensure negligible misuse of funds. The process of express pay for your recurring payments ensures speed and efficiency"
+                whiteTitle="Seamless Integrations"
+                description="Connect EnKash Express Pay with your ERP, accounting software, or HRMS to simplify workflows and eliminate data silos. Enhance productivity with a fully integrated payment solution."
+                source="payables"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Secure and Reliable Platform"
+                description="Protect your business with robust fraud detection, data encryption, and multi-layered access controls. Rely on industry-leading uptime and performance for seamless, uninterrupted operations"
+                source="payables"
+              />
+            </div>
+            <div className="mb-2 mb-md-0 me-3">
+              <GetStartedCard
+                whiteTitle="Customizable Solutions for Your Needs"
+                description="Tailor the platform to your business needs, from approval hierarchies to payment scheduling. EnKash Express Pay offers unmatched flexibility"
                 source="payables"
               />
             </div>
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle="Smarter"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -252,14 +215,14 @@ const bulkPayout = () => {
             <>
               <div className="text-center">
                 <Heading
-                  title={`Simplify your business payouts with our${space}`}
+                  title={`How To Get Started with EnKash Express Pay for ${space}`}
                   color="white"
                   size="h1"
                   weight="6"
                 />
                 <div>
                   <Heading
-                    title={`bulk processing solution${space}`}
+                    title={`Bulk Payouts${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -273,12 +236,14 @@ const bulkPayout = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how express pay can revolutionize the way you work!"
+          title="Learn how Bulk Payouts could revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

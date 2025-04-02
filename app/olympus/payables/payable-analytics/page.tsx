@@ -1,27 +1,32 @@
+import React from "react";
 import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { banner, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
-import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import Footer from "@/components/footer/footer";
 import Link from "next/link";
+import styles from "./page.module.scss";
+import { space } from "../../../../common/constant";
+import { blogData, carouselData, productData } from "./data";
+import faqData from "./faq-data";
+import { banner, caraouselBg, faqBg } from ".";
+import { Metadata } from "next";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml
+} from "@/components";
 import generateMetaData from "@/common/utils/metaData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Payable Analytics Automation Solution for Business - EnKash",
@@ -33,68 +38,49 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const payableAnalytics = () => {
+const PayableAnalytics = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="payables" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Payable Analytics"
+              title={`Account Payables Insights${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
           <div className="d-flex flex-column">
             <Heading
-              title="Access, manage and"
+              title="Access, Manage,"
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="utilize data with payable"
+              title="and Utilize Data with"
               color="white"
               size="h2"
               weight="7"
             />
             <div>
               <Heading
-                title="analytics for"
-                color="white"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title={`${space}better`}
+                title="Payable Analytics"
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
             </div>
-
-            <Heading
-              title="business outcomes"
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Identify unnecessary costs, stay on top of your cash flows, and improve vendor relationships"
+              title="Gain full visibility into your account payables. Identify cost-saving opportunities, enhance cash flow management, and foster better vendor relationships—all in one centralized platform."
               color="white"
               size="h6"
               weight="5"
@@ -103,64 +89,39 @@ const payableAnalytics = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=payables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={banner} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Improved", "Cash Flow"],
-              oldWayDescription:
-                "The traditional way does not provide data that can allow better vendor management and facilitate cash flow.",
-              newWayDescription:
-                "The insights from the analytics allow better vendor management and negotiations enabling reduction in costs and improved cash flow.",
-            },
-            {
-              itemArray: ["Better", "Decision-Making "],
-              oldWayDescription:
-                "The conventional way of data management is scattered and not available in real-time which delays decision-making.",
-              newWayDescription:
-                "Businesses have complete access to accounts payable data including payments to be made and due. This allows them to make informed business decisions.",
-            },
-            {
-              itemArray: ["Transparency", "& Control"],
-              oldWayDescription:
-                "There is data overlapping and mismanagement traditionally with no transparency.",
-              newWayDescription:
-                "The payable analytics dashboard provides complete transparency and control to the team members for insights.",
-            },
-            {
-              itemArray: ["Business", "Advancement"],
-              oldWayDescription:
-                "The inefficient nature of data doesn’t allow businesses to decide in real-time which can facilitate business improvement.",
-              newWayDescription:
-                "Businesses can improve their processes like approval workflow and turnaround time using data from analytics.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Optimize Your Account Payables and Cash Flow with EnKash Analytics"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Actionable Insights",
+              },
+              {
+                icon: stack,
+                text: "Trend Analysis",
+              },
+              {
+                icon: numberOne,
+                text: "Enhanced Control",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -168,13 +129,13 @@ const payableAnalytics = () => {
       >
         <div className="d-flex flex-column text-center mb-2">
           <Heading
-            title="Gain extensive insights for"
+            title="Turn Payable Data into"
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title="business improvement"
+            title="Actionable Insights"
             color="equity-blue"
             size="h1"
             weight="6"
@@ -185,33 +146,48 @@ const payableAnalytics = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Complete Control"
-              description="Businesses can have complete control over accounts payable data including vendor payments, utility payments, and other payments made across different categories. This data helps bring efficiency to business processes"
+              whiteTitle="Gain Extensive Business Insights"
+              description="Unlock insights from accounts payable data to identify payment trends, save costs, and improve cash flow. Strengthen vendor relationships, align spending with goals, and enhance decision-making to drive better financial performance for your business."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Invoice Management"
-              description="Businesses can use data extracted from payable analytics to manage invoices by streamlining their processes, identifying payment patterns, and optimizing their approval workflows"
+              whiteTitle="Invoice Management  Made Easy"
+              description="Streamline invoice approvals and payments with data-driven insights. Analyze trends, identify bottlenecks, and optimize workflows to ensure timely approvals, reduce errors, and enhance efficiency, making your accounts payable processes seamless and reliable."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Real-time Data Accessibility"
-              description="Know business data related to cash in hand, payments due and made in real-time, and use it optimally like making early payments and availing trade discounts"
+              description="Access real-time financial updates, including cash, payments, and transaction history. Use this data to avoid missed deadlines, seize early payment discounts, and keep accurate records, enabling smarter, faster financial decisions."
               source="payables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Better Negotiation"
-              description="With data in hand, businesses can compare data in real time across different branches/ departments and projects and use it for better negotiations with vendors"
+              whiteTitle="Advanced Vendor Negotiations"
+              description="Leverage comparative data across departments, projects, or locations to secure better payment terms, cut costs, and strengthen vendor partnerships. Gain enhanced negotiation power for a competitive edge and improved financial outcomes."
+              source="payables"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              whiteTitle="Complete Control Over Payments"
+              description="Centralize accounts payable on one intuitive dashboard to track vendor payments, utility bills, and transactions effortlessly. Gain visibility and control, eliminate inefficiencies, and focus on strategic growth initiatives with optimized financial processes."
               source="payables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle="Smarter"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -221,20 +197,20 @@ const payableAnalytics = () => {
               <div className="text-center">
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Know business payments in detail for"
+                    title="How to Get Insights"
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <div>
                     <Heading
-                      title="better"
+                      title="into Your"
                       color="white"
                       size="h1"
                       weight="6"
                     />
                     <Heading
-                      title={`${space}cash flow management`}
+                      title={`${space} Account Payables`}
                       color="rainy-blue"
                       size="h1"
                       weight="6"
@@ -373,4 +349,4 @@ const payableAnalytics = () => {
   );
 };
 
-export default payableAnalytics;
+export default PayableAnalytics;

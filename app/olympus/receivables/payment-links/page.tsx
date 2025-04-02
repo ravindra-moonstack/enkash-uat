@@ -1,27 +1,30 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../../common/constant";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { space } from "../../../../common/constant";
+import { blogData, carouselData, productData } from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import Header from "@/components/header/header";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -34,61 +37,48 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const paymentLinks = () => {
+const PaymentLinks = () => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/olympus/receivables/payment-links/`}
         faqData={faqData}
       />
+
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
-            <div>
-              <Heading
-                title="Payment Links"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
+            <Heading
+              title={`Payment Links`}
+              color="rainy-blue"
+              size="h4"
+              weight="7"
+            />
           </div>
 
-          <div className="d-flex flex-column">
+          <div className="">
             <Heading
-              title="Pace up your collection"
+              title="Accept Payments Instantly with EnKash"
+              color="white"
+              size="h2"
+              weight="7"
+            />
+
+            <Heading
+              title={`  Payment Links`}
               color="rainy-blue"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading
-                title={`process${space}`}
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading
-                title="with EnKash’s payment links"
-                color="white"
-                size="h2"
-                weight="7"
-              />
-            </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Quicken the collection process with embedded payment links in invoices. Build stronger relationships with your customers and improve your DSO"
+              title="Create payment link effortlessly—no website or app needed. Share via SMS, WhatsApp, email, or social media, and accept payments through 100+ methods - no coding required."
               color="white"
               size="h6"
               weight="5"
@@ -97,95 +87,66 @@ const paymentLinks = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com/payment-gateway"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="Simplify Payments, Amplify Business"
+            steps={[
+              {
+                icon: userPlus,
+                text: "100+ Payment Options",
+              },
+              {
+                icon: stack,
+                text: "Instant Activation",
+              },
+              {
+                icon: numberOne,
+                text: "Real-time Monitoring",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Payment", "Process"],
-              oldWayDescription:
-                "Without a payment link, customers had to manually enter transaction details to make a payment, which is prone to errors and delays.",
-              newWayDescription:
-                "Payment links provide a quick and easy way for customers to make payments. They can simply click on the link and enter their details to complete the payment.",
-            },
-            {
-              itemArray: ["Security"],
-              oldWayDescription:
-                "Traditional methods lack the secure framework needed for payments; increasing the risk of data breaches.",
-              newWayDescription:
-                "Payment links offer more security than traditional payment methods. Our payment links use encryption and other security measures to protect payment information.",
-            },
-            {
-              itemArray: ["Payment", "Tracking"],
-              oldWayDescription:
-                "Manually tracking customer payments is time-consuming.",
-              newWayDescription:
-                "Payment links from EnKash provide businesses with better tracking and record-keeping capabilities.",
-            },
-            {
-              itemArray: ["Customer", "Experience"],
-              oldWayDescription:
-                "Incessantly following up with customers to make payments without providing them an easy way to do so can cause friction between the customer and your business.",
-              newWayDescription:
-                "Payment links improve the overall customer experience by bringing in convenience. This helps businesses build stronger customer relationships, and improve DSO.",
-            },
-            {
-              itemArray: ["Cash Flow", "Optimization"],
-              oldWayDescription:
-                "Traditional banking methods require much processing time, hindering your business’s cash flow even if the payment is made on time.",
-              newWayDescription:
-                "Payment links can help businesses improve their cash flow by reducing the time it takes to receive payments.",
-            },
-          ]}
-        />
-      </div>
+      <div
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
+      ></div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-flex flex-column align-items-center mb-5">
-          <div className="text-center">
-            <Heading
-              title={`Enable payment links${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title="in your invoices for"
-              color="black"
-              size="h1"
-              weight="6"
-            />
-          </div>
-
+        <div className="d-inline text-center mb-5">
           <Heading
-            title="better collections"
+            title={`Get Paid with a${space}`}
             color="black"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title="Single Link"
+            color="equity-blue"
             size="h1"
             weight="6"
           />
@@ -194,36 +155,36 @@ const paymentLinks = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Quicker Collections"
-              description="Payment links embedded in digital invoices or other forms of communication quicken the collection or payment process"
+              whiteTitle="Quick and Easy Setup"
+              description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Payment Options"
-              description=" Embedded payment links ensure customers have various payment options once they click the embedded payment link"
+              whiteTitle="No Website Integration"
+              description="EnKash Payment Links are perfect for businesses without an online presence. Collect payments via SMS, WhatsApp, email, or social media, eliminating the need for a website or app. This solution bridges the gap between offline and online payment experiences seamlessly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easily Accessible"
-              description="Since invoices are sent online, they can be accessed anywhere, anytime, without hassle"
+              whiteTitle="100+ Payment Options"
+              description="Offer your customers the flexibility to pay using their preferred method, including UPI, net banking, credit/debit cards, wallets, and more. EnKash Payment Links ensure a smooth checkout experience for everyone, boosting customer satisfaction and increasing conversions"
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Simplified Tracking"
-              description="Online payments or collections through payment links create a trail of the entire process, which helps with tracking and analysis"
+              whiteTitle="Real-Time Notifications"
+              description="Stay in the loop with instant alerts for every successful payment. Gain better control and visibility into your transactions, enabling faster decision-making and improved financial management. Receive updates across all devices to keep your operations running smoothly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Improved Cashflow"
-              description="Payment links enable quicker collections and payments so that your business’s cash flow always stays healthy"
+              whiteTitle="Secure Transactions"
+              description="Built on a foundation of PCI DSS compliance and advanced encryption protocols, EnKash Payment Links ensure every transaction is safe and secure. Protect sensitive customer data while providing a trustworthy payment experience, strengthening customer confidence in your business."
               source="receivables"
             />
           </div>
@@ -235,17 +196,14 @@ const paymentLinks = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div>
-                  <Heading
-                    title="Improve your business’s cash flow with"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
-
                 <Heading
-                  title="payment links"
+                  title="How to Create "
+                  color="white"
+                  size="h1"
+                  weight="6"
+                />{" "}
+                <Heading
+                  title={`${space}Payment Link${space}`}
                   color="rainy-blue"
                   size="h1"
                   weight="6"
@@ -253,17 +211,19 @@ const paymentLinks = () => {
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="HOW IT WORKS"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how payment links can revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -287,6 +247,13 @@ const paymentLinks = () => {
         </div>
       </div>
 
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
+      </div>
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
           title="Seeking further understanding of payment links?"
@@ -294,6 +261,7 @@ const paymentLinks = () => {
           source="receivables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -351,9 +319,10 @@ const paymentLinks = () => {
           }
         />
       </div>
+
       <Footer utmSource="receivables" />
     </div>
   );
 };
 
-export default paymentLinks;
+export default PaymentLinks;

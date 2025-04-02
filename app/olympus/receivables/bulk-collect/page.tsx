@@ -1,27 +1,29 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
+import { blogData, carouselData, productData } from "./data";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 
 export const metadata: Metadata = generateMetaData({
   title: "Bulk Collect – Corporate E-Collect and Payment Collection | EnKash",
@@ -44,39 +46,30 @@ const bulkCollect = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
-            <div>
-              <Heading
-                title="Bulk Collect"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
+            <Heading
+              title="Bulk Collect"
+              size="h4"
+              color="rainy-blue"
+              weight="4"
+              useH1TagInHtml={true}
+            />
           </div>
           <Heading
-            title={`No more outstanding${space}`}
+            title={`Take Control of Your Business${space}`}
             color="white"
             size="h2"
             weight="7"
           />
           <div className="d-inline">
             <Heading
-              title={`invoices with${space}`}
+              title={`Collection with EnKash${space}`}
               color="white"
               size="h2"
               weight="7"
             />
           </div>
           <Heading
-            title="bulk collect"
+            title="Bulk Collect"
             color="rainy-blue"
             size="h2"
             weight="7"
@@ -84,7 +77,7 @@ const bulkCollect = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Streamline your business collections with automated payment reminders, bulk invoice dispatch, and efficient monitoring"
+              title="No more outstanding invoices and manual follow-ups. Embrace automation and efficiency with EnKash’s Bulk Payment Collection solution."
               color="white"
               size="h6"
               weight="5"
@@ -93,124 +86,91 @@ const bulkCollect = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com/"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
-          <ThreeSteps />
+          <ThreeSteps
+            title="No More Payment Delays"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Instant",
+              },
+              {
+                icon: stack,
+                text: "Smart",
+              },
+              {
+                icon: numberOne,
+                text: "Secure",
+              },
+            ]}
+          />
         </div>
       </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Collection", "Process"],
-              oldWayDescription:
-                "Manually following up with customers for payments can be tiresome and challenging, often leading to confusion.",
-              newWayDescription:
-                "Automate the bulk collection process by integrating your existing system with EnKash.",
-            },
-            {
-              itemArray: ["Time &", "Effort"],
-              oldWayDescription:
-                "Maintaining collections by hand takes a lot of time and resources, which could be efficiently utilized elsewhere if the procedure were automated.",
-              newWayDescription:
-                "Bulk collect allows businesses to collect multiple payments simultaneously, saving time and effort compared to collecting payments individually.",
-            },
-            {
-              itemArray: ["Reconciliation"],
-              oldWayDescription:
-                "Traditional reconciliation processes require manual entries of every payment the business receives, which is a time-consuming and error-prone process.",
-              newWayDescription:
-                "Simplify the reconciliation process with bulk collect by tracking and consolidating payments, making it easier for businesses to track and manage their finances.",
-            },
-
-            {
-              itemArray: ["Accuracy &", "Speed"],
-              oldWayDescription:
-                "With manual collection, businesses may increase the risk of errors associated with manual payment collection processes, reducing accuracy and increasing the risk of financial losses.",
-              newWayDescription:
-                "With automated bulk collection, businesses can reduce the risk of errors involved in manual collection processes, improving accuracy and reducing the risk of financial losses.",
-            },
-            {
-              itemArray: ["Business Cash", "Flow"],
-              oldWayDescription:
-                "Due to the time taken in manual collection strategies and transaction processing, your business’s cash flow can be hindered if payments are not made on time.",
-              newWayDescription:
-                "Collecting payments in bulk can improve cash flow by reducing the time it takes to receive payments, allowing businesses to allocate funds more efficiently.",
-            },
-          ]}
-        />
-      </div>
+      <div
+        className={`${styles.second_row} row d-flex bg-white row-padding-top-none`}
+      ></div>
 
       <div
-        className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
+        className={`${styles.third_row} row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Fast-track your business collection"
+            title="Why EnKash for Bulk Payment Collection"
             color="black"
             size="h1"
             weight="6"
           />
-          <Heading
-            title={`${space}strategy with future-ready technology`}
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Improved Experience"
-              description="With bulk collection, your team can focus on improving customer experience rather than doing manual follow-ups and other mundane tasks"
+              whiteTitle="Streamlined Payment Reminders"
+              description="Automate payment reminders with EnKash to reduce delays, improve collections, and free up resources for growth. Stay proactive, eliminate manual tracking, and maintain strong customer relationships by never missing a payment reminder."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Simplified Communication"
-              description="The flow of data and information between all stakeholders becomes seamless, simpler, and faster"
+              whiteTitle="Bulk Invoice Distribution"
+              description="Send multiple invoices in one click, reduce errors, and ensure accurate details. Simplify workflows and accelerate cash flow with this smart, efficient invoicing solution."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Process"
-              description="Automate the collection process from end to end. Benefit from bulk reading of accounts, amounts due, and more"
+              whiteTitle="Enhanced Reconciliation Accuracy"
+              description="Track payment collection in real time with EnKash’s advanced tools. Automated reconciliation eliminates discrepancies, saves time, and provides actionable insights for accurate transactions and better decision-making."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Insights and Analytics"
-              description="Plan ahead for any shortfalls in cash flow by analyzing previous data and identifying recurring patterns in slow collections"
-              source="receivables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Better Operations"
-              description="Ease the pressure on your invoicing and collections team with automation and improved bulk invoicing with complete and updated details"
+              whiteTitle="Improved Customer Experience"
+              description="EnKash automates repetitive tasks, enabling your team to focus on customer relationships. Deliver a hassle-free payment experience with prompt notifications and accurate invoices, boosting satisfaction, loyalty, and reputation with an optimized collection process."
               source="receivables"
             />
           </div>
@@ -224,27 +184,19 @@ const bulkCollect = () => {
               <div className="text-center">
                 <div className="text-center d-inline flex-column">
                   <Heading
-                    title={`Business${space}`}
+                    title={`Business   ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title={`bulk collections${space}`}
+                    title={`bulk collections  ${space}`}
                     color="rainy-blue"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="made easy"
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
-                <div>
-                  <Heading
-                    title="and efficient"
+                    title="made easy and efficient"
                     color="white"
                     size="h1"
                     weight="6"
@@ -253,17 +205,19 @@ const bulkCollect = () => {
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="How EnKash Bulk Collect Works"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how bulk collect can benefit your business and employees!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -284,6 +238,13 @@ const bulkCollect = () => {
         <div className={styles.faq_bg}>
           <Image src={faqBg} alt="background image" />x
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check Out EnKash’s Other Payment Products and Solutions"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.sixth_row} row`}>

@@ -1,27 +1,28 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
+import { blogData, productData, carouselData } from "./data";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
+import { bannerLottie, caraouselBg, faqBg } from ".";
 import { Metadata } from "next";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+} from "@/components";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 
 export const metadata: Metadata = generateMetaData({
   title: "GST Payment - GST Bill Payment Online for Businesses | EnKash",
@@ -46,31 +47,26 @@ const taxPayments = () => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`Olympus |${space}`}
+                title={`GST Challan Payment${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <Heading
-              title="GST Payments"
-              size="h4"
-              weight="4"
-              useH1TagInHtml={true}
-            />
           </div>
 
           <div className="">
             <div className="d-flex flex-wrap">
               <Heading
-                title={`Make GST payments with complete${space}`}
+                title={`Pay Your ${space}`}
                 color="white"
                 size="h2"
                 weight="7"
               />
+              <Heading title="GST" color="rainy-blue" size="h2" weight="7" />
               <Heading
-                title="visibility and approvals"
-                color="rainy-blue"
+                title={`On Time with Confidence `}
+                color="white"
                 size="h2"
                 weight="7"
               />
@@ -79,7 +75,7 @@ const taxPayments = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Enable quicker GST challan payment on time every time with an optimized process and easy approvals via EnKash"
+              title="Make sure every GST challan payment is completed on time, with a reliable process that offers you full control and clear visibility at every step."
               color="white"
               size="h6"
               weight="5"
@@ -88,64 +84,39 @@ const taxPayments = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="GST Calculator"
+                title="Get Started"
                 theme="blue"
-                url="/gst-calculator"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Timely", "Payments"],
-              oldWayDescription:
-                "Traditionally, there was a high chance of missing the payment deadline as there was no way to get reminders on time.",
-              newWayDescription:
-                "Set a reminder for tax payments to make sure it is paid on time.",
-            },
-            {
-              itemArray: ["Approval", "Process"],
-              oldWayDescription:
-                "Manually prepare paperwork to get approval from the concerned person, often leading to late payment.",
-              newWayDescription:
-                "Customize maker checker approver as per your organization’s needs and get payment approvals in no time.",
-            },
-            {
-              itemArray: ["Payment", "Method"],
-              oldWayDescription:
-                "Earlier businesses had to use their working capital or arrange funds externally to make the payment.",
-              newWayDescription:
-                "With EnKash, make GST payments using flexible payment methods",
-            },
-            {
-              itemArray: ["Record", "Keeping"],
-              oldWayDescription:
-                "Traditionally, businesses had to maintain a stack of paper-based GST payment receipts, making auditing and reconciliation difficult.",
-              newWayDescription:
-                "Easily view all your previous GST payment receipts in a single dashboard, making it easy to audit and reconcile.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Online GST Payment Simplified"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Timely Payments",
+              },
+              {
+                icon: stack,
+                text: "Secure Transactions",
+              },
+              {
+                icon: numberOne,
+                text: "Compliance Adherence",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -153,18 +124,23 @@ const taxPayments = () => {
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Leverage EnKash for"
+            title="Reduce errors, avoid delays, and keep your records in order with "
+            color="equity-blue"
+            size="h1"
+            weight="6"
+          />
+          <Heading
+            title={`${space}EnKash for  ${space}`}
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}automatic and easy${space}`}
+            title="GST Payments"
             color="equity-blue"
             size="h1"
             weight="6"
           />
-          <Heading title="GST payments" color="black" size="h1" weight="6" />
         </div>
 
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
@@ -173,13 +149,13 @@ const taxPayments = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Easy"
+                    title="Never Miss a "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Payments"
+                    title="Payment Deadline Again"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -187,13 +163,29 @@ const taxPayments = () => {
                 </div>
               }
               source="payables"
-              description=" Set and manage a simple and intuitive process to ensure that all aspects are checked and payments are quick and easy"
+              description="Stay ahead of GST deadlines with automatic reminders and an intuitive approval flow. Ensure timely payments, avoid last-minute confusion, and reduce the risk of fines and penalties."
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easy Monitoring"
-              description="Benefit from centralized view and control over all GST bill payments across your company on a single platform"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Clear and Concise"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Approval Process"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="EnKash ensures every payment follows a structured approval workflow, validating transactions before approval. This transparent process reduces unauthorized payments and ensures compliance across your organization."
               source="payables"
             />
           </div>
@@ -203,13 +195,13 @@ const taxPayments = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Digital"
+                    title=" Centralized"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Challans"
+                    title="Monitoring"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -217,21 +209,22 @@ const taxPayments = () => {
                 </div>
               }
               source="payables"
-              description="Auto read the challans and convert them into paper records for audits and other purposes"
+              description="Gain complete visibility into your GST payments with a centralized dashboard. Track payments, approval statuses, and records from one location, simplifying tax management and providing a clear overview of your liabilities."
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Approval"
+                    title="Audit-Ready"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Flow"
+                    title="Records"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -239,8 +232,7 @@ const taxPayments = () => {
                 </div>
               }
               source="payables"
-              description="Ensure checks and approvals are in place for valid spending, the proper audit trail, and close books quickly. This will help you 
-              prevent errors, unauthorized payments and reduce the risk of fraud"
+              description="EnKash automatically converts GST challans into organized digital records, keeping you audit-ready at all times. With a clear digital trail, avoid paper records and reduce audit time for a more efficient process."
             />
           </div>
         </div>
@@ -251,16 +243,22 @@ const taxPayments = () => {
           titleContent={
             <>
               <div className="text-center">
-                <div className="text-center d-flex flex-column">
+                <div className="text-center d-inline">
                   <Heading
-                    title={`Paying GST has never been this${space}`}
+                    title={`Paying ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="easy and convenient"
+                    title="GST Challans "
                     color="rainy-blue"
+                    size="h1"
+                    weight="6"
+                  />
+                  <Heading
+                    title={`was Never This Easy ${space}`}
+                    color="white"
                     size="h1"
                     weight="6"
                   />
@@ -273,6 +271,15 @@ const taxPayments = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle="Smarter"
+          data={productData}
+        />
+      </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
@@ -310,6 +317,7 @@ const taxPayments = () => {
           source="payables"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -685,6 +693,7 @@ const taxPayments = () => {
           }
         />
       </div>
+
       <Footer utmSource="payables" />
     </div>
   );

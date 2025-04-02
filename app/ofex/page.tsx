@@ -2,22 +2,30 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { space } from "@/common/constant";
 import styles from "./page.module.scss";
-import blogData from "./blog-data";
+import { blogData, dataSets } from "./data";
 import faqData from "./faq-data";
-import howDoesItWorkData from "./how-does-It-work-data";
-import Heading from "@/components/heading/heading";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import ActionCard from "@/components/action-card/action-card";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import Header from "@/components/header/header";
 import {
   officeImg,
   whiteArrow,
@@ -27,10 +35,7 @@ import {
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
 } from ".";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
 
 export const metadata: Metadata = generateMetaData({
   title: "Automated Expense Management Software for your Business- EnKash",
@@ -51,19 +56,29 @@ const OfEx = () => {
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="O" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="fEx" size="h1" weight="7" />
+            <Heading
+              title="Expense Management"
+              color="rainy-blue"
+              size="h1"
+              weight="7"
+            />
           </div>
           <div className="d-inline">
             <Heading
-              title="Improve business expense management "
-              color="rainy-blue"
+              title="Improve "
+              color="white"
               size="h2"
               weight="7"
               useH1TagInHtml={true}
             />
             <Heading
-              title="with advanced technology"
+              title={`${space} expense management`}
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="with advanced AI and ML-powered technology."
               color="white"
               size="h2"
               weight="7"
@@ -71,7 +86,7 @@ const OfEx = () => {
           </div>
           <div className="mt-4 mobile-only">
             <Heading
-              title="Get a detailed analysis of where, when, and how your business is spending, and automate the expense management process for your business"
+              title="Get a detailed analysis of where, when, and how your business is spending, and automate the expense management process for your business."
               color="white"
               size="h6"
               weight="5"
@@ -88,16 +103,16 @@ const OfEx = () => {
 
           <div className="my-5">
             <PrimaryButton
-              title="EnKash Now"
+              title="Talk to Sales"
               theme="blue"
               url="/sales/?source=expense_management"
             />
             <span className="mx-2"></span>
             <SecondryButton
-              title="Get Free Demo"
+              title="Sign Up"
               actionImage={whiteArrow}
               iconSize={15}
-              url="/sales/?source=expense_management"
+              url="/login"
             />
           </div>
         </div>
@@ -110,9 +125,11 @@ const OfEx = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.second_row} bg-white row d-flex`}>
-        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={officeImg} />
+        <HowDoesItWork dataSets={dataSets} bannerImage={officeImg} />
       </div>
+
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
@@ -225,15 +242,15 @@ const OfEx = () => {
       <div className="row bg-white row-padding">
         <div className="d-flex flex-column align-items-center justify-content-center">
           <Heading
-            title={`Unlock the power of streamlined${space}`}
+            title={`EnKash ${space}`}
             size="h1"
-            color="black"
+            color="equity-blue"
             weight="6"
           />
           <Heading
-            title={`expense management${space}`}
+            title={`does the heavy lifting for you.${space}`}
             size="h1"
-            color="equity-blue"
+            color="black"
             weight="6"
           />
         </div>
@@ -288,17 +305,29 @@ const OfEx = () => {
               <Heading title="Visibility" size="h5" color="white" weight="7" />
             </div>
           </div>
+          <div className="mb-4 text-md-center">
+            <Image
+              src={heavyLiftingIconOne}
+              alt="coins icon"
+              className="mb-4"
+            />
+            <div className="d-flex flex-column">
+              <Heading title="Spend" size="h5" color="white" weight="7" />
+              <Heading title="Control" size="h5" color="white" weight="7" />
+            </div>
+          </div>
         </div>
       </div>
+
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
             {
               itemArray: ["Expense", "Reporting"],
               oldWayDescription:
-                "Traditional expense reporting was paper-based and managing it consumed a lot of manhours, leading to discrepancy in data",
+                "Manual expense reporting is time-consuming and prone to errors ",
               newWayDescription:
-                "EnKash’s OfEx platform automates the expense recording, leading to zero errors.",
+                "EnKash’s expense management platform automates expense recording, leading to zero errors ",
             },
             {
               itemArray: ["Operational", "Efficiency"],
@@ -326,7 +355,7 @@ const OfEx = () => {
               oldWayDescription:
                 "The old reimbursement processes required form filling, paperwork, and proof of expenditures as receipts, causing delays in reimbursements.",
               newWayDescription:
-                "EnKash’s OfEx drop receipts feature  enables you and your employees to capture and submit expenses on the go from anywhere easily.",
+                "EnKash’s drop receipts feature  enables you and your employees to capture and submit expenses on the go from anywhere easily.",
             },
           ]}
         />
@@ -404,7 +433,7 @@ const OfEx = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Credit Card Integration"
+              whiteTitle="Corporate credit card integration"
               description="Seamless integration with corporate credit cards, enabling businesses to track and manage credit card expenses"
               ctaColor="blue"
               source="expense_management"
@@ -412,7 +441,7 @@ const OfEx = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="HRMS and ERP Integration"
+              whiteTitle="Integration with HRMS, accounting, and ERP systems"
               description="Seamless Integration with HRMS, accounting softwares like Zoho, Tally, Quickbooks, and ERP Systems- SAP and Oracle Netsuite, for automated data exchange and elimination of manual data entry and reconciliation"
               ctaColor="blue"
               source="expense_management"
@@ -420,7 +449,7 @@ const OfEx = () => {
           </div>
           <div className="me-4">
             <GetStartedCard
-              whiteTitle="Custom Reporting"
+              whiteTitle="Robust business intelligence and custom reporting"
               description="Rich business intelligence for custom reports, insights dashboard, and expense analytics for informed decision-making"
               ctaColor="blue"
               source="expense_management"

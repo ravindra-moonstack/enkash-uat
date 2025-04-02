@@ -1,26 +1,27 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
+import styles from "./page.module.scss";
+import { space } from "../../../common/constant";
+import { blogData, carouselData } from "./data";
+import faqData from "./faq-data";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import generateMetaData from "@/common/utils/metaData";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Reimbursement - Business & Travel  - EnKash",
@@ -32,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const reimbursement = () => {
+const Reimbursement = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -56,27 +57,27 @@ const reimbursement = () => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Simplify expense${space}`}
-              color="white"
+              title={`Reimburse Expenses ${space}`}
+              color="rainy-blue"
               size="h2"
               weight="7"
             />
             <Heading
-              title={`management with${space}`}
+              title={`Faster than Your ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <div>
               <Heading
-                title="hassle-free "
+                title="Next Business"
                 color="white"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title="reimbursements"
-                color="rainy-blue"
+                title="Meeting Wraps Up!"
+                color="white"
                 size="h2"
                 weight="7"
               />
@@ -85,7 +86,7 @@ const reimbursement = () => {
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Maximize productivity within your organization with a straightforward reimbursement system that helps you track, process, and sync data in real-time"
+              title="A hassle-free instant reimbursement system to track, process and sync data in real time."
               color="white"
               size="h6"
               weight="5"
@@ -109,56 +110,16 @@ const reimbursement = () => {
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
           <ThreeSteps />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Manual", "Process"],
-              oldWayDescription:
-                "Manual procedures are time-consuming for everyone involved. Employees fill out paper forms, attach receipts, and submit to their managers for approval. Then, the finance team takes action.",
-              newWayDescription:
-                "Leverage smart tools, such as OCR technology and approval matrices, to automate the reimbursement process and save time and money across the business.",
-            },
-            {
-              itemArray: ["Timelines"],
-              oldWayDescription:
-                "Manual processes can cause delays in reimbursing employees, which can be demotivating and might create cash flow issues.",
-              newWayDescription:
-                "Pre-loaded corporate cards and automated approval flows ensure that employees don’t have to pay out of their pocket and reduce the workload on your finance team.",
-            },
-            {
-              itemArray: ["Spend", "Visibility"],
-              oldWayDescription:
-                "Without automated systems, businesses have limited visibility of their reimbursement processes.",
-              newWayDescription:
-                "EnKash’s automated reimbursement system tracks expenses and monitors business spends for you.",
-            },
-            {
-              itemArray: ["Tax", "Compliance"],
-              oldWayDescription:
-                "Manually tracking expenses and ensuring they comply with tax laws is time-consuming and error-prone.",
-              newWayDescription:
-                "Audit and tax compliance become effortless with real-time and automatic data entries.",
-            },
-            {
-              itemArray: ["Budgets &", "Policies"],
-              oldWayDescription:
-                "Enforcing reimbursement policies manually across an organization can cause compliance issues and unnecessary friction among teams.",
-              newWayDescription:
-                "Automated online reimbursement policies provide clarity to everyone involved, from the finance team to managers and their employees.",
-            },
-          ]}
-        />
       </div>
 
       <div
@@ -187,11 +148,12 @@ const reimbursement = () => {
             weight="6"
           />
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="Automated Processes"
-              description="A digitized end-to-end solution automates checking, approvals, invoice generation, and submission to ensure speed and accuracy"
+              description="Reimburse expenses using a digitized end-to-end solution that automates checking, approvals, invoice generation, and submission to ensure speed and accuracy."
               source="expense_management"
             />
           </div>
@@ -213,12 +175,6 @@ const reimbursement = () => {
             <GetStartedCard
               titleHtml={
                 <div className="d-flex flex-column">
-                  <Heading
-                    title="Deviation"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
                   <Heading
                     title="Alerts"
                     color="rainy-blue"
@@ -290,12 +246,14 @@ const reimbursement = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how reimbursements can benefit your business and employees!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -326,6 +284,7 @@ const reimbursement = () => {
           source="expense_management"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -450,9 +409,10 @@ const reimbursement = () => {
           }
         />
       </div>
+
       <Footer utmSource="expense_management" />
     </div>
   );
 };
 
-export default reimbursement;
+export default Reimbursement;

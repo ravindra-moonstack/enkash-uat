@@ -1,4 +1,6 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+
+const faqData: FAQProps[] = [
   {
     question:
       "How EnKash's channel incentive platform is different from others?",
@@ -59,5 +61,4 @@ const faqData = [
     ],
   },
 ];
-
 export default faqData;

@@ -1,31 +1,31 @@
 export const motherProducts = [
   {
-    name: "Receivables",
-    description: "Get paid faster with customized PG solutions",
+    name: "Collect Payments",
+    description: "Fastest & secure payment gateway offerings",
     link: "/olympus/receivables",
   },
   {
-    name: "Payables",
+    name: "Make Payments",
     description: "Manage all types of business payments",
     link: "/olympus/payables",
   },
   {
-    name: "Corporate Cards",
+    name: "Cards",
     description: "Flexible credit & prepaid card solutions",
     link: "/corporate-cards",
   },
   {
-    name: "Expense Management",
+    name: "Expenses",
     description: "Digitize employee spends & reimbursements",
     link: "/ofex",
   },
   {
-    name: "Brand Vouchers",
+    name: "Vouchers",
     description: "Shop smart and unlock exclusive savings",
     link: "/bolt",
   },
   {
-    name: "Loyalty Lounge",
+    name: "Rewards",
     description: "Build exciting rewards, incentives & offers",
     link: "/loyalty-lounge",
   },

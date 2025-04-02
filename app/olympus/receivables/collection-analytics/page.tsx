@@ -1,26 +1,30 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import carouselData from "./carousel-data";
+import { faqData, secondFaqData } from "./faq-data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import {blogData, productData, carouselData} from "./data";
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -45,121 +49,96 @@ const collectionAnalytics = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
-            <div>
-              <Heading
-                title="Collection Analytics"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
+            <Heading
+              title={`Collection Analytics${space}`}
+              color="rainy-blue"
+              size="h4"
+              weight="7"
+            />
           </div>
+
           <div className="d-flex flex-column">
             <Heading
-              title="Unlock the power of"
+              title="Leverage data to "
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={`boost decision-making with ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
             <div>
               <Heading
-                title={`data and${space}`}
-                color="white"
+                title=" Collection "
+                color="rainy-blue"
                 size="h2"
                 weight="7"
               />
               <Heading
-                title="enhance"
+                title="Analytics"
                 color="rainy-blue"
                 size="h2"
                 weight="7"
               />
             </div>
-
-            <Heading
-              title="decision-making"
-              color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Effortlessly analyze and enhance your collection process with our smart analytics. Gain valuable insights and streamline your operations for optimal efficiency"
+              title="Gain valuable insights with our smart analytics and streamline operations for optimal efficiency."
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
             </div>
+
             <div>
               <SecondryButton
-                title="Get Free Demo"
+                title="API Documentation"
                 actionImage={whiteArrow}
                 iconSize={15}
-                url="/sales/?source=receivables"
+                url="https://docs.enkash.com"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Data", "Collection"],
-              oldWayDescription:
-                "Earlier, companies hired people for manual data entry, introducing errors and delays. This method heavily depended on spreadsheets and disconnected systems, causing inefficiencies in data management.",
-              newWayDescription:
-                "EnKash automates the entire data collection process by pulling real-time data directly from the dashboard, reducing manual errors, and collating all the data in a centralized system, simplifying analysis and reporting.",
-            },
-            {
-              itemArray: ["Accessibility"],
-              oldWayDescription:
-                "Limited access to AR data, typically restricted to finance teams, which caused delays in communication and collaboration.",
-              newWayDescription:
-                "With EnKash, you can grant role-based access to a user-friendly dashboard, enabling cross-functional teams like finance, sales, and operations teams to readily access relevant AR information for a 360° view.",
-            },
-            {
-              itemArray: ["DSO", "Management"],
-              oldWayDescription:
-                "Earlier, DSO management was often a challenging task due to the lack of real-time data and manual processes. This resulted in delayed identification of overdue payments and hindered the optimization of cash flow.",
-              newWayDescription:
-                "Get up-to-the-minute tracking of payment statuses, and implement proactive strategies for reducing DSO. By leveraging real-time insights, EnKash enables organizations to maintain a healthier cash flow position.",
-            },
-            {
-              itemArray: ["Real-Time", "Insights"],
-              oldWayDescription:
-                "In the traditional way there was no way to get real-time visibility into accounts receivable performance. Also, it was very difficult to track payment status and identify potential issues.",
-              newWayDescription:
-                "With EnKash, businesses can get access to a comprehensive dashboard that provides real-time insights into AR metrics, ultimately enabling proactive collection management and quick identification of discrepancies for faster resolutions.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Enhance Collection Process Using Data"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Data Tracking ",
+              },
+              {
+                icon: stack,
+                text: "Performance Insights",
+              },
+              {
+                icon: numberOne,
+                text: "Visual Dashboards",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -167,13 +146,13 @@ const collectionAnalytics = () => {
       >
         <div className="d-flex flex-column text-center mb-5">
           <Heading
-            title="Streamline your collection process with"
+            title="Optimize Recovery and "
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}smart analytics`}
+            title={`${space}Boost Cash Flow`}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -183,15 +162,16 @@ const collectionAnalytics = () => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Customizable Dashboards"
-              description="Tailor your collection analytics dashboard to show reports on the basis of week, month, or custom date range, ensuring relevance and clarity"
+              whiteTitle="Tailored Dashboards"
+              description="Customize your collection analytics dashboard to get reports on the basis of week, month, or custom date range, ensuring relevance and clarity."
               source="receivables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Visibility And Monitoring"
-              description="Effortlessly track your collection process with complete visibility by monitoring invoice status, outstanding amounts, total collections, and overdue payments for prompt follow-ups"
+              whiteTitle="Effortless Visibility And Monitoring"
+              description="Track the collection process with complete visibility by monitoring invoice status, outstanding amounts, total collections, and overdue payments for prompt follow-ups."
               source="receivables"
             />
           </div>
@@ -200,9 +180,10 @@ const collectionAnalytics = () => {
             <GetStartedCard
               whiteTitle="Automated Reporting"
               source="receivables"
-              description="Receive comprehensive downloadable reports automatically, eliminating the need for manual compilation and reducing the risk of errors"
+              description="Access comprehensive downloadable reports automatically, eliminating the need for manual compilation and reducing the risk of errors."
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
@@ -226,6 +207,14 @@ const collectionAnalytics = () => {
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check out other payment products at"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -255,21 +244,23 @@ const collectionAnalytics = () => {
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how virtual accounts can revolutionize the way you work!"
+          title="Learn how our collection analytics can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
+
       <div
-        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white pb-0`}
       >
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about collection analytics in detail"
+            title="Don't worry! Our FAQs section will help you learn about instant settlements in detail"
             color="black"
             size="h4"
           />
@@ -277,6 +268,29 @@ const collectionAnalytics = () => {
 
         <div>
           <FAQHtml faqData={faqData} />
+        </div>
+      </div>
+
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none  bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding about e-NACH? Explore the Comprehensive Guide."
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="The automated process of collecting funds from customers regularly for monthly subscriptions, loan repayments, utility bills, and insurance premiums with electronic authorization is e-NACH. It helps streamline the payment process by eliminating human interaction and reducing errors, promising timely collections."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
         </div>
 
         <div className={styles.faq_bg}>

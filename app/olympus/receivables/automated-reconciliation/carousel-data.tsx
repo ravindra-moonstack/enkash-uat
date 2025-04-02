@@ -6,27 +6,24 @@ import iconFour from "./img/icon-four.svg";
 const carouselData = [
   {
     image: iconOne,
-    alt: "Login to EnKash or register",
+    alt: "Connect bank accounts, payment gateways, and other financial systems with EnKash.",
     title:
-      "Achieve 100% invoice reconciliation by adopting smarter payments and collections",
+      "Connect bank accounts, payment gateways, and other financial systems with EnKash.",
+    heading: "Integrate Payment Sources: ",
   },
   {
     image: iconTwo,
-    alt: "Issue meal cards to employees",
+    alt: "Define rules to match transactions, invoices, and payments automatically based on your business needs.",
     title:
-      "Speed up your reconciliation process with the quicker matching of the cash inflows and outflows in real-time",
+      "Define rules to match transactions, invoices, and payments automatically based on your business needs.",
+    heading: "Customize Reconciliation Rules: ",
   },
   {
     image: iconThree,
-    alt: "Notify employees via SMS/email about card activation",
+    alt: "Allow EnKash to automatically match and reconcile transactions, while generating detailed reports for your review",
     title:
-      "Get insights into cash flow and ensure that there are minimal disruptions in financial operations",
-  },
-  {
-    image: iconFour,
-    alt: "Employees must complete KYC to activate their meal cards",
-    title:
-      "Effortlessly improve your ability to meet audit and compliance queries quickly",
+      "Allow EnKash to automatically match and reconcile transactions, while generating detailed reports for your review",
+    heading: "Review & Reconcile: ",
   },
 ];
 

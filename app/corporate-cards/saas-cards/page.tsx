@@ -1,28 +1,30 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
-import BlogWrapper from "@/components/blog/blog-wrapper";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
+import Image from "next/image";
 import Link from "next/link";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
+import styles from "./page.module.scss";
+import { space } from "../../../common/constant";
+import { blogData, carouselData, productData } from "./data";
+import faqData from "./faq-data";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+
 
 export const metadata: Metadata = generateMetaData({
   title: "SaaS Subscription Management Platform - EnKash",
@@ -34,30 +36,23 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 });
 
-const saasCard = () => {
+const SaasCard = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
         url={`https://www.enkash.com/corporate-cards/saas-cards/`}
         faqData={faqData}
       />
+
       <Header utmSource="corporate_cards" />
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Corporate Cards |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="SaaS Cards"
+              title={`SaaS${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
 
@@ -113,37 +108,10 @@ const saasCard = () => {
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
+
         <div className={styles.three_step_container}>
           <ThreeSteps />
         </div>
-      </div>
-
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Subscription", "Management"],
-              oldWayDescription:
-                "Using multiple platforms to track individual SaaS subscription renewal dates can be confusing and amplifies the risk of missed payments.",
-              newWayDescription:
-                "Manage and pay for all your SaaS subscriptions on a unified platform, from renewal to expenditure.",
-            },
-            {
-              itemArray: ["Billing &", "Invoicing"],
-              oldWayDescription:
-                "Manual billing & invoicing can amplify the risk of missed payments and put an extra burden on your finance teams.",
-              newWayDescription:
-                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing, overlapping, or canceling underutilized subscriptions.",
-            },
-            {
-              itemArray: ["Utility", "Analysis"],
-              oldWayDescription:
-                "Difficult to understand whether you are getting the most out of your SaaS subscription.",
-              newWayDescription:
-                "It helps you develop optimization strategies based on insightful data to reduce costs by right-sizing, overlapping, or canceling underutilized subscriptions.",
-            },
-          ]}
-        />
       </div>
 
       <div
@@ -168,6 +136,7 @@ const saasCard = () => {
             </div>
           </div>
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
@@ -197,6 +166,7 @@ const saasCard = () => {
               source="corporate_cards"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
@@ -255,12 +225,14 @@ const saasCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how SaaS cards can benefit your business and employees!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >
@@ -291,6 +263,7 @@ const saasCard = () => {
           source="corporate_cards"
         />
       </div>
+
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -444,4 +417,4 @@ const saasCard = () => {
   );
 };
 
-export default saasCard;
+export default SaasCard;

@@ -67,5 +67,11 @@ export { default as relianceRetail } from "./img/reliance-retail-logo.png";
 export { default as dtdcLogo } from "./img/dtdc-logo.png";
 export { default as starBucksLogo } from "./img/starbucks-logo.svg";
 export { default as auBankLogo } from "./img/au-bank-logo.png";
-
 export { default as pageNotFound } from "./img/404.png";
+export { default as ppiIcon } from "./img/ppi-icon.svg";
+export { default as paIcon } from "./img/pa-icon.svg";
+export { default as bbpsIcon } from "./img/bbps-icon.svg";
+export { default as amexLogo } from "./img/amex-logo.png";
+export { default as idfcLogo } from "./img/idfc-bank.svg.png";
+export { default as axisLogo } from "./img/axis-bank-logo.png";
+export { default as yesLogo } from "./img/yes_bank-logo.png";

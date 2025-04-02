@@ -1,27 +1,29 @@
+import { Metadata } from "next";
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../common/constant";
+import { blogData, carouselData, productData } from "./data";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
+import { bannerLottie, caraouselBg, faqBg } from ".";
 import generateMetaData from "@/common/utils/metaData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 
 export const metadata: Metadata = generateMetaData({
   title: "Corporate Meal Card Online: Effortless Dining Solutions for Business",
@@ -41,37 +43,24 @@ const mealCard = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Corporate Cards |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Meal Cards"
+              title={`Meal Cards`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
           <Heading
-            title={`Enhance employee${space}`}
-            color="rainy-blue"
-            size="h2"
-            weight="7"
-          />
-          <Heading
-            title="experience with meal cards"
+            title={`Empower Your Employees with Tax-Free EnKash ${space}`}
             color="white"
             size="h2"
             weight="7"
           />
+          <Heading title="Meal Cards" color="rainy-blue" size="h2" weight="7" />
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Provide your employees with tax-free meal cards to purchase food and grocery-related items across multiple food chains, retail outlets, and supermarkets"
+              title="Provide tax-free food card while enhancing employee satisfaction. Widely accepted across platforms, these cards simplify meal allowances and provide a seamless, paperless solution."
               color="white"
               size="h6"
               weight="5"
@@ -80,78 +69,39 @@ const mealCard = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started "
                 theme="blue"
-                url="/sales/?source=corporate_cards"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=corporate_cards"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Management"],
-              oldWayDescription:
-                "Paper-based coupons are challenging to manage and carry everywhere.",
-              newWayDescription:
-                "Prepaid digital cards are preloaded with a particular amount and can be easily managed.",
-            },
-            {
-              itemArray: ["Security"],
-              oldWayDescription:
-                "Paper coupons are always at risk of loss or expiry, with the balance remaining discarded.",
-              newWayDescription:
-                "Secure and easy-to-track cards to prevent loss or misuse by others. The balance remaining can be carried forward.",
-            },
-            {
-              itemArray: ["Accessibility"],
-              oldWayDescription:
-                "Food vouchers are allocated manually, making it a time-consuming process.",
-              newWayDescription:
-                "EnKash meal card can be accessed on the platform after KYC.",
-            },
-            {
-              itemArray: ["Limitations"],
-              oldWayDescription:
-                "Face limitations due to restrictions of certain food shops.",
-              newWayDescription:
-                "Fewer restrictions due to the broader acceptability of meal cards across outlets.",
-            },
-            {
-              itemArray: ["Tracking"],
-              oldWayDescription:
-                "Difficult to keep track of the balance remaining due to paper coupons.",
-              newWayDescription:
-                "Automatic updates from the card-issuing entities on balance available.",
-            },
-            {
-              itemArray: ["Allocation of", "Funds"],
-              oldWayDescription:
-                "Limitations to dynamically allocate funds or control the transactions.",
-              newWayDescription:
-                "Seamless transfer of funds online and complete control over all transactions.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Maximize Tax Savings While Supporting Employee Well-Being"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Digital Convenience",
+              },
+              {
+                icon: stack,
+                text: "Real-Time Visibility",
+              },
+              {
+                icon: numberOne,
+                text: "Wide Acceptance",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -159,13 +109,13 @@ const mealCard = () => {
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Meal cards from EnKash are"
+            title="Meal Cards that your "
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}hassle-free, widely accepted & trackable`}
+            title={`${space}Employees Deserve`}
             color="equity-blue"
             size="h1"
             weight="6"
@@ -177,52 +127,53 @@ const mealCard = () => {
               titleHtml={
                 <>
                   <Heading
-                    title="Issue and"
+                    title="Tax Savings"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Refill"
+                    title="Made Simple"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </>
               }
-              description="Meal cards are easy to issue with a specific limit towards food purchases and easier to refill"
+              description="EnKash Meal Cards help employees save up to ₹50,000 annually under Section 17(2)(viii) of the Income Tax Act. This boosts take-home pay while enhancing employee satisfaction and retention with financial benefits."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Easy Management"
-              description="In case of loss or misuse, it is easy to manage the card from the platform to restrict or block usage"
+              whiteTitle="Wide Acceptance"
+              description="EnKash Meal Cards are accepted nationwide at supermarkets, food delivery platforms like Swiggy and Zomato, restaurants, cafes, and food courts, offering employees seamless transactions for their daily needs."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle=" Track and Control"
-              description="Due to the features that mimic debit cards, the meal card is easy to keep track of and control for the end user"
+              whiteTitle="Secure and Hassle-Free"
+              description="EnKash Meal Cards prioritize security with instant blocking and replacements for lost cards, zero liability on reported losses, and a paperless, trackable system that reduces risks and ensures transparency."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Wider Acceptance"
-              description="Various supermarkets, food delivery apps, and other eating establishments widely accept meal cards"
-              source="corporate_cards"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Complete Overview"
-              description="Meal cards offer a complete overview of what is spent and what remains in balance"
+              whiteTitle="Easily Trackable"
+              description="Both employees and employers can easily track meal card expenses. This real-time visibility enables to get details like balance and usage with spending insights."
               source="corporate_cards"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="An Array of Corporate Cards by"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -233,35 +184,14 @@ const mealCard = () => {
                 <div className="d-flex flex-column">
                   <div>
                     <Heading
-                      title={`Enhance${space}`}
+                      title={`How To Get Started with ${space}`}
                       color="white"
                       size="h1"
                       weight="6"
                     />
                     <Heading
-                      title={`employee satisfaction${space}`}
+                      title={`EnKash Meal Cards${space}`}
                       color="rainy-blue"
-                      size="h1"
-                      weight="6"
-                    />
-                    <Heading
-                      title={`with${space}`}
-                      color="white"
-                      size="h1"
-                      weight="6"
-                    />
-                  </div>
-
-                  <div>
-                    <Heading
-                      title={`secure and convenient${space}`}
-                      color="rainy-blue"
-                      size="h1"
-                      weight="6"
-                    />
-                    <Heading
-                      title="meal cards"
-                      color="white"
                       size="h1"
                       weight="6"
                     />
@@ -275,12 +205,14 @@ const mealCard = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how meal cards can benefit your business and employees!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

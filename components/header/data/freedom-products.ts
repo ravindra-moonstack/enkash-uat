@@ -21,9 +21,9 @@ import {
 const freedomProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/corporate-cards",
+    subtitleLink: "/cards",
     currentHeading: {
-      name: "Corporate Cards",
+      name: "Cards",
       description: "Flexible credit & prepaid card solutions",
     },
     list: [
@@ -86,7 +86,7 @@ const freedomProducts = [
       },
     ],
     footerText: "Empower your finances with purpose-based cards",
-    footerMobileText: "Explore Corporate Cards",
+    footerMobileText: "Explore More",
     footerImg: "freedom_footer_bg",
     footerLink: "/corporate-cards",
     parentLink: "/corporate-cards",

@@ -2,22 +2,25 @@ import Image from "next/image";
 import { Metadata } from "next";
 import { space } from "@/common/constant";
 import styles from "./page.module.scss";
-import blogData from "./blog-data";
+import { blogData, dataSets, productData } from "./data";
 import faqData from "./faq-data";
-import howDoesItWorkData from "./how-does-It-work-data";
-import Heading from "@/components/heading/heading";
 import ExploreCard from "@/components/explore-card/explore-card";
 import EnkashWay from "@/components/enkash-way/enkash-way";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import {
+  Header,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  ContactUsCard,
+  StructuredData,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import Header from "@/components/header/header";
 import {
   officeImg,
   whiteArrow,
@@ -27,9 +30,8 @@ import {
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
 } from ".";
-import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -49,12 +51,13 @@ const loyaltyLounge = () => {
         url={`https://www.enkash.com/loyalty-lounge/`}
         faqData={faqData}
       />
+
       <Header utmSource="Loyalty_lounge" />
+
       <div className={`${styles.first_row} row color-white`}>
         <div className="col-md-6 col-12 d-flex flex-column">
           <div className="d-flex mb-4">
-            <Heading title="L" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="oyalty Lounge" size="h1" weight="7" />
+            <Heading title="Rewards" color="rainy-blue" size="h1" weight="7" />
           </div>
           <div className="d-flex flex-column">
             <Heading
@@ -63,7 +66,6 @@ const loyaltyLounge = () => {
               size="h2"
               weight="7"
             />
-
             <Heading
               title="personalized rewards"
               color="rainy-blue"
@@ -71,8 +73,14 @@ const loyaltyLounge = () => {
               weight="7"
               useH1TagInHtml={true}
             />
-            <Heading title="& recognition" color="white" size="h2" weight="7" />
+            <Heading
+              title="& recognition with EnKash"
+              color="white"
+              size="h2"
+              weight="7"
+            />
           </div>
+
           <div className="mt-4 mobile-only">
             <Heading
               title="An all-in-one R&R platform that helps businesses boost loyalty and enhance the experience of employees, partners & stakeholders"
@@ -89,21 +97,23 @@ const loyaltyLounge = () => {
               weight="5"
             />
           </div>
+          
           <div className="mt-5">
             <PrimaryButton
-              title="EnKash Now"
+              title="Talk to Sales"
               theme="blue"
               url="/sales/?source=Loyalty_lounge"
             />
             <span className="mx-2"></span>
             <SecondryButton
-              title="Get Free Demo"
+              title="Sign Up"
               actionImage={whiteArrow}
               iconSize={15}
-              url="/sales/?source=Loyalty_lounge"
+              url="/login"
             />
           </div>
         </div>
+
         <div className="col-md-6 col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
             <LottieDynamicLoadComponent
@@ -113,9 +123,11 @@ const loyaltyLounge = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.second_row} bg-white row d-flex row-padding`}>
-        <HowDoesItWork dataSets={howDoesItWorkData} bannerImage={officeImg} />
+        <HowDoesItWork dataSets={dataSets} bannerImage={officeImg} />
       </div>
+
       <div className={styles.third_row}>
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-5">
@@ -142,6 +154,7 @@ const loyaltyLounge = () => {
             </div>
           </div>
         </div>
+
         <div className={`row bg-white ${styles.section}`}>
           <div
             className={`col-md-6 col-12 order-md-1 order-2 d-flex my-md-5 my-3 d-flex justify-content-  ${styles.second_container}`}
@@ -158,6 +171,7 @@ const loyaltyLounge = () => {
               />{" "}
             </div>
           </div>
+
           <div className="col-md-6 col-12 order-md-2 order-1 my-md-5 my-3 ">
             <ExploreCard
               title="Brand Vouchers"
@@ -167,6 +181,7 @@ const loyaltyLounge = () => {
             />
           </div>
         </div>
+
         <div className={`row bg-white ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3">
             <ExploreCard
@@ -201,6 +216,7 @@ const loyaltyLounge = () => {
             />
           </div>
         </div>
+
         <div className="col-md-6 col-12 mb-md-5 mb-3 order-2 order-md-2 px-md-5">
           <ExploreCard
             title="Offers"
@@ -218,6 +234,7 @@ const loyaltyLounge = () => {
             link="/loyalty-lounge/channel-incentive"
           />
         </div>
+
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
           <div className={styles.second_lottie_container}>
             <LottieDynamicLoadComponent
@@ -301,6 +318,7 @@ const loyaltyLounge = () => {
           </div>
         </div>
       </div>
+
       <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
         <EnkashWay
           progressData={[
@@ -342,6 +360,7 @@ const loyaltyLounge = () => {
           ]}
         />
       </div>
+
       <div className="bg-white row-padding d-flex justify-content-center">
         <div className="ps-md-5 scroll_container d-flex pb-4">
           <div className="me-4">
@@ -403,12 +422,12 @@ const loyaltyLounge = () => {
         </div>
       </div>
 
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how loyalty lounge can benefit your business and employees!"
         />
-      </div> */}
+      </div>
 
       <div
         className={`${styles.eigth_row} row row-padding-bottom-none bg-white`}
@@ -504,6 +523,7 @@ const loyaltyLounge = () => {
           }
         />
       </div>
+
       <Footer utmSource="Loyalty_lounge" />
     </div>
   );

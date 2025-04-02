@@ -1,4 +1,6 @@
-const faqData = [
+import { FAQProps } from "@/components/faq/faq";
+
+const faqData: FAQProps[] = [
   {
     question: "What are approval workflows? ",
     answer: [
@@ -15,7 +17,6 @@ const faqData = [
         heading:
           "In essence, these approvals entail the systematic review and authorization of business expenses before they are incurred. When employees make a company-related expense, they can request approval, which is assessed by a designated manager or supervisor. This process ensures that expenses align with company policies and budgetary constraints.",
       },
-
     ],
   },
   {

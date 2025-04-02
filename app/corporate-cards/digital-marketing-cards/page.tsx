@@ -1,29 +1,31 @@
 import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
 import Link from "next/link";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import blogData from "./blog-data";
-import Footer from "@/components/footer/footer";
+import styles from "./page.module.scss";
+import { space } from "../../../common/constant";
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
+import faqData from "./faq-data";
+import { blogData, carouselData, productData } from "./data";
 import generateMetaData from "@/common/utils/metaData";
-import Head from "next/head";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -46,46 +48,47 @@ const digitalMarketingCard = () => {
       />
 
       <Header utmSource="corporate_cards" />
-
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Corporate Cards |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Digital Marketing Cards"
+              title={`Digital Marketing Card${space}`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title={`Your go-to card for all${space}`}
+              title={`Take Control of Your  ${space}`}
               color="white"
               size="h2"
               weight="7"
             />
-            <div>
-              <Heading
-                title={`digital marketing${space}`}
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading title="needs" color="white" size="h2" weight="7" />
-            </div>
+
+            <Heading
+              title={`Marketing Budget ${space}`}
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="  with EnKash’s"
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title={` Digital Marketing Card${space}`}
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Take control of your digital marketing budget with easy-to-use and customizable cards. Load your marketing budget into the card, select the campaigns you want to run, and keep track of expenditures in real-time"
+              title="Effortlessly allocate, track, and optimize your marketing budgets. Designed specifically for marketing professionals, this solution ensures precision, control, and real-time visibility over your campaigns’ spend."
               color="white"
               size="h6"
               weight="5"
@@ -94,16 +97,8 @@ const digitalMarketingCard = () => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=corporate_cards"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=corporate_cards"
               />
             </div>
@@ -114,44 +109,26 @@ const digitalMarketingCard = () => {
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Budget", "Allocation"],
-              oldWayDescription:
-                "Verbally specifying budgets, or even having them in writing, does not guarantee that your digital marketing spends will not cross the specified budget, especially when using one corporate card for all spends.",
-              newWayDescription:
-                "A purpose-based corporate card with a predefined limit ensures that your digital marketing expenses do not exceed your intended budget.",
-            },
-            {
-              itemArray: ["Expense", "Tracking"],
-              oldWayDescription:
-                "Tracking digital marketing expenses means tallying invoices with actual card spends and going through multiple dashboards and campaigns to calculate the amount spent.",
-              newWayDescription:
-                "Track and manage all your digital marketing expenses on a single platform, including ad spends, marketing software purchases, and more.",
-            },
-            {
-              itemArray: ["Campaign", "Management"],
-              oldWayDescription:
-                "Managing and optimizing campaign performance across multiple channels and platforms is complex, and enforcing consistent budgets is even more challenging.",
-              newWayDescription:
-                "In your digital marketing card, set customized limits for campaign expenditures based on your budget and select any campaigns you wish to run.",
-            },
-            {
-              itemArray: ["Spend", "Overview"],
-              oldWayDescription:
-                "Getting a comprehensive view of your business’s digital marketing spending is challenging.",
-              newWayDescription:
-                "Get a complete overview of your marketing spends that helps reduce costs and streamline your payment process.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Maximize Your Marketing Impact with EnKash Digital Marketing Cards"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Customizable Spending Limits",
+              },
+              {
+                icon: stack,
+                text: "Dedicated Expense Tracking",
+              },
+              {
+                icon: numberOne,
+                text: "Real-time Monitoring",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -159,38 +136,37 @@ const digitalMarketingCard = () => {
       >
         <div className="d-inline text-center mb-5">
           <Heading
-            title="Simplify your business’s"
+            title="The Smarter Way to Manage Your"
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space}digital marketing`}
+            title={`${space} Digital Marketing Expenses`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
-          <Heading title={`${space}needs`} color="black" size="h1" weight="6" />
         </div>
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Subscription Management"
-              description="Effectively manage your recurring digital marketing expenses, such as subscriptions that recur monthly or annually"
+              whiteTitle="Simplified Budget Allocation"
+              description="Manage multiple campaigns effortlessly with EnKash’s Digital Marketing Card. Allocate funds directly to campaigns, assign specific budgets, and eliminate manual tracking, ensuring seamless distribution and greater efficiency."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Spend Optimization"
-              description="Enhance your organization's performance by implementing a robust purchasing oversight process that helps reduce cost and streamlines your payment process"
+              whiteTitle="Real-Time Expense Tracking"
+              description="Monitor every transaction instantly with EnKash’s real-time expense tracking. Gain insights into your campaign’s financial health, make on-the-fly adjustments, and ensure you stay within budget without overspending."
               source="corporate_cards"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Marketing Budgets"
-              description="A digital marketing business card lets you set customized usage limits, ensuring no overspending"
+              whiteTitle="Prevent Overspending"
+              description="Overspending on campaigns can be costly. With EnKash’s Digital Marketing Card, you can set predefined spending limits for each card. This feature ensures your team stays within budget, preventing unauthorized expenses and helping you maintain financial discipline for more efficient and cost-effective marketing campaigns."
               source="corporate_cards"
             />
           </div>
@@ -199,24 +175,54 @@ const digitalMarketingCard = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Easy"
+                    title="Simplified "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Usage"
+                    title="Subscription Management"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description=" You can seamlessly add your card for digital marketing expenses to the desired platform and select the campaigns you wish to run"
+              description="Managing recurring subscriptions for marketing tools, software, or ad platforms becomes effortless with EnKash. Automate payments for these subscriptions with clear schedules and centralized tracking. You’ll never miss a payment, and you'll save time that would otherwise be spent on manual invoicing and reconciliation."
+              source="corporate_cards"
+            />
+          </div>
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Customizable "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Usage Policies"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Tailor your spending policies to fit your unique marketing needs. With EnKash’s Digital Marketing Card, you can enforce specific restrictions, such as category-based spending limits or vendor-specific constraints. This ensures that every expense aligns with your business’s objectives and helps maximize the effectiveness of your marketing efforts."
               source="corporate_cards"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="An Array of Corporate Cards by"
+          subtitle="EnKash"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>

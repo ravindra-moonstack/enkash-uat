@@ -2,15 +2,12 @@ import Image from "next/image";
 import styles from "./page.module.scss";
 import GetStartedCard from "@/components/get-started-card/get-started-card";
 import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
 import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { blogData, carouselData } from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
 import ContactUsCard from "@/components/contact-us-card/contact-us-card";
 import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
 import ThreeSteps from "@/components/three-steps/three-steps";
 import HowDoesCarousel from "@/components/carousel/how-does-carousel";
 import FAQ from "@/components/faq/faq";
@@ -19,10 +16,13 @@ import Header from "@/components/header/header";
 import LottieClientComponent from "@/components/lottie-client/lottie-client";
 import { Metadata } from "next";
 import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
+import { FAQHtml } from "@/components/faq";
 import Footer from "@/components/footer/footer";
 import generateMetaData from "@/common/utils/metaData";
 import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
+import AllProducts from "@/components/all-products/all-products";
+import productData from "./product-data";
 
 export const metadata: Metadata = generateMetaData({
   title: "Vendor Payment – Automated Multiple Vendor Payment | EnKash",
@@ -45,23 +45,16 @@ const vendorPayment = () => {
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
             <Heading
-              title="Vendor Payment"
+              title={`Vendor Payment`}
+              color="rainy-blue"
               size="h4"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
           </div>
+
           <Heading
-            title={`Transform your business today with automated${space}`}
+            title={`Faster, Smarter ${space}`}
             color="white"
             size="h2"
             weight="7"
@@ -69,81 +62,59 @@ const vendorPayment = () => {
 
           <div className="d-line">
             <Heading
-              title="vendor payments"
+              title="Vendor Payments "
               color="rainy-blue"
               size="h2"
               weight="7"
             />
+            <Heading title="with EnKash " color="white" size="h2" weight="7" />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Make vendor payments seamlessly with a single click and get complete control with real-time updates"
+              title="Transform your vendor payments with a single click and get complete control with real-time updates."
               color="white"
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=payables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=payables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Data", "Entry"],
-              oldWayDescription:
-                "Manual data entry delays the entire payment process.",
-              newWayDescription:
-                "Saves time and money by processing all invoices digitally.",
-            },
-            {
-              itemArray: ["Approval", "Workflows"],
-              oldWayDescription:
-                "Scattered process to track approval of invoices via emails or verbally.",
-              newWayDescription:
-                "Streamlined process with defined roles like maker, checker, and approvers.",
-            },
-            {
-              itemArray: ["Risk and", "Errors"],
-              oldWayDescription:
-                "Difficult to catch errors and discrepancies in each invoice.",
-              newWayDescription:
-                "Low or zero chances of errors in invoices due to automation.",
-            },
-            {
-              itemArray: ["Bulk", "Payments"],
-              oldWayDescription:
-                "Manual intervention for bulk payments and limited payment options.",
-              newWayDescription: "Make bulk vendor payments with a single OTP.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Vendor Payment Solution for Better Business Efficiency"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Effortless Automation",
+              },
+              {
+                icon: stack,
+                text: "Secure Transactions",
+              },
+              {
+                icon: numberOne,
+                text: "Muti-mode Payments",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
@@ -151,16 +122,15 @@ const vendorPayment = () => {
       >
         <div className="text-center mb-5">
           <div className="d-inline">
-            <Heading title="We ensure" color="black" size="h1" weight="6" />
             <Heading
-              title={`${space}fast, easy, and safe${space}`}
-              color="equity-blue"
+              title="Your End-to-End "
+              color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title="vendor payments"
-              color="black"
+              title={`${space}Vendor Payment Portal${space}`}
+              color="equity-blue"
               size="h1"
               weight="6"
             />
@@ -173,13 +143,13 @@ const vendorPayment = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Vendor"
+                    title="Pay Vendors "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="KYC"
+                    title="in Seconds"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
@@ -187,70 +157,50 @@ const vendorPayment = () => {
                 </div>
               }
               source="payables"
-              description="Collect and verify essential information about your vendors and suppliers before onboarding them onto the platform to ensure hassle-free transactions"
+              description="Simplify vendor payments with UPI, NEFT, RTGS, or cards. Settle invoices instantly with secure transactions using EnKash, ensuring fast, reliable payments that eliminate delays and strengthen vendor relationships."
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Bank Account Validation"
-              description="Validate the bank account details of the vendors by using the penny-drop method before processing transactions to prevent payment errors"
-              source="payables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Multi-Branch Payments"
-              description="Simplify vendor payments across multiple branches with a single click, while maintaining transparency through real-time updates on approvals and notifications via a centralized dashboard"
-              source="payables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="PO Management"
-              description="Hassle-free PO (Purchase Order) management against the invoices on a single dashboard"
+              whiteTitle="Eliminate Manual Hassles"
+              description="Eliminate spreadsheets and manual errors with EnKash. Automate invoice uploads, payment reminders, and TDS compliance, ensuring accurate, timely, and regulation-compliant payments while freeing your team to focus on growth.Eliminate spreadsheets and manual errors with EnKash. Automate invoice uploads, payment reminders, and TDS compliance, ensuring accurate, timely, and regulation-compliant payments while freeing your team to focus on growth."
               source="payables"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Automated Reminders"
-              description="Make sure that all vendor payments are processed on time and without errors. Get automated reminders to track outstanding vendor payments"
+              whiteTitle="Speed Up Approvals"
+              description="Speed up approvals with EnKash’s customizable workflows. Define hierarchies, assign roles, and receive instant notifications. Approve vendor payments securely from any device, ensuring agility and seamless operations wherever you are."
               source="payables"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Seamless Integration"
-              description="Seamless integration with your existing ERP system and banking partners for smooth vendor payments"
+              whiteTitle="Comprehensive Reconciliation"
+              description="Keep your books audit-ready with EnKash’s automatic reconciliation. Match invoices to payments, generate detailed reports, and eliminate discrepancies effortlessly, improving accuracy and saving valuable time for your finance team."
               source="payables"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              titleHtml={
-                <div className="d-flex flex-column">
-                  <Heading
-                    title="Virtual"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                  <Heading
-                    title="Cards"
-                    color="rainy-blue"
-                    size="h2"
-                    weight="6"
-                  />
-                </div>
-              }
+              whiteTitle="End-to-End Security"
+              description="Secure transactions with EnKash’s enterprise-grade measures, including multi-layered encryption, fraud monitoring, and bank account validation. Built-in compliance ensures your vendor payments are protected and reliable at every step."
               source="payables"
-              description="Access to a virtual card for payment decentralization/ branch payments/department-wise payments"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white`}>
+        <AllProducts
+          title="EnKash Products - Making Payments "
+          subtitle=" Smarter"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -260,21 +210,7 @@ const vendorPayment = () => {
               <div className="text-center">
                 <div className="text-center d-inline flex-column">
                   <Heading
-                    title={`Secure and hassle-free${space}`}
-                    color="white"
-                    size="h1"
-                    weight="6"
-                  />
-                  <Heading
-                    title="vendor payments"
-                    color="rainy-blue"
-                    size="h1"
-                    weight="6"
-                  />
-                </div>
-                <div>
-                  <Heading
-                    title="every single time"
+                    title={`Pay, Approve, Reconcile ${space}`}
                     color="white"
                     size="h1"
                     weight="6"
@@ -288,12 +224,14 @@ const vendorPayment = () => {
           carouselBg={caraouselBg}
         />
       </div>
+
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how our vendor payments platform can revolutionize the way you work!"
+          title="Learn how a Vendor Payments Platform could revolutionize the way you work!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
       >

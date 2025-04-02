@@ -1,27 +1,30 @@
 import Image from "next/image";
 import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
 import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
+import { faqData, secondFaqData } from "./faq-data";
+import {blogData, carouselData, productData} from "./data";
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components";
 import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Footer from "@/components/footer/footer";
 import Link from "next/link";
 import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { userPlus, numberOne, stack } from "@/components/three-steps/";
 
 export const metadata: Metadata = generateMetaData({
   title: "eNACH & eMandate: Registration, Process & Status Check - EnKash",
@@ -40,128 +43,98 @@ const eNach = () => {
         url={`https://www.enkash.com/olympus/receivables/e-nach/`}
         faqData={faqData}
       />
+
       <Header utmSource="receivables" />
+
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
-            <div className="d-flex">
-              <Heading
-                title={`Olympus |${space}`}
-                color="rainy-blue"
-                size="h4"
-                weight="7"
-              />
-            </div>
-            <div>
-              <Heading
-                title="e-NACH"
-                size="h4"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
-          </div>
-          <div className="d-flex flex-column">
             <Heading
-              title="Automate recurring"
-              color="white"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="payments and collections"
+              title={`e-NACH${space}`}
               color="rainy-blue"
-              size="h2"
-              weight="7"
-            />
-            <Heading
-              title="for your business"
-              size="h2"
-              color="white"
+              size="h4"
               weight="7"
             />
           </div>
 
+          <div className="d-flex flex-column">
+            <Heading
+              title="Automate Recurring "
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title="Payments with EnKash"
+              color="white"
+              size="h2"
+              weight="7"
+            />
+            <Heading title="eNACH" size="h2" color="rainy-blue" weight="7" />
+          </div>
+
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Facilitate a simple and hassle-free process for payments and collections through quick and reliable transactions"
+              title="Effortlessly automate recurring collections with EnKash eNACH mandate. Set up fast, secure digital mandates and seamlessly collect large recurring payments."
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="EnKash Now"
+                title="Get Started"
                 theme="blue"
-                url="/sales/?source=receivables"
-              />
-            </div>
-            <div>
-              <SecondryButton
-                title="Get Free Demo"
-                actionImage={whiteArrow}
-                iconSize={15}
                 url="/sales/?source=receivables"
               />
             </div>
           </div>
         </div>
+
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
           </div>
         </div>
-        <div className={styles.three_step_container}>
-          <ThreeSteps />
-        </div>
-      </div>
 
-      <div className={`${styles.second_row} row d-flex bg-white row-padding`}>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["Automated", "Reminders"],
-              oldWayDescription:
-                "The traditional way requires one to remember payment due dates and manually initiate payments.",
-              newWayDescription:
-                "e-NACH keeps track of all recurring payments and enables you to make payments automatically; helping you save big on penalties and lapsing of services.",
-            },
-            {
-              itemArray: ["Convenience"],
-              oldWayDescription:
-                "The traditional way of making payments does not give you the flexibility of payments as per convenience.",
-              newWayDescription:
-                "e-NACH enables you to choose the payment schedule as per convenience for recurring payments.",
-            },
-            {
-              itemArray: ["Data", "Security"],
-              oldWayDescription:
-                "The conventional way of transactions leaves your data prone to violation and misuse.",
-              newWayDescription:
-                "e-NACH transactions are digitally authorized and encrypted, which reduces the risk of data breaches.",
-            },
-          ]}
-        />
+        <div className={styles.three_step_container}>
+          <ThreeSteps
+            title="Powering Recurring Payment Collection"
+            steps={[
+              {
+                icon: userPlus,
+                text: "Quick mandate creation",
+              },
+              {
+                icon: stack,
+                text: "Easy Subscription Management",
+              },
+              {
+                icon: numberOne,
+                text: "Instant Payment Settlement",
+              },
+            ]}
+          />
+        </div>
       </div>
 
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
         <div className="d-inline text-center">
-          <Heading title="Improve your" color="black" size="h1" weight="6" />
           <Heading
-            title={`${space}business collections`}
+            title={`${space}Digital Payment System `}
             color="equity-blue"
             size="h1"
             weight="6"
           />
-          <Heading title={`${space}with`} color="black" size="h1" weight="6" />
+          <Heading title={`${space}for `} color="black" size="h1" weight="6" />
         </div>
 
         <div className="mb-5 text-center">
           <Heading
-            title={`${space}virtual accounts`}
+            title={`${space}Recurring Payments`}
             color="black"
             size="h1"
             weight="6"
@@ -174,75 +147,108 @@ const eNach = () => {
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Digital"
+                    title="Instant Digital"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Mandate"
+                    title=" Mandate Creation"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="e-NACH allows users to register mandates digitally, reducing the time involved"
-              source="receivables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Streamlines Payments"
-              description="It automates recurring payments and collections and simplifies business processes"
-              source="receivables"
-            />
-          </div>
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Timely Collections"
-              description="It reduces errors, streamlines the payment process, and ensures timely collections"
+              description="Eliminate paperwork and delays—register mandates digitally for faster processing and hassle-free automation."
               source="receivables"
             />
           </div>
 
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="One-Time Authentication"
+              whiteTitle="Smart Payment Retries for Higher Success Rates"
+              description="Reduce revenue loss with automatic retries on failed payments, ensuring uninterrupted cash flow and improved collection efficiency."
               source="receivables"
-              description="The automated payments made via E-NACH require one-time authentication"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               titleHtml={
                 <div className="d-flex flex-column">
                   <Heading
-                    title="Cost"
+                    title="Fewer Errors & "
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                   <Heading
-                    title="Savings"
+                    title="Timely Collections"
                     color="rainy-blue"
                     size="h2"
                     weight="6"
                   />
                 </div>
               }
-              description="It helps eliminate variable costs required for follow-ups, invoicing, operations, etc"
+              description="Bulk Subscription Management Made Easy Set up, track, and manage multiple mandates at scale directly to handle larger payments from a single dashboard—saving time and effort."
               source="receivables"
             />
           </div>
+
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Plug & Play Integration"
-              description="It provides customers a hassle-free and smooth authentication as compared to physical NACH and can be easily integrated via plug and play method"
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="One-Time Authentication, "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="Lifetime Convenience"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              source="receivables"
+              description="Secure recurring payments with a simple one-time authentication, offering a frictionless experience for both businesses and customers"
+            />
+          </div>
+
+          <div className="mb-2 mb-md-0 me-3">
+            <GetStartedCard
+              titleHtml={
+                <div className="d-flex flex-column">
+                  <Heading
+                    title="Customizable Checkout for "
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                  <Heading
+                    title="a Branded Experience"
+                    color="rainy-blue"
+                    size="h2"
+                    weight="6"
+                  />
+                </div>
+              }
+              description="Choose between a quick plug-and-play checkout or fully customize it with your brand’s identity, colors, and elements for better engagement."
               source="receivables"
             />
           </div>
         </div>
+      </div>
+
+      <div className={`${styles.second_row}  bg-white `}>
+        <AllProducts
+          title="Check Out EnKash’s Other Payment Products and Solutions"
+          data={productData}
+        />
       </div>
 
       <div className={`${styles.fourth_row} row`}>
@@ -258,6 +264,7 @@ const eNach = () => {
                     size="h1"
                     weight="6"
                   />
+
                   <div>
                     <Heading
                       title={`collections ${space}`}
@@ -277,26 +284,28 @@ const eNach = () => {
               </div>
             </>
           }
-          mainTitle="How does it work?"
+          mainTitle="How to Setup eNACH?"
           carouselData={carouselData}
           carouselBg={caraouselBg}
         />
       </div>
-      {/* <div className="bg-white row-padding text-center d-flex flex-column">
+
+      <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
           title="Learn how virtual accounts can revolutionize the way you work!"
         />
-      </div> */}
+      </div>
+
       <div
-        className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
+        className={`${styles.fifth_row} row row-padding-bottom-none bg-white pb-0`}
       >
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
         <div className="mb-5">
           <Heading
-            title="Don't worry! Our FAQs section will help you learn about e-Nach in detail"
+            title="Don't worry! Our FAQs section will help you learn about instant settlements in detail"
             color="black"
             size="h4"
           />
@@ -304,6 +313,29 @@ const eNach = () => {
 
         <div>
           <FAQHtml faqData={faqData} />
+        </div>
+      </div>
+
+      <div
+        className={`${styles.fifth_row} row row-padding-bottom-none  bg-white`}
+      >
+        <div className="mb-5">
+          <Heading
+            title="Seeking further understanding about e-NACH? Explore the Comprehensive Guide."
+            color="equity-blue"
+            size="h1"
+          />
+        </div>
+        <div className="mb-5">
+          <Heading
+            title="The automated process of collecting funds from customers regularly for monthly subscriptions, loan repayments, utility bills, and insurance premiums with electronic authorization is e-NACH. It helps streamline the payment process by eliminating human interaction and reducing errors, promising timely collections."
+            color="black"
+            size="h4"
+          />
+        </div>
+
+        <div>
+          <FAQHtml faqData={secondFaqData} />
         </div>
 
         <div className={styles.faq_bg}>
@@ -331,6 +363,7 @@ const eNach = () => {
                   title=" What does recurring payments mean?"
                 />
               </div>
+
               <div className="mb-5">
                 <p>
                   A payment model where customers authorize the payment of funds
@@ -354,6 +387,7 @@ const eNach = () => {
                   title="What is the difference between NACH and e-NACH?"
                 />
               </div>
+
               <div className="mb-3">
                 <Heading
                   size="h6"
@@ -362,6 +396,7 @@ const eNach = () => {
                   title="National Payments Corporation of India (NPCI) incorporated the National Automated Clearing House or NACH for banks to make bulk transactions for subsidy distribution, dividends, and salaries."
                 />
               </div>
+
               <div className="mb-3">
                 <p>
                   NACH enables repetitive transactions that take place in bulk.
@@ -376,6 +411,7 @@ const eNach = () => {
                   payments, and other utility bills.
                 </p>
               </div>
+
               <div className="mb-5">
                 <Heading
                   size="h6"
@@ -393,6 +429,7 @@ const eNach = () => {
                   title="How does e-Mandate work?"
                 />
               </div>
+
               <div className="mb-5">
                 <Heading
                   size="h6"
@@ -411,6 +448,7 @@ const eNach = () => {
                   title="How does e-NACH work?"
                 />
               </div>
+
               <div className="mb-3">
                 <Heading
                   size="h6"
