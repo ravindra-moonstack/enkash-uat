@@ -79,7 +79,7 @@ const RootLayout = ({ children }: RootProps) => {
         {/* <!-- Meta Tags Generated via https://www.opengraph.xyz --> */}
       </Head>
       <body>
-        <PopUpPaymentGateway />
+        {/* <PopUpPaymentGateway /> */}
         <main className={`app main`}>{children}</main>
       </body>
     </html>
