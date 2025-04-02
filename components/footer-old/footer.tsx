@@ -1,6 +1,6 @@
-import styles from "./footer.module.scss";
-import Image from "next/image";
-import PrimaryButton from "../buttons/primary-button/primary-button";
+import styles from "./footer.module.scss"
+import Image from "next/image"
+import PrimaryButton from "../buttons/primary-button/primary-button"
 import {
   twitterLogo,
   linkedinLogo,
@@ -12,9 +12,9 @@ import {
   soc,
   rbi,
   email,
-} from ".";
-import Heading from "../heading/heading";
-import Link from "next/link";
+} from "."
+import Heading from "../heading/heading"
+import Link from "next/link"
 
 const FooterOld = ({ utmSource = "" }: any) => {
   return (
@@ -74,24 +74,16 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       {/* <div className={'my-auto '}> NEW</div> */}
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/payment-links/">
-                        Payment Links
-                      </Link>
+                      <Link href="/payment-links/">Payment Links</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/payment-button/">
-                        Payment Button
-                      </Link>
+                      <Link href="/payment-button/">Payment Button</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/customized-payment/">
-                        Payment Page
-                      </Link>
+                      <Link href="/customized-payment/">Payment Page</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/bulk-collect/">
-                        Bulk Collect
-                      </Link>
+                      <Link href="/bulk-collect/">Bulk Collect</Link>
                     </li>
                     <li className="d-flex">
                       <Link href="/olympus/receivables/upi-payments">
@@ -110,9 +102,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       </div> */}
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/auto-collect/">
-                        Auto Collect
-                      </Link>
+                      <Link href="/auto-collect/">Auto Collect</Link>
                     </li>
                     <li>
                       <Link href="/olympus/receivables/virtual-accounts/">
@@ -128,9 +118,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/reminder-engine/">
-                        Reminder Engine
-                      </Link>
+                      <Link href="/collection-reminder/">Reminder Engine</Link>
                     </li>
                     <li>
                       <Link href="/olympus/receivables/instant-settlements/">
@@ -138,9 +126,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/invoices/">
-                        Invoices
-                      </Link>
+                      <Link href="/invoices/">Invoices</Link>
                     </li>
                     <li>
                       <Link href="/olympus/receivables/collection-analytics/">
@@ -183,9 +169,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/rental-payment/">
-                        Rental Payment
-                      </Link>
+                      <Link href="/rental-payment/">Rental Payment</Link>
                     </li>
                     <li>
                       <Link href="/olympus/payables/invoice-management/">
@@ -639,7 +623,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FooterOld;
+export default FooterOld

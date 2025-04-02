@@ -1,10 +1,10 @@
-import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import styles from "./page.module.scss";
-import { space } from "@/common/constant";
-import { blogData, howDoesItWorkData, getStartedData } from "./data";
-import faqData from "./faq-data";
+import { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { blogData, howDoesItWorkData, getStartedData } from "./data"
+import faqData from "./faq-data"
 import {
   Header,
   Footer,
@@ -17,10 +17,10 @@ import {
   StructuredData,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+} from "@/components"
+import ExploreCard from "@/components/explore-card/explore-card"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import {
   cardBg,
   faqBg,
@@ -29,9 +29,9 @@ import {
   settingIcon,
   cashAndTime,
   coinIcon,
-} from ".";
-import generateMetaData from "@/common/utils/metaData";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
+} from "."
+import generateMetaData from "@/common/utils/metaData"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 
 export const metadata: Metadata = generateMetaData({
   title: "Account Payable: Streamline your Outgoing Payments | Enkash",
@@ -41,7 +41,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/olympus/payables/",
   },
   faqData: faqData,
-});
+})
 
 const payables = () => {
   return (
@@ -178,7 +178,7 @@ const payables = () => {
               title="Rental Payments"
               description="Maintain rental records, manage TDS benefits & pay rent for several locations, all on one platform"
               theme="blue"
-              link="/olympus/payables/rental-payment"
+              link="/rental-payment"
             />
           </div>
         </div>
@@ -494,12 +494,9 @@ const payables = () => {
                 <p>
                   Accounts payable automation means using technology to make
                   business payments, which include vendor payments,{" "}
-                  <Link href="/olympus/payables/rental-payment">
-                    rental payments
-                  </Link>{" "}
-                  , bill payments, tax payments, and utility payments. Accounts
-                  payable automation helps make business payments easy and
-                  efficient.
+                  <Link href="/rental-payment">rental payments</Link> , bill
+                  payments, tax payments, and utility payments. Accounts payable
+                  automation helps make business payments easy and efficient.
                 </p>
               </div>
 
@@ -693,7 +690,7 @@ const payables = () => {
       </div>
       <Footer utmSource="payables" />
     </div>
-  );
-};
+  )
+}
 
-export default payables;
+export default payables

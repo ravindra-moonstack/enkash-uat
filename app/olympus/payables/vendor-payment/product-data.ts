@@ -7,8 +7,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -30,7 +30,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Simplify rental payments with automated solutions, ensuring timely transactions and avoiding penalties or delays.",
     image: paymentButton,
-    link: "/olympus/payables/rental-payment/",
+    link: "/rental-payment/",
   },
   {
     title: "Invoice Management",
@@ -67,6 +67,6 @@ const productData: AllProductsDataProp[] = [
     image: reminderEngine,
     link: "/olympus/payables/payable-analytics/",
   },
-];
+]
 
-export default productData;
+export default productData

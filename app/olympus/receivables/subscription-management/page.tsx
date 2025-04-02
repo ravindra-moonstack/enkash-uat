@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import Link from "next/link";
-import styles from "./page.module.scss";
-import { space } from "../../../../common/constant";
-import { faqData, secondFaqData } from "./faq-data";
-import {blogData , carouselData, productData} from "./data";
-import { banner, caraouselBg, faqBg, whiteArrow } from ".";
+import Image from "next/image"
+import { Metadata } from "next"
+import Link from "next/link"
+import styles from "./page.module.scss"
+import { space } from "../../../../common/constant"
+import { faqData, secondFaqData } from "./faq-data"
+import { blogData, carouselData, productData } from "./data"
+import { banner, caraouselBg, faqBg, whiteArrow } from "."
 import {
   Header,
   ThreeSteps,
@@ -22,20 +22,19 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import generateMetaData from "@/common/utils/metaData";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
-
+} from "@/components"
+import generateMetaData from "@/common/utils/metaData"
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
 
 export const metadata: Metadata = generateMetaData({
   title: "Customize Subscription Management Solutions - EnKash",
   description:
     "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. Book a Free demo Now !!",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/payment-links/",
+    canonical: "https://www.enkash.com/payment-links/",
   },
   faqData: faqData,
-});
+})
 
 const subscriptionManagement = () => {
   return (
@@ -301,10 +300,7 @@ const subscriptionManagement = () => {
                 <p>
                   <strong> Automated invoice generation: </strong> Businesses
                   can{" "}
-                  <Link
-                    href="https://www.enkash.com/olympus/receivables/invoices/"
-                    target="_blank"
-                  >
+                  <Link href="https://www.enkash.com/invoices/" target="_blank">
                     automate invoice generation
                   </Link>{" "}
                   for recurring payments by defining the timeline and frequency
@@ -348,7 +344,7 @@ const subscriptionManagement = () => {
                 <p>
                   Automated subscriptions enable businesses to{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/receivables/bulk-collect/"
+                    href="https://www.enkash.com/bulk-collect/"
                     target="_blank"
                   >
                     track and collect payments
@@ -380,7 +376,7 @@ const subscriptionManagement = () => {
       </div>
       <Footer utmSource="receivables" />
     </div>
-  );
-};
+  )
+}
 
-export default subscriptionManagement;
+export default subscriptionManagement

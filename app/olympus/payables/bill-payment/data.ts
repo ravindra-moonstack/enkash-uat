@@ -1,8 +1,8 @@
-import iconOne from "./img/icon-one.png";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
-import iconFive from "./img/icon-five.svg";
+import iconOne from "./img/icon-one.png"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
+import iconFive from "./img/icon-five.svg"
 import {
   autoCollect,
   instantSettlement,
@@ -12,8 +12,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -35,7 +35,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Simplify rental payments with automated solutions, ensuring timely transactions and avoiding penalties or delays.",
     image: paymentButton,
-    link: "/olympus/payables/rental-payment/",
+    link: "/rental-payment/",
   },
   {
     title: "Invoice Management",
@@ -72,7 +72,7 @@ const productData: AllProductsDataProp[] = [
     image: reminderEngine,
     link: "/olympus/payables/payable-analytics/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -100,7 +100,7 @@ const carouselData = [
     title: "Monitor all payment statuses and reconcile them effortlessly.",
     heading: "Track & Reconcile: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -137,6 +137,6 @@ const blogData = [
       "Do you ever feel like you’re drowning in a sea of bills? Between rent, utilities, credit cards, and other expenses, it can be overwhelming to keep track of all the payments you need to make each month. But managing your finances doesn’t organization..",
     link: "https://www.enkash.com/resources/blog/guide-to-manage-your-bills-payable/",
   },
-];
+]
 
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

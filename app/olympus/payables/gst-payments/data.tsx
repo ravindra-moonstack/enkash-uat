@@ -1,6 +1,6 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
 import {
   autoCollect,
   instantSettlement,
@@ -10,8 +10,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -33,7 +33,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Simplify rental payments with automated solutions, ensuring timely transactions and avoiding penalties or delays.",
     image: paymentPage,
-    link: "/olympus/payables/rental-payment/",
+    link: "/rental-payment/",
   },
   {
     title: "Invoice Management",
@@ -70,7 +70,7 @@ const productData: AllProductsDataProp[] = [
     image: reminderEngine,
     link: "/olympus/payables/payable-analytics/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -91,7 +91,7 @@ const carouselData = [
     title: "Make payment via multiple payment options",
     heading: "Pay: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -124,6 +124,6 @@ const blogData = [
       "Advance payments are transactions or parts of transactions done in advance. These payments are recorded as assets on the business sheet and made before exchanging goods and services. They are also known as prepaid expenses...",
     link: "https://www.enkash.com/resources/blog/gst-on-advance-payments/",
   },
-];
+]
 
-export { blogData, productData, carouselData };
+export { blogData, productData, carouselData }

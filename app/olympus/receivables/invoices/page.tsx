@@ -1,4 +1,4 @@
-import styles from "./page.module.scss";
+import styles from "./page.module.scss"
 import {
   Header,
   ThreeSteps,
@@ -15,32 +15,32 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import { space } from "../../../../common/constant";
-import { blogData, carouselData, productData } from "./data";
-import { faqData, secondFaqData } from "./faq-data";
-import { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import generateMetaData from "@/common/utils/metaData";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
+} from "@/components"
+import { space } from "../../../../common/constant"
+import { blogData, carouselData, productData } from "./data"
+import { faqData, secondFaqData } from "./faq-data"
+import { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+import generateMetaData from "@/common/utils/metaData"
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automated Invoicing Processing & Software for Business - EnKash",
   description:
     "Simplify your invoicing process with our cutting-edge invoicebill management software for businesses.  Get complete visibility of sales and payments & create bulk invoices with embedded payment links",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/invoices/",
+    canonical: "https://www.enkash.com/invoices/",
   },
   faqData: faqData,
-});
+})
 
 const invoices = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/receivables/invoices/`}
+        url={`https://www.enkash.com/invoices/`}
         faqData={faqData}
       />
       <Header utmSource="receivables" />
@@ -439,7 +439,7 @@ const invoices = () => {
       </div>
       <Footer utmSource="receivables" />
     </div>
-  );
-};
+  )
+}
 
-export default invoices;
+export default invoices

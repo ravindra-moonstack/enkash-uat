@@ -1,8 +1,8 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
-import iconFive from "./img/icon-five.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
+import iconFive from "./img/icon-five.svg"
 import {
   autoCollect,
   instantSettlement,
@@ -12,8 +12,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -35,44 +35,44 @@ const productData: AllProductsDataProp[] = [
     description:
       "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
     image: qrCode,
-    link: "/olympus/receivables/qr-codes/",
+    link: "/qr-codes/",
   },
   {
     title: "Invoices",
     description:
       "Create bulk invoices and automate recurring invoicing, with embedded payment links",
     image: invoices,
-    link: "/olympus/receivables/invoices/",
+    link: "/invoices/",
   },
   {
     title: "Payment Link",
     description:
       "Use no-code payment links to collect payments on different channels like WhatsApp, SMS, email and social media.",
     image: paymentLink,
-    link: "/olympus/receivables/payment-links/",
+    link: "/payment-links/",
   },
   {
     title: "Payment Button",
     description:
       "An easy-to-integrate pre-designed payment button lets businesses collect payments.",
     image: paymentButton,
-    link: "/olympus/receivables/payment-button/",
+    link: "/payment-button/",
   },
   {
     title: "Instant Settlement",
     description:
       "Businesses can skip traditional settlement cycles and switch to instant settlement taking complete control of their cash flow.",
     image: instantSettlement,
-    link: "/olympus/receivables/instant-settlement/",
+    link: "/instant-settlement/",
   },
   {
     title: "Payment Page",
     description:
       "Make customized payment pages with zero technical effort and start receiving funds.",
     image: paymentPage,
-    link: "/olympus/receivables/customized-payment/",
+    link: "/customized-payment/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -95,8 +95,7 @@ const carouselData = [
       "Start receiving recurring payments from your customers as per their subscription plans.",
     heading: "Collect: ",
   },
-];
-
+]
 
 const blogData = [
   {
@@ -131,6 +130,6 @@ const blogData = [
       "The world is going digital, and the latest development in the financial sector is the unceasing rise of online payments. Pertaining to the aftereffects of COVID-19 and ease of payment, making any transaction...",
     link: "https://www.enkash.com/resources/blog/accepting-payments-online-for-business/",
   },
-];
+]
 
-export  {blogData , carouselData, productData};
+export { blogData, carouselData, productData }

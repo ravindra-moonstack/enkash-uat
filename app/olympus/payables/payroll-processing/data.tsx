@@ -1,7 +1,7 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
 import {
   autoCollect,
   instantSettlement,
@@ -11,8 +11,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -41,7 +41,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Simplify rental payments with automated solutions, ensuring timely transactions and avoiding penalties or delays.",
     image: paymentButton,
-    link: "/olympus/payables/rental-payment/",
+    link: "/rental-payment/",
   },
   {
     title: "Invoice Management",
@@ -71,7 +71,7 @@ const productData: AllProductsDataProp[] = [
     image: reminderEngine,
     link: "/olympus/payables/payable-analytics/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -102,7 +102,7 @@ const carouselData = [
       "Gain real-time visibility into payroll data and generate detailed reports for analysis and decision-making",
     heading: "Real-Time Tracking: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -135,7 +135,6 @@ const blogData = [
       "Today, ensuring your business is up and running consistently is considered a necessity. With the increasing competition, any break in your supply of goods or services to your customers can result...",
     link: "https://www.enkash.com/resources/blog/how-to-use-bulk-payment-effectively-for-better-results/",
   },
-];
+]
 
-
-export { blogData, carouselData,  productData };
+export { blogData, carouselData, productData }

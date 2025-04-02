@@ -1,12 +1,12 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import { blogData, howDoesItWorkData } from "./data";
-import faqData from "./faq-data";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import { blogData, howDoesItWorkData } from "./data"
+import faqData from "./faq-data"
+import ExploreCard from "@/components/explore-card/explore-card"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import {
   Header,
   ThreeSteps,
@@ -21,11 +21,11 @@ import {
   LottieClientComponent,
   StructuredData,
   AllProducts,
-  FAQHtml
-} from "@/components";
-import ActionCard from "@/components/action-card/action-card";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
+  FAQHtml,
+} from "@/components"
+import ActionCard from "@/components/action-card/action-card"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
+import SecondryButton from "@/components/buttons/secondary-button/secondary-button"
 import {
   officeImg,
   officeImg2,
@@ -38,10 +38,9 @@ import {
   officeImg3,
   authorOne,
   authorTwo,
-} from ".";
-import TestimonialCard from "@/components/testimonial-card/testimonial-card";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "."
+import TestimonialCard from "@/components/testimonial-card/testimonial-card"
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -52,7 +51,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/olympus/",
   },
   faqData: faqData,
-});
+})
 
 const olympus = () => {
   return (
@@ -226,7 +225,7 @@ const olympus = () => {
             title="Rental Payments"
             description="Pay and manage your office/home rent seamlessly directly into your landlord’s bank account"
             theme="green"
-            link="/olympus/payables/rental-payment"
+            link="/rental-payment"
           />
         </div>
 
@@ -236,7 +235,7 @@ const olympus = () => {
               title="Payment Links"
               description="Expedite your collection process by embedding payment links with digital invoices"
               theme="green"
-              link="/olympus/receivables/payment-links"
+              link="/payment-links"
             />
           </div>
         </div>
@@ -272,7 +271,7 @@ const olympus = () => {
               title="Bulk Collect"
               description="Streamline business collections through automated payment reminders, and bulk invoice dispatch in one click"
               theme="blue"
-              link="/olympus/receivables/bulk-collect"
+              link="/bulk-collect"
             />
           </div>
         </div>
@@ -765,7 +764,7 @@ const olympus = () => {
       </div>
       <Footer utmSource="payables" />
     </div>
-  );
-};
+  )
+}
 
-export default olympus;
+export default olympus

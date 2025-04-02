@@ -1,8 +1,8 @@
-import { FAQProps } from "@/components/faq/faq";
-import styles from "./page.module.scss";
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
+import { FAQProps } from "@/components/faq/faq"
+import styles from "./page.module.scss"
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
 
 import {
   autoCollect,
@@ -13,8 +13,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -22,42 +22,42 @@ const productData: AllProductsDataProp[] = [
     description:
       "Effortlessly collect payments across various channels with this no-code solution",
     image: paymentPage,
-    link: "/olympus/receivables/payment-gateway/",
+    link: "/payment-gateway/",
   },
   {
     title: "Payment Link",
     description:
       "Send payment links on WhatsApp, SMS, Facebook, Twitter, and more to collect payments",
     image: paymentLink,
-    link: "/olympus/receivables/payment-links/",
+    link: "/payment-links/",
   },
   {
     title: "Payment Button",
     description:
       "A pre-designed easy-to-integrate payment button for your website to collect payments.",
     image: paymentButton,
-    link: "/olympus/receivables/payment-button/",
+    link: "/payment-button/",
   },
   {
     title: "QR Codes",
     description:
       "Allow secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
     image: qrCode,
-    link: "/olympus/receivables/qr-codes/",
+    link: "/qr-codes/",
   },
   {
     title: "Auto Collect",
     description:
       "Easily accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
     image: autoCollect,
-    link: "/olympus/receivables/auto-collect/",
+    link: "/auto-collect/",
   },
   {
     title: "Invoices",
     description:
       "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links.",
     image: invoices,
-    link: "/olympus/receivables/invoices/",
+    link: "/invoices/",
   },
   {
     title: "UPI Payments",
@@ -71,9 +71,9 @@ const productData: AllProductsDataProp[] = [
     description:
       "Eliminate manual reminders and automate your business collections effortlessly for smoother cash flow management.",
     image: reminderEngine,
-    link: "/olympus/receivables/reminder-engine/",
+    link: "/collection-reminder/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -97,7 +97,7 @@ const carouselData = [
       " Once set, activate instant settlements and start receiving funds in real time.",
     heading: "Confirm & Activate:  ",
   },
-];
+]
 
 const faqData: FAQProps[] = [
   {
@@ -154,7 +154,7 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
 const secondFaqData = [
   {
@@ -191,7 +191,7 @@ const secondFaqData = [
       },
     ],
   },
-];
+]
 
 const blogData = [
   {
@@ -227,6 +227,6 @@ const blogData = [
       "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
     link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
   },
-];
+]
 
-export { blogData, faqData, secondFaqData, carouselData, productData };
+export { blogData, faqData, secondFaqData, carouselData, productData }

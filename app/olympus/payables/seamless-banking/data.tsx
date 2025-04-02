@@ -1,8 +1,8 @@
-import { FAQProps } from "@/components/faq/faq";
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
+import { FAQProps } from "@/components/faq/faq"
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
 import {
   autoCollect,
   instantSettlement,
@@ -12,9 +12,9 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
-import Link from "next/link";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
+import Link from "next/link"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -36,7 +36,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Simplify rental payments with automated solutions, ensuring timely transactions and avoiding penalties or delays.",
     image: paymentPage,
-    link: "/olympus/payables/rental-payment/",
+    link: "/rental-payment/",
   },
   {
     title: "Invoice Management",
@@ -73,9 +73,7 @@ const productData: AllProductsDataProp[] = [
     image: reminderEngine,
     link: "/olympus/payables/payable-analytics/",
   },
-];
-
-
+]
 
 const carouselData = [
   {
@@ -102,7 +100,7 @@ const carouselData = [
     title: "Make payments directly from EnKash..",
     heading: "Payment: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -135,6 +133,6 @@ const blogData = [
       "Credit and debt are the basic processes that form the pillars of accounting. They are essential to the working of any business and act as important factor while evaluating the success of a business....",
     link: "https://www.enkash.com/resources/blog/credit-card-rent-payment-charges/",
   },
-];
+]
 
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

@@ -1,9 +1,9 @@
-import { FAQProps } from "@/components/faq/faq";
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
-import Link from "next/link";
+import { FAQProps } from "@/components/faq/faq"
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
+import Link from "next/link"
 import {
   autoCollect,
   instantSettlement,
@@ -13,8 +13,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -36,7 +36,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Simplify rental payments with automated solutions, ensuring timely transactions and avoiding penalties or delays.",
     image: paymentPage,
-    link: "/olympus/payables/rental-payment/",
+    link: "/rental-payment/",
   },
   {
     title: "Invoice Management",
@@ -73,7 +73,7 @@ const productData: AllProductsDataProp[] = [
     image: reminderEngine,
     link: "/olympus/payables/payable-analytics/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -102,7 +102,7 @@ const carouselData = [
     title: "Access detailed reports and improve vendor management efficiency.",
     heading: "Track & Optimize: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -136,8 +136,6 @@ const blogData = [
       "It is rightly said that one must have a supplier relationship of continuous improvement to create an agile process of procuring to pay process flow and in turn, boost business growth and productivity....",
     link: "https://www.enkash.com/resources/blog/enhance-productivity-with-vendor-payment-automation/",
   },
-];
+]
 
-
-
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

@@ -1,10 +1,10 @@
-import { Metadata } from "next";
-import Image from "next/image";
-import styles from "./page.module.scss";
-import { space } from "../../../../common/constant";
-import { blogData, carouselData, productData } from "./data";
-import faqData from "./faq-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import { Metadata } from "next"
+import Image from "next/image"
+import styles from "./page.module.scss"
+import { space } from "../../../../common/constant"
+import { blogData, carouselData, productData } from "./data"
+import faqData from "./faq-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 import {
   Header,
   ThreeSteps,
@@ -19,27 +19,26 @@ import {
   LottieClientComponent,
   StructuredData,
   AllProducts,
-  FAQHtml
-} from "@/components";
-import generateMetaData from "@/common/utils/metaData";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
-
+  FAQHtml,
+} from "@/components"
+import generateMetaData from "@/common/utils/metaData"
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
 
 export const metadata: Metadata = generateMetaData({
   title: "Rent Payment - Pay Rent Through Credit Card | EnKash",
   description:
     "Decentralize rent payment by credit card to your different offices and pay rent online. Get TDS benefits and record approval hierarchy and make audits easy with Enkash's Rental Portal",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/payables/rental-payment/",
+    canonical: "https://www.enkash.com/rental-payment/",
   },
   faqData: faqData,
-});
+})
 
 const rentalPayments = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/payables/rental-payment/`}
+        url={`https://www.enkash.com/rental-payment/`}
         faqData={faqData}
       />
       <Header utmSource="payables" />
@@ -459,7 +458,7 @@ const rentalPayments = () => {
       </div>
       <Footer utmSource="payables" />
     </div>
-  );
-};
+  )
+}
 
-export default rentalPayments;
+export default rentalPayments

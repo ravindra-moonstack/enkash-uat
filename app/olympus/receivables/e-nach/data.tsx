@@ -1,7 +1,7 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
 import {
   autoCollect,
   instantSettlement,
@@ -11,8 +11,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -20,7 +20,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
     image: paymentLink,
-    link: "/olympus/receivables/payment-gateway/",
+    link: "/payment-gateway/",
   },
   {
     title: "Payment Page",
@@ -34,7 +34,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
     image: paymentButton,
-    link: "/olympus/receivables/payment-button/",
+    link: "/payment-button/",
   },
   {
     title: "UPI Payments",
@@ -48,30 +48,30 @@ const productData: AllProductsDataProp[] = [
     description:
       "Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions.",
     image: reminderEngine,
-    link: "/olympus/receivables/qr-codes/",
+    link: "/qr-codes/",
   },
   {
     title: "Auto Collect",
     description:
       "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
     image: autoCollect,
-    link: "/olympus/receivables/auto-collect/",
+    link: "/auto-collect/",
   },
   {
     title: "Instant Settlement",
     description:
       "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
     image: instantSettlement,
-    link: "/olympus/receivables/instant-settlement/",
+    link: "/instant-settlement/",
   },
   {
     title: "Invoices",
     description:
       "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
     image: invoices,
-    link: "/olympus/receivables/invoices/",
+    link: "/invoices/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -98,7 +98,7 @@ const carouselData = [
     title: "eNACH is setup for recurring payments, once approved",
     heading: "Activation: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -134,6 +134,6 @@ const blogData = [
       "Virtual account allows businesses to initiate seamless financial transactions and maintain track records. Various large, medium, and small-scale businesses are shifting towards...",
     link: "https://www.enkash.com/resources/blog/how-virtual-accounts-can-benefit-your-business/",
   },
-];
+]
 
-export  {blogData, carouselData, productData};
+export { blogData, carouselData, productData }

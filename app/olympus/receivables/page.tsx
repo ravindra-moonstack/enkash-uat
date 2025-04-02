@@ -1,14 +1,14 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import { blogData, dataSets } from "./data";
-import faqData from "./faq-data";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import ActionCard from "@/components/action-card/action-card";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import { blogData, dataSets } from "./data"
+import faqData from "./faq-data"
+import ExploreCard from "@/components/explore-card/explore-card"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
+import ActionCard from "@/components/action-card/action-card"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import {
   officeImg,
   whiteArrow,
@@ -17,7 +17,7 @@ import {
   heavyLiftingIconOne,
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
-} from ".";
+} from "."
 import {
   Header,
   Footer,
@@ -30,9 +30,8 @@ import {
   StructuredData,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "@/components"
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: " Accounts Receivables Automation Software for Business - EnKash",
@@ -42,7 +41,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/olympus/receivables/",
   },
   faqData: faqData,
-});
+})
 
 const receivables = () => {
   return (
@@ -150,7 +149,7 @@ const receivables = () => {
               title="Payment Gateway"
               description="From seamless checkouts to advanced automation, accelerate collections and enhances customer satisfaction."
               theme="blue"
-              link="/olympus/receivables/payment-gateway/"
+              link="/payment-gateway/"
             />
           </div>
         </div>
@@ -205,7 +204,7 @@ const receivables = () => {
               title="Payment Links"
               description="Embed payment links within digital invoices for quicker collections."
               theme="blue"
-              link="/olympus/receivables/payment-links"
+              link="/payment-links"
             />
           </div>
         </div>
@@ -233,7 +232,7 @@ const receivables = () => {
               title="Bulk Collect"
               description="Create an improved, customer-focused collection experience while ensuring better DSO"
               theme="blue"
-              link="/olympus/receivables/bulk-collect"
+              link="/bulk-collect"
             />
           </div>
         </div>
@@ -699,7 +698,7 @@ const receivables = () => {
       </div>
       <Footer utmSource="receivables" />
     </div>
-  );
-};
+  )
+}
 
-export default receivables;
+export default receivables

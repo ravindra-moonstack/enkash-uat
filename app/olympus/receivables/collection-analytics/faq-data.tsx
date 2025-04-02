@@ -1,5 +1,5 @@
-import { FAQProps } from "@/components/faq/faq";
-import Link from "next/link";
+import { FAQProps } from "@/components/faq/faq"
+import Link from "next/link"
 
 const faqData: FAQProps[] = [
   {
@@ -38,10 +38,7 @@ const faqData: FAQProps[] = [
         Top reasons to automate invoice processing:Collection analytics software
         utilizes historical data, customer payment patterns, and various metrics
         to create models that{" "}
-        <Link
-          href="https://www.enkash.com/olympus/receivables/bulk-collect/"
-          target="_blank"
-        >
+        <Link href="https://www.enkash.com/bulk-collect/" target="_blank">
           predict future payment
         </Link>{" "}
         behavior. These models consider factors such as payment history, average
@@ -92,7 +89,7 @@ const faqData: FAQProps[] = [
       </h4>
     ),
   },
-];
+]
 const secondFaqData: FAQProps[] = [
   {
     question: "How EnKash collection analytics works?",
@@ -162,6 +159,6 @@ const secondFaqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
-export { faqData, secondFaqData };
+export { faqData, secondFaqData }

@@ -1,7 +1,7 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
 import {
   autoCollect,
   instantSettlement,
@@ -11,8 +11,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -41,7 +41,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Simplify rental payments with automated solutions, ensuring timely transactions and avoiding penalties or delays.",
     image: paymentButton,
-    link: "/olympus/payables/rental-payment/",
+    link: "/rental-payment/",
   },
   {
     title: "Payroll Processing",
@@ -71,7 +71,7 @@ const productData: AllProductsDataProp[] = [
     image: reminderEngine,
     link: "/olympus/payables/payable-analytics/",
   },
-];
+]
 const carouselData = [
   {
     image: iconOne,
@@ -99,7 +99,7 @@ const carouselData = [
       "Monitor progress and generate insights to improve financial planning.",
     heading: "Track & Report: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -135,6 +135,6 @@ const blogData = [
       "Invoice processing includes a complete cycle of receiving the invoice, verifying, reviewing, approving, processing it for payment and keeping a record. Companies often receive multiple invoices, including freelancers,...",
     link: "https://www.enkash.com/resources/blog/how-invoice-processing-makes-everything-easier/",
   },
-];
+]
 
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

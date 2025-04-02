@@ -31,7 +31,7 @@ import {
   qrCodeFilled,
   autoReconciliation,
   autoReconciliationFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const ReceivableProducts = [
   {
@@ -56,7 +56,7 @@ const ReceivableProducts = [
           "Send unlimited collection requests with bulk invoice dispatch",
         imageSrc: bulkCollect,
         imageSrcHovered: bulkCollectFilled,
-        link: "/olympus/receivables/bulk-collect",
+        link: "/bulk-collect",
       },
       {
         name: "Virtual Accounts",
@@ -77,7 +77,7 @@ const ReceivableProducts = [
         description: "Send embedded payment links via multiple channels",
         imageSrc: paymentLinks,
         imageSrcHovered: paymentLinksFilled,
-        link: "/olympus/receivables/payment-links",
+        link: "/payment-links",
       },
       {
         name: "UPI Payments",
@@ -151,7 +151,7 @@ const ReceivableProducts = [
         description: "Send reminders for collection via email, SMS, & WhatsApp",
         imageSrc: reminderEngine,
         imageSrcHovered: reminderEngineFilled,
-        link: "/olympus/receivables/reminder-engine",
+        link: "/olympus/receivables/collection-reminder",
       },
       {
         name: "Auto Reconciliation",
@@ -201,6 +201,6 @@ const ReceivableProducts = [
     footerLink: "/olympus/receivables",
     parentLink: "/olympus/receivables",
   },
-];
+]
 
-export default ReceivableProducts;
+export default ReceivableProducts

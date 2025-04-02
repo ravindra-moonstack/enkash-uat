@@ -1,10 +1,10 @@
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./page.module.scss";
-import { space } from "../../../../common/constant";
-import { blogData, carouselData, productData } from "./data";
-import faqData from "./faq-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import Image from "next/image"
+import Link from "next/link"
+import styles from "./page.module.scss"
+import { space } from "../../../../common/constant"
+import { blogData, carouselData, productData } from "./data"
+import faqData from "./faq-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 import {
   Header,
   ThreeSteps,
@@ -20,10 +20,10 @@ import {
   StructuredData,
   AllProducts,
   FAQHtml,
-} from "@/components";
-import { Metadata } from "next";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
-import generateMetaData from "@/common/utils/metaData";
+} from "@/components"
+import { Metadata } from "next"
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Decentralized Finance Payment Solutions for Businesses - EnKash",
@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/olympus/payables/seamless-banking/",
   },
   faqData: faqData,
-});
+})
 
 const seamlessBanking = () => {
   return (
@@ -292,10 +292,7 @@ const seamlessBanking = () => {
                   payments from their respective department vendors and
                   customers is what makes a decentralized accounting system. The
                   automation leading the system facilitates{" "}
-                  <Link
-                    href="https://www.enkash.com/olympus/receivables/invoices/"
-                    target="_blank"
-                  >
+                  <Link href="https://www.enkash.com/invoices/" target="_blank">
                     invoice uploading,
                   </Link>{" "}
                   data collection, and reconciliation with enhanced visibility
@@ -338,7 +335,7 @@ const seamlessBanking = () => {
                   providing data that can drive business to greater heights. It
                   also eases{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/receivables/bulk-collect/"
+                    href="https://www.enkash.com/bulk-collect/"
                     target="_blank"
                   >
                     business payments and collections
@@ -355,7 +352,7 @@ const seamlessBanking = () => {
       </div>
       <Footer utmSource="payables" />
     </div>
-  );
-};
+  )
+}
 
-export default seamlessBanking;
+export default seamlessBanking

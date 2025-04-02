@@ -1,6 +1,6 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
 import {
   autoCollect,
   instantSettlement,
@@ -10,8 +10,8 @@ import {
   paymentPage,
   qrCode,
   reminderEngine,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -19,42 +19,42 @@ const productData: AllProductsDataProp[] = [
     description:
       "Never miss a transaction with this no-code solution to effortlessly collect payments across various channels. ",
     image: paymentPage,
-    link: "/olympus/receivables/payment-gateway/",
+    link: "/payment-gateway/",
   },
   {
     title: "Payment Link",
     description:
       "Seamlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
     image: paymentLink,
-    link: "/olympus/receivables/payment-links/",
+    link: "/payment-links/",
   },
   {
     title: "Payment Button",
     description:
       "A payment button that easily integrates into your website with a quick plug-and-play setup.",
     image: paymentButton,
-    link: "/olympus/receivables/payment-button/",
+    link: "/payment-button/",
   },
   {
     title: "QR Codes",
     description:
       "Collect secure, contactless payments using QR codes, empowering businesses to process transactions ",
     image: qrCode,
-    link: "/olympus/receivables/qr-codes/",
+    link: "/qr-codes/",
   },
   {
     title: "Auto Collect",
     description:
       "Accept NEFT, RTGS, and IMPS transfers with customer-specific identifiers and automated reconciliation for scalability.",
     image: autoCollect,
-    link: "/olympus/receivables/auto-collect/",
+    link: "/auto-collect/",
   },
   {
     title: "Invoices",
     description:
       "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links.",
     image: invoices,
-    link: "/olympus/receivables/invoices/",
+    link: "/invoices/",
   },
   {
     title: "Instant Settlement",
@@ -68,9 +68,9 @@ const productData: AllProductsDataProp[] = [
     description:
       "Get over manual reminders and automate your business collections effortlessly for smoother cash flow management.",
     image: reminderEngine,
-    link: "/olympus/receivables/reminder-engine/",
+    link: "/collection-reminder/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -93,7 +93,7 @@ const carouselData = [
       "Create automated invoices instantly and send them to clients via your preferred channel.",
     heading: "Send Invoices: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -128,6 +128,6 @@ const blogData = [
       "Invoice processing is a critical component of any organization’s financial operations. However, the traditional manual method of processing invoices can be time-consuming and error-prone...",
     link: "https://www.enkash.com/resources/blog/how-to-modernize-invoice-processing-workflow/",
   },
-];
+]
 
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

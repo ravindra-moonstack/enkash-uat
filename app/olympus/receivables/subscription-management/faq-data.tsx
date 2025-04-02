@@ -1,6 +1,6 @@
-import { FAQProps } from "@/components/faq/faq";
-import Link from "next/link";
-import { space } from "@/common/constant";
+import { FAQProps } from "@/components/faq/faq"
+import Link from "next/link"
+import { space } from "@/common/constant"
 
 const faqData: FAQProps[] = [
   {
@@ -30,10 +30,7 @@ const faqData: FAQProps[] = [
         </h4>
         <h4 className="mb-4">
           <b> Automated invoice generation:</b> Businesses can
-          <Link
-            href="https://www.enkash.com/olympus/receivables/invoices/"
-            target="_blank"
-          >
+          <Link href="https://www.enkash.com/invoices/" target="_blank">
             {`${space} automate invoice generation ${space}`}
           </Link>
           for recurring payments by defining the timeline and frequency for
@@ -75,10 +72,7 @@ const faqData: FAQProps[] = [
       <div>
         <h4 className="mb-3 mt-2">
           Automated subscriptions enable businesses to{" "}
-          <Link
-            href="https://www.enkash.com/olympus/receivables/bulk-collect/"
-            target="_blank"
-          >
+          <Link href="https://www.enkash.com/bulk-collect/" target="_blank">
             {`${space} track and collect payments ${space}`}
           </Link>
           for their product or service automatically with various payment
@@ -148,7 +142,7 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
 const secondFaqData: FAQProps[] = [
   {
@@ -208,6 +202,6 @@ const secondFaqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
-export { faqData, secondFaqData };
+export { faqData, secondFaqData }

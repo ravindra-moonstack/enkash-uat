@@ -1,9 +1,9 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
-import { space } from "../../../../common/constant";
-import { faqData, secondFaqData } from "./faq-data";
-import {blogData, carouselData, productData} from "./data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import Image from "next/image"
+import styles from "./page.module.scss"
+import { space } from "../../../../common/constant"
+import { faqData, secondFaqData } from "./faq-data"
+import { blogData, carouselData, productData } from "./data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 import {
   Header,
   ThreeSteps,
@@ -20,11 +20,11 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import { Metadata } from "next";
-import Link from "next/link";
-import generateMetaData from "@/common/utils/metaData";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
+} from "@/components"
+import { Metadata } from "next"
+import Link from "next/link"
+import generateMetaData from "@/common/utils/metaData"
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
 
 export const metadata: Metadata = generateMetaData({
   title: "eNACH & eMandate: Registration, Process & Status Check - EnKash",
@@ -34,7 +34,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/olympus/receivables/e-nach/",
   },
   faqData: faqData,
-});
+})
 
 const eNach = () => {
   return (
@@ -402,7 +402,7 @@ const eNach = () => {
                   NACH enables repetitive transactions that take place in bulk.
                   It can be further used for{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/receivables/bulk-collect/"
+                    href="https://www.enkash.com/bulk-collect/"
                     target="_blank"
                   >
                     payment collection
@@ -463,7 +463,7 @@ const eNach = () => {
       </div>
       <Footer utmSource="receivables" />
     </div>
-  );
-};
+  )
+}
 
-export default eNach;
+export default eNach

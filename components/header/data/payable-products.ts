@@ -19,7 +19,7 @@ import {
   payrollProcessingFilled,
   vendorManagement,
   vendorManagementFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const payableProducts = [
   {
@@ -64,7 +64,7 @@ const payableProducts = [
         description: "Make rental payments directly into landlord's account",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
-        link: "/olympus/payables/rental-payment",
+        link: "/rental-payment",
       },
       // {
       //   name: "Pay By Any Card",
@@ -116,6 +116,6 @@ const payableProducts = [
     footerLink: "/olympus/payables",
     parentLink: "/olympus/payables",
   },
-];
+]
 
-export default payableProducts;
+export default payableProducts
