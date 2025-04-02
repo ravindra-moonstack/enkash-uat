@@ -1,6 +1,6 @@
-import { FAQProps } from "@/components/faq/faq";
-import Link from "next/link";
-import styles from "./page.module.scss";
+import { FAQProps } from "@/components/faq/faq"
+import Link from "next/link"
+import styles from "./page.module.scss"
 
 const faqData: FAQProps[] = [
   {
@@ -57,7 +57,7 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
 const secondFaqData = [
   {
@@ -94,6 +94,6 @@ const secondFaqData = [
       },
     ],
   },
-];
+]
 
-export { faqData, secondFaqData };
+export { faqData, secondFaqData }

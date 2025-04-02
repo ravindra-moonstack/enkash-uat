@@ -61,7 +61,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Access your funds instantly, skip traditional settlement cycles, and take full control of your cash flow.",
     image: qrCode,
-    link: "/olympus/receivables/instant-settlements/",
+    link: "/instant-settlement/",
   },
   {
     title: "Reminder Engine",

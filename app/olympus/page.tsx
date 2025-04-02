@@ -282,7 +282,7 @@ const olympus = () => {
               description="Digitize the entire invoicing process from uploading to dispatching invoices electronically.
               Effortlessly streamline your business payments and collections"
               theme="blue"
-              link="/olympus/receivables/invoices"
+              link="/invoices"
             />
           </div>
           <div
@@ -323,7 +323,7 @@ const olympus = () => {
               title="Virtual Accounts"
               description="Streamline the collection process by creating virtual accounts for your customers"
               theme="blue"
-              link="/olympus/receivables/virtual-accounts"
+              link="/virtual-account"
             />
           </div>
         </div>

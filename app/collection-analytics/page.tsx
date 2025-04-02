@@ -1,8 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
-import { space } from "../../../../common/constant";
-import { faqData, secondFaqData } from "./faq-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import Image from "next/image"
+import { Metadata } from "next"
+import Link from "next/link"
+
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { faqData, secondFaqData } from "./faq-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 import {
   Header,
   ThreeSteps,
@@ -19,12 +22,10 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import { Metadata } from "next";
-import Link from "next/link";
-import generateMetaData from "@/common/utils/metaData";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
-import {blogData, productData, carouselData} from "./data";
+} from "@/components"
+import generateMetaData from "@/common/utils/metaData"
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
+import { blogData, productData, carouselData } from "./data"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -32,17 +33,16 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Seamless experience with our cutting-edge Collection analytics Solutions for corporate and small businesses. Explore the benefits of the Data collection analytics platform. Book Free Demo !!",
   alternates: {
-    canonical:
-      "https://www.enkash.com/olympus/receivables/collection-analytics/",
+    canonical: "https://www.enkash.com/collection-analytics/",
   },
   faqData: faqData,
-});
+})
 
 const collectionAnalytics = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/receivables/collection-analytics/`}
+        url={`https://www.enkash.com/collection-analytics/`}
         faqData={faqData}
       />
       <Header utmSource="receivables" />
@@ -418,7 +418,7 @@ const collectionAnalytics = () => {
       </div>
       <Footer utmSource="receivables" />
     </div>
-  );
-};
+  )
+}
 
-export default collectionAnalytics;
+export default collectionAnalytics

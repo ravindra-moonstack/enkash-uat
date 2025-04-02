@@ -1,9 +1,11 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
-import { space } from "../../../../common/constant";
-import { blogData, carouselData, productData } from "./data";
-import { faqData, secondFaqData } from "./faq-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import Image from "next/image"
+import { Metadata } from "next"
+
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { blogData, carouselData, productData } from "./data"
+import { faqData, secondFaqData } from "./faq-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 import {
   Header,
   ThreeSteps,
@@ -20,28 +22,25 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import { Metadata } from "next";
-import generateMetaData from "@/common/utils/metaData";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
-
+} from "@/components"
+import generateMetaData from "@/common/utils/metaData"
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
 
 export const metadata: Metadata = generateMetaData({
   title: "Accept Online Payments with Instant Settlements - EnKash",
   description:
     "Get cash in hand instantly after accepting online payments with Instant Settlement whenever you want. You don’t need to wait for days to get your customer payments to grow your business with EnKash.",
   alternates: {
-    canonical:
-      "https://www.enkash.com/olympus/receivables/instant-settlements/",
+    canonical: "https://www.enkash.com/instant-settlement/",
   },
   faqData: faqData,
-});
+})
 
 const InstantSettlement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/receivables/instant-settlements/`}
+        url={`https://www.enkash.com/instant-settlement/`}
         faqData={faqData}
       />
       <Header utmSource="receivables" />
@@ -372,7 +371,7 @@ const InstantSettlement = () => {
 
       <Footer utmSource="receivables" />
     </div>
-  );
-};
+  )
+}
 
-export default InstantSettlement;
+export default InstantSettlement

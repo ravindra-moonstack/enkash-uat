@@ -1,3 +1,7 @@
+import { Metadata } from "next"
+import Link from "next/link"
+import Image from "next/image"
+
 import styles from "./page.module.scss"
 import {
   Header,
@@ -16,12 +20,9 @@ import {
   FAQHtml,
   SecondryButton,
 } from "@/components"
-import { space } from "../../../../common/constant"
+import { space } from "@/common/constant"
 import { blogData, carouselData, productData } from "./data"
 import { faqData, secondFaqData } from "./faq-data"
-import { Metadata } from "next"
-import Link from "next/link"
-import Image from "next/image"
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 import generateMetaData from "@/common/utils/metaData"
 import { userPlus, numberOne, stack } from "@/components/three-steps/"
@@ -36,7 +37,9 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 })
 
-const invoices = () => {
+const Invoices = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -442,4 +445,4 @@ const invoices = () => {
   )
 }
 
-export default invoices
+export default Invoices

@@ -1,8 +1,9 @@
 import Image from "next/image"
 import { Metadata } from "next"
 import Link from "next/link"
+
 import styles from "./page.module.scss"
-import { space } from "../../../../common/constant"
+import { space } from "@/common/constant"
 import { faqData, secondFaqData } from "./faq-data"
 import { blogData, carouselData, productData } from "./data"
 import { banner, caraouselBg, faqBg, whiteArrow } from "."
@@ -31,7 +32,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "EnKash's automated system is designed for scalability, effortlessly accommodating increasing transaction volumes without compromising efficiency. Book a Free demo Now !!",
   alternates: {
-    canonical: "https://www.enkash.com/payment-links/",
+    canonical: "https://www.enkash.com/subscriptions/",
   },
   faqData: faqData,
 })
@@ -40,7 +41,7 @@ const subscriptionManagement = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/receivables/subscription-management/`}
+        url={`https://www.enkash.com/subscriptions/`}
         faqData={faqData}
       />
       <Header utmSource="receivables" />

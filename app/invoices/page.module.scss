@@ -1,5 +1,5 @@
-@import "../../../../styles/variables";
-@import "../../../../styles/mixin";
+@import "../../styles/variables";
+@import "../../styles/mixin";
 
 .first_row {
   margin-bottom: 80px;
@@ -19,8 +19,8 @@
   .lottie_container {
     width: 300px;
     @include for-laptops {
-      margin-top: 50px;
-      width: 370px;
+      margin-top: 60px;
+      width: 450px;
     }
   }
 }
@@ -71,7 +71,7 @@
   padding-top: 50px;
   @include for-laptops {
     padding-bottom: 20px;
-    padding-top: 150px;
+    padding-top: 80px;
   }
 }
 

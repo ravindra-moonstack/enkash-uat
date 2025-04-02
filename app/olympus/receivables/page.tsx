@@ -160,7 +160,7 @@ const receivables = () => {
               title="Virtual Accounts"
               description="Streamline the collection process by creating virtual accounts for your customers"
               theme="blue"
-              link="/olympus/receivables/virtual-accounts"
+              link="/virtual-account"
             />
           </div>
           <div
@@ -252,7 +252,7 @@ const receivables = () => {
             title="QR Codes"
             description="Secure, contactless payment with QR codes to enable businesses to accept instant transactions."
             theme="green"
-            link="/olympus/receivables/qr-codes"
+            link="/qr-codes"
           />
         </div>
 
@@ -261,7 +261,7 @@ const receivables = () => {
             title="UPI Payments"
             description="UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles."
             theme="green"
-            link="/olympus/receivables/upi-payments"
+            link="/upi-payments"
           />
         </div>
 

@@ -1,6 +1,10 @@
+import React from "react"
 import Image from "next/image"
+import { Metadata } from "next"
+import Link from "next/link"
+
 import styles from "./page.module.scss"
-import { space } from "../../../../common/constant"
+import { space } from "@/common/constant"
 import { faqData, secondFaqData } from "./faq-data"
 import { blogData, carouselData, productData } from "./data"
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
@@ -21,8 +25,6 @@ import {
   FAQHtml,
   SecondryButton,
 } from "@/components"
-import { Metadata } from "next"
-import Link from "next/link"
 import generateMetaData from "@/common/utils/metaData"
 import { userPlus, numberOne, stack } from "@/components/three-steps/"
 
@@ -31,16 +33,18 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify collections payments, reduce paperwork & enhance financial efficiency with our e-NACH Solution. Explore the benefits of Electronic National Automated Clearing House (eNach) & eMandate.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/e-nach/",
+    canonical: "https://www.enkash.com/e-nach/",
   },
   faqData: faqData,
 })
 
-const eNach = () => {
+const eNach = (): React.JSX.Element => {
+  //
+
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/receivables/e-nach/`}
+        url={`https://www.enkash.com/e-nach/`}
         faqData={faqData}
       />
 

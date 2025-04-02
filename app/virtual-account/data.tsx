@@ -40,7 +40,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Ensure regular revenue and convenience for customers by enabling subscriptions for recurring payments.",
     image: qrCode,
-    link: "/olympus/receivables/subscription-management/",
+    link: "/subscriptions/",
   },
   {
     title: "Payment Page",

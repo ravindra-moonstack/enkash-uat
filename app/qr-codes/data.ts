@@ -42,7 +42,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
     image: qrCode,
-    link: "/olympus/receivables/upi-payments/",
+    link: "/upi-payments/",
   },
   {
     title: "Auto Collect",

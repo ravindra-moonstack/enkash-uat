@@ -68,9 +68,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       </div>
                     </li> */}
                     <li className="d-flex">
-                      <Link href="/olympus/receivables/payment-gateway">
-                        EnKash PG
-                      </Link>
+                      <Link href="/payment-gateway">EnKash PG</Link>
                       {/* <div className={'my-auto '}> NEW</div> */}
                     </li>
                     <li>
@@ -86,16 +84,14 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       <Link href="/bulk-collect/">Bulk Collect</Link>
                     </li>
                     <li className="d-flex">
-                      <Link href="/olympus/receivables/upi-payments">
-                        UPI Payments
-                      </Link>
+                      <Link href="/upi-payments">UPI Payments</Link>
                       {/* <div className={`my-auto ${styles.new_badge}`}>
                         {" "}
                         Coming Soon
                       </div> */}
                     </li>
                     <li className="d-flex">
-                      <Link href="/olympus/receivables/qr-codes">QR Codes</Link>
+                      <Link href="/qr-codes">QR Codes</Link>
                       {/* <div className={`my-auto ${styles.new_badge}`}>
                         {" "}
                         Coming Soon
@@ -105,23 +101,19 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       <Link href="/auto-collect/">Auto Collect</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/virtual-accounts/">
-                        Virtual Accounts
-                      </Link>
+                      <Link href="/virtual-account/">Virtual Accounts</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
+                      <Link href="/e-nach/">e-NACH</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/subscription-management/">
-                        Subscriptions
-                      </Link>
+                      <Link href="/subscriptions/">Subscriptions</Link>
                     </li>
                     <li>
                       <Link href="/collection-reminder/">Reminder Engine</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/instant-settlements/">
+                      <Link href="/instant-settlement/">
                         Instant Settlements
                       </Link>
                     </li>
@@ -129,7 +121,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       <Link href="/invoices/">Invoices</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/collection-analytics/">
+                      <Link href="/collection-analytics/">
                         Collection Analytics
                       </Link>
                     </li>
