@@ -135,7 +135,7 @@ const payables = () => {
               title="Vendor Payments"
               description="Keep track of all your vendor bills, get automated updates about upcoming payments, and simplify bulk vendor payments with a single click"
               theme="blue"
-              link="/olympus/payables/vendor-payment"
+              link="/vendor-payment"
             />
           </div>
           <div
@@ -188,7 +188,7 @@ const payables = () => {
               title="Bulk Payouts"
               description="Enable bulk payouts and make payments to vendors, billers & more via payment modes of your choice."
               theme="blue"
-              link="/olympus/payables/bulk-payout"
+              link="/express-pay"
             />
           </div>
           <div

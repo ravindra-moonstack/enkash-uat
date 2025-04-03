@@ -1,4 +1,4 @@
-import diyCardModule from "@/app/corporate-cards/diy-card-module/page";
+import diyCardModule from "@/app/corporate-cards/diy-card-module/page"
 import {
   digitalMarketingCard,
   digitalMarketingCardFilled,
@@ -16,7 +16,7 @@ import {
   purchaseCardFilled,
   diyCard,
   diyCardFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const freedomProducts = [
   {
@@ -32,7 +32,7 @@ const freedomProducts = [
         description: "Empower employees to take tax break on meals",
         imageSrc: mealCard,
         imageSrcHovered: mealCardFilled,
-        link: "/corporate-cards/meal-cards",
+        link: "/meal-cards",
       },
       {
         name: "Fuel Cards*",
@@ -91,6 +91,6 @@ const freedomProducts = [
     footerLink: "/corporate-cards",
     parentLink: "/corporate-cards",
   },
-];
+]
 
-export default freedomProducts;
+export default freedomProducts

@@ -1,10 +1,12 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import { space } from "../../../common/constant";
-import {  carouselData, blogData, productData } from "./data";
-import faqData from "./faq-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import Image from "next/image"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { carouselData, blogData, productData } from "./data"
+import faqData from "./faq-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+
 import {
   Header,
   ThreeSteps,
@@ -21,25 +23,23 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "@/components"
 
 export const metadata: Metadata = generateMetaData({
   title: "Employee Expense Management : Get Data Driven Insight - EnKash.com",
   description:
     "Employee Expense Management tracks employee business expenses with data-driven insights. Revolutionize the way you manage and analyze expenditures for enhanced financial efficiency",
   alternates: {
-    canonical: "https://www.enkash.com/ofex/insights/",
+    canonical: "https://www.enkash.com/insights/",
   },
   faqData: faqData,
-});
+})
 
 const Insights = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/ofex/insights/`}
+        url={`https://www.enkash.com/insights/`}
         faqData={faqData}
       />
       <Header utmSource="expense_management" />
@@ -291,7 +291,7 @@ const Insights = (): React.JSX.Element => {
       </div>
       <Footer utmSource="expense_management" />
     </div>
-  );
-};
+  )
+}
 
-export default Insights;
+export default Insights

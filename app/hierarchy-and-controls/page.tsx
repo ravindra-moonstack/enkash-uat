@@ -1,9 +1,13 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import { space } from "../../../common/constant";
-import { blogData, carouselData, productData } from "./data";
-import faqData from "./faq-data";
+import Image from "next/image"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { bannerLottie, caraouselBg, faqBg } from "."
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
+import { blogData, carouselData, productData } from "./data"
+import faqData from "./faq-data"
+
 import {
   Header,
   ThreeSteps,
@@ -18,11 +22,7 @@ import {
   StructuredData,
   AllProducts,
   FAQHtml,
-} from "@/components";
-import { bannerLottie, caraouselBg, faqBg } from ".";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "@/components"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -30,16 +30,16 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Businesses can bring transparency using approval hierarchies and enhance decision-making abilities within the organization.  How you can save time & money with Enkash.  Book a Demo",
   alternates: {
-    canonical: "https://www.enkash.com/ofex/hierarchy-and-controls/",
+    canonical: "https://www.enkash.com/hierarchy-and-controls/",
   },
   faqData: faqData,
-});
+})
 
 const HierarchyAndControls = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/ofex/hierarchy-and-controls/`}
+        url={`https://www.enkash.com/hierarchy-and-controls/`}
         faqData={faqData}
       />
 
@@ -435,7 +435,7 @@ const HierarchyAndControls = (): React.JSX.Element => {
 
       <Footer utmSource="expense_management" />
     </div>
-  );
-};
+  )
+}
 
-export default HierarchyAndControls;
+export default HierarchyAndControls

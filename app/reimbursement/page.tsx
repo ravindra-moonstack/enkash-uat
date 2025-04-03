@@ -1,10 +1,11 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import { space } from "../../../common/constant";
-import { blogData, carouselData } from "./data";
-import faqData from "./faq-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
+import Image from "next/image"
+import { Metadata } from "next"
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { blogData, carouselData } from "./data"
+import faqData from "./faq-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+
 import {
   Header,
   ThreeSteps,
@@ -19,19 +20,18 @@ import {
   LottieClientComponent,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "@/components"
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Reimbursement - Business & Travel  - EnKash",
   description:
     "Automate and improve your productivity within your organization with an Enkash smart reimbursement system that helps you track, process, and sync data in real-time.",
   alternates: {
-    canonical: "https://www.enkash.com/ofex/reimbursement/",
+    canonical: "https://www.enkash.com/reimbursement/",
   },
   faqData: faqData,
-});
+})
 
 const Reimbursement = (): React.JSX.Element => {
   return (
@@ -42,18 +42,12 @@ const Reimbursement = (): React.JSX.Element => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">
               <Heading
-                title={`OfEx |${space}`}
+                title={`Reimbursements ${space}`}
                 color="rainy-blue"
                 size="h4"
                 weight="7"
               />
             </div>
-            <Heading
-              title="Reimbursements"
-              size="h4"
-              weight="4"
-              useH1TagInHtml={true}
-            />
           </div>
           <div className="d-flex flex-column">
             <Heading
@@ -412,7 +406,7 @@ const Reimbursement = (): React.JSX.Element => {
 
       <Footer utmSource="expense_management" />
     </div>
-  );
-};
+  )
+}
 
-export default Reimbursement;
+export default Reimbursement

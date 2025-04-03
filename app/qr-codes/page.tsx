@@ -53,7 +53,7 @@ const QRCodes = (): React.JSX.Element => {
                 title="QR Codes"
                 color="rainy-blue"
                 size="h4"
-                weight="4"
+                weight="7"
                 useH1TagInHtml={true}
               />
               <sup className="sup-symbol"></sup>

@@ -1,7 +1,7 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
 
 import {
   autoCollect,
@@ -9,8 +9,8 @@ import {
   paymentButton,
   paymentLink,
   qrCode,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -18,37 +18,36 @@ const productData: AllProductsDataProp[] = [
     description:
       "Define budgets and get advances for better expense management. ",
     image: paymentLink,
-    link: "/ofex/budget-and-advances/",
+    link: "/budget-and-advances/",
   },
   {
     title: "Reimbursements",
     description:
       "Businesses repay amount to employees or partners for expenses incurred on their behalf.",
     image: paymentLink,
-    link: "/ofex/reimbursement/",
+    link: "/reimbursement/",
   },
   {
     title: "Scan & Drop Receipts",
     description:
       "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
     image: qrCode,
-    link: "/ofex/scan-and-drop-receipts/",
+    link: "/scan-and-drop-receipts/",
   },
   {
     title: "Insights",
     description:
       "Make use of deep, data-driven understandings for informed decision making.",
     image: invoices,
-    link: "/ofex/insights/",
+    link: "/insights/",
   },
   {
     title: "Hierarchy and Control",
     description: "Define hierarchies for better control and transparency.",
     image: autoCollect,
-    link: "/ofex/hierarchy-and-controls/",
+    link: "/hierarchy-and-controls/",
   },
-];
-
+]
 
 const carouselData = [
   {
@@ -72,7 +71,7 @@ const carouselData = [
       " If you do not set the approval flow, default approval based on hierarchy will be set automatically",
     heading: "Link Them : ",
   },
-];
+]
 
 const blogData = [
   {
@@ -105,6 +104,6 @@ const blogData = [
       "Employee expense reimbursement is a process where an employer reimburses an employee for expenses incurred while performing job-related tasks. These expenses may include travel, training...",
     link: "https://www.enkash.com/resources/blog/employee-expense-reimbursement/",
   },
-];
+]
 
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

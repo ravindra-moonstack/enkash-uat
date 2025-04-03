@@ -1,14 +1,14 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
 import {
   autoCollect,
   invoices,
   paymentButton,
   paymentLink,
   qrCode,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -16,36 +16,36 @@ const productData: AllProductsDataProp[] = [
     description:
       "Define budgets and get advances for better expense management. ",
     image: paymentLink,
-    link: "/ofex/budget-and-advances/",
+    link: "/budget-and-advances/",
   },
   {
     title: "Reimbursements",
     description:
       "Businesses repay amount to employees or partners for expenses incurred on their behalf.",
     image: paymentLink,
-    link: "/ofex/reimbursement/",
+    link: "/reimbursement/",
   },
   {
     title: "Scan & Drop Receipts",
     description:
       "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
     image: qrCode,
-    link: "/ofex/scan-and-drop-receipts/",
+    link: "/scan-and-drop-receipts/",
   },
   {
     title: "Policy and Approval Flow",
     description:
       "A set of guidelines or rules that outline the procedures for seeking and granting official authorization for employee expenses. ",
     image: invoices,
-    link: "/ofex/policy-and-approval-flows/",
+    link: "/policy-and-approval-flows/",
   },
   {
     title: "Hierarchy and Control",
     description: "Define hierarchies for better control and transparency.",
     image: autoCollect,
-    link: "/ofex/hierarchy-and-controls/",
+    link: "/hierarchy-and-controls/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -69,7 +69,7 @@ const carouselData = [
       "Ensure confidentiality and compliance of your financial data with our robust encryption and security measures",
     heading: "Security Measures: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -104,6 +104,6 @@ const blogData = [
       "Managing expenses is an essential aspect of personal and professional financial management. Keeping track of expenses can provide valuable insights into your finances, including...",
     link: "https://www.enkash.com/resources/blog/track-company-expenditure-with-expense-reporting/",
   },
-];
+]
 
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

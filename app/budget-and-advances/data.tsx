@@ -1,14 +1,14 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
 import {
   autoCollect,
   invoices,
   paymentButton,
   paymentLink,
   qrCode,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -16,36 +16,36 @@ const productData: AllProductsDataProp[] = [
     description:
       "Enterprises can define their policies and set approval flow for easy decision making.",
     image: paymentLink,
-    link: "/ofex/policy-and-approval-flows/",
+    link: "/policy-and-approval-flows/",
   },
   {
     title: "Reimbursements",
     description:
       "Businesses repay amount to employees or partners for expenses incurred on their behalf.",
     image: paymentButton,
-    link: "/ofex/reimbursement/",
+    link: "/reimbursement/",
   },
   {
     title: "Scan & Drop Receipts",
     description:
       "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
     image: qrCode,
-    link: "/ofex/scan-and-drop-receipts/",
+    link: "/scan-and-drop-receipts/",
   },
   {
     title: "Insights",
     description:
       "Make use of deep, data-driven understandings for informed decision making.",
     image: invoices,
-    link: "/ofex/insights/",
+    link: "/insights/",
   },
   {
     title: "Hierarchy and Control",
     description: "Define hierarchies for better control and transparency.",
     image: autoCollect,
-    link: "/ofex/hierarchy-and-controls/",
+    link: "/hierarchy-and-controls/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -68,8 +68,7 @@ const carouselData = [
       "The policy created will check whether the advance is aligned with the budget allocation",
     heading: "Advance alignment: ",
   },
-];
-
+]
 
 const blogData = [
   {
@@ -102,6 +101,6 @@ const blogData = [
       "The key to any successful business is to keep track of expenses, ensuring cash inflow is higher than cash outflow. Therefore, every business must create a solid plan for expenses at the beginning...",
     link: "/resources/blog/learn-everything-about-budget-management/",
   },
-];
+]
 
-export { blogData, carouselData, productData };
+export { blogData, carouselData, productData }

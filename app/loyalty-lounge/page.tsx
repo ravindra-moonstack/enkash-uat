@@ -1,12 +1,12 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import { blogData, dataSets, productData } from "./data";
-import faqData from "./faq-data";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import { blogData, dataSets, productData } from "./data"
+import faqData from "./faq-data"
+import ExploreCard from "@/components/explore-card/explore-card"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import {
   Header,
   Footer,
@@ -19,8 +19,8 @@ import {
   StructuredData,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+} from "@/components"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import {
   officeImg,
   whiteArrow,
@@ -29,9 +29,8 @@ import {
   heavyLiftingIconOne,
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
-} from ".";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "."
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -42,7 +41,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/loyalty-lounge/",
   },
   faqData: faqData,
-});
+})
 
 const loyaltyLounge = () => {
   return (
@@ -97,7 +96,7 @@ const loyaltyLounge = () => {
               weight="5"
             />
           </div>
-          
+
           <div className="mt-5">
             <PrimaryButton
               title="Talk to Sales"
@@ -222,7 +221,7 @@ const loyaltyLounge = () => {
             title="Offers"
             description="Unlock exclusive offers and enjoy discounts on various partnered subscriptions from popular services such as Amazon, ClearTax, Canva, and numerous others"
             theme="green"
-            link="/loyalty-lounge/offers"
+            link="/offers"
           />
         </div>
 
@@ -526,7 +525,7 @@ const loyaltyLounge = () => {
 
       <Footer utmSource="Loyalty_lounge" />
     </div>
-  );
-};
+  )
+}
 
-export default loyaltyLounge;
+export default loyaltyLounge

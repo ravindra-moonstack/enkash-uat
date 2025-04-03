@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import { blogData, dataSets } from "./data";
-import faqData from "./faq-data";
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import { blogData, dataSets } from "./data"
+import faqData from "./faq-data"
 import {
   Header,
   ThreeSteps,
@@ -20,12 +20,12 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import ActionCard from "@/components/action-card/action-card";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+} from "@/components"
+import ExploreCard from "@/components/explore-card/explore-card"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
+import ActionCard from "@/components/action-card/action-card"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import {
   officeImg,
   whiteArrow,
@@ -34,8 +34,8 @@ import {
   heavyLiftingIconOne,
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
-} from ".";
-import generateMetaData from "@/common/utils/metaData";
+} from "."
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automated Expense Management Software for your Business- EnKash",
@@ -45,7 +45,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/ofex/",
   },
   faqData: faqData,
-});
+})
 
 const OfEx = () => {
   return (
@@ -137,7 +137,7 @@ const OfEx = () => {
               title="Budget and Advances"
               description="Set budgets for each department or function and provide advances as per projections and past usage"
               theme="blue"
-              link="/ofex/budget-and-advances"
+              link="/budget-and-advances"
             />
           </div>
           <div
@@ -173,7 +173,7 @@ const OfEx = () => {
               title="Hierarchy and Controls"
               description="Use proper controls using department hierarchies to manage your expenses with ease and without delays"
               theme="blue"
-              link="/ofex/hierarchy-and-controls"
+              link="/hierarchy-and-controls"
             />
           </div>
         </div>
@@ -183,7 +183,7 @@ const OfEx = () => {
               title="Reimbursements"
               description="Keep employees happy and ensure uninterrupted business-related activities with streamlined reimbursement processes"
               theme="blue"
-              link="/ofex/reimbursement"
+              link="/reimbursement"
             />
           </div>
           <div
@@ -217,7 +217,7 @@ const OfEx = () => {
             title="Policy and Approval Flows"
             description="Choose an approval matrix (auto, multi, custom, hierarchical) that works best for your business to create and maintain an aligned approval process for all kinds of spends"
             theme="green"
-            link="/ofex/policy-and-approval-flows"
+            link="/policy-and-approval-flows"
           />
         </div>
 
@@ -226,7 +226,7 @@ const OfEx = () => {
             title="Scan and Drop Receipts"
             description="Leverage OCR for digital receipt management, reporting  & reconciliation"
             theme="green"
-            link="/ofex/scan-and-drop-receipts"
+            link="/scan-and-drop-receipts"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
@@ -702,7 +702,7 @@ const OfEx = () => {
       </div>
       <Footer utmSource="expense_management" />
     </div>
-  );
-};
+  )
+}
 
-export default OfEx;
+export default OfEx

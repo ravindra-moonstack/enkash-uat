@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixin";
+@import "../../styles/variables";
+@import "../../styles/mixin";
 .first_row {
   margin-bottom: 80px;
   @include for-laptops {

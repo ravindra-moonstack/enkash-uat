@@ -51,7 +51,7 @@ const bulkCollect = () => {
               title="Bulk Collect"
               size="h4"
               color="rainy-blue"
-              weight="4"
+              weight="7"
               useH1TagInHtml={true}
             />
           </div>

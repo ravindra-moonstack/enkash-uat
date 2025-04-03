@@ -140,7 +140,7 @@ const olympus = () => {
               title="Vendor Payments"
               description="Instantly add, verify, digitally validate, pay, and manage invoices with multiple vendors with one-click automation and clear visibility"
               theme="blue"
-              link="/olympus/payables/vendor-payment"
+              link="/vendor-payment"
             />
           </div>
           <div

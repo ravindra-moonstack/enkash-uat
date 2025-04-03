@@ -1,8 +1,8 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import { space } from "../../../common/constant";
-import { blogData, faqData, carouselData, productData } from "./data";
+import Image from "next/image"
+import { Metadata } from "next"
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { blogData, faqData, carouselData, productData } from "./data"
 import {
   Header,
   ThreeSteps,
@@ -19,10 +19,9 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "@/components"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -30,16 +29,16 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Digital Receipt Management - Take control of your scanned receipts with our intuitive solution. Organize, store, and track digital receipts efficiently, making financial record-keeping a breeze",
   alternates: {
-    canonical: "https://www.enkash.com/ofex/scan-and-drop-receipts/",
+    canonical: "https://www.enkash.com/scan-and-drop-receipts/",
   },
   faqData: faqData,
-});
+})
 
 const ScanAndDropReceipts = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/ofex/scan-and-drop-receipts/`}
+        url={`https://www.enkash.com/scan-and-drop-receipts/`}
         faqData={faqData}
       />
 
@@ -357,7 +356,7 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
       </div>
       <Footer utmSource="expense_management" />
     </div>
-  );
-};
+  )
+}
 
-export default ScanAndDropReceipts;
+export default ScanAndDropReceipts

@@ -1,9 +1,9 @@
-import React from "react";
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import { blogData, faqData, howDoesItWorkData } from "./data";
+import React from "react"
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import { blogData, faqData, howDoesItWorkData } from "./data"
 import {
   Header,
   Footer,
@@ -16,12 +16,12 @@ import {
   StructuredData,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-import ActionCard from "@/components/action-card/action-card";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+} from "@/components"
+import ExploreCard from "@/components/explore-card/explore-card"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
+import ActionCard from "@/components/action-card/action-card"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import {
   officeImg,
   whiteArrow,
@@ -31,9 +31,8 @@ import {
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
   banner,
-} from ".";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "."
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Corporate Credit and Prepaid Cards in India| Apply Now - EnKash",
@@ -43,7 +42,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/corporate-cards/",
   },
   faqData: faqData,
-});
+})
 
 const Slash = (): React.JSX.Element => {
   //
@@ -176,7 +175,7 @@ const Slash = (): React.JSX.Element => {
                 title="Prepaid Cards"
                 description="Allocate easy-to-use prepaid cards like meal and fuel cards to your employees and simplify your business processes"
                 theme="blue"
-                link="/corporate-cards/meal-cards"
+                link="/meal-cards"
               />
             </div>
           </div>
@@ -737,7 +736,7 @@ const Slash = (): React.JSX.Element => {
       </div>
       <Footer utmSource="corporate_cards" />
     </div>
-  );
-};
+  )
+}
 
-export default Slash;
+export default Slash

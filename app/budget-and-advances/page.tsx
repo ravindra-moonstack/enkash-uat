@@ -1,38 +1,45 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../common/constant";
-import { blogData, carouselData, productData } from "./data";
-import faqData from "./faq-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import { FAQHtml } from "@/components/faq";
-import { Header, Footer, BlogWrapper, Heading, ThreeSteps } from "@/components";
-import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
-import AllProducts from "@/components/all-products/all-products";
+import Image from "next/image"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { blogData, carouselData, productData } from "./data"
+import faqData from "./faq-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components"
 
 export const metadata: Metadata = generateMetaData({
   title: "Budget Management Platform | Budget Control for Business - EnKash",
   description:
     "Optimize your financial stability with expert budget control management and cash flow strategies. Effectively allocate resources, track expenditures, and manage your cash flow to achieve sustainable financial success",
   alternates: {
-    canonical: "https://www.enkash.com/ofex/budget-and-advances/",
+    canonical: "https://www.enkash.com/budget-and-advances/",
   },
   faqData: faqData,
-});
+})
 
-const budgetAndAdvance = () => {
+const BudgetAndAdvance  = (): React.JSX.Element =>  {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/ofex/budget-and-advances/`}
+        url={`https://www.enkash.com/budget-and-advances/`}
         faqData={faqData}
       />
       <Header utmSource="expense_management" />
@@ -377,7 +384,7 @@ const budgetAndAdvance = () => {
       </div>
       <Footer utmSource="expense_management" />
     </div>
-  );
-};
+  )
+}
 
-export default budgetAndAdvance;
+export default BudgetAndAdvance

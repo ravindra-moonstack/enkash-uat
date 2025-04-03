@@ -126,7 +126,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/automated-reconciliation/">
+                      <Link href="/automated-reconciliation/">
                         Auto Reconciliation
                       </Link>
                     </li>
@@ -206,7 +206,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       <Link href="/gift-cards/">Gift Cards</Link>
                     </li>
                     <li>
-                      <Link href="/loyalty-lounge/offers/">Offers</Link>
+                      <Link href="/offers/">Offers</Link>
                     </li>
                   </ul>
                 </div>
@@ -310,31 +310,31 @@ const FooterOld = ({ utmSource = "" }: any) => {
                   </Link>
                   <ul>
                     <li>
-                      <Link href="/ofex/budget-and-advances/">
+                      <Link href="/budget-and-advances/">
                         Budgets and Advances
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ofex/hierarchy-and-controls/">
+                      <Link href="/hierarchy-and-controls/">
                         Hierarchy and Controls
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ofex/policy-and-approval-flows/">
+                      <Link href="/policy-and-approval-flows/">
                         Policy and Approval Flows
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ofex/reimbursement/">Reimbursement</Link>
+                      <Link href="/reimbursement/">Reimbursement</Link>
                     </li>
 
                     <li>
-                      <Link href="/ofex/scan-and-drop-receipts/">
+                      <Link href="/scan-and-drop-receipts/">
                         Scan and Drop Receipts
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ofex/insights/">Insights</Link>
+                      <Link href="/insights/">Insights</Link>
                     </li>
                   </ul>
                 </div>

@@ -11,7 +11,7 @@ import {
   scanAndDropFilled,
   insights,
   insightsFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const xpenzProducts = [
   {
@@ -27,14 +27,14 @@ const xpenzProducts = [
         description: "Track & manage your budget with ease",
         imageSrc: budgetAndAndvances,
         imageSrcHovered: budgetAndAndvancesFilled,
-        link: "/ofex/budget-and-advances",
+        link: "/budget-and-advances",
       },
       {
         name: "Hierarchy and Controls",
         description: "Customizable hierarchies for expenses & approvals",
         imageSrc: hierarchyAndControls,
         imageSrcHovered: hierarchyAndControlsFilled,
-        link: "/ofex/hierarchy-and-controls",
+        link: "/hierarchy-and-controls",
       },
 
       {
@@ -42,28 +42,28 @@ const xpenzProducts = [
         description: "Reimburse employee expenses quickly",
         imageSrc: reimbursements,
         imageSrcHovered: reimbursementsFilled,
-        link: "/ofex/reimbursement",
+        link: "/reimbursement",
       },
       {
         name: "Scan and Drop Receipts",
         description: "Automate receipt management with OCR",
         imageSrc: scanAndDrop,
         imageSrcHovered: scanAndDropFilled,
-        link: "/ofex/scan-and-drop-receipts",
+        link: "/scan-and-drop-receipts",
       },
       {
         name: "Insights",
         description: "Control employee expenses with data analytics",
         imageSrc: insights,
         imageSrcHovered: insightsFilled,
-        link: "/ofex/insights",
+        link: "/insights",
       },
       {
         name: "Policy and Approval Flows",
         description: "Create policies & approval flows as per need",
         imageSrc: policyAndApproval,
         imageSrcHovered: policyAndApprovalFilled,
-        link: "/ofex/policy-and-approval-flows",
+        link: "/policy-and-approval-flows",
       },
     ],
     footerText: "Optimize business spends efficiently",
@@ -72,6 +72,6 @@ const xpenzProducts = [
     footerLink: "/ofex",
     parentLink: "/ofex",
   },
-];
+]
 
-export default xpenzProducts;
+export default xpenzProducts

@@ -130,7 +130,7 @@ const ReceivableProducts = [
         description: "Use data insights to manage cashflows better",
         imageSrc: collectionAnalytics,
         imageSrcHovered: collectionAnalyticsFilled,
-        link: "/olympus/receivables/collection-analytics",
+        link: "/collection-analytics",
       },
       {
         name: "Payment Page",
@@ -151,14 +151,14 @@ const ReceivableProducts = [
         description: "Send reminders for collection via email, SMS, & WhatsApp",
         imageSrc: reminderEngine,
         imageSrcHovered: reminderEngineFilled,
-        link: "/olympus/receivables/collection-reminder",
+        link: "/collection-reminder",
       },
       {
         name: "Auto Reconciliation",
         description: "Reconcile multiple invoices & payments in one go",
         imageSrc: autoReconciliation,
         imageSrcHovered: autoReconciliationFilled,
-        link: "/olympus/receivables/automated-reconciliation",
+        link: "/automated-reconciliation",
       },
 
       // {

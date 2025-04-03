@@ -1,24 +1,31 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import { carouselData, productData, blogData } from "./data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import { FAQHtml } from "@/components/faq";
-import { Header, Footer, BlogWrapper } from "@/components";
-import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
-import { userPlus, numberOne, stack } from "@/components/three-steps/";
-import AllProducts from "@/components/all-products/all-products";
+import Image from "next/image"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import faqData from "./faq-data"
+import { carouselData, productData, blogData } from "./data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+} from "@/components"
+
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
+
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -26,16 +33,16 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Unlock a world of savings and exclusive perks with our rewards and offers. Explore the benefits of our program and start enjoying the offer with EnKash today!",
   alternates: {
-    canonical: "https://www.enkash.com/loyalty-lounge/offers/",
+    canonical: "https://www.enkash.com/offers/",
   },
   faqData: faqData,
-});
+})
 
 const offers = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/loyalty-lounge/offers/`}
+        url={`https://www.enkash.com/offers/`}
         faqData={faqData}
       />
       <Header utmSource="Loyalty_lounge" />
@@ -307,7 +314,7 @@ const offers = () => {
       </div>
       <Footer utmSource="Loyalty_lounge" />
     </div>
-  );
-};
+  )
+}
 
-export default offers;
+export default offers

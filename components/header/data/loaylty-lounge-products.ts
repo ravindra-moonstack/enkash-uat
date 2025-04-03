@@ -9,7 +9,7 @@ import {
   rewardsPlatform,
   brandVouchers,
   brandVouchersFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const loyaltyLoungeProducts = [
   {
@@ -53,7 +53,7 @@ const loyaltyLoungeProducts = [
         description: "Get discounts on partnered subscriptions and more",
         imageSrc: offers,
         imageSrcHovered: offersFilled,
-        link: "/loyalty-lounge/offers",
+        link: "/offers",
       },
     ],
     footerText: "Effortless recognition, and endless rewards in one place",
@@ -62,6 +62,6 @@ const loyaltyLoungeProducts = [
     footerLink: "/loyalty-lounge",
     parentLink: "/loyalty-lounge",
   },
-];
+]
 
-export default loyaltyLoungeProducts;
+export default loyaltyLoungeProducts

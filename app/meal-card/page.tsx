@@ -36,8 +36,6 @@ export const metadata: Metadata = generateMetaData({
 })
 
 const MealCard = (): React.JSX.Element => {
-  //
-
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <Header utmSource="corporate_cards" />

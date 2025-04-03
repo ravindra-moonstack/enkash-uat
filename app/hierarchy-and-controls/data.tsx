@@ -1,14 +1,14 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
 import {
   autoCollect,
   invoices,
   paymentButton,
   paymentLink,
   qrCode,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -16,38 +16,37 @@ const productData: AllProductsDataProp[] = [
     description:
       "Define budgets and get advances for better expense management. ",
     image: paymentLink,
-    link: "/ofex/budget-and-advances/",
+    link: "/budget-and-advances/",
   },
   {
     title: "Reimbursements",
     description:
       "Businesses repay amount to employees or partners for expenses incurred on their behalf.",
     image: paymentButton,
-    link: "/ofex/reimbursement/",
+    link: "/reimbursement/",
   },
   {
     title: "Scan & Drop Receipts",
     description:
       "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
     image: qrCode,
-    link: "/ofex/scan-and-drop-receipts/",
+    link: "/scan-and-drop-receipts/",
   },
   {
     title: "Insights",
     description:
       "Make use of deep, data-driven understandings for informed decision making.",
     image: invoices,
-    link: "/ofex/insights/",
+    link: "/insights/",
   },
   {
     title: "Policy and Approval Flow",
     description:
       "A set of guidelines or rules that outline the procedures for seeking and granting official authorization for expenses. ",
     image: autoCollect,
-    link: "/ofex/policy-and-approval-flows/",
+    link: "/policy-and-approval-flows/",
   },
-];
-
+]
 
 const carouselData = [
   {
@@ -69,7 +68,7 @@ const carouselData = [
       "Go to Expense and configure user roles based on their grades, designation, and department management",
     heading: "Configure: ",
   },
-];
+]
 
 const blogData = [
   {
@@ -103,6 +102,6 @@ const blogData = [
       "Managing expenses is an essential aspect of personal and professional financial management. Keeping track of expenses can provide valuable insights into your finances, including...",
     link: "https://www.enkash.com/resources/blog/importance-of-expense-management/",
   },
-];
+]
 
-export { blogData,  carouselData, productData };
+export { blogData, carouselData, productData }

@@ -7,7 +7,7 @@ const blogData = [
     date: "Sep 26, 2022",
     description:
       "Employee satisfaction is one of the cornerstones of a successful business. To keep your employees happy, just paying salaries on time is not enough anymore...",
-    link: "https://www.enkash.com/resources/blog/tax-free-meal-cards/",
+    link: "https://www.enkash.com/resources/blog/tax-free-meal-card/",
   },
 
   {

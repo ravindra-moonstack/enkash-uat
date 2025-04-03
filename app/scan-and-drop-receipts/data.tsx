@@ -1,16 +1,16 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
-import { FAQProps } from "@/components/faq/faq";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
+import { FAQProps } from "@/components/faq/faq"
 import {
   autoCollect,
   invoices,
   paymentButton,
   paymentLink,
   qrCode,
-} from "@/components/all-products";
-import { AllProductsDataProp } from "@/components/all-products/all-products";
+} from "@/components/all-products"
+import { AllProductsDataProp } from "@/components/all-products/all-products"
 
 const productData: AllProductsDataProp[] = [
   {
@@ -18,36 +18,36 @@ const productData: AllProductsDataProp[] = [
     description:
       "Get advances cleared as per the defined budget to get going without any hindrance.",
     image: qrCode,
-    link: "/ofex/budget-and-advances/",
+    link: "/budget-and-advances/",
   },
   {
     title: "Reimbursements",
     description:
       "Businesses repay amount to employees or partners for expenses incurred on their behalf.",
     image: paymentLink,
-    link: "/ofex/reimbursement/",
+    link: "/reimbursement/",
   },
   {
     title: "Hierarchy and Control",
     description: "Define hierarchies for better control and transparency.",
     image: autoCollect,
-    link: "/ofex/hierarchy-and-controls/",
+    link: "/hierarchy-and-controls/",
   },
   {
     title: "Insights",
     description:
       "Make use of deep, data-driven understandings for informed decision making.",
     image: invoices,
-    link: "/ofex/insights/",
+    link: "/insights/",
   },
   {
     title: "Policy and Approval Flow",
     description:
       "Enterprises can define their policies and set approval flow for easy decision making.",
     image: paymentLink,
-    link: "/ofex/policy-and-approval-flows/",
+    link: "/policy-and-approval-flows/",
   },
-];
+]
 
 const carouselData = [
   {
@@ -69,7 +69,7 @@ const carouselData = [
     title: "Link them to expenses anytime as per your convenience ",
     heading: "Reimburse : ",
   },
-];
+]
 
 const faqData: FAQProps[] = [
   {
@@ -125,7 +125,7 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-];
+]
 
 const blogData = [
   {
@@ -160,6 +160,6 @@ const blogData = [
       "Managing expenses is an essential aspect of personal and professional financial management. Keeping track of expenses can provide valuable insights into your finances, including...",
     link: "https://www.enkash.com/resources/blog/track-company-expenditure-with-expense-reporting/",
   },
-];
+]
 
-export { blogData, faqData, productData, carouselData };
+export { blogData, faqData, productData, carouselData }

@@ -35,7 +35,7 @@ const payableProducts = [
         description: "Add, verify, manage & pay instantly",
         imageSrc: vendorPayment,
         imageSrcHovered: vendorPaymentFilled,
-        link: "/olympus/payables/vendor-payment",
+        link: "/vendor-payment",
       },
       {
         name: "Bill Payment",
@@ -49,7 +49,7 @@ const payableProducts = [
         description: "Pay multiple vendors & bills with a single click",
         imageSrc: bulkPayout,
         imageSrcHovered: bulkPayoutFilled,
-        link: "/olympus/payables/bulk-payout",
+        link: "/express-pay",
       },
       {
         name: "GST Payment",
@@ -79,14 +79,14 @@ const payableProducts = [
         description: "Upload & manage all vendor invoices at one place",
         imageSrc: invoiceManegement,
         imageSrcHovered: invoiceManegementFilled,
-        link: "/olympus/payables/invoice-management",
+        link: "/invoice-management",
       },
       {
         name: "Vendor Management",
         description: "Verify & manage multiple vendors across branches",
         imageSrc: vendorManagement,
         imageSrcHovered: vendorManagementFilled,
-        link: "/olympus/payables/vendor-management",
+        link: "/vendor-management",
       },
       {
         name: "Seamless Banking",

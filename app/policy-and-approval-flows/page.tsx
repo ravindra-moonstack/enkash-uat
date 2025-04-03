@@ -1,9 +1,11 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import { space } from "../../../common/constant";
-import { blogData, carouselData, productData } from "./data";
-import faqData from "./faq-data";
+import Image from "next/image"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import styles from "./page.module.scss"
+import { space } from "@/common/constant"
+import { blogData, carouselData, productData } from "./data"
+import faqData from "./faq-data"
+
 import {
   Header,
   ThreeSteps,
@@ -20,10 +22,8 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "@/components"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -31,16 +31,16 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Explore how our approval workflow solutions can optimize decision-making processes, enhance accountability, and improve efficiency in your organization. Take control of your workflow management today",
   alternates: {
-    canonical: "https://www.enkash.com/ofex/policy-and-approval-flows/",
+    canonical: "https://www.enkash.com/policy-and-approval-flows/",
   },
   faqData: faqData,
-});
+})
 
 const PolicyApprovalFlow = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/ofex/policy-and-approval-flows/`}
+        url={`https://www.enkash.com/policy-and-approval-flows/`}
         faqData={faqData}
       />
 
@@ -414,7 +414,7 @@ const PolicyApprovalFlow = (): React.JSX.Element => {
 
       <Footer utmSource="expense_management" />
     </div>
-  );
-};
+  )
+}
 
-export default PolicyApprovalFlow;
+export default PolicyApprovalFlow

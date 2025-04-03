@@ -38,7 +38,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Unlock exclusive deals and discounts to enhance loyalty, boost engagement, and drive satisfaction.",
     image: invoices,
-    link: "/loyalty-lounge/offers/",
+    link: "/offers/",
   },
 ]
 

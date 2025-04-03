@@ -31,8 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "EnKash automated reconciliation solutions streamline your financial processes, reduce errors, and enhance efficiency. make cash flow management easier & your finance team focused on more strategic tasks.",
   alternates: {
-    canonical:
-      "https://www.enkash.com/olympus/receivables/automated-reconciliation/",
+    canonical: "https://www.enkash.com/automated-reconciliation/",
   },
   faqData: faqData,
 })
@@ -43,7 +42,7 @@ const AutomatedReconcilation = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/receivables/automated-reconciliation/`}
+        url={`https://www.enkash.com/automated-reconciliation/`}
         faqData={faqData}
       />
       <Header utmSource="" />
