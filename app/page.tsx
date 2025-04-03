@@ -258,7 +258,7 @@ const home = () => {
           className={`col-md-4 col-12 d-flex flex-column align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
         >
           <div>
-            <Heading title="400,000++ " size="h2" weight="6" />
+            <Heading title="250,000++ " size="h2" weight="6" />
           </div>
           <div>
             <Heading title="Businesses" size="h5" />
@@ -310,7 +310,7 @@ const home = () => {
             weight="6"
           />
           <Heading
-            title={`40,000+${space}`}
+            title={`250,000+${space}`}
             color="electric-green"
             size="h1"
             weight="6"
