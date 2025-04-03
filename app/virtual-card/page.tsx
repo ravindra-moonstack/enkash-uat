@@ -18,6 +18,7 @@ import {
   AllProducts,
   FAQHtml,
 } from "@/components"
+
 import styles from "./page.module.scss"
 import { space } from "@/common/constant"
 import { blogData, carouselData, productData } from "./data"
@@ -37,7 +38,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 })
 
-const virtualCard = () => {
+const VirtualCard = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
@@ -581,4 +582,4 @@ const virtualCard = () => {
   )
 }
 
-export default virtualCard
+export default VirtualCard

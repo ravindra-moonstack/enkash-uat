@@ -175,7 +175,7 @@ const Slash = (): React.JSX.Element => {
                 title="Prepaid Cards"
                 description="Allocate easy-to-use prepaid cards like meal and fuel cards to your employees and simplify your business processes"
                 theme="blue"
-                link="/meal-cards"
+                link="/meal-card"
               />
             </div>
           </div>
@@ -186,7 +186,7 @@ const Slash = (): React.JSX.Element => {
               title="Virtual Cards"
               description="Make it easy for your modern business to track and reconcile all payments with the new-age and innovative virtual cards"
               theme="blue"
-              link="/corporate-cards/virtual-cards"
+              link="/virtual-card"
             />
           </div>
           <div
