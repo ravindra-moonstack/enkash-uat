@@ -30,7 +30,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Simplify rental payments with automated solutions, ensuring timely transactions and avoiding penalties or delays.",
     image: paymentButton,
-    link: "/rental-payment/",
+    link: "/rent-payment/",
   },
   {
     title: "Invoice Management",

@@ -30,7 +30,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Decentralize rent payment by credit card to your different offices and pay rent online. Get TDS benefits and record approval hierarchy and make audits easy with Enkash's Rental Portal",
   alternates: {
-    canonical: "https://www.enkash.com/rental-payment/",
+    canonical: "https://www.enkash.com/rent-payment/",
   },
   faqData: faqData,
 })
@@ -41,7 +41,7 @@ const RentalPayments = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/rental-payment/`}
+        url={`https://www.enkash.com/rent-payment/`}
         faqData={faqData}
       />
       <Header utmSource="payables" />

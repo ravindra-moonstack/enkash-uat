@@ -16,7 +16,7 @@ import {
 const xpenzProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/ofex",
+    subtitleLink: "/expense-management",
     currentHeading: {
       name: "Expenses", //previously it was Ofex
       description: "Digitize employee spends & reimbursements",
@@ -69,8 +69,8 @@ const xpenzProducts = [
     footerText: "Optimize business spends efficiently",
     footerMobileText: "Explore More",
     footerImg: "xpenz_footer_bg",
-    footerLink: "/ofex",
-    parentLink: "/ofex",
+    footerLink: "/expense-management",
+    parentLink: "/expense-management",
   },
 ]
 

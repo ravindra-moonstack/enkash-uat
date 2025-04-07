@@ -380,7 +380,7 @@ const collectionAnalytics = () => {
                   it takes for a company to collect payments from its customers.
                   A lower DSO indicates that a business is efficient in{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/receivables/"
+                    href="https://www.enkash.com/collect-payments/"
                     target="_blank"
                   >
                     collecting receivables,

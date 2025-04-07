@@ -39,7 +39,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Empower your workforce with Enkash Freedom: Tailored corporate cards offering customizable spending limits and real-time expense tracking for enhanced cash flow management, operational efficiency, and paperless processes",
   alternates: {
-    canonical: "https://www.enkash.com/corporate-cards/",
+    canonical: "https://www.enkash.com/cards/",
   },
   faqData: faqData,
 })
@@ -49,10 +49,7 @@ const Slash = (): React.JSX.Element => {
 
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
-      <StructuredData
-        url={`https://www.enkash.com/corporate-cards/`}
-        faqData={faqData}
-      />
+      <StructuredData url={`https://www.enkash.com/cards/`} faqData={faqData} />
 
       <Header utmSource="corporate_cards" />
 
@@ -135,7 +132,7 @@ const Slash = (): React.JSX.Element => {
               title="Corporate Credit Cards"
               description="Optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions like T&E cards"
               theme="blue"
-              link="/corporate-cards/travel-and-expense-cards"
+              link="/travel-and-expense-cards"
             />
           </div>
           <div

@@ -50,7 +50,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
         <div className={`d-flex flex-wrap flex-md-row mt-3 ${styles.light_bg}`}>
           {/* 1st col */}
           <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
-            <Link href="/olympus/receivables">
+            <Link href="/collect-payments">
               <h4 className={` ${styles.title}`}>
                 Collect Payments<sup>#</sup>
               </h4>
@@ -62,7 +62,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                 <ul>
                   {/* <li className="">
                       <div className={`color-white ${styles.sub_title}`}>
-                        <Link href="/olympus/receivables">
+                        <Link href="/collect-payments">
                           Receivables<sup>#</sup>
                         </Link>
                       </div>
@@ -78,7 +78,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/payment-button/">Payment Button</Link>
                   </li>
                   <li>
-                    <Link href="/customized-payment/">Payment Page</Link>
+                    <Link href="/payment-page/">Payment Page</Link>
                   </li>
                   <li>
                     <Link href="/bulk-collect/">Bulk Collect</Link>
@@ -116,7 +116,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/instant-settlement/">Instant Settlements</Link>
                   </li>
                   <li>
-                    <Link href="/invoices/">Invoices</Link>
+                    <Link href="/digital-invoicing/">Invoices</Link>
                   </li>
                   <li>
                     <Link href="/collection-analytics/">
@@ -124,7 +124,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/automated-reconciliation/">
+                    <Link href="/auto-reconciliation/">
                       Auto Reconciliation
                     </Link>
                   </li>
@@ -186,7 +186,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
               <div className="">
                 <ul className="mb-0">
                   <li>
-                    <Link href="/olympus/receivables">
+                    <Link href="/collect-payments">
                       <h4 className={` ${styles.title}`}>Make Payments</h4>
                     </Link>
                   </li>
@@ -203,7 +203,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/vendor-payment/">Vendor Payment</Link>
                   </li>
                   <li>
-                    <Link href="/rental-payment/">Rental Payment</Link>
+                    <Link href="/rent-payment/">Rental Payment</Link>
                   </li>
                   <li>
                     <Link href="/invoice-management/">Invoice Management</Link>
@@ -301,21 +301,17 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/meal-card/">Meal Cards*</Link>
                   </li>
                   <li>
-                    <Link href="/corporate-cards/saas-cards/">SaaS Cards*</Link>
+                    <Link href="/saas-cards/">SaaS Cards*</Link>
                   </li>
                   <li>
                     <Link href="/purchase-card/">Purchase Cards*</Link>
                   </li>
 
                   <li>
-                    <Link href="/corporate-cards/travel-and-expense-cards">
-                      T&E Cards*
-                    </Link>
+                    <Link href="/travel-and-expense-cards">T&E Cards*</Link>
                   </li>
                   <li>
-                    <Link href="/corporate-cards/diy-card-module">
-                      DIY Card Module*
-                    </Link>
+                    <Link href="/diy-card-module">DIY Card Module*</Link>
                   </li>
                 </ul>
               </div>
@@ -376,7 +372,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
           <div className={`col-6 col-md-3`}>
             <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
               <div>
-                <Link href="/ofex">
+                <Link href="/expense-management">
                   <h4 className={`col-12 ${styles.title}`}>Expenses</h4>
                 </Link>
                 <ul>

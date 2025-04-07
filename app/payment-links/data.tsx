@@ -29,7 +29,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online.",
     image: paymentPage,
-    link: "/customized-payment/",
+    link: "/payment-page/",
   },
   {
     title: "Payment Button",
@@ -57,7 +57,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
     image: invoices,
-    link: "/invoices/",
+    link: "/digital-invoicing/",
   },
   {
     title: "Instant Settlement",

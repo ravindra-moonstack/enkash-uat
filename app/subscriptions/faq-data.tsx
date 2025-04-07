@@ -30,7 +30,10 @@ const faqData: FAQProps[] = [
         </h4>
         <h4 className="mb-4">
           <b> Automated invoice generation:</b> Businesses can
-          <Link href="https://www.enkash.com/invoices/" target="_blank">
+          <Link
+            href="https://www.enkash.com/digital-invoicing/"
+            target="_blank"
+          >
             {`${space} automate invoice generation ${space}`}
           </Link>
           for recurring payments by defining the timeline and frequency for

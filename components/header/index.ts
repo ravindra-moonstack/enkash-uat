@@ -31,7 +31,7 @@ export { default as rewardsPlatformFilled } from "./img/employee-rewards-filled.
 export { default as channelIncentive } from "./img/channel-incentive.svg"
 export { default as channelIncentiveFilled } from "./img/channel-incentive-filled.svg"
 
-//ofex
+//expense-management
 export { default as budgetAndAndvances } from "./img/budget-and-advances.svg"
 export { default as budgetAndAndvancesFilled } from "./img/budget-and-advances-filled.svg"
 export { default as hierarchyAndControls } from "./img/hierarchy.svg"

@@ -56,7 +56,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Automate recurring invoicing, track sales, and payments, and create bulk invoices with embedded payment links",
     image: invoices,
-    link: "/invoices/",
+    link: "/digital-invoicing/",
   },
   {
     title: "Instant Settlement",

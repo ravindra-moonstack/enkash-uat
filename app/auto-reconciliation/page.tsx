@@ -1,37 +1,38 @@
 import { Metadata } from "next"
 import Image from "next/image"
 
-import { Header, Footer, FAQHtml, Heading } from "@/components"
+import {
+  Header,
+  ThreeSteps,
+  Footer,
+  Heading,
+  BlogWrapper,
+  ComprehensiveView,
+  PrimaryButton,
+  GetStartedCard,
+  HowDoesCarousel,
+  ContactUsCard,
+  LottieClientComponent,
+  StructuredData,
+  AllProducts,
+  FAQHtml,
+  SecondryButton,
+} from "@/components"
 
 import styles from "./page.module.scss"
-import GetStartedCard from "@/components/get-started-card/get-started-card"
-import PrimaryButton from "@/components/buttons/primary-button/primary-button"
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button"
 import { faqData, secondFaqData } from "./faq-data"
-import blogData from "./blog-data"
-import carouselData from "./carousel-data"
+import { blogData, productData, carouselData } from "./data"
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
-import ContactUsCard from "@/components/contact-us-card/contact-us-card"
-
-import ThreeSteps from "@/components/three-steps/three-steps"
-import HowDoesCarousel from "@/components/carousel/how-does-carousel"
-import BlogWrapper from "@/components/blog/blog-wrapper"
-import LottieClientComponent from "@/components/lottie-client/lottie-client"
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view"
-
 import { space } from "@/common/constant"
 import generateMetaData from "@/common/utils/metaData"
-import StructuredData from "@/components/head/structuredData"
 import { userPlus, numberOne, stack } from "@/components/three-steps/"
-import AllProducts from "@/components/all-products/all-products"
-import productData from "./product-data"
 
 export const metadata: Metadata = generateMetaData({
   title: "Automated Accounts Reconciliation & Bank Reconciliation - EnKash",
   description:
     "EnKash automated reconciliation solutions streamline your financial processes, reduce errors, and enhance efficiency. make cash flow management easier & your finance team focused on more strategic tasks.",
   alternates: {
-    canonical: "https://www.enkash.com/automated-reconciliation/",
+    canonical: "https://www.enkash.com/auto-reconciliation/",
   },
   faqData: faqData,
 })
@@ -42,7 +43,7 @@ const AutomatedReconcilation = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/automated-reconciliation/`}
+        url={`https://www.enkash.com/auto-reconciliation/`}
         faqData={faqData}
       />
       <Header utmSource="" />

@@ -24,7 +24,7 @@ import {
 const payableProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/olympus/payables",
+    subtitleLink: "/make-payments",
     currentHeading: {
       name: "Make Payments",
       description: "Manage all types of business payments",
@@ -64,7 +64,7 @@ const payableProducts = [
         description: "Make rental payments directly into landlord's account",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
-        link: "/rental-payment",
+        link: "/rent-payment",
       },
       // {
       //   name: "Pay By Any Card",
@@ -72,7 +72,7 @@ const payableProducts = [
       //     "Pay your business utility bills, GST and vendor payments via any card",
       //   imageSrc: payByAnyCard,
       //   imageSrcHovered: payByAnyCardFilled,
-      //   link: "/olympus/payables/pay-by-any-card",
+      //   link: "/make-payments/pay-by-any-card",
       // },
       {
         name: "Invoice Management",
@@ -113,8 +113,8 @@ const payableProducts = [
     footerText: "Manage all your business payments seamlessly",
     footerMobileText: "Explore More",
     footerImg: "olympus_footer_bg",
-    footerLink: "/olympus/payables",
-    parentLink: "/olympus/payables",
+    footerLink: "/make-payments",
+    parentLink: "/make-payments",
   },
 ]
 

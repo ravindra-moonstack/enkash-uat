@@ -18,6 +18,7 @@ import {
   heavyLiftingIconTwo,
   heavyLiftingIconThree,
 } from "."
+
 import {
   Header,
   Footer,
@@ -38,16 +39,16 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Save cost of your business with Accounts Receivables Automation Software. Automate your invoicing, reduce payment delays & improve financial efficiency. Sign up for Free Trial Now!!",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/receivables/",
+    canonical: "https://www.enkash.com/collect-payments/",
   },
   faqData: faqData,
 })
 
-const receivables = () => {
+const CollectPayments = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/receivables/`}
+        url={`https://www.enkash.com/collect-payments/`}
         faqData={faqData}
       />
 
@@ -701,4 +702,4 @@ const receivables = () => {
   )
 }
 
-export default receivables
+export default CollectPayments

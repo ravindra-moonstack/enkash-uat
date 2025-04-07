@@ -113,7 +113,7 @@ const faqData: FAQProps[] = [
         <h4>
           The{" "}
           <Link
-            href="https://www.enkash.com/automated-reconciliation/"
+            href="https://www.enkash.com/auto-reconciliation/"
             target="_black"
           >
             reconciliation

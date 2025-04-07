@@ -47,14 +47,14 @@ const productData: AllProductsDataProp[] = [
     description:
       "Make a customizable checkout interface for your business and collect payments.",
     image: paymentPage,
-    link: "/customized-payment/",
+    link: "/payment-page/",
   },
   {
     title: "Invoices",
     description:
       "Generate invoices in bulk by automating recurring transactions and tracking sales",
     image: invoices,
-    link: "/invoices/",
+    link: "/digital-invoicing/",
   },
   {
     title: "Instant Settlement",

@@ -28,7 +28,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "A mandate for receiving recurring payments from customers, eNACH helps businesses with a steady cash flow.",
     image: reminderEngine,
-    link: "/olympus/receivables/eNACH/",
+    link: "/collect-payments/eNACH/",
   },
   {
     title: "QR Codes ",
@@ -42,7 +42,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Create bulk invoices and automate recurring invoicing, with embedded payment links",
     image: invoices,
-    link: "/invoices/",
+    link: "/digital-invoicing/",
   },
   {
     title: "Payment Link",
@@ -70,7 +70,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Make customized payment pages with zero technical effort and start receiving funds.",
     image: paymentPage,
-    link: "/customized-payment/",
+    link: "/payment-page/",
   },
 ]
 

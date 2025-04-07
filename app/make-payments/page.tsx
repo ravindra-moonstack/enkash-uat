@@ -5,6 +5,7 @@ import styles from "./page.module.scss"
 import { space } from "@/common/constant"
 import { blogData, howDoesItWorkData, getStartedData } from "./data"
 import faqData from "./faq-data"
+
 import {
   Header,
   Footer,
@@ -38,16 +39,16 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Streamline Your Accounts Payable Process with Our Expert Service. From Invoice Verification to Timely Payments, Trust Us for Efficient Financial Management. Get Started Today",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/payables/",
+    canonical: "https://www.enkash.com/make-payments/",
   },
   faqData: faqData,
 })
 
-const payables = () => {
+const Payables = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/payables/`}
+        url={`https://www.enkash.com/make-payments/`}
         faqData={faqData}
       />
       <Header utmSource="payables" />
@@ -178,7 +179,7 @@ const payables = () => {
               title="Rental Payments"
               description="Maintain rental records, manage TDS benefits & pay rent for several locations, all on one platform"
               theme="blue"
-              link="/rental-payment"
+              link="/rent-payment"
             />
           </div>
         </div>
@@ -494,7 +495,7 @@ const payables = () => {
                 <p>
                   Accounts payable automation means using technology to make
                   business payments, which include vendor payments,{" "}
-                  <Link href="/rental-payment">rental payments</Link> , bill
+                  <Link href="/rent-payment">rental payments</Link> , bill
                   payments, tax payments, and utility payments. Accounts payable
                   automation helps make business payments easy and efficient.
                 </p>
@@ -693,4 +694,4 @@ const payables = () => {
   )
 }
 
-export default payables
+export default Payables

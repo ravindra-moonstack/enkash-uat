@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Customise Payment Pages and send different versions of the same Payment Page to different customers. Book Demo now !!",
   alternates: {
-    canonical: "https://www.enkash.com/customized-payment/",
+    canonical: "https://www.enkash.com/payment-page/",
   },
   faqData: faqData,
 })

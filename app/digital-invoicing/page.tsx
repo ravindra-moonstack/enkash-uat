@@ -32,7 +32,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Simplify your invoicing process with our cutting-edge invoicebill management software for businesses.  Get complete visibility of sales and payments & create bulk invoices with embedded payment links",
   alternates: {
-    canonical: "https://www.enkash.com/invoices/",
+    canonical: "https://www.enkash.com/digital-invoicing/",
   },
   faqData: faqData,
 })
@@ -43,7 +43,7 @@ const Invoices = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/invoices/`}
+        url={`https://www.enkash.com/digital-invoicing/`}
         faqData={faqData}
       />
       <Header utmSource="receivables" />

@@ -36,7 +36,7 @@ import {
 const ReceivableProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/olympus/receivables",
+    subtitleLink: "/collect-payments",
     currentHeading: {
       name: "Collect Payments",
       description: "Get paid faster with customized PG solutions",
@@ -137,14 +137,14 @@ const ReceivableProducts = [
         description: "Create customizable pages",
         imageSrc: customizedPayment,
         imageSrcHovered: customizedPaymentFilled,
-        link: "/olympus/receivables/customized-payment",
+        link: "/payment-page",
       },
       {
         name: "Auto Collect",
         description: "Decentralized collections with easy reconciliation",
         imageSrc: autoCollect,
         imageSrcHovered: autoCollectFilled,
-        link: "/olympus/receivables/auto-collect",
+        link: "/auto-collect",
       },
       {
         name: "Reminder Engine",
@@ -158,7 +158,7 @@ const ReceivableProducts = [
         description: "Reconcile multiple invoices & payments in one go",
         imageSrc: autoReconciliation,
         imageSrcHovered: autoReconciliationFilled,
-        link: "/automated-reconciliation",
+        link: "/auto-reconciliation",
       },
 
       // {
@@ -198,8 +198,8 @@ const ReceivableProducts = [
     footerText: "Effortlessly streamline your business collections",
     footerMobileText: "Explore More",
     footerImg: "olympus_footer_bg",
-    footerLink: "/olympus/receivables",
-    parentLink: "/olympus/receivables",
+    footerLink: "/collect-payments",
+    parentLink: "/collect-payments",
   },
 ]
 

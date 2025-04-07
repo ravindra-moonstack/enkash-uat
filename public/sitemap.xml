@@ -18,22 +18,22 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/</loc>
+  <loc>https://www.enkash.com/make-payments/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/</loc>
+  <loc>https://www.enkash.com/collect-payments/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/</loc>
+  <loc>https://www.enkash.com/cards/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/ofex/</loc>
+  <loc>https://www.enkash.com/expense-management/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -73,7 +73,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/rental-payment/</loc>
+  <loc>https://www.enkash.com/rent-payment/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -93,7 +93,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/invoices/</loc>
+  <loc>https://www.enkash.com/digital-invoicing/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -118,7 +118,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/saas-cards/</loc>
+  <loc>https://www.enkash.com/cards/saas-cards/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -233,7 +233,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/automated-reconciliation/</loc>
+  <loc>https://www.enkash.com/auto-reconciliation/</loc>
   <lastmod>2024-02-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -253,7 +253,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/customized-payment/</loc>
+  <loc>https://www.enkash.com/payment-page/</loc>
   <lastmod>2024-02-19T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url><url>

@@ -1,28 +1,28 @@
-import { space } from "@/common/constant";
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import PrimaryButton from "../components/buttons/primary-button/primary-button";
-import ExploreCard from "@/components/explore-card/explore-card";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import RainbowSection from "@/components/homepage/rainbow";
-import BankSection from "@/components/homepage/bank-section";
-import LoyaltyLoungeSection from "@/components/homepage/loyalty-lounge-section";
-import PolygonSection from "@/components/homepage/polygon-section";
-import TextAnimation from "@/components/framer-motion/text-animation";
-import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import DashBoardAnimation from "@/components/homepage/dashboard-animation";
-import Header from "@/components/header/header";
-import AwardSection from "@/components/homepage/award-section";
+import { space } from "@/common/constant"
+import Image from "next/image"
+import { Metadata } from "next"
+import styles from "./page.module.scss"
+import PrimaryButton from "../components/buttons/primary-button/primary-button"
+import ExploreCard from "@/components/explore-card/explore-card"
+import GetStartedCard from "@/components/get-started-card/get-started-card"
+import ContactUsCard from "@/components/contact-us-card/contact-us-card"
+import Heading from "@/components/heading/heading"
+import RainbowSection from "@/components/homepage/rainbow"
+import BankSection from "@/components/homepage/bank-section"
+import LoyaltyLoungeSection from "@/components/homepage/loyalty-lounge-section"
+import PolygonSection from "@/components/homepage/polygon-section"
+import TextAnimation from "@/components/framer-motion/text-animation"
+import WhileInViewAnimation from "@/components/framer-motion/while-in-view-animation"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
+import DashBoardAnimation from "@/components/homepage/dashboard-animation"
+import Header from "@/components/header/header"
+import AwardSection from "@/components/homepage/award-section"
 
-import { authorOne, authorTwo, paIcon, bbpsIcon, ppiIcon } from ".";
-import Footer from "@/components/footer/footer";
-import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
-import ThreeStepsCustom from "@/components/three-steps/three-steps-custom";
+import { authorOne, authorTwo, paIcon, bbpsIcon, ppiIcon } from "."
+import Footer from "@/components/footer/footer"
+import generateMetaData from "@/common/utils/metaData"
+import StructuredData from "@/components/head/structuredData"
+import ThreeStepsCustom from "@/components/three-steps/three-steps-custom"
 
 export const metadata: Metadata = generateMetaData({
   title: "EnKash - The Ultimate Platform for Businesses",
@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   alternates: {
     canonical: "https://www.enkash.com",
   },
-});
+})
 
 const home = () => {
   return (
@@ -103,7 +103,7 @@ const home = () => {
               title="Collect Payments"
               description="A modern payment gateway with easy-to-integrate APIs, supporting cards, net banking, EMIs, BNPL, and UPI for standalone and recurring payments. It also integrates with ERP systems for complete accounts receivable management."
               theme="green"
-              link="/olympus/receivables"
+              link="/collect-payments"
             />
           </div>
         </div>
@@ -114,7 +114,7 @@ const home = () => {
               title="Make Payments"
               description="A single platform to manage vendor payments, payroll, taxes, utilities, and more. Built for all businesses, it integrates via APIs or works standalone with ERP and accounting systems, requiring no tech setup."
               theme="green"
-              link="/olympus/payables"
+              link="/make-payments"
             />
           </div>
           <div
@@ -143,7 +143,7 @@ const home = () => {
               title="Expense Management"
               description="Gain full control of business spending with a comprehensive platform. Track, analyze, and optimize expenses across employees, departments, and petty cash—empowering smarter budgeting and driving efficiency across every business expense."
               theme="green"
-              link="/olympus/receivables"
+              link="/collect-payments"
             />
           </div>
         </div>
@@ -154,7 +154,7 @@ const home = () => {
               title="Corporate Credit Cards"
               description="Enhance cash flow and streamline expense management with customized corporate credit cards. Leverage T&E cards, procurement card, and other solutions for better control, real-time tracking, and seamless integration with your financial systems."
               theme="green"
-              link="/olympus/payables"
+              link="/make-payments"
             />
           </div>
           <div
@@ -183,7 +183,7 @@ const home = () => {
               title="Prepaid Cards"
               description="Simplify operations by distributing prepaid cards for meal, SaaS, travel, marketing, petty cash, gifting, employee-specific use cases, and other expenses. Set spending limits, track usage in real-time, and optimize budgeting for employee perks and project-related expenses."
               theme="green"
-              link="/olympus/receivables"
+              link="/collect-payments"
             />
           </div>
         </div>
@@ -194,7 +194,7 @@ const home = () => {
               title="Vouchers"
               description="400+ brand vouchers across various categories, offering versatile gifting options for every need. Perfect for creating memorable experiences and adding value to your business initiatives."
               theme="green"
-              link="/olympus/payables"
+              link="/make-payments"
             />
           </div>
           <div
@@ -225,7 +225,7 @@ const home = () => {
               title="Rewards"
               description="Recognize top performers and partners while fostering a culture of recognition, boosting engagement and motivation to drive productivity and long-term success."
               theme="green"
-              link="/olympus/receivables"
+              link="/collect-payments"
             />
           </div>
         </div>
@@ -446,7 +446,7 @@ const home = () => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default home;
+export default home

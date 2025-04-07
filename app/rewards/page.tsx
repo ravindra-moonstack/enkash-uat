@@ -43,7 +43,7 @@ export const metadata: Metadata = generateMetaData({
   faqData: faqData,
 })
 
-const loyaltyLounge = () => {
+const Rewards = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <StructuredData
@@ -134,7 +134,7 @@ const loyaltyLounge = () => {
               title="Employee Rewards"
               description="Make your employees feel valued with our comprehensive recognition and redemption solution"
               theme="blue"
-              link="/loyalty-lounge/employee-rewards"
+              link="/employee-rewards"
             />
           </div>
           <div
@@ -187,7 +187,7 @@ const loyaltyLounge = () => {
               title="Gift Cards"
               description="User-friendly gifting solutions with a wide range of gift cards that empower your employees to choose the perfect gift for themselves or their loved ones"
               theme="blue"
-              link="/loyalty-lounge/gift-cards"
+              link="/gift-cards"
             />
           </div>
           <div
@@ -230,7 +230,7 @@ const loyaltyLounge = () => {
             title="Channel Incentives"
             description="A cutting-edge solution that helps businesses automate and streamline their channel incentive programs, boosting channel partner engagement, loyalty, and revenue"
             theme="green"
-            link="/loyalty-lounge/channel-incentive"
+            link="/channel-incentives"
           />
         </div>
 
@@ -528,4 +528,4 @@ const loyaltyLounge = () => {
   )
 }
 
-export default loyaltyLounge
+export default Rewards

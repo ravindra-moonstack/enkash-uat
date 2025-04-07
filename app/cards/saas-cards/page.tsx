@@ -1,10 +1,10 @@
-import { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import styles from "./page.module.scss";
-import { space } from "../../../common/constant";
-import { blogData, carouselData, productData } from "./data";
-import faqData from "./faq-data";
+import { Metadata } from "next"
+import Image from "next/image"
+import Link from "next/link"
+import styles from "./page.module.scss"
+import { space } from "../../../common/constant"
+import { blogData, carouselData, productData } from "./data"
+import faqData from "./faq-data"
 import {
   Header,
   ThreeSteps,
@@ -21,26 +21,25 @@ import {
   AllProducts,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "@/components"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title: "SaaS Subscription Management Platform - EnKash",
   description:
     "Manage all your SaaS subscriptions on a single software platform. Enhance your spend strategies with actionable insights & smart controls with EnKash",
   alternates: {
-    canonical: "https://www.enkash.com/corporate-cards/saas-cards/",
+    canonical: "https://www.enkash.com/cards/saas-cards/",
   },
   faqData: faqData,
-});
+})
 
 const SaasCard = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/corporate-cards/saas-cards/`}
+        url={`https://www.enkash.com/cards/saas-cards/`}
         faqData={faqData}
       />
 
@@ -414,7 +413,7 @@ const SaasCard = (): React.JSX.Element => {
       </div>
       <Footer utmSource="corporate_cards" />
     </div>
-  );
-};
+  )
+}
 
-export default SaasCard;
+export default SaasCard

@@ -298,7 +298,7 @@ const boltPage = () => {
             title="Channel Incentives"
             description="A cutting-edge solution that helps businesses automate and streamline their channel incentive programs, boosting channel partner engagement, loyalty, and revenue"
             theme="green"
-            link="/loyalty-lounge/channel-incentive"
+            link="/channel-incentives"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">

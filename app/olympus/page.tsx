@@ -225,7 +225,7 @@ const olympus = () => {
             title="Rental Payments"
             description="Pay and manage your office/home rent seamlessly directly into your landlord’s bank account"
             theme="green"
-            link="/rental-payment"
+            link="/rent-payment"
           />
         </div>
 

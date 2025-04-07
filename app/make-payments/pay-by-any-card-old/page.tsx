@@ -1,44 +1,44 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import Header from "@/components/header/header";
-import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import Footer from "@/components/footer/footer";
-import Link from "next/link";
-import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import Image from "next/image"
+import styles from "./page.module.scss"
+import GetStartedCard from "@/components/get-started-card/get-started-card"
+import PrimaryButton from "@/components/buttons/primary-button/primary-button"
+import SecondryButton from "@/components/buttons/secondary-button/secondary-button"
+import { space } from "../../../../common/constant"
+import faqData from "./faq-data"
+import blogData from "./blog-data"
+import carouselData from "./carousel-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+import ContactUsCard from "@/components/contact-us-card/contact-us-card"
+import Heading from "@/components/heading/heading"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import ThreeSteps from "@/components/three-steps/three-steps"
+import HowDoesCarousel from "@/components/carousel/how-does-carousel"
+import Header from "@/components/header/header"
+import { Metadata } from "next"
+import LottieClientComponent from "@/components/lottie-client/lottie-client"
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view"
+import FAQHtml from "./faq-html"
+import BlogWrapper from "@/components/blog/blog-wrapper"
+import Footer from "@/components/footer/footer"
+import Link from "next/link"
+import generateMetaData from "@/common/utils/metaData"
+import StructuredData from "@/components/head/structuredData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Pay Bill Payments by Credit & Debit Card Online - EnKash",
   description:
     "Pay by any card offers flexibility to users, allowing them to make various business payments using their preferred card.",
   alternates: {
-    canonical: "https://www.enkash.com/olympus/payables/pay-by-any-card/",
+    canonical: "https://www.enkash.com/make-payments/pay-by-any-card/",
   },
   faqData: faqData,
-});
+})
 
 const payByAnyCard = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/olympus/payables/pay-by-any-card/`}
+        url={`https://www.enkash.com/make-payments/pay-by-any-card/`}
         faqData={faqData}
       />
       <Header utmSource="payables" />
@@ -400,7 +400,7 @@ const payByAnyCard = () => {
       </div>
       <Footer utmSource="payables" />
     </div>
-  );
-};
+  )
+}
 
-export default payByAnyCard;
+export default payByAnyCard

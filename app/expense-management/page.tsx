@@ -4,6 +4,7 @@ import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { blogData, dataSets } from "./data"
 import faqData from "./faq-data"
+
 import {
   Header,
   ThreeSteps,
@@ -42,15 +43,18 @@ export const metadata: Metadata = generateMetaData({
   description:
     "EnKash automated expense management platform keeps track of budgets and ensures that spends are within limits. Automating expense management saves time & transparency.Book Demo Now !!",
   alternates: {
-    canonical: "https://www.enkash.com/ofex/",
+    canonical: "https://www.enkash.com/expense-management/",
   },
   faqData: faqData,
 })
 
-const OfEx = () => {
+const ExpenseManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <StructuredData url={`https://www.enkash.com/ofex/`} faqData={faqData} />
+      <StructuredData
+        url={`https://www.enkash.com/expense-management/`}
+        faqData={faqData}
+      />
       <Header utmSource="expense_management" />
 
       <div className={`${styles.first_row} row color-white`}>
@@ -72,7 +76,7 @@ const OfEx = () => {
               useH1TagInHtml={true}
             />
             <Heading
-              title={`${space} expense management`}
+              title={`${space} expense management ${space}`}
               color="rainy-blue"
               size="h2"
               weight="7"
@@ -705,4 +709,4 @@ const OfEx = () => {
   )
 }
 
-export default OfEx
+export default ExpenseManagement

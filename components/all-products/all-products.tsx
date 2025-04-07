@@ -32,7 +32,7 @@ const cardData = [
     description:
       "Create custom-branded Payment Pages in minutes to accept payments online—no tech effort needed.",
     image: paymentPage,
-    link: "/olympus/receivables/payment-page/",
+    link: "/payment-page/",
   },
   {
     title: "Payment Button",
@@ -60,7 +60,7 @@ const cardData = [
     description:
       "Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links.",
     image: invoices,
-    link: "/invoices/",
+    link: "/digital-invoicing/",
   },
   {
     title: "Instant Settlement",

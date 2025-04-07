@@ -293,7 +293,10 @@ const seamlessBanking = () => {
                   payments from their respective department vendors and
                   customers is what makes a decentralized accounting system. The
                   automation leading the system facilitates{" "}
-                  <Link href="https://www.enkash.com/invoices/" target="_blank">
+                  <Link
+                    href="https://www.enkash.com/digital-invoicing/"
+                    target="_blank"
+                  >
                     invoice uploading,
                   </Link>{" "}
                   data collection, and reconciliation with enhanced visibility

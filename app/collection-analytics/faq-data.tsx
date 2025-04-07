@@ -18,10 +18,7 @@ const faqData: FAQProps[] = [
       <h4>
         With collection analytics, businesses can analyze historical data and
         can gain insights into patterns, trends, and potential risks related to{" "}
-        <Link
-          href="https://www.enkash.com/olympus/receivables/"
-          target="_blank"
-        >
+        <Link href="https://www.enkash.com/collect-payments/" target="_blank">
           business accounts receivable
         </Link>{" "}
         . This process can benefit your business by improving efficiency in debt
@@ -59,10 +56,7 @@ const faqData: FAQProps[] = [
         payment after a sale has been made. DSO is calculated by dividing
         accounts receivable by the average daily sales. It is a key indicator of
         a company's efficiency in managing its{" "}
-        <Link
-          href="https://www.enkash.com/olympus/receivables/"
-          target="_blank"
-        >
+        <Link href="https://www.enkash.com/collect-payments/" target="_blank">
           accounts receivable
         </Link>{" "}
         and collecting payments from customers.

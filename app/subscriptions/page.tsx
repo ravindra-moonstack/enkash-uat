@@ -301,7 +301,10 @@ const subscriptionManagement = () => {
                 <p>
                   <strong> Automated invoice generation: </strong> Businesses
                   can{" "}
-                  <Link href="https://www.enkash.com/invoices/" target="_blank">
+                  <Link
+                    href="https://www.enkash.com/digital-invoicing/"
+                    target="_blank"
+                  >
                     automate invoice generation
                   </Link>{" "}
                   for recurring payments by defining the timeline and frequency

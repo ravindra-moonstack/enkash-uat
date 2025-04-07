@@ -51,7 +51,10 @@ const faqData: FAQProps[] = [
 
         <h4 className="ms-2 mb-3">
           - Enhanced visibility: The visibility of{" "}
-          <Link href="https://www.enkash.com/invoices/" target="_blank">
+          <Link
+            href="https://www.enkash.com/digital-invoicing/"
+            target="_blank"
+          >
             invoice management
           </Link>{" "}
           is improved with real-time data availability for decision-making

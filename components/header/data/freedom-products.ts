@@ -1,4 +1,4 @@
-import diyCardModule from "@/app/corporate-cards/diy-card-module/page"
+import diyCardModule from "@/app/diy-card-module/page"
 import {
   digitalMarketingCard,
   digitalMarketingCardFilled,
@@ -60,7 +60,7 @@ const freedomProducts = [
         description: "Manage all your SaaS subscriptions with ease",
         imageSrc: saas,
         imageSrcHovered: saasFilled,
-        link: "/corporate-cards/saas-cards",
+        link: "/saas-cards",
       },
       ,
       {
@@ -68,28 +68,28 @@ const freedomProducts = [
         description: "Simplify Travel & Entertainment expenses",
         imageSrc: tne,
         imageSrcHovered: tneFilled,
-        link: "/corporate-cards/travel-and-expense-cards",
+        link: "/travel-and-expense-cards",
       },
       {
         name: "Purchase Cards*",
         description: "Track employee purchases in real time",
         imageSrc: purchaseCard,
         imageSrcHovered: purchaseCardFilled,
-        link: "/corporate-cards/purchase-cards",
+        link: "/purchase-cards",
       },
       {
         name: "DIY Card Module*",
         description: "Customizable cards for business spends",
         imageSrc: diyCard,
         imageSrcHovered: diyCardFilled,
-        link: "/corporate-cards/diy-card-module",
+        link: "/diy-card-module",
       },
     ],
     footerText: "Empower your finances with purpose-based cards",
     footerMobileText: "Explore More",
     footerImg: "freedom_footer_bg",
-    footerLink: "/corporate-cards",
-    parentLink: "/corporate-cards",
+    footerLink: "/cards",
+    parentLink: "/cards",
   },
 ]
 

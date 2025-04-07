@@ -349,10 +349,7 @@ const DiyCardModule = (): React.JSX.Element => {
               <div className="mb-5">
                 <p>
                   A card module is essential for efficiently handling your{" "}
-                  <Link
-                    href="https://www.enkash.com/corporate-cards/"
-                    target="_blank"
-                  >
+                  <Link href="https://www.enkash.com/cards/" target="_blank">
                     business corporate cards
                   </Link>{" "}
                   and distributing funds to your team. It simplifies the

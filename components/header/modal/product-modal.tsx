@@ -1,34 +1,34 @@
-import Image from "next/image";
-import { useRef, useState } from "react";
-import styles from "./modal.module.scss";
-import motherProducts from "../data/mother-products";
-import olympusProducts from "../data/receivable-products";
-import freedomProducts from "../data/freedom-products";
-import xpenzProducts from "../data/ofex-products";
-import loyaltyLoungeProducts from "../data/loaylty-lounge-products";
-import SubProduct from "./sub-product";
-import { productModalEmptyStateImg } from "../.";
-import Link from "next/link";
-import ReceivableProducts from "../data/receivable-products";
-import payableProducts from "../data/payable-products";
-import brandVouchersProducts from "../data/brand-voucher-products";
+import Image from "next/image"
+import { useRef, useState } from "react"
+import styles from "./modal.module.scss"
+import motherProducts from "../data/mother-products"
+import olympusProducts from "../data/receivable-products"
+import freedomProducts from "../data/freedom-products"
+import xpenzProducts from "../data/ofex-products"
+import loyaltyLoungeProducts from "../data/loaylty-lounge-products"
+import SubProduct from "./sub-product"
+import { productModalEmptyStateImg } from "../."
+import Link from "next/link"
+import ReceivableProducts from "../data/receivable-products"
+import payableProducts from "../data/payable-products"
+import brandVouchersProducts from "../data/brand-voucher-products"
 
 const ProductModal = ({ onLinkClick }: any) => {
   const [hoveredProductIndex, setHoveredProductIndex] = useState<number | null>(
     0
-  );
-  const productRowRef = useRef<HTMLDivElement | null>(null);
-  const refs = motherProducts.map(() => useRef<HTMLDivElement>(null));
+  )
+  const productRowRef = useRef<HTMLDivElement | null>(null)
+  const refs = motherProducts.map(() => useRef<HTMLDivElement>(null))
 
   const [prevHoveredProductIndex, setPrevHoveredProductIndex] = useState<
     null | number
-  >(null);
+  >(null)
 
   function assignRef(
     ref: React.MutableRefObject<HTMLDivElement | null>,
     value: HTMLDivElement | null
   ) {
-    ref.current = value;
+    ref.current = value
   }
 
   return (
@@ -58,16 +58,16 @@ const ProductModal = ({ onLinkClick }: any) => {
                 : styles.opacity_normal
             }`}
             onMouseEnter={() => {
-              setPrevHoveredProductIndex(hoveredProductIndex);
+              setPrevHoveredProductIndex(hoveredProductIndex)
               if (hoveredProductIndex === null) {
-                setHoveredProductIndex(0);
+                setHoveredProductIndex(0)
               } else {
-                setHoveredProductIndex(index);
+                setHoveredProductIndex(index)
               }
             }}
             ref={(element) => {
-              if (index === 0) assignRef(productRowRef, element);
-              assignRef(refs[index], element);
+              if (index === 0) assignRef(productRowRef, element)
+              assignRef(refs[index], element)
             }}
           >
             <Link href={product.link}>
@@ -152,7 +152,7 @@ const ProductModal = ({ onLinkClick }: any) => {
         />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ProductModal;
+export default ProductModal

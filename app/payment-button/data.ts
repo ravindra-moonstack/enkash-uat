@@ -24,7 +24,7 @@ const productData: AllProductsDataProp[] = [
     title: "Payment Page",
     description: "Create stunning, branded checkout experiences in minutes.",
     image: paymentPage,
-    link: "/customized-payment/",
+    link: "/payment-page/",
   },
   {
     title: "Payment Link",
@@ -52,7 +52,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Automate recurring transactions, track sales, and generate bulk invoices with integrated payment links.",
     image: invoices,
-    link: "/invoices/",
+    link: "/digital-invoicing/",
   },
   {
     title: "Instant Settlement",

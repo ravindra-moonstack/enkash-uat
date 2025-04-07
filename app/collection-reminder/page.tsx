@@ -401,7 +401,7 @@ const reminderEngine = () => {
                 <p>
                   Improved accounts receivable: With payment reminders in place,{" "}
                   <Link
-                    href="https://www.enkash.com/olympus/receivables/"
+                    href="https://www.enkash.com/collect-payments/"
                     target="_blank"
                   >
                     accounts receivables
