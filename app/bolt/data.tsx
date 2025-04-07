@@ -1,7 +1,7 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
 
 const blogData = [
   {
@@ -34,7 +34,7 @@ const blogData = [
       "Human Resources (HR) is an important department for every profitable business. The human resource department forms the organization’s backbone by hiring suitable people. The success of any...",
     link: "https://www.enkash.com/resources/blog/hr-policies-for-startups/",
   },
-];
+]
 
 const dataSets = [
   {
@@ -68,6 +68,6 @@ const dataSets = [
     altText: "Read the terms and conditions associated with the brand voucher",
     heading: "Read the terms and conditions associated with the brand voucher",
   },
-];
+]
 
-export  { blogData, dataSets };
+export { blogData, dataSets }

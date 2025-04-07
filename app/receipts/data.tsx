@@ -25,7 +25,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Businesses repay amount to employees or partners for expenses incurred on their behalf.",
     image: paymentLink,
-    link: "/reimbursement/",
+    link: "/reimbursements/",
   },
   {
     title: "Hierarchy and Control",
@@ -38,14 +38,14 @@ const productData: AllProductsDataProp[] = [
     description:
       "Make use of deep, data-driven understandings for informed decision making.",
     image: invoices,
-    link: "/insights/",
+    link: "/expense-analytics-and-insights/",
   },
   {
     title: "Policy and Approval Flow",
     description:
       "Enterprises can define their policies and set approval flow for easy decision making.",
     image: paymentLink,
-    link: "/policy-and-approval-flows/",
+    link: "/approval-flows/",
   },
 ]
 

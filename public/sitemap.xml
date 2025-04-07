@@ -118,7 +118,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/cards/saas-cards/</loc>
+  <loc>https://www.enkash.com/saas-cards/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -143,17 +143,17 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/policy-and-approval-flows/</loc>
+  <loc>https://www.enkash.com/approval-flows/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/reimbursement/</loc>
+  <loc>https://www.enkash.com/reimbursements/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/scan-and-drop-receipts/</loc>
+  <loc>https://www.enkash.com/receipts/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -266,7 +266,7 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/insights/</loc>
+  <loc>https://www.enkash.com/expense-analytics-and-insights/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>

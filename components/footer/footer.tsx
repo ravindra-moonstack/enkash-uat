@@ -387,21 +387,21 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     </Link>
                   </li>
                   <li>
-                    <Link href="/policy-and-approval-flows/">
+                    <Link href="/approval-flows/">
                       Policy and Approval Flows
                     </Link>
                   </li>
                   <li>
-                    <Link href="/reimbursement/">Reimbursement</Link>
+                    <Link href="/reimbursements/">Reimbursement</Link>
                   </li>
 
                   <li>
-                    <Link href="/scan-and-drop-receipts/">
-                      Scan and Drop Receipts
-                    </Link>
+                    <Link href="/receipts/">Scan and Drop Receipts</Link>
                   </li>
                   <li>
-                    <Link href="/insights/">Insights</Link>
+                    <Link href="/expense-analytics-and-insights/">
+                      Insights
+                    </Link>
                   </li>
                 </ul>
               </div>

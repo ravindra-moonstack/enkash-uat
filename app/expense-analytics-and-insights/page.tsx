@@ -1,8 +1,12 @@
 import Image from "next/image"
 import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
 import styles from "./page.module.scss"
 import { space } from "@/common/constant"
-import { blogData, faqData, carouselData, productData } from "./data"
+import { carouselData, blogData, productData } from "./data"
+import faqData from "./faq-data"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+
 import {
   Header,
   ThreeSteps,
@@ -20,69 +24,59 @@ import {
   FAQHtml,
   SecondryButton,
 } from "@/components"
-import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
-import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
-  title:
-    "Digital Receipt & Control Management : Store your Documents Online - EnKash",
+  title: "Employee Expense Management : Get Data Driven Insight - EnKash.com",
   description:
-    "Digital Receipt Management - Take control of your scanned receipts with our intuitive solution. Organize, store, and track digital receipts efficiently, making financial record-keeping a breeze",
+    "Employee Expense Management tracks employee business expenses with data-driven insights. Revolutionize the way you manage and analyze expenditures for enhanced financial efficiency",
   alternates: {
-    canonical: "https://www.enkash.com/scan-and-drop-receipts/",
+    canonical:
+      "https://www.enkash.com/expense-analytics-and-expense-analytics-and-expense-analytics-and-expense-analytics-and-expense-analytics-and-insights/",
   },
   faqData: faqData,
 })
 
-const ScanAndDropReceipts = (): React.JSX.Element => {
+const Insights = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/scan-and-drop-receipts/`}
+        url={`https://www.enkash.com/expense-analytics-and-insights/`}
         faqData={faqData}
       />
-
       <Header utmSource="expense_management" />
-
       <div className={`${styles.first_row} row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
             <Heading
-              title={`Digital Receipt Management${space}`}
+              title={`Insights${space}`}
               color="rainy-blue"
               size="h4"
               weight="7"
             />
           </div>
-
           <div className="d-flex flex-column">
             <Heading
-              title={`Scan, submit, and file  ${space}`}
+              title="Make Informed Decisions with "
+              color="rainy-blue"
+              size="h2"
+              weight="7"
+            />
+            <Heading
+              title=" Real-time Data and Actionable Insights"
               color="white"
               size="h2"
               weight="7"
             />
-
-            <div>
-              <Heading
-                title={`business expenses  ${space}`}
-                color="rainy-blue"
-                size="h2"
-                weight="7"
-              />
-              <Heading title="digitally" color="white" size="h2" weight="7" />
-            </div>
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Upload receipts instantly from anywhere for easy access and timely tracking."
+              title="Transform your business’s approach to manage and analyze employee expenses for greater financial efficiency."
               color="white"
               size="h6"
               weight="5"
             />
           </div>
-
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
@@ -101,7 +95,6 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-
         <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.lottie_container}>
             <LottieClientComponent animationData={bannerLottie} loop={true} />
@@ -116,33 +109,36 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
       <div
         className={`${styles.third_row}  row d-flex bg-white row-padding-x-only`}
       >
-        <div className="d-inline text-center flex-column  mb-5">
+        <div className="d-inline text-center mb-5">
           <Heading
-            title="Go Paperless & Digitize "
+            title="Keep a pulse on "
             color="black"
             size="h1"
             weight="6"
           />
           <Heading
-            title={`${space} Business Expenses  ${space}`}
+            title={`${space}employee expenses${space}`}
             color="equity-blue"
             size="h1"
             weight="6"
           />
-          <Heading title="with EnKash" color="black" size="h1" weight="6" />
+          <div>
+            <Heading title="with EnKash" color="black" size="h1" weight="6" />
+          </div>
         </div>
+
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="OCR Technology"
-              description="Automatically scan and collect details from receipts using OCR, eliminating the need for manual entry"
+              whiteTitle="Customizable Dashboards"
+              description="Grant varied access, like admin and finance teams, customize dashboards for tailored insights based on status, payment mode, category, segments, etc"
               source="expense_management"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="WhatsApp Integration"
-              description="Make it easy for employees to submit receipts on the go using WhatsApp"
+              whiteTitle="AI-Powered Insights"
+              description="Get actionable insights into employee expenses patterns, identify cost-saving opportunities, and optimize budgets with AI-driven analytics"
               source="expense_management"
             />
           </div>
@@ -152,13 +148,13 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
                 <>
                   <div className="d-flex flex-column">
                     <Heading
-                      title="Drop"
+                      title="Policy"
                       color="rainy-blue"
                       size="h2"
                       weight="6"
                     />
                     <Heading
-                      title="Receipts"
+                      title="Violation"
                       color="rainy-blue"
                       size="h2"
                       weight="6"
@@ -167,21 +163,13 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
                 </>
               }
               source="expense_management"
-              description="Streamline record-keeping by dropping receipts at your convenience"
+              description="Easily analyze policies with the highest violations and get a comprehensive overview of expenses deviating from policy norms, allowing for proactive corrective actions"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Link Receipts to Expenses"
-              description="Easily link your dropped electronic receipts to expenses anytime"
-              source="expense_management"
-            />
-          </div>
-
-          <div className="mb-2 mb-md-0 me-3">
-            <GetStartedCard
-              whiteTitle="Download Receipts in One Click"
-              description="Gain overall control over the business expense reimbursement process by downloading all receipts in just one click"
+              whiteTitle="Real-time Expense Tracking"
+              description="Monitor expenses in real-time, allowing for proactive decision-making and cost control, leading to improved bottom-line results"
               source="expense_management"
             />
           </div>
@@ -190,7 +178,7 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
 
       <div className={`${styles.second_row}  bg-white`}>
         <AllProducts
-          title="Simplify expense management with EnKash’s innovative  "
+          title="Redefine expense tracking with EnKash's cutting-edge "
           subtitle="solutions"
           data={productData}
         />
@@ -203,13 +191,13 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
               <div className="text-center">
                 <div className="d-flex flex-column">
                   <Heading
-                    title="How digital receipt management helps"
-                    color="rainy-blue"
+                    title="Get comprehensive insights and"
+                    color="white"
                     size="h1"
                     weight="6"
                   />
                   <Heading
-                    title="accelerate expense management"
+                    title="make smart decisions"
                     color="rainy-blue"
                     size="h1"
                     weight="6"
@@ -239,7 +227,7 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
         </div>
         <div className="mb-5">
           <Heading
-            title="Don’t worry! Our FAQs section will help you learn about digital receipt management in detail"
+            title="Don't worry! Our FAQs section will help you learn about insights in detail"
             color="black"
             size="h4"
           />
@@ -256,12 +244,11 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
 
       <div className={`${styles.sixth_row} row`}>
         <ContactUsCard
-          title="Seeking further understanding of scan & drop receipts"
-          description="Scan & drop receipts is a cutting-edge solution designed to streamline the process of capturing and managing receipts and invoices in a digital format. This innovative technology allows businesses to convert their paper-based invoices into electronic receipts effortlessly."
+          title="Seeking further understanding of insights?"
+          description="Insights provide real-time and interactive access to data gathered from employee business expenses. It presents complex data in a clear and easy-to-understand format, such as charts, graphs, and tables, allowing businesses to gain knowledge about various aspects of employee spending."
           source="expense_management"
         />
       </div>
-
       <div className={`${styles.seventh_row} row`}>
         <ComprehensiveView
           title="Explore our comprehensive guide"
@@ -272,7 +259,7 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="How can you effectively manage digital receipts?"
+                  title="What types of data can be tracked and analyzed through an employee insights dashboard?"
                 />
               </div>
               <div className="mb-5">
@@ -280,7 +267,7 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Managing digital receipts effectively can be achieved through OfEx's comprehensive digital receipt management solution. This technology allows for the effortless capture, storage, and organization of digital receipts. It includes the scan & drop receipt feature for quick digitization of paper-based receipts, saving time and reducing the risk of losing critical financial records."
+                  title="Through an employee insights dashboard, various types of data related to employee business expenses can be tracked and analyzed including status, payment mode analysis, distribution by category, department, cost center, branches, and company segments, top 10 users with policy deviation, top 10 policies with the most violations, and the number of expenses with policy deviation."
                 />
               </div>
               <div className="mb-2">
@@ -288,7 +275,7 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
                   size="h5"
                   color="black"
                   weight="6"
-                  title="What is receipt management?"
+                  title="How can EnKash help in policy compliance and expense control?"
                 />
               </div>
               <div className="mb-3">
@@ -296,58 +283,7 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
                   size="h6"
                   color="black"
                   weight="4"
-                  title="Receipt management involves digitizing and organizing various receipts and invoices related to business expenses. This process helps convert paper-based receipts into digital format, making them easily accessible and searchable, simplifying record-keeping, providing quick access, ensuring accurate data tracking, and enhancing overall financial control."
-                />
-              </div>
-
-              <div className="mb-2 mt-5">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="What is the importance of digital receipts in businesses?"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Digital receipts are vital in modern business operations due to their efficiency and convenience. With OfEx's digital receipt management, businesses can benefit from streamlined expense processes, reduced paperwork, compliance checks, and a clear trail of financial transactions for audits. They also improve expense reporting and minimize manual intervention."
-                />
-              </div>
-
-              <div className="mb-2 mt-5">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="What serves as the primary purpose of receipt management?"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="The primary purpose of receipt management is to simplify how businesses handle their financial records. It streamlines capturing, organizing, and accessing electronic receipts, reducing the reliance on physical paperwork. This digital transformation saves time and ensures accuracy in data tracking, offering better financial control and compliance."
-                />
-              </div>
-
-              <div className="mb-2 mt-5">
-                <Heading
-                  size="h5"
-                  color="black"
-                  weight="6"
-                  title="What sets receipt management apart from invoice management?"
-                />
-              </div>
-              <div className="mb-3">
-                <Heading
-                  size="h6"
-                  color="black"
-                  weight="4"
-                  title="Receipt management by OfEx primarily focuses on capturing and organizing various receipts related to business expenses. It streamlines converting paper-based receipts into digital format. On the other hand, invoice management typically involves handling and processing invoices from vendors, ensuring timely payments, and tracking accounts payable."
+                  title="EnKash provides a comprehensive overview of policy violations, allowing businesses to easily analyze and identify areas with the highest violations. This proactive approach enables organizations to take corrective actions promptly, ensuring compliance with expense policies and better control over expenditures."
                 />
               </div>
             </>
@@ -359,4 +295,4 @@ const ScanAndDropReceipts = (): React.JSX.Element => {
   )
 }
 
-export default ScanAndDropReceipts
+export default Insights

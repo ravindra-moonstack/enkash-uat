@@ -187,7 +187,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               title="Reimbursements"
               description="Keep employees happy and ensure uninterrupted business-related activities with streamlined reimbursement processes"
               theme="blue"
-              link="/reimbursement"
+              link="/reimbursements"
             />
           </div>
           <div
@@ -221,7 +221,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             title="Policy and Approval Flows"
             description="Choose an approval matrix (auto, multi, custom, hierarchical) that works best for your business to create and maintain an aligned approval process for all kinds of spends"
             theme="green"
-            link="/policy-and-approval-flows"
+            link="/approval-flows"
           />
         </div>
 
@@ -230,7 +230,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             title="Scan and Drop Receipts"
             description="Leverage OCR for digital receipt management, reporting  & reconciliation"
             theme="green"
-            link="/scan-and-drop-receipts"
+            link="/receipts"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">

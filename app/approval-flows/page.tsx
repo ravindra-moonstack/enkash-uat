@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Explore how our approval workflow solutions can optimize decision-making processes, enhance accountability, and improve efficiency in your organization. Take control of your workflow management today",
   alternates: {
-    canonical: "https://www.enkash.com/policy-and-approval-flows/",
+    canonical: "https://www.enkash.com/approval-flows/",
   },
   faqData: faqData,
 })
@@ -40,7 +40,7 @@ const PolicyApprovalFlow = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/policy-and-approval-flows/`}
+        url={`https://www.enkash.com/approval-flows/`}
         faqData={faqData}
       />
 

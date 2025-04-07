@@ -28,7 +28,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Automate and improve your productivity within your organization with an Enkash smart reimbursement system that helps you track, process, and sync data in real-time.",
   alternates: {
-    canonical: "https://www.enkash.com/reimbursement/",
+    canonical: "https://www.enkash.com/reimbursements/",
   },
   faqData: faqData,
 })

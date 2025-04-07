@@ -23,21 +23,21 @@ const productData: AllProductsDataProp[] = [
     description:
       "Businesses repay amount to employees or partners for expenses incurred on their behalf.",
     image: paymentLink,
-    link: "/reimbursement/",
+    link: "/reimbursements/",
   },
   {
     title: "Scan & Drop Receipts",
     description:
       "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
     image: qrCode,
-    link: "/scan-and-drop-receipts/",
+    link: "/receipts/",
   },
   {
     title: "Policy and Approval Flow",
     description:
       "A set of guidelines or rules that outline the procedures for seeking and granting official authorization for employee expenses. ",
     image: invoices,
-    link: "/policy-and-approval-flows/",
+    link: "/approval-flows/",
   },
   {
     title: "Hierarchy and Control",
