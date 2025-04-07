@@ -277,20 +277,17 @@ const disputeManagement = () => {
                         <h5 className="c6">4. Disputes review:</h5>
                         <p className="c12">
                           <span className="c1">
-                            As part of review, disputes received against the
-                            merchants would also be included.&nbsp; In case of a
-                            dispute ratio of more than 15%, such merchants would
-                            need to present explanation and steps to control
-                            disputes.{" "}
+                            As part of the review, disputes received against the
+                            merchants would also be included. In case of a
+                            dispute ratio is more than the network/banks
+                            permissible limits, such merchants would need to
+                            present an explanation and steps to control
+                            disputes.&nbsp; Such merchants could also be given a
+                            notice to exit and further settlements would be kept
+                            on hold.{" "}
                           </span>
                         </p>
-                        <p className="c12">
-                          <span className="c13">
-                            In case where the dispute ratio is more than 35%,
-                            such merchants would be given a notice to exit and
-                            further settlements would be kept on hold.&nbsp;
-                          </span>
-                        </p>
+
                         <h5 className="c6">5. Dispute Charges</h5>
                         <p className="c12">
                           <span className="c1">

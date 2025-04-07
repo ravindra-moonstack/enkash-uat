@@ -255,10 +255,10 @@ const home = () => {
         </div>
 
         <div
-          className={`col-md-4 col-12 d-flex flex-column align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          className={`col-md-4 col-12 d-flex flex-column align-items-center justify-content-start justify-content-md-center ms-0 ${styles.steps}`}
         >
           <div>
-            <Heading title="400,000++ " size="h2" weight="6" />
+            <Heading title="250,000+ " size="h2" weight="6" />
           </div>
           <div>
             <Heading title="Businesses" size="h5" />
@@ -266,7 +266,7 @@ const home = () => {
         </div>
 
         <div
-          className={`col-md-4 col-12 d-flex flex-column align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          className={`col-md-4 col-12 d-flex flex-column align-items-center justify-content-start justify-content-md-center ms-0 ${styles.steps}`}
         >
           <div>
             <Heading title="99.99%" size="h2" weight="6" />
@@ -277,7 +277,7 @@ const home = () => {
         </div>
 
         <div
-          className={`col-md-4 col-12 d-flex flex-column align-items-center justify-content-start justify-content-md-center ${styles.steps}`}
+          className={`col-md-4 col-12 d-flex flex-column align-items-center justify-content-start justify-content-md-center ms-0 ${styles.steps}`}
         >
           <div>
             <Heading title="24*7" size="h2" weight="6" />
@@ -310,7 +310,7 @@ const home = () => {
             weight="6"
           />
           <Heading
-            title={`40,000+${space}`}
+            title={`250,000+${space}`}
             color="electric-green"
             size="h1"
             weight="6"

@@ -558,7 +558,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
           <span className="color-electric-green">*Powered by Banks/REs.</span>
         </div>
         <div className={`col-12 color-white ${styles.copyright}`}>
-          Copyright © 2024 | Nehat Tech Solutions Pvt. Ltd. All right reserved.
+          Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right reserved.
         </div>
       </div>
 
