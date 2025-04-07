@@ -1408,7 +1408,7 @@ const privacyPolicy = () => {
                                   </span>
                                 </td>
                                 <td>
-                                  <b>Mr Krishna Kumar </b>
+                                  <b>Mr Nagesh Shet </b>
                                 </td>
                               </tr>
                               <tr>
@@ -1422,7 +1422,7 @@ const privacyPolicy = () => {
                               <tr>
                                 <td>Phone</td>
                                 <td>
-                                  <a>+91 9513251477</a>
+                                  <a>+91 9833875021</a>
                                 </td>
                               </tr>
                               <tr>
@@ -1458,7 +1458,7 @@ const privacyPolicy = () => {
                                   </span>
                                 </td>
                                 <td>
-                                  <b> Mr Vibhor Chugh</b>
+                                  <b>Mr Nagesh Shet</b>
                                 </td>
                               </tr>
                               <tr>
@@ -1473,7 +1473,7 @@ const privacyPolicy = () => {
                               </tr>
                               <tr>
                                 <td>Phone Number</td>
-                                <td>+91 9513251499</td>
+                                <td>+91 9833875021</td>
                               </tr>
                               <tr>
                                 <td>Working Day(s)</td>
