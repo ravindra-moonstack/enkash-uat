@@ -60,7 +60,7 @@ const freedomProducts = [
         description: "Manage all your SaaS subscriptions with ease",
         imageSrc: saas,
         imageSrcHovered: saasFilled,
-        link: "/saas-cards",
+        link: "/virtual-card",
       },
       ,
       {
