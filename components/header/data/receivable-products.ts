@@ -100,7 +100,7 @@ const ReceivableProducts = [
         description: "Create & send digital invoices",
         imageSrc: invoices,
         imageSrcHovered: invoicesFilled,
-        link: "/invoices",
+        link: "/digital-invoicing",
       },
       {
         name: "Payment Button",

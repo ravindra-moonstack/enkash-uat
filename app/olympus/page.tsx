@@ -282,7 +282,7 @@ const olympus = () => {
               description="Digitize the entire invoicing process from uploading to dispatching invoices electronically.
               Effortlessly streamline your business payments and collections"
               theme="blue"
-              link="/invoices"
+              link="/digital-invoicing"
             />
           </div>
           <div

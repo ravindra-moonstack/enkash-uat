@@ -68,7 +68,7 @@ const freedomProducts = [
         description: "Simplify Travel & Entertainment expenses",
         imageSrc: tne,
         imageSrcHovered: tneFilled,
-        link: "/travel-and-expense-cards",
+        link: "/travel-and-expense-card",
       },
       {
         name: "Purchase Cards*",

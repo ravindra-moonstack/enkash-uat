@@ -132,7 +132,7 @@ const Slash = (): React.JSX.Element => {
               title="Corporate Credit Cards"
               description="Optimize cash flow, and gain valuable insights with a suite of tailored corporate credit card solutions like T&E cards"
               theme="blue"
-              link="/travel-and-expense-cards"
+              link="/travel-and-expense-card"
             />
           </div>
           <div

@@ -287,7 +287,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                     </li>
 
                     <li>
-                      <Link href="/travel-and-expense-cards">T&E Cards*</Link>
+                      <Link href="/travel-and-expense-card">T&E Cards*</Link>
                     </li>
                     <li>
                       <Link href="/diy-card-module">DIY Card Module*</Link>
