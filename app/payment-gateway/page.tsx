@@ -237,7 +237,7 @@ const PaymentGateway = (): React.JSX.Element => {
       <div className="bg-white row-padding text-center d-flex flex-column">
         <BlogWrapper
           blogData={blogData}
-          title="Learn how virtual accounts can revolutionize the way you work!"
+          title="Learn how payment gateway works for businesses."
         />
       </div>
 
