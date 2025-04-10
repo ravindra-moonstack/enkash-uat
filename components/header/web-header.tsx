@@ -63,7 +63,7 @@ const WebHeader = ({ utmSource }: props) => {
 
   return (
     <div className={styles.header_wrapper}>
-      <TopBannerWeb />
+      {/* <TopBannerWeb /> */}
 
       <header
         className={`w-full absolute z-10 d-flex flex-column ${styles.header}
