@@ -49,7 +49,7 @@ const MobileHeader = ({ utmSource }: props) => {
 
   return (
     <div>
-      <TopBannerMobile />
+      {/* <TopBannerMobile /> */}
 
       <div className={`w-100 absolute z-10 bg-indi-volt`}>
         <Hamburger setCurrentStep={setCurrentStep} currentStep={currentStep} />
