@@ -73,11 +73,11 @@ const ReceivableProducts = [
         link: "/instant-settlement",
       },
       {
-        name: "Payment Links",
+        name: "Payment Link",
         description: "Send embedded payment links via multiple channels",
         imageSrc: paymentLinks,
         imageSrcHovered: paymentLinksFilled,
-        link: "/payment-links",
+        link: "/payment-link",
       },
       {
         name: "UPI Payments",

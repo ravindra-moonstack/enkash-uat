@@ -75,7 +75,7 @@ const freedomProducts = [
         description: "Track employee purchases in real time",
         imageSrc: purchaseCard,
         imageSrcHovered: purchaseCardFilled,
-        link: "/purchase-cards",
+        link: "/purchase-card",
       },
       {
         name: "DIY Card Module*",

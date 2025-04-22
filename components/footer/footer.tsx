@@ -72,7 +72,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     {/* <div className={'my-auto '}> NEW</div> */}
                   </li>
                   <li>
-                    <Link href="/payment-links/">Payment Links</Link>
+                    <Link href="/payment-link/">Payment Links</Link>
                   </li>
                   <li>
                     <Link href="/payment-button/">Payment Button</Link>
@@ -194,7 +194,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/business-bill-payment/">Bill Payment</Link>
                   </li>
                   <li>
-                    <Link href="express-pay/">Express Pay</Link>
+                    <Link href="/express-pay/">Express Pay</Link>
                   </li>
                   <li>
                     <Link href="/gst-payment/">GST Payment</Link>
