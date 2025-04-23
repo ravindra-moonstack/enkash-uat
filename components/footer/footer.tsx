@@ -81,7 +81,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/payment-page/">Payment Page</Link>
                   </li>
                   <li>
-                    <Link href="/bulk-collect/">Bulk Collect</Link>
+                    <Link href="/bulk-payment-collection/">Bulk Collect</Link>
                   </li>
                   <li className="d-flex">
                     <Link href="/upi-payments">UPI Payments</Link>

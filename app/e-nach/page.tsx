@@ -406,7 +406,7 @@ const eNach = (): React.JSX.Element => {
                   NACH enables repetitive transactions that take place in bulk.
                   It can be further used for{" "}
                   <Link
-                    href="https://www.enkash.com/bulk-collect/"
+                    href="https://www.enkash.com/bulk-payment-collection/"
                     target="_blank"
                   >
                     payment collection

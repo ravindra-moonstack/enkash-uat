@@ -348,7 +348,7 @@ const subscriptionManagement = () => {
                 <p>
                   Automated subscriptions enable businesses to{" "}
                   <Link
-                    href="https://www.enkash.com/bulk-collect/"
+                    href="https://www.enkash.com/bulk-payment-collection/"
                     target="_blank"
                   >
                     track and collect payments

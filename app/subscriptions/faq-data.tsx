@@ -75,7 +75,7 @@ const faqData: FAQProps[] = [
       <div>
         <h4 className="mb-3 mt-2">
           Automated subscriptions enable businesses to{" "}
-          <Link href="https://www.enkash.com/bulk-collect/" target="_blank">
+          <Link href="https://www.enkash.com/bulk-payment-collection/" target="_blank">
             {`${space} track and collect payments ${space}`}
           </Link>
           for their product or service automatically with various payment

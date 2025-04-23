@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Revolutionize your business payment collection with Bulk Collect. Streamline data management, enhance efficiency, and ensure seamless payment processes. Explore the benefits with EnKash today",
   alternates: {
-    canonical: "https://www.enkash.com/bulk-collect/",
+    canonical: "https://www.enkash.com/bulk-payment-collection/",
   },
   faqData: faqData,
 })
@@ -40,7 +40,7 @@ const bulkCollect = () => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/bulk-collect/`}
+        url={`https://www.enkash.com/bulk-payment-collection/`}
         faqData={faqData}
       />
       <Header utmSource="receivables" />

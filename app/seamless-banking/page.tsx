@@ -339,7 +339,7 @@ const seamlessBanking = () => {
                   providing data that can drive business to greater heights. It
                   also eases{" "}
                   <Link
-                    href="https://www.enkash.com/bulk-collect/"
+                    href="https://www.enkash.com/bulk-payment-collection/"
                     target="_blank"
                   >
                     business payments and collections

@@ -35,7 +35,7 @@ const faqData: FAQProps[] = [
         Top reasons to automate invoice processing:Collection analytics software
         utilizes historical data, customer payment patterns, and various metrics
         to create models that{" "}
-        <Link href="https://www.enkash.com/bulk-collect/" target="_blank">
+        <Link href="https://www.enkash.com/bulk-payment-collection/" target="_blank">
           predict future payment
         </Link>{" "}
         behavior. These models consider factors such as payment history, average
