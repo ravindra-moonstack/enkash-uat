@@ -56,7 +56,7 @@ const ReceivableProducts = [
           "Send unlimited collection requests with bulk invoice dispatch",
         imageSrc: bulkCollect,
         imageSrcHovered: bulkCollectFilled,
-        link: "/bulk-collect",
+        link: "/bulk-payment-collection",
       },
       {
         name: "Virtual Accounts",

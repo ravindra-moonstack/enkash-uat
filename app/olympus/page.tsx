@@ -271,7 +271,7 @@ const olympus = () => {
               title="Bulk Collect"
               description="Streamline business collections through automated payment reminders, and bulk invoice dispatch in one click"
               theme="blue"
-              link="/bulk-collect"
+              link="/bulk-payment-collection"
             />
           </div>
         </div>

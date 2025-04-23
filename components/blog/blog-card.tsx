@@ -1,16 +1,16 @@
-import Image from "next/image";
-import styles from "./blog-card.module.scss";
-import Heading from "../heading/heading";
-import arrow from "./img/arrow.png";
-import Link from "next/link";
+import Image from "next/image"
+import styles from "./blog-card.module.scss"
+import Heading from "../heading/heading"
+import arrow from "./img/arrow.png"
+import Link from "next/link"
 
 export interface BlogProps {
-  imageAlt: any;
-  date: string;
-  image: string;
-  title: string;
-  description: string;
-  link: string;
+  imageAlt: any
+  date: string
+  image: string
+  title: string
+  description: string
+  link: string
 }
 
 const BlogCard = ({
@@ -45,7 +45,7 @@ const BlogCard = ({
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default BlogCard;
+export default BlogCard

@@ -233,7 +233,7 @@ const CollectPayments = (): React.JSX.Element => {
               title="Bulk Collect"
               description="Create an improved, customer-focused collection experience while ensuring better DSO"
               theme="blue"
-              link="/bulk-collect"
+              link="/bulk-payment-collection"
             />
           </div>
         </div>
