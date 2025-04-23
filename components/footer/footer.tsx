@@ -301,7 +301,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/meal-card/">Meal Cards*</Link>
                   </li>
                   <li>
-                    <Link href="/saas-cards/">SaaS Cards*</Link>
+                    <Link href="/virtual-cards/">SaaS Cards*</Link>
                   </li>
                   <li>
                     <Link href="/purchase-card/">Purchase Cards*</Link>
