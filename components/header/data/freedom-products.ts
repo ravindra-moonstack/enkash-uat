@@ -1,4 +1,4 @@
-import diyCardModule from "@/app/corporate-cards/diy-card-module/page";
+import diyCardModule from "@/app/diy-card-module/page"
 import {
   digitalMarketingCard,
   digitalMarketingCardFilled,
@@ -16,7 +16,7 @@ import {
   purchaseCardFilled,
   diyCard,
   diyCardFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const freedomProducts = [
   {
@@ -32,35 +32,35 @@ const freedomProducts = [
         description: "Empower employees to take tax break on meals",
         imageSrc: mealCard,
         imageSrcHovered: mealCardFilled,
-        link: "/corporate-cards/meal-cards",
+        link: "/meal-card",
       },
       {
         name: "Fuel Cards*",
         description: "Track & manage fuel expenses for business travels",
         imageSrc: fuelCard,
         imageSrcHovered: fuelCardFilled,
-        link: "/corporate-cards/fuel-cards",
+        link: "/fuel-card",
       },
       {
         name: "Virtual Cards*",
         description: "Unlimited cards with centralized controls",
         imageSrc: virtualCard,
         imageSrcHovered: virtualCardFilled,
-        link: "/corporate-cards/virtual-cards",
+        link: "/virtual-card",
       },
       {
         name: "Digital Marketing Cards*",
         description: "Easily pay for all your digital marketing needs",
         imageSrc: digitalMarketingCard,
         imageSrcHovered: digitalMarketingCardFilled,
-        link: "/corporate-cards/digital-marketing-cards",
+        link: "/digital-marketing-card",
       },
       {
         name: "SaaS Cards*",
         description: "Manage all your SaaS subscriptions with ease",
         imageSrc: saas,
         imageSrcHovered: saasFilled,
-        link: "/corporate-cards/saas-cards",
+        link: "/virtual-card",
       },
       ,
       {
@@ -68,29 +68,29 @@ const freedomProducts = [
         description: "Simplify Travel & Entertainment expenses",
         imageSrc: tne,
         imageSrcHovered: tneFilled,
-        link: "/corporate-cards/travel-and-expense-cards",
+        link: "/travel-and-expense-card",
       },
       {
         name: "Purchase Cards*",
         description: "Track employee purchases in real time",
         imageSrc: purchaseCard,
         imageSrcHovered: purchaseCardFilled,
-        link: "/corporate-cards/purchase-cards",
+        link: "/purchase-card",
       },
       {
         name: "DIY Card Module*",
         description: "Customizable cards for business spends",
         imageSrc: diyCard,
         imageSrcHovered: diyCardFilled,
-        link: "/corporate-cards/diy-card-module",
+        link: "/diy-card-module",
       },
     ],
     footerText: "Empower your finances with purpose-based cards",
     footerMobileText: "Explore More",
     footerImg: "freedom_footer_bg",
-    footerLink: "/corporate-cards",
-    parentLink: "/corporate-cards",
+    footerLink: "/cards",
+    parentLink: "/cards",
   },
-];
+]
 
-export default freedomProducts;
+export default freedomProducts

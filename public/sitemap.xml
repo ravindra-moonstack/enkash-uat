@@ -18,22 +18,22 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/</loc>
+  <loc>https://www.enkash.com/make-payments/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/</loc>
+  <loc>https://www.enkash.com/collect-payments/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/</loc>
+  <loc>https://www.enkash.com/cards/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/ofex/</loc>
+  <loc>https://www.enkash.com/expense-management/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -53,107 +53,107 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/bill-payment/</loc>
+  <loc>https://www.enkash.com/business-bill-payment/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/bulk-payout/</loc>
+  <loc>https://www.enkash.com/express-pay/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/gst-payments/</loc>
+  <loc>https://www.enkash.com/gst-payment/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/vendor-payment/</loc>
+  <loc>https://www.enkash.com/vendor-payment/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/rental-payment/</loc>
+  <loc>https://www.enkash.com/rent-payment/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/virtual-accounts/</loc>
+  <loc>https://www.enkash.com/virtual-account/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/payment-links/</loc>
+  <loc>https://www.enkash.com/payment-links/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/bulk-collect/</loc>
+  <loc>https://www.enkash.com/bulk-collect/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/invoices/</loc>
+  <loc>https://www.enkash.com/digital-invoicing/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/virtual-cards/</loc>
+  <loc>https://www.enkash.com/virtual-card/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/digital-marketing-cards/</loc>
+  <loc>https://www.enkash.com/digital-marketing-card/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/fuel-cards/</loc>
+  <loc>https://www.enkash.com/fuel-card/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/meal-cards/</loc>
+  <loc>https://www.enkash.com/meal-card/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/saas-cards/</loc>
+  <loc>https://www.enkash.com/saas-cards/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/purchase-cards/</loc>
+  <loc>https://www.enkash.com/purchase-card/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/travel-and-expense-cards/</loc>
+  <loc>https://www.enkash.com/travel-and-expense-card/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/ofex/budget-and-advances/</loc>
+  <loc>https://www.enkash.com/budget-and-advances/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/ofex/hierarchy-and-controls/</loc>
+  <loc>https://www.enkash.com/hierarchy-and-controls/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/ofex/policy-and-approval-flows/</loc>
+  <loc>https://www.enkash.com/approval-flows/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/ofex/reimbursement/</loc>
+  <loc>https://www.enkash.com/reimbursements/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/ofex/scan-and-drop-receipts/</loc>
+  <loc>https://www.enkash.com/receipts/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -163,22 +163,22 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/loyalty-lounge/channel-incentive/</loc>
+  <loc>https://www.enkash.com/channel-incentives/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/loyalty-lounge/employee-rewards/</loc>
+  <loc>https://www.enkash.com/employee-rewards/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/loyalty-lounge/gift-cards/</loc>
+  <loc>https://www.enkash.com/gift-cards/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/loyalty-lounge/offers/</loc>
+  <loc>https://www.enkash.com/offers/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -208,32 +208,32 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/corporate-cards/diy-card-module/</loc>
+  <loc>https://www.enkash.com/diy-card-module/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/vendor-management/</loc>
+  <loc>https://www.enkash.com/vendor-management/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/invoice-management/</loc>
+  <loc>https://www.enkash.com/invoice-management/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/e-nach/</loc>
+  <loc>https://www.enkash.com/e-nach/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/collection-analytics/</loc>
+  <loc>https://www.enkash.com/collection-analytics/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/automated-reconciliation/</loc>
+  <loc>https://www.enkash.com/auto-reconciliation/</loc>
   <lastmod>2024-02-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -248,30 +248,30 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/reminder-engine/</loc>
+  <loc>https://www.enkash.com/collection-reminder/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/customized-payment/</loc>
+  <loc>https://www.enkash.com/payment-page/</loc>
   <lastmod>2024-02-19T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url><url>
-  <loc>https://www.enkash.com/olympus/receivables/payment-button/</loc>
+  <loc>https://www.enkash.com/payment-button/</loc>
   <lastmod>2024-02-19T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url><url>
-  <loc>https://www.enkash.com/olympus/receivables/payment-gateway/</loc>
+  <loc>https://www.enkash.com/payment-gateway/</loc>
   <lastmod>2024-02-19T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/ofex/insights/</loc>
+  <loc>https://www.enkash.com/expense-analytics-and-insights/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com/olympus/payables/payable-analytics/</loc>
+  <loc>https://www.enkash.com/payable-analytics/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -283,31 +283,31 @@
 </url>
 
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/subscription-management/</loc>
+  <loc>https://www.enkash.com/subscriptions/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/auto-collect/</loc>
+  <loc>https://www.enkash.com/auto-collect/</loc>
   <lastmod>2023-03-08T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/instant-settlements/</loc>
+  <loc>https://www.enkash.com/instant-settlement/</loc>
   <lastmod>2023-03-08T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/upi-payments/</loc>
+  <loc>https://www.enkash.com/upi-payments/</loc>
   <lastmod>2024-04-05T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 
 <url>
-  <loc>https://www.enkash.com/olympus/receivables/qr-codes/</loc>
+  <loc>https://www.enkash.com/qr-codes/</loc>
   <lastmod>2024-04-05T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -337,12 +337,12 @@
 </url>
 
 <url>
-  <loc>https://www.enkash.com/olympus/payables/payroll-processing/</loc>
+  <loc>https://www.enkash.com/payroll/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://www.enkash.com//olympus/payables/seamless-banking/</loc>
+  <loc>https://www.enkash.com//seamless-banking/</loc>
   <lastmod>2023-12-23T14:36:38+00:00</lastmod>
   <priority>0.80</priority>
 </url>

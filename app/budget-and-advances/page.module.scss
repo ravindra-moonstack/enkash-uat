@@ -1,0 +1,134 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.first_row {
+  margin-bottom: 80px;
+  @include for-laptops {
+    padding-top: 170px;
+  }
+  .three_step_container {
+    padding-top: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
+    @include for-laptops {
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+  }
+
+  .lottie_container {
+    width: 250px;
+    height: auto;
+    @include for-laptops {
+      margin-top: 60px;
+      width: 400px;
+      height: auto;
+    }
+  }
+}
+
+.second_row {
+  .progress_bar {
+    height: 4px;
+    border-radius: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: linear-gradient(
+      90deg,
+      $color-equity-blue 15%,
+      $color-black 30%
+    );
+    @include for-laptops {
+      height: 8px;
+    }
+  }
+  .progress_items {
+    margin-right: 30px;
+    @include for-laptops {
+      margin-right: 0;
+    }
+  }
+  .progress_container {
+    @include for-laptops {
+      justify-content: space-evenly;
+    }
+  }
+  .arrow {
+    transform: rotate(90deg);
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+
+    @include for-laptops {
+      height: 50px;
+      width: 50px;
+      transform: none;
+      margin-top: 0;
+    }
+  }
+}
+
+.third_row {
+  padding-bottom: 20px;
+  padding-top: 50px;
+  @include for-laptops {
+    padding-bottom: 20px;
+    padding-top: 80px;
+  }
+}
+
+.fifth_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  @include for-laptops {
+    padding-bottom: 220px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: none;
+      @include for-laptops {
+        height: 300px;
+        display: flex;
+      }
+    }
+  }
+}
+
+.seventh_row {
+  background-color: $color-white;
+  @include for-laptops {
+  }
+}
+
+.action_container {
+  background: linear-gradient(
+    282deg,
+    #1c5af4 -10.83%,
+    #092093 15.75%,
+    rgba(11, 11, 40, 0) 29.74%
+  );
+  background-color: #0c0e4a;
+  padding: 20px 30px;
+  @include for-laptops {
+    padding: 30px 80px;
+  }
+}
+.explore_text {
+  display: flex;
+  width: 95%;
+  font-size: 15px;
+  line-height: 20px;
+  padding-right: 10px;
+  margin: 0;
+  @include for-laptops {
+    font-size: 40px;
+    line-height: 35px;
+  }
+}

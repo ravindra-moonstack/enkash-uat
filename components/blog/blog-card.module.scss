@@ -12,7 +12,7 @@
   text-align: left;
   padding-bottom: 30px;
   @include for-laptops {
-    width: 450px;
+    width: calc((100vw) / 3.5 - 50px);
   }
 
   a {

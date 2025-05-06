@@ -3,6 +3,6 @@ const nextConfig = {
     domains: ["blogs.enkash.com", "www.enkash.com"],
   },
   trailingSlash: true,
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

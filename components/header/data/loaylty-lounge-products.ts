@@ -9,7 +9,7 @@ import {
   rewardsPlatform,
   brandVouchers,
   brandVouchersFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const loyaltyLoungeProducts = [
   {
@@ -32,28 +32,28 @@ const loyaltyLoungeProducts = [
         description: "Enable automated trade incentives easily",
         imageSrc: channelIncentive,
         imageSrcHovered: channelIncentiveFilled,
-        link: "/loyalty-lounge/channel-incentive",
+        link: "/channel-incentives",
       },
       {
         name: "Employee Rewards",
         description: "Automated platform for employee appreciation",
         imageSrc: rewardsPlatform,
         imageSrcHovered: rewardsPlatformFilled,
-        link: "/loyalty-lounge/employee-rewards",
+        link: "/employee-rewards",
       },
       {
         name: "Gift Cards",
         description: "Easy to use gifting solution",
         imageSrc: giftCards,
         imageSrcHovered: giftCardFilled,
-        link: "/loyalty-lounge/gift-cards",
+        link: "/gift-cards",
       },
       {
         name: "Offers",
         description: "Get discounts on partnered subscriptions and more",
         imageSrc: offers,
         imageSrcHovered: offersFilled,
-        link: "/loyalty-lounge/offers",
+        link: "/offers",
       },
     ],
     footerText: "Effortless recognition, and endless rewards in one place",
@@ -62,6 +62,6 @@ const loyaltyLoungeProducts = [
     footerLink: "/loyalty-lounge",
     parentLink: "/loyalty-lounge",
   },
-];
+]
 
-export default loyaltyLoungeProducts;
+export default loyaltyLoungeProducts

@@ -1,5 +1,5 @@
 // app/robots.ts
-import { MetadataRoute } from "next";
+import { MetadataRoute } from "next"
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -11,7 +11,7 @@ export default function robots(): MetadataRoute.Robots {
           "/resources/wp-admin/",
           "/resources/wp-login.php",
           "/_next/static/chunks/*",
-          "/olympus/payables/pay-by-any-card-old/",
+          "/make-payments/pay-by-any-card-old/",
         ],
       },
     ],
@@ -19,5 +19,5 @@ export default function robots(): MetadataRoute.Robots {
       "https://enkash.com/sitemap.xml",
       "https://enkash.com/sitemap-vouchers",
     ],
-  };
+  }
 }

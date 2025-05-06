@@ -1,0 +1,289 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.first_row {
+  background-color: $color-indi-volt;
+  position: relative;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  @include for-laptops {
+    padding-left: 70px;
+    padding-right: 30px;
+    padding-top: 190px;
+    padding-bottom: 40px;
+  }
+
+  .desktop_description {
+    display: none;
+    @include for-laptops {
+      display: block;
+    }
+  }
+  .mobile_description {
+    display: block;
+    @include for-laptops {
+      display: none;
+    }
+  }
+
+  .lottie_container {
+    position: absolute;
+    z-index: 1;
+    width: auto;
+    bottom: 0px;
+    right: 0px;
+    width: 450px;
+    @include for-laptops {
+      width: 800px;
+    }
+  }
+
+  .button_container {
+    padding-bottom: 200px;
+    @include for-laptops {
+      padding-bottom: 0px;
+    }
+  }
+}
+
+.second_row {
+  position: relative;
+  z-index: 2;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 66px;
+  padding-bottom: 36px;
+  @include for-laptops {
+    padding-left: 90px;
+    padding-right: 90px;
+    padding-top: 110px;
+    padding-bottom: 80px;
+  }
+}
+.third_row {
+  background-color: $color-white;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 50px;
+  @include for-laptops {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .section {
+    margin-bottom: 100px;
+    @include for-laptops {
+      margin-bottom: 50px;
+    }
+  }
+
+  .first_container {
+    position: relative;
+    z-index: 2;
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -125px;
+      left: -75px;
+      @include for-laptops {
+        top: -100px;
+        left: 200px;
+      }
+    }
+    .lottie_container {
+      width: 250px;
+      @include for-laptops {
+        width: 300px;
+      }
+    }
+  }
+
+  .second_container {
+    position: relative;
+    z-index: 2;
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -125px;
+      left: -75px;
+      @include for-laptops {
+        top: -100px;
+        left: -100px;
+      }
+    }
+    .lottie_container {
+      width: 250px;
+      @include for-laptops {
+        width: 300px;
+      }
+    }
+  }
+
+  .third_container {
+    position: relative;
+    z-index: 2;
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -125px;
+      left: -75px;
+      @include for-laptops {
+        top: -50px;
+        left: 200px;
+      }
+    }
+  }
+}
+
+.fourth_row {
+  background-color: $color-indi-volt;
+  padding: 55px 40px;
+  @include for-laptops {
+    padding: 110px 90px;
+  }
+
+  .lottie_first_container {
+    width: 400px;
+    @include for-laptops {
+      width: 500px;
+    }
+  }
+  .lottie_second_container {
+    width: 350px;
+    @include for-laptops {
+      width: 400px;
+    }
+  }
+}
+
+.sixth_row {
+  .progress_bar {
+    height: 4px;
+    border-radius: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: linear-gradient(
+      90deg,
+      $color-equity-blue 15%,
+      $color-black 30%
+    );
+    @include for-laptops {
+      height: 8px;
+    }
+  }
+  .progress_items {
+    margin-right: 30px;
+    @include for-laptops {
+      margin-right: 0;
+    }
+  }
+  .progress_container {
+    @include for-laptops {
+      justify-content: space-evenly;
+    }
+  }
+  .arrow {
+    transform: rotate(90deg);
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+    @include for-laptops {
+      height: 50px;
+      width: 50px;
+      transform: none;
+      margin-top: 0;
+    }
+  }
+}
+
+.fifth_row {
+  position: relative;
+  background: url(./img/stack-mobile-bg.png);
+  background-size: cover;
+  padding: 50px;
+  z-index: 1;
+  @include for-laptops {
+    background: url(./img/stack-bg.png);
+    background-size: 100%;
+  }
+  .container {
+    img {
+      width: auto;
+      height: 50px;
+      @include for-laptops {
+        height: 70px;
+      }
+    }
+  }
+}
+
+.seventh_row {
+  .container {
+    @include for-laptops {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+  }
+  .left_row {
+    padding: 40px;
+    margin-top: -20px;
+    border-radius: 10px;
+    border: 2px solid $color-night-blue;
+    @include for-laptops {
+      padding: 40px;
+      width: 50%;
+      margin-top: 0px;
+    }
+  }
+  .right_row {
+    @include for-laptops {
+      margin-left: -20px;
+      margin-top: 0;
+      width: 50%;
+    }
+    margin-top: -10px;
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.eigth_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  @include for-laptops {
+    padding-bottom: 250px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: none;
+      @include for-laptops {
+        height: 300px;
+        display: flex;
+      }
+    }
+  }
+}
+
+.ninth_row {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include for-laptops {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}

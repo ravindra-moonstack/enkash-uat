@@ -11,12 +11,12 @@ import {
   scanAndDropFilled,
   insights,
   insightsFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const xpenzProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/ofex",
+    subtitleLink: "/expense-management",
     currentHeading: {
       name: "Expenses", //previously it was Ofex
       description: "Digitize employee spends & reimbursements",
@@ -27,14 +27,14 @@ const xpenzProducts = [
         description: "Track & manage your budget with ease",
         imageSrc: budgetAndAndvances,
         imageSrcHovered: budgetAndAndvancesFilled,
-        link: "/ofex/budget-and-advances",
+        link: "/budget-and-advances",
       },
       {
         name: "Hierarchy and Controls",
         description: "Customizable hierarchies for expenses & approvals",
         imageSrc: hierarchyAndControls,
         imageSrcHovered: hierarchyAndControlsFilled,
-        link: "/ofex/hierarchy-and-controls",
+        link: "/hierarchy-and-controls",
       },
 
       {
@@ -42,36 +42,36 @@ const xpenzProducts = [
         description: "Reimburse employee expenses quickly",
         imageSrc: reimbursements,
         imageSrcHovered: reimbursementsFilled,
-        link: "/ofex/reimbursement",
+        link: "/reimbursements",
       },
       {
         name: "Scan and Drop Receipts",
         description: "Automate receipt management with OCR",
         imageSrc: scanAndDrop,
         imageSrcHovered: scanAndDropFilled,
-        link: "/ofex/scan-and-drop-receipts",
+        link: "/receipts",
       },
       {
         name: "Insights",
         description: "Control employee expenses with data analytics",
         imageSrc: insights,
         imageSrcHovered: insightsFilled,
-        link: "/ofex/insights",
+        link: "/expense-analytics-and-insights",
       },
       {
         name: "Policy and Approval Flows",
         description: "Create policies & approval flows as per need",
         imageSrc: policyAndApproval,
         imageSrcHovered: policyAndApprovalFilled,
-        link: "/ofex/policy-and-approval-flows",
+        link: "/approval-flows",
       },
     ],
     footerText: "Optimize business spends efficiently",
     footerMobileText: "Explore More",
     footerImg: "xpenz_footer_bg",
-    footerLink: "/ofex",
-    parentLink: "/ofex",
+    footerLink: "/expense-management",
+    parentLink: "/expense-management",
   },
-];
+]
 
-export default xpenzProducts;
+export default xpenzProducts

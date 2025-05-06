@@ -2,12 +2,12 @@ export const motherProducts = [
   {
     name: "Collect Payments",
     description: "Fastest & secure payment gateway offerings",
-    link: "/olympus/receivables",
+    link: "/collect-payments",
   },
   {
     name: "Make Payments",
     description: "Manage all types of business payments",
-    link: "/olympus/payables",
+    link: "/make-payments",
   },
   {
     name: "Cards",
@@ -17,7 +17,7 @@ export const motherProducts = [
   {
     name: "Expenses",
     description: "Digitize employee spends & reimbursements",
-    link: "/ofex",
+    link: "/expense-management",
   },
   {
     name: "Vouchers",
@@ -29,6 +29,6 @@ export const motherProducts = [
     description: "Build exciting rewards, incentives & offers",
     link: "/loyalty-lounge",
   },
-];
+]
 
-export default motherProducts;
+export default motherProducts

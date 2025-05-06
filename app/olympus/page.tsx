@@ -1,12 +1,12 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import { blogData, howDoesItWorkData } from "./data";
-import faqData from "./faq-data";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import { blogData, howDoesItWorkData } from "./data"
+import faqData from "./faq-data"
+import ExploreCard from "@/components/explore-card/explore-card"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import {
   Header,
   ThreeSteps,
@@ -21,11 +21,11 @@ import {
   LottieClientComponent,
   StructuredData,
   AllProducts,
-  FAQHtml
-} from "@/components";
-import ActionCard from "@/components/action-card/action-card";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
+  FAQHtml,
+} from "@/components"
+import ActionCard from "@/components/action-card/action-card"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
+import SecondryButton from "@/components/buttons/secondary-button/secondary-button"
 import {
   officeImg,
   officeImg2,
@@ -38,10 +38,9 @@ import {
   officeImg3,
   authorOne,
   authorTwo,
-} from ".";
-import TestimonialCard from "@/components/testimonial-card/testimonial-card";
-import generateMetaData from "@/common/utils/metaData";
-
+} from "."
+import TestimonialCard from "@/components/testimonial-card/testimonial-card"
+import generateMetaData from "@/common/utils/metaData"
 
 export const metadata: Metadata = generateMetaData({
   title:
@@ -52,7 +51,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/olympus/",
   },
   faqData: faqData,
-});
+})
 
 const olympus = () => {
   return (
@@ -141,7 +140,7 @@ const olympus = () => {
               title="Vendor Payments"
               description="Instantly add, verify, digitally validate, pay, and manage invoices with multiple vendors with one-click automation and clear visibility"
               theme="blue"
-              link="/olympus/payables/vendor-payment"
+              link="/vendor-payment"
             />
           </div>
           <div
@@ -181,7 +180,7 @@ const olympus = () => {
               title="GST Payments"
               description="Pay GST easily with our 3-step process. Get reminders, convert challans digitally, and monitor payments in one place"
               theme="blue"
-              link="/olympus/payables/gst-payments"
+              link="/gst-payment"
             />
           </div>
         </div>
@@ -191,7 +190,7 @@ const olympus = () => {
               title="Bill Payments"
               description="Add multiple utility providers, automate recurring payments, and ensure on-time payments with features like Auto-Fetch and Auto-Pay"
               theme="blue"
-              link="/olympus/payables/bill-payment"
+              link="/business-bill-payment"
             />
           </div>
           <div
@@ -226,7 +225,7 @@ const olympus = () => {
             title="Rental Payments"
             description="Pay and manage your office/home rent seamlessly directly into your landlord’s bank account"
             theme="green"
-            link="/olympus/payables/rental-payment"
+            link="/rent-payment"
           />
         </div>
 
@@ -236,7 +235,7 @@ const olympus = () => {
               title="Payment Links"
               description="Expedite your collection process by embedding payment links with digital invoices"
               theme="green"
-              link="/olympus/receivables/payment-links"
+              link="/payment-links"
             />
           </div>
         </div>
@@ -272,7 +271,7 @@ const olympus = () => {
               title="Bulk Collect"
               description="Streamline business collections through automated payment reminders, and bulk invoice dispatch in one click"
               theme="blue"
-              link="/olympus/receivables/bulk-collect"
+              link="/bulk-payment-collection"
             />
           </div>
         </div>
@@ -283,7 +282,7 @@ const olympus = () => {
               description="Digitize the entire invoicing process from uploading to dispatching invoices electronically.
               Effortlessly streamline your business payments and collections"
               theme="blue"
-              link="/olympus/receivables/invoices"
+              link="/digital-invoicing"
             />
           </div>
           <div
@@ -324,7 +323,7 @@ const olympus = () => {
               title="Virtual Accounts"
               description="Streamline the collection process by creating virtual accounts for your customers"
               theme="blue"
-              link="/olympus/receivables/virtual-accounts"
+              link="/virtual-account"
             />
           </div>
         </div>
@@ -765,7 +764,7 @@ const olympus = () => {
       </div>
       <Footer utmSource="payables" />
     </div>
-  );
-};
+  )
+}
 
-export default olympus;
+export default olympus

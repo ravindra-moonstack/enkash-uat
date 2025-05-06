@@ -1,29 +1,29 @@
-import Image from "next/image";
-import styles from "./page.module.scss";
-import GetStartedCard from "@/components/get-started-card/get-started-card";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { space } from "../../../common/constant";
-import faqData from "./faq-data";
-import blogData from "./blog-data";
-import carouselData from "./carousel-data";
-import { banner, bannerLottie, caraouselBg, faqBg, whiteArrow } from ".";
-import ContactUsCard from "@/components/contact-us-card/contact-us-card";
-import Heading from "@/components/heading/heading";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import ThreeSteps from "@/components/three-steps/three-steps";
-import HowDoesCarousel from "@/components/carousel/how-does-carousel";
-import FAQ from "@/components/faq/faq";
-import BlogWrapper from "@/components/blog/blog-wrapper";
-import { Metadata } from "next";
-import LottieClientComponent from "@/components/lottie-client/lottie-client";
-import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view";
-import FAQHtml from "./faq-html";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
-import Link from "next/link";
-import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import Image from "next/image"
+import styles from "./page.module.scss"
+import GetStartedCard from "@/components/get-started-card/get-started-card"
+import PrimaryButton from "@/components/buttons/primary-button/primary-button"
+import SecondryButton from "@/components/buttons/secondary-button/secondary-button"
+import { space } from "../../../common/constant"
+import faqData from "./faq-data"
+import blogData from "./blog-data"
+import carouselData from "./carousel-data"
+import { banner, bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
+import ContactUsCard from "@/components/contact-us-card/contact-us-card"
+import Heading from "@/components/heading/heading"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import ThreeSteps from "@/components/three-steps/three-steps"
+import HowDoesCarousel from "@/components/carousel/how-does-carousel"
+import FAQ from "@/components/faq/faq"
+import BlogWrapper from "@/components/blog/blog-wrapper"
+import { Metadata } from "next"
+import LottieClientComponent from "@/components/lottie-client/lottie-client"
+import ComprehensiveView from "@/components/comprehensive-view/comprehensive-view"
+import FAQHtml from "./faq-html"
+import Header from "@/components/header/header"
+import Footer from "@/components/footer/footer"
+import Link from "next/link"
+import generateMetaData from "@/common/utils/metaData"
+import StructuredData from "@/components/head/structuredData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Save Time with Workflow Management Software for Businesses - EnKash",
@@ -33,7 +33,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/solutions/workflow-management/",
   },
   faqData: faqData,
-});
+})
 
 const workflowManagement = () => {
   return (
@@ -386,7 +386,7 @@ const workflowManagement = () => {
                   EnKash workflow management allows you to save time by
                   automating the approval process for business payments. Users
                   can{" "}
-                  <Link href="https://www.enkash.com/olympus/payables/invoice-management/">
+                  <Link href="https://www.enkash.com/invoice-management/">
                     quickly upload invoices digitally
                   </Link>
                   , and automate the routing of invoices with pre-set
@@ -415,7 +415,7 @@ const workflowManagement = () => {
       </div>
       <Footer utmSource="" />
     </div>
-  );
-};
+  )
+}
 
-export default workflowManagement;
+export default workflowManagement

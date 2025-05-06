@@ -1,6 +1,6 @@
-import styles from "./footer.module.scss";
-import Image from "next/image";
-import PrimaryButton from "../buttons/primary-button/primary-button";
+import styles from "./footer.module.scss"
+import Image from "next/image"
+import PrimaryButton from "../buttons/primary-button/primary-button"
 import {
   twitterLogo,
   linkedinLogo,
@@ -12,9 +12,9 @@ import {
   soc,
   rbi,
   email,
-} from ".";
-import Heading from "../heading/heading";
-import Link from "next/link";
+} from "."
+import Heading from "../heading/heading"
+import Link from "next/link"
 
 const FooterOld = ({ utmSource = "" }: any) => {
   return (
@@ -50,7 +50,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
           {/* parent olympus */}
           <div className={`col-md-3 col-12 ${styles.dummy}`}>
             <div className={`col-md-3 col-12 ${styles.footer_links_col}`}>
-              <Link href="/olympus/receivables">
+              <Link href="/collect-payments">
                 <h4 className={` ${styles.title}`}>
                   Receivables<sup>#</sup>
                 </h4>
@@ -62,93 +62,71 @@ const FooterOld = ({ utmSource = "" }: any) => {
                   <ul>
                     {/* <li className="">
                       <div className={`color-white ${styles.sub_title}`}>
-                        <Link href="/olympus/receivables">
+                        <Link href="/collect-payments">
                           Receivables<sup>#</sup>
                         </Link>
                       </div>
                     </li> */}
                     <li className="d-flex">
-                      <Link href="/olympus/receivables/payment-gateway">
-                        EnKash PG
-                      </Link>
+                      <Link href="/payment-gateway">EnKash PG</Link>
                       {/* <div className={'my-auto '}> NEW</div> */}
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/payment-links/">
-                        Payment Links
-                      </Link>
+                      <Link href="/payment-links/">Payment Links</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/payment-button/">
-                        Payment Button
-                      </Link>
+                      <Link href="/payment-button/">Payment Button</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/customized-payment/">
-                        Payment Page
-                      </Link>
+                      <Link href="/payment-page/">Payment Page</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/bulk-collect/">
-                        Bulk Collect
-                      </Link>
+                      <Link href="/bulk-payment-collection/">Bulk Collect</Link>
                     </li>
                     <li className="d-flex">
-                      <Link href="/olympus/receivables/upi-payments">
-                        UPI Payments
-                      </Link>
+                      <Link href="/upi-payments">UPI Payments</Link>
                       {/* <div className={`my-auto ${styles.new_badge}`}>
                         {" "}
                         Coming Soon
                       </div> */}
                     </li>
                     <li className="d-flex">
-                      <Link href="/olympus/receivables/qr-codes">QR Codes</Link>
+                      <Link href="/qr-codes">QR Codes</Link>
                       {/* <div className={`my-auto ${styles.new_badge}`}>
                         {" "}
                         Coming Soon
                       </div> */}
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/auto-collect/">
-                        Auto Collect
-                      </Link>
+                      <Link href="/auto-collect/">Auto Collect</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/virtual-accounts/">
-                        Virtual Accounts
-                      </Link>
+                      <Link href="/virtual-account/">Virtual Accounts</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/e-nach/">e-NACH</Link>
+                      <Link href="/e-nach/">e-NACH</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/subscription-management/">
-                        Subscriptions
-                      </Link>
+                      <Link href="/subscriptions/">Subscriptions</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/reminder-engine/">
-                        Reminder Engine
-                      </Link>
+                      <Link href="/collection-reminder/">Reminder Engine</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/instant-settlements/">
+                      <Link href="/instant-settlement/">
                         Instant Settlements
                       </Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/invoices/">
-                        Invoices
-                      </Link>
+                      <Link href="/digital-invoicing/">Invoices</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/collection-analytics/">
+                      <Link href="/collection-analytics/">
                         Collection Analytics
                       </Link>
                     </li>
                     <li>
-                      <Link href="/olympus/receivables/automated-reconciliation/">
+                      <Link href="/auto-reconciliation/">
                         Auto Reconciliation
                       </Link>
                     </li>
@@ -158,64 +136,46 @@ const FooterOld = ({ utmSource = "" }: any) => {
                 <div className="">
                   <ul className="mb-0">
                     <li>
-                      <Link href="/olympus/receivables">
+                      <Link href="/collect-payments">
                         <h4 className={` ${styles.title}`}>Payables</h4>
                       </Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/bill-payment/">
-                        Bill Payment
-                      </Link>
+                      <Link href="/business-bill-payment/">Bill Payment</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/bulk-payout/">
-                        Express Pay
-                      </Link>
+                      <Link href="express-pay/">Express Pay</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/gst-payments/">
-                        GST Payment
-                      </Link>
+                      <Link href="/gst-payment/">GST Payment</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/vendor-payment/">
-                        Vendor Payment
-                      </Link>
+                      <Link href="/vendor-payment/">Vendor Payment</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/rental-payment/">
-                        Rental Payment
-                      </Link>
+                      <Link href="/rent-payment/">Rental Payment</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/invoice-management/">
+                      <Link href="/invoice-management/">
                         Invoice Management
                       </Link>
                     </li>
                     {/* <li>
-                <Link href="/olympus/payables/pay-by-any-card/">
+                <Link href="/make-payments/pay-by-any-card/">
                   Pay By Any Card
                 </Link>
               </li> */}
                     <li>
-                      <Link href="/olympus/payables/vendor-management/">
-                        Vendor Management
-                      </Link>
+                      <Link href="/vendor-management/">Vendor Management</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/seamless-banking/">
-                        Seamless Banking
-                      </Link>
+                      <Link href="/seamless-banking/">Seamless Banking</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/payroll-processing/">
-                        Payroll Processing
-                      </Link>
+                      <Link href="/payroll/">Payroll Processing</Link>
                     </li>
                     <li>
-                      <Link href="/olympus/payables/payable-analytics/">
-                        Payable Analytics
-                      </Link>
+                      <Link href="/payable-analytics/">Payable Analytics</Link>
                     </li>
                   </ul>
                 </div>
@@ -234,21 +194,19 @@ const FooterOld = ({ utmSource = "" }: any) => {
                   </Link>
                   <ul>
                     <li>
-                      <Link href="/loyalty-lounge/channel-incentive/">
+                      <Link href="/channel-incentives/">
                         Channel Incentives
                       </Link>
                     </li>
                     <li>
-                      <Link href="/loyalty-lounge/employee-rewards/">
-                        Employee Rewards
-                      </Link>
+                      <Link href="/employee-rewards/">Employee Rewards</Link>
                     </li>
 
                     <li>
-                      <Link href="/loyalty-lounge/gift-cards/">Gift Cards</Link>
+                      <Link href="/gift-cards/">Gift Cards</Link>
                     </li>
                     <li>
-                      <Link href="/loyalty-lounge/offers/">Offers</Link>
+                      <Link href="/offers/">Offers</Link>
                     </li>
                   </ul>
                 </div>
@@ -285,7 +243,9 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       <Link href="/solutions/integrations/">Integrations</Link>
                     </li>
                     <li>
-                      <Link href="/solutions/cfo-insights/">CFO Insights</Link>
+                      <Link href="/solutions/cfo-expense-analytics-and-insights/">
+                        CFO Insights
+                      </Link>
                     </li>
                     <li>
                       <Link href="/solutions/instant-card-management/">
@@ -306,45 +266,31 @@ const FooterOld = ({ utmSource = "" }: any) => {
                   </div>
                   <ul>
                     <li>
-                      <Link href="/corporate-cards/virtual-cards/">
-                        Virtual Cards*
-                      </Link>
+                      <Link href="/virtual-card/">Virtual Cards*</Link>
                     </li>
                     <li>
-                      <Link href="/corporate-cards/digital-marketing-cards/">
+                      <Link href="/digital-marketing-card/">
                         Digital Marketing Cards*
                       </Link>
                     </li>
                     <li>
-                      <Link href="/corporate-cards/fuel-cards/">
-                        Fuel Cards*
-                      </Link>
+                      <Link href="/fuel-card/">Fuel Cards*</Link>
                     </li>
                     <li>
-                      <Link href="/corporate-cards/meal-cards/">
-                        Meal Cards*
-                      </Link>
+                      <Link href="/meal-card/">Meal Cards*</Link>
                     </li>
                     <li>
-                      <Link href="/corporate-cards/saas-cards/">
-                        SaaS Cards*
-                      </Link>
+                      <Link href="/saas-cards/">SaaS Cards*</Link>
                     </li>
                     <li>
-                      <Link href="/corporate-cards/purchase-cards/">
-                        Purchase Cards*
-                      </Link>
+                      <Link href="/purchase-card/">Purchase Cards*</Link>
                     </li>
 
                     <li>
-                      <Link href="/corporate-cards/travel-and-expense-cards">
-                        T&E Cards*
-                      </Link>
+                      <Link href="/travel-and-expense-card">T&E Cards*</Link>
                     </li>
                     <li>
-                      <Link href="/corporate-cards/diy-card-module">
-                        DIY Card Module*
-                      </Link>
+                      <Link href="/diy-card-module">DIY Card Module*</Link>
                     </li>
                   </ul>
                 </div>
@@ -353,38 +299,38 @@ const FooterOld = ({ utmSource = "" }: any) => {
             <div className="col-6 col-md-4">
               <div className={`${styles.footer_links_col}`}>
                 <div>
-                  <Link href="/ofex">
+                  <Link href="/expense-management">
                     <h4 className={`col-12 ${styles.title}`}>
                       Expense Management
                     </h4>
                   </Link>
                   <ul>
                     <li>
-                      <Link href="/ofex/budget-and-advances/">
+                      <Link href="/budget-and-advances/">
                         Budgets and Advances
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ofex/hierarchy-and-controls/">
+                      <Link href="/hierarchy-and-controls/">
                         Hierarchy and Controls
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ofex/policy-and-approval-flows/">
+                      <Link href="/approval-flows/">
                         Policy and Approval Flows
                       </Link>
                     </li>
                     <li>
-                      <Link href="/ofex/reimbursement/">Reimbursement</Link>
+                      <Link href="/reimbursements/">Reimbursement</Link>
                     </li>
 
                     <li>
-                      <Link href="/ofex/scan-and-drop-receipts/">
-                        Scan and Drop Receipts
-                      </Link>
+                      <Link href="/receipts/">Scan and Drop Receipts</Link>
                     </li>
                     <li>
-                      <Link href="/ofex/insights/">Insights</Link>
+                      <Link href="/expense-analytics-and-insights/">
+                        Insights
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -639,7 +585,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FooterOld;
+export default FooterOld

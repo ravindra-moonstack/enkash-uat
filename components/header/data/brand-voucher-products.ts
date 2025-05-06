@@ -11,7 +11,7 @@ import {
   healthFilled,
   occasion,
   occasionFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 const brandVouchersProducts = [
   {
@@ -64,7 +64,7 @@ const brandVouchersProducts = [
       //     "Celebrate birthdays, anniversaries, & special occasions with our occasion-based gift vouchers",
       //   imageSrc: occasion,
       //   imageSrcHovered: occasionFilled,
-      //   link: "/loyalty-lounge/offers",
+      //   link: "/offers",
       // },
     ],
     footerText: "Save big on 400+ brand vouchers across multiple categories",
@@ -73,6 +73,6 @@ const brandVouchersProducts = [
     footerLink: "/bolt",
     parentLink: "/bolt",
   },
-];
+]
 
-export default brandVouchersProducts;
+export default brandVouchersProducts

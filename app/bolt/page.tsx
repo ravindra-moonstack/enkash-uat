@@ -1,9 +1,9 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import { blogData, dataSets } from "./data";
-import faqData from "./faq-data";
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import { blogData, dataSets } from "./data"
+import faqData from "./faq-data"
 import {
   Header,
   Footer,
@@ -16,10 +16,10 @@ import {
   FAQHtml,
   StructuredData,
   SecondryButton,
-} from "@/components";
-import ExploreCard from "@/components/explore-card/explore-card";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
+} from "@/components"
+import ExploreCard from "@/components/explore-card/explore-card"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import {
   officeImg,
   whiteArrow,
@@ -34,10 +34,9 @@ import {
   moviesAndMusic,
   healthAndWellness,
   boltHero,
-} from ".";
-import generateMetaData from "@/common/utils/metaData";
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work.";
-
+} from "."
+import generateMetaData from "@/common/utils/metaData"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 
 export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
@@ -47,11 +46,11 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/bolt/",
   },
   faqData: faqData,
-});
+})
 
 const boltPage = () => {
-  const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
-  const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`;
+  const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`
+  const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=brandvoucher_explore_bolt`
   return (
     <div className={`color-white ${styles.home_container}`}>
       <StructuredData url={`https://www.enkash.com/bolt/`} faqData={faqData} />
@@ -290,7 +289,7 @@ const boltPage = () => {
             title="Offers"
             description="Unlock exclusive offers and enjoy discounts on various partnered subscriptions from popular services such as Amazon, ClearTax, Canva, and numerous others"
             theme="green"
-            link="/loyalty-lounge/offers"
+            link="/offers"
           />
         </div>
 
@@ -299,7 +298,7 @@ const boltPage = () => {
             title="Channel Incentives"
             description="A cutting-edge solution that helps businesses automate and streamline their channel incentive programs, boosting channel partner engagement, loyalty, and revenue"
             theme="green"
-            link="/loyalty-lounge/channel-incentive"
+            link="/channel-incentives"
           />
         </div>
         <div className="col-md-6 col-12 d-flex mt-5 order-3 order-md-4 px-md-5">
@@ -448,7 +447,6 @@ const boltPage = () => {
             weight="6"
           />
         </div>
-
         <div className="d-flex justify-content-center">
           <div className={`d-flex flex-md-row mt-3 pb-4 scroll_container`}>
             <div className="me-4">
@@ -660,10 +658,10 @@ const boltPage = () => {
           }
         />
       </div>
-      
+
       <Footer utmSource={halfBoltUTM} />
     </div>
-  );
-};
+  )
+}
 
-export default boltPage;
+export default boltPage
