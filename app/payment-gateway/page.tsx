@@ -65,30 +65,37 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
           <div className="d-flex flex-column">
             <Heading
-              title="Simple. Secure. Fast - The"
+              title="India’s First "
               color="white"
               size="h2"
               weight="7"
             />
             <Heading
-              title="Best Payment Gateway"
+              title=" Payment Gateway "
               size="h2"
               color="rainy-blue"
-              weight="5"
+              weight="7"
+            />
+            <Heading
+              title="Built for SMBs "
+              color="white"
+              size="h2"
+              weight="7"
             />
           </div>
 
           <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Seamless integration, faster onboarding, and 100s of payment modes for your website & mobile app. Get a wide range of checkout options with developer-friendly integration kits, enabling higher conversions & success rates. "
+              title="The best payment gateway for a superior merchant experience."
               size="h6"
               weight="5"
             />
           </div>
+
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="Get Started"
+                title="Become a Partner"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
@@ -110,11 +117,11 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
         <div className={styles.three_step_container}>
           <ThreeSteps
-            title="Say hello to a smarter, faster, and secure way to handle transactions"
+            title="RBI-Approved Online Payment Gateway Built for Growing Businesses"
             steps={[
               {
                 icon: stepOne,
-                text: "Transaction Success Rate",
+                text: "Support",
               },
               {
                 icon: stepTwo,
@@ -122,7 +129,7 @@ const PaymentGateway = (): React.JSX.Element => {
               },
               {
                 icon: stepThree,
-                text: "Payment Options",
+                text: "Faster",
               },
             ]}
           />
@@ -133,15 +140,10 @@ const PaymentGateway = (): React.JSX.Element => {
         className={`${styles.second_row}  row d-flex bg-white px-md-5 px-0 mb-5 pt-5`}
       >
         <div className="d-inline text-center my-5 px-3 px-md-5">
-          <Heading title="All-in-One " color="black" size="h1" weight="6" />
+          <Heading title="Built for " color="black" size="h1" weight="6" />
+          <Heading title="SMBs " color="equity-blue" size="h1" weight="6" />
           <Heading
-            title="Payment Gateway "
-            color="equity-blue"
-            size="h1"
-            weight="6"
-          />
-          <Heading
-            title={`for Your Business`}
+            title={`trusted by enterprises`}
             color="black"
             size="h1"
             weight="6"
@@ -151,36 +153,36 @@ const PaymentGateway = (): React.JSX.Element => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Accept Payment Methods"
-              description="Provide your customers with the freedom to choose from a variety of payment methods: <span>Credit and Debit Cards</span> for domestic and international transactions, <span>UPI</span> for instant payments, <span>Net Banking</span> with 50+ major banks, <span>Digital Wallets</span> for quick checkouts, and flexible options like <span>EMI and PayLater</span>."
+              whiteTitle="Developer-First, Business-Focused"
+              description="<span>Integrate payment gateway</span>across platforms, <span> Shopify, WooCommerce, Magento,</span>  or your custom stack, with powerful  <span>payment gateway API integration,</span> with 50+ major banks, <span>Digital Wallets</span>  SDKs, and no-code plugins. Build quickly. Scale endlessly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Developer First Integration"
-              description="Designed with developers in mind, our powerful <span>SDKs, APIs</span>, and <span>plugins</span> support major languages and platforms. Enjoy seamless integration with comprehensive tools, ready-to-use plugins for <span>Shopify</span> and <span>WooCommerce</span>, detailed API documentation, and a secure <span>sandbox environment</span> for testing."
+              whiteTitle="100+ Payment Methods"
+              description="Unmatched flexibility for your customers with support for<span>UPI,</span> cards, <span> net banking,</span> wallets, BNPL, and EMI, making it easier to complete transactions on their terms, every time."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Advanced Checkout Experience"
-              description="Enhance your checkout experience with features designed for convenience and efficiency: Frictionless Checkout for a clean, intuitive interface, <span>saved cards</span> across businesses for faster repeat payments, and personalized payment options tailored to customer preferences for seamless transactions."
+              whiteTitle="One Dashboard, Total Control"
+              description="Track payments, monitor refunds, reconcile faster, and get actionable business insights,  all from one intuitive dashboard."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Powerful Dashboards"
-              description="Detailed statistics on payments, settlements, and refunds. Gain insights with a Financial Overview, Transaction History, and Settlement Reconciliation, all managed effortlessly through a user-friendly interface for seamless payment operations."
+              whiteTitle="100% Lifetime Support"
+              description="You are never left in the dark. We offer dedicated relationship managers, tech support across all stages, and 24x7 <span>merchant support</span> ."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Robust Security"
-              description="Ensure secure and reliable payment transactions with enterprise-grade security features: <spa>PCI DSS Compliance</span> for data protection, <span>end-to-end encryption</span> to prevent breaches, <span>tokenization</span> for enhanced privacy, and <span>continuous monitoring</span> with real-time threat assessments and audits."
+              whiteTitle="Bank Grade Security"
+              description="A secure payment gateway with features like <span>PCI DSS Compliance</span> for data protection, <span>end-to-end encryption</span> to prevent breaches, <span>tokenization</span> for enhanced privacy, and <span>continuous monitoring</span> with real-time threat assessments and audits."
               source="receivables"
             />
           </div>
@@ -192,8 +194,15 @@ const PaymentGateway = (): React.JSX.Element => {
           titleContent={
             <>
               <div className="text-center">
+                <Heading title="EnKash " color="white" size="h1" weight="6" />
                 <Heading
-                  title="Seamless Integration With Enhanced Security & Customer Experience "
+                  title="Payment Gateway Integration "
+                  color="rainy-blue"
+                  size="h1"
+                  weight="6"
+                />
+                <Heading
+                  title="for the Best Merchant Experience  "
                   color="white"
                   size="h1"
                   weight="6"
