@@ -1,0 +1,86 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.home_container {
+  @include for-laptops {
+    padding-top: 100px;
+  }
+}
+.contactContainer {
+  margin-bottom: 160px;
+}
+.container {
+  padding: 35px 30px 25px 30px;
+  //  background: url(./bg.png);
+  border-radius: 25px;
+  @include for-laptops {
+    padding: 140px 100px 100px 100px;
+  }
+
+  @include for-laptops {
+    background-position: center right;
+    background-size: contain;
+  }
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  background-size: cover;
+
+  .inner_container {
+    box-shadow: 4px 8px 31px rgba(0, 0, 0, 0.0901960784);
+    border-radius: 15px;
+    background-color: $color-white;
+    padding: 30px;
+    position: relative;
+    top: -230px;
+    @include for-laptops {
+      padding: 50px 100px 50px 100px;
+    }
+  }
+
+  .danger {
+    font-size: 11px;
+    @include for-laptops {
+      font-size: 13px;
+    }
+  }
+
+  .select_box_error {
+    border: 1px solid red;
+    opacity: 0.7;
+  }
+
+  .form-control {
+    font-size: 16px !important;
+    @include for-laptops {
+      font-size: 12px !important;
+    }
+  }
+  .contactImg {
+    height: 425px;
+    width: 425px;
+  }
+}
+.partner {
+  background: url("./img/partner.svg") no-repeat bottom/cover;
+  padding: 35px 30px 25px 30px;
+  @include for-laptops {
+    padding: 140px 100px 100px 100px;
+  }
+
+  @include for-laptops {
+    background-position: center right;
+    background-size: 100%;
+  }
+  .grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    & > * {
+      flex: 1 1 calc(50% - 0.75rem);
+      box-sizing: border-box;
+    }
+  }
+}

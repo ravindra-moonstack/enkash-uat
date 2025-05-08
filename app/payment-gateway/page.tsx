@@ -44,7 +44,7 @@ const PaymentGateway = (): React.JSX.Element => {
       />
       <Header utmSource="receivables" />
 
-      <div className={`${styles.first_row} row row-padding color-white`}>
+      <div className={`${styles.first_row}  bg-indi-volt row row-padding color-white`}>
         <div className="col-12 col-md-6 d-flex flex-column">
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div className="d-flex">

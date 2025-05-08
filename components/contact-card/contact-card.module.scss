@@ -1,0 +1,49 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.contactBlock {
+  background: $primary-gradient;
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .topSection {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    background: white;
+
+    .contactItem {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .icon {
+        color: white;
+      }
+    }
+  }
+}
