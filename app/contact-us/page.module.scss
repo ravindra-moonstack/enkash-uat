@@ -12,7 +12,7 @@
   //  background: url(./bg.png);
   border-radius: 0px 0px 25px 25px;
   @include for-laptops {
-    padding: 120px 100px 100px 100px;
+    padding: 120px;
   }
 
   @include for-laptops {
@@ -96,7 +96,7 @@
 }
 
 .salesForm {
-  margin-bottom: -168px;
+  margin-bottom: -144px;
   padding-left: 44px;
   padding-right: 44px;
   position: relative;
