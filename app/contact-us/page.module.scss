@@ -1,13 +1,12 @@
 @import "../../styles/variables";
 @import "../../styles/mixin";
 
-.home_container {
-  @include for-laptops {
-    padding-top: 100px;
-  }
-}
 .contactContainer {
   margin-bottom: 160px;
+  padding: 0px 0px 56px 0px;
+  @include for-laptops {
+    padding: 112px;
+  }
 }
 .container {
   padding: 35px 30px 25px 30px;
@@ -39,40 +38,19 @@
     }
   }
 
-  .danger {
-    font-size: 11px;
-    @include for-laptops {
-      font-size: 13px;
-    }
-  }
-
-  .select_box_error {
-    border: 1px solid red;
-    opacity: 0.7;
-  }
-
-  .form-control {
-    font-size: 16px !important;
-    @include for-laptops {
-      font-size: 12px !important;
-    }
-  }
   .contactImg {
     height: 425px;
     width: 425px;
   }
 }
+
 .partner {
   background: url("./img/partner.svg") no-repeat bottom/cover;
   padding: 35px 30px 25px 30px;
   @include for-laptops {
-    padding: 140px 100px 100px 100px;
+    padding: 100px 100px 100px 100px;
   }
 
-  @include for-laptops {
-    // background-position: center right;
-    // background-size: 100%;
-  }
   .grid {
     display: flex;
     flex-wrap: wrap;
@@ -84,15 +62,20 @@
     }
   }
 }
+
 .ourOffice {
   text-align: center;
+  padding: 35px 30px 25px 30px;
   @include for-laptops {
-    padding: 64px 100px 100px 100px;
+    padding: 64px 138px 100px 138px;
   }
   .grid {
     padding-top: 64px;
-    display: flex;
+    display: grid;
     gap: 42px;
+    @include for-laptops {
+      display: flex;
+    }
     .address {
       padding: 42px;
       border-radius: 20px;
@@ -111,6 +94,14 @@
     }
   }
 }
+
 .salesForm {
-  margin-bottom: -150px;
+  margin-bottom: -168px;
+  position: relative;
+  .bgGradient {
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    z-index: -1;
+  }
 }

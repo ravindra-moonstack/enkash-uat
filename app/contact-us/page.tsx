@@ -9,7 +9,7 @@ import Image from "next/image"
 import SalesForm from "../sales/sales-form"
 import ContactCard from "@/components/contact-card/contact-card"
 import location from "./img/location.svg"
-
+import vector from "./img/effect.svg"
 const page = () => {
   return (
     <div>
@@ -29,6 +29,7 @@ const page = () => {
               />
             </div>
           </div>
+
           <div className={`col-6  `}>
             <Image
               src={contactUs}
@@ -39,11 +40,17 @@ const page = () => {
           </div>
         </div>{" "}
       </div>
+
       <div className={` py-0 ${styles.container} ${styles.salesForm}`}>
         <div className={styles.inner_container}>
           <SalesForm />
         </div>
+
+        <div className={styles.bgGradient}>
+          <Image src={vector} alt="contact us" />
+        </div>
       </div>
+
       <div className={styles.partner}>
         <div className="col-8">
           <div className={styles.grid}>
@@ -86,6 +93,7 @@ const page = () => {
                 height={40}
               />
             </div>
+
             <div className="d-flex flex-column">
               {" "}
               <Heading title="Mumbai" size="h2" weight="6" />
@@ -109,6 +117,7 @@ const page = () => {
                 height={40}
               />
             </div>
+
             <div className="d-flex flex-column">
               {" "}
               <Heading title="Gurugram" size="h2" weight="6" />
@@ -131,6 +140,7 @@ const page = () => {
                 height={40}
               />
             </div>
+            
             <div className="d-flex flex-column">
               {" "}
               <Heading title="Pune" size="h2" weight="6" />
