@@ -12,7 +12,7 @@
 .container {
   padding: 35px 30px 25px 30px;
   //  background: url(./bg.png);
-  border-radius: 25px;
+  border-radius: 0px 0px 25px 25px;
   @include for-laptops {
     padding: 140px 100px 100px 100px;
   }
@@ -70,8 +70,8 @@
   }
 
   @include for-laptops {
-    background-position: center right;
-    background-size: 100%;
+    // background-position: center right;
+    // background-size: 100%;
   }
   .grid {
     display: flex;
@@ -83,4 +83,34 @@
       box-sizing: border-box;
     }
   }
+}
+.ourOffice {
+  text-align: center;
+  @include for-laptops {
+    padding: 64px 100px 100px 100px;
+  }
+  .grid {
+    padding-top: 64px;
+    display: flex;
+    gap: 42px;
+    .address {
+      padding: 42px;
+      border-radius: 20px;
+      border: 1px solid #e6f0ed;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      text-align: start;
+      max-width: 450px;
+
+      .description {
+        font-size: 22px;
+        line-height: 44px;
+        color: #425466;
+      }
+    }
+  }
+}
+.salesForm {
+  margin-bottom: -150px;
 }

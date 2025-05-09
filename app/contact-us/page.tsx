@@ -8,6 +8,7 @@ import contactUs from "./img/contact.svg"
 import Image from "next/image"
 import SalesForm from "../sales/sales-form"
 import ContactCard from "@/components/contact-card/contact-card"
+import location from "./img/location.svg"
 
 const page = () => {
   return (
@@ -38,7 +39,7 @@ const page = () => {
           </div>
         </div>{" "}
       </div>
-      <div className={` pt-0 ${styles.container}`}>
+      <div className={` py-0 ${styles.container} ${styles.salesForm}`}>
         <div className={styles.inner_container}>
           <SalesForm />
         </div>
@@ -47,30 +48,102 @@ const page = () => {
         <div className="col-8">
           <div className={styles.grid}>
             <ContactCard
-              title="Let's Connect"
-              description="Reach out to us via email or phone for any inquiries."
-              email={["hello@example.com", "support@example.com"]}
-              phone="+91 9876543210"
+              title="For existing customers"
+              description="Reach out to our support team directly for any queries."
+              email={["support@enkash.com"]}
+              phone="+91 8530490475"
             />
             <ContactCard
-              title="Support"
-              description="We're here to help with your queries."
-              email={["support@example.com"]}
-              phone="+91 9123456780"
+              title="Become a Partner"
+              description="Want to become a payment gateway partner? Connect with us"
+              email={["pgsales@enkash.com"]}
+              phone="+91 8923723793"
             />
             <ContactCard
-              title="Sales"
-              description="Talk to our sales team."
-              email={["sales@example.com"]}
+              title="Media Enquiries​"
+              description="For Media inquiries, kindly drop us an email "
+              email={["marketing@enkash.com"]}
             />
             <ContactCard
-              title="Partnerships"
-              description="Let’s grow together."
-              email={["partners@example.com"]}
+              title="Join Our Team"
+              description="Want to join our fast-growing team? Send your resume to"
+              email={["careers@enkash.com"]}
             />
           </div>
         </div>
       </div>
+
+      <div className={`${styles.ourOffice}`}>
+        <Heading title="Our Offices " size="h2" />
+        <div className={`${styles.grid}`}>
+          <div className={`${styles.address}`}>
+            <div>
+              <Image
+                src={location}
+                alt="contact us"
+                className={` ${styles.contactImg}`}
+                width={40}
+                height={40}
+              />
+            </div>
+            <div className="d-flex flex-column">
+              {" "}
+              <Heading title="Mumbai" size="h2" weight="6" />
+              <Heading title="(Registered Office)" size="h4" />
+            </div>
+
+            <p className={` ${styles.description}`}>
+              Gate No 2, Plant, Godrej & Boyce, Bus Depot, 91 Springboard, 6,
+              Lal Bahadur Shastri Marg, opposite Vikhroli, Vikhroli West,
+              Mumbai, Maharashtra 400079
+            </p>
+          </div>
+
+          <div className={`${styles.address}`}>
+            <div>
+              <Image
+                src={location}
+                alt="contact us"
+                className={` ${styles.contactImg}`}
+                width={40}
+                height={40}
+              />
+            </div>
+            <div className="d-flex flex-column">
+              {" "}
+              <Heading title="Gurugram" size="h2" weight="6" />
+            </div>
+
+            <p className={` ${styles.description}`}>
+              3rd Floor, Beyond Just Work, Plot No. 378-379, Udyog Vihar Phase 4
+              Rd, near Nokia Building, Electronic City, Phase IV, Udyog Vihar,
+              Sector 19, Gurugram, Haryana 122015
+            </p>
+          </div>
+
+          <div className={`${styles.address}`}>
+            <div>
+              <Image
+                src={location}
+                alt="contact us"
+                className={` ${styles.contactImg}`}
+                width={40}
+                height={40}
+              />
+            </div>
+            <div className="d-flex flex-column">
+              {" "}
+              <Heading title="Pune" size="h2" weight="6" />
+            </div>
+            <p className={` ${styles.description}`}>
+              Gate No 2, Plant, Godrej & Boyce, Bus Depot, 91 Springboard, 6,
+              Lal Bahadur Shastri Marg, opposite Vikhroli, Vikhroli West,
+              Mumbai, Maharashtra 400079
+            </p>
+          </div>
+        </div>
+      </div>
+
       <Footer />
     </div>
   )

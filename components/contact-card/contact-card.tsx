@@ -1,5 +1,8 @@
 import React from "react"
 import styles from "./contact-card.module.scss"
+import call from "./img/phoneIcon.svg"
+import mail from "./img/mailIcon.svg"
+import Image from "next/image"
 
 type Props = {
   title: string
@@ -17,7 +20,13 @@ const ContactCard: React.FC<Props> = ({ title, description, email, phone }) => {
       </div>
       <div className={styles.contactSection}>
         <div className={styles.contactItem}>
-          {/* <Mail className={styles.icon} /> */}
+          <Image
+            src={mail}
+            alt="Contact Enkash"
+            className={styles.help_icons}
+            width={22}
+            height={18}
+          />
           <ul>
             {email.map((e, idx) => (
               <li key={idx}>{e}</li>
@@ -26,7 +35,13 @@ const ContactCard: React.FC<Props> = ({ title, description, email, phone }) => {
         </div>
         {phone && (
           <div className={styles.contactItem}>
-            {/* <Phone className={styles.icon} /> */}
+            <Image
+              src={call}
+              alt="Contact Enkash"
+              className={styles.help_icons}
+              width={22}
+              height={18}
+            />
             <span>{phone}</span>
           </div>
         )}

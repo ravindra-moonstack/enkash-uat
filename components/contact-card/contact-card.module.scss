@@ -2,24 +2,23 @@
 @import "../../styles/variables";
 
 .contactBlock {
-  background: $primary-gradient;
   color: white;
-  padding: 2rem;
   border-radius: 1rem;
-  max-width: 800px;
   margin: 0 auto;
 
   .topSection {
     text-align: center;
-    margin-bottom: 2rem;
+    background: $primary-gradient;
+    padding: 42px;
+    border-radius: 20px 20px 0px 0px;
 
     h2 {
-      font-size: 2rem;
+      font-size: 44px;
       margin-bottom: 0.5rem;
     }
 
     p {
-      font-size: 1.1rem;
+      font-size: 20px;
     }
   }
 
@@ -29,12 +28,16 @@
     gap: 1.5rem;
     align-items: flex-start;
     background: white;
+    padding: 42px;
+    color: black;
+    border-radius: 0px 0px 20px 20px;
 
     .contactItem {
       display: flex;
       align-items: center;
       gap: 1rem;
-
+      font-size: 21px;
+      color: $color-main-grey;
       ul {
         margin: 0;
         padding: 0;
