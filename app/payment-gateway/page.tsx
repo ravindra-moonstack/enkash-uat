@@ -2,15 +2,8 @@ import { Metadata } from "next"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import { space } from "@/common/constant"
-import {
-  bannerLottie,
-  caraouselBg,
-  faqBg,
-  stepOne,
-  stepThree,
-  stepTwo,
-  whiteArrow,
-} from "."
+import { userPlus, numberOne, stack } from "@/components/three-steps/"
+import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 import {
   Header,
   ThreeSteps,
@@ -120,16 +113,19 @@ const PaymentGateway = (): React.JSX.Element => {
             title="RBI-Approved Online Payment Gateway Built for Growing Businesses"
             steps={[
               {
-                icon: stepOne,
-                text: "Support",
+                icon: userPlus,
+                text: "100% ",
+                subText: "Support",
               },
               {
-                icon: stepTwo,
-                text: "Uptime",
+                icon: stack,
+                text: "100% ",
+                subText: "Uptime",
               },
               {
-                icon: stepThree,
-                text: "Faster",
+                icon: numberOne,
+                text: "100% ",
+                subText: "Faster",
               },
             ]}
           />
@@ -141,7 +137,7 @@ const PaymentGateway = (): React.JSX.Element => {
       >
         <div className="d-inline text-center my-5 px-3 px-md-5">
           <Heading title="Built for " color="black" size="h1" weight="6" />
-          <Heading title="SMBs " color="equity-blue" size="h1" weight="6" />
+          <Heading title="SMBs, " color="equity-blue" size="h1" weight="6" />
           <Heading
             title={`trusted by enterprises`}
             color="black"
@@ -153,15 +149,15 @@ const PaymentGateway = (): React.JSX.Element => {
         <div className={`col-12 d-flex flex-md-row mt-3 pb-3 scroll_container`}>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
-              whiteTitle="Developer-First, Business-Focused"
-              description="<span>Integrate payment gateway</span>across platforms, <span> Shopify, WooCommerce, Magento,</span>  or your custom stack, with powerful  <span>payment gateway API integration,</span> with 50+ major banks, <span>Digital Wallets</span>  SDKs, and no-code plugins. Build quickly. Scale endlessly."
+              whiteTitle="Developer Obsessed"
+              description="<span>Integrate payment gateway </span>across platforms, <span> Shopify, WooCommerce, Magento,</span>  or your custom stack, with powerful  <span>payment gateway API integration,</span> with 50+ major banks, <span>Digital Wallets</span>  SDKs, and no-code plugins. Build quickly. Scale endlessly."
               source="receivables"
             />
           </div>
           <div className="mb-2 mb-md-0 me-3">
             <GetStartedCard
               whiteTitle="100+ Payment Methods"
-              description="Unmatched flexibility for your customers with support for<span>UPI,</span> cards, <span> net banking,</span> wallets, BNPL, and EMI, making it easier to complete transactions on their terms, every time."
+              description="Unmatched flexibility for your customers with support for<span> UPI,</span> cards, <span> net banking,</span> wallets, BNPL, and EMI, making it easier to complete transactions on their terms, every time."
               source="receivables"
             />
           </div>

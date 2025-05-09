@@ -1,15 +1,15 @@
-import Image from "next/image";
-import { blueArrow, whiteArrow } from ".";
-import styles from "./get-started-card.module.scss";
-import Heading from "../heading/heading";
-import Link from "next/link";
+import Image from "next/image"
+import { blueArrow, whiteArrow } from "."
+import styles from "./get-started-card.module.scss"
+import Heading from "../heading/heading"
+import Link from "next/link"
 
 export interface CardProps {
-  whiteTitle?: any;
-  titleHtml?: any;
-  description: string;
-  ctaColor?: string;
-  source: string;
+  whiteTitle?: any
+  titleHtml?: any
+  description: string
+  ctaColor?: string
+  source: string
 }
 
 const GetStartedCard = ({
@@ -31,7 +31,7 @@ const GetStartedCard = ({
       )}
 
       <div
-        className={`my-3 ${styles.description}`}
+        className={`my-5 ${styles.description}`}
         dangerouslySetInnerHTML={{ __html: description }}
       ></div>
       <Link href={"/sales/?source=" + source}>
@@ -66,7 +66,7 @@ const GetStartedCard = ({
         </div>
       </Link>
     </div>
-  );
-};
+  )
+}
 
-export default GetStartedCard;
+export default GetStartedCard
