@@ -25,7 +25,7 @@ import StructuredData from "@/components/head/structuredData"
 import ThreeStepsCustom from "@/components/three-steps/three-steps-custom"
 
 export const metadata: Metadata = generateMetaData({
-  title: "EnKash - The Ultimate Platform for Businesses",
+  title: "EnKash - The Spend Management and Payments Platform",
   description:
     "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more.",
   alternates: {
