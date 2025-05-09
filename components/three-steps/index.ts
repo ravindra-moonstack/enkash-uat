@@ -1,6 +1,9 @@
-export { default as userPlus } from "./img/user-plus.png";
-export { default as userTick } from "./img/user-tick.png";
-export { default as stack } from "./img/stack.png";
-export { default as numberOne } from "./img/number-one.png";
-export { default as numberTwo } from "./img/number-two.png";
-export { default as numberThree } from "./img/number-three.png";
+export { default as userPlus } from "./img/user-plus.png"
+export { default as userTick } from "./img/user-tick.png"
+export { default as stack } from "./img/stack.png"
+export { default as numberOne } from "./img/number-one.png"
+export { default as numberTwo } from "./img/number-two.png"
+export { default as numberThree } from "./img/number-three.png"
+export { default as support } from "./img/support.svg"
+export { default as uptime } from "./img/uptime.svg"
+export { default as faster } from "./img/faster.svg"
