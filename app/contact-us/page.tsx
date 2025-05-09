@@ -30,7 +30,7 @@ const page = () => {
             />
           </div>
 
-          <div className={`col-6  `}>
+          <div className={`col-6 text-end `}>
             <Image
               src={contactUs}
               alt="contact us"
@@ -55,24 +55,28 @@ const page = () => {
         <div className="col-8">
           <div className={styles.grid}>
             <ContactCard
-              title="For existing customers"
+              title="For existing "
+              titleSecond="customers"
               description="Reach out to our support team directly for any queries."
               email={["support@enkash.com"]}
               phone="+91 8530490475"
             />
             <ContactCard
-              title="Become a Partner"
+              title="Become a "
+              titleSecond="Partner"
               description="Want to become a payment gateway partner? Connect with us"
               email={["pgsales@enkash.com"]}
               phone="+91 8923723793"
             />
             <ContactCard
-              title="Media Enquiries​"
+              title="Media​"
+              titleSecond="Enquiries"
               description="For Media inquiries, kindly drop us an email "
               email={["marketing@enkash.com"]}
             />
             <ContactCard
-              title="Join Our Team"
+              title="Join"
+              titleSecond="Our Team"
               description="Want to join our fast-growing team? Send your resume to"
               email={["careers@enkash.com"]}
             />
@@ -81,7 +85,7 @@ const page = () => {
       </div>
 
       <div className={`${styles.ourOffice}`}>
-        <Heading title="Our Offices " size="h2" />
+        <Heading title="Our Offices " size="h2" weight="6" />
         <div className={`${styles.grid}`}>
           <div className={`${styles.address}`}>
             <div>

@@ -2,10 +2,9 @@
 @import "../../styles/mixin";
 
 .contactContainer {
-  margin-bottom: 160px;
+  margin-bottom: 156px;
   padding: 0px 0px 56px 0px;
   @include for-laptops {
-    padding: 112px;
   }
 }
 .container {
@@ -13,7 +12,7 @@
   //  background: url(./bg.png);
   border-radius: 0px 0px 25px 25px;
   @include for-laptops {
-    padding: 140px 100px 100px 100px;
+    padding: 120px 100px 100px 100px;
   }
 
   @include for-laptops {
@@ -67,7 +66,7 @@
   text-align: center;
   padding: 35px 30px 25px 30px;
   @include for-laptops {
-    padding: 64px 138px 100px 138px;
+    padding: 12px 138px 100px 138px;
   }
   .grid {
     padding-top: 64px;
@@ -85,6 +84,7 @@
       gap: 32px;
       text-align: start;
       max-width: 450px;
+      box-shadow: 0px 0px 55px 0px #00000014;
 
       .description {
         font-size: 22px;
@@ -97,6 +97,8 @@
 
 .salesForm {
   margin-bottom: -168px;
+  padding-left: 44px;
+  padding-right: 44px;
   position: relative;
   .bgGradient {
     position: absolute;

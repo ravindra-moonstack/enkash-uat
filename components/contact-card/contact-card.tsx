@@ -9,13 +9,21 @@ type Props = {
   description: string
   email: string[]
   phone?: string
+  titleSecond: string
 }
 
-const ContactCard: React.FC<Props> = ({ title, description, email, phone }) => {
+const ContactCard: React.FC<Props> = ({
+  title,
+  description,
+  email,
+  phone,
+  titleSecond,
+}) => {
   return (
     <div className={styles.contactBlock}>
       <div className={styles.topSection}>
         <h2>{title}</h2>
+        <h2>{titleSecond}</h2>
         <p>{description}</p>
       </div>
       <div className={styles.contactSection}>
