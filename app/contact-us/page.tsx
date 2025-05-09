@@ -18,16 +18,16 @@ const page = () => {
         <div
           className={` row  align-items-center color-white bg-indi-volt ${styles.contactContainer} `}
         >
-          <div className={`col-6 d-flex flex-column`}>
+          <div
+            className={`col-md-6 col-12 d-flex flex-column text-center text-md-start`}
+          >
             <Heading title="Let’s " size="h0" />
             <Heading title="Connect" size="h0" />
-            <div className="d-flex mt-4 pe-5">
-              <Heading
-                title="Have a question or need help? Let’s talk"
-                size="h6"
-                weight="5"
-              />
-            </div>
+            <Heading
+              title="Have a question or need help? Let’s talk"
+              size="h6"
+              weight="5"
+            />
           </div>
 
           <div className={`col-6  `}>
@@ -140,7 +140,7 @@ const page = () => {
                 height={40}
               />
             </div>
-            
+
             <div className="d-flex flex-column">
               {" "}
               <Heading title="Pune" size="h2" weight="6" />
