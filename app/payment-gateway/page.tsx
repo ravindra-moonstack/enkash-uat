@@ -88,7 +88,7 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className="my-5 d-flex flex-row justify-content-start align-items-center">
             <div className="me-2">
               <PrimaryButton
-                title="Become a Partner"
+                title="Get Started"
                 theme="blue"
                 url="/sales/?source=receivables"
               />
