@@ -1,19 +1,19 @@
-import React from "react";
-import Image from "next/image";
-import styles from "./voucher-page.module.scss";
-import { Voucher } from "@/app/bolt/data/voucher-data";
-import { nameToUrl } from "@/common/utils/stringUtils";
+import React from "react"
+import Image from "next/image"
+import styles from "./voucher-page.module.scss"
+import { Voucher } from "@/app/vouchers/data/voucher-data"
+import { nameToUrl } from "@/common/utils/stringUtils"
 
 interface VoucherCardProps {
-  voucher: Voucher;
-  routeToBolt?: boolean;
+  voucher: Voucher
+  routeToBolt?: boolean
 }
 
 const sanitizeUTM = (utm: string): string => {
-  utm = utm.toLowerCase();
-  utm = utm.replace(/ /g, "_");
-  return utm;
-};
+  utm = utm.toLowerCase()
+  utm = utm.replace(/ /g, "_")
+  return utm
+}
 
 const VoucherCard: React.FC<VoucherCardProps> = ({
   voucher,
@@ -21,11 +21,11 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
 }) => {
   //for metadata image url fetch from public
   // const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.backgroundImg}`);
-  const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.urlName}.png`);
+  const backgroundImage = require(`./../../public/images/voucher-bg/${voucher.urlName}.png`)
   const boltUTM = `https://bolt.enkash.com/signup?utm_source=Bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
     voucher.name
-  )}`;
-  const voucherURL = `/voucher/${nameToUrl(voucher.name)}`;
+  )}`
+  const voucherURL = `/voucher/${nameToUrl(voucher.name)}`
   return (
     <div>
       <div className={styles.voucher_card}>
@@ -56,7 +56,7 @@ const VoucherCard: React.FC<VoucherCardProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default VoucherCard;
+export default VoucherCard

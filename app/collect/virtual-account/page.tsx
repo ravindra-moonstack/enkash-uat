@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Optimize Your Financial Operations with Virtual Account Solutions. Explore virtual accounts designed to streamline receivables, enhance cash flow management, and boost financial efficiency",
   alternates: {
-    canonical: "https://www.enkash.com/virtual-account/",
+    canonical: "https://www.enkash.com/collect/virtual-account/",
   },
   faqData: faqData,
 })
@@ -42,7 +42,7 @@ const VirtualAccount = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/virtual-account/`}
+        url={`https://www.enkash.com/collect/virtual-account/`}
         faqData={faqData}
       />
 

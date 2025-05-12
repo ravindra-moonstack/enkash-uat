@@ -1,4 +1,4 @@
-import { CategoryData } from "@/app/bolt/data/category-data"
+import { CategoryData } from "@/app/vouchers/data/category-data"
 import Link from "next/link"
 import styles from "./voucher-page.module.scss"
 import {

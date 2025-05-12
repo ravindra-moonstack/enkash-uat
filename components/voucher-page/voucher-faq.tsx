@@ -1,23 +1,23 @@
-"use client";
+"use client"
 
-import { VoucherFaqData } from "@/app/bolt/data/voucher-faq-data";
-import FAQ from "@/components/faq/faq";
-import { useState } from "react";
+import { VoucherFaqData } from "@/app/vouchers/data/voucher-faq-data"
+import FAQ from "@/components/faq/faq"
+import { useState } from "react"
 
 interface VoucherFaqComponentProps {
-  voucherName: string;
+  voucherName: string
 }
 
 const VoucherFaqComponent: React.FC<VoucherFaqComponentProps> = ({
   voucherName,
 }) => {
-  const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null);
+  const [openFAQIndex, setOpenFAQIndex] = useState<number | null>(null)
 
   const handleToggleAnswerVisibility = (index: number) => {
-    setOpenFAQIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
+    setOpenFAQIndex((prevIndex) => (prevIndex === index ? null : index))
+  }
 
-  const faqData = VoucherFaqData[voucherName];
+  const faqData = VoucherFaqData[voucherName]
 
   return (
     <div>
@@ -31,7 +31,7 @@ const VoucherFaqComponent: React.FC<VoucherFaqComponentProps> = ({
         />
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default VoucherFaqComponent;
+export default VoucherFaqComponent

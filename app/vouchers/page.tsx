@@ -43,7 +43,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Buy e-Gifts cards online with our exclusively curated 400+ brand E-gift cards & vouchers available across various categories. Customize the Corporate gift vouchers without any Hassle with EnKash.",
   alternates: {
-    canonical: "https://www.enkash.com/bolt/",
+    canonical: "https://www.enkash.com/vouchers/",
   },
   faqData: faqData,
 })

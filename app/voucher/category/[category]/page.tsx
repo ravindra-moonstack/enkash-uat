@@ -1,17 +1,17 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
-import Heading from "@/components/heading/heading";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button";
-import { CategoryData } from "../../../bolt/data/category-data";
-import Link from "next/link";
-import CategoryMenu from "@/components/voucher-page/category-menu";
-import VoucherCard from "@/components/voucher-page/voucher-card";
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
+import Header from "@/components/header/header"
+import Footer from "@/components/footer/footer"
+import Heading from "@/components/heading/heading"
+import PrimaryButton from "@/components/buttons/primary-button/primary-button"
+import SecondryButton from "@/components/buttons/secondary-button/secondary-button"
+import { CategoryData } from "../../../bolt/data/category-data"
+import Link from "next/link"
+import CategoryMenu from "@/components/voucher-page/category-menu"
+import VoucherCard from "@/components/voucher-page/voucher-card"
 import {
   apparels,
   eCommerceImg,
@@ -20,29 +20,29 @@ import {
   moviesAndMusic,
   noVoucherFoundImg,
   whiteArrow,
-} from "../../../bolt/index";
-import { movieAndMusic } from "@/components/header";
-import VoucherData, { Voucher } from "../../../bolt/data/voucher-data";
-import { nameToUrl } from "@/common/utils/stringUtils";
-import StructuredData from "@/components/head/structuredData";
-import { generateVoucherSchema } from "@/common/utils/metaData";
+} from "../../../bolt/index"
+import { movieAndMusic } from "@/components/header"
+import VoucherData, { Voucher } from "../../../bolt/data/voucher-data"
+import { nameToUrl } from "@/common/utils/stringUtils"
+import StructuredData from "@/components/head/structuredData"
+import { generateVoucherSchema } from "@/common/utils/metaData"
 
 interface CategoryData {
-  name: string;
-  heading: string;
-  title: string;
-  description: string;
-  discount: number;
-  backgroundImage: string;
+  name: string
+  heading: string
+  title: string
+  description: string
+  discount: number
+  backgroundImage: string
 }
 
 export function generateMetadata({
   params,
 }: {
-  params: { category: string };
+  params: { category: string }
 }): Metadata {
-  const categoryName: string = params.category;
-  let isValidCategory: boolean = true;
+  const categoryName: string = params.category
+  let isValidCategory: boolean = true
   if (!validCategories.includes(categoryName)) {
     return {
       title: `Category not found - EnKash`,
@@ -51,10 +51,10 @@ export function generateMetadata({
       alternates: {
         canonical: `https://www.enkash.com/bolt/category/404`,
       },
-    };
+    }
   }
 
-  const categoryData = CategoryData[categoryName];
+  const categoryData = CategoryData[categoryName]
 
   return {
     title: `${categoryData.heading} - ${categoryData.title} ${categoryData.discount}% OFF - EnKash`,
@@ -62,14 +62,14 @@ export function generateMetadata({
     alternates: {
       canonical: `https://www.enkash.com/bolt/category/${categoryData.name}`,
     },
-  };
+  }
 }
 
 const fetchVouchers = async (categoryName: string) => {
   // local vouchers for the current category
   const localVouchers: Voucher[] = Object.values(VoucherData).filter(
     (voucher: Voucher) => voucher.category === categoryName
-  );
+  )
   // return localVouchers;
   try {
     // bolt open api
@@ -83,8 +83,8 @@ const fetchVouchers = async (categoryName: string) => {
         body: JSON.stringify({}),
         next: { revalidate: 3600 },
       }
-    );
-    const apiData = await apiResponse.json();
+    )
+    const apiData = await apiResponse.json()
 
     const validVouchers: Voucher[] = localVouchers.filter((localVoucher) =>
       apiData.payload.data.some((product: any) => {
@@ -92,28 +92,28 @@ const fetchVouchers = async (categoryName: string) => {
           nameToUrl(product.brand) === localVoucher.urlName &&
           product.active &&
           product.enabled
-        );
+        )
       })
-    );
+    )
 
     //store the voucherName and it's discount from API data
-    const apiDiscounts: Record<string, string> = {};
+    const apiDiscounts: Record<string, string> = {}
     apiData.payload.data.forEach((product: any) => {
-      apiDiscounts[nameToUrl(product.brand)] = product.discount;
-    });
+      apiDiscounts[nameToUrl(product.brand)] = product.discount
+    })
 
     validVouchers.map(
       (validVoucher, index) =>
         (validVoucher.discount = parseFloat(apiDiscounts[validVoucher.urlName]))
-    );
+    )
 
-    return validVouchers;
+    return validVouchers
   } catch (error) {
-    console.error("Error fetching vouchers:", error);
-    const emptyVouchers: Voucher[] = [];
-    return emptyVouchers;
+    console.error("Error fetching vouchers:", error)
+    const emptyVouchers: Voucher[] = []
+    return emptyVouchers
   }
-};
+}
 
 let CategoryPhoto = new Map<string, any>([
   ["e-commerce", eCommerceImg],
@@ -121,7 +121,7 @@ let CategoryPhoto = new Map<string, any>([
   ["food-and-beverages", foodAndBeverages],
   ["movies-and-music", moviesAndMusic],
   ["health-and-wellness", healthAndWellness],
-]);
+])
 
 const validCategories: string[] = [
   "e-commerce",
@@ -129,22 +129,22 @@ const validCategories: string[] = [
   "health-and-wellness",
   "apparels",
   "movies-and-music",
-];
+]
 
 const categoryPage = async ({ params }: { params: { category: string } }) => {
-  const categoryName: string = params.category;
-  let isValidCategory: boolean = true;
+  const categoryName: string = params.category
+  let isValidCategory: boolean = true
   if (!validCategories.includes(categoryName)) {
-    isValidCategory = false;
+    isValidCategory = false
   }
 
-  const categoryData = CategoryData[categoryName];
-  const currentCategoryPhoto = CategoryPhoto.get(categoryName);
-  const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`;
-  const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`;
+  const categoryData = CategoryData[categoryName]
+  const currentCategoryPhoto = CategoryPhoto.get(categoryName)
+  const boltUTM = `https://vouchers.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
+  const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
 
   // const vouchers: Voucher[] = [];
-  const vouchers: Voucher[] = await fetchVouchers(categoryName);
+  const vouchers: Voucher[] = await fetchVouchers(categoryName)
   return (
     <div className={`color-white ${styles.home_container}`}>
       <StructuredData url={`https://www.enkash.com/voucher/${categoryName}`} />
@@ -286,7 +286,11 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
 
               <div className="mt-4 desktop-only"></div>
               <div className="mt-5">
-                <PrimaryButton title="Explore Bolt" theme="blue" url="/bolt" />
+                <PrimaryButton
+                  title="Explore Bolt"
+                  theme="blue"
+                  url="/vouchers"
+                />
                 <span className="mx-2"></span>
               </div>
             </div>
@@ -296,7 +300,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
 
       <Footer utmSource={halfBoltUTM} />
     </div>
-  );
-};
+  )
+}
 
-export default categoryPage;
+export default categoryPage

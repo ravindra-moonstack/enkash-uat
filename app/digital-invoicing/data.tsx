@@ -40,7 +40,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Collect secure, contactless payments using QR codes, empowering businesses to process transactions ",
     image: qrCode,
-    link: "/qr-codes/",
+    link: "/qr-code/",
   },
   {
     title: "Auto Collect",
