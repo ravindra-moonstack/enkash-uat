@@ -1,11 +1,11 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import styles from "./page.module.scss";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
-import CategoryMenu from "@/components/voucher-page/category-menu";
-import VoucherData, { Voucher } from "../../bolt/data/voucher-data";
-import Link from "next/link";
+import Image from "next/image"
+import { Metadata } from "next"
+import styles from "./page.module.scss"
+import Header from "@/components/header/header"
+import Footer from "@/components/footer/footer"
+import CategoryMenu from "@/components/voucher-page/category-menu"
+import VoucherData, { Voucher } from "../../vouchers/data/voucher-data"
+import Link from "next/link"
 import {
   ajioPopular,
   amazonPopular,
@@ -20,27 +20,27 @@ import {
   zigZagGrey,
   zigZagTop,
   zomatoPopular,
-} from "../../bolt";
-import VoucherCard from "@/components/voucher-page/voucher-card";
-import Heading from "@/components/heading/heading";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator";
-import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher";
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb";
-import { nameToUrl } from "@/common/utils/stringUtils";
-import VoucherFaqComponent from "@/components/voucher-page/voucher-faq";
-import { VoucherFaqData } from "@/app/bolt/data/voucher-faq-data";
-import { generateVoucherSchema } from "@/common/utils/metaData";
-import Head from "next/head";
-import StructuredData from "@/components/head/structuredData";
+} from "../../vouchers"
+import VoucherCard from "@/components/voucher-page/voucher-card"
+import Heading from "@/components/heading/heading"
+import PrimaryButton from "@/components/buttons/primary-button/primary-button"
+import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator"
+import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher"
+import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
+import { nameToUrl } from "@/common/utils/stringUtils"
+import VoucherFaqComponent from "@/components/voucher-page/voucher-faq"
+import { VoucherFaqData } from "@/app/vouchers/data/voucher-faq-data"
+import { generateVoucherSchema } from "@/common/utils/metaData"
+import Head from "next/head"
+import StructuredData from "@/components/head/structuredData"
 
 export function generateMetadata({
   params,
 }: {
-  params: { voucherName?: string };
+  params: { voucherName?: string }
 }): Metadata {
-  const voucherName = nameToUrl(params.voucherName ?? "");
-  const voucher: Voucher = VoucherData[voucherName];
+  const voucherName = nameToUrl(params.voucherName ?? "")
+  const voucher: Voucher = VoucherData[voucherName]
   if (!voucher) {
     return {
       title: `Voucher not found - EnKash`,
@@ -49,9 +49,9 @@ export function generateMetadata({
       alternates: {
         canonical: `https://www.enkash.com/bolt/voucher/404`,
       },
-    };
+    }
   }
-  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.png`;
+  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.png`
   return {
     title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
     description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
@@ -76,46 +76,46 @@ export function generateMetadata({
       description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
       images: [imageUrl],
     },
-  };
+  }
 }
 
 const sanitizeStep = (step: string): string => {
-  const containsOnlyLetters = /^[a-zA-Z]+$/;
-  let myStep = step;
+  const containsOnlyLetters = /^[a-zA-Z]+$/
+  let myStep = step
   //removing any special character from front (current data is not formatted)
   while (!containsOnlyLetters.test(myStep[0]) && myStep) {
-    myStep = myStep.slice(1);
+    myStep = myStep.slice(1)
   }
-  return myStep;
-};
+  return myStep
+}
 
 const linkifyText = (text: string): string => {
   const urlRegex =
-    /(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/\S*)?/g;
+    /(?:https?:\/\/)?(?:www\.)?[a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+(?:\/\S*)?/g
 
   return text.replace(urlRegex, (url) => {
     // Check if the URL has a protocol, if not, prepend it with http://
     if (!url.match(/^https?:\/\//i)) {
-      url = "http://" + url;
+      url = "http://" + url
     }
-    return `<a href="${url}" target="_blank">${url}</a>`;
-  });
-};
+    return `<a href="${url}" target="_blank">${url}</a>`
+  })
+}
 
 const sanitizeUTM = (utm: string): string => {
-  utm = utm.toLowerCase();
-  utm = utm.replace(/ /g, "_");
-  return utm;
-};
+  utm = utm.toLowerCase()
+  utm = utm.replace(/ /g, "_")
+  return utm
+}
 
 const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   // local voucher
-  let localVoucher: Voucher | any = VoucherData[voucherName];
-  let isActive: boolean = false;
+  let localVoucher: Voucher | any = VoucherData[voucherName]
+  let isActive: boolean = false
 
   if (!localVoucher) {
-    console.log("local voucher not found");
-    return null;
+    console.log("local voucher not found")
+    return null
   }
 
   try {
@@ -130,8 +130,8 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
         body: JSON.stringify({}),
         cache: `no-cache`,
       }
-    );
-    const apiData = await apiResponse.json();
+    )
+    const apiData = await apiResponse.json()
     //discount update
     apiData.payload.data.forEach((product: any) => {
       if (
@@ -139,34 +139,34 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
         product.active &&
         product.enabled
       ) {
-        isActive = true;
-        localVoucher.discount = parseFloat(product.discount);
+        isActive = true
+        localVoucher.discount = parseFloat(product.discount)
       }
-    });
+    })
 
-    return isActive ? localVoucher : null;
+    return isActive ? localVoucher : null
   } catch (error) {
-    console.error("Error fetching vouchers:", error);
-    return null;
+    console.error("Error fetching vouchers:", error)
+    return null
   }
-};
+}
 
 const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
-  const voucherName = params.voucherName;
+  const voucherName = params.voucherName
 
   const localVoucherData = Object.values(VoucherData).find(
     (voucher) => voucher.urlName === voucherName
-  );
+  )
 
   if (!localVoucherData) {
-    console.log("No voucher present");
+    console.log("No voucher present")
   }
 
-  const voucherData = await fetchVoucher(voucherName);
-  const voucherCategory = voucherData?.category || "";
+  const voucherData = await fetchVoucher(voucherName)
+  const voucherCategory = voucherData?.category || ""
   const voucherImage = voucherData
     ? `/images/voucher-bg/${voucherData.urlName}.png`
-    : null;
+    : null
   // const voucherData = VoucherDataV2[voucherName];
 
   let categoryNameMap = new Map<string, string>([
@@ -175,19 +175,19 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
     ["health-and-wellness", "Health & Wellness"],
     ["apparels", "Apparels"],
     ["movies-and-music", "Movies & Music"],
-  ]);
+  ])
 
   const boltUTM = voucherData
     ? `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
         voucherData.name.toLowerCase()
       )}`
-    : "https://bolt.enkash.com/";
+    : "https://bolt.enkash.com/"
 
   const halfBoltUTM = voucherData
     ? `bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
         voucherData.name.toLowerCase()
       )}`
-    : "https://bolt.enkash.com/";
+    : "https://bolt.enkash.com/"
 
   const breadcrumbItems = [
     { name: "Home", url: "/" },
@@ -197,8 +197,8 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
       url: `/voucher/category/${voucherData?.category}`,
     },
     { name: voucherData?.name || "Voucher", url: `/voucher/${voucherName}` },
-  ];
-  const faqData = VoucherFaqData[voucherName].faqData;
+  ]
+  const faqData = VoucherFaqData[voucherName].faqData
 
   return (
     <>
@@ -728,7 +728,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
       <Footer utmSource={halfBoltUTM} />
     </>
-  );
-};
+  )
+}
 
-export default voucherPage;
+export default voucherPage

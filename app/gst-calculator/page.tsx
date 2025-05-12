@@ -1,16 +1,16 @@
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import Heading from "@/components/heading/heading";
-import Header from "@/components/header/header";
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import Heading from "@/components/heading/heading"
+import Header from "@/components/header/header"
 
-import Footer from "@/components/footer/footer";
-import { gstCalculatorBG, gstIconOne, gstIconWhite } from ".";
-import GSTCalculator from "@/components/gst-calculator/gst-calculator";
-import faqData from "../bolt/faq-data";
-import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import Footer from "@/components/footer/footer"
+import { gstCalculatorBG, gstIconOne, gstIconWhite } from "."
+import GSTCalculator from "@/components/gst-calculator/gst-calculator"
+import faqData from "../vouchers/faq-data"
+import generateMetaData from "@/common/utils/metaData"
+import StructuredData from "@/components/head/structuredData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Buy Exclusive e Gift Cards & Brand Gift Vouchers Online | EnKash",
@@ -20,12 +20,15 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/bolt/",
   },
   faqData: faqData,
-});
+})
 
 const page = () => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <StructuredData url={`https://www.enkash.com/bolt/`} faqData={faqData} />
+      <StructuredData
+        url={`https://www.enkash.com/vouchers/`}
+        faqData={faqData}
+      />
       <Header utmSource="gst_calculator" />
 
       <div className={`${styles.first_row} row color-white`}>
@@ -224,7 +227,7 @@ const page = () => {
 
       <Footer utmSource="Bolt" />
     </div>
-  );
-};
+  )
+}
 
-export default page;
+export default page

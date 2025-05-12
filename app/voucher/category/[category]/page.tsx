@@ -8,7 +8,7 @@ import Footer from "@/components/footer/footer"
 import Heading from "@/components/heading/heading"
 import PrimaryButton from "@/components/buttons/primary-button/primary-button"
 import SecondryButton from "@/components/buttons/secondary-button/secondary-button"
-import { CategoryData } from "../../../bolt/data/category-data"
+import { CategoryData } from "../../../vouchers/data/category-data"
 import Link from "next/link"
 import CategoryMenu from "@/components/voucher-page/category-menu"
 import VoucherCard from "@/components/voucher-page/voucher-card"
@@ -20,9 +20,9 @@ import {
   moviesAndMusic,
   noVoucherFoundImg,
   whiteArrow,
-} from "../../../bolt/index"
+} from "../../../vouchers/index"
 import { movieAndMusic } from "@/components/header"
-import VoucherData, { Voucher } from "../../../bolt/data/voucher-data"
+import VoucherData, { Voucher } from "../../../vouchers/data/voucher-data"
 import { nameToUrl } from "@/common/utils/stringUtils"
 import StructuredData from "@/components/head/structuredData"
 import { generateVoucherSchema } from "@/common/utils/metaData"

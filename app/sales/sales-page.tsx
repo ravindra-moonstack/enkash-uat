@@ -1,22 +1,22 @@
-"use client";
+"use client"
 
-import React, { useEffect, useState } from "react";
-import Header from "@/components/header/header";
-import styles from "./page.module.scss";
-import Heading from "@/components/heading/heading";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import Footer from "@/components/footer/footer";
-import emailjs from "@emailjs/browser";
+import React, { useEffect, useState } from "react"
+import Header from "@/components/header/header"
+import styles from "./page.module.scss"
+import Heading from "@/components/heading/heading"
+import PrimaryButton from "@/components/buttons/primary-button/primary-button"
+import Footer from "@/components/footer/footer"
+import emailjs from "@emailjs/browser"
 import {
   defaultTemplateId,
   emailjs_public_key,
   emailjs_service_id,
   olympusTemplateId,
   space,
-} from "@/common/constant";
-import { backArrow } from "../bolt";
-import Image from "next/image";
-import { blueArrow, corporateCreditCardFilled, prepaidCardFilled } from ".";
+} from "@/common/constant"
+import { backArrow } from "../vouchers"
+import Image from "next/image"
+import { blueArrow, corporateCreditCardFilled, prepaidCardFilled } from "."
 import {
   autoCollectFilled,
   billPaymentsFilled,
@@ -42,17 +42,17 @@ import {
   upiPaymentsFilled,
   vendorPaymentFilled,
   virtualCardFilled,
-} from "@/components/header";
+} from "@/components/header"
 
 type Category = {
-  name: string;
-  products: Product[];
-};
+  name: string
+  products: Product[]
+}
 
 type Product = {
-  name: string;
-  icon: any;
-};
+  name: string
+  icon: any
+}
 
 // Define our data
 const categoryData: Category[] = [
@@ -109,53 +109,52 @@ const categoryData: Category[] = [
       { name: "Employee Rewards", icon: rewardsPlatformFilled },
     ],
   },
-];
+]
 
 const SalesPage = () => {
   //Form Variables
-  const [fullName, setFullName] = useState("");
-  const [companyName, setCompanyName] = useState("");
-  const [companyEmail, setCompanyEmail] = useState("");
-  const [companyWebsite, setCompanyWebsite] = useState("");
-  const [mobileNumber, setMobileNumber] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("Payables");
-  const [selectedProduct, setSelectedProduct] = useState("none");
-  const [selectedAdditionalProduct, setSelectedAdditionalProduct] =
-    useState("");
-  const [description, setDescription] = useState("");
-  const [isFormValid, setIsFormValid] = useState(true);
-  const [interestedPG, setInterestedPG] = useState(false);
-  const [isExistingCustomer, setIsExistingCustomer] = useState(false);
-  const [isDisabled, setIsDisabled] = useState(false);
+  const [fullName, setFullName] = useState("")
+  const [companyName, setCompanyName] = useState("")
+  const [companyEmail, setCompanyEmail] = useState("")
+  const [companyWebsite, setCompanyWebsite] = useState("")
+  const [mobileNumber, setMobileNumber] = useState("")
+  const [selectedCategory, setSelectedCategory] = useState("Payables")
+  const [selectedProduct, setSelectedProduct] = useState("none")
+  const [selectedAdditionalProduct, setSelectedAdditionalProduct] = useState("")
+  const [description, setDescription] = useState("")
+  const [isFormValid, setIsFormValid] = useState(true)
+  const [interestedPG, setInterestedPG] = useState(false)
+  const [isExistingCustomer, setIsExistingCustomer] = useState(false)
+  const [isDisabled, setIsDisabled] = useState(false)
   //Url parameters
-  let urlParams;
-  let source;
+  let urlParams
+  let source
 
   //reset the product everytime category is changed
   useEffect(() => {
-    setSelectedProduct("none");
-  }, [selectedCategory]);
+    setSelectedProduct("none")
+  }, [selectedCategory])
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      urlParams = new URLSearchParams(window.location.search);
-      source = urlParams.get("source");
-      const emailParam = urlParams.get("email");
+      urlParams = new URLSearchParams(window.location.search)
+      source = urlParams.get("source")
+      const emailParam = urlParams.get("email")
       if (emailParam !== null) {
-        setCompanyEmail(emailParam);
+        setCompanyEmail(emailParam)
       }
       if (source == "interested-payment-gateway") {
-        setInterestedPG(true);
+        setInterestedPG(true)
       }
     }
-    emailjs.init(emailjs_public_key);
-  }, []);
+    emailjs.init(emailjs_public_key)
+  }, [])
 
   //Submit functionality
   const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+    e.preventDefault()
     if (isDisabled) {
-      return;
+      return
     }
 
     if (
@@ -168,49 +167,49 @@ const SalesPage = () => {
         selectedCategory === "Expense Management" ||
         isExistingCustomer)
     ) {
-      setIsFormValid(true);
-      sendEmailToEnkash();
+      setIsFormValid(true)
+      sendEmailToEnkash()
     } else {
-      setIsFormValid(false);
+      setIsFormValid(false)
     }
-  };
+  }
 
   //toggle existing customer
   const handleExistingCustomer = () => {
-    setIsExistingCustomer(!isExistingCustomer);
-  };
+    setIsExistingCustomer(!isExistingCustomer)
+  }
 
   //Email validation
   function isValidEmail(val: string): boolean {
     const regEmail: RegExp =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return regEmail.test(val);
+      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    return regEmail.test(val)
   }
 
   function isValidWebsite(val: string): boolean {
     if (!val) {
-      return true;
+      return true
     }
     const regWebsite: RegExp =
-      /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:[0-9]{1,5})?(\/[^\s]*)?$/i;
-    return regWebsite.test(val);
+      /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:[0-9]{1,5})?(\/[^\s]*)?$/i
+    return regWebsite.test(val)
   }
 
   function hasOlympusPrefix(string: string | null) {
-    return string && string.startsWith("olympus");
+    return string && string.startsWith("olympus")
   }
 
   //Email Send to EmailJs
   function sendEmailToEnkash() {
-    setIsDisabled(true);
-    const urlParams = new URLSearchParams(window.location.search);
-    const source = urlParams.get("source");
+    setIsDisabled(true)
+    const urlParams = new URLSearchParams(window.location.search)
+    const source = urlParams.get("source")
 
-    let templateId = defaultTemplateId;
+    let templateId = defaultTemplateId
 
     // Check if the source is in the Olympus lead
     if (hasOlympusPrefix(source)) {
-      templateId = olympusTemplateId;
+      templateId = olympusTemplateId
     }
 
     let templateParams = {
@@ -223,27 +222,27 @@ const SalesPage = () => {
       additional_products: selectedProduct,
       query: description,
       source: source,
-    };
+    }
 
     if (isExistingCustomer) {
-      templateParams.products = "Existing Customers";
-      templateParams.additional_products = "";
+      templateParams.products = "Existing Customers"
+      templateParams.additional_products = ""
     }
 
     emailjs
       .send(emailjs_service_id, templateId, templateParams)
       .then(
         (response) => {
-          window.location.href = "/confirmation/";
-          console.log("form submit successful");
+          window.location.href = "/confirmation/"
+          console.log("form submit successful")
         },
         (error) => {
-          console.log(error);
+          console.log(error)
         }
       )
       .finally(() => {
-        setIsDisabled(false);
-      });
+        setIsDisabled(false)
+      })
   }
 
   return (
@@ -273,7 +272,7 @@ const SalesPage = () => {
                     type="text"
                     value={fullName}
                     onChange={(e) => {
-                      setFullName(e.target.value);
+                      setFullName(e.target.value)
                     }}
                     className="form-control"
                     placeholder="Full Name"
@@ -305,9 +304,9 @@ const SalesPage = () => {
                     type="tel"
                     value={mobileNumber}
                     onChange={(e) => {
-                      const sanitizedValue = e.target.value.replace(/\D/g, "");
-                      if (sanitizedValue.length > 10) return;
-                      setMobileNumber(sanitizedValue);
+                      const sanitizedValue = e.target.value.replace(/\D/g, "")
+                      if (sanitizedValue.length > 10) return
+                      setMobileNumber(sanitizedValue)
                     }}
                     className="form-control"
                     placeholder="Mobile Number"
@@ -532,7 +531,7 @@ const SalesPage = () => {
       </div>
       <Footer />
     </div>
-  );
-};
+  )
+}
 
-export default SalesPage;
+export default SalesPage
