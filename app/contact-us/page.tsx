@@ -10,6 +10,17 @@ import SalesForm from "../sales/sales-form"
 import ContactCard from "@/components/contact-card/contact-card"
 import location from "./img/location.svg"
 import vector from "./img/effect.svg"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Contact Us | EnKash",
+  description:
+    "Have questions or want to know more about EnKash? Talk to us today",
+  alternates: {
+    canonical: "https://www.enkash.com/contact-us/",
+  },
+})
 const page = () => {
   return (
     <div>
@@ -52,7 +63,7 @@ const page = () => {
       </div>
 
       <div className={styles.partner}>
-        <div className="col-8">
+        <div className="col-8 mx-auto mx-lg-0">
           <div className={styles.grid}>
             <ContactCard
               title="For existing "
@@ -125,6 +136,7 @@ const page = () => {
             <div className="d-flex flex-column">
               {" "}
               <Heading title="Gurugram" size="h2" weight="6" />
+              <div className={` ${styles.spaceBox}`}></div>
             </div>
 
             <p className={` ${styles.description}`}>
@@ -148,11 +160,12 @@ const page = () => {
             <div className="d-flex flex-column">
               {" "}
               <Heading title="Pune" size="h2" weight="6" />
+              <div className={` ${styles.spaceBox}`}></div>
             </div>
             <p className={` ${styles.description}`}>
-              Gate No 2, Plant, Godrej & Boyce, Bus Depot, 91 Springboard, 6,
-              Lal Bahadur Shastri Marg, opposite Vikhroli, Vikhroli West,
-              Mumbai, Maharashtra 400079
+              91 Springboard Business Hub Private Limited, Sadanand Business
+              Center (SBC), 9th Floor NH 48 Pashan Highway Side Road, Baner,
+              Pune, Maharashtra, 411045
             </p>
           </div>
         </div>

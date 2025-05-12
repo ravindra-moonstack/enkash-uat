@@ -2,9 +2,9 @@
 @import "../../styles/variables";
 
 .contactBlock {
-  color: white;
   border-radius: 1rem;
   margin: 0 auto;
+  background-color: #fff;
 
   .topSection {
     text-align: center;
@@ -12,6 +12,7 @@
     padding: 48px;
     padding-bottom: 32px;
     border-radius: 16px 16px 0px 0px;
+    color: white;
 
     h2 {
       font-size: 44px;
@@ -30,7 +31,6 @@
     flex-direction: column;
     gap: 1.5rem;
     align-items: flex-start;
-    background: white;
     padding: 42px;
     color: black;
     border-radius: 0px 0px 16px 16px;
