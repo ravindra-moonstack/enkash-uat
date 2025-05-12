@@ -13,7 +13,7 @@ import {
   emailjs_service_id,
   olympusTemplateId,
   space,
-} from "@/common/constant"cls
+} from "@/common/constant"
 import { backArrow } from "../vouchers"
 import Image from "next/image"
 import { blueArrow, corporateCreditCardFilled, prepaidCardFilled } from "."
