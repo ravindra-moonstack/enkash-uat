@@ -112,7 +112,7 @@ const page = () => {
             <div className="d-flex flex-column">
               {" "}
               <Heading title="Mumbai" size="h2" weight="6" />
-              <Heading title="(Registered Office)" size="h4" />
+                <div className={` ${styles.spaceBox}`}><p>(Registered Office)</p></div>
             </div>
 
             <p className={` ${styles.description}`}>
