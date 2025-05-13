@@ -13,16 +13,9 @@
     padding-bottom: 32px;
     border-radius: 16px 16px 0px 0px;
     color: white;
-
-    h2 {
-      font-size: 44px;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    p {
-      font-size: 20px;
-      font-weight: 400;
+    height: 264px;
+    @include for-laptops {
+      height: 224px;
     }
   }
 
@@ -39,8 +32,11 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      font-size: 22px;
+      font-size: 12px;
       color: $color-main-grey;
+      @include for-laptops {
+        font-size: 22px;
+      }
       ul {
         margin: 0;
         padding: 0;

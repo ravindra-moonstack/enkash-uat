@@ -59,10 +59,11 @@
   text-align: center;
   padding: 35px 30px 25px 30px;
   @include for-laptops {
-    padding: 12px 138px 100px 138px;
+    padding: 100px 138px;
   }
   .grid {
     padding-top: 64px;
+    justify-content: center;
     display: grid;
     gap: 42px;
     @include for-laptops {

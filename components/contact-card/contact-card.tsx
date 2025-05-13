@@ -3,6 +3,7 @@ import styles from "./contact-card.module.scss"
 import call from "./img/phoneIcon.svg"
 import mail from "./img/mailIcon.svg"
 import Image from "next/image"
+import Heading from "@/components/heading/heading"
 
 type Props = {
   title: string
@@ -22,8 +23,8 @@ const ContactCard: React.FC<Props> = ({
   return (
     <div className={styles.contactBlock}>
       <div className={styles.topSection}>
-        <h2>{title}</h2>
-        <h2>{titleSecond}</h2>
+        <Heading title={title} size="h2" weight="6" />
+        <Heading title={titleSecond} size="h2" weight="6" />
         <p>{description}</p>
       </div>
       <div className={styles.contactSection}>

@@ -80,7 +80,7 @@ const page = () => {
               phone="+91 8923723793"
             />
             <ContactCard
-              title="Media​"
+              title="Media ​"
               titleSecond="Enquiries"
               description="For Media inquiries, kindly drop us an email "
               email={["marketing@enkash.com"]}
@@ -112,7 +112,9 @@ const page = () => {
             <div className="d-flex flex-column">
               {" "}
               <Heading title="Mumbai" size="h2" weight="6" />
-                <div className={` ${styles.spaceBox}`}><p>(Registered Office)</p></div>
+              <div className={` ${styles.spaceBox}`}>
+                <p>(Registered Office)</p>
+              </div>
             </div>
 
             <p className={` ${styles.description}`}>
