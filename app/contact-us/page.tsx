@@ -86,7 +86,7 @@ const page = () => {
               email={["marketing@enkash.com"]}
             />
             <ContactCard
-              title="Join"
+              title="Join "
               titleSecond="Our Team"
               description="Want to join our fast-growing team? Send your resume to"
               email={["careers@enkash.com"]}
