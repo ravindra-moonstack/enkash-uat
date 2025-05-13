@@ -249,12 +249,14 @@ const VirtualAccount = (): React.JSX.Element => {
           title="Learn how Virtual Accounts will change the way you approach collections and receivables!"
         />
       </div>
+
       <div
         className={`${styles.fifth_row} row row-padding-bottom-none bg-white pb-0`}
       >
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
+
         <div className="mb-5">
           <Heading
             title="Don't worry! Our FAQs section will help you learn about instant settlements in detail"
@@ -278,6 +280,7 @@ const VirtualAccount = (): React.JSX.Element => {
             size="h1"
           />
         </div>
+        
         <div className="mb-5">
           <Heading
             title="The automated process of collecting funds from customers regularly for monthly subscriptions, loan repayments, utility bills, and insurance premiums with electronic authorization is e-NACH. It helps streamline the payment process by eliminating human interaction and reducing errors, promising timely collections."

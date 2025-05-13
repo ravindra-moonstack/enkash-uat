@@ -47,7 +47,7 @@ export function generateMetadata({
       description:
         "The voucher you are looking for is not available, explore more in Bolt section.",
       alternates: {
-        canonical: `https://www.enkash.com/bolt/voucher/404`,
+        canonical: `https://www.enkash.com/vouchers/voucher/404`,
       },
     }
   }
@@ -121,7 +121,7 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   try {
     // bolt open api
     const apiResponse = await fetch(
-      "https://marketplaces.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
+      "https://marketplaces.enkash.in/api/v0/vouchers/searchProducts?product=VOUCHER",
       {
         method: "POST",
         headers: {
@@ -178,20 +178,20 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
   ])
 
   const boltUTM = voucherData
-    ? `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
+    ? `https://vouchers.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
         voucherData.name.toLowerCase()
       )}`
-    : "https://bolt.enkash.com/"
+    : "https://vouchers.enkash.com/"
 
   const halfBoltUTM = voucherData
     ? `bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
         voucherData.name.toLowerCase()
       )}`
-    : "https://bolt.enkash.com/"
+    : "https://vouchers.enkash.com/"
 
   const breadcrumbItems = [
     { name: "Home", url: "/" },
-    { name: "Voucher", url: "/bolt" },
+    { name: "Voucher", url: "/vouchers" },
     {
       name: `${categoryNameMap.get(voucherCategory)}`,
       url: `/voucher/category/${voucherData?.category}`,
@@ -397,7 +397,10 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       <li>
                         <div>
                           Go to bolt.enkash.com or{" "}
-                          <a href="https://bolt.enkash.com/" target="_blank">
+                          <a
+                            href="https://vouchers.enkash.com/"
+                            target="_blank"
+                          >
                             click here
                           </a>
                         </div>
@@ -718,7 +721,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
               <div className="mt-4 desktop-only"></div>
               <div className="mt-5">
-                <PrimaryButton title="Explore Bolt" theme="blue" url="/bolt" />
+                <PrimaryButton title="Explore Bolt" theme="blue" url="/vouchers" />
                 <span className="mx-2"></span>
               </div>
             </div>
