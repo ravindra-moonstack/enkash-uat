@@ -16,7 +16,7 @@ import {
   qrCode,
   reminderEngine,
 } from "."
-import QRCodes from "@/app/qr-codes/page"
+import QRCodes from "@/app/qr-code/page"
 import Marquee from "react-fast-marquee"
 
 const cardData = [
@@ -46,7 +46,7 @@ const cardData = [
     description:
       "Secure, contactless payment with QR codes to enable businesses to accept instant transactions.",
     image: qrCode,
-    link: "/qr-codes/",
+    link: "/qr-code/",
   },
   {
     title: "Auto Collect",

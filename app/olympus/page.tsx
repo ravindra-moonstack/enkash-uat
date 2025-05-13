@@ -323,7 +323,7 @@ const olympus = () => {
               title="Virtual Accounts"
               description="Streamline the collection process by creating virtual accounts for your customers"
               theme="blue"
-              link="/virtual-account"
+              link="/collect/virtual-account"
             />
           </div>
         </div>

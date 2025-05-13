@@ -33,7 +33,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "Provide employees with top-brand vouchers for flexible and meaningful appreciation.",
     image: paymentButton,
-    link: "/bolt/",
+    link: "/vouchers/",
   },
   {
     title: "Offers",

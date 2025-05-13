@@ -1,42 +1,42 @@
-import { Voucher } from "@/app/bolt/data/voucher-data";
-import { FAQProps } from "@/components/faq/faq";
+import { Voucher } from "@/app/vouchers/data/voucher-data"
+import { FAQProps } from "@/components/faq/faq"
 
 interface MetadataInput {
-  title: string;
-  description: string;
+  title: string
+  description: string
   alternates: {
-    canonical: string;
-  };
-  faqData?: Array<FAQProps>;
+    canonical: string
+  }
+  faqData?: Array<FAQProps>
 }
 
 export interface BreadcrumbItem {
-  "@type": "ListItem";
-  position: number;
-  name: string;
-  item: string;
+  "@type": "ListItem"
+  position: number
+  name: string
+  item: string
 }
 
 export interface BreadcrumbSchema {
-  "@context": "https://schema.org";
-  "@type": "BreadcrumbList";
-  itemListElement: BreadcrumbItem[];
+  "@context": "https://schema.org"
+  "@type": "BreadcrumbList"
+  itemListElement: BreadcrumbItem[]
 }
 
 export const generateBreadcrumbSchema = (
   canonicalUrl: string
 ): BreadcrumbSchema => {
   if (!canonicalUrl) {
-    throw new Error("Canonical URL is required");
+    throw new Error("Canonical URL is required")
   }
 
   try {
-    const url = new URL(canonicalUrl);
+    const url = new URL(canonicalUrl)
 
     const pathSegments = url.pathname
       .replace(/^\/|\/$/g, "")
       .split("/")
-      .filter(Boolean);
+      .filter(Boolean)
 
     // Format segment to title case and replace hyphens with spaces
     const formatSegmentName = (segment: string): string => {
@@ -46,10 +46,10 @@ export const generateBreadcrumbSchema = (
           (word) => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
         )
         .join(" ")
-        .trim();
-    };
+        .trim()
+    }
 
-    const breadcrumbItems: BreadcrumbItem[] = [];
+    const breadcrumbItems: BreadcrumbItem[] = []
 
     // Always add Home as first item
     breadcrumbItems.push({
@@ -57,7 +57,7 @@ export const generateBreadcrumbSchema = (
       position: 1,
       name: "Home",
       item: `${url.origin}/`,
-    });
+    })
 
     // Add subsequent segments
     pathSegments.forEach((segment, index) => {
@@ -66,23 +66,23 @@ export const generateBreadcrumbSchema = (
         position: index + 2, // +2 because Home is position 1
         name: formatSegmentName(segment),
         item: `${url.origin}/${pathSegments.slice(0, index + 1).join("/")}/`,
-      });
-    });
+      })
+    })
 
     return {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: breadcrumbItems,
-    };
+    }
   } catch (error) {
-    throw new Error(`Failed to generate breadcrumb schema }`);
+    throw new Error(`Failed to generate breadcrumb schema }`)
   }
-};
+}
 
 // Your existing generateFaqSchema function remains the same
 export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
   if (!faqData || faqData.length === 0) {
-    return null;
+    return null
   }
 
   return {
@@ -99,25 +99,25 @@ export const generateFaqSchema = (faqData?: MetadataInput["faqData"]) => {
             faq?.answer
               ?.map((ans) => {
                 // Construct answer text with heading and bullets
-                const parts = [];
+                const parts = []
                 if (ans.heading) {
-                  parts.push(ans.heading);
+                  parts.push(ans.heading)
                 }
                 if (ans.bullets?.length) {
-                  parts.push(ans.bullets.join(". "));
+                  parts.push(ans.bullets.join(". "))
                 }
-                return parts.join(". ");
+                return parts.join(". ")
               })
               .filter(Boolean)
               .join(" ")) ??
           "",
       },
     })),
-  };
-};
+  }
+}
 
 export const generateVoucherSchema = (voucher: Voucher): string => {
-  const baseUrl = "https://www.enkash.com";
+  const baseUrl = "https://www.enkash.com"
 
   const schema = {
     "@context": "https://schema.org",
@@ -150,12 +150,10 @@ export const generateVoucherSchema = (voucher: Voucher): string => {
         value: voucher.howToRedeemDesc,
       },
     ],
-  };
+  }
 
-  return `<script type="application/ld+json">${JSON.stringify(
-    schema
-  )}</script>`;
-};
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`
+}
 
 const generateMetaData = ({
   title,
@@ -163,8 +161,8 @@ const generateMetaData = ({
   alternates,
   faqData,
 }: MetadataInput) => {
-  const canonicalUrl = alternates.canonical;
-  const faqldJSON = generateFaqSchema(faqData);
+  const canonicalUrl = alternates.canonical
+  const faqldJSON = generateFaqSchema(faqData)
 
   return {
     title,
@@ -184,7 +182,7 @@ const generateMetaData = ({
         })}
       </script>
     `,
-  };
-};
+  }
+}
 
-export default generateMetaData;
+export default generateMetaData
