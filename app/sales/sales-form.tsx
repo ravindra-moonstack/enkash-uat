@@ -14,7 +14,7 @@ import {
   olympusTemplateId,
   space,
 } from "@/common/constant"
-import { backArrow } from "../bolt"
+import { backArrow } from "../vouchers"
 import Image from "next/image"
 import { blueArrow, corporateCreditCardFilled, prepaidCardFilled } from "."
 import {

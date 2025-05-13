@@ -35,7 +35,7 @@ const productData: AllProductsDataProp[] = [
     description:
       "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
     image: qrCode,
-    link: "/qr-codes/",
+    link: "/qr-code/",
   },
   {
     title: "Invoices",

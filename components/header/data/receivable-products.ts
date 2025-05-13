@@ -63,7 +63,7 @@ const ReceivableProducts = [
         description: "Create multiple customer collection accounts on the go",
         imageSrc: virtualAccounts,
         imageSrcHovered: virtualAccountsFilled,
-        link: "/virtual-account",
+        link: "/collect/virtual-account",
       },
       {
         name: "Instant Settlements",
@@ -114,7 +114,7 @@ const ReceivableProducts = [
         description: "Accept payments quick & easy",
         imageSrc: qrCode,
         imageSrcHovered: qrCodeFilled,
-        link: "/qr-codes",
+        link: "/qr-code",
         new: false,
         comingSoon: false,
       },

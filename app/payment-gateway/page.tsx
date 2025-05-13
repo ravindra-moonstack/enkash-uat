@@ -2,7 +2,7 @@ import { Metadata } from "next"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import { space } from "@/common/constant"
-import { userPlus, numberOne, stack } from "@/components/three-steps/"
+import { support, uptime, faster } from "@/components/three-steps/"
 import { bannerLottie, caraouselBg, faqBg, whiteArrow } from "."
 import {
   Header,
@@ -113,17 +113,17 @@ const PaymentGateway = (): React.JSX.Element => {
             title="RBI-Approved Online Payment Gateway Built for Growing Businesses"
             steps={[
               {
-                icon: userPlus,
+                icon: support,
                 text: "100% ",
                 subText: "Support",
               },
               {
-                icon: stack,
+                icon: uptime,
                 text: "100% ",
                 subText: "Uptime",
               },
               {
-                icon: numberOne,
+                icon: faster,
                 text: "100% ",
                 subText: "Faster",
               },

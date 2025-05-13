@@ -16,7 +16,7 @@ import {
 const brandVouchersProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/bolt",
+    subtitleLink: "/vouchers",
     currentHeading: {
       name: "Vouchers",
       description: "Shop smart and unlock exclusive savings",
@@ -70,8 +70,8 @@ const brandVouchersProducts = [
     footerText: "Save big on 400+ brand vouchers across multiple categories",
     footerMobileText: "Explote More",
     footerImg: "loyalty_footer_bg",
-    footerLink: "/bolt",
-    parentLink: "/bolt",
+    footerLink: "/vouchers",
+    parentLink: "/vouchers",
   },
 ]
 

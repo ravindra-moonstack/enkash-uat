@@ -2,7 +2,7 @@
 // Generates the sitemap dynamically when you visit /sitemap-vouchers
 import { nameToUrl } from "@/common/utils/stringUtils";
 import { MetadataRoute } from "next";
-import VoucherData from "../bolt/data/voucher-data";
+import VoucherData from "../vouchers/data/voucher-data";
 
 export async function GET() {
   // Convert voucher object to array of URLs

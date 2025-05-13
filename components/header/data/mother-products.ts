@@ -22,7 +22,7 @@ export const motherProducts = [
   {
     name: "Vouchers",
     description: "Shop smart and unlock exclusive savings",
-    link: "/bolt",
+    link: "/vouchers",
   },
   {
     name: "Rewards",

@@ -91,7 +91,7 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       </div> */}
                     </li>
                     <li className="d-flex">
-                      <Link href="/qr-codes">QR Codes</Link>
+                      <Link href="/qr-code">QR Codes</Link>
                       {/* <div className={`my-auto ${styles.new_badge}`}>
                         {" "}
                         Coming Soon
@@ -101,7 +101,9 @@ const FooterOld = ({ utmSource = "" }: any) => {
                       <Link href="/auto-collect/">Auto Collect</Link>
                     </li>
                     <li>
-                      <Link href="/virtual-account/">Virtual Accounts</Link>
+                      <Link href="/collect/virtual-account/">
+                        Virtual Accounts
+                      </Link>
                     </li>
                     <li>
                       <Link href="/e-nach/">e-NACH</Link>

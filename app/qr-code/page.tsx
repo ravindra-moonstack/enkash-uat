@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "QR codes help enterprises accept contactless and error-free in-store payments from customers using any UPI app.",
   alternates: {
-    canonical: "https://www.enkash.com/qr-codes/",
+    canonical: "https://www.enkash.com/qr-code/",
   },
   faqData: faqData,
 })
@@ -40,7 +40,7 @@ const QRCodes = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/qr-codes/`}
+        url={`https://www.enkash.com/qr-code/`}
         faqData={faqData}
       />
       <Header utmSource="receivables" />
@@ -50,7 +50,7 @@ const QRCodes = (): React.JSX.Element => {
           <div className="d-flex mb-5 flex-column flex-md-row">
             <div>
               <Heading
-                title="QR Codes"
+                title="QR Code"
                 color="rainy-blue"
                 size="h4"
                 weight="7"
