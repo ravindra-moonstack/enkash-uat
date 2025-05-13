@@ -59,27 +59,35 @@
   text-align: center;
   padding: 35px 30px 25px 30px;
   @include for-laptops {
-    padding: 100px 138px;
+    padding: 100px 136px;
   }
   .grid {
     padding-top: 64px;
     justify-content: center;
     display: grid;
-    gap: 42px;
+    gap: 40px;
     @include for-laptops {
       display: flex;
     }
     .address {
-      padding: 42px;
+      padding: 42px 80px;
       border-radius: 20px;
       border: 1px solid #e6f0ed;
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 12px;
       text-align: start;
       max-width: 450px;
       box-shadow: 0px 0px 55px 0px #00000014;
-
+      .locationIcon {
+        background: #61d6ff0d;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       .description {
         font-size: 22px;
         line-height: 44px;

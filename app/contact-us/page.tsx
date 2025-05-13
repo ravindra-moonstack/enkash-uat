@@ -63,7 +63,7 @@ const page = () => {
       </div>
 
       <div className={styles.partner}>
-        <div className="col-8 mx-auto mx-lg-0">
+        <div className="col-8 mx-auto mx-xl-0">
           <div className={styles.grid}>
             <ContactCard
               title="For existing "
@@ -99,7 +99,7 @@ const page = () => {
         <Heading title="Our Offices " size="h2" weight="6" />
         <div className={`${styles.grid}`}>
           <div className={`${styles.address}`}>
-            <div>
+            <div className={`${styles.locationIcon}`}>
               <Image
                 src={location}
                 alt="contact us"
@@ -125,7 +125,7 @@ const page = () => {
           </div>
 
           <div className={`${styles.address}`}>
-            <div>
+            <div className={`${styles.locationIcon}`}>
               <Image
                 src={location}
                 alt="contact us"
@@ -149,7 +149,7 @@ const page = () => {
           </div>
 
           <div className={`${styles.address}`}>
-            <div>
+            <div className={`${styles.locationIcon}`}>
               <Image
                 src={location}
                 alt="contact us"

@@ -29,13 +29,15 @@ const ContactCard: React.FC<Props> = ({
       </div>
       <div className={styles.contactSection}>
         <div className={styles.contactItem}>
-          <Image
-            src={mail}
-            alt="Contact Enkash"
-            className={styles.help_icons}
-            width={22}
-            height={18}
-          />
+          <div className={styles.contactIcon}>
+            <Image
+              src={mail}
+              alt="Contact Enkash"
+              className={styles.help_icons}
+              width={22}
+              height={18}
+            />
+          </div>
           <ul>
             {email.map((e, idx) => (
               <li key={idx}>{e}</li>
@@ -44,13 +46,15 @@ const ContactCard: React.FC<Props> = ({
         </div>
         {phone && (
           <div className={styles.contactItem}>
-            <Image
-              src={call}
-              alt="Contact Enkash"
-              className={styles.help_icons}
-              width={22}
-              height={18}
-            />
+            <div className={styles.contactIcon}>
+              <Image
+                src={call}
+                alt="Contact Enkash"
+                className={styles.help_icons}
+                width={22}
+                height={18}
+              />
+            </div>
             <span>{phone}</span>
           </div>
         )}

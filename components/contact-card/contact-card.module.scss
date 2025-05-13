@@ -14,6 +14,8 @@
     border-radius: 16px 16px 0px 0px;
     color: white;
     height: 264px;
+    display: flex;
+    flex-direction: column;
     @include for-laptops {
       height: 224px;
     }
@@ -34,6 +36,15 @@
       gap: 1rem;
       font-size: 12px;
       color: $color-main-grey;
+      .contactIcon {
+        background: #61d6ff0d;
+        height: 46px;
+        width: 46px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
       @include for-laptops {
         font-size: 22px;
       }
