@@ -1,0 +1,62 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.contactBlock {
+  border-radius: 1rem;
+  margin: 0 auto;
+  background-color: #fff;
+
+  .topSection {
+    text-align: center;
+    background: $primary-gradient;
+    padding: 48px;
+    padding-bottom: 32px;
+    border-radius: 16px 16px 0px 0px;
+    color: white;
+    height: 264px;
+    display: flex;
+    flex-direction: column;
+    @include for-laptops {
+      height: 224px;
+    }
+  }
+
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    padding: 42px;
+    color: black;
+    border-radius: 0px 0px 16px 16px;
+
+    .contactItem {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 12px;
+      color: $color-main-grey;
+      .contactIcon {
+        background: #61d6ff0d;
+        height: 46px;
+        width: 46px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @include for-laptops {
+        font-size: 22px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .icon {
+        color: white;
+      }
+    }
+  }
+}
