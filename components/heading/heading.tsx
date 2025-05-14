@@ -9,7 +9,8 @@ export interface HeadingProps {
     | "electric-green"
     | "white"
     | "equity-blue"
-    | "rainy-blue";
+    | "rainy-blue"
+    | "main-grey";
   weight?: "3" | "4" | "5" | "6" | "7";
   italic?: boolean;
   useH1TagInHtml?: boolean; // New prop for using h1 tag
