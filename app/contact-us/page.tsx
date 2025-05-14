@@ -119,9 +119,7 @@ const page = () => {
             </div>
             <div className={` ${styles.addressDetail}`}>
               <Heading
-                title="Gate No 2, Plant, Godrej & Boyce, Bus Depot, 91 Springboard, 6,
-              Lal Bahadur Shastri Marg, opposite Vikhroli, Vikhroli West,
-              Mumbai, Maharashtra 400079"
+                title="91 Springboard BKC Kalina, 1st Floor & 2nd Floor, Kagalwala House, Plot No. 175, Behind Metro House CST Road, Kalina, Bandra Kurla Complex, Santacruz East, Mumbai, Maharashtra 400098"
                 size="h5"
                 weight="4"
                 useH2TagInHtml={true}
