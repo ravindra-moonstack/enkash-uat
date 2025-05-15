@@ -13,6 +13,7 @@ import {
   rbi,
   email,
   onlineDispute,
+  ppi,
 } from "."
 import Heading from "../heading/heading"
 import Link from "next/link"
@@ -544,7 +545,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     >
                       <div>
                         <Image
-                          src={onlineDispute}
+                          src={ppi}
                           alt="PPI FAQ's"
                           className={styles.help_icons}
                         />
