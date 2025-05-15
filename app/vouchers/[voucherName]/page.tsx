@@ -194,7 +194,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
     { name: "Voucher", url: "/vouchers" },
     {
       name: `${categoryNameMap.get(voucherCategory)}`,
-      url: `/voucher/category/${voucherData?.category}`,
+      url: `${voucherData?.category}`,
     },
     { name: voucherData?.name || "Voucher", url: `/voucher/${voucherName}` },
   ]
@@ -721,7 +721,11 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
               <div className="mt-4 desktop-only"></div>
               <div className="mt-5">
-                <PrimaryButton title="Explore Bolt" theme="blue" url="/vouchers" />
+                <PrimaryButton
+                  title="Explore Bolt"
+                  theme="blue"
+                  url="/vouchers"
+                />
                 <span className="mx-2"></span>
               </div>
             </div>
