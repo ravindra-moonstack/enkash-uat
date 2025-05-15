@@ -63,7 +63,7 @@ const ReceivableProducts = [
         description: "Create multiple customer collection accounts on the go",
         imageSrc: virtualAccounts,
         imageSrcHovered: virtualAccountsFilled,
-        link: "/collect/virtual-account",
+        link: "/virtual-account",
       },
       {
         name: "Instant Settlements",

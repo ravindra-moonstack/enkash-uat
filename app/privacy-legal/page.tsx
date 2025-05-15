@@ -1,13 +1,13 @@
-import Header from "@/components/header/header";
-import React from "react";
-import styles from "./page.module.scss";
-import leftBlueGradient from "./gradient.png";
-import Image from "next/image";
-import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header"
+import React from "react"
+import styles from "./page.module.scss"
+import leftBlueGradient from "./gradient.png"
+import Image from "next/image"
+import Footer from "@/components/footer/footer"
 
-import { Metadata } from "next";
-import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import StructuredData from "@/components/head/structuredData"
 
 export const metadata: Metadata = generateMetaData({
   title: "Privacy & Legal | EnKash",
@@ -15,7 +15,7 @@ export const metadata: Metadata = generateMetaData({
   alternates: {
     canonical: "https://www.enkash.com/privacy-legal/",
   },
-});
+})
 
 const privacyPolicy = () => {
   return (
@@ -43,7 +43,7 @@ const privacyPolicy = () => {
                         <p className="c31 text-right">
                           <span> </span>
                           <span className="c0 c3">
-                            Last Updated on 22<sup>nd</sup> April, 2023
+                            Last Updated on 7<sup>th</sup> April, 2025
                           </span>
                         </p>
                         <p className="c5">
@@ -1609,7 +1609,7 @@ const privacyPolicy = () => {
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default privacyPolicy;
+export default privacyPolicy

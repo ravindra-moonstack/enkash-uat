@@ -101,9 +101,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/auto-collect/">Auto Collect</Link>
                   </li>
                   <li>
-                    <Link href="/collect/virtual-account/">
-                      Virtual Accounts
-                    </Link>
+                    <Link href="/virtual-account/">Virtual Accounts</Link>
                   </li>
                   <li>
                     <Link href="/e-nach/">e-NACH</Link>
