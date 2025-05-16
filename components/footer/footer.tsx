@@ -13,6 +13,7 @@ import {
   rbi,
   email,
   onlineDispute,
+  ppi,
 } from "."
 import Heading from "../heading/heading"
 import Link from "next/link"
@@ -532,6 +533,25 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                         </span>
                       </Link>
                     </div>
+                  </li>
+                  <li>
+                    <a
+                      href="/ppi-faq.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ textDecoration: "none", color: "inherit" }}
+                    >
+                      <div>
+                        <Image
+                          src={ppi}
+                          alt="PPI FAQ's"
+                          className={styles.help_icons}
+                        />
+                        <span className={`ms-md-3 ms-2 ${styles.support_text}`}>
+                          PPI FAQ's
+                        </span>
+                      </div>
+                    </a>
                   </li>
                 </ul>
               </div>

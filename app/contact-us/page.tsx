@@ -63,7 +63,7 @@ const page = () => {
       </div>
 
       <div className={styles.partner}>
-        <div className="col-8 mx-auto mx-xl-0">
+        <div className="col-12 col-xl-8 mx-auto mx-xl-0">
           <div className={styles.grid}>
             <ContactCard
               title="For existing "
@@ -97,6 +97,7 @@ const page = () => {
 
       <div className={`${styles.ourOffice}`}>
         <Heading title="Our Offices " size="h2" weight="6" />
+
         <div className={`${styles.grid}`}>
           <div className={`${styles.address}`}>
             <div className={`${styles.locationIcon}`}>
@@ -113,15 +114,17 @@ const page = () => {
               {" "}
               <Heading title="Mumbai" size="h2" weight="6" />
               <div className={` ${styles.spaceBox}`}>
-                <p>(Registered Office)</p>
+                <Heading title="(Registered Office)" size="h4" weight="3" />
               </div>
             </div>
-
-            <p className={` ${styles.description}`}>
-              Gate No 2, Plant, Godrej & Boyce, Bus Depot, 91 Springboard, 6,
-              Lal Bahadur Shastri Marg, opposite Vikhroli, Vikhroli West,
-              Mumbai, Maharashtra 400079
-            </p>
+            <div className={` ${styles.addressDetail}`}>
+              <Heading
+                title="91 Springboard BKC Kalina, 1st Floor & 2nd Floor, Kagalwala House, Plot No. 175, Behind Metro House CST Road, Kalina, Bandra Kurla Complex, Santacruz East, Mumbai, Maharashtra 400098"
+                size="h5"
+                weight="4"
+                useH2TagInHtml={true}
+              />
+            </div>
           </div>
 
           <div className={`${styles.address}`}>
@@ -140,12 +143,16 @@ const page = () => {
               <Heading title="Gurugram" size="h2" weight="6" />
               <div className={` ${styles.spaceBox}`}></div>
             </div>
-
-            <p className={` ${styles.description}`}>
-              3rd Floor, Beyond Just Work, Plot No. 378-379, Udyog Vihar Phase 4
+            <div className={` ${styles.addressDetail}`}>
+              <Heading
+                title="3rd Floor, Beyond Just Work, Plot No. 378-379, Udyog Vihar Phase 4
               Rd, near Nokia Building, Electronic City, Phase IV, Udyog Vihar,
-              Sector 19, Gurugram, Haryana 122015
-            </p>
+              Sector 19, Gurugram, Haryana 122015"
+                size="h5"
+                weight="4"
+                useH2TagInHtml={true}
+              />
+            </div>
           </div>
 
           <div className={`${styles.address}`}>
@@ -164,11 +171,16 @@ const page = () => {
               <Heading title="Pune" size="h2" weight="6" />
               <div className={` ${styles.spaceBox}`}></div>
             </div>
-            <p className={` ${styles.description}`}>
-              91 Springboard Business Hub Private Limited, Sadanand Business
+            <div className={` ${styles.addressDetail}`}>
+              <Heading
+                title="91 Springboard Business Hub Private Limited, Sadanand Business
               Center (SBC), 9th Floor NH 48 Pashan Highway Side Road, Baner,
-              Pune, Maharashtra, 411045
-            </p>
+              Pune, Maharashtra, 411045"
+                size="h5"
+                weight="4"
+                useH2TagInHtml={true}
+              />
+            </div>
           </div>
         </div>
       </div>
