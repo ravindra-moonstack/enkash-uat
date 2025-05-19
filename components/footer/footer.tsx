@@ -366,6 +366,9 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                   <li>
                     <Link href="/sales?source=getstarted_footer">Sales</Link>
                   </li>
+                  <li>
+                    <Link href="/contact-us">Contact Us</Link>
+                  </li>
                 </ul>
               </div>
             </div>
