@@ -40,8 +40,8 @@ const MarketingBannerMobile: React.FC<MarketingBannerProps> = ({
       // }
     }
 
-    // localStorage.setItem("lastBannerTimestamp", currentTime.toString())
-    // setShowBanner(true)
+    localStorage.setItem("lastBannerTimestamp", currentTime.toString())
+    setShowBanner(true)
   }, [POPUP_INTERVAL_HOURS, POPUP_INTERVAL_MS])
 
   // useEffect(() => {
