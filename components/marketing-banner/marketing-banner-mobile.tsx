@@ -5,6 +5,8 @@ import {
   bannerBrandsMobile,
   bannerStackBlue,
   crossIcon,
+  whiteArrow,
+  closeIconBlack,
 } from "../header"
 import Link from "next/link"
 import styles from "./marketing-banner.module.scss"
@@ -52,32 +54,38 @@ const MarketingBannerMobile: React.FC<MarketingBannerProps> = ({
         {showBanner && (
           <div className={styles.mobile_banner_light_blue}>
             <div className={styles.text}>
-              <div className="d-flex flex-column align-items-start">
-                <div>Finally, a Payment Gateway Truly Built for SMBs & Startups</div>
+              <div className="d-flex align-items-start">
+                <Link className={styles.button} href="/payment-gateway">
+                  IT'S HERE:
+                </Link>
+                <div>
+                  Finally, a Payment Gateway Truly Built for SMBs & Startups
+                </div>
               </div>
+            </div>
+            <div className={styles.buttons_container}>
+              <Link href="/payment-gateway" target="_blank">
+                <div>
+                  <button className={styles.primary_button}>
+                    Explore Now
+                    <Image
+                      className={`ms-2  ${styles} `}
+                      src={whiteArrow}
+                      alt="action image"
+                      width={14}
+                    />
+                  </button>
+                </div>
+              </Link>
               <Image
-                src={bannerBrandsMobile}
-                alt="graffeti icon"
-                width={80}
-                className={styles.brand_imges}
+                className={styles.cross_image}
+                src={closeIconBlack}
+                alt="cross icon"
+                onClick={() => {
+                  setShowBanner(false)
+                }}
               />
             </div>
-            <Link
-              className={styles.button}
-              href={
-                "https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=bolt_top_banner"
-              }
-            >
-              Buy Now
-            </Link>
-            <Image
-              className={styles.cross_image}
-              src={crossIcon}
-              alt="cross icon"
-              onClick={() => {
-                setShowBanner(false)
-              }}
-            />
           </div>
         )}
       </div>

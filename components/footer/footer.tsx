@@ -457,6 +457,15 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                   <li>
                     <Link href="/refund-policy/">Refund Policy</Link>
                   </li>
+                  <li>
+                    <a
+                      href="/ScheduleofCard-RelatedCharges.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Card Related Charges
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

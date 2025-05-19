@@ -6,6 +6,7 @@ import {
   crossIcon,
   bannerDiamond,
   whiteArrow,
+  closeIconBlack,
 } from "../header"
 import Link from "next/link"
 import styles from "./marketing-banner.module.scss"
@@ -54,16 +55,12 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
             alt="brands"
             width={174}
             height={64}
-            className="me-4"
+            className={`me-4 ${styles.bannerImg} `}
           />
+          <div></div>
           <div className={styles.text}>
             <div className="d-flex">
-              <Link
-                className={styles.button}
-                href={
-                  "https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=bolt_top_banner"
-                }
-              >
+              <Link className={styles.button} href="/payment-gateway">
                 IT'S HERE:
               </Link>
               <div>
@@ -72,10 +69,7 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
             </div>
           </div>
           <div className={styles.buttons_container}>
-            <Link
-              href="https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=website&utm_campaign=bolt_top_banner"
-              target="_blank"
-            >
+            <Link href="/payment-gateway" target="_blank">
               <div>
                 <button className={styles.primary_button}>
                   Explore Now
@@ -88,6 +82,14 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
                 </button>
               </div>
             </Link>
+            <Image
+              className={styles.cross_image}
+              src={closeIconBlack}
+              alt="cross icon"
+              onClick={() => {
+                setShowBanner(false)
+              }}
+            />
           </div>
         </div>
       )}

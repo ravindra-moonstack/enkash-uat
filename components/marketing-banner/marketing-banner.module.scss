@@ -75,7 +75,10 @@
   @include for-large-screen {
     padding: 15px 20px 15px 140px;
   }
-
+  .bannerImg {
+    position: absolute;
+    bottom: 0;
+  }
   .button {
     background-color: #3185fc;
     border: none;
@@ -168,10 +171,10 @@
     .button {
       margin-top: 10px;
       margin-left: 25px;
-      background-color: $color-white;
+      background-color: #3185fc;
       color: $color-equity-blue;
       border: none;
-      border-radius: 20px;
+      border-radius: 4px;
       padding: 2px 20px;
       font-weight: 500;
       text-decoration: none;
@@ -184,13 +187,13 @@
       font-size: 16px;
       display: flex;
       align-items: center;
-      color: $color-white;
+      color: $color-equity-blue;
     }
 
     .cross_image {
       position: absolute;
-      top: 15px;
-      right: 10px;
+      top: 6px;
+      right: 4px;
       display: flex;
       align-items: center;
       height: 20px;
@@ -199,24 +202,39 @@
       cursor: pointer;
     }
   }
+  .buttons_container {
+    display: flex;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 19px;
+    text-align: center;
 
+    .primary_button {
+      border-radius: 20px;
+      background-color: $color-equity-blue;
+      color: $color-white;
+      border: none;
+      padding: 5px 20px;
+      margin-top: 1rem;
+    }
+  }
   .mobile_banner_light_blue {
     position: relative;
-    background-color: $color-rainy-blue;
+    background-color: $color-white;
     display: flex;
     padding: 15px 25px;
     justify-content: space-evenly;
     flex-direction: column;
 
     .button {
-      margin-top: 10px;
-      margin-left: 0px;
-      background-color: $color-white;
-      color: $color-secondry-black;
+      margin-top: 0px;
+      margin-right: 10px;
+      background-color: #3185fc;
+      color: $color-white;
       border: none;
-      border-radius: 16px;
+      border-radius: 4px;
       padding: 2px 20px;
-      font-weight: 600;
+      font-weight: 500;
       text-decoration: none;
       width: max-content;
       cursor: pointer;
@@ -228,7 +246,7 @@
       font-weight: 600;
       display: flex;
       align-items: center;
-      color: $color-black;
+      color: $color-equity-blue;
 
       .bottom_powered {
         margin: 0;
@@ -244,8 +262,8 @@
 
     .cross_image {
       position: absolute;
-      top: 15px;
-      right: 10px;
+      top: 6px;
+      right: 4px;
       display: flex;
       align-items: center;
       height: 20px;
