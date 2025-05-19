@@ -37,7 +37,7 @@ const termCondition = () => {
                     <div className="enkash-term-condtions word-to-html-null">
                       <div>
                         <h1 className="term-condition-title mb-5 mt-0 mt-md-12 color-equity-blue">
-                          Terms And Conditions For Use Of The Enkash Services
+                          Terms And Conditions For Use Of The EnKash Services
                         </h1>
                         <p className="mt-5">
                           This document is an electronic record in terms of the
