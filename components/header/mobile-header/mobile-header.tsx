@@ -25,6 +25,7 @@ import ReceivableProducts from "@/components/header/data/receivable-products"
 import payableProducts from "../data/payable-products"
 import brandVouchersProducts from "../data/brand-voucher-products"
 import TopBannerMobile from "@/components/top-banner/top-banner-mobile"
+import MarketingBannerMobile from "@/components/marketing-banner/marketing-banner-mobile"
 
 const motherProductsList = [
   ReceivableProducts,
@@ -50,7 +51,7 @@ const MobileHeader = ({ utmSource }: props) => {
   return (
     <div>
       {/* <TopBannerMobile /> */}
-
+      <MarketingBannerMobile />
       <div className={`w-100 absolute z-10 bg-indi-volt`}>
         <Hamburger setCurrentStep={setCurrentStep} currentStep={currentStep} />
 
