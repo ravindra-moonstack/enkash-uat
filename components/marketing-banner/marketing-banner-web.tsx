@@ -34,9 +34,9 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
       const timeSinceLastPopup = currentTime - parseInt(lastPopupTimestamp, 10)
 
       //check if last session was within POPUP_INTERVAL_HOURS
-      if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
-        return
-      }
+      // if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
+      //   return
+      // }
     }
 
     localStorage.setItem("lastBannerTimestamp", currentTime.toString())
@@ -60,7 +60,12 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
           <div></div>
           <div className={styles.text}>
             <div className="d-flex">
-              <Link className={styles.button} href="/payment-gateway">
+              <Link
+                className={styles.button}
+                href={
+                  "https://www.enkash.com/payment-gateway/?utm_source=website&utm_medium=banner&utm_campaign=pg-launch"
+                }
+              >
                 IT'S HERE:
               </Link>
               <div>
@@ -69,7 +74,12 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
             </div>
           </div>
           <div className={styles.buttons_container}>
-            <Link href="/payment-gateway" target="_blank">
+            <Link
+              href={
+                "https://www.enkash.com/payment-gateway/?utm_source=website&utm_medium=banner&utm_campaign=pg-launch"
+              }
+              target="_blank"
+            >
               <div>
                 <button className={styles.primary_button}>
                   Explore Now
