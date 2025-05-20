@@ -34,9 +34,9 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
       const timeSinceLastPopup = currentTime - parseInt(lastPopupTimestamp, 10)
 
       //check if last session was within POPUP_INTERVAL_HOURS
-      if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
-        return
-      }
+      // if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
+      //   return
+      // }
     }
 
     localStorage.setItem("lastBannerTimestamp", currentTime.toString())
@@ -68,7 +68,7 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
               >
                 IT'S HERE:
               </Link>
-              <div className={`d-flex align-items-center `}>
+              <div>
                 Finally, a Payment Gateway Truly Built for SMBs & Startups
               </div>
             </div>
@@ -92,6 +92,14 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
                 </button>
               </div>
             </Link>
+            <Image
+              className={styles.cross_image}
+              src={closeIconBlack}
+              alt="cross icon"
+              onClick={() => {
+                setShowBanner(false)
+              }}
+            />
           </div>
         </div>
       )}
