@@ -81,14 +81,6 @@ const MarketingBannerMobile: React.FC<MarketingBannerProps> = ({
                   </button>
                 </div>
               </Link>
-              <Image
-                className={styles.cross_image}
-                src={closeIconBlack}
-                alt="cross icon"
-                onClick={() => {
-                  setShowBanner(false)
-                }}
-              />
             </div>
           </div>
         )}

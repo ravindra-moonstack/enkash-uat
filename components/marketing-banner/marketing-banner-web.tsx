@@ -68,7 +68,7 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
               >
                 IT'S HERE:
               </Link>
-              <div>
+              <div className={`d-flex align-items-center `}>
                 Finally, a Payment Gateway Truly Built for SMBs & Startups
               </div>
             </div>
@@ -92,14 +92,6 @@ const MarketingBannerWeb: React.FC<MarketingBannerProps> = ({
                 </button>
               </div>
             </Link>
-            <Image
-              className={styles.cross_image}
-              src={closeIconBlack}
-              alt="cross icon"
-              onClick={() => {
-                setShowBanner(false)
-              }}
-            />
           </div>
         </div>
       )}
