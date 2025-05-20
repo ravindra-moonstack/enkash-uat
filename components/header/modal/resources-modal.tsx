@@ -1,28 +1,28 @@
-import Image from "next/image";
-import { useRef, useState } from "react";
-import styles from "./modal.module.scss";
-import resources from "../data/resources";
-import { blueforwardArrow } from "..";
-import resourcesData from "../blog-data.json";
-import Link from "next/link";
+import Image from "next/image"
+import { useRef, useState } from "react"
+import styles from "./modal.module.scss"
+import resources from "../data/resources"
+import { blueforwardArrow } from ".."
+import resourcesData from "../blog-data.json"
+import Link from "next/link"
 
 type Resource = {
-  image: string;
-  imageAlt: string;
-  title: string;
-  date: string;
-  description: string;
-  link: string;
-};
+  image: string
+  imageAlt: string
+  title: string
+  date: string
+  description: string
+  link: string
+}
 
 const ResourcesModal = () => {
   const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
     number | null
-  >(null);
-  const refs = resources.map(() => useRef<HTMLDivElement | null>(null));
+  >(null)
+  const refs = resources.map(() => useRef<HTMLDivElement | null>(null))
 
   // Use the blog data from resourcesData
-  const blogData: Resource = resourcesData;
+  const blogData: Resource = resourcesData
 
   return (
     <div className={`row mt-4 ${styles.container}`}>
@@ -67,52 +67,60 @@ const ResourcesModal = () => {
         <div className={styles.box_shadow_left}></div>
         <div className="d-flex flex-column ps-4">
           <div>
-            <div
-              className={`${styles.resource_latest_read_container} mb-3 d-flex align-items-center`}
-            >
-              <div className={styles.latest_read_text}>Latest Reads</div>
-              <Image
-                className="ms-3"
-                src={blueforwardArrow}
-                alt="Read Enkash blog post"
-                width={60}
-              />
-            </div>
+            {" "}
+            <a href={blogData.link}>
+              <div
+                className={`${styles.resource_latest_read_container} mb-3 d-flex align-items-center`}
+              >
+                {" "}
+                <div className={styles.latest_read_text}>Latest Reads</div>
+                <Image
+                  className="ms-3"
+                  src={blueforwardArrow}
+                  alt="Read Enkash blog post"
+                  width={60}
+                />{" "}
+              </div>
+            </a>
           </div>
           <div>
-            <Image
-              src={blogData.image}
-              alt={blogData.imageAlt}
-              width={450}
-              height={250}
-            />
+            <a href={blogData.link}>
+              <Image
+                src={blogData.image}
+                alt={blogData.imageAlt}
+                width={450}
+                height={250}
+              />
+            </a>
           </div>
-          <div
-            className={`mb-2 mt-2 cursor-pointer ${styles.resource_modal_blog_title}`}
-          >
-            {blogData.title}
-          </div>
+          <a href={blogData.link}>
+            <div
+              className={`mb-2 mt-2 cursor-pointer ${styles.resource_modal_blog_title}`}
+            >
+              {blogData.title}
+            </div>
+          </a>
           <div className="color-slate-grey mb-2">{blogData.date}</div>
           <div className={`mb-3 ${styles.resource_modal_blog_descrption}`}>
             {blogData.description}
           </div>
-          <div
-            className={`${styles.resource_arrow_icon} mb-2 color-equity-blue`}
-          >
-            Read more
-            <a href={blogData.link}>
+          <a href={blogData.link}>
+            <div
+              className={`${styles.resource_arrow_icon} mb-2 color-equity-blue`}
+            >
+              Read more
               <Image
                 className="ms-2"
                 width={40}
                 src={blueforwardArrow}
                 alt="Read Enkash blog post"
               />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ResourcesModal;
+export default ResourcesModal
