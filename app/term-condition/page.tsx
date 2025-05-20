@@ -1,13 +1,13 @@
-import Header from "@/components/header/header";
-import React from "react";
-import styles from "./page.module.scss";
-import leftBlueGradient from "./gradient.png";
-import Image from "next/image";
-import Footer from "@/components/footer/footer";
+import Header from "@/components/header/header"
+import React from "react"
+import styles from "./page.module.scss"
+import leftBlueGradient from "./gradient.png"
+import Image from "next/image"
+import Footer from "@/components/footer/footer"
 
-import { Metadata } from "next";
-import generateMetaData from "@/common/utils/metaData";
-import StructuredData from "@/components/head/structuredData";
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import StructuredData from "@/components/head/structuredData"
 
 export const metadata: Metadata = generateMetaData({
   title: " Terms And Conditions For Use Of The Enkash Services | EnKash",
@@ -15,7 +15,7 @@ export const metadata: Metadata = generateMetaData({
   alternates: {
     canonical: "https://www.enkash.com/term-condition/",
   },
-});
+})
 
 const termCondition = () => {
   return (
@@ -37,7 +37,7 @@ const termCondition = () => {
                     <div className="enkash-term-condtions word-to-html-null">
                       <div>
                         <h1 className="term-condition-title mb-5 mt-0 mt-md-12 color-equity-blue">
-                          Terms And Conditions For Use Of The Enkash Services
+                          Terms And Conditions For Use Of The EnKash Services
                         </h1>
                         <p className="mt-5">
                           This document is an electronic record in terms of the
@@ -54,13 +54,13 @@ const termCondition = () => {
                           irrevocably bound by these “Terms and Conditions” and
                           all of the terms set out herein. If You do not agree
                           with any of these Terms and Conditions, You must
-                          immediately cease accessing and/or using the Olympus
+                          immediately cease accessing and/or using the EnKash
                           Site or other portals, or the Services being provided
                           under these Terms and Conditions. Your acceptance of
                           these Terms and Conditions will operate as a binding
                           agreement between “You” and Nehat Tech Solutions
                           Private Limited, a company incorporated under the
-                          Companies Act, 2013 ("Olympus"/ “Us”/”Our”) in respect
+                          Companies Act, 2013 ("EnKash"/ “Us”/”Our”) in respect
                           of Your use of the Services.
                         </p>
                         <p>
@@ -99,7 +99,7 @@ const termCondition = () => {
                           shall have all right, title, and interest in enforcing
                           the terms and conditions of such appropriate
                           agreement. The terms of service are provided in
-                          General Terms and Conditions to Olympus Services –
+                          General Terms and Conditions to EnKash Services –
                           Schedule A read with Special Terms and Conditions to
                           the specific services.
                         </p>
@@ -147,11 +147,11 @@ const termCondition = () => {
                           Your failure to share the required documents or
                           details in accordance with our internal Merchant
                           Onboarding and Know Your Customer Policy shall entitle
-                          Us to put Your onboarding on hold. Olympus may also
-                          refrain from providing access to the Olympus Platform
+                          Us to put Your onboarding on hold. EnKash may also
+                          refrain from providing access to the EnKash Platform
                           or Services in the event, You fail to provide such
-                          documents as required by Us. Olympus may choose to on
-                          a case-to-case basis activate certain Services in case
+                          documents as required by Us. EnKash may choose to on a
+                          case-to-case basis activate certain Services in case
                           the documents as sought by Us are not provided by You.
                           However, such an accommodation will not entitle You to
                           continue with the use of Services unless the KYC
@@ -161,8 +161,8 @@ const termCondition = () => {
                         <p>
                           You shall ensure that the documents so provided are
                           true and correct. You shall also provide the original
-                          of the documents so produced to Olympus to complete
-                          the exercise related to onboarding for verification.
+                          of the documents so produced to EnKash to complete the
+                          exercise related to onboarding for verification.
                         </p>
                         <p>
                           We may choose to call for further or additional
@@ -178,21 +178,21 @@ const termCondition = () => {
                         </p>
                         <p>
                           Failure to provide correct details or to not to
-                          provide relevant details or to cheat Olympus to
-                          provide Services by providing false information, would
-                          entitle Olympus to terminate the Services with
-                          immediate effect and without any notice whatsoever.
-                          Olympus shall also be entitled to hold the settlement
-                          amount for a period of at least 180 days from the date
-                          of termination of Services or until such date that it
-                          deems fit and proper whichever date is later.
+                          provide relevant details or to cheat EnKash to provide
+                          Services by providing false information, would entitle
+                          EnKash to terminate the Services with immediate effect
+                          and without any notice whatsoever. EnKash shall also
+                          be entitled to hold the settlement amount for a period
+                          of at least 180 days from the date of termination of
+                          Services or until such date that it deems fit and
+                          proper whichever date is later.
                         </p>
                         <p>
-                          Olympus shall keep the documents and details submitted
+                          EnKash shall keep the documents and details submitted
                           to it confidential and shall not disclose such
                           information to any third party except to the law
                           enforcement agencies if such law enforcement agencies
-                          call for such information. Olympus may use the
+                          call for such information. EnKash may use the
                           documents and details so submitted for rendering
                           additional Services to You.
                         </p>
@@ -203,18 +203,18 @@ const termCondition = () => {
                         </p>
                         <p>
                           You shall not, in any event, undertake Services of
-                          Olympus for the business as enlisted in Attachment A
-                          to these Terms and Conditions. You shall also not
+                          EnKash for the business as enlisted in Attachment A to
+                          these Terms and Conditions. You shall also not
                           misrepresent that You shall take Services for a line
                           of business that is permitted and not disallowed by
-                          Olympus but instead use the Services for a Negative,
+                          EnKash but instead use the Services for a Negative,
                           Risky and Restricted Categories of business as
                           enshrined in Attachment A. In case, You showed any
-                          indulgence by using the Services of Olympus for the
+                          indulgence by using the Services of EnKash for the
                           Negative, Risky and Restricted Categories of business,
-                          Olympus shall be free to take appropriate legal remedy
+                          EnKash shall be free to take appropriate legal remedy
                           against You and all the necessary steps available to
-                          it in law. Olympus shall be free to report Your
+                          it in law. EnKash shall be free to report Your
                           indulgence in the Negative, Risky and Restricted
                           Categories of business to the relevant authorities for
                           necessary action.
@@ -223,8 +223,8 @@ const termCondition = () => {
                           <strong>Access to Dashboard</strong>
                         </p>
                         <p>
-                          After You have registered on the Our Website, Olympus
-                          will provide you with the access to Olympus Platform
+                          After You have registered on the Our Website, EnKash
+                          will provide you with the access to EnKash Platform
                           and the Dashboard. With access to Dashboard, You would
                           be able to activate and deactivate Services that You
                           wish to receive or no longer wish to receive from Us.
@@ -245,19 +245,17 @@ const termCondition = () => {
                           appropriate services.
                         </p>
                         <p className="mb-3 mt-4">
-                          <strong>
-                            Contents of the website of the Olympus
-                          </strong>
+                          <strong>Contents of the website of the EnKash</strong>
                         </p>
                         <p>
-                          The contents of the website of Olympus are proprietary
-                          to Olympus and You will not have any authority to
-                          claim any intellectual property rights, title, or
-                          interest in the contents of the website of Olympus.
+                          The contents of the website of EnKash are proprietary
+                          to EnKash and You will not have any authority to claim
+                          any intellectual property rights, title, or interest
+                          in the contents of the website of EnKash.
                         </p>
                         <p>
                           The structure, colour, and other creative details of
-                          the Dashboard are proprietary to Olympus and You will
+                          the Dashboard are proprietary to EnKash and You will
                           not have any authority to claim any intellectual
                           property rights, title, or interest in the creative
                           details of the user interface of the Dashboard.
@@ -309,46 +307,46 @@ const termCondition = () => {
                         <p>
                           It is agreed between the Parties that during the Term
                           any promotion or publicity of the Service would always
-                          carry ‘Merchant’ and ‘Olympus’ service marks or the
-                          appropriate Merchant and Olympus marks as may be
-                          agreed between the Parties.
+                          carry ‘Merchant’ and ‘EnKash’ service marks or the
+                          appropriate Merchant and EnKash marks as may be agreed
+                          between the Parties.
                         </p>
                         <p className="mb-3 mt-4">
-                          <strong>API Integration with Olympus</strong>
+                          <strong>API Integration with EnKash</strong>
                         </p>
                         <p>
-                          You shall not integrate with Olympus for any Services
+                          You shall not integrate with EnKash for any Services
                           or use any plugins or other software development kits
                           unless You have completed the KYC and entered into an
                           appropriate agreement with Us. In case, You choose to
                           integrate Services without complying with the request
                           in this clause, Your Services would be liable for
-                          termination by Olympus with immediate effect.
+                          termination by EnKash with immediate effect.
                         </p>
                         <p>
-                          Olympus has integrated the Olympus Platform with
-                          several financial institutions. The integration of the
-                          Olympus Platform is done in accordance with the
-                          documentation of the Application Programming Interface
-                          (‘API’) so provided by the financial institutions.
+                          EnKash has integrated the EnKash Platform with several
+                          financial institutions. The integration of the EnKash
+                          Platform is done in accordance with the documentation
+                          of the Application Programming Interface (‘API’) so
+                          provided by the financial institutions.
                         </p>
                         <p>
                           You may choose to integrate with the APIs provided by
-                          Olympus in accordance with the documentation provided
-                          by Olympus for such integration. You shall be
-                          responsible for such integration with the Olympus
+                          EnKash in accordance with the documentation provided
+                          by EnKash for such integration. You shall be
+                          responsible for such integration with the EnKash
                           Platform.
                         </p>
                         <p>
-                          Olympus shall be responsible for the maintenance,
-                          development, and management of the Olympus Platform.
-                          Olympus shall also ensure to secure the Olympus
-                          Platform secure in accordance with the prescribed
-                          guidelines from time to time by financial institutions
-                          or Reserve Bank of India or any other regulator.
-                          Olympus shall ensure to take steps related to business
-                          continuity and disaster recovery of the Olympus
-                          Platform in accordance with prescribed guidelines.
+                          EnKash shall be responsible for the maintenance,
+                          development, and management of the EnKash Platform.
+                          EnKash shall also ensure to secure the EnKash Platform
+                          secure in accordance with the prescribed guidelines
+                          from time to time by financial institutions or Reserve
+                          Bank of India or any other regulator. EnKash shall
+                          ensure to take steps related to business continuity
+                          and disaster recovery of the EnKash Platform in
+                          accordance with prescribed guidelines.
                         </p>
                         <p>
                           You shall ensure that its website or its web
@@ -377,7 +375,7 @@ const termCondition = () => {
                           of services.
                         </p>
                         <p>
-                          Olympus may call upon You to share the relevant
+                          EnKash may call upon You to share the relevant
                           information about the transactions with the Customer
                           or the information gathered by the Merchant about the
                           Customer for its internal audits, or in case such
@@ -386,8 +384,8 @@ const termCondition = () => {
                           agency or the regulators.
                         </p>
                         <p>
-                          Olympus shall provide the Merchant encryption key or
-                          an activation key for activation of the Services.
+                          EnKash shall provide the Merchant encryption key or an
+                          activation key for activation of the Services.
                           Merchant shall not share the encryption key or an
                           activation key with any other person or use the
                           activation key to activate integration on a website or
@@ -399,19 +397,19 @@ const termCondition = () => {
                         </p>
                         <p>
                           You shall not engage in any form of fraudulent
-                          transactions and use the Services of Olympus for
+                          transactions and use the Services of EnKash for
                           perpetrating a criminal offense in any manner thereof.
                           Any scheme or structure to defraud the customer by You
-                          while using Services of Olympus shall be reported to
-                          the relevant law enforcement authorities. Olympus
-                          shall also keep a right to withdraw such Services in
-                          such a case.
+                          while using Services of EnKash shall be reported to
+                          the relevant law enforcement authorities. EnKash shall
+                          also keep a right to withdraw such Services in such a
+                          case.
                         </p>
                         <p>
-                          In the event, Olympus is intimated, by the Acquiring
+                          In the event, EnKash is intimated, by the Acquiring
                           Bank or a Card Association, that a Customer has
                           reported an unauthorized debit of the Customer's
-                          payment instrument, then Olympus shall be entitled to
+                          payment instrument, then EnKash shall be entitled to
                           suspend the settlement of the amount associated with
                           the fraudulent transaction during the pendency of
                           inquiries, investigations, and resolution thereof by
@@ -422,9 +420,9 @@ const termCondition = () => {
                           the terms of the agreement.
                         </p>
                         <p>
-                          Further, Olympus also reserves the right to close,
+                          Further, EnKash also reserves the right to close,
                           suspend, limit or put on hold the access to Your
-                          account with Olympus and/ or the funds available
+                          account with EnKash and/ or the funds available
                           therein, including Settlements Amount under inter alia
                           the following scenarios:
                         </p>
@@ -445,7 +443,7 @@ const termCondition = () => {
                           <li>
                             For violation of any of the provisions of any other
                             agreement that the Merchant has entered into or
-                            might enter into with Olympus; and
+                            might enter into with EnKash; and
                           </li>
                           <li>
                             For violation of any of the applicable laws by the
@@ -454,29 +452,28 @@ const termCondition = () => {
                         </ol>
                         <p>
                           Such right to close, suspend, limit or put on hold the
-                          Merchant's access to the account with Olympus shall
+                          Merchant's access to the account with EnKash shall
                           continue till such time that the Merchant submits
                           genuine KYC documents or credentials to the
                           satisfaction of the relevant authorities as per the
                           extant rules, regulations or guidelines with regard to
-                          KYC, as well as to the satisfaction of Olympus without
-                          prejudice to any other legal remedy that Olympus is
+                          KYC, as well as to the satisfaction of EnKash without
+                          prejudice to any other legal remedy that EnKash is
                           entitled to prefer as per applicable law.
                         </p>
                         <p>
                           It is agreed between the Parties that in the event any
-                          amount to be received from the Merchant by Olympus due
+                          amount to be received from the Merchant by EnKash due
                           to excessive chargeback or refund or any other issues
                           relating to any complaints of the Merchant’s Customers
                           and is over and above the amount which has been
-                          withheld by Olympus, Olympus shall have a right to
-                          raise an invoice relating to such payments to be made
-                          and the Merchant agrees to make payments of such
-                          invoice within a period of 15 (fifteen) days of
-                          receiving the invoice. Such unpaid amounts by the
-                          Merchant shall be subject to interest, chargeable at
-                          the rate of two percent (2%) per month after the
-                          expiry of 15 days.
+                          withheld by EnKash, EnKash shall have a right to raise
+                          an invoice relating to such payments to be made and
+                          the Merchant agrees to make payments of such invoice
+                          within a period of 15 (fifteen) days of receiving the
+                          invoice. Such unpaid amounts by the Merchant shall be
+                          subject to interest, chargeable at the rate of two
+                          percent (2%) per month after the expiry of 15 days.
                         </p>
                         <p className="mb-3 mt-4">
                           <strong> Representations & Warranties</strong>
@@ -545,7 +542,7 @@ const termCondition = () => {
                           Merchant shall ensure that either the Merchant or any
                           of its employees shall not reverse engineer, decompile
                           or disassemble any software shared/disclosed by
-                          Olympus.
+                          EnKash.
                         </p>
                         <p>
                           Each party acknowledges that monetary damages may not
@@ -612,15 +609,15 @@ const termCondition = () => {
                           Notwithstanding anything contained in these Terms and
                           Conditions, the Merchant hereby undertakes and agrees
                           to indemnify, protect against liability and hold
-                          harmless Olympus against all actions, proceedings,
+                          harmless EnKash against all actions, proceedings,
                           claims, liabilities (including statutory liabilities),
                           penalties, demands and costs (including without
-                          limitation, legal costs of Olympus on a
+                          limitation, legal costs of EnKash on a
                           solicitor/attorney and own client basis), awards,
                           damages, losses and/or expenses, however, arising in
                           relation to any claim or proceeding brought by any
                           person other than a Party to the Agreement against
-                          Olympus in respect of any act, deed, negligence,
+                          EnKash in respect of any act, deed, negligence,
                           omission, misrepresentation, default, misconduct,
                           non-performance or fraud by the Merchant, its
                           employees, contractors, agents, Customers or any
@@ -658,15 +655,15 @@ const termCondition = () => {
                         <p>
                           Notwithstanding anything stated under this Agreement
                           including the obligation to indemnify the Merchant,
-                          the aggregate liability of Olympus to the Merchant
-                          from any cause whatsoever shall not, in any event,
-                          exceed the sum equivalent to the preceding one (1)
-                          month’s aggregate Consideration earned by Olympus
-                          under this agreement from the date of occurrence of
-                          such liability.
+                          the aggregate liability of EnKash to the Merchant from
+                          any cause whatsoever shall not, in any event, exceed
+                          the sum equivalent to the preceding one (1) month’s
+                          aggregate Consideration earned by EnKash under this
+                          agreement from the date of occurrence of such
+                          liability.
                         </p>
                         <p>
-                          Provided that Olympus shall not be liable to the
+                          Provided that EnKash shall not be liable to the
                           Merchant for any special, incidental, indirect or
                           consequential or direct damages, damages from loss of
                           profits or business opportunities even if the Merchant
@@ -674,8 +671,8 @@ const termCondition = () => {
                           of such loss, cost or damages.
                         </p>
                         <p>
-                          In no event shall Olympus be liable to the Customers
-                          or any third party.
+                          In no event shall EnKash be liable to the Customers or
+                          any third party.
                         </p>
                         <p>
                           In no event shall the Escrow/Nodal Bank or the
@@ -684,7 +681,7 @@ const termCondition = () => {
                           by a third party.
                         </p>
                         <p>
-                          The Olympus shall not be liable for any of the
+                          The EnKash shall not be liable for any of the
                           following: (a) about which it did not have any actual
                           or constructive knowledge; (b) shall not be liable for
                           any Net Quantifiable Financial Benefit that arises to
@@ -713,36 +710,36 @@ const termCondition = () => {
                           <strong>Disclaimer</strong>
                         </p>
                         <p>
-                          Olympus will make all reasonable efforts to provide
+                          EnKash will make all reasonable efforts to provide
                           uninterrupted service subject to downtime and regular
                           maintenance. However, notwithstanding anything in this
-                          Agreement, the Merchant acknowledges that Olympus
-                          Site, Olympus Services, and the Acquiring Bank’s
-                          Services may not be uninterrupted or error-free or
-                          free from any virus or other malicious, destructive,
-                          or corrupting code, program, or macro and Olympus and
-                          the Acquiring Bank disclaim all warranties, express or
-                          implied, written or oral, including but not limited to
+                          Agreement, the Merchant acknowledges that EnKash Site,
+                          EnKash Services, and the Acquiring Bank’s Services may
+                          not be uninterrupted or error-free or free from any
+                          virus or other malicious, destructive, or corrupting
+                          code, program, or macro and EnKash and the Acquiring
+                          Bank disclaim all warranties, express or implied,
+                          written or oral, including but not limited to
                           warranties of merchantability and fitness of the
                           services for a particular purpose.
                         </p>
                         <p>
                           The Merchant also acknowledges that the arrangement
-                          between one or more Acquiring Banks and Olympus may
+                          between one or more Acquiring Banks and EnKash may
                           terminate at any time and services of such Acquiring
-                          Banks may be withdrawn. Olympus shall not be liable to
+                          Banks may be withdrawn. EnKash shall not be liable to
                           the Merchant for any loss or damage whatsoever or
                           howsoever caused or arising, directly or indirectly,
                           including without limitation, because of loss of data;
                           interruption or stoppage to the Customer’s access to
-                          and/or use of the Merchant Site, Olympus Services,
-                          interruption or stoppage of Olympus Site, hacking or
-                          unauthorized access to the Olympus Services,
+                          and/or use of the Merchant Site, EnKash Services,
+                          interruption or stoppage of EnKash Site, hacking or
+                          unauthorized access to the EnKash Services,
                           non-availability of connectivity between the Merchant
-                          Site and Olympus Site, etc.
+                          Site and EnKash Site, etc.
                         </p>
                         <p>
-                          Olympus shall not be responsible for any losses
+                          EnKash shall not be responsible for any losses
                           sustained through (i) the use of counterfeit or stolen
                           bank cards, or stolen devices; (ii) fraudulent
                           electronic transactions; or (iv) quality and
@@ -750,25 +747,25 @@ const termCondition = () => {
                           services.
                         </p>
                         <p>
-                          In addition Olympus and/or Acquiring Banks shall have
+                          In addition EnKash and/or Acquiring Banks shall have
                           no liability for any failure or delay in performing
                           its obligations under this facility if such failure or
                           delay: (i) is caused by the Merchant’s acts or
-                          omissions; (ii) results from actions taken by Olympus
+                          omissions; (ii) results from actions taken by EnKash
                           or the Acquiring Banks in a reasonable good faith to
                           avoid violating a law, rule or regulation of any
                           governmental authority or to prevent fraud on
                           cardholders/accounts; or (iii) is caused by
-                          circumstances beyond Olympus control, including but
-                          not limited to vandalism, hacking, theft, phone
-                          service disruptions, Internet disruptions, loss of
-                          data, extreme or severe weather conditions or any
-                          other causes in the nature of Force Majeure event.
+                          circumstances beyond EnKash control, including but not
+                          limited to vandalism, hacking, theft, phone service
+                          disruptions, Internet disruptions, loss of data,
+                          extreme or severe weather conditions or any other
+                          causes in the nature of Force Majeure event.
                         </p>
                         <p>
-                          Olympus’s sole obligation and the Merchant’s sole and
+                          EnKash’s sole obligation and the Merchant’s sole and
                           exclusive remedy in the event of an interruption in
-                          Olympus Site, or loss of use and/or access to Olympus
+                          EnKash Site, or loss of use and/or access to EnKash
                           Site, the Acquiring Banks Services, shall be to use
                           all reasonable endeavours to restore the Services as
                           soon as reasonably possible.
@@ -841,7 +838,7 @@ const termCondition = () => {
                             protection against unauthorized access to or use of
                             the information of the customer or associated
                             records which could result in substantial harm or
-                            inconvenience to Olympus; and
+                            inconvenience to EnKash; and
                           </li>
                           <li>
                             ensure the proper and secure disposal of such data;
@@ -894,16 +891,16 @@ const termCondition = () => {
                           information security, any breaches in the security
                           practice, control process checks of the Merchant, and
                           all suspected security events within 12 hours of such
-                          event or breach to Olympus and shall also immediately
+                          event or breach to EnKash and shall also immediately
                           intimate all the concerned representatives and
-                          employees of Olympus which interact with the Merchant
+                          employees of EnKash which interact with the Merchant
                           on regular basis.
                         </p>
                         <p className="mb-3 mt-4">
                           <strong>Miscellaneous</strong>
                         </p>
                         <p>
-                          Olympus may assign, in whole or in part, the benefits
+                          EnKash may assign, in whole or in part, the benefits
                           or obligations of this Agreement by providing a thirty
                           (30) days prior intimation of such assignment to the
                           Merchant, which shall be binding on the Parties to
@@ -1161,13 +1158,13 @@ const termCondition = () => {
                         </p>
                         <p className="mb-1 mt-4">
                           <strong>
-                            General Terms and Conditions to Olympus Services
+                            General Terms and Conditions to EnKash Services
                           </strong>
                         </p>
                         <p className="mb-3 mt-4">
                           <strong>
                             The General Terms and Conditions that will govern
-                            the Olympus Services
+                            the EnKash Services
                           </strong>
                         </p>
                         <p>
@@ -1206,7 +1203,7 @@ const termCondition = () => {
                         </p>
                         <p>
                           <strong>“Agreement”</strong> shall mean an agreement
-                          executed by and between Olympus and the Merchant;
+                          executed by and between EnKash and the Merchant;
                         </p>
                         <p>
                           <strong>“Beneficiaries”</strong> means the individuals
@@ -1215,7 +1212,7 @@ const termCondition = () => {
                         <ul>
                           <li>
                             (i) to whom the Merchant will make payment by using
-                            the Olympus Services; or
+                            the EnKash Services; or
                           </li>
                           <li>
                             (ii) whose account details the Merchants wants to
@@ -1226,10 +1223,10 @@ const termCondition = () => {
                           <strong>“Business Days”</strong> shall mean any day on
                           which Acquiring Banks are open for business in India,
                           other than Saturday, Sunday and any days declared by
-                          Olympus and/or Acquiring Bank as a Holidays
+                          EnKash and/or Acquiring Bank as a Holidays
                         </p>
                         <p>
-                          <strong>“Olympus”</strong> shall mean Nehat Tech
+                          <strong>“EnKash”</strong> shall mean Nehat Tech
                           Solutions Private Limited a company incorporated in
                           accordance with the provisions of the (Indian)
                           Companies Act, 2013;
@@ -1244,7 +1241,7 @@ const termCondition = () => {
                           <strong>"Card Association(s)"</strong> shall mean any
                           of Visa, MasterCard, Visa Electron, Maestro, Diners,
                           American Express or any other card association as may
-                          be specified by Olympus from time to time.
+                          be specified by EnKash from time to time.
                         </p>
                         <p>
                           <strong>“Card Association Rules”</strong> shall mean
@@ -1274,28 +1271,27 @@ const termCondition = () => {
                           charts, data, computer programs, disks, diskettes,
                           tapes, algorithms, software programs, marketing plans
                           or techniques, technical, financial, or business
-                          information, Olympus Fees as mentioned in Annexure -
-                          A” trade secrets which includes but is not restricted
-                          to any portion or scientific or technical or
-                          proprietary information, design, process, procedure,
-                          formula or improvement which is not generally
-                          available to the public as delivered by either Party
-                          (“Disclosing Party” to the other Party (“Receiving
-                          Party”) within the framework of this Agreement or
-                          resulting therefrom. Provided that confidential
-                          information disclosed orally or those produced by
-                          electronic media or through any other intangible means
-                          shall be deemed confidential if it is identified as
-                          being confidential if it is reduced in writing within
-                          (30) thirty days of the date of disclosure. Such
-                          writing shall specify the date, time, place, persons
-                          involved and the substance of the confidential
-                          information so disclosed.
+                          information, EnKash Fees as mentioned in Annexure - A”
+                          trade secrets which includes but is not restricted to
+                          any portion or scientific or technical or proprietary
+                          information, design, process, procedure, formula or
+                          improvement which is not generally available to the
+                          public as delivered by either Party (“Disclosing
+                          Party” to the other Party (“Receiving Party”) within
+                          the framework of this Agreement or resulting
+                          therefrom. Provided that confidential information
+                          disclosed orally or those produced by electronic media
+                          or through any other intangible means shall be deemed
+                          confidential if it is identified as being confidential
+                          if it is reduced in writing within (30) thirty days of
+                          the date of disclosure. Such writing shall specify the
+                          date, time, place, persons involved and the substance
+                          of the confidential information so disclosed.
                         </p>
                         <p>
                           <strong>"Customer"</strong> shall mean any person who
                           is availing services or products of the Merchant using
-                          Olympus Services to make the payment/remittance.
+                          EnKash Services to make the payment/remittance.
                         </p>
                         <p>
                           <strong>“Customer Bank Account”</strong> shall mean a
@@ -1307,14 +1303,14 @@ const termCondition = () => {
                           the total amount paid by the Customer towards the
                           Merchant Services which will include, inter alia,
                           charges and other taxes, duties, costs, charges,
-                          Olympus Fees and expenses in respect of the Merchant
+                          EnKash Fees and expenses in respect of the Merchant
                           Services.
                         </p>
                         <p>
-                          <strong>“Olympus Platform”</strong> a technology
+                          <strong>“EnKash Platform”</strong> a technology
                           platform that connects Acquiring Banks, Merchants and
                           Issuer Banks and facilitates initiation and completion
-                          of the Services rendered by Olympus.
+                          of the Services rendered by EnKash.
                         </p>
                         <p>
                           <strong>“Credit Card”</strong> is a credit card issued
@@ -1350,7 +1346,7 @@ const termCondition = () => {
                         </p>
                         <p>
                           <strong>“Effective Date”</strong> shall be the date on
-                          which the Merchant and Olympus agreed to make the
+                          which the Merchant and EnKash agreed to make the
                           Agreement effective.
                         </p>
                         <p>
@@ -1371,12 +1367,12 @@ const termCondition = () => {
                         </p>
                         <p>
                           <strong>“Escrow/Nodal Account”</strong> shall mean an
-                          account maintained by Olympus with any of the
-                          scheduled commercial bank for the purpose of pooling
-                          the monies collected from Customers on behalf of the
-                          Merchant and facilitating the transfer of these funds
-                          in final settlement to the Merchant in accordance with
-                          the Terms and Conditions;
+                          account maintained by EnKash with any of the scheduled
+                          commercial bank for the purpose of pooling the monies
+                          collected from Customers on behalf of the Merchant and
+                          facilitating the transfer of these funds in final
+                          settlement to the Merchant in accordance with the
+                          Terms and Conditions;
                         </p>
                         <p>
                           <strong>"Issuer"</strong> shall mean a bank or
@@ -1390,12 +1386,12 @@ const termCondition = () => {
                         </p>
                         <p>
                           <strong>“Merchant”</strong> is an entity that would be
-                          party to the Agreement with Olympus;
+                          party to the Agreement with EnKash;
                         </p>
                         <p>
                           <strong>“Merchant Discount Rate”</strong> shall mean a
                           rate at which settlement amount is discounted and
-                          charged to Merchant by Olympus;
+                          charged to Merchant by EnKash;
                         </p>
                         <p>
                           <strong>“Merchant Site”</strong> shall mean the active
@@ -1405,14 +1401,14 @@ const termCondition = () => {
                           Merchant and established for the purposes of enabling
                           the Customers to avail the services offered on the
                           website or mobile application for which the Merchant
-                          shall be availing Olympus Services.
+                          shall be availing EnKash Services.
                         </p>
                         <p>
                           <strong>“Merchant Services”</strong> the services or
                           products provided by the Merchant through Merchant
                           Site to its Customer/s, the remittance/payment for
                           which is to be made through the Customer’s valid
-                          accounts / Card/s or bank account, using Olympus
+                          accounts / Card/s or bank account, using EnKash
                           Services.
                         </p>
                         <p>
@@ -1425,14 +1421,14 @@ const termCondition = () => {
                         </p>
                         <p>
                           <strong>“Outstanding Amount”</strong> shall mean the
-                          amount payable by the Merchant to Olympus, Acquiring
+                          amount payable by the Merchant to EnKash, Acquiring
                           Banks and/or Customers for any losses, costs, damages,
                           penalties, Chargebacks, Refund, overdraft or credit
-                          problems suffered or incurred by the Customers,
-                          Olympus and/or Acquiring Banks; any fees and other
-                          payments owed to Olympus by the Merchant; and any
-                          claims or proceedings filed against Olympus and/or
-                          Acquiring Banks by the Customers or any third Party.
+                          problems suffered or incurred by the Customers, EnKash
+                          and/or Acquiring Banks; any fees and other payments
+                          owed to EnKash by the Merchant; and any claims or
+                          proceedings filed against EnKash and/or Acquiring
+                          Banks by the Customers or any third Party.
                         </p>
                         <p>
                           <strong>“Order”</strong> shall mean Customer placing
@@ -1442,13 +1438,13 @@ const termCondition = () => {
                         <p>
                           <strong>“Partner”</strong> shall mean various banks,
                           financial institutions and other entities engaged with
-                          Olympus to facilitate the Merchant to Disburse the
+                          EnKash to facilitate the Merchant to Disburse the
                           Payout Amount/ payments to the Beneficiaries.
                         </p>
                         <p>
                           <strong>“Payment Aggregation Services”</strong> shall
                           mean the payments collection services that are
-                          rendered by Olympus to Merchants by integrating the
+                          rendered by EnKash to Merchants by integrating the
                           payments solution on the website or web application of
                           a Merchant.
                         </p>
@@ -1470,7 +1466,7 @@ const termCondition = () => {
                         </ul>
                         <p>
                           <strong>“Platform Fee”</strong> shall mean a fee other
-                          than the MDR or TDR which is charged by Olympus for
+                          than the MDR or TDR which is charged by EnKash for
                           rendering services other than the services relating to
                           transfer of amounts from Issuing Bank to Acquiring
                           Bank and includes services relating to on-boarding of
@@ -1492,21 +1488,20 @@ const termCondition = () => {
                           services in relation to the processing of payments
                           including Payment Aggregation Services and Payout
                           Services or any other ancillary and incidental
-                          services rendered thereto to the Merchant by Olympus
-                          with or without the use of Olympus Platform.
+                          services rendered thereto to the Merchant by EnKash
+                          with or without the use of EnKash Platform.
                         </p>
                         <p>
                           <strong>“Settlement Amount”</strong> shall mean
                           Customer Payment Amount minus the TDR and any other
-                          charges/fees payable by the Merchant to Olympus under
+                          charges/fees payable by the Merchant to EnKash under
                           this Agreement.
                         </p>
                         <p>
                           <strong>“Terms & Conditions”</strong> shall include
                           the general terms and conditions to the Services and
                           special terms and conditions with regard to a
-                          particular Service rendered by Olympus to the
-                          Merchant;
+                          particular Service rendered by EnKash to the Merchant;
                         </p>
                         <p>
                           <strong>"Transaction"</strong> shall mean
@@ -1519,13 +1514,13 @@ const termCondition = () => {
                           </li>
                           <li>
                             (ii) any Disbursement or Verification Services
-                            request placed by the Merchant with Olympus.
+                            request placed by the Merchant with EnKash.
                           </li>
                         </ul>
                         <p>
                           <strong>“Transaction Discount Rate” or “TDR”</strong>{" "}
                           shall mean the total fee per transaction agreed
-                          between Olympus and the Merchant as specified in
+                          between EnKash and the Merchant as specified in
                           Agreement.
                         </p>
                         <p>
@@ -1545,8 +1540,8 @@ const termCondition = () => {
                           credit card or debit card which is issued by an Issuer
                           designated to issue a Visa, MasterCard, Visa Electron
                           or a Maestro or cash card, prepaid card, or other
-                          cards as may be specified by Olympus from time to
-                          time. Provided that the card is not listed in current
+                          cards as may be specified by EnKash from time to time.
+                          Provided that the card is not listed in current
                           warning or restricted card bulletins or notices and
                           bears the signature of the person in whose name the
                           card is issued.
@@ -1563,12 +1558,12 @@ const termCondition = () => {
                           <strong>SCOPE OF SERVICES</strong>
                         </p>
                         <p>
-                          Olympus shall render, and Merchant shall receive the
+                          EnKash shall render, and Merchant shall receive the
                           Services for a Consideration agreed in terms of the
                           Agreement executed between the Parties.
                         </p>
                         <p>
-                          Olympus shall render services in accordance with the
+                          EnKash shall render services in accordance with the
                           terms and conditions as set out in this General Terms
                           & Conditions of the Payments Services, Special Terms
                           and Conditions to Payments Aggregation Services and
@@ -1601,14 +1596,14 @@ const termCondition = () => {
                           <strong>GRANT OF RIGHTS</strong>
                         </p>
                         <p>
-                          During the Term for which Olympus renders Service to
-                          the Merchant, Olympus hereby grants to the Merchant a
+                          During the Term for which EnKash renders Service to
+                          the Merchant, EnKash hereby grants to the Merchant a
                           limited, for India, revocable, non-exclusive,
                           non-transferable, non-sublicensable, non-assignable
                           right and license to access and use application
-                          programming interface of Olympus access to which is
-                          made available through Olympus Platform for a
-                          rendition of Services in accordance with the Terms and
+                          programming interface of EnKash access to which is
+                          made available through EnKash Platform for a rendition
+                          of Services in accordance with the Terms and
                           Conditions set out herein.
                         </p>
                         <p>
@@ -1654,12 +1649,12 @@ const termCondition = () => {
                           </li>
                           <li>
                             (h) use the Services in a way that poses a risk to
-                            Olympus or the Customer of the Merchant.
+                            EnKash or the Customer of the Merchant.
                           </li>
                         </ul>
                         <p>
-                          Olympus may improve, modify, add or remove functions
-                          or features to or from the Services from time to time,
+                          EnKash may improve, modify, add or remove functions or
+                          features to or from the Services from time to time,
                           with or without notice to the Merchant.
                         </p>
                         <p>
@@ -1671,113 +1666,113 @@ const termCondition = () => {
                         <p>
                           Merchant will be liable and responsible for all acts
                           and omissions of any person to whom BaaS Merchant
-                          allows access to the Olympus APIs and Dashboard.
+                          allows access to the EnKash APIs and Dashboard.
                         </p>
                         <p>
                           Merchant is not permitted to use any application
                           (including its updated and/or any new version of it)
-                          in the production environment, unless and until
-                          Olympus has reviewed and approved for moving such
-                          application to the production environment and
-                          authorized with applicable API Key.
+                          in the production environment, unless and until EnKash
+                          has reviewed and approved for moving such application
+                          to the production environment and authorized with
+                          applicable API Key.
                         </p>
                         <p className="mb-3 mt-4">
                           <strong>MERCHANT ON-BOARDING</strong>
                         </p>
                         <p>
-                          The on-boarding of Merchant with Olympus shall take
+                          The on-boarding of Merchant with EnKash shall take
                           place in accordance with the guidelines prescribed by
                           the Reserve Bank of India or any other regulator for
                           the time being.
                         </p>
                         <p>
-                          The Merchant shall be required to submit to Olympus
-                          all the necessary documents and details as may be
-                          required by Olympus to complete the on-boarding of the
-                          Merchant in accordance with the prescribed guidelines.
+                          The Merchant shall be required to submit to EnKash all
+                          the necessary documents and details as may be required
+                          by EnKash to complete the on-boarding of the Merchant
+                          in accordance with the prescribed guidelines.
                         </p>
                         <p>
                           Failure of Merchant to share the required documents or
-                          details shall entitle Olympus to put the on-boarding
-                          of the Merchant on hold. Olympus may also refrain from
-                          providing access to the Olympus Platform in the event,
+                          details shall entitle EnKash to put the on-boarding of
+                          the Merchant on hold. EnKash may also refrain from
+                          providing access to the EnKash Platform in the event,
                           the Merchant fails to provide such documents as
-                          required by Olympus.
+                          required by EnKash.
                         </p>
                         <p>
                           Merchant shall ensure that the documents so provided
                           are true and correct. Merchant shall also provide for
-                          original of the documents so produced to Olympus to
+                          original of the documents so produced to EnKash to
                           complete the exercise related to on-boarding for
                           verification.
                         </p>
                         <p>
-                          Olympus may choose to call for further or additional
+                          EnKash may choose to call for further or additional
                           documents or require the Merchant to resubmit the
                           document in accordance with the prescribed guidelines
                           for verification of the details of the Merchant during
                           the course of the rendition of Services.
                         </p>
                         <p>
-                          Olympus shall not take any responsibility of
+                          EnKash shall not take any responsibility of
                           verification of the validity or veracity or the
                           genuineness of the documents so submitted.
                         </p>
                         <p>
                           Failure to provide correct details or to not to
-                          provide relevant details or to cheat Olympus to
-                          provide Services by providing false information, would
-                          entitle Olympus to terminate the Agreement with
-                          immediate effect and without any notice whatsoever.
-                          Olympus shall also be entitled to hold the settlement
-                          amount for a period of at least 180 days from the date
-                          of termination of Services or until such date that it
+                          provide relevant details or to cheat EnKash to provide
+                          Services by providing false information, would entitle
+                          EnKash to terminate the Agreement with immediate
+                          effect and without any notice whatsoever. EnKash shall
+                          also be entitled to hold the settlement amount for a
+                          period of at least 180 days from the date of
+                          termination of Services or until such date that it
                           deems fit and proper whichever date is later.
                         </p>
                         <p>
-                          Olympus shall keep the documents and details submitted
+                          EnKash shall keep the documents and details submitted
                           to it confidential and shall not disclose such
                           information to any third party except to the law
                           enforcement agencies if such law enforcement agencies
-                          call for such information. Olympus may use the
+                          call for such information. EnKash may use the
                           documents and details so submitted for rendering
                           additional Services to the Merchant.
                         </p>
                         <p>
-                          The Merchant acknowledges and agrees that Olympus may
+                          The Merchant acknowledges and agrees that EnKash may
                           use third-party tools for web crawls/ scrape the
                           Merchant Site in order to identify high-risk keywords,
                           collect the registered address, and verify the line of
-                          business of the Merchant disclosed to Olympus among
+                          business of the Merchant disclosed to EnKash among
                           other things.
                         </p>
                         <p className="mb-3 mt-4">
-                          <strong>INTEGRATION WITH OLYMPUS PLATFORM</strong>
+                          <strong>INTEGRATION WITH EnKash PLATFORM</strong>
                         </p>
                         <p>
-                          Olympus has integrated the Olympus Platform with
-                          several financial institutions. The integration of the
-                          Olympus Platform is done in accordance with the
-                          documentation of Application Programming Interface
-                          ('API') so provided by the financial institutions.
+                          EnKash has integrated the EnKash Platform with several
+                          financial institutions. The integration of the EnKash
+                          Platform is done in accordance with the documentation
+                          of Application Programming Interface ('API') so
+                          provided by the financial institutions.
                         </p>
                         <p>
                           Merchant may choose to integrate with the APIs
-                          provided by Olympus in accordance with the
-                          documentation provided by Olympus for such
-                          integration. Merchant shall be responsible for such
-                          integration with the Olympus Platform.
+                          provided by EnKash in accordance with the
+                          documentation provided by EnKash for such integration.
+                          Merchant shall be responsible for such integration
+                          with the EnKash Platform.
                         </p>
                         <p>
-                          Olympus shall be responsible for the maintenance,
-                          development, and management of the Olympus Platform.
-                          Olympus shall also ensure to secure the Olympus
-                          Platform secure in accordance with the prescribed
-                          guidelines from time to time by financial institutions
-                          or Reserve Bank of India or any other regulator.
-                          Olympus shall ensure to take steps related to business
-                          continuity and disaster recovery of the Olympus
-                          Platform in accordance with prescribed guidelines.
+                          EnKash shall be responsible for the maintenance,
+                          development, and management of the EnKash Platform.
+                          EnKash shall also ensure to secure the EnKash Platform
+                          secure in accordance with the prescribed guidelines
+                          from time to time by financial institutions or Reserve
+                          Bank of India or any other regulator. EnKash shall
+                          ensure to take steps related to business continuity
+                          and disaster recovery of the EnKash Platform in
+                          accordance with prescribed guidelines.
                         </p>
                         <p>
                           Merchant shall ensure that its website or its web
@@ -1806,7 +1801,7 @@ const termCondition = () => {
                           of services.
                         </p>
                         <p>
-                          Olympus may call upon the Merchant to share the
+                          EnKash may call upon the Merchant to share the
                           relevant information about the transactions with the
                           Customer or the information gathered by the Merchant
                           about the Customer for its internal audits, or in case
@@ -1815,8 +1810,8 @@ const termCondition = () => {
                           enforcement agency or the regulators.
                         </p>
                         <p>
-                          Olympus shall provide to the Merchant encryption key
-                          or an activation key for activation of the Services.
+                          EnKash shall provide to the Merchant encryption key or
+                          an activation key for activation of the Services.
                           Merchant shall not share the encryption key or an
                           activation key with any other person or use the
                           activation key to activate integration on a website or
@@ -1827,17 +1822,17 @@ const termCondition = () => {
                           <strong>COLLECTION AND SETTLEMENT OF FUNDS</strong>
                         </p>
                         <p>
-                          Olympus shall collect payments from the Customers of
+                          EnKash shall collect payments from the Customers of
                           the Merchant in the Escrow / Nodal bank account and
                           settle such amounts in accordance with the prescribed
                           guidelines into the Designated Bank Account of the
                           Merchant.
                         </p>
                         <p>
-                          Olympus shall act only as an intermediary and collect
+                          EnKash shall act only as an intermediary and collect
                           monies from the bank account of the Customer and
                           settle it in accordance with prescribed guidelines in
-                          the Designated Bank Account. Olympus shall not in any
+                          the Designated Bank Account. EnKash shall not in any
                           manner be responsible for the quality of goods,
                           quantity of goods, quality of services, or defect in
                           goods or deficiencies of services in any manner
@@ -1846,16 +1841,15 @@ const termCondition = () => {
                         </p>
                         <p>
                           In the event, Merchant has chosen to avail of the
-                          Payout Services then in that event, Olympus shall
+                          Payout Services then in that event, EnKash shall
                           transfer the funds on the instructions of the Merchant
-                          to third parties. Olympus shall not be responsible in
-                          case funds are settled incorrectly provided Olympus
-                          has followed the instructions of the Merchant
-                          correctly.
+                          to third parties. EnKash shall not be responsible in
+                          case funds are settled incorrectly provided EnKash has
+                          followed the instructions of the Merchant correctly.
                         </p>
                         <p>
                           The settlement of funds shall be subject to certain
-                          deductions. Olympus shall be entitled to deduct its
+                          deductions. EnKash shall be entitled to deduct its
                           Consideration for the rendition of Services, taxes on
                           such Services, Chargebacks, and Refunds from the
                           settlement amount due to the Merchant.
@@ -1864,13 +1858,13 @@ const termCondition = () => {
                           <strong>CHARGEBACK</strong>
                         </p>
                         <p>
-                          Olympus provides an Olympus Platform to various
+                          EnKash provides an EnKash Platform to various
                           Merchants (applications/websites/stores/shops) for
                           accepting money through multiple instruments like UPI,
                           Net Banking, Credit Card, Debit Card, Wallets, etc. In
                           case the transaction doesn’t successfully go through
                           and the funds are deducted from the Customer’s
-                          account, in such case, Olympus shall support resolving
+                          account, in such case, EnKash shall support resolving
                           the disputes within the prescribed turnaround time.
                         </p>
                         <p>
@@ -2000,28 +1994,28 @@ const termCondition = () => {
                           refund couldn’t be processed in the source.
                         </p>
                         <p className="mb-3 mt-4">
-                          <strong>OLYMPUS FEE</strong>
+                          <strong>EnKash FEE</strong>
                         </p>
                         <p>
-                          Merchant shall pay and Olympus shall receive
+                          Merchant shall pay and EnKash shall receive
                           Consideration for Services rendered in accordance with
                           the terms of the Agreement. The rate at which the
                           Merchant Discount Rate or the Transaction Discount
                           Rate or the Platform fee shall be agreed by the
-                          Merchant and Olympus in terms of the Agreement. The
+                          Merchant and EnKash in terms of the Agreement. The
                           TDR/ Consideration shall be deducted from the
-                          Settlement Amount or Olympus Payout Account (as
-                          applicable) for the Transactions made using Olympus
+                          Settlement Amount or EnKash Payout Account (as
+                          applicable) for the Transactions made using EnKash
                           Services.
                         </p>
                         <p>
                           The Consideration shall be exclusive of the tax
                           applicable on such Consideration and such tax shall be
-                          charged in addition to the Consideration by Olympus.
+                          charged in addition to the Consideration by EnKash.
                         </p>
                         <p>
-                          Olympus undertakes to comply with all the compliances
-                          mandated under the GST as may be applicable on Olympus
+                          EnKash undertakes to comply with all the compliances
+                          mandated under the GST as may be applicable on EnKash
                           as and when the same are implemented by the relevant
                           government authority including timely deposit of GST
                           to the government and maintaining appropriate
@@ -2034,10 +2028,10 @@ const termCondition = () => {
                           Designated Bank Account.
                         </p>
                         <p>
-                          In addition to the Consideration, Olympus shall be
+                          In addition to the Consideration, EnKash shall be
                           entitled to charge a penalty, fine, or additional
                           liability imposed by the law enforcement authorities
-                          including tax authorities or regulators upon Olympus
+                          including tax authorities or regulators upon EnKash
                           because of the act of the Merchant.
                         </p>
                         <p className="mb-3 mt-4">
@@ -2052,12 +2046,12 @@ const termCondition = () => {
                           The grievance of a Customer of the Merchant shall be
                           shared with the Merchant within a reasonable time. In
                           the event, a Customer grievance is raised through a
-                          legal enforcement agency then in that case Olympus
+                          legal enforcement agency then in that case EnKash
                           shall take steps as instructed by the legal
                           enforcement agencies to address the complaint. In the
-                          event, Olympus had to reverse the transaction, it
-                          would adjust the said amount from the settlement
-                          amount receivable by Merchant.
+                          event, EnKash had to reverse the transaction, it would
+                          adjust the said amount from the settlement amount
+                          receivable by Merchant.
                         </p>
                         <p className="mb-3 mt-4">
                           <strong>
@@ -2070,7 +2064,7 @@ const termCondition = () => {
                         <p>
                           Notwithstanding anything contained anywhere in this
                           Agreement, the Merchant hereby fully confirms and
-                          agrees that Olympus reserve the right to reject
+                          agrees that EnKash reserve the right to reject
                           payments prior to Authorisation in the following
                           situations:
                         </p>
@@ -2085,7 +2079,7 @@ const termCondition = () => {
                           </li>
                           <li>
                             Any Transaction cancelled due to a very high-risk
-                            score discovered using Olympus fraud mitigations
+                            score discovered using EnKash fraud mitigations
                             tools.
                           </li>
                           <li>
@@ -2099,12 +2093,12 @@ const termCondition = () => {
                             incomplete.
                           </li>
                           <li>
-                            Olympus is of the opinion that there are suspicious
+                            EnKash is of the opinion that there are suspicious
                             circumstances surrounding the Transaction.
                           </li>
                           <li>
                             If the Transaction was not made in accordance with
-                            the requirements API requirements of Olympus.
+                            the requirements API requirements of EnKash.
                           </li>
                         </ul>
                         <p>
@@ -2130,14 +2124,14 @@ const termCondition = () => {
                         </p>
                         <p>
                           Pre-Authorisation Cancellation: This is a paid service
-                          offered by Olympus and shall be applicable only if
-                          this service is explicitly enabled by the Merchant.
-                          This service implies the process of unblocking the
+                          offered by EnKash and shall be applicable only if this
+                          service is explicitly enabled by the Merchant. This
+                          service implies the process of unblocking the
                           Transaction amount earlier blocked by the Acquiring
                           Bank/Issuer from the Customer Valid card/Bank Account
-                          before that amount is settled into Olympus
-                          Escrow/Nodal Account. Following are the situations
-                          where Pre-Authorisation Cancellation may take place:
+                          before that amount is settled into EnKash Escrow/Nodal
+                          Account. Following are the situations where
+                          Pre-Authorisation Cancellation may take place:
                         </p>
                         <ul>
                           <li>
@@ -2156,7 +2150,7 @@ const termCondition = () => {
                         <p>
                           All Settlement Amount due to the Merchant under this
                           Agreement may be withheld or delayed till such time as
-                          Olympus, the Acquiring Banks and/or Escrow/Nodal bank
+                          EnKash, the Acquiring Banks and/or Escrow/Nodal bank
                           deems fit, if:
                         </p>
                         <ul>
@@ -2166,9 +2160,9 @@ const termCondition = () => {
                             legal requirement;
                           </li>
                           <li>
-                            Olympus and/or the Acquiring Banks have reasons to
+                            EnKash and/or the Acquiring Banks have reasons to
                             believe that a fraud has been committed against the
-                            Customers, Olympus, Acquiring Banks or any third
+                            Customers, EnKash, Acquiring Banks or any third
                             party by the Merchant, its Customers, or any other
                             third party; or has reason to believe that the
                             Merchant or the Customer has in connivance with any
@@ -2187,8 +2181,8 @@ const termCondition = () => {
                         </ul>
                         <p>
                           In the event of suspended or delayed payments
-                          mentioned above, Olympus shall promptly intimate the
-                          same to the Merchant. Also, Olympus may impose
+                          mentioned above, EnKash shall promptly intimate the
+                          same to the Merchant. Also, EnKash may impose
                           transaction limits either temporarily or permanently
                           in order to reduce reasonable apprehension of risk or
                           loss under varying circumstances.
@@ -2197,13 +2191,13 @@ const termCondition = () => {
                           <strong>FRADULENT TRANSACTIONS</strong>
                         </p>
                         <p>
-                          In the event that Olympus is intimated, by the
+                          In the event that EnKash is intimated, by the
                           Acquiring Bank or a Card Association, that a Customer
                           has reported an unauthorized debit of the Customer's
                           payment instrument or the Merchant has by way of fraud
                           against the Customer made the Customer do an
                           unauthorized debit ("Fraudulent Transaction"), then
-                          Olympus shall be entitled to suspend the settlement of
+                          EnKash shall be entitled to suspend the settlement of
                           the amount associated with the Fraudulent Transaction
                           during the pendency of inquiries, investigations, and
                           resolution thereof by the Acquiring Bank or the Card
@@ -2214,9 +2208,9 @@ const termCondition = () => {
                           Conditions.
                         </p>
                         <p>
-                          Further, Olympus also reserves the right to close,
+                          Further, EnKash also reserves the right to close,
                           suspend, limit or put on hold the Merchant’s access to
-                          the account with Olympus and/ or the funds available
+                          the account with EnKash and/ or the funds available
                           therein, including Settlements Amount under inter alia
                           the following scenarios:
                         </p>
@@ -2237,7 +2231,7 @@ const termCondition = () => {
                           <li>
                             For violation of any of the provisions of any other
                             agreement that the Merchant has entered into or
-                            might enter into with Olympus; and
+                            might enter into with EnKash; and
                           </li>
                           <li>
                             For violation of any of the applicable laws by the
@@ -2246,48 +2240,47 @@ const termCondition = () => {
                         </ul>
                         <p>
                           Such right to close, suspend, limit or put on hold the
-                          Merchant's access to the account with Olympus shall
+                          Merchant's access to the account with EnKash shall
                           continue till such time that the Merchant submits
                           genuine KYC documents or credentials to the
                           satisfaction of the relevant authorities as per the
                           extant rules, regulations or guidelines with regard to
-                          KYC, as well as to the satisfaction of Olympus without
-                          prejudice to any other legal remedy that Olympus is
+                          KYC, as well as to the satisfaction of EnKash without
+                          prejudice to any other legal remedy that EnKash is
                           entitled to prefer as per applicable law.
                         </p>
                         <p>
                           It is agreed between the Parties that in the event any
-                          amount to be received from the Merchant by Olympus due
+                          amount to be received from the Merchant by EnKash due
                           to excessive chargeback or refund or any other issues
                           relating to any complaints of the Merchant’s Customers
                           and is over and above the amount which has been
-                          withheld by Olympus, Olympus shall have a right to
-                          raise an invoice relating to such payments to be made
-                          and the Merchant agrees to make payments of such
-                          invoice within a period of 15 (fifteen) days of
-                          receiving the invoice. Such unpaid amounts by the
-                          Merchant shall be subject to an interest, chargeable
-                          at the rate of two percent (2%) per month after the
-                          expiry of 15 days.
+                          withheld by EnKash, EnKash shall have a right to raise
+                          an invoice relating to such payments to be made and
+                          the Merchant agrees to make payments of such invoice
+                          within a period of 15 (fifteen) days of receiving the
+                          invoice. Such unpaid amounts by the Merchant shall be
+                          subject to an interest, chargeable at the rate of two
+                          percent (2%) per month after the expiry of 15 days.
                         </p>
                         <p className="mb-3 mt-4">
                           <strong>DEDUCTIONS</strong>
                         </p>
                         <p>
-                          Olympus is hereby authorised and entitled to debit the
+                          EnKash is hereby authorised and entitled to debit the
                           Settlement Amount for any Outstanding Amount payable
-                          by Merchant to Olympus in terms of this Agreement (in
+                          by Merchant to EnKash in terms of this Agreement (in
                           short as “Deductions”). The said payments shall not be
                           dependent upon or conditional to Merchant obtaining
-                          payment whether through Olympus/Escrow/Nodal Bank or
+                          payment whether through EnKash/Escrow/Nodal Bank or
                           otherwise from Customers in respect of the Merchant’s
                           Services and/or irrespective of whether Merchant
                           complies with the Order placed by Customer with
                           Merchant. Merchant agrees and undertakes to execute
                           all authorizations and writings as may be required in
-                          this regard by Olympus from time to time and shall
+                          this regard by EnKash from time to time and shall
                           ensure that there are always sufficient funds in the
-                          Merchant’s Account. Olympus shall also debit the
+                          Merchant’s Account. EnKash shall also debit the
                           amounts erroneously paid in excess to the Merchant.
                         </p>
                         <p className="mb-3 mt-4">
@@ -2309,19 +2302,19 @@ const termCondition = () => {
                         </ul>
                         <p>
                           The Merchant shall maintain records of such periodical
-                          checks in such manner as may be specified by Olympus
-                          and/or Acquiring Banks. Olympus and/or Acquiring Banks
+                          checks in such manner as may be specified by EnKash
+                          and/or Acquiring Banks. EnKash and/or Acquiring Banks
                           shall be entitled to check and audit records and
                           statements of the Merchant to ensure compliance with
                           the Merchant’s obligations under this Agreement at
-                          such intervals or times as Olympus and/or Acquiring
+                          such intervals or times as EnKash and/or Acquiring
                           Bank may deem fit. Such periodical checks and audit
-                          shall be conducted by Olympus with prior written
-                          notice of 15 (fifteen) days.
+                          shall be conducted by EnKash with prior written notice
+                          of 15 (fifteen) days.
                         </p>
                         <p>
                           The Merchant shall also permit the authorised
-                          representatives of Olympus and/or the Acquiring Banks
+                          representatives of EnKash and/or the Acquiring Banks
                           to carry out physical inspections of the place(s) of
                           business or other facilities of the Merchant to verify
                           if the Merchant follows its obligations hereunder.
@@ -2330,13 +2323,13 @@ const termCondition = () => {
                           If the Merchant refuses such inspection or provides
                           inaccurate, untrue, or incomplete information, or
                           fails to comply with the Terms and Conditions of this
-                          Agreement, Olympus reserves the right to suspend or
-                          terminate the Olympus Services forthwith.
+                          Agreement, EnKash reserves the right to suspend or
+                          terminate the EnKash Services forthwith.
                         </p>
                         <p>
                           Merchant shall comply with the required standards as
                           prescribed under applicable law relating to cyber
-                          security. Olympus or Acquiring Bank or the Regulator
+                          security. EnKash or Acquiring Bank or the Regulator
                           may either on its own or through third party agencies
                           undertake inspection of the information technology
                           infrastructure of the Merchant to the extent to ensure
@@ -2365,15 +2358,15 @@ const termCondition = () => {
                           refunded.
                         </p>
                         <p>
-                          The Merchant shall ensure that Olympus at all times
+                          The Merchant shall ensure that EnKash at all times
                           have sufficient funds of the Merchant to process
-                          refunds initiated. Olympus shall not be liable to
+                          refunds initiated. EnKash shall not be liable to
                           process any refund initiated in the event of
                           insufficient funds.
                         </p>
                         <p>
                           The Merchant understands that no refund shall be
-                          processed by Olympus after a period of 180 days from
+                          processed by EnKash after a period of 180 days from
                           the date of the Transaction.
                         </p>
                         <ul>
@@ -2396,9 +2389,9 @@ const termCondition = () => {
                         </ul>
                         <p>
                           It is hereby agreed and acknowledged by the Parties
-                          that the Consideration charged by Olympus in respect
-                          of a Transaction that has been confirmed shall not be
-                          refunded or repaid by Olympus to the Merchant or any
+                          that the Consideration charged by EnKash in respect of
+                          a Transaction that has been confirmed shall not be
+                          refunded or repaid by EnKash to the Merchant or any
                           other person irrespective of the Customer Payment
                           Amount being rejected, Chargeback, refunded or
                           disputed.
@@ -2413,29 +2406,28 @@ const termCondition = () => {
                           and feedback concerning experiences with its
                           personnels, policies or processes. In performing
                           Customer service, the Merchant will always present
-                          itself as a separate entity from Olympus.
+                          itself as a separate entity from EnKash.
                         </p>
                         <p>
-                          Under no circumstances shall Olympus be responsible
-                          for customer support to the Customer or any third
-                          party.
+                          Under no circumstances shall EnKash be responsible for
+                          customer support to the Customer or any third party.
                         </p>
                         <p>
-                          The Merchant agrees to notify Olympus of any
+                          The Merchant agrees to notify EnKash of any
                           Third-Party claim that the Merchant’s use of the
-                          Olympus Services conflicts with or infringes upon or
+                          EnKash Services conflicts with or infringes upon or
                           violates any rights of such Third Party.
                         </p>
                         <p>
-                          Merchant agrees and acknowledges that Olympus is not
+                          Merchant agrees and acknowledges that EnKash is not
                           bound to provide any support services on termination
                           of these Terms and Conditions.
                         </p>
                         <p>
                           Merchant undertakes to provide all the information and
-                          assistance as is required by Olympus or if the same is
+                          assistance as is required by EnKash or if the same is
                           required to be provided to government or
-                          judicial/quasi-judicial authorities by Olympus.
+                          judicial/quasi-judicial authorities by EnKash.
                         </p>
                         <p>
                           Merchant undertakes not to offer any products, which
@@ -2449,12 +2441,12 @@ const termCondition = () => {
                           shall ensure compliance by the Customers with all
                           applicable guidelines, rules, regulations issued by
                           RBI and our Acquiring Banks and/or Card Associations.
-                          Merchant agrees and understands that Olympus reserves
-                          the right to suspend Settlement Amount and/or Olympus
+                          Merchant agrees and understands that EnKash reserves
+                          the right to suspend Settlement Amount and/or EnKash
                           Services until such time that Merchant does not
                           discontinue selling such prohibited products or does
                           not conform to all applicable laws and regulations in
-                          force from time to time. In addition, Olympus reserves
+                          force from time to time. In addition, EnKash reserves
                           the right to terminate this Agreement without further
                           notice in the case of breach of this Clause by the
                           Merchant.
@@ -2465,7 +2457,7 @@ const termCondition = () => {
                           mandated by the Card Association.
                         </p>
                         <p>
-                          Notwithstanding Olympus’s assistance in understanding
+                          Notwithstanding EnKash’s assistance in understanding
                           the Card Association Rules, the Merchant expressly
                           acknowledge and agree that the Merchant assuming the
                           risk of compliance with all provisions of the Card
@@ -2480,10 +2472,10 @@ const termCondition = () => {
                         <p>
                           In the event of the Merchant’s non-compliance of Card
                           Association Rules, results in any fines, penalties or
-                          other amounts being levied on or demanded from Olympus
+                          other amounts being levied on or demanded from EnKash
                           by a Card Association, then without prejudice to
-                          Olympus’s other rights hereunder, the Merchant shall
-                          forthwith reimburse Olympus in an amount equal to the
+                          EnKash’s other rights hereunder, the Merchant shall
+                          forthwith reimburse EnKash in an amount equal to the
                           fines, penalties or other amount so levied or demanded
                           or spent by us in any manner in relation to such
                           fines, penalties and levies.
@@ -2491,12 +2483,12 @@ const termCondition = () => {
                         <p>
                           The Merchant undertakes and agrees to be solely
                           responsible for obtaining permission from its
-                          sub-merchants, Customers or any clients for Olympus to
+                          sub-merchants, Customers or any clients for EnKash to
                           effect recurring billing and for debiting their
                           respective accounts. It is agreed between the Parties
-                          that Olympus shall not be responsible for any claims
+                          that EnKash shall not be responsible for any claims
                           from any of the Merchant’s sub-merchants, Customers or
-                          any claims against Olympus for debiting their
+                          any claims against EnKash for debiting their
                           respective accounts in respect of the recurring
                           billing.
                         </p>
@@ -2511,12 +2503,12 @@ const termCondition = () => {
                           The Merchant shall be responsible to resolve all
                           cardholder/customer account holder disputes and
                           provide whatever assistance necessary to assist the
-                          Acquiring Banks, Card Associations and Olympus deal
+                          Acquiring Banks, Card Associations and EnKash deal
                           with all cardholder/customer account holder disputes
                           at its own cost.
                         </p>
                         <p>
-                          The Merchant authorises Olympus to share KYC details
+                          The Merchant authorises EnKash to share KYC details
                           collected from the Merchant and Transaction data and
                           Customer information (if any) with the respective
                           Acquiring Banks and Card Associations.
@@ -2526,7 +2518,7 @@ const termCondition = () => {
                           as a part of its business and shall ensure that the
                           Merchant Site does not contain libelous, defamatory,
                           obscene, pornographic or profane material or any
-                          instructions that may cause harm to Olympus, the
+                          instructions that may cause harm to EnKash, the
                           Acquiring Banks, Card Associations and/or any other
                           Third Party.
                         </p>
@@ -2536,7 +2528,7 @@ const termCondition = () => {
                           it with Issuer. The Merchant shall not input any data
                           on behalf of the Customers on the Merchant Site or the
                           Acquiring Bank, failing which it will be considered as
-                          breach of trust of Olympus and/or of the Acquiring
+                          breach of trust of EnKash and/or of the Acquiring
                           Bank.
                         </p>
                         <p>
@@ -2592,23 +2584,23 @@ const termCondition = () => {
                           Negative, Risky and Restricted Categories of business.
                         </p>
                         <p>
-                          Olympus shall remain certified Payment Card Industry
+                          EnKash shall remain certified Payment Card Industry
                           Data Security Standard (“PCI DSS”) during the term of
                           this Agreement.
                         </p>
                         <p>
-                          Olympus shall comply with all Applicable Laws
-                          including the applicable data privacy laws and
-                          Information Technology Act, 2000 and rules,
-                          regulations and notifications issued thereunder.
+                          EnKash shall comply with all Applicable Laws including
+                          the applicable data privacy laws and Information
+                          Technology Act, 2000 and rules, regulations and
+                          notifications issued thereunder.
                         </p>
                         <p>
-                          To provide Olympus Services under this Agreement,
-                          Olympus has entered into agreements with Issuers, and
+                          To provide EnKash Services under this Agreement,
+                          EnKash has entered into agreements with Issuers, and
                           Acquiring Banks.
                         </p>
                         <p>
-                          Olympus shall not store Customer card credentials
+                          EnKash shall not store Customer card credentials
                           within its database or the server which is accessed by
                           the Merchant except for the limited purpose of
                           transaction tracking for which, required credentials
@@ -2631,7 +2623,7 @@ const termCondition = () => {
                         information in whole or in part of either Party.
                         Merchant shall ensure that either the Merchant or any of
                         its employees shall not reverse engineer, decompile or
-                        disassemble any software shared/disclosed by Olympus.
+                        disassemble any software shared/disclosed by EnKash.
                         Each party acknowledges that monetary damages may not be
                         a sufficient remedy for unauthorized disclosure of any
                         Confidential Information and that the disclosing party
@@ -2718,8 +2710,8 @@ const termCondition = () => {
                       <p>
                         It is agreed between the Parties that during the Term
                         any promotion or publicity of the Service would always
-                        carry ‘Merchant’ and ‘Olympus’ service mark or the
-                        appropriate Merchant and Olympus marks as may be agreed
+                        carry ‘Merchant’ and ‘EnKash’ service mark or the
+                        appropriate Merchant and EnKash marks as may be agreed
                         between the Parties.
                       </p>
                       <p>
@@ -2734,17 +2726,17 @@ const termCondition = () => {
                         Notwithstanding anything contained in these Terms and
                         Conditions, the Merchant hereby undertakes and agrees to
                         indemnify, protect against liability and hold harmless
-                        Olympus against all actions, proceedings, claims,
+                        EnKash against all actions, proceedings, claims,
                         liabilities (including statutory liabilities),
                         penalties, demands and costs (including without
-                        limitation, legal costs of Olympus on a
+                        limitation, legal costs of EnKash on a
                         solicitor/attorney and own client basis), awards,
                         damages, losses and/or expenses, however, arising in
                         relation to any claim or proceeding brought by any
                         person other than a Party to the Agreement including but
                         not limited to banks or other partners in the payments
                         eco-system, law enforcement authorities and regulators
-                        against Olympus in respect of any act, deed, negligence,
+                        against EnKash in respect of any act, deed, negligence,
                         omission, misrepresentation, default, misconduct,
                         non-performance or fraud by the Merchant, its employees,
                         contractors, agents, Customers or any person other than
@@ -2753,7 +2745,7 @@ const termCondition = () => {
                       </p>
                       <p>
                         Notwithstanding anything contained in these Terms and
-                        Conditions, Olympus hereby undertakes and agrees to
+                        Conditions, EnKash hereby undertakes and agrees to
                         indemnify, protect against liability and hold harmless
                         Merchant against all actions, proceedings, claims,
                         liabilities (including statutory liabilities),
@@ -2763,10 +2755,10 @@ const termCondition = () => {
                         damages, losses and/or expenses, however, arising in
                         relation to any claim or proceeding brought by any
                         person other than a Party to the Agreement against
-                        Olympus in respect of any act, deed, negligence,
+                        EnKash in respect of any act, deed, negligence,
                         omission, misrepresentation, default, misconduct,
                         non-performance or any person other than a Party to the
-                        Agreement in relation to services rendered by Olympus to
+                        Agreement in relation to services rendered by EnKash to
                         the Merchant;
                       </p>
                       <p>
@@ -2795,11 +2787,11 @@ const termCondition = () => {
                         year from the date of termination.
                       </p>
                       <p>
-                        Notwithstanding anything contained herein, Olympus has a
+                        Notwithstanding anything contained herein, EnKash has a
                         right to withhold or set off its claims of indemnity
                         from the outstanding settlement amount or any other
-                        amount which is with Olympus immediately upon raising
-                        the claim of indemnity.
+                        amount which is with EnKash immediately upon raising the
+                        claim of indemnity.
                       </p>
 
                       <p className="mb-3 mt-4">
@@ -2808,22 +2800,22 @@ const termCondition = () => {
                       <p>
                         Notwithstanding anything stated under this Agreement
                         including the obligation to indemnify the Merchant, the
-                        aggregate liability of Olympus to the Merchant from any
+                        aggregate liability of EnKash to the Merchant from any
                         cause whatsoever shall not, in any event, exceed the sum
                         equivalent to the preceding one (1) month’s aggregate
-                        Consideration earned by Olympus under this agreement
-                        from the date of occurrence of such liability.
+                        Consideration earned by EnKash under this agreement from
+                        the date of occurrence of such liability.
                       </p>
                       <p>
-                        Provided that Olympus shall not be liable to the
-                        Merchant for any special, incidental, indirect or
-                        consequential, or direct damages, damages from loss of
-                        profits or business opportunities even if the Merchant
-                        shall have been advised in advance of the possibility of
-                        such loss, cost or damages.
+                        Provided that EnKash shall not be liable to the Merchant
+                        for any special, incidental, indirect or consequential,
+                        or direct damages, damages from loss of profits or
+                        business opportunities even if the Merchant shall have
+                        been advised in advance of the possibility of such loss,
+                        cost or damages.
                       </p>
                       <p>
-                        In no event shall Olympus be liable to the Customers or
+                        In no event shall EnKash be liable to the Customers or
                         any third party.
                       </p>
                       <p>
@@ -2833,8 +2825,8 @@ const termCondition = () => {
                         party.
                       </p>
                       <p>
-                        The Olympus shall not be liable for any of the
-                        following: (a) about which it did not have any actual or
+                        The EnKash shall not be liable for any of the following:
+                        (a) about which it did not have any actual or
                         constructive knowledge; (b) shall not be liable for any
                         Net Quantifiable Financial Benefit that arises to the
                         Merchant for any loss suffered. The term Net
@@ -2868,52 +2860,51 @@ const termCondition = () => {
                         <strong>DISCLAIMER</strong>
                       </p>
                       <p>
-                        Olympus will make all reasonable efforts to provide
+                        EnKash will make all reasonable efforts to provide
                         uninterrupted service subject to downtime and regular
                         maintenance. However, notwithstanding anything in this
-                        Agreement, the Merchant acknowledges that Olympus Site,
-                        Olympus Services, and the Acquiring Bank's Services may
+                        Agreement, the Merchant acknowledges that EnKash Site,
+                        EnKash Services, and the Acquiring Bank's Services may
                         not be uninterrupted or error-free or free from any
                         virus or other malicious, destructive or corrupting
-                        code, program or macro and Olympus and the Acquiring
-                        Bank disclaim all warranties, express or implied,
-                        written or oral, including but not limited to warranties
-                        of merchantability and fitness of the services for a
+                        code, program or macro and EnKash and the Acquiring Bank
+                        disclaim all warranties, express or implied, written or
+                        oral, including but not limited to warranties of
+                        merchantability and fitness of the services for a
                         particular purpose.
                       </p>
                       <p>
                         The Merchant also acknowledges that the arrangement
-                        between one or more Acquiring Banks and Olympus may
+                        between one or more Acquiring Banks and EnKash may
                         terminate at any time and services of such Acquiring
-                        Banks may be withdrawn. Olympus shall not be liable to
+                        Banks may be withdrawn. EnKash shall not be liable to
                         the Merchant for any loss or damage whatsoever or
                         howsoever caused or arising, directly or indirectly,
                         including without limitation, because of loss of data;
                         interruption or stoppage to the Customer's access to
-                        and/or use of the Merchant Site, Olympus Services,
-                        interruption or stoppage of Olympus Site, hacking or
-                        unauthorized access to the Olympus Services,
+                        and/or use of the Merchant Site, EnKash Services,
+                        interruption or stoppage of EnKash Site, hacking or
+                        unauthorized access to the EnKash Services,
                         non-availability of connectivity between the Merchant
-                        Site and Olympus Site, etc.
+                        Site and EnKash Site, etc.
                       </p>
                       <p>
-                        Olympus shall not be responsible for any losses
-                        sustained through (i) the use of counterfeit or stolen
-                        bank cards, or stolen devices; (ii) fraudulent
-                        electronic transactions; or (iv) quality and
-                        service-related claims pertaining to the Merchant
-                        services.
+                        EnKash shall not be responsible for any losses sustained
+                        through (i) the use of counterfeit or stolen bank cards,
+                        or stolen devices; (ii) fraudulent electronic
+                        transactions; or (iv) quality and service-related claims
+                        pertaining to the Merchant services.
                       </p>
                       <p>
-                        In addition Olympus and/or Acquiring Banks shall have no
+                        In addition EnKash and/or Acquiring Banks shall have no
                         liability for any failure or delay in performing its
                         obligations under this facility if such failure or
                         delay: (i) is caused by the Merchant's acts or
-                        omissions; (ii) results from actions taken by Olympus or
+                        omissions; (ii) results from actions taken by EnKash or
                         the Acquiring Banks in a reasonable good faith to avoid
                         violating a law, rule or regulation of any governmental
                         authority or to prevent fraud on cardholders/accounts;
-                        or (iii) is caused by circumstances beyond Olympus
+                        or (iii) is caused by circumstances beyond EnKash
                         control, including but not limited to vandalism,
                         hacking, theft, phone service disruptions, Internet
                         disruptions, loss of data, extreme or severe weather
@@ -2921,9 +2912,9 @@ const termCondition = () => {
                         Majeure event.
                       </p>
                       <p>
-                        Olympus's sole obligation and the Merchant's sole and
+                        EnKash's sole obligation and the Merchant's sole and
                         exclusive remedy in the event of an interruption in
-                        Olympus Site, or loss of use and/or access to Olympus
+                        EnKash Site, or loss of use and/or access to EnKash
                         Site, the Acquiring Banks Services, shall be to use all
                         reasonable endeavours to restore the Services as soon as
                         reasonably possible.
@@ -3011,23 +3002,23 @@ const termCondition = () => {
                         continue in force on or after such termination.
                       </p>
                       <p>
-                        If there are reasonable grounds for Olympus or any of
-                        its Acquiring Bank to suspect or upon receiving an
+                        If there are reasonable grounds for EnKash or any of its
+                        Acquiring Bank to suspect or upon receiving an
                         intimation in written mode of communication from the
                         Acquiring Bank that a Transaction conducted on the
                         Merchant platform in suspicious manner which amounts to
                         breach of this Agreement or as a fraudulent Transaction,
-                        against the Acquiring Bank or any Customer, Olympus
-                        shall be entitled to suspend its services immediately,
+                        against the Acquiring Bank or any Customer, EnKash shall
+                        be entitled to suspend its services immediately,
                         terminate this Agreement with immediate effect without
                         having to give any notice of termination to the Merchant
                         and withhold the settlements to the Merchant, pending
                         enquiries by the Acquiring Bank and till the resolution
-                        of such issues. Olympus shall also have the right to
+                        of such issues. EnKash shall also have the right to
                         block any future payments in this regard.
                       </p>
                       <p>
-                        Olympus shall have the right to terminate the Agreement
+                        EnKash shall have the right to terminate the Agreement
                         immediately in the event Chargeback to Gross Transaction
                         Value Ratio goes beyond 1%.
                       </p>
@@ -3035,14 +3026,14 @@ const termCondition = () => {
                         The Merchant agrees and confirms that the Merchant shall
                         remain solely liable after the termination of this
                         Agreement for all Chargebacks, refunds, penalties, loss,
-                        damages or cost incurred by Olympus, and/or Customers
-                        and for all claims and proceedings arising against
-                        Olympus with respect to this Agreement. At the time of
-                        termination, Olympus may retain such Settlement Amount
+                        damages or cost incurred by EnKash, and/or Customers and
+                        for all claims and proceedings arising against EnKash
+                        with respect to this Agreement. At the time of
+                        termination, EnKash may retain such Settlement Amount
                         payable to the Merchant (including Settlement Amounts
-                        withheld) as may be determined by Olympus to cover
+                        withheld) as may be determined by EnKash to cover
                         chargeback risk, refund risk or any potential loss,
-                        damages, penalties, cost that may be incurred by Olympus
+                        damages, penalties, cost that may be incurred by EnKash
                         and/or Customers for a period of 180 Business Days.
                         Subject to this Clause and any other Clause of this
                         Agreement, all settlement to the Merchant after notice
@@ -3050,10 +3041,10 @@ const termCondition = () => {
                         event that such retained amount is not sufficient to
                         cover all Outstanding Amounts of the Merchant
                         post-termination, the Merchant shall ensure that it pays
-                        Olympus all pending amounts within 10 (ten) days of
+                        EnKash all pending amounts within 10 (ten) days of
                         receiving the demand notice and shall at all times keep
-                        Olympus indemnified in this respect. This Clause
-                        survives the termination of this Agreement.
+                        EnKash indemnified in this respect. This Clause survives
+                        the termination of this Agreement.
                       </p>
 
                       <p className="mb-3 mt-4">
@@ -3124,7 +3115,7 @@ const termCondition = () => {
                           protection against unauthorized access to or use of
                           the information of the customer or associated records
                           which could result in substantial harm or
-                          inconvenience to Olympus; and
+                          inconvenience to EnKash; and
                         </li>
                         <li>
                           ensure the proper and secure disposal of such data;
@@ -3176,9 +3167,9 @@ const termCondition = () => {
                         this Article, all violation of information security, any
                         breaches in the security practice, control process or
                         checks of the Merchant and all suspected security events
-                        within 12 hours of such event or breach to Olympus and
+                        within 12 hours of such event or breach to EnKash and
                         shall also immediately intimate all the concerned
-                        representatives and employees of Olympus which interact
+                        representatives and employees of EnKash which interact
                         with the Merchant on regular basis.
                       </p>
 
@@ -3187,7 +3178,7 @@ const termCondition = () => {
                       </p>
                       <ul>
                         <li>
-                          Assignments: Olympus may assign, in whole or in part,
+                          Assignments: EnKash may assign, in whole or in part,
                           the benefits or obligations of this Agreement by
                           providing a thirty (30) days prior intimation of such
                           assignment to the Merchant, which shall be binding on
@@ -3259,24 +3250,24 @@ const termCondition = () => {
                         conditions:
                       </p>
                       <p>
-                        Olympus enables acceptance of domestic and international
+                        EnKash enables acceptance of domestic and international
                         payments, through various Payments Instruments. Merchant
                         is provided either a pre-coded check-out integration or
                         customized payment flow. Merchant may also choose to use
                         software development kits to easily integrate its own
                         mobile application or website to the gateway of the
-                        Olympus. Such integration will be done by the Merchant
-                        on its own and Olympus will not be required to provide
-                        any support for such integration. Merchant may collect
+                        EnKash. Such integration will be done by the Merchant on
+                        its own and EnKash will not be required to provide any
+                        support for such integration. Merchant may collect
                         payments using various Payments Instruments after such
                         integration of application programming interface.
                       </p>
                       <p>
-                        Olympus shall also enable a dashboard to the Merchant.
+                        EnKash shall also enable a dashboard to the Merchant.
                         The dashboard shall enable the Merchant to manage the
                         payments, refunds, and settlements. The dashboard will
                         also provide analytics from day-to-day business. For
-                        providing analytics, the Olympus shall use the payments
+                        providing analytics, the EnKash shall use the payments
                         data so collected in relation to the business of the
                         Merchant. The payment data shall be used only to provide
                         the analytics. Any consent for usage of the data
@@ -3290,90 +3281,89 @@ const termCondition = () => {
                         dashboard will also provide details of the refund.
                       </p>
                       <p>
-                        Olympus has made available software development kits for
+                        EnKash has made available software development kits for
                         mobile applications, web applications, and plugins for
                         different partners. The Merchant may choose to integrate
                         their mobile application or a web application with the
-                        Olympus Platform on their own. In the event, Merchant
+                        EnKash Platform on their own. In the event, Merchant
                         uses plugins to integrate the payment gateway on the
                         platform of a partner, the Merchant should have been
                         abiding by the terms and conditions as stated by the
-                        partner of Olympus for the use of its platform. Olympus
+                        partner of EnKash for the use of its platform. EnKash
                         shall not be responsible for any defect or deficiency of
-                        services rendered by the partner of Olympus.
+                        services rendered by the partner of EnKash.
                       </p>
                       <p>
                         The integration will take place in accordance with the
-                        application programming interface provided by Olympus
-                        and the documentation for such application programming
-                        interface shall be available on the website of Olympus.
+                        application programming interface provided by EnKash and
+                        the documentation for such application programming
+                        interface shall be available on the website of EnKash.
                       </p>
                       <p>
-                        Olympus shall provide for the following reports: (i)
+                        EnKash shall provide for the following reports: (i)
                         Transaction Report; (ii) Settlement Reconciliation
                         Report; (iii) Settlement Summary; (iv) Refund Report (v)
-                        Ledger Report. Olympus shall not be required to provide
+                        Ledger Report. EnKash shall not be required to provide
                         any additional notice or report regarding the
                         transactions to the Merchant in any manner whatsoever.
                         The Merchant shall be solely liable for supervising the
                         performance of its transactions. The Merchant should be
                         aware of the reports including the refunds processed,
                         settlements made and transactions carried out through
-                        the Olympus Platform.
+                        the EnKash Platform.
                       </p>
                       <p>
-                        Olympus shall provide for several Payment Instruments
+                        EnKash shall provide for several Payment Instruments
                         after integrating with several banks, payment
                         aggregators, payment gateways and payment service
                         operators. These integrations will be managed and
                         operated in accordance with the existing laws, and
                         guidelines issued by such partners and contracts with
                         such partners. The Merchant at all times be responsible
-                        to support Olympus in complying with the applicable
-                        laws, guidelines issued by the partners and contracts
-                        entered between Olympus and such partners on best
-                        efforts basis.
+                        to support EnKash in complying with the applicable laws,
+                        guidelines issued by the partners and contracts entered
+                        between EnKash and such partners on best efforts basis.
                       </p>
                       <p>
-                        Olympus shall facilitate e-commerce websites and
+                        EnKash shall facilitate e-commerce websites and
                         Merchants to accept various Payments Instruments from
                         the Customers for completion of their payment
                         obligations without the need for Merchant to create a
                         separate payment integration system of their own.
                       </p>
                       <p>
-                        Olympus shall facilitate the Merchants to connect with
+                        EnKash shall facilitate the Merchants to connect with
                         Acquirer Banks.
                       </p>
                       <p>
-                        Olympus shall collect funds from the Customer, pool such
+                        EnKash shall collect funds from the Customer, pool such
                         funds in a Nodal / Escrow Account and disburse such
                         funds in accordance with the Applicable Law.
                       </p>
                       <p>
                         The General Terms and Conditions to Services clearly
                         delineate the roles and responsibilities of the
-                        Merchant, Olympus, and Acquiring Banks in
+                        Merchant, EnKash, and Acquiring Banks in
                         sorting/handling complaints, refund / failed
                         transactions, return policy, customer grievance
                         redressal including time for resolving queries, dispute
                         resolution mechanism, reconciliation, etc.
                       </p>
                       <p>
-                        Olympus has a board-approved Merchant Grievance Policy.
+                        EnKash has a board-approved Merchant Grievance Policy.
                         The Merchant Grievance Policy appoints a Nodal Officer
                         responsible for regulatory and customer grievance
-                        handling functions. Olympus shall prominently display
+                        handling functions. EnKash shall prominently display
                         details of the nodal officer on its website.
                       </p>
                       <p>
-                        Olympus has a board approved Know Your Client / Anti
+                        EnKash has a board approved Know Your Client / Anti
                         Money Laundering Policy in terms of which a Merchant is
                         onboarded.
                       </p>
                       <p>
-                        Olympus shall undertake background and antecedent check
-                        of the Merchant. Olympus shall ensure that the Merchant
+                        EnKash shall undertake background and antecedent check
+                        of the Merchant. EnKash shall ensure that the Merchant
                         does not have any malafide intention of duping
                         customers, does not sell fake/counterfeit/prohibited
                         products, etc.
@@ -3386,17 +3376,17 @@ const termCondition = () => {
                         claimed by the Customer.
                       </p>
                       <p>
-                        Olympus shall be entitled to check payments card
-                        industry – data security standard and payment
-                        application data security standard compliance of the
-                        infrastructure of the Merchants that are on-boarded.
+                        EnKash shall be entitled to check payments card industry
+                        – data security standard and payment application data
+                        security standard compliance of the infrastructure of
+                        the Merchants that are on-boarded.
                       </p>
                       <p>
                         The Merchant shall ensure that its website does not save
                         customer card and such related data.
                       </p>
                       <p>
-                        Olympus may carry out a security audit of a Merchant to
+                        EnKash may carry out a security audit of a Merchant to
                         check compliance as and when required.
                       </p>
                       <p>
@@ -3409,27 +3399,26 @@ const termCondition = () => {
                       <p>
                         The Merchant shall ensure that any incident relating to
                         the breach of data or breach of privacy is informed to
-                        the Olympus within a reasonable time.
+                        the EnKash within a reasonable time.
                       </p>
                       <p>
-                        Olympus shall obtain periodic security assessment
-                        reports either based on the risk assessment (large or
-                        small merchants) and/or at the time of renewal of
-                        contracts.
+                        EnKash shall obtain periodic security assessment reports
+                        either based on the risk assessment (large or small
+                        merchants) and/or at the time of renewal of contracts.
                       </p>
                       <p>
-                        Olympus shall maintain the amount collected by it in an
+                        EnKash shall maintain the amount collected by it in an
                         Escrow Account with any scheduled commercial bank.
-                        Olympus may operate two Escrow Account as permitted by
+                        EnKash may operate two Escrow Account as permitted by
                         the Applicable law.
                       </p>
                       <p>
-                        Olympus may shift the Escrow Account from one bank to
+                        EnKash may shift the Escrow Account from one bank to
                         another.
                       </p>
                       <p>
-                        Olympus may call upon the Merchant to pre-fund the
-                        Escrow Account.
+                        EnKash may call upon the Merchant to pre-fund the Escrow
+                        Account.
                       </p>
                       <p>
                         The Escrow Account shall not be operated for
@@ -3441,33 +3430,33 @@ const termCondition = () => {
                         Law.
                       </p>
                       <p>
-                        Olympus shall be free to share the details of the
+                        EnKash shall be free to share the details of the
                         Merchant, notwithstanding the confidentiality
                         obligations, with the Acquiring Bank, legal enforcement
-                        agencies and regulators. Olympus shall be free to share
+                        agencies and regulators. EnKash shall be free to share
                         the details of the transactions, notwithstanding the
                         confidentiality obligations, with the Acquiring Bank,
                         legal enforcement agencies, and regulators.
                       </p>
                       <p>
-                        Olympus shall ensure that the payments are made only to
+                        EnKash shall ensure that the payments are made only to
                         eligible Merchants that have not indulged in any
                         fraudulent transactions and have shown responsible
-                        behavior. Olympus shall settle the money to the Merchant
+                        behavior. EnKash shall settle the money to the Merchant
                         only and only in case Merchant has participated in a
                         legible business.
                       </p>
                       <p>
-                        Olympus shall have a mechanism to prevent and detect
-                        fraud and in this regard, Olympus may choose to monitor
-                        the behavior of the Merchant ongoing basis. Olympus
-                        shall also to prevent fraud, monitor the daily
-                        transactions from time to time with the support of
-                        information technology tools.
+                        EnKash shall have a mechanism to prevent and detect
+                        fraud and in this regard, EnKash may choose to monitor
+                        the behavior of the Merchant ongoing basis. EnKash shall
+                        also to prevent fraud, monitor the daily transactions
+                        from time to time with the support of information
+                        technology tools.
                       </p>
                       <p>
-                        Olympus shall monitor, handle, and follow-up cyber
-                        security incidents and breaches. Olympus shall provide
+                        EnKash shall monitor, handle, and follow-up cyber
+                        security incidents and breaches. EnKash shall provide
                         details regarding such cyber incidents and breaches
                         immediately to the Reserve Bank of India and CERT-IN.
                       </p>
@@ -3483,15 +3472,15 @@ const termCondition = () => {
                         documents with it for a period of 10 years and shall
                         update the KYC of its Sub-Merchant on a periodic basis.
                         The Merchant shall be under an obligation to provide the
-                        KYC-related documents to Olympus within a period of 3
+                        KYC-related documents to EnKash within a period of 3
                         Business Days of receipt of an intimation for such
                         documents. Failure to provide an updated KYC document to
-                        Olympus shall entitle Olympus to recover the dues and
+                        EnKash shall entitle EnKash to recover the dues and
                         damages from the Merchant due to the unavailability of
                         the Sub-Merchant.
                       </p>
                       <p>
-                        In the event, Olympus has offered payment solutions
+                        In the event, EnKash has offered payment solutions
                         related to Online Payment Gateway Service Provider
                         (‘OPGSP’) Scheme issued by the Reserve Bank of India,
                         Parties shall comply with the guidelines issued by
@@ -3508,7 +3497,7 @@ const termCondition = () => {
       </div>
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default termCondition;
+export default termCondition

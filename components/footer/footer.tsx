@@ -102,9 +102,7 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                     <Link href="/auto-collect/">Auto Collect</Link>
                   </li>
                   <li>
-                    <Link href="/collect/virtual-account/">
-                      Virtual Accounts
-                    </Link>
+                    <Link href="/virtual-account/">Virtual Accounts</Link>
                   </li>
                   <li>
                     <Link href="/e-nach/">e-NACH</Link>
@@ -461,6 +459,15 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                   </li>
                   <li>
                     <Link href="/refund-policy/">Refund Policy</Link>
+                  </li>
+                  <li>
+                    <a
+                      href="/ScheduleofCard-RelatedCharges.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Card Related Charges
+                    </a>
                   </li>
                 </ul>
               </div>

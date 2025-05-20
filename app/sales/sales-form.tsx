@@ -57,7 +57,7 @@ type Product = {
 // Define our data
 const categoryData: Category[] = [
   {
-    name: "Payables",
+    name: "Make Payment",
     products: [
       { name: "Vendor Payment", icon: vendorPaymentFilled },
       { name: "Utility Payment", icon: billPaymentsFilled },
@@ -67,7 +67,7 @@ const categoryData: Category[] = [
     ],
   },
   {
-    name: "Receivables",
+    name: "Collect Payment",
     products: [
       { name: "Payment Gateway", icon: paymentGatewayFilled },
       { name: "Payment Links", icon: paymentLinksFilled },
@@ -101,7 +101,7 @@ const categoryData: Category[] = [
     products: [],
   },
   {
-    name: "Loyalty Lounge",
+    name: "Rewards",
     products: [
       { name: "Gift Card", icon: giftCardFilled },
       { name: "Brand Vouchers", icon: brandVouchersFilled },

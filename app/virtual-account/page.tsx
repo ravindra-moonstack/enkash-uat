@@ -31,7 +31,7 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Optimize Your Financial Operations with Virtual Account Solutions. Explore virtual accounts designed to streamline receivables, enhance cash flow management, and boost financial efficiency",
   alternates: {
-    canonical: "https://www.enkash.com/collect/virtual-account/",
+    canonical: "https://www.enkash.com/virtual-account/",
   },
   faqData: faqData,
 })
@@ -42,7 +42,7 @@ const VirtualAccount = (): React.JSX.Element => {
   return (
     <div className={`bg-indi-volt color-white ${styles.home_container}`}>
       <StructuredData
-        url={`https://www.enkash.com/collect/virtual-account/`}
+        url={`https://www.enkash.com/virtual-account/`}
         faqData={faqData}
       />
 
@@ -280,7 +280,7 @@ const VirtualAccount = (): React.JSX.Element => {
             size="h1"
           />
         </div>
-        
+
         <div className="mb-5">
           <Heading
             title="The automated process of collecting funds from customers regularly for monthly subscriptions, loan repayments, utility bills, and insurance premiums with electronic authorization is e-NACH. It helps streamline the payment process by eliminating human interaction and reducing errors, promising timely collections."
