@@ -364,6 +364,9 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                   <li>
                     <Link href="/sales?source=getstarted_footer">Sales</Link>
                   </li>
+                  <li>
+                    <Link href="/contact-us">Contact Us</Link>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -456,6 +459,15 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                   </li>
                   <li>
                     <Link href="/refund-policy/">Refund Policy</Link>
+                  </li>
+                  <li>
+                    <a
+                      href="/ScheduleofCard-RelatedCharges.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Card Related Charges
+                    </a>
                   </li>
                 </ul>
               </div>

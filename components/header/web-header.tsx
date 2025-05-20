@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import styles from "./header.module.scss";
-import navBarTopTtitle from "./data/nav-bar";
+import Link from "next/link"
+import Image from "next/image"
+import { useEffect, useRef, useState } from "react"
+import styles from "./header.module.scss"
+import navBarTopTtitle from "./data/nav-bar"
 import {
   enkashWhiteLogo,
   enkashBlueLogo,
@@ -14,63 +14,65 @@ import {
   confetti,
   bannerStackBlue,
   bannerBrands,
-} from ".";
-import ProductModal from "./modal/product-modal";
-import ResourcesModal from "./modal/resources-modal";
-import SolutionsModal from "./modal/solutions-modal";
-import TopBannerWeb from "../top-banner/top-banner-web";
-import { usePathname } from "next/navigation";
+} from "."
+import ProductModal from "./modal/product-modal"
+import ResourcesModal from "./modal/resources-modal"
+import SolutionsModal from "./modal/solutions-modal"
+import TopBannerWeb from "../top-banner/top-banner-web"
+import { usePathname } from "next/navigation"
+import MarketingBannerWeb from "../marketing-banner/marketing-banner-web"
 
 interface props {
-  utmSource?: string;
+  utmSource?: string
 }
 
 const WebHeader = ({ utmSource }: props) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false);
-  const [itemWidth, setItemWidth] = useState(0);
-  const itemRef = useRef<HTMLLIElement | null>(null);
-  const [slidePosition, setSlidePosition] = useState<number | null>(null);
-  const itemRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false)
+  const [itemWidth, setItemWidth] = useState(0)
+  const itemRef = useRef<HTMLLIElement | null>(null)
+  const [slidePosition, setSlidePosition] = useState<number | null>(null)
+  const itemRefs = useRef<(HTMLLIElement | null)[]>([])
   // let signupUrl = utmSource
   //   ? `https://home.enkash.com/signup?utm_source=${utmSource}`
   //   : "https://home.enkash.com/get-started";
 
-  let signupUrl = `/sales/?source=${utmSource}`;
+  let signupUrl = `/sales/?source=${utmSource}`
 
-  const isHomePage = usePathname();
+  const isHomePage = usePathname()
   if (isHomePage == "/") {
-    signupUrl = "https://home.enkash.com/get-started";
+    signupUrl = "https://home.enkash.com/get-started"
   }
 
   useEffect(() => {
     if (itemRef.current) {
-      setItemWidth(itemRef.current.offsetWidth);
+      setItemWidth(itemRef.current.offsetWidth)
     }
-  }, []);
+  }, [])
 
   const getArrowImageSource = (index: number) => {
     if (hoveredIndex === index) {
-      return arrowDownBlack;
+      return arrowDownBlack
     }
-    return isHeaderBgWhite ? arrowDownBlack : arrowDownWhite;
-  };
+    return isHeaderBgWhite ? arrowDownBlack : arrowDownWhite
+  }
 
   const handleLinkClick = () => {
-    setHoveredIndex(null);
-    setIsHeaderBgWhite(false);
-  };
+    setHoveredIndex(null)
+    setIsHeaderBgWhite(false)
+  }
 
   return (
     <div className={styles.header_wrapper}>
       {/* <TopBannerWeb /> */}
+      <MarketingBannerWeb />
 
       <header
         className={`w-full absolute z-10 d-flex flex-column ${styles.header}
        ${isHeaderBgWhite ? styles.bg_white : styles.bg_blue}`}
         onMouseLeave={() => {
-          setHoveredIndex(null);
-          setIsHeaderBgWhite(false);
+          setHoveredIndex(null)
+          setIsHeaderBgWhite(false)
         }}
       >
         <nav className="d-flex justify-content-between mb-2 pe-5">
@@ -101,22 +103,21 @@ const WebHeader = ({ utmSource }: props) => {
                   className={`px-3 d-flex justify-content-center align-items-center cursor-pointer`}
                   onMouseEnter={() => {
                     const position =
-                      itemRefs.current[index]?.getBoundingClientRect().left ||
-                      0;
-                    const width = itemRefs.current[index]?.offsetWidth || 0;
+                      itemRefs.current[index]?.getBoundingClientRect().left || 0
+                    const width = itemRefs.current[index]?.offsetWidth || 0
 
                     setSlidePosition(
                       position -
                         (itemRefs.current[
                           index
                         ]?.parentElement?.getBoundingClientRect().left || 0)
-                    );
-                    setItemWidth(width);
-                    setHoveredIndex(index);
-                    setIsHeaderBgWhite(true);
+                    )
+                    setItemWidth(width)
+                    setHoveredIndex(index)
+                    setIsHeaderBgWhite(true)
 
                     if (index === 3) {
-                      setIsHeaderBgWhite(false);
+                      setIsHeaderBgWhite(false)
                     }
                   }}
                 >
@@ -166,7 +167,7 @@ const WebHeader = ({ utmSource }: props) => {
         {hoveredIndex === 2 && <ResourcesModal />}
       </header>
     </div>
-  );
-};
+  )
+}
 
-export default WebHeader;
+export default WebHeader

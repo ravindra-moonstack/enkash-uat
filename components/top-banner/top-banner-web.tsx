@@ -1,38 +1,38 @@
-"use client";
-import React from "react";
-import { bannerBrands, bannerStackBlue, crossIcon } from "../header";
-import Link from "next/link";
-import styles from "./top-banner.module.scss";
-import { useState, useEffect } from "react";
-import Image from "next/image";
+"use client"
+import React from "react"
+import { bannerBrands, bannerStackBlue, crossIcon } from "../header"
+import Link from "next/link"
+import styles from "./top-banner.module.scss"
+import { useState, useEffect } from "react"
+import Image from "next/image"
 
 interface TopBannerProps {
-  name?: string;
+  name?: string
 }
 
 const TopBannerWeb: React.FC<TopBannerProps> = ({ name = "temp" }) => {
-  const [showBanner, setShowBanner] = useState(false);
+  const [showBanner, setShowBanner] = useState(false)
 
-  const POPUP_INTERVAL_HOURS = 1;
-  const POPUP_INTERVAL_MS = POPUP_INTERVAL_HOURS * 60 * 60 * 1000;
+  const POPUP_INTERVAL_HOURS = 1
+  const POPUP_INTERVAL_MS = POPUP_INTERVAL_HOURS * 60 * 60 * 1000
   //   const POPUP_INTERVAL_MS = 15 * 1000;
 
   useEffect(() => {
-    const lastPopupTimestamp = localStorage.getItem("lastBannerTimestamp");
-    const currentTime = new Date().getTime();
+    const lastPopupTimestamp = localStorage.getItem("lastBannerTimestamp")
+    const currentTime = new Date().getTime()
 
     if (lastPopupTimestamp) {
-      const timeSinceLastPopup = currentTime - parseInt(lastPopupTimestamp, 10);
+      const timeSinceLastPopup = currentTime - parseInt(lastPopupTimestamp, 10)
 
       //check if last session was within POPUP_INTERVAL_HOURS
       if (timeSinceLastPopup < POPUP_INTERVAL_MS) {
-        return;
+        return
       }
     }
 
-    localStorage.setItem("lastBannerTimestamp", currentTime.toString());
-    setShowBanner(true);
-  }, [POPUP_INTERVAL_HOURS, POPUP_INTERVAL_MS]);
+    localStorage.setItem("lastBannerTimestamp", currentTime.toString())
+    setShowBanner(true)
+  }, [POPUP_INTERVAL_HOURS, POPUP_INTERVAL_MS])
 
   return (
     <>
@@ -65,7 +65,7 @@ const TopBannerWeb: React.FC<TopBannerProps> = ({ name = "temp" }) => {
             src={crossIcon}
             alt="cross icon"
             onClick={() => {
-              setShowBanner(false);
+              setShowBanner(false)
             }}
           />
           <Image
@@ -76,7 +76,7 @@ const TopBannerWeb: React.FC<TopBannerProps> = ({ name = "temp" }) => {
         </div>
       )}
     </>
-  );
-};
+  )
+}
 
-export default TopBannerWeb;
+export default TopBannerWeb
