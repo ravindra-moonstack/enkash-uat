@@ -55,7 +55,9 @@ const MarketingBannerMobile: React.FC<MarketingBannerProps> = ({
           <div className={styles.mobile_banner_light_blue}>
             <div className={styles.text}>
               <div className="d-flex align-items-start">
-                <Link className={styles.button} href="/payment-gateway">
+                <Link className={styles.button}  href={
+                  "https://www.enkash.com/payment-gateway/?utm_source=website&utm_medium=banner&utm_campaign=pg-launch"
+                }>
                   IT'S HERE:
                 </Link>
                 <div>
@@ -64,7 +66,9 @@ const MarketingBannerMobile: React.FC<MarketingBannerProps> = ({
               </div>
             </div>
             <div className={styles.buttons_container}>
-              <Link href="/payment-gateway" target="_blank">
+              <Link  href={
+                  "https://www.enkash.com/payment-gateway/?utm_source=website&utm_medium=banner&utm_campaign=pg-launch"
+                } target="_blank">
                 <div>
                   <button className={styles.primary_button}>
                     Explore Now

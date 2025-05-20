@@ -105,8 +105,7 @@ const ResourcesModal = () => {
             {blogData.description}
           </div>
           <a href={blogData.link}>
-            <div
-              className={`${styles.resource_arrow_icon} mb-2 color-equity-blue`}
+            <div className={`${styles.resource_arrow_icon} mb-2 color-equity-blue`}
             >
               Read more
               <Image
