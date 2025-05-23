@@ -1,36 +1,35 @@
-"use client";
+"use client"
 
-import styles from "../button.module.scss";
-import Image from "next/image";
+import styles from "../button.module.scss"
+import Image from "next/image"
 
 export interface ButtonProps {
-  isDisabled?: boolean;
-  title: string;
-  url?: string;
-  actionImage?: any;
-  iconSize?: any;
+  isDisabled?: boolean
+  title: string
+  url?: string
+  actionImage?: any
+  iconSize?: any
 }
 
-const SecondryButton = ({
+const TertiaryButton = ({
   isDisabled,
   title,
   url,
   actionImage,
   iconSize,
 }: ButtonProps) => {
-  const iconClass = iconSize || "big-icon";
+  const iconClass = iconSize || "big-icon"
 
   const handleClick = () => {
     if (url) {
-      window.open(url, "_blank");
+      window.open(url, "_blank")
     }
-  };
+  }
 
   return (
-    
     <button
       disabled={isDisabled}
-      className={`${styles.secondry_button}`}
+      className={`${styles.tertiary_button}`}
       onClick={handleClick}
     >
       {title}
@@ -43,7 +42,7 @@ const SecondryButton = ({
         />
       )}
     </button>
-  );
-};
+  )
+}
 
-export default SecondryButton;
+export default TertiaryButton

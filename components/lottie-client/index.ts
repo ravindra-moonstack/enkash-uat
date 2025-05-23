@@ -129,3 +129,8 @@ export const payablesBulkAnimation = () =>
   import("../../app/make-payments/img/lottie/bulk-pay.json")
 export const payablesBillAnimation = () =>
   import("../../app/make-payments/img/lottie/bill-pay.json")
+
+
+//Partner Animation
+export const partnerEarnAnimation = () =>
+  import("../../app/partner-page/img/lottie/earnMore.json")

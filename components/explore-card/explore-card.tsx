@@ -1,33 +1,40 @@
-"use client";
+"use client"
 
-import Image from "next/image";
-import { greenArrow, blueArrow } from ".";
-import Heading from "../heading/heading";
-import styles from "./explore-card.module.scss";
-import Link from "next/link";
-import { motion, useScroll, MotionValue } from "framer-motion";
-import { useRef } from "react";
+import Image from "next/image"
+import { greenArrow, blueArrow } from "."
+import Heading from "../heading/heading"
+import styles from "./explore-card.module.scss"
+import Link from "next/link"
+import { motion, useScroll, MotionValue } from "framer-motion"
+import { useRef } from "react"
 
 export interface CardProps {
-  title: string;
-  description: string;
-  theme: string;
-  link?: any;
+  title: string
+  description: string
+  theme: string
+  link?: any
+  linkTitle?: string
 }
 
-const ExploreCard = ({ title, description, theme, link }: CardProps) => {
-  const isBlueTheme = () => theme === "blue";
+const ExploreCard = ({
+  title,
+  description,
+  theme,
+  link,
+  linkTitle = "Explore Now",
+}: CardProps) => {
+  const isBlueTheme = () => theme === "blue"
   const getPrimaryColor = () =>
-    isBlueTheme() ? "equity-blue" : "electric-green";
-  const getSecondaryColor = () => (isBlueTheme() ? "black" : "white");
-  const getArrowSrc = () => (isBlueTheme() ? blueArrow : greenArrow);
+    isBlueTheme() ? "equity-blue" : "electric-green"
+  const getSecondaryColor = () => (isBlueTheme() ? "black" : "white")
+  const getArrowSrc = () => (isBlueTheme() ? blueArrow : greenArrow)
 
-  const ref = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null)
 
   const scrollData = useScroll({
     target: ref,
     offset: ["0% 90%", "0% 50%"],
-  }) as { scrollYProgress: MotionValue<number> };
+  }) as { scrollYProgress: MotionValue<number> }
 
   return (
     <motion.div
@@ -51,7 +58,7 @@ const ExploreCard = ({ title, description, theme, link }: CardProps) => {
       <Link href={link || ""} className={styles.link}>
         <div className={`${styles.arrow_icon} d-flex align-items-center mt-2`}>
           <Heading
-            title="Explore Now"
+            title={linkTitle}
             color={getPrimaryColor()}
             size="h6"
             weight="6"
@@ -65,7 +72,7 @@ const ExploreCard = ({ title, description, theme, link }: CardProps) => {
         </div>
       </Link>
     </motion.div>
-  );
-};
+  )
+}
 
-export default ExploreCard;
+export default ExploreCard

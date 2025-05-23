@@ -1,0 +1,221 @@
+@import "/styles/variables";
+@import "/styles/mixin";
+
+.marquee_box_mobile {
+  @include for-laptops {
+    display: none;
+  }
+}
+
+.marquee_box {
+  display: none;
+  @include for-laptops {
+    display: block;
+  }
+  // filter: grayscale(1);
+  cursor: pointer;
+  &:hover {
+    filter: none;
+  }
+}
+
+.bank_logo::-webkit-scrollbar {
+  display: none;
+}
+
+.bank_logo {
+  display: flex;
+  justify-content: space-evenly;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+
+  padding-left: 20px;
+  @include for-laptops {
+    padding-left: 20px;
+  }
+
+  img {
+    @include for-laptops {
+      margin-right: 0px;
+    }
+  }
+
+  .americanExp {
+    height: 33px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 40px;
+    }
+  }
+  .pwc {
+    height: 30px;
+    width: auto;
+    margin-right: 40px;
+    @include for-laptops {
+      height: 35px;
+    }
+  }
+  .strip {
+    height: 30px;
+    width: auto;
+    margin-right: 40px;
+    @include for-laptops {
+      height: 40px;
+    }
+  }
+
+}
+
+.customer_logo::-webkit-scrollbar {
+  display: none;
+}
+
+.customer_logo {
+  display: flex;
+  justify-content: space-evenly;
+  overflow-x: auto;
+  padding-left: 20px;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  scrollbar-width: none;
+  @include for-laptops {
+    padding-left: 20px;
+  }
+
+  img {
+    margin-right: 20px;
+    @include for-laptops {
+      margin-right: 0px;
+    }
+  }
+
+  .box {
+    height: 30px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 35px;
+    }
+  }
+
+  .reliance {
+    height: 30px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 50px;
+    }
+  }
+
+  .pristyn {
+    height: 35px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 50px;
+    }
+  }
+  .everest {
+    height: 22px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 30px;
+    }
+  }
+  .cure {
+    height: 25px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 30px;
+    }
+  }
+  .infra {
+    height: 17px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 28px;
+    }
+  }
+  .dtdc {
+    height: 20px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 28px;
+    }
+  }
+  .starbucks {
+    height: 40px;
+    width: auto;
+    margin-right: 50px;
+    @include for-laptops {
+      height: 50px;
+    }
+  }
+}
+
+.icons {
+  height: 26px;
+  width: 26px;
+  @include for-laptops {
+    height: 50px;
+    width: 50px;
+  }
+}
+
+.img_container {
+  margin-bottom: 450px;
+  padding-top: 0;
+  @include for-laptops {
+    padding-top: 100px;
+    margin-bottom: 250px;
+  }
+
+  .lottie_container {
+    position: absolute;
+    right: 50%;
+    top: 0px;
+    width: 90%;
+    z-index: 2;
+    -ms-transform: translate(50%, 50%);
+    transform: translate(50%, 50%);
+    @include for-laptops {
+      right: 0;
+      -ms-transform: translate(0%, 0%);
+      transform: translate(0%, 0%);
+      margin-top: 140px;
+      width: 85%;
+    }
+  }
+
+  .green_bg {
+    position: absolute;
+    right: 0;
+    top: 35px;
+    width: 250px;
+    height: auto;
+    z-index: 1;
+    @include for-laptops {
+      height: auto;
+      width: 480px;
+    }
+  }
+}
+
+.desktop_img {
+  width: 100%;
+  height: auto;
+  @include for-laptops {
+    width: auto;
+    height: 800px;
+    position: absolute;
+    right: 0px;
+  }
+}

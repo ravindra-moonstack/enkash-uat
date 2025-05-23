@@ -1,0 +1,412 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.first_row {
+  margin-bottom: 80px;
+  @include for-laptops {
+    padding-top: 170px;
+  }
+  .three_step_container {
+    padding-top: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
+    @include for-laptops {
+      padding-left: 70px;
+      padding-right: 70px;
+    }
+  }
+}
+
+.second_row {
+  .progress_bar {
+    height: 4px;
+    border-radius: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: linear-gradient(
+      90deg,
+      $color-equity-blue 15%,
+      $color-black 30%
+    );
+    @include for-laptops {
+      height: 8px;
+    }
+  }
+  .progress_items {
+    margin-right: 30px;
+    @include for-laptops {
+      margin-right: 0;
+    }
+  }
+  .progress_container {
+    @include for-laptops {
+      justify-content: space-evenly;
+    }
+  }
+  .arrow {
+    transform: rotate(90deg);
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+
+    @include for-laptops {
+      height: 50px;
+      width: 50px;
+      transform: none;
+      margin-top: 0;
+    }
+  }
+}
+
+.third_row {
+  padding-bottom: 50px;
+  padding-top: 20px;
+  @include for-laptops {
+    padding-bottom: 150px;
+    padding-top: 20px;
+  }
+}
+
+.fifth_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  @include for-laptops {
+    padding-bottom: 220px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: none;
+      @include for-laptops {
+        height: 300px;
+        display: flex;
+      }
+    }
+  }
+}
+
+.seventh_row {
+  background-color: $color-white;
+  @include for-laptops {
+  }
+}
+
+.partner {
+  background: url("./img/partner.svg") no-repeat bottom/cover;
+  padding: 35px 30px 25px 30px;
+  @include for-laptops {
+    padding: 100px 100px 100px 100px;
+  }
+}
+
+.contactBlock {
+  border-radius: 1rem;
+  background-color: #fff;
+
+  .topSection {
+    text-align: start;
+    background: $primary-gradient;
+    padding: 48px;
+    padding-right: 96px;
+    padding-bottom: 32px;
+    border-radius: 16px 16px 0px 0px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    @include for-laptops {
+    }
+  }
+
+  .contactSection {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: flex-start;
+    padding: 42px;
+    padding-right: 200px;
+    color: black;
+    border-radius: 0px 0px 16px 16px;
+
+    .contactItem {
+      display: flex;
+      gap: 1rem;
+      font-size: 16px;
+      color: $color-main-grey;
+      .contactIcon {
+        background: #61d6ff0d;
+        height: 46px;
+        width: 46px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @include for-laptops {
+        font-size: 22px;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .icon {
+        color: white;
+      }
+    }
+  }
+}
+
+.third_row {
+  background-color: $color-white;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 100px;
+  @include for-laptops {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  .section {
+    // margin-bottom: 150px;
+    @include for-laptops {
+      // margin-bottom: 150px;
+    }
+  }
+
+  .first_container {
+    position: relative;
+    z-index: 2;
+
+    .lottie_first_container {
+      width: 350px;
+      @include for-laptops {
+        margin-left: 50px;
+      }
+      .card_img {
+        @media (max-width: 768px) {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+    }
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -80px;
+      @include for-laptops {
+        top: -100px;
+        left: 200px;
+      }
+    }
+  }
+
+  .second_container {
+    position: relative;
+    z-index: 2;
+
+    .lottie_second_container {
+      width: 300px;
+      @include for-laptops {
+        margin-left: 50px;
+        width: 300px;
+      }
+      .card_img {
+        @media (max-width: 768px) {
+          width: 200px;
+          height: 200px;
+          object-fit: cover;
+        }
+      }
+    }
+
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -80px;
+      @include for-laptops {
+        top: -150px;
+        left: -100px;
+      }
+    }
+  }
+
+  .third_container {
+    position: relative;
+    z-index: 2;
+
+    .lottie_third_container {
+      width: 250px;
+      @include for-laptops {
+        padding-right: 50px;
+
+        width: 350px;
+      }
+    }
+    .card_bg {
+      position: absolute;
+      z-index: 2;
+      top: -100px;
+      left: -20px;
+      @include for-laptops {
+        top: -130px;
+        left: 50px;
+      }
+    }
+    .card_img {
+      @media (max-width: 768px) {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.integration_row {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding-bottom: 50px;
+  background-color: #f4f7fe;
+  color: black;
+
+  .title_container {
+    @include for-laptops {
+      margin-top: 50px;
+      max-width: 70vw;
+    }
+  }
+
+  .container {
+    margin: 0px 0px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+
+    max-width: 100vw;
+
+    @include for-laptops {
+      flex-wrap: nowrap;
+      margin: 40px 0px 100px;
+    }
+  }
+
+  .card {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 350px;
+    min-width: 340px;
+    height: 390px;
+    padding: 50px 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensures spacing between top, middle, and bottom sections */
+    background-color: #e2f7ff;
+    margin: 10px;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+    @include for-laptops {
+      width: 30%;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 16px;
+      text-align: center;
+      flex-grow: 1; /* Ensures equal vertical space for the description */
+      display: flex;
+      align-items: center; /* Vertically center the text within the allotted space */
+      justify-content: center;
+      text-align: center;
+    }
+
+    .iconContainer {
+      margin-bottom: 30px;
+      p {
+        color: #4b5157;
+      }
+    }
+  }
+
+  .card_white_bg {
+    background-color: $color-white;
+  }
+
+  .cta_button {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+
+    a {
+      color: $color-secondry-black;
+      text-decoration: underline;
+      font-size: 19px;
+      font-weight: 500;
+    }
+  }
+}
+
+.blurEffect {
+  width: 722px;
+  height: 426px;
+  position: absolute;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  z-index: 2;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.blurEffectRight {
+  transform: rotate(180deg);
+  width: 532px;
+  height: 426px;
+  position: absolute;
+  background: linear-gradient(270deg, rgba(255, 255, 255, 0) 0%, #ffffff 100%);
+  z-index: 2;
+  right: 0px;
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.eighth_row {
+  background: #eee;
+  @include for-laptops {
+    padding-top: 170px;
+  }
+  .help_icons {
+    width: 32px;
+    margin-right: 12px;
+  }
+  .inner_container {
+    box-shadow: 4px 8px 31px rgba(0, 0, 0, 0.0901960784);
+    border-radius: 15px;
+    background-color: $color-white;
+    padding: 30px;
+
+    @include for-laptops {
+      padding: 50px 100px 50px 100px;
+    }
+  }
+}

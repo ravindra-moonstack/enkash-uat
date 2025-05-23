@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import dynamic from "next/dynamic";
-import React, { useEffect, useState } from "react";
+import dynamic from "next/dynamic"
+import React, { useEffect, useState } from "react"
 import {
   phoneAndTabAnimation,
   payablesAnimation,
@@ -63,7 +63,8 @@ import {
   virtualAnimation,
   paymentGatewayAnimation,
   paymentGatewayHomepageAnimation,
-} from ".";
+  partnerEarnAnimation,
+} from "."
 
 const animationMap: Record<string, () => Promise<any>> = {
   HomePagePaymentGateway: paymentGatewayHomepageAnimation,
@@ -134,37 +135,39 @@ const animationMap: Record<string, () => Promise<any>> = {
   OlympusInvoicesAnimation: olympusInvoicesAnimation,
   OlympusPaymentAnimation: olympusPaymentAnimation,
   OlympusBulkCollectAnimation: olympusBulkCollectAnimation,
-};
 
-const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"));
+  PartnerEarnAnimation: partnerEarnAnimation,
+}
+
+const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"))
 
 interface LottieDynamicLoadComponentProps {
-  animationName: string;
-  loop: boolean;
+  animationName: string
+  loop: boolean
 }
 
 const LottieDynamicLoadComponent = ({
   animationName,
   loop = true,
 }: LottieDynamicLoadComponentProps) => {
-  const [animationData, setAnimationData] = useState<any | null>(null);
+  const [animationData, setAnimationData] = useState<any | null>(null)
 
   useEffect(() => {
     const loadAnimation = async () => {
       if (animationMap.hasOwnProperty(animationName)) {
-        const dynamicAnimationModule = await animationMap[animationName]();
-        setAnimationData(dynamicAnimationModule.default);
+        const dynamicAnimationModule = await animationMap[animationName]()
+        setAnimationData(dynamicAnimationModule.default)
       } else {
-        console.error(`Animation "${animationName}" not found.`);
+        console.error(`Animation "${animationName}" not found.`)
       }
-    };
+    }
 
-    loadAnimation();
-  }, [animationName]);
+    loadAnimation()
+  }, [animationName])
 
   return (
     <>{animationData && <Lottie animationData={animationData} loop={loop} />}</>
-  );
-};
+  )
+}
 
-export default LottieDynamicLoadComponent;
+export default LottieDynamicLoadComponent

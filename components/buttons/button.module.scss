@@ -33,7 +33,7 @@
     color: white;
   }
 
-  &.disabled{
+  &.disabled {
     background-color: $color-night-blue;
   }
 }
@@ -87,5 +87,24 @@
     background-color: $color-pale-grey;
     color: $color-secondry-grey;
     border: 1px solid;
+  }
+}
+
+.tertiary_button {
+  border-radius: 20px;
+  border: 2px solid $color-equity-blue;
+  background-color: $color-white;
+  color: $color-black;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 20px 4px 20px;
+  @include for-laptops {
+    font-size: 17px;
+  }
+  transition: box-shadow 0.3s ease;
+  transition: width 0.3s ease;
+
+  &:hover {
+    box-shadow: 0 0 7px 7px rgba(28, 90, 244, 0.5);
   }
 }
