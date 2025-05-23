@@ -249,7 +249,7 @@ const PartnerPage = (): React.JSX.Element => {
           </div>
         </div>
 
-        <div className={`row bg-white ${styles.section}`}>
+        <div className={`row bg-white align-items-center ${styles.section}`}>
           <div className="col-md-6 col-12 my-md-5 my-3 px-5">
             <ExploreCard
               title="Embedded Payments, Made Simple"

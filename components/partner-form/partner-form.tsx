@@ -262,7 +262,7 @@ const PartnerForm = (): React.JSX.Element => {
           {!isExistingCustomer && (
             <div className="d-flex flex-column w-100 ">
               <div className="d-flex flex-column w-40  justify-content-start mt-m-0">
-                <div className=" gap-2 mb-4  flex-wrap ">
+                <div className=" gap-2  flex-wrap ">
                   {categoryData.map((category, index) => (
                     <div className="d-flex flex-column mb-3 ">
                       <div
@@ -351,10 +351,15 @@ const PartnerForm = (): React.JSX.Element => {
 
         {/* Seventh Row (Submit Button) */}
         <div
-          className="d-flex align-items-center w-100 mt-4 justify-center"
+          className="d-flex align-items-center w-100 mt-4 justify-content-center "
           onClick={handleSubmit}
         >
-          <PrimaryButton title="Submit" theme="blue" isDisabled={isDisabled}  />
+          <PrimaryButton
+            title="Submit"
+            theme="blue"
+            isDisabled={isDisabled}
+            width="280px"
+          />
         </div>
       </form>
     </>
