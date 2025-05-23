@@ -132,5 +132,4 @@ export const payablesBillAnimation = () =>
 
 
 //Partner Animation
-export const partnerEarnAnimation = () =>
-  import("../../app/partner-page/img/lottie/earnMore.json")
+

@@ -63,7 +63,7 @@ import {
   virtualAnimation,
   paymentGatewayAnimation,
   paymentGatewayHomepageAnimation,
-  partnerEarnAnimation,
+ 
 } from "."
 
 const animationMap: Record<string, () => Promise<any>> = {
@@ -135,8 +135,6 @@ const animationMap: Record<string, () => Promise<any>> = {
   OlympusInvoicesAnimation: olympusInvoicesAnimation,
   OlympusPaymentAnimation: olympusPaymentAnimation,
   OlympusBulkCollectAnimation: olympusBulkCollectAnimation,
-
-  PartnerEarnAnimation: partnerEarnAnimation,
 }
 
 const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"))
