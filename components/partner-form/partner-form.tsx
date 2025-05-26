@@ -50,21 +50,42 @@ const PartnerForm = (): React.JSX.Element => {
   const [companyEmail, setCompanyEmail] = useState("")
   const [companyWebsite, setCompanyWebsite] = useState("")
   const [mobileNumber, setMobileNumber] = useState("")
-  const [selectedCategory, setSelectedCategory] = useState("Payables")
-  const [selectedProduct, setSelectedProduct] = useState("none")
+  const [selectedCategory, setSelectedCategory] = useState<string[]>([])
+  const [selectedProduct, setSelectedProduct] = useState<string[]>([])
   const [selectedAdditionalProduct, setSelectedAdditionalProduct] = useState("")
   const [description, setDescription] = useState("")
   const [isFormValid, setIsFormValid] = useState(true)
   const [interestedPG, setInterestedPG] = useState(false)
   const [isExistingCustomer, setIsExistingCustomer] = useState(false)
   const [isDisabled, setIsDisabled] = useState(false)
+  const [selectedProductsByCategory, setSelectedProductsByCategory] = useState<{
+    [category: string]: string
+  }>({})
+
   //Url parameters
   let urlParams
   let source
 
   //reset the product everytime category is changed
   useEffect(() => {
-    setSelectedProduct("none")
+    const validProducts = categoryData
+      .filter((cat) => selectedCategory.includes(cat.name))
+      .flatMap((cat) => cat.products.map((p) => p.name))
+
+    setSelectedProductsByCategory((prev) => {
+      const updated: { [category: string]: string } = {}
+
+      for (const [category, product] of Object.entries(prev)) {
+        if (
+          selectedCategory.includes(category) &&
+          validProducts.includes(product)
+        ) {
+          updated[category] = product
+        }
+      }
+
+      return updated
+    })
   }, [selectedCategory])
 
   useEffect(() => {
@@ -88,15 +109,24 @@ const PartnerForm = (): React.JSX.Element => {
     if (isDisabled) {
       return
     }
+    const formData = {
+      fullName,
+      companyEmail,
+      mobileNumber,
+      companyName,
+      selectedCategory,
+      selectedProductsByCategory,
+    }
 
+    console.log("Form Data Submitted:", formData)
     if (
       fullName.length > 1 &&
       isValidEmail(companyEmail) &&
       mobileNumber.length === 10 &&
       companyName.length > 1 &&
       isValidWebsite(companyWebsite) &&
-      (selectedProduct !== "none" ||
-        selectedCategory === "Expense Management" ||
+      (Object.values(selectedProductsByCategory).length > 0 ||
+        selectedCategory.includes("Expense Management") ||
         isExistingCustomer)
     ) {
       setIsFormValid(true)
@@ -109,6 +139,12 @@ const PartnerForm = (): React.JSX.Element => {
   //toggle existing customer
   const handleExistingCustomer = () => {
     setIsExistingCustomer(!isExistingCustomer)
+  }
+
+  function isValidMobile(number: string): boolean {
+    const commonDummies = ["9999999999", "1234567890", "0000000000"]
+    const isTenDigits = /^\d{10}$/.test(number)
+    return isTenDigits && !commonDummies.includes(number)
   }
 
   //Email validation
@@ -150,8 +186,11 @@ const PartnerForm = (): React.JSX.Element => {
       phone: mobileNumber,
       company: companyName,
       website: companyWebsite,
-      products: selectedCategory,
-      additional_products: selectedProduct,
+      products: selectedCategory.join(", "),
+      additional_products: Object.entries(selectedProductsByCategory)
+        .map(([cat, prod]) => `${cat}: ${prod}`)
+        .join(", "),
+
       query: description,
       source: source,
     }
@@ -181,8 +220,8 @@ const PartnerForm = (): React.JSX.Element => {
       <form onSubmit={handleSubmit} noValidate>
         {/* First Row */}
         <div className="d-flex flex-column w-100 ">
-          <div className="d-flex w-40 gap-2  flex-column flex-md-row justify-content-start">
-            <div className=" mb-3 mb-m-0">
+          <div className="d-flex  gap-2  flex-column flex-md-row justify-content-start">
+            <div className=" mb-3 mb-m-0 w-100 ">
               <input
                 type="text"
                 value={fullName}
@@ -199,7 +238,7 @@ const PartnerForm = (): React.JSX.Element => {
                 </span>
               )}
             </div>
-            <div className=" mb-3 mb-m-0">
+            <div className=" mb-3 mb-m-0 w-100">
               <input
                 type="email"
                 value={companyEmail}
@@ -221,7 +260,7 @@ const PartnerForm = (): React.JSX.Element => {
 
         <div className="d-flex flex-column w-100">
           <div className="d-flex w-40 gap-2  flex-column flex-md-row justify-content-start">
-            <div className=" mb-3 me-m-0">
+            <div className=" mb-3 me-m-0 w-100">
               <input
                 type="tel"
                 value={mobileNumber}
@@ -234,13 +273,13 @@ const PartnerForm = (): React.JSX.Element => {
                 placeholder="Mobile Number"
                 required
               />
-              {!isFormValid && mobileNumber.length !== 10 && (
+              {!isFormValid && !isValidMobile(mobileNumber) && (
                 <span className={`${styles.danger} text-danger`}>
-                  Mobile number should be 10 digits
+                  Enter a valid 10-digit mobile number (not a dummy)
                 </span>
               )}
             </div>
-            <div className=" mb-3 mb-m-0">
+            <div className=" mb-3 mb-m-0 w-100">
               <input
                 type="text"
                 value={companyName}
@@ -260,90 +299,102 @@ const PartnerForm = (): React.JSX.Element => {
 
         <div>
           {!isExistingCustomer && (
-            <div className="d-flex flex-column w-100 ">
-              <div className="d-flex flex-column w-40  justify-content-start mt-m-0">
-                <div className=" gap-2  flex-wrap ">
-                  {categoryData.map((category, index) => (
-                    <div className="d-flex flex-column mb-3 ">
-                      <div
-                        key={index}
-                        className={` py-2 rounded ${
-                          selectedCategory === category.name
-                            ? styles.activeButton
-                            : ""
-                        } ${styles.categoryButton}`}
-                        onClick={() =>
-                          setSelectedCategory((prevCategory) =>
-                            prevCategory === category.name ? "" : category.name
-                          )
-                        }
-                      >
-                        <div className="w-100 d-flex justify-content-center">
-                          {category.name}
+            <div className="d-flex flex-column w-100">
+              <div className="d-flex flex-column w-40 justify-content-start mt-m-0">
+                {categoryData.map((category, index) => (
+                  <div key={index} className="d-flex flex-column mb-3">
+                    <div
+                      className={`py-2 rounded ${
+                        selectedCategory.includes(category.name)
+                          ? styles.activeButton
+                          : ""
+                      } ${styles.categoryButton}`}
+                      onClick={() => {
+                        setSelectedCategory((prev) =>
+                          prev.includes(category.name)
+                            ? prev.filter((cat) => cat !== category.name)
+                            : [...prev, category.name]
+                        )
+                      }}
+                    >
+                      <div className="w-100 d-flex justify-content-center">
+                        {category.name}
+                      </div>
+                      {category.name !== "Expense Management" && (
+                        <div>
+                          <Image
+                            src={blueArrow}
+                            alt="down-arrow"
+                            className={styles.blue_down_arrow}
+                          />
                         </div>
-
-                        {category.name !== "Expense Management" && (
-                          <div>
-                            <Image
-                              src={blueArrow}
-                              alt="down-arrow"
-                              className={styles.blue_down_arrow}
-                            />
-                          </div>
-                        )}
-                      </div>
-                      <div className="d-block d-md-none">
-                        {selectedCategory == category.name && (
-                          <div className="d-flex flex-column justofy-content-center d-md-none flex-wrap gap-2 mt-2">
-                            {categoryData
-                              .find(
-                                (category) => category.name === selectedCategory
-                              )
-                              ?.products.map((product, index) => (
-                                <div
-                                  key={index}
-                                  className={`flex items-center justify-between py-2 rounded ${
-                                    selectedProduct === product.name
-                                      ? styles.activeButton
-                                      : ""
-                                  } ${styles.product_button} ${
-                                    styles.product_button_mobile
-                                  }`}
-                                  onClick={() =>
-                                    setSelectedProduct(product.name)
-                                  }
-                                >
-                                  <div className={styles.product_icon}></div>
-                                  <span>{product.name}</span>
-                                </div>
-                              ))}
-                          </div>
-                        )}
-                      </div>
+                      )}
                     </div>
-                  ))}
-                </div>
+
+                    {/* Products on Mobile */}
+                    <div className="d-block d-md-none">
+                      {selectedCategory.includes(category.name) && (
+                        <div className="d-flex flex-column justify-content-center d-md-none flex-wrap gap-2 mt-2">
+                          {category.products.map((product, index) => (
+                            <div
+                              key={index}
+                              className={`flex items-center justify-between py-2 rounded ${
+                                selectedProductsByCategory[category.name] ===
+                                product.name
+                                  ? styles.activeButton
+                                  : ""
+                              } ${styles.product_button} ${
+                                styles.product_button_mobile
+                              }`}
+                              onClick={() => {
+                                setSelectedProductsByCategory((prev) => ({
+                                  ...prev,
+                                  [category.name]: product.name,
+                                }))
+                              }}
+                            >
+                              <div className={styles.product_icon}></div>
+                              <span>{product.name}</span>
+                            </div>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+
+                {/* Products on Desktop */}
                 <div className="d-none d-md-flex flex-wrap gap-2 mt-2">
-                  {categoryData
-                    .find((category) => category.name === selectedCategory)
-                    ?.products.map((product, index) => (
+                  {selectedCategory.map((catName) => {
+                    const category = categoryData.find(
+                      (c) => c.name === catName
+                    )
+                    if (!category) return null
+                    return category.products.map((product, index) => (
                       <div
-                        key={index}
+                        key={`${catName}-${index}`}
                         className={`flex items-center justify-between py-2 rounded ${
-                          selectedProduct === product.name
+                          selectedProductsByCategory[catName] === product.name
                             ? styles.activeButton
                             : ""
                         } ${styles.product_button}`}
-                        onClick={() => setSelectedProduct(product.name)}
+                        onClick={() => {
+                          setSelectedProductsByCategory((prev) => ({
+                            ...prev,
+                            [catName]: product.name,
+                          }))
+                        }}
                       >
                         <span>{product.name}</span>
                       </div>
-                    ))}
+                    ))
+                  })}
                 </div>
+
                 {!isFormValid &&
                   !isExistingCustomer &&
-                  selectedProduct === "none" &&
-                  selectedCategory !== "Expense Management" && (
+                  Object.values(selectedProductsByCategory).length === 0 &&
+                  !selectedCategory.includes("Expense Management") && (
                     <span className={`${styles.danger} text-danger mt-2`}>
                       Please select a product
                     </span>
@@ -354,10 +405,7 @@ const PartnerForm = (): React.JSX.Element => {
         </div>
 
         {/* Seventh Row (Submit Button) */}
-        <div
-          className="d-flex align-items-center w-100 mt-4 justify-content-center "
-          onClick={handleSubmit}
-        >
+        <div className="d-flex align-items-center w-100 mt-4 justify-content-center">
           <PrimaryButton
             title="Submit"
             theme="blue"
