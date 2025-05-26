@@ -396,14 +396,14 @@ const PartnerPage = (): React.JSX.Element => {
       <div className={`${styles.eighth_row}   row row-padding`}>
         <div className="col-12 col-md-6 d-flex flex-column gap-5">
           <div className="">
-            <Heading title="Ready to  " color="black" size="h2" weight="7" />
+            <Heading title="Ready to  " color="black" size="h1" weight="7" />
             <Heading
               title="  Earn More and Grow Faster "
-              size="h2"
+              size="h1"
               color="equity-blue"
               weight="7"
             />
-            <Heading title=" with EnKash?" color="black" size="h2" weight="7" />
+            <Heading title=" with EnKash?" color="black" size="h1" weight="7" />
           </div>
 
           <div className={`d-flex align-items-center`}>
