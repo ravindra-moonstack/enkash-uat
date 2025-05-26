@@ -129,10 +129,12 @@
     gap: 50px;
     align-items: flex-start;
     padding: 42px;
-    padding-right: 200px;
+
     color: black;
     border-radius: 0px 0px 16px 16px;
-
+    @include for-laptops {
+      padding-right: 200px;
+    }
     .contactItem {
       display: flex;
       gap: 1rem;

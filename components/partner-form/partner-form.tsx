@@ -272,7 +272,11 @@ const PartnerForm = (): React.JSX.Element => {
                             ? styles.activeButton
                             : ""
                         } ${styles.categoryButton}`}
-                        onClick={() => setSelectedCategory(category.name)}
+                        onClick={() =>
+                          setSelectedCategory((prevCategory) =>
+                            prevCategory === category.name ? "" : category.name
+                          )
+                        }
                       >
                         <div className="w-100 d-flex justify-content-center">
                           {category.name}

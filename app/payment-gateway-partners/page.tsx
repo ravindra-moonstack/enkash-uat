@@ -411,7 +411,7 @@ const PartnerPage = (): React.JSX.Element => {
             <Heading
               title="Industry-best earnings"
               size="h4"
-              color="black"
+              color="main-grey"
               weight="5"
             />
           </div>
@@ -421,17 +421,17 @@ const PartnerPage = (): React.JSX.Element => {
             <Heading
               title="Fast activation for your clients"
               size="h4"
-              color="black"
+              color="main-grey"
               weight="5"
             />
           </div>
 
-          <div className={`d-flex align-items-center `}>
+          <div className={`d-flex align-items-center pb-5  pb-md-0`}>
             <Image src={tick} alt="tick" className={styles.help_icons} />
             <Heading
               title="Dedicated support for accelerated growth"
               size="h4"
-              color="black"
+              color="main-grey"
               weight="5"
             />
           </div>
