@@ -340,6 +340,7 @@
       align-items: center; /* Vertically center the text within the allotted space */
       justify-content: center;
       text-align: center;
+      color: $color-main-grey;
     }
 
     .iconContainer {
@@ -394,9 +395,7 @@
 
 .eighth_row {
   background: #eee;
-  @include for-laptops {
-    padding-top: 170px;
-  }
+
   .help_icons {
     width: 32px;
     margin-right: 12px;
@@ -409,6 +408,7 @@
 
     @include for-laptops {
       padding: 40px 31px 40px 31px;
+      width: -webkit-fill-available;
     }
   }
 }
