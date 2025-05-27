@@ -394,7 +394,10 @@ const PartnerPage = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.eighth_row}   row row-padding`}>
+      <div
+        className={`${styles.eighth_row}   row row-padding`}
+        id="partner-form"
+      >
         <div className="col-12 col-md-6 d-flex flex-column gap-4">
           <div className="">
             <Heading title="Ready to  " color="black" size="h1" weight="7" />
@@ -438,10 +441,7 @@ const PartnerPage = (): React.JSX.Element => {
           </div>
         </div>
 
-        <div
-          className="col-12 col-md-6 d-flex justify-content-center"
-          id="partner-form"
-        >
+        <div className="col-12 col-md-6 d-flex justify-content-center">
           <div className={styles.inner_container}>
             <PartnerForm />
           </div>
