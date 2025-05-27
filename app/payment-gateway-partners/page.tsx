@@ -304,44 +304,42 @@ const PartnerPage = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.second_row}  bg-white `}>
-        <div className={`${styles.integration_row} row   pt-md-5`}>
-          <div
-            className={`d-inline text-center pt-5 mb-5 mb-md-2 px-3 px-md-5 ${styles.title_container}`}
-          >
-            <Heading
-              title="Developer-first Integrations"
-              color="black"
-              size="h1"
-              weight="6"
-            />
-          </div>
+      <div className={`${styles.integration_row} row   pt-md-5`}>
+        <div
+          className={`d-inline text-center my-5 mb-md-2 px-3 px-md-5 ${styles.title_container}`}
+        >
+          <Heading
+            title="Developer-first Integrations"
+            color="black"
+            size="h1"
+            weight="6"
+          />
+        </div>
 
-          <div className={`${styles.container}`}>
-            {cardData?.map((card: any, index: any) => (
-              <div
-                key={index}
-                className={`${styles.card} col-md-4 ${
-                  index % 2 !== 0 ? styles.card_white_bg : ""
-                }`}
-              >
-                <div className={styles.iconContainer}>
-                  <Image src={card.image} width={50} alt="icon" />
-                </div>
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
-                <p>{card.explanation}</p>
+        <div className={`${styles.container}`}>
+          {cardData?.map((card: any, index: any) => (
+            <div
+              key={index}
+              className={`${styles.card} col-md-4 ${
+                index % 2 !== 0 ? styles.card_white_bg : ""
+              }`}
+            >
+              <div className={styles.iconContainer}>
+                <Image src={card.image} width={50} alt="icon" />
               </div>
-            ))}
-          </div>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <p>{card.explanation}</p>
+            </div>
+          ))}
+        </div>
 
-          <div>
-            <TertiaryButton
-              title="Explore Integration Documents"
-              iconSize={15}
-              url="https://docs.enkash.com/"
-            />
-          </div>
+        <div>
+          <TertiaryButton
+            title="Explore Integration Documents"
+            iconSize={15}
+            url="https://docs.enkash.com/"
+          />
         </div>
       </div>
 
@@ -367,9 +365,9 @@ const PartnerPage = (): React.JSX.Element => {
 
       <div className={`${styles.second_row}  bg-white  relative`}>
         <div>
-          <div className={`${styles.company_row} row   pt-md-5`}>
+          <div className={`${styles.company_row} row`}>
             <div
-              className={`d-flex  flex-column text-center pt-5 mb-5 mb-md-2 px-3 px-md-5 ${styles.title_container}`}
+              className={`d-flex  flex-column text-center px-3 px-md-5 ${styles.title_container}`}
             >
               <Heading
                 title="You are in Good Company: "
@@ -387,7 +385,7 @@ const PartnerPage = (): React.JSX.Element => {
             </div>
             <div className={styles.blurEffect}></div>
             <div className={styles.blurEffectRight}></div>
-            <div className="my-5 pb-4 pt-5">
+            <div className="">
               <CompanySection />
             </div>
           </div>

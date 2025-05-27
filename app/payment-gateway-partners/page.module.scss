@@ -2,7 +2,6 @@
 @import "../../styles/mixin";
 
 .first_row {
-  margin-bottom: 80px;
   @include for-laptops {
     padding-top: 170px;
   }
@@ -18,6 +17,7 @@
 }
 
 .second_row {
+  padding: 80px 0px;
   .progress_bar {
     height: 4px;
     border-radius: 12px;
@@ -113,13 +113,13 @@
     text-align: start;
     background: $primary-gradient;
     padding: 48px;
-    padding-right: 96px;
     padding-bottom: 32px;
     border-radius: 16px 16px 0px 0px;
     color: white;
     display: flex;
     flex-direction: column;
     @include for-laptops {
+      padding-right: 96px;
     }
   }
 

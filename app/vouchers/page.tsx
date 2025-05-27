@@ -117,7 +117,7 @@ const boltPage = () => {
               title="Sign Up "
               actionImage={whiteArrow}
               iconSize={15}
-              url="/login"
+              url="https://bolt.enkash.com/"
             />
           </div>
         </div>

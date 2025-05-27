@@ -140,7 +140,9 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
 
   const categoryData = CategoryData[categoryName]
   const currentCategoryPhoto = CategoryPhoto.get(categoryName)
-  const boltUTM = `https://vouchers.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
+  // const boltUTM = `https://vouchers.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
+  const boltUTM = ` https://bolt.enkash.com/?utm_source=bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
+
   const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
 
   // const vouchers: Voucher[] = [];
@@ -194,7 +196,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                   <PrimaryButton
                     title="Explore Bolt"
                     theme="blue"
-                    url="/bolt"
+                    url="/vouchers"
                   />
                   {/* tag-id while navigating through category-menu to land on same position */}
                   <span id="category-menu" className="mx-2"></span>
