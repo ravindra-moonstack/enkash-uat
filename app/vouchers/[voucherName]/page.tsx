@@ -121,7 +121,7 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   try {
     // bolt open api
     const apiResponse = await fetch(
-      "https://marketplaces.enkash.in/api/v0/vouchers/searchProducts?product=VOUCHER",
+      "https://marketplaces.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
       {
         method: "POST",
         headers: {
