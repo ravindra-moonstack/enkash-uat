@@ -132,29 +132,30 @@ const PartnerForm = (): React.JSX.Element => {
       companyEmail,
       mobileNumber,
       companyName,
+      companyWebsite,
       selectedCategory,
       selectedProductsByCategory,
     }
 
     console.log("Form Data Submitted:", formData)
 
-    // Validate that every category has a selected product
-    const allCategoriesSelected = categoryData.every(
-      (cat) =>
-        selectedCategory.includes(cat.name) &&
-        selectedProductsByCategory[cat.name]
+    // ✅ Must select all categories and one product for each
+    const allCategoriesSelected = categoryData.every((cat) =>
+      selectedCategory.includes(cat.name)
+    )
+
+    const allProductsSelected = categoryData.every(
+      (cat) => selectedProductsByCategory[cat.name]
     )
 
     const isFormValidNow =
-      fullName.length > 1 &&
+      fullName.trim().length > 1 &&
       isValidEmail(companyEmail) &&
       isValidMobile(mobileNumber) &&
-      companyName.length > 1 &&
+      companyName.trim().length > 1 &&
       isValidWebsite(companyWebsite) &&
-      ((Object.values(selectedProductsByCategory).length > 0 &&
-        allCategoriesSelected) ||
-        selectedCategory.includes("Expense Management") ||
-        isExistingCustomer)
+      allCategoriesSelected &&
+      allProductsSelected
 
     if (isFormValidNow) {
       setIsFormValid(true)
@@ -402,18 +403,18 @@ const PartnerForm = (): React.JSX.Element => {
                 {/* Validation Error */}
                 {!isFormValid && (
                   <>
-                    {!categoryData.every((cat) =>
-                      selectedCategory.includes(cat.name)
-                    ) && (
+                    {selectedCategory.length < categoryData.length && (
                       <span className={`${styles.danger} text-danger mt-2`}>
                         Please select all categories.
                       </span>
                     )}
-                    {!categoryData.every(
-                      (cat) => selectedProductsByCategory[cat.name]
+                    {categoryData.some(
+                      (cat) =>
+                        selectedCategory.includes(cat.name) &&
+                        !selectedProductsByCategory[cat.name]
                     ) && (
                       <span className={`${styles.danger} text-danger mt-2`}>
-                        Please select a product for each category.
+                        Please select a product for each selected category.
                       </span>
                     )}
                   </>
@@ -428,7 +429,7 @@ const PartnerForm = (): React.JSX.Element => {
           <PrimaryButton
             title="Submit"
             theme="blue"
-            isDisabled={!isFormValid || isDisabled}
+            isDisabled={isDisabled}
             width="280px"
           />
         </div>
