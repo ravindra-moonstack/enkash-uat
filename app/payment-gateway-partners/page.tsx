@@ -33,6 +33,7 @@ import TertiaryButton from "@/components/buttons/tertiary-button/tertiary-button
 import ExploreCard from "@/components/explore-card/explore-card"
 import BankSection from "@/components/homepage/bank-section"
 import PartnerForm from "@/components/partner-form/partner-form"
+import CompanySection from "@/components/company/company-section"
 
 export const metadata: Metadata = generateMetaData({
   title: "Payment Gateway Partnership Program - EnKash",
@@ -387,14 +388,14 @@ const PartnerPage = (): React.JSX.Element => {
             <div className={styles.blurEffect}></div>
             <div className={styles.blurEffectRight}></div>
             <div className="my-5 pb-4 pt-5">
-              <BankSection type="customers" />
+              <CompanySection />
             </div>
           </div>
         </div>
       </div>
 
       <div className={`${styles.eighth_row}   row row-padding`}>
-        <div className="col-12 col-md-6 d-flex flex-column gap-5">
+        <div className="col-12 col-md-6 d-flex flex-column gap-4">
           <div className="">
             <Heading title="Ready to  " color="black" size="h1" weight="7" />
             <Heading

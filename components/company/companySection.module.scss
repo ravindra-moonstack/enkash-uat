@@ -30,6 +30,7 @@
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   scrollbar-width: none;
+  gap: 50px;
 
   padding-left: 20px;
   @include for-laptops {
@@ -47,7 +48,7 @@
     width: auto;
     margin-right: 50px;
     @include for-laptops {
-      height: 40px;
+      height: 62px;
     }
   }
   .pwc {
@@ -55,7 +56,7 @@
     width: auto;
     margin-right: 40px;
     @include for-laptops {
-      height: 35px;
+      height: 62px;
     }
   }
   .strip {
@@ -63,10 +64,17 @@
     width: auto;
     margin-right: 40px;
     @include for-laptops {
-      height: 40px;
+      height: 62px;
     }
   }
-
+  .ayomatix {
+    height: 60px;
+    width: auto;
+    margin-right: 40px;
+    @include for-laptops {
+      height: 167px;
+    }
+  }
 }
 
 .customer_logo::-webkit-scrollbar {
@@ -82,8 +90,10 @@
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   scrollbar-width: none;
+  gap: 50px;
   @include for-laptops {
     padding-left: 20px;
+    gap: 50px;
   }
 
   img {
@@ -124,7 +134,7 @@
     width: auto;
     margin-right: 50px;
     @include for-laptops {
-      height: 30px;
+      height: 62px;
     }
   }
   .cure {

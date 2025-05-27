@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useRef } from "react"
 import styles from "./page.module.scss"
 import PrimaryButton from "@/components/buttons/primary-button/primary-button"
 import emailjs from "@emailjs/browser"
@@ -61,10 +61,28 @@ const PartnerForm = (): React.JSX.Element => {
   const [selectedProductsByCategory, setSelectedProductsByCategory] = useState<{
     [category: string]: string
   }>({})
+  const [openCategory, setOpenCategory] = useState<string | null>(null)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   //Url parameters
   let urlParams
   let source
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setOpenCategory(null)
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside)
+    }
+  }, [])
 
   //reset the product everytime category is changed
   useEffect(() => {
@@ -142,9 +160,13 @@ const PartnerForm = (): React.JSX.Element => {
   }
 
   function isValidMobile(number: string): boolean {
-    const commonDummies = ["9999999999", "1234567890", "0000000000"]
+    const commonDummies = ["1234567890", "0000000000"]
     const isTenDigits = /^\d{10}$/.test(number)
-    return isTenDigits && !commonDummies.includes(number)
+
+    // Check if all digits are the same (e.g., 1111111111)
+    const isRepeating = /^(\d)\1{9}$/.test(number)
+
+    return isTenDigits && !commonDummies.includes(number) && !isRepeating
   }
 
   //Email validation
@@ -302,7 +324,12 @@ const PartnerForm = (): React.JSX.Element => {
             <div className="d-flex flex-column w-100">
               <div className="d-flex flex-column w-40 justify-content-start mt-m-0">
                 {categoryData.map((category, index) => (
-                  <div key={index} className="d-flex flex-column mb-3">
+                  <div
+                    key={index}
+                    className="d-flex flex-column mb-3"
+                    ref={openCategory === category.name ? dropdownRef : null}
+                  >
+                    {/* Category Button */}
                     <div
                       className={`py-2 rounded ${
                         selectedCategory.includes(category.name)
@@ -312,8 +339,11 @@ const PartnerForm = (): React.JSX.Element => {
                       onClick={() => {
                         setSelectedCategory((prev) =>
                           prev.includes(category.name)
-                            ? prev.filter((cat) => cat !== category.name)
+                            ? prev
                             : [...prev, category.name]
+                        )
+                        setOpenCategory((prev) =>
+                          prev === category.name ? null : category.name
                         )
                       }}
                     >
@@ -331,66 +361,35 @@ const PartnerForm = (): React.JSX.Element => {
                       )}
                     </div>
 
-                    {/* Products on Mobile */}
-                    <div className="d-block d-md-none">
-                      {selectedCategory.includes(category.name) && (
-                        <div className="d-flex flex-column justify-content-center d-md-none flex-wrap gap-2 mt-2">
-                          {category.products.map((product, index) => (
-                            <div
-                              key={index}
-                              className={`flex items-center justify-between py-2 rounded ${
-                                selectedProductsByCategory[category.name] ===
-                                product.name
-                                  ? styles.activeButton
-                                  : ""
-                              } ${styles.product_button} ${
-                                styles.product_button_mobile
-                              }`}
-                              onClick={() => {
-                                setSelectedProductsByCategory((prev) => ({
-                                  ...prev,
-                                  [category.name]: product.name,
-                                }))
-                              }}
-                            >
-                              <div className={styles.product_icon}></div>
-                              <span>{product.name}</span>
-                            </div>
-                          ))}
-                        </div>
-                      )}
-                    </div>
+                    {/* Products: Mobile & Desktop (inline below category) */}
+                    {openCategory === category.name && (
+                      <div className="d-flex flex-column flex-wrap gap-2 mt-2">
+                        {category.products.map((product, index) => (
+                          <div
+                            key={index}
+                            className={`flex items-center justify-between py-2 rounded ${
+                              selectedProductsByCategory[category.name] ===
+                              product.name
+                                ? styles.activeButton
+                                : ""
+                            } ${styles.product_button}`}
+                            onClick={() => {
+                              setSelectedProductsByCategory((prev) => ({
+                                ...prev,
+                                [category.name]: product.name,
+                              }))
+                            }}
+                          >
+                            <div className={styles.product_icon}></div>
+                            <span>{product.name}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 ))}
 
-                {/* Products on Desktop */}
-                <div className="d-none d-md-flex flex-wrap gap-2 mt-2">
-                  {selectedCategory.map((catName) => {
-                    const category = categoryData.find(
-                      (c) => c.name === catName
-                    )
-                    if (!category) return null
-                    return category.products.map((product, index) => (
-                      <div
-                        key={`${catName}-${index}`}
-                        className={`flex items-center justify-between py-2 rounded ${
-                          selectedProductsByCategory[catName] === product.name
-                            ? styles.activeButton
-                            : ""
-                        } ${styles.product_button}`}
-                        onClick={() => {
-                          setSelectedProductsByCategory((prev) => ({
-                            ...prev,
-                            [catName]: product.name,
-                          }))
-                        }}
-                      >
-                        <span>{product.name}</span>
-                      </div>
-                    ))
-                  })}
-                </div>
-
+                {/* Validation Error */}
                 {!isFormValid &&
                   !isExistingCustomer &&
                   Object.values(selectedProductsByCategory).length === 0 &&
