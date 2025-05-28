@@ -209,46 +209,41 @@ const PartnerForm = (): React.JSX.Element => {
 
     let templateId = partnerTemplateId
 
-    // Check if the source is in the Olympus lead
-    if (hasOlympusPrefix(source)) {
-      templateId = partnerTemplateId
-    }
+    const monthlyVolume =
+      selectedProductsByCategory["Monthly Merchant Volume"] || ""
+    const businessLine = selectedProductsByCategory["Line of Business "] || ""
 
-    let templateParams = {
+    const templateParams = {
       name: fullName,
       email: companyEmail,
       phone: mobileNumber,
       company: companyName,
-      website: companyWebsite,
-      products: selectedCategory.join(", "),
-      additional_products: Object.entries(selectedProductsByCategory)
-        .map(([cat, prod]) => `${cat}: ${prod}`)
-        .join(", "),
-
-      query: description,
-      source: source,
+      monthly_merchant_volumne: monthlyVolume,
+      line_of_bussiness: businessLine,
     }
 
+    // Special case for existing customers (if needed)
     if (isExistingCustomer) {
-      templateParams.products = "Existing Customers"
-      templateParams.additional_products = ""
+      templateParams.monthly_merchant_volumne = "Existing Customer"
+      templateParams.line_of_bussiness = ""
     }
+
+    console.log("Sending EmailJS with params:", templateParams)
 
     emailjs
       .send(emailjs_service_id, templateId, templateParams)
-      .then(
-        (response) => {
-          window.location.href = "/confirmation/"
-          console.log("form submit successful")
-        },
-        (error) => {
-          console.log(error)
-        }
-      )
+      .then(() => {
+        console.log("form submit successful")
+        window.location.href = "/confirmation/"
+      })
+      .catch((error) => {
+        console.error("EmailJS send error:", error)
+      })
       .finally(() => {
         setIsDisabled(false)
       })
   }
+
   return (
     <>
       <form onSubmit={handleSubmit} noValidate>
