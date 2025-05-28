@@ -179,7 +179,7 @@ const PartnerPage = (): React.JSX.Element => {
               <Image
                 src={earn}
                 alt="card background"
-                width={587}
+                width={500}
                 height={587}
                 className={styles.card_img}
               />
@@ -216,7 +216,7 @@ const PartnerPage = (): React.JSX.Element => {
                 src={trust}
                 alt="trust"
                 width={500}
-                height={372}
+                height={553}
                 className={styles.card_img}
               />
             </div>
@@ -233,7 +233,7 @@ const PartnerPage = (): React.JSX.Element => {
                 src={customer}
                 alt="card background"
                 width={500}
-                height={500}
+                height={700}
                 className={styles.card_img}
               />
             </div>
@@ -285,7 +285,7 @@ const PartnerPage = (): React.JSX.Element => {
               <Image
                 src={supportTeam}
                 alt="supportTeam"
-                width={605}
+                width={500}
                 height={553}
                 className={styles.card_img}
               />

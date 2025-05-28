@@ -9,6 +9,7 @@ import {
   emailjs_public_key,
   emailjs_service_id,
   olympusTemplateId,
+  partnerTemplateId,
   space,
 } from "@/common/constant"
 import Image from "next/image"
@@ -206,11 +207,11 @@ const PartnerForm = (): React.JSX.Element => {
     const urlParams = new URLSearchParams(window.location.search)
     const source = urlParams.get("source")
 
-    let templateId = defaultTemplateId
+    let templateId = partnerTemplateId
 
     // Check if the source is in the Olympus lead
     if (hasOlympusPrefix(source)) {
-      templateId = olympusTemplateId
+      templateId = partnerTemplateId
     }
 
     let templateParams = {

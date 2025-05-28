@@ -253,7 +253,20 @@
 
         width: 350px;
       }
+      img {
+        object-fit: contain;
+        // width: -webkit-fill-available;
+        // height: auto;
+      }
+      @media screen and (max-width: 1024px) {
+        img {
+          object-fit: cover;
+          width: -webkit-fill-available;
+          height: auto;
+        }
+      }
     }
+
     .card_bg {
       position: absolute;
       z-index: 2;

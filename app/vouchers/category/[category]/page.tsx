@@ -194,7 +194,7 @@ const categoryPage = async ({ params }: { params: { category: string } }) => {
                 </div>
                 <div className="mt-5">
                   <PrimaryButton
-                    title="Explore Bolt"
+                    title="Explore Vouchers"
                     theme="blue"
                     url="/vouchers"
                   />
