@@ -55,26 +55,20 @@ const MarketingBannerMobile: React.FC<MarketingBannerProps> = ({
           <div className={styles.mobile_banner_light_blue}>
             <div className={styles.text}>
               <div className="d-flex align-items-start">
-                <Link className={styles.button} href="/payment-gateway">
-                  IT'S HERE:
-                </Link>
                 <div>
                   Finally, a Payment Gateway Truly Built for SMBs & Startups
                 </div>
               </div>
             </div>
             <div className={styles.buttons_container}>
-              <Link href="/payment-gateway" target="_blank">
+              <Link
+                href={
+                  "https://www.enkash.com/payment-gateway/?utm_source=website&utm_medium=banner&utm_campaign=pg-launch"
+                }
+                target="_blank"
+              >
                 <div>
-                  <button className={styles.primary_button}>
-                    Explore Now
-                    <Image
-                      className={`ms-2  ${styles} `}
-                      src={whiteArrow}
-                      alt="action image"
-                      width={14}
-                    />
-                  </button>
+                  <button className={styles.primary_button}>Explore Now</button>
                 </div>
               </Link>
               <Image
