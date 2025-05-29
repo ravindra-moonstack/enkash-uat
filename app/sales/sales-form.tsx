@@ -120,7 +120,6 @@ const SalesForm = (): React.JSX.Element => {
   const [mobileNumber, setMobileNumber] = useState("")
   const [selectedCategory, setSelectedCategory] = useState("Payables")
   const [selectedProduct, setSelectedProduct] = useState("none")
-  const [selectedAdditionalProduct, setSelectedAdditionalProduct] = useState("")
   const [description, setDescription] = useState("")
   const [isFormValid, setIsFormValid] = useState(true)
   const [interestedPG, setInterestedPG] = useState(false)
@@ -195,10 +194,6 @@ const SalesForm = (): React.JSX.Element => {
     return regWebsite.test(val)
   }
 
-  function hasOlympusPrefix(string: string | null) {
-    return string && string.startsWith("olympus")
-  }
-
   //Email Send to EmailJs
   function sendEmailToEnkash() {
     setIsDisabled(true)
@@ -206,11 +201,6 @@ const SalesForm = (): React.JSX.Element => {
     const source = urlParams.get("source")
 
     let templateId = defaultTemplateId
-
-    // Check if the source is in the Olympus lead
-    if (hasOlympusPrefix(source)) {
-      templateId = olympusTemplateId
-    }
 
     let templateParams = {
       name: fullName,
