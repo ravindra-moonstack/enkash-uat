@@ -184,7 +184,7 @@ const PartnerPage = (): React.JSX.Element => {
             </div>
           </div>
 
-          <div className="col-md-6 col-12 px-5">
+          <div className="col-md-6 col-12 px-md-5">
             <ExploreCard
               title="Earn More, Effortlessly"
               description="Whether you’re a consultant, developer, or SaaS provider, unlock new revenue streams by referring clients to EnKash -  no extra work required. Let your expertise pay you back."
@@ -196,7 +196,7 @@ const PartnerPage = (): React.JSX.Element => {
         </div>
 
         <div className={`row bg-white align-items-center ${styles.section}`}>
-          <div className="col-md-6 col-12  px-5">
+          <div className="col-md-6 col-12  px-md-5">
             <ExploreCard
               title="Build Trust with a Market Leader"
               description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
@@ -237,7 +237,7 @@ const PartnerPage = (): React.JSX.Element => {
             </div>
           </div>
 
-          <div className="col-md-6 col-12 px-5 ">
+          <div className="col-md-6 col-12 px-md-5 ">
             <ExploreCard
               title="Customer Delight with Superior Fintech Solutions"
               description="Whether you’re a consultant, developer, or SaaS provider, unlock new revenue streams by referring clients to EnKash -  no extra work required. Let your expertise pay you back."
@@ -249,7 +249,7 @@ const PartnerPage = (): React.JSX.Element => {
         </div>
 
         <div className={`row bg-white align-items-center ${styles.section}`}>
-          <div className="col-md-6 col-12  px-5">
+          <div className="col-md-6 col-12  px-md-5">
             <ExploreCard
               title="Embedded Payments, Made Simple"
               description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
@@ -290,7 +290,7 @@ const PartnerPage = (): React.JSX.Element => {
             </div>
           </div>
 
-          <div className="col-md-6 col-12 px-5">
+          <div className="col-md-6 col-12 px-md-5">
             <ExploreCard
               title="Dedicated Support, Zero Stress"
               description="Enjoy white-glove onboarding and ongoing support from a dedicated account manager. Your clients stay happy and your operations stay smooth."
