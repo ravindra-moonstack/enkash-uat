@@ -5,15 +5,12 @@ import styles from "./page.module.scss"
 import PrimaryButton from "@/components/buttons/primary-button/primary-button"
 import emailjs from "@emailjs/browser"
 import {
-  defaultTemplateId,
   emailjs_public_key,
   emailjs_service_id,
-  olympusTemplateId,
   partnerTemplateId,
-  space,
 } from "@/common/constant"
 import Image from "next/image"
-import { blueArrow, corporateCreditCardFilled, prepaidCardFilled } from "."
+import { blueArrow } from "."
 
 type Category = {
   name: string
@@ -25,7 +22,6 @@ type Product = {
   icon?: any
 }
 
-// Define our data
 const categoryData: Category[] = [
   {
     name: "Monthly Merchant Volume",
@@ -45,16 +41,12 @@ const categoryData: Category[] = [
 ]
 
 const PartnerForm = (): React.JSX.Element => {
-  //Form Variables
   const [fullName, setFullName] = useState("")
   const [companyName, setCompanyName] = useState("")
   const [companyEmail, setCompanyEmail] = useState("")
   const [companyWebsite, setCompanyWebsite] = useState("")
   const [mobileNumber, setMobileNumber] = useState("")
   const [selectedCategory, setSelectedCategory] = useState<string[]>([])
-  const [selectedProduct, setSelectedProduct] = useState<string[]>([])
-  const [selectedAdditionalProduct, setSelectedAdditionalProduct] = useState("")
-  const [description, setDescription] = useState("")
   const [isFormValid, setIsFormValid] = useState(true)
   const [interestedPG, setInterestedPG] = useState(false)
   const [isExistingCustomer, setIsExistingCustomer] = useState(false)
@@ -65,7 +57,6 @@ const PartnerForm = (): React.JSX.Element => {
   const [openCategory, setOpenCategory] = useState<string | null>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  //Url parameters
   let urlParams
   let source
 
@@ -128,19 +119,6 @@ const PartnerForm = (): React.JSX.Element => {
 
     if (isDisabled) return
 
-    const formData = {
-      fullName,
-      companyEmail,
-      mobileNumber,
-      companyName,
-      companyWebsite,
-      selectedCategory,
-      selectedProductsByCategory,
-    }
-
-    console.log("Form Data Submitted:", formData)
-
-    // ✅ Must select all categories and one product for each
     const allCategoriesSelected = categoryData.every((cat) =>
       selectedCategory.includes(cat.name)
     )
@@ -154,7 +132,6 @@ const PartnerForm = (): React.JSX.Element => {
       isValidEmail(companyEmail) &&
       isValidMobile(mobileNumber) &&
       companyName.trim().length > 1 &&
-      isValidWebsite(companyWebsite) &&
       allCategoriesSelected &&
       allProductsSelected
 
@@ -166,16 +143,9 @@ const PartnerForm = (): React.JSX.Element => {
     }
   }
 
-  //toggle existing customer
-  const handleExistingCustomer = () => {
-    setIsExistingCustomer(!isExistingCustomer)
-  }
-
   function isValidMobile(number: string): boolean {
     const commonDummies = ["1234567890", "0000000000"]
     const isTenDigits = /^\d{10}$/.test(number)
-
-    // Check if all digits are the same (e.g., 1111111111)
     const isRepeating = /^(\d)\1{9}$/.test(number)
 
     return isTenDigits && !commonDummies.includes(number) && !isRepeating
@@ -186,19 +156,6 @@ const PartnerForm = (): React.JSX.Element => {
     const regEmail: RegExp =
       /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     return regEmail.test(val)
-  }
-
-  function isValidWebsite(val: string): boolean {
-    if (!val) {
-      return true
-    }
-    const regWebsite: RegExp =
-      /^(https?:\/\/)?([\w-]+(\.[\w-]+)+)(:[0-9]{1,5})?(\/[^\s]*)?$/i
-    return regWebsite.test(val)
-  }
-
-  function hasOlympusPrefix(string: string | null) {
-    return string && string.startsWith("olympus")
   }
 
   //Email Send to EmailJs
@@ -222,13 +179,10 @@ const PartnerForm = (): React.JSX.Element => {
       line_of_bussiness: businessLine,
     }
 
-    // Special case for existing customers (if needed)
     if (isExistingCustomer) {
       templateParams.monthly_merchant_volumne = "Existing Customer"
       templateParams.line_of_bussiness = ""
     }
-
-    console.log("Sending EmailJS with params:", templateParams)
 
     emailjs
       .send(emailjs_service_id, templateId, templateParams)

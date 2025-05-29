@@ -133,7 +133,7 @@
     color: black;
     border-radius: 0px 0px 16px 16px;
     @include for-laptops {
-      padding-right: 200px;
+      // padding-right: 200px;
     }
     .contactItem {
       display: flex;
@@ -171,8 +171,8 @@
   padding-right: 50px;
   padding-top: 100px;
   @include for-laptops {
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   .section {

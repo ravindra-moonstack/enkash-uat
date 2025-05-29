@@ -31,7 +31,6 @@ import { carouselData, cardData } from "./data"
 import faqData from "./faq-data"
 import TertiaryButton from "@/components/buttons/tertiary-button/tertiary-button"
 import ExploreCard from "@/components/explore-card/explore-card"
-import BankSection from "@/components/homepage/bank-section"
 import PartnerForm from "@/components/partner-form/partner-form"
 import CompanySection from "@/components/company/company-section"
 
@@ -113,7 +112,7 @@ const PartnerPage = (): React.JSX.Element => {
             />
           </div>
 
-          <div className={styles.contactSection}>
+          <div className={`col-md-9 col-12 ${styles.contactSection}`}>
             <div className={styles.contactItem}>
               <div className={styles.contactIcon}>
                 <Image
@@ -172,8 +171,7 @@ const PartnerPage = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`row bg-white align-items-center ${styles.section}`}>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3
-                   justify-content-start ${styles.third_container}`}
+            className={`col-md-6 col-12 d-flex  justify-content-start ${styles.third_container}`}
           >
             <div className={styles.lottie_third_container}>
               <Image
@@ -198,7 +196,7 @@ const PartnerPage = (): React.JSX.Element => {
         </div>
 
         <div className={`row bg-white align-items-center ${styles.section}`}>
-          <div className="col-md-6 col-12 my-md-5 my-3 px-5">
+          <div className="col-md-6 col-12  px-5">
             <ExploreCard
               title="Build Trust with a Market Leader"
               description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
@@ -209,7 +207,7 @@ const PartnerPage = (): React.JSX.Element => {
           </div>
 
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex  ${styles.first_container}`}
+            className={`col-md-6 col-12 d-flex  d-flex  ${styles.first_container}`}
           >
             <div className={styles.lottie_first_container}>
               <Image
@@ -225,7 +223,7 @@ const PartnerPage = (): React.JSX.Element => {
 
         <div className={`row bg-white align-items-center ${styles.section}`}>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3
+            className={`col-md-6 col-12 d-flex 
                    justify-content-start ${styles.third_container}`}
           >
             <div className={styles.lottie_third_container}>
@@ -251,7 +249,7 @@ const PartnerPage = (): React.JSX.Element => {
         </div>
 
         <div className={`row bg-white align-items-center ${styles.section}`}>
-          <div className="col-md-6 col-12 my-md-5 my-3 px-5">
+          <div className="col-md-6 col-12  px-5">
             <ExploreCard
               title="Embedded Payments, Made Simple"
               description="Create purpose-made company cards yourself or empower employees and departments to generate cards, set usage limits, track, manage, and control card spends."
@@ -262,7 +260,7 @@ const PartnerPage = (): React.JSX.Element => {
           </div>
 
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3 d-flex ${styles.first_container}`}
+            className={`col-md-6 col-12 d-flex  d-flex ${styles.first_container}`}
           >
             <div className={styles.lottie_first_container}>
               <Image
@@ -278,7 +276,7 @@ const PartnerPage = (): React.JSX.Element => {
 
         <div className={`row bg-white  align-items-center ${styles.section}`}>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3
+            className={`col-md-6 col-12 d-flex 
                    justify-content-start ${styles.third_container}`}
           >
             <div className={styles.lottie_third_container}>
@@ -385,7 +383,7 @@ const PartnerPage = (): React.JSX.Element => {
             </div>
             <div className={styles.blurEffect}></div>
             <div className={styles.blurEffectRight}></div>
-            <div className="">
+            <div>
               <CompanySection />
             </div>
           </div>
@@ -452,6 +450,7 @@ const PartnerPage = (): React.JSX.Element => {
         <div className="mb-5">
           <Heading title="Got Questions?" color="equity-blue" size="h1" />
         </div>
+
         <div className="mb-5">
           <Heading
             title="Don't worry! Our FAQs section will help you learn about flexible billing cycle in detail."
