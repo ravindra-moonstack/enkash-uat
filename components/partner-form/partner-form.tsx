@@ -175,13 +175,13 @@ const PartnerForm = (): React.JSX.Element => {
       email: companyEmail,
       phone: mobileNumber,
       company: companyName,
-      monthly_merchant_volumne: monthlyVolume,
-      line_of_bussiness: businessLine,
+      monthly_merchant_volume: monthlyVolume,
+      line_of_business: businessLine,
     }
 
     if (isExistingCustomer) {
-      templateParams.monthly_merchant_volumne = "Existing Customer"
-      templateParams.line_of_bussiness = ""
+      templateParams.monthly_merchant_volume = "Existing Customer"
+      templateParams.line_of_business = ""
     }
 
     emailjs
