@@ -68,21 +68,6 @@ const faqData: FAQProps[] = [
       },
     ],
   },
-  {
-    question:
-      "What are some important terms & conditions related to the Partner Program?",
-
-    answerHTML: (
-      <div className="mb-4">
-        <h4 className={styles.heading}>
-          You can check our terms and conditions
-          <Link href="https://razorpay.com/s/terms/partners/ " target="_blank">
-            {`${space}here .`}
-          </Link>
-        </h4>
-      </div>
-    ),
-  },
 ]
 
 export default faqData
