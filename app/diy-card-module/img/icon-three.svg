@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="57.999" viewBox="0 0 58 57.999">
-  <defs>
-    <linearGradient id="linear-gradient" x1="0.5" y1="-0.202" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
-      <stop offset="0"/>
-      <stop offset="1" stop-color="#60d6ff"/>
-    </linearGradient>
-  </defs>
-  <path id="Union_94" data-name="Union 94" d="M-6565.63,519.01-6569,503l1.446-.132a41.159,41.159,0,0,0,17.74-5.871l9.814-6,9.814,6a41.179,41.179,0,0,0,17.739,5.872l1.446.13-3.37,16.01A41.167,41.167,0,0,1-6540,549,41.169,41.169,0,0,1-6565.63,519.01ZM-6547,537h14V525h-2v-5h6a2,2,0,0,0,2-2v-6h-26v6a2,2,0,0,0,2,2h6a5.007,5.007,0,0,1,5-5v2a3,3,0,0,0-3,3v5h-4Zm21-4h2v-2h-2Zm-30,0h2v-2h-2Zm30-4h2v-2h-2Zm-4,0h2v-2h-2Zm-22,0h2v-2h-2Zm-4,0h2v-2h-2Zm30-4h2v-2h-2Zm-30,0h2v-2h-2Zm3-19v2h26v-2a2,2,0,0,0-2-2h-22A2,2,0,0,0-6553,506Zm12,28v-4h-1v-2h4v2h-1v4Zm0-9v-5h4v5Z" transform="translate(6569 -491)" fill="url(#linear-gradient)"/>
-</svg>
