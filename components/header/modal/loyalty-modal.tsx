@@ -2,8 +2,9 @@ import { useState } from "react"
 import styles from "./modal.module.scss"
 import cardsProducts from "../data/cards-products"
 import SubProduct from "./sub-product"
+import loyaltyLoungeProducts from "../data/loaylty-lounge-products"
 
-const CardModal = ({
+const LoyaltyModal = ({
   onLinkClick,
   modalLeft,
 }: {
@@ -20,9 +21,8 @@ const CardModal = ({
 
       <div className={`mt-4 ${styles.container}`}>
         <div className="d-flex gap-2">
-          {cardsProducts.map((mother, i) => {
-            const subProducts =
-              mother.subProducts || mother.payableProducts || []
+          {loyaltyLoungeProducts.map((mother, i) => {
+            const subProducts = mother.subProducts || []
 
             if (!subProducts || subProducts.length === 0) return null
 
@@ -45,4 +45,4 @@ const CardModal = ({
   )
 }
 
-export default CardModal
+export default LoyaltyModal

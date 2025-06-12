@@ -12,6 +12,9 @@ import SolutionsModal from "./modal/solutions-modal"
 import ApiDocsModal from "./modal/api-docs-modal"
 import { usePathname } from "next/navigation"
 import PaymentModal from "./modal/payment-modal"
+import CardModal from "./modal/card-modal"
+import ExpensesModal from "./modal/expenses-modal"
+import LoyaltyModal from "./modal/loyalty-modal"
 
 interface props {
   utmSource?: string
@@ -25,6 +28,7 @@ const WebHeader = ({ utmSource }: props) => {
   const [slidePosition, setSlidePosition] = useState<number | null>(null)
   const itemRefs = useRef<(HTMLLIElement | null)[]>([])
   const [active, setActive] = useState("get-started")
+  const [modalLeft, setModalLeft] = useState<number | null>(null)
   // let signupUrl = utmSource
   //   ? `https://home.enkash.com/signup?utm_source=${utmSource}`
   //   : "https://home.enkash.com/get-started";
@@ -103,19 +107,22 @@ const WebHeader = ({ utmSource }: props) => {
                       : styles.opacity_normal
                   }`}
                   onMouseEnter={() => {
-                    const position =
-                      itemRefs.current[index]?.getBoundingClientRect().left || 0
-                    const width = itemRefs.current[index]?.offsetWidth || 0
+                    const navItem = itemRefs.current[index]
+                    if (navItem) {
+                      const itemRect = navItem.getBoundingClientRect()
+                      const parentRect =
+                        navItem.parentElement?.getBoundingClientRect()
+                      const left =
+                        itemRect.left -
+                        (parentRect?.left || 0) +
+                        itemRect.width / 2 +
+                        150 // 👈 add 50px here
 
-                    setSlidePosition(
-                      position -
-                        (itemRefs.current[
-                          index
-                        ]?.parentElement?.getBoundingClientRect().left || 0)
-                    )
-                    setItemWidth(width)
-                    setHoveredIndex(index)
-                    // setIsHeaderBgWhite(true);
+                      setModalLeft(left) // shifted 50px right
+                      setSlidePosition(left - itemRect.width / 2)
+                      setItemWidth(itemRect.width)
+                      setHoveredIndex(index)
+                    }
 
                     if (index === 5) {
                       setIsHeaderBgWhite(false)
@@ -154,36 +161,56 @@ const WebHeader = ({ utmSource }: props) => {
                 Get Support
               </button>
             </Link>
-            <div className={styles.button_switch_wrapper}>
-              <Link href={signupUrl} target="_blank">
-                <button
-                  className={`${styles.button} ${
-                    active === "get-started" ? styles.active : ""
-                  }`}
-                  onClick={() => setActive("get-started")}
-                >
-                  Get Started
-                </button>
-              </Link>
+            <div
+              className={`${styles.button_switch_wrapper} ${
+                active === "login"
+                  ? styles["login-active"]
+                  : styles["get-started-active"]
+              }`}
+            >
+              <button
+                className={`${styles.button} ${
+                  active === "get-started" ? styles.active : ""
+                }`}
+                onClick={() => setActive("get-started")}
+              >
+                Get Started
+              </button>
 
-              <Link href="https://home.enkash.com/login" target="_blank">
-                <button
-                  className={`${styles.button} ${
-                    active === "login" ? styles.active : ""
-                  }`}
-                  onClick={() => setActive("login")}
-                >
-                  Login
-                </button>
-              </Link>
+              <button
+                className={`${styles.button} ${
+                  active === "login" ? styles.active : ""
+                }`}
+                onClick={() => setActive("login")}
+              >
+                Login
+              </button>
             </div>
           </div>
         </nav>
-        {/* <ProductModal onLinkClick={handleLinkClick} /> */}
-        {hoveredIndex === 0 && <PaymentModal onLinkClick={handleLinkClick} />}
-        {hoveredIndex === 1 && <SolutionsModal />}
-        {hoveredIndex === 2 && <ResourcesModal />}
-        {hoveredIndex === 3 && <ApiDocsModal />}
+        {/* {true && (
+          <ResourcesModal
+            onLinkClick={handleLinkClick}
+            modalLeft={modalLeft ?? 200}
+          />
+        )} */}
+        {hoveredIndex === 0 && modalLeft !== null && (
+          <PaymentModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+        )}
+        {hoveredIndex === 1 && modalLeft !== null && (
+          <CardModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+        )}
+        {hoveredIndex === 2 && modalLeft !== null && (
+          <ExpensesModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+        )}
+
+        {hoveredIndex === 3 && modalLeft !== null && (
+          <LoyaltyModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+        )}
+
+        {hoveredIndex === 4 && modalLeft !== null && (
+          <ResourcesModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+        )}
       </header>
     </div>
   )

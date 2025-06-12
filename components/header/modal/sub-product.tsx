@@ -92,7 +92,7 @@ const SubProduct = (props: any) => {
                     ? styles.receivablesScroll
                     : ""
                 } ${
-                  activeGroup?.list?.length > 8
+                  activeGroup?.list?.length > 6
                     ? styles.grid_layout
                     : styles.flex_layout
                 }`}
@@ -147,14 +147,17 @@ const SubProduct = (props: any) => {
                       onClick={handleItemClick}
                       ref={refs[index]}
                     >
-                      <div>
-                        <Image
-                          src={product.imageSrcHovered}
-                          alt={product.name}
-                          width={25}
-                          height={25}
-                        />
-                      </div>
+                      {product.imageSrcHovered && (
+                        <div>
+                          <Image
+                            src={product.imageSrcHovered}
+                            alt={product.name}
+                            width={25}
+                            height={25}
+                          />
+                        </div>
+                      )}
+
                       <div className={`d-flex flex-column ms-3`}>
                         <div className={`d-flex ${styles.sub_product_name}`}>
                           {product.name !== "EnKash PG" && <>{product.name}</>}
