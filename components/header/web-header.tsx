@@ -27,7 +27,7 @@ const WebHeader = ({ utmSource }: props) => {
   const itemRef = useRef<HTMLLIElement | null>(null)
   const [slidePosition, setSlidePosition] = useState<number | null>(null)
   const itemRefs = useRef<(HTMLLIElement | null)[]>([])
-  const [active, setActive] = useState("get-started")
+  const [active, setActive] = useState("sales")
   const [modalLeft, setModalLeft] = useState<number | null>(null)
   // let signupUrl = utmSource
   //   ? `https://home.enkash.com/signup?utm_source=${utmSource}`
@@ -74,13 +74,13 @@ const WebHeader = ({ utmSource }: props) => {
           setIsHeaderBgWhite(false)
         }}
       >
-        <nav className="d-flex justify-content-between mb-2 pe-5">
+        <nav className="d-flex justify-content-between mb-2 ">
           <div className="d-flex">
             <Link href="/" className={styles.logo_container}>
               <Image
                 src={enkashBlueLogo}
                 alt="logo"
-                width={120}
+                width={123}
                 className="me-3"
               />
             </Link>
@@ -170,20 +170,19 @@ const WebHeader = ({ utmSource }: props) => {
             >
               <button
                 className={`${styles.button} ${
-                  active === "get-started" ? styles.active : ""
-                }`}
-                onClick={() => setActive("get-started")}
-              >
-                Get Started
-              </button>
-
-              <button
-                className={`${styles.button} ${
                   active === "login" ? styles.active : ""
                 }`}
                 onClick={() => setActive("login")}
               >
                 Login
+              </button>
+              <button
+                className={`bg-brand-blue ${styles.button} ${
+                  active === "sales" ? styles.active : ""
+                }`}
+                onClick={() => setActive("sales")}
+              >
+                Talk to Sales
               </button>
             </div>
           </div>

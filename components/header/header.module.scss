@@ -18,11 +18,10 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: rgba($color-indi-volt, 0.75);
 }
 
 .header {
-  padding: 30px;
+  padding: 46px 64px 37px 64px;
   // Transparent dark background
   backdrop-filter: blur(30px); // Applies the blur effect
   -webkit-backdrop-filter: blur(30px);
@@ -64,6 +63,9 @@
     padding: 10px;
     align-items: center;
     border-radius: 12px;
+    max-width: 1408px;
+    margin: auto;
+    width: -webkit-fill-available;
   }
 }
 

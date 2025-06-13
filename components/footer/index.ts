@@ -1,0 +1,14 @@
+export { default as twitterLogo } from "./img/twitter.png";
+export { default as linkedinLogo } from "./img/linkedin.png";
+export { default as fbLogo } from "./img/fb.png";
+export { default as instLogo } from "./img/insta.png";
+export { default as call } from "./img/call.png";
+export { default as locationPin } from "./img/locationPin.png";
+export { default as pci } from "./img/pci.png";
+export { default as soc } from "./img/soc.png";
+export { default as rbi } from "./img/rbi.png";
+export { default as email } from "./img/email.png";
+export { default as onlineDispute } from "./img/online-dispute.svg";
+export { default as enkashBlueLogo } from "./img/enkash-blue-logo.png";
+export { default as ppi } from "./img/ppi.svg";
+export { default as youtubeLogo } from "./img/youtube.png";
