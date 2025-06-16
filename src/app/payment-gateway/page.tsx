@@ -1,11 +1,10 @@
-"use client";
-import Image from "next/image";
-import { Metadata } from "next";
-import { space } from "@/common/constant";
-import styles from "./page.module.scss";
-import { cardsData } from "./data";
-import faqData from "./faq-data";
-
+"use client"
+import Image from "next/image"
+import { Metadata } from "next"
+import { space } from "@/common/constant"
+import styles from "./page.module.scss"
+import { cardsData } from "./data"
+import faqData from "./faq-data"
 import {
   Header,
   Footer,
@@ -14,27 +13,17 @@ import {
   StructuredData,
   FAQHtml,
   SecondryButton,
-} from "@/components";
-import EnkashWay from "@/components/enkash-way/enkash-way";
-import { faqBg, creditCard, blueArrow, approved, policyIcon } from ".";
-import generateMetaData from "@/common/utils/metaData";
-import ManagementCard from "@/components/management-card/management-card";
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button";
-import PolicyCard from "@/components/policyCard/policyCard";
-import CardAnimation from "@/components/cardAnimation/page";
+} from "@/components"
+import EnkashWay from "@/components/enkash-way/enkash-way"
+import { faqBg, creditCard, blueArrow, approved, policyIcon } from "."
+import generateMetaData from "@/common/utils/metaData"
+import ManagementCard from "@/components/management-card/management-card"
+import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import PolicyCard from "@/components/policyCard/policyCard"
+import CardAnimation from "@/components/cardAnimation/page"
 
-export const metadata: Metadata = generateMetaData({
-  title: "Automated Expense Management Software for your Business- EnKash",
-  description:
-    "EnKash automated expense management platform keeps track of budgets and ensures that spends are within limits. Automating expense management saves time & transparency.Book Demo Now!",
-  alternates: {
-    canonical: "https://www.enkash.com/expense-management/",
-  },
-  faqData: faqData,
-});
-
-const showScroll = cardsData.length > 3;
-const ExpenseManagement = (): React.JSX.Element => {
+const showScroll = cardsData.length > 3
+const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <StructuredData
@@ -44,57 +33,74 @@ const ExpenseManagement = (): React.JSX.Element => {
       <Header utmSource="expense_management" />
 
       <div className={`${styles.first_row}`}>
-        <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-          <div className="d-flex ">
-            <p className={`${styles.subtitle}`}>Expense Management</p>
+          <div className="col-12 col-md-6 d-flex flex-column">
+          <div className="d-flex mb-5 flex-column flex-md-row">
+            <div className="d-flex">
+              <Heading
+                title={`Reimbursements ${space}`}
+                color="equity-blue"
+                size="h4"
+                weight="7"
+              />
+            </div>
           </div>
-          <div className="d-flex mb-4">
+          <div className="d-flex flex-column">
             <Heading
-              title="Expense Management"
-              color="black"
-              size="h1"
+              title={`Reimburse Expenses ${space}`}
+              color="bluish-purple"
+              size="h2"
               weight="7"
             />
-          </div>
-          <div className="d-inline">
             <Heading
-              title="Smarter Spending."
-              color="main-grey"
+              title={`Faster than Your ${space}`}
+              color="black"
               size="h2"
-              weight="4"
-              useH1TagInHtml={true}
+              weight="7"
             />
-            <Heading
-              title={`${space} Seamless Control. ${space}`}
-              color="main-grey"
-              size="h5"
-              weight="4"
-            />
-            <Heading
-              title="Instant Visibility."
-              color="main-grey"
-              size="h5"
-              weight="4"
-            />
+            <div>
+              <Heading
+                title="Next Business"
+                color="black"
+                size="h2"
+                weight="7"
+              />
+              <Heading
+                title="Meeting Wraps Up!"
+                color="black"
+                size="h2"
+                weight="7"
+              />
+            </div>
           </div>
 
-          <div className="mt-4 mobile-only">
+          <div className="d-flex mt-4 pe-5">
             <Heading
-              title="Smarter Spending. Seamless Control. Instant Visibility."
-              color="white"
+              title="A hassle-free instant reimbursement system to track, process and sync data in real time."
+              color="black"
               size="h6"
               weight="5"
             />
           </div>
-
-          <div className="mt-5">
-            <RectangleButton
-              title="Get Started"
-              theme="blue"
-              url="/sales/?source=expense_management"
-            />
+          <div className="my-5 d-flex flex-column justify-content-start align-items-start">
+            {/* <Image
+              src={groupIcon}
+              alt="card visual"
+              className={styles.card_image}
+            /> */}
+            <div className="me-2">
+              <PrimaryButton
+                title="Get Started"
+                theme="blue"
+                url="/sales/?source=expense_management"
+              />
+            </div>
           </div>
         </div>
+
+        <div className="col-12 col-md-6 d-flex justify-content-center">
+          {/* <div className={styles.lottie_container}>
+            <LottieClientComponent animationData={bannerLottie} loop={true} />
+          </div> */}
         <div className=" col-12 d-flex justify-content-center align-items-center">
           <div className={styles.lottie_container}>
             {/* <LottieDynamicLoadComponent
@@ -455,7 +461,7 @@ const ExpenseManagement = (): React.JSX.Element => {
       </div>
       <Footer utmSource="expense_management" />
     </div>
-  );
-};
+  )
+}
 
-export default ExpenseManagement;
+export default PaymentGateway
