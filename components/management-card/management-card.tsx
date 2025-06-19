@@ -1,16 +1,14 @@
-import Image from "next/image";
-import { blueArrow, whiteArrow } from ".";
-import styles from "./management-card.module.scss";
-import Heading from "../heading/heading";
-import Link from "next/link";
+import Image from "next/image"
+import styles from "./management-card.module.scss"
+import Heading from "../heading/heading"
 
 export interface CardProps {
-  whiteTitle?: any;
-  titleHtml?: any;
-  description: string;
-  ctaColor?: string;
-  source: string;
-  cardImage?: string;
+  whiteTitle?: any
+  titleHtml?: any
+  description: string
+  ctaColor?: string
+  source: string
+  cardImage?: string
 }
 
 const ManagementCard = ({
@@ -22,21 +20,18 @@ const ManagementCard = ({
   cardImage,
 }: CardProps) => {
   return (
-    <div className={`d-flex flex-column ${styles.card_body}`}>
-      {/* Title */}
+    <div className={`d-flex flex-column  ${styles.card_body}`}>
       {titleHtml ? (
         <div className={styles.titleHtml}>{titleHtml}</div>
       ) : (
-        <Heading title={whiteTitle} color="white" size="h2" weight="6" />
+        <Heading title={whiteTitle} color="black" size="h4" weight="6" />
       )}
 
-      {/* Description */}
       <div
         className={`my-3 ${styles.description}`}
         dangerouslySetInnerHTML={{ __html: description }}
       ></div>
 
-      {/* Image */}
       {cardImage && (
         <div className={styles.image_wrapper}>
           <Image
@@ -49,7 +44,7 @@ const ManagementCard = ({
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ManagementCard;
+export default ManagementCard

@@ -18,7 +18,9 @@
     padding-top: 160px;
     padding-bottom: 40px;
   }
-
+  .card_image {
+    margin-top: 13px;
+  }
   .image-container {
     position: relative;
     width: 100%;
@@ -38,15 +40,6 @@
     border-bottom: 2px solid $color-equity-blue;
     font-size: 24px;
     font-weight: 400;
-  }
-  .dashboard_img {
-    max-width: 100%;
-    height: auto;
-    @include for-laptops {
-      max-width: none;
-      height: fit-content;
-      width: 800px;
-    }
   }
 
   .lottie_container {
@@ -112,7 +105,7 @@
   .section {
     padding-bottom: 50px;
     padding-top: 50px;
-
+   
     .subtitle {
       margin-bottom: 80px;
     }
@@ -401,4 +394,9 @@
       }
     }
   }
+}
+
+.other_products {
+  background-color: white;
+  padding: 0px 90px 90px 90px;
 }

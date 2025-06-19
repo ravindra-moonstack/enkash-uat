@@ -1,20 +1,22 @@
-import styles from "./faq.module.scss";
-import Image from "next/image";
-import arrowDown from "./img/arrow-down.svg";
+import styles from "./faq.module.scss"
+import Image from "next/image"
+import arrowDown from "./img/arrow-down.svg"
 
 export interface FAQProps {
-  question: string;
-  answerHTML?: any;
+  question: string
+  index: number
+  answerHTML?: any
   answer?: {
-    heading?: string;
-    bullets?: string[];
-  }[];
-  answerVisible?: boolean;
-  onToggleAnswerVisibility?: () => void;
+    heading?: string
+    bullets?: string[]
+  }[]
+  answerVisible?: boolean
+  onToggleAnswerVisibility?: () => void
 }
 
 const FAQ = ({
   question,
+  index,
   answer,
   answerVisible,
   answerHTML,
@@ -22,9 +24,9 @@ const FAQ = ({
 }: FAQProps) => {
   const toggleAnswerVisibility = () => {
     if (onToggleAnswerVisibility) {
-      onToggleAnswerVisibility();
+      onToggleAnswerVisibility()
     }
-  };
+  }
 
   return (
     <div className={styles.faq_row}>
@@ -44,7 +46,9 @@ const FAQ = ({
         <div
           className={`d-flex  gap-4 my-4  justify-content-between  align-items-center`}
         >
-          <h2 className={styles.question}>{question}</h2>
+          <h2 className={styles.question}>
+            {String(index + 1).padStart(2, "0")}. {question}
+          </h2>
           <Image
             onClick={toggleAnswerVisibility}
             src={arrowDown}
@@ -83,7 +87,7 @@ const FAQ = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FAQ;
+export default FAQ

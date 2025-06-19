@@ -12,6 +12,7 @@ export interface HeadingProps {
     | "rainy-blue"
     | "main-grey"
     | "bluish-purple"
+    | "alternate-grey"
   weight?: "3" | "4" | "5" | "6" | "7"
   italic?: boolean
   useH1TagInHtml?: boolean // New prop for using h1 tag

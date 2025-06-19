@@ -1,52 +1,90 @@
 const faqData = [
   {
-    question:
-      "How does EnKash’s expense management platform help with budgets and advances?",
+    question: "What is Payment Gateway?",
     answer: [
       {
         heading:
-          "Create budgets on a departmental or category level, track and optimize expenses, and increase savings regularly. Use data from past budgets and actual expenses for each department, along with the information from department heads on their plan for the financial period ahead, to create a realistic budget.",
+          "A payment gateway is a digital solution that facilitates online and in-store payments for businesses. It processes transactions securely, supporting various payment methods such as credit cards, debit cards, and more. Acting as an intermediary between the merchant and the bank, it ensures smooth and secure transactions for both businesses and their customers.",
+      },
+    ],
+  },
+  {
+    question: "What payment methods are supported by EnKash Payment Gateway?",
+    answer: [
+      {
+        heading:
+          "EnKash Payment Gateway supports an extensive range of payment methods through a single integration, offering unparalleled flexibility for businesses. Here’s what we support:",
+      },
+      {
+        bullets: [
+          "Cards: All major card networks, including RuPay, Visa, MasterCard, Amex, Diners Club, and Maestro.",
+          "Net Banking: Access to over 90 public and private banks across India.",
+          "UPI: Compatibility with 20+ UPI apps, including Google Pay, PhonePe, Paytm, BHIM, and Amazon Pay.",
+          "Buy Now, Pay Later (BNPL): Partnerships with 35+ providers for card-based and cardless EMI options, as well as pay-later services.",
+          "Wallets: Support for 9+ digital and mobile wallets, such as Paytm, Amazon Pay, Freecharge, and MobiKwik.",
+        ],
+      },
+      {
+        heading:
+          "EnKash ensures customers can choose their preferred payment mode, enhancing their overall payment experience.",
       },
     ],
   },
   {
     question:
-      "What is the role of hierarchy and controls in managing expenses?",
+      "What types of platforms and payment gateway integration are supported by EnKash?",
     answer: [
       {
         heading:
-          "Setting up hierarchies and controls ensures that expenses are monitored, checked, and approved before the payout is completed. With the platform, it is easy to choose from the various options or create a hierarchy that suits the departmental structure, the expense type, and the urgency of spends.",
+          "EnKash Payment Gateway provides versatile integrations to help businesses across various platforms accept payments effortlessly. Here’s how:",
+      },
+      {
+        bullets: [
+          "Web and Mobile Integrations: EnKash offers seamless integration options through RESTful APIs and mobile SDKs compatible with Android, iOS, React Native, Flutter, Cordova, Xamarin, and Capacitor.",
+          "E-commerce and Website Plugins: Our gateway supports plug-and-play integrations with leading platforms such as Shopify, WooCommerce, Magento, PrestaShop, Wix, OpenCart, WHMCS, and WordPress, among others.",
+          "Custom Solutions: For businesses with unique requirements, EnKash enables tailored integrations to fit specific needs, ensuring smooth payment acceptance across websites, mobile apps, and other digital channels.",
+        ],
+      },
+      {
+        heading:
+          "With EnKash, businesses can quickly integrate payments across channels, streamlining their operations and enhancing customer convenience.",
       },
     ],
   },
   {
-    question:
-      "How does expense management platform help improve reimbursements?",
+    question: "How does a payment gateway work?",
     answer: [
       {
         heading:
-          "Fast-track and optimize the entire reimbursement process with a better spend overview. In most businesses, employees often have to make payments for official purposes, and these need to be reimbursed. Since reimbursing official employee payments requires checking and verifying the paperwork and approving the expense, it can be time-consuming.",
+          "As soon as a customer makes any payment, the payment gateway collects and encrypts the payment details. This information is further sent to the payment processor and the bank for authorization. After approval, the funds are transferred to the receiver’s account completing the transaction.",
       },
     ],
   },
   {
-    question: "What is expense management software?",
+    question: "What is the price of a payment gateway?",
     answer: [
       {
         heading:
-          "Expense management software is a complete solution that helps you manage the entire process from receipt to reimbursement. You can track all types of expenses that your business and employees incur. It will help you track advances provided, expenses incurred, receipt management, policy checks, approvals, and reimbursement. Plus, it enables you to collate expenses into reports & insights per stakeholders’ needs.",
+          "EnKash provides transparent pricing. Talk to our sales team today for detailed payment gateway charges or to explore tailored plans designed for your business needs.",
       },
     ],
   },
   {
-    question: "How do you manage expense reports?",
+    question: "How to integrate a payment gateway with a website?",
     answer: [
       {
         heading:
-          "EnKash's expense management software simplifies expense report management by capturing expense-related information at every stage. It parses through information from receipts and invoices, matches them with expense details, and stores them securely in the cloud. It also allows users to sort expenses by type, department, or other criteria to generate reports as needed. Additionally, it hosts a deep insights dashboard for all types of reporting across departments, categories, cost centres for defined intervals.",
+          "EnKash is a versatile payment gateway that seamlessly integrates with your website or app through the following options:",
+      },
+      {
+        bullets: [
+          "EnKash APIs: Ideal for desktop and website integrations, offering flexibility and control.",
+          "EnKash SDKs: Best suited for mobile app integrations, providing smooth functionality.",
+          "EnKash Plugins: Perfect for third-party platforms like WooCommerce, Shopify, and more.",
+        ],
       },
     ],
   },
-];
+]
 
-export default faqData;
+export default faqData

@@ -173,6 +173,11 @@
 .bg-color-soft-mint {
   background-color: $color-soft-mint;
 }
+
+.color-pale-aqua {
+  color: $color-pale-aqua;
+}
+
 /* Padding Classes */
 
 .row-padding {
@@ -338,4 +343,8 @@ html body {
 /* Firefox */
 .scrollbar-thin {
   scrollbar-width: auto; /* use default scrollbar width */
+}
+
+.gap-32 {
+  gap: 32px;
 }

@@ -7,7 +7,7 @@ export interface ButtonProps {
   isDisabled?: boolean
   title: string
   url?: any
-  theme?: "blue" | "green" | "black" | "outline-blue"
+  theme?: "blue" | "green" | "black" | "outline-blue" | "border-gray"
   width?: string
   actionImage?: any
   iconSize?: any
@@ -28,7 +28,7 @@ const RectangleButton = ({
     }
   }
   const iconClass = iconSize || "big-icon"
-  
+
   return (
     <>
       <button

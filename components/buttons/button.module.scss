@@ -184,4 +184,13 @@
       box-shadow: 0 0 7px 7px rgba(28, 90, 244, 0.5);
     }
   }
+    &.border-gray {
+    background-color: transparent;
+    color: $color-equity-blue;
+    transition: box-shadow 0.3s ease;
+    border: 2px solid $color-main-grey;
+    &:hover {
+      box-shadow: 0 0 7px 7px rgba(28, 90, 244, 0.5);
+    }
+  }
 }

@@ -1,25 +1,21 @@
 "use client"
 import Image from "next/image"
-import { Metadata } from "next"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { acceleratedGrowthData, cardsData } from "./data"
+import {
+  acceleratedGrowthData,
+  cardsData,
+  dashboardData,
+  integrationData,
+  paymentMethodData,
+  rankData,
+  savingData,
+  supportData,
+} from "./data"
 import faqData from "./faq-data"
+import { Header, Footer, Heading, StructuredData, FAQHtml } from "@/components"
 import {
-  Header,
-  Footer,
-  Heading,
-  PrimaryButton,
-  StructuredData,
-  FAQHtml,
-  SecondryButton,
-} from "@/components"
-import EnkashWay from "@/components/enkash-way/enkash-way"
-import {
-  creditCard,
   blueArrow,
-  approved,
-  policyIcon,
   groupIcon,
   paymentSummary,
   integration,
@@ -28,21 +24,23 @@ import {
   rank,
   support,
   leftHand,
-  whiteArrow,
   acceleratedGrowthImg,
+  paymentLink,
+  paymentPage,
+  qrCodes,
+  invoices,
+  paymentButton,
+  autoCollect,
+  instant,
+  reminder,
 } from "."
-import generateMetaData from "@/common/utils/metaData"
+
 import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import PolicyCard from "@/components/policyCard/policyCard"
-import CardAnimation from "@/components/cardAnimation/page"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import Home from "../page"
-import BankSection from "@/components/logo-slider/logo-slider"
 import LogoSlider from "@/components/logo-slider/logo-slider"
-import Card from "@/components/cardAnimation/card/card"
 
-const showScroll = cardsData.length > 3
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -68,7 +66,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   title={`Payment Gateway ${space}`}
                   color="equity-blue"
                   size="h4"
-                  weight="7"
+                  weight="4"
                 />
               </div>
             </div>
@@ -94,16 +92,16 @@ const PaymentGateway = (): React.JSX.Element => {
                 title="The best payment gateway for a superior merchant experience."
                 color="black"
                 size="h5"
-                weight="5"
+                weight="4"
               />
             </div>
-            <div className="my-5 d-flex flex-column justify-content-start align-items-start">
+            <div className=" d-flex flex-column  align-items-start">
               <Image
                 src={groupIcon}
                 alt="card visual"
                 className={styles.card_image}
               />
-              <div className="my-5 d-flex flex-row justify-content-start align-items-center">
+              <div className="my-5 d-flex flex-row  align-items-center">
                 <div className="me-2">
                   <RectangleButton
                     title="Get Started"
@@ -123,15 +121,12 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
 
           <div className="col-12 col-md-6 d-flex justify-content-center">
-            <div
-              className="position-relative w-100 h-100"
-              style={{ maxHeight: "625px" }}
-            >
+            <div className="position-relative w-100 h-100">
               <Image
                 src={paymentSummary}
                 alt="card visual"
-                fill
                 style={{ objectFit: "contain" }}
+                height={625}
               />
             </div>
           </div>
@@ -140,7 +135,7 @@ const PaymentGateway = (): React.JSX.Element => {
       </div>
 
       <div className={`row ${styles.second_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-3  align-items-center">
+        <div className="d-flex justify-content-center  flex-column gap-32  align-items-center">
           <div className="d-flex justify-content-center  align-items-center">
             <Heading
               title="Say Hello to a"
@@ -153,6 +148,7 @@ const PaymentGateway = (): React.JSX.Element => {
               size="h3"
               color="white"
               weight="6"
+              italic
             />
             <Heading
               title="way to handle transactions"
@@ -165,7 +161,7 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className={` d-flex ${styles.section}`}>
             {" "}
             <div
-              className={`my-5 d-flex flex-column justify-content-center align-items-center ${styles.card}`}
+              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className="me-2">
                 <Heading
@@ -190,7 +186,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
             <div
-              className={`my-5 d-flex flex-column justify-content-center align-items-center ${styles.card}`}
+              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className="me-2">
                 <Heading
@@ -215,7 +211,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
             <div
-              className={`my-5 d-flex flex-column justify-content-center align-items-center ${styles.card}`}
+              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className="me-2">
                 <Heading
@@ -244,7 +240,7 @@ const PaymentGateway = (): React.JSX.Element => {
       </div>
 
       <div className={styles.third_row}>
-        <div className={`${styles.title} text-center pb-5`}>
+        <div className={`${styles.title} text-center `}>
           <Heading
             title={`Built for SMBs,  ${space}`}
             color="equity-blue"
@@ -259,7 +255,7 @@ const PaymentGateway = (): React.JSX.Element => {
           />
         </div>
 
-        <div className={`row bg-white ${styles.section}`}>
+        <div className={`row bg-white align-items-center ${styles.section}`}>
           <div className="col-md-6 col-12 px-5">
             <div className={`d-flex flex-column ${styles.subtitle}`}>
               <Heading
@@ -278,7 +274,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "50px" }}
             >
-              {cardsData.map(({ icon, title, description }, i) => (
+              {integrationData.map(({ icon, title, description }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
                   <PolicyCard
                     icon={icon}
@@ -298,7 +294,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
           <div
             className={`col-md-6 col-12 d-flex my-md-5 my-3
-             justify-content-start ${styles.third_container}`}
+             justify-content-end ${styles.third_container}`}
           >
             <div>
               <Image
@@ -312,11 +308,11 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
 
         <div
-          className={`row bg-color-soft-mint pb-[50px] pt-[50px] ${styles.section}`}
+          className={`row bg-color-soft-mint pb-[50px] pt-[50px]  align-items-center ${styles.section}`}
         >
           <div
             className={`col-md-6 col-12 d-flex my-md-5 my-3
-             justify-content-start ${styles.third_container}`}
+              ${styles.third_container}`}
           >
             <div>
               <Image
@@ -331,13 +327,13 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className="col-md-6 col-12 px-5">
             <div className={`d-flex flex-column ${styles.subtitle}`}>
               <Heading
-                title={`Developer First Integration  ${space}`}
+                title={`Accept All Payment Methods ${space}`}
                 color="black"
                 size="h3"
                 weight="5"
               />
               <Heading
-                title={`Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms ${space}`}
+                title={`Provide your customers with the freedom to choose how they pay with several online payment options. ${space}`}
                 color="main-grey"
                 size="h4"
                 weight="4"
@@ -346,7 +342,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "50px" }}
             >
-              {cardsData.map(({ icon, title, description }, i) => (
+              {paymentMethodData.map(({ icon, title, description }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
                   <PolicyCard
                     icon={icon}
@@ -366,17 +362,17 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
 
-        <div className={`row bg-white ${styles.section}`}>
+        <div className={`row bg-white align-items-center ${styles.section}`}>
           <div className="col-md-6 col-12 px-5">
             <div className={`d-flex flex-column ${styles.subtitle}`}>
               <Heading
-                title={`Developer First Integration  ${space}`}
+                title={`Powerful Dashboards to Drive Decisions ${space}`}
                 color="black"
                 size="h3"
                 weight="5"
               />
               <Heading
-                title={`Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms ${space}`}
+                title={`Get detailed statistics and reports on payments, settlements, refunds, and much more for informed decision-making. ${space}`}
                 color="main-grey"
                 size="h4"
                 weight="4"
@@ -385,7 +381,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "50px" }}
             >
-              {cardsData.map(({ icon, title, description }, i) => (
+              {dashboardData.map(({ icon, title, description }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
                   <PolicyCard
                     icon={icon}
@@ -405,7 +401,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
           <div
             className={`col-md-6 col-12 d-flex my-md-5 my-3
-             justify-content-start ${styles.third_container}`}
+             justify-content-end ${styles.third_container}`}
           >
             <div>
               <Image
@@ -419,11 +415,11 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
 
         <div
-          className={`row bg-color-soft-mint pb-[50px] pt-[50px] ${styles.section}`}
+          className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
         >
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3
-             justify-content-start ${styles.third_container}`}
+            className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-start
+              ${styles.third_container}`}
           >
             <div>
               <Image
@@ -438,13 +434,13 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className="col-md-6 col-12 px-5">
             <div className={`d-flex flex-column ${styles.subtitle}`}>
               <Heading
-                title={`Developer First Integration  ${space}`}
+                title={`Rank Grade Security ${space}`}
                 color="black"
                 size="h3"
                 weight="5"
               />
               <Heading
-                title={`Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms ${space}`}
+                title={`Enjoy enterprise-grade security to reassure your customers of secure and reliable payment transactions. ${space}`}
                 color="main-grey"
                 size="h4"
                 weight="4"
@@ -453,7 +449,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "50px" }}
             >
-              {cardsData.map(({ icon, title, description }, i) => (
+              {rankData.map(({ icon, title, description }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
                   <PolicyCard
                     icon={icon}
@@ -473,17 +469,17 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
 
-        <div className={`row bg-white ${styles.section}`}>
+        <div className={`row bg-white align-items-center ${styles.section}`}>
           <div className="col-md-6 col-12 px-5">
             <div className={`d-flex flex-column ${styles.subtitle}`}>
               <Heading
-                title={`Developer First Integration  ${space}`}
+                title={`100% Lifetime Support  ${space}`}
                 color="black"
                 size="h3"
                 weight="5"
               />
               <Heading
-                title={`Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms ${space}`}
+                title={`Dedicated Relationship Managers: Get personalized assistance from experts who understand your business and growth goals. ${space}`}
                 color="main-grey"
                 size="h4"
                 weight="4"
@@ -492,7 +488,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "50px" }}
             >
-              {cardsData.map(({ icon, title, description }, i) => (
+              {supportData.map(({ icon, title, description }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
                   <PolicyCard
                     icon={icon}
@@ -511,8 +507,8 @@ const PaymentGateway = (): React.JSX.Element => {
             </div>
           </div>
           <div
-            className={`col-md-6 col-12 d-flex my-md-5 my-3
-             justify-content-start ${styles.third_container}`}
+            className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-end
+              ${styles.third_container}`}
           >
             <div>
               <Image
@@ -530,7 +526,7 @@ const PaymentGateway = (): React.JSX.Element => {
         >
           <div
             className={`col-md-6 col-12 d-flex my-md-5 my-3
-             justify-content-start ${styles.third_container}`}
+              ${styles.third_container}`}
           >
             <div className={`${styles.custom_bottom_offset}`}>
               <Image
@@ -560,7 +556,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               style={{ display: "flex", flexDirection: "column", gap: "50px" }}
             >
-              {cardsData.map(({ icon, title, description }, i) => (
+              {savingData.map(({ icon, title, description }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
                   <PolicyCard
                     icon={icon}
@@ -624,7 +620,7 @@ const PaymentGateway = (): React.JSX.Element => {
           <Image src={acceleratedGrowthImg} alt="background image" />x
         </div>
       </div>
-  <div
+      <div
         className={`${styles.faq_new_row} row row-padding-bottom-none relative`}
       >
         <div className={`${styles.faqSection} text-start  pb-5`}>
@@ -633,27 +629,23 @@ const PaymentGateway = (): React.JSX.Element => {
               title={`Frequently Asked Questions  ${space}`}
               color="black"
               size="h1"
-              weight="6"
+              weight="5"
             />
-            <Heading
-              title={` (FAQ) ${space}`}
-              color="bluish-purple"
-              size="h1"
-              weight="6"
-            />
+            <Heading title={`(`} color="black" size="h1" weight="5" />
+            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div>
-            {" "}
             <Heading
               title="Have more questions? "
               color="main-grey"
-              size="h5"
-              weight="4"
+              size="h3"
+              weight="5"
               useH1TagInHtml={true}
             />
           </div>
           <div className="mt-2">
-            <SecondryButton
+            <RectangleButton
               title="Get started today"
               theme="border-gray"
               actionImage={blueArrow}
@@ -666,323 +658,107 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <div className={`row ${styles.new_row} `}>
-        <div className="d-flex justify-content-center flex-column gap-3  align-items-center">
-          <Heading
-            title="Discover the EnKash difference - Secure, Scalable and Seamless.Get Started"
-            size="h3"
-            color="white"
-          />
-          <div>
-            <RectangleButton
-              title="Get Started"
-              theme="outline-blue"
-              url="/sales/?source=expense_management"
-              actionImage={blueArrow}
-              iconSize={15}
-            />
-          </div>
-        </div>
-      </div>
 
-      <div className="bg-white row-padding ">
+      <div className={styles.other_products}>
         <div className={`${styles.title} text-center pb-5`}>
           <Heading
-            title={`EnKash’s ${space}`}
+            title={`Check out our ${space}`}
             color="black"
             size="h1"
-            weight="6"
+            weight="5"
           />
           <Heading
-            title={`innovative solutions ${space}`}
-            color="bluish-purple"
+            title={`other payment products ${space}`}
+            color="equity-blue"
             size="h1"
-            weight="6"
+            weight="5"
           />
 
-          <Heading
-            title="for expense management"
-            color="black"
-            size="h1"
-            weight="6"
-          />
+          <Heading title="at EnKash" color="black" size="h1" weight="5" />
         </div>
-        <div className="row g-3 pb-4 ps-md-5">
+        <div className="row g-3 pb-4 ">
           <div className="col-12 col-md-4">
             <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
+              whiteTitle="Payment Link"
+              description="Collect payments across WhatsApp, SMS, Facebook, Twitter, and other platforms with no-code payment links."
               ctaColor="blue"
               source="expense_management"
-              cardImage={creditCard}
-            />
-          </div>
-
-          <div className="col-12 col-md-4">
-            <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
-              ctaColor="blue"
-              source="expense_management"
-              cardImage={creditCard}
+              cardImage={paymentLink}
             />
           </div>
 
           <div className="col-12 col-md-4">
             <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
+              whiteTitle="Payment Page"
+              description="Create custom-branded Payment Pages in minutes to accept payments online—no tech effort needed."
               ctaColor="blue"
               source="expense_management"
-              cardImage={creditCard}
+              cardImage={paymentPage}
             />
           </div>
 
           <div className="col-12 col-md-4">
             <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
+              whiteTitle="QR Codes"
+              description="Secure, contactless payment with QR codes to enable businesses to accept instant transactions."
               ctaColor="blue"
               source="expense_management"
-              cardImage={creditCard}
+              cardImage={qrCodes}
             />
           </div>
 
           <div className="col-12 col-md-4">
             <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
+              whiteTitle="Invoices"
+              description="Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links."
               ctaColor="blue"
               source="expense_management"
-              cardImage={creditCard}
+              cardImage={invoices}
             />
           </div>
 
           <div className="col-12 col-md-4">
             <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
+              whiteTitle="Payment Button"
+              description="Integrate a pre-designed payment button to your website with a simple plug-and-play solution."
               ctaColor="blue"
               source="expense_management"
-              cardImage={creditCard}
+              cardImage={paymentButton}
             />
           </div>
 
           <div className="col-12 col-md-4">
             <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
+              whiteTitle="Auto Collect"
+              description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
               ctaColor="blue"
               source="expense_management"
-              cardImage={creditCard}
+              cardImage={autoCollect}
             />
           </div>
 
           <div className="col-12 col-md-4">
             <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
+              whiteTitle="Instant Settlement"
+              description="Access your funds instantly, skip standard settlement cycles, and gain better control over your cash flow."
               ctaColor="blue"
               source="expense_management"
-              cardImage={creditCard}
+              cardImage={instant}
             />
           </div>
 
           <div className="col-12 col-md-4">
             <ManagementCard
-              whiteTitle="Streamlined process"
-              description="Effortless expense submission and approval process supported via  WhatsApp"
+              whiteTitle="Reminder Engine"
+              description="Eliminate manual reminders and effortlessly automate your business collections for smoother cash flow."
               ctaColor="blue"
               source="expense_management"
-              cardImage={creditCard}
+              cardImage={reminder}
             />
-          </div>
-        </div>
-
-        <div className="mt-5 mx-5">
-          <PrimaryButton
-            title="Learn More About Receipt Management"
-            theme="blue"
-            url="/sales/?source=expense_management"
-          />
-          <span className="mx-2"></span>
-          <PrimaryButton
-            title="Explore Reimbursement Management"
-            theme="border-blue"
-            url="/sales/?source=expense_management"
-          />
-        </div>
-      </div>
-
-      <div className={styles.third_row}>
-        <div className={`row relative ${styles.section}`}>
-          <div className={`${styles.title} text-center pb-5`}>
-            <Heading
-              title={`Smart Policy  ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Enforcement & Approvals ${space}`}
-              color="bluish-purple"
-              size="h1"
-              weight="6"
-            />
-            <div>
-              {" "}
-              <Heading
-                title="Control spending before it happens. Automate what doesn't need your time."
-                color="main-grey"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
-          </div>
-          <div
-            className={`w-50 mt-5 ${
-              showScroll ? "overflow-auto scrollbar-thin" : ""
-            }`}
-            style={{
-              maxHeight: "400px",
-              direction: showScroll ? "rtl" : "ltr",
-            }}
-          >
-            {cardsData.map(({ icon, title, description }, i) => (
-              <div key={i} style={{ direction: "ltr", marginLeft: "20px" }}>
-                <PolicyCard
-                  icon={icon}
-                  title={title}
-                  description={description}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mt-5 mx-5">
-            <SecondryButton
-              title="Learn more Managing Hierarchy and Controls"
-              theme="border-gray"
-              actionImage={blueArrow}
-              iconSize={15}
-              url="/sales/?source=receivables"
-            />
-          </div>{" "}
-          <div className="text-end">
-            <Image src={approved} alt="icon" />
           </div>
         </div>
       </div>
 
-      <div className={styles.fourth_row}>
-        <div className={`row relative ${styles.section}`}>
-          <div className={`${styles.title} text-center pb-5`}>
-            <Heading
-              title={`Smart Policy  ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Enforcement & Approvals ${space}`}
-              color="bluish-purple"
-              size="h1"
-              weight="6"
-            />
-            <div>
-              {" "}
-              <Heading
-                title="Control spending before it happens. Automate what doesn't need your time."
-                color="main-grey"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
-          </div>
-          <CardAnimation />
-          <div className="mt-5 mx-5">
-            <SecondryButton
-              title="Learn more Managing Hierarchy and Controls"
-              theme="border-gray"
-              actionImage={blueArrow}
-              iconSize={15}
-              url="/sales/?source=receivables"
-            />
-          </div>{" "}
-        </div>
-      </div>
-
-      <div className={`${styles.sixth_row} row d-flex bg-white row-padding`}>
-        <div className="d-flex flex-column align-items-center justify-content-center">
-          <Heading
-            title={`One Platform, Every Use Case, Total Control`}
-            size="h1"
-            color="black"
-            weight="6"
-          />
-        </div>
-        <EnkashWay
-          progressData={[
-            {
-              itemArray: ["IT & SaaS"],
-              title: "Instant Activation",
-              description:
-                "Start transacting in minutes without long wait times.",
-              icon: policyIcon,
-            },
-            {
-              itemArray: ["E-commerce & Retail"],
-              title: "Smart Controls",
-              description: "Automate spending policies easily.",
-              icon: policyIcon,
-            },
-            {
-              itemArray: ["Manufacturing"],
-              title: "Instant Activation",
-              description:
-                "Start transacting in minutes without long wait times.",
-              icon: policyIcon,
-            },
-            {
-              itemArray: ["Logistics & Supply Chain"],
-              title: "Smart Controls",
-              description: "Automate spending policies easily.",
-              icon: policyIcon,
-            },
-            {
-              itemArray: ["Consulting & Services"],
-              title: "Instant Activation",
-              description:
-                "Start transacting in minutes without long wait times.",
-              icon: policyIcon,
-            },
-            {
-              itemArray: ["Pharma & Healthcare"],
-              title: "Smart Controls",
-              description: "Automate spending policies easily.",
-              icon: policyIcon,
-            },
-          ]}
-        />
-      </div>
-
-      <div className={`row ${styles.ninth_row} `}>
-        <div className="">
-          <h1>
-            Build a <span>leaner, smarter, & future-ready</span> finance team
-          </h1>
-          <div className="mt-5 mx-5">
-            <SecondryButton
-              title="Get started today"
-              theme="border-gray"
-              actionImage={blueArrow}
-              iconSize={15}
-              url="/sales/?source=receivables"
-            />
-          </div>{" "}
-        </div>
-      </div>
       <Footer utmSource="expense_management" />
     </div>
   )
