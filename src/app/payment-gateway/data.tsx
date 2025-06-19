@@ -1,11 +1,19 @@
-import iconOne from "./img/icon-one.svg";
-import iconTwo from "./img/icon-two.svg";
-import iconThree from "./img/icon-three.svg";
-import iconFour from "./img/icon-four.svg";
-import iconFive from "./img/icon-five.svg";
-import iconSix from "./img/icon-six.svg";
-import iconSeven from "./img/icon-seven.svg";
-import policyIcon from "./img/policyIcon.svg";
+import iconOne from "./img/icon-one.svg"
+import iconTwo from "./img/icon-two.svg"
+import iconThree from "./img/icon-three.svg"
+import iconFour from "./img/icon-four.svg"
+import iconFive from "./img/icon-five.svg"
+import iconSix from "./img/icon-six.svg"
+import iconSeven from "./img/icon-seven.svg"
+import policyIcon from "./img/policyIcon.svg"
+import sandbox from "./img/sandbox-logo.svg"
+import documentation from "./img/documentation-logo.svg"
+import plugin from "./img/plugin-logo.svg"
+import authorised from "./img/authorised.svg"
+import first from "./img/first.svg"
+import uptime from "./img/uptime.svg"
+import support from "./img/support-icon.svg"
+
 
 const dataSets = [
   {
@@ -44,7 +52,7 @@ const dataSets = [
     heading:
       "Real-time visibility:  Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
   },
-];
+]
 
 const blogData = [
   {
@@ -79,7 +87,7 @@ const blogData = [
       "The foundation for any business’s efficient operation consists of creating precise budget, keeping close check on the business expenses, and streamlining cash flow. We cannot overstate...",
     link: "/resources/blog/best-expense-management-software/",
   },
-];
+]
 
 const cardsData = [
   {
@@ -91,29 +99,39 @@ const cardsData = [
   {
     title: "Secure",
     description: "Top-notch security features keep your data safe and private.",
-    icon: policyIcon,
+    icon: plugin,
   },
   {
     title: "24/7 Support",
     description: "We provide around-the-clock assistance whenever you need it.",
-    icon: policyIcon,
+    icon: documentation,
   },
   {
     title: "Customizable",
     description: "Easily tailor the app to fit your unique workflow and needs.",
-    icon: policyIcon,
+    icon: sandbox,
+  },
+]
+
+const acceleratedGrowthData = [
+  {
+    title: "Fully-Compliant RBI Authorised Platform",
+    icon: authorised,
   },
   {
-    title: "Cloud Sync",
-    description: "Access your data anywhere with secure cloud synchronization.",
-    icon: policyIcon,
+    title: "Industry First Payment-led Financial Platform",
+    icon: first,
   },
   {
-    title: "Intuitive Design",
-    description: "A clean and simple interface that’s easy to navigate.",
-    icon: policyIcon,
+    title: "99.9% Uptime",
+    icon: uptime,
   },
-];
+  {
+    title: "24X7 Customer Support",
+    icon: support,
+  },
+]
+
 
 const projects = [
   {
@@ -164,6 +182,6 @@ const projects = [
     link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
     color: "#C2491D",
   },
-];
+]
 
-export { blogData, dataSets, cardsData, projects };
+export { blogData, dataSets, cardsData, projects, acceleratedGrowthData }

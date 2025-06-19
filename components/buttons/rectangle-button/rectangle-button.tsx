@@ -1,13 +1,16 @@
-"use client";
+"use client"
 
-import styles from "../button.module.scss";
+import styles from "../button.module.scss"
+import Image from "next/image"
 
 export interface ButtonProps {
-  isDisabled?: boolean;
-  title: string;
-  url?: any;
-  theme?: "blue" | "green" | "black";
-  width?: string;
+  isDisabled?: boolean
+  title: string
+  url?: any
+  theme?: "blue" | "green" | "black" | "outline-blue"
+  width?: string
+  actionImage?: any
+  iconSize?: any
 }
 
 const RectangleButton = ({
@@ -16,13 +19,16 @@ const RectangleButton = ({
   url,
   theme,
   width,
+  actionImage,
+  iconSize,
 }: ButtonProps) => {
   const handleClick = () => {
     if (url) {
-      window.open(url, "_blank");
+      window.open(url, "_blank")
     }
-  };
-
+  }
+  const iconClass = iconSize || "big-icon"
+  
   return (
     <>
       <button
@@ -33,9 +39,17 @@ const RectangleButton = ({
         style={{ width: width || "auto" }}
       >
         {title}
+        {actionImage && (
+          <Image
+            className={`ms-2  ${styles[iconClass]} `}
+            src={actionImage}
+            alt="action image"
+            width={iconSize}
+          />
+        )}
       </button>
     </>
-  );
-};
+  )
+}
 
-export default RectangleButton;
+export default RectangleButton

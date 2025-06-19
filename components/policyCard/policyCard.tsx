@@ -1,12 +1,12 @@
-import React from "react";
-import Image from "next/image";
-import Heading from "../heading/heading";
+import React from "react"
+import Image from "next/image"
+import Heading from "../heading/heading"
 
 interface CardProps {
-  icon: string;
-  title: string;
-  description: string;
-  className?: string;
+  icon: string
+  title: string
+  description?: string // 🔹 Made optional
+  className?: string
 }
 
 const PolicyCard: React.FC<CardProps> = ({
@@ -16,7 +16,7 @@ const PolicyCard: React.FC<CardProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`d-flex align-items-start gap-3 p-3  ${className}`}>
+    <div className={`d-flex align-items-start gap-3 py-3 ${className}`}>
       {/* Icon */}
       <div
         className="d-flex justify-content-center align-items-center bg-light rounded-circle"
@@ -28,10 +28,12 @@ const PolicyCard: React.FC<CardProps> = ({
       {/* Title and Description */}
       <div className="d-flex flex-column gap-3">
         <Heading title={title} color="black" size="h4" weight="5" />
-        <Heading title={description} color="black" size="h5" weight="4" />
+        {description && (
+          <Heading title={description} color="black" size="h5" weight="4" />
+        )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PolicyCard;
+export default PolicyCard

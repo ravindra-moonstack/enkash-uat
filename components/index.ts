@@ -4,7 +4,7 @@ import Heading from "./heading/heading"
 import PrimaryButton from "./buttons/primary-button/primary-button"
 import SecondryButton from "./buttons/secondary-button/secondary-button"
 import StructuredData from "./head/structuredData"
-import { FAQHtml } from "./faq"
+import { FAQHtml } from "./faq-new"
 
 export {
   Header,

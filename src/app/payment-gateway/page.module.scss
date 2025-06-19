@@ -15,8 +15,23 @@
   @include for-laptops {
     padding-left: 70px;
     padding-right: 70px;
-    padding-top: 190px;
+    padding-top: 160px;
     padding-bottom: 40px;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+
+    @include for-laptops {
+      max-height: 500px;
+    }
+  }
+
+  .border-bottom-equity {
+    border-bottom: 1px solid $color-equity-blue;
   }
   .subtitle {
     color: $color-equity-blue;
@@ -43,10 +58,37 @@
 }
 
 .second_row {
-  padding: 56px 36px;
-  background-color: $color-indi-volt;
+  background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
   @include for-laptops {
-    padding: 110px 90px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  .section {
+    margin: auto;
+    gap: 40px;
+
+    /* top: 0; */
+    justify-content: center;
+    .card {
+      width: 350px;
+      max-width: 350px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      padding-top: 20px;
+      gap: 20px;
+      box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
+      .innerCard {
+        box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -54,12 +96,13 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url(./img/ArtboardBg.svg);
+  // background-image: url(./img/ArtboardBg.svg);
   padding-left: 50px;
   padding-right: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
   @include for-laptops {
-    padding: 110px 90px;
+    padding: 48px 90px;
+    padding-bottom: 0px;
   }
   @include for-window-zoomed-screens {
     padding-left: 150px;
@@ -67,9 +110,11 @@
   }
 
   .section {
-    margin-bottom: 50px;
-    @include for-laptops {
-      margin-bottom: 50px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+
+    .subtitle {
+      margin-bottom: 80px;
     }
   }
 
@@ -116,6 +161,13 @@
         left: 200px;
       }
     }
+  }
+  .custom_bottom_offset {
+    bottom: -98px;
+    position: absolute;
+  }
+  .list_button {
+    padding-top: 33px;
   }
 }
 
@@ -250,13 +302,12 @@
   @include for-laptops {
     padding-bottom: 100px;
   }
-  .faqSection {
-    width: 70%;
-  }
+
   .faq_bg {
     img {
       position: absolute;
       bottom: 0;
+      right: 0;
       display: none;
       @include for-laptops {
         display: flex;
@@ -308,4 +359,46 @@
 .third_row .scrollbar-thin {
   scrollbar-width: auto;
   scrollbar-color: #3b82f6 transparent;
+}
+
+.bg-color-soft-mint {
+  background-color: $color-soft-mint;
+}
+
+.new_row {
+  background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
+
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include for-laptops {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+.faq_new_row {
+  background-color: white;
+  position: relative;
+  display: flex;
+  text-align: center;
+  padding-bottom: 50px;
+  @include for-laptops {
+    padding-bottom: 100px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      display: none;
+      @include for-laptops {
+        display: flex;
+      }
+    }
+  }
 }

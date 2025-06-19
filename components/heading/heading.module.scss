@@ -1,5 +1,6 @@
 @import "/styles/mixin";
 @import "/styles/variables";
+
 .h0 {
   display: inline;
   font-size: 35px;
@@ -48,7 +49,7 @@
   margin-bottom: 0;
   line-height: normal;
   @include for-laptops {
-    font-size: 24px;
+    font-size: 32px;
   }
   @include for-window-zoomed-screens {
     font-size: 21px;
@@ -61,7 +62,7 @@
   margin-bottom: 0;
   line-height: normal;
   @include for-laptops {
-    font-size: 20px;
+    font-size: 24px;
   }
   @include for-window-zoomed-screens {
     font-size: 18px;
@@ -76,7 +77,7 @@
   white-space: normal;
   line-height: normal;
   @include for-laptops {
-    font-size: 18px;
+    font-size: 20px;
   }
   @include for-window-zoomed-screens {
     font-size: 16px;
@@ -91,7 +92,7 @@
   margin-bottom: 0;
   line-height: normal;
   @include for-laptops {
-    font-size: 12px;
+    font-size: 18px;
   }
   @include for-window-zoomed-screens {
     font-size: 12px;
@@ -119,4 +120,8 @@
 
 .italic {
   font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
 }
