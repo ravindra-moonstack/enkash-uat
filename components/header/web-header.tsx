@@ -6,10 +6,7 @@ import { useEffect, useRef, useState } from "react"
 import styles from "./header.module.scss"
 import navBarTopTtitle from "./data/nav-bar"
 import { enkashBlueLogo, arrowDownBlack, arrowDownWhite } from "."
-import ProductModal from "./modal/payment-modal"
 import ResourcesModal from "./modal/resources-modal"
-import SolutionsModal from "./modal/solutions-modal"
-import ApiDocsModal from "./modal/api-docs-modal"
 import { usePathname } from "next/navigation"
 import PaymentModal from "./modal/payment-modal"
 import CardModal from "./modal/card-modal"
@@ -101,7 +98,7 @@ const WebHeader = ({ utmSource }: props) => {
                     itemRefs.current[index] = el
                   }}
                   key={item.name}
-                  className={`px-3 d-flex justify-content-center align-items-center cursor-pointer ${
+                  className={`px-3 d-flex justify-content-center align-items-center cursor-pointer gap-1 ${
                     hoveredIndex === index
                       ? styles.opacity_selected
                       : styles.opacity_normal
@@ -142,6 +139,8 @@ const WebHeader = ({ utmSource }: props) => {
                       <Image
                         src={getArrowImageSource(index)}
                         alt="arrow down icon"
+                        height={16}
+                        width={16}
                       />
                     </>
                   )}

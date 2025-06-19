@@ -623,7 +623,7 @@ const PaymentGateway = (): React.JSX.Element => {
       <div
         className={`${styles.faq_new_row} row row-padding-bottom-none relative`}
       >
-        <div className={`${styles.faqSection} text-start  pb-5`}>
+        <div className={`${styles.faqSection} text-start `}>
           <div className={`${styles.title} text-start  pb-5`}>
             <Heading
               title={`Frequently Asked Questions  ${space}`}
