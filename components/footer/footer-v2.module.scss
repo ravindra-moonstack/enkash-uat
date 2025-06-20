@@ -15,8 +15,9 @@
     font-size: 11px;
     line-height: 16px;
     text-decoration: none;
+    font-weight: 400;
     @include for-laptops {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 32px;
     }
     color: #5b5b5b;
@@ -47,24 +48,36 @@
   @include for-laptops {
     padding: 32px 96px;
   }
-}
 
-.footer_links_col {
-  margin-top: 24px;
-  text-align: left;
-  @include for-laptops {
-    margin-top: 32px;
+  .footer_section {
+    background-color: #ffff;
+    border-radius: 16px;
+    padding: 10px;
+
+    .footer_copy_right {
+      font-size: 14px;
+      font-weight: 400;
+      color: black;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+    }
   }
 }
 
+.footer_links_col {
+  text-align: left;
+}
+
 .title {
-  color: #97a3b7;
+  color: black;
   font-size: 13px;
   line-height: 16px;
   white-space: nowrap;
+  font-weight: 700;
   text-transform: uppercase;
   @include for-laptops {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 32px;
   }
 }
@@ -142,6 +155,7 @@
   align-items: center;
   justify-content: space-around;
   flex-direction: column;
+  border-bottom: 10px solid $color-equity-blue;
   @include for-laptops {
     flex-direction: row;
   }
@@ -183,11 +197,12 @@
     padding: 0;
     font-size: 14 !important;
   }
-  .vr {
-    border-right: 2px solid $color-equity-blue;
-    height: 18px;
-    margin: 0 10px;
-  }
+}
+
+.vr {
+  border-right: 2px solid $color-equity-blue;
+  height: 18px;
+  margin: 0 10px;
 }
 
 .grievance_text {
@@ -266,37 +281,24 @@
   padding: 40px 30px;
   border-radius: 10px;
   @include for-laptops {
-    padding: 10px;
+    padding: 24px;
   }
 }
 
 .info_container {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
   .title {
     font-size: 16px;
     color: $color-electric-green;
     text-transform: uppercase;
-  }
-  @include for-laptops {
   }
 
   .info_header_two {
     width: 100%;
 
     @include for-laptops {
-    }
-
-    .info_header_three {
-      // padding: 10px 0px 1px;
-      // margin-bottom: -10px;
-      // border-radius: 10px 10px 0 0;
-      // background-color: #223392;
-      // text-align: center;
-      // @include for-laptops {
-      //   padding: 7px 0px 1px;
-      //   margin-bottom: 20px;
-      //   border-radius: 0px 10px 10px 0px;
-      //   text-align: left;
-      // }
     }
 
     .info_body_one {
@@ -389,6 +391,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  max-width: 244px;
 
   .logo_container_info {
     font-size: 12px;

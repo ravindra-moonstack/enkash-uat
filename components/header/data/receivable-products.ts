@@ -48,7 +48,7 @@ const ReceivableProducts = [
         imageSrc: paymentGateway,
         imageSrcHovered: paymentGatewayFilled,
         link: "/payment-gateway",
-        new: false,
+        new: true,
       },
       {
         name: "Bulk Collect",

@@ -2,7 +2,7 @@
 @import "../../../styles/variables";
 
 .container {
-  padding: 30px;
+  padding: 10px;
   position: relative;
   margin: 10px;
   display: flex;
@@ -153,8 +153,8 @@
 
 .arrow {
   position: relative;
-  top: 24px;
-  left: 20px; // default, will be overridden inline
+  top: 10px;
+  left: 20px;
   width: 0;
   height: 0;
   border-left: 8px solid transparent;

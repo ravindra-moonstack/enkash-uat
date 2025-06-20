@@ -187,7 +187,7 @@ const WebHeader = ({ utmSource }: props) => {
           </div>
         </nav>
         {/* {true && (
-          <ResourcesModal
+          <PaymentModal
             onLinkClick={handleLinkClick}
             modalLeft={modalLeft ?? 200}
           />
