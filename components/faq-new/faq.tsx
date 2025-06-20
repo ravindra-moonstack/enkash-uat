@@ -1,0 +1,93 @@
+import styles from "./faq.module.scss"
+import Image from "next/image"
+import arrowDown from "./img/arrow-down.svg"
+
+export interface FAQProps {
+  question: string
+  index: number
+  answerHTML?: any
+  answer?: {
+    heading?: string
+    bullets?: string[]
+  }[]
+  answerVisible?: boolean
+  onToggleAnswerVisibility?: () => void
+}
+
+const FAQ = ({
+  question,
+  index,
+  answer,
+  answerVisible,
+  answerHTML,
+  onToggleAnswerVisibility,
+}: FAQProps) => {
+  const toggleAnswerVisibility = () => {
+    if (onToggleAnswerVisibility) {
+      onToggleAnswerVisibility()
+    }
+  }
+
+  return (
+    <div className={styles.faq_row}>
+      <div
+        className={`${styles.faq_inner_row} ms-auto`}
+        style={
+          answerVisible
+            ? {
+                background: "#F6F6F6",
+                padding: "20px",
+                borderRadius: "12px",
+                transition: "all 0.3s ease",
+              }
+            : {}
+        }
+      >
+        <div
+          className={`d-flex  gap-4 my-4  justify-content-between  align-items-center`}
+        >
+          <h2 className={styles.question}>
+            {String(index + 1).padStart(2, "0")}. {question}
+          </h2>
+          <Image
+            onClick={toggleAnswerVisibility}
+            src={arrowDown}
+            alt="faq arrow icon"
+            className={`${answerVisible ? styles.rotated : styles.normal} ${
+              styles.arrow
+            }`}
+          />
+        </div>
+
+        <div
+          className={`${styles.answer} ${
+            answerVisible ? styles.visible : styles.reverse_visible
+          }`}
+        >
+          {!answerHTML &&
+            answer !== undefined &&
+            answer.length > 0 &&
+            answer.map((item, index) => (
+              <div key={index} className="mb-4">
+                {item.heading && (
+                  <h4 className={styles.heading}>{item.heading}</h4>
+                )}
+                {item.bullets && item.bullets.length > 0 && (
+                  <ul>
+                    {item.bullets.map((bullet, bulletIndex) => (
+                      <li key={bulletIndex}>
+                        <h4 className={styles.heading}>{bullet}</h4>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </div>
+            ))}
+          {answerHTML && <>{answerHTML}</>}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default FAQ

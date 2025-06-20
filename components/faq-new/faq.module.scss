@@ -1,0 +1,141 @@
+@import "../../styles/mixin";
+@import "../../styles/variables";
+
+.faq_row {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  color: $color-black;
+  text-align: left;
+  // padding: 10px 0px;
+  // @include for-laptops {
+  //   padding: 20px 60px;
+  // }
+
+  th {
+    font-weight: 700;
+    font-size: 14px;
+    @include for-laptops {
+      font-size: 20px;
+    }
+  }
+
+  h4,
+  td {
+    font-size: 14px;
+    a {
+      text-decoration: none;
+    }
+    @include for-laptops {
+      font-size: 20px;
+      font-weight: 400;
+    }
+  }
+
+  img {
+    width: 21px;
+    height: 21px;
+    @include for-laptops {
+      width: 28px;
+      height: 28px;
+    }
+  }
+
+  .faq_inner_row {
+    padding-bottom: 5px;
+    align-self: flex-end; // pushes to the right in a flex column layout
+    border-bottom: 2px solid hsla(0, 0%, 60%, 0.7);
+    @include for-laptops {
+      width: 70%; // optional: control size
+    }
+  }
+
+  .question {
+    font-size: 16px;
+    font-weight: 500;
+    // margin-bottom: 20px;
+    padding-right: 20px;
+
+    @include for-laptops {
+      font-size: 24px;
+      padding-right: 20%;
+    }
+
+    img {
+      padding-left: 10px;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale3d(0, 0, 0);
+      height: 0;
+      transform-origin: top left; /* Added line */
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+      height: auto;
+      transform-origin: top left;
+    }
+  }
+
+  @keyframes zoomOutReverse {
+    from {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
+      height: auto;
+      transform-origin: top left;
+    }
+    to {
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale3d(0, 0, 0);
+      height: 0;
+      transform-origin: top left;
+    }
+  }
+
+  .answer {
+    font-weight: 300;
+    transform: scale(0);
+    opacity: 0;
+    overflow: hidden;
+    height: 0;
+    @include for-laptops {
+      padding-right: 20%;
+    }
+
+    &.visible {
+      opacity: 1;
+      height: auto;
+      animation: zoomIn 0.5s ease-in-out forwards;
+    }
+
+    &.reverse_visible {
+      opacity: 0;
+      height: 0;
+      animation: zoomOutReverse 0.5s ease-in-out forwards;
+    }
+
+    .heading {
+      font-size: 14px;
+      @include for-laptops {
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .normal {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .rotated {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+}

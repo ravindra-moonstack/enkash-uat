@@ -1,0 +1,186 @@
+@import "../../styles/variables";
+@import "../../styles/mixin";
+
+.content {
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  @include for-laptops {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+.progress_segment {
+  flex: 1;
+  height: 100%;
+}
+
+.progress_items {
+  margin-right: 30px;
+  @include for-laptops {
+    margin-right: 0;
+    padding: 8px;
+  }
+}
+.progress_container {
+  overflow-x: auto;
+  @include for-laptops {
+    justify-content: space-between;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+
+  scrollbar-width: none;
+}
+
+.arrow {
+  z-index: 1;
+  height: 30px;
+  width: 30px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-left: -15px;
+  margin-right: -15px;
+  transform: rotate(90deg) !important;
+  @include for-laptops {
+    height: 50px;
+    width: 50px;
+    transform: none !important;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.progress_bar {
+  height: 2px;
+  border-radius: 10px;
+  overflow-x: auto;
+  background-color: $color-main-grey;
+}
+
+.new_way_container {
+  opacity: 0;
+  transition: transform 0.5s;
+  position: relative;
+
+  .new_way_text {
+    animation: fade-in 0.8s ease-in-out forwards;
+    z-index: 1;
+    position: absolute;
+    left: 30px;
+    top: 35%;
+    right: 24px;
+    color: $color-white;
+    font-size: 12px;
+    font-weight: 500;
+    @include for-window-zoomed-screens {
+      top: 27%;
+    }
+    @include for-laptops {
+      font-size: 16.5px;
+      padding-right: 30px;
+    }
+  }
+}
+
+.old_way_container {
+  position: relative;
+  transition: transform 0.5s;
+  opacity: 0;
+
+  .old_way_text {
+    animation: fade-in 0.8s ease-in-out forwards;
+    z-index: 1;
+    position: absolute;
+    left: 30px;
+    top: 35%;
+    right: 26px;
+    color: $color-black;
+    font-size: 12px;
+    font-weight: 500;
+    @include for-window-zoomed-screens {
+      top: 27%;
+    }
+    @include for-laptops {
+      font-size: 16.5px;
+    }
+  }
+}
+
+.gradient {
+  width: 300px;
+  height: 400px;
+  position: absolute;
+  z-index: 0;
+  top: -200px;
+  left: -50px;
+  @include for-laptops {
+    width: auto;
+    height: 800px;
+    top: -400px;
+    left: -200px;
+  }
+}
+
+@keyframes left-to-right {
+  from {
+    opacity: 0;
+    transform: translateX(-90px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes right-to-left {
+  from {
+    opacity: 0;
+    transform: translateX(90px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes left-to-right-arrow {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.left_to_right {
+  animation: left-to-right 0.5s ease-in-out forwards;
+}
+
+.left_to_right_arrow {
+  opacity: 0;
+  animation: left-to-right-arrow 0.5s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.right_to_left {
+  animation: right-to-left 0.5s ease forwards;
+  animation-delay: 0.5s;
+}

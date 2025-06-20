@@ -1,0 +1,352 @@
+@import "./variables";
+@import "./mixin";
+
+/* Background Classes */
+.bg-deep-indigo {
+  background-color: $color-deep-indigo;
+}
+
+.bg-black {
+  background-color: $color-black;
+}
+
+.bg-white {
+  background-color: $color-white;
+}
+
+.bg-dark-midnight-blue {
+  background-color: $color-dark-midnight-blue;
+}
+
+.bg-indi-volt {
+  background-color: $color-indi-volt;
+}
+
+.bg-equity-blue {
+  background-color: $color-equity-blue;
+}
+
+.bg-shadow-blue {
+  background-color: $color-shadow-blue;
+}
+
+.bg-rainy-blue {
+  background-color: $color-rainy-blue;
+}
+
+.bg-night-blue {
+  background-color: $color-night-blue;
+}
+
+.bg-electric-green {
+  background-color: $color-electric-green;
+}
+
+.bg-main-black {
+  background-color: $color-main-black;
+}
+
+.bg-secondry-black {
+  background-color: $color-secondry-black;
+}
+
+.bg-main-grey {
+  background-color: $color-main-grey;
+}
+
+.bg-secondry-grey {
+  background-color: $color-secondry-grey;
+}
+
+.bg-color-light-shade-grey {
+  background-color: $color-light-shade-grey;
+}
+
+.bg-alternate-grey {
+  background-color: $color-alternate-grey;
+}
+
+.bg-error-red {
+  background-color: $color-error-red;
+}
+
+.bg-primary-gradient {
+  background: $primary-gradient;
+}
+
+.bg-secondry-gradient {
+  background: $secondry-gradient;
+}
+
+.bg-light-gradient {
+  background: $light-gradient;
+}
+
+/* Text Color Classes */
+.color-deep-indigo {
+  color: $color-deep-indigo;
+}
+
+.color-black {
+  color: $color-black;
+}
+
+.color-white {
+  color: $color-white;
+}
+
+.color-dark-midnight-blue {
+  color: $color-dark-midnight-blue;
+}
+
+.color-indi-volt {
+  color: $color-indi-volt;
+}
+
+.color-equity-blue {
+  color: $color-equity-blue;
+}
+
+.color-rainy-blue {
+  color: $color-rainy-blue;
+}
+
+.color-baby-blue {
+  color: $color-baby-blue;
+}
+.color-cyan-blue {
+  color: $color-cyan-blue;
+}
+
+.color-shadow-blue {
+  color: $color-shadow-blue;
+}
+
+.color-electric-green {
+  color: $color-electric-green;
+}
+
+.color-main-black {
+  color: $color-main-black;
+}
+
+.color-secondry-black {
+  color: $color-secondry-black;
+}
+
+.color-main-grey {
+  color: $color-main-grey;
+}
+
+.color-light-shade-grey {
+  color: $color-light-shade-grey;
+}
+
+.color-secondry-grey {
+  color: $color-secondry-grey;
+}
+
+.color-alternate-grey {
+  color: $color-alternate-grey;
+}
+
+.color-slate-grey {
+  color: $color-slate-grey;
+}
+
+.color-pale-grey {
+  color: $color-pale-grey;
+}
+
+.color-error-red {
+  color: $color-error-red;
+}
+
+.color-bluish-purple {
+  color: $color-bluish-purple;
+}
+
+.color-soft-mint {
+  color: $color-soft-mint;
+}
+
+.bg-color-soft-mint {
+  background-color: $color-soft-mint;
+}
+
+.color-pale-aqua {
+  color: $color-pale-aqua;
+}
+.color-dark-grey {
+  color: $color-dark-grey;
+}
+/* Padding Classes */
+
+.row-padding {
+  padding: 36px 25px;
+  @include for-laptops {
+    padding: 110px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding: 80px 60px;
+  }
+}
+
+.row-padding-bottom-none {
+  padding: 36px 25px 0px 25px;
+  @include for-laptops {
+    padding: 110px 90px 0px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding: 80px 60px 0px 60px;
+  }
+}
+
+.row-padding-top-none {
+  padding: 0px 25px 36px 25px;
+  @include for-laptops {
+    padding: 0px 90px 80px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding: 0px 60px 50px 60px;
+  }
+}
+
+.row-padding-x-only {
+  padding: 0px 25px;
+  @include for-laptops {
+    padding: 0px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding: 0px 60px;
+  }
+}
+
+/* Header Configuration */
+
+.mobile-header {
+  display: block;
+  @include for-laptops {
+    display: none;
+  }
+}
+
+.desktop-header {
+  display: none;
+  @include for-laptops {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    padding-bottom: 100px;
+  }
+}
+
+/* Top Level Classes */
+
+.main {
+  // overflow-x: hidden;
+  overflow-x: clip;
+}
+
+html body {
+  font-family: "Bricolage Grotesque", sans-serif;
+}
+
+/* Common Vertical scroll*/
+
+.scroll_container {
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  overflow-y: hidden;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+    background: #092093;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #61d6ff 30%, transparent 30%);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #61d6ff, transparent);
+  }
+}
+
+/* Other Classes */
+
+.mobile-only {
+  @include for-laptops {
+    display: none !important;
+  }
+}
+
+.desktop-only {
+  display: none !important;
+  @include for-laptops {
+    display: revert !important;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.sup-symbol {
+  display: inline;
+  font-size: 11px;
+  margin-bottom: 0;
+  line-height: normal;
+  margin-left: 2px;
+  @include for-window-zoomed-screens {
+    display: inline;
+    font-size: 14px;
+  }
+  @include for-laptops {
+    display: inline;
+    font-size: 17px;
+  }
+}
+
+.sup-symbol-large {
+  display: inline;
+  font-size: 16px;
+  margin-bottom: 0;
+  line-height: normal;
+  margin-left: 2px;
+  @include for-laptops {
+    font-size: 35px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 30px;
+  }
+}
+
+.scrollbar-thin::-webkit-scrollbar {
+  width: 12px; /* wider scrollbar */
+}
+
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: white; /* transparent track */
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #3b82f6; /* blue */
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+
+/* Firefox */
+.scrollbar-thin {
+  scrollbar-width: auto; /* use default scrollbar width */
+}
+
+.gap-32 {
+  gap: 32px;
+}
