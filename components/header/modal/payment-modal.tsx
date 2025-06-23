@@ -12,9 +12,7 @@ const PaymentModal = ({
 }) => {
   const [hoveredProductIndex] = useState<number>(0) // default open index
 
-  const [prevHoveredProductIndex, setPrevHoveredProductIndex] = useState<
-    null | number
-  >(null)
+ const [prevHoveredProductIndex] = useState<null | number>(null);
 
   const getSubProductsByMother = (motherName: string) => {
     const mother = motherProducts.find((item) => item.name === motherName)

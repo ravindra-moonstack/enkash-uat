@@ -5,7 +5,7 @@ import styles from "../button.module.scss";
 export interface ButtonProps {
   isDisabled?: boolean;
   title: string;
-  url?: any;
+  url?: string;
   theme?: "blue" | "green" | "black" | "border-blue";
   width?: string;
 }

@@ -1,6 +1,5 @@
 import styles from "./footer-v2.module.scss"
 import Image from "next/image"
-import PrimaryButton from "../buttons/primary-button/primary-button"
 import {
   twitterLogo,
   linkedinLogo,
@@ -10,35 +9,16 @@ import {
   locationPin,
   pci,
   soc,
-  rbi,
   email,
-  onlineDispute,
   enkashBlueLogo,
   ppi,
   youtubeLogo,
 } from "."
-import Heading from "../heading/heading"
 import Link from "next/link"
 
-const FooterV2 = ({ utmSource = "" }: any) => {
+const FooterV2 = () => {
   return (
     <div className={`${styles.footer}`}>
-      {/* <div className={styles.security_section}>
-        <div className="color-white mb-5 d-flex justify-content-center">
-          <Heading
-            title="Your data security is our priority"
-            size="h1"
-            color="equity-blue"
-          />
-        </div>
-        <div className="d-flex flex-column flex-md-row justify-content-center align-items-center">
-          <Image className="me-5" src={securityOne} alt="security1" />
-          <Image className="me-5" src={securityTwo} alt="security1" />
-
-          <Image src={securityThree} alt="security3" />
-        </div>
-      </div> */}
-
       <div className={`row ${styles.footer_padding}`}>
         <div className={`d-flex ${styles.footer_section}`}>
           {/* 1st col */}
@@ -57,20 +37,20 @@ const FooterV2 = ({ utmSource = "" }: any) => {
                 {" "}
                 <div>
                   <p className={styles.logo_container_info}>
-                    EnKash is India’s premier B2B payment solution, enabling
-                    businesses to seamlessly accept, process, and manage
-                    payments with its cutting-edge product suite. Experience
-                    hassle-free transactions across all payment modes, including
-                    credit cards, debit cards, net banking, UPI, and leading
-                    wallets like JioMoney, MobiKwik, Airtel Money, FreeCharge,
-                    Ola Money, and PayZapp
+                    EnKash is India&rsquo;s premier B2B payment solution,
+                    enabling businesses to seamlessly accept, process, and
+                    manage payments with its cutting-edge product suite.
+                    Experience hassle-free transactions across all payment
+                    modes, including credit cards, debit cards, net banking,
+                    UPI, and leading wallets like JioMoney, MobiKwik, Airtel
+                    Money, FreeCharge, Ola Money, and PayZapp.
                   </p>
                   <p className={styles.logo_container_info}>
                     With EnKash Business Banking, elevate your financial
                     operations to the next level. Access feature-rich current
                     accounts, streamline payouts, and automate payroll
-                    compliance, driving efficiency, excellence, and
-                    effectiveness across all financial processes
+                    compliance&mdash;driving efficiency, excellence, and
+                    effectiveness across all financial processes.
                   </p>
                 </div>
               </div>
@@ -715,22 +695,17 @@ const FooterV2 = ({ utmSource = "" }: any) => {
             </p>
           </div>
         </div>
-
         <div className="d-flex flex-wrap flex-md-nowrap">
-          <div className={`col-12 col-md-8 text-left  ${styles.disclaimer}`}>
-            Corporate cards, payments, or other related services are provided by
-            RBI-licensed banks and/ or in accordance with RBI regulations and/
-            or RBI compliance maintained by banks & regulated entities. EnKash
-            is not a bank and doesn’t hold or claim to hold a banking license.{" "}
+          <div className={`col-12 col-md-8 text-left ${styles.disclaimer}`}>
+            Corporate cards, payments, and other related services are provided
+            by RBI-licensed banks and/or in accordance with RBI regulations
+            and/or compliance maintained by banks and regulated entities. EnKash
+            is not a bank and does not hold or claim to hold a banking license.{" "}
             <span className="color-alternate-grey">
-              *Powered by Banks/REs. # Launching soon as per RBI's PA (Online)
-              authorization
+              *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s PA
+              (Online) authorization.
             </span>
           </div>
-          {/* <div className={`col-12 col-md-4  ${styles.copyright}`}>
-            *Powered by Banks/REs. # Launching soon as per RBI's PA (Online)
-            authorization
-          </div> */}
         </div>
       </div>
 
@@ -756,18 +731,6 @@ const FooterV2 = ({ utmSource = "" }: any) => {
       </div>
 
       <div className={styles.locations_row}>
-        {/* <div>
-          {" "}
-          <h4>
-            Enkash** PG, is a licensed online payment aggregator authorised by
-            the RBI
-          </h4>
-          <p className={styles.footer_location_p}>
-            **Enkash is a commercial trade name owned by the legal entity, Nehat
-            Tech Solutions Pvt. Ltd.
-          </p>
-        </div> */}
-
         <div className="d-none d-md-flex mx-0 me-md-5 justify-content-end">
           {" "}
           <Image

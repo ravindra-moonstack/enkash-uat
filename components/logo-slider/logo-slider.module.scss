@@ -1,13 +1,13 @@
-@import "/styles/mixin";
-@import "/styles/variables";
+@use "/styles/mixin" as *;
+@use "/styles/variables" as *;
 
 .marquee_box {
   display: none;
+  cursor: pointer;
   @include for-laptops {
     display: block;
   }
-  // filter: grayscale(1);
-  cursor: pointer;
+
   &:hover {
     filter: none;
   }

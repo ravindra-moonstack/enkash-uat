@@ -1,5 +1,5 @@
-@import "./variables";
-@import "./mixin";
+@use "./variables" as *;
+@use "./mixin" as *;
 
 /* Background Classes */
 .bg-deep-indigo {

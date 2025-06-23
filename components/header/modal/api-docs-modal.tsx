@@ -1,28 +1,23 @@
-import Image from "next/image";
-import { useRef, useState } from "react";
-import styles from "./modal.module.scss";
-import apiDocs from "../data/api-docs";
-import { solutionModalEmptyStateImg } from "..";
-import resourcesData from "../blog-data.json";
-import Link from "next/link";
+import Image from "next/image"
+import { useState, useMemo, createRef } from "react"
+import styles from "./modal.module.scss"
+import apiDocs from "../data/api-docs"
+import { solutionModalEmptyStateImg } from ".."
+import Link from "next/link"
 
-type Resource = {
-  image: string;
-  imageAlt: string;
-  title: string;
-  date: string;
-  description: string;
-  link: string;
-};
+type ApiDocItem = {
+  name: string
+  description: string
+  link: string
+}
 
 const ApiDocsModal = () => {
   const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
     number | null
-  >(null);
-  const refs = apiDocs.map(() => useRef<HTMLDivElement | null>(null));
+  >(null)
 
-  // Use the blog data from resourcesData
-  const blogData: Resource = resourcesData;
+  // SAFE way to create refs with useMemo + createRef (not useRef inside map)
+  const refs = useMemo(() => apiDocs.map(() => createRef<HTMLDivElement>()), [])
 
   return (
     <div className={`row mt-4 ${styles.container}`}>
@@ -30,20 +25,23 @@ const ApiDocsModal = () => {
         className={`${styles.solutions_grid_row}  px-5 pb-5 mb-2 position-relative`}
       >
         {hoveredResourceIndex !== null &&
-          refs[hoveredResourceIndex].current && (
+          refs[hoveredResourceIndex]?.current && (
             <div
               className={styles.background_slide}
               style={{
-                transform: `
-              translateY(${refs[hoveredResourceIndex].current!.offsetTop}px) 
-              translateX(${refs[hoveredResourceIndex].current!.offsetLeft}px)
-            `,
+                transform: `translateY(${
+                  refs[hoveredResourceIndex].current!.offsetTop
+                }px)
+                            translateX(${
+                              refs[hoveredResourceIndex].current!.offsetLeft
+                            }px)`,
                 height: `${refs[hoveredResourceIndex].current!.offsetHeight}px`,
                 width: `${refs[hoveredResourceIndex].current!.offsetWidth}px`,
               }}
             ></div>
           )}
-        {apiDocs.map((product: any, index: any) => (
+
+        {apiDocs.map((product: ApiDocItem, index: number) => (
           <div
             key={product.name}
             className={`${styles.product_row} ${
@@ -69,7 +67,7 @@ const ApiDocsModal = () => {
         className={styles.solution_stack}
       />
     </div>
-  );
-};
+  )
+}
 
-export default ApiDocsModal;
+export default ApiDocsModal

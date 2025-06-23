@@ -1,5 +1,5 @@
-@import "/styles/variables";
-@import "/styles/mixin";
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
 
 /* Primary Button */
 
@@ -58,11 +58,12 @@
   font-size: 12px;
   font-weight: 500;
   padding: 4px 20px 4px 20px;
+  transition: box-shadow 0.3s ease;
+  transition: width 0.3s ease;
+
   @include for-laptops {
     font-size: 17px;
   }
-  transition: box-shadow 0.3s ease;
-  transition: width 0.3s ease;
 
   &:hover {
     box-shadow: 0 0 7px 7px rgba(28, 90, 244, 0.5);
@@ -184,7 +185,7 @@
       box-shadow: 0 0 7px 7px rgba(28, 90, 244, 0.5);
     }
   }
-    &.border-gray {
+  &.border-gray {
     background-color: transparent;
     color: $color-equity-blue;
     transition: box-shadow 0.3s ease;

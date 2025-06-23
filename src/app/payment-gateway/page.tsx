@@ -4,7 +4,6 @@ import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import {
   acceleratedGrowthData,
-  cardsData,
   dashboardData,
   integrationData,
   paymentMethodData,
@@ -13,7 +12,7 @@ import {
   supportData,
 } from "./data"
 import faqData from "./faq-data"
-import { Header, Footer, Heading, StructuredData, FAQHtml } from "@/components"
+import { Header, Footer, Heading, FAQHtml } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -44,10 +43,6 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <StructuredData
-        url={`https://www.enkash.com/expense-management/`}
-        faqData={faqData}
-      />
       <Header utmSource="expense_management" />
 
       <div className={`${styles.first_row} `}>
@@ -121,7 +116,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
 
           <div className="col-12 col-md-6 d-flex justify-content-center">
-            <div className="position-relative w-100 h-100">
+            <div className="position-relative w-100 h-100 d-flex justify-content-end">
               <Image
                 src={paymentSummary}
                 alt="card visual"
@@ -681,8 +676,6 @@ const PaymentGateway = (): React.JSX.Element => {
             <ManagementCard
               whiteTitle="Payment Link"
               description="Collect payments across WhatsApp, SMS, Facebook, Twitter, and other platforms with no-code payment links."
-              ctaColor="blue"
-              source="expense_management"
               cardImage={paymentLink}
             />
           </div>
@@ -691,8 +684,6 @@ const PaymentGateway = (): React.JSX.Element => {
             <ManagementCard
               whiteTitle="Payment Page"
               description="Create custom-branded Payment Pages in minutes to accept payments online—no tech effort needed."
-              ctaColor="blue"
-              source="expense_management"
               cardImage={paymentPage}
             />
           </div>
@@ -701,8 +692,6 @@ const PaymentGateway = (): React.JSX.Element => {
             <ManagementCard
               whiteTitle="QR Codes"
               description="Secure, contactless payment with QR codes to enable businesses to accept instant transactions."
-              ctaColor="blue"
-              source="expense_management"
               cardImage={qrCodes}
             />
           </div>
@@ -711,8 +700,6 @@ const PaymentGateway = (): React.JSX.Element => {
             <ManagementCard
               whiteTitle="Invoices"
               description="Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links."
-              ctaColor="blue"
-              source="expense_management"
               cardImage={invoices}
             />
           </div>
@@ -721,8 +708,6 @@ const PaymentGateway = (): React.JSX.Element => {
             <ManagementCard
               whiteTitle="Payment Button"
               description="Integrate a pre-designed payment button to your website with a simple plug-and-play solution."
-              ctaColor="blue"
-              source="expense_management"
               cardImage={paymentButton}
             />
           </div>
@@ -731,8 +716,6 @@ const PaymentGateway = (): React.JSX.Element => {
             <ManagementCard
               whiteTitle="Auto Collect"
               description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-              ctaColor="blue"
-              source="expense_management"
               cardImage={autoCollect}
             />
           </div>
@@ -741,8 +724,6 @@ const PaymentGateway = (): React.JSX.Element => {
             <ManagementCard
               whiteTitle="Instant Settlement"
               description="Access your funds instantly, skip standard settlement cycles, and gain better control over your cash flow."
-              ctaColor="blue"
-              source="expense_management"
               cardImage={instant}
             />
           </div>
@@ -751,15 +732,13 @@ const PaymentGateway = (): React.JSX.Element => {
             <ManagementCard
               whiteTitle="Reminder Engine"
               description="Eliminate manual reminders and effortlessly automate your business collections for smoother cash flow."
-              ctaColor="blue"
-              source="expense_management"
               cardImage={reminder}
             />
           </div>
         </div>
       </div>
 
-      <Footer utmSource="expense_management" />
+      <Footer />
     </div>
   )
 }

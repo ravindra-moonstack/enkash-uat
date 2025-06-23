@@ -1,7 +1,6 @@
 "use client"
 
-import Heading from "@/components/heading/heading"
-import React, { SetStateAction, useState } from "react"
+import React, { useState } from "react"
 import Image from "next/image"
 import styles from "./logo-slider.module.scss"
 import Marquee from "react-fast-marquee"
@@ -27,10 +26,9 @@ import {
   axisLogo,
   yesLogo,
 } from "../../src/app/index"
-import { space } from "@/common/constant"
 
 const LogoSlider = ({ type }: { type: "partners" | "customers" }) => {
-  const [selectedTab, setSelectedTab] = useState(type)
+  const [selectedTab] = useState(type)
   return (
     <>
       <div className="col-12">

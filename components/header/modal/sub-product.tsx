@@ -1,6 +1,5 @@
 import Image from "next/image"
 import styles from "./sub-product.module.scss"
-import { footerArrow } from ".."
 import { useRef, useState } from "react"
 import Link from "next/link"
 
@@ -44,19 +43,23 @@ const SubProduct = (props: any) => {
   })()
 
   const handleItemClick = () => {
-    props.onLinkClick && props.onLinkClick()
+    if (typeof props.onLinkClick === "function") {
+      props.onLinkClick()
+    }
   }
+
   const motherProductName = props.motherProductName
 
   return (
     <div className={`d-flex flex-column ${styles.container}`}>
-      {hasActiveGroup ? (
+      {hasActiveGroup && (
         <>
           <div className={`mb-3 ${styles.motherProduct}`}>
             <Link href={props.parentLink || "#"}>
               <h4 className="fw-bold mb-1">{motherProductName}</h4>
             </Link>
           </div>
+
           <div className="d-flex flex-column">
             {props.subProducts.length > 1 && (
               <div className="d-flex flex-row color-secondry-grey">
@@ -100,33 +103,34 @@ const SubProduct = (props: any) => {
                 ref={scrollingDivRef}
               >
                 {hoveredProductIndex !== null &&
-                  refs[hoveredProductIndex].current && (
-                    <div
-                      className={styles.background_slide}
-                      style={{
-                        transform: scrollingDivRef.current
-                          ? `
-              translateY(${
-                refs[hoveredProductIndex].current!.offsetTop -
-                scrollingDivRef.current.scrollTop
-              }px) 
-              translateX(${refs[hoveredProductIndex].current!.offsetLeft}px)
-            `
-                          : "",
-                        height: `${
-                          refs[hoveredProductIndex].current!.offsetHeight
-                        }px`,
-                        width: `${
-                          refs[hoveredProductIndex].current!.offsetWidth
-                        }px`,
-                      }}
-                    ></div>
-                  )}
+                refs[hoveredProductIndex]?.current ? (
+                  <div
+                    className={styles.background_slide}
+                    style={{
+                      transform: scrollingDivRef.current
+                        ? `
+                      translateY(${
+                        refs[hoveredProductIndex].current!.offsetTop -
+                        scrollingDivRef.current.scrollTop
+                      }px) 
+                      translateX(${
+                        refs[hoveredProductIndex].current!.offsetLeft
+                      }px)
+                    `
+                        : "",
+                      height: `${
+                        refs[hoveredProductIndex].current!.offsetHeight
+                      }px`,
+                      width: `${
+                        refs[hoveredProductIndex].current!.offsetWidth
+                      }px`,
+                    }}
+                  ></div>
+                ) : null}
 
                 {activeGroup.list.map((product: any, index: any) => (
                   <Link
                     href={product.link}
-                    //to make coming soon pages non-clickable
                     key={product.name}
                     onClick={(e) => {
                       if (product?.comingSoon) {
@@ -135,7 +139,6 @@ const SubProduct = (props: any) => {
                     }}
                   >
                     <div
-                      key={product.name}
                       className={`${styles.sub_product_row} ${
                         hoveredProductIndex === index
                           ? styles.color_highlight
@@ -160,18 +163,16 @@ const SubProduct = (props: any) => {
 
                       <div className={`d-flex flex-column ms-3`}>
                         <div className={`d-flex ${styles.sub_product_name}`}>
-                          {product.name !== "EnKash PG" && <>{product.name}</>}
-
-                          {/* new tag with json */}
-                          {product.name === "EnKash PG" && (
+                          {product.name !== "EnKash PG" ? (
+                            <>{product.name}</>
+                          ) : (
                             <>
                               EnKash<sup>TM</sup> PG
                             </>
                           )}
 
-                          {/* new tag with json */}
                           {product?.new && (
-                            <div className={styles.new_badge}> NEW</div>
+                            <div className={styles.new_badge}>NEW</div>
                           )}
                         </div>
                         <div className={styles.sub_product_description}>
@@ -185,32 +186,11 @@ const SubProduct = (props: any) => {
             </div>
           </div>
 
-          {/* only for freedom products */}
           {props.index === 2 && (
             <div className={styles.powered}>*Powered by Banks/REs</div>
           )}
-          {/* {props.index === 0 && (
-            <div className={styles.powered}>
-              #Launching soon 🚀 as per
-              <br /> RBI's PA (Online) authorization
-            </div>
-          )} */}
-
-          {/* <div
-            className={`d-flex align-items-center justify-content-between ${
-              styles.footer
-            } ${styles[activeGroup.footerImg]}`}
-          >
-            <div className={styles.footer_text}>{activeGroup.footerText}</div>
-            <Link href={activeGroup.footerLink}>
-              <div className={`d-flex align-items-center ${styles.explore}`}>
-                <div className={`${styles.footer_text} px-2`}>Explore</div>
-                <Image src={footerArrow} alt="explore arrow image" />
-              </div>
-            </Link>
-          </div> */}
         </>
-      ) : null}
+      )}
     </div>
   )
 }

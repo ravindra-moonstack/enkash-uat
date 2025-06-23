@@ -1,5 +1,5 @@
-@import "/styles/variables";
-@import "/styles/mixin";
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
 
 .card_body {
   // width: 84vw;
@@ -57,11 +57,12 @@
 
 .action_container {
   position: absolute;
+  cursor: pointer;
   // bottom: 30px;
   @include for-laptops {
     // bottom: 50px;
   }
-  cursor: pointer;
+
   img {
     transition: width 0.3s ease-in-out;
   }

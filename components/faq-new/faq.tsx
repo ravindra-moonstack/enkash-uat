@@ -5,7 +5,7 @@ import arrowDown from "./img/arrow-down.svg"
 export interface FAQProps {
   question: string
   index: number
-  answerHTML?: any
+  answerHTML?: string
   answer?: {
     heading?: string
     bullets?: string[]

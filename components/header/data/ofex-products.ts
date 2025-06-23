@@ -5,8 +5,6 @@ import {
   hierarchyAndControls,
   reimbursements,
   reimbursementsFilled,
-  policyAndApproval,
-  policyAndApprovalFilled,
   scanAndDrop,
   scanAndDropFilled,
   insights,

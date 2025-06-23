@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import styles from "../button.module.scss";
-import Image from "next/image";
+import styles from "../button.module.scss"
+import Image, { StaticImageData } from "next/image"
 
 export interface ButtonProps {
-  isDisabled?: boolean;
-  title: string;
-  url?: string;
-  actionImage?: any;
-  iconSize?: any;
-  theme?: "blue" | "green" | "black" | "border-blue" | "border-gray";
+  isDisabled?: boolean
+  title: string
+  url?: string
+  actionImage?: string | StaticImageData // Accepts static imports and URL strings
+  iconSize?: number | `${number}` // number or string like "24"
+  theme?: "blue" | "green" | "black" | "border-blue" | "border-gray"
 }
 
 const SecondryButton = ({
@@ -20,32 +20,34 @@ const SecondryButton = ({
   iconSize,
   theme,
 }: ButtonProps) => {
-  const iconClass = iconSize || "big-icon";
+  const iconClass = iconSize || "big-icon"
 
   const handleClick = () => {
     if (url) {
-      window.open(url, "_blank");
+      window.open(url, "_blank")
     }
-  };
+  }
 
   return (
     <button
       disabled={isDisabled}
-      className={`${styles.secondry_button} ${theme ? styles[theme] : ""}
-              ${isDisabled ? styles.disabled : ""}`}
+      className={`${styles.secondry_button} ${theme ? styles[theme] : ""} ${
+        isDisabled ? styles.disabled : ""
+      }`}
       onClick={handleClick}
     >
       {title}
       {actionImage && (
         <Image
-          className={`ms-2  ${styles[iconClass]} `}
+          className={`ms-2 ${styles[iconClass]}`}
           src={actionImage}
           alt="action image"
-          width={iconSize}
+          width={typeof iconSize === "number" ? iconSize : undefined}
+          height={typeof iconSize === "number" ? iconSize : undefined}
         />
       )}
     </button>
-  );
-};
+  )
+}
 
-export default SecondryButton;
+export default SecondryButton
