@@ -1,4 +1,3 @@
-import MobileHeader from "./mobile-header/mobile-header"
 import WebHeader from "./web-header"
 
 const Header = ({ utmSource = "" }: any) => {

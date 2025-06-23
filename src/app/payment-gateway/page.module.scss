@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/mixin";
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixin" as *;
 
 .first_row {
   background-repeat: no-repeat;
@@ -274,12 +274,12 @@
     }
   }
   .right_row {
+    margin-top: -10px;
     @include for-laptops {
       margin-left: -20px;
       margin-top: 0;
       width: 50%;
     }
-    margin-top: -10px;
     img {
       height: 100%;
     }

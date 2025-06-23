@@ -13,7 +13,7 @@ import {
   supportData,
 } from "./data"
 import faqData from "./faq-data"
-import { Header, Footer, Heading, StructuredData, FAQHtml } from "@/components"
+import { Header, Footer, Heading, FAQHtml } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -44,10 +44,6 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <StructuredData
-        url={`https://www.enkash.com/expense-management/`}
-        faqData={faqData}
-      />
       <Header utmSource="expense_management" />
 
       <div className={`${styles.first_row} `}>

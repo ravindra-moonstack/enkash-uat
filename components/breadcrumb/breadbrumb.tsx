@@ -2,8 +2,6 @@ import React from "react"
 import Link from "next/link"
 import Head from "next/head"
 import styles from "./breadcrumb.module.scss"
-import { backArrowWhiteBg } from "."
-import Image from "next/image"
 
 interface BreadcrumbItem {
   name: string
@@ -19,7 +17,6 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
   items,
   domain = "https://www.enkash.com/",
 }) => {
-  const backLink = items[items.length - 2]?.url || "/"
   const schemaMarkup = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

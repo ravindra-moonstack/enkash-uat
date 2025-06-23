@@ -4,9 +4,6 @@ import Image from "next/image"
 import styles from "./mobile-header.module.scss"
 import PrimaryButton from "@/components/buttons/primary-button/primary-button"
 import {
-  bannerBrandsMobile,
-  confetti,
-  crossIcon,
   forwardArrowBlue,
   mobileStack,
 } from ".."
@@ -24,7 +21,7 @@ import solutions from "../data/solutions"
 import ReceivableProducts from "@/components/header/data/receivable-products"
 import payableProducts from "../data/payable-products"
 import brandVouchersProducts from "../data/brand-voucher-products"
-import TopBannerMobile from "@/components/top-banner/top-banner-mobile"
+
 
 const motherProductsList = [
   ReceivableProducts,

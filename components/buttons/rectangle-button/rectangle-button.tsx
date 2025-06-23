@@ -6,11 +6,11 @@ import Image from "next/image"
 export interface ButtonProps {
   isDisabled?: boolean
   title: string
-  url?: any
+  url?: string | (() => void) // if it's a string (link) or a function (onClick)
   theme?: "blue" | "green" | "black" | "outline-blue" | "border-gray"
   width?: string
-  actionImage?: any
-  iconSize?: any
+  actionImage?: React.ReactNode // if it's an icon/image component
+  iconSize?: number | string // if it's a size value like 20 or "1rem"
 }
 
 const RectangleButton = ({

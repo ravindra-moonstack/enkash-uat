@@ -1,3 +1,1 @@
-export * from "./metaData";
-
-export * from "./stringUtils";
+export * from "./stringUtils"
