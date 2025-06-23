@@ -10,8 +10,6 @@ interface CardProps {
   title: string;
   description: string;
   src: string;
-  url: string;
-  color: string;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -19,8 +17,6 @@ const Card: React.FC<CardProps> = ({
   title,
   description,
   src,
-  url,
-  color,
 }) => {
   return (
     <div className={styles.cardContainer}>

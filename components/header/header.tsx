@@ -1,6 +1,10 @@
 import WebHeader from "./web-header"
 
-const Header = ({ utmSource = "" }: any) => {
+interface HeaderProps {
+  utmSource?: string
+}
+
+const Header = ({ utmSource = "" }: HeaderProps) => {
   return (
     <>
       <div className="desktop-only desktop-header">
@@ -12,4 +16,5 @@ const Header = ({ utmSource = "" }: any) => {
     </>
   )
 }
+
 export default Header

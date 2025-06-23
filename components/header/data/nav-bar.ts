@@ -1,4 +1,9 @@
-export const navBarTopTtitle = [
+export interface NavItem {
+  name: string
+  link: string
+}
+
+export const navBarTopTtitle: NavItem[] = [
   { name: "Payments", link: "" },
   { name: "Cards", link: "" },
   { name: "Expenses", link: "" },

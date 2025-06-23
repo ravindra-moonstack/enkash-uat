@@ -17,8 +17,6 @@ import {
   foodAndBeveragesFilled,
   health,
   healthFilled,
-  occasion,
-  occasionFilled,
 } from "../../header"
 
 const loyaltyLoungeProducts = [
@@ -123,14 +121,6 @@ const loyaltyLoungeProducts = [
             imageSrcHovered: healthFilled,
             link: "/voucher/category/health-and-wellness",
           },
-          // {
-          //   name: "Occasion Crafted",
-          //   description:
-          //     "Celebrate birthdays, anniversaries, & special occasions with our occasion-based gift vouchers",
-          //   imageSrc: occasion,
-          //   imageSrcHovered: occasionFilled,
-          //   link: "/offers",
-          // },
         ],
         footerText:
           "Save big on 400+ brand vouchers across multiple categories",

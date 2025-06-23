@@ -1,6 +1,5 @@
 import { useState } from "react"
 import styles from "./modal.module.scss"
-import cardsProducts from "../data/cards-products"
 import SubProduct from "./sub-product"
 import loyaltyLoungeProducts from "../data/loaylty-lounge-products"
 
@@ -11,9 +10,7 @@ const LoyaltyModal = ({
   onLinkClick?: () => void
   modalLeft: number
 }) => {
-  const [prevHoveredProductIndex, setPrevHoveredProductIndex] = useState<
-    null | number
-  >(null)
+const [prevHoveredProductIndex] = useState<null | number>(null);
 
   return (
     <div>

@@ -9,8 +9,6 @@ import {
   foodAndBeveragesFilled,
   health,
   healthFilled,
-  occasion,
-  occasionFilled,
 } from "../../header"
 
 const brandVouchersProducts = [

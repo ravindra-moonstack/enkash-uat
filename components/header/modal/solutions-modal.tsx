@@ -1,28 +1,18 @@
-import Image from "next/image";
-import { useRef, useState } from "react";
-import styles from "./modal.module.scss";
-import solutions from "../data/solutions";
-import { blueforwardArrow, solutionModalEmptyStateImg } from "..";
-import resourcesData from "../blog-data.json";
-import Link from "next/link";
+import Image from "next/image"
+import { useRef, useState } from "react"
+import styles from "./modal.module.scss"
+import solutions from "../data/solutions"
+import { solutionModalEmptyStateImg } from ".."
 
-type Resource = {
-  image: string;
-  imageAlt: string;
-  title: string;
-  date: string;
-  description: string;
-  link: string;
-};
+import Link from "next/link"
 
 const SolutionsModal = () => {
   const [hoveredResourceIndex, setHoveredResourceIndex] = useState<
     number | null
-  >(null);
-  const refs = solutions.map(() => useRef<HTMLDivElement | null>(null));
+  >(null)
+  const refs = solutions.map(() => useRef<HTMLDivElement | null>(null))
 
   // Use the blog data from resourcesData
-  const blogData: Resource = resourcesData;
 
   return (
     <div className={`row mt-4 ${styles.container}`}>
@@ -69,7 +59,7 @@ const SolutionsModal = () => {
         className={styles.solution_stack}
       />
     </div>
-  );
-};
+  )
+}
 
-export default SolutionsModal;
+export default SolutionsModal
