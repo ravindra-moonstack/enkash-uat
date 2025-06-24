@@ -147,3 +147,7 @@ export { default as health } from "./img/health.svg"
 export { default as healthFilled } from "./img/health-filled.svg"
 export { default as occasion } from "./img/occasion.svg"
 export { default as occasionFilled } from "./img/occasion-filled.svg"
+
+//partnership
+export { default as bank } from "./img/bank.svg"
+export { default as affiliate } from "./img/affiliated.svg"

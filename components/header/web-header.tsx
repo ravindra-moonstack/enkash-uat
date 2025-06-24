@@ -12,6 +12,7 @@ import PaymentModal from "./modal/payment-modal"
 import CardModal from "./modal/card-modal"
 import ExpensesModal from "./modal/expenses-modal"
 import LoyaltyModal from "./modal/loyalty-modal"
+import PartnershipModal from "./modal/patnership-modal"
 
 interface props {
   utmSource?: string
@@ -113,37 +114,23 @@ const WebHeader = ({ utmSource }: props) => {
                         itemRect.left -
                         (parentRect?.left || 0) +
                         itemRect.width / 2 +
-                        150 // 👈 add 50px here
+                        150
 
-                      setModalLeft(left) // shifted 50px right
+                      setModalLeft(left)
                       setSlidePosition(left - itemRect.width / 2)
                       setItemWidth(itemRect.width)
                       setHoveredIndex(index)
                     }
-
-                    if (index === 5) {
-                      setIsHeaderBgWhite(false)
-                    }
+                    setIsHeaderBgWhite(false)
                   }}
                 >
-                  {index === 5 ? (
-                    <Link className={styles.link} href={item.link}>
-                      {item.name}
-                    </Link>
-                  ) : (
-                    item.name
-                  )}
-
-                  {index !== 5 && (
-                    <>
-                      <Image
-                        src={getArrowImageSource(index)}
-                        alt="arrow down icon"
-                        height={16}
-                        width={16}
-                      />
-                    </>
-                  )}
+                  <span className={styles.link}>{item.name}</span>
+                  <Image
+                    src={getArrowImageSource(index)}
+                    alt="arrow down icon"
+                    height={16}
+                    width={16}
+                  />
                 </li>
               ))}
             </ul>
@@ -187,7 +174,7 @@ const WebHeader = ({ utmSource }: props) => {
           </div>
         </nav>
         {/* {true && (
-          <PaymentModal
+          <PartnershipModal
             onLinkClick={handleLinkClick}
             modalLeft={modalLeft ?? 200}
           />
@@ -208,6 +195,13 @@ const WebHeader = ({ utmSource }: props) => {
 
         {hoveredIndex === 4 && modalLeft !== null && (
           <ResourcesModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+        )}
+
+        {hoveredIndex === 5 && modalLeft !== null && (
+          <PartnershipModal
+            onLinkClick={handleLinkClick}
+            modalLeft={modalLeft}
+          />
         )}
       </header>
     </div>
