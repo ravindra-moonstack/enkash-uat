@@ -10,7 +10,7 @@ const LoyaltyModal = ({
   onLinkClick?: () => void
   modalLeft: number
 }) => {
-const [prevHoveredProductIndex] = useState<null | number>(null);
+  const [prevHoveredProductIndex] = useState<null | number>(null)
 
   return (
     <div>

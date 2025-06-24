@@ -12,7 +12,7 @@ const PaymentModal = ({
 }) => {
   const [hoveredProductIndex] = useState<number>(0) // default open index
 
- const [prevHoveredProductIndex] = useState<null | number>(null);
+  const [prevHoveredProductIndex] = useState<null | number>(null)
 
   const getSubProductsByMother = (motherName: string) => {
     const mother = motherProducts.find((item) => item.name === motherName)
@@ -23,7 +23,7 @@ const PaymentModal = ({
   }
 
   return (
-    <div className="relative">
+    <div className=" ">
       <div className={styles.arrow} style={{ left: modalLeft }}></div>
 
       <div className={` ${styles.container}`}>

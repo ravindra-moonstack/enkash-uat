@@ -51,7 +51,7 @@ const SubProduct = (props: any) => {
   const motherProductName = props.motherProductName
 
   return (
-    <div className={`d-flex flex-column ${styles.container}`}>
+    <div className={`d-flex flex-column  ${styles.container}`}>
       {hasActiveGroup && (
         <>
           <div className={`mb-3 ${styles.motherProduct}`}>
@@ -185,10 +185,11 @@ const SubProduct = (props: any) => {
               </div>
             </div>
           </div>
-
-          {props.index === 2 && (
-            <div className={styles.powered}>*Powered by Banks/REs</div>
-          )}
+          <div className={` ${styles.exploreProduct}`}>
+            <Link href={props.parentLink || "#"}>
+              <h4 className="fw-bold mb-1"> Explore {motherProductName}</h4>
+            </Link>
+          </div>
         </>
       )}
     </div>

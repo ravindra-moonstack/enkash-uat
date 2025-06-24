@@ -1,11 +1,10 @@
 import { useState } from "react"
 import styles from "./modal.module.scss"
 import SubProduct from "./sub-product"
-import xpenzProducts from "../data/ofex-products"
+import partnershipProducts from "../data/partnership"
 
-const ExpensesModal = ({
+const PartnershipModal = ({
   onLinkClick,
-  modalLeft,
 }: {
   onLinkClick?: () => void
   modalLeft: number
@@ -13,12 +12,12 @@ const ExpensesModal = ({
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
   return (
-    <div>
-      <div className={styles.arrow} style={{ left: modalLeft }}></div>
+    <div className="relative mx-auto ">
+      <div className={styles.arrow}></div>
 
       <div className={` ${styles.container}`}>
-        <div className="d-flex gap-2 justify-content-center">
-          {xpenzProducts.map((mother, i) => {
+        <div className="d-flex gap-2">
+          {partnershipProducts.map((mother, i) => {
             const subProducts = mother.subProducts || []
 
             if (!subProducts || subProducts.length === 0) return null
@@ -42,4 +41,4 @@ const ExpensesModal = ({
   )
 }
 
-export default ExpensesModal
+export default PartnershipModal

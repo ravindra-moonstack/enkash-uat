@@ -116,7 +116,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
 
           <div className="col-12 col-md-6 d-flex justify-content-center">
-            <div className="position-relative w-100 h-100 d-flex justify-content-end">
+            <div className="position-relative w-100 h-100 d-flex ">
               <Image
                 src={paymentSummary}
                 alt="card visual"
