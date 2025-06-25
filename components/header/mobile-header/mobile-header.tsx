@@ -2,14 +2,8 @@
 
 import Image from "next/image"
 import styles from "./mobile-header.module.scss"
-import PrimaryButton from "@/components/buttons/primary-button/primary-button"
 import {
   arrowDown,
-  bannerBrandsMobile,
-  confetti,
-  crossIcon,
-  forwardArrowBlue,
-  mobileStack,
 } from ".."
 import navBarTopTtitle from "@/components/header/data/nav-bar"
 import { Fragment, useEffect, useState } from "react"
@@ -20,7 +14,6 @@ import xpenzProducts from "@/components/header/data/ofex-products"
 import loyaltyLoungeProducts from "@/components/header/data/loaylty-lounge-products"
 import motherProducts from "@/components/header/data/mother-products"
 import resources from "@/components/header/data/resources"
-import Link from "next/link"
 import solutions from "../data/solutions"
 import ReceivableProducts from "@/components/header/data/receivable-products"
 import payableProducts from "../data/payable-products"
