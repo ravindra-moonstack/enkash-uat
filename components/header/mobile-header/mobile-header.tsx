@@ -2,9 +2,7 @@
 
 import Image from "next/image"
 import styles from "./mobile-header.module.scss"
-import {
-  arrowDown,
-} from ".."
+import { arrowDown } from ".."
 import navBarTopTtitle from "@/components/header/data/nav-bar"
 import { Fragment, useEffect, useState } from "react"
 import ProductListView from "./product-list-view"
@@ -19,6 +17,7 @@ import ReceivableProducts from "@/components/header/data/receivable-products"
 import payableProducts from "../data/payable-products"
 import brandVouchersProducts from "../data/brand-voucher-products"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import SubProductListView from "./sub-product-list-view"
 
 const motherProductsList = [
   ReceivableProducts,
@@ -95,25 +94,18 @@ const MobileHeader = ({ utmSource }: props) => {
           </div>
         )}
         {currentStep === 2 && (
-          <ProductListView
+          <SubProductListView
             products={
               selectedItemIndex === 0
-                ? motherProducts
+                ? motherProducts[0].subProducts
                 : selectedItemIndex === 1
-                ? solutions
+                ? motherProducts[1].payableProducts
                 : selectedItemIndex === 2
                 ? resources
                 : []
             }
-            childProducts={
-              selectedItemIndex === 0
-                ? motherProductsList
-                : selectedItemIndex === 1
-                ? []
-                : []
-            }
+            setSelectedItemIndex={selectedItemIndex}
             setCurrentStep={setCurrentStep}
-            currentStep={currentStep}
             signupUrl={signupUrl}
           />
         )}

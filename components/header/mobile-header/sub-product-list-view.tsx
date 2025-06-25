@@ -1,21 +1,22 @@
-import Image from "next/image";
-import styles from "./mobile-header.module.scss";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { Fragment, useState } from "react";
-import Link from "next/link";
-import { footerArrow, forwardArrowBlue } from "..";
+import Image from "next/image"
+import styles from "./mobile-header.module.scss"
+import PrimaryButton from "@/components/buttons/primary-button/primary-button"
+import { Fragment, useState } from "react"
+import Link from "next/link"
+import { arrowDown, footerArrow, forwardArrowBlue } from ".."
+import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 
 const SubProductListView = (props: {
-  setSelectedItemIndex: any;
-  products: any;
-  signupUrl: any;
-  setCurrentStep: (step: number) => void; // Receive this prop
+  setSelectedItemIndex: number | null
+  products: any
+  signupUrl: any
+  setCurrentStep: (step: number) => void // Receive this prop
 }) => {
-  const [activeSubtitleIndex, setActiveSubtitleIndex] = useState(0);
+  const [activeSubtitleIndex, setActiveSubtitleIndex] = useState(0)
 
-  const productsToUse = props.products;
-  const currentHeading = productsToUse[activeSubtitleIndex]?.currentHeading;
-  const link = productsToUse[activeSubtitleIndex]?.parentLink;
+  const productsToUse = props.products
+  const currentHeading = productsToUse[activeSubtitleIndex]?.currentHeading
+  const link = productsToUse[activeSubtitleIndex]?.parentLink
 
   return (
     <div className={`w-100 absolute z-10 bg-indi-volt`}>
@@ -29,15 +30,8 @@ const SubProductListView = (props: {
                   <sup className={styles.sup}>#</sup>
                 )}
               </div>
-              <div className={styles.description}>
-                {currentHeading?.description}
-              </div>
             </div>
-            <Image
-              src={forwardArrowBlue}
-              alt="arrow down icon"
-              className="ms-4"
-            />
+            <Image src={arrowDown} alt="arrow down icon" className="ms-4" />
           </li>
         </Link>
         <div className="list">
@@ -73,7 +67,7 @@ const SubProductListView = (props: {
             ))}
           </div>
 
-          {productsToUse.map(
+          {/* {productsToUse.map(
             (category: any, index: any) =>
               activeSubtitleIndex === index && (
                 <div
@@ -83,18 +77,9 @@ const SubProductListView = (props: {
                   }`}
                 >
                   <div className="mx-4">{category.footerMobileText}</div>
-                  <Link href={category.subtitleLink}>
-                    <div className={`${styles.explore} d-flex`}>
-                      <Image
-                        src={footerArrow}
-                        alt="explore arrow image"
-                        width={80}
-                      />
-                    </div>
-                  </Link>
                 </div>
               )
-          )}
+          )} */}
 
           <div className={styles.line}></div>
           {productsToUse[activeSubtitleIndex]?.list.map((item: any) => (
@@ -102,7 +87,7 @@ const SubProductListView = (props: {
               href={item.link}
               key={item.name}
               onClick={() => {
-                props.setCurrentStep(0);
+                props.setCurrentStep(0)
               }}
             >
               <Fragment key={item.name}>
@@ -136,21 +121,20 @@ const SubProductListView = (props: {
         )} */}
 
         <div
-          className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
+          className={`d-flex   justify-content-center ${styles.buttons_container}`}
         >
-          <PrimaryButton title="Sign Up" theme="blue" url="/sales/" />
-          <span className="mx-2"></span>
-          <div>
-            <Link href="https://home.enkash.com/login" target="_blank">
-              <button className={`${styles.secondary_button} ${styles.active}`}>
-                Login
-              </button>
-            </Link>
-          </div>
+          <RectangleButton title="Talk to Sales" theme="blue" url={""} />
+          {/* <span className="mx-2"></span> */}
+
+          <RectangleButton
+            title="Log In"
+            theme="outline-blue"
+            url={"https://home.enkash.com/login"}
+          />
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SubProductListView;
+export default SubProductListView

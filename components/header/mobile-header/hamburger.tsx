@@ -1,13 +1,7 @@
 import Image from "next/image"
-import {
-  hamnburgerIcon,
-  enkashBlueLogo,
-  crossMenu,
-  callIcon,
-} from ".."
+import { hamnburgerIcon, enkashBlueLogo, crossMenu, callIcon } from ".."
 import styles from "./mobile-header.module.scss"
 import Link from "next/link"
-
 
 interface HamburgerProps {
   currentStep: number
@@ -63,11 +57,11 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
       </div>
 
       <div
-        className={`p-3 bg-white  rounded-top ${
+        className={` bg-white  rounded-top ${styles.mobile_navbar_top} ${
           currentStep !== 0 ? "d-flex" : "d-none"
         }`}
       >
-        <div className="d-flex justify-content-between p-3 w-100">
+        <div className="d-flex justify-content-between  w-100">
           <div className="d-flex align-items-center  w-100">
             <Link href={"/"}>
               <Image

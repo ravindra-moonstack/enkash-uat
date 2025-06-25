@@ -1,4 +1,4 @@
-@use "../../../styles/mixin" as * ;
+@use "../../../styles/mixin" as *;
 @use "../../../styles/variables" as *;
 
 .mobile_header {
@@ -15,7 +15,6 @@
 .main_padding {
   padding: 20px;
   background-color: $color-white;
-
   border-radius: 8px;
 
   .mobile_navbar {
@@ -35,6 +34,10 @@
       border-radius: 4px;
     }
   }
+}
+
+.mobile_navbar_top {
+  padding: 20px;
 }
 
 .mobile_modal {
