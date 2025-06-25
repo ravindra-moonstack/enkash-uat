@@ -1,9 +1,7 @@
 import Image from "next/image"
 import styles from "./mobile-header.module.scss"
-import PrimaryButton from "@/components/buttons/primary-button/primary-button"
 import { Fragment, useState } from "react"
 import Link from "next/link"
-import { arrowDown, footerArrow, forwardArrowBlue } from ".."
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 
 const SubProductListView = (props: {
@@ -12,7 +10,7 @@ const SubProductListView = (props: {
   signupUrl: any
   setCurrentStep: (step: number) => void // Receive this prop
 }) => {
-  const [activeSubtitleIndex, setActiveSubtitleIndex] = useState(0)
+  const [activeSubtitleIndex] = useState(0)
 
   const productsToUse = props.products
   const currentHeading = productsToUse[activeSubtitleIndex]?.currentHeading

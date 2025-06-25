@@ -1,10 +1,8 @@
 import styles from "./mobile-header.module.scss"
-import PrimaryButton from "@/components/buttons/primary-button/primary-button"
 import { Fragment, useState } from "react"
 import SubProductListView from "./sub-product-list-view"
 import { forwardArrowBlue } from ".."
 import Image from "next/image"
-import Link from "next/link"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 
 interface ProductListViewProps {
