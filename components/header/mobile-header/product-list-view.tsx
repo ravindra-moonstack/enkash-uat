@@ -1,17 +1,16 @@
-import styles from "./mobile-header.module.scss";
-import PrimaryButton from "@/components/buttons/primary-button/primary-button";
-import { Fragment, useState } from "react";
-import SubProductListView from "./sub-product-list-view";
-import { forwardArrowBlue } from "..";
-import Image from "next/image";
-import Link from "next/link";
+import styles from "./mobile-header.module.scss"
+import { Fragment, useState } from "react"
+import SubProductListView from "./sub-product-list-view"
+import { forwardArrowBlue } from ".."
+import Image from "next/image"
+import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 
 interface ProductListViewProps {
-  childProducts: any[];
-  products: any[];
-  setCurrentStep: (step: number) => void;
-  currentStep: number;
-  signupUrl: any;
+  childProducts: any[]
+  products: any[]
+  setCurrentStep: (step: number) => void
+  currentStep: number
+  signupUrl: any
 }
 
 const ProductListView = ({
@@ -20,7 +19,7 @@ const ProductListView = ({
   setCurrentStep,
   signupUrl,
 }: ProductListViewProps) => {
-  const [selectedItemIndex, setSelectedItemIndex] = useState(null);
+  const [selectedItemIndex, setSelectedItemIndex] = useState(null)
   return (
     <div className={`w-100 absolute z-10 bg-indi-volt`}>
       {selectedItemIndex == null && (
@@ -35,9 +34,9 @@ const ProductListView = ({
                     className={`py-4 px-4 align-items-center`}
                     onClick={() => {
                       if (childProducts.length === 0) {
-                        window.location.href = item.link;
+                        window.location.href = item.link
                       } else {
-                        setSelectedItemIndex(index);
+                        setSelectedItemIndex(index)
                       }
                     }}
                   >
@@ -64,20 +63,20 @@ const ProductListView = ({
             </ul>
           </div>
           <div
-            className={`d-flex p-5 justify-content-center ${styles.buttons_container}`}
+            className={`d-flex   justify-content-center ${styles.buttons_container}`}
           >
-            <PrimaryButton title="Sign Up" url="/sales" theme="blue" />
-            <span className="mx-2"></span>
-            <div>
-         
-            <Link href="https://home.enkash.com/login" target="_blank">
-                <button
-                  className={`${styles.secondary_button} ${styles.active}`}
-                >
-                  Login
-                </button>
-              </Link>
-            </div>
+            <RectangleButton
+              title="Talk to Sales"
+              theme="blue"
+              url={signupUrl}
+            />
+            {/* <span className="mx-2"></span> */}
+
+            <RectangleButton
+              title="Log In"
+              theme="outline-blue"
+              url={"https://home.enkash.com/login"}
+            />
           </div>
         </div>
       )}
@@ -135,7 +134,7 @@ const ProductListView = ({
         />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default ProductListView;
+export default ProductListView

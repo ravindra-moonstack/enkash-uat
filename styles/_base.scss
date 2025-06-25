@@ -185,6 +185,10 @@
 .color-black-16 {
   color: $color-black-16;
 }
+
+.color-grey-900 {
+  color: $color-grey-900;
+}
 /* Padding Classes */
 
 .row-padding {
@@ -354,4 +358,8 @@ html body {
 
 .gap-32 {
   gap: 32px;
+}
+
+.noBorder {
+  border: none;
 }

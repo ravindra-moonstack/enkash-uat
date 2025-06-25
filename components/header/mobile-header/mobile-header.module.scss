@@ -1,4 +1,4 @@
-@use "../../../styles/mixin" as * ;
+@use "../../../styles/mixin" as *;
 @use "../../../styles/variables" as *;
 
 .mobile_header {
@@ -15,7 +15,6 @@
 .main_padding {
   padding: 20px;
   background-color: $color-white;
-
   border-radius: 8px;
 
   .mobile_navbar {
@@ -37,8 +36,13 @@
   }
 }
 
+.mobile_navbar_top {
+  padding: 20px;
+}
+
 .mobile_modal {
   background-color: $color-white;
+  padding: 8px;
   height: 100%;
   ul {
     list-style-type: none;
@@ -53,6 +57,12 @@
       font-size: 18px;
       line-height: 30px;
     }
+
+    .sub_product_title {
+      font-size: 12px;
+      color: $color-slate-grey;
+      text-transform: uppercase;
+    }
     .description {
       font-size: 16px;
       line-height: 20px;
@@ -64,6 +74,39 @@
   }
 }
 
+.mobile_sub_product_modal {
+  background-color: $color-sky-hint;
+  padding: 8px;
+  height: 100%;
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: flex;
+    justify-content: space-between;
+    color: $color-black-100;
+
+    .title {
+      font-size: 18px;
+      line-height: 30px;
+    }
+
+    .sub_product_title {
+      font-size: 12px;
+      color: $color-slate-grey;
+      text-transform: uppercase;
+    }
+    .description {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+  a {
+    text-decoration: none;
+    font-size: inherit;
+  }
+}
 .underline_text {
   font-size: 25px;
   line-height: 30px;
