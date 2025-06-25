@@ -20,23 +20,23 @@ const SubProductListView = (props: {
 
   return (
     <div className={`w-100 absolute z-10 bg-indi-volt`}>
-      <div className={styles.mobile_modal}>
+      <div className={styles.mobile_sub_product_modal}>
         <Link href={link}>
           <li className="d-flex align-items-center pe-4 pt-2">
             <div className="d-flex flex-column justify-content-center px-4 py-2 ">
-              <div className={styles.title}>
+              <div className={styles.sub_product_title}>
                 {currentHeading?.name}
                 {currentHeading?.name == "Receivables" && (
                   <sup className={styles.sup}>#</sup>
                 )}
               </div>
             </div>
-            <Image src={arrowDown} alt="arrow down icon" className="ms-4" />
+            {/* <Image src={arrowDown} alt="arrow down icon" className="ms-4" /> */}
           </li>
         </Link>
         <div className="list">
           {/* was used for web-navbar olympus section */}
-          <div className="d-flex flex-row">
+          {/* <div className="d-flex flex-row">
             {productsToUse.map((category: any, index: any) => (
               <div
                 key={category.subtitle}
@@ -65,7 +65,7 @@ const SubProductListView = (props: {
                 )}
               </div>
             ))}
-          </div>
+          </div> */}
 
           {/* {productsToUse.map(
             (category: any, index: any) =>
@@ -81,7 +81,6 @@ const SubProductListView = (props: {
               )
           )} */}
 
-          <div className={styles.line}></div>
           {productsToUse[activeSubtitleIndex]?.list.map((item: any) => (
             <Link
               href={item.link}
@@ -91,21 +90,19 @@ const SubProductListView = (props: {
               }}
             >
               <Fragment key={item.name}>
-                <li className={`d-flex justify-content-start py-4 px-4`}>
+                <li className={`d-flex justify-content-start py-3 px-3  `}>
                   <div className="me-4">
                     <Image
-                      src={item.imageSrc}
+                      src={item.imageSrcHovered}
                       alt={item.name}
-                      width={50}
-                      height={50}
+                      width={24}
+                      height={24}
                     />
                   </div>
-                  <div className="d-flex flex-column color-secondry-grey">
-                    <div className={styles.title}>{item.name}</div>
-                    <div className={styles.description}>{item.description}</div>
+                  <div className="d-flex flex-column color-grey-900">
+                    <div className={styles.sub_title}>{item.name}</div>
                   </div>
                 </li>
-                <div className={styles.line}></div>
               </Fragment>
             </Link>
           ))}
