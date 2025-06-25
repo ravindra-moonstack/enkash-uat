@@ -1,3 +1,4 @@
+import MobileHeader from "./mobile-header/mobile-header"
 import WebHeader from "./web-header"
 
 interface HeaderProps {
@@ -10,9 +11,9 @@ const Header = ({ utmSource = "" }: HeaderProps) => {
       <div className="desktop-only desktop-header">
         <WebHeader utmSource={utmSource} />
       </div>
-      {/* <div className="mobile-only">
+      <div className="mobile-only m-2">
         <MobileHeader utmSource={utmSource} />
-      </div> */}
+      </div>
     </>
   )
 }
