@@ -13,15 +13,20 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow: auto; /* allow scroll normally */
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
- 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ✅ Prevent background scroll when modal is open */
+body.no-scroll {
+  overflow: hidden !important;
+  height: 100vh;
 }
 
 * {

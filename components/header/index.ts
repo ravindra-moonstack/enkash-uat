@@ -10,9 +10,11 @@ export { default as productModalEmptyStateImg } from "./img/product-empty-state-
 export { default as mobileStack } from "./img/mobile-stack.png"
 
 export { default as solutionModalEmptyStateImg } from "./img/solution-empty-image.png"
-export { default as hamnburgerIcon } from "./img/hambergermenu.png"
+export { default as hamnburgerIcon } from "./img/hambergermenu.svg"
+export { default as callIcon } from "./img/call.svg"
 export { default as crossMenu } from "./img/cross-menu.png"
 export { default as forwardArrowBlue } from "./img/forward-arrow-blue.png"
+export { default as arrowDown } from "./img/arrow-down.svg"
 export { default as confetti } from "./img/confetti.png"
 export { default as crossIcon } from "./img/cross-icon.png"
 export { default as bannerStackBlue } from "./img/banner-stack-light-blue.png"
