@@ -1,7 +1,5 @@
 import Image from "next/image"
-import PrimaryButton from "@/components/buttons/primary-button/primary-button"
 import {
-  enkashWhiteLogo,
   hamnburgerIcon,
   enkashBlueLogo,
   crossMenu,
@@ -9,7 +7,7 @@ import {
 } from ".."
 import styles from "./mobile-header.module.scss"
 import Link from "next/link"
-import SecondryButton from "@/components/buttons/secondary-button/secondary-button"
+
 
 interface HamburgerProps {
   currentStep: number
