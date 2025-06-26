@@ -81,7 +81,7 @@ const ProductListView = ({
         </div>
       )}
 
-      {selectedItemIndex === 0 && (
+      {/* {selectedItemIndex === 0 && (
         <div>
           <SubProductListView
             setSelectedItemIndex={selectedItemIndex}
@@ -132,7 +132,7 @@ const ProductListView = ({
           setCurrentStep={setCurrentStep}
           signupUrl={signupUrl}
         />
-      )}
+      )} */}
     </div>
   )
 }

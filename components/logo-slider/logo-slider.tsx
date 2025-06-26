@@ -6,25 +6,14 @@ import styles from "./logo-slider.module.scss"
 import Marquee from "react-fast-marquee"
 
 import {
-  iciciBankLogo,
-  rupayLogo,
-  visaLogo,
-  box8Logo,
-  cureFoodsLogo,
-  everestLogo,
-  hdfcLogo,
-  infraMarketLogo,
-  kotakLogo,
-  masterCardLogo,
-  pristynCareLogo,
-  relianceRetail,
+  blinkitLogo,
+  britishAirwaysLogo,
   dtdcLogo,
-  starBucksLogo,
-  auBankLogo,
-  amexLogo,
-  idfcLogo,
-  axisLogo,
-  yesLogo,
+  housingLogo,
+  pristynCareLogo,
+  rakutenLogo,
+  relianceLogo,
+  starbucksLogo,
 } from "../../src/app/index"
 
 const LogoSlider = ({ type }: { type: "partners" | "customers" }) => {
@@ -41,119 +30,57 @@ const LogoSlider = ({ type }: { type: "partners" | "customers" }) => {
               {selectedTab === "partners" && (
                 <Image
                   className={styles.rupay}
-                  src={rupayLogo}
+                  src={blinkitLogo}
                   alt="rupay bank logo"
                 />
               )}
               {selectedTab === "partners" && (
                 <Image
                   className={styles.visa}
-                  src={visaLogo}
+                  src={britishAirwaysLogo}
                   alt="visa bank logo"
                 />
               )}
               {selectedTab === "partners" && (
                 <Image
                   className={styles.master}
-                  src={masterCardLogo}
+                  src={housingLogo}
                   alt="master card logo"
                 />
               )}{" "}
               {selectedTab === "partners" && (
                 <Image
                   className={styles.master}
-                  src={amexLogo}
+                  src={rakutenLogo}
                   alt="amex bank logo"
                 />
               )}{" "}
               {selectedTab === "partners" && (
                 <Image
                   className={styles.hdfc}
-                  src={hdfcLogo}
+                  src={starbucksLogo}
                   alt="hdfc bank logo"
                 />
               )}
               {selectedTab === "partners" && (
                 <Image
                   className={styles.icici}
-                  src={iciciBankLogo}
+                  src={pristynCareLogo}
                   alt="icici bank logo"
                 />
               )}
               {selectedTab === "partners" && (
                 <Image
                   className={styles.icici}
-                  src={idfcLogo}
+                  src={dtdcLogo}
                   alt="idfc bank logo"
                 />
               )}
               {selectedTab === "partners" && (
                 <Image
                   className={styles.kotak}
-                  src={kotakLogo}
+                  src={relianceLogo}
                   alt="kotak bank logo"
-                />
-              )}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.axis}
-                  src={axisLogo}
-                  alt="axis bank logo"
-                />
-              )}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.yes}
-                  src={yesLogo}
-                  alt="yes bank logo"
-                />
-              )}
-              {selectedTab === "customers" && (
-                <Image
-                  className={styles.everest}
-                  src={everestLogo}
-                  alt="everest logo"
-                />
-              )}
-              {selectedTab === "customers" && (
-                <Image
-                  className={styles.cure}
-                  src={cureFoodsLogo}
-                  alt="cure food logo"
-                />
-              )}
-              {selectedTab === "customers" && (
-                <Image
-                  className={styles.infra}
-                  src={infraMarketLogo}
-                  alt="infra market logo"
-                />
-              )}
-              {selectedTab === "customers" && (
-                <Image className={styles.dtdc} src={dtdcLogo} alt="dtdc logo" />
-              )}
-              {selectedTab === "customers" && (
-                <Image
-                  className={styles.pristyn}
-                  src={pristynCareLogo}
-                  alt="pristyn care logo"
-                />
-              )}
-              {selectedTab === "customers" && (
-                <Image className={styles.box} src={box8Logo} alt="box8 logo" />
-              )}
-              {selectedTab === "customers" && (
-                <Image
-                  className={styles.reliance}
-                  src={relianceRetail}
-                  alt="reliance retail cry logo"
-                />
-              )}
-              {selectedTab === "customers" && (
-                <Image
-                  className={styles.starbucks}
-                  src={starBucksLogo}
-                  alt="star bucks logo"
                 />
               )}
             </div>
@@ -170,53 +97,83 @@ const LogoSlider = ({ type }: { type: "partners" | "customers" }) => {
                     <>
                       <Image
                         className={styles.rupay}
-                        src={rupayLogo}
+                        src={blinkitLogo}
                         alt="rupay bank logo"
                       />
                       <Image
                         className={styles.visa}
-                        src={visaLogo}
+                        src={britishAirwaysLogo}
                         alt="visa bank logo"
                       />
                       <Image
                         className={styles.master}
-                        src={masterCardLogo}
+                        src={housingLogo}
                         alt="master card logo"
                       />
                       <Image
                         className={styles.master}
-                        src={amexLogo}
+                        src={rakutenLogo}
                         alt="amex bank logo"
                       />
                       <Image
                         className={styles.hdfc}
-                        src={hdfcLogo}
+                        src={starbucksLogo}
                         alt="hdfc bank logo"
                       />
                       <Image
                         className={styles.icici}
-                        src={iciciBankLogo}
+                        src={pristynCareLogo}
                         alt="icici bank logo"
                       />
                       <Image
                         className={styles.kotak}
-                        src={idfcLogo}
+                        src={dtdcLogo}
                         alt="idfc bank logo"
                       />
                       <Image
                         className={styles.kotak}
-                        src={kotakLogo}
+                        src={relianceLogo}
                         alt="kotak bank logo"
                       />
                       <Image
-                        className={styles.axis}
-                        src={axisLogo}
-                        alt="axis bank logo"
+                        className={styles.rupay}
+                        src={blinkitLogo}
+                        alt="rupay bank logo"
+                      />
+                      <Image
+                        className={styles.visa}
+                        src={britishAirwaysLogo}
+                        alt="visa bank logo"
+                      />
+                      <Image
+                        className={styles.master}
+                        src={housingLogo}
+                        alt="master card logo"
+                      />
+                      <Image
+                        className={styles.master}
+                        src={rakutenLogo}
+                        alt="amex bank logo"
+                      />
+                      <Image
+                        className={styles.hdfc}
+                        src={starbucksLogo}
+                        alt="hdfc bank logo"
+                      />
+                      <Image
+                        className={styles.icici}
+                        src={pristynCareLogo}
+                        alt="icici bank logo"
                       />
                       <Image
                         className={styles.kotak}
-                        src={yesLogo}
-                        alt="yes bank logo"
+                        src={dtdcLogo}
+                        alt="idfc bank logo"
+                      />
+                      <Image
+                        className={styles.kotak}
+                        src={relianceLogo}
+                        alt="kotak bank logo"
                       />
                     </>
                   )}
@@ -225,38 +182,43 @@ const LogoSlider = ({ type }: { type: "partners" | "customers" }) => {
                     <>
                       <Image
                         className={styles.rupay}
-                        src={rupayLogo}
+                        src={blinkitLogo}
                         alt="rupay bank logo"
                       />
                       <Image
                         className={styles.visa}
-                        src={visaLogo}
+                        src={britishAirwaysLogo}
                         alt="visa bank logo"
                       />
                       <Image
                         className={styles.master}
-                        src={masterCardLogo}
+                        src={housingLogo}
                         alt="master card logo"
                       />
                       <Image
+                        className={styles.master}
+                        src={rakutenLogo}
+                        alt="amex bank logo"
+                      />
+                      <Image
                         className={styles.hdfc}
-                        src={hdfcLogo}
+                        src={starbucksLogo}
                         alt="hdfc bank logo"
                       />
                       <Image
                         className={styles.icici}
-                        src={iciciBankLogo}
+                        src={pristynCareLogo}
                         alt="icici bank logo"
                       />
                       <Image
                         className={styles.kotak}
-                        src={kotakLogo}
-                        alt="kotak bank logo"
+                        src={dtdcLogo}
+                        alt="idfc bank logo"
                       />
                       <Image
-                        className={styles.au}
-                        src={auBankLogo}
-                        alt="au bank logo"
+                        className={styles.kotak}
+                        src={relianceLogo}
+                        alt="kotak bank logo"
                       />
                     </>
                   )}

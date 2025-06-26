@@ -135,7 +135,9 @@ const WebHeader = ({ utmSource }: props) => {
               ))}
             </ul>
           </div>
-          <div className="d-flex align-items-center gap-4">
+          <div
+            className={`d-flex align-items-center gap-4 ${styles.nav_right}`}
+          >
             {" "}
             <Link href={signupUrl} target="_blank">
               <button
@@ -147,34 +149,15 @@ const WebHeader = ({ utmSource }: props) => {
                 Get Support
               </button>
             </Link>
-            <div
-              className={`${styles.button_switch_wrapper} ${
-                active === "login"
-                  ? styles["login-active"]
-                  : styles["get-started-active"]
-              }`}
-            >
-              <button
-                className={`${styles.button} ${
-                  active === "login" ? styles.active : ""
-                }`}
-                onClick={() => setActive("login")}
-              >
-                Login
-              </button>
-              <button
-                className={`bg-brand-blue ${styles.button} ${
-                  active === "sales" ? styles.active : ""
-                }`}
-                onClick={() => setActive("sales")}
-              >
-                Talk to Sales
-              </button>
+            <div className={styles.button_switch_wrapper}>
+              <button className={styles.button}>Login</button>
+              <button className={styles.button}>Talk to Sales</button>
+              <span></span> {/* This span is the animated background */}
             </div>
           </div>
         </nav>
         {/* {true && (
-          <PartnershipModal
+          <PaymentModal
             onLinkClick={handleLinkClick}
             modalLeft={modalLeft ?? 200}
           />

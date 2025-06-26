@@ -33,165 +33,167 @@
   img {
     @include for-laptops {
       margin-right: 0px;
+      padding-left: 40px;
+      height: auto;
     }
   }
 
-  .axis {
-    height: 33px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 40px;
-    }
-  }
-  .icici {
-    height: 30px;
-    width: auto;
-    margin-right: 40px;
-    @include for-laptops {
-      height: 35px;
-    }
-  }
-  .au {
-    height: 30px;
-    width: auto;
-    margin-right: 40px;
-    @include for-laptops {
-      height: 40px;
-    }
-  }
-  .visa {
-    height: 25px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 30px;
-    }
-  }
-  .kotak {
-    height: 33px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 40px;
-    }
-  }
-  .hdfc {
-    height: 30px;
-    width: auto;
-    margin-right: 60px;
-    @include for-laptops {
-      height: 40px;
-    }
-  }
-  .rupay {
-    height: 38px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 55px;
-    }
-  }
-  .master {
-    height: 35px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 45px;
-    }
-  }
-}
+  //   .axis {
+  //     height: 33px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 40px;
+  //     }
+  //   }
+  //   .icici {
+  //     height: 30px;
+  //     width: auto;
+  //     margin-right: 40px;
+  //     @include for-laptops {
+  //       height: 35px;
+  //     }
+  //   }
+  //   .au {
+  //     height: 30px;
+  //     width: auto;
+  //     margin-right: 40px;
+  //     @include for-laptops {
+  //       height: 40px;
+  //     }
+  //   }
+  //   .visa {
+  //     height: 25px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 30px;
+  //     }
+  //   }
+  //   .kotak {
+  //     height: 33px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 40px;
+  //     }
+  //   }
+  //   .hdfc {
+  //     height: 30px;
+  //     width: auto;
+  //     margin-right: 60px;
+  //     @include for-laptops {
+  //       height: 40px;
+  //     }
+  //   }
+  //   .rupay {
+  //     height: 38px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 55px;
+  //     }
+  //   }
+  //   .master {
+  //     height: 35px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 45px;
+  //     }
+  //   }
+  // }
 
-.customer_logo::-webkit-scrollbar {
-  display: none;
-}
+  // .customer_logo::-webkit-scrollbar {
+  //   display: none;
+  // }
 
-.customer_logo {
-  display: flex;
-  justify-content: space-evenly;
-  overflow-x: auto;
-  padding-left: 20px;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
-  scrollbar-width: none;
-  @include for-laptops {
-    padding-left: 20px;
-  }
+  // .customer_logo {
+  //   display: flex;
+  //   justify-content: space-evenly;
+  //   overflow-x: auto;
+  //   padding-left: 20px;
+  //   overflow-x: auto;
+  //   -ms-overflow-style: none;
+  //   overflow: -moz-scrollbars-none;
+  //   scrollbar-width: none;
+  //   @include for-laptops {
+  //     padding-left: 20px;
+  //   }
 
-  img {
-    margin-right: 20px;
-    @include for-laptops {
-      margin-right: 0px;
-    }
-  }
+  //   img {
+  //     margin-right: 20px;
+  //     @include for-laptops {
+  //       margin-right: 0px;
+  //     }
+  //   }
 
-  .box {
-    height: 30px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 35px;
-    }
-  }
+  //   .box {
+  //     height: 30px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 35px;
+  //     }
+  //   }
 
-  .reliance {
-    height: 30px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 50px;
-    }
-  }
+  //   .reliance {
+  //     height: 30px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 50px;
+  //     }
+  //   }
 
-  .pristyn {
-    height: 35px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 50px;
-    }
-  }
-  .everest {
-    height: 22px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 30px;
-    }
-  }
-  .cure {
-    height: 25px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 30px;
-    }
-  }
-  .infra {
-    height: 17px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 28px;
-    }
-  }
-  .dtdc {
-    height: 20px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 28px;
-    }
-  }
-  .starbucks {
-    height: 40px;
-    width: auto;
-    margin-right: 50px;
-    @include for-laptops {
-      height: 50px;
-    }
-  }
+  //   .pristyn {
+  //     height: 35px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 50px;
+  //     }
+  //   }
+  //   .everest {
+  //     height: 22px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 30px;
+  //     }
+  //   }
+  //   .cure {
+  //     height: 25px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 30px;
+  //     }
+  //   }
+  //   .infra {
+  //     height: 17px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 28px;
+  //     }
+  //   }
+  //   .dtdc {
+  //     height: 20px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 28px;
+  //     }
+  //   }
+  //   .starbucks {
+  //     height: 40px;
+  //     width: auto;
+  //     margin-right: 50px;
+  //     @include for-laptops {
+  //       height: 50px;
+  //     }
+  //   }
 }
 
 .scrollbar-thin::-webkit-scrollbar {

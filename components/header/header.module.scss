@@ -67,6 +67,10 @@
     margin: auto;
     width: -webkit-fill-available;
   }
+
+  .nav_right {
+    white-space: nowrap;
+  }
 }
 
 .buttons_container {
@@ -126,7 +130,6 @@
 .link {
   color: inherit;
 }
-
 .button_switch_wrapper {
   position: relative;
   display: flex;
@@ -134,29 +137,28 @@
   border-radius: 12px;
   width: fit-content;
   overflow: hidden;
+  background-color: #fff;
 
-  &::before {
-    content: "";
+  span {
     position: absolute;
     top: 4px;
     bottom: 4px;
-    left: 4px;
     width: calc(50% - 4px);
-    background-color: white; // blue-600
     border-radius: 8px;
-    transition: transform 0.3s ease;
+    background-color: #2563eb;
+    transition: 0.3s ease left;
     z-index: 0;
+    left: 4px;
   }
 
-  &.login-active::before {
-    transform: translateX(100%);
+  &:hover .button:nth-child(2):hover ~ span {
+    left: calc(50% + 4px);
   }
 
-  &.get-started-active::before {
-    transform: translateX(0%);
+  &:hover .button:nth-child(1):hover ~ span {
+    left: 4px;
   }
 }
-
 .button {
   padding: 12px 38px;
   font-size: 14px;
@@ -167,11 +169,15 @@
   color: #4b5563;
   cursor: pointer;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   transition: color 0.3s ease;
 
-  &.active {
+  &:hover {
     color: #ffffff;
+  }
+
+  &:active {
+    color: #4b5563;
   }
 }
 

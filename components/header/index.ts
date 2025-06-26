@@ -5,6 +5,7 @@ export { default as arrowDownWhite } from "./img/arrow-down-white.png"
 export { default as arrowDownBlack } from "./img/arrow-down-black.png"
 export { default as footerArrow } from "./img/footer-arrow.png"
 export { default as blueforwardArrow } from "./img/blue-forward-arrow.png"
+export { default as blueArrowUp } from "./img/blue-arrow-up.svg"
 export { default as readMore } from "./img/read-more.png"
 export { default as productModalEmptyStateImg } from "./img/product-empty-state-img.png"
 export { default as mobileStack } from "./img/mobile-stack.png"
@@ -84,6 +85,9 @@ export { default as qrCode } from "./img/qr-code.svg"
 export { default as qrCodeFilled } from "./img/qr-code-filled.svg"
 export { default as autoReconciliation } from "./img/auto-reconciliation.svg"
 export { default as autoReconciliationFilled } from "./img/auto-reconciliation-filled.svg"
+export { default as affordabilityFilled } from "./img/affordability-filled.svg"
+export { default as collectionReminderFilled } from "./img/collection-reminder-filled.svg"
+export { default as casflowFilled } from "./img/cashflow-filled.svg"
 
 //paybles
 export { default as billPayments } from "./img/bill-payments.svg"
@@ -133,8 +137,10 @@ export { default as payrollCard } from "./img/payroll-card.svg"
 export { default as payrollCardFilled } from "./img/payroll-card-filled.svg"
 export { default as multiForexCard } from "./img/multi-currency.svg"
 export { default as multiForexCardFilled } from "./img/multi-currency-filled.svg"
-// export { default as businessCard } from "./img/business-card.svg";
-// export { default as businessCardFilled } from "./img/business-card-filled.svg";
+export { default as multiWallatCardFilled } from "./img/multi-wallat-card.svg"
+export { default as fleetCardFilled } from "./img/fleet-card.svg"
+export { default as giftFilled } from "./img/gift-card-filled.svg"
+export { default as coporateCardFilled } from "./img/copprate-card-filled.svg"
 
 //brand-voucher (BOLT)
 export { default as eCommerce } from "./img/e-commerce.svg"
@@ -153,3 +159,9 @@ export { default as occasionFilled } from "./img/occasion-filled.svg"
 //partnership
 export { default as bank } from "./img/bank.svg"
 export { default as affiliate } from "./img/affiliated.svg"
+
+//resources
+export { default as blogsFilled } from "./img/blogs-filled.svg"
+export { default as casestudies } from "./img/case-studies.svg"
+export { default as whitepaperFilled } from "./img/white-paper.svg"
+export { default as vedioFilled } from "./img/vedios-filled.svg"
