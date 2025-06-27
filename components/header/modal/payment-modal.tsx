@@ -35,7 +35,7 @@ const PaymentModal = ({
 
             return (
               <SubProduct
-                key={mother.link}
+                key={mother.name}
                 subProducts={subProducts}
                 index={i}
                 hoveredProductIndex={hoveredProductIndex}

@@ -27,6 +27,9 @@
 }
 .progress_container {
   overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
   @include for-laptops {
     justify-content: space-between;
   }
@@ -34,9 +37,6 @@
   &::-webkit-scrollbar {
     display: none;
   }
-  -ms-overflow-style: none;
-
-  scrollbar-width: none;
 }
 
 .arrow {

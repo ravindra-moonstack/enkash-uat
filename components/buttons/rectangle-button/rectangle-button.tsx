@@ -11,6 +11,7 @@ export interface ButtonProps {
   width?: string
   actionImage?: StaticImageData | string // next/image compatible types
   iconSize?: number // must be a number for Image width/height
+  className?: string
 }
 
 const RectangleButton = ({
@@ -21,6 +22,7 @@ const RectangleButton = ({
   width,
   actionImage,
   iconSize = 20, // default icon size
+  className,
 }: ButtonProps) => {
   const handleClick = () => {
     if (typeof url === "string") {
@@ -37,7 +39,7 @@ const RectangleButton = ({
       disabled={isDisabled}
       className={`${styles.rectangle_button} ${theme ? styles[theme] : ""} ${
         isDisabled ? styles.disabled : ""
-      }`}
+      } ${className ?? ""}`}
       onClick={handleClick}
       style={{ width: width || "auto" }}
     >

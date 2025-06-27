@@ -1,7 +1,7 @@
 import styles from "./heading.module.scss"
 
 export interface HeadingProps {
-  size: "h0" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+  size: "h0" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "bannerHeading"
   title: string
   color?:
     | "black"
@@ -13,7 +13,9 @@ export interface HeadingProps {
     | "main-grey"
     | "bluish-purple"
     | "alternate-grey"
-  weight?: "3" | "4" | "5" | "6" | "7"
+    | "grey-100"
+
+  weight?: "2" | "3" | "4" | "5" | "6" | "7"
   italic?: boolean
   useH1TagInHtml?: boolean // New prop for using h1 tag
   useH2TagInHtml?: boolean // New prop for using h2 tag

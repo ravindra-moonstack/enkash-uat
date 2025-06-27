@@ -60,27 +60,29 @@ const WebHeader = ({ utmSource }: props) => {
     setIsHeaderBgWhite(false)
   }
 
+  const closeAllModals = () => {
+    setHoveredIndex(null)
+    setIsHeaderBgWhite(false)
+  }
+
   return (
     <div className={styles.header_wrapper}>
       {/* <TopBannerWeb /> */}
 
       <header
-        className={`w-full absolute z-10 d-flex flex-column ${styles.header}
+        className={`w-full absolute z-10 d-flex flex-column mx-auto ${
+          styles.header
+        }
        ${isHeaderBgWhite ? styles.bg_white : styles.bg_blue}`}
         onMouseLeave={() => {
           setHoveredIndex(null)
           setIsHeaderBgWhite(false)
         }}
       >
-        <nav className="d-flex justify-content-between mb-2 ">
+        <nav className="d-flex justify-content-between  ">
           <div className="d-flex">
             <Link href="/" className={styles.logo_container}>
-              <Image
-                src={enkashBlueLogo}
-                alt="logo"
-                width={123}
-                className="me-3"
-              />
+              <Image src={enkashBlueLogo} alt="logo" width={98} className="" />
             </Link>
             <ul>
               {hoveredIndex !== null && (
@@ -99,7 +101,7 @@ const WebHeader = ({ utmSource }: props) => {
                     itemRefs.current[index] = el
                   }}
                   key={item.name}
-                  className={`px-3 d-flex justify-content-center align-items-center cursor-pointer gap-1 ${
+                  className={` d-flex justify-content-center align-items-center cursor-pointer gap-1 ${
                     hoveredIndex === index
                       ? styles.opacity_selected
                       : styles.opacity_normal
@@ -123,6 +125,7 @@ const WebHeader = ({ utmSource }: props) => {
                     }
                     setIsHeaderBgWhite(false)
                   }}
+                  onClick={closeAllModals}
                 >
                   <span className={styles.link}>{item.name}</span>
                   <Image
@@ -135,7 +138,9 @@ const WebHeader = ({ utmSource }: props) => {
               ))}
             </ul>
           </div>
-          <div className="d-flex align-items-center gap-4">
+          <div
+            className={`d-flex align-items-center gap-4 ${styles.nav_right}`}
+          >
             {" "}
             <Link href={signupUrl} target="_blank">
               <button
@@ -147,34 +152,19 @@ const WebHeader = ({ utmSource }: props) => {
                 Get Support
               </button>
             </Link>
-            <div
-              className={`${styles.button_switch_wrapper} ${
-                active === "login"
-                  ? styles["login-active"]
-                  : styles["get-started-active"]
-              }`}
-            >
-              <button
-                className={`${styles.button} ${
-                  active === "login" ? styles.active : ""
-                }`}
-                onClick={() => setActive("login")}
-              >
+            <div className={styles.button_switch_wrapper}>
+              <button className={`${styles.button} ${styles.login} `}>
                 Login
               </button>
-              <button
-                className={`bg-brand-blue ${styles.button} ${
-                  active === "sales" ? styles.active : ""
-                }`}
-                onClick={() => setActive("sales")}
-              >
+              <button className={`${styles.button} ${styles.sales}`}>
                 Talk to Sales
               </button>
+              <span className={styles.slider}></span>
             </div>
           </div>
         </nav>
         {/* {true && (
-          <PartnershipModal
+          <PaymentModal
             onLinkClick={handleLinkClick}
             modalLeft={modalLeft ?? 200}
           />

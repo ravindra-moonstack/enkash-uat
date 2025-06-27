@@ -27,14 +27,21 @@ const xpenzProducts = [
         list: [
           {
             name: "Budget and Advances",
-            description: "Track & manage your budget with ease",
+            description: "Pre-approve & control spends",
             imageSrc: budgetAndAndvances,
             imageSrcHovered: budgetAndAndvancesFilled,
             link: "/budget-and-advances",
           },
           {
+            name: "Policy and Approval Flows",
+            description: "Custom workflows for every expense",
+            imageSrc: budgetAndAndvances,
+            imageSrcHovered: budgetAndAndvancesFilled,
+            link: "/approval-flows",
+          },
+          {
             name: "Hierarchy and Controls",
-            description: "Customizable hierarchies for expenses & approvals",
+            description: "Role-based access and limits",
             imageSrc: hierarchyAndControls,
             imageSrcHovered: hierarchyAndControlsFilled,
             link: "/hierarchy-and-controls",
@@ -42,24 +49,17 @@ const xpenzProducts = [
 
           {
             name: "Reimbursements",
-            description: "Reimburse employee expenses quickly",
+            description: "Measure B2B account health",
             imageSrc: reimbursements,
             imageSrcHovered: reimbursementsFilled,
             link: "/reimbursements",
           },
           {
             name: "Scan and Drop Receipts",
-            description: "Automate receipt management with OCR",
+            description: "Fast claims, zero policy gaps",
             imageSrc: scanAndDrop,
             imageSrcHovered: scanAndDropFilled,
             link: "/receipts",
-          },
-          {
-            name: "Insights",
-            description: "Control employee expenses with data analytics",
-            imageSrc: insights,
-            imageSrcHovered: insightsFilled,
-            link: "/expense-analytics-and-insights",
           },
           {
             name: "Petty Cash",
@@ -69,11 +69,11 @@ const xpenzProducts = [
             link: "/expense-analytics-and-insights",
           },
           {
-            name: "Policy and Approval Flows",
-            description: "Create policies & approval flows as per need",
-            imageSrc: budgetAndAndvances,
-            imageSrcHovered: budgetAndAndvancesFilled,
-            link: "/approval-flows",
+            name: "Insights",
+            description: "Real-time spend visibility, analytics",
+            imageSrc: insights,
+            imageSrcHovered: insightsFilled,
+            link: "/expense-analytics-and-insights",
           },
         ],
         footerText: "Optimize business spends efficiently",

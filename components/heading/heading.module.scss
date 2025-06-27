@@ -6,6 +6,7 @@
   font-size: 35px;
   line-height: 50px;
   margin-bottom: 0;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 100px;
     line-height: 100px;
@@ -21,6 +22,7 @@
   font-size: 31px;
   margin-bottom: 0;
   line-height: normal;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 64px;
   }
@@ -34,6 +36,7 @@
   font-size: 25px;
   margin-bottom: 0;
   line-height: normal;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 56px;
   }
@@ -48,6 +51,7 @@
   line-height: 22px;
   margin-bottom: 0;
   line-height: normal;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 32px;
   }
@@ -61,6 +65,7 @@
   font-size: 16px;
   margin-bottom: 0;
   line-height: normal;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 24px;
   }
@@ -76,6 +81,7 @@
   margin-bottom: 0;
   white-space: normal;
   line-height: normal;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 20px;
   }
@@ -91,12 +97,33 @@
   font-weight: 400;
   margin-bottom: 0;
   line-height: normal;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 18px;
   }
   @include for-window-zoomed-screens {
     font-size: 12px;
   }
+}
+
+.bannerHeading {
+  display: inline;
+  font-size: 24px;
+  line-height: 13px;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: normal;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 48px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 48px;
+  }
+}
+
+.f-2 {
+  font-weight: 200;
 }
 
 .f-3 {
