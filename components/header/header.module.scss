@@ -21,10 +21,12 @@
 }
 
 .header {
-  padding: 46px 64px 37px 64px;
-  // Transparent dark background
-  backdrop-filter: blur(30px); // Applies the blur effect
+  padding: 24px 16px 24px 16px;
+  margin-left: auto;
+  margin-right: auto;
+  backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
+
   ul {
     position: relative;
     padding: 0;
@@ -33,10 +35,11 @@
     flex-direction: row;
     margin-bottom: 0px;
     align-items: center;
+    gap: 10px;
   }
 
   li {
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
     line-height: 19px;
     text-align: center;
@@ -66,6 +69,7 @@
     // max-width: 1408px;
     margin: auto;
     width: -webkit-fill-available;
+    max-width: 1120px;
   }
 
   .nav_right {
@@ -130,6 +134,7 @@
 .link {
   color: inherit;
 }
+
 .button_switch_wrapper {
   position: relative;
   display: flex;
@@ -139,45 +144,48 @@
   overflow: hidden;
   background-color: #fff;
 
-  span {
-    position: absolute;
-    top: 4px;
-    bottom: 4px;
-    width: calc(50% - 4px);
-    border-radius: 8px;
-    background-color: #2563eb;
-    transition: 0.3s ease left;
-    z-index: 0;
-    left: 4px;
+  .button {
+    padding: 9px 20px;
+    font-size: 12px;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    background-color: transparent;
+    color: black;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.3s ease;
   }
 
-  &:hover .button:nth-child(2):hover ~ span {
+  .slider {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(50% - 4px);
+    background-color: #2563eb;
+    border-radius: 8px;
+    transition: 0.3s ease left;
+    z-index: 0;
+    left: 0;
+  }
+
+  // When hovering .login
+  &:hover .login:hover ~ .slider {
+    left: 0;
+  }
+
+  &:hover .login:hover {
+    color: #fff;
+  }
+
+  // When hovering .sales
+  &:hover .sales:hover ~ .slider {
     left: calc(50% + 4px);
   }
 
-  &:hover .button:nth-child(1):hover ~ span {
-    left: 4px;
-  }
-}
-.button {
-  padding: 12px 38px;
-  font-size: 14px;
-  font-weight: 500;
-  border: none;
-  border-radius: 12px;
-  background-color: transparent;
-  color: #4b5563;
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #ffffff;
-  }
-
-  &:active {
-    color: #4b5563;
+  &:hover .sales:hover {
+    color: #fff;
   }
 }
 
@@ -194,6 +202,6 @@
   background: transparent;
   color: black;
   border: none;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 500;
 }

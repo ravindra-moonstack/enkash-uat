@@ -106,6 +106,26 @@
   }
 }
 
+.bannerHeading {
+  display: inline;
+  font-size: 24px;
+  line-height: 13px;
+  font-weight: 400;
+  margin-bottom: 0;
+  line-height: normal;
+  letter-spacing: -0.04em;
+  @include for-laptops {
+    font-size: 48px;
+  }
+  @include for-window-zoomed-screens {
+    font-size: 48px;
+  }
+}
+
+.f-2 {
+  font-weight: 200;
+}
+
 .f-3 {
   font-weight: 300;
 }

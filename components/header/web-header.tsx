@@ -60,27 +60,29 @@ const WebHeader = ({ utmSource }: props) => {
     setIsHeaderBgWhite(false)
   }
 
+  const closeAllModals = () => {
+    setHoveredIndex(null)
+    setIsHeaderBgWhite(false)
+  }
+
   return (
     <div className={styles.header_wrapper}>
       {/* <TopBannerWeb /> */}
 
       <header
-        className={`w-full absolute z-10 d-flex flex-column ${styles.header}
+        className={`w-full absolute z-10 d-flex flex-column mx-auto ${
+          styles.header
+        }
        ${isHeaderBgWhite ? styles.bg_white : styles.bg_blue}`}
         onMouseLeave={() => {
           setHoveredIndex(null)
           setIsHeaderBgWhite(false)
         }}
       >
-        <nav className="d-flex justify-content-between mb-2 ">
+        <nav className="d-flex justify-content-between  ">
           <div className="d-flex">
             <Link href="/" className={styles.logo_container}>
-              <Image
-                src={enkashBlueLogo}
-                alt="logo"
-                width={123}
-                className="me-3"
-              />
+              <Image src={enkashBlueLogo} alt="logo" width={98} className="" />
             </Link>
             <ul>
               {hoveredIndex !== null && (
@@ -99,7 +101,7 @@ const WebHeader = ({ utmSource }: props) => {
                     itemRefs.current[index] = el
                   }}
                   key={item.name}
-                  className={`px-3 d-flex justify-content-center align-items-center cursor-pointer gap-1 ${
+                  className={` d-flex justify-content-center align-items-center cursor-pointer gap-1 ${
                     hoveredIndex === index
                       ? styles.opacity_selected
                       : styles.opacity_normal
@@ -123,6 +125,7 @@ const WebHeader = ({ utmSource }: props) => {
                     }
                     setIsHeaderBgWhite(false)
                   }}
+                  onClick={closeAllModals}
                 >
                   <span className={styles.link}>{item.name}</span>
                   <Image
@@ -150,9 +153,13 @@ const WebHeader = ({ utmSource }: props) => {
               </button>
             </Link>
             <div className={styles.button_switch_wrapper}>
-              <button className={styles.button}>Login</button>
-              <button className={styles.button}>Talk to Sales</button>
-              <span></span> {/* This span is the animated background */}
+              <button className={`${styles.button} ${styles.login} `}>
+                Login
+              </button>
+              <button className={`${styles.button} ${styles.sales}`}>
+                Talk to Sales
+              </button>
+              <span className={styles.slider}></span>
             </div>
           </div>
         </nav>

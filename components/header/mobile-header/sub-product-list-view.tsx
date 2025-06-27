@@ -4,7 +4,7 @@ import { Fragment } from "react"
 import Link from "next/link"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 
-import { arrowDown, blueArrowUp } from ".."
+import { blueArrowUp } from ".."
 
 interface SubProductListViewProps {
   navTitle: string // 👈 NEW
@@ -16,7 +16,7 @@ interface SubProductListViewProps {
       currentHeading: { name: string; description: string }
       list: {
         name: string
-        description: string
+        description?: string
         link: string
         imageSrc?: any
         imageSrcHovered?: any

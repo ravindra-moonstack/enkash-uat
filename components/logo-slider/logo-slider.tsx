@@ -25,7 +25,7 @@ const LogoSlider = ({ type }: { type: "partners" | "customers" }) => {
           <div>
             <div
               className={`${styles.bank_logo} ${styles.customer_logo}
-              d-flex align-items-center justify-content-between mt-3`}
+              d-flex align-items-center justify-content-between mt-3 mb-3`}
             >
               {selectedTab === "partners" && (
                 <Image
@@ -91,7 +91,7 @@ const LogoSlider = ({ type }: { type: "partners" | "customers" }) => {
             <div id="marquee">
               <Marquee speed={80}>
                 <div
-                  className={`${styles.bank_logo} ${styles.customer_logo} d-flex align-items-center justify-content-between mt-3`}
+                  className={`${styles.bank_logo} ${styles.customer_logo} d-flex align-items-center justify-content-between mt-3 mb-3`}
                 >
                   {selectedTab === "partners" && (
                     <>

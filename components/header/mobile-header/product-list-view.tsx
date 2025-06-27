@@ -1,6 +1,6 @@
 import styles from "./mobile-header.module.scss"
 import { Fragment, useState } from "react"
-import SubProductListView from "./sub-product-list-view"
+
 import { forwardArrowBlue } from ".."
 import Image from "next/image"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -16,7 +16,7 @@ interface ProductListViewProps {
 const ProductListView = ({
   products,
   childProducts,
-  setCurrentStep,
+
   signupUrl,
 }: ProductListViewProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null)

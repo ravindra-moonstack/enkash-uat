@@ -612,7 +612,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
         <div className={styles.faq_bg}>
-          <Image src={acceleratedGrowthImg} alt="background image" />x
+          <Image src={acceleratedGrowthImg} alt="background image" />
         </div>
       </div>
       <div

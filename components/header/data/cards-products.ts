@@ -13,8 +13,6 @@ import {
   fuelCardFilled,
   purchaseCard,
   purchaseCardFilled,
-  diyCard,
-  diyCardFilled,
   multiWallatCardFilled,
   fleetCardFilled,
   giftFilled,

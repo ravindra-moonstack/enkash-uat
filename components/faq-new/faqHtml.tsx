@@ -2,6 +2,7 @@
 
 import FAQ, { FAQProps } from "@/components/faq-new/faq"
 import { useState } from "react"
+import styles from "./faq.module.scss" // Create this for styling
 
 interface FAQHtmlProps {
   faqData: Omit<
@@ -17,8 +18,14 @@ const FAQHtml: React.FC<FAQHtmlProps> = ({ faqData }) => {
     setOpenFAQIndex((prevIndex) => (prevIndex === index ? null : index))
   }
 
+  const isScrollable = faqData.length > 5
+
   return (
-    <div>
+    <div
+      className={`${styles.faq_wrapper} ${
+        isScrollable ? styles.scrollable : ""
+      }`}
+    >
       {faqData.map((item, index) => (
         <FAQ
           key={index}
