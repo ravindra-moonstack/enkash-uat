@@ -684,26 +684,30 @@ const PaymentGateway = (): React.JSX.Element => {
             <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
-          <div>
-            <Heading
-              title="Have more questions? "
-              color="main-grey"
-              size="h3"
-              weight="5"
-              useH1TagInHtml={true}
-            />
-          </div>
-          <div className="mt-2">
-            <RectangleButton
-              title="Get started today"
-              theme="border-gray"
-              actionImage={blueArrow}
-              iconSize={15}
-              url="/sales/?source=receivables"
-            />
-          </div>
-          <div>
-            <FAQHtml faqData={faqData} />
+          <div className="d-flex justify-content-between">
+            <div>
+              <div>
+                <Heading
+                  title="Have more questions? "
+                  color="main-grey"
+                  size="h3"
+                  weight="5"
+                  useH1TagInHtml={true}
+                />
+              </div>
+              <div className="mt-2">
+                <RectangleButton
+                  title="Get started today"
+                  theme="border-gray"
+                  actionImage={blueArrow}
+                  iconSize={15}
+                  url="/sales/?source=receivables"
+                />
+              </div>
+            </div>
+            <div className={`${styles.faqData}`}>
+              <FAQHtml faqData={faqData} />
+            </div>
           </div>
         </div>
       </div>
