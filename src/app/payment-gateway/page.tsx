@@ -75,14 +75,14 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Heading
                   title={`India’s First Payment${space}`}
                   color="black"
-                  size="h2"
+                  size="bannerHeading"
                   weight="7"
                 />
                 <div>
                   <Heading
                     title=" Gateway Built for SMBs"
                     color="black"
-                    size="h2"
+                    size="bannerHeading"
                     weight="7"
                   />
                 </div>
