@@ -18,11 +18,11 @@ import Link from "next/link"
 
 const FooterV2 = () => {
   return (
-    <div className={`${styles.footer}`}>
-      <div className={`row ${styles.footer_padding}`}>
+    <div className={` ${styles.footer}`}>
+      <div className={`max-w-auto  ${styles.footer_padding}`}>
         <div className={`d-flex ${styles.footer_section}`}>
           {/* 1st col */}
-          <div className={`col-6 col-md-3  ${styles.logo_container}`}>
+          <div className={` ${styles.logo_container}`}>
             <Link href="/" className={styles.logo_img}>
               <Image
                 src={enkashBlueLogo}
@@ -100,7 +100,7 @@ const FooterV2 = () => {
                 <div
                   className={`col-6 col-md-7 ${styles.info_div} ${styles.info_div_two}`}
                 >
-                  <div className={`col-6 col-md-3 ${styles.info_header_two}`}>
+                  <div className={`${styles.info_header_two}`}>
                     <h4 className={`${styles.title}`}>Help and Support</h4>
                   </div>
                   <div className={`d-flex ${styles.info_body}`}>
@@ -240,11 +240,9 @@ const FooterV2 = () => {
               className={`d-flex flex-md-row  gap-2 w-100  ${styles.light_bg}`}
             >
               {/* 2nd col */}
-              <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
+              <div className={`${styles.footer_links_col}`}>
                 <Link href="/collect-payments">
-                  <h4 className={` ${styles.title}`}>
-                    Collect Payments<sup>#</sup>
-                  </h4>
+                  <h4 className={` ${styles.title}`}>Collect Payments</h4>
                 </Link>
 
                 <div className="d-flex flex-column ">
@@ -271,11 +269,7 @@ const FooterV2 = () => {
                       <li>
                         <Link href="/payment-page/">Payment Page</Link>
                       </li>
-                      <li>
-                        <Link href="/bulk-payment-collection/">
-                          Bulk Collect
-                        </Link>
-                      </li>
+
                       <li className="d-flex">
                         <Link href="/upi-payments">UPI Payments</Link>
                         {/* <div className={`my-auto ${styles.new_badge}`}>
@@ -284,7 +278,7 @@ const FooterV2 = () => {
                       </div> */}
                       </li>
                       <li className="d-flex">
-                        <Link href="/qr-codes">QR Codes</Link>
+                        <Link href="/qr-codes">QR Code</Link>
                         {/* <div className={`my-auto ${styles.new_badge}`}>
                         {" "}
                         Coming Soon
@@ -299,87 +293,61 @@ const FooterV2 = () => {
                       <li>
                         <Link href="/e-nach/">e-NACH</Link>
                       </li>
-                      <li>
-                        <Link href="/subscriptions/">Subscriptions</Link>
-                      </li>
-                      <li>
-                        <Link href="/collection-reminder/">
-                          Reminder Engine
-                        </Link>
-                      </li>
+
                       <li>
                         <Link href="/instant-settlement/">
                           Instant Settlements
                         </Link>
                       </li>
-                      <li>
-                        <Link href="/digital-invoicing/">Invoices</Link>
-                      </li>
-                      <li>
-                        <Link href="/collection-analytics/">
-                          Collection Analytics
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/auto-reconciliation/">
-                          Auto Reconciliation
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
 
-                  {/* col-1 resources */}
-                  <div className="mt-3">
-                    <h4 className={`${styles.title}`}>Resources</h4>
-                    <ul>
                       <li>
-                        <Link
-                          target="_blank"
-                          href="https://www.enkash.com/resources/"
-                        >
-                          Blogs
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          target="_blank"
-                          href="https://www.enkash.com/resources/videos/"
-                        >
-                          Product Videos
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          target="_blank"
-                          href="https://www.enkash.com/resources/press-release/"
-                        >
-                          Press Release
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          target="_blank"
-                          href="https://www.enkash.com/resources/media-coverage/"
-                        >
-                          News & Media
-                        </Link>
-                      </li>
-                      <li>
-                        <Link
-                          target="_blank"
-                          href="https://www.enkash.com/resources/customer-stories/"
-                        >
-                          Customer Stories
-                        </Link>
+                        <Link href="/affordability/">Affordability</Link>
                       </li>
                     </ul>
                   </div>
                 </div>
+
+                <div>
+                  <Link href="/expense-management">
+                    <h4 className={`col-12 ${styles.title}`}>Expenses</h4>
+                  </Link>
+                  <ul>
+                    <li>
+                      <Link href="/budget-and-advances/">
+                        Budgets and Advances
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/hierarchy-and-controls/">
+                        Hierarchy and Controls
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/reimbursements/">Reimbursement</Link>
+                    </li>
+                    <li>
+                      <Link href="/receipts/">Scan and Drop Receipts</Link>
+                    </li>
+                    <li>
+                      <Link href="/petty-cash/">Petty Cash</Link>
+                    </li>
+                    <li>
+                      <Link href="/expense-analytics-and-insights/">
+                        Insights
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/approval-flows/">
+                        Policy and Approval Flows
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
 
               {/* 3rd col */}
-              <div className={`col-6 col-md-3`}>
-                <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
+              <div className={``}>
+                <div className={`${styles.footer_links_col}`}>
                   <div className="">
                     <ul className="mb-0">
                       <li>
@@ -388,13 +356,9 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/business-bill-payment/">Bill Payment</Link>
-                      </li>
-                      <li>
-                        <Link href="/express-pay/">Express Pay</Link>
-                      </li>
-                      <li>
-                        <Link href="/gst-payment/">GST Payment</Link>
+                        <Link href="/business-bill-payment/">
+                          Business Bill Payments
+                        </Link>
                       </li>
                       <li>
                         <Link href="/vendor-payment/">Vendor Payment</Link>
@@ -408,20 +372,50 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
+                        <Link href="/express-pay/">Express Pay/Bulk</Link>
+                      </li>
+
+                      <li>
+                        <Link href="/payout/">Payout</Link>
+                      </li>
+
+                      <li>
                         <Link href="/vendor-management/">
                           Vendor Management
                         </Link>
                       </li>
                       <li>
-                        <Link href="/seamless-banking/">Seamless Banking</Link>
+                        <Link href="/gst-payment/">GST Payment</Link>
                       </li>
-                      <li>
-                        <Link href="/payroll/">Payroll Processing</Link>
-                      </li>
+
                       <li>
                         <Link href="/payable-analytics/">
                           Payable Analytics
                         </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="">
+                    <ul className="mb-3">
+                      <li>
+                        <Link href="/vouchers">
+                          <h4 className={` ${styles.title}`}>Vouchers</h4>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/e-commerce/">E-commerce</Link>
+                      </li>
+                      <li>
+                        <Link href="/movies-music/">Movies & Music</Link>
+                      </li>
+                      <li>
+                        <Link href="/apparels/">Apparels</Link>
+                      </li>
+                      <li>
+                        <Link href="/food-beverges/">Food & Beverages</Link>
+                      </li>
+                      <li>
+                        <Link href="/health-wellness/">Health & Wellness</Link>
                       </li>
                     </ul>
                   </div>
@@ -432,14 +426,6 @@ const FooterV2 = () => {
                       </h4>
                     </Link>
                     <ul>
-                      <li>
-                        <a
-                          href="https://docs.enkash.com/payouts"
-                          target="_blank"
-                        >
-                          Payout
-                        </a>
-                      </li>
                       <li>
                         <a
                           href="https://docs.enkash.com/payment-gateway"
@@ -494,51 +480,123 @@ const FooterV2 = () => {
               </div>
 
               {/* 4th col */}
-              <div className={`col-6 col-md-3`}>
-                <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
+              <div className={``}>
+                <div className={`${styles.footer_links_col}`}>
                   <div>
                     <div className={styles.freedom_card_box}>
                       <Link href="/corporate-cards">
-                        <h4 className={`${styles.title}`}>Cards</h4>
+                        <h4 className={`${styles.title}`}>Corporate Cards</h4>
                       </Link>
                     </div>
                     <ul>
                       <li>
-                        <Link href="/virtual-card/">Virtual Cards*</Link>
+                        <Link href="/meal-card/">Meal Cards</Link>
+                      </li>
+                      <li>
+                        <Link href="/fuel-card/">Fuel Cards</Link>
                       </li>
                       <li>
                         <Link href="/digital-marketing-card/">
-                          Digital Marketing Cards*
+                          Digital Marketing Cards
                         </Link>
                       </li>
                       <li>
-                        <Link href="/fuel-card/">Fuel Cards*</Link>
-                      </li>
-                      <li>
-                        <Link href="/meal-card/">Meal Cards*</Link>
-                      </li>
-                      <li>
-                        <Link href="/virtual-cards/">SaaS Cards*</Link>
-                      </li>
-                      <li>
-                        <Link href="/purchase-card/">Purchase Cards*</Link>
+                        <Link href="/virtual-cards/">SaaS Cards</Link>
                       </li>
 
                       <li>
-                        <Link href="/travel-and-expense-card">T&E Cards*</Link>
+                        <Link href="/virtual-card/">Payroll Cards</Link>
+                      </li>
+
+                      <li>
+                        <Link href="/diy-card-module">Multi Wallet Card</Link>
                       </li>
                       <li>
-                        <Link href="/diy-card-module">DIY Card Module*</Link>
+                        <Link href="/purchase-card/">Fleet Card</Link>
+                      </li>
+                      <li>
+                        <Link href="/purchase-card/">Forex Card</Link>
+                      </li>
+
+                      <li>
+                        <Link href="/travel-and-expense-card">T&E Cards</Link>
+                      </li>
+                      <li>
+                        <Link href="/purchase-card/">Purchase Cards</Link>
                       </li>
                     </ul>
                   </div>
                   <div className="mt-3">
+                    <Link href="/loyalty-lounge">
+                      <h4 className={`col-12 ${styles.title}`}>Rewards</h4>
+                    </Link>
+                    <ul>
+                      <li>
+                        <Link href="/employee-rewards/">Employee Rewards</Link>
+                      </li>
+                      <li>
+                        <Link href="/channel-incentives/">
+                          Channel Incentives
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/gift-cards/">Gift Cards</Link>
+                      </li>
+                      <li>
+                        <Link href="/offers/">Offers</Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className={``}>
+                <div className={`${styles.footer_links_col}`}>
+                  <div className="">
                     <div className={styles.freedom_card_box}>
                       <Link href="/corporate-cards">
                         <h4 className={`${styles.title}`}>Solutions</h4>
                       </Link>
                     </div>
                     <ul>
+                      <li>
+                        <Link href="/solutions/e-commerce">E-commerce</Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/banking">Banking</Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/education">Education</Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/insurance">Insurance</Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/real-estate">Real Estate</Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/enterprises">
+                          For Enterprises
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/startups-smes">
+                          For Startups & SMEs
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/virtual-card">Virtual Card</Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/diy-card-module">
+                          DIY Card Module
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/seamless-banking">
+                          Seamless Banking
+                        </Link>
+                      </li>
                       <li>
                         <Link href="/solutions/customized-reporting">
                           Customized Reporting
@@ -550,27 +608,17 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/solutions/cashflow-analytics/">
-                          Cash Flow Analytics
+                        <Link href="/solutions/cashflow-analytics">
+                          Cashflow Analytics
                         </Link>
                       </li>
                       <li>
-                        <Link href="/solutions/apis-modules/">
-                          APIs & Modules
+                        <Link href="/solutions/cfo-analytics">
+                          CFO Analytics
                         </Link>
                       </li>
                       <li>
-                        <Link href="/solutions/integrations/">
-                          Integrations
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/cfo-insights/">
-                          CFO Insights
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/instant-card-management/">
+                        <Link href="/solutions/instant-card-management">
                           Instant Card Management
                         </Link>
                       </li>
@@ -579,13 +627,16 @@ const FooterV2 = () => {
                   <div className="mt-3">
                     <div className={styles.freedom_card_box}>
                       <Link href="/corporate-cards">
-                        <h4 className={`${styles.title}`}>Company</h4>
+                        <h4 className={`${styles.title}`}>Parthnership</h4>
                       </Link>
                     </div>
                     <ul>
                       <li>
-                        <Link href="/sales?source=getstarted_footer">
-                          Sales
+                        <Link href="/solutions/for-banks">For Banks</Link>
+                      </li>
+                      <li>
+                        <Link href="/solutions/affiliate-program">
+                          Affiliate Program
                         </Link>
                       </li>
                     </ul>
@@ -593,98 +644,97 @@ const FooterV2 = () => {
                 </div>
               </div>
 
-              {/* 5th col */}
-              <div className={`col-6 col-md-3`}>
-                <div className={`col-6 col-md-3 ${styles.footer_links_col}`}>
-                  <div>
-                    <Link href="/expense-management">
-                      <h4 className={`col-12 ${styles.title}`}>Expenses</h4>
+              <div className={`${styles.footer_links_col}`}>
+                {/* col-1 resources */}{" "}
+                <div className="">
+                  <div className={styles.freedom_card_box}>
+                    <Link href="/corporate-cards">
+                      <h4 className={`${styles.title}`}>Company</h4>
                     </Link>
-                    <ul>
-                      <li>
-                        <Link href="/budget-and-advances/">
-                          Budgets and Advances
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/hierarchy-and-controls/">
-                          Hierarchy and Controls
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/approval-flows/">
-                          Policy and Approval Flows
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/reimbursements/">Reimbursement</Link>
-                      </li>
-
-                      <li>
-                        <Link href="/receipts/">Scan and Drop Receipts</Link>
-                      </li>
-                      <li>
-                        <Link href="/expense-analytics-and-insights/">
-                          Insights
-                        </Link>
-                      </li>
-                    </ul>
                   </div>
-                  <div className="mt-3">
-                    <Link href="/loyalty-lounge">
-                      <h4 className={`col-12 ${styles.title}`}>Rewards</h4>
-                    </Link>
-                    <ul>
-                      <li>
-                        <Link href="/channel-incentives/">
-                          Channel Incentives
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/employee-rewards/">Employee Rewards</Link>
-                      </li>
-
-                      <li>
-                        <Link href="/gift-cards/">Gift Cards</Link>
-                      </li>
-                      <li>
-                        <Link href="/offers/">Offers</Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="mt-3">
-                    <h4 className={`col-12 ${styles.title}`}>Policies</h4>
-                    <ul>
-                      <li>
-                        <Link href="/grievance-policy/">
-                          Grievances and Redressal
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/chargeback-dispute-management-policy/">
-                          Dispute Management
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/privacy-legal/">Privacy & Legal</Link>
-                      </li>
-                      <li>
-                        <Link href="/term-condition/">Terms & Conditions</Link>
-                      </li>
-                      <li>
-                        <Link
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          href="https://www.sbmbank.co.in/aboutus/grievance-redressal-mechanism.php"
-                        >
-                          Partner Bank Grievances
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/refund-policy/">Refund Policy</Link>
-                      </li>
-                    </ul>
-                  </div>
+                  <ul>
+                    <li>
+                      <Link href="/sales?source=getstarted_footer">Sales</Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-3">
+                  <h4 className={`${styles.title}`}>Resources</h4>
+                  <ul>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/"
+                      >
+                        Blogs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/videos/"
+                      >
+                        Product Videos
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/press-release/"
+                      >
+                        Press Release
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/media-coverage/"
+                      >
+                        News & Media
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/customer-stories/"
+                      >
+                        Customer Stories
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-3">
+                  <h4 className={`col-12 ${styles.title}`}>Policies</h4>
+                  <ul>
+                    <li>
+                      <Link href="/grievance-policy/">
+                        Grievances and Redressal
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/chargeback-dispute-management-policy/">
+                        Dispute Management
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/privacy-legal/">Privacy & Legal</Link>
+                    </li>
+                    <li>
+                      <Link href="/term-condition/">Terms & Conditions</Link>
+                    </li>
+                    <li>
+                      <Link
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://www.sbmbank.co.in/aboutus/grievance-redressal-mechanism.php"
+                      >
+                        Partner Bank Grievances
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/refund-policy/">Refund Policy</Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </div>
