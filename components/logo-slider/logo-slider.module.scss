@@ -24,7 +24,8 @@
   -ms-overflow-style: none;
   overflow: -moz-scrollbars-none;
   scrollbar-width: none;
-
+  padding-top: 8px;
+  padding-bottom: 8px;
   padding-left: 20px;
   @include for-laptops {
     padding-left: 20px;
