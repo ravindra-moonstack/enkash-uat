@@ -45,9 +45,6 @@
     padding-bottom: 5px;
     align-self: flex-end; // pushes to the right in a flex column layout
     border-bottom: 2px solid hsla(0, 0%, 60%, 0.7);
-    @include for-laptops {
-      width: 70%; // optional: control size
-    }
   }
 
   .question {
