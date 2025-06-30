@@ -297,14 +297,15 @@ html body {
 /* Other Classes */
 
 .mobile-only {
-  @include for-laptops {
+  @media (min-width: 1024px) {
     display: none !important;
   }
 }
 
 .desktop-only {
   display: none !important;
-  @include for-laptops {
+
+  @media (min-width: 1024px) {
     display: revert !important;
   }
 }
@@ -370,4 +371,9 @@ html body {
 
 .noBorder {
   border: none;
+}
+
+.max-w-auto {
+  max-width: 1408px;
+  margin: auto;
 }

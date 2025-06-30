@@ -14,6 +14,10 @@ import identifyIcon from "./img/identify.svg"
 import detectIcon from "./img/detect.svg"
 import monitorIcon from "./img/monitor.svg"
 import customizeIcon from "./img/customize.svg"
+import instantIcon from "./img/instant-card.svg"
+import onboardingIcon from "./img/onboarding.svg"
+import noThidPartyIcon from "./img/noThidParty.svg"
+import diyControlIcon from "./img/diy-control.svg"
 
 const dataSets = [
   {
@@ -225,6 +229,48 @@ const spendAnalyticsData = [
     icon: customizeIcon,
   },
 ]
+
+const rbiData = [
+  {
+    title: "Instant card issuance",
+    description: "without routing requests through banks",
+    icon: instantIcon,
+  },
+  {
+    title: "Faster onboarding",
+    description: "and fewer compliance hurdles",
+    icon: onboardingIcon,
+  },
+  {
+    title: "No third-party delays",
+    description: "or dependencies",
+    icon: noThidPartyIcon,
+  },
+  {
+    title: "DIY control",
+    description: "over how your cards are issued, used, and managed",
+    icon: diyControlIcon,
+  },
+]
+
+const corporateCardData = [
+  {
+    title: "• Reloadable with full/minimum KYC options",
+  },
+  {
+    title: "• Set daily, monthly, and category-based limits",
+  },
+  {
+    title:
+      "• Instant card creation, blocking, & top-up from a single dashboard",
+  },
+  {
+    title: "• Real-time tracking, smart analytics, and full policy compliance",
+  },
+  {
+    title: "• Supports digital wallets with future-ready UPI integration",
+  },
+]
 export {
   blogData,
   dataSets,
@@ -232,4 +278,6 @@ export {
   projects,
   intantActionData,
   spendAnalyticsData,
+  rbiData,
+  corporateCardData,
 }
