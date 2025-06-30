@@ -59,10 +59,6 @@ const MobileHeader = ({ utmSource }: Props) => {
             title: "Credit Cards",
             products: cardsProducts[1].payableProducts || [],
           },
-          {
-            title: "Cards +",
-            products: cardsProducts[2].payableProducts || [],
-          },
         ]
       case 2:
         return [

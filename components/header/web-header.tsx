@@ -163,36 +163,45 @@ const WebHeader = ({ utmSource }: props) => {
             </div>
           </div>
         </nav>
-        {/* {true && (
-          <PaymentModal
-            onLinkClick={handleLinkClick}
-            modalLeft={modalLeft ?? 200}
-          />
-        )} */}
-        {hoveredIndex === 0 && modalLeft !== null && (
-          <PaymentModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
-        )}
-        {hoveredIndex === 1 && modalLeft !== null && (
-          <CardModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
-        )}
-        {hoveredIndex === 2 && modalLeft !== null && (
-          <ExpensesModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
-        )}
 
-        {hoveredIndex === 3 && modalLeft !== null && (
-          <LoyaltyModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
-        )}
+        <div className="max-w-auto">
+          {/* {true && (
+            <PaymentModal
+              onLinkClick={handleLinkClick}
+              modalLeft={modalLeft ?? 200}
+            />
+          )} */}
+          {hoveredIndex === 0 && modalLeft !== null && (
+            <PaymentModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+          )}
+          {hoveredIndex === 1 && modalLeft !== null && (
+            <CardModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+          )}
+          {hoveredIndex === 2 && modalLeft !== null && (
+            <ExpensesModal
+              onLinkClick={handleLinkClick}
+              modalLeft={modalLeft}
+            />
+          )}
 
-        {hoveredIndex === 4 && modalLeft !== null && (
-          <ResourcesModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
-        )}
+          {hoveredIndex === 3 && modalLeft !== null && (
+            <LoyaltyModal onLinkClick={handleLinkClick} modalLeft={modalLeft} />
+          )}
 
-        {hoveredIndex === 5 && modalLeft !== null && (
-          <PartnershipModal
-            onLinkClick={handleLinkClick}
-            modalLeft={modalLeft}
-          />
-        )}
+          {hoveredIndex === 4 && modalLeft !== null && (
+            <ResourcesModal
+              onLinkClick={handleLinkClick}
+              modalLeft={modalLeft}
+            />
+          )}
+
+          {hoveredIndex === 5 && modalLeft !== null && (
+            <PartnershipModal
+              onLinkClick={handleLinkClick}
+              modalLeft={modalLeft}
+            />
+          )}
+        </div>
       </header>
     </div>
   )
