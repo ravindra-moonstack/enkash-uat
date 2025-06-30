@@ -14,10 +14,12 @@ const PolicyCard: React.FC<CardProps> = ({
   icon,
   title,
   description,
-  className = "",
+  className,
 }) => {
   return (
-    <div className={`d-flex align-items-start  ${styles.policyCard}`}>
+    <div
+      className={`d-flex align-items-start   ${className}  ${styles.policyCard}`}
+    >
       {/* Icon */}
       <div
         className="d-flex justify-content-center align-items-center bg-light rounded-circle"
