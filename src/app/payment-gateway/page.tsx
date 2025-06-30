@@ -75,20 +75,20 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Heading
                   title={`India’s First Payment${space}`}
                   color="black"
-                  size="bannerHeading"
+                  size="h2"
                   weight="7"
                 />
                 <div>
                   <Heading
                     title=" Gateway Built for SMBs"
                     color="black"
-                    size="bannerHeading"
+                    size="h2"
                     weight="7"
                   />
                 </div>
               </div>
 
-              <div className="d-flex mt-3 pe-5">
+              <div className="d-flex mt-3 mb-3 pe-5">
                 <Heading
                   title="The best payment gateway for a superior merchant experience."
                   color="black"
@@ -97,15 +97,11 @@ const PaymentGateway = (): React.JSX.Element => {
                 />
               </div>
               <div className=" d-flex flex-column  align-items-start">
-                <Image
-                  src={groupIcon}
-                  alt="card visual"
-                  className={styles.card_image}
-                />
+                <Image src={groupIcon} alt="card visual" />
                 <div
                   className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
                 >
-                  <div className="me-2">
+                  <div>
                     <RectangleButton
                       title="Get Started"
                       theme="blue"
@@ -272,7 +268,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Heading
                   title={`Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms ${space}`}
                   color="main-grey"
-                  size="h4"
+                  size="h5"
                   weight="4"
                 />
               </div>
@@ -310,7 +306,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   src={integration}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  style={{ maxHeight: "625px" }}
+                  height={618}
                 />
               </div>
             </div>
@@ -328,7 +324,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   src={paymenyMethod}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  style={{ maxHeight: "625px" }}
+                  style={{ maxHeight: "563px" }}
                 />
               </div>
             </div>
@@ -344,7 +340,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Heading
                   title={`Provide your customers with the freedom to choose how they pay with several online payment options. ${space}`}
                   color="main-grey"
-                  size="h4"
+                  size="h5"
                   weight="4"
                 />
               </div>
@@ -387,7 +383,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Heading
                   title={`Get detailed statistics and reports on payments, settlements, refunds, and much more for informed decision-making. ${space}`}
                   color="main-grey"
-                  size="h4"
+                  size="h5"
                   weight="4"
                 />
               </div>
@@ -425,7 +421,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   src={dashboard}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  style={{ maxHeight: "625px" }}
+                  height={672}
                 />
               </div>
             </div>
@@ -443,7 +439,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   src={rank}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  style={{ maxHeight: "625px" }}
+                  height={493}
                 />
               </div>
             </div>
@@ -459,7 +455,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Heading
                   title={`Enjoy enterprise-grade security to reassure your customers of secure and reliable payment transactions. ${space}`}
                   color="main-grey"
-                  size="h4"
+                  size="h5"
                   weight="4"
                 />
               </div>
@@ -502,7 +498,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Heading
                   title={`Dedicated Relationship Managers: Get personalized assistance from experts who understand your business and growth goals. ${space}`}
                   color="main-grey"
-                  size="h4"
+                  size="h5"
                   weight="4"
                 />
               </div>
@@ -540,7 +536,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   src={support}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  style={{ maxHeight: "625px" }}
+                  height={705}
                 />
               </div>
             </div>
@@ -574,7 +570,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Heading
                   title={`Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms ${space}`}
                   color="main-grey"
-                  size="h4"
+                  size="h5"
                   weight="4"
                 />
               </div>
@@ -609,7 +605,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={`${styles.eigth_row}  `}>
         <div className="max-w-auto ">
-          <div className={`text-start relative `}>
+          <div className={`${styles.section}`}>
             <div
               className={`${styles.title} text-start  d-flex flex-column pb-5`}
             >
@@ -620,7 +616,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 weight="6"
               />
               <Heading
-                title={` Accelerated Growth ${space}`}
+                title={`Accelerated Growth ${space}`}
                 color="equity-blue"
                 size="h1"
                 weight="6"
@@ -649,15 +645,16 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
               ))}
             </div>
-
-            <div className={styles.faq_bg}>
-              <Image src={acceleratedGrowthImg} alt="background image" />
+            <div className="col-6">
+              <div className={styles.faq_bg}>
+                <Image src={acceleratedGrowthImg} alt="background image" />
+              </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className={`row ${styles.fifth_row} `}>
+      <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <Heading
