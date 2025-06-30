@@ -47,16 +47,14 @@
     }
   }
 
-  .card_image {
-    margin-top: 14px;
-  }
   .first_row_title {
-    padding-top: 106px;
-    padding-bottom: 32px;
+    padding-top: 48px;
+    padding-bottom: 20px;
   }
 
   .first_row_button {
-    padding-top: 62px;
+    padding-top: 48px;
+    gap: 26px;
   }
 }
 
@@ -199,6 +197,7 @@
   }
   .list_button {
     padding-top: 33px;
+    padding-left: 70px;
   }
 }
 
@@ -328,13 +327,17 @@
   text-align: center;
   padding-bottom: 50px;
   padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
   @include for-laptops {
     padding-bottom: 100px;
     padding-top: 85px;
+    padding-left: 80px;
+    padding-right: 80px;
   }
-
-  .faq_bg {
-    img {
+  .section {
+    text-align: start;
+    .faq_bg {
       position: absolute;
       bottom: 0;
       right: 0;

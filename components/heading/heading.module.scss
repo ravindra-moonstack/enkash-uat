@@ -21,7 +21,7 @@
   display: inline;
   font-size: 31px;
   margin-bottom: 0;
-  line-height: normal;
+  line-height: 80px;
   letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 64px;
@@ -49,9 +49,8 @@
 .h3 {
   display: inline;
   font-size: 20px;
-  line-height: 22px;
+  line-height: 40px;
   margin-bottom: 0;
-  line-height: normal;
   letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 32px;
@@ -65,7 +64,7 @@
   display: inline;
   font-size: 16px;
   margin-bottom: 0;
-  line-height: normal;
+  line-height: 32px;
   letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 24px;
@@ -78,10 +77,9 @@
 .h5 {
   display: inline;
   font-size: 16px;
-  line-height: 40px;
+  line-height: 24px;
   margin-bottom: 0;
   white-space: normal;
-  line-height: normal;
   letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 20px;
@@ -94,7 +92,7 @@
 .h6 {
   display: inline;
   font-size: 9px;
-  line-height: 13px;
+  line-height: 28px;
   font-weight: 400;
   margin-bottom: 0;
   line-height: normal;

@@ -1,6 +1,7 @@
 import React from "react"
 import Image from "next/image"
 import Heading from "../heading/heading"
+import styles from "./policyCard.module.scss"
 
 interface CardProps {
   icon: string
@@ -16,7 +17,7 @@ const PolicyCard: React.FC<CardProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`d-flex align-items-start gap-3 py-3 ${className}`}>
+    <div className={`d-flex align-items-start  ${styles.policyCard}`}>
       {/* Icon */}
       <div
         className="d-flex justify-content-center align-items-center bg-light rounded-circle"
@@ -26,10 +27,10 @@ const PolicyCard: React.FC<CardProps> = ({
       </div>
 
       {/* Title and Description */}
-      <div className="d-flex flex-column gap-3">
+      <div className="d-flex flex-column ">
         <Heading title={title} color="black" size="h4" weight="5" />
         {description && (
-          <Heading title={description} color="black" size="h5" weight="4" />
+          <Heading title={description} color="grey-200" size="h6" weight="4" />
         )}
       </div>
     </div>
