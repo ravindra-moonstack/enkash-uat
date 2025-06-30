@@ -276,7 +276,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "50px",
+                  gap: "32px",
                 }}
               >
                 {integrationData.map(({ icon, title, description }, i) => (
@@ -348,7 +348,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "50px",
+                  gap: "32px",
                 }}
               >
                 {paymentMethodData.map(({ icon, title, description }, i) => (
@@ -391,7 +391,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "50px",
+                  gap: "32px",
                 }}
               >
                 {dashboardData.map(({ icon, title, description }, i) => (
@@ -463,7 +463,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "50px",
+                  gap: "32px",
                 }}
               >
                 {rankData.map(({ icon, title, description }, i) => (
@@ -506,7 +506,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "50px",
+                  gap: "32px",
                 }}
               >
                 {supportData.map(({ icon, title, description }, i) => (
@@ -578,7 +578,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "50px",
+                  gap: "32px",
                 }}
               >
                 {savingData.map(({ icon, title, description }, i) => (
@@ -802,7 +802,7 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

@@ -6,7 +6,7 @@ import styles from "./policyCard.module.scss"
 interface CardProps {
   icon: string
   title: string
-  description?: string // 🔹 Made optional
+  description?: string
   className?: string
 }
 

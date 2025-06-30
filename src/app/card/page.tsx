@@ -684,7 +684,7 @@ const Card = (): React.JSX.Element => {
         </div>
       </div>
 
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
