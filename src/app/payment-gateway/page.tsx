@@ -47,24 +47,29 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
-          <CustomBreadcrumb
-            items={[
-              { name: "Home", url: "/" },
-              { name: "Products", url: "/products" },
-              { name: "Payment Gateway", url: "/products/payment-gateway" },
-            ]}
-          />
           <div className="d-flex ">
             <div className="col-12 col-md-6 d-flex flex-column">
-              <div className="d-flex my-5 flex-column flex-md-row">
-                <div className="d-flex border-bottom-equity">
-                  <Heading
-                    title={`Payment Gateway ${space}`}
-                    color="equity-blue"
-                    size="h4"
-                    weight="4"
-                  />
-                </div>
+              <div className="d-flex">
+                <CustomBreadcrumb
+                  items={[
+                    { name: "Home", url: "/" },
+                    { name: "Products", url: "/products" },
+                    {
+                      name: "Payment Gateway",
+                      url: "/products/payment-gateway",
+                    },
+                  ]}
+                />
+              </div>
+              <div
+                className={`${styles.first_row_title} d-flex flex-column flex-md-row `}
+              >
+                <Heading
+                  title={`Payment Gateway ${space}`}
+                  color="equity-blue"
+                  size="h4"
+                  weight="4"
+                />
               </div>
               <div className="d-flex flex-column">
                 <Heading
@@ -83,7 +88,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <div className="d-flex mt-4 pe-5">
+              <div className="d-flex mt-3 pe-5">
                 <Heading
                   title="The best payment gateway for a superior merchant experience."
                   color="black"
@@ -97,7 +102,9 @@ const PaymentGateway = (): React.JSX.Element => {
                   alt="card visual"
                   className={styles.card_image}
                 />
-                <div className="my-5 d-flex flex-row  align-items-center">
+                <div
+                  className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
+                >
                   <div className="me-2">
                     <RectangleButton
                       title="Get Started"
@@ -116,7 +123,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
 
-            <div className="col-12 col-md-6 d-flex justify-content-center">
+            <div className="col-12 col-md-6 d-flex justify-content-center d-none d-md-flex">
               <div className="position-relative w-100 h-100 d-flex ">
                 <Image
                   src={paymentSummary}
@@ -133,7 +140,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center">
+          <div className="d-inline justify-content-center  align-items-center text-center">
             <Heading
               title="Say Hello to a"
               size="h3"
@@ -160,7 +167,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
-              <div className="me-2">
+              <div className={` d-flex ${styles.outerCard}`}>
                 <Heading
                   title="100%"
                   color="white"

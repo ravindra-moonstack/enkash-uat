@@ -15,12 +15,10 @@
   @include for-laptops {
     padding-left: 70px;
     padding-right: 70px;
-    padding-top: 160px;
-    padding-bottom: 40px;
+    padding-top: 104px;
+    padding-bottom: 60px;
   }
-  .card_image {
-    margin-top: 13px;
-  }
+
   .image-container {
     position: relative;
     width: 100%;
@@ -48,6 +46,18 @@
       // width: 900px;
     }
   }
+
+  .card_image {
+    margin-top: 14px;
+  }
+  .first_row_title {
+    padding-top: 106px;
+    padding-bottom: 32px;
+  }
+
+  .first_row_button {
+    padding-top: 62px;
+  }
 }
 
 .second_row {
@@ -65,22 +75,44 @@
   }
   .section {
     margin: auto;
-    gap: 40px;
-
-    /* top: 0; */
+    gap: 10px;
     justify-content: center;
+    // flex-wrap: wrap;
+
     .card {
-      width: 350px;
-      max-width: 350px;
+      width: 96px;
+      max-width: 100%;
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
-      padding-top: 20px;
-      gap: 20px;
       box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .outerCard {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        margin: auto;
+      }
+
       .innerCard {
         box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
         width: 100%;
+        padding: 4px;
       }
+
+      // 👇 Responsive widths
+      @include for-laptops {
+        width: 300px;
+      }
+
+      @include for-tablet {
+        width: 180px;
+      }
+    }
+    @include for-laptops {
+      gap: 65px;
+      flex-wrap: wrap;
     }
   }
 
