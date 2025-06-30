@@ -9,7 +9,7 @@ import {
   spendAnalyticsData,
 } from "./data"
 
-import { Header, Footer, Heading, SecondryButton, FAQHtml } from "@/components"
+import { Header, Heading, SecondryButton, FAQHtml } from "@/components"
 
 import {
   blueArrow,

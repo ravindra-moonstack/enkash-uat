@@ -12,7 +12,7 @@ import {
   supportData,
 } from "./data"
 import faqData from "./faq-data"
-import { Header, Footer, Heading, FAQHtml } from "@/components"
+import { Header,  Heading, FAQHtml } from "@/components"
 import {
   blueArrow,
   groupIcon,
