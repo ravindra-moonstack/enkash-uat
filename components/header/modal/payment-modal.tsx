@@ -26,8 +26,8 @@ const PaymentModal = ({
     <div className=" ">
       <div className={styles.arrow} style={{ left: modalLeft }}></div>
 
-      <div className={` ${styles.container}`}>
-        <div className="d-flex gap-2">
+      <div className={` max-w-auto  ${styles.container}`}>
+        <div className="d-flex gap-3">
           {motherProducts.map((mother, i) => {
             const subProducts = getSubProductsByMother(mother.name)
 

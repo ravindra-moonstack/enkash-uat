@@ -17,7 +17,7 @@ const ExpensesModal = ({
       <div className={styles.arrow} style={{ left: modalLeft }}></div>
 
       <div className={` ${styles.container}`}>
-        <div className="d-flex gap-2 justify-content-center">
+        <div className="d-flex gap-3 justify-content-center">
           {xpenzProducts.map((mother, i) => {
             const subProducts = mother.subProducts || []
 

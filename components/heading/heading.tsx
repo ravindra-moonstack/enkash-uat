@@ -1,7 +1,7 @@
 import styles from "./heading.module.scss"
 
 export interface HeadingProps {
-  size: "h0" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "bannerHeading"
+  size: "h0" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "h7" | "bannerHeading"
   title: string
   color?:
     | "black"

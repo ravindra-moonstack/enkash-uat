@@ -13,6 +13,7 @@ import {
   enkashBlueLogo,
   ppi,
   youtubeLogo,
+  ppa,
 } from "."
 import Link from "next/link"
 
@@ -32,25 +33,26 @@ const FooterV2 = () => {
               />
             </Link>
 
-            <div className={`d-flex flex-column  gap-5 ${styles.logi_bg}`}>
+            <div className={`d-flex flex-column  gap-4 ${styles.logi_bg}`}>
               <div>
                 {" "}
                 <div>
                   <p className={styles.logo_container_info}>
-                    EnKash is India&rsquo;s premier B2B payment solution,
-                    enabling businesses to seamlessly accept, process, and
-                    manage payments with its cutting-edge product suite.
-                    Experience hassle-free transactions across all payment
-                    modes, including credit cards, debit cards, net banking,
-                    UPI, and leading wallets like JioMoney, MobiKwik, Airtel
-                    Money, FreeCharge, Ola Money, and PayZapp.
+                    EnKash is India’s leading spend management platform,
+                    simplifying payments, expenses, cards, and rewards for
+                    businesses. Backed by $23M in funding and trusted by 5,000+
+                    businesses, it holds key RBI licenses and partners with
+                    Visa, Mastercard, and NPCI. Its powerful financial suite
+                    empowers CFOs with automation, compliance, and real-time
+                    insights across the payment ecosystem.
                   </p>
                   <p className={styles.logo_container_info}>
-                    With EnKash Business Banking, elevate your financial
-                    operations to the next level. Access feature-rich current
-                    accounts, streamline payouts, and automate payroll
-                    compliance&mdash;driving efficiency, excellence, and
-                    effectiveness across all financial processes.
+                    EnKash** Payment Gateway, is a licensed online payment
+                    aggregator authorised by the RBI
+                  </p>
+                  <p className={styles.logo_container_info}>
+                    **EnKash is a commercial trade name owned by the legal
+                    entity, Nehat Tech Solutions Pvt. Ltd.
                   </p>
                 </div>
               </div>
@@ -63,7 +65,9 @@ const FooterV2 = () => {
                     <h4 className={`${styles.title}`}>Certification</h4>
                   </div>
                   <div className={`d-flex ${styles.info_body}`}>
-                    <div className={`d-flex gap-2 ${styles.info_body_one}`}>
+                    <div
+                      className={`d-flex gap-2 flex-wrap ${styles.info_body_one}`}
+                    >
                       <div className={styles.soc_logo}>
                         <Image
                           src={soc}
@@ -87,6 +91,15 @@ const FooterV2 = () => {
                       <div className={styles.pci_logo}>
                         <Image
                           src={ppi}
+                          alt="pci logo"
+                          height={48}
+                          width={48}
+                          objectFit="cover"
+                        />
+                      </div>
+                      <div className={styles.pci_logo}>
+                        <Image
+                          src={ppa}
                           alt="pci logo"
                           height={48}
                           width={48}
@@ -237,7 +250,7 @@ const FooterV2 = () => {
           </div>
           <div className="w-100">
             <div
-              className={`d-flex flex-md-row  gap-2 w-100  ${styles.light_bg}`}
+              className={`d-flex flex-md-row  gap-4 w-100  ${styles.light_bg}`}
             >
               {/* 2nd col */}
               <div className={`${styles.footer_links_col}`}>
@@ -369,6 +382,11 @@ const FooterV2 = () => {
                       <li>
                         <Link href="/invoice-management/">
                           Invoice Management
+                        </Link>
+                      </li>
+                      <li>
+                        <Link href="/payroll-processing/">
+                          Payroll Processing
                         </Link>
                       </li>
                       <li>
@@ -550,100 +568,6 @@ const FooterV2 = () => {
                 </div>
               </div>
 
-              <div className={``}>
-                <div className={`${styles.footer_links_col}`}>
-                  <div className="">
-                    <div className={styles.freedom_card_box}>
-                      <Link href="/corporate-cards">
-                        <h4 className={`${styles.title}`}>Solutions</h4>
-                      </Link>
-                    </div>
-                    <ul>
-                      <li>
-                        <Link href="/solutions/e-commerce">E-commerce</Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/banking">Banking</Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/education">Education</Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/insurance">Insurance</Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/real-estate">Real Estate</Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/enterprises">
-                          For Enterprises
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/startups-smes">
-                          For Startups & SMEs
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/virtual-card">Virtual Card</Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/diy-card-module">
-                          DIY Card Module
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/seamless-banking">
-                          Seamless Banking
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/customized-reporting">
-                          Customized Reporting
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/workflow-management">
-                          Workflow Management
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/cashflow-analytics">
-                          Cashflow Analytics
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/cfo-analytics">
-                          CFO Analytics
-                        </Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/instant-card-management">
-                          Instant Card Management
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                  <div className="mt-3">
-                    <div className={styles.freedom_card_box}>
-                      <Link href="/corporate-cards">
-                        <h4 className={`${styles.title}`}>Parthnership</h4>
-                      </Link>
-                    </div>
-                    <ul>
-                      <li>
-                        <Link href="/solutions/for-banks">For Banks</Link>
-                      </li>
-                      <li>
-                        <Link href="/solutions/affiliate-program">
-                          Affiliate Program
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
               <div className={`${styles.footer_links_col}`}>
                 {/* col-1 resources */}{" "}
                 <div className="">
@@ -654,7 +578,21 @@ const FooterV2 = () => {
                   </div>
                   <ul>
                     <li>
-                      <Link href="/sales?source=getstarted_footer">Sales</Link>
+                      <Link href="/about-us">About Us</Link>
+                    </li>
+                    <li>
+                      <Link href="/careers">Careers</Link>
+                    </li>
+                    <li>
+                      <Link href="/media-coverage">Media Coverage</Link>
+                    </li>
+                    <li>
+                      <Link href="/contact-us">Contact Us</Link>
+                    </li>
+                    <li>
+                      <Link href="/corporate-information">
+                        Corporate Information
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -736,6 +674,23 @@ const FooterV2 = () => {
                     </li>
                   </ul>
                 </div>
+                <div className="mt-3">
+                  <div className={styles.freedom_card_box}>
+                    <Link href="/corporate-cards">
+                      <h4 className={`${styles.title}`}>Parthnership</h4>
+                    </Link>
+                  </div>
+                  <ul>
+                    <li>
+                      <Link href="/solutions/for-banks">For Banks</Link>
+                    </li>
+                    <li>
+                      <Link href="/solutions/affiliate-program">
+                        Affiliate Program
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
 
@@ -746,15 +701,15 @@ const FooterV2 = () => {
           </div>
         </div>
         <div className="d-flex flex-wrap flex-md-nowrap">
-          <div className={`col-12 col-md-8 text-left ${styles.disclaimer}`}>
+          <div className={`col-12 col-md-10 text-left ${styles.disclaimer}`}>
             Corporate cards, payments, and other related services are provided
             by RBI-licensed banks and/or in accordance with RBI regulations
             and/or compliance maintained by banks and regulated entities. EnKash
             is not a bank and does not hold or claim to hold a banking license.{" "}
-            <span className="color-alternate-grey">
+            <div className="color-alternate-grey">
               *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s PA
               (Online) authorization.
-            </span>
+            </div>
           </div>
         </div>
       </div>
@@ -780,8 +735,8 @@ const FooterV2 = () => {
         </div>
       </div>
 
-      <div className={styles.locations_row}>
-        <div className="d-none d-md-flex mx-0 me-md-5 justify-content-end">
+      <div className={`${styles.locations_row}`}>
+        <div className="d-none d-md-flex  max-w-auto justify-content-end align-items-center">
           {" "}
           <Image
             className={styles.footer_location_pin}
@@ -790,11 +745,11 @@ const FooterV2 = () => {
             width={20}
           />
           <p>Gurgaon</p>
-          <div className="vr"></div>
+          <div className={`${styles.ar}`}></div>
           <p>Mumbai</p>
-          <div className="vr"></div>
+          <div className={`${styles.ar}`}></div>
           <p> Pune</p>
-          <div className="vr"></div>
+          <div className={`${styles.ar}`}></div>
           <p>Bengaluru</p>
         </div>
       </div>

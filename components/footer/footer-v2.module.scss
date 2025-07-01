@@ -18,10 +18,65 @@
     font-weight: 400;
     color: #5b5b5b;
     white-space: nowrap;
+    letter-spacing: -0.5px;
     @include for-laptops {
       font-size: 16px;
       line-height: 32px;
     }
+  }
+  .locations_row {
+    background: #fff;
+    align-items: end;
+    justify-content: end;
+    border-bottom: 10px solid $color-equity-blue;
+    padding: 16px;
+    @include for-laptops {
+      flex-direction: row;
+    }
+
+    .main_title {
+      font-size: 16px;
+    }
+
+    .sub_title {
+      font-size: 9px;
+      margin-bottom: 20px;
+      @include for-laptops {
+        margin-bottom: 0;
+        font-size: 12px;
+      }
+    }
+
+    @include for-laptops {
+      padding: 24px;
+    }
+    p {
+      color: #5b5b5b;
+      font-size: 10px;
+      margin: 0;
+      padding: 0 8px;
+
+      @include for-laptops {
+        font-size: 18px;
+        padding: 0 16px;
+      }
+    }
+    h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #5b5b5b;
+    }
+    .footer_location_p {
+      padding: 0;
+      font-size: 14 !important;
+    }
+  }
+  .ar {
+    background-color: $color-equity-blue;
+    border-right: 2px solid $color-equity-blue;
+    height: 20px;
+    margin: 0 10px;
+    width: 3px;
   }
 }
 
@@ -59,6 +114,7 @@
       display: flex;
       text-align: center;
       justify-content: center;
+      margin-bottom: 0px;
     }
   }
 }
@@ -146,63 +202,6 @@
   align-items: center;
 }
 
-.locations_row {
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  justify-content: space-around;
-  flex-direction: column;
-  border-bottom: 10px solid $color-equity-blue;
-  padding: 16px;
-  @include for-laptops {
-    flex-direction: row;
-  }
-
-  .main_title {
-    font-size: 16px;
-  }
-
-  .sub_title {
-    font-size: 9px;
-    margin-bottom: 20px;
-    @include for-laptops {
-      margin-bottom: 0;
-      font-size: 12px;
-    }
-  }
-
-  @include for-laptops {
-    padding: 24px;
-  }
-  p {
-    color: #5b5b5b;
-    font-size: 10px;
-    margin: 0;
-    padding: 0 8px;
-
-    @include for-laptops {
-      font-size: 18px;
-      padding: 0 16px;
-    }
-  }
-  h4 {
-    font-size: 18px;
-    font-weight: 700;
-    color: #5b5b5b;
-  }
-  .footer_location_p {
-    padding: 0;
-    font-size: 14 !important;
-  }
-}
-
-.vr {
-  border-right: 2px solid $color-equity-blue;
-  height: 18px;
-  margin: 0 10px;
-}
-
 .grievance_text {
   text-decoration: underline;
   font-size: 9px;
@@ -275,7 +274,6 @@
 }
 
 .light_bg {
-  background-color: #fff;
   padding: 40px 30px;
   border-radius: 10px;
   @include for-laptops {
@@ -286,7 +284,7 @@
 .info_container {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 27px;
   .title {
     font-size: 16px;
     color: $color-electric-green;

@@ -4,13 +4,14 @@
 .container {
   // height: 470px;
   position: relative;
-  width: 100%;
-  padding: 12px 21px;
+  width: auto;
+  padding: 18px 10px;
   border-radius: 16px;
   background: aliceblue;
+
   .motherProduct {
     h4 {
-      font-size: 12px;
+      font-size: 10px;
       color: $color-slate-grey;
       text-transform: uppercase;
     }
@@ -53,8 +54,8 @@
 .grid_layout {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  column-gap: 7px;
+  gap: 15px;
+  column-gap: 14px;
 }
 
 .flex_layout {
@@ -66,9 +67,8 @@
 .sub_product_row {
   color: black;
   cursor: pointer;
-  padding: 10px;
+
   border-radius: 8px;
-  max-width: 292px;
 }
 
 .color_image_visible {
@@ -97,9 +97,10 @@
 }
 
 .sub_product_name {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 20px;
+  line-height: 150%;
+  letter-spacing: 0;
   sup {
     font-size: 6px;
     top: 0px;
@@ -107,9 +108,10 @@
 }
 
 .sub_product_description {
-  font-size: 14px;
-  line-height: 14px;
+  font-size: 12px;
+  line-height: 150%;
   margin-top: 3px;
+  letter-spacing: 0;
   color: #a5a5a5;
 }
 

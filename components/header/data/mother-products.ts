@@ -221,21 +221,21 @@ export const motherProducts = [
         list: [
           {
             name: "Collection Reminders",
-            description: "Learn about your users",
+
             imageSrc: collectionReminderFilled,
             imageSrcHovered: collectionReminderFilled,
             link: "/business-bill-payment",
           },
           {
             name: "Vendor Management",
-            description: "Real-time analytics user trends",
+
             imageSrc: vendorManagementFilled,
             imageSrcHovered: vendorManagementFilled,
             link: "/vendor-payment",
           },
           {
             name: "Digital Invoicing",
-            description: "Monitor your metrics",
+
             imageSrc: invoiceManegement,
             imageSrcHovered: invoiceManegementFilled,
             link: "/rent-payment",
@@ -243,49 +243,49 @@ export const motherProducts = [
 
           {
             name: "Payable Analytics",
-            description: "Segments with perfect target",
+
             imageSrc: payablesAnalytics,
             imageSrcHovered: payablesAnalyticsFilled,
             link: "/express-pay",
           },
           {
             name: "Collection Analytics",
-            description: "Measure B2B account health",
+
             imageSrc: collectionAnalytics,
             imageSrcHovered: collectionAnalyticsFilled,
             link: "/gst-payment",
           },
           {
             name: "Seamless Banking",
-            description: "Surface hidden trends",
+
             imageSrc: seamlessBanking,
             imageSrcHovered: seamlessBankingFilled,
             link: "/gst-payment",
           },
           {
             name: "Auto Reconciliation",
-            description: "Learn about your users",
+
             imageSrc: autoReconciliation,
             imageSrcHovered: autoReconciliationFilled,
             link: "/gst-payment",
           },
           {
             name: "Workflow Management",
-            description: "Real-time analytics user trends",
+
             imageSrc: instantSettlements,
             imageSrcHovered: instantSettlementsFilled,
             link: "/gst-payment",
           },
           {
             name: "Cashflow Analytics",
-            description: "Monitor your metrics",
+
             imageSrc: casflowFilled,
             imageSrcHovered: casflowFilled,
             link: "/gst-payment",
           },
           {
             name: "Invoice Management",
-            description: "Measure B2B account health",
+
             imageSrc: invoiceManegement,
             imageSrcHovered: invoiceManegementFilled,
             link: "/gst-payment",

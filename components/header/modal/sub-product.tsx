@@ -155,8 +155,8 @@ const SubProduct = (props: any) => {
                           <Image
                             src={product.imageSrcHovered}
                             alt={product.name}
-                            width={25}
-                            height={25}
+                            width={19}
+                            height={19}
                           />
                         </div>
                       )}
