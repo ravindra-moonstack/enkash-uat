@@ -154,17 +154,23 @@
   background-color: #fff;
 
   .button {
-    padding: 9px 20px;
+    padding: 10px 23px 10px 35px;
     font-size: 12px;
     font-weight: 500;
     border: none;
     border-radius: 12px;
     background-color: transparent;
-    color: black;
+    color: #2563eb; // Blue text for inactive
     cursor: pointer;
     position: relative;
     z-index: 2;
     transition: color 0.3s ease;
+    &.active {
+      color: #fff;
+    }
+    &:hover {
+      color: #fff;
+    }
   }
 
   .slider {
@@ -179,22 +185,12 @@
     left: 0;
   }
 
-  // When hovering .login
-  &:hover .login:hover ~ .slider {
+  // Move slider under active button
+  .login.active ~ .slider {
     left: 0;
   }
-
-  &:hover .login:hover {
-    color: #fff;
-  }
-
-  // When hovering .sales
-  &:hover .sales:hover ~ .slider {
+  .sales.active ~ .slider {
     left: calc(50% + 4px);
-  }
-
-  &:hover .sales:hover {
-    color: #fff;
   }
 }
 
