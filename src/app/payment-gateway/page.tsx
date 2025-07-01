@@ -12,7 +12,7 @@ import {
   supportData,
 } from "./data"
 import faqData from "./faq-data"
-import { Header,  Heading, FAQHtml } from "@/components"
+import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -802,7 +802,7 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }

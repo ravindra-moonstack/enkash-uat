@@ -27,6 +27,7 @@ const WebHeader = ({ utmSource }: props) => {
   const itemRefs = useRef<(HTMLLIElement | null)[]>([])
   const [active, setActive] = useState("sales")
   const [modalLeft, setModalLeft] = useState<number | null>(null)
+  const [activeTab, setActiveTab] = useState("login")
   // let signupUrl = utmSource
   //   ? `https://home.enkash.com/signup?utm_source=${utmSource}`
   //   : "https://home.enkash.com/get-started";
@@ -153,13 +154,28 @@ const WebHeader = ({ utmSource }: props) => {
               </button>
             </Link>
             <div className={styles.button_switch_wrapper}>
-              <button className={`${styles.button} ${styles.login} `}>
+              <button
+                className={`${styles.button} ${styles.login} ${
+                  activeTab === "login" ? styles.active : ""
+                }`}
+                onMouseEnter={() => setActiveTab("login")}
+              >
                 Login
               </button>
-              <button className={`${styles.button} ${styles.sales}`}>
+              <button
+                className={`${styles.button} ${styles.sales} ${
+                  activeTab === "sales" ? styles.active : ""
+                }`}
+                onMouseEnter={() => setActiveTab("sales")}
+              >
                 Talk to Sales
               </button>
-              <span className={styles.slider}></span>
+              <span
+                className={styles.slider}
+                style={{
+                  left: activeTab === "login" ? "0" : "calc(50% + 4px)",
+                }}
+              />
             </div>
           </div>
         </nav>

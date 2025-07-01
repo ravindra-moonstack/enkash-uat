@@ -4,7 +4,6 @@ import "./globals.css"
 import "bootstrap/dist/css/bootstrap.css"
 import { Inter } from "next/font/google"
 
-
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -16,7 +15,7 @@ export const metadata: Metadata = {
   description:
     "EnKash is the ultimate platform for businesses that offer services like Account Payable, Accounts Receivable, Expense Management, Corporate Cards, Employee Rewards, Channel Incentive, automation solutions & many more",
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.svg",
   },
 }
 
@@ -27,7 +26,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      
       <body className={inter.variable}>{children}</body>
     </html>
   )

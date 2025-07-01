@@ -21,18 +21,15 @@ const PolicyCard: React.FC<CardProps> = ({
       className={`d-flex align-items-start   ${className}  ${styles.policyCard}`}
     >
       {/* Icon */}
-      <div
-        className="d-flex justify-content-center align-items-center bg-light rounded-circle"
-        style={{ width: "55px", height: "55px" }}
-      >
-        <Image src={icon} alt="icon" />
+      <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
+        <Image src={icon} alt="icon" width={68} height={68} />
       </div>
 
       {/* Title and Description */}
       <div className="d-flex flex-column ">
-        <Heading title={title} color="black" size="h4" weight="5" />
+        <Heading title={title} color="black" size="h5" weight="5" />
         {description && (
-          <Heading title={description} color="grey-200" size="h6" weight="4" />
+          <Heading title={description} color="grey-200" size="h7" weight="4" />
         )}
       </div>
     </div>

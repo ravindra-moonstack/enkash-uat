@@ -16,7 +16,7 @@ const PartnershipModal = ({
       <div className={styles.arrow}></div>
 
       <div className={` ${styles.container}`}>
-        <div className="d-flex gap-2">
+        <div className="d-flex gap-3">
           {partnershipProducts.map((mother, i) => {
             const subProducts = mother.subProducts || []
 
