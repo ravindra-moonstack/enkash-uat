@@ -13,7 +13,7 @@ const PartnershipModal = ({
 
   return (
     <div className="relative mx-auto ">
-      <div className={styles.arrow}></div>
+      {/* <div className={styles.arrow}></div> */}
 
       <div className={` ${styles.container}`}>
         <div className="d-flex gap-3">

@@ -3,7 +3,6 @@ import styles from "./mobile-header.module.scss"
 import { Fragment } from "react"
 import Link from "next/link"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-
 import { blueArrowUp } from ".."
 
 interface SubProductListViewProps {

@@ -5,7 +5,7 @@ import loyaltyLoungeProducts from "../data/loaylty-lounge-products"
 
 const LoyaltyModal = ({
   onLinkClick,
-  modalLeft,
+
 }: {
   onLinkClick?: () => void
   modalLeft: number
@@ -14,7 +14,7 @@ const LoyaltyModal = ({
 
   return (
     <div>
-      <div className={styles.arrow} style={{ left: modalLeft }}></div>
+      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
 
       <div className={` ${styles.container} `}>
         <div className="d-flex gap-3">

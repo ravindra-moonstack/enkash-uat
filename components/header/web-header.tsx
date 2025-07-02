@@ -21,9 +21,9 @@ interface props {
 const WebHeader = ({ utmSource }: props) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false)
-  const [itemWidth, setItemWidth] = useState(0)
+  const setItemWidth = useState(0)[1]
   const itemRef = useRef<HTMLLIElement | null>(null)
-  const [slidePosition, setSlidePosition] = useState<number | null>(null)
+  const setSlidePosition = useState(0)[1]
   const itemRefs = useRef<(HTMLLIElement | null)[]>([])
   const [active, setActive] = useState("sales")
   const [modalLeft, setModalLeft] = useState<number | null>(null)
@@ -85,17 +85,7 @@ const WebHeader = ({ utmSource }: props) => {
             <Link href="/" className={styles.logo_container}>
               <Image src={enkashBlueLogo} alt="logo" width={98} className="" />
             </Link>
-            <ul>
-              {hoveredIndex !== null && (
-                <div
-                  className={styles.nav_background_slide}
-                  style={{
-                    transform: `translateX(${slidePosition}px)`,
-                    width: `${itemWidth}px`,
-                  }}
-                ></div>
-              )}
-
+            <ul style={{ position: "relative" }}>
               {navBarTopTtitle.map((item, index) => (
                 <li
                   ref={(el) => {
@@ -113,11 +103,11 @@ const WebHeader = ({ utmSource }: props) => {
                       const itemRect = navItem.getBoundingClientRect()
                       const parentRect =
                         navItem.parentElement?.getBoundingClientRect()
+                      // Center the arrow
                       const left =
                         itemRect.left -
                         (parentRect?.left || 0) +
-                        itemRect.width / 2 +
-                        150
+                        itemRect.width / 2
 
                       setModalLeft(left)
                       setSlidePosition(left - itemRect.width / 2)
@@ -137,6 +127,19 @@ const WebHeader = ({ utmSource }: props) => {
                   />
                 </li>
               ))}
+              {/* Arrow rendered below hovered item */}
+              {hoveredIndex !== null && modalLeft !== null && (
+                <div
+                  className={styles.arrow}
+                  style={{
+                    left: `calc(${modalLeft}px - 8px)`, // 8px is half arrow width
+                    top: "140%",
+                    position: "absolute",
+                    zIndex: 10,
+                    // bottom: "0%",
+                  }}
+                />
+              )}
             </ul>
           </div>
           <div

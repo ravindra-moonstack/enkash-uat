@@ -18,6 +18,14 @@
     padding-top: 104px;
     padding-bottom: 60px;
   }
+  .group_logo {
+    width: 174px;
+    height: 30px;
+    @include for-laptops {
+      width: 366px;
+      height: 62px;
+    }
+  }
 
   .image-container {
     position: relative;
@@ -53,8 +61,12 @@
   }
 
   .first_row_button {
-    padding-top: 48px;
-    gap: 26px;
+    padding-top: 16px;
+    gap: 12px;
+    @include for-laptops {
+      padding-top: 48px;
+      gap: 26px;
+    }
   }
 }
 
@@ -88,9 +100,13 @@
       align-items: center;
 
       .outerCard {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 5px;
+        padding-bottom: 5px;
         margin: auto;
+        @include for-laptops {
+          padding-top: 20px;
+          padding-bottom: 20px;
+        }
       }
 
       .innerCard {
@@ -126,8 +142,9 @@
   background-position: center;
   background-size: cover;
   // background-image: url(./img/ArtboardBg.svg);
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-top: 36px;
+  padding-left: 36px;
+  padding-right: 36px;
   padding-bottom: 0px;
   @include for-laptops {
     padding: 48px 90px;
@@ -139,11 +156,23 @@
   }
 
   .section {
-    padding-bottom: 50px;
-    padding-top: 50px;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    @include for-laptops {
+      padding-bottom: 50px;
+      padding-top: 50px;
+    }
 
     .subtitle {
       margin-bottom: 40px;
+    }
+    .payment_section {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+      @include for-laptops {
+        gap: 32px;
+      }
     }
   }
 
@@ -192,8 +221,10 @@
     }
   }
   .custom_bottom_offset {
-    bottom: -98px;
-    position: absolute;
+    @include for-laptops {
+      bottom: -98px;
+      position: absolute;
+    }
   }
   .list_button {
     padding-top: 33px;
@@ -279,9 +310,12 @@
     padding: 58px;
   }
   .get_started_button {
-    padding: 11px 14px;
+    padding: 6px;
     border: 2px solid $color-bolt-green;
     border-radius: 12px;
+    @include for-laptops {
+      padding: 11px 14px;
+    }
   }
 }
 
@@ -325,7 +359,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding-bottom: 50px;
+  padding-bottom: 0px;
   padding-top: 50px;
   padding-left: 20px;
   padding-right: 20px;
@@ -338,12 +372,19 @@
   .section {
     text-align: start;
     .faq_bg {
-      position: absolute;
-      bottom: 0;
-      right: 160px;
-      display: none;
+      Img {
+        height: 130px;
+        width: 278px;
+            @include for-laptops {
+       height: 443px;
+        width: 775px;
+      }
+      }
       @include for-laptops {
         display: flex;
+        position: absolute;
+        bottom: 0;
+        right: 160px;
       }
     }
   }
@@ -439,11 +480,17 @@
   }
 
   .faqData {
-    width: 70%;
+    width: 100%;
+    @include for-laptops {
+      width: 70%;
+    }
   }
 }
 
 .other_products {
   background-color: white;
-  padding: 0px 90px 90px 90px;
+  padding: 36px;
+  @include for-laptops {
+    padding: 0px 90px 90px 90px;
+  }
 }

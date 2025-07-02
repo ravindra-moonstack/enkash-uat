@@ -1,0 +1,14 @@
+.mobile_talk_sales {
+  z-index: 999;
+  position: fixed;
+  bottom: 0px;
+  background: white;
+  width: 100%;
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+
+  .talk_sales_button {
+    width: 279px;
+  }
+}
