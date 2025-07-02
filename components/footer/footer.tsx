@@ -508,6 +508,9 @@ const FooterV2 = () => {
                     </div>
                     <ul>
                       <li>
+                        <Link href="/prepaid-card/">Prepaid Card</Link>
+                      </li>
+                      <li>
                         <Link href="/meal-card/">Meal Cards</Link>
                       </li>
                       <li>
@@ -571,6 +574,43 @@ const FooterV2 = () => {
               <div className={`${styles.footer_links_col}`}>
                 {/* col-1 resources */}{" "}
                 <div className="">
+                  <h4 className={`${styles.title}`}>Resources</h4>
+                  <ul>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/"
+                      >
+                        Blogs
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/case-studies/"
+                      >
+                        Case Studies
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/whitepapers/"
+                      >
+                        White-papers
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        target="_blank"
+                        href="https://www.enkash.com/resources/videos/"
+                      >
+                        Videos
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+                <div className="mt-3">
                   <div className={styles.freedom_card_box}>
                     <Link href="/corporate-cards">
                       <h4 className={`${styles.title}`}>Company</h4>
@@ -597,80 +637,20 @@ const FooterV2 = () => {
                   </ul>
                 </div>
                 <div className="mt-3">
-                  <h4 className={`${styles.title}`}>Resources</h4>
+                  <h4 className={`col-12 ${styles.title}`}>
+                    Policies and Compliance
+                  </h4>
                   <ul>
                     <li>
-                      <Link
-                        target="_blank"
-                        href="https://www.enkash.com/resources/"
-                      >
-                        Blogs
+                      <Link href="/solutions/payments">Payments</Link>
+                    </li>
+                    <li>
+                      <Link href="/solutions/prepaid-program">
+                        Prepaid Program
                       </Link>
                     </li>
                     <li>
-                      <Link
-                        target="_blank"
-                        href="https://www.enkash.com/resources/videos/"
-                      >
-                        Product Videos
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        target="_blank"
-                        href="https://www.enkash.com/resources/press-release/"
-                      >
-                        Press Release
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        target="_blank"
-                        href="https://www.enkash.com/resources/media-coverage/"
-                      >
-                        News & Media
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        target="_blank"
-                        href="https://www.enkash.com/resources/customer-stories/"
-                      >
-                        Customer Stories
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-                <div className="mt-3">
-                  <h4 className={`col-12 ${styles.title}`}>Policies</h4>
-                  <ul>
-                    <li>
-                      <Link href="/grievance-policy/">
-                        Grievances and Redressal
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/chargeback-dispute-management-policy/">
-                        Dispute Management
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/privacy-legal/">Privacy & Legal</Link>
-                    </li>
-                    <li>
-                      <Link href="/term-condition/">Terms & Conditions</Link>
-                    </li>
-                    <li>
-                      <Link
-                        rel="noopener noreferrer"
-                        target="_blank"
-                        href="https://www.sbmbank.co.in/aboutus/grievance-redressal-mechanism.php"
-                      >
-                        Partner Bank Grievances
-                      </Link>
-                    </li>
-                    <li>
-                      <Link href="/refund-policy/">Refund Policy</Link>
+                      <Link href="/solutions/platform">Platform</Link>
                     </li>
                   </ul>
                 </div>

@@ -5,7 +5,6 @@ import SubProduct from "./sub-product"
 
 const CardModal = ({
   onLinkClick,
-  modalLeft,
 }: {
   onLinkClick?: () => void
   modalLeft: number
@@ -14,7 +13,7 @@ const CardModal = ({
 
   return (
     <div>
-      <div className={styles.arrow} style={{ left: modalLeft }}></div>
+      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
 
       <div className={` ${styles.container} `}>
         <div className="d-flex gap-3">

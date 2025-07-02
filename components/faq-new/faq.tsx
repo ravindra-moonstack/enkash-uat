@@ -22,7 +22,10 @@ const FAQ = ({
   answerHTML,
   onToggleAnswerVisibility,
 }: FAQProps) => {
-  const toggleAnswerVisibility = () => {
+  // No need for local state, use parent state
+
+  // Handle hover and click
+  const handleToggle = () => {
     if (onToggleAnswerVisibility) {
       onToggleAnswerVisibility()
     }
@@ -42,20 +45,27 @@ const FAQ = ({
               }
             : {}
         }
+        onMouseEnter={handleToggle}
+        onMouseLeave={handleToggle}
+        onClick={handleToggle}
+        tabIndex={0} // for accessibility, allows keyboard focus
+        role="button"
+        aria-expanded={answerVisible}
       >
         <div
-          className={`d-flex  gap-4 my-4  justify-content-between  align-items-center`}
+          className={`d-flex gap-4 my-4 justify-content-between align-items-center`}
         >
           <h2 className={styles.question}>
             {String(index + 1).padStart(2, "0")}. {question}
           </h2>
           <Image
-            onClick={toggleAnswerVisibility}
             src={arrowDown}
             alt="faq arrow icon"
             className={`${answerVisible ? styles.rotated : styles.normal} ${
               styles.arrow
             }`}
+            // Remove onClick here, handled by parent div
+            draggable={false}
           />
         </div>
 

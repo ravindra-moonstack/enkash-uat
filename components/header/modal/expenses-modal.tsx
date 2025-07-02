@@ -5,7 +5,6 @@ import xpenzProducts from "../data/ofex-products"
 
 const ExpensesModal = ({
   onLinkClick,
-  modalLeft,
 }: {
   onLinkClick?: () => void
   modalLeft: number
@@ -14,7 +13,7 @@ const ExpensesModal = ({
 
   return (
     <div>
-      <div className={styles.arrow} style={{ left: modalLeft }}></div>
+      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
 
       <div className={` ${styles.container}`}>
         <div className="d-flex gap-3 justify-content-center">

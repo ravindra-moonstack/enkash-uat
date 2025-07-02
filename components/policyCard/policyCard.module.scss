@@ -1,2 +1,17 @@
 @use "/styles/variables" as *;
 @use "/styles/mixin" as *;
+
+.policyCard {
+  gap: 7px;
+  @include for-laptops {
+    gap: 20px;
+  }
+  Img {
+    width: 28px;
+    height: 28px;
+    @include for-laptops {
+      width: 46px;
+      height: 46px;
+    }
+  }
+}

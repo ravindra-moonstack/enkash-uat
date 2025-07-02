@@ -368,7 +368,10 @@ body {
 }
 
 .gap-32 {
-  gap: 32px;
+  gap: 8px;
+  @include for-laptops {
+    gap: 32px;
+  }
 }
 
 .noBorder {

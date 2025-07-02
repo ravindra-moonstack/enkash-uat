@@ -19,12 +19,13 @@
 
 .h1 {
   display: inline;
-  font-size: 31px;
+  font-size: 28px;
   margin-bottom: 0;
-  line-height: 80px;
+  line-height: 32px;
   letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 56px;
+    line-height: 80px;
   }
   @include for-window-zoomed-screens {
     font-size: 57px;
@@ -33,13 +34,14 @@
 
 .h2 {
   display: inline;
-  font-size: 25px;
+  font-size: 16px;
   margin-bottom: 0;
-  line-height: normal;
-  letter-spacing: -0.04em;
+  line-height: 18px;
+  letter-spacing: 0em;
   @include for-laptops {
     font-size: 48px;
     line-height: 70px;
+    letter-spacing: -0.04em;
   }
   @include for-window-zoomed-screens {
     font-size: 52px;
@@ -49,11 +51,13 @@
 .h3 {
   display: inline;
   font-size: 20px;
-  line-height: 40px;
+  line-height: 32px;
   margin-bottom: 0;
   letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -0.04em;
   }
   @include for-window-zoomed-screens {
     font-size: 21px;
@@ -76,13 +80,15 @@
 
 .h5 {
   display: inline;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 12px;
+  line-height: 16px;
   margin-bottom: 0;
   white-space: normal;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 20px;
+    letter-spacing: -0.04em;
+    line-height: 26px;
   }
   @include for-window-zoomed-screens {
     font-size: 16px;
@@ -115,6 +121,7 @@
   letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 16px;
+    line-height: 24px;
   }
   @include for-window-zoomed-screens {
     font-size: 12px;

@@ -39,15 +39,16 @@ import RectangleButton from "@/components/buttons/rectangle-button/rectangle-but
 import PolicyCard from "@/components/policyCard/policyCard"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
+import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
-
+      <TalkToSales />
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
-          <div className="d-flex ">
+          <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
               <div className="d-flex">
                 <CustomBreadcrumb
@@ -62,7 +63,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 />
               </div>
               <div
-                className={`${styles.first_row_title} d-flex flex-column flex-md-row `}
+                className={`${styles.first_row_title} d-md-flex d-none flex-column flex-md-row `}
               >
                 <Heading
                   title={`Payment Gateway ${space}`}
@@ -71,61 +72,72 @@ const PaymentGateway = (): React.JSX.Element => {
                   weight="4"
                 />
               </div>
-              <div className="d-flex flex-column">
-                <Heading
-                  title={`India’s First Payment${space}`}
-                  color="black"
-                  size="h2"
-                  weight="7"
-                />
-                <div>
+              <div
+                className={`text-center text-md-start ${styles.first_row_content}  `}
+              >
+                <div className="d-flex flex-column   pt-4 pt-md-0">
                   <Heading
-                    title=" Gateway Built for SMBs"
+                    title={`India’s First Payment${space}`}
                     color="black"
                     size="h2"
                     weight="7"
                   />
-                </div>
-              </div>
-
-              <div className="d-flex mt-3 mb-3 pe-5">
-                <Heading
-                  title="The best payment gateway for a superior merchant experience."
-                  color="black"
-                  size="h5"
-                  weight="4"
-                />
-              </div>
-              <div className=" d-flex flex-column  align-items-start">
-                <Image src={groupIcon} alt="card visual" />
-                <div
-                  className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
-                >
                   <div>
-                    <RectangleButton
-                      title="Get Started"
-                      theme="blue"
-                      url="/sales/?source=expense_management"
+                    <Heading
+                      title=" Gateway Built for SMBs"
+                      color="black"
+                      size="h2"
+                      weight="7"
                     />
                   </div>
-                  <div>
-                    <RectangleButton
-                      title="API Doc"
-                      theme="outline-blue"
-                      url="/sales/?source=expense_management"
-                    />
+                </div>
+
+                <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
+                  <Heading
+                    title="The best payment gateway for a superior merchant experience."
+                    color="black"
+                    size="h5"
+                    weight="4"
+                  />
+                </div>
+
+                <div className="d-flex flex-column align-items-center align-items-md-start">
+                  <Image
+                    src={groupIcon}
+                    alt="card visual"
+                    className={styles.group_logo}
+                  />
+                  <div
+                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
+                  >
+                    <div>
+                      <RectangleButton
+                        title="Get Started"
+                        theme="blue"
+                        url="/sales/?source=expense_management"
+                      />
+                    </div>
+                    <div>
+                      <RectangleButton
+                        title="API Doc"
+                        theme="outline-blue"
+                        url="/sales/?source=expense_management"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            <div className="col-12 col-md-6 d-flex justify-content-center d-none d-md-flex">
-              <div className="position-relative w-100 h-100 d-flex ">
+            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
+              <div className="position-relative w-100 h-100 d-flex">
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{ objectFit: "contain" }}
-                  height={625}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    objectFit: "contain",
+                  }}
                 />
               </div>
             </div>
@@ -188,7 +200,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
-              <div className="me-2">
+              <div className={` d-flex ${styles.outerCard}`}>
                 <Heading
                   title="100%"
                   color="white"
@@ -213,7 +225,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
-              <div className="me-2">
+              <div className={` d-flex ${styles.outerCard}`}>
                 <Heading
                   title="100%"
                   color="white"
@@ -238,10 +250,9 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
       <div className={styles.third_row}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  `}>
+          <div className={`${styles.title} text-center`}>
             <Heading
               title={`Built for SMBs,  ${space}`}
               color="equity-blue"
@@ -256,8 +267,9 @@ const PaymentGateway = (): React.JSX.Element => {
             />
           </div>
 
+          {/* Section 1 */}
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-1">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`Developer First Integration  ${space}`}
@@ -272,13 +284,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   weight="4"
                 />
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
+              <div className={` ${styles.payment_section}`}>
                 {integrationData.map(({ icon, title, description }, i) => (
                   <div key={i} style={{ direction: "ltr" }}>
                     <PolicyCard
@@ -298,8 +304,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3
-             justify-content-end ${styles.third_container}`}
+              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-end ${styles.third_container} order-2 order-md-2`}
             >
               <div>
                 <Image
@@ -312,12 +317,12 @@ const PaymentGateway = (): React.JSX.Element => {
             </div>
           </div>
 
+          {/* Section 2 */}
           <div
-            className={`row bg-color-soft-mint pb-[50px] pt-[50px]  align-items-center ${styles.section}`}
+            className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
           >
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3
-              ${styles.third_container}`}
+              className={`col-md-6 col-12 d-flex my-md-5 my-3 ${styles.third_container} order-2 order-md-1`}
             >
               <div>
                 <Image
@@ -328,8 +333,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 />
               </div>
             </div>
-
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`Accept All Payment Methods ${space}`}
@@ -371,8 +375,9 @@ const PaymentGateway = (): React.JSX.Element => {
             </div>
           </div>
 
+          {/* Section 3 */}
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-1">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`Powerful Dashboards to Drive Decisions ${space}`}
@@ -413,8 +418,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3
-             justify-content-end ${styles.third_container}`}
+              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-end ${styles.third_container} order-2 order-md-2`}
             >
               <div>
                 <Image
@@ -427,12 +431,12 @@ const PaymentGateway = (): React.JSX.Element => {
             </div>
           </div>
 
+          {/* Section 4 */}
           <div
             className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
           >
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-start
-              ${styles.third_container}`}
+              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-start ${styles.third_container} order-2 order-md-1`}
             >
               <div>
                 <Image
@@ -443,8 +447,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 />
               </div>
             </div>
-
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`Rank Grade Security ${space}`}
@@ -486,8 +489,9 @@ const PaymentGateway = (): React.JSX.Element => {
             </div>
           </div>
 
+          {/* Section 5 */}
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-1">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`100% Lifetime Support  ${space}`}
@@ -528,8 +532,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-end
-              ${styles.third_container}`}
+              className={`col-md-6 col-12 d-flex  justify-content-end ${styles.third_container} order-2 order-md-2`}
             >
               <div>
                 <Image
@@ -542,12 +545,12 @@ const PaymentGateway = (): React.JSX.Element => {
             </div>
           </div>
 
+          {/* Section 6 */}
           <div
             className={`row bg-color-soft-mint  position-relative ${styles.section}`}
           >
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3
-              ${styles.third_container}`}
+              className={`col-md-6 col-12 d-flex my-md-5 my-3 ${styles.third_container} order-2 order-md-1`}
             >
               <div className={`${styles.custom_bottom_offset}`}>
                 <Image
@@ -558,8 +561,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 />
               </div>
             </div>
-
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`Developer First Integration  ${space}`}
@@ -623,7 +625,7 @@ const PaymentGateway = (): React.JSX.Element => {
               />
             </div>
 
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               {acceleratedGrowthData.map(({ icon, title }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
                   <div className="d-flex align-items-start gap-3 py-3 w-4 h-4">
@@ -645,7 +647,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
               ))}
             </div>
-            <div className="col-6">
+            <div className="col-12 col-md-6">
               <div className={styles.faq_bg}>
                 <Image src={acceleratedGrowthImg} alt="background image" />
               </div>
@@ -655,7 +657,7 @@ const PaymentGateway = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.fifth_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
+        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <Heading
               title="Discover the EnKash difference - Secure, Scalable and Seamless. "
@@ -688,7 +690,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
-          <div className="d-flex justify-content-between">
+          <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
                 <Heading
@@ -699,7 +701,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   useH1TagInHtml={true}
                 />
               </div>
-              <div className="mt-2">
+              <div className="mt-2 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
@@ -718,7 +720,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-start text-md-center pb-5`}>
             <Heading
               title={`Check out our ${space}`}
               color="black"
