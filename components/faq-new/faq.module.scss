@@ -63,56 +63,24 @@
     }
   }
 
-  @keyframes zoomIn {
-    from {
-      opacity: 0;
-      transform: translate3d(0, 0, 0) scale3d(0, 0, 0);
-      height: 0;
-      transform-origin: top left; /* Added line */
-    }
-    to {
-      opacity: 1;
-      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-      height: auto;
-      transform-origin: top left;
-    }
-  }
-
-  @keyframes zoomOutReverse {
-    from {
-      opacity: 1;
-      transform: translate3d(0, 0, 0) scale3d(1, 1, 1);
-      height: auto;
-      transform-origin: top left;
-    }
-    to {
-      opacity: 0;
-      transform: translate3d(0, 0, 0) scale3d(0, 0, 0);
-      height: 0;
-      transform-origin: top left;
-    }
-  }
-
   .answer {
     font-weight: 300;
-    transform: scale(0);
-    opacity: 0;
     overflow: hidden;
-    height: 0;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.4s ease;
     @include for-laptops {
       padding-right: 20%;
     }
 
     &.visible {
       opacity: 1;
-      height: auto;
-      animation: zoomIn 0.5s ease-in-out forwards;
+      max-height: 800px; // enough for full answer; increase if needed
     }
 
     &.reverse_visible {
       opacity: 0;
-      height: 0;
-      animation: zoomOutReverse 0.5s ease-in-out forwards;
+      max-height: 0;
     }
 
     .heading {

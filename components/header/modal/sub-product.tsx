@@ -2,6 +2,7 @@ import Image from "next/image"
 import styles from "./sub-product.module.scss"
 import { useRef, useState } from "react"
 import Link from "next/link"
+import { dropdownArrow } from ".."
 
 const SubProduct = (props: any) => {
   const [activeSubtitle, setActiveSubtitle] = useState(
@@ -129,58 +130,101 @@ const SubProduct = (props: any) => {
                 ) : null}
 
                 {activeGroup.list.map((product: any, index: any) => (
-                  <Link
-                    href={product.link}
+                  <div
+                    className={`${styles.sub_product_row_wrapper} position-relative d-flex gap-3`}
+                    onMouseEnter={() => sethoveredProductIndex(index)}
+                    onMouseLeave={() => sethoveredProductIndex(null)}
+                    ref={refs[index]}
                     key={product.name}
-                    onClick={(e) => {
-                      if (product?.comingSoon) {
-                        e.preventDefault()
-                      }
-                    }}
                   >
-                    <div
-                      className={`${styles.sub_product_row} ${
-                        hoveredProductIndex === index
-                          ? styles.color_highlight
-                          : ""
-                      } d-flex`}
-                      onMouseEnter={() => {
-                        sethoveredProductIndex(index)
+                    <Link
+                      href={product.link}
+                      onClick={(e) => {
+                        if (product?.comingSoon) e.preventDefault()
                       }}
-                      onClick={handleItemClick}
-                      ref={refs[index]}
                     >
-                      {product.imageSrcHovered && (
-                        <div>
-                          <Image
-                            src={product.imageSrcHovered}
-                            alt={product.name}
-                            width={19}
-                            height={19}
-                          />
-                        </div>
-                      )}
+                      <div
+                        className={`${styles.sub_product_row} d-flex ${
+                          hoveredProductIndex === index
+                            ? styles.color_highlight
+                            : ""
+                        }`}
+                        onClick={handleItemClick}
+                      >
+                        {product.imageSrcHovered && (
+                          <div>
+                            <Image
+                              src={product.imageSrcHovered}
+                              alt={product.name}
+                              width={19}
+                              height={19}
+                            />
+                          </div>
+                        )}
 
-                      <div className={`d-flex flex-column ms-3`}>
-                        <div className={`d-flex ${styles.sub_product_name}`}>
-                          {product.name !== "EnKash PG" ? (
-                            <>{product.name}</>
-                          ) : (
-                            <>
-                              EnKash<sup>TM</sup> PG
-                            </>
-                          )}
+                        <div className="d-flex flex-column ms-3">
+                          <div
+                            className={`d-flex align-items-center justify-content-between ${styles.sub_product_name}`}
+                          >
+                            {product.name}
+                            {product?.new && (
+                              <div className={styles.new_badge}>NEW</div>
+                            )}
+                            {product.children && (
+                              <Image
+                                src={dropdownArrow}
+                                alt="arrow"
+                                width={12}
+                                height={12}
+                                className={`ms-2 ${styles.dropdown_arrow}`}
+                              />
+                            )}
+                          </div>
 
-                          {product?.new && (
-                            <div className={styles.new_badge}>NEW</div>
-                          )}
-                        </div>
-                        <div className={styles.sub_product_description}>
-                          {product.description}
+                          <div className={styles.sub_product_description}>
+                            {product.description}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+
+                    {/* ✅ Right-side dropdown for children */}
+                    {hoveredProductIndex === index && product.children && (
+                      <div className={styles.child_dropdown}>
+                        {product.children.map((child: any) => (
+                          <Link href={child.link} key={child.name}>
+                            <div className={styles.child_item}>
+                              <Image
+                                src={child.imageSrc}
+                                alt={child.name}
+                                width={24}
+                                height={24}
+                              />
+                              <span className="ms-2">{child.name}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+
+                    {/* {product.children && (
+                      <div className={styles.child_dropdown}>
+                        {product.children.map((child: any) => (
+                          <Link href={child.link} key={child.name}>
+                            <div className={styles.child_item}>
+                              <Image
+                                src={child.imageSrc}
+                                alt={child.name}
+                                width={24}
+                                height={24}
+                              />
+                              <span className="ms-2">{child.name}</span>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                    )} */}
+                  </div>
                 ))}
               </div>
             </div>

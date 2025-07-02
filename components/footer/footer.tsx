@@ -72,9 +72,14 @@ const FooterV2 = () => {
                         <Image
                           src={soc}
                           alt="soc logo"
-                          height={48}
-                          width={48}
-                          objectFit="cover"
+                          height={0} // remove fixed height
+                          width={0} // remove fixed width
+                          sizes="(max-width: 768px) 48px, 86px"
+                          style={{
+                            maxHeight: "48px",
+                            width: "auto",
+                            objectFit: "contain",
+                          }}
                         />
                       </div>
 
@@ -414,7 +419,7 @@ const FooterV2 = () => {
                     </ul>
                   </div>
                   <div className="">
-                    <ul className="mb-3">
+                    <ul className="my-3">
                       <li>
                         <Link href="/vouchers">
                           <h4 className={` ${styles.title}`}>Vouchers</h4>

@@ -304,41 +304,29 @@
         padding-left: 50px;
         padding-top: 10px;
       }
-      .soc_logo {
-        border-radius: 5px;
-        overflow: hidden;
-        height: 35px;
-        @include for-laptops {
-          height: 50px;
-        }
-        img {
-          height: 48px;
-          width: 48px;
-          object-fit: cover;
-        }
-      }
+      .soc_logo,
       .pci_logo {
         border-radius: 5px;
         overflow: hidden;
-        height: 35px;
-        @include for-laptops {
-          height: 50px;
-        }
-        img {
-          height: 48px;
-          width: 48px;
-          object-fit: cover;
-        }
-      }
-      // img {
-      //   height: 100%;
-      //   width: auto;
-      // }
+        height: auto;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-      img {
-        height: 48px;
-        width: 48px;
-        object-fit: cover;
+        img {
+          height: auto;
+          width: auto;
+          max-height: 48px;
+          max-width: 86px;
+          object-fit: contain;
+        }
+
+        @include for-laptops {
+          img {
+            max-height: 50px;
+          }
+        }
       }
     }
   }
@@ -388,7 +376,7 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
-  max-width: 244px;
+  max-width: 259px;
 
   .logo_container_info {
     font-size: 12px;

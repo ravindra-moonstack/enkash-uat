@@ -37,22 +37,22 @@
       max-height: 500px;
     }
   }
-
-  .border-bottom-equity {
-    border-bottom: 1px solid $color-equity-blue;
+  .right_img {
+    Img {
+      height: 250px;
+      padding-top: 32px;
+      @include for-laptops {
+        height: 625px;
+        padding-top: 0px;
+      }
+    }
   }
+
   .subtitle {
     color: $color-equity-blue;
     border-bottom: 2px solid $color-equity-blue;
     font-size: 24px;
     font-weight: 400;
-  }
-
-  .lottie_container {
-    width: 500px;
-    @include for-laptops {
-      // width: 900px;
-    }
   }
 
   .first_row_title {
@@ -375,10 +375,10 @@
       Img {
         height: 130px;
         width: 278px;
-            @include for-laptops {
-       height: 443px;
-        width: 775px;
-      }
+        @include for-laptops {
+          height: 443px;
+          width: 775px;
+        }
       }
       @include for-laptops {
         display: flex;

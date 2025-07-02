@@ -112,14 +112,14 @@ const PaymentGateway = (): React.JSX.Element => {
                   >
                     <div>
                       <RectangleButton
-                        title="Get Started"
+                        title="Get Started  Today "
                         theme="blue"
                         url="/sales/?source=expense_management"
                       />
                     </div>
                     <div>
                       <RectangleButton
-                        title="API Doc"
+                        title="API Documentation"
                         theme="outline-blue"
                         url="/sales/?source=expense_management"
                       />
@@ -129,15 +129,14 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
             <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div className="position-relative w-100 h-100 d-flex">
+              <div
+                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
+              >
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    objectFit: "contain",
-                  }}
+                  style={{ objectFit: "contain" }}
+                  height={625}
                 />
               </div>
             </div>
@@ -227,7 +226,7 @@ const PaymentGateway = (): React.JSX.Element => {
             >
               <div className={` d-flex ${styles.outerCard}`}>
                 <Heading
-                  title="100%"
+                  title="100+"
                   color="white"
                   size="h2"
                   weight="7"
@@ -260,7 +259,7 @@ const PaymentGateway = (): React.JSX.Element => {
               weight="5"
             />
             <Heading
-              title={`Trusted by Enterprises ${space}`}
+              title={`Trusted by Business/Organisations ${space}`}
               color="black"
               size="h1"
               weight="5"
@@ -297,7 +296,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started"
+                  title="Get Started  Today "
                   theme="outline-blue"
                   url="/sales/?source=expense_management"
                 />
@@ -342,7 +341,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   weight="5"
                 />
                 <Heading
-                  title={`Provide your customers with the freedom to choose how they pay with several online payment options. ${space}`}
+                  title={`Provide your customers with the freedom to choose how they pay with several online payment methods. ${space}`}
                   color="main-grey"
                   size="h5"
                   weight="4"
@@ -367,7 +366,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started"
+                  title="Get Started  Today "
                   theme="outline-blue"
                   url="/sales/?source=expense_management"
                 />
@@ -411,7 +410,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started"
+                  title="Get Started  Today "
                   theme="outline-blue"
                   url="/sales/?source=expense_management"
                 />
@@ -450,7 +449,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
-                  title={`Rank Grade Security ${space}`}
+                  title={`Bank Grade Security ${space}`}
                   color="black"
                   size="h3"
                   weight="5"
@@ -481,7 +480,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started"
+                  title="Get Started  Today "
                   theme="outline-blue"
                   url="/sales/?source=expense_management"
                 />
@@ -525,7 +524,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started"
+                  title="Get Started  Today "
                   theme="outline-blue"
                   url="/sales/?source=expense_management"
                 />
@@ -547,10 +546,10 @@ const PaymentGateway = (): React.JSX.Element => {
 
           {/* Section 6 */}
           <div
-            className={`row bg-color-soft-mint  position-relative ${styles.section}`}
+            className={`row bg-color-soft-mint  pb-0 pb-md-5  position-relative ${styles.section}`}
           >
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 ${styles.third_container} order-2 order-md-1`}
+              className={`col-md-6 col-12 d-flex my-md-5  ${styles.third_container} order-2 order-md-1`}
             >
               <div className={`${styles.custom_bottom_offset}`}>
                 <Image
@@ -564,13 +563,13 @@ const PaymentGateway = (): React.JSX.Element => {
             <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
-                  title={`Developer First Integration  ${space}`}
+                  title={`Advanced Checkout and Card Saving  ${space}`}
                   color="black"
                   size="h3"
                   weight="5"
                 />
                 <Heading
-                  title={`Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms ${space}`}
+                  title={`Enhance your checkout experience with features designed for convenience and efficiency: ${space}`}
                   color="main-grey"
                   size="h5"
                   weight="4"
@@ -595,7 +594,7 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started"
+                  title="Get Started  Today "
                   theme="outline-blue"
                   url="/sales/?source=expense_management"
                 />
@@ -625,7 +624,7 @@ const PaymentGateway = (): React.JSX.Element => {
               />
             </div>
 
-            <div className="col-12 col-md-6">
+            <div className="col-12 ">
               {acceleratedGrowthData.map(({ icon, title }, i) => (
                 <div key={i} style={{ direction: "ltr" }}>
                   <div className="d-flex align-items-start gap-3 py-3 w-4 h-4">
@@ -668,7 +667,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
-              title="Get Started"
+              title="Get Started  Today "
               theme="outline-blue"
               actionImage={blueArrow}
               url="/sales/?source=expense_management"
@@ -755,22 +754,6 @@ const PaymentGateway = (): React.JSX.Element => {
 
             <div className="col-12 col-md-4">
               <ManagementCard
-                whiteTitle="QR Codes"
-                description="Secure, contactless payment with QR codes to enable businesses to accept instant transactions."
-                cardImage={qrCodes}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Invoices"
-                description="Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links."
-                cardImage={invoices}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
                 whiteTitle="Payment Button"
                 description="Integrate a pre-designed payment button to your website with a simple plug-and-play solution."
                 cardImage={paymentButton}
@@ -779,9 +762,25 @@ const PaymentGateway = (): React.JSX.Element => {
 
             <div className="col-12 col-md-4">
               <ManagementCard
+                whiteTitle="QR Codes"
+                description="Secure, contactless payment with QR codes to enable businesses to accept instant transactions."
+                cardImage={qrCodes}
+              />
+            </div>
+
+            <div className="col-12 col-md-4">
+              <ManagementCard
                 whiteTitle="Auto Collect"
                 description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
                 cardImage={autoCollect}
+              />
+            </div>
+
+            <div className="col-12 col-md-4">
+              <ManagementCard
+                whiteTitle="Invoices"
+                description="Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links."
+                cardImage={invoices}
               />
             </div>
 
