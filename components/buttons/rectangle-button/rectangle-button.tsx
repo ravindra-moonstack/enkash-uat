@@ -41,7 +41,7 @@ const RectangleButton = ({
         isDisabled ? styles.disabled : ""
       } ${className ?? ""}`}
       onClick={handleClick}
-      style={{ width: width || "auto" }}
+      style={{ width: width || "max-content" }}
     >
       {title}
       {actionImage && (

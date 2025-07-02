@@ -309,7 +309,7 @@ const acceleratedGrowthData = [
     icon: first,
   },
   {
-    title: "99.9% Uptime",
+    title: "100% Uptime",
     icon: uptime,
   },
   {

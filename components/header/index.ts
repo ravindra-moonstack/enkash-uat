@@ -159,7 +159,8 @@ export { default as occasionFilled } from "./img/occasion-filled.svg"
 //partnership
 export { default as bank } from "./img/bank.svg"
 export { default as affiliate } from "./img/affiliated.svg"
-
+export { default as coBrand } from "./img/co-brand.svg"
+export { default as dropdownArrow } from "./img/right-dropdown.svg"
 //resources
 export { default as blogsFilled } from "./img/blogs-filled.svg"
 export { default as casestudies } from "./img/case-studies.svg"

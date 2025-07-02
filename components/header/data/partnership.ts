@@ -1,4 +1,4 @@
-import { bank, affiliate } from "../../header"
+import { bank, affiliate, coBrand } from "../../header"
 
 const partnershipProducts = [
   {
@@ -27,6 +27,23 @@ const partnershipProducts = [
             link: "https://www.enkash.com/resources/videos/",
             imageSrc: affiliate,
             imageSrcHovered: affiliate,
+            children: [
+              {
+                name: "Co-branded Cards",
+                link: "/affiliate/co-branded-cards",
+                imageSrc: coBrand,
+              },
+              {
+                name: "Payment Gateway",
+                link: "/affiliate/payment-gateway",
+                imageSrc: coBrand,
+              },
+              {
+                name: "Bharat Connect",
+                link: "/affiliate/bharat-connect",
+                imageSrc: coBrand,
+              },
+            ],
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",

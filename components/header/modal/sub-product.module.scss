@@ -250,3 +250,36 @@
     left: 200px;
   }
 }
+
+.sub_product_row_wrapper {
+  position: relative;
+}
+
+.child_dropdown {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  min-width: 180px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.child_item {
+  display: flex;
+  align-items: center;
+  padding: 6px 8px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+
+  img {
+    flex-shrink: 0;
+  }
+
+  span {
+    font-size: 16px;
+    color: #000;
+  }
+}
