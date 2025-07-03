@@ -1,76 +1,40 @@
 import React from "react"
-
 import styles from "./all-products.module.scss"
-import {
-  autoCollect,
-  instantSettlement,
-  invoices,
-  paymentButton,
-  paymentLink,
-  paymentPage,
-  qrCode,
-  reminderEngine,
-} from "."
 
 import Marquee from "react-fast-marquee"
 import FeatureCard from "../featureCard/feature-card"
+import { approve, auditExpence, autoCapture, reconcile, workflow } from "."
 
 const cardData = [
   {
-    title: "Payment Link",
-    description:
-      "Collect payments across WhatsApp, SMS, Facebook, Twitter, and other platforms with no-code payment links.",
-    image: paymentLink,
+    title: "Auto-capture receipts",
+    description: " and match them with transactions",
+    image: autoCapture,
     link: "/payment-links/",
   },
   {
-    title: "Payment Page",
-    description:
-      "Create custom-branded Payment Pages in minutes to accept payments online—no tech effort needed.",
-    image: paymentPage,
+    title: "View, approve, and audit expenses - ",
+    description: "all in one place",
+    image: auditExpence,
     link: "/payment-page/",
   },
   {
-    title: "Payment Button",
-    description:
-      "Integrate a pre-designed payment button to your website with a simple plug-and-play solution.",
-    image: paymentButton,
+    title: "Auto-reconcile ",
+    description: " with your accounting software",
+    image: reconcile,
     link: "/payment-button/",
   },
   {
-    title: "QR Codes",
-    description:
-      "Secure, contactless payment with QR codes to enable businesses to accept instant transactions.",
-    image: qrCode,
+    title: "Set policy-driven workflows",
+    description: "that apply at the swipe level",
+    image: workflow,
     link: "/qr-codes/",
   },
   {
-    title: "Auto Collect",
-    description:
-      "Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale.",
-    image: autoCollect,
+    title: "Track and approve spends ",
+    description: "Track and approve spends ",
+    image: approve,
     link: "/auto-collect/",
-  },
-  {
-    title: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links.",
-    image: invoices,
-    link: "/digital-invoicing/",
-  },
-  {
-    title: "Instant Settlement",
-    description:
-      "Access your funds instantly, skip standard settlement cycles, and gain better control over your cash flow.",
-    image: instantSettlement,
-    link: "/instant-settlement/",
-  },
-  {
-    title: "Reminder Engine",
-    description:
-      "Eliminate manual reminders and effortlessly automate your business collections for smoother cash flow.",
-    image: reminderEngine,
-    link: "/collection-reminder/",
   },
 ]
 
