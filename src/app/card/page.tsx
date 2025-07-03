@@ -10,7 +10,7 @@ import {
   spendAnalyticsData,
 } from "./data"
 
-import { Header, Heading,  FAQHtml, Footer } from "@/components"
+import { Header, Heading, FAQHtml, Footer } from "@/components"
 
 import {
   blueArrow,
@@ -109,7 +109,7 @@ const Card = (): React.JSX.Element => {
             />
 
             <Heading
-              title="Control spending before it happens. Automate what doesn't need your time."
+              title="From instant issuance to granular controls - corporate cards that do more."
               color="white"
               size="h5"
               weight="4"
@@ -127,15 +127,14 @@ const Card = (): React.JSX.Element => {
                   alt="card visual"
                   className={styles.card_image}
                 />
-                <div className="me-2">
-                  <Heading
-                    title={item.title}
-                    color="main-grey"
-                    size="h6"
-                    weight="4"
-                    useH1TagInHtml={true}
-                  />
-                </div>
+
+                <Heading
+                  title={item.title}
+                  color="main-grey"
+                  size="h6"
+                  weight="4"
+                  useH1TagInHtml={true}
+                />
               </div>
             ))}
           </div>
@@ -170,7 +169,7 @@ const Card = (): React.JSX.Element => {
             </div>
             <div>
               <Heading
-                title="From instant issuance to granular controls - corporate cards that do more."
+                title="Real-time visibility, control, and insights that traditional bank-issued card portals simply can’t match."
                 color="alternate-grey"
                 size="h5"
                 weight="4"
@@ -305,7 +304,12 @@ const Card = (): React.JSX.Element => {
             </div>
 
             <div className={styles.analytic_bg}>
-              <Image src={spendAnalylicsImg} alt="background image" />
+              <Image
+                src={spendAnalylicsImg}
+                alt="background image"
+                height={569}
+                width={500}
+              />
             </div>
           </div>
         </div>

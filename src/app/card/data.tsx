@@ -105,7 +105,7 @@ const cardData = [
   },
   {
     icon: realTimeTrakingIcon,
-    title: "Real-time tracking",
+    title: "Real-time tracking & controls",
   },
   {
     icon: securityIcon,
