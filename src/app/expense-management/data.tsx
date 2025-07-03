@@ -5,20 +5,7 @@ import iconFour from "./img/icon-four.svg"
 import iconFive from "./img/icon-five.svg"
 import iconSix from "./img/icon-six.svg"
 import policyIcon from "./img/policyIcon.svg"
-import overviewIcon from "./img/overview.svg"
-import controlIcon from "./img/control.svg"
-import intelligenceIcon from "./img/intelligence.svg"
-import statementIcon from "./img/statement.svg"
-import oneClickIcon from "./img/oneClick.svg"
-import identifyIcon from "./img/identify.svg"
-import detectIcon from "./img/detect.svg"
-import monitorIcon from "./img/monitor.svg"
-import customizeIcon from "./img/customize.svg"
-import instantIcon from "./img/instant-card.svg"
-import onboardingIcon from "./img/onboarding.svg"
-import noThidPartyIcon from "./img/noThidParty.svg"
-import diyControlIcon from "./img/diy-control.svg"
-import { clockIcon, multiCardIcon, realTimeTrakingIcon, securityIcon } from "."
+import { creditCard } from "."
 
 const dataSets = [
   {
@@ -94,55 +81,47 @@ const blogData = [
   },
 ]
 
-const cardData = [
-  {
-    icon: clockIcon,
-    title: "Instant Card Issuance",
-  },
-  {
-    icon: multiCardIcon,
-    title: "Multiple Card Options",
-  },
-  {
-    icon: realTimeTrakingIcon,
-    title: "Real-time tracking",
-  },
-  {
-    icon: securityIcon,
-    title: "100% RBI-compliant",
-  },
-]
-
 const cardsData = [
   {
-    title: "Fast Performance",
+    title: "Custom Expense Policies ",
     description:
-      "Our app loads quickly and smoothly for a better user experience.",
+      "Set precise rules for spend limits, categories, and approval hierarchies—ensuring every expense complies with your company’s policies before it even reaches the finance team.",
     icon: policyIcon,
   },
   {
-    title: "Secure",
-    description: "Top-notch security features keep your data safe and private.",
+    title: "Multi-Level Approval Workflows",
+    description:
+      "Create customized, multi-tier approval flows based on amount, department, or category, so the right people always review the right expenses—no bottlenecks or manual routing.",
     icon: policyIcon,
   },
   {
-    title: "24/7 Support",
-    description: "We provide around-the-clock assistance whenever you need it.",
+    title: "Auto-Flagging of Policy Violations",
+    description:
+      "The system instantly flags out-of-policy expenses like overspending, wrong categories, or duplicate claims, helping finance teams catch issues before reimbursement.",
     icon: policyIcon,
   },
   {
-    title: "Customizable",
-    description: "Easily tailor the app to fit your unique workflow and needs.",
+    title: "Receipt Upload Reminders & Enforcement",
+    description:
+      "Automated reminders ensure employees submit receipts on time. Missing receipts trigger alerts and block approvals, reducing audit risks and improving documentation quality.",
     icon: policyIcon,
   },
   {
-    title: "Cloud Sync",
-    description: "Access your data anywhere with secure cloud synchronization.",
+    title: "Pre-Submission Policy Validation",
+    description:
+      "Employees receive real-time feedback on policy violations before submitting expenses, cutting down rework, and ensuring cleaner, compliant entries from the start.",
     icon: policyIcon,
   },
   {
-    title: "Intuitive Design",
-    description: "A clean and simple interface that’s easy to navigate.",
+    title: "Role-Based Permissions & Data Access Control",
+    description:
+      "Assign permissions based on user roles—employee, approver, finance, or admin—so everyone only sees and does what they’re supposed to. Ensures data security and compliance.",
+    icon: policyIcon,
+  },
+  {
+    title: "Travel Request Approvals with Custom Policies",
+    description:
+      "Set rules for travel spend, routes, and booking classes. Route requests through multi-level approvals and sync approved trips with bookings—all while staying policy-compliant.",
     icon: policyIcon,
   },
 ]
@@ -198,107 +177,19 @@ const projects = [
   },
 ]
 
-const intantActionData = [
+const cardData = [
   {
-    title: "Live Account Overview",
+    whiteTitle: "Streamlined process",
     description:
-      "Track balances, credit limits, billing cycles, and dues in real-time.",
-    icon: overviewIcon,
+      "Effortless expense submission and approval process supported via WhatsApp",
+    cardImage: creditCard,
   },
   {
-    title: "Granular Card Controls",
-    description:
-      "Set custom limits, manage usage channels, and block or reissue cards with just a click.",
-    icon: controlIcon,
+    whiteTitle: "Smart reimbursements",
+    description: "Speedy approvals with AI-powered workflows",
+    cardImage: creditCard,
   },
-  {
-    title: "Transaction Intelligence",
-    description:
-      "Drill down into each transaction by category, user, time, and channel.",
-    icon: intelligenceIcon,
-  },
-  {
-    title: "Statement Clarity",
-    description:
-      "Download detailed, filterable statements for individual or consolidated accounts.",
-    icon: statementIcon,
-  },
-  {
-    title: "One-Click Settlements",
-    description:
-      "Make payments across cards with flexible split options by total, minimum due, or custom logic.",
-    icon: oneClickIcon,
-  },
+  // ... add more cards
 ]
 
-const spendAnalyticsData = [
-  {
-    title: "Identify top spenders, vendors, and categories",
-    icon: identifyIcon,
-  },
-  {
-    title: "Detect anomalies or policy violations in real time",
-    icon: detectIcon,
-  },
-  {
-    title: "Monitor trends across departments, cards, or time periods",
-    icon: monitorIcon,
-  },
-  {
-    title: "Customize views for CXOs, finance teams, or department heads",
-    icon: customizeIcon,
-  },
-]
-
-const rbiData = [
-  {
-    title: "Instant card issuance",
-    description: "without routing requests through banks",
-    icon: instantIcon,
-  },
-  {
-    title: "Faster onboarding",
-    description: "and fewer compliance hurdles",
-    icon: onboardingIcon,
-  },
-  {
-    title: "No third-party delays",
-    description: "or dependencies",
-    icon: noThidPartyIcon,
-  },
-  {
-    title: "DIY control",
-    description: "over how your cards are issued, used, and managed",
-    icon: diyControlIcon,
-  },
-]
-
-const corporateCardData = [
-  {
-    title: "• Reloadable with full/minimum KYC options",
-  },
-  {
-    title: "• Set daily, monthly, and category-based limits",
-  },
-  {
-    title:
-      "• Instant card creation, blocking, & top-up from a single dashboard",
-  },
-  {
-    title: "• Real-time tracking, smart analytics, and full policy compliance",
-  },
-  {
-    title: "• Supports digital wallets with future-ready UPI integration",
-  },
-]
-export {
-  blogData,
-  dataSets,
-  cardsData,
-  projects,
-  intantActionData,
-  spendAnalyticsData,
-  rbiData,
-  corporateCardData,
-  cardData,
-}
+export { blogData, dataSets, cardsData, projects, cardData }

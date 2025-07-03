@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixin";
+@use "../../styles/variables" as *;
+@use "../../styles/mixin" as *;
 
 .integration_row {
   position: relative;
@@ -21,18 +21,13 @@
   }
 
   .container {
-    margin: 0px 0px 100px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: stretch;
-
     max-width: 100vw;
-    overflow-x: scroll;
-
     @include for-laptops {
       flex-wrap: nowrap;
-      margin: 40px 0px 100px;
     }
   }
 

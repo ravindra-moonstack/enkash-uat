@@ -1,23 +1,18 @@
-"use client";
-import Image from "next/image";
-import styles from "./card.module.scss";
-import icon from "./img/animationCardIcon.svg";
-import { Heading, SecondryButton } from "@/components";
-import blueArrow from "./img/blue-arrrow.svg";
+"use client"
+import Image from "next/image"
+import styles from "./card.module.scss"
+import icon from "./img/animationCardIcon.svg"
+import { Heading, SecondryButton } from "@/components"
+import blueArrow from "./img/blue-arrrow.svg"
 
 interface CardProps {
-  i: number;
-  title: string;
-  description: string;
-  src: string;
+  i: number
+  title: string
+  description: string
+  src: string
 }
 
-const Card: React.FC<CardProps> = ({
-  i,
-  title,
-  description,
-  src,
-}) => {
+const Card: React.FC<CardProps> = ({ i, title, description, src }) => {
   return (
     <div className={styles.cardContainer}>
       <div
@@ -59,7 +54,7 @@ const Card: React.FC<CardProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Card;
+export default Card

@@ -32,6 +32,7 @@ import {
   autoCollect,
   instant,
   reminder,
+  whiteArrow,
 } from "."
 
 import ManagementCard from "@/components/management-card/management-card"
@@ -670,13 +671,14 @@ const PaymentGateway = (): React.JSX.Element => {
               title="Get Started  Today "
               theme="outline-blue"
               actionImage={blueArrow}
+              hoverImage={whiteArrow}
               url="/sales/?source=expense_management"
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
+     <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-5`}>
             <Heading
@@ -705,6 +707,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   title="Get started today"
                   theme="border-gray"
                   actionImage={blueArrow}
+                  hoverImage={whiteArrow}
                   iconSize={15}
                   url="/sales/?source=receivables"
                 />
@@ -716,6 +719,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

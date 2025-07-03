@@ -1,17 +1,19 @@
 "use client"
 
+import { useState } from "react"
 import styles from "../button.module.scss"
 import Image, { StaticImageData } from "next/image"
 
 export interface ButtonProps {
   isDisabled?: boolean
   title: string
-  url?: string | (() => void) // string link or function
+  url?: string | (() => void)
   theme?: "blue" | "green" | "black" | "outline-blue" | "border-gray"
   width?: string
-  actionImage?: StaticImageData | string // next/image compatible types
-  iconSize?: number // must be a number for Image width/height
+  actionImage?: StaticImageData | string
+  iconSize?: number
   className?: string
+  hoverImage?: StaticImageData | string
 }
 
 const RectangleButton = ({
@@ -23,7 +25,9 @@ const RectangleButton = ({
   actionImage,
   iconSize = 20, // default icon size
   className,
+  hoverImage,
 }: ButtonProps) => {
+  const [isHovered, setIsHovered] = useState(false)
   const handleClick = () => {
     if (typeof url === "string") {
       window.open(url, "_blank")
@@ -33,6 +37,7 @@ const RectangleButton = ({
   }
 
   const iconClass = iconSize === 20 ? "big-icon" : "custom-icon"
+  const iconToShow = isHovered && hoverImage ? hoverImage : actionImage
 
   return (
     <button
@@ -42,12 +47,14 @@ const RectangleButton = ({
       } ${className ?? ""}`}
       onClick={handleClick}
       style={{ width: width || "max-content" }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
     >
       {title}
-      {actionImage && (
+      {iconToShow && (
         <Image
           className={`ms-2 ${styles[iconClass]}`}
-          src={actionImage}
+          src={iconToShow}
           alt="action image"
           width={iconSize}
           height={iconSize}

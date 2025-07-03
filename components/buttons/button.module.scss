@@ -154,10 +154,10 @@
     font-size: 18px;
   }
 
-  &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  }
+  // &:hover {
+  //   transform: translateY(-2px);
+  //   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+  // }
 
   &.blue {
     background-color: $color-equity-blue;
@@ -212,9 +212,9 @@
     transition: box-shadow 0.3s ease;
     border: 2px solid $color-dark-grey;
     &:hover {
-      background-color: $color-equity-blue;
-      color: $color-dark-grey;
-      border: 2px solid $color-dark-grey;
+      background-color: #023ed4;
+      color: $color-white;
+      border: 2px solid #023ed4;
     }
   }
 }
