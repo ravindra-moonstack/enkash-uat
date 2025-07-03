@@ -5,9 +5,10 @@ import { ReactNode } from "react"
 
 export interface CardProps {
   whiteTitle?: string
-  titleHtml?: ReactNode // or string if it's only HTML
+  titleHtml?: ReactNode
   description: string
   cardImage?: string
+  theme?: "light" | "dark"
 }
 
 const ManagementCard = ({
@@ -15,17 +16,25 @@ const ManagementCard = ({
   titleHtml,
   description,
   cardImage,
+  theme = "light",
 }: CardProps) => {
   return (
     <div
-      className={`d-flex flex-column justify-content-between ${styles.card_body}`}
+      className={`d-flex flex-column justify-content-between ${styles.card_body} ${
+        theme === "dark" ? styles.dark : styles.light
+      }`}
     >
       <div>
         {titleHtml ? (
           <div className={styles.titleHtml}>{titleHtml}</div>
         ) : (
           whiteTitle && (
-            <Heading title={whiteTitle} color="black" size="h4" weight="6" />
+            <Heading
+              title={whiteTitle}
+              color={theme === "dark" ? "white" : "black"}
+              size="h4"
+              weight="6"
+            />
           )
         )}
 

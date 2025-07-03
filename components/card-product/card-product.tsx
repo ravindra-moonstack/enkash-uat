@@ -30,7 +30,7 @@ const CardProduct = ({
         )}
 
         <div
-          className={`my-3 ${styles.description}`}
+          className={` ${styles.description}`}
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
       </div>

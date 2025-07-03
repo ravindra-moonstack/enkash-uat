@@ -1,11 +1,6 @@
 import React from "react"
-import Image from "next/image"
-import Link from "next/link"
-
 
 import styles from "./all-products.module.scss"
-import Heading from "../heading/heading"
-import { space } from "@/common/constant"
 import {
   autoCollect,
   instantSettlement,
@@ -18,6 +13,7 @@ import {
 } from "."
 
 import Marquee from "react-fast-marquee"
+import FeatureCard from "../featureCard/feature-card"
 
 const cardData = [
   {
@@ -92,46 +88,22 @@ export type AllProductsProp = {
 }
 
 const AllProducts = ({
-  title = "Check out our other payment products at",
-  subtitle,
   data = cardData,
 }: AllProductsProp): React.JSX.Element => {
-  //
-
   return (
     <div>
-      <div className={`${styles.integration_row} row   pt-md-5`}>
-        <div
-          className={`d-inline text-center pt-5 mb-5 mb-md-2 px-3 px-md-5 ${styles.title_container}`}
-        >
-          <Heading title={title} color="black" size="h1" weight="6" />
-          {subtitle && (
-            <Heading
-              title={`${space}${subtitle}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-          )}
-        </div>
-
+      <div className={`${styles.integration_row} row`}>
         <div className={`${styles.container}`}>
           <Marquee speed={70} pauseOnClick={true}>
-            {data?.map((card, index) => (
-              <div
-                key={index}
-                className={`${styles.card} col-md-4 ${
-                  index % 2 !== 0 ? styles.card_white_bg : ""
-                }`}
-              >
-                <div className={styles.iconContainer}>
-                  <Image src={card.image} width={50} alt="icon" />
-                </div>
-                <h3>{card.title}</h3>
-                <p>{card.description}</p>
-                <div className={styles.cta_button}>
-                  <Link href={card.link}>Learn More</Link>
-                </div>
+            {data.map((card, index) => (
+              <div key={index} className="me-4">
+                {" "}
+                {/* Add spacing if needed */}
+                <FeatureCard
+                  titleHtml={card.title}
+                  description={card.description}
+                  cardImage={card.image}
+                />
               </div>
             ))}
           </Marquee>

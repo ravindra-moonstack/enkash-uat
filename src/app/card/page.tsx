@@ -3,23 +3,19 @@ import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import {
+  cardData,
   corporateCardData,
   intantActionData,
   rbiData,
   spendAnalyticsData,
 } from "./data"
 
-import { Header, Heading, SecondryButton, FAQHtml } from "@/components"
+import { Header, Heading,  FAQHtml, Footer } from "@/components"
 
 import {
   blueArrow,
-  clockIcon,
-  realTimeTrakingIcon,
-  securityIcon,
-  multiCardIcon,
   instantActionImg,
   spendAnalylicsImg,
-  faqBg,
   motherCardImg,
   rbiLogo,
   corporateCard,
@@ -30,6 +26,7 @@ import {
   virtualCardImg,
   purchesCardImg,
   sassCardImg,
+  whiteArrow,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -39,6 +36,7 @@ import faqData from "./faq-data"
 import CardAnimation from "@/components/cardAnimation/page"
 import FeatureCard from "@/components/featureCard/feature-card"
 import CardProduct from "@/components/card-product/card-product"
+import AllProducts from "@/components/all-products/all-products"
 
 // const showScroll = cardsData.length > 3
 const Card = (): React.JSX.Element => {
@@ -49,7 +47,7 @@ const Card = (): React.JSX.Element => {
       <div className={`${styles.first_row}`}>
         <div className="max-m-auto">
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <div className="d-flex flex-column mb-4 justify-content-center align-items-center">
+            <div className="d-flex flex-column mb-3 justify-content-center align-items-center">
               <Heading
                 title="The Only Corporate Cards"
                 color="white"
@@ -118,86 +116,34 @@ const Card = (): React.JSX.Element => {
               useH1TagInHtml={true}
             />
           </div>
-          <div className={`row  ${styles.section}`}>
-            {" "}
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <Image
-                src={clockIcon}
-                alt="card visual"
-                className={styles.card_image}
-              />
-              <div className="me-2">
-                <Heading
-                  title="Instant Card Issuance"
-                  color="main-grey"
-                  size="h6"
-                  weight="4"
-                  useH1TagInHtml={true}
+          <div className={`d-flex  flex-wrap  ${styles.section}`}>
+            {cardData.map((item, index) => (
+              <div
+                key={index}
+                className={`d-flex flex-column justify-content-center align-items-center ${styles.card}`}
+              >
+                <Image
+                  src={item.icon}
+                  alt="card visual"
+                  className={styles.card_image}
                 />
+                <div className="me-2">
+                  <Heading
+                    title={item.title}
+                    color="main-grey"
+                    size="h6"
+                    weight="4"
+                    useH1TagInHtml={true}
+                  />
+                </div>
               </div>
-            </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <Image
-                src={multiCardIcon}
-                alt="card visual"
-                className={styles.card_image}
-              />
-              <div className="me-2">
-                <Heading
-                  title="Multiple Card Options"
-                  color="main-grey"
-                  size="h6"
-                  weight="4"
-                  useH1TagInHtml={true}
-                />
-              </div>
-            </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <Image
-                src={realTimeTrakingIcon}
-                alt="card visual"
-                className={styles.card_image}
-              />
-              <div className="me-2">
-                <Heading
-                  title="Real-time trackingc"
-                  color="main-grey"
-                  size="h6"
-                  weight="4"
-                  useH1TagInHtml={true}
-                />
-              </div>
-            </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
-              <Image
-                src={securityIcon}
-                alt="card visual"
-                className={styles.card_image}
-              />
-              <div className="me-2">
-                <Heading
-                  title="100% RBI-compliant"
-                  color="main-grey"
-                  size="h6"
-                  weight="4"
-                  useH1TagInHtml={true}
-                />
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
       <div className={`${styles.action_row} bg-white row-padding `}>
-        <div className="max-m-auto">
+        <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
             <div
               className={` flex-column justify-content-center align-items-center pb-3 `}
@@ -256,6 +202,7 @@ const Card = (): React.JSX.Element => {
                   title="Try Now"
                   theme="border-gray"
                   actionImage={blueArrow}
+                  hoverImage={whiteArrow}
                   url="/sales/?source=expense_management"
                   width="237px"
                   className="d-flex justify-content-between align-items-center"
@@ -263,7 +210,7 @@ const Card = (): React.JSX.Element => {
               </div>
             </div>
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3
+              className={`col-md-6 col-12 d-flex
              justify-content-end ${styles.third_container}`}
             >
               <div>
@@ -280,7 +227,7 @@ const Card = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.action_row} bg-black-200 row-padding `}>
-        <div className="max-m-auto">
+        <div className="max-w-auto">
           <div className={`${styles.title} text-start pb-5`}>
             <div
               className={` flex-column justify-content-center align-items-center pb-3 `}
@@ -405,7 +352,7 @@ const Card = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.fifth_row} bg-white row-padding `}>
-        <div className="max-m-auto">
+        <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
             <div
               className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
@@ -470,6 +417,7 @@ const Card = (): React.JSX.Element => {
                   title="Explore More"
                   theme="border-gray"
                   actionImage={blueArrow}
+                  hoverImage={whiteArrow}
                   url="/sales/?source=expense_management"
                   width="237px"
                   className="d-flex justify-content-between align-items-center"
@@ -558,88 +506,99 @@ const Card = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.fourth_row}>
-        <div className={`row relative ${styles.section}`}>
+      <div
+        className={styles.fourth_row}
+        style={{
+          maxHeight: "100vh",
+          overflowY: "scroll",
+          scrollbarWidth: "none", // for Firefox
+          msOverflowStyle: "none",
+        }}
+      >
+        <div className={`row relative  ${styles.section}`}>
           <div className={`${styles.title} text-center pb-5`}>
             <Heading
-              title={`Smart Policy  ${space}`}
+              title={`Get  ${space}`}
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`Enforcement & Approvals ${space}`}
-              color="bluish-purple"
+              title={`Built-in Controls  ${space}`}
+              color="equity-blue"
               size="h1"
               weight="6"
             />
-            <div>
-              {" "}
-              <Heading
-                title="Control spending before it happens. Automate what doesn't need your time."
-                color="main-grey"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
+            <Heading
+              title={`, Zero Surprises ${space}`}
+              color="black"
+              size="h1"
+              weight="6"
+            />
           </div>
           <CardAnimation />
-          <div className="mt-5 mx-5">
-            <SecondryButton
-              title="Learn more Managing Hierarchy and Controls"
-              theme="border-gray"
-              actionImage={blueArrow}
-              iconSize={15}
-              url="/sales/?source=receivables"
-            />
-          </div>{" "}
         </div>
       </div>
 
-      <div
-        className={`${styles.eigth_row} row row-padding-bottom-none relative`}
-      >
-        <div className={`${styles.faqSection} text-start  pb-5`}>
-          <div className={`${styles.title} text-start  pb-5`}>
+      <div className={`${styles.eigth_row} relative`}>
+        <div className={`${styles.title} text-center pb-5 pt-5`}>
+          <div
+            className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
+          >
             <Heading
-              title={`Connect your finance stack. ${space}`}
+              title={`One Platform.  ${space}`}
               color="black"
               size="h1"
-              weight="6"
+              weight="5"
             />
             <Heading
-              title={` Free your team  ${space}`}
-              color="bluish-purple"
+              title={`End-to-End Control.  ${space}`}
+              color="equity-blue"
               size="h1"
-              weight="6"
+              weight="5"
             />
-
+          </div>
+          <div>
             <Heading
-              title="from spreadsheets."
-              color="black"
-              size="h1"
-              weight="6"
+              title="Connect Corporate Cards with Expense Management for a Unified Experience"
+              color="alternate-grey"
+              size="h5"
+              weight="4"
               useH1TagInHtml={true}
             />
-            <div>
-              {" "}
-              <Heading
-                title="EnKash - The Financial Ecosystem Enabler"
-                color="main-grey"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
           </div>
-
-          <div>
-            <FAQHtml faqData={faqData} />
+          <div className="pt-4">
+            <RectangleButton
+              title={"Explore Our Expense Management Suite"}
+              theme="blue"
+            />
           </div>
         </div>
-        <div className={styles.faq_bg}>
-          <Image src={faqBg} alt="background image" />x
+
+        <div>
+          <AllProducts />
+        </div>
+      </div>
+
+      <div className={`${styles.fifth_row} `}>
+        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
+          <div className="d-flex justify-content-center  align-items-center text-center">
+            <Heading
+              title="Apply Now for Smarter Business Spending"
+              size="bannerHeading"
+              color="white"
+              weight="4"
+            />
+          </div>
+          <div className={`${styles.get_started_button} `}>
+            <RectangleButton
+              title="Get Started  Today "
+              theme="outline-blue"
+              actionImage={blueArrow}
+              hoverImage={whiteArrow}
+              url="/sales/?source=expense_management"
+            />
+          </div>
         </div>
       </div>
 
@@ -656,7 +615,7 @@ const Card = (): React.JSX.Element => {
             <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
-          <div className="d-flex ">
+          <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
                 <Heading
@@ -667,24 +626,25 @@ const Card = (): React.JSX.Element => {
                   useH1TagInHtml={true}
                 />
               </div>
-              <div className="mt-2">
+              <div className="mt-2 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
                   actionImage={blueArrow}
+                  hoverImage={whiteArrow}
                   iconSize={15}
                   url="/sales/?source=receivables"
                 />
               </div>
             </div>
-            <div>
+            <div className={`${styles.faqData}`}>
               <FAQHtml faqData={faqData} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* <Footer /> */}
+      <Footer />
     </div>
   )
 }
