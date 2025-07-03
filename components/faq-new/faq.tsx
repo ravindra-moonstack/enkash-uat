@@ -34,7 +34,7 @@ const FAQ = ({
   return (
     <div className={styles.faq_row}>
       <div
-        className={`${styles.faq_inner_row} ms-auto`}
+        className={`${styles.faq_inner_row} `}
         style={
           answerVisible
             ? {
