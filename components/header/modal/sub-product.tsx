@@ -206,34 +206,23 @@ const SubProduct = (props: any) => {
                         ))}
                       </div>
                     )}
-
-                    {/* {product.children && (
-                      <div className={styles.child_dropdown}>
-                        {product.children.map((child: any) => (
-                          <Link href={child.link} key={child.name}>
-                            <div className={styles.child_item}>
-                              <Image
-                                src={child.imageSrc}
-                                alt={child.name}
-                                width={24}
-                                height={24}
-                              />
-                              <span className="ms-2">{child.name}</span>
-                            </div>
-                          </Link>
-                        ))}
-                      </div>
-                    )} */}
                   </div>
                 ))}
               </div>
             </div>
           </div>
-          <div className={` ${styles.exploreProduct}`}>
-            <Link href={props.parentLink || "#"}>
-              <h4 className="fw-bold mb-1"> Explore {motherProductName}</h4>
-            </Link>
-          </div>
+          {[
+            "For Developer",
+            "Resources",
+            "Payable & Receivable+",
+            "Prepaid Cards",
+          ].includes(motherProductName) === false && (
+            <div className={styles.exploreProduct}>
+              <Link href={props.parentLink || "#"}>
+                <h4 className="mb-1">Explore {motherProductName}</h4>
+              </Link>
+            </div>
+          )}
         </>
       )}
     </div>

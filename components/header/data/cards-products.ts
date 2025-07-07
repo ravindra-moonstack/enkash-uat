@@ -33,7 +33,7 @@ export const cardsProducts = [
         list: [
           {
             name: "Meal Cards",
-            description: "Track and limit fuel spends",
+            description: "Tax-saving food benefit card",
             imageSrc: mealCard,
             imageSrcHovered: mealCardFilled,
             link: "/meal-card",

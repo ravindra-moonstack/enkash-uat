@@ -2,11 +2,8 @@
 @use "/styles/variables" as *;
 
 .marquee_box {
-  display: none;
+  display: block;
   cursor: pointer;
-  @include for-laptops {
-    display: block;
-  }
 
   &:hover {
     filter: none;
@@ -19,184 +16,44 @@
 
 .bank_logo {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
   overflow-x: auto;
-  -ms-overflow-style: none;
-  overflow: -moz-scrollbars-none;
+  padding: 8px 16px;
   scrollbar-width: none;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 20px;
-  @include for-laptops {
-    padding-left: 20px;
-  }
+  -ms-overflow-style: none;
 
   img {
+    height: auto;
+    width: auto;
+    max-height: 36px;
+
     @include for-laptops {
-      margin-right: 0px;
-      padding-left: 40px;
-      height: auto;
+      max-height: 36px;
+    }
+
+    @include for-tablet {
+      max-height: 30px;
+    }
+
+    @include for-window-zoomed-screens {
+      max-height: 32px;
+    }
+
+    @include for-large-screen {
+      max-height: 40px;
     }
   }
-
-  //   .axis {
-  //     height: 33px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 40px;
-  //     }
-  //   }
-  //   .icici {
-  //     height: 30px;
-  //     width: auto;
-  //     margin-right: 40px;
-  //     @include for-laptops {
-  //       height: 35px;
-  //     }
-  //   }
-  //   .au {
-  //     height: 30px;
-  //     width: auto;
-  //     margin-right: 40px;
-  //     @include for-laptops {
-  //       height: 40px;
-  //     }
-  //   }
-  //   .visa {
-  //     height: 25px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 30px;
-  //     }
-  //   }
-  //   .kotak {
-  //     height: 33px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 40px;
-  //     }
-  //   }
-  //   .hdfc {
-  //     height: 30px;
-  //     width: auto;
-  //     margin-right: 60px;
-  //     @include for-laptops {
-  //       height: 40px;
-  //     }
-  //   }
-  //   .rupay {
-  //     height: 38px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 55px;
-  //     }
-  //   }
-  //   .master {
-  //     height: 35px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 45px;
-  //     }
-  //   }
-  // }
-
-  // .customer_logo::-webkit-scrollbar {
-  //   display: none;
-  // }
-
-  // .customer_logo {
-  //   display: flex;
-  //   justify-content: space-evenly;
-  //   overflow-x: auto;
-  //   padding-left: 20px;
-  //   overflow-x: auto;
-  //   -ms-overflow-style: none;
-  //   overflow: -moz-scrollbars-none;
-  //   scrollbar-width: none;
-  //   @include for-laptops {
-  //     padding-left: 20px;
-  //   }
-
-  //   img {
-  //     margin-right: 20px;
-  //     @include for-laptops {
-  //       margin-right: 0px;
-  //     }
-  //   }
-
-  //   .box {
-  //     height: 30px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 35px;
-  //     }
-  //   }
-
-  //   .reliance {
-  //     height: 30px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 50px;
-  //     }
-  //   }
-
-  //   .pristyn {
-  //     height: 35px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 50px;
-  //     }
-  //   }
-  //   .everest {
-  //     height: 22px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 30px;
-  //     }
-  //   }
-  //   .cure {
-  //     height: 25px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 30px;
-  //     }
-  //   }
-  //   .infra {
-  //     height: 17px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 28px;
-  //     }
-  //   }
-  //   .dtdc {
-  //     height: 20px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 28px;
-  //     }
-  //   }
-  //   .starbucks {
-  //     height: 40px;
-  //     width: auto;
-  //     margin-right: 50px;
-  //     @include for-laptops {
-  //       height: 50px;
-  //     }
-  //   }
 }
 
-.scrollbar-thin::-webkit-scrollbar {
-  width: 12px;
+@media (max-width: 576px) {
+  .bank_logo {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  .bank_logo img {
+    max-height: 20px;
+  }
 }

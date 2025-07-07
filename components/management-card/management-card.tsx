@@ -1,6 +1,5 @@
 import Image from "next/image"
 import styles from "./management-card.module.scss"
-import Heading from "../heading/heading"
 import { ReactNode } from "react"
 
 export interface CardProps {
@@ -20,26 +19,21 @@ const ManagementCard = ({
 }: CardProps) => {
   return (
     <div
-      className={`d-flex flex-column justify-content-between ${styles.card_body} ${
-        theme === "dark" ? styles.dark : styles.light
-      }`}
+      className={`d-flex flex-column justify-content-between ${
+        styles.card_body
+      } ${theme === "dark" ? styles.dark : styles.light}`}
     >
       <div>
         {titleHtml ? (
           <div className={styles.titleHtml}>{titleHtml}</div>
         ) : (
           whiteTitle && (
-            <Heading
-              title={whiteTitle}
-              color={theme === "dark" ? "white" : "black"}
-              size="h4"
-              weight="6"
-            />
+            <div className={styles.whiteTitleHtml}>{whiteTitle}</div>
           )
         )}
 
         <div
-          className={`my-3 ${styles.description}`}
+          className={` ${styles.description}`}
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
       </div>

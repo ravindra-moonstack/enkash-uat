@@ -21,9 +21,11 @@ const FooterV2 = () => {
   return (
     <div className={` ${styles.footer}`}>
       <div className={`max-w-auto  ${styles.footer_padding}`}>
-        <div className={`d-flex ${styles.footer_section}`}>
+        <div
+          className={`d-flex flex-column flex-md-row ${styles.footer_section}`}
+        >
           {/* 1st col */}
-          <div className={` ${styles.logo_container}`}>
+          <div className={`order-2 order-md-1 ${styles.logo_container}`}>
             <Link href="/" className={styles.logo_img}>
               <Image
                 src={enkashBlueLogo}
@@ -72,8 +74,6 @@ const FooterV2 = () => {
                         <Image
                           src={soc}
                           alt="soc logo"
-                          height={0} // remove fixed height
-                          width={0} // remove fixed width
                           sizes="(max-width: 768px) 48px, 86px"
                           style={{
                             maxHeight: "48px",
@@ -148,26 +148,6 @@ const FooterV2 = () => {
                             support@enkash.com
                           </span>
                         </li>
-                        {/* <li>
-                          <div>
-                            <Link
-                              href="https://forms.zohopublic.in/Enkash/form/CustomerSupport/formperma/pjPz5nSAEeSmWhIuHW2VOCiTgm8b6uHeYQyU1XhkW8E "
-                              target="_blank"
-                              rel="noreferrer noopener"
-                            >
-                              <Image
-                                src={onlineDispute}
-                                alt="Online Dispute Resolution"
-                                className={styles.help_icons}
-                              />
-                              <span
-                                className={`ms-md-3 ms-2 ${styles.support_text}`}
-                              >
-                                Online Dispute Resolution
-                              </span>
-                            </Link>
-                          </div>
-                        </li> */}
                       </ul>
                     </div>
                   </div>
@@ -180,7 +160,7 @@ const FooterV2 = () => {
                     <h4 className={`${styles.title}`}>CONNECT US ON</h4>
                   </div>
                   <div
-                    className={`d-flex justify-content-center justify-content-md-start ${styles.info_body}`}
+                    className={`d-flex  justify-content-start ${styles.info_body}`}
                   >
                     <div className={` ${styles.info_body_three}`}>
                       <div
@@ -253,10 +233,8 @@ const FooterV2 = () => {
               </div>
             </div>
           </div>
-          <div className="w-100">
-            <div
-              className={`d-flex flex-md-row  gap-4 w-100  ${styles.light_bg}`}
-            >
+          <div className="w-100 order-1 order-md-2">
+            <div className={`d-flex flex-wrap gap-4 w-100 ${styles.light_bg}`}>
               {/* 2nd col */}
               <div className={`${styles.footer_links_col}`}>
                 <Link href="/collect-payments">
@@ -267,16 +245,8 @@ const FooterV2 = () => {
                   <div className={`col-6`}>
                     {" "}
                     <ul>
-                      {/* <li className="">
-                      <div className={`color-white ${styles.sub_title}`}>
-                        <Link href="/collect-payments">
-                          Receivables<sup>#</sup>
-                        </Link>
-                      </div>
-                    </li> */}
                       <li className="d-flex">
                         <Link href="/payment-gateway">Payment Gateway</Link>
-                        {/* <div className={'my-auto '}> NEW</div> */}
                       </li>
                       <li>
                         <Link href="/payment-link/">Payment Links</Link>
@@ -290,17 +260,9 @@ const FooterV2 = () => {
 
                       <li className="d-flex">
                         <Link href="/upi-payments">UPI Payments</Link>
-                        {/* <div className={`my-auto ${styles.new_badge}`}>
-                        {" "}
-                        Coming Soon
-                      </div> */}
                       </li>
                       <li className="d-flex">
                         <Link href="/qr-codes">QR Code</Link>
-                        {/* <div className={`my-auto ${styles.new_badge}`}>
-                        {" "}
-                        Coming Soon
-                      </div> */}
                       </li>
                       <li>
                         <Link href="/auto-collect/">Auto Collect</Link>

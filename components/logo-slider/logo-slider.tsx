@@ -2,233 +2,150 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
-import styles from "./logo-slider.module.scss"
 import Marquee from "react-fast-marquee"
+import styles from "./logo-slider.module.scss"
 
 import {
-  blinkitLogo,
-  britishAirwaysLogo,
-  dtdcLogo,
-  housingLogo,
-  pristynCareLogo,
-  rakutenLogo,
-  relianceLogo,
-  starbucksLogo,
-} from "../../src/app/index"
+  britishAirways,
+  britishAirwaysFilled,
+  rakuten,
+  rakutenFilled,
+  starbucks,
+  starbucksFilled,
+  prystnCare,
+  prystnCareFilled,
+  dtdc,
+  dtdcFilled,
+  reliance,
+  relianceFilled,
+  mahindraFinance,
+  mahindraFinancsFilled,
+  macdonalds,
+  macdonaldsFilled,
+  pnbHousing,
+  pnbHousingFilled,
+  adidas,
+  adidasFilled,
+  tataAig,
+  tataAigFilled,
+  vijaySales,
+  vijaySalesFilled,
+  behrous,
+  behrousFilled,
+} from "./index"
 
-const LogoSlider = ({ type }: { type: "partners" | "customers" }) => {
-  const [selectedTab] = useState(type)
+const logos = [
+  {
+    default: britishAirways,
+    hover: britishAirwaysFilled,
+    alt: "British Airways",
+    className: styles.britishAirways,
+  },
+  {
+    default: rakuten,
+    hover: rakutenFilled,
+    alt: "Rakuten",
+    className: styles.rakuten,
+  },
+  {
+    default: starbucks,
+    hover: starbucksFilled,
+    alt: "Starbucks",
+    className: styles.starbucks,
+  },
+  {
+    default: prystnCare,
+    hover: prystnCareFilled,
+    alt: "Pristyn Care",
+    className: styles.prystnCare,
+  },
+  {
+    default: dtdc,
+    hover: dtdcFilled,
+    alt: "DTDC",
+    className: styles.dtdc,
+  },
+  {
+    default: reliance,
+    hover: relianceFilled,
+    alt: "Reliance",
+    className: styles.reliance,
+  },
+  {
+    default: mahindraFinance,
+    hover: mahindraFinancsFilled,
+    alt: "Mahindra Finance",
+    className: styles.mahindraFinance,
+  },
+  {
+    default: macdonalds,
+    hover: macdonaldsFilled,
+    alt: "MacDonalds",
+    className: styles.macdonalds,
+  },
+  {
+    default: pnbHousing,
+    hover: pnbHousingFilled,
+    alt: "PNB Housing",
+    className: styles.pnbHousing,
+  },
+  {
+    default: adidas,
+    hover: adidasFilled,
+    alt: "Adidas",
+    className: styles.adidas,
+  },
+  {
+    default: tataAig,
+    hover: tataAigFilled,
+    alt: "Tata AIG",
+    className: styles.tataAig,
+  },
+  {
+    default: vijaySales,
+    hover: vijaySalesFilled,
+    alt: "Vijay Sales",
+    className: styles.vijaySales,
+  },
+  {
+    default: behrous,
+    hover: behrousFilled,
+    alt: "Behrous",
+    className: styles.behrous,
+  },
+]
+
+const LogoSlider = () => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [clicked, setClicked] = useState(false)
+
+  const getLogoSrc = (index: number, logo: any) => {
+    if (clicked) return logo.hover
+    if (hoveredIndex === index) return logo.hover
+    return logo.default
+  }
+
   return (
-    <>
-      <div className="col-12">
-        <div className="mobile-only">
-          <div>
-            <div
-              className={`${styles.bank_logo} ${styles.customer_logo}
-              d-flex align-items-center justify-content-between `}
-            >
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.rupay}
-                  src={blinkitLogo}
-                  alt="rupay bank logo"
-                />
-              )}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.visa}
-                  src={britishAirwaysLogo}
-                  alt="visa bank logo"
-                />
-              )}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.master}
-                  src={housingLogo}
-                  alt="master card logo"
-                />
-              )}{" "}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.master}
-                  src={rakutenLogo}
-                  alt="amex bank logo"
-                />
-              )}{" "}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.hdfc}
-                  src={starbucksLogo}
-                  alt="hdfc bank logo"
-                />
-              )}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.icici}
-                  src={pristynCareLogo}
-                  alt="icici bank logo"
-                />
-              )}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.icici}
-                  src={dtdcLogo}
-                  alt="idfc bank logo"
-                />
-              )}
-              {selectedTab === "partners" && (
-                <Image
-                  className={styles.kotak}
-                  src={relianceLogo}
-                  alt="kotak bank logo"
-                />
-              )}
-            </div>
+    <div className="col-12" onClick={() => setClicked(!clicked)}>
+      <div className={styles.marquee_box}>
+        <Marquee speed={80} gradient={false}>
+          <div
+            className={`${styles.bank_logo} ${styles.customer_logo} d-flex align-items-center justify-content-between`}
+          >
+            {[...logos, ...logos].map((logo, i) => (
+              <Image
+                key={i}
+                className={logo.className}
+                src={getLogoSrc(i, logo)}
+                alt={logo.alt}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              />
+            ))}
           </div>
-        </div>
-        <div className="desktop-only">
-          <div className={styles.marquee_box}>
-            <div id="marquee">
-              <Marquee speed={80}>
-                <div
-                  className={`${styles.bank_logo} ${styles.customer_logo} d-flex align-items-center justify-content-between `}
-                >
-                  {selectedTab === "partners" && (
-                    <>
-                      <Image
-                        className={styles.rupay}
-                        src={blinkitLogo}
-                        alt="rupay bank logo"
-                      />
-                      <Image
-                        className={styles.visa}
-                        src={britishAirwaysLogo}
-                        alt="visa bank logo"
-                      />
-                      <Image
-                        className={styles.master}
-                        src={housingLogo}
-                        alt="master card logo"
-                      />
-                      <Image
-                        className={styles.master}
-                        src={rakutenLogo}
-                        alt="amex bank logo"
-                      />
-                      <Image
-                        className={styles.hdfc}
-                        src={starbucksLogo}
-                        alt="hdfc bank logo"
-                      />
-                      <Image
-                        className={styles.icici}
-                        src={pristynCareLogo}
-                        alt="icici bank logo"
-                      />
-                      <Image
-                        className={styles.kotak}
-                        src={dtdcLogo}
-                        alt="idfc bank logo"
-                      />
-                      <Image
-                        className={styles.kotak}
-                        src={relianceLogo}
-                        alt="kotak bank logo"
-                      />
-                      <Image
-                        className={styles.rupay}
-                        src={blinkitLogo}
-                        alt="rupay bank logo"
-                      />
-                      <Image
-                        className={styles.visa}
-                        src={britishAirwaysLogo}
-                        alt="visa bank logo"
-                      />
-                      <Image
-                        className={styles.master}
-                        src={housingLogo}
-                        alt="master card logo"
-                      />
-                      <Image
-                        className={styles.master}
-                        src={rakutenLogo}
-                        alt="amex bank logo"
-                      />
-                      <Image
-                        className={styles.hdfc}
-                        src={starbucksLogo}
-                        alt="hdfc bank logo"
-                      />
-                      <Image
-                        className={styles.icici}
-                        src={pristynCareLogo}
-                        alt="icici bank logo"
-                      />
-                      <Image
-                        className={styles.kotak}
-                        src={dtdcLogo}
-                        alt="idfc bank logo"
-                      />
-                      <Image
-                        className={styles.kotak}
-                        src={relianceLogo}
-                        alt="kotak bank logo"
-                      />
-                    </>
-                  )}
-
-                  {selectedTab === "customers" && (
-                    <>
-                      <Image
-                        className={styles.rupay}
-                        src={blinkitLogo}
-                        alt="rupay bank logo"
-                      />
-                      <Image
-                        className={styles.visa}
-                        src={britishAirwaysLogo}
-                        alt="visa bank logo"
-                      />
-                      <Image
-                        className={styles.master}
-                        src={housingLogo}
-                        alt="master card logo"
-                      />
-                      <Image
-                        className={styles.master}
-                        src={rakutenLogo}
-                        alt="amex bank logo"
-                      />
-                      <Image
-                        className={styles.hdfc}
-                        src={starbucksLogo}
-                        alt="hdfc bank logo"
-                      />
-                      <Image
-                        className={styles.icici}
-                        src={pristynCareLogo}
-                        alt="icici bank logo"
-                      />
-                      <Image
-                        className={styles.kotak}
-                        src={dtdcLogo}
-                        alt="idfc bank logo"
-                      />
-                      <Image
-                        className={styles.kotak}
-                        src={relianceLogo}
-                        alt="kotak bank logo"
-                      />
-                    </>
-                  )}
-                </div>
-              </Marquee>
-            </div>
-          </div>
-        </div>
+        </Marquee>
       </div>
-    </>
+    </div>
   )
 }
 
