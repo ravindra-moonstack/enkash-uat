@@ -21,7 +21,7 @@ interface props {
 const WebHeader = ({ utmSource }: props) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false)
-  const setItemWidth = useState(0)[1]
+  const [, setItemWidth] = useState(0)
   const itemRef = useRef<HTMLLIElement | null>(null)
   const setSlidePosition = useState(0)[1]
   const itemRefs = useRef<(HTMLLIElement | null)[]>([])
