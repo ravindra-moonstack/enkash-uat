@@ -1,9 +1,10 @@
 "use client"
 import Image from "next/image"
 import styles from "./card.module.scss"
-import icon from "./img/animationCardIcon.svg"
-import { Heading, SecondryButton } from "@/components"
+import icon from "./img/primaryIcon.svg"
+import { Heading } from "@/components"
 import blueArrow from "./img/blue-arrrow.svg"
+import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 
 interface CardProps {
   i: number
@@ -36,7 +37,7 @@ const Card: React.FC<CardProps> = ({ i, title, description, src }) => {
               <Heading title={title} color="black" size="h4" weight="5" />
               <Heading title={description} color="black" size="h5" weight="4" />
               <div className="mt-5">
-                <SecondryButton
+                <RectangleButton
                   title="Get started today"
                   theme="border-gray"
                   actionImage={blueArrow}

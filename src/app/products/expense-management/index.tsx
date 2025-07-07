@@ -1,0 +1,23 @@
+export { default as officeImg } from "./img/office-img.png"
+export { default as whiteArrow } from "./img/white-arrow.png"
+export { default as greenArrow } from "./img/green-arrow.svg"
+export { default as gradientBg } from "./img/gradient-bg.png"
+export { default as cardBg } from "./img/card-bg.png"
+export { default as faqBg } from "./img/ermImg.png"
+export { default as heavyLiftingIconOne } from "./img/heavy-lifting-icon-one.svg"
+export { default as heavyLiftingIconTwo } from "./img/heavy-lifting-icon-two.svg"
+export { default as heavyLiftingIconThree } from "./img/heavy-lifting-icon-three.svg"
+export { default as heavyLiftingIconFour } from "./img/heavy-lifting-icon-four.svg"
+export { default as creditCard } from "./img/credit_card.svg"
+export { default as blueArrow } from "./img/blue-arrrow.svg"
+export { default as approved } from "./img/approved.svg"
+export { default as policyIcon } from "./img/policyIcon.svg"
+
+////new
+export { default as motherCardImg } from "./img/motherCardImg.svg"
+export { default as advanceAi } from "./img/advance-ai.svg"
+export { default as receipt } from "./img/receipt.png"
+export { default as upi } from "./img/upi.png"
+export { default as walletExpense } from "./img/walletExpense.png"
+
+export { default as bannerLottie } from "./img/lottie/Expense.json"

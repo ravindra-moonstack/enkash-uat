@@ -5,7 +5,7 @@ import { ReactNode } from "react"
 
 export interface CardProps {
   whiteTitle?: string
-  titleHtml?: ReactNode // or string if it's only HTML
+  titleHtml?: ReactNode
   description: string
   cardImage?: string
 }
@@ -20,31 +20,33 @@ const FeatureCard = ({
     <div
       className={`d-flex flex-column justify-content-between text-start ${styles.card_body}`}
     >
-      {cardImage && (
-        <div className={styles.image_wrapper}>
-          <Image
-            src={cardImage}
-            alt="card visual"
-            className={styles.card_image}
-            width={65}
-            height={65}
-          />
-        </div>
-      )}
-      <div>
-        {titleHtml ? (
-          <div className={styles.titleHtml}>{titleHtml}</div>
-        ) : (
-          whiteTitle && (
-            <Heading title={whiteTitle} color="black" size="h3" weight="5" />
-          )
+      <div className={styles.card_top}>
+        {cardImage && (
+          <div className={styles.image_wrapper}>
+            <Image
+              src={cardImage}
+              alt="card visual"
+              className={styles.card_image}
+              width={65}
+              height={65}
+            />
+          </div>
         )}
-
-        <div
-          className={`my-3 ${styles.description}`}
-          dangerouslySetInnerHTML={{ __html: description }}
-        ></div>
+        <div className={styles.title_wrapper}>
+          {titleHtml ? (
+            <div className={styles.titleHtml}>{titleHtml}</div>
+          ) : (
+            whiteTitle && (
+              <Heading title={whiteTitle} color="black" size="h3" weight="5" />
+            )
+          )}
+        </div>
       </div>
+
+      <div
+        className={`${styles.description} `}
+        dangerouslySetInnerHTML={{ __html: description }}
+      ></div>
     </div>
   )
 }

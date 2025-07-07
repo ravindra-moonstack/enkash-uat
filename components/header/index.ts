@@ -47,7 +47,7 @@ export { default as reimbursements } from "./img/reimbursements.svg"
 export { default as reimbursementsFilled } from "./img/reimbursements-filled.svg"
 export { default as insights } from "./img/insights.svg"
 export { default as insightsFilled } from "./img/insights-filled.svg"
-// export { default as spendControl } from "./img/spend-control.svg";
+export { default as pettyCash } from "./img/petty-cash.svg"
 // export { default as spendControlFilled } from "./img/spend-control-filled.svg";
 
 //receivables

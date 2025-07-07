@@ -1,10 +1,10 @@
 import React from "react"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import Heading from "../heading/heading"
 import styles from "./policyCard.module.scss"
 
 interface CardProps {
-  icon: string
+ icon: string | StaticImageData
   title: string
   description?: string
   className?: string
@@ -22,7 +22,7 @@ const PolicyCard: React.FC<CardProps> = ({
     >
       {/* Icon */}
       <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-        <Image src={icon} alt="icon" />
+        {icon && <Image src={icon} alt="icon" width={55} height={55} />}
       </div>
 
       {/* Title and Description */}

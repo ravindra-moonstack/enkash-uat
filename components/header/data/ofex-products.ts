@@ -9,11 +9,12 @@ import {
   scanAndDropFilled,
   insights,
   insightsFilled,
+  pettyCash,
 } from "../../header"
 
 const xpenzProducts = [
   {
-    name: "Prepaid Cards",
+    name: "Expense Managment",
     description: "Flexible prepaid card solutions",
     link: "/cards",
     subProducts: [
@@ -64,9 +65,9 @@ const xpenzProducts = [
           {
             name: "Petty Cash",
             description: "Digitize branch-level petty spends",
-            imageSrc: insights,
-            imageSrcHovered: insightsFilled,
-            link: "/expense-analytics-and-insights",
+            imageSrc: pettyCash,
+            imageSrcHovered: pettyCash,
+            link: "/petty-cash",
           },
           {
             name: "Insights",

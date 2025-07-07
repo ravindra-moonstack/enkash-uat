@@ -181,6 +181,13 @@ export const motherProducts = [
             imageSrcHovered: rentalPaymentsFilled,
             link: "/rent-payment",
           },
+          {
+            name: "Payroll Processing",
+            description: "Disburse salaries on time, everytime",
+            imageSrc: collectionAnalytics,
+            imageSrcHovered: collectionAnalyticsFilled,
+            link: "/payroll-process",
+          },
 
           {
             name: "Express Pay/ Bulk Payout",
