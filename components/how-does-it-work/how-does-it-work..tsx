@@ -2,7 +2,8 @@
 
 import { Key, useEffect, useState } from "react"
 import styles from "./how-does-it-work.module.scss"
-import Image from "next/image"
+import Image
+ from "next/image"
 import blueArrow from "./blue-arrrow.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 
