@@ -17,23 +17,22 @@ export type AllProductsProp = {
   data?: Array<AllProductsDataProp>
 }
 
-const AllProducts = ({
- 
-  data = [],
-}: AllProductsProp): React.JSX.Element => {
+const AllProducts = ({ data = [] }: AllProductsProp): React.JSX.Element => {
   return (
     <div className={`${styles.integration_row} row`}>
       <div className={`${styles.container}`}>
         <Marquee speed={70} pauseOnClick={true}>
-          {data.map((card, index) => (
-            <div key={index} className="me-4" >
-              <FeatureCard
-                titleHtml={card.title}
-                description={card.description}
-                cardImage={card.image}
-              />
-            </div>
-          ))}
+          <div className="d-flex align-items-stretch">
+            {data.map((card, index) => (
+              <div key={index.toString()} className="d-flex">
+                <FeatureCard
+                  titleHtml={card.title}
+                  description={card.description}
+                  cardImage={card.image}
+                />
+              </div>
+            ))}
+          </div>
         </Marquee>
       </div>
     </div>

@@ -2,24 +2,20 @@
 @use "/styles/mixin" as *;
 
 .card_body {
-  height: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   background: white;
   position: relative;
-
   border-radius: 20px;
   border: 2px solid $color-pale-aqua;
-  padding-top: 40px;
-  padding-right: 30px;
-  padding-left: 30px;
-  padding-bottom: 40px;
-  white-space: normal;
+  padding: 40px 30px;
   transition: all 0.3s ease;
   cursor: pointer;
   max-width: 327px;
 
-  @include for-laptops {
-    padding: 40px;
-  }
+  // Optional: Ensures the card has extra bottom space even if content is short
+  padding-bottom: 60px; // Add if you want consistent bottom padding too
 }
 
 .titleHtml {
