@@ -1,19 +1,16 @@
 "use client"
 
 import { Key, useEffect, useState } from "react"
-import laptop from "./laptop.png"
 import styles from "./how-does-it-work.module.scss"
-import Image, { StaticImageData } from "next/image"
-import SecondryButton from "../buttons/secondary-button/secondary-button"
+import Image from "next/image"
 import blueArrow from "./blue-arrrow.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 
 interface howDoesItWorkProps {
-  bannerImage?: StaticImageData
   dataSets: any
 }
 
-const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
+const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentData((prevData: number) => (prevData + 1) % dataSets.length)
@@ -23,9 +20,6 @@ const HowDoesItWork = ({ bannerImage, dataSets }: howDoesItWorkProps) => {
   }, [])
 
   const [currentData, setCurrentData] = useState(0)
-
-  const defaultImageSrc: StaticImageData = laptop
-  const imageToDisplay: StaticImageData = bannerImage || defaultImageSrc
 
   const handleSpanClick = (index: number) => {
     setCurrentData(index)

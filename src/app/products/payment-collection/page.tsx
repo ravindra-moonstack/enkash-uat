@@ -223,7 +223,7 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
 
           <div className={styles.how_it_workssection}>
-            <HowDoesItWork dataSets={dataSets} bannerImage={circles} />
+            <HowDoesItWork dataSets={dataSets} />
           </div>
         </div>
       </div>

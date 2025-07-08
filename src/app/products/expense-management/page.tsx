@@ -18,7 +18,6 @@ import {
   walletExpense,
   whiteArrow,
   motherCardImg,
-  blurImg,
 } from "."
 import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"

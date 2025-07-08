@@ -21,7 +21,7 @@ interface SecondFaqHtmlProps {
 const TRANSITION_DURATION = 400 // match SCSS transition time in ms
 
 const SecondFaqHtml: React.FC<SecondFaqHtmlProps> = ({ SecondfaqData }) => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null) // current active question
+  const [, setActiveIndex] = useState<number | null>(null) // current active question
   const [visibleIndex, setVisibleIndex] = useState<number | null>(null) // question being shown
 
   const handleToggleAnswerVisibility = (index: number) => {
