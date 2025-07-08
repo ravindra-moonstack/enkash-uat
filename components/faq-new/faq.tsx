@@ -53,7 +53,7 @@ const FAQ = ({
         aria-expanded={answerVisible}
       >
         <div
-          className={`d-flex gap-4 my-4 justify-content-between align-items-center`}
+          className={`d-flex gap-4 my-md-4 my-2 justify-content-between align-items-center`}
         >
           <h2 className={styles.question}>
             {String(index + 1).padStart(2, "0")}. {question}

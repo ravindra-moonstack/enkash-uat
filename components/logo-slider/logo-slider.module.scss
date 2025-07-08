@@ -32,7 +32,7 @@
     transition: all 1.8s ease-in-out; // ✅ Smooth transition added
 
     @include for-laptops {
-      max-height: 36px;
+      max-height: 51px;
     }
 
     @include for-tablet {

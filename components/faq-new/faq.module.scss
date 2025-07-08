@@ -112,13 +112,19 @@
 .scrollable {
   max-height: 500px;
   overflow-y: auto;
-  padding-right: 38px;
+  padding-right: 10px;
+  @include for-laptops {
+    padding-right: 38px;
+  }
 }
 
 .scrollable::-webkit-scrollbar {
-  width: 12px;
+  width: 6px;
   background-color: #cccc;
   border-radius: 9999px;
+  @include for-laptops {
+    width: 12px;
+  }
 }
 
 .scrollable::-webkit-scrollbar-track {

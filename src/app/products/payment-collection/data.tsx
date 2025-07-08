@@ -40,7 +40,7 @@ const dataSets = [
     imageSrc: autoCollect,
     altText: "Auto Collect ",
     title: "Auto Collect",
-   subtitle:
+    subtitle:
       "Issue cards instantly and refill balances as needed without delays. This feature ensures employees have continuous access to meal benefits without interruptions, improving their overall experience and satisfaction.",
   },
   {
@@ -48,7 +48,7 @@ const dataSets = [
     imageSrc: subscribtion,
     altText: "Setting up of budgets",
     title: "Setting up of budgets",
-   subtitle:
+    subtitle:
       "Setting up of budgets : The automated expense management platform helps define budgets for all departments & projects as per employee allocation",
   },
   {
@@ -56,7 +56,7 @@ const dataSets = [
     imageSrc: eNach,
     altText: "Simplified expense submission",
     title: "Simplified expense submission",
-   subtitle:
+    subtitle:
       "Simplified expense submission: A user-friendly interface ensuring that employees can effortlessly submit expenses from their mobile devices at any time and from any location",
   },
 ]

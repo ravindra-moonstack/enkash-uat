@@ -238,7 +238,8 @@ const rbiData = [
     icon: noThidPartyIcon,
   },
   {
-    title: "DIY control",
+    title: "DIY ",
+    title2:"control",
     description: "over how your cards are issued, used, and managed",
     icon: diyControlIcon,
   },

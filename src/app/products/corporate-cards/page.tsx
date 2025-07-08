@@ -32,6 +32,9 @@ import faqData from "./faq-data"
 import FeatureCard from "@/components/featureCard/feature-card"
 import CardProduct from "@/components/card-product/card-product"
 import AllProducts from "@/components/all-products/all-products"
+import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
+import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
+// import Card from "@/components/cardAnimation/card/card"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -39,11 +42,24 @@ const CorporateCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
-
+      <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-m-auto">
+        <div className="max-w-auto">
+          <div className="d-flex">
+            <CustomBreadcrumb
+              items={[
+                { name: "Home", url: "/" },
+                { name: "Products", url: "/products" },
+                {
+                  name: "Corporate Card",
+                  url: "/products/corporate-card",
+                },
+              ]}
+              linkColor="white"
+            />
+          </div>
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <div className="d-flex flex-column mb-3 justify-content-center align-items-center">
+            <div className="d-flex flex-column mb-3 mt-3 justify-content-center align-items-center">
               <Heading
                 title="The Only Corporate Cards"
                 color="white"
@@ -58,7 +74,7 @@ const CorporateCards = (): React.JSX.Element => {
                 weight="7"
               />
             </div>
-            <div className="d-inline">
+            <div className="d-inline align-items-center">
               <Heading
                 title="More control, more flexibility, and more security, like no one else."
                 color="white"
@@ -96,7 +112,9 @@ const CorporateCards = (): React.JSX.Element => {
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
-          <div className={`${styles.second_row_title} text-center pb-5`}>
+          <div
+            className={`${styles.second_row_title} text-center pb-3 pb-md-5`}
+          >
             <Heading
               title={`Built for CFOs, Loved by Teams ${space}`}
               color="white"
@@ -116,7 +134,7 @@ const CorporateCards = (): React.JSX.Element => {
             {cardData.map((item, index) => (
               <div
                 key={index}
-                className={`d-flex flex-column justify-content-center align-items-center ${styles.card}`}
+                className={`d-flex flex-column justify-content-center align-items-center text-center ${styles.card}`}
               >
                 <Image
                   src={item.icon}
@@ -127,7 +145,7 @@ const CorporateCards = (): React.JSX.Element => {
                 <Heading
                   title={item.title}
                   color="main-grey"
-                  size="h6"
+                  size="h5"
                   weight="4"
                   useH1TagInHtml={true}
                 />
@@ -137,9 +155,9 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.action_row} bg-white row-padding `}>
+      <div className={`${styles.sixth_row} bg-white `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-2 pb-md-5`}>
             <div
               className={` flex-column justify-content-center align-items-center pb-3 `}
             >
@@ -174,7 +192,7 @@ const CorporateCards = (): React.JSX.Element => {
             </div>
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12  px-md-5">
               <div
                 style={{
                   display: "flex",
@@ -199,7 +217,6 @@ const CorporateCards = (): React.JSX.Element => {
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
                   url="/sales/?source=expense_management"
-                  width="237px"
                   className="d-flex justify-content-between align-items-center"
                 />
               </div>
@@ -329,12 +346,13 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
 
           <div className={styles.card_grid}>
-            {rbiData.map(({ icon, title, description }, i) => (
+            {rbiData.map(({ icon, title, description, title2 }, i) => (
               <div key={i}>
                 <FeatureCard
                   titleHtml={title}
                   description={description}
                   cardImage={icon}
+                  title2={title2}
                 />
               </div>
             ))}
@@ -372,10 +390,10 @@ const CorporateCards = (): React.JSX.Element => {
             </div>
           </div>
           <div className={`row align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 pr-5">
+            <div className="col-md-6 col-12 d-none d-md-block pr-md-5">
               <Image src={corporateCard} alt="background image" />
             </div>
-            <div className="col-md-6 col-12 pr-5">
+            <div className="col-md-6 col-12 pr-md-5">
               <div className="d-flex  align-items-center mb-4  gap-3">
                 <Image
                   src={corporateCardIcon}
@@ -387,7 +405,7 @@ const CorporateCards = (): React.JSX.Element => {
                   title={`Prepaid Corporate Cards ${space}`}
                   color="black"
                   size="h4"
-                  weight="6"
+                  weight="5"
                 />
               </div>
               <ul className={styles.custom_list}>
@@ -410,7 +428,6 @@ const CorporateCards = (): React.JSX.Element => {
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
                   url="/sales/?source=expense_management"
-                  width="237px"
                   className="d-flex justify-content-between align-items-center"
                 />
               </div>
@@ -525,6 +542,7 @@ const CorporateCards = (): React.JSX.Element => {
             <RectangleButton
               title={"Explore Our Expense Management Suite"}
               theme="blue"
+              width="auto"
             />
           </div>
         </div>
@@ -559,7 +577,7 @@ const CorporateCards = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
             <Heading
               title={`Frequently Asked Questions  ${space}`}
               color="black"

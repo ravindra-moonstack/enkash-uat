@@ -8,13 +8,16 @@
   li {
     list-style-type: none;
     align-items: center;
-    padding-bottom: 10px;
+
+    @include for-laptops {
+      padding-bottom: 10px;
+    }
   }
   ul {
     padding-inline-start: 0px;
   }
   a {
-    font-size: 11px;
+    font-size: 12px;
     line-height: 16px;
     text-decoration: none;
     font-weight: 400;
@@ -57,6 +60,12 @@
       font-size: 10px;
       margin: 0;
       padding: 0 8px;
+      border-right: 2px solid #1c5af4;
+      padding-right: 8px;
+      @include for-laptops {
+        padding: right 0px;
+        border-right: none;
+      }
 
       @include for-laptops {
         font-size: 18px;
@@ -113,13 +122,18 @@
     }
 
     .footer_copy_right {
-      font-size: 14px;
+      font-size: 9px;
       font-weight: 400;
       color: black;
       display: flex;
+      padding-top: 24px;
       text-align: center;
       justify-content: center;
       margin-bottom: 0px;
+      @include for-laptops {
+        font-size: 14px;
+        padding-top: 0px;
+      }
     }
   }
 }
@@ -138,7 +152,7 @@
 
 .title {
   color: black;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 16px;
   white-space: nowrap;
   font-weight: 700;
@@ -152,7 +166,7 @@
 .sub_title {
   a {
     color: #fff !important;
-    font-size: 11px;
+    font-size: 12px;
     line-height: 16px;
     white-space: nowrap;
     @include for-laptops {
@@ -166,7 +180,6 @@
 .social_icons_row {
   display: flex;
   align-items: flex-end;
-  width: 75%;
 
   @include for-laptops {
     width: 50%;
@@ -201,7 +214,7 @@
 .disclaimer {
   text-align: left;
   font-size: 9px;
-  padding: 32px 0 10px;
+
   color: #a5a5a5;
 
   @include for-laptops {
@@ -329,8 +342,8 @@
         img {
           height: auto;
           width: auto;
-          max-height: 48px;
-          max-width: 86px;
+          max-height: 30px;
+
           object-fit: contain;
         }
 
@@ -345,21 +358,25 @@
 
   .info_body_two {
     ul {
+      margin-bottom: 0;
       li {
         display: flex;
         color: black;
+        margin-bottom: 10px;
+        @include for-laptops {
+          margin-bottom: 0;
+        }
       }
     }
   }
 
   .info_div_three {
-    width: 100%;
-
     border-radius: 10px 10px 0 0;
 
     @include for-laptops {
       margin-top: 0px;
       background-color: transparent;
+      width: 100%;
     }
     .info_body_three {
       width: 192px;
@@ -376,8 +393,25 @@
 }
 
 .location_mobile {
+  padding: 20px 0px;
+  width: 100%;
+  background-color: white;
   p {
     margin: 0;
+    color: #5b5b5b;
+    font-size: 10px;
+  }
+  .vr {
+    background-color: #1c5af4;
+    border-right: 2px solid #1c5af4;
+    height: 15px;
+    margin: 0 10px;
+    width: 1px;
+  }
+  .lineBlue {
+    background-color: #1c5af4;
+    width: 100%;
+    height: 7px;
   }
 }
 
@@ -394,7 +428,23 @@
   }
 
   .logo_container_info {
-    font-size: 12px;
+    font-size: 9px;
     color: #97a3b7;
+    @include for-laptops {
+      font-size: 12px;
+    }
+    p {
+      margin-bottom: 8px;
+      @include for-laptops {
+        margin-bottom: 16px;
+      }
+    }
+  }
+}
+
+.info_div_one {
+  padding-top: 24px;
+  @include for-laptops {
+    padding-top: 0px;
   }
 }

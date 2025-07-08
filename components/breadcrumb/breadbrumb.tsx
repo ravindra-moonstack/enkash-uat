@@ -11,11 +11,13 @@ interface BreadcrumbItem {
 interface BreadcrumbProps {
   items: BreadcrumbItem[]
   domain?: string
+  linkColor?: "white" | "black"
 }
 
 const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
   items,
   domain = "https://www.enkash.com/",
+  linkColor,
 }) => {
   const schemaMarkup = {
     "@context": "https://schema.org",
@@ -39,15 +41,11 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
         <ol className={styles.list}>
           {items.map((item, index) => (
             <li key={index} className={styles.item}>
-              {/* {index === 0 && (
-                <Link href={backLink} className={styles.link}>
-                  <div className={styles.backIcon}>
-                    <Image src={backArrowWhiteBg} alt="Back" />
-                  </div>
-                </Link>
-              )} */}
               {index < items.length - 1 ? (
-                <Link href={item.url} className={styles.link}>
+                <Link
+                  href={item.url}
+                  className={`${styles.link} ${styles[linkColor || "black"]}`}
+                >
                   {item.name}
                 </Link>
               ) : (

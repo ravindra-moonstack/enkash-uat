@@ -39,6 +39,7 @@ import bg5 from "./img/bg6.jpg"
 import bg6 from "./img/bg5.jpg"
 
 import AllProducts from "@/components/all-products/all-products"
+import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -47,7 +48,7 @@ const ExpenseManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
-
+      <TalkToSales />
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto">
           <div className="d-flex">
@@ -64,7 +65,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
 
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <div className="d-flex flex-column mb-3 justify-content-center align-items-center ">
+            <div className="d-flex flex-column my-3 justify-content-center align-items-center ">
               <Heading
                 title="Create, Track & Submit Expenses."
                 color="black"
@@ -105,10 +106,9 @@ const ExpenseManagement = (): React.JSX.Element => {
               />
             </div>
           </div>
-
-          <div className="mt-4">
-            <LogoSlider />
-          </div>
+        </div>
+        <div className="mt-4">
+          <LogoSlider />
         </div>
       </div>
 
@@ -375,11 +375,13 @@ const ExpenseManagement = (): React.JSX.Element => {
               title="Explore Receipt Management"
               theme="blue"
               url="/sales/?source=expense_management"
+              width="auto"
             />
             <RectangleButton
               title="Explore Reimbursement Management"
               theme="outline-blue"
               url="/sales/?source=expense_management"
+              width="auto"
             />
           </div>
         </div>

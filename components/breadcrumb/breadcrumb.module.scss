@@ -3,7 +3,7 @@
 
 // Breadcrumb.module.scss
 .breadcrumb {
-     padding: 52px 10px 4px 0px;
+  padding: 4px 10px 4px 0px;
   background-image: url("/images/assets/breadcrum-bg.svg");
   background-repeat: no-repeat;
   background-position: 100%;
@@ -47,8 +47,15 @@
 }
 
 .link {
-  color: $color-secondry-black;
   text-decoration: none;
+  &.white {
+    color: $color-white;
+  }
+
+  &.black {
+    color: $color-secondry-black;
+  }
+
   &:hover {
     text-decoration: underline;
   }

@@ -26,7 +26,7 @@ const FooterV2 = () => {
         >
           {/* 1st col */}
           <div className={`order-2 order-md-1 ${styles.logo_container}`}>
-            <Link href="/" className={styles.logo_img}>
+            <Link href="/" className={`${styles.logo_img} d-none d-md-block`}>
               <Image
                 src={enkashBlueLogo}
                 alt="logo"
@@ -35,7 +35,9 @@ const FooterV2 = () => {
               />
             </Link>
 
-            <div className={`d-flex flex-column  gap-4 ${styles.logi_bg}`}>
+            <div
+              className={`d-flex flex-column  gap-3 gap-md-4 ${styles.logi_bg}`}
+            >
               <div>
                 {" "}
                 <div>
@@ -61,10 +63,323 @@ const FooterV2 = () => {
 
               {/* col-1 resources */}
 
-              <div className={` ${styles.info_container}`}>
+              <div className={` ${styles.info_container} d-none d-md-block`}>
                 <div className={`{styles.info_div} ${styles.info_div_one}`}>
                   <div className={` ${styles.info_header_one}`}>
-                    <h4 className={`${styles.title}`}>Certification</h4>
+                    <h4 className={`${styles.title}`}>
+                      Licenses & Certification
+                    </h4>
+                  </div>
+                  <div className={`d-flex ${styles.info_body}`}>
+                    <div
+                      className={`d-flex gap-2 flex-wrap d-none d-md-block ${styles.info_body_one}`}
+                    >
+                      <div className={styles.soc_logo}>
+                        <Image
+                          src={soc}
+                          alt="soc logo"
+                          sizes="(max-width: 768px) 48px, 86px"
+                          style={{
+                            maxHeight: "48px",
+                            width: "auto",
+                            objectFit: "contain",
+                          }}
+                        />
+                      </div>
+
+                      <div className={styles.pci_logo}>
+                        <Image
+                          src={pci}
+                          alt="pci logo"
+                          height={48}
+                          width={86}
+                          objectFit="cover"
+                        />
+                      </div>
+
+                      <div className={styles.pci_logo}>
+                        <Image
+                          src={ppi}
+                          alt="pci logo"
+                          height={48}
+                          width={48}
+                          objectFit="cover"
+                        />
+                      </div>
+                      <div className={styles.pci_logo}>
+                        <Image
+                          src={ppa}
+                          alt="pci logo"
+                          height={48}
+                          width={48}
+                          objectFit="cover"
+                        />
+                      </div>
+                    </div>
+                    <div
+                      className={`d-flex gap-2 flex-wrap d-block d-md-none ${styles.info_body_one}`}
+                    >
+                      <div className={styles.soc_logo}>
+                        <Image
+                          src={soc}
+                          alt="soc logo"
+                          height={30}
+                          width={30}
+                        />
+                      </div>
+
+                      <div className={styles.pci_logo}>
+                        <Image
+                          src={pci}
+                          alt="pci logo"
+                          height={30}
+                          width={55}
+                          objectFit="cover"
+                        />
+                      </div>
+
+                      <div className={styles.pci_logo}>
+                        <Image
+                          src={ppi}
+                          alt="pci logo"
+                          height={32}
+                          width={38}
+                          objectFit="cover"
+                        />
+                      </div>
+                      <div className={styles.pci_logo}>
+                        <Image
+                          src={ppa}
+                          alt="pci logo"
+                          height={32}
+                          width={38}
+                          objectFit="cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={`col-6 col-md-7 ${styles.info_div} ${styles.info_div_two}`}
+                >
+                  <div className={`${styles.info_header_two}`}>
+                    <h4 className={`${styles.title}`}>Help and Support</h4>
+                  </div>
+                  <div className={`d-flex ${styles.info_body}`}>
+                    <div className={` ${styles.info_body_two}`}>
+                      <ul>
+                        <li>
+                          <Image
+                            src={call}
+                            alt="Contact Enkash"
+                            className={styles.help_icons}
+                          />
+                          <span
+                            className={`ms-md-3 ms-2 ${styles.support_text}`}
+                          >
+                            +91 8530490475
+                          </span>
+                        </li>
+                        <li>
+                          <Image
+                            src={email}
+                            alt="Contact Enkash"
+                            className={styles.help_icons}
+                          />
+                          <span
+                            className={`ms-md-3 ms-2 ${styles.support_text}`}
+                          >
+                            support@enkash.com
+                          </span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  className={`col-6 col-md-2 ${styles.info_div} ${styles.info_div_three}`}
+                >
+                  <div className={` ${styles.info_header_three}`}>
+                    <h4 className={`${styles.title}`}>CONNECT US ON</h4>
+                  </div>
+                  <div
+                    className={`d-flex  justify-content-start ${styles.info_body}`}
+                  >
+                    <div className={` ${styles.info_body_three}`}>
+                      <div
+                        className={`d-flex justify-content-between pt-3 ${styles.social_icons_row}`}
+                      >
+                        <Link
+                          href="https://www.facebook.com/Enkashbusiness"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <Image src={fbLogo} alt="EnKash Facebook" />
+                        </Link>
+                        <Link
+                          href="https://twitter.com/EnkashBusiness"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <Image src={twitterLogo} alt="EnKash Twitter" />
+                        </Link>
+                        <Link
+                          href="https://www.linkedin.com/company/enkashbusiness"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <Image src={linkedinLogo} alt="EnKash LinkedIn" />
+                        </Link>
+                        <Link
+                          href="https://www.instagram.com/Enkashbusiness"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <Image src={instLogo} alt="EnKash Instagram" />
+                        </Link>
+                        <Link
+                          href="https://www.instagram.com/Enkashbusiness"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <Image
+                            src={youtubeLogo}
+                            alt="EnKash Instagram"
+                            height={25}
+                            width={25}
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="d-flex flex-wrap flex-md-nowrap d-block d-md-none">
+                  <div
+                    className={`col-12 col-md-10 text-left ${styles.disclaimer}`}
+                  >
+                    Corporate cards, payments, and other related services are
+                    provided by RBI-licensed banks and/or in accordance with RBI
+                    regulations and/or compliance maintained by banks and
+                    regulated entities. EnKash is not a bank and does not hold
+                    or claim to hold a banking license.{" "}
+                    <div className="color-alternate-grey">
+                      *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s
+                      PA (Online) authorization.
+                    </div>
+                  </div>
+                </div>
+
+                <p className={`${styles.footer_copy_right} d-block d-md-none`}>
+                  Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right
+                  reserved.
+                </p>
+              </div>
+              <div className={` ${styles.info_container}  d-block d-md-none`}>
+                <div className="row">
+                  <div
+                    className={`col-6  ${styles.info_div} ${styles.info_div_two}`}
+                  >
+                    <div className={`${styles.info_header_two}`}>
+                      <h4 className={`${styles.title}`}>Help and Support</h4>
+                    </div>
+                    <div className={`d-flex ${styles.info_body}`}>
+                      <div className={` ${styles.info_body_two}`}>
+                        <ul>
+                          <li>
+                            <Image
+                              src={call}
+                              alt="Contact Enkash"
+                              className={styles.help_icons}
+                            />
+                            <span
+                              className={`ms-md-3 ms-2 ${styles.support_text}`}
+                            >
+                              +91 8530490475
+                            </span>
+                          </li>
+                          <li>
+                            <Image
+                              src={email}
+                              alt="Contact Enkash"
+                              className={styles.help_icons}
+                            />
+                            <span
+                              className={`ms-md-3 ms-2 ${styles.support_text}`}
+                            >
+                              support@enkash.com
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    className={`col-6  ${styles.info_div} ${styles.info_div_three}`}
+                  >
+                    <div className={` ${styles.info_header_three}`}>
+                      <h4 className={`${styles.title}`}>CONNECT US ON</h4>
+                    </div>
+                    <div
+                      className={`d-flex  justify-content-start ${styles.info_body}`}
+                    >
+                      <div className={` ${styles.info_body_three}`}>
+                        <div
+                          className={`d-flex justify-content-between py-3 ${styles.social_icons_row}`}
+                        >
+                          <Link
+                            href="https://www.facebook.com/Enkashbusiness"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            <Image src={fbLogo} alt="EnKash Facebook" />
+                          </Link>
+                          <Link
+                            href="https://twitter.com/EnkashBusiness"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            <Image src={twitterLogo} alt="EnKash Twitter" />
+                          </Link>
+                          <Link
+                            href="https://www.linkedin.com/company/enkashbusiness"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            <Image src={linkedinLogo} alt="EnKash LinkedIn" />
+                          </Link>
+                          <Link
+                            href="https://www.instagram.com/Enkashbusiness"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            <Image src={instLogo} alt="EnKash Instagram" />
+                          </Link>
+                          <Link
+                            href="https://www.instagram.com/Enkashbusiness"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            <Image
+                              src={youtubeLogo}
+                              alt="EnKash Instagram"
+                              height={25}
+                              width={25}
+                            />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className={`{styles.info_div} ${styles.info_div_one} `}>
+                  <div className={` ${styles.info_header_one}`}>
+                    <h4 className={`${styles.title}`}>
+                      Licenses & Certification
+                    </h4>
                   </div>
                   <div className={`d-flex ${styles.info_body}`}>
                     <div
@@ -114,127 +429,39 @@ const FooterV2 = () => {
                     </div>
                   </div>
                 </div>
-
-                <div
-                  className={`col-6 col-md-7 ${styles.info_div} ${styles.info_div_two}`}
-                >
-                  <div className={`${styles.info_header_two}`}>
-                    <h4 className={`${styles.title}`}>Help and Support</h4>
-                  </div>
-                  <div className={`d-flex ${styles.info_body}`}>
-                    <div className={` ${styles.info_body_two}`}>
-                      <ul>
-                        <li>
-                          <Image
-                            src={call}
-                            alt="Contact Enkash"
-                            className={styles.help_icons}
-                          />
-                          <span
-                            className={`ms-md-3 ms-2 ${styles.support_text}`}
-                          >
-                            +91 8530490475
-                          </span>
-                        </li>
-                        <li>
-                          <Image
-                            src={email}
-                            alt="Contact Enkash"
-                            className={styles.help_icons}
-                          />
-                          <span
-                            className={`ms-md-3 ms-2 ${styles.support_text}`}
-                          >
-                            support@enkash.com
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  className={`col-12 col-md-2 ${styles.info_div} ${styles.info_div_three}`}
-                >
-                  <div className={` ${styles.info_header_three}`}>
-                    <h4 className={`${styles.title}`}>CONNECT US ON</h4>
-                  </div>
+                <div className="d-flex flex-wrap flex-md-nowrap d-block d-md-none">
                   <div
-                    className={`d-flex  justify-content-start ${styles.info_body}`}
+                    className={`col-12 col-md-10 text-left ${styles.disclaimer}`}
                   >
-                    <div className={` ${styles.info_body_three}`}>
-                      <div
-                        className={`d-flex justify-content-between pt-3 ${styles.social_icons_row}`}
-                      >
-                        <Link
-                          href="https://www.facebook.com/Enkashbusiness"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          <Image
-                            src={fbLogo}
-                            alt="EnKash Facebook"
-                            height={25}
-                            width={25}
-                          />
-                        </Link>
-                        <Link
-                          href="https://twitter.com/EnkashBusiness"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          <Image
-                            src={twitterLogo}
-                            alt="EnKash Twitter"
-                            height={25}
-                            width={25}
-                          />
-                        </Link>
-                        <Link
-                          href="https://www.linkedin.com/company/enkashbusiness"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          <Image
-                            src={linkedinLogo}
-                            alt="EnKash LinkedIn"
-                            height={25}
-                            width={25}
-                          />
-                        </Link>
-                        <Link
-                          href="https://www.instagram.com/Enkashbusiness"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          <Image
-                            src={instLogo}
-                            alt="EnKash Instagram"
-                            height={25}
-                            width={25}
-                          />
-                        </Link>
-                        <Link
-                          href="https://www.instagram.com/Enkashbusiness"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          <Image
-                            src={youtubeLogo}
-                            alt="EnKash Instagram"
-                            height={25}
-                            width={25}
-                          />
-                        </Link>
-                      </div>
+                    Corporate cards, payments, and other related services are
+                    provided by RBI-licensed banks and/or in accordance with RBI
+                    regulations and/or compliance maintained by banks and
+                    regulated entities. EnKash is not a bank and does not hold
+                    or claim to hold a banking license.{" "}
+                    <div className="color-alternate-grey">
+                      *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s
+                      PA (Online) authorization.
                     </div>
                   </div>
                 </div>
+
+                <p className={`${styles.footer_copy_right} d-block d-md-none`}>
+                  Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right
+                  reserved.
+                </p>
               </div>
             </div>
           </div>
-          <div className="w-100 order-1 order-md-2">
-            <div className={`d-flex flex-wrap gap-4 w-100 ${styles.light_bg}`}>
+          <div className="w-100 order-1 order-md-2 ">
+            <Link href="/" className={`${styles.logo_img} d-block d-md-none`}>
+              <Image
+                src={enkashBlueLogo}
+                alt="logo"
+                width={75}
+                className="me-3 mb-3"
+              />
+            </Link>
+            <div className={`d-flex flex-wrap  gap-3 w-100 ${styles.light_bg}`}>
               {/* 2nd col */}
               <div className={`${styles.footer_links_col}`}>
                 <Link href="/collect-payments">
@@ -258,7 +485,7 @@ const FooterV2 = () => {
                         <Link href="/payment-page/">Payment Page</Link>
                       </li>
 
-                      <li className="d-flex">
+                      <li>
                         <Link href="/upi-payments">UPI Payments</Link>
                       </li>
                       <li className="d-flex">
@@ -317,7 +544,7 @@ const FooterV2 = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/approval-flows/">
+                      <Link href="/approval-flows/" className="text-wrap">
                         Policy and Approval Flows
                       </Link>
                     </li>
@@ -604,7 +831,7 @@ const FooterV2 = () => {
                   </ul>
                 </div>
                 <div className="mt-3">
-                  <h4 className={`col-12 ${styles.title}`}>
+                  <h4 className={`col-12 ${styles.title} text-wrap`}>
                     Policies and Compliance
                   </h4>
                   <ul>
@@ -641,13 +868,13 @@ const FooterV2 = () => {
               </div>
             </div>
 
-            <p className={`${styles.footer_copy_right}`}>
+            <p className={`${styles.footer_copy_right} d-none d-md-block`}>
               Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right
               reserved.
             </p>
           </div>
         </div>
-        <div className="d-flex flex-wrap flex-md-nowrap">
+        <div className="d-flex flex-wrap flex-md-nowrap d-none d-md-block">
           <div className={`col-12 col-md-10 text-left ${styles.disclaimer}`}>
             Corporate cards, payments, and other related services are provided
             by RBI-licensed banks and/or in accordance with RBI regulations
@@ -661,25 +888,26 @@ const FooterV2 = () => {
         </div>
       </div>
 
-      <div className="d-block d-md-none">
+      <div className={`d-block d-md-none ${styles.location_mobile} `}>
         <div
-          className={`d-flex justify-content-between mx-5 mb-4 ${styles.location_mobile} `}
+          className={`d-flex justify-content-between align-items-center mx-5 mb-4 `}
         >
           {" "}
           <Image
             className={styles.footer_location_pin}
             src={locationPin}
             alt="Enkash Office Location"
-            width={20}
+            width={10}
           />
           <p>Gurgaon</p>
-          <div className="vr"></div>
+          <div className={styles.vr}></div>
           <p>Mumbai</p>
-          <div className="vr"></div>
+          <div className={styles.vr}></div>
           <p> Pune</p>
-          <div className="vr"></div>
+          <div className={styles.vr}></div>
           <p>Bengaluru</p>
         </div>
+        <div className={styles.lineBlue}></div>
       </div>
 
       <div className={`${styles.locations_row}`}>

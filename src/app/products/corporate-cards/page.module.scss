@@ -8,8 +8,8 @@
 
   background-color: #292929; // set pure black
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 36px;
+  padding-right: 36px;
   padding-top: 98px;
   padding-bottom: 36px;
 
@@ -59,7 +59,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 56px 36px;
+  padding: 36px;
   position: relative;
   background-image: linear-gradient(
       90deg,
@@ -78,7 +78,7 @@
   .section {
     max-width: 1200px;
     margin: auto;
-    gap: 40px;
+    gap: 10px;
 
     bottom: -65px;
     justify-content: center;
@@ -87,21 +87,32 @@
     z-index: 2;
     @include for-laptops {
       position: absolute;
+      gap: 40px;
     }
     .card {
       width: 100%;
-      max-width: 300px; // Still limits on larger screens
-      min-width: 200px; // Optional: prevent it from getting too small
-      flex: 1 1 200px; // allows cards to shrink and wrap
+      max-width: 200px;
+      min-width: 200px;
+      flex: 1 1 200px;
       background: white;
-      border-radius: 20px;
-      padding: 20px;
-      gap: 20px;
+      border-radius: 12px;
+      padding: 10px;
+      gap: 10px;
       box-shadow: 0px 20px 50px 0px #3440541a;
-
+      @include for-laptops {
+        max-width: 300px;
+        min-width: 200px;
+        padding: 20px;
+        gap: 20px;
+        border-radius: 20px;
+      }
       .card_image {
-        height: 48px;
-        width: 48px;
+        height: 24px;
+        width: 24px;
+        @include for-laptops {
+          height: 48px;
+          width: 48px;
+        }
       }
     }
   }
@@ -112,9 +123,7 @@
   background-position: center;
   background-size: cover;
   background-image: url(./img/ArtboardBg.svg);
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
+  padding: 36px;
   @include for-laptops {
     padding: 84px 90px 51px 90px;
   }
@@ -147,10 +156,7 @@
   background: $color-black;
   border-radius: 12px;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding: 58px;
   }
@@ -179,10 +185,8 @@
 .fifth_row {
   position: relative;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
+  padding-top: 0px;
   @include for-laptops {
     padding-top: 90px;
     padding-bottom: 90px;
@@ -190,46 +194,16 @@
 }
 
 .sixth_row {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url(./img/enkashWayBg.svg);
-  height: 100vh;
-  .progress_bar {
-    height: 4px;
-    border-radius: 12px;
-    padding-left: 50px;
-    padding-right: 50px;
-    background: linear-gradient(
-      90deg,
-      $color-equity-blue 15%,
-      $color-black 30%
-    );
-    @include for-laptops {
-      height: 8px;
-    }
+  padding: 20px;
+  @include for-laptops {
+    padding-top: 132px;
+    padding-bottom: 70px;
   }
-  .progress_items {
-    margin-right: 30px;
+  .list_button {
+    padding-left: 76px;
+    margin-top: 18px;
     @include for-laptops {
-      margin-right: 0;
-    }
-  }
-  .progress_container {
-    @include for-laptops {
-      justify-content: space-evenly;
-    }
-  }
-  .arrow {
-    transform: rotate(90deg);
-    height: 30px;
-    width: 30px;
-    margin-top: -10px;
-    @include for-laptops {
-      height: 50px;
-      width: 50px;
-      transform: none;
-      margin-top: 0;
+      margin-top: 38px;
     }
   }
 }
@@ -308,10 +282,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }
@@ -359,7 +330,7 @@
 }
 
 .other_products {
-  padding: 20px;
+  padding: 36px;
   @include for-laptops {
     padding-top: 80px;
     padding-bottom: 80px;

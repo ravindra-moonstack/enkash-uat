@@ -26,6 +26,8 @@ import {
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
+import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
+import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 
 // const showScroll = cardsData.length > 3
 // const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -33,9 +35,22 @@ const CorporateCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
-
+      <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-m-auto">
+        <div className="max-w-auto">
+          <div className="d-flex">
+            <CustomBreadcrumb
+              items={[
+                { name: "Home", url: "/" },
+                { name: "Products", url: "/products" },
+                {
+                  name: "Payment Collection",
+                  url: "/products/payment-collection",
+                },
+              ]}
+               linkColor="white"
+            />
+          </div>
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
             <Heading
               title="Accept Payments the Smarter Way with EnKash"
