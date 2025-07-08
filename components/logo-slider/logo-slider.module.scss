@@ -18,16 +18,18 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 30px;
   overflow-x: auto;
   padding: 8px 16px;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  height: 80px;
 
   img {
     height: auto;
     width: auto;
     max-height: 36px;
+    transition: all 1.8s ease-in-out; // ✅ Smooth transition added
 
     @include for-laptops {
       max-height: 36px;

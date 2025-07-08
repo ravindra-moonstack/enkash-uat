@@ -124,20 +124,6 @@
     }
   }
 
-  .third_container {
-    position: relative;
-    z-index: 2;
-    .card_bg {
-      position: absolute;
-      z-index: 2;
-      top: -100px;
-      left: -50px;
-      @include for-laptops {
-        top: -50px;
-        left: 200px;
-      }
-    }
-  }
   .custom_bottom_offset {
     @include for-laptops {
       bottom: -98px;
@@ -237,8 +223,16 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  position: relative;
   // background-image: url(./img/enkashWayBg.svg);
   height: 100vh;
+  .blur_bg {
+    position: absolute;
+    top: -70%;
+    left: 0;
+    width: 800px;
+    height: 1150px;
+  }
   .progress_bar {
     height: 4px;
     border-radius: 12px;

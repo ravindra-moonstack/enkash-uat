@@ -6,6 +6,7 @@ import FeatureCard from "../featureCard/feature-card"
 
 export type AllProductsDataProp = {
   title: string
+  title2?: string
   description: string
   image: string
   link: string
@@ -13,6 +14,7 @@ export type AllProductsDataProp = {
 
 export type AllProductsProp = {
   title?: string
+  title2?: string
   subtitle?: string
   data?: Array<AllProductsDataProp>
 }
@@ -27,6 +29,7 @@ const AllProducts = ({ data = [] }: AllProductsProp): React.JSX.Element => {
               <div key={index.toString()} className="d-flex">
                 <FeatureCard
                   titleHtml={card.title}
+                  title2={card.title2}
                   description={card.description}
                   cardImage={card.image}
                 />

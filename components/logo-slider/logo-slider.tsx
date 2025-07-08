@@ -59,12 +59,7 @@ const logos = [
     alt: "Pristyn Care",
     className: styles.prystnCare,
   },
-  {
-    default: dtdc,
-    hover: dtdcFilled,
-    alt: "DTDC",
-    className: styles.dtdc,
-  },
+  { default: dtdc, hover: dtdcFilled, alt: "DTDC", className: styles.dtdc },
   {
     default: reliance,
     hover: relianceFilled,
@@ -116,19 +111,23 @@ const logos = [
 ]
 
 const LogoSlider = () => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [isHovered, setIsHovered] = useState(false)
   const [clicked, setClicked] = useState(false)
 
-  const getLogoSrc = (index: number, logo: any) => {
-    if (clicked) return logo.hover
-    if (hoveredIndex === index) return logo.hover
+  const getLogoSrc = (logo: any) => {
+    if (clicked || isHovered) return logo.hover
     return logo.default
   }
 
   return (
-    <div className="col-12" onClick={() => setClicked(!clicked)}>
-      <div className={styles.marquee_box}>
-        <Marquee speed={80} gradient={false}>
+    <div className="col-12">
+      <div
+        className={styles.marquee_box}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        onClick={() => setClicked(!clicked)}
+      >
+        <Marquee speed={30} gradient={false}>
           <div
             className={`${styles.bank_logo} ${styles.customer_logo} d-flex align-items-center justify-content-between`}
           >
@@ -136,10 +135,8 @@ const LogoSlider = () => {
               <Image
                 key={i}
                 className={logo.className}
-                src={getLogoSrc(i, logo)}
+                src={getLogoSrc(logo)}
                 alt={logo.alt}
-                onMouseEnter={() => setHoveredIndex(i)}
-                onMouseLeave={() => setHoveredIndex(null)}
               />
             ))}
           </div>

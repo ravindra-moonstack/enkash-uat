@@ -1,9 +1,9 @@
-import iconOne from "./img/icon-one.svg"
-import iconTwo from "./img/icon-two.svg"
-import iconThree from "./img/icon-three.svg"
-import iconFour from "./img/icon-four.svg"
-import iconFive from "./img/icon-five.svg"
-import iconSix from "./img/icon-six.svg"
+import iconOne from "./img/auto-collect.svg"
+import iconTwo from "./img/subsccribtion.svg"
+import iconThree from "./img/enach.svg"
+import autoCollect from "./img/autoCollectImg.webp"
+import subscribtion from "./img/subscribtionImg.webp"
+import eNach from "./img/eNachImg.webp"
 import policyIcon from "./img/policyIcon.svg"
 import overviewIcon from "./img/overview.svg"
 import identifyIcon from "./img/identify.svg"
@@ -36,40 +36,28 @@ import {
 
 const dataSets = [
   {
-    imageSrc: iconOne,
-    altText: "Allocates hierarchy ",
-    heading:
-      "Allocates hierarchy : roles It supports and allocates customized approval hierarchy aligned to the company’s policies.",
+    iconSrc: iconOne,
+    imageSrc: autoCollect,
+    altText: "Auto Collect ",
+    title: "Auto Collect",
+   subtitle:
+      "Issue cards instantly and refill balances as needed without delays. This feature ensures employees have continuous access to meal benefits without interruptions, improving their overall experience and satisfaction.",
   },
   {
-    imageSrc: iconTwo,
+    iconSrc: iconTwo,
+    imageSrc: subscribtion,
     altText: "Setting up of budgets",
-    heading:
+    title: "Setting up of budgets",
+   subtitle:
       "Setting up of budgets : The automated expense management platform helps define budgets for all departments & projects as per employee allocation",
   },
   {
-    imageSrc: iconThree,
+    iconSrc: iconThree,
+    imageSrc: eNach,
     altText: "Simplified expense submission",
-    heading:
+    title: "Simplified expense submission",
+   subtitle:
       "Simplified expense submission: A user-friendly interface ensuring that employees can effortlessly submit expenses from their mobile devices at any time and from any location",
-  },
-  {
-    imageSrc: iconFour,
-    altText: "Automated approval workflow",
-    heading:
-      "Automated approval workflow: On-click approval process based on predefined budgets or policies",
-  },
-  {
-    imageSrc: iconFive,
-    altText: "Faster expense tracking",
-    heading:
-      "Faster expense tracking: AI-powered WhatsApp bot helps report expenses and enables managers to give on-the-go approvals",
-  },
-  {
-    imageSrc: iconSix,
-    altText: "Real-time visibility",
-    heading:
-      "Real-time visibility:  Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
   },
 ]
 

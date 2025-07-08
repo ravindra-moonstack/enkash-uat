@@ -6,6 +6,7 @@ import { ReactNode } from "react"
 export interface CardProps {
   whiteTitle?: string
   titleHtml?: ReactNode
+  title2?: string
   description: string
   cardImage?: string
 }
@@ -15,13 +16,14 @@ const FeatureCard = ({
   titleHtml,
   description,
   cardImage,
+  title2,
 }: CardProps) => {
   return (
-    <div className={`d-flex flex-column text-start ${styles.card_body} me-2`}>
+    <div className={`d-flex flex-column text-start ${styles.card_body} `}>
       <div className="d-flex flex-column flex-grow-1">
         <div className={styles.card_top}>
           {cardImage && (
-            <div className={styles.image_wrapper}>
+            <div className={`pb-2 ${styles.image_wrapper} `}>
               <Image
                 src={cardImage}
                 alt="card visual"
@@ -45,6 +47,7 @@ const FeatureCard = ({
               )
             )}
           </div>
+          {title2 && <div className={styles.titleHtml}>{title2}</div>}
         </div>
 
         <div
@@ -52,8 +55,6 @@ const FeatureCard = ({
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
       </div>
-      {/* Extra space at the bottom */}
-      <div className="mt-4" /> {/* You can increase mt-4 to mt-5 etc. */}
     </div>
   )
 }

@@ -204,16 +204,12 @@ const CorporateCards = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={`col-md-6 col-12 d-flex
-             justify-content-end ${styles.third_container}`}
-            >
+            <div className={`col-md-6 col-12 d-flex `}>
               <div>
                 <Image
                   src={instantActionImg}
                   alt="card background"
-                  className="position-relative w-100 h-100"
-                  style={{ maxHeight: "749px" }}
+                  className=" w-100 h-100"
                 />
               </div>
             </div>

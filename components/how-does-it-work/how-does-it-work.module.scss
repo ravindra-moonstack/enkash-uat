@@ -1,0 +1,95 @@
+@use "/styles/mixin" as *;
+@use "/styles/variables" as *;
+
+.home_container {
+  position: relative;
+  .card {
+    @include for-laptops {
+      padding-left: 80px;
+      padding-right: 80px;
+      padding: 140px 80px 40px 80px;
+      border-radius: 12px;
+    }
+    .card_container {
+      position: relative;
+      z-index: 2;
+
+      border-radius: 12px;
+
+      padding-bottom: 72px;
+      align-items: center;
+      @include for-laptops {
+        margin-top: 0px;
+      }
+      .progress_bar {
+        position: absolute;
+        bottom: 20px;
+
+        @include for-laptops {
+          bottom: 20px;
+        }
+        .bar {
+          width: 30px;
+          height: 8px;
+          margin-right: 4px;
+        }
+      }
+      .title {
+        color: $color-white;
+        font-size: 14px;
+        letter-spacing: -0.04em;
+        @include for-laptops {
+          font-size: 32px;
+        }
+        @include for-window-zoomed-screens {
+          font-size: 18px;
+        }
+      }
+      .subtitle {
+        color: $color-white;
+        font-size: 14px;
+        letter-spacing: -0.04em;
+        @include for-laptops {
+          font-size: 18px;
+        }
+        @include for-window-zoomed-screens {
+          font-size: 14px;
+        }
+      }
+      .icon_img {
+        height: 32px;
+        width: auto;
+        margin-bottom: 20px;
+        margin-top: 20px;
+
+        @include for-laptops {
+          height: 55px;
+          width: auto;
+          margin-bottom: 0px;
+          margin-right: 25px;
+          margin-top: 0px;
+        }
+      }
+
+      .right_img {
+        width: 450px;
+        height: 350px;
+      }
+    }
+
+    .img_container {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+
+      img {
+        height: auto;
+        width: 100%;
+        border-radius: 10px;
+        @include for-laptops {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

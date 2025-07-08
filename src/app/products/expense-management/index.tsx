@@ -15,9 +15,10 @@ export { default as policyIcon } from "./img/policyIcon.svg"
 
 ////new
 export { default as motherCardImg } from "./img/motherCardImg.svg"
-export { default as advanceAi } from "./img/advance-ai.svg"
-export { default as receipt } from "./img/receipt.png"
-export { default as upi } from "./img/upi.png"
-export { default as walletExpense } from "./img/walletExpense.png"
+export { default as advanceAi } from "./img/advanceAi.webp"
+export { default as receipt } from "./img/receipt.webp"
+export { default as upi } from "./img/upi.webp"
+export { default as walletExpense } from "./img/walletExpense.webp"
 
 export { default as bannerLottie } from "./img/lottie/Expense.json"
+export { default as blurImg } from "./img/blurBg.png"

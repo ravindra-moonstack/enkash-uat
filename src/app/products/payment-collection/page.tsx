@@ -2,14 +2,11 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import {
-  cardData,
-} from "./data"
+import { cardData, dataSets } from "./data"
 
-import { Header, Heading,  Footer } from "@/components"
+import { Header, Heading, Footer } from "@/components"
 
 import {
-
   motherCardImg,
   paymentGatwayImg,
   paymentGatwayIcon,
@@ -23,11 +20,12 @@ import {
   paymentPageImg,
   qrCodeIcon,
   qrCodeImg,
-
+  circles,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 
 // const showScroll = cardsData.length > 3
 // const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -77,7 +75,7 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-{/* 
+      {/* 
       <div>
         <LogoSlider />
       </div> */}
@@ -201,36 +199,34 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-{/* 
-      <div
-        className={`${styles.third_row}  row d-flex relative  row-padding-x-only`}
-      >
-        <div className="d-flex flex-column text-center mb-5">
-          <Heading title="Exclusive " color="white" size="h1" weight="6" />
-          <div>
+
+      <div className={`${styles.fourth_row}  row d-flex  row-padding-x-only`}>
+        <div className="max-m-auto relative ">
+          <div className={styles.circles_bg}>
+            <Image src={circles} alt="background image" />
+          </div>
+          <div className="d-flex flex-column text-center mb-5">
             <Heading
-              title="discounts and benefits"
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`${space} on partnered services`}
+              title="Frictionless Payment "
               color="white"
               size="h1"
               weight="6"
             />
+            <div>
+              <Heading
+                title="Automation for Your Business"
+                color="equity-blue"
+                size="h1"
+                weight="6"
+              />
+            </div>
+          </div>
+
+          <div className={styles.how_it_workssection}>
+            <HowDoesItWork dataSets={dataSets} bannerImage={circles} />
           </div>
         </div>
-
-        <div className={styles.circles_bg}>
-          <Image src={circles} alt="background image" />
-        </div>
-
-        <div className={styles.how_it_workssection}>
-          <HowDoesItWork dataSets={dataSets} bannerImage={circles} />
-        </div>
-      </div> */}
+      </div>
 
       {/* <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -369,7 +365,7 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
         </div>
       </div> */}
-{/* 
+      {/* 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-5`}>

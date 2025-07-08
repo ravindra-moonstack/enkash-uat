@@ -22,20 +22,21 @@ import instantAcessIcon from "./img/instantAcess.svg"
 import verifiedIcon from "./img/verified.svg"
 import visibilityIcon from "./img/visibility.svg"
 
-import corporateCard from "./img/credit_card.svg"
+import corporateCard from "./img/coprate-card.png"
 import automaticCard from "./img/automaticCard.svg"
-import gstCard from "./img/gst.svg"
+import gstCard from "./img/gst.png"
 import expenseCard from "./img/expenseCard.svg"
 import exchangeCard from "./img/exchangeCard.svg"
 import trackingCard from "./img/tracking.svg"
 import disrubsmentCard from "./img/disbruesment.svg"
 import customExpenseCard from "./img/customExpense.svg"
 
-import autoCapture from "./img/auto-capture.svg"
-import auditExpense from "./img/audit-expence.svg"
-import reconcile from "./img/reconcile.svg"
-import workflow from "./img/workflow.svg"
-import approve from "./img/approve.svg"
+import encruption from "./img/encruption.svg"
+import complience from "./img/complienceIcon.svg"
+import audit from "./img/auditIcon.svg"
+import signOn from "./img/sign-on-icon.svg"
+import key from "./img/key-icon.svg"
+import { approve } from "@/components/all-products"
 
 const dataSets = [
   {
@@ -299,7 +300,7 @@ const paymentMethodData = [
     icon: autoCalculateIcon,
   },
   {
-    title: "Policy-Aware Routing & Approval::",
+    title: "Policy-Aware Routing & Approval:",
     description:
       "Every travel request and per diem is validated against policies, with real-time flagging of exceptions and automated routing to approvers.",
     icon: awareIcon,
@@ -434,66 +435,68 @@ const intantActionData = [
 
 const allProductSections = [
   {
-    title: "Expense Management",
-    subtitle: "Manage every spend effortlessly",
-    items: [
-      {
-        title: "Review with Confidence",
-        description:
-          "Your expense data is protected with bank-grade AES-256 encryption at rest and TLS 1.3 in transit, ensuring end-to-end security across every device, user, and integration.",
-        image: autoCapture,
-        link: "",
-      },
-      {
-        title: "SOC 2 Type II Compliance",
-        description:
-          "EnKash EMS is SOC 2 Type II certified, meaning all security, availability, and data processing controls are independently audited to meet the highest enterprise-grade compliance standards.",
-        image: auditExpense,
-        link: "",
-      },
-    ],
-  },
-  {
     title: "Reconciliation & Policy",
     subtitle: "Control and visibility in real time",
     items: [
       {
-        title: "Immutable Audit Trails ",
+        title: "End-to-End ",
+        title2: "Data Encryption ",
+        description:
+          "Your expense data is protected with bank-grade AES-256 encryption at rest and TLS 1.3 in transit, ensuring end-to-end security across every device, user, and integration.",
+        image: encruption,
+        link: "",
+      },
+      {
+        title: "SOC 2 Type ",
+        title2: "II Compliance ",
+        description:
+          "EnKash EMS is SOC 2 Type II certified, meaning all security, availability, and data processing controls are independently audited to meet the highest enterprise-grade compliance standards.",
+        image: complience,
+        link: "",
+      },
+      {
+        title: "Immutable  ",
+        title2: "Audit Trails ",
         description:
           "Every action - submission, approval, edit—is captured with exact timestamps and user IDs in tamper-proof logs, enabling complete transparency and readiness for internal or external audits.",
-        image: reconcile,
+        image: audit,
         link: "",
       },
       {
-        title: "Single Sign-On",
+        title: "Single ",
+        title2: "Sign-On",
         description:
           "Let users log in with one click using corporate credentials via SSO integrations with Azure AD, Okta, or Google Workspace - enhancing security, simplicity, and user adoption.",
-        image: workflow,
+        image: signOn,
         link: "",
       },
       {
-        title: "Multi-Factor Authentication (MFA)",
+        title: "Multi-Factor ",
+        title2: "Authentication (MFA) ",
         description:
           "Secure access with MFA adds an extra verification step at login, protecting your EMS from unauthorized access, even if a password is lost or compromised.",
-        image: approve,
+        image: key,
         link: "",
       },
       {
-        title: "Role-Based Access Controls",
+        title: "Role-Based",
+        title2: " Access Controls ",
         description:
           "Grant precise permissions by role with granular controls on actions and visibility, ensuring only the right people access the right data at all times.",
         image: approve,
         link: "",
       },
       {
-        title: "Audit Reporting",
+        title: "Audit",
+        title2: " Reporting",
         description:
           "Generate audit-ready reports for internal controls, GST compliance, or clause 49 of the listing agreement regulations. Filter by timeline, user, or action to ensure nothing slips through the cracks.",
         image: approve,
         link: "",
       },
       {
-        title: "Retention Policies & Legal Compliance",
+        title: "Retention Policies ",
+        title2: "& Legal Compliance ",
         description:
           "Configure data retention rules per jurisdiction to keep records securely for 7+ years to meet global legal requirements and ensure readiness for any regulatory inspection.",
         image: approve,

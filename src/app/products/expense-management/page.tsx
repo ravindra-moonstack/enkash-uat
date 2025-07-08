@@ -18,6 +18,7 @@ import {
   walletExpense,
   whiteArrow,
   motherCardImg,
+  blurImg,
 } from "."
 import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -31,12 +32,12 @@ import {
   rankData,
 } from "./data"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
-import bg1 from "./img/bg1.jpg"
-import bg2 from "./img/bg2.jpg"
-import bg3 from "./img/bg3.jpg"
-import bg4 from "./img/bg4.jpg"
-import bg5 from "./img/bg5.jpg"
-import bg6 from "./img/bg6.jpg"
+import bg1 from "./img/bg4.jpg"
+import bg2 from "./img/bg3.jpg"
+import bg3 from "./img/bg2.jpg"
+import bg4 from "./img/bg1.jpg"
+import bg5 from "./img/bg6.jpg"
+import bg6 from "./img/bg5.jpg"
 
 import AllProducts from "@/components/all-products/all-products"
 
@@ -106,7 +107,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             </div>
           </div>
 
-          <div>
+          <div className="mt-4">
             <LogoSlider />
           </div>
         </div>
@@ -131,7 +132,7 @@ const ExpenseManagement = (): React.JSX.Element => {
 
           {/* Section 1 */}
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-1">
+            <div className="col-md-6 col-12">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`Expense Creation via Any Channel - Powered by Advanced AI ${space}`}
@@ -165,15 +166,12 @@ const ExpenseManagement = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-end ${styles.third_container} order-2 order-md-2`}
-            >
+            <div className={`col-md-6 col-12 order-2 order-md-2`}>
               <div>
                 <Image
                   src={advanceAi}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  height={672}
                 />
               </div>
             </div>
@@ -183,19 +181,16 @@ const ExpenseManagement = (): React.JSX.Element => {
           <div
             className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
           >
-            <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 ${styles.third_container} order-2 order-md-1`}
-            >
+            <div className={`col-md-6 col-12  order-2 order-md-1`}>
               <div>
                 <Image
                   src={receipt}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  height={592}
                 />
               </div>
             </div>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
+            <div className="col-md-6 col-12 order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`Travel Requests & Per Diem – Plan Ahead, Stay Within Budget ${space}`}
@@ -279,15 +274,12 @@ const ExpenseManagement = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-end ${styles.third_container} order-2 order-md-2`}
-            >
+            <div className={`col-md-6 col-12   order-2 order-md-2`}>
               <div>
                 <Image
                   src={upi}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  height={672}
                 />
               </div>
             </div>
@@ -297,19 +289,16 @@ const ExpenseManagement = (): React.JSX.Element => {
           <div
             className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
           >
-            <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-start ${styles.third_container} order-2 order-md-1`}
-            >
+            <div className={`col-md-6 col-12  order-2 order-md-1`}>
               <div>
                 <Image
                   src={walletExpense}
                   alt="card background"
                   className="position-relative w-100 h-100"
-                  height={493}
                 />
               </div>
             </div>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
+            <div className="col-md-6 col-12  order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`Employee Reimbursements with Smart Wallets ${space}`}
@@ -399,7 +388,7 @@ const ExpenseManagement = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-start pb-5`}>
             <Heading
               title={`Smart Policy ${space}`}
               color="black"
@@ -424,7 +413,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
 
           <div
-            className={`w-md-50 mt-5 ${
+            className={`col-md-6 col-12 mt-5 ${
               showScroll ? "overflow-auto scrollbar-thin" : ""
             }`}
             style={{
@@ -525,62 +514,6 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.sixth_row} row d-flex bg-white `}>
-        <EnkashWay
-          sectionHeading="One Platform, Every Use Case, Total Control"
-          progressData={[
-            {
-              itemArray: ["IT & SaaS"],
-              title: "Instant Activation",
-              description:
-                "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
-              icon: policyIcon,
-              bgImage: bg1,
-            },
-            {
-              itemArray: ["E-commerce & Retail"],
-              title: "Smart Controls",
-              description:
-                "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
-              icon: policyIcon,
-              bgImage: bg2,
-            },
-            {
-              itemArray: ["Manufacturing"],
-              title: "Real-time Insights",
-              description:
-                "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
-              icon: policyIcon,
-              bgImage: bg3,
-            },
-            {
-              itemArray: ["Logistics & Supply Chain"],
-              title: "Real-time Insights",
-              description:
-                "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
-              icon: policyIcon,
-              bgImage: bg4,
-            },
-            {
-              itemArray: ["Consulting & Services"],
-              title: "Real-time Insights",
-              description:
-                "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
-              icon: policyIcon,
-              bgImage: bg5,
-            },
-            {
-              itemArray: ["Pharma & Healthcare"],
-              title: "Real-time Insights",
-              description:
-                "Do not let MR travel management, hospital branch expenses, and regulatory reporting become a challenge. Automate policy enforcement, capture receipts instantly, and align with compliance standards to focus on patient care, not paperwork.",
-              icon: policyIcon,
-              bgImage: bg6,
-            },
-          ]}
-        />
-      </div>
-
       <div className={`${styles.seventh_row} `}>
         <div className={`${styles.title} text-center pb-5 pt-5`}>
           <div
@@ -608,6 +541,62 @@ const ExpenseManagement = (): React.JSX.Element => {
             data={mergedCards}
           />
         </div>
+      </div>
+
+      <div className={`${styles.sixth_row} row d-flex bg-white `}>
+        <EnkashWay
+          sectionHeading="One Platform, Every Use Case, Total Control"
+          progressData={[
+            {
+              itemArray: ["IT & SaaS"],
+              title: "IT & SaaS",
+              description:
+                "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
+              icon: policyIcon,
+              bgImage: bg1,
+            },
+            {
+              itemArray: ["E-commerce & Retail"],
+              title: "E-commerce & Retail",
+              description:
+                "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
+              icon: policyIcon,
+              bgImage: bg2,
+            },
+            {
+              itemArray: ["Manufacturing"],
+              title: "Manufacturing",
+              description:
+                "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
+              icon: policyIcon,
+              bgImage: bg3,
+            },
+            {
+              itemArray: ["Logistics & Supply Chain"],
+              title: "Logistics & Supply Chain",
+              description:
+                "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
+              icon: policyIcon,
+              bgImage: bg4,
+            },
+            {
+              itemArray: ["Consulting & Services"],
+              title: "Consulting & Services",
+              description:
+                "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
+              icon: policyIcon,
+              bgImage: bg5,
+            },
+            {
+              itemArray: ["Pharma & Healthcare"],
+              title: "Pharma & Healthcare",
+              description:
+                "Do not let MR travel management, hospital branch expenses, and regulatory reporting become a challenge. Automate policy enforcement, capture receipts instantly, and align with compliance standards to focus on patient care, not paperwork.",
+              icon: policyIcon,
+              bgImage: bg6,
+            },
+          ]}
+        />
       </div>
 
       <div className={` ${styles.ninth_row} `}>
