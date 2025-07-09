@@ -27,6 +27,7 @@ const FooterV2 = () => {
           {/* 1st col */}
           <div className={`order-2 order-md-1 ${styles.logo_container}`}>
             <Link href="/" className={`${styles.logo_img} d-none d-md-block`}>
+            <Link href="/" className={`${styles.logo_img} d-none d-md-block`}>
               <Image
                 src={enkashBlueLogo}
                 alt="logo"
@@ -35,6 +36,9 @@ const FooterV2 = () => {
               />
             </Link>
 
+            <div
+              className={`d-flex flex-column  gap-3 gap-md-4 ${styles.logi_bg}`}
+            >
             <div
               className={`d-flex flex-column  gap-3 gap-md-4 ${styles.logi_bg}`}
             >
@@ -64,8 +68,12 @@ const FooterV2 = () => {
               {/* col-1 resources */}
 
               <div className={` ${styles.info_container} d-none d-md-block`}>
+              <div className={` ${styles.info_container} d-none d-md-block`}>
                 <div className={`{styles.info_div} ${styles.info_div_one}`}>
                   <div className={` ${styles.info_header_one}`}>
+                    <h4 className={`${styles.title}`}>
+                      Licenses & Certification
+                    </h4>
                     <h4 className={`${styles.title}`}>
                       Licenses & Certification
                     </h4>
@@ -78,12 +86,33 @@ const FooterV2 = () => {
                         <Image
                           src={soc}
                           alt="soc logo"
-                          sizes="(max-width: 768px) 48px, 86px"
                           style={{
-                            maxHeight: "48px",
                             width: "auto",
                             objectFit: "contain",
                           }}
+                        />
+                      </div>
+
+                      <div className={styles.pci_logo}>
+                        <Image src={pci} alt="pci logo" objectFit="cover" />
+                      </div>
+
+                      <div className={styles.pci_logo}>
+                        <Image src={ppi} alt="pci logo" objectFit="cover" />
+                      </div>
+                      <div className={styles.pci_logo}>
+                        <Image src={ppa} alt="pci logo" objectFit="cover" />
+                      </div>
+                    </div>
+                    <div
+                      className={`d-flex gap-2 flex-wrap d-block d-md-none ${styles.info_body_one}`}
+                    >
+                      <div className={styles.soc_logo}>
+                        <Image
+                          src={soc}
+                          alt="soc logo"
+                          height={30}
+                          width={30}
                         />
                       </div>
 
@@ -200,6 +229,7 @@ const FooterV2 = () => {
 
                 <div
                   className={`col-6 col-md-2 ${styles.info_div} ${styles.info_div_three}`}
+                  className={`col-6 col-md-2 ${styles.info_div} ${styles.info_div_three}`}
                 >
                   <div className={` ${styles.info_header_three}`}>
                     <h4 className={`${styles.title}`}>CONNECT US ON</h4>
@@ -217,12 +247,14 @@ const FooterV2 = () => {
                           rel="noreferrer noopener"
                         >
                           <Image src={fbLogo} alt="EnKash Facebook" />
+                          <Image src={fbLogo} alt="EnKash Facebook" />
                         </Link>
                         <Link
                           href="https://twitter.com/EnkashBusiness"
                           target="_blank"
                           rel="noreferrer noopener"
                         >
+                          <Image src={twitterLogo} alt="EnKash Twitter" />
                           <Image src={twitterLogo} alt="EnKash Twitter" />
                         </Link>
                         <Link
@@ -486,9 +518,10 @@ const FooterV2 = () => {
                       </li>
 
                       <li>
+                      <li>
                         <Link href="/upi-payments">UPI Payments</Link>
                       </li>
-                      <li className="d-flex">
+                      <li>
                         <Link href="/qr-codes">QR Code</Link>
                       </li>
                       <li>
@@ -544,6 +577,7 @@ const FooterV2 = () => {
                       </Link>
                     </li>
                     <li>
+                      <Link href="/approval-flows/" className="text-wrap">
                       <Link href="/approval-flows/" className="text-wrap">
                         Policy and Approval Flows
                       </Link>
@@ -832,6 +866,7 @@ const FooterV2 = () => {
                 </div>
                 <div className="mt-3">
                   <h4 className={`col-12 ${styles.title} text-wrap`}>
+                  <h4 className={`col-12 ${styles.title} text-wrap`}>
                     Policies and Compliance
                   </h4>
                   <ul>
@@ -875,6 +910,7 @@ const FooterV2 = () => {
           </div>
         </div>
         <div className="d-flex flex-wrap flex-md-nowrap d-none d-md-block">
+        <div className="d-flex flex-wrap flex-md-nowrap d-none d-md-block">
           <div className={`col-12 col-md-10 text-left ${styles.disclaimer}`}>
             Corporate cards, payments, and other related services are provided
             by RBI-licensed banks and/or in accordance with RBI regulations
@@ -889,6 +925,7 @@ const FooterV2 = () => {
       </div>
 
       <div className={`d-block d-md-none ${styles.location_mobile} `}>
+      <div className={`d-block d-md-none ${styles.location_mobile} `}>
         <div
           className={`d-flex justify-content-between align-items-center mx-5 mb-4 `}
         >
@@ -897,6 +934,7 @@ const FooterV2 = () => {
             className={styles.footer_location_pin}
             src={locationPin}
             alt="Enkash Office Location"
+            width={10}
             width={10}
           />
           <p>Gurgaon</p>

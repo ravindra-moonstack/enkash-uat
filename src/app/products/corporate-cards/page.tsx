@@ -34,7 +34,6 @@ import CardProduct from "@/components/card-product/card-product"
 import AllProducts from "@/components/all-products/all-products"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-// import Card from "@/components/cardAnimation/card/card"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
