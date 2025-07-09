@@ -11,13 +11,19 @@ import {
   faqBg,
   blueArrow,
   approved,
-  policyIcon,
+
   advanceAi,
   receipt,
   upi,
   walletExpense,
   whiteArrow,
   motherCardImg,
+  itIcon,
+  ecoomerceIcon,
+  manufactureIcon,
+  logisticIcon,
+  consultancyIcon,
+  pharmacyIcon,
 } from "."
 import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -553,7 +559,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               title: "IT & SaaS",
               description:
                 "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
-              icon: policyIcon,
+              icon: itIcon,
               bgImage: bg1,
             },
             {
@@ -561,7 +567,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               title: "E-commerce & Retail",
               description:
                 "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
-              icon: policyIcon,
+              icon: ecoomerceIcon,
               bgImage: bg2,
             },
             {
@@ -569,7 +575,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               title: "Manufacturing",
               description:
                 "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
-              icon: policyIcon,
+              icon: manufactureIcon,
               bgImage: bg3,
             },
             {
@@ -577,7 +583,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               title: "Logistics & Supply Chain",
               description:
                 "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
-              icon: policyIcon,
+              icon: logisticIcon,
               bgImage: bg4,
             },
             {
@@ -585,7 +591,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               title: "Consulting & Services",
               description:
                 "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
-              icon: policyIcon,
+              icon: consultancyIcon,
               bgImage: bg5,
             },
             {
@@ -593,7 +599,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               title: "Pharma & Healthcare",
               description:
                 "Do not let MR travel management, hospital branch expenses, and regulatory reporting become a challenge. Automate policy enforcement, capture receipts instantly, and align with compliance standards to focus on patient care, not paperwork.",
-              icon: policyIcon,
+              icon: pharmacyIcon,
               bgImage: bg6,
             },
           ]}

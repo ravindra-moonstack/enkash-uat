@@ -223,24 +223,25 @@ const spendAnalyticsData = [
 
 const rbiData = [
   {
-    title: "Instant card issuance",
-    description: "without routing requests through banks",
+    title: "Instant ",
+    description: "Instant card issuance without routing requests through banks",
     icon: instantIcon,
   },
   {
-    title: "Faster onboarding",
-    description: "and fewer compliance hurdles",
+    title: " Fast",
+    description: "Faster onboarding and fewer compliance hurdles",
     icon: onboardingIcon,
   },
   {
-    title: "No third-party delays",
-    description: "or dependencies",
+    title: "No Delays",
+    description: "No third-party delays or dependencies",
     icon: noThidPartyIcon,
   },
   {
-    title: "DIY ",
-    title2:"control",
-    description: "over how your cards are issued, used, and managed",
+    title: "Customizable ",
+
+    description:
+      "DIY control over how your cards are issued, used, and managed",
     icon: diyControlIcon,
   },
 ]

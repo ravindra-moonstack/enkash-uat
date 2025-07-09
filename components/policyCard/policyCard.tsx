@@ -4,7 +4,7 @@ import Heading from "../heading/heading"
 import styles from "./policyCard.module.scss"
 
 interface CardProps {
- icon: string | StaticImageData
+  icon: string | StaticImageData
   title: string
   description?: string
   className?: string
@@ -26,7 +26,7 @@ const PolicyCard: React.FC<CardProps> = ({
       </div>
 
       {/* Title and Description */}
-      <div className="d-flex flex-column ">
+      <div className="d-flex flex-column text-start ">
         <Heading title={title} color="black" size="h5" weight="5" />
         {description && (
           <Heading title={description} color="grey-200" size="h7" weight="4" />

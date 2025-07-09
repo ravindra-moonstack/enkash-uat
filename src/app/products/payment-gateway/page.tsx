@@ -113,14 +113,14 @@ const PaymentGateway = (): React.JSX.Element => {
                   >
                     <div>
                       <RectangleButton
-                        title="Get Started  Today "
+                        title="Get Started  "
                         theme="blue"
                         url="/sales/?source=expense_management"
                       />
                     </div>
                     <div>
                       <RectangleButton
-                        title="API Documentation"
+                        title="API Doc"
                         theme="outline-blue"
                         url="/sales/?source=expense_management"
                       />
@@ -142,8 +142,8 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
           </div>
-          <LogoSlider  />
         </div>
+        <LogoSlider />
       </div>
 
       <div className={`row ${styles.second_row} `}>
@@ -678,7 +678,7 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-     <div className={`${styles.faq_new_row}  relative`}>
+      <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-5`}>
             <Heading
@@ -719,7 +719,6 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

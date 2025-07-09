@@ -4,7 +4,7 @@ import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { cardData, dataSets } from "./data"
 
-import { Header, Heading, Footer } from "@/components"
+import { Header, Heading, Footer, FAQHtml } from "@/components"
 
 import {
   motherCardImg,
@@ -21,6 +21,12 @@ import {
   qrCodeIcon,
   qrCodeImg,
   circles,
+  instantSettelmentIcon,
+  instantSettelmentImg,
+  affordabilityImg,
+  affordabilityIcon,
+  blueArrow,
+  whiteArrow,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -28,10 +34,13 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
+import PolicyCard from "@/components/policyCard/policyCard"
+import faqData from "./faq-data"
+import LogoSlider from "@/components/logo-slider/logo-slider"
 
 // const showScroll = cardsData.length > 3
 // const mergedCards = allProductSections.flatMap((section) => section.items)
-const CorporateCards = (): React.JSX.Element => {
+const PaymentCollection = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -48,6 +57,7 @@ const CorporateCards = (): React.JSX.Element => {
                   url: "/products/payment-collection",
                 },
               ]}
+              linkColor="white"
             />
           </div>
           <div className="col-12 d-flex flex-column justify-content-center align-items-center">
@@ -89,10 +99,10 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      {/* 
+
       <div>
         <LogoSlider />
-      </div> */}
+      </div>
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
@@ -279,43 +289,143 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div> */}
 
-      {/* <div
-        className={styles.fourth_row}
-        style={{
-          maxHeight: "100vh",
-          overflowY: "scroll",
-          scrollbarWidth: "none", // for Firefox
-          msOverflowStyle: "none",
-        }}
-      >
-        <div className={`row relative  ${styles.section}`}>
-          <div className={`${styles.title} text-center pb-5`}>
-            <Heading
-              title={`Get  ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Built-in Controls  ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`, Zero Surprises ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
+      <div className={styles.fifth_row}>
+        <div className={`max-w-auto  ${styles.section}`}>
+          <div className="row align-items-center">
+            <div className="col-12 col-md-6">
+              <div className={`${styles.title} text-start pb-5`}>
+                <div>
+                  <Heading
+                    title={`Why Wait? Unlock${space}`}
+                    color="black"
+                    size="h1"
+                    weight="6"
+                  />
+                </div>
+                <Heading
+                  title={`Your Funds in Real-time ${space}`}
+                  color="equity-blue"
+                  size="h1"
+                  weight="6"
+                />
+              </div>
+              <PolicyCard
+                icon={instantSettelmentIcon}
+                title={"Instant Settlement"}
+                description={
+                  "Get immediate access to your funds after each transaction, minimizing cash flow delays, improving business liquidity, and ensuring better financial planning while enabling seamless operations with real-time settlement capabilities."
+                }
+              />
+              <div className={`mt-4 ${styles.list_button}`}>
+                <RectangleButton
+                  title="Try Now"
+                  theme="border-gray"
+                  actionImage={blueArrow}
+                  hoverImage={whiteArrow}
+                  url={"/sales/?source=expense_management"}
+                />
+              </div>
+            </div>
+            <div className="col-12 col-md-6">
+              <Image src={instantSettelmentImg} alt="background image" />
+            </div>
           </div>
-          <div>
-            {slideUpData.map((project, i) => (
-              <Card key={`p_${i}`} i={i} {...project} />
-            ))}
+          <div className="row align-items-center">
+            <div className="col-12 col-md-6">
+              <Image src={affordabilityImg} alt="background image" />
+            </div>
+            <div className="col-12 col-md-6">
+              <PolicyCard
+                icon={affordabilityIcon}
+                title={"Affordability Suite"}
+                description={
+                  "Empower customers with flexible payment options such as EMI and pay-later solutions, making high-value transactions more accessible while improving purchasing power and boosting sales for businesses."
+                }
+              />
+              <div className={`mt-4 ${styles.list_button}`}>
+                <RectangleButton
+                  title="Try Now"
+                  theme="border-gray"
+                  actionImage={blueArrow}
+                  hoverImage={whiteArrow}
+                  url={"/sales/?source=expense_management"}
+                />
+              </div>
+            </div>
           </div>
         </div>
-      </div> */}
+      </div>
+
+      <div className={`${styles.sixth_row} `}>
+        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
+          <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
+            <Heading
+              title="You Focus on Your Business. Let Us Focus on Payment Collection "
+              size="bannerHeading"
+              color="white"
+              weight="4"
+            />
+            <Heading
+              title="We ensure accepting payment is effortless, no matter where your customers are or how they choose to pay.Explore Our Solutions"
+              size="h4"
+              color="white"
+              weight="4"
+            />
+          </div>
+
+          <div className={`${styles.get_started_button} `}>
+            <RectangleButton
+              title="Explore Our Solutions "
+              theme="outline-blue"
+              actionImage={blueArrow}
+              hoverImage={whiteArrow}
+              url="/sales/?source=expense_management"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div className={`${styles.faq_new_row}  relative`}>
+        <div className={`${styles.faqSection} text-start max-w-auto `}>
+          <div className={`${styles.title} text-start  pb-5`}>
+            <Heading
+              title={`Frequently Asked Questions  ${space}`}
+              color="black"
+              size="h1"
+              weight="5"
+            />
+            <Heading title={`(`} color="black" size="h1" weight="5" />
+            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
+          </div>
+          <div className="d-flex flex-column flex-md-row justify-content-between">
+            <div>
+              <div>
+                <Heading
+                  title="Have more questions? "
+                  color="main-grey"
+                  size="h3"
+                  weight="5"
+                  useH1TagInHtml={true}
+                />
+              </div>
+              <div className="mt-2 d-none d-md-block">
+                <RectangleButton
+                  title="Get started today"
+                  theme="border-gray"
+                  actionImage={blueArrow}
+                  hoverImage={whiteArrow}
+                  iconSize={15}
+                  url="/sales/?source=receivables"
+                />
+              </div>
+            </div>
+            <div className={`${styles.faqData}`}>
+              <FAQHtml faqData={faqData} />
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* <div className={`${styles.fifth_row} relative`}>
         <div className={`${styles.title} text-center pb-5`}>
@@ -427,4 +537,4 @@ const CorporateCards = (): React.JSX.Element => {
   )
 }
 
-export default CorporateCards
+export default PaymentCollection

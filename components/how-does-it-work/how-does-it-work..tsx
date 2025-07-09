@@ -63,9 +63,15 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
                 />
               </div>{" "}
             </div>
-            <div className="col-md-6 col-12">
+            <div className="col-md-6 col-12 d-flex justify-content-center">
               {" "}
               <Image
+                style={{
+                  maxHeight: dataSets[currentData].imageMaxHeight || "300px", // default fallback
+                  width: "auto",
+                  height: "auto",
+                  objectFit: "contain",
+                }}
                 src={dataSets[currentData].imageSrc}
                 alt={dataSets[currentData].altText}
                 className={`${styles.right_img}`}

@@ -345,13 +345,12 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
 
           <div className={styles.card_grid}>
-            {rbiData.map(({ icon, title, description, title2 }, i) => (
+            {rbiData.map(({ icon, title, description }, i) => (
               <div key={i}>
                 <FeatureCard
                   titleHtml={title}
                   description={description}
                   cardImage={icon}
-                  title2={title2}
                 />
               </div>
             ))}

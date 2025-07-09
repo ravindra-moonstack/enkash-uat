@@ -4,14 +4,16 @@ import arrowDown from "./img/arrow-down.svg"
 
 export interface FAQProps {
   question: string
-  index: number
-  answerHTML?: string
+  answerHTML?: React.ReactNode // use React.ReactNode instead of string if you pass JSX
   answer?: {
     heading?: string
     bullets?: string[]
   }[]
   answerVisible?: boolean
   onToggleAnswerVisibility?: () => void
+
+  // index is used in rendering, not stored in data
+  index: number
 }
 
 const FAQ = ({
