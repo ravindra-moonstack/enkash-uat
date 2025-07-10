@@ -1,5 +1,5 @@
 import { FAQProps } from "../../../components/faq-new/faq"
-import Link from "next/link"
+
 
 // ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
 type FAQDataItem = Omit<
@@ -95,21 +95,7 @@ const faqData: FAQDataItem[] = [
       },
     ],
   },
-  {
-    question: "How can I close the account and claim a refund?",
-    answer: [],
-    answerHTML: (
-      <div>
-        <h4>
-          If you wish to request the closure of your card/wallet, please click
-          on the link below to proceed:
-          <Link href="https://transcorpint.com/card-closure" target="_blank">
-            https://transcorpint.com/card-closure
-          </Link>{" "}
-        </h4>
-      </div>
-    ),
-  },
+
 ]
 
 export default faqData

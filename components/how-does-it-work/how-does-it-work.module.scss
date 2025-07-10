@@ -3,76 +3,87 @@
 
 .home_container {
   position: relative;
+
   .card {
+    padding: 20px; // Base mobile padding
+    border-radius: 12px;
+
     @include for-laptops {
-      padding-left: 80px;
-      padding-right: 80px;
       padding: 66px 80px 40px 80px;
-      border-radius: 12px;
     }
+
     .card_container {
       position: relative;
       z-index: 2;
-
       border-radius: 12px;
-
       padding-bottom: 72px;
       align-items: center;
+
       @include for-laptops {
-        margin-top: 0px;
+        margin-top: 0;
       }
+
       .progress_bar {
         position: absolute;
-        bottom: 20px;
+        bottom: 10px; // tighter for mobile
 
-        @include for-laptops {
-          bottom: 20px;
-        }
         .bar {
-          width: 30px;
-          height: 8px;
+          width: 20px;
+          height: 6px;
           margin-right: 4px;
+
+          @include for-laptops {
+            width: 30px;
+            height: 8px;
+          }
         }
       }
+
       .title {
         color: $color-white;
-        font-size: 14px;
+        font-size: 18px;
         letter-spacing: -0.04em;
+        text-align: left;
+
         @include for-laptops {
           font-size: 28px;
         }
+
         @include for-window-zoomed-screens {
           font-size: 18px;
         }
       }
+
       .subtitle {
         color: $color-dark-grey;
-        font-size: 9px;
+        font-size: 12px;
         letter-spacing: -0.04em;
+        text-align: left;
+
         @include for-laptops {
           font-size: 14px;
         }
+
         @include for-window-zoomed-screens {
           font-size: 14px;
         }
       }
+
       .icon_img {
         height: 32px;
         width: auto;
-        margin-bottom: 20px;
-        margin-top: 20px;
+        margin: 20px 0;
 
         @include for-laptops {
           height: 55px;
-          width: auto;
-          margin-bottom: 0px;
-          margin-right: 25px;
-          margin-top: 0px;
+          margin: 0 25px 0 0;
         }
       }
 
       .right_img {
-        height: 100%;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
       }
     }
 
@@ -82,9 +93,10 @@
       width: 100%;
 
       img {
-        height: auto;
         width: 100%;
+        height: auto;
         border-radius: 10px;
+
         @include for-laptops {
           height: 100%;
         }

@@ -74,10 +74,7 @@
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -309,10 +306,7 @@
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding: 58px;
   }
@@ -399,10 +393,7 @@
 
 .ninth_row {
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -450,10 +441,7 @@
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
 
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -467,10 +455,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }

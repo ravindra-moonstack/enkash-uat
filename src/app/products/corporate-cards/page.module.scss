@@ -248,10 +248,7 @@
   background: linear-gradient(180deg, #2e2e2e 0%, #010205 100%);
   border-radius: 12px;
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding: 58px;
   }
@@ -308,10 +305,7 @@
 
 .ninth_row {
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 36px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;

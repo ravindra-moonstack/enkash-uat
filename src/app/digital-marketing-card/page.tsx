@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import {  cardType, dataSets, intantActionData } from "./data"
+import { cardType, dataSets, intantActionData } from "./data"
 
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
@@ -41,15 +41,15 @@ const MealCards = (): React.JSX.Element => {
                 { name: "Home", url: "/" },
 
                 {
-                  name: "Meal Card",
-                  url: "/meal-card",
+                  name: "Digital Marketing  Card",
+                  url: "/digital-marketing-card",
                 },
               ]}
             />
           </div>
           <div className={`${styles.title} col-12 `}>
             <Heading
-              title="MEAL CARD"
+              title="DIGITAL MARKETING CARD"
               color="equity-blue"
               size="h5"
               weight="4"
@@ -57,14 +57,14 @@ const MealCards = (): React.JSX.Element => {
             />
             <div className="d-flex  flex-column justify-content-center align-items-center">
               <Heading
-                title="Empower Your Employees with"
+                title="Take Control of Your Marketing Budget with a "
                 color="black"
                 size="h2"
                 weight="2"
                 italic
               />
               <Heading
-                title="Tax-Free Meal Cards"
+                title="Digital Marketing Card"
                 color="black"
                 size="h2"
                 weight="7"
@@ -73,7 +73,7 @@ const MealCards = (): React.JSX.Element => {
 
             <div className="d-inline text-center">
               <Heading
-                title="Provide tax-free meal benefits while enhancing employee satisfaction. Widely accepted across platforms, these cards simplify meal allowances and provide a seamless, paperless solution."
+                title="Effortlessly allocate, track, and optimize your marketing budgets. Designed specifically for marketing professionals, this solution ensures precision, control, and real-time visibility over your campaigns’ spend."
                 color="black"
                 size="h5"
                 weight="4"
@@ -111,34 +111,16 @@ const MealCards = (): React.JSX.Element => {
               className={` flex-column justify-content-center align-items-center pb-3 `}
             >
               <Heading
-                title={`One Platform. ${space}`}
+                title={`How Digital Marketing Card Works ${space}`}
                 color="black"
                 size="h1"
                 weight="5"
               />
-              <Heading
-                title={`Total Visibility. ${space}`}
-                color="black"
-                size="h1"
-                weight="5"
-              />
+           
 
-              <Heading
-                title="Instant Actions"
-                color="equity-blue"
-                size="h1"
-                weight="5"
-              />
+         
             </div>
-            <div>
-              <Heading
-                title="Real-time visibility, control, and insights that traditional bank-issued card portals simply can’t match."
-                color="alternate-grey"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
-              />
-            </div>
+          
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
             <div className="col-md-6 col-12 px-5">

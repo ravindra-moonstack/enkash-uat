@@ -31,12 +31,13 @@ import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  fleetCardImg,
   fuelCardImg,
-  mealCardImg,
   purchesCardImg,
   sassCardImg,
   termsAndConCardImg,
   virtualCardImg,
+
 } from "."
 
 const dataSets = [
@@ -247,46 +248,59 @@ const corporateCardData = [
 
 const cardType = [
   {
-    titleHtml: "Meal Card",
-    description:
-      "Give tax-saving meal benefits to employees with easy-to-use, digital meal cards accepted nationwide.",
-    cardImage: mealCardImg,
-  },
-  {
     titleHtml: "Fuel Card",
     description:
-      "Control and track fuel expenses with prepaid cards designed for fleet and travel-related spending.",
+      "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
-  },
-  {
-    titleHtml: "T&E Card",
-    description:
-      "Manage travel & entertainment spends with smart controls, real-time tracking, and seamless",
-    cardImage: termsAndConCardImg,
-  },
-  {
-    titleHtml: "Virtual Card",
-    description:
-      "Generate secure, one-time or recurring virtual cards for safer, faster, and trackable online payments.",
-    cardImage: termsAndConCardImg,
-  },
-  {
-    titleHtml: "Purchase Card",
-    description:
-      "Pre-approved cards that help manage vendor payments and operational purchases for effortless procurement",
-    cardImage: virtualCardImg,
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
-      "Manage online ad spends across platforms with preset limits and real-time spend visibility and control.",
+      "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: purchesCardImg,
   },
   {
     titleHtml: "SaaS Card",
     description:
-      "Centralize and manage software subscriptions easily with cards made for recurring SaaS payments and renewals.",
+      "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
+  },
+  {
+    titleHtml: "Payroll Card",
+    description:
+      "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
+    cardImage: sassCardImg,
+  },
+  {
+    titleHtml: "Virtual Card",
+    description:
+      "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
+    cardImage: termsAndConCardImg,
+  },
+  {
+    titleHtml: "Travel & Expense Card",
+    description:
+      "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
+    cardImage: termsAndConCardImg,
+  },
+
+  {
+    titleHtml: "Purchase Card",
+    description:
+      "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
+    cardImage: virtualCardImg,
+  },
+  {
+    titleHtml: "Fleet Card",
+    description:
+      "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
+    cardImage: fleetCardImg,
+  },
+  {
+    titleHtml: "Forex Card",
+    description:
+      "Enable safe and compliant international spends with multi-currency loading and real-time transaction control",
+    cardImage: virtualCardImg,
   },
 ]
 

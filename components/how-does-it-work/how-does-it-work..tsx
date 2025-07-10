@@ -14,7 +14,7 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentData((prevData: number) => (prevData + 1) % dataSets.length)
-    }, 3500)
+    }, 7500)
 
     return () => clearInterval(interval)
   }, [])
@@ -53,7 +53,7 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
                   </div>
                   <div className="mt-5 ">
                     <RectangleButton
-                      title="Learn More"
+                      title="Try Now"
                       theme="border-black"
                       actionImage={blueArrow}
                       iconSize={15}

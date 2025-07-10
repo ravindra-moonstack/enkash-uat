@@ -7,12 +7,14 @@ import { cardType, dataSets, intantActionData } from "./data"
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
 import {
-  motherCardImg,
+
   circles,
   blueArrow,
   whiteArrow,
   mealCardImage,
   cardRotatingImage,
+  podiumImage,
+  heroCardImg,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -34,15 +36,15 @@ const MealCards = (): React.JSX.Element => {
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-w-auto">
+        <div className="max-w-auto px-4">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
                 { name: "Home", url: "/" },
-
+                { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
                   name: "Meal Card",
-                  url: "/meal-card",
+                  url: "/corporate-cards/meal-card",
                 },
               ]}
             />
@@ -89,12 +91,17 @@ const MealCards = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <div className=" col-12 d-flex">
+        <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
+            {" "}
+            <Image src={heroCardImg} alt="card background" className=" " />
+          </div>
+          <div className={styles.lottie_container_bottom}>
+            {" "}
             <Image
-              src={motherCardImg}
+              src={podiumImage}
               alt="card background"
-              className="position-relative w-100 h-100"
+              className="position-absolute "
             />
           </div>
         </div>
@@ -111,32 +118,10 @@ const MealCards = (): React.JSX.Element => {
               className={` flex-column justify-content-center align-items-center pb-3 `}
             >
               <Heading
-                title={`One Platform. ${space}`}
+                title={`How To Get Started with Meal Cards*${space}`}
                 color="black"
                 size="h1"
                 weight="5"
-              />
-              <Heading
-                title={`Total Visibility. ${space}`}
-                color="black"
-                size="h1"
-                weight="5"
-              />
-
-              <Heading
-                title="Instant Actions"
-                color="equity-blue"
-                size="h1"
-                weight="5"
-              />
-            </div>
-            <div>
-              <Heading
-                title="Real-time visibility, control, and insights that traditional bank-issued card portals simply can’t match."
-                color="alternate-grey"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
               />
             </div>
           </div>
@@ -174,12 +159,22 @@ const MealCards = (): React.JSX.Element => {
               className={`col-md-6 col-12 
 `}
             >
-              <div>
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                }}
+              >
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="h-100"
-                  style={{ maxHeight: "636px", objectFit: "cover" }}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    maxHeight: "636px",
+                    objectFit: "cover",
+                  }}
                 />
               </div>
             </div>
