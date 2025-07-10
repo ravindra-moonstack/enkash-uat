@@ -7,7 +7,6 @@ import { cardType, dataSets, intantActionData } from "./data"
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
 import {
-
   circles,
   blueArrow,
   whiteArrow,
@@ -113,7 +112,7 @@ const MealCards = (): React.JSX.Element => {
 
       <div className={`${styles.action_row} bg-white row-padding `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-md-5`}>
             <div
               className={` flex-column justify-content-center align-items-center pb-3 `}
             >
@@ -170,7 +169,6 @@ const MealCards = (): React.JSX.Element => {
                   src={mealCardImage}
                   alt="card background"
                   style={{
-                    width: "100%",
                     height: "auto",
                     maxHeight: "636px",
                     objectFit: "cover",
