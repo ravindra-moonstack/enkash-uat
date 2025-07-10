@@ -25,8 +25,10 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
           zIndex: i + 1,
         }}
       >
-        <div className={styles.body}>
-          <div className={`d-flex col-6 align-items-start gap-3 p-3`}>
+        <div className={`row ${styles.body} `}>
+          <div
+            className={`d-flex col-12 col-md-6  align-items-start gap-3 p-3`}
+          >
             <div
               className="d-flex justify-content-center align-items-center bg-light rounded-circle"
               style={{ width: "55px", height: "55px" }}
@@ -47,7 +49,7 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
               </div>
             </div>
           </div>
-          <div className={styles.imageContainer}>
+          <div className={`pb-2 col-12 col-md-6 ${styles.imageContainer} `}>
             <div className={styles.inner}>
               <Image fill src={src} alt="image" />
             </div>

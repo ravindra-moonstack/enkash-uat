@@ -48,10 +48,10 @@ const Page = () => {
           tl.to(
             prev,
             {
-              y: 10 * i, // stack upwards with fixed spacing
+              y: -5 * i, // stack upwards with fixed spacing
               opacity: 1,
             },
-            "-=0.3"
+            "-=0.5"
           )
         }
       }
