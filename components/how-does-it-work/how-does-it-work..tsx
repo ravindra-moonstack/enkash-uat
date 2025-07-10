@@ -51,17 +51,17 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
                   <div className={styles.subtitle}>
                     {dataSets[currentData].subtitle}
                   </div>
+                  <div className="mt-5 ">
+                    <RectangleButton
+                      title="Learn More"
+                      theme="border-black"
+                      actionImage={blueArrow}
+                      iconSize={15}
+                      url="/sales/?source=receivables"
+                    />
+                  </div>{" "}
                 </div>
               </div>
-              <div className="mt-5 ">
-                <RectangleButton
-                  title="Learn More"
-                  theme="border-black"
-                  actionImage={blueArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>{" "}
             </div>
             <div className="col-md-6 col-12 d-flex justify-content-center">
               {" "}

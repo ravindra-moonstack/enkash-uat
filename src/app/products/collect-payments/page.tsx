@@ -38,9 +38,7 @@ import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 
-// const showScroll = cardsData.length > 3
-// const mergedCards = allProductSections.flatMap((section) => section.items)
-const PaymentCollection = (): React.JSX.Element => {
+const CollectPayment = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -53,8 +51,8 @@ const PaymentCollection = (): React.JSX.Element => {
                 { name: "Home", url: "/" },
                 { name: "Products", url: "/products" },
                 {
-                  name: "Payment Collection",
-                  url: "/products/payment-collection",
+                  name: "Collect Payment",
+                  url: "/products/collect-payments",
                 },
               ]}
               linkColor="white"
@@ -149,29 +147,27 @@ const PaymentCollection = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.third_row} bg-white row-padding `}>
+      <div className={`${styles.third_row} row-padding `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <div
-              className={` flex-column justify-content-center align-items-center pb-3 `}
-            >
-              <Heading
-                title={`Faster, Smoother, Smarter ${space}`}
-                color="equity-blue"
-                size="h1"
-                weight="5"
-              />
-              <Heading
-                title={`Payments Collection ${space}`}
-                color="black"
-                size="h1"
-                weight="5"
-              />
+          <div className={`row  align-items-center gap-5 ${styles.section}`}>
+            <div className={`${styles.title} text-center py-5`}>
+              <div
+                className={` flex-column justify-content-center align-items-center pb-3 `}
+              >
+                <Heading
+                  title={`Faster, Smoother, Smarter ${space}`}
+                  color="equity-blue"
+                  size="h1"
+                  weight="5"
+                />
+                <Heading
+                  title={`Payments Collection ${space}`}
+                  color="black"
+                  size="h1"
+                  weight="5"
+                />
+              </div>
             </div>
-          </div>
-          <div
-            className={`row bg-white align-items-center gap-5 ${styles.section}`}
-          >
             <AllInOnePolicy
               icon={paymentGatwayIcon}
               title="Payment Gateway"
@@ -537,4 +533,4 @@ const PaymentCollection = (): React.JSX.Element => {
   )
 }
 
-export default PaymentCollection
+export default CollectPayment

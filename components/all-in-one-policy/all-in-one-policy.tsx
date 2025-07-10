@@ -25,7 +25,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   reverse = false,
 }) => {
   return (
-    <div className={`row bg-white align-items-center ${styles.section}`}>
+    <div className={`row  align-items-center ${styles.section}`}>
       {/* Text Block */}
       <div
         className={`col-md-6 col-12 px-5 ${
