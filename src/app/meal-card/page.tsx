@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import {  cardType, dataSets, intantActionData } from "./data"
+import { cardType, dataSets, intantActionData } from "./data"
 
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
@@ -20,11 +20,11 @@ import RectangleButton from "@/components/buttons/rectangle-button/rectangle-but
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 
 import CardProduct from "@/components/card-product/card-product"
+import StepCard from "@/components/stepCard/stepCard"
 
 // const showScroll = cardsData.length > 3
 // const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -141,17 +141,17 @@ const MealCards = (): React.JSX.Element => {
             </div>
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-md-5">
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "28px",
+                  gap: "12px",
                 }}
               >
                 {intantActionData.map(({ icon, title, description }, i) => (
                   <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
+                    <StepCard
                       icon={icon}
                       title={title}
                       description={description}
@@ -178,8 +178,8 @@ const MealCards = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="
-                   w-100 h-100"
+                  className="h-100"
+                  style={{ maxHeight: "636px", objectFit: "cover" }}
                 />
               </div>
             </div>

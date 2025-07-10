@@ -8,10 +8,10 @@ import { motherCardImg, blueArrow, whiteArrow, mealCardImage } from "."
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import CardProduct from "@/components/card-product/card-product"
+import StepCard from "@/components/stepCard/stepCard"
 
 // const showScroll = cardsData.length > 3
 // const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -117,12 +117,12 @@ const FuelCards = (): React.JSX.Element => {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "42px",
+                  gap: "12px",
                 }}
               >
                 {intantActionData.map(({ icon, title, description }, i) => (
                   <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
+                    <StepCard
                       icon={icon}
                       title={title}
                       description={description}

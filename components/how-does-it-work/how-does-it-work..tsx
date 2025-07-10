@@ -44,19 +44,19 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
                     className={`${styles.icon_img}`}
                   />
                 ) : null}
-                <div>
+                <div className="text-start">
                   <div className={styles.title}>
                     {dataSets[currentData].title}
                   </div>
+                  <div className={styles.subtitle}>
+                    {dataSets[currentData].subtitle}
+                  </div>
                 </div>
-              </div>
-              <div className={styles.subtitle}>
-                {dataSets[currentData].subtitle}
               </div>
               <div className="mt-5 ">
                 <RectangleButton
                   title="Learn More"
-                  theme="border-gray"
+                  theme="border-black"
                   actionImage={blueArrow}
                   iconSize={15}
                   url="/sales/?source=receivables"

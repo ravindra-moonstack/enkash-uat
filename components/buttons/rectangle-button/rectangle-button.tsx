@@ -8,7 +8,13 @@ export interface ButtonProps {
   isDisabled?: boolean
   title: string
   url?: string | (() => void)
-  theme?: "blue" | "green" | "black" | "outline-blue" | "border-gray"
+  theme?:
+    | "blue"
+    | "green"
+    | "black"
+    | "outline-blue"
+    | "border-gray"
+    | "border-black"
   width?: string
   actionImage?: StaticImageData | string
   iconSize?: number

@@ -134,10 +134,11 @@
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-  height: 100vh;
+
   @include for-laptops {
     padding-bottom: 204px;
     padding-top: 204px;
+    height: 100vh;
   }
 
   .circles_bg {
@@ -163,22 +164,28 @@
   }
 
   .how_it_workssection {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translate(
-      -52%,
-      106%
-    ); // ⬅️ Moves it back up by 50% of its height
-    width: 1200px;
     background: #101318;
     border-radius: 12px;
     z-index: 2;
-    section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center; // Optional, if content inside needs centering
+    padding: 20px; // ✅ Add some breathing room on small screens
+    margin: 20px auto; // ✅ Center it by default
+    width: 100%;
+    max-width: 100%;
+
+    // ✅ Children stay flexible
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    @include for-laptops {
+      position: absolute;
+      bottom: 50%;
+      left: 50%;
+      transform: translate(-52%, 106%);
+      max-width: 1200px;
+      padding: 40px; // More room on larger screens
+      margin: 0; // Remove mobile margin on large screens
     }
   }
 }
@@ -204,6 +211,7 @@
   background: linear-gradient(180deg, #2e2e2e 0%, #010205 100%);
   border-radius: 12px;
   position: relative;
+  margin-top: 40px;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
