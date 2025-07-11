@@ -206,7 +206,7 @@
 .row-padding {
   padding: 36px;
   @include for-laptops {
-    padding: 110px 90px;
+    padding: 90px 90px;
   }
   @include for-window-zoomed-screens {
     padding: 80px 60px;

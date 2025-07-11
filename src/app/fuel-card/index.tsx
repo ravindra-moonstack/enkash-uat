@@ -31,6 +31,7 @@ export { default as virtualCardImg } from "./img/virtual-card.svg"
 export { default as purchesCardImg } from "./img/purches-card.svg"
 export { default as digitalCardImg } from "./img/digital-marketing-card.svg"
 export { default as sassCardImg } from "./img/sass-card.svg"
+export { default as fleetCardImg } from "./img/fleet-card.svg"
 
 // .../////
 export { default as paymentGatwayImg } from "./img/payment-gateway.png"
@@ -52,3 +53,5 @@ export { default as affordabilityIcon } from "./img/afordability-suits-icon.svg"
 export { default as affordabilityImg } from "./img/afordability-suits-img.webp"
 export { default as mealCardImage } from "./img/meal-card.webp"
 export { default as cardRotatingImage } from "./img/card-roatating.svg"
+export { default as podiumImage } from "./img/podium.png"
+export { default as heroCardImg } from "./img/hero card.webp"

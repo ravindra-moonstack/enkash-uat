@@ -47,7 +47,7 @@ const faqData: FAQDataItem[] = [
     ],
   },
   {
-    question: "How do fuel cards cut down business frauds?",
+    question: "How do fuel cards cut down business fraud?",
     answer: [
       {
         heading:

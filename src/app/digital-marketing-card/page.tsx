@@ -2,47 +2,51 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardType, dataSets, intantActionData } from "./data"
+import {
+  cardType,
+  intantActionData,
+  spendAnalyticsData,
+} from "./data"
 
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
 import {
-  motherCardImg,
-  circles,
+
   blueArrow,
   whiteArrow,
   mealCardImage,
-  cardRotatingImage,
+  podiumImage,
+  heroCardImg,
+  instantActionImg,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 
 import CardProduct from "@/components/card-product/card-product"
+import StepCard from "@/components/stepCard/stepCard"
+import PolicyCard from "@/components/policyCard/policyCard"
 
 // const showScroll = cardsData.length > 3
 // const mergedCards = allProductSections.flatMap((section) => section.items)
-const MealCards = (): React.JSX.Element => {
+const DigitalMarketingCard = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-w-auto">
+        <div className="max-w-auto px-4">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
                 { name: "Home", url: "/" },
-
+                { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
-                  name: "Digital Marketing  Card",
-                  url: "/digital-marketing-card",
+                  name: "Digital Marketing Card",
+                  url: "/corporate-cards/digtal-marketing-card",
                 },
               ]}
             />
@@ -89,12 +93,17 @@ const MealCards = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <div className=" col-12 d-flex">
+        <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
+            {" "}
+            <Image src={heroCardImg} alt="card background" className=" " />
+          </div>
+          <div className={styles.lottie_container_bottom}>
+            {" "}
             <Image
-              src={motherCardImg}
+              src={podiumImage}
               alt="card background"
-              className="position-relative w-100 h-100"
+              className="position-absolute "
             />
           </div>
         </div>
@@ -106,34 +115,30 @@ const MealCards = (): React.JSX.Element => {
 
       <div className={`${styles.action_row} bg-white row-padding `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-md-5`}>
             <div
               className={` flex-column justify-content-center align-items-center pb-3 `}
             >
               <Heading
-                title={`How Digital Marketing Card Works ${space}`}
+                title={`How Digital Marketing Card Works${space}`}
                 color="black"
                 size="h1"
                 weight="5"
               />
-           
-
-         
             </div>
-          
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-md-5">
               <div
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  gap: "28px",
+                  gap: "12px",
                 }}
               >
                 {intantActionData.map(({ icon, title, description }, i) => (
                   <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
+                    <StepCard
                       icon={icon}
                       title={title}
                       description={description}
@@ -143,7 +148,7 @@ const MealCards = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Try Now"
+                  title="Get Started"
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
@@ -161,42 +166,73 @@ const MealCards = (): React.JSX.Element => {
                   src={mealCardImage}
                   alt="card background"
                   className="
-                   w-100 h-100"
+                          w-100 h-100"
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className={`${styles.fourth_row}  row d-flex  row-padding-x-only`}>
-        <div className="max-m-auto relative ">
-          <div className={styles.circles_bg}>
-            <Image src={circles} alt="background image" />
-          </div>
-          <div className={styles.cardRotatingImage}>
-            <Image src={cardRotatingImage} alt="background image" />
-          </div>
-          <div className="d-flex flex-column text-center mb-5">
-            <Heading
-              title="Meal Card Features That Make"
-              color="white"
-              size="h1"
-              weight="2"
-              italic
-            />
-            <div>
+      <div className={`${styles.second_row} `}>
+        <div className="max-w-auto">
+          <div className={`${styles.title} text-center pb-2 pb-md-5`}>
+            <div
+              className={` flex-column justify-content-center align-items-center pb-3 `}
+            >
               <Heading
-                title="EnKash the Perfect Choice"
-                color="equity-blue"
+                title={`Features of the Best Corporate Card forl${space}`}
+                color="black"
                 size="h1"
-                weight="6"
+                weight="5"
+              />
+              <Heading
+                title={`  Digital Marketing Expenses `}
+                color="black"
+                size="h1"
+                weight="5"
               />
             </div>
           </div>
-
-          <div className={styles.how_it_workssection}>
-            <HowDoesItWork dataSets={dataSets} />
+          <div className={`row align-items-center ${styles.section}`}>
+            <div className="col-md-6 col-12  px-md-5">
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "28px",
+                }}
+              >
+                {spendAnalyticsData.map(({ icon, title, description }, i) => (
+                  <div key={i} style={{ direction: "ltr" }}>
+                    <PolicyCard
+                      icon={icon}
+                      title={title}
+                      description={description}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className={`${styles.list_button}`}>
+                <RectangleButton
+                  title="Try for Yourself "
+                  theme="border-gray"
+                  actionImage={blueArrow}
+                  hoverImage={whiteArrow}
+                  url="/sales/?source=expense_management"
+                  className="d-flex justify-content-between align-items-center"
+                />
+              </div>
+            </div>
+            <div className={`col-md-6 col-12 d-flex `}>
+              <div>
+                <Image
+                  src={instantActionImg}
+                  alt="card background"
+                  className="
+                   w-100 h-100"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -242,7 +278,7 @@ const MealCards = (): React.JSX.Element => {
               <div>
                 <Heading
                   title="Have more questions? "
-                  color="main-grey"
+                  color="dark-grey"
                   size="h3"
                   weight="5"
                   useH1TagInHtml={true}
@@ -270,20 +306,20 @@ const MealCards = (): React.JSX.Element => {
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
             <Heading
-              title={`Choose   ${space}`}
+              title={`Your Business,  ${space}`}
               color="black"
               size="h1"
               weight="5"
             />
             <Heading
-              title={`the Right Card  ${space}`}
+              title={`Your Cards –  ${space}`}
               color="equity-blue"
               size="h1"
               weight="5"
             />
 
             <Heading
-              title="for Every Use Case"
+              title="Tailored by EnKash"
               color="black"
               size="h1"
               weight="5"
@@ -307,4 +343,4 @@ const MealCards = (): React.JSX.Element => {
   )
 }
 
-export default MealCards
+export default DigitalMarketingCard

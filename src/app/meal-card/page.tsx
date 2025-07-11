@@ -253,7 +253,7 @@ const MealCards = (): React.JSX.Element => {
               <div>
                 <Heading
                   title="Have more questions? "
-                  color="main-grey"
+                  color="dark-grey"
                   size="h3"
                   weight="5"
                   useH1TagInHtml={true}

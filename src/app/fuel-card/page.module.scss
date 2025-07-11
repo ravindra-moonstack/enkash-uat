@@ -6,17 +6,15 @@
   background-position: center, center;
   background-size: cover, cover;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 25px;
-  padding-right: 25px;
-  padding-top: 98px;
-  padding-bottom: 36px;
-  background-image: url("./img/first-row-bg.svg");
+
+  padding-top: 86px;
+
+  background-image: url("./img/first-row-bg.svg"), url("./img/first-bg.jpg");
 
   @include for-laptops {
     padding-left: 0px;
     padding-right: 0px;
-    padding-top: 123px;
-    padding-bottom: 40px;
+    padding-top: 110px;
   }
   .subtitle {
     color: $color-equity-blue;
@@ -29,7 +27,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 21px;
+    gap: 16px;
+    padding-top: 10px;
   }
 
   .dashboard_img {
@@ -43,13 +42,34 @@
     }
   }
 
-  // .lottie_container {
-  //   width: 500px;
+  .lottie_container {
+    display: flex;
+    justify-content: center;
 
-  //   @include for-laptops {
-  //     // width: 900px;
-  //   }
-  // }
+    img {
+      z-index: 1;
+      max-width: 100%; // 👈 shrink to fit container
+      height: auto; // 👈 maintain aspect ratio
+      max-height: 363px;
+      max-width: 231px;
+    }
+  }
+  .lottie_container_bottom {
+    width: 100%;
+    height: 52px;
+    background-color: $color-ash-grey;
+    position: relative;
+
+    img,
+    .podium_img {
+      position: absolute;
+      bottom: 0%; // stick podium ABOVE the grey strip
+      left: 50%; // center horizontally
+      transform: translateX(-50%);
+      width: 423px; // your image width
+      height: auto;
+    }
+  }
 }
 
 .second_row {
@@ -328,7 +348,7 @@
 }
 
 .other_products {
-  padding: 20px;
+  padding: 36px;
   @include for-laptops {
     padding-top: 80px;
     padding-bottom: 80px;

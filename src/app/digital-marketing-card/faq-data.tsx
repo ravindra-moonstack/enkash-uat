@@ -1,5 +1,5 @@
-import { FAQProps } from "../../../components/faq-new/faq"
 import Link from "next/link"
+import { FAQProps } from "../../../components/faq-new/faq"
 
 // ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
 type FAQDataItem = Omit<
@@ -9,106 +9,83 @@ type FAQDataItem = Omit<
 
 const faqData: FAQDataItem[] = [
   {
-    question: "What are meal cards?",
-    answer: [
-      {
-        heading:
-          "Meal cards are employer-provided prepaid cards that work similarly to debit cards. Employees can use these meal cards for food and grocery-related purchases across multiple retail outlets, convenience stores, food chains, and food delivery apps like Zomato, Swiggy, Blinkit, etc.",
-      },
-    ],
+    question:
+      "What is digital marketing, and how does the digital marketing card aid its management?",
+    answer: [],
+    answerHTML: (
+      <div>
+        <h4>
+          Digital marketing promotes products or services using digital channels
+          like search engines, social media, email, and websites. Digital
+          marketing cards serve as financial control tools in this landscape,
+          consolidating expenses scattered across platforms. These purpose-based
+          cards enable businesses to manage{" "}
+          <Link
+            href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
+            target="_blank"
+          >
+            digital marketing expenses
+          </Link>{" "}
+          efficiently in a centralized place, simplifying financial oversight
+          and offering a comprehensive view of their digital marketing
+          activities.
+        </h4>
+      </div>
+    ),
   },
   {
-    question: "Why meal cards are important for any business?",
+    question:
+      "Can I implement usage limits on my digital marketing card to safeguard against overspending?",
     answer: [
       {
         heading:
-          "Meal cards help boost employee satisfaction by providing tax benefits and streamlining food-related expenses. Instead of using their debit cards, employees can use their prepaid meal cards to make all grocery-related purchases. Providing a food card to employees also makes an attractive remuneration package, making them believe that the company is considerate towards them.",
+          "These cards offer a highly flexible solution to customize usage limits on their digital marketing budgets, ensuring a stringent check against overspending. The best part is that these limits can be aligned with your business’s specific marketing budget, making it easier to stay within financial boundaries. This feature empowers companies to maintain strict financial control, preventing unintentional or excessive expenditures in their digital marketing efforts.",
       },
     ],
   },
   {
     question:
-      "Does the meal card module help improve the finance team’s performance? If yes, how?",
+      "How can digital marketing cards simplify the process of running marketing campaigns?",
     answer: [
       {
         heading:
-          "Meal card is an effective replacement for paper-based food coupons. The easy management and tracking of meal cards help the finance/admin team to refill them instead of issuing monthly food coupons while tracking their balance. The finance team can easily activate, block, unblock, or deactivate the card in case of misuse.",
+          "Running marketing campaigns has become effortless and efficient with digital marketing cards. You can easily select and execute campaigns by seamlessly integrating this card into your digital marketing platform. The card's setup allows you to manage all expenses related to your campaigns in one central location. This simplifies both the initiation and tracking of campaigns, enhancing your ability to manage and optimize your digital marketing efforts effectively.",
       },
     ],
   },
   {
-    question: "Why should a startup consider offering meal cards to employees?",
-    answer: [
-      {
-        heading:
-          "Startups need to consider offering meal cards to employees for the following reasons:",
-        bullets: [
-          "They have a wider usage and can be used across shops and eateries",
-          "Refilling at regular intervals is a matter of a few clicks based on a list of employees",
-          "Onboarding new employees and offering them meal cards is easy",
-          "It is easy to track and control usage for the employees as well as the finance team",
-          "Meal cards motivate employees as they believe that the organization is considerate towards their food expenses",
-        ],
-      },
-    ],
-  },
-  {
-    question: "How meal cards reduce fraud instances in business?",
-    answer: [
-      {
-        heading:
-          "Meal cards function pretty much like debit cards but specifically for purchasing food, which means they are operated on a one-time or preset PIN. This means that even if the food card is misplaced and discovered by another person, it would be difficult to misuse. If reported lost, the finance team can easily block the card and restrict any fraud from occurring.",
-      },
-    ],
-  },
-  {
-    question: "Are meal cards taxable?",
-    answer: [
-      {
-        heading:
-          "Meal cards are not taxable. However, if the amount spent on a meal exceeds the non-taxable limit of 2200 INR per month, then they are taxable as per Section 17(2)(viii) of the Income Tax Act.",
-      },
-    ],
-  },
-  {
-    question: "How to claim meal allowance?",
-    answer: [
-      {
-        heading:
-          "Employee’s food allowance is a part of the remuneration. Meal allowance can be availed using tax-free meal cards. Employees can complete their KYC on the EnKash portal, activate their meal card, and use it monthly at their convenience and requirement.",
-      },
-    ],
-  },
-  {
-    question: "How to implement meal cards in the workplace?",
-    answer: [
-      {
-        heading:
-          "In order to implement meal cards at the workplace, follow these easy steps:",
-        bullets: [
-          "Register on EnKash, your meal card provider",
-          "Define the value of the card according to your organization’s budget",
-          "Create a network of authorized food chains, apps, outlets where all card will be valid",
-          "Educate your employees about the KYC and usage of the meal card",
-          "Distribute the cards among your employees and encourage them to use it for food purchases and tax-redemption",
-        ],
-      },
-    ],
-  },
-  {
-    question: "How can I close the account and claim a refund?",
+    question:
+      "Can I set specific limits on my digital marketing card for various expenditures?",
     answer: [],
     answerHTML: (
       <div>
         <h4>
-          If you wish to request the closure of your card/wallet, please click
-          on the link below to proceed:
-          <Link href="https://transcorpint.com/card-closure" target="_blank">
-            https://transcorpint.com/card-closure
+          Companies can issue this{" "}
+          <Link
+            href="https://www.enkash.com/resources/blog/enkash-corporate-cards-for-digital-marketers/"
+            target="_blank"
+          >
+            corporate card for digital marketing
           </Link>{" "}
+          purposes and establish specific spending limits for distinct
+          categories of expenditures. For instance, you can set limits for
+          campaign-related expenses and subscription renewals based on your
+          marketing budget. Furthermore, you can manage the types of
+          expenditures you want to allow, ensuring that payments to specific
+          websites or services align with your predefined financial boundaries.
         </h4>
       </div>
     ),
+  },
+  {
+    question:
+      "How to prevent the misuse of its digital marketing card for marketing expenses?",
+    answer: [
+      {
+        heading:
+          "These digital marketing cards employ a well-defined usage policy to prevent misuse. This policy acts as a safeguard, ensuring that only specific types of expenditures pre-approved by the marketing team are allowed on the card. These cards offer a secure and efficient way to protect against unauthorized or inappropriate spending by controlling and restricting card usage through predefined parameters. This level of control ultimately contributes to enhanced financial discipline and transparency in managing your digital marketing expenses.",
+      },
+    ],
   },
 ]
 

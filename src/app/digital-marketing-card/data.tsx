@@ -1,15 +1,12 @@
-import iconOne from "./img/auto-collect.svg"
-import iconTwo from "./img/subsccribtion.svg"
-import iconThree from "./img/enach.svg"
-import iconFour from "./img/benifits-icon.svg"
+import iconOne from "./img/predifinedIcon.svg"
+import iconTwo from "./img/centerlisedIcon.svg"
+import iconThree from "./img/notificationIcon.svg"
+import iconFour from "./img/reconcilationIcon.svg"
+import iconFive from "./img/secureIcon.svg"
 import autoCollect from "./img/autoCollectImg.webp"
 import subscribtion from "./img/subscribtionImg.webp"
 import eNach from "./img/eNachImg.webp"
 import policyIcon from "./img/policyIcon.svg"
-import identifyIcon from "./img/identify.svg"
-import detectIcon from "./img/detect.svg"
-import monitorIcon from "./img/monitor.svg"
-import customizeIcon from "./img/customize.svg"
 import instantIcon from "./img/instant-card.svg"
 import onboardingIcon from "./img/onboarding.svg"
 import noThidPartyIcon from "./img/noThidParty.svg"
@@ -27,10 +24,10 @@ import approve from "./img/approve.svg"
 import firstIcon from "./img/icon-one.svg"
 import secondIcon from "./img/icon-two.svg"
 import thirdIcon from "./img/icon-three.svg"
-import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  fleetCardImg,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
@@ -160,47 +157,57 @@ const cardsData = [
 
 const intantActionData = [
   {
-    title: "Sign Up and KYC",
+    title: "Issuance",
     description:
-      "Log in to EnKash using your registered mobile number and complete your KYC.",
+      "Issue a corporate card for digital marketing and set customized limits for campaign expenditure.",
     icon: firstIcon,
   },
 
   {
-    title: "Issuance",
-    description: "Issue meal cards to employees with preloaded funds.",
+    title: "Control",
+    description:
+      "Manage your expenditure with a predefined usage policy to prevent misuse of cards",
     icon: secondIcon,
   },
   {
-    title: "Alerts",
+    title: "Connect",
     description:
-      "Employees will be notified via SMS, WhatsApp, and e-mail about rewards and the redemption process.",
+      "Link your card to digital marketing platforms to have a complete overview of all your digital marketing expenses",
     icon: thirdIcon,
-  },
-  {
-    title: "Card Activation",
-    description:
-      "Employees will be notified via SMS, WhatsApp, and e-mail about rewards and the redemption process.",
-    icon: fourthIcon,
   },
 ]
 
 const spendAnalyticsData = [
   {
-    title: "Identify top spenders, vendors, and categories",
-    icon: identifyIcon,
+    title: "Predefined Spending Limits",
+    description:
+      "Control your team’s marketing expenses by setting customizable usage limits for every card.",
+    icon: iconOne,
+  },
+
+  {
+    title: "Centralized Dashboard",
+    description:
+      "View and manage all transactions, approvals, and reports from a single, intuitive platform.",
+    icon: iconTwo,
   },
   {
-    title: "Detect anomalies or policy violations in real time",
-    icon: detectIcon,
+    title: "Real-Time Alerts and Notifications",
+    description:
+      "Stay updated with instant alerts for every transaction, ensuring complete transparency.",
+    icon: iconThree,
   },
   {
-    title: "Monitor trends across departments, cards, or time periods",
-    icon: monitorIcon,
+    title: "Automated Reconciliation",
+    description:
+      "Simplify accounting with auto-generated reports and streamlined expense categorization for easy reconciliation.",
+    icon: iconFour,
   },
   {
-    title: "Customize views for CXOs, finance teams, or department heads",
-    icon: customizeIcon,
+    title: "Secure and Compliant Transactions",
+    description:
+      "Benefit from robust security features and ensure compliance with financial regulations.",
+    icon: iconFive,
   },
 ]
 
@@ -247,46 +254,65 @@ const corporateCardData = [
 
 const cardType = [
   {
+    titleHtml: "Fuel Card",
+    description:
+      "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
+    cardImage: fuelCardImg,
+  },
+  {
     titleHtml: "Meal Card",
     description:
       "Give tax-saving meal benefits to employees with easy-to-use, digital meal cards accepted nationwide.",
     cardImage: mealCardImg,
   },
   {
-    titleHtml: "Fuel Card",
-    description:
-      "Control and track fuel expenses with prepaid cards designed for fleet and travel-related spending.",
-    cardImage: fuelCardImg,
-  },
-  {
-    titleHtml: "T&E Card",
-    description:
-      "Manage travel & entertainment spends with smart controls, real-time tracking, and seamless",
-    cardImage: termsAndConCardImg,
-  },
-  {
-    titleHtml: "Virtual Card",
-    description:
-      "Generate secure, one-time or recurring virtual cards for safer, faster, and trackable online payments.",
-    cardImage: termsAndConCardImg,
-  },
-  {
-    titleHtml: "Purchase Card",
-    description:
-      "Pre-approved cards that help manage vendor payments and operational purchases for effortless procurement",
-    cardImage: virtualCardImg,
-  },
-  {
     titleHtml: "Digital Marketing Card",
     description:
-      "Manage online ad spends across platforms with preset limits and real-time spend visibility and control.",
+      "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: purchesCardImg,
   },
   {
     titleHtml: "SaaS Card",
     description:
-      "Centralize and manage software subscriptions easily with cards made for recurring SaaS payments and renewals.",
+      "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
+  },
+  {
+    titleHtml: "Payroll Card",
+    description:
+      "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
+    cardImage: sassCardImg,
+  },
+  {
+    titleHtml: "Virtual Card",
+    description:
+      "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
+    cardImage: termsAndConCardImg,
+  },
+  {
+    titleHtml: "Travel & Expense Card",
+    description:
+      "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
+    cardImage: termsAndConCardImg,
+  },
+
+  {
+    titleHtml: "Purchase Card",
+    description:
+      "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
+    cardImage: virtualCardImg,
+  },
+  {
+    titleHtml: "Fleet Card",
+    description:
+      "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
+    cardImage: fleetCardImg,
+  },
+  {
+    titleHtml: "Forex Card",
+    description:
+      "Enable safe and compliant international spends with multi-currency loading and real-time transaction control",
+    cardImage: virtualCardImg,
   },
 ]
 

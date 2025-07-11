@@ -4,7 +4,14 @@ import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { cardType, intantActionData } from "./data"
 import { Header, Heading, Footer, FAQHtml } from "@/components"
-import { motherCardImg, blueArrow, whiteArrow, mealCardImage } from "."
+import {
+
+  blueArrow,
+  whiteArrow,
+  mealCardImage,
+  podiumImage,
+  heroCardImg,
+} from "."
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
@@ -21,15 +28,15 @@ const FuelCards = (): React.JSX.Element => {
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-w-auto">
+        <div className="max-w-auto px-4">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
                 { name: "Home", url: "/" },
-
+                { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
                   name: "Fuel Card",
-                  url: "/fuel-card",
+                  url: "/corporate-cards/fuel-card",
                 },
               ]}
             />
@@ -44,14 +51,14 @@ const FuelCards = (): React.JSX.Element => {
             />
             <div className="d-flex  flex-column justify-content-center align-items-center">
               <Heading
-                title="Transforming Fuel Expense Management"
+                title="Transforming Fuel Expense Management with"
                 color="black"
                 size="h2"
                 weight="2"
                 italic
               />
               <Heading
-                title="with Fuel Cards*"
+                title=" Fuel Cards*"
                 color="black"
                 size="h2"
                 weight="7"
@@ -76,12 +83,17 @@ const FuelCards = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <div className=" col-12 d-flex">
+        <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
+            {" "}
+            <Image src={heroCardImg} alt="card background" className=" " />
+          </div>
+          <div className={styles.lottie_container_bottom}>
+            {" "}
             <Image
-              src={motherCardImg}
+              src={podiumImage}
               alt="card background"
-              className="position-relative w-100 h-100"
+              className="position-absolute "
             />
           </div>
         </div>
@@ -112,7 +124,7 @@ const FuelCards = (): React.JSX.Element => {
             </div>
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-md-5">
               <div
                 style={{
                   display: "flex",
@@ -199,7 +211,7 @@ const FuelCards = (): React.JSX.Element => {
               <div>
                 <Heading
                   title="Have more questions? "
-                  color="main-grey"
+                  color="dark-grey"
                   size="h3"
                   weight="5"
                   useH1TagInHtml={true}

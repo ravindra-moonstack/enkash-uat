@@ -1,5 +1,4 @@
 import { FAQProps } from "../../../components/faq-new/faq"
-import Link from "next/link"
 
 // ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
 type FAQDataItem = Omit<
@@ -9,106 +8,99 @@ type FAQDataItem = Omit<
 
 const faqData: FAQDataItem[] = [
   {
-    question: "What are meal cards?",
+    question: "What are gift cards?",
     answer: [
       {
         heading:
-          "Meal cards are employer-provided prepaid cards that work similarly to debit cards. Employees can use these meal cards for food and grocery-related purchases across multiple retail outlets, convenience stores, food chains, and food delivery apps like Zomato, Swiggy, Blinkit, etc.",
+          "Gift cards are prepaid cards containing a specific monetary value, which can be used to purchase goods or services at the issuing retailer or a network of participating merchants. They are typically sold by retailers, online stores, or platforms like EnKash and can be physical cards or digital codes sent by email or text. Gift cards by EnKash are non-reloadable and non-transferable. Cash-outs or fund transfers are also not permitted.",
       },
     ],
   },
   {
-    question: "Why meal cards are important for any business?",
+    question: "Why are corporate gift cards important for businesses?",
     answer: [
       {
         heading:
-          "Meal cards help boost employee satisfaction by providing tax benefits and streamlining food-related expenses. Instead of using their debit cards, employees can use their prepaid meal cards to make all grocery-related purchases. Providing a food card to employees also makes an attractive remuneration package, making them believe that the company is considerate towards them.",
+          "Gift cards are essential for businesses as they are a versatile and convenient way to show appreciation and offer rewards. They allow recipients the freedom to choose something they truly desire, making them a more personalized and meaningful gift than traditional options.",
       },
     ],
   },
   {
-    question:
-      "Does the meal card module help improve the finance team’s performance? If yes, how?",
+    question: "Why should a startup consider offering gift cards to employees?",
     answer: [
       {
         heading:
-          "Meal card is an effective replacement for paper-based food coupons. The easy management and tracking of meal cards help the finance/admin team to refill them instead of issuing monthly food coupons while tracking their balance. The finance team can easily activate, block, unblock, or deactivate the card in case of misuse.",
+          "Startups should consider offering gift cards to incentivize and recognize the performance of their employees and partners. This can help motivate and improve their overall productivity. Gift cards are a cost-effective way to reward employees and partners, as they can be purchased in bulk at a discounted rate. Gift cards can boost morale by providing a tangible reward for the efforts put in by the people. This can create a positive and supportive workplace culture.",
+      },
+    ],
+  },
+
+  {
+    question: "Is corporate gifting taxable?",
+    answer: [
+      {
+        heading:
+          "The taxability of corporate gifting depends on the value of the gift. If the gift is within or less than the taxable limit, then there is no need to pay any tax. However, if the gift card limit exceeds Rs 5000, it will be taxable.",
       },
     ],
   },
   {
-    question: "Why should a startup consider offering meal cards to employees?",
+    question: "What is a corporate gift card?",
     answer: [
       {
         heading:
-          "Startups need to consider offering meal cards to employees for the following reasons:",
+          "A corporate gift card is a prepaid card organizations use to gift their employees, clients, customers, or partners. These cards are loaded with money up to a certain specified amount and are among the best ways to appreciate people. These cards can be redeemed online or in-store.",
+      },
+    ],
+  },
+  {
+    question: "How to access a corporate gift card?",
+    answer: [
+      {
         bullets: [
-          "They have a wider usage and can be used across shops and eateries",
-          "Refilling at regular intervals is a matter of a few clicks based on a list of employees",
-          "Onboarding new employees and offering them meal cards is easy",
-          "It is easy to track and control usage for the employees as well as the finance team",
-          "Meal cards motivate employees as they believe that the organization is considerate towards their food expenses",
+          "Register on EnKash and enter all the company details requiredr",
+          "After all the details are validated, the company becomes eligible for gift cards",
+          "The company can load money into their account and request the cards as required",
+          "These gift cards can be allocated to the recipient with a preloaded amount as per the occasion",
         ],
       },
     ],
   },
   {
-    question: "How meal cards reduce fraud instances in business?",
+    question: "What are the rules for corporate gifting?",
     answer: [
       {
         heading:
-          "Meal cards function pretty much like debit cards but specifically for purchasing food, which means they are operated on a one-time or preset PIN. This means that even if the food card is misplaced and discovered by another person, it would be difficult to misuse. If reported lost, the finance team can easily block the card and restrict any fraud from occurring.",
+          "Corporate gifts should be aligned with the company's ethics and policies. These gifts must be legal. There must be transparency in corporate gifting and sensitivity towards all cultures",
       },
     ],
   },
   {
-    question: "Are meal cards taxable?",
+    question: "Is corporate gifting profitable?",
     answer: [
       {
         heading:
-          "Meal cards are not taxable. However, if the amount spent on a meal exceeds the non-taxable limit of 2200 INR per month, then they are taxable as per Section 17(2)(viii) of the Income Tax Act.",
+          "Organizations have observed enhanced retention rates through the implementation of corporate gifting strategies. Hence, opting for gift cards, such as those offered by EnKash, proves to be a mutually beneficial strategy. By motivating stakeholders with secure, convenient, and easily manageable gift cards that offer access across various categories, organizations can expect improved outcomes and increased productivity.",
       },
     ],
   },
   {
-    question: "How to claim meal allowance?",
+    question: "What is the TDS rate for corporate gifting?",
     answer: [
       {
         heading:
-          "Employee’s food allowance is a part of the remuneration. Meal allowance can be availed using tax-free meal cards. Employees can complete their KYC on the EnKash portal, activate their meal card, and use it monthly at their convenience and requirement.",
+          "A corporate gift can attract a TDS of 10% if the gift value exceeds Rs 20,000 in a year. This is decided under Section 194R of the Income Tax Act, 1961.",
       },
     ],
   },
   {
-    question: "How to implement meal cards in the workplace?",
+    question: "How to avoid gift tax as an employer?",
     answer: [
       {
         heading:
-          "In order to implement meal cards at the workplace, follow these easy steps:",
-        bullets: [
-          "Register on EnKash, your meal card provider",
-          "Define the value of the card according to your organization’s budget",
-          "Create a network of authorized food chains, apps, outlets where all card will be valid",
-          "Educate your employees about the KYC and usage of the meal card",
-          "Distribute the cards among your employees and encourage them to use it for food purchases and tax-redemption",
-        ],
+          "Businesses can avoid gift tax by keeping the value of gifts within the tax-free limit of 5000 INR in a calendar year.",
       },
     ],
-  },
-  {
-    question: "How can I close the account and claim a refund?",
-    answer: [],
-    answerHTML: (
-      <div>
-        <h4>
-          If you wish to request the closure of your card/wallet, please click
-          on the link below to proceed:
-          <Link href="https://transcorpint.com/card-closure" target="_blank">
-            https://transcorpint.com/card-closure
-          </Link>{" "}
-        </h4>
-      </div>
-    ),
   },
 ]
 

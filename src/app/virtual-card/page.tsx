@@ -12,11 +12,12 @@ import {
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
 import {
-  motherCardImg,
   blueArrow,
   whiteArrow,
   mealCardImage,
   instantActionImg,
+  heroCardImg,
+  podiumImage,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -25,7 +26,6 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
-
 import CardProduct from "@/components/card-product/card-product"
 import AllProducts from "@/components/all-products/all-products"
 import StepCard from "@/components/stepCard/stepCard"
@@ -38,15 +38,15 @@ const VirtualCards = (): React.JSX.Element => {
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-w-auto">
+        <div className="max-w-auto px-4">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
                 { name: "Home", url: "/" },
-
+                { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
                   name: "Virtual Card",
-                  url: "/virtual-card",
+                  url: "/corporate-cards/virtual-card",
                 },
               ]}
             />
@@ -93,12 +93,17 @@ const VirtualCards = (): React.JSX.Element => {
             </div>
           </div>
         </div>
-        <div className=" col-12 d-flex">
+        <div className=" col-12 pt-5 ">
           <div className={styles.lottie_container}>
+            {" "}
+            <Image src={heroCardImg} alt="card background" className=" " />
+          </div>
+          <div className={styles.lottie_container_bottom}>
+            {" "}
             <Image
-              src={motherCardImg}
+              src={podiumImage}
               alt="card background"
-              className="position-relative w-100 h-100"
+              className="position-absolute "
             />
           </div>
         </div>
@@ -110,7 +115,7 @@ const VirtualCards = (): React.JSX.Element => {
 
       <div className={`${styles.action_row} bg-white row-padding `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-5`}>
             <Heading
               title={`How to Set Up Virtual Prepaid Cards ${space}`}
               color="black"
@@ -119,7 +124,7 @@ const VirtualCards = (): React.JSX.Element => {
             />
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-5">
+            <div className="col-md-6 col-12 px-md-5">
               <div
                 style={{
                   display: "flex",
@@ -139,7 +144,7 @@ const VirtualCards = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Try Now"
+                  title="Get started "
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
@@ -156,8 +161,8 @@ const VirtualCards = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="h-100"
-                  style={{ maxHeight: "667px", objectFit: "cover" }}
+                  className="
+                   w-100 h-100"
                 />
               </div>
             </div>
@@ -206,7 +211,7 @@ const VirtualCards = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Try Now"
+                  title="Get started "
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
@@ -220,8 +225,8 @@ const VirtualCards = (): React.JSX.Element => {
                 <Image
                   src={instantActionImg}
                   alt="card background"
-                  className="h-100"
-                  style={{ maxHeight: "435px", objectFit: "cover" }} // ✅ Add your max-height here
+                  className="
+                   w-100 h-100"
                 />
               </div>
             </div>
@@ -310,7 +315,7 @@ const VirtualCards = (): React.JSX.Element => {
               <div>
                 <Heading
                   title="Have more questions? "
-                  color="main-grey"
+                  color="dark-grey"
                   size="h3"
                   weight="5"
                   useH1TagInHtml={true}
