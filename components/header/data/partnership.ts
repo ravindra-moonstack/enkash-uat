@@ -16,14 +16,14 @@ const partnershipProducts = [
         list: [
           {
             name: "For Banks",
-            description: "For Banks",
+            description: "Learn about your users",
             link: "https://www.enkash.com/resources/",
             imageSrc: bank,
             imageSrcHovered: bank,
           },
           {
             name: "Affiliate Program",
-            description: "Launch modern banking products faster",
+            description: "Monitor your metrics",
             link: "https://www.enkash.com/resources/videos/",
             imageSrc: affiliate,
             imageSrcHovered: affiliate,

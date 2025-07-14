@@ -185,7 +185,7 @@ const WebHeader = ({ utmSource }: props) => {
 
         <div className="max-w-auto">
           {/* {true && (
-            <ResourcesModal
+            <PartnershipModal
               onLinkClick={handleLinkClick}
               modalLeft={modalLeft ?? 200}
             />

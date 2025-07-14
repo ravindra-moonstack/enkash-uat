@@ -28,7 +28,6 @@
 .light {
   background: white;
 
-  .titleHtml,
   .description {
     color: $color-main-grey;
   }
@@ -105,4 +104,5 @@
 .titleHtml {
   font-size: 28px;
   font-weight: 600;
+  color: $color-black;
 }

@@ -5,8 +5,6 @@ import {
   saasFilled,
   tne,
   tneFilled,
-  virtualCard,
-  virtualCardFilled,
   mealCard,
   mealCardFilled,
   fuelCard,
@@ -68,7 +66,7 @@ export const cardsProducts = [
           },
           {
             name: "Gift Card",
-            description: "Simplify logistics and fuel spends",
+            description: "One card, endless choices",
             imageSrc: giftFilled,
             imageSrcHovered: giftFilled,
             link: "/diy-card-module",
@@ -78,14 +76,6 @@ export const cardsProducts = [
             description: "Manage & prevent auto-renewals",
             imageSrc: saas,
             imageSrcHovered: saasFilled,
-            link: "/virtual-card",
-          },
-
-          {
-            name: "Payroll Card",
-            description: "Pay unbanked staff instantly",
-            imageSrc: virtualCard,
-            imageSrcHovered: virtualCardFilled,
             link: "/virtual-card",
           },
         ],
@@ -99,6 +89,7 @@ export const cardsProducts = [
   },
   {
     name: "Credit Cards",
+    subtitle: " Corporate Cards",
     description: "Flexible credit card solutions",
     link: "/cards",
     payableProducts: [
@@ -110,13 +101,6 @@ export const cardsProducts = [
           description: "Manage all types of business payments",
         },
         list: [
-          {
-            name: "Corporate Credit Card",
-            description: "Smart credit for business needs",
-            imageSrc: tne,
-            imageSrcHovered: tneFilled,
-            link: "/travel-and-expense-card",
-          },
           {
             name: "T&E Cards",
             description: "Track travel and expense spends",

@@ -88,6 +88,7 @@ export { default as autoReconciliationFilled } from "./img/auto-reconciliation-f
 export { default as affordabilityFilled } from "./img/affordability-filled.svg"
 export { default as collectionReminderFilled } from "./img/collection-reminder-filled.svg"
 export { default as casflowFilled } from "./img/cashflow-filled.svg"
+export { default as digitalInvoiceFilled } from "./img/digitalInvoiceFilled.svg"
 
 //paybles
 export { default as billPayments } from "./img/bill-payments.svg"

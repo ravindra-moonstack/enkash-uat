@@ -17,9 +17,14 @@ interface EnkashWayProps {
     bgImage?: string | StaticImageData
   }[]
   sectionHeading: string
+  secondHeading?: string
 }
 
-const EnkashWay = ({ progressData, sectionHeading }: EnkashWayProps) => {
+const EnkashWay = ({
+  progressData,
+  sectionHeading,
+  secondHeading,
+}: EnkashWayProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0)
   const selectedItem = progressData[selectedItemIndex]
 
@@ -60,6 +65,12 @@ const EnkashWay = ({ progressData, sectionHeading }: EnkashWayProps) => {
               title={sectionHeading}
               size="h1"
               color="black"
+              weight="5"
+            />
+            <Heading
+              title={secondHeading ?? ""}
+              size="h1"
+              color="equity-blue"
               weight="5"
             />
           </div>
@@ -103,6 +114,28 @@ const EnkashWay = ({ progressData, sectionHeading }: EnkashWayProps) => {
             className="mt-5 px-3 d-flex align-items-start gap-3"
             style={{ width: "50%" }}
           >
+            <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
+              <Image
+                src={selectedItem.icon}
+                alt="icon"
+                width={55}
+                height={55}
+              />
+            </div>
+            <div className="d-flex flex-column gap-3">
+              <Heading
+                title={selectedItem.title}
+                color="black"
+                size="h3"
+                weight="5"
+              />
+              <Heading
+                title={selectedItem.description}
+                color="black"
+                size="h6"
+                weight="4"
+              />
+            </div>
             <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
               <Image
                 src={selectedItem.icon}

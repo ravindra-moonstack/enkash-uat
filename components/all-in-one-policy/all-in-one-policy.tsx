@@ -2,10 +2,10 @@
 
 import React from "react"
 import Image, { StaticImageData } from "next/image"
-import PolicyCard from "../policyCard/policyCard"
 import styles from "./all-in-one-policy.module.scss"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 import { blueArrow, whiteArrow } from "./index"
+import Heading from "../heading/heading"
 
 interface AllInOnePolicyProps {
   icon: StaticImageData
@@ -14,6 +14,7 @@ interface AllInOnePolicyProps {
   image: StaticImageData
   buttonUrl: string
   reverse?: boolean
+  maxImageHeight?: string
 }
 
 const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
@@ -23,16 +24,35 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   image,
   buttonUrl,
   reverse = false,
+  maxImageHeight,
 }) => {
   return (
     <div className={`row  align-items-center ${styles.section}`}>
       {/* Text Block */}
       <div
-        className={`col-md-6 col-12 px-5 ${
+        className={`col-md-8 col-12 px-5 ${
           reverse ? "order-md-2" : "order-md-1"
         }`}
       >
-        <PolicyCard icon={icon} title={title} description={description} />
+        <div className={`d-flex align-items-start    ${styles.policyCard}`}>
+          {/* Icon */}
+          <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
+            {icon && <Image src={icon} alt="icon" width={55} height={55} />}
+          </div>
+
+          {/* Title and Description */}
+          <div className="d-flex flex-column text-start gap-4">
+            <Heading title={title} color="black" size="h3" weight="5" />
+            {description && (
+              <Heading
+                title={description}
+                color="grey-200"
+                size="h6"
+                weight="4"
+              />
+            )}
+          </div>
+        </div>
 
         <div className={`mt-4 ${styles.list_button}`}>
           <RectangleButton
@@ -47,14 +67,19 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
 
       {/* Image Block */}
       <div
-        className={`col-md-6 col-12 d-flex justify-content-end ${
+        className={`col-md-4 col-12 d-flex justify-content-end ${
           reverse ? "order-md-1" : "order-md-2"
         } ${styles.third_container}`}
       >
         <Image
           src={image}
           alt="card visual"
-          className="position-relative w-100 h-100"
+          className=" w-100 "
+          style={{
+            maxHeight: maxImageHeight || "auto",
+            height: "auto",
+            objectFit: "contain",
+          }}
         />
       </div>
     </div>

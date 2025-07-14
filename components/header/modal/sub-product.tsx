@@ -48,7 +48,6 @@ const SubProduct = (props: any) => {
       props.onLinkClick()
     }
   }
-
   const motherProductName = props.motherProductName
 
   return (
@@ -131,7 +130,7 @@ const SubProduct = (props: any) => {
 
                 {activeGroup.list.map((product: any, index: any) => (
                   <div
-                    className={`${styles.sub_product_row_wrapper} position-relative d-flex gap-3`}
+                    className={`${styles.sub_product_row_wrapper} position-relative d-flex gap-3 p-1`}
                     onMouseEnter={() => sethoveredProductIndex(index)}
                     onMouseLeave={() => sethoveredProductIndex(null)}
                     ref={refs[index]}
@@ -164,7 +163,13 @@ const SubProduct = (props: any) => {
 
                         <div className="d-flex flex-column ms-3">
                           <div
-                            className={`d-flex align-items-center justify-content-between ${styles.sub_product_name}`}
+                            className={`d-flex align-items-center justify-content-between ${
+                              styles.sub_product_name
+                            } ${
+                              motherProductName === "For Developers"
+                                ? styles.underline
+                                : ""
+                            }`}
                           >
                             {product.name}
                             {product?.new && (
@@ -197,8 +202,8 @@ const SubProduct = (props: any) => {
                               <Image
                                 src={child.imageSrc}
                                 alt={child.name}
-                                width={24}
-                                height={24}
+                                width={21}
+                                height={21}
                               />
                               <span className="ms-2">{child.name}</span>
                             </div>
@@ -212,10 +217,11 @@ const SubProduct = (props: any) => {
             </div>
           </div>
           {[
-            "For Developer",
+            "For Developers",
             "Resources",
             "Payable & Receivable+",
             "Prepaid Cards",
+            "Credit Cards",
           ].includes(motherProductName) === false && (
             <div className={styles.exploreProduct}>
               <Link href={props.parentLink || "#"}>

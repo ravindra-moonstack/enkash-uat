@@ -44,6 +44,7 @@ import {
   affordabilityFilled,
   collectionReminderFilled,
   casflowFilled,
+  digitalInvoiceFilled,
 } from "../../header"
 
 export const motherProducts = [
@@ -83,7 +84,7 @@ export const motherProducts = [
           },
           {
             name: "Subscriptions",
-            description: "Manage recurring payments easily",
+            description: "Simplify recurring payments ",
             imageSrc: subscriptionManagement,
             imageSrcHovered: subscriptionManagementFilled,
             link: "/subscriptions",
@@ -176,21 +177,21 @@ export const motherProducts = [
           },
           {
             name: "Rental Payment",
-            description: "Never miss the rent dealinet",
+            description: "Never miss the rent deadline",
             imageSrc: rentalPayments,
             imageSrcHovered: rentalPaymentsFilled,
             link: "/rent-payment",
           },
           {
             name: "Payroll Processing",
-            description: "Disburse salaries on time, everytime",
+            description: "Disburse salaries on time",
             imageSrc: collectionAnalytics,
             imageSrcHovered: collectionAnalyticsFilled,
             link: "/payroll-process",
           },
 
           {
-            name: "Express Pay/ Bulk Payout",
+            name: "Bulk Pay ",
             description: "Mass payments in one click",
             imageSrc: bulkPayout,
             imageSrcHovered: bulkPayoutFilled,
@@ -244,7 +245,7 @@ export const motherProducts = [
             name: "Digital Invoicing",
 
             imageSrc: invoiceManegement,
-            imageSrcHovered: invoiceManegementFilled,
+            imageSrcHovered: digitalInvoiceFilled,
             link: "/rent-payment",
           },
 
@@ -276,13 +277,7 @@ export const motherProducts = [
             imageSrcHovered: autoReconciliationFilled,
             link: "/gst-payment",
           },
-          {
-            name: "Workflow Management",
 
-            imageSrc: instantSettlements,
-            imageSrcHovered: instantSettlementsFilled,
-            link: "/gst-payment",
-          },
           {
             name: "Cashflow Analytics",
 
@@ -295,6 +290,13 @@ export const motherProducts = [
 
             imageSrc: invoiceManegement,
             imageSrcHovered: invoiceManegementFilled,
+            link: "/gst-payment",
+          },
+          {
+            name: "Workflow Management",
+
+            imageSrc: instantSettlements,
+            imageSrcHovered: instantSettlementsFilled,
             link: "/gst-payment",
           },
         ],

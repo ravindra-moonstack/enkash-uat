@@ -1,8 +1,6 @@
 import {
   offers,
   offersFilled,
-  giftCards,
-  giftCardFilled,
   channelIncentive,
   channelIncentiveFilled,
   rewardsPlatformFilled,
@@ -104,13 +102,7 @@ const loyaltyLoungeProducts = [
             imageSrcHovered: channelIncentiveFilled,
             link: "/channel-incentives",
           },
-          {
-            name: "Gift Cards",
-            description: "One card, endless choices",
-            imageSrc: giftCards,
-            imageSrcHovered: giftCardFilled,
-            link: "/gift-cards",
-          },
+     
           {
             name: "Offers",
             description: "Exclusive deals for every spend",

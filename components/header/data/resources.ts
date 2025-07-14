@@ -49,7 +49,7 @@ const resourseProducts = [
     ],
   },
   {
-    name: "For Developer",
+    name: "For Developers",
     description: "Flexible prepaid card solutions",
     link: "/solutions",
     payableProducts: [

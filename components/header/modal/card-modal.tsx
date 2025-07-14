@@ -2,6 +2,7 @@ import { useState } from "react"
 import styles from "./modal.module.scss"
 import cardsProducts from "../data/cards-products"
 import SubProduct from "./sub-product"
+import Link from "next/link"
 
 const CardModal = ({
   onLinkClick,
@@ -24,16 +25,23 @@ const CardModal = ({
             if (!subProducts || subProducts.length === 0) return null
 
             return (
-              <SubProduct
-                key={i}
-                subProducts={subProducts}
-                index={i}
-                hoveredProductIndex={i} // <-- This ensures every card gets rendered correctly
-                prevHoveredProductIndex={prevHoveredProductIndex}
-                onLinkClick={onLinkClick}
-                motherProductName={mother.name}
-                parentLink={mother.link}
-              />
+              <>
+                <SubProduct
+                  key={i}
+                  subProducts={subProducts}
+                  index={i}
+                  hoveredProductIndex={i} // <-- This ensures every card gets rendered correctly
+                  prevHoveredProductIndex={prevHoveredProductIndex}
+                  onLinkClick={onLinkClick}
+                  motherProductName={mother.name}
+                  parentLink={mother.link}
+                />
+                <div className={styles.exploreProduct}>
+                  <Link href="/corporate-card">
+                    <h4 className="mb-1">Explore Corporate Cards </h4>
+                  </Link>
+                </div>
+              </>
             )
           })}
         </div>

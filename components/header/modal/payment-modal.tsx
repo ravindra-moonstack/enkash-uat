@@ -5,7 +5,6 @@ import SubProduct from "./sub-product"
 
 const PaymentModal = ({
   onLinkClick,
-
 }: {
   onLinkClick?: () => void
   modalLeft: number

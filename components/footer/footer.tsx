@@ -476,12 +476,12 @@ const FooterV2 = () => {
                   <ul>
                     <li>
                       <Link href="/budget-and-advances/">
-                        Budgets and Advances
+                        Budget & Advances
                       </Link>
                     </li>
                     <li>
                       <Link href="/hierarchy-and-controls/">
-                        Hierarchy and Controls
+                        Hierarchy & Controls
                       </Link>
                     </li>
                     <li>
@@ -539,7 +539,7 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/express-pay/">Express Pay/Bulk</Link>
+                        <Link href="/express-pay/"> Bulk Pay</Link>
                       </li>
 
                       <li>
@@ -660,22 +660,18 @@ const FooterV2 = () => {
                         <Link href="/prepaid-card/">Prepaid Card</Link>
                       </li>
                       <li>
-                        <Link href="/meal-card/">Meal Cards</Link>
+                        <Link href="/meal-card/">Meal Card</Link>
                       </li>
                       <li>
-                        <Link href="/fuel-card/">Fuel Cards</Link>
+                        <Link href="/fuel-card/">Fuel Card</Link>
                       </li>
                       <li>
                         <Link href="/digital-marketing-card/">
-                          Digital Marketing Cards
+                          Digital Marketing Card
                         </Link>
                       </li>
                       <li>
-                        <Link href="/virtual-cards/">SaaS Cards</Link>
-                      </li>
-
-                      <li>
-                        <Link href="/virtual-card/">Payroll Cards</Link>
+                        <Link href="/virtual-cards/">SaaS Card</Link>
                       </li>
 
                       <li>
@@ -684,15 +680,15 @@ const FooterV2 = () => {
                       <li>
                         <Link href="/purchase-card/">Fleet Card</Link>
                       </li>
-                      <li>
-                        <Link href="/purchase-card/">Forex Card</Link>
-                      </li>
 
                       <li>
-                        <Link href="/travel-and-expense-card">T&E Cards</Link>
+                        <Link href="/travel-and-expense-card">T & E Cards</Link>
                       </li>
                       <li>
                         <Link href="/purchase-card/">Purchase Cards</Link>
+                      </li>
+                      <li>
+                        <Link href="/gift-cards/">Gift Cards</Link>
                       </li>
                     </ul>
                   </div>
@@ -709,9 +705,7 @@ const FooterV2 = () => {
                           Channel Incentives
                         </Link>
                       </li>
-                      <li>
-                        <Link href="/gift-cards/">Gift Cards</Link>
-                      </li>
+
                       <li>
                         <Link href="/offers/">Offers</Link>
                       </li>
@@ -741,14 +735,7 @@ const FooterV2 = () => {
                         Case Studies
                       </Link>
                     </li>
-                    <li>
-                      <Link
-                        target="_blank"
-                        href="https://www.enkash.com/resources/whitepapers/"
-                      >
-                        White-papers
-                      </Link>
-                    </li>
+
                     <li>
                       <Link
                         target="_blank"

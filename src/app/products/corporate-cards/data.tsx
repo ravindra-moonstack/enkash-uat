@@ -316,6 +316,7 @@ const slideUpData = [
       "Define spending rules based on individual users, departments, or specific vendors. Set limits, track usage, and ensure policy compliance at every level.",
     src: slideFirst,
     link: "",
+    icon: onboardingIcon,
   },
   {
     title: "Channel-level Controls",
@@ -323,6 +324,7 @@ const slideUpData = [
       "Enable or disable specific transaction channels such as POS, online (e-commerce), or contactless payments. Prevent misuse by controlling how and where each card is used.",
     src: slideSecond,
     link: "",
+    icon: onboardingIcon,
   },
   {
     title: "Define Your Limits",
@@ -330,6 +332,7 @@ const slideUpData = [
       "Set automated daily, weekly, or monthly spend caps for each card. Avoid overspending and enforce company-wide financial discipline without constant manual intervention.",
     src: slideThird,
     link: "",
+    icon: onboardingIcon,
   },
   {
     title: "Block/Unblock at Your Convenience",
@@ -337,6 +340,7 @@ const slideUpData = [
       "Lost or compromised card? Instantly block or reactivate it from the dashboard with one click, no paperwork, no support tickets, no delay.",
     src: slideFourth,
     link: "",
+    icon: onboardingIcon,
   },
   {
     title: "Simplify Approval Flows",
@@ -344,6 +348,7 @@ const slideUpData = [
       "Establish flexible approval workflows with role-based access. Enable maker-checker setups to maintain internal controls and ensure complete accountability on every transaction.",
     src: slideFifth,
     link: "",
+    icon: onboardingIcon,
   },
 ]
 
