@@ -161,6 +161,14 @@
     margin-bottom: 50px;
   }
 
+  .scrollCard {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    @include for-laptops {
+      margin-left: 20px;
+      margin-bottom: 60px;
+    }
+  }
   .first_container,
   .second_container,
   .third_container {
@@ -206,9 +214,12 @@
     padding-right: 150px;
   }
   .section {
-    padding-top: 53px;
-    padding-bottom: 53px;
+    gap: 70px;
+    padding: 18px;
     background-color: $color-sky-hint;
+    @include for-laptops {
+      padding: 53px 88px;
+    }
   }
   .allInOnePolicyCard {
     display: flex;
@@ -218,60 +229,8 @@
 }
 
 .sixth_row {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  height: 100vh;
-  @include for-laptops {
-    padding: 32px;
-  }
+  padding: 90px 0px;
   // background-image: url(./img/enkashWayBg.svg);
-
-  .blur_bg {
-    position: absolute;
-    top: -70%;
-    left: 0;
-    width: 800px;
-    height: 1150px;
-  }
-  .progress_bar {
-    height: 4px;
-    border-radius: 12px;
-    padding-left: 50px;
-    padding-right: 50px;
-    background: linear-gradient(
-      90deg,
-      $color-equity-blue 15%,
-      $color-black 30%
-    );
-    @include for-laptops {
-      height: 8px;
-    }
-  }
-  .progress_items {
-    margin-right: 30px;
-    @include for-laptops {
-      margin-right: 0;
-    }
-  }
-  .progress_container {
-    @include for-laptops {
-      justify-content: space-evenly;
-    }
-  }
-  .arrow {
-    transform: rotate(90deg);
-    height: 30px;
-    width: 30px;
-    margin-top: -10px;
-    @include for-laptops {
-      height: 50px;
-      width: 50px;
-      transform: none;
-      margin-top: 0;
-    }
-  }
 }
 
 .fifth_row {
@@ -349,6 +308,7 @@
       right: 0; // ✅ Add this
       bottom: 0;
       display: none;
+      pointer-events: none;
       @include for-laptops {
         display: block; // ✅ Changed from flex to block
         height: 37.5rem;

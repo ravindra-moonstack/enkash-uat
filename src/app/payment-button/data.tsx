@@ -33,6 +33,7 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
+import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
 
 const dataSets = [
   {
@@ -112,17 +113,17 @@ const cardsData = [
   {
     title: "Create",
     description: "Use EnKash’s intuitive dashboard to design your button",
-    icon: policyIcon,
+    icon: scrollIconOne,
   },
   {
     title: "Copy",
     description: "Generate an auto-created code tailored to your button.",
-    icon: policyIcon,
+    icon: scrollIconTwo,
   },
   {
     title: "Integrate",
     description: "Paste the code on your website or blog.",
-    icon: policyIcon,
+    icon: scrollIconThree,
   },
 ]
 

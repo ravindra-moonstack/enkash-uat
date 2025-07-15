@@ -16,6 +16,7 @@ export interface HeadingProps {
     | "grey-100"
     | "grey-200"
     | "dark-grey"
+  
 
   weight?: "2" | "3" | "4" | "5" | "6" | "7"
   italic?: boolean

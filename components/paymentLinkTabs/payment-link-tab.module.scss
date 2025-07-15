@@ -8,46 +8,22 @@
   @media (max-width: 767px) {
     background: none !important; // remove background on mobile
   }
-
-  .blur_bg {
-    position: absolute;
-    top: -40%;
-    left: -20%;
-    width: 1279px;
-    pointer-events: none;
-    z-index: 0;
-    display: none; // hide on mobile
-
-    @include for-laptops {
-      display: block;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-      opacity: 0.6;
-      box-shadow: 0 0 100px 60px rgba(0, 217, 255, 0.25),
-        0 0 465.99px 120px rgba(255, 255, 255, 0.2);
-      transition: box-shadow 0.8s ease-in-out, opacity 0.8s ease-in-out;
-    }
-  }
 }
 
 .sixth_row_mobile {
   background-color: $color-soft-mint;
+  .tab_section {
+    padding: 36px;
+  }
 }
 
 .tab_section {
   position: relative;
   z-index: 1;
-  padding: 32px;
 
   @include for-laptops {
     padding-top: 128px;
     padding-bottom: 50px;
-    margin: auto;
   }
 }
 

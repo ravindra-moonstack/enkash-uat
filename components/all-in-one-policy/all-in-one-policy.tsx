@@ -30,7 +30,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
     <div className={`row  align-items-center ${styles.section}`}>
       {/* Text Block */}
       <div
-        className={`col-md-8 col-12 px-5 ${
+        className={`col-md-8 col-12 px-md-5 ${
           reverse ? "order-md-2" : "order-md-1"
         }`}
       >
@@ -41,23 +41,23 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
           </div>
 
           {/* Title and Description */}
-          <div className="d-flex flex-column text-start gap-4">
-            <Heading title={title} color="black" size="h3" weight="5" />
+          <div className="d-flex flex-column text-start gap-3">
+            <Heading title={title} color="black" size="h4" weight="5" />
             {description && (
               <Heading
                 title={description}
                 color="grey-200"
-                size="h6"
+                size="h7"
                 weight="4"
               />
             )}
           </div>
         </div>
 
-        <div className={`mt-4 ${styles.list_button}`}>
+        <div className={` ${styles.list_button}`}>
           <RectangleButton
             title="Try Now"
-            theme="border-gray"
+            theme="outline-blue"
             actionImage={blueArrow}
             hoverImage={whiteArrow}
             url={buttonUrl}

@@ -31,6 +31,11 @@ import {
   paymentOptionIcon,
   notificationIcon,
   secureIcon,
+  travelBookingIcon,
+  registrationFeesIcon,
+  onlinSellsIcon,
+  feeCancelIcon,
+  invoiceIcon,
 } from "."
 
 import ManagementCard from "@/components/management-card/management-card"
@@ -42,20 +47,13 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import { faqBg } from "../digital-marketing-card"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
+import PaymentLinkTab from "@/components/paymentLinkTabs/payment-link-tab"
 
-// import {
-//   consultancyIcon,
-//   ecoomerceIcon,
-//   itIcon,
-//   logisticIcon,
-//   manufactureIcon,
-// } from "../products/expense-management"
-// import bg1 from "./img/bg1.jpg"
-// import bg2 from "./img/bg2.jpg"
-// import bg3 from "./img/bg3.jpg"
-// import bg4 from "./img/bg4.jpg"
-// import bg5 from "./img/bg5.jpg"
-// import PaymentLinkTab from "@/components/paymentLinkTabs/payment-link-tab"
+import bg1 from "./img/bg1.jpg"
+import bg2 from "./img/bg2.jpg"
+import bg3 from "./img/bg3.jpg"
+import bg4 from "./img/bg4.jpg"
+import bg5 from "./img/bg5.jpg"
 
 const showScroll = cardsData.length > 3
 
@@ -73,10 +71,10 @@ const PaymentGateway = (): React.JSX.Element => {
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
-                    { name: "Products", url: "/products" },
+                    { name: "Collect Payments", url: "/collect-payments" },
                     {
                       name: "Payment Link",
-                      url: "/products/payment",
+                      url: "/collect-payments/payment",
                     },
                   ]}
                 />
@@ -193,7 +191,7 @@ const PaymentGateway = (): React.JSX.Element => {
               >
                 {" "}
                 <Heading
-                  title="Transaction Success Rate"
+                  title=" Payment Options"
                   color="white"
                   size="h5"
                   weight="4"
@@ -262,7 +260,7 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-5 ${
+                className={` mt-md-5 ${
                   showScroll ? "overflow-auto scrollbar-thin" : ""
                 }`}
                 style={{
@@ -275,9 +273,9 @@ const PaymentGateway = (): React.JSX.Element => {
                     key={i}
                     style={{
                       direction: "ltr",
-                      marginLeft: "20px",
-                      marginBottom: "60px",
+                    
                     }}
+                        className={styles.scrollCard}
                   >
                     <PolicyCard
                       icon={icon}
@@ -287,7 +285,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 mx-5">
+              <div className="m-5">
                 <RectangleButton
                   title="Get Started"
                   theme="border-gray"
@@ -384,90 +382,95 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.eigth_row} relative`}>
-        <div className={`${styles.faqSection} text-start pb-5 max-w-auto`}>
+      <div className={`${styles.eigth_row} `}>
+        <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-5`}>
-            <div>
-              <Heading
-                title={`Payment Link Features to ${space}`}
-                color="black"
-                size="h1"
-                weight="6"
-              />
-            </div>
             <Heading
-              title={`Empower Your Business ${space}`}
-              color="equity-blue"
+              title={`Integrate with Ease. Connect Without Gaps. ${space}`}
+              color="black"
               size="h1"
               weight="6"
             />
-            <div>
-              <Heading
-                title={`EnKash - The Financial Ecosystem Enabler${space}`}
-                color="dark-grey"
-                size="h3"
-                weight="6"
-              />
-            </div>
           </div>
 
           <div>
             <SecondFaqHtml SecondfaqData={SecondfaqData} />
           </div>
           <div className={styles.faq_bg}>
-            <Image src={faqBg} alt="background image" />x
+            <Image src={faqBg} alt="background image" />
           </div>
         </div>
       </div>
 
-      {/* <div className={`${styles.sixth_row} row d-flex bg-white `}>
+      <div className={`${styles.tab_row}  bg-white `}>
         <PaymentLinkTab
-          sectionHeading="Payment Link for All Businesses -"
+          sectionHeading="Payment Link for All organisation -"
           secondHeading="Accept Payments Anywhere, Anytime"
           progressData={[
             {
               itemArray: ["Invoicing and Billing"],
               title: "Invoicing and Billing",
-              description:
-                "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
-              icon: itIcon,
+              subtitleOne: "Invoice Payments:",
+              descriptionOne:
+                " Businesses can embed payment links directly into invoices, making it easy for clients to pay outstanding balances with a single click.",
+              subtitleTwo: "Recurring Payments: ",
+              descriptionTwo:
+                "Payment links are used to set up recurring payments for subscriptions, memberships, or other recurring services.",
+
+              icon: invoiceIcon,
               bgImage: bg1,
             },
             {
-              itemArray: ["E-commerce & Retail"],
-              title: "E-commerce & Retail",
-              description:
-                "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
-              icon: ecoomerceIcon,
+              itemArray: ["Fee Collection"],
+              title: "Fee Collection",
+              subtitleOne: "Schools and Educational Institutions:",
+              descriptionOne:
+                "Streamline tuition and other fee payments by sending unique payment links to students or parents",
+              subtitleTwo: "Professional Services:",
+              descriptionTwo:
+                " Lawyers, accountants, and consultants can use payment links to collect retainers, invoices, or other professional fees.",
+              icon: feeCancelIcon,
               bgImage: bg2,
             },
             {
-              itemArray: ["Manufacturing"],
-              title: "Manufacturing",
-              description:
-                "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
-              icon: manufactureIcon,
+              itemArray: ["Online Sales"],
+              title: "Online Sales",
+              subtitleOne: "Direct Sales:",
+              descriptionOne:
+                " Businesses can easily create and share payment links for individual products or services, enabling customers to purchase directly through a simple link.",
+              subtitleTwo: "Social Media Sales:",
+              descriptionTwo:
+                "Payment links are ideal for businesses selling through platforms like Instagram or Facebook, where customers can easily click and pay without leaving the platform.",
+              icon: onlinSellsIcon,
               bgImage: bg3,
             },
             {
-              itemArray: ["Logistics & Supply Chain"],
-              title: "Logistics & Supply Chain",
-              description:
-                "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
-              icon: logisticIcon,
+              itemArray: ["Registration Fees"],
+              title: "Registration Fees",
+              subtitleOne: "Event Tickets:",
+              descriptionOne:
+                " Event organizers can use payment links to sell tickets online, providing a convenient and secure payment option.",
+              subtitleTwo: "Workshop or Class Registration: ",
+              descriptionTwo:
+                " Payment links can be used to collect registration fees for workshops, classes, or other events.",
+              icon: registrationFeesIcon,
               bgImage: bg4,
             },
             {
-              itemArray: ["Consulting & Services"],
-              title: "Consulting & Services",
-              description:
-                "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
-              icon: consultancyIcon,
+              itemArray: ["Travel Bookings"],
+              title: "Travel Bookings",
+              subtitleOne: "Travel Agents and Operators:",
+              descriptionOne:
+                " Use payment links to collect deposits or full payments for travel packages, flights, accommodations, and other travel-related services. This streamlines the booking process and reduces administrative overhead.",
+              subtitleTwo: "Accommodation Providers:",
+              descriptionTwo:
+                "Hotels, hostels, and other accommodation providers can use payment links to collect booking deposits or full payments directly from guests. This can be integrated into booking confirmation emails or used for last-minute bookings.",
+              icon: travelBookingIcon,
               bgImage: bg5,
             },
           ]}
         />
-      </div> */}
+      </div>
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">

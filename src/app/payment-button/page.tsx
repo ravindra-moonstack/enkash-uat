@@ -26,7 +26,13 @@ import {
   secureImage,
   activationIcon,
   realTimeIcon,
-  greenIcon,
+  optimizedIcon,
+  taskIconOne,
+  taskIconTwo,
+  taskIconThree,
+  taskIconFour,
+  taskIconFive,
+  taskIconSix,
 } from "."
 
 import ManagementCard from "@/components/management-card/management-card"
@@ -38,7 +44,6 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import { faqBg } from "../digital-marketing-card"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
-
 
 // import bg1 from "./img/bg1.jpg"
 // import bg2 from "./img/bg2.jpg"
@@ -52,6 +57,7 @@ const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
+
       <TalkToSales />
 
       <div className={`${styles.first_row} `}>
@@ -78,6 +84,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   color="equity-blue"
                   size="h4"
                   weight="4"
+                  underline
                 />
               </div>
               <div
@@ -85,19 +92,18 @@ const PaymentGateway = (): React.JSX.Element => {
               >
                 <div className="d-flex flex-column   pt-4 pt-md-0">
                   <Heading
-                    title={`Sell smarter, not harder with  ${space}`}
+                    title={`Sell smarter, not harder  ${space}`}
                     color="black"
                     size="h2"
                     weight="7"
                   />
-                  <div>
-                    <Heading
-                      title="EnKash Payment Buttons"
-                      color="black"
-                      size="h2"
-                      weight="7"
-                    />
-                  </div>
+
+                  <Heading
+                    title=" with  EnKash Payment Buttons"
+                    color="black"
+                    size="h2"
+                    weight="7"
+                  />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
@@ -143,9 +149,11 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{ objectFit: "contain" }}
-                  className="
-                   w-100 h-100"
+                  style={{
+                    objectFit: "contain",
+                    maxHeight: "672px",
+                  }}
+                  className="w-100"
                 />
               </div>
             </div>
@@ -253,7 +261,7 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-5 ${
+                className={` mt-md-5 ${
                   showScroll ? "overflow-auto scrollbar-thin" : ""
                 }`}
                 style={{
@@ -266,9 +274,8 @@ const PaymentGateway = (): React.JSX.Element => {
                     key={i}
                     style={{
                       direction: "ltr",
-                      marginLeft: "20px",
-                      marginBottom: "60px",
                     }}
+                    className={styles.scrollCard}
                   >
                     <PolicyCard
                       icon={icon}
@@ -278,12 +285,10 @@ const PaymentGateway = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="mt-5 mx-5">
+              <div className="m-5">
                 <RectangleButton
                   title="Get Started"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  iconSize={15}
+                  theme="outline-blue"
                   url="/sales/?source=receivables"
                 />
               </div>
@@ -303,7 +308,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center gap-5 ${styles.section}`}>
+          <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div
                 className={`flex-column justify-content-center align-items-center pb-3`}
@@ -324,53 +329,59 @@ const PaymentGateway = (): React.JSX.Element => {
             </div>
 
             <AllInOnePolicy
-              icon={greenIcon}
+              icon={taskIconOne}
               title="Setup in under 5 minutes"
               description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
               image={paymentLinkImage}
               buttonUrl="/sales/?source=expense_management"
+              maxImageHeight="243"
             />
 
             <AllInOnePolicy
-              icon={greenIcon}
+              icon={taskIconTwo}
               title="Ctrl C + Ctrl V = Payment Ready"
               description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
               image={shareImage}
               buttonUrl="/sales/?source=expense_management"
+              maxImageHeight="305"
               reverse
             />
 
             <AllInOnePolicy
-              icon={greenIcon}
+              icon={taskIconThree}
               title="Accept Payments Anytime, Anywhere"
               description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
               image={paymentOptionImage}
               buttonUrl="/sales/?source=expense_management"
+              maxImageHeight="268"
             />
 
             <AllInOnePolicy
-              icon={greenIcon}
+              icon={taskIconFour}
               title="Match Your Style"
               description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
               image={notificationImage}
               buttonUrl="/sales/?source=expense_management"
+              maxImageHeight="259"
               reverse
             />
 
             <AllInOnePolicy
-              icon={greenIcon}
+              icon={taskIconFive}
               title="Optimized for the Mobile"
               description="Designed for optimal performance on all devices. Provide a seamless payment experience for users of smartphones, tablets, or desktops, catering to the growing mobile commerce trends."
-              image={secureImage}
+              image={optimizedIcon}
               buttonUrl="/sales/?source=expense_management"
+              maxImageHeight="221"
             />
 
             <AllInOnePolicy
-              icon={greenIcon}
+              icon={taskIconSix}
               title="Don’t Compromise on Security"
               description="Industry-leading security and compliance standards ensure safe payments. Protect your customers’ data with advanced encryption and fraud detection, building trust and credibility for your business."
-              image={notificationImage}
+              image={secureImage}
               buttonUrl="/sales/?source=expense_management"
+              maxImageHeight="259"
               reverse
             />
           </div>
@@ -378,7 +389,7 @@ const PaymentGateway = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.eigth_row} relative`}>
-        <div className={`${styles.faqSection} text-start pb-5 max-w-auto`}>
+        <div className={`${styles.faqSection} text-start max-w-auto`}>
           <div className={`${styles.title} text-start pb-5`}>
             <div>
               <Heading
@@ -415,7 +426,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <SecondFaqHtml SecondfaqData={SecondfaqData} />
           </div>
           <div className={styles.faq_bg}>
-            <Image src={faqBg} alt="background image" />x
+            <Image src={faqBg} alt="background image" />
           </div>
         </div>
       </div>

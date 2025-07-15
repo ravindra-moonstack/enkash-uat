@@ -120,6 +120,7 @@ const faqData = [
   },
 ]
 
+export default faqData
 export const SecondfaqData = [
   {
     question: "Custom Branding",
@@ -167,5 +168,3 @@ export const SecondfaqData = [
     ],
   },
 ]
-
-export default faqData

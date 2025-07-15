@@ -57,7 +57,7 @@ const xpenzProducts = [
 
           {
             name: "Reimbursements",
-            description: "Measure B2B account health",
+            description: "Fast, policy-compliant employee claims",
             imageSrc: reimbursements,
             imageSrcHovered: reimbursementsFilled,
             link: "/reimbursements",
@@ -72,7 +72,7 @@ const xpenzProducts = [
 
           {
             name: "Scan and Drop Receipts",
-            description: "Fast claims, zero policy gaps",
+            description: "Auto-capture receipts, skip paperworkcls",
             imageSrc: scanAndDrop,
             imageSrcHovered: scanAndDropFilled,
             link: "/receipts",

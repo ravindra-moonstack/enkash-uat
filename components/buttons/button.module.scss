@@ -150,8 +150,12 @@
   font-weight: 500;
   transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
   @include for-laptops {
-    padding: 10px 32px;
-    font-size: 18px;
+    padding: 8px 20px;
+    font-size: 16px;
+  }
+  img {
+    width: 16px;
+    height: 16px;
   }
 
   // &:hover {

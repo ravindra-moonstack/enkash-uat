@@ -6,14 +6,19 @@ import Heading from "../heading/heading"
 import styles from "./payment-link-tab.module.scss"
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
+import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 
 interface PaymentLinkTabProps {
   progressData: {
     itemArray: string[]
     title: string
-    description: string
+    descriptionOne?: string
+    descriptionTwo?: string
+    subtitleOne?: string
+    subtitleTwo?: string
     icon: StaticImageData
     bgImage?: string | StaticImageData
+    buttonUrl?: string
   }[]
   sectionHeading: string
   secondHeading?: string
@@ -60,15 +65,7 @@ const PaymentLinkTab = ({
               weight="5"
             />
           </div>
-          <div
-            style={{
-              backgroundImage: `url(${currentBgImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              backgroundRepeat: "no-repeat",
-              transition: "background-image 0.5s ease-in-out",
-            }}
-          >
+          <div>
             {/* Tab Selectors */}
             <div
               className={`d-flex mt-md-5 mt-3  max-w-auto ${styles.progress_container}`}
@@ -108,30 +105,72 @@ const PaymentLinkTab = ({
 
             {/* Selected Content */}
             <div
-              className="mt-5 px-3 d-flex align-items-start gap-3 max-w-auto"
-              style={{ width: "50%" }}
+              style={{
+                backgroundImage: `url(${currentBgImage})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                transition: "background-image 0.5s ease-in-out",
+                height: "100vh",
+              }}
             >
-              <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-                <Image
-                  src={selectedItem.icon}
-                  alt="icon"
-                  width={55}
-                  height={55}
-                />
-              </div>
-              <div className="d-flex flex-column gap-3">
-                <Heading
-                  title={selectedItem.title}
-                  color="black"
-                  size="h3"
-                  weight="5"
-                />
-                <Heading
-                  title={selectedItem.description}
-                  color="black"
-                  size="h6"
-                  weight="4"
-                />
+              <div className=" max-w-auto">
+                <div className=" p-3 py-5 d-flex align-items-start gap-3 col-md-6">
+                  <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
+                    <Image
+                      src={selectedItem.icon}
+                      alt="icon"
+                      width={55}
+                      height={55}
+                    />
+                  </div>
+                  <div className="d-flex flex-column gap-5">
+                    <Heading
+                      title={selectedItem.title}
+                      color="black"
+                      size="h3"
+                      weight="5"
+                    />
+                    <div className="d-flex flex-column gap-1">
+                      {" "}
+                      <Heading
+                        title={selectedItem.subtitleOne ?? ""}
+                        color="black"
+                        size="h4"
+                        weight="5"
+                      />
+                      <Heading
+                        title={selectedItem.descriptionOne ?? ""}
+                        color="grey-200"
+                        size="h6"
+                        weight="4"
+                      />
+                    </div>
+
+                    <div className="d-flex flex-column gap-1">
+                      <Heading
+                        title={selectedItem.subtitleTwo ?? ""}
+                        color="black"
+                        size="h4"
+                        weight="5"
+                      />
+                      <Heading
+                        title={selectedItem.descriptionTwo ?? ""}
+                        color="grey-200"
+                        size="h6"
+                        weight="4"
+                      />
+                    </div>
+
+                    <div className={`${styles.list_button}`}>
+                      <RectangleButton
+                        title="Get Started"
+                        theme="outline-blue"
+                        url="/sales/"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -214,19 +253,50 @@ const PaymentLinkTab = ({
                         width={28}
                         height={28}
                       />
-                      <div className="d-flex flex-column gap-2">
+                      <div className="d-flex flex-column gap-5">
                         <Heading
-                          title={data.title}
+                          title={selectedItem.title}
                           color="black"
-                          size="h2"
+                          size="h3"
                           weight="5"
                         />
-                        <Heading
-                          title={data.description}
-                          color="black"
-                          size="h5"
-                          weight="4"
-                        />
+                        <div className="d-flex flex-column gap-1">
+                          {" "}
+                          <Heading
+                            title={selectedItem.subtitleOne ?? ""}
+                            color="black"
+                            size="h4"
+                            weight="5"
+                          />
+                          <Heading
+                            title={selectedItem.descriptionOne ?? ""}
+                            color="grey-200"
+                            size="h6"
+                            weight="4"
+                          />
+                        </div>
+
+                        <div className="d-flex flex-column gap-1">
+                          <Heading
+                            title={selectedItem.subtitleTwo ?? ""}
+                            color="black"
+                            size="h4"
+                            weight="5"
+                          />
+                          <Heading
+                            title={selectedItem.descriptionTwo ?? ""}
+                            color="grey-200"
+                            size="h6"
+                            weight="4"
+                          />
+                        </div>
+                        <div className={`${styles.list_button}`}>
+                          <RectangleButton
+                            title="Get Started"
+                            theme="outline-blue"
+                            url="/sales/"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -247,19 +317,50 @@ const PaymentLinkTab = ({
                 height={55}
               />
             </div>
-            <div className="d-flex flex-column gap-3">
+            <div className="d-flex flex-column gap-5">
               <Heading
                 title={selectedItem.title}
                 color="black"
                 size="h3"
                 weight="5"
               />
-              <Heading
-                title={selectedItem.description}
-                color="black"
-                size="h6"
-                weight="4"
-              />
+              <div className="d-flex flex-column gap-1">
+                {" "}
+                <Heading
+                  title={selectedItem.subtitleOne ?? ""}
+                  color="black"
+                  size="h4"
+                  weight="5"
+                />
+                <Heading
+                  title={selectedItem.descriptionOne ?? ""}
+                  color="grey-200"
+                  size="h6"
+                  weight="4"
+                />
+              </div>
+
+              <div className="d-flex flex-column gap-1">
+                <Heading
+                  title={selectedItem.subtitleTwo ?? ""}
+                  color="black"
+                  size="h4"
+                  weight="5"
+                />
+                <Heading
+                  title={selectedItem.descriptionTwo ?? ""}
+                  color="grey-200"
+                  size="h6"
+                  weight="4"
+                />
+              </div>
+              <div className={`${styles.list_button}`}>
+                <RectangleButton
+                  title="Get Started"
+                  theme="outline-blue"
+                  url="/sales/"
+                />
+              </div>
             </div>
           </div>
         </div>
