@@ -199,7 +199,7 @@ export const motherProducts = [
           },
           {
             name: "GST Payment",
-            description: "Pay & Track GST payments",
+            description: "Pay & track GST payments",
             imageSrc: taxPayment,
             imageSrcHovered: taxPaymentFilled,
             link: "/gst-payment",

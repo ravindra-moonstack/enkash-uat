@@ -38,19 +38,13 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import { faqBg } from "../digital-marketing-card"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
-import EnkashWay from "@/components/enkash-way/enkash-way"
-import {
-  consultancyIcon,
-  ecoomerceIcon,
-  itIcon,
-  logisticIcon,
-  manufactureIcon,
-} from "../products/expense-management"
-import bg1 from "./img/bg1.jpg"
-import bg2 from "./img/bg2.jpg"
-import bg3 from "./img/bg3.jpg"
-import bg4 from "./img/bg4.jpg"
-import bg5 from "./img/bg5.jpg"
+
+
+// import bg1 from "./img/bg1.jpg"
+// import bg2 from "./img/bg2.jpg"
+// import bg3 from "./img/bg3.jpg"
+// import bg4 from "./img/bg4.jpg"
+// import bg5 from "./img/bg5.jpg"
 
 const showScroll = cardsData.length > 3
 
@@ -68,10 +62,10 @@ const PaymentGateway = (): React.JSX.Element => {
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
-                    { name: "Products", url: "/products" },
+                    { name: "Collect Payments", url: "/collect-payments" },
                     {
                       name: "Payment Button",
-                      url: "/products/payment-button",
+                      url: "/collect-payments/payment-button",
                     },
                   ]}
                 />
@@ -80,7 +74,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex d-none flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Payment Gateway ${space}`}
+                  title={`Payment Button ${space}`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -91,14 +85,14 @@ const PaymentGateway = (): React.JSX.Element => {
               >
                 <div className="d-flex flex-column   pt-4 pt-md-0">
                   <Heading
-                    title={`Accept Payments Instantly ${space}`}
+                    title={`Sell smarter, not harder with  ${space}`}
                     color="black"
                     size="h2"
                     weight="7"
                   />
                   <div>
                     <Heading
-                      title=" with EnKash Payment Links"
+                      title="EnKash Payment Buttons"
                       color="black"
                       size="h2"
                       weight="7"
@@ -108,7 +102,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
                 <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
                   <Heading
-                    title="Create payment link effortlessly—no website or app needed. Share via SMS, WhatsApp, email, or social media, and accept payments through 100+ methods - no coding required."
+                    title="Embed a secure, customizable payment button on your website and collect payments in minutes."
                     color="black"
                     size="h5"
                     weight="4"
@@ -164,7 +158,7 @@ const PaymentGateway = (): React.JSX.Element => {
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <Heading
-              title="Simplify Payments, Amplify Business"
+              title="The Best Payment Button for Businesses"
               size="h3"
               color="white"
               weight="3"
@@ -190,7 +184,7 @@ const PaymentGateway = (): React.JSX.Element => {
               >
                 {" "}
                 <Heading
-                  title="Transaction Success Rate"
+                  title="Fast"
                   color="white"
                   size="h5"
                   weight="4"
@@ -209,7 +203,7 @@ const PaymentGateway = (): React.JSX.Element => {
               >
                 {" "}
                 <Heading
-                  title="Instant Activation"
+                  title="Customizable"
                   color="white"
                   size="h5"
                   weight="4"
@@ -228,7 +222,7 @@ const PaymentGateway = (): React.JSX.Element => {
               >
                 {" "}
                 <Heading
-                  title="Real-time Monitoring"
+                  title="Secure"
                   color="white"
                   size="h5"
                   weight="4"
@@ -244,13 +238,13 @@ const PaymentGateway = (): React.JSX.Element => {
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-5`}>
             <Heading
-              title={`How to Create Payment ${space}`}
+              title={`How to Make a  ${space}`}
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`Links${space}`}
+              title={`Payment Button${space}`}
               color="equity-blue"
               size="h1"
               weight="6"
@@ -315,13 +309,13 @@ const PaymentGateway = (): React.JSX.Element => {
                 className={`flex-column justify-content-center align-items-center pb-3`}
               >
                 <Heading
-                  title={`Get Paid with a ${space}`}
+                  title={`A Click is ${space}`}
                   color="black"
                   size="h1"
                   weight="5"
                 />
                 <Heading
-                  title={`Single Link ${space}`}
+                  title={`All it Takes ${space}`}
                   color="equity-blue"
                   size="h1"
                   weight="5"
@@ -331,16 +325,16 @@ const PaymentGateway = (): React.JSX.Element => {
 
             <AllInOnePolicy
               icon={greenIcon}
-              title="Quick and Easy Setup"
-              description="Generate payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
+              title="Setup in under 5 minutes"
+              description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
               image={paymentLinkImage}
               buttonUrl="/sales/?source=expense_management"
             />
 
             <AllInOnePolicy
               icon={greenIcon}
-              title="No Website Required"
-              description="EnKash Payment Links are perfect for businesses without an online presence. Collect payments via SMS, WhatsApp, email, or social media, eliminating the need for a website or app. This solution bridges the gap between offline and online payment experiences seamlessly."
+              title="Ctrl C + Ctrl V = Payment Ready"
+              description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
               image={shareImage}
               buttonUrl="/sales/?source=expense_management"
               reverse
@@ -348,26 +342,36 @@ const PaymentGateway = (): React.JSX.Element => {
 
             <AllInOnePolicy
               icon={greenIcon}
-              title="100+ Payment Options"
-              description="Offer your customers the flexibility to pay using their preferred method, including UPI, net banking, credit/debit cards, wallets, and more. EnKash Payment Links ensure a smooth checkout experience for everyone, boosting customer satisfaction and increasing conversions"
+              title="Accept Payments Anytime, Anywhere"
+              description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
               image={paymentOptionImage}
               buttonUrl="/sales/?source=expense_management"
             />
 
             <AllInOnePolicy
               icon={greenIcon}
-              title="Real-Time Notifications"
-              description="Stay in the loop with instant alerts for every successful payment. Gain better control and visibility into your transactions, enabling faster decision-making and improved financial management. Receive updates across all devices to keep your operations running smoothly."
+              title="Match Your Style"
+              description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
               image={notificationImage}
               buttonUrl="/sales/?source=expense_management"
               reverse
             />
+
             <AllInOnePolicy
               icon={greenIcon}
-              title="Secure Transactions"
-              description="Built on a foundation of PCI DSS compliance and advanced encryption protocols, EnKash Payment Links ensure every transaction is safe and secure. Protect sensitive customer data while providing a trustworthy payment experience, strengthening customer confidence in your business."
+              title="Optimized for the Mobile"
+              description="Designed for optimal performance on all devices. Provide a seamless payment experience for users of smartphones, tablets, or desktops, catering to the growing mobile commerce trends."
               image={secureImage}
               buttonUrl="/sales/?source=expense_management"
+            />
+
+            <AllInOnePolicy
+              icon={greenIcon}
+              title="Don’t Compromise on Security"
+              description="Industry-leading security and compliance standards ensure safe payments. Protect your customers’ data with advanced encryption and fraud detection, building trust and credibility for your business."
+              image={notificationImage}
+              buttonUrl="/sales/?source=expense_management"
+              reverse
             />
           </div>
         </div>
@@ -378,23 +382,30 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className={`${styles.title} text-start pb-5`}>
             <div>
               <Heading
-                title={`Payment Link Features to ${space}`}
+                title={`A ${space}`}
                 color="black"
                 size="h1"
                 weight="6"
               />
+              <Heading
+                title={`Button for Every   ${space}`}
+                color="equity-blue"
+                size="h1"
+                weight="6"
+              />
             </div>
-            <Heading
-              title={`Empower Your Business ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
+
             <div>
               <Heading
-                title={`EnKash - The Financial Ecosystem Enabler${space}`}
-                color="dark-grey"
-                size="h3"
+                title={`Payment    ${space}`}
+                color="equity-blue"
+                size="h1"
+                weight="6"
+              />
+              <Heading
+                title={`Need ${space}`}
+                color="black"
+                size="h1"
                 weight="6"
               />
             </div>
@@ -409,60 +420,11 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.sixth_row} row d-flex bg-white `}>
-        <EnkashWay
-          sectionHeading="Payment Link for All Businesses -"
-          secondHeading="Accept Payments Anywhere, Anytime"
-          progressData={[
-            {
-              itemArray: ["Invoicing and Billing"],
-              title: "Invoicing and Billing",
-              description:
-                "No more scattered subscriptions, remote reimbursements, and cloud tool audits. Centralize expenses, automate approvals, and get real-time visibility. Empowering your finance team to stay agile without slowing down your product or people.",
-              icon: itIcon,
-              bgImage: bg1,
-            },
-            {
-              itemArray: ["E-commerce & Retail"],
-              title: "E-commerce & Retail",
-              description:
-                "Forget about juggling vendor payouts, branch-level expenses, and seasonal budgets. Track spends across warehouses and storefronts, enforce policies by category, and simplify GST reporting - all while scaling faster with total financial control.",
-              icon: ecoomerceIcon,
-              bgImage: bg2,
-            },
-            {
-              itemArray: ["Manufacturing"],
-              title: "Manufacturing",
-              description:
-                "Do away with manual approvals, unclear plant-level spends, and poor budget tracking. Get control over every rupee - from raw material procurement to field reimbursements - ensuring compliance and audit-readiness across your supply chain.",
-              icon: manufactureIcon,
-              bgImage: bg3,
-            },
-            {
-              itemArray: ["Logistics & Supply Chain"],
-              title: "Logistics & Supply Chain",
-              description:
-                "Do not lose visibility into fleet expenses, fuel claims, or vendor payments. EnKash EMS connects your expense data with real-time dashboards, automates reconciliations, and flags policy breaches instantly, allowing your operations to run lean and accountable.",
-              icon: logisticIcon,
-              bgImage: bg4,
-            },
-            {
-              itemArray: ["Consulting & Services"],
-              title: "Consulting & Services",
-              description:
-                "Eliminate consultants' overspending, misreporting, or delay in claims. Enjoy fast, mobile-first submissions, real-time approvals, and project-wise expense tagging. Keep clients happy, costs transparent, and your margins intact.",
-              icon: consultancyIcon,
-              bgImage: bg5,
-            },
-          ]}
-        />
-      </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <Heading
-              title="Ready to simplify your payments?"
+              title="Ready to design your payment button?"
               size="bannerHeading"
               color="white"
               weight="4"
@@ -544,7 +506,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
+                description="Seamlessly collect payments with no-code solutions."
                 cardImage={paymentLink}
               />
             </div>
@@ -552,15 +514,15 @@ const PaymentGateway = (): React.JSX.Element => {
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Payment Page"
-                description="Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online."
+                description="Create stunning, branded checkout experiences in minutes."
                 cardImage={paymentPage}
               />
             </div>
 
             <div className="col-12 col-md-4">
               <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
+                titleHtml="Payment Link"
+                description="Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links."
                 cardImage={paymentButton}
               />
             </div>
@@ -600,7 +562,7 @@ const PaymentGateway = (): React.JSX.Element => {
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
+                description="Automate your collections and say goodbye to manual reminders."
                 cardImage={reminder}
               />
             </div>

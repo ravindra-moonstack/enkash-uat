@@ -4,13 +4,22 @@ import React, { useRef } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import Image from "next/image"
-import { slideUpData } from "../products/corporate-cards/data"
-import styles from "./page.module.scss"
-import { Heading } from "@/components"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+
+import styles from "./page.module.scss" // If you’re using SCSS modules
+
+import { greenIcon, notificationImage } from "../payment-button"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 
 gsap.registerPlugin(ScrollTrigger)
+
+const cardsData = [
+  { color: "#Ffff", text: "Header 3" },
+  { color: "#ffff", text: "Header 2" },
+  { color: "#ffff", text: "Header 1" },
+  { color: "#Ffff", text: "Header 3" },
+  { color: "#ffff", text: "Header 2" },
+  { color: "#ffff", text: "Header 1" },
+]
 
 const CardStacking: React.FC = () => {
   const cardsRef = useRef<HTMLDivElement[]>([])
@@ -45,7 +54,7 @@ const CardStacking: React.FC = () => {
         pin: true,
         pinSpacing: false,
         scrub: true,
-        markers: true,
+        markers: false,
         animation: scaleDown,
         toggleActions: "restart none none reverse",
       })
@@ -57,7 +66,7 @@ const CardStacking: React.FC = () => {
   }, [])
 
   return (
-    <div className="bg-black p-5">
+    <div>
       <section className={styles.spacer} />
 
       <section className={styles.cardStacking}>
@@ -65,58 +74,30 @@ const CardStacking: React.FC = () => {
           <div className="row justify-content-center">
             <div className="col-12">
               <div className={styles.cards}>
-                {slideUpData.map((card, index) => (
+                {cardsData.map((card, index) => (
                   <div
                     key={index}
                     className={`${styles.stackCard} d-flex align-items-center justify-content-between`}
+                    style={{
+                      backgroundColor: card.color,
+                      border: "2px solid black",
+                    }}
                     ref={(el) => {
                       if (el) cardsRef.current[index] = el
                     }}
                   >
-                    <div className={`row ${styles.body}`}>
-                      <div className="d-flex col-12 col-md-6 align-items-start gap-3 p-3">
-                        <div
-                          className="d-flex justify-content-center align-items-center bg-light rounded-circle"
-                          style={{ width: "55px", height: "55px" }}
-                        >
-                          <Image
-                            src={card.icon}
-                            alt="icon"
-                            width={30}
-                            height={30}
-                          />
-                        </div>
-                        <div className="d-flex flex-column gap-3">
-                          <Heading
-                            title={card.title}
-                            color="black"
-                            size="h4"
-                            weight="5"
-                          />
-                          <Heading
-                            title={card.description}
-                            color="black"
-                            size="h5"
-                            weight="4"
-                          />
-                          <div className="mt-5">
-                            <RectangleButton
-                              title="Get started today"
-                              theme="border-gray"
-                              iconSize={15}
-                              url="/sales/?source=receivables"
-                            />
-                          </div>
-                        </div>
-                      </div>
+                    <div className="stackCard__body w-100 d-flex align-items-center justify-content-between">
+                      <span className="stackCard__body-content-header d-block">
+                        {card.text}
+                      </span>
 
-                      <div
-                        className={`pb-2 col-12 col-md-6 ${styles.imageContainer}`}
-                      >
-                        <div className={styles.inner}>
-                          <Image fill src={card.src} alt="image" />
-                        </div>
-                      </div>
+                      <AllInOnePolicy
+                        icon={greenIcon}
+                        title="Match Your Style"
+                        description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
+                        image={notificationImage}
+                        buttonUrl="/sales/?source=expense_management"
+                      />
                     </div>
                   </div>
                 ))}

@@ -1,0 +1,18 @@
+@use "../../styles/variables" as *;
+@use "../../styles/mixin" as *;
+.cardStacking {
+  overflow: hidden;
+  padding: 60px 0;
+  min-height: 100vh;
+
+  .stackCard {
+    border-radius: 12px;
+    position: relative;
+    width: 100%;
+    min-height: 450px;
+    padding: 60px 35px;
+    transform-origin: 50% -160%;
+    border-top: 5px solid #d9d9d9;
+    background-color: $color-white;
+  }
+}

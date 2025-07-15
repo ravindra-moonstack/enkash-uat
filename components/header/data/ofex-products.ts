@@ -34,11 +34,11 @@ const xpenzProducts = [
             link: "/budget-and-advances",
           },
           {
-            name: "Policy and Approval Flows",
-            description: "Custom workflows for every expense",
-            imageSrc: budgetAndAndvances,
-            imageSrcHovered: budgetAndAndvancesFilled,
-            link: "/approval-flows",
+            name: "Petty Cash",
+            description: "Digitize branch-level petty spends",
+            imageSrc: pettyCash,
+            imageSrcHovered: pettyCash,
+            link: "/petty-cash",
           },
           {
             name: "Hierarchy and Controls",
@@ -46,6 +46,13 @@ const xpenzProducts = [
             imageSrc: hierarchyAndControls,
             imageSrcHovered: hierarchyAndControlsFilled,
             link: "/hierarchy-and-controls",
+          },
+          {
+            name: "Insights",
+            description: "Real-time spend visibility, analytics",
+            imageSrc: insights,
+            imageSrcHovered: insightsFilled,
+            link: "/expense-analytics-and-insights",
           },
 
           {
@@ -56,25 +63,19 @@ const xpenzProducts = [
             link: "/reimbursements",
           },
           {
+            name: "Policy and Approval Flows",
+            description: "Custom workflows for every expense",
+            imageSrc: budgetAndAndvances,
+            imageSrcHovered: budgetAndAndvancesFilled,
+            link: "/approval-flows",
+          },
+
+          {
             name: "Scan and Drop Receipts",
             description: "Fast claims, zero policy gaps",
             imageSrc: scanAndDrop,
             imageSrcHovered: scanAndDropFilled,
             link: "/receipts",
-          },
-          {
-            name: "Petty Cash",
-            description: "Digitize branch-level petty spends",
-            imageSrc: pettyCash,
-            imageSrcHovered: pettyCash,
-            link: "/petty-cash",
-          },
-          {
-            name: "Insights",
-            description: "Real-time spend visibility, analytics",
-            imageSrc: insights,
-            imageSrcHovered: insightsFilled,
-            link: "/expense-analytics-and-insights",
           },
         ],
         footerText: "Optimize business spends efficiently",

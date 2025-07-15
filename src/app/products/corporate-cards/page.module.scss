@@ -380,3 +380,14 @@
     }
   }
 }
+
+.card_stacking_row {
+  .section {
+    padding: 36px;
+ background: #A5A5A51A;
+
+    @include for-laptops {
+      padding: 122px 54px 89px 54px;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { blogsFilled, casestudies, vedioFilled, whitepaperFilled } from ".."
+import { blogsFilled, casestudies, vedioFilled } from ".."
 
 const resourseProducts = [
   {
@@ -27,12 +27,7 @@ const resourseProducts = [
             imageSrcHovered: casestudies,
             link: "https://www.enkash.com/resources/media-coverage/",
           },
-          {
-            name: "Whitepapers",
-            description: "Deep dive into fintech trends",
-            imageSrcHovered: whitepaperFilled,
-            link: "https://www.enkash.com/resources/customer-stories/",
-          },
+
           {
             name: "Videos",
             description: "Stories, solutions, and demos",

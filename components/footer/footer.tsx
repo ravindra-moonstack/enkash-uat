@@ -225,8 +225,7 @@ const FooterV2 = () => {
                     regulated entities. EnKash is not a bank and does not hold
                     or claim to hold a banking license.{" "}
                     <div className="color-alternate-grey">
-                      *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s
-                      PA (Online) authorization.
+                      *Powered by Banks/REs. 
                     </div>
                   </div>
                 </div>

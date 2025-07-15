@@ -1,112 +1,118 @@
 const faqData = [
- {
-    question: "What is a Payment Link?",
-    answer: [
-      {
-        heading:
-          "Payment Link is a secure, no-code solution that allows businesses to collect payments quickly and easily across platforms like WhatsApp, SMS, email, and social media. Simply share the link, and your customers can make payments instantly.",
-      },
-    ],
-  },
-  {
-    question: "What are the benefits of Payment Links for a business?",
-    answer: [
-      {
-        heading:
-          "Utilizing payment links is simple and versatile. They can be shared through various communication channels, including email, messaging apps, social media, and websites. Customers only need to click on the link and enter their payment details. The payment is then securely processed and transferred to your account, ensuring a smooth and efficient payment experience.",
-      },
-    ],
-  },
-  {
-    question: "What can I do with a payment link sent through EnKash platform?",
-    answer: [
-      {
-        heading:
-          "It offers a wide range of capabilities, providing businesses the means to collect payments quickly and securely. They enhance the convenience of online payment processes, streamline payment tracking, and significantly contribute to maintaining a healthy cash flow. These multifaceted links empower your business with efficient tools for hassle-free payment collections and management.",
-      },
-    ],
-  },
-  {
-    question: "How can I send a payment link?",
-    answer: [
-      {
-        heading:
-          "Sending a payment link is a breeze. You can distribute these links through various digital platforms, including email, messaging apps, social media, and websites. This versatility ensures that your customers can easily access and utilize payment links, making it a convenient and efficient way to receive payments.",
-      },
-    ],
-  },
-  {
-    question: "Are payment links safe?",
-    answer: [
-      {
-        heading:
-          "Yes, EnKash prioritizes security. We employ secure encryption and robust security measures to safeguard sensitive payment information. This protects your business and ensures the security of your customers' data, mitigating the risk of fraud and guaranteeing safe and reliable transactions.",
-      },
-    ],
-  },
-  {
-    question: "Why is online payment tracking important?",
-    answer: [
-      {
-        heading:
-          "Online payment tracking through payment links creates a comprehensive audit trail of the entire payment process. This invaluable feature simplifies tracking and analysis, providing businesses with the tools to reconcile payments efficiently. The integrated tracking system ensures transparency and accountability in your payment collections.",
-      },
-    ],
-  },
-  {
-    question: "How do payment links improve cash flow for businesses?",
-    answer: [
-      {
-        heading:
-          "Payment links significantly enhance cash flow by expediting payment collections and processing. They simplify the customer payment process, reducing the time it takes to receive and record payments. This improved efficiency ensures that your business maintains a consistently healthy cash flow, ultimately contributing to financial stability and growth.",
-      },
-    ],
-  },
+   {
+      question: "What is a payment button?",
+      answer: [
+        {
+          heading:
+            "A simple tool that allows you to collect payments on your website without redirects or complex integrations.",
+        },
+      ],
+    },
+    {
+      question: "How does the EnKash payment button work?",
+      answer: [
+        {
+          heading:
+            "Simply copy and paste the provided code snippet onto your website or blog.",
+        },
+        {
+          heading:
+            "The button will appear on your page, allowing customers to make payments easily and securely.",
+        },
+        {
+          heading:
+            "EnKash handles the entire payment process, from capturing customer information to processing the transaction.",
+        },
+      ],
+    },
+    {
+      question:
+        "Can I accept international payments with the EnKash payment button?",
+      answer: [
+        {
+          heading: "Yes, EnKash payment buttons support international payments.",
+        },
+      ],
+    },
+    {
+      question: "Can I customize the payment button?",
+      answer: [
+        {
+          heading:
+            "Yes, you can customize the appearance of the payment button to match your brand's style. You can choose colors, and fonts, and even add your logo.",
+        },
+      ],
+    },
+    {
+      question: "Is EnKash payment button secure?",
+      answer: [
+        {
+          heading:
+            "Absolutely! EnKash employs industry-leading security measures, including PCI DSS compliance and advanced fraud prevention technologies, to ensure the safety of your customers.",
+        },
+      ],
+    },
+    {
+      question: "What is the cost of the payment button?",
+      answer: [
+        {
+          heading:
+            "EnKash believes in transparent pricing. Talk to our experts to get more details.",
+        },
+      ],
+    },
+    {
+      question: "What sort of customer support is available?",
+      answer: [
+        {
+          heading:
+            "EnKash payment buttons are the easiest to integrate - without any assistance.",
+        },
+        {
+          heading:
+            "However, we provide excellent customer support through various channels, including email, chat, and phone. Our team is always ready to assist you with any questions or issues.",
+        },
+        {
+          heading: "Connect with our team at support@enkash.com.",
+        },
+      ],
+    },
 ]
 
 export const SecondfaqData = [
   {
-    question: "Custom Branding",
+    question: "Quick Pay Button",
     answer: [
       {
         heading:
-          "Personalize payment links with your logo and brand colors to strengthen customer trust and reinforce your brand identity. Stand out with a professional payment experience tailored to your business.",
+          "Perfect for fixed-price payments. Designed for businesses that sell products or services at a set price",
       },
     ],
   },
   {
-    question: "Partial Payments",
+    question: "Checkout Button",
     answer: [
       {
         heading:
-          "Let customers pay in parts, offering flexibility for high-ticket items or services. Boost conversions by making payments more manageable and appealing to a wider audience.",
+          "Sell multiple items with ease. Tailored for e-commerce businesses to allow customers to select multiple items and quantities effortlessly",
       },
     ],
   },
   {
-    question: "Bulk Upload",
+    question: "Donate Button",
     answer: [
       {
         heading:
-          "Generate multiple payment links at once by uploading a simple CSV file. Perfect for businesses handling batch invoicing or recurring payment needs.",
+          "Let supporters contribute their desired amount. Ideal for NGOs and charitable organizations, allowing supporters to contribute any amount they wish.",
       },
     ],
   },
   {
-    question: "Webhooks and APIs",
+    question: "Custom Button",
     answer: [
       {
         heading:
-          "Automate payment processes and integrate seamlessly with your existing systems. Get real-time updates and ensure smooth operational workflows.",
-      },
-    ],
-  },
-  {
-    question: "Dashboard Insights",
-    answer: [
-      {
-        heading:
-          "Monitor your payment trends, track revenues, and optimize cash flow with detailed analytics and reports. Make smarter financial decisions effortlessly.",
+          "Add advanced options for tailored use cases. Perfect for businesses with unique payment needs. This button can be configured to match your exact requirements.",
       },
     ],
   },
