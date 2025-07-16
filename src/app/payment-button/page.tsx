@@ -53,7 +53,7 @@ import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
 
 const showScroll = cardsData.length > 3
 
-const PaymentGateway = (): React.JSX.Element => {
+const PaymentButton = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -106,7 +106,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   />
                 </div>
 
-                <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
+                <div className="d-flex mt-3 mb-3  text-center text-md-start ">
                   <Heading
                     title="Embed a secure, customizable payment button on your website and collect payments in minutes."
                     color="black"
@@ -244,7 +244,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
             <Heading
               title={`How to Make a  ${space}`}
               color="black"
@@ -285,7 +285,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-5">
+              <div className="m-md-5 m-2">
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
@@ -311,7 +311,7 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div
-                className={`flex-column justify-content-center align-items-center pb-3`}
+                className={`flex-column justify-content-center align-items-center pb-md-3`}
               >
                 <Heading
                   title={`A Click is ${space}`}
@@ -455,7 +455,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
             <Heading
               title={`Frequently Asked Questions  ${space}`}
               color="black"
@@ -586,4 +586,4 @@ const PaymentGateway = (): React.JSX.Element => {
   )
 }
 
-export default PaymentGateway
+export default PaymentButton

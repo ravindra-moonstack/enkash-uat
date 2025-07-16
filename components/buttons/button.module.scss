@@ -143,10 +143,10 @@
 }
 
 .rectangle_button {
-  border-radius: 12px;
+  border-radius: 8px;
   border: none;
-  padding: 8px 20px;
-  font-size: 16px;
+  padding: 6px 10px;
+  font-size: 14px;
   font-weight: 500;
   transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
   @include for-laptops {

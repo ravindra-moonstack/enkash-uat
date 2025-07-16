@@ -57,10 +57,11 @@ import bg5 from "./img/bg5.jpg"
 
 const showScroll = cardsData.length > 3
 
-const PaymentGateway = (): React.JSX.Element => {
+const PaymentLink = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
+      
       <TalkToSales />
 
       <div className={`${styles.first_row} `}>
@@ -273,9 +274,8 @@ const PaymentGateway = (): React.JSX.Element => {
                     key={i}
                     style={{
                       direction: "ltr",
-                    
                     }}
-                        className={styles.scrollCard}
+                    className={styles.scrollCard}
                   >
                     <PolicyCard
                       icon={icon}
@@ -627,4 +627,4 @@ const PaymentGateway = (): React.JSX.Element => {
   )
 }
 
-export default PaymentGateway
+export default PaymentLink

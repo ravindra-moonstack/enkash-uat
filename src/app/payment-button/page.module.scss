@@ -203,9 +203,7 @@
 }
 
 .fourth_row {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
+  padding: 36px;
   @include for-laptops {
     padding: 0px 90px 53px 90px;
   }
@@ -214,11 +212,12 @@
     padding-right: 150px;
   }
   .section {
-    gap: 70px;
+    gap: 32px;
     padding: 18px;
     background-color: $color-sky-hint;
     @include for-laptops {
       padding: 53px 88px;
+      gap: 70px;
     }
   }
 }
@@ -338,15 +337,16 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding-bottom: 50px;
-  padding-top: 50px;
+  padding: 36px;
 
   @include for-laptops {
     padding-top: 138px;
   }
 
   .faqSection {
-    width: 70%;
+    @include for-laptops {
+      width: 70%;
+    }
   }
 
   .faq_bg {
