@@ -148,6 +148,7 @@
   padding: 6px 10px;
   font-size: 14px;
   font-weight: 500;
+  line-height: 150%;
   transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
   @include for-laptops {
     padding: 8px 20px;
@@ -166,6 +167,7 @@
   &.blue {
     background-color: $color-equity-blue;
     color: $color-white;
+    border: 2px solid $color-equity-blue;
     transition: background-color 0.6s ease, color 0.6s ease,
       box-shadow 0.6s ease;
 
@@ -177,6 +179,7 @@
 
   &.green {
     background-color: $color-electric-green;
+    border: 2px solid $color-electric-green;
     color: $color-black;
     transition: background-color 0.6s ease, color 0.6s ease,
       box-shadow 0.6s ease;
@@ -188,6 +191,7 @@
 
   &.black {
     background-color: $color-black;
+    border: 2px solid $color-black;
     color: white;
     &:hover {
       background-color: $color-white;
