@@ -5,7 +5,6 @@ import styles from "./page.module.scss"
 import { cardType, intantActionData } from "./data"
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 import {
-
   blueArrow,
   whiteArrow,
   mealCardImage,
@@ -49,7 +48,7 @@ const FuelCards = (): React.JSX.Element => {
               weight="4"
               underline
             />
-            <div className="d-flex  flex-column justify-content-center align-items-center">
+            <div className="d-flex  flex-column text-center">
               <Heading
                 title="Transforming Fuel Expense Management with"
                 color="black"
@@ -105,23 +104,19 @@ const FuelCards = (): React.JSX.Element => {
 
       <div className={`${styles.action_row} bg-white row-padding `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <div
-              className={` flex-column justify-content-center align-items-center pb-3 `}
-            >
-              <Heading
-                title={`Steps to Manage Employee  ${space}`}
-                color="black"
-                size="h1"
-                weight="5"
-              />
-              <Heading
-                title={`Fuel Costs `}
-                color="equity-blue"
-                size="h1"
-                weight="5"
-              />
-            </div>
+          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+            <Heading
+              title={`Steps to Manage Employee  ${space}`}
+              color="black"
+              size="h1"
+              weight="5"
+            />
+            <Heading
+              title={`Fuel Costs `}
+              color="equity-blue"
+              size="h1"
+              weight="5"
+            />
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
             <div className="col-md-6 col-12 px-md-5">
@@ -195,7 +190,7 @@ const FuelCards = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-3 pb-md-5`}>
             <Heading
               title={`Frequently Asked Questions  ${space}`}
               color="black"

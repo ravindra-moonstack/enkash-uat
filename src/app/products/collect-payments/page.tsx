@@ -58,7 +58,7 @@ const CollectPayment = (): React.JSX.Element => {
               linkColor="white"
             />
           </div>
-          <div className="col-12 d-flex flex-column justify-content-center align-items-center">
+          <div className="col-12 d-flex flex-column text-center">
             <Heading
               title="Accept Payments the Smarter Way with EnKash"
               color="white"
@@ -76,7 +76,7 @@ const CollectPayment = (): React.JSX.Element => {
               />
             </div>
 
-            <div className="mt-5">
+            <div className="mt-md-5 mt-3">
               <RectangleButton
                 title="Talk to us"
                 theme="blue"
@@ -104,7 +104,9 @@ const CollectPayment = (): React.JSX.Element => {
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
-          <div className={`${styles.second_row_title} text-center pb-5`}>
+          <div
+            className={`${styles.second_row_title} text-center pb-4 pb-md-5`}
+          >
             <Heading
               title={`Built for CFOs, Loved by Teams ${space}`}
               color="white"
@@ -248,48 +250,13 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      {/* <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
-            <Heading
-              title={`Choose   ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`the Right Card  ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading
-              title="for Every Use Case"
-              color="black"
-              size="h1"
-              weight="5"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
       <div className={styles.fifth_row}>
         <div className={`max-w-auto  ${styles.section}`}>
           <div className="row align-items-center">
             <div className="col-12 col-md-6">
-              <div className={`${styles.title} text-start pb-5`}>
+              <div
+                className={`${styles.title} text-center text-md-start pb-md-5 pb-3`}
+              >
                 <div>
                   <Heading
                     title={`Why Wait? Unlock${space}`}
@@ -312,7 +279,7 @@ const CollectPayment = (): React.JSX.Element => {
                   "Get immediate access to your funds after each transaction, minimizing cash flow delays, improving business liquidity, and ensuring better financial planning while enabling seamless operations with real-time settlement capabilities."
                 }
               />
-              <div className={`mt-4 ${styles.list_button}`}>
+              <div className={`m-4 ${styles.list_button}`}>
                 <RectangleButton
                   title="Try Now"
                   theme="border-gray"
@@ -326,11 +293,15 @@ const CollectPayment = (): React.JSX.Element => {
               <Image src={instantSettelmentImg} alt="background image" />
             </div>
           </div>
-          <div className="row align-items-center">
-            <div className="col-12 col-md-6">
+
+          <div className="row align-items-center pt-4 ">
+            {/* On mobile: order-2, on md+: order-1 */}
+            <div className="col-12 col-md-6 order-2 order-md-1">
               <Image src={affordabilityImg} alt="background image" />
             </div>
-            <div className="col-12 col-md-6">
+
+            {/* On mobile: order-1, on md+: order-2 */}
+            <div className="col-12 col-md-6 order-1 order-md-2">
               <PolicyCard
                 icon={affordabilityIcon}
                 title={"Affordability Suite"}
@@ -338,7 +309,7 @@ const CollectPayment = (): React.JSX.Element => {
                   "Empower customers with flexible payment options such as EMI and pay-later solutions, making high-value transactions more accessible while improving purchasing power and boosting sales for businesses."
                 }
               />
-              <div className={`mt-4 ${styles.list_button}`}>
+              <div className={`m-4 ${styles.list_button}`}>
                 <RectangleButton
                   title="Try Now"
                   theme="border-gray"

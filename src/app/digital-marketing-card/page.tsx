@@ -2,16 +2,11 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import {
-  cardType,
-  intantActionData,
-  spendAnalyticsData,
-} from "./data"
+import { cardType, intantActionData, spendAnalyticsData } from "./data"
 
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
 import {
-
   blueArrow,
   whiteArrow,
   mealCardImage,
@@ -30,8 +25,6 @@ import CardProduct from "@/components/card-product/card-product"
 import StepCard from "@/components/stepCard/stepCard"
 import PolicyCard from "@/components/policyCard/policyCard"
 
-// const showScroll = cardsData.length > 3
-// const mergedCards = allProductSections.flatMap((section) => section.items)
 const DigitalMarketingCard = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -59,7 +52,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
               weight="4"
               underline
             />
-            <div className="d-flex  flex-column justify-content-center align-items-center">
+            <div className="d-flex  flex-column text-center">
               <Heading
                 title="Take Control of Your Marketing Budget with a "
                 color="black"
@@ -173,7 +166,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
+
       <div className={`${styles.second_row} `}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-2 pb-md-5`}>

@@ -5,6 +5,7 @@ import styles from "./how-does-it-work.module.scss"
 import Image from "next/image"
 import blueArrow from "./blue-arrrow.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import { whiteArrow } from "../all-in-one-policy"
 
 interface howDoesItWorkProps {
   dataSets: any
@@ -36,7 +37,7 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
           {" "}
           <div className={`row`}>
             <div className="col-md-6 col-12">
-              <div className="mt-md-5 mt-3 mb-3 d-flex flex-column flex-md-row">
+              <div className="mt-md-5 mt-3 mb-3 d-flex gap-3 gap-md-0 flex-md-row">
                 {dataSets[currentData].iconSrc ? (
                   <Image
                     src={dataSets[currentData].iconSrc}
@@ -51,11 +52,12 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
                   <div className={styles.subtitle}>
                     {dataSets[currentData].subtitle}
                   </div>
-                  <div className="mt-5 ">
+                  <div className="mt-3 mt-md-5 ">
                     <RectangleButton
                       title="Try Now"
                       theme="border-black"
                       actionImage={blueArrow}
+                      hoverImage={whiteArrow}
                       iconSize={15}
                       url="/sales/?source=receivables"
                     />

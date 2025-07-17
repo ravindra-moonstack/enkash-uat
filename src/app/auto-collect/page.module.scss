@@ -7,8 +7,8 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 90px;
   padding-bottom: 36px;
   background-image: url(./img/first-row-bg.svg);
@@ -78,7 +78,7 @@
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -150,7 +150,7 @@
 
 .third_row {
   width: 100%;
-  padding: 32px;
+  padding: 20px;
 
   @include for-laptops {
     padding: 70px 90px;
@@ -207,7 +207,7 @@
 }
 
 .fourth_row {
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding: 0px 90px 53px 90px;
   }
@@ -227,7 +227,7 @@
 }
 
 .sixth_row {
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding: 84px 90px 51px 90px;
   }
@@ -254,7 +254,7 @@
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding: 58px;
   }
@@ -308,7 +308,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 20px;
 
   @include for-laptops {
     padding-top: 138px;
@@ -337,7 +337,7 @@
 
 .ninth_row {
   position: relative;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -385,7 +385,7 @@
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
 
   position: relative;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -399,7 +399,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }
@@ -425,7 +425,7 @@
 
 .other_products {
   background-color: white;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding: 0px 90px 90px 90px;
   }

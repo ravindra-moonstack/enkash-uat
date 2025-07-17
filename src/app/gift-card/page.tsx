@@ -59,7 +59,7 @@ const VirtualCards = (): React.JSX.Element => {
               weight="4"
               underline
             />
-            <div className="d-flex  flex-column justify-content-center align-items-center">
+            <div className="d-flex  flex-column text-center">
               <Heading
                 title="Build a culture of recognition with "
                 color="black"
@@ -114,7 +114,9 @@ const VirtualCards = (): React.JSX.Element => {
       </div>
       <div className={styles.second_row}>
         <div className="max-m-auto">
-          <div className={`${styles.second_row_title} text-center pb-5`}>
+          <div
+            className={`${styles.second_row_title} text-center pb-3 pb-md-5`}
+          >
             <Heading
               title={`Best Gift Cards Online ${space}`}
               color="white"

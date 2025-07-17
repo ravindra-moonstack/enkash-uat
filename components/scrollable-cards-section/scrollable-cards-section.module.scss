@@ -1,0 +1,18 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+
+.scrollCard {
+  margin-left: 10px;
+  margin-bottom: 20px;
+
+  @include for-laptops {
+    margin-left: 20px;
+    margin-bottom: 50px;
+  }
+}
+.scrollCardButton {
+  margin-left: 10px;
+  @include for-laptops {
+    margin-left: 42px;
+  }
+}

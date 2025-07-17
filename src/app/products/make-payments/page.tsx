@@ -168,10 +168,7 @@ const PaymentPage = (): React.JSX.Element => {
                 image={paymentLinkImage}
                 buttonUrl="/vendor-payment"
                 maxImageHeight="264px"
-                buttonTheme="blue"
                 buttonText="Explore Vendor Payments"
-                buttonActionIcon={whiteArrow}
-                buttonHoverIcon={whiteArrow}
               />
 
               <AllInOnePolicy
@@ -181,10 +178,7 @@ const PaymentPage = (): React.JSX.Element => {
                 image={shareImage}
                 buttonUrl="/rental-payments"
                 maxImageHeight="305px"
-                buttonTheme="blue"
                 buttonText="Explore Rental Payments"
-                buttonActionIcon={whiteArrow}
-                buttonHoverIcon={whiteArrow}
                 reverse
               />
 
@@ -194,10 +188,7 @@ const PaymentPage = (): React.JSX.Element => {
                 description="Never miss a utility payment again. Schedule electricity, internet, phone, and other bills with smart reminders and approvals. EnKash keeps you organized, audit-ready, and always on top of your bills."
                 image={paymentOptionImage}
                 buttonUrl="/bill-payments"
-                buttonTheme="blue"
                 buttonText="Explore Bill Payments"
-                buttonActionIcon={whiteArrow}
-                buttonHoverIcon={whiteArrow}
                 maxImageHeight="264px"
               />
 
@@ -207,10 +198,7 @@ const PaymentPage = (): React.JSX.Element => {
                 description="Make mass payouts to vendors, freelancers, gig workers, and more — instantly, through your preferred payment mode. Upload once, disburse in one click. It’s payout efficiency, redefined for scale."
                 image={notificationImage}
                 buttonUrl="/bulk-payouts"
-                buttonTheme="blue"
                 buttonText="Explore Bulk Payouts"
-                buttonActionIcon={whiteArrow}
-                buttonHoverIcon={whiteArrow}
                 maxImageHeight="264px"
                 reverse
               />
@@ -221,10 +209,7 @@ const PaymentPage = (): React.JSX.Element => {
                 description="Ensure timely and compliant tax payments without the manual load. Automate GST and statutory dues with proper documentation, built-in checks, and a clear audit trail. Stay compliant and stress-free."
                 image={optimizedImg}
                 buttonUrl="/gst-payments"
-                buttonTheme="blue"
                 buttonText="Explore GST Payments"
-                buttonActionIcon={whiteArrow}
-                buttonHoverIcon={whiteArrow}
                 maxImageHeight="259px"
               />
 
@@ -234,10 +219,7 @@ const PaymentPage = (): React.JSX.Element => {
                 description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
                 image={secureImage}
                 buttonUrl="/explore-payroll"
-                buttonTheme="blue"
                 buttonText="Explore Payroll"
-                buttonActionIcon={whiteArrow}
-                buttonHoverIcon={whiteArrow}
                 maxImageHeight="264px"
                 reverse
               />
@@ -248,10 +230,7 @@ const PaymentPage = (): React.JSX.Element => {
                 description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
                 image={invoiceImg}
                 buttonUrl="/invoice-management"
-                buttonTheme="blue"
                 buttonText="Explore Invoice Management"
-                buttonActionIcon={whiteArrow}
-                buttonHoverIcon={whiteArrow}
                 maxImageHeight="279px"
               />
             </div>
