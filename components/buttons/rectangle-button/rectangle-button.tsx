@@ -4,17 +4,20 @@ import { useState } from "react"
 import styles from "../button.module.scss"
 import Image, { StaticImageData } from "next/image"
 
+// ✅ Extract a shared type so you can reuse it anywhere:
+export type RectangleButtonTheme =
+  | "blue"
+  | "green"
+  | "black"
+  | "outline-blue"
+  | "border-gray"
+  | "border-black"
+
 export interface ButtonProps {
   isDisabled?: boolean
   title: string
   url?: string | (() => void)
-  theme?:
-    | "blue"
-    | "green"
-    | "black"
-    | "outline-blue"
-    | "border-gray"
-    | "border-black"
+  theme?: RectangleButtonTheme
   width?: string
   actionImage?: StaticImageData | string
   iconSize?: number
@@ -26,19 +29,20 @@ const RectangleButton = ({
   isDisabled,
   title,
   url,
-  theme,
+  theme = "blue",
   width,
   actionImage,
-  iconSize = 20, // default icon size
+  iconSize = 20,
   className,
   hoverImage,
 }: ButtonProps) => {
   const [isHovered, setIsHovered] = useState(false)
+
   const handleClick = () => {
     if (typeof url === "string") {
       window.open(url, "_blank")
     } else if (typeof url === "function") {
-      url() // invoke function directly
+      url()
     }
   }
 
@@ -48,9 +52,12 @@ const RectangleButton = ({
   return (
     <button
       disabled={isDisabled}
-      className={`${styles.rectangle_button} ${theme ? styles[theme] : ""} ${
-        isDisabled ? styles.disabled : ""
-      } ${className ?? ""}`}
+      className={`
+        ${styles.rectangle_button}
+        ${theme ? styles[theme] : ""}
+        ${isDisabled ? styles.disabled : ""}
+        ${className ?? ""}
+      `}
       onClick={handleClick}
       style={{ width: width || "max-content" }}
       onMouseEnter={() => setIsHovered(true)}

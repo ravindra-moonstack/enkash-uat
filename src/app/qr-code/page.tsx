@@ -2,8 +2,8 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
-import faqData, { SecondfaqData } from "./faq-data"
+import { cardsData, paymentMethodData } from "./data"
+import faqData from "./faq-data"
 import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
@@ -23,7 +23,7 @@ import {
   shareImage,
   paymentOptionImage,
   notificationImage,
-  secureImage,
+ 
   activationIcon,
   realTimeIcon,
   optimizedIcon,
@@ -32,7 +32,7 @@ import {
   taskIconThree,
   taskIconFour,
   taskIconFive,
-  taskIconSix,
+
 } from "."
 
 import ManagementCard from "@/components/management-card/management-card"
@@ -42,18 +42,12 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import { faqBg } from "../digital-marketing-card"
-import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
+import FeatureCard from "@/components/featureCard/feature-card"
 
-// import bg1 from "./img/bg1.jpg"
-// import bg2 from "./img/bg2.jpg"
-// import bg3 from "./img/bg3.jpg"
-// import bg4 from "./img/bg4.jpg"
-// import bg5 from "./img/bg5.jpg"
 
 const showScroll = cardsData.length > 3
 
-const PaymentButton = (): React.JSX.Element => {
+const QrCode = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -70,17 +64,17 @@ const PaymentButton = (): React.JSX.Element => {
                     { name: "Home", url: "/" },
                     { name: "Collect Payments", url: "/collect-payments" },
                     {
-                      name: "Payment Button",
-                      url: "/collect-payments/payment-button",
+                      name: "QR Code",
+                      url: "/collect-payments/qr-code",
                     },
                   ]}
                 />
               </div>
               <div
-                className={`${styles.first_row_title} d-md-flex d-none flex-column flex-md-row `}
+                className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Payment Button ${space}`}
+                  title={`QR Codes${space}`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -90,25 +84,25 @@ const PaymentButton = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-flex flex-column   pt-4 pt-md-0">
+                <div className="d-flex flex-column   pt-3 pt-md-0">
                   <Heading
-                    title={`Sell smarter, not harder  ${space}`}
+                    title={`Contactless Payments ${space}`}
                     color="black"
                     size="h2"
                     weight="7"
                   />
 
                   <Heading
-                    title=" with  EnKash Payment Buttons"
+                    title=" with UPI QR Code"
                     color="black"
                     size="h2"
                     weight="7"
                   />
                 </div>
 
-                <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
+                <div className="d-flex mt-3 mb-3  text-center text-md-start ">
                   <Heading
-                    title="Embed a secure, customizable payment button on your website and collect payments in minutes."
+                    title="Generate unique QR codes to collect payments via any UPI app while tracking each transaction for your business."
                     color="black"
                     size="h5"
                     weight="4"
@@ -166,7 +160,7 @@ const PaymentButton = (): React.JSX.Element => {
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <Heading
-              title="The Best Payment Button for Businesses"
+              title="Best Online Payment Solution"
               size="h3"
               color="white"
               weight="3"
@@ -184,7 +178,7 @@ const PaymentButton = (): React.JSX.Element => {
                   color="white"
                   size="h2"
                   weight="7"
-                  useH1TagInHtml={true}
+                  // useH1TagInHtml={true}
                 />
               </div>
               <div
@@ -196,7 +190,7 @@ const PaymentButton = (): React.JSX.Element => {
                   color="white"
                   size="h5"
                   weight="4"
-                  useH1TagInHtml={true}
+                  // useH1TagInHtml={true}
                 />
               </div>
             </div>
@@ -211,11 +205,11 @@ const PaymentButton = (): React.JSX.Element => {
               >
                 {" "}
                 <Heading
-                  title="Customizable"
+                  title="Economical"
                   color="white"
                   size="h5"
                   weight="4"
-                  useH1TagInHtml={true}
+                  // useH1TagInHtml={true}
                 />
               </div>
             </div>
@@ -234,7 +228,7 @@ const PaymentButton = (): React.JSX.Element => {
                   color="white"
                   size="h5"
                   weight="4"
-                  useH1TagInHtml={true}
+                  // useH1TagInHtml={true}
                 />
               </div>
             </div>
@@ -244,16 +238,22 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
             <Heading
-              title={`How to Make a  ${space}`}
+              title={`Accepting Payments via  ${space}`}
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`Payment Button${space}`}
+              title={`QR Codes ${space}`}
               color="equity-blue"
+              size="h1"
+              weight="6"
+            />
+            <Heading
+              title={`was Never This Easy${space}`}
+              color="black"
               size="h1"
               weight="6"
             />
@@ -285,7 +285,7 @@ const PaymentButton = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-5">
+              <div className="m-md-5 m-2">
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
@@ -311,17 +311,23 @@ const PaymentButton = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div
-                className={`flex-column justify-content-center align-items-center pb-3`}
+                className={`flex-column justify-content-center align-items-center pb-md-3`}
               >
                 <Heading
-                  title={`A Click is ${space}`}
+                  title={`Why EnKash for Collecting ${space}`}
                   color="black"
                   size="h1"
                   weight="5"
                 />
                 <Heading
-                  title={`All it Takes ${space}`}
+                  title={`QR Code Payments${space}`}
                   color="equity-blue"
+                  size="h1"
+                  weight="5"
+                />
+                <Heading
+                  title={`? ${space}`}
+                  color="black"
                   size="h1"
                   weight="5"
                 />
@@ -330,103 +336,81 @@ const PaymentButton = (): React.JSX.Element => {
 
             <AllInOnePolicy
               icon={taskIconOne}
-              title="Setup in under 5 minutes"
-              description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
+              title="Generate QR codes for your business in seconds"
+              description="With EnKash QR codes, getting started is quick and easy. Generate your unique QR codes instantly through our user-friendly platform. No complicated processes or long wait times—just a few clicks, and you’re ready to accept payments, boosting efficiency for your business operations."
               image={paymentLinkImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="243"
+              maxImageHeight="243px"
             />
 
             <AllInOnePolicy
               icon={taskIconTwo}
-              title="Ctrl C + Ctrl V = Payment Ready"
-              description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
+              title="Showcase your Brand on Every QR Code"
+              description="Stand out by adding your business logo to every QR code. With custom branding, you promote trust and professionalism and reinforce your brand identity at every payment interaction. It’s a simple yet powerful way to make your business memorable."
               image={shareImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="305"
+              maxImageHeight="305px"
               reverse
             />
 
             <AllInOnePolicy
               icon={taskIconThree}
-              title="Accept Payments Anytime, Anywhere"
-              description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
+              title="Generate QR Codes for Fixed or Dynamic Amounts"
+              description="Enjoy the flexibility to generate fixed-amount codes for specific transactions or dynamic codes that allow open payments. Whether for recurring billing or flexible purchases, our solution adapts to your business needs, offering convenience for you and your customers."
               image={paymentOptionImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="268"
+              maxImageHeight="268px"
             />
 
             <AllInOnePolicy
               icon={taskIconFour}
-              title="Match Your Style"
-              description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
+              title="Real-time Reconciliation and Tracking of Financial Transactions"
+              description="Stay on top of your business finances with EnKash’s real-time transaction tracking. Our powerful dashboard provides instant updates on payments, detailed reports, and reconciliation tools, ensuring you always have clear insights into your revenue streams for efficient financial management."
               image={notificationImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259"
+              maxImageHeight="259px"
               reverse
             />
 
             <AllInOnePolicy
               icon={taskIconFive}
-              title="Optimized for the Mobile"
-              description="Designed for optimal performance on all devices. Provide a seamless payment experience for users of smartphones, tablets, or desktops, catering to the growing mobile commerce trends."
+              title="Industry Leading Encryption and Compliance Standards"
+              description="Protect your business and customer data with EnKash’s secure payment platform. Our QR codes are backed by advanced encryption and compliance with global security standards, giving you peace of mind and ensuring every transaction is safe, reliable, and trustworthy."
               image={optimizedIcon}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="221"
-            />
-
-            <AllInOnePolicy
-              icon={taskIconSix}
-              title="Don’t Compromise on Security"
-              description="Industry-leading security and compliance standards ensure safe payments. Protect your customers’ data with advanced encryption and fraud detection, building trust and credibility for your business."
-              image={secureImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259"
-              reverse
+              maxImageHeight="221px"
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.eigth_row} relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto`}>
-          <div className={`${styles.title} text-start pb-5`}>
-            <div>
-              <Heading
-                title={`A ${space}`}
-                color="black"
-                size="h1"
-                weight="6"
-              />
-              <Heading
-                title={`Button for Every   ${space}`}
-                color="equity-blue"
-                size="h1"
-                weight="6"
-              />
-            </div>
-
-            <div>
-              <Heading
-                title={`Payment    ${space}`}
-                color="equity-blue"
-                size="h1"
-                weight="6"
-              />
-              <Heading
-                title={`Need ${space}`}
-                color="black"
-                size="h1"
-                weight="6"
-              />
-            </div>
+      <div className={styles.sixth_row}>
+        <div className={` max-w-auto`}>
+          <div className={`${styles.title} text-center  pb-md-5 pb-4`}>
+            <Heading
+              title={`EnKash ${space}`}
+              color="black"
+              size="h1"
+              weight="6"
+            />
+            <Heading
+              title={` QR Code Features  ${space}`}
+              color="equity-blue"
+              size="h1"
+              weight="5"
+            />
           </div>
 
-          <div>
-            <SecondFaqHtml SecondfaqData={SecondfaqData} />
-          </div>
-          <div className={styles.faq_bg}>
-            <Image src={faqBg} alt="background image" />
+          <div className={styles.card_grid}>
+            {paymentMethodData.map(({ icon, title, description }, i) => (
+              <div key={i}>
+                <FeatureCard
+                  titleHtml={title}
+                  description={description}
+                  cardImage={icon}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -435,7 +419,7 @@ const PaymentButton = (): React.JSX.Element => {
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <Heading
-              title="Ready to design your payment button?"
+              title="Ready to simplify your collections?"
               size="bannerHeading"
               color="white"
               weight="4"
@@ -455,7 +439,7 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
             <Heading
               title={`Frequently Asked Questions  ${space}`}
               color="black"
@@ -497,7 +481,7 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-start text-md-center pb-5`}>
+          <div className={`${styles.title} text-center pb-5`}>
             <Heading
               title={`Check out our ${space}`}
               color="black"
@@ -517,40 +501,45 @@ const PaymentButton = (): React.JSX.Element => {
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Payment Gateway"
-                description="Seamlessly collect payments with no-code solutions."
+                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
                 cardImage={paymentLink}
+                linkUrl="/payment-gateway"
               />
             </div>
 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Payment Page"
-                description="Create stunning, branded checkout experiences in minutes."
+                description="Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online."
                 cardImage={paymentPage}
+                linkUrl="/payment-page"
               />
             </div>
 
             <div className="col-12 col-md-4">
               <ManagementCard
-                titleHtml="Payment Link"
-                description="Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links."
+                titleHtml="Payment Button"
+                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
                 cardImage={paymentButton}
+                linkUrl="/payment-button"
               />
             </div>
 
             <div className="col-12 col-md-4">
               <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
+                titleHtml="UPI Payments"
+                description="UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles."
                 cardImage={qrCodes}
+                linkUrl="/upi-payments"
               />
             </div>
 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
+                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
                 cardImage={autoCollect}
+                linkUrl="/auto-collect"
               />
             </div>
 
@@ -559,6 +548,7 @@ const PaymentButton = (): React.JSX.Element => {
                 titleHtml="Invoices"
                 description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
                 cardImage={invoices}
+                linkUrl="/invoices"
               />
             </div>
 
@@ -567,14 +557,16 @@ const PaymentButton = (): React.JSX.Element => {
                 titleHtml="Instant Settlement"
                 description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
                 cardImage={instant}
+                linkUrl="/instant-settlement"
               />
             </div>
 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Reminder Engine"
-                description="Automate your collections and say goodbye to manual reminders."
+                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
                 cardImage={reminder}
+                linkUrl="/reminder-engine"
               />
             </div>
           </div>
@@ -586,4 +578,4 @@ const PaymentButton = (): React.JSX.Element => {
   )
 }
 
-export default PaymentButton
+export default QrCode

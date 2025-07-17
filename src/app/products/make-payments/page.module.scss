@@ -1,0 +1,198 @@
+@use "../../../../styles/variables" as *;
+@use "../../../../styles/mixin" as *;
+
+.first_row {
+  background-color: $color-black; // set pure black
+  box-shadow: 0px 0px 77px 0px #0000001a;
+  padding-left: 36px;
+  padding-right: 36px;
+  padding-top: 87px;
+  padding-bottom: 36px;
+
+  @include for-laptops {
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 112px;
+    padding-bottom: 0px;
+  }
+  .lottie_container {
+    Img {
+      height: auto;
+      padding-top: 32px;
+      @include for-laptops {
+        height: 625px;
+        padding-top: 0px;
+      }
+    }
+  }
+}
+
+.second_row {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 36px;
+  position: relative;
+  background: linear-gradient(90deg, rgba(6, 99, 252, 0) 0%, #0663fc 100%),
+    url(./img/secongBg.png);
+
+  @include for-laptops {
+    padding: 100px 90px 90px 150px;
+  }
+
+  .section {
+    max-width: 1200px;
+    margin: auto;
+    gap: 10px;
+
+    bottom: -65px;
+    justify-content: center;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    @include for-laptops {
+      position: absolute;
+      gap: 40px;
+    }
+    .card {
+      width: 100%;
+      max-width: 200px;
+      min-width: 200px;
+      flex: 1 1 200px;
+      background: white;
+      border-radius: 12px;
+      padding: 10px;
+      gap: 10px;
+      box-shadow: 0px 20px 50px 0px #3440541a;
+      @include for-laptops {
+        max-width: 300px;
+        min-width: 200px;
+        padding: 20px;
+        gap: 20px;
+        border-radius: 20px;
+      }
+      .card_image {
+        height: 24px;
+        width: 24px;
+        @include for-laptops {
+          height: 48px;
+          width: 48px;
+        }
+      }
+    }
+  }
+}
+
+.fourth_row {
+  padding: 36px;
+  @include for-laptops {
+    padding: 150px 90px 0px 90px;
+  }
+  @include for-window-zoomed-screens {
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+  .section {
+    gap: 32px;
+    padding: 18px;
+
+    background-color: $color-sky-hint;
+    @include for-laptops {
+      gap: 70px;
+      padding: 70px 0px;
+    }
+
+    .allInOnePolicy {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      @include for-laptops {
+        padding: 53px 88px 0px 88px;
+        gap: 70px;
+      }
+    }
+  }
+}
+
+.fifth_row {
+  background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
+  border-radius: 12px;
+  position: relative;
+  padding: 36px;
+  @include for-laptops {
+    padding: 58px;
+  }
+  .get_started_button {
+    padding: 6px;
+    border: 2px solid $color-bolt-green;
+    border-radius: 12px;
+    @include for-laptops {
+      padding: 11px 14px;
+    }
+  }
+}
+
+.slider_row {
+  position: relative;
+  text-align: center;
+  padding: 36px;
+  padding-top: 0px;
+  @include for-laptops {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+}
+
+.bg-color-soft-mint {
+  background-color: $color-soft-mint;
+}
+
+.new_row {
+  background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
+
+  position: relative;
+  padding: 36px;
+  @include for-laptops {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
+.faq_new_row {
+  background-color: white;
+  position: relative;
+  display: flex;
+  text-align: center;
+  padding: 36px;
+  @include for-laptops {
+    padding: 96px 90px 90px 60px;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      bottom: 0;
+      display: none;
+      @include for-laptops {
+        display: flex;
+      }
+    }
+  }
+
+  .faqData {
+    width: 100%;
+    @include for-laptops {
+      width: 70%;
+    }
+  }
+}
+
+.other_products {
+  background-color: white;
+  padding: 36px;
+  @include for-laptops {
+    padding: 0px 90px 90px 90px;
+  }
+}

@@ -31,6 +31,8 @@
   overflow-x: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  max-width: 1000px;
+  margin: auto;
 
   &::-webkit-scrollbar {
     display: none;
@@ -49,11 +51,11 @@
 }
 
 .progress_bar {
-  height: 2px;
+  height: 1px;
   border-radius: 10px;
   background-color: #c4c4c4;
   overflow-x: auto;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
 }
 

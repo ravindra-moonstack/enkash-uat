@@ -16,7 +16,6 @@ import cards from "./img/credit-debit-cards.svg"
 import upi from "./img/upi.svg"
 import netBanking from "./img/net-banking.svg"
 import digital from "./img/digital.svg"
-import emi from "./img/emi.svg"
 import financial from "./img/financial.svg"
 import transation from "./img/transition.svg"
 import settlement from "./img/settlement.svg"
@@ -33,7 +32,7 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import { scrollIconFourth, scrollIconOne, scrollIconThree, scrollIconTwo } from "."
 
 const dataSets = [
   {
@@ -111,19 +110,24 @@ const blogData = [
 
 const cardsData = [
   {
-    title: "Create",
-    description: "Use EnKash’s intuitive dashboard to design your button",
+    title: "Generate QR Code",
+    description: "Use EnKash dashboard or API to create a QR code for your business.",
     icon: scrollIconOne,
   },
   {
-    title: "Copy",
-    description: "Generate an auto-created code tailored to your button.",
+    title: "Display and Share",
+    description: "Print it for your storefront, share it digitally, or include it on invoices.",
     icon: scrollIconTwo,
   },
   {
-    title: "Integrate",
-    description: "Paste the code on your website or blog.",
+    title: "Accept Payments",
+    description: "Customers scan the code using their preferred UPI app or wallet.",
     icon: scrollIconThree,
+  },
+  {
+    title: "Track and Reconcile",
+    description: "Automatically match payments with orders and generate detailed reports.",
+    icon: scrollIconFourth,
   },
 ]
 
@@ -156,34 +160,27 @@ const integrationData = [
 
 const paymentMethodData = [
   {
-    title: "Credit and Debit Cards:",
-    description: "Process domestic and international card payments easily.",
+    title: "Bulk QR Code Generation",
+    description: "Upload payment details in bulk using our dashboard to generate multiple QR codes instantly.",
     icon: cards,
   },
   {
-    title: "UPI (Unified Payments Interface):",
-    description:
-      "Harness the power of instant, hassle-free payments with India’s leading digital payment method.",
+    title: "Custom Split Settlements",
+    description:"Define and automate revenue sharing across branches, franchises, or departments.",
     icon: upi,
   },
   {
-    title: "Net Banking:",
-    description:
-      "Enable seamless transactions through direct integrations with over 50+ major banks.",
+    title: "Real-Time Notifications",
+    description:"Get instant updates on successful payments via email, SMS, or webhook notifications.",
     icon: netBanking,
   },
   {
-    title: "Digital Wallets:",
-    description:
-      "Accept payments through popular wallets for quicker and convenient checkouts.",
+    title: "Advanced Analytics",
+    description:"Monitor performance metrics like daily transactions, total revenue, and settlement reports from a centralized dashboard.",
     icon: digital,
   },
-  {
-    title: "EMI & PayLater:",
-    description:
-      "Empower your customers with flexible payment options like No Cost EMI and PayLater, boosting affordability and conversion rates.",
-    icon: emi,
-  },
+
+
 ]
 
 const dashboardData = [

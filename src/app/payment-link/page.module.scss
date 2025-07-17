@@ -39,7 +39,7 @@
   }
   .right_img {
     Img {
-      height: 250px;
+      height: auto;
       padding-top: 32px;
       @include for-laptops {
         height: 625px;
@@ -56,8 +56,12 @@
   }
 
   .first_row_title {
-    padding-top: 48px;
-    padding-bottom: 20px;
+    padding-top: 16px;
+    padding-bottom: 0px;
+    @include for-laptops {
+      padding-top: 48px;
+      padding-bottom: 20px;
+    }
   }
 
   .first_row_button {
@@ -203,9 +207,7 @@
 }
 
 .fourth_row {
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-bottom: 50px;
+  padding: 36px;
   @include for-laptops {
     padding: 0px 90px 53px 90px;
   }
@@ -214,17 +216,21 @@
     padding-right: 150px;
   }
   .section {
-    gap: 70px;
+    gap: 32px;
     padding: 18px;
     background-color: $color-sky-hint;
     @include for-laptops {
       padding: 53px 88px;
+      gap: 70px;
     }
   }
   .allInOnePolicyCard {
     display: flex;
     flex-direction: column;
-    gap: 72px;
+    gap: 32px;
+    @include for-laptops {
+      gap: 72px;
+    }
   }
 }
 
@@ -291,15 +297,16 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding-bottom: 50px;
-  padding-top: 50px;
+  padding: 36px;
 
   @include for-laptops {
     padding-top: 138px;
   }
 
   .faqSection {
-    width: 70%;
+    @include for-laptops {
+      width: 70%;
+    }
   }
 
   .faq_bg {

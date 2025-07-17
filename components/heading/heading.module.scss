@@ -36,8 +36,8 @@
   display: inline;
   font-size: 21px;
   margin-bottom: 0;
-  line-height: 18px;
-  letter-spacing: 0em;
+  line-height: 32px;
+  letter-spacing: -0.04em;
   @include for-laptops {
     font-size: 48px;
     line-height: 70px;

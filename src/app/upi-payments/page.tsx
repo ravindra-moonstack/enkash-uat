@@ -40,12 +40,6 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import FeatureCard from "@/components/featureCard/feature-card"
 
-// import bg1 from "./img/bg1.jpg"
-// import bg2 from "./img/bg2.jpg"
-// import bg3 from "./img/bg3.jpg"
-// import bg4 from "./img/bg4.jpg"
-// import bg5 from "./img/bg5.jpg"
-
 const showScroll = cardsData.length > 3
 
 const UpiPayments = (): React.JSX.Element => {
@@ -63,19 +57,23 @@ const UpiPayments = (): React.JSX.Element => {
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
-                    { name: "Collect Payments", url: "/collect-payments" },
                     {
-                      name: "Upi Payments ",
-                      url: "/collect-payments/upi-payments",
+                      name: "Collect Payments",
+                      url: "/produts/collect-payments",
+                    },
+                    {
+                      name: "UPI Payments ",
+                      url: "/upi-payments",
                     },
                   ]}
                 />
               </div>
+
               <div
-                className={`${styles.first_row_title} d-md-flex d-none flex-column flex-md-row `}
+                className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Upi Payments ${space}`}
+                  title={`UPI Payments ${space}`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -85,25 +83,25 @@ const UpiPayments = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-flex flex-column   pt-4 pt-md-0">
+                <div className="d-inline    pt-3 pt-md-0">
                   <Heading
-                    title={`Sell smarter, not harder  ${space}`}
+                    title={`Simplify Transactions, Accelerate   ${space}`}
                     color="black"
                     size="h2"
                     weight="7"
                   />
 
                   <Heading
-                    title=" with  EnKash Payment Buttons"
+                    title="Growth with EnKash UPI Payments"
                     color="black"
                     size="h2"
                     weight="7"
                   />
                 </div>
 
-                <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
+                <div className="d-flex mt-3 mb-3 text-center text-md-start ">
                   <Heading
-                    title="Embed a secure, customizable payment button on your website and collect payments in minutes."
+                    title="Effortless UPI payment. Whether it's BHIM, PhonePe, WhatsApp, or any UPI-supported app, experience smooth transactions without the hassle of SMS notifications or remembering VPAs."
                     color="black"
                     size="h5"
                     weight="4"
@@ -161,7 +159,7 @@ const UpiPayments = (): React.JSX.Element => {
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <Heading
-              title="The Best Payment Button for Businesses"
+              title="Best UPI Payment Platform for Businesses "
               size="h3"
               color="white"
               weight="3"
@@ -187,7 +185,7 @@ const UpiPayments = (): React.JSX.Element => {
               >
                 {" "}
                 <Heading
-                  title="Fast"
+                  title="Instant Setup"
                   color="white"
                   size="h5"
                   weight="4"
@@ -206,7 +204,7 @@ const UpiPayments = (): React.JSX.Element => {
               >
                 {" "}
                 <Heading
-                  title="Customizable"
+                  title="Real-time Settlement"
                   color="white"
                   size="h5"
                   weight="4"
@@ -225,7 +223,7 @@ const UpiPayments = (): React.JSX.Element => {
               >
                 {" "}
                 <Heading
-                  title="Secure"
+                  title="Secure Transactions"
                   color="white"
                   size="h5"
                   weight="4"
@@ -239,16 +237,10 @@ const UpiPayments = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
             <Heading
-              title={`How to Make a  ${space}`}
+              title={`How UPI Payment Works ${space}`}
               color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Payment Button${space}`}
-              color="equity-blue"
               size="h1"
               weight="6"
             />
@@ -280,7 +272,7 @@ const UpiPayments = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-5">
+              <div className="m-md-5 m-2">
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
@@ -309,57 +301,58 @@ const UpiPayments = (): React.JSX.Element => {
                 className={`flex-column justify-content-center align-items-center pb-3`}
               >
                 <Heading
-                  title={`A Click is ${space}`}
+                  title={`EnKash UPI Payment ${space}`}
                   color="black"
                   size="h1"
                   weight="5"
                 />
                 <Heading
-                  title={`All it Takes ${space}`}
+                  title={`Gateway for Businesses ${space}`}
                   color="equity-blue"
                   size="h1"
                   weight="5"
                 />
               </div>
             </div>
+            <div className={styles.allInOnePolicy}>
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Effortless Integration for Quick Setup"
+                description="No need for extra code or technical headaches. EnKash provides easy-to-use SDKs and APIs that integrate seamlessly with your existing website or app. This means you can start accepting UPI payments without any complex setup or lengthy development time, allowing you to focus on what matters: growing your business."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Setup in under 5 minutes"
-              description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
-              image={paymentLinkImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="243"
-            />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Get Paid Instantly with Instant Settlement"
+                description="Do not wait days for payment settlements. Our real-time settlement system ensures that once a customer makes a payment, the funds are directly deposited into your bank account. This improves your cash flow, enabling you to reinvest in your business without worrying about delayed payments."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
 
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Ctrl C + Ctrl V = Payment Ready"
-              description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
-              image={shareImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="305"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Prioritize Secure Transactions"
+                description="Security is our top priority. Every UPI payment you process is backed by EnKash’s advanced security infrastructure, along with two-factor authentication ensuring all transactions are encrypted and safe. This means your business and customer data are protected, reducing the risk of fraud and giving both you and your customers peace of mind during every transaction."
+                image={paymentOptionImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="268px"
+              />
 
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Accept Payments Anytime, Anywhere"
-              description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
-              image={paymentOptionImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="268"
-            />
-
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Match Your Style"
-              description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="No More Payment Failures "
+                description="Say goodbye to payment failures. EnKash uses optimized payment routing and cutting-edge technology to ensure your transactions are successful. Our solution is designed to offer the highest UPI success rates, meaning fewer declined payments and a smoother experience for your customers. This increases customer trust and boosts your revenue by ensuring you don't miss any payments."
+                image={notificationImage}
+                buttonUrl="/sales/"
+                maxImageHeight="259px"
+                reverse
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -395,31 +388,9 @@ const UpiPayments = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Ready to design your payment button?"
-              size="bannerHeading"
-              color="white"
-              weight="4"
-            />
-          </div>
-          <div className={`${styles.get_started_button} `}>
-            <RectangleButton
-              title="Get Started  Today "
-              theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
-            />
-          </div>
-        </div>
-      </div>
-
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
             <Heading
               title={`Frequently Asked Questions  ${space}`}
               color="black"
@@ -461,7 +432,7 @@ const UpiPayments = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-start text-md-center pb-5`}>
+          <div className={`${styles.title} text-center  pb-5`}>
             <Heading
               title={`Check out our ${space}`}
               color="black"

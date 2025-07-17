@@ -3,7 +3,9 @@
 import React from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./all-in-one-policy.module.scss"
-import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import RectangleButton, {
+  RectangleButtonTheme,
+} from "../buttons/rectangle-button/rectangle-button"
 import { blueArrow, whiteArrow } from "./index"
 import Heading from "../heading/heading"
 
@@ -15,6 +17,10 @@ interface AllInOnePolicyProps {
   buttonUrl: string
   reverse?: boolean
   maxImageHeight?: string
+  buttonTheme?: RectangleButtonTheme // ✅ type-safe!
+  buttonText?: string
+  buttonActionIcon?: StaticImageData
+  buttonHoverIcon?: StaticImageData
 }
 
 const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
@@ -25,23 +31,25 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   buttonUrl,
   reverse = false,
   maxImageHeight,
+  buttonTheme = "outline-blue",
+  buttonText = "Try Now",
+  buttonActionIcon = blueArrow,
+  buttonHoverIcon = whiteArrow,
 }) => {
   return (
-    <div className={`row  align-items-center ${styles.section}`}>
+    <div className={`row align-items-center ${styles.section}`}>
       {/* Text Block */}
       <div
-        className={`col-md-8 col-12 px-md-5 ${
-          reverse ? "order-md-2" : "order-md-1"
-        }`}
+        className={`col-md-8 col-12 ${reverse ? "order-md-2" : "order-md-1"}`}
       >
-        <div className={`d-flex align-items-start    ${styles.policyCard}`}>
+        <div className={`d-flex align-items-start ${styles.policyCard}`}>
           {/* Icon */}
           <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-            {icon && <Image src={icon} alt="icon" width={55} height={55} />}
+            <Image src={icon} alt="icon" width={55} height={55} />
           </div>
 
           {/* Title and Description */}
-          <div className="d-flex flex-column text-start gap-3">
+          <div className="d-flex flex-column text-start gap-2 gap-md-3">
             <Heading title={title} color="black" size="h4" weight="5" />
             {description && (
               <Heading
@@ -54,12 +62,12 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
           </div>
         </div>
 
-        <div className={` ${styles.list_button}`}>
+        <div className={styles.list_button}>
           <RectangleButton
-            title="Try Now"
-            theme="outline-blue"
-            actionImage={blueArrow}
-            hoverImage={whiteArrow}
+            title={buttonText}
+            theme={buttonTheme}
+            actionImage={buttonActionIcon}
+            hoverImage={buttonHoverIcon}
             url={buttonUrl}
           />
         </div>
@@ -74,7 +82,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
         <Image
           src={image}
           alt="card visual"
-          className=" w-100 "
+          className="w-100"
           style={{
             maxHeight: maxImageHeight || "auto",
             height: "auto",

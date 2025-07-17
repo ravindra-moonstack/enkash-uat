@@ -106,3 +106,12 @@
   font-weight: 600;
   color: $color-black;
 }
+.card_link {
+  color: inherit; // or any custom color
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none; // remove underline on hover too
+    color: inherit; // or a hover color
+  }
+}

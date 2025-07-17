@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
@@ -10,7 +10,6 @@ import {
   groupIcon,
   paymentSummary,
   paymentLink,
-  paymentPage,
   qrCodes,
   invoices,
   paymentButton,
@@ -23,7 +22,6 @@ import {
   shareImage,
   paymentOptionImage,
   notificationImage,
-
   activationIcon,
   realTimeIcon,
   optimizedIcon,
@@ -32,7 +30,7 @@ import {
   taskIconThree,
   taskIconFour,
   taskIconFive,
-
+  paymentGateway,
 } from "."
 
 import ManagementCard from "@/components/management-card/management-card"
@@ -42,9 +40,10 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-
+import AllProducts from "@/components/all-products/all-products"
 
 const showScroll = cardsData.length > 3
+const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const PaymentPage = (): React.JSX.Element => {
   return (
@@ -61,16 +60,19 @@ const PaymentPage = (): React.JSX.Element => {
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
-                    { name: "Collect Payments", url: "/collect-payments" },
+                    {
+                      name: "Collect Payments",
+                      url: "/products/collect-payments",
+                    },
                     {
                       name: "Payment Page",
-                      url: "/collect-payments/payment-page",
+                      url: "/payment-page",
                     },
                   ]}
                 />
               </div>
               <div
-                className={`${styles.first_row_title} d-md-flex d-none flex-column flex-md-row `}
+                className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
                   title={`Payment Page ${space}`}
@@ -83,7 +85,7 @@ const PaymentPage = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-flex flex-column   pt-4 pt-md-0">
+                <div className="d-flex flex-column   pt-3 pt-md-0">
                   <Heading
                     title={`Instant Online Payments   ${space}`}
                     color="black"
@@ -99,7 +101,7 @@ const PaymentPage = (): React.JSX.Element => {
                   />
                 </div>
 
-                <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
+                <div className="d-flex mt-3 mb-3 text-center text-md-start ">
                   <Heading
                     title="Create professional, branded payment pages that enable secure and hassle-free online payment collection."
                     color="black"
@@ -172,25 +174,13 @@ const PaymentPage = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading
-                  title="100%"
-                  color="white"
-                  size="h2"
-                  weight="7"
-                  useH1TagInHtml={true}
-                />
+                <Heading title="100%" color="white" size="h2" weight="7" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Fast"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
-                />
+                <Heading title="Fast" color="white" size="h5" weight="4" />
               </div>
             </div>
             <div
@@ -208,7 +198,6 @@ const PaymentPage = (): React.JSX.Element => {
                   color="white"
                   size="h5"
                   weight="4"
-                  useH1TagInHtml={true}
                 />
               </div>
             </div>
@@ -222,13 +211,7 @@ const PaymentPage = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Secure"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
-                />
+                <Heading title="Secure" color="white" size="h5" weight="4" />
               </div>
             </div>
           </div>
@@ -237,16 +220,10 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
             <Heading
-              title={`How to Setup EnKash ${space}`}
+              title={`How to Setup EnKash Payment Pages${space}`}
               color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={` Payment Pages${space}`}
-              color="equity-blue"
               size="h1"
               weight="6"
             />
@@ -278,7 +255,7 @@ const PaymentPage = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-5">
+              <div className="m-md-5 m-3">
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
@@ -304,71 +281,97 @@ const PaymentPage = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div
-                className={`flex-column justify-content-center align-items-center pb-3`}
+                className={`d-inline justify-content-center align-items-center pb-3`}
               >
                 <Heading
-                  title={`Effortless Transactions, Secure Payments -  ${space}`}
-                  color="black"
+                  title={`Effortless Transactions, Secure  ${space}`}
+                  color="equity-blue"
                   size="h1"
                   weight="5"
                 />
                 <Heading
-                  title={` The EnKash Way ${space}`}
-                  color="equity-blue"
+                  title={`Payments -  The EnKash Way ${space}`}
+                  color="black"
                   size="h1"
                   weight="5"
                 />
               </div>
             </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Customization at Your Fingertips"
-              description="Design payment pages that truly showcase your brand identity. Add your logo, select colors that resonate with your business, and customize fields to gather precise and relevant customer details. With memorable and professional URLs, sharing your payment page becomes a breeze, enhancing both brand recognition and user convenience."
-              image={paymentLinkImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="243"
-            />
+            <div className={styles.allInOnePolicy}>
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Customization at Your Fingertips"
+                description="Design payment pages that truly showcase your brand identity. Add your logo, select colors that resonate with your business, and customize fields to gather precise and relevant customer details. With memorable and professional URLs, sharing your payment page becomes a breeze, enhancing both brand recognition and user convenience."
+                image={paymentLinkImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="243px"
+              />
 
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Multiple Payment Modes"
-              description="Give your customers unmatched flexibility with over 180 domestic and international payment options. Whether they prefer UPI, net banking, credit or debit cards, wallets, or international currencies, EnKash ensures secure and seamless transactions, catering to a global audience and diverse payment preferences."
-              image={shareImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="305"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Multiple Payment Modes"
+                description="Give your customers unmatched flexibility with over 180 domestic and international payment options. Whether they prefer UPI, net banking, credit or debit cards, wallets, or international currencies, EnKash ensures secure and seamless transactions, catering to a global audience and diverse payment preferences."
+                image={shareImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="305px"
+                reverse
+              />
 
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Zero Coding Required"
-              description="Spend more time growing your business and less time worrying about technical complexities. EnKash’s intuitive platform lets you create and launch fully functional payment pages within minutes, all without any coding knowledge or the need for additional technical resources."
-              image={paymentOptionImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="243"
-            />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Zero Coding Required"
+                description="Spend more time growing your business and less time worrying about technical complexities. EnKash’s intuitive platform lets you create and launch fully functional payment pages within minutes, all without any coding knowledge or the need for additional technical resources."
+                image={paymentOptionImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="243px"
+              />
 
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Optimized for Mobile and Web"
-              description="Ensure a flawless checkout experience on any device. EnKash Payment Pages are meticulously designed to adapt to smartphones, tablets, and desktops, offering customers an engaging and consistent interface that works seamlessly regardless of the device they use."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Optimized for Mobile and Web"
+                description="Ensure a flawless checkout experience on any device. EnKash Payment Pages are meticulously designed to adapt to smartphones, tablets, and desktops, offering customers an engaging and consistent interface that works seamlessly regardless of the device they use."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
 
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Get Real-time Insights"
-              description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
-              image={optimizedIcon}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259"
+              <AllInOnePolicy
+                icon={taskIconFive}
+                title="Get Real-time Insights"
+                description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
+                image={optimizedIcon}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={`${styles.slider_row} relative`}>
+        <div className={`${styles.title} text-center pb-5`}>
+          <div className={` pb-3  d-inline`}>
+            <Heading
+              title={`EnKash Payment Pages Features for ${space}`}
+              color="black"
+              size="h1"
+              weight="5"
+            />
+            <Heading
+              title={` Secure Online Payment`}
+              color="equity-blue"
+              size="h1"
+              weight="5"
             />
           </div>
         </div>
+        <AllProducts
+          title="All Features"
+          subtitle="Combine all use cases"
+          data={mergedCards}
+        />
       </div>
 
       <div className={`${styles.fifth_row} `}>
@@ -395,7 +398,7 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
             <Heading
               title={`Frequently Asked Questions  ${space}`}
               color="black"
@@ -414,7 +417,6 @@ const PaymentPage = (): React.JSX.Element => {
                   color="dark-grey"
                   size="h3"
                   weight="5"
-                  useH1TagInHtml={true}
                 />
               </div>
               <div className="mt-2 d-none d-md-block">
@@ -437,7 +439,7 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-start text-md-center pb-5`}>
+          <div className={`${styles.title} text-center  pb-5`}>
             <Heading
               title={`Check out our ${space}`}
               color="black"
@@ -457,16 +459,9 @@ const PaymentPage = (): React.JSX.Element => {
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Payment Gateway"
-                description="Seamlessly collect payments with no-code solutions."
-                cardImage={paymentLink}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Page"
-                description="Create stunning, branded checkout experiences in minutes."
-                cardImage={paymentPage}
+                description="A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction."
+                cardImage={paymentGateway}
+                linkUrl="/payment-gateway"
               />
             </div>
 
@@ -474,7 +469,16 @@ const PaymentPage = (): React.JSX.Element => {
               <ManagementCard
                 titleHtml="Payment Link"
                 description="Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links."
+                cardImage={paymentLink}
+                linkUrl="/payment-link"
+              />
+            </div>
+            <div className="col-12 col-md-4">
+              <ManagementCard
+                titleHtml="Payment Button"
+                description="Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup."
                 cardImage={paymentButton}
+                linkUrl="/payment-button"
               />
             </div>
 
@@ -483,6 +487,7 @@ const PaymentPage = (): React.JSX.Element => {
                 titleHtml="QR Codes"
                 description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
                 cardImage={qrCodes}
+                linkUrl="/qr-codes"
               />
             </div>
 
@@ -491,6 +496,7 @@ const PaymentPage = (): React.JSX.Element => {
                 titleHtml="Auto Collect"
                 description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
                 cardImage={autoCollect}
+                linkUrl="/auto-collect"
               />
             </div>
 
@@ -499,6 +505,7 @@ const PaymentPage = (): React.JSX.Element => {
                 titleHtml="Invoices"
                 description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
                 cardImage={invoices}
+                linkUrl="/invoices"
               />
             </div>
 
@@ -507,6 +514,7 @@ const PaymentPage = (): React.JSX.Element => {
                 titleHtml="Instant Settlement"
                 description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
                 cardImage={instant}
+                linkUrl="/instant"
               />
             </div>
 
@@ -515,6 +523,7 @@ const PaymentPage = (): React.JSX.Element => {
                 titleHtml="Reminder Engine"
                 description="Automate your collections and say goodbye to manual reminders."
                 cardImage={reminder}
+                linkUrl="/reminder"
               />
             </div>
           </div>

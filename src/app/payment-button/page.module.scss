@@ -39,7 +39,7 @@
   }
   .right_img {
     Img {
-      height: 250px;
+      height: auto;
       padding-top: 32px;
       @include for-laptops {
         height: 625px;
@@ -56,8 +56,12 @@
   }
 
   .first_row_title {
-    padding-top: 48px;
-    padding-bottom: 20px;
+    padding-top: 16px;
+    padding-bottom: 0px;
+    @include for-laptops {
+      padding-top: 48px;
+      padding-bottom: 20px;
+    }
   }
 
   .first_row_button {

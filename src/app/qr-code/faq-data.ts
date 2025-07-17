@@ -1,82 +1,50 @@
 const faqData = [
    {
-      question: "What is a payment button?",
+      question: "What is a QR Code?",
       answer: [
         {
           heading:
-            "A simple tool that allows you to collect payments on your website without redirects or complex integrations.",
+            "A Quick Response (QR) code is a scannable code that simplifies payment collection by embedding your business’s bank details securely.",
         },
       ],
     },
     {
-      question: "How does the EnKash payment button work?",
+      question: "What’s the difference between Static and Dynamic QR Codes?",
       answer: [
         {
           heading:
-            "Simply copy and paste the provided code snippet onto your website or blog.",
-        },
-        {
-          heading:
-            "The button will appear on your page, allowing customers to make payments easily and securely.",
-        },
-        {
-          heading:
-            "EnKash handles the entire payment process, from capturing customer information to processing the transaction.",
+            "Static codes are reusable and ideal for open amounts, while dynamic codes are unique to each transaction for greater accuracy.",
         },
       ],
     },
     {
       question:
-        "Can I accept international payments with the EnKash payment button?",
+        "How can I create an EnKash QR Code?",
       answer: [
         {
-          heading: "Yes, EnKash payment buttons support international payments.",
+          heading: "Sign up on our platform, access the dashboard, and generate codes in seconds.",
         },
       ],
     },
     {
-      question: "Can I customize the payment button?",
+      question: "Which businesses can benefit from QR Codes?",
       answer: [
         {
           heading:
-            "Yes, you can customize the appearance of the payment button to match your brand's style. You can choose colors, and fonts, and even add your logo.",
+            "Any business that needs fast, secure, and efficient payment collection can use our QR solutions.",
         },
       ],
     },
     {
-      question: "Is EnKash payment button secure?",
+      question: "What is the price of setting up EnKash QR Code?",
       answer: [
         {
           heading:
-            "Absolutely! EnKash employs industry-leading security measures, including PCI DSS compliance and advanced fraud prevention technologies, to ensure the safety of your customers.",
+            "Connect with our team to get the pricing details.",
         },
       ],
     },
-    {
-      question: "What is the cost of the payment button?",
-      answer: [
-        {
-          heading:
-            "EnKash believes in transparent pricing. Talk to our experts to get more details.",
-        },
-      ],
-    },
-    {
-      question: "What sort of customer support is available?",
-      answer: [
-        {
-          heading:
-            "EnKash payment buttons are the easiest to integrate - without any assistance.",
-        },
-        {
-          heading:
-            "However, we provide excellent customer support through various channels, including email, chat, and phone. Our team is always ready to assist you with any questions or issues.",
-        },
-        {
-          heading: "Connect with our team at support@enkash.com.",
-        },
-      ],
-    },
+    
 ]
 
 export const SecondfaqData = [

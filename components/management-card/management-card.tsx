@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Image from "next/image"
 import styles from "./management-card.module.scss"
 import { ReactNode } from "react"
@@ -8,6 +9,7 @@ export interface CardProps {
   description: string
   cardImage?: string
   theme?: "light" | "dark"
+  linkUrl?: string // ✅ Add this
 }
 
 const ManagementCard = ({
@@ -16,8 +18,9 @@ const ManagementCard = ({
   description,
   cardImage,
   theme = "light",
+  linkUrl, // ✅ Add this
 }: CardProps) => {
-  return (
+  const cardContent = (
     <div
       className={`d-flex flex-column justify-content-between ${
         styles.card_body
@@ -50,6 +53,14 @@ const ManagementCard = ({
         </div>
       )}
     </div>
+  )
+
+  return linkUrl ? (
+    <Link href={linkUrl} className={styles.card_link}>
+      {cardContent}
+    </Link>
+  ) : (
+    cardContent
   )
 }
 

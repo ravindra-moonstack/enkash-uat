@@ -1,18 +1,12 @@
 <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="27.8237" cy="27.4409" r="24.3941" fill="#1C5AF4"/>
-<g clip-path="url(#clip0_1793_18188)">
-<path d="M37.7673 18.306C37.6732 18.2028 37.5591 18.1198 37.432 18.0619C37.3049 18.0039 37.1674 17.9724 37.0278 17.969C36.8881 17.9657 36.7493 17.9907 36.6195 18.0425C36.4898 18.0943 36.3719 18.1718 36.273 18.2704L35.4147 19.1258L36.8762 20.5837L37.72 19.7441C37.912 19.5569 38.0242 19.3026 38.033 19.0346C38.0418 18.7665 37.9466 18.5055 37.7673 18.306ZM27.8481 31.7498H24.25V28.1516L24.6906 27.7119L31.1659 21.2498H18.25V37.7498H34.75V24.8338L28.2878 31.3091L27.8481 31.7498ZM34.75 22.7104L36.287 21.1701L34.8297 19.7127L33.2898 21.2498H34.75V22.7104Z" fill="white"/>
-<path d="M25.75 30.25H27.2261L34.75 22.7106V21.25H33.2898L25.75 28.7739V30.25Z" fill="white"/>
-</g>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M18 17H17V25H19V19H25V17H18ZM21 26V27H27V21H21V26ZM25 25H23V23H25V25ZM29 26V27H35V21H29V26ZM33 25H31V23H33V25ZM21 35V29H27V35H21ZM23 33H25V31H23V33ZM17 39H25V37H19V31H17V39ZM39 18V17H31V19H37V25H39V18ZM39 39V31H37V37H31V39H39ZM29 33.5V35H35V33H31V29H29V33.5ZM33 29V31H35V29H33Z" fill="white"/>
 <circle cx="27.8245" cy="27.8245" r="27.4433" stroke="black" stroke-width="0.762314"/>
-<circle cx="27.8245" cy="27.8245" r="27.4433" stroke="url(#paint0_linear_1793_18188)" stroke-width="0.762314"/>
+<circle cx="27.8245" cy="27.8245" r="27.4433" stroke="url(#paint0_linear_1793_43619)" stroke-width="0.762314"/>
 <defs>
-<linearGradient id="paint0_linear_1793_18188" x1="27.8245" y1="0" x2="27.8245" y2="55.6489" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_1793_43619" x1="27.8245" y1="0" x2="27.8245" y2="55.6489" gradientUnits="userSpaceOnUse">
 <stop stop-color="#0663FC"/>
 <stop offset="1" stop-color="#043B96"/>
 </linearGradient>
-<clipPath id="clip0_1793_18188">
-<rect width="24" height="24" fill="white" transform="translate(16 16)"/>
-</clipPath>
 </defs>
 </svg>

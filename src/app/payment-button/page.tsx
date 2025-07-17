@@ -45,12 +45,6 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import { faqBg } from "../digital-marketing-card"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
 
-// import bg1 from "./img/bg1.jpg"
-// import bg2 from "./img/bg2.jpg"
-// import bg3 from "./img/bg3.jpg"
-// import bg4 from "./img/bg4.jpg"
-// import bg5 from "./img/bg5.jpg"
-
 const showScroll = cardsData.length > 3
 
 const PaymentButton = (): React.JSX.Element => {
@@ -68,16 +62,19 @@ const PaymentButton = (): React.JSX.Element => {
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
-                    { name: "Collect Payments", url: "/collect-payments" },
+                    {
+                      name: "Collect Payments",
+                      url: "/products/collect-payments",
+                    },
                     {
                       name: "Payment Button",
-                      url: "/collect-payments/payment-button",
+                      url: "/payment-button",
                     },
                   ]}
                 />
               </div>
               <div
-                className={`${styles.first_row_title} d-md-flex d-none flex-column flex-md-row `}
+                className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
                   title={`Payment Button ${space}`}
@@ -90,7 +87,7 @@ const PaymentButton = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-flex flex-column   pt-4 pt-md-0">
+                <div className="d-flex flex-column   pt-3 pt-md-0">
                   <Heading
                     title={`Sell smarter, not harder  ${space}`}
                     color="black"
@@ -179,25 +176,13 @@ const PaymentButton = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading
-                  title="100%"
-                  color="white"
-                  size="h2"
-                  weight="7"
-                  useH1TagInHtml={true}
-                />
+                <Heading title="100%" color="white" size="h2" weight="7" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Fast"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
-                />
+                <Heading title="Fast" color="white" size="h5" weight="4" />
               </div>
             </div>
             <div
@@ -215,7 +200,6 @@ const PaymentButton = (): React.JSX.Element => {
                   color="white"
                   size="h5"
                   weight="4"
-                  useH1TagInHtml={true}
                 />
               </div>
             </div>
@@ -229,13 +213,7 @@ const PaymentButton = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Secure"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
-                />
+                <Heading title="Secure" color="white" size="h5" weight="4" />
               </div>
             </div>
           </div>
@@ -244,7 +222,7 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
             <Heading
               title={`How to Make a  ${space}`}
               color="black"
@@ -334,7 +312,7 @@ const PaymentButton = (): React.JSX.Element => {
               description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
               image={paymentLinkImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="243"
+              maxImageHeight="243px"
             />
 
             <AllInOnePolicy
@@ -343,7 +321,7 @@ const PaymentButton = (): React.JSX.Element => {
               description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
               image={shareImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="305"
+              maxImageHeight="305px"
               reverse
             />
 
@@ -353,7 +331,7 @@ const PaymentButton = (): React.JSX.Element => {
               description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
               image={paymentOptionImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="268"
+              maxImageHeight="268px"
             />
 
             <AllInOnePolicy
@@ -362,7 +340,7 @@ const PaymentButton = (): React.JSX.Element => {
               description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
               image={notificationImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259"
+              maxImageHeight="259px"
               reverse
             />
 
@@ -372,7 +350,7 @@ const PaymentButton = (): React.JSX.Element => {
               description="Designed for optimal performance on all devices. Provide a seamless payment experience for users of smartphones, tablets, or desktops, catering to the growing mobile commerce trends."
               image={optimizedIcon}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="221"
+              maxImageHeight="221px"
             />
 
             <AllInOnePolicy
@@ -381,7 +359,7 @@ const PaymentButton = (): React.JSX.Element => {
               description="Industry-leading security and compliance standards ensure safe payments. Protect your customers’ data with advanced encryption and fraud detection, building trust and credibility for your business."
               image={secureImage}
               buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259"
+              maxImageHeight="259px"
               reverse
             />
           </div>
@@ -474,7 +452,6 @@ const PaymentButton = (): React.JSX.Element => {
                   color="dark-grey"
                   size="h3"
                   weight="5"
-                  useH1TagInHtml={true}
                 />
               </div>
               <div className="mt-2 d-none d-md-block">
@@ -497,7 +474,7 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-start text-md-center pb-5`}>
+          <div className={`${styles.title} text-center  pb-5`}>
             <Heading
               title={`Check out our ${space}`}
               color="black"

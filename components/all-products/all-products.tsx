@@ -9,7 +9,7 @@ export type AllProductsDataProp = {
   title2?: string
   description: string
   image: string
-  link: string
+  link?: string
 }
 
 export type AllProductsProp = {

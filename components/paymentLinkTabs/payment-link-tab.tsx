@@ -68,7 +68,7 @@ const PaymentLinkTab = ({
           <div>
             {/* Tab Selectors */}
             <div
-              className={`d-flex mt-md-5 mt-3  max-w-auto ${styles.progress_container}`}
+              className={`d-flex mt-md-5 mt-3  ${styles.progress_container}`}
             >
               {progressData.map((data, index) => (
                 <div
@@ -76,9 +76,7 @@ const PaymentLinkTab = ({
                   className={styles.progress_items}
                   style={{
                     backgroundColor:
-                      index === selectedItemIndex
-                        ? "rgba(0, 217, 255, 0.2)"
-                        : "#ffff",
+                      index === selectedItemIndex ? "#F6F6F6" : "#ffff",
                     cursor: "pointer",
                   }}
                   onClick={() => setSelectedItemIndex(index)}
@@ -180,11 +178,17 @@ const PaymentLinkTab = ({
       <div className={`d-md-none d-block  ${styles.sixth_row_mobile}`}>
         <div className={styles.tab_section}>
           {/* Heading */}
-          <div className="d-flex flex-column align-items-center justify-content-center">
+          <div className="d-flex flex-column text-center">
             <Heading
               title={sectionHeading}
               size="h1"
               color="black"
+              weight="5"
+            />
+            <Heading
+              title={secondHeading ?? ""}
+              size="h1"
+              color="equity-blue"
               weight="5"
             />
           </div>
@@ -242,8 +246,8 @@ const PaymentLinkTab = ({
                       <Image
                         src={bgSrc}
                         alt="background"
-                        width={600}
-                        height={200}
+                        width={274}
+                        height={180}
                       />
                     </div>
                     <div className="d-flex align-items-start gap-2 mt-2">
@@ -253,7 +257,7 @@ const PaymentLinkTab = ({
                         width={28}
                         height={28}
                       />
-                      <div className="d-flex flex-column gap-5">
+                      <div className="d-flex flex-column gap-2">
                         <Heading
                           title={selectedItem.title}
                           color="black"
