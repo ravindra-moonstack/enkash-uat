@@ -5,24 +5,30 @@ import crouselIconFour from "./img/crouselIconFour.svg"
 import crouselIconFive from "./img/crouselIconFive.svg"
 import crouselIconSix from "./img/crouselIconSix.svg"
 
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import { scrollIconFour, scrollIconOne, scrollIconThree, scrollIconTwo } from "."
 
 const cardsData = [
   {
-    title: "Sign Up",
-    description: "Create your EnKash account in just a few clicks.",
+    title: "Sign Up and Add Vendors",
+    description: "Create your account and invite vendors to collect their information using digital forms.",
     icon: scrollIconOne,
   },
   {
-    title: "Add Payment Details",
-    description: "Link your rental agreements and landlord information.",
+    title: "Verify and Approve",
+    description: "Conduct automated compliance checks and approval processes.",
     icon: scrollIconTwo,
   },
   {
-    title: "Automate and Pay",
+    title: "Collaborate & Pay",
     description:
-      "Schedule recurring payments or pay on the go with automated reminders.",
+      "Communicate in real-time and make payments using your preferred mode.",
     icon: scrollIconThree,
+  },
+    {
+    title: "Track & Optimize",
+    description:
+      "Access detailed reports and improve vendor management efficiency.",
+    icon: scrollIconFour,
   },
 ]
 

@@ -2,20 +2,13 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { cardsData } from "./data"
 import faqData from "./faq-data"
 import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
   paymentLinkImage,
@@ -28,22 +21,16 @@ import {
   taskIconThree,
   taskIconFour,
   taskIconFive,
-  paymentGateway,
-  secureImage,
 } from "."
 
-import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import AllProducts from "@/components/all-products/all-products"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 
-const mergedCards = allProductSections.flatMap((section) => section.items)
-
-const BusinessBillPayment = (): React.JSX.Element => {
+const VendorManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -63,8 +50,8 @@ const BusinessBillPayment = (): React.JSX.Element => {
                       url: "/products/make-payments",
                     },
                     {
-                      name: "Rent Payments",
-                      url: "/rent-payment",
+                      name: "Vendor Management",
+                      url: "/vendot-management",
                     },
                   ]}
                 />
@@ -73,7 +60,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Rent Payments ${space}`}
+                  title={`Vendor Management ${space}`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -85,7 +72,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
               >
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
-                    title={`Hassle-Free Rent Payments with EnKash${space}`}
+                    title={`Manage Vendors with Confidence Using EnKash${space}`}
                     color="black"
                     size="h2"
                     weight="7"
@@ -94,8 +81,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
                   <Heading
-                    title="Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient
-"
+                    title="Gain complete control of vendor relationships with powerful vendor management solution. From onboarding to payments and compliance our platform empowers businesses to work faster, reduce risks, and maintain healthy supplier partnerships."
                     color="black"
                     size="h5"
                     weight="4"
@@ -153,21 +139,14 @@ const BusinessBillPayment = (): React.JSX.Element => {
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
             <Heading
-              title={`How To Setup ${space}`}
+              title={`Step-by-Step Guide to${space}`}
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`Rent Payments 
-${space}`}
+              title={`Vendor Onboarding and Management${space}`}
               color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Automation${space}`}
-              color="black"
               size="h1"
               weight="6"
             />
@@ -202,7 +181,7 @@ ${space}`}
             <div className={`${styles.title} text-center `}>
               <div className={`d-inline text-center pb-3`}>
                 <Heading
-                  title={`Put an End to Rental Payment Woes with EnKash`}
+                  title={`Best Vendor Management Software`}
                   color="black"
                   size="h1"
                   weight="5"
@@ -213,8 +192,8 @@ ${space}`}
             <div className={styles.allInOnePolicy}>
               <AllInOnePolicy
                 icon={taskIconOne}
-                title="Eliminate Late Payment Penalties"
-                description="Avoid the stress and cost of missing due dates. EnKash’s automated reminders and recurring payment options ensure your rent is paid on time, every time. Say goodbye to late fees and improve your cash flow with a solution designed to keep you punctual without constant follow-ups."
+                title="Instant Vendor Onboarding"
+                description="Quickly onboard new vendors with minimal effort using EnKash’s one-click invite feature. Collect essential details like PAN, GST, and bank account information through intuitive, pre-set templates. Say goodbye to manual data entry and enjoy a faster, error-free onboarding process that sets up your vendor relationships for success."
                 image={paymentLinkImage}
                 buttonUrl="/sales"
                 maxImageHeight="243px"
@@ -222,8 +201,8 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconTwo}
-                title="Multiple Payment Modes"
-                description="Pay your rent your way. Choose from UPI, NEFT, RTGS, credit cards, or digital wallets to make your rental payments. Whether you want instant processing or flexibility in managing funds, EnKash has a payment mode that works for you—and your landlord will thank you for it!"
+                title="Effortless Invoice Management"
+                description="Simplify invoice handling with EnKash’s centralized dashboard. Easily upload single or bulk invoices and manage them efficiently from a unified platform. Track invoice statuses in real time, reduce errors, and ensure timely processing. This streamlined approach not only saves time but also fosters better vendor relationships and financial accuracy."
                 image={shareImage}
                 buttonUrl="/sales"
                 maxImageHeight="305px"
@@ -232,8 +211,8 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconThree}
-                title="Streamlined Payment Tracking"
-                description="Say goodbye to messy spreadsheets and fragmented payment records. EnKash’s centralized dashboard gives you a real-time view of all your rent transactions. Know what’s paid, what’s pending, and what’s overdue—all in one intuitive platform. Gain control and transparency like never before."
+                title="Flexible Payment Options"
+                description="Offer your vendors a variety of payment methods, including UPI, virtual cards, and traditional bank transfers. With EnKash, you can track payment statuses in real-time, ensuring transparency and maintaining trust. Timely payments enhance vendor satisfaction, while flexible options make transactions convenient for all parties involved."
                 image={paymentOptionImage}
                 buttonUrl="/sales"
                 maxImageHeight="243px"
@@ -241,8 +220,8 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconFour}
-                title="Instant Reconciliation"
-                description="Save hours of effort with automatic reconciliation. EnKash links your payments to corresponding invoices seamlessly, so you can track rent settlements without lifting a finger. No more manual matching, no more errors—just accurate records and peace of mind."
+                title="Advanced Reporting & Insights"
+                description="Unlock actionable insights into your vendor management with EnKash’s comprehensive reporting tools. Monitor vendor performance metrics, analyze payment histories, and identify trends that impact your supply chain. Use this data to make informed decisions and optimize operations for better financial outcomes and efficiency."
                 image={notificationImage}
                 buttonUrl="/sales"
                 maxImageHeight="259px"
@@ -251,56 +230,22 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconFive}
-                title="Secure Transactions"
-                description="Your security is our priority. EnKash uses multi-layered encryption, fraud detection, and bank-grade protocols to safeguard every transaction. Whether you pay rent via credit card, UPI, or any other method, you can trust that your data and funds are protected."
+                title="Customizable Approval Workflows"
+                description="Design approval workflows that match your organizational requirements. EnKash allows you to set role-based access, define thresholds, and create flexible hierarchies. Streamline decision-making processes while maintaining strict compliance, ensuring every transaction and vendor activity aligns with your internal policies and business goals."
                 image={optimizedIcon}
                 buttonUrl="/sales"
                 maxImageHeight="259px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Fast Onboarding"
-                description="Get started with ease. EnKash’s onboarding process is quick, simple, and user-friendly. Complete your KYC, set up your rental payment preferences, and you’re good to go in just a few steps. No steep learning curve—just seamless functionality from day one."
-                image={secureImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-                reverse
               />
             </div>
           </div>
         </div>
       </div>
 
-      <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
-          <div className={` pb-3  d-inline`}>
-            <Heading
-              title={`One Platform ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={` for All Your Rental Payment Needs`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-          </div>
-        </div>
-        <AllProducts
-          title="All Features"
-          subtitle="Combine all use cases"
-          data={mergedCards}
-        />
-      </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <Heading
-              title="Ready to Redefine your Rent Payments?"
+              title="Focus on what truly matters—your business growth. "
               size="bannerHeading"
               color="white"
               weight="4"
@@ -364,4 +309,4 @@ ${space}`}
   )
 }
 
-export default BusinessBillPayment
+export default VendorManagement

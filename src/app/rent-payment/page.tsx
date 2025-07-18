@@ -9,13 +9,6 @@ import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
   paymentLinkImage,
@@ -28,11 +21,10 @@ import {
   taskIconThree,
   taskIconFour,
   taskIconFive,
-  paymentGateway,
+
   secureImage,
 } from "."
 
-import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"

@@ -2,10 +2,11 @@
 
 import dynamic from "next/dynamic"
 import React, { useEffect, useState } from "react"
+import { expenseAnimation } from "."
 
 
 const animationMap: Record<string, () => Promise<any>> = {
-
+  ExpenseLottie: expenseAnimation,
 }
 
 const Lottie = dynamic(() => import("@novemberfiveco/lottie-react-light"))

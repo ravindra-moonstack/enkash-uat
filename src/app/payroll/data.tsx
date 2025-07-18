@@ -9,19 +9,27 @@ import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
 
 const cardsData = [
   {
-    title: "Sign Up",
-    description: "Create your EnKash account in just a few clicks.",
+    title: "Upload Employee Data",
+    description:
+      "Upload employee data, set approval workflows, and prepare for payroll runs within our intuitive platform.",
     icon: scrollIconOne,
   },
   {
-    title: "Add Payment Details",
-    description: "Link your rental agreements and landlord information.",
+    title: "Review and Approve",
+    description:
+      "Review and approve payroll runs before initiating payments, ensuring accuracy and compliance.",
     icon: scrollIconTwo,
   },
   {
-    title: "Automate and Pay",
+    title: "Process Payments",
     description:
-      "Schedule recurring payments or pay on the go with automated reminders.",
+      "Make secure salary payments using flexible methods such as debit/credit cards, virtual cards, NEFT, IMPS, and more.",
+    icon: scrollIconThree,
+  },
+  {
+    title: "Real-Time Tracking",
+    description:
+      "Gain real-time visibility into payroll data and generate detailed reports for analysis and decision-making.",
     icon: scrollIconThree,
   },
 ]
@@ -54,7 +62,8 @@ const allProductSections = [
       {
         title: "Customizable Payment Schedules",
 
-        description: "Tailor payment dates to fit your cash flow without hassle.",
+        description:
+          "Tailor payment dates to fit your cash flow without hassle.",
         image: crouselIconFour,
       },
       {
@@ -64,7 +73,7 @@ const allProductSections = [
           "Handle rent changes, prorated amounts, or additional fees smoothly.",
         image: crouselIconFive,
       },
-        {
+      {
         title: "Detailed Rental Insights",
 
         description:

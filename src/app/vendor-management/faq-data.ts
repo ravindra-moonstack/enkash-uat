@@ -1,113 +1,81 @@
 const faqData = [
   {
-    question: "What is a rental payment?",
+    question: "What is Vendor Management System (VMS)?",
     answer: [
       {
         heading:
-          "Rental payments are payments made by a tenant to a landlord or property owner for using a rental property, such as a company space, an apartment, or a house. The rental payment amount is typically agreed upon in a written lease agreement, a legally binding contract between the landlord and tenant.",
+          "A Vendor Management System (VMS) is a centralized platform designed to streamline and optimize the management of vendors or suppliers. Our vendor management offers advanced features to centralize vendor data, automate verification processes, and provide real-time insights into spending patterns.",
       },
     ],
   },
   {
-    question:
-      "What is the maximum amount that can be paid for rent with a credit card?",
+    question: "What is the vendor life cycle?",
     answer: [
       {
         heading:
-          "The maximum amount that you can pay for rent using one credit card depends on the credit limit attached to the card.",
-      },
-    ],
-  },
-  {
-    question:
-      "How long does it take to make rent payments through a credit card?",
-    answer: [
-      {
-        heading:
-          "Once you have all the details (as mentioned above) in place, rental payments through a credit card are a matter of a few minutes post the approvals. It works exactly like other credit card payments. The only aspect that you need to ensure is that you have all the approvals in place to make quicker payments.",
-      },
-    ],
-  },
-  {
-    question:
-      "I had made a payment, but my transaction was put on hold, what to do now?",
-    answer: [
-      {
-        heading:
-          "When you make a payment where the transaction was put on hold, it is important to check if all the details are correct from your end. Are you using the right card? Did you enter the card number, validity date, and CVV number correctly? Did you enter the OTP correctly? Do you have the credit amount to make the required payment? Once you have checked these details, and they are correct, feel free to contact our customer care team to seek a resolution for your issue.",
-      },
-    ],
-  },
-  {
-    question: "Can multiple credit cards be used for rental payments?",
-    answer: [
-      {
-        heading:
-          "Yes, you can use multiple credit cards to pay rent. However, there are a few factors you will need to check before proceeding. First of all, ensure that the credit cards you use have the credit limit required to make the payment. Next, ensure that the credit card can be used for rental payments. Lastly, ensure you have the correct approvals to pay rent using a credit card.",
-      },
-    ],
-  },
-  {
-    question: "How secure are automated rental payments?",
-    answer: [
-      {
-        heading:
-          "Automated rental payment platforms like EnKash use advanced security measures to protect confidential information. This includes using encryption technology and complying with industry standards such as PCI-DSS. It's important to choose a reputable payment platform that prioritizes security.",
-      },
-    ],
-  },
-  {
-    question:
-      "Can rental payments be tracked, and payment histories viewed through online mode?",
-    answer: [
-      {
-        heading:
-          "EnKash provides a centralized view with our comprehensive dashboard to track payments and view payment histories.",
-      },
-    ],
-  },
-  {
-    question: "Why should you pay rent using a credit card?",
-    answer: [
-      {
-        heading: "There are many reasons to pay rent using a credit card:",
+          "The vendor life cycle encompasses the five stages of managing vendors:",
         bullets: [
-          "Using your credit card and getting a credit period to make rental payments helps manage your cash flow",
-          "It is easy to create records and set processes while using a card to make rental payments",
-          "It helps to pay rent using credit cards when you are facing a temporary funds crunch and helps in short-term working capital management",
+          "Pre-qualification: Identifying and evaluating potential vendors based on your needs and criteria",
+          "Selection: Choosing the most suitable vendor after a thorough assessment",
+          "Onboarding: Integrating the chosen vendor into your systems and processes",
+          "Management: Collaborating effectively with the vendor, monitoring performance, and ensuring contract compliance",
+          "Renewal/Termination: Deciding whether to renew the contract or find a new vendor based on performance and future needs",
         ],
       },
     ],
   },
   {
-    question: "How to pay rent online with a credit card?",
+    question: "What is another name for vendor management?",
     answer: [
       {
-        heading: "Here are a few one-time steps to set up the process:",
-        bullets: [
-          "Set up processes and workflows and upload records",
-          "Set maker-checker-approver matrices",
-          "Define centralized and decentralized processes",
-          "Include details like GST, TDS, and other factors applicable to your rental amounts",
-        ],
+        heading:
+          "Supplier management and third-party relationship management (TPRM) are two alternative terms for vendor management. Though slightly nuanced, they essentially involve building and maintaining efficient relationships with external partners who provide goods or services necessary for your business operations.",
       },
     ],
   },
   {
-    question: "How to get rent receipts for online rent payments?",
+    question: "What are the four stages of vendor management?",
     answer: [
       {
         heading:
-          "If you are using EnKash portal to make online rent payments, it is a matter of a few clicks to download the rental payment receipts. You will be intimated via email of your rental payment along with an attached receipt.",
+          "The four stages of vendor management typically include vendor identification, onboarding, ongoing monitoring, and performance evaluation.",
       },
     ],
   },
   {
-    question: "Why should businesses use automated rental payments?",
+    question: "Can I onboard multiple vendors at once?",
     answer: [
       {
         heading:
-          "Automated rental payments are a convenient and efficient way for businesses to collect payments. These can reduce the late payment charges and eliminate the need to pay cheques or cash each month manually. Additionally, automated rental payments help businesses save time and simplify accounting and record-keeping.",
+          "Yes, you can upload vendor data in bulk using our digital forms.",
+      },
+    ],
+  },
+  {
+    question: "What payment options are supported?",
+    answer: [
+      {
+        heading:
+          "EnKash supports NEFT, IMPS, RTGS, UPI, debit cards, and virtual cards.",
+      },
+    ],
+  },
+  {
+    question: "What is the vendor management process?",
+    answer: [
+      {
+        heading:
+          "The vendor management process refers to the structured approach a business uses to select, onboard, monitor, and evaluate its vendors or suppliers. It includes steps like vendor registration, contract management, performance tracking, payment processing, and compliance checks. With platforms like EnKash, the vendor management process is streamlined, automating tasks like invoice approvals, payment scheduling, and reconciliation, while improving transparency and control over vendor relationships.",
+      },
+    ],
+  },
+  {
+    question:
+      "What is supplier management, and why is it important for businesses?",
+    answer: [
+      {
+        heading:
+          "Supplier management is the process of identifying, onboarding, monitoring, and maintaining relationships with the external suppliers that provide goods or services to a business. Effective supplier management helps ensure timely deliveries, quality compliance, cost optimization, and long-term vendor relationships. With platforms like EnKash, businesses can streamline the entire supplier management process—right from digital onboarding and contract management to invoice tracking, automated payments, and performance evaluation—ensuring greater transparency, reduced operational risk, and better financial control.",
       },
     ],
   },

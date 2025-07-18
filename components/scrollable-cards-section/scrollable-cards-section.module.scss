@@ -13,6 +13,7 @@
 .scrollCardButton {
   margin-left: 10px;
   @include for-laptops {
+    margin-top: 42px;
     margin-left: 42px;
   }
 }

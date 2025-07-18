@@ -37,7 +37,7 @@
     position: relative;
     width: 500px;
     @include for-laptops {
-      width: auto;
+      // width: auto;
     }
     .button_wrapper {
       position: absolute;

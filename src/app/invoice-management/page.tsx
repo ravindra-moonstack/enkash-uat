@@ -9,13 +9,6 @@ import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
   paymentLinkImage,
@@ -28,11 +21,9 @@ import {
   taskIconThree,
   taskIconFour,
   taskIconFive,
-  paymentGateway,
-  secureImage,
+
 } from "."
 
-import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
@@ -43,7 +34,7 @@ import ScrollableCardsSection from "@/components/scrollable-cards-section/scroll
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const BusinessBillPayment = (): React.JSX.Element => {
+const InvoiceManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -63,8 +54,8 @@ const BusinessBillPayment = (): React.JSX.Element => {
                       url: "/products/make-payments",
                     },
                     {
-                      name: "Rent Payments",
-                      url: "/rent-payment",
+                      name: "Invoice Management",
+                      url: "/invoice-management",
                     },
                   ]}
                 />
@@ -73,7 +64,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Rent Payments ${space}`}
+                  title={`Invoice Management `}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -85,7 +76,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
               >
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
-                    title={`Hassle-Free Rent Payments with EnKash${space}`}
+                    title={`Transform your Invoice Management Process with EnKash$`}
                     color="black"
                     size="h2"
                     weight="7"
@@ -94,7 +85,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
                   <Heading
-                    title="Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient
+                    title="Make invoice management efficient, get greater visibility, and maintain better control over your financial operations.
 "
                     color="black"
                     size="h5"
@@ -122,7 +113,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="/sales"
                       />
                     </div>
                   </div>
@@ -153,20 +144,21 @@ const BusinessBillPayment = (): React.JSX.Element => {
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
             <Heading
-              title={`How To Setup ${space}`}
+              title={`How EnKash${space}`}
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`Rent Payments 
+              title={`Invoice Management
 ${space}`}
               color="equity-blue"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`Automation${space}`}
+              title={`Works
+${space}`}
               color="black"
               size="h1"
               weight="6"
@@ -202,7 +194,7 @@ ${space}`}
             <div className={`${styles.title} text-center `}>
               <div className={`d-inline text-center pb-3`}>
                 <Heading
-                  title={`Put an End to Rental Payment Woes with EnKash`}
+                  title={`Take Control of Your Invoice Process with EnKash`}
                   color="black"
                   size="h1"
                   weight="5"
@@ -213,8 +205,8 @@ ${space}`}
             <div className={styles.allInOnePolicy}>
               <AllInOnePolicy
                 icon={taskIconOne}
-                title="Eliminate Late Payment Penalties"
-                description="Avoid the stress and cost of missing due dates. EnKash’s automated reminders and recurring payment options ensure your rent is paid on time, every time. Say goodbye to late fees and improve your cash flow with a solution designed to keep you punctual without constant follow-ups."
+                title="Centralized Dashboard for Complete Control"
+                description="Manage all vendor invoices from a single, intuitive platform designed for maximum efficiency. With end-to-end visibility of the invoice lifecycle, track the status of every invoice to stay on top of your financial obligations."
                 image={paymentLinkImage}
                 buttonUrl="/sales"
                 maxImageHeight="243px"
@@ -222,8 +214,8 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconTwo}
-                title="Multiple Payment Modes"
-                description="Pay your rent your way. Choose from UPI, NEFT, RTGS, credit cards, or digital wallets to make your rental payments. Whether you want instant processing or flexibility in managing funds, EnKash has a payment mode that works for you—and your landlord will thank you for it!"
+                title="Flexible Approval Processes for Business Needs"
+                description="Design workflows that align perfectly with your organizational structure. Easily assign roles, set authorization levels, and create tailored approval hierarchies that ensure compliance without compromising on speed or accuracy."
                 image={shareImage}
                 buttonUrl="/sales"
                 maxImageHeight="305px"
@@ -232,8 +224,9 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconThree}
-                title="Streamlined Payment Tracking"
-                description="Say goodbye to messy spreadsheets and fragmented payment records. EnKash’s centralized dashboard gives you a real-time view of all your rent transactions. Know what’s paid, what’s pending, and what’s overdue—all in one intuitive platform. Gain control and transparency like never before."
+                title="Cash Flow Optimization for Timely Decisions"
+                description="Utilize EnKash’s facilitated credit lines to enhance liquidity and maintain smooth operations. Extend payment deadlines strategically while strengthening relationships with vendors through consistent and timely payment processes.
+"
                 image={paymentOptionImage}
                 buttonUrl="/sales"
                 maxImageHeight="243px"
@@ -241,8 +234,8 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconFour}
-                title="Instant Reconciliation"
-                description="Save hours of effort with automatic reconciliation. EnKash links your payments to corresponding invoices seamlessly, so you can track rent settlements without lifting a finger. No more manual matching, no more errors—just accurate records and peace of mind."
+                title="Effortless ERP System Integration"
+                description="Sync EnKash with major ERP platforms like Tally, SAP, and Zoho for seamless data flow. Avoid duplications, save time, and ensure data accuracy with synchronized invoice and payment records that simplify reconciliation."
                 image={notificationImage}
                 buttonUrl="/sales"
                 maxImageHeight="259px"
@@ -251,21 +244,11 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconFive}
-                title="Secure Transactions"
-                description="Your security is our priority. EnKash uses multi-layered encryption, fraud detection, and bank-grade protocols to safeguard every transaction. Whether you pay rent via credit card, UPI, or any other method, you can trust that your data and funds are protected."
+                title="Detailed Insights Through Advanced Reporting"
+                description="Access real-time invoice statuses and generate comprehensive reports with ease. Use actionable data to refine your financial planning, identify trends, and make well-informed decisions for your business growth."
                 image={optimizedIcon}
                 buttonUrl="/sales"
                 maxImageHeight="259px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Fast Onboarding"
-                description="Get started with ease. EnKash’s onboarding process is quick, simple, and user-friendly. Complete your KYC, set up your rental payment preferences, and you’re good to go in just a few steps. No steep learning curve—just seamless functionality from day one."
-                image={secureImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-                reverse
               />
             </div>
           </div>
@@ -276,13 +259,19 @@ ${space}`}
         <div className={`${styles.title} text-center pb-5 max-w-auto`}>
           <div className={` pb-3  d-inline`}>
             <Heading
-              title={`One Platform ${space}`}
+              title={` Features to Solve ${space}`}
+              color="black"
+              size="h1"
+              weight="5"
+            />
+            <Heading
+              title={`Invoice Management Challenges${space}`}
               color="equity-blue"
               size="h1"
               weight="5"
             />
             <Heading
-              title={` for All Your Rental Payment Needs`}
+              title={` with Confidence`}
               color="black"
               size="h1"
               weight="5"
@@ -300,7 +289,7 @@ ${space}`}
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <Heading
-              title="Ready to Redefine your Rent Payments?"
+              title="Start Managing Invoices the Smarter Way"
               size="bannerHeading"
               color="white"
               weight="4"
@@ -364,4 +353,4 @@ ${space}`}
   )
 }
 
-export default BusinessBillPayment
+export default InvoiceManagement

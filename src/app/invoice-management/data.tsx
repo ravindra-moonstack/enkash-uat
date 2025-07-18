@@ -3,73 +3,78 @@ import crouselIconTwo from "./img/crouselIconTwo.svg"
 import crouselIconThree from "./img/crouselIconThree.svg"
 import crouselIconFour from "./img/crouselIconFour.svg"
 import crouselIconFive from "./img/crouselIconFive.svg"
-import crouselIconSix from "./img/crouselIconSix.svg"
 
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+
+import {
+  scrollIconFour,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+} from "."
 
 const cardsData = [
   {
-    title: "Sign Up",
-    description: "Create your EnKash account in just a few clicks.",
+    title: "Sign Up and Upload",
+    description: "Create your account and add invoices ",
     icon: scrollIconOne,
   },
   {
-    title: "Add Payment Details",
-    description: "Link your rental agreements and landlord information.",
+    title: "Approve",
+    description: "Set up approval workflows and process invoices efficiently.",
     icon: scrollIconTwo,
   },
   {
-    title: "Automate and Pay",
+    title: "Pay",
     description:
-      "Schedule recurring payments or pay on the go with automated reminders.",
+      "Make payments using your preferred method, including EnKash credit lines.",
     icon: scrollIconThree,
+  },
+  {
+    title: "Track & Report",
+    description:
+      "Monitor progress and generate insights to improve financial planning.",
+    icon: scrollIconFour,
   },
 ]
 
 const allProductSections = [
   {
-    title: "Expense Management",
+    title: "Customizable Alerts and Notifications",
     subtitle: "Manage every spend effortlessly",
     items: [
       {
-        title: "Recurring Billing Setup",
+        title: "Customizable Alerts and Notifications",
         description:
-          "Easily schedule recurring rent payments aligned with your rental agreements.",
+          "Stay informed with real-time alerts for due dates, pending approvals, and payment statuses, ensuring no task is overlooked.",
         image: crouselIconOne,
       },
       {
-        title: "Payment Notifications ",
+        title: "Multi-Channel Invoice Upload",
 
         description:
-          "Both tenants and landlords get instant alerts on payment status, ensuring transparency.",
+          "Add invoices via drag-and-drop, email integration, or API, giving you flexibility in how you manage inputs.",
         image: crouselIconTwo,
       },
 
       {
-        title: "Split Payment Options ",
+        title: "Role-Based Access Control",
         description:
-          "Divide rent across multiple payers or payment modes effortlessly.",
+          "Grant specific access rights to users based on their roles, enhancing security and accountability in your workflow.",
         image: crouselIconThree,
       },
       {
-        title: "Customizable Payment Schedules",
+        title: "Audit Trail Trackings",
 
-        description: "Tailor payment dates to fit your cash flow without hassle.",
+        description:
+          "Maintain a clear and detailed history of every action taken on invoices for transparency and audit readiness.",
         image: crouselIconFour,
       },
       {
-        title: "Dynamic Rent Adjustments",
+        title: "Bulk Payment Scheduling",
 
         description:
           "Handle rent changes, prorated amounts, or additional fees smoothly.",
         image: crouselIconFive,
-      },
-        {
-        title: "Detailed Rental Insights",
-
-        description:
-          "Access monthly rent reports and analytics to track trends and expenses.",
-        image: crouselIconSix,
       },
     ],
   },

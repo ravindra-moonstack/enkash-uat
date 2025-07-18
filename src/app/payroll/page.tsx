@@ -2,20 +2,13 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { cardsData } from "./data"
 import faqData from "./faq-data"
 import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
   paymentLinkImage,
@@ -28,22 +21,20 @@ import {
   taskIconThree,
   taskIconFour,
   taskIconFive,
-  paymentGateway,
+  taskIconSix,
   secureImage,
+  advancedImage,
+  taskIconSeven,
 } from "."
 
-import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import AllProducts from "@/components/all-products/all-products"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 
-const mergedCards = allProductSections.flatMap((section) => section.items)
-
-const BusinessBillPayment = (): React.JSX.Element => {
+const Payroll = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -63,8 +54,8 @@ const BusinessBillPayment = (): React.JSX.Element => {
                       url: "/products/make-payments",
                     },
                     {
-                      name: "Rent Payments",
-                      url: "/rent-payment",
+                      name: "Payroll Processing",
+                      url: "/payroll",
                     },
                   ]}
                 />
@@ -73,7 +64,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Rent Payments ${space}`}
+                  title={`Payroll Software ${space}`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -85,7 +76,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
               >
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
-                    title={`Hassle-Free Rent Payments with EnKash${space}`}
+                    title={`Payroll Processing Software by EnKash${space}`}
                     color="black"
                     size="h2"
                     weight="7"
@@ -94,8 +85,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
                   <Heading
-                    title="Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient
-"
+                    title="Your ultimate solution for accurate, compliant, and stress-free salary disbursement. Empower your business with EnKash’s advanced payroll management software in India, designed to meet your workforce’s diverse needs and ensure seamless payroll disbursement."
                     color="black"
                     size="h5"
                     weight="4"
@@ -153,21 +143,14 @@ const BusinessBillPayment = (): React.JSX.Element => {
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
             <Heading
-              title={`How To Setup ${space}`}
+              title={`How to Get Started with ${space}`}
               color="black"
               size="h1"
               weight="6"
             />
             <Heading
-              title={`Rent Payments 
-${space}`}
+              title={`EnKash Payroll Processing${space}`}
               color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Automation${space}`}
-              color="black"
               size="h1"
               weight="6"
             />
@@ -202,7 +185,7 @@ ${space}`}
             <div className={`${styles.title} text-center `}>
               <div className={`d-inline text-center pb-3`}>
                 <Heading
-                  title={`Put an End to Rental Payment Woes with EnKash`}
+                  title={`Simplify payroll payouts with our advanced solutions`}
                   color="black"
                   size="h1"
                   weight="5"
@@ -213,8 +196,8 @@ ${space}`}
             <div className={styles.allInOnePolicy}>
               <AllInOnePolicy
                 icon={taskIconOne}
-                title="Eliminate Late Payment Penalties"
-                description="Avoid the stress and cost of missing due dates. EnKash’s automated reminders and recurring payment options ensure your rent is paid on time, every time. Say goodbye to late fees and improve your cash flow with a solution designed to keep you punctual without constant follow-ups."
+                title="Comprehensive Employee Data Management"
+                description="Effortlessly handle employee information with EnKash’s HR payroll software, allowing easy uploads, seamless validation, and bulk salary disbursements—all while ensuring compliance. EnKash ensures compliance with regulatory standards, reducing errors and streamlining onboarding processes—all within a user-friendly interface."
                 image={paymentLinkImage}
                 buttonUrl="/sales"
                 maxImageHeight="243px"
@@ -222,8 +205,8 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconTwo}
-                title="Multiple Payment Modes"
-                description="Pay your rent your way. Choose from UPI, NEFT, RTGS, credit cards, or digital wallets to make your rental payments. Whether you want instant processing or flexibility in managing funds, EnKash has a payment mode that works for you—and your landlord will thank you for it!"
+                title="Secure Salary Account Validation"
+                description="Validate salary account details using the penny-drop method, minimizing payment errors and bolstering financial security. Ensure every transaction is accurate and hassle-free."
                 image={shareImage}
                 buttonUrl="/sales"
                 maxImageHeight="305px"
@@ -232,8 +215,8 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconThree}
-                title="Streamlined Payment Tracking"
-                description="Say goodbye to messy spreadsheets and fragmented payment records. EnKash’s centralized dashboard gives you a real-time view of all your rent transactions. Know what’s paid, what’s pending, and what’s overdue—all in one intuitive platform. Gain control and transparency like never before."
+                title="Multi-Branch Salary Disbursement"
+                description="Manage payroll across multiple branches effortlessly from a single dashboard. With just a click, initiate accurate salary disbursements for all employees, regardless of location."
                 image={paymentOptionImage}
                 buttonUrl="/sales"
                 maxImageHeight="243px"
@@ -241,8 +224,8 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconFour}
-                title="Instant Reconciliation"
-                description="Save hours of effort with automatic reconciliation. EnKash links your payments to corresponding invoices seamlessly, so you can track rent settlements without lifting a finger. No more manual matching, no more errors—just accurate records and peace of mind."
+                title="Seamless ERP Integration"
+                description="Integrate EnKash’s payroll software seamlessly with your existing ERP systems and banking partners. This integration enables a unified and efficient workflow tailored to your business needs."
                 image={notificationImage}
                 buttonUrl="/sales"
                 maxImageHeight="259px"
@@ -251,56 +234,40 @@ ${space}`}
 
               <AllInOnePolicy
                 icon={taskIconFive}
-                title="Secure Transactions"
-                description="Your security is our priority. EnKash uses multi-layered encryption, fraud detection, and bank-grade protocols to safeguard every transaction. Whether you pay rent via credit card, UPI, or any other method, you can trust that your data and funds are protected."
+                title="Flexible Payment Solutions"
+                description="Handle payments for full-time employees, contractors, and interns, covering both regular and off-cycle payroll. Additionally, reimburse employee expenses alongside payroll for added convenience."
                 image={optimizedIcon}
                 buttonUrl="/sales"
                 maxImageHeight="259px"
               />
-
               <AllInOnePolicy
-                icon={taskIconFour}
-                title="Fast Onboarding"
-                description="Get started with ease. EnKash’s onboarding process is quick, simple, and user-friendly. Complete your KYC, set up your rental payment preferences, and you’re good to go in just a few steps. No steep learning curve—just seamless functionality from day one."
+                icon={taskIconSix}
+                title="Configurable Approval Workflows"
+                description="Define approval hierarchies with customizable rules. Automate payroll information routing to designated approvers, ensuring prompt approvals and reduced delays."
                 image={secureImage}
                 buttonUrl="/sales"
                 maxImageHeight="259px"
                 reverse
+              />
+
+              <AllInOnePolicy
+                icon={taskIconSeven}
+                title="Advanced Reporting and Analytics"
+                description="Access real-time insights into payroll trends and employee expenses. Generate comprehensive, customizable reports to support data-driven decisions and strategic planning."
+                image={advancedImage}
+                buttonUrl="/sales"
+                maxImageHeight="259px"
               />
             </div>
           </div>
         </div>
       </div>
 
-      <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
-          <div className={` pb-3  d-inline`}>
-            <Heading
-              title={`One Platform ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={` for All Your Rental Payment Needs`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-          </div>
-        </div>
-        <AllProducts
-          title="All Features"
-          subtitle="Combine all use cases"
-          data={mergedCards}
-        />
-      </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <Heading
-              title="Ready to Redefine your Rent Payments?"
+              title="Ready to Elevate Your Payroll Process?"
               size="bannerHeading"
               color="white"
               weight="4"
@@ -364,4 +331,4 @@ ${space}`}
   )
 }
 
-export default BusinessBillPayment
+export default Payroll

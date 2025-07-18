@@ -1,116 +1,95 @@
 const faqData = [
   {
-    question: "What is a rental payment?",
+    question: "What is invoice management?",
     answer: [
       {
         heading:
-          "Rental payments are payments made by a tenant to a landlord or property owner for using a rental property, such as a company space, an apartment, or a house. The rental payment amount is typically agreed upon in a written lease agreement, a legally binding contract between the landlord and tenant.",
+          "A process that enables businesses to track and pay vendor invoices is invoice management. It involves receiving an invoice from the vendor, verifying it, paying the amount to the vendor, and recording the same for future reconciliation.",
       },
     ],
   },
   {
-    question:
-      "What is the maximum amount that can be paid for rent with a credit card?",
+    question: "Why should I automate my invoicing process?",
     answer: [
       {
-        heading:
-          "The maximum amount that you can pay for rent using one credit card depends on the credit limit attached to the card.",
-      },
-    ],
-  },
-  {
-    question:
-      "How long does it take to make rent payments through a credit card?",
-    answer: [
-      {
-        heading:
-          "Once you have all the details (as mentioned above) in place, rental payments through a credit card are a matter of a few minutes post the approvals. It works exactly like other credit card payments. The only aspect that you need to ensure is that you have all the approvals in place to make quicker payments.",
-      },
-    ],
-  },
-  {
-    question:
-      "I had made a payment, but my transaction was put on hold, what to do now?",
-    answer: [
-      {
-        heading:
-          "When you make a payment where the transaction was put on hold, it is important to check if all the details are correct from your end. Are you using the right card? Did you enter the card number, validity date, and CVV number correctly? Did you enter the OTP correctly? Do you have the credit amount to make the required payment? Once you have checked these details, and they are correct, feel free to contact our customer care team to seek a resolution for your issue.",
-      },
-    ],
-  },
-  {
-    question: "Can multiple credit cards be used for rental payments?",
-    answer: [
-      {
-        heading:
-          "Yes, you can use multiple credit cards to pay rent. However, there are a few factors you will need to check before proceeding. First of all, ensure that the credit cards you use have the credit limit required to make the payment. Next, ensure that the credit card can be used for rental payments. Lastly, ensure you have the correct approvals to pay rent using a credit card.",
-      },
-    ],
-  },
-  {
-    question: "How secure are automated rental payments?",
-    answer: [
-      {
-        heading:
-          "Automated rental payment platforms like EnKash use advanced security measures to protect confidential information. This includes using encryption technology and complying with industry standards such as PCI-DSS. It's important to choose a reputable payment platform that prioritizes security.",
-      },
-    ],
-  },
-  {
-    question:
-      "Can rental payments be tracked, and payment histories viewed through online mode?",
-    answer: [
-      {
-        heading:
-          "EnKash provides a centralized view with our comprehensive dashboard to track payments and view payment histories.",
-      },
-    ],
-  },
-  {
-    question: "Why should you pay rent using a credit card?",
-    answer: [
-      {
-        heading: "There are many reasons to pay rent using a credit card:",
+        heading: "Top reasons to automate invoice processing:",
         bullets: [
-          "Using your credit card and getting a credit period to make rental payments helps manage your cash flow",
-          "It is easy to create records and set processes while using a card to make rental payments",
-          "It helps to pay rent using credit cards when you are facing a temporary funds crunch and helps in short-term working capital management",
+          "No manual entry: Automated invoice management eliminates the need for manual entry into accounting systems",
+          "Easy verification: Accounting software verifies vendors and approves and rejects them based on the information provided. This helps in removing fraudulent cases",
+          "Access to information: The data on invoices can be easily viewed anytime and anywhere",
+          "Customized workflows: Businesses can define and customize their workflows as per their needs",
+          "Enhanced visibility: The visibility of invoice management is improved with real-time data availability for decision-making",
+          "Better vendor relationship management: The automation of invoices gives payment notifications and alerts ensuring vendor payments are done on time; improving relationships",
         ],
       },
     ],
   },
   {
-    question: "How to pay rent online with a credit card?",
+    question: "What is the importance of E-Invoicing in ensuring quick payments?",
     answer: [
       {
-        heading: "Here are a few one-time steps to set up the process:",
-        bullets: [
-          "Set up processes and workflows and upload records",
-          "Set maker-checker-approver matrices",
-          "Define centralized and decentralized processes",
-          "Include details like GST, TDS, and other factors applicable to your rental amounts",
-        ],
+        heading:
+          "The quicker processing of invoices with the automation software enables quicker payments. Businesses can make immediate payments for the invoices uploaded on the automation software. In fact, with EnKash bulk payments can also be made with a single click. These quick payments can also help avail early payment discounts enabling savings for the business.",
       },
     ],
   },
   {
-    question: "How to get rent receipts for online rent payments?",
+    question: "Is it possible to generate an online bill?",
     answer: [
       {
         heading:
-          "If you are using EnKash portal to make online rent payments, it is a matter of a few clicks to download the rental payment receipts. You will be intimated via email of your rental payment along with an attached receipt.",
+          "You can upload invoices on EnKash with a few simple steps. Add the necessary details about the vendor, post KYC, upload the invoice, and make the payment via the invoicing software.",
       },
     ],
   },
   {
-    question: "Why should businesses use automated rental payments?",
+    question: "How do automatic invoice processes work?",
     answer: [
       {
         heading:
-          "Automated rental payments are a convenient and efficient way for businesses to collect payments. These can reduce the late payment charges and eliminate the need to pay cheques or cash each month manually. Additionally, automated rental payments help businesses save time and simplify accounting and record-keeping.",
+          "When an invoice is received, it is uploaded and scanned via the automation software, and the data is extracted in the accounting system in the desired format automatically.",
+      },
+      {
+        heading:
+          "As soon as the data is recorded into the digital database, the invoice is converted into a text-searchable document that is mapped by the system so that the data entered into the system can be actively tracked within the ERP system.",
+      },
+      {
+        heading:
+          "The data stored includes the vendor’s name, purchase amount, details of the goods/services availed, etc., and provides a detailed account of the invoice, which can be shared with the concerned parties for review and payment approval.",
+      },
+      {
+        heading:
+          "Vendor post-KYC is added and payment is done if data is validated.",
       },
     ],
   },
-]
+  {
+    question: "What are automated reminders in invoicing?",
+    answer: [
+      {
+        heading:
+          "Automated reminders or notifications can help businesses make payments to vendors before the due date. Some of the vendors provide trade discounts on early payments which can help businesses to save their costs and add to their cash flow.",
+      },
+    ],
+  },
+  {
+    question: "Why are multiple payment options important in invoicing?",
+    answer: [
+      {
+        heading:
+          "Businesses can improve their cash flow by offering multiple payment options as this enables faster and efficient payment without any delay unlike in the case of traditional payment options like cheques. This also helps establish trust in the business.",
+      },
+    ],
+  },
+  {
+    question: "What is an electronic invoice system?",
+    answer: [
+      {
+        heading:
+          "An electronic invoice system digitally manages invoice creation, delivery, and processing between businesses and vendors. It helps reduce manual errors, speeds up approvals, and ensures compliance with regulations like GST. With EnKash’s electronic invoice system, you can bulk upload invoices, automate validations and approvals, and streamline payments—saving time and improving efficiency.",
+      },
+    ],
+  },
+];
 
-export default faqData
+export default faqData;

@@ -16,7 +16,6 @@ import {
   upi,
   walletExpense,
   whiteArrow,
-  motherCardImg,
   itIcon,
   ecoomerceIcon,
   manufactureIcon,
@@ -45,6 +44,7 @@ import bg6 from "./img/bg5.jpg"
 
 import AllProducts from "@/components/all-products/all-products"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -96,7 +96,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
 
           <div className=" col-12 d-flex justify-content-center align-items-center">
-            <div className={styles.lottie_container}>
+            {/* <div className={styles.lottie_container}>
               <div className={styles.button_wrapper}>
                 <RectangleButton
                   title="Get Started"
@@ -108,6 +108,12 @@ const ExpenseManagement = (): React.JSX.Element => {
                 src={motherCardImg}
                 alt="card background"
                 className="position-relative w-100 h-100"
+              />
+            </div> */}
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"ExpenseLottie"}
+                loop={true}
               />
             </div>
           </div>
