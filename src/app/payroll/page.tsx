@@ -25,6 +25,10 @@ import {
   secureImage,
   advancedImage,
   taskIconSeven,
+  taskIconEight,
+  taskIconNine,
+  designedIcon,
+  payrollImg,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -255,6 +259,26 @@ const Payroll = (): React.JSX.Element => {
                 title="Advanced Reporting and Analytics"
                 description="Access real-time insights into payroll trends and employee expenses. Generate comprehensive, customizable reports to support data-driven decisions and strategic planning."
                 image={advancedImage}
+                buttonUrl="/sales"
+                maxImageHeight="259px"
+              />
+
+              <AllInOnePolicy
+                icon={taskIconEight}
+                title="Designed for Startups and SMEs"
+                description="Simple and reliable payroll software for small businesses. Easily onboard employees, run accurate payroll, and stay compliant—without the spreadsheet hassle.
+"
+                image={designedIcon}
+                buttonUrl="/sales"
+                maxImageHeight="259px"
+                reverse
+              />
+
+              <AllInOnePolicy
+                icon={taskIconNine}
+                title="Streamline HR Payroll Operations"
+                description="A powerful HR payroll solution to automate compliance, simplify salary disbursement, and reduce manual work, ensuring smooth, secure payroll operations."
+                image={payrollImg}
                 buttonUrl="/sales"
                 maxImageHeight="259px"
               />

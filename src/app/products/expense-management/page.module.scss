@@ -6,8 +6,8 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 95px;
   padding-bottom: 36px;
   background-image: url(./img/first-row-bg.svg);
@@ -61,8 +61,8 @@
   background-size: cover;
   // background-image: url(./img/ArtboardBg.svg);
   padding-top: 36px;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 0px;
   @include for-laptops {
     padding: 48px 90px;
@@ -144,7 +144,7 @@
   background-size: cover;
   position: relative;
   width: 100%;
-  padding: 32px;
+  padding: 20px;
 
   @include for-laptops {
     padding: 110px 90px;
@@ -214,7 +214,7 @@
 }
 
 .fifth_row {
-  padding: 32px;
+  padding: 20px;
   @include for-laptops {
     padding: 32px;
   }
@@ -280,7 +280,7 @@
 .seventh_row {
   position: relative;
   text-align: center;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding-top: 90px;
     padding-bottom: 90px;
@@ -319,7 +319,7 @@
 
 .ninth_row {
   position: relative;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -345,7 +345,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }

@@ -34,120 +34,9 @@ import CardProduct from "@/components/card-product/card-product"
 import AllProducts from "@/components/all-products/all-products"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import { greenIcon, notificationImage } from "../../payment-button"
-import CardStacking from "@/components/cardStacking/cardStacking"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Match Your Style"
-          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
-          image={notificationImage}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Another Card"
-          description="Another card description"
-          image={notificationImage}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Match Your Style"
-          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
-          image={notificationImage}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Another Card"
-          description="Another card description"
-          image={notificationImage}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Match Your Style"
-          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
-          image={notificationImage}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Another Card"
-          description="Another card description"
-          image={notificationImage}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Another Card"
-          description="Another card description"
-          image={notificationImage}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  // Add more cards...
-]
 
 const CorporateCards = (): React.JSX.Element => {
   return (
@@ -584,7 +473,7 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.card_stacking_row}>
+      {/* <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
             <div className={`${styles.title} text-center pb-5`}>
@@ -611,7 +500,7 @@ const CorporateCards = (): React.JSX.Element => {
             <CardStacking cards={cards} />
           </>
         </div>
-      </div>
+      </div> */}
 
       <div className={`${styles.fifth_row} relative`}>
         <div className={`${styles.title} text-center pb-5`}>
@@ -701,7 +590,7 @@ const CorporateCards = (): React.JSX.Element => {
                   useH1TagInHtml={true}
                 />
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"

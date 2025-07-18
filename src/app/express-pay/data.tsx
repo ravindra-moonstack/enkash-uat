@@ -2,8 +2,6 @@ import crouselIconOne from "./img/crouselIconOne.svg"
 import crouselIconTwo from "./img/crouselIconTwo.svg"
 import crouselIconThree from "./img/crouselIconThree.svg"
 import crouselIconFour from "./img/crouselIconFour.svg"
-import crouselIconFive from "./img/crouselIconFive.svg"
-import crouselIconSix from "./img/crouselIconSix.svg"
 
 import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
 

@@ -174,19 +174,26 @@
 }
 
 .social_icons_row {
-  display: flex;
-  align-items: flex-end;
+  gap: 6px;
 
   @include for-laptops {
     width: 50%;
   }
 
-  img {
-    width: 20px;
-    height: auto;
-    margin: 0 5px;
-    @include for-laptops {
-      width: 25px;
+  a {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    font-size: 16px;
+    border-radius: 6px;
+    background: black;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      width: 28px;
     }
   }
 }

@@ -1,20 +1,17 @@
 import styles from "./footer-v2.module.scss"
 import Image from "next/image"
+import React from "react"
+
 import {
-  twitterLogo,
-  linkedinLogo,
-  fbLogo,
-  instLogo,
-  call,
-  locationPin,
-  pci,
-  soc,
-  email,
-  enkashBlueLogo,
-  ppi,
-  youtubeLogo,
-  ppa,
-} from "."
+  FaFacebookF,
+  FaXTwitter,
+  FaLinkedinIn,
+  FaInstagram,
+  FaYoutube,
+  FaPhone,
+  FaEnvelope,
+} from "react-icons/fa6"
+import { locationPin, pci, enkashBlueLogo, ppi, ppa, sovSvg } from "."
 import Link from "next/link"
 
 const FooterV2 = () => {
@@ -74,7 +71,7 @@ const FooterV2 = () => {
                     >
                       <div className={styles.soc_logo}>
                         <Image
-                          src={soc}
+                          src={sovSvg}
                           alt="soc logo"
                           height={0} // remove fixed height
                           width={0} // remove fixed width
@@ -129,28 +126,34 @@ const FooterV2 = () => {
                     <div className={` ${styles.info_body_two}`}>
                       <ul>
                         <li>
-                          <Image
-                            src={call}
-                            alt="Contact Enkash"
-                            className={styles.help_icons}
-                          />
-                          <span
-                            className={`ms-md-3 ms-2 ${styles.support_text}`}
+                          <Link
+                            href="tel:8530490475"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className={`ms-md-3 ms-2  ${styles.support_text}`}
                           >
-                            +91 8530490475
-                          </span>
+                            <FaPhone />
+                            <span
+                              className={`ms-md-3 ms-2 ${styles.support_text}`}
+                            >
+                              +91 8530490475
+                            </span>
+                          </Link>
                         </li>
                         <li>
-                          <Image
-                            src={email}
-                            alt="Contact Enkash"
-                            className={styles.help_icons}
-                          />
-                          <span
-                            className={`ms-md-3 ms-2 ${styles.support_text}`}
+                          <Link
+                            href="mailto:support@enkash.com"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className={`ms-md-3 ms-2  ${styles.support_text}`}
                           >
-                            support@enkash.com
-                          </span>
+                            <FaEnvelope />
+                            <span
+                              className={`ms-md-3 ms-2 ${styles.support_text}`}
+                            >
+                              support@enkash.com
+                            </span>
+                          </Link>
                         </li>
                       </ul>
                     </div>
@@ -175,40 +178,47 @@ const FooterV2 = () => {
                           target="_blank"
                           rel="noreferrer noopener"
                         >
-                          <Image src={fbLogo} alt="EnKash Facebook" />
+                          <FaFacebookF />
                         </Link>
                         <Link
                           href="https://twitter.com/EnkashBusiness"
                           target="_blank"
                           rel="noreferrer noopener"
+                          style={{
+                            width: "28px",
+                            height: "28px",
+                            padding: "0",
+                            fontSize: "16px",
+                            borderRadius: "6px",
+                            background: "black",
+                            display: "flex",
+                            color: "#fff",
+                            alignItems: "center",
+                            justifyContent: "center",
+                          }}
                         >
-                          <Image src={twitterLogo} alt="EnKash Twitter" />
+                          <FaXTwitter />
                         </Link>
                         <Link
                           href="https://www.linkedin.com/company/enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
                         >
-                          <Image src={linkedinLogo} alt="EnKash LinkedIn" />
+                          <FaLinkedinIn />
                         </Link>
                         <Link
                           href="https://www.instagram.com/Enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
                         >
-                          <Image src={instLogo} alt="EnKash Instagram" />
+                          <FaInstagram />
                         </Link>
                         <Link
-                          href="https://www.instagram.com/Enkashbusiness"
+                          href="https://www.youtube.com/@enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
                         >
-                          <Image
-                            src={youtubeLogo}
-                            alt="EnKash Instagram"
-                            height={25}
-                            width={25}
-                          />
+                          <FaYoutube />
                         </Link>
                       </div>
                     </div>
@@ -247,28 +257,34 @@ const FooterV2 = () => {
                       <div className={` ${styles.info_body_two}`}>
                         <ul>
                           <li>
-                            <Image
-                              src={call}
-                              alt="Contact Enkash"
-                              className={styles.help_icons}
-                            />
-                            <span
-                              className={`ms-md-3 ms-2 ${styles.support_text}`}
+                            <Link
+                              href="tel:8530490475"
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              className={`ms-md-3 ms-2  ${styles.support_text}`}
                             >
-                              +91 8530490475
-                            </span>
+                              <FaPhone />
+                              <span
+                                className={`ms-md-3 ms-2 ${styles.support_text}`}
+                              >
+                                +91 8530490475
+                              </span>
+                            </Link>
                           </li>
                           <li>
-                            <Image
-                              src={email}
-                              alt="Contact Enkash"
-                              className={styles.help_icons}
-                            />
-                            <span
-                              className={`ms-md-3 ms-2 ${styles.support_text}`}
+                            <Link
+                              href="mailto:support@enkash.com"
+                              target="_blank"
+                              rel="noreferrer noopener"
+                              className={`ms-md-3 ms-2  ${styles.support_text}`}
                             >
-                              support@enkash.com
-                            </span>
+                              <FaEnvelope />
+                              <span
+                                className={`ms-md-3 ms-2 ${styles.support_text}`}
+                              >
+                                support@enkash.com
+                              </span>
+                            </Link>
                           </li>
                         </ul>
                       </div>
@@ -292,40 +308,35 @@ const FooterV2 = () => {
                             target="_blank"
                             rel="noreferrer noopener"
                           >
-                            <Image src={fbLogo} alt="EnKash Facebook" />
+                            <FaFacebookF />
                           </Link>
                           <Link
                             href="https://twitter.com/EnkashBusiness"
                             target="_blank"
                             rel="noreferrer noopener"
                           >
-                            <Image src={twitterLogo} alt="EnKash Twitter" />
+                            <FaXTwitter />
                           </Link>
                           <Link
                             href="https://www.linkedin.com/company/enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
                           >
-                            <Image src={linkedinLogo} alt="EnKash LinkedIn" />
+                            <FaLinkedinIn />
                           </Link>
                           <Link
                             href="https://www.instagram.com/Enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
                           >
-                            <Image src={instLogo} alt="EnKash Instagram" />
+                            <FaInstagram />
                           </Link>
                           <Link
-                            href="https://www.instagram.com/Enkashbusiness"
+                            href="https://www.youtube.com/@enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
                           >
-                            <Image
-                              src={youtubeLogo}
-                              alt="EnKash Instagram"
-                              height={25}
-                              width={25}
-                            />
+                            <FaYoutube />
                           </Link>
                         </div>
                       </div>
@@ -345,7 +356,7 @@ const FooterV2 = () => {
                     >
                       <div className={styles.soc_logo}>
                         <Image
-                          src={soc}
+                          src={sovSvg}
                           alt="soc logo"
                           height={34}
                           width={30}

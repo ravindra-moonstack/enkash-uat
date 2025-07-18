@@ -6,7 +6,7 @@ import { allProductSections, cardData, cardsData } from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
 
 import { Header, Footer, Heading, FAQHtml } from "@/components"
-import EnkashWay from "@/components/enkash-way/enkash-way"
+// import EnkashWay from "@/components/enkash-way/enkash-way"
 import {
   faqBg,
   blueArrow,
@@ -16,12 +16,12 @@ import {
   upi,
   walletExpense,
   whiteArrow,
-  itIcon,
-  ecoomerceIcon,
-  manufactureIcon,
-  logisticIcon,
-  consultancyIcon,
-  pharmacyIcon,
+  // itIcon,
+  // ecoomerceIcon,
+  // manufactureIcon,
+  // logisticIcon,
+  // consultancyIcon,
+  // pharmacyIcon,
 } from "."
 import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -35,12 +35,12 @@ import {
   rankData,
 } from "./data"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
-import bg1 from "./img/bg4.jpg"
-import bg2 from "./img/bg3.jpg"
-import bg3 from "./img/bg2.jpg"
-import bg4 from "./img/bg1.jpg"
-import bg5 from "./img/bg6.jpg"
-import bg6 from "./img/bg5.jpg"
+// import bg1 from "./img/bg4.jpg"
+// import bg2 from "./img/bg3.jpg"
+// import bg3 from "./img/bg2.jpg"
+// import bg4 from "./img/bg1.jpg"
+// import bg5 from "./img/bg6.jpg"
+// import bg6 from "./img/bg5.jpg"
 
 import AllProducts from "@/components/all-products/all-products"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
@@ -244,7 +244,7 @@ const ExpenseManagement = (): React.JSX.Element => {
 
           {/* Section 3 */}
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-1">
+            <div className="col-md-6 col-12  px-md-5 order-1 order-md-1">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
                 <Heading
                   title={`UPI- Based Petty Cash${space}`}
@@ -555,7 +555,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.sixth_row} row d-flex bg-white `}>
+      {/* <div className={`${styles.sixth_row} row d-flex bg-white `}>
         <EnkashWay
           sectionHeading="One Platform, Every Use Case, Total Control"
           progressData={[
@@ -609,7 +609,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             },
           ]}
         />
-      </div>
+      </div> */}
 
       <div className={` ${styles.ninth_row} `}>
         <div className="max-w-auto">

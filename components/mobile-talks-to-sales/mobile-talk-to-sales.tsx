@@ -11,7 +11,7 @@ const TalkToSales = () => {
             title={"Talk to Sales"}
             theme="blue"
             url="/sales/?source=expense_management"
-            width="276px"
+            width="100%"
           />
         </div>
       </div>

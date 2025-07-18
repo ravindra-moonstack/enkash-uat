@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardData, dataSets } from "./data"
+import { cardData } from "./data"
 
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
@@ -31,12 +31,13 @@ import {
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
+// import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
+import Spline from "@splinetool/react-spline"
 
 const CollectPayment = (): React.JSX.Element => {
   return (
@@ -151,8 +152,8 @@ const CollectPayment = (): React.JSX.Element => {
 
       <div className={`${styles.third_row} row-padding `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center gap-5 ${styles.section}`}>
-            <div className={`${styles.title} text-center py-5`}>
+          <div className={` gap-5 ${styles.section}`}>
+            <div className={`${styles.title} text-center py-3 py-md-5`}>
               <div
                 className={` flex-column justify-content-center align-items-center pb-3 `}
               >
@@ -245,7 +246,8 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className={styles.how_it_workssection}>
-            <HowDoesItWork dataSets={dataSets} />
+            {/* <HowDoesItWork dataSets={dataSets} /> */}
+            <Spline scene="https://prod.spline.design/JffS0FYkygwKIO-g/scene.splinecode" />
           </div>
         </div>
       </div>
