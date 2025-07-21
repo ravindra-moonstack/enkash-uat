@@ -59,7 +59,7 @@ const RectangleButton = ({
         ${className ?? ""}
       `}
       onClick={handleClick}
-      style={{ width: width || "max-content" }}
+      style={{ width: width || "auto" }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

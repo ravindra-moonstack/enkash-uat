@@ -228,8 +228,8 @@ const CollectPayment = (): React.JSX.Element => {
       >
         {/* Spline background */}
         <div
-          className="position-absolute top-0 start-0 w-100"
-          style={{ height: "600px" }}
+          className="position-absolute top-0 start-0 w-100 h-100 "
+          style={{ height: "600px", backgroundColor: "black" }}
         >
           <Spline scene="https://prod.spline.design/JffS0FYkygwKIO-g/scene.splinecode" />
         </div>
