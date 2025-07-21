@@ -2,11 +2,7 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import {
-  allProductSections,
-  cardType,
-  intantActionData,
-} from "./data"
+import { allProductSections, cardType, intantActionData } from "./data"
 
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
@@ -232,7 +228,7 @@ const PurchesCards = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-md-5 pb-3`}>
             <Heading
               title={`Frequently Asked Questions  ${space}`}
               color="black"

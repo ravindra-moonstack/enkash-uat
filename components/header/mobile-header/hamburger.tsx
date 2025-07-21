@@ -30,13 +30,9 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
           </Link>
           <div className="d-flex gap-2">
             <div className={`${styles.mobile_right_icon}`}>
-              <Image
-                src={callIcon}
-                alt="hamburger menu icon"
-                onClick={() => {
-                  setCurrentStep(1)
-                }}
-              />
+              <Link href="tel:8530490475">
+                <Image src={callIcon} alt="call  icon" />
+              </Link>
             </div>
             <div className={`${styles.mobile_right_icon}`}>
               <Image
