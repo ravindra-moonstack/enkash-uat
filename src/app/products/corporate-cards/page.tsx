@@ -7,7 +7,6 @@ import {
   cardData,
   cardType,
   corporateCardData,
-  dataSets,
   intantActionData,
   rbiData,
   spendAnalyticsData,
@@ -19,7 +18,6 @@ import {
   blueArrow,
   instantActionImg,
   spendAnalylicsImg,
-  motherCardImg,
   rbiLogo,
   corporateCard,
   corporateCardIcon,
@@ -37,9 +35,120 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import CardStacking from "@/components/cardStacking/cardStacking"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import { greenIcon, notificationImage } from "../make-payments"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
+
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={greenIcon}
+          title="Match Your Style"
+          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
+          image={notificationImage}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={greenIcon}
+          title="Another Card"
+          description="Another card description"
+          image={notificationImage}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={greenIcon}
+          title="Match Your Style"
+          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
+          image={notificationImage}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={greenIcon}
+          title="Another Card"
+          description="Another card description"
+          image={notificationImage}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={greenIcon}
+          title="Match Your Style"
+          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
+          image={notificationImage}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={greenIcon}
+          title="Another Card"
+          description="Another card description"
+          image={notificationImage}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={greenIcon}
+          title="Another Card"
+          description="Another card description"
+          image={notificationImage}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  // Add more cards...
+]
 
 const CorporateCards = (): React.JSX.Element => {
   return (
@@ -506,7 +615,7 @@ const CorporateCards = (): React.JSX.Element => {
               />
             </div>
 
-            <CardStacking cards={dataSets} />
+            <CardStacking cards={cards} />
           </>
         </div>
       </div>

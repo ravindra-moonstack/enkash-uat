@@ -1,7 +1,6 @@
 import styles from "./footer-v2.module.scss"
 import Image from "next/image"
 import React from "react"
-import { Button } from "react-bootstrap"
 import {
   FaFacebookF,
   FaXTwitter,
@@ -12,18 +11,10 @@ import {
   FaEnvelope,
 } from "react-icons/fa6"
 import {
-  twitterLogo,
-  linkedinLogo,
-  fbLogo,
-  instLogo,
-  call,
   locationPin,
   pci,
-  soc,
-  email,
   enkashBlueLogo,
   ppi,
-  youtubeLogo,
   ppa,
   sovSvg,
 } from "."

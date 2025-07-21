@@ -20,7 +20,6 @@ import {
   paymentPageImg,
   qrCodeIcon,
   qrCodeImg,
-  circles,
   instantSettelmentIcon,
   instantSettelmentImg,
   affordabilityImg,
