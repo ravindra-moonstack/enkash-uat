@@ -21,7 +21,6 @@ import {
   taskIconThree,
   taskIconFour,
   taskIconFive,
-
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -76,7 +75,7 @@ const InvoiceManagement = (): React.JSX.Element => {
               >
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
-                    title={`Transform your Invoice Management Process with EnKash$`}
+                    title={`Transform your Invoice Management Process with EnKash`}
                     color="black"
                     size="h2"
                     weight="7"
@@ -157,8 +156,7 @@ ${space}`}
               weight="6"
             />
             <Heading
-              title={`Works
-${space}`}
+              title={`Works ${space}`}
               color="black"
               size="h1"
               weight="6"
@@ -180,7 +178,8 @@ ${space}`}
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100"
+                  style={{ maxHeight: "672px" }}
                 />
               </div>
             </div>
@@ -317,7 +316,7 @@ ${space}`}
               weight="5"
             />
             <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">

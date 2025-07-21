@@ -2,7 +2,7 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardData } from "./data"
+import { cardData, dataSets } from "./data"
 
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
@@ -38,6 +38,7 @@ import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import Spline from "@splinetool/react-spline"
+import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 
 const CollectPayment = (): React.JSX.Element => {
   return (
@@ -223,11 +224,16 @@ const CollectPayment = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fourth_row}  row d-flex  row-padding-x-only`}>
-        <div className="max-m-auto relative ">
-          <div className={styles.circles_bg}>
-            <Image src={circles} alt="background image" />
-          </div>
+      <div
+        className={`${styles.fourth_row} row d-flex row-padding-x-only position-relative`}
+      >
+        {/* Spline background */}
+        <div className="position-absolute top-0 start-0 w-100 h-100 ">
+          <Spline scene="https://prod.spline.design/JffS0FYkygwKIO-g/scene.splinecode" />
+        </div>
+
+        {/* Foreground content */}
+        <div className={`${styles.text_container} max-m-auto position-relative`}>
           <div className="d-flex flex-column text-center mb-5">
             <Heading
               title="Frictionless Payment "
@@ -246,8 +252,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className={styles.how_it_workssection}>
-            {/* <HowDoesItWork dataSets={dataSets} /> */}
-            <Spline scene="https://prod.spline.design/JffS0FYkygwKIO-g/scene.splinecode" />
+            <HowDoesItWork dataSets={dataSets} />
           </div>
         </div>
       </div>
@@ -364,7 +369,7 @@ const CollectPayment = (): React.JSX.Element => {
               weight="5"
             />
             <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
@@ -469,7 +474,7 @@ const CollectPayment = (): React.JSX.Element => {
               weight="5"
             />
             <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">

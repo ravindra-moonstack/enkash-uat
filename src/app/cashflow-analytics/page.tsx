@@ -39,7 +39,6 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 
-
 const showScroll = cardsData.length > 3
 
 const CashflowAnalytics = (): React.JSX.Element => {
@@ -373,7 +372,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
               weight="5"
             />
             <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">

@@ -7,6 +7,7 @@ import {
   cardData,
   cardType,
   corporateCardData,
+  dataSets,
   intantActionData,
   rbiData,
   spendAnalyticsData,
@@ -34,6 +35,8 @@ import CardProduct from "@/components/card-product/card-product"
 import AllProducts from "@/components/all-products/all-products"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
+import CardStacking from "@/components/cardStacking/cardStacking"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -94,7 +97,7 @@ const CorporateCards = (): React.JSX.Element => {
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
-            <div className={styles.lottie_container}>
+            {/* <div className={styles.lottie_container}>
               <div>
                 <Image
                   src={motherCardImg}
@@ -102,6 +105,12 @@ const CorporateCards = (): React.JSX.Element => {
                   className="position-relative w-100 h-100"
                 />
               </div>
+            </div> */}
+            <div className={styles.lottie_container}>
+              <LottieDynamicLoadComponent
+                animationName={"CorporateCardLottie"}
+                loop={true}
+              />
             </div>
           </div>
         </div>
@@ -473,7 +482,7 @@ const CorporateCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      {/* <div className={styles.card_stacking_row}>
+      <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
             <div className={`${styles.title} text-center pb-5`}>
@@ -497,10 +506,10 @@ const CorporateCards = (): React.JSX.Element => {
               />
             </div>
 
-            <CardStacking cards={cards} />
+            <CardStacking cards={dataSets} />
           </>
         </div>
-      </div> */}
+      </div>
 
       <div className={`${styles.fifth_row} relative`}>
         <div className={`${styles.title} text-center pb-5`}>
@@ -576,7 +585,7 @@ const CorporateCards = (): React.JSX.Element => {
               weight="5"
             />
             <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">

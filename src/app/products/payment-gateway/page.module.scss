@@ -39,7 +39,7 @@
   }
   .right_img {
     Img {
-      height: 250px;
+      height: auto;
       padding-top: 32px;
       @include for-laptops {
         height: 625px;

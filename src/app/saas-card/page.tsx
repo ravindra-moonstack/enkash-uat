@@ -2,11 +2,7 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import {
-  allProductSections,
-  cardType,
-  intantActionData,
-} from "./data"
+import { allProductSections, cardType, intantActionData } from "./data"
 
 import { Header, Heading, Footer, FAQHtml } from "@/components"
 
@@ -220,7 +216,7 @@ const SaasCards = (): React.JSX.Element => {
               weight="5"
             />
             <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">

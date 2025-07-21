@@ -115,16 +115,15 @@
 }
 
 .fourth_row {
-  background: $color-black;
-  position: relative;
   border-radius: 12px;
   position: relative;
   padding: 20px;
 
-  @include for-laptops {
-    padding-bottom: 204px;
-    padding-top: 204px;
-    height: 100vh;
+  .text_container {
+    @include for-laptops {
+      padding-bottom: 204px;
+      padding-top: 80px;
+    }
   }
 
   .circles_bg {

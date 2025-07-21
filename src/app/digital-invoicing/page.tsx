@@ -39,8 +39,6 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 
-
-
 const showScroll = cardsData.length > 3
 
 const DigitalInvoicing = (): React.JSX.Element => {
@@ -167,13 +165,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading
-                  title="100%"
-                  color="white"
-                  size="h2"
-                  weight="6"
-             
-                />
+                <Heading title="100%" color="white" size="h2" weight="6" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -245,7 +237,6 @@ const DigitalInvoicing = (): React.JSX.Element => {
               size="h1"
               weight="6"
             />
-           
           </div>
           <div className="row">
             <div className="col-md-6 col-12">
@@ -326,7 +317,6 @@ const DigitalInvoicing = (): React.JSX.Element => {
                   size="h1"
                   weight="5"
                 />
-               
               </div>
             </div>
 
@@ -364,12 +354,11 @@ const DigitalInvoicing = (): React.JSX.Element => {
               maxImageHeight="305px"
               reverse
             />
-           
           </div>
         </div>
       </div>
 
-    <div className={`${styles.fifth_row} `}>
+      <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <Heading
@@ -401,7 +390,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
               weight="5"
             />
             <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQ`} color="equity-blue" size="h1" weight="5" />
+            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
             <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">

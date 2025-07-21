@@ -24,10 +24,10 @@ body {
 }
 
 /* ✅ Prevent background scroll when modal is open */
-body.no-scroll {
+/* body.no-scroll {
   overflow: hidden !important;
   height: 100vh;
-}
+} */
 
 * {
   box-sizing: border-box;
