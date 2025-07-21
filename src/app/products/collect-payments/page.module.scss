@@ -120,6 +120,7 @@
   padding: 20px;
 
   .text_container {
+    cursor: none;
     @include for-laptops {
       padding-bottom: 204px;
       padding-top: 80px;

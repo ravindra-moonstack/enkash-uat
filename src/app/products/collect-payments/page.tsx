@@ -227,12 +227,17 @@ const CollectPayment = (): React.JSX.Element => {
         className={`${styles.fourth_row} row d-flex row-padding-x-only position-relative`}
       >
         {/* Spline background */}
-        <div className="position-absolute top-0 start-0 w-100 h-100 ">
+        <div
+          className="position-absolute top-0 start-0 w-100 h-100 "
+          style={{ height: "600px", backgroundColor: "black" }}
+        >
           <Spline scene="https://prod.spline.design/JffS0FYkygwKIO-g/scene.splinecode" />
         </div>
 
         {/* Foreground content */}
-        <div className={`${styles.text_container} max-m-auto position-relative`}>
+        <div
+          className={`${styles.text_container} max-m-auto position-relative`}
+        >
           <div className="d-flex flex-column text-center mb-5">
             <Heading
               title="Frictionless Payment "
