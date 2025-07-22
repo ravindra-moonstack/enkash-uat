@@ -44,7 +44,7 @@ const HierarchyAndControl = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Hierarchy & Control`}
+                  title={`HIERACHY AND CONTROL`}
                   color="equity-blue"
                   size="h4"
                   weight="4"

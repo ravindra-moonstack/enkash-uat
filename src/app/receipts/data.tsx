@@ -4,7 +4,8 @@ import approvedIcon from "./img/approved.svg"
 import policyApproval from "./img/policy-approval.webp"
 import herarchy from "./img/herarchy.webp"
 import insight from "./img/insights.webp"
-import scanAndDrops from "./img/scan-and-drops.webp"
+import advance from "./img/advanced.webp"
+import reimbursements from "./img/reimbursement.webp"
 import { stepCardImgOne, stepCardImgThree, stepCardImgTwo } from "."
 
 const cardData = [
@@ -55,17 +56,22 @@ const expenseManagementData = [
     whiteTitle: "Budget & Advances",
     description:
       "Get advances cleared as per the defined budget to get going without any hindrance.",
-    cardImage: scanAndDrops,
+    cardImage: advance,
     link: "/budget-and-advances",
   },
   {
     whiteTitle: "Reimbursements",
     description:
       "Businesses repay the amount to employees or partners for expenses incurred on their behalf.",
-    cardImage: policyApproval,
+    cardImage: reimbursements,
     link: "/reimbursements",
   },
-
+  {
+    whiteTitle: "Hierarchy and Control",
+    description: "Define hierarchies for better control and transparency.",
+    cardImage: herarchy,
+    link: "/hierarchy-and-controls",
+  },
   {
     whiteTitle: "Insights",
     description:
@@ -74,10 +80,11 @@ const expenseManagementData = [
     link: "/expense-analytics-and-insights/",
   },
   {
-    whiteTitle: "Hierarchy and Control",
-    description: "Define hierarchies for better control and transparency.",
-    cardImage: herarchy,
-    link: "/hierarchy-and-controls",
+    whiteTitle: "Policy and Approval Flow",
+    description:
+      "A set of guidelines or rules that outline the procedures for seeking and granting official authorization for expenses. ",
+    cardImage: policyApproval,
+    link: "/approval-flows/",
   },
 ]
 
