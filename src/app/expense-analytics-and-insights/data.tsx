@@ -6,6 +6,7 @@ import policyApproval from "./img/policy-approval.webp"
 import herarchy from "./img/herarchy.webp"
 import insight from "./img/insights.webp"
 import scanAndDrops from "./img/scan-and-drops.webp"
+import reimbursements from "./img/reimbursement.webp"
 import { stepCardImgOne, stepCardImgThree, stepCardImgTwo } from "."
 
 const cardData = [
@@ -26,7 +27,8 @@ const cardData = [
 const stepCards = [
   {
     title: "Centralized Dashboard",
-    description: "Dive into detailed employee expense analytics with a centralized dashboard for real-time tracking and decision-making.",
+    description:
+      "Dive into detailed employee expense analytics with a centralized dashboard for real-time tracking and decision-making.",
     ctaColor: "equity-blue",
     source: "expense_management",
     cardImage: stepCardImgOne,
@@ -54,16 +56,16 @@ const stepCards = [
 
 const expenseManagementData = [
   {
-    whiteTitle: "Policy and Approval Flow",
+    whiteTitle: "Budget & Advances",
     description:
-      "Enterprises can define their policies and set approval flow for easy decision-making.",
+      "Get advances cleared as per the defined expense budget to get going without any hindrance.",
     cardImage: advance,
   },
   {
     whiteTitle: "Reimbursements",
     description:
       "Businesses repay the amount to employees or partners for expenses incurred on their behalf.",
-    cardImage: policyApproval,
+    cardImage: reimbursements,
   },
   {
     whiteTitle: "Scan & Drop Receipts",
@@ -72,15 +74,21 @@ const expenseManagementData = [
     cardImage: scanAndDrops,
   },
   {
+    whiteTitle: "Hierarchy and Control",
+    description: "Define hierarchies for better control and transparency.",
+    cardImage: herarchy,
+  },
+  {
     whiteTitle: "Insights",
     description:
       "Make use of deep, data-driven understandings for informed decision-making.",
     cardImage: insight,
   },
   {
-    whiteTitle: "Hierarchy and Control",
-    description: "Define hierarchies for better control and transparency.",
-    cardImage: herarchy,
+    whiteTitle: "Policy and Approval Flow",
+    description:
+      "A set of guidelines or rules that outline the procedures for seeking and granting official authorization for expenses. ",
+    cardImage: policyApproval,
   },
 ]
 

@@ -44,7 +44,7 @@ const ApprovalFlows = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Approval Flows`}
+                  title={`APPROVAL FLOWS`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -56,8 +56,14 @@ const ApprovalFlows = (): React.JSX.Element => {
               >
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
-                    title={`Customize policy and approval flow according to business needs`}
+                    title={`Customize policy and approval flow   `}
                     color="black"
+                    size="h2"
+                    weight="7"
+                  />
+                  <Heading
+                    title={` according to business needs`}
+                    color="equity-blue"
                     size="h2"
                     weight="7"
                   />
@@ -85,13 +91,6 @@ const ApprovalFlows = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
                         url="/sales/?source=expense_management"
                       />
                     </div>

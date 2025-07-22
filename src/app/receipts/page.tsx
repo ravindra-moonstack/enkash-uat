@@ -44,7 +44,7 @@ const Receipts = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Scan and Drop Receipts`}
+                  title={`SCAN AND DROPS RECEIPTS`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -56,8 +56,14 @@ const Receipts = (): React.JSX.Element => {
               >
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
-                    title={`Scan, submit, and file business expenses digitally `}
+                    title={`Scan, submit, and file  `}
                     color="black"
+                    size="h2"
+                    weight="7"
+                  />
+                  <Heading
+                    title={` business expenses digitally`}
+                    color="equity-blue"
                     size="h2"
                     weight="7"
                   />

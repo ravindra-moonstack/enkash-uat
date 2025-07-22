@@ -18,14 +18,15 @@
     padding-top: 112px;
     padding-bottom: 60px;
   }
-  .group_logo {
+   .group_logo {
     width: 174px;
-    height: 30px;
+    height: auto;
     @include for-laptops {
       width: 366px;
-      height: 62px;
+      height: auto;
     }
   }
+
 
   .image-container {
     position: relative;

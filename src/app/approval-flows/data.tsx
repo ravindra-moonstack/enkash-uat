@@ -1,10 +1,10 @@
 import clockIcon from "./img/clockIcon.svg"
 import integrationIcon from "./img/integration.svg"
 import approvedIcon from "./img/approved.svg"
-import policyApproval from "./img/policy-approval.webp"
 import herarchy from "./img/herarchy.webp"
 import insight from "./img/insights.webp"
 import scanAndDrops from "./img/scan-and-drops.webp"
+import reimbursements from "./img/reimbursement.webp"
 import { stepCardImgOne, stepCardImgThree, stepCardImgTwo } from "."
 
 const cardData = [
@@ -61,18 +61,9 @@ const expenseManagementData = [
   },
   {
     whiteTitle: "Reimbursements",
-    description:
-      "Businesses repay the amount to employees or partners for expenses incurred on their behalf.",
-    cardImage: policyApproval,
+    description: "Make employee reimbursements easy with an automated process.",
+    cardImage: reimbursements,
     link: "/reimbursements",
-  },
-
-  {
-    whiteTitle: "Insights",
-    description:
-      "Make use of deep, data-driven understandings for informed decision-making.",
-    cardImage: insight,
-    link: "/expense-analytics-and-insights/",
   },
   {
     whiteTitle: "Hierarchy and Control",
@@ -80,6 +71,14 @@ const expenseManagementData = [
     cardImage: herarchy,
     link: "/hierarchy-and-controls",
   },
+  {
+    whiteTitle: "Insights",
+    description:
+      "Make use of deep, data-driven understandings for informed decision-making.",
+    cardImage: insight,
+    link: "/expense-analytics-and-insights/",
+  },
+
   {
     whiteTitle: "Scan and Drop Receipts",
     description:

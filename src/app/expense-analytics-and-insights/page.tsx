@@ -44,7 +44,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Insights`}
+                  title={`INSIGHTS`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
