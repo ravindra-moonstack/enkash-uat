@@ -44,7 +44,7 @@ const ApprovalFlows = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`APPROVAL FLOWS`}
+                  title={`Approval Flows`}
                   color="equity-blue"
                   size="h4"
                   weight="4"

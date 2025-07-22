@@ -44,7 +44,7 @@ const Reimbursements = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={` REIMBURSEMENTS`}
+                  title={` Reimbursements`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -57,13 +57,13 @@ const Reimbursements = (): React.JSX.Element => {
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
                     title={`Reimburse Expenses `}
-                    color="black"
+                    color="equity-blue"
                     size="h2"
                     weight="7"
                   />
                   <Heading
                     title={` Before Your Business Meeting Ends!`}
-                    color="equity-blue"
+                    color="black"
                     size="h2"
                     weight="7"
                   />

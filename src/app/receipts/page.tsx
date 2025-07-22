@@ -44,7 +44,7 @@ const Receipts = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`SCAN AND DROPS RECEIPTS`}
+                  title={`Scan and Drop Receipts`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -91,13 +91,6 @@ const Receipts = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
                         url="/sales/?source=expense_management"
                       />
                     </div>

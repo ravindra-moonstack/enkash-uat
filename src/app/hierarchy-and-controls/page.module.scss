@@ -18,7 +18,7 @@
     padding-top: 112px;
     padding-bottom: 60px;
   }
-   .group_logo {
+  .group_logo {
     width: 174px;
     height: auto;
     @include for-laptops {
@@ -26,7 +26,6 @@
       height: auto;
     }
   }
-
 
   .image-container {
     position: relative;
@@ -69,7 +68,7 @@
     gap: 12px;
 
     @include for-laptops {
-      padding-top: 48px;
+      padding-top: 34px;
       gap: 26px;
     }
   }

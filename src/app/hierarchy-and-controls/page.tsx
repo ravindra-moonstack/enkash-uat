@@ -44,7 +44,7 @@ const HierarchyAndControl = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`HIERACHY AND CONTROL`}
+                  title={`Hierarchy & Control`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -56,7 +56,13 @@ const HierarchyAndControl = (): React.JSX.Element => {
               >
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
-                    title={`Master Your Expenses with Hierarchical Control.`}
+                    title={`Master Your Expenses `}
+                    color="equity-blue"
+                    size="h2"
+                    weight="7"
+                  />
+                  <Heading
+                    title={` with Hierarchical Control.`}
                     color="black"
                     size="h2"
                     weight="7"
@@ -85,13 +91,6 @@ const HierarchyAndControl = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
                         url="/sales/?source=expense_management"
                       />
                     </div>

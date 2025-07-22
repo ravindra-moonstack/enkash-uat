@@ -44,7 +44,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`BUDGET AND ADVANCES`}
+                  title={`Budget And Advances`}
                   color="equity-blue"
                   size="h4"
                   weight="4"

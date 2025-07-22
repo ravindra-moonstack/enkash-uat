@@ -2,10 +2,7 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import {
-  analyticData,
-  dashboardData,
-} from "./data"
+import { analyticData, dashboardData } from "./data"
 import faqData from "./faq-data"
 import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
@@ -66,7 +63,13 @@ const PettyCash = (): React.JSX.Element => {
               >
                 <div className="d-inline   pt-3 pt-md-0">
                   <Heading
-                    title={`Best Petty Cash Management Suite`}
+                    title={`Best Petty Cash `}
+                    color="equity-blue"
+                    size="h2"
+                    weight="7"
+                  />
+                  <Heading
+                    title={` Management Suite`}
                     color="black"
                     size="h2"
                     weight="7"
@@ -95,13 +98,6 @@ const PettyCash = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
                         url="/sales/?source=expense_management"
                       />
                     </div>
