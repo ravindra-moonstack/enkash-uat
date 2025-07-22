@@ -1,8 +1,6 @@
 @use "/styles/variables" as *;
 @use "/styles/mixin" as *;
 
-
-
 .rectangle_button {
   border-radius: 8px;
   border: none;
@@ -68,6 +66,21 @@
     color: $color-equity-blue;
     border: 2px solid $color-equity-blue;
     font-weight: 700;
+
+    &:hover {
+      background-color: $color-equity-blue;
+      color: $color-white;
+    }
+  }
+
+  &.outline-blue-small {
+    background-color: $color-white;
+    color: $color-equity-blue;
+    border: 1px solid $color-equity-blue;
+    font-weight: 500;
+    @include for-laptops {
+      font-size: 14px;
+    }
 
     &:hover {
       background-color: $color-equity-blue;

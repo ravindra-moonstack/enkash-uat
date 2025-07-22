@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import styles from "./management-card.module.scss"
 import { ReactNode } from "react"
 
@@ -7,7 +7,7 @@ export interface CardProps {
   whiteTitle?: string
   titleHtml?: ReactNode
   description: string
-  cardImage?: string
+  cardImage?: string | StaticImageData
   theme?: "light" | "dark"
   linkUrl?: string // ✅ Add this
 }
