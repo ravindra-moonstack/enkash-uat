@@ -1,0 +1,108 @@
+@use "/styles/mixin" as *;
+@use "/styles/variables" as *;
+
+.pageHeading {
+  :global(h2) {
+    display: inline;
+    font-size: 28px;
+    margin-bottom: 0;
+    line-height: 32px;
+    letter-spacing: -0.04em;
+
+    @include for-laptops {
+      font-size: 56px;
+      line-height: 80px;
+    }
+
+    @include for-window-zoomed-screens {
+      font-size: 57px;
+    }
+  }
+
+  :global(h1) {
+    display: inline;
+    font-size: 21px;
+    margin-bottom: 0;
+    line-height: 32px;
+    letter-spacing: -0.04em;
+
+    @include for-laptops {
+      font-size: 48px;
+      line-height: 70px;
+      font-weight: 700;
+    }
+
+    @include for-window-zoomed-screens {
+      font-size: 52px;
+    }
+  }
+
+  :global(h3) {
+    display: inline;
+    font-size: 20px;
+    margin-bottom: 0;
+    line-height: 32px;
+    letter-spacing: -0.04em;
+
+    @include for-laptops {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    @include for-window-zoomed-screens {
+      font-size: 21px;
+    }
+  }
+
+  :global(h4) {
+    display: inline;
+    font-size: 16px;
+    margin-bottom: 0;
+    line-height: 32px;
+    letter-spacing: -0.04em;
+
+    @include for-laptops {
+      font-size: 24px;
+    }
+
+    @include for-window-zoomed-screens {
+      font-size: 18px;
+    }
+  }
+
+  :global(h5) {
+    display: inline;
+    font-size: 12px;
+    margin-bottom: 0;
+    line-height: 16px;
+    letter-spacing: -0.04em;
+    white-space: normal;
+
+    @include for-laptops {
+      font-size: 20px;
+      line-height: 26px;
+    }
+
+    @include for-window-zoomed-screens {
+      font-size: 16px;
+    }
+  }
+
+  :global(h6) {
+    display: inline;
+    font-size: 9px;
+    margin-bottom: 0;
+    line-height: normal;
+    font-weight: 400;
+    letter-spacing: -0.04em;
+
+    @include for-laptops {
+      font-size: 18px;
+    }
+
+    @include for-window-zoomed-screens {
+      font-size: 14px;
+    }
+  }
+
+}

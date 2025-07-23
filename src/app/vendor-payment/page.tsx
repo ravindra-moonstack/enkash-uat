@@ -32,6 +32,7 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import AllProducts from "@/components/all-products/all-products"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -65,32 +66,44 @@ const VendorPayment = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Vendor Payment ${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Vendor Payment",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="h4"
+                  className="f-4"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Faster, Smarter Vendor Payments with EnKash${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Faster, Smarter Vendor Payments with EnKash",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Transform your vendor payments with a single click and get complete control with real-time updates."
-                    color="black"
-                    size="h5"
-                    weight="4"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Transform your vendor payments with a single click and get complete control with real-time updates.",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h5"
+                    className="f-4"
                   />
                 </div>
 
@@ -144,18 +157,21 @@ const VendorPayment = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <Heading
-              title={`Pay, Approve, Reconcile -${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Vendor Payments in 3 Steps`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
+              <DynamicHeading
+                    content={[
+                      {
+                        title:"Pay, Approve, Reconcile - ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title:"Vendor Payments in 3 Steps",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+          
           </div>
           <div className="row">
             <div className="col-md-6 col-12">
@@ -184,7 +200,7 @@ const VendorPayment = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-md-5 m-3">
+              <div className={`${styles.list_button}`}>
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
@@ -210,12 +226,17 @@ const VendorPayment = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div className={`d-inline text-center pb-3`}>
-                <Heading
-                  title={`Your End-to-End Solution for Vendor Payments`}
-                  color="black"
-                  size="h1"
-                  weight="5"
-                />
+             
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Your End-to-End Solution for Vendor Payments",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-5"
+                  />
               </div>
             </div>
 
@@ -284,24 +305,27 @@ const VendorPayment = (): React.JSX.Element => {
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center pb-5 max-w-auto`}>
           <div className={` pb-3  d-inline`}>
-            <Heading
-              title={`Smart Features for ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`Stress-Free  ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`Vendor Payments `}
-              color="black"
-              size="h1"
-              weight="5"
-            />
+             <DynamicHeading
+                    content={[
+                      {
+                        title: "Smart Features for ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Stress-Free ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "Vendor Payments",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-5"
+                  />
+           
+           
+           
           </div>
         </div>
         <AllProducts
@@ -314,12 +338,17 @@ const VendorPayment = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Take Control of Your Vendor Payments Today"
-              size="bannerHeading"
-              color="white"
-              weight="4"
-            />
+            <DynamicHeading
+                    content={[
+                      {
+                        title: "Take Control of Your Vendor Payments Today",
+                        color: "color-white",
+                      },
+                    ]}
+                    headingTag="h3"
+                    className="f-4 bannerHeading"
+                  />
+           
           </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
@@ -336,27 +365,41 @@ const VendorPayment = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
+             <DynamicHeading
+                    content={[
+                      {
+                        title: "Frequently Asked Questions (",
+                        color: "color-black",
+                      },
+                      {
+                        title: "FAQs",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: ")",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-5"
+                  />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                />
+                 <DynamicHeading
+                    content={[
+                      {
+                        title: "Have more questions?",
+                        color: "color-dark-grey",
+                      },
+                    ]}
+                    headingTag="h3"
+                    className="f-5"
+                  />
+                
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"

@@ -4,8 +4,8 @@
 .first_row {
   background-color: $color-black; // set pure black
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 87px;
   padding-bottom: 36px;
 
@@ -31,7 +31,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 36px;
+  padding: 36px 20px;
   position: relative;
   background: linear-gradient(90deg, rgba(6, 99, 252, 0) 0%, #0663fc 100%),
     url(./img/secongBg.png);
@@ -84,7 +84,7 @@
 }
 
 .fourth_row {
-  padding: 36px;
+  padding: 36px 30px;
   @include for-laptops {
     padding: 150px 90px 0px 90px;
   }
@@ -94,7 +94,7 @@
   }
   .section {
     gap: 32px;
-    padding: 18px;
+    padding: 20px 10px;
 
     background-color: $color-sky-hint;
     @include for-laptops {
@@ -118,7 +118,7 @@
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 58px;
   }
@@ -135,7 +135,7 @@
 .slider_row {
   position: relative;
   text-align: center;
-  padding: 36px;
+  padding: 36px 20px;
   padding-top: 0px;
   @include for-laptops {
     padding-top: 90px;
@@ -165,7 +165,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }

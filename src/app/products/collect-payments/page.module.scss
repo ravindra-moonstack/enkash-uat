@@ -193,8 +193,14 @@
   }
 
   .list_button {
-    margin-left: 60px;
+    margin-left: 40px;
     display: flex;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    @include for-laptops{
+        margin-bottom: 20px;
+      margin-left: 66px;
+    }
   }
 
   img {

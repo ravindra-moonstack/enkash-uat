@@ -7,8 +7,8 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 90px;
   padding-bottom: 36px;
   background-image: url(./img/first-row-bg.svg);
@@ -76,7 +76,7 @@
 
 .third_row {
   width: 100%;
-  padding: 32px;
+  padding: 32px 20px;
 
   @include for-laptops {
     padding: 35px 90px;
@@ -133,7 +133,7 @@
 }
 
 .fourth_row {
-  padding: 36px;
+  padding: 36px 30px;
   @include for-laptops {
     padding: 0px 90px 0px 90px;
   }
@@ -143,7 +143,7 @@
   }
   .section {
     gap: 32px;
-    padding: 18px;
+    padding: 20px 10px;
 
     background-color: $color-sky-hint;
     @include for-laptops {
@@ -160,6 +160,12 @@
         gap: 70px;
       }
     }
+    .title{
+      padding: 0 20px;
+    }
+    @include for-laptops{
+  padding: 0 50px 16px;
+    }
   }
 }
 
@@ -167,7 +173,7 @@
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 58px;
   }
@@ -184,7 +190,7 @@
 .slider_row {
   position: relative;
   text-align: center;
-  padding: 36px;
+  padding: 36px 20px;
   padding-top: 0px;
   @include for-laptops {
     padding-top: 38px;
@@ -236,7 +242,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }

@@ -71,7 +71,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row  `}
               >
                 <Heading
-                  title={`Digital Invoicing${space}`}
+                  title={`Digital Invoicing`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -265,7 +265,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-md-5 m-2">
+              <div className={`${styles.list_button} `}>
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
