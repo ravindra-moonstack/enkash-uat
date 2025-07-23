@@ -41,6 +41,7 @@
     Img {
       height: auto;
       padding-top: 32px;
+      max-width: 100%;
       @include for-laptops {
         height: 625px;
         padding-top: 0px;
@@ -141,8 +142,8 @@
   background-size: cover;
   // background-image: url(./img/ArtboardBg.svg);
   padding-top: 36px;
-  padding-left: 36px;
-  padding-right: 36px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-bottom: 0px;
   @include for-laptops {
     padding: 48px 90px;
@@ -154,8 +155,7 @@
   }
 
   .section {
-    padding-bottom: 25px;
-    padding-top: 25px;
+    padding: 25px 10px;
     @include for-laptops {
       padding-bottom: 50px;
       padding-top: 50px;
@@ -227,7 +227,7 @@
   .list_button {
     padding-top: 14px;
     padding-bottom: 14px;
-    padding-left: 0px;
+    padding-left: 40px;
     @include for-laptops {
       padding-left: 70px;
       padding-top: 33px;
@@ -455,7 +455,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }
@@ -481,7 +481,7 @@
 
 .other_products {
   background-color: white;
-  padding: 36px;
+  padding: 20px;
   @include for-laptops {
     padding: 0px 90px 90px 90px;
   }

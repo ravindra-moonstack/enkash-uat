@@ -7,8 +7,8 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding-left: 20px;
+  padding-right: 20px;
   padding-top: 90px;
   padding-bottom: 36px;
   background-image: url(./img/first-row-bg.svg);
@@ -77,7 +77,7 @@
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -89,9 +89,12 @@
     gap: 10px;
     justify-content: center;
     // flex-wrap: wrap;
-
+    width: 100%;
+    @include for-laptops {
+      width: initial;
+    }
     .card {
-      width: 90px;
+      width: calc(100% / 3 - 4px);
       max-width: 100%;
       background-color: rgba(255, 255, 255, 0.1);
       border-radius: 10px;
@@ -149,7 +152,7 @@
 
 .third_row {
   width: 100%;
-  padding: 32px;
+  padding: 32px 20px;
 
   @include for-laptops {
     padding: 70px 90px;
@@ -164,7 +167,7 @@
     margin-bottom: 50px;
   }
   .scrollCard {
-    margin-left: 10px;
+    // margin-left: 10px;
     margin-bottom: 20px;
     @include for-laptops {
       margin-left: 20px;
@@ -190,6 +193,13 @@
       }
     }
   }
+  .list_button {
+    padding-left: 40px;
+    margin-bottom: 20px !important;
+    @include for-laptops {
+      padding-left: 85px;
+    }
+  }
 
   .approvedImage {
     position: absolute;
@@ -206,7 +216,7 @@
 }
 
 .fourth_row {
-  padding: 36px;
+  padding: 36px 30px;
   @include for-laptops {
     padding: 0px 90px 53px 90px;
   }
@@ -216,7 +226,7 @@
   }
   .section {
     gap: 32px;
-    padding: 18px;
+    padding: 20px 10px;
     background-color: $color-sky-hint;
     @include for-laptops {
       padding: 53px 88px;
@@ -226,7 +236,7 @@
 }
 
 .sixth_row {
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 84px 90px 51px 90px;
   }
@@ -398,7 +408,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }
@@ -424,7 +434,7 @@
 
 .other_products {
   background-color: white;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 0px 90px 90px 90px;
   }

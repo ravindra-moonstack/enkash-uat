@@ -75,7 +75,7 @@ const PaymentPage = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
                 <Heading
-                  title={`Payment Page ${space}`}
+                  title={`Payment Page`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -255,7 +255,7 @@ const PaymentPage = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-md-5 m-3">
+              <div className={`${styles.list_button} `}>
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"

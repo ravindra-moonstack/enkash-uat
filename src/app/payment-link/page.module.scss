@@ -166,12 +166,13 @@
   }
 
   .scrollCard {
-    margin-left: 10px;
+    // margin-left: 10px;
     margin-bottom: 20px;
     @include for-laptops {
       margin-left: 20px;
       margin-bottom: 50px;
     }
+   
   }
   .first_container,
   .second_container,
@@ -204,6 +205,14 @@
       display: block;
     }
   }
+   
+ .list_button {
+      padding-left: 40px;
+      margin: 0 !important;
+      @include for-laptops {
+        padding-left: 85px;
+      }
+    }
 }
 
 .fourth_row {
@@ -217,7 +226,7 @@
   }
   .section {
     gap: 32px;
-    padding: 18px;
+    padding: 18px 0;
     background-color: $color-sky-hint;
     @include for-laptops {
       padding: 53px 88px;

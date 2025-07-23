@@ -71,7 +71,7 @@
   }
 }
 .second_row {
-  padding: 32px;
+  padding: 32px 20px;
   background-color: $color-black-30;
   @include for-laptops {
     padding-top: 52px;
@@ -80,6 +80,7 @@
   .list_button {
     margin-top: 18px;
     margin-bottom: 18px;
+    padding-left: 40px;
     @include for-laptops {
       margin-top: 38px;
       padding-left: 63px;
@@ -268,7 +269,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }
@@ -313,7 +314,7 @@
 }
 
 .other_products {
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -349,6 +350,7 @@
   .list_button {
     margin-top: 18px;
     margin-bottom: 18px;
+    padding-left: 40px;
     @include for-laptops {
       padding-left: 76px;
       margin-top: 38px;

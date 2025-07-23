@@ -97,9 +97,10 @@
 .list_button {
   margin-top: 24px;
   margin-bottom: 24px;
- 
+ padding-left: 40px;
   @include for-laptops {
-    margin-left: 60px;
+    margin-left: 66px;
+    padding-left: 0;
     margin-top: 32px;
   }
 }
@@ -110,8 +111,8 @@
     gap: 20px;
   }
   Img {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     @include for-laptops {
       width: 46px;
       height: 46px;

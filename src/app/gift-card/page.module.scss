@@ -136,6 +136,7 @@
   .list_button {
     margin-top: 18px;
     margin-bottom: 18px;
+    padding-left: 40px;
     @include for-laptops {
       margin-top: 38px;
       padding-left: 63px;
@@ -388,6 +389,7 @@
   .list_button {
     margin-top: 18px;
     margin-bottom: 18px;
+    padding-left: 40px;
     @include for-laptops {
       padding-left: 76px;
       margin-top: 38px;
