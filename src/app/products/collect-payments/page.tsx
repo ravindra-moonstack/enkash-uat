@@ -292,7 +292,7 @@ const CollectPayment = (): React.JSX.Element => {
                   "Get immediate access to your funds after each transaction, minimizing cash flow delays, improving business liquidity, and ensuring better financial planning while enabling seamless operations with real-time settlement capabilities."
                 }
               />
-              <div className={`m-4 ${styles.list_button}`}>
+              <div className={` ${styles.list_button}`}>
                 <RectangleButton
                   title="Try Now"
                   theme="border-gray"
@@ -322,7 +322,7 @@ const CollectPayment = (): React.JSX.Element => {
                   "Empower customers with flexible payment options such as EMI and pay-later solutions, making high-value transactions more accessible while improving purchasing power and boosting sales for businesses."
                 }
               />
-              <div className={`m-4 ${styles.list_button}`}>
+              <div className={` ${styles.list_button}`}>
                 <RectangleButton
                   title="Try Now"
                   theme="border-gray"

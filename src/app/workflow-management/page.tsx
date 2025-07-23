@@ -62,7 +62,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row  `}
               >
                 <Heading
-                  title={`Workflow Management${space}`}
+                  title={`Workflow Management`}
                   color="equity-blue"
                   size="h4"
                   weight="4"
@@ -217,8 +217,14 @@ const WorkflowManagement = (): React.JSX.Element => {
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-2`}>
             <Heading
-              title={`How to Set Up Workflow Management`}
+              title={`How to Set Up `}
               color="black"
+              size="h1"
+              weight="6"
+            />
+            <Heading
+              title={`Up Workflow Management`}
+              color="equity-blue"
               size="h1"
               weight="6"
             />
@@ -250,7 +256,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-md-5 m-2">
+              <div className={`${styles.list_button} `}>
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"

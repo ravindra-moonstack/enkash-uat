@@ -17,49 +17,47 @@ export interface CardStackingProps {
 }
 
 const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
+  const container = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement[]>([])
 
   useGSAP(() => {
     const cardEls = cardsRef.current.filter(Boolean)
-    if (!cardEls.length) return
+    if (cardEls.length!=cards.length) return
 
-    // const firstST = ScrollTrigger.create({
-    //   trigger: cardEls[0],
-    //   start: "center center",
-    // })
+    console.log(ScrollTrigger.getAll())
+    const firstST = ScrollTrigger.create({
+      trigger: cardEls[0],
+      start: "80% center",
+    })
 
     const lastST = ScrollTrigger.create({
       trigger: cardEls[cardEls.length - 1],
-      start: "center center",
+      start: "80% center",
     })
 
     cardEls.forEach((card, index) => {
-      const scale = 1 - (cardEls.length - index) * 0.025
+      const scale = 1 - (cardEls.length - index) * 0.020
       const scaleAnim = gsap.to(card, {
         scale: scale,
-        "transform-origin": '"50% ' + lastST.start + '"',
       })
 
       ScrollTrigger.create({
         trigger: card,
-        start: "40% 60%",
+        start: "80% center",
         end: () => lastST.start,
         pin: true,
         pinSpacing: false,
         scrub: true,
         markers: false,
         animation: scaleAnim,
-        toggleActions: "restart none none reverse",
+        id:`index${index}`,
+        toggleActions: "play none reverse none"
       })
     })
-
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill())
-    }
-  }, [])
+  }, [container,cardsRef])
 
   return (
-    <section className={styles.cardStacking}>
+    <section className={styles.cardStacking} ref={container}>
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">

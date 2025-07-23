@@ -31,10 +31,11 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import AllProducts from "@/components/all-products/all-products"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const BusinessBillPayment = (): React.JSX.Element => {
+const RantPayment = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -63,34 +64,47 @@ const BusinessBillPayment = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Rent Payments ${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
-                />
+                 <DynamicHeading
+                    content={[
+                      {
+                        title: "Rent Payments",
+                        color: "color-equity-blue underline",
+                      },
+                    ]}
+                    headingTag="h4"
+                    className="f-4"
+                  />
+               
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Hassle-Free Rent Payments with EnKash${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                    <DynamicHeading
+                    content={[
+                      {
+                        title: "Hassle-Free Rent Payments with EnKash",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
+                
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient
-"
-                    color="black"
-                    size="h5"
-                    weight="4"
+                    <DynamicHeading
+                    content={[
+                      {
+                        title: "Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h5"
+                    className="f-4"
                   />
+                 
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -143,25 +157,25 @@ const BusinessBillPayment = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <Heading
-              title={`How To Setup ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Rent Payments 
-${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Automation${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
+            <DynamicHeading
+                    content={[
+                      {
+                        title: "How To Setup ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Rent Payments",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "Automation",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+         
           </div>
           <div className="row">
             <div className="col-md-6 col-12">
@@ -191,13 +205,18 @@ ${space}`}
         <div className="max-w-auto">
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
-              <div className={`d-inline text-center pb-3`}>
-                <Heading
-                  title={`Put an End to Rental Payment Woes with EnKash`}
-                  color="black"
-                  size="h1"
-                  weight="5"
-                />
+              <div className={`d-inline text-center pb-3 `}>
+              
+                <DynamicHeading
+                    content={[
+                      {
+                        title: "Put an End to Rental Payment Woes with EnKash",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-5"
+                  />
               </div>
             </div>
 
@@ -266,18 +285,22 @@ ${space}`}
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center pb-5 max-w-auto`}>
           <div className={` pb-3  d-inline`}>
-            <Heading
-              title={`One Platform ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={` for All Your Rental Payment Needs`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
+             <DynamicHeading
+                    content={[
+                      {
+                        title: "One Platform ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "for All Your Rental Payment Needs",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-5"
+                  />
+           
+           
           </div>
         </div>
         <AllProducts
@@ -290,12 +313,17 @@ ${space}`}
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Ready to Redefine your Rent Payments?"
-              size="bannerHeading"
-              color="white"
-              weight="4"
-            />
+          
+             <DynamicHeading
+                    content={[
+                      {
+                        title: "Ready to Redefine your Rent Payments?",
+                        color: "color-white",
+                      },
+                    ]}
+                    headingTag="h3"
+                    className="f-4 bannerHeading"
+                  />
           </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
@@ -312,27 +340,42 @@ ${space}`}
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
+             <DynamicHeading
+                    content={[
+                      {
+                        title: "Frequently Asked Questions (",
+                        color: "color-black",
+                      },
+                      {
+                        title: "FAQs",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: ")",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-5"
+                  />
+           
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                />
+                 <DynamicHeading
+                    content={[
+                      {
+                        title: "Have more questions?",
+                        color: "color-dark-grey",
+                      },
+                    ]}
+                    headingTag="h3"
+                    className="f-5"
+                  />
+              
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
@@ -355,4 +398,4 @@ ${space}`}
   )
 }
 
-export default BusinessBillPayment
+export default RantPayment

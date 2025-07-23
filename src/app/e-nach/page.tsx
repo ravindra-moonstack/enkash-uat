@@ -268,7 +268,7 @@ const eNACH = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div className="m-md-5 m-2">
+              <div className={`${styles.list_button} `}>
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"

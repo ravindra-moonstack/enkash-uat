@@ -38,6 +38,12 @@ import CardStacking from "@/components/cardStacking/cardStacking"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import { greenIcon, notificationImage } from "../make-payments"
 
+import gsap from 'gsap';
+import { ScrollSmoother } from 'gsap/ScrollSmoother';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP);
+
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
@@ -151,9 +157,19 @@ const cards = [
 ]
 
 const CorporateCards = (): React.JSX.Element => {
+   useGSAP(() => {
+      ScrollSmoother.create({
+        smooth: 2,
+        effects: true,
+        smoothTouch: 0.1,
+      });
+    }, []);
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
+      
+        <div id="smooth-wrapper">
+    <div id="smooth-content">
       <TalkToSales />
 
       <div className={`${styles.first_row}`}>
@@ -215,7 +231,7 @@ const CorporateCards = (): React.JSX.Element => {
                 />
               </div>
             </div> */}
-            <div className={styles.lottie_container}>
+            <div className={styles.lottie_container} style={{'minHeight':'540px'}}>
               <LottieDynamicLoadComponent
                 animationName={"CorporateCardLottie"}
                 loop={true}
@@ -594,7 +610,7 @@ const CorporateCards = (): React.JSX.Element => {
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
-            <div className={`${styles.title} text-center pb-5`}>
+            <div className={`${styles.title} text-center `}>
               <Heading
                 title={`Get  ${space}`}
                 color="black"
@@ -727,6 +743,8 @@ const CorporateCards = (): React.JSX.Element => {
       </div>
 
       <Footer />
+      </div>
+      </div>
     </div>
   )
 }
