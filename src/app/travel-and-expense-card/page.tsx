@@ -65,7 +65,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
               weight="4"
               underline
             />
-            <div className="d-flex  flex-column justify-content-center align-items-center">
+            <div className="d-flex  flex-column text-center">
               <Heading
                 title="Travel and Expense Card: "
                 color="black"
@@ -124,18 +124,13 @@ const TravelExpenseCard = (): React.JSX.Element => {
           <div className={`${styles.title} text-center pb-md-5 pb-5`}>
             <div>
               <Heading
-                title={`How To Get Started with Travel  ${space}`}
+                title={`How To Get Started with Travel Expense Cards ${space}`}
                 color="black"
                 size="h1"
                 weight="5"
               />
             </div>
-            <Heading
-              title={`Expense Cards${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
+           
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
             <div className="col-md-6 col-12 px-md-5">

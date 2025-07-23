@@ -52,7 +52,7 @@ const SaasCards = (): React.JSX.Element => {
               weight="4"
               underline
             />
-            <div className="d-flex  flex-column justify-content-center align-items-center">
+            <div className="d-flex  flex-column text-center">
               <Heading
                 title="SaaS Cards: Designed to manage, monitor, and"
                 color="black"

@@ -80,6 +80,7 @@
   .list_button {
     margin-top: 18px;
     margin-bottom: 18px;
+    padding-left: 40px;
     @include for-laptops {
       margin-top: 38px;
       padding-left: 63px;
@@ -113,7 +114,7 @@
   position: relative;
   border-radius: 12px;
   position: relative;
-  padding: 36px;
+  padding: 36px 20px;
   height: 100vh;
   @include for-laptops {
     padding-bottom: 204px;
@@ -166,7 +167,7 @@
 .fifth_row {
   position: relative;
   text-align: center;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding-top: 90px;
     padding-bottom: 90px;
@@ -183,7 +184,7 @@
   background: linear-gradient(180deg, #2e2e2e 0%, #010205 100%);
   border-radius: 12px;
   position: relative;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 58px;
   }
@@ -237,7 +238,7 @@
   background: $color-black;
   border-radius: 12px;
   position: relative;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 58px;
   }
@@ -268,7 +269,7 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding: 96px 90px 90px 60px;
   }
@@ -294,7 +295,7 @@
 
 .ninth_row {
   position: relative;
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -313,7 +314,7 @@
 }
 
 .other_products {
-  padding: 36px;
+  padding: 36px 20px;
   @include for-laptops {
     padding-top: 80px;
     padding-bottom: 80px;
@@ -349,6 +350,7 @@
   .list_button {
     margin-top: 18px;
     margin-bottom: 18px;
+    padding-left: 40px;
     @include for-laptops {
       padding-left: 76px;
       margin-top: 38px;

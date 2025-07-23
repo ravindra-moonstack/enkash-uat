@@ -22,7 +22,6 @@ import {
   corporateCard,
   corporateCardIcon,
   whiteArrow,
-  greyIcon,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -37,7 +36,10 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import { notificationImage } from "../make-payments"
+import { greenIcon, notificationImage } from "../make-payments"
+
+// const showScroll = cardsData.length > 3
+const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const cards = [
   {
@@ -45,9 +47,9 @@ const cards = [
     content: (
       <>
         <AllInOnePolicy
-          icon={greyIcon}
-          title="Set Your Rules"
-          description="Define spending rules based on individual users, departments, or specific vendors. Set limits, track usage, and ensure policy compliance at every level."
+          icon={greenIcon}
+          title="Match Your Style"
+          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
           image={notificationImage}
           buttonUrl="/sales/?source=expense_management"
           maxImageHeight="300px"
@@ -60,10 +62,9 @@ const cards = [
     content: (
       <>
         <AllInOnePolicy
-          icon={greyIcon}
-          title="Channel-level Controls"
-          description="Enable or disable specific transaction channels such as POS, online (e-commerce), or contactless payments. Prevent misuse by controlling how and where each card is used.
-"
+          icon={greenIcon}
+          title="Another Card"
+          description="Another card description"
           image={notificationImage}
           buttonUrl="/sales"
           maxImageHeight="300px"
@@ -76,9 +77,9 @@ const cards = [
     content: (
       <>
         <AllInOnePolicy
-          icon={greyIcon}
-          title="Define Your Limits"
-          description="Set automated daily, weekly, or monthly spend caps for each card. Avoid overspending and enforce company-wide financial discipline without constant manual intervention."
+          icon={greenIcon}
+          title="Match Your Style"
+          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
           image={notificationImage}
           buttonUrl="/sales/?source=expense_management"
           maxImageHeight="300px"
@@ -91,9 +92,9 @@ const cards = [
     content: (
       <>
         <AllInOnePolicy
-          icon={greyIcon}
-          title="Block/Unblock at Your Convenience"
-          description="Lost or compromised card? Instantly block or reactivate it from the dashboard with one click, no paperwork, no support tickets, no delay."
+          icon={greenIcon}
+          title="Another Card"
+          description="Another card description"
           image={notificationImage}
           buttonUrl="/sales"
           maxImageHeight="300px"
@@ -106,9 +107,9 @@ const cards = [
     content: (
       <>
         <AllInOnePolicy
-          icon={greyIcon}
-          title="Simplify Approval Flows"
-          description="Establish flexible approval workflows with role-based access. Enable maker-checker setups to maintain internal controls and ensure complete accountability on every transaction."
+          icon={greenIcon}
+          title="Match Your Style"
+          description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity."
           image={notificationImage}
           buttonUrl="/sales/?source=expense_management"
           maxImageHeight="300px"
@@ -121,9 +122,9 @@ const cards = [
     content: (
       <>
         <AllInOnePolicy
-          icon={greyIcon}
-          title="Full Control Over Corporate Prepaid Card"
-          description="These controls make managing your corporate prepaid card as simple as managing a spreadsheet, with far more power and automation. Set rules, track usage, and make instant decisions from one central dashboard"
+          icon={greenIcon}
+          title="Another Card"
+          description="Another card description"
           image={notificationImage}
           buttonUrl="/sales"
           maxImageHeight="300px"
@@ -131,29 +132,27 @@ const cards = [
       </>
     ),
   },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={greenIcon}
+          title="Another Card"
+          description="Another card description"
+          image={notificationImage}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  // Add more cards...
 ]
-const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const CorporateCards = (): React.JSX.Element => {
-  // useEffect(() => {
-  //   const container = document.querySelector<HTMLElement>("#scroll-container")
-  //   if (!container) return
-
-  //   const scrollbar = Scrollbar.init(container, {
-  //     damping: 0.07,
-  //   })
-
-  //   return () => {
-  //     scrollbar.destroy()
-  //   }
-  // }, [])
-
   return (
-    <div
-      className={`color-white  ${styles.home_container}`}
-      // id="scroll-container"
-      // style={{ height: "100vh", overflow: "hidden" }}
-    >
+    <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
       <TalkToSales />
 

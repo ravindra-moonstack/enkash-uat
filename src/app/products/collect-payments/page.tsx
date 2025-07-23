@@ -153,7 +153,7 @@ const CollectPayment = (): React.JSX.Element => {
       <div className={`${styles.third_row} row-padding `}>
         <div className="max-w-auto">
           <div className={` gap-5 ${styles.section}`}>
-            <div className={`${styles.title} text-center py-3 py-md-5`}>
+            <div className={`${styles.title} text-center pm-5`}>
               <div
                 className={` flex-column justify-content-center align-items-center pb-3 `}
               >
@@ -171,6 +171,7 @@ const CollectPayment = (): React.JSX.Element => {
                 />
               </div>
             </div>
+            <div className={` ${styles.all_in_section_inner} `}>
             <AllInOnePolicy
               icon={paymentGatwayIcon}
               title="Payment Gateway"
@@ -219,6 +220,7 @@ const CollectPayment = (): React.JSX.Element => {
               buttonUrl="/sales/?source=expense_management"
               reverse
             />
+            </div>
           </div>
         </div>
       </div>
@@ -228,10 +230,10 @@ const CollectPayment = (): React.JSX.Element => {
       >
         {/* Spline background */}
         <div
-          className="position-absolute top-0 start-0 w-100  "
-          style={{ height: "600px", backgroundColor: "black" }}
+          className="position-absolute top-0 start-0 w-100"
+          style={{ height: "600px" }}
         >
-          <Spline scene="https://prod.spline.design/2RGFZhRx802a-Rzm/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/JffS0FYkygwKIO-g/scene.splinecode" />
         </div>
 
         {/* Foreground content */}

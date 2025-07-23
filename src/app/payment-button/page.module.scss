@@ -204,10 +204,17 @@
       display: block;
     }
   }
+   .list_button {
+      padding-left: 40px;
+      margin: 0 !important;
+      @include for-laptops {
+        padding-left: 85px;
+      }
+    }
 }
 
 .fourth_row {
-  padding: 20px;
+  padding: 30px;
   @include for-laptops {
     padding: 0px 90px 53px 90px;
   }
@@ -217,7 +224,7 @@
   }
   .section {
     gap: 32px;
-    padding: 18px;
+    padding: 20px 10px;
     background-color: $color-sky-hint;
     @include for-laptops {
       padding: 53px 88px;
