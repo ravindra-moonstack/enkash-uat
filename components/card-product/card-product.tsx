@@ -5,9 +5,10 @@ import { ReactNode } from "react"
 
 export interface CardProps {
   whiteTitle?: string
-  titleHtml?: ReactNode // or string if it's only HTML
+  titleHtml?: ReactNode
   description: string
   cardImage?: string | StaticImageData
+  link?: string // ✅
 }
 
 const CardProduct = ({
@@ -15,11 +16,10 @@ const CardProduct = ({
   titleHtml,
   description,
   cardImage,
+  link,
 }: CardProps) => {
-  return (
-    <div
-      className={`d-flex flex-column justify-content-between ${styles.card_body}`}
-    >
+  const cardContent = (
+    <>
       <div>
         {titleHtml ? (
           <div className={styles.titleHtml}>{titleHtml}</div>
@@ -30,7 +30,7 @@ const CardProduct = ({
         )}
 
         <div
-          className={` ${styles.description}`}
+          className={styles.description}
           dangerouslySetInnerHTML={{ __html: description }}
         ></div>
       </div>
@@ -45,6 +45,25 @@ const CardProduct = ({
             height={250}
           />
         </div>
+      )}
+    </>
+  )
+
+  return (
+    <div
+      className={`d-flex flex-column justify-content-between ${styles.card_body}`}
+    >
+      {link ? (
+        <a
+          href={link}
+          className={styles.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {cardContent}
+        </a>
+      ) : (
+        cardContent
       )}
     </div>
   )

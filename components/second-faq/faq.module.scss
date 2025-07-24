@@ -35,21 +35,18 @@
   img {
     width: 55px;
     height: 55px;
-    @include for-laptops {
-      width: 62px;
-      height: 62px;
-    }
   }
 
   .faq_inner_row {
-    padding-bottom: 5px;
+    padding: 20px;
+    padding-bottom: 0px;
+    position: relative;
   }
 
   .question {
     font-size: 16px;
     font-weight: 500;
     // margin-bottom: 20px;
-    padding-right: 20px;
 
     @include for-laptops {
       font-size: 20px;
@@ -64,22 +61,28 @@
   .answer {
     font-weight: 300;
     overflow: hidden;
-    max-height: 0;
+
     opacity: 0;
-    padding-top: 0;
-    padding-bottom: 0;
+
     transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out,
       padding 0.4s ease-in-out;
-
+    max-height: 800px;
+    background: #f6f6f6; // ✅ correct syntax
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 0px 0px 12px 12px;
     @include for-laptops {
       padding-left: 80px;
     }
 
     &.visible {
       opacity: 1;
-      max-height: 800px; // adjust if needed
-      padding-top: 12px;
-      padding-bottom: 12px;
+
+      // adjust if needed
     }
 
     &.reverse_visible {
@@ -113,9 +116,6 @@
 
 .faq_wrapper {
   width: 100%;
-  @include for-laptops {
-    width: 75%;
-  }
 }
 
 .scrollable {

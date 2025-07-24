@@ -1,0 +1,10 @@
+.carouselWrapper {
+  overflow: hidden;
+  max-width: calc(300px * 3.5); // or whatever your fixed card width is
+  margin: 0 auto;
+}
+
+.card {
+  flex: 0 0 auto;
+  width: 300px;
+}
