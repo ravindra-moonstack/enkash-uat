@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData, cardType } from "./data"
+import { cardsData, cardType } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
 import { Header, FAQHtml, Footer } from "@/components"
 import {
