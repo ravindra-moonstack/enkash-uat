@@ -109,14 +109,14 @@
     padding-left: 150px;
     padding-right: 150px;
   }
- 
+
   .section {
     padding: 20px;
     background-color: $color-sky-hint;
   }
-  .all_in_section_inner{
+  .all_in_section_inner {
     padding: 0;
-    @include for-laptops{
+    @include for-laptops {
       padding: 0 100px;
     }
   }
@@ -128,6 +128,7 @@
   padding: 20px;
 
   .text_container {
+    pointer-events: none;
     @include for-laptops {
       padding-bottom: 204px;
       padding-top: 80px;
@@ -197,8 +198,8 @@
     display: flex;
     margin-bottom: 20px;
     margin-top: 20px;
-    @include for-laptops{
-        margin-bottom: 20px;
+    @include for-laptops {
+      margin-bottom: 20px;
       margin-left: 66px;
     }
   }
