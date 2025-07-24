@@ -172,54 +172,54 @@ const CollectPayment = (): React.JSX.Element => {
               </div>
             </div>
             <div className={` ${styles.all_in_section_inner} `}>
-            <AllInOnePolicy
-              icon={paymentGatwayIcon}
-              title="Payment Gateway"
-              description="A high-performance gateway that enables businesses to accept payments through multiple methods such as credit cards, debit cards, UPI, net banking, and digital wallets, ensuring seamless transactions with exceptional success rates and security."
-              image={paymentGatwayImg}
-              buttonUrl="/sales/?source=expense_management"
-            />
+              <AllInOnePolicy
+                icon={paymentGatwayIcon}
+                title="Payment Gateway"
+                description="A high-performance gateway that enables businesses to accept payments through multiple methods such as credit cards, debit cards, UPI, net banking, and digital wallets, ensuring seamless transactions with exceptional success rates and security."
+                image={paymentGatwayImg}
+                buttonUrl="/sales/?source=expense_management"
+              />
 
-            <AllInOnePolicy
-              icon={paymentLinkIcon}
-              title="Payment Links"
-              description="Generate and share secure payment links instantly via SMS, email, WhatsApp, or social media, allowing businesses to collect payments from customers without requiring a website, ensuring quick and hassle-free transactions.."
-              image={paymentLinkImg}
-              buttonUrl="/sales/?source=expense_management"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={paymentButtonIcon}
-              title="Payment Button"
-              description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-              image={paymentButtonImg}
-              buttonUrl="/sales/?source=expense_management"
-            />
+              <AllInOnePolicy
+                icon={paymentLinkIcon}
+                title="Payment Links"
+                description="Generate and share secure payment links instantly via SMS, email, WhatsApp, or social media, allowing businesses to collect payments from customers without requiring a website, ensuring quick and hassle-free transactions.."
+                image={paymentLinkImg}
+                buttonUrl="/sales/?source=expense_management"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={paymentButtonIcon}
+                title="Payment Button"
+                description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
+                image={paymentButtonImg}
+                buttonUrl="/sales/?source=expense_management"
+              />
 
-            <AllInOnePolicy
-              icon={paymentPageIcon}
-              title="Payment Page"
-              description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-              image={paymentPageImg}
-              buttonUrl="/sales/?source=expense_management"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={upiIcon}
-              title="UPI Payments"
-              description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-              image={upiImg}
-              buttonUrl="/sales/?source=expense_management"
-            />
+              <AllInOnePolicy
+                icon={paymentPageIcon}
+                title="Payment Page"
+                description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
+                image={paymentPageImg}
+                buttonUrl="/sales/?source=expense_management"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={upiIcon}
+                title="UPI Payments"
+                description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
+                image={upiImg}
+                buttonUrl="/sales/?source=expense_management"
+              />
 
-            <AllInOnePolicy
-              icon={qrCodeIcon}
-              title="QR Code Payments"
-              description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-              image={qrCodeImg}
-              buttonUrl="/sales/?source=expense_management"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={qrCodeIcon}
+                title="QR Code Payments"
+                description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
+                image={qrCodeImg}
+                buttonUrl="/sales/?source=expense_management"
+                reverse
+              />
             </div>
           </div>
         </div>
@@ -231,7 +231,7 @@ const CollectPayment = (): React.JSX.Element => {
         {/* Spline background */}
         <div
           className="position-absolute top-0 start-0 w-100"
-          style={{ height: "600px" }}
+          style={{ height: "600px", backgroundColor: "black" }}
         >
           <Spline scene="https://prod.spline.design/JffS0FYkygwKIO-g/scene.splinecode" />
         </div>
