@@ -17,7 +17,6 @@ import {
   instant,
   reminder,
   whiteArrow,
-  mealCardImage,
   paymentLinkImage,
   shareImage,
   paymentOptionImage,
