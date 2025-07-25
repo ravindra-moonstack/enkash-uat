@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import styles from "./management-card.module.scss"
 import { ReactNode } from "react"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
@@ -8,7 +8,7 @@ export interface CardProps {
   whiteTitle?: string
   titleHtml?: ReactNode
   description: string
-  cardImage?: string
+  cardImage?: string | StaticImageData
   theme?: "light" | "dark"
   linkUrl?: string // ✅ Add this
 }
@@ -54,7 +54,6 @@ const ManagementCard = ({
           headingTag="p"
           className="f-4 mt-3 mb-0"
         />
-      
       </div>
 
       {cardImage && (
