@@ -2,25 +2,13 @@
 import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardType } from "./data"
 import { Header, Heading, Footer, FAQHtml } from "@/components"
-import {
-  circles,
-  blueArrow,
-  whiteArrow,
-  mealCardImage,
-  cardRotatingImage,
-  podiumImage,
-  heroCardImg,
-} from "."
-
+import { blueArrow, whiteArrow, podiumImage, heroCardImg } from "."
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import faqData from "./faq-data"
+import { faqData } from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
-
-import CardProduct from "@/components/card-product/card-product"
 import EnkashWay from "@/components/enkash-way/enkash-way"
 import { itIcon } from "../products/expense-management"
 import bg1 from "./img/MealCard.jpg"
@@ -114,7 +102,9 @@ const PrepaidCard = (): React.JSX.Element => {
 
       <div className={`${styles.sixth_row} row d-flex bg-white `}>
         <EnkashWay
-          sectionHeading="Ditch out-of-pocket claims. Take control of every rupee."
+          sectionHeading="Ditch out-of-pocket claims. "
+          secondHeading="Take control of every rupee."
+          secondHeadingColor="black"
           subTitle="Empower your teams with prepaid business cards that simplify purchases, improve tracking, and eliminate manual reimbursements."
           progressData={[
             {
@@ -191,9 +181,9 @@ const PrepaidCard = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-md-5 pb-3`}>
             <Heading
-              title={`Frequently Asked Questions  ${space}`}
+              title={`Frequently Asked Questions ${space}`}
               color="black"
               size="h1"
               weight="5"

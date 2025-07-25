@@ -16,12 +16,12 @@
       content: "";
       position: absolute;
       top: 50%; // position center
-      left: 50%;
+      left: 0%;
       transform: translate(-50%, -50%); // truly center it
       width: 400px; // adjust as needed
       height: 200px; // adjust for oval shape
       border-radius: 50%; // makes it an oval
-      background: #00d9ff; // pick your color
+      background: #ffff; // pick your color
       filter: blur(120px); // adjust blur strength
       opacity: 0.3; // adjust opacity
       z-index: 0; // stay behind content

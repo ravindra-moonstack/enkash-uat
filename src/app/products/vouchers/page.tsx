@@ -1,8 +1,6 @@
 "use client"
 import Image from "next/image"
-
 import styles from "./page.module.scss"
-import { allProductSections } from "./data"
 import faqData from "./faq-data"
 import { Header, FAQHtml, Footer } from "@/components"
 import {
@@ -26,7 +24,6 @@ import {
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
@@ -34,8 +31,6 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import { itIcon } from "../expense-management"
 import EnkashWay from "@/components/enkash-way/enkash-way"
-
-const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const Vouchers = (): React.JSX.Element => {
   return (
@@ -132,9 +127,7 @@ const Vouchers = (): React.JSX.Element => {
 
           <div className={` d-flex ${styles.section}`}>
             {" "}
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
+            <div className={` d-flex flex-column text-center ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
                 <DynamicHeading
                   content={[

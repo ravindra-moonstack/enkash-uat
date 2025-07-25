@@ -4,7 +4,6 @@ import React, { useState } from "react"
 import Image, { StaticImageData } from "next/image"
 import Heading from "../heading/heading"
 import styles from "./enkash-way.module.scss"
-import blurImg from "./img/blurBg.png"
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
@@ -21,14 +20,18 @@ interface EnkashWayProps {
   }[]
   sectionHeading: string
   secondHeading?: string
+  secondHeadingColor?: "black" | "white" | "secondry-black"
   subTitle?: string
+  progressItemPadding?: string
 }
 
 const EnkashWay = ({
   progressData,
   sectionHeading,
   secondHeading,
+  secondHeadingColor,
   subTitle,
+  progressItemPadding,
 }: EnkashWayProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0)
   const selectedItem = progressData[selectedItemIndex]
@@ -74,7 +77,7 @@ const EnkashWay = ({
               <Heading
                 title={secondHeading}
                 size="h1"
-                color="equity-blue"
+                color={secondHeadingColor || "equity-blue"}
                 weight="5"
               />
             )}
@@ -90,6 +93,7 @@ const EnkashWay = ({
                 key={index}
                 className={styles.progress_items}
                 style={{
+                  padding: progressItemPadding || undefined, // 👈 new dynamic padding
                   backgroundColor:
                     index === selectedItemIndex
                       ? "rgba(0, 217, 255, 0.2)"
@@ -175,7 +179,7 @@ const EnkashWay = ({
               <Heading
                 title={secondHeading}
                 size="h1"
-                color="equity-blue"
+                color={secondHeadingColor || "equity-blue"}
                 weight="5"
               />
             )}

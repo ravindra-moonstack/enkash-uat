@@ -565,6 +565,7 @@ const ExpenseManagement = (): React.JSX.Element => {
       <div className={`${styles.sixth_row} row d-flex bg-white `}>
         <EnkashWay
           sectionHeading="One Platform, Every Use Case, Total Control"
+          progressItemPadding="15px 12px"
           progressData={[
             {
               itemArray: ["IT & SaaS"],
