@@ -21,6 +21,11 @@ import {
   bg4,
   bg5,
   secureImage,
+  tabIconOne,
+  tabIconTwo,
+  tabIconThree,
+  tabIconFour,
+  tabIconFive,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -29,7 +34,6 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import { itIcon } from "../expense-management"
 import EnkashWay from "@/components/enkash-way/enkash-way"
 
 const Vouchers = (): React.JSX.Element => {
@@ -54,7 +58,7 @@ const Vouchers = (): React.JSX.Element => {
             />
           </div>
           <div className="col-12 d-flex flex-column text-center">
-            <div className="  mt-3 text-center">
+            <div className="  mt-3 mb-3 mb-md-2 text-center">
               <DynamicHeading
                 content={[
                   {
@@ -80,7 +84,7 @@ const Vouchers = (): React.JSX.Element => {
               />
             </div>
 
-            <div className="mt-md-5 mt-3">
+            <div className="mt-md-4 mt-3">
               <RectangleButton
                 title="Talk to Sales"
                 theme="blue"
@@ -136,7 +140,7 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h3"
+                  headingTag="h5"
                   className="f-7"
                 />
               </div>
@@ -151,8 +155,8 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>
@@ -165,7 +169,7 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h3"
+                  headingTag="h5"
                   className="f-7"
                 />
               </div>
@@ -180,8 +184,8 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>
@@ -194,8 +198,8 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-7"
+                  headingTag="h5"
+                  className="f-7 "
                 />
               </div>
               <div
@@ -209,8 +213,8 @@ const Vouchers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>
@@ -300,7 +304,7 @@ const Vouchers = (): React.JSX.Element => {
               title: "E-commerce",
               description:
                 "Access a wide range of online shopping platforms. From electronics to everyday essentials, get everything you need—conveniently and affordably.",
-              icon: itIcon,
+              icon: tabIconOne,
               bgImage: bg1,
               url: "/e-commerce-vouchers",
             },
@@ -309,7 +313,7 @@ const Vouchers = (): React.JSX.Element => {
               title: "Food & Beverages",
               description:
                 "Whether it’s a gourmet meal, a quick bite, or your daily staples, savor irresistible savings every time you eat in or dine out.",
-              icon: itIcon,
+              icon: tabIconTwo,
               bgImage: bg2,
               url: "/food-and-beverages-vouchers",
             },
@@ -318,7 +322,7 @@ const Vouchers = (): React.JSX.Element => {
               title: "Apparels & Fashion",
               description:
                 "Stay stylish without overspending. Explore discounted options across fashion staples, premium labels, and seasonal collections.",
-              icon: itIcon,
+              icon: tabIconThree,
               bgImage: bg3,
               url: "/apparels-vouchers",
             },
@@ -327,7 +331,7 @@ const Vouchers = (): React.JSX.Element => {
               title: "Movies & Music",
               description:
                 "Dive into your favorite entertainment - be it movies, concerts, or streaming—while saving big on unforgettable experiences.",
-              icon: itIcon,
+              icon: tabIconFour,
               bgImage: bg4,
               url: "/movie-and-music-vouchers",
             },
@@ -336,7 +340,7 @@ const Vouchers = (): React.JSX.Element => {
               title: "Health & Wellness",
               description:
                 "Make your well-being a priority with value-driven vouchers for healthcare, fitness, wellness services, and daily health needs.",
-              icon: itIcon,
+              icon: tabIconFive,
               bgImage: bg5,
               url: "/health-and-wellness-vouchers",
             },

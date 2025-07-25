@@ -55,8 +55,8 @@ const EnkashWay = ({
         className={`d-md-block d-none ${styles.sixth_row}`}
         style={{
           backgroundImage: `url(${currentBgImage})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
+          backgroundSize: "contain", // show full image
+          backgroundPosition: "center bottom",
           backgroundRepeat: "no-repeat",
           transition: "background-image 0.5s ease-in-out",
         }}
@@ -167,7 +167,7 @@ const EnkashWay = ({
       <div className={`d-md-none d-block ${styles.sixth_row_mobile}`}>
         <div className={styles.tab_section}>
           {/* Heading */}
-          <div className="d-flex flex-column text-center">
+          <div className="d-flex flex-column text-center pb-3">
             <Heading
               title={sectionHeading}
               size="h1"

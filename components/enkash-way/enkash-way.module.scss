@@ -43,10 +43,10 @@
 .tab_section {
   position: relative;
   z-index: 1;
-  padding: 32px;
+  padding: 50px 20px;
 
   @include for-laptops {
-    padding-bottom: 50px;
+    padding: 90px 0px;
     margin: auto;
     max-width: 1200px;
   }
