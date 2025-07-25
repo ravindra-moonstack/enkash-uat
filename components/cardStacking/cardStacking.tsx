@@ -22,7 +22,7 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
 
   useGSAP(() => {
     const cardEls = cardsRef.current.filter(Boolean)
-    if (cardEls.length!=cards.length) return
+    if (cardEls.length != cards.length) return
 
     console.log(ScrollTrigger.getAll())
     const firstST = ScrollTrigger.create({
@@ -36,7 +36,7 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
     })
 
     cardEls.forEach((card, index) => {
-      const scale = 1 - (cardEls.length - index) * 0.020
+      const scale = 1 - (cardEls.length - index) * 0.02
       const scaleAnim = gsap.to(card, {
         scale: scale,
       })
@@ -50,11 +50,11 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
         scrub: true,
         markers: false,
         animation: scaleAnim,
-        id:`index${index}`,
-        toggleActions: "play none reverse none"
+        id: `index${index}`,
+        toggleActions: "play none reverse none",
       })
     })
-  }, [container,cardsRef])
+  }, [container, cardsRef])
 
   return (
     <section className={styles.cardStacking} ref={container}>

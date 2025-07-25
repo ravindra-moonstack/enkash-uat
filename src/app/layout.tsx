@@ -6,6 +6,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { Inter } from "next/font/google"
 import ScrollToTop from "@/components/scroll-to-top/ScrollToTop"
 
+export const dynamic = "force-dynamic"
+
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
@@ -29,11 +31,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-
-
         {children}
 
-  <ScrollToTop />      
+        <ScrollToTop />
       </body>
     </html>
   )
