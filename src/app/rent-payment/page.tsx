@@ -1,10 +1,9 @@
 "use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -64,23 +63,22 @@ const RantPayment = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                 <DynamicHeading
-                    content={[
-                      {
-                        title: "Rent Payments",
-                        color: "color-equity-blue underline",
-                      },
-                    ]}
-                    headingTag="h4"
-                    className="f-4"
-                  />
-               
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Rent Payments",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="h4"
+                  className="f-4"
+                />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                    <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title: "Hassle-Free Rent Payments with EnKash",
@@ -90,21 +88,20 @@ const RantPayment = (): React.JSX.Element => {
                     headingTag="h1"
                     className="f-7"
                   />
-                
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                    <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient",
+                        title:
+                          "Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient",
                         color: "color-black",
                       },
                     ]}
                     headingTag="h5"
                     className="f-4"
                   />
-                 
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -158,24 +155,23 @@ const RantPayment = (): React.JSX.Element => {
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
             <DynamicHeading
-                    content={[
-                      {
-                        title: "How To Setup ",
-                        color: "color-black",
-                      },
-                      {
-                        title: "Rent Payments",
-                        color: "color-equity-blue",
-                      },
-                      {
-                        title: "Automation",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-6"
-                  />
-         
+              content={[
+                {
+                  title: "How To Setup ",
+                  color: "color-black",
+                },
+                {
+                  title: "Rent Payments",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "Automation",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
           </div>
           <div className="row">
             <div className="col-md-6 col-12">
@@ -206,17 +202,16 @@ const RantPayment = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div className={`d-inline text-center pb-3 `}>
-              
                 <DynamicHeading
-                    content={[
-                      {
-                        title: "Put an End to Rental Payment Woes with EnKash",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-5"
-                  />
+                  content={[
+                    {
+                      title: "Put an End to Rental Payment Woes with EnKash",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-5"
+                />
               </div>
             </div>
 
@@ -285,22 +280,20 @@ const RantPayment = (): React.JSX.Element => {
       <div className={`${styles.slider_row} relative`}>
         <div className={`${styles.title} text-center pb-5 max-w-auto`}>
           <div className={` pb-3  d-inline`}>
-             <DynamicHeading
-                    content={[
-                      {
-                        title: "One Platform ",
-                        color: "color-equity-blue",
-                      },
-                      {
-                        title: "for All Your Rental Payment Needs",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-5"
-                  />
-           
-           
+            <DynamicHeading
+              content={[
+                {
+                  title: "One Platform ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "for All Your Rental Payment Needs",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-5"
+            />
           </div>
         </div>
         <AllProducts
@@ -313,17 +306,16 @@ const RantPayment = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-          
-             <DynamicHeading
-                    content={[
-                      {
-                        title: "Ready to Redefine your Rent Payments?",
-                        color: "color-white",
-                      },
-                    ]}
-                    headingTag="h3"
-                    className="f-4 bannerHeading"
-                  />
+            <DynamicHeading
+              content={[
+                {
+                  title: "Ready to Redefine your Rent Payments?",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-4 bannerHeading"
+            />
           </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
@@ -340,40 +332,38 @@ const RantPayment = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-             <DynamicHeading
-                    content={[
-                      {
-                        title: "Frequently Asked Questions (",
-                        color: "color-black",
-                      },
-                      {
-                        title: "FAQs",
-                        color: "color-equity-blue",
-                      },
-                      {
-                        title: ")",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-5"
-                  />
-           
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-5"
+            />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                 <DynamicHeading
-                    content={[
-                      {
-                        title: "Have more questions?",
-                        color: "color-dark-grey",
-                      },
-                    ]}
-                    headingTag="h3"
-                    className="f-5"
-                  />
-              
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey",
+                    },
+                  ]}
+                  headingTag="h3"
+                  className="f-5"
+                />
               </div>
               <div className="mt-3 d-none d-md-block">
                 <RectangleButton

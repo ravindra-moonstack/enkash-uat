@@ -1,7 +1,7 @@
 import styles from "./faq.module.scss"
 import Image from "next/image"
 import arrowDown from "./img/arrow-down.svg"
-import DynamicHeading from "../dynamicHeading/dynamic-heading"
+
 
 export interface FAQProps {
   question: string

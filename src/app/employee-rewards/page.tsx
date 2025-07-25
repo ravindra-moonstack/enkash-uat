@@ -13,7 +13,6 @@ import {
   activationIcon,
   realTimeIcon,
   faqBg,
-  hundredPercentIcon,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
