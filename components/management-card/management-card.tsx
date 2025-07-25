@@ -8,7 +8,7 @@ export interface CardProps {
   whiteTitle?: string
   titleHtml?: ReactNode
   description: string
-  cardImage?: string | StaticImageData
+ cardImage?: string | StaticImageData
   theme?: "light" | "dark"
   linkUrl?: string // ✅ Add this
 }

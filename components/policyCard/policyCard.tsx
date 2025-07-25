@@ -1,6 +1,5 @@
 import React from "react"
 import Image, { StaticImageData } from "next/image"
-import Heading from "../heading/heading"
 import styles from "./policyCard.module.scss"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 

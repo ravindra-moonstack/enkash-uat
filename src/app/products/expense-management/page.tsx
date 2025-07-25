@@ -1,11 +1,10 @@
 "use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { allProductSections, cardData, cardsData } from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
 
-import { Header, Footer, Heading, FAQHtml } from "@/components"
+import { Header, Footer, FAQHtml } from "@/components"
 // import EnkashWay from "@/components/enkash-way/enkash-way"
 import {
   faqBg,
