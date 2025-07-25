@@ -16,7 +16,7 @@ const xpenzProducts = [
   {
     name: "Expense Managment",
     description: "Flexible prepaid card solutions",
-    link: "/cards",
+    link: "/expense-management",
     subProducts: [
       {
         subtitle: "Default",

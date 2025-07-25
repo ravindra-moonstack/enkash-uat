@@ -21,7 +21,7 @@ const loyaltyLoungeProducts = [
   {
     name: "Brand Vouchers",
     description: "Flexible prepaid card solutions",
-    link: "/cards",
+    link: "/brand-vouchers",
     subProducts: [
       {
         subtitle: "Default",
@@ -78,7 +78,7 @@ const loyaltyLoungeProducts = [
   {
     name: "Rewards System",
     description: "Flexible prepaid card solutions",
-    link: "/cards",
+    link: "/rewards",
     subProducts: [
       {
         subtitle: "Default",

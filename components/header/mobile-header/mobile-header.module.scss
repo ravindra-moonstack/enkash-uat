@@ -121,20 +121,14 @@
       color: $color-slate-grey;
       text-transform: uppercase;
     }
-
-    .exploreProduct {
-      h4 {
-        font-size: 12px;
-        color: $color-electric-green;
-        text-align: end;
-        text-decoration: underline;
-        margin-bottom: 7px;
-        margin-top: 11px;
-        bottom: -4px;
-        right: 17px;
-        position: absolute;
-      }
-    }
+  }
+}
+.exploreProduct {
+  h4 {
+    font-size: 12px;
+    color: $color-electric-green;
+    text-align: end;
+    text-decoration: underline;
   }
 }
 .underline_text {
@@ -160,7 +154,7 @@
 .buttons_container {
   flex-grow: 4;
   flex-direction: column;
-  padding: 16px 32px 24px 32px;
+  padding: 8px 32px 24px 32px;
   gap: 12px;
   a {
     text-decoration: none;

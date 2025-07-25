@@ -33,7 +33,7 @@ const SubProductListView = ({
   setCurrentStep,
 }: SubProductListViewProps) => {
   return (
-    <div className={`w-100 absolute z-10 bg-indi-volt`}>
+    <div className={`w-100 absolute z-10 `}>
       <div className={styles.mobile_sub_product_modal}>
         <div className="d-flex  align-items-center justify-content-between px-4 py-3">
           <div className={`${styles.nav_title}`}>{navTitle}</div>
@@ -57,7 +57,7 @@ const SubProductListView = ({
           return (
             <div
               key={secIndex}
-              className={`mb-3 relative ${styles.nav_sub_child_product}`}
+              className={`mb-2 relative ${styles.nav_sub_child_product}`}
               style={{
                 backgroundColor,
               }}
@@ -101,16 +101,30 @@ const SubProductListView = ({
                 </div>
               ))}
 
-              {section.products[0]?.subtitleLink && (
-                <div className={` ${styles.exploreProduct}`}>
-                  <Link href={section.products[0].subtitleLink}>
-                    <h4 className="fw-bold mb-1">Explore {section.title}</h4>
-                  </Link>
-                </div>
-              )}
+              {section.products[0]?.subtitleLink &&
+                ![
+                  "For Developers",
+                  "Resources",
+                  "Payable & Receivable+",
+                  "Prepaid Cards",
+                  "Credit Cards",
+                  "Cards", // makes sure "Cards" only uses the special block above
+                ].includes(section.title) && (
+                  <div className={styles.exploreProduct}>
+                    <Link href={section.products[0].subtitleLink}>
+                      <h4 className="fw-bold mb-0">Explore {section.title}</h4>
+                    </Link>
+                  </div>
+                )}
             </div>
           )
         })}
+
+        {navTitle === "Cards" && (
+          <div className={styles.exploreProduct}>
+            <h4 className="fw-bold mb-0  pr-4">Explore Corporate Card</h4>
+          </div>
+        )}
 
         {/* CTA Buttons */}
         <div

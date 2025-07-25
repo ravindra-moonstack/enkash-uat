@@ -1,135 +1,91 @@
 const faqData = [
   {
-    question: "What is an employee reward?",
+    question: "What are offers?",
     answer: [
       {
         heading:
-          "The benefits or bonuses given to an employee by their organization for their accomplished goals is an employee reward. Businesses give these rewards to their employees to show appreciation for their efforts. This keeps them motivated to outperform themselves in future.",
+          "EnKash offers attractive discounts and benefits on partnered services available only for existing customers. These exclusive offers can be availed only on EnKash’s platform, which can help businesses save more and grow.",
       },
     ],
   },
   {
-    question:
-      "What are some examples of employee rewards & recognition in the workplace?",
+    question: "How to avail these offers?",
     answer: [
       {
         heading:
-          "Rewards and recognition can take various forms; this includes monetary incentives, such as bonuses, and non-monetary rewards, like extra time off, public praise, or certificates of achievement. EnKash's employee rewards platform offers a comprehensive and customized solution to facilitate employee rewards. With features like the ability to redeem from 400+ brands and an easy self-redemption platform for employees, it simplifies rewarding and recognizing employees effectively.",
-      },
-    ],
-  },
-  {
-    question:
-      "How can you show appreciation and reward your staff effectively?",
-    answer: [
-      {
-        heading:
-          "Effectively showing appreciation to your staff involves creating a culture of recognition. This can be achieved through timely recognition, personalized experiences, and user-friendly interfaces. With EnKash’s easy onboarding process, allocation of reward points, and automated alerts, you can seamlessly show appreciation and reward your staff, enhancing employee engagement and satisfaction.",
-      },
-    ],
-  },
-  {
-    question: "What is the purpose of implementing rewards?",
-    answer: [
-      {
-        heading:
-          "The purpose of implementing rewards in an organization is to boost employee morale, productivity, and retention. EnKash’s employee rewards platform understands this purpose and simplifies the process. It offers a safe and secure platform for individual use, ensuring that the rewards contribute to employee well-being and job satisfaction. The ability to share vouchers easily and receive advance expiry alerts also maximizes employee adoption, aligning with the purpose of rewards.",
-      },
-    ],
-  },
-  {
-    question:
-      "What is considered the most effective recognition for employees?",
-    answer: [
-      {
-        heading:
-          "The most effective recognition for employees often involves choice and flexibility. EnKash's employee rewards platform excels by allowing employees to redeem rewards from over 400+ brands across 20+ categories. This extensive choice ensures that employees receive recognition in a form that is most meaningful to them, enhancing the effectiveness of the recognition process.",
-      },
-    ],
-  },
-  {
-    question:
-      "Why should mid-to-large company HR professionals choose a customized rewards and recognition program by EnKash?",
-    answer: [
-      {
-        heading:
-          "Here are some of the reasons why HR of mid-size businesses should choose EnKash for their employee rewards and recognition program:",
+          "To access these offers on EnKash, follow these steps:",
         bullets: [
-          "Customizable: EnKash's R&R program is highly customizable, allowing HR professionals to tailor it to the specific needs and culture of their organization",
-          "Corporate Savings: EnKash provides bulk order discounts to corporates on a wide variety of brand vouchers across categories, which makes it an excellent option to get maximum savings",
-          "Easy Integration: EnKash easily integrates with HRMS platforms, simplifying the process of employee onboarding and reward allocation for the HR",
-          "Redemption Options: EnKash offers a comprehensive catalog of 400+ brand vouchers like Myntra, Amazon, Zomato, Nykaa, etc., across 20+ categories like entertainment, fashion, travel, etc., that employees can choose from",
-          "Centralized Dashboard: EnKash offers a centralized dashboard, streamlining the management and administration of the R&R program, making it more efficient for HR professionals to implement and maintain the programs at scale",
+          "Login to EnKash and complete your KYC.",
+          "Visit the Partnered Services section on the dashboard.",
+          "Explore the exclusive offers and choose the one that aligns with your business needs.",
+          'Carefully read the terms and conditions before clicking "Apply Now".',
         ],
       },
     ],
   },
   {
-    question:
-      "Why is it necessary to implement employee rewards and recognition?",
+    question: "Are there any terms and conditions associated with these offers?",
     answer: [
       {
         heading:
-          "Implementing rewards and recognition programs is crucial because they boost employee morale, productivity, and job satisfaction. With EnKash's employee rewards platform, safety and security are top priorities so employees can use them worry-free. The platform also facilitates easy sharing of vouchers and provides advance expiry alerts, ensuring employees maximize their rewards and remain engaged.",
+          "Yes, there are certain terms and conditions associated with these offers on EnKash. These T&Cs vary depending on the offers and categories. It is highly advisable to carefully read the terms and conditions before applying for any particular offer.",
       },
     ],
   },
   {
-    question: "What are the benefits of recognition programs for employees?",
+    question: "Is there any eligibility criteria to avail these offers?",
     answer: [
       {
         heading:
-          "Recognition programs for employees boost morale, improve retention, and increase productivity. They foster a positive work culture, enhance engagement, and help attract top talent. With solutions like EnKash, businesses can automate and personalize recognition to drive real impact.",
+          "Each offer has a certain eligibility criteria. These promotions apply only to EnKash customers, so you must be an existing EnKash user to take advantage of these offers.",
       },
     ],
   },
   {
-    question: "What are employee recognition programs for small companies?",
+    question: "How will these offers benefit my business?",
     answer: [
       {
         heading:
-          "Employee recognition programs for small companies are structured initiatives that celebrate staff achievements through rewards like gift cards, public praise, or performance-based incentives. These programs help boost morale, retain talent, and build a positive culture, even with limited resources. Platforms like EnKash make it easy for small businesses to automate and personalize rewards affordably.",
+          "These offers can benefit your business by providing significant savings on business products and services through curated deals with trusted partners. With a seamless process and real-time visibility, businesses can easily access top-notch deals, streamline subscriptions, and stay ahead of new offers.",
       },
     ],
   },
-]
+  {
+    question: "What are the different categories of offers available?",
+    answer: [
+      {
+        heading:
+          "Various offers are available across diverse categories such as travel, health & fitness, finance, insurance, recruitment, cloud computing, sales & marketing, and more. These offers encompass services from brands like Nimbbl, AWS, ClearTax, Alibaba Cloud, and more.",
+      },
+    ],
+  },
+  {
+    question: "How can I contact EnKash customer support?",
+    answer: [
+      {
+        heading:
+          "To reach us, you can send an email to support@enkash.com or contact us at (+91) 853 049 0475.",
+      },
+    ],
+  },
+  {
+    question: "Are these offers limited to specific brands?",
+    answer: [
+      {
+        heading:
+          "No, EnKash partners with a wide variety of trusted brands like AWS, Canva, ClearTax, Nimbbl, and more to bring diverse offers tailored to business needs.",
+      },
+    ],
+  },
+  {
+    question: "How do these offers benefit my company financially?",
+    answer: [
+      {
+        heading:
+          "These curated corporate offers can help reduce business expenses by providing discounted access to software, tools, and services that are often essential but costly when bought directly.",
+      },
+    ],
+  },
+];
 
-export const SecondfaqData = [
-  {
-    question: "Rewards Options",
-    answer: [
-      {
-        heading:
-          "Diverse reward options, including personalized rewards, experiences, or benefits, enhance employee satisfaction.",
-      },
-    ],
-  },
-  {
-    question: "Automated Recognition",
-    answer: [
-      {
-        heading:
-          "An Automated recognition and reward system that tracks employee achievements and delivers rewards efficiently and consistently.",
-      },
-    ],
-  },
-  {
-    question: "Personalization",
-    answer: [
-      {
-        heading:
-          "Employees can choose rewards based on their interests and needs.",
-      },
-    ],
-  },
-  {
-    question: "Employee Engagement",
-    answer: [
-      {
-        heading:
-          "Promotes employee engagement via customized recognition programs, leading to enhanced employee satisfaction.",
-      },
-    ],
-  },
-]
-export default faqData
+export default faqData;

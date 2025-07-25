@@ -21,7 +21,7 @@ const ProductListView = ({
 }: ProductListViewProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(null)
   return (
-    <div className={`w-100 absolute z-10 bg-indi-volt`}>
+    <div className={`w-100 absolute z-10 `}>
       {selectedItemIndex == null && (
         <div className={`${styles.mobile_modal} `}>
           <div className="list">

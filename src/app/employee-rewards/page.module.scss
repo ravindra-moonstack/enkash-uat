@@ -346,7 +346,7 @@
   padding: 32px 20px 32px 20px;
 
   @include for-laptops {
-    padding-top: 138px;
+    padding-top: 84px;
     padding-bottom: 0px;
   }
 
@@ -354,6 +354,12 @@
     img {
       width: 500px;
       height: auto;
+    }
+  }
+  .secondFaq {
+    padding-bottom: 84px;
+    @include for-laptops {
+      padding-bottom: 172px;
     }
   }
 }

@@ -7,33 +7,37 @@ import styles from "./enkash-way.module.scss"
 import blurImg from "./img/blurBg.png"
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
+import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import { blueArrow, whiteArrow } from "."
 
 interface EnkashWayProps {
   progressData: {
     itemArray: string[]
     title: string
     description: string
+    url?: string
     icon: StaticImageData
     bgImage?: string | StaticImageData
   }[]
   sectionHeading: string
   secondHeading?: string
+  subTitle?: string
 }
 
 const EnkashWay = ({
   progressData,
   sectionHeading,
   secondHeading,
+  subTitle,
 }: EnkashWayProps) => {
   const [selectedItemIndex, setSelectedItemIndex] = useState(0)
   const selectedItem = progressData[selectedItemIndex]
 
-  const [openIndexes, setOpenIndexes] = useState<number[]>([])
+  const [openIndex, setOpenIndex] = useState<number | null>(null)
+
   const toggleOpen = (index: number) => {
-    setOpenIndexes((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    )
-    setSelectedItemIndex(index) // also update background
+    setOpenIndex((prev) => (prev === index ? null : index))
+    setSelectedItemIndex(index) // update desktop bg too
   }
 
   const currentBgImage =
@@ -43,9 +47,9 @@ const EnkashWay = ({
 
   return (
     <>
-      {/* ///for desktop... */}
+      {/* DESKTOP */}
       <div
-        className={`d-md-block d-none  ${styles.sixth_row}`}
+        className={`d-md-block d-none ${styles.sixth_row}`}
         style={{
           backgroundImage: `url(${currentBgImage})`,
           backgroundSize: "cover",
@@ -55,27 +59,31 @@ const EnkashWay = ({
           height: "100vh",
         }}
       >
-        <div className={styles.blur_bg}>
-          <Image src={blurImg} alt="background image" />
-        </div>
+        <div className={styles.blur_bg}></div>
+
         <div className={styles.tab_section}>
-          {/* Section Heading */}
-          <div className="d-flex flex-column align-items-center justify-content-center">
+          {/* Headings */}
+          <div className="d-flex flex-column text-center">
             <Heading
               title={sectionHeading}
               size="h1"
               color="black"
               weight="5"
             />
-            <Heading
-              title={secondHeading ?? ""}
-              size="h1"
-              color="equity-blue"
-              weight="5"
-            />
+            {secondHeading && (
+              <Heading
+                title={secondHeading}
+                size="h1"
+                color="equity-blue"
+                weight="5"
+              />
+            )}
+            {subTitle && (
+              <Heading title={subTitle} size="h5" color="black" weight="5" />
+            )}
           </div>
 
-          {/* Tab Selectors */}
+          {/* Tabs */}
           <div className={`d-flex mt-md-5 mt-3 ${styles.progress_container}`}>
             {progressData.map((data, index) => (
               <div
@@ -85,7 +93,7 @@ const EnkashWay = ({
                   backgroundColor:
                     index === selectedItemIndex
                       ? "rgba(0, 217, 255, 0.2)"
-                      : "#ffff",
+                      : "#fff",
                   cursor: "pointer",
                 }}
                 onClick={() => setSelectedItemIndex(index)}
@@ -122,6 +130,7 @@ const EnkashWay = ({
                 height={55}
               />
             </div>
+
             <div className="d-flex flex-column gap-3">
               <Heading
                 title={selectedItem.title}
@@ -135,51 +144,52 @@ const EnkashWay = ({
                 size="h6"
                 weight="4"
               />
-            </div>
-            <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-              <Image
-                src={selectedItem.icon}
-                alt="icon"
-                width={55}
-                height={55}
-              />
-            </div>
-            <div className="d-flex flex-column gap-3">
-              <Heading
-                title={selectedItem.title}
-                color="black"
-                size="h3"
-                weight="5"
-              />
-              <Heading
-                title={selectedItem.description}
-                color="black"
-                size="h6"
-                weight="4"
-              />
+              {selectedItem.url && (
+                <div className={`${styles.list_button}`}>
+                  <RectangleButton
+                    title="Learn More"
+                    theme="border-gray"
+                    actionImage={blueArrow}
+                    hoverImage={whiteArrow}
+                    url={selectedItem.url}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
       </div>
-      {/* ///for mobile... */}
-      <div className={`d-md-none d-block  ${styles.sixth_row_mobile}`}>
+
+      {/* MOBILE */}
+      <div className={`d-md-none d-block ${styles.sixth_row_mobile}`}>
         <div className={styles.tab_section}>
           {/* Heading */}
-          <div className="d-flex flex-column align-items-center justify-content-center">
+          <div className="d-flex flex-column text-center">
             <Heading
               title={sectionHeading}
               size="h1"
               color="black"
               weight="5"
             />
+            {secondHeading && (
+              <Heading
+                title={secondHeading}
+                size="h1"
+                color="equity-blue"
+                weight="5"
+              />
+            )}
+            {subTitle && (
+              <Heading title={subTitle} size="h5" color="black" weight="5" />
+            )}
           </div>
 
-          {/* Tabs */}
+          {/* Accordions */}
           <div
             className={`d-flex flex-column mt-md-5 mt-3 gap-3 ${styles.progress_container}`}
           >
             {progressData.map((data, index) => {
-              const isOpen = openIndexes.includes(index)
+              const isOpen = openIndex === index
               const bgSrc =
                 typeof data.bgImage === "string"
                   ? data.bgImage
@@ -194,7 +204,6 @@ const EnkashWay = ({
                       padding: "8px",
                       border: "1px solid #F2F2F2",
                       borderRadius: "8px",
-                      color: "blue",
                     }}
                     onClick={() => toggleOpen(index)}
                   >
@@ -216,75 +225,43 @@ const EnkashWay = ({
                     />
                   </div>
 
-                  {/* Dropdown content */}
-                  <div
-                    className={`${styles.dropdownContent} ${
-                      isOpen ? styles.show : ""
-                    }`}
-                  >
-                    {/* small bg image above text */}
-                    <div className={styles.dropdownBg}>
-                      <Image
-                        src={bgSrc}
-                        alt="background"
-                        width={600}
-                        height={200}
-                      />
-                    </div>
-                    <div className="d-flex align-items-start gap-2 mt-2">
-                      <Image
-                        src={data.icon}
-                        alt="icon"
-                        width={28}
-                        height={28}
-                      />
-                      <div className="d-flex flex-column gap-2">
-                        <Heading
-                          title={data.title}
-                          color="black"
-                          size="h2"
-                          weight="5"
-                        />
-                        <Heading
-                          title={data.description}
-                          color="black"
-                          size="h5"
-                          weight="4"
+                  {isOpen && (
+                    <div className={`${styles.dropdownContent} ${styles.show}`}>
+                      <div className={styles.dropdownBg}>
+                        <Image
+                          src={bgSrc}
+                          alt="background"
+                          width={600}
+                          height={200}
                         />
                       </div>
+                      <div className="d-flex align-items-start gap-2 mt-2">
+                        <Image
+                          src={data.icon}
+                          alt="icon"
+                          width={28}
+                          height={28}
+                        />
+                        <div className="d-flex flex-column gap-2">
+                          <Heading
+                            title={data.title}
+                            color="black"
+                            size="h2"
+                            weight="5"
+                          />
+                          <Heading
+                            title={data.description}
+                            color="black"
+                            size="h5"
+                            weight="4"
+                          />
+                        </div>
+                      </div>
                     </div>
-                  </div>
+                  )}
                 </div>
               )
             })}
-          </div>
-
-          {/* Desktop selected content */}
-          <div
-            className={`${styles.desktopContent} mt-5 px-3 d-flex align-items-start gap-3`}
-          >
-            <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-              <Image
-                src={selectedItem.icon}
-                alt="icon"
-                width={55}
-                height={55}
-              />
-            </div>
-            <div className="d-flex flex-column gap-3">
-              <Heading
-                title={selectedItem.title}
-                color="black"
-                size="h3"
-                weight="5"
-              />
-              <Heading
-                title={selectedItem.description}
-                color="black"
-                size="h6"
-                weight="4"
-              />
-            </div>
           </div>
         </div>
       </div>

@@ -33,8 +33,12 @@
   }
 
   img {
-    width: 55px;
-    height: 55px;
+    width: 28px;
+    height: 28px;
+    @include for-laptops {
+      width: 55px;
+      height: 55px;
+    }
   }
 
   .faq_inner_row {
@@ -68,12 +72,12 @@
       padding 0.4s ease-in-out;
     max-height: 800px;
     background: #f6f6f6; // ✅ correct syntax
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 10px 20px;
     position: absolute;
     left: 0;
     right: 0;
     z-index: 99;
+    padding-left: 70px;
     border-radius: 0px 0px 12px 12px;
     @include for-laptops {
       padding-left: 80px;

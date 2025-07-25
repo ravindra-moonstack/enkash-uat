@@ -104,6 +104,7 @@ const MobileHeader = ({ utmSource }: Props) => {
         style={{
           maxHeight: "90vh",
           overflowY: "scroll",
+          backgroundColor: "white",
         }}
       >
         <Hamburger setCurrentStep={setCurrentStep} currentStep={currentStep} />

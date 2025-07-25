@@ -12,7 +12,18 @@
 }
 .scrollCardButton {
   margin: 12px;
+  margin-left: 46px;
+
   @include for-laptops {
     margin-left: 70px;
   }
+
+  &--scroll {
+    margin-left: 56px;
+
+    @include for-laptops {
+      margin-left: 95px;
+    }
+  }
 }
+

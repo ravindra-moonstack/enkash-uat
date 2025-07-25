@@ -226,9 +226,7 @@
   background-size: cover;
   position: relative;
   height: 100vh;
-  @include for-laptops {
-    padding: 32px;
-  }
+
   // background-image: url(./img/enkashWayBg.svg);
 
   .blur_bg {

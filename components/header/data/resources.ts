@@ -58,30 +58,30 @@ const resourseProducts = [
         list: [
           {
             name: "Payment Gateway",
-            link: "/solutions/customized-reporting",
+            link: "/payment-gateway",
           },
           {
             name: "Corporate Cards",
-            link: "/solutions/workflow-management",
+            link: "/corporate-cards",
           },
           {
             name: "Expense Managment",
-            link: "/solutions/cashflow-analytics",
+            link: "/expense-managment",
           },
 
           {
             name: "Employee Rewards",
-            link: "/solutions/apis-modules",
+            link: "/employee-rewards",
           },
 
           {
             name: "Channel Incentives",
-            link: "/solutions/integrations",
+            link: "/channel-incentives",
           },
 
           {
             name: "Vouchers",
-            link: "/solutions/cfo-insights",
+            link: "/vouchers",
           },
         ],
         footerText:

@@ -16,6 +16,12 @@ import {
   upi,
   walletExpense,
   whiteArrow,
+  itIcon,
+  ecoomerceIcon,
+  manufactureIcon,
+  logisticIcon,
+  consultancyIcon,
+  pharmacyIcon,
   // itIcon,
   // ecoomerceIcon,
   // manufactureIcon,
@@ -35,16 +41,17 @@ import {
   rankData,
 } from "./data"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
-// import bg1 from "./img/bg4.jpg"
-// import bg2 from "./img/bg3.jpg"
-// import bg3 from "./img/bg2.jpg"
-// import bg4 from "./img/bg1.jpg"
-// import bg5 from "./img/bg6.jpg"
-// import bg6 from "./img/bg5.jpg"
+import bg1 from "./img/bg4.jpg"
+import bg2 from "./img/bg3.jpg"
+import bg3 from "./img/bg2.jpg"
+import bg4 from "./img/bg1.jpg"
+import bg5 from "./img/bg6.jpg"
+import bg6 from "./img/bg5.jpg"
 
 import AllProducts from "@/components/all-products/all-products"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
+import EnkashWay from "@/components/enkash-way/enkash-way"
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -555,7 +562,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      {/* <div className={`${styles.sixth_row} row d-flex bg-white `}>
+      <div className={`${styles.sixth_row} row d-flex bg-white `}>
         <EnkashWay
           sectionHeading="One Platform, Every Use Case, Total Control"
           progressData={[
@@ -609,7 +616,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             },
           ]}
         />
-      </div> */}
+      </div>
 
       <div className={` ${styles.ninth_row} `}>
         <div className="max-w-auto">
