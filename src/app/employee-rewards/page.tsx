@@ -158,6 +158,7 @@ const EmployeeRewards = (): React.JSX.Element => {
               headingTag="h3"
               className="f-3"
             />
+            <div className={`${styles.second_row_line} `}></div>
           </div>
 
           <div className={` d-flex ${styles.section}`}>
@@ -166,7 +167,16 @@ const EmployeeRewards = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={`d-flex ${styles.outerCard}`}>
-                <Image src={hundredPercentIcon} alt="icon" />
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "100%",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-7"
+                />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -310,7 +320,7 @@ const EmployeeRewards = (): React.JSX.Element => {
               content={[
                 {
                   title: "Rewards That Work For  ",
-                  color: "color-black",
+                  color: "color-black d-block",
                 },
                 {
                   title: "Employers and Employees! ",

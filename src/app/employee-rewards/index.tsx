@@ -25,7 +25,7 @@ export { default as paymentOptionImage } from "./img/payment-option.webp"
 export { default as notificationImage } from "./img/notification.webp"
 export { default as secureImage } from "./img/secure-transition.webp"
 export { default as optimizedIcon } from "./img/website-requierd.webp"
-export { default as hundredPercentIcon } from "./img/100%.svg"
+export { default as hundredPercentIcon } from "./img/hundredPercent.svg"
 export { default as activationIcon } from "./img/activation.svg"
 export { default as realTimeIcon } from "./img/real-time.svg"
 

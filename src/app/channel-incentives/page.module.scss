@@ -123,11 +123,13 @@
         width: 100%;
         padding: 4px;
         text-align: center;
+        height: 88px;
       }
 
       // 👇 Responsive widths
       @include for-laptops {
         width: 300px;
+        height: 100%;
       }
 
       @include for-tablet {
@@ -140,13 +142,20 @@
     }
   }
 
+  .second_row_line {
+    display: flex;
+    justify-content: center;
+    border-bottom: 1.38px solid #ffffff5c;
+    width: 70%;
+    margin: auto;
+  }
+
   .inner-content {
     background: white; /* inner background */
     padding: 11px 14px;
     border-radius: 10px; /* slightly smaller radius */
   }
 }
-
 .third_row {
   width: 100%;
   padding: 32px 20px;
