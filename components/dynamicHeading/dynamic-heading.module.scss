@@ -3,84 +3,60 @@
 
 .pageHeading {
   :global(h2) {
-    display: inline;
-    font-size: 28px;
+    font-size: 26px;
     margin-bottom: 0;
     line-height: 32px;
     letter-spacing: -0.04em;
 
     @include for-laptops {
-      font-size: 56px;
-      line-height: 80px;
-    }
-
-    @include for-window-zoomed-screens {
-      font-size: 57px;
+      font-size: 46px;
+      line-height: 60px;
     }
   }
 
   :global(h1) {
-    display: inline;
-    font-size: 21px;
+    font-size: 28px;
     margin-bottom: 0;
     line-height: 32px;
     letter-spacing: -0.04em;
-
     @include for-laptops {
       font-size: 48px;
-      line-height: 70px;
+      line-height: 60px;
       font-weight: 700;
-    }
-
-    @include for-window-zoomed-screens {
-      font-size: 52px;
     }
   }
 
   :global(h3) {
-    display: inline;
     font-size: 20px;
     margin-bottom: 0;
     line-height: 32px;
     letter-spacing: -0.04em;
-
     @include for-laptops {
-      font-size: 32px;
-      line-height: 40px;
-    }
-
-    @include for-window-zoomed-screens {
-      font-size: 21px;
+      font-size: 38px;
+      line-height: normal;
     }
   }
 
   :global(h4) {
-    display: inline;
     font-size: 16px;
     margin-bottom: 0;
     line-height: 32px;
     letter-spacing: -0.04em;
-
     @include for-laptops {
-      font-size: 24px;
-    }
-
-    @include for-window-zoomed-screens {
-      font-size: 18px;
+      font-size: 28px;
+      line-height: 40px;
     }
   }
 
   :global(h5) {
-    display: inline;
-    font-size: 12px;
+    font-size: 18px;
     margin-bottom: 0;
-    line-height: 16px;
+    line-height: 20px;
     letter-spacing: -0.04em;
     white-space: normal;
-
     @include for-laptops {
-      font-size: 20px;
-      line-height: 26px;
+      font-size: 24px;
+      line-height: 32px;
     }
 
     @include for-window-zoomed-screens {
@@ -90,14 +66,13 @@
 
   :global(h6) {
     display: inline;
-    font-size: 9px;
+    font-size: 16px;
     margin-bottom: 0;
     line-height: normal;
     font-weight: 400;
     letter-spacing: -0.04em;
-
     @include for-laptops {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     @include for-window-zoomed-screens {
@@ -105,4 +80,8 @@
     }
   }
 
+  :global(p) {
+    font-size: 16px;
+    line-height: 20px;
+  }
 }

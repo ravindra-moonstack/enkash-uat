@@ -36,17 +36,45 @@
   text-decoration: underline;
 }
 
+.pageLabel {
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.subHeading {
+  font-size: 20px;
+  line-height: 26px;
+}
+
 .bannerHeading {
   font-size: 38px !important;
 }
-.fs-48{
-  font-size: 48px !important;
+
+.fs-84 {
+  font-size: 84px;
 }
 
-@media (max-width:767px) {
-.fs-48{
-  font-size: 21px !important;
+.bgBlue {
+  background-color: #1c5af4;
 }
+
+p {
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+li {
+  letter-spacing: -0.04em;
+}
+.min-height-80{
+  min-height: 80px !important;
+}
+@media (max-width:767px) {
+  .fs-48 {
+    font-size: 21px !important;
+  }
+
   .bannerHeading {
     font-size: 24px !important;
     line-height: normal;

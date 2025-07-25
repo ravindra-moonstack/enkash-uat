@@ -1,6 +1,7 @@
 import styles from "./faq.module.scss"
 import Image from "next/image"
 import arrowDown from "./img/arrow-down.svg"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface FAQProps {
   question: string
@@ -61,7 +62,16 @@ const SECONDFAQ = ({
             // Remove onClick here, handled by parent div
             draggable={false}
           />
-          <h2 className={styles.question}>{question}</h2>
+          <DynamicHeading
+            content={[
+              {
+                title: question,
+                color: "color-black subHeading",
+              },
+            ]}
+            headingTag="p"
+            className="f-5 mb-0"
+          />
         </div>
 
         <div
@@ -75,13 +85,13 @@ const SECONDFAQ = ({
             answer.map((item, index) => (
               <div key={index} className="mb-4">
                 {item.heading && (
-                  <h4 className={styles.heading}>{item.heading}</h4>
+                  <p className={`mb-0`}>{item.heading}</p>
                 )}
                 {item.bullets && item.bullets.length > 0 && (
                   <ul>
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex}>
-                        <h4 className={styles.heading}>{bullet}</h4>
+                        <p className={`mb-0`}>{bullet}</p>
                       </li>
                     ))}
                   </ul>
