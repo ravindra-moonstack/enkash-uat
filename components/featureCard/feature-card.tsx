@@ -1,7 +1,7 @@
 import Image from "next/image"
 import styles from "./feature-card.module.scss"
-import Heading from "../heading/heading"
 import { ReactNode } from "react"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface CardProps {
   whiteTitle?: string
@@ -35,25 +35,47 @@ const FeatureCard = ({
           )}
           <div className={styles.title_wrapper}>
             {titleHtml ? (
-              <div className={styles.titleHtml}>{titleHtml}</div>
+              <DynamicHeading
+                content={[
+                  {
+                    title: String(titleHtml),
+                    color: "color-black d-block",
+                  },
+                  {
+                    title: title2,
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h4"
+                className="f-5"
+              />
             ) : (
               whiteTitle && (
-                <Heading
-                  title={whiteTitle}
-                  color="black"
-                  size="h3"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: whiteTitle,
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h4"
+                  className="f-5"
                 />
               )
             )}
           </div>
-          {title2 && <div className={styles.titleHtml}>{title2}</div>}
+          {/* {title2 && <div className={styles.titleHtml}>{title2}</div>} */}
         </div>
-
-        <div
-          className={`${styles.description} mt-3`} // add space above description if needed
-          dangerouslySetInnerHTML={{ __html: description }}
-        ></div>
+        <DynamicHeading
+          content={[
+            {
+              title: description,
+              color: "color-black",
+            },
+          ]}
+          headingTag="p"
+          className="f-4 mt-3"
+        />
       </div>
     </div>
   )

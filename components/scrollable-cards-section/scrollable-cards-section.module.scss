@@ -2,7 +2,7 @@
 @use "/styles/mixin" as *;
 
 .scrollCard {
-  margin-left: 10px;
+  // margin-left: 10px;
   margin-bottom: 20px;
 
   @include for-laptops {
@@ -11,11 +11,10 @@
   }
 }
 .scrollCardButton {
-  margin: 12px;
-  margin-left: 46px;
-
+  margin: 0px 40px 20px;
   @include for-laptops {
-    margin-left: 70px;
+    margin-top: 0px;
+    margin-left: 86px;
   }
 
   &--scroll {

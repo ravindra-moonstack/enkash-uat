@@ -3,7 +3,17 @@ import Image from "next/image"
 import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { Header, Heading, Footer, FAQHtml } from "@/components"
-import { blueArrow, whiteArrow, podiumImage, heroCardImg } from "."
+import {
+  blueArrow,
+  whiteArrow,
+  podiumImage,
+  heroCardImg,
+  tabIconOne,
+  tabIcontwo,
+  tabIconThree,
+  tabIconFour,
+  tabIconFive,
+} from "."
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
@@ -112,7 +122,7 @@ const PrepaidCard = (): React.JSX.Element => {
               title: "Meal Card",
               description:
                 "Enable tax-saving meal benefits for employees with preloaded, compliant meal cards accepted at food outlets, canteens, and online platforms.",
-              icon: itIcon,
+              icon: tabIconOne,
               bgImage: bg1,
               url: "/meal-card",
             },
@@ -121,7 +131,7 @@ const PrepaidCard = (): React.JSX.Element => {
               title: "Fuel Card",
               description:
                 "Optimize your fuel spends with cards restricted to fuel merchants only. Get complete visibility and prevent fuel misuse at the pump.",
-              icon: itIcon,
+              icon: tabIcontwo,
               bgImage: bg2,
               url: "/fuel-card",
             },
@@ -130,7 +140,7 @@ const PrepaidCard = (): React.JSX.Element => {
               title: "Digital Marketing Card",
               description:
                 "Manage campaign budgets with dedicated prepaid cards for ad platforms like Google, Meta, and LinkedIn - eliminating overages.",
-              icon: itIcon,
+              icon: tabIconThree,
               bgImage: bg3,
               url: "/digital-marketing-card",
             },
@@ -139,7 +149,7 @@ const PrepaidCard = (): React.JSX.Element => {
               title: "Logistics & Supply Chain",
               description:
                 "Give your drivers the power to pay without the risk of cash misuse. Track fuel, tolls, and repair spends in real-time.",
-              icon: itIcon,
+              icon: tabIconFour,
               bgImage: bg4,
               url: "/fleet-card",
             },
@@ -148,7 +158,7 @@ const PrepaidCard = (): React.JSX.Element => {
               title: "Payroll Card",
               description:
                 "Pay employees and gig workers instantly: no bank hassles, no KYC delays. Load salaries, bonuses, or incentives directly to payroll cards.",
-              icon: itIcon,
+              icon: tabIconFive,
               bgImage: bg5,
               url: "/payroll-card",
             },
