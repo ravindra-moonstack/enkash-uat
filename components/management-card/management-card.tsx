@@ -1,13 +1,14 @@
 import Link from "next/link"
-import Image, { StaticImageData } from "next/image"
+import Image from "next/image"
 import styles from "./management-card.module.scss"
 import { ReactNode } from "react"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface CardProps {
   whiteTitle?: string
   titleHtml?: ReactNode
   description: string
-  cardImage?: string | StaticImageData
+  cardImage?: string
   theme?: "light" | "dark"
   linkUrl?: string // ✅ Add this
 }
@@ -31,14 +32,29 @@ const ManagementCard = ({
           <div className={styles.titleHtml}>{titleHtml}</div>
         ) : (
           whiteTitle && (
-            <div className={styles.whiteTitleHtml}>{whiteTitle}</div>
+            <DynamicHeading
+              content={[
+                {
+                  title: whiteTitle,
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h4"
+              className="f-5 min-height-80"
+            />
           )
         )}
-
-        <div
-          className={` ${styles.description}`}
-          dangerouslySetInnerHTML={{ __html: description }}
-        ></div>
+        <DynamicHeading
+          content={[
+            {
+              title: description,
+              color: "color-white",
+            },
+          ]}
+          headingTag="p"
+          className="f-4 mt-3 mb-0"
+        />
+      
       </div>
 
       {cardImage && (

@@ -1,6 +1,7 @@
 import styles from "./faq.module.scss"
 import Image from "next/image"
 import arrowDown from "./img/arrow-down.svg"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface FAQProps {
   question: string
@@ -57,9 +58,10 @@ const FAQ = ({
         <div
           className={`d-flex gap-4 my-md-4 my-2 justify-content-between align-items-center`}
         >
-          <h2 className={styles.question}>
+           
+          <p className={`${styles.question} subHeading mb-0`} >
             {String(index + 1).padStart(2, "0")}. {question}
-          </h2>
+          </p>
           <Image
             src={arrowDown}
             alt="faq arrow icon"
@@ -82,13 +84,13 @@ const FAQ = ({
             answer.map((item, index) => (
               <div key={index} className="mb-4">
                 {item.heading && (
-                  <h4 className={styles.heading}>{item.heading}</h4>
+                  <p >{item.heading}</p>
                 )}
                 {item.bullets && item.bullets.length > 0 && (
                   <ul>
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex}>
-                        <h4 className={styles.heading}>{bullet}</h4>
+                        <p >{bullet}</p>
                       </li>
                     ))}
                   </ul>

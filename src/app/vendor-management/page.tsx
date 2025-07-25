@@ -29,6 +29,7 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const VendorManagement = (): React.JSX.Element => {
   return (
@@ -59,33 +60,47 @@ const VendorManagement = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Vendor Management ${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Vendor Management",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="h4"
+                  className="f-4"
                 />
+               
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Manage Vendors with Confidence Using EnKash${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
-                  />
+                 
+                     <DynamicHeading
+                  content={[
+                    {
+                      title: "Manage Vendors with Confidence Using EnKash",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h1"
+                  className="f-7"
+                />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Gain complete control of vendor relationships with powerful vendor management solution. From onboarding to payments and compliance our platform empowers businesses to work faster, reduce risks, and maintain healthy supplier partnerships."
-                    color="black"
-                    size="h5"
-                    weight="4"
-                  />
+              
+                    <DynamicHeading
+                  content={[
+                    {
+                      title: "Gain complete control of vendor relationships with powerful vendor management solution. From onboarding to payments and compliance our platform empowers businesses to work faster, reduce risks, and maintain healthy supplier partnerships.",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h5"
+                  className="f-4"
+                />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -138,18 +153,21 @@ const VendorManagement = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <Heading
-              title={`Step-by-Step Guide to${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Vendor Onboarding and Management${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
+              <DynamicHeading
+                  content={[
+                    {
+                      title: "Step-by-Step Guide to",
+                      color: "color-black",
+                    },
+                    {
+                      title: " Vendor Onboarding and Management",
+                      color: "color-equity-blue",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
+                />
+           
           </div>
           <div className="row">
             <div className="col-md-6 col-12">
@@ -180,11 +198,16 @@ const VendorManagement = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div className={`d-inline text-center pb-3`}>
-                <Heading
-                  title={`Best Vendor Management Software`}
-                  color="black"
-                  size="h1"
-                  weight="5"
+               
+                  <DynamicHeading
+                  content={[
+                    {
+                      title: "Best Vendor Management Software",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-5"
                 />
               </div>
             </div>
@@ -244,12 +267,17 @@ const VendorManagement = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Focus on what truly matters—your business growth. "
-              size="bannerHeading"
-              color="white"
-              weight="4"
-            />
+                  
+              <DynamicHeading
+                  content={[
+                    {
+                      title: "Focus on what truly matters—your business growth.",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h3"
+                  className="f-4"
+                />
           </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
@@ -266,27 +294,42 @@ const VendorManagement = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
+              <DynamicHeading
+                  content={[
+                    {
+                      title: "Frequently Asked Questions (",
+                      color: "color-black",
+                    },
+                    {
+                      title: "FAQs",
+                      color: "color-equity-blue",
+                    },
+                    {
+                      title: ")",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-5"
+                />
+           
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
+                  <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey",
+                    },
+                  ]}
+                  headingTag="h3"
+                  className="f-5"
                 />
+             
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"

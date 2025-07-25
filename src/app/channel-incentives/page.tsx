@@ -155,6 +155,7 @@ const ChannelIncentives = (): React.JSX.Element => {
               headingTag="h3"
               className="f-3"
             />
+            <div className={`${styles.second_row_line} `}></div>
           </div>
 
           <div className={` d-flex ${styles.section}`}>

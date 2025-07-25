@@ -3,7 +3,7 @@
 
 .policyCard {
   gap: 7px;
-  padding: 10px;
+  padding: 10px 0;
   border-radius: 10px;
   max-width: 500px;
   @include for-laptops {
@@ -12,8 +12,8 @@
   }
 
   Img {
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
 
     @include for-laptops {
       width: 46px;
