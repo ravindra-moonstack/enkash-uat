@@ -13,6 +13,7 @@ import {
   activationIcon,
   realTimeIcon,
   faqBg,
+  hundredPercentIcon,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -58,7 +59,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                 <DynamicHeading
                   content={[
                     {
-                      title: "Rent Payments",
+                      title: "Employee Rewards",
                       color: "color-equity-blue underline",
                     },
                   ]}
@@ -164,17 +165,8 @@ const EmployeeRewards = (): React.JSX.Element => {
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
-              <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-7"
-                />
+              <div className={`d-flex ${styles.outerCard}`}>
+                <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -313,7 +305,7 @@ const EmployeeRewards = (): React.JSX.Element => {
 
       <div className={`${styles.eigth_row} relative`}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
-          <div className={`${styles.title} text-start pb-5`}>
+          <div className={`${styles.title} text-start pb-md-5 pd-3`}>
             <DynamicHeading
               content={[
                 {
@@ -330,7 +322,7 @@ const EmployeeRewards = (): React.JSX.Element => {
             />
           </div>
           <div className="row align-items-end ">
-            <div className="col-md-6 col-12 pb-4">
+            <div className={`${styles.secondFaq} col-md-6 col-12`}>
               {" "}
               <SecondFaqHtml SecondfaqData={SecondfaqData} />
             </div>

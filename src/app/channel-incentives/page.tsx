@@ -266,11 +266,15 @@ const ChannelIncentives = (): React.JSX.Element => {
               />
             </div>
             <div className="col-md-6 col-12">
-              <div>
+              <div className="text-center">
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  style={{
+                    objectFit: "contain",
+                    maxHeight: "500px",
+                  }}
+                  className="w-100"
                 />
               </div>
             </div>

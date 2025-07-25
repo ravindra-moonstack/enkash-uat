@@ -56,7 +56,11 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
         ))}
       </div>
 
-      <div className={styles.scrollCardButton}>
+      <div
+        className={`${styles.scrollCardButton} ${
+          showScroll ? styles["scrollCardButton--scroll"] : ""
+        }`}
+      >
         <RectangleButton
           title={buttonTitle}
           theme={buttonTheme}

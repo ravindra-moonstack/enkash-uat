@@ -64,7 +64,7 @@ const payableProducts = [
         description: "Make rental payments directly into landlord's account",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
-        link: "/rent-payment",
+        link: "/rental-payment",
       },
       // {
       //   name: "Pay By Any Card",

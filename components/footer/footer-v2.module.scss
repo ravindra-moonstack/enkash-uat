@@ -138,7 +138,7 @@
   width: 100%; // fallback
   text-align: left;
   @media (max-width: 767px) {
-    width: 48%; // 2 columns on mobile (with a small gap)
+    width: 46%; // 2 columns on mobile (with a small gap)
   }
 
   @media (min-width: 768px) {

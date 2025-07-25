@@ -19,7 +19,7 @@ export const cardsProducts = [
   {
     name: "Prepaid Cards",
     description: "Flexible prepaid card solutions",
-    link: "/cards",
+    link: "/prepaid-card",
     subProducts: [
       {
         subtitle: "Default",
@@ -41,7 +41,7 @@ export const cardsProducts = [
             description: "One card, multiple budgets",
             imageSrc: multiWallatCardFilled,
             imageSrcHovered: multiWallatCardFilled,
-            link: "/virtual-card",
+            link: "/multi-wallet-card",
           },
           {
             name: "Fuel Cards",
@@ -55,7 +55,7 @@ export const cardsProducts = [
             description: "Simplify logistics and fuel spends",
             imageSrc: fleetCardFilled,
             imageSrcHovered: fleetCardFilled,
-            link: "/diy-card-module",
+            link: "/fleet-card",
           },
           {
             name: "Digital Marketing Cards",
@@ -69,14 +69,14 @@ export const cardsProducts = [
             description: "One card, endless choices",
             imageSrc: giftFilled,
             imageSrcHovered: giftFilled,
-            link: "/diy-card-module",
+            link: "/gift-card",
           },
           {
             name: "SaaS Cards",
             description: "Manage & prevent auto-renewals",
             imageSrc: saas,
             imageSrcHovered: saasFilled,
-            link: "/virtual-card",
+            link: "/saas-card",
           },
         ],
         footerText: "Empower your finances with purpose-based cards",
@@ -91,7 +91,7 @@ export const cardsProducts = [
     name: "Credit Cards",
     subtitle: " Corporate Cards",
     description: "Flexible credit card solutions",
-    link: "/cards",
+    link: "/credit-cards",
     payableProducts: [
       {
         subtitle: "Default",

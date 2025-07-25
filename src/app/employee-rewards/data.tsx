@@ -9,12 +9,7 @@ import offers from "./img/offers.webp"
 import incentive from "./img/incentive.webp"
 import vouchers from "./img/vouchers.webp"
 
-import {
-
-  scrollIconOne,
-  scrollIconThree,
-  scrollIconTwo,
-} from "."
+import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
 
 const cardsData = [
   {

@@ -4,7 +4,11 @@ const faqData = [
     answer: [
       {
         heading:
-          "The benefits or bonuses given to an employee by their organization for their accomplished goals is an employee reward. Businesses give these rewards to their employees to show appreciation for their efforts. This keeps them motivated to outperform themselves in future.",
+          "The benefits or bonuses given to an employee by their organization for their accomplished goals is an employee reward. ",
+      },
+      {
+        heading:
+          "Businesses give these rewards to their employees to show appreciation for their efforts. This keeps them motivated to outperform themselves in future.",
       },
     ],
   },

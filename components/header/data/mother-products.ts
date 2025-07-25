@@ -130,7 +130,7 @@ export const motherProducts = [
             description: "Offer EMIs, BNPL options",
             imageSrc: bulkCollect,
             imageSrcHovered: affordabilityFilled,
-            link: "/bulk-payment-collection",
+            link: "/affordability-suite",
           },
           {
             name: "QR Codes",
@@ -180,14 +180,14 @@ export const motherProducts = [
             description: "Never miss the rent deadline",
             imageSrc: rentalPayments,
             imageSrcHovered: rentalPaymentsFilled,
-            link: "/rent-payment",
+            link: "/rental-payment",
           },
           {
             name: "Payroll Processing",
             description: "Disburse salaries on time",
             imageSrc: collectionAnalytics,
             imageSrcHovered: collectionAnalyticsFilled,
-            link: "/payroll-process",
+            link: "/payroll",
           },
 
           {
@@ -232,21 +232,21 @@ export const motherProducts = [
 
             imageSrc: collectionReminderFilled,
             imageSrcHovered: collectionReminderFilled,
-            link: "/business-bill-payment",
+            link: "/collection-reminders",
           },
           {
             name: "Vendor Management",
 
             imageSrc: vendorManagementFilled,
             imageSrcHovered: vendorManagementFilled,
-            link: "/vendor-payment",
+            link: "/vendor-management",
           },
           {
             name: "Digital Invoicing",
 
             imageSrc: invoiceManegement,
             imageSrcHovered: digitalInvoiceFilled,
-            link: "/rent-payment",
+            link: "/digital-invoicing",
           },
 
           {
@@ -254,28 +254,28 @@ export const motherProducts = [
 
             imageSrc: payablesAnalytics,
             imageSrcHovered: payablesAnalyticsFilled,
-            link: "/express-pay",
+            link: "/payable-analytics",
           },
           {
             name: "Collection Analytics",
 
             imageSrc: collectionAnalytics,
             imageSrcHovered: collectionAnalyticsFilled,
-            link: "/gst-payment",
+            link: "/collection-analytics",
           },
           {
             name: "Seamless Banking",
 
             imageSrc: seamlessBanking,
             imageSrcHovered: seamlessBankingFilled,
-            link: "/gst-payment",
+            link: "/seemless-banking",
           },
           {
             name: "Auto Reconciliation",
 
             imageSrc: autoReconciliation,
             imageSrcHovered: autoReconciliationFilled,
-            link: "/gst-payment",
+            link: "/auto-reconcillation",
           },
 
           {
@@ -283,21 +283,21 @@ export const motherProducts = [
 
             imageSrc: casflowFilled,
             imageSrcHovered: casflowFilled,
-            link: "/gst-payment",
+            link: "/cashflow-analytics",
           },
           {
             name: "Invoice Management",
 
             imageSrc: invoiceManegement,
             imageSrcHovered: invoiceManegementFilled,
-            link: "/gst-payment",
+            link: "/invoice-management",
           },
           {
             name: "Workflow Management",
 
             imageSrc: instantSettlements,
             imageSrcHovered: instantSettlementsFilled,
-            link: "/gst-payment",
+            link: "/workflow-management",
           },
         ],
         footerText: "Manage all your business payments seamlessly",

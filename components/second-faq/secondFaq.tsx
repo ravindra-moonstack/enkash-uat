@@ -51,7 +51,7 @@ const SECONDFAQ = ({
         role="button"
         aria-expanded={answerVisible}
       >
-        <div className={`d-flex gap-4 mb-3 align-items-center`}>
+        <div className={`d-flex gap-4  align-items-center`}>
           <Image
             src={arrowDown}
             alt="faq arrow icon"
