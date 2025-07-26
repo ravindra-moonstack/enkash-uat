@@ -31,3 +31,8 @@ export { default as virtualCardImg } from "./img/virtual-card.svg"
 export { default as purchesCardImg } from "./img/purches-card.svg"
 export { default as digitalCardImg } from "./img/digital-marketing-card.svg"
 export { default as sassCardImg } from "./img/sass-card.svg"
+
+
+export { default as SetYourRules } from "./img/set-your-rules.webp"
+export { default as channelLevelControls } from "./img/channel-level-controls.webp"
+export { default as onePlatform } from "./img/one-platform.webp"

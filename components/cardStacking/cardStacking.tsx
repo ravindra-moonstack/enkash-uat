@@ -36,7 +36,7 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
     })
 
     cardEls.forEach((card, index) => {
-      const scale = 1 - (cardEls.length - index) * 0.02
+      const scale = 1 - (cardEls.length - index) * 0.015
       const scaleAnim = gsap.to(card, {
         scale: scale,
       })

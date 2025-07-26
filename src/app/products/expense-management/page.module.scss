@@ -81,6 +81,12 @@
       padding-top: 50px;
     }
 
+    :global(img){
+      height: auto;
+      @include for-laptops{
+        height: initial;
+      }
+    }
     .subtitle {
       margin-bottom: 40px;
     }
@@ -149,7 +155,7 @@
   background-size: cover;
   position: relative;
   width: 100%;
-  padding: 20px;
+  padding: 50px 20px;
 
   @include for-laptops {
     padding: 90px 10px;
@@ -177,12 +183,13 @@
       }
     }
   }
-  .scrollBtn {
-    padding: 20px 0 0 40px;
-    @include for-laptops {
-      padding: 20px 0 0 100px;
-    }
+.scrollBtn{
+  padding: 20px 0 0 73px;
+  @include for-laptops{
+    padding: 20px 0 0 100px;
+
   }
+}
   .approvedImage {
     position: absolute;
     bottom: 0;
@@ -315,11 +322,11 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding-bottom: 50px;
-  padding-top: 50px;
+ padding: 50px 20px;
 
   @include for-laptops {
-    padding-top: 90px;
+    padding:90px 10px;
+
   }
 
   .faqSection {
@@ -328,13 +335,10 @@
 
   .faq_bg {
     img {
-      position: absolute;
-      right: 0; // ✅ Add this
-      bottom: 0;
       display: none;
       @include for-laptops {
-        display: block; // ✅ Changed from flex to block
-        height: 37.5rem;
+        display: block; 
+        height: 700px;
       }
     }
   }

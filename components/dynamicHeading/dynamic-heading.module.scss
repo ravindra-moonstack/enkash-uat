@@ -27,7 +27,7 @@
   }
 
   :global(h3) {
-    font-size: 20px;
+    font-size: 28px;
     margin-bottom: 0;
     line-height: 32px;
     letter-spacing: -0.04em;
@@ -38,7 +38,7 @@
   }
 
   :global(h4) {
-    font-size: 16px;
+    font-size: 22px;
     margin-bottom: 0;
     line-height: 32px;
     letter-spacing: -0.04em;
@@ -59,9 +59,6 @@
       line-height: 32px;
     }
 
-    @include for-window-zoomed-screens {
-      font-size: 16px;
-    }
   }
 
   :global(h6) {

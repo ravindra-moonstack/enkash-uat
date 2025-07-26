@@ -71,13 +71,14 @@ li {
   min-height: 80px !important;
 }
 @media (max-width:767px) {
-  .fs-48 {
-    font-size: 21px !important;
-  }
-
-  .bannerHeading {
-    font-size: 24px !important;
+   .bannerHeading {
+    font-size: 18px !important;
     line-height: normal;
     font-weight: 400;
   }
+  
+.subHeading {
+  font-size: 18px;
+  line-height: 24px;
+}
 }

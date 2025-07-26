@@ -35,16 +35,19 @@
   img {
     width: 28px;
     height: 28px;
-    @include for-laptops {
-      width: 55px;
-      height: 55px;
+    @include for-laptops{
+    width: 55px;
+    height: 55px;
     }
   }
 
   .faq_inner_row {
-    padding: 20px;
-    padding-bottom: 0px;
+    padding: 10px 10px 0 10px;
     position: relative;
+    @include for-laptops{
+      padding: 20px 20px 0 20px;
+    position: relative;
+    }
   }
 
   .question {

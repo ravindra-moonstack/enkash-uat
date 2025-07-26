@@ -102,7 +102,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                   },
                 ]}
                 headingTag="p"
-                className="f-4"
+                className="f-4 text-center"
               />
             </div>
           </div>
@@ -536,7 +536,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             </div>
             <div className="col-md-6 sm-d-none">
               <div className={styles.faq_bg}>
-                <Image src={faqBg} alt="background image" />
+                <Image src={faqBg} alt="background image" className="w-100 mh-550 object-fit-contain"/>
               </div>
             </div>
           </div>

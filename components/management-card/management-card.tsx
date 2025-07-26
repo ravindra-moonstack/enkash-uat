@@ -8,7 +8,7 @@ export interface CardProps {
   whiteTitle?: string
   titleHtml?: ReactNode
   description: string
- cardImage?: string | StaticImageData
+  cardImage?: string | StaticImageData
   theme?: "light" | "dark"
   linkUrl?: string // ✅ Add this
 }
@@ -29,14 +29,23 @@ const ManagementCard = ({
     >
       <div>
         {titleHtml ? (
-          <div className={styles.titleHtml}>{titleHtml}</div>
+          <DynamicHeading
+              content={[
+                {
+                  title: String(titleHtml),
+                  color: styles.titleHtml,
+                },
+              ]}
+              headingTag="h4"
+              className="f-5"
+            />
         ) : (
           whiteTitle && (
             <DynamicHeading
               content={[
                 {
-                  title: whiteTitle,
-                  color: "color-white",
+                  title: String(whiteTitle),
+                  color: styles.whiteTitleHtml,
                 },
               ]}
               headingTag="h4"
@@ -44,16 +53,19 @@ const ManagementCard = ({
             />
           )
         )}
-        <DynamicHeading
-          content={[
-            {
-              title: description,
-              color: "color-white",
-            },
-          ]}
-          headingTag="p"
-          className="f-4 mt-3 mb-0"
-        />
+
+        <div>
+          <DynamicHeading
+              content={[
+                {
+                  title: String(description),
+                  color: styles.description,
+                },
+              ]}
+              headingTag="p"
+              className="mb-0"
+            />
+        </div>
       </div>
 
       {cardImage && (

@@ -10,7 +10,7 @@
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 87px;
+  padding-top: 110px;
   padding-bottom: 36px;
 
   background-image: linear-gradient(
@@ -28,6 +28,12 @@
     padding-bottom: 40px;
   }
 
+  .bannerImages {
+       min-height: 150px;
+    @include for-laptops{
+      min-height: 540px;
+    }
+  }
   .subtitle {
     color: $color-equity-blue;
     border-bottom: 2px solid $color-equity-blue;
@@ -59,7 +65,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 20px;
+  padding: 50px 20px;
   position: relative;
   background-image: linear-gradient(
       90deg,
@@ -68,12 +74,12 @@
     ),
     url(./img/secongBg.png);
   @include for-laptops {
-    padding: 100px 90px 90px 150px;
+    padding: 90px 20px 90px 20px;
   }
   .second_row_title {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
   }
   .section {
     max-width: 1200px;
@@ -123,14 +129,11 @@
   background-position: center;
   background-size: cover;
   background-image: url(./img/ArtboardBg.svg);
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 84px 90px 51px 90px;
+    padding: 90px 20px 90px 20px;
   }
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
-  }
+
 
   .rbi_section {
     display: flex;
@@ -156,9 +159,9 @@
   background: $color-black;
   border-radius: 12px;
   position: relative;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 58px;
+    padding: 90px 20px;
   }
   .get_started_button {
     padding: 6px;
@@ -185,25 +188,23 @@
 .fifth_row {
   position: relative;
   text-align: center;
-  padding: 20px;
-  padding-top: 0px;
+  padding:50px 20px 16px;
   @include for-laptops {
-    padding-top: 90px;
-    padding-bottom: 90px;
+ padding: 90px 20px 22px;
   }
 }
 
 .sixth_row {
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding-top: 132px;
-    padding-bottom: 70px;
+    padding: 162px 20px 90px;
   }
   .list_button {
     padding-left: 40px;
-    margin-top: 18px;
+    margin-top: 20px;
     @include for-laptops {
-      margin-top: 38px;
+      margin-top: 20px;
+      padding-left: 66px;
     }
   }
 }
@@ -279,9 +280,9 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 96px 90px 90px 60px;
+    padding: 90px 20px;
   }
 
   .faq_bg {
@@ -324,10 +325,9 @@
 }
 
 .other_products {
-  padding: 20px;
+  padding: 0px 20px 50px;
   @include for-laptops {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding: 0px 20px 90px;
   }
 }
 
@@ -356,7 +356,10 @@
 .action_row {
   position: relative;
   overflow: hidden;
-
+  padding: 50px 20px;
+  @include for-laptops{
+    padding: 90px 20px;
+  }
   .list_button {
     padding-left: 76px;
     margin-top: 38px;
@@ -383,11 +386,11 @@
 
 .card_stacking_row {
   .section {
-    padding: 20px;
+    padding: 50px 20px;
     background: #a5a5a51a;
 
     @include for-laptops {
-      padding: 122px 54px 89px 54px;
+      padding: 90px 20px;
     }
   }
 }
