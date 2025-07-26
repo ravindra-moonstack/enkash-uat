@@ -1,12 +1,12 @@
-@import "../../styles/variables";
-@import "../../styles/mixin";
+@use "/styles/mixin" as *;
+@use "/styles/variables" as *;
 
 .category_menu {
   display: flex;
   justify-content: center;
   gap: 10px;
-  background-color: $color-bolt-light;
-  padding: 33px 0;
+  background-color: $color-white;
+  padding: 40px 0;
   flex-wrap: wrap;
 
   @include for-laptops {
@@ -24,13 +24,14 @@
     gap: 5px;
     background-color: $color-white;
     color: $color-equity-blue;
-    padding: 4px 5px;
+    padding: 12px 15px;
     border: none;
     border-radius: 4px;
     font-weight: 500;
     font-size: 10px;
     width: 115px;
     text-wrap: nowrap;
+    box-shadow: 0px 0px 22px 2px #1c5af433;
 
     @include for-laptops {
       width: 190px;
@@ -40,7 +41,7 @@
     }
 
     img {
-      width: 12px;
+      width: 19px;
       height: auto;
     }
   }

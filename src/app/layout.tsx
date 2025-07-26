@@ -33,7 +33,7 @@ export default function RootLayout({
       <body className={inter.variable}>
         {children}
 
-        <ScrollToTop />
+        {/* <ScrollToTop /> */}
       </body>
     </html>
   )

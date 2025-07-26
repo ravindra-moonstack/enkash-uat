@@ -1,47 +1,27 @@
-// import Category from "@/components/category"
-// import { notFound } from "next/navigation"
-// import React from "react"
-
-// const page = async ({ params }: { params: Promise<{ category: string }> }) => {
-//   //
-
-//   const { category } = await params
-
-//   if (category !== "ecommerce") {
-//     notFound()
-//   }
-
-//   return (
-//     <div>
-//       <Category category={category} />
-//     </div>
-//   )
-// }
-
-// export default page
 import Image from "next/image"
 import { Metadata } from "next"
 import styles from "./page.module.scss"
 import Header from "@/components/header/header"
 import Footer from "@/components/footer/footer"
 import CategoryMenu from "@/components/voucher-page/category-menu"
-import VoucherData, { Voucher } from "../../vouchers/data/voucher-data"
+import VoucherData, { Voucher } from "../../data/voucher-data"
 import Link from "next/link"
-// import {
-//   ajioPopular,
-//   amazonPopular,
-//   backArrow,
-//   blueStepTick,
-//   corporateNeed,
-//   faqBg,
-//   individualNeed,
-//   myntraPopular,
-//   popularArrow,
-//   zigZagBottom,
-//   zigZagGrey,
-//   zigZagTop,
-//   zomatoPopular,
-// } from "../../bolt"
+import {
+  ajioPopular,
+  amazonPopular,
+  backArrow,
+  blueStepTick,
+  corporateNeed,
+  faqBg,
+  individualNeed,
+  myntraPopular,
+  popularArrow,
+  whiteArrow,
+  zigZagBottom,
+  zigZagGrey,
+  zigZagTop,
+  zomatoPopular,
+} from "../../index"
 import VoucherCard from "@/components/voucher-page/voucher-card"
 import Heading from "@/components/heading/heading"
 
@@ -50,16 +30,20 @@ import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import { nameToUrl } from "@/common/utils/stringUtils"
 import VoucherFaqComponent from "@/components/voucher-page/voucher-faq"
-import { VoucherFaqData } from "@/src/app/products/vouchers/data/voucher-faq-data"
+import { VoucherFaqData } from "../../data/voucher-faq-data"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import { blueArrow } from "."
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
-  params: { voucherName?: string }
-}): Metadata {
-  const voucherName = nameToUrl(params.voucherName ?? "")
-  const voucher: Voucher = VoucherData[voucherName]
+  params: Promise<{ category: string }>
+}) {
+  const { category } = await params
+  const categoryMain = nameToUrl(category ?? "")
+
+  const voucher: Voucher = VoucherData[categoryMain]
   if (!voucher) {
     return {
       title: `Voucher not found - EnKash`,
@@ -70,7 +54,9 @@ export function generateMetadata({
       },
     }
   }
+
   const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.png`
+
   return {
     title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
     description: `Get the best ${voucher.brandName} gift card offers! Learn how to buy a ${voucher.brandName} gift card, check your ${voucher.brandName} gift card balance, and redeem your gift card easily.`,
@@ -150,7 +136,9 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
         cache: `no-cache`,
       }
     )
+
     const apiData = await apiResponse.json()
+
     //discount update
     apiData.payload.data.forEach((product: any) => {
       if (
@@ -163,15 +151,23 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
       }
     })
 
-    return isActive ? localVoucher : null
+    // return isActive ? localVoucher : null
+    return localVoucher
   } catch (error) {
     console.error("Error fetching vouchers:", error)
     return null
   }
 }
 
-const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
-  const voucherName = params.voucherName
+const CategoryPage = async ({
+  params,
+}: {
+  params: Promise<{ category: string }>
+}) => {
+  //
+
+  const { category } = await params
+  const voucherName = category
 
   const localVoucherData = Object.values(VoucherData).find(
     (voucher) => voucher.urlName === voucherName
@@ -182,11 +178,11 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
   }
 
   const voucherData = await fetchVoucher(voucherName)
+
   const voucherCategory = voucherData?.category || ""
   const voucherImage = voucherData
     ? `/images/voucher-bg/${voucherData.urlName}.png`
     : null
-  // const voucherData = VoucherDataV2[voucherName];
 
   let categoryNameMap = new Map<string, string>([
     ["e-commerce", "E-Commerce"],
@@ -202,22 +198,15 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
       )}`
     : "https://bolt.enkash.com/"
 
-  const halfBoltUTM = voucherData
-    ? `bolt&utm_medium=enkash_website&utm_campaign=redeem_${sanitizeUTM(
-        voucherData.name.toLowerCase()
-      )}`
-    : "https://bolt.enkash.com/"
-
   const breadcrumbItems = [
     { name: "Home", url: "/" },
-    { name: "Voucher", url: "/bolt" },
+    { name: "Vouchers", url: "/vouchers" },
     {
       name: `${categoryNameMap.get(voucherCategory)}`,
-      url: `/voucher/category/${voucherData?.category}`,
+      url: `/vouchers/category/${voucherData?.category}`,
     },
     { name: voucherData?.name || "Voucher", url: `/voucher/${voucherName}` },
   ]
-  // const faqData = VoucherFaqData[voucherName].faqData
 
   return (
     <>
@@ -225,79 +214,76 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
       {voucherData ? (
         <div className={`color-white ${styles.home_container}`}>
-          {/* METADATA for voucher */}
-          {/* <div
-            dangerouslySetInnerHTML={{
-              __html: generateVoucherSchema(voucherData),
-            }}
-          /> */}
+          <div className={`${styles.voucher_detail}`}>
+            <div className={`mx-auto ${styles.voucher_detail_container}`}>
+              <div className={`mt-3 ${styles.top_container}`}>
+                <div className={`${styles.top_container_section}`}>
+                  <div className={`${styles.breadcrumb}`}>
+                    <CustomBreadcrumb items={breadcrumbItems} />
+                  </div>
 
-          <div className={`color-white ${styles.first_row_category}`}>
-            <CategoryMenu
-              currentPageCategory={voucherData?.category || "e-commerce"}
-            />
-          </div>
-          <div></div>
+                  <div className={styles.web_only}>
+                    <div className={`${styles.voucher_image_section}`}>
+                      <div className={styles.discount_bar}>
+                        <div className={styles.discount_}>
+                          Up to <span>{voucherData.discount}%</span> OFF
+                        </div>
+                        <div className={`${styles.brand_name}`}>
+                          {voucherData.brandName}
+                        </div>
+                      </div>
 
-          <div className={`mx-auto ${styles.voucher_detail_container}`}>
-            <div className={`mt-3 ${styles.top_container}`}>
-              <div className={`${styles.breadcrumb}`}>
-                <CustomBreadcrumb items={breadcrumbItems} />
-              </div>
-
-              <div className={styles.web_only}>
-                <div className={`${styles.voucher_image_section}`}>
-                  <div className={styles.discount_bar}>
-                    <div className={styles.discount_}>
-                      Up to <span>{voucherData.discount}%</span> OFF
+                      <div
+                        className={`${styles.voucher_name} ${
+                          voucherData.name.length > 30
+                            ? voucherData.name.length > 33
+                              ? styles.voucher_name_widest
+                              : styles.voucher_name_wide
+                            : ""
+                        }`}
+                      >
+                        {voucherData.name.replace("-", "\u2011")}
+                      </div>
+                      <div className={styles.voucher_image}>
+                        {voucherImage && (
+                          <Image
+                            src={voucherImage}
+                            alt={voucherData.name}
+                            width={330}
+                            height={300}
+                          />
+                        )}
+                      </div>
+                      <div className={styles.buy_now_button}>
+                        <Link href={boltUTM} target="_blank">
+                          BUY NOW
+                        </Link>
+                      </div>
                     </div>
-                    {/* <div className={`${styles.brand_name}`}>
-                      {voucherData.brandName}
-                    </div> */}
                   </div>
-
-                  <div
-                    className={`${styles.voucher_name} ${
-                      voucherData.name.length > 30
-                        ? voucherData.name.length > 33
-                          ? styles.voucher_name_widest
-                          : styles.voucher_name_wide
-                        : ""
-                    }`}
-                  >
-                    {voucherData.name.replace("-", "\u2011")}
-                  </div>
-                  <div className={styles.voucher_image}>
-                    {voucherImage && (
-                      <Image
-                        src={voucherImage}
-                        alt={voucherData.name}
-                        width={330}
-                        height={300}
-                      />
-                    )}
-                  </div>
-                  <div className={styles.buy_now_button}>
-                    <Link href={boltUTM} target="_blank">
-                      BUY NOW
-                    </Link>
+                  <div className={styles.mobile_only}>
+                    <VoucherCard voucher={voucherData} routeToBolt={true} />
                   </div>
                 </div>
               </div>
-              <div className={styles.mobile_only}>
-                <VoucherCard voucher={voucherData} routeToBolt={true} />
-              </div>
+            </div>
+          </div>
 
+          <div className={`mx-auto  ${styles.voucher_detail_container}`}>
+            <div className={`mt-3 ${styles.top_container}`}>
               <div className={styles.detail_section}>
                 {/* Gift card main title */}
-                <div className={`my-4`}>
+                <div className={`mb-4 mt-5 `}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title={voucherData.name}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH1TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: voucherData.name,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -308,12 +294,15 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                 {/* About company section */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title={`About ${voucherData.brandName}`}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: `About ${voucherData.brandName}`,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
                     />
                   </div>
                   <div className={`mb-1 ${styles.description}`}>
@@ -324,12 +313,15 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                 {/* Savings Calculator section */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title={voucherData.calculatorTitle}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: voucherData.calculatorTitle,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
                     />
                   </div>
                   <div className={`mb-1 ${styles.description}`}>
@@ -345,9 +337,6 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   </div>
                 </div>
               </div>
-              {/* <div className={styles.bottom_zigzag}>
-                <Image src={zigZagTop} alt="zig-zag" />
-              </div> */}
             </div>
 
             <div className={`mt-4 mb-5 ${styles.mid_container}`}>
@@ -355,12 +344,15 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                 {/* How to Buy Section */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title={voucherData.howToBuyTitle}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: voucherData.howToBuyTitle,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -373,7 +365,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                     <div className={styles.progressSteps}>
                       <div className={styles.step}>
                         <div className={styles.iconContainer}>
-                          {/* <Image src={blueStepTick} alt="tick" /> */}
+                          <Image src={blueStepTick} alt="tick" />
                         </div>
                         <div className={styles.content}>
                           <h3 className={styles.title}>Login</h3>
@@ -387,7 +379,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       </div>
                       <div className={styles.step}>
                         <div className={styles.iconContainer}>
-                          {/* <Image src={blueStepTick} alt="tick" /> */}
+                          <Image src={blueStepTick} alt="tick" />
                         </div>
                         <div className={styles.content}>
                           <h3 className={styles.title}>Select</h3>
@@ -399,7 +391,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                       </div>
                       <div className={styles.step}>
                         <div className={styles.iconContainer}>
-                          {/* <Image src={blueStepTick} alt="tick" /> */}
+                          <Image src={blueStepTick} alt="tick" />
                         </div>
                         <div className={styles.content}>
                           <h3 className={styles.title}>Checkout</h3>
@@ -451,12 +443,15 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                 {/* Use and Redeem section */}
                 <div className={`mt-4 mb-5`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title={voucherData.howToRedeemTitle}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: voucherData.howToRedeemTitle,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -479,12 +474,15 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                 {/* Check Balance section */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title={voucherData.checkBalanceTitle}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: voucherData.checkBalanceTitle,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -506,7 +504,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
               </div>
 
               <div className={styles.bottom_zigzag}>
-                {/* <Image src={zigZagTop} alt="zig-zag" /> */}
+                <Image src={zigZagTop} alt="zig-zag" />
               </div>
             </div>
 
@@ -514,12 +512,15 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
               <div className={styles.detail_section}>
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title={`Who can use ${voucherData.name}`}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: `Who can use ${voucherData.name}`,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
                     />
                   </div>
                 </div>
@@ -527,15 +528,18 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
               <div className={`mb-4 ${styles.description}`}>
                 <div className={styles.need_container}>
                   <div className={styles.need_img}>
-                    {/* <Image src={individualNeed} alt="Individuals" /> */}
+                    <Image src={individualNeed} alt="Individuals" />
                   </div>
                   <div className={`${styles.need_content}`}>
-                    <Heading
-                      title="Individuals"
-                      color="secondry-black"
-                      size="h4"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Individuals",
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h4"
+                      className="f-7 "
                     />
                     <div className={`mb-4 ml-2 ${styles.description}`}>
                       Getting your hands on {voucherData.name}s will enable you
@@ -546,16 +550,20 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
                 <div className={styles.need_container}>
                   <div className={styles.need_img}>
-                    {/* <Image src={corporateNeed} alt="Companies" /> */}
+                    <Image src={corporateNeed} alt="Companies" />
                   </div>
                   <div className={`${styles.need_content}`}>
-                    <Heading
-                      title="Companies"
-                      color="secondry-black"
-                      size="h4"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Companies",
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h4"
+                      className="f-7 "
                     />
+
                     <div className={`mb-4 ml-2 ${styles.description}`}>
                       Enterprises can save big annually with an exclusive 
                       {voucherData.name}s for their employees.
@@ -570,12 +578,15 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                 {/* Terms and Conditions section */}
                 <div className={`my-4`}>
                   <div className={`mb-1 ${styles.description_title}`}>
-                    <Heading
-                      title={voucherData.termsAndConditionsTitle}
-                      color="secondry-black"
-                      size="h3"
-                      weight="7"
-                      useH2TagInHtml={true}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: voucherData.termsAndConditionsTitle,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>
@@ -596,7 +607,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
               </div>
 
               <div className={styles.bottom_zigzag}>
-                {/* <Image src={zigZagGrey} alt="zig-zag" /> */}
+                <Image src={zigZagGrey} alt="zig-zag" />
               </div>
             </div>
 
@@ -611,9 +622,20 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
 
             <div className={`mt-4 mb-5 desktop-only ${styles.mid_container}`}>
               <div className={styles.popularVouchers}>
-                <h2 className={styles.title}>
-                  Explore Our Most Popular Gift Vouchers
-                </h2>
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Explore Our Most ",
+                      color: "color-secondary-black subHeading",
+                    },
+                    {
+                      title: "Popular Gift Vouchers",
+                      color: "color-secondary-black subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="f-5 d-grid"
+                />
                 <div className={styles.list}>
                   <Link
                     href="/voucher/myntra-e-gift-card"
@@ -621,10 +643,10 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   >
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                        {/* <Image src={myntraPopular} alt="Myntra" /> */}
+                        <Image src={myntraPopular} alt="Myntra" />
                       </div>
                       <span className={styles.arrow}>
-                        {/* <Image src={popularArrow} alt="arrow" /> */}
+                        <Image src={popularArrow} alt="arrow" />
                       </span>
                     </div>
                   </Link>
@@ -635,10 +657,10 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   >
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                        {/* <Image src={amazonPopular} alt="Amazon Pay" /> */}
+                        <Image src={amazonPopular} alt="Amazon Pay" />
                       </div>
                       <span className={styles.arrow}>
-                        {/* <Image src={popularArrow} alt="arrow" /> */}
+                        <Image src={popularArrow} alt="arrow" />
                       </span>
                     </div>
                   </Link>
@@ -649,10 +671,10 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   >
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                        {/* <Image src={zomatoPopular} alt="Zomato" /> */}
+                        <Image src={zomatoPopular} alt="Zomato" />
                       </div>
                       <span className={styles.arrow}>
-                        {/* <Image src={popularArrow} alt="arrow" /> */}
+                        <Image src={popularArrow} alt="arrow" />
                       </span>
                     </div>
                   </Link>
@@ -663,10 +685,10 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
                   >
                     <div className={styles.voucherCard}>
                       <div className={styles.logoImg}>
-                        {/* <Image src={ajioPopular} alt="Ajio" /> */}
+                        <Image src={ajioPopular} alt="Ajio" />
                       </div>
                       <span className={styles.arrow}>
-                        {/* <Image src={popularArrow} alt="arrow" /> */}
+                        <Image src={popularArrow} alt="arrow" />
                       </span>
                     </div>
                   </Link>
@@ -676,7 +698,7 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
           </div>
 
           {/* FAQ Section */}
-          <div
+          {/* <div
             className={`${styles.fifth_row} row row-padding-bottom-none bg-white`}
           >
             <div className="mb-5">
@@ -701,7 +723,60 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
             </div>
 
             <div className={styles.faq_bg}>
-              {/* <Image src={faqBg} alt="background image" /> */}
+              <Image src={faqBg} alt="background image" />
+            </div>
+          </div> */}
+          <div className={`${styles.faq_new_row}  relative`}>
+            <div className={`${styles.faqSection} text-start max-w-auto `}>
+              <div className={`${styles.title} text-start  pb-5`}>
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Frequently Asked Questions (",
+                      color: "color-black",
+                    },
+                    {
+                      title: "FAQs",
+                      color: "color-equity-blue",
+                    },
+                    {
+                      title: ")",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
+                />
+              </div>
+              <div className="d-flex flex-column flex-md-row justify-content-between">
+                <div>
+                  <div>
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Have more questions?",
+                          color: "color-dark-grey subHeading",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="f-4"
+                    />
+                  </div>
+                  <div className="mt-2 d-none d-md-block">
+                    <RectangleButton
+                      title="Get started today"
+                      theme="border-gray"
+                      actionImage={blueArrow}
+                      hoverImage={whiteArrow}
+                      iconSize={15}
+                      url="/sales/?source=receivables"
+                    />
+                  </div>
+                </div>
+                <div className={`${styles.faqData}`}>
+                  <VoucherFaqComponent voucherName={voucherName} />
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -749,4 +824,4 @@ const voucherPage = async ({ params }: { params: { voucherName: string } }) => {
   )
 }
 
-export default voucherPage
+export default CategoryPage

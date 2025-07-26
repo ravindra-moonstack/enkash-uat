@@ -109,10 +109,12 @@ const LogoSlider = () => {
     slidesToScroll: 1,
     arrows: false,
     pauseOnHover: true,
+     centerMode: true,
+  centerPadding: '40px',
     responsive: [
       {
         breakpoint: 1024,
-        settings: { slidesToShow: 6 },
+        settings: { slidesToShow: 8 },
       },
       {
         breakpoint: 768,
@@ -132,7 +134,7 @@ const LogoSlider = () => {
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={i}
-              className={`d-flex justify-content-center ${styles.logo_wrapper}`}
+              className={`d-flex  justify-content-center ${styles.logo_wrapper}`}
             >
               <Image
                 className={`${logo.className} ${styles.logo_img}`}

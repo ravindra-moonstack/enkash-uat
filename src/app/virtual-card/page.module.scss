@@ -5,9 +5,7 @@
   background-position: center, center;
   background-size: cover, cover;
   box-shadow: 0px 0px 77px 0px #0000001a;
-
   padding-top: 86px;
-
   background-image: url("./img/first-row-bg.svg"), url("./img/first-bg.jpg");
 
   @include for-laptops {

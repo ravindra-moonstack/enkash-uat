@@ -10,13 +10,12 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 90px;
-  padding-bottom: 36px;
+
   background-image: url(./img/first-row-bg.svg);
   @include for-laptops {
     padding-left: 70px;
     padding-right: 70px;
     padding-top: 104px;
-    padding-bottom: 60px;
   }
   .group_logo {
     width: 174px;
@@ -89,7 +88,7 @@
     justify-content: center;
     // flex-wrap: wrap;
     @include for-laptops {
-    width: initial;
+      width: initial;
     }
     .card {
       width: calc(100% / 3 - 5px);

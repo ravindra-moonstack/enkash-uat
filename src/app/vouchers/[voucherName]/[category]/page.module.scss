@@ -1,5 +1,5 @@
-@import "../../../../../styles/variables";
-@import "../../../../../styles/mixin";
+@use "../../../../../styles/variables" as *;
+@use "../../../../../styles/mixin" as *;
 
 .web_only {
   display: none;
@@ -49,11 +49,11 @@
 
 .first_row_category {
   position: relative;
-  background-color: $color-indi-volt;
+  background-color: $color-white;
   padding-top: 0;
   padding-bottom: 0;
   @include for-laptops {
-    padding-top: 80px;
+    padding-top: 110px;
     padding-bottom: 0px;
   }
 }
@@ -90,23 +90,40 @@
   max-width: 1150px;
 }
 
+.voucher_detail {
+  background-image: url("./img/backgroundImg.jpg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: center, center;
+  background-size: cover, cover;
+  padding-top: 75px;
+  .voucher_detail_container {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1150px;
+  }
+}
+
 .top_container {
   position: relative;
-  background-color: #f4fcff;
   padding: 10px 20px 40px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
+  width: 100%;
 
   @include for-laptops {
     padding: 30px 30px 40px;
   }
+
   .breadcrumb {
     padding: 0px 0px;
-    margin: 10px -20px 15px;
+    margin: 10px 0px 15px;
 
     @include for-laptops {
       padding: 0px 30px;
-      margin: -10px -60px 15px;
+      margin: -10px -30px 15px;
     }
     a {
       display: flex;
@@ -119,14 +136,15 @@
   }
 
   .voucher_image_section {
-    // background-image: url(./../../bolt/img/voucher-detail-bg.svg);
+    background-image: url("./img/category-bg.jpg");
     background-size: 100%;
-    height: 330px;
+    height: 340px;
+    background-repeat: no-repeat;
     margin: 0 0px 40px;
 
     .discount_bar {
       position: absolute;
-      top: 109px;
+      top: 91px;
       left: 98px;
       display: flex;
       font-size: 28px;
@@ -153,8 +171,8 @@
       width: 326px;
       height: 205px;
       position: absolute;
-      top: 150px;
-      right: 142px;
+      top: 125px;
+      right: 120px;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       img {
@@ -245,26 +263,31 @@
   }
 }
 
-.fifth_row {
+.faq_new_row {
+  background-color: white;
   position: relative;
   display: flex;
-  justify-content: center;
   text-align: center;
-  padding-bottom: 50px;
+  padding: 20px;
   @include for-laptops {
-    padding-bottom: 220px;
+    padding: 90px 0px;
   }
 
   .faq_bg {
     img {
       position: absolute;
       bottom: 0;
-      left: 0;
       display: none;
       @include for-laptops {
-        height: 300px;
         display: flex;
       }
+    }
+  }
+
+  .faqData {
+    width: 100%;
+    @include for-laptops {
+      width: 70%;
     }
   }
 }
