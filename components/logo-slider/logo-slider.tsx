@@ -2,145 +2,146 @@
 
 import React, { useState } from "react"
 import Image from "next/image"
-import Marquee from "react-fast-marquee"
+import Slider from "react-slick"
 import styles from "./logo-slider.module.scss"
 
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+
+// ✅ Import all images
+// ✅ Also import original (colored) logos
 import {
   britishAirways,
-  britishAirwaysFilled,
   rakuten,
-  rakutenFilled,
   starbucks,
-  starbucksFilled,
   prystnCare,
-  prystnCareFilled,
   dtdc,
-  dtdcFilled,
   reliance,
-  relianceFilled,
   mahindraFinance,
-  mahindraFinancsFilled,
   macdonalds,
-  macdonaldsFilled,
   pnbHousing,
-  pnbHousingFilled,
   adidas,
-  adidasFilled,
   tataAig,
-  tataAigFilled,
   vijaySales,
-  vijaySalesFilled,
   behrous,
+  britishAirwaysFilled,
+  rakutenFilled,
+  starbucksFilled,
+  prystnCareFilled,
+  dtdcFilled,
+  relianceFilled,
+  mahindraFinancsFilled,
+  macdonaldsFilled,
+  pnbHousingFilled,
+  adidasFilled,
+  tataAigFilled,
+  vijaySalesFilled,
   behrousFilled,
 } from "./index"
 
+// ✅ Use them here
+const coloredLogos = [
+  britishAirwaysFilled,
+  rakutenFilled,
+  starbucksFilled,
+  prystnCareFilled,
+  dtdcFilled,
+  relianceFilled,
+  mahindraFinancsFilled,
+  macdonaldsFilled,
+  pnbHousingFilled,
+  adidasFilled,
+  tataAigFilled,
+  vijaySalesFilled,
+  behrousFilled,
+]
+
+// ✅ Store only the filled image in the array
+
 const logos = [
   {
-    default: britishAirways,
-    hover: britishAirwaysFilled,
+    filled: britishAirwaysFilled,
     alt: "British Airways",
     className: styles.britishAirways,
   },
+  { filled: rakutenFilled, alt: "Rakuten", className: styles.rakuten },
+  { filled: starbucksFilled, alt: "Starbucks", className: styles.starbucks },
   {
-    default: rakuten,
-    hover: rakutenFilled,
-    alt: "Rakuten",
-    className: styles.rakuten,
-  },
-  {
-    default: starbucks,
-    hover: starbucksFilled,
-    alt: "Starbucks",
-    className: styles.starbucks,
-  },
-  {
-    default: prystnCare,
-    hover: prystnCareFilled,
+    filled: prystnCareFilled,
     alt: "Pristyn Care",
     className: styles.prystnCare,
   },
-  { default: dtdc, hover: dtdcFilled, alt: "DTDC", className: styles.dtdc },
+  { filled: dtdcFilled, alt: "DTDC", className: styles.dtdc },
+  { filled: relianceFilled, alt: "Reliance", className: styles.reliance },
   {
-    default: reliance,
-    hover: relianceFilled,
-    alt: "Reliance",
-    className: styles.reliance,
-  },
-  {
-    default: mahindraFinance,
-    hover: mahindraFinancsFilled,
+    filled: mahindraFinancsFilled,
     alt: "Mahindra Finance",
     className: styles.mahindraFinance,
   },
+  { filled: macdonaldsFilled, alt: "MacDonalds", className: styles.macdonalds },
   {
-    default: macdonalds,
-    hover: macdonaldsFilled,
-    alt: "MacDonalds",
-    className: styles.macdonalds,
-  },
-  {
-    default: pnbHousing,
-    hover: pnbHousingFilled,
+    filled: pnbHousingFilled,
     alt: "PNB Housing",
     className: styles.pnbHousing,
   },
+  { filled: adidasFilled, alt: "Adidas", className: styles.adidas },
+  { filled: tataAigFilled, alt: "Tata AIG", className: styles.tataAig },
   {
-    default: adidas,
-    hover: adidasFilled,
-    alt: "Adidas",
-    className: styles.adidas,
-  },
-  {
-    default: tataAig,
-    hover: tataAigFilled,
-    alt: "Tata AIG",
-    className: styles.tataAig,
-  },
-  {
-    default: vijaySales,
-    hover: vijaySalesFilled,
+    filled: vijaySalesFilled,
     alt: "Vijay Sales",
     className: styles.vijaySales,
   },
-  {
-    default: behrous,
-    hover: behrousFilled,
-    alt: "Behrous",
-    className: styles.behrous,
-  },
+  { filled: behrousFilled, alt: "Behrous", className: styles.behrous },
 ]
+
+// ✅ Store default colored version in the same index order
 
 const LogoSlider = () => {
   const [isHovered, setIsHovered] = useState(false)
-  const [clicked, setClicked] = useState(false)
 
-  const getLogoSrc = (logo: any) => {
-    if (clicked || isHovered) return logo.hover
-    return logo.default
+  const sliderSettings = {
+    infinite: true,
+    speed: 5000,
+    autoplay: true,
+    autoplaySpeed: 0,
+    cssEase: "linear",
+    slidesToShow: 10,
+    slidesToScroll: 1,
+    arrows: false,
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: { slidesToShow: 6 },
+      },
+      {
+        breakpoint: 768,
+        settings: { slidesToShow: 4 },
+      },
+      {
+        breakpoint: 480,
+        settings: { slidesToShow: 3 },
+      },
+    ],
   }
 
   return (
     <div className="col-12">
-      <div
-        className={styles.marquee_box}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-        onClick={() => setClicked(!clicked)}
-      >
-        <Marquee speed={30} gradient={false}>
-          <div
-            className={`${styles.bank_logo} ${styles.customer_logo} d-flex align-items-center justify-content-between`}
-          >
-            {[...logos, ...logos].map((logo, i) => (
+      <div className={styles.marquee_box}>
+        <Slider {...sliderSettings}>
+          {[...logos, ...logos].map((logo, i) => (
+            <div
+              key={i}
+              className={`d-flex justify-content-center ${styles.logo_wrapper}`}
+            >
               <Image
-                key={i}
-                className={logo.className}
-                src={getLogoSrc(logo)}
+                className={`${logo.className} ${styles.logo_img}`}
+                src={coloredLogos[i % logos.length]}
                 alt={logo.alt}
               />
-            ))}
-          </div>
-        </Marquee>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   )

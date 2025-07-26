@@ -1,0 +1,34 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+
+.card_body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  position: relative;
+  border-radius: 16px;
+  padding: 18px;
+  cursor: pointer;
+  max-width: 272px;
+  @include for-laptops {
+  }
+}
+
+.card_image {
+  max-width: 100%;
+  object-fit: contain;
+}
+
+// .cta_link {
+//   margin-top: 24px;
+//   text-align: left;
+
+//   .color-white {
+//     color: white;
+//   }
+
+//   .color-cyan-blue {
+//     color: #00f0ff;
+//   }
+// }

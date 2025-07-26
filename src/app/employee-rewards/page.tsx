@@ -173,7 +173,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h2"
+                  headingTag="h5"
                   className="f-7"
                 />
               </div>
@@ -188,8 +188,8 @@ const EmployeeRewards = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>
@@ -209,8 +209,8 @@ const EmployeeRewards = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>
@@ -230,8 +230,8 @@ const EmployeeRewards = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>

@@ -5,55 +5,29 @@
   display: block;
   cursor: pointer;
 
-  &:hover {
-    filter: none;
+  &:hover .logo_img {
+    filter: grayscale(0%);
   }
 }
 
-.bank_logo::-webkit-scrollbar {
-  display: none;
-}
+.logo_img {
+  filter: grayscale(100%);
+  transition: filter 0.5s ease-in-out;
 
-.bank_logo {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 30px;
-  overflow-x: auto;
-  padding: 8px 16px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  height: 80px;
+  height: auto;
+  width: auto;
+  max-height: 100%;
 
-  img {
-    height: auto;
-    width: auto;
-    max-height: 100%;
-    transition: all 1.8s ease-in-out; // ✅ Smooth transition added
-
-    @include for-laptops {
-      max-height: 51px;
-    }
-
-    @include for-tablet {
-      max-height: 30px;
-    }
-
-    @include for-window-zoomed-screens {
-      max-height: 32px;
-    }
-
-    @include for-large-screen {
-      max-height: 40px;
-    }
+  @include for-laptops {
+    max-height: 68px;
   }
-}
-
-@media (max-width: 576px) {
-  .bank_logo {
-    gap: 12px;
-    justify-content: center;
+  @include for-tablet {
+    max-height: 30px;
   }
-
- 
+  @include for-window-zoomed-screens {
+    max-height: 32px;
+  }
+  @include for-large-screen {
+    max-height: 40px;
+  }
 }

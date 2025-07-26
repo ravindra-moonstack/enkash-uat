@@ -12,7 +12,6 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
-
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -22,7 +21,6 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import RewardsCarousel from "@/components/rewards-carousel/rewards-carousel"
-
 
 const mergedCards = cardType.flatMap((section) => section.items)
 
@@ -171,7 +169,7 @@ const Offers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h2"
+                  headingTag="h5"
                   className="f-7"
                 />
               </div>
@@ -186,8 +184,8 @@ const Offers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>
@@ -208,7 +206,7 @@ const Offers = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="h5"
-                  className="f-4"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>
@@ -228,8 +226,8 @@ const Offers = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="f-4 mb-0"
                 />
               </div>
             </div>
