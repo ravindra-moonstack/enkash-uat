@@ -8,6 +8,7 @@ import RectangleButton, {
 } from "../buttons/rectangle-button/rectangle-button"
 import { blueArrow, whiteArrow } from "./index"
 import Heading from "../heading/heading"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 interface AllInOnePolicyProps {
   icon: StaticImageData
@@ -50,14 +51,28 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
 
           {/* Title and Description */}
           <div className="d-flex flex-column text-start gap-2 gap-md-3">
-            <Heading title={title} color="black" size="h4" weight="5" />
+             <DynamicHeading
+              content={[
+                {
+                  title: title,
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h5"
+              className="f-5"
+            />
             {description && (
-              <Heading
-                title={description}
-                color="grey-200"
-                size="h7"
-                weight="4"
-              />
+               <DynamicHeading
+              content={[
+                {
+                  title: description,
+                  color: "color-grey-200",
+                },
+              ]}
+              headingTag="p"
+              className=""
+            />
+             
             )}
           </div>
         </div>

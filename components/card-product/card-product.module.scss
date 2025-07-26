@@ -4,7 +4,7 @@
 .card_body {
   height: 100%;
   background: linear-gradient(180deg, #353535 0%, #000000 100%);
-  width: 390px;
+  width: 100%;
   border-radius: 20px;
   border: 2px solid $color-pale-aqua;
   padding-top: 40px;
@@ -30,6 +30,7 @@
     padding-right: 40px;
     padding-left: 40px;
     padding-bottom: 0px;
+    width: 390px;
   }
 }
 

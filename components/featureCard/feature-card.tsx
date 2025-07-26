@@ -47,7 +47,7 @@ const FeatureCard = ({
                   },
                 ]}
                 headingTag="h4"
-                className="f-5"
+                className="f-5 min-height-80"
               />
             ) : (
               whiteTitle && (
@@ -59,7 +59,7 @@ const FeatureCard = ({
                     },
                   ]}
                   headingTag="h4"
-                  className="f-5"
+                  className="f-5 min-height-80"
                 />
               )
             )}

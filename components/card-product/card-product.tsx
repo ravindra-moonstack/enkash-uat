@@ -2,6 +2,7 @@ import Image, { StaticImageData } from "next/image"
 import styles from "./card-product.module.scss"
 import Heading from "../heading/heading"
 import { ReactNode } from "react"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface CardProps {
   whiteTitle?: string
@@ -22,17 +23,34 @@ const CardProduct = ({
     <>
       <div>
         {titleHtml ? (
-          <div className={styles.titleHtml}>{titleHtml}</div>
+          <div className={styles.titleHtml}> 
+          <DynamicHeading
+              content={[
+                {
+                  title: String(titleHtml),
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h4"
+              className="f-5"
+            /></div>
         ) : (
           whiteTitle && (
-            <Heading title={whiteTitle} color="black" size="h3" weight="6" />
+            <DynamicHeading
+              content={[
+                {
+                  title: whiteTitle,
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h4"
+              className="f-5"
+            />
+
           )
         )}
 
-        <div
-          className={styles.description}
-          dangerouslySetInnerHTML={{ __html: description }}
-        ></div>
+        <div><p className="mb-0 mt-2">{description}</p></div>
       </div>
 
       {cardImage && (
