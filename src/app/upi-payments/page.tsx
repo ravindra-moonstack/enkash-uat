@@ -39,6 +39,7 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import FeatureCard from "@/components/featureCard/feature-card"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const showScroll = cardsData.length > 3
 
@@ -72,39 +73,44 @@ const UpiPayments = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
               >
-                <Heading
-                  title={`UPI Payments ${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "UPI Payments",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline    pt-3 pt-md-0">
-                  <Heading
-                    title={`Simplify Transactions, Accelerate   ${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
-                  />
-
-                  <Heading
-                    title="Growth with EnKash UPI Payments"
-                    color="black"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Simplify Transactions, Accelerate Growth with EnKash UPI Payments",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Effortless UPI payment. Whether it's BHIM, PhonePe, WhatsApp, or any UPI-supported app, experience smooth transactions without the hassle of SMS notifications or remembering VPAs."
-                    color="black"
-                    size="h5"
-                    weight="4"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Effortless UPI payment. Whether it's BHIM, PhonePe, WhatsApp, or any UPI-supported app, experience smooth transactions without the hassle of SMS notifications or remembering VPAs.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -146,7 +152,7 @@ const UpiPayments = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -158,11 +164,15 @@ const UpiPayments = (): React.JSX.Element => {
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-            <Heading
-              title="Best UPI Payment Platform for Businesses "
-              size="h3"
-              color="white"
-              weight="3"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Best UPI Payment Platform for Businesses",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
 
@@ -172,24 +182,30 @@ const UpiPayments = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading
-                  title="100%"
-                  color="white"
-                  size="h2"
-                  weight="7"
-                  useH1TagInHtml={true}
+                    <DynamicHeading
+                  content={[
+                    {
+                      title: "100%",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Instant Setup"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Instant Setup",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -203,12 +219,15 @@ const UpiPayments = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Real-time Settlement"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Real-time Settlement",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -222,12 +241,15 @@ const UpiPayments = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Secure Transactions"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Secure Transactions",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -238,11 +260,15 @@ const UpiPayments = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <Heading
-              title={`How UPI Payment Works ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
+            <DynamicHeading
+              content={[
+                {
+                  title: "How UPI Payment Works",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
           <div className="row">
@@ -285,7 +311,7 @@ const UpiPayments = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -300,17 +326,19 @@ const UpiPayments = (): React.JSX.Element => {
               <div
                 className={`flex-column justify-content-center align-items-center pb-3`}
               >
-                <Heading
-                  title={`EnKash UPI Payment ${space}`}
-                  color="black"
-                  size="h1"
-                  weight="5"
-                />
-                <Heading
-                  title={`Gateway for Businesses ${space}`}
-                  color="equity-blue"
-                  size="h1"
-                  weight="5"
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "EnKash UPI Payment ",
+                      color: "color-black",
+                    },
+                    {
+                      title: "Gateway for Businesses",
+                      color: "color-equity-blue",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
             </div>
@@ -360,17 +388,19 @@ const UpiPayments = (): React.JSX.Element => {
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-5`}>
-            <Heading
-              title={`EnKash for ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`UPI Payments ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "EnKash for ",
+                  color: "color-black",
+                },
+                {
+                  title: "UPI Payments",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
 
@@ -391,28 +421,40 @@ const UpiPayments = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                  useH1TagInHtml={true}
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
@@ -433,20 +475,24 @@ const UpiPayments = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center  pb-5`}>
-            <Heading
-              title={`Check out our ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+              <DynamicHeading
+              content={[
+                {
+                  title: "Check out our ",
+                  color: "color-black",
+                },
+                {
+                  title: "other payment products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading
-              title={`other payment products ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading title="at EnKash" color="black" size="h1" weight="5" />
           </div>
           <div className="row g-3 pb-4 ">
             <div className="col-12 col-md-4">

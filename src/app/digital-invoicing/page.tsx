@@ -38,6 +38,7 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const showScroll = cardsData.length > 3
 
@@ -70,35 +71,45 @@ const DigitalInvoicing = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row  `}
               >
-                <Heading
-                  title={`Digital Invoicing`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Digital Invoicing",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                  <Heading
-                    title={`Enhance business operations with Digital Invoicing${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Enhance business operations with Digital Invoicing",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
-
-                  <Heading title="" color="black" size="h2" weight="7" />
                 </div>
 
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                  <Heading
-                    title="Automate your invoicing process for recurring transactions and gain complete visibility of sales and payments."
-                    color="black"
-                    size="h5"
-                    weight="4"
-                  />
+                   <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Automate your invoicing process for recurring transactions and gain complete visibility of sales and payments.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
+                  /> 
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -139,7 +150,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -151,11 +162,15 @@ const DigitalInvoicing = (): React.JSX.Element => {
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-            <Heading
-              title="Instant Payments Settlement for Better Cash Flow"
-              size="h3"
-              color="white"
-              weight="3"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Instant Payments Settlement for Better Cash Flow",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
 
@@ -165,18 +180,30 @@ const DigitalInvoicing = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading title="100%" color="white" size="h2" weight="6" />
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "100%",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
+                />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Automated Invoice Generation"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  // useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Automated Invoice Generation",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -190,12 +217,15 @@ const DigitalInvoicing = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Real-Time Tracking"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  // useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Real-Time Tracking",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -209,12 +239,15 @@ const DigitalInvoicing = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Seamless Integration"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  // useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Seamless Integration",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -225,17 +258,19 @@ const DigitalInvoicing = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-2`}>
-            <Heading
-              title={`How to Set Up${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={` EnKash Digital Invoicing`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
+            <DynamicHeading
+              content={[
+                {
+                  title: "How to Set Up ",
+                  color: "color-black",
+                },
+                {
+                  title: "EnKash Digital Invoicing",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
           <div className="row">
@@ -278,7 +313,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -293,29 +328,27 @@ const DigitalInvoicing = (): React.JSX.Element => {
               <div
                 className={`flex-column justify-content-center align-items-center pb-md-3`}
               >
-                <Heading
-                  title={`Effortless ${space}`}
-                  color="equity-blue"
-                  size="h1"
-                  weight="5"
-                />
-                <Heading
-                  title={`Invoicing, ${space}`}
-                  color="black"
-                  size="h1"
-                  weight="5"
-                />
-                <Heading
-                  title={`Faster ${space}`}
-                  color="equity-blue"
-                  size="h1"
-                  weight="5"
-                />
-                <Heading
-                  title={`Payments`}
-                  color="black"
-                  size="h1"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Effortless ",
+                      color: "color-equity-blue",
+                    },
+                    {
+                      title: "Invoicing, ",
+                      color: "color-black",
+                    },
+                    {
+                      title: "Faster ",
+                      color: "color-equity-blue",
+                    },
+                    {
+                      title: "Payments ",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
             </div>
@@ -361,11 +394,15 @@ const DigitalInvoicing = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Opt For Digital Invoicing and Get Paid Faster! "
-              size="bannerHeading"
-              color="white"
-              weight="4"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Opt For Digital Invoicing and Get Paid Faster!",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -383,25 +420,37 @@ const DigitalInvoicing = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+           <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                  useH1TagInHtml={true}
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className="mt-3 d-none d-md-block">
@@ -425,20 +474,24 @@ const DigitalInvoicing = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title}  text-center pb-5`}>
-            <Heading
-              title={`Check out our ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Check out our ",
+                  color: "color-black",
+                },
+                {
+                  title: "other payment products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading
-              title={`other payment products ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading title="at EnKash" color="black" size="h1" weight="5" />
           </div>
           <div className="row g-3 pb-4 ">
             <div className="col-12 col-md-4">
