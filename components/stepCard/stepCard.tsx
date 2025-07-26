@@ -2,6 +2,7 @@ import React from "react"
 import Image, { StaticImageData } from "next/image"
 import Heading from "../heading/heading"
 import styles from "./stepCard.module.scss"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 interface CardProps {
   icon: string | StaticImageData
@@ -27,9 +28,28 @@ const StepCard: React.FC<CardProps> = ({
 
       {/* Title and Description */}
       <div className="d-flex flex-column text-start ">
-        <Heading title={title} color="black" size="h5" weight="5" />
+        <DynamicHeading
+          content={[
+            {
+              title: String(title),
+              color: "color-black",
+            },
+          ]}
+          headingTag="h5"
+          className="f-5"
+        />
+
         {description && (
-          <Heading title={description} color="grey-200" size="h7" weight="4" />
+          <DynamicHeading
+            content={[
+              {
+                title: String(description),
+                color: "color-grey-200",
+              },
+            ]}
+            headingTag="p"
+            className="mb-0"
+          />
         )}
       </div>
     </div>

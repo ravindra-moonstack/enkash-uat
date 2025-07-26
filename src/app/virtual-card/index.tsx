@@ -54,3 +54,18 @@ export { default as mealCardImage } from "./img/meal-card.webp"
 export { default as cardRotatingImage } from "./img/card-roatating.svg"
 export { default as podiumImage } from "./img/podium.png"
 export { default as heroCardImg } from "./img/hero card.webp"
+
+
+
+
+export { default as realTimeExpense } from "./img/real-time-expense.webp"
+export { default as fraudProtection } from "./img/fraud-protection.webp"
+export { default as streamlinedReimbursement } from "./img/streamlined-reimbursement.webp"
+export { default as costControlSavings } from "./img/cost-control-savings.webp"
+export { default as wideAcceptanceNetwork } from "./img/wide-acceptance-network.webp"
+
+export { default as realTimeExpenseIcon } from "./img/real-time-expense-icon.svg"
+export { default as fraudProtectionIcon } from "./img/fraud-protection-icon.svg"
+export { default as streamlinedReimbursementIcon } from "./img/streamlined-reimbursement-icon.svg"
+export { default as costControlSavingsIcon } from "./img/cost-control-savings-icon.svg"
+export { default as wideAcceptanceNetworkIcon } from "./img/wide-acceptance-network-icon.svg"

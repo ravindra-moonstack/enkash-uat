@@ -6,15 +6,10 @@
   background-position: center, center;
   background-size: cover, cover;
   box-shadow: 0px 0px 77px 0px #0000001a;
-
-  padding-top: 86px;
-
+  padding: 100px 20px 0;
   background-image: url("./img/first-row-bg.svg"), url("./img/first-bg.jpg");
-
   @include for-laptops {
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 110px;
+    padding: 112px 20px 0;
   }
   .subtitle {
     color: $color-equity-blue;
@@ -23,12 +18,8 @@
     font-weight: 400;
   }
   .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding-top: 10px;
+    text-align: center;
+    padding-top: 20px;
   }
 
   .dashboard_img {
@@ -73,20 +64,24 @@
 }
 
 .second_row {
-  padding: 20px;
+  padding:50px 20px ;
   background-color: $color-black-30;
   @include for-laptops {
-    padding-top: 28px;
-    padding-bottom: 28px;
-    padding-left: 40px;
+    padding: 90px 20px;
   }
   .list_button {
     margin-top: 20px;
-    margin-bottom: 20px;
     padding-left: 40px;
+    margin-bottom: 20px;
     @include for-laptops {
-      margin-top: 38px;
-      padding-left: 63px;
+      margin-top: 20px;
+      padding-left: 66px;
+    }
+  }
+  img{
+    height: auto;
+    @include for-laptops{
+      height: initial;
     }
   }
 }
@@ -156,10 +151,9 @@
 .fifth_row {
   position: relative;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px 6px;
   @include for-laptops {
-    padding-top: 430px;
-    padding-bottom: 90px;
+    padding:90px 20px 46px;
   }
 
   .list_button {
@@ -256,9 +250,9 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 96px 90px 90px 60px;
+    padding: 90px 20px;
   }
 
   .faq_bg {
@@ -299,12 +293,13 @@
     }
   }
 }
-
+.card_stacking_row{
+  padding: 0px 20px;
+}
 .other_products {
-  padding: 20px;
+  padding: 0px 20px 50px;
   @include for-laptops {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding: 0px 20px 90px;
   }
 }
 
@@ -333,32 +328,18 @@
 .action_row {
   position: relative;
   overflow: hidden;
-
+padding: 50px 20px;
+@include for-laptops{
+  padding: 90px 20px;
+}
   .list_button {
     padding-left: 40px;
     margin-top: 20px;
-    margin-bottom: 20px;
     @include for-laptops {
-      padding-left: 76px;
-      margin-top: 38px;
+      padding-left: 90px;
     }
   }
-
-  .analytic_bg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-width: 45%;
-    z-index: 1;
-
-    img {
-      width: 100%;
-      height: auto;
-      display: none;
-
-      @include for-laptops {
-        display: block;
-      }
-    }
-  }
+ img{
+  height: auto;
+ }
 }
