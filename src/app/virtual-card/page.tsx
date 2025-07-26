@@ -18,6 +18,16 @@ import {
   instantActionImg,
   heroCardImg,
   podiumImage,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -29,9 +39,89 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import CardProduct from "@/components/card-product/card-product"
 import AllProducts from "@/components/all-products/all-products"
 import StepCard from "@/components/stepCard/stepCard"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import CardStacking from "@/components/cardStacking/cardStacking"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="Reduce Business Costs with Smarter Payment Solutions"
+          description="Save costs by eliminating the need for physical cards, including production and maintenance fees. Advanced fraud control features minimize the risk of unauthorized transactions, ensuring secure financial operations without additional expenses."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Stay in Control with Real-Time Expense Insights"
+          description="Monitor every transaction in real-time with our intuitive dashboard. Access detailed insights into spending trends, helping your business optimize budgets and make informed financial decisions."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Tailor Your Virtual Card to Fit Your Needs"
+          description="Design virtual cards tailored for specific needs such as vendor payments, SaaS subscriptions, or travel expenses. Set individual or departmental spending limits and usage policies to ensure compliance and efficiency."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="Strengthen Vendor Trust with Timely Payments"
+          description="Ensure timely and secure payments to vendors, fostering trust and better business terms. Streamlined payment processes enable quicker transactions, enhancing vendor satisfaction."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="No Expense Oversight with One Dashboard"
+          description="Easily manage multiple cards through a centralized, user-friendly interface. Take immediate action by monitoring, blocking, or canceling cards, all while maintaining full control over business expenses."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
 const VirtualCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -52,37 +142,47 @@ const VirtualCards = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.title} col-12 `}>
-            <Heading
-              title="VIRTUAL CARD"
-              color="equity-blue"
-              size="h5"
-              weight="4"
-              underline
+            <DynamicHeading
+              content={[
+                {
+                  title: "Virtual Card",
+                  color: "color-equity-blue underline",
+                },
+              ]}
+              headingTag="p"
+              className=""
             />
+
             <div className="d-flex  flex-column justify-content-center align-items-center">
-              <Heading
-                title="Secure and Efficient Payments with"
-                color="black"
-                size="h2"
-                weight="2"
-                italic
-              />
-              <Heading
-                title="Virtual Prepaid Card*"
-                color="black"
-                size="h2"
-                weight="7"
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Secure and Efficient Payments with",
+                    color: "color-black italic f-3 d-block",
+                  },
+                  {
+                    title: "Virtual Prepaid Card*",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h1"
+                className="f-7 mb-3"
               />
             </div>
 
             <div className="d-inline text-center">
-              <Heading
-                title="Empower your organization to control, track, and optimize spending like never before."
-                color="black"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
+               <DynamicHeading
+                content={[
+                  {
+                    title: "Empower your organization to control, track, and optimize spending like never before.",
+                    color: "color-black subHeading",
+                  },
+                  
+                ]}
+                headingTag="p"
+                className=" mb-3"
               />
+              
             </div>
             <div className={styles.button_wrapper}>
               <RectangleButton
@@ -113,15 +213,20 @@ const VirtualCards = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`${styles.action_row} bg-white row-padding `}>
+      <div className={`${styles.action_row} bg-white `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-md-5 pb-5`}>
-            <Heading
-              title={`How to Set Up Virtual Prepaid Cards ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
+          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+             <DynamicHeading
+                content={[
+                  {
+                    title: "How to Set Up Virtual Prepaid Cards ",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
             <div className="col-md-6 col-12 px-md-5">
@@ -154,19 +259,45 @@ const VirtualCards = (): React.JSX.Element => {
               </div>
             </div>
             <div
-              className={`col-md-6 col-12 
-`}
+              className={`col-md-6 col-12 `}
             >
               <div>
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="
-                   w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center `}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Unlock  ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Savings ",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: "on Every Mile",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+
+            <CardStacking cards={cards} />
+          </>
         </div>
       </div>
 
@@ -176,18 +307,22 @@ const VirtualCards = (): React.JSX.Element => {
             <div
               className={` flex-column justify-content-center align-items-center pb-3 `}
             >
-              <Heading
-                title={`Use Cases for Virtual${space}`}
-                color="black"
-                size="h1"
-                weight="5"
+               <DynamicHeading
+                content={[
+                  {
+                    title: "Use Cases for Virtual ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Prepaid Cards ",
+                    color: "color-equity-blue",
+                  },
+                  
+                ]}
+                headingTag="h2"
+                className="f-6"
               />
-              <Heading
-                title={` Prepaid Cards `}
-                color="black"
-                size="h1"
-                weight="5"
-              />
+              
             </div>
           </div>
           <div className={`row align-items-center ${styles.section}`}>
@@ -225,8 +360,7 @@ const VirtualCards = (): React.JSX.Element => {
                 <Image
                   src={instantActionImg}
                   alt="card background"
-                  className="
-                   w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -235,28 +369,25 @@ const VirtualCards = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.fifth_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
+        <div className={`${styles.title} text-center  max-w-auto`}>
           <div
             className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
           >
-            <Heading
-              title={`The EnKash Advantage -   ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`Why Businesses Trust  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`Virtual Prepaid Cards ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
+             <DynamicHeading
+                content={[
+                  {
+                    title: "The EnKash Advantage - Why Businesses Trust   ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Virtual Prepaid Cards ",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+           
           </div>
 
           <div className="pt-4">
@@ -277,12 +408,18 @@ const VirtualCards = (): React.JSX.Element => {
       <div className={`${styles.sixth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-            <Heading
-              title="Discover the EnKash difference - Secure, Scalable and Seamless. "
-              size="bannerHeading"
-              color="white"
-              weight="4"
-            />
+            <DynamicHeading
+                content={[
+                  {
+                    title: "Discover the EnKash difference - Secure, Scalable and Seamless.",
+                    color: "color-white",
+                  },
+                  
+                ]}
+                headingTag="h3"
+                className="f-5"
+              />
+           
           </div>
 
           <div className={`${styles.get_started_button} `}>
@@ -300,28 +437,43 @@ const VirtualCards = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-5`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
+             <DynamicHeading
+                content={[
+                  {
+                    title: "Frequently Asked Questions (",
+                    color: "color-black",
+                  },
+                  {
+                    title: "FAQs",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: ")",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+           
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                  useH1TagInHtml={true}
-                />
+                 <DynamicHeading
+                content={[
+                  {
+                    title: "Have more questions?",
+                    color: "color-dark-grey subheading",
+                  },
+                  
+                ]}
+                headingTag="p"
+                className="mb-0"
+              />
+                
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
@@ -342,25 +494,25 @@ const VirtualCards = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
-            <Heading
-              title={`Choose   ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`the Right Card  ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading
-              title="for Every Use Case"
-              color="black"
-              size="h1"
-              weight="5"
-            />
+             <DynamicHeading
+                content={[
+                  {
+                    title: "Choose ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "the Right Card ",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: "for Every Use Case",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+           
           </div>
           <div className="row g-3 pb-4">
             {cardType.map(({ titleHtml, description, cardImage }, index) => (

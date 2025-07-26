@@ -112,14 +112,14 @@ const QrCode = (): React.JSX.Element => {
                   />
                 </div>
 
-                <div className="d-flex flex-column align-items-center align-items-md-start">
+                <div className="">
                   <Image
                     src={groupIcon}
                     alt="card visual"
-                    className={`${styles.group_logo} w-100 mh-550 object-fit-contain `}
+                    className={`${styles.group_logo}  `}
                   />
                   <div
-                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
+                    className={`${styles.first_row_button} d-flex  align-items-center`}
                   >
                     <div>
                       <RectangleButton
@@ -160,8 +160,8 @@ const QrCode = (): React.JSX.Element => {
       </div>
 
       <div className={`row ${styles.second_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
-          <div className="d-inline justify-content-center  align-items-center text-center">
+        <div className="">
+          <div className="pb-5 text-center">
             <DynamicHeading
               content={[
                 {
@@ -330,7 +330,7 @@ const QrCode = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
+                className={`flex-column justify-content-center align-items-center `}
               >
                 <DynamicHeading
                   content={[

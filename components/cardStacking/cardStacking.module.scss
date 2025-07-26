@@ -2,7 +2,7 @@
 @use "../../styles/mixin" as *;
 .cardStacking {
   overflow: hidden;
-  padding: 120px 0 60px;
+  padding: 50px 20px;
   min-height: 100vh;
 
   .stackCard {

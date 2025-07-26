@@ -64,21 +64,28 @@ p {
   letter-spacing: -0.04em;
   font-weight: 400;
 }
+
 li {
   letter-spacing: -0.04em;
 }
-.min-height-80{
+
+.min-height-80 {
   min-height: 80px !important;
 }
+
 @media (max-width:767px) {
-   .bannerHeading {
+  .bannerHeading {
     font-size: 18px !important;
     line-height: normal;
     font-weight: 400;
   }
-  
-.subHeading {
-  font-size: 18px;
-  line-height: 24px;
-}
+
+  .min-height-80 {
+    min-height: max-content !important;
+  }
+
+  .subHeading {
+    font-size: 18px;
+    line-height: 24px;
+  }
 }

@@ -27,23 +27,23 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
     console.log(ScrollTrigger.getAll())
     const firstST = ScrollTrigger.create({
       trigger: cardEls[0],
-      start: "80% center",
+      start: "75% center",
     })
 
     const lastST = ScrollTrigger.create({
       trigger: cardEls[cardEls.length - 1],
-      start: "80% center",
+      start: "75% center",
     })
 
     cardEls.forEach((card, index) => {
-      const scale = 1 - (cardEls.length - index) * 0.015
+      const scale = 1 - (cardEls.length - index) * 0.010
       const scaleAnim = gsap.to(card, {
         scale: scale,
       })
 
       ScrollTrigger.create({
         trigger: card,
-        start: "80% center",
+        start: "42% center",
         end: () => lastST.start,
         pin: true,
         pinSpacing: false,
