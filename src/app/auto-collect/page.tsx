@@ -41,6 +41,7 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const showScroll = cardsData.length > 3
 
@@ -73,35 +74,45 @@ const AutoCollect = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row  `}
               >
-                <Heading
-                  title={`Auto Collect${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Auto Collect",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                  <Heading
-                    title={`Automatic Payment Collection Simplified with EnKash Auto Collect${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Automatic Payment Collection Simplified with EnKash Auto Collect",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
-
-                  <Heading title="" color="black" size="h2" weight="7" />
                 </div>
 
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                  <Heading
-                    title="No more outstanding invoices and manual follow-ups. Embrace automation and efficiency with EnKash’s Bulk Payment Collection solution."
-                    color="black"
-                    size="h5"
-                    weight="4"
-                  />
+                   <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "No more outstanding invoices and manual follow-ups. Embrace automation and efficiency with EnKash’s Bulk Payment Collection solution.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
+                  /> 
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -142,7 +153,7 @@ const AutoCollect = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -152,13 +163,17 @@ const AutoCollect = (): React.JSX.Element => {
       </div>
 
       <div className={`row ${styles.second_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
+        <div className="d-flex justify-content-center  flex-column gap-32 max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-            <Heading
-              title="Automating Payment Collection"
-              size="h3"
-              color="white"
-              weight="3"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Automating Payment Collection",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
 
@@ -174,12 +189,15 @@ const AutoCollect = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Instant"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  // useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Instant",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -193,12 +211,15 @@ const AutoCollect = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Smart"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  // useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Smart",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -212,12 +233,15 @@ const AutoCollect = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Secure"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  // useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Secure",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -228,19 +252,24 @@ const AutoCollect = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <Heading
-              title={`How EnKash ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
+            <DynamicHeading
+              content={[
+                {
+                  title: "How EnKash ",
+                  color: "color-black",
+                },
+                {
+                  title: "Auto Collect ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "Works",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading
-              title={`Auto Collect ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading title={`Works`} color="black" size="h1" weight="6" />
           </div>
           <div className="row">
             <div className="col-md-6 col-12">
@@ -282,7 +311,7 @@ const AutoCollect = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -297,23 +326,23 @@ const AutoCollect = (): React.JSX.Element => {
               <div
                 className={`flex-column justify-content-center align-items-center pb-md-3`}
               >
-                <Heading
-                  title={`Best${space}`}
-                  color="black"
-                  size="h1"
-                  weight="5"
-                />
-                <Heading
-                  title={`Automatic Payment Collection${space}`}
-                  color="equity-blue"
-                  size="h1"
-                  weight="5"
-                />
-                <Heading
-                  title={`Solution for Businesses`}
-                  color="black"
-                  size="h1"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Best ",
+                      color: "color-black",
+                    },
+                    {
+                      title: "Automatic Payment Collection",
+                      color: "color-equity-blue",
+                    },
+                    {
+                      title: "Solution for Businesses",
+                      color: "color-equity-blue",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
             </div>
@@ -367,28 +396,40 @@ const AutoCollect = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+             <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                  useH1TagInHtml={true}
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
@@ -409,20 +450,24 @@ const AutoCollect = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title}  text-center pb-5`}>
-            <Heading
-              title={`Check out our ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Check out our ",
+                  color: "color-black",
+                },
+                {
+                  title: "other payment products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading
-              title={`other payment products ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading title="at EnKash" color="black" size="h1" weight="5" />
           </div>
           <div className="row g-3 pb-4 ">
             <div className="col-12 col-md-4">

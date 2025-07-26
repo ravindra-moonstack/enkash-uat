@@ -32,7 +32,7 @@ import {
   taskIconFour,
   taskIconFive,
 } from "."
-
+ 
 import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import PolicyCard from "@/components/policyCard/policyCard"
@@ -42,16 +42,16 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import FeatureCard from "@/components/featureCard/feature-card"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-
+ 
 const showScroll = cardsData.length > 3
-
+ 
 const QrCode = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
-
+ 
       <TalkToSales />
-
+ 
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -81,6 +81,7 @@ const QrCode = (): React.JSX.Element => {
                   headingTag="p"
                   className="mb-0"
                 />
+                
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
@@ -97,7 +98,7 @@ const QrCode = (): React.JSX.Element => {
                     className="f-7"
                   />
                 </div>
-
+ 
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
                   <DynamicHeading
                     content={[
@@ -109,17 +110,17 @@ const QrCode = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  />
+                  /> 
                 </div>
-
-                <div className="d-flex flex-column align-items-center align-items-md-start">
+ 
+                <div className="">
                   <Image
                     src={groupIcon}
                     alt="card visual"
-                    className={`${styles.group_logo} w-100 mh-550 object-fit-contain `}
+                    className={`${styles.group_logo}  `}
                   />
                   <div
-                    className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
+                    className={`${styles.first_row_button} d-flex  align-items-center`}
                   >
                     <div>
                       <RectangleButton
@@ -158,10 +159,10 @@ const QrCode = (): React.JSX.Element => {
         </div>
         <LogoSlider />
       </div>
-
+ 
       <div className={`row ${styles.second_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
-          <div className="d-inline justify-content-center  align-items-center text-center">
+        <div className="">
+          <div className="pb-5 text-center">
             <DynamicHeading
               content={[
                 {
@@ -173,7 +174,7 @@ const QrCode = (): React.JSX.Element => {
               className="f-5"
             />
           </div>
-
+ 
           <div className={` d-flex ${styles.section}`}>
             {" "}
             <div
@@ -254,7 +255,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+ 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
@@ -324,13 +325,13 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+ 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
+                className={`flex-column justify-content-center align-items-center `}
               >
                 <DynamicHeading
                   content={[
@@ -352,7 +353,7 @@ const QrCode = (): React.JSX.Element => {
                 />
               </div>
             </div>
-
+ 
             <AllInOnePolicy
               icon={taskIconOne}
               title="Generate QR codes for your business in seconds"
@@ -361,7 +362,7 @@ const QrCode = (): React.JSX.Element => {
               buttonUrl="/sales/?source=expense_management"
               maxImageHeight="243px"
             />
-
+ 
             <AllInOnePolicy
               icon={taskIconTwo}
               title="Showcase your Brand on Every QR Code"
@@ -371,7 +372,7 @@ const QrCode = (): React.JSX.Element => {
               maxImageHeight="305px"
               reverse
             />
-
+ 
             <AllInOnePolicy
               icon={taskIconThree}
               title="Generate QR Codes for Fixed or Dynamic Amounts"
@@ -380,7 +381,7 @@ const QrCode = (): React.JSX.Element => {
               buttonUrl="/sales/?source=expense_management"
               maxImageHeight="268px"
             />
-
+ 
             <AllInOnePolicy
               icon={taskIconFour}
               title="Real-time Reconciliation and Tracking of Financial Transactions"
@@ -390,7 +391,7 @@ const QrCode = (): React.JSX.Element => {
               maxImageHeight="259px"
               reverse
             />
-
+ 
             <AllInOnePolicy
               icon={taskIconFive}
               title="Industry Leading Encryption and Compliance Standards"
@@ -402,7 +403,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+ 
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-md-5 pb-4`}>
@@ -421,7 +422,7 @@ const QrCode = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-
+ 
           <div className={styles.card_grid}>
             {paymentMethodData.map(({ icon, title, description }, i) => (
               <div key={i}>
@@ -435,7 +436,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+ 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -461,7 +462,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+ 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
@@ -515,7 +516,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+ 
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
@@ -547,7 +548,7 @@ const QrCode = (): React.JSX.Element => {
                 linkUrl="/payment-gateway"
               />
             </div>
-
+ 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Payment Page"
@@ -556,7 +557,7 @@ const QrCode = (): React.JSX.Element => {
                 linkUrl="/payment-page"
               />
             </div>
-
+ 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Payment Button"
@@ -565,7 +566,7 @@ const QrCode = (): React.JSX.Element => {
                 linkUrl="/payment-button"
               />
             </div>
-
+ 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="UPI Payments"
@@ -574,7 +575,7 @@ const QrCode = (): React.JSX.Element => {
                 linkUrl="/upi-payments"
               />
             </div>
-
+ 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Auto Collect"
@@ -583,7 +584,7 @@ const QrCode = (): React.JSX.Element => {
                 linkUrl="/auto-collect"
               />
             </div>
-
+ 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Invoices"
@@ -592,7 +593,7 @@ const QrCode = (): React.JSX.Element => {
                 linkUrl="/invoices"
               />
             </div>
-
+ 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Instant Settlement"
@@ -601,7 +602,7 @@ const QrCode = (): React.JSX.Element => {
                 linkUrl="/instant-settlement"
               />
             </div>
-
+ 
             <div className="col-12 col-md-4">
               <ManagementCard
                 titleHtml="Reminder Engine"
@@ -613,10 +614,10 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+ 
       <Footer />
     </div>
   )
 }
-
+ 
 export default QrCode
