@@ -4,26 +4,10 @@ import React, { useState } from "react"
 import Image from "next/image"
 import Slider from "react-slick"
 import styles from "./logo-slider.module.scss"
-
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 
-// ✅ Import all images
-// ✅ Also import original (colored) logos
 import {
-  britishAirways,
-  rakuten,
-  starbucks,
-  prystnCare,
-  dtdc,
-  reliance,
-  mahindraFinance,
-  macdonalds,
-  pnbHousing,
-  adidas,
-  tataAig,
-  vijaySales,
-  behrous,
   britishAirwaysFilled,
   rakutenFilled,
   starbucksFilled,
@@ -39,7 +23,6 @@ import {
   behrousFilled,
 } from "./index"
 
-// ✅ Use them here
 const coloredLogos = [
   britishAirwaysFilled,
   rakutenFilled,
@@ -55,8 +38,6 @@ const coloredLogos = [
   vijaySalesFilled,
   behrousFilled,
 ]
-
-// ✅ Store only the filled image in the array
 
 const logos = [
   {
@@ -109,8 +90,8 @@ const LogoSlider = () => {
     slidesToScroll: 1,
     arrows: false,
     pauseOnHover: true,
-     centerMode: true,
-  centerPadding: '40px',
+    centerMode: true,
+    centerPadding: "40px",
     responsive: [
       {
         breakpoint: 1024,

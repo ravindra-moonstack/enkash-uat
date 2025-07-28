@@ -28,40 +28,49 @@ export type Voucher = {
   termsAndConditionsTitle: string
   termsAndConditionSteps: string[]
   occasionsTitle: string
+  occasionsDesc: string
   festivals: string
   anniversary: string
   birthdays: string
 }
 
 const VoucherData: Record<string, Voucher> = {
-  "nykaa-fashion-e-gift-card": {
-    name: "Nykaa Fashion E-Gift Card",
-    urlName: "nykaa-fashion-e-gift-card",
+  nykaa: {
+    name: "Nykaa Gift Card",
+    urlName: "nykaa",
     brandName: "Nykaa",
     category: "e-commerce",
     discount: 7.0,
     backgroundImg: "PC272920797HGB6I.png",
     descriptionTitle: "Nykaa Fashion E-Gift Card",
     description:
-      "The best way to pamper someone who loves fashion, beauty, and self-care is with a Nykaa Fashion E-Gift Card. The recipient can explore a wide range of products across fashion apparel, accessories, beauty products, personal care items, and even homeware. This Gift Card is the perfect gift for someone who likes their fashion game strong!",
+      "The Nykaa Gift Card is your go-to gift for every special occasion.Whether it’s a birthday, wedding, anniversary, or festive celebration, it’s the perfect way to pamper yourself or your loved ones. Enjoy seamless shopping across beauty, fashion, home & kitchen, and more from top brands, all in one place.",
     aboutCompany:
-      "A one-stop online fashion and lifestyle platform tailored for the Indian market. With a curated selection of fashion and lifestyle products along with a convenient online shopping experience, Nykaa has become the talk of the town within no time.   ",
+      "India’s leading beauty, fashion, and lifestyle destination, Nykaa is known for offering a curated range of products across makeup, skincare, haircare, wellness, fragrances, fashion, and more. Launched in 2012, Nykaa has built a reputation for authenticity, quality, and a seamless shopping experience both online and through its growing network of offline stores.",
     calculatorTitle: "Best Nykaa Gift Cards",
     calculatorDescription:
       "Nykaa Gift Cards are a popular choice for presents, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.\n",
     howToBuyTitle: "How to Buy a Nykaa Fashion E-Gift Card?",
-    howToRedeemTitle: "How to Use or Redeem Nykaa Fashion E-Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Nykaa Gift Card",
     howToRedeemDesc:
-      "Nykaa Gift Cards are preactivated cards and remain valid for 6 months from purchase. The balance of the Nykaa Gift Card Voucher can be checked on the mobile app or website.\xa0",
+      "Nykaa Gift Voucher can be redeemed using the following steps on the website, its app and on their stores:\xa0",
     howToRedeemSteps: [
-      "1. This E-Gift Card can be redeemed both online and offline.",
-      "2. For online redemption, visit Nykaa, Nykaa Man, Nykaa Fashion.",
-      "3. Add the Gift Card amount to the payment page.",
-      "4. Use it to pay for the item purchased.",
-      "5. For offline redemption, visit any Nykaa retail store.",
-      "6. Present the 16-digit code and PIN during billing.",
-      "7. Use the Gift Card amount to pay for the purchase.",
+      "Website/App",
+      "1. Add your favourite items to the cart",
+      '2. At checkout, select the "Gift Card" payment option',
+      "3. Enter the 16-digit Card Code and PIN, then click Apply",
+      "4. If the gift card balance is less than your order total, pay the remaining amount using another payment method",
+      "5. If your order value is less than the gift card amount, the card won't be applied",
+
+      "In-Store Redemption",
+      "1. Visit any Nykaa retail store and select your products",
+      "2. At billing, request to pay via Gift Card",
+      "3. Share your 16-digit Card Code and PIN with the cashier",
+      "4. Pay any remaining balance using another payment method if needed",
+
+      "Note: By purchasing this gift card, you agree to share your personal details (Name, Email ID, Phone Number, if available) with the issuer, PineLabs, as per PPI guidelines.",
     ],
+
     checkBalanceTitle: "How to Check Nykaa Fashion E-Gift Card Balance?",
     checkBalanceDesc:
       "Nykaa Gift Cards are preactivated cards and remain valid for 6 months from purchase. The balance of the Nykaa Gift Card Voucher can be checked on the mobile app or website.\xa0",
@@ -85,6 +94,7 @@ const VoucherData: Record<string, Voucher> = {
       "7. Use the Gift Card amount to pay for the purchase.",
     ],
     occasionsTitle: "Nykaa Fashion E-Gift Cards for different Occasions",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "Consider gifting your employees Nykaa gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break.",
     anniversary:
@@ -92,21 +102,21 @@ const VoucherData: Record<string, Voucher> = {
     birthdays:
       "Consider gifting your employees Nykaa gift cards to help them relax & enjoy their holidays. It's a thoughtful way to show appreciation and ensure they have a pleasant break.",
   },
-  "ajio-e-gift-card": {
+  ajio: {
     name: "AJIO E-Gift Card",
-    urlName: "ajio-e-gift-card",
+    urlName: "ajio",
     brandName: "AJIO",
     category: "e-commerce",
     discount: 0,
     backgroundImg: "hehe",
     descriptionTitle: "AJIO E- Gift Card ",
     description:
-      "Online shopping is all about comfort and variety, which is why AJIO Gift Cards make the perfect gifting option for all fashion enthusiasts. AJIO Gift Cards allow the receiver to explore and shop for trendy and classy clothes, footwear, accessories and much more at discounted prices. So, let’s explore these trendy E Gift-Cards in a little more detail as well as the reasons why they are a good gifting option.",
+      "A perfect gift for all occasions like birthdays, weddings, anniversaries, and festivities, the AJIO E-Gift Card is available in multiple denominations. This gift card can be personalized with a message or a greeting. Use it for yourself or gift it to your special ones for shopping across multiple categories and brands. Get everything on one platform for men, women, and kids across beauty, apparel, home & kitchen, and clothing categories.",
     aboutCompany:
-      "AJIO is an Indian e-commerce fashion and lifestyle store that boasts a diverse range of products and items., AJIO has trendy apparel, footwear, fancy bags and other types of goods catering to various age groups and genders. One of AJIO's benefits is the exclusive products from global labels and AJIO's brands. AJIO is for fashionistas who understand just how much clothes can talk.\n",
+      "AJIO is India’s go-to online fashion hub. Explore top international brands and unique home-grown labels all at your fingertips. From fashion-forward looks to home decor and must-have accessories, AJIO offers something for everyone. AJIO E-Gift Cards are the perfect way to spread smiles. Let your loved ones shop their style, their way, with a seamless and joyful online experience.\n",
     calculatorTitle: "Best AJIO Gift Cards",
     calculatorDescription:
-      "AJIO Gift Cards are a popular choice for presents, whether it's for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
+      "AJIO Gift Cards make gifting effortless; perfect for any occasion or just to show you care. Stylish, flexible, and suited to every budget, they let your loved ones choose what they truly want.",
     howToBuyTitle: "How to Buy AJIO Gift Cards",
     howToRedeemTitle: "How to Redeem an AJIO Gift Card",
     howToRedeemDesc:
@@ -144,6 +154,8 @@ const VoucherData: Record<string, Voucher> = {
       "AJIO will not be liable for any loss or misuse of the gift card due to technical problems, delays, or unauthorized access.",
     ],
     occasionsTitle: "AJIO Gift Cards for Different Occasions\n",
+    occasionsDesc:
+      "Whether it’s a birthday, anniversary, festive celebration, or just a heartfelt thank you, AJIO Gift Cards make every moment memorable. Thoughtful and easy to use, they’re the ideal way to spread joy with friends, family, or colleagues.\n",
     festivals:
       "Festivals like Diwali, Holi and Christmas are often celebrated by exchanging traditional gifts.. AJIO Gift Card is an amazing alternative to gift during these festivals. The recipients will always have the option to  choose their gifts making the occasion memorable for them.",
     anniversary:
@@ -151,11 +163,11 @@ const VoucherData: Record<string, Voucher> = {
     birthdays:
       "Turn up your fashionable friend’s birthday by allowing them to go and shop for outfits of their choice rather than giving them clothes as a gift.",
   },
-  "fnp-e-gift-card": {
+  fnp: {
     name: "Ferns N Petals E-Gift Card",
-    urlName: "fnp-e-gift-card",
+    urlName: "fnp",
     brandName: "FNP",
-    category: "gifting",
+    category: "e-commerce",
     discount: 18.0,
     backgroundImg: "PC272920797HGB6I.png",
     descriptionTitle: "FNP Gift Card",
@@ -198,6 +210,8 @@ const VoucherData: Record<string, Voucher> = {
       "This voucher cannot be used directly at physical FnP retail outlets.",
     ],
     occasionsTitle: "FNP Gift Cards for Different Occasions",
+    occasionsDesc:
+      "FNP Gift Cards are the perfect way to celebrate any special moment, from birthdays and anniversaries to festive occasions or a simple thank you. Thoughtful, easy, and always appreciated, they’re a great way to spread joy with loved ones and colleagues alike.",
     festivals:
       "FNP Gift Cards are the perfect way to celebrate any special moment, from birthdays and anniversaries to festive occasions or a simple thank you. Thoughtful, easy, and always appreciated, they’re a great way to spread joy with loved ones and colleagues alike.",
     anniversary:
@@ -205,7 +219,403 @@ const VoucherData: Record<string, Voucher> = {
     birthdays:
       "Your loved ones will be delighted to get this exclusive FNP E-Gift Card on their birthdays.",
   },
-
+  "flipkart-super-coins": {
+    name: "Flipkart SuperCoins E-Gift Card",
+    urlName: "flipkart-super-coins",
+    brandName: "Flipkart",
+    category: "e-commerce",
+    discount: 6.0,
+    backgroundImg: "YOUR_FLIPKART_IMAGE.png", // replace with your actual image file
+    descriptionTitle: "Flipkart Gift Card",
+    description:
+      "Flipkart SuperCoins Gift Card, the most convenient option when it comes to thoughtful gifting. Ideal for birthdays, weddings, anniversaries, or celebratory occasions, it provides unparalleled utility. For yourself or your near and dear ones, shop across a broad spectrum of categories — beauty, fashion, home & kitchen, and more of the most popular brands on Flipkart.",
+    aboutCompany:
+      "One of India’s leading e-commerce platforms, Flipkart brings you a wide range of branded products across electronics, fashion, beauty, and everyday essentials — all at great prices. From gadgets to garments, it’s your one-stop shop for convenient, hassle-free shopping for all age groups.",
+    calculatorTitle: "Best Flipkart SuperCoins Gift Cards",
+    calculatorDescription:
+      "Flipkart SuperCoins Gift Cards are the perfect go-to for any occasion — be it a celebration or a simple gesture of care. Flexible, convenient, and budget-friendly, they make gifting easy and thoughtful for everyone.",
+    howToBuyTitle: "How to Buy a Flipkart SuperCoins Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Flipkart Gift Card?",
+    howToRedeemDesc:
+      "Flipkart Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit this link to redeem your card",
+      "Convert your card balance into Flipkart SuperCoins",
+      "Use the SuperCoins for discounts on Flipkart and partner platforms",
+    ],
+    checkBalanceTitle: "How to Check Flipkart Gift Card Balance",
+    checkBalanceDesc:
+      "Flipkart Gift Cards are prepaid cards. The balance of the Flipkart Gift Card Voucher can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Visit the Flipkart website or app and log in with your credentials",
+      "Go to the Account Section",
+      "Enter the SuperCoin zone",
+      "Check the balance on the top right corner of the section",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Flipkart Gift Card",
+    termsAndConditionSteps: [
+      "Use your voucher-earned SuperCoins on Flipkart and Cleartrip (Flights, Hotels, Buses) for discounts equal to your coin balance.",
+      "Avail discounts on utility bill payments and mobile recharges via Flipkart using SuperCoins.",
+      "SuperCoins can be used on Flipkart 3 days after redeeming the voucher.",
+      "This voucher is not applicable on Baby care products, Gift card store, Gold & silver coins/bars, gemstones, Milk & curd under ₹30, Tobacco products and ₹9 Veggies (Flipkart Minutes).",
+      "If cart value < SuperCoins balance, a ₹10 platform fee per product applies.",
+      "SuperCoins are non-transferable, non-refundable, and not convertible to cash.",
+      "SuperCoins used cannot be reversed.",
+      "Misuse or blacklisted accounts will face cancellation of SuperCoins.",
+      "Flipkart may share your registered mobile number with SuperPartners to enable redemption.",
+      "Flipkart SuperCoin benefits: flipkart.com/supercoin",
+      "External SuperCoin partners: Partner Store",
+      "Convert voucher to SuperCoins: Redeem here",
+      "E-vouchers are usually delivered instantly but may take 48–72 hours in rare cases.",
+      "No returns/refunds on gift cards or vouchers via Enkash. Refer: enkash.in/faq",
+    ],
+    occasionsTitle: "Flipkart Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Flipkart Gift Cards are the perfect present for any special occasion, offering a delightful way to share the joy with friends, family, or colleagues. Whether it's a birthday, anniversary, holiday, or just to say thank you, Flipkart Gift Cards are sure to bring a smile.",
+    birthdays:
+      "Get this exclusive Flipkart E-Gift Card to surprise your loved ones on their birthdays.",
+    anniversary:
+      "The perfect anniversary gift, Flipkart Gift Voucher is something the recipient will appreciate on their special occasion.",
+    festivals:
+      "Let the recipient pick anything of their choice using the Flipkart E-Gift Card during the festive season.",
+  },
+  "amazon-prime-shopping": {
+    name: "Amazon Prime Shopping",
+    urlName: "amazon-prime-shopping",
+    brandName: "Amazon",
+    category: "e-commerce",
+    discount: 13.0,
+    backgroundImg: "hehe",
+    descriptionTitle: "Amazon Prime Gift Card",
+    description:
+      "Whether it's a birthday, wedding, anniversary, or festive celebration, the Amazon Prime Gift Card makes gifting effortless and thoughtful.<br/><br/>It provides unlimited same-day or next-day delivery, exclusive Prime-only deals, and early access to shopping events, all at an introductory price of ₹399 for 12 months.<br/><br/>This plan is for shopping benefits only and does not include Prime Video, Music, Reading, or Gaming.<br/>Existing Prime members are not eligible for this offer.",
+    aboutCompany:
+      "One of the world’s largest and most trusted e-commerce platforms, Amazon offers a vast selection of products across categories like electronics, fashion, beauty, home essentials, books, and more. In India, Amazon has become a go-to destination for millions of shoppers, known for its fast delivery, reliable service, and customer-first approach.",
+    calculatorTitle: "Best Amazon Gift Cards",
+    calculatorDescription:
+      "A go-to choice for effortless gifting, Amazon Gift Cards are perfect for any occasion or just a thoughtful surprise. Flexible, easy to use, and suitable for every budget, they let recipients choose exactly what they love.",
+    howToBuyTitle: "How to Buy an Amazon Prime Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem an Amazon Prime Gift Card?",
+    howToRedeemDesc:
+      "Amazon Prime Gift Voucher can be redeemed using the following steps on the website and the app:",
+    howToRedeemSteps: [
+      "Sign in to your Amazon.com account.",
+      "Go to Account, and then go to Manage Prime Membership.",
+      "Choose “Use your gift card balance when available” or enter a new gift card code to apply it toward your membership renewal.",
+    ],
+    checkBalanceTitle: "How to Check Amazon Gift Card Balance",
+    checkBalanceDesc:
+      "Amazon Gift Card balance can be checked on the mobile app or website.",
+    checkBalanceSteps: [
+      "Visit the Amazon website or app and log in with your credentials.",
+      "Go to the Orders Section.",
+      "Scroll down to the Gift Cards Section.",
+      "Enter the Gift Card number and PIN.",
+      "Click on Check Balance to know the balance available.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Amazon Gift Card",
+    termsAndConditionSteps: [
+      "The Amazon Prime Voucher is a prepaid code issued by Pine Labs (Qwikcilver) and co-branded with Amazon Pay, used to buy Prime memberships (3-month, 12-month, Prime Lite, or Prime Shopping Edition) or a zero-value Amazon Pay Gift Card.",
+      "The voucher is valid for 1 year from the activation date and cannot be transferred, cancelled, or refunded once issued.",
+      "It can be redeemed only on Amazon.in/vouchers. It cannot be used to buy physical/digital products, Global Store items, recharges, bills, or pre-loaded Amazon Pay Gift Cards.",
+      "Only non-Prime members can use the voucher. Users with Prime via telecom (Airtel, Jio, etc.) or Google Play cannot redeem it.",
+      "This plan offers same/1-day delivery, early sale access, and cashback offers—but no access to Prime Video, Music, E-books, or Gaming.",
+      "Max voucher value: ₹1799. It can be redeemed once per user. This card is not valid with non-eligible items in a mixed cart and cannot be used with international debit/credit cards.",
+      "Lost or misused vouchers won’t be reissued, and terms may change without notice. Always check the latest terms here.",
+    ],
+    occasionsTitle: "Amazon Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Amazon Prime Gift Cards are the perfect gifts for any special occasion, offering a delightful way to share the joy with friends, family, or colleagues. Whether it's a birthday, anniversary, holiday, or just to say thank you, Amazon Gift Cards are sure to bring a smile.",
+    festivals:
+      "Let the recipient pick anything of their choice using the Amazon E-Gift Card during the festive season.",
+    anniversary:
+      "The perfect anniversary gift, an Amazon Gift Voucher is something they will appreciate on their special occasion.",
+    birthdays:
+      "This exclusive Amazon E-Gift Card is to surprise your loved ones on their birthdays.",
+  },
+  zee5: {
+    name: "ZEE5 Gift Card",
+    urlName: "zee5",
+    brandName: "ZEE5",
+    category: "movies-and-music",
+    discount: 17.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "ZEE5 Gift Card",
+    description:
+      "The ZEE5 Gift Card is an ideal choice for any occasion whether it’s a birthday, anniversary, wedding, or festive celebration. Gift unlimited entertainment with access to top shows, blockbuster movies, and exclusive originals, all with a single subscription.",
+    aboutCompany:
+      "India’s leading video-on-demand platform, ZEE5 streams your favorite shows before they air on TV. The platform also streams a wide selection of Indian and international movies, originals, and more. Subscribe effortlessly using ZEE5 Gift Vouchers, easy to buy, and easy to redeem.",
+    calculatorTitle: "Best ZEE5 Gift Cards",
+    calculatorDescription:
+      "A popular choice for presents, ZEE5 gift cards never disappoint the recipients. Be it for a special occasion or a thoughtful gesture, these gift cards are a convenient option that suits any budget and preference.",
+    howToBuyTitle: "How to Buy a ZEE5 Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem ZEE5 Gift Card?",
+    howToRedeemDesc:
+      "ZEE5 Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit the ZEE5 website.",
+      "Click on “Buy Plan”.",
+      "Select your preferred subscription plan.",
+      'Click on "Have a code?"',
+      "Enter your gift voucher code and click “Continue”.",
+    ],
+    checkBalanceTitle: "How to Check ZEE5 Gift Card Balance",
+    checkBalanceDesc:
+      "ZEE5 Gift Cards are preactivated cards and remain valid for 1 year from the date of purchase. The balance of the ZEE5 Gift Card Voucher can be checked on the mobile app or website.",
+    checkBalanceSteps: [
+      "Visit the ZEE5 website or app and log in with your credentials.",
+      "Go to the Account Section.",
+      "Scroll down to the Wallet Section.",
+      "Add the Gift Card number and PIN.",
+      "Click on Check Balance to know the balance available.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for ZEE5 Gift Card",
+    termsAndConditionSteps: [
+      "This card is valid on Zee5 website and app via the subscription page.",
+      "It can be used one-time only; one Gift Voucher per transaction.",
+      "This gift voucher has an expiration date and cannot be revalidated once expired.",
+      "It has no refunds or credit for unused balance; it will lapse automatically.",
+      "It can be combined with ongoing Zee5 promotions, but not valid on blackout dates (subject to change).",
+      "Zee5 is not liable for lost, stolen, or unauthorized use of gift vouchers.",
+      "In case of blocking, the gift voucher will be re-enabled in 72 hours; failed transactions will be auto-refunded within 48 hours.",
+      "For issues, contact www.gvhelpdesk.com; legal matters fall under Delhi's jurisdiction.",
+    ],
+    occasionsTitle: "ZEE5 Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, a ZEE5 Gift Card is always a thoughtful way to make someone smile.",
+    birthdays:
+      "Get your loved ones this exclusive ZEE5 E-Gift Card on their birthdays.",
+    anniversary:
+      "The perfect anniversary gift to binge-watch ZEE5 Gift Voucher is something the couple would love on their special occasion.",
+    festivals:
+      "The ZEE5 E-Gift Card makes a perfect festive surprise offering non-stop entertainment your loved ones will enjoy throughout the holiday season.",
+  },
+  pvr: {
+    name: "PVR Gift Card",
+    urlName: "pvr",
+    brandName: "PVR",
+    category: "movies-and-music",
+    discount: 11.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "PVR Gift Card",
+    description:
+      "The perfect pick for any special occasion, the PVR Gift Card is a reliable choice. Be it a birthday, wedding, anniversary or any festive occasion, the PVR E-Gift Card is a treat for movie buffs. Treat yourself or your loved ones to the joy of entertainment, with hassle-free access to movies, F&B, and more. A gift that always hits the right note!",
+    aboutCompany:
+      "India’s largest and most premium film exhibition company, PVR Cinemas is known for redefining the movie-going experience. With state-of-the-art screens, luxury seating, gourmet F&B offerings, and cutting-edge technology, PVR offers more than just movies. It delivers unforgettable entertainment moments. Whether it's blockbuster films, live screenings, or curated cinematic experiences, PVR is the ultimate destination for movie lovers across the country.",
+    calculatorTitle: "Best PVR Gift Cards",
+    calculatorDescription:
+      "PVR Gift Cards are a popular choice for gifting, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
+    howToBuyTitle: "How to Buy a PVR Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem PVR Gift Card?",
+    howToRedeemDesc:
+      "PVR Gift Voucher can be redeemed using the following steps on the website and their outlets:",
+    howToRedeemSteps: [
+      "Website/App",
+      "1. Visit www.pvrcinemas.com to redeem PVR Gift Card online.",
+      "2. Choose Gift Card as the payment mode.",
+      "3. Enter Gift Card details like number and PIN.",
+      "In-Store Redemption",
+      "1. Visit any PVR Cinemas outlet.",
+      "2. Confirm gift card acceptance at the counter before purchase.",
+      "3. During billing, show your gift card details to the cashier.",
+      "4. Pay any remaining amount via cash or card.",
+    ],
+    checkBalanceTitle: "How to Check PVR Gift Card Balance",
+    checkBalanceDesc:
+      "PVR Gift Card balance can be checked with the following steps:",
+    checkBalanceSteps: [
+      "Visit the PVR website or app and log in with your credentials.",
+      "Navigate to the Add Gift Card option.",
+      "Add the Gift Card number and PIN.",
+      "Click on Check Balance to know the balance available.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for PVR Gift Card",
+    termsAndConditionSteps: [
+      "This card is valid for online purchases (tickets & F&B) at www.pvrcinemas.com.",
+      "It can be used for multiple online transactions. However, allows one-time use for offline purchases.",
+      "It is valid for 1 year from the activation date.",
+      "There is no refund on items purchased using the E-Gift Card.",
+      "This voucher is not applicable for movie or candy bar voucher purchases. It does not guarantee seat or ticket availability.",
+      "It cannot be redeemed for cash or credit; unused balance won’t be refunded or exchanged.",
+      "It is freely transferable. If lost/stolen, this card will not be replaced or reimbursed.",
+      "If the purchase exceeds the card value, the difference must be paid via credit/debit card.",
+      "Keep your card number and PIN safe. Any misuse won’t be compensated.",
+      "E-Gift Cards are generally delivered instantly but may take up to 24 hours in case of system delays.",
+      "For full terms, visit www.pvrcinemas.com/giftcards.",
+    ],
+    occasionsTitle: "PVR Gift Cards for Different Occasions",
+    occasionsDesc:
+      "PVR Gift Cards are meant to be gifted on any occasion, be it a birthday, an anniversary, any festival, or a simple appreciation gesture.",
+    birthdays:
+      "The best gifts are the ones the recipient can choose for themselves. So, get them this exclusive PVR E-Gift Card on their birthdays.",
+    anniversary:
+      "This PVR Gift Voucher is a perfect anniversary surprise, giving the couple a chance to relax, unwind, and enjoy quality time together on their special day.",
+    festivals:
+      "Let your loved ones choose what they love with the PVR E-Gift Card this festive season.",
+  },
+  "fan-code": {
+    name: "Fancode Gift Card",
+    urlName: "fancode",
+    brandName: "Fancode",
+    category: "movies-and-music",
+    discount: 8.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Fancode Gift Card",
+    description:
+      "The ultimate gift for every sports fan. Whether it’s a birthday, anniversary, festival, or just a reason to celebrate fandom, the FanCode Gift Card lets the recipient unlock a world of official team merchandise, exclusive fan gear, and premium sportswear. From cricket to football and everything in between, shop across top collections on the FanCode Shop with ease.",
+    aboutCompany:
+      "India’s leading digital sports destination, FanCode, is designed specifically for sports fans. FanCode offers unmatched access to both mainstream and niche sports through flexible subscription options like match passes and tour passes, making premium sports content affordable and accessible for every fan.",
+    calculatorTitle: "Best Fancode Gift Cards",
+    calculatorDescription:
+      "Fancode Gift Cards can easily be the best gift for a sports fanatic. Someone who loves watching sports would surely appreciate this thoughtful gift, especially during live sporting events.",
+    howToBuyTitle: "How to Buy a Fancode Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Fancode Gift Card?",
+    howToRedeemDesc:
+      "Fancode Gift Voucher can be redeemed using the following steps on its website and app:",
+    howToRedeemSteps: [
+      "Visit the FanCode website or app and browse the listed merchandise.",
+      "Add your favorite products to the cart and proceed to checkout.",
+      "Enter your voucher code at the payment page to redeem the offer.",
+    ],
+    checkBalanceTitle: "How to Check Fancode Gift Card Balance",
+    checkBalanceDesc:
+      "Fancode Gift Cards balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Log in to your FanCode account on the website or app.",
+      "Go to the profile section.",
+      "Navigate to transaction history or gift card details.",
+      "View available gift card balance and usage history.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Fancode Gift Card",
+    termsAndConditionSteps: [
+      "This Gift Card is not legal tender and cannot replace a credit/debit card.",
+      "It cannot be exchanged for cash or a cheque.",
+      "The person holding the card is considered its rightful beneficiary.",
+      "The card is valid only on Fancode platforms (e-commerce website and mobile app) for purchasing listed merchandise.",
+      "It cannot be used at offline stores, multi-brand outlets, departmental stores, or other online marketplaces.",
+      "The Gift Card is valid for 1 year from the date of activation (purchase).",
+      "Only one Gift Card can be used per invoice.",
+      "Lost, damaged, or defaced cards will not be reissued or compensated.",
+      "For any redemption or usage issues, please contact Fancode customer support. The company’s decision will be final.",
+      "All disputes are subject to Mumbai jurisdiction only.",
+    ],
+    occasionsTitle: "Fancode Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Fancode Gift Cards are easily every sports enthusiast’s dream. Give your friends, family, and loved ones the gift of choice with Fancode Gift Cards. Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, a Fancode Gift Card is always a thoughtful way to make them smile.",
+    birthdays:
+      "What better than gifting a Fancode Gift Card to a sports lover? Get them this exclusive Fancode E-Gift Card and make their day memorable.",
+    anniversary:
+      "The perfect anniversary gift for a couple who loves sports. Fancode Gift Voucher is something they will appreciate on their special occasion.",
+    festivals:
+      "The recipient of the Fancode gift card will thank you for making the festive season better for them.",
+  },
+  "sony-liv": {
+    name: "Sony LIV Gift Card",
+    urlName: "sonyliv",
+    brandName: "Sony LIV",
+    category: "movies-and-music",
+    discount: 54.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Sony LIV Gift Card",
+    description:
+      "For entertainment lovers and binge-watchers, the Sony LIV Gift Card is easily the perfect pick. Make any occasion special for them be it their birthday, wedding, anniversary or festive celebration. Pamper them with Sony LIV Gift Voucher and let them dive into their favourite shows, movies and more.",
+    aboutCompany:
+      "A premium OTT streaming platform, Sony LIV offers a wide range of content including live sports, original web series, TV shows, blockbuster movies, and exclusive international content. The platform streams entertainment across multiple languages and genres. Sony LIV provides a complete viewing experience for every kind of audience anytime and anywhere.",
+    calculatorTitle: "Best Sony LIV Gift Cards",
+    calculatorDescription:
+      "Sony LIV Gift Cards are a popular choice for gifting, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient option that suits any budget and preference.",
+    howToBuyTitle: "How to Buy a Sony LIV Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Sony LIV Gift Card?",
+    howToRedeemDesc:
+      "Sony LIV Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Open the Sony LIV app or website.",
+      "Select your preferred subscription plan.",
+      "Enter your voucher code in the given field to redeem instantly.",
+    ],
+    checkBalanceTitle: "How to Check Sony LIV Gift Card Balance",
+    checkBalanceDesc:
+      "Sony LIV Gift Cards balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Visit the Sony LIV website or app and log in with your credentials.",
+      "Go to My Purchases or Transaction History under the account section.",
+      "Check the subscription plan validity.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Sony LIV Gift Card",
+    termsAndConditionSteps: [
+      "This code is issued by Culver Max Entertainment Pvt. Ltd. (CMEPL), formerly Sony Pictures Networks India.",
+      "This card is valid only in India and can be redeemed till 31st March 2025.",
+      "It cannot be clubbed with existing subscriptions or offers on Sony LIV.",
+      "This gift card is non-refundable, non-transferable, and not redeemable for cash. It is not a credit/debit code or legal tender.",
+      "CMEPL is not responsible for any misuse, theft, or transfer after purchase.",
+      "Disputes are subject to the exclusive jurisdiction of courts in Mumbai.",
+      "Redeeming the code implies acceptance of all terms at sonyliv.com/terms-of-use.",
+    ],
+    occasionsTitle: "Sony LIV Gift Cards for Different Occasions",
+    occasionsDesc:
+      "The Sony LIV Gift Card makes for an amazing birthday, anniversary, or festival gift. Buy Sony LIV Gift Card and make your loved ones happy.",
+    birthdays:
+      "The best gifts are the ones they choose themselves. So, get them this exclusive Sony LIV E-Gift Card on their birthdays.",
+    anniversary:
+      "The perfect anniversary gift, Sony LIV Gift Voucher is something the recipient will appreciate on their special occasion.",
+    festivals:
+      "Let the recipient pick anything of their choice using the Sony LIV E-Gift Card during the festive season.",
+  },
+  "amazon-prime": {
+    name: "Amazon Prime Gift Card",
+    urlName: "amazonprime",
+    brandName: "Amazon Prime",
+    category: "movies-and-music",
+    discount: 12.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Amazon Prime Gift Card",
+    description:
+      "Explore a world of entertainment and convenience with the Amazon Prime Music Voucher. Access unlimited ad-free music streaming, along with all the perks of Prime membership - lightning-fast free delivery, early access to exclusive deals, popular movies and TV shows on Prime Video, a vast collection of eBooks, games, and more. Amazon Prime takes your everyday experiences to the next level.",
+    aboutCompany:
+      "A world of non-stop entertainment awaits you with Amazon Prime. Access unlimited ad-free music and movies with Prime Music and watch movies, shows, and Originals. Amazon Prime brings music and entertainment together, anytime, anywhere.",
+    calculatorTitle: "Best Amazon Prime Gift Cards",
+    calculatorDescription:
+      "Amazon Prime Gift Cards are a popular choice for gifting, whether for a special occasion or as a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
+    howToBuyTitle: "How to Buy an Amazon Prime Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Amazon Prime Gift Card?",
+    howToRedeemDesc:
+      "Amazon Prime Gift Voucher can be redeemed using the following steps on the website and its app:",
+    howToRedeemSteps: [
+      "Go to www.amazon.in/vouchers.",
+      "In the ‘Add a new voucher’ section, enter your code.",
+      "Click ‘Add’ to apply the voucher to your account.",
+    ],
+    checkBalanceTitle: "How to Check Amazon Prime Gift Card Balance",
+    checkBalanceDesc:
+      "The Amazon Prime Gift Cards balance can be checked on the mobile app or website using the following steps:",
+    checkBalanceSteps: [
+      "Visit the Amazon Prime website or app and log in with your credentials.",
+      "Go to your profile.",
+      "Move to the Account Section.",
+      "Check the Gift Card balance available.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Amazon Prime Gift Card",
+    termsAndConditionSteps: [
+      "This voucher is issued by Pine Labs (Qwikcilver) and co-branded with Amazon Pay (India). It is valid for 12 months from the date of activation.",
+      "It can be used to buy Amazon Prime memberships (3-months, 12-months, Lite, or Shopping Edition) or an Amazon Pay Anytime Gift Card (inactive, zero-value) on Amazon.in.",
+      "It cannot be transferred, cancelled, or refunded once issued and is not valid on Amazon Business accounts.",
+      "It cannot be used with Prime memberships activated via telecom providers (Jio, Airtel, VI, etc.) or through Google Play.",
+      "It cannot be used for physical/digital items, global store, recharges, bill payments, tickets, financial products, or pre-loaded gift cards.",
+      "Only Indian-issued credit/debit cards are accepted for voucher purchase.",
+      "EnKash, Pine Labs, or Amazon is not responsible for lost or misused vouchers.",
+      "Terms may change without prior notice.",
+      "For detailed T&Cs and FAQs, click here.",
+    ],
+    occasionsTitle: "Amazon Prime Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Move over traditional gifts and get your friends, family, and loved ones something they will truly appreciate. Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, an Amazon Prime Gift Card is always a thoughtful way to make someone smile.",
+    birthdays:
+      "The best gifts are the ones they choose themselves. So, get them this exclusive Amazon Prime E-Gift Card on their birthdays.",
+    anniversary:
+      "A perfect anniversary gift, Amazon Prime Gift Voucher is something the couple will appreciate on their special occasion.",
+    festivals:
+      "The festive season is different for different people. Give them the choice to pick anything using the Amazon Prime E-Gift Card during the festive season.",
+  },
   "swiggy-gift-card": {
     name: "Swiggy Gift Card",
     urlName: "swiggy-gift-card",
@@ -256,6 +666,7 @@ const VoucherData: Record<string, Voucher> = {
       'Swiggy Gift Cards or Swiggy Money cannot be used on "Minis" orders.',
     ],
     occasionsTitle: "Swiggy Gift Cards for Different Occasions",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "festive season gifting e needs a Swiggy Gift Card so that the people you care about do not miss out on yummy dishes and goodies",
     anniversary:
@@ -263,6 +674,7 @@ const VoucherData: Record<string, Voucher> = {
     birthdays:
       "This makes perfect sense for birthdays; consider a Swiggy Gift Card, so that the person celebrating their birthday can enjoy their favourite food any time they want. This approach allows the beneficiaries to choose for themselves, adding to making the day even better.",
   },
+
   "luxe-e-gift-card": {
     name: "LUXE E-Gift Card",
     urlName: "luxe-e-gift-card",
@@ -310,6 +722,7 @@ const VoucherData: Record<string, Voucher> = {
       "LUXE Gift Cards cannot be refunded or exchanged for cash once purchased.",
     ],
     occasionsTitle: "LUXE Gift Cards for Different Occasions",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "Give your dear ones a LUXE Gift Card on festivals and happy occasions so that they may avail of the luxury experience of their choice.",
     anniversary:
@@ -366,6 +779,7 @@ const VoucherData: Record<string, Voucher> = {
       "The EGC is the bearer’s property. JFL or Domino's Pizza India will not be responsible for lost, stolen, damaged, or destroyed EGCs, and no replacements will be provided in such cases",
     ],
     occasionsTitle: "Domino's Gift Cards for Different Occasions ",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "Festivals always call for something special Domino’s Gift Cards are definitely a good idea. It serves as a convenient present for giving the opportunity to enjoy the cheesy pizzas during the get-togethers like Diwali, Christmas and many other such occasions. ",
     anniversary:
@@ -422,6 +836,7 @@ const VoucherData: Record<string, Voucher> = {
       "If lost or misused, the BookMyShow Gift Card cannot be replaced. void if resold, cannot be exchanged for points or cash & cannot be re-validated once past the expiry date.",
     ],
     occasionsTitle: "BookMyShow E-Gift Cards for Different Occasions",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "For this festive season, consider giving your loved ones BookMyShow Gift Cards allowing them to enjoy their preferred movies and shows and have a wonderful time.\n",
     anniversary:
@@ -471,6 +886,7 @@ const VoucherData: Record<string, Voucher> = {
       "This voucher can only be used for takeaway orders done through the Starbucks mobile app.",
     ],
     occasionsTitle: "Starbucks Gift Card for Different Occasions ",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "A thoughtful way to celebrate festivals. Let the festival experience for your loved ones be unique with this personalized gift.",
     anniversary:
@@ -522,6 +938,7 @@ const VoucherData: Record<string, Voucher> = {
       "Fraudulent cards may be cancelled; terms may change without notice; excludes Titan, Bluestone, and Aditya Birla sellers",
     ],
     occasionsTitle: "Myntra Gift Card for Different ferent Occasions ",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "Let the recipient pick anything of their choice using the Myntra E-Gift Card during the festive season.",
     anniversary:
@@ -585,6 +1002,7 @@ const VoucherData: Record<string, Voucher> = {
       "Users can combine multiple gift cards for a single purchase.",
     ],
     occasionsTitle: "Zomato Gift Card for Different Occasions ",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "Celebrate festivals by giving a Zomato card!  Whether it’s Diwali, Christmas or Eid, a Zomato gift card guarantees that the celebrations are delicious. \n",
     anniversary:
@@ -592,66 +1010,7 @@ const VoucherData: Record<string, Voucher> = {
     birthdays:
       "Celebrate their special day with the gift of food! Zomato gift cards make birthdays better, because recipients get to choose the meals they love.",
   },
-  "Amazon Pay E-Gift Card": {
-    name: "Amazon Pay E-Gift Card",
-    urlName: "amazon-pay-e-gift-card",
-    brandName: "Amazon Pay",
-    category: "e-commerce",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "Amazon Pay E-Gift Card",
-    description:
-      "Amazon Pay Gift Cards are a flexible and convenient gifting option, allowing recipients to select from various options including merchandise, digital content, electronics, apparel, and much more. They are a great gift choice for occasions like festivals, birthdays or corporate gifting. Anyone with an Amazon account can avail the exclusive benefits of the card.",
-    aboutCompany:
-      "Amazon Pay is a safe and convenient form of payment from Amazon. It allows people to pay for products & services on Amazon and other partner sites. Amazon Pay customers can quickly and securely pay for products/services online using the same account details they have with Amazon. Amazon Pay Gift Cards make an ideal gift for anyone who loves to shop on Amazon, as they can be used for a variety of products.",
-    calculatorTitle: "Best Amazon Pay E-Gift Cards",
-    calculatorDescription:
-      "Amazon Pay Gift Cards are a popular choice for presents, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to buy an Amazon Pay Gift Card ",
-    howToRedeemTitle: "How to use or redeem an Amazon Pay Gift Card",
-    howToRedeemDesc:
-      "Here's a step-by-step guide on how to redeem an Amazon Pay Gift Card:",
-    howToRedeemSteps: [
-      "Log in to the Amazon website or open the Amazon app on your mobile.",
-      "Add the preferred products/services to the shopping cart.",
-      "During checkout, go to the 'Payment Options' section.",
-      "Select 'Gift Card' as your payment mode and input the Amazon Pay Gift Card code.",
-      "Click 'Apply', and the gift card balance will be applied to your order.",
-      "If required, combine the gift card with other payment modes to complete the purchase.",
-      "Once the transaction is successful, you'll receive a confirmation email or SMS, and your order will be processed.",
-    ],
-    checkBalanceTitle: "How to Check Amazon Pay Gift Card Balance ",
-    checkBalanceDesc:
-      "Follow these steps to check the remaining balance in your Amazon Pay Gift Card:",
-    checkBalanceSteps: [
-      "Visit the Amazon website.",
-      "Navigate to ‘Your Account’ from the website.",
-      "Scroll down and find the ‘Gift Cards & Top Up’ section under Payments.",
-      "View your current gift card balance and recent transactions related to your gift card.",
-      "Open the Amazon app and log in.",
-      "Click on the menu (three horizontal lines) in the app.",
-      "Scroll down and find the ‘Gift Cards & Top Up’ section under Payments.",
-      "View your current gift card balance and recent transactions related to your gift card.",
-    ],
-    termsAndConditionsTitle: "Terms and Conditions for Amazon Pay Gift Card ",
-    termsAndConditionSteps: [
-      "Amazon Pay Gift Cards are valid for 12 months from the date of issuance.",
-      "These gift cards can be used for purchases made on Amazon.in or on third-party websites that accept Amazon Pay as a payment method.",
-      "The remaining balance, if any, will remain in your Amazon Pay account.",
-      "You can't exchange gift cards for cash or transfer them to another account. Once your balance is applied, it will remain in your Amazon Pay account.",
-      "If the gift card is misused, lost, stolen or damaged, Pine Labs will not be responsible for its condition.",
-      "Amazon Pay Gift Cards are not redeemable for cash, and are not refundable or replaceable if lost, stolen or used without permission.",
-      "Gift cards cannot be used to purchase other gift cards or be applied to certain subscriptions.",
-      "Issuance: These gift cards are issued by Pine Labs under the name Qwikcilver Solutions Private Limited and co-branded with Amazon Pay.",
-    ],
-    occasionsTitle: "Amazon Pay Gift Card for Different Occasions ",
-    festivals:
-      "Amazon Pay Gift Cards are ideal gifts for festivals as the platform offers great discounts for seasonal products which are in high demand during these occasions.",
-    anniversary:
-      "Celebrate anniversaries with the convenience of an Amazon Pay Gift Card, ideal for couples that like to shop for home, fashion or lifestyle items.\n",
-    birthdays:
-      "Celebrate birthdays by gifting an Amazon Pay Gift Card, allowing recipients to select from millions of products.\n",
-  },
+
   "decathlon-sports-india-e-gift-card": {
     name: "Decathlon Sports India E-Gift Card",
     urlName: "decathlon-sports-india-e-gift-card",
@@ -696,6 +1055,7 @@ const VoucherData: Record<string, Voucher> = {
       "Gift Cards are non-refundable and cannot be exchanged for cash",
     ],
     occasionsTitle: "Decathlon Gift Card for Different Occasions ",
+    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
     festivals:
       "Perfect for endless adventures, celebrate the festive season with a Decathlon brand voucher.",
     anniversary:

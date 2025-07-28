@@ -26,6 +26,7 @@ import {
   affordabilityIcon,
   blueArrow,
   whiteArrow,
+  CollectpaymentGif,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -89,7 +90,7 @@ const CollectPayment = (): React.JSX.Element => {
             <div className={styles.lottie_container}>
               <div>
                 <Image
-                  src={motherCardImg}
+                  src={CollectpaymentGif}
                   alt="card background"
                   className="position-relative w-100 h-100"
                 />

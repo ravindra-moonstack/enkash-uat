@@ -1,6 +1,6 @@
 "use client"
 
-import { VoucherFaqData } from "@/src/app/products/vouchers/data/voucher-faq-data"
+import { VoucherFaqData } from "@/src/app/vouchers/data/voucher-faq-data"
 
 import { useState } from "react"
 import FAQ from "../faq-new/faq"
@@ -19,7 +19,7 @@ const VoucherFaqComponent: React.FC<VoucherFaqComponentProps> = ({
   }
 
   const faqData = VoucherFaqData[voucherName]
-
+  console.log("faqData:", VoucherFaqData)
   return (
     <div>
       {faqData?.faqData.map((item, index) => (
@@ -29,7 +29,7 @@ const VoucherFaqComponent: React.FC<VoucherFaqComponentProps> = ({
           answer={item.answer}
           answerVisible={index === openFAQIndex}
           onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
-          index={0}
+          index={index}
         />
       ))}
     </div>

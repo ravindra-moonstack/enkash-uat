@@ -30,6 +30,7 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import AllProducts from "@/components/all-products/all-products"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
@@ -92,17 +93,10 @@ const PaymentPage = (): React.JSX.Element => {
           </div>
           <div className=" col-12">
             <div className={styles.lottie_container}>
-              <div>
-                <Image
-                  src={paymentSummary}
-                  alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "648px",
-                  }}
-                  className="w-100"
-                />
-              </div>
+              <LottieDynamicLoadComponent
+                animationName={"MakePaymentAnimationLottie"}
+                loop={true}
+              />
             </div>
           </div>
         </div>

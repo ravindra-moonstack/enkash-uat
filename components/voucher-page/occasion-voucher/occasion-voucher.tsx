@@ -1,6 +1,5 @@
 import React from "react"
 import styles from "./occasion-voucher.module.scss"
-import Heading from "@/components/heading/heading"
 import Image from "next/image"
 import {
   anniversaryGiftingImg,
@@ -15,6 +14,7 @@ interface OccasionVoucherProps {
   festivals?: string
   anniversary?: string
   birthdays?: string
+  occasionsDesc: string
 }
 
 const OccasionVoucher: React.FC<OccasionVoucherProps> = ({
@@ -22,6 +22,7 @@ const OccasionVoucher: React.FC<OccasionVoucherProps> = ({
   festivals,
   anniversary,
   birthdays,
+  occasionsDesc,
 }) => {
   return (
     <div className={styles.main_container}>
@@ -39,12 +40,7 @@ const OccasionVoucher: React.FC<OccasionVoucherProps> = ({
           />
         </div>
         <div className={`mb-4 ${styles.description}`}>
-          <div className={`mb-3`}>
-            {voucherName}s are the perfect present for any special occasion,
-            offering a delightful way to share the joy with friends, family, or
-            colleagues. Whether it's a birthday, anniversary, holiday, or just
-            to say thank you, {voucherName}s are sure to bring a smile.
-          </div>
+          <div className={`mb-3`}>{occasionsDesc}</div>
         </div>
         <div className={styles.occasions_container}>
           <div className={`${styles.occasion_div} ${styles.reverse_div}`}>

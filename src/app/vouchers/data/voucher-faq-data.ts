@@ -1,65 +1,178 @@
 // Auto-generated FAQ data
 export type FAQ = {
-  question: string;
+  question: string
   answer: {
-    heading: string;
-    bullets?: string[];
-  }[];
-};
+    heading: string
+    bullets?: string[]
+  }[]
+}
 
 export type VoucherFaq = {
-  faqData: FAQ[];
-};
+  faqData: FAQ[]
+}
 
 export const VoucherFaqData: Record<string, VoucherFaq> = {
-  "nykaa-fashion-e-gift-card": {
+  fnp: {
     faqData: [
       {
-        question: "What is a gift card in Nykaa?",
+        question: "How to use an eGift Card on FNP?",
         answer: [
           {
             heading:
-              "Nykaa Gift Card is a prepaid card which can be used to make purchases on Nykaa platform and retail stores. The recipient can use the card amount to buy anything of their choice from the Nykaa website, app and retail store.",
+              "Log in to your FNP account and add your desired items to the cart. Check out and choose the “Discount Code” option under the payment methods. Enter the FNP E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can we Gift a Nykaa Gift Card?",
+        question: "What is the FNP E-Gift Card?",
         answer: [
           {
             heading:
-              "Yes, the Nykaa Gift Card can be gifted to friends, family and loved ones for different occasions like birthdays, anniversaries, farewells, and other special occasions or without any occasion.",
+              "The FNP E-Gift Card is an online gift card to avail discounts on the purchase of items on the website.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to check Nykaa Gift Card?",
+        question: "How can I redeem my eGift Card?",
         answer: [
           {
-            heading:
-              "Visit the Nykaa website or app and login to check the My Wallet section to know the gift card balance.",
+            heading: "Visit the FNP website and redeem the Gift Card.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How do I add a Nykaa Gift Card to my wallet?",
+        question: "How to add a card in FNP?",
         answer: [
           {
             heading:
-              "You can add the Gift Card amount to the My Wallet section by logging into the Nykaa website and app. Enter Nykaa brand voucher code and PIN to add the amount to the wallet.",
+              "Visit the FNP website. Log in with your credentials and add the gift card using its number and PIN under the gift card section.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How do I redeem my Nykaa b2b Gift Card?",
+        question: "How to use an FNP e-gift card?",
         answer: [
           {
             heading:
-              "You can redeem the Nykaa b2b Gift card on the website, app and retail stores. Simply buy the desired product and pay for it using the gift card amount.",
+              "FNP Gift Card can be used to buy items available on their website across different categories.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my FNP gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this FNP brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with an FNP gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, FNP gift cards can be redeemed online on their website. You can order products available on the FNP website and use the gift card against the product value.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer FNP gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, FNP brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my FNP Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the FNP Gift Card post its expiry date. The gift voucher must be redeemed on or before its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  nykaa: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Nykaa?",
+        answer: [
+          {
+            heading:
+              "Log in to your Nykaa account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Nykaa E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Nykaa Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Nykaa E-Gift Card is an online gift card to pay for the purchase of items on the website, app and their stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Nykaa website, app or store to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Nykaa?",
+        answer: [
+          {
+            heading:
+              "Log in to the Nykaa website or app. You can add the gift card using its number and PIN under the My Wallet section.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use Nykaa e-gift card?",
+        answer: [
+          {
+            heading:
+              "Nykaa Gift Card can be used to buy items available on the website, app and stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Nykaa gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Nykaa brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Nykaa gift card?",
+        answer: [
+          {
+            heading:
+              "The Nykaa E-Gift Voucher is valid only for 1 year from the date of purchase.",
             bullets: [],
           },
         ],
@@ -69,33 +182,35 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
         answer: [
           {
             heading:
-              "Yes, you can order products online using the Nykaa Gift Card.",
+              "Yes, Nykaa gift cards can be redeemed online on the website and app. You can order everything available on the Nykaa website and app against the gift card value.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Is it safe to buy Nykaa Gift Cards online?",
+        question: "Can I transfer Nykaa gift cards to cash?",
         answer: [
           {
             heading:
-              "It is safe to buy Nykaa Gift vouchers online and use them too to buy products available on the app, website and stores.\n",
+              "No, Nykaa brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I transfer Nykaa Gift Cards to cash?",
+        question: "What if my Nykaa Gift Card expires?",
         answer: [
           {
-            heading: "No, Nykaa Gift Cards cannot be converted to cash.",
+            heading:
+              "You cannot use the Nykaa Gift Card after its expiry date. The Nykaa E-Gift Voucher is valid for 1 year from the date of purchase.",
             bullets: [],
           },
         ],
       },
     ],
   },
-  "ajio-e-gift-card": {
+
+  ajio: {
     faqData: [
       {
         question: "How to purchase an AJIO Gift Card?",
@@ -192,6 +307,673 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
+  "flipkart-super-coins": {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Flipkart?",
+        answer: [
+          {
+            heading:
+              'Log in to your Flipkart account. During checkout, choose "Gift Cards/eVoucher". Enter the voucher number and PIN. Click "Submit" to apply.',
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Flipkart Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Flipkart E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Flipkart website and app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Flipkart?",
+        answer: [
+          {
+            heading:
+              "Log in to the Flipkart website or app. You can add the gift card using its number and PIN under the gift card section.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use Flipkart e-gift card?",
+        answer: [
+          {
+            heading:
+              "Flipkart Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Flipkart gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Flipkart brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Flipkart gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Flipkart gift cards can be redeemed online on the website and app. You can order everything available on the Flipkart website and app against the gift card value.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Flipkart gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Flipkart brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Flipkart Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Flipkart Gift Card after its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  "amazon-prime-shopping": {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Amazon?",
+        answer: [
+          {
+            heading:
+              "Log in to your Amazon account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Amazon E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Amazon Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Amazon E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Amazon website and app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card to Amazon?",
+        answer: [
+          {
+            heading:
+              "Log in to the Amazon website or app. You can add the gift card using its number and PIN under the Orders section.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use an Amazon e-gift card?",
+        answer: [
+          {
+            heading:
+              "Amazon Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Amazon gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Amazon brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Amazon gift card?",
+        answer: [
+          {
+            heading:
+              "The Amazon E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with an Amazon gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Amazon gift cards can be redeemed online on the website and app. You can order everything available on the Amazon website and app against the gift card value.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Amazon gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Amazon brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Amazon Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Amazon Gift Card after its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  zee5: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on ZEE5?",
+        answer: [
+          {
+            heading:
+              "Log in to your ZEE5 account and select the plan. Click on ‘Have a code’ and enter the gift voucher code under the payment methods. Enter the ZEE5 E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the ZEE5 Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The ZEE5 E-Gift Card is an online gift card to pay for the entertainment streaming platform.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the ZEE5 website to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in ZEE5?",
+        answer: [
+          {
+            heading:
+              "Log in to the ZEE5 website or app. You can add the gift card using its number and PIN on the website.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use ZEE5 e-gift card?",
+        answer: [
+          {
+            heading:
+              "ZEE5 Gift Card can be used to buy subscription on the website.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my ZEE5 gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this ZEE5 brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a ZEE5 gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, ZEE5 gift cards can be redeemed online on the website and app. You can stream everything available on the ZEE5 website and app against the gift card value.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer ZEE5 gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, ZEE5 brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my ZEE5 Gift Card expires?",
+        answer: [
+          {
+            heading: "You cannot use the ZEE5 Gift Card after its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  pvr: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on PVR?",
+        answer: [
+          {
+            heading:
+              "Log in to the PVR website and navigate to the “Gift Cards” section under your profile. Enter the PVR E-Gift Card number and PIN. Click on 'Check Balance' to view your available balance.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the PVR eGift Card?",
+        answer: [
+          {
+            heading:
+              "The PVR E-Gift Card is an online gift card to pay for the purchase of items on the website.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the PVR website to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in PVR?",
+        answer: [
+          {
+            heading:
+              "Log in to the PVR website. You can add the gift card using its number and PIN under the Gift Cards section.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a PVR e-gift card?",
+        answer: [
+          {
+            heading:
+              "PVR Gift Card can be used to buy tickets available on their website.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my PVR gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this PVR brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the PVR gift card?",
+        answer: [
+          {
+            heading:
+              "The PVR E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a PVR gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, PVR gift cards can be redeemed online on the website and app. You can order everything available on the PVR website and app against the gift card value.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer PVR gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, PVR brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my PVR Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the PVR Gift Card after its expiry date. The PVR E-Gift Voucher is valid for 1 year from the date of activation.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  "fan-code": {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Fancode?",
+        answer: [
+          {
+            heading:
+              "Log in to your Fancode account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Fancode E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Fancode Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Fancode E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Fancode website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Fancode?",
+        answer: [
+          {
+            heading:
+              "Log in to the Fancode website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Fancode e-gift card?",
+        answer: [
+          {
+            heading:
+              "Fancode Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Fancode gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Fancode brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Fancode gift card?",
+        answer: [
+          {
+            heading:
+              "The Fancode E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Fancode gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Fancode gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Fancode gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Fancode brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Fancode Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Fancode Gift Card after its expiry date. The Fancode E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  "sony-liv": {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Sony LIV?",
+        answer: [
+          {
+            heading:
+              "Log in to your Sony LIV account and select the subscription plan. Enter the voucher code in the given area to redeem the voucher.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Sony LIV eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Sony LIV E-Gift Card is an online gift card to pay for the subscription plans on the website.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Sony LIV website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Sony LIV?",
+        answer: [
+          {
+            heading:
+              "Log in to the Sony LIV website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Sony LIV gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Sony LIV brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Sony LIV gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Sony LIV gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Sony LIV gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Sony LIV brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  "amazon-prime": {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Amazon Prime?",
+        answer: [
+          {
+            heading:
+              "Log in to your Amazon Prime account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Amazon Prime E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Amazon Prime Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Amazon Prime E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Amazon Prime website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card to Amazon Prime?",
+        answer: [
+          {
+            heading:
+              "Log in to the Amazon Prime website or app. You can add the gift card using its number and PIN under the My Account section.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use an Amazon Prime e-gift card?",
+        answer: [
+          {
+            heading:
+              "Amazon Prime Gift Card can be used to buy items available on the website or app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question:
+          "How to transfer my Amazon Prime gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Amazon Prime brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with an Amazon Prime gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Amazon Prime gift cards can be redeemed online on the website and app. You can order everything available on the Amazon Prime website and app against the gift card value.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Amazon Prime gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Amazon Prime brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Amazon Prime Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Amazon Prime Gift Card after its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+
   "reliance-e-gift-card": {
     faqData: [
       {
@@ -1369,129 +2151,7 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
-  "amazon-shopping-vouchers": {
-    faqData: [
-      {
-        question: "How to save money with an Amazon Pay Gift Card?\n",
-        answer: [
-          {
-            heading:
-              "Amazon Pay E- Gift Cards come with upto  3% discount on the EnKash platform. You can save money while making a purchase through the Enkash platform.  ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I use the Amazon Pay Gift Card?\n",
-        answer: [
-          {
-            heading:
-              "You can use the gift card to purchase items on the Amazon website or app by applying the gift card code at checkout.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What are the benefits of an Amazon Pay Gift Card?\n",
-        answer: [
-          {
-            heading:
-              "The card offers flexibility, allowing the recipient to choose from millions of products on Amazon, including electronics, fashion, and groceries.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: " Is the Amazon Pay Gift Card free?\n",
-        answer: [
-          {
-            heading:
-              "No, the card must be purchased, but there are no additional service fees or hidden charges.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Is it safe to buy Amazon Pay Gift Cards online?\n",
-        answer: [
-          {
-            heading:
-              "Yes, buying gift cards through Amazon or EnKash is secure, and the cards are delivered electronically, reducing the risk of fraud.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What is the validity of the Amazon Pay Gift Card?\n",
-        answer: [
-          {
-            heading:
-              "Amazon Pay Gift Cards are valid for 12 months from the date of purchase.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I use the Amazon Pay Gift Card for online purchases?\n",
-        answer: [
-          {
-            heading:
-              "Yes, the gift card is redeemable for any product available on the Amazon website or app or other third-party merchants that allow the use of Amazon Pay.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can Amazon Pay Gift Cards be used for all orders?\n",
-        answer: [
-          {
-            heading:
-              "Amazon Pay Gift Cards can be used for most purchases, except for subscriptions or third-party seller services.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I refund or exchange my Amazon Pay Gift Card?\n",
-        answer: [
-          {
-            heading:
-              "No, Amazon Pay Gift Cards are non-refundable and non-exchangeable.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What if my Amazon Pay Gift Card expires?\n",
-        answer: [
-          {
-            heading:
-              "Once expired, the card cannot be revalidated, and the balance will be lost.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: " Can I transfer Amazon Pay Gift Cards to cash?\n",
-        answer: [
-          {
-            heading: "No, gift cards cannot be converted into cash.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I send my Amazon Pay  Gift Card code to someone else?\n",
-        answer: [
-          {
-            heading:
-              "Yes, you can share the gift card code digitally with others via email or message.",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
+
   "decathlon-sports-india-e-gift-card": {
     faqData: [
       {
@@ -1565,4 +2225,4 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
-};
+}

@@ -50,3 +50,4 @@ export { default as instantSettelmentIcon } from "./img/instant-settlement.-icon
 export { default as instantSettelmentImg } from "./img/instant-settlement.-Img.webp"
 export { default as affordabilityIcon } from "./img/afordability-suits-icon.svg"
 export { default as affordabilityImg } from "./img/afordability-suits-img.webp"
+export { default as CollectpaymentGif } from "./img/CollectPayment.gif"
