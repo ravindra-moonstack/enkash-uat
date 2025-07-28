@@ -455,7 +455,7 @@ const VoucherData: Record<string, Voucher> = {
   },
   "fan-code": {
     name: "Fancode Gift Card",
-    urlName: "fancode",
+    urlName: "fan-code",
     brandName: "Fancode",
     category: "movies-and-music",
     discount: 8.0,
@@ -511,7 +511,7 @@ const VoucherData: Record<string, Voucher> = {
   },
   "sony-liv": {
     name: "Sony LIV Gift Card",
-    urlName: "sonyliv",
+    urlName: "sony-liv",
     brandName: "Sony LIV",
     category: "movies-and-music",
     discount: 54.0,
@@ -563,7 +563,7 @@ const VoucherData: Record<string, Voucher> = {
   },
   "amazon-prime": {
     name: "Amazon Prime Gift Card",
-    urlName: "amazonprime",
+    urlName: "amazon-prime",
     brandName: "Amazon Prime",
     category: "movies-and-music",
     discount: 12.0,
@@ -616,12 +616,358 @@ const VoucherData: Record<string, Voucher> = {
     festivals:
       "The festive season is different for different people. Give them the choice to pick anything using the Amazon Prime E-Gift Card during the festive season.",
   },
-  "swiggy-gift-card": {
-    name: "Swiggy Gift Card",
-    urlName: "swiggy-gift-card",
+  westside: {
+    name: "Westside Gift Card",
+    urlName: "westside",
+    brandName: "Westside",
+    category: "apparels",
+    discount: 10.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Westside Gift Card",
+    description:
+      "This Gift Card is every shopping lover's dream. For those who are always on the lookout for new and chic clothes, the Westside E-Gift Card is a perfect pick. You can find everything under the same roof, from clothing to home decor and beauty products, at any Westside store. Use this Gift Card to get yourself your favorite thing.",
+    aboutCompany:
+      "Westside is a popular modern retail outlet offering trendy fashion apparel, footwear, and accessories for men, women, and kids. They also stock homeware, beauty products, and toys. Known for its dynamic collection and reasonable prices, Westside caters to a young, fashion-conscious audience seeking a one-stop shopping destination.",
+    calculatorTitle: "Best Westside Gift Cards",
+    calculatorDescription:
+      "Westside Gift Cards can easily be the best gift for a shopaholic. Someone who loves to be updated with the latest trends in fashion, beauty, and home decor, the Westside E-Gift Card can be your best pick. This gift card unlocks a seamless shopping experience for the recipient.",
+    howToBuyTitle: "How to Buy a Westside Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Westside Gift Card?",
+    howToRedeemDesc:
+      "Westside Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit the nearest Westside outlet to redeem this E-Gift Card. Find the nearest store here.",
+      "Confirm the acceptance of the Gift Card at the store before making any purchase.",
+      "Add the products you want to buy to the cart.",
+      "Present your Gift Card details to the cashier during billing & pay any balance amount by cash or card.",
+    ],
+    checkBalanceTitle: "How to Check Westside Gift Card Balance",
+    checkBalanceDesc:
+      "Westside Gift Cards balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Open your SMS app.",
+      "Type WS followed by your card number.",
+      "Send it to 09094774499 to check your balance.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Westside Gift Card",
+    termsAndConditionSteps: [
+      "Westside Gift Card is redeemable only at Westside stores in India for merchandise, not valid at in-store cafés or food courts.",
+      "The gift card is valid for 1 year from the date of issue; it cannot be extended.",
+      "This is a single-use only; partial redemption is not allowed.",
+      "If the bill exceeds the voucher value, the balance must be paid by the customer.",
+      "It is usable during sales, promotions, and offers.",
+      "This card is not exchangeable for cash, credit notes, or other gift cards.",
+      "If lost, damaged, or cancelled, this voucher won’t be replaced or refunded.",
+      "All disputes are subject to Mumbai jurisdiction.",
+      "This card is a property of Trent Limited, which may amend T&Cs without notice.",
+      "For more info, visit www.mywestside.com.",
+    ],
+    occasionsTitle: "Westside Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, a Westside Gift Card is always a thoughtful idea.",
+    birthdays:
+      "Nothing is better than gifting a Westside Gift Card on birthdays. This exclusive Westside E-Gift Card can make their day memorable.",
+    anniversary:
+      "The perfect anniversary gift for a couple, the Westside Gift Voucher is something they will appreciate on their special occasion.",
+    festivals:
+      "The recipient of the Westside gift card will thank you for making the festive season better for them.",
+  },
+  blackberrys: {
+    name: "Blackberrys Gift Card",
+    urlName: "blackberrys",
+    brandName: "Blackberrys",
+    category: "apparels",
+    discount: 10.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Blackberrys Gift Card",
+    description:
+      "The Blackberrys E-Gift Card is the perfect choice for the modern man who appreciates sharp style and refined elegance. Whether it’s a birthday, anniversary, festive celebration, or corporate reward, this digital gift unlocks premium menswear from one of India’s leading fashion brands. From crisp formals to smart casuals, accessories, and footwear, let your loved ones pick exactly what fits their taste.",
+    aboutCompany:
+      "One of India’s leading premium menswear brands, Blackberrys is known for redefining modern Indian fashion with a perfect blend of style, sophistication, and innovation. Blackberrys is a go-to destination for the progressive, confident Indian man who values fit, fabric, and function.",
+    calculatorTitle: "Best Blackberrys Gift Cards",
+    calculatorDescription:
+      "Blackberrys Gift Card is a premium gift for men with a taste. It adds to the aura and complements the personality. You can surely count on this Blackberrys Gift Card for all special occasions or to make any ordinary day extraordinary for the recipient.",
+    howToBuyTitle: "How to Buy a Blackberrys Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Blackberrys Gift Card?",
+    howToRedeemDesc:
+      "Blackberrys Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "This Gift Card is redeemable only at Blackberrys exclusive stores in India.",
+      "The recipient needs to present the original email containing the valid Gift Card at the time of purchase.",
+      "If the purchase amount exceeds the card value, the balance must be paid using other available payment modes at the Blackberrys stores.",
+    ],
+    checkBalanceTitle: "How to Check Blackberrys Gift Card Balance",
+    checkBalanceDesc:
+      "Blackberrys Gift Card balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Visit any Blackberrys exclusive store in India.",
+      "Present the valid gift card at the time of purchase, either in its original email form or as a physical copy.",
+      "The gift card balance cannot be checked online or through customer service channels.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Blackberrys Gift Card",
+    termsAndConditionSteps: [
+      "This gift card is redeemable only at Blackberrys' exclusive stores in India.",
+      "The Gift Card must be presented in its original email form at the time of redemption.",
+      "It is valid for 1 year from the date of issue and is issued in Indian Rupees.",
+      "It can be redeemed only once and in full; no partial redemption, refunds, or credit notes.",
+      "If the purchase value exceeds the card amount, the difference must be paid by the bearer.",
+      "Carries no value until activated; available in fixed denominations of ₹500, ₹1000, ₹2500, ₹5000, ₹7500, and ₹10,000.",
+      "The maximum card value is ₹10,000, and it cannot be transferred, reloaded, or redeemed for cash.",
+      "There is no replacement or compensation for lost or misused cards; protect the card details.",
+      "Blackberrys reserves the right to amend the terms without prior notice.",
+      "All disputes are subject to the exclusive jurisdiction of the Delhi courts.",
+      "For queries, contact: customersupport@blackberrys.com",
+    ],
+    occasionsTitle: "Blackberrys Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Whether it’s a birthday, anniversary, festival, or a simple appreciation, a Blackberrys Gift Card is always a thoughtful choice.",
+    birthdays:
+      "Nothing is better than gifting a Blackberrys Gift Card to someone who appreciates class and style.",
+    anniversary:
+      "The perfect anniversary gift, the Blackberrys Gift Voucher is sure to bring a smile to their face.",
+    festivals:
+      "The recipient of the Blackberrys gift card will thank you for making the festive season better for them.",
+  },
+  levis: {
+    name: "Levi’s Gift Card",
+    urlName: "levis",
+    brandName: "Levi’s",
+    category: "apparels",
+    discount: 10.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Levi’s Gift Card",
+    description:
+      "Give timeless fashion with the Levi’s E-Gift Card. Perfect for birthdays, festivals, or to show appreciation, a Levi’s Gift Card can be something you can think about. Whether it’s classic jeans, smart casuals, or stylish essentials, this card lets your loved ones choose what fits them best.",
+    aboutCompany:
+      "One of the most recognized and trusted fashion brands in the world, Levi’s pioneered the blue jean and has been synonymous ever since then. Levi’s continues to redefine casual wear with its signature range of denim, jackets, shirts, t-shirts, and accessories, all designed to fit every body, style, and moment.",
+    calculatorTitle: "Best Levi’s Gift Cards",
+    calculatorDescription:
+      "Levi’s Gift Cards can easily be the best gift for a denim lover. Someone who loves timeless fashion will surely appreciate this thoughtful gift.",
+    howToBuyTitle: "How to Buy a Levi’s Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Levi’s Gift Card?",
+    howToRedeemDesc:
+      "Levi’s Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit the Levi's store near you.",
+      "Confirm whether the Gift Card will be accepted or not.",
+      "Pick your favorite products and proceed to billing.",
+      "Show your gift card details to the cashier.",
+      "Pay any remaining balance using cash or card.",
+    ],
+    checkBalanceTitle: "How to Check Levi’s Gift Card Balance",
+    checkBalanceDesc:
+      "Levi’s Gift Card balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Go to your SMS app.",
+      "Type LEVIGC followed by your 16-digit card number.",
+      "Send the message to 9841646669.",
+      "You’ll receive details of your gift card balance and expiry.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Levi’s Gift Card",
+    termsAndConditionSteps: [
+      "The Levi’s Gift Card is redeemable only for merchandise at participating Exclusive Levi’s Stores in India. Check stores here.",
+      "The gift card is not valid at Levi’s Factory Stores and cannot be used on discounted articles during the EOSS/Sale period for cards purchased on or after 3rd Feb 2025.",
+      "It is valid for 6 months from the date of activation and can be redeemed only once.",
+      "The card balance cannot be redeemed for cash; merchandise only.",
+      "The card is transferable, but will not be replaced if lost or stolen.",
+      "This E-Gift Card remains the property of Levi’s and must be returned if requested.",
+      "The legal disputes will be subject to the courts in Bangalore.",
+      "E-Gift Cards are normally delivered instantly, but may take up to 24 hours in case of system delays.",
+      "There will be no returns or refunds on gift cards/vouchers sold via enkash.in; refer to enkash.in/faq for full refund policy.",
+    ],
+    occasionsTitle: "Levi’s Gift Cards for Different Occasions",
+    occasionsDesc:
+      "A Levi’s Gift Card is an easy gift for multiple occasions, be it a birthday, an anniversary, a festival, or a simple gesture of appreciation. A Levi's Gift Card is always a thoughtful way to make the recipient smile.",
+    birthdays:
+      "What better than gifting a Levi's Gift Card to a fashion enthusiast? Get them this exclusive Levi's E-Gift Card and make their day memorable.",
+    anniversary:
+      "The perfect anniversary gift for a couple who is into styling and fashion. The Levi's Gift Voucher is something they will appreciate on their special occasion.",
+    festivals:
+      "The recipient of the Levi's gift card will thank you for making the festive season better for them.",
+  },
+  pantaloons: {
+    name: "Pantaloons E-Gift Card",
+    urlName: "pantaloons",
+    brandName: "Pantaloons",
+    category: "apparels",
+    discount: 10.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Pantaloons E Gift Card",
+    description:
+      "The Pantaloons E-Gift Card can be your go-to choice for gifting fashion that fits every personality and occasion. This card lets your loved ones shop from a wide range of apparel, footwear, accessories, and more.",
+    aboutCompany:
+      "With hundreds of stores across India, Pantaloons offer a seamless shopping experience across men’s, women’s, and kids’ fashion, all under one roof. Pantaloons blends quality with trend-forward designs to make fashion accessible and enjoyable for all.",
+    calculatorTitle: "Best Pantaloons Gift Cards",
+    calculatorDescription:
+      "Pantaloons Gift Card is an easy pick for any occasion. Perfect for individuals and families, it is a dependable gift that will make the recipient appreciate it.",
+    howToBuyTitle: "How to Buy a Pantaloons Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Pantaloons Gift Card?",
+    howToRedeemDesc:
+      "Pantaloons Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit any nearby Pantaloons outlet.",
+      "Confirm if the Gift Card is accepted.",
+      "Pick the products you want to purchase.",
+      "Show your Gift Card details during final billing.",
+      "If the bill exceeds the Gift Card value, pay the remaining amount using cash or card.",
+    ],
+    checkBalanceTitle: "How to Check Pantaloons Gift Card Balance",
+    checkBalanceDesc:
+      "Pantaloons Gift Cards balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Visit the nearest Pantaloons store.",
+      "Show the gift card during purchase.",
+      "Ask the cashier for the balance available.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Pantaloons Gift Card",
+    termsAndConditionSteps: [
+      "The Pantaloons E-Gift Card is redeemable at all Pantaloons outlets across India. Check stores here.",
+      "The card is not valid at shop-in-shops or on jewellery items.",
+      "The gift card can be redeemed only once and must be used in full by the bearer. No refunds or credit notes will be issued for any unused balance.",
+      "The card is valid for 1 year from the date of activation. There will be no cancellation or replacement once the card is issued.",
+      "If your purchase exceeds the card value, the balance must be paid separately.",
+      "Pantaloons is not liable for misuse, loss, or theft of this gift card.",
+      "Any use of the card is considered a valid discharge of Pantaloons’ liability.",
+      "Pantaloons reserves the right to change terms without prior notice.",
+      "All disputes are subject to the courts in Mumbai.",
+      "E-Gift Cards are usually delivered instantly, but may take 24–48 hours due to system delays.",
+      "No returns or refunds on gift cards purchased via enkash.in — check enkash.in/faq for refund policy.",
+    ],
+    occasionsTitle: "Pantaloons Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Whether it’s a birthday, anniversary, festival, or a simple gesture to appreciate, a Pantaloons Gift Card is an ideal pick to make anyone smile.",
+    birthdays:
+      "Get this exclusive Pantaloons E-Gift Card to make their special day memorable.",
+    anniversary:
+      "The perfect anniversary gift for a couple, the Pantaloons Gift Voucher is something they will appreciate on their special occasion.",
+    festivals:
+      "The recipient of the Pantaloons gift card will thank you for making the festive season better for them.",
+  },
+  jockey: {
+    name: "Jockey E-Gift Card",
+    urlName: "jockey",
+    brandName: "Jockey",
+    category: "apparels",
+    discount: 13.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Jockey E-Gift Card",
+    description:
+      "Jockey E-Gift Card is the perfect gift of comfort and style. Whether it’s innerwear, outerwear, loungewear, or kidswear, the Jockey E-Gift Voucher lets your loved ones choose what they truly want. An ideal pick for birthdays, festivals and instant gifting, it allows the recipient to choose from a wide range of premium apparels.",
+    aboutCompany:
+      "Jockey is a global leader in comfort apparel, sold in over 140 countries and recognized as one of the world’s most loved brands. Jockey has revolutionized innerwear through continuous product and marketing innovation. Building on its strong foundation, the brand has expanded into outerwear with offerings like T-shirts, jackets, trackpants, loungewear, socks, towels, tank tops, capris, shorts, and a full kidswear range.",
+    calculatorTitle: "Best Jockey Gift Cards",
+    calculatorDescription:
+      "Best Jockey Gift Cards offer the perfect blend of comfort, style, and flexibility, making them ideal for any occasion. Jockey E-Gift Cards let your loved ones or colleagues choose from a wide range of premium innerwear, outerwear, loungewear, and kidswear. These digital gift cards come with easy delivery and secure checkout, ensuring a hassle-free gifting experience that never goes out of style.",
+    howToBuyTitle: "How to Buy a Jockey Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem a Jockey Gift Card?",
+    howToRedeemDesc:
+      "Jockey Gift Voucher can be redeemed using the following steps on its website:",
+    howToRedeemSteps: [
+      "Visit www.jockeyindia.com",
+      "Log in and add your selected products to the cart",
+      "Proceed to checkout and choose Jockey Gift Card as your payment method",
+      "Enter the card number and PIN to redeem",
+      "Pay any remaining amount using other payment options",
+    ],
+    checkBalanceTitle: "How to Check Jockey Gift Card Balance",
+    checkBalanceDesc:
+      "Jockey Gift Cards balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Log in to your Jockey account on the website",
+      "Go to the Gift Cards section",
+      "Enter the gift card number and PIN",
+      "Check gift card balance",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Jockey Gift Card",
+    termsAndConditionSteps: [
+      "Jockey Gift Cards can only be redeemed online on e-commerce website and mobile app for listed merchandise and not at Jockey offline stores (EBOs).",
+      "This Gift Card is not legal tender and cannot replace a credit/debit card.",
+      "The person holding the card is considered its rightful beneficiary.",
+      "It cannot be used at offline stores, multi-brand outlets, departmental stores, or other online marketplaces.",
+      "The Gift Card is valid for 1 year from the date of activation (purchase). Expired cards will not be revalidated.",
+      "Only one Gift Card can be used per invoice. Any lost, damaged, or defaced cards will not be reissued or compensated.",
+      "For any redemption or usage issues, please contact Jockey customer support. The company’s decision will be final.",
+      "All disputes are subject to Mumbai jurisdiction only.",
+      "This E-Gift Card cannot be refunded, transferred and exchanged for cash or credit.",
+      "Jockey gift card can be used only once and meant solely for the recipient. Any unused balance will be forfeited and will not be refunded.",
+      "Page Industries Ltd. (“PAGE”) reserves the right to modify the terms without prior notice.",
+      "PAGE is not responsible for lost, stolen, damaged, or unauthorized use of the card.",
+      "Contact Pine Labs: support@enkash.in | 080-69806393 for support.",
+      "All disputes are subject to the jurisdiction of courts in Bangalore, Karnataka. Final interpretation rests with PAGE.",
+    ],
+    occasionsTitle: "Jockey Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, a Jockey Gift Card is always a thoughtful gift.",
+    birthdays: "A Jockey Gift Card is a useful gift for birthdays.",
+    anniversary:
+      "Jockey Gift Voucher is something the couple will appreciate on their special occasion.",
+    festivals:
+      "The recipient of the Jockey gift card will thank you for making the festive season better for them.",
+  },
+  mcdonalds: {
+    name: "McDonald’s Gift Card",
+    urlName: "mcdonalds",
+    brandName: "McDonald’s",
+    category: "food-and-beverages",
+    discount: 13.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "McDonald’s Gift Card",
+    description:
+      "The ultimate treat for food lovers! Whether it’s a quick bite, a family meal, or a snack break, the McDonald’s Gift Card makes every moment delicious. Valid at McDonald’s restaurants across South and West India, it offers the freedom to choose from your favorite burgers, fries, desserts, and more. Perfect for gifting, it’s a simple way to share smiles and great taste.",
+    aboutCompany:
+      "One of the world’s leading fast-food chains, McDonald’s is known for its iconic menu. The brand blends global consistency with local flavors to cater to diverse tastes. With a strong focus on quality, affordability, and innovation, McDonald’s continues to be a go-to destination for quick, delicious meals and memorable family experiences.",
+    calculatorTitle: "Best McDonald’s Gift Cards",
+    calculatorDescription:
+      "Best McDonald’s Gift Cards are a fun and flavorful way to celebrate any occasion, be it birthdays, festive treats, employee rewards, or just a spontaneous surprise. These cards let your loved ones enjoy their favorite McDonald’s meals.",
+    howToBuyTitle: "How to Buy a McDonald’s Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem McDonald’s Gift Card?",
+    howToRedeemDesc:
+      "McDonald’s Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit the McDonald’s stores in West and South of India.",
+      "Select the items you want to purchase.",
+      "Enter the gift card details to pay for the purchase.",
+      "If the balance is short, use your card or cash to pay for the remaining amount.",
+    ],
+    checkBalanceTitle: "How to Check McDonald’s Gift Card Balance",
+    checkBalanceDesc:
+      "McDonald's Gift Cards balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Open the SMS app in your phone.",
+      "SMS BAL <space> 16-digit Card Number to 9975933517.",
+      "You can also check balance by visiting enkash.in/balenq.",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for McDonald’s Gift Card",
+    termsAndConditionSteps: [
+      "This gift card is valid for 1 year from the date of purchase and can be used multiple times.",
+      "The gift card is available only in denominations listed at the time of purchase.",
+      "Usable only at McDonald’s restaurants in South and West India (not valid on McDelivery, SOK, or third-party apps).",
+      "One card can be used per order; remaining balance (if any) must be paid in cash.",
+      "The gift voucher is not refundable, exchangeable, refillable, or cancellable once purchased.",
+      "Lost or expired cards cannot be reissued or refunded.",
+      "McDonald’s is not liable for non-acceptance due to technical issues or system errors.",
+      "Card usage may be affected by force majeure events (e.g., strikes, lockdowns).",
+      "McDonald’s may withdraw the card or modify terms without prior notice.",
+      "All disputes are subject to Mumbai court jurisdiction.",
+      "E-Gift Cards are typically delivered instantly but may take up to 24–48 hours in rare cases.",
+      "For queries, contact: myfeedback@mcdonaldsindia.com",
+    ],
+    occasionsTitle: "McDonald’s Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Be it a birthday, anniversary, festival, or a simple gesture to appreciate, a McDonald’s Gift Card is a great way to pamper anyone.",
+    birthdays:
+      "A McDonald’s Gift Card can make anyone’s birthday better and memorable.",
+    anniversary:
+      "McDonald’s Gift Voucher is the perfect anniversary gift for a couple who would like to go on a McDonald’s date to celebrate their special day.",
+    festivals:
+      "The recipient of the McDonald’s gift card will thank you for making the festive season better for them.",
+  },
+  swiggy: {
+    name: "Swiggy E-Gift Card",
+    urlName: "swiggy",
     brandName: "Swiggy",
-    category: "e-commerce",
-    discount: 0,
+    category: "food-and-beverages",
+    discount: 3,
     backgroundImg: "hehe",
     descriptionTitle: "Swiggy Money E-Gift Card ",
     description:
@@ -674,7 +1020,6 @@ const VoucherData: Record<string, Voucher> = {
     birthdays:
       "This makes perfect sense for birthdays; consider a Swiggy Gift Card, so that the person celebrating their birthday can enjoy their favourite food any time they want. This approach allows the beneficiaries to choose for themselves, adding to making the day even better.",
   },
-
   "luxe-e-gift-card": {
     name: "LUXE E-Gift Card",
     urlName: "luxe-e-gift-card",

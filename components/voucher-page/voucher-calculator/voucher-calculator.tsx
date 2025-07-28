@@ -1,26 +1,26 @@
-"use client";
-import React, { useState } from "react";
-import styles from "./voucher-calculator.module.scss";
-import { whiteCart } from "..";
-import Image from "next/image";
-import { titleCae } from "@/common/utils/stringUtils";
+"use client"
+import React, { useState } from "react"
+import styles from "./voucher-calculator.module.scss"
+import { whiteCart } from ".."
+import Image from "next/image"
+import { titleCae } from "@/common/utils/stringUtils"
 
 interface VoucherOption {
-  mrp: number;
+  mrp: number
 }
 
 interface SavingsCalculatorProps {
-  voucherName: string;
-  category: string;
-  savingsPercentage: number;
-  voucherImg?: string;
+  voucherName: string
+  category: string
+  savingsPercentage: number
+  voucherImg?: string
 }
 
 const voucherOptions: VoucherOption[] = [
   { mrp: 250 },
   { mrp: 500 },
   { mrp: 1000 },
-];
+]
 
 const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
   voucherName,
@@ -30,28 +30,28 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
 }) => {
   // Intially Select 2 vouchers
   const [quantities, setQuantities] = useState<number[]>(
-    new Array(voucherOptions.length - 1).fill(0).concat(2)
-  );
+    new Array(voucherOptions.length - 1).fill(1).concat(2)
+  )
 
   const handleQuantityChange = (index: number, change: number) => {
-    const newQuantities = [...quantities];
-    newQuantities[index] = Math.max(0, newQuantities[index] + change);
-    setQuantities(newQuantities);
-  };
+    const newQuantities = [...quantities]
+    newQuantities[index] = Math.max(1, newQuantities[index] + change)
+    setQuantities(newQuantities)
+  }
 
-  const totalCount = quantities.reduce((acc, quantity) => acc + quantity, 0);
+  const totalCount = quantities.reduce((acc, quantity) => acc + quantity, 0)
 
   const calculateSavings = (mrp: number) => {
-    return (mrp * savingsPercentage) / 100;
-  };
+    return (mrp * savingsPercentage) / 100
+  }
 
   const totalSavings = voucherOptions.reduce((acc, option, index) => {
-    return acc + calculateSavings(option.mrp) * quantities[index];
-  }, 0);
+    return acc + calculateSavings(option.mrp) * quantities[index]
+  }, 0)
 
   const totalAmount = voucherOptions.reduce((acc, option, index) => {
-    return acc + option.mrp * quantities[index];
-  }, 0);
+    return acc + option.mrp * quantities[index]
+  }, 0)
 
   return (
     <div className={styles.savingsCalculator}>
@@ -145,7 +145,7 @@ const SavingsCalculator: React.FC<SavingsCalculatorProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SavingsCalculator;
+export default SavingsCalculator

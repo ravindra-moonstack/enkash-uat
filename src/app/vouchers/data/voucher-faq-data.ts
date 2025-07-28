@@ -973,6 +973,552 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
+  westside: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Westside?",
+        answer: [
+          {
+            heading:
+              "Visit your nearest Westside store. Confirm the applicability of the Westside E-Gift Card and use it to avail a discount on the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Westside Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Westside E-Gift Card is an online gift card to pay for the purchase of items at the Westside store.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Westside store to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Westside e-gift card?",
+        answer: [
+          {
+            heading:
+              "Westside Gift Card can be used to buy items available in the listed stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Westside gift card?",
+        answer: [
+          {
+            heading:
+              "The Westside E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Westside gift card?",
+        answer: [
+          {
+            heading:
+              "No, you cannot order or redeem online using a Westside gift card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Westside Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Westside Gift Card after its expiry date. The Westside E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  blackberrys: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Blackberry?",
+        answer: [
+          {
+            heading:
+              "A Blackberry gift card can only be used at their exclusive stores in India.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Blackberry Gift Card?",
+        answer: [
+          {
+            heading:
+              "The Blackberry E-Gift Card is an online gift card to pay for the purchase of items in their stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Blackberry stores to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Blackberry e-gift card?",
+        answer: [
+          {
+            heading:
+              "Blackberry Gift Card can be used to buy items available at their stores in India.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Blackberry gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Blackberry brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Blackberry gift card?",
+        answer: [
+          {
+            heading:
+              "The Blackberry E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Blackberry gift card?",
+        answer: [
+          {
+            heading:
+              "No, Blackberry gift cards cannot be redeemed online on the website.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Blackberry gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Blackberry brand vouchers cannot be converted against cash.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Blackberry Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Blackberry Gift Card after its expiry date. The Blackberry E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  levis: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Levi’s?",
+        answer: [
+          {
+            heading: "Visit the Levi’s store to redeem the E-Gift Voucher.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Levi’s eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Levi's E-Gift Card is an online gift card to pay for the purchase of items in their store.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Levi's store to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Levi’s e-gift card?",
+        answer: [
+          {
+            heading:
+              "Levi's Gift Card can be used to buy items available at their store.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Levi’s gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Levis brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Levi’s gift card?",
+        answer: [
+          {
+            heading:
+              "The Levi's E-Gift Voucher is valid only for 6 months from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Levi’s gift card?",
+        answer: [
+          {
+            heading:
+              "No, Levi's gift cards cannot be redeemed online on the website.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Levi’s gift cards to cash?",
+        answer: [
+          {
+            heading: "No, Levi’s brand vouchers cannot be converted into cash.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Levi's Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Levi's Gift Card after its expiry date. The Levi's E-Gift Voucher is valid for 6 months from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  pantaloons: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Pantaloons?",
+        answer: [
+          {
+            heading:
+              "Visit your nearest Pantaloons store and redeem the gift card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Pantaloons eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Pantaloons E-Gift Card is an online gift card to pay for the purchase of items in their stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Pantaloons store to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Pantaloons e-gift card?",
+        answer: [
+          {
+            heading:
+              "Pantaloons Gift Card can be used to buy items available at their stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Pantaloons gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Pantaloons brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Pantaloons gift card?",
+        answer: [
+          {
+            heading:
+              "The Pantaloons E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Pantaloons gift card?",
+        answer: [
+          {
+            heading:
+              "No, Pantaloons gift cards cannot be redeemed online on the website.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Pantaloons gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Pantaloons brand vouchers cannot be converted against cash.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Pantaloons Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Pantaloons Gift Card after its expiry date. The Pantaloons E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  jockey: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Jockey?",
+        answer: [
+          {
+            heading:
+              "Log in to your Jockey account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Jockey E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Jockey Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Jockey E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Jockey website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Jockey?",
+        answer: [
+          {
+            heading:
+              "Log in to the Jockey website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Jockey e-gift card?",
+        answer: [
+          {
+            heading:
+              "Jockey Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Jockey gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Jockey brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Jockey gift card?",
+        answer: [
+          {
+            heading:
+              "The Jockey E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Jockey gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Jockey gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Jockey gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Jockey brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Jockey Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Jockey Gift Card after its expiry date. The Jockey E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  mcdonalds: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on McDonalds?",
+        answer: [
+          {
+            heading:
+              "Visit the McDonald’s stores in West and South of India and choose the items you want to buy. Enter the gift card details to make the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the McDonalds eGift Card?",
+        answer: [
+          {
+            heading:
+              "The McDonalds E-Gift Card is an online gift card to pay for the purchase of items at their outlets.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the McDonalds stores to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a McDonalds e-gift card?",
+        answer: [
+          {
+            heading:
+              "McDonalds Gift Card can be used to buy items available at their outlets.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my McDonalds gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this McDonalds brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the McDonalds gift card?",
+        answer: [
+          {
+            heading:
+              "The McDonalds E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a McDonalds gift card?",
+        answer: [
+          {
+            heading:
+              "No, McDonalds gift cards cannot be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer McDonalds gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, McDonalds brand vouchers cannot be converted against cash.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my McDonalds Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the McDonalds Gift Card after its expiry date. The McDonalds E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
 
   "reliance-e-gift-card": {
     faqData: [
@@ -1078,121 +1624,110 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
-  "swiggy-e-gift-card": {
+  swiggy: {
     faqData: [
       {
-        question: "How do I redeem a Swiggy Gift Card?",
+        question: "How to use an eGift Card on Swiggy?",
         answer: [
           {
             heading:
-              "To use the card, the user must input the voucher code in the Swiggy app, and this can be done under the \u2018wallet\u2019 section prior to placing any order.",
+              "Log in to your Swiggy account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Swiggy E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I replace my Swiggy Gift Card if I lose it?",
+        question: "What is the Swiggy Channel eGift Card?",
         answer: [
           {
             heading:
-              "  In case of a lost Swiggy Gift Card, the customers can reach out to Swiggy customer support with their order summary and important information. Nevertheless, such cards are not often replaceable, hence it becomes important to secure the cards",
+              "The Swiggy E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How are Swiggy Gift Cards limited in use?",
+        question: "How can I redeem my eGift Card?",
         answer: [
           {
-            heading:
-              "Swiggy gift cards can only be redeemed for orders placed from within the territory of India over its mobile app.",
+            heading: "Visit the Swiggy website or app to redeem the Gift Card.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How should I proceed if my Swiggy Gift Card code isn\u2019t working?",
+        question: "How to add a card in Swiggy?",
         answer: [
           {
             heading:
-              "If your Swiggy Gift Card code is not working, please verify if you have entered the proper code. If you did, then please contact the Swiggy customer support team. \n",
+              "Log in to the Swiggy website or app. You can add the gift card using its number and PIN.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I transfer my Swiggy Gift Card to someone else?",
+        question: "How to use a Swiggy e-gift card?",
         answer: [
           {
-            heading: "A voucher code can be shared with another individual.",
+            heading:
+              "Swiggy Gift Cards can be used to buy items available on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How long is the validity of Swiggy Gift Cards?",
+        question: "How to transfer my Swiggy gift card to another account?",
         answer: [
           {
             heading:
-              "Swiggy Gift Cards are valid for a period of one year from the date of purchase. ",
+              "You can gift this Swiggy brand voucher to your near and dear ones. You cannot transfer it.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I combine my Swiggy Gift Card with discount offers?",
+        question: "What is the validity of the Swiggy gift card?",
         answer: [
           {
             heading:
-              "Orders can be made using Swiggy Gift Cards along with any available discounts or promotional offers, thereby reducing the cost of the order",
+              "The Swiggy E-Gift Voucher is valid only for 1 year from the date of adding it to the wallet.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How quickly will I receive my Swiggy Gift Card after purchase?",
+        question: "Can I order online with a Swiggy gift card?",
         answer: [
           {
             heading:
-              "On the purchase of Swiggy gift cards these gift cards are delivered by email and WhatsApp immediately. ",
+              "Yes, Swiggy gift cards can be redeemed online on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How many Swiggy Gift Cards can I buy at once?",
+        question: "Can I transfer Swiggy gift cards to cash?",
         answer: [
           {
             heading:
-              "bolt.enkash.com portal has no restrictions on how many Swiggy gift cards you can purchase.",
+              "No, Swiggy brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I check if my Swiggy Gift Card has expired?",
+        question: "What if my Swiggy Gift Card expires?",
         answer: [
           {
             heading:
-              "In order to ensure the Swiggy Gift Card is still active, one may access the Swiggy application and go to the \u2018wallet\u2019 section where the expiry date will be indicated.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How do Swiggy Gift Cards save money?",
-        answer: [
-          {
-            heading:
-              "Since Swiggy Gift Cards purchased through EnKash, offer a maximum discount of upto 3%. Therefore, they are an affordable option to be gifted to others.",
+              "You cannot use the Swiggy Gift Card after its expiry date. The Swiggy E-Gift Voucher is valid for 1 year from the date of adding it to the wallet.",
             bullets: [],
           },
         ],
       },
     ],
   },
+
   "mmt-wedding-e-gift-card": {
     faqData: [
       {
