@@ -1,5 +1,5 @@
-@import "../../../styles/mixin";
-@import "../../../styles/variables";
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
 
 .main_container {
   padding: 0px;
