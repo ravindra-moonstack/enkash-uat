@@ -71,7 +71,7 @@
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
-  padding: 50px 20px;
+  padding: 50px 20px !important;
   @include for-laptops {
    padding: 90px 20px;
   }
@@ -185,7 +185,7 @@
     padding-top: 20px;
     margin-bottom: 20px !important;
     @include for-laptops {
-      padding-left: 100px;
+      padding-left: 88px;
     }
   }
  

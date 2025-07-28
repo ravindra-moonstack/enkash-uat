@@ -73,7 +73,7 @@
   position: relative;
   padding: 50px 20px;
   @include for-laptops {
-   padding: 90px 20px;
+   padding: 50px 20px;
   }
   .section {
     margin: auto;
@@ -246,7 +246,7 @@
   position: relative;
   padding: 50px 20px;
   @include for-laptops {
-    padding: 90px 20px;
+    padding: 50px 20px;
   }
   .get_started_button {
     padding: 6px;

@@ -180,10 +180,11 @@ const PaymentLink = (): React.JSX.Element => {
                 {
                   title: "Simplify Payments, Amplify Business",
                   color: "color-white",
+                  
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-5"
             />
           </div>
 
@@ -427,7 +428,7 @@ const PaymentLink = (): React.JSX.Element => {
                   />
           </div>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 ">
               <div>
                 <SecondFaqHtml SecondfaqData={SecondfaqData} />
               </div>
