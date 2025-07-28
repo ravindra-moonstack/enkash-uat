@@ -6,6 +6,7 @@ import Image from "next/image"
 import blueArrow from "./blue-arrrow.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 import { whiteArrow } from "../all-in-one-policy"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 interface howDoesItWorkProps {
   dataSets: any
@@ -47,10 +48,30 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
                 ) : null}
                 <div className="text-start">
                   <div className={styles.title}>
-                    {dataSets[currentData].title}
+                    <DynamicHeading
+                      content={[
+                        {
+                          title:dataSets[currentData].title,
+                          color: "color-white",
+                        },
+                      ]}
+                      headingTag="h5"
+                      className="f-5 mb-2"
+                    />
+                    {/* {dataSets[currentData].title} */}
                   </div>
                   <div className={styles.subtitle}>
-                    {dataSets[currentData].subtitle}
+                      <DynamicHeading
+                      content={[
+                        {
+                          title:dataSets[currentData].subtitle,
+                          color: "color-white",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-4"
+                    />
+                    {/* {dataSets[currentData].subtitle} */}
                   </div>
                   <div className="mt-3 mt-md-5 ">
                     <RectangleButton

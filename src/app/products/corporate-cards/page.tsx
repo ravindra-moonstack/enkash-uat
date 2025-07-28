@@ -12,7 +12,7 @@ import {
   spendAnalyticsData,
 } from "./data"
 
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header, FAQHtml, Footer } from "@/components"
 
 import {
   blueArrow,
@@ -51,123 +51,8 @@ gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP)
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Set Your Rules"
-          description="Define spending rules based on individual users, departments, or specific vendors. Set limits, track usage, and ensure policy compliance at every level."
-          image={SetYourRules}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Channel-level Controls"
-          description="Enable or disable specific transaction channels such as POS, online (e-commerce), or contactless payments. Prevent misuse by controlling how and where each card is used ."
-          image={channelLevelControls}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Define Your Limits"
-          description="Set automated daily, weekly, or monthly spend caps for each card. Avoid overspending and enforce company-wide financial discipline without constant manual intervention."
-          image={notificationImage}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Block/Unblock at Your Convenience"
-          description="Lost or compromised card? Instantly block or reactivate it from the dashboard with one click, no paperwork, no support tickets, no delay."
-          image={notificationImage}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Simplify Approval Flows"
-          description="Establish flexible approval workflows with role-based access. Enable maker-checker setups to maintain internal controls and ensure complete accountability on every transaction."
-          image={notificationImage}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Full Control Over Corporate Prepaid Card"
-          description="These controls make managing your corporate prepaid card as simple as managing a spreadsheet, with far more power and automation. Set rules, track usage, and make instant decisions from one central dashboard"
-          image={notificationImage}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={greenIcon}
-          title="Another Card"
-          description="Another card description"
-          image={notificationImage}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  // Add more cards...
-]
-
 const CorporateCards = (): React.JSX.Element => {
-  useGSAP(() => {
-    ScrollSmoother.create({
-      smooth: 2,
-      effects: true,
-      smoothTouch: 0.1,
-    })
-  }, [])
+
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -408,7 +293,6 @@ const CorporateCards = (): React.JSX.Element => {
                     className="f-6"
                   />
 
-                  <div></div>
                 </div>
 
                 <div className="d-flex flex-column col-md-6">
@@ -437,7 +321,7 @@ const CorporateCards = (): React.JSX.Element => {
                   >
                     {spendAnalyticsData.map(({ icon, title }, i) => (
                       <div key={i} style={{ direction: "ltr" }}>
-                        <div className="d-flex align-items-center gap-3 py-3 w-4 h-4">
+                        <div className="d-flex align-items-center gap-3">
                           <div
                             className="d-flex justify-content-center align-items-center bg-light rounded-circle"
                             style={{ width: "48px", height: "48px" }}
@@ -449,11 +333,11 @@ const CorporateCards = (): React.JSX.Element => {
                               content={[
                                 {
                                   title: title,
-                                  color: "color-white subHeading",
+                                  color: "color-white",
                                 },
                               ]}
-                              headingTag="h4"
-                              className=" mb-0"
+                              headingTag="h5"
+                              className=" mb-0 f-5"
                             />
                           </div>
                         </div>
@@ -648,35 +532,7 @@ const CorporateCards = (): React.JSX.Element => {
             </div>
           </div>
 
-          <div className={styles.card_stacking_row}>
-            <div className={` max-w-auto  ${styles.section}`}>
-              <>
-                <div className={`${styles.title} text-center `}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Get ",
-                        color: "color-black",
-                      },
-                      {
-                        title: "Built-in Controls",
-                        color: "color-equity-blue",
-                      },
-                      {
-                        title: ", Zero Surprises ",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h2"
-                    className="f-6"
-                  />
-                </div>
-
-                <CardStacking cards={cards} />
-              </>
-            </div>
-          </div>
-
+          
           <div className={`${styles.fifth_row} relative`}>
             <div className={`${styles.title} text-center `}>
               <div

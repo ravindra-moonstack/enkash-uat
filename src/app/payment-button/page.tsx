@@ -44,6 +44,7 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import { faqBg } from "../digital-marketing-card"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const showScroll = cardsData.length > 3
 
@@ -74,41 +75,46 @@ const PaymentButton = (): React.JSX.Element => {
                 />
               </div>
               <div
-                className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
+                className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Payment Button ${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Payment Button",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-flex flex-column   pt-3 pt-md-0">
-                  <Heading
-                    title={`Sell smarter, not harder  ${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
-                  />
-
-                  <Heading
-                    title=" with  EnKash Payment Buttons"
-                    color="black"
-                    size="h2"
-                    weight="7"
+                <div className="flex-column   pt-3 pt-md-0">
+                   <DynamicHeading
+                    content={[
+                      {
+                        title: "Sell smarter, not harder with  EnKash Payment Buttons",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
-                <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                  <Heading
-                    title="Embed a secure, customizable payment button on your website and collect payments in minutes."
-                    color="black"
-                    size="h5"
-                    weight="4"
+                <div className="mt-3 mb-3 text-md-start ">
+                   <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Embed a secure, customizable payment button on your website and collect payments in minutes.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -116,7 +122,7 @@ const PaymentButton = (): React.JSX.Element => {
                   <Image
                     src={groupIcon}
                     alt="card visual"
-                    className={styles.group_logo}
+                    className={styles.group_logo} 
                   />
                   <div
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
@@ -162,11 +168,15 @@ const PaymentButton = (): React.JSX.Element => {
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-            <Heading
-              title="The Best Payment Button for Businesses"
-              size="h3"
-              color="white"
-              weight="3"
+            <DynamicHeading
+              content={[
+                {
+                  title: "The Best Payment Button for Businesses",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
 
@@ -176,13 +186,31 @@ const PaymentButton = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading title="100%" color="white" size="h2" weight="7" />
+                  <DynamicHeading
+                  content={[
+                    {
+                      title: "100%",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
+                />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading title="Fast" color="white" size="h5" weight="4" />
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Fast",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
               </div>
             </div>
             <div
@@ -195,11 +223,15 @@ const PaymentButton = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Customizable"
-                  color="white"
-                  size="h5"
-                  weight="4"
+                  <DynamicHeading
+                  content={[
+                    {
+                      title: "Customizable",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -213,7 +245,16 @@ const PaymentButton = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading title="Secure" color="white" size="h5" weight="4" />
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Secure",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
               </div>
             </div>
           </div>
@@ -223,17 +264,20 @@ const PaymentButton = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <Heading
-              title={`How to Make a  ${space}`}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`Payment Button${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
+             <DynamicHeading
+              content={[
+                {
+                  title: "How to Make a ",
+                  color: "color-black",
+                },
+                {
+                  title: "Payment Button ",
+                  color: "color-equity-blue",
+                },
+                
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
           <div className="row">
@@ -276,7 +320,7 @@ const PaymentButton = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -291,17 +335,20 @@ const PaymentButton = (): React.JSX.Element => {
               <div
                 className={`flex-column justify-content-center align-items-center pb-md-3`}
               >
-                <Heading
-                  title={`A Click is ${space}`}
-                  color="black"
-                  size="h1"
-                  weight="5"
-                />
-                <Heading
-                  title={`All it Takes ${space}`}
-                  color="equity-blue"
-                  size="h1"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "A Click is ",
+                      color: "color-black",
+                    },
+                    {
+                      title: "All it Takes",
+                      color: "color-equity-blue",
+                    },
+                   
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
             </div>
@@ -365,58 +412,60 @@ const PaymentButton = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
-      <div className={`${styles.eigth_row} relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto`}>
-          <div className={`${styles.title} text-start pb-5`}>
-            <div>
-              <Heading
-                title={`A ${space}`}
-                color="black"
-                size="h1"
-                weight="6"
-              />
-              <Heading
-                title={`Button for Every   ${space}`}
-                color="equity-blue"
-                size="h1"
-                weight="6"
-              />
+<div className={`${styles.eigth_row} `}>
+        <div className={`${styles.faqSection} text-start  max-w-auto`}>
+          <div className={`${styles.title} text-start pb-md-5 pb-3 col-md-6`}>
+ 
+             <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "A ",
+                        color: "color-black",
+                      },
+                       {
+                        title:
+                          "Button for Every Payment ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title:
+                          "Need",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+          </div>
+          <div className="row">
+            <div className="col-md-6">
+              <div>
+                <SecondFaqHtml SecondfaqData={SecondfaqData} />
+              </div>
             </div>
-
-            <div>
-              <Heading
-                title={`Payment    ${space}`}
-                color="equity-blue"
-                size="h1"
-                weight="6"
-              />
-              <Heading
-                title={`Need ${space}`}
-                color="black"
-                size="h1"
-                weight="6"
-              />
+            <div className="col-md-6">
+              <div className={styles.faq_bg}>
+                <Image src={faqBg} alt="background image" className="w-100 mh-550 object-fit-contain" />
+              </div>
             </div>
           </div>
-
-          <div>
-            <SecondFaqHtml SecondfaqData={SecondfaqData} />
-          </div>
-          <div className={styles.faq_bg}>
-            <Image src={faqBg} alt="background image" />
-          </div>
+ 
         </div>
       </div>
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Ready to design your payment button?"
-              size="bannerHeading"
-              color="white"
-              weight="4"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Ready to design your payment button?",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -434,27 +483,40 @@ const PaymentButton = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
@@ -475,20 +537,24 @@ const PaymentButton = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center  pb-5`}>
-            <Heading
-              title={`Check out our ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+             <DynamicHeading
+              content={[
+                {
+                  title: "Check out our ",
+                  color: "color-black",
+                },
+                {
+                  title: "other payment products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading
-              title={`other payment products ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading title="at EnKash" color="black" size="h1" weight="5" />
           </div>
           <div className="row g-3 pb-4 ">
             <div className="col-12 col-md-4">
