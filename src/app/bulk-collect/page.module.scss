@@ -71,7 +71,7 @@
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
-  padding: 50px 20px;
+  padding: 50px 20px !important;
   @include for-laptops {
    padding: 90px 20px;
   }
@@ -183,9 +183,11 @@
   .list_button {
     padding-left: 40px;
     padding-top: 20px;
+    margin-left: -12px !important;
     margin-bottom: 20px !important;
     @include for-laptops {
       padding-left: 100px;
+         margin-left: 0px;
     }
   }
  
@@ -244,7 +246,7 @@
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 50px 20px;
+  padding: 50px 20px !important;
   @include for-laptops {
     padding: 90px 20px;
   }

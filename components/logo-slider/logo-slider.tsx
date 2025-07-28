@@ -134,7 +134,7 @@ const LogoSlider = () => {
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={i}
-              className={`d-flex  justify-content-center ${styles.logo_wrapper}`}
+              className={`d-flex  justify-content-center pb-3 ${styles.logo_wrapper}`}
             >
               <Image
                 className={`${logo.className} ${styles.logo_img}`}

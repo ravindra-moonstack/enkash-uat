@@ -324,7 +324,7 @@ const PaymentPage = (): React.JSX.Element => {
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
           <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
+            <div className={`${styles.title} text-center  `}>
               <div
                 className={`d-inline justify-content-center align-items-center pb-3`}
               >
@@ -398,8 +398,8 @@ const PaymentPage = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5`}>
-          <div className={` pb-3  d-inline`}>
+        <div className={`${styles.title} text-center pb-2 mt-4`}>
+          <div className={` pb-1  d-inline`}>
             <DynamicHeading
               content={[
                 {
