@@ -73,8 +73,8 @@ const BulkPayout = (): React.JSX.Element => {
                       color: "color-equity-blue underline",
                     },
                   ]}
-                  headingTag="h4"
-                  className="f-4"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
@@ -99,11 +99,11 @@ const BulkPayout = (): React.JSX.Element => {
                       {
                         title:
                           "Streamline your business payouts with EnKash’s Express Pay. Automate payments, save time, and gain control over your cash flow.",
-                        color: "color-black",
+                        color: "color-black subHeading",
                       },
                     ]}
-                    headingTag="h5"
-                    className="f-4"
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -145,7 +145,7 @@ const BulkPayout = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -192,7 +192,7 @@ const BulkPayout = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -359,11 +359,11 @@ const BulkPayout = (): React.JSX.Element => {
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="mb-0"
                 />
                 
               </div>

@@ -70,8 +70,8 @@ const RantPayment = (): React.JSX.Element => {
                       color: "color-equity-blue underline",
                     },
                   ]}
-                  headingTag="h4"
-                  className="f-4"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
@@ -82,7 +82,7 @@ const RantPayment = (): React.JSX.Element => {
                     content={[
                       {
                         title: "Hassle-Free Rent Payments with EnKash",
-                        color: "color-black",
+                        color: "color-black ",
                       },
                     ]}
                     headingTag="h1"
@@ -96,11 +96,11 @@ const RantPayment = (): React.JSX.Element => {
                       {
                         title:
                           "Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient",
-                        color: "color-black",
+                        color: "color-black subHeading",
                       },
                     ]}
-                    headingTag="h5"
-                    className="f-4"
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -142,7 +142,7 @@ const RantPayment = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -189,7 +189,7 @@ const RantPayment = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -358,11 +358,11 @@ const RantPayment = (): React.JSX.Element => {
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className="mt-3 d-none d-md-block">

@@ -72,8 +72,8 @@ const VendorPayment = (): React.JSX.Element => {
                       color: "color-equity-blue underline",
                     },
                   ]}
-                  headingTag="h4"
-                  className="f-4"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
@@ -98,11 +98,11 @@ const VendorPayment = (): React.JSX.Element => {
                       {
                         title:
                           "Transform your vendor payments with a single click and get complete control with real-time updates.",
-                        color: "color-black",
+                        color: "color-black subHeading",
                       },
                     ]}
-                    headingTag="h5"
-                    className="f-4"
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -144,7 +144,7 @@ const VendorPayment = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -211,7 +211,7 @@ const VendorPayment = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -384,11 +384,11 @@ const VendorPayment = (): React.JSX.Element => {
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className="mt-3 d-none d-md-block">

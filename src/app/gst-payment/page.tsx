@@ -27,6 +27,7 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const PayableAnalytics = (): React.JSX.Element => {
   return (
@@ -57,33 +58,45 @@ const PayableAnalytics = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`GST Challan Payment${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "GST Challan Payment",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Pay Your GST On Time with Confidence`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Pay Your GST On Time with Confidence",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Make sure every online GST payment is completed on time through a secure and streamlined process that offers full control and clear visibility at every step."
-                    color="black"
-                    size="h5"
-                    weight="4"
-                  />
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Make sure every online GST payment is completed on time through a secure and streamlined process that offers full control and clear visibility at every step.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
+                  /> 
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -124,7 +137,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -136,17 +149,19 @@ const PayableAnalytics = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <Heading
-              title={`Paying GST Challans  ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={`was Never This Easy${space}`}
-              color="black"
-              size="h1"
-              weight="6"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Paying GST Challans ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "was Never This Easy",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
           <div className="row">
@@ -165,7 +180,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -178,11 +193,15 @@ const PayableAnalytics = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div className={`d-inline text-center pb-3`}>
-                <Heading
-                  title={`Reduce errors, avoid delays, and keep your records in order with EnKash for GST Payments`}
-                  color="black"
-                  size="h1"
-                  weight="5"
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Reduce errors, avoid delays, and keep your records in order with EnKash for GST Payments",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
             </div>
@@ -248,27 +267,40 @@ const PayableAnalytics = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+             <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
