@@ -12,6 +12,16 @@ import {
   mealCardImage,
   heroCardImg,
   podiumImage,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -22,16 +32,96 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import CardProduct from "@/components/card-product/card-product"
 import AllProducts from "@/components/all-products/all-products"
 import StepCard from "@/components/stepCard/stepCard"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import CardStacking from "@/components/cardStacking/cardStacking"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="Effortless Procurement Management"
+          description="Transform the way your business handles procurement. Purchase cards make purchasing goods and services a smooth, straightforward process. Authorized employees can make purchases on behalf of the company, bypassing the complexities of traditional procurement systems. This eliminates unnecessary delays, paperwork, and approval bottlenecks."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Increase Control & Reduce Costs"
+          description="Set custom spending limits and enforce purchase policies directly through EnKash’s easy-to-use platform. Track every transaction in real time, enabling you to control expenses, avoid budget overruns, and prevent fraud. The ability to set merchant category restrictions ensures that your team only makes relevant purchases, keeping your expenses in check.With a corporate purchase card, businesses can enforce spend policies without slowing down procurement cycles"
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Simplify Expense Tracking and Reporting"
+          description="Gain full visibility of your procurement expenses with detailed, real-time reporting. Analyze spending trends and uncover potential cost savings with EnKash’s centralized dashboard. This data-backed approach allows for more informed decision-making and effective supplier negotiations, ensuring you always get the best value."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="Faster Payment Cycles & Vendor Relationships"
+          description="Speed up payment cycles and enhance relationships with your vendors by ensuring prompt, hassle-free transactions. Purchase Cards streamline the payment process, allowing you to meet deadlines, maintain positive supplier relations, and improve cash flow—all while reducing administrative workload."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="Better Compliance & Risk Management"
+          description="Purchase Cards help ensure compliance with your company’s procurement policies. Each card is customizable with spend limits and merchant restrictions, so you can confidently minimize the risk of unauthorized purchases or fraud. Automated reporting makes policy breaches easier to spot and rectify."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
 const PurchesCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-w-auto px-4">
+        <div className="max-w-auto ">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -45,36 +135,45 @@ const PurchesCards = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.title} col-12 `}>
-            <Heading
-              title="PURCHES CARD"
-              color="equity-blue"
-              size="h5"
-              weight="4"
-              underline
+            <DynamicHeading
+              content={[
+                {
+                  title: "Purches Card",
+                  color: "color-equity-blue underline",
+                },
+              ]}
+              headingTag="p"
+              className="mb-2"
             />
+
             <div className="d-flex  flex-column text-center">
-              <Heading
-                title="Optimize Your Business Procurement with"
-                color="black"
-                size="h2"
-                weight="2"
-                italic
-              />
-              <Heading
-                title="Purchase Cards* (P-Cards)"
-                color="black"
-                size="h2"
-                weight="7"
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Optimize Your Business Procurement with",
+                    color: "color-black f-3 italic d-block",
+                  },
+                  {
+                    title: "Purchase Cards* (P-Cards)",
+                    color: "color-black ",
+                  },
+                ]}
+                headingTag="h1"
+                className="f-7 mb-2"
               />
             </div>
 
             <div className="d-inline text-center">
-              <Heading
-                title="Say goodbye to time-consuming paperwork and complicated approval workflows. Empower your team to make purchases within preset limits while you monitor, manage, and optimize spending in real time."
-                color="black"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
+              <DynamicHeading
+                content={[
+                  {
+                    title:
+                      "Say goodbye to time-consuming paperwork and complicated approval workflows. Empower your team to make purchases within preset limits while you monitor, manage, and optimize spending in real time.",
+                    color: "color-black subHeading",
+                  },
+                ]}
+                headingTag="p"
+                className=""
               />
             </div>
             <div className={styles.button_wrapper}>
@@ -106,23 +205,21 @@ const PurchesCards = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`${styles.action_row} bg-white row-padding `}>
+      <div className={`${styles.action_row} bg-white `}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-md-5 pb-5`}>
             <div>
-              <Heading
-                title={`How Does a  ${space}`}
-                color="black"
-                size="h1"
-                weight="5"
+              <DynamicHeading
+                content={[
+                  {
+                    title: "How Does a Purchase Card Work",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
               />
             </div>
-            <Heading
-              title={`Purchase Card Work ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
             <div className="col-md-6 col-12 px-md-5">
@@ -154,45 +251,64 @@ const PurchesCards = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={`col-md-6 col-12 
-`}
-            >
+            <div className={`col-md-6 col-12 `}>
               <div>
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="
-                   w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center `}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "SaaS Cards for ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Smooth Subscription Services ",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
 
+            <CardStacking cards={cards} />
+          </>
+        </div>
+      </div>
       <div className={`${styles.fifth_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
+        <div className={`${styles.title} text-center  max-w-auto`}>
           <div
             className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
           >
-            <Heading
-              title={`Key  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`Features & Benefits ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`of Purchase Cards ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Key ",
+                  color: "color-black",
+                },
+                {
+                  title: "Features & Benefits ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "of Purchase Cards",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
         </div>
@@ -206,11 +322,16 @@ const PurchesCards = (): React.JSX.Element => {
       <div className={`${styles.sixth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-            <Heading
-              title="Ready to bring efficiency, control, and savings to your procurement process?"
-              size="bannerHeading"
-              color="white"
-              weight="4"
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "Ready to bring efficiency, control, and savings to your procurement process?",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className=""
             />
           </div>
 
@@ -229,28 +350,44 @@ const PurchesCards = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-3`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
+            <DynamicHeading
+                content={[
+             
+                  {
+                    title: "Frequently Asked Questions (",
+                    color: "color-black",
+                  },
+                  {
+                    title: "FAQs",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: ")",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+           
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                  useH1TagInHtml={true}
-                />
+                <DynamicHeading
+                content={[
+             
+                  {
+                    title: "Have more questions?",
+                    color: "color-dark-grey subHeading",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-0"
+              />
+               
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
@@ -271,25 +408,26 @@ const PurchesCards = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
-            <Heading
-              title={`Our Business,  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`Your Cards –   ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading
-              title="Tailored by EnKash "
-              color="black"
-              size="h1"
-              weight="5"
-            />
+            <DynamicHeading
+                content={[
+             
+                  {
+                    title: "Our Business, ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Your Cards – ",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: "Tailored by EnKash",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className=""
+              />
+            
           </div>
           <div className="row g-3 pb-4">
             {cardType.map(({ titleHtml, description, cardImage }, index) => (

@@ -229,7 +229,7 @@ const VirtualCards = (): React.JSX.Element => {
             
           </div>
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-md-5">
+            <div className="col-md-6 col-12 pe-md-5">
               <div
                 style={{
                   display: "flex",
@@ -326,7 +326,7 @@ const VirtualCards = (): React.JSX.Element => {
             </div>
           </div>
           <div className={`row align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12  px-md-5">
+            <div className="col-md-6 col-12  pe-md-5">
               <div
                 style={{
                   display: "flex",
