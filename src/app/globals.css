@@ -18,6 +18,9 @@ body {
 .mh-550{
   max-height: 550px;
 }
+.mh-330{
+  max-height: 330px;
+}
 body {
   color: var(--foreground);
   background: var(--background);
