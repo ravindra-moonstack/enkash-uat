@@ -264,7 +264,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div className="col-md-6 col-12">
+            <div className="col-md-6 col-12 mt-5">
               <div>
                 <Image
                   src={mealCardImage}

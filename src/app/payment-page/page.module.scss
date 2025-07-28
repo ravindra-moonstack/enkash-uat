@@ -71,7 +71,7 @@
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
-  padding: 50px 20px;
+  padding: 50px 20px !important;
   @include for-laptops {
    padding: 90px 20px;
   }
@@ -204,7 +204,7 @@
 }
  
 .fourth_row {
-  padding: 0px 30px ;
+  padding: 0px 30px;
   @include for-laptops {
     padding: 0px 20px;
   }
@@ -244,7 +244,7 @@
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 50px 20px;
+  padding: 50px 20px !important;
   @include for-laptops {
     padding: 90px 20px;
   }

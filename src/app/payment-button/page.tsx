@@ -329,7 +329,7 @@ const PaymentButton = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.fourth_row}  `}>
-        <div className="max-w-auto">
+        <div className="max-w-auto mb-">
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div

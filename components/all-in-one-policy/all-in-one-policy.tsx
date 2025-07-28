@@ -38,7 +38,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   buttonHoverIcon = whiteArrow,
 }) => {
   return (
-    <div className={`row align-items-center ${styles.section}`}>
+    <div className={`row align-items-center mb-3 ${styles.section}`}>
       {/* Text Block */}
       <div
         className={`col-md-8 col-12 ${reverse ? "order-md-2" : "order-md-1"}`}

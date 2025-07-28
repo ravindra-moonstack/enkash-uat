@@ -83,7 +83,7 @@ const Subscriptions = (): React.JSX.Element => {
                 />
               </div>
               <div
-                className={`text-center text-md-start ${styles.first_row_content}  `}
+                className={`text-center text-md-start mb-5 ${styles.first_row_content}  `}
               >
                 <div className="d-flex pt-3 pt-md-0">
                   <DynamicHeading
@@ -150,7 +150,7 @@ const Subscriptions = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100 mh-550 object-fit-contain"
+                  className="w-100 mh-550 mt-5 object-fit-contain"
                 />
               </div>
             </div>
