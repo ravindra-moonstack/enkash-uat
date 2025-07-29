@@ -119,7 +119,8 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
     )
 
     const apiData = await apiResponse.json()
-    console.log(apiData)
+    // console.log(apiData)
+    // console.log("API Response JSON:", JSON.stringify(apiData, null, 2))
 
     //discount update
     apiData.payload.data.forEach((product: any) => {
@@ -440,6 +441,7 @@ const CategoryPage = async ({
                     <ul>
                       {voucherData.howToRedeemSteps.map((step, index) => {
                         const isHeading =
+                          step.includes("Online Redemption") ||
                           step.includes("Website/App") ||
                           step.includes("In-Store Redemption")
                         return (
@@ -497,6 +499,43 @@ const CategoryPage = async ({
 
               <div className={styles.bottom_zigzag}>
                 <Image src={zigZagTop} alt="zig-zag" />
+              </div>
+            </div>
+            <div className={`mt-4 mb-5 ${styles.bottom_container}`}>
+              <div className={styles.detail_section}>
+                {/* Terms and Conditions section */}
+                <div className={`my-4`}>
+                  <div className={`mb-1 ${styles.description_title}`}>
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: voucherData.termsAndConditionsTitle,
+                          color: "color-secondary-black",
+                        },
+                      ]}
+                      headingTag="h3"
+                      className="f-7 "
+                    />
+                  </div>
+                  <div className={`mb-4 ${styles.description}`}>
+                    <ul>
+                      {voucherData.termsAndConditionSteps.map((step, index) => (
+                        <li key={index}>
+                          <div
+                            dangerouslySetInnerHTML={{
+                              __html: linkifyText(sanitizeStep(step)),
+                            }}
+                          ></div>
+                          {}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div className={styles.bottom_zigzag}>
+                <Image src={zigZagGrey} alt="zig-zag" />
               </div>
             </div>
 
@@ -562,44 +601,6 @@ const CategoryPage = async ({
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className={`mt-4 mb-5 ${styles.bottom_container}`}>
-              <div className={styles.detail_section}>
-                {/* Terms and Conditions section */}
-                <div className={`my-4`}>
-                  <div className={`mb-1 ${styles.description_title}`}>
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: voucherData.termsAndConditionsTitle,
-                          color: "color-secondary-black",
-                        },
-                      ]}
-                      headingTag="h3"
-                      className="f-7 "
-                    />
-                  </div>
-                  <div className={`mb-4 ${styles.description}`}>
-                    <ul>
-                      {voucherData.termsAndConditionSteps.map((step, index) => (
-                        <li key={index}>
-                          <div
-                            dangerouslySetInnerHTML={{
-                              __html: linkifyText(sanitizeStep(step)),
-                            }}
-                          ></div>
-                          {}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div className={styles.bottom_zigzag}>
-                <Image src={zigZagGrey} alt="zig-zag" />
               </div>
             </div>
 

@@ -1519,7 +1519,681 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
+  swiggy: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Swiggy?",
+        answer: [
+          {
+            heading:
+              "Log in to your Swiggy account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Swiggy E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Swiggy Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Swiggy E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Swiggy website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Swiggy?",
+        answer: [
+          {
+            heading:
+              "Log in to the Swiggy website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Swiggy e-gift card?",
+        answer: [
+          {
+            heading:
+              "Swiggy Gift Cards can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Swiggy gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Swiggy brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Swiggy gift card?",
+        answer: [
+          {
+            heading:
+              "The Swiggy E-Gift Voucher is valid only for 1 year from the date of adding it to the wallet.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Swiggy gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Swiggy gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Swiggy gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Swiggy brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Swiggy Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Swiggy Gift Card after its expiry date. The Swiggy E-Gift Voucher is valid for 1 year from the date of adding it to the wallet.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  kfc: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on KFC?",
+        answer: [
+          {
+            heading:
+              "Log in to your KFC account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the KFC E-Gift Card number and PIN. The card will be used to pay for the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the KFC Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The KFC E-Gift Card is an online gift card to pay for the purchase of items on the app and in participating stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the KFC app or stores to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in KFC?",
+        answer: [
+          {
+            heading:
+              "Log in to the KFC app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a KFC e-gift card?",
+        answer: [
+          {
+            heading:
+              "KFC Gift Card can be used to buy items available on the app and in stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my KFC gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this KFC brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the KFC gift card?",
+        answer: [
+          {
+            heading:
+              "The KFC E-Gift Voucher is valid only for 6 months from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a KFC gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, KFC gift cards can be redeemed online on the app and at participating stores.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer KFC gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, KFC brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my KFC Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the KFC Gift Card after its expiry date. The KFC E-Gift Voucher is valid for 6 months from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  zomato: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Zomato?",
+        answer: [
+          {
+            heading:
+              "Log in to your Zomato account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Zomato E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Zomato Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Zomato E-Gift Card is an online gift card to pay for the purchase of items on the app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Zomato app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Zomato?",
+        answer: [
+          {
+            heading:
+              "Log in to the Zomato app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Zomato e-gift card?",
+        answer: [
+          {
+            heading:
+              "Zomato Gift Card can be used to buy items available on the app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Zomato gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Zomato brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Zomato gift card?",
+        answer: [
+          {
+            heading:
+              "The Zomato E-Gift Voucher is valid only for 4 years from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Zomato gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Zomato gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Zomato gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Zomato brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Zomato Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Zomato Gift Card after its expiry date. The Zomato E-Gift Voucher is valid for 4 years from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  dominos: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Domino's?",
+        answer: [
+          {
+            heading:
+              "Log in to your Domino's account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the Domino's E-Gift Card number and PIN. The card will be used to pay for the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Domino's eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Domino's E-Gift Card is an online gift card to pay for the purchase of items on the app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Domino's website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Domino's?",
+        answer: [
+          {
+            heading:
+              "Log in to the Domino's website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Domino's e-gift card?",
+        answer: [
+          {
+            heading:
+              "Domino's Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Domino's gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Domino's brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Domino's gift card?",
+        answer: [
+          {
+            heading:
+              "The Domino's E-Gift Voucher is valid only for 180 days from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Domino's gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Domino's gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Domino's gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Domino's brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Domino's Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Domino's Gift Card after its expiry date. The Domino's E-Gift Voucher is valid for 180 days from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  mamaearth: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Mamaearth?",
+        answer: [
+          {
+            heading:
+              "Log in to your Mamaearth account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the Mamaearth E-Gift Card number and PIN. The card will be used to pay for the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Mamaearth Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Mamaearth E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Mamaearth website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Mamaearth?",
+        answer: [
+          {
+            heading:
+              "Log in to the Mamaearth website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Mamaearth e-gift card?",
+        answer: [
+          {
+            heading:
+              "Mamaearth Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Mamaearth gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Mamaearth brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Mamaearth gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Mamaearth gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Mamaearth gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Mamaearth brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Mamaearth Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Mamaearth Gift Card after its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  apollo: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Apollo?",
+        answer: [
+          {
+            heading:
+              "Visit the Apollo pharmacy store and redeem the card against the bill value.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Apollo eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Apollo E-Gift Card is an online gift card to pay for the purchase of items offline.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Apollo store to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use an Apollo e-gift card?",
+        answer: [
+          {
+            heading:
+              "Apollo Gift Card can be used to buy items available at the outlet.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Apollo gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Apollo brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Apollo Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Apollo Gift Card after its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
 
+  cultfit: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Cultfit?",
+        answer: [
+          {
+            heading:
+              "Log in to your Cultfit account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the Cultfit E-Gift Card number and PIN. The card will be used to pay for the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Cultfit Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Cultfit E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Cultfit website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Cultfit?",
+        answer: [
+          {
+            heading:
+              "Log in to the Cultfit website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Cultfit e-gift card?",
+        answer: [
+          {
+            heading:
+              "Cultfit Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Cultfit gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Cultfit brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Cultfit gift card?",
+        answer: [
+          {
+            heading:
+              "The Cultfit E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Cultfit gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Cultfit gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Cultfit gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Cultfit brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Cultfit Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Cultfit Gift Card after its expiry date. The Cultfit E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
   "reliance-e-gift-card": {
     faqData: [
       {
@@ -1618,109 +2292,6 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
           {
             heading:
               "Use UPI, QR Codes, or to make payments for the Reliance gift cards at bolt.enkash.com",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
-  swiggy: {
-    faqData: [
-      {
-        question: "How to use an eGift Card on Swiggy?",
-        answer: [
-          {
-            heading:
-              "Log in to your Swiggy account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Swiggy E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What is the Swiggy Channel eGift Card?",
-        answer: [
-          {
-            heading:
-              "The Swiggy E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I redeem my eGift Card?",
-        answer: [
-          {
-            heading: "Visit the Swiggy website or app to redeem the Gift Card.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How to add a card in Swiggy?",
-        answer: [
-          {
-            heading:
-              "Log in to the Swiggy website or app. You can add the gift card using its number and PIN.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How to use a Swiggy e-gift card?",
-        answer: [
-          {
-            heading:
-              "Swiggy Gift Cards can be used to buy items available on the website and app.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How to transfer my Swiggy gift card to another account?",
-        answer: [
-          {
-            heading:
-              "You can gift this Swiggy brand voucher to your near and dear ones. You cannot transfer it.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What is the validity of the Swiggy gift card?",
-        answer: [
-          {
-            heading:
-              "The Swiggy E-Gift Voucher is valid only for 1 year from the date of adding it to the wallet.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I order online with a Swiggy gift card?",
-        answer: [
-          {
-            heading:
-              "Yes, Swiggy gift cards can be redeemed online on the website and app.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I transfer Swiggy gift cards to cash?",
-        answer: [
-          {
-            heading:
-              "No, Swiggy brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What if my Swiggy Gift Card expires?",
-        answer: [
-          {
-            heading:
-              "You cannot use the Swiggy Gift Card after its expiry date. The Swiggy E-Gift Voucher is valid for 1 year from the date of adding it to the wallet.",
             bullets: [],
           },
         ],
@@ -1962,106 +2533,7 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
-  "dominos-pizza-e-gift-card": {
-    faqData: [
-      {
-        question: "How can I save money with Domino\u2019s Gift Cards?",
-        answer: [
-          {
-            heading:
-              "Dominos Gift Cards purchased using bolt.enkash.com may save on the cost even if it is purchased one at a time or in bulk.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I use my Domino\u2019s Gift Card to purchase any items at the physical store?",
-        answer: [
-          {
-            heading:
-              "\nNo, Gift cards are not acceptable in the store. They can only be used on orders made through the app or the website.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I reload my Domino\u2019s Gift Card once the balance is used?",
-        answer: [
-          {
-            heading:
-              "\nYou cannot reload it. Instead, You will have to buy a new one.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How quickly will I receive my Domino\u2019s Gift Card after purchase?",
-        answer: [
-          {
-            heading:
-              "You will complete a transaction on EnKash which will only take seconds then you will receive a gift card code via email or WhatsApp.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How long is the Domino's gift card valid?",
-        answer: [
-          {
-            heading:
-              "The Domino's gift card has a validity period of one(1) year from the date of purchase.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I use my gift card for all menu items?",
-        answer: [
-          {
-            heading:
-              "Any holder of a Domino\u2019s gift card can redeem the card for payment of any product on Domino\u2019s menu offered via the app or the site.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I cancel an order if I paid using a Domino\u2019s Gift Card?",
-        answer: [
-          {
-            heading:
-              "\n In the situation where the order was placed using a gift card, it may not be possible to cancel the order without calling customer service for help. A fee to cancel the order will be charged and refunded to the gift card used to place the order.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I check the remaining balance on my Domino's gift card?",
-        answer: [
-          {
-            heading:
-              "To check the amount remaining in the gift card, one could visit the easy way which is the \u2018check gift card balance\u2019 page of Domino's website or App and insert the gift card number in the respective box.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I redeem discounts and/or promo codes while using a Domino's Gift Card?",
-        answer: [
-          {
-            heading:
-              "Discounts or promo codes can be granted even if a way a gift card is provided, though it is wise to verify the details of the promotion.\n",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
+
   "bookmyshow-e-gift-card": {
     faqData: [
       {
@@ -2479,90 +2951,7 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
-  "zomato-e-gift-voucher": {
-    faqData: [
-      {
-        question: "How to save money with a Zomato Gift Card?",
-        answer: [
-          {
-            heading:
-              "Try to order within the card limit to avoid using your own money for extra payments. Zomato also offers frequent offers and discounts \u2013 which you can combine with gift cards to save even more.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What are the benefits of Zomato Gift Cards?",
-        answer: [
-          {
-            heading:
-              "Zomato gift cards are very easy to use, and can be used at any of the listed restaurants on Zomato. They are also a good option for corporate or festive gifting.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Is Zomato Gift Card free?",
-        answer: [
-          {
-            heading:
-              "Zomato gift cards are not free. They have to be bought from the Zomato website or from third-party resellers who have partnered with Zomato. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I order online with a Zomato Gift Card?",
-        answer: [
-          {
-            heading:
-              "Yes, you can buy food online with a Zomato gift card at the partner restaurants. When you are placing an order, you just have to enter the gift card code. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: " Is it safe to buy Zomato Gift Cards online?",
-        answer: [
-          {
-            heading:
-              "Buying Zomato gift cards from their official website or from authorized third-party sellers is safe. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can Zomato Gift Cards be used for all orders?",
-        answer: [
-          {
-            heading:
-              "Gift Cards can be used to make most orders on Zomato. However, gift cards cannot be used to pay for delivery fees, taxes, and other restaurant terms.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I refund or exchange my Zomato Gift Card?",
-        answer: [
-          {
-            heading:
-              "No, Zomato gift cards cannot be refunded or exchanged once they are purchased.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I transfer Zomato Gift Cards to cash?",
-        answer: [
-          {
-            heading:
-              "No, it is not possible to convert Zomato gift cards into cash.",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
+
   "flipkart-e-gift-voucher": {
     faqData: [
       {

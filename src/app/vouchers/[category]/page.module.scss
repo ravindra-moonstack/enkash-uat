@@ -87,7 +87,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 1150px;
+  max-width: 1200px;
 }
 
 .voucher_detail {
@@ -95,14 +95,18 @@
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
-  padding-top: 75px;
+
+  padding: 75px 20px 0px 20px;
+  @include for-laptops {
+    padding: 75px 20px 20px 20px;
+  }
   .voucher_detail_container {
     color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    max-width: 1150px;
+    max-width: 1200px;
   }
 }
 
@@ -114,7 +118,7 @@
   width: 100%;
 
   @include for-laptops {
-    padding: 30px 30px 40px;
+    padding: 30px 0px;
   }
 
   .breadcrumb {
@@ -138,13 +142,20 @@
   .voucher_image_section {
     background-image: url("./img/category-bg.jpg");
     background-size: 100%;
-    height: 340px;
+    height: 320px;
     background-repeat: no-repeat;
     margin: 0 0px 40px;
 
+    @include for-laptops {
+      height: 380px;
+    }
+    @include for-tablet {
+      height: 320px;
+    }
+
     .discount_bar {
       position: absolute;
-      top: 91px;
+      top: 98px;
       left: 98px;
       display: flex;
       font-size: 28px;
@@ -153,6 +164,9 @@
       color: $color-white;
       span {
         color: $color-bolt-green;
+      }
+      @include for-tablet {
+        top: 88px;
       }
 
       .brand_name {
@@ -171,13 +185,17 @@
       width: 326px;
       height: 205px;
       position: absolute;
-      top: 125px;
+      top: 144px;
       right: 120px;
       box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);
       img {
         width: auto;
         height: 100%;
+      }
+      @include for-tablet {
+        top: 108px;
+        right: 66px;
       }
     }
 
@@ -228,7 +246,7 @@
     font-size: 22px;
   }
   @include for-laptops {
-    padding: 0 40px;
+    padding: 0 100px;
   }
   a {
     color: $color-black;
@@ -239,27 +257,35 @@
   width: 100%;
   position: relative;
   background-color: $color-light-blue-bg;
-  padding: 40px 30px 40px;
+  padding: 40px 20px 40px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
+  .bottom_zigzag {
+    position: absolute;
+    bottom: -23px;
+    left: -30px;
+    img {
+      height: 53px;
+      width: auto;
+    }
+  }
 }
 
 .bottom_container {
   width: 100%;
   position: relative;
   background-color: #f9f9f9;
-  padding: 40px 30px 40px;
+  padding: 40px 20px 40px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
-}
-
-.bottom_zigzag {
-  position: absolute;
-  bottom: -23px;
-  left: -25px;
-  img {
-    height: 85px;
-    width: auto;
+  .bottom_zigzag {
+    position: absolute;
+    bottom: -23px;
+    left: -30px;
+    img {
+      height: 53px;
+      width: auto;
+    }
   }
 }
 
@@ -268,9 +294,9 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 90px 0px;
+    padding: 90px 20px;
   }
 
   .faq_bg {
@@ -382,7 +408,7 @@
   display: flex;
   padding: 20px 0px;
   @include for-laptops {
-    padding: 20px 40px 0;
+    padding: 20px 100px 0;
   }
 
   .need_img {
