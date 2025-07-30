@@ -77,10 +77,11 @@ const WorkflowManagement = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                    <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Achieve operational excellence with streamlined workflows ",
+                        title:
+                          "Achieve operational excellence with streamlined workflows ",
                         color: "color-black",
                       },
                     ]}
@@ -90,8 +91,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                 </div>
 
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                 
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title:
@@ -101,7 +101,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -157,12 +157,13 @@ const WorkflowManagement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Transform workflow management & optimize your business",
+                  title:
+                    "Transform workflow management & optimize your business",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -172,7 +173,7 @@ const WorkflowManagement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -249,7 +250,7 @@ const WorkflowManagement = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -315,77 +316,78 @@ const WorkflowManagement = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Upgrade your workflows and ",
-                      color: "color-black",
-                    },
-                    {
-                      title: " boost efficienc",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div className={`flex-column justify-content-center align-items-center pb-md-4 mb-1 pb-1`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Upgrade your workflows and ",
+                        color: "color-black",
+                      },
+                      {
+                        title: " boost efficienc",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Integration with Existing Tools"
-              description="Seamlessly connect with CRMs, ERPs, email platforms, payment gateways, and more."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Task Assignment & Routing"
-              description="Automatically assign tasks to the right people based on roles, rules, or logic."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title=" Approval Flows & Accessibility"
-              description="Customizable multi-level approvals for payments, documents, requests, etc. Define user roles, visibility rules, and access levels for data security and accountability."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Predict with AI Power"
-              description="Leverage AI to forecast trends, run smart analyses, and set intelligent alerts so you can make proactive, data-driven decisions for your business."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Integration with Existing Tools"
+                description="Seamlessly connect with CRMs, ERPs, email platforms, payment gateways, and more."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Task Assignment & Routing"
+                description="Automatically assign tasks to the right people based on roles, rules, or logic."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title=" Approval Flows & Accessibility"
+                description="Customizable multi-level approvals for payments, documents, requests, etc. Define user roles, visibility rules, and access levels for data security and accountability."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Predict with AI Power"
+                description="Leverage AI to forecast trends, run smart analyses, and set intelligent alerts so you can make proactive, data-driven decisions for your business."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+            </div>
           </div>
         </div>
       </div>
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
-                  title: "Harness Data to Grow, Scale, and Outperform Competition",
+                  title:
+                    "Harness Data to Grow, Scale, and Outperform Competition",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -423,9 +425,9 @@ const WorkflowManagement = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",

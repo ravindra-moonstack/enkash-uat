@@ -86,7 +86,8 @@ const BulkCollect = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Take Control of Your Business Collection with EnKash Bulk Collect",
+                        title:
+                          "Take Control of Your Business Collection with EnKash Bulk Collect",
                         color: "color-black",
                       },
                     ]}
@@ -167,7 +168,7 @@ const BulkCollect = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-md-0 mb-3"
             />
           </div>
 
@@ -177,7 +178,7 @@ const BulkCollect = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-               <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -254,8 +255,8 @@ const BulkCollect = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-             <DynamicHeading
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
+            <DynamicHeading
               content={[
                 {
                   title: "How EnKash ",
@@ -324,66 +325,68 @@ const BulkCollect = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                 <DynamicHeading
-                  content={[
-                    {
-                      title: "Why EnKash for ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Bulk Payment ",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: "Collection",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-5 pb-4`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Why EnKash for ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Bulk Payment ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "Collection",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Streamlined Payment Reminders"
-              description="Automate payment reminders to ensure timely follow-ups with your customers. With EnKash, you eliminate manual tracking and reduce delays, improving your collection cycle while freeing up resources to focus on strategic growth."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Bulk Invoice Dispatch"
-              description="Save time and effort by sending multiple invoices in just a single click. EnKash’s intuitive platform minimizes human errors and streamlines the invoicing process, ensuring your customers receive accurate details every time. Simplify workflows and accelerate cash flow with this smart invoicing solution."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Enhanced Reconciliation Accuracy"
-              description="Monitor your payment collections in real-time with EnKash’s advanced tracking tools. Automated reconciliation reduces discrepancies and provides a clear financial picture, saving your team hours of manual effort."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Improved Customer Experience"
-              description="EnKash empowers your team to focus on building better relationships by automating repetitive tasks. Offer your customers a smoother, hassle-free payment experience with prompt notifications and accurate invoices."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Streamlined Payment Reminders"
+                description="Automate payment reminders to ensure timely follow-ups with your customers. With EnKash, you eliminate manual tracking and reduce delays, improving your collection cycle while freeing up resources to focus on strategic growth."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Bulk Invoice Dispatch"
+                description="Save time and effort by sending multiple invoices in just a single click. EnKash’s intuitive platform minimizes human errors and streamlines the invoicing process, ensuring your customers receive accurate details every time. Simplify workflows and accelerate cash flow with this smart invoicing solution."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Enhanced Reconciliation Accuracy"
+                description="Monitor your payment collections in real-time with EnKash’s advanced tracking tools. Automated reconciliation reduces discrepancies and provides a clear financial picture, saving your team hours of manual effort."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Improved Customer Experience"
+                description="EnKash empowers your team to focus on building better relationships by automating repetitive tasks. Offer your customers a smoother, hassle-free payment experience with prompt notifications and accurate invoices."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -391,7 +394,7 @@ const BulkCollect = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-           <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -411,7 +414,7 @@ const BulkCollect = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -444,8 +447,8 @@ const BulkCollect = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
-             <DynamicHeading
+          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
+            <DynamicHeading
               content={[
                 {
                   title: "Check out our ",
