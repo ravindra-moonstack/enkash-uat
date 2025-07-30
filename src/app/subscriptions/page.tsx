@@ -83,13 +83,14 @@ const Subscriptions = (): React.JSX.Element => {
                 />
               </div>
               <div
-                className={`text-center text-md-start ${styles.first_row_content}  `}
+                className={`text-center text-md-start mb-5 ${styles.first_row_content}  `}
               >
                 <div className="d-flex pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
-                        title: "Trusted Subscription Management Software for Growth-oriented Businesses",
+                        title:
+                          "Trusted Subscription Management Software for Growth-oriented Businesses",
                         color: "color-black",
                       },
                     ]}
@@ -109,7 +110,7 @@ const Subscriptions = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -150,7 +151,7 @@ const Subscriptions = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100 mh-550 object-fit-contain"
+                  className="w-100 mh-550 mt-md-5 object-fit-contain"
                 />
               </div>
             </div>
@@ -170,7 +171,7 @@ const Subscriptions = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-md-0 pb-3"
             />
           </div>
 
@@ -180,7 +181,7 @@ const Subscriptions = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -257,7 +258,7 @@ const Subscriptions = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -327,70 +328,71 @@ const Subscriptions = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}`}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "EnKash ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Subscription Model",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: "Covers It All",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center mb-md-1 pb-md-4 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "EnKash ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Subscription Model",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "Covers It All",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Automate Recurring Payments"
-              description="Streamline recurring payment schedules, take control of billing cycles, and stay informed with instant alerts. Our advanced billing system simplifies subscription management with a reliable solution for card updates, payment retries, email notifications, and more."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="UPI AutoPay for Scalability"
-              description="Broaden your audience by including non-cardholders, drive conversions with affordable subscription plans, and foster customer loyalty through visibility and control while enjoying extensive UPI app compatibility."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Tailored Recurring Payment Models"
-              description="Choose fixed, usage-based, or variable models to automate payments. Support predefined amounts, usage-based billing, or both fixed rentals and ad-hoc charges for complete payment flexibility."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Customize Your Checkout Experience"
-              description="Seamlessly integrate EnKash’s ready-to-use APIs into your app or website to offer a branded checkout experience. Use our dashboard to create plans, manage customers, and share payment links via email or SMS."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Automate Recurring Payments"
+                description="Streamline recurring payment schedules, take control of billing cycles, and stay informed with instant alerts. Our advanced billing system simplifies subscription management with a reliable solution for card updates, payment retries, email notifications, and more."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="UPI AutoPay for Scalability"
+                description="Broaden your audience by including non-cardholders, drive conversions with affordable subscription plans, and foster customer loyalty through visibility and control while enjoying extensive UPI app compatibility."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Tailored Recurring Payment Models"
+                description="Choose fixed, usage-based, or variable models to automate payments. Support predefined amounts, usage-based billing, or both fixed rentals and ad-hoc charges for complete payment flexibility."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Customize Your Checkout Experience"
+                description="Seamlessly integrate EnKash’s ready-to-use APIs into your app or website to offer a branded checkout experience. Use our dashboard to create plans, manage customers, and share payment links via email or SMS."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+            </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -402,7 +404,7 @@ const Subscriptions = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-md-0 pb-3"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -440,7 +442,7 @@ const Subscriptions = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -473,7 +475,7 @@ const Subscriptions = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
+          <div className={`${styles.title}  text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {

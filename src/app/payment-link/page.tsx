@@ -87,8 +87,7 @@ const PaymentLink = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-               
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Payment Links",
@@ -104,10 +103,11 @@ const PaymentLink = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Accept Payments Instantly with EnKash Payment Links",
+                        title:
+                          "Accept Payments Instantly with EnKash Payment Links",
                         color: "color-black",
                       },
                     ]}
@@ -117,7 +117,7 @@ const PaymentLink = (): React.JSX.Element => {
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title:
@@ -175,7 +175,7 @@ const PaymentLink = (): React.JSX.Element => {
       <div className={`row ${styles.second_row} `}>
         <div className="gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Simplify Payments, Amplify Business",
@@ -183,7 +183,7 @@ const PaymentLink = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-4 "
             />
           </div>
 
@@ -193,7 +193,7 @@ const PaymentLink = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -208,7 +208,7 @@ const PaymentLink = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Payment Options",
@@ -230,7 +230,7 @@ const PaymentLink = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Economical",
@@ -270,8 +270,8 @@ const PaymentLink = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-             <DynamicHeading
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
+            <DynamicHeading
               content={[
                 {
                   title: "How to Create  ",
@@ -313,7 +313,7 @@ const PaymentLink = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div  className={`${styles.list_button} `}>
+              <div className={`${styles.list_button} `}>
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
@@ -336,112 +336,111 @@ const PaymentLink = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center  pb-md-3`}
-              >
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center `}>
+                <div className={`flex-column justify-content-center   mb-md-5 mb-4`}>
                   <DynamicHeading
-                  content={[
-                    {
-                      title: "Get Paid with a ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Single Link ",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
-              </div>
-            </div>
-
-            <div className={`${styles.allInOnePolicyCard}  `}>
-              <AllInOnePolicy
-                icon={quickIcon}
-                title="Quick and Easy Setup"
-                description="Generate payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                image={paymentLinkImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="248px"
-              />
-
-              <AllInOnePolicy
-                icon={websiteIcon}
-                title="No Website Required"
-                description="EnKash Payment Links are perfect for businesses without an online presence. Collect payments via SMS, WhatsApp, email, or social media, eliminating the need for a website or app. This solution bridges the gap between offline and online payment experiences seamlessly."
-                image={shareImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={paymentOptionIcon}
-                title="100+ Payment Options"
-                description="Offer your customers the flexibility to pay using their preferred method, including UPI, net banking, credit/debit cards, wallets, and more. EnKash Payment Links ensure a smooth checkout experience for everyone, boosting customer satisfaction and increasing conversions"
-                image={paymentOptionImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={notificationIcon}
-                title="Real-Time Notifications"
-                description="Stay in the loop with instant alerts for every successful payment. Gain better control and visibility into your transactions, enabling faster decision-making and improved financial management. Receive updates across all devices to keep your operations running smoothly."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={secureIcon}
-                title="Secure Transactions"
-                description="Built on a foundation of PCI DSS compliance and advanced encryption protocols, EnKash Payment Links ensure every transaction is safe and secure. Protect sensitive customer data while providing a trustworthy payment experience, strengthening customer confidence in your business."
-                image={secureImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-       <div className={`${styles.eigth_row} `}>
-        <div className={`${styles.faqSection} text-start  max-w-auto`}>
-          <div className={`${styles.title} text-start pb-md-5 pb-3`}>
- 
-             <DynamicHeading
                     content={[
                       {
-                        title:
-                          "Integrate with Ease. Connect Without Gaps.",
+                        title: "Get Paid with a ",
                         color: "color-black",
+                      },
+                      {
+                        title: "Single Link ",
+                        color: "color-equity-blue",
                       },
                     ]}
                     headingTag="h2"
                     className="f-6"
                   />
+                </div>
+              </div>
+
+              <div className={`${styles.allInOnePolicyCard}  `}>
+                <AllInOnePolicy
+                  icon={quickIcon}
+                  title="Quick and Easy Setup"
+                  description="Generate payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
+                  image={paymentLinkImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="248px"
+                />
+
+                <AllInOnePolicy
+                  icon={websiteIcon}
+                  title="No Website Required"
+                  description="EnKash Payment Links are perfect for businesses without an online presence. Collect payments via SMS, WhatsApp, email, or social media, eliminating the need for a website or app. This solution bridges the gap between offline and online payment experiences seamlessly."
+                  image={shareImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="305px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={paymentOptionIcon}
+                  title="100+ Payment Options"
+                  description="Offer your customers the flexibility to pay using their preferred method, including UPI, net banking, credit/debit cards, wallets, and more. EnKash Payment Links ensure a smooth checkout experience for everyone, boosting customer satisfaction and increasing conversions"
+                  image={paymentOptionImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={notificationIcon}
+                  title="Real-Time Notifications"
+                  description="Stay in the loop with instant alerts for every successful payment. Gain better control and visibility into your transactions, enabling faster decision-making and improved financial management. Receive updates across all devices to keep your operations running smoothly."
+                  image={notificationImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="259px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={secureIcon}
+                  title="Secure Transactions"
+                  description="Built on a foundation of PCI DSS compliance and advanced encryption protocols, EnKash Payment Links ensure every transaction is safe and secure. Protect sensitive customer data while providing a trustworthy payment experience, strengthening customer confidence in your business."
+                  image={secureImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="259px"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={`${styles.eigth_row} `}>
+        <div className={`${styles.faqSection} text-start  max-w-auto`}>
+          <div className={`${styles.title} text-start pb-md-5 pb-4`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Integrate with Ease. Connect Without Gaps.",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
           </div>
           <div className="row">
-            <div className="col-md-6">
+            <div className="col-md-6 ">
               <div>
                 <SecondFaqHtml SecondfaqData={SecondfaqData} />
               </div>
             </div>
             <div className="col-md-6">
               <div className={styles.faq_bg}>
-                <Image src={faqBg} alt="background image" className="w-100 mh-550 object-fit-contain" />
+                <Image
+                  src={faqBg}
+                  alt="background image"
+                  className="w-100 mh-550 object-fit-contain"
+                />
               </div>
             </div>
           </div>
- 
         </div>
       </div>
- 
 
       <div className={`${styles.tab_row}  bg-white `}>
         <PaymentLinkTab
@@ -516,7 +515,7 @@ const PaymentLink = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Ready to simplify your payments?",
@@ -524,7 +523,7 @@ const PaymentLink = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-3 mb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -541,9 +540,8 @@ const PaymentLink = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-3`}>
-           
-              <DynamicHeading
+          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -563,9 +561,9 @@ const PaymentLink = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
@@ -596,7 +594,7 @@ const PaymentLink = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {

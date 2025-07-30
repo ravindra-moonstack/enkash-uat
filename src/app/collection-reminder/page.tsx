@@ -73,7 +73,6 @@ const CollectionReminders = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row  `}
               >
-               
                 <DynamicHeading
                   content={[
                     {
@@ -92,7 +91,8 @@ const CollectionReminders = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Get paid instantly with automated Collection Reminders",
+                        title:
+                          "Get paid instantly with automated Collection Reminders",
                         color: "color-black",
                       },
                     ]}
@@ -149,10 +149,6 @@ const CollectionReminders = (): React.JSX.Element => {
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
                   className="w-100 mh-550 object-fit-contain"
                 />
               </div>
@@ -168,12 +164,13 @@ const CollectionReminders = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Quick Payment Collection via Automated Payment Reminders",
+                  title:
+                    "Quick Payment Collection via Automated Payment Reminders",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-md-0 pb-3"
             />
           </div>
 
@@ -260,7 +257,7 @@ const CollectionReminders = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -299,7 +296,7 @@ const CollectionReminders = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div  className={`${styles.list_button} `}>
+              <div className={`${styles.list_button} `}>
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
@@ -322,70 +319,71 @@ const CollectionReminders = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Automated Reminders for Collection ",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-4 pb-1 `}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Automated Reminders for Collection ",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Automation"
-              description="Automate collection reminders and save time for other productive work. Send timely payment reminder emails to ensure faster collections and improved cash flow."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Payment Links"
-              description="Businesses can embed payment links within the reminder engine channel, and collections can be done instantly."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="DSO Management"
-              description="Businesses can automate collection reminders and accelerate their collections, decreasing their DSO and stabilizing their cash flow."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Improved Customer Relationships"
-              description="EnKash brings businesses closer to their customers by providing insights into their behaviour and patterns. This enables businesses to make decisions keeping customers at the forefront, therefore, establishing better customer relationships."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Real-time Insights"
-              description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
-              image={secureImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Automation"
+                description="Automate collection reminders and save time for other productive work. Send timely payment reminder emails to ensure faster collections and improved cash flow."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Payment Links"
+                description="Businesses can embed payment links within the reminder engine channel, and collections can be done instantly."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="DSO Management"
+                description="Businesses can automate collection reminders and accelerate their collections, decreasing their DSO and stabilizing their cash flow."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Improved Customer Relationships"
+                description="EnKash brings businesses closer to their customers by providing insights into their behaviour and patterns. This enables businesses to make decisions keeping customers at the forefront, therefore, establishing better customer relationships."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconFive}
+                title="Real-time Insights"
+                description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
+                image={secureImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+            </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -397,7 +395,7 @@ const CollectionReminders = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -415,7 +413,7 @@ const CollectionReminders = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-           <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -435,7 +433,7 @@ const CollectionReminders = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -468,7 +466,7 @@ const CollectionReminders = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
+          <div className={`${styles.title}  text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {

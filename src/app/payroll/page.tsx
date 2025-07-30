@@ -75,8 +75,8 @@ const Payroll = (): React.JSX.Element => {
                       color: "color-equity-blue underline",
                     },
                   ]}
-                  headingTag="h4"
-                  className="f-4"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
@@ -101,11 +101,11 @@ const Payroll = (): React.JSX.Element => {
                   content={[
                     {
                       title: "Your ultimate solution for accurate, compliant, and stress-free salary disbursement. Empower your business with EnKash’s advanced payroll management software in India, designed to meet your workforce’s diverse needs and ensure seamless payroll disbursement.",
-                      color: "color-black",
+                      color: "color-black subHeading",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-4"
+                  headingTag="p"
+                  className="mb-0"
                 />
                  
                 </div>
@@ -148,7 +148,7 @@ const Payroll = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -192,7 +192,7 @@ const Payroll = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -366,11 +366,11 @@ const Payroll = (): React.JSX.Element => {
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="mb-0"
                 />
           
                

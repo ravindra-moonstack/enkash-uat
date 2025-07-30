@@ -71,8 +71,8 @@ const BusinessBillPayment = (): React.JSX.Element => {
                       color: "color-equity-blue underline",
                     },
                   ]}
-                  headingTag="h4"
-                  className="f-4"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
@@ -98,7 +98,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
                   content={[
                     {
                       title: "Manage and pay all your business bills from a single, unified dashboard.",
-                      color: "color-black ",
+                      color: "color-black subHeading",
                     },
                   ]}
                   headingTag="h5"
@@ -144,7 +144,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -216,7 +216,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -338,8 +338,8 @@ const BusinessBillPayment = (): React.JSX.Element => {
                       color: "color-white ",
                     },
                   ]}
-                  headingTag="h2"
-                  className="f-4 bannerHeading"
+                  headingTag="h3"
+                  className="f-5"
                 />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -384,11 +384,11 @@ const BusinessBillPayment = (): React.JSX.Element => {
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey ",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="mb-0"
                 />
                
               </div>

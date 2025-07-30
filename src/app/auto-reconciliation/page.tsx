@@ -52,7 +52,7 @@ const AutoReconciliation = (): React.JSX.Element => {
       <TalkToSales />
 
       <div className={`${styles.first_row} `}>
-        <div className="max-w-auto">
+        <div className="max-w-auto mb-5">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
               <div className="d-flex">
@@ -88,10 +88,11 @@ const AutoReconciliation = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Simplify Cash Flow with Automated Reconciliation",
+                        title:
+                          "Simplify Cash Flow with Automated Reconciliation",
                         color: "color-black",
                       },
                     ]}
@@ -111,7 +112,7 @@ const AutoReconciliation = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -141,7 +142,7 @@ const AutoReconciliation = (): React.JSX.Element => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
+            <div className="col-12  col-md-6 d-flex justify-content-center d-md-flex">
               <div
                 className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
               >
@@ -167,12 +168,13 @@ const AutoReconciliation = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Precise Finance Processes With Automated Reconciliation",
+                  title:
+                    "Precise Finance Processes With Automated Reconciliation",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -259,7 +261,7 @@ const AutoReconciliation = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -278,7 +280,7 @@ const AutoReconciliation = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
+                className={`${
                   showScroll ? "overflow-auto scrollbar-thin" : ""
                 }`}
                 style={{
@@ -325,78 +327,79 @@ const AutoReconciliation = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Manage Finances Better With ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Automated  Reconciliation  ",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={` ${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-3 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Manage Finances Better With ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Automated  Reconciliation  ",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Multi-Bank Reconciliation"
-              description="Automatically map transactions with bank statements using names, dates, and amounts. Effortlessly reconcile unmatched transactions, review mappings, and update transactions in your ERP."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Track and Control"
-              description="Manage records of vendor, rental, utilities, and tax payments from end to end, and easily track the payment status directly on the platform."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Enhance Customer Experience"
-              description="Improve overall customer experience by optimizing collection reminders via the platform with real-time updates of payments and dues."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Accelerate Audits"
-              description="Access detailed transaction history, ensuring clear audit trails for enhanced accountability and compliance. Maintain thorough records of transactions and changes, promoting transparency and traceability"
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Reduce Frauds"
-              description="Gain a clear view of all the transactions, easily identify duplicate invoices, and flag suspicious transactions. Enhancing security and reducing the risk of fraud"
-              image={reduceFrauds}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Multi-Bank Reconciliation"
+                description="Automatically map transactions with bank statements using names, dates, and amounts. Effortlessly reconcile unmatched transactions, review mappings, and update transactions in your ERP."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Track and Control"
+                description="Manage records of vendor, rental, utilities, and tax payments from end to end, and easily track the payment status directly on the platform."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Enhance Customer Experience"
+                description="Improve overall customer experience by optimizing collection reminders via the platform with real-time updates of payments and dues."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Accelerate Audits"
+                description="Access detailed transaction history, ensuring clear audit trails for enhanced accountability and compliance. Maintain thorough records of transactions and changes, promoting transparency and traceability"
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconFive}
+                title="Reduce Frauds"
+                description="Gain a clear view of all the transactions, easily identify duplicate invoices, and flag suspicious transactions. Enhancing security and reducing the risk of fraud"
+                image={reduceFrauds}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+            </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Reconcile Effortlessly with EnKash",
@@ -404,7 +407,7 @@ const AutoReconciliation = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-md-0 pb-3"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -422,7 +425,7 @@ const AutoReconciliation = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -442,7 +445,7 @@ const AutoReconciliation = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -475,8 +478,8 @@ const AutoReconciliation = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
-             <DynamicHeading
+          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
+            <DynamicHeading
               content={[
                 {
                   title: "Check out our ",

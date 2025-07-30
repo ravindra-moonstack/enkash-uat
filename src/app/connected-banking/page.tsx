@@ -66,7 +66,7 @@ const ConnectedBanking = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row  `}
               >
-                  <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Connected Banking",
@@ -81,7 +81,7 @@ const ConnectedBanking = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title: "Power Up Payouts with Connected Banking",
@@ -104,7 +104,7 @@ const ConnectedBanking = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -156,8 +156,8 @@ const ConnectedBanking = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
-             <DynamicHeading
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
+            <DynamicHeading
               content={[
                 {
                   title: "How Connected Banking Works ",
@@ -218,95 +218,95 @@ const ConnectedBanking = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Here’s What You Unlock with ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Connected Banking ",
-                      color: "color-equity-blue",
-                    },
-                   
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-4 mb-1 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Here’s What You Unlock with ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Connected Banking ",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Initiate payouts directly from your bank accounts"
-              description="Forget wallet loading and fund transfers. With EnKash, your payouts happen directly from your connected bank accounts, giving you complete control over cash flow without any operational delays or intermediaries."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Link multiple bank accounts"
-              description="Connect all your current accounts from different banks on a single dashboard. Distribute payout load, minimize dependency on a single bank, reduce downtime risks, and improve liquidity management across your business operations."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title=" Access 24x7 payment rails"
-              description="Make payouts anytime—day or night, weekends or holidays. EnKash supports UPI, IMPS, NEFT, and RTGS round-the-clock, ensuring your vendors, customers, or employees get paid without delay."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Get real-time balance visibility"
-              description="See up-to-date balances across all your linked accounts instantly. Make smarter financial decisions with accurate visibility into available funds before initiating payouts or planning high-value transactions."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Automate reconciliation"
-              description="Say goodbye to manual downloads and spreadsheet matching. EnKash fetches direct bank files and automates reconciliation, making your accounting faster, more accurate, and audit-ready without any manual effort."
-              image={secureImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconSix}
-              title="Enable smart routing"
-              description="Intelligently route each payout from the most optimal account based on pre-set rules or available balance. Maximize fund utilization and avoid failed transactions due to insufficient funds in a single account."
-              image={reduceFrauds}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Maintain complete control"
-              description="With EnKash, your money stays in your bank. No wallet dependencies or fund transfers- just a secure, compliant layer that enables real-time visibility, control, and automation over all your payouts."
-              image={MaintainCompleteControl}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Initiate payouts directly from your bank accounts"
+                description="Forget wallet loading and fund transfers. With EnKash, your payouts happen directly from your connected bank accounts, giving you complete control over cash flow without any operational delays or intermediaries."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Link multiple bank accounts"
+                description="Connect all your current accounts from different banks on a single dashboard. Distribute payout load, minimize dependency on a single bank, reduce downtime risks, and improve liquidity management across your business operations."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title=" Access 24x7 payment rails"
+                description="Make payouts anytime—day or night, weekends or holidays. EnKash supports UPI, IMPS, NEFT, and RTGS round-the-clock, ensuring your vendors, customers, or employees get paid without delay."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Get real-time balance visibility"
+                description="See up-to-date balances across all your linked accounts instantly. Make smarter financial decisions with accurate visibility into available funds before initiating payouts or planning high-value transactions."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconFive}
+                title="Automate reconciliation"
+                description="Say goodbye to manual downloads and spreadsheet matching. EnKash fetches direct bank files and automates reconciliation, making your accounting faster, more accurate, and audit-ready without any manual effort."
+                image={secureImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconSix}
+                title="Enable smart routing"
+                description="Intelligently route each payout from the most optimal account based on pre-set rules or available balance. Maximize fund utilization and avoid failed transactions due to insufficient funds in a single account."
+                image={reduceFrauds}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconFive}
+                title="Maintain complete control"
+                description="With EnKash, your money stays in your bank. No wallet dependencies or fund transfers- just a secure, compliant layer that enables real-time visibility, control, and automation over all your payouts."
+                image={MaintainCompleteControl}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+            </div>
           </div>
         </div>
       </div>
-
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
-          <div className={`${styles.title} text-center  pb-5`}>
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -344,7 +344,7 @@ const ConnectedBanking = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-md-0 pb-3 "
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -362,7 +362,7 @@ const ConnectedBanking = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-           <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -382,9 +382,9 @@ const ConnectedBanking = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
