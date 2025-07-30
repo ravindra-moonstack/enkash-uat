@@ -1,5 +1,4 @@
 "use client"
-
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -18,6 +17,8 @@ interface Slide {
   backgroundImage?: string | StaticImageData
   backgroundColor?: string
   heading: string
+  rightImageMarginTop?: string
+  rightImageMaxHeight?: string
   subHeading: string
   rightImage?: string | StaticImageData
   buttonText: string
@@ -36,9 +37,12 @@ export default function SliderComponent({
   const settings = {
     dots: true,
     fade: true,
+    infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    speed: 5000,
+    speed: 1000, // 1 sec fade
+    autoplay: true, // 🔑
+    autoplaySpeed: 3000, // 3 sec delay between fades
     cssEase: "linear",
   }
 
@@ -50,7 +54,7 @@ export default function SliderComponent({
           <DynamicHeading
             content={[
               {
-                title: "Payment Links",
+                title: "E-commerce Vouchers",
                 color: "color-white underline",
               },
             ]}
@@ -67,14 +71,14 @@ export default function SliderComponent({
               className={styles.voucherSlider}
               style={{
                 background: slide.backgroundImage
-                  ? `linear-gradient(0deg, rgb(255, 255, 255) -4%, rgb(255, 255, 255) 24.94%, rgb(255, 255, 255) 19.51%, rgba(255, 255, 255, 0.77) 31.74%, rgba(255, 255, 255, 0.33) 47.46%, rgba(255, 255, 255, 0) 70.45%) , url('${
+                  ? ` url('${
                       typeof slide.backgroundImage === "string"
                         ? slide.backgroundImage
                         : slide.backgroundImage.src
                     }')`
                   : slide.backgroundColor,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
+                backgroundSize: "100%",
+                backgroundPosition: "top center",
                 width: "100%",
               }}
             >
@@ -120,9 +124,8 @@ export default function SliderComponent({
                           src={slide.rightImage}
                           alt="slide visual"
                           style={{
-                            objectFit: "contain",
-                            maxHeight: "672px",
-                            marginTop: "-150px",
+                            maxHeight: slide.rightImageMaxHeight ?? "400px", // ✅ default 400px
+                            marginTop: slide.rightImageMarginTop ?? "-120px",
                           }}
                           className="w-100 mh-550 object-fit-contain"
                         />

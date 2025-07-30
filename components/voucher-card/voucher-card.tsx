@@ -30,34 +30,34 @@ const VoucherCard = ({
                 alt="card visual"
                 className={styles.card_image}
                 width={240}
+                height={240}
               />
             </div>
           )}
-          <div>
+          <div className={`${styles.voucher_card_title}`}>
             {titleHtml && (
               <DynamicHeading
                 content={[
                   {
                     title: String(titleHtml),
-                    color: "color-black d-block",
+                    color: "color-black d-block subHeading f-6",
                   },
                 ]}
-                headingTag="p"
-                className="f-6 subHeading mb-0"
+                headingTag="h6"
               />
             )}
+            <DynamicHeading
+              content={[
+                {
+                  title: description,
+                  color: "color-black subHeading",
+                },
+              ]}
+              headingTag="h6"
+              className="f-4 mb-0"
+            />
           </div>
         </div>
-        <DynamicHeading
-          content={[
-            {
-              title: description,
-              color: "color-black",
-            },
-          ]}
-          headingTag="p"
-          className="f-4 mb-0"
-        />
       </div>
       <div className="row pt-4 d-flex justify-content-between align-items-center">
         <div className="col-6">

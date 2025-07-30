@@ -246,14 +246,13 @@
 }
 
 .detail_section {
-  padding: 0 5px;
   color: $color-bolt-title-grey;
   .description_title {
     font-weight: 600;
     font-size: 22px;
   }
   @include for-laptops {
-    padding: 0 100px;
+    padding: 0 80px;
   }
   a {
     color: $color-black;
