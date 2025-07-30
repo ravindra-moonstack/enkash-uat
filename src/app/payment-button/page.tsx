@@ -77,7 +77,7 @@ const PaymentButton = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
               >
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Payment Button",
@@ -92,10 +92,11 @@ const PaymentButton = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="flex-column   pt-3 pt-md-0">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Sell smarter, not harder with  EnKash Payment Buttons",
+                        title:
+                          "Sell smarter, not harder with  EnKash Payment Buttons",
                         color: "color-black",
                       },
                     ]}
@@ -105,7 +106,7 @@ const PaymentButton = (): React.JSX.Element => {
                 </div>
 
                 <div className="mt-3 mb-3 text-md-start ">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title:
@@ -122,7 +123,7 @@ const PaymentButton = (): React.JSX.Element => {
                   <Image
                     src={groupIcon}
                     alt="card visual"
-                    className={styles.group_logo} 
+                    className={styles.group_logo}
                   />
                   <div
                     className={`${styles.first_row_button} d-flex flex-row  align-items-center`}
@@ -167,7 +168,7 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
-          <div className="d-inline justify-content-center  align-items-center text-center">
+          <div className="mb-4 mb-md-0 text-center">
             <DynamicHeading
               content={[
                 {
@@ -186,7 +187,7 @@ const PaymentButton = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                  <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -223,7 +224,7 @@ const PaymentButton = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                  <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Customizable",
@@ -263,8 +264,8 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-             <DynamicHeading
+          <div className={`${styles.title} text-center pb-4 pb-md-5`}>
+            <DynamicHeading
               content={[
                 {
                   title: "How to Make a ",
@@ -274,7 +275,6 @@ const PaymentButton = (): React.JSX.Element => {
                   title: "Payment Button ",
                   color: "color-equity-blue",
                 },
-                
               ]}
               headingTag="h2"
               className="f-6"
@@ -330,113 +330,110 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "A Click is ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "All it Takes",
-                      color: "color-equity-blue",
-                    },
-                   
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
-              </div>
-            </div>
-
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Setup in under 5 minutes"
-              description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
-              image={paymentLinkImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="243px"
-            />
-
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Ctrl C + Ctrl V = Payment Ready"
-              description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
-              image={shareImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="305px"
-              reverse
-            />
-
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Accept Payments Anytime, Anywhere"
-              description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
-              image={paymentOptionImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="268px"
-            />
-
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Match Your Style"
-              description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Optimized for the Mobile"
-              description="Designed for optimal performance on all devices. Provide a seamless payment experience for users of smartphones, tablets, or desktops, catering to the growing mobile commerce trends."
-              image={optimizedIcon}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="221px"
-            />
-
-            <AllInOnePolicy
-              icon={taskIconSix}
-              title="Don’t Compromise on Security"
-              description="Industry-leading security and compliance standards ensure safe payments. Protect your customers’ data with advanced encryption and fraud detection, building trust and credibility for your business."
-              image={secureImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-          </div>
-        </div>
-      </div>
-<div className={`${styles.eigth_row} `}>
-        <div className={`${styles.faqSection} text-start  max-w-auto`}>
-          <div className={`${styles.title} text-start pb-md-5 pb-3 col-md-6`}>
- 
-             <DynamicHeading
+          <div className={`${styles.section}`}>
+            <div className={`row align-items-center `}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-4 pb-md-5`}
+                >
+                  <DynamicHeading
                     content={[
                       {
-                        title:
-                          "A ",
+                        title: "A Click is ",
                         color: "color-black",
-                      },
-                       {
-                        title:
-                          "Button for Every Payment ",
-                        color: "color-equity-blue",
                       },
                       {
-                        title:
-                          "Need",
-                        color: "color-black",
+                        title: "All it Takes",
+                        color: "color-equity-blue",
                       },
                     ]}
                     headingTag="h2"
                     className="f-6"
                   />
+                </div>
+              </div>
+
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Setup in under 5 minutes"
+                description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
+                image={paymentLinkImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="243px"
+              />
+
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Ctrl C + Ctrl V = Payment Ready"
+                description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
+                image={shareImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="305px"
+                reverse
+              />
+
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Accept Payments Anytime, Anywhere"
+                description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
+                image={paymentOptionImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="268px"
+              />
+
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Match Your Style"
+                description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+
+              <AllInOnePolicy
+                icon={taskIconFive}
+                title="Optimized for the Mobile"
+                description="Designed for optimal performance on all devices. Provide a seamless payment experience for users of smartphones, tablets, or desktops, catering to the growing mobile commerce trends."
+                image={optimizedIcon}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="221px"
+              />
+
+              <AllInOnePolicy
+                icon={taskIconSix}
+                title="Don’t Compromise on Security"
+                description="Industry-leading security and compliance standards ensure safe payments. Protect your customers’ data with advanced encryption and fraud detection, building trust and credibility for your business."
+                image={secureImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className={`${styles.eigth_row} `}>
+        <div className={`${styles.faqSection} text-start  max-w-auto`}>
+          <div className={`${styles.title} text-start pb-md-3 pb-3 col-md-8`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "A ",
+                  color: "color-black",
+                },
+                {
+                  title: "Button for Every Payment ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "Need",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
           </div>
           <div className="row">
             <div className="col-md-6">
@@ -446,17 +443,20 @@ const PaymentButton = (): React.JSX.Element => {
             </div>
             <div className="col-md-6">
               <div className={styles.faq_bg}>
-                <Image src={faqBg} alt="background image" className="w-100 mh-550 object-fit-contain" />
+                <Image
+                  src={faqBg}
+                  alt="background image"
+                  className="w-100 mh-550 object-fit-contain"
+                />
               </div>
             </div>
           </div>
- 
         </div>
       </div>
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
+          <div className="text-center mb-3 mb-md-0">
             <DynamicHeading
               content={[
                 {
@@ -503,7 +503,7 @@ const PaymentButton = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-md-0 mb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -513,7 +513,7 @@ const PaymentButton = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="p"
-                  className="mb-0"
+                  className="mb-0 "
                 />
               </div>
               <div className="mt-3 d-none d-md-block">
@@ -536,8 +536,8 @@ const PaymentButton = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
-             <DynamicHeading
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
+            <DynamicHeading
               content={[
                 {
                   title: "Check out our ",

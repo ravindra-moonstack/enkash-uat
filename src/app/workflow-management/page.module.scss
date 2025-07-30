@@ -10,17 +10,15 @@
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 90px;
-  padding-bottom: 36px;
+  padding-bottom: 0;
   background-image: url(./img/first-row-bg.svg);
   @include for-laptops {
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-top: 112px;
-    padding-bottom: 60px;
+    padding: 112px 20px 0;
   }
   .group_logo {
-    width: 174px;
-    height: 30px;
+    max-width: 250px;
+    width: 100%;
+    // height: 30px;
     @include for-laptops {
       width: 366px;
       height: 62px;
@@ -38,7 +36,7 @@
     }
   }
   .right_img {
-    Img {
+    img {
       height: auto;
       padding-top: 32px;
       @include for-laptops {
@@ -66,10 +64,11 @@
   .first_row_button {
     padding-top: 16px;
     gap: 12px;
-
+    justify-content: center;
     @include for-laptops {
       padding-top: 48px;
       gap: 26px;
+      justify-content: start;
     }
   }
 }
@@ -77,12 +76,9 @@
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
-  padding: 36px 20px;
+  padding: 50px 20px !important;
   @include for-laptops {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 90px 20px;
   }
   .section {
     margin: auto;
@@ -152,15 +148,10 @@
 
 .third_row {
   width: 100%;
-  padding: 32px 20px;
+  padding: 50px 20px;
 
   @include for-laptops {
-    padding: 70px 90px;
-  }
-
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding: 90px 20px;
   }
 
   .section {
@@ -173,6 +164,9 @@
       margin-left: 20px;
       margin-bottom: 50px;
     }
+  }
+  .scrollCard:last-child {
+    margin-bottom: 0;
   }
 
   .first_container,
@@ -195,12 +189,15 @@
   }
   .list_button {
     padding-left: 40px;
+    padding-top: 20px;
     margin-bottom: 20px !important;
     @include for-laptops {
-      padding-left: 85px;
+      padding-left: 88px;
     }
   }
-
+  :global(img) {
+    height: auto;
+  }
   .approvedImage {
     position: absolute;
     bottom: 0;
@@ -216,35 +213,26 @@
 }
 
 .fourth_row {
-  padding: 36px 30px;
+  padding: 0px 20px;
   @include for-laptops {
-    padding: 0px 90px 53px 90px;
-  }
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding: 0px 20px;
   }
   .section {
-    gap: 32px;
-    padding: 20px 10px;
+    gap: 20px;
+    padding: 50px 20px 26px;
     background-color: $color-sky-hint;
     @include for-laptops {
-      padding: 53px 88px;
-      gap: 70px;
+      padding: 90px 100px 74px;
     }
+    
   }
 }
 
 .sixth_row {
-  padding: 36px 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 84px 90px 51px 90px;
+    padding: 90px 20px;
   }
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
-  }
-
   .card_grid {
     display: flex;
     flex-wrap: wrap;
@@ -260,12 +248,12 @@
 }
 
 .fifth_row {
-  background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
+  background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 36px;
+  padding: 50px 20px !important;
   @include for-laptops {
-    padding: 58px;
+    padding: 90px 20px;
   }
   .get_started_button {
     padding: 6px;
@@ -394,12 +382,9 @@
   background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
 
   position: relative;
-  padding: 36px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 90px 20px;
   }
 }
 
@@ -408,9 +393,9 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 36px 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 96px 90px 90px 60px;
+    padding: 90px 20px;
   }
 
   .faq_bg {
@@ -434,8 +419,8 @@
 
 .other_products {
   background-color: white;
-  padding: 36px 20px;
+  padding: 0px 20px 26px;
   @include for-laptops {
-    padding: 0px 90px 90px 90px;
+    padding: 0px 20px 66px;
   }
 }

@@ -38,6 +38,7 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import ManagementCard from "@/components/management-card/management-card"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const PayableAnalytics = (): React.JSX.Element => {
   return (
@@ -68,33 +69,45 @@ const PayableAnalytics = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Payable Analytics ${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Payable Analytics ",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Smarter business decisions start with advanced AI-powered Payable Analytics${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Smarter business decisions start with advanced AI-powered Payable Analytics ",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Get complete visibility into where your money goes. Dig deep into spend patterns and reduce leakage to make data-backed decisions for business growth."
-                    color="black"
-                    size="h5"
-                    weight="4"
-                  />
+                   <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Get complete visibility into where your money goes. Dig deep into spend patterns and reduce leakage to make data-backed decisions for business growth.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
+                  /> 
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -135,7 +148,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                     objectFit: "contain",
                     maxHeight: "672px",
                   }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -147,11 +160,15 @@ const PayableAnalytics = (): React.JSX.Element => {
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-            <Heading
-              title="Turn Data Into Insights For Business Growth"
-              size="h3"
-              color="white"
-              weight="3"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Turn Data Into Insights For Business Growth",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
 
@@ -161,17 +178,30 @@ const PayableAnalytics = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading title="100%" color="white" size="h2" weight="7" />
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "100%",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
+                />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Access Real-Time Data"
-                  color="white"
-                  size="h5"
-                  weight="4"
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Access Real-Time Data",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -185,11 +215,15 @@ const PayableAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Analyze Latest Trends"
-                  color="white"
-                  size="h5"
-                  weight="4"
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Analyze Latest Trends",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -203,11 +237,15 @@ const PayableAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Gain Actionable Insights"
-                  color="white"
-                  size="h5"
-                  weight="4"
+                  <DynamicHeading
+                  content={[
+                    {
+                      title: "Gain Actionable Insights",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -218,11 +256,15 @@ const PayableAnalytics = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <Heading
-              title={`How to Set Up Payable Analytics`}
-              color="black"
-              size="h1"
-              weight="6"
+            <DynamicHeading
+              content={[
+                {
+                  title: "How to Set Up Payable Analytics ",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
           <div className="row">
@@ -241,7 +283,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -254,11 +296,15 @@ const PayableAnalytics = (): React.JSX.Element => {
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
               <div className={`d-inline text-center pb-3`}>
-                <Heading
-                  title={`AI-Backed Data Decisions For Your Business `}
-                  color="black"
-                  size="h1"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "AI-Backed Data Decisions For Your Business ",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
             </div>
@@ -309,11 +355,15 @@ const PayableAnalytics = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Harness Data to Grow, Scale, and Outperform Competition"
-              size="bannerHeading"
-              color="white"
-              weight="4"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Harness Data to Grow, Scale, and Outperform Competition",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -331,27 +381,40 @@ const PayableAnalytics = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
+                 <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"
@@ -372,20 +435,24 @@ const PayableAnalytics = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center  pb-5`}>
-            <Heading
-              title={`Check out our ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Check out our ",
+                  color: "color-black",
+                },
+                {
+                  title: "other payment products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading
-              title={`other payment products ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading title="at EnKash" color="black" size="h1" weight="5" />
           </div>
           <div className="row g-3 pb-4 ">
             <div className="col-12 col-md-4">

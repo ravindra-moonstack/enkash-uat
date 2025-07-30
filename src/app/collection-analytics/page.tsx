@@ -71,7 +71,6 @@ const CollectionAnalytics = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row  `}
               >
-              
                 <DynamicHeading
                   content={[
                     {
@@ -90,7 +89,8 @@ const CollectionAnalytics = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Leverage data to boost decision-making with Collection Analytics",
+                        title:
+                          "Leverage data to boost decision-making with Collection Analytics",
                         color: "color-black",
                       },
                     ]}
@@ -110,7 +110,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -171,7 +171,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -181,7 +181,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -258,7 +258,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -277,7 +277,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
+                className={` ${
                   showScroll ? "overflow-auto scrollbar-thin" : ""
                 }`}
                 style={{
@@ -324,66 +324,67 @@ const CollectionAnalytics = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Optimize Recovery and  ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Boost Cash Flow,",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-3 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Optimize Recovery and  ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Boost Cash Flow,",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Customizable Dashboards"
-              description="Tailor your collection analytics dashboard to show reports on the basis of week, month, or custom date range, ensuring relevance and clarity."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Visibility And Monitoring"
-              description="Effortlessly track your collection process with complete visibility by monitoring invoice status, outstanding amounts, total collections, and overdue payments for prompt follow-ups."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Automated Reporting"
-              description="Receive comprehensive downloadable reports automatically, eliminating the need for manual compilation and reducing the risk of errors."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="DSO Tracking"
-              description="Measure and manage Days Sales Outstanding (DSO) efficiently to gain insights into the average time it takes to collect payments. Improve your receivables management with a clear understanding of payment cycle trends, helping you optimize your cash flow further."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Customizable Dashboards"
+                description="Tailor your collection analytics dashboard to show reports on the basis of week, month, or custom date range, ensuring relevance and clarity."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Visibility And Monitoring"
+                description="Effortlessly track your collection process with complete visibility by monitoring invoice status, outstanding amounts, total collections, and overdue payments for prompt follow-ups."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Automated Reporting"
+                description="Receive comprehensive downloadable reports automatically, eliminating the need for manual compilation and reducing the risk of errors."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="DSO Tracking"
+                description="Measure and manage Days Sales Outstanding (DSO) efficiently to gain insights into the average time it takes to collect payments. Improve your receivables management with a clear understanding of payment cycle trends, helping you optimize your cash flow further."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+            </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -395,7 +396,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -413,7 +414,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -433,7 +434,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="pb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -466,7 +467,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
+          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {

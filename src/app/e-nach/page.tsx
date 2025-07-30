@@ -88,7 +88,7 @@ const eNACH = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-flex flex-column   pt-4 pt-md-0">
+                <div className="d-flex flex-column pt-4 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -102,16 +102,17 @@ const eNACH = (): React.JSX.Element => {
                 </div>
 
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title:"Effortlessly automate recurring collections with EnKash eNACH mandate. Set up fast, secure digital mandates and seamlessly collect large recurring payments",
+                        title:
+                          "Effortlessly automate recurring collections with EnKash eNACH mandate. Set up fast, secure digital mandates and seamlessly collect large recurring payments",
                         color: "color-black subHeading",
                       },
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -172,7 +173,7 @@ const eNACH = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -182,7 +183,7 @@ const eNACH = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                   <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -219,7 +220,7 @@ const eNACH = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Easy Subscription Management",
@@ -259,7 +260,7 @@ const eNACH = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -325,80 +326,81 @@ const eNACH = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Digital Payment System ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "for Recurring Payments",
-                      color: "color-equity-blue",
-                    },
-                  
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-4 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Digital Payment System ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "for Recurring Payments",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Instant Digital Mandate Creation"
-              description="Eliminate paperwork and delays—register mandates digitally for faster processing and hassle-free automation."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Smart Payment Retries for Higher Success Rates"
-              description="Reduce revenue loss with automatic retries on failed payments, ensuring uninterrupted cash flow and improved collection efficiency."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Bulk Subscription Management Made Easy"
-              description="Set up, track, and manage multiple mandates at scale directly to handle larger payments from a single dashboard—saving time and effort."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="One-Time Authentication, Lifetime Convenience"
-              description="Secure recurring payments with a simple one-time authentication, offering a frictionless experience for both businesses and customers."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Customizable Checkout for a Branded Experience"
-              description="Choose between a quick plug-and-play checkout or fully customize it with your brand’s identity, colors, and elements for better engagement."
-              image={secureImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305"
-            />
-            <AllInOnePolicy
-              icon={taskIconSix}
-              title="Plug & Play Integration"
-              description="It provides customers a hassle-free and smooth authentication as compared to physical NACH and can be easily integrated via plug and play method."
-              image={playIntegrationImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Instant Digital Mandate Creation"
+                description="Eliminate paperwork and delays—register mandates digitally for faster processing and hassle-free automation."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Smart Payment Retries for Higher Success Rates"
+                description="Reduce revenue loss with automatic retries on failed payments, ensuring uninterrupted cash flow and improved collection efficiency."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Bulk Subscription Management Made Easy"
+                description="Set up, track, and manage multiple mandates at scale directly to handle larger payments from a single dashboard—saving time and effort."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="One-Time Authentication, Lifetime Convenience"
+                description="Secure recurring payments with a simple one-time authentication, offering a frictionless experience for both businesses and customers."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconFive}
+                title="Customizable Checkout for a Branded Experience"
+                description="Choose between a quick plug-and-play checkout or fully customize it with your brand’s identity, colors, and elements for better engagement."
+                image={secureImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305"
+              />
+              <AllInOnePolicy
+                icon={taskIconSix}
+                title="Plug & Play Integration"
+                description="It provides customers a hassle-free and smooth authentication as compared to physical NACH and can be easily integrated via plug and play method."
+                image={playIntegrationImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305"
+                reverse
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -413,7 +415,7 @@ const eNACH = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -431,7 +433,7 @@ const eNACH = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -451,7 +453,7 @@ const eNACH = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="pb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -484,8 +486,10 @@ const eNACH = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-start text-md-center pb-5`}>
-             <DynamicHeading
+          <div
+            className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}
+          >
+            <DynamicHeading
               content={[
                 {
                   title: "Check out our ",

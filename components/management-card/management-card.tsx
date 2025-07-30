@@ -63,7 +63,7 @@ const ManagementCard = ({
                 },
               ]}
               headingTag="p"
-              className="mb-0"
+              className=""
             />
         </div>
       </div>

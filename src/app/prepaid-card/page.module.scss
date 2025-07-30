@@ -1,20 +1,16 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixin" as *;
 
+
 .first_row {
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
   background-size: cover, cover;
   box-shadow: 0px 0px 77px 0px #0000001a;
-
-  padding-top: 86px;
-
+  padding: 100px 20px 0;
   background-image: url("./img/first-row-bg.svg"), url("./img/first-bg.jpg");
-
   @include for-laptops {
-    padding-left: 0px;
-    padding-right: 0px;
-    padding-top: 110px;
+    padding: 112px 20px 0;
   }
   .subtitle {
     color: $color-equity-blue;
@@ -23,12 +19,8 @@
     font-weight: 400;
   }
   .title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
-    padding-top: 10px;
+    text-align: center;
+    padding-top: 20px;
   }
 
   .dashboard_img {
@@ -87,6 +79,16 @@
     border-radius: 12px;
     @include for-laptops {
       padding: 11px 14px;
+    }
+  }
+}
+.card_stacking_row {
+  padding: 0px 20px;
+  .section {
+    padding: 50px 20px 0px;
+    background: #f6f6f6;
+    @include for-laptops {
+      padding: 90px 20px;
     }
   }
 }
@@ -150,9 +152,9 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 96px 90px 90px 60px;
+    padding: 90px 20px;
   }
 
   .faq_bg {
@@ -194,4 +196,24 @@
 .third_row .scrollbar-thin {
   scrollbar-width: auto;
   scrollbar-color: #3b82f6 transparent;
+}
+
+.action_row {
+  position: relative;
+  overflow: hidden;
+padding: 50px 20px;
+@include for-laptops{
+  padding: 90px 20px;
+}
+  .list_button {
+    padding-left: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    @include for-laptops {
+      padding-left: 90px;
+    }
+  }
+ img{
+  height: auto;
+ }
 }

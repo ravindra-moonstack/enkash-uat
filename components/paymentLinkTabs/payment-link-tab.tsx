@@ -7,6 +7,7 @@ import styles from "./payment-link-tab.module.scss"
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 interface PaymentLinkTabProps {
   progressData: {
@@ -52,17 +53,19 @@ const PaymentLinkTab = ({
         <div className={styles.tab_section}>
           {/* Section Heading */}
           <div className="d-flex flex-column align-items-center justify-content-center max-w-auto">
-            <Heading
-              title={sectionHeading}
-              size="h1"
-              color="black"
-              weight="5"
-            />
-            <Heading
-              title={secondHeading ?? ""}
-              size="h1"
-              color="equity-blue"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: sectionHeading + " ",
+                  color: "color-black",
+                },
+                {
+                  title: secondHeading ?? "",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
           <div>
@@ -82,7 +85,7 @@ const PaymentLinkTab = ({
                   onClick={() => setSelectedItemIndex(index)}
                 >
                   {data.itemArray.map((word, wordIndex) => (
-                    <h4
+                    <p
                       key={wordIndex}
                       style={{
                         fontSize: "16px",
@@ -93,7 +96,7 @@ const PaymentLinkTab = ({
                       }}
                     >
                       {word}
-                    </h4>
+                    </p>
                   ))}
                 </div>
               ))}
@@ -123,40 +126,61 @@ const PaymentLinkTab = ({
                     />
                   </div>
                   <div className="d-flex flex-column gap-5">
-                    <Heading
-                      title={selectedItem.title}
-                      color="black"
-                      size="h3"
-                      weight="5"
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: selectedItem.title,
+                          color: "color-black",
+                        },
+                      ]}
+                      headingTag="h4"
+                      className="f-5"
                     />
+
                     <div className="d-flex flex-column gap-1">
                       {" "}
-                      <Heading
-                        title={selectedItem.subtitleOne ?? ""}
-                        color="black"
-                        size="h4"
-                        weight="5"
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: selectedItem.subtitleOne ?? "",
+                            color: "color-black",
+                          },
+                        ]}
+                        headingTag="h5"
+                        className="f-5"
                       />
-                      <Heading
-                        title={selectedItem.descriptionOne ?? ""}
-                        color="grey-200"
-                        size="h6"
-                        weight="4"
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: selectedItem.descriptionOne ?? "",
+                            color: "color-grey-200",
+                          },
+                        ]}
+                        headingTag="p"
+                        className="mb-0"
                       />
                     </div>
 
                     <div className="d-flex flex-column gap-1">
-                      <Heading
-                        title={selectedItem.subtitleTwo ?? ""}
-                        color="black"
-                        size="h4"
-                        weight="5"
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: selectedItem.subtitleTwo ?? "",
+                            color: "color-black",
+                          },
+                        ]}
+                        headingTag="h5"
+                        className="f-5"
                       />
-                      <Heading
-                        title={selectedItem.descriptionTwo ?? ""}
-                        color="grey-200"
-                        size="h6"
-                        weight="4"
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: selectedItem.descriptionTwo ?? "",
+                            color: "color-grey-200",
+                          },
+                        ]}
+                        headingTag="p"
+                        className="mb-0"
                       />
                     </div>
 
@@ -179,23 +203,25 @@ const PaymentLinkTab = ({
         <div className={styles.tab_section}>
           {/* Heading */}
           <div className="d-flex flex-column text-center">
-            <Heading
-              title={sectionHeading}
-              size="h1"
-              color="black"
-              weight="5"
-            />
-            <Heading
-              title={secondHeading ?? ""}
-              size="h1"
-              color="equity-blue"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: sectionHeading + " ",
+                  color: "color-black",
+                },
+                {
+                  title: secondHeading ?? "",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
 
           {/* Tabs */}
           <div
-            className={`d-flex flex-column mt-md-5 mt-3 gap-3 ${styles.progress_container}`}
+            className={`d-flex flex-column mt-md-5 mt-4 gap-3 ${styles.progress_container}`}
           >
             {progressData.map((data, index) => {
               const isOpen = openIndexes.includes(index)
@@ -217,7 +243,7 @@ const PaymentLinkTab = ({
                     }}
                     onClick={() => toggleOpen(index)}
                   >
-                    <h4
+                    <p
                       style={{
                         fontSize: "16px",
                         color: "#576675",
@@ -226,7 +252,7 @@ const PaymentLinkTab = ({
                       }}
                     >
                       {data.title}
-                    </h4>
+                    </p>
                     <Image
                       src={isOpen ? arrowUpImg : arrowDownImg}
                       alt={isOpen ? "Arrow up" : "Arrow down"}
@@ -258,40 +284,61 @@ const PaymentLinkTab = ({
                         height={28}
                       />
                       <div className="d-flex flex-column gap-2">
-                        <Heading
-                          title={selectedItem.title}
-                          color="black"
-                          size="h3"
-                          weight="5"
+                        <DynamicHeading
+                          content={[
+                            {
+                              title: selectedItem.title,
+                              color: "color-black",
+                            },
+                          ]}
+                          headingTag="h4"
+                          className="f-5"
                         />
+
                         <div className="d-flex flex-column gap-1">
                           {" "}
-                          <Heading
-                            title={selectedItem.subtitleOne ?? ""}
-                            color="black"
-                            size="h4"
-                            weight="5"
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: selectedItem.subtitleOne ?? "",
+                                color: "color-black",
+                              },
+                            ]}
+                            headingTag="h5"
+                            className="f-5"
                           />
-                          <Heading
-                            title={selectedItem.descriptionOne ?? ""}
-                            color="grey-200"
-                            size="h6"
-                            weight="4"
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: selectedItem.descriptionOne ?? "",
+                                color: "color-grey-200",
+                              },
+                            ]}
+                            headingTag="p"
+                            className="mb-0"
                           />
                         </div>
 
                         <div className="d-flex flex-column gap-1">
-                          <Heading
-                            title={selectedItem.subtitleTwo ?? ""}
-                            color="black"
-                            size="h4"
-                            weight="5"
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: selectedItem.subtitleTwo ?? "",
+                                color: "color-black",
+                              },
+                            ]}
+                            headingTag="h5"
+                            className="f-5"
                           />
-                          <Heading
-                            title={selectedItem.descriptionTwo ?? ""}
-                            color="grey-200"
-                            size="h6"
-                            weight="4"
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: selectedItem.descriptionTwo ?? "",
+                                color: "color-grey-200",
+                              },
+                            ]}
+                            headingTag="p"
+                            className="mb-0"
                           />
                         </div>
                         <div className={`${styles.list_button}`}>
@@ -330,32 +377,48 @@ const PaymentLinkTab = ({
               />
               <div className="d-flex flex-column gap-1">
                 {" "}
-                <Heading
-                  title={selectedItem.subtitleOne ?? ""}
-                  color="black"
-                  size="h4"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: selectedItem.subtitleOne ?? "",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h5"
+                  className="f-5"
                 />
-                <Heading
-                  title={selectedItem.descriptionOne ?? ""}
-                  color="grey-200"
-                  size="h6"
-                  weight="4"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: selectedItem.descriptionOne ?? "",
+                      color: "color-grey-200",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
 
               <div className="d-flex flex-column gap-1">
-                <Heading
-                  title={selectedItem.subtitleTwo ?? ""}
-                  color="black"
-                  size="h4"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: selectedItem.subtitleTwo ?? "",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h5"
+                  className="f-5"
                 />
-                <Heading
-                  title={selectedItem.descriptionTwo ?? ""}
-                  color="grey-200"
-                  size="h6"
-                  weight="4"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: selectedItem.descriptionTwo ?? "",
+                      color: "color-grey-200",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className={`${styles.list_button}`}>
