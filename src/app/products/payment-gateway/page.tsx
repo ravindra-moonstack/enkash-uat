@@ -41,6 +41,7 @@ import PolicyCard from "@/components/policyCard/policyCard"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 
 const PaymentGateway = (): React.JSX.Element => {
   return (
@@ -66,39 +67,46 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex d-none flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Payment Gateway ${space}`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Payment Gateway",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-4 pt-md-0">
-                  <Heading
-                    title={`India’s First Payment${space}`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "India’s First Payment Gateway Built for SMBs",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
-                  <div>
-                    <Heading
-                      title=" Gateway Built for SMBs"
-                      color="black"
-                      size="h2"
-                      weight="7"
-                    />
-                  </div>
+
+                  <div></div>
                 </div>
 
                 <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
-                  <Heading
-                    title="The best payment gateway for a superior merchant experience."
-                    color="black"
-                    size="h5"
-                    weight="4"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "The best payment gateway for a superior merchant experience.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -137,7 +145,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   src={paymentSummary}
                   alt="card visual"
                   style={{ objectFit: "contain" }}
-                  height={625}
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -149,24 +157,23 @@ const PaymentGateway = (): React.JSX.Element => {
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-            <Heading
-              title="Say Hello to a"
-              size="h3"
-              color="white"
-              weight="3"
-            />
-            <Heading
-              title={`${space} Smarter, Faster & Secure ${space}`}
-              size="h3"
-              color="white"
-              weight="6"
-              italic
-            />
-            <Heading
-              title="way to handle transactions"
-              size="h3"
-              color="white"
-              weight="3"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Say Hello to a ",
+                  color: "color-white",
+                },
+                {
+                  title: "Smarter, Faster & Secure  ",
+                  color: "color-white italic f-6",
+                },
+                {
+                  title: "way to handle transactions",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-3 mb-3"
             />
           </div>
 
@@ -176,24 +183,30 @@ const PaymentGateway = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading
-                  title="100%"
-                  color="white"
-                  size="h2"
-                  weight="7"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "100%",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Support"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Support",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -201,24 +214,30 @@ const PaymentGateway = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading
-                  title="100%"
-                  color="white"
-                  size="h2"
-                  weight="7"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "100%",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Uptime"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Uptime",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -226,24 +245,30 @@ const PaymentGateway = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Heading
-                  title="100+"
-                  color="white"
-                  size="h2"
-                  weight="7"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "100+",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                <Heading
-                  title="Faster"
-                  color="white"
-                  size="h5"
-                  weight="4"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Faster",
+                      color: "color-white",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -253,35 +278,46 @@ const PaymentGateway = (): React.JSX.Element => {
       <div className={styles.third_row}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center`}>
-            <Heading
-              title={`Built for SMBs,  ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`Trusted by Business/Organisations ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Built for SMBs, ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "Trusted by Business/Organisations",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
 
           {/* Section 1 */}
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-1">
+            <div className="col-md-6 col-12 px-0 pe-md-5 order-1 order-md-1">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <Heading
-                  title={`Developer First Integration  ${space}`}
-                  color="black"
-                  size="h3"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Developer First Integration ",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h4"
+                  className="f-5"
                 />
-                <Heading
-                  title={`Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms ${space}`}
-                  color="main-grey"
-                  size="h5"
-                  weight="4"
+                <DynamicHeading
+                  content={[
+                    {
+                      title:
+                        "Built for developers, our robust SDKs, APIs, and plugins support major languages and platforms",
+                      color: "color-main-grey",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className={` ${styles.payment_section}`}>
@@ -304,92 +340,109 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
             </div>
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-end ${styles.third_container} order-2 order-md-2`}
+              className={`col-md-6 col-12 ${styles.third_container} order-2 order-md-2`}
             >
               <div>
                 <Image
                   src={integration}
                   alt="card background"
-                  className="position-relative w-100 h-100"
-                  height={618}
+                  className="position-relative w-100 h-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
           </div>
 
           {/* Section 2 */}
-          <div
-            className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
-          >
+          <div className={`bg-color-soft-mint ${styles.section}`}>
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 ${styles.third_container} order-2 order-md-1`}
+              className={`row pb-[50px] pt-[50px] align-items-center `}
             >
-              <div>
-                <Image
-                  src={paymenyMethod}
-                  alt="card background"
-                  className="position-relative w-100 h-100"
-                  style={{ maxHeight: "563px" }}
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <Heading
-                  title={`Accept All Payment Methods ${space}`}
-                  color="black"
-                  size="h3"
-                  weight="5"
-                />
-                <Heading
-                  title={`Provide your customers with the freedom to choose how they pay with several online payment methods. ${space}`}
-                  color="main-grey"
-                  size="h5"
-                  weight="4"
-                />
-              </div>
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
+                className={`col-md-6 ${styles.third_container} order-2 order-md-1`}
               >
-                {paymentMethodData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
+                <div>
+                  <Image
+                    src={paymenyMethod}
+                    alt="card background"
+                    className="position-relative w-100 h-100 mh-550 object-fit-contain"
+                  />
+                </div>
               </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get Started  Today "
-                  theme="outline-blue"
-                  url="/sales/?source=expense_management"
-                />
+              <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
+                <div className={`d-flex flex-column ${styles.subtitle}`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Accept All Payment Methods ",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h4"
+                    className="f-5"
+                  />
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Provide your customers with the freedom to choose how they pay with several online payment methods. ",
+                        color: "color-main-grey",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "32px",
+                  }}
+                >
+                  {paymentMethodData.map(({ icon, title, description }, i) => (
+                    <div key={i} style={{ direction: "ltr" }}>
+                      <PolicyCard
+                        icon={icon}
+                        title={title}
+                        description={description}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className={`${styles.list_button}`}>
+                  <RectangleButton
+                    title="Get Started  Today "
+                    theme="outline-blue"
+                    url="/sales/?source=expense_management"
+                  />
+                </div>
               </div>
             </div>
           </div>
-
           {/* Section 3 */}
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-1">
+            <div className="col-md-6 col-12 px-0 pe-md-5 order-1 order-md-1">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <Heading
-                  title={`Powerful Dashboards to Drive Decisions ${space}`}
-                  color="black"
-                  size="h3"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Powerful Dashboards to Drive Decisions",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h4"
+                  className="f-5"
                 />
-                <Heading
-                  title={`Get detailed statistics and reports on payments, settlements, refunds, and much more for informed decision-making. ${space}`}
-                  color="main-grey"
-                  size="h5"
-                  weight="4"
+                <DynamicHeading
+                  content={[
+                    {
+                      title:
+                        "Get detailed statistics and reports on payments, settlements, refunds, and much more for informed decision-making.",
+                      color: "color-main-grey",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
@@ -424,86 +477,104 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Image
                   src={dashboard}
                   alt="card background"
-                  className="position-relative w-100 h-100"
-                  height={672}
+                  className="position-relative w-100 h-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
           </div>
 
           {/* Section 4 */}
-          <div
-            className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
-          >
+          <div className={`bg-color-soft-mint ${styles.section}`}>
             <div
-              className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-start ${styles.third_container} order-2 order-md-1`}
+              className={`row  pb-[50px] pt-[50px] align-items-center `}
             >
-              <div>
-                <Image
-                  src={rank}
-                  alt="card background"
-                  className="position-relative w-100 h-100"
-                  height={493}
-                />
-              </div>
-            </div>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <Heading
-                  title={`Bank Grade Security ${space}`}
-                  color="black"
-                  size="h3"
-                  weight="5"
-                />
-                <Heading
-                  title={`Enjoy enterprise-grade security to reassure your customers of secure and reliable payment transactions. ${space}`}
-                  color="main-grey"
-                  size="h5"
-                  weight="4"
-                />
-              </div>
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
+                className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-start ${styles.third_container} order-2 order-md-1`}
               >
-                {rankData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
+                <div>
+                  <Image
+                    src={rank}
+                    alt="card background"
+                    className="position-relative w-100 h-100 mh-550 object-fit-contain"
+                  />
+                </div>
               </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get Started  Today "
-                  theme="outline-blue"
-                  url="/sales/?source=expense_management"
-                />
+              <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
+                <div className={`d-flex flex-column ${styles.subtitle}`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Bank Grade Security",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h4"
+                    className="f-5 mb-2"
+                  />
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Enjoy enterprise-grade security to reassure your customers of secure and reliable payment transactions.",
+                        color: "color-main-grey",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "32px",
+                  }}
+                >
+                  {rankData.map(({ icon, title, description }, i) => (
+                    <div key={i} style={{ direction: "ltr" }}>
+                      <PolicyCard
+                        icon={icon}
+                        title={title}
+                        description={description}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className={`${styles.list_button}`}>
+                  <RectangleButton
+                    title="Get Started  Today "
+                    theme="outline-blue"
+                    url="/sales/?source=expense_management"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
           {/* Section 5 */}
           <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-1">
+            <div className="col-md-6 col-12 px-0 pe-md-5 order-1 order-md-1">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <Heading
-                  title={`100% Lifetime Support  ${space}`}
-                  color="black"
-                  size="h3"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "100% Lifetime Support ",
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h4"
+                  className="f-5 mb-2"
                 />
-                <Heading
-                  title={`Dedicated Relationship Managers: Get personalized assistance from experts who understand your business and growth goals. ${space}`}
-                  color="main-grey"
-                  size="h5"
-                  weight="4"
+                <DynamicHeading
+                  content={[
+                    {
+                      title:
+                        "Dedicated Relationship Managers: Get personalized assistance from experts who understand your business and growth goals.",
+                      color: "color-main-grey",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
@@ -538,132 +609,159 @@ const PaymentGateway = (): React.JSX.Element => {
                 <Image
                   src={support}
                   alt="card background"
-                  className="position-relative w-100 h-100"
-                  height={705}
+                  className="position-relative w-100 h-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
           </div>
 
           {/* Section 6 */}
-          <div
-            className={`row bg-color-soft-mint  pb-0 pb-md-5  position-relative ${styles.section}`}
-          >
+          <div className={`bg-color-soft-mint ${styles.section}`}>
             <div
-              className={`col-md-6 col-12 d-flex my-md-5  ${styles.third_container} order-2 order-md-1`}
+              className={`row pb-2 pb-md-5  position-relative `}
             >
-              <div className={`${styles.custom_bottom_offset}`}>
-                <Image
-                  src={leftHand}
-                  alt="card background"
-                  className="position-relative w-100 h-100"
-                  style={{ maxHeight: "625px" }}
-                />
+              <div
+                className={`col-md-6 col-12 ${styles.third_container} order-2 order-md-1`}
+              >
+                <div className={`${styles.custom_bottom_offset}`}>
+                  <Image
+                    src={leftHand}
+                    alt="card background"
+                    className="position-relative w-100 h-100 mh-550 object-fit-contain"
+                  />
+                </div>
+              </div>
+              <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
+                <div className={`d-flex flex-column ${styles.subtitle}`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Advanced Checkout and Card Saving",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h4"
+                    className="f-5 mb-2"
+                  />
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Enhance your checkout experience with features designed for convenience and efficiency:",
+                        color: "color-main-grey",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "32px",
+                  }}
+                >
+                  {savingData.map(({ icon, title, description }, i) => (
+                    <div key={i} style={{ direction: "ltr" }}>
+                      <PolicyCard
+                        icon={icon}
+                        title={title}
+                        description={description}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className={`${styles.list_button}`}>
+                  <RectangleButton
+                    title="Get Started  Today "
+                    theme="outline-blue"
+                    url="/sales/?source=expense_management"
+                  />
+                </div>
               </div>
             </div>
-            <div className="col-md-6 col-12 px-0 px-md-5 order-1 order-md-2">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <Heading
-                  title={`Advanced Checkout and Card Saving  ${space}`}
-                  color="black"
-                  size="h3"
-                  weight="5"
-                />
-                <Heading
-                  title={`Enhance your checkout experience with features designed for convenience and efficiency: ${space}`}
-                  color="main-grey"
-                  size="h5"
-                  weight="4"
+          </div>
+        </div>
+      </div>
+
+
+      <div className={`${styles.eigth_row}  `}>
+        <div className="max-w-auto w-100">
+            <div className={`${styles.section} row`}>
+              <div
+                className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-7`}
+              >
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Best Payment Gateway in India for ",
+                      color: "color-black",
+                    },
+                    {
+                      title: "Accelerated Growth ",
+                      color: "color-equity-blue",
+                    },
+                  ]}
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {savingData.map(({ icon, title, description }, i) => (
+
+              <div className="col-md-6 ">
+                {acceleratedGrowthData.map(({ icon, title }, i) => (
                   <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
+                    <div className="d-flex align-items-start gap-3 py-3 w-4 h-4">
+                      <div
+                        className="d-flex justify-content-center align-items-center bg-light rounded-circle"
+                        style={{ width: "32px", height: "32px" }}
+                      >
+                        <Image src={icon} alt="icon" />
+                      </div>
+                      <div className="d-flex flex-column gap-3">
+                        <DynamicHeading
+                          content={[
+                            {
+                              title: title,
+                              color: "color-black",
+                            },
+                          ]}
+                          headingTag="h5"
+                          className="f-5"
+                        />
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get Started  Today "
-                  theme="outline-blue"
-                  url="/sales/?source=expense_management"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className={`${styles.eigth_row}  `}>
-        <div className="max-w-auto ">
-          <div className={`${styles.section}`}>
-            <div
-              className={`${styles.title} text-start  d-flex flex-column pb-5`}
-            >
-              <Heading
-                title={`Best Payment Gateway in India for ${space}`}
-                color="black"
-                size="h1"
-                weight="6"
-              />
-              <Heading
-                title={`Accelerated Growth ${space}`}
-                color="equity-blue"
-                size="h1"
-                weight="6"
-              />
-            </div>
-
-            <div className="col-12 ">
-              {acceleratedGrowthData.map(({ icon, title }, i) => (
-                <div key={i} style={{ direction: "ltr" }}>
-                  <div className="d-flex align-items-start gap-3 py-3 w-4 h-4">
-                    <div
-                      className="d-flex justify-content-center align-items-center bg-light rounded-circle"
-                      style={{ width: "32px", height: "32px" }}
-                    >
-                      <Image src={icon} alt="icon" />
-                    </div>
-                    <div className="d-flex flex-column gap-3">
-                      <Heading
-                        title={title}
-                        color="black"
-                        size="h4"
-                        weight="5"
-                      />
-                    </div>
-                  </div>
+              <div className="col-md-6">
+                <div className={styles.faq_bg}>
+                  <Image
+                    src={acceleratedGrowthImg}
+                    alt="background image"
+                    className="w-100 mh-550 object-fit-contain"
+                  />
                 </div>
-              ))}
-            </div>
-            <div className="col-12 col-md-6">
-              <div className={styles.faq_bg}>
-                <Image src={acceleratedGrowthImg} alt="background image" />
               </div>
             </div>
           </div>
         </div>
-      </div>
+      
+
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Discover the EnKash difference - Secure, Scalable and Seamless. "
-              size="bannerHeading"
-              color="white"
-              weight="4"
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "Discover the EnKash difference - Secure, Scalable and Seamless.",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5 mb-3 mb-mb-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -680,26 +778,38 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+          <div className={`${styles.title} text-start pb-2 pb-md-5 `}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className="mt-2 d-none d-md-block">
@@ -722,21 +832,25 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-start text-md-center pb-5`}>
-            <Heading
-              title={`Check out our ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+          <div className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Check out our ",
+                  color: "color-black",
+                },
+                {
+                  title: "other payment products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading
-              title={`other payment products ${space}`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-
-            <Heading title="at EnKash" color="black" size="h1" weight="5" />
           </div>
           <div className="row g-3 pb-4 ">
             <div className="col-12 col-md-4">

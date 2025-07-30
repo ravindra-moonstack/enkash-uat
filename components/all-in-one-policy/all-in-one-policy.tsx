@@ -70,7 +70,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
                 },
               ]}
               headingTag="p"
-              className=""
+              className="mb-0"
             />
              
             )}

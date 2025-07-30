@@ -75,7 +75,7 @@ const PaymentPage = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
               >
-                   <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Payment Page",
@@ -90,10 +90,11 @@ const PaymentPage = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex pt-3 pt-md-0">
-                    <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Instant Online Payments with Custom  Payment Page",
+                        title:
+                          "Instant Online Payments with Custom  Payment Page",
                         color: "color-black",
                       },
                     ]}
@@ -143,17 +144,11 @@ const PaymentPage = (): React.JSX.Element => {
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div
-                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
-              >
+            <div className="col-12 col-md-6 ">
+              <div className={`${styles.right_img} position-relative ps-md-5`}>
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
                   className="w-100 mh-550 object-fit-contain"
                 />
               </div>
@@ -174,17 +169,15 @@ const PaymentPage = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-3 mb-md-0 "
             />
           </div>
 
           <div className={` d-flex ${styles.section}`}>
             {" "}
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
+            <div className={` ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -195,11 +188,9 @@ const PaymentPage = (): React.JSX.Element => {
                   className="f-6"
                 />
               </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
+              <div className={`py-2 text-center ${styles.innerCard}`}>
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Fast",
@@ -211,15 +202,11 @@ const PaymentPage = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
+            <div className={` ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
                 <Image src={activationIcon} alt="icon" />
               </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
+              <div className={`py-2 text-center ${styles.innerCard}`}>
                 {" "}
                 <DynamicHeading
                   content={[
@@ -233,15 +220,11 @@ const PaymentPage = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
+            <div className={` ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
                 <Image src={realTimeIcon} alt="icon" />
               </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
+              <div className={`py-2 text-center ${styles.innerCard}`}>
                 {" "}
                 <DynamicHeading
                   content={[
@@ -261,7 +244,7 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -323,97 +306,100 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center  `}>
-              <div
-                className={`d-inline justify-content-center align-items-center pb-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Effortless Transactions, Secure ",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: " Payments -  The EnKash Way",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center  `}>
+                <div className={`text-center pb-4 pb-md-5`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Effortless Transactions, Secure ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: " Payments -  The EnKash Way",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.allInOnePolicy}>
+                <AllInOnePolicy
+                  icon={taskIconOne}
+                  title="Customization at Your Fingertips"
+                  description="Design payment pages that truly showcase your brand identity. Add your logo, select colors that resonate with your business, and customize fields to gather precise and relevant customer details. With memorable and professional URLs, sharing your payment page becomes a breeze, enhancing both brand recognition and user convenience."
+                  image={paymentLinkImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconTwo}
+                  title="Multiple Payment Modes"
+                  description="Give your customers unmatched flexibility with over 180 domestic and international payment options. Whether they prefer UPI, net banking, credit or debit cards, wallets, or international currencies, EnKash ensures secure and seamless transactions, catering to a global audience and diverse payment preferences."
+                  image={shareImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="305px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconThree}
+                  title="Zero Coding Required"
+                  description="Spend more time growing your business and less time worrying about technical complexities. EnKash’s intuitive platform lets you create and launch fully functional payment pages within minutes, all without any coding knowledge or the need for additional technical resources."
+                  image={paymentOptionImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFour}
+                  title="Optimized for Mobile and Web"
+                  description="Ensure a flawless checkout experience on any device. EnKash Payment Pages are meticulously designed to adapt to smartphones, tablets, and desktops, offering customers an engaging and consistent interface that works seamlessly regardless of the device they use."
+                  image={notificationImage}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="259px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFive}
+                  title="Get Real-time Insights"
+                  description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
+                  image={optimizedIcon}
+                  buttonUrl="/sales/?source=expense_management"
+                  maxImageHeight="259px"
                 />
               </div>
-            </div>
-
-            <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Customization at Your Fingertips"
-                description="Design payment pages that truly showcase your brand identity. Add your logo, select colors that resonate with your business, and customize fields to gather precise and relevant customer details. With memorable and professional URLs, sharing your payment page becomes a breeze, enhancing both brand recognition and user convenience."
-                image={paymentLinkImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Multiple Payment Modes"
-                description="Give your customers unmatched flexibility with over 180 domestic and international payment options. Whether they prefer UPI, net banking, credit or debit cards, wallets, or international currencies, EnKash ensures secure and seamless transactions, catering to a global audience and diverse payment preferences."
-                image={shareImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Zero Coding Required"
-                description="Spend more time growing your business and less time worrying about technical complexities. EnKash’s intuitive platform lets you create and launch fully functional payment pages within minutes, all without any coding knowledge or the need for additional technical resources."
-                image={paymentOptionImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Optimized for Mobile and Web"
-                description="Ensure a flawless checkout experience on any device. EnKash Payment Pages are meticulously designed to adapt to smartphones, tablets, and desktops, offering customers an engaging and consistent interface that works seamlessly regardless of the device they use."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Get Real-time Insights"
-                description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
-                image={optimizedIcon}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-              />
             </div>
           </div>
         </div>
       </div>
 
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-2 mt-4`}>
-          <div className={` pb-1  d-inline`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "EnKash Payment Pages Features for ",
-                  color: "color-black",
-                },
-                {
-                  title: "Secure Online Payment",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
+        <div className="max-w-auto">
+          <div className={`${styles.title} row`}>
+            <div className={`col-md-12 px-md-3`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "EnKash Payment Pages Features for ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Secure Online Payment",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6 text-center"
+              />
+            </div>
           </div>
         </div>
         <AllProducts
@@ -425,8 +411,8 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+          <div className=" text-center">
+            <DynamicHeading
               content={[
                 {
                   title: "Turn clicks into transactions!",
@@ -434,7 +420,7 @@ const PaymentPage = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-3 "
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -472,9 +458,9 @@ const PaymentPage = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
@@ -505,7 +491,7 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {

@@ -88,10 +88,11 @@ const InstantSettlement = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Accelerate business cash flow with Instant Settlements",
+                        title:
+                          "Accelerate business cash flow with Instant Settlements",
                         color: "color-black",
                       },
                     ]}
@@ -101,7 +102,7 @@ const InstantSettlement = (): React.JSX.Element => {
                 </div>
 
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title:
@@ -111,7 +112,7 @@ const InstantSettlement = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -172,7 +173,7 @@ const InstantSettlement = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -182,7 +183,7 @@ const InstantSettlement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -259,7 +260,7 @@ const InstantSettlement = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -270,7 +271,6 @@ const InstantSettlement = (): React.JSX.Element => {
                   title: "EnKash Instant Settlement",
                   color: "color-equity-blue",
                 },
-                
               ]}
               headingTag="h2"
               className="f-6"
@@ -303,7 +303,7 @@ const InstantSettlement = (): React.JSX.Element => {
                   </div>
                 ))}
               </div>
-              <div  className={`${styles.list_button} `}>
+              <div className={`${styles.list_button} `}>
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
@@ -326,83 +326,83 @@ const InstantSettlement = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-               
-                 <DynamicHeading
-                  content={[
-                    {
-                      title: "Receive ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Payments in Real-Time ",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: "With Instant Settlement",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-4 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Receive ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Payments in Real-Time ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "With Instant Settlement",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Customized Settlements"
-              description="Empower yourself to decide when your customer payments should be transferred to your bank account. With a customized payment settlement process, you have full control to settle the needed amount within a few seconds."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Simplified Budgeting"
-              description="Faster access to capital empowers you to make quicker decisions, invest in inventory, and seize strategic opportunities without delays."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Enhanced Relations"
-              description="Pay vendors/suppliers faster, build stronger relationships, potentially secure better deals, and avoid late fees."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Super Fast Settlements"
-              description="Instantly get your customer payments straight into your bank account every day with same-day settlements, which are settled at T+O, for a quick and consistent cash flow experience."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Increased Efficiency"
-              description="Eliminate the need to track settlement schedules and manage cash flow fluctuations, freeing up valuable time and resources for other business-critical tasks."
-              image={secureImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Customized Settlements"
+                description="Empower yourself to decide when your customer payments should be transferred to your bank account. With a customized payment settlement process, you have full control to settle the needed amount within a few seconds."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Simplified Budgeting"
+                description="Faster access to capital empowers you to make quicker decisions, invest in inventory, and seize strategic opportunities without delays."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Enhanced Relations"
+                description="Pay vendors/suppliers faster, build stronger relationships, potentially secure better deals, and avoid late fees."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Super Fast Settlements"
+                description="Instantly get your customer payments straight into your bank account every day with same-day settlements, which are settled at T+O, for a quick and consistent cash flow experience."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconFive}
+                title="Increased Efficiency"
+                description="Eliminate the need to track settlement schedules and manage cash flow fluctuations, freeing up valuable time and resources for other business-critical tasks."
+                image={secureImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+            </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Collect payments faster with reminders!",
@@ -410,7 +410,7 @@ const InstantSettlement = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -428,7 +428,7 @@ const InstantSettlement = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-           <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -448,7 +448,7 @@ const InstantSettlement = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -481,8 +481,8 @@ const InstantSettlement = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
-             <DynamicHeading
+          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
+            <DynamicHeading
               content={[
                 {
                   title: "Check out our ",

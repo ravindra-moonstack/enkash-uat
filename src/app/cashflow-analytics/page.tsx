@@ -86,10 +86,11 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Unlock deep insights into your finances with Cashflow Analytics",
+                        title:
+                          "Unlock deep insights into your finances with Cashflow Analytics",
                         color: "color-black",
                       },
                     ]}
@@ -109,7 +110,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -162,7 +163,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Forecast, Plan, & Grow with Confidence",
@@ -170,7 +171,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -180,7 +181,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -217,7 +218,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Track Emerging Trends",
@@ -239,7 +240,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Know Actionable Insights",
@@ -257,11 +258,15 @@ const CashflowAnalytics = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
-                  title: "How to Set Up Cashflow Analytics ",
+                  title: "How to Set Up",
+                  color: "color-black",
+                },
+                {
+                  title: " Cashflow Analytics ",
                   color: "color-equity-blue",
                 },
               ]}
@@ -272,7 +277,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
+                className={` ${
                   showScroll ? "overflow-auto scrollbar-thin" : ""
                 }`}
                 style={{
@@ -319,78 +324,80 @@ const CashflowAnalytics = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Data Backed Decisions ",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: "For Your Business ",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-4 mb-1 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Data Backed Decisions ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "For Your Business ",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Real-Time Visibility"
-              description="Track your cash inflows and outflows as they happen, so you're aware."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Smarter Decision-Making"
-              description="Use AI-driven insights to make informed choices about spending, saving, and investing."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Predictive Forecasting"
-              description="Anticipate cash shortages or surpluses and plan proactively for growth or emergencies."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Identify Trends & Patterns"
-              description="Spot recurring expenses, seasonal fluctuations, and revenue cycles to optimize cash flow."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="Real-Time Visibility"
+                description="Track your cash inflows and outflows as they happen, so you're aware."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Smarter Decision-Making"
+                description="Use AI-driven insights to make informed choices about spending, saving, and investing."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Predictive Forecasting"
+                description="Anticipate cash shortages or surpluses and plan proactively for growth or emergencies."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Identify Trends & Patterns"
+                description="Spot recurring expenses, seasonal fluctuations, and revenue cycles to optimize cash flow."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+            </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
-                  title: "Leverage Cashflow Insights to Grow, Scale, & Stay Ahead",
+                  title:
+                    "Leverage Cashflow Insights to Grow, Scale, & Stay Ahead",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -408,7 +415,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-           <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -428,9 +435,9 @@ const CashflowAnalytics = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
@@ -461,7 +468,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
+          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {

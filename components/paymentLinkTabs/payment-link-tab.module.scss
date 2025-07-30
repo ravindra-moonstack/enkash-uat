@@ -12,18 +12,16 @@
 
 .sixth_row_mobile {
   background-color: $color-soft-mint;
-  .tab_section {
-    padding: 20px;
-  }
+  
 }
 
 .tab_section {
   position: relative;
   z-index: 1;
-
+padding: 50px 20px;
   @include for-laptops {
-    padding-top: 128px;
-    padding-bottom: 50px;
+    padding:90px 20px;
+    // padding-bottom: 50px;
   }
 }
 
@@ -47,6 +45,8 @@
   @include for-laptops {
     margin-right: 0;
     padding: 8px;
+    flex: 1;
+    text-align: center;
   }
 }
 

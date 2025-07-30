@@ -13,6 +13,16 @@ import {
   tabIconThree,
   tabIconFour,
   tabIconFive,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
 } from "."
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
@@ -25,16 +35,97 @@ import bg2 from "./img/Fuel-card.jpg"
 import bg3 from "./img/digital-marketing.jpg"
 import bg4 from "./img/logistic-card.jpg"
 import bg5 from "./img/payroll-card.jpg"
+import CardStacking from "@/components/cardStacking/cardStacking"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 
 // const showScroll = cardsData.length > 3
 // const mergedCards = allProductSections.flatMap((section) => section.items)
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="Enjoy Ultimate Control"
+          description="Block merchant types, set daily/weekly/monthly spend limits, and restrict payment modes (ATM, POS, Online) - all in minutes."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Instantly Issue & Reload Cards"
+          description="Issue cards digitally to teams or individuals. Load or top up in one click via your centralized dashboard."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Real-Time Visibility"
+          description="Track every swipe the moment it happens. Spot anomalies, analyze trends, and take corrective action instantly."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="Get 360° Spend Analytics"
+          description="Get 360° reporting on who spent what, where, and why. Slice and dice by department, location, or category."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="Seamlessly Reconcile"
+          description="Auto-categorize spends, attach invoices, and sync with your accounting system. Close your books faster—without chasing receipts."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+ 
+]
 const PrepaidCard = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-w-auto px-4">
+        <div className="max-w-auto ">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -48,36 +139,49 @@ const PrepaidCard = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.title} col-12 `}>
-            <Heading
-              title="Prepaid Cards"
-              color="equity-blue"
-              size="h5"
-              weight="4"
-              underline
-            />
+        
+             <DynamicHeading
+                content={[
+                  {
+                    title: "Prepaid Cards",
+                    color: "color-equity-blue underline",
+                  },
+                 
+                ]}
+                headingTag="p"
+                className=""
+              />
             <div className="d-flex  flex-column text-center">
-              <Heading
-                title="The Best Prepaid Corporate Card "
-                color="black"
-                size="h2"
-                weight="2"
-                italic
+               <DynamicHeading
+                content={[
+                  {
+                    title: "The Best Prepaid Corporate Card",
+                    color: "color-black f-3 d-block italic",
+                  },
+                  {
+                    title: "for Business Spending",
+                    color: "color-black",
+                  },
+                 
+                ]}
+                headingTag="h1"
+                className="f-7 mb-2"
               />
-              <Heading
-                title="for Business Spending"
-                color="black"
-                size="h2"
-                weight="7"
-              />
+            
             </div>
 
             <div className="d-inline text-center">
-              <Heading
-                title="No paperwork. No delays. Just swipe and go, with full compliance."
-                color="black"
-                size="h5"
-                weight="4"
-                useH1TagInHtml={true}
+            
+               <DynamicHeading
+                content={[
+                  {
+                    title: "No paperwork. No delays. Just swipe and go, with full compliance.",
+                    color: "color-black subHeading",
+                  },
+                 
+                ]}
+                headingTag="p"
+                className=""
               />
             </div>
             <div className={styles.button_wrapper}>
@@ -164,16 +268,42 @@ const PrepaidCard = (): React.JSX.Element => {
           ]}
         />
       </div>
+   <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center `}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Why Businesses Love Us ",
+                    color: "color-black",
+                  },
+                 
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
 
+            <CardStacking cards={cards} />
+          </>
+        </div>
+      </div>
       <div className={`${styles.fourth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-            <Heading
-              title="Step into the world of smarter, safer, and seamless spending "
-              size="bannerHeading"
-              color="white"
-              weight="4"
-            />
+           
+             <DynamicHeading
+                content={[
+                  {
+                    title: "Step into the world of smarter, safer, and seamless spending",
+                    color: "color-white",
+                  },
+                 
+                ]}
+                headingTag="h3"
+                className="f-5"
+              />
           </div>
 
           <div className={`${styles.get_started_button} `}>
@@ -191,28 +321,44 @@ const PrepaidCard = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-3`}>
-            <Heading
-              title={`Frequently Asked Questions ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
+            
+             <DynamicHeading
+                content={[
+                  {
+                    title: "Frequently Asked Questions (",
+                    color: "color-black",
+                  },
+                  {
+                    title: "FAQs",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: ")",
+                    color: "color-black",
+                  },
+                 
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                  useH1TagInHtml={true}
-                />
+                  <DynamicHeading
+                content={[
+                  {
+                    title: "Have more questions?",
+                    color: "color-border-gray subHeading",
+                  },               
+                ]}
+                headingTag="p"
+                className="mb-0"
+              />
+               
               </div>
-              <div className="mt-2 d-none d-md-block">
+              <div className="mt-3 d-none d-md-block">
                 <RectangleButton
                   title="Get started today"
                   theme="border-gray"

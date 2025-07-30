@@ -89,7 +89,8 @@ const DigitalInvoicing = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Enhance business operations with Digital Invoicing",
+                        title:
+                          "Enhance business operations with Digital Invoicing",
                         color: "color-black",
                       },
                     ]}
@@ -99,7 +100,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
                 </div>
 
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title:
@@ -109,7 +110,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -170,7 +171,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -257,7 +258,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -276,7 +277,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
+                className={`  ${
                   showScroll ? "overflow-auto scrollbar-thin" : ""
                 }`}
                 style={{
@@ -323,74 +324,75 @@ const DigitalInvoicing = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Effortless ",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: "Invoicing, ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Faster ",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: "Payments ",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={` ${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-4 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Effortless ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "Invoicing, ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Faster ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "Payments ",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="OCR Technology for Efficiency"
-              description="With EnKash, you can digitally upload your invoices, which are scanned using OCR technology. This helps save time and reduces the risk of human error."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Better Cash Flow"
-              description="Digital invoices can be processed quickly, meaning your business can get paid faster and have better cash flow."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Eliminates Manual Errors"
-              description="Digital invoices can help reduce manual errors. This can help your business avoid costly disputes and delays in payment."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Tracking via Dashboard "
-              description="On EnKash, invoices can be easily tracked and monitored, making it easier to identify outstanding invoices and improve collections."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
+              <AllInOnePolicy
+                icon={taskIconOne}
+                title="OCR Technology for Efficiency"
+                description="With EnKash, you can digitally upload your invoices, which are scanned using OCR technology. This helps save time and reduces the risk of human error."
+                image={paymentLinkImage}
+                buttonUrl="/sales/"
+                maxImageHeight="243px"
+              />
+              <AllInOnePolicy
+                icon={taskIconTwo}
+                title="Better Cash Flow"
+                description="Digital invoices can be processed quickly, meaning your business can get paid faster and have better cash flow."
+                image={notificationImage}
+                buttonUrl="/sales/?source=expense_management"
+                maxImageHeight="259px"
+                reverse
+              />
+              <AllInOnePolicy
+                icon={taskIconThree}
+                title="Eliminates Manual Errors"
+                description="Digital invoices can help reduce manual errors. This can help your business avoid costly disputes and delays in payment."
+                image={shareImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+              />
+              <AllInOnePolicy
+                icon={taskIconFour}
+                title="Tracking via Dashboard "
+                description="On EnKash, invoices can be easily tracked and monitored, making it easier to identify outstanding invoices and improve collections."
+                image={paymentOptionImage}
+                buttonUrl="/sales/"
+                maxImageHeight="305px"
+                reverse
+              />
+            </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -402,7 +404,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -420,7 +422,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-           <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -440,9 +442,9 @@ const DigitalInvoicing = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
@@ -473,7 +475,7 @@ const DigitalInvoicing = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
+          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
