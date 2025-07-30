@@ -1280,7 +1280,7 @@ const VoucherData: Record<string, Voucher> = {
   },
   apollo: {
     name: "Apollo Pharmacy E-Healing Gift Card",
-    urlName: "apollo-pharmacy-e-healing-gift-card",
+    urlName: "apollo",
     brandName: "Apollo Pharmacy",
     category: "health-and-wellness",
     discount: 10, // Up to 10% off
@@ -1392,274 +1392,122 @@ const VoucherData: Record<string, Voucher> = {
     birthdays:
       "What better than gifting a Cultfit Gift Card to a fitness enthusiast? Get them this exclusive Cultfit E-Gift Card and make their day memorable.",
   },
-
-  "luxe-e-gift-card": {
-    name: "LUXE E-Gift Card",
-    urlName: "luxe-e-gift-card",
-    brandName: "LUXE",
-    category: "e-commerce",
-    discount: 0,
+  myglamm: {
+    name: "MyGlamm Gift Card",
+    urlName: "myglamm",
+    brandName: "MyGlamm",
+    category: "health-and-wellness",
+    discount: 16,
     backgroundImg: "hehe",
-    descriptionTitle: "LUXE E-Gift Card ",
+    descriptionTitle: "MyGlamm Gift Card",
     description:
-      "There is always that one person in everyone’s life, be it a best friend, a sibling, or a workmate, who is addicted to the finer things in life.  What better than giving them a LUXE gift card? Whether it is fine dining, high-end fashion or luxury items, a LUXE Gift Card enables ordering anything of their wish. ",
+      "MyGlamm Gift Card is the perfect way to treat someone to a world of beauty and self-care. It offers access to a wide range of makeup, skincare, and personal care products. Valid for 1 year from the date of issue, the card can be combined with promotional offers and other prepaid payment options. Whether it's a birthday, celebration, or just a thoughtful surprise, the MyGlamm Gift Card makes beauty gifting effortless, flexible, and stylish.",
     aboutCompany:
-      "LUXE is the best luxury gift card company that offers a variety of luxury gifting options ranging from fashion to lifestyle and even food within a short period. When you choose a gift card from LUXE, you do not simply give a present, you give an experience. Recipients can get accustomed to the way of life characterized by a wide range of high-end brands and bespoke services built to meet their requirements. Whether it is about purchasing a luxury designer gown or indulging in lavish dining at a fancy restaurant, the most pleasurable things in life are made easy with a LUXE Gift Card. ",
-    calculatorTitle: "Best  LUXE Gift Cards ",
+      "A pioneering beauty and personal care brand, MyGlamm has quickly become India’s fastest-growing direct-to-consumer (D2C) beauty brand, offering over 800 cruelty‑free, skin‑friendly SKUs in makeup, skincare, and personal care.",
+    calculatorTitle: "Best MyGlamm Gift Cards",
     calculatorDescription:
-      "LUXE Gift Cards are a popular choice for presents, whether it's for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to Buy a LUXE Gift Card",
-    howToRedeemTitle: "How to Redeem a LUXE Gift Card\n",
+      "MyGlamm Gift Cards offer versatile gifting in flexible denominations, making them ideal for personal treats or thoughtful presents. Each card is valid for one year from the date of activation, and you can use up to five cards per order for greater flexibility. Whether you’re planning to indulge or surprise, Best MyGlamm Gift Cards provide convenient, no-fuss access to their full range of beauty and personal care products online or via the mobile apps.",
+    howToBuyTitle: "How to Buy a MyGlamm Gift Card",
+    howToRedeemTitle: "How to Use or Redeem MyGlamm Gift Card",
     howToRedeemDesc:
-      "The procedure for LUXE Gift Card redemption is very simple and will take only a few minutes.\nHere’s how you can use it to unlock the luxury experience:",
+      "MyGlamm Gift Voucher can be redeemed using the following steps:",
     howToRedeemSteps: [
-      "Purchase the LUXE Gift Card from bolt.enkash.com",
-      "Proceed to the official LUXE partner application or website that accepts this gift card.",
-      "On the payment page, provide the unique gift card number or the voucher code",
-      "Make the desired purchase and use the LUXE Gift Card",
+      "Visit www.myglamm.com or open the MyGlamm app on Android/iOS",
+      "Add your favourite products to the cart and proceed to checkout",
+      "Select Gift Card as the payment method",
+      "Enter the Card Number and PIN to apply the balance",
+      "If the order value exceeds the gift card amount, pay the remaining balance using a prepaid payment option (COD not allowed)",
     ],
-    checkBalanceTitle: "How to Check LUXE Gift Card Balance ",
+    checkBalanceTitle: "How to Check MyGlamm Gift Card Balance",
     checkBalanceDesc:
-      "Are you curious to find out how much of your LUXE Gift Card value is still available for use? You can check your balance through various methods:",
+      "MyGlamm Gift Card balance can be checked using the following steps:",
     checkBalanceSteps: [
-      "Access LUXE partner Homepage/app select Gift Cards and input the card details for the balance inquiry.",
-      "Have no worries; you can visit any LUXE-affiliated retailer, and the employees will assist you with checking your balance.",
-      "You may also reach LUXE India customer care for balance checks.",
-      "This way you are always kept updated on the amount of value you still have left to enjoy more luxurious experiences.",
+      "Log in to your MyGlamm account on the website or app",
+      "Go to the gifts section",
+      "Enter the gift card details",
+      "View available gift card balance and usage history",
     ],
-    termsAndConditionsTitle: "Terms and Conditions for LUXE Gift Cards",
+    termsAndConditionsTitle: "Terms and Conditions for MyGlamm Gift Card",
     termsAndConditionSteps: [
-      "Luxe Gift Card  is valid for 12 months from the date of purchase.",
-      "The Luxe Gift Card can be redeemed at over 30 participating brands across India. It is not redeemable at airport stores.",
-      "The card can be redeemed only once until expiry. If the value of the merchandise exceeds the card's value, the bearer must pay the difference",
-      "Multiple Luxe Gift Cards can be used in a single transaction.",
-      "The card is accepted for any product or service provided by the LUXE's partners.",
-      "It is exclusively available on the LUXE partner application and is not valid on any other application.",
-      "The card can only be used for transactions in Indian Rupees, not foreign currencies",
-      "The card cannot be reloaded with additional funds after the initial purchase",
-      "LUXE Gift Cards cannot be refunded or exchanged for cash once purchased.",
+      "MyGlamm Gift Card can be used on www.myglamm.com, Android & iOS apps; up to 5 gift cards can be used in one order.",
+      "It can be combined with promo codes and prepaid payment options.",
+      "The gift card is valid for 1 year from the date of issue.",
+      "If the order value is less, the remaining balance stays on the same card; if more, the difference must be paid using prepaid options (COD not allowed).",
+      "Once issued, gift cards cannot be cancelled, refunded, returned, or transferred to another email/mobile number.",
+      "MyGlamm gift card cannot be redeemed for cash, credit, or used to purchase other gift cards.",
+      "Expired MyGlamm gift vouchers may be revalidated on request, subject to verification and terms.",
+      "The user is solely responsible for safeguarding the e-gift card code; MyGlamm is not liable for unauthorized use.",
+      "Fraudulently obtained cards may be canceled. If a card is non-functional, a replacement card of equal value may be issued.",
+      "MyGlamm cards are typically delivered instantly, but may take up to 24 hours. For issues, contact hello@myglamm.com or call 022-48913663.",
     ],
-    occasionsTitle: "LUXE Gift Cards for Different Occasions",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
+    occasionsTitle: "MyGlamm Gift Cards for Different Occasions",
+    occasionsDesc:
+      "MyGlamm Gift Cards make up for a great gifting option on multiple occasions. Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, a MyGlamm Gift Card is always a thoughtful gift.",
     festivals:
-      "Give your dear ones a LUXE Gift Card on festivals and happy occasions so that they may avail of the luxury experience of their choice.",
+      "The recipient of the MyGlamm gift card will thank you for making the festive season better for them.",
     anniversary:
-      "\nCelebrate any milestone with a classy surprise that sees couples enjoy high-end goods or services.",
+      "MyGlamm Gift Voucher is something the couple will appreciate on their special occasion.",
     birthdays:
-      "\n Celebrate a loved one's birthday by gifting them with something that enables them to indulge in luxurious retail or dining experiences and more.\n",
+      "Get this exclusive MyGlamm E-Gift Card and make their special day memorable.",
   },
-
-  "bookmyshow-e-gift-card": {
-    name: "BookMyShow E-Gift Card",
-    urlName: "bookmyshow-e-gift-card",
-    brandName: "BookMyShow",
-    category: "movies-and-music",
-    discount: 0,
+  healthkart: {
+    name: "HealthKart Gift Card",
+    urlName: "healthkart",
+    brandName: "HealthKart",
+    category: "health-and-wellness",
+    discount: 10, // Up to 10% off
     backgroundImg: "hehe",
-    descriptionTitle: "BookMyShow E-Gift Card ",
+    descriptionTitle: "HealthKart Gift Card",
     description:
-      "Surprise your loved ones with the gift of entertainment with a BookMyShow E-Gift Card! Whether it's the latest blockbuster movie, a live concert, or a thrilling sports event, this e-gift card unlocks a world of entertainment choices for you and your loved ones.\n",
+      "A HealthKart Gift Card lets your loved ones choose what they need to stay fit and feel great. Whether it’s for a birthday, milestone, or just a thoughtful surprise, this gift card puts wellness in their hands.",
     aboutCompany:
-      "BookMyShow is India's leading online entertainment platform, offering a convenient and user-friendly way to book tickets for movies, plays, concerts, sporting events, and various other experiences. With BookMyShow, you can browse events, select your seats, and book your tickets – all from the comfort of your home or on the go. Give the gift of entertainment with a BookMyShow E-Gift Card today!\n",
-    calculatorTitle: "Best BookMyShow Gift Cards",
+      "India’s leading online platform for health and nutrition products, HealthKart, is trusted by millions for genuine supplements, fitness essentials, and personal wellness solutions. HealthKart offers a wide range of proteins, vitamins, Ayurvedic remedies, and wellness products, all delivered with authenticity and expert guidance. Whether you're a fitness enthusiast or just starting your wellness journey, HealthKart is your one-stop shop for healthier living.",
+    calculatorTitle: "Best HealthKart Gift Cards",
     calculatorDescription:
-      "BookMyShow Gift Cards are a popular choice for presents, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to Buy a BookMyShow Gift Card",
-    howToRedeemTitle: "How to Use or Redeem a BookMyShow Gift Card",
+      "HealthKart Gift Cards are truly a gift for your loved one's health and wellness. The best HealthKart Gift Cards give discounts while delivering healthcare essentials at your doorstep.",
+    howToBuyTitle: "How to Buy a HealthKart Gift Card",
+    howToRedeemTitle: "How to Use or Redeem HealthKart Gift Card",
     howToRedeemDesc:
-      "BookMyShow Gift Card can be used or redeemed on the brand’s website or app for various entertainment options. Here's a step-by-step guide on how to redeem or use the voucher:",
+      "HealthKart Gift Voucher can be redeemed using the following steps:",
     howToRedeemSteps: [
-      "Log on to https://in.bookmyshow.com/ or the BookMyShow mobile app",
-      "Select your desired movie, event, venue, show date, time, and seats",
-      "During checkout, click on 'More Payment Options' on the payment page and then the 'Gift Voucher' tab. Enter the E-Gift Card code and click 'Apply'",
-      "The BookMyShow Gift Card Voucher value will be applied. If needed, combine it with other payment methods to complete the booking",
-      "After a successful transaction, you'll receive a booking ID. Exchange this ID at the cinema/venue box office for your actual tickets. You'll also receive an email/SMS confirmation for your reference",
+      "Visit www.healthkart.com and log in to your account",
+      "Click on your profile icon and go to HK Cash",
+      "Under “Avail HK Cash through Gift Card”, enter your Gift Card number to add balance",
+      "Add your selected products to the cart",
+      "Choose HK Cash as the payment option during checkout",
     ],
-    checkBalanceTitle: "How to Check BookMyShow Gift Card Balance",
+    checkBalanceTitle: "How to Check HealthKart Gift Card Balance",
     checkBalanceDesc:
-      "BookMyShow Gift Cards are preactivated cards and remain valid for 6 months from purchase. The balance of the BookMyShow Gift Card Voucher can be checked on the mobile app or website. \n",
+      "HealthKart Gift Cards balance can be checked using the following steps:",
     checkBalanceSteps: [
-      "Open the profile section in the app or website.",
-      "Go to Accounts & Settings",
-      "Select Safe payment modes",
-      "Select the add option and click on the gift voucher",
-      "Enter your Gift Card number and proceed",
-      "Go back and view your balance and validity",
+      "Log in to your HealthKart account on the website or app",
+      "Go to the profile section",
+      "Navigate to transaction history or gift card details",
+      "View available gift card balance and usage history",
     ],
-    termsAndConditionsTitle: "Terms and Conditions for BookMyShow Gift Card",
+    termsAndConditionsTitle: "Terms and Conditions for HealthKart Gift Card",
     termsAndConditionSteps: [
-      "BookMyShow Gift Card can be redeemed only on the BookMyShow website/mobile app & cannot be redeemed directly at the cinema/venue box office.",
-      "BookMyShow Gift Card can be redeemed by purchasing of e-tickets for movies/virtual events/plays/concerts/sports/BMS Stream available on BookMyShow.",
-      "Multiple Gift Cards can be used in a single transaction or Gift Voucher can be combined with any other payment type on BookMyShow.",
-      "BookMyShow Gift Card can be used multiple times until the last rupee loaded on it gets exhausted within the validity period.",
-      "BookMyShow Gift Card cannot be used to purchase another Gift Card.",
-      "BookMyShow Gift Card works on a non-extension clause & the order cannot be cancelled or refunded once confirmed.",
-      "BookMyShow Gift Card is valid PAN India across all cinemas/partners associated with BookMyShow.",
-      "If lost or misused, the BookMyShow Gift Card cannot be replaced. void if resold, cannot be exchanged for points or cash & cannot be re-validated once past the expiry date.",
+      "HealthKart Gift Voucher can only be redeemed on HealthKart.com or the HealthKart app.",
+      "The holder of the Gift Voucher code is considered the rightful beneficiary.",
+      "Multiple vouchers can be used in a single transaction by adding them as HK Cash to your account.",
+      "Each Gift Voucher is for one-time use only.",
+      "No refund or credit note will be issued for any unused HK Cash balance.",
+      "Expired vouchers cannot be revalidated.",
+      "Vouchers can be applied during sales or promotional periods.",
+      "If the order exceeds the voucher value, the remaining amount must be paid using another payment method.",
+      "Any disputes must be addressed to the issuing company; their decision will be final.",
+      "While HealthKart strives to accept all valid vouchers, technical issues may sometimes prevent redemption.",
+      "For any assistance, raise a request at www.gvhelpdesk.com.",
     ],
-    occasionsTitle: "BookMyShow E-Gift Cards for Different Occasions",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
+    occasionsTitle: "HealthKart Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Give your friends, family, and loved ones the gift of good health with HealthKart Gift Cards. Whether it’s a birthday, anniversary, or any festival, a HealthKart Gift Card is always a thoughtful gift to show that you care.",
     festivals:
-      "For this festive season, consider giving your loved ones BookMyShow Gift Cards allowing them to enjoy their preferred movies and shows and have a wonderful time.\n",
+      "The recipient of the HealthKart gift card will thank you for making the festive season better for them.",
     anniversary:
-      "Consider gifting a BookMyShow to the couple for their anniversary, enabling them to enjoy their favorite films and shows together.",
+      "The perfect anniversary gift for a couple who prioritizes their health. HealthKart Gift Voucher is something they will appreciate on their special occasion.",
     birthdays:
-      "Surprise your loved ones with a gift card on their birthday, allowing them to indulge in their special day",
-  },
-  "starbucks-e-gift-card": {
-    name: "Starbucks E-Gift Card",
-    urlName: "starbucks-e-gift-card",
-    brandName: "Starbucks",
-    category: "food-and-beverages",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "Starbucks E-Gift Card ",
-    description:
-      "We all know someone who is addicted to caffeine. Right? Isn't this the best gift they can get? This Starbucks E-Gift Card can make any coffee lover jump with joy. Give this Starbucks Gift Card to your friends who cannot survive without coffee and see them cherish you forever.\n",
-    aboutCompany:
-      "A prominent player in the coffee industry, Starbucks offers a wide range of coffee drinks, light bites, and a premium experience. The Indian subsidiary of this American giant caters to Indian tastes and preferences along with its core offerings. ",
-    calculatorTitle: "Best Starbucks Gift Cards",
-    calculatorDescription:
-      "Starbucks Gift Cards are a popular choice for presents, whether it's for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to buy a Starbucks Gift Card",
-    howToRedeemTitle: "How to use or redeem a Starbucks Gift Card ",
-    howToRedeemDesc:
-      "Starbucks Gift Voucher can be redeemed using the following steps on the app:",
-    howToRedeemSteps: [
-      "Buy the Voucher code through the EnKash platform",
-      "Download the Starbucks mobile app if you haven't already",
-      "Open the app and sign in to your Starbucks account.",
-      'Tap on the "Cards" section.',
-      "Add your gift card by entering the card number or voucher code",
-      "Once added, you can use the balance to purchase any product directly through the app.",
-    ],
-    checkBalanceTitle: "How to Check Starbucks Gift Card Balance",
-    checkBalanceDesc:
-      "There are various ways to check Starbucks Gift card balance.",
-    checkBalanceSteps: [
-      "Check Starbucks E Gift Card balance online- To check the gift card balance one can visit the Starbucks India mobile app. On the mobile app open the Starbucks card section and view the balance",
-      "Check Starbucks E-Gift Card balance offline- The Starbucks Gift Card balance can also be checked by visiting the store or by calling the India customer care number.",
-    ],
-    termsAndConditionsTitle: "Terms and Conditions for Starbucks Gift Card ",
-    termsAndConditionSteps: [
-      "Clubbing of this offer with any other offer is at the discretion of the business provider.",
-      "The offer applies to all products.",
-      "The voucher can be used to purchase any Starbucks product only from the Starbucks Mobile App (NOT on the mobile website/PWA).",
-      "This voucher can only be used for takeaway orders done through the Starbucks mobile app.",
-    ],
-    occasionsTitle: "Starbucks Gift Card for Different Occasions ",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
-    festivals:
-      "A thoughtful way to celebrate festivals. Let the festival experience for your loved ones be unique with this personalized gift.",
-    anniversary:
-      "Starbucks Gift Cards are a perfect way to send anniversary wishes to your loved ones. Let their anniversary celebration be over a shared cup of coffee. ",
-    birthdays:
-      "Starbucks gift cards are ideal for coffee lovers on their birthdays. You can choose to send an e-gift card directly to your loved one's inbox or mobile",
-  },
-  "myntra-e-gift-card": {
-    name: "Myntra E-Gift Card",
-    urlName: "myntra-e-gift-card",
-    brandName: "Myntra",
-    category: "e-commerce",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "Myntra E-Gift Card ",
-    description:
-      "The Myntra Gift Card comes in handy when it comes to gifts for special occasions like birthdays, weddings, anniversaries, and festivities. Use it for yourself or gift it to your special ones for shopping across multiple categories and brands. The Myntra Gift Card provides access to everything from beauty, apparel, home & kitchen, and clothing categories.",
-    aboutCompany:
-      "A premier online beauty destination in India, Myntra offers a comprehensive selection of branded products for men and women at the best price. Myntra makes shopping for your favourite beauty products much easier and more convenient.",
-    calculatorTitle: "Best Myntra Gift Cards",
-    calculatorDescription:
-      "Myntra Gift Cards are a popular choice for presents, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to buy a Myntra Gift Card",
-    howToRedeemTitle: "How to use or redeem a Myntra Gift Card ",
-    howToRedeemDesc:
-      "Myntra Gift Voucher can be redeemed using the following steps on the website and the app:",
-    howToRedeemSteps: [
-      "Log on to myntra.com or visit the app",
-      "Go to Gift Cards under the Profile Section",
-      "Add the Gift Card number and PIN",
-      "Use the amount to purchase from the website",
-    ],
-    checkBalanceTitle: "How to check Myntra Gift Card Balance",
-    checkBalanceDesc:
-      "Myntra Gift Cards are preactivated cards and remain valid for 1 year from the date of purchase. The balance of the Myntra Gift Card Voucher can be checked on the mobile app or website. \n",
-    checkBalanceSteps: [
-      "Visit the Myntra website or app and log in with your credentials",
-      "Go to the Profile Section",
-      "Scroll down to the Gift Cards Section",
-      "Enter the Gift Card number and PIN",
-      "Click on Check Balance to know the balance available",
-    ],
-    termsAndConditionsTitle: "Terms and Conditions for Myntra Gift Card ",
-    termsAndConditionSteps: [
-      "Issued by Pine Labs Pvt. Ltd, authorized by RBI under Qwikcilver; valid on Myntra (website or app) for 1 year",
-      "This card cannot be redeemed for cash/credit or used to buy other gift cards; multiple cards are allowed per order",
-      "Refunds for cancellations go back to the original Gift Card; pay the remaining balance with other methods",
-      "Taxes and duties are the customer's responsibility; the cardholder is responsible for its security.",
-      "Fraudulent cards may be cancelled; terms may change without notice; excludes Titan, Bluestone, and Aditya Birla sellers",
-    ],
-    occasionsTitle: "Myntra Gift Card for Different ferent Occasions ",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
-    festivals:
-      "Let the recipient pick anything of their choice using the Myntra E-Gift Card during the festive season.",
-    anniversary:
-      "The perfect anniversary gift, Myntra Gift Voucher is something the recipient will appreciate on their special occasion.",
-    birthdays:
-      "Get this exclusive Myntra E-Gift Card to surprise your loved ones on their birthdays.\n",
-  },
-
-  "decathlon-sports-india-e-gift-card": {
-    name: "Decathlon Sports India E-Gift Card",
-    urlName: "decathlon-sports-india-e-gift-card",
-    brandName: "Decathlon",
-    category: "e-commerce",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "Decathlon Sports India E-Gift Card\n\n",
-    description:
-      "Sportswear and essentials are no less than a treat for a sports lover. Decathlon is a perfect gift for a fitness enthusiast.",
-    aboutCompany:
-      "Decathlon is a global sports retailer that offers high-quality and affordable gear for 70 sports. It aims to make sports equipment accessible to all with its innovative designs and products.\n",
-    calculatorTitle: "Best Decathlon Gift Cards",
-    calculatorDescription:
-      "Decathlon Gift Cards are a popular choice for presents, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to buy a Decathlon Gift Card ",
-    howToRedeemTitle: "How to use or redeem a Decathlon Gift Card",
-    howToRedeemDesc:
-      "Decathlon Gift Voucher can be redeemed both online and offline",
-    howToRedeemSteps: [
-      "Visit decathlon.com for online redemption",
-      "Add the Gift Card amount to the payment page",
-      "Use it to pay for the item purchased",
-      "For offline redemption, visit any Decathlon retail store",
-      "Present the 16-digit code and PIN during billing",
-      "Use the Gift Card amount to pay for the purchase",
-    ],
-    checkBalanceTitle: "How to Check Decathlon Gift Card Balance",
-    checkBalanceDesc:
-      "Decathlon Gift Cards are preactivated cards. The balance of the Decathlon Gift Card Voucher can be checked on the mobile app or website. ",
-    checkBalanceSteps: [
-      "Open the Decathlon app or website",
-      "Enter your Gift Card number and proceed",
-      "The remaining balance will be reflected on the screen",
-    ],
-    termsAndConditionsTitle: "Terms and Conditions for Decathlon Gift Card",
-    termsAndConditionSteps: [
-      "Decathlon Gift Cards can be used on the website, app, or in any Decathlon store across India",
-      "Valid for 1 year from the date of issue; any unused balance will be forfeited after expiry",
-      "The Gift Card can be redeemed in full or across multiple purchases until the balance is used or the card expires",
-      "If the purchase amount exceeds the card value, the remaining amount can be paid using other payment methods",
-      "Gift Cards are non-refundable and cannot be exchanged for cash",
-    ],
-    occasionsTitle: "Decathlon Gift Card for Different Occasions ",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
-    festivals:
-      "Perfect for endless adventures, celebrate the festive season with a Decathlon brand voucher.",
-    anniversary:
-      "Give the couple an unforgettable anniversary gift with a Decathlon Gift Card. \n ",
-    birthdays:
-      "Make your best friend’s birthday special by gifting them a Decathlon Gift Card. ",
+      "There’s nothing better than gifting health and wellness on birthdays with a HealthKart Gift Card. Just go for it.",
   },
 }
 

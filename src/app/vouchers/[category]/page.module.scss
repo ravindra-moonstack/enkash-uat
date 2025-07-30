@@ -112,7 +112,7 @@
 
 .top_container {
   position: relative;
-  padding: 10px 20px 40px;
+  padding: 10px 0px 40px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   width: 100%;
@@ -238,6 +238,13 @@
   }
 }
 
+.top_container_detail {
+  padding: 26px 20px;
+  @include for-laptops {
+    padding: 66px 20px;
+  }
+}
+
 .detail_section {
   padding: 0 5px;
   color: $color-bolt-title-grey;
@@ -257,7 +264,7 @@
   width: 100%;
   position: relative;
   background-color: $color-light-blue-bg;
-  padding: 40px 20px 40px;
+  padding: 50px 20px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   .bottom_zigzag {
@@ -275,7 +282,7 @@
   width: 100%;
   position: relative;
   background-color: #f9f9f9;
-  padding: 40px 20px 40px;
+  padding: 50px 20px;
   border-radius: 10px 10px 0 0;
   overflow: hidden;
   .bottom_zigzag {

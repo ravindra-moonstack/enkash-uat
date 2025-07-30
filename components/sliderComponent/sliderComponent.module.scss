@@ -1,0 +1,19 @@
+@use "../../styles/mixin" as *;
+@use "../../styles/variables" as *;
+
+.sliderComponent {
+  position: relative;
+  .breadcrumb {
+    z-index: 9;
+
+    position: absolute;
+    top: 115px;
+    left: 162px;
+    .first_row_title {
+      padding: 20px 0px;
+    }
+  }
+}
+.voucherSlider {
+  padding: 190px 20px 90px;
+}

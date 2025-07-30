@@ -1,0 +1,9 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixin" as *;
+
+.first_row {
+  .voucher_card {
+    background-color: $color-white;
+    margin-top: -150px;
+  }
+}

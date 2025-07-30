@@ -1,18 +1,40 @@
 @use "../../styles/variables" as *;
 @use "../../styles/mixin" as *;
 
-// Breadcrumb.module.scss
 .breadcrumb {
-  // padding: 4px 10px 4px 0px;
   background-image: url("/images/assets/breadcrum-bg.svg");
   background-repeat: no-repeat;
   background-position: 100%;
 
   @include for-laptops {
     height: auto;
-    // padding: 5px 10px 5px 0px;
     background-position: -20%;
-    // height: 40px;
+  }
+
+  &.white {
+    .link {
+      color: $color-white;
+    }
+
+    .separator {
+      color: $color-white;
+    }
+
+    // Keep .current blue (no override here)
+  }
+
+  &.allWhite {
+    .link {
+      color: $color-white;
+    }
+
+    .separator {
+      color: $color-white;
+    }
+
+    .current {
+      color: $color-white;
+    }
   }
 }
 
@@ -40,6 +62,7 @@
   margin-right: 16px;
   color: #007bff;
   width: 20px;
+
   img {
     width: 100%;
     height: auto;
@@ -48,9 +71,6 @@
 
 .link {
   text-decoration: none;
-  &.white {
-    color: $color-white;
-  }
 
   &.black {
     color: $color-secondry-black;
@@ -62,7 +82,7 @@
 }
 
 .current {
-  color: $color-equity-blue;
+  color: $color-equity-blue; // default for normal + white mode
   font-size: 12px;
   font-weight: 400;
 
@@ -74,6 +94,7 @@
 .separator {
   margin: 0 2px;
   color: #a5a5a5;
+
   @include for-laptops {
     margin: 0 8px;
   }

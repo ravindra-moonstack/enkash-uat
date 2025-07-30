@@ -28,6 +28,7 @@ import VoucherFaqComponent from "@/components/voucher-page/voucher-faq"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import { blueArrow } from "."
+import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 
 export async function generateMetadata({
   params,
@@ -48,7 +49,7 @@ export async function generateMetadata({
     }
   }
 
-  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.png`
+  const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.webp`
   console.log("OG Image URL:", imageUrl)
 
   return {
@@ -164,7 +165,7 @@ const CategoryPage = async ({
 
   const voucherCategory = voucherData?.category || ""
   const voucherImage = voucherData
-    ? `/images/voucher-bg/${voucherData.urlName}.png`
+    ? `/images/voucher-bg/${voucherData.urlName}.webp`
     : null
 
   let categoryNameMap = new Map<string, string>([
@@ -194,12 +195,12 @@ const CategoryPage = async ({
   return (
     <>
       <Header />
-
+      <TalkToSales />
       {voucherData ? (
         <div className={`color-white ${styles.home_container}`}>
           <div className={`${styles.voucher_detail}`}>
             <div className={`mx-auto ${styles.voucher_detail_container}`}>
-              <div className={`mt-3 ${styles.top_container}`}>
+              <div className={`mt-md-3 ${styles.top_container}`}>
                 <div className={`${styles.top_container_section}`}>
                   <div className={`${styles.breadcrumb}`}>
                     <CustomBreadcrumb items={breadcrumbItems} />
@@ -253,7 +254,7 @@ const CategoryPage = async ({
           </div>
 
           <div className={`mx-auto  ${styles.voucher_detail_container}`}>
-            <div className={`mt-3 ${styles.top_container}`}>
+            <div className={` ${styles.top_container_detail}`}>
               <div className={styles.detail_section}>
                 {/* Gift card main title */}
                 <div className={`my-4`}>
@@ -315,17 +316,17 @@ const CategoryPage = async ({
                       voucherName={voucherData.name}
                       category={voucherData.category}
                       savingsPercentage={voucherData.discount}
-                      voucherImg={`/images/voucher-bg/${voucherData.urlName}.png`}
+                      voucherImg={`/images/voucher-bg/${voucherData.urlName}.webp`}
                     />
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className={`mt-4 mb-5 ${styles.mid_container}`}>
+            <div className={` mb-4 ${styles.mid_container}`}>
               <div className={styles.detail_section}>
                 {/* How to Buy Section */}
-                <div className={`my-4`}>
+                <div>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <DynamicHeading
                       content={[
@@ -420,10 +421,10 @@ const CategoryPage = async ({
               </div>
             </div>
 
-            <div className={`mt-4 mb-5 ${styles.mid_container}`}>
+            <div className={` mb-4 ${styles.mid_container}`}>
               <div className={styles.detail_section}>
                 {/* Use and Redeem section */}
-                <div className={`mt-4 mb-5`}>
+                <div>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <DynamicHeading
                       content={[
@@ -501,10 +502,10 @@ const CategoryPage = async ({
                 <Image src={zigZagTop} alt="zig-zag" />
               </div>
             </div>
-            <div className={`mt-4 mb-5 ${styles.bottom_container}`}>
+            <div className={`mb-4 ${styles.bottom_container}`}>
               <div className={styles.detail_section}>
                 {/* Terms and Conditions section */}
-                <div className={`my-4`}>
+                <div>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <DynamicHeading
                       content={[
@@ -539,9 +540,9 @@ const CategoryPage = async ({
               </div>
             </div>
 
-            <div className={`mb-4 ${styles.mid_container}`}>
+            <div className={` mb-4 ${styles.mid_container}`}>
               <div className={styles.detail_section}>
-                <div className={`my-4`}>
+                <div>
                   <div className={`mb-1 ${styles.description_title}`}>
                     <DynamicHeading
                       content={[
@@ -604,7 +605,7 @@ const CategoryPage = async ({
               </div>
             </div>
 
-            <div className={`${styles.mid_container}`}>
+            <div className={` mb-4 ${styles.mid_container}`}>
               <OccasionVoucher
                 occasionsDesc={voucherData.occasionsDesc}
                 voucherName={voucherData.name}
