@@ -10,7 +10,7 @@ export interface CardProps {
   description: string
   cardImage?: string | StaticImageData
   buttonUrl?: string
-  discount?: string
+  discount?: number | string
 }
 
 const VoucherCard = ({
@@ -18,6 +18,7 @@ const VoucherCard = ({
   description,
   cardImage,
   discount,
+  buttonUrl,
 }: CardProps) => {
   return (
     <div className={`d-flex flex-column text-start ${styles.card_body}`}>
@@ -85,7 +86,7 @@ const VoucherCard = ({
         <div className="col-6 text-end">
           <RectangleButton
             title={"Buy Now"}
-            url="buttonUrl"
+            url={buttonUrl}
             actionImage={whiteArrow}
             hoverImage={whiteArrow}
             iconSize={9}

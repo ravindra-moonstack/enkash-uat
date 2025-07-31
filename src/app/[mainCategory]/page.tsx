@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation"
 import { VOUCHER_DATA } from "./data"
 
-import { Header, FAQHtml } from "@/components"
+import { Header, FAQHtml, Footer } from "@/components"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import SliderComponent from "@/components/sliderComponent/sliderComponent"
 import VoucherCard from "@/components/voucher-card/voucher-card"
@@ -11,7 +11,7 @@ import RectangleButton from "@/components/buttons/rectangle-button/rectangle-but
 import styles from "./page.module.scss"
 import { blueArrow, whiteArrow } from "../affordability-suite"
 import { VoucherFaqData } from "./voucher-faq-data"
-import VoucherFaqComponent from "@/components/voucher-page/voucher-faq"
+import VoucherFaqComponent from "./voucher-faq"
 
 const page = async ({ params }: { params: { mainCategory: string } }) => {
   const { mainCategory } = params
@@ -85,28 +85,61 @@ const page = async ({ params }: { params: { mainCategory: string } }) => {
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row} relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto`}>
-          <div className={`${styles.title} text-start pb-5`}>
+      <div className={`${styles.faq_new_row}  relative`}>
+        <div className={`${styles.faqSection} text-start max-w-auto `}>
+          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
             <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
                   color: "color-black",
                 },
-                { title: "FAQs", color: "color-equity-blue" },
-                { title: ")", color: "color-black" },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
               ]}
               headingTag="h2"
               className="f-6"
             />
           </div>
-
-          <div className={`${styles.faqData}`}>
-            <VoucherFaqComponent voucherName={voucherName} />
+          <div className="d-flex flex-column flex-md-row justify-content-between">
+            <div>
+              <div>
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
+              </div>
+              <div className="mt-3 d-none d-md-block">
+                <RectangleButton
+                  title="Get started today"
+                  theme="border-gray"
+                  actionImage={blueArrow}
+                  hoverImage={whiteArrow}
+                  iconSize={15}
+                  url="/sales/?source=receivables"
+                />
+              </div>
+            </div>
+            <div className={`${styles.faqData}`}>
+              <VoucherFaqComponent voucherName={voucherName} />
+            </div>
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   )
 }

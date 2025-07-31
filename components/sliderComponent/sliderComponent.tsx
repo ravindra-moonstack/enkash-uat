@@ -50,17 +50,6 @@ export default function SliderComponent({
 
   return (
     <div className={styles.sliderComponent}>
-      <div className={styles.breadcrumb}>
-        <CustomBreadcrumb items={breadcrumbItems} linkColor="allWhite" />
-        <div className={styles.first_row_title}>
-          <DynamicHeading
-            content={[{ title: title, color: "color-white" }]}
-            headingTag="p"
-            className="mb-0"
-          />
-        </div>
-      </div>
-
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index}>
@@ -83,6 +72,21 @@ export default function SliderComponent({
               <div className="max-w-auto">
                 <div className="row">
                   <div className="col-12 col-md-7">
+                    <div className={styles.breadcrumb}>
+                      <CustomBreadcrumb
+                        items={breadcrumbItems}
+                        linkColor="allWhite"
+                      />
+                      <div className={styles.first_row_title}>
+                        <DynamicHeading
+                          content={[
+                            { title: title, color: "color-white underline" },
+                          ]}
+                          headingTag="p"
+                          className="mb-0 "
+                        />
+                      </div>
+                    </div>
                     <div
                       className={`text-center text-md-start ${styles.first_row_content}`}
                     >
@@ -123,7 +127,7 @@ export default function SliderComponent({
                           alt="slide visual"
                           style={{
                             maxHeight: slide.rightImageMaxHeight ?? "400px", // ✅ default 400px
-                            marginTop: slide.rightImageMarginTop ?? "-120px",
+                            // marginTop: slide.rightImageMarginTop ?? "-120px",
                           }}
                           className="w-100 mh-550 object-fit-contain"
                         />
