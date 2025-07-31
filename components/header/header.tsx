@@ -13,7 +13,7 @@ const Header = ({ utmSource = "" }: HeaderProps) => {
       <div className="desktop-only desktop-header">
         <WebHeader utmSource={utmSource} />
       </div>
-      <div className="mobile-only m-2">
+      <div className="mobile-only">
         <MobileHeader utmSource={utmSource} />
       </div>
     </>

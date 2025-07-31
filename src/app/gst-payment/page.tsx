@@ -58,7 +58,7 @@ const PayableAnalytics = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "GST Challan Payment",
@@ -72,7 +72,7 @@ const PayableAnalytics = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
+                <div className="pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -96,7 +96,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -133,10 +133,6 @@ const PayableAnalytics = (): React.JSX.Element => {
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
                   className="w-100 mh-550 object-fit-contain"
                 />
               </div>
@@ -148,7 +144,7 @@ const PayableAnalytics = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -190,84 +186,72 @@ const PayableAnalytics = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div className={`d-inline text-center pb-3`}>
-                 <DynamicHeading
-                  content={[
-                    {
-                      title: "Reduce errors, avoid delays, and keep your records in order with EnKash for GST Payments",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center `}>
+                <div className={`text-center pb-4 pb-md-5`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Reduce errors, avoid delays, and keep your records in order with EnKash for GST Payments",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.allInOnePolicy}>
+                <AllInOnePolicy
+                  icon={taskIconOne}
+                  title="Never Miss a GST Payment Deadline Again"
+                  description="Stay on top of your GST payment deadlines with automatic reminders that alert you well in advance. The intuitive approval flow ensures that all payments are processed on time, preventing last-minute confusion or delays. You’ll never have to worry about missing a crucial deadline, reducing the risk of fines and penalties."
+                  image={paymentLinkImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconTwo}
+                  title="Clear and Concise Approval Process"
+                  description="With EnKash, every payment goes through a well-structured approval workflow, ensuring that only valid payments are made. Our system ensures that all checks and validations are carried out before any transaction is approved. This transparent process reduces the risk of unauthorized payments and helps maintain a high level of compliance across your organization."
+                  image={shareImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="305px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconThree}
+                  title="Centralized Monitoring"
+                  description="Gain full visibility into your GST payments with a centralized dashboard that consolidates data from across your company. This feature allows you to track payments, approval statuses, and records from one convenient location, providing a complete picture of your tax liabilities and streamlining your tax management process."
+                  image={paymentOptionImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFour}
+                  title="Audit-Ready Records"
+                  description="EnKash automatically converts your GST challans into digital records that are organized and easily accessible. This ensures that you are always audit-ready, with records available for future reference. By maintaining a clear digital trail, you can avoid the hassle of paper records and reduce the time spent on audits, making the process more efficient and organized."
+                  image={notificationImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="259px"
+                  reverse
                 />
               </div>
-            </div>
-
-            <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Never Miss a GST Payment Deadline Again"
-                description="Stay on top of your GST payment deadlines with automatic reminders that alert you well in advance. The intuitive approval flow ensures that all payments are processed on time, preventing last-minute confusion or delays. You’ll never have to worry about missing a crucial deadline, reducing the risk of fines and penalties."
-                image={paymentLinkImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Clear and Concise Approval Process"
-                description="With EnKash, every payment goes through a well-structured approval workflow, ensuring that only valid payments are made. Our system ensures that all checks and validations are carried out before any transaction is approved. This transparent process reduces the risk of unauthorized payments and helps maintain a high level of compliance across your organization."
-                image={shareImage}
-                buttonUrl="/sales"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Centralized Monitoring"
-                description="Gain full visibility into your GST payments with a centralized dashboard that consolidates data from across your company. This feature allows you to track payments, approval statuses, and records from one convenient location, providing a complete picture of your tax liabilities and streamlining your tax management process."
-                image={paymentOptionImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Audit-Ready Records"
-                description="EnKash automatically converts your GST challans into digital records that are organized and easily accessible. This ensures that you are always audit-ready, with records available for future reference. By maintaining a clear digital trail, you can avoid the hassle of paper records and reduce the time spent on audits, making the process more efficient and organized."
-                image={notificationImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-                reverse
-              />
             </div>
           </div>
         </div>
       </div>
 
-      {/* <div className={`${styles.fifth_row} `}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center"></div>
-          <div className={`${styles.get_started_button} `}>
-            <RectangleButton
-              title="Get Started  "
-              theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
-              url="/sales/"
-            />
-          </div>
-        </div>
-      </div> */}
-
       <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
+        <div className={`${styles.faqSection} w-100 text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -287,7 +271,7 @@ const PayableAnalytics = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[

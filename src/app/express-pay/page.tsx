@@ -3,7 +3,7 @@ import Image from "next/image"
 import styles from "./page.module.scss"
 import { allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header,  FAQHtml, Footer } from "@/components"
+import { Header, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -80,7 +80,7 @@ const BulkPayout = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
+                <div className=" pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -141,10 +141,6 @@ const BulkPayout = (): React.JSX.Element => {
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
                   className="w-100 mh-550 object-fit-contain"
                 />
               </div>
@@ -156,7 +152,7 @@ const BulkPayout = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -202,96 +198,97 @@ const BulkPayout = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div className={`d-inline text-center pb-3`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Innovative Bulk Payments Solutions for Enterprises",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-5"
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center `}>
+                <div className={`text-center pb-4 pb-md-5`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Innovative Bulk Payments Solutions for Enterprises",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.allInOnePolicy}>
+                <AllInOnePolicy
+                  icon={taskIconOne}
+                  title="Save Time and Boost Efficiency"
+                  description="Spend less time on manual payment processes and optimize cash flow with EnKash. Automate recurring and bulk payments, ensure timely transactions, and eliminate errors using a centralized system that integrates seamlessly with your existing tools and processes."
+                  image={paymentLinkImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconTwo}
+                  title="Enhance Vendor Relationships"
+                  description="Build trust with vendors through consistent on-time payments. Foster better partnerships by maintaining transparency and resolving payment queries faster with a reliable payment system."
+                  image={shareImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="305px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconThree}
+                  title="Strengthen Financial Control"
+                  description="Gain real-time visibility into your transactions. Monitor payment statuses, generate detailed reports, and stay compliant with customizable approval workflows tailored to your organization’s needs."
+                  image={paymentOptionImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFour}
+                  title="Improve Cash Flow Management"
+                  description="Ensure smooth operations with faster processing times. Manage recurring expenses like rent, utilities, and vendor payments efficiently to improve cash flow and operational stability."
+                  image={notificationImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="259px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFive}
+                  title="Seamless Integrations"
+                  description="Connect EnKash Express Pay with your ERP, accounting software, or HRMS to simplify workflows and eliminate data silos. Enhance productivity with a fully integrated payment solution."
+                  image={optimizedIcon}
+                  buttonUrl="/sales"
+                  maxImageHeight="259px"
+                />
+                <AllInOnePolicy
+                  icon={taskIconSix}
+                  title="Secure and Reliable Platform"
+                  description="Keep your business secure with robust fraud detection, data encryption, and multi-layered access controls. Rely on industry-leading uptime and performance for uninterrupted operations.."
+                  image={secureImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="259px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconSeven}
+                  title="Customizable Solutions for Your Needs"
+                  description="Adapt the platform to your unique business requirements. From approval hierarchies to payment scheduling, EnKash Express Pay offers unparalleled flexibility."
+                  image={advancedImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="259px"
                 />
               </div>
-            </div>
-
-            <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Save Time and Boost Efficiency"
-                description="Spend less time on manual payment processes and optimize cash flow with EnKash. Automate recurring and bulk payments, ensure timely transactions, and eliminate errors using a centralized system that integrates seamlessly with your existing tools and processes."
-                image={paymentLinkImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Enhance Vendor Relationships"
-                description="Build trust with vendors through consistent on-time payments. Foster better partnerships by maintaining transparency and resolving payment queries faster with a reliable payment system."
-                image={shareImage}
-                buttonUrl="/sales"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Strengthen Financial Control"
-                description="Gain real-time visibility into your transactions. Monitor payment statuses, generate detailed reports, and stay compliant with customizable approval workflows tailored to your organization’s needs."
-                image={paymentOptionImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Improve Cash Flow Management"
-                description="Ensure smooth operations with faster processing times. Manage recurring expenses like rent, utilities, and vendor payments efficiently to improve cash flow and operational stability."
-                image={notificationImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Seamless Integrations"
-                description="Connect EnKash Express Pay with your ERP, accounting software, or HRMS to simplify workflows and eliminate data silos. Enhance productivity with a fully integrated payment solution."
-                image={optimizedIcon}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-              />
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="Secure and Reliable Platform"
-                description="Keep your business secure with robust fraud detection, data encryption, and multi-layered access controls. Rely on industry-leading uptime and performance for uninterrupted operations.."
-                image={secureImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconSeven}
-                title="Customizable Solutions for Your Needs"
-                description="Adapt the platform to your unique business requirements. From approval hierarchies to payment scheduling, EnKash Express Pay offers unparalleled flexibility."
-                image={advancedImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-              />
             </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
-          <div className={` pb-3  d-inline`}>
+        <div className={`${styles.title} text-center max-w-auto`}>
+          <div className={``}>
             <DynamicHeading
               content={[
                 {
@@ -306,7 +303,6 @@ const BulkPayout = (): React.JSX.Element => {
               headingTag="h2"
               className="f-5"
             />
-          
           </div>
         </div>
         <AllProducts
@@ -333,29 +329,29 @@ const BulkPayout = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-                   <DynamicHeading
-                  content={[
-                    {
-                      title: "Frequently Asked Questions (",
-                      color: "color-black",
-                    },
-                    {
-                      title: "FAQs",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: ")",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-5"
-                />
-                 </div>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
+          </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                       <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
@@ -365,7 +361,6 @@ const BulkPayout = (): React.JSX.Element => {
                   headingTag="p"
                   className="mb-0"
                 />
-                
               </div>
               <div className="mt-3 d-none d-md-block">
                 <RectangleButton

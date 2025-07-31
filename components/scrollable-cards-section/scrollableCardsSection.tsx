@@ -37,9 +37,7 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
   return (
     <>
       <div
-        className={`mt-md-5 ${
-          showScroll ? "overflow-auto scrollbar-thin" : ""
-        }`}
+        className={`mt-md-5 ${styles.scrollBoxOuter} ${showScroll ? "overflow-auto scrollbar-thin" : ""}`}
         style={{
           maxHeight,
           direction: showScroll ? "rtl" : "ltr",
@@ -57,15 +55,15 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
       </div>
 
       <div
-        className={`${styles.scrollCardButton} ${
-          showScroll ? styles["scrollCardButton--scroll"] : ""
-        }`}
+        className={`${ showScroll ? styles["scrollCardButton--scroll"] : styles["scrollCardButton"] }`}
       >
-        <RectangleButton
-          title={buttonTitle}
-          theme={buttonTheme}
-          url={buttonUrl}
-        />
+        <div className={`${styles.list_button}`}>
+          <RectangleButton
+            title={buttonTitle}
+            theme={buttonTheme}
+            url={buttonUrl}
+          />
+        </div>
       </div>
     </>
   )

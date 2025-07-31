@@ -37,9 +37,7 @@ const WorkflowManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
-
       <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -150,7 +148,6 @@ const WorkflowManagement = (): React.JSX.Element => {
         </div>
         <LogoSlider />
       </div>
-
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
@@ -247,7 +244,6 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-4`}>
@@ -313,7 +309,6 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
@@ -401,7 +396,6 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5  pb-2`}>

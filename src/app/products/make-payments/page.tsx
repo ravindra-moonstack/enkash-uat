@@ -57,7 +57,7 @@ const PaymentPage = (): React.JSX.Element => {
             />
           </div>
           <div className="col-12 d-flex flex-column text-center">
-            <div className="  mt-3 text-center">
+            <div className="  mt-3 text-center mb-2">
               <DynamicHeading
                 content={[
                   {
@@ -75,15 +75,15 @@ const PaymentPage = (): React.JSX.Element => {
                   {
                     title:
                       "The Most Powerful Payables Platform for Growing Businesses",
-                    color: "color-dark-grey ",
+                    color: "color-dark-grey subHeading",
                   },
                 ]}
-                headingTag="h5"
+                headingTag="p"
                 className="f-4"
               />
             </div>
 
-            <div className="mt-md-5 mt-3">
+            <div className="mt-md-5 mt-3 mb-3 mb-md-0">
               <RectangleButton
                 title="Talk to Sales"
                 theme="blue"
@@ -107,7 +107,7 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
-          <div className=" text-center pb-md-5 pb-3">
+          <div className=" text-center pb-md-4 pb-3">
             <DynamicHeading
               content={[
                 {
@@ -116,7 +116,7 @@ const PaymentPage = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5 bannerHeading"
+              className="f-5"
             />
           </div>
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
@@ -153,107 +153,108 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}`}>
         <div className="max-w-auto">
-          <div className={`row  ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div className={`d-inline  pb-3`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Pay Everything.",
-                      color: "color-black ",
-                    },
-                    {
-                      title: "On Time. In One Place.",
-                      color: "color-equity-blue ",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-5 "
+          <div className={` ${styles.section}`}>
+            <div className={`row gap-3`}>
+              <div className={`${styles.title} text-center pb-md-5 pb-4`}>
+                <div className={``}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Pay Everything.",
+                        color: "color-black ",
+                      },
+                      {
+                        title: "On Time. In One Place.",
+                        color: "color-equity-blue ",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-5 "
+                  />
+                </div>
+              </div>
+
+              <div className={styles.allInOnePolicy}>
+                <AllInOnePolicy
+                  icon={taskIconOne}
+                  title="Take Control of Every Vendor Payment"
+                  description="Simplify vendor payments by uploading invoices, setting approvals, and scheduling disbursals — all from one dashboard. Say goodbye to fragmented workflows, delays, and reconciliation hassles. You’re in control, start to finish."
+                  image={paymentLinkImage}
+                  buttonUrl="/vendor-payment"
+                  maxImageHeight="264px"
+                  buttonText="Explore Vendor Payments"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconTwo}
+                  title="Manage All Your Rents Without Lifting a Finger"
+                  description="Manage and track rental payments across locations with automated TDS handling, complete records, and seamless scheduling. Free yourself from spreadsheets and stay compliant without chasing paperwork or due dates."
+                  image={shareImage}
+                  buttonUrl="/rental-payments"
+                  maxImageHeight="305px"
+                  buttonText="Explore Rental Payments"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconThree}
+                  title="Never Miss Another Utility Bill Payment"
+                  description="Never miss a utility payment again. Schedule electricity, internet, phone, and other bills with smart reminders and approvals. EnKash keeps you organized, audit-ready, and always on top of your bills."
+                  image={paymentOptionImage}
+                  buttonUrl="/bill-payments"
+                  buttonText="Explore Bill Payments"
+                  maxImageHeight="264px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFour}
+                  title="Disburse Hundreds of Payments in One Click"
+                  description="Make mass payouts to vendors, freelancers, gig workers, and more — instantly, through your preferred payment mode. Upload once, disburse in one click. It’s payout efficiency, redefined for scale."
+                  image={notificationImage}
+                  buttonUrl="/bulk-payouts"
+                  buttonText="Explore Bulk Payouts"
+                  maxImageHeight="264px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFive}
+                  title="Make Every GST Tax Payment On Time"
+                  description="Ensure timely and compliant tax payments without the manual load. Automate GST and statutory dues with proper documentation, built-in checks, and a clear audit trail. Stay compliant and stress-free."
+                  image={optimizedImg}
+                  buttonUrl="/gst-payments"
+                  buttonText="Explore GST Payments"
+                  maxImageHeight="259px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconSix}
+                  title="Pay Your Teams Right, Every Time"
+                  description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
+                  image={secureImage}
+                  buttonUrl="/explore-payroll"
+                  buttonText="Explore Payroll"
+                  maxImageHeight="264px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconSix}
+                  title="Bring Order to Invoice Chaos"
+                  description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
+                  image={invoiceImg}
+                  buttonUrl="/invoice-management"
+                  buttonText="Explore Invoice Management"
+                  maxImageHeight="279px"
                 />
               </div>
-            </div>
-
-            <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Take Control of Every Vendor Payment"
-                description="Simplify vendor payments by uploading invoices, setting approvals, and scheduling disbursals — all from one dashboard. Say goodbye to fragmented workflows, delays, and reconciliation hassles. You’re in control, start to finish."
-                image={paymentLinkImage}
-                buttonUrl="/vendor-payment"
-                maxImageHeight="264px"
-                buttonText="Explore Vendor Payments"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Manage All Your Rents Without Lifting a Finger"
-                description="Manage and track rental payments across locations with automated TDS handling, complete records, and seamless scheduling. Free yourself from spreadsheets and stay compliant without chasing paperwork or due dates."
-                image={shareImage}
-                buttonUrl="/rental-payments"
-                maxImageHeight="305px"
-                buttonText="Explore Rental Payments"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Never Miss Another Utility Bill Payment"
-                description="Never miss a utility payment again. Schedule electricity, internet, phone, and other bills with smart reminders and approvals. EnKash keeps you organized, audit-ready, and always on top of your bills."
-                image={paymentOptionImage}
-                buttonUrl="/bill-payments"
-                buttonText="Explore Bill Payments"
-                maxImageHeight="264px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Disburse Hundreds of Payments in One Click"
-                description="Make mass payouts to vendors, freelancers, gig workers, and more — instantly, through your preferred payment mode. Upload once, disburse in one click. It’s payout efficiency, redefined for scale."
-                image={notificationImage}
-                buttonUrl="/bulk-payouts"
-                buttonText="Explore Bulk Payouts"
-                maxImageHeight="264px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Make Every GST Tax Payment On Time"
-                description="Ensure timely and compliant tax payments without the manual load. Automate GST and statutory dues with proper documentation, built-in checks, and a clear audit trail. Stay compliant and stress-free."
-                image={optimizedImg}
-                buttonUrl="/gst-payments"
-                buttonText="Explore GST Payments"
-                maxImageHeight="259px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="Pay Your Teams Right, Every Time"
-                description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
-                image={secureImage}
-                buttonUrl="/explore-payroll"
-                buttonText="Explore Payroll"
-                maxImageHeight="264px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="Bring Order to Invoice Chaos"
-                description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
-                image={invoiceImg}
-                buttonUrl="/invoice-management"
-                buttonText="Explore Invoice Management"
-                maxImageHeight="279px"
-              />
             </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5`}>
-          <div className={` pb-3  d-inline`}>
+        <div className={`${styles.title} text-center `}>
+          <div className={``}>
             <DynamicHeading
               content={[
                 {
@@ -275,7 +276,7 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
+          <div className="text-center">
             <DynamicHeading
               content={[
                 {
@@ -283,8 +284,8 @@ const PaymentPage = (): React.JSX.Element => {
                   color: "color-white ",
                 },
               ]}
-              headingTag="h2"
-              className="f-4 bannerHeading"
+              headingTag="h3"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -313,26 +314,26 @@ const PaymentPage = (): React.JSX.Element => {
                   color: "color-equity-blue ",
                 },
                 {
-                  title: " )",
-                  color: "color-equity-blue ",
+                  title: ")",
+                  color: "color-black",
                 },
               ]}
               headingTag="h2"
-              className="f-5"
+              className="f-6"
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey ",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className="mt-2 d-none d-md-block">

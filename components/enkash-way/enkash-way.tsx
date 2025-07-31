@@ -8,6 +8,7 @@ import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 import { blueArrow, whiteArrow } from "."
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 interface EnkashWayProps {
   progressData: {
@@ -55,7 +56,7 @@ const EnkashWay = ({
         className={`d-md-block d-none ${styles.sixth_row}`}
         style={{
           backgroundImage: `url(${currentBgImage})`,
-          backgroundSize: "contain", // show full image
+          backgroundSize: "cover", // show full image
           backgroundPosition: "center bottom",
           backgroundRepeat: "no-repeat",
           transition: "background-image 0.5s ease-in-out",
@@ -66,22 +67,32 @@ const EnkashWay = ({
         <div className={styles.tab_section}>
           {/* Headings */}
           <div className="d-flex flex-column text-center">
-            <Heading
-              title={sectionHeading}
-              size="h1"
-              color="black"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: sectionHeading,
+                  color: "color-black",
+                },
+                {
+                  title: secondHeading,
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            {secondHeading && (
-              <Heading
-                title={secondHeading}
-                size="h1"
-                color={secondHeadingColor || "equity-blue"}
-                weight="5"
-              />
-            )}
+
             {subTitle && (
-              <Heading title={subTitle} size="h5" color="black" weight="5" />
+              <DynamicHeading
+                content={[
+                  {
+                    title: subTitle,
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-0"
+              />
             )}
           </div>
 
@@ -102,17 +113,16 @@ const EnkashWay = ({
                 onClick={() => setSelectedItemIndex(index)}
               >
                 {data.itemArray.map((word, wordIndex) => (
-                  <h4
+                  <p
                     key={wordIndex}
                     style={{
-                      fontSize: "16px",
                       color: index === selectedItemIndex ? "black" : "#C4C4C4",
                       fontWeight: 500,
                       marginBottom: "0px",
                     }}
                   >
                     {word}
-                  </h4>
+                  </p>
                 ))}
               </div>
             ))}
@@ -135,18 +145,27 @@ const EnkashWay = ({
             </div>
 
             <div className="d-flex flex-column gap-3">
-              <Heading
-                title={selectedItem.title}
-                color="black"
-                size="h3"
-                weight="5"
+              <DynamicHeading
+                content={[
+                  {
+                    title: selectedItem.title,
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h4"
+                className="f-5"
               />
-              <Heading
-                title={selectedItem.description}
-                color="black"
-                size="h6"
-                weight="4"
+              <DynamicHeading
+                content={[
+                  {
+                    title: selectedItem.description,
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-0"
               />
+
               {selectedItem.url && (
                 <div className={`${styles.list_button}`}>
                   <RectangleButton
@@ -168,22 +187,32 @@ const EnkashWay = ({
         <div className={styles.tab_section}>
           {/* Heading */}
           <div className="d-flex flex-column text-center pb-3">
-            <Heading
-              title={sectionHeading}
-              size="h1"
-              color="black"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: sectionHeading,
+                  color: "color-black",
+                },
+                {
+                  title: secondHeading,
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            {secondHeading && (
-              <Heading
-                title={secondHeading}
-                size="h1"
-                color={secondHeadingColor || "equity-blue"}
-                weight="5"
-              />
-            )}
+
             {subTitle && (
-              <Heading title={subTitle} size="h5" color="black" weight="5" />
+              <DynamicHeading
+                content={[
+                  {
+                    title: subTitle,
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-0"
+              />
             )}
           </div>
 
@@ -210,16 +239,15 @@ const EnkashWay = ({
                     }}
                     onClick={() => toggleOpen(index)}
                   >
-                    <h4
+                    <p
                       style={{
-                        fontSize: "16px",
                         color: "#576675",
                         fontWeight: 500,
                         marginBottom: 0,
                       }}
                     >
                       {data.title}
-                    </h4>
+                    </p>
                     <Image
                       src={isOpen ? arrowUpImg : arrowDownImg}
                       alt={isOpen ? "Arrow up" : "Arrow down"}
@@ -246,17 +274,25 @@ const EnkashWay = ({
                           height={28}
                         />
                         <div className="d-flex flex-column gap-2">
-                          <Heading
-                            title={data.title}
-                            color="black"
-                            size="h2"
-                            weight="5"
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: data.title,
+                                color: "color-black",
+                              },
+                            ]}
+                            headingTag="h4"
+                            className="f-5"
                           />
-                          <Heading
-                            title={data.description}
-                            color="black"
-                            size="h5"
-                            weight="4"
+                          <DynamicHeading
+                            content={[
+                              {
+                                title: data.description,
+                                color: "color-black",
+                              },
+                            ]}
+                            headingTag="p"
+                            className="mb-0"
                           />
                         </div>
                       </div>
