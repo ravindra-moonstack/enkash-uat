@@ -15,96 +15,155 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
   "e-commerce-vouchers": {
     faqData: [
       {
-        question: "How to use an eGift Card on FNP?",
+        question: "What are E-commerce Vouchers/Gift Cards?",
         answer: [
           {
             heading:
-              "Log in to your FNP account and add your desired items to the cart. Check out and choose the “Discount Code” option under the payment methods. Enter the FNP E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
-            bullets: [],
+              "E-commerce vouchers are digital cards available on discounts for online shopping. They can be applied during checkout on e-commerce platforms to reduce the overall shopping amount.",
           },
         ],
       },
       {
-        question: "What is the FNP E-Gift Card?",
+        question:
+          "What are the key features of E-commerce Vouchers/Gift Cards?",
         answer: [
           {
-            heading:
-              "The FNP E-Gift Card is an online gift card to avail discounts on the purchase of items on the website.",
-            bullets: [],
+            heading: "",
+            bullets: [
+              "Discounts on specific products or entire orders",
+              "Usable across popular platforms like Amazon, Flipkart, Myntra, etc.",
+              "Can be single-use or reusable, with set expiry dates",
+              "Delivered digitally via email, SMS, or in-app",
+            ],
           },
         ],
       },
       {
-        question: "How can I redeem my eGift Card?",
+        question: "What is the use of e-commerce vouchers for corporates?",
         answer: [
           {
-            heading: "Visit the FNP website and redeem the Gift Card.",
-            bullets: [],
+            heading: "E-commerce gift cards can be used by corporates for:",
+            bullets: [
+              "Expense Control: Predefined value helps limit spend for each employee",
+              "Bulk Distribution: Easy to distribute in volume during events, surveys, or promotions",
+              "Brand Visibility: Increases engagement and brand recall",
+            ],
           },
         ],
       },
       {
-        question: "How to add a card in FNP?",
+        question: "Where can I use the e-commerce gift card?",
         answer: [
           {
             heading:
-              "Visit the FNP website. Log in with your credentials and add the gift card using its number and PIN under the gift card section.",
-            bullets: [],
+              "The e-commerce gift card can be used for the brand it is available for. Some gift cards are valid only on a specific website, while others can be used across multiple online stores.",
           },
         ],
       },
       {
-        question: "How to use an FNP e-gift card?",
+        question: "Can I use multiple gift cards for a single purchase?",
         answer: [
           {
             heading:
-              "FNP Gift Card can be used to buy items available on their website across different categories.",
-            bullets: [],
+              "Many e-commerce platforms allow multiple gift cards to be applied to a single transaction. However, it's better to check the terms and conditions before usage.",
           },
         ],
       },
       {
-        question: "How to transfer my FNP gift card to another account?",
+        question: "Can I use a gift card along with other payment methods?",
         answer: [
           {
             heading:
-              "You can gift this FNP brand voucher to your near and dear ones. You cannot transfer it.",
-            bullets: [],
+              "Yes, if the gift card balance is insufficient, you can typically pay the remaining amount using a credit or debit card or another payment method.",
           },
         ],
       },
       {
-        question: "Can I order online with an FNP gift card?",
+        question: "Do e-commerce gift cards expire?",
         answer: [
           {
             heading:
-              "Yes, FNP gift cards can be redeemed online on their website. You can order products available on the FNP website and use the gift card against the product value.",
-            bullets: [],
+              "Some gift cards have an expiration date, while others do not. Check the terms and conditions of the specific card.",
           },
         ],
       },
       {
-        question: "Can I transfer FNP gift cards to cash?",
+        question: "How do I redeem my e-commerce gift card?",
         answer: [
           {
             heading:
-              "No, FNP brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
-            bullets: [],
+              "Visit the respective e-commerce website and enter the gift card code during checkout in the payment section for redemption.",
           },
         ],
       },
       {
-        question: "What if my FNP Gift Card expires?",
+        question:
+          "Can I use an e-commerce gift card for all products on the website?",
         answer: [
           {
             heading:
-              "You cannot use the FNP Gift Card post its expiry date. The gift voucher must be redeemed on or before its expiry date.",
-            bullets: [],
+              "Some products or services may be excluded from gift card payments. Check the brand’s terms and conditions for details.",
+          },
+        ],
+      },
+      {
+        question: "Can I send an e-commerce gift card to someone else?",
+        answer: [
+          {
+            heading:
+              "Yes, most gift cards can be sent via email or as a physical card to another person.",
+          },
+        ],
+      },
+      {
+        question: "How can I check my gift card balance?",
+        answer: [
+          {
+            heading:
+              "To check the gift card balance, visit the brand’s website and enter the gift card details in the balance check section.",
+          },
+        ],
+      },
+      {
+        question: "What happens if I lose my gift card?",
+        answer: [
+          {
+            heading:
+              "Some brands may replace lost cards if you have proof of purchase, but most are treated like cash and cannot be replaced.",
+          },
+        ],
+      },
+      {
+        question: "Can I get a refund on my gift card?",
+        answer: [
+          {
+            heading:
+              "Most e-commerce gift cards are non-refundable and cannot be exchanged for cash.",
+          },
+        ],
+      },
+      {
+        question:
+          "Can I use an e-commerce gift card for international purchases?",
+        answer: [
+          {
+            heading:
+              "Most gift cards are region-specific and may not work on international versions of the website.",
+          },
+        ],
+      },
+      {
+        question: "What should I do if my e-commerce gift card isn’t working?",
+        answer: [
+          {
+            heading:
+              "Check the validity of the card. Ensure it has sufficient balance and is being used on the correct website. If the issue still persists, contact customer support.",
           },
         ],
       },
     ],
   },
+
   "movie-and-music-vouchers": {
     faqData: [
       {

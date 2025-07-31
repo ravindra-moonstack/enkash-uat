@@ -5,7 +5,7 @@ import styles from "./dynamic-heading.module.scss";
 type HeadingTag = keyof JSX.IntrinsicElements;
  
 interface HeadingSegment {
-  title?: string;
+  title?: string | number;
   name?: string;
   text?: string;
   color?: string; // Should match SCSS class names (without "color-" prefix)

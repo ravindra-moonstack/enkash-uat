@@ -6,20 +6,14 @@ import Header from "@/components/header/header"
 import Footer from "@/components/footer/footer"
 import VoucherData, { Voucher } from "../data/voucher-data"
 import {
-  ajioPopular,
-  amazonPopular,
   blueStepTick,
   corporateNeed,
   individualNeed,
-  myntraPopular,
-  popularArrow,
   whiteArrow,
   zigZagGrey,
   zigZagTop,
-  zomatoPopular,
 } from "../index"
 import VoucherCard from "@/components/voucher-page/voucher-card"
-import Heading from "@/components/heading/heading"
 import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator"
 import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
