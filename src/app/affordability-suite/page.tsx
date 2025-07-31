@@ -79,7 +79,7 @@ const Payroll = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
+                <div className="pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -155,7 +155,7 @@ const Payroll = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -171,7 +171,7 @@ const Payroll = (): React.JSX.Element => {
             <div className="col-md-6 col-12">
               <ScrollableCardsSection
                 cardsData={cardsData}
-                showScroll={true}
+                showScroll={false}
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
@@ -195,7 +195,7 @@ const Payroll = (): React.JSX.Element => {
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
             <div className={`${styles.title} text-center `}>
-              <div className={`d-inline text-center pb-3`}>
+              <div className={`text-center pb-4 pb-md-5`}>
                 <DynamicHeading
                   content={[
                     {
@@ -253,7 +253,7 @@ const Payroll = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -291,7 +291,7 @@ const Payroll = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
@@ -324,7 +324,7 @@ const Payroll = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
              <DynamicHeading
               content={[
                 {

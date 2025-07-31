@@ -466,24 +466,24 @@ const QrCode = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
+          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
             <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
-                  color: "color-black",
+                  color: "color-black ",
                 },
                 {
                   title: "FAQs",
-                  color: "color-equity-blue",
+                  color: "color-equity-blue ",
                 },
                 {
                   title: ")",
-                  color: "color-black",
+                  color: "color-black ",
                 },
               ]}
               headingTag="h2"
-              className="f-6"
+              className="f-5"
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
@@ -517,6 +517,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

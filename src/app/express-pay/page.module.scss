@@ -7,20 +7,15 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 90px;
-  padding-bottom: 36px;
+  padding: 100px 20px 0;
   background-image: url(./img/first-row-bg.svg);
   @include for-laptops {
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-top: 112px;
-    padding-bottom: 60px;
+    padding: 112px 20px 0;
   }
   .group_logo {
-    width: 174px;
-    height: 30px;
+    max-width: 250px;
+    width: 100%;
+    height: auto;
     @include for-laptops {
       width: 366px;
       height: 62px;
@@ -74,24 +69,84 @@
   }
 }
 
-.third_row {
-  width: 100%;
-  padding: 20px;
-
+.second_row {
+  background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
+  position: relative;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 35px 90px;
+    padding: 90px 20px;
+  }
+  .section {
+    margin: auto;
+    gap: 10px;
+    justify-content: center;
+    // flex-wrap: wrap;
+
+    .card {
+      width: 90px;
+      max-width: 100%;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .outerCard {
+        margin: auto;
+
+        img {
+          height: 22px;
+          width: 22px;
+          @include for-laptops {
+            height: 51px;
+            width: 51px;
+          }
+        }
+      }
+
+      .innerCard {
+        box-shadow: 0px 0px 29.66px 0px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        padding: 4px;
+        text-align: center;
+      }
+
+      // 👇 Responsive widths
+      @include for-laptops {
+        width: 300px;
+      }
+
+      @include for-tablet {
+        width: 180px;
+      }
+    }
+    @include for-laptops {
+      gap: 65px;
+      flex-wrap: wrap;
+    }
   }
 
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
+  .inner-content {
+    background: white; /* inner background */
+    padding: 11px 14px;
+    border-radius: 10px; /* slightly smaller radius */
+  }
+}
+
+.third_row {
+  width: 100%;
+  padding: 50px 20px 50px;
+
+  @include for-laptops {
+    padding: 90px 20px;
   }
 
   .section {
     margin-bottom: 50px;
   }
   .scrollCard {
-    margin-left: 10px;
+    // margin-left: 10px;
     margin-bottom: 20px;
     @include for-laptops {
       margin-left: 20px;
@@ -117,19 +172,7 @@
       }
     }
   }
-  :global(img) {
-    object-fit: contain !important;
-    height: auto;
-    @include for-laptops {
-    }
-  }
-  :global(button) {
-    margin-left: 0;
-    @include for-laptops {
-      margin-top: 20px;
-      margin-left: 14px;
-    }
-  }
+
   .approvedImage {
     position: absolute;
     bottom: 0;
@@ -142,40 +185,99 @@
       display: block;
     }
   }
+  img {
+    height: auto;
+    @include for-laptops{
+      height: initial;
+    }
+  }
+  .list_button {
+    padding: 20px 40px 20px;
+    @include for-laptops {
+      padding: 20px 97px 20px;
+    }
+  }
 }
 
 .fourth_row {
-  padding: 20px 30px;
+  padding: 0px 20px 50px;
   @include for-laptops {
-    padding: 0px 90px 0px 90px;
+    padding: 0px 20px 90px;
   }
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
-  }
+
   .section {
     gap: 32px;
-    padding: 20px 10px;
+    padding: 50px 20px 20px;
 
     background-color: $color-sky-hint;
     @include for-laptops {
-      gap: 70px;
-      padding: 70px 0px;
+      gap: 50px;
+      padding: 90px 100px 70px;
     }
-    .title {
-      padding: 0px 10px;
-      @include for-laptops {
-        padding: 0px 100px !important;
-      }
-    }
+
     .allInOnePolicy {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 20px;
       @include for-laptops {
-        padding: 53px 88px 0px 88px;
-        gap: 70px;
       }
+    }
+  }
+}
+
+.sixth_row {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  height: 100vh;
+  @include for-laptops {
+    padding: 32px;
+  }
+  // background-image: url(./img/enkashWayBg.svg);
+
+  .blur_bg {
+    position: absolute;
+    top: -70%;
+    left: 0;
+    width: 800px;
+    height: 1150px;
+  }
+  .progress_bar {
+    height: 4px;
+    border-radius: 12px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background: linear-gradient(
+      90deg,
+      $color-equity-blue 15%,
+      $color-black 30%
+    );
+    @include for-laptops {
+      height: 8px;
+    }
+  }
+  .progress_items {
+    margin-right: 30px;
+    @include for-laptops {
+      margin-right: 0;
+    }
+  }
+  .progress_container {
+    @include for-laptops {
+      justify-content: space-evenly;
+    }
+  }
+  .arrow {
+    transform: rotate(90deg);
+    height: 30px;
+    width: 30px;
+    margin-top: -10px;
+    @include for-laptops {
+      height: 50px;
+      width: 50px;
+      transform: none;
+      margin-top: 0;
     }
   }
 }
@@ -184,9 +286,9 @@
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 58px;
+    padding: 58px 20px;
   }
   .get_started_button {
     padding: 6px;
@@ -198,14 +300,149 @@
   }
 }
 
+.seventh_row {
+  .container {
+    @include for-laptops {
+      padding-left: 150px;
+      padding-right: 150px;
+    }
+    @include for-window-zoomed-screens {
+      padding-left: 100px;
+      padding-right: 100px;
+    }
+  }
+  .left_row {
+    padding: 40px;
+    margin-top: -20px;
+    border-radius: 10px;
+    border: 2px solid $color-night-blue;
+    @include for-laptops {
+      padding: 40px;
+      width: 50%;
+      margin-top: 0px;
+    }
+  }
+  .right_row {
+    margin-top: -10px;
+    @include for-laptops {
+      margin-left: -20px;
+      margin-top: 0;
+      width: 50%;
+    }
+    img {
+      height: 100%;
+    }
+  }
+}
+
+.eigth_row {
+  background-color: #f1f1f1;
+  position: relative;
+  display: flex;
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+
+  @include for-laptops {
+    padding-top: 138px;
+  }
+
+  .faqSection {
+    width: 70%;
+  }
+
+  .faq_bg {
+    img {
+      position: absolute;
+      right: 0; // ✅ Add this
+      bottom: 0;
+      display: none;
+      pointer-events: none;
+      @include for-laptops {
+        display: block; // ✅ Changed from flex to block
+        height: 37.5rem;
+      }
+    }
+  }
+}
+
+.ninth_row {
+  position: relative;
+  padding: 20px;
+  @include for-laptops {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  h1 {
+    font-size: 110px;
+    color: black;
+
+    span {
+      background-color: $color-bluish-purple;
+      color: white;
+    }
+  }
+}
+
+.slider_row {
+  position: relative;
+  text-align: center;
+  padding: 0px 20px 16px;
+  padding-top: 0px;
+  @include for-laptops {
+    padding: 0px 20px 46px;
+  }
+}
+
+.third_row .scrollbar-thin::-webkit-scrollbar {
+  width: 12px;
+}
+
+.third_row .scrollbar-thin::-webkit-scrollbar-track {
+  background: white;
+  border: 1px solid transparent;
+  border-radius: 20px;
+}
+
+.third_row .scrollbar-thin::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+
+/* Firefox */
+.third_row .scrollbar-thin {
+  scrollbar-width: auto;
+  scrollbar-color: #3b82f6 transparent;
+}
+
+.bg-color-soft-mint {
+  background-color: $color-soft-mint;
+}
+
+.new_row {
+  background: linear-gradient(180deg, #1c5af4 0%, #10348e 100%);
+
+  position: relative;
+  padding: 20px;
+  @include for-laptops {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
 .faq_new_row {
   background-color: white;
   position: relative;
   display: flex;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 96px 90px 90px 60px;
+    padding: 90px 20px;
   }
 
   .faq_bg {
@@ -227,13 +464,10 @@
   }
 }
 
-.slider_row {
-  position: relative;
-  text-align: center;
-  padding: 20px;
-  padding-top: 0px;
+.other_products {
+  background-color: white;
+  padding: 0 20px 50px;
   @include for-laptops {
-    padding-top: 90px;
-    padding-bottom: 90px;
+    padding: 0px 20px 90px;
   }
 }

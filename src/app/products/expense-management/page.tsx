@@ -21,7 +21,6 @@ import {
   logisticIcon,
   consultancyIcon,
   pharmacyIcon,
-
 } from "."
 import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -71,8 +70,8 @@ const ExpenseManagement = (): React.JSX.Element => {
             />
           </div>
 
-          <div className="col-12 d-flex flex-column justify-content-center align-items-center">
-            <div className="d-flex flex-column my-3 justify-content-center align-items-center ">
+          <div className="col-12">
+            <div className="text-center mt-4 mt-mb-5">
               <DynamicHeading
                 content={[
                   {
@@ -88,7 +87,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                 className="f-7"
               />
             </div>
-            <div className="d-inline">
+            <div className="text-center">
               <DynamicHeading
                 content={[
                   {
@@ -131,7 +130,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h2"
-              className="f-5"
+              className="f-6"
             />
           </div>
 
@@ -194,65 +193,67 @@ const ExpenseManagement = (): React.JSX.Element => {
 
           {/* Section 2 */}
           <div
-            className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
+            className={`bg-color-soft-mint pb-[50px] pt-[50px]  ${styles.section}`}
           >
-            <div className={`col-md-6 col-12  order-2 order-md-1`}>
-              <div>
-                <Image
-                  src={receipt}
-                  alt="card background"
-                  className="position-relative w-100 mh-550 object-fit-contain"
-                />
+            <div className="row align-items-center">
+              <div className={`col-md-6 col-12  order-2 order-md-1`}>
+                <div>
+                  <Image
+                    src={receipt}
+                    alt="card background"
+                    className="position-relative w-100 mh-550 object-fit-contain"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="col-md-6 col-12 order-1 order-md-2">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Travel Requests & Per Diem – Plan Ahead, Stay Within Budget",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className="f-5"
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Let employees plan trips easily with automated per diem and compliance.",
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="f-4 mt-2 mb-0"
-                />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {paymentMethodData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get Started  Today "
-                  theme="outline-blue"
-                  url="/sales/?source=expense_management"
-                />
+              <div className="col-md-6 col-12 order-1 order-md-2">
+                <div className={`d-flex flex-column ${styles.subtitle}`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Travel Requests & Per Diem – Plan Ahead, Stay Within Budget",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h4"
+                    className="f-5"
+                  />
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Let employees plan trips easily with automated per diem and compliance.",
+                        color: "color-main-grey",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="f-4 mt-2 mb-0"
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "32px",
+                  }}
+                >
+                  {paymentMethodData.map(({ icon, title, description }, i) => (
+                    <div key={i} style={{ direction: "ltr" }}>
+                      <PolicyCard
+                        icon={icon}
+                        title={title}
+                        description={description}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className={`${styles.list_button}`}>
+                  <RectangleButton
+                    title="Get Started  Today "
+                    theme="outline-blue"
+                    url="/sales/?source=expense_management"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -320,65 +321,65 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
 
           {/* Section 4 */}
-          <div
-            className={`row bg-color-soft-mint pb-[50px] pt-[50px] align-items-center ${styles.section}`}
-          >
-            <div className={`col-md-6 col-12  order-2 order-md-1`}>
-              <div>
-                <Image
-                  src={walletExpense}
-                  alt="card background"
-                  className="position-relative w-100 mh-550 object-fit-contain"
-                />
+          <div className={`bg-color-soft-mint pb-[50px] pt-[50px] ${styles.section}`} >
+            <div className="row align-items-center">
+              <div className={`col-md-6 col-12  order-2 order-md-1`}>
+                <div>
+                  <Image
+                    src={walletExpense}
+                    alt="card background"
+                    className="position-relative w-100 mh-550 object-fit-contain"
+                  />
+                </div>
               </div>
-            </div>
-            <div className="col-md-6 col-12  order-1 order-md-2">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Employee Reimbursements with Smart Wallets",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className="f-5"
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Automate category-wise allowances, get instant access to funds, and breeze through compliance.",
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="f-4 mt-2 mb-0"
-                />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {rankData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get Started  Today "
-                  theme="outline-blue"
-                  url="/sales/?source=expense_management"
-                />
+              <div className="col-md-6 col-12  order-1 order-md-2">
+                <div className={`d-flex flex-column ${styles.subtitle}`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Employee Reimbursements with Smart Wallets",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h4"
+                    className="f-5"
+                  />
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Automate category-wise allowances, get instant access to funds, and breeze through compliance.",
+                        color: "color-main-grey",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="f-4 mt-2 mb-0"
+                  />
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "32px",
+                  }}
+                >
+                  {rankData.map(({ icon, title, description }, i) => (
+                    <div key={i} style={{ direction: "ltr" }}>
+                      <PolicyCard
+                        icon={icon}
+                        title={title}
+                        description={description}
+                      />
+                    </div>
+                  ))}
+                </div>
+                <div className={`${styles.list_button}`}>
+                  <RectangleButton
+                    title="Get Started  Today "
+                    theme="outline-blue"
+                    url="/sales/?source=expense_management"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -387,7 +388,7 @@ const ExpenseManagement = (): React.JSX.Element => {
 
       <div className={`${styles.fifth_row} bg-white `}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -435,7 +436,7 @@ const ExpenseManagement = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-start pb-3`}>
+          <div className={`${styles.title} text-start`}>
             <DynamicHeading
               content={[
                 {
@@ -467,7 +468,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
 
           <div
-            className={`col-md-6 col-12 mt-5 ${
+            className={`col-md-6 col-12 mt-4 mt-md-5 ${
               showScroll ? "overflow-auto scrollbar-thin" : ""
             }`}
             style={{
@@ -510,8 +511,8 @@ const ExpenseManagement = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.eigth_row} relative`}>
-        <div className={`${styles.faqSection} text-start pb-5 max-w-auto`}>
-          <div className={`${styles.title} text-start pb-5`}>
+        <div className={`${styles.faqSection} text-start  max-w-auto`}>
+          <div className={`${styles.title} text-start pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -531,7 +532,11 @@ const ExpenseManagement = (): React.JSX.Element => {
             </div>
             <div className="col-md-6 sm-d-none">
               <div className={styles.faq_bg}>
-                <Image src={faqBg} alt="background image" className="w-100 mh-550 object-fit-contain"/>
+                <Image
+                  src={faqBg}
+                  alt="background image"
+                  className="w-100 mh-550 object-fit-contain"
+                />
               </div>
             </div>
           </div>
