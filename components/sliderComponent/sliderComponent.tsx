@@ -13,7 +13,7 @@ interface BreadcrumbItem {
   url: string
 }
 
-interface Slide {
+export interface Slide {
   backgroundImage?: string | StaticImageData
   backgroundColor?: string
   heading: string
@@ -28,11 +28,13 @@ interface Slide {
 interface SliderComponentProps {
   breadcrumbItems: BreadcrumbItem[]
   slides: Slide[]
+  title: string
 }
 
 export default function SliderComponent({
   breadcrumbItems,
   slides,
+  title,
 }: SliderComponentProps) {
   const settings = {
     dots: true,
@@ -52,12 +54,7 @@ export default function SliderComponent({
         <CustomBreadcrumb items={breadcrumbItems} linkColor="allWhite" />
         <div className={styles.first_row_title}>
           <DynamicHeading
-            content={[
-              {
-                title: "E-commerce Vouchers",
-                color: "color-white underline",
-              },
-            ]}
+            content={[{ title: title, color: "color-white" }]}
             headingTag="p"
             className="mb-0"
           />
@@ -79,6 +76,7 @@ export default function SliderComponent({
                   : slide.backgroundColor,
                 backgroundSize: "100%",
                 backgroundPosition: "top center",
+                backgroundRepeat: "no-repeat",
                 width: "100%",
               }}
             >
