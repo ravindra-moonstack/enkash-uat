@@ -83,11 +83,12 @@ const PayableAnalytics = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
+                <div className="pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
-                        title: "Smarter business decisions start with advanced AI-powered Payable Analytics ",
+                        title:
+                          "Smarter business decisions start with advanced AI-powered Payable Analytics ",
                         color: "color-black",
                       },
                     ]}
@@ -97,7 +98,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title:
@@ -107,7 +108,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -159,7 +160,7 @@ const PayableAnalytics = (): React.JSX.Element => {
 
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
-          <div className="d-inline justify-content-center  align-items-center text-center">
+          <div className=" text-center">
             <DynamicHeading
               content={[
                 {
@@ -168,7 +169,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -193,7 +194,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Access Real-Time Data",
@@ -215,7 +216,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Analyze Latest Trends",
@@ -237,7 +238,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                  <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Gain Actionable Insights",
@@ -255,7 +256,7 @@ const PayableAnalytics = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -271,7 +272,7 @@ const PayableAnalytics = (): React.JSX.Element => {
             <div className="col-md-6 col-12">
               <ScrollableCardsSection
                 cardsData={cardsData}
-                showScroll={true}
+                showScroll={false}
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
@@ -293,77 +294,79 @@ const PayableAnalytics = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div className={`d-inline text-center pb-3`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "AI-Backed Data Decisions For Your Business ",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center `}>
+                <div className={` text-center pb-4 pb-md-5`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "AI-Backed Data Decisions For Your Business ",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.allInOnePolicy}>
+                <AllInOnePolicy
+                  icon={taskIconOne}
+                  title="Seamless Data Access"
+                  description="Easily connect or import data from files, product databases, and external sources—so you can analyze everything in one place without the hassle."
+                  image={paymentLinkImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconTwo}
+                  title="Secure Data Sharing"
+                  description="Access and share data confidently with the right stakeholders while keeping your security and privacy fully intact."
+                  image={shareImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="305px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconThree}
+                  title="Visualize Data with Ease"
+                  description="Get actionable insights through interactive, easy-to-understand visual reports that make data analysis both intuitive and impactful."
+                  image={paymentOptionImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="243px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFour}
+                  title="Predict with AI Power"
+                  description="Leverage AI to forecast trends, run smart analyses, and set intelligent alerts so you can make proactive, data-driven decisions for your business."
+                  image={notificationImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="259px"
+                  reverse
                 />
               </div>
-            </div>
-
-            <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Seamless Data Access"
-                description="Easily connect or import data from files, product databases, and external sources—so you can analyze everything in one place without the hassle."
-                image={paymentLinkImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Secure Data Sharing"
-                description="Access and share data confidently with the right stakeholders while keeping your security and privacy fully intact."
-                image={shareImage}
-                buttonUrl="/sales"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Visualize Data with Ease"
-                description="Get actionable insights through interactive, easy-to-understand visual reports that make data analysis both intuitive and impactful."
-                image={paymentOptionImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Predict with AI Power"
-                description="Leverage AI to forecast trends, run smart analyses, and set intelligent alerts so you can make proactive, data-driven decisions for your business."
-                image={notificationImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-                reverse
-              />
             </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <DynamicHeading
               content={[
                 {
-                  title: "Harness Data to Grow, Scale, and Outperform Competition",
+                  title:
+                    "Harness Data to Grow, Scale, and Outperform Competition",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -401,9 +404,9 @@ const PayableAnalytics = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
@@ -434,7 +437,7 @@ const PayableAnalytics = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {

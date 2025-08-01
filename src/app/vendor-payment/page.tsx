@@ -79,7 +79,7 @@ const VendorPayment = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
+                <div className=" pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -155,7 +155,7 @@ const VendorPayment = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -221,87 +221,88 @@ const VendorPayment = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div className={`d-inline text-center pb-3`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Your End-to-End Solution for Vendor Payments",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-5"
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div className={` text-center pb-md-4 pb-1 mb-2`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Your End-to-End Solution for Vendor Payments",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.allInOnePolicy}>
+                <AllInOnePolicy
+                  icon={taskIconOne}
+                  title="Pay Vendors in Seconds"
+                  description="Simplify vendor payments with multiple payment options such as UPI, NEFT, RTGS, or cards. With EnKash, you can settle invoices instantly while ensuring secure transactions. No more delays or manual follow-ups—just fast, reliable payments that strengthen your vendor relationships. Efficient management of vendor payables ensures faster invoice settlements and stronger vendor relationships."
+                  image={paymentLinkImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="250px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconTwo}
+                  title="Eliminate Manual Hassles"
+                  description="Say goodbye to cumbersome spreadsheets and manual errors. EnKash automates the entire process—from uploading invoices to setting payment reminders. With built-in TDS compliance and auto-validation, you can ensure every payment is accurate, on time, and fully compliant with regulations, leaving your team to focus on growth."
+                  image={shareImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="305px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconThree}
+                  title="Seamless Integration"
+                  description="Integrate EnKash seamlessly with leading ERPs like Tally, QuickBooks, and Zoho. This ensures your accounts payable system is always synchronized, saving time on manual data entry. Automatically pull invoices, update payment statuses, and maintain an organized workflow that fits effortlessly into your existing setup."
+                  image={paymentOptionImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="202px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFour}
+                  title="Speed Up Approvals"
+                  description="Empower your team to approve payments faster with EnKash’s customizable workflows. Define approval hierarchies, assign roles, and get instant notifications for pending tasks. Whether you're in the office or on the go, you can approve vendor payments securely from any device, keeping your business agile."
+                  image={notificationImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="259px"
+                  reverse
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconFive}
+                  title="Comprehensive Reconciliation"
+                  description="Ensure your books are always audit-ready with EnKash’s automatic reconciliation features. Match invoices to payments, generate detailed reports, and eliminate discrepancies effortlessly. This streamlined process not only improves accuracy but also saves valuable time for your finance team."
+                  image={optimizedIcon}
+                  buttonUrl="/sales"
+                  maxImageHeight="259px"
+                />
+
+                <AllInOnePolicy
+                  icon={taskIconSix}
+                  title="End-to-End Security"
+                  description="Protect every transaction with enterprise-grade security measures. EnKash uses multi-layered encryption, advanced fraud monitoring, and secure bank account validation to safeguard your data and payments. With compliance built into the platform, you can trust that your vendor payments are in safe hands."
+                  image={secureImage}
+                  buttonUrl="/sales"
+                  maxImageHeight="252px"
+                  reverse
                 />
               </div>
-            </div>
-
-            <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Pay Vendors in Seconds"
-                description="Simplify vendor payments with multiple payment options such as UPI, NEFT, RTGS, or cards. With EnKash, you can settle invoices instantly while ensuring secure transactions. No more delays or manual follow-ups—just fast, reliable payments that strengthen your vendor relationships. Efficient management of vendor payables ensures faster invoice settlements and stronger vendor relationships."
-                image={paymentLinkImage}
-                buttonUrl="/sales"
-                maxImageHeight="250px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Eliminate Manual Hassles"
-                description="Say goodbye to cumbersome spreadsheets and manual errors. EnKash automates the entire process—from uploading invoices to setting payment reminders. With built-in TDS compliance and auto-validation, you can ensure every payment is accurate, on time, and fully compliant with regulations, leaving your team to focus on growth."
-                image={shareImage}
-                buttonUrl="/sales"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Seamless Integration"
-                description="Integrate EnKash seamlessly with leading ERPs like Tally, QuickBooks, and Zoho. This ensures your accounts payable system is always synchronized, saving time on manual data entry. Automatically pull invoices, update payment statuses, and maintain an organized workflow that fits effortlessly into your existing setup."
-                image={paymentOptionImage}
-                buttonUrl="/sales"
-                maxImageHeight="202px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Speed Up Approvals"
-                description="Empower your team to approve payments faster with EnKash’s customizable workflows. Define approval hierarchies, assign roles, and get instant notifications for pending tasks. Whether you're in the office or on the go, you can approve vendor payments securely from any device, keeping your business agile."
-                image={notificationImage}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Comprehensive Reconciliation"
-                description="Ensure your books are always audit-ready with EnKash’s automatic reconciliation features. Match invoices to payments, generate detailed reports, and eliminate discrepancies effortlessly. This streamlined process not only improves accuracy but also saves valuable time for your finance team."
-                image={optimizedIcon}
-                buttonUrl="/sales"
-                maxImageHeight="259px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="End-to-End Security"
-                description="Protect every transaction with enterprise-grade security measures. EnKash uses multi-layered encryption, advanced fraud monitoring, and secure bank account validation to safeguard your data and payments. With compliance built into the platform, you can trust that your vendor payments are in safe hands."
-                image={secureImage}
-                buttonUrl="/sales"
-                maxImageHeight="252px"
-                reverse
-              />
             </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
-          <div className={` pb-3  d-inline`}>
+        <div className={`${styles.title} text-center  max-w-auto`}>
+          <div className={``}>
             <DynamicHeading
               content={[
                 {
@@ -318,7 +319,7 @@ const VendorPayment = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h2"
-              className="f-5"
+              className="f-6"
             />
           </div>
         </div>
@@ -340,7 +341,7 @@ const VendorPayment = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-4 bannerHeading"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -378,7 +379,7 @@ const VendorPayment = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
