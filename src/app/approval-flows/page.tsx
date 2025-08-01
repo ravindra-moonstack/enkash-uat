@@ -5,7 +5,26 @@ import styles from "./page.module.scss"
 import { cardData, expenseManagementData, stepCards } from "./data"
 import faqData from "./faq-data"
 import { Header, Heading, FAQHtml, Footer } from "@/components"
-import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+import {
+  blueArrow,
+  groupIcon,
+  paymentSummary,
+  whiteArrow,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
+  stackCardThreeImg,
+  stackCardThreeIcon,
+  stackCardsixImg,
+  stackCardsixIicon,
+} from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
@@ -13,7 +32,102 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import ManagementCard from "@/components/management-card/management-card"
 import EasyStepCard from "@/components/easy-step-card/easy-step-card"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import CardStacking from "@/components/cardStacking/cardStacking"
 
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="Ease of use"
+          description="With EnKash, policies can be created on the platform as per the company's requirements and can be viewed easily on the dashboard."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Policy Enforcement"
+          description="Built-in policy enforcement and tracking features for different departments and employee grades to ensure adherence to spending policies."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={stackCardThreeIcon}
+          title="Alerts on Policy Breach"
+          description="When an employee submits expenses exceeding policy limits, a warning is sent to the submitters and approvers. The approver can then reject the expense or request a correction."
+          image={stackCardThreeImg}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Approval Workflows"
+          description="Automated and customizable workflows streamline the approval process, ensuring faster decision-making and reduced bottlenecks."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="User Permissions"
+          description="Role-based access control ensures that the designated people have the appropriate level of authority, enhancing security and transparency."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="Transparency "
+          description="Real-time visibility into the approval status of transactions provides transparency and accountability at every step."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
 const ApprovalFlows = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -43,38 +157,48 @@ const ApprovalFlows = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Approval Flows`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Approval Flows",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-md-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Customize policy and approval flow   `}
-                    color="black"
-                    size="h2"
-                    weight="7"
-                  />
-                  <Heading
-                    title={` according to business needs`}
-                    color="equity-blue"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Customize policy and approval flow",
+                        color: "color-black",
+                      },
+                      {
+                        title: " according to business needs",
+                        color: "color-equity-blue ",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Initiate real-time policy enforcement, automate approvals at multiple levels, and track expenses with a comprehensive dashboard. "
-                    color="black"
-                    size="h5"
-                    weight="4"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Initiate real-time policy enforcement, automate approvals at multiple levels, and track expenses with a comprehensive dashboard.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -120,12 +244,17 @@ const ApprovalFlows = (): React.JSX.Element => {
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
-          <div className=" text-center pb-md-5 pb-3">
-            <Heading
-              title={`Policies & Approval Flow That Works For Your Business`}
-              color="white"
-              size="bannerHeading"
-              weight="5"
+          <div className=" text-center pb-md-4 pb-4">
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "Policies & Approval Flow That Works For Your Business",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5 "
             />
           </div>
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
@@ -139,12 +268,15 @@ const ApprovalFlows = (): React.JSX.Element => {
                   alt="card visual"
                   className={styles.card_image}
                 />
-                <Heading
-                  title={item.title}
-                  color="main-grey"
-                  size="h6"
-                  weight="4"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: item.title,
+                      color: "color-main-grey",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0 text-center"
                 />
               </div>
             ))}
@@ -154,26 +286,22 @@ const ApprovalFlows = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className="text-center">
-            <RectangleButton
-              title={"Three Easy Steps"}
-              url="/sales/"
-              theme="outline-blue-small"
-            />
-          </div>
+          
 
           <div className={`${styles.title} text-center pb-3`}>
-            <Heading
-              title={`Step-by-Step Guide to `}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={` Policy & Approval Flows`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Step-by-Step Guide to ",
+                  color: "color-black",
+                },
+                {
+                  title: "Policy & Approval Flows",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
 
@@ -187,14 +315,44 @@ const ApprovalFlows = (): React.JSX.Element => {
         </div>
       </div>
 
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center `}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Approval Flow To Bring ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Efficiency, Control & Transparency",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+
+            <CardStacking cards={cards} />
+          </>
+        </div>
+      </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Define approval flows for efficient expense management"
-              size="bannerHeading"
-              color="white"
-              weight="4"
+           
+            <DynamicHeading
+              content={[
+                {
+                  title: "Define approval flows for efficient expense management",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -212,25 +370,41 @@ const ApprovalFlows = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
+            
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                />
+                
+            <DynamicHeading
+              content={[
+                {
+                  title: "Have more questions?",
+                  color: "color-dark-grey subHeading",
+                },
+              ]}
+              headingTag="p"
+              className="mb-0"
+            />
               </div>
               <div className="mt-2 d-none d-md-block">
                 <RectangleButton
@@ -252,19 +426,23 @@ const ApprovalFlows = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
-            <Heading
-              title={`EnKash’s innovative solutions for ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
+            
+            <DynamicHeading
+              content={[
+                {
+                  title: "EnKash’s innovative solutions for ",
+                  color: "color-black",
+                },
+                {
+                  title: "expense management",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading
-              title={`expense management`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
+           
           </div>
           <div className="row g-3 pb-4 ">
             {expenseManagementData.map((card, index) => (

@@ -12,6 +12,20 @@ import {
   paymentSummary,
   whiteArrow,
   zeroLeakage,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
+  stackCardThreeImg,
+  stackCardThreeIcon,
+  stackCardsixImg,
+  stackCardsixIicon,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -20,7 +34,86 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 
 import PolicyCard from "@/components/policyCard/policyCard"
-
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import CardStacking from "@/components/cardStacking/cardStacking"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="UPI-Based Petty Cash"
+          description="Enable UPI-based payments for everyday expenses - no cash, no chaos. Assign wallets to employees, apply spend controls and approval flows, and get full visibility of transactions in a compliant, audit-ready format."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Digital Petty Cash Distribution"
+          description="Distribute funds instantly with EnKash prepaid cards or UPI wallets. Set monthly budgets, configure user or branch-level limits, automate top-ups, and revoke access anytime—eliminating manual disbursement and giving you total control over petty cash."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={stackCardThreeIcon}
+          title="Automatic Expense Creation"
+          description="Every transaction is auto-converted into an expense with pre-filled details like amount, date, and merchant. Smart categorization and mobile app verification simplify reporting, so employees just review, attach receipts, and submit in seconds."
+          image={stackCardThreeImg}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Real-Time Tracking & Spend Visibility"
+          description="Track every rupee as it’s spent. Get live dashboards, instant policy alerts, and geo-tagged logs for each transaction, ensuring complete transparency and real-time visibility across teams, branches, or employees, from anywhere."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="Automated Reconciliation"
+          description="The system automatically matches each transaction with submitted receipts. One-click verifications, live reconciliation reports, and instant exception alerts mean faster closes, fewer errors, and a hassle-free audit trail—all with minimal manual effort."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
 const PettyCash = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -50,38 +143,48 @@ const PettyCash = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Petty Cash`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Petty Cash ",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Best Petty Cash `}
-                    color="equity-blue"
-                    size="h2"
-                    weight="7"
-                  />
-                  <Heading
-                    title={` Management Suite`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                <div className="  pt-3 pt-md-0">
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Best Petty Cash",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: " Management Suite",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="From chaos to clarity—automate petty cash and close the books faster"
-                    color="black"
-                    size="h5"
-                    weight="4"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "From chaos to clarity—automate petty cash and close the books faster",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -124,29 +227,63 @@ const PettyCash = (): React.JSX.Element => {
         </div>
         <LogoSlider />
       </div>
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center `}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Manage ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Petty Cash ",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: "Like Never Before",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
 
+            <CardStacking cards={cards} />
+          </>
+        </div>
+      </div>
       <div className={` ${styles.third_row}`}>
         <div className="max-w-auto">
           <div className={`d-flex flex-column ${styles.subtitle}`}>
-            <div className="d-inline">
-              <Heading
-                title={`Full Control.${space}`}
-                color="black"
-                size="h1"
-                weight="5"
-              />
-              <Heading
-                title={`Zero Leakage.`}
-                color="equity-blue"
-                size="h1"
-                weight="5"
+            <div className="mb-2">
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Full Control. ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Zero Leakage.",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
               />
             </div>
-            <Heading
-              title={`Put your petty cash policy into action automatically. `}
-              color="main-grey"
-              size="h5"
-              weight="4"
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "Put your petty cash policy into action automatically.",
+                  color: "color-main-grey subHeading",
+                },
+              ]}
+              headingTag="p"
+              className="mb-0"
             />
           </div>
           <div className="row">
@@ -170,7 +307,7 @@ const PettyCash = (): React.JSX.Element => {
               </div>
             </div>
             <div className={`col-md-6 col-12 `}>
-              <div>
+              <div className="mt-4 mt-md-0">
                 <Image
                   src={zeroLeakage}
                   alt="card background"
@@ -185,7 +322,6 @@ const PettyCash = (): React.JSX.Element => {
       <div className={`${styles.fourth_row}`}>
         <div className="max-w-auto">
           <div className="row align-items-end">
-            {/* 👉 IMAGE COLUMN */}
             <div className="col-md-6 col-12 order-2 order-md-1">
               <div>
                 <Image
@@ -196,28 +332,34 @@ const PettyCash = (): React.JSX.Element => {
               </div>
             </div>
 
-            {/* 👉 TEXT COLUMN */}
             <div className="col-md-6 col-12 order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <div className="d-inline">
-                  <Heading
-                    title={`Powerful ${space}`}
-                    color="black"
-                    size="h1"
-                    weight="5"
-                  />
-                  <Heading
-                    title={`Analytics & Reports`}
-                    color="equity-blue"
-                    size="h1"
-                    weight="5"
+                <div className="mb-2">
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Powerful ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Analytics & Reports",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
                   />
                 </div>
-                <Heading
-                  title={`Get a 360° view of your petty cash spends - branch-wise, team-wise, and category-wise.`}
-                  color="main-grey"
-                  size="h5"
-                  weight="4"
+                <DynamicHeading
+                  content={[
+                    {
+                      title:
+                        "Get a 360° view of your petty cash spends - branch-wise, team-wise, and category-wise.",
+                      color: "color-main-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
 
@@ -261,24 +403,37 @@ const PettyCash = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className="mt-2 d-none d-md-block">

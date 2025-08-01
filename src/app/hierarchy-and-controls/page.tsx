@@ -5,7 +5,26 @@ import styles from "./page.module.scss"
 import { cardData, expenseManagementData, stepCards } from "./data"
 import faqData from "./faq-data"
 import { Header, Heading, FAQHtml, Footer } from "@/components"
-import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+import {
+  blueArrow,
+  groupIcon,
+  paymentSummary,
+  whiteArrow,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
+  stackCardThreeImg,
+  stackCardThreeIcon,
+  stackCardsixImg,
+  stackCardsixIicon,
+} from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
@@ -13,6 +32,117 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import ManagementCard from "@/components/management-card/management-card"
 import EasyStepCard from "@/components/easy-step-card/easy-step-card"
+import CardStacking from "@/components/cardStacking/cardStacking"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="Easy Configuration"
+          description="Seamlessly integrating software like Zoho, Tally, SAP, and Oracle Netsuite with EnKash eliminates the need for manual data entry."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Define Custom Roles"
+          description="Assign specific permissions and accessibility to multiple hierarchies based on their department structure."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={stackCardThreeIcon}
+          title="Efficient Decision Making"
+          description="The system provides real-time insights into the expense pattern for businesses to identify areas that can be managed better. "
+          image={stackCardThreeImg}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Better Resource Management"
+          description="The AI and ML-powered technology allows setting automated rules for expense tracking, approval, and categorization, helping reduce the burden on managers and accounting teams."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="Scalability "
+          description="As your organization grows, add new departments and define new employee roles without any hassle."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="Reduces Financial Risks "
+          description="Multiple individuals can be involved in the expense approval system. This ensures that expenses are verified multiple times and that there is no inaccuracy, duplication, or fraud."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={stackCardsixIicon}
+          title="Compliance Management "
+          description="The built-in compliance management tool enables enterprises to track and define automatic alerts in case of policy violations."
+          image={stackCardsixImg}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
 
 const HierarchyAndControl = (): React.JSX.Element => {
   return (
@@ -43,38 +173,48 @@ const HierarchyAndControl = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Hierarchy & Control`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Hierarchy & Control",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-md-0 "
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Master Your Expenses `}
-                    color="equity-blue"
-                    size="h2"
-                    weight="7"
-                  />
-                  <Heading
-                    title={` with Hierarchical Control.`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Master Your Expenses ",
+                        color: "color-equity-blue ",
+                      },
+                      {
+                        title: "with Hierarchical Control.",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Easily establish control across departments, sub-departments, and roles"
-                    color="black"
-                    size="h5"
-                    weight="4"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Easily establish control across departments, sub-departments, and roles",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -121,11 +261,15 @@ const HierarchyAndControl = (): React.JSX.Element => {
       <div className={styles.second_row}>
         <div className="max-m-auto">
           <div className=" text-center pb-md-5 pb-3">
-            <Heading
-              title={`Ensure structured authority and decision-making${space}`}
-              color="white"
-              size="bannerHeading"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Ensure structured authority and decision-making",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
@@ -139,12 +283,15 @@ const HierarchyAndControl = (): React.JSX.Element => {
                   alt="card visual"
                   className={styles.card_image}
                 />
-                <Heading
-                  title={item.title}
-                  color="main-grey"
-                  size="h6"
-                  weight="4"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: item.title,
+                      color: "color-main-grey",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0 text-center"
                 />
               </div>
             ))}
@@ -154,20 +301,24 @@ const HierarchyAndControl = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className="text-center">
+          {/* <div className="text-center">
             <RectangleButton
               title={"Three Easy Steps"}
               url="/sales/"
               theme="outline-blue-small"
             />
-          </div>
+          </div> */}
 
-          <div className={`${styles.title} text-center pb-3`}>
-            <Heading
-              title={`Step-by-Step Guide to Hierarchy & Control`}
-              color="black"
-              size="h1"
-              weight="6"
+          <div className={`${styles.title} text-center pb-4 pb-md-5`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Step-by-Step Guide to Hierarchy & Control",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
 
@@ -181,14 +332,44 @@ const HierarchyAndControl = (): React.JSX.Element => {
         </div>
       </div>
 
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center `}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Achieve quicker resolutions with enhanced ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "transparency and control",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+
+            <CardStacking cards={cards} />
+          </>
+        </div>
+      </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Take charge with seamless hierarchy and control"
-              size="bannerHeading"
-              color="white"
-              weight="4"
+           
+            <DynamicHeading
+              content={[
+                {
+                  title: "Take charge with seamless hierarchy and control",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -206,24 +387,37 @@ const HierarchyAndControl = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className="mt-2 d-none d-md-block">
@@ -246,24 +440,24 @@ const HierarchyAndControl = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
-            <Heading
-              title={`Simplify${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`expense management ${space} `}
-              color="equity-blue"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`with EnKash’s innovative solutions`}
-              color="black"
-              size="h1"
-              weight="5"
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Simplify ",
+                  color: "color-black",
+                },
+                {
+                  title: "expense management ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "with EnKash’s innovative solutions",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
           <div className="row g-3 pb-4 ">
