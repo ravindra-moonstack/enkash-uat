@@ -38,8 +38,11 @@
     justify-content: center;
     img {
       z-index: 1;
-      width: 964px;
+      width: 100%;
       height: auto;
+      @include for-laptops {
+        width: 964px;
+      }
     }
   }
 }

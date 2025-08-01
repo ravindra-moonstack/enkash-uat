@@ -52,11 +52,12 @@ const cards = [
       <>
         <AllInOnePolicy
           icon={realTimeExpenseIcon}
-          title="Freedom of Choice"
-          description="The recipient can choose products or services using the gift card per their preference and convenience from a retail store or online."
+          title="Instant Actions. Full Control."
+          description="Manage your cards on the spot—activate, disable, or adjust without any effort using our robust corporate card management system."
           image={realTimeExpense}
           buttonUrl="/sales/?source=expense_management"
           maxImageHeight="300px"
+          buttonText="Get started today"
         />
       </>
     ),
@@ -67,11 +68,12 @@ const cards = [
       <>
         <AllInOnePolicy
           icon={fraudProtectionIcon}
-          title="Easily Accessible"
-          description="Gift cards can be easily and safely accessed from anywhere and anytime."
+          title="Enhanced Security"
+          description="Protect your business from fraud with instant deactivation and real-time alerts."
           image={fraudProtection}
           buttonUrl="/sales"
           maxImageHeight="300px"
+          buttonText="Get started today"
         />
       </>
     ),
@@ -82,11 +84,12 @@ const cards = [
       <>
         <AllInOnePolicy
           icon={streamlinedReimbursementIcon}
-          title="Safety "
-          description="Gift cards can be frozen in case of loss or theft without losing money with the self-PIN generation feature."
+          title="Smarter Expense Tracking"
+          description="Get a clear view of every transaction, categorize spends, and avoid overspending."
           image={streamlinedReimbursement}
           buttonUrl="/sales/?source=expense_management"
           maxImageHeight="300px"
+          buttonText="Get started today"
         />
       </>
     ),
@@ -97,11 +100,12 @@ const cards = [
       <>
         <AllInOnePolicy
           icon={costControlSavingsIcon}
-          title="Easy Distribution"
-          description="These gift cards can be easily distributed on the occasion"
+          title="Streamlined Workflows"
+          description="Manage all card-related tasks from a single, centralized dashboard, saving time and effort."
           image={costControlSavings}
           buttonUrl="/sales"
           maxImageHeight="300px"
+          buttonText="Get started today"
         />
       </>
     ),
@@ -142,11 +146,11 @@ const InstantCardManagement = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Build a culture of recognition with ",
+                    title: "Take Charge of Your Cards",
                     color: "color-black italic f-3 d-block",
                   },
                   {
-                    title: "customized Gift Cards",
+                    title: "In Real Time",
                     color: "color-black",
                   },
                 ]}
@@ -160,7 +164,7 @@ const InstantCardManagement = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Make gifting seamless for businesses with these easy-to-access and control gift cards.",
+                      "One click to block lost cards, manage permissions, and stay secure with EnKash’s advanced card management system",
                     color: "color-black subHeading",
                   },
                 ]}
@@ -233,8 +237,12 @@ const InstantCardManagement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "How to Buy Gift Cards?",
+                  title: "How To Get Started with ",
                   color: "color-black",
+                },
+                {
+                  title: "Card Management",
+                  color: "color-equity-blue",
                 },
               ]}
               headingTag="h2"
@@ -291,11 +299,11 @@ const InstantCardManagement = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "One Gift Card; ",
+                    title: "Control your cards end-to-end from ",
                     color: "color-black",
                   },
                   {
-                    title: "Endless Choices",
+                    title: "a single dashboard",
                     color: "color-equity-blue",
                   },
                 ]}
@@ -317,11 +325,11 @@ const InstantCardManagement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Give Your Employees ",
+                  title: "Key Features of ",
                   color: "color-black",
                 },
                 {
-                  title: "The Freedom To Choose ",
+                  title: "Instant Card Management ",
                   color: "color-equity-blue",
                 },
               ]}
@@ -343,7 +351,7 @@ const InstantCardManagement = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Explore our customizable gift cards!",
+                  title: "Explore our customizable instant management cards!",
                   color: "color-white",
                 },
               ]}

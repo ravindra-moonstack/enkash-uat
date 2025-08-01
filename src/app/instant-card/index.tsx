@@ -31,6 +31,8 @@ export { default as virtualCardImg } from "./img/virtual-card.svg"
 export { default as purchesCardImg } from "./img/purches-card.svg"
 export { default as digitalCardImg } from "./img/digital-marketing-card.svg"
 export { default as sassCardImg } from "./img/sass-card.svg"
+export { default as fleetCardImg } from "./img/fleetCard.webp"
+export { default as payrollCardImg } from "./img/payrollCard.webp"
 
 // .../////
 export { default as paymentGatwayImg } from "./img/payment-gateway.png"

@@ -307,7 +307,7 @@ const DiyCards = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "The Smarter Approach to",
+                    title: "The Smarter Approach to ",
                     color: "color-black",
                   },
                   {

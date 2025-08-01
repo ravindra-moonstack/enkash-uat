@@ -32,11 +32,12 @@ import {
   fleetCardImg,
   fuelCardImg,
   mealCardImg,
+  payrollCarddImg,
   purchesCardImg,
   sassCardImg,
+  termsAndConCardImg,
   virtualCardImg,
 } from "."
-import { payrollImg } from "../payroll"
 
 const dataSets = [
   {
@@ -279,7 +280,7 @@ const cardType = [
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: payrollImg,
+    cardImage: payrollCarddImg,
   },
   {
     titleHtml: "Virtual Card",
@@ -291,7 +292,7 @@ const cardType = [
     titleHtml: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
-    cardImage: mealCardImg,
+    cardImage: termsAndConCardImg,
   },
   {
     titleHtml: "Meal Card",
