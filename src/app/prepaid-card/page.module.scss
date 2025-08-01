@@ -1,7 +1,6 @@
 @use "../../../styles/variables" as *;
 @use "../../../styles/mixin" as *;
 
-
 .first_row {
   background-repeat: no-repeat, no-repeat;
   background-position: center, center;
@@ -47,10 +46,11 @@
     }
   }
   .lottie_container_bottom {
-    width: 100%;
     height: 52px;
     background-color: $color-ash-grey;
     position: relative;
+    width: calc(100% + 40px);
+    margin-left: -20px;
 
     img,
     .podium_img {
@@ -201,10 +201,10 @@
 .action_row {
   position: relative;
   overflow: hidden;
-padding: 50px 20px;
-@include for-laptops{
-  padding: 90px 20px;
-}
+  padding: 50px 20px;
+  @include for-laptops {
+    padding: 90px 20px;
+  }
   .list_button {
     padding-left: 40px;
     margin-top: 20px;
@@ -213,7 +213,7 @@ padding: 50px 20px;
       padding-left: 90px;
     }
   }
- img{
-  height: auto;
- }
+  img {
+    height: auto;
+  }
 }
