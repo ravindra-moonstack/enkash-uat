@@ -14,8 +14,11 @@ import trackableIcon from "./img/trackable-icon.svg"
 import denominationIcon from "./img/denomination-icon.svg"
 
 import {
+  digitalCardImg,
+  fleetCardImg,
   fuelCardImg,
   mealCardImg,
+  payrollCardImg,
   purchesCardImg,
   sassCardImg,
   termsAndConCardImg,
@@ -24,21 +27,22 @@ import {
 
 const intantActionData = [
   {
-    title: "Sign Up",
-    description: "Sign up on EnKash with all the necessary company details.",
+    title: "Log in and complete your KYC",
+    description:
+      "Get started in minutes. Simply log in to your EnKash account and complete your KYC to unlock full access.",
     icon: firstIcon,
   },
 
   {
-    title: "Add Funds ",
+    title: "Complete control of your corporate cards ",
     description:
-      "Add funds to the company account and request gift cards whenever necessary.",
+      "Manage all your cards effortlessly with real-time visibility, built-in security, and proactive controls.",
     icon: secondIcon,
   },
   {
-    title: "Distribution",
+    title: "Scale with confidence",
     description:
-      "Enterprises can distribute these gift cards with preset amounts based on the occasion.",
+      "Whether you're a growing startup or a large enterprise, EnKash adapts seamlessly to your needs today and as you grow.",
     icon: thirdIcon,
   },
 ]
@@ -97,7 +101,7 @@ const cardType = [
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
-    cardImage: purchesCardImg,
+    cardImage: digitalCardImg,
   },
   {
     titleHtml: "SaaS Card",
@@ -109,7 +113,7 @@ const cardType = [
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: mealCardImg,
+    cardImage: payrollCardImg,
   },
   {
     titleHtml: "Meal Card",
@@ -127,20 +131,13 @@ const cardType = [
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
-    cardImage: virtualCardImg,
+    cardImage: purchesCardImg,
   },
   {
     titleHtml: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver",
-    cardImage: termsAndConCardImg,
-  },
-
-  {
-    titleHtml: "Forex Card",
-    description:
-      "Enable safe and compliant international spends with multi-currency loading and real-time transaction control.",
-    cardImage: sassCardImg,
+    cardImage: fleetCardImg,
   },
 ]
 
@@ -150,30 +147,30 @@ const allProductSections = [
     subtitle: "Manage every spend effortlessly",
     items: [
       {
-        title: "Accessibility ",
+        title: "Real-Time Activation & Deactivation ",
         description:
-          "The EnKash way of issuing gift cards is simplified, making it easy to access digital cards from anywhere.",
+          "Instantly activate new cards or block lost ones with just a click. No waiting, no paperwork, just full control at your fingertips.",
         image: sliderOneIcon,
         link: "/payment-links/",
       },
       {
-        title: "Easy To Track",
+        title: "Smart Access Controls",
         description:
-          "Gift cards on EnKash can be easily tracked and blocked to avoid loss and misuse.",
+          "Set spending limits, usage rules, and card access for teams or individuals to ensure complete oversight and reduce misuse.",
         image: sliderTwoIcon,
         link: "/payment-page/",
       },
       {
-        title: "Multiple Denominations ",
+        title: "Live Monitoring & Alerts ",
         description:
-          "Gift cards are available in multiple denominations of up to Rs.10,000; one can choose the card value per their requirement. Limits are configurable based on your choice.",
+          "Track transactions as they occur with real-time notifications and detailed insights for improved visibility and faster decision-making.",
         image: sliderThreeIcon,
         link: "/payment-button/",
       },
       {
-        title: "Acceptability",
+        title: "Centralized Dashboard",
         description:
-          "Gift cards by EnKash are widely accepted across many places.",
+          "Manage all your corporate cards in one place, issue, control, and monitor without toggling between tools or systems.",
         image: sliderFourIcon,
         link: "/qr-codes/",
       },
