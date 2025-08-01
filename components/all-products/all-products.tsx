@@ -24,7 +24,7 @@ const AllProducts = ({ data = [] }: AllProductsProp): React.JSX.Element => {
     <div className={`${styles.integration_row} row`}>
       <div className={`${styles.container}`}>
         <Marquee speed={70} pauseOnClick={true} pauseOnHover={true}>
-          <div className="d-flex align-items-stretch pb-4 pt-5">
+          <div className="d-flex align-items-stretch pb-4 pt-4 pt-md-5">
             {data.map((card, index) => (
               <div key={index.toString()} className="d-flex">
                 <FeatureCard
