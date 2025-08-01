@@ -2,36 +2,38 @@
 @use "../../styles/mixin" as *;
 .cardStacking {
   overflow: hidden;
-  padding: 48px 0px;
+  padding: 24px 0px 50px;
   min-height: max-content;
-  @include for-laptops{
+  @include for-laptops {
     min-height: 100vh;
-     padding: 50px 20px;
+    padding: 48px 20px;
   }
 
   .stackCard {
     border-radius: 12px;
     margin-bottom: 20px;
     position: relative;
-    width: 100%;
+    width: calc(100% + 20px);
     min-height: 450px;
     padding: 20px 10px;
     transform-origin: 50% -160%;
     border-top: 5px solid #d9d9d9;
     background-color: $color-white;
-    margin-left:-10px ;
+    margin-left: -10px;
     margin-right: -10px;
-    @include for-laptops{
-    margin-bottom: 100px;
-      margin-left:0px ;
-    margin-right: 0px;
+    @include for-laptops {
+      margin-bottom: 100px;
+      width: 100%;
+       padding: 20px 20px;
+      margin-left: 0px;
+      margin-right: 0px;
     }
-    &:last-child{
+    &:last-child {
       margin-bottom: 0px;
     }
-    .container{
+    .container {
       padding: 0 !important;
-      @include for-laptops{
+      @include for-laptops {
         padding: 0 10px !important;
       }
     }
