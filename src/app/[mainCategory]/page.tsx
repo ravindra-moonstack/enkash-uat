@@ -26,12 +26,12 @@ interface CategoryData {
   backgroundImage: string
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
 }: {
   params: Promise<{ mainCategory: string }>
-}): Metadata {
-  const { mainCategory } = use(params)
+}) {
+  const { mainCategory } = await params
 
   let isValidCategory: boolean = true
 
@@ -125,12 +125,10 @@ const MainCategoryPage = async ({
   }
 
   const categoryData = CategoryData[categoryName]
-  // const currentCategoryPhoto = CategoryPhoto.get(categoryName);
+
   const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
   const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
 
-  // const vouchers: Voucher[] = [];
-  // const vouchers: Voucher[] = await fetchVouchers(categoryName)
   const pageData = VOUCHER_DATA[categoryName]
   if (!pageData) {
     notFound()
@@ -140,7 +138,6 @@ const MainCategoryPage = async ({
   )
 
   const slidesWithDiscount = pageData.slides.map((slide) => {
-    // ✅ Use brandName for clean matching
     const brandUrlName = nameToUrl(slide.brandName)
 
     const dynamicDiscountRaw = apiDiscounts[brandUrlName] || slide.discount || 0
@@ -171,7 +168,6 @@ const MainCategoryPage = async ({
 
   return (
     <div className={`color-black ${styles.home_container}`}>
-      {/* <StructuredData url={`https://www.enkash.com/voucher/${categoryName}`} /> */}
       <Header utmSource={halfBoltUTM} />
       <TalkToSales />
       {isValidCategory ? (
@@ -184,7 +180,6 @@ const MainCategoryPage = async ({
                 title={pageData.title}
               />
 
-              {/* Example: your card grid can be dynamic too */}
               <div className={styles.voucher_card}>
                 <div className="max-w-auto">
                   <div className="row">
@@ -293,8 +288,6 @@ const MainCategoryPage = async ({
                   size="h2"
                   weight="7"
                 />
-                {/* <Heading title="B" color="rainy-blue" size="h1" weight="7" />
-            <Heading title="olt" size="h1" weight="7" /> */}
               </div>
               <div className="d-flex flex-column">
                 <Heading
@@ -307,7 +300,6 @@ const MainCategoryPage = async ({
 
               <div className="mt-4 desktop-only"></div>
               <div className="mt-5">
-                {/* <PrimaryButton title="Explore Bolt" theme="blue" url="/bolt" /> */}
                 <span className="mx-2"></span>
               </div>
             </div>
