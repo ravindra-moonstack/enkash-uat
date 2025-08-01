@@ -5,12 +5,9 @@ import Header from "@/components/header/header"
 import Footer from "@/components/footer/footer"
 import Heading from "@/components/heading/heading"
 import { CategoryData } from "../vouchers/data/category-data"
-
-import CategoryMenu from "@/components/voucher-page/category-menu"
 import VoucherCard from "@/components/voucher-card/voucher-card"
 import VoucherData, { Voucher } from "../vouchers/data/voucher-data"
 import { nameToUrl } from "@/common/utils/stringUtils"
-import { generateVoucherSchema } from "@/common/utils/metaData"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import SliderComponent from "@/components/sliderComponent/sliderComponent"
 import { VOUCHER_DATA } from "./data"
@@ -18,6 +15,7 @@ import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import { blueArrow, whiteArrow } from "../affordability-suite"
 import VoucherFaqComponent from "./voucher-faq"
+import { use } from "react"
 
 interface CategoryData {
   name: string
@@ -31,11 +29,13 @@ interface CategoryData {
 export function generateMetadata({
   params,
 }: {
-  params: { category: string }
+  params: Promise<{ mainCategory: string }>
 }): Metadata {
-  const categoryName: string = params.category
+  const { mainCategory } = use(params)
+
   let isValidCategory: boolean = true
-  if (!validCategories.includes(categoryName)) {
+
+  if (!validCategories.includes(mainCategory)) {
     return {
       title: `Category not found - EnKash`,
       description:
@@ -46,7 +46,7 @@ export function generateMetadata({
     }
   }
 
-  const categoryData = CategoryData[categoryName]
+  const categoryData = CategoryData[mainCategory]
 
   return {
     title: `${categoryData.heading} - ${categoryData.title} ${categoryData.discount}% OFF - EnKash`,
@@ -112,12 +112,13 @@ const validCategories: string[] = [
   "movie-and-music-vouchers",
 ]
 
-const categoryPage = async ({
+const MainCategoryPage = async ({
   params,
 }: {
-  params: { mainCategory: string }
+  params: Promise<{ mainCategory: string }>
 }) => {
-  const categoryName: string = params.mainCategory
+  const { mainCategory } = await params
+  const categoryName = mainCategory
   let isValidCategory: boolean = true
   if (!validCategories.includes(categoryName)) {
     isValidCategory = false
@@ -319,4 +320,4 @@ const categoryPage = async ({
   )
 }
 
-export default categoryPage
+export default MainCategoryPage

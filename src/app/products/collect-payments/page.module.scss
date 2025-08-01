@@ -51,9 +51,6 @@
   background-position: center;
   background-size: cover;
   padding: 50px 20px;
-  @include for-laptops{
-    padding: 90px 20px;
-  }
   position: relative;
   background-image: linear-gradient(
       0deg,
@@ -64,7 +61,9 @@
     linear-gradient(90deg, rgba(97, 115, 247, 0) 0%, #6173f7 100%),
     url("./img/secongBg.png");
 
- 
+  @include for-laptops {
+    padding: 90px 20px;
+  }
   .section {
     max-width: 1200px;
     margin: auto;
@@ -98,17 +97,16 @@
 }
 
 .third_row {
- padding: 50px 20px;
+  padding: 50px 20px;
   @include for-laptops {
     padding: 160px 20px 90px;
   }
 
-
   .section {
     background-color: $color-sky-hint;
-    padding:50px 30px;
-    @include for-laptops{
-    padding:50px 100px;
+    padding: 50px 30px;
+    @include for-laptops {
+      padding: 50px 100px;
     }
   }
   .all_in_section_inner {
@@ -117,7 +115,6 @@
       // padding: 0 100px;
     }
   }
- 
 }
 
 .fourth_row {
@@ -131,7 +128,7 @@
       padding-bottom: 204px;
       padding-top: 90px;
     }
-    .textHeading{
+    .textHeading {
       pointer-events: none;
     }
   }
@@ -348,7 +345,7 @@
 .other_products {
   padding: 0 20px 26px;
   @include for-laptops {
-  padding: 0 20px 66px;
+    padding: 0 20px 66px;
   }
 }
 
