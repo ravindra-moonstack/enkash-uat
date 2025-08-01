@@ -21,6 +21,20 @@ import {
   logisticIcon,
   consultancyIcon,
   pharmacyIcon,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
+  stackCardThreeImg,
+  stackCardThreeIcon,
+  stackCardsixImg,
+  stackCardsixIicon,
 } from "."
 import ManagementCard from "@/components/management-card/management-card"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -46,10 +60,118 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import EnkashWay from "@/components/enkash-way/enkash-way"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import CardStacking from "@/components/cardStacking/cardStacking"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
-
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="Real-Time Expense Overview"
+          description="Get a live view of company-wide expenses with powerful filters. Drill down by department, project, or user to uncover patterns and make data-driven decisions instantly."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Budget vs. Actual Tracking"
+          description="Track actual expenses against allocated budgets in real-time. Spot overruns early, optimize spending, and stay in control of every cost center without relying on spreadsheets."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={stackCardThreeIcon}
+          title="AI-powered Predictive Spend Forecasting"
+          description="Leverage AI to forecast upcoming expenses based on historical trends. Anticipate budget spikes, plan ahead, and make smarter financial decisions before costs hit the bottom line."
+          image={stackCardThreeImg}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Custom Financial Reports"
+          description="Create tailored reports with actionable financial metrics - budget utilization, compliance gaps, exception flags- delivered in your preferred format, ready for audits, reviews, and strategic decisions."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="Identify User Behaviour and Patterns"
+          description="Identify your biggest spenders, repeat violators, and high-usage categories. Use these insights to refine policies, coach teams, and proactively reduce unnecessary costs."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="One-Click Data Downloads"
+          description="Export all reports and dashboards in multiple formats—PDFs for presentations, Excel for deep dives, CSVs for uploads—keeping your team and systems aligned effortlessly."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={stackCardsixIicon}
+          title="Instant Budget Overrun Alerts"
+          description="Get instant alerts when actual spend exceeds budget thresholds. Stay informed in real-time, take corrective actions quickly, and avoid surprises at month-end."
+          image={stackCardsixImg}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
 const ExpenseManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -84,7 +206,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                   },
                 ]}
                 headingTag="h1"
-                className="f-7"
+                className="f-7 mb-3 mb-md-0"
               />
             </div>
             <div className="text-center">
@@ -321,7 +443,9 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
 
           {/* Section 4 */}
-          <div className={`bg-color-soft-mint pb-[50px] pt-[50px] ${styles.section}`} >
+          <div
+            className={`bg-color-soft-mint pb-[50px] pt-[50px] ${styles.section}`}
+          >
             <div className="row align-items-center">
               <div className={`col-md-6 col-12  order-2 order-md-1`}>
                 <div>
@@ -436,7 +560,7 @@ const ExpenseManagement = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-start`}>
+          <div className={`${styles.title} text-start `}>
             <DynamicHeading
               content={[
                 {
@@ -451,7 +575,6 @@ const ExpenseManagement = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-
             <div>
               <DynamicHeading
                 content={[
@@ -468,7 +591,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           </div>
 
           <div
-            className={`col-md-6 col-12 mt-4 mt-md-5 ${
+            className={`col-md-6 col-12 mt-4 mt-md-5 mt-4 ${
               showScroll ? "overflow-auto scrollbar-thin" : ""
             }`}
             style={{
@@ -510,6 +633,35 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center px-md-5`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Spend Analytics & Insights: ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Turn Every Rupee Spent ",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: "into Actionable Insight",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+
+            <CardStacking cards={cards} />
+          </>
+        </div>
+      </div>
+
       <div className={`${styles.eigth_row} relative`}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
           <div className={`${styles.title} text-start pb-4 pb-md-5`}>
@@ -544,7 +696,7 @@ const ExpenseManagement = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.seventh_row} `}>
-        <div className={`${styles.title} text-center pb-2`}>
+        <div className={`${styles.title} text-center`}>
           <div
             className={` flex-column justify-content-center align-items-center `}
           >
@@ -642,7 +794,7 @@ const ExpenseManagement = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -659,7 +811,7 @@ const ExpenseManagement = (): React.JSX.Element => {
 
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
+          <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -680,7 +832,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
