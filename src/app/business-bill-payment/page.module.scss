@@ -7,20 +7,15 @@
   background-size: cover;
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 90px;
-  padding-bottom: 36px;
+  padding: 100px 20px 0;
   background-image: url(./img/first-row-bg.svg);
   @include for-laptops {
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-top: 112px;
-    padding-bottom: 60px;
+    padding: 112px 20px 0;
   }
   .group_logo {
-    width: 174px;
-    height: 30px;
+    max-width: 250px;
+    width: 100%;
+    height: auto;
     @include for-laptops {
       width: 366px;
       height: 62px;
@@ -77,12 +72,9 @@
 .second_row {
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding: 90px 20px;
   }
   .section {
     margin: auto;
@@ -144,15 +136,10 @@
 
 .third_row {
   width: 100%;
-  padding: 20px;
+  padding: 50px 20px 20px;
 
   @include for-laptops {
-    padding: 35px 90px;
-  }
-
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding: 90px 20px;
   }
 
   .section {
@@ -198,31 +185,34 @@
       display: block;
     }
   }
-  .list_button{
-    padding:0px 40px 20px;
+  img {
+    height: auto;
     @include for-laptops{
-      padding: 0px 86px 20px;
+      height: initial;
+    }
+  }
+  .list_button {
+    padding: 20px 40px 20px;
+    @include for-laptops {
+      padding: 20px 97px 20px;
     }
   }
 }
 
 .fourth_row {
-  padding: 20px 30px;
+  padding: 0px 20px 50px;
   @include for-laptops {
-    padding: 0px 90px 0px 90px;
+    padding: 0px 20px;
   }
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
-  }
+
   .section {
     gap: 32px;
-    padding: 20px 10px;
+    padding: 50px 20px;
 
     background-color: $color-sky-hint;
     @include for-laptops {
-      gap: 70px;
-      padding: 70px 0px;
+      gap: 50px;
+      padding: 90px 100px 70px;
     }
 
     .allInOnePolicy {
@@ -230,8 +220,6 @@
       flex-direction: column;
       gap: 32px;
       @include for-laptops {
-        padding: 53px 88px 0px 88px;
-        gap: 70px;
       }
     }
   }
@@ -298,9 +286,9 @@
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 58px;
+    padding: 58px 20px;
   }
   .get_started_button {
     padding: 6px;
@@ -401,11 +389,10 @@
 .slider_row {
   position: relative;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px 16px;
   padding-top: 0px;
   @include for-laptops {
-    padding-top: 38px;
-    padding-bottom: 38px;
+    padding: 90px 20px 46px;
   }
 }
 
@@ -453,9 +440,9 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 96px 90px 90px 60px;
+    padding: 90px 20px;
   }
 
   .faq_bg {
@@ -479,8 +466,8 @@
 
 .other_products {
   background-color: white;
-  padding: 20px;
+  padding: 0 20px 50px;
   @include for-laptops {
-    padding: 0px 90px 90px 90px;
+    padding: 0px 20px 90px;
   }
 }

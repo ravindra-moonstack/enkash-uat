@@ -70,7 +70,9 @@
 .progress_items {
   @include for-laptops {
     margin-right: 0;
-    padding: 15px 40px;
+    flex: 1;
+    text-align: center;
+    text-wrap: nowrap;
   }
 }
 
