@@ -10,8 +10,10 @@
   border-radius: 16px;
   padding: 18px;
   cursor: pointer;
-  max-width: 272px;
+  height: auto;
+  width: 100%;
   @include for-laptops {
+    max-width: 272px;
   }
   .voucher_card_title {
     padding-top: 10px;
@@ -21,6 +23,13 @@
 .card_image {
   max-width: 100%;
   object-fit: contain;
+
+  height: auto;
+  width: 100%;
+  @include for-laptops {
+    height: 240px;
+    width: 240px;
+  }
 }
 
 // .cta_link {

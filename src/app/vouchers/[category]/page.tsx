@@ -114,8 +114,8 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
     )
 
     const apiData = await apiResponse.json()
-    // console.log(apiData)
-    // console.log("API Response JSON:", JSON.stringify(apiData, null, 2))
+    console.log(apiData)
+    console.log("API Response JSON:", JSON.stringify(apiData, null, 2))
 
     //discount update
     apiData.payload.data.forEach((product: any) => {

@@ -23,6 +23,8 @@ export interface Slide {
   rightImage?: string | StaticImageData
   buttonText: string
   buttonUrl: string
+  discount: number
+  brandName: string
 }
 
 interface SliderComponentProps {
@@ -63,7 +65,7 @@ export default function SliderComponent({
                         : slide.backgroundImage.src
                     }')`
                   : slide.backgroundColor,
-                backgroundSize: "100%",
+                // backgroundSize: "100%",
                 backgroundPosition: "top center",
                 backgroundRepeat: "no-repeat",
                 width: "100%",
@@ -93,6 +95,10 @@ export default function SliderComponent({
                       <DynamicHeading
                         content={[
                           { title: slide.heading, color: "color-white" },
+                          {
+                            title: `${slide.discount} % off`,
+                            color: "color-white",
+                          },
                         ]}
                         headingTag="h1"
                         className="f-7"
@@ -127,9 +133,9 @@ export default function SliderComponent({
                           alt="slide visual"
                           style={{
                             maxHeight: slide.rightImageMaxHeight ?? "400px", // ✅ default 400px
-                            // marginTop: slide.rightImageMarginTop ?? "-120px",
+                            marginTop: slide.rightImageMarginTop ?? "0px",
                           }}
-                          className="w-100 mh-550 object-fit-contain"
+                          className="w-100 mh-550 object-fit-contain "
                         />
                       </div>
                     </div>

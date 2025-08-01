@@ -167,101 +167,102 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
   "movie-and-music-vouchers": {
     faqData: [
       {
-        question: "How to use an eGift Card on Nykaa?",
+        question: "What are music & movie gift cards?",
         answer: [
           {
             heading:
-              "Log in to your Nykaa account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Nykaa E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+              "Music & movies gift cards are prepaid digital or physical cards that can be redeemed for streaming subscriptions, rentals, or purchases of music, movies, and TV shows.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What is the Nykaa Channel eGift Card?",
+        question: "Where can I use a music & movies gift card?",
         answer: [
           {
             heading:
-              "The Nykaa E-Gift Card is an online gift card to pay for the purchase of items on the website, app and their stores.",
+              "It depends on the brand of the gift card. Common platforms include Amazon Prime Video, ZEE5, PVR Cinemas, SonyLiv, and more.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I redeem my eGift Card?",
+        question: "Do music & movies gift cards have an expiry date?",
         answer: [
           {
             heading:
-              "Visit the Nykaa website, app or store to redeem the Gift Card.",
+              "Some gift cards have an expiry date, while others don’t. Check the terms and conditions of the specific brand before purchasing.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to add a card in Nykaa?",
+        question: "Can I use a gift card to pay for an existing subscription?",
         answer: [
           {
             heading:
-              "Log in to the Nykaa website or app. You can add the gift card using its number and PIN under the My Wallet section.",
+              "Yes, in most cases, you can apply the gift card balance to your account, and it will be used for future payments.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to use Nykaa e-gift card?",
+        question: "How do I redeem a music & movies gift card?",
         answer: [
           {
             heading:
-              "Nykaa Gift Card can be used to buy items available on the website, app and stores.",
+              "Each platform has a different redemption process. Generally, you need to enter the gift card code in the “Redeem” or “Payment” section of the respective service.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to transfer my Nykaa gift card to another account?",
+        question: "Can I use a movie gift card for music or vice versa?",
         answer: [
           {
             heading:
-              "You can gift this Nykaa brand voucher to your near and dear ones. You cannot transfer it.",
+              "No, gift cards are brand-specific. An Amazon Prime gift card won’t work on SonyLiv and vice versa.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What is the validity of the Nykaa gift card?",
+        question: "Can I gift a digital music & movies gift card to someone?",
         answer: [
           {
             heading:
-              "The Nykaa E-Gift Voucher is valid only for 1 year from the date of purchase.",
+              "Yes, digital gift cards can be sent via email or messaging apps. Physical cards can be gifted directly.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I order online with a Nykaa gift card?",
+        question: "Can I get a refund for my gift card?",
         answer: [
           {
             heading:
-              "Yes, Nykaa gift cards can be redeemed online on the website and app. You can order everything available on the Nykaa website and app against the gift card value.",
+              "No, most gift cards are non-refundable once purchased or redeemed.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I transfer Nykaa gift cards to cash?",
+        question: "How can I check my gift card balance?",
         answer: [
           {
             heading:
-              "No, Nykaa brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+              "Visit the official website or app of the respective platform and check the balance under the “Gift Card” or “Payment” section.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What if my Nykaa Gift Card expires?",
+        question:
+          "What happens if my gift card balance is not enough for a subscription?",
         answer: [
           {
             heading:
-              "You cannot use the Nykaa Gift Card after its expiry date. The Nykaa E-Gift Voucher is valid for 1 year from the date of purchase.",
+              "You may need to add another payment method to cover the remaining amount.",
             bullets: [],
           },
         ],
@@ -272,100 +273,120 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
   "food-and-beverages-vouchers": {
     faqData: [
       {
-        question: "How to purchase an AJIO Gift Card?",
+        question: "What are food & beverage gift card vouchers?",
         answer: [
           {
             heading:
-              "To purchase an AJIO Gift Card, the user can visit  bolt.enkash.com. and avail 4% discount. This applies to both the buying of single AJIO Gift Cards or the buying of multiple Gift Cards at discounted rates.\n",
+              "Food & beverages gift card vouchers are prepaid digital or physical cards that can be redeemed at restaurants, cafes, food delivery services, or grocery stores.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to redeem an AJIO Gift Card?",
+        question: "Where can I use a food & beverages voucher?",
         answer: [
           {
             heading:
-              "Whenever you wish to spend your AJIO Gift Cards all you need to do is open your AJIO cash wallet, and include the gift card inside the AJIO cash wallet. This step can also be taken on the AJIO website or the AJIO App.",
+              "It depends on the brand of the voucher. Popular platforms include Swiggy, Zomato, Domino’s, Starbucks, McDonald’s, KFC, and more.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How do I get information about the Available balance, or Expiry date of my Gift Card?",
+        question: "Do food & beverage vouchers have an expiry date?",
         answer: [
           {
             heading:
-              "To check the Ajio Gift Card balance log into your AJIO account and access the Profile area, tapping \u2018My Wallet\u2019 wherein the remaining balance of AJIO Gift Card  and its expiry status can be seen.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Does the Ajio gift card also have some kind of expiry date?",
-        answer: [
-          {
-            heading:
-              "Yes, the AJIO Gift Card offered by the company has a 1 year validity from the date of purchase.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I send an AJIO Gift Card to another member?",
-        answer: [
-          {
-            heading:
-              "After purchasing the AJIO Gift Card, the customer is sent a one-time voucher code via email or on WhatsApp, which can be handed out at will.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Will other promotions be valid if I use AJIO Gift Card(s)?",
-        answer: [
-          {
-            heading:
-              "No, AJIO Gift cards cannot be clubbed with promo codes. They can however be redeemed during sales or for already discounted products",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What can my Gift Card not be used for?",
-        answer: [
-          {
-            heading:
-              "AJIO Gift Cards do not apply to the purchase of other Gift Cards or items purchased for high-end jewellery such as ornaments made of silver and gold coins. They also do not allow for cash out or credit.",
+              "Yes, most vouchers have an expiry date. Check the brand’s terms and conditions before purchasing or redeeming.",
             bullets: [],
           },
         ],
       },
       {
         question:
-          "How do I get back the money for products purchased with a Gift Card and how is it done? ",
+          "Can I use a voucher for dine-in, takeaway, or online delivery?",
         answer: [
           {
             heading:
-              "For any products returned bought using a gift card, the only amount will be credited to the AJIO Wallet which can be used for further purchases only.",
+              "This depends on the brand. Some vouchers work for all options, while others are limited to online orders or specific locations.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How do I redeem a food & beverages voucher?",
+        answer: [
+          {
+            heading:
+              'Visit the respective brand’s website or app, go to the "Redeem Gift Card" or "Payment" section, and enter the voucher code. Some brands also allow redemption at physical stores by showing the voucher code.',
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I use a single voucher multiple times?",
+        answer: [
+          {
+            heading:
+              "If the platform allows partial redemption, you can use the remaining balance for future purchases. Otherwise, it must be used in one transaction.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I gift a food & beverage voucher to someone?",
+        answer: [
+          {
+            heading:
+              "Yes, digital vouchers can be sent via email or messaging apps, and physical vouchers can be gifted directly.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I get a refund for my food & beverages voucher?",
+        answer: [
+          {
+            heading:
+              "No, most vouchers are non-refundable once purchased or redeemed.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I check my voucher balance?",
+        answer: [
+          {
+            heading:
+              "Visit the respective brand’s website or app and enter your voucher code to check the remaining balance.",
             bullets: [],
           },
         ],
       },
       {
         question:
-          "How many gift cards can be included in an AJIO  wallet at maximum?",
+          "What happens if my voucher balance is lower than my order total?",
         answer: [
           {
             heading:
-              " AJIO allows you the freedom to add several Gift Cards in your AJIO  wallet and they will all be regarded as AJIO cash. The balance present in your wallet will be the sum of all the amounts of the activated gift cards present in the wallet.",
+              "You may need to pay the remaining amount using another payment method.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I combine multiple vouchers for a single purchase?",
+        answer: [
+          {
+            heading:
+              "Some platforms allow multiple vouchers in one transaction, while others may limit it to one per order.",
             bullets: [],
           },
         ],
       },
     ],
   },
+
   "apparels-vouchers": {
     faqData: [
       {
@@ -463,101 +484,112 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
   "health-and-wellness-vouchers": {
     faqData: [
       {
-        question: "How to use an eGift Card on Amazon?",
+        question: "What are health & fitness vouchers?",
         answer: [
           {
             heading:
-              "Log in to your Amazon account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Amazon E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
+              "Health & fitness vouchers are prepaid vouchers that can be redeemed for gym memberships, medicines, wellness services, fitness equipment, health check-ups, or subscriptions to fitness and meditation apps.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What is the Amazon Channel eGift Card?",
+        question: "Where can I use a health & fitness voucher?",
         answer: [
           {
             heading:
-              "The Amazon E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+              "It depends on the brand of the voucher. Common platforms include Cultfit, Healthians, Seniority, Healthkart, and more.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I redeem my eGift Card?",
+        question: "Do health & fitness vouchers have an expiry date?",
         answer: [
           {
             heading:
-              "Visit the Amazon website and app to redeem the Gift Card.",
+              "Yes, most vouchers have an expiry date. Check the terms and conditions before purchasing or redeeming.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to add a card to Amazon?",
+        question: "Can I use a voucher for existing memberships or services?",
         answer: [
           {
             heading:
-              "Log in to the Amazon website or app. You can add the gift card using its number and PIN under the Orders section.",
+              "Some platforms allow it, while others may require you to start a new subscription or plan. Check the brand’s terms before using it.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to use an Amazon e-gift card?",
+        question: "How do I redeem a health & fitness voucher?",
         answer: [
           {
             heading:
-              "Amazon Gift Card can be used to buy items available on the website and app.",
+              'Visit the respective brand’s website or app, go to the "Redeem Gift Card" or "Payment" section, and enter the voucher code.',
             bullets: [],
           },
         ],
       },
       {
-        question: "How to transfer my Amazon gift card to another account?",
+        question: "Can I use a fitness voucher for multiple purchases?",
         answer: [
           {
             heading:
-              "You can gift this Amazon brand voucher to your near and dear ones. You cannot transfer it.",
+              "If the platform allows partial redemption, you can use the remaining balance for future purchases. Otherwise, it must be used in one transaction.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What is the validity of the Amazon gift card?",
+        question: "Can I gift a health & fitness voucher to someone?",
         answer: [
           {
             heading:
-              "The Amazon E-Gift Voucher is valid only for 1 year from the date of purchase.",
+              "Yes, digital vouchers can be sent via email or messaging apps, and physical vouchers can be gifted directly.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I order online with an Amazon gift card?",
+        question: "Can I get a refund for my voucher?",
         answer: [
           {
             heading:
-              "Yes, Amazon gift cards can be redeemed online on the website and app. You can order everything available on the Amazon website and app against the gift card value.",
+              "No, most health & fitness vouchers are non-refundable once purchased or redeemed.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I transfer Amazon gift cards to cash?",
+        question: "How can I check my voucher balance?",
         answer: [
           {
             heading:
-              "No, Amazon brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+              "Visit the respective brand’s website or app and enter your voucher code to check the remaining balance.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What if my Amazon Gift Card expires?",
+        question:
+          "What happens if my voucher balance is less than the service cost?",
         answer: [
           {
             heading:
-              "You cannot use the Amazon Gift Card after its expiry date.",
+              "You may need to pay the remaining amount using another payment method.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I combine multiple vouchers for a single purchase?",
+        answer: [
+          {
+            heading:
+              "Some platforms allow combining multiple vouchers, while others may restrict it to one per transaction.",
             bullets: [],
           },
         ],
