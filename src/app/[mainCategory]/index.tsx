@@ -31,7 +31,7 @@ export { default as sonyLivImg } from "./img/movie-and-music-vouchers/sonyLivImg
 export { default as pvrImg } from "./img/movie-and-music-vouchers/pvrImg.webp"
 export { default as zee5Img } from "./img/movie-and-music-vouchers/zee5Img.webp"
 
-// Apparels Vouchers   
+// Apparels Vouchers
 export { default as westsideLogo } from "./img/apparels-vouchers/westsideLogo.webp"
 export { default as levisLogo } from "./img/apparels-vouchers/levisLogo.webp"
 export { default as jockeyLogo } from "./img/apparels-vouchers/jockeyLogo.webp"
@@ -48,7 +48,7 @@ export { default as levisImg } from "./img/apparels-vouchers/levisImg.webp"
 export { default as jockeyImg } from "./img/apparels-vouchers/jockeyImg.webp"
 export { default as pantaloonImg } from "./img/apparels-vouchers/pantaloonImg.webp"
 
-// Health and Wellness Vouchers 
+// Health and Wellness Vouchers
 
 export { default as mamaeathLogo } from "./img/health-and-wellness-vouchers/mamaearthLogo.webp"
 export { default as apolloLogo } from "./img/health-and-wellness-vouchers/appoloLogo.webp"
@@ -65,3 +65,21 @@ export { default as mamaeathImg } from "./img/health-and-wellness-vouchers/mamae
 export { default as apolloImg } from "./img/health-and-wellness-vouchers/appoloImg.webp"
 export { default as cultfitImg } from "./img/health-and-wellness-vouchers/cultfitImg.webp"
 export { default as myglammImg } from "./img/health-and-wellness-vouchers/myglamImg.webp"
+
+// food-and-beverages-vouchers
+
+export { default as macdonaldsLogo } from "./img/food-and-beverages-vouchers/macdonaldsLogo.webp"
+export { default as dominosLogo } from "./img/food-and-beverages-vouchers/dominosLogo.webp"
+export { default as swiggyLogo } from "./img/food-and-beverages-vouchers/swiggyLogo.webp"
+export { default as zomatoLogo } from "./img/food-and-beverages-vouchers/zomatoLogo.webp"
+export { default as kfcLogo } from "./img/food-and-beverages-vouchers/kfcLogo.webp"
+
+export { default as macdonaldsBg } from "./img/food-and-beverages-vouchers/macdonaldsBg.webp"
+export { default as dominosBg } from "./img/food-and-beverages-vouchers/dominosBg.webp"
+export { default as swiggyBg } from "./img/food-and-beverages-vouchers/swiggyBg.webp"
+export { default as zomatoBg } from "./img/food-and-beverages-vouchers/zomatoBg.webp"
+
+export { default as macdonaldsImg } from "./img/food-and-beverages-vouchers/macdonaldsImg.webp"
+export { default as dominosImg } from "./img/food-and-beverages-vouchers/dominosImg.webp"
+export { default as swiggyImg } from "./img/food-and-beverages-vouchers/swiggyImg.webp"
+export { default as zomatoImg } from "./img/food-and-beverages-vouchers/zomatoImg.webp"

@@ -4,10 +4,14 @@
 .first_row {
   .voucher_card {
     background-color: #ffffff;
-    margin-top: -50px;
-    box-shadow: 0px -73px 100px 65px #fff;
+    margin-top: -38px;
+    box-shadow: 0px -46px 100px 65px #fff;
     z-index: 2;
     position: relative;
+    padding: 50px 20px;
+    @include for-laptops {
+      margin-top: -118px;
+    }
   }
 }
 

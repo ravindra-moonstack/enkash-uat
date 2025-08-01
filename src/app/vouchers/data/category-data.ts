@@ -1,17 +1,17 @@
 type Category = {
-  name: string;
-  heading: string;
-  title: string;
-  description: string;
-  discount: number;
-  backgroundImage: string; // New field for background image
-};
+  name: string
+  heading: string
+  title: string
+  description: string
+  discount: number
+  backgroundImage: string // New field for background image
+}
 
 type Categories = {
-  [key: string]: Category;
-};
+  [key: string]: Category
+}
 export const CategoryData: Categories = {
-  "e-commerce": {
+  "e-commerce-vouchers": {
     name: "e-commerce",
     heading: "E-Commerce",
     title: "Shop to your heart’s content with up to",
@@ -20,7 +20,7 @@ export const CategoryData: Categories = {
     discount: 8,
     backgroundImage: "url_to_image",
   },
-  "movies-and-music": {
+  "movie-and-music-vouchers": {
     name: "movies-and-music",
     heading: "Movies & Music",
     title: "Unlock endless entertainment with up to",
@@ -29,7 +29,7 @@ export const CategoryData: Categories = {
     discount: 19,
     backgroundImage: "url_to_image",
   },
-  apparels: {
+  "apparels-vouchers": {
     name: "apparels",
     heading: "Apparels",
     title: "Rock the latest trends & collections with up to",
@@ -38,7 +38,7 @@ export const CategoryData: Categories = {
     discount: 13,
     backgroundImage: "url_to_image",
   },
-  "food-and-beverages": {
+  "food-and-beverages-vouchers": {
     name: "food-and-beverages",
     heading: "Food & Beverages",
     title: " Indulge in your favorite cravings with up to",
@@ -47,7 +47,7 @@ export const CategoryData: Categories = {
     discount: 13,
     backgroundImage: "url_to_image",
   },
-  "health-and-wellness": {
+  "health-and-wellness-vouchers": {
     name: "health-and-wellness",
     heading: "Health & Wellness",
     title: " Invest in your health with up to",
@@ -56,4 +56,4 @@ export const CategoryData: Categories = {
     discount: 58,
     backgroundImage: "url_to_image",
   },
-};
+}

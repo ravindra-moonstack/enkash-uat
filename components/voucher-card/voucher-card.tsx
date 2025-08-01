@@ -11,6 +11,7 @@ export interface CardProps {
   cardImage?: string | StaticImageData
   buttonUrl?: string
   discount?: number | string
+  brandName?: string
 }
 
 const VoucherCard = ({
@@ -19,6 +20,7 @@ const VoucherCard = ({
   cardImage,
   discount,
   buttonUrl,
+  brandName,
 }: CardProps) => {
   return (
     <div className={`d-flex flex-column text-start ${styles.card_body}`}>
@@ -30,8 +32,6 @@ const VoucherCard = ({
                 src={cardImage}
                 alt="card visual"
                 className={styles.card_image}
-                width={240}
-                height={240}
               />
             </div>
           )}
@@ -60,38 +60,40 @@ const VoucherCard = ({
           </div>
         </div>
       </div>
-      <div className="row pt-4 d-flex justify-content-between align-items-center">
-        <div className="col-6">
-          <DynamicHeading
-            content={[
-              {
-                title: discount,
-                color: "color-electric-green",
-              },
-            ]}
-            headingTag="h5"
-            className="f-6"
-          />
-          <DynamicHeading
-            content={[
-              {
-                title: "Discount",
-                color: "color-dark-grey",
-              },
-            ]}
-            headingTag="p"
-            className="f-4 pb-0"
-          />
-        </div>
-        <div className="col-6 text-end">
-          <RectangleButton
-            title={"Buy Now"}
-            url={buttonUrl}
-            actionImage={whiteArrow}
-            hoverImage={whiteArrow}
-            iconSize={9}
-            theme="small-blue"
-          />
+      <div className="pt-4">
+        <div className="row">
+          <div className="col-6">
+            <DynamicHeading
+              content={[
+                {
+                  title: discount,
+                  color: "color-electric-green",
+                },
+              ]}
+              headingTag="h5"
+              className="f-6"
+            />
+            <DynamicHeading
+              content={[
+                {
+                  title: "Discount",
+                  color: "color-dark-grey",
+                },
+              ]}
+              headingTag="p"
+              className="f-4 pb-0"
+            />
+          </div>
+          <div className="col-6 text-end">
+            <RectangleButton
+              title={"Buy Now"}
+              url={buttonUrl}
+              actionImage={whiteArrow}
+              hoverImage={whiteArrow}
+              iconSize={9}
+              theme="small-blue"
+            />
+          </div>
         </div>
       </div>
     </div>
