@@ -62,6 +62,7 @@ import EnkashWay from "@/components/enkash-way/enkash-way"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import Link from "next/link"
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)

@@ -260,12 +260,12 @@ const CollectPayment = (): React.JSX.Element => {
           className="position-absolute top-0 start-0 w-100"
           style={{ height: "600px", backgroundColor: "black" }}
         >
-          <Spline scene="https://prod.spline.design/2RGFZhRx802a-Rzm/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/ukQwfbMk8aMlhZus/scene.splinecode" />
         </div>
 
         {/* Foreground content */}
         <div
-          className={`${styles.text_container} max-m-auto position-relative`}
+          className={`${styles.text_container} max-w-auto position-relative`}
         >
           <div
             className={`d-flex flex-column text-center mb-4 mb-md-5 ${styles.textHeading}`}

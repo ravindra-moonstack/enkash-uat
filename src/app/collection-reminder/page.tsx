@@ -42,6 +42,7 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import Link from "next/link"
+import Spline from "@splinetool/react-spline"
 
 const showScroll = cardsData.length > 3
 
@@ -306,12 +307,13 @@ const CollectionReminders = (): React.JSX.Element => {
               </div>
             </div>
             <div className="col-md-6 col-12">
-              <div>
-                <Image
+              <div style={{ height: "400px" }}>
+                {/* <Image
                   src={mealCardImage}
                   alt="card background"
                   className="w-100 mh-550 object-fit-contain"
-                />
+                /> */}
+                <Spline scene="https://prod.spline.design/T3yZ5RLvQ94JVp-v/scene.splinecode" />
               </div>
             </div>
           </div>
