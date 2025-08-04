@@ -429,7 +429,7 @@ const FooterV2 = () => {
             <div className={`d-flex flex-wrap  gap-3 w-100 ${styles.light_bg}`}>
               {/* 2nd col */}
               <div className={`${styles.footer_links_col}`}>
-                <Link href="/collect-payments">
+                <Link href="/products/collect-payments">
                   <h4 className={` ${styles.title}`}>Collect Payments</h4>
                 </Link>
 
@@ -454,13 +454,13 @@ const FooterV2 = () => {
                         <Link href="/upi-payments">UPI Payments</Link>
                       </li>
                       <li>
-                        <Link href="/qr-codes">QR Code</Link>
+                        <Link href="/qr-code">QR Code</Link>
                       </li>
                       <li>
                         <Link href="/auto-collect/">Auto Collect</Link>
                       </li>
                       <li>
-                        <Link href="/virtual-account/">Virtual Accounts</Link>
+                        <Link href="/virtual-accounts/">Virtual Accounts</Link>
                       </li>
                       <li>
                         <Link href="/e-nach/">e-NACH</Link>
@@ -473,14 +473,14 @@ const FooterV2 = () => {
                       </li>
 
                       <li>
-                        <Link href="/affordability/">Affordability</Link>
+                        <Link href="/affordability-suite/">Affordability</Link>
                       </li>
                     </ul>
                   </div>
                 </div>
 
                 <div>
-                  <Link href="/expense-management">
+                  <Link href="/products/expense-management">
                     <h4 className={`col-12 ${styles.title}`}>Expenses</h4>
                   </Link>
                   <ul>
@@ -523,7 +523,7 @@ const FooterV2 = () => {
                   <div className="">
                     <ul className="mb-0">
                       <li>
-                        <Link href="/make-payments">
+                        <Link href="/products/make-payments">
                           <h4 className={` ${styles.title}`}>Make Payments</h4>
                         </Link>
                       </li>
@@ -536,7 +536,7 @@ const FooterV2 = () => {
                         <Link href="/vendor-payment/">Vendor Payment</Link>
                       </li>
                       <li>
-                        <Link href="/rental-payment/">Rental Payment</Link>
+                        <Link href="/rent-payment/">Rental Payment</Link>
                       </li>
                       <li>
                         <Link href="/invoice-management/">
@@ -544,9 +544,7 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/payroll-processing/">
-                          Payroll Processing
-                        </Link>
+                        <Link href="/payroll/">Payroll Processing</Link>
                       </li>
                       <li>
                         <Link href="/express-pay/"> Bulk Pay</Link>
@@ -575,32 +573,36 @@ const FooterV2 = () => {
                   <div className="">
                     <ul className="my-3">
                       <li>
-                        <Link href="/vouchers">
+                        <Link href="/products/vouchers">
                           <h4 className={` ${styles.title}`}>Vouchers</h4>
                         </Link>
                       </li>
                       <li>
-                        <Link href="/e-commerce/">E-commerce</Link>
+                        <Link href="/e-commerce-vouchers">E-commerce</Link>
                       </li>
                       <li>
-                        <Link href="/movies-music/">Movies & Music</Link>
+                        <Link href="/movie-and-music-vouchers">
+                          Movies & Music
+                        </Link>
                       </li>
                       <li>
-                        <Link href="/apparels/">Apparels</Link>
+                        <Link href="/apparels-vouchers">Apparels</Link>
                       </li>
                       <li>
-                        <Link href="/food-beverges/">Food & Beverages</Link>
+                        <Link href="/food-and-beverages-vouchers">
+                          Food & Beverages
+                        </Link>
                       </li>
                       <li>
-                        <Link href="/health-wellness/">Health & Wellness</Link>
+                        <Link href="/health-and-wellness-vouchers">
+                          Health & Wellness
+                        </Link>
                       </li>
                     </ul>
                   </div>
                   <div className="mt-3">
                     <Link href="https://docs.enkash.com/" target="_blank">
-                      <h4 className={`col-12 ${styles.title}`}>
-                        Developer Docs
-                      </h4>
+                      <h4 className={`col-12 ${styles.title}`}>Developer</h4>
                     </Link>
                     <ul>
                       <li>
@@ -661,7 +663,7 @@ const FooterV2 = () => {
                 <div>
                   <div>
                     <div className={styles.freedom_card_box}>
-                      <Link href="/corporate-cards">
+                      <Link href="/products/corporate-cards">
                         <h4 className={`${styles.title}`}>Corporate Cards</h4>
                       </Link>
                     </div>
@@ -681,7 +683,7 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/saas-cards/">SaaS Card</Link>
+                        <Link href="/saas-card/">SaaS Card</Link>
                       </li>
 
                       <li>
@@ -698,12 +700,12 @@ const FooterV2 = () => {
                         <Link href="/purchase-card/">Purchase Cards</Link>
                       </li>
                       <li>
-                        <Link href="/gift-cards/">Gift Cards</Link>
+                        <Link href="/gift-card/">Gift Cards</Link>
                       </li>
                     </ul>
                   </div>
                   <div className="mt-3">
-                    <Link href="/rewards">
+                    <Link href="/products/rewards">
                       <h4 className={`col-12 ${styles.title}`}>Rewards</h4>
                     </Link>
                     <ul>
@@ -783,19 +785,17 @@ const FooterV2 = () => {
                   </ul>
                 </div>
                 <div className="mt-3">
-                   <Link href="/policies-and-compliance">
-                  <h4 className={`col-12 ${styles.title} text-wrap`}>
-                    Policies and Compliance
-                  </h4>
+                  <Link href="/policies-and-compliance">
+                    <h4 className={`col-12 ${styles.title} text-wrap`}>
+                      Policies and Compliance
+                    </h4>
                   </Link>
                   <ul>
                     <li>
                       <Link href="/payments">Payments</Link>
                     </li>
                     <li>
-                      <Link href="/prepaid-program">
-                        Prepaid Program
-                      </Link>
+                      <Link href="/prepaid-program">Prepaid Program</Link>
                     </li>
                     <li>
                       <Link href="/platform">Platform</Link>
@@ -813,9 +813,7 @@ const FooterV2 = () => {
                       <Link href="/for-banks">For Banks</Link>
                     </li>
                     <li>
-                      <Link href="/affiliate-program">
-                        Affiliate Program
-                      </Link>
+                      <Link href="/affiliate-program">Affiliate Program</Link>
                     </li>
                   </ul>
                 </div>

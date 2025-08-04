@@ -38,6 +38,7 @@ import bg5 from "./img/payroll-card.jpg"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import Link from "next/link"
 
 // const showScroll = cardsData.length > 3
 // const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -117,7 +118,6 @@ const cards = [
       </>
     ),
   },
- 
 ]
 const PrepaidCard = (): React.JSX.Element => {
   return (
@@ -139,20 +139,18 @@ const PrepaidCard = (): React.JSX.Element => {
             />
           </div>
           <div className={`${styles.title} col-12 `}>
-        
-             <DynamicHeading
-                content={[
-                  {
-                    title: "Prepaid Cards",
-                    color: "color-equity-blue underline",
-                  },
-                 
-                ]}
-                headingTag="p"
-                className=""
-              />
+            <DynamicHeading
+              content={[
+                {
+                  title: "Prepaid Cards",
+                  color: "color-equity-blue underline",
+                },
+              ]}
+              headingTag="p"
+              className=""
+            />
             <div className="d-flex  flex-column text-center">
-               <DynamicHeading
+              <DynamicHeading
                 content={[
                   {
                     title: "The Best Prepaid Corporate Card",
@@ -162,23 +160,20 @@ const PrepaidCard = (): React.JSX.Element => {
                     title: "for Business Spending",
                     color: "color-black",
                   },
-                 
                 ]}
                 headingTag="h1"
                 className="f-7 mb-2"
               />
-            
             </div>
 
             <div className="d-inline text-center">
-            
-               <DynamicHeading
+              <DynamicHeading
                 content={[
                   {
-                    title: "No paperwork. No delays. Just swipe and go, with full compliance.",
+                    title:
+                      "No paperwork. No delays. Just swipe and go, with full compliance.",
                     color: "color-black subHeading",
                   },
-                 
                 ]}
                 headingTag="p"
                 className=""
@@ -268,7 +263,7 @@ const PrepaidCard = (): React.JSX.Element => {
           ]}
         />
       </div>
-   <div className={styles.card_stacking_row}>
+      <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
             <div className={`${styles.title} text-center `}>
@@ -278,7 +273,6 @@ const PrepaidCard = (): React.JSX.Element => {
                     title: "Why Businesses Love Us ",
                     color: "color-black",
                   },
-                 
                 ]}
                 headingTag="h2"
                 className="f-6"
@@ -292,18 +286,17 @@ const PrepaidCard = (): React.JSX.Element => {
       <div className={`${styles.fourth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-           
-             <DynamicHeading
-                content={[
-                  {
-                    title: "Step into the world of smarter, safer, and seamless spending",
-                    color: "color-white",
-                  },
-                 
-                ]}
-                headingTag="h3"
-                className="f-5"
-              />
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "Step into the world of smarter, safer, and seamless spending",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
+            />
           </div>
 
           <div className={`${styles.get_started_button} `}>
@@ -321,52 +314,61 @@ const PrepaidCard = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-3`}>
-            
-             <DynamicHeading
-                content={[
-                  {
-                    title: "Frequently Asked Questions (",
-                    color: "color-black",
-                  },
-                  {
-                    title: "FAQs",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: ")",
-                    color: "color-black",
-                  },
-                 
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            
+            <DynamicHeading
+              content={[
+                {
+                  title: "Frequently Asked Questions (",
+                  color: "color-black",
+                },
+                {
+                  title: "FAQs",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: ")",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                  <DynamicHeading
-                content={[
-                  {
-                    title: "Have more questions?",
-                    color: "color-border-gray subHeading",
-                  },               
-                ]}
-                headingTag="p"
-                className="mb-0"
-              />
-               
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-border-gray subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
               </div>
               <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
+                <div className="connectWithUs">
+                  <Link href="/contact-us">
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Connect with us",
+                          color: "color-equity-blue ",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-5"
+                    />
+                    <Image
+                      src={blueArrow}
+                      alt="blue Arrow"
+                      width={15}
+                      height={15}
+                      className="ms-2"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={`${styles.faqData}`}>

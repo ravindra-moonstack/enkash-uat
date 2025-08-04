@@ -1,6 +1,5 @@
 import { FAQProps } from "../../../components/faq-new/faq"
 
-
 // ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
 type FAQDataItem = Omit<
   FAQProps,
@@ -88,6 +87,41 @@ const faqData: FAQDataItem[] = [
       {
         heading:
           "Fuel cards are designed for authorized fuel outlets, ensuring employees can access fuel conveniently and securely. These cards give businesses control over where and how they spend on fuel, optimizing their expenses.",
+      },
+    ],
+  },
+  {
+    question: "What is a Fleet Card?",
+    answer: [
+      {
+        heading:
+          "A Fleet Card is a specialized prepaid card designed to manage all vehicle-related business expenses such as fuel, tolls, repairs, and maintenance. It helps companies track spending per driver or vehicle in real-time.",
+      },
+    ],
+  },
+  {
+    question: "Are Fleet Cards and Fuel Cards the Same?",
+    answer: [
+      {
+        heading:
+          "No, Fleet Cards and Fuel Cards are not the same, although they serve related purposes.",
+        bullets: [
+          "A Fuel Card is typically restricted to fuel purchases only at authorized fuel stations.",
+          "A Fleet Card, on the other hand, offers broader coverage, allowing businesses to manage all vehicle-related expenses, including fuel, tolls, maintenance, parking, and repairs.",
+        ],
+      },
+      {
+        heading:
+          "In short, all fuel cards are a part of fleet management, but not all fleet cards are limited to fuel alone.",
+      },
+    ],
+  },
+  {
+    question: "What is the best fuel card for businesses in India?",
+    answer: [
+      {
+        heading:
+          "The best fuel card for businesses in India is one that offers real-time tracking, robust fraud protection, wide acceptance at fuel stations, and seamless expense control. EnKash Fuel Cards check all these boxes, making them the top choice for businesses seeking efficiency and cost savings.",
       },
     ],
   },

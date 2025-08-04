@@ -40,6 +40,7 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import Spline from "@splinetool/react-spline"
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import Link from "next/link"
 
 const CollectPayment = (): React.JSX.Element => {
   return (
@@ -195,7 +196,9 @@ const CollectPayment = (): React.JSX.Element => {
                   />
                 </div>
               </div>
-              <div className={` ${styles.all_in_section_inner} d-flex flex-column gap-3`}>
+              <div
+                className={` ${styles.all_in_section_inner} d-flex flex-column gap-3`}
+              >
                 <AllInOnePolicy
                   icon={paymentGatwayIcon}
                   title="Payment Gateway"
@@ -264,7 +267,9 @@ const CollectPayment = (): React.JSX.Element => {
         <div
           className={`${styles.text_container} max-m-auto position-relative`}
         >
-          <div className={`d-flex flex-column text-center mb-4 mb-md-5 ${styles.textHeading}`}>
+          <div
+            className={`d-flex flex-column text-center mb-4 mb-md-5 ${styles.textHeading}`}
+          >
             <DynamicHeading
               content={[
                 {
@@ -448,14 +453,27 @@ const CollectPayment = (): React.JSX.Element => {
                 />
               </div>
               <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
+                <div className="connectWithUs">
+                  <Link href="/contact-us">
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Connect with us",
+                          color: "color-equity-blue ",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-5"
+                    />
+                    <Image
+                      src={blueArrow}
+                      alt="blue Arrow"
+                      width={15}
+                      height={15}
+                      className="ms-2"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={`${styles.faqData}`}>

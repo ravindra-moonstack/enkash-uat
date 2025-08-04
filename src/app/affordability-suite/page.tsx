@@ -35,6 +35,7 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import ManagementCard from "@/components/management-card/management-card"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import Link from "next/link"
 
 const Payroll = (): React.JSX.Element => {
   return (
@@ -83,7 +84,8 @@ const Payroll = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Convert browsers into buyers with the Affordability Suite ",
+                        title:
+                          "Convert browsers into buyers with the Affordability Suite ",
                         color: "color-black",
                       },
                     ]}
@@ -103,7 +105,7 @@ const Payroll = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -245,7 +247,7 @@ const Payroll = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Turn Interest Into Action",
@@ -271,7 +273,7 @@ const Payroll = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-           <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -305,14 +307,27 @@ const Payroll = (): React.JSX.Element => {
                 />
               </div>
               <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
+                <div className="connectWithUs">
+                  <Link href="/contact-us">
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Connect with us",
+                          color: "color-equity-blue ",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-5"
+                    />
+                    <Image
+                      src={blueArrow}
+                      alt="blue Arrow"
+                      width={15}
+                      height={15}
+                      className="ms-2"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={`${styles.faqData}`}>
@@ -325,7 +340,7 @@ const Payroll = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Check out our ",

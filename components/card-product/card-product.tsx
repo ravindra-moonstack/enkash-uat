@@ -9,7 +9,7 @@ export interface CardProps {
   titleHtml?: ReactNode
   description: string
   cardImage?: string | StaticImageData
-  link?: string // ✅
+  linkUrl?: string // ✅
 }
 
 const CardProduct = ({
@@ -17,14 +17,14 @@ const CardProduct = ({
   titleHtml,
   description,
   cardImage,
-  link,
+  linkUrl,
 }: CardProps) => {
   const cardContent = (
     <>
       <div>
         {titleHtml ? (
-          <div className={styles.titleHtml}> 
-          <DynamicHeading
+          <div className={styles.titleHtml}>
+            <DynamicHeading
               content={[
                 {
                   title: String(titleHtml),
@@ -33,7 +33,8 @@ const CardProduct = ({
               ]}
               headingTag="h4"
               className="f-5"
-            /></div>
+            />
+          </div>
         ) : (
           whiteTitle && (
             <DynamicHeading
@@ -46,11 +47,12 @@ const CardProduct = ({
               headingTag="h4"
               className="f-5"
             />
-
           )
         )}
 
-        <div><p className="mb-0 mt-2">{description}</p></div>
+        <div>
+          <p className="mb-0 mt-2">{description}</p>
+        </div>
       </div>
 
       {cardImage && (
@@ -71,13 +73,8 @@ const CardProduct = ({
     <div
       className={`d-flex flex-column justify-content-between ${styles.card_body}`}
     >
-      {link ? (
-        <a
-          href={link}
-          className={styles.link}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+      {linkUrl ? (
+        <a href={linkUrl} className={styles.link} rel="noopener noreferrer">
           {cardContent}
         </a>
       ) : (

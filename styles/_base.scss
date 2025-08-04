@@ -383,3 +383,17 @@ body {
   margin: auto;
   width: 100%;
 }
+
+.connectWithUs {
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    border: 2px solid #a5a5a5;
+    padding: 8px 20px;
+    border-radius: 8px;
+    align-items: center;
+  }
+}

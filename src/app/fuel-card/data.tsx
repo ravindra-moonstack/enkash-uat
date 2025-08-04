@@ -31,8 +31,10 @@ import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  digitalCardImg,
   fuelCardImg,
   mealCardImg,
+  payrollCardImg,
   purchesCardImg,
   sassCardImg,
   termsAndConCardImg,
@@ -251,45 +253,61 @@ const cardType = [
     description:
       "Give tax-saving meal benefits to employees with easy-to-use, digital meal cards accepted nationwide.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
   {
-    titleHtml: "Fuel Card",
+    titleHtml: "Digital Marketing Card",
     description:
-      "Control and track fuel expenses with prepaid cards designed for fleet and travel-related spending.",
-    cardImage: fuelCardImg,
+      "Manage online ad spends across platforms with preset limits and real-time spend visibility and control.",
+    cardImage: digitalCardImg,
+    linkUrl: "/digital-marketing-card",
+  },
+    {
+    titleHtml: "SaaS Card",
+    description:
+      "Centralize and manage software subscriptions easily with cards made for recurring SaaS payments and renewals.",
+    cardImage: sassCardImg,
+    linkUrl: "/sass-card",
+  },
+      {
+    titleHtml: "Payroll Card",
+    description:
+      "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
+    cardImage: payrollCardImg,
+
+  },
+    {
+    titleHtml: "Virtual Card",
+    description:
+      "Generate secure, one-time or recurring virtual cards for safer, faster, and trackable online payments.",
+    cardImage: virtualCardImg,
+    linkUrl: "/virtual-card",
   },
   {
     titleHtml: "T&E Card",
     description:
       "Manage travel & entertainment spends with smart controls, real-time tracking, and seamless",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
-  {
-    titleHtml: "Virtual Card",
-    description:
-      "Generate secure, one-time or recurring virtual cards for safer, faster, and trackable online payments.",
-    cardImage: termsAndConCardImg,
-  },
+
   {
     titleHtml: "Purchase Card",
     description:
       "Pre-approved cards that help manage vendor payments and operational purchases for effortless procurement",
-    cardImage: virtualCardImg,
-  },
-  {
-    titleHtml: "Digital Marketing Card",
-    description:
-      "Manage online ad spends across platforms with preset limits and real-time spend visibility and control.",
     cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
-  {
-    titleHtml: "SaaS Card",
+   {
+    titleHtml: "Fleet Card",
     description:
-      "Centralize and manage software subscriptions easily with cards made for recurring SaaS payments and renewals.",
-    cardImage: sassCardImg,
+      "Digitize fleet expenses such as fuel, tolls, repairs—while tracking usage per vehicle or driver.",
+    cardImage: purchesCardImg,
+  
   },
-]
 
+
+]
 const slideUpData = [
   {
     title: "Set Your Rules",

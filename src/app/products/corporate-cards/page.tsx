@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import {
   allProductSections,
@@ -12,47 +11,44 @@ import {
   spendAnalyticsData,
 } from "./data"
 
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  Header,
+  FAQHtml,
+  Footer,
+  RectangleButton,
+  PolicyCard,
+  LogoSlider,
+  FeatureCard,
+  CardProduct,
+  AllProducts,
+  CustomBreadcrumb,
+  LottieDynamicLoadComponent,
+  DynamicHeading,
+  TalkToSales,
+} from "@/components"
 
 import {
   blueArrow,
-  instantActionImg,
   spendAnalylicsImg,
   rbiLogo,
   corporateCard,
   corporateCardIcon,
   whiteArrow,
-  SetYourRules,
-  channelLevelControls,
   onePlatform,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import LogoSlider from "@/components/logo-slider/logo-slider"
 import faqData from "./faq-data"
-import FeatureCard from "@/components/featureCard/feature-card"
-import CardProduct from "@/components/card-product/card-product"
-import AllProducts from "@/components/all-products/all-products"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
-import CardStacking from "@/components/cardStacking/cardStacking"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import { greenIcon, notificationImage } from "../make-payments"
-
 import gsap from "gsap"
 import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import Link from "next/link"
+
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP)
 
-// const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const CorporateCards = (): React.JSX.Element => {
-
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -111,7 +107,7 @@ const CorporateCards = (): React.JSX.Element => {
                   <RectangleButton
                     title="Talk to us"
                     theme="blue"
-                    url="/sales/?source=expense_management"
+                    url="/sales/"
                   />
                 </div>
               </div>
@@ -119,9 +115,7 @@ const CorporateCards = (): React.JSX.Element => {
                 className={`col-12 d-flex justify-content-center align-items-center `}
               >
                 <div className={styles.bannerImages}>
-                  <div
-                    className={styles.lottie_container}
-                  >
+                  <div className={styles.lottie_container}>
                     <LottieDynamicLoadComponent
                       animationName={"CorporateCardLottie"}
                       loop={true}
@@ -252,7 +246,7 @@ const CorporateCards = (): React.JSX.Element => {
                       theme="border-gray"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}
-                      url="/sales/?source=expense_management"
+                      url="/sales"
                       className="d-flex justify-content-between align-items-center"
                     />
                   </div>
@@ -292,7 +286,6 @@ const CorporateCards = (): React.JSX.Element => {
                     headingTag="h2"
                     className="f-6"
                   />
-
                 </div>
 
                 <div className="d-flex flex-column col-md-6">
@@ -485,7 +478,7 @@ const CorporateCards = (): React.JSX.Element => {
                       theme="border-gray"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}
-                      url="/sales/?source=expense_management"
+                      url="/prepaid-card"
                       className="d-flex justify-content-between align-items-center"
                     />
                   </div>
@@ -518,12 +511,13 @@ const CorporateCards = (): React.JSX.Element => {
               </div>
               <div className="row g-3 pb-4">
                 {cardType.map(
-                  ({ titleHtml, description, cardImage }, index) => (
+                  ({ titleHtml, description, cardImage, linkUrl }, index) => (
                     <div key={index} className="col-12 col-md-4">
                       <CardProduct
                         titleHtml={titleHtml}
                         description={description}
                         cardImage={cardImage}
+                        linkUrl={linkUrl}
                       />
                     </div>
                   )
@@ -532,7 +526,6 @@ const CorporateCards = (): React.JSX.Element => {
             </div>
           </div>
 
-          
           <div className={`${styles.fifth_row} relative`}>
             <div className={`${styles.title} text-center `}>
               <div
@@ -571,6 +564,7 @@ const CorporateCards = (): React.JSX.Element => {
                   title={"Explore Our Expense Management Suite"}
                   theme="blue"
                   width="auto"
+                  url="/products/expense-management"
                 />
               </div>
             </div>
@@ -597,11 +591,12 @@ const CorporateCards = (): React.JSX.Element => {
               </div>
               <div className={`${styles.get_started_button} `}>
                 <RectangleButton
-                  title="Get Started  Today "
+                  title="Talk to Us"
                   theme="outline-blue"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
+                  url="/sales"
+                  iconSize={15}
                 />
               </div>
             </div>
@@ -644,14 +639,27 @@ const CorporateCards = (): React.JSX.Element => {
                     />
                   </div>
                   <div className="mt-3 d-none d-md-block">
-                    <RectangleButton
-                      title="Get started today"
-                      theme="border-gray"
-                      actionImage={blueArrow}
-                      hoverImage={whiteArrow}
-                      iconSize={15}
-                      url="/sales/?source=receivables"
-                    />
+                    <div className="connectWithUs">
+                      <Link href="/contact-us">
+                        <DynamicHeading
+                          content={[
+                            {
+                              title: "Connect with us",
+                              color: "color-equity-blue ",
+                            },
+                          ]}
+                          headingTag="p"
+                          className="mb-0 f-5"
+                        />
+                        <Image
+                          src={blueArrow}
+                          alt="blue Arrow"
+                          width={15}
+                          height={15}
+                          className="ms-2"
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </div>
                 <div className={`${styles.faqData}`}>
