@@ -1,6 +1,5 @@
 import { FAQProps } from "../../../components/faq-new/faq"
 
-
 // ✅ Create a type that excludes `index` & `answerVisible` & `onToggleAnswerVisibility`
 type FAQDataItem = Omit<
   FAQProps,
@@ -52,6 +51,25 @@ const faqData: FAQDataItem[] = [
       {
         heading:
           "Virtual cards can help prevent fraud, offering high control and visibility over business expenses. You can do the same by setting spending limits, monitoring transaction history, etc. You can also block your card immediately in case of any misuse or fraud.",
+      },
+    ],
+  },
+  {
+    question: "Where can I use a virtual prepaid card?",
+    answer: [
+      {
+        heading:
+          " Virtual prepaid cards can be used for online transactions across e-commerce platforms, subscription services, travel bookings, digital ads, SaaS tools, and more, wherever online card payments are accepted. They are ideal for businesses looking to manage digital expenses securely and efficiently without relying on physical cards.",
+      },
+    ],
+  },
+  {
+    question:
+      "What are the benefits of using a virtual card in India for businesses?",
+    answer: [
+      {
+        heading:
+          "Virtual cards offer businesses in India enhanced security, instant issuance, and real-time spend control. They're perfect for managing online purchases like SaaS tools, vendor payments, and marketing spends—all without the need for a physical card.",
       },
     ],
   },

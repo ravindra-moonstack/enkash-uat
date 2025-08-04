@@ -35,6 +35,7 @@ import EasyStepCard from "@/components/easy-step-card/easy-step-card"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
+import Link from "next/link"
 
 const cards = [
   {
@@ -286,8 +287,6 @@ const ApprovalFlows = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          
-
           <div className={`${styles.title} text-center pb-3`}>
             <DynamicHeading
               content={[
@@ -343,11 +342,11 @@ const ApprovalFlows = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-           
             <DynamicHeading
               content={[
                 {
-                  title: "Define approval flows for efficient expense management",
+                  title:
+                    "Define approval flows for efficient expense management",
                   color: "color-white",
                 },
               ]}
@@ -370,7 +369,6 @@ const ApprovalFlows = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            
             <DynamicHeading
               content={[
                 {
@@ -389,32 +387,43 @@ const ApprovalFlows = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-            
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div className="mb-4">
               <div>
-                
-            <DynamicHeading
-              content={[
-                {
-                  title: "Have more questions?",
-                  color: "color-dark-grey subHeading",
-                },
-              ]}
-              headingTag="p"
-              className="mb-0"
-            />
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
               </div>
               <div className="mt-2 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
+                <div className="connectWithUs">
+                  <Link href="/contact-us">
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Connect with us",
+                          color: "color-equity-blue ",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-5"
+                    />
+                    <Image
+                      src={blueArrow}
+                      alt="blue Arrow"
+                      width={15}
+                      height={15}
+                      className="ms-2"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={`${styles.faqData}`}>
@@ -427,7 +436,6 @@ const ApprovalFlows = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
-            
             <DynamicHeading
               content={[
                 {
@@ -442,7 +450,6 @@ const ApprovalFlows = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-           
           </div>
           <div className="row g-3 pb-4 ">
             {expenseManagementData.map((card, index) => (

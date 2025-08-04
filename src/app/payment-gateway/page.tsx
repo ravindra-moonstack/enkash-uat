@@ -42,6 +42,7 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import Link from "next/link"
 
 const PaymentGateway = (): React.JSX.Element => {
   return (
@@ -354,9 +355,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
           {/* Section 2 */}
           <div className={`bg-color-soft-mint ${styles.section}`}>
-            <div
-              className={`row pb-[50px] pt-[50px] align-items-center `}
-            >
+            <div className={`row pb-[50px] pt-[50px] align-items-center `}>
               <div
                 className={`col-md-6 ${styles.third_container} order-2 order-md-1`}
               >
@@ -485,9 +484,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
           {/* Section 4 */}
           <div className={`bg-color-soft-mint ${styles.section}`}>
-            <div
-              className={`row  pb-[50px] pt-[50px] align-items-center `}
-            >
+            <div className={`row  pb-[50px] pt-[50px] align-items-center `}>
               <div
                 className={`col-md-6 col-12 d-flex my-md-5 my-3 justify-content-start ${styles.third_container} order-2 order-md-1`}
               >
@@ -617,9 +614,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
           {/* Section 6 */}
           <div className={`bg-color-soft-mint ${styles.section}`}>
-            <div
-              className={`row pb-2 pb-md-5  position-relative `}
-            >
+            <div className={`row pb-2 pb-md-5  position-relative `}>
               <div
                 className={`col-md-6 col-12 ${styles.third_container} order-2 order-md-1`}
               >
@@ -685,69 +680,66 @@ const PaymentGateway = (): React.JSX.Element => {
         </div>
       </div>
 
-
       <div className={`${styles.eigth_row}  `}>
         <div className="max-w-auto w-100">
-            <div className={`${styles.section} row`}>
-              <div
-                className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-7`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Best Payment Gateway in India for ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Accelerated Growth ",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
-              </div>
+          <div className={`${styles.section} row`}>
+            <div
+              className={`${styles.title} text-start  d-flex flex-column pb-4 pb-md-5  col-md-7`}
+            >
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Best Payment Gateway in India for ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Accelerated Growth ",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
 
-              <div className="col-md-6 ">
-                {acceleratedGrowthData.map(({ icon, title }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <div className="d-flex align-items-start gap-3 py-3 w-4 h-4">
-                      <div
-                        className="d-flex justify-content-center align-items-center bg-light rounded-circle"
-                        style={{ width: "32px", height: "32px" }}
-                      >
-                        <Image src={icon} alt="icon" />
-                      </div>
-                      <div className="d-flex flex-column gap-3">
-                        <DynamicHeading
-                          content={[
-                            {
-                              title: title,
-                              color: "color-black",
-                            },
-                          ]}
-                          headingTag="h5"
-                          className="f-5"
-                        />
-                      </div>
+            <div className="col-md-6 ">
+              {acceleratedGrowthData.map(({ icon, title }, i) => (
+                <div key={i} style={{ direction: "ltr" }}>
+                  <div className="d-flex align-items-start gap-3 py-3 w-4 h-4">
+                    <div
+                      className="d-flex justify-content-center align-items-center bg-light rounded-circle"
+                      style={{ width: "32px", height: "32px" }}
+                    >
+                      <Image src={icon} alt="icon" />
+                    </div>
+                    <div className="d-flex flex-column gap-3">
+                      <DynamicHeading
+                        content={[
+                          {
+                            title: title,
+                            color: "color-black",
+                          },
+                        ]}
+                        headingTag="h5"
+                        className="f-5"
+                      />
                     </div>
                   </div>
-                ))}
-              </div>
-              <div className="col-md-6">
-                <div className={styles.faq_bg}>
-                  <Image
-                    src={acceleratedGrowthImg}
-                    alt="background image"
-                    className="w-100 mh-550 object-fit-contain"
-                  />
                 </div>
+              ))}
+            </div>
+            <div className="col-md-6">
+              <div className={styles.faq_bg}>
+                <Image
+                  src={acceleratedGrowthImg}
+                  alt="background image"
+                  className="w-100 mh-550 object-fit-contain"
+                />
               </div>
             </div>
           </div>
         </div>
-      
-
+      </div>
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
@@ -813,14 +805,27 @@ const PaymentGateway = (): React.JSX.Element => {
                 />
               </div>
               <div className="mt-2 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
+                <div className="connectWithUs">
+                  <Link href="/contact-us">
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Connect with us",
+                          color: "color-equity-blue ",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-5"
+                    />
+                    <Image
+                      src={blueArrow}
+                      alt="blue Arrow"
+                      width={15}
+                      height={15}
+                      className="ms-2"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={`${styles.faqData}`}>
@@ -832,7 +837,9 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}>
+          <div
+            className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}
+          >
             <DynamicHeading
               content={[
                 {

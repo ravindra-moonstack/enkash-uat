@@ -96,3 +96,15 @@
     font-size: 28px;
   }
 }
+
+.card_body {
+  a {
+    color: inherit !important; // or any custom color
+    text-decoration: none !important;
+
+    &:hover {
+      text-decoration: none; // remove underline on hover too
+      color: inherit; // or a hover color
+    }
+  }
+}

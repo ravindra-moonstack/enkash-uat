@@ -55,6 +55,7 @@ import bg3 from "./img/bg3.jpg"
 import bg4 from "./img/bg2.jpg"
 import bg5 from "./img/bg1.jpg"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import Link from "next/link"
 
 const showScroll = cardsData.length > 3
 
@@ -339,7 +340,9 @@ const PaymentLink = (): React.JSX.Element => {
           <div className={`${styles.section}`}>
             <div className={`row  align-items-center `}>
               <div className={`${styles.title} text-center `}>
-                <div className={`flex-column justify-content-center   mb-md-5 mb-4`}>
+                <div
+                  className={`flex-column justify-content-center   mb-md-5 mb-4`}
+                >
                   <DynamicHeading
                     content={[
                       {
@@ -575,14 +578,27 @@ const PaymentLink = (): React.JSX.Element => {
                 />
               </div>
               <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
+                <div className="connectWithUs">
+                  <Link href="/contact-us">
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Connect with us",
+                          color: "color-equity-blue ",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-5"
+                    />
+                    <Image
+                      src={blueArrow}
+                      alt="blue Arrow"
+                      width={15}
+                      height={15}
+                      className="ms-2"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={`${styles.faqData}`}>

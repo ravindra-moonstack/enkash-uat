@@ -51,11 +51,11 @@ export const motherProducts = [
   {
     name: "Collect Payments",
     description: "Fastest & secure payment gateway offerings",
-    link: "/collect-payments",
+    link: "/products/collect-payments",
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/collect-payments",
+        subtitleLink: "/products/collect-payments",
         currentHeading: {
           name: "Collect Payments",
           description: "Get paid faster with customized PG solutions",
@@ -151,11 +151,11 @@ export const motherProducts = [
   {
     name: "Make Payments",
     description: "Manage all types of business payments",
-    link: "/make-payments",
+    link: "/products/make-payments",
     payableProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/make-payments",
+        subtitleLink: "/products/make-payments",
         currentHeading: {
           name: "Make Payments",
           description: "Manage all types of business payments",
@@ -213,15 +213,14 @@ export const motherProducts = [
       },
     ],
   },
-
   {
     name: "Payable & Receivable+",
     description: "Manage all types of business payments",
-    link: "/make-payments",
+    link: "/products/make-payments",
     payableProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/make-payments",
+        subtitleLink: "/products/make-payments",
         currentHeading: {
           name: "Make Payments",
           description: "Manage all types of business payments",
@@ -232,7 +231,7 @@ export const motherProducts = [
 
             imageSrc: collectionReminderFilled,
             imageSrcHovered: collectionReminderFilled,
-            link: "/collection-reminders",
+            link: "/collection-reminder",
           },
           {
             name: "Vendor Management",
@@ -275,7 +274,7 @@ export const motherProducts = [
 
             imageSrc: autoReconciliation,
             imageSrcHovered: autoReconciliationFilled,
-            link: "/auto-reconcillation",
+            link: "/auto-reconciliation",
           },
 
           {

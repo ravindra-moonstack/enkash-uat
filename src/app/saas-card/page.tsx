@@ -35,6 +35,7 @@ import StepCard from "@/components/stepCard/stepCard"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import Link from "next/link"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -234,9 +235,7 @@ const SaasCards = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={`col-md-6 col-12 `}
-            >
+            <div className={`col-md-6 col-12 `}>
               <div>
                 <Image
                   src={mealCardImage}
@@ -277,7 +276,7 @@ const SaasCards = (): React.JSX.Element => {
           <div
             className={` flex-column justify-content-center align-items-center pb-3  d-inline`}
           >
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Key Features of SaaS Card ",
@@ -287,7 +286,6 @@ const SaasCards = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-           
           </div>
         </div>
         <AllProducts
@@ -300,18 +298,17 @@ const SaasCards = (): React.JSX.Element => {
       <div className={`${styles.sixth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center   flex-column gap-4 align-items-center text-center">
-          
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
-                  title: "Discover the EnKash difference - Secure, Scalable and Seamless. ",
+                  title:
+                    "Discover the EnKash difference - Secure, Scalable and Seamless. ",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
               className="f-5"
             />
-           
           </div>
 
           <div className={`${styles.get_started_button} `}>
@@ -329,7 +326,7 @@ const SaasCards = (): React.JSX.Element => {
       <div className={`${styles.faq_new_row}  relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-5`}>
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Frequently Asked Questions (",
@@ -347,32 +344,43 @@ const SaasCards = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-          
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                 <DynamicHeading
-              content={[
-                {
-                  title: "Have more questions?",
-                  color: "color-dark-grey subHeading",
-                },
-              ]}
-              headingTag="p"
-              className="mb-0"
-            />
-           
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Have more questions?",
+                      color: "color-dark-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
               </div>
               <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
+                <div className="connectWithUs">
+                  <Link href="/contact-us">
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Connect with us",
+                          color: "color-equity-blue ",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-5"
+                    />
+                    <Image
+                      src={blueArrow}
+                      alt="blue Arrow"
+                      width={15}
+                      height={15}
+                      className="ms-2"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={`${styles.faqData}`}>
@@ -385,7 +393,7 @@ const SaasCards = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Choose ",
@@ -403,7 +411,6 @@ const SaasCards = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-           
           </div>
           <div className="row g-3 pb-4">
             {cardType.map(({ titleHtml, description, cardImage }, index) => (

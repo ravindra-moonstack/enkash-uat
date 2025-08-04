@@ -53,6 +53,34 @@ const faqData = [
       },
     ],
   },
+  {
+    question: "What is a Prepaid Card?",
+    answer: [
+      {
+        heading:
+          "A prepaid card is a payment card loaded with a specific amount of money in advance. Unlike credit cards, it doesn’t draw from a credit line—it only allows spending up to the balance that has been preloaded. Prepaid cards are ideal for businesses looking to control budgets, limit overspending, and streamline expense tracking, as they offer real-time control and visibility over every transaction.",
+      },
+    ],
+  },
+  {
+    question: "What is the difference between a Prepaid Card and a Debit Card?",
+    answer: [
+      {
+        heading:
+          "A prepaid card is loaded with a specific amount in advance and isn’t linked to a bank account, making it great for controlled spending. A debit card pulls money directly from your bank account. Prepaid cards offer more flexibility for budgeting and business use.",
+      },
+    ],
+  },
+  {
+    question:
+      "What is the difference between reloadable and non-reloadable prepaid cards?",
+    answer: [
+      {
+        heading:
+          "Reloadable prepaid cards can be topped up with funds multiple times, making them ideal for ongoing expenses like salaries, travel, or business purchases. Non-reloadable prepaid cards, on the other hand, are for one-time use—once the initial balance is spent, they cannot be reloaded. These are often used for gifts, rewards, or limited-time campaigns.",
+      },
+    ],
+  },
 ]
 
 export default faqData

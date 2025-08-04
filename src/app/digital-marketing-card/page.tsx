@@ -37,6 +37,7 @@ import PolicyCard from "@/components/policyCard/policyCard"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import Link from "next/link"
 const cards = [
   {
     color: "#fff",
@@ -415,14 +416,27 @@ const DigitalMarketingCard = (): React.JSX.Element => {
                 />
               </div>
               <div className="mt-2 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
+                <div className="connectWithUs">
+                  <Link href="/contact-us">
+                    <DynamicHeading
+                      content={[
+                        {
+                          title: "Connect with us",
+                          color: "color-equity-blue ",
+                        },
+                      ]}
+                      headingTag="p"
+                      className="mb-0 f-5"
+                    />
+                    <Image
+                      src={blueArrow}
+                      alt="blue Arrow"
+                      width={15}
+                      height={15}
+                      className="ms-2"
+                    />
+                  </Link>
+                </div>
               </div>
             </div>
             <div className={`${styles.faqData}`}>
@@ -435,26 +449,24 @@ const DigitalMarketingCard = (): React.JSX.Element => {
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
-             <DynamicHeading
-                content={[
-                  {
-                    title: "Your Business, ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "Your Cards – ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "Tailored by EnKash",
-                    color: "color-black",
-                  },
-                  
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-           
+            <DynamicHeading
+              content={[
+                {
+                  title: "Your Business, ",
+                  color: "color-black",
+                },
+                {
+                  title: "Your Cards – ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "Tailored by EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
           </div>
           <div className="row g-3 pb-4">
             {cardType.map(({ titleHtml, description, cardImage }, index) => (

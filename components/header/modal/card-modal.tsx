@@ -37,7 +37,7 @@ const CardModal = ({
                   parentLink={mother.link}
                 />
                 <div className={styles.exploreProduct}>
-                  <Link href="/corporate-card">
+                  <Link href="/products/corporate-cards">
                     <h4 className="mb-1">Explore Corporate Cards </h4>
                   </Link>
                 </div>
