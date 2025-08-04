@@ -123,13 +123,14 @@
   padding: 50px 20px 0;
 
   .text_container {
-    // pointer-events: none;
+    pointer-events: none;
     @include for-laptops {
       padding-bottom: 204px;
       padding-top: 90px;
     }
-    .textHeading {
-      pointer-events: none;
+
+    .how_it_workssection {
+      pointer-events: visible;
     }
   }
 
