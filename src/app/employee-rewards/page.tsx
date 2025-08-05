@@ -52,9 +52,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                   ]}
                 />
               </div>
-              <div
-                className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
-              >
+              <div className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `} >
                 <DynamicHeading
                   content={[
                     {
@@ -62,14 +60,12 @@ const EmployeeRewards = (): React.JSX.Element => {
                       color: "color-equity-blue underline",
                     },
                   ]}
-                  headingTag="h4"
-                  className="f-4"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
-              <div
-                className={`text-center text-md-start ${styles.first_row_content}  `}
-              >
-                <div className="d-inline   pt-3 pt-md-0">
+              <div className={`text-center text-md-start ${styles.first_row_content}  `} >
+                <div className=" pt-4 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -89,11 +85,11 @@ const EmployeeRewards = (): React.JSX.Element => {
                       {
                         title:
                           "Recognize achievements, celebrate milestones, and boost morale with EnKash’s all-in-one employee rewards and recognition platform.",
-                        color: "color-black",
+                        color: "color-black subHeading",
                       },
                     ]}
-                    headingTag="h5"
-                    className="f-4"
+                    headingTag="p"
+                    className=""
                   />
                 </div>
 
@@ -125,17 +121,11 @@ const EmployeeRewards = (): React.JSX.Element => {
               </div>
             </div>
             <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div
-                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
-              >
+              <div className={`${styles.right_img} position-relative w-100 h-100 d-flex`} >
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -155,7 +145,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-3"
+              className="f-5 pb-md-0 pb-3"
             />
             <div className={`${styles.second_row_line} `}></div>
           </div>
@@ -173,8 +163,8 @@ const EmployeeRewards = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-7"
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
               <div
@@ -189,7 +179,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="p"
-                  className="f-4 mb-0"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -210,7 +200,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="p"
-                  className="f-4 mb-0"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -231,7 +221,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="p"
-                  className="f-4 mb-0"
+                  className="mb-0"
                 />
               </div>
             </div>
@@ -241,7 +231,7 @@ const EmployeeRewards = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -261,7 +251,7 @@ const EmployeeRewards = (): React.JSX.Element => {
             <div className="col-md-6 col-12">
               <ScrollableCardsSection
                 cardsData={cardsData}
-                showScroll={true}
+                showScroll={false}
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
@@ -273,7 +263,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  className="w-100 h-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -282,8 +272,8 @@ const EmployeeRewards = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
-          <div className={` pb-3  d-inline`}>
+        <div className={`${styles.title} text-center  max-w-auto`}>
+          <div className={`px-3 mb-4 mb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -313,13 +303,13 @@ const EmployeeRewards = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.eigth_row} relative`}>
-        <div className={`${styles.faqSection} text-start  max-w-auto`}>
-          <div className={`${styles.title} text-start pb-md-5 pd-3`}>
+        <div className={`${styles.faqSection} text-start w-100 max-w-auto`}>
+          <div className={`${styles.title} text-start pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
-                  title: "Rewards That Work For  ",
-                  color: "color-black d-block",
+                  title: "Rewards That Work For ",
+                  color: "color-black",
                 },
                 {
                   title: "Employers and Employees! ",
@@ -355,7 +345,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-4 bannerHeading"
+              className="f-5 pb-md-0 pb-3"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -389,21 +379,21 @@ const EmployeeRewards = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h2"
-              className="f-5"
+              className="f-6"
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div className="mt-3 d-none d-md-block">
