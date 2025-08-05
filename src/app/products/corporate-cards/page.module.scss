@@ -33,15 +33,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    // height: 100%;
-    // width: 100%;
     z-index: 0;
-    // pointer-events: none; // 👈 So it doesn't block buttons
-    canvas,
-    iframe {
-      // width: 100%;
-      // height: 100%;
-    }
+   
   }
   .bannerImages {
     min-height: 150px;
@@ -50,7 +43,7 @@
       min-height: 540px;
     }
     .lottie_container {
-      pointer-events: none;
+      // pointer-events: none;
     }
   }
   .subtitle {
