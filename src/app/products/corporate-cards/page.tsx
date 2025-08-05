@@ -107,7 +107,7 @@ const CorporateCards = (): React.JSX.Element => {
                   />
                 </div>
 
-                <div className="mt-3">
+                <div className="mt-3 pointer-auto">
                   <RectangleButton
                     title="Talk to us"
                     theme="blue"
@@ -269,9 +269,12 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.action_row} bg-black-200 row-padding`}>
+            <div className={`${styles.spline_background}`}>
+              <Spline scene="https://prod.spline.design/NHBqMdtpnmCisTkz/scene.splinecode" />
+            </div>
             <div className="max-w-auto">
               <div className={`${styles.title} text-start pb-5`}>
-                <div className="flex-column justify-content-center align-items-center pb-3">
+                <div className="flex-column  pb-3">
                   <DynamicHeading
                     content={[
                       {
@@ -308,7 +311,7 @@ const CorporateCards = (): React.JSX.Element => {
               </div>
 
               <div className={`row align-items-center ${styles.section}`}>
-                <div className="col-md-6 col-12 pr-5">
+                <div className="col-md-6 col-12 ">
                   <div
                     style={{
                       display: "flex",
@@ -342,16 +345,16 @@ const CorporateCards = (): React.JSX.Element => {
                     ))}
                   </div>
                 </div>
+                <div className="col-md-6 col-12 ">
+                  <div className={styles.analytic_bg}>
+                    <Image
+                      src={spendAnalylicsImg}
+                      alt="background image"
+                      className="w-100  object-fit-contain"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-
-            {/* Image fixed bottom-right */}
-            <div className={styles.analytic_bg}>
-              <Image
-                src={spendAnalylicsImg}
-                alt="background image"
-                className="w-100 mh-550 object-fit-contain"
-              />
             </div>
           </div>
 

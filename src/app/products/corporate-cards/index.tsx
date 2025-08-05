@@ -19,7 +19,7 @@ export { default as multiCardIcon } from "./img/multi-card.svg"
 export { default as realTimeTrakingIcon } from "./img/real-time-traking.svg"
 export { default as securityIcon } from "./img/security-icon.svg"
 export { default as instantActionImg } from "./img/instant-action-img.svg"
-export { default as spendAnalylicsImg } from "./img/spend-analylics.svg"
+export { default as spendAnalylicsImg } from "./img/spend-analylics.webp"
 export { default as motherCardImg } from "./img/Card-mother.svg"
 export { default as rbiLogo } from "./img/rbi.png"
 export { default as corporateCard } from "./img/corporate-card.svg"
@@ -31,8 +31,6 @@ export { default as virtualCardImg } from "./img/virtual-card.svg"
 export { default as purchesCardImg } from "./img/purches-card.svg"
 export { default as digitalCardImg } from "./img/digital-marketing-card.svg"
 export { default as sassCardImg } from "./img/sass-card.svg"
-
-
 
 export { default as SetYourRules } from "./img/set-your-rules.webp"
 export { default as channelLevelControls } from "./img/channel-level-controls.webp"
