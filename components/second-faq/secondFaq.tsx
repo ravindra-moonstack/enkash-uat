@@ -40,7 +40,7 @@ const SECONDFAQ = ({
             ? {
                 background: "#F6F6F6",
 
-                borderRadius: "12px",
+                borderRadius: "12px 12px 0px 0px",
                 transition: "all 0.3s ease",
               }
             : {}

@@ -61,14 +61,14 @@ const ChannelIncentives = (): React.JSX.Element => {
                       color: "color-equity-blue underline",
                     },
                   ]}
-                  headingTag="h4"
-                  className="f-4"
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
+                <div className="pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -88,11 +88,11 @@ const ChannelIncentives = (): React.JSX.Element => {
                       {
                         title:
                           "Automate channel rewards with powerful channel incentive software built for partner growth and engagement.  Use a single dashboard to manage, track performance, and distribute incentives.",
-                        color: "color-black",
+                        color: "color-black subHeading",
                       },
                     ]}
-                    headingTag="h5"
-                    className="f-4"
+                    headingTag="p"
+                    className=""
                   />
                 </div>
 
@@ -130,11 +130,7 @@ const ChannelIncentives = (): React.JSX.Element => {
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -145,7 +141,7 @@ const ChannelIncentives = (): React.JSX.Element => {
 
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
-          <div className="d-inline justify-content-center  align-items-center text-center">
+          <div className="justify-content-center  align-items-center text-center">
             <DynamicHeading
               content={[
                 {
@@ -154,7 +150,7 @@ const ChannelIncentives = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-3"
+              className="f-5 mb-3 mb-md-0"
             />
             <div className={`${styles.second_row_line} `}></div>
           </div>
@@ -172,8 +168,8 @@ const ChannelIncentives = (): React.JSX.Element => {
                       color: "color-white",
                     },
                   ]}
-                  headingTag="h5"
-                  className="f-7"
+                  headingTag="h2"
+                  className="f-6"
                 />
               </div>
               <div
@@ -240,7 +236,7 @@ const ChannelIncentives = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-0 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -260,7 +256,7 @@ const ChannelIncentives = (): React.JSX.Element => {
             <div className="col-md-6 col-12">
               <ScrollableCardsSection
                 cardsData={cardsData}
-                showScroll={true}
+                showScroll={false}
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
@@ -272,11 +268,7 @@ const ChannelIncentives = (): React.JSX.Element => {
                 <Image
                   src={mealCardImage}
                   alt="card background"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "500px",
-                  }}
-                  className="w-100"
+                  className="w-100 mh-550 object-fit-contain"
                 />
               </div>
             </div>
@@ -285,8 +277,8 @@ const ChannelIncentives = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
-          <div className={` pb-3  d-inline`}>
+        <div className={`${styles.title} text-center max-w-auto`}>
+          <div className={`pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -299,7 +291,7 @@ const ChannelIncentives = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h2"
-              className="f-5"
+              className="f-6"
             />
           </div>
         </div>
@@ -326,7 +318,7 @@ const ChannelIncentives = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-4 bannerHeading"
+              className="f-5 mb-3 mb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -364,17 +356,17 @@ const ChannelIncentives = (): React.JSX.Element => {
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="f-4"
                 />
               </div>
               <div className="mt-3 d-none d-md-block">
