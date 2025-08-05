@@ -54,7 +54,7 @@ const Rewards = (): React.JSX.Element => {
             />
           </div>
           <div className="col-12 d-flex flex-column text-center">
-            <div className="  mt-3 text-center">
+            <div className="  mt-4 mb-3 text-center">
               <DynamicHeading
                 content={[
                   {
@@ -73,11 +73,11 @@ const Rewards = (): React.JSX.Element => {
                   {
                     title:
                       "Create personalized, automated, and scalable solutions for rewarding employees and driving engagement.",
-                    color: "color-dark-grey ",
+                    color: "color-dark-grey subHeading",
                   },
                 ]}
-                headingTag="h5"
-                className="f-4"
+                headingTag="p"
+                className="mb-0"
               />
             </div>
 
@@ -107,7 +107,7 @@ const Rewards = (): React.JSX.Element => {
         <div className="max-w-auto">
           <div className={`row  align-items-center ${styles.section}`}>
             <div className={`${styles.title} text-center `}>
-              <div className={`d-inline text-center pb-3`}>
+              <div className={` text-center pb-4 pb-md-5`}>
                 <DynamicHeading
                   content={[
                     {
@@ -116,7 +116,7 @@ const Rewards = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="h2"
-                  className="f-5"
+                  className="f-6"
                 />
               </div>
             </div>
@@ -165,8 +165,8 @@ const Rewards = (): React.JSX.Element => {
       </div>
 
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-5 max-w-auto`}>
-          <div className={` pb-3  d-inline`}>
+        <div className={`${styles.title} text-center  max-w-auto`}>
+          <div className={`px-3 `}>
             <DynamicHeading
               content={[
                 {
@@ -179,7 +179,7 @@ const Rewards = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h2"
-              className="f-5"
+              className="f-6"
             />
           </div>
         </div>
@@ -196,7 +196,7 @@ const Rewards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Frequently Asked Questions ( ",
+                  title: "Frequently Asked Questions (",
                   color: "color-black ",
                 },
                 {
@@ -204,26 +204,26 @@ const Rewards = (): React.JSX.Element => {
                   color: "color-equity-blue ",
                 },
                 {
-                  title: " )",
+                  title: ")",
                   color: "color-black ",
                 },
               ]}
               headingTag="h2"
-              className="f-5"
+              className="f-6"
             />
           </div>
           <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
+            <div className="mb-4">
               <div>
                 <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",
-                      color: "color-dark-grey ",
+                      color: "color-dark-grey subHeading",
                     },
                   ]}
-                  headingTag="h3"
-                  className="f-5"
+                  headingTag="p"
+                  className="m-0"
                 />
               </div>
               <div className="mt-3 d-none d-md-block">
