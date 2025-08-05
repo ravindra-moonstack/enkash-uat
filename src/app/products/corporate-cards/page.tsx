@@ -43,6 +43,7 @@ import { ScrollSmoother } from "gsap/ScrollSmoother"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
 import Link from "next/link"
+import Spline from "@splinetool/react-spline"
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP)
 
@@ -58,7 +59,10 @@ const CorporateCards = (): React.JSX.Element => {
           <TalkToSales />
 
           <div className={`${styles.first_row}`}>
-            <div className="max-w-auto">
+            <div className={`${styles.spline_background}`}>
+              <Spline scene="https://prod.spline.design/YeyN2NhsGe5UwlYK/scene.splinecode" />
+            </div>
+            <div className="max-w-auto position-relative ">
               <div className="d-flex">
                 <CustomBreadcrumb
                   items={[
@@ -112,7 +116,7 @@ const CorporateCards = (): React.JSX.Element => {
                 </div>
               </div>
               <div
-                className={`col-12 d-flex justify-content-center align-items-center `}
+                className={`col-12 d-flex justify-content-center align-items-center no-pointer`}
               >
                 <div className={styles.bannerImages}>
                   <div className={styles.lottie_container}>
