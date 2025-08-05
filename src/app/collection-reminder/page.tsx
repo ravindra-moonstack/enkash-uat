@@ -307,13 +307,17 @@ const CollectionReminders = (): React.JSX.Element => {
               </div>
             </div>
             <div className="col-md-6 col-12">
-              <div style={{ height: "400px" }}>
-                {/* <Image
-                  src={mealCardImage}
-                  alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
-                /> */}
-                <Spline scene="https://prod.spline.design/T3yZ5RLvQ94JVp-v/scene.splinecode" />
+              <div className="position-relative">
+                <div className={`${styles.spline_background}`}>
+                  <Spline scene="https://prod.spline.design/T3yZ5RLvQ94JVp-v/scene.splinecode" />
+                </div>
+                <div className={`${styles.spline_image}`}>
+                  <Image
+                    src={mealCardImage}
+                    alt="card background"
+                    className="w-100 mh-550 object-fit-contain no-pointer"
+                  />
+                </div>
               </div>
             </div>
           </div>

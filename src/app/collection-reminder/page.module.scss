@@ -210,6 +210,21 @@
       display: block;
     }
   }
+
+  .spline_background {
+    position: absolute;
+    z-index: 0;
+    // height: 400px;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+  }
+  .spline_image {
+    z-index: 1;
+    position: relative;
+    pointer-events: none;
+  }
 }
 
 .fourth_row {
@@ -224,7 +239,6 @@
     @include for-laptops {
       padding: 90px 100px 74px;
     }
-    
   }
 }
 

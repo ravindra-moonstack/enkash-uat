@@ -5,14 +5,14 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
+  // pointer-events: none;
   background-color: #292929; // set pure black
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 110px;
   padding-bottom: 36px;
-
+  position: relative;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.6),
@@ -27,11 +27,30 @@
     padding-top: 112px;
     padding-bottom: 40px;
   }
-
+  .spline_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // height: 100%;
+    // width: 100%;
+    z-index: 0;
+    // pointer-events: none; // 👈 So it doesn't block buttons
+    canvas,
+    iframe {
+      // width: 100%;
+      // height: 100%;
+    }
+  }
   .bannerImages {
     min-height: 150px;
+
     @include for-laptops {
       min-height: 540px;
+    }
+    .lottie_container {
+      pointer-events: none;
     }
   }
   .subtitle {
@@ -207,7 +226,6 @@
     }
   }
 }
-
 
 .eight_row {
   background: linear-gradient(180deg, #2e2e2e 0%, #010205 100%);
