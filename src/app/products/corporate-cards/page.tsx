@@ -62,7 +62,7 @@ const CorporateCards = (): React.JSX.Element => {
             <div className={`${styles.spline_background}`}>
               <Spline scene="https://prod.spline.design/YeyN2NhsGe5UwlYK/scene.splinecode" />
             </div>
-            <div className="max-w-auto position-relative ">
+            <div className="max-w-auto position-relative no-pointer ">
               <div className="d-flex">
                 <CustomBreadcrumb
                   items={[

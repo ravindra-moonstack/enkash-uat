@@ -10,50 +10,13 @@
 
 
 
-// const coloredLogos = [
+// const logos: never[] = [
  
 // ]
 
-// const logos = [
-//   {
-//     filled: britishAirwaysFilled,
-//     alt: "British Airways",
-//     className: styles.britishAirways,
-//   },
-//   { filled: rakutenFilled, alt: "Rakuten", className: styles.rakuten },
-//   { filled: starbucksFilled, alt: "Starbucks", className: styles.starbucks },
-//   {
-//     filled: prystnCareFilled,
-//     alt: "Pristyn Care",
-//     className: styles.prystnCare,
-//   },
-//   { filled: dtdcFilled, alt: "DTDC", className: styles.dtdc },
-//   { filled: relianceFilled, alt: "Reliance", className: styles.reliance },
-//   {
-//     filled: mahindraFinancsFilled,
-//     alt: "Mahindra Finance",
-//     className: styles.mahindraFinance,
-//   },
-//   { filled: macdonaldsFilled, alt: "MacDonalds", className: styles.macdonalds },
-//   {
-//     filled: pnbHousingFilled,
-//     alt: "PNB Housing",
-//     className: styles.pnbHousing,
-//   },
-//   { filled: adidasFilled, alt: "Adidas", className: styles.adidas },
-//   { filled: tataAigFilled, alt: "Tata AIG", className: styles.tataAig },
-//   {
-//     filled: vijaySalesFilled,
-//     alt: "Vijay Sales",
-//     className: styles.vijaySales,
-//   },
-//   { filled: behrousFilled, alt: "Behrous", className: styles.behrous },
-// ]
 
-// // ✅ Store default colored version in the same index order
 
 // const LogoSlider = () => {
-//   const [isHovered, setIsHovered] = useState(false)
 
 //   const sliderSettings = {
 //     infinite: true,
@@ -93,8 +56,8 @@
 //               className={`d-flex  justify-content-center  ${styles.logo_wrapper}`}
 //             >
 //               <Image
-//                 className={`${logo.className} ${styles.logo_img}`}
-//                 src={coloredLogos[i % logos.length]}
+//                 className={`${styles.logo_img}`}
+//                 src="logo"
 //                 alt={logo.alt}
 //               />
 //             </div>
