@@ -34,7 +34,6 @@
     right: 0;
     bottom: 0;
     z-index: 0;
-   
   }
   .bannerImages {
     min-height: 150px;
@@ -321,21 +320,25 @@
   }
 
   .analytic_bg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-width: 45%;
-    z-index: 1;
-
     img {
       width: 100%;
       height: auto;
       display: none;
+      pointer-events: none;
+      max-height: 350px;
 
       @include for-laptops {
         display: block;
       }
     }
+  }
+
+  .spline_background {
+    position: absolute;
+    // top: 0%;
+    bottom: -43%;
+    right: -52%;
+    width: 1500px;
   }
 }
 

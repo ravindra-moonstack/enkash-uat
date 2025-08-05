@@ -7,6 +7,7 @@
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 90px 20px 0px;
+  position: relative;
   background-image: url(./img/first-row-bg.svg);
   @include for-laptops {
     padding: 112px 20px 0;
@@ -48,6 +49,15 @@
       height: auto;
     }
   }
+
+  .spline_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
 }
 
 .second_row {
@@ -60,7 +70,6 @@
     padding: 90px 20px 0px;
   }
 
- 
   .section {
     padding: 50px 20px;
     :global(img) {
@@ -81,9 +90,9 @@
       }
     }
   }
- .section:nth-child(2) {
+  .section:nth-child(2) {
     padding-top: 24px;
-    @include for-laptops{
+    @include for-laptops {
       padding-bottom: 50px 20px;
     }
   }
@@ -243,9 +252,8 @@
   background-position: center;
   background-size: cover;
   position: relative;
-  @include for-laptops{
+  @include for-laptops {
     height: 100vh;
-
   }
 
   // background-image: url(./img/enkashWayBg.svg);

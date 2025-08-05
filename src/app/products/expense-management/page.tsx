@@ -63,6 +63,7 @@ import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import Link from "next/link"
+import Spline from "@splinetool/react-spline"
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -179,7 +180,10 @@ const ExpenseManagement = (): React.JSX.Element => {
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className="max-w-auto">
+        <div className={`${styles.spline_background}`}>
+          <Spline scene="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode" />
+        </div>
+        <div className="max-w-auto  position-relative">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -221,6 +225,9 @@ const ExpenseManagement = (): React.JSX.Element => {
                 headingTag="p"
                 className="f-4 text-center"
               />
+            </div>
+            <div className="mt-3 pointer-auto text-center">
+              <RectangleButton title="Talk to us" theme="blue" url="/sales/" />
             </div>
           </div>
 

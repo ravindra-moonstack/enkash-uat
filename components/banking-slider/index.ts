@@ -1,0 +1,8 @@
+export { default as hdfc } from "./img/hdfcBank.svg"
+export { default as au } from "./img/auBank.svg"
+export { default as axis } from "./img/axisBank.svg"
+export { default as dbms } from "./img/dbsBank.svg"
+export { default as icici } from "./img/iciciBank.svg"
+export { default as indusind } from "./img/indusindBank.svg"
+export { default as northEast } from "./img/northEastBank.svg"
+export { default as rbl } from "./img/rblBank.svg"
