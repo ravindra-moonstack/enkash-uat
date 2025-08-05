@@ -7,16 +7,11 @@
   background-size: cover;
   background-color: #ffffff;
   box-shadow: 0px 0px 77px 0px #0000001a;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 87px;
-  padding-bottom: 36px;
+  padding: 90px 20px 0px 20px;
   background-image: url(./img/rewardsBg.jpg);
   @include for-laptops {
-    padding-left: 70px;
-    padding-right: 70px;
-    padding-top: 112px;
-    padding-bottom: 0px;
+
+    padding: 112px 70px 0px 70px;
   }
   .lottie_container {
     position: relative;
@@ -165,22 +160,17 @@
 }
 
 .fourth_row {
-  padding: 20px 30px;
+  padding: 50px 30px;
   @include for-laptops {
-    padding: 32px 90px 32px 90px;
+    padding: 90px 20px;
   }
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
-  }
+ 
   .section {
-    gap: 32px;
-    padding: 20px 10px;
-
+    padding: 50px 8px;
     background-color: $color-sky-hint;
     @include for-laptops {
-      gap: 74px;
-      padding: 70px 0px;
+      // gap: 74px;
+      padding: 50px 0px;
     }
 
     .allInOnePolicy {
@@ -359,11 +349,10 @@
 .slider_row {
   position: relative;
   text-align: center;
-  padding: 20px;
+  padding: 0 0px;
   padding-top: 0px;
   @include for-laptops {
-    padding-top: 38px;
-    padding-bottom: 38px;
+  padding: 0 0px;
   }
 }
 
@@ -411,9 +400,9 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 20px;
+  padding: 16px 20px 50px;
   @include for-laptops {
-    padding: 96px 90px 90px 60px;
+    padding: 46px 90px 90px 60px;
   }
 
   .faq_bg {
