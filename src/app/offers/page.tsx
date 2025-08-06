@@ -12,6 +12,18 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
+  stackCardSixIcon,
+  stackCardSixImg,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -21,10 +33,87 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import RewardsCarousel from "@/components/rewards-carousel/rewards-carousel"
-import Link from "next/link"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import CardStacking from "@/components/cardStacking/cardStacking"
 
 const mergedCards = cardType.flatMap((section) => section.items)
-
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="Maximize Savings"
+          description="Unlock significant savings on various business products with exclusive discounts on our partnered services."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Top Partnered Deals"
+          description="Explore the finest corporate deals and offers from our esteemed partner brands like AWS, ClearTax, Canva, and more."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Effortless Process"
+          description="Enjoy a seamless experience with just a few clicks, making it quick and easy to access exclusive deals and offers."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="Regularly Updated Offers"
+          description="Stay ahead of the curve with the best deals for your business needs."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="Get Real-time Insights"
+          description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
 const Offers = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -269,6 +358,35 @@ const Offers = (): React.JSX.Element => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center px-0 px-md-5`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Exclusive  on partnered services ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "discounts and benefits ",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: "on partnered services",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+
+            <CardStacking cards={cards} />
+          </>
         </div>
       </div>
 

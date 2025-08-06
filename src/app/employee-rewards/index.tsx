@@ -41,3 +41,18 @@ export { default as taskIconFour } from "./img/task-icon-four.svg"
 export { default as taskIconFive } from "./img/task-icon-five.svg"
 export { default as taskIconSix } from "./img/task-icon-six.svg"
 export { default as faqBg } from "./img/secondFaq.webp"
+
+
+export { default as realTimeExpense } from "./img/real-time-expense.webp"
+export { default as fraudProtection } from "./img/fraud-protection.webp"
+export { default as streamlinedReimbursement } from "./img/streamlined-reimbursement.webp"
+export { default as costControlSavings } from "./img/cost-control-savings.webp"
+export { default as wideAcceptanceNetwork } from "./img/wide-acceptance-network.webp"
+export { default as stackCardSixImg } from "./img/stackCard-six-image.webp"
+
+export { default as realTimeExpenseIcon } from "./img/real-time-icon.svg"
+export { default as fraudProtectionIcon } from "./img/fraud-protection-icon.svg"
+export { default as streamlinedReimbursementIcon } from "./img/streamlined-reimbursement-icon.svg"
+export { default as costControlSavingsIcon } from "./img/cost-control-savings-icon.svg"
+export { default as wideAcceptanceNetworkIcon } from "./img/wide-acceptance-network-icon.svg"
+export { default as stackCardSixIcon } from "./img/stackCard-six-icon.svg"
