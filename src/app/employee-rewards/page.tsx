@@ -13,6 +13,18 @@ import {
   activationIcon,
   realTimeIcon,
   faqBg,
+  realTimeExpenseIcon,
+  realTimeExpense,
+  fraudProtectionIcon,
+  fraudProtection,
+  streamlinedReimbursementIcon,
+  streamlinedReimbursement,
+  costControlSavingsIcon,
+  costControlSavings,
+  wideAcceptanceNetworkIcon,
+  wideAcceptanceNetwork,
+  stackCardSixIcon,
+  stackCardSixImg,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -23,9 +35,102 @@ import ScrollableCardsSection from "@/components/scrollable-cards-section/scroll
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import RewardsCarousel from "@/components/rewards-carousel/rewards-carousel"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import CardStacking from "@/components/cardStacking/cardStacking"
 
 const mergedCards = cardType.flatMap((section) => section.items)
-
+const cards = [
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={realTimeExpenseIcon}
+          title="Personalized Recognition "
+          description="Tailor rewards to individual preferences by offering flexible and customizable options, creating a more meaningful experience that fosters loyalty, boosts morale, and strengthens workplace culture."
+          image={realTimeExpense}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Instant Allocation & Redemption"
+          description="Reward employees in real time using WhatsApp, email, and SMS, making the process seamless, efficient, and instantly gratifying for recipients, encouraging a more engaged and motivated workforce."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Diverse Rewards "
+          description="Choose from 400+ brands across entertainment, fashion, travel, dining, and more, ensuring every employee finds something they truly value and appreciate, enhancing their motivation and job satisfaction."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="HRMS Integration"
+          description="Automate reward allocation by integrating seamlessly with your HRMS, eliminating manual processes, reducing administrative workload, and ensuring accurate, hassle-free employee recognition at every stage."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="Open Voucher Function"
+          description="Issue open vouchers on the dashboard & reward winners on the spot by sharing QR Codes via WhatsApp or email, integrated with their login codes. The recipient can redeem the reward by scanning the QR code received."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={stackCardSixIcon}
+          title="Data-Driven Insights"
+          description="Track engagement, monitor reward effectiveness, and optimize your recognition strategy with comprehensive analytics and reporting tools that provide actionable insights for enhancing employee motivation and performance."
+          image={stackCardSixImg}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
 const EmployeeRewards = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -52,7 +157,9 @@ const EmployeeRewards = (): React.JSX.Element => {
                   ]}
                 />
               </div>
-              <div className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `} >
+              <div
+                className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
+              >
                 <DynamicHeading
                   content={[
                     {
@@ -64,7 +171,9 @@ const EmployeeRewards = (): React.JSX.Element => {
                   className="mb-0"
                 />
               </div>
-              <div className={`text-center text-md-start ${styles.first_row_content}  `} >
+              <div
+                className={`text-center text-md-start ${styles.first_row_content}  `}
+              >
                 <div className=" pt-4 pt-md-0">
                   <DynamicHeading
                     content={[
@@ -121,7 +230,9 @@ const EmployeeRewards = (): React.JSX.Element => {
               </div>
             </div>
             <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div className={`${styles.right_img} position-relative w-100 h-100 d-flex`} >
+              <div
+                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
+              >
                 <Image
                   src={paymentSummary}
                   alt="card visual"
@@ -268,6 +379,35 @@ const EmployeeRewards = (): React.JSX.Element => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <div className={`${styles.title} text-center px-0 px-md-5`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Promote  ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Productivity & Engagement ",
+                    color: "color-equity-blue",
+                  },
+                  {
+                    title: "with Recognition Programs for Employees",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+
+            <CardStacking cards={cards} />
+          </>
         </div>
       </div>
 
