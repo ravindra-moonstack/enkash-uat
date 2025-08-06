@@ -263,9 +263,9 @@
 .slider_row {
   position: relative;
   text-align: center;
-  padding: 0px 20px 50px;
+  padding: 50px 20px 50px;
   @include for-laptops {
-    padding: 0px 20px 90px;
+    padding: 90px 20px 90px;
   }
 }
 
@@ -358,6 +358,18 @@
     padding-bottom: 0px;
     @include for-laptops {
       padding-bottom: 172px;
+    }
+  }
+}
+
+.card_stacking_row {
+  padding: 0px 20px;
+
+  .section {
+    padding: 50px 20px 0px;
+    background: #f6f6f6;
+    @include for-laptops {
+      padding: 90px 0px 50px;
     }
   }
 }
