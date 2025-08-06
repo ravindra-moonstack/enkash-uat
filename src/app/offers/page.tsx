@@ -35,6 +35,7 @@ import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import RewardsCarousel from "@/components/rewards-carousel/rewards-carousel"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
+import Link from "next/link"
 
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = [
