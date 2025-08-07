@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allProductSections, cardData, cardsData } from "./data"
+import { allProductSections, cardData, cardsData, stackcardData } from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
 
 import { Header, Footer, FAQHtml } from "@/components"
@@ -46,40 +46,38 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import EnkashWay from "@/components/enkash-way/enkash-way"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-// import CardStacking from "@/components/cardStacking/cardStacking"
-// import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import CardStacking from "@/components/cardStacking/cardStacking"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import Link from "next/link"
-import React, { Suspense } from "react"
+import React from "react"
+import SplineAnimation from "@/components/splineAnimation/splineAnimation"
 // import Spline from "@splinetool/react-spline"
-const Spline = React.lazy(() => import("@splinetool/react-spline"))
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
-// const cards = stackcardData.map((item:any) => ({
-//   color: item.color,
-//   content: (
-//     <AllInOnePolicy
-//       icon={item.icon}
-//       title={item.title}
-//       description={item.description}
-//       image={item.image}
-//       buttonUrl={item.buttonUrl}
-//       maxImageHeight="300px"
-//     />
-//   ),
-// }));
+const cards = stackcardData.map((item: any) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={item.buttonUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const ExpenseManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className={""}>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Spline scene="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode" />
-          </Suspense>
+        <div className={`${styles.spline_background}`}>
+          <SplineAnimation />
         </div>
-        <div className="max-w-auto  position-absolute top-0">
+        <div className="max-w-auto  position-relative no-pointer">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -141,7 +139,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.second_row}>
+      <div className={`${styles.second_row}  bg_white_index`}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center`}>
             <DynamicHeading
@@ -414,7 +412,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.fifth_row} bg-white `}>
+      <div className={`${styles.fifth_row} bg_white_index`}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-4 pb-md-5`}>
             <DynamicHeading
@@ -462,7 +460,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.third_row}>
+      <div className={`${styles.third_row} bg_white_index`}>
         <div className={`relative max-w-auto`}>
           <div className={`${styles.title} text-start `}>
             <DynamicHeading
@@ -537,7 +535,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      {/* <div className={styles.card_stacking_row}>
+      <div className={`${styles.card_stacking_row} bg_white_index`}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
             <div className={`${styles.title} text-center px-md-5`}>
@@ -564,7 +562,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             <CardStacking cards={cards} />
           </>
         </div>
-      </div> */}
+      </div>
 
       <div className={`${styles.eigth_row} relative`}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>
@@ -599,7 +597,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.seventh_row} `}>
+      <div className={`${styles.seventh_row} bg_white_index`}>
         <div className={`${styles.title} text-center`}>
           <div
             className={` flex-column justify-content-center align-items-center `}
@@ -630,7 +628,9 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.sixth_row} row d-flex bg-white `}>
+      <div
+        className={`${styles.sixth_row} bg_white_index row d-flex bg-white `}
+      >
         <EnkashWay
           sectionHeading="One Platform, Every Use Case, Total Control"
           progressItemPadding="15px 12px"
@@ -687,7 +687,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.blueBackGroundSection} `}>
+      <div className={`${styles.blueBackGroundSection} bg_white_index`}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
             <DynamicHeading
@@ -713,7 +713,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
+      <div className={`${styles.faq_new_row} bg_white_index relative`}>
         <div className={`${styles.faqSection} text-start max-w-auto `}>
           <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
             <DynamicHeading
