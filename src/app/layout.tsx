@@ -4,8 +4,10 @@ import "./globals.css"
 import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Inter } from "next/font/google"
-import ScrollToTop from "@/components/scroll-to-top/ScrollToTop"
-import SmoothWrapper from "@/components/smoothWrapper/page"
+// import ScrollToTop from "@/components/scroll-to-top/ScrollToTop"
+// import SmoothWrapper from "@/components/smoothWrapper/page"
+import { Suspense } from "react"
+import LenisProvider from "../provider/LenisProvider"
 
 export const dynamic = "force-dynamic"
 
@@ -32,8 +34,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <SmoothWrapper>{children}</SmoothWrapper>
-
+        <Suspense fallback={<div style={{ height: "300px" }}>Loading...</div>}>
+          <LenisProvider>{children}</LenisProvider>
+        </Suspense>
         {/* <ScrollToTop /> */}
       </body>
     </html>
