@@ -279,30 +279,17 @@ const MainCategoryPage = async ({
         </>
       ) : (
         <div className={`color-white ${styles.error_container}`}>
-          <div className={`${styles.first_row} row color-white`}>
-            <div className="col-md-10 mx-auto col-12 d-flex flex-column align-items-center py-5">
-              <div className="d-flex mb-4">
-                <Heading
-                  title="The Category you are looking for is not present"
-                  color="black"
-                  size="h2"
-                  weight="7"
-                />
-              </div>
-              <div className="d-flex flex-column">
-                <Heading
-                  title="Explore more on Bolt"
-                  color="black"
-                  size="h2"
-                  weight="7"
-                />
-              </div>
-
-              <div className="mt-4 desktop-only"></div>
-              <div className="mt-5">
-                <span className="mx-2"></span>
-              </div>
-            </div>
+          <div className={`${styles.first_row} color-white`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "The Category you are looking for is not present",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
+            />
           </div>
         </div>
       )}

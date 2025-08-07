@@ -46,7 +46,7 @@ export default function SliderComponent({
     slidesToScroll: 1,
     speed: 1000, // 1 sec fade
     autoplay: true, // 🔑
-    autoplaySpeed: 3000, // 3 sec delay between fades
+    autoplaySpeed: 2000, // 3 sec delay between fades
     cssEase: "linear",
   }
 
@@ -65,7 +65,7 @@ export default function SliderComponent({
                         : slide.backgroundImage.src
                     }')`
                   : slide.backgroundColor,
-                // backgroundSize: "100%",
+                backgroundSize: "cover",
                 backgroundPosition: "top center",
                 backgroundRepeat: "no-repeat",
                 width: "100%",

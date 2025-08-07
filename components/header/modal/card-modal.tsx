@@ -13,11 +13,9 @@ const CardModal = ({
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
   return (
-    <div>
-      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
-
-      <div className={` ${styles.container} `}>
-        <div className="d-flex gap-3">
+    <div className={styles.cardModal}>
+      <div className={` ${styles.container}`}>
+        <div className="d-flex gap-3 justify-content-center">
           {cardsProducts.map((mother, i) => {
             const subProducts =
               mother.subProducts || mother.payableProducts || []
@@ -37,7 +35,7 @@ const CardModal = ({
                   parentLink={mother.link}
                 />
                 <div className={styles.exploreProduct}>
-                  <Link href="/corporate-card">
+                  <Link href="/products/corporate-cards">
                     <h4 className="mb-1">Explore Corporate Cards </h4>
                   </Link>
                 </div>

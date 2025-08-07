@@ -133,9 +133,9 @@ const WebHeader = ({ utmSource }: props) => {
                   className={styles.arrow}
                   style={{
                     left: `calc(${modalLeft}px - 8px)`, // 8px is half arrow width
-                    top: "140%",
+                    top: "132%",
                     position: "absolute",
-                    zIndex: 10,
+                    zIndex: 0,
                     // bottom: "0%",
                   }}
                 />
@@ -183,7 +183,7 @@ const WebHeader = ({ utmSource }: props) => {
           </div>
         </nav>
 
-        <div className="max-w-auto">
+        <div className="max-width-auto">
           {/* {true && (
             <PartnershipModal
               onLinkClick={handleLinkClick}
