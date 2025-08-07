@@ -838,8 +838,6 @@ const FooterV2 = () => {
           <p>Mumbai</p>
           <div className={styles.vr}></div>
           <p> Pune</p>
-          <div className={styles.vr}></div>
-          <p>Bengaluru</p>
         </div>
         <div className={styles.lineBlue}></div>
       </div>
@@ -858,8 +856,6 @@ const FooterV2 = () => {
           <p>Mumbai</p>
           <div className={`${styles.ar}`}></div>
           <p> Pune</p>
-          <div className={`${styles.ar}`}></div>
-          <p>Bengaluru</p>
         </div>
       </div>
     </div>
