@@ -51,11 +51,11 @@ export const motherProducts = [
   {
     name: "Collect Payments",
     description: "Fastest & secure payment gateway offerings",
-    link: "/products/collect-payments",
+    link: "/collect-payments",
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/products/collect-payments",
+        subtitleLink: "/collect-payments",
         currentHeading: {
           name: "Collect Payments",
           description: "Get paid faster with customized PG solutions",
@@ -151,11 +151,11 @@ export const motherProducts = [
   {
     name: "Make Payments",
     description: "Manage all types of business payments",
-
+    link: "/make-payments",
     payableProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/products/make-payments",
+        subtitleLink: "/make-payments",
         currentHeading: {
           name: "Make Payments",
           description: "Manage all types of business payments",
@@ -213,14 +213,15 @@ export const motherProducts = [
       },
     ],
   },
+
   {
     name: "Payable & Receivable+",
     description: "Manage all types of business payments",
-   
+    link: "/make-payments",
     payableProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/products/make-payments",
+        subtitleLink: "/make-payments",
         currentHeading: {
           name: "Make Payments",
           description: "Manage all types of business payments",
@@ -231,7 +232,7 @@ export const motherProducts = [
 
             imageSrc: collectionReminderFilled,
             imageSrcHovered: collectionReminderFilled,
-            link: "/collection-reminder",
+            link: "/collection-reminders",
           },
           {
             name: "Vendor Management",
@@ -263,18 +264,18 @@ export const motherProducts = [
             link: "/collection-analytics",
           },
           {
-            name: "Connected Banking",
+            name: "Seamless Banking",
 
             imageSrc: seamlessBanking,
             imageSrcHovered: seamlessBankingFilled,
-            link: "/connected-banking",
+            link: "/seemless-banking",
           },
           {
             name: "Auto Reconciliation",
 
             imageSrc: autoReconciliation,
             imageSrcHovered: autoReconciliationFilled,
-            link: "/auto-reconciliation",
+            link: "/auto-reconcillation",
           },
 
           {
