@@ -678,14 +678,6 @@ const FooterV2 = () => {
                       <li>
                         <Link href="/saas-card/">SaaS Card</Link>
                       </li>
-
-                      <li>
-                        <Link href="/multi-wallet-card">Multi Wallet Card</Link>
-                      </li>
-                      <li>
-                        <Link href="/fleet-card/">Fleet Card</Link>
-                      </li>
-
                       <li>
                         <Link href="/travel-and-expense-card">T & E Cards</Link>
                       </li>
