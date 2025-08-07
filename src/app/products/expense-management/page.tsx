@@ -187,7 +187,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             <Spline scene="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode" />
           </Suspense>
         </div>
-        <div className="max-w-auto  position-relative">
+        <div className="max-w-auto  position-absolute top-0">
           <div className="d-flex">
             <CustomBreadcrumb
               items={[
@@ -645,7 +645,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={styles.card_stacking_row}>
+      {/* <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
             <div className={`${styles.title} text-center px-md-5`}>
@@ -672,7 +672,7 @@ const ExpenseManagement = (): React.JSX.Element => {
             <CardStacking cards={cards} />
           </>
         </div>
-      </div>
+      </div> */}
 
       <div className={`${styles.eigth_row} relative`}>
         <div className={`${styles.faqSection} text-start  max-w-auto`}>

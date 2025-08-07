@@ -5,6 +5,7 @@ import "bootstrap/dist/css/bootstrap.css"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { Inter } from "next/font/google"
 import ScrollToTop from "@/components/scroll-to-top/ScrollToTop"
+import SmoothWrapper from "@/components/smoothWrapper/page"
 
 export const dynamic = "force-dynamic"
 
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        {children}
+        <SmoothWrapper>{children}</SmoothWrapper>
 
         {/* <ScrollToTop /> */}
       </body>
