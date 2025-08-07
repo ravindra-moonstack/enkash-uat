@@ -151,7 +151,7 @@ export const motherProducts = [
   {
     name: "Make Payments",
     description: "Manage all types of business payments",
-    link: "/products/make-payments",
+
     payableProducts: [
       {
         subtitle: "Default",
@@ -216,7 +216,7 @@ export const motherProducts = [
   {
     name: "Payable & Receivable+",
     description: "Manage all types of business payments",
-    link: "/products/make-payments",
+   
     payableProducts: [
       {
         subtitle: "Default",
@@ -263,11 +263,11 @@ export const motherProducts = [
             link: "/collection-analytics",
           },
           {
-            name: "Seamless Banking",
+            name: "Connected Banking",
 
             imageSrc: seamlessBanking,
             imageSrcHovered: seamlessBankingFilled,
-            link: "/seemless-banking",
+            link: "/connected-banking",
           },
           {
             name: "Auto Reconciliation",

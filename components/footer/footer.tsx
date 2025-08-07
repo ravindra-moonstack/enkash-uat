@@ -403,10 +403,6 @@ const FooterV2 = () => {
                     regulations and/or compliance maintained by banks and
                     regulated entities. EnKash is not a bank and does not hold
                     or claim to hold a banking license.{" "}
-                    <div className="color-alternate-grey">
-                      *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s
-                      PA (Online) authorization.
-                    </div>
                   </div>
                 </div>
 
@@ -458,9 +454,6 @@ const FooterV2 = () => {
                       </li>
                       <li>
                         <Link href="/auto-collect/">Auto Collect</Link>
-                      </li>
-                      <li>
-                        <Link href="/virtual-accounts/">Virtual Accounts</Link>
                       </li>
                       <li>
                         <Link href="/e-nach/">e-NACH</Link>
@@ -833,10 +826,6 @@ const FooterV2 = () => {
             by RBI-licensed banks and/or in accordance with RBI regulations
             and/or compliance maintained by banks and regulated entities. EnKash
             is not a bank and does not hold or claim to hold a banking license.{" "}
-            <div className="color-alternate-grey">
-              *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s PA
-              (Online) authorization.
-            </div>
           </div>
         </div>
       </div>

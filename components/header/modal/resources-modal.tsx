@@ -5,7 +5,7 @@ import resourseProducts from "../data/resources"
 
 const ResourcesModal = ({
   onLinkClick,
-
+  modalLeft,
 }: {
   onLinkClick?: () => void
   modalLeft: number
@@ -13,9 +13,14 @@ const ResourcesModal = ({
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
   return (
-    <div>
-      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
-
+    <div
+      className={styles.modal_wrapper}
+      style={{
+        left: `calc(${modalLeft}px - 8px)`,
+        top: "89px",
+      }}
+      onMouseLeave={onLinkClick}
+    >
       <div className={` ${styles.container} `}>
         <div className="d-flex gap-3">
           {resourseProducts.map((mother, i) => {

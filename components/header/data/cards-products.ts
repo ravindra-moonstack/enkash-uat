@@ -11,8 +11,6 @@ import {
   fuelCardFilled,
   purchaseCard,
   purchaseCardFilled,
-  multiWallatCardFilled,
-  fleetCardFilled,
   giftFilled,
 } from "../../header"
 export const cardsProducts = [
@@ -36,13 +34,7 @@ export const cardsProducts = [
             imageSrcHovered: mealCardFilled,
             link: "/meal-card",
           },
-          {
-            name: "Multi Wallet Card",
-            description: "One card, multiple budgets",
-            imageSrc: multiWallatCardFilled,
-            imageSrcHovered: multiWallatCardFilled,
-            link: "/multi-wallet-card",
-          },
+       
           {
             name: "Fuel Cards",
             description: "Track and limit fuel spends",
@@ -50,13 +42,7 @@ export const cardsProducts = [
             imageSrcHovered: fuelCardFilled,
             link: "/fuel-card",
           },
-          {
-            name: "Fleet Card",
-            description: "Simplify logistics and fuel spends",
-            imageSrc: fleetCardFilled,
-            imageSrcHovered: fleetCardFilled,
-            link: "/fleet-card",
-          },
+        
           {
             name: "Digital Marketing Cards",
             description: "Budgeted ads, zero overspending",
@@ -91,7 +77,7 @@ export const cardsProducts = [
     name: "Credit Cards",
     subtitle: " Corporate Cards",
     description: "Flexible credit card solutions",
-    link: "/credit-cards",
+  link: "",
     payableProducts: [
       {
         subtitle: "Default",

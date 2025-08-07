@@ -1,12 +1,13 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import Image from "next/image"
 import Slider from "react-slick"
-import styles from "./logo-slider.module.scss"
+import styles from "./banking-slider.module.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import { hdfc, au, axis, dbms, icici, indusind, northEast, rbl } from "./index"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 const logos = [
   { src: hdfc, alt: "HDFC Bank" },
@@ -40,7 +41,23 @@ const BankLogoSlider = () => {
   }
 
   return (
-    <div className="col-12">
+    <div className={`col-12 ${styles.banking_wrapper}`}>
+      <div className={`${styles.title} text-center  pb-3 `}>
+        <DynamicHeading
+          content={[
+            {
+              title: "Connect Instantly with ",
+              color: "color-black",
+            },
+            {
+              title: "Top Indian Banks",
+              color: "color-equity-blue",
+            },
+          ]}
+          headingTag="h2"
+          className="f-6"
+        />
+      </div>
       <div className={styles.marquee_box}>
         <Slider {...sliderSettings}>
           {[...logos, ...logos].map((logo, i) => (

@@ -1,6 +1,9 @@
 @use "/styles/mixin" as *;
 @use "/styles/variables" as *;
-
+.banking_wrapper{
+  background-color: #F5F5F5;
+  padding: 50px 0px;
+}
 .marquee_box {
   display: block;
   cursor: pointer;
@@ -23,8 +26,6 @@
 //   text-align: center;
 // }
 .logo_img {
-  filter: grayscale(100%);
-  transition: filter 0.5s ease-in-out;
   object-fit: contain;
   height: auto;
   width: 100%;

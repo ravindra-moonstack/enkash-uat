@@ -6,6 +6,7 @@ import Link from "next/link"
 
 const CardModal = ({
   onLinkClick,
+  modalLeft,
 }: {
   onLinkClick?: () => void
   modalLeft: number
@@ -13,9 +14,14 @@ const CardModal = ({
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
   return (
-    <div>
-      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
-
+    <div
+      className={styles.modal_wrapper}
+      style={{
+        left: `calc(${modalLeft}px - 8px)`,
+        top: "89px",
+      }}
+      onMouseLeave={onLinkClick}
+    >
       <div className={` ${styles.container} `}>
         <div className="d-flex gap-3">
           {cardsProducts.map((mother, i) => {
