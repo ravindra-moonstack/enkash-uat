@@ -6,7 +6,20 @@ import Slider from "react-slick"
 import styles from "./banking-slider.module.scss"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { hdfc, au, axis, dbms, icici, indusind, northEast, rbl } from "./index"
+import {
+  hdfc,
+  au,
+  axis,
+  dbms,
+  icici,
+  indusind,
+  northEast,
+  rbl,
+  suryoday,
+  kotak,
+  yes,
+  nsdlBank,
+} from "./index"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 const logos = [
@@ -16,8 +29,12 @@ const logos = [
   { src: dbms, alt: "DBS Bank" },
   { src: icici, alt: "ICICI Bank" },
   { src: indusind, alt: "IndusInd Bank" },
+  { src: suryoday, alt: "Suryoday Bank" },
   { src: northEast, alt: "North East Bank" },
   { src: rbl, alt: "RBL Bank" },
+  { src: kotak, alt: "Kotak Bank" },
+  { src: yes, alt: "Yes Bank" },
+  { src: nsdlBank, alt: "Nsdl Bank" },
 ]
 
 const BankLogoSlider = () => {

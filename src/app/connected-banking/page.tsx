@@ -305,6 +305,9 @@ const ConnectedBanking = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      <div>
+        <BankLogoSlider />
+      </div>
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
@@ -333,9 +336,7 @@ const ConnectedBanking = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <div className={styles.sixth_row}>
-        <BankLogoSlider />
-      </div>
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
