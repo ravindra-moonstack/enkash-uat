@@ -1,6 +1,5 @@
 "use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import {
   acceleratedGrowthData,
@@ -12,7 +11,7 @@ import {
   supportData,
 } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header,  FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -93,8 +92,6 @@ const PaymentGateway = (): React.JSX.Element => {
                     headingTag="h1"
                     className="f-7"
                   />
-
-                  <div></div>
                 </div>
 
                 <div className="d-flex mt-3 mb-3 pe-5 text-center text-md-start ">
@@ -155,7 +152,7 @@ const PaymentGateway = (): React.JSX.Element => {
         <LogoSlider />
       </div>
 
-      <div className={`row ${styles.second_row} `}>
+      <div className={` ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <DynamicHeading

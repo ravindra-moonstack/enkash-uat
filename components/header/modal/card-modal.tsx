@@ -6,7 +6,6 @@ import Link from "next/link"
 
 const CardModal = ({
   onLinkClick,
-  modalLeft,
 }: {
   onLinkClick?: () => void
   modalLeft: number
@@ -14,14 +13,9 @@ const CardModal = ({
   const [prevHoveredProductIndex] = useState<null | number>(null)
 
   return (
-    <div
-      className={styles.modal_wrapper}
-      style={{
-        left: `calc(${modalLeft}px - 8px)`,
-        top: "89px",
-      }}
-      onMouseLeave={onLinkClick}
-    >
+    <div>
+      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
+
       <div className={` ${styles.container} `}>
         <div className="d-flex gap-3">
           {cardsProducts.map((mother, i) => {
@@ -43,7 +37,7 @@ const CardModal = ({
                   parentLink={mother.link}
                 />
                 <div className={styles.exploreProduct}>
-                  <Link href="/products/corporate-cards">
+                  <Link href="/corporate-card">
                     <h4 className="mb-1">Explore Corporate Cards </h4>
                   </Link>
                 </div>

@@ -5,7 +5,6 @@ import SubProduct from "./sub-product"
 
 const PaymentModal = ({
   onLinkClick,
-  modalLeft,
 }: {
   onLinkClick?: () => void
   modalLeft: number
@@ -23,14 +22,9 @@ const PaymentModal = ({
   }
 
   return (
-    <div
-      className={styles.modal_wrapper}
-      style={{
-        left: `calc(${modalLeft}px - 8px)`,
-        top: "89px",
-      }}
-      onMouseLeave={onLinkClick}
-    >
+    <div className=" ">
+      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
+
       <div className={` max-w-auto  ${styles.container}`}>
         <div className="d-flex gap-3">
           {motherProducts.map((mother, i) => {

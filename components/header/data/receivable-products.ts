@@ -114,7 +114,7 @@ const ReceivableProducts = [
         description: "Accept payments quick & easy",
         imageSrc: qrCode,
         imageSrcHovered: qrCodeFilled,
-        link: "/qr-code",
+        link: "/qr-codes",
         new: false,
         comingSoon: false,
       },

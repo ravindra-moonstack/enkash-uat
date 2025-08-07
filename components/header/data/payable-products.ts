@@ -64,9 +64,16 @@ const payableProducts = [
         description: "Make rental payments directly into landlord's account",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
-        link: "/rent-payment",
+        link: "/rental-payment",
       },
-
+      // {
+      //   name: "Pay By Any Card",
+      //   description:
+      //     "Pay your business utility bills, GST and vendor payments via any card",
+      //   imageSrc: payByAnyCard,
+      //   imageSrcHovered: payByAnyCardFilled,
+      //   link: "/make-payments/pay-by-any-card",
+      // },
       {
         name: "Invoice Management",
         description: "Upload & manage all vendor invoices at one place",

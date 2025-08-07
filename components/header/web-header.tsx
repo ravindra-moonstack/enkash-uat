@@ -218,7 +218,6 @@ const WebHeader = ({ utmSource }: props) => {
             <PartnershipModal
               onLinkClick={handleLinkClick}
               modalLeft={modalLeft}
-              
             />
           )}
         </div>
