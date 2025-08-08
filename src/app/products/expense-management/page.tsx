@@ -51,6 +51,7 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import Link from "next/link"
 import React from "react"
 import SplineAnimation from "@/components/splineAnimation/splineAnimation"
+// import ContentShowcase from "@/components/contentShowcase/contentShowcase"
 // import Spline from "@splinetool/react-spline"
 
 const showScroll = cardsData.length > 3
@@ -138,6 +139,20 @@ const ExpenseManagement = (): React.JSX.Element => {
           <LogoSlider />
         </div>
       </div>
+      {/* <div className="bg_white_index">
+        <ContentShowcase
+          mainHeading={[
+            { title: "No Missed Spends.", color: "color-black" },
+            { title: " No Manual Effort.", color: "color-equity-blue" },
+          ]}
+          heading="Expense Creation via Any Channel - Powered by Advanced AI"
+          subheading="Capture expenses effortlessly - anytime, anywhere with intelligent automation across WhatsApp, email, app, and more."
+          data={integrationData}
+          imageSrc={advanceAi}
+          imageAlt="card background"
+          reverse
+        />
+      </div> */}
 
       <div className={`${styles.second_row}  bg_white_index`}>
         <div className="max-w-auto">
