@@ -1,11 +1,32 @@
 "use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
+import Link from "next/link"
+import React from "react"
 import { allProductSections, cardData, cardsData, stackcardData } from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
+import {
+  Header,
+  Footer,
+  FAQHtml,
+  ContentShowcase,
+  AllInOnePolicy,
+  SplineAnimation,
+  DynamicHeading,
+  EnkashWay,
+  LottieDynamicLoadComponent,
+  TalkToSales,
+  AllProducts,
+  SecondFaqHtml,
+  CustomBreadcrumb,
+  LogoSlider,
+  RectangleButton,
+  CardStacking,
+  FeatureSpotlight,
+  SmartPolicySection,
+  CTASection,
+} from "@/components"
 
-import { Header, Footer, FAQHtml } from "@/components"
-// import EnkashWay from "@/components/enkash-way/enkash-way"
 import {
   faqBg,
   blueArrow,
@@ -22,18 +43,12 @@ import {
   consultancyIcon,
   pharmacyIcon,
 } from "."
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import {
   dashboardData,
   integrationData,
   paymentMethodData,
   rankData,
 } from "./data"
-import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
 import bg1 from "./img/bg4.jpg"
 import bg2 from "./img/bg3.jpg"
 import bg3 from "./img/bg2.jpg"
@@ -41,19 +56,6 @@ import bg4 from "./img/bg1.jpg"
 import bg5 from "./img/bg6.jpg"
 import bg6 from "./img/bg5.jpg"
 
-import AllProducts from "@/components/all-products/all-products"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
-import EnkashWay from "@/components/enkash-way/enkash-way"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import Link from "next/link"
-import React from "react"
-import SplineAnimation from "@/components/splineAnimation/splineAnimation"
-// import ContentShowcase from "@/components/contentShowcase/contentShowcase"
-// import Spline from "@splinetool/react-spline"
-const CardStacking = React.lazy(() => import("@/components/cardStacking/cardStacking"))
-const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item: any) => ({
   color: item.color,
@@ -138,7 +140,8 @@ const ExpenseManagement = (): React.JSX.Element => {
           <LogoSlider />
         </div>
       </div>
-      {/* <div className="bg_white_index">
+
+      <div className="bg_white_index">
         <ContentShowcase
           mainHeading={[
             { title: "No Missed Spends.", color: "color-black" },
@@ -151,402 +154,63 @@ const ExpenseManagement = (): React.JSX.Element => {
           imageAlt="card background"
           reverse
         />
-      </div> */}
-
-      <div className={`${styles.second_row}  bg_white_index`}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "No Missed Spends.",
-                  color: "color-black",
-                },
-                {
-                  title: " No Manual Effort.",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-
-          {/* Section 1 */}
-          <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Expense Creation via Any Channel - Powered by Advanced AI",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className="f-5"
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Capture expenses effortlessly - anytime, anywhere with intelligent automation across WhatsApp, email, app, and more.",
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="f-4 mt-2 mb-0"
-                />
-              </div>
-              <div className={` ${styles.payment_section}`}>
-                {integrationData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get Started  Today "
-                  theme="outline-blue"
-                  url="/sales/?source=expense_management"
-                />
-              </div>
-            </div>
-            <div className={`col-md-6 col-12 order-2 order-md-2 `}>
-              <div className="text-end">
-                <Image
-                  src={advanceAi}
-                  alt="card background"
-                  className="position-relative w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Section 2 */}
-          <div
-            className={`bg-color-soft-mint pb-[50px] pt-[50px]  ${styles.section}`}
-          >
-            <div className="row align-items-center">
-              <div className={`col-md-6 col-12  order-2 order-md-1`}>
-                <div>
-                  <Image
-                    src={receipt}
-                    alt="card background"
-                    className="position-relative w-100 mh-550 object-fit-contain"
-                  />
-                </div>
-              </div>
-              <div className="col-md-6 col-12 order-1 order-md-2">
-                <div className={`d-flex flex-column ${styles.subtitle}`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Travel Requests & Per Diem – Plan Ahead, Stay Within Budget",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h4"
-                    className="f-5"
-                  />
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Let employees plan trips easily with automated per diem and compliance.",
-                        color: "color-main-grey",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="f-4 mt-2 mb-0"
-                  />
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "32px",
-                  }}
-                >
-                  {paymentMethodData.map(({ icon, title, description }, i) => (
-                    <div key={i} style={{ direction: "ltr" }}>
-                      <PolicyCard
-                        icon={icon}
-                        title={title}
-                        description={description}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className={`${styles.list_button}`}>
-                  <RectangleButton
-                    title="Get Started  Today "
-                    theme="outline-blue"
-                    url="/sales/?source=expense_management"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Section 3 */}
-          <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12  px-md-5 order-1 order-md-1">
-              <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "UPI- Based Petty Cash",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className="f-5"
-                />
-                <DynamicHeading
-                  content={[
-                    {
-                      title:
-                        "Turn petty cash chaos into controlled digital spending with real-time visibility and approvals.",
-                      color: "color-main-grey",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="f-4 mt-2 mb-0"
-                />
-              </div>
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "32px",
-                }}
-              >
-                {dashboardData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <PolicyCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get Started  Today "
-                  theme="outline-blue"
-                  url="/sales/?source=expense_management"
-                />
-              </div>
-            </div>
-            <div className={`col-md-6 col-12   order-2 order-md-2`}>
-              <div>
-                <Image
-                  src={upi}
-                  alt="card background"
-                  className="position-relative w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* Section 4 */}
-          <div
-            className={`bg-color-soft-mint pb-[50px] pt-[50px] ${styles.section}`}
-          >
-            <div className="row align-items-center">
-              <div className={`col-md-6 col-12  order-2 order-md-1`}>
-                <div>
-                  <Image
-                    src={walletExpense}
-                    alt="card background"
-                    className="position-relative w-100 mh-550 object-fit-contain"
-                  />
-                </div>
-              </div>
-              <div className="col-md-6 col-12  order-1 order-md-2">
-                <div className={`d-flex flex-column ${styles.subtitle}`}>
-                  <DynamicHeading
-                    content={[
-                      {
-                        title: "Employee Reimbursements with Smart Wallets",
-                        color: "color-black",
-                      },
-                    ]}
-                    headingTag="h4"
-                    className="f-5"
-                  />
-                  <DynamicHeading
-                    content={[
-                      {
-                        title:
-                          "Automate category-wise allowances, get instant access to funds, and breeze through compliance.",
-                        color: "color-main-grey",
-                      },
-                    ]}
-                    headingTag="p"
-                    className="f-4 mt-2 mb-0"
-                  />
-                </div>
-                <div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "32px",
-                  }}
-                >
-                  {rankData.map(({ icon, title, description }, i) => (
-                    <div key={i} style={{ direction: "ltr" }}>
-                      <PolicyCard
-                        icon={icon}
-                        title={title}
-                        description={description}
-                      />
-                    </div>
-                  ))}
-                </div>
-                <div className={`${styles.list_button}`}>
-                  <RectangleButton
-                    title="Get Started  Today "
-                    theme="outline-blue"
-                    url="/sales/?source=expense_management"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <ContentShowcase
+          heading="Travel Requests & Per Diem – Plan Ahead, Stay Within Budget"
+          subheading="Let employees plan trips easily with automated per diem and compliance."
+          data={paymentMethodData}
+          imageSrc={receipt}
+          imageAlt="card background"
+          bgColor="bg-color-soft-mint"
+        />
+        <ContentShowcase
+          heading="UPI- Based Petty Cash"
+          subheading="Turn petty cash chaos into controlled digital spending with real-time visibility and approvals."
+          data={dashboardData}
+          imageSrc={upi}
+          imageAlt="card background"
+          reverse
+        />
+        <ContentShowcase
+          heading="Employee Reimbursements with Smart Wallets."
+          subheading="Automate category-wise allowances, get instant access to funds, and breeze through compliance."
+          data={rankData}
+          imageSrc={walletExpense}
+          imageAlt="card background"
+          bgColor="bg-color-soft-mint"
+        />
       </div>
 
-      <div className={`${styles.fifth_row} bg_white_index`}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-4 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "EMS Features ",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: "in Spotlight",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 ">
-            {cardData.map((card, index) => (
-              <div className="col-12 col-md-4" key={index}>
-                <ManagementCard
-                  whiteTitle={card.whiteTitle}
-                  description={card.description}
-                  cardImage={card.cardImage}
-                  theme="dark"
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5  d-flex flex-column flex-md-row gap-3">
-            <RectangleButton
-              title="Explore Receipt Management"
-              theme="blue"
-              url="/sales/?source=expense_management"
-              width="auto"
-            />
-            <RectangleButton
-              title="Explore Reimbursement Management"
-              theme="outline-blue"
-              url="/sales/?source=expense_management"
-              width="auto"
-            />
-          </div>
-        </div>
+      <div className="bg_white_index">
+        <FeatureSpotlight
+          heading={[
+            { title: "EMS Features ", color: "color-equity-blue" },
+            { title: "in Spotlight", color: "color-black" },
+          ]}
+          cardData={cardData}
+          showButtons
+          primaryButtonTitle="Explore Receipt Management"
+          primaryButtonUrl="/receipts/"
+          secondaryButtonTitle="Explore Reimbursement Management"
+          secondaryButtonUrl="/reimbursements/"
+        />
       </div>
 
       <div className={`${styles.third_row} bg_white_index`}>
-        <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-start `}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Smart Policy",
-                  color: "color-black",
-                },
-                {
-                  title: " Enforcement & Approvals",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-            <div>
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Control spending before it happens. Automate what doesn't need your time.",
-                    color: "color-main-grey subHeading",
-                  },
-                ]}
-                headingTag="p"
-                className="f-4 mt-2 mb-0"
-              />
-            </div>
-          </div>
-
-          <div
-            className={`col-md-6 col-12 mt-4 mt-md-5 mt-4 ${
-              showScroll ? "overflow-auto scrollbar-thin" : ""
-            }`}
-            style={{
-              maxHeight: "400px",
-              direction: showScroll ? "rtl" : "ltr",
-            }}
-          >
-            {cardsData.map(({ icon, title, description }, i) => (
-              <div
-                key={i}
-                style={{
-                  direction: "ltr",
-                  marginLeft: "20px",
-                  marginBottom: "20px",
-                }}
-              >
-                <PolicyCard
-                  icon={icon}
-                  title={title}
-                  description={description}
-                />
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.scrollBtn}>
-            <RectangleButton
-              title="Explore Policy Controls"
-              theme="border-gray"
-              actionImage={blueArrow}
-              iconSize={15}
-              url="/sales/?source=receivables"
-            />
-          </div>
-        </div>
-
-        <div className={styles.approvedImage}>
-          <Image src={approved} alt="icon" />
-        </div>
+        <SmartPolicySection
+          heading={[
+            { title: "Smart Policy", color: "color-black" },
+            { title: " Enforcement & Approvals", color: "color-equity-blue" },
+          ]}
+          subheading={[
+            {
+              title:
+                "Control spending before it happens. Automate what doesn't need your time.",
+              color: "color-main-grey subHeading",
+            },
+          ]}
+          cardsData={cardsData}
+          approvedImage={approved}
+        />
       </div>
 
       <div className={`${styles.card_stacking_row} bg_white_index`}>
@@ -701,30 +365,14 @@ const ExpenseManagement = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.blueBackGroundSection} bg_white_index`}>
-        <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: "Build a leaner, smarter, & future-ready finance team",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5 pb-3 pb-md-0"
-            />
-          </div>
-          <div className={`${styles.get_started_button} `}>
-            <RectangleButton
-              title="Get Started  Today "
-              theme="outline-blue"
-              actionImage={blueArrow}
-              hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
-            />
-          </div>
-        </div>
+      <div className="bg_white_index">
+        <CTASection
+          title="Build a leaner, smarter, & future-ready finance team"
+          buttonText="Get Started Today"
+          buttonUrl="/sales/?source=expense_management"
+          actionImage={blueArrow}
+          hoverImage={whiteArrow}
+        />
       </div>
 
       <div className={`${styles.faq_new_row} bg_white_index relative`}>

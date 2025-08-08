@@ -1,8 +1,7 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { memo, Suspense, useState } from "react"
 import Image, { StaticImageData } from "next/image"
-import Heading from "../heading/heading"
 import styles from "./enkash-way.module.scss"
 import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
@@ -30,7 +29,6 @@ const EnkashWay = ({
   progressData,
   sectionHeading,
   secondHeading,
-  secondHeadingColor,
   subTitle,
   progressItemPadding,
 }: EnkashWayProps) => {
@@ -51,261 +49,265 @@ const EnkashWay = ({
 
   return (
     <>
-      {/* DESKTOP */}
-      <div
-        className={`d-md-block d-none ${styles.sixth_row}`}
-        style={{
-          backgroundImage: `url(${currentBgImage})`,
-          backgroundSize: "cover", // show full image
-          backgroundPosition: "center bottom",
-          backgroundRepeat: "no-repeat",
-          transition: "background-image 0.5s ease-in-out",
-        }}
-      >
-        <div className={styles.blur_bg}></div>
+      <Suspense fallback={<div>Loading...</div>}>
+        {/* DESKTOP */}
+        <div
+          className={`d-md-block d-none ${styles.sixth_row}`}
+          style={{
+            backgroundImage: `url(${currentBgImage})`,
+            backgroundSize: "cover", // show full image
+            backgroundPosition: "center bottom",
+            backgroundRepeat: "no-repeat",
+            transition: "background-image 0.5s ease-in-out",
+          }}
+        >
+          <div className={styles.blur_bg}></div>
 
-        <div className={styles.tab_section}>
-          {/* Headings */}
-          <div className="d-flex flex-column text-center">
-            <DynamicHeading
-              content={[
-                {
-                  title: sectionHeading,
-                  color: "color-black",
-                },
-                {
-                  title: secondHeading,
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-
-            {subTitle && (
+          <div className={styles.tab_section}>
+            {/* Headings */}
+            <div className="d-flex flex-column text-center">
               <DynamicHeading
                 content={[
                   {
-                    title: subTitle,
+                    title: sectionHeading,
                     color: "color-black",
                   },
-                ]}
-                headingTag="p"
-                className="mb-0"
-              />
-            )}
-          </div>
-
-          {/* Tabs */}
-          <div className={`d-flex mt-md-5 mt-3 ${styles.progress_container}`}>
-            {progressData.map((data, index) => (
-              <div
-                key={index}
-                className={styles.progress_items}
-                style={{
-                  padding: progressItemPadding || undefined, // 👈 new dynamic padding
-                  backgroundColor:
-                    index === selectedItemIndex
-                      ? "rgba(0, 217, 255, 0.2)"
-                      : "#fff",
-                  cursor: "pointer",
-                }}
-                onClick={() => setSelectedItemIndex(index)}
-              >
-                {data.itemArray.map((word, wordIndex) => (
-                  <p
-                    key={wordIndex}
-                    style={{
-                      color: index === selectedItemIndex ? "black" : "#C4C4C4",
-                      fontWeight: 500,
-                      marginBottom: "0px",
-                    }}
-                  >
-                    {word}
-                  </p>
-                ))}
-              </div>
-            ))}
-          </div>
-
-          <div className={styles.progress_bar}></div>
-
-          {/* Selected Content */}
-          <div
-            className="mt-5 px-3 d-flex align-items-start gap-3"
-            style={{ width: "50%" }}
-          >
-            <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-              <Image
-                src={selectedItem.icon}
-                alt="icon"
-                width={55}
-                height={55}
-              />
-            </div>
-
-            <div className="d-flex flex-column gap-3">
-              <DynamicHeading
-                content={[
                   {
-                    title: selectedItem.title,
-                    color: "color-black",
+                    title: secondHeading,
+                    color: "color-equity-blue",
                   },
                 ]}
-                headingTag="h4"
-                className="f-5"
-              />
-              <DynamicHeading
-                content={[
-                  {
-                    title: selectedItem.description,
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="p"
-                className="mb-0"
+                headingTag="h2"
+                className="f-6"
               />
 
-              {selectedItem.url && (
-                <div className={`${styles.list_button}`}>
-                  <RectangleButton
-                    title="Learn More"
-                    theme="border-gray"
-                    actionImage={blueArrow}
-                    hoverImage={whiteArrow}
-                    url={selectedItem.url}
-                  />
-                </div>
+              {subTitle && (
+                <DynamicHeading
+                  content={[
+                    {
+                      title: subTitle,
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
               )}
             </div>
+
+            {/* Tabs */}
+            <div className={`d-flex mt-md-5 mt-3 ${styles.progress_container}`}>
+              {progressData.map((data, index) => (
+                <div
+                  key={index}
+                  className={styles.progress_items}
+                  style={{
+                    padding: progressItemPadding || undefined, // 👈 new dynamic padding
+                    backgroundColor:
+                      index === selectedItemIndex
+                        ? "rgba(0, 217, 255, 0.2)"
+                        : "#fff",
+                    cursor: "pointer",
+                  }}
+                  onClick={() => setSelectedItemIndex(index)}
+                >
+                  {data.itemArray.map((word, wordIndex) => (
+                    <p
+                      key={wordIndex}
+                      style={{
+                        color:
+                          index === selectedItemIndex ? "black" : "#C4C4C4",
+                        fontWeight: 500,
+                        marginBottom: "0px",
+                      }}
+                    >
+                      {word}
+                    </p>
+                  ))}
+                </div>
+              ))}
+            </div>
+
+            <div className={styles.progress_bar}></div>
+
+            {/* Selected Content */}
+            <div
+              className="mt-5 px-3 d-flex align-items-start gap-3"
+              style={{ width: "50%" }}
+            >
+              <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
+                <Image
+                  src={selectedItem.icon}
+                  alt="icon"
+                  width={55}
+                  height={55}
+                />
+              </div>
+
+              <div className="d-flex flex-column gap-3">
+                <DynamicHeading
+                  content={[
+                    {
+                      title: selectedItem.title,
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="h4"
+                  className="f-5"
+                />
+                <DynamicHeading
+                  content={[
+                    {
+                      title: selectedItem.description,
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
+
+                {selectedItem.url && (
+                  <div className={`${styles.list_button}`}>
+                    <RectangleButton
+                      title="Learn More"
+                      theme="border-gray"
+                      actionImage={blueArrow}
+                      hoverImage={whiteArrow}
+                      url={selectedItem.url}
+                    />
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* MOBILE */}
-      <div className={`d-md-none d-block ${styles.sixth_row_mobile}`}>
-        <div className={styles.tab_section}>
-          {/* Heading */}
-          <div className="d-flex flex-column text-center pb-3">
-            <DynamicHeading
-              content={[
-                {
-                  title: sectionHeading,
-                  color: "color-black",
-                },
-                {
-                  title: secondHeading,
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-
-            {subTitle && (
+        {/* MOBILE */}
+        <div className={`d-md-none d-block ${styles.sixth_row_mobile}`}>
+          <div className={styles.tab_section}>
+            <div className="d-flex flex-column text-center pb-3">
               <DynamicHeading
                 content={[
                   {
-                    title: subTitle,
+                    title: sectionHeading,
                     color: "color-black",
                   },
+                  {
+                    title: secondHeading,
+                    color: "color-equity-blue",
+                  },
                 ]}
-                headingTag="p"
-                className="mb-0"
+                headingTag="h2"
+                className="f-6"
               />
-            )}
-          </div>
 
-          {/* Accordions */}
-          <div
-            className={`d-flex flex-column mt-md-5 mt-3 gap-3 ${styles.progress_container}`}
-          >
-            {progressData.map((data, index) => {
-              const isOpen = openIndex === index
-              const bgSrc =
-                typeof data.bgImage === "string"
-                  ? data.bgImage
-                  : data.bgImage?.src || ""
-              return (
-                <div key={index} className={styles.progress_items}>
-                  <div
-                    className="d-flex justify-content-between align-items-center"
-                    style={{
-                      backgroundColor: "#fff",
-                      cursor: "pointer",
-                      padding: "8px",
-                      border: "1px solid #F2F2F2",
-                      borderRadius: "8px",
-                    }}
-                    onClick={() => toggleOpen(index)}
-                  >
-                    <p
+              {subTitle && (
+                <DynamicHeading
+                  content={[
+                    {
+                      title: subTitle,
+                      color: "color-black",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
+                />
+              )}
+            </div>
+
+            {/* Accordions */}
+            <div
+              className={`d-flex flex-column mt-md-5 mt-3 gap-3 ${styles.progress_container}`}
+            >
+              {progressData.map((data, index) => {
+                const isOpen = openIndex === index
+                const bgSrc =
+                  typeof data.bgImage === "string"
+                    ? data.bgImage
+                    : data.bgImage?.src || ""
+                return (
+                  <div key={index} className={styles.progress_items}>
+                    <div
+                      className="d-flex justify-content-between align-items-center"
                       style={{
-                        color: "#576675",
-                        fontWeight: 500,
-                        marginBottom: 0,
+                        backgroundColor: "#fff",
+                        cursor: "pointer",
+                        padding: "8px",
+                        border: "1px solid #F2F2F2",
+                        borderRadius: "8px",
                       }}
+                      onClick={() => toggleOpen(index)}
                     >
-                      {data.title}
-                    </p>
-                    <Image
-                      src={isOpen ? arrowUpImg : arrowDownImg}
-                      alt={isOpen ? "Arrow up" : "Arrow down"}
-                      width={24}
-                      height={24}
-                    />
-                  </div>
+                      <p
+                        style={{
+                          color: "#576675",
+                          fontWeight: 500,
+                          marginBottom: 0,
+                        }}
+                      >
+                        {data.title}
+                      </p>
+                      <Image
+                        src={isOpen ? arrowUpImg : arrowDownImg}
+                        alt={isOpen ? "Arrow up" : "Arrow down"}
+                        width={24}
+                        height={24}
+                      />
+                    </div>
 
-                  {isOpen && (
-                    <div className={`${styles.dropdownContent} ${styles.show}`}>
-                      <div className={styles.dropdownBg}>
-                        <Image
-                          src={bgSrc}
-                          alt="background"
-                          width={600}
-                          height={200}
-                        />
-                      </div>
-                      <div className="d-flex align-items-start gap-2 mt-2">
-                        <Image
-                          src={data.icon}
-                          alt="icon"
-                          width={28}
-                          height={28}
-                        />
-                        <div className="d-flex flex-column gap-2">
-                          <DynamicHeading
-                            content={[
-                              {
-                                title: data.title,
-                                color: "color-black",
-                              },
-                            ]}
-                            headingTag="h4"
-                            className="f-5"
-                          />
-                          <DynamicHeading
-                            content={[
-                              {
-                                title: data.description,
-                                color: "color-black",
-                              },
-                            ]}
-                            headingTag="p"
-                            className="mb-0"
+                    {isOpen && (
+                      <div
+                        className={`${styles.dropdownContent} ${styles.show}`}
+                      >
+                        <div className={styles.dropdownBg}>
+                          <Image
+                            src={bgSrc}
+                            alt="background"
+                            width={600}
+                            height={200}
                           />
                         </div>
+                        <div className="d-flex align-items-start gap-2 mt-2">
+                          <Image
+                            src={data.icon}
+                            alt="icon"
+                            width={28}
+                            height={28}
+                          />
+                          <div className="d-flex flex-column gap-2">
+                            <DynamicHeading
+                              content={[
+                                {
+                                  title: data.title,
+                                  color: "color-black",
+                                },
+                              ]}
+                              headingTag="h4"
+                              className="f-5"
+                            />
+                            <DynamicHeading
+                              content={[
+                                {
+                                  title: data.description,
+                                  color: "color-black",
+                                },
+                              ]}
+                              headingTag="p"
+                              className="mb-0"
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  )}
-                </div>
-              )
-            })}
+                    )}
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
-      </div>
+      </Suspense>
     </>
   )
 }
 
-export default EnkashWay
+export default memo(EnkashWay)

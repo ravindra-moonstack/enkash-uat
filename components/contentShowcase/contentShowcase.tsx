@@ -19,6 +19,7 @@ interface ContentShowcaseProps {
   bgColor?: string
   reverse?: boolean
   buttonTitle?: string
+  buttonUrl?: string
 }
 
 function ContentShowcase({
@@ -31,6 +32,7 @@ function ContentShowcase({
   reverse = false,
   buttonTitle,
   mainHeading,
+  buttonUrl,
 }: ContentShowcaseProps): JSX.Element {
   return (
     <Suspense fallback={<div>Loading...</div>}>
@@ -91,7 +93,7 @@ function ContentShowcase({
                   <RectangleButton
                     title={buttonTitle || "Get Started"}
                     theme="outline-blue"
-                    url="/sales/?source=expense_management"
+                    url={buttonUrl || "/sales"}
                   />
                 </div>
               </div>
