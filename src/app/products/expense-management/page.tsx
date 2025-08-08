@@ -46,14 +46,13 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
 import EnkashWay from "@/components/enkash-way/enkash-way"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import CardStacking from "@/components/cardStacking/cardStacking"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import Link from "next/link"
 import React from "react"
 import SplineAnimation from "@/components/splineAnimation/splineAnimation"
 // import ContentShowcase from "@/components/contentShowcase/contentShowcase"
 // import Spline from "@splinetool/react-spline"
-
+const CardStacking = React.lazy(() => import("@/components/cardStacking/cardStacking"))
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item: any) => ({
