@@ -1,6 +1,5 @@
 import Image, { StaticImageData } from "next/image"
 import styles from "./card-product.module.scss"
-import Heading from "../heading/heading"
 import { ReactNode } from "react"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
