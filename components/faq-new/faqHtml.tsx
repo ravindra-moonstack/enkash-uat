@@ -1,7 +1,7 @@
 "use client"
 
 import FAQ, { FAQProps } from "@/components/faq-new/faq"
-import { useState } from "react"
+import { memo, Suspense, useState } from "react"
 import styles from "./faq.module.scss" // Create this for styling
 
 interface FAQHtmlProps {
@@ -21,24 +21,26 @@ const FAQHtml: React.FC<FAQHtmlProps> = ({ faqData }) => {
   const isScrollable = faqData.length > 5
 
   return (
-    <div
-      className={`${styles.faq_wrapper} ${
-        isScrollable ? styles.scrollable : ""
-      }`}
-    >
-      {faqData.map((item, index) => (
-        <FAQ
-          key={index}
-          index={index}
-          question={item.question}
-          answerHTML={item.answerHTML}
-          answer={item.answer}
-          answerVisible={index === openFAQIndex}
-          onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
-        />
-      ))}
-    </div>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div
+        className={`${styles.faq_wrapper} ${
+          isScrollable ? styles.scrollable : ""
+        }`}
+      >
+        {faqData.map((item, index) => (
+          <FAQ
+            key={index}
+            index={index}
+            question={item.question}
+            answerHTML={item.answerHTML}
+            answer={item.answer}
+            answerVisible={index === openFAQIndex}
+            onToggleAnswerVisibility={() => handleToggleAnswerVisibility(index)}
+          />
+        ))}
+      </div>
+    </Suspense>
   )
 }
 
-export default FAQHtml
+export default memo(FAQHtml)

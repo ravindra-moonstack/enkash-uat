@@ -1,5 +1,4 @@
-// components/allProducts/AllProducts.tsx
-import React from "react"
+import React, { memo, Suspense } from "react"
 import styles from "./all-products.module.scss"
 import Marquee from "react-fast-marquee"
 import FeatureCard from "../featureCard/feature-card"
@@ -21,25 +20,27 @@ export type AllProductsProp = {
 
 const AllProducts = ({ data = [] }: AllProductsProp): React.JSX.Element => {
   return (
-    <div className={`${styles.integration_row} row`}>
-      <div className={`${styles.container}`}>
-        <Marquee speed={70} pauseOnClick={true} pauseOnHover={true}>
-          <div className="d-flex align-items-stretch pb-4 pt-4 pt-md-5">
-            {data.map((card, index) => (
-              <div key={index.toString()} className="d-flex">
-                <FeatureCard
-                  titleHtml={card.title}
-                  title2={card.title2}
-                  description={card.description}
-                  cardImage={card.image}
-                />
-              </div>
-            ))}
-          </div>
-        </Marquee>
+    <Suspense fallback={<div>Loading...</div>}>
+      <div className={`${styles.integration_row} row`}>
+        <div className={`${styles.container}`}>
+          <Marquee speed={70} pauseOnClick={true} pauseOnHover={true}>
+            <div className="d-flex align-items-stretch pb-4 pt-4 pt-md-5">
+              {data.map((card, index) => (
+                <div key={index.toString()} className="d-flex">
+                  <FeatureCard
+                    titleHtml={card.title}
+                    title2={card.title2}
+                    description={card.description}
+                    cardImage={card.image}
+                  />
+                </div>
+              ))}
+            </div>
+          </Marquee>
+        </div>
       </div>
-    </div>
+    </Suspense>
   )
 }
 
-export default AllProducts
+export default memo(AllProducts)

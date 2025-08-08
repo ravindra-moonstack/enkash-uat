@@ -44,6 +44,9 @@ import {
   fraudProtectionIcon,
   realTimeExpense,
   realTimeExpenseIcon,
+  smartIconeOne,
+  smartIconeThree,
+  smartIconeTwo,
   stackCardsixIicon,
   stackCardsixImg,
   stackCardThreeIcon,
@@ -133,19 +136,19 @@ const cardsData = [
     title: "Custom Expense Policies ",
     description:
       "Set precise rules for spend limits, categories, and approval hierarchies—ensuring every expense complies with your company’s policies before it even reaches the finance team.",
-    icon: policyIcon,
+    icon: smartIconeOne,
   },
   {
     title: "Multi-Level Approval Workflows",
     description:
       "Create customized, multi-tier approval flows based on amount, department, or category, so the right people always review the right expenses—no bottlenecks or manual routing.",
-    icon: policyIcon,
+    icon: smartIconeTwo,
   },
   {
     title: "Auto-Flagging of Policy Violations",
     description:
       "The system instantly flags out-of-policy expenses like overspending, wrong categories, or duplicate claims, helping finance teams catch issues before reimbursement.",
-    icon: policyIcon,
+    icon: smartIconeThree,
   },
   {
     title: "Receipt Upload Reminders & Enforcement",

@@ -30,6 +30,10 @@ export { default as pharmacyIcon } from "./img/pharmacy.svg"
 export { default as blurImg } from "./img/blurBg.png"
 
 
+export { default as smartIconeOne } from "./img/smartIconOne.svg"
+export { default as smartIconeTwo } from "./img/smartIconTwo.svg"
+export { default as smartIconeThree } from "./img/smartIconThree.svg"
+
 export { default as realTimeExpense } from "./img/real-time-expense.webp"
 export { default as fraudProtection } from "./img/fraud-protection.webp"
 export { default as streamlinedReimbursement } from "./img/streamlined-reimbursement.webp"
@@ -49,4 +53,4 @@ export { default as costControlSavingsIcon } from "./img/cost-control-savings-ic
 export { default as stackCardThreeIcon } from "./img/stack-card-three-icon.svg"
 export { default as stackCardsixIicon } from "./img/stack-card-six-icon.svg"
 export { default as wideAcceptanceNetworkIcon } from "./img/wide-acceptance-network-icon.svg"
-
+export { default as artboardBg} from "./img/ArtboardBg.svg"
