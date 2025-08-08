@@ -88,7 +88,7 @@
 
 "use client"
 
-import React, { useRef, useEffect, useState } from "react"
+import React, { useRef, useEffect, useState, memo } from "react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { useGSAP } from "@gsap/react"
@@ -182,4 +182,4 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
   )
 }
 
-export default CardStacking
+export default memo(CardStacking)
