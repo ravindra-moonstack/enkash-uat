@@ -5,9 +5,9 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  // generateBuildId() {
-  //   return new Date().getTime().toString()
-  // },
+  generateBuildId() {
+    return new Date().getTime().toString()
+  },
 }
 
 export default nextConfig
