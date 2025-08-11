@@ -1,4 +1,4 @@
-import { Footer, Header } from "@/components"
+
 import React, { Suspense } from "react"
 const Spline = React.lazy(() => import("@splinetool/react-spline"))
 

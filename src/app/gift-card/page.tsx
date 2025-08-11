@@ -1,6 +1,5 @@
-"use client"
+
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import {
   allProductSections,

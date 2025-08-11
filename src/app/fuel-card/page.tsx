@@ -1,5 +1,5 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardType, intantActionData } from "./data"
 import {
@@ -35,7 +35,6 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import Link from "next/link"
 
 const cards = [
   {

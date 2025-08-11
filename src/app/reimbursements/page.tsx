@@ -1,10 +1,10 @@
-"use client"
+
 import Image from "next/image"
-import { space } from "@/common/constant"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardData, expenseManagementData, stepCards } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header,  FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -18,12 +18,8 @@ import {
   streamlinedReimbursement,
   costControlSavingsIcon,
   costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
   stackCardThreeImg,
   stackCardThreeIcon,
-  stackCardsixImg,
-  stackCardsixIicon,
   fastenUpOr,
 } from "."
 
@@ -36,7 +32,7 @@ import EasyStepCard from "@/components/easy-step-card/easy-step-card"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+
 const cards = [
   {
     color: "#fff",

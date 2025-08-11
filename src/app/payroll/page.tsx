@@ -1,5 +1,5 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardsData } from "./data"
 import faqData from "./faq-data"
@@ -37,7 +37,6 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
 
 const Payroll = (): React.JSX.Element => {
   return (

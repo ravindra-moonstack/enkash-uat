@@ -1,10 +1,9 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardsData } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -55,7 +54,6 @@ import bg3 from "./img/bg3.jpg"
 import bg4 from "./img/bg2.jpg"
 import bg5 from "./img/bg1.jpg"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
 
 const showScroll = cardsData.length > 3
 

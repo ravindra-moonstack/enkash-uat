@@ -1,5 +1,5 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import {
   allProductSections,
@@ -41,7 +41,6 @@ import StepCard from "@/components/stepCard/stepCard"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
-import Link from "next/link"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)

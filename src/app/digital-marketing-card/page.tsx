@@ -1,10 +1,7 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { cardType, intantActionData, spendAnalyticsData } from "./data"
-
-import { Header, Heading, Footer, FAQHtml } from "@/components"
+import { Header, Footer, FAQHtml } from "@/components"
 
 import {
   blueArrow,
