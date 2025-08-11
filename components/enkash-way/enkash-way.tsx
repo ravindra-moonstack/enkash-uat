@@ -1,6 +1,6 @@
 "use client"
 
-import React, { memo, Suspense, useState } from "react"
+import React, { memo, useState } from "react"
 import Image, { StaticImageData } from "next/image"
 import styles from "./enkash-way.module.scss"
 import arrowUpImg from "./img/arrowup.svg"
@@ -49,7 +49,7 @@ const EnkashWay = ({
 
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+ 
         {/* DESKTOP */}
         <div
           className={`d-md-block d-none ${styles.sixth_row}`}
@@ -305,7 +305,7 @@ const EnkashWay = ({
             </div>
           </div>
         </div>
-      </Suspense>
+
     </>
   )
 }

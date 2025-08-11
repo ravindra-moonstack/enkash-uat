@@ -1,4 +1,4 @@
-import React, { memo, Suspense } from "react"
+import React, { memo } from "react"
 import styles from "./featureSpotlight.module.scss"
 import { DynamicHeading, ManagementCard, RectangleButton } from ".."
 
@@ -33,7 +33,7 @@ const FeatureSpotlight: React.FC<FeatureSpotlightProps> = ({
   secondaryButtonUrl = "#",
 }) => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+   
       <div className={`${styles.section} `}>
         <div className="max-w-auto">
           <div className={` text-center pb-4 pb-md-5`}>
@@ -75,7 +75,7 @@ const FeatureSpotlight: React.FC<FeatureSpotlightProps> = ({
           )}
         </div>
       </div>
-    </Suspense>
+  
   )
 }
 

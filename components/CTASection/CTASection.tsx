@@ -1,4 +1,4 @@
-import React, { memo, Suspense } from "react"
+import React, { memo} from "react"
 import styles from "./CTASection.module.scss"
 import { DynamicHeading, RectangleButton } from ".."
 import { StaticImageData } from "next/image"
@@ -21,7 +21,7 @@ const CTASection: React.FC<CTASectionProps> = ({
   className = "",
 }) => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+
       <div
         className={`${styles.blueBackGroundSection} bg_white_index ${className}`}
       >
@@ -44,7 +44,7 @@ const CTASection: React.FC<CTASectionProps> = ({
           </div>
         </div>
       </div>
-    </Suspense>
+ 
   )
 }
 

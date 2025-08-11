@@ -44,6 +44,7 @@ import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import Link from "next/link"
 
 const PaymentGateway = (): React.JSX.Element => {
+  
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
