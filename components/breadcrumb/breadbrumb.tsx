@@ -2,7 +2,7 @@ import React from "react"
 import Link from "next/link"
 import Head from "next/head"
 import styles from "./breadcrumb.module.scss"
-import { IoChevronForward } from "react-icons/io5"
+
 
 interface BreadcrumbItem {
   name: string

@@ -6,9 +6,9 @@ const page = () => {
   return (
     <div>
       <div className={""}>
-        <Suspense fallback={<div>Loading...</div>}>
+        {/* <Suspense fallback={<div>Loading...</div>}> */}
           <Spline scene="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode" />
-        </Suspense>
+        {/* </Suspense> */}
       </div>
 
       <div>

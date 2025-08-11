@@ -1,4 +1,4 @@
-import React, { memo, Suspense } from "react"
+import React, { memo} from "react"
 import styles from "./all-products.module.scss"
 import Marquee from "react-fast-marquee"
 import FeatureCard from "../featureCard/feature-card"
@@ -20,7 +20,7 @@ export type AllProductsProp = {
 
 const AllProducts = ({ data = [] }: AllProductsProp): React.JSX.Element => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+  
       <div className={`${styles.integration_row} row`}>
         <div className={`${styles.container}`}>
           <Marquee speed={70} pauseOnClick={true} pauseOnHover={true}>
@@ -39,7 +39,7 @@ const AllProducts = ({ data = [] }: AllProductsProp): React.JSX.Element => {
           </Marquee>
         </div>
       </div>
-    </Suspense>
+
   )
 }
 

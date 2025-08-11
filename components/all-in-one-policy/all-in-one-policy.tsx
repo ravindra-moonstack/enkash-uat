@@ -7,7 +7,6 @@ import RectangleButton, {
   RectangleButtonTheme,
 } from "../buttons/rectangle-button/rectangle-button"
 import { blueArrow, whiteArrow } from "./index"
-import Heading from "../heading/heading"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 interface AllInOnePolicyProps {

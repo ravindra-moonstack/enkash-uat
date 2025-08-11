@@ -1,7 +1,5 @@
 import Image, { StaticImageData } from "next/image"
-
 import styles from "./easy-step-card.module.scss"
-import Heading from "../heading/heading"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface CardProps {
