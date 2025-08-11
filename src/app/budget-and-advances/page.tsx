@@ -1,10 +1,8 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { cardData, expenseManagementData, stepCards } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header,FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -18,8 +16,6 @@ import {
   streamlinedReimbursement,
   costControlSavingsIcon,
   costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"

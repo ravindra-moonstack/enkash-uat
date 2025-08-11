@@ -1,10 +1,8 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { cardType, dataSets, intantActionData } from "./data"
 
-import { Header, Heading, Footer, FAQHtml } from "@/components"
+import { Header, Footer, FAQHtml } from "@/components"
 
 import {
   circles,
@@ -22,8 +20,6 @@ import {
   streamlinedReimbursement,
   costControlSavingsIcon,
   costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"

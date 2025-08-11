@@ -77,9 +77,9 @@ const ExpenseManagement = (): React.JSX.Element => {
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        <div className={`${styles.spline_background}`}>
+        {/* <div className={`${styles.spline_background}`}>
           <SplineAnimation />
-        </div>
+        </div> */}
         <div className="max-w-auto  position-relative no-pointer">
           <div className="d-flex">
             <CustomBreadcrumb

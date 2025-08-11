@@ -1,10 +1,10 @@
-"use client"
+
 import Image from "next/image"
-import { space } from "@/common/constant"
+
 import styles from "./page.module.scss"
 import { allProductSections, cardType, intantActionData } from "./data"
 
-import { Header, Heading, Footer, FAQHtml } from "@/components"
+import { Header,  Footer, FAQHtml } from "@/components"
 
 import {
   blueArrow,
@@ -37,7 +37,7 @@ import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import Link from "next/link"
 
-// const showScroll = cardsData.length > 3
+
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = [
   {

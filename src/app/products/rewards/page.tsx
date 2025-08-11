@@ -1,14 +1,11 @@
-"use client"
 import Image from "next/image"
-
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { allProductSections } from "./data"
 import faqData from "./faq-data"
 import { Header, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
-  paymentSummary,
-  whiteArrow,
   paymentLinkImage,
   shareImage,
   paymentOptionImage,
@@ -28,7 +25,6 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import AllProducts from "@/components/all-products/all-products"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
-import Link from "next/link"
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 

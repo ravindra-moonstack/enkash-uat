@@ -1,12 +1,11 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import faqData from "./faq-data"
 import { Header, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   paymentSummary,
-  whiteArrow,
   paymentLinkImage,
   shareImage,
   paymentOptionImage,
@@ -35,7 +34,7 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import EnkashWay from "@/components/enkash-way/enkash-way"
-import Link from "next/link"
+
 
 const Vouchers = (): React.JSX.Element => {
   return (

@@ -1,28 +1,30 @@
-import Footer from "./footer/footer"
-import Header from "./header/header"
-import Heading from "./heading/heading"
-import { FAQHtml } from "./faq-new"
-import DynamicHeading from "./dynamicHeading/dynamic-heading"
-import LottieDynamicLoadComponent from "./lottie-client/lottie-dynamic-load-client"
-import CustomBreadcrumb from "./breadcrumb/breadbrumb"
-import TalkToSales from "./mobile-talks-to-sales/mobile-talk-to-sales"
-import AllProducts from "./all-products/all-products"
-import CardProduct from "./card-product/card-product"
-import LogoSlider from "./logo-slider/logo-slider"
-import PolicyCard from "./policyCard/policyCard"
-import FeatureCard from "./featureCard/feature-card"
-import StepCard from "./stepCard/stepCard"
-import AllInOnePolicy from "./all-in-one-policy/all-in-one-policy"
-import CardStacking from "./cardStacking/cardStacking"
-import RectangleButton from "./buttons/rectangle-button/rectangle-button"
-import CTASection from "./CTASection/CTASection"
-import SmartPolicySection from "./smartPolicySection/smartPolicySection"
-import FeatureSpotlight from "./featureSpotlight/featureSpotlight"
-import EnkashWay from "./enkash-way/enkash-way"
-import SplineAnimation from "./splineAnimation/splineAnimation"
-import ContentShowcase from "./contentShowcase/contentShowcase"
-import SecondFaqHtml from "./second-faq/secondFaqHtml"
-import ManagementCard from "./management-card/management-card"
+import dynamic from "next/dynamic";
+const Header = dynamic(() => import("./header/header"), { ssr: true });
+const Footer = dynamic(() => import("./footer/footer"), { ssr: true });
+const Heading = dynamic(() => import("./heading/heading"), { ssr: true });
+const FAQHtml = dynamic(() => import("./faq-new/faqHtml"), { ssr: true });
+const DynamicHeading = dynamic(() => import("./dynamicHeading/dynamic-heading"), { ssr: true });
+const LottieDynamicLoadComponent = dynamic(() => import("./lottie-client/lottie-dynamic-load-client"), { ssr: true });
+const CustomBreadcrumb = dynamic(() => import("./breadcrumb/breadbrumb"), { ssr: true });
+const TalkToSales = dynamic(() => import("./mobile-talks-to-sales/mobile-talk-to-sales"), { ssr: true });
+const AllProducts = dynamic(() => import("./all-products/all-products"), { ssr: true });
+const CardProduct = dynamic(() => import("./card-product/card-product"), { ssr: true });
+const LogoSlider = dynamic(() => import("./logo-slider/logo-slider"), { ssr: true });
+const PolicyCard = dynamic(() => import("./policyCard/policyCard"), { ssr: true });
+const FeatureCard = dynamic(() => import("./featureCard/feature-card"), { ssr: true });
+const StepCard = dynamic(() => import("./stepCard/stepCard"), { ssr: true });
+const AllInOnePolicy = dynamic(() => import("./all-in-one-policy/all-in-one-policy"), { ssr: true });
+const CardStacking = dynamic(() => import("./cardStacking/cardStacking"), { ssr: true });
+const RectangleButton = dynamic(() => import("./buttons/rectangle-button/rectangle-button"), { ssr: true });
+const CTASection = dynamic(() => import("./CTASection/CTASection"), { ssr: true });
+const SmartPolicySection = dynamic(() => import("./smartPolicySection/smartPolicySection"), { ssr: true });
+const FeatureSpotlight = dynamic(() => import("./featureSpotlight/featureSpotlight"), { ssr: true });
+const EnkashWay = dynamic(() => import("./enkash-way/enkash-way"), { ssr: true });
+const SplineAnimation = dynamic(() => import("./splineAnimation/splineAnimation"), { ssr: true });
+const ContentShowcase = dynamic(() => import("./contentShowcase/contentShowcase"), { ssr: true });
+const SecondFaqHtml = dynamic(() => import("./second-faq/secondFaqHtml"), { ssr: true });
+const ManagementCard = dynamic(() => import('./management-card/management-card'), { ssr: true });
+
  
 export {
   Header,

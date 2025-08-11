@@ -1,10 +1,9 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import Link from "next/link"
+import { Header, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -39,7 +38,6 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import ManagementCard from "@/components/management-card/management-card"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
 
 const PayableAnalytics = (): React.JSX.Element => {
   return (

@@ -1,5 +1,5 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import {
   allProductSections,
@@ -38,14 +38,7 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import gsap from "gsap"
-import { ScrollSmoother } from "gsap/ScrollSmoother"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
-import Link from "next/link"
 import Spline from "@splinetool/react-spline"
-
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP)
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 

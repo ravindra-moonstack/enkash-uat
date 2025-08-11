@@ -1,5 +1,5 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
@@ -30,7 +30,6 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import AllProducts from "@/components/all-products/all-products"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 

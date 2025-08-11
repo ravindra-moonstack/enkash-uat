@@ -1,13 +1,11 @@
-"use client"
+
 import Image from "next/image"
-import { space } from "@/common/constant"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardData, dataSets } from "./data"
-
-import { Header, Heading, Footer, FAQHtml } from "@/components"
+import { Header,  Footer, FAQHtml } from "@/components"
 
 import {
-  motherCardImg,
   paymentGatwayImg,
   paymentGatwayIcon,
   paymentLinkIcon,
@@ -31,7 +29,6 @@ import {
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-// import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import PolicyCard from "@/components/policyCard/policyCard"
@@ -40,7 +37,7 @@ import LogoSlider from "@/components/logo-slider/logo-slider"
 import Spline from "@splinetool/react-spline"
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+
 
 const CollectPayment = (): React.JSX.Element => {
   return (
