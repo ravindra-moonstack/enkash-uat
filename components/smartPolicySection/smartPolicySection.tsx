@@ -1,4 +1,4 @@
-import React, { memo, Suspense } from "react"
+import React, { memo} from "react"
 import Image from "next/image"
 import styles from "./smartPolicySection.module.scss"
 import { DynamicHeading, PolicyCard, RectangleButton } from ".."
@@ -25,7 +25,7 @@ const SmartPolicySection = ({
   buttonIcon,
 }: SmartPolicySectionProps) => {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+ 
       <div className={`${styles.third_row}`}>
         <div className="relative max-w-auto">
           <div className={`${styles.title} text-start`}>
@@ -79,7 +79,7 @@ const SmartPolicySection = ({
           <Image src={approvedImage} alt="approved" />
         </div>
       </div>
-    </Suspense>
+
   )
 }
 

@@ -1,7 +1,7 @@
 "use client"
 
 import FAQ, { FAQProps } from "@/components/faq-new/faq"
-import { memo, Suspense, useState } from "react"
+import { memo, useState } from "react"
 import styles from "./faq.module.scss" // Create this for styling
 
 interface FAQHtmlProps {
@@ -21,7 +21,7 @@ const FAQHtml: React.FC<FAQHtmlProps> = ({ faqData }) => {
   const isScrollable = faqData.length > 5
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+
       <div
         className={`${styles.faq_wrapper} ${
           isScrollable ? styles.scrollable : ""
@@ -39,7 +39,7 @@ const FAQHtml: React.FC<FAQHtmlProps> = ({ faqData }) => {
           />
         ))}
       </div>
-    </Suspense>
+
   )
 }
 
