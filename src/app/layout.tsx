@@ -6,9 +6,9 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import { Inter } from "next/font/google"
 // import ScrollToTop from "@/components/scroll-to-top/ScrollToTop"
 // import SmoothWrapper from "@/components/smoothWrapper/page"
-import { Suspense } from "react"
+// import { Suspense } from "react"
 import LenisProvider from "../provider/LenisProvider"
-import Loading from "./loading"
+// import Loading from "./loading"
 
 export const dynamic = "force-dynamic"
 
