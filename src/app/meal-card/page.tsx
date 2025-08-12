@@ -1,9 +1,8 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
+import Link from "next/link"
 import { cardType, dataSets, intantActionData } from "./data"
-
 import { Header, Footer, FAQHtml } from "@/components"
-
 import {
   circles,
   blueArrow,
@@ -23,22 +22,17 @@ import {
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
-
 import CardProduct from "@/components/card-product/card-product"
 import StepCard from "@/components/stepCard/stepCard"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import Link from "next/link"
 
-// const showScroll = cardsData.length > 3
-// const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = [
   {
     color: "#fff",
