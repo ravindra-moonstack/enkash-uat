@@ -1,18 +1,16 @@
 import Image, { StaticImageData } from "next/image"
-import styles from "./feature-card.module.scss"
+import styles from "./location-card.module.scss"
 import { ReactNode } from "react"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface CardProps {
-  whiteTitle?: string
   titleHtml?: ReactNode
   title2?: string
   description: string
-  cardImage?:string | StaticImageData | undefined
+  cardImage?: string | StaticImageData | undefined
 }
 
 const LocationCard = ({
-  whiteTitle,
   titleHtml,
   description,
   cardImage,
@@ -34,47 +32,31 @@ const LocationCard = ({
             </div>
           )}
           <div className={styles.title_wrapper}>
-            {titleHtml ? (
-              <DynamicHeading
-                content={[
-                  {
-                    title: String(titleHtml),
-                    color: "color-black d-block",
-                  },
-                  {
-                    title: title2,
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h4"
-                className="f-5 min-height-80"
-              />
-            ) : (
-              whiteTitle && (
-                <DynamicHeading
-                  content={[
-                    {
-                      title: whiteTitle,
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h4"
-                  className="f-5 min-height-80"
-                />
-              )
-            )}
+            <DynamicHeading
+              content={[
+                {
+                  title: String(titleHtml),
+                  color: "color-white",
+                },
+                {
+                  title: title2,
+                  color: "color-dark-grey italic",
+                },
+              ]}
+              headingTag="h5"
+              className="f-5 min-height-80"
+            />
           </div>
-          {/* {title2 && <div className={styles.titleHtml}>{title2}</div>} */}
         </div>
         <DynamicHeading
           content={[
             {
               title: description,
-              color: "color-black",
+              color: "color-dark-grey",
             },
           ]}
           headingTag="p"
-          className="f-4 mt-3"
+          className="f-4 mb-0"
         />
       </div>
     </div>
