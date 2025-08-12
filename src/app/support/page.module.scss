@@ -16,7 +16,7 @@
     content: "";
     position: absolute;
     inset: 0;
-   background: linear-gradient(0deg, #000000 0%, #000000 -1.06%, #000000 1.51%, rgba(0, 0, 0, 0.77) 6.74%, rgba(0, 0, 0, 0.33) 26.46%, rgba(0, 0, 0, 0) 45.45%);
+   background: linear-gradient(0deg, #000000 0%, #000000 -1.06%, #000000 0.51%, rgba(0, 0, 0, 0.77) 23.74%, rgba(0, 0, 0, 0.33) 44.46%, rgba(0, 0, 0, 0) 53.45%);
   z-index: -1;
 
   }
@@ -52,37 +52,11 @@
   }
   .logoSlider {
     background-color: $color-white;
-    margin-top: 36px;
     border-radius: 12px;
     position: relative;
     z-index: 2;
   }
-}
-
-.location {
-  position: relative;
-  background: $color-black;
-  padding: 20px;
-  
-  .greyLine {
-    height: 2px;
-    background: $color-dark-grey;
-    position: relative;
-    z-index: 9;
-  }
-
-  .trunstedBrands {
-    z-index: 2;
-    position: relative;
-    
-  }
-  .officeLocation {
-    z-index: 9;
-    position: relative;
-    padding-top: 64px;
-  }
-
-  .copyright {
+   .copyright {
     display: flex;
     justify-content: space-between;
     position: relative;
@@ -100,5 +74,18 @@
         gap: 32px;
       }
     }
+  }  .greyLine {
+    height: 2px;
+    background: $color-dark-grey;
+    position: relative;
+    z-index: 9;
+  }
+
+  .trunstedBrands {
+    z-index: 2;
+    position: relative;
+    
   }
 }
+
+

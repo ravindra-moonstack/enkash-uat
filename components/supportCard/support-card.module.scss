@@ -5,18 +5,16 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: white;
+  background: linear-gradient(148.03deg, rgba(255, 255, 255, 0.0594) 1.57%, rgba(153, 153, 153, 0.18) 98.66%);
   position: relative;
   border-radius: 12px;
-  // border: 2px solid $color-pale-aqua;
-  padding: 40px 30px;
+ padding: 35px 20px ;
   transition: all 0.3s ease;
   cursor: pointer;
-  max-width: 327px;
   box-shadow: 0 0px 40px -4px rgba(0, 0, 0, 0.08);
-  margin-right: 10px;
+
   @include for-laptops {
-    margin-right: 21px;
+ padding: 35px 20px ;
   }
 }
 
@@ -27,7 +25,6 @@
   color: $color-black;
   letter-spacing: -0.04em;
   display: -webkit-box;
-  -webkit-line-clamp: 2; // Limit to 2 lines
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
