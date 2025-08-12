@@ -1,12 +1,6 @@
 import React from "react"
 import Image from "next/image"
-import {
-  DynamicHeading,
-  Header,
-  LogoSlider,
-  TalkToSales,
-  TestimonialSlider,
-} from "@/components"
+import { DynamicHeading, LogoSlider, TestimonialSlider } from "@/components"
 import styles from "./page.module.scss"
 import { help, login, logo, support } from "."
 
@@ -15,8 +9,6 @@ import { testimonialData } from "./data"
 const Sales = () => {
   return (
     <>
-      <Header />
-      <TalkToSales />
       <div className={`${styles.talk_to_sales} `}>
         <div className="max-w-auto">
           <div className="row">
@@ -43,7 +35,7 @@ const Sales = () => {
                         content={[
                           {
                             title: "Need Help?",
-                            color: "color-white underline",
+                            color: "color-white",
                           },
                         ]}
                         headingTag="h5"
@@ -64,7 +56,7 @@ const Sales = () => {
                         content={[
                           {
                             title: "I am an existing customer. ",
-                            color: "color-white underline d-block",
+                            color: "color-white  d-block",
                           },
                           {
                             title: "Need Support",
@@ -89,7 +81,7 @@ const Sales = () => {
                         content={[
                           {
                             title: "I want to access my account.",
-                            color: "color-white underline d-block",
+                            color: "color-white  d-block",
                           },
                           {
                             title: "Login",
@@ -119,7 +111,10 @@ const Sales = () => {
                   className="pb-4"
                 />
                 <div>
-                  <TestimonialSlider testimonials={testimonialData} />
+                  <TestimonialSlider
+                    testimonials={testimonialData}
+                    slidesToShow={1}
+                  />
                 </div>
               </div>
             </div>
@@ -134,7 +129,7 @@ const Sales = () => {
               </div>
               <div>
                 <hr className={`${styles.greyLine} `} />
-                <div className="d-flex justify-content-between ">
+                <div className={`${styles.copyright} `}>
                   <div className={`${styles.termsCond} `}>
                     <DynamicHeading
                       content={[
