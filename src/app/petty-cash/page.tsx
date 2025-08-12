@@ -1,10 +1,8 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { analyticData, dashboardData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header, FAQHtml, Footer } from "@/components"
 import {
   analytics,
   blueArrow,
@@ -20,19 +18,14 @@ import {
   streamlinedReimbursement,
   costControlSavingsIcon,
   costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
   stackCardThreeImg,
   stackCardThreeIcon,
-  stackCardsixImg,
-  stackCardsixIicon,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-
 import PolicyCard from "@/components/policyCard/policyCard"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"

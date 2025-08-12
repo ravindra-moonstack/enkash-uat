@@ -1,5 +1,5 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardsData, cardType } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
@@ -37,7 +37,7 @@ import RewardsCarousel from "@/components/rewards-carousel/rewards-carousel"
 import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
-import Link from "next/link"
+
 
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = [

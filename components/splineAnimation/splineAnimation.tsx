@@ -1,4 +1,4 @@
-import React, { memo, Suspense } from "react"
+import React, { memo} from "react"
 import styles from "./splineAnimation.module.scss"
 const Spline = React.lazy(() => import("@splinetool/react-spline"))
 

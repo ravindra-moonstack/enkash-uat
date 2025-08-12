@@ -1,15 +1,13 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import {
-  allProductSections,
   cardType,
   intantActionData,
   spendAnalyticsData,
 } from "./data"
 
-import { Header, Heading, Footer, FAQHtml } from "@/components"
+import { Header,  Footer, FAQHtml } from "@/components"
 
 import {
   blueArrow,
@@ -40,15 +38,12 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import faqData from "./faq-data"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import CardProduct from "@/components/card-product/card-product"
-import AllProducts from "@/components/all-products/all-products"
 import StepCard from "@/components/stepCard/stepCard"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
-import Link from "next/link"
 
-// const showScroll = cardsData.length > 3
-const mergedCards = allProductSections.flatMap((section) => section.items)
+
 const cards = [
   {
     color: "#fff",
