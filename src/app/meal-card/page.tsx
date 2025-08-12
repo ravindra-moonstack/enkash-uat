@@ -255,7 +255,7 @@ const MealCards = (): React.JSX.Element => {
         <div className={` max-w-auto  ${styles.section}`}>
           <>
             <div className={`${styles.title} text-center `}>
-              <DynamicHeading
+              {/* <DynamicHeading
                 content={[
                   {
                     title: "Meal Cards that your Employees Deserve ",
@@ -264,7 +264,7 @@ const MealCards = (): React.JSX.Element => {
                 ]}
                 headingTag="h2"
                 className="f-6"
-              />
+              /> */}
             </div>
 
             <CardStacking cards={cards} />

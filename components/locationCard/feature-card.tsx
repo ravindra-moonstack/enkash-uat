@@ -11,7 +11,7 @@ export interface CardProps {
   cardImage?:string | StaticImageData | undefined
 }
 
-const FeatureCard = ({
+const LocationCard = ({
   whiteTitle,
   titleHtml,
   description,
@@ -81,4 +81,4 @@ const FeatureCard = ({
   )
 }
 
-export default FeatureCard
+export default LocationCard
