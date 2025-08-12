@@ -1,8 +1,13 @@
 import React from "react"
 import Image from "next/image"
-import { DynamicHeading, LogoSlider, TestimonialSlider } from "@/components"
+import {
+  DynamicHeading,
+  FeatureCard,
+  LogoSlider,
+  TestimonialSlider,
+} from "@/components"
 import styles from "./page.module.scss"
-import { help, login, logo, support } from "."
+import { help, location, login, logo, support } from "."
 
 import { testimonialData } from "./data"
 
@@ -197,8 +202,27 @@ const Sales = () => {
                 <TestimonialSlider testimonials={testimonialData} />
               </div>
             </div>
-            <div className={`${styles.officeLocation} text-center`}></div>
-            <div></div>
+            <div className={`${styles.officeLocation} text-center`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Our Office Locations",
+                    color: "color-white",
+                  },
+                ]}
+                headingTag="h3"
+                className="pb-4"
+              />
+              <div className="d-flex">
+                <FeatureCard
+                  description={
+                    "91 Springboard BKC Kalina, 1st Floor & 2nd Floor, Kagalwala House, Plot No. 175, Behind Metro House CST Road, Kalina, Bandra Kurla Complex, Santacruz East, Mumbai, Maharashtra 400098"
+                  }
+                  titleHtml={"Mumbai (Registered Office)"}
+                  cardImage={location}
+                />
+              </div>
+            </div>
 
             <div>
               <hr className={`${styles.greyLine} `} />
