@@ -2,14 +2,15 @@
 @use "/styles/mixin" as *;
 
 .talk_to_sales {
-  background-image: 
-    url(./img/backgroundImg.webp);
+  background-image: url(./img/backgroundImg.webp);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 112px 20px 50px;
+  padding: 112px 20px 20px;
+      z-index: 2;
+    position: relative;
   @include for-laptops {
-    padding: 120px 20px 90px;
+    padding: 120px 20px 20px;
   }
 
   .logo {
@@ -19,10 +20,10 @@
       height: 20px;
     }
     @include for-laptops {
-      padding-bottom: 64px;
+      padding-bottom: 41px;
       img {
-        width: 192px;
-        height: 51px;
+        width: 104px;
+        height: 28px;
       }
     }
   }
@@ -40,6 +41,33 @@
       padding-left: 0;
     }
   }
+  .logoSlider {
+    background-color: $color-white;
+    margin-top: 36px;
+    border-radius: 12px;
+  }
+}
+
+.location {
+  position: relative;
+  background: $color-white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      0deg,
+      rgba(15, 15, 15, 1) 0%,
+      rgba(0, 0, 0, 1) 34%,
+      rgba(0, 0, 0, 1) 34%,
+      rgba(0, 0, 0, 0.77) 62%,
+      rgba(0, 0, 0, 0.33) 91%,
+      rgba(0, 0, 0, 0) 100%
+    );
+    pointer-events: none;
+    top: -220px;
+  }
 
   .greyLine {
     height: 2px;
@@ -51,14 +79,10 @@
   }
   .trunstedBrands {
     padding-top: 32px;
+        z-index: 2;
+    position: relative;
     @include for-laptops {
       padding-top: 64px;
     }
-  }
-
-  .logoSlider {
-    background-color: $color-white;
-    margin-top: 36px;
-    border-radius: 12px;
   }
 }

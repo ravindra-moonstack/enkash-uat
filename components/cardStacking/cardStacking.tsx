@@ -83,7 +83,8 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Meal Cards that your Employees Deserve ",
+                    title:
+                      "Meal Cards that your Employees Deserve  Meal Cards that your Employees Deserve ",
                     color: "color-black",
                   },
                 ]}
