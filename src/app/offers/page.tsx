@@ -1,5 +1,5 @@
-"use client"
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardsData, cardType } from "./data"
 import faqData from "./faq-data"
@@ -22,8 +22,6 @@ import {
   costControlSavings,
   wideAcceptanceNetworkIcon,
   wideAcceptanceNetwork,
-  stackCardSixIcon,
-  stackCardSixImg,
 } from "."
 
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
@@ -35,7 +33,6 @@ import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import RewardsCarousel from "@/components/rewards-carousel/rewards-carousel"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
-import Link from "next/link"
 
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = [
@@ -213,7 +210,9 @@ const Offers = (): React.JSX.Element => {
               </div>
             </div>
             <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div className={`${styles.right_img} position-relative w-100 h-100 d-flex`} >
+              <div
+                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
+              >
                 <Image
                   src={paymentSummary}
                   alt="card visual"

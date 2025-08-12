@@ -1,8 +1,7 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
+import Link from "next/link"
 import styles from "./page.module.scss"
-import { Header, Heading, Footer, FAQHtml } from "@/components"
+import { Header, Footer, FAQHtml } from "@/components"
 import {
   blueArrow,
   whiteArrow,
@@ -38,10 +37,7 @@ import bg5 from "./img/payroll-card.jpg"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import Link from "next/link"
 
-// const showScroll = cardsData.length > 3
-// const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = [
   {
     color: "#fff",

@@ -1,10 +1,9 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header,  FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -42,7 +41,7 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import AllProducts from "@/components/all-products/all-products"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
+
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)

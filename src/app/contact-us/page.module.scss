@@ -1,0 +1,64 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+
+.talk_to_sales {
+  background-image: 
+    url(./img/backgroundImg.webp);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 112px 20px 50px;
+  @include for-laptops {
+    padding: 120px 20px 90px;
+  }
+
+  .logo {
+    padding-bottom: 32px;
+    img {
+      width: 75px;
+      height: 20px;
+    }
+    @include for-laptops {
+      padding-bottom: 64px;
+      img {
+        width: 192px;
+        height: 51px;
+      }
+    }
+  }
+  .contactInfoCard {
+    background: $color-white;
+    border-radius: 12px;
+    box-shadow: 0px 7px 40px rgba(0, 0, 0, 0.1),
+      0px 30px 40px rgba(0, 0, 0, 0.09), 0px 67px 40px rgba(0, 0, 0, 0.05);
+    padding: 43px 30px;
+    ul {
+      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+
+  .greyLine {
+    height: 2px;
+    background: $color-dark-grey;
+  }
+  .termsCond {
+    display: flex;
+    gap: 32px;
+  }
+  .trunstedBrands {
+    padding-top: 32px;
+    @include for-laptops {
+      padding-top: 64px;
+    }
+  }
+
+  .logoSlider {
+    background-color: $color-white;
+    margin-top: 36px;
+    border-radius: 12px;
+  }
+}

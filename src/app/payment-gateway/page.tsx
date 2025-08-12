@@ -1,5 +1,5 @@
-
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import {
   acceleratedGrowthData,
@@ -11,7 +11,7 @@ import {
   supportData,
 } from "./data"
 import faqData from "./faq-data"
-import { Header,  FAQHtml, Footer } from "@/components"
+import { Header, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -41,10 +41,8 @@ import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import LogoSlider from "@/components/logo-slider/logo-slider"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Link from "next/link"
 
 const PaymentGateway = (): React.JSX.Element => {
-  
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />

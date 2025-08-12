@@ -352,6 +352,7 @@
   .section {
     padding: 50px 20px 0px;
     background: #f6f6f6;
+    
     @include for-laptops {
       padding: 90px 0px 50px;
     }

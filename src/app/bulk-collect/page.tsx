@@ -1,10 +1,8 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import { cardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import { Header, FAQHtml, Footer } from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -17,7 +15,6 @@ import {
   autoCollect,
   instant,
   reminder,
-  whiteArrow,
   mealCardImage,
   paymentLinkImage,
   shareImage,
