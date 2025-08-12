@@ -103,10 +103,11 @@
 }
 
 .footer_padding {
-  padding: 20px 0px;
+  padding: 20px 20px;
 
   @include for-laptops {
     padding-top: 76px;
+     padding: 20px 0px;
   }
 
   .footer_section {
@@ -285,6 +286,16 @@
   }
 }
 
+.callIcon{
+  width: 16px;
+  height: 16px;
+  color: $color-black;
+  margin-right: 8px;
+   @include for-laptops {
+    width: 20px;
+  height: 20px;
+  }
+}
 .new_badge {
   display: flex;
   align-items: center;

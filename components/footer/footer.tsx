@@ -63,7 +63,9 @@ const FooterV2 = () => {
               <div className={` ${styles.info_container} d-none d-md-block`}>
                 <div className={`{styles.info_div} ${styles.info_div_one}`}>
                   <div className={` ${styles.info_header_one}`}>
-                    <h4 className={`${styles.title}`}>Certification</h4>
+                    <h4 className={`${styles.title}`}>
+                      Licenses & Certificates
+                    </h4>
                   </div>
                   <div className={`d-flex ${styles.info_body}`}>
                     <div
@@ -130,12 +132,10 @@ const FooterV2 = () => {
                             href="tel:8530490475"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className={`ms-md-3 ms-2  ${styles.support_text}`}
+                            className={` ${styles.support_text}`}
                           >
-                            <FaPhone />
-                            <span
-                              className={`ms-md-3 ms-2 ${styles.support_text}`}
-                            >
+                            <FaPhone className={`${styles.callIcon}`} />
+                            <span className={` ${styles.support_text}`}>
                               +91 8530490475
                             </span>
                           </Link>
@@ -145,12 +145,10 @@ const FooterV2 = () => {
                             href="mailto:support@enkash.com"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className={`ms-md-3 ms-2  ${styles.support_text}`}
+                            className={`${styles.support_text}`}
                           >
-                            <FaEnvelope />
-                            <span
-                              className={`ms-md-3 ms-2 ${styles.support_text}`}
-                            >
+                            <FaEnvelope className={`${styles.callIcon}`} />
+                            <span className={`${styles.support_text}`}>
                               support@enkash.com
                             </span>
                           </Link>
@@ -263,7 +261,7 @@ const FooterV2 = () => {
                               rel="noreferrer noopener"
                               className={`ms-md-3 ms-2  ${styles.support_text}`}
                             >
-                              <FaPhone />
+                              <FaPhone className={`${styles.callIcon}`} />
                               <span
                                 className={`ms-md-3 ms-2 ${styles.support_text}`}
                               >
@@ -278,7 +276,7 @@ const FooterV2 = () => {
                               rel="noreferrer noopener"
                               className={`ms-md-3 ms-2  ${styles.support_text}`}
                             >
-                              <FaEnvelope />
+                              <FaEnvelope className={`${styles.callIcon}`} />
                               <span
                                 className={`ms-md-3 ms-2 ${styles.support_text}`}
                               >
@@ -422,9 +420,9 @@ const FooterV2 = () => {
                 className="me-3 mb-3"
               />
             </Link>
-            <div className={`d-flex flex-wrap  gap-3 w-100 ${styles.light_bg}`}>
+            <div className={`row gap-3 w-100 ${styles.light_bg}`}>
               {/* 2nd col */}
-              <div className={`${styles.footer_links_col}`}>
+              <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <Link href="/products/collect-payments">
                   <h4 className={` ${styles.title}`}>Collect Payments</h4>
                 </Link>
@@ -511,7 +509,7 @@ const FooterV2 = () => {
               </div>
 
               {/* 3rd col */}
-              <div className={`${styles.footer_links_col}`}>
+              <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <div>
                   <div className="">
                     <ul className="mb-0">
@@ -652,7 +650,7 @@ const FooterV2 = () => {
               </div>
 
               {/* 4th col */}
-              <div className={`${styles.footer_links_col}`}>
+              <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <div>
                   <div>
                     <div className={styles.freedom_card_box}>
@@ -711,7 +709,7 @@ const FooterV2 = () => {
                 </div>
               </div>
 
-              <div className={`${styles.footer_links_col}`}>
+              <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 {/* col-1 resources */}{" "}
                 <div className="">
                   <h4 className={`${styles.title}`}>Resources</h4>

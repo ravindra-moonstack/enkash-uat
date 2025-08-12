@@ -3,6 +3,17 @@
 
 
 .banking_wrapper{
+
+  .custom_slider {
+
+  .slide_item {
+    padding: 0 10px; 
+  }
+
+  .slide_item{
+    margin: 0 -10px; 
+  }
+}
 :global {
   .slick-slider {
     position: relative;
@@ -25,6 +36,7 @@
   .slick-dots {
     text-align: center;
     margin-top: 30px;
+        bottom: -45px;
 
     li {
       margin: 0 5px;

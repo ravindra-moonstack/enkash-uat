@@ -18,10 +18,12 @@ interface TestimonialItem {
 
 interface TestimonialSliderProps {
   testimonials: TestimonialItem[]
+  slidesToShow?: number
 }
 
 const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
   testimonials,
+  slidesToShow = 3,
 }) => {
   const sliderSettings: Settings = {
     infinite: true,
@@ -29,26 +31,35 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
     autoplay: true,
     autoplaySpeed: 3000,
     cssEase: "ease",
-    slidesToShow: 1,
+    slidesToShow,
     slidesToScroll: 1,
     arrows: false,
     dots: true,
     pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   }
 
   return (
     <div className={`col-12 ${styles.banking_wrapper}`}>
       <div className={styles.marquee_box}>
-        <Slider {...sliderSettings}>
+        <Slider {...sliderSettings} className={styles.custom_slider}>
           {testimonials.map((item, index) => (
-            <TestimonialCard
-              key={index}
-              icon={item.icon}
-              description={item.description}
-              name={item.name}
-              position={item.position}
-              testimonialImg={item.testimonialImg}
-            />
+            <div key={index} className={styles.slide_item}>
+              <TestimonialCard
+                icon={item.icon}
+                description={item.description}
+                name={item.name}
+                position={item.position}
+                testimonialImg={item.testimonialImg}
+              />
+            </div>
           ))}
         </Slider>
       </div>
