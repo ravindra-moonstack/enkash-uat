@@ -24,7 +24,7 @@ const SplineAnimation = dynamic(() => import("./splineAnimation/splineAnimation"
 const ContentShowcase = dynamic(() => import("./contentShowcase/contentShowcase"), { ssr: true });
 const SecondFaqHtml = dynamic(() => import("./second-faq/secondFaqHtml"), { ssr: true });
 const ManagementCard = dynamic(() => import('./management-card/management-card'), { ssr: true });
-
+const TestimonialSlider = dynamic(() => import('./testimonialSlider/testimonialSlider'), { ssr: true });
  
 export {
   Header,
@@ -51,6 +51,7 @@ export {
   EnkashWay,
   SplineAnimation,
   ContentShowcase,
-  ManagementCard
+  ManagementCard,
+  TestimonialSlider
 }
  

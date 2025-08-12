@@ -1,0 +1,17 @@
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
+
+.policyCard {
+  gap: 7px;
+  padding: 20px;
+  border-radius: 12px;
+  height: auto;
+  width: 100%;
+  border: 1px solid white;
+  @include for-laptops {
+    gap: 20px;
+    padding: 28px;
+  }
+
+ 
+}
