@@ -61,8 +61,7 @@ const contactData = [
   {
     icon: support,
     title: "Join Our Team",
-    subtitle:
-      "Want to join our fast-growing team? Send your resume to",
+    subtitle: "Want to join our fast-growing team? Send your resume to",
     email: "careers@enkash.com",
   },
   {
@@ -75,20 +74,14 @@ const contactData = [
 
 const locationData = [
   {
-    titleHtml: "Mumbai ",
-    title2: "(Registered Office)",
-    description:
-      "91 Springboard BKC Kalina, 1st Floor & 2nd Floor, Kagalwala House, Plot No. 175, Behind Metro House CST Road, Kalina, Bandra Kurla Complex, Santacruz East, Mumbai, Maharashtra 400098",
+    titleHtml: "Grievance Officer:",
+    title2: "Mr. Nagesh Shet",
+    description: "grievanceofficer@enkash.com",
   },
   {
-    titleHtml: "Gurugram",
-    description:
-      "3rd Floor, Beyond Just Work, Plot No. 378-379, Udyog Vihar Phase 4 Rd, near Nokia Building, Electronic City, Phase IV, Udyog Vihar, Sector 19, Gurugram, Haryana 122015",
-  },
-  {
-    titleHtml: "Pune",
-    description:
-      "91 Springboard Business Hub Private Limited, Sadanand Business Center (SBC), 9th Floor NH 48 Pashan Highway Side Road, Baner, Pune, Maharashtra, 411045",
+    titleHtml: "Nodal Officer:",
+    title2: "Mr. Nagesh Shet",
+    description: "nodalofficer@enkash.com",
   },
 ]
-export { testimonialData , locationData, contactData}
+export { testimonialData, locationData, contactData }

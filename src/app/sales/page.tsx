@@ -61,6 +61,7 @@ const Sales = () => {
                           {
                             title: "Need Support",
                             color: "color-white underline f-7",
+                            link: "/support",
                           },
                         ]}
                         headingTag="p"
@@ -86,6 +87,7 @@ const Sales = () => {
                           {
                             title: "Login",
                             color: "color-white underline f-7",
+                            link: "https://home.enkash.com/login",
                           },
                         ]}
                         headingTag="p"
@@ -121,9 +123,6 @@ const Sales = () => {
             <div className="col-md-7 col-12"></div>
 
             <div>
-              <div className={`${styles.companyLogo} `}>
-                <div className="d-flex"></div>
-              </div>
               <div className={`${styles.logoSlider} `}>
                 <LogoSlider />
               </div>
@@ -135,7 +134,7 @@ const Sales = () => {
                       content={[
                         {
                           title: "Terms & Condition",
-                          color: "color-dark-grey",
+                          color: "color-grey-100",
                         },
                       ]}
                       headingTag="p"
@@ -145,7 +144,7 @@ const Sales = () => {
                       content={[
                         {
                           title: "Privacy Policy",
-                          color: "color-dark-grey",
+                          color: "color-grey-100",
                         },
                       ]}
                       headingTag="p"
@@ -158,7 +157,7 @@ const Sales = () => {
                         {
                           title:
                             "Copyright © 2025 | Nehat Tech Solutions Pvt. Ltd. All right reserved.",
-                          color: "color-dark-grey",
+                          color: "color-grey-100",
                         },
                       ]}
                       headingTag="p"

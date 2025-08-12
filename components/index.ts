@@ -25,6 +25,8 @@ const ContentShowcase = dynamic(() => import("./contentShowcase/contentShowcase"
 const SecondFaqHtml = dynamic(() => import("./second-faq/secondFaqHtml"), { ssr: true });
 const ManagementCard = dynamic(() => import('./management-card/management-card'), { ssr: true });
 const TestimonialSlider = dynamic(() => import('./testimonialSlider/testimonialSlider'), { ssr: true });
+const LocationCard = dynamic(() => import('./locationCard/location-card'), { ssr: true });
+const SupportCard = dynamic(() => import('./supportCard/support-card'), { ssr: true });
  
 export {
   Header,
@@ -52,6 +54,8 @@ export {
   SplineAnimation,
   ContentShowcase,
   ManagementCard,
-  TestimonialSlider
+  TestimonialSlider,
+  LocationCard,
+  SupportCard
 }
  
