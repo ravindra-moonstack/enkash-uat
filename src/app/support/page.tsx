@@ -1,17 +1,12 @@
 "use client"
 import React from "react"
 import Image from "next/image"
-import {
-  DynamicHeading,
-  LocationCard,
-  LogoSlider,
-  TestimonialSlider,
-} from "@/components"
+import { DynamicHeading, LogoSlider, SupportCard } from "@/components"
 import styles from "./page.module.scss"
 import { location, logo } from "."
-import { contactData, locationData, testimonialData } from "./data"
+import { contactData, locationData } from "./data"
 
-const ContactUs = () => {
+const Suppport = () => {
   return (
     <>
       <div className={styles.talk_to_sales}>
@@ -21,7 +16,8 @@ const ContactUs = () => {
           </div>
 
           <div className="row">
-            <div className="col-md-5 col-12">
+            <div className="col-md-5 col-12"></div>
+            <div className="col-md-7 col-12">
               <div className={styles.contactInfoCard}>
                 <ul>
                   {contactData.map((item, idx) => (
@@ -76,18 +72,22 @@ const ContactUs = () => {
                   ))}
                 </ul>
               </div>
+              <div>
+                <div className="row">
+                  {locationData.map((loc, idx) => (
+                    <div className="col-md-6 col-12 my-3" key={idx}>
+                      <SupportCard
+                        description={loc.description}
+                        titleHtml={loc.titleHtml}
+                        title2={loc.title2}
+                        cardImage={location}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="col-md-7 col-12"></div>
           </div>
-
-          <div className={styles.logoSlider}>
-            <LogoSlider />
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.location}>
-        <div className="max-w-auto">
           <div className={`${styles.trunstedBrands} text-center`}>
             <DynamicHeading
               content={[
@@ -97,31 +97,10 @@ const ContactUs = () => {
               headingTag="h2"
               className="pb-4"
             />
-            <TestimonialSlider testimonials={testimonialData} />
           </div>
-
-          <div className={`${styles.officeLocation} text-center`}>
-            <DynamicHeading
-              content={[
-                { title: "Our Office Locations", color: "color-white" },
-              ]}
-              headingTag="h3"
-              className="pb-4"
-            />
-            <div className="row">
-              {locationData.map((loc, idx) => (
-                <div className="col-md-4 col-12 my-3" key={idx}>
-                  <LocationCard
-                    description={loc.description}
-                    titleHtml={loc.titleHtml}
-                    title2={loc.title2}
-                    cardImage={location}
-                  />
-                </div>
-              ))}
-            </div>
+          <div className={styles.logoSlider}>
+            <LogoSlider />
           </div>
-
           <hr className={styles.greyLine} />
           <div className={`${styles.copyright} `}>
             <div className={`${styles.termsCond} `}>
@@ -166,4 +145,4 @@ const ContactUs = () => {
   )
 }
 
-export default ContactUs
+export default Suppport
