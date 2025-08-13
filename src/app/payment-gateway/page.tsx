@@ -861,7 +861,7 @@ const PaymentGateway = (): React.JSX.Element => {
           <div className="row g-3 pb-4 ">
             <div className="col-12 col-md-4">
               <ManagementCard
-                whiteTitle="Payment Link"
+                whiteTitle="Payment Links"
                 description="Collect payments across WhatsApp, SMS, Facebook, Twitter, and other platforms with no-code payment links."
                 cardImage={paymentLink}
               />

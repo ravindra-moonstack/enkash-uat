@@ -435,7 +435,7 @@ const FooterV2 = () => {
                         <Link href="/payment-gateway">Payment Gateway</Link>
                       </li>
                       <li>
-                        <Link href="/payment-link/">Payment Links</Link>
+                        <Link href="/payment-links/">Payment Links</Link>
                       </li>
                       <li>
                         <Link href="/payment-button/">Payment Button</Link>
@@ -538,7 +538,7 @@ const FooterV2 = () => {
                         <Link href="/payroll/">Payroll Processing</Link>
                       </li>
                       <li>
-                        <Link href="/express-pay/"> Bulk Pay</Link>
+                        <Link href="/bulk-pay/"> Bulk Pay</Link>
                       </li>
 
                       <li>
@@ -683,7 +683,7 @@ const FooterV2 = () => {
                         <Link href="/purchase-card/">Purchase Cards</Link>
                       </li>
                       <li>
-                        <Link href="/gift-card/">Gift Cards</Link>
+                        <Link href="/gift-cards/">Gift Cards</Link>
                       </li>
                     </ul>
                   </div>

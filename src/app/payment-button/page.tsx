@@ -594,7 +594,7 @@ const PaymentButton = (): React.JSX.Element => {
 
             <div className="col-12 col-md-4">
               <ManagementCard
-                titleHtml="Payment Link"
+                titleHtml="Payment Links"
                 description="Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links."
                 cardImage={paymentButton}
               />

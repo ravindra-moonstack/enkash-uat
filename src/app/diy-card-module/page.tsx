@@ -1,13 +1,9 @@
 import Image from "next/image"
 import Link from "next/link"
 import styles from "./page.module.scss"
-import {
-  cardType,
-  intantActionData,
-  spendAnalyticsData,
-} from "./data"
+import { cardType, intantActionData, spendAnalyticsData } from "./data"
 
-import { Header,  Footer, FAQHtml } from "@/components"
+import { Header, Footer, FAQHtml } from "@/components"
 
 import {
   blueArrow,
@@ -42,7 +38,6 @@ import StepCard from "@/components/stepCard/stepCard"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
-
 
 const cards = [
   {
@@ -151,7 +146,7 @@ const cards = [
     ),
   },
 ]
-const DiyCards = (): React.JSX.Element => {
+const DiyCardModule = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -165,7 +160,7 @@ const DiyCards = (): React.JSX.Element => {
                 { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
                   name: "Diy Card",
-                  url: "/corporate-cards/diy-card",
+                  url: "/corporate-cards/diy-card-module",
                 },
               ]}
             />
@@ -520,4 +515,4 @@ const DiyCards = (): React.JSX.Element => {
   )
 }
 
-export default DiyCards
+export default DiyCardModule

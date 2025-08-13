@@ -55,7 +55,7 @@ export const cardsProducts = [
             description: "One card, endless choices",
             imageSrc: giftFilled,
             imageSrcHovered: giftFilled,
-            link: "/gift-card",
+            link: "/gift-cards",
           },
           {
             name: "SaaS Cards",

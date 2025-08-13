@@ -76,11 +76,11 @@ export const motherProducts = [
             link: "/auto-collect",
           },
           {
-            name: "Payment Link",
+            name: "Payment Links",
             description: "Create & send links to get paid",
             imageSrc: paymentLinks,
             imageSrcHovered: paymentLinksFilled,
-            link: "/payment-link",
+            link: "/payment-links",
           },
           {
             name: "Subscriptions",
@@ -195,7 +195,7 @@ export const motherProducts = [
             description: "Mass payments in one click",
             imageSrc: bulkPayout,
             imageSrcHovered: bulkPayoutFilled,
-            link: "/express-pay",
+            link: "/bulk-pay",
           },
           {
             name: "GST Payment",

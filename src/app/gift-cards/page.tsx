@@ -135,7 +135,7 @@ const GiftCards = (): React.JSX.Element => {
                 { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
                   name: "Gift Card",
-                  url: "/corporate-cards/gift-card",
+                  url: "/corporate-cards/gift-cards",
                 },
               ]}
             />
