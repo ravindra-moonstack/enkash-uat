@@ -35,17 +35,17 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
 
     const firstST = ScrollTrigger.create({
       trigger: cardEls[0],
-      start: "75% center",
+      start: "90% center",
     })
-
+    console.log(cardEls, "card")
     const lastST = ScrollTrigger.create({
       trigger: cardEls[cardEls.length - 1],
-      start: "33% center",
+      start: `top 100+=${titleRef.current?.offsetHeight || 0}px`,
     })
     if (titleRef.current) {
       ScrollTrigger.create({
         trigger: titleRef.current,
-        start: "top 17%", // Pin when heading hits 20% from top
+        start: "top 100px", // Pin when heading hits 20% from top
         end: () => lastST.start, // Unpin when last card animation starts
         pin: true,
         pinSpacing: false,
@@ -61,7 +61,7 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
 
       ScrollTrigger.create({
         trigger: card,
-        start: "15% center",
+        start: () => `top 100+=${titleRef.current?.offsetHeight || 0}px`,
         end: () => lastST.start,
         pin: true,
         pinSpacing: false,
@@ -83,8 +83,7 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
               <DynamicHeading
                 content={[
                   {
-                    title:
-                      "Meal Cards that your Employees Deserve  Meal Cards that your Employees Deserve ",
+                    title: "Cards that your Employees Deserve Meal ",
                     color: "color-black",
                   },
                 ]}
