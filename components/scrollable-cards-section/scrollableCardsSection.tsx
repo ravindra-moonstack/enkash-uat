@@ -24,6 +24,8 @@ interface ScrollableCardsSectionProps {
     | "border-gray"
     | "border-black"
   buttonUrl?: string
+  marginBottoms?: string
+  link?: string // Optional link prop for PolicyCard
 }
 
 const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
@@ -33,11 +35,15 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
   buttonTitle,
   buttonTheme = "outline-blue",
   buttonUrl,
+  marginBottoms,
+  link
 }) => {
   return (
     <>
       <div
-        className={`mt-md-5 ${styles.scrollBoxOuter} ${showScroll ? "overflow-auto scrollbar-thin" : ""}`}
+        className={`mt-md-5 ${styles.scrollBoxOuter} ${
+          showScroll ? "overflow-auto scrollbar-thin" : ""
+        }`}
         style={{
           maxHeight,
           direction: showScroll ? "rtl" : "ltr",
@@ -46,25 +52,34 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
         {cardsData.map(({ icon, title, description }, i) => (
           <div
             key={i}
-            style={{ direction: "ltr" }}
+            style={{ direction: "ltr",
+              marginBottom: marginBottoms
+                ? marginBottoms
+                : "50px" }}
             className={styles.scrollCard}
+
           >
-            <PolicyCard icon={icon} title={title} description={description} />
+            <PolicyCard icon={icon} title={title} description={description} link={link} />
           </div>
         ))}
       </div>
-
-      <div
-        className={`${ showScroll ? styles["scrollCardButton--scroll"] : styles["scrollCardButton"] }`}
-      >
-        <div className={`${styles.list_button}`}>
-          <RectangleButton
-            title={buttonTitle}
-            theme={buttonTheme}
-            url={buttonUrl}
-          />
+      {buttonTitle && (
+        <div
+          className={`${
+            showScroll
+              ? styles["scrollCardButton--scroll"]
+              : styles["scrollCardButton"]
+          }`}
+        >
+          <div className={styles.list_button}>
+            <RectangleButton
+              title={buttonTitle}
+              theme={buttonTheme}
+              url={buttonUrl}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </>
   )
 }
