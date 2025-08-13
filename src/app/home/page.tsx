@@ -912,9 +912,7 @@ const Home = (): React.JSX.Element => {
         <section className={`${styles.receivablesPayablesSection}`}>
           <div className="max-w-auto">
             <div className={`${styles.receivablesPayablesOuter}`}>
-              <div className={`${styles.spline_background}`}>
-                <Spline scene="https://prod.spline.design/ljGW-FUjmmMBrg2W/scene.splinecode" />
-              </div>
+              
               <div className="row">
                 <div className="col-md-12">
                   <div className={`${styles.receivablesPayablesHeading}`}>
