@@ -15,7 +15,6 @@ interface CardProps {
 
 const TestimonialCard: React.FC<CardProps> = ({
   icon,
-
   description,
   className,
   testimonialImg,
@@ -24,29 +23,33 @@ const TestimonialCard: React.FC<CardProps> = ({
 }) => {
   return (
     <div
-      className={`d-flex align-items-start  flex-column  ${className}  ${styles.policyCard}`}
+      className={`d-flex align-items-start  justify-content-between flex-column  ${className}  ${styles.policyCard}`}
     >
-      <div className="">
-        {icon && (
-          <div style={{ position: "relative", width: "auto", height: "100%" }}>
-            <Image src={icon} alt="icon" style={{ objectFit: "contain" }} />
-          </div>
-        )}
-      </div>
+      <div>
+        <div className="">
+          {icon && (
+            <div
+              style={{ position: "relative", width: "auto", height: "100%" }}
+            >
+              <Image src={icon} alt="icon" style={{ objectFit: "contain" }} />
+            </div>
+          )}
+        </div>
 
-      <div className="d-flex flex-column text-start ">
-        {description && (
-          <DynamicHeading
-            content={[
-              {
-                title: String(description),
-                color: "color-white",
-              },
-            ]}
-            headingTag="p"
-            className="mb-0 "
-          />
-        )}
+        <div className="d-flex flex-column text-start pt-4">
+          {description && (
+            <DynamicHeading
+              content={[
+                {
+                  title: String(description),
+                  color: "color-white",
+                },
+              ]}
+              headingTag="p"
+              className="mb-0 "
+            />
+          )}
+        </div>
       </div>
 
       <div className="d-flex  text-start gap-3 ">

@@ -38,7 +38,13 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
     pauseOnHover: true,
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 1200, // below 1200px
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 768, // below 768px
         settings: {
           slidesToShow: 1,
         },

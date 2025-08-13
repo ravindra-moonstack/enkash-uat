@@ -2,11 +2,11 @@
 @use "../../styles/mixin" as *;
 .cardStacking {
   overflow: hidden;
-  padding: 24px 0px 50px;
+  padding: 0px 0px 50px;
   min-height: max-content;
   @include for-laptops {
     // min-height: 100vh;
-    padding: 48px 20px;
+    padding:0px  20px 48px;
   }
 
   .stackCard {
@@ -44,9 +44,10 @@
 }
   .title {
   position: sticky;
-  top: 20px; // some offset from top
+  top: 10px; // some offset from top
 
   z-index: 10; // above cards
   padding-bottom: 10px; // spacing
   margin-bottom: 1rem;
+
 }
