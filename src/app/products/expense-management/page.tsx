@@ -5,7 +5,6 @@ import { allProductSections, cardData, cardsData, stackcardData } from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
 
 import { Header, Footer, FAQHtml } from "@/components"
-// import EnkashWay from "@/components/enkash-way/enkash-way"
 import {
   faqBg,
   blueArrow,
