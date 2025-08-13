@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixin" as *;
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
 
 .first_row {
   background-repeat: no-repeat, no-repeat;
@@ -7,7 +7,7 @@
   background-size: cover, cover;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 100px 20px 0;
-  background-image:  url("./img/first-row-bg.svg"),  url(/images/expenceBg.webp) ;
+  background-image:  url(/images/cardsBg.webp),  url(/images/collectPaymentBg.webp) ;
   @include for-laptops {
     padding: 112px 20px 0;
   }
