@@ -7,14 +7,12 @@ import {
   DynamicHeading,
   RectangleButton,
   LogoSlider,
-  AllProducts,
+
   FeatureCard,
   LottieDynamicLoadComponent,
 } from "@/components"
 import {
-  autoCollect,
-  realTimeIcon,
-  taskIconFour,
+ 
   collectPaymentboxIcon,
   makePayment1,
   makePayment2,
@@ -66,12 +64,9 @@ import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales
 import UtilityBillPayments from "@/components/UtilityBillPayments/UtilityBillPayments"
 import PartnerSection from "@/components/partnerSectionData/partnerSectionData"
 import PaymentGatewayCare from "@/components/homePagePaymentBox/PaymentGatewayCard"
-import AdidasCard from "@/components/AdidasCard/AdidasCard"
 import { RectangleButtonTheme } from "@/components/buttons/rectangle-button/rectangle-button"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import { link } from "fs"
 import PrepaidCardHome from "@/components/prepaidCardHome/PrepaidCardHome"
-import { url } from "inspector"
 import HomePageRewardsVouchers from "@/components/HomePageRewardsVouchers/HomePageRewardsVouchers "
 import HomeReceivablesPayables from "@/components/HomeReceivablesPayables/HomeReceivablesPayables"
 import Counter from "@/components/HomeCounter/HomeCounter"
@@ -79,7 +74,7 @@ import HomePageSlider from "@/components/homePageSlider/HomePAgeSlider"
 import BuiltforBuildersSection from "@/components/BuiltforBuildersCard/BuiltforBuildersSection"
 import Link from "next/link"
 import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
-import Spline from "@splinetool/react-spline"
+
 
 const HomePageRewardsVouchersSlide = [
   {
@@ -124,7 +119,7 @@ const HomePageRewardsVouchersSlide = [
     padding: "30px 20px",
   },
 ]
-export const adidasData = [
+ const adidasData = [
   {
     image: AdiadsBg,
     title1: "Read, how Adidas Unlocked",
@@ -912,7 +907,6 @@ const Home = (): React.JSX.Element => {
         <section className={`${styles.receivablesPayablesSection}`}>
           <div className="max-w-auto">
             <div className={`${styles.receivablesPayablesOuter}`}>
-              
               <div className="row">
                 <div className="col-md-12">
                   <div className={`${styles.receivablesPayablesHeading}`}>
@@ -1255,7 +1249,7 @@ const Home = (): React.JSX.Element => {
                         <path
                           d="M1.75 1.25L5.75 5.25L1.75 9.25"
                           stroke="#1C5AF4"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                       </svg>
                     </Link>
