@@ -9,6 +9,7 @@ export type AllProductsDataProp = {
   description: string
   image: string
   link?: string
+  showSlide?: string
 }
 
 export type AllProductsProp = {

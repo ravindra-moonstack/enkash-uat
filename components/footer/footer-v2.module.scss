@@ -103,7 +103,7 @@
 }
 
 .footer_padding {
-  padding: 20px 20px;
+  padding: 50px 20px 20px;
 
   @include for-laptops {
     padding-top: 76px;
@@ -176,9 +176,10 @@
 
 .social_icons_row {
   gap: 6px;
-
+  flex-wrap: wrap;
   @include for-laptops {
     width: 50%;
+      flex-wrap: nowrap;
   }
 
   a {
@@ -458,8 +459,25 @@
 
 .info_div_one {
   padding-top: 24px;
+  padding-bottom: 10px;
   @include for-laptops {
     padding-top: 0px;
+  }
+  .soc_logo{
+
+    img {
+      object-fit: contain;
+    }
+
+   
+  }
+  .pci_logo{
+
+    img {
+      object-fit: contain;
+    }
+
+   
   }
 }
 
