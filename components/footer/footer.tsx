@@ -519,7 +519,7 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/business-bill-payment/">
+                        <Link href="/utility-bill-payment/">
                           Business Bill Payments
                         </Link>
                       </li>

@@ -42,7 +42,7 @@ const payableProducts = [
         description: "Auto fetch & auto pay utility bills on time",
         imageSrc: billPayments,
         imageSrcHovered: billPaymentsFilled,
-        link: "/business-bill-payment",
+        link: "/utility-bill-payment",
       },
       {
         name: "Express Pay",

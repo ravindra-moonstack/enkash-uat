@@ -166,7 +166,7 @@ export const motherProducts = [
             description: "Auto-fetch & pay utility bills",
             imageSrc: billPayments,
             imageSrcHovered: billPaymentsFilled,
-            link: "/business-bill-payment",
+            link: "/utility-bill-payment",
           },
           {
             name: "Vendor Payment",

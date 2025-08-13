@@ -37,7 +37,7 @@ import {
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
-const BusinessBillPayment = (): React.JSX.Element => {
+const UtilityBillPayment = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -58,7 +58,7 @@ const BusinessBillPayment = (): React.JSX.Element => {
                     },
                     {
                       name: "Business Bill Payment",
-                      url: "/business-bill-payment",
+                      url: "/utility-bill-payment",
                     },
                   ]}
                 />
@@ -421,4 +421,4 @@ const BusinessBillPayment = (): React.JSX.Element => {
   )
 }
 
-export default BusinessBillPayment
+export default UtilityBillPayment
