@@ -1,8 +1,22 @@
 import Image from "next/image"
+import Link from "next/link"
 import styles from "./page.module.scss"
 import { analyticData, dashboardData } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  Header,
+  FAQHtml,
+  Footer,
+  DynamicHeading,
+  TalkToSales,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  CardStacking,
+  PolicyCard
+
+} from "@/components"
 import {
   analytics,
   blueArrow,
@@ -22,15 +36,6 @@ import {
   stackCardThreeIcon,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import PolicyCard from "@/components/policyCard/policyCard"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import CardStacking from "@/components/cardStacking/cardStacking"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import Link from "next/link"
 const cards = [
   {
     color: "#fff",
