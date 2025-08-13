@@ -363,7 +363,7 @@ const allProductSections = [
         title: "Auto-capture receipts",
         description: "and match them with transactions",
         image: autoCapture,
-        link: "/payment-links/",
+        link: "/receipts/",
       },
       {
         title: "View, approve, and audit expenses",

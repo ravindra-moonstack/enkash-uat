@@ -543,10 +543,10 @@ const Subscriptions = (): React.JSX.Element => {
             </div>
             <div className="col-12 col-md-4">
               <ManagementCard
-                titleHtml="Payment Link"
+                titleHtml="Payment Links"
                 description="Use no-code payment links to collect payments on different channels like WhatsApp, SMS, email and social media."
                 cardImage={paymentLink}
-                linkUrl="/payment-link"
+                linkUrl="/payment-links"
               />
             </div>
 

@@ -520,7 +520,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                 titleHtml="Payment Link"
                 description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
                 cardImage={paymentLink}
-                linkUrl="/payment-link"
+                linkUrl="/payment-links"
               />
             </div>
 

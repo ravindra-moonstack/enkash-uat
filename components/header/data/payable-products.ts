@@ -49,7 +49,7 @@ const payableProducts = [
         description: "Pay multiple vendors & bills with a single click",
         imageSrc: bulkPayout,
         imageSrcHovered: bulkPayoutFilled,
-        link: "/express-pay",
+        link: "/bulk-pay",
       },
       {
         name: "GST Payment",

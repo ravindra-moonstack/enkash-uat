@@ -62,7 +62,7 @@ import bg5 from "./img/bg1.jpg"
 
 const showScroll = cardsData.length > 3
 
-const PaymentLink = (): React.JSX.Element => {
+const PaymentLinks = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -706,4 +706,4 @@ const PaymentLink = (): React.JSX.Element => {
   )
 }
 
-export default PaymentLink
+export default PaymentLinks

@@ -111,13 +111,13 @@ const blogData = [
 
 const cardsData = [
   {
-    title: "Generate Payment Link",
+    title: "Generate Payment Links",
     description:
       "Use the EnKash dashboard or APIs to generate payment links with ease.",
     icon: generateIcon,
   },
   {
-    title: "Share Payment Link",
+    title: "Share Payment Links",
     description: "Send the link via SMS, email, WhatsApp, or social media",
     icon: sharePaymentIcon,
   },
