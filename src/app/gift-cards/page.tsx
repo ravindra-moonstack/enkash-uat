@@ -1,4 +1,3 @@
-
 import Image from "next/image"
 import styles from "./page.module.scss"
 import {
@@ -122,7 +121,7 @@ const cards = [
     ),
   },
 ]
-const VirtualCards = (): React.JSX.Element => {
+const GiftCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
       <Header utmSource="expense_management" />
@@ -557,4 +556,4 @@ const VirtualCards = (): React.JSX.Element => {
   )
 }
 
-export default VirtualCards
+export default GiftCards
