@@ -45,7 +45,7 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
     if (titleRef.current) {
       ScrollTrigger.create({
         trigger: titleRef.current,
-        start: "top 100px", // Pin when heading hits 20% from top
+        start: "top 108px", // Pin when heading hits 20% from top
         end: () => lastST.start, // Unpin when last card animation starts
         pin: true,
         pinSpacing: false,
