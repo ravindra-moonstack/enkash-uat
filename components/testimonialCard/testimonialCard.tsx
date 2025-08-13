@@ -28,13 +28,9 @@ const TestimonialCard: React.FC<CardProps> = ({
     >
       <div className="">
         {icon && (
-          <Image
-            src={icon}
-            alt="icon"
-            width={32}
-            height={32}
-            objectFit="contain"
-          />
+          <div style={{ position: "relative", width: "auto", height: "100%" }}>
+            <Image src={icon} alt="icon" style={{ objectFit: "contain" }} />
+          </div>
         )}
       </div>
 
