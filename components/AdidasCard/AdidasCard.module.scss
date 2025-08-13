@@ -1,0 +1,83 @@
+.cordData {
+  position: relative;
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+  &:hover {
+    .backCardData {
+      display: block !important;
+    }
+  }
+  .cardsDataFront {
+    height: 280px;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: pointer;
+    .rightTopIcon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      img {
+        height: 60px;
+        max-width: 150px;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .backCardData {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #fff;
+    padding: 20px;
+    z-index: 2;
+    box-shadow: 0 0 27px 0 #00000015;
+    .backTopIcon {
+      text-align: start;
+      margin-bottom: 10px;
+      img {
+        height: 50px;
+        max-width: 150px;
+        object-fit: contain;
+      }
+    }
+    .profile {
+      display: flex;
+      gap: 10px;
+      img {
+        width: 54px;
+        height: 54px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+      .profileSection {
+        color: #000;
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}
+.cardsDataFront::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
