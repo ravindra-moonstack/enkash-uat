@@ -3,7 +3,21 @@ import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardsData } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  Header,
+  FAQHtml,
+  Footer,
+  DynamicHeading,
+  TalkToSales,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  SecondFaqHtml,
+  AllInOnePolicy
+
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -34,16 +48,8 @@ import {
   taskIconSix,
 } from "."
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import { faqBg } from "../digital-marketing-card"
-import SecondFaqHtml from "@/components/second-faq/secondFaqHtml"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+
 
 
 const showScroll = cardsData.length > 3

@@ -1,53 +1,59 @@
-import { help, login, support, testimonailImgOne, testimonialLogoOne } from "."
+import {
+  help,
+  login,
+  support,
+  testimonailImgOne,
+  testimonailLogoFive,
+  testimonailLogoFour,
+  testimonailLogoThree,
+  testimonailLogoTwo,
+  testimonialImgFive,
+  testimonialImgFour,
+  testimonialImgThree,
+  testimonialImgTwo,
+  testimonialLogoOne,
+} from "."
 
 const testimonialData = [
   {
     icon: testimonialLogoOne,
     description:
-      "This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards...",
+      "This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards, including shopping vouchers, food, electronics, travel, and experiences. This flexibility has boosted engagement, performance, and retention.",
     name: "Anisha Chandran",
     position: "HR Head",
     testimonialImg: testimonailImgOne,
   },
   {
-    icon: testimonialLogoOne,
+    icon: testimonailLogoTwo,
     description:
-      "This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards...",
-    name: "Anisha Chandran",
+      "The EnKash Reward automation has enhanced our R&R program. The flexibility in reward redemption options, combined with the automated process, has streamlined our operations. We've noticed a rise in team engagement.",
+    name: "Swati Rawat",
     position: "HR Head",
-    testimonialImg: testimonailImgOne,
+    testimonialImg: testimonialImgTwo,
   },
   {
-    icon: testimonialLogoOne,
+    icon: testimonailLogoThree,
     description:
-      "This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards...",
-    name: "Anisha Chandran",
-    position: "HR Head",
-    testimonialImg: testimonailImgOne,
+      "One of the key benefits of EnKash was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management.",
+    name: "Deep Sehgal",
+    position: "Founder and CEO",
+    testimonialImg: testimonialImgThree,
   },
   {
-    icon: testimonialLogoOne,
+    icon: testimonailLogoFour,
     description:
-      "This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards...",
-    name: "Anisha Chandran",
+      "EnKash has been a fantastic partner for our gifting needs at BIG FM. What truly sets them apart is their quick TATs, prompt response & unwavering support, ensuring a seamless experience from start to finish. Their commitment to service excellence truly stands out, making Enkash our go-to choice for hassle-free gifting solutions",
+    name: "Roopa Mahesh Kumar",
     position: "HR Head",
-    testimonialImg: testimonailImgOne,
+    testimonialImg: testimonialImgFour,
   },
   {
-    icon: testimonialLogoOne,
+    icon: testimonailLogoFive,
     description:
-      "This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards...",
-    name: "Anisha Chandran",
-    position: "HR Head",
-    testimonialImg: testimonailImgOne,
-  },
-  {
-    icon: testimonialLogoOne,
-    description:
-      "This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards...",
-    name: "Anisha Chandran",
-    position: "HR Head",
-    testimonialImg: testimonailImgOne,
+      "In integrated marketing communications, agencies need to allocate budgets for different verticals. Through EnKash’s virtual cards, we were able to manage our budget allocation for various departments, streamline approvals seamlessly, and gain real-time visibility of all our department-wise expenses to our finance department.",
+    name: "Noufel Anamala",
+    position: "Transformative LeaderNoufel Anamala",
+    testimonialImg: testimonialImgFive,
   },
 ]
 
@@ -61,8 +67,7 @@ const contactData = [
   {
     icon: support,
     title: "Join Our Team",
-    subtitle:
-      "Want to join our fast-growing team? Send your resume to",
+    subtitle: "Want to join our fast-growing team? Send your resume to",
     email: "careers@enkash.com",
   },
   {
@@ -91,4 +96,4 @@ const locationData = [
       "91 Springboard Business Hub Private Limited, Sadanand Business Center (SBC), 9th Floor NH 48 Pashan Highway Side Road, Baner, Pune, Maharashtra, 411045",
   },
 ]
-export { testimonialData , locationData, contactData}
+export { testimonialData, locationData, contactData }

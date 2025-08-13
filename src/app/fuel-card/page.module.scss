@@ -7,7 +7,7 @@
   background-size: cover, cover;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 100px 20px 0;
-  background-image: url("./img/first-row-bg.svg"), url("./img/first-bg.jpg");
+  background-image:  url("./img/first-row-bg.svg"),  url(/images/expenceBg.webp) ;
   @include for-laptops {
     padding: 112px 20px 0;
   }
@@ -333,22 +333,4 @@
   scrollbar-color: #3b82f6 transparent;
 }
 
-.action_row {
-  position: relative;
-  overflow: hidden;
-  padding: 50px 20px;
-  @include for-laptops {
-    padding: 90px 20px;
-  }
-  .list_button {
-    padding-left: 40px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    @include for-laptops {
-      padding-left: 90px;
-    }
-  }
-  img {
-    height: auto;
-  }
-}
+

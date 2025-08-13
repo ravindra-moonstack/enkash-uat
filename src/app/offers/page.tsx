@@ -3,7 +3,21 @@ import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardsData, cardType } from "./data"
 import faqData from "./faq-data"
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  Header,
+  FAQHtml,
+  Footer,
+  DynamicHeading,
+  TalkToSales,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  CardStacking,
+  RewardsCarousel,
+  ScrollableCardsSection
+
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
@@ -24,15 +38,7 @@ import {
   wideAcceptanceNetwork,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import RewardsCarousel from "@/components/rewards-carousel/rewards-carousel"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import CardStacking from "@/components/cardStacking/cardStacking"
+
 
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = [
