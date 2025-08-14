@@ -1,372 +1,478 @@
-import iconOne from "./img/icon-one.svg"
-import iconTwo from "./img/icon-two.svg"
-import iconThree from "./img/icon-three.svg"
-import iconFour from "./img/icon-four.svg"
-import iconFive from "./img/icon-five.svg"
-import iconSix from "./img/icon-six.svg"
-import policyIcon from "./img/policyIcon.svg"
-import sandbox from "./img/sandbox-logo.svg"
-import documentation from "./img/documentation-logo.svg"
-import plugin from "./img/plugin-logo.svg"
-import authorised from "./img/authorised.svg"
-import first from "./img/first.svg"
-import uptime from "./img/uptime.svg"
-import support from "./img/support-icon.svg"
-import cards from "./img/credit-debit-cards.svg"
-import upi from "./img/upi.svg"
-import netBanking from "./img/net-banking.svg"
-import digital from "./img/digital.svg"
-import financial from "./img/financial.svg"
-import transation from "./img/transition.svg"
-import settlement from "./img/settlement.svg"
-import userFriendly from "./img/user-friendly.svg"
-import pci from "./img/pci.svg"
-import encription from "./img/encryption.svg"
-import token from "./img/token.svg"
-import monitorizing from "./img/monitoring.svg"
-import tech from "./img/tech.svg"
-import merchant from "./img/merchant.svg"
-import proActive from "./img/proActive.svg"
-import onboarding from "./img/onboarding.svg"
-import frictionless from "./img/frictionless.svg"
-import saved from "./img/saved.svg"
-import global from "./img/global.svg"
-import options from "./img/options.png"
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import { RectangleButtonTheme } from "@/components/buttons/rectangle-button/rectangle-button"
+import { AdiadsBg, Adiadslogo, AdiadsProfile, bigBg, biglogo, bigProfile, BuiltforBuildersCardIcon, collectPaymentboxIcon, delMonteBg, delMontelogo, delMonteProfile, honeycombBg, honeycomblogo, honeycombProfile, makePayment1, makePayment2, makePayment3, makePayment4, prepaidBottom1, prepaidBottom2, prepaidTop1, prepaidTop2, prepaidTop3, prepaidTop4, prepaidTop5, receivableBottomIcon, rewardIcon, rewardImg1, rewardImg2, rewardImg3, rewardSliderIcon1, rewardSliderIcon2, rewardSliderIcon3, rewardSliderIcon4, rewardSliderIcon5, vianetBackLogo, vianetBg, vianetlogo, vianetProfile } from "."
 
-const dataSets = [
+const HomePageRewardsVouchersSlide = [
   {
-    imageSrc: iconOne,
-    altText: "Allocates hierarchy ",
-    heading:
-      "Allocates hierarchy : roles It supports and allocates customized approval hierarchy aligned to the company’s policies.",
+    titleHtml: "E-commerce Vouchers",
+    title2: "",
+    description:
+      "Distribute vouchers usable on top online platforms - instantly.",
+    cardImage: rewardSliderIcon1,
+    padding: "30px 20px",
+    hoverClass: "HomePageRewardsVouchersCard",
   },
   {
-    imageSrc: iconTwo,
-    altText: "Setting up of budgets",
-    heading:
-      "Setting up of budgets : The automated expense management platform helps define budgets for all departments & projects as per employee allocation",
+    titleHtml: "Food & Beverages Vouchers",
+    title2: "",
+    description:
+      "Offer employees or partners vouchers for cafes, restaurants, and delivery apps.",
+    cardImage: rewardSliderIcon2,
+    padding: "30px 20px",
+    hoverClass: "HomePageRewardsVouchersCard",
+  },
+
+  {
+    titleHtml: "Health & Wellness Vouchers",
+    title2: "",
+    description:
+      "Promote wellbeing with rewards redeemable for fitness, health, and self-care.",
+    cardImage: rewardSliderIcon3,
+    padding: "30px 20px",
+    hoverClass: "HomePageRewardsVouchersCard",
   },
   {
-    imageSrc: iconThree,
-    altText: "Simplified expense submission",
-    heading:
-      "Simplified expense submission: A user-friendly interface ensuring that employees can effortlessly submit expenses from their mobile devices at any time and from any location",
+    titleHtml: "Music & Movies Vouchers",
+    title2: "",
+    description:
+      "Enjoy blockbuster movies, trending shows, and music with versatile vouchers.",
+    cardImage: rewardSliderIcon4,
+    padding: "30px 20px",
+    hoverClass: "HomePageRewardsVouchersCard",
   },
   {
-    imageSrc: iconFour,
-    altText: "Automated approval workflow",
-    heading:
-      "Automated approval workflow: On-click approval process based on predefined budgets or policies",
+    titleHtml: "Apparel Vouchers",
+    title2: "",
+    description:
+      "Reward with fashion – vouchers redeemable at leading clothing and lifestyle brands.",
+    cardImage: rewardSliderIcon5,
+    padding: "30px 20px",
+    hoverClass: "HomePageRewardsVouchersCard",
+  },
+]
+ const adidasData = [
+  {
+    image: AdiadsBg,
+    title1: "Read, how Adidas Unlocked",
+    title2: "Smarter Gifting with EnKash Vouchers",
+    description:
+      "“This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards, including shopping vouchers, food, electronics, travel, and experiences. This flexibility has boosted engagement, performance, and retention.”",
+    name: "Anisha Chandran",
+    role: "HR Head",
+    profileImg: AdiadsProfile,
+    rightTopIcon: "",
+    backLogo: Adiadslogo,
+    ourlayClass: "AdiadslogoClass",
   },
   {
-    imageSrc: iconFive,
-    altText: "Faster expense tracking",
-    heading:
-      "Faster expense tracking: AI-powered WhatsApp bot helps report expenses and enables managers to give on-the-go approvals",
+    image: delMonteBg,
+    title1: "Read, how Del Monte Unlocked",
+    title2: "Smarter Gifting with EnKash Vouchers",
+    description:
+      "“The EnKash Reward automation has significantly enhanced our R&R program. The flexibility in reward redemption options, combined with the automated process, has streamlined our operations. We've noticed a rise in team engagement, and it's helping foster stronger relationships within the organization.”",
+    name: "Swati Rawat",
+    role: "HR Head",
+    profileImg: delMonteProfile,
+    rightTopIcon: delMontelogo,
+    backLogo: delMontelogo,
+    ourlayClass: "delMontelogoClass",
   },
   {
-    imageSrc: iconSix,
-    altText: "Real-time visibility",
-    heading:
-      "Real-time visibility:  Managers can access up-to-date reports and dashboards that offer insights into spending patterns, budget utilization, and cost centers",
+    image: bigBg,
+    title1: "Read, how Big FM Unlocked",
+    title2: "Smarter Gifting with EnKash Vouchers",
+    description:
+      "“EnKash has been a fantastic partner for our gifting needs at BIG FM. What truly sets them apart is their quick TATs, prompt response & unwavering support, ensuring a seamless experience from start to finish. Their commitment to service excellence truly stands out, making Enkash our go-to choice for hassle-free gifting solutions.”",
+    name: "Roopa Mahesh Kumar",
+    role: "HR Head",
+    profileImg: bigProfile,
+    rightTopIcon: biglogo,
+    backLogo: biglogo,
+    ourlayClass: "biglogoClass",
+  },
+  {
+    image: vianetBg,
+    title1: "Read, how vianet Unlocked",
+    title2: "Smarter Gifting with EnKash Vouchers",
+    description:
+      "“One of the key benefits of EnKash was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management.”",
+    name: "Deep Sehgal",
+    role: "Founder and CEO",
+    profileImg: vianetProfile,
+    rightTopIcon: vianetlogo,
+    backLogo: vianetBackLogo,
+    ourlayClass: "vianetlogoClass",
+  },
+  {
+    image: honeycombBg,
+    title1: "Read, how Honeycomb Unlocked",
+    title2: "Smarter Gifting with EnKash Vouchers",
+    description:
+      "“In integrated marketing communications, agencies need to allocate budgets for different verticals. Through EnKash’s virtual cards, we were able to manage our budget allocation for various departments, streamline approvals seamlessly, and gain real-time visibility of all our department-wise expenses to our finance department”",
+    name: "Noufel Anamala",
+    role: "Transformative Leader",
+    profileImg: honeycombProfile,
+    rightTopIcon: honeycomblogo,
+    backLogo: honeycomblogo,
+    ourlayClass: "honeycomblogoClass",
+  },
+]
+const scrollCardsData = [
+  {
+    title: "Digital Petty Cash",
+    description:
+      "Track and manage small-ticket expenses across branches in real time.",
+    icon: "",
+    link: "/digital-petty-cash",
+  },
+  {
+    title: "Budget & Advances",
+    description:
+      "Set budgets, issue advances, and monitor usage against spending limits.",
+    icon: "",
+    link: "/budget-and-advances",
+  },
+  {
+    title: "Reimbursements",
+    description:
+      "Enable fast, policy-aligned reimbursements with built-in approvals.",
+    icon: "",
+    link: "/reimbursements",
+  },
+  {
+    title: "Scan & Drop Receipts",
+    description:
+      "Snap receipts and auto-extract data for quick claim submissions.",
+    icon: "",
+    link: "/receipts",
+  },
+  {
+    title: "Spend Analytics",
+    description:
+      "Get deep insights into spends with smart, real-time analytics.",
+    icon: "",
+    link: "/#",
   },
 ]
 
-const blogData = [
+const makePaymentData = [
   {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2022/09/blog_25.a957f315.jpg",
-    imageAlt: "Spend Management Platform: An Expense Management Strategy",
-    title: "Spend Management Platform: An Expense Management Strategy",
-    date: "Aug 03, 2023",
-    description:
-      "When you think about working capital management or spend management platform, you think of managing expenses that are incurred in your business over a quarter of a year...",
-    link: "/resources/blog/spend-management-software-for-smarter-spends/",
+    title: "Utility Bill Payments",
+    subtitle:
+      "Automate and manage all business utility bills from one unified dashboard.",
+    womanImg: makePayment1,
+    url: "/utility-bill-payments",
   },
   {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2023/04/Insights-with-expense-management.jpg",
-    imageAlt:
-      "Gain Valuable Insights into Your Finances with Expense Management",
-    title: "Gain Valuable Insights into Your Finances with Expense Management",
-    date: "Apr 07, 2023",
-    description:
-      "Managing expenses is an essential aspect of personal and professional financial management. Keeping track of expenses can provide valuable insights into your finances, including where...",
-    link: "/resources/blog/importance-of-expense-management/",
+    title: "Vendor Payments",
+    subtitle:
+      "Pay suppliers and vendors on time with complete visibility and control.",
+    womanImg: makePayment2,
+    url: "/vendor-payments",
   },
   {
-    image:
-      "https://blogs.enkash.com/wp-content/uploads/2023/02/Improve-your-cash-flow-with-the-best-expense-management-software.jpg",
-    imageAlt:
-      "Improve Your Cash Flow with The Best Expense Management Software",
-    title: "Improve Your Cash Flow with The Best Expense Management Software",
-    date: "Feb 22, 2023",
-    description:
-      "The foundation for any business’s efficient operation consists of creating precise budget, keeping close check on the business expenses, and streamlining cash flow. We cannot overstate...",
-    link: "/resources/blog/best-expense-management-software/",
+    title: "Rental Payments",
+    subtitle:
+      "Schedule recurring rent and lease payments with auto-reminders and logs.",
+    womanImg: makePayment3,
+    url: "/rental-payments",
+  },
+  {
+    title: "Bulk Pay",
+    subtitle:
+      "Send high-volume payouts with role-based, multi-level approval flows.",
+    womanImg: makePayment4,
+    url: "/bulk-payments",
   },
 ]
+const BuiltforBuildersCardData = [
+  {
+    title: "APIs & Modules",
+    subtitle:
+      "Unlock powerful automation and customized payment flows with our flexible APIs and plug-and-play modules.",
 
+    icon: BuiltforBuildersCardIcon,
+    url: "",
+  },
+  {
+    title: "Seamless Integrations",
+    subtitle:
+      "Effortlessly sync with ERPs, accounting platforms, and business tools to centralize your financial operations.",
+
+    icon: BuiltforBuildersCardIcon,
+    url: "",
+  },
+  {
+    title: "Workflow Management",
+    subtitle:
+      "Simplify approvals and process flows to eliminate bottlenecks and boost team productivity.",
+
+    icon: BuiltforBuildersCardIcon,
+    url: "",
+  },
+]
 const cardsData = [
   {
-    title: "Integrate Payment Sources",
-    description: "Connect bank accounts, payment gateways, and other financial systems with EnKash.",
-    icon: scrollIconOne,
-  },
-  {
-    title: "Customise Reconciliation Rules",
-    description: "Define rules to match transactions, invoices, and payments automatically based on your business needs.",
-    icon: scrollIconTwo,
-  },
-  {
-    title: "Review & Reconcile",
-    description: "Allow EnKash to automatically match and reconcile transactions while generating detailed reports for your review.",
-    icon: scrollIconThree,
-  },
+    title: "Payment Gateway",
+    subtitle:
+      "Developer-first, no-code gateway for seamless payment collections across channels.",
 
-]
+    icon: collectPaymentboxIcon,
+    url: "/products/utility-bill-payments",
+  },
+  {
+    title: "Payment Links",
+    subtitle:
+      "Shareable links via WhatsApp, SMS, or social - get paid instantly without friction.",
 
-const integrationData = [
-  {
-    title: "Comprehensive SDKs and APIs:",
-    description:
-      "Integrate quickly using our well-documented, developer-friendly tools compatible with Python, Java, PHP, and more.",
-    icon: policyIcon,
+    icon: collectPaymentboxIcon,
+    url: "/products/utility-bill-payments",
   },
   {
-    title: "Plugins for Popular Platforms:",
-    description:
-      "Enable seamless setup with ready-to-use plugins for platforms like Shopify, WooCommerce, and Magento.",
-    icon: plugin,
-  },
-  {
-    title: "Detailed API Documentation:",
-    description:
-      "Access step-by-step guides and resources for frictionless onboarding.",
-    icon: documentation,
-  },
-  {
-    title: "Sandbox Environment:",
-    description:
-      "Test your integration thoroughly in a secure and isolated environment before going live.",
-    icon: sandbox,
-  },
-]
+    title: "Payment Button",
+    subtitle:
+      "Plug-and-play buttons for your website. Quick setup, no coding needed.",
 
-const paymentMethodData = [
-  {
-    title: "Bulk QR Code Generation",
-    description: "Upload payment details in bulk using our dashboard to generate multiple QR codes instantly.",
-    icon: cards,
+    icon: collectPaymentboxIcon,
+    url: "/products/utility-bill-payments",
   },
   {
-    title: "Custom Split Settlements",
-    description:"Define and automate revenue sharing across branches, franchises, or departments.",
-    icon: upi,
-  },
-  {
-    title: "Real-Time Notifications",
-    description:"Get instant updates on successful payments via email, SMS, or webhook notifications.",
-    icon: netBanking,
-  },
-  {
-    title: "Advanced Analytics",
-    description:"Monitor performance metrics like daily transactions, total revenue, and settlement reports from a centralized dashboard.",
-    icon: digital,
-  },
+    title: "UPI Payments",
+    subtitle:
+      "Accept UPI payments via BHIM, PhonePe, WhatsApp & more, no VPA, no SMS fatigue.",
 
+    icon: collectPaymentboxIcon,
+    url: "/products/utility-bill-payments",
+  },
+  {
+    title: "QR Code",
+    subtitle:
+      "Accept secure, contactless payments with instant-scannable QR codes.",
 
-]
+    icon: collectPaymentboxIcon,
+    url: "/products/utility-bill-payments",
+  },
+  {
+    title: "Affordability Suite",
+    subtitle:
+      "Offer customers EMIs, BNPL & credit options to boost conversions and cash flow.",
 
-const dashboardData = [
-  {
-    title: "Financial Overview:",
-    description:
-      "Track and analyze transactions across daily, weekly, monthly, and yearly time frames.",
-    icon: financial,
-  },
-  {
-    title: "Transaction History Insights:",
-    description:
-      "Detailed insights into the history of each transaction. Understand payment statuses, order details, refunds, and more.",
-    icon: transation,
-  },
-  {
-    title: "Settlement Reconciliation:",
-    description:
-      "Stay fully informed about your business with a detailed breakdown of transactions, reversals, refunds, disputes, and vendor commissions.",
-    icon: settlement,
-  },
-  {
-    title: "User-friendly Interface:",
-    description:
-      "With an easy-to-navigate interface, you can effortlessly manage payments, refunds, API keys, webhooks, invoices, and more—all in one place.",
-    icon: userFriendly,
+    icon: collectPaymentboxIcon,
+    url: "/products/utility-bill-payments",
   },
 ]
-
-const rankData = [
+const PayablesData = [
   {
-    title: "PCI DSS Compliance:",
-    description:
-      "Protect sensitive payment information with industry-standard security practices.",
-    icon: pci,
+    title: "Invoice Management ",
+    subtitle:
+      "Digitize approvals and settle invoices faster with audit-ready records.",
+    url: "/invoice-management",
+    bottomIcon: receivableBottomIcon,
   },
   {
-    title: "End-to-End Encryption:",
-    description:
-      "Safeguard transactions with advanced encryption protocols to prevent data breaches.",
-    icon: encription,
+    title: "Payable Analytics",
+    subtitle: "Track, plan, and manage payables with a live dashboard view.",
+    url: "/payable-analytics",
+    bottomIcon: receivableBottomIcon,
   },
   {
-    title: "Tokenization:",
-    description:
-      "Replace card details with secure tokens to enhance privacy and reduce fraud risks.",
-    icon: token,
+    title: "Approval Flows",
+    subtitle: "Enforce spending rules automatically to ensure full compliance.",
+    url: "/approval-flows",
+    bottomIcon: receivableBottomIcon,
   },
   {
-    title: "Continuous Monitoring:",
-    description:
-      "Detect and mitigate vulnerabilities proactively with real-time threat assessments and third-party audits.",
-    icon: monitorizing,
-  },
-]
-
-const supportData = [
-  {
-    title: "Tech Support at Every Stage:",
-    description:
-      "Whether you're integrating, going live, or scaling up, our tech team is with you throughout.",
-    icon: tech,
-  },
-  {
-    title: "Merchant Support:",
-    description:
-      "Reach us anytime, any day—via chat, email, or call—for instant help and issue resolution.",
-    icon: merchant,
-  },
-  {
-    title: "Proactive Issue Resolution:",
-    description:
-      "We don’t just wait for you to raise a ticket—our team monitors and preempts potential issues to ensure business continuity.",
-    icon: proActive,
-  },
-  {
-    title: "Onboarding to Scaling Assistance:",
-    description:
-      "Whether it’s Day 1 or Year 5, we guide you at every milestone of your payment journey.",
-    icon: onboarding,
+    title: "Workflow Management",
+    subtitle: "Enforce spending rules automatically to ensure full compliance.",
+    url: "/workflow-management",
+    bottomIcon: receivableBottomIcon,
   },
 ]
-
-const savingData = [
+const ReceivablesData = [
   {
-    title: "Frictionless Checkout:",
-    description:
-      "Simplify payments with a clean and intuitive checkout interface that minimizes distractions and maximizes conversions.",
-    icon: frictionless,
+    title: "Digital Invoicing",
+    subtitle:
+      "Generate and send GST-compliant invoices in seconds. Track status, set reminders & get paid faster.",
+    url: "/digital-invoicing",
+    bottomIcon: receivableBottomIcon,
   },
   {
-    title: "Saved Cards Across Businesses:",
-    description:
-      "Enable customers to save their card details securely for faster payments on subsequent purchases.",
-    icon: saved,
+    title: "Auto Reconciliation",
+    subtitle:
+      "Automatically match incoming payments with invoices - no manual work, zero errors.",
+    url: "/auto-reconciliation",
+    bottomIcon: receivableBottomIcon,
   },
   {
-    title: "Global Card Saving:",
-    description:
-      "Extend your services to international customers with global card-saving capabilities, ensuring compliance with tokenization standards.",
-    icon: global,
+    title: "Connected Banking",
+    subtitle:
+      "Link your bank accounts to manage collections, settlements & cash positions - all in one view.",
+    url: "/connected-banking",
+    bottomIcon: receivableBottomIcon,
   },
   {
-    title: "Personalized Payment Options:",
-    description:
-      "Display payment methods tailored to your customer’s preferences and behavior, driving faster decision-making at checkout.",
-    icon: options,
+    title: "Collection Reminders",
+    subtitle:
+      "Automated, timely nudges via email, SMS, or WhatsApp – so you never miss a payment follow-up.",
+    url: "/collection-reminders",
+    bottomIcon: receivableBottomIcon,
+  },
+  {
+    title: "Collection Analytics",
+    subtitle:
+      "Get deep insights into receivables -  monitor delays, aging, and recovery trends in real-time.",
+    url: "/collection-analytics",
+    bottomIcon: receivableBottomIcon,
+  },
+]
+const prepaidCardsData = [
+  {
+    title: "Meal Card",
+    subtitle: "Offer tax-saving digital meal benefits with usage tracking.",
+    url: "/meal-card",
+    topIcon: prepaidTop1,
+  },
+  {
+    title: "Fuel Card",
+    subtitle: "Monitor and control fleet or travel-related fuel spends easily.",
+    url: "/fuel-card",
+    topIcon: prepaidTop2,
+  },
+  {
+    title: "Gift Cards",
+    subtitle:
+      "Send instant, personalized rewards for any occasion or milestone.",
+    url: "/gift-cards",
+    topIcon: prepaidTop3,
+  },
+  {
+    title: "Self Card Management",
+    subtitle: "Create, assign, and manage cards in minutes - fully self-serve.",
+    url: "/self-card-management",
+    topIcon: prepaidTop4,
+  },
+]
+const prepaidCardsDataSecond = [
+  {
+    title: "Meal Card",
+    subtitle: "Offer tax-saving digital meal benefits with usage tracking.",
+    url: "/meal-card",
+    topIcon: prepaidTop5,
+    bottomIcon: prepaidBottom1,
+    borderColors: "linear-gradient(-90deg, #00A2FF00 0%, #1C5AF4 100%) 1",
+  },
+  {
+    title: "Travel & Expense Card",
+    subtitle: "Simplify business travel expenses with pre-set card limits.",
+    url: "/travel-and-expense-card",
+    topIcon: prepaidTop5,
+    bottomIcon: prepaidBottom2,
+    borderColors: "linear-gradient(-90deg, #00A2FF00 0%, #1C5AF4 100%) 1",
   },
 ]
 
-const acceleratedGrowthData = [
+const rewardData = [
   {
-    title: "Fully-Compliant RBI Authorised Platform",
-    icon: authorised,
+    title: "Employee",
+    title2: "Rewards",
+    subtitle:
+      "Reward achievements and special occasions with instant vouchers.",
+    icon: rewardIcon,
+    image: rewardImg1,
+    overlayColorClass: "homePagerewards1",
+  },
+
+  {
+    title: "Channel",
+    title2: "Incentives",
+    subtitle:
+      "Run incentive programs that motivate and drive channel performance.",
+    icon: rewardIcon,
+    image: rewardImg2,
+    overlayColorClass: "homePagerewards2",
   },
   {
-    title: "Industry First Payment-led Financial Platform",
-    icon: first,
+    title: "Exclusive",
+    title2: "Offers",
+    subtitle:
+      "Provide access to curated brand deals and discounts for employees and teams.",
+    icon: rewardIcon,
+    image: rewardImg3,
+    overlayColorClass: "homePagerewards3",
+  },
+]
+const ctaButtonData = [
+  {
+    title: "Collect Payments",
+    theme: "outline-blue" as RectangleButtonTheme,
+    actionImage: "",
+    hoverImage: "",
+    url: "/collect-payments",
   },
   {
-    title: "100% Uptime",
-    icon: uptime,
+    title: " Make Payments",
+    theme: "outline-blue" as RectangleButtonTheme,
+    actionImage: "",
+    hoverImage: "",
+    url: "/make-payments",
   },
   {
-    title: "24X7 Customer Support",
-    icon: support,
+    title: "Manage Expenses",
+    theme: "outline-blue" as RectangleButtonTheme,
+    actionImage: "",
+    hoverImage: "",
+    url: "/manage-expenses",
+  },
+  {
+    title: "Get Corporate Cards",
+    theme: "outline-blue" as RectangleButtonTheme,
+    actionImage: "",
+    hoverImage: "",
+    url: "/products/corporate-cards",
+  },
+  {
+    title: "Distribute Brand Vouchers",
+    theme: "outline-blue" as RectangleButtonTheme,
+    actionImage: "",
+    hoverImage: "",
+    url: "/brand-vouchers",
+  },
+  {
+    title: "Reward Employees",
+    theme: "outline-blue" as RectangleButtonTheme,
+    actionImage: "",
+    hoverImage: "",
+    url: "/products/employee-rewards",
+  },
+]
+const counterData = [
+  {
+    end: 2,
+    suffix: " Million +",
+    label: "Corporate Cards Processed",
+  },
+  {
+    end: 250000,
+    label: "Network Members",
+  },
+  {
+    end: 5000,
+    suffix: " +",
+    label: "Businesses Powered",
   },
 ]
 
-const projects = [
-  {
-    title: "Matthias Leidinger",
-    description:
-      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
-    src: "rock.jpg",
-    link: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj6aSLQx6QJuytN_V1FK-AxPwT-DL8HQj2JwTKY-v-rOlDkKQbJWeB3ao&s",
-    color: "#BBACAF",
-  },
-  {
-    title: "Clément Chapillon",
-    description:
-      "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for ‘The tawny rocks’).",
-    src: "tree.jpg",
-    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
-    color: "#977F6D",
-  },
-  {
-    title: "Zissou",
-    description:
-      "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
-    src: "water.jpg",
-    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#C2491D",
-  },
-  {
-    title: "Matthias Leidinger",
-    description:
-      "Originally hailing from Austria, Berlin-based photographer Matthias Leindinger is a young creative brimming with talent and ideas.",
-    src: "rock.jpg",
-    link: "https://www.ignant.com/2023/03/25/ad2186-matthias-leidingers-photographic-exploration-of-awe-and-wonder/",
-    color: "#BBACAF",
-  },
-  {
-    title: "Clément Chapillon",
-    description:
-      "This is a story on the border between reality and imaginary, about the contradictory feelings that the insularity of a rocky, arid, and wild territory provokes”—so French photographer Clément Chapillon describes his latest highly captivating project Les rochers fauves (French for ‘The tawny rocks’).",
-    src: "tree.jpg",
-    link: "https://www.ignant.com/2022/09/30/clement-chapillon-questions-geographical-and-mental-isolation-with-les-rochers-fauves/",
-    color: "#977F6D",
-  },
-  {
-    title: "Zissou",
-    description:
-      "Though he views photography as a medium for storytelling, Zissou’s images don’t insist on a narrative. Both crisp and ethereal, they’re encoded with an ambiguity—a certain tension—that lets the viewer find their own story within them.",
-    src: "water.jpg",
-    link: "https://www.ignant.com/2023/10/28/capturing-balis-many-faces-zissou-documents-the-sacred-and-the-mundane-of-a-fragile-island/",
-    color: "#C2491D",
-  },
-]
-
-export {
-  blogData,
-  dataSets,
+export{
+  counterData,
+  HomePageRewardsVouchersSlide,
+  adidasData,
+  scrollCardsData,
+  makePaymentData,
+  BuiltforBuildersCardData,
   cardsData,
-  projects,
-  acceleratedGrowthData,
-  integrationData,
-  paymentMethodData,
-  dashboardData,
-  rankData,
-  supportData,
-  savingData,
+  PayablesData,
+  ReceivablesData,
+  prepaidCardsData,
+  prepaidCardsDataSecond,
+  rewardData,
+  ctaButtonData
 }
