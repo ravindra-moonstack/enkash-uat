@@ -1,14 +1,15 @@
 .partner_section_inner {
   background: rgba(255, 255, 255, 0.84);
-    overflow: hidden;
-    border-radius: 10px;
+  overflow: hidden;
+  border-radius: 10px;
   .partner_top_section {
-
     position: relative;
     z-index: 1;
-    padding: 20px 50px;
+    padding: 20px;
     background: #1b4cd9;
-  
+    // @include for-laptops {
+    //   padding: 20px 50px;
+    // }
     &::after {
       background: linear-gradient(
         90deg,
@@ -26,18 +27,18 @@
       z-index: -1;
     }
   }
-  .partner_badge{
-    background:linear-gradient(
-        -90deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgb(255, 255, 255) 100%
-      );
-      padding: 5px 10px;
-      color:#1C5AF4;
-      font-size: 16px;
-      font-weight: 700;
-      border-radius: 8px;
-      margin-bottom: 10px;
+  .partner_badge {
+    background: linear-gradient(
+      -90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgb(255, 255, 255) 100%
+    );
+    padding: 5px 10px;
+    color: #1c5af4;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 8px;
+    margin-bottom: 10px;
   }
   .partner_bottom_section {
     padding: 20px 50px;
@@ -66,11 +67,11 @@
       :global(svg) {
         margin-left: 10px;
       }
-      &:hover{
+      &:hover {
         background: #1c5af4;
-        color:#fff;
-        :global(path){
-            stroke: #fff;
+        color: #fff;
+        :global(path) {
+          stroke: #fff;
         }
       }
     }
