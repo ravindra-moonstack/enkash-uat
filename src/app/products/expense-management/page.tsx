@@ -1,3 +1,4 @@
+//@ts-nocheck
 import Image from "next/image"
 import styles from "./page.module.scss"
 import Link from "next/link"
@@ -53,6 +54,7 @@ import bg3 from "./img/bg2.jpg"
 import bg4 from "./img/bg1.jpg"
 import bg5 from "./img/bg6.jpg"
 import bg6 from "./img/bg5.jpg"
+// import OptimisedSpline from "@/components/OptimisedSpline/OptimisedSpline"
 // import Loading from "../../loading"
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -76,9 +78,18 @@ const ExpenseManagement = (): React.JSX.Element => {
       <Header utmSource="expense_management" />
       <TalkToSales />
       <div className={`${styles.first_row}`}>
-        {/* <div className={`${styles.spline_background}`}>
-          <SplineAnimation />
-        </div> */}
+        <div className={`${styles.spline_background}`}>
+          <spline-viewer url="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode"></spline-viewer>
+        </div>
+
+        {/* <OptimisedSpline
+          desktopScene="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode"
+          fallbackImage="/spline-placeholder.jpg"
+          height="600px"
+          threshold={0.3} // 30% visible before load
+          unmountWhenHidden={true} // free GPU memory when hidden
+          preloadIdle={true} // preloads on idle time
+        /> */}
         <div className="max-w-auto  position-relative no-pointer">
           <div className="d-flex">
             <CustomBreadcrumb
