@@ -177,9 +177,9 @@
       padding: 50px 90px;
     }
     .lotty_files {
-      transform: scale(1);
+      // transform: scale(1);
       @include for-laptops {
-        transform: scale(1.3);
+        // transform: scale(1.3);
       }
     }
     .scrollableSection {
