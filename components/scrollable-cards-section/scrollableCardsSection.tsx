@@ -6,9 +6,11 @@ import PolicyCard from "../policyCard/policyCard"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 
 interface CardData {
+  url?: string
   icon: string
   title: string
   description: string
+  hoverClass?:string | undefined
 }
 
 interface ScrollableCardsSectionProps {
@@ -36,7 +38,7 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
   buttonTheme = "outline-blue",
   buttonUrl,
   marginBottoms,
-  link
+  link,
 }) => {
   return (
     <>
@@ -49,17 +51,23 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
           direction: showScroll ? "rtl" : "ltr",
         }}
       >
-        {cardsData.map(({ icon, title, description }, i) => (
+        {cardsData.map((item, i) => (
           <div
             key={i}
-            style={{ direction: "ltr",
-              marginBottom: marginBottoms
-                ? marginBottoms
-                : "50px" }}
+            style={{
+              direction: "ltr",
+              marginBottom: marginBottoms ? marginBottoms : "50px",
+            }}
             className={styles.scrollCard}
-
           >
-            <PolicyCard icon={icon} title={title} description={description} link={link} />
+        
+            <PolicyCard
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              url={item.url}
+              hoverClass={item.hoverClass}
+            />
           </div>
         ))}
       </div>

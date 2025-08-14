@@ -70,7 +70,7 @@ li {
 }
 
 .min-height-80 {
-  min-height: 80px !important;
+  min-height: 80px;
 }
 
 @media (max-width:767px) {

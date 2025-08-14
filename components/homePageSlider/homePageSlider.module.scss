@@ -6,12 +6,16 @@
  
   .custom_slider {
  
-  .slide_item {
-    padding: 0 10px;
-  }
- 
+  
+  
   .slide_item{
-    margin: 0 -10px;
+    margin: 0px;
+    padding: 0;
+    @include for-laptops{
+      padding: 0 10px;
+      margin: 0 -10px;
+
+    }
   }
 }
 :global {
@@ -44,7 +48,7 @@
  
       button {
         width: 13px;
-        height: 10px;
+        height: 13px;
         background: #454545;
         opacity: 0.2;
         border-radius: 20px;
