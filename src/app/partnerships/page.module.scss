@@ -1,0 +1,60 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixin" as *;
+/* styles/globals.css */
+// @import "~slick-carousel/slick/slick.css";
+// @import "~slick-carousel/slick/slick-theme.css";
+
+.first_row {
+    background-repeat: no-repeat, no-repeat;
+    // background-position: center, center;
+    background-size: cover, cover;
+    width: 100%;
+    height: 106vh;
+    box-shadow: 0px 0px 77px 0px #0000001a;
+    padding: 100px 0px 0px;
+    background-image: url("./img/containerScreen.svg");
+
+    @include for-laptops {
+        padding: 112px 0px 0px;
+
+    }
+}
+
+.hero_container {
+    position: relative;
+    padding-bottom: 320px;
+}
+
+.box_white {
+    // background-position: top, top;
+    background-repeat: no-repeat, no-repeat;
+    // background-size: cover, cover;
+    box-shadow: 0px 0px 77px 0px #0000001a;
+    // background-image: url("./img/Rectangle_White.png");
+
+}
+
+.boxContainer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    // bottom: 100px;
+    bottom: 63px;
+    width: 100%;
+    z-index: 99;
+    // margin-bottom: -300px;
+}
+
+.second_row {
+    background-repeat: no-repeat, no-repeat;
+    background-size: cover, cover;
+    width: 100%;
+    box-shadow: 0px 0px 77px 0px #0000001a;
+    // padding: 100px 0px 0px;
+    // background-image: url("./img/secondRow.svg");
+
+    // @include for-laptops {
+    //     padding: 112px 0px 0px;
+
+    // }
+}

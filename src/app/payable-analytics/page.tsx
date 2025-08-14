@@ -97,7 +97,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title:
@@ -107,7 +107,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -193,7 +193,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Access Real-Time Data",
@@ -215,7 +215,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Analyze Latest Trends",
@@ -237,7 +237,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                  <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Gain Actionable Insights",
@@ -403,7 +403,7 @@ const PayableAnalytics = (): React.JSX.Element => {
           <div className="d-flex flex-column flex-md-row justify-content-between">
             <div>
               <div>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Have more questions?",

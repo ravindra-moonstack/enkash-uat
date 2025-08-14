@@ -415,7 +415,7 @@ const MealCards = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-           
+
           </div>
           <div className="row g-3 pb-4">
             {cardType.map(({ titleHtml, description, cardImage }, index) => (

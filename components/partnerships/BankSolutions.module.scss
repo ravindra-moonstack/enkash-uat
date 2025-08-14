@@ -1,0 +1,141 @@
+.bankSolutions {
+    text-align: left;
+    background-color: #fff;
+    padding: 40px 102px 117px 94px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+
+    .bankContainer {
+        width: 100%;
+
+        .heading {
+            font-weight: 200;
+            color: #2B2B2B;
+
+            margin-bottom: 2rem;
+            font-size: 46px;
+            font-family: "Inter", sans-serif;
+
+            span {
+                font-weight: 500;
+            }
+        }
+
+        .solutionsList {
+            margin-top: 20px;
+
+            .solutionItem {
+                width: 100%;
+
+                .solutionHeader {
+                    padding: 12px 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &:hover {
+                        .arrow {
+                            transform: rotate(180deg);
+                        }
+                    }
+
+                    .titleContainer {
+                        display: flex;
+                        align-items: center;
+
+                        .line {
+                            width: 3px;
+                            height: 20px;
+                            background-color: #00BF9E;
+                            margin-right: 10px;
+                        }
+
+                        .title {
+                            font-size: 16px;
+                            color: #333;
+                            font-weight: 500;
+                        }
+                    }
+
+                    .arrow {
+                        color: #00c2b2;
+                        transition: transform 0.3s ease;
+                        font-size: 14px;
+
+                        &.arrowRotated {
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                .solutionContent {
+                    padding: 15px 0 15px 23px;
+                    background-color: #f8f9fa;
+                    border-left: 3px solid #00c2b2;
+                    animation: slideDown 0.3s ease-out;
+
+                    display: none;
+                    transition: all 0.3s ease-in-out;
+
+                    p {
+                        margin: 0;
+                        color: #666;
+                        line-height: 1.5;
+                    }
+                }
+
+                &:hover {
+                    .solutionContent {
+
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: 95%;
+        padding: 20px 15px;
+
+        .bankContainer {
+            .heading {
+                font-size: 1.5rem;
+            }
+
+            .solutionsList {
+                .solutionItem {
+                    .solutionHeader {
+                        .titleContainer {
+                            .title {
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    to {
+        opacity: 1;
+        max-height: 200px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+}
