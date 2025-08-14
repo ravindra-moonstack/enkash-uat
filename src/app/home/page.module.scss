@@ -24,6 +24,10 @@
 
 .ctaLogoSlider {
   padding: 50px 20px;
+  display: none;
+  @include for-laptops {
+    display: block;
+  }
   .ctaButtonSection {
     display: flex;
     flex-wrap: wrap;
@@ -53,7 +57,7 @@
 }
 
 .collectPaymentSection {
-  padding: 0px 20px 50px;
+  padding: 50px 20px 50px;
   background: url("./img/collect_payment_bg.webp");
   background-size: cover;
   background-position: center;
@@ -242,14 +246,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  max-width: 583px;
-  max-height: 583px;
+  max-width: 740px;
+  max-height: 848px;
   height: 100%;
   background: url("./img/prepaidCard_bg_blue.svg");
   z-index: -1;
   background-position: center left;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 80%;
 }
 .prepaidCardSection::before {
   content: "";
@@ -260,25 +264,31 @@
   position: absolute;
   background: black;
   clip-path: polygon(0 0%, 101% 0%, 75% 70%, 70% 65%);
-  display: block;
+  display: none;
   left: 0;
   right: 0;
+  @include for-laptops {
+    display: block;
+  }
 }
 .rewardSction {
-  padding: 120px 20px 0;
-  background: url("./img/reward_bgImg.webp");
+  padding: 50px 20px 0;
+  background: url("./img/receivable_bg_mobile.jpg");
   background-position: top right;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
   @include for-laptops {
+    background: url("./img/reward_bgImg.webp");
     padding: 160px 20px 50px;
   }
   .rewardSectionInner {
     border-radius: 16px;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
     padding: 50px 20px;
+    background: #fff5;
     @include for-laptops {
+      background: #fff0;
       padding: 60px;
     }
   }
@@ -323,7 +333,10 @@
             height: 30px !important;
           }
           :global(h5) {
-            min-height: 65px !important;
+            min-height: max-content !important;
+            @include for-laptops {
+              min-height: 65px !important;
+            }
           }
         }
       }
@@ -334,7 +347,10 @@
     }
   }
 }
-
+.bharatBillPaymentImg {
+  width: 130px;
+  max-width: max-content !important;
+}
 .receivablesPayablesSection {
   padding: 50px 20px;
   @include for-laptops {
@@ -430,7 +446,7 @@
   }
 }
 .brandSection {
-  padding: 0 20px 50px;
+  padding: 0 20px 70px;
   @include for-laptops {
     padding: 0 20px 120px;
   }
@@ -443,7 +459,7 @@
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 50px 20px;
+    padding: 50px 20px 120px;
     @include for-laptops {
       padding: 70px 70px 140px;
     }
@@ -463,15 +479,21 @@
       padding: 15px;
       border-radius: 8px;
       background: #fff;
-      height: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: space-between;
+      height: 100%;
+      margin: auto;
+      max-width: 250px;
+      @include for-laptops {
+        max-width: 100%;
+      }
       img {
-        max-width: 80px;
-        height: auto;
-        margin-bottom: 10px;
+        max-width: 90px;
+        height: 90px;
+        object-fit: contain;
+        margin-bottom: 3px;
       }
       p {
         margin: 0;
@@ -481,14 +503,15 @@
 }
 
 .BuiltforBuildersSection {
-  background-image: url("./img/BuiltforBuilders.webp");
+  background-image: url("./img/BuiltforBuildersMobile.webp");
   // background-color: #fff;
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin: -175px 0 0;
-  padding: 200px 20px 150px;
+  margin: -150px 0 0;
+  padding: 170px 20px 150px;
   @include for-laptops {
+    background-image: url("./img/BuiltforBuilders.webp");
     padding: 375px 20px 285px;
     margin-top: -160px;
   }

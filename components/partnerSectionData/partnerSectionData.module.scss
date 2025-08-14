@@ -1,3 +1,4 @@
+@use "./../../styles/mixin" as *;
 .partner_section_inner {
   background: rgba(255, 255, 255, 0.84);
   overflow: hidden;
@@ -7,9 +8,9 @@
     z-index: 1;
     padding: 20px;
     background: #1b4cd9;
-    // @include for-laptops {
-    //   padding: 20px 50px;
-    // }
+    @include for-laptops {
+      padding: 20px 50px;
+    }
     &::after {
       background: linear-gradient(
         90deg,
@@ -41,7 +42,10 @@
     margin-bottom: 10px;
   }
   .partner_bottom_section {
-    padding: 20px 50px;
+    padding: 20px;
+    @include for-laptops {
+      padding: 20px 50px;
+    }
     .partnerList {
       display: flex;
       gap: 10px;
@@ -61,7 +65,7 @@
       border-radius: 5px;
       padding: 8px 16px;
       text-decoration: none;
-      margin-top: 20px;
+      margin-top: 5px;
       display: inline-block;
       color: #000;
       :global(svg) {

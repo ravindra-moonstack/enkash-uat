@@ -11,51 +11,13 @@ import {
   LottieDynamicLoadComponent,
 } from "@/components"
 import {
-  collectPaymentboxIcon,
-  makePayment1,
-  makePayment2,
-  makePayment3,
-  makePayment4,
-  prepaidTop1,
-  prepaidTop2,
-  prepaidTop3,
-  prepaidTop4,
-  prepaidTop5,
-  prepaidBottom1,
-  rewardIcon,
-  rewardImg1,
-  rewardImg2,
-  rewardImg3,
-  rewardSliderIcon1,
-  rewardSliderIcon2,
-  rewardSliderIcon3,
-  rewardSliderIcon4,
-  rewardSliderIcon5,
-  receivableBottomIcon,
   bankIcons,
-  AdiadsBg,
-  AdiadsProfile,
-  Adiadslogo,
-  delMonteBg,
-  delMonteProfile,
-  delMontelogo,
-  bigBg,
-  bigProfile,
-  biglogo,
-  vianetBg,
-  vianetProfile,
-  vianetBackLogo,
-  vianetlogo,
-  honeycombBg,
-  honeycombProfile,
-  honeycomblogo,
   securityIcon1,
   securityIcon2,
   securityIcon3,
   securityIcon4,
   securityIcon5,
-  prepaidBottom2,
-  BuiltforBuildersCardIcon,
+  bankIcons2
 } from "."
 import {
   counterData,
@@ -71,12 +33,12 @@ import {
   prepaidCardsDataSecond,
   rewardData,
   ctaButtonData,
+  
 } from "./data"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import UtilityBillPayments from "@/components/UtilityBillPayments/UtilityBillPayments"
 import PartnerSection from "@/components/partnerSectionData/partnerSectionData"
 import PaymentGatewayCare from "@/components/homePagePaymentBox/PaymentGatewayCard"
-import { RectangleButtonTheme } from "@/components/buttons/rectangle-button/rectangle-button"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
 import PrepaidCardHome from "@/components/prepaidCardHome/PrepaidCardHome"
 import HomePageRewardsVouchers from "@/components/HomePageRewardsVouchers/HomePageRewardsVouchers "
@@ -139,6 +101,7 @@ const Home = (): React.JSX.Element => {
           <div className="max-w-auto">
             <div className="row">
               <div className="col-md-12">
+                <div style={{color:'#A5A5A5',marginBottom:"10px",fontWeight:'300'}}>I want to:</div>
                 <div className={`${styles.ctaButtonSection}`}>
                   {ctaButtonData.map((item, index) => (
                     <div className={`${styles.ctaButtonBox}`} key={index}>
@@ -377,7 +340,7 @@ const Home = (): React.JSX.Element => {
             </div>
             <div className={`${styles.makePaymentExpenseMagement}`}>
               <div className="row">
-                <div className="col-md-6">
+                <div className="col-md-6 z-1">
                   <div className={`${styles.lotty_files}`}>
                     <LottieDynamicLoadComponent
                       animationName={"HomeAnimationLottie"}
@@ -385,7 +348,7 @@ const Home = (): React.JSX.Element => {
                     />
                   </div>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 z-2">
                   <div
                     className={`${styles.makePaymentExpenseManagementContent}`}
                   >
@@ -666,7 +629,7 @@ const Home = (): React.JSX.Element => {
                           "Launch co-branded cards, gateways, and platforms on our infrastructure - your brand, our tech.",
                       },
                       {
-                        icon: bankIcons,
+                        icon: bankIcons2,
                         title: "Affiliate Network",
                         description:
                           "Refer, earn, and empower India’s next 1M digital-first businesses.",
@@ -788,8 +751,12 @@ const Home = (): React.JSX.Element => {
                           <DynamicHeading
                             content={[
                               {
-                                title: "Payment Aggregator License",
+                                title: "Payment Aggregator",
                                 color: "color-black",
+                              },
+                              {
+                                title: "License",
+                                color: "color-black d-block",
                               },
                             ]}
                             headingTag="p"
@@ -803,8 +770,12 @@ const Home = (): React.JSX.Element => {
                           <DynamicHeading
                             content={[
                               {
-                                title: "Payment Aggregator License",
+                                title: "Prepaid Payment",
                                 color: "color-black",
+                              },
+                              {
+                                title: "Instrument License",
+                                color: "color-black d-block",
                               },
                             ]}
                             headingTag="p"
@@ -813,12 +784,16 @@ const Home = (): React.JSX.Element => {
                         </div>
                       </div>
                       <div className="col-sm-6 mb-3 mb-md-0">
-                        <div className={`${styles.card}`}>
-                          <Image src={securityIcon4} alt={""}></Image>
+                        <div className={`${styles.card} `}>
+                          <Image src={securityIcon4} className={`${styles.bharatBillPaymentImg}`} alt={""}></Image>
                           <DynamicHeading
                             content={[
                               {
-                                title: "Payment Aggregator License",
+                                title: "Bharat Bill Payment",
+                                color: "color-black d-block",
+                              },
+                              {
+                                title: "Operating Unit",
                                 color: "color-black",
                               },
                             ]}
@@ -833,8 +808,12 @@ const Home = (): React.JSX.Element => {
                           <DynamicHeading
                             content={[
                               {
-                                title: "Payment Aggregator License",
+                                title: "SOC 2 Compliance ",
                                 color: "color-black",
+                              },
+                              {
+                                title: "Compliance ",
+                                color: "color-black d-block",
                               },
                             ]}
                             headingTag="p"
