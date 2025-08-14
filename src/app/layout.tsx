@@ -8,6 +8,7 @@ import { Inter } from "next/font/google"
 // import SmoothWrapper from "@/components/smoothWrapper/page"
 // import { Suspense } from "react"
 import LenisProvider from "../provider/LenisProvider"
+import LayoutClientWrapper from "@/components/layoutWrapper/layoutWrapper"
 // import Loading from "./loading"
 
 export const dynamic = "force-dynamic"
@@ -36,7 +37,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.variable}>
         {/* <Suspense fallback={<Loading />}> */}
-        <LenisProvider>{children}</LenisProvider>
+        <LenisProvider>
+          <LayoutClientWrapper>{children}</LayoutClientWrapper>
+        </LenisProvider>
         {/* </Suspense> */}
         {/* <ScrollToTop /> */}
       </body>

@@ -29,11 +29,19 @@ import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
   virtualCardImg,
 } from "."
@@ -376,6 +384,45 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Seamless Integration with Your SaaS Stack",
+    description:
+      "EnKash works effortlessly with all leading, IT-approved tools, giving you unified control and valuable insights across your entire SaaS ecosystem.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Single Dashboard Management",
+    description:
+      "Stay on top of all your recurring expenses from a single platform. Your subscription spend, past payments, renewal dates, and automated reminders can be managed from the same dashboard.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Smarter Decisions, Backed by Data",
+    description:
+      "EnKash SaaS Cards give real-time insights into all your SaaS spends, enabling faster, more informed decisions that drive your business forward.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Complete Control, Zero Surprises",
+    description:
+      "With EnKash, effortlessly monitor, analyze, and manage your corporate SaaS expenses while ensuring every spend stays compliant with your internal policies.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+];
+
 export {
   blogData,
   dataSets,
@@ -388,4 +435,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
+  stackcardData
 }

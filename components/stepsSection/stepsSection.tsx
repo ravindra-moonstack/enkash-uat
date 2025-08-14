@@ -4,7 +4,6 @@ import styles from "./steps-section.module.scss"
 import { DynamicHeading, RectangleButton, StepCard } from ".."
 import { RectangleButtonTheme } from "../buttons/rectangle-button/rectangle-button"
 
-
 interface StepItem {
   icon: string
   title: string
@@ -16,7 +15,7 @@ interface StepsSectionProps {
   steps: StepItem[]
   button: {
     title: string
-     theme?: RectangleButtonTheme 
+    theme?: RectangleButtonTheme
     actionImage: string | StaticImageData
     hoverImage: string | StaticImageData
     url: string
@@ -25,6 +24,7 @@ interface StepsSectionProps {
     src: string | StaticImageData
     alt: string
   }
+  backgroundClass?: string 
 }
 
 const StepsSection: React.FC<StepsSectionProps> = ({
@@ -32,9 +32,10 @@ const StepsSection: React.FC<StepsSectionProps> = ({
   steps,
   button,
   image,
+  backgroundClass = "bg-white", 
 }) => {
   return (
-    <div className={`${styles.action_row} bg-white`}>
+    <div className={`${styles.action_row} ${backgroundClass}`}>
       <div className="max-w-auto">
         <div className={`${styles.title} text-center pb-md-5 pb-3`}>
           <DynamicHeading
@@ -47,7 +48,7 @@ const StepsSection: React.FC<StepsSectionProps> = ({
           />
         </div>
 
-        <div className={`row bg-white align-items-center ${styles.section}`}>
+        <div className={`row ${backgroundClass} align-items-center ${styles.section}`}>
           {/* Steps */}
           <div className="col-md-6 col-12 pe-md-5">
             <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>

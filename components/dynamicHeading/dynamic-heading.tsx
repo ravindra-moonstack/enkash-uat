@@ -16,17 +16,29 @@ interface HeadingSegment {
 }
 
 interface DynamicHeadingProps {
-  content: HeadingSegment[]
+  content?: HeadingSegment[] // ✅ Made content optional
   headingTag?: HeadingTag
   className?: string
 }
 
 const DynamicHeading: React.FC<DynamicHeadingProps> = ({
-  content,
+  content = [], // ✅ Default to empty array
   headingTag = "h2",
   className,
 }) => {
   const Tag = headingTag
+
+  // ✅ Optional: Add a check to ensure content is an array
+  if (!Array.isArray(content)) {
+    console.warn(
+      "DynamicHeading: 'content' prop is not an array. Using empty array."
+    )
+    return (
+      <div className={`${styles.pageHeading}`}>
+        <Tag className={className || undefined}></Tag>
+      </div>
+    )
+  }
 
   return (
     <div className={`${styles.pageHeading}`}>

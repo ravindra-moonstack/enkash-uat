@@ -27,12 +27,22 @@ import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   virtualCardImg,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
 } from "."
 
 const dataSets = [
@@ -383,6 +393,54 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Effortless Procurement Management",
+    description:
+      "Transform the way your business handles procurement. Purchase cards make purchasing goods and services a smooth, straightforward process. Authorized employees can make purchases on behalf of the company, bypassing the complexities of traditional procurement systems. This eliminates unnecessary delays, paperwork, and approval bottlenecks.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Increase Control & Reduce Costs",
+    description:
+      "Set custom spending limits and enforce purchase policies directly through EnKash’s easy-to-use platform. Track every transaction in real time, enabling you to control expenses, avoid budget overruns, and prevent fraud. The ability to set merchant category restrictions ensures that your team only makes relevant purchases, keeping your expenses in check. With a corporate purchase card, businesses can enforce spend policies without slowing down procurement cycles",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Simplify Expense Tracking and Reporting",
+    description:
+      "Gain full visibility of your procurement expenses with detailed, real-time reporting. Analyze spending trends and uncover potential cost savings with EnKash’s centralized dashboard. This data-backed approach allows for more informed decision-making and effective supplier negotiations, ensuring you always get the best value.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Faster Payment Cycles & Vendor Relationships",
+    description:
+      "Speed up payment cycles and enhance relationships with your vendors by ensuring prompt, hassle-free transactions. Purchase Cards streamline the payment process, allowing you to meet deadlines, maintain positive supplier relations, and improve cash flow—all while reducing administrative workload.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Better Compliance & Risk Management",
+    description:
+      "Purchase Cards help ensure compliance with your company’s procurement policies. Each card is customizable with spend limits and merchant restrictions, so you can confidently minimize the risk of unauthorized purchases or fraud. Automated reporting makes policy breaches easier to spot and rectify.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+  },
+]
+
 export {
   blogData,
   dataSets,
@@ -395,4 +453,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
+  stackcardData,
 }

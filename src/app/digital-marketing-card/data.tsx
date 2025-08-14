@@ -27,13 +27,23 @@ import thirdIcon from "./img/icon-three.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
   virtualCardImg,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
 } from "."
 
 const dataSets = [
@@ -399,6 +409,54 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Simplified Budget Allocation",
+    description:
+      "Managing multiple marketing campaigns can be overwhelming, but with the Digital Marketing Card, you can easily allocate budgets to individual campaigns. Load funds directly onto the card and assign specific amounts for each campaign, ensuring effortless budget distribution.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Real-Time Expense Tracking",
+    description:
+      "Stay on top of every transaction with EnKash’s real-time expense-tracking feature. Instantly monitor your marketing spend as it happens, gaining valuable insights into your campaign's financial health. This enables you to make adjustments on the fly, ensuring that you don’t overspend and stay within your budget.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Prevent Overspending",
+    description:
+      "Overspending on campaigns can be costly. With the Digital Marketing Card, you can set predefined spending limits for each card. This feature ensures your team stays within budget, preventing unauthorized expenses and helping you maintain financial discipline for more efficient and cost-effective marketing campaigns.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Simplified Subscription Management",
+    description:
+      "Managing recurring subscriptions for marketing tools, software, or ad platforms becomes effortless with EnKash. Automate payments for these subscriptions with clear schedules and centralized tracking. You’ll never miss a payment, and you'll save time that would otherwise be spent on manual invoicing and reconciliation.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Customizable Usage Policies",
+    description:
+      "Tailor your spending policies to fit your unique marketing needs. With the Digital Marketing Card, you can enforce specific restrictions, such as category-based spending limits or vendor-specific constraints. This ensures that every expense aligns with your business’s objectives and helps maximize the effectiveness of your marketing efforts.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+];
+
 export {
   blogData,
   dataSets,
@@ -411,4 +469,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
+  stackcardData
 }
