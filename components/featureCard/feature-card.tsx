@@ -10,6 +10,7 @@ export interface CardProps {
   description: string
   cardImage?: string
   padding?: string
+  hoverClass? : string
 }
 
 const FeatureCard = ({
@@ -19,9 +20,11 @@ const FeatureCard = ({
   cardImage,
   title2,
   padding = "40px 30px",
+  hoverClass="",
 }: CardProps) => {
   return (
-    <div className={`d-flex flex-column text-start ${styles.card_body} `} style={{ padding: padding }}>
+
+    <div className={`d-flex flex-column text-start ${styles.card_body} ${hoverClass}`} style={{ padding: padding }}>
       <div className="d-flex flex-column flex-grow-1">
         <div className={styles.card_top}>
           {cardImage && (
@@ -66,7 +69,7 @@ const FeatureCard = ({
               )
             )}
           </div>
-          {/* {title2 && <div className={styles.titleHtml}>{title2}</div>} */}
+        
         </div>
         <DynamicHeading
           content={[
