@@ -116,9 +116,9 @@ const FuelCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div>
+   
         <LogoSlider />
-      </div>
+  
 
       <div>
         <StepsSection
@@ -165,9 +165,9 @@ const FuelCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div>
+   
         <FaqSection faqData={faqData} />
-      </div>
+     
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
