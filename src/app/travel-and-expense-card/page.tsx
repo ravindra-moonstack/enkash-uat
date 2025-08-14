@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
 import {
   allProductSections,
@@ -11,7 +10,15 @@ import {
   unmatchControlData,
 } from "./data"
 
-import { Header, Footer, FAQHtml } from "@/components"
+import {
+  RectangleButton,
+  CustomBreadcrumb,
+  LogoSlider,
+  CardProduct,
+  DynamicHeading,
+  FaqSection,
+  StepsSection,
+} from "@/components"
 
 import {
   blueArrow,
@@ -25,24 +32,16 @@ import {
   unmatchedControlImg,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import faqData from "./faq-data"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import CardProduct from "@/components/card-product/card-product"
+
 import AllProducts from "@/components/all-products/all-products"
 import StepCard from "@/components/stepCard/stepCard"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const TravelExpenseCard = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
@@ -127,67 +126,27 @@ const TravelExpenseCard = (): React.JSX.Element => {
       <div>
         <LogoSlider />
       </div>
-
-      <div className={`${styles.action_row} bg-white`}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-md-5 pb-5`}>
-            <div>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "How To Get Started with Travel Expense Cards ",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6 "
-              />
-            </div>
-          </div>
-          <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 pe-md-5">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "12px",
-                }}
-              >
-                {intantActionData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <StepCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get started "
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
-                  className="d-flex justify-content-between align-items-center"
-                />
-              </div>
-            </div>
-            <div
-              className={`col-md-6 col-12 
-`}
-            >
-              <div>
-                <Image
-                  src={mealCardImage}
-                  alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div>
+        <StepsSection
+          heading={[
+            {
+              text: "How To Get Started with Travel Expense Cards  ",
+              colorClass: "color-black",
+            },
+          ]}
+          steps={intantActionData}
+          button={{
+            title: "Try Now",
+            theme: "border-gray",
+            actionImage: blueArrow,
+            hoverImage: whiteArrow,
+            url: "/sales",
+          }}
+          image={{
+            src: mealCardImage,
+            alt: "card background",
+          }}
+        />
       </div>
 
       <div className={`${styles.third_row} bg-highlite`}>
@@ -345,6 +304,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
           </div>
         </div>
       </div>
+      
       <div className={`${styles.third_row} bg-highlite`}>
         <div className="max-w-auto">
           <div className={`row align-items-center ${styles.section}`}>
@@ -539,71 +499,8 @@ const TravelExpenseCard = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-5"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
+      <div>
+        <FaqSection faqData={faqData} />
       </div>
 
       <div className={styles.other_products}>
@@ -641,7 +538,6 @@ const TravelExpenseCard = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

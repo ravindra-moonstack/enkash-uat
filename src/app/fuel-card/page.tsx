@@ -1,12 +1,7 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardType, intantActionData, stackcardData } from "./data"
 import {
-  Header,
-  Footer,
-  FAQHtml,
-  TalkToSales,
   RectangleButton,
   CustomBreadcrumb,
   LogoSlider,
@@ -45,8 +40,6 @@ const cards = stackcardData.map((item, index) => ({
 const FuelCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto">
           <div className="d-flex">
@@ -135,7 +128,7 @@ const FuelCards = (): React.JSX.Element => {
           ]}
           steps={intantActionData}
           button={{
-            title: "Try Now",
+            title: "Get Started",
             theme: "border-gray",
             actionImage: blueArrow,
             hoverImage: whiteArrow,
@@ -151,28 +144,23 @@ const FuelCards = (): React.JSX.Element => {
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
-            <div className={`${styles.title} text-center `}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Unlock  ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "Savings ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "on Every Mile",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Unlock  ",
+                  color: "color-black",
+                },
+                {
+                  title: "Savings ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "on Every Mile",
+                  color: "color-black",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -180,6 +168,7 @@ const FuelCards = (): React.JSX.Element => {
       <div>
         <FaqSection faqData={faqData} />
       </div>
+
       <div className={styles.other_products}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-5`}>
@@ -214,7 +203,6 @@ const FuelCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

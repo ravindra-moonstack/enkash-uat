@@ -7,15 +7,23 @@ import { useGSAP } from "@gsap/react"
 import styles from "./cardStacking.module.scss"
 import { DynamicHeading } from ".."
 
+interface HeadingPart {
+  title: string
+  color: string
+}
+
 gsap.registerPlugin(ScrollTrigger)
+
 export interface CardStackingProps {
   cards: {
     color: string
     content: React.ReactNode
+    heading?: HeadingPart[] // Optional heading per card (if needed elsewhere)
   }[]
+  heading?: HeadingPart[] // Add heading prop for the section
 }
 
-const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
+const CardStacking: React.FC<CardStackingProps> = ({ cards, heading }) => {
   const container = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement[]>([])
   const [isDesktop, setIsDesktop] = useState<boolean>(false)
@@ -26,7 +34,9 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
     window.addEventListener("resize", checkScreen)
     return () => window.removeEventListener("resize", checkScreen)
   }, [])
+
   const titleRef = useRef<HTMLDivElement>(null)
+
   useGSAP(() => {
     if (!isDesktop) return
 
@@ -37,22 +47,24 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
       trigger: cardEls[0],
       start: "90% center",
     })
-    console.log(cardEls, "card")
+
     const lastST = ScrollTrigger.create({
       trigger: cardEls[cardEls.length - 1],
       start: `top 100+=${titleRef.current?.offsetHeight || 0}px`,
     })
+
     if (titleRef.current) {
       ScrollTrigger.create({
         trigger: titleRef.current,
-        start: "top 108px", // Pin when heading hits 20% from top
-        end: () => lastST.start, // Unpin when last card animation starts
+        start: "top 100px",
+        end: () => lastST.start,
         pin: true,
         pinSpacing: false,
         markers: false,
         id: "heading-pin",
       })
     }
+
     cardEls.forEach((card, index) => {
       const scale = 1 - (cardEls.length - index) * 0.01
       const scaleAnim = gsap.to(card, {
@@ -79,14 +91,9 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards }) => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">
-            <div className={`${styles.title} text-center `} ref={titleRef}>
+            <div className={`${styles.title} text-center`} ref={titleRef}>
               <DynamicHeading
-                content={[
-                  {
-                    title: "Cards that your Employees Deserve Meal ",
-                    color: "color-black",
-                  },
-                ]}
+                content={heading} // Use the section-wide heading prop
                 headingTag="h2"
                 className="f-6"
               />

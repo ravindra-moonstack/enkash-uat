@@ -14,12 +14,22 @@ import trackableIcon from "./img/trackable-icon.svg"
 import denominationIcon from "./img/denomination-icon.svg"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
   virtualCardImg,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
 } from "."
 
 const intantActionData = [
@@ -181,10 +191,58 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Freedom of Choice",
+    description:
+      "The recipient can choose products or services using the gift card per their preference and convenience from a retail store or online.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Easily Accessible",
+    description:
+      "Gift cards can be easily and safely accessed from anywhere and anytime.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Safety",
+    description:
+      "Gift cards can be frozen in case of loss or theft without losing money with the self-PIN generation feature.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Easy Distribution",
+    description: "These gift cards can be easily distributed on the occasion",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Multiple Denominations",
+    description:
+      "Available in multiple denominations of up to Rs.10,000, ensuring the option to choose the card value as per your requirements",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+  },
+]
+
 export {
   intantActionData,
   spendAnalyticsData,
   cardType,
   allProductSections,
   cardData,
+  stackcardData,
 }

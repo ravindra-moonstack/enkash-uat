@@ -1,8 +1,18 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import Link from "next/link"
-import { cardType, dataSets, intantActionData } from "./data"
-import { Header, Footer, FAQHtml } from "@/components"
+import { cardType, dataSets, intantActionData, stackcardData } from "./data"
+import {
+  RectangleButton,
+  CustomBreadcrumb,
+  LogoSlider,
+  CardProduct,
+  DynamicHeading,
+  CardStacking,
+  AllInOnePolicy,
+  FaqSection,
+  StepsSection,
+} from "@/components"
+
 import {
   circles,
   blueArrow,
@@ -11,96 +21,33 @@ import {
   cardRotatingImage,
   podiumImage,
   heroCardImg,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
+
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import HowDoesItWork from "@/components/how-does-it-work/how-does-it-work."
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import faqData from "./faq-data"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import CardProduct from "@/components/card-product/card-product"
-import StepCard from "@/components/stepCard/stepCard"
-import CardStacking from "@/components/cardStacking/cardStacking"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 
-const cards = [
-  {
-    color: "#fff",
+import faqData from "./faq-data"
+
+
+
+const cards = stackcardData.map(
+  ({ color, icon, title, description, image, buttonUrl }) => ({
+    color,
     content: (
-      <>
-        <AllInOnePolicy
-          icon={realTimeExpenseIcon}
-          title="Tax Savings Made Simple"
-          description="With Meal Cards*, employees can save up to ₹26,400 
-annually in taxes by utilizing tax exemptions under Section 17(2)(viii) of the Income Tax Act, 1961. This benefit not only increases take-home pay but also helps businesses boost employee satisfaction and retention by providing tangible financial advantages."
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
+      <AllInOnePolicy
+        icon={icon}
+        title={title}
+        description={description}
+        image={image}
+        buttonUrl={buttonUrl}
+        maxImageHeight="300px"
+      />
     ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={fraudProtectionIcon}
-          title="Wide Acceptance"
-          description="Our prepaid Meal Cards are accepted across a vast network of outlets, making them a versatile tool for daily needs. From supermarkets for grocery shopping to food delivery platforms like Swiggy and Zomato, as well as restaurants, cafes, and food courts nationwide, the card ensures hassle-free transactions anywhere employees prefer."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={streamlinedReimbursementIcon}
-          title="Secure and Hassle-Free "
-          description="Security is a priority with Meal Cards*. Employees can instantly block their cards if they are lost and get replacements without delay. With zero liability on reported lost cards, users enjoy peace of mind. Additionally, the paperless system ensures all transactions are trackable, reducing risks and promoting transparency."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={costControlSavingsIcon}
-          title="Easy Management for Employers"
-          description="EnKash simplifies meal benefit distribution for businesses with a streamlined, one-time issuance process. Corporate can reload balances in real-time, track spending patterns, and generate detailed reports through an intuitive dashboard, saving time and reducing administrative overhead."
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+  })
+)
 const MealCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
@@ -181,96 +128,42 @@ const MealCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div>
-        <LogoSlider />
-      </div>
+      <LogoSlider />
+      <StepsSection
+        heading={[
+          {
+            text: "How To Get Started with Meal Cards*",
+            colorClass: "color-black",
+          },
+        ]}
+        steps={intantActionData}
+        button={{
+          title: "Get Started",
+          theme: "border-gray",
+          actionImage: blueArrow,
+          hoverImage: whiteArrow,
+          url: "/sales",
+        }}
+        image={{
+          src: mealCardImage,
+          alt: "card background",
+        }}
+      />
 
-      <div className={`${styles.action_row} bg-white `}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-md-5`}>
-            <div
-              className={` flex-column justify-content-center align-items-center pb-3 `}
-            >
-              <DynamicHeading
-                content={[
-                  {
-                    title: "How To Get Started with Meal Cards*",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-          </div>
-          <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 pe-md-5">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "12px",
-                }}
-              >
-                {intantActionData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <StepCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Try Now"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
-                  className="d-flex justify-content-between align-items-center"
-                />
-              </div>
-            </div>
-            <div className={`col-md-6 col-12 `}>
-              <div
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  justifyContent: "center",
-                }}
-              >
-                <Image
-                  src={mealCardImage}
-                  alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <>
-            <div className={`${styles.title} text-center `}>
-              {/* <DynamicHeading
-                content={[
-                  {
-                    title: "Meal Cards that your Employees Deserve ",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              /> */}
-            </div>
-
-            <CardStacking cards={cards} />
-          </>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Meal Cards that your Employees Deserve",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
+
       <div className={`${styles.fourth_row}  row d-flex`}>
         <div className="max-m-auto relative ">
           <div className={styles.circles_bg}>
@@ -331,72 +224,7 @@ const MealCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -433,7 +261,6 @@ const MealCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

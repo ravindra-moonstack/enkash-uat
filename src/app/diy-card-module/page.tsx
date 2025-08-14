@@ -2,8 +2,18 @@ import Image from "next/image"
 import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardType, intantActionData, spendAnalyticsData } from "./data"
-
-import { Header, Footer, FAQHtml } from "@/components"
+import {
+  RectangleButton,
+  CustomBreadcrumb,
+  LogoSlider,
+  CardProduct,
+  DynamicHeading,
+  CardStacking,
+  AllInOnePolicy,
+  PolicyCard,
+  FaqSection,
+  StepsSection,
+} from "@/components"
 
 import {
   blueArrow,
@@ -28,16 +38,11 @@ import {
   instantActionImg,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
+
 import faqData from "./faq-data"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import CardProduct from "@/components/card-product/card-product"
+
 import StepCard from "@/components/stepCard/stepCard"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import CardStacking from "@/components/cardStacking/cardStacking"
+
 
 const cards = [
   {
@@ -149,8 +154,7 @@ const cards = [
 const DiyCardModule = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
+  
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
@@ -311,7 +315,15 @@ const DiyCardModule = (): React.JSX.Element => {
               />
             </div>
 
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Meal Cards that your Employees Deserve",
+                  color: "color-black",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -408,71 +420,8 @@ const DiyCardModule = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-3`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
+      <div>
+        <FaqSection faqData={faqData} />
       </div>
 
       <div className={styles.other_products}>
@@ -510,7 +459,7 @@ const DiyCardModule = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <Footer />
+
     </div>
   )
 }
