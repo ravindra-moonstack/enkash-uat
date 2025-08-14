@@ -9,6 +9,7 @@ interface UtilityBillPaymentsProps {
   subtitle: string
   womanImg: string // can be a local import or remote URL
   url: string // Destination URL
+  hoverClass?: string
 }
 
 const UtilityBillPayments: React.FC<UtilityBillPaymentsProps> = ({
@@ -16,12 +17,13 @@ const UtilityBillPayments: React.FC<UtilityBillPaymentsProps> = ({
   subtitle,
   womanImg,
   url,
+  hoverClass = '',
 }) => {
   return (
     <>
       <div className={`${styles.makePaymentsBoxOuterBox}`}>
-        <Link href={url} className={`${styles.makePaymentsBoxLinks}`}>
-          <div className={`${styles.makePaymentsBoxInnerBox}`}>
+        <Link href={url} className={`${styles.makePaymentsBoxLinks}  ${hoverClass}`}>
+          <div className={`${styles.makePaymentsBoxInnerBox} `}>
             <div className={`${styles.makePaymentContent}`}>
               {/* Title & Subtitle */}
               <div className={`${styles.headings}`}>
@@ -48,7 +50,7 @@ const UtilityBillPayments: React.FC<UtilityBillPaymentsProps> = ({
               />
             </div>
             {/* Main Section */}
-            <div className={`${styles.makePaymentsBoxImage}`}>
+            <div className={`${styles.makePaymentsBoxImage} makePaymentImg`}>
               <Image
                 src={womanImg}
                 alt="Woman"
