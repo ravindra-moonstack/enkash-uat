@@ -14,15 +14,22 @@ import trackableIcon from "./img/trackable-icon.svg"
 import denominationIcon from "./img/denomination-icon.svg"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   digitalCardImg,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
   payrollCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
-  virtualCardImg,
 } from "."
 
 const intantActionData = [
@@ -178,10 +185,50 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Instant Actions. Full Control.",
+    description:
+      "Manage your cards on the spot—activate, disable, or adjust without any effort using our robust corporate card management system.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Enhanced Security",
+    description:
+      "Protect your business from fraud with instant deactivation and real-time alerts.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Smarter Expense Tracking",
+    description:
+      "Get a clear view of every transaction, categorize spends, and avoid overspending.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Streamlined Workflows",
+    description:
+      "Manage all card-related tasks from a single, centralized dashboard, saving time and effort.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+];
+
 export {
   intantActionData,
   spendAnalyticsData,
   cardType,
   allProductSections,
   cardData,
+  stackcardData
 }
