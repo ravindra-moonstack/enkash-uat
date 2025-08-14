@@ -53,14 +53,28 @@
 }
 
 .collectPaymentSection {
-  padding: 50px 20px;
+  padding: 0px 20px 50px;
   background: url("./img/collect_payment_bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
   z-index: 1;
-
+  @include for-laptops {
+    padding: 50px 20px;
+  }
+  .collectPaymentboxIcon {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    height: 100%;
+    padding-bottom: 40px;
+    @include for-laptops {
+      justify-content: end;
+      align-items: end;
+    }
+  }
   .collectPaymentHeading {
     margin-bottom: 20px;
   }
@@ -78,26 +92,38 @@
     }
   }
   .collectPaymentInnerHeadingSection {
-    padding: 0 100px;
+    padding: 0 0px;
+    text-align: center;
+    @include for-laptops {
+      padding: 0 100px;
+      text-align: start;
+    }
   }
   .collectPaymentsBoxSection {
-    padding: 0 100px;
     position: relative;
+    padding: 0;
+    @include for-laptops {
+      padding: 0 100px;
+    }
     .collectPaymentBox {
       margin-bottom: 20px;
     }
   }
   .collectPaymentsBoxSection::after {
-    background-image: url("./img/EnKash_PG_ Dashboard_collect_payment.jpeg");
-    content: "";
-    position: absolute;
-    left: calc(100% - 80px);
-    top: 0;
-    width: 22%;
-    bottom: 20px;
-    border-radius: 16px 0 0 16px;
-    background-size: cover;
-    background-position: top left;
+    display: none;
+    @include for-laptops {
+      display: block;
+      background-image: url("./img/EnKash_PG_ Dashboard_collect_payment.jpeg");
+      content: "";
+      position: absolute;
+      left: calc(100% - 80px);
+      top: 0;
+      width: 22%;
+      bottom: 20px;
+      border-radius: 16px 0 0 16px;
+      background-size: cover;
+      background-position: top left;
+    }
   }
 }
 .collectPaymentSection::after {
@@ -125,7 +151,12 @@
     @include for-laptops {
       padding: 0 100px;
     }
-
+    .makePaymentHeading {
+      text-align: center;
+      @include for-laptops {
+        text-align: start;
+      }
+    }
     .makePaymentsBoxData:nth-child(even) {
       @include for-laptops {
         margin-top: -50px;
@@ -140,6 +171,12 @@
     @include for-laptops {
       margin-top: 90px;
       padding: 50px 90px;
+    }
+    .lotty_files {
+      transform: scale(1);
+      @include for-laptops {
+        transform: scale(1.3);
+      }
     }
     .scrollableSection {
       margin-left: 0;
@@ -175,15 +212,24 @@
     padding: 90px 20px;
   }
   .prepaidCardTopSection {
-    padding: 60px 100px;
+    padding: 50px 20px;
     box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
+    @include for-laptops {
+      padding: 60px 100px;
+    }
   }
   .prepaidCardSectionBottom {
-    padding: 50px 100px;
+    padding: 50px 0px;
     @include for-laptops {
       padding: 90px 100px;
+    }
+    .prepaidCardHeading {
+      text-align: center;
+      @include for-laptops {
+        text-align: start;
+      }
     }
     .prepaidCardSectionBottomBox {
       margin-bottom: 20px;
@@ -240,16 +286,24 @@
   .rewardBottomText {
     padding: 32px 0 50px;
     :global(p) {
-      letter-spacing: 74px;
       text-transform: uppercase;
       color: #fff;
+      letter-spacing: 25px;
+      @include for-laptops {
+        letter-spacing: 74px;
+      }
     }
   }
   .rewardsBottomSlider {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: calc(100% - 150px);
+    position: relative;
+    margin-top: -100px;
+    @include for-laptops {
+      position: absolute;
+      left: 0;
+      margin-top: 0;
+      right: 0;
+      top: calc(100% - 150px);
+    }
 
     .rewardsBottomSliderContent {
       display: flex;
@@ -257,8 +311,10 @@
       justify-content: space-between;
       .rewardsBottomSliderContentBox {
         width: 100%;
+        margin-bottom: 20px;
         @include for-laptops {
           width: calc(100% / 5 - 10px);
+          margin-bottom: 0;
         }
         .rewardsBottomSliderBox {
           height: 100%;
@@ -280,13 +336,20 @@
 }
 
 .receivablesPayablesSection {
-  padding: 200px 20px 90px;
+  padding: 50px 20px;
+  @include for-laptops {
+    padding: 200px 20px 90px;
+  }
   .receivablesPayablesOuter {
-    background-color: #ebebeb;
+    // background-color: #ebebeb;
+    padding: 50px 20px;
     box-shadow: 0 0 77px 0 rgba(0, 0, 0, 0.1);
-    padding: 55px 100px;
     border-radius: 12px;
     position: relative;
+    background-image: url("./img/receivable_bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: 1;
     &::after {
       content: "";
@@ -297,19 +360,22 @@
       top: 0;
       height: 1000px;
       background-size: cover;
-      background-image: url(/_next/static/media/rolling-rectangles.36c2d7ee.webp);
+      // background-image: url('./img/rolling-rectangles.webp');
       background-repeat: no-repeat;
     }
+    @include for-laptops {
+      padding: 55px 100px;
+    }
   }
-  .spline_background {
-    position: absolute;
-    right: 0;
-    top: 0;
-    background: transparent;
-    width: 100%;
-    height: 100%;
-    max-width: 400px;
-  }
+  // .spline_background {
+  //   position: absolute;
+  //   right: 0;
+  //   top: 0;
+  //   background: transparent;
+  //   width: 100%;
+  //   height: 100%;
+  //   max-width: 400px;
+  // }
   .ReceivablesPayablesBoxOuter {
     height: 100%;
   }
@@ -330,6 +396,7 @@
     z-index: 1;
     border-radius: 10px;
     &::after {
+      display: none;
       position: absolute;
       left: 12px;
       right: 0;
@@ -339,6 +406,9 @@
       border-radius: 10px;
       border: 1px solid #fff;
       z-index: -1;
+      @include for-laptops {
+        display: block;
+      }
     }
   }
 }
@@ -350,6 +420,13 @@
   .counterSectionOuter {
     max-width: 1024px;
     margin: auto;
+  }
+  .counterBox {
+    text-align: center;
+    margin: 20px;
+    @include for-laptops {
+      text-align: start;
+    }
   }
 }
 .brandSection {
@@ -366,12 +443,18 @@
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 70px 70px 140px;
+    padding: 50px 20px;
+    @include for-laptops {
+      padding: 70px 70px 140px;
+    }
     .securityLeft {
       background-color: rgba(0, 0, 0, 0.24);
-      padding: 33px 25px 60px;
+      padding: 33px 25px 30px;
       border-radius: 10px;
       height: 100%;
+      @include for-laptops {
+        padding-bottom: 60px;
+      }
     }
   }
   .securityRight {
@@ -403,8 +486,12 @@
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-  margin-top: -160px;
-  padding: 375px 20px 285px;
+  margin: -175px 0 0;
+  padding: 200px 20px 150px;
+  @include for-laptops {
+    padding: 375px 20px 285px;
+    margin-top: -160px;
+  }
   .customButtons {
     a {
       text-decoration: none;
@@ -419,5 +506,10 @@
 }
 
 .getStartedSection {
-  margin-top: -200px;
+  padding: 20px;
+  margin-top: -150px;
+  @include for-laptops {
+    margin-top: -200px;
+    padding-bottom: 20px;
+  }
 }

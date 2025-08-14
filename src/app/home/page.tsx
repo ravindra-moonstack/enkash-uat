@@ -7,14 +7,10 @@ import {
   DynamicHeading,
   RectangleButton,
   LogoSlider,
-  AllProducts,
   FeatureCard,
   LottieDynamicLoadComponent,
 } from "@/components"
 import {
-  autoCollect,
-  realTimeIcon,
-  taskIconFour,
   collectPaymentboxIcon,
   makePayment1,
   makePayment2,
@@ -61,17 +57,28 @@ import {
   prepaidBottom2,
   BuiltforBuildersCardIcon,
 } from "."
-
+import {
+  counterData,
+  HomePageRewardsVouchersSlide,
+  adidasData,
+  scrollCardsData,
+  makePaymentData,
+  BuiltforBuildersCardData,
+  cardsData,
+  PayablesData,
+  ReceivablesData,
+  prepaidCardsData,
+  prepaidCardsDataSecond,
+  rewardData,
+  ctaButtonData,
+} from "./data"
 import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
 import UtilityBillPayments from "@/components/UtilityBillPayments/UtilityBillPayments"
 import PartnerSection from "@/components/partnerSectionData/partnerSectionData"
 import PaymentGatewayCare from "@/components/homePagePaymentBox/PaymentGatewayCard"
-import AdidasCard from "@/components/AdidasCard/AdidasCard"
 import { RectangleButtonTheme } from "@/components/buttons/rectangle-button/rectangle-button"
 import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import { link } from "fs"
 import PrepaidCardHome from "@/components/prepaidCardHome/PrepaidCardHome"
-import { url } from "inspector"
 import HomePageRewardsVouchers from "@/components/HomePageRewardsVouchers/HomePageRewardsVouchers "
 import HomeReceivablesPayables from "@/components/HomeReceivablesPayables/HomeReceivablesPayables"
 import Counter from "@/components/HomeCounter/HomeCounter"
@@ -79,462 +86,7 @@ import HomePageSlider from "@/components/homePageSlider/HomePAgeSlider"
 import BuiltforBuildersSection from "@/components/BuiltforBuildersCard/BuiltforBuildersSection"
 import Link from "next/link"
 import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
-import Spline from "@splinetool/react-spline"
 
-const HomePageRewardsVouchersSlide = [
-  {
-    titleHtml: "E-commerce Vouchers",
-    title2: "",
-    description:
-      "Distribute vouchers usable on top online platforms - instantly.",
-    cardImage: rewardSliderIcon1,
-    padding: "30px 20px",
-  },
-  {
-    titleHtml: "Food & Beverages Vouchers",
-    title2: "",
-    description:
-      "Offer employees or partners vouchers for cafes, restaurants, and delivery apps.",
-    cardImage: rewardSliderIcon2,
-    padding: "30px 20px",
-  },
-
-  {
-    titleHtml: "Health & Wellness Vouchers",
-    title2: "",
-    description:
-      "Promote wellbeing with rewards redeemable for fitness, health, and self-care.",
-    cardImage: rewardSliderIcon3,
-    padding: "30px 20px",
-  },
-  {
-    titleHtml: "Music & Movies Vouchers",
-    title2: "",
-    description:
-      "Enjoy blockbuster movies, trending shows, and music with versatile vouchers.",
-    cardImage: rewardSliderIcon4,
-    padding: "30px 20px",
-  },
-  {
-    titleHtml: "Apparel Vouchers",
-    title2: "",
-    description:
-      "Reward with fashion – vouchers redeemable at leading clothing and lifestyle brands.",
-    cardImage: rewardSliderIcon5,
-    padding: "30px 20px",
-  },
-]
-export const adidasData = [
-  {
-    image: AdiadsBg,
-    title1: "Read, how Adidas Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
-    description:
-      "“This platform has redefined employee engagement by allowing employees to choose from a wide range of rewards, including shopping vouchers, food, electronics, travel, and experiences. This flexibility has boosted engagement, performance, and retention.”",
-    name: "Anisha Chandran",
-    role: "HR Head",
-    profileImg: AdiadsProfile,
-    rightTopIcon: "",
-    backLogo: Adiadslogo,
-    ourlayClass: "AdiadslogoClass",
-  },
-  {
-    image: delMonteBg,
-    title1: "Read, how Del Monte Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
-    description:
-      "“The EnKash Reward automation has significantly enhanced our R&R program. The flexibility in reward redemption options, combined with the automated process, has streamlined our operations. We've noticed a rise in team engagement, and it's helping foster stronger relationships within the organization.”",
-    name: "Swati Rawat",
-    role: "HR Head",
-    profileImg: delMonteProfile,
-    rightTopIcon: delMontelogo,
-    backLogo: delMontelogo,
-    ourlayClass: "delMontelogoClass",
-  },
-  {
-    image: bigBg,
-    title1: "Read, how Big FM Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
-    description:
-      "“EnKash has been a fantastic partner for our gifting needs at BIG FM. What truly sets them apart is their quick TATs, prompt response & unwavering support, ensuring a seamless experience from start to finish. Their commitment to service excellence truly stands out, making Enkash our go-to choice for hassle-free gifting solutions.”",
-    name: "Roopa Mahesh Kumar",
-    role: "HR Head",
-    profileImg: bigProfile,
-    rightTopIcon: biglogo,
-    backLogo: biglogo,
-    ourlayClass: "biglogoClass",
-  },
-  {
-    image: vianetBg,
-    title1: "Read, how vianet Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
-    description:
-      "“One of the key benefits of EnKash was gaining real-time visibility of our Daily Sales Outstanding (DSOs), which became an interactive feature. This real-time insight into our receivables greatly improved our decision-making capabilities. We have unlocked a new efficiency level in our receivables processes, streamlining operations and ensuring smoother financial management.”",
-    name: "Deep Sehgal",
-    role: "Founder and CEO",
-    profileImg: vianetProfile,
-    rightTopIcon: vianetlogo,
-    backLogo: vianetBackLogo,
-    ourlayClass: "vianetlogoClass",
-  },
-  {
-    image: honeycombBg,
-    title1: "Read, how Honeycomb Unlocked",
-    title2: "Smarter Gifting with EnKash Vouchers",
-    description:
-      "“In integrated marketing communications, agencies need to allocate budgets for different verticals. Through EnKash’s virtual cards, we were able to manage our budget allocation for various departments, streamline approvals seamlessly, and gain real-time visibility of all our department-wise expenses to our finance department”",
-    name: "Noufel Anamala",
-    role: "Transformative Leader",
-    profileImg: honeycombProfile,
-    rightTopIcon: honeycomblogo,
-    backLogo: honeycomblogo,
-    ourlayClass: "honeycomblogoClass",
-  },
-]
-const scrollCardsData = [
-  {
-    title: "Digital Petty Cash",
-    description:
-      "Track and manage small-ticket expenses across branches in real time.",
-    icon: "",
-    link: "/digital-petty-cash",
-  },
-  {
-    title: "Budget & Advances",
-    description:
-      "Set budgets, issue advances, and monitor usage against spending limits.",
-    icon: "",
-    link: "/budget-and-advances",
-  },
-  {
-    title: "Reimbursements",
-    description:
-      "Enable fast, policy-aligned reimbursements with built-in approvals.",
-    icon: "",
-    link: "/reimbursements",
-  },
-  {
-    title: "Scan & Drop Receipts",
-    description:
-      "Snap receipts and auto-extract data for quick claim submissions.",
-    icon: "",
-    link: "/receipts",
-  },
-  {
-    title: "Spend Analytics",
-    description:
-      "Get deep insights into spends with smart, real-time analytics.",
-    icon: "",
-    link: "/#",
-  },
-]
-
-const makePaymentData = [
-  {
-    title: "Utility Bill Payments",
-    subtitle:
-      "Automate and manage all business utility bills from one unified dashboard.",
-    womanImg: makePayment1,
-    url: "/utility-bill-payments",
-  },
-  {
-    title: "Vendor Payments",
-    subtitle:
-      "Pay suppliers and vendors on time with complete visibility and control.",
-    womanImg: makePayment2,
-    url: "/vendor-payments",
-  },
-  {
-    title: "Rental Payments",
-    subtitle:
-      "Schedule recurring rent and lease payments with auto-reminders and logs.",
-    womanImg: makePayment3,
-    url: "/rental-payments",
-  },
-  {
-    title: "Bulk Pay",
-    subtitle:
-      "Send high-volume payouts with role-based, multi-level approval flows.",
-    womanImg: makePayment4,
-    url: "/bulk-payments",
-  },
-]
-const BuiltforBuildersCardData = [
-  {
-    title: "APIs & Modules",
-    subtitle:
-      "Unlock powerful automation and customized payment flows with our flexible APIs and plug-and-play modules.",
-
-    icon: BuiltforBuildersCardIcon,
-    url: "",
-  },
-  {
-    title: "Seamless Integrations",
-    subtitle:
-      "Effortlessly sync with ERPs, accounting platforms, and business tools to centralize your financial operations.",
-
-    icon: BuiltforBuildersCardIcon,
-    url: "",
-  },
-  {
-    title: "Workflow Management",
-    subtitle:
-      "Simplify approvals and process flows to eliminate bottlenecks and boost team productivity.",
-
-    icon: BuiltforBuildersCardIcon,
-    url: "",
-  },
-]
-const cardsData = [
-  {
-    title: "Payment Gateway",
-    subtitle:
-      "Developer-first, no-code gateway for seamless payment collections across channels.",
-
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
-  },
-  {
-    title: "Payment Links",
-    subtitle:
-      "Shareable links via WhatsApp, SMS, or social - get paid instantly without friction.",
-
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
-  },
-  {
-    title: "Payment Button",
-    subtitle:
-      "Plug-and-play buttons for your website. Quick setup, no coding needed.",
-
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
-  },
-  {
-    title: "UPI Payments",
-    subtitle:
-      "Accept UPI payments via BHIM, PhonePe, WhatsApp & more, no VPA, no SMS fatigue.",
-
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
-  },
-  {
-    title: "QR Code",
-    subtitle:
-      "Accept secure, contactless payments with instant-scannable QR codes.",
-
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
-  },
-  {
-    title: "Affordability Suite",
-    subtitle:
-      "Offer customers EMIs, BNPL & credit options to boost conversions and cash flow.",
-
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
-  },
-]
-const PayablesData = [
-  {
-    title: "Invoice Management ",
-    subtitle:
-      "Digitize approvals and settle invoices faster with audit-ready records.",
-    url: "/invoice-management",
-    bottomIcon: receivableBottomIcon,
-  },
-  {
-    title: "Payable Analytics",
-    subtitle: "Track, plan, and manage payables with a live dashboard view.",
-    url: "/payable-analytics",
-    bottomIcon: receivableBottomIcon,
-  },
-  {
-    title: "Approval Flows",
-    subtitle: "Enforce spending rules automatically to ensure full compliance.",
-    url: "/approval-flows",
-    bottomIcon: receivableBottomIcon,
-  },
-  {
-    title: "Workflow Management",
-    subtitle: "Enforce spending rules automatically to ensure full compliance.",
-    url: "/workflow-management",
-    bottomIcon: receivableBottomIcon,
-  },
-]
-const ReceivablesData = [
-  {
-    title: "Digital Invoicing",
-    subtitle:
-      "Generate and send GST-compliant invoices in seconds. Track status, set reminders & get paid faster.",
-    url: "/digital-invoicing",
-    bottomIcon: receivableBottomIcon,
-  },
-  {
-    title: "Auto Reconciliation",
-    subtitle:
-      "Automatically match incoming payments with invoices - no manual work, zero errors.",
-    url: "/auto-reconciliation",
-    bottomIcon: receivableBottomIcon,
-  },
-  {
-    title: "Connected Banking",
-    subtitle:
-      "Link your bank accounts to manage collections, settlements & cash positions - all in one view.",
-    url: "/connected-banking",
-    bottomIcon: receivableBottomIcon,
-  },
-  {
-    title: "Collection Reminders",
-    subtitle:
-      "Automated, timely nudges via email, SMS, or WhatsApp – so you never miss a payment follow-up.",
-    url: "/collection-reminders",
-    bottomIcon: receivableBottomIcon,
-  },
-  {
-    title: "Collection Analytics",
-    subtitle:
-      "Get deep insights into receivables -  monitor delays, aging, and recovery trends in real-time.",
-    url: "/collection-analytics",
-    bottomIcon: receivableBottomIcon,
-  },
-]
-const prepaidCardsData = [
-  {
-    title: "Meal Card",
-    subtitle: "Offer tax-saving digital meal benefits with usage tracking.",
-    url: "/meal-card",
-    topIcon: prepaidTop1,
-  },
-  {
-    title: "Fuel Card",
-    subtitle: "Monitor and control fleet or travel-related fuel spends easily.",
-    url: "/fuel-card",
-    topIcon: prepaidTop2,
-  },
-  {
-    title: "Gift Cards",
-    subtitle:
-      "Send instant, personalized rewards for any occasion or milestone.",
-    url: "/gift-cards",
-    topIcon: prepaidTop3,
-  },
-  {
-    title: "Self Card Management",
-    subtitle: "Create, assign, and manage cards in minutes - fully self-serve.",
-    url: "/self-card-management",
-    topIcon: prepaidTop4,
-  },
-]
-const prepaidCardsDataSecond = [
-  {
-    title: "Meal Card",
-    subtitle: "Offer tax-saving digital meal benefits with usage tracking.",
-    url: "/meal-card",
-    topIcon: prepaidTop5,
-    bottomIcon: prepaidBottom1,
-    borderColors: "linear-gradient(-90deg, #00A2FF00 0%, #1C5AF4 100%) 1",
-  },
-  {
-    title: "Travel & Expense Card",
-    subtitle: "Simplify business travel expenses with pre-set card limits.",
-    url: "/travel-and-expense-card",
-    topIcon: prepaidTop5,
-    bottomIcon: prepaidBottom2,
-    borderColors: "linear-gradient(-90deg, #00A2FF00 0%, #1C5AF4 100%) 1",
-  },
-]
-
-const rewardData = [
-  {
-    title: "Employee",
-    title2: "Rewards",
-    subtitle:
-      "Reward achievements and special occasions with instant vouchers.",
-    icon: rewardIcon,
-    image: rewardImg1,
-    overlayColorClass: "homePagerewards1",
-  },
-
-  {
-    title: "Channel",
-    title2: "Incentives",
-    subtitle:
-      "Run incentive programs that motivate and drive channel performance.",
-    icon: rewardIcon,
-    image: rewardImg2,
-    overlayColorClass: "homePagerewards2",
-  },
-  {
-    title: "Exclusive",
-    title2: "Offers",
-    subtitle:
-      "Provide access to curated brand deals and discounts for employees and teams.",
-    icon: rewardIcon,
-    image: rewardImg3,
-    overlayColorClass: "homePagerewards3",
-  },
-]
-const ctaButtonData = [
-  {
-    title: "Collect Payments",
-    theme: "outline-blue" as RectangleButtonTheme,
-    actionImage: "",
-    hoverImage: "",
-    url: "/collect-payments",
-  },
-  {
-    title: " Make Payments",
-    theme: "outline-blue" as RectangleButtonTheme,
-    actionImage: "",
-    hoverImage: "",
-    url: "/make-payments",
-  },
-  {
-    title: "Manage Expenses",
-    theme: "outline-blue" as RectangleButtonTheme,
-    actionImage: "",
-    hoverImage: "",
-    url: "/manage-expenses",
-  },
-  {
-    title: "Get Corporate Cards",
-    theme: "outline-blue" as RectangleButtonTheme,
-    actionImage: "",
-    hoverImage: "",
-    url: "/products/corporate-cards",
-  },
-  {
-    title: "Distribute Brand Vouchers",
-    theme: "outline-blue" as RectangleButtonTheme,
-    actionImage: "",
-    hoverImage: "",
-    url: "/brand-vouchers",
-  },
-  {
-    title: "Reward Employees",
-    theme: "outline-blue" as RectangleButtonTheme,
-    actionImage: "",
-    hoverImage: "",
-    url: "/products/employee-rewards",
-  },
-]
-const counterData = [
-  {
-    end: 2,
-    suffix: " Million +",
-    label: "Corporate Cards Processed",
-  },
-  {
-    end: 250000,
-    label: "Network Members",
-  },
-  {
-    end: 5000,
-    suffix: " +",
-    label: "Businesses Powered",
-  },
-]
 const Home = (): React.JSX.Element => {
   return (
     <>
@@ -567,7 +119,7 @@ const Home = (): React.JSX.Element => {
                       },
                     ]}
                     headingTag="p"
-                    className="text-center mb-4"
+                    className="text-center mb-4 text-uppercase"
                   />
                 </div>
                 <div className={`${styles.banner_button}`}>
@@ -655,11 +207,114 @@ const Home = (): React.JSX.Element => {
                         },
                       ]}
                       headingTag="h3"
-                      className="text-start mb-4"
+                      className=" mb-4"
                     />
                   </div>
                 </div>
-                <div className="col-md-5"></div>
+                <div className="col-md-5">
+                  <div className={`${styles.collectPaymentboxIcon}`}>
+                    <svg
+                      width="42"
+                      height="38"
+                      viewBox="0 0 42 38"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        width="41.4652"
+                        height="37.6957"
+                        rx="6.64724"
+                        fill="white"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M16.5461 35.8158C14.8396 35.4382 13.2024 34.7969 11.6934 33.9151L11.7809 32.2042C11.9001 29.871 10.0989 28.0768 7.77204 28.1953L5.8812 28.292C4.98409 26.8685 4.30535 25.3187 3.8676 23.694L5.35205 22.3535C7.08625 20.7886 7.08202 18.2459 5.35205 16.6845L3.76953 15.2558C4.1572 13.6668 4.77445 12.1428 5.60181 10.7319L7.77204 10.8427C10.1052 10.9619 11.8994 9.16069 11.7809 6.83383L11.6694 4.66431C13.0799 3.83708 14.6034 3.21983 16.1919 2.83203L17.6213 4.41455C19.1876 6.14876 21.7297 6.14452 23.291 4.41455L24.6315 2.9301C26.2559 3.3677 27.8055 4.04619 29.2288 4.94299L29.1321 6.83383C29.0129 9.16774 30.8141 10.9619 33.141 10.8434L34.8519 10.7559C35.7337 12.2649 36.3749 13.9021 36.7526 15.6086L35.5603 16.6845C33.8268 18.2508 33.8317 20.7929 35.5603 22.3542L36.6616 23.3476C36.2324 25.0886 35.5279 26.7499 34.5746 28.2687L33.141 28.1953C30.8078 28.0761 29.0136 29.8773 29.1321 32.2042L29.2055 33.6378C27.6867 34.5911 26.0254 35.2957 24.2844 35.7248L23.291 34.6242C21.7247 32.89 19.1827 32.8942 17.6213 34.6242L16.5461 35.8158ZM20.2205 26.3384C24.1172 26.3384 27.2759 23.1797 27.2759 19.283C27.2759 15.3863 24.1172 12.2277 20.2205 12.2277C16.3238 12.2277 13.1652 15.3863 13.1652 19.283C13.1652 23.1797 16.3238 26.3384 20.2205 26.3384Z"
+                        fill="#E1F4FF"
+                      />
+                      <mask
+                        id="mask0_3763_38424"
+                        maskUnits="userSpaceOnUse"
+                        x="12"
+                        y="11"
+                        width="16"
+                        height="16"
+                      >
+                        <path
+                          d="M25.2527 12.2598H14.0801C13.7838 12.2598 13.4997 12.3775 13.2901 12.587C13.0806 12.7965 12.9629 13.0807 12.9629 13.377V24.5496C12.9629 24.8459 13.0806 25.1301 13.2901 25.3396C13.4997 25.5491 13.7838 25.6668 14.0801 25.6668H25.2527C25.549 25.6668 25.8332 25.5491 26.0427 25.3396C26.2523 25.1301 26.37 24.8459 26.37 24.5496V13.377C26.37 13.0807 26.2523 12.7965 26.0427 12.587C25.8332 12.3775 25.549 12.2598 25.2527 12.2598Z"
+                          fill="white"
+                          stroke="white"
+                          strokeWidth="1.48968"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <path
+                          d="M18.5483 21.57L20.4104 23.0597L23.3898 19.3355M15.9414 15.6113H23.3898M15.9414 18.5907H18.9208"
+                          stroke="black"
+                          strokeWidth="1.48968"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </mask>
+                      <g mask="url(#mask0_3763_38424)">
+                        <path
+                          d="M10.7285 10.0156H28.6046V27.8917H10.7285V10.0156Z"
+                          fill="#06ADFF"
+                        />
+                      </g>
+                    </svg>
+                    <svg
+                      width="42"
+                      height="38"
+                      viewBox="0 0 42 38"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="0.498047"
+                        width="41.4652"
+                        height="37.6957"
+                        rx="6.64724"
+                        fill="white"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M17.0441 35.8158C15.3377 35.4382 13.7005 34.7969 12.1914 33.9151L12.2789 32.2042C12.3982 29.871 10.5969 28.0768 8.27008 28.1953L6.37925 28.292C5.48214 26.8685 4.8034 25.3187 4.36565 23.694L5.85009 22.3535C7.5843 20.7886 7.58007 18.2459 5.85009 16.6845L4.26758 15.2558C4.65525 13.6668 5.2725 12.1428 6.09985 10.7319L8.27008 10.8427C10.6033 10.9619 12.3975 9.16069 12.2789 6.83383L12.1675 4.66431C13.5779 3.83708 15.1014 3.21983 16.6899 2.83203L18.1194 4.41455C19.6857 6.14876 22.2277 6.14452 23.789 4.41455L25.1296 2.9301C26.7539 3.3677 28.3035 4.04619 29.7268 4.94299L29.6302 6.83383C29.5109 9.16774 31.3122 10.9619 33.639 10.8434L35.35 10.7559C36.2317 12.2649 36.873 13.9021 37.2507 15.6086L36.0583 16.6845C34.3248 18.2508 34.3298 20.7929 36.0583 22.3542L37.1597 23.3476C36.7305 25.0886 36.026 26.7499 35.0727 28.2687L33.639 28.1953C31.3058 28.0761 29.5117 29.8773 29.6302 32.2042L29.7036 33.6378C28.1848 34.5911 26.5235 35.2957 24.7824 35.7248L23.789 34.6242C22.2228 32.89 19.6807 32.8942 18.1194 34.6242L17.0441 35.8158ZM20.7186 26.3384C24.6152 26.3384 27.7739 23.1797 27.7739 19.283C27.7739 15.3863 24.6152 12.2277 20.7186 12.2277C16.8219 12.2277 13.6632 15.3863 13.6632 19.283C13.6632 23.1797 16.8219 26.3384 20.7186 26.3384Z"
+                        fill="#E1F4FF"
+                      />
+                      <path
+                        d="M24.8989 15.8224V14.2135C24.8989 11.9611 23.1292 10.1914 20.8768 10.1914C18.6244 10.1914 16.8547 11.9611 16.8547 14.2135V15.8224C15.4872 15.8224 14.4414 16.8681 14.4414 18.2357V23.8666C14.4414 25.2341 15.4872 26.2799 16.8547 26.2799H24.8989C26.2664 26.2799 27.3122 25.2341 27.3122 23.8666V18.2357C27.3122 16.8681 26.2664 15.8224 24.8989 15.8224ZM18.4635 14.2135C18.4635 12.846 19.5093 11.8003 20.8768 11.8003C22.2443 11.8003 23.2901 12.846 23.2901 14.2135V15.8224H18.4635V14.2135Z"
+                        fill="#06ADFF"
+                      />
+                    </svg>
+                    <svg
+                      width="42"
+                      height="38"
+                      viewBox="0 0 42 38"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <rect
+                        x="0.498047"
+                        width="41.4652"
+                        height="37.6957"
+                        rx="6.64724"
+                        fill="white"
+                      />
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M17.0441 35.8158C15.3377 35.4382 13.7005 34.7969 12.1914 33.9151L12.2789 32.2042C12.3982 29.871 10.5969 28.0768 8.27008 28.1953L6.37925 28.292C5.48214 26.8685 4.8034 25.3187 4.36565 23.694L5.85009 22.3535C7.5843 20.7886 7.58007 18.2459 5.85009 16.6845L4.26758 15.2558C4.65525 13.6668 5.2725 12.1428 6.09985 10.7319L8.27008 10.8427C10.6033 10.9619 12.3975 9.16069 12.2789 6.83383L12.1675 4.66431C13.5779 3.83708 15.1014 3.21983 16.6899 2.83203L18.1194 4.41455C19.6857 6.14876 22.2277 6.14452 23.789 4.41455L25.1296 2.9301C26.7539 3.3677 28.3035 4.04619 29.7268 4.94299L29.6302 6.83383C29.5109 9.16774 31.3122 10.9619 33.639 10.8434L35.35 10.7559C36.2317 12.2649 36.873 13.9021 37.2507 15.6086L36.0583 16.6845C34.3248 18.2508 34.3298 20.7929 36.0583 22.3542L37.1597 23.3476C36.7305 25.0886 36.026 26.7499 35.0727 28.2687L33.639 28.1953C31.3058 28.0761 29.5117 29.8773 29.6302 32.2042L29.7036 33.6378C28.1848 34.5911 26.5235 35.2957 24.7824 35.7248L23.789 34.6242C22.2228 32.89 19.6807 32.8942 18.1194 34.6242L17.0441 35.8158ZM20.7186 26.3384C24.6152 26.3384 27.7739 23.1797 27.7739 19.283C27.7739 15.3863 24.6152 12.2277 20.7186 12.2277C16.8219 12.2277 13.6632 15.3863 13.6632 19.283C13.6632 23.1797 16.8219 26.3384 20.7186 26.3384Z"
+                        fill="#E1F4FF"
+                      />
+                      <path
+                        d="M24.8989 15.8224V14.2135C24.8989 11.9611 23.1292 10.1914 20.8768 10.1914C18.6244 10.1914 16.8547 11.9611 16.8547 14.2135V15.8224C15.4872 15.8224 14.4414 16.8681 14.4414 18.2357V23.8666C14.4414 25.2341 15.4872 26.2799 16.8547 26.2799H24.8989C26.2664 26.2799 27.3122 25.2341 27.3122 23.8666V18.2357C27.3122 16.8681 26.2664 15.8224 24.8989 15.8224ZM18.4635 14.2135C18.4635 12.846 19.5093 11.8003 20.8768 11.8003C22.2443 11.8003 23.2901 12.846 23.2901 14.2135V15.8224H18.4635V14.2135Z"
+                        fill="#06ADFF"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </div>
             </div>
             <div className={`${styles.collectPaymentsBoxSection}`}>
@@ -697,7 +352,7 @@ const Home = (): React.JSX.Element => {
                             },
                           ]}
                           headingTag="h3"
-                          className="text-start mb-4"
+                          className=" mb-4"
                         />
                       </div>
                     </div>
@@ -793,7 +448,7 @@ const Home = (): React.JSX.Element => {
               <div className={`${styles.prepaidCardSectionInner}`}>
                 <div className="row g-md-5">
                   {prepaidCardsData.map((item, index) => (
-                    <div className="col-md-6" key={index}>
+                    <div className="col-md-6 mb-4 mb-md-0" key={index}>
                       <div className={`${styles.prepaidCardBox}`}>
                         <PrepaidCardHome {...item} />
                       </div>
@@ -818,14 +473,14 @@ const Home = (): React.JSX.Element => {
                         },
                       ]}
                       headingTag="h3"
-                      className="text-start mb-4"
+                      className=" mb-4"
                     />
                   </div>
                 </div>
               </div>
               <div className="row g-md-5">
                 {prepaidCardsDataSecond.map((item, index) => (
-                  <div className="col-md-6" key={index}>
+                  <div className="col-md-6 mb-4 mb-md-0" key={index}>
                     <div className={`${styles.prepaidCardBox}`}>
                       <PrepaidCardHome {...item} />
                     </div>
@@ -859,9 +514,9 @@ const Home = (): React.JSX.Element => {
                 </div>
               </div>
               <div className={`${styles.rewardSectionContent}`}>
-                <div className="row g-md-5">
+                <div className="row ">
                   {rewardData.map((item, index) => (
-                    <div className="col-md-4" key={index}>
+                    <div className="col-md-4 mb-4 mb-md-0" key={index}>
                       <div className={`${styles.rewardVauchersBox}`}>
                         <HomePageRewardsVouchers
                           {...item}
@@ -912,7 +567,6 @@ const Home = (): React.JSX.Element => {
         <section className={`${styles.receivablesPayablesSection}`}>
           <div className="max-w-auto">
             <div className={`${styles.receivablesPayablesOuter}`}>
-              
               <div className="row">
                 <div className="col-md-12">
                   <div className={`${styles.receivablesPayablesHeading}`}>
@@ -1099,7 +753,7 @@ const Home = (): React.JSX.Element => {
           <div className="max-w-auto">
             <div className={`${styles.securitySectionOuter}`}>
               <div className="row">
-                <div className="col-md-7">
+                <div className="col-md-7 mb-4 mb-md-0">
                   <div className={`${styles.securityLeft}`}>
                     <Image src={securityIcon1} alt={""}></Image>
                     <DynamicHeading
@@ -1158,7 +812,7 @@ const Home = (): React.JSX.Element => {
                           />
                         </div>
                       </div>
-                      <div className="col-sm-6">
+                      <div className="col-sm-6 mb-3 mb-md-0">
                         <div className={`${styles.card}`}>
                           <Image src={securityIcon4} alt={""}></Image>
                           <DynamicHeading
@@ -1255,7 +909,7 @@ const Home = (): React.JSX.Element => {
                         <path
                           d="M1.75 1.25L5.75 5.25L1.75 9.25"
                           stroke="#1C5AF4"
-                          stroke-width="2"
+                          strokeWidth="2"
                         />
                       </svg>
                     </Link>
