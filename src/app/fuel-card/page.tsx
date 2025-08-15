@@ -1,11 +1,10 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
+import { Metadata } from "next"
 import { cardType, intantActionData, stackcardData } from "./data"
 import {
   Header,
   Footer,
-  FAQHtml,
   TalkToSales,
   RectangleButton,
   CustomBreadcrumb,
@@ -17,15 +16,21 @@ import {
   StepsSection,
   FaqSection,
 } from "@/components"
-import {
-  blueArrow,
-  whiteArrow,
-  mealCardImage,
-  podiumImage,
-  heroCardImg,
-} from "."
+import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Fuel Card for Fleet & Employee Travel Management",
+  description:
+    "Simplify fuel expense management with EnKash Fuel Cards. Set usage limits, monitor spending in real time, and reduce fuel fraud for your business fleet.",
+  alternates: {
+    canonical: "https://www.enkash.com/fuel-card/",
+  },
+})
+const salesUrl = getSalesUrl("/fuel-card")
 
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
@@ -37,11 +42,12 @@ const cards = stackcardData.map((item, index) => ({
       title={item.title}
       description={item.description}
       image={item.image}
-      buttonUrl={item.buttonUrl}
+      buttonUrl={salesUrl}
       maxImageHeight="300px"
     />
   ),
 }))
+
 const FuelCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -59,6 +65,7 @@ const FuelCards = (): React.JSX.Element => {
                   url: "/corporate-cards/fuel-card",
                 },
               ]}
+              linkColor="allWhite"
             />
           </div>
           <div className={`${styles.title} col-12 `}>
@@ -66,7 +73,7 @@ const FuelCards = (): React.JSX.Element => {
               content={[
                 {
                   title: "Fuel Card",
-                  color: "color-equity-blue underline",
+                  color: "color-white underline",
                 },
               ]}
               headingTag="p"
@@ -77,11 +84,11 @@ const FuelCards = (): React.JSX.Element => {
                 content={[
                   {
                     title: "Transforming Fuel Expense Management with ",
-                    color: "color-black italic f-3 d-block",
+                    color: "color-white italic f-3 d-block",
                   },
                   {
                     title: " Fuel Cards*",
-                    color: "color-black",
+                    color: "color-white",
                   },
                 ]}
                 headingTag="h1"
@@ -95,7 +102,7 @@ const FuelCards = (): React.JSX.Element => {
                   {
                     title:
                       "Eliminate hassle, gain control, and cut costs with a comprehensive fuel card solution for businesses of all sizes.",
-                    color: "color-black subHeading",
+                    color: "color-white subHeading",
                   },
                 ]}
                 headingTag="p"
@@ -103,7 +110,11 @@ const FuelCards = (): React.JSX.Element => {
               />
             </div>
             <div className={styles.button_wrapper}>
-              <RectangleButton title="Get Started" theme="blue" url="/sales" />
+              <RectangleButton
+                title="Get Started"
+                theme="blue"
+                url={salesUrl}
+              />
             </div>
           </div>
         </div>
@@ -112,18 +123,10 @@ const FuelCards = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
@@ -139,7 +142,7 @@ const FuelCards = (): React.JSX.Element => {
             theme: "border-gray",
             actionImage: blueArrow,
             hoverImage: whiteArrow,
-            url: "/sales",
+            url: salesUrl,
           }}
           image={{
             src: mealCardImage,
