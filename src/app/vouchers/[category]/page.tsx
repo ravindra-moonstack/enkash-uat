@@ -188,8 +188,6 @@ const CategoryPage = async ({
 
   return (
     <>
-      <Header />
-      <TalkToSales />
       {voucherData ? (
         <div className={`color-white ${styles.home_container}`}>
           <div className={`${styles.voucher_detail}`}>
@@ -707,8 +705,6 @@ const CategoryPage = async ({
           </div>
         </div>
       )}
-
-      <Footer />
     </>
   )
 }

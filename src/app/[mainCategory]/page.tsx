@@ -168,8 +168,6 @@ const MainCategoryPage = async ({
 
   return (
     <div className={`color-black ${styles.home_container}`}>
-      <Header utmSource={halfBoltUTM} />
-      <TalkToSales />
       {isValidCategory ? (
         <>
           {categoryData && (
@@ -294,7 +292,6 @@ const MainCategoryPage = async ({
         </div>
       )}
 
-      <Footer />
     </div>
   )
 }
