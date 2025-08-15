@@ -115,6 +115,10 @@ const FaqSection = dynamic(
   { ssr: true }
 )
 
+const HowDoesItWork = dynamic(
+  () => import("./how-does-it-work/how-does-it-work."),
+  { ssr: true }
+)
 export {
   Header,
   Footer,
@@ -150,5 +154,6 @@ export {
   BankLogoSlider,
   EasyStepCard,
   StepsSection,
-  FaqSection
+  FaqSection,
+  HowDoesItWork
 }

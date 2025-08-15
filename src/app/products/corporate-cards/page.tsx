@@ -1,5 +1,4 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
 import {
   allProductSections,
@@ -12,9 +11,6 @@ import {
 } from "./data"
 
 import {
-  Header,
-  FAQHtml,
-  Footer,
   RectangleButton,
   PolicyCard,
   LogoSlider,
@@ -24,7 +20,7 @@ import {
   CustomBreadcrumb,
   LottieDynamicLoadComponent,
   DynamicHeading,
-  TalkToSales,
+  FaqSection,
 } from "@/components"
 
 import {
@@ -45,11 +41,11 @@ const mergedCards = allProductSections.flatMap((section) => section.items)
 const CorporateCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
+ 
 
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <TalkToSales />
+        
 
           <div className={`${styles.first_row}`}>
             <div className={`${styles.spline_background}`}>
@@ -602,74 +598,7 @@ const CorporateCards = (): React.JSX.Element => {
             </div>
           </div>
 
-          <div className={`${styles.faq_new_row}  relative`}>
-            <div className={`${styles.faqSection} text-start max-w-auto `}>
-              <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Frequently Asked Questions (",
-                      color: "color-black",
-                    },
-                    {
-                      title: "FAQs",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: ")",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
-              </div>
-              <div className="d-flex flex-column flex-md-row justify-content-between">
-                <div>
-                  <div>
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Have more questions?",
-                          color: "color-dark-grey subHeading",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0"
-                    />
-                  </div>
-                  <div className="mt-3 d-none d-md-block">
-                    <div className="connectWithUs">
-                      <Link href="/contact-us">
-                        <DynamicHeading
-                          content={[
-                            {
-                              title: "Connect with us",
-                              color: "color-equity-blue ",
-                            },
-                          ]}
-                          headingTag="p"
-                          className="mb-0 f-5"
-                        />
-                        <Image
-                          src={blueArrow}
-                          alt="blue Arrow"
-                          width={15}
-                          height={15}
-                          className="ms-2"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className={`${styles.faqData}`}>
-                  <FAQHtml faqData={faqData} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <Footer />
+          <FaqSection faqData={faqData} />
         </div>
       </div>
     </div>
