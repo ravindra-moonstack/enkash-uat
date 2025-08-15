@@ -17,10 +17,7 @@ import {
   securityIcon3,
   securityIcon4,
   securityIcon5,
-<<<<<<< HEAD
-=======
   bankIcons2
->>>>>>> moonstack/v3-new-pages-2
 } from "."
 import {
   counterData,
