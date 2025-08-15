@@ -109,7 +109,7 @@ const LogoSlider = () => {
   }
 
   return (
-    <div className="col-12">
+    <div>
       <div className={styles.marquee_box}>
         <Slider {...sliderSettings}>
           {[...logos, ...logos].map((logo, i) => (
