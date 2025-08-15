@@ -281,6 +281,9 @@
   @include for-laptops {
     background: url("./img/reward_bgImg.webp");
     padding: 160px 20px 50px;
+    background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
   }
   .rewardSectionInner {
     border-radius: 16px;
