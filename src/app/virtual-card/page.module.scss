@@ -39,10 +39,11 @@
 
     img {
       z-index: 1;
-      max-width: 100%; // 👈 shrink to fit container
-      height: auto; // 👈 maintain aspect ratio
-      max-height: 363px;
-      max-width: 231px;
+      max-width: 100%; 
+      height: auto; 
+      max-height: 552px;
+      max-width: 762px;
+         margin-bottom: -111px;
     }
   }
   .lottie_container_bottom {

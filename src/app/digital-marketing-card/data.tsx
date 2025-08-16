@@ -268,24 +268,22 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Meal Card",
     description:
       "Give tax-saving meal benefits to employees with easy-to-use, digital meal cards accepted nationwide.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
-  {
-    titleHtml: "Digital Marketing Card",
-    description:
-      "Simplify ad payments across platforms while staying within budget and preventing overspending.",
-    cardImage: purchesCardImg,
-  },
+
   {
     titleHtml: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
@@ -298,31 +296,28 @@ const cardType = [
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
     cardImage: termsAndConCardImg,
+    linkUrl: "/virtual-card",
   },
   {
     titleHtml: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
 
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
-    cardImage: virtualCardImg,
+    cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
   {
     titleHtml: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
-  },
-  {
-    titleHtml: "Forex Card",
-    description:
-      "Enable safe and compliant international spends with multi-currency loading and real-time transaction control",
-    cardImage: virtualCardImg,
   },
 ]
 

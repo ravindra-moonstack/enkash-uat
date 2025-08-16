@@ -276,18 +276,21 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: digitalCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "Saas Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
@@ -300,18 +303,21 @@ const cardType = [
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
     cardImage: virtualCardImg,
+    linkUrl: "/virtual-card",
   },
   {
     titleHtml: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Meal Card",
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
 
   {

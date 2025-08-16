@@ -27,28 +27,40 @@ import {
   mealCardImage,
   instantActionImg,
   heroCardImg,
-  podiumImage,
 } from "."
 
 import faqData from "./faq-data"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
-const cards = stackcardData.map(
-  ({ color, icon, title, description, image, buttonUrl }) => ({
-    color,
-    content: (
-      <AllInOnePolicy
-        buttonText="Get Started"
-        icon={icon}
-        title={title}
-        description={description}
-        image={image}
-        buttonUrl={buttonUrl}
-        maxImageHeight="300px"
-      />
-    ),
-  })
-)
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
+
+export const metadata: Metadata = generateMetaData({
+  title: "Virtual Corporate Card for Secure and Instant Payments",
+  description:
+    "Create instant virtual cards for online payments, subscriptions, and vendor spends. Control limits, track usage, and reduce fraud with EnKash’s smart card solution.",
+  alternates: {
+    canonical: "https://www.enkash.com/virtual-card/",
+  },
+})
+const salesUrl = getSalesUrl("/virtual-card")
+
 const VirtualCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -86,7 +98,7 @@ const VirtualCards = (): React.JSX.Element => {
                     color: "color-black italic f-3 d-block",
                   },
                   {
-                    title: "Virtual Prepaid Card*",
+                    title: "Virtual Prepaid Card",
                     color: "color-black",
                   },
                 ]}
@@ -109,7 +121,11 @@ const VirtualCards = (): React.JSX.Element => {
               />
             </div>
             <div className={styles.button_wrapper}>
-              <RectangleButton title="Get Started" theme="blue" url="/sales" />
+              <RectangleButton
+                title="Get Started"
+                theme="blue"
+                url={salesUrl}
+              />
             </div>
           </div>
         </div>
@@ -118,18 +134,10 @@ const VirtualCards = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 

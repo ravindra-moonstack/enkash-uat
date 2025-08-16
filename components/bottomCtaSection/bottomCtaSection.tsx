@@ -85,4 +85,4 @@ const BottomCtaSection: React.FC<BottomCtaSectionProps> = ({
   )
 }
 
-export default BottomCtaSection
+export default BottomCtaSection;

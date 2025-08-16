@@ -18,6 +18,7 @@ import {
   costControlSavingsIcon,
   fraudProtection,
   fraudProtectionIcon,
+  digitalCardImg,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
@@ -27,10 +28,12 @@ import {
   streamlinedReimbursement,
   streamlinedReimbursementIcon,
   termsAndConCardImg,
-  virtualCardImg,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "."
+
+import { fleetCardImg } from "../digital-marketing-card"
+import { payrollCardImg } from "../fuel-card"
 
 const intantActionData = [
   {
@@ -102,55 +105,54 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
-    cardImage: purchesCardImg,
+    cardImage: digitalCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense contro",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: mealCardImg,
+    cardImage: payrollCardImg,
   },
   {
     titleHtml: "Meal Card",
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
   {
     titleHtml: "T&E Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
-    cardImage: virtualCardImg,
+    cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
   {
     titleHtml: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver",
-    cardImage: termsAndConCardImg,
-  },
-
-  {
-    titleHtml: "Forex Card",
-    description:
-      "Enable safe and compliant international spends with multi-currency loading and real-time transaction control.",
-    cardImage: sassCardImg,
+    cardImage: fleetCardImg,
   },
 ]
 

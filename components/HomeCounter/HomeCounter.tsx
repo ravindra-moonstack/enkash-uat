@@ -57,7 +57,7 @@ const Counter: React.FC<CounterProps> = ({
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={ref} style={{ textAlign: "start" }}>
+    <div ref={ref}>
       <div style={{ fontSize: "2rem", fontWeight: 700, color: "#0066FF", fontStyle:"italic"}}>
         {prefix}
         {count.toLocaleString()}

@@ -23,10 +23,22 @@ import {
   whiteArrow,
   mealCardImage,
   heroCardImg,
-  podiumImage,
   instantActionImg,
 } from "."
 import faqData from "./faq-data"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "DIY Card Module: Create & Manage Cards Instantly",
+  description:
+    "Design, issue, and manage physical or virtual cards on demand with EnKash’s DIY Card Module. Customize controls, set limits, and enable smart expense tracking.",
+  alternates: {
+    canonical: "https://www.enkash.com/diy-card-module/",
+  },
+})
+const salesUrl = getSalesUrl("/diy-card-module")
 
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
@@ -103,7 +115,11 @@ const DiyCardModule = (): React.JSX.Element => {
               />
             </div>
             <div className={styles.button_wrapper}>
-              <RectangleButton title="Get Started" theme="blue" url="/sales" />
+              <RectangleButton
+                title="Get Started"
+                theme="blue"
+                url={salesUrl}
+              />
             </div>
           </div>
         </div>
@@ -112,18 +128,13 @@ const DiyCardModule = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <LogoSlider />
+      <div className="cardsSliderMargin">
+        <LogoSlider />
+      </div>
+
       <StepsSection
         heading={[
           {
@@ -210,7 +221,7 @@ const DiyCardModule = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -241,15 +252,18 @@ const DiyCardModule = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
