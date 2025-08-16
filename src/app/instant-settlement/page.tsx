@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -16,29 +16,25 @@ import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  secureImage,
   realTimeIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
   hundredPercentIcon,
-  paymentGatewayImg,
 } from "."
+
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Instant Payment Settlement for Merchants",
+  description:
+    "Access your funds instantly with EnKash’s Instant Settlement solution. Improve cash flow, reduce wait times, and gain 24/7 control over your business payments.",
+  alternates: {
+    canonical: "https://www.enkash.com/instant-settlement/",
+  },
+})
+const salesUrl = getSalesUrl("/instant-settlement")
 
 const showScroll = cardsData.length > 3
 
@@ -122,14 +118,14 @@ const InstantSettlement = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -301,7 +297,7 @@ const InstantSettlement = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -346,49 +342,18 @@ const InstantSettlement = (): React.JSX.Element => {
                   />
                 </div>
               </div>
-
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Customized Settlements"
-                description="Empower yourself to decide when your customer payments should be transferred to your bank account. With a customized payment settlement process, you have full control to settle the needed amount within a few seconds."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243px"
-              />
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Simplified Budgeting"
-                description="Faster access to capital empowers you to make quicker decisions, invest in inventory, and seize strategic opportunities without delays."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Enhanced Relations"
-                description="Pay vendors/suppliers faster, build stronger relationships, potentially secure better deals, and avoid late fees."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Super Fast Settlements"
-                description="Instantly get your customer payments straight into your bank account every day with same-day settlements, which are settled at T+O, for a quick and consistent cash flow experience."
-                image={paymentOptionImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Increased Efficiency"
-                description="Eliminate the need to track settlement schedules and manage cash flow fluctuations, freeing up valuable time and resources for other business-critical tasks."
-                image={secureImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
+              {allInOnePolicies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -413,7 +378,7 @@ const InstantSettlement = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -443,78 +408,19 @@ const InstantSettlement = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGatewayImg}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Links"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-                linkUrl="/payment-links"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly."
-                cardImage={qrCodes}
-                linkUrl="/qr-codes"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-                linkUrl="/reminder-engine"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

@@ -137,7 +137,7 @@ export const motherProducts = [
             description: "Multiple QRs for payment collection",
             imageSrc: qrCode,
             imageSrcHovered: qrCodeFilled,
-            link: "/qr-codes",
+            link: "/qr-code",
           },
         ],
         footerText: "Effortlessly streamline your business collections",

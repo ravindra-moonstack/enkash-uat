@@ -33,6 +33,16 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
+import {
+  autoCollect,
+  instant,
+  invoices,
+  paymentButton,
+  paymentLink,
+  paymentPage,
+  qrCodes,
+  reminder,
+} from "."
 
 const dataSets = [
   {
@@ -369,6 +379,65 @@ const projects = [
   },
 ]
 
+const managementCardData = [
+  {
+    titleHtml: "Payment Links",
+    description:
+      "Collect payments across WhatsApp, SMS, Facebook, Twitter, and other platforms with no-code payment links.",
+    cardImage: paymentLink,
+    linkUrl: "payment-links",
+  },
+  {
+    titleHtml: "Payment Page",
+    description:
+      "Create custom-branded Payment Pages in minutes to accept payments online—no tech effort needed.",
+    cardImage: paymentPage,
+    linkUrl: "payment-page",
+  },
+  {
+    titleHtml: "Payment Button",
+    description:
+      "Integrate a pre-designed payment button to your website with a simple plug-and-play solution.",
+    cardImage: paymentButton,
+    linkUrl: "payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description:
+      "Secure, contactless payment with QR codes to enable businesses to accept instant transactions.",
+    cardImage: qrCodes,
+    linkUrl: "qr-code",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description:
+      "Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale.",
+    cardImage: autoCollect,
+    linkUrl: "auto-collect",
+  },
+  {
+    titleHtml: "Invoices",
+    description:
+      "Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links.",
+    cardImage: invoices,
+    linkUrl: "digital-invoicing",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description:
+      "Access your funds instantly, skip standard settlement cycles, and gain better control over your cash flow.",
+    cardImage: instant,
+    linkUrl: "instant-settlement",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description:
+      "Eliminate manual reminders and effortlessly automate your business collections for smoother cash flow.",
+    cardImage: reminder,
+    linkUrl: "collection-reminder",
+  },
+]
+
 export {
   blogData,
   dataSets,
@@ -381,4 +450,5 @@ export {
   rankData,
   supportData,
   savingData,
+  managementCardData,
 }

@@ -32,7 +32,29 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import {
+  autoCollect,
+  instant,
+  invoices,
+  notificationImage,
+  paymentButton,
+  paymentGatewayImg,
+  paymentLink,
+  paymentLinkImage,
+  paymentOptionImage,
+  qrCodes,
+  reminder,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  secureImage,
+  shareImage,
+  taskIconFive,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
+} from "."
 
 const dataSets = [
   {
@@ -359,6 +381,115 @@ const projects = [
   },
 ]
 
+const allInOnePolicies = [
+  {
+    icon: taskIconOne,
+    title: "Automation",
+    description:
+      "Automate collection reminders and save time for other productive work. Send timely payment reminder emails to ensure faster collections and improved cash flow.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Payment Links",
+    description:
+      "Businesses can embed payment links within the reminder engine channel, and collections can be done instantly.",
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "DSO Management",
+    description:
+      "Businesses can automate collection reminders and accelerate their collections, decreasing their DSO and stabilizing their cash flow.",
+    image: shareImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Improved Customer Relationships",
+    description:
+      "EnKash brings businesses closer to their customers by providing insights into their behaviour and patterns. This enables businesses to make decisions keeping customers at the forefront, therefore, establishing better customer relationships.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+  {
+    icon: taskIconFive,
+    title: "Real-time Insights",
+    description:
+      "Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency.",
+    image: secureImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+]
+
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description:
+      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
+    cardImage: paymentGatewayImg,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Links",
+    description:
+      "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
+    cardImage: paymentLink,
+    linkUrl: "/payment-links",
+  },
+  {
+    titleHtml: "Payment Button",
+    description:
+      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description:
+      "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+    cardImage: qrCodes,
+    linkUrl: "/qr-code",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description:
+      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Invoices",
+    description:
+      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
+    cardImage: invoices,
+    linkUrl: "/collection-reminder",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description:
+      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant-settlement",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description:
+      "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
+    cardImage: reminder,
+    linkUrl: "/reminder-engine",
+  },
+]
+
 export {
   blogData,
   dataSets,
@@ -371,4 +502,6 @@ export {
   rankData,
   supportData,
   savingData,
+  allInOnePolicies,
+  managementCards,
 }

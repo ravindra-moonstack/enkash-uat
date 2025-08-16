@@ -187,7 +187,7 @@ const allProductSections = [
         description:
           "Gift cards by EnKash are widely accepted across many places.",
         image: sliderFourIcon,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
     ],
   },

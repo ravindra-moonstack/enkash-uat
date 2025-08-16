@@ -394,7 +394,7 @@ const allProductSections = [
         description:
           "Set rules, track expenses, and manage approvals through an intuitive dashboard accessible anytime, anywhere.",
         image: sliderTwo,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Automated Compliance and Reporting",

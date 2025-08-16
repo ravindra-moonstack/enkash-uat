@@ -176,7 +176,7 @@ const allProductSections = [
         title: "Seamless Integration",
         description: "Sync with your existing accounting tools.",
         image: sliderFourIcon,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Unlimited Cards:",

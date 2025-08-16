@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { allInOnePolicyData, allProductSections, cardsData, managementCardData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -17,30 +17,24 @@ import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
   activationIcon,
   realTimeIcon,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  paymentGateway,
 } from "."
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Payment Page: Create Custom Branded Checkout Pages",
+  description:
+    "Design personalized payment pages with your brand logo, colors, and fields. Accept UPI, cards & more—no coding needed, easy to share and collect payments.",
+  alternates: {
+    canonical: "https://www.enkash.com/payment-page/",
+  },
+})
+const salesUrl = getSalesUrl("/payment-page")
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
@@ -124,14 +118,14 @@ const PaymentPage = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -281,7 +275,7 @@ const PaymentPage = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -322,52 +316,18 @@ const PaymentPage = (): React.JSX.Element => {
               </div>
 
               <div className={styles.allInOnePolicy}>
-                <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Customization at Your Fingertips"
-                  description="Design payment pages that truly showcase your brand identity. Add your logo, select colors that resonate with your business, and customize fields to gather precise and relevant customer details. With memorable and professional URLs, sharing your payment page becomes a breeze, enhancing both brand recognition and user convenience."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales/?source=expense_management"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Multiple Payment Modes"
-                  description="Give your customers unmatched flexibility with over 180 domestic and international payment options. Whether they prefer UPI, net banking, credit or debit cards, wallets, or international currencies, EnKash ensures secure and seamless transactions, catering to a global audience and diverse payment preferences."
-                  image={shareImage}
-                  buttonUrl="/sales/?source=expense_management"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Zero Coding Required"
-                  description="Spend more time growing your business and less time worrying about technical complexities. EnKash’s intuitive platform lets you create and launch fully functional payment pages within minutes, all without any coding knowledge or the need for additional technical resources."
-                  image={paymentOptionImage}
-                  buttonUrl="/sales/?source=expense_management"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Optimized for Mobile and Web"
-                  description="Ensure a flawless checkout experience on any device. EnKash Payment Pages are meticulously designed to adapt to smartphones, tablets, and desktops, offering customers an engaging and consistent interface that works seamlessly regardless of the device they use."
-                  image={notificationImage}
-                  buttonUrl="/sales/?source=expense_management"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFive}
-                  title="Get Real-time Insights"
-                  description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
-                  image={optimizedIcon}
-                  buttonUrl="/sales/?source=expense_management"
-                  maxImageHeight="259px"
-                />
+                {allInOnePolicyData.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -422,7 +382,7 @@ const PaymentPage = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -452,77 +412,18 @@ const PaymentPage = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction."
-                cardImage={paymentGateway}
-                linkUrl="/payment-gateway"
-              />
-            </div>
 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Links"
-                description="Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links."
-                cardImage={paymentLink}
-                linkUrl="/payment-links"
-              />
-            </div>
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
-                cardImage={qrCodes}
-                linkUrl="/qr-codes"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Automate your collections and say goodbye to manual reminders."
-                cardImage={reminder}
-                linkUrl="/reminder"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCardData.map((item, index) => (
+              <div key={index} className="col-12 col-md-4">
+                <ManagementCard
+                  titleHtml={item.titleHtml}
+                  description={item.description}
+                  cardImage={item.cardImage}
+                  linkUrl={item.linkUrl}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
