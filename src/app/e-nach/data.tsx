@@ -32,7 +32,31 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
-import { scrollIconFourth, scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import {
+  autoCollect,
+  instant,
+  invoices,
+  notificationImage,
+  paymentButton,
+  paymentLink,
+  paymentLinkImage,
+  paymentOptionImage,
+  paymentPage,
+  playIntegrationImage,
+  scrollIconFourth,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  secureImage,
+  shareImage,
+  taskIconFive,
+  taskIconFour,
+  taskIconOne,
+  taskIconSix,
+  taskIconThree,
+  taskIconTwo,
+} from "."
+import { upiPayments } from "@/components/header"
 
 const dataSets = [
   {
@@ -129,7 +153,6 @@ const cardsData = [
     description: "eNACH is setup for recurring payments, once approved.",
     icon: scrollIconFourth,
   },
-
 ]
 
 const integrationData = [
@@ -162,26 +185,28 @@ const integrationData = [
 const paymentMethodData = [
   {
     title: "Bulk QR Code Generation",
-    description: "Upload payment details in bulk using our dashboard to generate multiple QR codes instantly.",
+    description:
+      "Upload payment details in bulk using our dashboard to generate multiple QR codes instantly.",
     icon: cards,
   },
   {
     title: "Custom Split Settlements",
-    description:"Define and automate revenue sharing across branches, franchises, or departments.",
+    description:
+      "Define and automate revenue sharing across branches, franchises, or departments.",
     icon: upi,
   },
   {
     title: "Real-Time Notifications",
-    description:"Get instant updates on successful payments via email, SMS, or webhook notifications.",
+    description:
+      "Get instant updates on successful payments via email, SMS, or webhook notifications.",
     icon: netBanking,
   },
   {
     title: "Advanced Analytics",
-    description:"Monitor performance metrics like daily transactions, total revenue, and settlement reports from a centralized dashboard.",
+    description:
+      "Monitor performance metrics like daily transactions, total revenue, and settlement reports from a centralized dashboard.",
     icon: digital,
   },
-
-
 ]
 
 const dashboardData = [
@@ -362,6 +387,110 @@ const projects = [
   },
 ]
 
+const allInOnePolicies = [
+  {
+    icon: taskIconOne,
+    title: "Instant Digital Mandate Creation",
+    description:
+      "Eliminate paperwork and delays—register mandates digitally for faster processing and hassle-free automation.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "243",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Smart Payment Retries for Higher Success Rates",
+    description:
+      "Reduce revenue loss with automatic retries on failed payments, ensuring uninterrupted cash flow and improved collection efficiency.",
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Bulk Subscription Management Made Easy",
+    description:
+      "Set up, track, and manage multiple mandates at scale directly to handle larger payments from a single dashboard—saving time and effort.",
+    image: shareImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305",
+  },
+  {
+    icon: taskIconFour,
+    title: "One-Time Authentication, Lifetime Convenience",
+    description:
+      "Secure recurring payments with a simple one-time authentication, offering a frictionless experience for both businesses and customers.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305",
+    reverse: true,
+  },
+  {
+    icon: taskIconFive,
+    title: "Customizable Checkout for a Branded Experience",
+    description:
+      "Choose between a quick plug-and-play checkout or fully customize it with your brand’s identity, colors, and elements for better engagement.",
+    image: secureImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305",
+  },
+  {
+    icon: taskIconSix,
+    title: "Plug & Play Integration",
+    description:
+      "It provides customers a hassle-free and smooth authentication as compared to physical NACH and can be easily integrated via plug and play method.",
+    image: playIntegrationImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305",
+    reverse: true,
+  },
+]
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description: "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction",
+    cardImage: paymentLink,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Page",
+    description: "Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online.",
+    cardImage: paymentPage,
+    linkUrl: "/payment-page",
+  },
+  {
+    titleHtml: "Payment Button",
+    description: "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "UPI Payments",
+    description: "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
+    cardImage: upiPayments,
+    linkUrl: "/upi-payments",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description: "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description: "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant-settlement",
+  },
+  {
+    titleHtml: "Invoices",
+    description: "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
+    cardImage: invoices,
+    linkUrl: "/digital-invoicing",
+  },
+];
+
 export {
   blogData,
   dataSets,
@@ -374,4 +503,6 @@ export {
   rankData,
   supportData,
   savingData,
+  allInOnePolicies,
+  managementCards
 }

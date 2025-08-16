@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicyData, cardsData, managementCardData } from "./data"
 import faqData, { SecondfaqData } from "./faq-data"
 import {
   DynamicHeading,
@@ -17,33 +17,26 @@ import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  paymentPage,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  secureImage,
   activationIcon,
   realTimeIcon,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
 } from "."
 
 import { faqBg } from "../digital-marketing-card"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Payment Button: Add Instant Checkout to Your Website",
+  description:
+    "Easily embed EnKash Payment Buttons on your website or app. Enable fast, secure payments via UPI, cards & net banking—no complex integration needed.",
+  alternates: {
+    canonical: "https://www.enkash.com/payment-button/",
+  },
+})
+const salesUrl = getSalesUrl("/payment-button")
 
 const showScroll = cardsData.length > 3
 
@@ -127,14 +120,14 @@ const PaymentButton = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -306,7 +299,7 @@ const PaymentButton = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -326,21 +319,13 @@ const PaymentButton = (): React.JSX.Element => {
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
-            <div className={`row align-items-center `}>
-              <div className={`${styles.title} text-center `}>
-                <div
-                  className={`flex-column justify-content-center align-items-center pb-4 pb-md-5`}
-                >
+            <div className="row align-items-center">
+              <div className={`${styles.title} text-center`}>
+                <div className="flex-column text-center pb-4 pb-md-5">
                   <DynamicHeading
                     content={[
-                      {
-                        title: "A Click is ",
-                        color: "color-black",
-                      },
-                      {
-                        title: "All it Takes",
-                        color: "color-equity-blue",
-                      },
+                      { title: "A Click is ", color: "color-black" },
+                      { title: "All it Takes", color: "color-equity-blue" },
                     ]}
                     headingTag="h2"
                     className="f-6"
@@ -348,62 +333,18 @@ const PaymentButton = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Setup in under 5 minutes"
-                description="Add the button to your website or blog in under 5 minutes. Skip complex installations and technical hurdles with our straightforward setup process. Create your button, copy the code, and get started instantly without waiting for developer assistance."
-                image={paymentLinkImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Ctrl C + Ctrl V = Payment Ready"
-                description="No coding expertise is required. Copy-paste a one-line code. EnKash Payment Buttons seamlessly integrate into any website or blog, ensuring a smooth user experience and uninterrupted functionality with zero technical complications."
-                image={shareImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Accept Payments Anytime, Anywhere"
-                description="Accept one-time or recurring payments effortlessly. Enable your customers to choose between single transactions or subscriptions, making your payment process adaptable to diverse business models and customer needs."
-                image={paymentOptionImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="268px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Match Your Style"
-                description="Match your brand’s look and feel with customizable styles, colors, and text. Design buttons that align with your business identity, creating a consistent and professional appearance for your online presence."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Optimized for the Mobile"
-                description="Designed for optimal performance on all devices. Provide a seamless payment experience for users of smartphones, tablets, or desktops, catering to the growing mobile commerce trends."
-                image={optimizedIcon}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="221px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="Don’t Compromise on Security"
-                description="Industry-leading security and compliance standards ensure safe payments. Protect your customers’ data with advanced encryption and fraud detection, building trust and credibility for your business."
-                image={secureImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
+              {allInOnePolicyData.map((item, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={item.maxImageHeight}
+                  reverse={item.reverse}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -465,11 +406,11 @@ const PaymentButton = (): React.JSX.Element => {
           </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
-              title="Get Started  Today "
+              title="Get Started Today "
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -499,70 +440,16 @@ const PaymentButton = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="Seamlessly collect payments with no-code solutions."
-                cardImage={paymentLink}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Page"
-                description="Create stunning, branded checkout experiences in minutes."
-                cardImage={paymentPage}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Links"
-                description="Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links."
-                cardImage={paymentButton}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
-                cardImage={qrCodes}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Automate your collections and say goodbye to manual reminders."
-                cardImage={reminder}
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCardData.map((card, index) => (
+              <div className="col-12 col-md-4" key={index}>
+                <ManagementCard
+                  titleHtml={card.titleHtml}
+                  description={card.description}
+                  cardImage={card.cardImage}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

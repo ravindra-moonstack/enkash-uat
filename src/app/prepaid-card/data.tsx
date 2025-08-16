@@ -52,7 +52,6 @@ import {
   virtualCardImg,
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
-
 } from "."
 import { bg1, bg2, bg3, bg4, bg5 } from "../products/vouchers"
 
@@ -391,7 +390,7 @@ const allProductSections = [
         title: "Set policy-driven workflows",
         description: "that apply at the swipe level",
         image: workflow,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Track and approve spends",
@@ -496,8 +495,7 @@ const progressData = [
     bgImage: bg5,
     url: "/payroll-card",
   },
-];
-
+]
 
 export {
   blogData,
@@ -512,5 +510,5 @@ export {
   slideUpData,
   allProductSections,
   stackcardData,
-  progressData
+  progressData,
 }
