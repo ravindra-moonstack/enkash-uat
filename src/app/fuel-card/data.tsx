@@ -56,7 +56,7 @@ const stackcardData = [
     icon: realTimeExpenseIcon,
     title: "Real-Time Expense Tracking",
     description:
-      "With the Prepaid fuel Cards*, you can monitor fuel expenses as they occur, providing complete visibility and control. All transactions are logged in real time, allowing you to track fuel usage efficiently. This means you can quickly identify spending patterns, prevent budget overruns, and make data-driven decisions to optimize your fuel budget.",
+      "With the Prepaid fuel Cards, you can monitor fuel expenses as they occur, providing complete visibility and control. All transactions are logged in real time, allowing you to track fuel usage efficiently. This means you can quickly identify spending patterns, prevent budget overruns, and make data-driven decisions to optimize your fuel budget.",
     image: realTimeExpense,
     buttonUrl: "/sales/",
   },
@@ -74,7 +74,7 @@ const stackcardData = [
     icon: streamlinedReimbursementIcon,
     title: "Streamlined Reimbursement",
     description:
-      "Say goodbye to the traditional, cumbersome reimbursement process. Fuel Cards* eliminate the need for employees to submit fuel receipts or wait for reimbursement approvals. All fuel-related expenses are automatically managed and settled through the cards, making the entire process faster, more efficient, and less prone to errors, allowing your finance team to focus on more strategic tasks.",
+      "Say goodbye to the traditional, cumbersome reimbursement process. Fuel Cards eliminate the need for employees to submit fuel receipts or wait for reimbursement approvals. All fuel-related expenses are automatically managed and settled through the cards, making the entire process faster, more efficient, and less prone to errors, allowing your finance team to focus on more strategic tasks.",
     image: streamlinedReimbursement,
     buttonUrl: "/sales",
   },
@@ -83,7 +83,7 @@ const stackcardData = [
     icon: costControlSavingsIcon,
     title: "Cost Control & Savings",
     description:
-      "Fuel Cards* allow you to set customizable daily or monthly spending limits for each employee, ensuring that fuel expenses stay within your budget. You can easily monitor fuel consumption against approved limits, providing greater control over spending. By optimizing usage patterns and identifying cost-saving opportunities, your business can significantly reduce unnecessary fuel expenses.",
+      "Fuel Cards allow you to set customizable daily or monthly spending limits for each employee, ensuring that fuel expenses stay within your budget. You can easily monitor fuel consumption against approved limits, providing greater control over spending. By optimizing usage patterns and identifying cost-saving opportunities, your business can significantly reduce unnecessary fuel expenses.",
     image: costControlSavings,
     buttonUrl: "/sales",
   },
@@ -92,7 +92,7 @@ const stackcardData = [
     icon: wideAcceptanceNetworkIcon,
     title: "Wide Acceptance Network",
     description:
-      "Fuel Cards* are accepted at a vast network of authorized fuel stations, giving your employees the freedom to refuel at a variety of locations, both locally and nationwide. This broad acceptance ensures convenience, reduces the risk of out-of-network charges, and guarantees that your business is always covered wherever your team travels, whether near or far.",
+      "Fuel Cards are accepted at a vast network of authorized fuel stations, giving your employees the freedom to refuel at a variety of locations, both locally and nationwide. This broad acceptance ensures convenience, reduces the risk of out-of-network charges, and guarantees that your business is always covered wherever your team travels, whether near or far.",
     image: wideAcceptanceNetwork,
     buttonUrl: "/sales",
   },
@@ -120,7 +120,7 @@ const dataSets = [
     altText: "Simplified expense submission",
     title: "Compliance and Security",
     subtitle:
-      "Fully compliant with RBI guidelines and equipped with advanced fraud detection, Meal Cards* offer unparalleled security. Businesses can confidently provide meal benefits, knowing that every transaction is safe and reliable.",
+      "Fully compliant with RBI guidelines and equipped with advanced fraud detection, Meal Cards offer unparalleled security. Businesses can confidently provide meal benefits, knowing that every transaction is safe and reliable.",
   },
   {
     iconSrc: iconFour,

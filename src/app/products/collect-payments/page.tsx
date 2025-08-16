@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardData, dataSets } from "./data"
+import { allInOnePolicyData, cardData, dataSets } from "./data"
 import {
   DynamicHeading,
   LogoSlider,
@@ -12,18 +12,6 @@ import {
   FaqSection,
 } from "@/components"
 import {
-  paymentGatwayImg,
-  paymentGatwayIcon,
-  paymentLinkIcon,
-  paymentLinkImg,
-  paymentButtonIcon,
-  paymentButtonImg,
-  paymentPageIcon,
-  upiIcon,
-  upiImg,
-  paymentPageImg,
-  qrCodeIcon,
-  qrCodeImg,
   instantSettelmentIcon,
   instantSettelmentImg,
   affordabilityImg,
@@ -33,10 +21,21 @@ import {
   CollectpaymentGif,
 } from "."
 
-
 import faqData from "./faq-data"
 import Spline from "@splinetool/react-spline"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Simplify Online Payment Collections with EnKash",
+  description:
+    "From payment gateway, payment button, payment link, UPI payments, and more. Everything the merchants need fot payment collection.",
+  alternates: {
+    canonical: "https://www.enkash.com/collect-payments/",
+  },
+})
+const salesUrl = getSalesUrl("/collect-payments")
 
 const CollectPayment = (): React.JSX.Element => {
   return (
@@ -83,11 +82,7 @@ const CollectPayment = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3">
-              <RectangleButton
-                title="Talk to us"
-                theme="blue"
-                url="/sales/?source=expense_management"
-              />
+              <RectangleButton title="Talk to us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
@@ -191,56 +186,11 @@ const CollectPayment = (): React.JSX.Element => {
                 </div>
               </div>
               <div
-                className={` ${styles.all_in_section_inner} d-flex flex-column gap-3`}
+                className={`${styles.all_in_section_inner} d-flex flex-column gap-3`}
               >
-                <AllInOnePolicy
-                  icon={paymentGatwayIcon}
-                  title="Payment Gateway"
-                  description="A high-performance gateway that enables businesses to accept payments through multiple methods such as credit cards, debit cards, UPI, net banking, and digital wallets, ensuring seamless transactions with exceptional success rates and security."
-                  image={paymentGatwayImg}
-                  buttonUrl="/sales/?source=expense_management"
-                />
-
-                <AllInOnePolicy
-                  icon={paymentLinkIcon}
-                  title="Payment Links"
-                  description="Generate and share secure payment links instantly via SMS, email, WhatsApp, or social media, allowing businesses to collect payments from customers without requiring a website, ensuring quick and hassle-free transactions.."
-                  image={paymentLinkImg}
-                  buttonUrl="/sales/?source=expense_management"
-                  reverse
-                />
-                <AllInOnePolicy
-                  icon={paymentButtonIcon}
-                  title="Payment Button"
-                  description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                  image={paymentButtonImg}
-                  buttonUrl="/sales/?source=expense_management"
-                />
-
-                <AllInOnePolicy
-                  icon={paymentPageIcon}
-                  title="Payment Page"
-                  description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                  image={paymentPageImg}
-                  buttonUrl="/sales/?source=expense_management"
-                  reverse
-                />
-                <AllInOnePolicy
-                  icon={upiIcon}
-                  title="UPI Payments"
-                  description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                  image={upiImg}
-                  buttonUrl="/sales/?source=expense_management"
-                />
-
-                <AllInOnePolicy
-                  icon={qrCodeIcon}
-                  title="QR Code Payments"
-                  description="Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process."
-                  image={qrCodeImg}
-                  buttonUrl="/sales/?source=expense_management"
-                  reverse
-                />
+                {allInOnePolicyData.map((item, i) => (
+                  <AllInOnePolicy key={i} {...item} buttonUrl={salesUrl} />
+                ))}
               </div>
             </div>
           </div>
@@ -278,8 +228,6 @@ const CollectPayment = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-
-            <div></div>
           </div>
 
           <div className={styles.how_it_workssection}>
@@ -325,7 +273,7 @@ const CollectPayment = (): React.JSX.Element => {
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url={"/sales/?source=expense_management"}
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -363,7 +311,7 @@ const CollectPayment = (): React.JSX.Element => {
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url={"/sales/?source=expense_management"}
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -404,7 +352,7 @@ const CollectPayment = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>

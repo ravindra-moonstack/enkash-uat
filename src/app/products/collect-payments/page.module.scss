@@ -175,10 +175,10 @@
       position: absolute;
       bottom: 50%;
       left: 50%;
-      transform: translate(-52%, 106%);
+      transform: translate(-50%, 106%);
       max-width: 1200px;
-      padding: 40px; // More room on larger screens
-      margin: 0; // Remove mobile margin on large screens
+      padding: 40px; 
+      margin: 0; 
     }
   }
 }
