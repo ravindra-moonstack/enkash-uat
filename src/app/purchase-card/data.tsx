@@ -375,7 +375,7 @@ const allProductSections = [
         title: "Customizable Spending Limits",
         description: "Control how much your team spends and on what.",
         image: sliderTwo,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Real-Time Transaction Data",

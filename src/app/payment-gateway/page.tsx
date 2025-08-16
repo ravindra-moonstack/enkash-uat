@@ -4,6 +4,7 @@ import {
   acceleratedGrowthData,
   dashboardData,
   integrationData,
+  managementCardData,
   paymentMethodData,
   rankData,
   savingData,
@@ -30,14 +31,6 @@ import {
   support,
   leftHand,
   acceleratedGrowthImg,
-  paymentLink,
-  paymentPage,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
 } from "."
 import generateMetaData from "@/common/utils/metaData"
@@ -49,10 +42,10 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
   alternates: {
-    canonical: "https://www.enkash.com/corporate-cards/",
+    canonical: "https://www.enkash.com/payment-gateway/",
   },
 })
-const salesUrl = getSalesUrl("/corporate-cards")
+const salesUrl = getSalesUrl("/payment-gateway")
 
 const PaymentGateway = (): React.JSX.Element => {
   return (
@@ -137,7 +130,7 @@ const PaymentGateway = (): React.JSX.Element => {
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/payment-gateway"
                       />
                     </div>
                   </div>
@@ -343,7 +336,7 @@ const PaymentGateway = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started  Today "
                   theme="outline-blue"
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -417,9 +410,9 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
                 <div className={`${styles.list_button}`}>
                   <RectangleButton
-                    title="Get Started  Today "
+                    title="Get Started Today "
                     theme="outline-blue"
-                    url="/sales/?source=expense_management"
+                    url={salesUrl}
                   />
                 </div>
               </div>
@@ -470,9 +463,9 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started  Today "
+                  title="Get Started Today "
                   theme="outline-blue"
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -546,9 +539,9 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
                 <div className={`${styles.list_button}`}>
                   <RectangleButton
-                    title="Get Started  Today "
+                    title="Get Started Today "
                     theme="outline-blue"
-                    url="/sales/?source=expense_management"
+                    url={salesUrl}
                   />
                 </div>
               </div>
@@ -600,9 +593,9 @@ const PaymentGateway = (): React.JSX.Element => {
               </div>
               <div className={`${styles.list_button}`}>
                 <RectangleButton
-                  title="Get Started  Today "
+                  title="Get Started Today "
                   theme="outline-blue"
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -676,9 +669,9 @@ const PaymentGateway = (): React.JSX.Element => {
                 </div>
                 <div className={`${styles.list_button}`}>
                   <RectangleButton
-                    title="Get Started  Today "
+                    title="Get Started Today "
                     theme="outline-blue"
-                    url="/sales/?source=expense_management"
+                    url={salesUrl}
                   />
                 </div>
               </div>
@@ -765,11 +758,11 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
           <div className={`${styles.get_started_button} `}>
             <RectangleButton
-              title="Get Started  Today "
+              title="Get Started Today "
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -801,70 +794,13 @@ const PaymentGateway = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Payment Links"
-                description="Collect payments across WhatsApp, SMS, Facebook, Twitter, and other platforms with no-code payment links."
-                cardImage={paymentLink}
-              />
-            </div>
 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Payment Page"
-                description="Create custom-branded Payment Pages in minutes to accept payments online—no tech effort needed."
-                cardImage={paymentPage}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Payment Button"
-                description="Integrate a pre-designed payment button to your website with a simple plug-and-play solution."
-                cardImage={paymentButton}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="QR Codes"
-                description="Secure, contactless payment with QR codes to enable businesses to accept instant transactions."
-                cardImage={qrCodes}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Invoices"
-                description="Automate invoicing for recurring transactions, track sales and payments, and create bulk invoices with payment links."
-                cardImage={invoices}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Instant Settlement"
-                description="Access your funds instantly, skip standard settlement cycles, and gain better control over your cash flow."
-                cardImage={instant}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                whiteTitle="Reminder Engine"
-                description="Eliminate manual reminders and effortlessly automate your business collections for smoother cash flow."
-                cardImage={reminder}
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCardData.map((card, i) => (
+              <div className="col-12 col-md-4" key={i}>
+                <ManagementCard {...card} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

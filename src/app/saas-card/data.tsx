@@ -16,7 +16,6 @@ import slideThird from "./img/cardLimit.png"
 import slideFourth from "./img/block-unblock.png"
 import slideFifth from "./img/approvals.png"
 
-
 import sliderOne from "./img/reconcile.svg"
 import sliderTwo from "./img/workflow.svg"
 import sliderThree from "./img/audit-expence.svg"
@@ -267,22 +266,21 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
-     linkUrl: "/fuel-card",
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: purchesCardImg,
-     linkUrl: "/digital-marketing-card",
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "Meal Card",
     description:
       "Access meal cards to give monthly access to food across multiple online, dine-in, and food delivery apps, along with a tax-saving facility.",
-    cardImage:  mealCardImg,
-     linkUrl: "/meal-card",
-
+    cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
 
   {
@@ -296,7 +294,7 @@ const cardType = [
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
     cardImage: virtualCardImg,
-     linkUrl: "/virtual-card",
+    linkUrl: "/virtual-card",
   },
 
   {
@@ -304,7 +302,7 @@ const cardType = [
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
     cardImage: purchesCardImg,
-     linkUrl: "/purches-card",
+    linkUrl: "/purches-card",
   },
   {
     titleHtml: "Fleet Card",
@@ -369,7 +367,7 @@ const allProductSections = [
         description:
           "Define custom policies, monitor spends, and manage approvals seamlessly with a dashboard that's always within reach.",
         image: sliderTwo,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Vendor Locking",
@@ -426,7 +424,7 @@ const stackcardData = [
     image: costControlSavings,
     buttonUrl: "/sales",
   },
-];
+]
 
 export {
   blogData,
@@ -440,5 +438,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
-  stackcardData
+  stackcardData,
 }
