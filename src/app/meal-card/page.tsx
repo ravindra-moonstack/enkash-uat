@@ -9,7 +9,6 @@ import {
   whiteArrow,
   mealCardImage,
   cardRotatingImage,
-  podiumImage,
   heroCardImg,
   realTimeExpenseIcon,
   realTimeExpense,
@@ -32,7 +31,19 @@ import StepCard from "@/components/stepCard/stepCard"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Meal Card: Tax-Saving Digital Benefit for Employees",
+  description:
+    "Offer tax-free meal allowances with EnKash Meal Cards. Easy to manage, accepted at food outlets and online—boost employee satisfaction and streamline HR processes.",
+  alternates: {
+    canonical: "https://www.enkash.com/meal-card/",
+  },
+})
+const salesUrl = getSalesUrl("/meal-card")
 const cards = [
   {
     color: "#fff",
@@ -113,6 +124,7 @@ const MealCards = (): React.JSX.Element => {
                   url: "/corporate-cards/meal-card",
                 },
               ]}
+              linkColor="allWhite"
             />
           </div>
           <div className={`${styles.title} col-12 `}>
@@ -120,7 +132,7 @@ const MealCards = (): React.JSX.Element => {
               content={[
                 {
                   title: "Meal Card",
-                  color: "color-equity-blue underline",
+                  color: "color-white underline",
                 },
               ]}
               headingTag="p"
@@ -131,11 +143,11 @@ const MealCards = (): React.JSX.Element => {
                 content={[
                   {
                     title: "Empower Your Employees with",
-                    color: "color-black f-3 d-block italic",
+                    color: "color-white f-3 d-block italic",
                   },
                   {
                     title: "Tax-Free Meal Cards",
-                    color: "color-black",
+                    color: "color-white",
                   },
                 ]}
                 headingTag="h1"
@@ -149,7 +161,7 @@ const MealCards = (): React.JSX.Element => {
                   {
                     title:
                       "Provide tax-free meal benefits while enhancing employee satisfaction. Widely accepted across platforms, these cards simplify meal allowances and provide a seamless, paperless solution.",
-                    color: "color-black subHeading",
+                    color: "color-white subHeading",
                   },
                 ]}
                 headingTag="p"
@@ -160,7 +172,7 @@ const MealCards = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -170,18 +182,10 @@ const MealCards = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
@@ -294,7 +298,6 @@ const MealCards = (): React.JSX.Element => {
               headingTag="h2"
               className="f-6"
             />
-            <div></div>
           </div>
 
           <div className={styles.how_it_workssection}>
@@ -325,7 +328,7 @@ const MealCards = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -421,15 +424,18 @@ const MealCards = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

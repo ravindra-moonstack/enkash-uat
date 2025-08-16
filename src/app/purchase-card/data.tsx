@@ -27,13 +27,15 @@ import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  digitalCardImg,
   fleetCardImg,
   fuelCardImg,
   mealCardImg,
-  purchesCardImg,
+  termsAndConCardImg,
   sassCardImg,
   virtualCardImg,
 } from "."
+import { payrollCardImg } from "../fuel-card"
 
 const dataSets = [
   {
@@ -257,36 +259,42 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+     linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
-    cardImage: purchesCardImg,
+    cardImage: digitalCardImg,
+     linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "Saas Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
+     linkUrl: "/saas-card",
+
   },
   {
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: sassCardImg,
+    cardImage: payrollCardImg,
   },
   {
     titleHtml: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
     cardImage: virtualCardImg,
+     linkUrl: "/virtual-card",
   },
   {
     titleHtml: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
-    cardImage: mealCardImg,
+    cardImage: termsAndConCardImg,
+     linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "Meal Card",

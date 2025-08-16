@@ -8,7 +8,6 @@ import {
   whiteArrow,
   mealCardImage,
   heroCardImg,
-  podiumImage,
   realTimeExpenseIcon,
   realTimeExpense,
   fraudProtectionIcon,
@@ -30,7 +29,19 @@ import StepCard from "@/components/stepCard/stepCard"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
+export const metadata: Metadata = generateMetaData({
+  title: "SaaS Card: Manage & Track All SaaS Payments",
+  description:
+    "Manage all your software subscriptions with EnKash SaaS Card. Control costs, ensure compliance, and boost operational efficiency.",
+  alternates: {
+    canonical: "https://www.enkash.com/saas-card/",
+  },
+})
+const salesUrl = getSalesUrl("/saas-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = [
   {
@@ -94,6 +105,7 @@ const cards = [
     ),
   },
 ]
+
 const SaasCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -111,6 +123,7 @@ const SaasCards = (): React.JSX.Element => {
                   url: "/corporate-cards/saas-card",
                 },
               ]}
+              linkColor="allWhite"
             />
           </div>
           <div className={`${styles.title} col-12 `}>
@@ -118,7 +131,7 @@ const SaasCards = (): React.JSX.Element => {
               content={[
                 {
                   title: "Saas Card",
-                  color: "color-equity-blue underline",
+                  color: "color-white underline",
                 },
               ]}
               headingTag="p"
@@ -130,11 +143,11 @@ const SaasCards = (): React.JSX.Element => {
                 content={[
                   {
                     title: "SaaS Cards: Designed to manage, monitor, and",
-                    color: "color-black italic f-3 d-block",
+                    color: "color-white italic f-3 d-block",
                   },
                   {
                     title: "master your SaaS spends.",
-                    color: "color-black",
+                    color: "color-white",
                   },
                 ]}
                 headingTag="h1"
@@ -148,7 +161,7 @@ const SaasCards = (): React.JSX.Element => {
                   {
                     title:
                       "Automate your SaaS business subscriptions for better expense control and auto-renewal.",
-                    color: "color-black subHeading",
+                    color: "color-white subHeading",
                   },
                 ]}
                 headingTag="p"
@@ -159,7 +172,7 @@ const SaasCards = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -169,18 +182,9 @@ const SaasCards = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
-
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
@@ -310,7 +314,7 @@ const SaasCards = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -406,15 +410,18 @@ const SaasCards = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

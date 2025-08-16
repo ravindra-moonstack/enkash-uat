@@ -16,7 +16,6 @@ import {
   mealCardImage,
   instantActionImg,
   heroCardImg,
-  podiumImage,
   realTimeExpenseIcon,
   realTimeExpense,
   fraudProtectionIcon,
@@ -41,8 +40,19 @@ import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import Link from "next/link"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-// const showScroll = cardsData.length > 3
+export const metadata: Metadata = generateMetaData({
+  title: "Gift Cards for Business: Reward Employees & Partners",
+  description:
+    "Create and distribute digital gift cards with EnKash. Personalize rewards for employees, clients, or partners—perfect for festive gifting and engagement programs.",
+  alternates: {
+    canonical: "https://www.enkash.com/gift-cards/",
+  },
+})
+const salesUrl = getSalesUrl("/gift-cards")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = [
   {
@@ -134,18 +144,19 @@ const GiftCards = (): React.JSX.Element => {
                 { name: "Home", url: "/" },
                 { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
-                  name: "Gift Card",
+                  name: "Gift Cards",
                   url: "/corporate-cards/gift-cards",
                 },
               ]}
+              linkColor="allWhite"
             />
           </div>
           <div className={`${styles.title} col-12 `}>
             <DynamicHeading
               content={[
                 {
-                  title: "Gift Card",
-                  color: "color-equity-blue underline",
+                  title: "Gift Cards",
+                  color: "color-white underline",
                 },
               ]}
               headingTag="p"
@@ -157,11 +168,11 @@ const GiftCards = (): React.JSX.Element => {
                 content={[
                   {
                     title: "Build a culture of recognition with ",
-                    color: "color-black italic f-3 d-block",
+                    color: "color-white italic f-3 d-block",
                   },
                   {
                     title: "customized Gift Cards",
-                    color: "color-black",
+                    color: "color-white",
                   },
                 ]}
                 headingTag="h1"
@@ -175,7 +186,7 @@ const GiftCards = (): React.JSX.Element => {
                   {
                     title:
                       "Make gifting seamless for businesses with these easy-to-access and control gift cards.",
-                    color: "color-black subHeading",
+                    color: "color-white subHeading",
                   },
                 ]}
                 headingTag="p"
@@ -186,7 +197,7 @@ const GiftCards = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -196,20 +207,13 @@ const GiftCards = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
+
       <div className={styles.second_row}>
         <div className="max-m-auto">
           <div
@@ -443,7 +447,7 @@ const GiftCards = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -539,15 +543,18 @@ const GiftCards = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

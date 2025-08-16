@@ -22,7 +22,6 @@ import {
   purchesCardImg,
   sassCardImg,
   termsAndConCardImg,
-  virtualCardImg,
 } from "."
 
 const intantActionData = [
@@ -96,18 +95,21 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: digitalCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense contro",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
@@ -120,18 +122,21 @@ const cardType = [
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
   {
     titleHtml: "T&E Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
     cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
   {
     titleHtml: "Fleet Card",

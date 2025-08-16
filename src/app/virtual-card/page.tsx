@@ -16,7 +16,6 @@ import {
   mealCardImage,
   instantActionImg,
   heroCardImg,
-  podiumImage,
   realTimeExpenseIcon,
   realTimeExpense,
   fraudProtectionIcon,
@@ -41,6 +40,9 @@ import StepCard from "@/components/stepCard/stepCard"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import CardStacking from "@/components/cardStacking/cardStacking"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -126,6 +128,16 @@ const cards = [
     ),
   },
 ]
+export const metadata: Metadata = generateMetaData({
+  title: "Virtual Corporate Card for Secure and Instant Payments",
+  description:
+    "Create instant virtual cards for online payments, subscriptions, and vendor spends. Control limits, track usage, and reduce fraud with EnKash’s smart card solution.",
+  alternates: {
+    canonical: "https://www.enkash.com/virtual-card/",
+  },
+})
+const salesUrl = getSalesUrl("/virtual-card")
+
 const VirtualCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -165,7 +177,7 @@ const VirtualCards = (): React.JSX.Element => {
                     color: "color-black italic f-3 d-block",
                   },
                   {
-                    title: "Virtual Prepaid Card*",
+                    title: "Virtual Prepaid Card",
                     color: "color-black",
                   },
                 ]}
@@ -188,7 +200,11 @@ const VirtualCards = (): React.JSX.Element => {
               />
             </div>
             <div className={styles.button_wrapper}>
-              <RectangleButton title="Get Started" theme="blue" url="/sales" />
+              <RectangleButton
+                title="Get Started"
+                theme="blue"
+                url={salesUrl}
+              />
             </div>
           </div>
         </div>
@@ -197,18 +213,10 @@ const VirtualCards = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 

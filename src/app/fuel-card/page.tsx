@@ -87,7 +87,7 @@ const FuelCards = (): React.JSX.Element => {
                     color: "color-white italic f-3 d-block",
                   },
                   {
-                    title: " Fuel Cards*",
+                    title: " Fuel Cards",
                     color: "color-white",
                   },
                 ]}

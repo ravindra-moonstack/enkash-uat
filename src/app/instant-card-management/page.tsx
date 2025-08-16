@@ -36,7 +36,19 @@ import StepCard from "@/components/stepCard/stepCard"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Instant Card Management Platform for Businesses",
+  description:
+    "Manage corporate cards in real-time with EnKash. Instantly issue, block, or set limits on cards to gain full control over business spends and enhance security",
+  alternates: {
+    canonical: "https://www.enkash.com/instant-card-management/",
+  },
+})
+const salesUrl = getSalesUrl("/instant-card-management")
 // const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = [
@@ -170,7 +182,7 @@ const InstantCardManagement = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -360,7 +372,7 @@ const InstantCardManagement = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -456,15 +468,18 @@ const InstantCardManagement = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

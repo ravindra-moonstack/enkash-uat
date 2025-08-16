@@ -7,21 +7,24 @@ import blueArrow from "./blue-arrrow.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 import { whiteArrow } from "../all-in-one-policy"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
+import { useSalesUrl } from "@/common/utils/useSalesUrl"
 
 interface howDoesItWorkProps {
   dataSets: any
 }
 
 const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
+  const salesUrl = useSalesUrl()
+
+  const [currentData, setCurrentData] = useState(0)
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentData((prevData: number) => (prevData + 1) % dataSets.length)
     }, 7500)
 
     return () => clearInterval(interval)
-  }, [])
-
-  const [currentData, setCurrentData] = useState(0)
+  }, [dataSets.length])
 
   const handleSpanClick = (index: number) => {
     setCurrentData(index)
@@ -35,83 +38,80 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
         <div
           className={`d-flex flex-column align-items-md-center ${styles.card_container}`}
         >
-          {" "}
           <div className={`row`}>
             <div className="col-md-6 col-12">
               <div className="mt-md-5 mt-3 mb-3 d-flex gap-3 gap-md-0 flex-md-row">
-                {dataSets[currentData].iconSrc ? (
+                {dataSets[currentData].iconSrc && (
                   <Image
                     src={dataSets[currentData].iconSrc}
                     alt={dataSets[currentData].altText || "icon"}
-                    className={`${styles.icon_img}`}
+                    className={styles.icon_img}
                   />
-                ) : null}
+                )}
                 <div className="text-start">
                   <div className={styles.title}>
                     <DynamicHeading
                       content={[
                         {
-                          title:dataSets[currentData].title,
+                          title: dataSets[currentData].title,
                           color: "color-white",
                         },
                       ]}
                       headingTag="h5"
                       className="f-5 mb-2"
                     />
-                    {/* {dataSets[currentData].title} */}
                   </div>
                   <div className={styles.subtitle}>
-                      <DynamicHeading
+                    <DynamicHeading
                       content={[
                         {
-                          title:dataSets[currentData].subtitle,
+                          title: dataSets[currentData].subtitle,
                           color: "color-white",
                         },
                       ]}
                       headingTag="p"
                       className="mb-0 f-4"
                     />
-                    {/* {dataSets[currentData].subtitle} */}
                   </div>
-                  <div className="mt-3 mt-md-5 ">
+                  <div className="mt-3 mt-md-5">
                     <RectangleButton
                       title="Try Now"
                       theme="border-black"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}
                       iconSize={15}
-                      url="/sales/?source=receivables"
+                      url={salesUrl}
                     />
-                  </div>{" "}
+                  </div>
                 </div>
               </div>
             </div>
             <div className="col-md-6 col-12 d-flex justify-content-center">
-              {" "}
               <Image
                 style={{
-                  maxHeight: dataSets[currentData].imageMaxHeight || "300px", // default fallback
+                  maxHeight: dataSets[currentData].imageMaxHeight || "300px",
                   width: "auto",
                   height: "auto",
                   objectFit: "contain",
                 }}
                 src={dataSets[currentData].imageSrc}
                 alt={dataSets[currentData].altText}
-                className={`${styles.right_img}`}
+                className={styles.right_img}
               />
             </div>
           </div>
+
           <div
             className={`d-flex justify-content-center ${styles.progress_bar}`}
           >
-            {dataSets.map((_: any, index: Key | null | undefined) => (
+            {dataSets.map((_: any, index: Key) => (
               <span
                 key={index}
                 className={`${styles.bar} ${
                   currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
                 } cursor-pointer`}
                 onClick={() => handleSpanClick(index as number)}
-              ></span>
+              />
             ))}
           </div>
         </div>

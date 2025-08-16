@@ -2,12 +2,12 @@
 @use "/styles/mixin" as *;
 
 .first_row {
-  background-repeat: no-repeat, no-repeat;
-  background-position: center, center;
-  background-size: cover, cover;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100%;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 100px 20px 0;
-  background-image:  url(/images/fuelCardBg.webp);
+  background-image: url(/images/fuelCardBg.webp);
   @include for-laptops {
     padding: 112px 20px 0;
   }
@@ -39,8 +39,8 @@
 
     img {
       z-index: 1;
-      max-width: 100%; // 👈 shrink to fit container
-      height: auto; // 👈 maintain aspect ratio
+      max-width: 100%; 
+      height: auto; 
       max-height: 430px;
       margin-bottom: -111px;
       max-width: 287px;
@@ -333,5 +333,3 @@
   scrollbar-width: auto;
   scrollbar-color: #3b82f6 transparent;
 }
-
-
