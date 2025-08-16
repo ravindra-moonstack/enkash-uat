@@ -35,18 +35,27 @@ import {
 
 import faqData from "./faq-data"
 import Spline from "@splinetool/react-spline"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
+  description:
+    "Empower your teams with EnKash corporate cards. Set spend limits, track transactions in real time, and manage all business expenses on one powerful platform.",
+  alternates: {
+    canonical: "https://www.enkash.com/corporate-cards/",
+  },
+})
+const salesUrl = getSalesUrl("/corporate-cards")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const CorporateCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
- 
-
       <div id="smooth-wrapper">
         <div id="smooth-content">
-        
-
           <div className={`${styles.first_row}`}>
             <div className={`${styles.spline_background}`}>
               <Spline scene="https://prod.spline.design/YeyN2NhsGe5UwlYK/scene.splinecode" />
@@ -100,7 +109,7 @@ const CorporateCards = (): React.JSX.Element => {
                   <RectangleButton
                     title="Talk to us"
                     theme="blue"
-                    url="/sales/"
+                    url={salesUrl}
                   />
                 </div>
               </div>
@@ -239,7 +248,7 @@ const CorporateCards = (): React.JSX.Element => {
                       theme="border-gray"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}
-                      url="/sales"
+                      url={salesUrl}
                       className="d-flex justify-content-between align-items-center"
                     />
                   </div>
@@ -591,7 +600,7 @@ const CorporateCards = (): React.JSX.Element => {
                   theme="outline-blue"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales"
+                  url={salesUrl}
                   iconSize={15}
                 />
               </div>

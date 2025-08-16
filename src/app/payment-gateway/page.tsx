@@ -40,11 +40,23 @@ import {
   reminder,
   whiteArrow,
 } from "."
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Best Payment Gateway in India for SMBs and Startups",
+  description:
+    "Power your merchants with a Payment Gateway offering smooth checkouts, advanced fraud protection, and access to more customers.",
+  alternates: {
+    canonical: "https://www.enkash.com/corporate-cards/",
+  },
+})
+const salesUrl = getSalesUrl("/corporate-cards")
 
 const PaymentGateway = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-   
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -118,7 +130,7 @@ const PaymentGateway = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
@@ -856,7 +868,6 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
     </div>
   )
 }

@@ -28,9 +28,21 @@ import approve from "./img/approve.svg"
 import {
   fuelCardImg,
   mealCardImg,
+  paymentButtonIcon,
+  paymentButtonImg,
+  paymentGatwayIcon,
+  paymentGatwayImg,
+  paymentLinkIcon,
+  paymentLinkImg,
+  paymentPageIcon,
+  paymentPageImg,
   purchesCardImg,
+  qrCodeIcon,
+  qrCodeImg,
   sassCardImg,
   termsAndConCardImg,
+  upiIcon,
+  upiImg,
   virtualCardImg,
 } from "."
 
@@ -345,6 +357,54 @@ const allProductSections = [
   },
 ]
 
+const allInOnePolicyData = [
+  {
+    icon: paymentGatwayIcon,
+    title: "Payment Gateway",
+    description:
+      "A high-performance gateway that enables businesses to accept payments through multiple methods such as credit cards, debit cards, UPI, net banking, and digital wallets, ensuring seamless transactions with exceptional success rates and security.",
+    image: paymentGatwayImg,
+  },
+  {
+    icon: paymentLinkIcon,
+    title: "Payment Links",
+    description:
+      "Generate and share secure payment links instantly via SMS, email, WhatsApp, or social media, allowing businesses to collect payments from customers without requiring a website, ensuring quick and hassle-free transactions..",
+    image: paymentLinkImg,
+    reverse: true,
+  },
+  {
+    icon: paymentButtonIcon,
+    title: "Payment Button",
+    description:
+      "Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process.",
+    image: paymentButtonImg,
+  },
+  {
+    icon: paymentPageIcon,
+    title: "Payment Page",
+    description:
+      "Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process.",
+    image: paymentPageImg,
+    reverse: true,
+  },
+  {
+    icon: upiIcon,
+    title: "UPI Payments",
+    description:
+      "Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process.",
+    image: upiImg,
+  },
+  {
+    icon: qrCodeIcon,
+    title: "QR Code Payments",
+    description:
+      "Create payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process.",
+    image: qrCodeImg,
+    reverse: true,
+  },
+]
+
 export {
   blogData,
   dataSets,
@@ -357,4 +417,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
+  allInOnePolicyData,
 }
