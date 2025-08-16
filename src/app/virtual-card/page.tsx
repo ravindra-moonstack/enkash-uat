@@ -1,14 +1,25 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
 import {
   allProductSections,
   cardType,
   intantActionData,
   spendAnalyticsData,
+  stackcardData,
 } from "./data"
-
-import { Header, Footer, FAQHtml } from "@/components"
+import {
+  RectangleButton,
+  CustomBreadcrumb,
+  LogoSlider,
+  CardProduct,
+  DynamicHeading,
+  CardStacking,
+  AllInOnePolicy,
+  PolicyCard,
+  AllProducts,
+  FaqSection,
+  StepsSection,
+} from "@/components"
 
 import {
   blueArrow,
@@ -16,121 +27,42 @@ import {
   mealCardImage,
   instantActionImg,
   heroCardImg,
-  podiumImage,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import PolicyCard from "@/components/policyCard/policyCard"
 import faqData from "./faq-data"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import CardProduct from "@/components/card-product/card-product"
-import AllProducts from "@/components/all-products/all-products"
-import StepCard from "@/components/stepCard/stepCard"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import CardStacking from "@/components/cardStacking/cardStacking"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-// const showScroll = cardsData.length > 3
+export const metadata: Metadata = generateMetaData({
+  title: "Virtual Corporate Card for Secure and Instant Payments",
+  description:
+    "Create instant virtual cards for online payments, subscriptions, and vendor spends. Control limits, track usage, and reduce fraud with EnKash’s smart card solution.",
+  alternates: {
+    canonical: "https://www.enkash.com/virtual-card/",
+  },
+})
+const salesUrl = getSalesUrl("/virtual-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          buttonText="Get Started"
-          icon={realTimeExpenseIcon}
-          title="Reduce Business Costs with Smarter Payment Solutions"
-          description="Save costs by eliminating the need for physical cards, including production and maintenance fees. Advanced fraud control features minimize the risk of unauthorized transactions, ensuring secure financial operations without additional expenses."
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          buttonText="Get Started"
-          icon={fraudProtectionIcon}
-          title="Stay in Control with Real-Time Expense Insights"
-          description="Monitor every transaction in real-time with our intuitive dashboard. Access detailed insights into spending trends, helping your business optimize budgets and make informed financial decisions."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          buttonText="Get Started"
-          icon={streamlinedReimbursementIcon}
-          title="Tailor Your Virtual Card to Fit Your Needs"
-          description="Design virtual cards tailored for specific needs such as vendor payments, SaaS subscriptions, or travel expenses. Set individual or departmental spending limits and usage policies to ensure compliance and efficiency."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          buttonText="Get Started"
-          icon={costControlSavingsIcon}
-          title="Strengthen Vendor Trust with Timely Payments"
-          description="Ensure timely and secure payments to vendors, fostering trust and better business terms. Streamlined payment processes enable quicker transactions, enhancing vendor satisfaction."
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          buttonText="Get Started"
-          icon={wideAcceptanceNetworkIcon}
-          title="No Expense Oversight with One Dashboard"
-          description="Easily manage multiple cards through a centralized, user-friendly interface. Take immediate action by monitoring, blocking, or canceling cards, all while maintaining full control over business expenses."
-          image={wideAcceptanceNetwork}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
+
 const VirtualCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
@@ -165,7 +97,7 @@ const VirtualCards = (): React.JSX.Element => {
                     color: "color-black italic f-3 d-block",
                   },
                   {
-                    title: "Virtual Prepaid Card*",
+                    title: "Virtual Prepaid Card",
                     color: "color-black",
                   },
                 ]}
@@ -188,7 +120,11 @@ const VirtualCards = (): React.JSX.Element => {
               />
             </div>
             <div className={styles.button_wrapper}>
-              <RectangleButton title="Get Started" theme="blue" url="/sales" />
+              <RectangleButton
+                title="Get Started"
+                theme="blue"
+                url={salesUrl}
+              />
             </div>
           </div>
         </div>
@@ -197,102 +133,55 @@ const VirtualCards = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
-      <div className={`${styles.action_row} bg-white `}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "How to Set Up Virtual Prepaid Cards ",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className={`row bg-white align-items-center ${styles.section}`}>
-            <div className="col-md-6 col-12 pe-md-5">
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: "12px",
-                }}
-              >
-                {intantActionData.map(({ icon, title, description }, i) => (
-                  <div key={i} style={{ direction: "ltr" }}>
-                    <StepCard
-                      icon={icon}
-                      title={title}
-                      description={description}
-                    />
-                  </div>
-                ))}
-              </div>
-              <div className={`${styles.list_button}`}>
-                <RectangleButton
-                  title="Get started "
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  url="/sales"
-                  className="d-flex justify-content-between align-items-center"
-                />
-              </div>
-            </div>
-            <div className={`col-md-6 col-12 `}>
-              <div>
-                <Image
-                  src={mealCardImage}
-                  alt="card background"
-                  className="w-100 mh-550 object-fit-contain"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div>
+        <StepsSection
+          heading={[
+            {
+              text: "How to Set Up Virtual Prepaid Cards ",
+              colorClass: "color-black",
+            },
+          ]}
+          steps={intantActionData}
+          button={{
+            title: "Get Started",
+            theme: "border-gray",
+            actionImage: blueArrow,
+            hoverImage: whiteArrow,
+          }}
+          image={{
+            src: mealCardImage,
+            alt: "card background",
+          }}
+        />
       </div>
+
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
-            <div className={`${styles.title} text-center `}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Unlock  ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "Savings ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "on Every Mile",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Best Virtual Prepaid Cards in India -  ",
+                  color: "color-black",
+                },
+                {
+                  title: "Modern Solutions ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "for Managing Business Expenses",
+                  color: "color-black",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -380,71 +269,8 @@ const VirtualCards = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Have more questions?",
-                  color: "color-dark-grey subheading",
-                },
-              ]}
-              headingTag="p"
-              className="mb-0"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
+      <div>
+        <FaqSection faqData={faqData} />
       </div>
 
       <div className={styles.other_products}>
@@ -481,7 +307,6 @@ const VirtualCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }

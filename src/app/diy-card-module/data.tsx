@@ -28,15 +28,28 @@ import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   digitalCardImg,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
+  integrationAudit,
+  integrationAuditIcon,
   mealCardImg,
   payrollCarddImg,
-  purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  seemlessIntegration,
+  seemlessIntegrationIcon,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
   virtualCardImg,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
 } from "."
 
 const dataSets = [
@@ -263,18 +276,21 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: digitalCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "Saas Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
@@ -287,18 +303,21 @@ const cardType = [
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
     cardImage: virtualCardImg,
+    linkUrl: "/virtual-card",
   },
   {
     titleHtml: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Meal Card",
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
 
   {
@@ -389,6 +408,72 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Purpose-Made Cards for Every Need",
+    description:
+      "Issue cards specifically designed for your unique use cases, such as travel, SaaS, or marketing campaigns. Configure individual card settings to match your organization’s requirements.",
+    image: realTimeExpense,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Precise Spending Controls",
+    description:
+      "Define spending rules for teams or individuals. Customize limits based on categories, amounts, or timeframes to maintain budget discipline.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Real-Time Monitoring",
+    description:
+      "Track transactions as they happen. Gain instant insights into where and how funds are being used, ensuring better financial decisions.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Built-In Approval Workflows",
+    description:
+      "Simplify internal processes with predefined approval workflows that align with company policies. Save time and reduce repetitive tasks.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Enhanced Vendor Payments",
+    description:
+      "Ensure timely payments to vendors, strengthening business relationships and unlocking the potential for better payment terms.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: integrationAuditIcon,
+    title: "Integrated Audit Support",
+    description:
+      "Keep financial operations transparent and compliant with automated reconciliation and comprehensive transaction records.",
+    image: integrationAudit,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: seemlessIntegrationIcon,
+    title: "Seamless Integration",
+    description:
+      "Easily connect with popular accounting tools like Tally and Zoho to simplify data management and reporting.",
+    image: seemlessIntegration,
+    buttonUrl: "/sales",
+  },
+]
+
 export {
   blogData,
   dataSets,
@@ -401,4 +486,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
+  stackcardData,
 }

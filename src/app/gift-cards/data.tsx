@@ -14,13 +14,26 @@ import trackableIcon from "./img/trackable-icon.svg"
 import denominationIcon from "./img/denomination-icon.svg"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  digitalCardImg,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
-  virtualCardImg,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
 } from "."
+
+import { fleetCardImg } from "../digital-marketing-card"
+import { payrollCardImg } from "../fuel-card"
 
 const intantActionData = [
   {
@@ -92,55 +105,54 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
-    cardImage: purchesCardImg,
+    cardImage: digitalCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense contro",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: mealCardImg,
+    cardImage: payrollCardImg,
   },
   {
     titleHtml: "Meal Card",
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
   {
     titleHtml: "T&E Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
-    cardImage: virtualCardImg,
+    cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
   {
     titleHtml: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver",
-    cardImage: termsAndConCardImg,
-  },
-
-  {
-    titleHtml: "Forex Card",
-    description:
-      "Enable safe and compliant international spends with multi-currency loading and real-time transaction control.",
-    cardImage: sassCardImg,
+    cardImage: fleetCardImg,
   },
 ]
 
@@ -181,10 +193,58 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Freedom of Choice",
+    description:
+      "The recipient can choose products or services using the gift card per their preference and convenience from a retail store or online.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Easily Accessible",
+    description:
+      "Gift cards can be easily and safely accessed from anywhere and anytime.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Safety",
+    description:
+      "Gift cards can be frozen in case of loss or theft without losing money with the self-PIN generation feature.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Easy Distribution",
+    description: "These gift cards can be easily distributed on the occasion",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Multiple Denominations",
+    description:
+      "Available in multiple denominations of up to Rs.10,000, ensuring the option to choose the card value as per your requirements",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+  },
+]
+
 export {
   intantActionData,
   spendAnalyticsData,
   cardType,
   allProductSections,
   cardData,
+  stackcardData,
 }

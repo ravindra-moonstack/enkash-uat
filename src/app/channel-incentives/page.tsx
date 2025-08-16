@@ -1,14 +1,9 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
-import { cardsData, cardType } from "./data"
+import { cardsData, cardType, stackcardData } from "./data"
 import faqData from "./faq-data"
 import {
-  Header,
-  FAQHtml,
-  Footer,
   DynamicHeading,
-  TalkToSales,
   LogoSlider,
   CustomBreadcrumb,
   ScrollableCardsSection,
@@ -16,6 +11,7 @@ import {
   RewardsCarousel,
   AllInOnePolicy,
   CardStacking,
+  FaqSection,
 } from "@/components"
 import {
   blueArrow,
@@ -25,120 +21,27 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
-  stackCardSixIcon,
-  stackCardSixImg,
 } from "."
 
 const mergedCards = cardType.flatMap((section) => section.items)
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={realTimeExpenseIcon}
-          title="Add Partners In Bulk"
-          description="Add channel partners as individuals or bulk upload them for easy incentive distribution."
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={fraudProtectionIcon}
-          title="Diverse Redemptions"
-          description="Redeem from a diverse range of incentive options from 400+ brand vouchers like Amazon, Flipkart, Myntra, etc, across 25+ categories."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={streamlinedReimbursementIcon}
-          title="Non-Reloadable Cards"
-          description="It comes preloaded with a specific monetary value, offering partners the flexibility to redeem their incentives across e-commerce or in-store shopping."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={costControlSavingsIcon}
-          title="Automatic Alerts"
-          description="Integrated platform to automatically inform users via SMS, WhatsApp, and e-mail about incentives and how to redeem points."
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={wideAcceptanceNetworkIcon}
-          title="Real-Time Analytics"
-          description="Quickly share vouchers, track redemption status, and create advanced expiry alerts to maximize user adoption."
-          image={wideAcceptanceNetwork}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={stackCardSixIcon}
-          title="Bulk UPI for Incentives"
-          description="Transfer incentives directly, nationwide, and in a hassle-free way, empowering seamless incentives for all."
-          image={stackCardSixImg}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={item.buttonUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const ChannelIncentives = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -385,22 +288,15 @@ const ChannelIncentives = (): React.JSX.Element => {
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
-          <>
-            <div className={`${styles.title} text-center px-0 px-md-5`}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Motivate Partners & Improve Productivity",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
-          </>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Motivate Partners & Improve Productivity",
+                color: "color-black",
+              },
+            ]}
+          />
         </div>
       </div>
 
@@ -461,74 +357,7 @@ const ChannelIncentives = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-5"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="f-4"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

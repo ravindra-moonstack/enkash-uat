@@ -31,14 +31,22 @@ import fourthIcon from "./img/icon-four.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
   virtualCardImg,
-
 } from "."
+import { payrollCardImg } from "../fuel-card"
 
 const dataSets = [
   {
@@ -252,43 +260,49 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: purchesCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: sassCardImg,
+    cardImage: payrollCardImg,
   },
   {
     titleHtml: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
-    cardImage: termsAndConCardImg,
+    cardImage: virtualCardImg,
+    linkUrl: "/virtual-card",
   },
   {
     titleHtml: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
 
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
-    cardImage: virtualCardImg,
+    cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
   {
     titleHtml: "Fleet Card",
@@ -296,12 +310,7 @@ const cardType = [
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
   },
-  {
-    titleHtml: "Forex Card",
-    description:
-      "Enable safe and compliant international spends with multi-currency loading and real-time transaction control",
-    cardImage: virtualCardImg,
-  },
+ 
 ]
 
 const slideUpData = [
@@ -387,6 +396,42 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Tax Savings Made Simple",
+    description: `With Meal Cards*, employees can save up to ₹26,400 
+annually in taxes by utilizing tax exemptions under Section 17(2)(viii) of the Income Tax Act, 1961. This benefit not only increases take-home pay but also helps businesses boost employee satisfaction and retention by providing tangible financial advantages.`,
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Wide Acceptance",
+    description: `Our prepaid Meal Cards are accepted across a vast network of outlets, making them a versatile tool for daily needs. From supermarkets for grocery shopping to food delivery platforms like Swiggy and Zomato, as well as restaurants, cafes, and food courts nationwide, the card ensures hassle-free transactions anywhere employees prefer.`,
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Secure and Hassle-Free",
+    description: `Security is a priority with Meal Cards*. Employees can instantly block their cards if they are lost and get replacements without delay. With zero liability on reported lost cards, users enjoy peace of mind. Additionally, the paperless system ensures all transactions are trackable, reducing risks and promoting transparency.`,
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Easy Management for Employers",
+    description: `EnKash simplifies meal benefit distribution for businesses with a streamlined, one-time issuance process. Corporate can reload balances in real-time, track spending patterns, and generate detailed reports through an intuitive dashboard, saving time and reducing administrative overhead.`,
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+]
+
 export {
   blogData,
   dataSets,
@@ -399,4 +444,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
+  stackcardData,
 }

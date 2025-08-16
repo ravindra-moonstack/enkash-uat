@@ -1,20 +1,15 @@
 //@ts-nocheck
 import Image from "next/image"
 import styles from "./page.module.scss"
-import Link from "next/link"
 import React from "react"
 import { allProductSections, cardData, cardsData, stackcardData } from "./data"
 import { faqData, SecondfaqData } from "./faq-data"
 import {
-  Header,
-  Footer,
-  FAQHtml,
   ContentShowcase,
   AllInOnePolicy,
   DynamicHeading,
   EnkashWay,
   LottieDynamicLoadComponent,
-  TalkToSales,
   AllProducts,
   SecondFaqHtml,
   CustomBreadcrumb,
@@ -24,6 +19,7 @@ import {
   FeatureSpotlight,
   SmartPolicySection,
   CTASection,
+  FaqSection,
 } from "@/components"
 
 import {
@@ -75,8 +71,6 @@ const ExpenseManagement = (): React.JSX.Element => {
   return (
     // <Suspense fallback={<Loading />}>
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-      <TalkToSales />
       <div className={`${styles.first_row}`}>
         <div className={`${styles.spline_background}`}>
           <spline-viewer url="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode"></spline-viewer>
@@ -386,74 +380,7 @@ const ExpenseManagement = (): React.JSX.Element => {
         />
       </div>
 
-      <div className={`${styles.faq_new_row} bg_white_index relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="f-4"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+        <FaqSection faqData={faqData} />
     </div>
     // </Suspense>
   )

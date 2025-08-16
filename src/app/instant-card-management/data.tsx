@@ -14,15 +14,22 @@ import trackableIcon from "./img/trackable-icon.svg"
 import denominationIcon from "./img/denomination-icon.svg"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   digitalCardImg,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
   payrollCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
-  virtualCardImg,
 } from "."
 
 const intantActionData = [
@@ -96,18 +103,21 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: digitalCardImg,
+    linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense contro",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
@@ -120,18 +130,21 @@ const cardType = [
     description:
       "Offer tax-free meal benefits to employees with wide acceptance and full usage transparency.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
   {
     titleHtml: "T&E Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
     cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
   {
     titleHtml: "Fleet Card",
@@ -178,10 +191,50 @@ const allProductSections = [
   },
 ]
 
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Instant Actions. Full Control.",
+    description:
+      "Manage your cards on the spot—activate, disable, or adjust without any effort using our robust corporate card management system.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Enhanced Security",
+    description:
+      "Protect your business from fraud with instant deactivation and real-time alerts.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Smarter Expense Tracking",
+    description:
+      "Get a clear view of every transaction, categorize spends, and avoid overspending.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Streamlined Workflows",
+    description:
+      "Manage all card-related tasks from a single, centralized dashboard, saving time and effort.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+];
+
 export {
   intantActionData,
   spendAnalyticsData,
   cardType,
   allProductSections,
   cardData,
+  stackcardData
 }
