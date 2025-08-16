@@ -34,8 +34,19 @@ import CardProduct from "@/components/card-product/card-product"
 import AllProducts from "@/components/all-products/all-products"
 import StepCard from "@/components/stepCard/stepCard"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-
+export const metadata: Metadata = generateMetaData({
+  title: "Travel & Expense Card: Simplify Business Travel Spending",
+  description:
+    "Control and track travel expenses with EnKash T&E Cards. Set budgets, manage employee spends, and automate reconciliation for seamless business travel workflows.",
+  alternates: {
+    canonical: "https://www.enkash.com/travel-and-expense-card/",
+  },
+})
+const salesUrl = getSalesUrl("/travel-and-expense-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const TravelExpenseCard = (): React.JSX.Element => {
@@ -55,6 +66,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                   url: "/corporate-cards/travel-and-expense-card",
                 },
               ]}
+              linkColor="allWhite"
             />
           </div>
           <div className={`${styles.title} col-12 `}>
@@ -62,7 +74,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
               content={[
                 {
                   title: "Travel Expense Card",
-                  color: "color-equity-blue underline",
+                  color: "color-white underline",
                 },
               ]}
               headingTag="p"
@@ -74,11 +86,11 @@ const TravelExpenseCard = (): React.JSX.Element => {
                 content={[
                   {
                     title: "Travel and Expense Card: ",
-                    color: "color-black italic f-3 d-block",
+                    color: "color-white italic f-3 d-block",
                   },
                   {
                     title: "Optimize Your Business Travel Management ",
-                    color: "color-black ",
+                    color: "color-white ",
                   },
                 ]}
                 headingTag="h1"
@@ -92,7 +104,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                   {
                     title:
                       "Ensure seamless travel experiences while empowering your team, saving costs, and enhancing compliance—all with one smart solution.",
-                    color: "color-black subHeading",
+                    color: "color-white subHeading",
                   },
                 ]}
                 headingTag="p"
@@ -103,7 +115,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -113,18 +125,10 @@ const TravelExpenseCard = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
@@ -533,7 +537,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -629,15 +633,18 @@ const TravelExpenseCard = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 ">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

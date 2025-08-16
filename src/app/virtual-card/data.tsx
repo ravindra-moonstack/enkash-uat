@@ -21,7 +21,6 @@ import {
   purchesCardImg,
   sassCardImg,
   termsAndConCardImg,
-  virtualCardImg,
 } from "."
 
 const intantActionData = [
@@ -97,14 +96,13 @@ const cardType = [
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense contro",
     cardImage: sassCardImg,
-    linkUrl: "/sass-card",
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
-    linkUrl: "/payroll-card",
   },
   {
     titleHtml: "Meal Card",

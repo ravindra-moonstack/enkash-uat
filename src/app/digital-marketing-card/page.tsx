@@ -7,7 +7,6 @@ import {
   blueArrow,
   whiteArrow,
   mealCardImage,
-  podiumImage,
   heroCardImg,
   instantActionImg,
   realTimeExpenseIcon,
@@ -35,6 +34,9 @@ import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import CardStacking from "@/components/cardStacking/cardStacking"
 import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
 import Link from "next/link"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 const cards = [
   {
     color: "#fff",
@@ -112,6 +114,16 @@ const cards = [
     ),
   },
 ]
+export const metadata: Metadata = generateMetaData({
+  title: "Digital Marketing Card: Control Ad Spends Across Platforms",
+  description:
+    "Manage digital marketing budgets with EnKash Marketing Cards. Set spending limits, track campaign expenses in real time, and eliminate overspending on ads.",
+  alternates: {
+    canonical: "https://www.enkash.com/digtal-marketing-card/",
+  },
+})
+const salesUrl = getSalesUrl("/digtal-marketing-card")
+
 const DigitalMarketingCard = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
@@ -151,7 +163,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
                     color: "color-black italic f-3 d-block",
                   },
                   {
-                    title: "Digital Marketing Car",
+                    title: "Digital Marketing Card",
                     color: "color-black",
                   },
                 ]}
@@ -177,7 +189,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -187,21 +199,12 @@ const DigitalMarketingCard = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
-
       <div className={`${styles.action_row} bg-white row-padding `}>
         <div className="max-w-auto">
           <div className={`${styles.title} text-center pb-md-5`}>
@@ -466,15 +469,18 @@ const DigitalMarketingCard = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

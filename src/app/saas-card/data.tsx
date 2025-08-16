@@ -33,10 +33,9 @@ import {
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
-  sassCardImg,
-  termsAndConCardImg,
   virtualCardImg,
 } from "."
+import { payrollCardImg } from "../fuel-card"
 
 const dataSets = [
   {
@@ -260,38 +259,44 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+     linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Digital Marketing Card",
     description:
       "Simplify ad payments across platforms while staying within budget and preventing overspending.",
     cardImage: purchesCardImg,
+     linkUrl: "/digital-marketing-card",
   },
   {
     titleHtml: "Meal Card",
     description:
       "Access meal cards to give monthly access to food across multiple online, dine-in, and food delivery apps, along with a tax-saving facility.",
     cardImage:  mealCardImg,
+     linkUrl: "/meal-card",
+
   },
 
   {
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: sassCardImg,
+    cardImage: payrollCardImg,
   },
   {
     titleHtml: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
-    cardImage: termsAndConCardImg,
+    cardImage: virtualCardImg,
+     linkUrl: "/virtual-card",
   },
 
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
-    cardImage: virtualCardImg,
+    cardImage: purchesCardImg,
+     linkUrl: "/purches-card",
   },
   {
     titleHtml: "Fleet Card",
