@@ -13,6 +13,19 @@ import { blueArrow, whiteArrow, podiumImage, heroCardImg } from "."
 import { faqData } from "./faq-data"
 import EnkashWay from "@/components/enkash-way/enkash-way"
 import { progressData, stackcardData } from "./data"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "EnKah Corporate Prepaid Cards for Business Payments",
+  description:
+    "Empower your teams with EnKash’s corporate prepaid cards. Control spending, track expenses in real-time, and manage business payments effortlessly and securely.",
+  alternates: {
+    canonical: "https://www.enkash.com/prepaid-card/",
+  },
+})
+const salesUrl = getSalesUrl("/prepaid-card")
 
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
@@ -44,6 +57,7 @@ const PrepaidCard = (): React.JSX.Element => {
                   url: "/corporate-cards/prepaid-card",
                 },
               ]}
+              linkColor="allWhite"
             />
           </div>
           <div className={`${styles.title} col-12 `}>
@@ -51,7 +65,7 @@ const PrepaidCard = (): React.JSX.Element => {
               content={[
                 {
                   title: "Prepaid Cards",
-                  color: "color-equity-blue underline",
+                  color: "color-white underline",
                 },
               ]}
               headingTag="p"
@@ -62,11 +76,11 @@ const PrepaidCard = (): React.JSX.Element => {
                 content={[
                   {
                     title: "The Best Prepaid Corporate Card",
-                    color: "color-black f-3 d-block italic",
+                    color: "color-white f-3 d-block italic",
                   },
                   {
                     title: "for Business Spending",
-                    color: "color-black",
+                    color: "color-white",
                   },
                 ]}
                 headingTag="h1"
@@ -80,7 +94,7 @@ const PrepaidCard = (): React.JSX.Element => {
                   {
                     title:
                       "No paperwork. No delays. Just swipe and go, with full compliance.",
-                    color: "color-black subHeading",
+                    color: "color-white subHeading",
                   },
                 ]}
                 headingTag="p"
@@ -91,7 +105,7 @@ const PrepaidCard = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -101,18 +115,13 @@ const PrepaidCard = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <LogoSlider />
+      <div className="cardsSliderMargin">
+        <LogoSlider />
+      </div>
+
       <EnkashWay
         sectionHeading="Ditch out-of-pocket claims. "
         secondHeading="Take control of every rupee."
@@ -159,7 +168,7 @@ const PrepaidCard = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>

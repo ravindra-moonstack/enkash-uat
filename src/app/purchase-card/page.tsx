@@ -13,19 +13,32 @@ import {
   AllInOnePolicy,
   FaqSection,
   StepsSection,
+  AllProducts
 } from "@/components"
+
 
 import {
   blueArrow,
   whiteArrow,
   mealCardImage,
   heroCardImg,
-  podiumImage,
+
 } from "."
 
 import faqData from "./faq-data"
-import AllProducts from "@/components/all-products/all-products"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Purchase Card: Streamline Business Procurement & Spending",
+  description:
+    "Simplify procurement with EnKash Purchase Cards. Set spending controls, track purchases in real time, and manage vendor payments with ease and transparency.",
+  alternates: {
+    canonical: "https://www.enkash.com/purchase-card/",
+  },
+})
+const salesUrl = getSalesUrl("/purchase-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const cards = stackcardData.map(
@@ -55,17 +68,18 @@ const PurchesCards = (): React.JSX.Element => {
                 { name: "Corporate Cards ", url: "/corporate-cards" },
                 {
                   name: "Purches Card",
-                  url: "/corporate-cards/purches-card",
+                  url: "/corporate-cards/purchase-card",
                 },
               ]}
+              linkColor="allWhite"
             />
           </div>
           <div className={`${styles.title} col-12 `}>
             <DynamicHeading
               content={[
                 {
-                  title: "Purches Card",
-                  color: "color-equity-blue underline",
+                  title: "Purchase Card",
+                  color: "color-white underline",
                 },
               ]}
               headingTag="p"
@@ -77,11 +91,11 @@ const PurchesCards = (): React.JSX.Element => {
                 content={[
                   {
                     title: "Optimize Your Business Procurement with",
-                    color: "color-black f-3 italic d-block",
+                    color: "color-white f-3 italic d-block",
                   },
                   {
-                    title: "Purchase Cards* (P-Cards)",
-                    color: "color-black ",
+                    title: "Purchase Cards (P-Cards)",
+                    color: "color-white ",
                   },
                 ]}
                 headingTag="h1"
@@ -95,7 +109,7 @@ const PurchesCards = (): React.JSX.Element => {
                   {
                     title:
                       "Say goodbye to time-consuming paperwork and complicated approval workflows. Empower your team to make purchases within preset limits while you monitor, manage, and optimize spending in real time.",
-                    color: "color-black subHeading",
+                    color: "color-white subHeading",
                   },
                 ]}
                 headingTag="p"
@@ -106,7 +120,7 @@ const PurchesCards = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -116,18 +130,10 @@ const PurchesCards = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
@@ -228,7 +234,7 @@ const PurchesCards = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -261,15 +267,18 @@ const PurchesCards = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>

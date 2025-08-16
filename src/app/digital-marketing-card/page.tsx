@@ -23,17 +23,26 @@ import {
   blueArrow,
   whiteArrow,
   mealCardImage,
-  podiumImage,
   heroCardImg,
   instantActionImg,
 } from "."
 
 import faqData from "./faq-data"
+import LogoSlider from "@/components/logo-slider/logo-slider"
 
-
-const cards = stackcardData.map(
-  ({ color, icon, title, description, image, buttonUrl }) => ({
-    color,
+import CardProduct from "@/components/card-product/card-product"
+import StepCard from "@/components/stepCard/stepCard"
+import PolicyCard from "@/components/policyCard/policyCard"
+import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+import CardStacking from "@/components/cardStacking/cardStacking"
+import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
+import Link from "next/link"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+const cards = [
+  {
+    color: "#fff",
     content: (
       <AllInOnePolicy
         icon={icon}
@@ -44,8 +53,77 @@ const cards = stackcardData.map(
         maxImageHeight="300px"
       />
     ),
-  })
-)
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={fraudProtectionIcon}
+          title="Real-Time Expense Tracking"
+          description="Stay on top of every transaction with EnKash’s real-time expense-tracking feature. Instantly monitor your marketing spend as it happens, gaining valuable insights into your campaign's financial health. This enables you to make adjustments on the fly, ensuring that you don’t overspend and stay within your budget."
+          image={fraudProtection}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={streamlinedReimbursementIcon}
+          title="Prevent Overspending"
+          description="Overspending on campaigns can be costly. With the Digital Marketing Card, you can set predefined spending limits for each card. This feature ensures your team stays within budget, preventing unauthorized expenses and helping you maintain financial discipline for more efficient and cost-effective marketing campaigns."
+          image={streamlinedReimbursement}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#eee",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={costControlSavingsIcon}
+          title="Simplified Subscription Management"
+          description="Managing recurring subscriptions for marketing tools, software, or ad platforms becomes effortless with EnKash. Automate payments for these subscriptions with clear schedules and centralized tracking. You’ll never miss a payment, and you'll save time that would otherwise be spent on manual invoicing and reconciliation."
+          image={costControlSavings}
+          buttonUrl="/sales"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+  {
+    color: "#fff",
+    content: (
+      <>
+        <AllInOnePolicy
+          icon={wideAcceptanceNetworkIcon}
+          title="Customizable Usage Policies"
+          description="Tailor your spending policies to fit your unique marketing needs. With the Digital Marketing Card, you can enforce specific restrictions, such as category-based spending limits or vendor-specific constraints. This ensures that every expense aligns with your business’s objectives and helps maximize the effectiveness of your marketing efforts."
+          image={wideAcceptanceNetwork}
+          buttonUrl="/sales/?source=expense_management"
+          maxImageHeight="300px"
+        />
+      </>
+    ),
+  },
+]
+export const metadata: Metadata = generateMetaData({
+  title: "Digital Marketing Card: Control Ad Spends Across Platforms",
+  description:
+    "Manage digital marketing budgets with EnKash Marketing Cards. Set spending limits, track campaign expenses in real time, and eliminate overspending on ads.",
+  alternates: {
+    canonical: "https://www.enkash.com/digtal-marketing-card/",
+  },
+})
+const salesUrl = getSalesUrl("/digtal-marketing-card")
 
 const DigitalMarketingCard = (): React.JSX.Element => {
   return (
@@ -85,7 +163,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
                     color: "color-black italic f-3 d-block",
                   },
                   {
-                    title: "Digital Marketing Car",
+                    title: "Digital Marketing Card",
                     color: "color-black",
                   },
                 ]}
@@ -111,7 +189,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
               <RectangleButton
                 title="Get Started"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -121,18 +199,10 @@ const DigitalMarketingCard = (): React.JSX.Element => {
             {" "}
             <Image src={heroCardImg} alt="card background" className=" " />
           </div>
-          <div className={styles.lottie_container_bottom}>
-            {" "}
-            <Image
-              src={podiumImage}
-              alt="card background"
-              className="position-absolute "
-            />
-          </div>
         </div>
       </div>
 
-      <div>
+      <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
 
@@ -157,6 +227,65 @@ const DigitalMarketingCard = (): React.JSX.Element => {
             alt: "card background",
           }}
         />
+      <div className={`${styles.action_row} bg-white row-padding `}>
+        <div className="max-w-auto">
+          <div className={`${styles.title} text-center pb-md-5`}>
+            <div
+              className={` flex-column justify-content-center align-items-center pb-3 `}
+            >
+              <DynamicHeading
+                content={[
+                  {
+                    title: "How Digital Marketing Card Works",
+                    color: "color-black",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
+              />
+            </div>
+          </div>
+          <div className={`row bg-white align-items-center ${styles.section}`}>
+            <div className="col-md-6 col-12 pe-md-5">
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "12px",
+                }}
+              >
+                {intantActionData.map(({ icon, title, description }, i) => (
+                  <div key={i} style={{ direction: "ltr" }}>
+                    <StepCard
+                      icon={icon}
+                      title={title}
+                      description={description}
+                    />
+                  </div>
+                ))}
+              </div>
+              <div className={`${styles.list_button}`}>
+                <RectangleButton
+                  title="Get Started"
+                  theme="border-gray"
+                  actionImage={blueArrow}
+                  hoverImage={whiteArrow}
+                  url="/sales/?source=expense_management"
+                  className="d-flex justify-content-between align-items-center"
+                />
+              </div>
+            </div>
+            <div className={`col-md-6 col-12`}>
+              <div>
+                <Image
+                  src={mealCardImage}
+                  alt="card background"
+                  className="w-100 mh-550 object-fit-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
 
@@ -269,15 +398,18 @@ const DigitalMarketingCard = (): React.JSX.Element => {
             />
           </div>
           <div className="row g-3 pb-4">
-            {cardType.map(({ titleHtml, description, cardImage }, index) => (
-              <div key={index} className="col-12 col-md-4">
-                <CardProduct
-                  titleHtml={titleHtml}
-                  description={description}
-                  cardImage={cardImage}
-                />
-              </div>
-            ))}
+            {cardType.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <CardProduct
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
