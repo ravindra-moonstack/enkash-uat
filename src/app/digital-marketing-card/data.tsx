@@ -45,6 +45,7 @@ import {
   wideAcceptanceNetwork,
   wideAcceptanceNetworkIcon,
 } from "."
+import { payrollCardImg } from "../fuel-card"
 
 const dataSets = [
   {
@@ -289,13 +290,13 @@ const cardType = [
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: sassCardImg,
+    cardImage: payrollCardImg,
   },
   {
     titleHtml: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
-    cardImage: termsAndConCardImg,
+    cardImage: virtualCardImg,
     linkUrl: "/virtual-card",
   },
   {
@@ -450,7 +451,7 @@ const stackcardData = [
     image: wideAcceptanceNetwork,
     buttonUrl: "/sales/?source=expense_management",
   },
-];
+]
 
 export {
   blogData,
@@ -464,5 +465,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
-  stackcardData
+  stackcardData,
 }
