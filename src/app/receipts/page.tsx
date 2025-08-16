@@ -4,11 +4,8 @@ import styles from "./page.module.scss"
 import { cardData, expenseManagementData, stepCards } from "./data"
 import faqData from "./faq-data"
 import {
-  Header,
   FAQHtml,
-  Footer,
   DynamicHeading,
-  TalkToSales,
   LogoSlider,
   CustomBreadcrumb,
   RectangleButton,
@@ -118,9 +115,7 @@ const cards = [
 const Receipts = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
+ 
 
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
@@ -486,8 +481,6 @@ const Receipts = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

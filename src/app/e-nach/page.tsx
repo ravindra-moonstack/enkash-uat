@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -10,41 +10,31 @@ import {
   RectangleButton,
   ManagementCard,
   AllInOnePolicy,
-  FaqSection
-
+  FaqSection,
 } from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  paymentPage,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  secureImage,
-  playIntegrationImage,
   activationIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
   hundredPercentIcon,
 } from "."
 
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-import { upiPayments } from "@/components/header"
-
-
+export const metadata: Metadata = generateMetaData({
+  title: " eNACH Solution for Recurring Payments",
+  description:
+    "Enable automated recurring debit via eNACH mandates. EnKash helps businesses simplify collections, reduce payment failures, and improve cash flow predictability.",
+  alternates: {
+    canonical: "https://www.enkash.com/e-nach/",
+  },
+})
+const salesUrl = getSalesUrl("/e-nach")
 
 const showScroll = cardsData.length > 3
 
@@ -127,14 +117,14 @@ const eNACH = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -212,7 +202,7 @@ const eNACH = (): React.JSX.Element => {
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
-              <div className={` d-flex ${styles.outerCard}`}>
+              <div className={`d-flex ${styles.outerCard}`}>
                 <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
@@ -306,7 +296,7 @@ const eNACH = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -348,57 +338,18 @@ const eNACH = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Instant Digital Mandate Creation"
-                description="Eliminate paperwork and delays—register mandates digitally for faster processing and hassle-free automation."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243"
-              />
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Smart Payment Retries for Higher Success Rates"
-                description="Reduce revenue loss with automatic retries on failed payments, ensuring uninterrupted cash flow and improved collection efficiency."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Bulk Subscription Management Made Easy"
-                description="Set up, track, and manage multiple mandates at scale directly to handle larger payments from a single dashboard—saving time and effort."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305"
-              />
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="One-Time Authentication, Lifetime Convenience"
-                description="Secure recurring payments with a simple one-time authentication, offering a frictionless experience for both businesses and customers."
-                image={paymentOptionImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Customizable Checkout for a Branded Experience"
-                description="Choose between a quick plug-and-play checkout or fully customize it with your brand’s identity, colors, and elements for better engagement."
-                image={secureImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305"
-              />
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="Plug & Play Integration"
-                description="It provides customers a hassle-free and smooth authentication as compared to physical NACH and can be easily integrated via plug and play method."
-                image={playIntegrationImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305"
-                reverse
-              />
+              {allInOnePolicies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -423,13 +374,13 @@ const eNACH = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-    <FaqSection faqData={faqData} />
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -455,71 +406,22 @@ const eNACH = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction"
-                cardImage={paymentLink}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Page"
-                description="Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online."
-                cardImage={paymentPage}
-                linkUrl="/payment-page"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="UPI Payments"
-                description="UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles."
-                cardImage={upiPayments}
-                linkUrl="/upi-payments"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
-
     </div>
   )
 }

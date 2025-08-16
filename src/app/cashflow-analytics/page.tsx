@@ -43,8 +43,6 @@ const showScroll = cardsData.length > 3
 const CashflowAnalytics = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -408,7 +406,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
         </div>
       </div>
 
-        <FaqSection faqData={faqData} />
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -465,7 +463,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 titleHtml="QR Codes"
                 description="Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly."
                 cardImage={qrCodes}
-                linkUrl="/qr-codes"
+                linkUrl="/qr-code"
               />
             </div>
 
@@ -483,7 +481,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 titleHtml="Invoices"
                 description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
                 cardImage={invoices}
-                linkUrl="/invoices"
+                linkUrl="/digital-invoicing"
               />
             </div>
 

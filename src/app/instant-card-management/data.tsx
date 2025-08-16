@@ -185,7 +185,7 @@ const allProductSections = [
         description:
           "Manage all your corporate cards in one place, issue, control, and monitor without toggling between tools or systems.",
         image: sliderFourIcon,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
     ],
   },
@@ -228,7 +228,7 @@ const stackcardData = [
     image: costControlSavings,
     buttonUrl: "/sales",
   },
-];
+]
 
 export {
   intantActionData,
@@ -236,5 +236,5 @@ export {
   cardType,
   allProductSections,
   cardData,
-  stackcardData
+  stackcardData,
 }

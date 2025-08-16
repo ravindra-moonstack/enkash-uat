@@ -310,7 +310,6 @@ const cardType = [
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
   },
- 
 ]
 
 const slideUpData = [
@@ -384,7 +383,7 @@ const allProductSections = [
         title: "Set policy-driven workflows",
         description: "that apply at the swipe level",
         image: workflow,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Track and approve spends",

@@ -135,7 +135,7 @@ const MealCards = (): React.JSX.Element => {
       <StepsSection
         heading={[
           {
-            text: "How To Get Started with Meal Cards*",
+            text: "How To Get Started with Meal Cards",
             colorClass: "color-black",
           },
         ]}

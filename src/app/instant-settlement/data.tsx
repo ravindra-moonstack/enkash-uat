@@ -32,8 +32,30 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import {
+  autoCollect,
+  invoices,
+  notificationImage,
+  paymentButton,
+  paymentGatewayImg,
+  paymentLink,
+  paymentLinkImage,
+  paymentOptionImage,
+  qrCodes,
+  reminder,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  secureImage,
+  shareImage,
+  taskIconFive,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
+} from "."
 
+import upiImg from "../upi-payments/img/heroImg.webp"
 const dataSets = [
   {
     imageSrc: iconOne,
@@ -360,6 +382,114 @@ const projects = [
   },
 ]
 
+const allInOnePolicies = [
+  {
+    icon: taskIconOne,
+    title: "Customized Settlements",
+    description:
+      "Empower yourself to decide when your customer payments should be transferred to your bank account. With a customized payment settlement process, you have full control to settle the needed amount within a few seconds.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Simplified Budgeting",
+    description:
+      "Faster access to capital empowers you to make quicker decisions, invest in inventory, and seize strategic opportunities without delays.",
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Enhanced Relations",
+    description:
+      "Pay vendors/suppliers faster, build stronger relationships, potentially secure better deals, and avoid late fees.",
+    image: shareImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Super Fast Settlements",
+    description:
+      "Instantly get your customer payments straight into your bank account every day with same-day settlements, which are settled at T+O, for a quick and consistent cash flow experience.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+  {
+    icon: taskIconFive,
+    title: "Increased Efficiency",
+    description:
+      "Eliminate the need to track settlement schedules and manage cash flow fluctuations, freeing up valuable time and resources for other business-critical tasks.",
+    image: secureImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+]
+
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description:
+      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
+    cardImage: paymentGatewayImg,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Links",
+    description:
+      "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
+    cardImage: paymentLink,
+    linkUrl: "/payment-links",
+  },
+  {
+    titleHtml: "Payment Button",
+    description:
+      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description:
+      "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+    cardImage: qrCodes,
+    linkUrl: "/qr-code",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description:
+      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Invoices",
+    description:
+      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
+    cardImage: invoices,
+    linkUrl: "/digital-invoicing",
+  },
+  {
+    titleHtml: "UPI Payments",
+    description:
+      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
+    cardImage: upiImg,
+    linkUrl: "/upi-payments",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description:
+      "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
+    cardImage: reminder,
+    linkUrl: "/reminder-engine",
+  },
+]
 export {
   blogData,
   dataSets,
@@ -372,4 +502,6 @@ export {
   rankData,
   supportData,
   savingData,
+  allInOnePolicies,
+  managementCards,
 }

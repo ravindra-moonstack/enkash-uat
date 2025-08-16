@@ -393,7 +393,7 @@ const allProductSections = [
         title: "Set policy-driven workflows",
         description: "that apply at the swipe level",
         image: workflow,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Track and approve spends",
