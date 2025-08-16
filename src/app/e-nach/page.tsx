@@ -1,20 +1,16 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
 import { cardsData } from "./data"
 import faqData from "./faq-data"
 import {
-  Header,
-  FAQHtml,
-  Footer,
   DynamicHeading,
-  TalkToSales,
   LogoSlider,
   CustomBreadcrumb,
   PolicyCard,
   RectangleButton,
   ManagementCard,
-  AllInOnePolicy
+  AllInOnePolicy,
+  FaqSection
 
 } from "@/components"
 import {
@@ -55,10 +51,6 @@ const showScroll = cardsData.length > 3
 const eNACH = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -437,72 +429,7 @@ const eNACH = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="pb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+    <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -593,7 +520,6 @@ const eNACH = (): React.JSX.Element => {
         </div>
       </div>
 
-      <Footer />
     </div>
   )
 }

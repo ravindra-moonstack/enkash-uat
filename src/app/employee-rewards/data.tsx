@@ -9,7 +9,7 @@ import offers from "./img/offers.webp"
 import incentive from "./img/incentive.webp"
 import vouchers from "./img/vouchers.webp"
 
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import { costControlSavings, costControlSavingsIcon, fraudProtection, fraudProtectionIcon, realTimeExpense, realTimeExpenseIcon, scrollIconOne, scrollIconThree, scrollIconTwo, stackCardSixIcon, stackCardSixImg, streamlinedReimbursement, streamlinedReimbursementIcon, wideAcceptanceNetwork, wideAcceptanceNetworkIcon } from "."
 
 const cardsData = [
   {
@@ -117,5 +117,63 @@ const allProductSections = [
     ],
   },
 ]
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Personalized Recognition",
+    description:
+      "Tailor rewards to individual preferences by offering flexible and customizable options, creating a more meaningful experience that fosters loyalty, boosts morale, and strengthens workplace culture.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Instant Allocation & Redemption",
+    description:
+      "Reward employees in real time using WhatsApp, email, and SMS, making the process seamless, efficient, and instantly gratifying for recipients, encouraging a more engaged and motivated workforce.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Diverse Rewards",
+    description:
+      "Choose from 400+ brands across entertainment, fashion, travel, dining, and more, ensuring every employee finds something they truly value and appreciate, enhancing their motivation and job satisfaction.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "HRMS Integration",
+    description:
+      "Automate reward allocation by integrating seamlessly with your HRMS, eliminating manual processes, reducing administrative workload, and ensuring accurate, hassle-free employee recognition at every stage.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Open Voucher Function",
+    description:
+      "Issue open vouchers on the dashboard & reward winners on the spot by sharing QR Codes via WhatsApp or email, integrated with their login codes. The recipient can redeem the reward by scanning the QR code received.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: stackCardSixIcon,
+    title: "Data-Driven Insights",
+    description:
+      "Track engagement, monitor reward effectiveness, and optimize your recognition strategy with comprehensive analytics and reporting tools that provide actionable insights for enhancing employee motivation and performance.",
+    image: stackCardSixImg,
+    buttonUrl: "/sales",
+  },
+];
 
-export { cardsData, allProductSections, cardType }
+
+
+export { cardsData, allProductSections, cardType, stackcardData }

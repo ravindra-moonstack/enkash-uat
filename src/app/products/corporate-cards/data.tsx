@@ -31,7 +31,6 @@ import approve from "./img/approve.svg"
 
 import {
   clockIcon,
-  digitalCardImg,
   fuelCardImg,
   mealCardImg,
   multiCardIcon,

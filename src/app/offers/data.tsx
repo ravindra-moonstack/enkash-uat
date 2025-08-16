@@ -10,9 +10,19 @@ import incentive from "./img/incentive.webp"
 import vouchers from "./img/vouchers.webp"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  realTimeExpense,
+  realTimeExpenseIcon,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
 } from "."
 
 const cardsData = [
@@ -121,4 +131,52 @@ const allProductSections = [
   },
 ]
 
-export { cardsData, allProductSections, cardType }
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Maximize Savings",
+    description:
+      "Unlock significant savings on various business products with exclusive discounts on our partnered services.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Top Partnered Deals",
+    description:
+      "Explore the finest corporate deals and offers from our esteemed partner brands like AWS, ClearTax, Canva, and more.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Effortless Process",
+    description:
+      "Enjoy a seamless experience with just a few clicks, making it quick and easy to access exclusive deals and offers.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Regularly Updated Offers",
+    description: "Stay ahead of the curve with the best deals for your business needs.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Get Real-time Insights",
+    description:
+      "Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+  },
+];
+
+
+export { cardsData, allProductSections, cardType, stackcardData }
