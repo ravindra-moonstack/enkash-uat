@@ -1,7 +1,12 @@
 import Image from "next/image"
 
 import styles from "./page.module.scss"
-import { allProductSections, cardType, intantActionData, stackcardData } from "./data"
+import {
+  allProductSections,
+  cardType,
+  intantActionData,
+  stackcardData,
+} from "./data"
 
 import {
   RectangleButton,
@@ -13,17 +18,10 @@ import {
   AllInOnePolicy,
   FaqSection,
   StepsSection,
-  AllProducts
+  AllProducts,
 } from "@/components"
 
-
-import {
-  blueArrow,
-  whiteArrow,
-  mealCardImage,
-  heroCardImg,
-
-} from "."
+import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
@@ -42,7 +40,7 @@ const salesUrl = getSalesUrl("/purchase-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const cards = stackcardData.map(
-  ({ color, icon, title, description, image, buttonUrl }) => ({
+  ({ color, icon, title, description, image }) => ({
     color,
     content: (
       <AllInOnePolicy
@@ -50,7 +48,7 @@ const cards = stackcardData.map(
         title={title}
         description={description}
         image={image}
-        buttonUrl={buttonUrl}
+        buttonUrl={salesUrl}
         maxImageHeight="300px"
       />
     ),
@@ -151,7 +149,6 @@ const PurchesCards = (): React.JSX.Element => {
             theme: "border-gray",
             actionImage: blueArrow,
             hoverImage: whiteArrow,
-            url: "/sales",
           }}
           image={{
             src: mealCardImage,

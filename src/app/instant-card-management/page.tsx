@@ -22,12 +22,7 @@ import {
   AllProducts,
 } from "@/components"
 
-import {
-  blueArrow,
-  whiteArrow,
-  mealCardImage,
-  heroCardImg,
-} from "."
+import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
@@ -54,7 +49,7 @@ const cards = stackcardData.map((item, index) => ({
       title={item.title}
       description={item.description}
       image={item.image}
-      buttonUrl={item.buttonUrl}
+      buttonUrl={salesUrl}
       maxImageHeight="300px"
     />
   ),
@@ -193,7 +188,6 @@ const InstantCardManagement = (): React.JSX.Element => {
           theme: "border-gray",
           actionImage: blueArrow,
           hoverImage: whiteArrow,
-          url: "/sales",
         }}
         image={{
           src: mealCardImage,

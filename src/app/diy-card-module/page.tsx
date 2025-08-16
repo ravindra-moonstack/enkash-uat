@@ -50,7 +50,7 @@ const cards = stackcardData.map((item, index) => ({
       title={item.title}
       description={item.description}
       image={item.image}
-      buttonUrl={item.buttonUrl}
+      buttonUrl={salesUrl}
       maxImageHeight="300px"
     />
   ),
@@ -144,11 +144,10 @@ const DiyCardModule = (): React.JSX.Element => {
         ]}
         steps={intantActionData}
         button={{
-          title: "Get Started",
+          title: "Get started",
           theme: "border-gray",
           actionImage: blueArrow,
           hoverImage: whiteArrow,
-          url: "/sales",
         }}
         image={{
           src: mealCardImage,
@@ -191,7 +190,6 @@ const DiyCardModule = (): React.JSX.Element => {
           theme: "border-gray",
           actionImage: blueArrow,
           hoverImage: whiteArrow,
-          url: "/sales",
         }}
         image={{
           src: instantActionImg,

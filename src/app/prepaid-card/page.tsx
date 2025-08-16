@@ -9,7 +9,7 @@ import {
   AllInOnePolicy,
   FaqSection,
 } from "@/components"
-import { blueArrow, whiteArrow, podiumImage, heroCardImg } from "."
+import { blueArrow, whiteArrow, heroCardImg } from "."
 import { faqData } from "./faq-data"
 import EnkashWay from "@/components/enkash-way/enkash-way"
 import { progressData, stackcardData } from "./data"
@@ -37,7 +37,7 @@ const cards = stackcardData.map((item, index) => ({
       title={item.title}
       description={item.description}
       image={item.image}
-      buttonUrl={item.buttonUrl}
+      buttonUrl={salesUrl}
       maxImageHeight="300px"
     />
   ),

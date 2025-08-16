@@ -137,7 +137,6 @@ const FuelCards = (): React.JSX.Element => {
             theme: "border-gray",
             actionImage: blueArrow,
             hoverImage: whiteArrow,
-            url: salesUrl,
           }}
           image={{
             src: mealCardImage,

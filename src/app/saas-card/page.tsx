@@ -16,14 +16,9 @@ import {
   AllInOnePolicy,
   FaqSection,
   StepsSection,
-  AllProducts
+  AllProducts,
 } from "@/components"
-import {
-  blueArrow,
-  whiteArrow,
-  mealCardImage,
-  heroCardImg,
-} from "."
+import { blueArrow, whiteArrow, mealCardImage, heroCardImg } from "."
 
 import faqData from "./faq-data"
 import { Metadata } from "next"
@@ -42,7 +37,7 @@ const salesUrl = getSalesUrl("/saas-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const cards = stackcardData.map(
-  ({ color, icon, title, description, image, buttonUrl }) => ({
+  ({ color, icon, title, description, image,  }) => ({
     color,
     content: (
       <AllInOnePolicy
@@ -50,7 +45,7 @@ const cards = stackcardData.map(
         title={title}
         description={description}
         image={image}
-        buttonUrl={buttonUrl}
+        buttonUrl={salesUrl}
         maxImageHeight="300px"
       />
     ),
@@ -59,7 +54,6 @@ const cards = stackcardData.map(
 const SaasCards = (): React.JSX.Element => {
   return (
     <div className={`color-white  ${styles.home_container}`}>
-
       <div className={`${styles.first_row}`}>
         <div className="max-w-auto ">
           <div className="d-flex">
@@ -151,7 +145,6 @@ const SaasCards = (): React.JSX.Element => {
             theme: "border-gray",
             actionImage: blueArrow,
             hoverImage: whiteArrow,
-            url: "/sales",
           }}
           image={{
             src: mealCardImage,
@@ -159,7 +152,6 @@ const SaasCards = (): React.JSX.Element => {
           }}
         />
       </div>
-
 
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
@@ -181,7 +173,6 @@ const SaasCards = (): React.JSX.Element => {
         </div>
       </div>
 
-     
       <div className={`${styles.fifth_row} relative`}>
         <div className={`${styles.title} text-center  max-w-auto`}>
           <div
@@ -276,7 +267,6 @@ const SaasCards = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-      
     </div>
   )
 }
