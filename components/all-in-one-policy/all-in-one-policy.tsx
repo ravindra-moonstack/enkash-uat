@@ -32,7 +32,7 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
   reverse = false,
   maxImageHeight,
   buttonTheme = "outline-blue",
-  buttonText = "Try Now",
+  buttonText = "Get Started",
   buttonActionIcon = blueArrow,
   buttonHoverIcon = whiteArrow,
 }) => {

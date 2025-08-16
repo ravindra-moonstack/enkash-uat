@@ -28,17 +28,6 @@ import {
   mealCardImage,
   instantActionImg,
   heroCardImg,
-  podiumImage,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
 } from "."
 
 import faqData from "./faq-data"
@@ -59,7 +48,7 @@ const salesUrl = getSalesUrl("/gift-cards")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const cards = stackcardData.map(
-  ({ color, icon, title, description, image, buttonUrl }) => ({
+  ({ color, icon, title, description, image }) => ({
     color,
     content: (
       <AllInOnePolicy
@@ -67,7 +56,7 @@ const cards = stackcardData.map(
         title={title}
         description={description}
         image={image}
-        buttonUrl={buttonUrl}
+        buttonUrl={salesUrl}
         maxImageHeight="300px"
       />
     ),
@@ -203,7 +192,6 @@ const GiftCards = (): React.JSX.Element => {
           theme: "border-gray",
           actionImage: blueArrow,
           hoverImage: whiteArrow,
-          url: "/sales",
         }}
         image={{
           src: mealCardImage,
@@ -245,7 +233,6 @@ const GiftCards = (): React.JSX.Element => {
           theme: "border-gray",
           actionImage: blueArrow,
           hoverImage: whiteArrow,
-          url: "/sales",
         }}
         image={{
           src: instantActionImg,

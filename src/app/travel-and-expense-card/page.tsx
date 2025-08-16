@@ -129,6 +129,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
       <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
+
       <div>
         <StepsSection
           heading={[
@@ -139,11 +140,10 @@ const TravelExpenseCard = (): React.JSX.Element => {
           ]}
           steps={intantActionData}
           button={{
-            title: "Try Now",
+            title: "Get Started",
             theme: "border-gray",
             actionImage: blueArrow,
             hoverImage: whiteArrow,
-            url: "/sales",
           }}
           image={{
             src: mealCardImage,
@@ -222,7 +222,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
               </div>
@@ -299,7 +299,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
               </div>
@@ -358,7 +358,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
               </div>
@@ -435,7 +435,7 @@ const TravelExpenseCard = (): React.JSX.Element => {
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
               </div>
@@ -463,8 +463,6 @@ const TravelExpenseCard = (): React.JSX.Element => {
               headingTag="h2"
               className="f-5"
             />
-
-            <div> </div>
           </div>
         </div>
         <AllProducts

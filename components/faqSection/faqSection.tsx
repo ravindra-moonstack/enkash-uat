@@ -2,21 +2,25 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import { usePathname } from "next/navigation"
 import styles from "./faq-section.module.scss"
 import { DynamicHeading, FAQHtml } from ".."
 import { blueArrow } from "../all-in-one-policy"
 
 interface FaqSectionProps {
   faqData: any
-  connectUrl?: string
   connectText?: string
 }
 
-const FaqSection = ({
+const FaqSectionWithSource = ({
   faqData,
-  connectUrl = "/contact-us",
   connectText = "Connect with us",
 }: FaqSectionProps) => {
+  const pathname = usePathname()
+
+  const lastSlug = pathname?.split("/").filter(Boolean).pop() || "default"
+  const connectUrl = `/contact-us?source=${lastSlug}`
+
   return (
     <div className={`${styles.faq_new_row} relative`}>
       <div className={`${styles.faqSection} text-start max-w-auto`}>
@@ -78,4 +82,4 @@ const FaqSection = ({
   )
 }
 
-export default FaqSection
+export default FaqSectionWithSource

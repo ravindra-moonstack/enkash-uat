@@ -34,6 +34,15 @@ import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Virtual Corporate Card for Secure and Instant Payments",
+  description:
+    "Create instant virtual cards for online payments, subscriptions, and vendor spends. Control limits, track usage, and reduce fraud with EnKash’s smart card solution.",
+  alternates: {
+    canonical: "https://www.enkash.com/virtual-card/",
+  },
+})
+const salesUrl = getSalesUrl("/virtual-card")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
@@ -50,16 +59,6 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
-
-export const metadata: Metadata = generateMetaData({
-  title: "Virtual Corporate Card for Secure and Instant Payments",
-  description:
-    "Create instant virtual cards for online payments, subscriptions, and vendor spends. Control limits, track usage, and reduce fraud with EnKash’s smart card solution.",
-  alternates: {
-    canonical: "https://www.enkash.com/virtual-card/",
-  },
-})
-const salesUrl = getSalesUrl("/virtual-card")
 
 const VirtualCards = (): React.JSX.Element => {
   return (
@@ -155,7 +154,6 @@ const VirtualCards = (): React.JSX.Element => {
             theme: "border-gray",
             actionImage: blueArrow,
             hoverImage: whiteArrow,
-            url: "/sales",
           }}
           image={{
             src: mealCardImage,
@@ -187,24 +185,6 @@ const VirtualCards = (): React.JSX.Element => {
           </>
         </div>
       </div>
-
-      {/* <ContentShowcase
-        mainHeading={[
-          {
-            title: "Use Cases for Virtual ",
-            color: "color-black",
-          },
-          {
-            title: "Prepaid Cards ",
-            color: "color-equity-blue",
-          },
-        ]}
-        data={spendAnalyticsData}
-        imageSrc={instantActionImg}
-        imageAlt="card background"
-        bgColor="bg-color-black-30"
-        reverse
-      /> */}
 
       <div className={`${styles.second_row} `}>
         <div className="max-w-auto">

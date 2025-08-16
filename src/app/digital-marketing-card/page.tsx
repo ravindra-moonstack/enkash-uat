@@ -31,6 +31,16 @@ import faqData from "./faq-data"
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
+export const metadata: Metadata = generateMetaData({
+  title: "Digital Marketing Card: Control Ad Spends Across Platforms",
+  description:
+    "Manage digital marketing budgets with EnKash Marketing Cards. Set spending limits, track campaign expenses in real time, and eliminate overspending on ads.",
+  alternates: {
+    canonical: "https://www.enkash.com/digtal-marketing-card/",
+  },
+})
+const salesUrl = getSalesUrl("/digtal-marketing-card")
+
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
   content: (
@@ -46,15 +56,6 @@ const cards = stackcardData.map((item, index) => ({
     />
   ),
 }))
-export const metadata: Metadata = generateMetaData({
-  title: "Digital Marketing Card: Control Ad Spends Across Platforms",
-  description:
-    "Manage digital marketing budgets with EnKash Marketing Cards. Set spending limits, track campaign expenses in real time, and eliminate overspending on ads.",
-  alternates: {
-    canonical: "https://www.enkash.com/digtal-marketing-card/",
-  },
-})
-const salesUrl = getSalesUrl("/digtal-marketing-card")
 
 const DigitalMarketingCard = (): React.JSX.Element => {
   return (
@@ -149,7 +150,6 @@ const DigitalMarketingCard = (): React.JSX.Element => {
           theme: "border-gray",
           actionImage: blueArrow,
           hoverImage: whiteArrow,
-          url: "/sales",
         }}
         image={{
           src: mealCardImage,
@@ -221,7 +221,7 @@ const DigitalMarketingCard = (): React.JSX.Element => {
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
                   className="d-flex justify-content-between align-items-center"
                 />
               </div>
