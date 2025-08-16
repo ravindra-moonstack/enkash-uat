@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData, paymentMethodData } from "./data"
+import { cardsData, paymentMethodData, payoutPolicies } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -19,22 +19,22 @@ import {
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  MaintainCompleteControl,
-  reduceFrauds,
-  secureImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
 } from "."
 
 import BankLogoSlider from "@/components/banking-slider/banking-slider"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Connected Banking: For Faster Payouts",
+  description:
+    "Simplify business banking with EnKash’s Seamless Banking solution. Enable faster transactions, smooth integrations, and unified banking on one smart platform.",
+  alternates: {
+    canonical: "https://www.enkash.com/connected-banking/",
+  },
+})
+const salesUrl = getSalesUrl("/connected-banking")
 
 const showScroll = cardsData.length > 3
 
@@ -117,14 +117,14 @@ const ConnectedBanking = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -196,7 +196,7 @@ const ConnectedBanking = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -238,65 +238,18 @@ const ConnectedBanking = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Initiate payouts directly from your bank accounts"
-                description="Forget wallet loading and fund transfers. With EnKash, your payouts happen directly from your connected bank accounts, giving you complete control over cash flow without any operational delays or intermediaries."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243px"
-              />
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Link multiple bank accounts"
-                description="Connect all your current accounts from different banks on a single dashboard. Distribute payout load, minimize dependency on a single bank, reduce downtime risks, and improve liquidity management across your business operations."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title=" Access 24x7 payment rails"
-                description="Make payouts anytime—day or night, weekends or holidays. EnKash supports UPI, IMPS, NEFT, and RTGS round-the-clock, ensuring your vendors, customers, or employees get paid without delay."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Get real-time balance visibility"
-                description="See up-to-date balances across all your linked accounts instantly. Make smarter financial decisions with accurate visibility into available funds before initiating payouts or planning high-value transactions."
-                image={paymentOptionImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Automate reconciliation"
-                description="Say goodbye to manual downloads and spreadsheet matching. EnKash fetches direct bank files and automates reconciliation, making your accounting faster, more accurate, and audit-ready without any manual effort."
-                image={secureImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
-              <AllInOnePolicy
-                icon={taskIconSix}
-                title="Enable smart routing"
-                description="Intelligently route each payout from the most optimal account based on pre-set rules or available balance. Maximize fund utilization and avoid failed transactions due to insufficient funds in a single account."
-                image={reduceFrauds}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Maintain complete control"
-                description="With EnKash, your money stays in your bank. No wallet dependencies or fund transfers- just a secure, compliant layer that enables real-time visibility, control, and automation over all your payouts."
-                image={MaintainCompleteControl}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-              />
+              {payoutPolicies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -353,7 +306,7 @@ const ConnectedBanking = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
