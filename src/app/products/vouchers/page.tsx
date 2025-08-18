@@ -10,28 +10,21 @@ import {
   EnkashWay,
   FaqSection,
 } from "@/components"
-import {
-  paymentSummary,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  bg1,
-  bg2,
-  bg3,
-  bg4,
-  bg5,
-  secureImage,
-  tabIconOne,
-  tabIconTwo,
-  tabIconThree,
-  tabIconFour,
-  tabIconFive,
-} from "."
+import { paymentSummary } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { allInOnePolicyData, categoriesData } from "./data"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Grab 400+ Brand Gift Vouchers for Best Discounts",
+  description:
+    "Send digital gift vouchers instantly. Reward employees, engage customers, and manage incentives with ease using a wide range of branded voucher options.",
+  alternates: {
+    canonical: "https://www.enkash.com/products/vouchers",
+  },
+})
+const salesUrl = getSalesUrl("/vouchers")
 
 const Vouchers = (): React.JSX.Element => {
   return (
@@ -81,7 +74,7 @@ const Vouchers = (): React.JSX.Element => {
               <RectangleButton
                 title="Talk to Sales"
                 theme="blue"
-                url="/sales"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -237,107 +230,26 @@ const Vouchers = (): React.JSX.Element => {
               </div>
             </div>
 
-            <div className={styles.allInOnePolicy}>
+            {allInOnePolicyData.map((item, index) => (
               <AllInOnePolicy
-                icon={taskIconOne}
-                title="Instant Access to 400+ Brands"
-                description="From e-commerce giants to luxury fashion, gourmet dining to health essentials—you’ll find every major category covered through our curated gift voucher collection."
-                image={paymentLinkImage}
-                buttonUrl="/employee-rewards/"
-                maxImageHeight="243px"
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                image={item.image}
+                buttonUrl={salesUrl}
+                maxImageHeight={item.maxImageHeight}
+                reverse={item.reverse}
               />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Flexible Denominations"
-                description="Pick the value that fits your budget and purpose. Choose from multiple denominations so you can personalize gifting or budget-friendly perks."
-                image={shareImage}
-                buttonUrl="/channel-incentives/"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Bulk Ordering Benefits"
-                description="Need to distribute vouchers at scale? Enjoy exclusive discounts on bulk orders for employee rewards, customer promotions, or festive gifting."
-                image={paymentOptionImage}
-                buttonUrl="/gift-cards/"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Smart Distribution & Auto-Alerts"
-                description="Each voucher comes with automated alerts on WhatsApp and email, complete with redemption instructions. No guesswork, no manual follow-ups."
-                image={notificationImage}
-                buttonUrl="/offers/"
-                maxImageHeight="259px"
-                reverse
-              />
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="One Dashboard. Total Control."
-                description="Track, manage, and analyze voucher usage from a single interface. Customize campaigns, set expiry dates, and view real-time redemption insights."
-                image={secureImage}
-                buttonUrl="/gift-cards/"
-                maxImageHeight="243px"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </div>
 
-      <div className={`${styles.sixth_row} row d-flex bg-white `}>
+      <div className={`${styles.sixth_row} row d-flex bg-white`}>
         <EnkashWay
           sectionHeading="The Categories You Love, The Discounts You Deserve"
-          progressData={[
-            {
-              itemArray: ["E-commerce"],
-              title: "E-commerce",
-              description:
-                "Access a wide range of online shopping platforms. From electronics to everyday essentials, get everything you need—conveniently and affordably.",
-              icon: tabIconOne,
-              bgImage: bg1,
-              url: "/e-commerce-vouchers",
-            },
-            {
-              itemArray: ["Food & Beverages"],
-              title: "Food & Beverages",
-              description:
-                "Whether it’s a gourmet meal, a quick bite, or your daily staples, savor irresistible savings every time you eat in or dine out.",
-              icon: tabIconTwo,
-              bgImage: bg2,
-              url: "/food-and-beverages-vouchers",
-            },
-            {
-              itemArray: ["Apparels & Fashion"],
-              title: "Apparels & Fashion",
-              description:
-                "Stay stylish without overspending. Explore discounted options across fashion staples, premium labels, and seasonal collections.",
-              icon: tabIconThree,
-              bgImage: bg3,
-              url: "/apparels-vouchers",
-            },
-            {
-              itemArray: ["Movies & Music"],
-              title: "Movies & Music",
-              description:
-                "Dive into your favorite entertainment - be it movies, concerts, or streaming—while saving big on unforgettable experiences.",
-              icon: tabIconFour,
-              bgImage: bg4,
-              url: "/movie-and-music-vouchers",
-            },
-            {
-              itemArray: ["Health & Wellness"],
-              title: "Health & Wellness",
-              description:
-                "Make your well-being a priority with value-driven vouchers for healthcare, fitness, wellness services, and daily health needs.",
-              icon: tabIconFive,
-              bgImage: bg5,
-              url: "/health-and-wellness-vouchers",
-            },
-          ]}
+          progressData={categoriesData}
         />
       </div>
 

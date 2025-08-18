@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicyData, cardsData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -15,15 +15,20 @@ import {
   groupIcon,
   paymentSummary,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "GST Payments: Automate, Track & Pay Your Taxes ",
+  description:
+    "Pay GST directly from EnKash with complete visibility. Automate reminders, track due dates, and manage all your tax payments securely from a single dashboard.",
+  alternates: {
+    canonical: "https://www.enkash.com/gst-payment/",
+  },
+})
+const salesUrl = getSalesUrl("/gst-payment")
 
 const PayableAnalytics = (): React.JSX.Element => {
   return (
@@ -104,14 +109,14 @@ const PayableAnalytics = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -160,7 +165,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -196,45 +201,18 @@ const PayableAnalytics = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <div className={styles.allInOnePolicy}>
+              {allInOnePolicyData.map((item, index) => (
                 <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Never Miss a GST Payment Deadline Again"
-                  description="Stay on top of your GST payment deadlines with automatic reminders that alert you well in advance. The intuitive approval flow ensures that all payments are processed on time, preventing last-minute confusion or delays. You’ll never have to worry about missing a crucial deadline, reducing the risk of fines and penalties."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={item.maxImageHeight}
+                  reverse={item.reverse}
                 />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Clear and Concise Approval Process"
-                  description="With EnKash, every payment goes through a well-structured approval workflow, ensuring that only valid payments are made. Our system ensures that all checks and validations are carried out before any transaction is approved. This transparent process reduces the risk of unauthorized payments and helps maintain a high level of compliance across your organization."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Centralized Monitoring"
-                  description="Gain full visibility into your GST payments with a centralized dashboard that consolidates data from across your company. This feature allows you to track payments, approval statuses, and records from one convenient location, providing a complete picture of your tax liabilities and streamlining your tax management process."
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Audit-Ready Records"
-                  description="EnKash automatically converts your GST challans into digital records that are organized and easily accessible. This ensures that you are always audit-ready, with records available for future reference. By maintaining a clear digital trail, you can avoid the hassle of paper records and reduce the time spent on audits, making the process more efficient and organized."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-              </div>
+              ))}
             </div>
           </div>
         </div>

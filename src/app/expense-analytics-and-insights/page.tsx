@@ -1,127 +1,56 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
-import { cardData, expenseManagementData, stepCards } from "./data"
+import {
+  cardData,
+  expenseManagementData,
+  stackcardData,
+  stepCards,
+} from "./data"
 import faqData from "./faq-data"
 import {
-  Header,
-  FAQHtml,
-  Footer,
   DynamicHeading,
-  TalkToSales,
   LogoSlider,
   CustomBreadcrumb,
   RectangleButton,
   AllInOnePolicy,
   ManagementCard,
   EasyStepCard,
-  CardStacking
-
+  CardStacking,
+  FaqSection,
 } from "@/components"
-import {
-  blueArrow,
-  groupIcon,
-  paymentSummary,
-  whiteArrow,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  stackCardThreeImg,
-  stackCardThreeIcon,
-} from "."
+import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Expense Tracking Made Easy with Advanced Expense Analytics",
+  description:
+    "Get powerful insights into your business spends with EnKash Expense Analytics. Track patterns, control budgets, and make data-driven financial decisions.",
+  alternates: {
+    canonical: "https://www.enkash.com/expense-analytics-and-insights/",
+  },
+})
+const salesUrl = getSalesUrl("/expense-analytics-and-insights")
 
-
-
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={realTimeExpenseIcon}
-          title="Security & Compliance"
-          description="Ensure confidentiality and compliance of your financial data with our robust encryption and security measures. "
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={fraudProtectionIcon}
-          title="Customizable Dashboards"
-          description="Grant varied access, like admin and finance teams, and customize dashboards for tailored insights based on status, payment mode, category, segments, etc."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={stackCardThreeIcon}
-          title="AI-Powered Insights"
-          description="Get actionable insights into employee expense patterns, identify cost-saving opportunities, and optimize budgets with AI-driven analytics."
-          image={stackCardThreeImg}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={streamlinedReimbursementIcon}
-          title="Policy Violation"
-          description="Easily analyze policies with the highest violations and get a comprehensive overview of expenses deviating from policy norms, allowing for proactive corrective actions."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={costControlSavingsIcon}
-          title="Real-time Tracking"
-          description="Monitor expenses in real-time, allowing for proactive decision-making and cost control, leading to improved bottom-line results."
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const ExpenseAnalytics = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -202,7 +131,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -299,28 +228,23 @@ const ExpenseAnalytics = (): React.JSX.Element => {
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
-            <div className={`${styles.title} text-center `}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Achieve growth with a ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "data-driven ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "business",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Achieve growth with a ",
+                  color: "color-black",
+                },
+                {
+                  title: "data-driven ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "business",
+                  color: "color-black",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -345,78 +269,13 @@ const ExpenseAnalytics = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -448,14 +307,13 @@ const ExpenseAnalytics = (): React.JSX.Element => {
                   description={card.description}
                   cardImage={card.cardImage}
                   theme="dark"
+                  linkUrl={card.linkUrl}
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

@@ -24,7 +24,18 @@ import {
   realTimeIcon,
   faqBg,
 } from "."
-
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+export const metadata: Metadata = generateMetaData({
+  title: "Employee Rewards: Recognise Employee Achievements",
+  description:
+    "Reward employees with instant, customizable digital cards using EnKash. Simplify recognition, boost morale, and manage all rewards from one smart platform.",
+  alternates: {
+    canonical: "https://www.enkash.com/employee-rewards/",
+  },
+})
+const salesUrl = getSalesUrl("/employee-rewards")
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
@@ -36,7 +47,7 @@ const cards = stackcardData.map((item, index) => ({
       title={item.title}
       description={item.description}
       image={item.image}
-      buttonUrl={item.buttonUrl}
+      buttonUrl={salesUrl}
       maxImageHeight="300px"
     />
   ),
@@ -121,14 +132,14 @@ const EmployeeRewards = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com"
                       />
                     </div>
                   </div>
@@ -272,7 +283,7 @@ const EmployeeRewards = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -393,7 +404,7 @@ const EmployeeRewards = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>

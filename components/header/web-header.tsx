@@ -18,7 +18,7 @@ interface props {
   utmSource?: string
 }
 
-const WebHeader = ({ utmSource }: props) => {
+const WebHeader = ({ }: props) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false)
   const [, setItemWidth] = useState(0)
@@ -28,16 +28,8 @@ const WebHeader = ({ utmSource }: props) => {
   const [active, setActive] = useState("sales")
   const [modalLeft, setModalLeft] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState("login")
-  // let signupUrl = utmSource
-  //   ? `https://home.enkash.com/signup?utm_source=${utmSource}`
-  //   : "https://home.enkash.com/get-started";
-
-  let signupUrl = `/sales/?source=${utmSource}`
-
-  const isHomePage = usePathname()
-  if (isHomePage == "/") {
-    signupUrl = "https://home.enkash.com/get-started"
-  }
+  const pathname = usePathname() 
+  const lastSlug = pathname.split("/").filter(Boolean).pop() || "default"
 
   useEffect(() => {
     if (itemRef.current) {
@@ -145,34 +137,47 @@ const WebHeader = ({ utmSource }: props) => {
           <div
             className={`d-flex align-items-center gap-4 ${styles.nav_right}`}
           >
-            {" "}
-            <Link href={signupUrl} target="_blank">
+            {/* Get Support */}
+            <Link href={`/support/?source=${lastSlug}`} target="_blank">
               <button
                 className={`${styles.button_getStarted} ${
-                  active === "get-started" ? styles.active : ""
+                  active === "get-support" ? styles.active : ""
                 }`}
                 onClick={() => setActive("get-support")}
               >
                 Get Support
               </button>
             </Link>
+
             <div className={styles.button_switch_wrapper}>
-              <button
-                className={`${styles.button} ${styles.login} ${
-                  activeTab === "login" ? styles.active : ""
-                }`}
-                onMouseEnter={() => setActiveTab("login")}
+              {/* Login */}
+              <Link
+                href={`https://home.enkash.com/login?source=${lastSlug}`}
+                target="_blank"
               >
-                Login
-              </button>
-              <button
-                className={`${styles.button} ${styles.sales} ${
-                  activeTab === "sales" ? styles.active : ""
-                }`}
-                onMouseEnter={() => setActiveTab("sales")}
-              >
-                Talk to Sales
-              </button>
+                <button
+                  className={`${styles.button} ${styles.login} ${
+                    activeTab === "login" ? styles.active : ""
+                  }`}
+                  onMouseEnter={() => setActiveTab("login")}
+                >
+                  Login
+                </button>
+              </Link>
+
+              {/* Talk to Sales */}
+              <Link href={`/sales/?source=${lastSlug}`} target="_blank">
+                <button
+                  className={`${styles.button} ${styles.sales} ${
+                    activeTab === "sales" ? styles.active : ""
+                  }`}
+                  onMouseEnter={() => setActiveTab("sales")}
+                >
+                  Talk to Sales
+                </button>
+              </Link>
+
+              {/* Slider */}
               <span
                 className={styles.slider}
                 style={{

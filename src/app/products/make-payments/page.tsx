@@ -28,7 +28,19 @@ import {
   invoiceImg,
   optimizedImg,
 } from "."
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Fast, Easy and Secure Business Payments with EnKash",
+  description:
+    "Simplify vendor, utility, and tax payments with EnKash. Make fast, secure payouts via UPI, cards, or bank transfers—all from one powerful payment dashboard.",
+  alternates: {
+    canonical: "https://www.enkash.com/make-payments/",
+  },
+})
+const salesUrl = getSalesUrl("/make-payments")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const PaymentPage = (): React.JSX.Element => {
@@ -80,7 +92,7 @@ const PaymentPage = (): React.JSX.Element => {
               <RectangleButton
                 title="Talk to Sales"
                 theme="blue"
-                url="/sales/?source=expense_management"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -194,7 +206,7 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Never Miss Another Utility Bill Payment"
                   description="Never miss a utility payment again. Schedule electricity, internet, phone, and other bills with smart reminders and approvals. EnKash keeps you organized, audit-ready, and always on top of your bills."
                   image={paymentOptionImage}
-                  buttonUrl="/bill-payments"
+                  buttonUrl="/utility-bill-payment"
                   buttonText="Explore Bill Payments"
                   maxImageHeight="264px"
                 />
@@ -204,7 +216,7 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Disburse Hundreds of Payments in One Click"
                   description="Make mass payouts to vendors, freelancers, gig workers, and more — instantly, through your preferred payment mode. Upload once, disburse in one click. It’s payout efficiency, redefined for scale."
                   image={notificationImage}
-                  buttonUrl="/bulk-payouts"
+                  buttonUrl="/bulk-pay"
                   buttonText="Explore Bulk Payouts"
                   maxImageHeight="264px"
                   reverse
@@ -215,7 +227,7 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Make Every GST Tax Payment On Time"
                   description="Ensure timely and compliant tax payments without the manual load. Automate GST and statutory dues with proper documentation, built-in checks, and a clear audit trail. Stay compliant and stress-free."
                   image={optimizedImg}
-                  buttonUrl="/gst-payments"
+                  buttonUrl="/gst-payment"
                   buttonText="Explore GST Payments"
                   maxImageHeight="259px"
                 />
@@ -225,7 +237,7 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Pay Your Teams Right, Every Time"
                   description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
                   image={secureImage}
-                  buttonUrl="/explore-payroll"
+                  buttonUrl="/payroll"
                   buttonText="Explore Payroll"
                   maxImageHeight="264px"
                   reverse
@@ -287,7 +299,7 @@ const PaymentPage = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+             url={salesUrl}
             />
           </div>
         </div>
