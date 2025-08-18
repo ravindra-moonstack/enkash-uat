@@ -1,10 +1,6 @@
-"use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
-import {
-  DynamicHeading,
-  CustomBreadcrumb,
-} from "@/components"
+import { DynamicHeading, CustomBreadcrumb } from "@/components"
 import { scrollIconOne, aboutBannerBottomIcon, careerCardIcon } from "."
 
 import OurStoryCard from "@/components/AboutOurStoryCard/AboutOurStoryCard"
@@ -13,6 +9,8 @@ import InvestorsLogos from "@/components/InvestorsLogos/InvestorsLogos"
 import EmployeeSlider from "@/components/EmployeeSlider/EmployeeSlider"
 import CareersCard from "@/components/AboutCareersCard/AboutCareersCard"
 import LocationTabsMap from "@/components/LocationTabsMap/LocationTabsMap"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
 const bannerOurContent = [
   {
@@ -29,10 +27,18 @@ const bannerOurContent = [
   },
 ]
 
+export const metadata: Metadata = generateMetaData({
+  title: "About EnKash: India’s Leading Spend Management & Payments Platform ",
+  description:
+    "Learn about EnKash’s mission, leadership, and journey in transforming B2B payments. Discover how we empower businesses with smarter spend and finance automation solutions.",
+  alternates: {
+    canonical: "https://www.enkash.com/about",
+  },
+})
+
 const About = (): React.JSX.Element => {
   return (
     <>
-    <Header />
       <div className={`color-white ${styles.home_container}`}>
         <section className={`${styles.topBanner}`}>
           <div className="max-w-auto">
