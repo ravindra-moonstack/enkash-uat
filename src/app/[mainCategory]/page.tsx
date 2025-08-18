@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation"
-import { Metadata } from "next"
 import styles from "./page.module.scss"
 import { CategoryData } from "../vouchers/data/category-data"
 import VoucherCard from "@/components/voucher-card/voucher-card"
@@ -11,17 +10,77 @@ import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import { blueArrow, whiteArrow } from "../affordability-suite"
 import VoucherFaqComponent from "./voucher-faq"
-import { use } from "react"
+// import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import { CATEGORY_META } from "./categoryMeta"
+import { CTASection, FaqSection } from "@/components"
+import VoucherFaqSection from "@/components/voucherFaq/voucherFaqSection"
 
-interface CategoryData {
-  name: string
-  heading: string
-  title: string
-  description: string
-  discount: number
-  backgroundImage: string
+// const salesUrl = getSalesUrl("/affordability-suite")
+
+const VALID_CATEGORIES: string[] = [
+  "e-commerce-vouchers",
+  "food-and-beverages-vouchers",
+  "health-and-wellness-vouchers",
+  "apparels-vouchers",
+  "movie-and-music-vouchers",
+]
+
+// ----------------- HELPERS -----------------
+const getDiscountValue = (raw: string | number | undefined): number => {
+  if (!raw) return 0
+  return typeof raw === "string" ? parseFloat(raw) : raw
 }
 
+const fetchVouchers = async (
+  categoryName: string
+): Promise<{
+  validVouchers: Voucher[]
+  apiDiscounts: Record<string, string>
+}> => {
+  const localVouchers: Voucher[] = Object.values(VoucherData).filter(
+    (voucher) => voucher.category === categoryName
+  )
+
+  try {
+    const apiResponse = await fetch(
+      "https://marketplaces.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({}),
+        next: { revalidate: 3600 },
+      }
+    )
+
+    const apiData = await apiResponse.json()
+    const products = apiData.payload.data || []
+
+    const apiDiscounts: Record<string, string> = {}
+    products.forEach((product: any) => {
+      apiDiscounts[nameToUrl(product.brand)] = product.discount
+    })
+
+    const validVouchers = localVouchers.filter((localVoucher) =>
+      products.some(
+        (product: any) =>
+          nameToUrl(product.brand) === localVoucher.urlName &&
+          product.active &&
+          product.enabled
+      )
+    )
+
+    validVouchers.forEach((voucher) => {
+      voucher.discount = parseFloat(apiDiscounts[voucher.urlName])
+    })
+
+    return { validVouchers, apiDiscounts }
+  } catch (error) {
+    console.error("Error fetching vouchers:", error)
+    return { validVouchers: [], apiDiscounts: {} }
+  }
+}
+
+// ----------------- PAGE -----------------
 export async function generateMetadata({
   params,
 }: {
@@ -29,11 +88,9 @@ export async function generateMetadata({
 }) {
   const { mainCategory } = await params
 
-  let isValidCategory: boolean = true
-
-  if (!validCategories.includes(mainCategory)) {
+  if (!VALID_CATEGORIES.includes(mainCategory)) {
     return {
-      title: `Category not found - EnKash`,
+      title: "Category not found - EnKash",
       description:
         "The category you are looking for is not available, explore more in Bolt section.",
       alternates: {
@@ -42,71 +99,22 @@ export async function generateMetadata({
     }
   }
 
+  // pick from CATEGORY_META, fallback to CategoryData
+  const categoryMeta = CATEGORY_META[mainCategory]
   const categoryData = CategoryData[mainCategory]
 
   return {
-    title: `${categoryData.heading} - ${categoryData.title} ${categoryData.discount}% OFF - EnKash`,
-    description: categoryData.description,
+    title:
+      categoryMeta?.title ||
+      `${categoryData.heading} - ${categoryData.title} ${categoryData.discount}% OFF - EnKash`,
+    description: categoryMeta?.description || categoryData.description,
     alternates: {
-      canonical: `https://www.enkash.com/bolt/category/${categoryData.name}`,
+      canonical:
+        categoryMeta?.canonical ||
+        `https://www.enkash.com/bolt/category/${categoryData.name}`,
     },
   }
 }
-
-const fetchVouchers = async (categoryName: string) => {
-  const localVouchers: Voucher[] = Object.values(VoucherData).filter(
-    (voucher: Voucher) => voucher.category === categoryName
-  )
-
-  try {
-    const apiResponse = await fetch(
-      "https://marketplaces.enkash.in/api/v0/bolt/searchProducts?product=VOUCHER",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({}),
-        next: { revalidate: 3600 },
-      }
-    )
-
-    const apiData = await apiResponse.json()
-
-    const validVouchers: Voucher[] = localVouchers.filter((localVoucher) =>
-      apiData.payload.data.some((product: any) => {
-        return (
-          nameToUrl(product.brand) === localVoucher.urlName &&
-          product.active &&
-          product.enabled
-        )
-      })
-    )
-
-    const apiDiscounts: Record<string, string> = {}
-    apiData.payload.data.forEach((product: any) => {
-      apiDiscounts[nameToUrl(product.brand)] = product.discount
-    })
-
-    validVouchers.forEach((validVoucher) => {
-      validVoucher.discount = parseFloat(apiDiscounts[validVoucher.urlName])
-    })
-
-    // ✅ RETURN BOTH
-    return { validVouchers, apiDiscounts }
-  } catch (error) {
-    console.error("Error fetching vouchers:", error)
-    return { validVouchers: [], apiDiscounts: {} }
-  }
-}
-
-const validCategories: string[] = [
-  "e-commerce-vouchers",
-  "food-and-beverages-vouchers",
-  "health-and-wellness-vouchers",
-  "apparels-vouchers",
-  "movie-and-music-vouchers",
-]
 
 const MainCategoryPage = async ({
   params,
@@ -114,180 +122,87 @@ const MainCategoryPage = async ({
   params: Promise<{ mainCategory: string }>
 }) => {
   const { mainCategory } = await params
-  const categoryName = mainCategory
-  let isValidCategory: boolean = true
-  if (!validCategories.includes(categoryName)) {
-    isValidCategory = false
+  const isValidCategory = VALID_CATEGORIES.includes(mainCategory)
+
+  if (!isValidCategory) {
+    return (
+      <div className={`color-white ${styles.error_container}`}>
+        <div className={`${styles.first_row} color-white`}>
+          <DynamicHeading
+            content={[
+              {
+                title: "The Category you are looking for is not present",
+                color: "color-white",
+              },
+            ]}
+            headingTag="h3"
+            className="f-5"
+          />
+        </div>
+      </div>
+    )
   }
 
-  const categoryData = CategoryData[categoryName]
+  const categoryData = CategoryData[mainCategory]
+  const pageData = VOUCHER_DATA[mainCategory]
 
-  const boltUTM = `https://bolt.enkash.com/signup?utm_source=bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
-  const halfBoltUTM = `bolt&utm_medium=enkash_website&utm_campaign=${categoryName}`
+  if (!pageData) notFound()
 
-  const pageData = VOUCHER_DATA[categoryName]
-  if (!pageData) {
-    notFound()
-  }
-  const { validVouchers: vouchers, apiDiscounts } = await fetchVouchers(
-    categoryName
-  )
+  const { apiDiscounts } = await fetchVouchers(mainCategory)
 
-  const slidesWithDiscount = pageData.slides.map((slide) => {
-    const brandUrlName = nameToUrl(slide.brandName)
+  // Apply discounts dynamically
+  const slidesWithDiscount = pageData.slides.map((slide) => ({
+    ...slide,
+    discount: getDiscountValue(
+      apiDiscounts[nameToUrl(slide.brandName)] || slide.discount
+    ),
+  }))
 
-    const dynamicDiscountRaw = apiDiscounts[brandUrlName] || slide.discount || 0
-    const dynamicDiscount =
-      typeof dynamicDiscountRaw === "string"
-        ? parseFloat(dynamicDiscountRaw)
-        : dynamicDiscountRaw
-
-    return {
-      ...slide,
-      discount: dynamicDiscount,
-    }
-  })
-
-  const voucherCardsWithDiscount = pageData.voucherCards.map((card) => {
-    const brandUrlName = nameToUrl(card.brandName || card.titleHtml)
-    const dynamicDiscountRaw = apiDiscounts[brandUrlName] || card.discount || 0
-    const dynamicDiscount =
-      typeof dynamicDiscountRaw === "string"
-        ? parseFloat(dynamicDiscountRaw)
-        : dynamicDiscountRaw
-
-    return {
-      ...card,
-      discount: `${dynamicDiscount}%`,
-    }
-  })
+  const voucherCardsWithDiscount = pageData.voucherCards.map((card) => ({
+    ...card,
+    discount: `${getDiscountValue(
+      apiDiscounts[nameToUrl(card.brandName || card.titleHtml)] || card.discount
+    )}%`,
+  }))
 
   return (
     <div className={`color-black ${styles.home_container}`}>
-      {isValidCategory ? (
-        <>
-          {categoryData && (
-            <div className={`${styles.first_row}`}>
-              <SliderComponent
-                breadcrumbItems={pageData.breadcrumbItems}
-                slides={slidesWithDiscount}
-                title={pageData.title}
-              />
+      <div className={styles.first_row}>
+        <SliderComponent
+          breadcrumbItems={pageData.breadcrumbItems}
+          slides={slidesWithDiscount}
+          title={pageData.title}
+        />
 
-              <div className={styles.voucher_card}>
-                <div className="max-w-auto">
-                  <div className="row">
-                    {voucherCardsWithDiscount.map((card, index) => (
-                      <div key={index} className="col-12 col-md-3 mb-4">
-                        <VoucherCard
-                          titleHtml={card.titleHtml}
-                          description={card.description}
-                          discount={card.discount}
-                          cardImage={card.cardImage}
-                          buttonUrl={card.buttonUrl}
-                          brandName={card.brandName}
-                        />
-                      </div>
-                    ))}
-                  </div>
+        <div className={styles.voucher_card}>
+          <div className="max-w-auto">
+            <div className="row">
+              {voucherCardsWithDiscount.map((card, index) => (
+                <div key={index} className="col-12 col-md-3 mb-4">
+                  <VoucherCard {...card} />
                 </div>
-              </div>
+              ))}
             </div>
-          )}
-
-          <div className={`${styles.sixth_row}`}>
-            <div className="d-flex justify-content-center flex-column gap-32 align-items-center max-w-auto">
-              <DynamicHeading
-                content={[
-                  {
-                    title:
-                      "Discover the EnKash difference - Secure, Scalable and Seamless.",
-                    color: "color-white",
-                  },
-                ]}
-                headingTag="h3"
-                className="f-5"
-              />
-
-              <RectangleButton
-                title="Get Started"
-                theme="outline-blue"
-                url="/sales/?source=expense_management"
-              />
-            </div>
-          </div>
-
-          <div className={`${styles.faq_new_row}  relative`}>
-            <div className={`${styles.faqSection} text-start max-w-auto `}>
-              <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Frequently Asked Questions (",
-                      color: "color-black",
-                    },
-                    {
-                      title: "FAQs",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: ")",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
-              </div>
-              <div className="d-flex flex-column flex-md-row justify-content-between">
-                <div>
-                  <div>
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Have more questions?",
-                          color: "color-dark-grey subHeading",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0"
-                    />
-                  </div>
-                  <div className="mt-3 d-none d-md-block">
-                    <RectangleButton
-                      title="Get started today"
-                      theme="border-gray"
-                      actionImage={blueArrow}
-                      hoverImage={whiteArrow}
-                      iconSize={15}
-                      url="/sales/?source=receivables"
-                    />
-                  </div>
-                </div>
-                <div className={`${styles.faqData}`}>
-                  <VoucherFaqComponent voucherName={categoryName} />
-                </div>
-              </div>
-            </div>
-          </div>
-        </>
-      ) : (
-        <div className={`color-white ${styles.error_container}`}>
-          <div className={`${styles.first_row} color-white`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "The Category you are looking for is not present",
-                  color: "color-white",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
           </div>
         </div>
-      )}
-
+      </div>
+ 
+      <CTASection
+        title={
+          "Discover the EnKash difference - Secure, Scalable and Seamless."
+        }
+        buttonText={"Get Started"}
+        actionImage={blueArrow}
+        hoverImage={whiteArrow}
+        background="linear-gradient(180deg, #2e2e2e 0%, #010205 100%)"
+      />
+      <VoucherFaqSection
+        mainTitle="Frequently Asked Questions ("
+        highlightTitle="FAQs"
+        subTitle="Have more questions?"
+        buttonText="Get started today"
+        FaqContent={<VoucherFaqComponent voucherName={mainCategory} />}
+      />
     </div>
   )
 }

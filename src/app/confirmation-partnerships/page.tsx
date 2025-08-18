@@ -3,7 +3,16 @@ import Image from "next/image"
 import React from "react"
 import styles from "./page.module.scss"
 import reachOutImg from "@/public/images/SubtractImg.webp"
-
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+export const metadata: Metadata = generateMetaData({
+  title: "Thank You for Your Interest in Partnering with Us",
+  description:
+    "Thanks for your interest in EnKash partnerships! Our team will connect soon to explore collaboration opportunities.",
+  alternates: {
+    canonical: "https://www.enkash.com/confirmation-partnerships/",
+  },
+})
 const ConfirmationPartner = () => {
   return (
     <div>

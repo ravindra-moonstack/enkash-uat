@@ -1,10 +1,18 @@
-"use client"
 import React from "react"
 import Image from "next/image"
 import { DynamicHeading, LogoSlider, SupportCard } from "@/components"
 import styles from "./page.module.scss"
 import { location, logo } from "."
 import { contactData, locationData } from "./data"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "EnKash Support Center | Get Help with Products & Services",
+  description:
+    "Need assistance with EnKash? Access FAQs, user guides, and expert support for payments, cards, expenses, integrations, and more—all in one place.",
+  alternates: { canonical: "https://www.enkash.com/support/" },
+})
 
 const Suppport = () => {
   return (

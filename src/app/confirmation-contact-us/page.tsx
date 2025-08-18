@@ -1,14 +1,21 @@
-import { DynamicHeading, Footer, Header, TalkToSales } from "@/components"
+import { DynamicHeading } from "@/components"
 import Image from "next/image"
 import React from "react"
 import styles from "./page.module.scss"
 import reachOutImg from "@/public/images/SubtractImg.webp"
 import needIcon from "./img/need.svg"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Thank You for Contacting Us",
+  description:
+    "We’ve got your message! The EnKash team will be in touch shortly to answer your query or request.",
+  alternates: { canonical: "https://www.enkash.com/confirmation-contact-us/" },
+})
 const ConfirmationContactUs = () => {
   return (
     <div>
-      <Header />
-      <TalkToSales />
       <div className={`${styles.thankyouPage}`}>
         <div className="max-w-auto">
           <div className={`${styles.thankyouContainer}`}>
@@ -162,7 +169,6 @@ const ConfirmationContactUs = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }
