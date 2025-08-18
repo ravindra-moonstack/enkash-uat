@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicyData, cardsData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -9,8 +9,7 @@ import {
   RectangleButton,
   AllInOnePolicy,
   ScrollableCardsSection,
-  FaqSection
-
+  FaqSection,
 } from "@/components"
 import {
   blueArrow,
@@ -18,27 +17,20 @@ import {
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
-  secureImage,
-  advancedImage,
-  taskIconSeven,
-  taskIconEight,
-  taskIconNine,
-  designedIcon,
-  payrollImg,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-
+export const metadata: Metadata = generateMetaData({
+  title: "Payroll Management: Automate Salaries, Payouts & Compliance ",
+  description:
+    "Automate salary disbursals, contractor payouts, and compliance with EnKash Payroll. Ensure timely, error-free payments with full visibility and control.",
+  alternates: {
+    canonical: "https://www.enkash.com/payroll/",
+  },
+})
+const salesUrl = getSalesUrl("/payroll")
 
 const Payroll = (): React.JSX.Element => {
   return (
@@ -119,14 +111,14 @@ const Payroll = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -179,7 +171,7 @@ const Payroll = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -215,91 +207,18 @@ const Payroll = (): React.JSX.Element => {
                 </div>
               </div>
 
-              <div className={styles.allInOnePolicy}>
+              {allInOnePolicyData.map((item, index) => (
                 <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Comprehensive Employee Data Management"
-                  description="Effortlessly handle employee information with EnKash’s HR payroll software, allowing easy uploads, seamless validation, and bulk salary disbursements—all while ensuring compliance. EnKash ensures compliance with regulatory standards, reducing errors and streamlining onboarding processes—all within a user-friendly interface."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={item.maxImageHeight}
+                  reverse={item.reverse}
                 />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Secure Salary Account Validation"
-                  description="Validate salary account details using the penny-drop method, minimizing payment errors and bolstering financial security. Ensure every transaction is accurate and hassle-free."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Multi-Branch Salary Disbursement"
-                  description="Manage payroll across multiple branches effortlessly from a single dashboard. With just a click, initiate accurate salary disbursements for all employees, regardless of location."
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Seamless ERP Integration"
-                  description="Integrate EnKash’s payroll software seamlessly with your existing ERP systems and banking partners. This integration enables a unified and efficient workflow tailored to your business needs."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFive}
-                  title="Flexible Payment Solutions"
-                  description="Handle payments for full-time employees, contractors, and interns, covering both regular and off-cycle payroll. Additionally, reimburse employee expenses alongside payroll for added convenience."
-                  image={optimizedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-                <AllInOnePolicy
-                  icon={taskIconSix}
-                  title="Configurable Approval Workflows"
-                  description="Define approval hierarchies with customizable rules. Automate payroll information routing to designated approvers, ensuring prompt approvals and reduced delays."
-                  image={secureImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconSeven}
-                  title="Advanced Reporting and Analytics"
-                  description="Access real-time insights into payroll trends and employee expenses. Generate comprehensive, customizable reports to support data-driven decisions and strategic planning."
-                  image={advancedImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconEight}
-                  title="Designed for Startups and SMEs"
-                  description="Simple and reliable payroll software for small businesses. Easily onboard employees, run accurate payroll, and stay compliant—without the spreadsheet hassle."
-                  image={designedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconNine}
-                  title="Streamline HR Payroll Operations"
-                  description="A powerful HR payroll solution to automate compliance, simplify salary disbursement, and reduce manual work, ensuring smooth, secure payroll operations."
-                  image={payrollImg}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -324,7 +243,7 @@ const Payroll = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>

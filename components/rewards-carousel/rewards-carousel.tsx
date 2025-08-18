@@ -8,7 +8,7 @@ export type RewardsCarouselDataProp = {
   title: string
   title2?: string
   description: string
-   image: string | StaticImageData; 
+  image: string | StaticImageData
   link?: string
 }
 
@@ -33,6 +33,7 @@ const RewardsCarousel = ({
                   titleHtml={card.title}
                   description={card.description}
                   cardImage={card.image}
+                  linkUrl={card.link}
                 />
               </div>
             ))}

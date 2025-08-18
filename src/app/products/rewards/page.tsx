@@ -1,5 +1,5 @@
 import styles from "./page.module.scss"
-import { allProductSections } from "./data"
+import { allProductSections, policiesData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -11,17 +11,20 @@ import {
   AllProducts,
   FaqSection,
 } from "@/components"
-import {
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-} from "."
 
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Reward Program to Drive Employee & Customer Loyalty",
+  description:
+    "Boost employee engagement with EnKash Rewards. Design custom reward programs, send instant digital vouchers, and simplify recognition across teams and departments.",
+  alternates: {
+    canonical: "https://www.enkash.com/rewards/",
+  },
+})
+const salesUrl = getSalesUrl("/rewards")
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const Rewards = (): React.JSX.Element => {
@@ -73,7 +76,7 @@ const Rewards = (): React.JSX.Element => {
               <RectangleButton
                 title="Talk to Sales"
                 theme="blue"
-                url="/sales"
+                url={salesUrl}
               />
             </div>
           </div>
@@ -108,45 +111,19 @@ const Rewards = (): React.JSX.Element => {
                 />
               </div>
             </div>
-
             <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Employee Rewards"
-                description="Motivate and retain your workforce with meaningful recognition. EnKash helps businesses set up customized rewards programs that enhance employee morale and performance. Offer digital gift cards, brand vouchers, and exclusive perks."
-                image={paymentLinkImage}
-                buttonUrl="/employee-rewards/"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Channel Incentives"
-                description="Drive channel partner engagement and boost sales with structured channel incentives. EnKash enables businesses to automate reward distribution, ensuring timely payouts and transparent tracking for channel partners."
-                image={shareImage}
-                buttonUrl="/channel-incentives/"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Gift Cards"
-                description="Simplify gifting with EnKash’s versatile gift card solutions. Give your employees and partners the freedom to choose from a wide range of brands and categories, ensuring a truly personal reward experience."
-                image={paymentOptionImage}
-                buttonUrl="/gift-cards/"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Exclusive Offers"
-                description="Unlock special discounts and partner offers from leading brands. Help your employees and stakeholders save on essential services while enhancing their benefits package."
-                image={notificationImage}
-                buttonUrl="/offers/"
-                maxImageHeight="259px"
-                reverse
-              />
+              {policiesData.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
             </div>
           </div>
         </div>

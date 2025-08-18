@@ -15,7 +15,21 @@ import pettyIconSix from "./img/pettyIconSix.svg"
 import pettyIconSeven from "./img/pettyIconSeven.svg"
 import pettyIconEight from "./img/pettyIconEight.svg"
 
-import { stepCardImgOne, stepCardImgThree, stepCardImgTwo } from "."
+import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  realTimeExpense,
+  realTimeExpenseIcon,
+  stackCardThreeIcon,
+  stackCardThreeImg,
+  stepCardImgOne,
+  stepCardImgThree,
+  stepCardImgTwo,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
+} from "."
 
 const cardData = [
   {
@@ -129,6 +143,58 @@ const analyticData = [
     icon: pettyIconEight,
   },
 ]
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "UPI-Based Petty Cash",
+    description:
+      "Enable UPI-based payments for everyday expenses - no cash, no chaos. Assign wallets to employees, apply spend controls and approval flows, and get full visibility of transactions in a compliant, audit-ready format.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Digital Petty Cash Distribution",
+    description:
+      "Distribute funds instantly with EnKash prepaid cards or UPI wallets. Set monthly budgets, configure user or branch-level limits, automate top-ups, and revoke access anytime—eliminating manual disbursement and giving you total control over petty cash.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: stackCardThreeIcon,
+    title: "Automatic Expense Creation",
+    description:
+      "Every transaction is auto-converted into an expense with pre-filled details like amount, date, and merchant. Smart categorization and mobile app verification simplify reporting, so employees just review, attach receipts, and submit in seconds.",
+    image: stackCardThreeImg,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Real-Time Tracking & Spend Visibility",
+    description:
+      "Track every rupee as it’s spent. Get live dashboards, instant policy alerts, and geo-tagged logs for each transaction, ensuring complete transparency and real-time visibility across teams, branches, or employees, from anywhere.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Automated Reconciliation",
+    description:
+      "The system automatically matches each transaction with submitted receipts. One-click verifications, live reconciliation reports, and instant exception alerts mean faster closes, fewer errors, and a hassle-free audit trail—all with minimal manual effort.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+]
 
 export {
   cardData,
@@ -136,4 +202,5 @@ export {
   stepCards,
   dashboardData,
   analyticData,
+  stackcardData,
 }
