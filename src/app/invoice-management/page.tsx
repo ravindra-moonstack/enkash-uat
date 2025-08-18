@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -18,17 +18,21 @@ import {
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
+
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Invoice Management System: Automate, Track & Reconcile Invoices ",
+  description:
+    "Digitize your invoice workflow with EnKash. Create, share, approve, and reconcile invoices faster—streamline accounts payable and improve cash flow visibility.",
+  alternates: {
+    canonical: "https://www.enkash.com/invoice-management/",
+  },
+})
+const salesUrl = getSalesUrl("/invoice-management")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
@@ -112,14 +116,14 @@ const InvoiceManagement = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -172,7 +176,7 @@ const InvoiceManagement = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -210,53 +214,18 @@ const InvoiceManagement = (): React.JSX.Element => {
               </div>
 
               <div className={styles.allInOnePolicy}>
-                <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Centralized Dashboard for Complete Control"
-                  description="Manage all vendor invoices from a single, intuitive platform designed for maximum efficiency. With end-to-end visibility of the invoice lifecycle, track the status of every invoice to stay on top of your financial obligations."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Flexible Approval Processes for Business Needs"
-                  description="Design workflows that align perfectly with your organizational structure. Easily assign roles, set authorization levels, and create tailored approval hierarchies that ensure compliance without compromising on speed or accuracy."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Cash Flow Optimization for Timely Decisions"
-                  description="Utilize EnKash’s facilitated credit lines to enhance liquidity and maintain smooth operations. Extend payment deadlines strategically while strengthening relationships with vendors through consistent and timely payment processes.
-"
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Effortless ERP System Integration"
-                  description="Sync EnKash with major ERP platforms like Tally, SAP, and Zoho for seamless data flow. Avoid duplications, save time, and ensure data accuracy with synchronized invoice and payment records that simplify reconciliation."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFive}
-                  title="Detailed Insights Through Advanced Reporting"
-                  description="Access real-time invoice statuses and generate comprehensive reports with ease. Use actionable data to refine your financial planning, identify trends, and make well-informed decisions for your business growth."
-                  image={optimizedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
+                {allInOnePolicyData.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
               </div>
             </div>
           </div>

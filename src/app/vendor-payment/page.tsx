@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -12,25 +12,20 @@ import {
   AllInOnePolicy,
   FaqSection,
 } from "@/components"
-import {
-  blueArrow,
-  groupIcon,
-  paymentSummary,
-  whiteArrow,
-  mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
-  secureImage,
-} from "."
+import { blueArrow, groupIcon, paymentSummary, mealCardImage } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Automate and Track your Vendor Payments ",
+  description:
+    "Streamline vendor payouts with EnKash. Automate payments, track due dates, and simplify reconciliation—save time and reduce errors in your accounts payable.",
+  alternates: {
+    canonical: "https://www.enkash.com/vendor-payment/",
+  },
+})
+const salesUrl = getSalesUrl("/vendor-payment")
 
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
@@ -114,14 +109,14 @@ const VendorPayment = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -197,7 +192,7 @@ const VendorPayment = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -234,62 +229,18 @@ const VendorPayment = (): React.JSX.Element => {
               </div>
 
               <div className={styles.allInOnePolicy}>
-                <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Pay Vendors in Seconds"
-                  description="Simplify vendor payments with multiple payment options such as UPI, NEFT, RTGS, or cards. With EnKash, you can settle invoices instantly while ensuring secure transactions. No more delays or manual follow-ups—just fast, reliable payments that strengthen your vendor relationships. Efficient management of vendor payables ensures faster invoice settlements and stronger vendor relationships."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="250px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Eliminate Manual Hassles"
-                  description="Say goodbye to cumbersome spreadsheets and manual errors. EnKash automates the entire process—from uploading invoices to setting payment reminders. With built-in TDS compliance and auto-validation, you can ensure every payment is accurate, on time, and fully compliant with regulations, leaving your team to focus on growth."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Seamless Integration"
-                  description="Integrate EnKash seamlessly with leading ERPs like Tally, QuickBooks, and Zoho. This ensures your accounts payable system is always synchronized, saving time on manual data entry. Automatically pull invoices, update payment statuses, and maintain an organized workflow that fits effortlessly into your existing setup."
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="202px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Speed Up Approvals"
-                  description="Empower your team to approve payments faster with EnKash’s customizable workflows. Define approval hierarchies, assign roles, and get instant notifications for pending tasks. Whether you're in the office or on the go, you can approve vendor payments securely from any device, keeping your business agile."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFive}
-                  title="Comprehensive Reconciliation"
-                  description="Ensure your books are always audit-ready with EnKash’s automatic reconciliation features. Match invoices to payments, generate detailed reports, and eliminate discrepancies effortlessly. This streamlined process not only improves accuracy but also saves valuable time for your finance team."
-                  image={optimizedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconSix}
-                  title="End-to-End Security"
-                  description="Protect every transaction with enterprise-grade security measures. EnKash uses multi-layered encryption, advanced fraud monitoring, and secure bank account validation to safeguard your data and payments. With compliance built into the platform, you can trust that your vendor payments are in safe hands."
-                  image={secureImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="252px"
-                  reverse
-                />
+                {allInOnePolicyData.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -344,8 +295,7 @@ const VendorPayment = (): React.JSX.Element => {
               title="Get Started  "
               theme="outline-blue"
               actionImage={blueArrow}
-              hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>

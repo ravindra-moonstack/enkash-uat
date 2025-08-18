@@ -3,7 +3,25 @@ import crouselIconTwo from "./img/crouselIconTwo.svg"
 import crouselIconThree from "./img/crouselIconThree.svg"
 import crouselIconFour from "./img/crouselIconFour.svg"
 
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import {
+  advancedImage,
+  notificationImage,
+  optimizedIcon,
+  paymentLinkImage,
+  paymentOptionImage,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  secureImage,
+  shareImage,
+  taskIconFive,
+  taskIconFour,
+  taskIconOne,
+  taskIconSeven,
+  taskIconSix,
+  taskIconThree,
+  taskIconTwo,
+} from "."
 
 const cardsData = [
   {
@@ -67,4 +85,73 @@ const allProductSections = [
   },
 ]
 
-export { cardsData, allProductSections }
+const allInOnePolicyData = [
+  {
+    icon: taskIconOne,
+    title: "Save Time and Boost Efficiency",
+    description:
+      "Spend less time on manual payment processes and optimize cash flow with EnKash. Automate recurring and bulk payments, ensure timely transactions, and eliminate errors using a centralized system that integrates seamlessly with your existing tools and processes.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Enhance Vendor Relationships",
+    description:
+      "Build trust with vendors through consistent on-time payments. Foster better partnerships by maintaining transparency and resolving payment queries faster with a reliable payment system.",
+    image: shareImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Strengthen Financial Control",
+    description:
+      "Gain real-time visibility into your transactions. Monitor payment statuses, generate detailed reports, and stay compliant with customizable approval workflows tailored to your organization’s needs.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Improve Cash Flow Management",
+    description:
+      "Ensure smooth operations with faster processing times. Manage recurring expenses like rent, utilities, and vendor payments efficiently to improve cash flow and operational stability.",
+    image: notificationImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconFive,
+    title: "Seamless Integrations",
+    description:
+      "Connect EnKash Express Pay with your ERP, accounting software, or HRMS to simplify workflows and eliminate data silos. Enhance productivity with a fully integrated payment solution.",
+    image: optimizedIcon,
+    buttonUrl: "/sales",
+    maxImageHeight: "259px",
+  },
+  {
+    icon: taskIconSix,
+    title: "Secure and Reliable Platform",
+    description:
+      "Keep your business secure with robust fraud detection, data encryption, and multi-layered access controls. Rely on industry-leading uptime and performance for uninterrupted operations..",
+    image: secureImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconSeven,
+    title: "Customizable Solutions for Your Needs",
+    description:
+      "Adapt the platform to your unique business requirements. From approval hierarchies to payment scheduling, EnKash Express Pay offers unparalleled flexibility.",
+    image: advancedImage,
+    buttonUrl: "/sales",
+    maxImageHeight: "259px",
+  },
+]
+
+export { cardsData, allProductSections, allInOnePolicyData }

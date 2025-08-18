@@ -5,7 +5,23 @@ import herarchy from "./img/herarchy.webp"
 import insight from "./img/insights.webp"
 import scanAndDrops from "./img/scan-and-drops.webp"
 import reimbursements from "./img/reimbursement.webp"
-import { stepCardImgOne, stepCardImgThree, stepCardImgTwo } from "."
+import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  realTimeExpense,
+  realTimeExpenseIcon,
+  stackCardThreeIcon,
+  stackCardThreeImg,
+  stepCardImgOne,
+  stepCardImgThree,
+  stepCardImgTwo,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
+} from "."
 
 const cardData = [
   {
@@ -88,4 +104,67 @@ const expenseManagementData = [
   },
 ]
 
-export { cardData, expenseManagementData, stepCards }
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Ease of use",
+    description:
+      "With EnKash, policies can be created on the platform as per the company's requirements and can be viewed easily on the dashboard.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Policy Enforcement",
+    description:
+      "Built-in policy enforcement and tracking features for different departments and employee grades to ensure adherence to spending policies.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: stackCardThreeIcon,
+    title: "Alerts on Policy Breach",
+    description:
+      "When an employee submits expenses exceeding policy limits, a warning is sent to the submitters and approvers. The approver can then reject the expense or request a correction.",
+    image: stackCardThreeImg,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Approval Workflows",
+    description:
+      "Automated and customizable workflows streamline the approval process, ensuring faster decision-making and reduced bottlenecks.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "User Permissions",
+    description:
+      "Role-based access control ensures that the designated people have the appropriate level of authority, enhancing security and transparency.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Transparency",
+    description:
+      "Real-time visibility into the approval status of transactions provides transparency and accountability at every step.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+]
+
+export { cardData, expenseManagementData, stepCards, stackcardData }
