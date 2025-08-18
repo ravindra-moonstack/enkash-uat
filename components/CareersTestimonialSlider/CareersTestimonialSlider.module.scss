@@ -1,31 +1,39 @@
-.sliderWrapper {
-  gap: 20px;
-  align-items: flex-start;
-}
+@use './../../styles/mixin' as *;
+.careerTestimonialSliderOuters{
+   .sliderContentBoxOuter{
+    display: flex !important;
+    flex-wrap: wrap;
+    @include for-laptops{
+      flex-wrap: nowrap;
+    }
+    .sliderContentBox{
+      background-color: #1C5AF4;
+      padding: 20px;
+      width: 100%;
+      flex-wrap: wrap;
+      @include for-laptops{
+        width: 60%;
 
-.textSlider {
-  flex: 1;
-  background: #1a73e8;
-  color: #fff;
-  padding: 20px;
-  border-radius: 8px;
-  min-height: 200px;
-}
+      }
+      .sliderContentBoxIcon{
+        color: #fff;
 
-.textCard {
-  font-size: 16px;
-  line-height: 1.5;
-}
+      }
+    }
+   }
+   .sliderContentBoxImage{
+     width: 100%;
+     @include for-laptops{
+      width: 40%;
 
-.imageSlider {
-  flex: 1;
-  .slick-slide {
-    padding: 10px;
-    opacity: 0.5;
-    transition: all 0.3s;
-  }
-  .slick-current {
-    opacity: 1;
-    transform: scale(1.05);
-  }
+    }
+    img{
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-fit: cover;
+    }
+
+   }
 }

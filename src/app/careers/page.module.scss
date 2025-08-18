@@ -13,7 +13,7 @@
 
   .CoreValuesDataSectionOuter {
     background: #fff;
-    padding: 50px 50px 30px;
+    padding: 20px 20px ;
     position: relative;
     border-radius: 20px;
     z-index: 1;
@@ -28,6 +28,13 @@
       background-size: contain;
       width: 320px;
       height: 460px;
+      display: none;
+    }
+    @include for-laptops{
+      padding: 50px 50px 30px;
+      &::after {
+        display: block;
+      }
     }
     .content{
         max-width: 400px;
@@ -54,16 +61,25 @@
         }
     }
     .rewardsBottomSliderContentBox{
-        max-width: 1100px;
+        max-width: 1200px;
         margin: auto;
+        .rewardsBottomSliderBox{
+          height: 100%;
+        }
     }
 }
 
 
 .yourOpportunitySection{
   background-image: url('./img/yourOpportunitySectionBg.webp');
-  padding: 300px 20px 90px;
+  padding: 550px 20px 90px;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.VoicesEnKashSection{
+  padding: 0px 20px 0px;
+  @include for-laptops{
+    padding: 0px 20px 90px;
+  }
 }

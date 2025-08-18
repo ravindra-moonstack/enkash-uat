@@ -58,7 +58,7 @@ const CareersCard: React.FC<CareersCardProps> = ({ icon }) => {
       </div>
 
       <div className={`${styles.buttonSection}`}>
-        <RectangleButton title="View Open Roles" theme="outline-blue" url="/#" />
+        <RectangleButton title="View Open Roles" theme="outline-blue" url="/careers" />
       </div>
     </div>
   );

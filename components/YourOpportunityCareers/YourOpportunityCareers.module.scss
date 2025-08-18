@@ -5,32 +5,65 @@
   padding: 10px 20px;
   background: rgba(18, 18, 18, 0.85);
   border-radius: 10px;
+  flex-wrap: wrap;
+  @include for-laptops {
+    flex-wrap: nowrap;
+  }
   .careerCardTitleDesc {
-    width: 40%;
+    width: 100%;
+    @include for-laptops {
+      width: 40%;
+    }
     .careerCardTitleDesc {
       p {
-        color: #808080;
+        color: #808080 !important;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 300;
       }
     }
   }
   .careerCardDepartmentLocation {
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     color: #989898;
     align-items: center;
     text-transform: uppercase;
-    span,
-    a {
-      width: calc(100% / 3);
+    flex-wrap: wrap;
+    @include for-laptops {
+      flex-wrap: nowrap;
+      width: 60%;
     }
-    span{
-        svg{
-            margin-right: 10px;
-            margin-top: -2px;
+    span {
+      width: calc(100%);
+      margin-top: 10px;
+      @include for-laptops {
+        margin-top: 0;
+        width: calc(100% / 3);
+      }
+      svg {
+        margin-right: 10px;
+        margin-top: -2px;
+      }
+    }
+    .careerCardButton {
+      text-align: start;
+      @include for-laptops {
+        text-align: end;
+      }
+      a {
+        width: max-content;
+        display: inline-block;
+        background: #2b2b2b;
+        color: #fff;
+        padding: 5px 10px;
+        text-wrap: nowrap;
+        border-radius: 5px;
+        border: none;
+        &:hover {
+          background: #1c5af4;
         }
+      }
     }
   }
 }

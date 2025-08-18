@@ -32,10 +32,15 @@
     }
     .bannerOurSection {
       .bannerOurCard {
+        // background: linear-gradient(
+        //   135deg,
+        //   rgb(255 255 255 / 10%) 0%,
+        //   rgb(255 255 255 / 23%) 100%
+        // );
         background: linear-gradient(
           135deg,
-          rgb(255 255 255 / 10%) 0%,
-          rgb(255 255 255 / 23%) 100%
+          rgb(143 141 141 / 34%) 0%,
+          rgb(175 175 175 / 23%) 100%
         );
         padding: 30px;
         border-radius: 10px;
