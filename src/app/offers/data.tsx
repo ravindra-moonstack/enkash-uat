@@ -58,9 +58,9 @@ const cardType = [
         url: "/gift-cards/",
       },
       {
-        titleHtml: "Offers",
+        titleHtml: "Employee Rewards",
         description:
-          "Unlock exclusive deals and discounts to boost employee engagement and motivation.",
+          "Appreciate employees with our innovative and likable employee rewards.",
         cardImage: offers,
         url: "/offers/",
       },
@@ -163,7 +163,8 @@ const stackcardData = [
     color: "#eee",
     icon: costControlSavingsIcon,
     title: "Regularly Updated Offers",
-    description: "Stay ahead of the curve with the best deals for your business needs.",
+    description:
+      "Stay ahead of the curve with the best deals for your business needs.",
     image: costControlSavings,
     buttonUrl: "/sales",
   },
@@ -176,7 +177,6 @@ const stackcardData = [
     image: wideAcceptanceNetwork,
     buttonUrl: "/sales",
   },
-];
-
+]
 
 export { cardsData, allProductSections, cardType, stackcardData }

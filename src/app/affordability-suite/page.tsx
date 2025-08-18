@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicyData, cardsData, managementCardsData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -18,21 +18,20 @@ import {
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  paymentGateway,
-  paymentLink,
-  paymentButton,
-  qrCodes,
-  autoCollect,
-  invoices,
-  instant,
-  reminder,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Account Payable Analytics: Gain Real-Time Insights on Payables",
+  description:
+    "Track, analyze, and optimize your accounts payable with EnKash Payable Analytics. Improve cash flow planning, spot delays, and make informed financial decisions.",
+  alternates: {
+    canonical: "https://www.enkash.com/affordability-suite/",
+  },
+})
+const salesUrl = getSalesUrl("/affordability-suite")
 
 const Payroll = (): React.JSX.Element => {
   return (
@@ -112,16 +111,16 @@ const Payroll = (): React.JSX.Element => {
                   >
                     <div>
                       <RectangleButton
-                        title="Get Started  "
+                        title="Get Started"
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -170,7 +169,7 @@ const Payroll = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -204,35 +203,18 @@ const Payroll = (): React.JSX.Element => {
               </div>
             </div>
 
-            <div className={styles.allInOnePolicy}>
+            {allInOnePolicyData.map((item, index) => (
               <AllInOnePolicy
-                icon={taskIconOne}
-                title="EMI"
-                description="Boost conversions by offering flexible and affordable payment options. Enable EMI through both debit and credit cards to make purchases easier and more accessible for your customers."
-                image={paymentLinkImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                image={item.image}
+                buttonUrl={salesUrl}
+                maxImageHeight={item.maxImageHeight}
+                reverse={item.reverse}
               />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Buy Now, Pay Later"
-                description="Drive customer acquisition and loyalty by letting them enjoy your product or service now and pay later. No upfront pressure, just seamless access."
-                image={shareImage}
-                buttonUrl="/sales"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Affordability Widget"
-                description="Showcase custom offers or highlight EMI and payment options directly on the product page, so customers see affordability where it matters most."
-                image={paymentOptionImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -257,7 +239,7 @@ const Payroll = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -287,70 +269,12 @@ const Payroll = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGateway}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
-                cardImage={qrCodes}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCardsData.map((card, index) => (
+              <div className="col-12 col-md-4" key={index}>
+                <ManagementCard {...card} />
+              </div>
+            ))}
           </div>
         </div>
       </div>

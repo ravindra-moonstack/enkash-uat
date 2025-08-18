@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -18,18 +18,19 @@ import {
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
 } from "."
-
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+export const metadata: Metadata = generateMetaData({
+  title: "Utility Bill Payment: Pay All Business Utility Bills Seamlessly",
+  description:
+    "Manage and pay utility, vendor, credit card, and GST bills in one place with EnKash. Schedule, track, and automate business bill payments for better control.",
+  alternates: {
+    canonical: "https://www.enkash.com/utility-bill-payment/",
+  },
+})
+const salesUrl = getSalesUrl("/utility-bill-payment")
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
@@ -113,14 +114,14 @@ const UtilityBillPayment = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -196,7 +197,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -233,52 +234,18 @@ const UtilityBillPayment = (): React.JSX.Element => {
               </div>
 
               <div className={styles.allInOnePolicy}>
-                <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="One Dashboard for All Bills"
-                  description="EnKash brings all your utility bills to one place, whether it’s an electricity bill, water bill, or internet bill. By auto-fetching bill details such as due dates and amounts, the platform reduces manual effort and minimizes errors. With a single dashboard, you gain complete control over your business’s recurring expenses, ensuring seamless management."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="One-Click Payments"
-                  description="Simplify the complexity of multiple payments with EnKash’s one-click payment feature. Easily pay several bills simultaneously by filtering them based on location, provider, or due date. This efficiency not only saves time but also makes bulk payment handling a breeze, ensuring you never miss a due date."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Multi-Location Management"
-                  description="Effortlessly manage utility bills across various business locations, including offices, warehouses, and retail outlets. With centralized control, you can consolidate expenses, improve accuracy, and gain better financial visibility. Streamline bill tracking and payments regardless of where your business operates."
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Real-Time Reconciliation"
-                  description="Stay informed with real-time updates on payment statuses through EnKash’s intuitive dashboard. Generate detailed, custom reports for audits, financial planning, or tracking payment histories. This feature ensures accurate records and eliminates the hassle of manual reconciliations, giving you peace of mind."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFive}
-                  title="Streamlined Approvals"
-                  description="Optimize your payment process with customizable approval workflows. Assign specific roles and permissions to team members, ensuring compliance and preventing unauthorized transactions. EnKash’s approval system enables transparency, speeds up decision-making, and enhances your organization’s financial governance."
-                  image={optimizedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
+                {allInOnePolicyData.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
               </div>
             </div>
           </div>
@@ -335,7 +302,7 @@ const UtilityBillPayment = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>

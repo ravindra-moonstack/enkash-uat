@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { allInOnePolicyData, allProductSections, cardsData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -18,21 +18,20 @@ import {
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  taskIconSix,
-  secureImage,
-  advancedImage,
-  taskIconSeven,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Bulk Payment: Smart, Fast & Secure Payouts ",
+  description:
+    "Send instant payouts without collecting bank details. With EnKash Express Pay, use mobile numbers or UPI IDs to pay vendors, partners, or gig workers seamlessly.",
+  alternates: {
+    canonical: "https://www.enkash.com/bulk-pay/",
+  },
+})
+const salesUrl = getSalesUrl("/bulk-pay")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
@@ -115,14 +114,14 @@ const BulkPay = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -175,7 +174,7 @@ const BulkPay = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -210,73 +209,18 @@ const BulkPay = (): React.JSX.Element => {
                   />
                 </div>
               </div>
-
-              <div className={styles.allInOnePolicy}>
+              {allInOnePolicyData.map((item, index) => (
                 <AllInOnePolicy
-                  icon={taskIconOne}
-                  title="Save Time and Boost Efficiency"
-                  description="Spend less time on manual payment processes and optimize cash flow with EnKash. Automate recurring and bulk payments, ensure timely transactions, and eliminate errors using a centralized system that integrates seamlessly with your existing tools and processes."
-                  image={paymentLinkImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  image={item.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={item.maxImageHeight}
+                  reverse={item.reverse}
                 />
-
-                <AllInOnePolicy
-                  icon={taskIconTwo}
-                  title="Enhance Vendor Relationships"
-                  description="Build trust with vendors through consistent on-time payments. Foster better partnerships by maintaining transparency and resolving payment queries faster with a reliable payment system."
-                  image={shareImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="305px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconThree}
-                  title="Strengthen Financial Control"
-                  description="Gain real-time visibility into your transactions. Monitor payment statuses, generate detailed reports, and stay compliant with customizable approval workflows tailored to your organization’s needs."
-                  image={paymentOptionImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="243px"
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFour}
-                  title="Improve Cash Flow Management"
-                  description="Ensure smooth operations with faster processing times. Manage recurring expenses like rent, utilities, and vendor payments efficiently to improve cash flow and operational stability."
-                  image={notificationImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconFive}
-                  title="Seamless Integrations"
-                  description="Connect EnKash Express Pay with your ERP, accounting software, or HRMS to simplify workflows and eliminate data silos. Enhance productivity with a fully integrated payment solution."
-                  image={optimizedIcon}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-                <AllInOnePolicy
-                  icon={taskIconSix}
-                  title="Secure and Reliable Platform"
-                  description="Keep your business secure with robust fraud detection, data encryption, and multi-layered access controls. Rely on industry-leading uptime and performance for uninterrupted operations.."
-                  image={secureImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                  reverse
-                />
-
-                <AllInOnePolicy
-                  icon={taskIconSeven}
-                  title="Customizable Solutions for Your Needs"
-                  description="Adapt the platform to your unique business requirements. From approval hierarchies to payment scheduling, EnKash Express Pay offers unparalleled flexibility."
-                  image={advancedImage}
-                  buttonUrl="/sales"
-                  maxImageHeight="259px"
-                />
-              </div>
+              ))}
             </div>
           </div>
         </div>
@@ -315,7 +259,7 @@ const BulkPay = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+               url={salesUrl}
             />
           </div>
         </div>

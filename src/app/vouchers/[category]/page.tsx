@@ -1,9 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-
 import styles from "./page.module.scss"
-import Header from "@/components/header/header"
-import Footer from "@/components/footer/footer"
 import VoucherData, { Voucher } from "../data/voucher-data"
 import {
   blueStepTick,
@@ -22,7 +19,7 @@ import VoucherFaqComponent from "@/components/voucher-page/voucher-faq"
 import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import { blueArrow } from "."
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
+
 
 export async function generateMetadata({
   params,

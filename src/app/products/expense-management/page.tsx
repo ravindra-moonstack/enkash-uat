@@ -1,4 +1,3 @@
-//@ts-nocheck
 import Image from "next/image"
 import styles from "./page.module.scss"
 import React from "react"
@@ -50,8 +49,21 @@ import bg3 from "./img/bg2.jpg"
 import bg4 from "./img/bg1.jpg"
 import bg5 from "./img/bg6.jpg"
 import bg6 from "./img/bg5.jpg"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 // import OptimisedSpline from "@/components/OptimisedSpline/OptimisedSpline"
 // import Loading from "../../loading"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Expense Management Suite: Automate & Track Business Spending",
+  description:
+    "Automate and control business expenses with EnKash. Track spending in real-time, set budgets, manage reimbursements, and streamline finance workflows on one platform.",
+  alternates: {
+    canonical: "https://www.enkash.com/expense-management/",
+  },
+})
+const salesUrl = getSalesUrl("/expense-management")
 
 const mergedCards = allProductSections.flatMap((section) => section.items)
 const cards = stackcardData.map((item: any) => ({
@@ -62,7 +74,7 @@ const cards = stackcardData.map((item: any) => ({
       title={item.title}
       description={item.description}
       image={item.image}
-      buttonUrl={item.buttonUrl}
+      buttonUrl={salesUrl}
       maxImageHeight="300px"
     />
   ),
@@ -73,7 +85,7 @@ const ExpenseManagement = (): React.JSX.Element => {
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>
         <div className={`${styles.spline_background}`}>
-          <spline-viewer url="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode"></spline-viewer>
+          {/* <spline-viewer url="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode"></spline-viewer> */}
         </div>
 
         {/* <OptimisedSpline
@@ -128,7 +140,7 @@ const ExpenseManagement = (): React.JSX.Element => {
               />
             </div>
             <div className="mt-3 pointer-auto text-center">
-              <RectangleButton title="Talk to us" theme="blue" url="/sales/" />
+              <RectangleButton title="Talk to us" theme="blue" url={salesUrl} />
             </div>
           </div>
 
@@ -157,6 +169,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           data={integrationData}
           imageSrc={advanceAi}
           imageAlt="card background"
+          buttonUrl={salesUrl}
           reverse
         />
         <ContentShowcase
@@ -166,6 +179,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           imageSrc={receipt}
           imageAlt="card background"
           bgColor="bg-color-soft-mint"
+          buttonUrl={salesUrl}
         />
         <ContentShowcase
           heading="UPI- Based Petty Cash"
@@ -173,6 +187,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           data={dashboardData}
           imageSrc={upi}
           imageAlt="card background"
+          buttonUrl={salesUrl}
           reverse
         />
         <ContentShowcase
@@ -182,6 +197,7 @@ const ExpenseManagement = (): React.JSX.Element => {
           imageSrc={walletExpense}
           imageAlt="card background"
           bgColor="bg-color-soft-mint"
+          buttonUrl={salesUrl}
         />
       </div>
 
@@ -221,28 +237,23 @@ const ExpenseManagement = (): React.JSX.Element => {
       <div className={`${styles.card_stacking_row} bg_white_index`}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
-            <div className={`${styles.title} text-center px-md-5`}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Spend Analytics & Insights: ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "Turn Every Rupee Spent ",
-                    color: "color-equity-blue",
-                  },
-                  {
-                    title: "into Actionable Insight",
-                    color: "color-black",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Spend Analytics & Insights: ",
+                  color: "color-black",
+                },
+                {
+                  title: "Turn Every Rupee Spent ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "into Actionable Insight",
+                  color: "color-black",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -374,13 +385,13 @@ const ExpenseManagement = (): React.JSX.Element => {
         <CTASection
           title="Build a leaner, smarter, & future-ready finance team"
           buttonText="Get Started Today"
-          buttonUrl="/sales/?source=expense_management"
+          buttonUrl={salesUrl}
           actionImage={blueArrow}
           hoverImage={whiteArrow}
         />
       </div>
 
-        <FaqSection faqData={faqData} />
+      <FaqSection faqData={faqData} />
     </div>
     // </Suspense>
   )
