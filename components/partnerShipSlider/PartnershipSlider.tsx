@@ -24,10 +24,12 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
         arrows: false,
         infinite: true,
         speed: 5000,
-        slidesToShow: 3,
+        slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
         autoplaySpeed: 4000,
+        adaptiveHeight: false,
+        Draggable: true,
         pauseOnHover: true,
         responsive: [
             {
@@ -54,20 +56,7 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
                     <div key={slide.id} className={styles.slideContainer}>
                         <div className={styles.slideCard}>
                             <div className={styles.slideIcon}>
-                                <svg
-                                    width="32"
-                                    height="32"
-                                    viewBox="0s 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M12 2L12 22M2 12L22 12"
-                                        stroke="#2563EB"
-                                        strokeWidth="3"
-                                        strokeLinecap="round"
-                                    />
-                                </svg>
+                                {slide.icon}
                             </div>
                             <h3 className={styles.slideTitle}>{slide.title}</h3>
                             <p className={styles.slideDescription}>{slide.description}</p>
