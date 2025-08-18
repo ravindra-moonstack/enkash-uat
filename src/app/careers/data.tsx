@@ -3,50 +3,50 @@ import { parksIcon1, parksIcon2, parksIcon3, parksIcon4, parksIcon5, parksIcon6,
 
 const HomePageRewardsVouchersSlide = [
   {
-    title: "E-commerce Vouchers",
+    title: "Competitive Compensation",
     title2: "",
     description:
-      "Distribute vouchers usable on top online platforms - instantly.",
+      "We reward great work with performance-based bonuses and competitive pay packages.",
     cardImage: parksIcon1,
    
   },
   {
-    title: "E-commerce Vouchers",
+    title: "Health & Wellness",
     title2: "",
     description:
-      "Distribute vouchers usable on top online platforms - instantly.",
+      "Comprehensive health insurance, paid sick leave, and proactive wellness initiatives for all.",
     cardImage: parksIcon2,
    
   },
   {
-    title: "E-commerce Vouchers",
+    title: "Learning & Development",
     title2: "",
     description:
-      "Distribute vouchers usable on top online platforms - instantly.",
+      "Upskill through internal hackathons, mentorship, and hands-on learning opportunities.",
     cardImage: parksIcon3,
    
   },
   {
-    title: "E-commerce Vouchers",
+    title: "Paid Time Off",
     title2: "",
     description:
-      "Distribute vouchers usable on top online platforms - instantly.",
+      "We offer generous leave policy and encourage you to rest, recharge, and reset.",
     cardImage: parksIcon4,
    
   },
   {
-    title: "E-commerce Vouchers",
+    title: "Employee Stock Options",
     title2: "",
     description:
-      "Distribute vouchers usable on top online platforms - instantly.",
+      "Ownership opportunities through ESOPs for key roles driving our growth.",
     cardImage: parksIcon5,
    
   },
   {
-    title: "E-commerce Vouchers",
+    title: "Career Growth Path",
     title2: "",
     description:
-      "Distribute vouchers usable on top online platforms - instantly.",
+      "Accelerated career paths with internal promotions and leadership-driven advancement.",
     cardImage: parksIcon6,
    
   },
