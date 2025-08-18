@@ -1,0 +1,69 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixin" as *;
+
+.CoreValuesDataSection {
+  padding: 50px 20px;
+  background-image: url("./img/coreValueBg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include for-laptops {
+    padding: 90px 20px;
+  }
+
+  .CoreValuesDataSectionOuter {
+    background: #fff;
+    padding: 50px 50px 30px;
+    position: relative;
+    border-radius: 20px;
+    z-index: 1;
+    &::after {
+      position: absolute;
+      bottom: -90px;
+      right: 0;
+      content: "";
+      background: url("./img/coreValueHand.webp");
+      background-position: bottom right;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 320px;
+      height: 460px;
+    }
+    .content{
+        max-width: 400px;
+        p{
+            span{
+
+                color: #A5A5A5;
+            }
+        }
+    }
+  }
+}
+
+.perksPayCheck{
+    padding: 50px 20px;
+    @include for-laptops{
+        padding: 90px 20px 70px;
+    }
+
+    .rewardsBottomSliderBox{
+     @include for-laptops{
+
+         padding-right: 27px;
+        }
+    }
+    .rewardsBottomSliderContentBox{
+        max-width: 1100px;
+        margin: auto;
+    }
+}
+
+
+.yourOpportunitySection{
+  background-image: url('./img/yourOpportunitySectionBg.webp');
+  padding: 300px 20px 90px;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

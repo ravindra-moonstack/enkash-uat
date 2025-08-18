@@ -1,0 +1,24 @@
+@use "./../../styles/mixin" as *;
+
+.investerLogosOuter{
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 20px;
+    @include for-laptops{
+        padding-bottom: 90px;
+        flex-wrap: nowrap;
+        
+    }
+
+    .investerLogos{
+        padding: 0 20px ;
+        img{
+            width: auto;
+            max-height: 50px;
+            object-fit: contain;
+            object-position: center;
+        }
+    }
+}
