@@ -7,7 +7,6 @@ import styles from "./header.module.scss"
 import navBarTopTtitle from "./data/nav-bar"
 import { enkashBlueLogo, arrowDownBlack, arrowDownWhite } from "."
 import ResourcesModal from "./modal/resources-modal"
-import { usePathname } from "next/navigation"
 import PaymentModal from "./modal/payment-modal"
 import CardModal from "./modal/card-modal"
 import ExpensesModal from "./modal/expenses-modal"
@@ -18,7 +17,7 @@ interface props {
   utmSource?: string
 }
 
-const WebHeader = ({ }: props) => {
+const WebHeader = ({}: props) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   const [isHeaderBgWhite, setIsHeaderBgWhite] = useState(false)
   const [, setItemWidth] = useState(0)
@@ -28,8 +27,6 @@ const WebHeader = ({ }: props) => {
   const [active, setActive] = useState("sales")
   const [modalLeft, setModalLeft] = useState<number | null>(null)
   const [activeTab, setActiveTab] = useState("login")
-  const pathname = usePathname() 
-  const lastSlug = pathname.split("/").filter(Boolean).pop() || "default"
 
   useEffect(() => {
     if (itemRef.current) {
@@ -60,8 +57,6 @@ const WebHeader = ({ }: props) => {
 
   return (
     <div className={styles.header_wrapper}>
-      {/* <TopBannerWeb /> */}
-
       <header
         className={`w-full absolute z-10 d-flex flex-column mx-auto ${
           styles.header
@@ -119,16 +114,15 @@ const WebHeader = ({ }: props) => {
                   />
                 </li>
               ))}
-              {/* Arrow rendered below hovered item */}
+
               {hoveredIndex !== null && modalLeft !== null && (
                 <div
                   className={styles.arrow}
                   style={{
-                    left: `calc(${modalLeft}px - 8px)`, // 8px is half arrow width
+                    left: `calc(${modalLeft}px - 8px)`,
                     top: "132%",
                     position: "absolute",
                     zIndex: 0,
-                    // bottom: "0%",
                   }}
                 />
               )}
@@ -138,7 +132,7 @@ const WebHeader = ({ }: props) => {
             className={`d-flex align-items-center gap-4 ${styles.nav_right}`}
           >
             {/* Get Support */}
-            <Link href={`/support/?source=${lastSlug}`} target="_blank">
+            <Link href={`/support/?source=nav-bar`} target="_blank">
               <button
                 className={`${styles.button_getStarted} ${
                   active === "get-support" ? styles.active : ""
@@ -152,7 +146,7 @@ const WebHeader = ({ }: props) => {
             <div className={styles.button_switch_wrapper}>
               {/* Login */}
               <Link
-                href={`https://home.enkash.com/login?source=${lastSlug}`}
+                href={`https://home.enkash.com/login?source=nav-bar`}
                 target="_blank"
               >
                 <button
@@ -166,7 +160,7 @@ const WebHeader = ({ }: props) => {
               </Link>
 
               {/* Talk to Sales */}
-              <Link href={`/sales/?source=${lastSlug}`} target="_blank">
+              <Link href={`/sales/?source=nav-bar`} target="_blank">
                 <button
                   className={`${styles.button} ${styles.sales} ${
                     activeTab === "sales" ? styles.active : ""
@@ -177,7 +171,6 @@ const WebHeader = ({ }: props) => {
                 </button>
               </Link>
 
-              {/* Slider */}
               <span
                 className={styles.slider}
                 style={{

@@ -1,31 +1,41 @@
+"use client"
 import React, { memo } from "react"
 import styles from "./CTASection.module.scss"
 import { DynamicHeading, RectangleButton } from ".."
 import { StaticImageData } from "next/image"
+import { usePathname } from "next/navigation"
 
 interface CTASectionProps {
   title: string
   buttonText: string
-  buttonUrl: string
-  actionImage: string | StaticImageData
-  hoverImage: string | StaticImageData
-  background?: string // can be solid or gradient
+  buttonUrl?: string
+  actionImage?: string | StaticImageData
+  hoverImage?: string | StaticImageData
+  background?: string
   className?: string
 }
 
 const CTASection: React.FC<CTASectionProps> = ({
   title,
   buttonText,
-  buttonUrl,
+  buttonUrl = "/sales", // default path
   actionImage,
   hoverImage,
-  background = "linear-gradient(180deg, #1c5af4 0%, #10348e 100%)", // default blue
+  background = "linear-gradient(180deg, #1c5af4 0%, #10348e 100%)",
   className = "",
 }) => {
+  const pathname = usePathname()
+
+  // Extract the last slug
+  const lastSlug = pathname?.split("/").filter(Boolean).pop() || "default"
+
+  // Build final URL: /sales?source=last-slug
+  const finalUrl = `${buttonUrl}?source=${lastSlug}`
+
   return (
     <div
       className={`${styles.blueBackGroundSection} bg_white_index ${className}`}
-      style={{ background }} // use background instead of backgroundColor
+      style={{ background }}
     >
       <div className="d-flex justify-content-center flex-column gap-32 align-items-center max-w-auto">
         <div className="d-flex justify-content-center align-items-center text-center">
@@ -41,7 +51,7 @@ const CTASection: React.FC<CTASectionProps> = ({
             theme="outline-blue"
             actionImage={actionImage}
             hoverImage={hoverImage}
-            url={buttonUrl}
+            url={finalUrl}
           />
         </div>
       </div>

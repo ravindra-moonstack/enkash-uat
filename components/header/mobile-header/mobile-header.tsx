@@ -14,7 +14,6 @@ import RectangleButton from "@/components/buttons/rectangle-button/rectangle-but
 import SubProductListView from "./sub-product-list-view"
 import resourseProducts from "../data/resources"
 import partnershipProducts from "../data/partnership"
-import { usePathname } from "next/navigation"
 
 interface Props {
   utmSource?: string
@@ -25,8 +24,6 @@ const MobileHeader = ({ utmSource }: Props) => {
     null
   )
   const [currentStep, setCurrentStep] = useState(0)
-  const pathname = usePathname() 
-  const lastSlug = pathname.split("/").filter(Boolean).pop() || "website"
 
   const signupUrl =
     utmSource !== "" ? `/sales/?source=${utmSource}` : "/sales/?source"
@@ -138,18 +135,17 @@ const MobileHeader = ({ utmSource }: Props) => {
             <div
               className={`d-flex justify-content-center ${styles.buttons_container}`}
             >
-            
               <RectangleButton
                 title="Talk to Sales"
                 theme="blue"
-                url={`/sales/?source=${lastSlug}`}
+                url={`/sales/?source=nav-bar`}
                 width="100%"
               />
 
               <RectangleButton
                 title="Log In"
                 theme="outline-blue"
-                url={`https://home.enkash.com/login?source=${lastSlug}`}
+                url={`https://home.enkash.com/login?source=nav-bar`}
                 width="100%"
               />
             </div>

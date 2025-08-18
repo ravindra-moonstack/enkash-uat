@@ -1,6 +1,33 @@
 // common/utils/getSalesUrl.ts
+
+/**
+ * Extract last slug from pathname
+ * Example: "/products/expense-management" => "expense-management"
+ */
+function getLastSlug(pathname?: string): string {
+  return pathname?.split("/").filter(Boolean).pop() || "home"
+}
+
+/**
+ * Generate Sales URL
+ */
 export function getSalesUrl(pathname?: string): string {
-  // Agar pathname diya hai to uska last slug lo
-  const slug = pathname?.split("/").filter(Boolean).pop() || "home";
-  return `/sales/?source=${slug}`;
+  const slug = getLastSlug(pathname)
+  return `/sales?source=${slug}`
+}
+
+/**
+ * Generate Login URL
+ */
+export function getLoginUrl(pathname?: string): string {
+  const slug = getLastSlug(pathname)
+  return `https://home.enkash.com/login?source=${slug}`
+}
+
+/**
+ * Generate Support URL
+ */
+export function getSupportUrl(pathname?: string): string {
+  const slug = getLastSlug(pathname)
+  return `/support?source=${slug}`
 }

@@ -3,8 +3,22 @@ import Image from "next/image"
 import { DynamicHeading, LogoSlider, TestimonialSlider } from "@/components"
 import styles from "./page.module.scss"
 import { help, login, logo, support } from "."
-
 import { testimonialData } from "./data"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getLoginUrl, getSupportUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Contact EnKash Sales Get our Payment & Spend Solutions",
+  description:
+    "Connect with EnKash’s sales team to explore tailored payment, expense, and card management solutions. Get expert guidance to streamline your business finance operations.",
+  alternates: {
+    canonical: "https://www.enkash.com/sales/",
+  },
+})
+
+const loginUrl = getLoginUrl("/sales")
+const supportUrl = getSupportUrl("/sales")
 
 const Sales = () => {
   return (
@@ -43,6 +57,8 @@ const Sales = () => {
                       />
                     </div>
                   </li>
+
+                  {/* ✅ Support Link dynamic */}
                   <li>
                     <div className="d-flex gap-3">
                       <Image
@@ -61,7 +77,7 @@ const Sales = () => {
                           {
                             title: "Need Support",
                             color: "color-white underline f-7",
-                            link: "/support",
+                            link: supportUrl,
                           },
                         ]}
                         headingTag="p"
@@ -69,6 +85,8 @@ const Sales = () => {
                       />
                     </div>
                   </li>
+
+                  {/* ✅ Login Link dynamic */}
                   <li>
                     <div className="d-flex gap-3">
                       <Image
@@ -87,7 +105,7 @@ const Sales = () => {
                           {
                             title: "Login",
                             color: "color-white underline f-7",
-                            link: "https://home.enkash.com/login",
+                            link: loginUrl,
                           },
                         ]}
                         headingTag="p"
@@ -97,6 +115,7 @@ const Sales = () => {
                   </li>
                 </ul>
               </div>
+
               <div className={`${styles.trunstedBrands} `}>
                 <DynamicHeading
                   content={[
@@ -120,6 +139,7 @@ const Sales = () => {
                 </div>
               </div>
             </div>
+
             <div className="col-md-7 col-12"></div>
 
             <div>

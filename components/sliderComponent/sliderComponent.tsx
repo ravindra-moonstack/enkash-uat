@@ -44,9 +44,9 @@ export default function SliderComponent({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    speed: 1000, // 1 sec fade
-    autoplay: true, // 🔑
-    autoplaySpeed: 2000, // 3 sec delay between fades
+    speed: 1000, 
+    autoplay: true, 
+    autoplaySpeed: 2000, 
     cssEase: "linear",
   }
 

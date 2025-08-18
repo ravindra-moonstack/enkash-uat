@@ -1,4 +1,3 @@
-"use client"
 import React from "react"
 import Image from "next/image"
 import {
@@ -10,6 +9,18 @@ import {
 import styles from "./page.module.scss"
 import { location, logo } from "."
 import { contactData, locationData, testimonialData } from "./data"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import ContactForm from "@/components/contact-form/contactForm"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Contact EnKash | Get Support or Speak to Our Team",
+  description:
+    "Have questions about EnKash products or services? Reach out to our team for sales inquiries, support, or partnership opportunities. We’re here to help your business grow.",
+  alternates: {
+    canonical: "https://www.enkash.com/contact-us/",
+  },
+})
 
 const ContactUs = () => {
   return (
@@ -77,7 +88,10 @@ const ContactUs = () => {
                 </ul>
               </div>
             </div>
-            <div className="col-md-7 col-12"></div>
+            <div className="col-md-7 col-12">
+              {" "}
+              <ContactForm />
+            </div>
           </div>
 
           <div className={styles.logoSlider}>
