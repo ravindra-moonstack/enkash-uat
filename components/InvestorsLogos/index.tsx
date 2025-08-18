@@ -1,0 +1,5 @@
+export { default as investerLogo } from "./img/investerLogo.png"
+export { default as investerLogo2 } from "./img/investerLogo2.png"
+export { default as investerLogo3 } from "./img/investerLogo3.png"
+export { default as investerLogo4 } from "./img/investerLogo4.png"
+export { default as investerLogo5 } from "./img/investerLogo5.png"

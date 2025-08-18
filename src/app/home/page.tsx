@@ -2,8 +2,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
 import {
-  Header,
-  Footer,
   DynamicHeading,
   RectangleButton,
   LogoSlider,
@@ -33,9 +31,8 @@ import {
   prepaidCardsDataSecond,
   rewardData,
   ctaButtonData,
-  
 } from "./data"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
+
 import UtilityBillPayments from "@/components/UtilityBillPayments/UtilityBillPayments"
 import PartnerSection from "@/components/partnerSectionData/partnerSectionData"
 import PaymentGatewayCare from "@/components/homePagePaymentBox/PaymentGatewayCard"
@@ -52,9 +49,6 @@ const Home = (): React.JSX.Element => {
   return (
     <>
       <div className={`color-white ${styles.home_container}`}>
-        <Header utmSource="expense_management" />
-
-        <TalkToSales />
         <section className={`${styles.topBanner}`}>
           <div className="max-w-auto">
             <div className="row">
@@ -100,7 +94,15 @@ const Home = (): React.JSX.Element => {
           <div className="max-w-auto">
             <div className="row">
               <div className="col-md-12">
-                <div style={{color:'#A5A5A5',marginBottom:"10px",fontWeight:'300'}}>I want to:</div>
+                <div
+                  style={{
+                    color: "#A5A5A5",
+                    marginBottom: "10px",
+                    fontWeight: "300",
+                  }}
+                >
+                  I want to:
+                </div>
                 <div className={`${styles.ctaButtonSection}`}>
                   {ctaButtonData.map((item, index) => (
                     <div className={`${styles.ctaButtonBox}`} key={index}>
@@ -784,7 +786,11 @@ const Home = (): React.JSX.Element => {
                       </div>
                       <div className="col-sm-6 mb-3 mb-md-0">
                         <div className={`${styles.card} `}>
-                          <Image src={securityIcon4} className={`${styles.bharatBillPaymentImg}`} alt={""}></Image>
+                          <Image
+                            src={securityIcon4}
+                            className={`${styles.bharatBillPaymentImg}`}
+                            alt={""}
+                          ></Image>
                           <DynamicHeading
                             content={[
                               {
@@ -900,7 +906,6 @@ const Home = (): React.JSX.Element => {
         <section className={`${styles.getStartedSection}`}>
           <BottomCtaSection />
         </section>
-        <Footer />
       </div>
     </>
   )
