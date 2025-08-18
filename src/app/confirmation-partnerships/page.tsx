@@ -1,4 +1,4 @@
-import { DynamicHeading, Footer, Header, TalkToSales } from "@/components"
+import { DynamicHeading } from "@/components"
 import Image from "next/image"
 import React from "react"
 import styles from "./page.module.scss"
@@ -16,8 +16,6 @@ export const metadata: Metadata = generateMetaData({
 const ConfirmationPartner = () => {
   return (
     <div>
-      <Header />
-      <TalkToSales />
       <div className={`${styles.thankyouPage}`}>
         <div className="max-w-auto">
           <div className={`${styles.thankyouContainer}`}>
@@ -124,7 +122,6 @@ const ConfirmationPartner = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </div>
   )
 }
