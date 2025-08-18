@@ -1,0 +1,100 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixin" as *;
+
+.topBanner {
+  background-image: url("./img/top_banner_bg.webp");
+  padding: 110px 20px 50px;
+  text-align: center;
+  background-size: cover;
+  background-position: center;
+  @include for-laptops {
+    padding: 120px 20px;
+  }
+  .customBreadcrumbSection {
+    a {
+      color: #fff !important;
+    }
+    li > span {
+      color: #0663fc !important;
+    }
+  }
+  .bannerContentSetionTop {
+    background-color: rgba(255, 255, 255, 0.1);
+    max-width: 1170px;
+    margin: auto;
+    margin-top: 20px;
+    padding: 50px 20px 30px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    @include for-laptops {
+      padding: 50px 100px 100px;
+      margin: 0;
+    }
+    .bannerOurSection {
+      .bannerOurCard {
+        background: linear-gradient(
+          135deg,
+          rgb(255 255 255 / 10%) 0%,
+          rgb(255 255 255 / 23%) 100%
+        );
+        padding: 30px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        @include for-laptops {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .banner_heading {
+    margin-bottom: 20px;
+  }
+
+  .banner_subHeading {
+    :global(p) {
+      letter-spacing: 3px;
+    }
+  }
+  .bannerBottomBoxInners {
+    background: rgba(255, 255, 255, 0.77);
+    border-radius: 10px;
+    padding: 40px 20px;
+  }
+}
+.leaderSection {
+  padding: 50px 20px;
+  background: #ededed;
+  @include for-laptops {
+    padding: 90px 20px;
+  }
+}
+
+.investorsSection {
+  padding: 50px 20px;
+  @include for-laptops {
+    padding: 90px 20px;
+  }
+}
+.careerSection {
+  background-image: url("./img/careerSectionBanner.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 50px 20px;
+  @include for-laptops {
+    padding: 70px 20px;
+  }
+  .careerInnerBox {
+    background: rgba(255, 255, 255, 0.77);
+    border-radius: 10px;
+    padding: 40px 20px;
+  }
+}
+
+.locationsSection {
+  padding: 50px 20px;
+  @include for-laptops {
+    padding: 90px 20px;
+  }
+}

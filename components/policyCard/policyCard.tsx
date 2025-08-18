@@ -9,7 +9,8 @@ interface CardProps {
   title: string
   description?: string
   className?: string
-  link?: string
+  url?: string
+  hoverClass?: string
 }
 
 const PolicyCard: React.FC<CardProps> = ({
@@ -17,7 +18,8 @@ const PolicyCard: React.FC<CardProps> = ({
   title,
   description,
   className,
-  link,
+  url,
+  hoverClass,
 }) => {
   const cardContent = (
     <>
@@ -27,7 +29,7 @@ const PolicyCard: React.FC<CardProps> = ({
       </div>
 
       {/* Title and Description */}
-      <div className="d-flex flex-column text-start">
+      <div className="d-flex  flex-column text-start">
         <DynamicHeading
           content={[{ title: title, color: "color-black" }]}
           headingTag="h5"
@@ -46,15 +48,15 @@ const PolicyCard: React.FC<CardProps> = ({
   )
 
   return (
-    <div className={`${className} ${styles.policyCard}`}>
-      {link ? (
-        <Link href={link} passHref legacyBehavior>
-          <a className="d-flex align-items-start text-decoration-none">
+    <div className={`${className} ${styles.policyCard} ${hoverClass}`}>
+      {url ? (
+        <Link href={url} passHref legacyBehavior >
+          <a className="d-flex gap-3 align-items-start text-decoration-none">
             {cardContent}
           </a>
         </Link>
       ) : (
-        <div className="d-flex align-items-start">{cardContent}</div>
+        <div className="d-flex gap-3 align-items-start">{cardContent}</div>
       )}
     </div>
   )

@@ -1,10 +1,57 @@
 import { RectangleButtonTheme } from "@/components/buttons/rectangle-button/rectangle-button"
-import { AdiadsBg, Adiadslogo, AdiadsProfile, bigBg, biglogo, bigProfile, BuiltforBuildersCardIcon, collectPaymentboxIcon, delMonteBg, delMontelogo, delMonteProfile, honeycombBg, honeycomblogo, honeycombProfile, makePayment1, makePayment2, makePayment3, makePayment4, prepaidBottom1, prepaidBottom2, prepaidTop1, prepaidTop2, prepaidTop3, prepaidTop4, prepaidTop5, receivableBottomIcon, rewardIcon, rewardImg1, rewardImg2, rewardImg3, rewardSliderIcon1, rewardSliderIcon2, rewardSliderIcon3, rewardSliderIcon4, rewardSliderIcon5, vianetBackLogo, vianetBg, vianetlogo, vianetProfile } from "."
+import {
+  AdiadsBg,
+  Adiadslogo,
+  AdiadsProfile,
+  bigBg,
+  biglogo,
+  bigProfile,
+  BuiltforBuildersCardIcon,
+  BuiltforBuildersCardIcon2,
+  BuiltforBuildersCardIcon3,
+  collectPaymentboxIcon1,
+  collectPaymentboxIcon2,
+  collectPaymentboxIcon3,
+  collectPaymentboxIcon4,
+  collectPaymentboxIcon5,
+  collectPaymentboxIcon6,
+  delMonteBg,
+  delMontelogo,
+  delMonteProfile,
+  honeycombBg,
+  honeycomblogo,
+  honeycombProfile,
+  makePayment1,
+  makePayment2,
+  makePayment3,
+  makePayment4,
+  prepaidBottom1,
+  prepaidBottom2,
+  prepaidTop1,
+  prepaidTop2,
+  prepaidTop3,
+  prepaidTop4,
+  prepaidTop5,
+  receivableBottomIcon,
+  rewardIcon,
+  rewardImg1,
+  rewardImg2,
+  rewardImg3,
+  rewardSliderIcon1,
+  rewardSliderIcon2,
+  rewardSliderIcon3,
+  rewardSliderIcon4,
+  rewardSliderIcon5,
+  vianetBackLogo,
+  vianetBg,
+  vianetlogo,
+  vianetProfile,
+} from "."
 
 const HomePageRewardsVouchersSlide = [
   {
-    titleHtml: "E-commerce Vouchers",
-    title2: "",
+    titleHtml: "E-commerce ",
+    title2: "Vouchers",
     description:
       "Distribute vouchers usable on top online platforms - instantly.",
     cardImage: rewardSliderIcon1,
@@ -12,8 +59,8 @@ const HomePageRewardsVouchersSlide = [
     hoverClass: "HomePageRewardsVouchersCard",
   },
   {
-    titleHtml: "Food & Beverages Vouchers",
-    title2: "",
+    titleHtml: "Food & Beverages ",
+    title2: "Vouchers",
     description:
       "Offer employees or partners vouchers for cafes, restaurants, and delivery apps.",
     cardImage: rewardSliderIcon2,
@@ -22,8 +69,8 @@ const HomePageRewardsVouchersSlide = [
   },
 
   {
-    titleHtml: "Health & Wellness Vouchers",
-    title2: "",
+    titleHtml: "Health & Wellness ",
+    title2: "Vouchers",
     description:
       "Promote wellbeing with rewards redeemable for fitness, health, and self-care.",
     cardImage: rewardSliderIcon3,
@@ -31,8 +78,8 @@ const HomePageRewardsVouchersSlide = [
     hoverClass: "HomePageRewardsVouchersCard",
   },
   {
-    titleHtml: "Music & Movies Vouchers",
-    title2: "",
+    titleHtml: "Music & Movies ",
+    title2: "Vouchers",
     description:
       "Enjoy blockbuster movies, trending shows, and music with versatile vouchers.",
     cardImage: rewardSliderIcon4,
@@ -40,8 +87,8 @@ const HomePageRewardsVouchersSlide = [
     hoverClass: "HomePageRewardsVouchersCard",
   },
   {
-    titleHtml: "Apparel Vouchers",
-    title2: "",
+    titleHtml: "Apparel ",
+    title2: "Vouchers",
     description:
       "Reward with fashion – vouchers redeemable at leading clothing and lifestyle brands.",
     cardImage: rewardSliderIcon5,
@@ -49,7 +96,7 @@ const HomePageRewardsVouchersSlide = [
     hoverClass: "HomePageRewardsVouchersCard",
   },
 ]
- const adidasData = [
+const adidasData = [
   {
     image: AdiadsBg,
     title1: "Read, how Adidas Unlocked",
@@ -121,36 +168,41 @@ const scrollCardsData = [
     title: "Digital Petty Cash",
     description:
       "Track and manage small-ticket expenses across branches in real time.",
+    url: "/digital-petty-cash",
     icon: "",
-    link: "/digital-petty-cash",
+    hoverClass:"scrollCardHover"
   },
   {
     title: "Budget & Advances",
     description:
       "Set budgets, issue advances, and monitor usage against spending limits.",
+    url: "/budget-and-advances",
     icon: "",
-    link: "/budget-and-advances",
+     hoverClass:"scrollCardHover"
   },
   {
     title: "Reimbursements",
     description:
       "Enable fast, policy-aligned reimbursements with built-in approvals.",
+    url: "/reimbursements",
     icon: "",
-    link: "/reimbursements",
+     hoverClass:"scrollCardHover"
   },
   {
     title: "Scan & Drop Receipts",
     description:
       "Snap receipts and auto-extract data for quick claim submissions.",
+    url: "/receipts",
     icon: "",
-    link: "/receipts",
+     hoverClass:"scrollCardHover"
   },
   {
     title: "Spend Analytics",
     description:
       "Get deep insights into spends with smart, real-time analytics.",
+    url: "/#",
     icon: "",
-    link: "/#",
+     hoverClass:"scrollCardHover"
   },
 ]
 
@@ -161,6 +213,7 @@ const makePaymentData = [
       "Automate and manage all business utility bills from one unified dashboard.",
     womanImg: makePayment1,
     url: "/utility-bill-payments",
+    hoverClass: "hoverMakePayment1",
   },
   {
     title: "Vendor Payments",
@@ -168,6 +221,7 @@ const makePaymentData = [
       "Pay suppliers and vendors on time with complete visibility and control.",
     womanImg: makePayment2,
     url: "/vendor-payments",
+    hoverClass: "hoverMakePayment2",
   },
   {
     title: "Rental Payments",
@@ -175,6 +229,7 @@ const makePaymentData = [
       "Schedule recurring rent and lease payments with auto-reminders and logs.",
     womanImg: makePayment3,
     url: "/rental-payments",
+    hoverClass: "hoverMakePayment3",
   },
   {
     title: "Bulk Pay",
@@ -182,6 +237,7 @@ const makePaymentData = [
       "Send high-volume payouts with role-based, multi-level approval flows.",
     womanImg: makePayment4,
     url: "/bulk-payments",
+    hoverClass: "hoverMakePayment4",
   },
 ]
 const BuiltforBuildersCardData = [
@@ -198,7 +254,7 @@ const BuiltforBuildersCardData = [
     subtitle:
       "Effortlessly sync with ERPs, accounting platforms, and business tools to centralize your financial operations.",
 
-    icon: BuiltforBuildersCardIcon,
+    icon: BuiltforBuildersCardIcon2,
     url: "",
   },
   {
@@ -206,7 +262,7 @@ const BuiltforBuildersCardData = [
     subtitle:
       "Simplify approvals and process flows to eliminate bottlenecks and boost team productivity.",
 
-    icon: BuiltforBuildersCardIcon,
+    icon: BuiltforBuildersCardIcon3,
     url: "",
   },
 ]
@@ -216,48 +272,48 @@ const cardsData = [
     subtitle:
       "Developer-first, no-code gateway for seamless payment collections across channels.",
 
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
+    icon: collectPaymentboxIcon1,
+    url: "/payment-gateway",
   },
   {
     title: "Payment Links",
     subtitle:
       "Shareable links via WhatsApp, SMS, or social - get paid instantly without friction.",
 
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
+    icon: collectPaymentboxIcon2,
+    url: "/payment-links",
   },
   {
     title: "Payment Button",
     subtitle:
       "Plug-and-play buttons for your website. Quick setup, no coding needed.",
 
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
+    icon: collectPaymentboxIcon3,
+    url: "/payment-button",
   },
   {
     title: "UPI Payments",
     subtitle:
       "Accept UPI payments via BHIM, PhonePe, WhatsApp & more, no VPA, no SMS fatigue.",
 
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
+    icon: collectPaymentboxIcon4,
+    url: "/upi-payments",
   },
   {
     title: "QR Code",
     subtitle:
       "Accept secure, contactless payments with instant-scannable QR codes.",
 
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
+    icon: collectPaymentboxIcon5,
+    url: "/qr-code",
   },
   {
     title: "Affordability Suite",
     subtitle:
       "Offer customers EMIs, BNPL & credit options to boost conversions and cash flow.",
 
-    icon: collectPaymentboxIcon,
-    url: "/products/utility-bill-payments",
+    icon: collectPaymentboxIcon6,
+    url: "/affordability-suite",
   },
 ]
 const PayablesData = [
@@ -461,7 +517,7 @@ const counterData = [
   },
 ]
 
-export{
+export {
   counterData,
   HomePageRewardsVouchersSlide,
   adidasData,
@@ -474,5 +530,5 @@ export{
   prepaidCardsData,
   prepaidCardsDataSecond,
   rewardData,
-  ctaButtonData
+  ctaButtonData,
 }

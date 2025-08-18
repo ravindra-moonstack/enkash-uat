@@ -1,0 +1,5 @@
+export { default as voicesEnkash1 } from "./img/voicesEnkash1.png"
+export { default as voicesEnkash2 } from "./img/voicesEnkash2.png"
+export { default as voicesEnkash3 } from "./img/voicesEnkash3.png"
+export { default as voicesEnkash4 } from "./img/voicesEnkash4.png"
+export { default as voicesEnkash5 } from "./img/voicesEnkash5.png"
