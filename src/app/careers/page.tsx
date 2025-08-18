@@ -6,6 +6,7 @@ import {
   RectangleButton,
   CustomBreadcrumb,
   FeatureCard,
+  Header,
 } from "@/components"
 import { HomePageRewardsVouchersSlide } from "./data"
 
@@ -84,6 +85,7 @@ const jobs = [
 const Careers = (): React.JSX.Element => {
   return (
     <>
+    <Header />
       <div className={`color-white ${styles.home_container}`}>
         <section className={`${styles.topBanner}`}>
           <CareersHero />
@@ -92,7 +94,7 @@ const Careers = (): React.JSX.Element => {
           <div className="max-w-auto">
             <div className={`${styles.CoreValuesDataSectionOuter}`}>
               <div className="row">
-                <div className="col-md-5">
+                <div className="col-md-5 mb-4 mb-md-0">
                   <div className={`${styles.subTitle}`}>
                     <DynamicHeading
                       content={[
@@ -179,7 +181,7 @@ const Careers = (): React.JSX.Element => {
             <div className={`${styles.rewardsBottomSliderContentBox}`}>
               <div className="row">
                 {HomePageRewardsVouchersSlide.map((item, index) => (
-                  <div className="col-md-4" key={index}>
+                  <div className="col-md-4 mb-4" key={index}>
                     <div className={`${styles.rewardsBottomSliderBox}`}>
                       <CareersPaycheck {...item} />
                     </div>
@@ -201,7 +203,7 @@ const Careers = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="p"
-                  className="text-center mb-3"
+                  className="text-center mb-2"
                 />
                 <DynamicHeading
                   content={[
@@ -222,7 +224,7 @@ const Careers = (): React.JSX.Element => {
             </div>
           </div>
         </section>
-        <section className={`${styles.yourOpportunitySection}`}>
+        <section className={`${styles.yourOpportunitySection}`} id="yourOpportunitySection">
           <div className="max-w-auto">
             <div className="row">
               <div className="col-md-12">
@@ -250,7 +252,7 @@ const Careers = (): React.JSX.Element => {
                     className="mb-0 f-6"
                   />
                 </div>
-                <div className={`${styles.buttonData}`}>
+                <div className={`${styles.buttonData} mb-4 mb-md-5 mt-3 `}>
                   <HiringProcessModal />
                 </div>
               </div>

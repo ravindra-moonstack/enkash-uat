@@ -1,5 +1,6 @@
 import { FC } from "react"
 import styles from "./YourOpportunityCareers.module.scss"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface YourOpportunityCareersProps {
   title: string
@@ -19,8 +20,17 @@ const YourOpportunityCareers: FC<YourOpportunityCareersProps> = ({
   return (
     <div className={`${styles.careerCard}`}>
       <div className={`${styles.careerCardTitleDesc}`}>
-        <h5 className="mb-1 fw-bold">{title}</h5>
-        <p className="mb-0 ">{description}</p>
+         <DynamicHeading
+                content={[
+                  {
+                    title: title,
+                    color: "color-white subHeading",
+                  },
+                ]}
+                headingTag="p"
+                className="mb-2"
+              />
+        <p className="mb-0 f-3">{description}</p>
       </div>
       <div className={`${styles.careerCardDepartmentLocation}`}>
         <span>{department}</span>
@@ -51,14 +61,16 @@ const YourOpportunityCareers: FC<YourOpportunityCareersProps> = ({
           </svg>
           {location}
         </span>
-        <a
-          href="mailto:careers@enkash.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn btn-primary btn-sm"
-        >
-          APPLY NOW
-        </a>
+        <span className={`${styles.careerCardButton}`}>
+          <a
+            href={`mailto:careers@enkash.com?subject=${title}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary btn-sm"
+          >
+            APPLY NOW
+          </a>
+        </span>
       </div>
     </div>
   )

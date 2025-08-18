@@ -54,7 +54,7 @@ const HiringProcessModal = () => {
       </Button>
 
       {/* Popup Modal */}
-      <Modal show={show} onHide={handleClose} centered size="lg">
+      <Modal show={show} className="careersPagepopupbox" onHide={handleClose} centered size="lg">
         <Modal.Header closeButton>
           <Modal.Title>Our Hiring Process</Modal.Title>
         </Modal.Header>
