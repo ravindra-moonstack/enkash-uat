@@ -80,7 +80,7 @@
     height: 300px;
     border-radius: 12px;
     @include for-laptops {
-      height: auto;
+      height: 450px;
     }
   }
 }
