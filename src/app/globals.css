@@ -136,3 +136,18 @@ a {
 .scrollCardHover:hover h5 span{
 color:#2563eb !important
 }
+.EmployeeSliderOuterGlobal .slick-list .slick-track{
+  padding-top: 50px;
+}
+.EmployeeSliderOuterGlobal .slick-list .slick-track>div:nth-child(odd){
+margin-top: -50px;
+}
+
+@media (max-width:767px) {
+  .EmployeeSliderOuterGlobal .slick-list .slick-track{
+  padding-top: 0px;
+}
+.EmployeeSliderOuterGlobal .slick-list .slick-track>div:nth-child(odd){
+margin-top: 0px;
+}
+}
