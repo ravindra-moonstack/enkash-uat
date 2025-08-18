@@ -37,7 +37,7 @@ const About = (): React.JSX.Element => {
           <div className="max-w-auto">
             <div className="row">
               <div className="col-md-12">
-                <div className={`${styles.customBreadcrumbSection}`}>
+                <div className={`${styles.customBreadcrumbSection} mb-4`}>
                   <CustomBreadcrumb
                     items={[
                       { name: "Home", url: "/" },
