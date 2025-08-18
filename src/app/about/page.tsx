@@ -2,10 +2,7 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
 import {
-  Header,
-  Footer,
   DynamicHeading,
-  RectangleButton,
   CustomBreadcrumb,
 } from "@/components"
 import { scrollIconOne, aboutBannerBottomIcon, careerCardIcon } from "."
@@ -129,7 +126,7 @@ const About = (): React.JSX.Element => {
                 </div>
               </div>
             </div>
-            <div className={`${styles.bannerBottomBox}`}>
+            <div className={`${styles.bannerBottomBox} mt-4 mt-md-5`}>
               <div className="row">
                 <div className="col-md-7">
                   <div className={`${styles.bannerBottomBoxInners}`}>
