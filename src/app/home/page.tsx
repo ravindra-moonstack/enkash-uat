@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import styles from "./page.module.scss"
 import {
@@ -15,7 +14,7 @@ import {
   securityIcon3,
   securityIcon4,
   securityIcon5,
-  bankIcons2
+  bankIcons2,
 } from "."
 import {
   counterData,
@@ -45,6 +44,17 @@ import HomePageSlider from "@/components/homePageSlider/HomePAgeSlider"
 import BuiltforBuildersSection from "@/components/BuiltforBuildersCard/BuiltforBuildersSection"
 import Link from "next/link"
 import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "The Best Payments and Spend Management Platform",
+  description:
+    "Unlock growth with the best payments and spend management platform with products across corporate cards, vouchers, loyalty and more",
+  alternates: {
+    canonical: "https://www.enkash.com/",
+  },
+})
 const Home = (): React.JSX.Element => {
   return (
     <>

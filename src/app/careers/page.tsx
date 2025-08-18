@@ -1,13 +1,5 @@
-"use client"
-import Image from "next/image"
 import styles from "./page.module.scss"
-import {
-  DynamicHeading,
-  RectangleButton,
-  CustomBreadcrumb,
-  FeatureCard,
-  Header,
-} from "@/components"
+import { DynamicHeading } from "@/components"
 import { HomePageRewardsVouchersSlide } from "./data"
 
 import CareersHero from "@/components/CareersHeroSlider/CareersHeroSlider"
@@ -23,6 +15,16 @@ import {
   CoreValuesIcon5,
 } from "."
 import HiringProcessModal from "@/components/HiringProcessModal/HiringProcessModal"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+export const metadata: Metadata = generateMetaData({
+  title: "About EnKash: India’s Leading Spend Management & Payments Platform ",
+  description:
+    "Learn about EnKash’s mission, leadership, and journey in transforming B2B payments. Discover how we empower businesses with smarter spend and finance automation solutions.",
+  alternates: {
+    canonical: "https://www.enkash.com/careers",
+  },
+})
 
 const coreValues = [
   {
@@ -85,7 +87,6 @@ const jobs = [
 const Careers = (): React.JSX.Element => {
   return (
     <>
-    <Header />
       <div className={`color-white ${styles.home_container}`}>
         <section className={`${styles.topBanner}`}>
           <CareersHero />
@@ -224,7 +225,10 @@ const Careers = (): React.JSX.Element => {
             </div>
           </div>
         </section>
-        <section className={`${styles.yourOpportunitySection}`} id="yourOpportunitySection">
+        <section
+          className={`${styles.yourOpportunitySection}`}
+          id="yourOpportunitySection"
+        >
           <div className="max-w-auto">
             <div className="row">
               <div className="col-md-12">
@@ -274,7 +278,6 @@ const Careers = (): React.JSX.Element => {
             </div>
           </div>
         </section>
-
       </div>
     </>
   )
