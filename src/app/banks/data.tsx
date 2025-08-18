@@ -1,4 +1,4 @@
-import imaCard from "./img/containerScreen.svg"
+import imaCard from "./img/containerScreen.webp"
 const dataSets = [
     {
         // iconSrc: iconOne,
@@ -13,7 +13,7 @@ const bankSolutions = [
     {
         title: "Expense Management System",
         content:
-            "Comprehensive digital banking solution with modern UI/UX, real-time transactions, and seamless customer experience across all channels.",
+            "Designed to simplify your workflow, our API-first platform plugs into your ERP, HRMS, TMCs, and corporate cards. With smart OCR, real-time sync, custom policies, and multi-level approvals, it’s automation without the hassle.",
     },
     {
         title: "Bill Payment ",

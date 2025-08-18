@@ -1,3 +1,4 @@
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import styles from "./become-partner-steps.module.scss"
 
 interface StepData {
@@ -29,16 +30,46 @@ export default function BecomePartnerSteps() {
     return (
         <section className={styles.container}>
             <div className={styles.content}>
-                <h2 className={styles.mainHeading}>
-                    How to <span className={styles.highlightText}>Become a Partner</span>
-                </h2>
+                <DynamicHeading
+                    content={[
+                        {
+                            title: " How to ",
+                            color: "color-black",
+                        },
+                        {
+                            title: "Become a Partner",
+                            color: "color-equity-blue",
+                        },
+                    ]}
+                    headingTag="h2"
+                    className="f-5 mb-4 mb-md-5"
+                />
 
                 <div className={styles.stepsGrid}>
                     {steps.map((step, index) => (
                         <div key={index} className={styles.stepCard}>
                             <div className={styles.stepNumber}>{step.stepNumber}</div>
-                            <h3 className={styles.stepTitle}>{step.title}</h3>
-                            <p className={styles.stepDescription}>{step.description}</p>
+                            <DynamicHeading
+                                content={[
+                                    {
+                                        title: step.title,
+                                        color: "color-black",
+                                    },
+                                ]}
+                                headingTag="h5"
+                                className="f-5"
+                            />
+
+                            <DynamicHeading
+                                content={[
+                                    {
+                                        title: step.description,
+                                        color: "color-black",
+                                    },
+                                ]}
+                                headingTag="p"
+                                className="f-4 mb-0"
+                            />
                         </div>
                     ))}
                 </div>

@@ -2,7 +2,7 @@
 import type React from "react"
 import { useState } from "react"
 import styles from "./BankSolutions.module.scss"
-import { FaChevronDown } from "react-icons/fa"
+import { FaCaretDown } from "react-icons/fa"
 
 interface Solution {
     title: string
@@ -28,13 +28,11 @@ const BankSolutions: React.FC<BankSolutionsProps> = ({ solutions }) => {
                     {solutions.map((item, index) => (
                         <div className={styles.solutionItem} key={index}>
                             <div className={styles.solutionHeader}
-
                             >
                                 <div className={styles.titleContainer}>
-                                    <div className={styles.line}></div>
                                     <span className={styles.title}>{item.title}</span>
                                 </div>
-                                <FaChevronDown className={`${styles.arrow} `} />
+                                <FaCaretDown className={`${styles.arrow} `} />
 
                             </div>
 
