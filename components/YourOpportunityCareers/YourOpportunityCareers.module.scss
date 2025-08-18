@@ -1,1 +1,36 @@
-@use './../../styles/mixin' as *;
+@use "./../../styles/mixin" as *;
+.careerCard {
+  display: flex;
+  margin: 15px 0;
+  padding: 10px 20px;
+  background: rgba(18, 18, 18, 0.85);
+  border-radius: 10px;
+  .careerCardTitleDesc {
+    width: 40%;
+    .careerCardTitleDesc {
+      p {
+        color: #808080;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+  .careerCardDepartmentLocation {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    color: #989898;
+    align-items: center;
+    text-transform: uppercase;
+    span,
+    a {
+      width: calc(100% / 3);
+    }
+    span{
+        svg{
+            margin-right: 10px;
+            margin-top: -2px;
+        }
+    }
+  }
+}
