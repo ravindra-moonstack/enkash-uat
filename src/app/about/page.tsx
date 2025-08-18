@@ -32,6 +32,7 @@ const bannerOurContent = [
 const About = (): React.JSX.Element => {
   return (
     <>
+    <Header />
       <div className={`color-white ${styles.home_container}`}>
         <section className={`${styles.topBanner}`}>
           <div className="max-w-auto">
@@ -42,7 +43,7 @@ const About = (): React.JSX.Element => {
                     items={[
                       { name: "Home", url: "/" },
                       {
-                        name: "About",
+                        name: "About Us",
                         url: "/about",
                       },
                     ]}

@@ -38,7 +38,7 @@ const CareersPaycheck = ({
                   },
                 ]}
                 headingTag="h5"
-                className="f-5"
+                className="f-4"
               />
             ) : null}
           </div>

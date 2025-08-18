@@ -107,7 +107,7 @@ const CareersHero: React.FC = () => {
                   <RectangleButton
                     title="Explore Open Roles"
                     theme="blue"
-                    url="/#"
+                    url="/#yourOpportunitySection"
                   />
                 </div>
               </div>

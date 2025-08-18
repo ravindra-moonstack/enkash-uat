@@ -83,7 +83,7 @@ const Home = (): React.JSX.Element => {
                     theme="outline-blue"
                     actionImage=""
                     hoverImage=""
-                    url="/sales/"
+                    url="/sales?source=home"
                   />
                 </div>
               </div>
