@@ -1,0 +1,13 @@
+@use "./../../styles/mixin" as * ;
+.EmployeeSliderOuter {
+  .employeeSlide {
+    padding: 0 20px;
+    .employeeSlideImg {
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+    }
+  }
+}

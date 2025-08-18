@@ -1,0 +1,28 @@
+@use "./../../styles/mixin" as *;
+.careerBannerOuter {
+  position: relative;
+  .careerBannerImage {
+    height: 700px;
+  }
+  .bannerContentSetion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 110px 20px 50px;
+
+    @include for-laptops {
+      padding: 120px 20px 90px;
+    }
+
+    .customBreadcrumbSection {
+      a {
+        color: #fff !important;
+      }
+      li > span {
+        color: #0663fc !important;
+      }
+    }
+  }
+}
