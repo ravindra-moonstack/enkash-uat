@@ -40,7 +40,7 @@ const About = (): React.JSX.Element => {
           <div className="max-w-auto">
             <div className="row">
               <div className="col-md-12">
-                <div className={`${styles.customBreadcrumbSection}`}>
+                <div className={`${styles.customBreadcrumbSection} mb-4`}>
                   <CustomBreadcrumb
                     items={[
                       { name: "Home", url: "/" },
@@ -129,7 +129,7 @@ const About = (): React.JSX.Element => {
                 </div>
               </div>
             </div>
-            <div className={`${styles.bannerBottomBox}`}>
+            <div className={`${styles.bannerBottomBox} mt-4 mt-md-5`}>
               <div className="row">
                 <div className="col-md-7">
                   <div className={`${styles.bannerBottomBoxInners}`}>
