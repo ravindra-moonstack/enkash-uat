@@ -1,7 +1,7 @@
 .bankSolutions {
     text-align: left;
     background-color: #F7F7F7;
-    padding: 40px 102px 117px 94px;
+    padding: 50px 100px;
     border-radius: 12px;
     box-shadow: 0px 0px 77px 0px #0000001A;
     margin: 0 auto;
@@ -61,7 +61,9 @@
 
                     &:hover {
                         .arrow {
-                            transform: rotate(180deg);
+                            svg {
+                                transform: rotate(180deg);
+                            }
                         }
                     }
 
@@ -88,8 +90,8 @@
                         align-items: center;
                         justify-content: center;
 
-                        &.arrowRotated {
-                            transform: rotate(180deg);
+                        svg {
+                            width: 12px;
                         }
                     }
                 }
@@ -113,6 +115,34 @@
                         display: block;
                     }
                 }
+            }
+        }
+
+        .buttonContainer {
+            margin-top: 50px;
+            width: max-content;
+
+            .connectWithUs {
+                a {
+                    box-shadow: 0px 4px 44px 0px #0000001F;
+                    border: 2px solid #fff;
+                    background-color: #fff;
+                    color: #1C5AF4;
+                    text-decoration: none;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 8px 20px;
+                    border-radius: 8px;
+                    align-items: center;
+
+                    // &:hover {
+                    //     background-color: #1C5AF4;
+                    //     border: 2px solid #1C5AF4;
+                    //     color: #fff;
+                    // }
+                }
+
+
             }
         }
     }
