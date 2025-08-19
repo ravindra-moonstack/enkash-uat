@@ -57,17 +57,57 @@ const partnershipsPage = (): React.JSX.Element => {
                 />
               </div>
 
-              <div className={styles.button_wrapper}>
-                <RectangleButton
-                  title="Become a Partner"
-                  theme="blue"
-                  url="/sales/?source=expense_management"
-                />
-              </div>
+              <div className={styles.button_wrapper}></div>
             </div>
           </div>
         </div>
       </div>
+      <div className={`${styles.title} col-7 `}>
+        <div className="d-inline ">
+          <DynamicHeading
+            content={[
+              {
+                title: "Partnership Program - for Banks",
+                color: "color-black",
+              },
+            ]}
+            headingTag="p"
+            className="mt-2 text-decoration-underline text-dark mb-4 "
+          />
+        </div>
+        <div className="d-flex  flex-column ">
+          <DynamicHeading
+            content={[
+              {
+                title: "",
+                color: "color-black f-3 d-block",
+              },
+              {
+                title:
+                  "Empower your customers with seamless banking solutions ",
+                color: "color-black",
+              },
+            ]}
+            headingTag="h1"
+            className="mb-4 f-7"
+          />
+        </div>
+
+        <div className={styles.button_wrapper}>
+          <RectangleButton
+            title="Become a Partner"
+            theme="blue"
+            url="/sales/?source=expense_management"
+          />
+        </div>
+      </div>
+      <div className={`${styles.second_row}`}>
+        <PartnershipSection />
+      </div>
+      <div className={`${styles.third_row}`}>
+        <BecomePartnerSteps />
+      </div>
+
       <div className={`${styles.boxContainer}`}>
         <BankSolutions solutions={bankSolutions} />
       </div>

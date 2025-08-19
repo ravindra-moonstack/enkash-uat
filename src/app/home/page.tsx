@@ -55,7 +55,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/",
   },
 })
-const Home = (): React.JSX.Element => {
+const HomePage = (): React.JSX.Element => {
   return (
     <>
       <div className={`color-white ${styles.home_container}`}>
@@ -890,7 +890,7 @@ const Home = (): React.JSX.Element => {
               <div className="row">
                 <div className="col-md-12">
                   <div className={`${styles.customButtons}`}>
-                    <Link href={"/#"}>
+                    <Link href={"https://docs.enkash.com/"}>
                       {" "}
                       Read the Docs{" "}
                       <svg
@@ -921,4 +921,4 @@ const Home = (): React.JSX.Element => {
   )
 }
 
-export default Home
+export default HomePage
