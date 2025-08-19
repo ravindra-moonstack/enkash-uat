@@ -4,6 +4,8 @@ import React, { useEffect } from "react"
 import Script from "next/script"
 import styles from "./contactForm.module.scss"
 import { DynamicHeading } from "@/components"
+import Link from "next/link"
+import MultiSelect from "../multiSelect/multiSelect"
 const ContactForm: React.FC = () => {
   useEffect(() => {
     if (
@@ -64,18 +66,13 @@ const ContactForm: React.FC = () => {
             className="text-center "
           />
           <p className={styles.subtitle}>We just need a few quick details</p>
-
           <div className={styles.grid}>
-            {/* Name */}
             <input type="text" name="SingleLine" placeholder="Name*" />
 
-            {/* Email */}
             <input type="text" name="Email" placeholder="Business Email ID*" />
 
-            {/* Company */}
             <input type="text" name="SingleLine1" placeholder="Company Name*" />
 
-            {/* Phone */}
             <input
               type="text"
               name="PhoneNumber_countrycode"
@@ -84,31 +81,19 @@ const ContactForm: React.FC = () => {
             />
           </div>
 
-          {/* Dropdown */}
-          <select name="MultipleChoice" defaultValue="">
-            <option value="" disabled>
-              How can we help you?*
-            </option>
-            <option>Looking for Payment Collection Solution</option>
-            <option>Looking for a solution to make Payments</option>
-            <option>Looking for Expense Management</option>
-            <option>Looking for Corporate Jobs</option>
-            <option>Exploring Job Opportunities</option>
-            <option>Need Customer Support</option>
-            <option>Interested In Partnership Opportunities</option>
-            <option>Want to Connect to Marketing Team</option>
-          </select>
+          <MultiSelect name="MultipleChoice" />
 
-          {/* Comments */}
           <textarea
             name="MultiLine"
             placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
           />
 
           <p className={styles.privacy}>
-            By submitting this form, you are agreeing to our privacy policy
+            By submitting this form, you are agreeing to our{" "}
+            <Link href="/privacy-policy" className={styles.privacyLink}>
+              privacy policy
+            </Link>
           </p>
-
           <button type="submit" className={styles.submitBtn}>
             Submit
           </button>

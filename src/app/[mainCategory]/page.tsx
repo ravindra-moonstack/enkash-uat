@@ -6,14 +6,13 @@ import VoucherData, { Voucher } from "../vouchers/data/voucher-data"
 import { nameToUrl } from "@/common/utils/stringUtils"
 import SliderComponent from "@/components/sliderComponent/sliderComponent"
 import { VOUCHER_DATA } from "./data"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
 import { blueArrow, whiteArrow } from "../affordability-suite"
 import VoucherFaqComponent from "./voucher-faq"
 // import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import { CATEGORY_META } from "./categoryMeta"
-import { CTASection, FaqSection } from "@/components"
+import { CTASection } from "@/components"
 import VoucherFaqSection from "@/components/voucherFaq/voucherFaqSection"
+import NotFound from "../not-found"
 
 // const salesUrl = getSalesUrl("/affordability-suite")
 
@@ -125,22 +124,7 @@ const MainCategoryPage = async ({
   const isValidCategory = VALID_CATEGORIES.includes(mainCategory)
 
   if (!isValidCategory) {
-    return (
-      <div className={`color-white ${styles.error_container}`}>
-        <div className={`${styles.first_row} color-white`}>
-          <DynamicHeading
-            content={[
-              {
-                title: "The Category you are looking for is not present",
-                color: "color-white",
-              },
-            ]}
-            headingTag="h3"
-            className="f-5"
-          />
-        </div>
-      </div>
-    )
+    return <NotFound />
   }
 
   const categoryData = CategoryData[mainCategory]
@@ -186,7 +170,7 @@ const MainCategoryPage = async ({
           </div>
         </div>
       </div>
- 
+
       <CTASection
         title={
           "Discover the EnKash difference - Secure, Scalable and Seamless."

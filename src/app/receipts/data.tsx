@@ -6,7 +6,21 @@ import herarchy from "./img/herarchy.webp"
 import insight from "./img/insights.webp"
 import advance from "./img/advanced.webp"
 import reimbursements from "./img/reimbursement.webp"
-import { stepCardImgOne, stepCardImgThree, stepCardImgTwo } from "."
+import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  realTimeExpense,
+  realTimeExpenseIcon,
+  stackCardThreeIcon,
+  stackCardThreeImg,
+  stepCardImgOne,
+  stepCardImgThree,
+  stepCardImgTwo,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
+} from "."
 
 const cardData = [
   {
@@ -88,4 +102,57 @@ const expenseManagementData = [
   },
 ]
 
-export { cardData, expenseManagementData, stepCards }
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "OCR Technology",
+    description:
+      "Automatically scan and collect details from digital receipts using OCR, eliminating the need for manual entry.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "WhatsApp Integration",
+    description:
+      "Make it easy for employees to submit receipts on the go using WhatsApp.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: stackCardThreeIcon,
+    title: "Drop Receipts",
+    description:
+      "Streamline record-keeping by dropping receipts at your convenience.",
+    image: stackCardThreeImg,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Link Receipts to Expenses",
+    description:
+      "Easily link your dropped electronic receipts to expenses anytime.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Download Receipts in One Click",
+    description:
+      "Gain overall control over the business expense reimbursement process by downloading all receipts in just one click",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+]
+
+export { cardData, expenseManagementData, stepCards, stackcardData }
