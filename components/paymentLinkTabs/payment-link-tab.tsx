@@ -8,6 +8,7 @@ import arrowUpImg from "./img/arrowup.svg"
 import arrowDownImg from "./img/arrowdown.svg"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
+import { usePathname } from "next/navigation"
 
 interface PaymentLinkTabProps {
   progressData: {
@@ -45,7 +46,8 @@ const PaymentLinkTab = ({
     typeof selectedItem?.bgImage === "string"
       ? selectedItem.bgImage
       : selectedItem?.bgImage?.src || ""
-
+  const pathname = usePathname() // ✅ moved inside component
+  const lastSlug = pathname.split("/").filter(Boolean).pop() || "website"
   return (
     <>
       {/* ///for desktop... */}
@@ -188,7 +190,7 @@ const PaymentLinkTab = ({
                       <RectangleButton
                         title="Get Started"
                         theme="outline-blue"
-                        url="/sales/"
+                        url={`/sales/?source=${lastSlug}`}
                       />
                     </div>
                   </div>
@@ -345,7 +347,7 @@ const PaymentLinkTab = ({
                           <RectangleButton
                             title="Get Started"
                             theme="outline-blue"
-                            url="/sales/"
+                            url={`/sales/?source=${lastSlug}`}
                           />
                         </div>
                       </div>
