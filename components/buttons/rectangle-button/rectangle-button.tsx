@@ -14,6 +14,7 @@ export type RectangleButtonTheme =
   | "border-black"
   | "outline-blue-small"
   | "small-blue"
+  | "white"
 
 export interface ButtonProps {
   isDisabled?: boolean

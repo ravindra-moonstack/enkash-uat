@@ -85,5 +85,70 @@ export const SecondfaqData = [
     ],
   },
 ]
+export const ThirdfaqData = [
+  {
+    question: "What does EnKash offer for banks?",
+    answer: [
+      {
+        heading:
+          "EnKash provides a white-labeled, API-first platform that helps banks digitize and scale their business banking offerings across payments, expense management, vendor management, and rewards.",
+      },
+    ],
+  },
+  {
+    question: "How can a bank benefit from partnering with EnKash?",
+    answer: [
+      {
+        heading:
+          "Banks can unlock new revenue streams, reduce operational costs, expand their SME and corporate customer base, and offer value-added digital financial services without building from scratch.",
+      },
+    ],
+  },
+  {
+    question: "Is EnKash's platform customizable for our banking ecosystem?",
+    answer: [
+      {
+        heading:
+          "Yes, the platform is fully customizable to work best with your existing systems, workflows, and branding.",
+      },
+    ],
+  },
+  {
+    question: "How secure is EnKash's platform?",
+    answer: [
+      {
+        heading:
+          "EnKash adheres to the highest industry standards, including ISO, PCI-DSS, and GDPR-ready frameworks.",
+      },
+    ],
+  },
+  {
+    question: "Can EnKash integrate with our core banking systems and ERPs?",
+    answer: [
+      {
+        heading:
+          "Yes, EnKash offers seamless integrations with core banking systems, ERPs, HRMS, and other enterprise platforms via APIs.",
+      },
+    ],
+  },
+  {
+    question: "What are the key offerings we can provide to our clients via EnKash?",
+    answer: [
+      {
+        heading:
+          "You can offer solutions like bulk payments, invoice reconciliation, bill payments, expense automation, corporate card management, and supply chain financing.",
+      },
+    ],
+  },
+  {
+    question: "What onboarding and support does EnKash provide to bank partners?",
+    answer: [
+      {
+        heading:
+          "EnKash offers end-to-end onboarding, training, co-branded go-to-market support, and dedicated relationship managers for ongoing assistance post-sales.",
+      },
+    ],
+  },
+]
 
 export default faqData
