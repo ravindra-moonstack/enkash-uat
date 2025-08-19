@@ -18,7 +18,7 @@ import HiringProcessModal from "@/components/HiringProcessModal/HiringProcessMod
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 export const metadata: Metadata = generateMetaData({
-  title: "Careers at EnKash: Join the Best Fintech Company ",
+  title: "Careers at EnKash: Join the Best Fintech Company",
   description:
     "Build your career with EnKash. Explore open roles in product, engineering, sales, and more. Join us in shaping the future of B2B payments and financial automation.",
   alternates: {

@@ -5,7 +5,7 @@
     justify-content: center;
     padding-bottom: 50px;
     flex-wrap: wrap;
-    gap: 20px;
+    // gap: 20px;
     @include for-laptops{
         padding-bottom: 90px;
         flex-wrap: nowrap;
@@ -13,7 +13,14 @@
     }
 
     .investerLogos{
-        padding: 0 20px ;
+        padding: 0 30px ;
+        @include for-laptops{
+            border-right:1px solid #D9D9D9 ;
+        }
+        &:last-child{
+            border-right:none;
+
+        }
         img{
             width: auto;
             max-height: 50px;

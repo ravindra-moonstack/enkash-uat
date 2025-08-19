@@ -4,19 +4,28 @@ import React from "react"
 import Slider from "react-slick"
 import Image from "next/image"
 import "slick-carousel/slick/slick.css"
-import styles from "./CareersHeroSlider.module.scss"
 import "slick-carousel/slick/slick-theme.css"
-import { bannerSlider1, bannerSlider2, bannerSlider3 } from "."
+import styles from "./CareersHeroSlider.module.scss"
+
+import {
+  bannerSlider1,
+  bannerSlider2,
+  bannerSlider3,
+  mobilebannerSlider1,
+  mobilebannerSlider2,
+  mobilebannerSlider3,
+} from "."
+
 import CustomBreadcrumb from "../breadcrumb/breadbrumb"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 
 const CareersHero: React.FC = () => {
-  // Background images for slider
+  // Backgrounds for desktop & mobile
   const backgrounds = [
-    bannerSlider1, // replace with your images
-    bannerSlider2,
-    bannerSlider3,
+    { desktop: bannerSlider1, mobile: mobilebannerSlider1 },
+    { desktop: bannerSlider2, mobile: mobilebannerSlider2 },
+    { desktop: bannerSlider3, mobile: mobilebannerSlider3 },
   ]
 
   const settings = {
@@ -37,13 +46,19 @@ const CareersHero: React.FC = () => {
       <Slider {...settings} className="h-full">
         {backgrounds.map((bg, index) => (
           <div key={index} className={`${styles.careerBannerImage} relative`}>
-            <Image
-              src={bg}
-              alt={`Background ${index}`}
-              layout="fill"
-              objectFit="cover"
-              className="brightness-75"
-            />
+            <picture>
+              {/* Mobile Image */}
+              <source media="(max-width: 768px)" srcSet={bg.mobile.src} />
+              {/* Desktop Image */}
+              <Image
+                src={bg.desktop}
+                alt={`Background ${index}`}
+                fill
+                className="brightness-75"
+                style={{ objectFit: "cover" }}
+                priority={index === 0} // preload first image
+              />
+            </picture>
           </div>
         ))}
       </Slider>
@@ -56,34 +71,29 @@ const CareersHero: React.FC = () => {
               <CustomBreadcrumb
                 items={[
                   { name: "Home", url: "/" },
-                  {
-                    name: "Careers",
-                    url: "/careers",
-                  },
+                  { name: "Careers", url: "/careers" },
                 ]}
               />
             </div>
           </div>
+
           <div className={`${styles.bannerContentSetionTop}`}>
             <div className="row">
               <div className="col-md-12">
-                <div className={`${styles.pageTitle} `}>
+                <div className={`${styles.pageTitle}`}>
                   <DynamicHeading
-                    content={[
-                      {
-                        title: "Careers",
-                        color: "color-white ",
-                      },
-                    ]}
+                    content={[{ title: "Careers", color: "color-white " }]}
                     headingTag="p"
                     className="mb-2 text-center mt-4 mt-md-4"
                   />
                 </div>
+
                 <div className={`${styles.banner_heading}`}>
                   <DynamicHeading
                     content={[
                       {
-                        title: "Building the Future of How Businesses Pay, Spend & Grow",
+                        title:
+                          "Building the Future of How Businesses Pay, Spend & Grow",
                         color: "color-white  f-3",
                       },
                     ]}
@@ -91,6 +101,7 @@ const CareersHero: React.FC = () => {
                     className="text-center mb-2"
                   />
                 </div>
+
                 <div className={`${styles.bannerSubHeading}`}>
                   <DynamicHeading
                     content={[
@@ -103,11 +114,12 @@ const CareersHero: React.FC = () => {
                     className="text-center mb-3"
                   />
                 </div>
+
                 <div className={`${styles.bannerButton} text-center`}>
                   <RectangleButton
                     title="Explore Open Roles"
                     theme="blue"
-                    url="/#yourOpportunitySection"
+                    url="#yourOpportunitySection"
                   />
                 </div>
               </div>
