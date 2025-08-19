@@ -1,5 +1,7 @@
+import Link from "next/link"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import styles from "./become-partner-steps.module.scss"
+import Image from "next/image"
 
 interface StepData {
     stepNumber: string
@@ -7,72 +9,77 @@ interface StepData {
     description: string
 }
 
-const steps: StepData[] = [
-    {
-        stepNumber: "Step 1",
-        title: "Connect with Us",
-        description: "Mail us or fill the form below for our team to reach out to us.",
-    },
-    {
-        stepNumber: "Step 2",
-        title: "Customize Your Offering",
-        description:
-            "We'll co-create tailored solutions; co-branded, white-labeled, or integrated based on your ecosystem and customers.",
-    },
-    {
-        stepNumber: "Step 3",
-        title: "Launch & Grow Together",
-        description: "Go live with plug-and-play APIs, dedicated support, and GTM strategies to scale revenue and reach.",
-    },
-]
+interface BecomePartnerStepsProps {
+    heading: {
+        content: { title: string; color: string }[]
+        //@ts-ignore
+        headingTag?: keyof JSX.IntrinsicElements
+        className?: string
+    }
+    steps: StepData[]
 
-export default function BecomePartnerSteps() {
+    button?: {
+        connectText: string
+        connectUrl: string
+        blueArrow: string
+    }
+}
+
+export default function BecomePartnerSteps({ heading, steps, button }: BecomePartnerStepsProps) {
     return (
         <section className={styles.container}>
             <div className={styles.content}>
                 <DynamicHeading
-                    content={[
-                        {
-                            title: " How to ",
-                            color: "color-black",
-                        },
-                        {
-                            title: "Become a Partner",
-                            color: "color-equity-blue",
-                        },
-                    ]}
-                    headingTag="h2"
-                    className="f-5 mb-4 mb-md-5"
+                    content={heading.content}
+                    headingTag={"h2"}
+                    className={heading.className || "f-5 mb-4 mb-md-5"}
                 />
 
                 <div className={styles.stepsGrid}>
                     {steps.map((step, index) => (
                         <div key={index} className={styles.stepCard}>
                             <div className={styles.stepNumber}>{step.stepNumber}</div>
+
                             <DynamicHeading
-                                content={[
-                                    {
-                                        title: step.title,
-                                        color: "color-black",
-                                    },
-                                ]}
+                                content={[{ title: step.title, color: "color-black" }]}
                                 headingTag="h5"
                                 className="f-5"
                             />
 
                             <DynamicHeading
-                                content={[
-                                    {
-                                        title: step.description,
-                                        color: "color-black",
-                                    },
-                                ]}
+                                content={[{ title: step.description, color: "color-black" }]}
                                 headingTag="p"
-                                className="f-4 mb-0"
+                                className="f-3 mb-0"
                             />
                         </div>
                     ))}
                 </div>
+                {button && (
+                    <div className={styles.buttonContainer}>
+                        <div>
+                            <div className="mt-3 d-none d-md-block">
+                                <div className={`connectWithUs ${styles.connectWithUs}`}>
+                                    <Link href={button.connectUrl}>
+                                        <DynamicHeading
+                                            content={[
+                                                { title: button.connectText, color: "color-equity-blue" },
+                                            ]}
+                                            headingTag="p"
+                                            className="mb-0 f-5"
+                                        />
+                                        <Image
+                                            src={button.blueArrow}
+                                            alt="blue Arrow"
+                                            width={15}
+                                            height={15}
+                                            className="ms-2"
+                                        />
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     )

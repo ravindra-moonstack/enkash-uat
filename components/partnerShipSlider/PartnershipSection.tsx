@@ -7,48 +7,51 @@ import participantsBg from "./img/participants-bg.png"
 import "./PartnershipSection.scss"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
-import ItemIcon from "./img/itemIcon.svg"
 
-const PartnershipSection: React.FC = () => {
-    const slideData = [
-        {
-            id: 1,
-            icon: ItemIcon.src,
-            title: "Co-Branded Visibility",
-            description:
-                "Position your bank as a tech-forward brand by offering co-branded solutions across payments, cards, and expense tools.",
-        },
-        {
-            id: 2,
-            icon: ItemIcon.src,
-            title: "Add New Revenue Models",
-            description:
-                "Unlock new revenue streams, reduce operational costs, expand their SME and corporate customer base, and offer value-added digital financial services without building from scratch.",
-        },
-        {
-            id: 3,
-            icon: ItemIcon.src,
-            title: "Wider Customer Reach",
-            description:
-                "Expand into new regions and business segments by bundling EnKash with your existing SME and corporate offerings.",
-        },
-        {
-            id: 4,
-            icon: ItemIcon.src,
-            title: "Co-Branded Visibility",
-            description:
-                "Position your bank as a tech-forward brand by offering co-branded solutions across payments, cards, and expense tools.",
-        },
-    ]
 
+interface SlideData {
+    id: number
+    icon: string
+    title: string
+    description: string
+}
+
+interface ButtonData {
+    title: string
+    theme: "blue" // extend if you have more themes
+    url: string
+}
+
+interface HeadingContent {
+    title: string
+    color?: string
+}
+
+interface PartnershipSectionProps {
+    backgroundImage: string
+    heading: HeadingContent[]
+    description: string
+    buttons?: ButtonData[] // can be 0, 1, or 2 buttons
+    slideData: SlideData[]
+}
+
+const PartnershipSection: React.FC<PartnershipSectionProps> = ({
+    backgroundImage,
+    heading,
+    description,
+    buttons = [],
+    slideData,
+}) => {
     return (
         <section className="partnership-section">
             {/* Background Image with Overlay */}
             <div className="background-container">
                 <Image
-                    src={participantsBg}
+                    src={backgroundImage}
                     alt="Participants background"
                     className="background-image"
+                    fill
+
                 />
                 <div className="background-overlay"></div>
             </div>
@@ -57,12 +60,7 @@ const PartnershipSection: React.FC = () => {
             <div className="content-container">
                 <div className="slider-header">
                     <DynamicHeading
-                        content={[
-                            {
-                                title: "Why Partner with Us?",
-                                color: "color-white",
-                            },
-                        ]}
+                        content={heading}
                         headingTag="h2"
                         className="f-5 mb-4 mb-md-5"
                     />
@@ -70,19 +68,20 @@ const PartnershipSection: React.FC = () => {
                 <div className="content-grid">
                     {/* Left Content */}
                     <div className="left-content">
-                        <p className="description-text">
-                            Partner with an all-in-one payments platform to deliver modern banking experiences across expense
-                            management, corporate cards, and vendor payments. Partner with an all-in-one payments platform to
-                            deliver modern banking experiences across expense management, corporate cards, and vendor payments.
-                        </p>
-                        <RectangleButton
-                            title="Explore Bank Partnerships"
-                            theme="blue"
-                            url="/"
-                        />
+                        <p className="description-text">{description}</p>
+
+                        <div className="button-group">
+                            {buttons.map((btn, index) => (
+                                <RectangleButton
+                                    key={index}
+                                    title={btn.title}
+                                    theme={btn.theme}
+                                    url={btn.url}
+                                />
+                            ))}
+                        </div>
                     </div>
 
-                    {/* Right Slider */}
                     <div className="right-slider">
                         <PartnershipSlider slides={slideData} />
                     </div>

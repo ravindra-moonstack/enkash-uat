@@ -9,6 +9,7 @@
   font-weight: 500;
   line-height: 150%;
   transition: background-color 0.6s ease, color 0.6s ease, box-shadow 0.6s ease;
+
   @include for-laptops {
     padding: 8px 20px;
     font-size: 16px;
@@ -33,6 +34,7 @@
     color: $color-black;
     transition: background-color 0.6s ease, color 0.6s ease,
       box-shadow 0.6s ease;
+
     &:hover {
       background-color: $color-black;
       color: $color-electric-green;
@@ -43,15 +45,30 @@
     background-color: $color-black;
     border: 2px solid $color-black;
     color: white;
+
     &:hover {
       background-color: $color-white;
       color: $color-black;
     }
   }
 
+  &.white {
+    box-shadow: 0px 4px 44px 0px #0000001F;
+    border: 2px solid $color-white;
+    background-color: $color-white;
+    color: $color-equity-blue;
+
+    &:hover {
+      background-color: $color-equity-blue;
+      border: 2px solid $color-equity-blue;
+      color: $color-white;
+    }
+  }
+
   &.disabled {
     background-color: $color-night-blue;
   }
+
   &.outline-blue {
     background-color: $color-white;
     color: $color-equity-blue;
@@ -69,6 +86,7 @@
     color: $color-equity-blue;
     border: 1px solid $color-equity-blue;
     font-weight: 500;
+
     @include for-laptops {
       font-size: 14px;
     }
@@ -78,11 +96,13 @@
       color: $color-white;
     }
   }
+
   &.border-gray {
     background-color: transparent;
     color: $color-equity-blue;
     transition: box-shadow 0.3s ease;
     border: 2px solid $color-dark-grey;
+
     &:hover {
       background-color: #023ed4;
       color: $color-white;
@@ -95,6 +115,7 @@
     color: $color-equity-blue;
     transition: box-shadow 0.3s ease;
     border: 2px solid $color-black;
+
     &:hover {
       background-color: #023ed4;
       color: $color-white;
@@ -116,6 +137,7 @@
       color: $color-white;
     }
   }
+
   img {
     display: inline-block;
     // height: auto;
