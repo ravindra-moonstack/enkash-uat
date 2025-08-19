@@ -1,23 +1,16 @@
 .partnershipSlider {
     position: relative;
     width: 100%;
-    padding-left: 4px;
     padding-bottom: 18px;
-
-
+    overflow: hidden;
 
     :global {
         .slick-slider {
-            .slick-track {
-                display: flex !important;
-            }
-
             .slick-slide {
                 height: inherit !important;
             }
 
             .slick-list {
-                // padding: 0 15px; 
                 height: 100%;
             }
 
@@ -27,7 +20,6 @@
             }
 
             .slick-slide {
-                // padding: 0 15px; 
                 height: 100%;
 
                 >div {
@@ -122,10 +114,11 @@
     align-items: center;
     justify-content: center;
 
-    svg {
-        width: 26px;
-        height: 26px;
+    img {
+        width: 32px;
+        height: 32px;
         color: #1C5AF4;
+        object-fit: cover;
     }
 }
 
