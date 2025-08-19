@@ -23,11 +23,11 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
         dots: true,
         arrows: false,
         infinite: true,
-        speed: 5000,
+        speed: 500,
         slidesToShow: 4,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 4000,
+        autoplaySpeed: 3000,
         adaptiveHeight: false,
         Draggable: true,
         pauseOnHover: true,
@@ -56,7 +56,12 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
                     <div key={slide.id} className={styles.slideContainer}>
                         <div className={styles.slideCard}>
                             <div className={styles.slideIcon}>
-                                {slide.icon}
+                                <img
+                                    src={slide.icon}
+                                    alt={slide.title}
+                                    width={50}
+                                    height={50}
+                                />
                             </div>
                             <h3 className={styles.slideTitle}>{slide.title}</h3>
                             <p className={styles.slideDescription}>{slide.description}</p>
