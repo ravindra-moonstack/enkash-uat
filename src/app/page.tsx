@@ -1,9 +1,9 @@
-import PaymentGateway from "./payment-gateway/page"
+import HomePage from "./home/page"
 
 export default function Home() {
   return (
     <>
-      <PaymentGateway />
+      <HomePage />
     </>
   )
 }
