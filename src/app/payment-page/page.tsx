@@ -1,58 +1,46 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { allProductSections, cardsData } from "./data"
+import { allInOnePolicyData, allProductSections, cardsData, managementCardData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  AllInOnePolicy,
+  AllProducts,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
   activationIcon,
   realTimeIcon,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
-  paymentGateway,
 } from "."
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import AllProducts from "@/components/all-products/all-products"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-
+export const metadata: Metadata = generateMetaData({
+  title: "Payment Page: Create Custom Branded Checkout Pages",
+  description:
+    "Design personalized payment pages with your brand logo, colors, and fields. Accept UPI, cards & more—no coding needed, easy to share and collect payments.",
+  alternates: {
+    canonical: "https://www.enkash.com/payment-page/",
+  },
+})
+const salesUrl = getSalesUrl("/payment-page")
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const PaymentPage = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -75,7 +63,7 @@ const PaymentPage = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
               >
-                   <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Payment Page",
@@ -90,10 +78,11 @@ const PaymentPage = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex pt-3 pt-md-0">
-                    <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Instant Online Payments with Custom  Payment Page",
+                        title:
+                          "Instant Online Payments with Custom  Payment Page",
                         color: "color-black",
                       },
                     ]}
@@ -129,31 +118,25 @@ const PaymentPage = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-12 col-md-6 d-flex justify-content-center d-md-flex">
-              <div
-                className={`${styles.right_img} position-relative w-100 h-100 d-flex`}
-              >
+            <div className="col-12 col-md-6 ">
+              <div className={`${styles.right_img} position-relative ps-md-5`}>
                 <Image
                   src={paymentSummary}
                   alt="card visual"
-                  style={{
-                    objectFit: "contain",
-                    maxHeight: "672px",
-                  }}
                   className="w-100 mh-550 object-fit-contain"
                 />
               </div>
@@ -174,17 +157,15 @@ const PaymentPage = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-3 mb-md-0 "
             />
           </div>
 
           <div className={` d-flex ${styles.section}`}>
             {" "}
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
+            <div className={` ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -195,11 +176,9 @@ const PaymentPage = (): React.JSX.Element => {
                   className="f-6"
                 />
               </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
+              <div className={`py-2 text-center ${styles.innerCard}`}>
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Fast",
@@ -211,15 +190,11 @@ const PaymentPage = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
+            <div className={` ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
                 <Image src={activationIcon} alt="icon" />
               </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
+              <div className={`py-2 text-center ${styles.innerCard}`}>
                 {" "}
                 <DynamicHeading
                   content={[
@@ -233,15 +208,11 @@ const PaymentPage = (): React.JSX.Element => {
                 />
               </div>
             </div>
-            <div
-              className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
-            >
+            <div className={` ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
                 <Image src={realTimeIcon} alt="icon" />
               </div>
-              <div
-                className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
-              >
+              <div className={`py-2 text-center ${styles.innerCard}`}>
                 {" "}
                 <DynamicHeading
                   content={[
@@ -261,7 +232,7 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -304,7 +275,7 @@ const PaymentPage = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -323,97 +294,65 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center  `}>
-              <div
-                className={`d-inline justify-content-center align-items-center pb-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Effortless Transactions, Secure ",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: " Payments -  The EnKash Way",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center  `}>
+                <div className={`text-center pb-4 pb-md-5`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Effortless Transactions, Secure ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: " Payments -  The EnKash Way",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Customization at Your Fingertips"
-                description="Design payment pages that truly showcase your brand identity. Add your logo, select colors that resonate with your business, and customize fields to gather precise and relevant customer details. With memorable and professional URLs, sharing your payment page becomes a breeze, enhancing both brand recognition and user convenience."
-                image={paymentLinkImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Multiple Payment Modes"
-                description="Give your customers unmatched flexibility with over 180 domestic and international payment options. Whether they prefer UPI, net banking, credit or debit cards, wallets, or international currencies, EnKash ensures secure and seamless transactions, catering to a global audience and diverse payment preferences."
-                image={shareImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Zero Coding Required"
-                description="Spend more time growing your business and less time worrying about technical complexities. EnKash’s intuitive platform lets you create and launch fully functional payment pages within minutes, all without any coding knowledge or the need for additional technical resources."
-                image={paymentOptionImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="243px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="Optimized for Mobile and Web"
-                description="Ensure a flawless checkout experience on any device. EnKash Payment Pages are meticulously designed to adapt to smartphones, tablets, and desktops, offering customers an engaging and consistent interface that works seamlessly regardless of the device they use."
-                image={notificationImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFive}
-                title="Get Real-time Insights"
-                description="Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency."
-                image={optimizedIcon}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="259px"
-              />
+              <div className={styles.allInOnePolicy}>
+                {allInOnePolicyData.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       <div className={`${styles.slider_row} relative`}>
-        <div className={`${styles.title} text-center pb-2 mt-4`}>
-          <div className={` pb-1  d-inline`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "EnKash Payment Pages Features for ",
-                  color: "color-black",
-                },
-                {
-                  title: "Secure Online Payment",
-                  color: "color-equity-blue",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
+        <div className="max-w-auto">
+          <div className={`${styles.title} row`}>
+            <div className={`col-md-12 px-md-3`}>
+              <DynamicHeading
+                content={[
+                  {
+                    title: "EnKash Payment Pages Features for ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Secure Online Payment",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6 text-center"
+              />
+            </div>
           </div>
         </div>
         <AllProducts
@@ -425,8 +364,8 @@ const PaymentPage = (): React.JSX.Element => {
 
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
-          <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+          <div className=" text-center">
+            <DynamicHeading
               content={[
                 {
                   title: "Turn clicks into transactions!",
@@ -434,7 +373,7 @@ const PaymentPage = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-3 "
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -443,69 +382,17 @@ const PaymentPage = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                 <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -525,82 +412,21 @@ const PaymentPage = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction."
-                cardImage={paymentGateway}
-                linkUrl="/payment-gateway"
-              />
-            </div>
 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links."
-                cardImage={paymentLink}
-                linkUrl="/payment-link"
-              />
-            </div>
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
-                cardImage={qrCodes}
-                linkUrl="/qr-codes"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Automate your collections and say goodbye to manual reminders."
-                cardImage={reminder}
-                linkUrl="/reminder"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCardData.map((item, index) => (
+              <div key={index} className="col-12 col-md-4">
+                <ManagementCard
+                  titleHtml={item.titleHtml}
+                  description={item.description}
+                  cardImage={item.cardImage}
+                  linkUrl={item.linkUrl}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

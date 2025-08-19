@@ -14,7 +14,7 @@ import {
 const brandVouchersProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/bolt",
+    subtitleLink: "/products/vouchers",
     currentHeading: {
       name: "Vouchers",
       description: "Shop smart and unlock exclusive savings",
@@ -25,28 +25,28 @@ const brandVouchersProducts = [
         description: "Avail heavy discounts on leading eCommerce websites",
         imageSrc: eCommerce,
         imageSrcHovered: eCommerceFilled,
-        link: "/voucher/category/e-commerce",
+        link: "/e-commerce-vouchers",
       },
       {
         name: "Movies & Music",
         description: "Binge-watch shows and movies with distinctive discounts",
         imageSrc: movieAndMusic,
         imageSrcHovered: movieAndMusicFilled,
-        link: "/voucher/category/movies-and-music",
+        link: "/movie-and-music-vouchers",
       },
       {
         name: "Apparels",
         description: "Bring home new trends with amazing offers on clothing",
         imageSrc: apparels,
         imageSrcHovered: apparelsFilled,
-        link: "/voucher/category/apparels",
+        link: "/apparels-vouchers",
       },
       {
         name: "Food & Beverages",
         description: "Dig into savory delights with exclusive discounts",
         imageSrc: foodAndBeverages,
         imageSrcHovered: foodAndBeveragesFilled,
-        link: "/voucher/category/food-and-beverages",
+        link: "/food-and-beverages-vouchers",
       },
       {
         name: "Health & Wellness",
@@ -54,22 +54,14 @@ const brandVouchersProducts = [
           "Take care of yourself with our specially curated fitness offers",
         imageSrc: health,
         imageSrcHovered: healthFilled,
-        link: "/voucher/category/health-and-wellness",
+        link: "/health-and-wellness-vouchers",
       },
-      // {
-      //   name: "Occasion Crafted",
-      //   description:
-      //     "Celebrate birthdays, anniversaries, & special occasions with our occasion-based gift vouchers",
-      //   imageSrc: occasion,
-      //   imageSrcHovered: occasionFilled,
-      //   link: "/offers",
-      // },
     ],
     footerText: "Save big on 400+ brand vouchers across multiple categories",
     footerMobileText: "Explote More",
     footerImg: "loyalty_footer_bg",
-    footerLink: "/bolt",
-    parentLink: "/bolt",
+    footerLink: "/products/vouchers",
+    parentLink: "/products/vouchers",
   },
 ]
 

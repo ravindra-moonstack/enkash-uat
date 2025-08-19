@@ -109,13 +109,13 @@ const LogoSlider = () => {
   }
 
   return (
-    <div className="col-12">
+    <div>
       <div className={styles.marquee_box}>
         <Slider {...sliderSettings}>
           {[...logos, ...logos].map((logo, i) => (
             <div
               key={i}
-              className={`d-flex  justify-content-center pb-3 ${styles.logo_wrapper}`}
+              className={`d-flex  justify-content-center  ${styles.logo_wrapper}`}
             >
               <Image
                 className={`${logo.className} ${styles.logo_img}`}

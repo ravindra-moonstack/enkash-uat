@@ -1,26 +1,55 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardData, expenseManagementData, stepCards } from "./data"
+import {
+  cardData,
+  expenseManagementData,
+  stackcardData,
+  stepCards,
+} from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ManagementCard,
+  EasyStepCard,
+  CardStacking,
+  FaqSection,
+} from "@/components"
 import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import ManagementCard from "@/components/management-card/management-card"
-import EasyStepCard from "@/components/easy-step-card/easy-step-card"
-
+export const metadata: Metadata = generateMetaData({
+  title: "Budgets & Advances: Control & Track Business Spending",
+  description:
+    "Allocate budgets, issue advances, and monitor usage in real-time with EnKash. Gain complete control over employee spends and ensure policy-compliant expenses.",
+  alternates: {
+    canonical: "https://www.enkash.com/budget-and-advances/",
+  },
+})
+const salesUrl = getSalesUrl("/budget-and-advances")
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const BudgetAndAdvances = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -43,38 +72,48 @@ const BudgetAndAdvances = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Budget And Advances`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Budget And Advances",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-md-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Keep your spends in check by allocating `}
-                    color="black"
-                    size="h2"
-                    weight="7"
-                  />
-                  <Heading
-                    title={` budgets in advance`}
-                    color="equity-blue"
-                    size="h2"
-                    weight="7"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Keep your spends in check by allocating",
+                        color: "color-black",
+                      },
+                      {
+                        title: " budgets in advance",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="Define smart budgets and release advances based on projections and past insights."
-                    color="black"
-                    size="h5"
-                    weight="4"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "Define smart budgets and release advances based on projections and past insights.",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className=""
                   />
                 </div>
 
@@ -91,7 +130,7 @@ const BudgetAndAdvances = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -120,12 +159,16 @@ const BudgetAndAdvances = (): React.JSX.Element => {
 
       <div className={styles.second_row}>
         <div className="max-m-auto">
-          <div className=" text-center pb-md-5 pb-3">
-            <Heading
-              title={`Better Budgeting For Your Business${space}`}
-              color="white"
-              size="bannerHeading"
-              weight="5"
+          <div className=" text-center pb-md-4 pb-3">
+            <DynamicHeading
+              content={[
+                {
+                  title: "Better Budgeting For Your Business",
+                  color: "color-white",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5"
             />
           </div>
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
@@ -139,12 +182,15 @@ const BudgetAndAdvances = (): React.JSX.Element => {
                   alt="card visual"
                   className={styles.card_image}
                 />
-                <Heading
-                  title={item.title}
-                  color="main-grey"
-                  size="h6"
-                  weight="4"
-                  useH1TagInHtml={true}
+                <DynamicHeading
+                  content={[
+                    {
+                      title: item.title,
+                      color: "color-main-grey",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0 text-center"
                 />
               </div>
             ))}
@@ -154,49 +200,23 @@ const BudgetAndAdvances = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className="text-center">
-            <RectangleButton
-              title={"Three Easy Steps"}
-              url="/sales/"
-              theme="outline-blue-small"
+          <div className={`${styles.title} text-center pb-4 pb-md-5`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "How To Get Started with",
+                  color: "color-black",
+                },
+                {
+                  title: " EnKash Budget and Advances",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
 
-          <div className={`${styles.title} text-center pb-3`}>
-            <Heading
-              title={`How To Get Started with `}
-              color="black"
-              size="h1"
-              weight="6"
-            />
-            <Heading
-              title={` EnKash Budget and Advances`}
-              color="equity-blue"
-              size="h1"
-              weight="6"
-            />
-          </div>
-          {/* <div className="row">
-            <div className="col-md-6 col-12">
-              <ScrollableCardsSection
-                cardsData={cardsData}
-                showScroll={true}
-                maxHeight="400px"
-                buttonTitle="Get Started"
-                buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
-              />
-            </div>
-            <div className="col-md-6 col-12">
-              <div>
-                <Image
-                  src={mealCardImage}
-                  alt="card background"
-                  className="w-100 h-100"
-                />
-              </div>
-            </div>
-          </div> */}
           <div className="row g-3 pb-4">
             {stepCards.map((card, index) => (
               <div className="col-12 col-md-4" key={index}>
@@ -206,15 +226,41 @@ const BudgetAndAdvances = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Unlock  ",
+                  color: "color-black",
+                },
+                {
+                  title: "Savings ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "on Every Mile",
+                  color: "color-black",
+                },
+              ]}
+            />
+          </>
+        </div>
+      </div>
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-            <Heading
-              title="Redefine Budgeting For Your Business"
-              size="bannerHeading"
-              color="white"
-              weight="4"
+            <DynamicHeading
+              content={[
+                {
+                  title: "Redefine Budgeting For Your Business",
+                  color: "color-white ",
+                },
+              ]}
+              headingTag="h3"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -223,67 +269,30 @@ const BudgetAndAdvances = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
-            <Heading
-              title={`Ace business expenses with  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading
-              title={`innovative solutions`}
-              color="equity-blue"
-              size="h1"
-              weight="5"
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
+            <DynamicHeading
+              content={[
+                {
+                  title: "Ace business expenses with",
+                  color: "color-black",
+                },
+                {
+                  title: " innovative solutions",
+                  color: "color-equity-blue",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
             />
           </div>
           <div className="row g-3 pb-4 ">
@@ -294,14 +303,13 @@ const BudgetAndAdvances = (): React.JSX.Element => {
                   description={card.description}
                   cardImage={card.cardImage}
                   theme="dark"
+                  linkUrl={card.linkUrl}
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

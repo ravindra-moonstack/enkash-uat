@@ -32,7 +32,29 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import {
+  autoCollect,
+  instant,
+  invoices,
+  notificationImage,
+  paymentButton,
+  paymentGatewayImg,
+  paymentLink,
+  paymentLinkImage,
+  paymentOptionImage,
+  qrCodes,
+  reduceFrauds,
+  reminder,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  shareImage,
+  taskIconFive,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
+} from "."
 
 const dataSets = [
   {
@@ -111,20 +133,22 @@ const blogData = [
 const cardsData = [
   {
     title: "Integrate Payment Sources",
-    description: "Connect bank accounts, payment gateways, and other financial systems with EnKash.",
+    description:
+      "Connect bank accounts, payment gateways, and other financial systems with EnKash.",
     icon: scrollIconOne,
   },
   {
     title: "Customise Reconciliation Rules",
-    description: "Define rules to match transactions, invoices, and payments automatically based on your business needs.",
+    description:
+      "Define rules to match transactions, invoices, and payments automatically based on your business needs.",
     icon: scrollIconTwo,
   },
   {
     title: "Review & Reconcile",
-    description: "Allow EnKash to automatically match and reconcile transactions while generating detailed reports for your review.",
+    description:
+      "Allow EnKash to automatically match and reconcile transactions while generating detailed reports for your review.",
     icon: scrollIconThree,
   },
-
 ]
 
 const integrationData = [
@@ -157,26 +181,28 @@ const integrationData = [
 const paymentMethodData = [
   {
     title: "Bulk QR Code Generation",
-    description: "Upload payment details in bulk using our dashboard to generate multiple QR codes instantly.",
+    description:
+      "Upload payment details in bulk using our dashboard to generate multiple QR codes instantly.",
     icon: cards,
   },
   {
     title: "Custom Split Settlements",
-    description:"Define and automate revenue sharing across branches, franchises, or departments.",
+    description:
+      "Define and automate revenue sharing across branches, franchises, or departments.",
     icon: upi,
   },
   {
     title: "Real-Time Notifications",
-    description:"Get instant updates on successful payments via email, SMS, or webhook notifications.",
+    description:
+      "Get instant updates on successful payments via email, SMS, or webhook notifications.",
     icon: netBanking,
   },
   {
     title: "Advanced Analytics",
-    description:"Monitor performance metrics like daily transactions, total revenue, and settlement reports from a centralized dashboard.",
+    description:
+      "Monitor performance metrics like daily transactions, total revenue, and settlement reports from a centralized dashboard.",
     icon: digital,
   },
-
-
 ]
 
 const dashboardData = [
@@ -357,6 +383,115 @@ const projects = [
   },
 ]
 
+const allInOnePolicies = [
+  {
+    icon: taskIconOne,
+    title: "Multi-Bank Reconciliation",
+    description:
+      "Automatically map transactions with bank statements using names, dates, and amounts. Effortlessly reconcile unmatched transactions, review mappings, and update transactions in your ERP.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Track and Control",
+    description:
+      "Manage records of vendor, rental, utilities, and tax payments from end to end, and easily track the payment status directly on the platform.",
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Enhance Customer Experience",
+    description:
+      "Improve overall customer experience by optimizing collection reminders via the platform with real-time updates of payments and dues.",
+    image: shareImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Accelerate Audits",
+    description:
+      "Access detailed transaction history, ensuring clear audit trails for enhanced accountability and compliance. Maintain thorough records of transactions and changes, promoting transparency and traceability",
+    image: paymentOptionImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+  {
+    icon: taskIconFive,
+    title: "Reduce Frauds",
+    description:
+      "Gain a clear view of all the transactions, easily identify duplicate invoices, and flag suspicious transactions. Enhancing security and reducing the risk of fraud",
+    image: reduceFrauds,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+]
+
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description:
+      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
+    cardImage: paymentGatewayImg,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Links",
+    description:
+      "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
+    cardImage: paymentLink,
+    linkUrl: "/payment-links",
+  },
+  {
+    titleHtml: "Payment Button",
+    description:
+      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description:
+      "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+    cardImage: qrCodes,
+    linkUrl: "/qr-code",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description:
+      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Invoices",
+    description:
+      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
+    cardImage: invoices,
+    linkUrl: "/digital-invoicing",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description:
+      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant-settlement",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description:
+      "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
+    cardImage: reminder,
+    linkUrl: "/collection-reminder",
+  },
+]
+
 export {
   blogData,
   dataSets,
@@ -369,4 +504,6 @@ export {
   rankData,
   supportData,
   savingData,
+  allInOnePolicies,
+  managementCards,
 }

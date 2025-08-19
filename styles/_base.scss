@@ -82,6 +82,10 @@
   background: $light-gradient;
 }
 
+.bg-color-black-30 {
+  background: $color-black-30;
+}
+
 /* Text Color Classes */
 .color-deep-indigo {
   color: $color-deep-indigo;
@@ -294,6 +298,9 @@ body {
   &::-webkit-scrollbar-thumb {
     background: linear-gradient(90deg, #61d6ff, transparent);
   }
+
+
+  
 }
 
 /* Other Classes */
@@ -381,4 +388,35 @@ body {
 .max-w-auto {
   max-width: 1200px;
   margin: auto;
+  width: 100%;
+}
+
+.max-width-auto {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.connectWithUs {
+  a {
+    color: inherit;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    border: 2px solid #a5a5a5;
+    padding: 8px 20px;
+    border-radius: 8px;
+    align-items: center;
+  }
+}
+.no-pointer {
+  pointer-events: none;
+}
+
+.pointer-auto {
+  pointer-events: auto;
+}
+
+.cardsSliderMargin{
+  margin-top: 140px;
 }

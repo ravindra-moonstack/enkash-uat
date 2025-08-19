@@ -1,0 +1,42 @@
+.rewardsVauchersBoxInnerBox {
+  background-size: cover;
+  background-position: top right;
+  background-repeat: no-repeat;
+  padding: 20px;
+  height: 200px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+
+  .button_wrapper{
+    height: 0;
+    opacity: 0;
+      transition: 0.3s ease-in-out;
+     overflow: hidden;
+  }
+  
+}
+
+.rewardsVauchersBoxInnerBox::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.9) 100%);
+    border-radius: 10px;
+  }
+.rewardsVauchersBoxInnerBox:hover {
+  // box-shadow: 0 4px 66px 0 rgba(97, 214, 255, 0.33);
+        .button_wrapper{
+            height: auto;
+            opacity: 1;
+          
+        }
+  }
+

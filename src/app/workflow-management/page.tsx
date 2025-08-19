@@ -1,45 +1,43 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { cardsData, workflowPolicies } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  AllInOnePolicy,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
   realTimeIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
   hundredPercentIcon,
 } from "."
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-
+export const metadata: Metadata = generateMetaData({
+  title: "Workflow Management Solution to Customize Your Payment Collections",
+  description:
+    "Automate and streamline approval workflows with EnKash. Manage finance operations with ease, ensure compliance, and boost team efficiency with customizable workflows.",
+  alternates: {
+    canonical: "https://www.enkash.com/workflow-management/",
+  },
+})
+const salesUrl = getSalesUrl("/workflow-management")
 const showScroll = cardsData.length > 3
 
 const WorkflowManagement = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -77,10 +75,11 @@ const WorkflowManagement = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                    <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Achieve operational excellence with streamlined workflows ",
+                        title:
+                          "Achieve operational excellence with streamlined workflows ",
                         color: "color-black",
                       },
                     ]}
@@ -90,8 +89,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                 </div>
 
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
-                 
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
                         title:
@@ -101,7 +99,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -117,14 +115,14 @@ const WorkflowManagement = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -150,19 +148,19 @@ const WorkflowManagement = (): React.JSX.Element => {
         </div>
         <LogoSlider />
       </div>
-
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
             <DynamicHeading
               content={[
                 {
-                  title: "Transform workflow management & optimize your business",
+                  title:
+                    "Transform workflow management & optimize your business",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -172,7 +170,7 @@ const WorkflowManagement = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -246,10 +244,9 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -296,7 +293,7 @@ const WorkflowManagement = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -312,80 +309,60 @@ const WorkflowManagement = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Upgrade your workflows and ",
-                      color: "color-black",
-                    },
-                    {
-                      title: " boost efficienc",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-4 mb-1 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Upgrade your workflows and ",
+                        color: "color-black",
+                      },
+                      {
+                        title: " boost efficienc",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Integration with Existing Tools"
-              description="Seamlessly connect with CRMs, ERPs, email platforms, payment gateways, and more."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Task Assignment & Routing"
-              description="Automatically assign tasks to the right people based on roles, rules, or logic."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title=" Approval Flows & Accessibility"
-              description="Customizable multi-level approvals for payments, documents, requests, etc. Define user roles, visibility rules, and access levels for data security and accountability."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Predict with AI Power"
-              description="Leverage AI to forecast trends, run smart analyses, and set intelligent alerts so you can make proactive, data-driven decisions for your business."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
+              {workflowPolicies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
-                  title: "Harness Data to Grow, Scale, and Outperform Competition",
+                  title:
+                    "Harness Data to Grow, Scale, and Outperform Competition",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -394,66 +371,12 @@ const WorkflowManagement = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
-
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                 <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

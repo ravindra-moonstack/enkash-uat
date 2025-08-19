@@ -7,7 +7,7 @@
 }
 
 @mixin for-tablet {
-  @media (min-width: 800px) and (max-width: 1200px) {
+  @media (min-width: 800px) and (max-width: 1024px) {
     @content;
   }
 }
@@ -24,9 +24,7 @@
   }
 }
 
-
-
-//Example Usage 
+//Example Usage
 // Order writing media quries matters
 
 // lor-laptops - 1

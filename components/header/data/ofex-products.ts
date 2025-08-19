@@ -16,11 +16,11 @@ const xpenzProducts = [
   {
     name: "Expense Managment",
     description: "Flexible prepaid card solutions",
-    link: "/expense-management",
+    link: "/products/expense-management",
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/expense-management",
+        subtitleLink: "/products/expense-management",
         currentHeading: {
           name: "Expenses", //previously it was Ofex
           description: "Digitize employee spends & reimbursements",

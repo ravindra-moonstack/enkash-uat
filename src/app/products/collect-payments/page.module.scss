@@ -50,7 +50,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  padding: 56px 20px;
+  padding: 50px 20px;
   position: relative;
   background-image: linear-gradient(
       0deg,
@@ -61,10 +61,8 @@
     linear-gradient(90deg, rgba(97, 115, 247, 0) 0%, #6173f7 100%),
     url("./img/secongBg.png");
 
-  .second_row_title {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  @include for-laptops {
+    padding: 90px 20px;
   }
   .section {
     max-width: 1200px;
@@ -99,25 +97,22 @@
 }
 
 .third_row {
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 50px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 194px 90px 51px 90px;
-  }
-  @include for-window-zoomed-screens {
-    padding-left: 150px;
-    padding-right: 150px;
+    padding: 160px 20px 90px;
   }
 
   .section {
-    padding: 20px;
     background-color: $color-sky-hint;
+    padding: 50px 30px;
+    @include for-laptops {
+      padding: 50px 100px;
+    }
   }
   .all_in_section_inner {
     padding: 0;
     @include for-laptops {
-      padding: 0 100px;
+      // padding: 0 100px;
     }
   }
 }
@@ -125,13 +120,17 @@
 .fourth_row {
   border-radius: 12px;
   position: relative;
-  padding: 20px;
+  padding: 50px 20px 0;
 
   .text_container {
     pointer-events: none;
     @include for-laptops {
       padding-bottom: 204px;
-      padding-top: 80px;
+      padding-top: 90px;
+    }
+
+    .how_it_workssection {
+      pointer-events: visible;
     }
   }
 
@@ -176,10 +175,10 @@
       position: absolute;
       bottom: 50%;
       left: 50%;
-      transform: translate(-52%, 106%);
+      transform: translate(-50%, 106%);
       max-width: 1200px;
-      padding: 40px; // More room on larger screens
-      margin: 0; // Remove mobile margin on large screens
+      padding: 40px; 
+      margin: 0; 
     }
   }
 }
@@ -187,10 +186,9 @@
 .fifth_row {
   position: relative;
   text-align: center;
-  padding: 20px;
+  padding: 30px 20px 50px;
   @include for-laptops {
-    padding-top: 350px;
-    padding-bottom: 90px;
+    padding: 440px 20px 90px;
   }
 
   .list_button {
@@ -215,14 +213,15 @@
   background: linear-gradient(90deg, #1c5af4 0%, #10348e 100%);
   border-radius: 12px;
   position: relative;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 58px;
+    padding: 58px 20px;
   }
   .get_started_button {
     padding: 6px;
     border: 2px solid $color-bolt-green;
     border-radius: 12px;
+    margin-top: 20px;
     @include for-laptops {
       padding: 11px 14px;
     }
@@ -300,9 +299,9 @@
   position: relative;
   display: flex;
   text-align: center;
-  padding: 20px;
+  padding: 50px 20px;
   @include for-laptops {
-    padding: 96px 90px 90px 60px;
+    padding: 90px 20px;
   }
 
   .faq_bg {
@@ -345,10 +344,9 @@
 }
 
 .other_products {
-  padding: 20px;
+  padding: 0 20px 26px;
   @include for-laptops {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding: 0 20px 66px;
   }
 }
 

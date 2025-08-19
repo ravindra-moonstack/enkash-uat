@@ -10,12 +10,9 @@ const PartnershipModal = ({
   modalLeft: number
 }) => {
   const [prevHoveredProductIndex] = useState<null | number>(null)
-
   return (
-    <div className="relative mx-auto ">
-      {/* <div className={styles.arrow}></div> */}
-
-      <div className={` ${styles.container}`}>
+    <div>
+      <div className={styles.container}>
         <div className="d-flex gap-3">
           {partnershipProducts.map((mother, i) => {
             const subProducts = mother.subProducts || []
@@ -27,7 +24,7 @@ const PartnershipModal = ({
                 key={i}
                 subProducts={subProducts}
                 index={i}
-                hoveredProductIndex={i} // <-- This ensures every card gets rendered correctly
+                hoveredProductIndex={i}
                 prevHoveredProductIndex={prevHoveredProductIndex}
                 onLinkClick={onLinkClick}
                 motherProductName={mother.name}

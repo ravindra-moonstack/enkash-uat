@@ -26,7 +26,7 @@ const OccasionVoucher: React.FC<OccasionVoucherProps> = ({
 }) => {
   return (
     <div className={styles.main_container}>
-      <div className={`mt-4 mb-5`}>
+      <div>
         <div className={`mb-1 ${styles.description_title}`}>
           <DynamicHeading
             content={[

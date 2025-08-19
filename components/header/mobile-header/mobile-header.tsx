@@ -138,13 +138,14 @@ const MobileHeader = ({ utmSource }: Props) => {
               <RectangleButton
                 title="Talk to Sales"
                 theme="blue"
-                url={signupUrl}
+                url={`/sales/?source=nav-bar`}
                 width="100%"
               />
+
               <RectangleButton
                 title="Log In"
                 theme="outline-blue"
-                url="https://home.enkash.com/login"
+                url={`https://home.enkash.com/login?source=nav-bar`}
                 width="100%"
               />
             </div>

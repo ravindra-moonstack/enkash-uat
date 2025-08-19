@@ -1,54 +1,46 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { cardsData, managementCards, policies } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  AllInOnePolicy,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
   realTimeIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
   hundredPercentIcon,
-  paymentGatewayImg,
-} from "."
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+} from "."
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Get Real-time Cashflow Analysis for Collected Payment",
+  description:
+    "Unlock better financial decisions with EnKash's Cashflow Analytics. Get real-time visibility, track inflows & outflows, and optimize working capital with smart insights.",
+  alternates: {
+    canonical: "https://www.enkash.com/cashflow-analytics/",
+  },
+})
+const salesUrl = getSalesUrl("/cashflow-analytics")
 
 const showScroll = cardsData.length > 3
 
 const CashflowAnalytics = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -86,10 +78,11 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
                 <div className="d-flex flex-column   pt-3 pt-md-0">
-                   <DynamicHeading
+                  <DynamicHeading
                     content={[
                       {
-                        title: "Unlock deep insights into your finances with Cashflow Analytics",
+                        title:
+                          "Unlock deep insights into your finances with Cashflow Analytics",
                         color: "color-black",
                       },
                     ]}
@@ -109,7 +102,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -125,14 +118,14 @@ const CashflowAnalytics = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -162,7 +155,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
       <div className={`row ${styles.second_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32  align-items-center max-w-auto">
           <div className="d-inline justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Forecast, Plan, & Grow with Confidence",
@@ -170,7 +163,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -180,7 +173,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -217,7 +210,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Track Emerging Trends",
@@ -239,7 +232,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Know Actionable Insights",
@@ -257,11 +250,15 @@ const CashflowAnalytics = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
-                  title: "How to Set Up Cashflow Analytics ",
+                  title: "How to Set Up",
+                  color: "color-black",
+                },
+                {
+                  title: " Cashflow Analytics ",
                   color: "color-equity-blue",
                 },
               ]}
@@ -272,7 +269,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
+                className={` ${
                   showScroll ? "overflow-auto scrollbar-thin" : ""
                 }`}
                 style={{
@@ -300,7 +297,7 @@ const CashflowAnalytics = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -319,78 +316,58 @@ const CashflowAnalytics = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Data Backed Decisions ",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: "For Your Business ",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-4 mb-1 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Data Backed Decisions ",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "For Your Business ",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Real-Time Visibility"
-              description="Track your cash inflows and outflows as they happen, so you're aware."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Smarter Decision-Making"
-              description="Use AI-driven insights to make informed choices about spending, saving, and investing."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Predictive Forecasting"
-              description="Anticipate cash shortages or surpluses and plan proactively for growth or emergencies."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Identify Trends & Patterns"
-              description="Spot recurring expenses, seasonal fluctuations, and revenue cycles to optimize cash flow."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
+              {policies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse} 
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
-                  title: "Leverage Cashflow Insights to Grow, Scale, & Stay Ahead",
+                  title:
+                    "Leverage Cashflow Insights to Grow, Scale, & Stay Ahead",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -399,69 +376,17 @@ const CashflowAnalytics = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-           <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                 <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
+          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -481,83 +406,22 @@ const CashflowAnalytics = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGatewayImg}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-                linkUrl="/payment-link"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly."
-                cardImage={qrCodes}
-                linkUrl="/qr-codes"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-                linkUrl="/reminder-engine"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

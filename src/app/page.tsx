@@ -1,10 +1,8 @@
-
-import PaymentGateway from "./products/payment-gateway/page"
+import PaymentGateway from "./payment-gateway/page"
 
 export default function Home() {
   return (
     <>
-     
       <PaymentGateway />
     </>
   )

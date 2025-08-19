@@ -5,21 +5,21 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-
+  // pointer-events: none;
   background-color: #292929; // set pure black
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 110px;
   padding-bottom: 36px;
-
+  position: relative;
   background-image: linear-gradient(
       to bottom,
       rgba(0, 0, 0, 0.6),
       // stronger black overlay (optional)
-      rgba(0, 0, 0, 0.2)
+      rgba(0, 0, 0, 0.6)
     ),
-    url("./img/first-row-bg.svg");
+    url("./img/first-row-bg.svg"), url("./img/black-bg.webp");
 
   @include for-laptops {
     padding-left: 70px;
@@ -27,11 +27,22 @@
     padding-top: 112px;
     padding-bottom: 40px;
   }
-
+  .spline_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+  }
   .bannerImages {
-       min-height: 150px;
-    @include for-laptops{
+    min-height: 150px;
+
+    @include for-laptops {
       min-height: 540px;
+    }
+    .lottie_container {
+      // pointer-events: none;
     }
   }
   .subtitle {
@@ -134,7 +145,6 @@
     padding: 90px 20px 90px 20px;
   }
 
-
   .rbi_section {
     display: flex;
     flex-direction: column;
@@ -188,9 +198,9 @@
 .fifth_row {
   position: relative;
   text-align: center;
-  padding:50px 20px 16px;
+  padding: 50px 20px 16px;
   @include for-laptops {
- padding: 90px 20px 22px;
+    padding: 90px 20px 22px;
   }
 }
 
@@ -205,42 +215,6 @@
     @include for-laptops {
       margin-top: 20px;
       padding-left: 66px;
-    }
-  }
-}
-
-.seventh_row {
-  .container {
-    @include for-laptops {
-      padding-left: 150px;
-      padding-right: 150px;
-    }
-    @include for-window-zoomed-screens {
-      padding-left: 100px;
-      padding-right: 100px;
-    }
-  }
-  .left_row {
-    padding: 40px;
-    margin-top: -20px;
-    border-radius: 10px;
-    border: 2px solid $color-night-blue;
-    @include for-laptops {
-      padding: 40px;
-      width: 50%;
-      margin-top: 0px;
-    }
-  }
-  .right_row {
-    margin-top: -10px;
-    @include for-laptops {
-      margin-left: -20px;
-      margin-top: 0;
-      width: 50%;
-    }
-
-    img {
-      height: 100%;
     }
   }
 }
@@ -304,26 +278,6 @@
   }
 }
 
-.ninth_row {
-  position: relative;
-  padding: 20px;
-  @include for-laptops {
-    padding-top: 60px;
-    padding-bottom: 60px;
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-  h1 {
-    font-size: 110px;
-    color: black;
-
-    span {
-      background-color: $color-bluish-purple;
-      color: white;
-    }
-  }
-}
-
 .other_products {
   padding: 0px 20px 50px;
   @include for-laptops {
@@ -357,7 +311,7 @@
   position: relative;
   overflow: hidden;
   padding: 50px 20px;
-  @include for-laptops{
+  @include for-laptops {
     padding: 90px 20px;
   }
   .list_button {
@@ -366,21 +320,25 @@
   }
 
   .analytic_bg {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    max-width: 45%;
-    z-index: 1;
-
     img {
       width: 100%;
       height: auto;
       display: none;
+      pointer-events: none;
+      max-height: 350px;
 
       @include for-laptops {
         display: block;
       }
     }
+  }
+
+  .spline_background {
+    position: absolute;
+    // top: 0%;
+    bottom: -43%;
+    right: -52%;
+    width: 1500px;
   }
 }
 

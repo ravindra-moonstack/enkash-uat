@@ -73,11 +73,11 @@ const ReceivableProducts = [
         link: "/instant-settlement",
       },
       {
-        name: "Payment Link",
+        name: "Payment Links",
         description: "Send embedded payment links via multiple channels",
         imageSrc: paymentLinks,
         imageSrcHovered: paymentLinksFilled,
-        link: "/payment-link",
+        link: "/payment-links",
       },
       {
         name: "UPI Payments",
@@ -114,7 +114,7 @@ const ReceivableProducts = [
         description: "Accept payments quick & easy",
         imageSrc: qrCode,
         imageSrcHovered: qrCodeFilled,
-        link: "/qr-codes",
+        link: "/qr-code",
         new: false,
         comingSoon: false,
       },

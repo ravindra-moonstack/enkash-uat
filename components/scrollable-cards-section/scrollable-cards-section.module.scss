@@ -1,28 +1,58 @@
 @use "/styles/variables" as *;
 @use "/styles/mixin" as *;
 
+.scrollBoxOuter {
+  max-height: max-content !important;
+  @include for-laptops {
+    max-height: 400px !important;
+    &::-webkit-scrollbar {
+      width: 8px; /* vertical scrollbar width */
+      height: 8px; /* horizontal scrollbar height */
+    }
+
+    /* Scrollbar track (background) */
+    &::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 10px;
+    }
+
+    /* Scrollbar thumb (the draggable part) */
+    &::-webkit-scrollbar-thumb {
+      background: #2563eb;
+      border-radius: 10px;
+    }
+
+    /* Scrollbar thumb on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: #2563eb;
+    }
+  }
+}
 .scrollCard {
-  // margin-left: 10px;
   margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 
   @include for-laptops {
     margin-left: 20px;
     margin-bottom: 50px;
-  }
-}
-.scrollCardButton {
-  margin: 0px 40px 20px;
-  @include for-laptops {
-    margin-top: 0px;
-    margin-left: 86px;
-  }
 
-  &--scroll {
-    margin-left: 56px;
-
-    @include for-laptops {
-      margin-left: 95px;
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 }
-
+.scrollCardButton {
+  padding: 20px 40px 20px;
+  @include for-laptops {
+    padding: 20px 86px;
+  }
+}
+.scrollCardButton--scroll {
+  padding: 20px 40px 20px;
+  @include for-laptops {
+    padding: 20px 97px;
+  }
+}

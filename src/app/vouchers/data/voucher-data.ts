@@ -288,7 +288,7 @@ const VoucherData: Record<string, Voucher> = {
     backgroundImg: "hehe",
     descriptionTitle: "Amazon Prime Gift Card",
     description:
-      "Whether it's a birthday, wedding, anniversary, or festive celebration, the Amazon Prime Gift Card makes gifting effortless and thoughtful.<br/><br/>It provides unlimited same-day or next-day delivery, exclusive Prime-only deals, and early access to shopping events, all at an introductory price of ₹399 for 12 months.<br/><br/>This plan is for shopping benefits only and does not include Prime Video, Music, Reading, or Gaming.<br/>Existing Prime members are not eligible for this offer.",
+      "Whether it's a birthday, wedding, anniversary, or festive celebration, the Amazon Prime Gift Card makes gifting effortless and thoughtful.It provides unlimited same-day or next-day delivery, exclusive Prime-only deals, and early access to shopping events, all at an introductory price of ₹399 for 12 months.This plan is for shopping benefits only and does not include Prime Video, Music, Reading, or Gaming.Existing Prime members are not eligible for this offer.",
     aboutCompany:
       "One of the world’s largest and most trusted e-commerce platforms, Amazon offers a vast selection of products across categories like electronics, fashion, beauty, home essentials, books, and more. In India, Amazon has become a go-to destination for millions of shoppers, known for its fast delivery, reliable service, and customer-first approach.",
     calculatorTitle: "Best Amazon Gift Cards",
@@ -1020,393 +1020,494 @@ const VoucherData: Record<string, Voucher> = {
     birthdays:
       "This makes perfect sense for birthdays; consider a Swiggy Gift Card, so that the person celebrating their birthday can enjoy their favourite food any time they want. This approach allows the beneficiaries to choose for themselves, adding to making the day even better.",
   },
-  "luxe-e-gift-card": {
-    name: "LUXE E-Gift Card",
-    urlName: "luxe-e-gift-card",
-    brandName: "LUXE",
-    category: "e-commerce",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "LUXE E-Gift Card ",
-    description:
-      "There is always that one person in everyone’s life, be it a best friend, a sibling, or a workmate, who is addicted to the finer things in life.  What better than giving them a LUXE gift card? Whether it is fine dining, high-end fashion or luxury items, a LUXE Gift Card enables ordering anything of their wish. ",
-    aboutCompany:
-      "LUXE is the best luxury gift card company that offers a variety of luxury gifting options ranging from fashion to lifestyle and even food within a short period. When you choose a gift card from LUXE, you do not simply give a present, you give an experience. Recipients can get accustomed to the way of life characterized by a wide range of high-end brands and bespoke services built to meet their requirements. Whether it is about purchasing a luxury designer gown or indulging in lavish dining at a fancy restaurant, the most pleasurable things in life are made easy with a LUXE Gift Card. ",
-    calculatorTitle: "Best  LUXE Gift Cards ",
-    calculatorDescription:
-      "LUXE Gift Cards are a popular choice for presents, whether it's for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to Buy a LUXE Gift Card",
-    howToRedeemTitle: "How to Redeem a LUXE Gift Card\n",
-    howToRedeemDesc:
-      "The procedure for LUXE Gift Card redemption is very simple and will take only a few minutes.\nHere’s how you can use it to unlock the luxury experience:",
-    howToRedeemSteps: [
-      "Purchase the LUXE Gift Card from bolt.enkash.com",
-      "Proceed to the official LUXE partner application or website that accepts this gift card.",
-      "On the payment page, provide the unique gift card number or the voucher code",
-      "Make the desired purchase and use the LUXE Gift Card",
-    ],
-    checkBalanceTitle: "How to Check LUXE Gift Card Balance ",
-    checkBalanceDesc:
-      "Are you curious to find out how much of your LUXE Gift Card value is still available for use? You can check your balance through various methods:",
-    checkBalanceSteps: [
-      "Access LUXE partner Homepage/app select Gift Cards and input the card details for the balance inquiry.",
-      "Have no worries; you can visit any LUXE-affiliated retailer, and the employees will assist you with checking your balance.",
-      "You may also reach LUXE India customer care for balance checks.",
-      "This way you are always kept updated on the amount of value you still have left to enjoy more luxurious experiences.",
-    ],
-    termsAndConditionsTitle: "Terms and Conditions for LUXE Gift Cards",
-    termsAndConditionSteps: [
-      "Luxe Gift Card  is valid for 12 months from the date of purchase.",
-      "The Luxe Gift Card can be redeemed at over 30 participating brands across India. It is not redeemable at airport stores.",
-      "The card can be redeemed only once until expiry. If the value of the merchandise exceeds the card's value, the bearer must pay the difference",
-      "Multiple Luxe Gift Cards can be used in a single transaction.",
-      "The card is accepted for any product or service provided by the LUXE's partners.",
-      "It is exclusively available on the LUXE partner application and is not valid on any other application.",
-      "The card can only be used for transactions in Indian Rupees, not foreign currencies",
-      "The card cannot be reloaded with additional funds after the initial purchase",
-      "LUXE Gift Cards cannot be refunded or exchanged for cash once purchased.",
-    ],
-    occasionsTitle: "LUXE Gift Cards for Different Occasions",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
-    festivals:
-      "Give your dear ones a LUXE Gift Card on festivals and happy occasions so that they may avail of the luxury experience of their choice.",
-    anniversary:
-      "\nCelebrate any milestone with a classy surprise that sees couples enjoy high-end goods or services.",
-    birthdays:
-      "\n Celebrate a loved one's birthday by gifting them with something that enables them to indulge in luxurious retail or dining experiences and more.\n",
-  },
-  "dominos-pizza-e-gift-card": {
-    name: "Dominos Pizza E-Gift Card",
-    urlName: "dominos-pizza-e-gift-card",
-    brandName: "Domino's",
+  kfc: {
+    name: "KFC E-Gift Card",
+    urlName: "kfc",
+    brandName: "KFC",
     category: "food-and-beverages",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "Domino's Pizza E-Gift Card ",
+    discount: 7.0,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "KFC E-Gift Card",
     description:
-      "What better gift for a friend who can never say no to a hot cheesy pizza? This gift card is ideal for anyone, whether it is a simple family supper, a game night or a get-together with friends. ",
+      "A KFC gift card lets you treat your loved ones to crispy, flavor-packed chicken, burgers, rice bowls, snacks, and more. With over 350 outlets nationwide and exciting deals, the KFC E-Gift Card is a thoughtful and delicious gifting option for any occasion.",
     aboutCompany:
-      "Domino’s is the world’s no. 1 chain in the selling and delivery of pizza and is known for its diverse range of pizzas, sides and drinks. Fresh ingredients coupled with the promises of the quickest delivery have helped the brand earn trust from its customers. In India as well, Domino's has slightly altered its strategies to suit Indian taste but people still get to eat the original pizzas that everyone loves. At Domino's, it is not only about eating pizza- it is about connecting with people over food and how your experience matters.",
-    calculatorTitle: "Best Domino's Gift Cards",
+      "KFC is one of the world’s most iconic fast-food brands, known for its signature crispy fried chicken. KFC offers a variety of crowd-favorite items, including chicken buckets, burgers, rice bowls, wraps, snacks, and refreshing beverages. KFC is always about bold flavors and finger-licking good moments.",
+    calculatorTitle: "Best KFC Gift Cards",
     calculatorDescription:
-      "Domino's Gift Cards are a popular choice for presents, whether it's for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to Buy a Domino's Gift Card ",
-    howToRedeemTitle: "How to use or redeem a Domino's Gift Card ",
+      "KFC Gift Cards are the perfect treat for food lovers who crave bold flavors and crispy indulgence. KFC E-Gift Cards make gifting effortless and exciting. Recipients can choose their favorites and enjoy a finger-lickin good meal on their terms with this gift card.",
+    howToBuyTitle: "How to Buy a KFC Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem a KFC Gift Card?",
     howToRedeemDesc:
-      "Redeeming a Domino’s Gift Card is as easy as ordering your favorite pizza. Here's how:\n",
+      "A KFC Gift Voucher can be redeemed using the following steps:",
     howToRedeemSteps: [
-      "Buy the voucher code from bolt.enkash.com",
-      "Visit the Domino's website or mobile application",
-      "Login into your account",
-      "Access the ‘Gift Vouchers’ section and enter the gift code",
-      "Place an order, and use the amount from the Domino’s Gift Voucher",
-      "In addition, please be aware that the app or website of Domino’s is the only platform where the balance on the gift card may be spent and will not be reloaded when used up.",
+      "Online Redemption",
+      "1. Go to www.online.kfc.co.in",
+      "2. Add your preferred items to the cart",
+      "3. Proceed to checkout",
+      "4. Select ‘Gift Card’ as the payment method and enter your card details to redeem",
+      "In-Store Redemption",
+      "1. Visit any participating KFC store",
+      "2. Select your favorite items",
+      "3. Inform the cashier about using the E-Gift Card",
+      "4. Use the card during payment to complete the transaction",
     ],
-    checkBalanceTitle: "How to Check the Balance of Your Domino’s Gift Card?",
+    checkBalanceTitle: "How to Check KFC Gift Card Balance",
     checkBalanceDesc:
-      "It is easy to check your balance on a Domino's Gift Card and there are two methods in doing it;",
+      "KFC Gift Card balance can be checked using the following steps:",
     checkBalanceSteps: [
-      "Use the Domino's mobile application or website. Then go to the card section that says ‘Gift Card’ where you will also be able to check the balance after entering the particulars of the card",
-      "Alternatively, one can also go to the nearest outlet or call the customer care of the company to find out the balance of the gift card.",
+      "Open your SMS app",
+      "Message the 16-digit card number to 55757575",
+      "You will be able to check the balance of your KFC Gift Card",
     ],
-    termsAndConditionsTitle: "Terms and Conditions for Domino’s Gift Card",
+    termsAndConditionsTitle: "Terms and Conditions for KFC Gift Card",
     termsAndConditionSteps: [
-      "Domino's EGC ( Electronic Gift Card) are available for any denomination between INR 100 and INR 3000",
-      "The gift card is valid for online ordering for delivery, dine-in, takeaway, and drive-n-pick services via Domino's Mobile App and website",
-      "The gift card is reusable and any remaining balance may be kept for use at a later date.",
-      "This gift card will not be returned in any form to cash or any other assets; however, the remaining balance will be kept for future use.",
-      "The validity of the gift card is 12 months from the date of activation or loading of the card.",
-      "One gift card per order will be accepted.",
-      "In cases where the order value exceeds the voucher value, the remaining balance must be paid in cash only; no other payment methods are acceptable.",
-      "Jubilant Foodworks Ltd (JFL) will not be liable for any reason beyond the purchase value of the EGC.",
-      "Redemption can occur only on Domino's digital platforms (Mobile APP, Mobile Website, and Desktop website). Redemption is not available at physical restaurant locations",
-      "The company reserves the right to amend these terms and conditions without prior notice.",
-      "The EGC is the bearer’s property. JFL or Domino's Pizza India will not be responsible for lost, stolen, damaged, or destroyed EGCs, and no replacements will be provided in such cases",
+      "This KFC E-Gift Card is issued by Yum! Restaurants (India) Private Limited and its authorized franchisees, valid only at participating KFC outlets across India.",
+      "The cardholder is considered the rightful beneficiary.",
+      "Inform the cashier about using the E-Gift Card before billing.",
+      "It is usable for purchases up to or less than the card balance (e.g., a ₹500 card can be used for purchases up to ₹500).",
+      "The gift card is valid for online orders on www.online.kfc.co.in and the KFC App.",
+      "This is a one-time-use card. Any unused balance will be forfeited and cannot be refunded or reused.",
+      "Multiple gift cards can be used for a single bill in stores.",
+      "No cash refunds or exchanges will be provided, even in case of loss.",
+      "Valid for 6 months from the date of issue. Expired cards cannot be revalidated.",
+      "Yum! and its franchisees reserve the right to modify terms or participating outlets without prior notice.",
+      "For terms updates or outlet list, visit https://online.kfc.co.in.",
+      "Use of this card implies acceptance of all terms & conditions.",
+      "Disputes, if any, will be subject to the exclusive jurisdiction of the courts in New Delhi.",
     ],
-    occasionsTitle: "Domino's Gift Cards for Different Occasions ",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
-    festivals:
-      "Festivals always call for something special Domino’s Gift Cards are definitely a good idea. It serves as a convenient present for giving the opportunity to enjoy the cheesy pizzas during the get-togethers like Diwali, Christmas and many other such occasions. ",
-    anniversary:
-      "Express your love and togetherness with a Domino's Gift Card which will enable the couple to have their preferred dish. Be it an intimate dinner or a pizza date, the gift card provides them with the option and enhances their anniversary experience",
+    occasionsTitle: "KFC Gift Cards for Different Occasions",
+    occasionsDesc:
+      "KFC Gift Cards are easily every foodie's dream come true. Whether it’s a birthday, anniversary, or any festival, a KFC Gift Card is always a thoughtful way to avail discounts and good food.",
     birthdays:
-      "Domino's gift cards are a pleasant addition because the person can order any pizzas, sides, and desserts they want. It doesn’t matter whether it is a friend or family or a colleague, this gift understands each and every person's need \n",
-  },
-  "bookmyshow-e-gift-card": {
-    name: "BookMyShow E-Gift Card",
-    urlName: "bookmyshow-e-gift-card",
-    brandName: "BookMyShow",
-    category: "movies-and-music",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "BookMyShow E-Gift Card ",
-    description:
-      "Surprise your loved ones with the gift of entertainment with a BookMyShow E-Gift Card! Whether it's the latest blockbuster movie, a live concert, or a thrilling sports event, this e-gift card unlocks a world of entertainment choices for you and your loved ones.\n",
-    aboutCompany:
-      "BookMyShow is India's leading online entertainment platform, offering a convenient and user-friendly way to book tickets for movies, plays, concerts, sporting events, and various other experiences. With BookMyShow, you can browse events, select your seats, and book your tickets – all from the comfort of your home or on the go. Give the gift of entertainment with a BookMyShow E-Gift Card today!\n",
-    calculatorTitle: "Best BookMyShow Gift Cards",
-    calculatorDescription:
-      "BookMyShow Gift Cards are a popular choice for presents, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to Buy a BookMyShow Gift Card",
-    howToRedeemTitle: "How to Use or Redeem a BookMyShow Gift Card",
-    howToRedeemDesc:
-      "BookMyShow Gift Card can be used or redeemed on the brand’s website or app for various entertainment options. Here's a step-by-step guide on how to redeem or use the voucher:",
-    howToRedeemSteps: [
-      "Log on to https://in.bookmyshow.com/ or the BookMyShow mobile app",
-      "Select your desired movie, event, venue, show date, time, and seats",
-      "During checkout, click on 'More Payment Options' on the payment page and then the 'Gift Voucher' tab. Enter the E-Gift Card code and click 'Apply'",
-      "The BookMyShow Gift Card Voucher value will be applied. If needed, combine it with other payment methods to complete the booking",
-      "After a successful transaction, you'll receive a booking ID. Exchange this ID at the cinema/venue box office for your actual tickets. You'll also receive an email/SMS confirmation for your reference",
-    ],
-    checkBalanceTitle: "How to Check BookMyShow Gift Card Balance",
-    checkBalanceDesc:
-      "BookMyShow Gift Cards are preactivated cards and remain valid for 6 months from purchase. The balance of the BookMyShow Gift Card Voucher can be checked on the mobile app or website. \n",
-    checkBalanceSteps: [
-      "Open the profile section in the app or website.",
-      "Go to Accounts & Settings",
-      "Select Safe payment modes",
-      "Select the add option and click on the gift voucher",
-      "Enter your Gift Card number and proceed",
-      "Go back and view your balance and validity",
-    ],
-    termsAndConditionsTitle: "Terms and Conditions for BookMyShow Gift Card",
-    termsAndConditionSteps: [
-      "BookMyShow Gift Card can be redeemed only on the BookMyShow website/mobile app & cannot be redeemed directly at the cinema/venue box office.",
-      "BookMyShow Gift Card can be redeemed by purchasing of e-tickets for movies/virtual events/plays/concerts/sports/BMS Stream available on BookMyShow.",
-      "Multiple Gift Cards can be used in a single transaction or Gift Voucher can be combined with any other payment type on BookMyShow.",
-      "BookMyShow Gift Card can be used multiple times until the last rupee loaded on it gets exhausted within the validity period.",
-      "BookMyShow Gift Card cannot be used to purchase another Gift Card.",
-      "BookMyShow Gift Card works on a non-extension clause & the order cannot be cancelled or refunded once confirmed.",
-      "BookMyShow Gift Card is valid PAN India across all cinemas/partners associated with BookMyShow.",
-      "If lost or misused, the BookMyShow Gift Card cannot be replaced. void if resold, cannot be exchanged for points or cash & cannot be re-validated once past the expiry date.",
-    ],
-    occasionsTitle: "BookMyShow E-Gift Cards for Different Occasions",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
-    festivals:
-      "For this festive season, consider giving your loved ones BookMyShow Gift Cards allowing them to enjoy their preferred movies and shows and have a wonderful time.\n",
+      "What better than gifting a KFC Gift Card to a food lover? Get them this exclusive KFC E-Gift Card and make their day memorable.",
     anniversary:
-      "Consider gifting a BookMyShow to the couple for their anniversary, enabling them to enjoy their favorite films and shows together.",
-    birthdays:
-      "Surprise your loved ones with a gift card on their birthday, allowing them to indulge in their special day",
-  },
-  "starbucks-e-gift-card": {
-    name: "Starbucks E-Gift Card",
-    urlName: "starbucks-e-gift-card",
-    brandName: "Starbucks",
-    category: "food-and-beverages",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "Starbucks E-Gift Card ",
-    description:
-      "We all know someone who is addicted to caffeine. Right? Isn't this the best gift they can get? This Starbucks E-Gift Card can make any coffee lover jump with joy. Give this Starbucks Gift Card to your friends who cannot survive without coffee and see them cherish you forever.\n",
-    aboutCompany:
-      "A prominent player in the coffee industry, Starbucks offers a wide range of coffee drinks, light bites, and a premium experience. The Indian subsidiary of this American giant caters to Indian tastes and preferences along with its core offerings. ",
-    calculatorTitle: "Best Starbucks Gift Cards",
-    calculatorDescription:
-      "Starbucks Gift Cards are a popular choice for presents, whether it's for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to buy a Starbucks Gift Card",
-    howToRedeemTitle: "How to use or redeem a Starbucks Gift Card ",
-    howToRedeemDesc:
-      "Starbucks Gift Voucher can be redeemed using the following steps on the app:",
-    howToRedeemSteps: [
-      "Buy the Voucher code through the EnKash platform",
-      "Download the Starbucks mobile app if you haven't already",
-      "Open the app and sign in to your Starbucks account.",
-      'Tap on the "Cards" section.',
-      "Add your gift card by entering the card number or voucher code",
-      "Once added, you can use the balance to purchase any product directly through the app.",
-    ],
-    checkBalanceTitle: "How to Check Starbucks Gift Card Balance",
-    checkBalanceDesc:
-      "There are various ways to check Starbucks Gift card balance.",
-    checkBalanceSteps: [
-      "Check Starbucks E Gift Card balance online- To check the gift card balance one can visit the Starbucks India mobile app. On the mobile app open the Starbucks card section and view the balance",
-      "Check Starbucks E-Gift Card balance offline- The Starbucks Gift Card balance can also be checked by visiting the store or by calling the India customer care number.",
-    ],
-    termsAndConditionsTitle: "Terms and Conditions for Starbucks Gift Card ",
-    termsAndConditionSteps: [
-      "Clubbing of this offer with any other offer is at the discretion of the business provider.",
-      "The offer applies to all products.",
-      "The voucher can be used to purchase any Starbucks product only from the Starbucks Mobile App (NOT on the mobile website/PWA).",
-      "This voucher can only be used for takeaway orders done through the Starbucks mobile app.",
-    ],
-    occasionsTitle: "Starbucks Gift Card for Different Occasions ",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
+      "The perfect anniversary gift for a couple who loves food. KFC Gift Voucher is something they will appreciate on their special occasion.",
     festivals:
-      "A thoughtful way to celebrate festivals. Let the festival experience for your loved ones be unique with this personalized gift.",
-    anniversary:
-      "Starbucks Gift Cards are a perfect way to send anniversary wishes to your loved ones. Let their anniversary celebration be over a shared cup of coffee. ",
-    birthdays:
-      "Starbucks gift cards are ideal for coffee lovers on their birthdays. You can choose to send an e-gift card directly to your loved one's inbox or mobile",
+      "The recipient of the KFC gift card will thank you for making the festive season better for them.",
   },
-  "myntra-e-gift-card": {
-    name: "Myntra E-Gift Card",
-    urlName: "myntra-e-gift-card",
-    brandName: "Myntra",
-    category: "e-commerce",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "Myntra E-Gift Card ",
-    description:
-      "The Myntra Gift Card comes in handy when it comes to gifts for special occasions like birthdays, weddings, anniversaries, and festivities. Use it for yourself or gift it to your special ones for shopping across multiple categories and brands. The Myntra Gift Card provides access to everything from beauty, apparel, home & kitchen, and clothing categories.",
-    aboutCompany:
-      "A premier online beauty destination in India, Myntra offers a comprehensive selection of branded products for men and women at the best price. Myntra makes shopping for your favourite beauty products much easier and more convenient.",
-    calculatorTitle: "Best Myntra Gift Cards",
-    calculatorDescription:
-      "Myntra Gift Cards are a popular choice for presents, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to buy a Myntra Gift Card",
-    howToRedeemTitle: "How to use or redeem a Myntra Gift Card ",
-    howToRedeemDesc:
-      "Myntra Gift Voucher can be redeemed using the following steps on the website and the app:",
-    howToRedeemSteps: [
-      "Log on to myntra.com or visit the app",
-      "Go to Gift Cards under the Profile Section",
-      "Add the Gift Card number and PIN",
-      "Use the amount to purchase from the website",
-    ],
-    checkBalanceTitle: "How to check Myntra Gift Card Balance",
-    checkBalanceDesc:
-      "Myntra Gift Cards are preactivated cards and remain valid for 1 year from the date of purchase. The balance of the Myntra Gift Card Voucher can be checked on the mobile app or website. \n",
-    checkBalanceSteps: [
-      "Visit the Myntra website or app and log in with your credentials",
-      "Go to the Profile Section",
-      "Scroll down to the Gift Cards Section",
-      "Enter the Gift Card number and PIN",
-      "Click on Check Balance to know the balance available",
-    ],
-    termsAndConditionsTitle: "Terms and Conditions for Myntra Gift Card ",
-    termsAndConditionSteps: [
-      "Issued by Pine Labs Pvt. Ltd, authorized by RBI under Qwikcilver; valid on Myntra (website or app) for 1 year",
-      "This card cannot be redeemed for cash/credit or used to buy other gift cards; multiple cards are allowed per order",
-      "Refunds for cancellations go back to the original Gift Card; pay the remaining balance with other methods",
-      "Taxes and duties are the customer's responsibility; the cardholder is responsible for its security.",
-      "Fraudulent cards may be cancelled; terms may change without notice; excludes Titan, Bluestone, and Aditya Birla sellers",
-    ],
-    occasionsTitle: "Myntra Gift Card for Different ferent Occasions ",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
-    festivals:
-      "Let the recipient pick anything of their choice using the Myntra E-Gift Card during the festive season.",
-    anniversary:
-      "The perfect anniversary gift, Myntra Gift Voucher is something the recipient will appreciate on their special occasion.",
-    birthdays:
-      "Get this exclusive Myntra E-Gift Card to surprise your loved ones on their birthdays.\n",
-  },
-  "zomato-e-gift-voucher": {
-    name: "Zomato E-Gift Voucher",
-    urlName: "zomato-e-gift-voucher",
+  zomato: {
+    name: "Zomato E-Gift Card",
+    urlName: "zomato",
     brandName: "Zomato",
     category: "food-and-beverages",
-    discount: 0,
-    backgroundImg: "hehe",
-    descriptionTitle: "Zomato E-Gift Voucher ",
+    discount: 3.5,
+    backgroundImg: "YOUR_IMAGE_HERE",
+    descriptionTitle: "Zomato E-Gift Card",
     description:
-      "Zomato Gift Cards are one of the most preferred ways to delight friends, family, or colleagues with the experience of a perfect meal. Whether it is a birthday or an anniversary, a festival or corporate gifting, a Zomato Gift Card will allow your loved ones to savor meals of their choice from multiple restaurants.\n",
+      "A treat for foodies, the Zomato Gift Card offers the freedom to explore and enjoy meals from a wide range of restaurants across India. Whether it's a birthday, celebration, or just a thoughtful surprise, this card lets users order food, book tables, or dine out with ease via the Zomato app. Simple to redeem and valid across multiple services, it’s a deliciously convenient way to gift happiness.",
     aboutCompany:
-      "Zomato is an online portal that connects users with the top restaurants that serve their favorite food. It helps to check out the reviews of restaurants and their menu and track the order also. Various services like restaurant reviews, menus, online orders, and dine-out are available in different countries.\n",
+      "One of the leading online food delivery apps, Zomato connects customers, restaurant partners, and delivery personnel. It caters to a variety of needs allowing users to discover restaurants, read and write reviews, browse and share photos, order food online, book tables, and make payments while dining out.",
     calculatorTitle: "Best Zomato Gift Cards",
     calculatorDescription:
-      "Zomato Gift Cards are a popular choice for presents, whether it's for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to buy a Zomato Gift Card ",
-    howToRedeemTitle: "How to use or Redeem a Zomato Gift Card ",
+      "Best Zomato Gift Cards are the ultimate way to share good food and great experiences. This card offers the freedom to order from thousands of restaurants or enjoy dining out. With easy redemption via the Zomato app and wide acceptance across delivery, table bookings, and more, Zomato Gift Cards turn every meal into a memorable treat.",
+    howToBuyTitle: "How to Buy a Zomato Gift Card?",
+    howToRedeemTitle: "How to Use or Redeem Zomato Gift Cards?",
     howToRedeemDesc:
-      "Redeeming a Zomato gift card is effortless. Follow the steps below to redeem your card and avail delicious food.",
+      "Zomato Gift Voucher can be redeemed using the following steps:",
     howToRedeemSteps: [
-      "Begin with logging in to your Zomato account via the app or the website.",
-      "Click on the profile icon located at the bottom right corner of the screen to select 'Zomato Credits' (On the website, look for the wallet or payment options section to find 'Zomato Credits.')",
-      "Scroll down to find the “Credits and Gift Cards” section.",
-      "Tap or click on “Claim Gift Card” and enter your 16-digit gift card code and PIN (if applicable).",
-      "Once the code and PIN are entered, confirm the addition to apply the gift card value to your Zomato credits.",
-      "Browse through the app or website, select your restaurant or meal, and add your desired items to the cart.",
-      "Once you've finalized your order, proceed to the checkout page.",
-      "On the payment screen, choose 'Zomato Credits' to apply the gift card value to your order total.",
-      "If the total amount exceeds your gift card balance, you can pay the remaining amount using another payment method like a credit/debit card, UPI, or wallet.",
+      "Open the Zomato App and go to the Money section in your profile",
+      "Enter the 16-digit code and 6-digit PIN",
+      "The amount will be added to your Gift Card Balance",
+      "During checkout, your gift card balance will appear under the Zomato Money tab",
+      "Simply select it to apply the balance toward your order payment",
     ],
     checkBalanceTitle: "How to Check Zomato Gift Card Balance",
     checkBalanceDesc:
-      "If you have a Zomato gift card and want to check the balance on it, you have a couple of options - through the Zomato website or mobile app. Here’s how you do it.",
+      "Zomato Gift Cards balance can be checked using the following steps:",
     checkBalanceSteps: [
-      "Via the Zomato Website",
-      "Visit the Zomato website and log in to your account.",
-      "Go to the ‘Payments’ section under your profile.",
-      "Input the 16-digit gift card number and the 6-digit PIN.",
-      "Click on 'Check Balance' to view your available balance.",
-      "Using the Zomato Mobile App",
-      "Launch the Zomato app and log in to your account.",
-      "Tap on the profile icon then select the ‘Payments’ section.",
-      "Select the 'Add Gift Card' option.",
-      "Enter the 16-digit gift card number and the PIN.",
-      "Tap on 'Check Balance' to see what remains on the gift card.",
+      "Log in to your Zomato account on the app",
+      "Go to the profile section",
+      "Navigate to transaction history or gift card details",
+      "View available gift card balance and usage history",
     ],
-    termsAndConditionsTitle: "Terms and Conditions for Zomato Gift Card ",
+    termsAndConditionsTitle: "Terms and Conditions for Zomato Gift Card",
     termsAndConditionSteps: [
-      "The Zomato gift card can be used to make purchases only on the Zomato website, app.",
-      "The Gift Card is valid for 12 months from the date of purchase and can not be used to buy other gift cards.",
-      "Zomato Gift Cards cannot be exchanged for cash or credit.",
-      "If the order is canceled, the gift card amount will automatically be refunded to the source account.",
-      "The gift card is the responsibility of the purchaser. Zomato and its payment partner are not liable for any loss, theft or unauthorised use of the gift card.",
-      "Users can combine multiple gift cards for a single purchase.",
+      "Issued by Razorpay Technologies Pvt. Ltd., authorized by RBI, in partnership with Zomato.",
+      "Valid only on Zomato’s website, mobile app, and affiliated platforms.",
+      "To use, claim the card via the “Claim” option in your Zomato account; balance will be added to Zomato Money.",
+      "Valid for 4 years from the date of purchase.",
+      "Multiple gift cards can be combined in one transaction.",
+      "Cannot be reloaded, transferred, refunded, or used to buy other gift cards.",
+      "In case of order cancellations, the amount is refunded to Zomato Money.",
+      "Can be purchased using UPI, credit/debit cards, or net banking.",
+      "Usable alongside promo codes and other digital payment options.",
+      "No fees or interest apply.",
+      "If order value exceeds balance, pay the remaining via other digital modes on Zomato.",
+      "Users are responsible for the security of the 16-digit code and 6-digit PIN. Lost/stolen cards won’t be reissued.",
+      "Razorpay/Zomato are not liable for unauthorized use, loss, or technical issues.",
+      "May collect KYC details and share them with RBI/statutory authorities if required.",
+      "Cards are usually delivered instantly but may take up to 72 hours.",
+      "For issues, write to giftcards@zomato.com.",
+      "Razorpay may replace non-functional cards after verification.",
+      "All disputes are subject to New Delhi court jurisdiction.",
+      "Terms may change without prior notice.",
+      "No warranties on uninterrupted service or merchantability.",
+      "Liability is limited to the value of the gift card.",
+      "Users agree to indemnify Zomato/Razorpay against misuse or breach of terms.",
     ],
-    occasionsTitle: "Zomato Gift Card for Different Occasions ",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
-    festivals:
-      "Celebrate festivals by giving a Zomato card!  Whether it’s Diwali, Christmas or Eid, a Zomato gift card guarantees that the celebrations are delicious. \n",
-    anniversary:
-      "Whether it is a romantic dinner for two or a family outing, Zomato gift cards are a perfect way to celebrate anniversaries by serving delicious food coming from the top restaurants.",
+    occasionsTitle: "Zomato Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Zomato Gift Cards are easily the best gift for any occasion - be it birthdays, anniversaries, festivals, or any casual day to appreciate the loved ones.",
     birthdays:
-      "Celebrate their special day with the gift of food! Zomato gift cards make birthdays better, because recipients get to choose the meals they love.",
+      "What better than gifting a Zomato Gift Card to a food lover? Get them this exclusive Zomato E-Gift Card and make their day memorable.",
+    anniversary:
+      "The perfect anniversary gift for a couple who loves binge-eating. Zomato Gift Voucher is something they will appreciate on their special occasion.",
+    festivals:
+      "The recipient of the Zomato gift card will thank you for making the festive season better for them.",
+  },
+  dominos: {
+    name: "Domino’s Gift Card",
+    urlName: "dominos",
+    brandName: "Domino's",
+    category: "food-and-beverages",
+    discount: 10, // Up to 10% off
+    backgroundImg: "hehe",
+    descriptionTitle: "Domino’s Gift Card",
+    description:
+      "Treat your loved ones to hot, cheesy happiness with the Domino’s Gift Card. Perfect for birthdays, celebrations, or just because, it lets them choose from their favourite pizzas, sides, and desserts. Easy to use and redeem, Domino’s E-Gift Card can be used for delivery, dine-in, & takeaway.",
+    aboutCompany:
+      "One of the world’s leading pizza delivery brands, Domino’s is known for its fresh, hot, and fast service. Operated in India by Jubilant FoodWorks, Domino’s has become a household name over the years. From classic pizzas to innovative sides, Domino’s offers a seamless ordering experience via its app, website, and in-store services.",
+    calculatorTitle: "Best Domino's Gift Cards",
+    calculatorDescription:
+      "Domino's Gift Cards can easily be the best gift for a sports fanatic. Someone who loves watching sports would surely appreciate this thoughtful gift, especially during live sporting events.",
+    howToBuyTitle: "How to Buy a Domino's Gift Card",
+    howToRedeemTitle: "How to Use or Redeem Domino's Gift Card",
+    howToRedeemDesc:
+      "Domino's Gift Voucher can be redeemed using the following steps on its app.",
+    howToRedeemSteps: [
+      "Log in to the Domino’s app",
+      "Add items to your cart and select your delivery time",
+      "Proceed to checkout",
+      "Click on the ‘E-Vouchers’ tab",
+      "Enter your Gift Voucher code and PIN, then click Submit",
+      "Pay the remaining amount (if any) at the time of delivery",
+    ],
+    checkBalanceTitle: "How to Check Domino's Gift Card Balance",
+    checkBalanceDesc:
+      "Domino's Gift Card balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Visit www.dominos.co.in/giftcards",
+      "Go to the ‘Balance Enquiry’ section",
+      "Enter your 10-digit gift card number to check the balance",
+      "Or, send an SMS DOM BAL <10-digit card number> to 56767",
+      "You will be able to check your balance details",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Domino's Gift Card",
+    termsAndConditionSteps: [
+      "Domino’s e-gift cards are available from ₹100 to ₹3000 and are valid for 180 days from the date of issue.",
+      "The gift cards can be redeemed multiple times until fully used, only on the Domino’s app, mobile site, or desktop site; not valid at outlets or for advance orders.",
+      "Domino’s gift voucher is valid for delivery, dine-in, takeaway, and Drive N Pick orders via Domino’s digital platforms.",
+      "Only one gift card can be used per order. If the order value exceeds the gift card, the balance must be paid in cash only.",
+      "The gift card is not eligible for discounts like EDV, CRM offers, combos, or post-order guarantees.",
+      "Once purchased, the card is non-refundable, non-cancellable, and cannot be exchanged for cash.",
+      "Lost, expired, or misused cards won’t be replaced or refunded; revalidation is not allowed.",
+      "Domino’s and Jubilant Foodworks are not liable for stolen, damaged, or unauthorized use of cards.",
+      "The balance can be checked at: dominos.co.in/gift-vouchers/balance-enquiry.",
+      "JFL reserves the right to change terms or discontinue issuance/redemption without notice. For help, visit gvhelpdesk.com.",
+    ],
+    occasionsTitle: "Domino's Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Domino's Gift Cards can easily make up for a great gift for any occasion be it a birthday, anniversary, or any festival. A Domino's Gift Card is always a thoughtful way to make the recipient smile.",
+    festivals:
+      "Festivals always call for something special — Domino’s Gift Cards are definitely a good idea. They serve as a convenient present for enjoying cheesy pizzas during get-togethers like Diwali, Christmas, and more.",
+    anniversary:
+      "Express your love and togetherness with a Domino's Gift Card which enables the couple to enjoy their preferred dish. Be it an intimate dinner or a pizza date, the gift card enhances their anniversary experience.",
+    birthdays:
+      "A Domino's Gift Card is truly a foodie’s delight on their birthday. It’s the perfect way to let them order any pizzas, sides, or desserts they want and make their day memorable.",
+  },
+  mamaearth: {
+    name: "Mamaearth Gift Card",
+    urlName: "mamaearth",
+    brandName: "Mamaearth",
+    category: "health-and-wellness",
+    discount: 11, // Up to 11% off
+    backgroundImg: "hehe",
+    descriptionTitle: "Mamaearth Gift Card",
+    description:
+      "For someone who prefers all things natural, the Mamaearth E-Gift Card is the perfect gift. It offers access to a wide range of skincare, haircare, and makeup products made with natural ingredients. Completely toxin-free and safe, these products are designed to nourish and protect, giving you the best of nature at a great price.",
+    aboutCompany:
+      "Mamaearth is a homegrown Indian brand known for its natural, toxin-free personal care and beauty products. Crafted with botanical extracts and nourishing oils, their range is free from harmful chemicals like sulfates and parabens. From skincare and haircare to body care and baby care, Mamaearth combines effective formulas with a strong commitment to sustainability and eco-friendly packaging.",
+    calculatorTitle: "Best Mamaearth Gift Cards",
+    calculatorDescription:
+      "Best Mamaearth Gift Cards make a thoughtful gift for anyone who values clean beauty and natural care. Whether it’s for skincare, haircare, body care, or baby essentials, these gift cards offer the freedom to choose from a wide range of toxin-free, eco-conscious products.",
+    howToBuyTitle: "How to Buy a Mamaearth Gift Card",
+    howToRedeemTitle: "How to Use or Redeem Mamaearth Gift Card",
+    howToRedeemDesc:
+      "Mamaearth Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit Mamaearth",
+      "Browse and add your desired products to the cart",
+      "Add your voucher to the e-Pay balance or enter the voucher details manually at checkout",
+    ],
+    checkBalanceTitle: "How to Check Mamaearth Gift Card Balance",
+    checkBalanceDesc:
+      "Mamaearth Gift Cards' balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Log in to your Mamaearth account on the website or app",
+      "Go to the profile section",
+      "Navigate to transaction history or gift card details",
+      "View available gift card balance and usage history",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for Mamaearth Gift Card",
+    termsAndConditionSteps: [
+      "Valid only on www.mamaearth.in. Not refundable or returnable once issued.",
+      "The person holding the GV/e-Pay is considered the beneficiary.",
+      "Gift Vouchers can be converted into e-Pay balance as per user preference.",
+      "Multiple GVs can be combined and added to e-Pay, but no additional offers can be applied during redemption.",
+      "Only valid and unexpired Mamaearth GVs/e-Pay balances will be accepted, at Mamaearth’s sole discretion.",
+      "e-Pay must be linked to a registered mobile number.",
+      "Cannot be transferred to another e-Pay account, or exchanged for cash or Mama Cash.",
+      "Redeemable only for eligible products/services on the Mamaearth website. Not valid at offline stores.",
+      "Once expired, GV/e-Pay cannot be revalidated or extended.",
+      "e-Pay balance retains the validity of the original GV from which it was converted.",
+      "Mamaearth, GyFTR, or affiliates are not liable for unauthorized usage due to shared voucher or account details.",
+      "Cannot be redeemed on blackout dates. Mamaearth may update these dates without notice.",
+      "In case of technical issues, blocked GV/e-Pay will be reactivated within 72 hours.",
+      "Any disputes must be addressed with the issuing company; their decision will be final.",
+      "Mamaearth/GyFTR may suspend or cancel GV/e-Pay if misuse or fraud is detected.",
+      "Terms and conditions are subject to change without prior notice.",
+      "For assistance, please visit gvhelpdesk.com.",
+    ],
+    occasionsTitle: "Mamaearth Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Mamaearth Gift Cards are easily the best gift; whether it’s a birthday, anniversary, festival, or a simple gesture like thank you. A Mamaearth Gift Card is always a thoughtful way to show that you care.",
+    festivals:
+      "The recipient of the Mamaearth gift card will thank you for making the festive season better for them. Whether it’s Diwali, Christmas, or Eid — healthy skincare always makes a thoughtful present.",
+    anniversary:
+      "The perfect anniversary gift for a couple who loves skincare and all things natural. A Mamaearth Gift Voucher is something they will appreciate on their special occasion.",
+    birthdays:
+      "What better than gifting a Mamaearth Gift Card to a skincare lover? Get them this exclusive Mamaearth E-Gift Card and make their day memorable.",
+  },
+  apollo: {
+    name: "Apollo Pharmacy E-Healing Gift Card",
+    urlName: "apollo",
+    brandName: "Apollo Pharmacy",
+    category: "health-and-wellness",
+    discount: 10, // Up to 10% off
+    backgroundImg: "hehe",
+    descriptionTitle: "Apollo Pharmacy E-Healing Gift Card",
+    description:
+      "The Apollo Pharmacy E-Healing Gift Card is a thoughtful and practical gift for health-conscious individuals. Redeemable exclusively at Apollo Pharmacy retail outlets, this card allows recipients to purchase a wide range of prescribed medicines and pharma essentials with ease. Whether you're supporting a loved one's recovery or promoting everyday wellness, the E-Healing Gift Card offers a seamless, cashless experience at India’s trusted pharmacy chain.",
+    aboutCompany:
+      "Apollo Pharmacy is India’s largest and most trusted pharmacy retail chain, with over 5,000 outlets across the country. Backed by the renowned Apollo Hospitals Group, it offers genuine medicines, wellness products, and healthcare essentials. Known for its customer-first approach, expert pharmacists, and 24x7 service in select cities, Apollo Pharmacy ensures safe and reliable access to healthcare anytime, anywhere.",
+    calculatorTitle: "Best Apollo Pharmacy Gift Cards",
+    calculatorDescription:
+      "Best Apollo Pharmacy Gift Cards are perfect for anyone who values health and wellness. Whether it's the E-Healing Gift Card for prescribed medicines or general-purpose pharmacy gift cards, these cards offer flexibility, ease of use, and access to genuine products across Apollo Pharmacy’s network.",
+    howToBuyTitle: "How to Buy an Apollo Pharmacy Gift Card",
+    howToRedeemTitle: "How to Use or Redeem an Apollo Pharmacy E-Gift Card",
+    howToRedeemDesc:
+      "Apollo Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit any Apollo Pharmacy retail outlet to redeem the E-Healing Gift Card",
+      "Share the 16-digit Card Number and PIN with the cashier at the time of billing",
+      "Request the cashier to use Billing Code 5000 (Healing Card) for redemption",
+      "For any issues during redemption, contact Apollo Pharmacy Customer Care at 1860 500 0101",
+    ],
+    checkBalanceTitle: "How to Check Apollo Pharmacy E-Gift Card Balance",
+    checkBalanceDesc:
+      "The Apollo Pharmacy Gift Cards' balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Open the Apollo Pharmacy app and log in to your account",
+      "Navigate to the ‘Apollo Credit’ section in your profile",
+      "Tap on ‘Add Gift Card’",
+      "Enter the Gift Card Number and PIN, then select ‘Check Balance’",
+    ],
+    termsAndConditionsTitle:
+      "Terms and Conditions for Apollo Pharmacy E-Gift Card",
+    termsAndConditionSteps: [
+      "This Gift Card is valid only at Apollo Pharmacy retail outlets. Not applicable on the Apollo 24/7 app/website, the Apollo Pharmacy website, or hospital-based pharmacies.",
+      "A maximum of 2 E-Healing Cards can be redeemed per day at participating outlets.",
+      "The cardholder is considered the sole beneficiary. The validity is as determined by the issuer.",
+      "Apollo Pharmacy is not liable for lost, stolen, or misused cards.",
+      "To redeem, ask the cashier to use Billing Code 6619 and enter the 16-digit Card Number and PIN. For help, call 1860 500 0101.",
+      "Redemption issues should be directed to Apollo Customer Care. For other concerns, contact the issuer mentioned on the card/voucher.",
+      "This is a one-time use card with a fixed validity. It cannot be reused, extended, or refunded. Any unused balance will lapse.",
+      "The card can be used only for Pharma/Medicines. Not valid on FMCG, DPCO, Surgical items, Apollo brands, doctor consultations, lab tests, or health checks.",
+      "No offers, health credits, or clubbing with wallets/cards apply. Any excess amount must be paid in cash. No returns/exchanges on billed items.",
+    ],
+    occasionsTitle: "Apollo Pharmacy Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Apollo Gift Cards are easily the best gifts for friends, family, and loved ones. You can gift them a choice with Apollo Gift Cards. Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, an Apollo Gift Card is always a thoughtful gift.",
+    festivals:
+      "The recipient of the Apollo gift card will thank you for making the festive season better for them.",
+    anniversary:
+      "An Apollo Gift Voucher is something they will appreciate for being thoughtful and considerate.",
+    birthdays:
+      "An Apollo Gift Card is something they will appreciate on their special day.",
   },
 
-  "decathlon-sports-india-e-gift-card": {
-    name: "Decathlon Sports India E-Gift Card",
-    urlName: "decathlon-sports-india-e-gift-card",
-    brandName: "Decathlon",
-    category: "e-commerce",
-    discount: 0,
+  cultfit: {
+    name: "Cultfit Gift Card",
+    urlName: "cultfit",
+    brandName: "Cultfit",
+    category: "health-and-wellness",
+    discount: 8,
     backgroundImg: "hehe",
-    descriptionTitle: "Decathlon Sports India E-Gift Card\n\n",
+    descriptionTitle: "Cultfit Gift Card",
     description:
-      "Sportswear and essentials are no less than a treat for a sports lover. Decathlon is a perfect gift for a fitness enthusiast.",
+      "Looking for the perfect gift for a fitness lover? The Cultfit Gift Card is your one-stop solution to inspire healthy living and active lifestyles. Whether it’s for a friend, colleague, or yourself, this all-in-one gift unlocks a world of wellness experiences.",
     aboutCompany:
-      "Decathlon is a global sports retailer that offers high-quality and affordable gear for 70 sports. It aims to make sports equipment accessible to all with its innovative designs and products.\n",
-    calculatorTitle: "Best Decathlon Gift Cards",
+      "One of India’s leading health and wellness platforms, Cultfit offers a holistic approach to fitness through group workouts, personal training, yoga, meditation, and healthy meals. Cultfit combines digital convenience with offline experiences across its fitness centers in major cities. With its app and website, users can access on-demand workouts, book classes, track progress, and shop for fitness gear.",
+    calculatorTitle: "Best Cultfit Gift Cards",
     calculatorDescription:
-      "Decathlon Gift Cards are a popular choice for presents, whether for a special occasion or a thoughtful gesture. These gift cards are a convenient and appreciated option that suits any budget and preference.",
-    howToBuyTitle: "How to buy a Decathlon Gift Card ",
-    howToRedeemTitle: "How to use or redeem a Decathlon Gift Card",
+      "Cultfit Gift Cards can easily be the best gift for a fitness freak. Someone who loves fitness, comfort, and health will surely appreciate this thoughtful gift. It offers them the freedom to choose from workouts, wellness services, or premium fitness gear all in one place.",
+    howToBuyTitle: "How to Buy a Cultfit Gift Card",
+    howToRedeemTitle: "How to Use or Redeem Cultfit Gift Card",
     howToRedeemDesc:
-      "Decathlon Gift Voucher can be redeemed both online and offline",
+      "Cultfit Gift Voucher can be redeemed using the following steps on its website and app.",
     howToRedeemSteps: [
-      "Visit decathlon.com for online redemption",
-      "Add the Gift Card amount to the payment page",
-      "Use it to pay for the item purchased",
-      "For offline redemption, visit any Decathlon retail store",
-      "Present the 16-digit code and PIN during billing",
-      "Use the Gift Card amount to pay for the purchase",
+      "Visit the Cultfit website or app and browse the listed merchandise",
+      "Add your favorite products to the cart and proceed to checkout",
+      "Enter your voucher code at the payment page to redeem the offer",
     ],
-    checkBalanceTitle: "How to Check Decathlon Gift Card Balance",
+    checkBalanceTitle: "How to Check Cultfit Gift Card Balance",
     checkBalanceDesc:
-      "Decathlon Gift Cards are preactivated cards. The balance of the Decathlon Gift Card Voucher can be checked on the mobile app or website. ",
+      "Cultfit Gift Card balance can be checked using the following steps:",
     checkBalanceSteps: [
-      "Open the Decathlon app or website",
-      "Enter your Gift Card number and proceed",
-      "The remaining balance will be reflected on the screen",
+      "Log in to your Cultfit account on the website or app",
+      "Go to the profile section",
+      "Navigate to the gift card section and enter details",
+      "View available gift card balance and usage history",
     ],
-    termsAndConditionsTitle: "Terms and Conditions for Decathlon Gift Card",
+    termsAndConditionsTitle: "Terms and Conditions for Cultfit Gift Card",
     termsAndConditionSteps: [
-      "Decathlon Gift Cards can be used on the website, app, or in any Decathlon store across India",
-      "Valid for 1 year from the date of issue; any unused balance will be forfeited after expiry",
-      "The Gift Card can be redeemed in full or across multiple purchases until the balance is used or the card expires",
-      "If the purchase amount exceeds the card value, the remaining amount can be paid using other payment methods",
-      "Gift Cards are non-refundable and cannot be exchanged for cash",
+      "Cult Gift Cards are issued by Pine Labs (under Qwikcilver) and governed by Indian laws. By purchasing, you agree to share personal details (name, email, phone) with the issuer.",
+      "Redeemable on Cult Fit and Cult Sport platforms for services, fitness products, or any offerings.",
+      "On redemption, the card balance is added to your Cult wallet and can be used for multiple purchases until exhausted or expired.",
+      "Cards can be bought from ₹1 to ₹10,000 and are valid for 1 year. Revalidation may be requested post-expiry.",
+      "Not redeemable for cash. No refunds for unused balance. No returns or cancellations.",
+      "You’re responsible for safeguarding the card. Cult.fit isn’t liable for misuse. Fraudulent usage may lead to account suspension or cancellation.",
+      "Subject to Cult.fit/Cult.sport’s terms, which may change without notice. Cult reserves the right to suspend or cancel the program at any time.",
+      "No interest on balances. No guarantee of uninterrupted platform access. If the card is non-functional, a replacement may be issued.",
+      "For help, contact Pine Labs at 080 6980 6393 or visit www.qwikcilver.com. Check grievance policy for disputes or unauthorized use.",
+      "E-Gift Cards are usually delivered instantly, but may take up to 24 hours. To use the card, you must add it to your Cult.fit account.",
     ],
-    occasionsTitle: "Decathlon Gift Card for Different Occasions ",
-    occasionsDesc: "Nykaa Fashion E-Gift Cards for different Occasions",
+    occasionsTitle: "Cultfit Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Cultfit Gift Cards are easily every fitness lover’s dream. Give your friends, family, and loved ones the gift of choice with Cultfit Gift Cards. Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, a Cultfit Gift Card is always a thoughtful way to make them smile.",
     festivals:
-      "Perfect for endless adventures, celebrate the festive season with a Decathlon brand voucher.",
+      "The recipient of the Cultfit gift card will thank you for making the festive season better for them.",
     anniversary:
-      "Give the couple an unforgettable anniversary gift with a Decathlon Gift Card. \n ",
+      "The perfect anniversary gift for a couple who loves fitness. Cultfit Gift Voucher is something they will appreciate on their special occasion.",
     birthdays:
-      "Make your best friend’s birthday special by gifting them a Decathlon Gift Card. ",
+      "What better than gifting a Cultfit Gift Card to a fitness enthusiast? Get them this exclusive Cultfit E-Gift Card and make their day memorable.",
+  },
+  myglamm: {
+    name: "MyGlamm Gift Card",
+    urlName: "myglamm",
+    brandName: "MyGlamm",
+    category: "health-and-wellness",
+    discount: 16,
+    backgroundImg: "hehe",
+    descriptionTitle: "MyGlamm Gift Card",
+    description:
+      "MyGlamm Gift Card is the perfect way to treat someone to a world of beauty and self-care. It offers access to a wide range of makeup, skincare, and personal care products. Valid for 1 year from the date of issue, the card can be combined with promotional offers and other prepaid payment options. Whether it's a birthday, celebration, or just a thoughtful surprise, the MyGlamm Gift Card makes beauty gifting effortless, flexible, and stylish.",
+    aboutCompany:
+      "A pioneering beauty and personal care brand, MyGlamm has quickly become India’s fastest-growing direct-to-consumer (D2C) beauty brand, offering over 800 cruelty‑free, skin‑friendly SKUs in makeup, skincare, and personal care.",
+    calculatorTitle: "Best MyGlamm Gift Cards",
+    calculatorDescription:
+      "MyGlamm Gift Cards offer versatile gifting in flexible denominations, making them ideal for personal treats or thoughtful presents. Each card is valid for one year from the date of activation, and you can use up to five cards per order for greater flexibility. Whether you’re planning to indulge or surprise, Best MyGlamm Gift Cards provide convenient, no-fuss access to their full range of beauty and personal care products online or via the mobile apps.",
+    howToBuyTitle: "How to Buy a MyGlamm Gift Card",
+    howToRedeemTitle: "How to Use or Redeem MyGlamm Gift Card",
+    howToRedeemDesc:
+      "MyGlamm Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit www.myglamm.com or open the MyGlamm app on Android/iOS",
+      "Add your favourite products to the cart and proceed to checkout",
+      "Select Gift Card as the payment method",
+      "Enter the Card Number and PIN to apply the balance",
+      "If the order value exceeds the gift card amount, pay the remaining balance using a prepaid payment option (COD not allowed)",
+    ],
+    checkBalanceTitle: "How to Check MyGlamm Gift Card Balance",
+    checkBalanceDesc:
+      "MyGlamm Gift Card balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Log in to your MyGlamm account on the website or app",
+      "Go to the gifts section",
+      "Enter the gift card details",
+      "View available gift card balance and usage history",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for MyGlamm Gift Card",
+    termsAndConditionSteps: [
+      "MyGlamm Gift Card can be used on www.myglamm.com, Android & iOS apps; up to 5 gift cards can be used in one order.",
+      "It can be combined with promo codes and prepaid payment options.",
+      "The gift card is valid for 1 year from the date of issue.",
+      "If the order value is less, the remaining balance stays on the same card; if more, the difference must be paid using prepaid options (COD not allowed).",
+      "Once issued, gift cards cannot be cancelled, refunded, returned, or transferred to another email/mobile number.",
+      "MyGlamm gift card cannot be redeemed for cash, credit, or used to purchase other gift cards.",
+      "Expired MyGlamm gift vouchers may be revalidated on request, subject to verification and terms.",
+      "The user is solely responsible for safeguarding the e-gift card code; MyGlamm is not liable for unauthorized use.",
+      "Fraudulently obtained cards may be canceled. If a card is non-functional, a replacement card of equal value may be issued.",
+      "MyGlamm cards are typically delivered instantly, but may take up to 24 hours. For issues, contact hello@myglamm.com or call 022-48913663.",
+    ],
+    occasionsTitle: "MyGlamm Gift Cards for Different Occasions",
+    occasionsDesc:
+      "MyGlamm Gift Cards make up for a great gifting option on multiple occasions. Whether it’s a birthday, anniversary, festival, or a simple gesture like thank you, a MyGlamm Gift Card is always a thoughtful gift.",
+    festivals:
+      "The recipient of the MyGlamm gift card will thank you for making the festive season better for them.",
+    anniversary:
+      "MyGlamm Gift Voucher is something the couple will appreciate on their special occasion.",
+    birthdays:
+      "Get this exclusive MyGlamm E-Gift Card and make their special day memorable.",
+  },
+  healthkart: {
+    name: "HealthKart Gift Card",
+    urlName: "healthkart",
+    brandName: "HealthKart",
+    category: "health-and-wellness",
+    discount: 10, // Up to 10% off
+    backgroundImg: "hehe",
+    descriptionTitle: "HealthKart Gift Card",
+    description:
+      "A HealthKart Gift Card lets your loved ones choose what they need to stay fit and feel great. Whether it’s for a birthday, milestone, or just a thoughtful surprise, this gift card puts wellness in their hands.",
+    aboutCompany:
+      "India’s leading online platform for health and nutrition products, HealthKart, is trusted by millions for genuine supplements, fitness essentials, and personal wellness solutions. HealthKart offers a wide range of proteins, vitamins, Ayurvedic remedies, and wellness products, all delivered with authenticity and expert guidance. Whether you're a fitness enthusiast or just starting your wellness journey, HealthKart is your one-stop shop for healthier living.",
+    calculatorTitle: "Best HealthKart Gift Cards",
+    calculatorDescription:
+      "HealthKart Gift Cards are truly a gift for your loved one's health and wellness. The best HealthKart Gift Cards give discounts while delivering healthcare essentials at your doorstep.",
+    howToBuyTitle: "How to Buy a HealthKart Gift Card",
+    howToRedeemTitle: "How to Use or Redeem HealthKart Gift Card",
+    howToRedeemDesc:
+      "HealthKart Gift Voucher can be redeemed using the following steps:",
+    howToRedeemSteps: [
+      "Visit www.healthkart.com and log in to your account",
+      "Click on your profile icon and go to HK Cash",
+      "Under “Avail HK Cash through Gift Card”, enter your Gift Card number to add balance",
+      "Add your selected products to the cart",
+      "Choose HK Cash as the payment option during checkout",
+    ],
+    checkBalanceTitle: "How to Check HealthKart Gift Card Balance",
+    checkBalanceDesc:
+      "HealthKart Gift Cards balance can be checked using the following steps:",
+    checkBalanceSteps: [
+      "Log in to your HealthKart account on the website or app",
+      "Go to the profile section",
+      "Navigate to transaction history or gift card details",
+      "View available gift card balance and usage history",
+    ],
+    termsAndConditionsTitle: "Terms and Conditions for HealthKart Gift Card",
+    termsAndConditionSteps: [
+      "HealthKart Gift Voucher can only be redeemed on HealthKart.com or the HealthKart app.",
+      "The holder of the Gift Voucher code is considered the rightful beneficiary.",
+      "Multiple vouchers can be used in a single transaction by adding them as HK Cash to your account.",
+      "Each Gift Voucher is for one-time use only.",
+      "No refund or credit note will be issued for any unused HK Cash balance.",
+      "Expired vouchers cannot be revalidated.",
+      "Vouchers can be applied during sales or promotional periods.",
+      "If the order exceeds the voucher value, the remaining amount must be paid using another payment method.",
+      "Any disputes must be addressed to the issuing company; their decision will be final.",
+      "While HealthKart strives to accept all valid vouchers, technical issues may sometimes prevent redemption.",
+      "For any assistance, raise a request at www.gvhelpdesk.com.",
+    ],
+    occasionsTitle: "HealthKart Gift Cards for Different Occasions",
+    occasionsDesc:
+      "Give your friends, family, and loved ones the gift of good health with HealthKart Gift Cards. Whether it’s a birthday, anniversary, or any festival, a HealthKart Gift Card is always a thoughtful gift to show that you care.",
+    festivals:
+      "The recipient of the HealthKart gift card will thank you for making the festive season better for them.",
+    anniversary:
+      "The perfect anniversary gift for a couple who prioritizes their health. HealthKart Gift Voucher is something they will appreciate on their special occasion.",
+    birthdays:
+      "There’s nothing better than gifting health and wellness on birthdays with a HealthKart Gift Card. Just go for it.",
   },
 }
 

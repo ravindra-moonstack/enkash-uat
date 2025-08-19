@@ -37,6 +37,25 @@ import audit from "./img/auditIcon.svg"
 import signOn from "./img/sign-on-icon.svg"
 import key from "./img/key-icon.svg"
 import { approve } from "@/components/all-products"
+import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  realTimeExpense,
+  realTimeExpenseIcon,
+  smartIconeOne,
+  smartIconeThree,
+  smartIconeTwo,
+  stackCardsixIicon,
+  stackCardsixImg,
+  stackCardThreeIcon,
+  stackCardThreeImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
+} from "."
 
 const dataSets = [
   {
@@ -117,19 +136,19 @@ const cardsData = [
     title: "Custom Expense Policies ",
     description:
       "Set precise rules for spend limits, categories, and approval hierarchies—ensuring every expense complies with your company’s policies before it even reaches the finance team.",
-    icon: policyIcon,
+    icon: smartIconeOne,
   },
   {
     title: "Multi-Level Approval Workflows",
     description:
       "Create customized, multi-tier approval flows based on amount, department, or category, so the right people always review the right expenses—no bottlenecks or manual routing.",
-    icon: policyIcon,
+    icon: smartIconeTwo,
   },
   {
     title: "Auto-Flagging of Policy Violations",
     description:
       "The system instantly flags out-of-policy expenses like overspending, wrong categories, or duplicate claims, helping finance teams catch issues before reimbursement.",
-    icon: policyIcon,
+    icon: smartIconeThree,
   },
   {
     title: "Receipt Upload Reminders & Enforcement",
@@ -400,6 +419,72 @@ const intantActionData = [
   },
 ]
 
+const stackcardData = [
+  {
+    icon: realTimeExpenseIcon,
+    title: "Real-Time Expense Overview",
+    description:
+      "Get a live view of company-wide expenses with powerful filters. Drill down by department, project, or user to uncover patterns and make data-driven decisions instantly.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+    color: "#fff",
+  },
+  {
+    icon: fraudProtectionIcon,
+    title: "Budget vs. Actual Tracking",
+    description:
+      "Track actual expenses against allocated budgets in real-time. Spot overruns early, optimize spending, and stay in control of every cost center without relying on spreadsheets.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+    color: "#eee",
+  },
+  {
+    icon: stackCardThreeIcon,
+    title: "AI-powered Predictive Spend Forecasting",
+    description:
+      "Leverage AI to forecast upcoming expenses based on historical trends. Anticipate budget spikes, plan ahead, and make smarter financial decisions before costs hit the bottom line.",
+    image: stackCardThreeImg,
+    buttonUrl: "/sales",
+    color: "#eee",
+  },
+  {
+    icon: streamlinedReimbursementIcon,
+    title: "Custom Financial Reports",
+    description:
+      "Create tailored reports with actionable financial metrics - budget utilization, compliance gaps, exception flags - delivered in your preferred format, ready for audits, reviews, and strategic decisions.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+    color: "#fff",
+  },
+  {
+    icon: costControlSavingsIcon,
+    title: "Identify User Behaviour and Patterns",
+    description:
+      "Identify your biggest spenders, repeat violators, and high-usage categories. Use these insights to refine policies, coach teams, and proactively reduce unnecessary costs.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+    color: "#eee",
+  },
+  {
+    icon: wideAcceptanceNetworkIcon,
+    title: "One-Click Data Downloads",
+    description:
+      "Export all reports and dashboards in multiple formats—PDFs for presentations, Excel for deep dives, CSVs for uploads—keeping your team and systems aligned effortlessly.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+    color: "#eee",
+  },
+  {
+    icon: stackCardsixIicon,
+    title: "Instant Budget Overrun Alerts",
+    description:
+      "Get instant alerts when actual spend exceeds budget thresholds. Stay informed in real-time, take corrective actions quickly, and avoid surprises at month-end.",
+    image: stackCardsixImg,
+    buttonUrl: "/sales",
+    color: "#eee",
+  },
+]
+
 // const intantActionData = [
 //   {
 //     title: "Live Account Overview",
@@ -518,4 +603,5 @@ export {
   rankData,
   intantActionData,
   allProductSections,
+  stackcardData,
 }

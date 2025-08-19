@@ -42,7 +42,7 @@ const RectangleButton = ({
 
   const handleClick = () => {
     if (typeof url === "string") {
-      window.open(url, "_blank")
+      window.location.href = url //
     } else if (typeof url === "function") {
       url()
     }

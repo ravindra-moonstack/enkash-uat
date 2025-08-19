@@ -1,48 +1,41 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicyData, cardsData, managementCardsData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  ScrollableCardsSection,
+  ManagementCard,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  paymentGateway,
-  paymentLink,
-  paymentButton,
-  qrCodes,
-  autoCollect,
-  invoices,
-  instant,
-  reminder,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import ScrollableCardsSection from "@/components/scrollable-cards-section/scrollableCardsSection"
-import ManagementCard from "@/components/management-card/management-card"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
+export const metadata: Metadata = generateMetaData({
+  title: "Account Payable Analytics: Gain Real-Time Insights on Payables",
+  description:
+    "Track, analyze, and optimize your accounts payable with EnKash Payable Analytics. Improve cash flow planning, spot delays, and make informed financial decisions.",
+  alternates: {
+    canonical: "https://www.enkash.com/affordability-suite/",
+  },
+})
+const salesUrl = getSalesUrl("/affordability-suite")
 
 const Payroll = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -79,11 +72,12 @@ const Payroll = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
+                <div className="pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
-                        title: "Convert browsers into buyers with the Affordability Suite ",
+                        title:
+                          "Convert browsers into buyers with the Affordability Suite ",
                         color: "color-black",
                       },
                     ]}
@@ -103,7 +97,7 @@ const Payroll = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -117,16 +111,16 @@ const Payroll = (): React.JSX.Element => {
                   >
                     <div>
                       <RectangleButton
-                        title="Get Started  "
+                        title="Get Started"
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -155,7 +149,7 @@ const Payroll = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -171,11 +165,11 @@ const Payroll = (): React.JSX.Element => {
             <div className="col-md-6 col-12">
               <ScrollableCardsSection
                 cardsData={cardsData}
-                showScroll={true}
+                showScroll={false}
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -195,7 +189,7 @@ const Payroll = (): React.JSX.Element => {
         <div className="max-w-auto">
           <div className={`${styles.section}`}>
             <div className={`${styles.title} text-center `}>
-              <div className={`d-inline text-center pb-3`}>
+              <div className={`text-center pb-4 pb-md-5`}>
                 <DynamicHeading
                   content={[
                     {
@@ -209,35 +203,18 @@ const Payroll = (): React.JSX.Element => {
               </div>
             </div>
 
-            <div className={styles.allInOnePolicy}>
+            {allInOnePolicyData.map((item, index) => (
               <AllInOnePolicy
-                icon={taskIconOne}
-                title="EMI"
-                description="Boost conversions by offering flexible and affordable payment options. Enable EMI through both debit and credit cards to make purchases easier and more accessible for your customers."
-                image={paymentLinkImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+                image={item.image}
+                buttonUrl={salesUrl}
+                maxImageHeight={item.maxImageHeight}
+                reverse={item.reverse}
               />
-
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Buy Now, Pay Later"
-                description="Drive customer acquisition and loyalty by letting them enjoy your product or service now and pay later. No upfront pressure, just seamless access."
-                image={shareImage}
-                buttonUrl="/sales"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Affordability Widget"
-                description="Showcase custom offers or highlight EMI and payment options directly on the product page, so customers see affordability where it matters most."
-                image={paymentOptionImage}
-                buttonUrl="/sales"
-                maxImageHeight="243px"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </div>
@@ -245,7 +222,7 @@ const Payroll = (): React.JSX.Element => {
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
-             <DynamicHeading
+            <DynamicHeading
               content={[
                 {
                   title: "Turn Interest Into Action",
@@ -253,7 +230,7 @@ const Payroll = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -262,70 +239,18 @@ const Payroll = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-           <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
-             <DynamicHeading
+          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
+            <DynamicHeading
               content={[
                 {
                   title: "Check out our ",
@@ -344,75 +269,15 @@ const Payroll = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGateway}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
-                cardImage={qrCodes}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCardsData.map((card, index) => (
+              <div className="col-12 col-md-4" key={index}>
+                <ManagementCard {...card} />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

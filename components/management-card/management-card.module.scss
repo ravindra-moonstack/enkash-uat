@@ -32,18 +32,18 @@
     color: $color-main-grey;
   }
 
-  .description span {
-    font-weight: 700;
-  }
+  // .description span {
+  //   font-weight: 700;
+  // }
 }
 .description {
-  font-size: 18px;
-  font-weight: 500;
+//   font-size: 18px;
+//   font-weight: 500;
   color: #ffffff;
-  line-height: 28px;
-  span {
-    font-weight: 700;
-  }
+  // line-height: 28px;
+  // span {
+  //   font-weight: 700;
+  // }
 }
 
 .dark {
@@ -65,35 +65,35 @@
 }
 
 .titleHtml {
-  font-size: 16px;
-  line-height: 40px;
-  font-weight: 600;
+  // font-size: 16px;
+  // line-height: 40px;
+  // font-weight: 600;
   color: $color-black;
-  @include for-laptops {
-    font-size: 28px;
-  }
+  // @include for-laptops {
+  //   font-size: 28px;
+  // }
 }
 
 .whiteTitleHtml {
-  font-size: 16px;
-  line-height: 40px;
-  font-weight: 600;
+  // font-size: 16px;
+  // line-height: 40px;
+  // font-weight: 600;
   color: $color-white;
-  @include for-laptops {
-    font-size: 28px;
-  }
+  // @include for-laptops {
+  //   font-size: 28px;
+  // }
 }
 
 .description {
-  font-size: 12px;
-  font-weight: 500;
+  // font-size: 12px;
+  // font-weight: 500;
   color: $color-main-grey;
-  span {
-    font-weight: 700;
-  }
-  @include for-laptops {
-    font-size: 18px;
-  }
+  // span {
+  //   font-weight: 700;
+  // }
+  // @include for-laptops {
+  //   font-size: 18px;
+  // }
 }
 
 .card_image {
@@ -102,8 +102,8 @@
 }
 
 .titleHtml {
-  font-size: 28px;
-  font-weight: 600;
+  // font-size: 28px;
+  // font-weight: 600;
   color: $color-black;
 }
 .card_link {
