@@ -55,8 +55,20 @@
     // padding: 100px 0px 0px;
     // background-image: url("./img/secondRow.svg");
 
-    // @include for-laptops {
-    //     padding: 112px 0px 0px;
+    @include for-laptops {
+        padding: 112px 0px 0px;
 
-    // }
+    }
+}
+
+.third_row {
+    padding: 50px 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
+
+    @include for-laptops {
+        gap: 46px;
+        padding: 90px 20px 0;
+    }
 }

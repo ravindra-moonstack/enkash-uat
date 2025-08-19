@@ -119,6 +119,19 @@ const HowDoesItWork = dynamic(
   () => import("./how-does-it-work/how-does-it-work."),
   { ssr: true }
 )
+const BecomePartnerSteps = dynamic(
+  () => import("./becomepartner/become-partner-steps"),
+  { ssr: true }
+)
+const PartnerShipForm = dynamic(
+  () => import("./partnerShip-form/index"),
+  { ssr: true }
+)
+const BpHeroSection = dynamic(
+  () => import("./BpHeroSection/index"),
+  { ssr: true }
+)
+
 export {
   Header,
   Footer,
@@ -155,5 +168,8 @@ export {
   EasyStepCard,
   StepsSection,
   FaqSection,
-  HowDoesItWork
+  HowDoesItWork,
+  BecomePartnerSteps,
+  PartnerShipForm,
+  BpHeroSection
 }
