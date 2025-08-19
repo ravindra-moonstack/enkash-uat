@@ -15,9 +15,7 @@ import BecomePartnerSteps from '@/components/becomepartner/become-partner-steps'
 const partnershipsPage = (): React.JSX.Element => {
     return (
         <div className={`color-white  `}>
-            {/* <Header utmSource="expense_management" /> */}
-            {/* <TalkToSales /> */}
-            {/* <div className={`${styles.hero_container}`}> */}
+            <Header utmSource="expense_management" />
             <div className={`${styles.first_row}`}>
                 <div className={`${styles.box_white}`}>
                     <div className="max-w-auto ">
@@ -66,23 +64,16 @@ const partnershipsPage = (): React.JSX.Element => {
                             </div>
 
                             <div className={styles.button_wrapper}>
-                                <RectangleButton
-                                    title="Become a Partner"
-                                    theme="blue"
-                                    url="/sales/?source=expense_management"
-                                />
+
+
                             </div>
                         </div>
                     </div>
-
                 </div>
-
             </div>
             <div className={`${styles.boxContainer}`}>
                 <BankSolutions solutions={bankSolutions} />
             </div>
-            {/* </div> */}
-            {/* <Footer /> */}
             <div className={`${styles.second_row}`}>
                 <PartnershipSection />
             </div>
