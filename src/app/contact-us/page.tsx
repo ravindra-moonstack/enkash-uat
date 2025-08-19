@@ -111,7 +111,10 @@ const ContactUs = () => {
               headingTag="h2"
               className="pb-4"
             />
-            <TestimonialSlider testimonials={testimonialData} />
+            <TestimonialSlider
+              testimonials={testimonialData}
+              slidesToShow={3}
+            />
           </div>
 
           <div className={`${styles.officeLocation} text-center`}>
