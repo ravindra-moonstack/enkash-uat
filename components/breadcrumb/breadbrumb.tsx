@@ -3,6 +3,7 @@ import Link from "next/link"
 import Head from "next/head"
 import styles from "./breadcrumb.module.scss"
 
+
 interface BreadcrumbItem {
   name: string
   url: string
@@ -11,7 +12,7 @@ interface BreadcrumbItem {
 interface BreadcrumbProps {
   items: BreadcrumbItem[]
   domain?: string
-  linkColor?: "white" | "black"
+  linkColor?: "white" | "black" | "allWhite"
 }
 
 const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
@@ -37,14 +38,27 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
           {JSON.stringify(schemaMarkup)}
         </script>
       </Head>
-      <nav className={styles.breadcrumb} aria-label="Breadcrumb">
+      <nav
+        className={`${styles.breadcrumb} ${
+          linkColor === "white"
+            ? styles.white
+            : linkColor === "allWhite"
+            ? styles.allWhite
+            : ""
+        }`}
+        aria-label="Breadcrumb"
+      >
         <ol className={styles.list}>
           {items.map((item, index) => (
             <li key={index} className={styles.item}>
               {index < items.length - 1 ? (
                 <Link
                   href={item.url}
-                  className={`${styles.link} ${styles[linkColor || "black"]}`}
+                  className={`${styles.link} ${
+                    styles[
+                      linkColor === "allWhite" ? "black" : linkColor || "black"
+                    ]
+                  }`}
                 >
                   {item.name}
                 </Link>

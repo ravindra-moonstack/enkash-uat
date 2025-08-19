@@ -1,10 +1,17 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { analyticData, dashboardData } from "./data"
+import { analyticData, dashboardData, stackcardData } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  RectangleButton,
+  AllInOnePolicy,
+  CardStacking,
+  PolicyCard,
+  FaqSection,
+} from "@/components"
 import {
   analytics,
   blueArrow,
@@ -13,21 +20,38 @@ import {
   whiteArrow,
   zeroLeakage,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
+export const metadata: Metadata = generateMetaData({
+  title: "Digitize Your Petty Cash: Automate Petty Cash Management",
+  description:
+    "Go cashless with EnKash Petty Cash solution. Assign, track, and reconcile small business expenses in real time.",
+  alternates: {
+    canonical: "https://www.enkash.com/petty-cash/",
+  },
+})
+const salesUrl = getSalesUrl("/petty-cash")
 
-import PolicyCard from "@/components/policyCard/policyCard"
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const PettyCash = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -50,38 +74,48 @@ const PettyCash = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center  flex-column flex-md-row `}
               >
-                <Heading
-                  title={`Petty Cash`}
-                  color="equity-blue"
-                  size="h4"
-                  weight="4"
-                  underline
+                <DynamicHeading
+                  content={[
+                    {
+                      title: "Petty Cash ",
+                      color: "color-equity-blue underline",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline   pt-3 pt-md-0">
-                  <Heading
-                    title={`Best Petty Cash `}
-                    color="equity-blue"
-                    size="h2"
-                    weight="7"
-                  />
-                  <Heading
-                    title={` Management Suite`}
-                    color="black"
-                    size="h2"
-                    weight="7"
+                <div className="  pt-3 pt-md-0">
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Best Petty Cash",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: " Management Suite",
+                        color: "color-black",
+                      },
+                    ]}
+                    headingTag="h1"
+                    className="f-7"
                   />
                 </div>
 
                 <div className="d-flex mt-3 mb-3 text-center text-md-start ">
-                  <Heading
-                    title="From chaos to clarity—automate petty cash and close the books faster"
-                    color="black"
-                    size="h5"
-                    weight="4"
+                  <DynamicHeading
+                    content={[
+                      {
+                        title:
+                          "From chaos to clarity—automate petty cash and close the books faster",
+                        color: "color-black subHeading",
+                      },
+                    ]}
+                    headingTag="p"
+                    className="mb-0"
                   />
                 </div>
 
@@ -98,7 +132,7 @@ const PettyCash = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -124,29 +158,58 @@ const PettyCash = (): React.JSX.Element => {
         </div>
         <LogoSlider />
       </div>
-
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <>
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Manage ",
+                  color: "color-black",
+                },
+                {
+                  title: "Petty Cash ",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: "Like Never Before",
+                  color: "color-black",
+                },
+              ]}
+            />
+          </>
+        </div>
+      </div>
       <div className={` ${styles.third_row}`}>
         <div className="max-w-auto">
           <div className={`d-flex flex-column ${styles.subtitle}`}>
-            <div className="d-inline">
-              <Heading
-                title={`Full Control.${space}`}
-                color="black"
-                size="h1"
-                weight="5"
-              />
-              <Heading
-                title={`Zero Leakage.`}
-                color="equity-blue"
-                size="h1"
-                weight="5"
+            <div className="mb-2">
+              <DynamicHeading
+                content={[
+                  {
+                    title: "Full Control. ",
+                    color: "color-black",
+                  },
+                  {
+                    title: "Zero Leakage.",
+                    color: "color-equity-blue",
+                  },
+                ]}
+                headingTag="h2"
+                className="f-6"
               />
             </div>
-            <Heading
-              title={`Put your petty cash policy into action automatically. `}
-              color="main-grey"
-              size="h5"
-              weight="4"
+            <DynamicHeading
+              content={[
+                {
+                  title:
+                    "Put your petty cash policy into action automatically.",
+                  color: "color-main-grey subHeading",
+                },
+              ]}
+              headingTag="p"
+              className="mb-0"
             />
           </div>
           <div className="row">
@@ -170,7 +233,7 @@ const PettyCash = (): React.JSX.Element => {
               </div>
             </div>
             <div className={`col-md-6 col-12 `}>
-              <div>
+              <div className="mt-4 mt-md-0">
                 <Image
                   src={zeroLeakage}
                   alt="card background"
@@ -185,7 +248,6 @@ const PettyCash = (): React.JSX.Element => {
       <div className={`${styles.fourth_row}`}>
         <div className="max-w-auto">
           <div className="row align-items-end">
-            {/* 👉 IMAGE COLUMN */}
             <div className="col-md-6 col-12 order-2 order-md-1">
               <div>
                 <Image
@@ -196,28 +258,34 @@ const PettyCash = (): React.JSX.Element => {
               </div>
             </div>
 
-            {/* 👉 TEXT COLUMN */}
             <div className="col-md-6 col-12 order-1 order-md-2">
               <div className={`d-flex flex-column ${styles.subtitle}`}>
-                <div className="d-inline">
-                  <Heading
-                    title={`Powerful ${space}`}
-                    color="black"
-                    size="h1"
-                    weight="5"
-                  />
-                  <Heading
-                    title={`Analytics & Reports`}
-                    color="equity-blue"
-                    size="h1"
-                    weight="5"
+                <div className="mb-2">
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Powerful ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Analytics & Reports",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
                   />
                 </div>
-                <Heading
-                  title={`Get a 360° view of your petty cash spends - branch-wise, team-wise, and category-wise.`}
-                  color="main-grey"
-                  size="h5"
-                  weight="4"
+                <DynamicHeading
+                  content={[
+                    {
+                      title:
+                        "Get a 360° view of your petty cash spends - branch-wise, team-wise, and category-wise.",
+                      color: "color-main-grey subHeading",
+                    },
+                  ]}
+                  headingTag="p"
+                  className="mb-0"
                 />
               </div>
 
@@ -252,54 +320,13 @@ const PettyCash = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <Heading
-              title={`Frequently Asked Questions  ${space}`}
-              color="black"
-              size="h1"
-              weight="5"
-            />
-            <Heading title={`(`} color="black" size="h1" weight="5" />
-            <Heading title={`FAQs`} color="equity-blue" size="h1" weight="5" />
-            <Heading title={`) ${space}`} color="black" size="h1" weight="5" />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <Heading
-                  title="Have more questions? "
-                  color="dark-grey"
-                  size="h3"
-                  weight="5"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <Footer />
+      <FaqSection faqData={faqData} />
     </div>
   )
 }

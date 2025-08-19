@@ -22,9 +22,7 @@ const PaymentModal = ({
   }
 
   return (
-    <div className=" ">
-      {/* <div className={styles.arrow} style={{ left: modalLeft }}></div> */}
-
+    <div>
       <div className={` max-w-auto  ${styles.container}`}>
         <div className="d-flex gap-3">
           {motherProducts.map((mother, i) => {

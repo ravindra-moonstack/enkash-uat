@@ -1,0 +1,45 @@
+@use "/styles/mixin" as *;
+@use "/styles/variables" as *;
+.banking_wrapper{
+  background-color: #F5F5F5;
+  padding: 50px 0px;
+}
+.marquee_box {
+  display: block;
+  cursor: pointer;
+
+  &:hover .logo_img {
+    filter: grayscale(0%);
+  }
+
+  :global(.slick-track) {
+    display: flex !important;
+    align-items: center;
+    margin-bottom: 13px;
+    margin-top: 13px;
+    gap: 32px;
+  }
+}
+
+// .logo_wrapper {
+//   align-items: center;
+//   text-align: center;
+// }
+.logo_img {
+  object-fit: contain;
+  height: auto;
+  width: 100%;
+  max-height: 32px;
+  @include for-laptops {
+    max-height: 50px;
+  }
+  @include for-tablet {
+    max-height: 30px;
+  }
+  @include for-window-zoomed-screens {
+    max-height: 32px;
+  }
+  @include for-large-screen {
+    max-height: 40px;
+  }
+}

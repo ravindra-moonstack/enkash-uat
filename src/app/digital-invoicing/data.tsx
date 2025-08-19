@@ -32,7 +32,27 @@ import frictionless from "./img/frictionless.svg"
 import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import {
+  autoCollect,
+  instant,
+  invoices,
+  notificationImage,
+  paymentButton,
+  paymentGatewayImg,
+  paymentLink,
+  paymentLinkImage,
+  paymentOptionImage,
+  qrCodes,
+  reminder,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  shareImage,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
+} from "."
 
 const dataSets = [
   {
@@ -360,6 +380,106 @@ const projects = [
   },
 ]
 
+const allInOnePolicies = [
+  {
+    icon: taskIconOne,
+    title: "OCR Technology for Efficiency",
+    description:
+      "With EnKash, you can digitally upload your invoices, which are scanned using OCR technology. This helps save time and reduces the risk of human error.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Better Cash Flow",
+    description:
+      "Digital invoices can be processed quickly, meaning your business can get paid faster and have better cash flow.",
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Eliminates Manual Errors",
+    description:
+      "Digital invoices can help reduce manual errors. This can help your business avoid costly disputes and delays in payment.",
+    image: shareImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Tracking via Dashboard",
+    description:
+      "On EnKash, invoices can be easily tracked and monitored, making it easier to identify outstanding invoices and improve collections.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales/",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+]
+
+const managementCards = [
+  {
+    titleHtml: "Payment Gateway",
+    description:
+      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
+    cardImage: paymentGatewayImg,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Links",
+    description:
+      "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
+    cardImage: paymentLink,
+    linkUrl: "/payment-links",
+  },
+  {
+    titleHtml: "Payment Button",
+    description:
+      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description:
+      "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
+    cardImage: qrCodes,
+    linkUrl: "/qr-code",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description:
+      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "UPI Payments",
+    description:
+      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
+    cardImage: invoices,
+    linkUrl: "/upi-payments",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description:
+      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant-settlement",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description:
+      "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
+    cardImage: reminder,
+    linkUrl: "/collection-reminder",
+  },
+]
+
 export {
   blogData,
   dataSets,
@@ -372,4 +492,6 @@ export {
   rankData,
   supportData,
   savingData,
+  allInOnePolicies,
+  managementCards,
 }

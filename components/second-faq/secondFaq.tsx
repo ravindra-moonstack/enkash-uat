@@ -22,9 +22,6 @@ const SECONDFAQ = ({
   answerHTML,
   onToggleAnswerVisibility,
 }: FAQProps) => {
-  // No need for local state, use parent state
-
-  // Handle hover and click
   const handleToggle = () => {
     if (onToggleAnswerVisibility) {
       onToggleAnswerVisibility()
@@ -40,7 +37,7 @@ const SECONDFAQ = ({
             ? {
                 background: "#F6F6F6",
 
-                borderRadius: "12px",
+                borderRadius: "12px 12px 0px 0px",
                 transition: "all 0.3s ease",
               }
             : {}
@@ -48,7 +45,7 @@ const SECONDFAQ = ({
         onMouseEnter={handleToggle}
         onMouseLeave={handleToggle}
         onClick={handleToggle}
-        tabIndex={0} // for accessibility, allows keyboard focus
+        tabIndex={0} 
         role="button"
         aria-expanded={answerVisible}
       >
@@ -59,7 +56,7 @@ const SECONDFAQ = ({
             className={`${answerVisible ? styles.rotated : styles.normal} ${
               styles.arrow
             }`}
-            // Remove onClick here, handled by parent div
+       
             draggable={false}
           />
           <DynamicHeading

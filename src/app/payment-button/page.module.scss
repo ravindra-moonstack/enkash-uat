@@ -1,5 +1,5 @@
-@use "../../../styles/variables" as *;
-@use "../../../styles/mixin" as *;
+@use "/styles/variables" as *;
+@use "/styles/mixin" as *;
  
 .first_row {
   background-repeat: no-repeat;
@@ -8,7 +8,7 @@
   background-color: #ffffff73;
   box-shadow: 0px 0px 77px 0px #0000001a;
   padding: 90px 20px 0px;
-  background-image: url(./img/first-row-bg.svg);
+    background-image: url(/images/collectPaymentBg.webp);
   @include for-laptops {
     padding: 112px 20px 0;
   }
@@ -162,6 +162,9 @@
       margin-bottom: 50px;
     }
   }
+  .scrollCard:last-child{
+      margin-bottom: 0;
+  }
  
   .first_container,
   .second_container,
@@ -202,21 +205,28 @@
       display: block;
     }
   }
+  img{
+    height: auto;
+    width: 100%;
+    @include for-laptops{
+      height: initial;
+    }
+  }
 }
  
 .fourth_row {
-  padding: 0px 30px ;
+  padding: 0px 20px ;
   @include for-laptops {
     padding: 0px 20px;
   }
  
   .section {
-    gap: 20px;
-    padding: 20px 10px;
+    gap: 30px;
+    padding: 50px 20px;
     background-color: $color-sky-hint;
     @include for-laptops {
       padding: 90px 100px;
-      gap: 50px;
+      gap: 48px;
     }
   }
 }
@@ -412,8 +422,8 @@
  
 .other_products {
   background-color: white;
-  padding: 0px 20px 50px;
+  padding: 0px 20px 26px;
   @include for-laptops {
-    padding: 0px 20px 90px;
+    padding: 0px 20px 66px;
   }
 }

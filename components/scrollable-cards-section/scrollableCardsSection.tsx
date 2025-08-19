@@ -6,9 +6,11 @@ import PolicyCard from "../policyCard/policyCard"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
 
 interface CardData {
+  url?: string
   icon: string
   title: string
   description: string
+  hoverClass?:string | undefined
 }
 
 interface ScrollableCardsSectionProps {
@@ -24,6 +26,8 @@ interface ScrollableCardsSectionProps {
     | "border-gray"
     | "border-black"
   buttonUrl?: string
+  marginBottoms?: string
+  link?: string // Optional link prop for PolicyCard
 }
 
 const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
@@ -33,11 +37,13 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
   buttonTitle,
   buttonTheme = "outline-blue",
   buttonUrl,
+  marginBottoms,
+  link,
 }) => {
   return (
     <>
       <div
-        className={`mt-md-5 ${
+        className={`mt-md-5 ${styles.scrollBoxOuter} ${
           showScroll ? "overflow-auto scrollbar-thin" : ""
         }`}
         style={{
@@ -45,28 +51,43 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
           direction: showScroll ? "rtl" : "ltr",
         }}
       >
-        {cardsData.map(({ icon, title, description }, i) => (
+        {cardsData.map((item, i) => (
           <div
             key={i}
-            style={{ direction: "ltr" }}
+            style={{
+              direction: "ltr",
+              marginBottom: marginBottoms ? marginBottoms : "50px",
+            }}
             className={styles.scrollCard}
           >
-            <PolicyCard icon={icon} title={title} description={description} />
+        
+            <PolicyCard
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+              url={item.url}
+              hoverClass={item.hoverClass}
+            />
           </div>
         ))}
       </div>
-
-      <div
-        className={`${styles.scrollCardButton} ${
-          showScroll ? styles["scrollCardButton--scroll"] : ""
-        }`}
-      >
-        <RectangleButton
-          title={buttonTitle}
-          theme={buttonTheme}
-          url={buttonUrl}
-        />
-      </div>
+      {buttonTitle && (
+        <div
+          className={`${
+            showScroll
+              ? styles["scrollCardButton--scroll"]
+              : styles["scrollCardButton"]
+          }`}
+        >
+          <div className={styles.list_button}>
+            <RectangleButton
+              title={buttonTitle}
+              theme={buttonTheme}
+              url={buttonUrl}
+            />
+          </div>
+        </div>
+      )}
     </>
   )
 }

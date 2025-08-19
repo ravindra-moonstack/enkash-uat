@@ -1,6 +1,4 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
 import {
   allProductSections,
@@ -12,57 +10,57 @@ import {
   spendAnalyticsData,
 } from "./data"
 
-import { Header, FAQHtml, Footer } from "@/components"
+import {
+  RectangleButton,
+  PolicyCard,
+  LogoSlider,
+  FeatureCard,
+  CardProduct,
+  AllProducts,
+  CustomBreadcrumb,
+  LottieDynamicLoadComponent,
+  DynamicHeading,
+  FaqSection,
+} from "@/components"
 
 import {
   blueArrow,
-  instantActionImg,
   spendAnalylicsImg,
   rbiLogo,
   corporateCard,
   corporateCardIcon,
   whiteArrow,
-  SetYourRules,
-  channelLevelControls,
   onePlatform,
 } from "."
 
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import LogoSlider from "@/components/logo-slider/logo-slider"
 import faqData from "./faq-data"
-import FeatureCard from "@/components/featureCard/feature-card"
-import CardProduct from "@/components/card-product/card-product"
-import AllProducts from "@/components/all-products/all-products"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LottieDynamicLoadComponent from "@/components/lottie-client/lottie-dynamic-load-client"
-import CardStacking from "@/components/cardStacking/cardStacking"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import { greenIcon, notificationImage } from "../make-payments"
+import Spline from "@splinetool/react-spline"
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-import gsap from "gsap"
-import { ScrollSmoother } from "gsap/ScrollSmoother"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { useGSAP } from "@gsap/react"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger, useGSAP)
+export const metadata: Metadata = generateMetaData({
+  title: "EnKash Corporate Cards: Smart Cards for Business Expenses",
+  description:
+    "Empower your teams with EnKash corporate cards. Set spend limits, track transactions in real time, and manage all business expenses on one powerful platform.",
+  alternates: {
+    canonical: "https://www.enkash.com/corporate-cards/",
+  },
+})
+const salesUrl = getSalesUrl("/corporate-cards")
 
-// const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const CorporateCards = (): React.JSX.Element => {
-
   return (
     <div className={`color-white  ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
       <div id="smooth-wrapper">
         <div id="smooth-content">
-          <TalkToSales />
-
           <div className={`${styles.first_row}`}>
-            <div className="max-w-auto">
+            <div className={`${styles.spline_background}`}>
+              <Spline scene="https://prod.spline.design/YeyN2NhsGe5UwlYK/scene.splinecode" />
+            </div>
+            <div className="max-w-auto position-relative no-pointer ">
               <div className="d-flex">
                 <CustomBreadcrumb
                   items={[
@@ -107,21 +105,19 @@ const CorporateCards = (): React.JSX.Element => {
                   />
                 </div>
 
-                <div className="mt-3">
+                <div className="mt-3 pointer-auto">
                   <RectangleButton
                     title="Talk to us"
                     theme="blue"
-                    url="/sales/?source=expense_management"
+                    url={salesUrl}
                   />
                 </div>
               </div>
               <div
-                className={`col-12 d-flex justify-content-center align-items-center `}
+                className={`col-12 d-flex justify-content-center align-items-center no-pointer`}
               >
                 <div className={styles.bannerImages}>
-                  <div
-                    className={styles.lottie_container}
-                  >
+                  <div className={styles.lottie_container}>
                     <LottieDynamicLoadComponent
                       animationName={"CorporateCardLottie"}
                       loop={true}
@@ -252,7 +248,7 @@ const CorporateCards = (): React.JSX.Element => {
                       theme="border-gray"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}
-                      url="/sales/?source=expense_management"
+                      url={salesUrl}
                       className="d-flex justify-content-between align-items-center"
                     />
                   </div>
@@ -271,9 +267,12 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.action_row} bg-black-200 row-padding`}>
+            <div className={`${styles.spline_background}`}>
+              <Spline scene="https://prod.spline.design/NHBqMdtpnmCisTkz/scene.splinecode" />
+            </div>
             <div className="max-w-auto">
               <div className={`${styles.title} text-start pb-5`}>
-                <div className="flex-column justify-content-center align-items-center pb-3">
+                <div className="flex-column  pb-3">
                   <DynamicHeading
                     content={[
                       {
@@ -292,7 +291,6 @@ const CorporateCards = (): React.JSX.Element => {
                     headingTag="h2"
                     className="f-6"
                   />
-
                 </div>
 
                 <div className="d-flex flex-column col-md-6">
@@ -311,7 +309,7 @@ const CorporateCards = (): React.JSX.Element => {
               </div>
 
               <div className={`row align-items-center ${styles.section}`}>
-                <div className="col-md-6 col-12 pr-5">
+                <div className="col-md-6 col-12 ">
                   <div
                     style={{
                       display: "flex",
@@ -345,16 +343,16 @@ const CorporateCards = (): React.JSX.Element => {
                     ))}
                   </div>
                 </div>
+                <div className="col-md-6 col-12 ">
+                  <div className={styles.analytic_bg}>
+                    <Image
+                      src={spendAnalylicsImg}
+                      alt="background image"
+                      className="w-100  object-fit-contain"
+                    />
+                  </div>
+                </div>
               </div>
-            </div>
-
-            {/* Image fixed bottom-right */}
-            <div className={styles.analytic_bg}>
-              <Image
-                src={spendAnalylicsImg}
-                alt="background image"
-                className="w-100 mh-550 object-fit-contain"
-              />
             </div>
           </div>
 
@@ -485,7 +483,7 @@ const CorporateCards = (): React.JSX.Element => {
                       theme="border-gray"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}
-                      url="/sales/?source=expense_management"
+                      url="/prepaid-card"
                       className="d-flex justify-content-between align-items-center"
                     />
                   </div>
@@ -518,12 +516,13 @@ const CorporateCards = (): React.JSX.Element => {
               </div>
               <div className="row g-3 pb-4">
                 {cardType.map(
-                  ({ titleHtml, description, cardImage }, index) => (
+                  ({ titleHtml, description, cardImage, linkUrl }, index) => (
                     <div key={index} className="col-12 col-md-4">
                       <CardProduct
                         titleHtml={titleHtml}
                         description={description}
                         cardImage={cardImage}
+                        linkUrl={linkUrl}
                       />
                     </div>
                   )
@@ -532,7 +531,6 @@ const CorporateCards = (): React.JSX.Element => {
             </div>
           </div>
 
-          
           <div className={`${styles.fifth_row} relative`}>
             <div className={`${styles.title} text-center `}>
               <div
@@ -571,6 +569,7 @@ const CorporateCards = (): React.JSX.Element => {
                   title={"Explore Our Expense Management Suite"}
                   theme="blue"
                   width="auto"
+                  url="/products/expense-management"
                 />
               </div>
             </div>
@@ -597,71 +596,18 @@ const CorporateCards = (): React.JSX.Element => {
               </div>
               <div className={`${styles.get_started_button} `}>
                 <RectangleButton
-                  title="Get Started  Today "
+                  title="Talk to Us"
                   theme="outline-blue"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url="/sales/?source=expense_management"
+                  url={salesUrl}
+                  iconSize={15}
                 />
               </div>
             </div>
           </div>
 
-          <div className={`${styles.faq_new_row}  relative`}>
-            <div className={`${styles.faqSection} text-start max-w-auto `}>
-              <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Frequently Asked Questions (",
-                      color: "color-black",
-                    },
-                    {
-                      title: "FAQs",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: ")",
-                      color: "color-black",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
-              </div>
-              <div className="d-flex flex-column flex-md-row justify-content-between">
-                <div>
-                  <div>
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Have more questions?",
-                          color: "color-dark-grey subHeading",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0"
-                    />
-                  </div>
-                  <div className="mt-3 d-none d-md-block">
-                    <RectangleButton
-                      title="Get started today"
-                      theme="border-gray"
-                      actionImage={blueArrow}
-                      hoverImage={whiteArrow}
-                      iconSize={15}
-                      url="/sales/?source=receivables"
-                    />
-                  </div>
-                </div>
-                <div className={`${styles.faqData}`}>
-                  <FAQHtml faqData={faqData} />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <Footer />
+          <FaqSection faqData={faqData} />
         </div>
       </div>
     </div>

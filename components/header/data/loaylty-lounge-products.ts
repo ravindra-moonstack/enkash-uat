@@ -21,11 +21,11 @@ const loyaltyLoungeProducts = [
   {
     name: "Brand Vouchers",
     description: "Flexible prepaid card solutions",
-    link: "/brand-vouchers",
+    link: "/products/vouchers",
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/loyalty-lounge",
+        subtitleLink: "/products/vouchers",
         currentHeading: {
           name: "Rewards ",
           description: "Build exciting rewards, incentives & offers",
@@ -36,35 +36,35 @@ const loyaltyLoungeProducts = [
             description: "Shop from top online brands",
             imageSrc: eCommerce,
             imageSrcHovered: eCommerceFilled,
-            link: "/voucher/category/e-commerce",
+            link: "/e-commerce-vouchers",
           },
           {
             name: "Movies & Music",
             description: "Entertainment perks made easy",
             imageSrc: movieAndMusic,
             imageSrcHovered: movieAndMusicFilled,
-            link: "/voucher/category/movies-and-music",
+            link: "/movie-and-music-vouchers",
           },
           {
             name: "Apparels",
             description: "Fashion vouchers across big brands",
             imageSrc: apparels,
             imageSrcHovered: apparelsFilled,
-            link: "/voucher/category/apparels",
+            link: "/apparels-vouchers",
           },
           {
             name: "Food & Beverages",
             description: "Dine and snack with perks",
             imageSrc: foodAndBeverages,
             imageSrcHovered: foodAndBeveragesFilled,
-            link: "/voucher/category/food-and-beverages",
+            link: "/food-and-beverages-vouchers",
           },
           {
             name: "Health & Wellness",
             description: "Vouchers for fitness & care benefits",
             imageSrc: health,
             imageSrcHovered: healthFilled,
-            link: "/voucher/category/health-and-wellness",
+            link: "/health-and-wellness-vouchers",
           },
         ],
         footerText: "Effortless recognition, and endless rewards in one place",
@@ -78,13 +78,13 @@ const loyaltyLoungeProducts = [
   {
     name: "Rewards System",
     description: "Flexible prepaid card solutions",
-    link: "/rewards",
+    link: "/products/rewards",
     subProducts: [
       {
         subtitle: "Default",
-        subtitleLink: "/bolt",
+        subtitleLink: "/products/rewards",
         currentHeading: {
-          name: "Vouchers",
+          name: "Rewards System",
           description: "Shop smart and unlock exclusive savings",
         },
         list: [
@@ -102,7 +102,7 @@ const loyaltyLoungeProducts = [
             imageSrcHovered: channelIncentiveFilled,
             link: "/channel-incentives",
           },
-     
+
           {
             name: "Offers",
             description: "Exclusive deals for every spend",
@@ -115,8 +115,8 @@ const loyaltyLoungeProducts = [
           "Save big on 400+ brand vouchers across multiple categories",
         footerMobileText: "Explote More",
         footerImg: "loyalty_footer_bg",
-        footerLink: "/bolt",
-        parentLink: "/bolt",
+        footerLink: "/products/rewards",
+        parentLink: "/products/rewards",
       },
     ],
   },

@@ -27,14 +27,25 @@ import thirdIcon from "./img/icon-three.svg"
 import benfits from "./img/fourthIMG.webp"
 
 import {
+  costControlSavings,
+  costControlSavingsIcon,
   fleetCardImg,
+  fraudProtection,
+  fraudProtectionIcon,
   fuelCardImg,
   mealCardImg,
   purchesCardImg,
+  realTimeExpense,
+  realTimeExpenseIcon,
   sassCardImg,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   termsAndConCardImg,
   virtualCardImg,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
 } from "."
+import { payrollCardImg } from "../fuel-card"
 
 const dataSets = [
   {
@@ -258,61 +269,56 @@ const cardType = [
     description:
       "Track and control fuel spends with real-time limits, spend visibility, and GST-compliant invoices.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "Meal Card",
     description:
       "Give tax-saving meal benefits to employees with easy-to-use, digital meal cards accepted nationwide.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
-  {
-    titleHtml: "Digital Marketing Card",
-    description:
-      "Simplify ad payments across platforms while staying within budget and preventing overspending.",
-    cardImage: purchesCardImg,
-  },
+
   {
     titleHtml: "SaaS Card",
     description:
       "Manage recurring SaaS subscriptions with auto-renewal tracking and vendor-wise expense control",
     cardImage: sassCardImg,
+    linkUrl: "/saas-card",
   },
   {
     titleHtml: "Payroll Card",
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
-    cardImage: sassCardImg,
+    cardImage: payrollCardImg,
   },
   {
     titleHtml: "Virtual Card",
     description:
       "Instantly issue secure virtual cards for online purchases, with customizable limits and real-time tracking",
-    cardImage: termsAndConCardImg,
+    cardImage: virtualCardImg,
+    linkUrl: "/virtual-card",
   },
   {
     titleHtml: "Travel & Expense Card",
     description:
       "Streamline business travel spends—set budgets, track usage, and automate travel expense reconciliation.",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
 
   {
     titleHtml: "Purchase Card",
     description:
       "Centralize vendor and business purchases with approval workflows, spend controls, and GST capture.",
-    cardImage: virtualCardImg,
+    cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
   {
     titleHtml: "Fleet Card",
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
-  },
-  {
-    titleHtml: "Forex Card",
-    description:
-      "Enable safe and compliant international spends with multi-currency loading and real-time transaction control",
-    cardImage: virtualCardImg,
   },
 ]
 
@@ -363,7 +369,7 @@ const allProductSections = [
         title: "Auto-capture receipts",
         description: "and match them with transactions",
         image: autoCapture,
-        link: "/payment-links/",
+        link: "/receipts/",
       },
       {
         title: "View, approve, and audit expenses",
@@ -387,7 +393,7 @@ const allProductSections = [
         title: "Set policy-driven workflows",
         description: "that apply at the swipe level",
         image: workflow,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Track and approve spends",
@@ -396,6 +402,54 @@ const allProductSections = [
         link: "/auto-collect/",
       },
     ],
+  },
+]
+
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Simplified Budget Allocation",
+    description:
+      "Managing multiple marketing campaigns can be overwhelming, but with the Digital Marketing Card, you can easily allocate budgets to individual campaigns. Load funds directly onto the card and assign specific amounts for each campaign, ensuring effortless budget distribution.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Real-Time Expense Tracking",
+    description:
+      "Stay on top of every transaction with EnKash’s real-time expense-tracking feature. Instantly monitor your marketing spend as it happens, gaining valuable insights into your campaign's financial health. This enables you to make adjustments on the fly, ensuring that you don’t overspend and stay within your budget.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Prevent Overspending",
+    description:
+      "Overspending on campaigns can be costly. With the Digital Marketing Card, you can set predefined spending limits for each card. This feature ensures your team stays within budget, preventing unauthorized expenses and helping you maintain financial discipline for more efficient and cost-effective marketing campaigns.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Simplified Subscription Management",
+    description:
+      "Managing recurring subscriptions for marketing tools, software, or ad platforms becomes effortless with EnKash. Automate payments for these subscriptions with clear schedules and centralized tracking. You’ll never miss a payment, and you'll save time that would otherwise be spent on manual invoicing and reconciliation.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Customizable Usage Policies",
+    description:
+      "Tailor your spending policies to fit your unique marketing needs. With the Digital Marketing Card, you can enforce specific restrictions, such as category-based spending limits or vendor-specific constraints. This ensures that every expense aligns with your business’s objectives and helps maximize the effectiveness of your marketing efforts.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales/?source=expense_management",
   },
 ]
 
@@ -411,4 +465,5 @@ export {
   cardType,
   slideUpData,
   allProductSections,
+  stackcardData,
 }

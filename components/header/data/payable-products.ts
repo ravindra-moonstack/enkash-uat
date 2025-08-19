@@ -42,14 +42,14 @@ const payableProducts = [
         description: "Auto fetch & auto pay utility bills on time",
         imageSrc: billPayments,
         imageSrcHovered: billPaymentsFilled,
-        link: "/business-bill-payment",
+        link: "/utility-bill-payment",
       },
       {
         name: "Express Pay",
         description: "Pay multiple vendors & bills with a single click",
         imageSrc: bulkPayout,
         imageSrcHovered: bulkPayoutFilled,
-        link: "/express-pay",
+        link: "/bulk-pay",
       },
       {
         name: "GST Payment",
@@ -64,16 +64,9 @@ const payableProducts = [
         description: "Make rental payments directly into landlord's account",
         imageSrc: rentalPayments,
         imageSrcHovered: rentalPaymentsFilled,
-        link: "/rental-payment",
+        link: "/rent-payment",
       },
-      // {
-      //   name: "Pay By Any Card",
-      //   description:
-      //     "Pay your business utility bills, GST and vendor payments via any card",
-      //   imageSrc: payByAnyCard,
-      //   imageSrcHovered: payByAnyCardFilled,
-      //   link: "/make-payments/pay-by-any-card",
-      // },
+
       {
         name: "Invoice Management",
         description: "Upload & manage all vendor invoices at one place",

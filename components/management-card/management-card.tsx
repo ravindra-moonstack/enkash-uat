@@ -10,7 +10,7 @@ export interface CardProps {
   description: string
   cardImage?: string | StaticImageData
   theme?: "light" | "dark"
-  linkUrl?: string // ✅ Add this
+  linkUrl?: string 
 }
 
 const ManagementCard = ({
@@ -19,7 +19,7 @@ const ManagementCard = ({
   description,
   cardImage,
   theme = "light",
-  linkUrl, // ✅ Add this
+  linkUrl, 
 }: CardProps) => {
   const cardContent = (
     <div
@@ -63,7 +63,7 @@ const ManagementCard = ({
                 },
               ]}
               headingTag="p"
-              className="mb-0"
+              className=""
             />
         </div>
       </div>

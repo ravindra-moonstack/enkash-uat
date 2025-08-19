@@ -63,7 +63,9 @@ const FooterV2 = () => {
               <div className={` ${styles.info_container} d-none d-md-block`}>
                 <div className={`{styles.info_div} ${styles.info_div_one}`}>
                   <div className={` ${styles.info_header_one}`}>
-                    <h4 className={`${styles.title}`}>Certification</h4>
+                    <h4 className={`${styles.title}`}>
+                      Licenses & Certificates
+                    </h4>
                   </div>
                   <div className={`d-flex ${styles.info_body}`}>
                     <div
@@ -130,12 +132,10 @@ const FooterV2 = () => {
                             href="tel:8530490475"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className={`ms-md-3 ms-2  ${styles.support_text}`}
+                            className={` ${styles.support_text}`}
                           >
-                            <FaPhone />
-                            <span
-                              className={`ms-md-3 ms-2 ${styles.support_text}`}
-                            >
+                            <FaPhone className={`${styles.callIcon}`} />
+                            <span className={` ${styles.support_text}`}>
                               +91 8530490475
                             </span>
                           </Link>
@@ -145,12 +145,10 @@ const FooterV2 = () => {
                             href="mailto:support@enkash.com"
                             target="_blank"
                             rel="noreferrer noopener"
-                            className={`ms-md-3 ms-2  ${styles.support_text}`}
+                            className={`${styles.support_text}`}
                           >
-                            <FaEnvelope />
-                            <span
-                              className={`ms-md-3 ms-2 ${styles.support_text}`}
-                            >
+                            <FaEnvelope className={`${styles.callIcon}`} />
+                            <span className={`${styles.support_text}`}>
                               support@enkash.com
                             </span>
                           </Link>
@@ -263,7 +261,7 @@ const FooterV2 = () => {
                               rel="noreferrer noopener"
                               className={`ms-md-3 ms-2  ${styles.support_text}`}
                             >
-                              <FaPhone />
+                              <FaPhone className={`${styles.callIcon}`} />
                               <span
                                 className={`ms-md-3 ms-2 ${styles.support_text}`}
                               >
@@ -278,7 +276,7 @@ const FooterV2 = () => {
                               rel="noreferrer noopener"
                               className={`ms-md-3 ms-2  ${styles.support_text}`}
                             >
-                              <FaEnvelope />
+                              <FaEnvelope className={`${styles.callIcon}`} />
                               <span
                                 className={`ms-md-3 ms-2 ${styles.support_text}`}
                               >
@@ -403,10 +401,6 @@ const FooterV2 = () => {
                     regulations and/or compliance maintained by banks and
                     regulated entities. EnKash is not a bank and does not hold
                     or claim to hold a banking license.{" "}
-                    <div className="color-alternate-grey">
-                      *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s
-                      PA (Online) authorization.
-                    </div>
                   </div>
                 </div>
 
@@ -426,10 +420,10 @@ const FooterV2 = () => {
                 className="me-3 mb-3"
               />
             </Link>
-            <div className={`d-flex flex-wrap  gap-3 w-100 ${styles.light_bg}`}>
+            <div className={`row gap-3 w-100 ${styles.light_bg}`}>
               {/* 2nd col */}
-              <div className={`${styles.footer_links_col}`}>
-                <Link href="/collect-payments">
+              <div className={`${styles.footer_links_col} col-md-3 col-6`}>
+                <Link href="/products/collect-payments">
                   <h4 className={` ${styles.title}`}>Collect Payments</h4>
                 </Link>
 
@@ -441,7 +435,7 @@ const FooterV2 = () => {
                         <Link href="/payment-gateway">Payment Gateway</Link>
                       </li>
                       <li>
-                        <Link href="/payment-link/">Payment Links</Link>
+                        <Link href="/payment-links/">Payment Links</Link>
                       </li>
                       <li>
                         <Link href="/payment-button/">Payment Button</Link>
@@ -454,13 +448,10 @@ const FooterV2 = () => {
                         <Link href="/upi-payments">UPI Payments</Link>
                       </li>
                       <li>
-                        <Link href="/qr-codes">QR Code</Link>
+                        <Link href="/qr-code">QR Code</Link>
                       </li>
                       <li>
                         <Link href="/auto-collect/">Auto Collect</Link>
-                      </li>
-                      <li>
-                        <Link href="/virtual-account/">Virtual Accounts</Link>
                       </li>
                       <li>
                         <Link href="/e-nach/">e-NACH</Link>
@@ -473,14 +464,14 @@ const FooterV2 = () => {
                       </li>
 
                       <li>
-                        <Link href="/affordability/">Affordability</Link>
+                        <Link href="/affordability-suite/">Affordability</Link>
                       </li>
                     </ul>
                   </div>
                 </div>
 
                 <div>
-                  <Link href="/expense-management">
+                  <Link href="/products/expense-management">
                     <h4 className={`col-12 ${styles.title}`}>Expenses</h4>
                   </Link>
                   <ul>
@@ -518,17 +509,17 @@ const FooterV2 = () => {
               </div>
 
               {/* 3rd col */}
-              <div className={`${styles.footer_links_col}`}>
+              <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <div>
                   <div className="">
                     <ul className="mb-0">
                       <li>
-                        <Link href="/make-payments">
+                        <Link href="/products/make-payments">
                           <h4 className={` ${styles.title}`}>Make Payments</h4>
                         </Link>
                       </li>
                       <li>
-                        <Link href="/business-bill-payment/">
+                        <Link href="/utility-bill-payment/">
                           Business Bill Payments
                         </Link>
                       </li>
@@ -536,7 +527,7 @@ const FooterV2 = () => {
                         <Link href="/vendor-payment/">Vendor Payment</Link>
                       </li>
                       <li>
-                        <Link href="/rental-payment/">Rental Payment</Link>
+                        <Link href="/rent-payment/">Rental Payment</Link>
                       </li>
                       <li>
                         <Link href="/invoice-management/">
@@ -544,12 +535,10 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/payroll-processing/">
-                          Payroll Processing
-                        </Link>
+                        <Link href="/payroll/">Payroll Processing</Link>
                       </li>
                       <li>
-                        <Link href="/express-pay/"> Bulk Pay</Link>
+                        <Link href="/bulk-pay/"> Bulk Pay</Link>
                       </li>
 
                       <li>
@@ -575,32 +564,36 @@ const FooterV2 = () => {
                   <div className="">
                     <ul className="my-3">
                       <li>
-                        <Link href="/vouchers">
+                        <Link href="/products/vouchers">
                           <h4 className={` ${styles.title}`}>Vouchers</h4>
                         </Link>
                       </li>
                       <li>
-                        <Link href="/e-commerce/">E-commerce</Link>
+                        <Link href="/e-commerce-vouchers">E-commerce</Link>
                       </li>
                       <li>
-                        <Link href="/movies-music/">Movies & Music</Link>
+                        <Link href="/movie-and-music-vouchers">
+                          Movies & Music
+                        </Link>
                       </li>
                       <li>
-                        <Link href="/apparels/">Apparels</Link>
+                        <Link href="/apparels-vouchers">Apparels</Link>
                       </li>
                       <li>
-                        <Link href="/food-beverges/">Food & Beverages</Link>
+                        <Link href="/food-and-beverages-vouchers">
+                          Food & Beverages
+                        </Link>
                       </li>
                       <li>
-                        <Link href="/health-wellness/">Health & Wellness</Link>
+                        <Link href="/health-and-wellness-vouchers">
+                          Health & Wellness
+                        </Link>
                       </li>
                     </ul>
                   </div>
                   <div className="mt-3">
                     <Link href="https://docs.enkash.com/" target="_blank">
-                      <h4 className={`col-12 ${styles.title}`}>
-                        Developer Docs
-                      </h4>
+                      <h4 className={`col-12 ${styles.title}`}>Developer</h4>
                     </Link>
                     <ul>
                       <li>
@@ -657,11 +650,11 @@ const FooterV2 = () => {
               </div>
 
               {/* 4th col */}
-              <div className={`${styles.footer_links_col}`}>
+              <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <div>
                   <div>
                     <div className={styles.freedom_card_box}>
-                      <Link href="/corporate-cards">
+                      <Link href="/products/corporate-cards">
                         <h4 className={`${styles.title}`}>Corporate Cards</h4>
                       </Link>
                     </div>
@@ -681,16 +674,8 @@ const FooterV2 = () => {
                         </Link>
                       </li>
                       <li>
-                        <Link href="/saas-cards/">SaaS Card</Link>
+                        <Link href="/saas-card/">SaaS Card</Link>
                       </li>
-
-                      <li>
-                        <Link href="/multi-wallet-card">Multi Wallet Card</Link>
-                      </li>
-                      <li>
-                        <Link href="/fleet-card/">Fleet Card</Link>
-                      </li>
-
                       <li>
                         <Link href="/travel-and-expense-card">T & E Cards</Link>
                       </li>
@@ -703,7 +688,7 @@ const FooterV2 = () => {
                     </ul>
                   </div>
                   <div className="mt-3">
-                    <Link href="/rewards">
+                    <Link href="/products/rewards">
                       <h4 className={`col-12 ${styles.title}`}>Rewards</h4>
                     </Link>
                     <ul>
@@ -724,7 +709,7 @@ const FooterV2 = () => {
                 </div>
               </div>
 
-              <div className={`${styles.footer_links_col}`}>
+              <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 {/* col-1 resources */}{" "}
                 <div className="">
                   <h4 className={`${styles.title}`}>Resources</h4>
@@ -783,19 +768,17 @@ const FooterV2 = () => {
                   </ul>
                 </div>
                 <div className="mt-3">
-                   <Link href="/policies-and-compliance">
-                  <h4 className={`col-12 ${styles.title} text-wrap`}>
-                    Policies and Compliance
-                  </h4>
+                  <Link href="/policies-and-compliance">
+                    <h4 className={`col-12 ${styles.title} text-wrap`}>
+                      Policies and Compliance
+                    </h4>
                   </Link>
                   <ul>
                     <li>
                       <Link href="/payments">Payments</Link>
                     </li>
                     <li>
-                      <Link href="/prepaid-program">
-                        Prepaid Program
-                      </Link>
+                      <Link href="/prepaid-program">Prepaid Program</Link>
                     </li>
                     <li>
                       <Link href="/platform">Platform</Link>
@@ -813,9 +796,7 @@ const FooterV2 = () => {
                       <Link href="/for-banks">For Banks</Link>
                     </li>
                     <li>
-                      <Link href="/affiliate-program">
-                        Affiliate Program
-                      </Link>
+                      <Link href="/affiliate-program">Affiliate Program</Link>
                     </li>
                   </ul>
                 </div>
@@ -835,10 +816,6 @@ const FooterV2 = () => {
             by RBI-licensed banks and/or in accordance with RBI regulations
             and/or compliance maintained by banks and regulated entities. EnKash
             is not a bank and does not hold or claim to hold a banking license.{" "}
-            <div className="color-alternate-grey">
-              *Powered by Banks/REs. # Launching soon as per RBI&rsquo;s PA
-              (Online) authorization.
-            </div>
           </div>
         </div>
       </div>
@@ -859,8 +836,6 @@ const FooterV2 = () => {
           <p>Mumbai</p>
           <div className={styles.vr}></div>
           <p> Pune</p>
-          <div className={styles.vr}></div>
-          <p>Bengaluru</p>
         </div>
         <div className={styles.lineBlue}></div>
       </div>
@@ -879,8 +854,6 @@ const FooterV2 = () => {
           <p>Mumbai</p>
           <div className={`${styles.ar}`}></div>
           <p> Pune</p>
-          <div className={`${styles.ar}`}></div>
-          <p>Bengaluru</p>
         </div>
       </div>
     </div>

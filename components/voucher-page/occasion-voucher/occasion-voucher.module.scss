@@ -4,7 +4,7 @@
 .main_container {
   padding: 0px;
   @include for-laptops {
-    padding: 0 40px;
+    padding: 0 100px;
   }
 }
 

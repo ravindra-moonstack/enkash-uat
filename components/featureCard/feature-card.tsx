@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image, { StaticImageData } from "next/image"
 import styles from "./feature-card.module.scss"
 import { ReactNode } from "react"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
@@ -8,7 +8,9 @@ export interface CardProps {
   titleHtml?: ReactNode
   title2?: string
   description: string
-  cardImage?: string
+  cardImage?:string | StaticImageData | undefined
+  padding?: string
+  hoverClass? : string
 }
 
 const FeatureCard = ({
@@ -17,9 +19,12 @@ const FeatureCard = ({
   description,
   cardImage,
   title2,
+  padding = "40px 30px",
+  hoverClass="",
 }: CardProps) => {
   return (
-    <div className={`d-flex flex-column text-start ${styles.card_body} `}>
+
+    <div className={`d-flex flex-column text-start ${styles.card_body} ${hoverClass}`} style={{ padding: padding }}>
       <div className="d-flex flex-column flex-grow-1">
         <div className={styles.card_top}>
           {cardImage && (
@@ -46,7 +51,7 @@ const FeatureCard = ({
                     color: "color-black",
                   },
                 ]}
-                headingTag="h4"
+                headingTag="h5"
                 className="f-5 min-height-80"
               />
             ) : (
@@ -58,13 +63,13 @@ const FeatureCard = ({
                       color: "color-black",
                     },
                   ]}
-                  headingTag="h4"
+                  headingTag="h5"
                   className="f-5 min-height-80"
                 />
               )
             )}
           </div>
-          {/* {title2 && <div className={styles.titleHtml}>{title2}</div>} */}
+        
         </div>
         <DynamicHeading
           content={[

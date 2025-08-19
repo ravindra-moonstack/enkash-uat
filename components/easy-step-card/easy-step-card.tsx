@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image"
-
 import styles from "./easy-step-card.module.scss"
-import Heading from "../heading/heading"
+import DynamicHeading from "../dynamicHeading/dynamic-heading"
 
 export interface CardProps {
   title?: string // ✅ Optional plain title fallback
@@ -35,24 +34,47 @@ const EasyStepCard = ({
       {/* Content */}
       <div className={`my-3 ${styles.steps}`}>
         <div>
-          <Heading title={steps} color="equity-blue" size="h3" weight="5" />
+          <DynamicHeading
+            content={[
+              {
+                title: steps,
+                color: "color-equity-blue",
+              },
+            ]}
+            headingTag="h4"
+            className="f-5"
+          />
         </div>
 
         {/* Title */}
         {title ? (
           <div className="pt-1 pb-3">
-            <Heading title={title} color="black" size="h4" weight="5" />
+            <DynamicHeading
+              content={[
+                {
+                  title: title,
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h5"
+              className="f-5"
+            />
           </div>
         ) : null}
 
         {/* Description */}
         <div className={` ${styles.description}`}>
-          <Heading
-            title={description}
-            color="alternate-grey"
-            size="h5"
-            weight="5"
+          <DynamicHeading
+            content={[
+              {
+                title: description,
+                color: "color-alternate-grey",
+              },
+            ]}
+            headingTag="p"
+            className="mb-0"
           />
+         
         </div>
       </div>
     </div>

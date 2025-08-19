@@ -4,7 +4,29 @@ import crouselIconThree from "./img/crouselIconThree.svg"
 import crouselIconFour from "./img/crouselIconFour.svg"
 import crouselIconFive from "./img/crouselIconFive.svg"
 
-import { scrollIconOne, scrollIconThree, scrollIconTwo } from "."
+import {
+  autoCollect,
+  instant,
+  invoices,
+  notificationImage,
+  optimizedIcon,
+  paymentButton,
+  paymentGateway,
+  paymentLink,
+  paymentLinkImage,
+  paymentOptionImage,
+  qrCodes,
+  reminder,
+  scrollIconOne,
+  scrollIconThree,
+  scrollIconTwo,
+  shareImage,
+  taskIconFive,
+  taskIconFour,
+  taskIconOne,
+  taskIconThree,
+  taskIconTwo,
+} from "."
 
 const cardsData = [
   {
@@ -69,5 +91,113 @@ const allProductSections = [
     ],
   },
 ]
+const allInOnePolicyData = [
+  {
+    icon: taskIconOne,
+    title: "Customization at Your Fingertips",
+    description:
+      "Design payment pages that truly showcase your brand identity. Add your logo, select colors that resonate with your business, and customize fields to gather precise and relevant customer details. With memorable and professional URLs, sharing your payment page becomes a breeze, enhancing both brand recognition and user convenience.",
+    image: paymentLinkImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconTwo,
+    title: "Multiple Payment Modes",
+    description:
+      "Give your customers unmatched flexibility with over 180 domestic and international payment options. Whether they prefer UPI, net banking, credit or debit cards, wallets, or international currencies, EnKash ensures secure and seamless transactions, catering to a global audience and diverse payment preferences.",
+    image: shareImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "305px",
+    reverse: true,
+  },
+  {
+    icon: taskIconThree,
+    title: "Zero Coding Required",
+    description:
+      "Spend more time growing your business and less time worrying about technical complexities. EnKash’s intuitive platform lets you create and launch fully functional payment pages within minutes, all without any coding knowledge or the need for additional technical resources.",
+    image: paymentOptionImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "243px",
+  },
+  {
+    icon: taskIconFour,
+    title: "Optimized for Mobile and Web",
+    description:
+      "Ensure a flawless checkout experience on any device. EnKash Payment Pages are meticulously designed to adapt to smartphones, tablets, and desktops, offering customers an engaging and consistent interface that works seamlessly regardless of the device they use.",
+    image: notificationImage,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+    reverse: true,
+  },
+  {
+    icon: taskIconFive,
+    title: "Get Real-time Insights",
+    description:
+      "Leverage actionable insights with our powerful dashboard. Access real-time transaction data, monitor payment trends, and analyze customer behavior to make strategic business decisions that can drive growth and enhance operational efficiency.",
+    image: optimizedIcon,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "259px",
+  },
+]
 
-export { cardsData, allProductSections }
+const managementCardData = [
+  {
+    titleHtml: "Payment Gateway",
+    description:
+      "A no-code solution to effortlessly collect payments across various channels, guaranteeing you never miss a transaction.",
+    cardImage: paymentGateway,
+    linkUrl: "/payment-gateway",
+  },
+  {
+    titleHtml: "Payment Links",
+    description:
+      "Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links.",
+    cardImage: paymentLink,
+    linkUrl: "/payment-links",
+  },
+  {
+    titleHtml: "Payment Button",
+    description:
+      "Easily integrate a pre-designed payment button into your website with a quick plug-and-play setup.",
+    cardImage: paymentButton,
+    linkUrl: "/payment-button",
+  },
+  {
+    titleHtml: "QR Codes",
+    description:
+      "Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions.",
+    cardImage: qrCodes,
+    linkUrl: "/qr-code",
+  },
+  {
+    titleHtml: "Auto Collect",
+    description:
+      "Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale.",
+    cardImage: autoCollect,
+    linkUrl: "/auto-collect",
+  },
+  {
+    titleHtml: "Invoices",
+    description:
+      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
+    cardImage: invoices,
+    linkUrl: "/digital-invoicing",
+  },
+  {
+    titleHtml: "Instant Settlement",
+    description:
+      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
+    cardImage: instant,
+    linkUrl: "/instant",
+  },
+  {
+    titleHtml: "Reminder Engine",
+    description:
+      "Automate your collections and say goodbye to manual reminders.",
+    cardImage: reminder,
+    linkUrl: "/reminder",
+  },
+]
+
+export { cardsData, allProductSections, allInOnePolicyData, managementCardData }

@@ -1,54 +1,44 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards } from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  AllInOnePolicy,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
   realTimeIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
   hundredPercentIcon,
-  paymentGatewayImg,
 } from "."
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-
+export const metadata: Metadata = generateMetaData({
+  title: "Collection Analytics: Track & Optimize Your Payment Data",
+  description:
+    "Gain real-time insights into your receivables with EnKash Collection Analytics. Monitor payment trends, identify delays, and improve cash flow decisions.",
+  alternates: {
+    canonical: "https://www.enkash.com/collection-analytics/",
+  },
+})
+const salesUrl = getSalesUrl("/collection-analytics")
 const showScroll = cardsData.length > 3
 
 const CollectionAnalytics = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -71,7 +61,6 @@ const CollectionAnalytics = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row  `}
               >
-              
                 <DynamicHeading
                   content={[
                     {
@@ -90,7 +79,8 @@ const CollectionAnalytics = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Leverage data to boost decision-making with Collection Analytics",
+                        title:
+                          "Leverage data to boost decision-making with Collection Analytics",
                         color: "color-black",
                       },
                     ]}
@@ -110,7 +100,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
                 <div className="d-flex flex-column align-items-center align-items-md-start">
@@ -126,14 +116,14 @@ const CollectionAnalytics = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -171,7 +161,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
 
@@ -181,7 +171,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -258,7 +248,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-2`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -277,7 +267,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
+                className={` ${
                   showScroll ? "overflow-auto scrollbar-thin" : ""
                 }`}
                 style={{
@@ -305,7 +295,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -324,66 +314,44 @@ const CollectionAnalytics = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-md-3`}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Optimize Recovery and  ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Boost Cash Flow,",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center gap-3`}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-3 pb-1`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Optimize Recovery and  ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Boost Cash Flow,",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
+              {allInOnePolicies.map((policy, index) => (
+                <AllInOnePolicy
+                  key={index}
+                  icon={policy.icon}
+                  title={policy.title}
+                  description={policy.description}
+                  image={policy.image}
+                  buttonUrl={salesUrl}
+                  maxImageHeight={policy.maxImageHeight}
+                  reverse={policy.reverse} // undefined if not set
+                />
+              ))}
             </div>
-
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Customizable Dashboards"
-              description="Tailor your collection analytics dashboard to show reports on the basis of week, month, or custom date range, ensuring relevance and clarity."
-              image={paymentLinkImage}
-              buttonUrl="/sales/"
-              maxImageHeight="243px"
-            />
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Visibility And Monitoring"
-              description="Effortlessly track your collection process with complete visibility by monitoring invoice status, outstanding amounts, total collections, and overdue payments for prompt follow-ups."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Automated Reporting"
-              description="Receive comprehensive downloadable reports automatically, eliminating the need for manual compilation and reducing the risk of errors."
-              image={shareImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-            />
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="DSO Tracking"
-              description="Measure and manage Days Sales Outstanding (DSO) efficiently to gain insights into the average time it takes to collect payments. Improve your receivables management with a clear understanding of payment cycle trends, helping you optimize your cash flow further."
-              image={paymentOptionImage}
-              buttonUrl="/sales/"
-              maxImageHeight="305px"
-              reverse
-            />
           </div>
         </div>
       </div>
-
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -395,7 +363,7 @@ const CollectionAnalytics = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 pb-3 pb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -404,69 +372,17 @@ const CollectionAnalytics = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-             <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-5`}>
+          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -486,83 +402,22 @@ const CollectionAnalytics = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGatewayImg}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-                linkUrl="/payment-link"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly."
-                cardImage={qrCodes}
-                linkUrl="/qr-codes"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-                linkUrl="/reminder-engine"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }

@@ -1519,111 +1519,6 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
-
-  "reliance-e-gift-card": {
-    faqData: [
-      {
-        question: "How to use Reliance Gift Cards to save money?\n",
-        answer: [
-          {
-            heading:
-              "When purchasing Reliance gift cards from the EnKash platform members can save the maximum amount. Avail exclusive  discount on single and multiple purchases.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How to use the Reliance Gift Card?",
-        answer: [
-          {
-            heading:
-              "Reliance Gift Cards can be used to shop at any of the Reliance Retail outlets",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I check the remaining balance in my Reliance Gift Card?",
-        answer: [
-          {
-            heading:
-              "You can check your balance by visiting any Reliance Retail store or may also check the same by entering the card number in the gift card section of Reliance\u2019s website along with the card number",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How long is a Reliance Gift Card valid?",
-        answer: [
-          {
-            heading:
-              "Reliance gift cards are valid for a period of 1 year i.e. 12 months from the date of issue \nor purchase or activation of the card.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I use a Reliance Gift Card during sales or promotions?",
-        answer: [
-          {
-            heading:
-              "Of course, one can make use of the Reliance Gift Card even in case there are any discounts, sales or any other offers available.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I redeem a Reliance Gift Card for cash?",
-        answer: [
-          {
-            heading: "Reliance Gift Cards is not redeemable for cash.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How should I handle a lost or stolen Reliance Gift Card?",
-        answer: [
-          {
-            heading:
-              "In case of losing a gift card or there is no replacement card issued, such cards are not insured, hence the card must be kept safe always.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I transfer my Reliance Gift Card to someone else?",
-        answer: [
-          {
-            heading:
-              "You can share the voucher code with anyone, and they can use it.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How many Reliance Gift Cards can an individual order in a single transaction? ",
-        answer: [
-          {
-            heading: "\nThere is no limit for the number of cards ordered. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I pay for Reliance Gift Cards?",
-        answer: [
-          {
-            heading:
-              "Use UPI, QR Codes, or to make payments for the Reliance gift cards at bolt.enkash.com",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
   swiggy: {
     faqData: [
       {
@@ -1727,672 +1622,230 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
       },
     ],
   },
-
-  "mmt-wedding-e-gift-card": {
+  kfc: {
     faqData: [
       {
-        question: "How long does an MMT Gift Card remain valid?",
+        question: "How to use an eGift Card on KFC?",
         answer: [
           {
             heading:
-              "MMT Gift Cards have a validity of 12 months from the date of buying the card thereby giving ample opportunity to use it for many bookings.",
+              "Log in to your KFC account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the KFC E-Gift Card number and PIN. The card will be used to pay for the purchase.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I purchase MMT Gift Cards?",
+        question: "What is the KFC Channel eGift Card?",
         answer: [
           {
             heading:
-              "You  can buy an MMT Gift Card using various payment methods, including credit/debit cards, net banking, and multiple digital wallets",
+              "The KFC E-Gift Card is an online gift card to pay for the purchase of items on the app and in participating stores.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I get a refund or exchange on an MMT Gift Card?",
+        question: "How can I redeem my eGift Card?",
         answer: [
           {
-            heading: "MMT Gift Cards cannot be returned or exchanged for cash.",
+            heading: "Visit the KFC app or stores to redeem the Gift Card.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How many additional charges are applied when using an MMT Gift Card?",
+        question: "How to add a card in KFC?",
         answer: [
           {
             heading:
-              "No additional charges would be incurred when the gift card is used for bookings that qualify, however standard booking charges or taxes that apply will be charged.\n",
+              "Log in to the KFC app. You can add the gift card using its number and PIN.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I send an MMT Gift Card to someone else?",
+        question: "How to use a KFC e-gift card?",
         answer: [
           {
             heading:
-              "A gift card is obtained after payment and can be  sent via Email or WhatsApp. You can give it to someone for future use.\n",
+              "KFC Gift Card can be used to buy items available on the app and in stores.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How many MMT Gift Cards can I apply to one booking?",
+        question: "How to transfer my KFC gift card to another account?",
         answer: [
           {
             heading:
-              "A user can use several gift cards at once on MakeMyTrip subject to the amount of the booking made",
+              "You can gift this KFC brand voucher to your near and dear ones. You cannot transfer it.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I partially use my MMT Gift Card?",
+        question: "What is the validity of the KFC gift card?",
         answer: [
           {
             heading:
-              "When the total booking cost is lower than the amount of your gift card, the difference can be kept and used on the next booking.",
+              "The KFC E-Gift Voucher is valid only for 6 months from the date of purchase.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How can I contact customer support if I experience problems with my gift card?",
+        question: "Can I order online with a KFC gift card?",
         answer: [
           {
             heading:
-              "MakeMyTrip has support services through telephone, email, and live chats to help solve problems concerning booking with gift cards.",
+              "Yes, KFC gift cards can be redeemed online on the app and at participating stores.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I use an MMT Gift Card for group travel bookings?",
+        question: "Can I transfer KFC gift cards to cash?",
         answer: [
           {
             heading:
-              "Gift cards can be used for group reservations for flights, hotels, vacation packages, etc., depending on available options.",
+              "No, KFC brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How is the refund processed if I cancel a booking made using an MMT Gift Card?",
+        question: "What if my KFC Gift Card expires?",
         answer: [
           {
             heading:
-              "In case of a cancellation, the refund will be credited back to your gift card balance. Note that cancellation fees may apply.\n",
+              "You cannot use the KFC Gift Card after its expiry date. The KFC E-Gift Voucher is valid for 6 months from the date of purchase.",
             bullets: [],
           },
         ],
       },
     ],
   },
-  "luxe-e-gift-card": {
+  zomato: {
     faqData: [
       {
-        question: "How can I save money when buying a LUXE Gift Card?",
+        question: "How to use an eGift Card on Zomato?",
         answer: [
           {
             heading:
-              "You can save upto 13% on LUXE Gift Cards when purchasing them through the EnKash platform.\n",
+              "Log in to your Zomato account and add your desired items to the cart. Checkout and choose the “Gift Cards” option under the payment methods. Enter the Zomato E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I transfer my LUXE Gift Card to someone?",
+        question: "What is the Zomato Channel eGift Card?",
         answer: [
           {
             heading:
-              "Yes, one can give away the LUXE Gift Card by sharing the card number or code",
+              "The Zomato E-Gift Card is an online gift card to pay for the purchase of items on the app.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How can I pay if the total purchase exceeds the balance on my LUXE Gift Card?",
+        question: "How can I redeem my eGift Card?",
         answer: [
           {
-            heading:
-              "If the total amount exceeds the limit stated on your LUXE Gift Card, please prepare to pay the remaining sum by other means.",
+            heading: "Visit the Zomato app to redeem the Gift Card.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I use my LUXE Gift Card?",
+        question: "How to add a card in Zomato?",
         answer: [
           {
             heading:
-              "Redeem your Luxe Gift Card at a participating brand of your choice by using the physical gift card or virtually by using the gift card code.",
+              "Log in to the Zomato app. You can add the gift card using its number and PIN.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How long is the LUXE Gift Card valid?",
+        question: "How to use a Zomato e-gift card?",
         answer: [
           {
             heading:
-              "LUXE Gift Cards are valid for a period of twelve months from the date of purchase, allowing the beneficiaries to enjoy buying luxury gifts without stress.\n",
+              "Zomato Gift Card can be used to buy items available on the app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How fast Can I expect the LUXE Gift Card?",
+        question: "How to transfer my Zomato gift card to another account?",
         answer: [
           {
             heading:
-              "The LUXE Gift Card shall be delivered to your Email account and WhatsApp immediately when purchased.",
+              "You can gift this Zomato brand voucher to your near and dear ones. You cannot transfer it.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I buy LUXE Gift Cards in bulk?",
+        question: "What is the validity of the Zomato gift card?",
         answer: [
           {
             heading:
-              "Yes, you can place several orders for LUXE Gift Cards through EnKash and may also get benefits for bulk orders.\n",
+              "The Zomato E-Gift Voucher is valid only for 4 years from the date of purchase.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How can I combine multiple LUXE Gift Cards for a single purchase?",
+        question: "Can I order online with a Zomato gift card?",
         answer: [
           {
             heading:
-              "Using multiple LUXE Gift Cards for one transaction will depend on the policy of the merchant.",
+              "Yes, Zomato gift cards can be redeemed online on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How can I fix my LUXE Gift Card if it\u2019s not working at checkout?",
+        question: "Can I transfer Zomato gift cards to cash?",
         answer: [
           {
             heading:
-              "In case the gift card cannot be processed at checkout, check whether the card number and PIN have been correctly input. Persisting issues should be directed to LUXE customer support.",
+              "No, Zomato brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How can I check my LUXE Gift Card balance online?",
+        question: "What if my Zomato Gift Card expires?",
         answer: [
           {
             heading:
-              "The balance on the LUXE Gift Card can be accessed via the gift card section of the LUXE Partner app/website.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I cancel my LUXE Gift Card order?",
-        answer: [
-          {
-            heading:
-              "After a LUXE Gift Card has been purchased, it is no longer possible to its cancellation. Kindly check and ensure that all details are entered correctly prior to making the order.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I use LUXE Gift Cards during sales or on discounted items?",
-        answer: [
-          {
-            heading:
-              "Yes, LUXE gift cards may also be used for discounts and promotions in the stores within the participant retail network, unless otherwise stated, if gift cards are allowed for those promotions.",
+              "You cannot use the Zomato Gift Card after its expiry date. The Zomato E-Gift Voucher is valid for 4 years from the date of purchase.",
             bullets: [],
           },
         ],
       },
     ],
   },
-  "dominos-pizza-e-gift-card": {
+  dominos: {
     faqData: [
       {
-        question: "How can I save money with Domino\u2019s Gift Cards?",
+        question: "How to use an eGift Card on Domino's?",
         answer: [
           {
             heading:
-              "Dominos Gift Cards purchased using bolt.enkash.com may save on the cost even if it is purchased one at a time or in bulk.",
+              "Log in to your Domino's account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the Domino's E-Gift Card number and PIN. The card will be used to pay for the purchase.",
             bullets: [],
           },
         ],
       },
       {
-        question:
-          "How can I use my Domino\u2019s Gift Card to purchase any items at the physical store?",
+        question: "What is the Domino's eGift Card?",
         answer: [
           {
             heading:
-              "\nNo, Gift cards are not acceptable in the store. They can only be used on orders made through the app or the website.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I reload my Domino\u2019s Gift Card once the balance is used?",
-        answer: [
-          {
-            heading:
-              "\nYou cannot reload it. Instead, You will have to buy a new one.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How quickly will I receive my Domino\u2019s Gift Card after purchase?",
-        answer: [
-          {
-            heading:
-              "You will complete a transaction on EnKash which will only take seconds then you will receive a gift card code via email or WhatsApp.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How long is the Domino's gift card valid?",
-        answer: [
-          {
-            heading:
-              "The Domino's gift card has a validity period of one(1) year from the date of purchase.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I use my gift card for all menu items?",
-        answer: [
-          {
-            heading:
-              "Any holder of a Domino\u2019s gift card can redeem the card for payment of any product on Domino\u2019s menu offered via the app or the site.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I cancel an order if I paid using a Domino\u2019s Gift Card?",
-        answer: [
-          {
-            heading:
-              "\n In the situation where the order was placed using a gift card, it may not be possible to cancel the order without calling customer service for help. A fee to cancel the order will be charged and refunded to the gift card used to place the order.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I check the remaining balance on my Domino's gift card?",
-        answer: [
-          {
-            heading:
-              "To check the amount remaining in the gift card, one could visit the easy way which is the \u2018check gift card balance\u2019 page of Domino's website or App and insert the gift card number in the respective box.\n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How can I redeem discounts and/or promo codes while using a Domino's Gift Card?",
-        answer: [
-          {
-            heading:
-              "Discounts or promo codes can be granted even if a way a gift card is provided, though it is wise to verify the details of the promotion.\n",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
-  "bookmyshow-e-gift-card": {
-    faqData: [
-      {
-        question: "How to save money with the BookMyShow Gift Card?",
-        answer: [
-          {
-            heading:
-              "BookMyShow Gift Card is the perfect gifting option for any event, offering a unique experience for cinema enthusiasts, live comedy fans, and those who enjoy cultural events happening in the city. It's a great way to save on your entertainment expenses with special discounts of up to 5%. The discount is applicable on single or multiple purchases of BookMyShow Gift Cards. Click here to purchase BookMyShow Gift Card and also check the latest offer on BookMyShow Gift Card. \n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I use the BookMyShow Gift Card?",
-        answer: [
-          {
-            heading:
-              "BookMyShow Gift Card is a versatile gifting option, allowing you to enjoy a wide range of entertainment options, including movies, city events such as concerts and live comedy shows, cultural experiences like classical music performances, and tickets to sporting events like cricket, hockey, and football matches. \n\nBookMyShow Gift Voucher can only be used on the BookMyShow app. \nAfter logging into the app, you can choose your desired event or movie option. \nGo to check out and explore various payment options.\nEnter the BookMyShow Gift Card code provided while purchasing on EnKash platform and received through WhatsApp, email or message. \nComplete the purchase and get the booking ID",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What are the Benefits of BookMyShow Giift Cards?",
-        answer: [
-          {
-            heading:
-              "BookMyShow Gift voucher eliminates the stress of finding the right gift.  It is an excellent gift for your loved ones who enjoy outdoor activities. It's a perfect option for important occasions such as birthdays and anniversaries, long weekends and festivals.  With this gift card, they can explore a variety of entertainment options, from movies to live events and cultural experiences, ensuring they have a memorable time without breaking the bank.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Is the BookMyShow Gift Card free?",
-        answer: [
-          {
-            heading:
-              "BookMyShow gift voucher is a gifting option. It helps you save money through upfront discounts while making a purchase. There is no platform or service fee and there are no hidden charges to buy BookMyShow Gift Cards.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "\nWhat is the validity of the BookMyShow Gift Card?",
-        answer: [
-          {
-            heading:
-              "BookMyShow gift card is valid for 6 months from the date of purchase. You can utilise the gift card at one go or through multiple purchases. \n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "Can I only make a booking online with a BookMyShow Gift Card?",
-        answer: [
-          {
-            heading:
-              "The gift card can only be used on the BookMyShow website or app and is not available for redemption at movie hall counters or directly at the venue. \n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Is it safe to buy BookMyShow Gift Cards online?\n",
-        answer: [
-          {
-            heading:
-              "It is safe and secure to buy a BookMyShow gift card online. You need to check the source of the website before buying the gift card. There are fewer chances of fraud and tempering if gift cards are bought through reliable platforms like EnKash.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I refund or exchange my BookMyShow Gift card?",
-        answer: [
-          {
-            heading:
-              "The Gift cards are non-refundable and non-exchangeable. A few brands allow you to extend the validity. You need to check with the specific brand for this clause. \n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "\nCan I transfer BookMyShow Gift cards to cash?",
-        answer: [
-          {
-            heading:
-              "You might find a few websites offering you to sell your BookMyShow or any other gift card but these are not reliable sources or websites. You should not trust or attempt to sell your gift card in lieu of cash. \n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I send my BookMyShow Gift Card code to someone else?",
-        answer: [
-          {
-            heading:
-              "When you purchase a BookMyShow Gift Card through a trusted platform like EnKash, you get a confirmation email with a gift card code through email, WhatsApp or message. You can send gift cards digitally to others. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "\nCan you extend the validity of the BookMyShow Gift Card? ",
-        answer: [
-          {
-            heading:
-              "The validity of BookMyShow Gift Card can be extended on a case-to-case basis. \n",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "How to add a BookMyShow Gift Card Voucher on the BookMyShow app? \n",
-        answer: [
-          {
-            heading:
-              "After making a gift card purchase, go to the BookMyShow website or app. Add the movie or event you wish to attend. Click on Buy Now and add more payment options. You will see a gift voucher option. Enter your GV code and add the BookMyShow Gift Voucher balance before making the final booking.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "Can you check the balance of your BookMyShow Gift Card voucher? ",
-        answer: [
-          {
-            heading:
-              "The balance of the BookMyShow Gift voucher can easily be checked on the BookMyShow app or website in the profile section",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What if my BookMyShow Gift Card expires?",
-        answer: [
-          {
-            heading:
-              "The validity of the BookMyShow gift card can be extended on a case-to-case basis. You need to connect with the customer care team for this.  For any such assistance on the validity, you can reach out to BookMyShow\u2019s Customer Support on +91(022)-61445050 or send an email to  helpdesk@bookmyshow.com.",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
-  "starbucks-e-gift-card": {
-    faqData: [
-      {
-        question: "How to save money with Starbucks Gift Cards?",
-        answer: [
-          {
-            heading:
-              "Starbucks Gift Cards are the perfect gifting option for coffee lovers, offering a personalised experience. You can satisfy your loved ones' taste buds while also saving money with discounts of up to 9% on purchases through bolt.enkash.com. The discount is applicable to single or multiple purchases of Starbucks gift cards.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I use the Starbucks Gift card?",
-        answer: [
-          {
-            heading:
-              "Starbucks Gift Card can only be used in the Starbucks mobile app. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What is the validity of the Starbucks Gift Card?",
-        answer: [
-          {
-            heading:
-              "\nThe validity of the Starbucks Gift Card is 12 months from the date of purchase. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can Starbucks Gift Cards be used for all orders?",
-        answer: [
-          {
-            heading:
-              "Yes, a Starbucks Gift card can be used for all orders placed through the Starbucks India mobile app. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I refund or exchange my Starbucks Gift Card?",
-        answer: [
-          {
-            heading:
-              "The gift vouchers are non-refundable and non-exchangeable. A few brands allow you to extend the validity. You may reach out to Starbucks India customer service to get the validity extended. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I transfer Starbucks Gift Cards to cash?",
-        answer: [
-          {
-            heading:
-              "The currency value of your Starbucks Gift Card is non-refundable or cannot be converted to cash unless required by the law. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I send my Starbucks Gift Card code to someone else?",
-        answer: [
-          {
-            heading:
-              "\nYou get a unique voucher code after making the payment on the EnKash platform. The Starbucks gift card voucher code is accessible either through the EnKash website or also sent to your email and phone number. This voucher code can easily be sent to anyone you wish to. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What if my Starbucks Gift Card expires?",
-        answer: [
-          {
-            heading:
-              "Starbucks E-Gift Card is valid for 12 months and the warranty can be extended at special request. You can reach out to Starbucks India customer care to get the validity extended ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How long does it take to get a Starbucks Gift Card? ",
-        answer: [
-          {
-            heading:
-              "There is an instant delivery of Starbucks E-Gift Card on the EnKash platform.  After choosing your desired denomination and quantity, you can make the payment with a UPI ID or QR code. The Starbucks Gift Card voucher code is instantly delivered to you via email, message or WhatsApp. You can share the code with your friends and loved ones via the platform as well. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How many Starbucks Gift Cards can you buy at once?",
-        answer: [
-          {
-            heading:
-              "On the EnKash platform, there is an option to choose the denomination and quantity of your choice. You can buy as many Starbucks Gift Cards on the EnKash platform and get up to 9% discount on the cart value. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Do unused Starbucks Gift Cards expire?",
-        answer: [
-          {
-            heading:
-              "Starbucks E-Gift Card comes with a validity period of 12 months. Even if you have not used the card. These will not be available for usage after the validity period. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "What payment options are available to buy Starbucks  Gift Cards?",
-        answer: [
-          {
-            heading:
-              "On the EnKash platform, you can make the payment through a UPI ID or QR Code while buying Starbucks Gift Cards. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I send a Starbucks Gift Card via message or email? ",
-        answer: [
-          {
-            heading:
-              "Yes, you can send Starbucks E-Gift Cards via email or message to your loved ones. You get a voucher code after completing the purchase which can be shared further.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question:
-          "Can I order multiple Starbucks Gift Cards for employees, customers, or clients? ",
-        answer: [
-          {
-            heading:
-              "Yes, you can order multiple Starbucks Gift Cards from the EnKash platform. Each Starbucks gift voucher comes with a unique code which can be given to employees, customers or clients. ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I consolidate my Starbucks Gift Card balances? ",
-        answer: [
-          {
-            heading:
-              "Yes, you can merge Starbucks Gift Card balances on the Starbucks mobile app.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Where can I check the Starbucks Gift Card offer?",
-        answer: [
-          {
-            heading:
-              "EnKash provides up to 9% discount on Starbucks E- Gift Cards. The latest discount offer on Starbucks Gift Card can be checked on bolt.enkash.com ",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
-  "myntra-e-gift-card": {
-    faqData: [
-      {
-        question: "How to use an eGift Card on Myntra?",
-        answer: [
-          {
-            heading:
-              "Log in to your Myntra account and add your desired items to the cart. Checkout and choose the \u201cGift Cards\u201d option under the payment methods. Enter the Myntra E-Gift Card number and PIN. The card will be used to pay for the purchase made.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What is the Myntra Channel eGift Card?",
-        answer: [
-          {
-            heading:
-              "The Myntra E-Gift Card is an online gift card to pay for the purchase of items on the website and app. ",
+              "The Domino's E-Gift Card is an online gift card to pay for the purchase of items on the app.",
             bullets: [],
           },
         ],
@@ -2402,167 +1855,544 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
         answer: [
           {
             heading:
-              "Visit the Myntra website and app to redeem the Gift Card.",
+              "Visit the Domino's website or app to redeem the Gift Card.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to add a card in Myntra?",
+        question: "How to add a card in Domino's?",
         answer: [
           {
             heading:
-              "Log in to the Myntra website or app. You can add the gift card using its number and PIN under the gifts card section.",
+              "Log in to the Domino's website or app. You can add the gift card using its number and PIN.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to use Myntra e-gift card?",
+        question: "How to use a Domino's e-gift card?",
         answer: [
           {
             heading:
-              "Myntra Gift Card can be used to buy items available on the website and app. ",
+              "Domino's Gift Card can be used to buy items available on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "How to transfer my Myntra gift card to another account?",
+        question: "How to transfer my Domino's gift card to another account?",
         answer: [
           {
             heading:
-              "You can gift this Myntra brand voucher to your near and dear ones. You cannot transfer it.\n",
+              "You can gift this Domino's brand voucher to your near and dear ones. You cannot transfer it.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What is the validity of the Myntra gift card?",
+        question: "What is the validity of the Domino's gift card?",
         answer: [
           {
             heading:
-              "The Myntra E-Gift Voucher is valid only for 1 year from the date of purchase.",
+              "The Domino's E-Gift Voucher is valid only for 180 days from the date of purchase.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I order online with a Myntra gift card?",
+        question: "Can I order online with a Domino's gift card?",
         answer: [
           {
             heading:
-              "Yes, Myntra gift cards can be redeemed online on the website and app. You can order everything available on the Myntra website and app against the gift card value.",
+              "Yes, Domino's gift cards can be redeemed online on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I transfer Myntra gift cards to cash?",
+        question: "Can I transfer Domino's gift cards to cash?",
         answer: [
           {
             heading:
-              "No, Myntra brand vouchers cannot be converted against cash. These cards can only be purchased and redeemed online.",
+              "No, Domino's brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What if my Myntra Gift Card expires?",
+        question: "What if my Domino's Gift Card expires?",
         answer: [
           {
             heading:
-              "You cannot use the Myntra Gift Card after its expiry date. The Myntra E-Gift Voucher is valid for 1 year from the date of purchase.",
+              "You cannot use the Domino's Gift Card after its expiry date. The Domino's E-Gift Voucher is valid for 180 days from the date of purchase.",
             bullets: [],
           },
         ],
       },
     ],
   },
-  "zomato-e-gift-voucher": {
+  mamaearth: {
     faqData: [
       {
-        question: "How to save money with a Zomato Gift Card?",
+        question: "How to use an eGift Card on Mamaearth?",
         answer: [
           {
             heading:
-              "Try to order within the card limit to avoid using your own money for extra payments. Zomato also offers frequent offers and discounts \u2013 which you can combine with gift cards to save even more.",
+              "Log in to your Mamaearth account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the Mamaearth E-Gift Card number and PIN. The card will be used to pay for the purchase.",
             bullets: [],
           },
         ],
       },
       {
-        question: "What are the benefits of Zomato Gift Cards?",
+        question: "What is the Mamaearth Channel eGift Card?",
         answer: [
           {
             heading:
-              "Zomato gift cards are very easy to use, and can be used at any of the listed restaurants on Zomato. They are also a good option for corporate or festive gifting.",
+              "The Mamaearth E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Is Zomato Gift Card free?",
+        question: "How can I redeem my eGift Card?",
         answer: [
           {
             heading:
-              "Zomato gift cards are not free. They have to be bought from the Zomato website or from third-party resellers who have partnered with Zomato. ",
+              "Visit the Mamaearth website or app to redeem the Gift Card.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I order online with a Zomato Gift Card?",
+        question: "How to add a card in Mamaearth?",
         answer: [
           {
             heading:
-              "Yes, you can buy food online with a Zomato gift card at the partner restaurants. When you are placing an order, you just have to enter the gift card code. ",
+              "Log in to the Mamaearth website or app. You can add the gift card using its number and PIN.",
             bullets: [],
           },
         ],
       },
       {
-        question: " Is it safe to buy Zomato Gift Cards online?",
+        question: "How to use a Mamaearth e-gift card?",
         answer: [
           {
             heading:
-              "Buying Zomato gift cards from their official website or from authorized third-party sellers is safe. ",
+              "Mamaearth Gift Card can be used to buy items available on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can Zomato Gift Cards be used for all orders?",
+        question: "How to transfer my Mamaearth gift card to another account?",
         answer: [
           {
             heading:
-              "Gift Cards can be used to make most orders on Zomato. However, gift cards cannot be used to pay for delivery fees, taxes, and other restaurant terms.",
+              "You can gift this Mamaearth brand voucher to your near and dear ones. You cannot transfer it.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I refund or exchange my Zomato Gift Card?",
+        question: "Can I order online with a Mamaearth gift card?",
         answer: [
           {
             heading:
-              "No, Zomato gift cards cannot be refunded or exchanged once they are purchased.",
+              "Yes, Mamaearth gift cards can be redeemed online on the website and app.",
             bullets: [],
           },
         ],
       },
       {
-        question: "Can I transfer Zomato Gift Cards to cash?",
+        question: "Can I transfer Mamaearth gift cards to cash?",
         answer: [
           {
             heading:
-              "No, it is not possible to convert Zomato gift cards into cash.",
+              "No, Mamaearth brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Mamaearth Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Mamaearth Gift Card after its expiry date.",
             bullets: [],
           },
         ],
       },
     ],
   },
+  apollo: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Apollo?",
+        answer: [
+          {
+            heading:
+              "Visit the Apollo pharmacy store and redeem the card against the bill value.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Apollo eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Apollo E-Gift Card is an online gift card to pay for the purchase of items offline.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading: "Visit the Apollo store to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use an Apollo e-gift card?",
+        answer: [
+          {
+            heading:
+              "Apollo Gift Card can be used to buy items available at the outlet.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Apollo gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Apollo brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Apollo Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Apollo Gift Card after its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+
+  cultfit: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on Cultfit?",
+        answer: [
+          {
+            heading:
+              "Log in to your Cultfit account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the Cultfit E-Gift Card number and PIN. The card will be used to pay for the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the Cultfit Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The Cultfit E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the Cultfit website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in Cultfit?",
+        answer: [
+          {
+            heading:
+              "Log in to the Cultfit website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a Cultfit e-gift card?",
+        answer: [
+          {
+            heading:
+              "Cultfit Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my Cultfit gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this Cultfit brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the Cultfit gift card?",
+        answer: [
+          {
+            heading:
+              "The Cultfit E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a Cultfit gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, Cultfit gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer Cultfit gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, Cultfit brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my Cultfit Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the Cultfit Gift Card after its expiry date. The Cultfit E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  myglamm: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on MyGlamm?",
+        answer: [
+          {
+            heading:
+              "Log in to your MyGlamm account and add your desired items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the MyGlamm E-Gift Card number and PIN. The card will be used to pay for the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the MyGlamm Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The MyGlamm E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the MyGlamm website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in MyGlamm?",
+        answer: [
+          {
+            heading:
+              "Log in to the MyGlamm website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a MyGlamm e-gift card?",
+        answer: [
+          {
+            heading:
+              "MyGlamm Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my MyGlamm gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this MyGlamm brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the validity of the MyGlamm gift card?",
+        answer: [
+          {
+            heading:
+              "The MyGlamm E-Gift Voucher is valid only for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a MyGlamm gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, MyGlamm gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer MyGlamm gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, MyGlamm brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my MyGlamm Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the MyGlamm Gift Card after its expiry date. The MyGlamm E-Gift Voucher is valid for 1 year from the date of purchase.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+  healthkart: {
+    faqData: [
+      {
+        question: "How to use an eGift Card on HealthKart?",
+        answer: [
+          {
+            heading:
+              "Log in to your HealthKart account and add selected items to the cart. Check out and choose the “Gift Cards” option under the payment methods. Enter the HealthKart E-Gift Card number and PIN. The card will be used to pay for the purchase.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What is the HealthKart Channel eGift Card?",
+        answer: [
+          {
+            heading:
+              "The HealthKart E-Gift Card is an online gift card to pay for the purchase of items on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How can I redeem my eGift Card?",
+        answer: [
+          {
+            heading:
+              "Visit the HealthKart website or app to redeem the Gift Card.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to add a card in HealthKart?",
+        answer: [
+          {
+            heading:
+              "Log in to the HealthKart website or app. You can add the gift card using its number and PIN.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to use a HealthKart e-gift card?",
+        answer: [
+          {
+            heading:
+              "HealthKart Gift Card can be used to buy items available on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "How to transfer my HealthKart gift card to another account?",
+        answer: [
+          {
+            heading:
+              "You can gift this HealthKart brand voucher to your near and dear ones. You cannot transfer it.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I order online with a HealthKart gift card?",
+        answer: [
+          {
+            heading:
+              "Yes, HealthKart gift cards can be redeemed online on the website and app.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "Can I transfer HealthKart gift cards to cash?",
+        answer: [
+          {
+            heading:
+              "No, HealthKart brand vouchers cannot be converted into cash. These cards can only be purchased and redeemed online.",
+            bullets: [],
+          },
+        ],
+      },
+      {
+        question: "What if my HealthKart Gift Card expires?",
+        answer: [
+          {
+            heading:
+              "You cannot use the HealthKart Gift Card after its expiry date.",
+            bullets: [],
+          },
+        ],
+      },
+    ],
+  },
+
   "flipkart-e-gift-voucher": {
     faqData: [
       {
@@ -2680,80 +2510,6 @@ export const VoucherFaqData: Record<string, VoucherFaq> = {
           {
             heading:
               "Once expired, a user may request for the Flipkart Gift Card to be revalidated, but this is subject to verification.",
-            bullets: [],
-          },
-        ],
-      },
-    ],
-  },
-
-  "decathlon-sports-india-e-gift-card": {
-    faqData: [
-      {
-        question: "How does a Decathlon Gift Card work?\n\n",
-        answer: [
-          {
-            heading:
-              "A Decathlon Gift Card helps save on fitness and wellness equipments by providing exclusive discount on Bolt",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How to save money with a Decathlon Gift Card?\n\n",
-        answer: [
-          {
-            heading:
-              "Decathlon gift card is available at a discounted price on bolt.enkash.com. Buying a Decathlon brand voucher can help save on quality sports equipments and essentials.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "How can I use the Decathlon Gift Card?\n\n",
-        answer: [
-          {
-            heading:
-              "Decathlon gift card can be used to purchase wellness related items available on the app, website and retail stores.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What is the validity of the Decathlon Gift Card?\n\n",
-        answer: [
-          {
-            heading:
-              "Decathlon Gift Card is valid for 1 year from the date of issuance.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Is it safe to buy Decathlon Gift Cards online?\n\n",
-        answer: [
-          {
-            heading:
-              "Decathlon gift cards are absolutely safe to be purchased and redeemed online.",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "Can I send my Decathlon Gift Card code to someone else?\n\n",
-        answer: [
-          {
-            heading: "Yes, this Decathlon Gift Card can be gifted to ",
-            bullets: [],
-          },
-        ],
-      },
-      {
-        question: "What if my Decathlon Gift Card expires?\n\n",
-        answer: [
-          {
-            heading:
-              "Yes, the Decathlon Gift Card comes with an expiration date.",
             bullets: [],
           },
         ],

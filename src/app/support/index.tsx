@@ -1,0 +1,7 @@
+export { default as logo } from "./img/logo.webp"
+export { default as help } from "./img/helpLogo.svg"
+export { default as support } from "./img/supportLogo.svg"
+export { default as login } from "./img/loginLogo.svg"
+export { default as testimonailImgOne } from "./img/testimonailImgOne.webp"
+export { default as testimonialLogoOne } from "./img/testimonialLogoOne.webp"
+export { default as location } from "./img/locationIcon.svg"

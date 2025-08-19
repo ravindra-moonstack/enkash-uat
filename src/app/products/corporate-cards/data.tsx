@@ -270,42 +270,43 @@ const cardType = [
     description:
       "Give tax-saving meal benefits to employees with easy-to-use, digital meal cards accepted nationwide.",
     cardImage: mealCardImg,
+    linkUrl: "/meal-card",
   },
   {
     titleHtml: "Fuel Card",
     description:
       "Control and track fuel expenses with prepaid cards designed for fleet and travel-related spending.",
     cardImage: fuelCardImg,
+    linkUrl: "/fuel-card",
   },
   {
     titleHtml: "T&E Card",
     description:
       "Manage travel & entertainment spends with smart controls, real-time tracking, and seamless",
     cardImage: termsAndConCardImg,
+    linkUrl: "/travel-and-expense-card",
   },
   {
     titleHtml: "Virtual Card",
     description:
       "Generate secure, one-time or recurring virtual cards for safer, faster, and trackable online payments.",
-    cardImage: termsAndConCardImg,
+    cardImage: virtualCardImg,
+    linkUrl: "/virtual-card",
   },
   {
     titleHtml: "Purchase Card",
     description:
       "Pre-approved cards that help manage vendor payments and operational purchases for effortless procurement",
-    cardImage: virtualCardImg,
-  },
-  {
-    titleHtml: "Digital Marketing Card",
-    description:
-      "Manage online ad spends across platforms with preset limits and real-time spend visibility and control.",
     cardImage: purchesCardImg,
+    linkUrl: "/purchase-card",
   },
+
   {
     titleHtml: "SaaS Card",
     description:
       "Centralize and manage software subscriptions easily with cards made for recurring SaaS payments and renewals.",
     cardImage: sassCardImg,
+    linkUrl: "/sass-card",
   },
 ]
 
@@ -361,7 +362,7 @@ const allProductSections = [
         title: "Auto-capture receipts",
         description: "and match them with transactions",
         image: autoCapture,
-        link: "/payment-links/",
+        link: "/receipts/",
       },
       {
         title: "View, approve, and audit expenses",
@@ -385,7 +386,7 @@ const allProductSections = [
         title: "Set policy-driven workflows",
         description: "that apply at the swipe level",
         image: workflow,
-        link: "/qr-codes/",
+        link: "/qr-code/",
       },
       {
         title: "Track and approve spends",

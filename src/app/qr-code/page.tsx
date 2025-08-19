@@ -1,57 +1,51 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData, paymentMethodData } from "./data"
+import {
+  allInOnePolicyData,
+  cardsData,
+  managementCardData,
+  paymentMethodData,
+} from "./data"
 import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  AllInOnePolicy,
+  FeatureCard,
+  FaqSection,
+} from "@/components"
 import {
   blueArrow,
   groupIcon,
   paymentSummary,
-  paymentLink,
-  paymentPage,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
   whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
   activationIcon,
   realTimeIcon,
-  optimizedIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
-  taskIconFive,
 } from "."
- 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import FeatureCard from "@/components/featureCard/feature-card"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
- 
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+
+export const metadata: Metadata = generateMetaData({
+  title: "QR Code Payments: Pay with UPI QR Codes",
+  description:
+    "Generate dynamic or static QR codes for fast, secure, and contactless UPI payments. Perfect for retail, delivery, and offline collections—no hardware needed.",
+  alternates: {
+    canonical: "https://www.enkash.com/qr-code/",
+  },
+})
+const salesUrl = getSalesUrl("/qr-code")
+
 const showScroll = cardsData.length > 3
- 
+
 const QrCode = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
- 
-      <TalkToSales />
- 
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -81,7 +75,6 @@ const QrCode = (): React.JSX.Element => {
                   headingTag="p"
                   className="mb-0"
                 />
-                
               </div>
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
@@ -98,7 +91,7 @@ const QrCode = (): React.JSX.Element => {
                     className="f-7"
                   />
                 </div>
- 
+
                 <div className="d-flex mt-3 mb-3  text-center text-md-start ">
                   <DynamicHeading
                     content={[
@@ -110,10 +103,9 @@ const QrCode = (): React.JSX.Element => {
                     ]}
                     headingTag="p"
                     className="mb-0"
-                  /> 
+                  />
                 </div>
 
- 
                 <div className="">
                   <Image
                     src={groupIcon}
@@ -127,14 +119,14 @@ const QrCode = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -160,10 +152,10 @@ const QrCode = (): React.JSX.Element => {
         </div>
         <LogoSlider />
       </div>
- 
+
       <div className={`row ${styles.second_row} `}>
         <div className="">
-          <div className="pb-5 text-center">
+          <div className="pb-4 pb-md-5 text-center">
             <DynamicHeading
               content={[
                 {
@@ -175,7 +167,7 @@ const QrCode = (): React.JSX.Element => {
               className="f-5"
             />
           </div>
- 
+
           <div className={` d-flex ${styles.section}`}>
             {" "}
             <div
@@ -256,10 +248,10 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
- 
+
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -310,7 +302,7 @@ const QrCode = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -326,85 +318,53 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
- 
+
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center `}
-              >
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Why EnKash for Collecting ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "QR Code Payments",
-                      color: "color-equity-blue",
-                    },
-                    {
-                      title: "?",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center `}>
+                <div className={`text-center mb-4 mb-md-5`}>
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "Why EnKash for Collecting ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "QR Code Payments",
+                        color: "color-equity-blue",
+                      },
+                      {
+                        title: "?",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
+              </div>
+
+              <div className={styles.allInOnePolicy}>
+                {allInOnePolicyData.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
               </div>
             </div>
- 
-            <AllInOnePolicy
-              icon={taskIconOne}
-              title="Generate QR codes for your business in seconds"
-              description="With EnKash QR codes, getting started is quick and easy. Generate your unique QR codes instantly through our user-friendly platform. No complicated processes or long wait times—just a few clicks, and you’re ready to accept payments, boosting efficiency for your business operations."
-              image={paymentLinkImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="243px"
-            />
- 
-            <AllInOnePolicy
-              icon={taskIconTwo}
-              title="Showcase your Brand on Every QR Code"
-              description="Stand out by adding your business logo to every QR code. With custom branding, you promote trust and professionalism and reinforce your brand identity at every payment interaction. It’s a simple yet powerful way to make your business memorable."
-              image={shareImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="305px"
-              reverse
-            />
- 
-            <AllInOnePolicy
-              icon={taskIconThree}
-              title="Generate QR Codes for Fixed or Dynamic Amounts"
-              description="Enjoy the flexibility to generate fixed-amount codes for specific transactions or dynamic codes that allow open payments. Whether for recurring billing or flexible purchases, our solution adapts to your business needs, offering convenience for you and your customers."
-              image={paymentOptionImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="268px"
-            />
- 
-            <AllInOnePolicy
-              icon={taskIconFour}
-              title="Real-time Reconciliation and Tracking of Financial Transactions"
-              description="Stay on top of your business finances with EnKash’s real-time transaction tracking. Our powerful dashboard provides instant updates on payments, detailed reports, and reconciliation tools, ensuring you always have clear insights into your revenue streams for efficient financial management."
-              image={notificationImage}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="259px"
-              reverse
-            />
- 
-            <AllInOnePolicy
-              icon={taskIconFive}
-              title="Industry Leading Encryption and Compliance Standards"
-              description="Protect your business and customer data with EnKash’s secure payment platform. Our QR codes are backed by advanced encryption and compliance with global security standards, giving you peace of mind and ensuring every transaction is safe, reliable, and trustworthy."
-              image={optimizedIcon}
-              buttonUrl="/sales/?source=expense_management"
-              maxImageHeight="221px"
-            />
           </div>
         </div>
       </div>
- 
+
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-md-5 pb-4`}>
@@ -423,7 +383,7 @@ const QrCode = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
- 
+
           <div className={styles.card_grid}>
             {paymentMethodData.map(({ icon, title, description }, i) => (
               <div key={i}>
@@ -437,7 +397,7 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
- 
+
       <div className={`${styles.fifth_row} `}>
         <div className="d-flex justify-content-center  flex-column gap-32   align-items-center max-w-auto">
           <div className="d-flex justify-content-center  align-items-center text-center">
@@ -449,7 +409,7 @@ const QrCode = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-3 mb-md-0"
             />
           </div>
           <div className={`${styles.get_started_button} `}>
@@ -458,69 +418,17 @@ const QrCode = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/?source=expense_management"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
- 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5  pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
- 
+
+      <FaqSection faqData={faqData} />
+
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center pb-5`}>
+          <div className={`${styles.title} text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
                 {
@@ -540,85 +448,22 @@ const QrCode = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentLink}
-                linkUrl="/payment-gateway"
-              />
-            </div>
- 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Page"
-                description="Set up custom-branded payment pages in just minutes, requiring no technical expertise to start accepting payments online."
-                cardImage={paymentPage}
-                linkUrl="/payment-page"
-              />
-            </div>
- 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
- 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="UPI Payments"
-                description="UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles."
-                cardImage={qrCodes}
-                linkUrl="/upi-payments"
-              />
-            </div>
- 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
- 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/invoices"
-              />
-            </div>
- 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
- 
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-                linkUrl="/reminder-engine"
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCardData.map((card, index) => (
+              <div key={index} className="col-12 col-md-4">
+                <ManagementCard
+                  titleHtml={card.titleHtml}
+                  description={card.description}
+                  cardImage={card.cardImage}
+                  linkUrl={card.linkUrl}
+                />
+              </div>
+            ))}{" "}
           </div>
         </div>
       </div>
- 
-      <Footer />
     </div>
   )
 }
- 
+
 export default QrCode

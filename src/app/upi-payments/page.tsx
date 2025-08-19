@@ -1,55 +1,48 @@
-"use client"
 import Image from "next/image"
-import { space } from "@/common/constant"
 import styles from "./page.module.scss"
-import { cardsData, paymentMethodData } from "./data"
-import faqData from "./faq-data"
-import { Header, Heading, FAQHtml, Footer } from "@/components"
 import {
-  blueArrow,
+  allInOnePolicyData,
+  cardsData,
+  managementCardsData,
+  paymentMethodData,
+} from "./data"
+import faqData from "./faq-data"
+import {
+  DynamicHeading,
+  LogoSlider,
+  CustomBreadcrumb,
+  PolicyCard,
+  RectangleButton,
+  ManagementCard,
+  AllInOnePolicy,
+  FeatureCard,
+  FaqSection,
+} from "@/components"
+import {
   groupIcon,
   paymentSummary,
-  paymentLink,
-  paymentPage,
-  qrCodes,
-  invoices,
-  paymentButton,
-  autoCollect,
-  instant,
-  reminder,
-  whiteArrow,
   mealCardImage,
-  paymentLinkImage,
-  shareImage,
-  paymentOptionImage,
-  notificationImage,
   activationIcon,
   realTimeIcon,
-  taskIconOne,
-  taskIconTwo,
-  taskIconThree,
-  taskIconFour,
 } from "."
+import { Metadata } from "next"
+import generateMetaData from "@/common/utils/metaData"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-import ManagementCard from "@/components/management-card/management-card"
-import RectangleButton from "@/components/buttons/rectangle-button/rectangle-button"
-import PolicyCard from "@/components/policyCard/policyCard"
-import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
-import LogoSlider from "@/components/logo-slider/logo-slider"
-import TalkToSales from "@/components/mobile-talks-to-sales/mobile-talk-to-sales"
-import AllInOnePolicy from "@/components/all-in-one-policy/all-in-one-policy"
-import FeatureCard from "@/components/featureCard/feature-card"
-import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-
+export const metadata: Metadata = generateMetaData({
+  title: "UPI Payments: Fast, Secure, and Instant Online Payment",
+  description:
+    "Accept instant UPI payments with EnKash. Enable QR-based, link-based, and app-based UPI collections to streamline business transactions and boost cash flow.",
+  alternates: {
+    canonical: "https://www.enkash.com/upi-payments/",
+  },
+})
+const salesUrl = getSalesUrl("/upi-payments")
 const showScroll = cardsData.length > 3
 
 const UpiPayments = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -73,7 +66,7 @@ const UpiPayments = (): React.JSX.Element => {
               <div
                 className={`${styles.first_row_title} d-md-flex text-center flex-column flex-md-row `}
               >
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "UPI Payments",
@@ -91,7 +84,8 @@ const UpiPayments = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Simplify Transactions, Accelerate Growth with EnKash UPI Payments",
+                        title:
+                          "Simplify Transactions, Accelerate Growth with EnKash UPI Payments",
                         color: "color-black",
                       },
                     ]}
@@ -127,14 +121,14 @@ const UpiPayments = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -172,7 +166,7 @@ const UpiPayments = (): React.JSX.Element => {
                 },
               ]}
               headingTag="h3"
-              className="f-5"
+              className="f-5 mb-3 mb-md-0"
             />
           </div>
 
@@ -182,7 +176,7 @@ const UpiPayments = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                    <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "100%",
@@ -219,7 +213,7 @@ const UpiPayments = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Real-time Settlement",
@@ -241,7 +235,7 @@ const UpiPayments = (): React.JSX.Element => {
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
                 {" "}
-                 <DynamicHeading
+                <DynamicHeading
                   content={[
                     {
                       title: "Secure Transactions",
@@ -259,7 +253,7 @@ const UpiPayments = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          <div className={`${styles.title} text-center pb-md-5 pb-3`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -302,7 +296,7 @@ const UpiPayments = (): React.JSX.Element => {
                 <RectangleButton
                   title="Get Started"
                   theme="outline-blue"
-                  url="/sales/?source=receivables"
+                  url={salesUrl}
                 />
               </div>
             </div>
@@ -321,65 +315,43 @@ const UpiPayments = (): React.JSX.Element => {
 
       <div className={`${styles.fourth_row}  `}>
         <div className="max-w-auto">
-          <div className={`row  align-items-center ${styles.section}`}>
-            <div className={`${styles.title} text-center `}>
-              <div
-                className={`flex-column justify-content-center align-items-center pb-3`}
-              >
-                 <DynamicHeading
-                  content={[
-                    {
-                      title: "EnKash UPI Payment ",
-                      color: "color-black",
-                    },
-                    {
-                      title: "Gateway for Businesses",
-                      color: "color-equity-blue",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+          <div className={`${styles.section}`}>
+            <div className={`row  align-items-center `}>
+              <div className={`${styles.title} text-center `}>
+                <div
+                  className={`flex-column justify-content-center align-items-center pb-md-5 pb-4`}
+                >
+                  <DynamicHeading
+                    content={[
+                      {
+                        title: "EnKash UPI Payment ",
+                        color: "color-black",
+                      },
+                      {
+                        title: "Gateway for Businesses",
+                        color: "color-equity-blue",
+                      },
+                    ]}
+                    headingTag="h2"
+                    className="f-6"
+                  />
+                </div>
               </div>
-            </div>
-            <div className={styles.allInOnePolicy}>
-              <AllInOnePolicy
-                icon={taskIconOne}
-                title="Effortless Integration for Quick Setup"
-                description="No need for extra code or technical headaches. EnKash provides easy-to-use SDKs and APIs that integrate seamlessly with your existing website or app. This means you can start accepting UPI payments without any complex setup or lengthy development time, allowing you to focus on what matters: growing your business."
-                image={paymentLinkImage}
-                buttonUrl="/sales/"
-                maxImageHeight="243px"
-              />
 
-              <AllInOnePolicy
-                icon={taskIconTwo}
-                title="Get Paid Instantly with Instant Settlement"
-                description="Do not wait days for payment settlements. Our real-time settlement system ensures that once a customer makes a payment, the funds are directly deposited into your bank account. This improves your cash flow, enabling you to reinvest in your business without worrying about delayed payments."
-                image={shareImage}
-                buttonUrl="/sales/"
-                maxImageHeight="305px"
-                reverse
-              />
-
-              <AllInOnePolicy
-                icon={taskIconThree}
-                title="Prioritize Secure Transactions"
-                description="Security is our top priority. Every UPI payment you process is backed by EnKash’s advanced security infrastructure, along with two-factor authentication ensuring all transactions are encrypted and safe. This means your business and customer data are protected, reducing the risk of fraud and giving both you and your customers peace of mind during every transaction."
-                image={paymentOptionImage}
-                buttonUrl="/sales/?source=expense_management"
-                maxImageHeight="268px"
-              />
-
-              <AllInOnePolicy
-                icon={taskIconFour}
-                title="No More Payment Failures "
-                description="Say goodbye to payment failures. EnKash uses optimized payment routing and cutting-edge technology to ensure your transactions are successful. Our solution is designed to offer the highest UPI success rates, meaning fewer declined payments and a smoother experience for your customers. This increases customer trust and boosts your revenue by ensuring you don't miss any payments."
-                image={notificationImage}
-                buttonUrl="/sales/"
-                maxImageHeight="259px"
-                reverse
-              />
+              <div className={styles.allInOnePolicy}>
+                {allInOnePolicyData.map((item, index) => (
+                  <AllInOnePolicy
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    image={item.image}
+                    buttonUrl={salesUrl}
+                    maxImageHeight={item.maxImageHeight}
+                    reverse={item.reverse}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -387,7 +359,7 @@ const UpiPayments = (): React.JSX.Element => {
 
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
-          <div className={`${styles.title} text-center  pb-5`}>
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
             <DynamicHeading
               content={[
                 {
@@ -418,64 +390,12 @@ const UpiPayments = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-2 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div>
-              <div>
-                 <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-3 d-none d-md-block">
-                <RectangleButton
-                  title="Get started today"
-                  theme="border-gray"
-                  actionImage={blueArrow}
-                  hoverImage={whiteArrow}
-                  iconSize={15}
-                  url="/sales/?source=receivables"
-                />
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-5`}>
-              <DynamicHeading
+          <div className={`${styles.title} text-center pb-md-5 pb-4`}>
+            <DynamicHeading
               content={[
                 {
                   title: "Check out our ",
@@ -494,75 +414,20 @@ const UpiPayments = (): React.JSX.Element => {
               className="f-6"
             />
           </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="Seamlessly collect payments with no-code solutions."
-                cardImage={paymentLink}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Page"
-                description="Create stunning, branded checkout experiences in minutes."
-                cardImage={paymentPage}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Link"
-                description="Collect payments across WhatsApp, SMS, and social media with easy-to-share payment links."
-                cardImage={paymentButton}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
-                cardImage={qrCodes}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Automate your collections and say goodbye to manual reminders."
-                cardImage={reminder}
-              />
-            </div>
+          <div className="row g-3 pb-4">
+            {managementCardsData.map((card, index) => (
+              <div key={index} className="col-12 col-md-4">
+                <ManagementCard
+                  titleHtml={card.titleHtml}
+                  description={card.description}
+                  cardImage={card.cardImage}
+                  linkUrl={card.url}
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }
