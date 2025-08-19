@@ -261,9 +261,8 @@ const AutoCollect = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
