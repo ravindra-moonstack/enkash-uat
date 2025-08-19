@@ -1,0 +1,166 @@
+.partnershipSlider {
+    position: relative;
+    width: 100%;
+    padding-left: 4px;
+    padding-bottom: 18px;
+
+
+
+    :global {
+        .slick-slider {
+            .slick-track {
+                display: flex !important;
+            }
+
+            .slick-slide {
+                height: inherit !important;
+            }
+
+            .slick-list {
+                // padding: 0 15px; 
+                height: 100%;
+            }
+
+            .slick-track {
+                display: flex;
+                align-items: stretch;
+            }
+
+            .slick-slide {
+                // padding: 0 15px; 
+                height: 100%;
+
+                >div {
+                    height: 100%;
+                }
+            }
+        }
+
+        .slick-dots {
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: auto;
+            display: flex !important;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+
+            li {
+                width: auto;
+                height: auto;
+                margin: 0;
+
+                button {
+                    font-size: 0;
+                    padding: 0;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    background: #A5A5A5;
+                    border: none;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+
+                    &::before {
+                        display: none;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: rgba(255, 255, 255, 0.4);
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                    }
+
+                    &:hover {
+                        background: rgba(255, 255, 255, 0.7);
+                    }
+                }
+
+                &.slick-active button {
+                    width: 24px; // elongated pill shape
+                    height: 8px;
+                    border-radius: 20px;
+                    background: rgba(255, 255, 255, 1);
+                    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.3);
+                }
+            }
+        }
+
+    }
+}
+
+.slideContainer {
+    padding: 0 1px;
+    color: #FFFFFF;
+    height: 100%;
+}
+
+.slideCard {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 34px 7px 30px 27px;
+    width: 100%;
+    min-height: 340px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: all 0.3s ease;
+    gap: 15.55px;
+}
+
+.slideIcon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 26px;
+        height: 26px;
+        color: #1C5AF4;
+    }
+}
+
+.slideTitle {
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+    line-height: 31.25px;
+    font-family: "Inter", sans-serif;
+}
+
+.slideDescription {
+    font-size: 16px;
+    color: #2B2B2B;
+    line-height: 21.77px;
+    flex: 1;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .partnershipSlider {
+        border-left: 2px solid rgba(255, 255, 255, 0.2);
+        padding-left: 20px;
+    }
+
+    .slideCard {
+        // height: 260px;
+        padding: 24px 20px;
+
+        .slideTitle {
+            font-size: 1.1rem;
+        }
+
+        .slideDescription {
+            font-size: 0.9rem;
+        }
+    }
+}
