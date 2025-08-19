@@ -890,7 +890,7 @@ const HomePage = (): React.JSX.Element => {
               <div className="row">
                 <div className="col-md-12">
                   <div className={`${styles.customButtons}`}>
-                    <Link href={"/#"}>
+                    <Link href={"https://docs.enkash.com/"}>
                       {" "}
                       Read the Docs{" "}
                       <svg
