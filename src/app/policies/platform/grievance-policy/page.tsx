@@ -45,7 +45,7 @@ const grievancePolicy = () => {
                       <DynamicHeading
                         content={[
                           {
-                            title: "Grievance Policy",
+                            title: "Grievance Policy (Platform)",
                             color: "color-equity-blue",
                           },
                         ]}
@@ -186,7 +186,13 @@ const grievancePolicy = () => {
                         <li className="c3">
                           <span className="c15">
                             Email – Customers can choose to send their complaint
-                            via email to grievanceofficer@enkash.com
+                            via email to{" "}
+                            <a
+                              className="c17"
+                              href="mailto:grievanceofficer@enkash.com"
+                            >
+                              grievanceofficer@enkash.com
+                            </a>
                           </span>
                         </li>
                         <li className="c3">
@@ -249,7 +255,7 @@ const grievancePolicy = () => {
 
                       <p className="c3">
                         <span className="c15">
-                          Name of the Grievance Officer: Mr. Nagesh Shet
+                          Name of the Grievance Officer: Mr. Vivek Purohit
                         </span>
                       </p>
                       <p className="c3">
@@ -304,7 +310,7 @@ const grievancePolicy = () => {
                         <span className="c15"></span>
                       </p>
                       <h5 className="c15">
-                        10. Nehat Tech Solution Pvt Ltd Grievance Escalation
+                        10. Nehat Business Solution Pvt Ltd Grievance Escalation
                         Matrix
                       </h5>
 
@@ -698,154 +704,6 @@ const grievancePolicy = () => {
                       <p className="c3 c9">
                         <span className="c7"></span>
                       </p>
-
-                      <h5 className="c32">14. Roles and Responsibilities:</h5>
-
-                      <p className="c41">
-                        <span className="c0">
-                          The Customer Grievance team shall ensure timely and
-                          accurate communication with customers regarding
-                          grievance complaint, queries and escalation, based on
-                          the agreed procedure between Nehat Tech Solutions Pvt
-                          Ltd and the Bank.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c41">
-                        <span className="c0">
-                          The Customer Grievance team is also responsible for
-                          coordinating with internal stakeholders and ensuring
-                          that any required reports or data are submitted to
-                          regulatory bodies as per the specified
-                          timelines.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c41">
-                        <span className="c0">
-                          The following personnel’s would be involved in
-                          preparation and review of the below-mentioned reports.
-                          Either of the individual will be sharing the same to
-                          RBI per the provided timeline.&nbsp;
-                        </span>
-                      </p>
-                      <div className="table-responsive">
-                        <table className="table table-bordered">
-                          <tbody>
-                            <tr className="c11">
-                              <td className="" style={{ width: "80px" }}>
-                                <p className="c23">
-                                  <span className="c8 c24">
-                                    <b>Position</b>
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1 c24">
-                                    <b>Employee Name</b>
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c22">
-                                <p className="c3 c37">
-                                  <span className="c1 c24">
-                                    <b>Employee Id</b>
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c1 c24">
-                                    <b>Email Id</b>
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c1 c24">
-                                    <b>Contact no.</b>
-                                  </span>
-                                </p>
-                              </td>
-                            </tr>
-                            <tr className="c19">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Preparer&nbsp;</span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">
-                                    Pramod Dhuriya&nbsp;
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">009&nbsp;</span>
-                                </p>
-                              </td>
-
-                              <td className="">
-                                <p className="c43">
-                                  <p className="c3 c36">
-                                    <span className="c1">
-                                      <a
-                                        className="c17"
-                                        href="mailto:pramod.dhuriya@enkash.com"
-                                      >
-                                        pramod.dhuriya@enkash.com
-                                      </a>
-                                    </span>
-                                  </p>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">+91-8805789200</span>
-                                </p>
-                              </td>
-                            </tr>
-                            <tr className="c19">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Reviewer&nbsp;</span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">Nagesh Shet&nbsp;</span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">030&nbsp;</span>
-                                </p>
-                              </td>
-
-                              <td className="">
-                                <p className="c43">
-                                  <p className="c3 c36">
-                                    <span className="c1">
-                                      <a
-                                        className="c17"
-                                        href="mailto:nagesh@enkash.com"
-                                      >
-                                        nagesh@enkash.com
-                                      </a>
-                                    </span>
-                                  </p>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">+91-98338 75021</span>
-                                </p>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
                     </div>
                   </div>
                 </div>
