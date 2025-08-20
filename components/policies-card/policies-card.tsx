@@ -39,7 +39,7 @@ const PoliciesCard = ({
                     color: "color-black d-block f-6",
                   },
                 ]}
-                headingTag="h4"
+                headingTag="h5"
               />
             )}
             <DynamicHeading

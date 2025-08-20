@@ -16,6 +16,7 @@
   .voucher_card_title {
     padding-top: 10px;
   }
+
 }
 
 .card_image {
@@ -29,6 +30,10 @@
 .card_link {
   text-decoration: none;
   display: block;
+  a {
+    color: inherit; 
+    text-decoration: none; 
+  }
 
   &:hover .card_body {
     transform: translateY(-4px);
