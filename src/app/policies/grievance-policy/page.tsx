@@ -1,8 +1,17 @@
-
 import { payment, prepaid, platform } from "."
 import { DynamicHeading, TabPoliciesWrapper } from "@/components"
 import React from "react"
 import styles from "./page.module.scss"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+export const metadata: Metadata = generateMetaData({
+  title: "Grievance and Redressal Policy: EnKash",
+  description:
+    "Learn how EnKash addresses complaints with a fair, timely, and transparent resolution process.",
+  alternates: {
+    canonical: "https://www.enkash.com/policies/grievance-policy",
+  },
+})
 const tabs = [{ key: "payments" }, { key: "prepaid" }, { key: "platform" }]
 
 const cards = [
