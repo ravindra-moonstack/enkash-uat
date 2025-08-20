@@ -22,7 +22,7 @@ const Page = () => {
                   color: "color-equity-blue",
                 },
               ]}
-              headingTag="h5"
+              headingTag="h4"
               className="f-5 text-center"
             />
           </div>

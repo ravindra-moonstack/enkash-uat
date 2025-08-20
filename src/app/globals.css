@@ -294,3 +294,14 @@ a {
 .careerBannerOuterGlobal .slick-slide,.career-testimonial-slider .slick-slide{
   margin: 0 !important;
 }
+
+.max-w-auto {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+
+.max-width-auto {
+  max-width: 1200px;
+  margin: auto;
+}
