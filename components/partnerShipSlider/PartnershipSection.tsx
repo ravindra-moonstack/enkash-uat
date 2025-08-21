@@ -55,9 +55,8 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
                 />
                 <div className="background-overlay"></div>
             </div>
-
             {/* Content Container */}
-            <div className="content-container">
+            <div className="content-container max-w-auto">
                 <div className="slider-header">
                     <DynamicHeading
                         content={heading}
@@ -77,6 +76,7 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
                                     title={btn.title}
                                     theme={btn.theme}
                                     url={btn.url}
+                                    width={"100%"}
                                 />
                             ))}
                         </div>

@@ -54,7 +54,7 @@ const PartnerShipForm: React.FC<PartnerShipFormProps> = ({ heading, features }) 
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.partnerform} max-w-auto`}>
             <div className={styles.content}>
                 {/* Left Section */}
                 <div className={styles.leftSection}>
@@ -63,7 +63,6 @@ const PartnerShipForm: React.FC<PartnerShipFormProps> = ({ heading, features }) 
                         headingTag="h3"
                         className="f-5 mb-4 mb-md-5"
                     />
-
 
                     <div className={styles.features}>
                         {features.map((feature) => (

@@ -1,23 +1,16 @@
-import Header from '@/components/header/header'
 import React from 'react'
 import styles from "./page.module.scss"
-import TalkToSales from '@/components/mobile-talks-to-sales/mobile-talk-to-sales'
-import CustomBreadcrumb from '@/components/breadcrumb/breadbrumb'
-import DynamicHeading from '@/components/dynamicHeading/dynamic-heading'
-import RectangleButton from '@/components/buttons/rectangle-button/rectangle-button'
-import Footer from '@/components/footer/footer'
-import HowDoesItWork from '@/components/how-does-it-work/how-does-it-work.'
 import BankSolutions from '@/components/partnerships/BankSolutions'
 import { BankSolutionHeading, bankSolutions, headingData, slideData, stepsData } from './data'
 import PartnershipSection from '@/components/partnerShipSlider/PartnershipSection'
 import BottomCtaSection from '@/components/bottomCtaSection/bottomCtaSection'
 import FaqSection from '@/components/faqSection/faqSection'
 import faqData from './faq-data'
-import EnKashForm from '@/components/partnerShip-form'
 import PartnerShipForm from '@/components/partnerShip-form'
 import { BecomePartnerSteps, BpHeroSection } from '@/components'
-import { containerScreen, participantBg } from '.'
+import { coBrandImage, containerScreen, GalaxyTabImage, participantBg } from '.'
 import { blueArrow } from '@/components/all-in-one-policy'
+import ProductsSection from '@/components/ourProductsSection'
 
 
 const BankSolutionSubHeading = {
@@ -27,11 +20,50 @@ const BankSolutionSubHeading = {
     headingTag: "h5",
     className: "f-3 mb-4 mb-md-5",
 }
+const productsData = [
+    {
+        id: 1,
+        title: "Co-branded Products",
+        description:
+            "EnKash Co-branded Cards and Virtual Wallets empower businesses with smart, scalable, and fully controlled spending solutions. Our cards offer real-time visibility, customizable limits, and seamless integration with your finance workflows. Simplify your financial operations and gain full control without compromising on flexibility or speed.",
+        image: coBrandImage.src,
+        alt: "Co-branded Products Illustration",
+        linkText: "Become a Partner",
+        linkUrl: "#",
+        button: {
+            connectUrl: "/contact",
+            connectText: "Become a Partner",
+            blueArrow: blueArrow.src,
+        },
+    },
+    {
+        id: 2,
+        title: "Payment Gateway",
+        description:
+            "EnKash Payment Gateway is an advanced solution designed specifically for Indian SMBs and startups. It empowers businesses of all sizes to accept payments seamlessly, securely, and at scale, giving them a fair chance to compete in a rapidly growing digital economy.",
+        image: GalaxyTabImage.src,
+        alt: "Payment Gateway Dashboard",
+        linkText: "Connect With Us",
+        linkUrl: "#",
+        button: {
+            connectUrl: "/contact",
+            connectText: "Become a Partner",
+            blueArrow: blueArrow.src,
+        },
+    },
+]
 const partnershipsPage = (): React.JSX.Element => {
     return (
         <div className={`color-white  `}>
-            {/* <Header utmSource="expense_management" /> */}
             <BpHeroSection
+                breadcrumbs={{
+                    items: [
+                        { name: "Home", url: "/" },
+                        { name: "Partnerships", url: "/partnerships" },
+                        { name: "Affiliate Program", url: "/affiliate-programs" },
+                    ],
+                    linkColor: "white"
+                }}
                 backgroundImage={containerScreen.src}
                 mainHeading={[
                     { title: "Affiliate Program", color: "color-white underline" },
@@ -69,14 +101,15 @@ const partnershipsPage = (): React.JSX.Element => {
                     slideData={slideData}
                 />
             </div>
-            <div className={`${styles.third_row}`}>
+            <div className={`${styles.third_row} ${styles.steps_container}`}>
                 <BecomePartnerSteps heading={headingData} steps={stepsData} button={{
                     connectText: "Become a Partner",
                     connectUrl: "/contact",
                     blueArrow: blueArrow.src,
                 }} />
             </div>
-            <div className={`${styles.third_row}`}>
+            <ProductsSection sectionTitle="Our Products" products={productsData} />
+            <div className={`${styles.cta_section}`}>
                 <BottomCtaSection headingPart1="Unlock High-Earning Potential" headingPart2='With EnKash' />
             </div>
             <FaqSection faqData={faqData} />
@@ -92,7 +125,6 @@ const partnershipsPage = (): React.JSX.Element => {
                     { id: 3, text: "Dedicated support for accelerated growth" },
                 ]}
             />
-            <Footer />
         </div>
 
     )
