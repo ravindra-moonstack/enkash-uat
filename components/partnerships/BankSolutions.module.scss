@@ -99,8 +99,25 @@
                         display: block;
                     }
                 }
+
+                .customButtons {
+                    a {
+                        text-decoration: none;
+                        color: #1c5af4;
+                        display: inline-block;
+                        margin-top: 20px;
+                        font-weight: 500; // optional
+                        font-size: 14px; // optional
+
+                        svg {
+                            margin-left: 7px;
+                            vertical-align: middle; // keeps arrow aligned
+                        }
+                    }
+                }
             }
         }
+
 
         .buttonContainer {
             margin-top: 30px;
@@ -124,6 +141,7 @@
             }
         }
     }
+
 
     // ✅ Laptop styles remain unchanged
     @include for-laptops {

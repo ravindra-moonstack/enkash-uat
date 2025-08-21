@@ -4,12 +4,17 @@ import type React from "react"
 import { useRef } from "react"
 import Slider from "react-slick"
 import styles from "./PartnershipSlider.module.scss"
+import Link from "next/link"
 
 interface SlideData {
     id: number
     icon: string
     title: string
     description: string
+    button?: {
+        text: string
+        url: string
+    }
 }
 
 interface PartnershipSliderProps {
@@ -65,6 +70,24 @@ const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
                             </div>
                             <h3 className={styles.slideTitle}>{slide.title}</h3>
                             <p className={styles.slideDescription}>{slide.description}</p>
+                            <div className={styles.customButtons}>
+                                <Link href={slide.button?.url || "#partnership-form"}>
+                                    {slide.button?.text || "Become a Partner"}
+                                    <svg
+                                        width="8"
+                                        height="10"
+                                        viewBox="0 0 8 10"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                            d="M1.75 1.25L5.75 5.25L1.75 9.25"
+                                            stroke="#1C5AF4"
+                                            strokeWidth="2"
+                                        />
+                                    </svg>
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 ))}

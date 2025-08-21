@@ -34,6 +34,7 @@ interface BpHeroSectionProps {
     mainHeading: HeadingContent[]
     subHeading: HeadingContent[]
     button: ButtonData
+    customCSS?: React.CSSProperties
 }
 
 const BpHeroSection: React.FC<BpHeroSectionProps> = ({
@@ -42,12 +43,13 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
     mainHeading,
     subHeading,
     button,
+    customCSS
 }) => {
     return (
         <div
-            className={styles.first_row}
+            className={`${styles.first_row} ${customCSS}`}
             style={{
-                backgroundImage: `url(${backgroundImage})`,
+                backgroundImage: `url(${backgroundImage})`
             }}
         >
             <div className={styles.box_white}>

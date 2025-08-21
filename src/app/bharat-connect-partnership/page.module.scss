@@ -31,11 +31,3 @@
 .steps_container {
     padding-bottom: 50px;
 }
-
-.cta_section {
-    margin-top: -180px;
-
-    @include for-laptops {
-        margin-top: -250px;
-    }
-}

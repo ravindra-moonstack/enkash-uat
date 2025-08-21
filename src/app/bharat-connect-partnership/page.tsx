@@ -36,25 +36,29 @@ const partnershipsPage = (): React.JSX.Element => {
                 }}
                 backgroundImage={containerScreen.src}
                 mainHeading={[
-                    { title: "Bharat Connect ", color: "color-white underline" },
+                    { title: "Partnerships - Bharat Connect ", color: "color-white underline" },
                 ]}
                 subHeading={[
                     {
-                        title: "Join Bharat Connect to streamline business payments to vendors, suppliers & beneficiaries",
-                        color: "color-white",
+                        title: "Bharat Connect: ",
+                        color: "color-white ",
                     },
+                    {
+                        title: "Powering Faster, Smarter Business Payments",
+                        color: "color-white f-5",
+                    }
                 ]}
                 button={{
                     title: "Become a Partner",
                     theme: "blue",
-                    url: "/sales/?source=expense_management",
+                    url: "#partnership-form",
                 }}
             />
             <div className={`${styles.boxContainer}`}>
                 <BankSolutions solutions={bankSolutions} heading={BankSolutionHeading}
                     button={{
                         connectText: "Become a Partner",
-                        connectUrl: "/contact",
+                        connectUrl: "#partnership-form",
                         blueArrow: blueArrow.src,
                     }} />
             </div>
@@ -63,9 +67,9 @@ const partnershipsPage = (): React.JSX.Element => {
                 <PartnershipSection
                     backgroundImage={participantBg.src}
                     heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-                    description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
+                    description="If you're in product & tech, business & partnerships, or finance, Bharat Connect will make your work smarter, faster, and hassle-free."
                     buttons={[
-                        { title: "Explore ", theme: "blue", url: "/affiliate-programs" },
+                        { title: "Explore ", theme: "blue", url: "#partnership-form" },
 
                     ]}
                     slideData={slideData}
@@ -74,27 +78,29 @@ const partnershipsPage = (): React.JSX.Element => {
             <div className={`${styles.third_row} ${styles.steps_container}`}>
                 <BecomePartnerSteps heading={headingData} steps={stepsData} button={{
                     connectText: "Become a Partner",
-                    connectUrl: "/contact",
+                    connectUrl: "#partnership-form",
                     blueArrow: blueArrow.src,
                 }} />
             </div>
             <div className={`${styles.cta_section}`}>
-                <BottomCtaSection headingPart1="Streamline Business Processes by" headingPart2='Partnering with Bharat Connect 
-' />
+                <BottomCtaSection headingPart1="Streamline Business Processes by" headingPart2='Partnering with Bharat Connect  
+' buttonHref='#partnership-form' />
             </div>
             <FaqSection faqData={faqData} />
-            {/* <PartnerShipForm
-                heading={[
-                    { title: "Ready to ", color: "color-grey-200" },
-                    { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
-                    { title: "with EnKash?", color: "color-grey-200" },
-                ]}
-                features={[
-                    { id: 1, text: "Industry-best earnings" },
-                    { id: 2, text: "Fast activation for your clients" },
-                    { id: 3, text: "Dedicated support for accelerated growth" },
-                ]}
-            /> */}
+            <div id="partnership-form">
+                <PartnerShipForm
+                    heading={[
+                        { title: "Ready to ", color: "color-grey-200" },
+                        { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
+                        { title: "with EnKash?", color: "color-grey-200" },
+                    ]}
+                    features={[
+                        { id: 1, text: "Industry-best earnings" },
+                        { id: 2, text: "Fast activation for your clients" },
+                        { id: 3, text: "Dedicated support for accelerated growth" },
+                    ]}
+                />
+            </div>
             <Footer />
         </div>
 

@@ -52,14 +52,14 @@ const partnershipsPage = (): React.JSX.Element => {
                 button={{
                     title: "Become a Partner",
                     theme: "blue",
-                    url: "/sales/?source=expense_management",
+                    url: "#partnership-form",
                 }}
             />
             <div className={`${styles.boxContainer}`}>
                 <BankSolutions solutions={bankSolutions} heading={BankSolutionHeading} subheading={BankSolutionSubHeading}
                     button={{
                         connectText: "Become a Partner",
-                        connectUrl: "/contact",
+                        connectUrl: "#partnership-form",
                         blueArrow: blueArrow.src,
                     }} />
             </div>
@@ -70,7 +70,7 @@ const partnershipsPage = (): React.JSX.Element => {
                     heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
                     description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
                     buttons={[
-                        { title: "Explore ", theme: "blue", url: "/affiliate-programs" },
+                        { title: "Explore ", theme: "blue", url: "#partnership-form" },
 
                     ]}
                     slideData={slideData}
@@ -123,7 +123,7 @@ const partnershipsPage = (): React.JSX.Element => {
                         <div className="row">
                             <div className="col-md-12">
                                 <div className={`${styles.customButtons}`}>
-                                    <Link href={"/#"}>
+                                    <Link href={"https://docs.enkash.com/"}>
                                         Explore Integration Documents
                                         <svg
                                             width="8"
@@ -148,26 +148,28 @@ const partnershipsPage = (): React.JSX.Element => {
             <div className={`${styles.third_row} ${styles.steps_container}`}>
                 <BecomePartnerSteps heading={headingData} steps={stepsData} button={{
                     connectText: "Become a Partner",
-                    connectUrl: "/contact",
+                    connectUrl: "#partnership-form",
                     blueArrow: blueArrow.src,
                 }} />
             </div>
             <div className={`${styles.third_row}`}>
-                <BottomCtaSection headingPart1="The Smartest Way to" headingPart2='Co-Brand Your Card' />
+                <BottomCtaSection headingPart1="The Smartest Way to" headingPart2='Co-Brand Your Card' buttonHref='#partnership-form' />
             </div>
             <FaqSection faqData={faqData} />
-            <PartnerShipForm
-                heading={[
-                    { title: "Ready to ", color: "color-grey-200" },
-                    { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
-                    { title: "with EnKash?", color: "color-grey-200" },
-                ]}
-                features={[
-                    { id: 1, text: "Industry-best earnings" },
-                    { id: 2, text: "Fast activation for your clients" },
-                    { id: 3, text: "Dedicated support for accelerated growth" },
-                ]}
-            />
+            <div id="partnership-form">
+                <PartnerShipForm
+                    heading={[
+                        { title: "Ready to ", color: "color-grey-200" },
+                        { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
+                        { title: "with EnKash?", color: "color-grey-200" },
+                    ]}
+                    features={[
+                        { id: 1, text: "Industry-best earnings" },
+                        { id: 2, text: "Fast activation for your clients" },
+                        { id: 3, text: "Dedicated support for accelerated growth" },
+                    ]}
+                />
+            </div>
             <Footer />
         </div>
 

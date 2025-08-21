@@ -26,15 +26,5 @@ const faqData = [
       },
     ],
   },
-  {
-    question:
-      "What are some important terms & conditions related to the Partnership Program?",
-    answer: [
-      {
-        heading:
-          "You’ll get instant access to a full suite of ready-to-use creatives, including banners, decks, social media templates, emailers, and more.",
-      },
-    ],
-  },
 ];
 export default faqData;

@@ -35,11 +35,9 @@ const productsData = [
             "Give your teams the freedom to spend with the control you need.",
         image: coBrandImage.src,
         alt: "Corporate Expense Cards",
-        linkText: "Become a Partner",
-        linkUrl: "#",
         button: {
-            connectUrl: "/contact",
-            connectText: "Become a Partner",
+            connectUrl: "/products/corporate-cards",
+            connectText: "Explore Cards",
             blueArrow: blueArrow.src,
         },
         align: "flex-start"
@@ -51,11 +49,9 @@ const productsData = [
             "Brand your gift cards, load them as per your defined budget, and gift them to employees.",
         image: GalaxyTabImage.src,
         alt: "Gift/Reward Cards",
-        linkText: "Connect With Us",
-        linkUrl: "#",
         button: {
-            connectUrl: "/contact",
-            connectText: "Become a Partner",
+            connectUrl: "/products/corporate-cards",
+            connectText: "Explore Cards",
             blueArrow: blueArrow.src,
         },
         align: "flex-start"
@@ -67,11 +63,9 @@ const productsData = [
             "Keep your users coming back with a card they’ll love to use.",
         image: Purchasecard.src,
         alt: "Marketplace/Vendor Cards",
-        linkText: "Connect With Us",
-        linkUrl: "#",
         button: {
-            connectUrl: "/contact",
-            connectText: "Become a Partner",
+            connectUrl: "/products/corporate-cards",
+            connectText: "Explore Cards",
             blueArrow: blueArrow.src,
         },
         align: "flex-start"
@@ -87,12 +81,12 @@ const partnershipsPage = (): React.JSX.Element => {
                     items: [
                         { name: "Home", url: "/" },
                         { name: "Partnerships", url: "/partnerships" },
-                        { name: "Affiliate Program - Co-branded Cards & Virtual Wallets", url: "/co-branded-card-partners" },
+                        { name: "Co-branded Products", url: "/co-branded-card-partners" },
                     ],
                     linkColor: "white"
                 }}
                 mainHeading={[
-                    { title: "Affiliate Program - Co-branded Products — co-branded cards and virtual wallets ", color: "color-white underline" },
+                    { title: "Co-branded Products", color: "color-white underline" },
                 ]}
                 subHeading={[
                     {
@@ -103,14 +97,14 @@ const partnershipsPage = (): React.JSX.Element => {
                 button={{
                     title: "Become a Partner",
                     theme: "blue",
-                    url: "/sales/?source=expense_management",
+                    url: "#partnership-form",
                 }}
             />
             <div className={`${styles.boxContainer}`}>
                 <BankSolutions solutions={bankSolutions} heading={BankSolutionHeading} subheading={BankSolutionSubHeading}
                     button={{
                         connectText: "Become a Partner",
-                        connectUrl: "/contact",
+                        connectUrl: "#partnership-form",
                         blueArrow: blueArrow.src,
                     }} />
             </div>
@@ -119,10 +113,9 @@ const partnershipsPage = (): React.JSX.Element => {
                 <PartnershipSection
                     backgroundImage={participantBg.src}
                     heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
-                    description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
+                    description="If you are a startup owner, an influencer and an enterprise, or an employer, these co-branded products have been designed for you."
                     buttons={[
-                        { title: "Explore ", theme: "blue", url: "/affiliate-programs" },
-
+                        { title: "Explore ", theme: "blue", url: "#partnership-form" },
                     ]}
                     slideData={slideData}
                 />
@@ -130,7 +123,7 @@ const partnershipsPage = (): React.JSX.Element => {
             <div className={`${styles.third_row} ${styles.steps_container}`}>
                 <BecomePartnerSteps heading={headingData} steps={stepsData} button={{
                     connectText: "Become a Partner",
-                    connectUrl: "/contact",
+                    connectUrl: "#partnership-form",
                     blueArrow: blueArrow.src,
                 }} />
             </div>
@@ -139,18 +132,20 @@ const partnershipsPage = (): React.JSX.Element => {
                 <BottomCtaSection headingPart1="The Smartest Way to" headingPart2='Co-Brand Your Card' />
             </div>
             <FaqSection faqData={faqData} />
-            <PartnerShipForm
-                heading={[
-                    { title: "Ready to ", color: "color-grey-200" },
-                    { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
-                    { title: "with EnKash?", color: "color-grey-200" },
-                ]}
-                features={[
-                    { id: 1, text: "Industry-best earnings" },
-                    { id: 2, text: "Fast activation for your clients" },
-                    { id: 3, text: "Dedicated support for accelerated growth" },
-                ]}
-            />
+            <div id="partnership-form">
+                <PartnerShipForm
+                    heading={[
+                        { title: "Ready to ", color: "color-grey-200" },
+                        { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
+                        { title: "with EnKash?", color: "color-grey-200" },
+                    ]}
+                    features={[
+                        { id: 1, text: "Industry-best earnings" },
+                        { id: 2, text: "Fast activation for your clients" },
+                        { id: 3, text: "Dedicated support for accelerated growth" },
+                    ]}
+                />
+            </div>
             <Footer />
         </div>
 

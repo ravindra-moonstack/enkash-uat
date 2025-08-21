@@ -38,7 +38,7 @@ export default function BecomePartnerSteps({ heading, steps, button }: BecomePar
 
                 <div className={styles.stepsGrid}>
                     {steps.map((step, index) => (
-                        <Link href={step.link ? step.link : "/"} key={index} className={styles.stepCard}>
+                        <div key={index} className={styles.stepCard}>
                             <div className={styles.stepNumber}>{step.stepNumber}</div>
 
                             <DynamicHeading
@@ -51,7 +51,7 @@ export default function BecomePartnerSteps({ heading, steps, button }: BecomePar
                                 headingTag="p"
                                 className="f-3 mb-0"
                             />
-                        </Link>
+                        </div>
                     ))}
                 </div>
                 {button && (
