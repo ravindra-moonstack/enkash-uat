@@ -5,11 +5,11 @@ import generateMetaData from "@/common/utils/metaData"
 import { CustomBreadcrumb, DynamicHeading } from "@/components"
 
 export const metadata: Metadata = generateMetaData({
-  title: "Payments Grievance and Redressal Policy: EnKash",
+  title: "Merchant Onboarding Policy for Payments: EnKash",
   description:
-    "Explore our structured approach to resolving payment-related concerns quickly and compliantly.",
+    "Discover our transparent process for verifying and onboarding payment merchants.",
   alternates: {
-    canonical: "https://www.enkash.com/policies/payments/grievance-policy",
+    canonical: "https://www.enkash.com/policies/payments/merchant-onboarding",
   },
 })
 
@@ -462,848 +462,684 @@ const MerchantOnboarding = () => {
                           V-CIP procedures for verification wherever applicable.
                         </span>
                       </p>
-
-                      <div className="table-responsive">
+                      <p className="c3 c9">
+                        <span className="c15"></span>
+                      </p>
+                      <p className="c3 c9">
+                        <span className="c15"></span>
+                      </p>
+                      <div className="table-responsive mt-4">
                         <table className="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th
+                                colSpan={2}
+                                className="text-center bg-secondary text-white"
+                              >
+                                SOLE PROPRIETORSHIP
+                              </th>
+                            </tr>
+                          </thead>
                           <tbody>
-                            <tr className="c11">
-                              <td className="" style={{ width: "80px" }}>
-                                <p className="c23">
-                                  <span className="c8 c24">
-                                    <b>Level</b>
-                                  </span>
-                                </p>
+                            <tr>
+                              <td>
+                                <b>ID Proof & Address Proof</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1 c24">
-                                    <b>Responsible Person</b>
-                                  </span>
+                              <td>
+                                <p>
+                                  <b>ID PROOF – PAN Account Number</b>
                                 </p>
-                              </td>
-                              <td className="c22">
-                                <p className="c3 c37">
-                                  <span className="c1 c24">
-                                    <b>Modes Available</b>
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c1 c24">
-                                    <b>Estimated TAT for Resolution</b>
-                                  </span>
+                                <p>
+                                  Certified copy of the Proof of possession of
+                                  Aadhaar number or any OVD or the equivalent
+                                  e-document thereof containing the details of
+                                  identity and address
                                 </p>
                               </td>
                             </tr>
-                            <tr className="c19">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Level 1&nbsp;</span>
-                                </p>
+                            <tr>
+                              <td>
+                                <b>Business Proof</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">
-                                    Customer Support Executive&nbsp;
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c22">
-                                <ul className="c25 lst-kix_list_1-0 start">
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">
-                                      +91 85304 90475&nbsp;
-                                    </span>
+                              <td>
+                                <p>Any one document from the below list</p>
+                                <ul>
+                                  <li>
+                                    Self-attested copy of GST certificate or
+                                    letter of registration document issued by
+                                    GST authorities / Declaration of non-GST in
+                                    case not applicable or GST Tax duly
+                                    acknowledged
                                   </li>
-                                  <li className="c2 li-bullet-0">
-                                    <span className="c27">
-                                      <a
-                                        className="c17"
-                                        href="mailto:support@enkash.com"
-                                      >
-                                        support@enkash.com
-                                      </a>
-                                    </span>
+                                  <li>
+                                    Last and complete income tax return (not
+                                    acknowledgment) in the name of the sole
+                                    proprietor where the inform income is
+                                    reflected duly authenticated / acknowledge
+                                    by income tax authorities.
                                   </li>
-                                  <li className="c30 li-bullet-0">
-                                    <span className="">
-                                      91 SpringBoard, 175, Kagalwala House,
-                                      2nd&nbsp; Floor, Kalina, Santacruz (E),
-                                      Mumbai- 400 098, Maharashtra , India
-                                    </span>
+                                  <li>
+                                    Valid business license of certificate of
+                                    registration issued by state / Central
+                                    government authority.
+                                  </li>
+                                  <li>
+                                    Letter issued by Registering authority like
+                                    certificate of practice issued by instate of
+                                    Charted Accountants of India, Cost
+                                    accountants of India, Company secretaries of
+                                    India, Indian medical council and food a
+                                    Drug Control Authorities.
+                                  </li>
+                                  <li>
+                                    Trade License (Provisional is not accepted)
+                                  </li>
+                                  <li>Small Scale Industrial Certificate</li>
+                                  <li>
+                                    Certificate issued by Tourism Department.
+                                  </li>
+                                  <li>
+                                    Liquor/License/Certificate in the name of
+                                    Firm.
+                                  </li>
+                                  <li>IRDA license for Insurance business.</li>
+                                  <li>
+                                    SEBI registration for Stock market broking.
+                                  </li>
+                                  <li>
+                                    Permission from local government authority
+                                    to run Nursing home/Clinic.
                                   </li>
                                 </ul>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c5">Within </span>
-                                  <span className="c1">3 business days </span>
-                                  <span className="c5">
-                                    from the date of receipt of complaint
-                                  </span>
-                                </p>
                               </td>
                             </tr>
-                            <tr className="c46">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Level 2&nbsp;</span>
-                                </p>
+
+                            <tr>
+                              <td>
+                                <b>Bank Details</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c48">
-                                  <span className="c1">
-                                    Customer Support Team Manager&nbsp;
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c22">
-                                <ul className="c25 lst-kix_list_4-0 start">
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">
-                                      +91 85304 90475&nbsp;
-                                    </span>
-                                  </li>
-                                  <li className="c3 c44 li-bullet-0">
-                                    <a
-                                      href="mailto:csmanager@enkash.com"
-                                      className="c18"
-                                    >
-                                      csmanager@enkash.com
-                                    </a>
-                                  </li>
-                                  <li className="c30 li-bullet-0">
-                                    <span className="">
-                                      91 SpringBoard, 175, Kagalwala House,
-                                      2nd&nbsp; Floor, Kalina, Santacruz (E),
-                                      Mumbai- 400 098, Maharashtra , India
-                                    </span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c5">Within </span>
-                                  <span className="c1">7 business days </span>
-                                  <span className="c5">
-                                    from the date of receipt of complaint
-                                  </span>
-                                </p>
+                              <td>
+                                <p>Bank Account Number and IFSC code</p>
                               </td>
                             </tr>
-                            <tr className="c29">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Level 3&nbsp;</span>
-                                </p>
+                            <tr>
+                              <td>
+                                <b>Other documents</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c16">
-                                  <span className="c0">
-                                    Grievance Redressal Officer
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c22">
-                                <ul className="c25 lst-kix_list_6-0 start">
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">+91 9513251477</span>
-                                  </li>
-                                  <li className="c3 c12 li-bullet-0">
-                                    <a href="mailto:grievanceofficer@enkash.com">
-                                      grievanceofficer@enkash.com
-                                    </a>
-                                  </li>
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">
-                                      91 SpringBoard, 175, Kagalwala House,
-                                      2nd&nbsp; Floor, Kalina, Santacruz (E),
-                                      Mumbai- 400 098, Maharashtra , India
-                                    </span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td className="">
-                                <p className="c42">
-                                  <span className="c5">Within </span>
-                                  <span className="c1">30 business days </span>
-                                  <span className="c5">
-                                    from the date of receipt of&nbsp;
-                                  </span>
-                                  <span className="c5">complaint</span>
-                                </p>
-                                <p className="c28"></p>
-                              </td>
-                            </tr>
-                            <tr className="c29">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Level 4&nbsp;</span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c16">
-                                  <span className="c0">Nodal Officer</span>
-                                </p>
-                              </td>
-                              <td className="c22">
-                                <ul className="c25 lst-kix_list_8-0 start">
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">+91 9513251499</span>
-                                  </li>
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="c27">
-                                      <a
-                                        className="c17"
-                                        href="mailto:nodalofficer@enkash.com"
-                                      >
-                                        nodalofficer@enkash.com
-                                      </a>
-                                    </span>
-                                  </li>
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">
-                                      91 SpringBoard, 175, Kagalwala House,
-                                      2nd&nbsp; Floor, Kalina, Santacruz (E),
-                                      Mumbai- 400 098, Maharashtra , India
-                                    </span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td className="">
-                                <p className="c42">
-                                  <span className="c5">Within </span>
-                                  <span className="c1">15 business days </span>
-                                  <span className="c5">
-                                    from the date of receipt of&nbsp;
-                                  </span>
-                                  <span className="c5">complaint</span>
+                              <td>
+                                <p>
+                                  Any other documents including in respect of
+                                  the nature of work/business/profession,
+                                  financial status of the Merchant, or the
+                                  equivalent e-documents thereof as may be
+                                  required by the Company
                                 </p>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
-                      <h5 className="c15 mt-6">
-                        7. Turn around time (TAT) for redressal of grievance
-                      </h5>
-
-                      <p className="c3">
-                        <span className="c15">
-                          Team would acknowledge within four (4) hours from the
-                          time of receiving the complaint, however resolution
-                          would depend on various factors both internal &
-                          external. The customer would be kept informed at all
-                          intervals; the case/complaint would be escalated to
-                          the next level in case of non-resolution within 7
-                          business days.
-                        </span>
-                      </p>
-
-                      <h5 className="c15 mt-6">
-                        8. Details of Grievance & Nodal officer Details:
-                      </h5>
-
-                      <p className="c3">
-                        <span className="c15">
-                          Name of the Grievance Officer: Mr. Nagesh Shet
-                        </span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          Contact information:{" "}
-                          <a
-                            className="c17"
-                            href="mailto:grievanceofficer@enkash.com"
-                          >
-                            grievanceofficer@enkash.com
-                          </a>
-                        </span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-
-                      <p className="c3">
-                        <span className="c15">
-                          Name of the Nodal Officer: Mr. Nagesh Shet
-                        </span>
-                      </p>
-                      <p className="c3">
-                        <span className="c15">
-                          Contact information:{" "}
-                          <a
-                            className="c17"
-                            href="mailto:nodalofficer@enkash.com"
-                          >
-                            nodalofficer@enkash.com
-                          </a>
-                        </span>
-                      </p>
-
-                      <h5 className="c15 mt-6">
-                        9. Resolution & Closure of grievances
-                      </h5>
-
-                      <p className="c3">
-                        <span className="c15">
-                          Where grievances pertain to transactions / operations
-                          primarily responsible for the resolution of
-                          complaints/grievances. It is the foremost duty of the
-                          customer support team to see that the complaint is
-                          resolved to the customer’s satisfaction and if
-                          customer is not satisfied, then to provide alternate
-                          avenues to escalate the issue.
-                        </span>
-                      </p>
-
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <h5 className="c15">
-                        10. Nehat Tech Solution Pvt Ltd Grievance Escalation
-                        Matrix
-                      </h5>
-
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c15"></span>
-                      </p>
-                      <div className="table-responsive">
+                      <div className="table-responsive mt-4">
                         <table className="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th
+                                colSpan={2}
+                                className="text-center bg-secondary text-white"
+                              >
+                                PARTNERSHIP / LLP
+                              </th>
+                            </tr>
+                          </thead>
                           <tbody>
-                            <tr className="c11">
-                              <td className="" style={{ width: "80px" }}>
-                                <p className="c23">
-                                  <span className="c8 c24">
-                                    <b>Level</b>
-                                  </span>
-                                </p>
+                            <tr>
+                              <td>
+                                <b>ID Proof & Address Proof</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1 c24">
-                                    <b>Responsible Person</b>
-                                  </span>
+                              <td>
+                                <p>
+                                  <b>ID PROOF – PAN Account Number</b>
                                 </p>
-                              </td>
-                              <td className="c22">
-                                <p className="c3 c37">
-                                  <span className="c1 c24">
-                                    <b>Modes Available</b>
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c1 c24">
-                                    <b>Estimated TAT for Resolution</b>
-                                  </span>
+                                <p>
+                                  Certified copy of the Proof of possession of
+                                  Aadhaar number or any OVD or the equivalent
+                                  e-document thereof containing the details of
+                                  identity and address
                                 </p>
                               </td>
                             </tr>
-                            <tr className="c19">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Level 1&nbsp;</span>
-                                </p>
+
+                            <tr>
+                              <td>
+                                <b>Business Proof</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">
-                                    Customer Support Executive&nbsp;
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c22">
-                                <ul className="c25 lst-kix_list_1-0 start">
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">
-                                      +91 85304 90475&nbsp;
-                                    </span>
-                                  </li>
-                                  <li className="c2 li-bullet-0">
-                                    <span className="c27">
-                                      <a
-                                        className="c17"
-                                        href="mailto:support@enkash.com"
-                                      >
-                                        support@enkash.com
-                                      </a>
-                                    </span>
-                                  </li>
-                                  <li className="c30 li-bullet-0">
-                                    <span className="">
-                                      91 SpringBoard, 175, Kagalwala House,
-                                      2nd&nbsp; Floor, Kalina, Santacruz (E),
-                                      Mumbai- 400 098, Maharashtra , India
-                                    </span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c5">Within </span>
-                                  <span className="c1">3 business days </span>
-                                  <span className="c5">
-                                    from the date of receipt of complaint
-                                  </span>
-                                </p>
+                              <td>
+                                <p>Partnership / LLP Agreement Deed</p>
+                                <p>Registration or LLP Certificate</p>
+                                <p>GSTIN Number AND Company PAN Number</p>
                               </td>
                             </tr>
-                            <tr className="c46">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Level 2&nbsp;</span>
-                                </p>
+
+                            <tr>
+                              <td>
+                                <b>Bank Details</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c48">
-                                  <span className="c1">
-                                    Customer Support Team Manager&nbsp;
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c22">
-                                <ul className="c25 lst-kix_list_4-0 start">
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">
-                                      +91 85304 90475&nbsp;
-                                    </span>
-                                  </li>
-                                  <li className="c3 c44 li-bullet-0">
-                                    <a
-                                      href="mailto:csmanager@enkash.com"
-                                      className="c18"
-                                    >
-                                      csmanager@enkash.com
-                                    </a>
-                                  </li>
-                                  <li className="c30 li-bullet-0">
-                                    <span className="">
-                                      91 SpringBoard, 175, Kagalwala House,
-                                      2nd&nbsp; Floor, Kalina, Santacruz (E),
-                                      Mumbai- 400 098, Maharashtra , India
-                                    </span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c5">Within </span>
-                                  <span className="c1">7 business days </span>
-                                  <span className="c5">
-                                    from the date of receipt of complaint
-                                  </span>
-                                </p>
+                              <td>
+                                <p>Bank Account Number and IFSC code</p>
                               </td>
                             </tr>
-                            <tr className="c29">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Level 3&nbsp;</span>
+
+                            <tr>
+                              <td>
+                                <b>Other documents</b>
+                              </td>
+                              <td>
+                                <p>
+                                  Any other documents including in respect of
+                                  the nature of work/business/profession,
+                                  financial status of the Merchant, or the
+                                  equivalent e-documents thereof as may be
+                                  required by the Company
                                 </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c16">
-                                  <span className="c0">
-                                    Grievance Redressal Officer
-                                  </span>
+                                <p>
+                                  Board Resolution (should not be older than 5
+                                  months, Should be signed by at least 2
+                                  Partners / CS can certify true copy (LLP))
                                 </p>
-                              </td>
-                              <td className="c22">
-                                <ul className="c25 lst-kix_list_6-0 start">
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">+91 9513251477</span>
-                                  </li>
-                                  <li className="c3 c12 li-bullet-0">
-                                    <a href="mailto:grievanceofficer@enkash.com">
-                                      grievanceofficer@enkash.com
-                                    </a>
-                                  </li>
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">
-                                      91 SpringBoard, 175, Kagalwala House,
-                                      2nd&nbsp; Floor, Kalina, Santacruz (E),
-                                      Mumbai- 400 098, Maharashtra , India
-                                    </span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td className="">
-                                <p className="c42">
-                                  <span className="c5">Within </span>
-                                  <span className="c1">30 business days </span>
-                                  <span className="c5">
-                                    from the date of receipt of&nbsp;
-                                  </span>
-                                  <span className="c5">complaint</span>
-                                </p>
-                                <p className="c28"></p>
-                              </td>
-                            </tr>
-                            <tr className="c29">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Level 4&nbsp;</span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c16">
-                                  <span className="c0">Nodal Officer</span>
-                                </p>
-                              </td>
-                              <td className="c22">
-                                <ul className="c25 lst-kix_list_8-0 start">
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">+91 9513251499</span>
-                                  </li>
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="c27">
-                                      <a
-                                        className="c17"
-                                        href="mailto:nodalofficer@enkash.com"
-                                      >
-                                        nodalofficer@enkash.com
-                                      </a>
-                                    </span>
-                                  </li>
-                                  <li className="c3 c12 li-bullet-0">
-                                    <span className="">
-                                      91 SpringBoard, 175, Kagalwala House,
-                                      2nd&nbsp; Floor, Kalina, Santacruz (E),
-                                      Mumbai- 400 098, Maharashtra , India
-                                    </span>
-                                  </li>
-                                </ul>
-                              </td>
-                              <td className="">
-                                <p className="c42">
-                                  <span className="c5">Within </span>
-                                  <span className="c1">15 business days </span>
-                                  <span className="c5">
-                                    from the date of receipt of&nbsp;
-                                  </span>
-                                  <span className="c5">complaint</span>
+                                <p>
+                                  List of Partners, UBO and Shareholding (LLP)
                                 </p>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
-                      <p className="c39 c9">
-                        <span className="c14"></span>
-                      </p>
-                      <p className="c9 c39">
-                        <span className="c14"></span>
-                      </p>
-                      <p className="c3">
-                        <span className="c0 c24">
-                          We will ensure that complaints are disposed of within
-                          a period of thirty (30) business days of its receipt.
-                          We will share the details of resolution or rejection
-                          of the complaint, with reasons thereof in writing.
-                        </span>
-                      </p>
-
-                      <p className="c3 c9">
-                        <span className="c0 c24"></span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c0 c24"></span>
-                      </p>
-
-                      <h5 className="c32">11. Maintenance of records</h5>
-
-                      <p className="c41">
-                        <span className="c0">
-                          The record of complaints including the below will be
-                          preserved and maintained as required under the
-                          applicable regulations:.&nbsp;
-                        </span>
-                      </p>
-
-                      <ol style={{ listStyleType: "lower-roman" }}>
-                        <li className="c26">
-                          <span className="c0">
-                            Nature of grievances/ complaints received;&nbsp;
-                          </span>
-                        </li>
-                        <li className="c26">
-                          <span className="c0">Current status; </span>
-                        </li>
-                        <li className="c6">
-                          <span className="c0 c24">
-                            Resolution provided; and&nbsp;
-                          </span>
-                        </li>
-                        <li className="c6">
-                          <span className="c0 c24">
-                            Closure of the grievance.&nbsp;
-                          </span>
-                        </li>
-                      </ol>
-
-                      <p className="c3 c9">
-                        <span className="c7"></span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c7"></span>
-                      </p>
-
-                      <h5 className="c32">
-                        12. Complaints Review and Analysis
-                      </h5>
-
-                      <p className="c41">
-                        <span className="c0">
-                          The Senior Management Team of the Company will
-                          periodically review major areas of customer grievances
-                          / feedback received. The team would also examine all
-                          issues that have a bearing on the quality of customer
-                          service. The review and analysis will include:.&nbsp;
-                        </span>
-                      </p>
-
-                      <ol style={{ listStyleType: "lower-roman" }}>
-                        <li className="c26">
-                          <span className="c0">
-                            Complaints received and resolved beyond the
-                            prescribed TAT;&nbsp;
-                          </span>
-                        </li>
-                        <li className="c26">
-                          <span className="c0">
-                            Number and type of complaints escalated;{" "}
-                          </span>
-                        </li>
-                        <li className="c6">
-                          <span className="c0 c24">
-                            Reason for spike in a particular type of complaint;
-                            and&nbsp;
-                          </span>
-                        </li>
-                        <li className="c6">
-                          <span className="c0 c24">
-                            Any deficiency in the manner the complaints are
-                            handled etc.&nbsp;
-                          </span>
-                        </li>
-                      </ol>
-                      <p className="c41">
-                        <span className="c0">
-                          The Company will make necessary changes to ensure
-                          similar issues do not occur again based on such review
-                          and analysis.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c7"></span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c7"></span>
-                      </p>
-
-                      <h5 className="c32">13. Review of Policy</h5>
-
-                      <p className="c41">
-                        <span className="c0">
-                          The Company will periodically review and assess the
-                          Policy in light of any material changes in regulatory
-                          framework or for business or operational reasons and
-                          recommend changes, if any, to the Board.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c41">
-                        <span className="c0">
-                          The reviews will consider the following:&nbsp;
-                        </span>
-                      </p>
-
-                      <ol style={{ listStyleType: "lower-roman" }}>
-                        <li className="c26">
-                          <span className="c0">
-                            Internal factors (changes in organizational
-                            structure or products /services offered)&nbsp;
-                          </span>
-                        </li>
-                        <li className="c26">
-                          <span className="c0">
-                            The overall performance of the grievance redressal
-                            mechanism, and{" "}
-                          </span>
-                        </li>
-                        <li className="c6">
-                          <span className="c0 c24">
-                            The results of the audit/ review, if any conducted
-                            during the year.&nbsp;
-                          </span>
-                        </li>
-                      </ol>
-                      <p className="c41">
-                        <span className="c0">
-                          Any such updates/ changes to this Policy will be
-                          approved by the Board and communicated to the relevant
-                          customers/ staff/ stakeholders.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c7"></span>
-                      </p>
-                      <p className="c3 c9">
-                        <span className="c7"></span>
-                      </p>
-
-                      <h5 className="c32">14. Roles and Responsibilities:</h5>
-
-                      <p className="c41">
-                        <span className="c0">
-                          The Customer Grievance team shall ensure timely and
-                          accurate communication with customers regarding
-                          grievance complaint, queries and escalation, based on
-                          the agreed procedure between Nehat Tech Solutions Pvt
-                          Ltd and the Bank.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c41">
-                        <span className="c0">
-                          The Customer Grievance team is also responsible for
-                          coordinating with internal stakeholders and ensuring
-                          that any required reports or data are submitted to
-                          regulatory bodies as per the specified
-                          timelines.&nbsp;
-                        </span>
-                      </p>
-                      <p className="c41">
-                        <span className="c0">
-                          The following personnel’s would be involved in
-                          preparation and review of the below-mentioned reports.
-                          Either of the individual will be sharing the same to
-                          RBI per the provided timeline.&nbsp;
-                        </span>
-                      </p>
-                      <div className="table-responsive">
+                      <div className="table-responsive mt-4">
                         <table className="table table-bordered">
+                          <thead>
+                            <tr>
+                              <th
+                                colSpan={2}
+                                className="text-center bg-secondary text-white"
+                              >
+                                PUBLIC LIMITED / PRIVATE LIMITED
+                              </th>
+                            </tr>
+                          </thead>
                           <tbody>
-                            <tr className="c11">
-                              <td className="" style={{ width: "80px" }}>
-                                <p className="c23">
-                                  <span className="c8 c24">
-                                    <b>Position</b>
-                                  </span>
-                                </p>
+                            <tr>
+                              <td>
+                                <b>ID Proof & Address Proof</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1 c24">
-                                    <b>Employee Name</b>
-                                  </span>
+                              <td>
+                                <p>
+                                  <b>ID PROOF – PAN Account Number</b>
                                 </p>
-                              </td>
-                              <td className="c22">
-                                <p className="c3 c37">
-                                  <span className="c1 c24">
-                                    <b>Employee Id</b>
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c1 c24">
-                                    <b>Email Id</b>
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="">
-                                <p className="c43">
-                                  <span className="c1 c24">
-                                    <b>Contact no.</b>
-                                  </span>
+                                <p>
+                                  Certified copy of the Proof of possession of
+                                  Aadhaar number or any OVD or the equivalent
+                                  e-document thereof containing the details of
+                                  identity and address
                                 </p>
                               </td>
                             </tr>
-                            <tr className="c19">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Preparer&nbsp;</span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">
-                                    Pramod Dhuriya&nbsp;
-                                  </span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">009&nbsp;</span>
-                                </p>
-                              </td>
 
-                              <td className="">
-                                <p className="c43">
-                                  <p className="c3 c36">
-                                    <span className="c1">
-                                      <a
-                                        className="c17"
-                                        href="mailto:pramod.dhuriya@enkash.com"
-                                      >
-                                        pramod.dhuriya@enkash.com
-                                      </a>
-                                    </span>
-                                  </p>
-                                </p>
+                            <tr>
+                              <td>
+                                <b>Business Proof</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">+91-8805789200</span>
+                              <td>
+                                <p>Certificate of Incorporation</p>
+                                <p>
+                                  Certificate of Commencement of Business (in
+                                  case of Public ltd co.)
                                 </p>
+                                <p>
+                                  MOA & AOA (attested with first 8, last pages)
+                                </p>
+                                <p>
+                                  Board Resolution (should not be older than 5
+                                  months, should be signed by at least 2
+                                  directors / CS can certify true copy)
+                                </p>
+                                <p>List of Directors, UBO and Shareholding</p>
+                                <p>GSTIN and Company PAN Number</p>
                               </td>
                             </tr>
-                            <tr className="c19">
-                              <td className="">
-                                <p className="c23">
-                                  <span className="c8">Reviewer&nbsp;</span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">Nagesh Shet&nbsp;</span>
-                                </p>
-                              </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">030&nbsp;</span>
-                                </p>
-                              </td>
 
-                              <td className="">
-                                <p className="c43">
-                                  <p className="c3 c36">
-                                    <span className="c1">
-                                      <a
-                                        className="c17"
-                                        href="mailto:nagesh@enkash.com"
-                                      >
-                                        nagesh@enkash.com
-                                      </a>
-                                    </span>
-                                  </p>
-                                </p>
+                            <tr>
+                              <td>
+                                <b>Bank Details</b>
                               </td>
-                              <td className="c13">
-                                <p className="c3 c36">
-                                  <span className="c1">+91-98338 75021</span>
+                              <td>
+                                <p>Bank Account Number and IFSC code</p>
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>
+                                <b>Other documents</b>
+                              </td>
+                              <td>
+                                <p>
+                                  Any other documents including in respect of
+                                  the nature of work/business/profession,
+                                  financial status of the Merchant, or the
+                                  equivalent e-documents thereof as may be
+                                  required by the Company
                                 </p>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
+                      <table className="table table-bordered text-start">
+                        <thead>
+                          <tr>
+                            <th
+                              colSpan={2}
+                              className="text-center bg-secondary text-white"
+                            >
+                              SOCIETY / TRUST / NGO
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="fw-bold">
+                              ID Proof & Address Proof
+                            </td>
+                            <td>
+                              ID PROOF – PAN Account Number <br />
+                              Certified copy of the Proof of possession of
+                              Aadhaar number or any OVD or the equivalent
+                              e-document thereof containing the details of
+                              identity and address
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="fw-bold">Business Proof</td>
+                            <td>
+                              Any one document from the below list:
+                              <ul className="mb-0">
+                                <li>Registration Certificate</li>
+                                <li>Trust Deed</li>
+                                <li>Bye Laws</li>
+                                <li>
+                                  Affiliation of Entity in case of Health &
+                                  Education sector
+                                </li>
+                              </ul>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td className="fw-bold">Bank Details</td>
+                            <td>Bank Account Number and IFSC code</td>
+                          </tr>
+                          <tr>
+                            <td className="fw-bold">Other Documents</td>
+                            <td>
+                              Any other documents including in respect of the
+                              nature of work/business/profession, financial
+                              status of the Merchant, or the equivalent
+                              e-documents thereof as may be required by the
+                              Company
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <td>
+                        Where the OVD furnished by the merchant does not have
+                        updated address, the following documents or the
+                        equivalent e-documents thereof will be deemed to be OVDs
+                        for the limited purpose of proof of address:
+                        <ul className="mb-0">
+                          <li>
+                            Utility bill which is not more than two months old
+                            of any service provider (electricity, telephone,
+                            post-paid mobile phone, piped gas, water bill)
+                          </li>
+                          <li>Property or Municipal tax receipt</li>
+                          <li>
+                            Pension or family pension payment orders (PPOs)
+                            issued to retired employees by Government
+                            Departments or Public Sector Undertakings, if they
+                            contain the address
+                          </li>
+                          <li>
+                            Letter of allotment of accommodation from employer
+                            issued by State Government or Central Government
+                            Departments, statutory or regulatory bodies, public
+                            sector undertakings, scheduled commercial banks,
+                            financial institutions and listed companies and
+                            leave and license agreements with such employers
+                            allotting official accommodation
+                          </li>
+                        </ul>
+                        <p className="mb-0 fw-bold">
+                          Note – The Company will ensure to obtain the OVD with
+                          current address updated within a period of three
+                          months of receiving the above documents.
+                        </p>
+                      </td>
+
+                      <h5 className="c15 mt-6">7. Annexure 2</h5>
+
+                      <p className="c3">
+                        <span className="c15">
+                          List of documents including in respect of the nature
+                          of work/business/profession of the merchant
+                        </span>
+                      </p>
+
+                      <table className="table table-bordered">
+                        <thead>
+                          <tr>
+                            <th>Industry Type</th>
+                            <th>Regulated Bodies</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>International Travel & Hotel</td>
+                            <td>
+                              IATA (International Air Transport Association)
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Education institutes</td>
+                            <td>Board Grant Certificates</td>
+                          </tr>
+                          <tr>
+                            <td>University / Education Sector</td>
+                            <td>UGC Certificate / ICSC / CBSC / AICTE</td>
+                          </tr>
+                          <tr>
+                            <td>Pharmacy</td>
+                            <td>Drug License</td>
+                          </tr>
+                          <tr>
+                            <td>Herbal/Ayurvedic medicines</td>
+                            <td>Drug Comptroller of India</td>
+                          </tr>
+                          <tr>
+                            <td>OTC Products (Ayurveda, Health Supplements)</td>
+                            <td>FSSAI License</td>
+                          </tr>
+                          <tr>
+                            <td>International delivery</td>
+                            <td>
+                              Merchant should have a valid regulatory license
+                              for international deliveries
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Advisory Firm (Stock Market)
+                              <br />
+                              Venture Capital Fund Co
+                              <br />
+                              Merchant Banking Co
+                            </td>
+                            <td>SEBI Certificate</td>
+                          </tr>
+                          <tr>
+                            <td>Food & Beverages Industry</td>
+                            <td>
+                              FDA (Food and Drug Administration) / FSSAI
+                              Certificate
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>University / Education Sector</td>
+                            <td>UGC Certificate / ICSC / CBSC / AICTE</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Airlines & Aircraft Maintenance related services
+                            </td>
+                            <td>
+                              DGCA Certification (Directorate General of Civil
+                              Aviation)
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>Internet Service Provider</td>
+                            <td>DOT (Department of Telecommunications)</td>
+                          </tr>
+                          <tr>
+                            <td>Web Host / Domain Seller</td>
+                            <td>PCI-DSS</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Paper / Gift Vouchers
+                              <br />
+                              Bank / NBFCs or Money Lending
+                              <br />
+                              Prepaid / e-wallet, Cash / Smart card
+                            </td>
+                            <td>RBI Certification</td>
+                          </tr>
+                          <tr>
+                            <td>FOREX</td>
+                            <td>FEMA Registration, FFMC Certificate</td>
+                          </tr>
+                          <tr>
+                            <td>NGO</td>
+                            <td>12A, 80G Certificate</td>
+                          </tr>
+                          <tr>
+                            <td>12A, 80G Certificate</td>
+                            <td>Finance Support for Society</td>
+                          </tr>
+                          <tr>
+                            <td>Gold, Silver Merchants</td>
+                            <td>Finance Support for Society</td>
+                          </tr>
+                          <tr>
+                            <td>Insurance</td>
+                            <td>IRDA</td>
+                          </tr>
+                          <tr>
+                            <td>Mutual Fund Broker</td>
+                            <td>AMFI</td>
+                          </tr>
+                          <tr>
+                            <td>Internet Service Provider</td>
+                            <td>FDOT</td>
+                          </tr>
+                          <tr>
+                            <td>SMS/Email/Telemarketing</td>
+                            <td>TRAI</td>
+                          </tr>
+                          <tr>
+                            <td>Utility Services</td>
+                            <td>BBPS License</td>
+                          </tr>
+                          <tr>
+                            <td>
+                              Builders/Construction/Contractor/ Brokers (Real
+                              Estate)
+                            </td>
+                            <td>RERA Registration certificate</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      <h5 className="c15 mt-6">8. Annexure 3</h5>
+
+                      <p className="c3">
+                        <span className="c15">
+                          List of Restricted businesses:
+                        </span>
+                      </p>
+                      <ol>
+                        <li>
+                          Adult Goods & Services - Pornography, other sexually
+                          suggestive materials; Escort/Prostitution services.
+                          Personal Massagers/sex toys.
+                        </li>
+                        <li>Alcohol or Alcoholic beverages.</li>
+                        <li>
+                          Body Parts, including organs - Live, cultured,
+                          preserved or from cadaver. This Prohibited Products
+                          And Activities List Is Not Exhaustive And Finite And
+                          Enkash May At Any Time Include Other Products Into
+                          This List Or Change The List Without Your Consent.
+                        </li>
+                        <li>
+                          Bulk marketing tools - email lists, software or other
+                          products enabling unsolicited emails/sms.
+                        </li>
+                        <li>
+                          Cable TV descramblers & black boxes intended to obtain
+                          cable & satellite signals for free.
+                        </li>
+                        <li>Child Pornography in any form.</li>
+                        <li>
+                          Copyright unlocking devices - Mod chips or other
+                          products designed to circumvent copyright protection.
+                        </li>
+                        <li>
+                          Copyrighted Media - unauthorized copies of books,
+                          music, movies and other licensed or protected
+                          materials.
+                        </li>
+                        <li>
+                          Copyrighted Software which includes unauthorized
+                          copies of software, videogames and other licensed or
+                          protected materials including OEM or bundled software.
+                        </li>
+                        <li>
+                          Counterfeit and unauthorized goods - replica or
+                          imitation of designer goods; fake autographs;
+                          counterfeit stamps.
+                        </li>
+                        <li>
+                          Drugs & Drug paraphernalia which includes illegal
+                          drugs and drug accessories including herbal drugs.
+                        </li>
+                        <li>
+                          Drug test circumvention aids, includes drug cleansing
+                          shakes, urine test additives and related items.
+                        </li>
+                        <li>
+                          Endangered species - includes plants, animals or other
+                          organisms.
+                        </li>
+                        <li>
+                          Gambling/Betting - lottery tickets, sports bets,
+                          enrolments in online gambling sites.
+                        </li>
+                        <li>
+                          Government ID or documents which includes fake IDs,
+                          passports.
+                        </li>
+                        <li>
+                          Hacking & Cracking materials which includes manual,
+                          how-to-guides, equipment enabling illegal access to
+                          software servers or protected property.
+                        </li>
+                        <li>
+                          Illegal goods and goods/services promoting/enabling
+                          illegal acts.
+                        </li>
+                        <li>
+                          Miracle cures, which are marketed as quick health
+                          fixes.
+                        </li>
+                        <li>
+                          Offensive goods, which includes literature, products
+                          and other materials that defame or slander any person
+                          or group of person, encourage violent acts, promote
+                          intolerance or hatred.
+                        </li>
+                        <li>
+                          Offensive goods, crime which includes crime scene
+                          photos or items, such as personal belongings
+                          associated with criminals.
+                        </li>
+                        <li>
+                          Prescription drugs or herbal drugs of any kind of
+                          online pharmacies which includes drugs / other
+                          products requiring a prescription by a recognised &
+                          licensed medical practitioner in India or anywhere
+                          else.
+                        </li>
+                        <li>
+                          Pyrothenic devices & hazardous materials which
+                          includes firework & other toxic/radioactive goods.
+                        </li>
+                        <li>
+                          Regulated goods, regulated by government agency.
+                        </li>
+                        <li>
+                          Securities, which includes stocks, bonds, mutual funds
+                          or related financial products or investments.
+                        </li>
+                        <li>
+                          Tobacco & cigarettes, chewing tobacco and related
+                          products.
+                        </li>
+                        <li>
+                          Traffic devices which includes radar detectors /
+                          jammers, license plate cover, traffic signal changers
+                          and related products.
+                        </li>
+                        <li>
+                          Weapons which include knives, brass knuckles, gun
+                          parts and other armaments.
+                        </li>
+                        <li>
+                          Wholesale currency which includes discounted
+                          currencies or currency.
+                        </li>
+                        <li>Live animals or animal parts / products.</li>
+                        <li>
+                          Multi-level Marketing schemes / Pyramid / sites using
+                          matrix scheme approach.
+                        </li>
+                        <li>
+                          Any intangible goods and services or
+                          aggregation/consolidation business.
+                        </li>
+                        <li>Drop-Shipped Merchant.</li>
+                        <li>
+                          Web based telephony/e-mail/sms/fax/calling
+                          cards/bandwidth/data transfer or allied services.
+                        </li>
+                        <li>Crypto or Crypto based services.</li>
+                        <li>
+                          Any act services product people entity place country
+                          defined illegal/Sanctioned or in negative list by RBI
+                          or other regulators.
+                        </li>
+                        <li>DMT</li>
+                        <li>Money Transfer Services/Card To Cash</li>
+                        <li>
+                          Any other service product activity described as
+                          illegal as per RBI or other regulators.
+                        </li>
+                        <li>Violation of any of the Enkash terms of use.</li>
+                        <li>WMD (Weapon of mass destruction)</li>
+                        <li>Drop Shipping</li>
+                        <li>Illegal arms trading</li>
+                        <li>Smuggling</li>
+                        <li>Child abuse</li>
+                        <li>Human trafficking</li>
+                        <li>Pornography</li>
+                        <li>Hawala</li>
+                        <li>Organs trading</li>
+                        <li>Extortion</li>
+                        <li>Illegal trading of animals</li>
+                        <li>Illegal drugs supply and handling</li>
+                        <li>Mystery Boxes/Get Risk Schemes/Betting</li>
+                        <li>
+                          Gaming LOB where company type is Individual or Sole
+                          proprietor.
+                        </li>
+                      </ol>
                     </div>
                   </div>
                 </div>

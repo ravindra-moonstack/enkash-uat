@@ -111,7 +111,7 @@ const headingData = {
 }
 const BankSolutionHeading = {
     content: [
-        { title: "Unified Solution for Banks Powered by ", color: "color-black f-2 d-block" },
+        { title: "Unified Solution for Banks Powered by ", color: "color-black f-2 d-md-block" },
         { title: "Advanced Technology & Tools", color: "color-black" },
     ],
     headingTag: "h2",
