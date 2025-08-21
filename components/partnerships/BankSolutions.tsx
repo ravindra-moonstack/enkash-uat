@@ -11,6 +11,10 @@ import Image from "next/image"
 interface Solution {
     title: string
     content?: string
+    button?: {
+        text: string
+        url: string
+    }
 }
 
 interface BankSolutionsProps {
@@ -72,6 +76,26 @@ const BankSolutions: React.FC<BankSolutionsProps> = ({ heading, solutions, subhe
 
                                 <div className={styles.solutionContent}>
                                     <p>{item.content}</p>
+                                    {item.button && (
+                                        <div className={styles.customButtons}>
+                                            <Link href={item.button.url}>
+                                                {item.button.text}
+                                                <svg
+                                                    width="8"
+                                                    height="10"
+                                                    viewBox="0 0 8 10"
+                                                    fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        d="M1.75 1.25L5.75 5.25L1.75 9.25"
+                                                        stroke="#1C5AF4"
+                                                        strokeWidth="2"
+                                                    />
+                                                </svg>
+                                            </Link>
+                                        </div>
+                                    )}
                                 </div>
 
                             </div>

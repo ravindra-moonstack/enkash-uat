@@ -16,11 +16,19 @@ const bankSolutions = [
         title: "Expense Management System",
         content:
             "Designed to simplify your workflow, our API-first platform plugs into your ERP, HRMS, TMCs, and corporate cards. With smart OCR, real-time sync, custom policies, and multi-level approvals, it’s automation without the hassle.",
+        button: {
+            text: "Learn more",
+            url: "/products/expense-management"
+        }
     },
     {
         title: "Bill Payment ",
         content:
             "Offer a unified bill payment experience for you and your customers, enabling utility bills, rent, subscriptions, and more to be paid from a single dashboard.",
+        button: {
+            text: "Learn more",
+            url: "/utility-bill-payment"
+        }
     },
     {
         title: "Vendor Management",

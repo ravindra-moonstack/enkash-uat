@@ -11,8 +11,6 @@ interface Product {
     description: string
     image: string
     alt: string
-    linkText: string
-    linkUrl: string
     align?: string
     button?: {
         connectUrl: string

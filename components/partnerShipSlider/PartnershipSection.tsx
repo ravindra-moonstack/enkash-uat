@@ -81,7 +81,6 @@ const PartnershipSection: React.FC<PartnershipSectionProps> = ({
                             ))}
                         </div>
                     </div>
-
                     <div className="right-slider">
                         <PartnershipSlider slides={slideData} />
                     </div>
