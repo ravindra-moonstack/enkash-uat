@@ -1,25 +1,27 @@
 "use client"
 
 import React, { useEffect } from "react"
-import Script from "next/script"
-import styles from "./contactForm.module.scss"
+import styles from "./supportForm.module.scss"
 import { DynamicHeading } from "@/components"
 import Link from "next/link"
 import MultiSelect from "../multiSelect/multiSelect"
 const contactOptions = [
   {
-    value: "payment_collection",
-    label: "Looking for Payment Collection Solution",
+    value: "Login/Password",
+    label: "Login/Password",
   },
-  { value: "make_payments", label: "Looking for a solution to make Payments" },
-  { value: "expense_management", label: "Looking for Expense Management" },
-  { value: "corporate_jobs", label: "Looking for Corporate Jobs" },
-  { value: "job_opportunities", label: "Exploring Job Opportunities" },
-  { value: "customer_support", label: "Need Customer Support" },
-  { value: "partnership", label: "Interested In Partnership Opportunities" },
-  { value: "marketing_team", label: "Want to Connect to Marketing Team" },
+  { value: "Payment/Refund", label: "Payment/Refund" },
+  { value: "Card Activationt", label: "Card Activation" },
+  {
+    value: "Purchasing Voucher",
+    label: "Purchasing Voucher",
+  },
+  { value: "Report a Fraud", label: "Report a Fraud" },
+  { value: "Report a Fraud", label: "Report a Fraud" },
+  { value: "Exploring EnKash", label: "Exploring EnKash" },
+  { value: "Something Else", label: "Something Else" },
 ]
-const ContactForm: React.FC = () => {
+const SupportForm: React.FC = () => {
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
@@ -52,12 +54,9 @@ const ContactForm: React.FC = () => {
 
   return (
     <>
-      {/* Load Zoho validation.js */}
-      <Script src="./validation.js" strategy="afterInteractive" />
-
       <div className={styles.contactFormWrapper}>
         <form
-          action="https://forms.zohopublic.in/Enkash/form/WebsiteLetsConnect/formperma/ya7rxfABr3dsLPI9Cdv2mwNzv4AEHz92m6N4jgOTEiQ/htmlRecords/submit"
+          action="https://forms.zohopublic.in/Enkash/form/WebsiteSupport/formperma/jf2sOZW7y1DpICWnGbh-N0XD0s3dIeOW_matFy5T7Mc/htmlRecords/submit"
           name="form"
           method="POST"
           acceptCharset="UTF-8"
@@ -71,7 +70,11 @@ const ContactForm: React.FC = () => {
           <DynamicHeading
             content={[
               {
-                title: "Let's Connect",
+                title: "How Can ",
+                color: "color-dark-grey ",
+              },
+              {
+                title: "We Help You",
                 color: "color-black ",
               },
             ]}
@@ -95,7 +98,7 @@ const ContactForm: React.FC = () => {
           </div>
 
           <MultiSelect
-            name="contactReasons"
+            name="MultipleChoice"
             options={contactOptions}
             placeholder="How can we help you?*"
           />
@@ -120,4 +123,4 @@ const ContactForm: React.FC = () => {
   )
 }
 
-export default ContactForm
+export default SupportForm
