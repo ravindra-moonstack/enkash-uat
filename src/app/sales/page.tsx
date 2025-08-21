@@ -7,6 +7,7 @@ import { testimonialData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import { getLoginUrl, getSupportUrl } from "@/common/utils/getSalesUrl"
+import SalesForm from "@/components/sales-form/salesForm"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash Sales Get our Payment & Spend Solutions",
@@ -140,7 +141,9 @@ const Sales = () => {
               </div>
             </div>
 
-            <div className="col-md-7 col-12"></div>
+            <div className="col-md-7 col-12">
+              <SalesForm />
+            </div>
 
             <div>
               <div className={`${styles.logoSlider} `}>
