@@ -1,7 +1,8 @@
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+@use "./../../styles/variables" as *;
+@use "./../../styles/mixin" as *;
+
+.becomePartnerSteps {
+    padding: 0 20px;
 }
 
 .content {
@@ -11,13 +12,13 @@
 
     .buttonContainer {
         margin-top: 30px;
-        width: max-content;
 
         .connectWithUs {
             a {
                 box-shadow: 0px 4px 44px 0px #0000001F;
                 border: 2px solid #fff;
                 background-color: #fff;
+                font-weight: 700;
                 color: #1C5AF4;
                 text-decoration: none;
                 display: flex;
@@ -25,75 +26,109 @@
                 padding: 8px 20px;
                 border-radius: 8px;
                 align-items: center;
-
-                // &:hover {
-                //     background-color: #1C5AF4;
-                //     border: 2px solid #1C5AF4;
-                //     color: #fff;
-                // }
             }
+        }
+    }
+
+    .stepsGrid {
+        display: grid;
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+    }
+
+    .stepCard {
+        background: linear-gradient(148.03deg, rgba(255, 255, 255, 0.0594) 1.57%, rgba(211, 238, 251, 0.18) 98.66%);
+        border-radius: 12px;
+        padding: 33px 13px 27px 28px;
+        box-shadow: 0px 0px 55px 0px #0000001C;
+        transition: all 0.2s ease;
+        min-height: 180px;
+        text-decoration: none;
+    }
+
+    .stepNumber {
+        font-size: 16px;
+        font-weight: 600;
+        color: #1C5AF4;
+        margin-bottom: 6px;
+        line-height: 19px;
+        padding: 8px 11px 7px;
+        border-radius: 4px;
+        background-color: rgb(53 231 235 / 15%);
+        width: max-content;
+    }
+
+    .stepTitle {
+        font-size: 20px;
+        font-weight: 500;
+        color: #2B2B2B;
+        line-height: 40.19px;
+        font-family: "Inter", sans-serif;
+    }
+
+    .stepDescription {
+        font-family: "Inter", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        color: #666666;
+        line-height: 1.5;
+        margin: 0;
+        letter-spacing: 0.01em;
+    }
+
+    @include for-laptops {
+        .buttonContainer {
+            width: max-content;
+
+            .connectWithUs {
+                a {
+                    padding: 10px 16px;
+                }
+            }
+        }
+
+        .stepsGrid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 47px;
+        }
+
+        .stepCard {
+            padding: 33px 13px 27px 28px;
+            min-height: 230px;
+        }
+
+        .stepNumber {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1C5AF4;
+            margin-bottom: 6px;
+            line-height: 19px;
+            padding: 8px 11px 7px;
+            border-radius: 4px;
+            background-color: rgb(53 231 235 / 15%);
+            width: max-content;
 
 
         }
+
+        .stepTitle {
+            font-size: 20px;
+            font-weight: 500;
+            color: #2B2B2B;
+            line-height: 40.19px;
+            font-family: "Inter", sans-serif;
+        }
+
+        .stepDescription {
+            font-family: "Inter", sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            color: #666666;
+            line-height: 1.5;
+            margin: 0;
+            letter-spacing: 0.01em;
+        }
     }
-}
-
-
-.stepsGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 47px;
-    width: 100%;
-
-    @media (max-width: 968px) {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 400px;
-    }
-}
-
-.stepCard {
-    background: linear-gradient(148.03deg, rgba(255, 255, 255, 0.0594) 1.57%, rgba(211, 238, 251, 0.18) 98.66%);
-    border-radius: 12px;
-    padding: 33px 13px 27px 28px;
-    box-shadow: 0px 0px 55px 0px #0000001C;
-    transition: all 0.2s ease;
-    min-height: 230px;
-
-
-    @media (max-width: 968px) {
-        padding: 28px 20px;
-    }
-}
-
-.stepNumber {
-    font-size: 16px;
-    font-weight: 600;
-    color: #1C5AF4;
-    margin-bottom: 6px;
-    line-height: 19px;
-    padding: 8px 11px 7px;
-    border-radius: 4px;
-    background-color: rgb(53 231 235 / 15%);
-    width: max-content;
-
-
-}
-
-.stepTitle {
-    font-size: 20px;
-    font-weight: 500;
-    color: #2B2B2B;
-    line-height: 40.19px;
-    font-family: "Inter", sans-serif;
-}
-
-.stepDescription {
-    font-family: "Inter", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    color: #666666;
-    line-height: 1.5;
-    margin: 0;
-    letter-spacing: 0.01em;
 }

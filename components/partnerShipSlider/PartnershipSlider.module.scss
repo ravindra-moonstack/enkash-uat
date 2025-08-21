@@ -1,3 +1,6 @@
+@use "./../../styles/variables" as *;
+@use "./../../styles/mixin" as *;
+
 .partnershipSlider {
     position: relative;
     width: 100%;
@@ -21,6 +24,8 @@
 
             .slick-slide {
                 height: 100%;
+                margin-left: 0px;
+                /* Adjust as needed */
 
                 >div {
                     height: 100%;
@@ -31,7 +36,8 @@
         .slick-dots {
             position: absolute;
             bottom: -18px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: auto;
             display: flex !important;
             justify-content: flex-start;
@@ -85,11 +91,27 @@
         }
 
     }
+
+    @include for-laptops {
+        :global {
+            .slick-slider {
+                .slick-slide {
+                    margin-left: 15px;
+                    margin-right: 15px;
+
+                }
+            }
+
+            .slick-dots {
+                left: 0;
+                transform: none;
+            }
+
+        }
+    }
 }
 
 .slideContainer {
-    padding: 0 1px;
-    color: #FFFFFF;
     height: 100%;
 }
 
@@ -135,24 +157,4 @@
     line-height: 21.77px;
     flex: 1;
     font-weight: 400;
-}
-
-@media (max-width: 768px) {
-    .partnershipSlider {
-        border-left: 2px solid rgba(255, 255, 255, 0.2);
-        padding-left: 20px;
-    }
-
-    .slideCard {
-        // height: 260px;
-        padding: 24px 20px;
-
-        .slideTitle {
-            font-size: 1.1rem;
-        }
-
-        .slideDescription {
-            font-size: 0.9rem;
-        }
-    }
 }
