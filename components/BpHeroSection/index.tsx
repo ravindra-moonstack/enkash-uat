@@ -5,6 +5,7 @@ import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import styles from "./style.module.scss"
 import CustomBreadcrumb from "../breadcrumb/breadbrumb"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
+import { StaticImageData } from "next/image"
 
 interface BreadcrumbItem {
     name: string
@@ -16,6 +17,11 @@ interface HeadingContent {
     color: string
 }
 
+interface BreadcrumbProps {
+    items: BreadcrumbItem[]
+    domain?: string
+    linkColor?: "white" | "black" | "allWhite"
+}
 interface ButtonData {
     title: string
     theme: string
@@ -23,8 +29,8 @@ interface ButtonData {
 }
 
 interface BpHeroSectionProps {
-    backgroundImage: any
-    breadcrumbs?: BreadcrumbItem[]
+    backgroundImage: string | StaticImageData
+    breadcrumbs?: BreadcrumbProps;
     mainHeading: HeadingContent[]
     subHeading: HeadingContent[]
     button: ButtonData
@@ -48,36 +54,39 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
                 <div className="max-w-auto">
                     {/* Breadcrumb */}
                     {breadcrumbs && (<div className="d-flex">
-                        <CustomBreadcrumb items={breadcrumbs} />
+                        <CustomBreadcrumb items={breadcrumbs.items}
+                            domain={breadcrumbs.domain}
+                            linkColor={breadcrumbs.linkColor}
+                        />
                     </div>)}
+                    <div className="row">
+                        <div className={`${styles.title} col-md-7 pt-md-4 pt-2 `}>
+                            <div className="d-inline">
+                                <DynamicHeading
+                                    content={mainHeading}
+                                    headingTag="p"
+                                    className={`mb-3 mb-md-4`}
+                                />
+                            </div>
 
-                    <div className={`${styles.title} col-7 pt-4`}>
-                        <div className="d-inline">
-                            <DynamicHeading
-                                content={mainHeading}
-                                headingTag="p"
-                                className={`mb-4 text-uppercase`}
-                            />
-                        </div>
+                            <div className="d-flex flex-column">
+                                <DynamicHeading
+                                    content={subHeading}
+                                    headingTag="h1"
+                                    className="mb-4 f-7"
+                                />
+                            </div>
 
-                        <div className="d-flex flex-column">
-                            <DynamicHeading
-                                content={subHeading}
-                                headingTag="h1"
-                                className="mb-4 f-7"
-                            />
-                        </div>
-
-                        {/* CTA Button */}
-                        <div className={styles.button_wrapper}>
-                            <RectangleButton
-                                title={button.title}
-                                //@ts-ignore
-                                theme={button.theme}
-                                url={button.url}
-                            />
-                        </div>
-                    </div>
+                            {/* CTA Button */}
+                            <div className={styles.button_wrapper}>
+                                <RectangleButton
+                                    title={button.title}
+                                    //@ts-ignore
+                                    theme={button.theme}
+                                    url={button.url}
+                                />
+                            </div>
+                        </div></div>
                 </div>
             </div>
         </div>
