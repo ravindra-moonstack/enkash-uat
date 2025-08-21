@@ -638,16 +638,18 @@ const Home = (): React.JSX.Element => {
                         title: "Banks & NBFC Partners",
                         description:
                           "Launch co-branded cards, gateways, and platforms on our infrastructure - your brand, our tech.",
+                        buttonText: "Become a Partner",
+                        buttonLinks: "/bank-partnerships",
                       },
                       {
                         icon: bankIcons2,
                         title: "Affiliate Network",
                         description:
                           "Refer, earn, and empower India’s next 1M digital-first businesses.",
+                        buttonText: "Become a Partner",
+                        buttonLinks: "/affiliate-programs",
                       },
                     ],
-                    buttonText: "Become a Partner",
-                    buttonLinks: "/bank-partnerships",
                   }}
                 />
               </div>
