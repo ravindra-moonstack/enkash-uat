@@ -1,0 +1,205 @@
+"use client"
+
+import React, { useState, useRef, useEffect } from "react"
+import styles from "./categoryMultiSelect.module.scss"
+
+interface Option {
+  value: string
+  label: string
+  children?: Option[]
+}
+
+interface CategoryMultiSelectProps {
+  name: string
+  options: Option[]
+  placeholder?: string
+}
+
+const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
+  name,
+  options,
+  placeholder = "What are you looking for? (dropdown)*",
+}) => {
+  const [selected, setSelected] = useState<string[]>([])
+  const [open, setOpen] = useState(false)
+  const [openCategories, setOpenCategories] = useState<string[]>([])
+  const wrapperRef = useRef<HTMLDivElement>(null)
+
+  const toggleCategory = (value: string) => {
+    setOpenCategories((prev) =>
+      prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value]
+    )
+  }
+
+  const toggleOption = (value: string) => {
+    const category = options.find((cat) => cat.value === value)
+
+    setSelected((prev) => {
+      let newSelected = [...prev]
+
+      if (category) {
+        const allChildren = category.children?.map((c) => c.value) || []
+
+        if (newSelected.includes(category.value)) {
+          newSelected = newSelected.filter(
+            (v) => v !== category.value && !allChildren.includes(v)
+          )
+        } else {
+
+          newSelected = [
+            ...new Set([...newSelected, category.value, ...allChildren]),
+          ]
+        }
+      } else {
+
+        if (newSelected.includes(value)) {
+
+          newSelected = newSelected.filter((v) => v !== value)
+        } else {
+
+          newSelected.push(value)
+        }
+
+   
+        options.forEach((cat) => {
+          if (cat.children?.some((c) => c.value === value)) {
+            const allChildren = cat.children.map((c) => c.value)
+            const allSelected = allChildren.every((c) =>
+              newSelected.includes(c)
+            )
+
+            if (allSelected) {
+              if (!newSelected.includes(cat.value)) {
+                newSelected.push(cat.value)
+              }
+            } else {
+              newSelected = newSelected.filter((v) => v !== cat.value)
+            }
+          }
+        })
+      }
+
+      return newSelected
+    })
+  }
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(event.target as Node)
+      ) {
+        setOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
+
+  const getDisplayValues = () => {
+    const parentSelected = options
+      .filter((cat) => selected.includes(cat.value))
+      .map((cat) => cat.value)
+
+    const displayValues: string[] = []
+
+    options.forEach((cat) => {
+      if (parentSelected.includes(cat.value)) {
+        displayValues.push(cat.value)
+      } else if (cat.children) {
+  
+        cat.children.forEach((child) => {
+          if (selected.includes(child.value)) {
+            displayValues.push(child.value)
+          }
+        })
+      }
+    })
+
+    return displayValues
+  }
+
+  const displayValues = getDisplayValues()
+
+  return (
+    <div ref={wrapperRef} className={styles.wrapper}>
+
+      <div className={styles.inputBox} onClick={() => setOpen((prev) => !prev)}>
+        <div className={styles.inputContent}>
+          {displayValues.length > 0 ? (
+            <div className={styles.tags}>
+              {displayValues.map((val) => (
+                <span key={val} className={styles.tag}>
+                  {
+                    options
+                      .flatMap((cat) => [cat, ...(cat.children || [])])
+                      .find((o) => o.value === val)?.label
+                  }
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      toggleOption(val)
+                    }}
+                  >
+                    ×
+                  </button>
+                </span>
+              ))}
+            </div>
+          ) : (
+            <span className={styles.placeholder}>{placeholder}</span>
+          )}
+        </div>
+
+        <span className={styles.arrow}>{open ? "▲" : "▼"}</span>
+      </div>
+
+      {open && (
+        <div className={styles.dropdown}>
+          {options.map((cat) => (
+            <div key={cat.value} className={styles.category}>
+              <div
+                className={styles.categoryHeader}
+                onClick={() => toggleCategory(cat.value)}
+              >
+                <input
+                  type="checkbox"
+                  checked={selected.includes(cat.value)}
+                  onChange={() => toggleOption(cat.value)}
+                  onClick={(e) => e.stopPropagation()}
+                />
+                <span>{cat.label}</span>
+                {cat.children && (
+                  <span className={styles.arrow}>
+                    {openCategories.includes(cat.value) ? "▲" : "▼"}
+                  </span>
+                )}
+              </div>
+
+              {openCategories.includes(cat.value) && cat.children && (
+                <div className={styles.subOptions}>
+                  {cat.children.map((child) => (
+                    <label key={child.value} className={styles.option}>
+                      <input
+                        type="checkbox"
+                        checked={selected.includes(child.value)}
+                        onChange={() => toggleOption(child.value)}
+                      />
+                      {child.label}
+                    </label>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      )}
+
+  
+      <input type="hidden" name={name} value={selected.join(", ")} />
+    </div>
+  )
+}
+
+export default CategoryMultiSelect
