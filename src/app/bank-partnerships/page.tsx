@@ -1,19 +1,12 @@
-import Header from '@/components/header/header'
+
 import React from 'react'
 import styles from "./page.module.scss"
-import TalkToSales from '@/components/mobile-talks-to-sales/mobile-talk-to-sales'
-import CustomBreadcrumb from '@/components/breadcrumb/breadbrumb'
-import DynamicHeading from '@/components/dynamicHeading/dynamic-heading'
-import RectangleButton from '@/components/buttons/rectangle-button/rectangle-button'
-import Footer from '@/components/footer/footer'
-import HowDoesItWork from '@/components/how-does-it-work/how-does-it-work.'
 import BankSolutions from '@/components/partnerships/BankSolutions'
 import { BankSolutionHeading, bankSolutions, headingData, slideData, stepsData } from './data'
 import PartnershipSection from '@/components/partnerShipSlider/PartnershipSection'
 import BottomCtaSection from '@/components/bottomCtaSection/bottomCtaSection'
 import FaqSection from '@/components/faqSection/faqSection'
 import { ThirdfaqData } from './faq-data'
-import EnKashForm from '@/components/partnerShip-form'
 import PartnerShipForm from '@/components/partnerShip-form'
 import { BecomePartnerSteps, BpHeroSection } from '@/components'
 import { containerScreen, participantBg } from '.'
@@ -21,14 +14,16 @@ import { containerScreen, participantBg } from '.'
 const partnershipsPage = (): React.JSX.Element => {
     return (
         <div className={`color-white  `}>
-            {/* <Header utmSource="expense_management" /> */}
+
             <BpHeroSection
                 backgroundImage={containerScreen.src}
-                breadcrumbs={[
-                    { name: "Home", url: "/" },
-                    { name: "Partnerships", url: "/partnerships" },
-                    { name: "Banks", url: "/bank-partnerships" },
-                ]}
+                breadcrumbs={{
+                    items: [
+                        { name: "Home", url: "/" },
+                        { name: "Partnerships", url: "/partnerships" },
+                        { name: "Banks", url: "/bank-partnerships" },
+                    ],
+                }}
                 mainHeading={[
                     { title: "Partnership Program - for Banks", color: "color-black underline" }
                 ]}
@@ -49,24 +44,24 @@ const partnershipsPage = (): React.JSX.Element => {
                 <BankSolutions solutions={bankSolutions} heading={BankSolutionHeading} />
             </div>
 
-            <div className={`${styles.second_row}`}>
-                <PartnershipSection
-                    backgroundImage={participantBg.src}
-                    heading={[{ title: "Why Partner with Us?", color: "color-blue" }]}
-                    description="Partner with an all-in-one payments platform to deliver modern banking experiences across expense management, corporate cards, and vendor payments."
-                    buttons={[
-                        { title: "Explore Bank Partnerships", theme: "blue", url: "/bank-partnerships" }
-                        // { title: "Learn More", theme: "blue", url: "/learn-more" }
-                    ]}
-                    slideData={slideData}
-                />
-            </div>
+            <PartnershipSection
+                backgroundImage={participantBg.src}
+                heading={[{ title: "Why Partner with Us?", color: "color-blue" }]}
+                description="Partner with an all-in-one payments platform to deliver modern banking experiences across expense management, corporate cards, and vendor payments."
+                buttons={[
+                    { title: "Explore Bank Partnerships", theme: "blue", url: "/bank-partnerships" }
+                ]}
+                slideData={slideData}
+            />
+
             <div className={`${styles.third_row}`}>
                 <BecomePartnerSteps heading={headingData} steps={stepsData} />
             </div>
+
             <div className={`${styles.third_row}`}>
                 <BottomCtaSection headingPart1="Unlock New Revenue Opportunities" headingPart2='by Partnering With EnKash' />
             </div>
+
             <FaqSection faqData={ThirdfaqData} />
             <PartnerShipForm
                 heading={[
@@ -80,7 +75,7 @@ const partnershipsPage = (): React.JSX.Element => {
                     { id: 3, text: "Dedicated support for accelerated growth" },
                 ]}
             />
-            <Footer />
+
         </div>
 
     )

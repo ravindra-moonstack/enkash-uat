@@ -7,6 +7,7 @@ interface StepData {
     stepNumber: string
     title: string
     description: string
+    link?: string
 }
 
 interface BecomePartnerStepsProps {
@@ -27,7 +28,7 @@ interface BecomePartnerStepsProps {
 
 export default function BecomePartnerSteps({ heading, steps, button }: BecomePartnerStepsProps) {
     return (
-        <section className={styles.container}>
+        <section className={`${styles.becomePartnerSteps} max-w-auto`}>
             <div className={styles.content}>
                 <DynamicHeading
                     content={heading.content}
@@ -37,7 +38,7 @@ export default function BecomePartnerSteps({ heading, steps, button }: BecomePar
 
                 <div className={styles.stepsGrid}>
                     {steps.map((step, index) => (
-                        <div key={index} className={styles.stepCard}>
+                        <Link href={step.link ? step.link : "/"} key={index} className={styles.stepCard}>
                             <div className={styles.stepNumber}>{step.stepNumber}</div>
 
                             <DynamicHeading
@@ -45,13 +46,12 @@ export default function BecomePartnerSteps({ heading, steps, button }: BecomePar
                                 headingTag="h5"
                                 className="f-5"
                             />
-
                             <DynamicHeading
                                 content={[{ title: step.description, color: "color-black" }]}
                                 headingTag="p"
                                 className="f-3 mb-0"
                             />
-                        </div>
+                        </Link>
                     ))}
                 </div>
                 {button && (

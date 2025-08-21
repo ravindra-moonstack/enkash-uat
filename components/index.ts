@@ -131,6 +131,10 @@ const BpHeroSection = dynamic(
   () => import("./BpHeroSection/index"),
   { ssr: true }
 )
+const ourProductsSection = dynamic(
+  () => import("./ourProductsSection/index"),
+  { ssr: true }
+)
 
 export {
   Header,
@@ -171,5 +175,6 @@ export {
   HowDoesItWork,
   BecomePartnerSteps,
   PartnerShipForm,
-  BpHeroSection
+  BpHeroSection,
+  ourProductsSection
 }
