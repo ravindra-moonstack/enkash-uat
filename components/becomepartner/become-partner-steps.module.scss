@@ -35,6 +35,9 @@
         width: 100%;
         grid-template-columns: 1fr;
         gap: 20px;
+        a{
+            color: $color-alternate-grey;
+        }
 
     }
 
