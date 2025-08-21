@@ -3,21 +3,23 @@
 import React, { useState, useRef, useEffect } from "react"
 import styles from "./multiselect.module.scss"
 
-const options = [
-  {
-    value: "payment_collection",
-    label: "Looking for Payment Collection Solution",
-  },
-  { value: "make_payments", label: "Looking for a solution to make Payments" },
-  { value: "expense_management", label: "Looking for Expense Management" },
-  { value: "corporate_jobs", label: "Looking for Corporate Jobs" },
-  { value: "job_opportunities", label: "Exploring Job Opportunities" },
-  { value: "customer_support", label: "Need Customer Support" },
-  { value: "partnership", label: "Interested In Partnership Opportunities" },
-  { value: "marketing_team", label: "Want to Connect to Marketing Team" },
-]
+// Type definition for an option
+interface Option {
+  value: string
+  label: string
+}
 
-const MultiSelect: React.FC<{ name: string }> = ({ name }) => {
+interface MultiSelectProps {
+  name: string
+  options: Option[]
+  placeholder?: string
+}
+
+const MultiSelect: React.FC<MultiSelectProps> = ({
+  name,
+  options,
+  placeholder = "Select options...",
+}) => {
   const [selected, setSelected] = useState<string[]>([])
   const [open, setOpen] = useState(false)
   const wrapperRef = useRef<HTMLDivElement>(null)
@@ -68,7 +70,7 @@ const MultiSelect: React.FC<{ name: string }> = ({ name }) => {
             ))}
           </div>
         ) : (
-          <span className={styles.placeholder}>How can we help you?*</span>
+          <span className={styles.placeholder}>{placeholder}</span>
         )}
 
         {/* Dropdown Arrow */}

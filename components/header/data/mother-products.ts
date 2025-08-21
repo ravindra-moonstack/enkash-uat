@@ -151,7 +151,7 @@ export const motherProducts = [
   {
     name: "Make Payments",
     description: "Manage all types of business payments",
-
+   link: "/products/make-payments",
     payableProducts: [
       {
         subtitle: "Default",

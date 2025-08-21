@@ -36,7 +36,7 @@ import {
 const ReceivableProducts = [
   {
     subtitle: "Default",
-    subtitleLink: "/collect-payments",
+    subtitleLink: "/products/collect-payments",
     currentHeading: {
       name: "Collect Payments",
       description: "Get paid faster with customized PG solutions",
