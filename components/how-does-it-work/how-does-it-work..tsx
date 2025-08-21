@@ -107,9 +107,8 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
             {dataSets.map((_: any, index: Key) => (
               <span
                 key={index}
-                className={`${styles.bar} ${
-                  currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
-                } cursor-pointer`}
+                className={`${styles.bar} ${currentData === index ? "bg-equity-blue" : "bg-shadow-blue"
+                  } cursor-pointer`}
                 onClick={() => handleSpanClick(index as number)}
               />
             ))}

@@ -7,6 +7,7 @@ import DynamicHeading from "../dynamicHeading/dynamic-heading"
 interface BuiltforBuildersSectionProps {
   title: string
   subtitle: string
+  subtitle2?: string // Optional second subtitle
   icon: string // can be a local import or remote URL
   url: string // Destination URL
 }
@@ -14,6 +15,7 @@ interface BuiltforBuildersSectionProps {
 const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
   title,
   subtitle,
+  subtitle2,
   icon,
   url,
 }) => {
@@ -41,6 +43,16 @@ const BuiltforBuildersSection: React.FC<BuiltforBuildersSectionProps> = ({
             headingTag="h5"
             className="mb-1 f-5 mt-3"
           />
+          {subtitle2 && <DynamicHeading
+            content={[
+              {
+                title: subtitle2,
+                color: "f-3",
+              },
+            ]}
+            headingTag="p"
+            className=" f-4"
+          />}
           <DynamicHeading
             content={[
               {

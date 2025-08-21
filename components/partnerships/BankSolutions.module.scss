@@ -1,44 +1,27 @@
+@use "./../../styles/variables" as *;
+@use "./../../styles/mixin" as *;
+
 .bankSolutions {
-    text-align: left;
-    background-color: #F7F7F7;
-    padding: 50px 100px;
-    border-radius: 12px;
-    box-shadow: 0px 0px 77px 0px #0000001A;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1200px;
+
+    // 🔹 Mobile-first styles here 
+    padding: 0 20px;
 
     .bankContainer {
         width: 100%;
-
-        .heading {
-            font-weight: 100;
-            color: #2B2B2B;
-
-            margin-bottom: 2rem;
-            font-size: 46px;
-            font-family: "Inter", sans-serif;
-            line-height: 56px;
-
-            span {
-                font-weight: 500;
-            }
-        }
+        text-align: left;
+        background-color: #F7F7F7;
+        border-radius: 12px;
+        box-shadow: 0px 0px 77px 0px #0000001A;
+        padding: 30px 15px;
 
         .solutionsList {
-            margin-top: 32px;
+            margin-top: 22px;
             display: flex;
             flex-direction: column;
             gap: 18px;
 
             .solutionItem {
                 width: 100%;
-
-                // &:hover {
-                // padding: 14px 23px 23px;
-                // background: #fff;
-                // border-radius: 8px;
-                // }
 
                 .solutionHeader {
                     padding-left: 11px;
@@ -55,7 +38,7 @@
                         left: 0;
                         top: 0;
                         width: 1.5px;
-                        height: 30px;
+                        height: 25px;
                         background-color: #00BF9E;
                     }
 
@@ -72,10 +55,10 @@
                         align-items: center;
 
                         .title {
-                            font-size: 20px;
+                            font-size: 16px;
                             color: #2B2B2B;
                             font-weight: 500;
-                            line-height: 34px;
+                            line-height: 28px;
                             font-family: "Inter", sans-serif;
                         }
                     }
@@ -83,21 +66,21 @@
                     .arrow {
                         color: #1C5AF4;
                         transition: transform 0.3s ease;
-                        font-size: 14px;
-                        width: 32px;
-                        height: 32px;
+                        font-size: 12px;
+                        width: 28px;
+                        height: 28px;
                         display: flex;
                         align-items: center;
                         justify-content: center;
 
                         svg {
-                            width: 12px;
+                            width: 10px;
                         }
                     }
                 }
 
                 .solutionContent {
-                    padding: 0px 55.5px 0px 12px;
+                    padding: 0px 25px 0px 12px;
                     background-color: #f8f9fa;
                     animation: slideDown 0.3s ease-out;
                     display: none;
@@ -106,7 +89,8 @@
                     p {
                         margin: 0;
                         color: #666;
-                        line-height: 1.5;
+                        line-height: 1.4;
+                        font-size: 14px;
                     }
                 }
 
@@ -119,52 +103,85 @@
         }
 
         .buttonContainer {
-            margin-top: 50px;
-            width: max-content;
+            margin-top: 30px;
+            width: 100%;
 
             .connectWithUs {
                 a {
                     box-shadow: 0px 4px 44px 0px #0000001F;
                     border: 2px solid #fff;
+                    font-weight: 700;
                     background-color: #fff;
                     color: #1C5AF4;
                     text-decoration: none;
                     display: flex;
-                    justify-content: space-between;
-                    padding: 8px 20px;
+                    justify-content: center;
+                    padding: 10px 16px;
                     border-radius: 8px;
                     align-items: center;
-
-                    // &:hover {
-                    //     background-color: #1C5AF4;
-                    //     border: 2px solid #1C5AF4;
-                    //     color: #fff;
-                    // }
+                    font-size: 14px;
                 }
-
-
             }
         }
     }
 
-    @media (max-width: 768px) {
-        width: 95%;
-        padding: 20px 15px;
-
+    // ✅ Laptop styles remain unchanged
+    @include for-laptops {
         .bankContainer {
-            .heading {
-                font-size: 1.5rem;
-            }
+            padding: 50px 100px;
 
             .solutionsList {
+                margin-top: 32px;
+                display: flex;
+                flex-direction: column;
+                gap: 18px;
+
                 .solutionItem {
+                    width: 100%;
+
                     .solutionHeader {
+
+                        &::before {
+                            height: 30px;
+                        }
+
                         .titleContainer {
+
                             .title {
-                                font-size: 14px;
+                                font-size: 20px;
+                                line-height: 34px;
+                            }
+                        }
+
+                        .arrow {
+                            font-size: 14px;
+                            width: 32px;
+                            height: 32px;
+
+                            svg {
+                                width: 12px;
                             }
                         }
                     }
+
+                    .solutionContent {
+                        padding: 0px 55.5px 0px 12px;
+                        background-color: #f8f9fa;
+
+                    }
+
+                }
+            }
+        }
+
+        .buttonContainer {
+            margin-top: 50px;
+
+            .connectWithUs {
+                a {
+                    background-color: #fff;
+                    padding: 8px 20px;
+                    width: max-content;
                 }
             }
         }
