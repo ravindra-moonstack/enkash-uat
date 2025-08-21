@@ -3,8 +3,13 @@ const faqData = [
     question: "Who can partner with Bharat Connect?",
     answer: [
       {
-        heading:
-          "Customer data ownership depends on the use case. In scenarios involving KYC, certain data may be shared as per regulatory requirements. However, when it comes to APIs, integrations, and platform usage, the customer retains full ownership and control of their data. We prioritize transparency, security, and compliance at every step.",
+        bullets: [
+          "Banks & FIs – Enable seamless payments and collections",
+          "ERP & Billing Platforms – Embed smart payment capabilities",
+          "Consultants & ISVs – Offer clients digitized financial workflows",
+          "Mid to Large Corporates – Automate payables and collections",
+          "Product, Tech & Finance Teams – Simplify business payments at scale",
+        ],
       },
     ],
   },

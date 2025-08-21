@@ -175,7 +175,7 @@ const scrollCardsData = [
       "Track and manage small-ticket expenses across branches in real time.",
     url: "/petty-cash",
     icon: "",
-    hoverClass:"scrollCardHover"
+    hoverClass: "scrollCardHover"
   },
   {
     title: "Budget & Advances",
@@ -183,7 +183,7 @@ const scrollCardsData = [
       "Set budgets, issue advances, and monitor usage against spending limits.",
     url: "/budget-and-advances",
     icon: "",
-     hoverClass:"scrollCardHover"
+    hoverClass: "scrollCardHover"
   },
   {
     title: "Reimbursements",
@@ -191,7 +191,7 @@ const scrollCardsData = [
       "Enable fast, policy-aligned reimbursements with built-in approvals.",
     url: "/reimbursements",
     icon: "",
-     hoverClass:"scrollCardHover"
+    hoverClass: "scrollCardHover"
   },
   {
     title: "Scan & Drop Receipts",
@@ -199,7 +199,7 @@ const scrollCardsData = [
       "Snap receipts and auto-extract data for quick claim submissions.",
     url: "/receipts",
     icon: "",
-     hoverClass:"scrollCardHover"
+    hoverClass: "scrollCardHover"
   },
   {
     title: "Spend Analytics",
@@ -207,7 +207,7 @@ const scrollCardsData = [
       "Get deep insights into spends with smart, real-time analytics.",
     url: "/expense-analytics-and-insights",
     icon: "",
-     hoverClass:"scrollCardHover"
+    hoverClass: "scrollCardHover"
   },
 ]
 
@@ -414,9 +414,9 @@ const prepaidCardsData = [
 ]
 const prepaidCardsDataSecond = [
   {
-    title: "Meal Card",
-    subtitle: "Offer tax-saving digital meal benefits with usage tracking",
-    url: "/meal-card",
+    title: "Purchase Cards",
+    subtitle: "Enable secure vendor purchases with spend controls built in.",
+    url: "/purchase-card",
     topIcon: prepaidTop5,
     bottomIcon: prepaidBottom1,
     borderColors: "linear-gradient(-90deg, #00A2FF00 0%, #1C5AF4 100%) 1",
@@ -440,6 +440,7 @@ const rewardData = [
     icon: rewardIcon,
     image: rewardImg1,
     overlayColorClass: "homePagerewards1",
+    url: "/employee-rewards"
   },
 
   {
@@ -450,6 +451,7 @@ const rewardData = [
     icon: rewardIcon,
     image: rewardImg2,
     overlayColorClass: "homePagerewards2",
+    url: "/channel-incentives"
   },
   {
     title: "Exclusive",
@@ -459,6 +461,7 @@ const rewardData = [
     icon: rewardIcon,
     image: rewardImg3,
     overlayColorClass: "homePagerewards3",
+    url: "/offers"
   },
 ]
 const ctaButtonData = [
@@ -467,42 +470,42 @@ const ctaButtonData = [
     theme: "outline-blue" as RectangleButtonTheme,
     actionImage: "",
     hoverImage: "",
-    url: "/sales?source=collect-payments",
+    url: "/sales?source=homepage",
   },
   {
     title: " Make Payments",
     theme: "outline-blue" as RectangleButtonTheme,
     actionImage: "",
     hoverImage: "",
-    url: "/sales?source=make-payments",
+    url: "/sales?source=homepage",
   },
   {
     title: "Manage Expenses",
     theme: "outline-blue" as RectangleButtonTheme,
     actionImage: "",
     hoverImage: "",
-    url: "/sales?source=manage-expenses",
+    url: "/sales?source=homepage",
   },
   {
     title: "Get Corporate Cards",
     theme: "outline-blue" as RectangleButtonTheme,
     actionImage: "",
     hoverImage: "",
-    url: "/sales?source=corporate-cards",
+    url: "/sales?source=homepage",
   },
   {
     title: "Distribute Brand Vouchers",
     theme: "outline-blue" as RectangleButtonTheme,
     actionImage: "",
     hoverImage: "",
-    url: "/sales?source=brand-vouchers",
+    url: "/sales?source=homepage",
   },
   {
     title: "Reward Employees",
     theme: "outline-blue" as RectangleButtonTheme,
     actionImage: "",
     hoverImage: "",
-    url: "/sales?source=employee-rewards",
+    url: "/sales?source=homepage",
   },
 ]
 const counterData = [

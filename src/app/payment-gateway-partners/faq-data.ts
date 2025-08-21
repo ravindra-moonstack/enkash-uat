@@ -6,6 +6,26 @@ const faqData = [
         heading:
           "Whether you're an e-commerce consultant, a freelance developer, or an ERP/CRM solutions provider, you can partner with EnKash and help your clients streamline payments, collections, and financial workflows.",
       },
+      {
+        heading:
+          "Some of the most successful EnKash partners come from categories like:",
+      },
+      {
+        bullets: [
+          "Web and app development",
+          "Digital marketing and growth consulting",
+          "Hosting and cloud infrastructure",
+          "Bloggers, influencers, and content creators",
+          "Freelancers and solopreneurs",
+          "E-commerce and D2C consultants",
+          "ERP, CRM, and SaaS companies",
+          "Online marketplaces and platforms",
+        ],
+      },
+      {
+        heading:
+          "If your clients accept or make payments, EnKash can power it all, while you earn and grow with us.",
+      },
     ],
   },
   {

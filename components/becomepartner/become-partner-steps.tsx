@@ -42,11 +42,7 @@ export default function BecomePartnerSteps({
 
         <div className={styles.stepsGrid}>
           {steps.map((step, index) => (
-            <Link
-              href={step.link ? step.link : "/"}
-              key={index}
-              className={styles.stepCard}
-            >
+            <div key={index} className={styles.stepCard}>
               <div className={styles.stepNumber}>{step.stepNumber}</div>
 
               <DynamicHeading
@@ -55,13 +51,11 @@ export default function BecomePartnerSteps({
                 className="f-5"
               />
               <DynamicHeading
-                content={[
-                  { title: step.description, color: "color-dark-grey" },
-                ]}
+                content={[{ title: step.description, color: "color-black" }]}
                 headingTag="p"
                 className="f-3 mb-0"
               />
-            </Link>
+            </div>
           ))}
         </div>
         {button && (

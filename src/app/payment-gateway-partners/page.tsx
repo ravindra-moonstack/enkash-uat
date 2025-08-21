@@ -1,8 +1,6 @@
-import Header from "@/components/header/header"
 import React from "react"
 import styles from "./page.module.scss"
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
-import Footer from "@/components/footer/footer"
 import BankSolutions from "@/components/partnerships/BankSolutions"
 import {
   BankSolutionHeading,
@@ -32,7 +30,6 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/payment-gateway-partners/",
   },
 })
-
 const BankSolutionSubHeading = {
   content: [
     {
@@ -48,7 +45,6 @@ const BankSolutionSubHeading = {
 const partnershipsPage = (): React.JSX.Element => {
   return (
     <div className={`color-white  `}>
-      <Header utmSource="expense_management" />
       <BpHeroSection
         backgroundImage={containerScreen.src}
         mainHeading={[
@@ -74,7 +70,7 @@ const partnershipsPage = (): React.JSX.Element => {
         button={{
           title: "Become a Partner",
           theme: "blue",
-          url: "/sales/?source=expense_management",
+          url: "#partnership-form",
         }}
       />
       <div className={`${styles.boxContainer}`}>
@@ -84,7 +80,7 @@ const partnershipsPage = (): React.JSX.Element => {
           subheading={BankSolutionSubHeading}
           button={{
             connectText: "Become a Partner",
-            connectUrl: "/contact",
+            connectUrl: "#partnership-form",
             blueArrow: blueArrow.src,
           }}
         />
@@ -96,7 +92,7 @@ const partnershipsPage = (): React.JSX.Element => {
           heading={[{ title: "Why Partner with Us?", color: "color-white" }]}
           description="Whether you're a startup founder, fintech influencer, enterprise leader, or employer, our affiliate program is tailored to help you unlock brand value and create meaningful financial experiences for your audience."
           buttons={[
-            { title: "Explore ", theme: "blue", url: "/affiliate-programs" },
+            { title: "Explore ", theme: "blue", url: "#partnership-form" },
           ]}
           slideData={slideData}
         />
@@ -148,7 +144,7 @@ const partnershipsPage = (): React.JSX.Element => {
             <div className="row">
               <div className="col-md-12">
                 <div className={`${styles.customButtons}`}>
-                  <Link href={"/#"}>
+                  <Link href={"https://docs.enkash.com/"}>
                     Explore Integration Documents
                     <svg
                       width="8"
@@ -176,7 +172,7 @@ const partnershipsPage = (): React.JSX.Element => {
           steps={stepsData}
           button={{
             connectText: "Become a Partner",
-            connectUrl: "/contact",
+            connectUrl: "#partnership-form",
             blueArrow: blueArrow.src,
           }}
         />
@@ -185,22 +181,24 @@ const partnershipsPage = (): React.JSX.Element => {
         <BottomCtaSection
           headingPart1="The Smartest Way to"
           headingPart2="Co-Brand Your Card"
+          buttonHref="#partnership-form"
         />
       </div>
       <FaqSection faqData={faqData} />
-      <PartnerShipForm
-        heading={[
-          { title: "Ready to ", color: "color-grey-200" },
-          { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
-          { title: "with EnKash?", color: "color-grey-200" },
-        ]}
-        features={[
-          { id: 1, text: "Industry-best earnings" },
-          { id: 2, text: "Fast activation for your clients" },
-          { id: 3, text: "Dedicated support for accelerated growth" },
-        ]}
-      />
-      <Footer />
+      <div id="partnership-form">
+        <PartnerShipForm
+          heading={[
+            { title: "Ready to ", color: "color-grey-200" },
+            { title: "Earn More and Grow Faster ", color: "color-equity-blue" },
+            { title: "with EnKash?", color: "color-grey-200" },
+          ]}
+          features={[
+            { id: 1, text: "Industry-best earnings" },
+            { id: 2, text: "Fast activation for your clients" },
+            { id: 3, text: "Dedicated support for accelerated growth" },
+          ]}
+        />
+      </div>
     </div>
   )
 }
