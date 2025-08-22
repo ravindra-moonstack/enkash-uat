@@ -189,7 +189,7 @@
     left: 0;
   }
 
-  // Move slider under active button
+ 
   .login.active ~ .slider {
     left: 0;
   }
@@ -199,7 +199,7 @@
 }
 
 .active {
-  background-color: #2563eb; // blue-600
+  background-color: #2563eb; 
   color: #ffffff;
 }
 

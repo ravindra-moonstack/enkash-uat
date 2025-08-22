@@ -89,7 +89,7 @@ const VendorManagement = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Gain complete control of vendor relationships with powerful vendor management solution. From onboarding to payments and compliance our platform empowers businesses to work faster, reduce risks, and maintain healthy supplier partnerships.",
+                          "Gain complete control of vendor relationships with a powerful vendor management solution. From onboarding to payments and compliance, our platform empowers businesses to work faster, reduce risks, and maintain healthy supplier partnerships.",
                         color: "color-black subHeading",
                       },
                     ]}
@@ -112,13 +112,6 @@ const VendorManagement = (): React.JSX.Element => {
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
