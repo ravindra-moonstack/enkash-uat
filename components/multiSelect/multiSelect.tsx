@@ -73,7 +73,6 @@ const MultiSelect: React.FC<MultiSelectProps> = ({
           <span className={styles.placeholder}>{placeholder}</span>
         )}
 
-        {/* Dropdown Arrow */}
         <span className={styles.arrow}>{open ? "▲" : "▼"}</span>
       </div>
 

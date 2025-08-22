@@ -16,7 +16,6 @@ interface CategoryMultiSelectProps {
 }
 
 const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
-  name,
   options,
   placeholder = "What are you looking for? (dropdown)*",
 }) => {
@@ -45,22 +44,17 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
             (v) => v !== category.value && !allChildren.includes(v)
           )
         } else {
-
           newSelected = [
             ...new Set([...newSelected, category.value, ...allChildren]),
           ]
         }
       } else {
-
         if (newSelected.includes(value)) {
-
           newSelected = newSelected.filter((v) => v !== value)
         } else {
-
           newSelected.push(value)
         }
 
-   
         options.forEach((cat) => {
           if (cat.children?.some((c) => c.value === value)) {
             const allChildren = cat.children.map((c) => c.value)
@@ -97,44 +91,26 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
   }, [])
 
   const getDisplayValues = () => {
-    const parentSelected = options
-      .filter((cat) => selected.includes(cat.value))
+    return options
+      .filter(
+        (cat) =>
+          selected.includes(cat.value) ||
+          cat.children?.some((child) => selected.includes(child.value))
+      )
       .map((cat) => cat.value)
-
-    const displayValues: string[] = []
-
-    options.forEach((cat) => {
-      if (parentSelected.includes(cat.value)) {
-        displayValues.push(cat.value)
-      } else if (cat.children) {
-  
-        cat.children.forEach((child) => {
-          if (selected.includes(child.value)) {
-            displayValues.push(child.value)
-          }
-        })
-      }
-    })
-
-    return displayValues
   }
 
   const displayValues = getDisplayValues()
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
-
       <div className={styles.inputBox} onClick={() => setOpen((prev) => !prev)}>
         <div className={styles.inputContent}>
           {displayValues.length > 0 ? (
             <div className={styles.tags}>
               {displayValues.map((val) => (
                 <span key={val} className={styles.tag}>
-                  {
-                    options
-                      .flatMap((cat) => [cat, ...(cat.children || [])])
-                      .find((o) => o.value === val)?.label
-                  }
+                  {options.find((o) => o.value === val)?.label}
                   <button
                     type="button"
                     onClick={(e) => {
@@ -151,7 +127,6 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
             <span className={styles.placeholder}>{placeholder}</span>
           )}
         </div>
-
         <span className={styles.arrow}>{open ? "▲" : "▼"}</span>
       </div>
 
@@ -163,13 +138,23 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                 className={styles.categoryHeader}
                 onClick={() => toggleCategory(cat.value)}
               >
-                <input
-                  type="checkbox"
-                  checked={selected.includes(cat.value)}
-                  onChange={() => toggleOption(cat.value)}
-                  onClick={(e) => e.stopPropagation()}
-                />
-                <span>{cat.label}</span>
+                <div className={styles.categoryHeaderLabel}>
+                  <input
+                    type="checkbox"
+                    checked={selected.includes(cat.value)}
+                    onChange={() => {
+                      toggleOption(cat.value)
+                      setOpenCategories(
+                        (prev) =>
+                          prev.includes(cat.value) ? prev : [...prev, cat.value] // parent select hote hi open ho
+                      )
+                    }}
+                    onClick={(e) => e.stopPropagation()}
+                  />
+
+                  <span>{cat.label}</span>
+                </div>
+
                 {cat.children && (
                   <span className={styles.arrow}>
                     {openCategories.includes(cat.value) ? "▲" : "▼"}
@@ -183,6 +168,7 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     <label key={child.value} className={styles.option}>
                       <input
                         type="checkbox"
+                        name="MultipleChoice1"
                         checked={selected.includes(child.value)}
                         onChange={() => toggleOption(child.value)}
                       />
@@ -196,8 +182,21 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
         </div>
       )}
 
-  
-      <input type="hidden" name={name} value={selected.join(", ")} />
+      {/* Parent categories */}
+      {selected
+        .filter((v) => options.some((cat) => cat.value === v))
+        .map((val) => (
+          <input key={val} type="hidden" name="MultipleChoice" value={val} />
+        ))}
+
+      {/* Child categories */}
+      {selected
+        .filter((v) =>
+          options.some((cat) => cat.children?.some((c) => c.value === v))
+        )
+        .map((val) => (
+          <input key={val} type="hidden" name="MultipleChoice1" value={val} />
+        ))}
     </div>
   )
 }

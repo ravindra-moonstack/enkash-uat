@@ -48,7 +48,7 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
   }
 
   return (
-    <div className={`col-12 ${styles.banking_wrapper}`}>
+    <div className={`col-12 ${styles.testimonial_wrapper}`}>
       <div className={styles.marquee_box}>
         <Slider {...sliderSettings} className={styles.custom_slider}>
           {testimonials.map((item, index) => (

@@ -8,61 +8,62 @@ import CategoryMultiSelect from "../categoryMultiSelect/categoryMultiSelect"
 import CategoryWithOther from "../categoryWithOther/categoryWithOther"
 
 const options = [
-  { value: "google_search", label: "Google Search" },
-  { value: "social_media", label: "Social media" },
-  { value: "referral", label: "Word of mouth / Referral" },
-  { value: "used_enkash", label: "Used EnKash Before" },
-  { value: "other", label: "Other (Please Specify)" },
+  { value: "Google search", label: "Google Search" },
+  { value: "Social media", label: "Social media" },
+  { value: "Word of mouth/ Referral", label: "Word of mouth / Referral" },
+  { value: "Used EnKash Before", label: "Used EnKash Before" },
 ]
 
 const categoryOptions = [
   {
-    value: "collect_payments",
+    value: "Collect Payments",
     label: "Collect Payments",
     children: [
-      { value: "payment_gateway", label: "Payment Gateway" },
-      { value: "upi_payments", label: "UPI Payments" },
-      { value: "payment_link", label: "Payment Link/Button" },
-      { value: "ar_automation", label: "AR Automation" },
-      { value: "others_collect", label: "Others" },
+      { value: "Payment Gateway", label: "Payment Gateway" },
+      { value: "UPI Payments", label: "UPI Payments" },
+      { value: "Payment Link/button", label: "Payment Link/Button" },
+      { value: "AR Automation", label: "AR Automation" },
     ],
   },
   {
-    value: "make_payments",
+    value: "Make Payments",
     label: "Make Payments",
     children: [
-      { value: "utility_bill", label: "Utility Bill Payment" },
-      { value: "vendor_payment", label: "Vendor Payment" },
-      { value: "bulk_payments", label: "Bulk Payments" },
-      { value: "rental_payments", label: "Rental Payments" },
-      { value: "ap_automation", label: "AP Automation" },
-      { value: "others_make", label: "Others" },
+      { value: "Utility Bill Payment", label: "Utility Bill Payment" },
+      { value: "Vendor Payment", label: "Vendor Payment" },
+      { value: "Bulk Payments", label: "Bulk Payments" },
+      { value: "Rental Payments", label: "Rental Payments" },
+      { value: "AP Automation", label: "AP Automation" },
     ],
   },
   {
-    value: "corporate_cards",
+    value: "Corporate Cards",
     label: "Corporate Cards",
     children: [
-      { value: "credit_secured", label: "Secured Credit Card" },
-      { value: "credit_unsecured", label: "Unsecured Credit Card" },
-      { value: "prepaid_gift", label: "Gift Cards" },
-      { value: "prepaid_employee", label: "Employee Cards" },
-      { value: "prepaid_te", label: "T&E Cards" },
-      { value: "prepaid_meal", label: "Meal Cards" },
-      { value: "prepaid_others", label: "Others" },
+      { value: "Secured Credit Card", label: "Secured Credit Card" },
+      { value: "Unsecured Credit Card", label: "Unsecured Credit Card" },
+      { value: "Gift Cards", label: "Gift Cards" },
+      { value: "Employee Cards", label: "Employee Cards" },
+      { value: "T&amp;E Cards", label: "T&amp;E Cards" },
+      { value: "Meal Cards", label: "Meal Cards" },
     ],
   },
-  { value: "manage_expenses", label: "Manage Expenses" },
   {
-    value: "rewards",
+    value: "Manage Expenses",
+    label: "Manage Expenses",
+    children: [{ value: "Expense Management", label: "Expense Management" }],
+  },
+  {
+    value: "Rewards",
     label: "Rewards",
     children: [
-      { value: "employee_rewards", label: "Employee Rewards" },
-      { value: "channel_incentives", label: "Channel Incentives" },
+      { value: "Employee Rewards", label: "Employee Rewards" },
+      { value: "Channel Incentives", label: "Channel Incentives" },
     ],
   },
-  { value: "something_else", label: "Something Else" }, // you can show input field if this selected
+  { value: "Something Else", label: "Something Else" },
 ]
+
 const SalesForm: React.FC = () => {
   useEffect(() => {
     if (
@@ -87,6 +88,9 @@ const SalesForm: React.FC = () => {
         "SingleLine1",
         "PhoneNumber_countrycode",
         "MultipleChoice",
+        "MultipleChoice1",
+        "Website",
+        "Dropdown5",
         "MultiLine",
       ]
       window.isSalesIQIntegrationEnabled = false
@@ -95,94 +99,84 @@ const SalesForm: React.FC = () => {
   }, [])
 
   return (
-    <>
-      <div className={styles.contactFormWrapper}>
-        <form
-          action="https://forms.zohopublic.in/Enkash/form/TalktoSales/formperma/hmsqE173cI_jvQ9Xnh7Bkuxp1UONfPeWnrlK-L_NTBA/htmlRecords/submit"
-          name="form"
-          method="POST"
-          acceptCharset="UTF-8"
-          encType="multipart/form-data"
-          id="form"
-          onSubmit={() => window.zf_ValidateAndSubmit?.() ?? true}
-        >
-          <input type="hidden" name="zf_referrer_name" value="" />
-          <input type="hidden" name="zf_redirect_url" value="" />
-          <input type="hidden" name="zc_gad" value="" />
-          <DynamicHeading
-            content={[
-              {
-                title: "New to EnKash? ",
-                color: "color-dark-grey ",
-              },
-            ]}
-            headingTag="h5"
-            className="text-center "
-          />
-          <DynamicHeading
-            content={[
-              {
-                title: "Talk",
-                color: "color-black ",
-              },
-              {
-                title: " to Sales",
-                color: "color-dark-grey ",
-              },
-            ]}
-            headingTag="h1"
-            className="text-center "
-          />
-          <p className={styles.subtitle}>We just need a few quick details</p>
-          <div className={styles.grid}>
-            <input type="text" name="SingleLine" placeholder="Name*" />
+    <div className={styles.contactFormWrapper}>
+      <form
+        action="https://forms.zohopublic.in/Enkash/form/TalktoSales/formperma/hmsqE173cI_jvQ9Xnh7Bkuxp1UONfPeWnrlK-L_NTBA/htmlRecords/submit"
+        name="form"
+        method="POST"
+        acceptCharset="UTF-8"
+        encType="multipart/form-data"
+        id="form"
+        onSubmit={() => window.zf_ValidateAndSubmit?.() ?? true}
+      >
+        <input type="hidden" name="zf_referrer_name" value="" />
+        <input type="hidden" name="zf_redirect_url" value="" />
+        <input type="hidden" name="zc_gad" value="" />
 
-            <input type="text" name="Email" placeholder="Business Email ID*" />
+        <DynamicHeading
+          content={[{ title: "New to EnKash? ", color: "color-dark-grey " }]}
+          headingTag="h5"
+          className="text-center "
+        />
+        <DynamicHeading
+          content={[
+            { title: "Talk", color: "color-black " },
+            { title: " to Sales", color: "color-dark-grey " },
+          ]}
+          headingTag="h1"
+          className="text-center "
+        />
+        <p className={styles.subtitle}>We just need a few quick details</p>
 
-            <input type="text" name="SingleLine1" placeholder="Company Name*" />
-
-            <input
-              type="text"
-              name="PhoneNumber_countrycode"
-              placeholder="Contact No.*"
-              id="international_PhoneNumber_countrycode"
-            />
-          </div>
-          <CategoryMultiSelect
-            name="MultipleChoice"
-            options={categoryOptions}
-            placeholder="What are you looking for?*"
+        <div className={styles.grid}>
+          <input type="text" name="SingleLine" placeholder="Name*" />
+          <input type="text" name="Email" placeholder="Business Email ID*" />
+          <input type="text" name="SingleLine1" placeholder="Company Name*" />
+          <input
+            type="text"
+            name="PhoneNumber_countrycode"
+            placeholder="Contact No.*"
+            id="international_PhoneNumber_countrycode"
           />
-          <div className={styles.grid}>
-            <input
-              type="text"
-              name="Website"
-              placeholder="Website or App Link*"
-              id="Website_error"
-            />
-            <CategoryWithOther
-              name="Dropdown5"
-              options={options}
-              placeholder="Select how you heard about us*"
-            />
-          </div>
+        </div>
 
-          <textarea
-            name="MultiLine"
-            placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
+        <CategoryMultiSelect
+          name="MultipleChoice"
+          options={categoryOptions}
+          placeholder="What are you looking for?*"
+        />
+
+        <div className={styles.grid}>
+          <input
+            type="text"
+            name="Website"
+            placeholder="Website or App Link*"
+            id="Website_error"
           />
-          <p className={styles.privacy}>
-            By submitting this form, you are agreeing to our{" "}
-            <Link href="/privacy-policy" className={styles.privacyLink}>
-              privacy policy
-            </Link>
-          </p>
-          <button type="submit" className={styles.submitBtn}>
-            Submit
-          </button>
-        </form>
-      </div>
-    </>
+          <CategoryWithOther
+            name="Dropdown5"
+            options={options}
+            placeholder="Select how you heard about us*"
+          />
+        </div>
+
+        <textarea
+          name="MultiLine"
+          placeholder={`Comments\n(Please provide more details that will enable us to better understand your needs.)`}
+        />
+
+        <p className={styles.privacy}>
+          By submitting this form, you are agreeing to our{" "}
+          <Link href="/privacy-policy" className={styles.privacyLink}>
+            privacy policy
+          </Link>
+        </p>
+
+        <button type="submit" className={styles.submitBtn}>
+          Submit
+        </button>
+      </form>
+    </div>
   )
 }
 
