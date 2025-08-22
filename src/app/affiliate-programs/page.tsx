@@ -69,7 +69,7 @@ const partnershipsPage = (): React.JSX.Element => {
         }}
         backgroundImage={containerScreen.src}
         mainHeading={[
-          { title: "Affiliate Program", color: "color-white underline" },
+          { title: "Affiliate Program", color: "underline" },
         ]}
         subHeading={[
           {

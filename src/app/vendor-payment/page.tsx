@@ -112,13 +112,6 @@ const VendorPayment = (): React.JSX.Element => {
                         url={salesUrl}
                       />
                     </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -164,9 +157,8 @@ const VendorPayment = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",

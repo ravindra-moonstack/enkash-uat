@@ -66,7 +66,7 @@ const PaymentPage = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "The Control Tower for All Your Business Payments.",
+                    title: "The Control Tower for All Your Business Payments",
                     color: "color-white ",
                   },
                 ]}
@@ -90,7 +90,7 @@ const PaymentPage = (): React.JSX.Element => {
 
             <div className="mt-md-5 mt-3 mb-3 mb-md-0">
               <RectangleButton
-                title="Talk to Sales"
+                title="Talk to Us"
                 theme="blue"
                 url={salesUrl}
               />
@@ -116,7 +116,7 @@ const PaymentPage = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Make Business Payments: Faster, Leaner, Smarter.",
+                  title: "Make Business Payments Faster, Leaner & Smarter",
                   color: "color-white ",
                 },
               ]}
@@ -148,7 +148,7 @@ const PaymentPage = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="h6"
-                  className="f-4 "
+                  className="f-4 text-center d-block"
                 />
               </div>
             ))}
@@ -195,12 +195,11 @@ const PaymentPage = (): React.JSX.Element => {
                   title="Manage All Your Rents Without Lifting a Finger"
                   description="Manage and track rental payments across locations with automated TDS handling, complete records, and seamless scheduling. Free yourself from spreadsheets and stay compliant without chasing paperwork or due dates."
                   image={shareImage}
-                  buttonUrl="/rental-payments"
+                  buttonUrl="/rent-payment"
                   maxImageHeight="305px"
                   buttonText="Explore Rental Payments"
                   reverse
                 />
-
                 <AllInOnePolicy
                   icon={taskIconThree}
                   title="Never Miss Another Utility Bill Payment"
@@ -246,7 +245,7 @@ const PaymentPage = (): React.JSX.Element => {
                 <AllInOnePolicy
                   icon={taskIconSix}
                   title="Bring Order to Invoice Chaos"
-                  description="Disburse salaries accurately and on time, every month. Automate your payroll, track payments, and ensure data integrity — all while giving your teams the peace of mind they deserve."
+                  description="Digitize, validate, and approve invoices without the chaos. Cut down processing time, reduce errors, and gain full visibility with smart workflows tailored to your accounts payable process."
                   image={invoiceImg}
                   buttonUrl="/invoice-management"
                   buttonText="Explore Invoice Management"
@@ -299,7 +298,7 @@ const PaymentPage = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-             url={salesUrl}
+              url={salesUrl}
             />
           </div>
         </div>

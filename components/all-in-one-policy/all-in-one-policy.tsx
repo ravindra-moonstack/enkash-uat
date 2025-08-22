@@ -88,9 +88,8 @@ const AllInOnePolicy: React.FC<AllInOnePolicyProps> = ({
 
       {/* Image Block */}
       <div
-        className={`col-md-4 col-12 d-flex justify-content-end ${
-          reverse ? "order-md-1" : "order-md-2"
-        } ${styles.third_container}`}
+        className={`col-md-4 col-12 d-flex justify-content-end ${reverse ? "order-md-1" : "order-md-2"
+          } ${styles.third_container}`}
       >
         <Image
           src={image}

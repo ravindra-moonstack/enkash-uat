@@ -33,17 +33,9 @@ import saved from "./img/saved.svg"
 import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
-  autoCollect,
-  instant,
-  invoices,
   notificationImage,
-  paymentButton,
-  paymentGatewayImg,
-  paymentLink,
   paymentLinkImage,
   paymentOptionImage,
-  qrCodes,
-  reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
@@ -421,65 +413,6 @@ const allInOnePolicies = [
   },
 ]
 
-const managementCards = [
-  {
-    titleHtml: "Payment Gateway",
-    description:
-      "No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction.",
-    cardImage: paymentGatewayImg,
-    linkUrl: "/payment-gateway",
-  },
-  {
-    titleHtml: "Payment Links",
-    description:
-      "Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links.",
-    cardImage: paymentLink,
-    linkUrl: "/payment-links",
-  },
-  {
-    titleHtml: "Payment Button",
-    description:
-      "Add a pre-designed payment button to your website with a simple plug-and-play integration.",
-    cardImage: paymentButton,
-    linkUrl: "/payment-button",
-  },
-  {
-    titleHtml: "QR Codes",
-    description:
-      "Enable secure, contactless payments using QR codes, empowering businesses to process transactions instantly.",
-    cardImage: qrCodes,
-    linkUrl: "/qr-code",
-  },
-  {
-    titleHtml: "Auto Collect",
-    description:
-      "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
-    cardImage: autoCollect,
-    linkUrl: "/auto-collect",
-  },
-  {
-    titleHtml: "UPI Payments",
-    description:
-      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
-    cardImage: invoices,
-    linkUrl: "/upi-payments",
-  },
-  {
-    titleHtml: "Instant Settlement",
-    description:
-      "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
-    cardImage: instant,
-    linkUrl: "/instant-settlement",
-  },
-  {
-    titleHtml: "Reminder Engine",
-    description:
-      "Remove manual reminders and easily automate your business collections for a more seamless cash flow.",
-    cardImage: reminder,
-    linkUrl: "/collection-reminder",
-  },
-]
-
 export {
   blogData,
   dataSets,
@@ -493,5 +426,4 @@ export {
   supportData,
   savingData,
   allInOnePolicies,
-  managementCards,
 }

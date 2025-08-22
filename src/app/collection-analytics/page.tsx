@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicies, cardsData, managementCards } from "./data"
+import { allInOnePolicies, cardsData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -8,7 +8,6 @@ import {
   CustomBreadcrumb,
   PolicyCard,
   RectangleButton,
-  ManagementCard,
   AllInOnePolicy,
   FaqSection,
 } from "@/components"
@@ -267,9 +266,8 @@ const CollectionAnalytics = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -379,45 +377,6 @@ const CollectionAnalytics = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
-
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title}  text-center pb-4 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Check out our ",
-                  color: "color-black",
-                },
-                {
-                  title: "other payment products",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: " at EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4">
-            {managementCards.map(
-              ({ titleHtml, description, cardImage, linkUrl }, index) => (
-                <div key={index} className="col-12 col-md-4">
-                  <ManagementCard
-                    titleHtml={titleHtml}
-                    description={description}
-                    cardImage={cardImage}
-                    linkUrl={linkUrl}
-                  />
-                </div>
-              )
-            )}
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

@@ -1,3 +1,5 @@
+import { blueArrow } from "@/components/all-in-one-policy"
+import { coBrandImage, GalaxyTabImage, Purchasecard } from "."
 import imaCard from "./img/containerScreen.webp"
 import ItemIcon from "./img/itemIcon.svg"
 
@@ -116,6 +118,50 @@ const BankSolutionHeading = {
     headingTag: "h2",
     className: "f-6 mb-3 mb-md-3",
 }
+const productsData = [
+    {
+        id: 1,
+        title: "Corporate Expense Cards",
+        description:
+            "Give your teams the freedom to spend with the control you need.",
+        image: coBrandImage.src,
+        alt: "Corporate Expense Cards",
+        button: {
+            connectUrl: "/products/corporate-cards",
+            connectText: "Explore Cards",
+            blueArrow: blueArrow.src,
+        },
+        align: "flex-start",
+    },
+    {
+        id: 2,
+        title: "Gift/Reward Cards",
+        description:
+            "Brand your gift cards, load them as per your defined budget, and gift them to employees.",
+        image: GalaxyTabImage.src,
+        alt: "Gift/Reward Cards",
+        button: {
+            connectUrl: "/products/corporate-cards",
+            connectText: "Explore Cards",
+            blueArrow: blueArrow.src,
+        },
+        align: "flex-start",
+    },
+    {
+        id: 3,
+        title: "Marketplace/Vendor Cards ",
+        description: "Keep your users coming back with a card they’ll love to use.",
+        image: Purchasecard.src,
+        alt: "Marketplace/Vendor Cards",
+        button: {
+            connectUrl: "/products/corporate-cards",
+            connectText: "Explore Cards",
+            blueArrow: blueArrow.src,
+        },
+        align: "flex-start",
+    },
+]
+
 export {
     dataSets,
     imaCard,
@@ -123,5 +169,6 @@ export {
     slideData,
     headingData,
     stepsData,
-    BankSolutionHeading
+    BankSolutionHeading,
+    productsData
 } 
