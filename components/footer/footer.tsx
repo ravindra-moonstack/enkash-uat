@@ -48,12 +48,12 @@ const FooterV2 = () => {
                     insights across the payment ecosystem.
                   </p>
                   <p className={styles.logo_container_info}>
-                    EnKash** Payment Gateway, is a licensed online payment
+                    EnKash Payment Gateway, is a licensed online payment
                     aggregator authorised by the RBI
                   </p>
                   <p className={styles.logo_container_info}>
-                    **EnKash is a commercial trade name owned by the legal
-                    entity, Nehat Tech Solutions Pvt. Ltd.
+                    EnKash is a commercial trade name owned by the legal entity,
+                    Nehat Tech Solutions Pvt. Ltd.
                   </p>
                 </div>
               </div>
@@ -172,11 +172,25 @@ const FooterV2 = () => {
                         className={`d-flex justify-content-between pt-3 ${styles.social_icons_row}`}
                       >
                         <Link
-                          href="https://www.facebook.com/Enkashbusiness"
+                          href="https://www.linkedin.com/company/enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
                         >
-                          <FaFacebookF />
+                          <FaLinkedinIn />
+                        </Link>
+                        <Link
+                          href="https://www.youtube.com/@enkashbusiness"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <FaYoutube />
+                        </Link>
+                        <Link
+                          href="https://www.instagram.com/Enkashbusiness"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <FaInstagram />
                         </Link>
                         <Link
                           href="https://twitter.com/EnkashBusiness"
@@ -198,25 +212,11 @@ const FooterV2 = () => {
                           <FaXTwitter />
                         </Link>
                         <Link
-                          href="https://www.linkedin.com/company/enkashbusiness"
+                          href="https://www.facebook.com/Enkashbusiness"
                           target="_blank"
                           rel="noreferrer noopener"
                         >
-                          <FaLinkedinIn />
-                        </Link>
-                        <Link
-                          href="https://www.instagram.com/Enkashbusiness"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          <FaInstagram />
-                        </Link>
-                        <Link
-                          href="https://www.youtube.com/@enkashbusiness"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          <FaYoutube />
+                          <FaFacebookF />
                         </Link>
                       </div>
                     </div>
@@ -302,25 +302,18 @@ const FooterV2 = () => {
                           className={`d-flex justify-content-between py-3 ${styles.social_icons_row}`}
                         >
                           <Link
-                            href="https://www.facebook.com/Enkashbusiness"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                          >
-                            <FaFacebookF />
-                          </Link>
-                          <Link
-                            href="https://twitter.com/EnkashBusiness"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                          >
-                            <FaXTwitter />
-                          </Link>
-                          <Link
                             href="https://www.linkedin.com/company/enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
                           >
                             <FaLinkedinIn />
+                          </Link>
+                          <Link
+                            href="https://www.youtube.com/@enkashbusiness"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            <FaYoutube />
                           </Link>
                           <Link
                             href="https://www.instagram.com/Enkashbusiness"
@@ -330,11 +323,30 @@ const FooterV2 = () => {
                             <FaInstagram />
                           </Link>
                           <Link
-                            href="https://www.youtube.com/@enkashbusiness"
+                            href="https://twitter.com/EnkashBusiness"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            style={{
+                              width: "28px",
+                              height: "28px",
+                              padding: "0",
+                              fontSize: "16px",
+                              borderRadius: "6px",
+                              background: "black",
+                              display: "flex",
+                              color: "#fff",
+                              alignItems: "center",
+                              justifyContent: "center",
+                            }}
+                          >
+                            <FaXTwitter />
+                          </Link>
+                          <Link
+                            href="https://www.facebook.com/Enkashbusiness"
                             target="_blank"
                             rel="noreferrer noopener"
                           >
-                            <FaYoutube />
+                            <FaFacebookF />
                           </Link>
                         </div>
                       </div>
@@ -542,10 +554,6 @@ const FooterV2 = () => {
                       </li>
 
                       <li>
-                        <Link href="/payout/">Payout</Link>
-                      </li>
-
-                      <li>
                         <Link href="/vendor-management/">
                           Vendor Management
                         </Link>
@@ -592,57 +600,21 @@ const FooterV2 = () => {
                     </ul>
                   </div>
                   <div className="mt-3">
-                    <Link href="https://docs.enkash.com/" target="_blank">
-                      <h4 className={`col-12 ${styles.title}`}>Developer</h4>
+                    <Link href="/products/rewards">
+                      <h4 className={`col-12 ${styles.title}`}>Rewards</h4>
                     </Link>
                     <ul>
                       <li>
-                        <a
-                          href="https://docs.enkash.com/payment-gateway"
-                          target="_blank"
-                        >
-                          Payment Gateway
-                        </a>
+                        <Link href="/employee-rewards/">Employee Rewards</Link>
                       </li>
                       <li>
-                        <a
-                          href="https://docs.enkash.com/corporate-cards"
-                          target="_blank"
-                        >
-                          Corporate Cards
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://docs.enkash.com/expense-management"
-                          target="_blank"
-                        >
-                          Expense Management
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://docs.enkash.com/employee-rewards"
-                          target="_blank"
-                        >
-                          Employee Rewards
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          href="https://docs.enkash.com/channel-incentives"
-                          target="_blank"
-                        >
+                        <Link href="/channel-incentives/">
                           Channel Incentives
-                        </a>
+                        </Link>
                       </li>
+
                       <li>
-                        <a
-                          href="https://docs.enkash.com/vouchers"
-                          target="_blank"
-                        >
-                          Vouchers
-                        </a>
+                        <Link href="/offers/">Offers</Link>
                       </li>
                     </ul>
                   </div>
@@ -688,21 +660,48 @@ const FooterV2 = () => {
                     </ul>
                   </div>
                   <div className="mt-3">
-                    <Link href="/products/rewards">
-                      <h4 className={`col-12 ${styles.title}`}>Rewards</h4>
+                    <Link href="https://docs.enkash.com/" target="_blank">
+                      <h4 className={`col-12 ${styles.title}`}>Developer</h4>
                     </Link>
                     <ul>
                       <li>
-                        <Link href="/employee-rewards/">Employee Rewards</Link>
+                        <a
+                          href="https://docs.enkash.com/payment-gateway"
+                          target="_blank"
+                        >
+                          Payment Gateway
+                        </a>
                       </li>
                       <li>
-                        <Link href="/channel-incentives/">
+                        <a
+                          href="https://docs.enkash.com/corporate-cards"
+                          target="_blank"
+                        >
+                          Corporate Cards
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://docs.enkash.com/expense-management"
+                          target="_blank"
+                        >
+                          Expense Management
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://docs.enkash.com/" target="_blank">
+                          Employee Rewards
+                        </a>
+                      </li>
+                      <li>
+                        <a href="https://docs.enkash.com/" target="_blank">
                           Channel Incentives
-                        </Link>
+                        </a>
                       </li>
-
                       <li>
-                        <Link href="/offers/">Offers</Link>
+                        <a href="https://docs.enkash.com/" target="_blank">
+                          Vouchers
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -717,7 +716,7 @@ const FooterV2 = () => {
                     <li>
                       <Link
                         target="_blank"
-                        href="https://www.enkash.com/resources/"
+                        href="www.enkash.com/resources/blogs"
                       >
                         Blogs
                       </Link>
@@ -725,7 +724,7 @@ const FooterV2 = () => {
                     <li>
                       <Link
                         target="_blank"
-                        href="https://www.enkash.com/resources/case-studies/"
+                        href="https://www.enkash.com/resources/customer-stories/"
                       >
                         Case Studies
                       </Link>
@@ -734,7 +733,7 @@ const FooterV2 = () => {
                     <li>
                       <Link
                         target="_blank"
-                        href="https://www.enkash.com/resources/videos/"
+                        href="www.enkash.com/resources/videos"
                       >
                         Videos
                       </Link>
@@ -743,19 +742,19 @@ const FooterV2 = () => {
                 </div>
                 <div className="mt-3">
                   <div className={styles.freedom_card_box}>
-                    <Link href="/company">
-                      <h4 className={`${styles.title}`}>Company</h4>
-                    </Link>
+                    <h4 className={`${styles.title}`}>Company</h4>
                   </div>
                   <ul>
                     <li>
-                      <Link href="/about-us">About Us</Link>
+                      <Link href="/about">About Us</Link>
                     </li>
                     <li>
                       <Link href="/careers">Careers</Link>
                     </li>
                     <li>
-                      <Link href="/media-coverage">Media Coverage</Link>
+                      <Link href="https://www.enkash.com/resources/media-coverage/">
+                        Media Coverage
+                      </Link>
                     </li>
                     <li>
                       <Link href="/contact-us">Contact Us</Link>
@@ -768,35 +767,46 @@ const FooterV2 = () => {
                   </ul>
                 </div>
                 <div className="mt-3">
-                  <Link href="/policies-and-compliance">
-                    <h4 className={`col-12 ${styles.title} text-wrap`}>
-                      Policies and Compliance
-                    </h4>
-                  </Link>
+                  <h4 className={`col-12 ${styles.title} text-wrap`}>
+                    Policies and Compliance
+                  </h4>
+
                   <ul>
                     <li>
-                      <Link href="/payments">Payments</Link>
+                      <Link href="/policies/grievance-policy">
+                        Grievance & Redressal{" "}
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/prepaid-program">Prepaid Program</Link>
+                      <Link href="/policies/merchant-onboarding">
+                        Merchant Onboarding{" "}
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/platform">Platform</Link>
+                      <Link href="/policies/customer-onboarding">
+                        Customer Onboarding
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/policies/tnc">Terms and Conditions</Link>
+                    </li>
+                    <li>
+                      <Link href="/policies/privacy-policy">
+                        Privacy Policy
+                      </Link>
                     </li>
                   </ul>
                 </div>
                 <div className="mt-3">
                   <div className={styles.freedom_card_box}>
-                    <Link href="/parthnership">
-                      <h4 className={`${styles.title}`}>Parthnership</h4>
-                    </Link>
+                    <h4 className={`${styles.title}`}>Parthnership</h4>
                   </div>
                   <ul>
                     <li>
-                      <Link href="/for-banks">For Banks</Link>
+                      <Link href="/bank-partnerships">For Banks</Link>
                     </li>
                     <li>
-                      <Link href="/affiliate-program">Affiliate Program</Link>
+                      <Link href="/affiliate-programs">Affiliate Program</Link>
                     </li>
                   </ul>
                 </div>

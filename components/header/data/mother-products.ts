@@ -180,7 +180,7 @@ export const motherProducts = [
             description: "Never miss the rent deadline",
             imageSrc: rentalPayments,
             imageSrcHovered: rentalPaymentsFilled,
-            link: "/rental-payment",
+            link: "/rent-payment",
           },
           {
             name: "Payroll Processing",

@@ -45,11 +45,6 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
             </div>
           </div>
         </div>
-        {/* <PrimaryButton
-          title="Log In"
-          theme="blue"
-          url="https://home.enkash.com/login"
-        /> */}
       </div>
 
       <div
@@ -69,7 +64,12 @@ const Hamburger = ({ currentStep, setCurrentStep }: HamburgerProps) => {
             </Link>
           </div>
           <div>
-            <Image src={crossMenu} alt="Close menu icon" onClick={resetState} />
+            <Image
+              src={crossMenu}
+              alt="Close menu icon"
+              onClick={resetState}
+              width={20}
+            />
           </div>
         </div>
       </div>
