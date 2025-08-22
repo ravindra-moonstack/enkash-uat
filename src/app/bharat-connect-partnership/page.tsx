@@ -47,7 +47,7 @@ const partnershipsPage = (): React.JSX.Element => {
         mainHeading={[
           {
             title: "Partnerships - Bharat Connect ",
-            color: "color-white underline",
+            color: "underline",
           },
         ]}
         subHeading={[
