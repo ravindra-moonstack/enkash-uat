@@ -57,6 +57,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon1,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
+    url: '/e-commerce-vouchers'
   },
   {
     titleHtml: "Food & Beverages ",
@@ -66,6 +67,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon2,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
+    url: '/food-and-beverages-vouchers'
   },
 
   {
@@ -76,6 +78,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon3,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
+    url: '/health-and-wellness-vouchers'
   },
   {
     titleHtml: "Music & Movies ",
@@ -85,6 +88,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon4,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
+    url: '/movie-and-music-vouchers'
   },
   {
     titleHtml: "Apparel ",
@@ -94,6 +98,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon5,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
+    url: '/apparels-vouchers'
   },
 ]
 const adidasData = [
@@ -168,7 +173,7 @@ const scrollCardsData = [
     title: "Digital Petty Cash",
     description:
       "Track and manage small-ticket expenses across branches in real time.",
-    url: "/digital-petty-cash",
+    url: "/petty-cash",
     icon: "",
     hoverClass: "scrollCardHover"
   },
@@ -200,7 +205,7 @@ const scrollCardsData = [
     title: "Spend Analytics",
     description:
       "Get deep insights into spends with smart, real-time analytics.",
-    url: "/#",
+    url: "/expense-analytics-and-insights",
     icon: "",
     hoverClass: "scrollCardHover"
   },
@@ -212,7 +217,7 @@ const makePaymentData = [
     subtitle:
       "Automate and manage all business utility bills from one unified dashboard.",
     womanImg: makePayment1,
-    url: "/utility-bill-payments",
+    url: "/utility-bill-payment",
     hoverClass: "hoverMakePayment1",
   },
   {
@@ -220,7 +225,7 @@ const makePaymentData = [
     subtitle:
       "Pay suppliers and vendors on time with complete visibility and control.",
     womanImg: makePayment2,
-    url: "/vendor-payments",
+    url: "/vendor-payment",
     hoverClass: "hoverMakePayment2",
   },
   {
@@ -228,7 +233,7 @@ const makePaymentData = [
     subtitle:
       "Schedule recurring rent and lease payments with auto-reminders and logs.",
     womanImg: makePayment3,
-    url: "/rental-payments",
+    url: "/rent-payment",
     hoverClass: "hoverMakePayment3",
   },
   {
@@ -236,7 +241,7 @@ const makePaymentData = [
     subtitle:
       "Send high-volume payouts with role-based, multi-level approval flows.",
     womanImg: makePayment4,
-    url: "/bulk-payments",
+    url: "/bulk-pay",
     hoverClass: "hoverMakePayment4",
   },
 ]
@@ -369,7 +374,7 @@ const ReceivablesData = [
     title: "Collection Reminders",
     subtitle:
       "Automated, timely nudges via email, SMS, or WhatsApp – so you never miss a payment follow-up.",
-    url: "/collection-reminders",
+    url: "/collection-reminder",
     bottomIcon: receivableBottomIcon,
   },
   {
@@ -403,7 +408,7 @@ const prepaidCardsData = [
   {
     title: "Self Card Management",
     subtitle: "Create, assign, and manage cards in minutes - fully self-serve.",
-    url: "/self-card-management",
+    url: "/diy-card-module",
     topIcon: prepaidTop4,
   },
 ]

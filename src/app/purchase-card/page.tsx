@@ -237,9 +237,7 @@ const PurchesCards = (): React.JSX.Element => {
         </div>
       </div>
 
-      <div>
-        <FaqSection faqData={faqData} />
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

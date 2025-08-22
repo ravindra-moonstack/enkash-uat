@@ -38,6 +38,19 @@ import {
   reminder,
   paymentGateway,
 } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+
+export const metadata: Metadata = generateMetaData({
+  title: "Account Payable Analytics: Gain Real-Time Insights on Payables",
+  description:
+    "Track, analyze, and optimize your accounts payable with EnKash Payable Analytics. Improve cash flow planning, spot delays, and make informed financial decisions.",
+  alternates: {
+    canonical: "https://www.enkash.com/payable-analytics/",
+  },
+})
+const salesUrl = getSalesUrl("/payable-analytics")
 
 const PayableAnalytics = (): React.JSX.Element => {
   return (
@@ -119,14 +132,14 @@ const PayableAnalytics = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                     <div>
                       <RectangleButton
                         title="API Doc"
                         theme="outline-blue"
-                        url="/sales/?source=expense_management"
+                        url="https://docs.enkash.com"
                       />
                     </div>
                   </div>
@@ -271,7 +284,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 maxHeight="400px"
                 buttonTitle="Get Started"
                 buttonTheme="outline-blue"
-                buttonUrl="/sales/?source=receivables"
+                buttonUrl={salesUrl}
               />
             </div>
             <div className="col-md-6 col-12">
@@ -312,7 +325,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                   title="Seamless Data Access"
                   description="Easily connect or import data from files, product databases, and external sources—so you can analyze everything in one place without the hassle."
                   image={paymentLinkImage}
-                  buttonUrl="/sales"
+                  buttonUrl={salesUrl}
                   maxImageHeight="243px"
                 />
 
@@ -321,7 +334,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                   title="Secure Data Sharing"
                   description="Access and share data confidently with the right stakeholders while keeping your security and privacy fully intact."
                   image={shareImage}
-                  buttonUrl="/sales"
+                  buttonUrl={salesUrl}
                   maxImageHeight="305px"
                   reverse
                 />
@@ -331,7 +344,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                   title="Visualize Data with Ease"
                   description="Get actionable insights through interactive, easy-to-understand visual reports that make data analysis both intuitive and impactful."
                   image={paymentOptionImage}
-                  buttonUrl="/sales"
+                  buttonUrl={salesUrl}
                   maxImageHeight="243px"
                 />
 
@@ -340,7 +353,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                   title="Predict with AI Power"
                   description="Leverage AI to forecast trends, run smart analyses, and set intelligent alerts so you can make proactive, data-driven decisions for your business."
                   image={notificationImage}
-                  buttonUrl="/sales"
+                  buttonUrl={salesUrl}
                   maxImageHeight="259px"
                   reverse
                 />
@@ -370,7 +383,7 @@ const PayableAnalytics = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
@@ -405,6 +418,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 titleHtml="Payment Gateway"
                 description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
                 cardImage={paymentGateway}
+                linkUrl="/payment-gateway"
               />
             </div>
 
@@ -413,6 +427,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 titleHtml="Payment Links"
                 description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
                 cardImage={paymentLink}
+                linkUrl="/payment-links"
               />
             </div>
 
@@ -421,6 +436,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 titleHtml="Payment Button"
                 description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
                 cardImage={paymentButton}
+                linkUrl="/payment-button"
               />
             </div>
 
@@ -429,6 +445,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 titleHtml="QR Codes"
                 description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
                 cardImage={qrCodes}
+                linkUrl="/qr-code"
               />
             </div>
 
@@ -437,6 +454,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 titleHtml="Auto Collect"
                 description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
                 cardImage={autoCollect}
+                linkUrl="/auto-collect"
               />
             </div>
 
@@ -445,6 +463,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 titleHtml="Invoices"
                 description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
                 cardImage={invoices}
+                linkUrl="/digital-invoicing"
               />
             </div>
 
@@ -453,6 +472,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 titleHtml="Instant Settlement"
                 description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
                 cardImage={instant}
+                linkUrl="/instant-settlement"
               />
             </div>
 
@@ -461,6 +481,7 @@ const PayableAnalytics = (): React.JSX.Element => {
                 titleHtml="Reminder Engine"
                 description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
                 cardImage={reminder}
+                linkUrl="/collection-reminder"
               />
             </div>
           </div>

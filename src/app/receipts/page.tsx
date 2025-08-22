@@ -1,10 +1,13 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
-import { cardData, expenseManagementData, stepCards } from "./data"
+import {
+  cardData,
+  expenseManagementData,
+  stackcardData,
+  stepCards,
+} from "./data"
 import faqData from "./faq-data"
 import {
-  FAQHtml,
   DynamicHeading,
   LogoSlider,
   CustomBreadcrumb,
@@ -12,111 +15,41 @@ import {
   AllInOnePolicy,
   ManagementCard,
   EasyStepCard,
-  CardStacking
-
+  CardStacking,
+  FaqSection,
 } from "@/components"
-import {
-  blueArrow,
-  groupIcon,
-  paymentSummary,
-  whiteArrow,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  stackCardThreeImg,
-  stackCardThreeIcon,
-  fastenUpOr,
-} from "."
+import { blueArrow, groupIcon, paymentSummary, whiteArrow, fastenUpOr } from "."
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
 
-
-
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={realTimeExpenseIcon}
-          title="OCR Technology"
-          description="Automatically scan and collect details from digital receipts using OCR, eliminating the need for manual entry."
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
+export const metadata: Metadata = generateMetaData({
+  title: "Scan and Drop Receipts for Faster Employee Expense Creation",
+  description:
+    "Generate and manage digital receipts for every business transaction with EnKash. Automate collections, track payment status, and improve cash flow visibility.",
+  alternates: {
+    canonical: "https://www.enkash.com/receipts/",
   },
-  {
-    color: "#eee",
+})
+const salesUrl = getSalesUrl("/receipts")
+const cards = stackcardData.map(
+  ({ color, icon, title, description, image }) => ({
+    color,
     content: (
-      <>
-        <AllInOnePolicy
-          icon={fraudProtectionIcon}
-          title="WhatsApp Integration"
-          description="Make it easy for employees to submit receipts on the go using WhatsApp."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
+      <AllInOnePolicy
+        icon={icon}
+        title={title}
+        description={description}
+        image={image}
+        buttonUrl={salesUrl}
+        maxImageHeight="300px"
+      />
     ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={stackCardThreeIcon}
-          title="Drop Receipts"
-          description="Streamline record-keeping by dropping receipts at your convenience."
-          image={stackCardThreeImg}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={streamlinedReimbursementIcon}
-          title="Link Receipts to Expenses"
-          description="Easily link your dropped electronic receipts to expenses anytime."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={costControlSavingsIcon}
-          title="Download Receipts in One Click"
-          description="Gain overall control over the business expense reimbursement process by downloading all receipts in just one click"
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+  })
+)
 const Receipts = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
- 
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -197,7 +130,7 @@ const Receipts = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -329,24 +262,19 @@ const Receipts = (): React.JSX.Element => {
             </button>
           </div>
           <>
-            <div className={`${styles.title} text-center  mb-4 mb-md-5`}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Scan Receipts & Get ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "Reimbursed On the Go!",
-                    color: "color-equity-blue",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Scan Receipts & Get ",
+                  color: "color-black",
+                },
+                {
+                  title: "Reimbursed On the Go!",
+                  color: "color-equity-blue",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -371,78 +299,13 @@ const Receipts = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">

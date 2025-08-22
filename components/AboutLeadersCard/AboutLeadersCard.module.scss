@@ -1,6 +1,8 @@
 @use "./../../styles/mixin" as *;
 
 .leaderCardSection {
+  max-width: 1100px;
+  margin: auto;
   .cards {
     padding: 20px;
     background: #d9d9d9;
@@ -9,7 +11,7 @@
     cursor: pointer;
     .cardImage {
       background: #ededed;
-      height: 350px;
+      height: 300px;
       display: flex;
       align-items: end;
       img {
@@ -37,12 +39,14 @@
 
 .leaderPopupOuter {
   position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: #fff;
+  top: 50%;
+  left: 50%;
+  z-index: 9999999;
+  transform: translate(-50% , -50%);
   display: flex;
+  max-width: 1200px;
+  width: 100%;
+  height: max-content;
   justify-content: center;
   align-items: center;
   z-index: 999;

@@ -36,15 +36,15 @@ const LocationCard = ({
               content={[
                 {
                   title: String(titleHtml),
-                  color: "color-white",
+                  color: "color-white subHeading",
                 },
                 {
                   title: title2,
-                  color: "color-dark-grey italic",
+                  color: "color-dark-grey italic  subHeading",
                 },
               ]}
-              headingTag="h5"
-              className="f-5 min-height-80"
+              headingTag="p"
+              className="f-5 min-height-80 mb-0"
             />
           </div>
         </div>
