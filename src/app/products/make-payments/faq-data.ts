@@ -1,5 +1,14 @@
 const faqData = [
   {
+    question: "What are make payments in B2B payments?",
+    answer: [
+      {
+        heading:
+          `In B2B, "Make Payments" means a business initiating a payment to another business for goods or services through methods like bank transfers, UPI, cards, or virtual accounts. It’s a crucial step in accounts payable and often includes approvals, invoice matching, and scheduling.`,
+      },
+    ],
+  },
+  {
     question: "How does the rental/vendor payment flow work?",
     answer: [
       {

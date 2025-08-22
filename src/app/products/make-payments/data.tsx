@@ -48,33 +48,33 @@ const allProductSections = [
       {
         title: "Cost Reduction ",
 
-        description: "Reduce manual effort, payment delays & leakages",
+        description: "Reduce manual effort, payment delays & leakages.",
         image: crouselIconOne,
       },
       {
         title: " Faster Processing ",
 
-        description: "Automate workflows and eliminate bottlenecks",
+        description: "Automate workflows and eliminate bottlenecks.",
         image: crouselIconTwo,
       },
 
       {
         title: "Spend Visibility  ",
 
-        description: "Get a complete view of payables, anytime",
+        description: "Get a complete view of payables, anytime.",
         image: crouselIconThree,
       },
 
       {
         title: "Risk Control ",
 
-        description: "Reduce fraud, errors & non-compliant payments",
+        description: "Reduce fraud, errors & non-compliant payments.",
         image: crouselIconFour,
       },
       {
         title: "Better Relationships  ",
 
-        description: "Make timely payouts to improve vendor relationships",
+        description: "Make timely payouts to improve vendor relationships.",
         image: crouselIconFive,
       },
     ],
