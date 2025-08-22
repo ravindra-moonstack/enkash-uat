@@ -25,7 +25,7 @@ import {
 const cardsData = [
   {
     title: "Sign Up and Upload",
-    description: "Create your account and add invoices ",
+    description: "Create your account and add invoices.",
     icon: scrollIconOne,
   },
   {
@@ -142,4 +142,4 @@ const allInOnePolicyData = [
 ];
 
 
-export { cardsData, allProductSections , allInOnePolicyData}
+export { cardsData, allProductSections, allInOnePolicyData }

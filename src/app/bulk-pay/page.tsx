@@ -78,7 +78,7 @@ const BulkPay = (): React.JSX.Element => {
                   <DynamicHeading
                     content={[
                       {
-                        title: "Simplify Bulk Payouts with EnKash Bulk Pay",
+                        title: "Simplify Bulk Payments with EnKash Bulk Pay",
                         color: "color-black",
                       },
                     ]}
@@ -92,7 +92,7 @@ const BulkPay = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Streamline your business payouts with EnKash’s Express Pay. Automate payments, save time, and gain control over your cash flow.",
+                          "Streamline your business disbursements with EnKash’s Express Pay. Automate payments, save time, and gain control over your cash flow.",
                         color: "color-black subHeading",
                       },
                     ]}
@@ -115,13 +115,6 @@ const BulkPay = (): React.JSX.Element => {
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -158,7 +151,7 @@ const BulkPay = (): React.JSX.Element => {
                   color: "color-equity-blue",
                 },
                 {
-                  title: "for Bulk Payouts",
+                  title: "for Bulk Payments",
                   color: "color-black",
                 },
               ]}
@@ -235,7 +228,7 @@ const BulkPay = (): React.JSX.Element => {
                   color: "color-equity-blue",
                 },
                 {
-                  title: " with EnKash Solution",
+                  title: " with EnKash Solutions",
                   color: "color-black",
                 },
               ]}
@@ -259,7 +252,7 @@ const BulkPay = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-               url={salesUrl}
+              url={salesUrl}
             />
           </div>
         </div>

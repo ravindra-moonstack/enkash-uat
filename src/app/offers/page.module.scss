@@ -10,13 +10,16 @@
 
   padding: 90px 20px 0px 20px;
   background-image: url(/images/rewardsBg.webp);
+
   @include for-laptops {
 
     padding: 112px 20px 0px;
   }
+
   .group_logo {
     width: 250px;
     height: auto;
+
     @include for-laptops {
       width: 366px;
       height: 62px;
@@ -33,10 +36,12 @@
       max-height: 500px;
     }
   }
+
   .right_img {
     Img {
       height: auto;
       padding-top: 32px;
+
       @include for-laptops {
         height: 625px;
         padding-top: 0px;
@@ -53,6 +58,7 @@
 
   .first_row_title {
     padding-top: 16px;
+
     @include for-laptops {
       padding-top: 48px;
       padding-bottom: 20px;
@@ -74,18 +80,22 @@
   background: linear-gradient(180deg, #1c5af4 0%, #61d6ff 77%, #18187f 100%);
   position: relative;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
+
   .section {
     margin: auto;
     gap: 10px;
     justify-content: center;
     // flex-wrap: wrap;
     width: 100%;
+
     @include for-laptops {
       width: initial;
     }
+
     .card {
       width: calc(100% / 3 - 4px);
       max-width: 100%;
@@ -100,13 +110,16 @@
         padding-top: 5px;
         padding-bottom: 5px;
         margin: auto;
+
         @include for-laptops {
           padding-top: 20px;
           padding-bottom: 20px;
         }
+
         img {
           height: 22px;
           width: 22px;
+
           @include for-laptops {
             height: 51px;
             width: 51px;
@@ -130,6 +143,7 @@
         width: 180px;
       }
     }
+
     @include for-laptops {
       gap: 65px;
       flex-wrap: wrap;
@@ -137,9 +151,11 @@
   }
 
   .inner-content {
-    background: white; /* inner background */
+    background: white;
+    /* inner background */
     padding: 11px 14px;
-    border-radius: 10px; /* slightly smaller radius */
+    border-radius: 10px;
+    /* slightly smaller radius */
   }
 }
 
@@ -155,9 +171,11 @@
   .section {
     margin-bottom: 50px;
   }
+
   .scrollCard {
     margin-left: 10px;
     margin-bottom: 20px;
+
     @include for-laptops {
       margin-left: 20px;
       margin-bottom: 50px;
@@ -182,9 +200,11 @@
       }
     }
   }
-  img{
+
+  img {
     width: 100%;
     height: auto;
+
     @include for-laptops {
       width: 100%;
       height: 100%;
@@ -207,18 +227,22 @@
 
 .fourth_row {
   padding: 36px 30px;
+
   @include for-laptops {
     padding: 0px 90px 0px 90px;
   }
+
   @include for-window-zoomed-screens {
     padding-left: 150px;
     padding-right: 150px;
   }
+
   .section {
     gap: 32px;
     padding: 20px 10px;
 
     background-color: $color-sky-hint;
+
     @include for-laptops {
       gap: 70px;
       padding: 70px 0px;
@@ -228,14 +252,17 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+
       @include for-laptops {
         padding: 53px 88px 0px 88px;
         gap: 70px;
       }
     }
+
     .title {
       padding: 0 20px;
     }
+
     @include for-laptops {
       padding: 0 50px 16px;
     }
@@ -247,13 +274,16 @@
   border-radius: 12px;
   position: relative;
   padding: 36px 20px;
+
   @include for-laptops {
     padding: 58px;
   }
+
   .get_started_button {
     padding: 6px;
     border: 2px solid $color-bolt-green;
     border-radius: 12px;
+
     @include for-laptops {
       padding: 11px 14px;
     }
@@ -264,6 +294,7 @@
   position: relative;
   text-align: center;
   padding: 50px 20px 50px;
+
   @include for-laptops {
     padding: 90px 20px 90px;
   }
@@ -300,6 +331,7 @@
 
   position: relative;
   padding: 36px;
+
   @include for-laptops {
     padding-top: 60px;
     padding-bottom: 60px;
@@ -314,6 +346,7 @@
   display: flex;
   text-align: center;
   padding: 50px 20px;
+
   @include for-laptops {
     padding: 90px 20px;
   }
@@ -323,6 +356,7 @@
       position: absolute;
       bottom: 0;
       display: none;
+
       @include for-laptops {
         display: flex;
       }
@@ -331,11 +365,13 @@
 
   .faqData {
     width: 100%;
+
     @include for-laptops {
       width: 70%;
     }
   }
 }
+
 .eigth_row {
   background-color: #f1f1f1;
   position: relative;
@@ -345,7 +381,7 @@
   padding: 50px 20px;
 
   @include for-laptops {
-   padding: 90px 20px 0;
+    padding: 90px 20px 0;
   }
 
   .faq_bg {
@@ -354,8 +390,10 @@
       height: auto;
     }
   }
+
   .secondFaq {
     padding-bottom: 0px;
+
     @include for-laptops {
       padding-bottom: 172px;
     }
@@ -369,6 +407,7 @@
   .section {
     padding: 50px 20px 0px;
     background: #f6f6f6;
+
     @include for-laptops {
       padding: 90px 0px 50px;
     }

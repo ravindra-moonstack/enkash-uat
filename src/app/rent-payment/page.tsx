@@ -93,7 +93,7 @@ const RantPayment = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient",
+                          "Say goodbye to delays and manual effort. EnKash accelerates rent payments, ensuring they are fast, secure, and convenient.",
                         color: "color-black subHeading",
                       },
                     ]}
@@ -116,13 +116,6 @@ const RantPayment = (): React.JSX.Element => {
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -159,7 +152,7 @@ const RantPayment = (): React.JSX.Element => {
                   color: "color-black",
                 },
                 {
-                  title: "Rent Payments",
+                  title: "Rent Payments ",
                   color: "color-equity-blue",
                 },
                 {
