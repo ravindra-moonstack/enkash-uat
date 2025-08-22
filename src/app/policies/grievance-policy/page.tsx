@@ -1,15 +1,47 @@
-"use client"
-import React, { useState } from "react"
+import { payment, prepaid, platform } from "."
+import { DynamicHeading, TabPoliciesWrapper } from "@/components"
+import React from "react"
 import styles from "./page.module.scss"
-import { payment, platform, prepaid } from "."
-import PoliciesCard from "@/components/policies-card/policies-card"
-import { DynamicHeading } from "@/components"
-
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+export const metadata: Metadata = generateMetaData({
+  title: "Grievance and Redressal Policy: EnKash",
+  description:
+    "Learn how EnKash addresses complaints with a fair, timely, and transparent resolution process.",
+  alternates: {
+    canonical: "https://www.enkash.com/policies/grievance-policy",
+  },
+})
 const tabs = [{ key: "payments" }, { key: "prepaid" }, { key: "platform" }]
 
-const Page = () => {
-  const [activeTab, setActiveTab] = useState<string | null>(null)
+const cards = [
+  {
+    key: "payments",
+    description:
+      "Quickly resolve payment issues with our clear, compliant grievance process.",
+    titleHtml: "Payments",
+    cardImage: payment,
+    buttonUrl: "/policies/payments/grievance-policy",
+  },
+  {
+    key: "prepaid",
+    description:
+      "Resolve prepaid card disputes promptly with our transparent escalation process.",
+    titleHtml: "Prepaid Program",
+    cardImage: prepaid,
+    buttonUrl: "/policies/prepaid-program/grievance-policy",
+  },
+  {
+    key: "platform",
+    description:
+      "Address platform concerns swiftly through our structured grievance resolution system.",
+    titleHtml: "Platform",
+    cardImage: platform,
+    buttonUrl: "/policies/platform/grievance-policy",
+  },
+]
 
+const GrievancePolicy = () => {
   return (
     <div className={styles.policy}>
       <div className="max-w-auto">
@@ -22,70 +54,16 @@ const Page = () => {
                   color: "color-equity-blue",
                 },
               ]}
-              headingTag="h5"
+              headingTag="h4"
               className="f-5 text-center"
             />
           </div>
-          <div className="row">
-            {tabs.map((tab) => (
-              <div key={tab.key} className="col-md-4 col-12">
-                <div
-                  className={`${styles.tab} ${
-                    activeTab === tab.key ? styles.activeTab : ""
-                  }`}
-                />
-              </div>
-            ))}
-          </div>
 
-          {/* CARDS */}
-          <div className={`${styles.cardList} row`}>
-            <div className="col-md-4 col-12">
-              <div
-                onMouseEnter={() => setActiveTab("payments")}
-                onMouseLeave={() => setActiveTab(null)}
-              >
-                <PoliciesCard
-                  description="Quickly resolve payment issues with our clear, compliant grievance process."
-                  titleHtml="Payments"
-                  cardImage={payment}
-                  buttonUrl="/policies/payments/grievance-policy"
-                />
-              </div>
-            </div>
-
-            <div className="col-md-4 col-12">
-              <div
-                onMouseEnter={() => setActiveTab("prepaid")}
-                onMouseLeave={() => setActiveTab(null)}
-              >
-                <PoliciesCard
-                  description="Resolve prepaid card disputes promptly with our transparent escalation process."
-                  titleHtml="Prepaid Program"
-                  cardImage={prepaid}
-                  buttonUrl="/policies/prepaid-program/grievance-policy"
-                />
-              </div>
-            </div>
-
-            <div className="col-md-4 col-12">
-              <div
-                onMouseEnter={() => setActiveTab("platform")}
-                onMouseLeave={() => setActiveTab(null)}
-              >
-                <PoliciesCard
-                  description="Address platform concerns swiftly through our structured grievance resolution system."
-                  titleHtml="Platform"
-                  cardImage={platform}
-                  buttonUrl="/policies/platform/grievance-policy"
-                />
-              </div>
-            </div>
-          </div>
+          <TabPoliciesWrapper tabs={tabs} cards={cards} />
         </div>
       </div>
     </div>
   )
 }
 
-export default Page
+export default GrievancePolicy

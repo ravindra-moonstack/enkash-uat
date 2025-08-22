@@ -34,7 +34,7 @@ export const cardsProducts = [
             imageSrcHovered: mealCardFilled,
             link: "/meal-card",
           },
-       
+
           {
             name: "Fuel Cards",
             description: "Track and limit fuel spends",
@@ -42,7 +42,7 @@ export const cardsProducts = [
             imageSrcHovered: fuelCardFilled,
             link: "/fuel-card",
           },
-        
+
           {
             name: "Digital Marketing Cards",
             description: "Budgeted ads, zero overspending",
@@ -77,7 +77,6 @@ export const cardsProducts = [
     name: "Credit Cards",
     subtitle: " Corporate Cards",
     description: "Flexible credit card solutions",
-  link: "",
     payableProducts: [
       {
         subtitle: "Default",

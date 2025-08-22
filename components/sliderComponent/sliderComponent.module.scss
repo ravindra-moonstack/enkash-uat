@@ -23,20 +23,31 @@
       height: auto;
     }
   }
-:global(.slick-dots) {
-  display: block;
-  z-index: 999;
-  bottom: 243px;
-  position: relative !important;
-}
+  :global(.slick-dots) {
+    display: block;
+    z-index: 999;
+    bottom: 243px;
+    position: relative !important;
+  }
 
-:global(.slick-dots li button:before) {
-width: 23px;
+  :global(.slick-dots li button:before) {
+    width: 23px;
     height: 4px;
     color: white;
     background-color: white;
-    content: '-';
-}}
+    content: "-";
+  }
+  :global(.slick-dots li .slick-active) {
+    width: 23px;
+    height: 6px;
+    color: white;
+    background-color: white;
+    content: "-";
+  }
+  :global(.slick-slide) {
+    margin: 0 !important;
+  }
+}
 .voucherSlider {
   padding: 112px 20px 50px;
   position: relative;

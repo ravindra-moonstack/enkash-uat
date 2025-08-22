@@ -131,6 +131,10 @@ const BpHeroSection = dynamic(
   () => import("./BpHeroSection/index"),
   { ssr: true }
 )
+const TabPoliciesWrapper = dynamic(
+  () => import("./tabPoliciesWrapper/tabPoliciesWrapper"),
+    { ssr: true }
+)
 const ourProductsSection = dynamic(
   () => import("./ourProductsSection/index"),
   { ssr: true }
@@ -176,5 +180,6 @@ export {
   BecomePartnerSteps,
   PartnerShipForm,
   BpHeroSection,
+  TabPoliciesWrapper,
   ourProductsSection
 }

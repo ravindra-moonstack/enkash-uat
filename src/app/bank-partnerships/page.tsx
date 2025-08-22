@@ -1,5 +1,4 @@
-
-import React from 'react'
+import React from "react"
 import styles from "./page.module.scss"
 import BankSolutions from '@/components/partnerships/BankSolutions'
 import { BankSolutionHeading, bankSolutions, headingData, slideData, stepsData } from './data'
@@ -11,10 +10,53 @@ import PartnerShipForm from '@/components/partnerShip-form'
 import { BecomePartnerSteps, BpHeroSection } from '@/components'
 import { containerScreen, participantBg } from '.'
 import { blueArrow } from '@/components/all-in-one-policy'
-
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
+export const metadata: Metadata = generateMetaData({
+  title: "Partner with Us: Bank Partnerships",
+  description:
+    "Collaborate with EnKash to offer innovative payment, card, and spend management solutions. Partner with us to enhance customer experience and drive digital banking growth.",
+  alternates: {
+    canonical: "https://www.enkash.com/bank-partnerships/",
+  },
+})
 const partnershipsPage = (): React.JSX.Element => {
-    return (
-        <div className={`color-white  `}>
+  return (
+    <div className={`color-white  `}>
+      <BpHeroSection
+        backgroundImage={containerScreen.src}
+        breadcrumbs={{
+          items: [
+            { name: "Home", url: "/" },
+            { name: "Partnerships", url: "/partnerships" },
+            { name: "Partnership Program - Banks", url: "/bank-partnerships" },
+          ],
+        }}
+        mainHeading={[
+          {
+            title: "Partnership Program - for Banks",
+            color: "color-black underline",
+          },
+        ]}
+        subHeading={[
+          { title: "", color: "color-black f-3 d-block" },
+          {
+            title: "Empower your customers with seamless banking solutions",
+            color: "color-black",
+          },
+        ]}
+        button={{
+          title: "Become a Partner",
+          theme: "blue",
+          url: "",
+        }}
+      />
+      <div className={`${styles.boxContainer}`}>
+        <BankSolutions
+          solutions={bankSolutions}
+          heading={BankSolutionHeading}
+        />
+      </div>
 
             <BpHeroSection
                 backgroundImage={containerScreen.src}
