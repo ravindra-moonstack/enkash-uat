@@ -277,21 +277,21 @@ a {
 }
 
 .slick-list {
-  margin-left: -15px;
-  /* Adjust as needed */
-  margin-right: -15px;
-  /* Adjust as needed */
+  margin-left: 0px;
+  margin-right: 0px;
+
 }
 
 .slick-slide {
-  margin-left: 15px;
-  /* Adjust as needed */
-  margin-right: 15px;
-  /* Adjust as needed */
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 
 .careerBannerOuterGlobal .slick-slide,.career-testimonial-slider .slick-slide{
+  margin: 0 !important;
+}
+.testimonial_wrapper .slick-slide,.career-testimonial-slider .slick-slide{
   margin: 0 !important;
 }
 

@@ -2,7 +2,7 @@
 @use "/styles/mixin" as *;
 
 
-.banking_wrapper{
+.testimonial_wrapper{
 
   .custom_slider {
 
@@ -12,6 +12,11 @@
 
   .slide_item{
     margin: 0 -10px; 
+  }
+  :global {
+  .slick-slider {
+    margin: 0 !important;
+  }
   }
 }
 :global {
