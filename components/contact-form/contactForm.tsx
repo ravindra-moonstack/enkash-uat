@@ -6,6 +6,19 @@ import styles from "./contactForm.module.scss"
 import { DynamicHeading } from "@/components"
 import Link from "next/link"
 import MultiSelect from "../multiSelect/multiSelect"
+const contactOptions = [
+  {
+    value: "payment_collection",
+    label: "Looking for Payment Collection Solution",
+  },
+  { value: "make_payments", label: "Looking for a solution to make Payments" },
+  { value: "expense_management", label: "Looking for Expense Management" },
+  { value: "corporate_jobs", label: "Looking for Corporate Jobs" },
+  { value: "job_opportunities", label: "Exploring Job Opportunities" },
+  { value: "customer_support", label: "Need Customer Support" },
+  { value: "partnership", label: "Interested In Partnership Opportunities" },
+  { value: "marketing_team", label: "Want to Connect to Marketing Team" },
+]
 const ContactForm: React.FC = () => {
   useEffect(() => {
     if (
@@ -81,7 +94,11 @@ const ContactForm: React.FC = () => {
             />
           </div>
 
-          <MultiSelect name="MultipleChoice" />
+          <MultiSelect
+            name="contactReasons"
+            options={contactOptions}
+            placeholder="How can we help you?*"
+          />
 
           <textarea
             name="MultiLine"

@@ -4,7 +4,7 @@ const resourseProducts = [
   {
     name: "Resources",
     description: "Flexible prepaid card solutions",
-    link: "/cards",
+ link: "",
     subProducts: [
       {
         subtitle: "Default",
@@ -46,7 +46,7 @@ const resourseProducts = [
   {
     name: "For Developers",
     description: "Flexible prepaid card solutions",
-    link: "/solutions",
+
     payableProducts: [
       {
         subtitle: "Default",
