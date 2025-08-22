@@ -36,15 +36,10 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
     arrows: false,
     dots: true,
     pauseOnHover: true,
+
     responsive: [
       {
-        breakpoint: 1200, // below 1200px
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 768, // below 768px
+        breakpoint: 1200,
         settings: {
           slidesToShow: 1,
         },

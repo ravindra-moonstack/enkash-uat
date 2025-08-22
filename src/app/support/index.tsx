@@ -1,4 +1,4 @@
-export { default as logo } from "./img/logo.webp"
+export { default as logo } from "./img/logo.svg"
 export { default as help } from "./img/helpLogo.svg"
 export { default as support } from "./img/supportLogo.svg"
 export { default as login } from "./img/loginLogo.svg"

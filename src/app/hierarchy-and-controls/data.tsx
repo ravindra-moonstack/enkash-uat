@@ -3,11 +3,28 @@ import integrationIcon from "./img/integration.svg"
 import approvedIcon from "./img/approved.svg"
 import advance from "./img/advanced.webp"
 import policyApproval from "./img/policy-approval.webp"
-import herarchy from "./img/herarchy.webp"
 import insight from "./img/insights.webp"
 import scanAndDrops from "./img/scan-and-drops.webp"
 import reimbursements from "./img/reimbursement.webp"
-import { stepCardImgOne, stepCardImgThree, stepCardImgTwo } from "."
+import {
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
+  realTimeExpense,
+  realTimeExpenseIcon,
+  stackCardsixIicon,
+  stackCardsixImg,
+  stackCardThreeIcon,
+  stackCardThreeImg,
+  stepCardImgOne,
+  stepCardImgThree,
+  stepCardImgTwo,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
+  wideAcceptanceNetwork,
+  wideAcceptanceNetworkIcon,
+} from "."
 
 const cardData = [
   {
@@ -60,36 +77,110 @@ const expenseManagementData = [
     description:
       "Get advances cleared as per the defined expense budget to get going without any hindrance.",
     cardImage: advance,
+    linkUrl: "/budget-and-advances",
   },
   {
     whiteTitle: "Reimbursements",
     description:
       "Businesses repay the amount to employees or partners for expenses incurred on their behalf.",
     cardImage: reimbursements,
+    linkUrl: "/reimbursements",
   },
   {
     whiteTitle: "Scan & Drop Receipts",
     description:
       "Scan and upload expense receipts digitally for quick and efficient reimbursement.",
     cardImage: scanAndDrops,
+    linkUrl: "/receipts",
   },
-  {
-    whiteTitle: "Hierarchy and Control",
-    description: "Define hierarchies for better control and transparency.",
-    cardImage: herarchy,
-  },
+
   {
     whiteTitle: "Insights",
     description:
       "Make use of deep, data-driven understandings for informed decision-making.",
     cardImage: insight,
+    linkUrl: "/expense-analytics-and-insights",
   },
   {
     whiteTitle: "Policy and Approval Flow",
     description:
       "A set of guidelines or rules that outline the procedures for seeking and granting official authorization for expenses. ",
     cardImage: policyApproval,
+    linkUrl: "/approval-flows",
   },
 ]
 
-export { cardData, expenseManagementData, stepCards }
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Easy Configuration",
+    description:
+      "Seamlessly integrating software like Zoho, Tally, SAP, and Oracle Netsuite with EnKash eliminates the need for manual data entry.",
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Define Custom Roles",
+    description:
+      "Assign specific permissions and accessibility to multiple hierarchies based on their department structure.",
+    image: fraudProtection,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: stackCardThreeIcon,
+    title: "Efficient Decision Making",
+    description:
+      "The system provides real-time insights into the expense pattern for businesses to identify areas that can be managed better.",
+    image: stackCardThreeImg,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Better Resource Management",
+    description:
+      "The AI and ML-powered technology allows setting automated rules for expense tracking, approval, and categorization, helping reduce the burden on managers and accounting teams.",
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Scalability",
+    description:
+      "As your organization grows, add new departments and define new employee roles without any hassle.",
+    image: costControlSavings,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: wideAcceptanceNetworkIcon,
+    title: "Reduces Financial Risks",
+    description:
+      "Multiple individuals can be involved in the expense approval system. This ensures that expenses are verified multiple times and that there is no inaccuracy, duplication, or fraud.",
+    image: wideAcceptanceNetwork,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+  {
+    color: "#eee",
+    icon: stackCardsixIicon,
+    title: "Compliance Management",
+    description:
+      "The built-in compliance management tool enables enterprises to track and define automatic alerts in case of policy violations.",
+    image: stackCardsixImg,
+    buttonUrl: "/sales",
+    maxImageHeight: "300px",
+  },
+]
+
+export { cardData, expenseManagementData, stepCards, stackcardData }

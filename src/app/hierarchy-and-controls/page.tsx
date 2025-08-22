@@ -1,161 +1,57 @@
 import Image from "next/image"
-import Link from "next/link"
 import styles from "./page.module.scss"
-import { cardData, expenseManagementData, stepCards } from "./data"
+import {
+  cardData,
+  expenseManagementData,
+  stackcardData,
+  stepCards,
+} from "./data"
 import faqData from "./faq-data"
 import {
-  Header,
-  FAQHtml,
-  Footer,
   DynamicHeading,
-  TalkToSales,
   LogoSlider,
   CustomBreadcrumb,
   RectangleButton,
   AllInOnePolicy,
   ManagementCard,
   EasyStepCard,
-  CardStacking
-
+  CardStacking,
+  FaqSection,
 } from "@/components"
-import {
-  blueArrow,
-  groupIcon,
-  paymentSummary,
-  whiteArrow,
-  realTimeExpenseIcon,
-  realTimeExpense,
-  fraudProtectionIcon,
-  fraudProtection,
-  streamlinedReimbursementIcon,
-  streamlinedReimbursement,
-  costControlSavingsIcon,
-  costControlSavings,
-  wideAcceptanceNetworkIcon,
-  wideAcceptanceNetwork,
-  stackCardThreeImg,
-  stackCardThreeIcon,
-  stackCardsixImg,
-  stackCardsixIicon,
-} from "."
+import { blueArrow, groupIcon, paymentSummary, whiteArrow } from "."
+import { getSalesUrl } from "@/common/utils/getSalesUrl"
+import generateMetaData from "@/common/utils/metaData"
+import { Metadata } from "next"
 
+export const metadata: Metadata = generateMetaData({
+  title: "Hierarchy & Controls: Streamline Spend Permissions",
+  description:
+    "Define roles, set spending limits, and establish approval workflows with EnKash. Ensure policy compliance and full control over business expenses across teams.",
+  alternates: {
+    canonical: "https://www.enkash.com/hierarchy-and-controls/",
+  },
+})
+const salesUrl = getSalesUrl("/hierarchy-and-controls")
 
-
-const cards = [
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={realTimeExpenseIcon}
-          title="Easy Configuration"
-          description="Seamlessly integrating software like Zoho, Tally, SAP, and Oracle Netsuite with EnKash eliminates the need for manual data entry."
-          image={realTimeExpense}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={fraudProtectionIcon}
-          title="Define Custom Roles"
-          description="Assign specific permissions and accessibility to multiple hierarchies based on their department structure."
-          image={fraudProtection}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={stackCardThreeIcon}
-          title="Efficient Decision Making"
-          description="The system provides real-time insights into the expense pattern for businesses to identify areas that can be managed better. "
-          image={stackCardThreeImg}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#fff",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={streamlinedReimbursementIcon}
-          title="Better Resource Management"
-          description="The AI and ML-powered technology allows setting automated rules for expense tracking, approval, and categorization, helping reduce the burden on managers and accounting teams."
-          image={streamlinedReimbursement}
-          buttonUrl="/sales/?source=expense_management"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={costControlSavingsIcon}
-          title="Scalability "
-          description="As your organization grows, add new departments and define new employee roles without any hassle."
-          image={costControlSavings}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={wideAcceptanceNetworkIcon}
-          title="Reduces Financial Risks "
-          description="Multiple individuals can be involved in the expense approval system. This ensures that expenses are verified multiple times and that there is no inaccuracy, duplication, or fraud."
-          image={wideAcceptanceNetwork}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-  {
-    color: "#eee",
-    content: (
-      <>
-        <AllInOnePolicy
-          icon={stackCardsixIicon}
-          title="Compliance Management "
-          description="The built-in compliance management tool enables enterprises to track and define automatic alerts in case of policy violations."
-          image={stackCardsixImg}
-          buttonUrl="/sales"
-          maxImageHeight="300px"
-        />
-      </>
-    ),
-  },
-]
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 
 const HierarchyAndControl = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
-      <Header utmSource="expense_management" />
-
-      <TalkToSales />
-
       <div className={`${styles.first_row} `}>
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
@@ -236,7 +132,7 @@ const HierarchyAndControl = (): React.JSX.Element => {
                       <RectangleButton
                         title="Get Started  "
                         theme="blue"
-                        url="/sales/?source=expense_management"
+                        url={salesUrl}
                       />
                     </div>
                   </div>
@@ -306,14 +202,6 @@ const HierarchyAndControl = (): React.JSX.Element => {
 
       <div className={styles.third_row}>
         <div className={`relative max-w-auto`}>
-          {/* <div className="text-center">
-            <RectangleButton
-              title={"Three Easy Steps"}
-              url="/sales/"
-              theme="outline-blue-small"
-            />
-          </div> */}
-
           <div className={`${styles.title} text-center pb-4 pb-md-5`}>
             <DynamicHeading
               content={[
@@ -340,24 +228,19 @@ const HierarchyAndControl = (): React.JSX.Element => {
       <div className={styles.card_stacking_row}>
         <div className={` max-w-auto  ${styles.section}`}>
           <>
-            <div className={`${styles.title} text-center `}>
-              <DynamicHeading
-                content={[
-                  {
-                    title: "Achieve quicker resolutions with enhanced ",
-                    color: "color-black",
-                  },
-                  {
-                    title: "transparency and control",
-                    color: "color-equity-blue",
-                  },
-                ]}
-                headingTag="h2"
-                className="f-6"
-              />
-            </div>
-
-            <CardStacking cards={cards} />
+            <CardStacking
+              cards={cards}
+              heading={[
+                {
+                  title: "Achieve quicker resolutions with enhanced ",
+                  color: "color-black",
+                },
+                {
+                  title: "transparency and control",
+                  color: "color-equity-blue",
+                },
+              ]}
+            />
           </>
         </div>
       </div>
@@ -382,78 +265,13 @@ const HierarchyAndControl = (): React.JSX.Element => {
               theme="outline-blue"
               actionImage={blueArrow}
               hoverImage={whiteArrow}
-              url="/sales/"
+              url={salesUrl}
             />
           </div>
         </div>
       </div>
 
-      <div className={`${styles.faq_new_row}  relative`}>
-        <div className={`${styles.faqSection} text-start max-w-auto `}>
-          <div className={`${styles.title} text-start  pb-md-5 pb-2`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Frequently Asked Questions (",
-                  color: "color-black",
-                },
-                {
-                  title: "FAQs",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: ")",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h3"
-              className="f-5"
-            />
-          </div>
-          <div className="d-flex flex-column flex-md-row justify-content-between">
-            <div className="mb-4">
-              <div>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "Have more questions?",
-                      color: "color-dark-grey subHeading",
-                    },
-                  ]}
-                  headingTag="p"
-                  className="mb-0"
-                />
-              </div>
-              <div className="mt-2 d-none d-md-block">
-                <div className="connectWithUs">
-                  <Link href="/contact-us">
-                    <DynamicHeading
-                      content={[
-                        {
-                          title: "Connect with us",
-                          color: "color-equity-blue ",
-                        },
-                      ]}
-                      headingTag="p"
-                      className="mb-0 f-5"
-                    />
-                    <Image
-                      src={blueArrow}
-                      alt="blue Arrow"
-                      width={15}
-                      height={15}
-                      className="ms-2"
-                    />
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <div className={`${styles.faqData}`}>
-              <FAQHtml faqData={faqData} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <FaqSection faqData={faqData} />
 
       <div className={styles.other_products}>
         <div className="max-w-auto">
@@ -485,14 +303,13 @@ const HierarchyAndControl = (): React.JSX.Element => {
                   description={card.description}
                   cardImage={card.cardImage}
                   theme="dark"
+                  linkUrl={card.linkUrl}
                 />
               </div>
             ))}
           </div>
         </div>
       </div>
-
-      <Footer />
     </div>
   )
 }
