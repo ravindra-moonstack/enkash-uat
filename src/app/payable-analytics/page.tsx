@@ -10,7 +10,6 @@ import {
   RectangleButton,
   AllInOnePolicy,
   ScrollableCardsSection,
-  ManagementCard,
   FaqSection,
 } from "@/components"
 import {
@@ -29,14 +28,6 @@ import {
   taskIconFour,
   realTimeIcon,
   activationIcon,
-  paymentLink,
-  paymentButton,
-  qrCodes,
-  autoCollect,
-  invoices,
-  instant,
-  reminder,
-  paymentGateway,
 } from "."
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import generateMetaData from "@/common/utils/metaData"
@@ -133,13 +124,6 @@ const PayableAnalytics = (): React.JSX.Element => {
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com"
                       />
                     </div>
                   </div>
@@ -389,104 +373,6 @@ const PayableAnalytics = (): React.JSX.Element => {
         </div>
       </div>
       <FaqSection faqData={faqData} />
-
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div className={`${styles.title} text-center  pb-4 pb-md-5`}>
-            <DynamicHeading
-              content={[
-                {
-                  title: "Check out our ",
-                  color: "color-black",
-                },
-                {
-                  title: "other payment products",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: " at EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
-          <div className="row g-3 pb-4 ">
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Gateway"
-                description="No-code solution to seamlessly collect payments across multiple channels, ensuring you never miss a transaction."
-                cardImage={paymentGateway}
-                linkUrl="/payment-gateway"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Links"
-                description="Effortlessly collect payments on WhatsApp, SMS, Facebook, Twitter, and more using no-code payment links."
-                cardImage={paymentLink}
-                linkUrl="/payment-links"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Payment Button"
-                description="Add a pre-designed payment button to your website with a simple plug-and-play integration."
-                cardImage={paymentButton}
-                linkUrl="/payment-button"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="QR Codes"
-                description="Enable secure, contactless payments with QR codes, allowing businesses to process instant transactions."
-                cardImage={qrCodes}
-                linkUrl="/qr-code"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Auto Collect"
-                description="Accept NEFT, RTGS, and IMPS transfers using on-demand customer identifiers with automated reconciliation at scale."
-                cardImage={autoCollect}
-                linkUrl="/auto-collect"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Invoices"
-                description="Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links."
-                cardImage={invoices}
-                linkUrl="/digital-invoicing"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Instant Settlement"
-                description="Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow."
-                cardImage={instant}
-                linkUrl="/instant-settlement"
-              />
-            </div>
-
-            <div className="col-12 col-md-4">
-              <ManagementCard
-                titleHtml="Reminder Engine"
-                description="Remove manual reminders and easily automate your business collections for a more seamless cash flow."
-                cardImage={reminder}
-                linkUrl="/collection-reminder"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

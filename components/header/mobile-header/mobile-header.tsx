@@ -48,6 +48,10 @@ const MobileHeader = ({ utmSource }: Props) => {
             title: "Make Payments",
             products: motherProducts[1].payableProducts || [],
           },
+          {
+            title: "Payable & Receivable+",
+            products: motherProducts[2].payableProducts || [],
+          },
         ]
       case 1:
         return [
@@ -70,8 +74,12 @@ const MobileHeader = ({ utmSource }: Props) => {
       case 3:
         return [
           {
-            title: "Loyalty Lounge",
+            title: "Brand Vouchers",
             products: loyaltyLoungeProducts[0].subProducts || [],
+          },
+          {
+            title: "Rewards System",
+            products: loyaltyLoungeProducts[1].subProducts || [],
           },
         ]
       case 4:
@@ -119,10 +127,8 @@ const MobileHeader = ({ utmSource }: Props) => {
                     <li
                       className="py-4 px-4"
                       onClick={() => {
-                        if (index !== 3) {
-                          setSelectedItemIndex(index)
-                          setCurrentStep(2)
-                        }
+                        setSelectedItemIndex(index)
+                        setCurrentStep(2)
                       }}
                     >
                       <div className={styles.title}>{item.name}</div>
@@ -136,13 +142,6 @@ const MobileHeader = ({ utmSource }: Props) => {
             <div
               className={`d-flex justify-content-center ${styles.buttons_container}`}
             >
-              <RectangleButton
-                title="Talk to Sales"
-                theme="blue"
-                url={`/sales/?source=nav-bar`}
-                width="100%"
-              />
-
               <RectangleButton
                 title="Log In"
                 theme="outline-blue"

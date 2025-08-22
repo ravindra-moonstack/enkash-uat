@@ -57,7 +57,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon1,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url:'/e-commerce-vouchers'
+    url: '/e-commerce-vouchers'
   },
   {
     titleHtml: "Food & Beverages ",
@@ -67,7 +67,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon2,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url:'/food-and-beverages-vouchers'
+    url: '/food-and-beverages-vouchers'
   },
 
   {
@@ -78,7 +78,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon3,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url:'/health-and-wellness-vouchers'
+    url: '/health-and-wellness-vouchers'
   },
   {
     titleHtml: "Music & Movies ",
@@ -88,7 +88,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon4,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url:'/movie-and-music-vouchers'
+    url: '/movie-and-music-vouchers'
   },
   {
     titleHtml: "Apparel ",
@@ -98,7 +98,7 @@ const HomePageRewardsVouchersSlide = [
     cardImage: rewardSliderIcon5,
     padding: "30px 20px",
     hoverClass: "HomePageRewardsVouchersCard",
-    url:'/apparels-vouchers'
+    url: '/apparels-vouchers'
   },
 ]
 const adidasData = [

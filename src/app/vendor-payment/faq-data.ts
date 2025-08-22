@@ -39,7 +39,7 @@ const faqData = [
       {
         bullets: [
           "Log in to EnKash with valid credentials and complete KYC",
-          "Go to Vendor Payments under Olympus and upload invoices",
+          "Go to Vendor Payments and upload invoice",
           "Add maker-checker approval workflow",
           "Select vendor invoices to be paid individually or in bulk with one click with the preferred payment mode",
         ],

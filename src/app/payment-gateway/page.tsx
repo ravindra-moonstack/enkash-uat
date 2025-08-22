@@ -771,40 +771,7 @@ const PaymentGateway = (): React.JSX.Element => {
 
       <FaqSection faqData={faqData} />
 
-      <div className={styles.other_products}>
-        <div className="max-w-auto">
-          <div
-            className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}
-          >
-            <DynamicHeading
-              content={[
-                {
-                  title: "Check out our ",
-                  color: "color-black",
-                },
-                {
-                  title: "other payment products",
-                  color: "color-equity-blue",
-                },
-                {
-                  title: " at EnKash",
-                  color: "color-black",
-                },
-              ]}
-              headingTag="h2"
-              className="f-6"
-            />
-          </div>
 
-          <div className="row g-3 pb-4">
-            {managementCardData.map((card, i) => (
-              <div className="col-12 col-md-4" key={i}>
-                <ManagementCard {...card} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
     </div>
   )
 }

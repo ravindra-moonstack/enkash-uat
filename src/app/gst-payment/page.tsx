@@ -112,13 +112,6 @@ const PayableAnalytics = (): React.JSX.Element => {
                         url={salesUrl}
                       />
                     </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>

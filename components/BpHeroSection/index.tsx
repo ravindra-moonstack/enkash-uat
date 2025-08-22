@@ -62,12 +62,12 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
                         />
                     </div>)}
                     <div className="row">
-                        <div className={`${styles.title} col-md-7 pt-md-4 pt-2 `}>
+                        <div className={`${styles.title} col-md-7 `}>
                             <div className="d-inline">
                                 <DynamicHeading
                                     content={mainHeading}
                                     headingTag="p"
-                                    className={`mb-3 mb-md-4`}
+                                    className={` color-equity-blue pt-2 pt-md-5 pb-md-4 mb-0`}
                                 />
                             </div>
 
@@ -75,7 +75,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
                                 <DynamicHeading
                                     content={subHeading}
                                     headingTag="h1"
-                                    className="mb-4 f-7"
+                                    className="mb-4 f-7 pt-3 pt-md-0"
                                 />
                             </div>
 

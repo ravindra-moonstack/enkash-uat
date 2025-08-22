@@ -2,6 +2,7 @@ import React from "react"
 import styles from "./page.module.scss"
 import BankSolutions from "@/components/partnerships/BankSolutions"
 import {
+  productsData,
   BankSolutionHeading,
   bankSolutions,
   headingData,
@@ -15,11 +16,8 @@ import faqData from "./faq-data"
 import PartnerShipForm from "@/components/partnerShip-form"
 import { BecomePartnerSteps, BpHeroSection } from "@/components"
 import {
-  coBrandImage,
   containerScreen,
-  GalaxyTabImage,
   participantBg,
-  Purchasecard,
 } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import ProductsSection from "@/components/ourProductsSection"
@@ -34,60 +32,7 @@ export const metadata: Metadata = generateMetaData({
   },
 })
 
-const BankSolutionSubHeading = {
-  content: [
-    {
-      title:
-        "If you are a startup owner, an influencer and an enterprise, or an employer, these co-branded products have been designed for you.",
-      color: "color-black f-2",
-    },
-  ],
-  headingTag: "h5",
-  className: "f-3 mb-4 mb-md-5",
-}
-const productsData = [
-  {
-    id: 1,
-    title: "Corporate Expense Cards",
-    description:
-      "Give your teams the freedom to spend with the control you need.",
-    image: coBrandImage.src,
-    alt: "Corporate Expense Cards",
-    button: {
-      connectUrl: "/products/corporate-cards",
-      connectText: "Explore Cards",
-      blueArrow: blueArrow.src,
-    },
-    align: "flex-start",
-  },
-  {
-    id: 2,
-    title: "Gift/Reward Cards",
-    description:
-      "Brand your gift cards, load them as per your defined budget, and gift them to employees.",
-    image: GalaxyTabImage.src,
-    alt: "Gift/Reward Cards",
-    button: {
-      connectUrl: "/products/corporate-cards",
-      connectText: "Explore Cards",
-      blueArrow: blueArrow.src,
-    },
-    align: "flex-start",
-  },
-  {
-    id: 3,
-    title: "Marketplace/Vendor Cards ",
-    description: "Keep your users coming back with a card they’ll love to use.",
-    image: Purchasecard.src,
-    alt: "Marketplace/Vendor Cards",
-    button: {
-      connectUrl: "/products/corporate-cards",
-      connectText: "Explore Cards",
-      blueArrow: blueArrow.src,
-    },
-    align: "flex-start",
-  },
-]
+
 const partnershipsPage = (): React.JSX.Element => {
   return (
     <div className={`color-white  `}>
@@ -102,7 +47,7 @@ const partnershipsPage = (): React.JSX.Element => {
           linkColor: "white",
         }}
         mainHeading={[
-          { title: "Co-branded Products", color: "color-white underline" },
+          { title: "Co-branded Products", color: " underline" },
         ]}
         subHeading={[
           {
@@ -120,7 +65,6 @@ const partnershipsPage = (): React.JSX.Element => {
         <BankSolutions
           solutions={bankSolutions}
           heading={BankSolutionHeading}
-          subheading={BankSolutionSubHeading}
           button={{
             connectText: "Become a Partner",
             connectUrl: "#partnership-form",
