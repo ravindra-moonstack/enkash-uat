@@ -36,7 +36,7 @@ import {
 import generateMetaData from "@/common/utils/metaData"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import { Metadata } from "next"
-import SplineWrapper from "@/components/SplineWrapper/spline-wrapper"
+
 
 export const metadata: Metadata = generateMetaData({
   title: "Best Payment Gateway in India for SMBs and Startups",
@@ -153,15 +153,6 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
         </div>
         <LogoSlider />
-      </div>
-
-      <div className={styles.third_row}>
-        <div className={`${styles.spline_container} `}>
-          <SplineWrapper
-            className={styles.spline_container}
-            scene="https://prod.spline.design/ljGW-FUjmmMBrg2W/scene.splinecode"
-          />
-        </div>
       </div>
 
       <div className={` ${styles.second_row} `}>
