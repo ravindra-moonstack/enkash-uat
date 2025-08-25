@@ -4,7 +4,7 @@ const resourseProducts = [
   {
     name: "Resources",
     description: "Flexible prepaid card solutions",
- link: "",
+    link: "https://www.enkash.com/resources/",
     subProducts: [
       {
         subtitle: "Default",
@@ -18,14 +18,14 @@ const resourseProducts = [
             name: "Blogs",
             description: "Trends, tips, and strategies",
             imageSrcHovered: blogsFilled,
-            link: "https://www.enkash.com/resources/",
+            link: "https://www.enkash.com/resources/blogs/",
           },
 
           {
             name: "Case Studies",
             description: "Real wins, proven impact",
             imageSrcHovered: casestudies,
-            link: "https://www.enkash.com/resources/media-coverage/",
+            link: "https://www.enkash.com/resources/customer-stories/",
           },
 
           {
@@ -46,7 +46,7 @@ const resourseProducts = [
   {
     name: "For Developers",
     description: "Flexible prepaid card solutions",
-
+    link: "https://docs.enkash.com/",
     payableProducts: [
       {
         subtitle: "Default",
@@ -58,30 +58,20 @@ const resourseProducts = [
         list: [
           {
             name: "Payment Gateway",
-            link: "/payment-gateway",
+            link: "https://docs.enkash.com/folder-1769236",
           },
           {
-            name: "Corporate Cards",
-            link: "/corporate-cards",
+            name: "Prepaid Card",
+            link: "https://docs.enkash.com/folder-1769242",
           },
           {
-            name: "Expense Managment",
-            link: "/expense-managment",
-          },
-
-          {
-            name: "Employee Rewards",
-            link: "/employee-rewards",
+            name: "Expense Management",
+            link: "https://docs.enkash.com/expense-management",
           },
 
           {
-            name: "Channel Incentives",
-            link: "/channel-incentives",
-          },
-
-          {
-            name: "Vouchers",
-            link: "/vouchers",
+            name: "Rewards",
+            link: "https://docs.enkash.com/doc-1039810",
           },
         ],
         footerText:

@@ -52,7 +52,7 @@ const testimonialData = [
     description:
       "In integrated marketing communications, agencies need to allocate budgets for different verticals. Through EnKash’s virtual cards, we were able to manage our budget allocation for various departments, streamline approvals seamlessly, and gain real-time visibility of all our department-wise expenses to our finance department.",
     name: "Noufel Anamala",
-    position: "Transformative LeaderNoufel Anamala",
+    position: "Transformative Leader",
     testimonialImg: testimonialImgFive,
   },
 ]
