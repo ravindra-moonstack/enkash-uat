@@ -21,7 +21,7 @@ import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
-import PaymentGatewayPartnershipForm from "@/components/Payment_Gateway_Partnerships_Form/paymentGatewayPartnershipForm"
+import BankAffiliatePartnershipForm from "@/components/Bank_and_Affiliate_Partnerships_Form/bankAffiliatePartnershipForm"
 
 export const metadata: Metadata = generateMetaData({
   title: " Join EnKash Bharat Connect Partnership Program",
@@ -122,7 +122,7 @@ const partnershipsPage = (): React.JSX.Element => {
             { id: 2, text: "Fast activation for your clients" },
             { id: 3, text: "Dedicated support for accelerated growth" },
           ]}
-          formComponent={<PaymentGatewayPartnershipForm />}
+          formComponent={<BankAffiliatePartnershipForm />}
         />
       </div>
     </div>
