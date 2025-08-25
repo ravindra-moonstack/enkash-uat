@@ -423,7 +423,7 @@ const FooterV2 = () => {
               </div>
             </div>
           </div>
-          <div className="w-100 order-1 order-md-2 ">
+          <div className="w-100 order-1 order-md-2 position-relative">
             <Link href="/" className={`${styles.logo_img} d-block d-md-none`}>
               <Image
                 src={enkashBlueLogo}
@@ -432,7 +432,7 @@ const FooterV2 = () => {
                 className="me-3 mb-3"
               />
             </Link>
-            <div className={`row gap-3 w-100 ${styles.light_bg}`}>
+            <div className={`row gap-3  ${styles.light_bg}`}>
               {/* 2nd col */}
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 <Link href="/products/collect-payments">
