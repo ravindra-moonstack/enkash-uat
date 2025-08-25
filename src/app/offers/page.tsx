@@ -21,6 +21,7 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
+  customizableIcon,
 } from "."
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import generateMetaData from "@/common/utils/metaData"
@@ -31,10 +32,10 @@ export const metadata: Metadata = generateMetaData({
   description:
     "Unlock exclusive EnKash offers on business payments, cards, rewards, and partner deals. Save more while you manage expenses smarter across all business needs.",
   alternates: {
-    canonical: "https://www.enkash.com/make-payments/",
+    canonical: "https://www.enkash.com/offers/",
   },
 })
-const salesUrl = getSalesUrl("/make-payments")
+const salesUrl = getSalesUrl("/offers")
 const mergedCards = cardType.flatMap((section) => section.items)
 const cards = stackcardData.map((item, index) => ({
   color: item.color,
@@ -133,13 +134,6 @@ const Offers = (): React.JSX.Element => {
                         url={salesUrl}
                       />
                     </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -166,7 +160,7 @@ const Offers = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Offers for Your Business",
+                  title: "Irresistible Offers for Your Business",
                   color: "color-white",
                 },
               ]}
@@ -176,26 +170,15 @@ const Offers = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={customizableIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -302,7 +285,7 @@ const Offers = (): React.JSX.Element => {
             cards={cards}
             heading={[
               {
-                title: "Exclusive  on partnered services ",
+                title: "Exclusive ",
                 color: "color-black",
               },
               {
@@ -356,7 +339,7 @@ const Offers = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "Unlock exclusive deals on a wide range of business products!",
+                    "Unlock Exclusive Deals On A Wide Range Of Business Products",
                   color: "color-white",
                 },
               ]}

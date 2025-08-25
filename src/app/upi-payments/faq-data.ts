@@ -105,6 +105,88 @@ export const faqData = [
       },
     ],
   },
+  {
+    question:
+      "Is there a separate integration required to accept UPI payments on EnKash Payment Gateway?",
+    answer: [
+      {
+        heading:
+          "No, EnKash’s UPI payment gateway is designed to integrate seamlessly with your existing systems. Whether you’re using a website or mobile app, EnKash provides easy-to-use APIs and SDKs that eliminate the need for complex integrations. You can start accepting UPI payments with minimal setup time and effort.",
+      },
+    ],
+  },
+  {
+    question:
+      "What are the different UPI checkout flows I can explore for my website/app?",
+    answer: [
+      {
+        heading:
+          "EnKash offers multiple UPI checkout flows to suit your business model:",
+      },
+      {
+        bullets: [
+          "UPI Intent Flow: Automatically redirects customers to their UPI app for easy payment approval.",
+          "UPI Payment Links: Embed links on your website or send them via email/SMS for quick payments.",
+          "UPI Dynamic QR Code: Generate a unique QR code for each transaction for quick and contactless payments.",
+          "UPI AutoPay: Set up recurring payments for subscription-based businesses to automate collections and improve customer retention.",
+        ],
+      },
+    ],
+  },
+  {
+    question:
+      "Are there any transaction fees associated with using UPI payments?",
+    answer: [
+      {
+        heading:
+          "UPI transactions are typically free or incur minimal charges, making it an economical payment solution for businesses.",
+      },
+      {
+        heading:
+          "EnKash helps you save on transaction fees compared to traditional payment methods, ensuring more of your revenue stays with your business.",
+      },
+    ],
+  },
+  {
+    question:
+      "What kind of support does EnKash provide for UPI payments?",
+    answer: [
+      {
+        heading:
+          "EnKash offers 24/7 customer support to assist you with any issues related to UPI payments. Whether you need help with integration, troubleshooting, or payment reconciliation, our expert team is available to ensure you have the best experience.",
+      },
+    ],
+  },
+  {
+    question:
+      "How to change UPI PIN?",
+    answer: [
+      {
+        heading:
+          "To change your UPI PIN, follow these steps:",
+      },
+      {
+        bullets: [
+          "Open the UPI-enabled app (like Google Pay, PhonePe, Paytm, BHIM, or your bank’s app).",
+          "Go to the UPI / Bank Account section.",
+          "Select the bank account for which you want to change the PIN.",
+          `Tap on Change UPI PIN (or "Reset UPI PIN" if you forgot it).`,
+          `Enter your existing UPI PIN (for change) or debit card details (for reset).`,
+          "Set a new UPI PIN and confirm it.",
+        ],
+      },
+    ],
+  },
+  {
+    question:
+      "What is VPA in UPI?",
+    answer: [
+      {
+        heading:
+          "VPA in UPI stands for Virtual Payment Address. It is a unique identifier that works like an email ID for your UPI transactions. Instead of sharing your bank account number and IFSC code, you can simply use a VPA to send or receive money.",
+      },
+    ],
+  },
 ]
 
 export default faqData
