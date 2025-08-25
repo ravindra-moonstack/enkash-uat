@@ -60,11 +60,7 @@ const Rewards = (): React.JSX.Element => {
             </div>
 
             <div className=" mt-3">
-              <RectangleButton
-                title="Talk to Sales"
-                theme="blue"
-                url={salesUrl}
-              />
+              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
         </div>

@@ -53,7 +53,7 @@ const UpiPayments = (): React.JSX.Element => {
                     { name: "Home", url: "/" },
                     {
                       name: "Collect Payments",
-                      url: "/produts/collect-payments",
+                      url: "/products/collect-payments",
                     },
                     {
                       name: "UPI Payments ",
@@ -80,7 +80,7 @@ const UpiPayments = (): React.JSX.Element => {
               <div
                 className={`text-center text-md-start ${styles.first_row_content}  `}
               >
-                <div className="d-inline    pt-3 pt-md-0">
+                <div className=" pt-3 pt-md-0">
                   <DynamicHeading
                     content={[
                       {
@@ -122,13 +122,6 @@ const UpiPayments = (): React.JSX.Element => {
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -207,7 +200,7 @@ const UpiPayments = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={activationIcon} alt="icon" />
+                <Image src={realTimeIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -229,7 +222,7 @@ const UpiPayments = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={realTimeIcon} alt="icon" />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -268,9 +261,8 @@ const UpiPayments = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -398,11 +390,11 @@ const UpiPayments = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
-                  title: "other payment products",
+                  title: "other collection products",
                   color: "color-equity-blue",
                 },
                 {

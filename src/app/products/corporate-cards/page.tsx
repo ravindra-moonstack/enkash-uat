@@ -34,7 +34,6 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import Spline from "@splinetool/react-spline"
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
@@ -57,9 +56,6 @@ const CorporateCards = (): React.JSX.Element => {
       <div id="smooth-wrapper">
         <div id="smooth-content">
           <div className={`${styles.first_row}`}>
-            <div className={`${styles.spline_background}`}>
-              <Spline scene="https://prod.spline.design/YeyN2NhsGe5UwlYK/scene.splinecode" />
-            </div>
             <div className="max-w-auto position-relative no-pointer ">
               <div className="d-flex">
                 <CustomBreadcrumb
@@ -267,9 +263,6 @@ const CorporateCards = (): React.JSX.Element => {
           </div>
 
           <div className={`${styles.action_row} bg-black-200 row-padding`}>
-            <div className={`${styles.spline_background}`}>
-              <Spline scene="https://prod.spline.design/NHBqMdtpnmCisTkz/scene.splinecode" />
-            </div>
             <div className="max-w-auto">
               <div className={`${styles.title} text-start pb-5`}>
                 <div className="flex-column  pb-3">

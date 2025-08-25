@@ -92,7 +92,7 @@ export const VOUCHER_DATA: Record<
     title: "E-commerce Vouchers",
     breadcrumbItems: [
       { name: "Home", url: "/" },
-      { name: "Vouchers", url: "/vouchers" },
+      { name: "Vouchers", url: "/products/vouchers" },
       { name: "E-commerce Vouchers", url: "/e-commerce-vouchers" },
     ],
     slides: [

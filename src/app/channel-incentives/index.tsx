@@ -27,6 +27,7 @@ export { default as secureImage } from "./img/secure-transition.webp"
 export { default as optimizedIcon } from "./img/website-requierd.webp"
 export { default as hundredPercentIcon } from "./img/100%.svg"
 export { default as activationIcon } from "./img/activation.svg"
+export { default as PayoutIcon } from "./img/Layer_1.svg"
 export { default as realTimeIcon } from "./img/real-time.svg"
 
 export { default as scrollIconOne } from "./img/scrollIconOne.svg"

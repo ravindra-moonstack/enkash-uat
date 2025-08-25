@@ -7,6 +7,7 @@ interface Props {
   options: { value: string; label: string }[]
   placeholder?: string
   otherPlaceholder?: string
+  onChange?: (val: string) => void
 }
 
 const CategoryWithOther: React.FC<Props> = ({
@@ -14,6 +15,7 @@ const CategoryWithOther: React.FC<Props> = ({
   options,
   placeholder = "Please select...",
   otherPlaceholder = "Please specify...",
+  onChange,
 }) => {
   const [open, setOpen] = useState(false)
   const [selected, setSelected] = useState("")
@@ -23,7 +25,16 @@ const CategoryWithOther: React.FC<Props> = ({
   const handleSelect = (value: string) => {
     setSelected(value)
     setOpen(false)
+    if (value !== "other") {
+      onChange?.(value) // notify parent
+    }
   }
+
+  useEffect(() => {
+    if (selected === "other") {
+      onChange?.(otherText) // notify parent when "Other" changes
+    }
+  }, [otherText, selected, onChange])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -40,7 +51,7 @@ const CategoryWithOther: React.FC<Props> = ({
 
   return (
     <div ref={wrapperRef} className={styles.wrapper}>
-      {/* Custom styled box like CategoryMultiSelect */}
+      {/* Custom styled box */}
       <div className={styles.inputBox} onClick={() => setOpen((prev) => !prev)}>
         <div className={styles.inputContent}>
           {selected ? (
@@ -54,8 +65,11 @@ const CategoryWithOther: React.FC<Props> = ({
                   e.stopPropagation()
                   setSelected("")
                   setOtherText("")
+                  onChange?.("") // reset
                 }}
-              ></button>
+              >
+                ✕
+              </button>
             </span>
           ) : (
             <span className={styles.placeholder}>{placeholder}</span>
@@ -76,6 +90,9 @@ const CategoryWithOther: React.FC<Props> = ({
               {opt.label}
             </div>
           ))}
+          <div className={styles.option} onClick={() => handleSelect("other")}>
+            Other
+          </div>
         </div>
       )}
 
@@ -91,7 +108,7 @@ const CategoryWithOther: React.FC<Props> = ({
         />
       )}
 
-      {/* Final hidden value (same as before) */}
+      {/* Hidden input for forms */}
       <input
         type="hidden"
         name={`${name}_value`}

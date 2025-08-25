@@ -28,7 +28,6 @@ const PartnershipModal = ({
                 prevHoveredProductIndex={prevHoveredProductIndex}
                 onLinkClick={onLinkClick}
                 motherProductName={mother.name}
-                parentLink={mother.link}
               />
             )
           })}

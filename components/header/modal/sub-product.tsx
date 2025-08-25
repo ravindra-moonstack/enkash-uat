@@ -55,9 +55,13 @@ const SubProduct = (props: any) => {
       {hasActiveGroup && (
         <>
           <div className={`mb-3 ${styles.motherProduct}`}>
-            <Link href={props.parentLink || "#"}>
+            {props.parentLink ? (
+              <Link href={props.parentLink}>
+                <h4 className="fw-bold mb-1">{motherProductName}</h4>
+              </Link>
+            ) : (
               <h4 className="fw-bold mb-1">{motherProductName}</h4>
-            </Link>
+            )}
           </div>
 
           <div className="d-flex flex-column">
@@ -222,11 +226,16 @@ const SubProduct = (props: any) => {
             "Payable & Receivable+",
             "Prepaid Cards",
             "Credit Cards",
+            "Partnership",
           ].includes(motherProductName) === false && (
             <div className={styles.exploreProduct}>
-              <Link href={props.parentLink || "#"}>
+              {props.parentLink ? (
+                <Link href={props.parentLink}>
+                  <h4 className="mb-1">Explore {motherProductName}</h4>
+                </Link>
+              ) : (
                 <h4 className="mb-1">Explore {motherProductName}</h4>
-              </Link>
+              )}
             </div>
           )}
         </>

@@ -196,11 +196,10 @@ const PaymentLinks = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
-                      title: "Payment Options",
+                      title: "Transaction Success Rate",
                       color: "color-white",
                     },
                   ]}
@@ -222,7 +221,7 @@ const PaymentLinks = (): React.JSX.Element => {
                 <DynamicHeading
                   content={[
                     {
-                      title: "Economical",
+                      title: "Instant Activation",
                       color: "color-white",
                     },
                   ]}
@@ -244,7 +243,7 @@ const PaymentLinks = (): React.JSX.Element => {
                 <DynamicHeading
                   content={[
                     {
-                      title: "Secure",
+                      title: "Real-time Monitoring",
                       color: "color-white",
                     },
                   ]}
@@ -278,9 +277,8 @@ const PaymentLinks = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -401,29 +399,28 @@ const PaymentLinks = (): React.JSX.Element => {
 
       <div className={`${styles.tab_row}  bg-white `}>
         <PaymentLinkTab
-          sectionHeading="Payment Link for All Organisation"
+          sectionHeading="Payment Link for All Merchants:"
           secondHeading="Accept Payments Anywhere, Anytime"
           progressData={[
             {
               itemArray: ["Invoicing and Billing"],
               title: "Invoicing and Billing",
-              subtitleOne: "Invoice Payments:",
+              subtitleOne: "Invoice Payments",
               descriptionOne:
-                " Businesses can embed payment links directly into invoices, making it easy for clients to pay outstanding balances with a single click.",
-              subtitleTwo: "Recurring Payments: ",
+                "Merchants can embed payment links directly into invoices, making it easy for clients to pay outstanding balances with a single click.",
+              subtitleTwo: "Recurring Payments ",
               descriptionTwo:
                 "Payment links are used to set up recurring payments for subscriptions, memberships, or other recurring services.",
-
               icon: invoiceIcon,
               bgImage: bg1,
             },
             {
               itemArray: ["Fee Collection"],
               title: "Fee Collection",
-              subtitleOne: "Schools and Educational Institutions:",
+              subtitleOne: "Schools and Educational Institutions",
               descriptionOne:
-                "Streamline tuition and other fee payments by sending unique payment links to students or parents",
-              subtitleTwo: "Professional Services:",
+                "Streamline tuition and other fee payments by sending unique payment links to students or parents.",
+              subtitleTwo: "Professional Services",
               descriptionTwo:
                 " Lawyers, accountants, and consultants can use payment links to collect retainers, invoices, or other professional fees.",
               icon: feeCancelIcon,
@@ -432,10 +429,10 @@ const PaymentLinks = (): React.JSX.Element => {
             {
               itemArray: ["Online Sales"],
               title: "Online Sales",
-              subtitleOne: "Direct Sales:",
+              subtitleOne: "Direct Sales",
               descriptionOne:
                 " Businesses can easily create and share payment links for individual products or services, enabling customers to purchase directly through a simple link.",
-              subtitleTwo: "Social Media Sales:",
+              subtitleTwo: "Social Media Sales",
               descriptionTwo:
                 "Payment links are ideal for businesses selling through platforms like Instagram or Facebook, where customers can easily click and pay without leaving the platform.",
               icon: onlinSellsIcon,
@@ -444,7 +441,7 @@ const PaymentLinks = (): React.JSX.Element => {
             {
               itemArray: ["Registration Fees"],
               title: "Registration Fees",
-              subtitleOne: "Event Tickets:",
+              subtitleOne: "Event Tickets",
               descriptionOne:
                 " Event organizers can use payment links to sell tickets online, providing a convenient and secure payment option.",
               subtitleTwo: "Workshop or Class Registration: ",
@@ -456,10 +453,10 @@ const PaymentLinks = (): React.JSX.Element => {
             {
               itemArray: ["Travel Bookings"],
               title: "Travel Bookings",
-              subtitleOne: "Travel Agents and Operators:",
+              subtitleOne: "Travel Agents and Operators",
               descriptionOne:
                 " Use payment links to collect deposits or full payments for travel packages, flights, accommodations, and other travel-related services. This streamlines the booking process and reduces administrative overhead.",
-              subtitleTwo: "Accommodation Providers:",
+              subtitleTwo: "Accommodation Providers",
               descriptionTwo:
                 "Hotels, hostels, and other accommodation providers can use payment links to collect booking deposits or full payments directly from guests. This can be integrated into booking confirmation emails or used for last-minute bookings.",
               icon: travelBookingIcon,
@@ -475,7 +472,7 @@ const PaymentLinks = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Ready to simplify your payments?",
+                  title: "Ready To Simplify Your Collections?",
                   color: "color-white",
                 },
               ]}
@@ -502,11 +499,11 @@ const PaymentLinks = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out other ",
                   color: "color-black",
                 },
                 {
-                  title: "other payment products",
+                  title: "collection products",
                   color: "color-equity-blue",
                 },
                 {

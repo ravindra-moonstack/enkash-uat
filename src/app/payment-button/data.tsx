@@ -136,7 +136,7 @@ const blogData = [
 const cardsData = [
   {
     title: "Create",
-    description: "Use EnKash’s intuitive dashboard to design your button",
+    description: "Use EnKash’s intuitive dashboard to design your button.",
     icon: scrollIconOne,
   },
   {
