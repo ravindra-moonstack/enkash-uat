@@ -63,7 +63,7 @@ const cardType = [
         description:
           "Provide employees with top-brand vouchers for flexible and meaningful appreciation.",
         cardImage: vouchers,
-        url: "/vouchers/",
+        url: "/products/vouchers",
       },
     ],
   },

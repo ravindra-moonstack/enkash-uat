@@ -54,7 +54,7 @@ const PaymentGateway = (): React.JSX.Element => {
         <div className="max-w-auto">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
-              <div className="d-flex">
+              <div className="d-flex pt-1">
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
@@ -178,7 +178,7 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
@@ -197,7 +197,7 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -228,7 +228,7 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -259,7 +259,7 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -286,7 +286,7 @@ const PaymentGateway = (): React.JSX.Element => {
                   color: "color-equity-blue",
                 },
                 {
-                  title: "Trusted by Business/Organisations",
+                  title: "Trusted by Merchants",
                   color: "color-black",
                 },
               ]}
