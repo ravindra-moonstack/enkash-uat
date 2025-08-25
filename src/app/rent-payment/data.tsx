@@ -28,17 +28,20 @@ const cardsData = [
     title: "Sign Up",
     description: "Create your EnKash account in just a few clicks.",
     icon: scrollIconOne,
+    marginBottoms: "20px",
   },
   {
     title: "Add Payment Details",
     description: "Link your rental agreements and landlord information.",
     icon: scrollIconTwo,
+    marginBottoms: "20px",
   },
   {
     title: "Automate and Pay",
     description:
       "Schedule recurring payments or pay on the go with automated reminders.",
     icon: scrollIconThree,
+    marginBottoms: "20px",
   },
 ]
 
@@ -141,7 +144,7 @@ const allInOnePolicyData = [
     maxImageHeight: "259px",
   },
   {
-    icon: taskIconSix, 
+    icon: taskIconSix,
     title: "Fast Onboarding",
     description:
       "Get started with ease. EnKash’s onboarding process is quick, simple, and user-friendly. Complete your KYC, set up your rental payment preferences, and you’re good to go in just a few steps. No steep learning curve—just seamless functionality from day one.",

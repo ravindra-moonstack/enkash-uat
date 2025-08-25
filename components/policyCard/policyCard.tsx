@@ -25,7 +25,7 @@ const PolicyCard: React.FC<CardProps> = ({
     <>
       {/* Icon */}
       <div className="d-flex justify-content-center align-items-center bg-light rounded-circle">
-        {icon && <Image src={icon} alt="icon" width={55} height={55} />}
+        {icon && <Image className={`${styles.icons}`} src={icon} alt="icon" width={55} height={55} />}
       </div>
 
       {/* Title and Description */}

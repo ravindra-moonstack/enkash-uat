@@ -56,7 +56,7 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
             key={i}
             style={{
               direction: "ltr",
-              marginBottom: marginBottoms ? marginBottoms : "50px",
+              marginBottom: marginBottoms ? marginBottoms : "20px",
             }}
             className={styles.scrollCard}
           >
