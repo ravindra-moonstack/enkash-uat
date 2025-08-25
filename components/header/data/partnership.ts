@@ -4,7 +4,6 @@ const partnershipProducts = [
   {
     name: "Partnership",
     description: "Flexible prepaid card solutions",
-    link: "/partnership",
     subProducts: [
       {
         subtitle: "Default",

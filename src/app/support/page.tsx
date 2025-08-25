@@ -3,7 +3,7 @@ import Image from "next/image"
 import { DynamicHeading, LogoSlider, SupportCard } from "@/components"
 import styles from "./page.module.scss"
 import { location, logo } from "."
-import {  locationData } from "./data"
+import { locationData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import SupportForm from "@/components/support-form/supportForm"
@@ -65,6 +65,7 @@ const Suppport = () => {
                   {
                     title: "Terms & Condition",
                     color: "color-grey-100",
+                    link: "/policies/tnc",
                   },
                 ]}
                 headingTag="p"
@@ -75,6 +76,7 @@ const Suppport = () => {
                   {
                     title: "Privacy Policy",
                     color: "color-grey-100",
+                    link: "/policies/privacy-policy",
                   },
                 ]}
                 headingTag="p"

@@ -82,6 +82,13 @@
     select option {
       font-weight: 700; // bold text inside dropdown
     }
+    .error {
+  color: red;
+  font-size: 13px;
+  margin-top: 4px;
+  display: block;
+}
+
   }
 
   .privacy {

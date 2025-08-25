@@ -22,7 +22,6 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import Spline from "@splinetool/react-spline"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
@@ -199,15 +198,6 @@ const CollectPayment = (): React.JSX.Element => {
       <div
         className={`${styles.fourth_row} row d-flex row-padding-x-only position-relative`}
       >
-        {/* Spline background */}
-        <div
-          className="position-absolute top-0 start-0 w-100"
-          style={{ height: "600px", backgroundColor: "black" }}
-        >
-          <Spline scene="https://prod.spline.design/ukQwfbMk8aMlhZus/scene.splinecode" />
-        </div>
-
-        {/* Foreground content */}
         <div
           className={`${styles.text_container} max-w-auto position-relative`}
         >
@@ -287,7 +277,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className="row align-items-center pt-4 ">
-            {/* On mobile: order-2, on md+: order-1 */}
+            
             <div className="col-12 col-md-6 order-2 order-md-1">
               <Image
                 src={affordabilityImg}
@@ -296,7 +286,7 @@ const CollectPayment = (): React.JSX.Element => {
               />
             </div>
 
-            {/* On mobile: order-1, on md+: order-2 */}
+
             <div className="col-12 col-md-6 order-1 order-md-2">
               <PolicyCard
                 icon={affordabilityIcon}

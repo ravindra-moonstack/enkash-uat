@@ -72,7 +72,7 @@ const xpenzProducts = [
 
           {
             name: "Scan and Drop Receipts",
-            description: "Auto-capture receipts, skip paperworkcls",
+            description: "Auto-capture receipts, skip paperwork",
             imageSrc: scanAndDrop,
             imageSrcHovered: scanAndDropFilled,
             link: "/receipts",

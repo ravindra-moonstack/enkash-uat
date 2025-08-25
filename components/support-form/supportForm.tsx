@@ -17,7 +17,6 @@ const contactOptions = [
     label: "Purchasing Voucher",
   },
   { value: "Report a Fraud", label: "Report a Fraud" },
-  { value: "Report a Fraud", label: "Report a Fraud" },
   { value: "Exploring EnKash", label: "Exploring EnKash" },
   { value: "Something Else", label: "Something Else" },
 ]

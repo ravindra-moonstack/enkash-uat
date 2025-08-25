@@ -21,7 +21,6 @@ import {
   hundredPercentIcon,
 } from "."
 
-import Spline from "@splinetool/react-spline"
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
@@ -262,8 +261,9 @@ const CollectionReminders = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
-                  }`}
+                className={` mt-md-5 ${
+                  showScroll ? "overflow-auto scrollbar-thin" : ""
+                }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -295,9 +295,6 @@ const CollectionReminders = (): React.JSX.Element => {
             </div>
             <div className="col-md-6 col-12">
               <div className="position-relative">
-                <div className={`${styles.spline_background}`}>
-                  <Spline scene="https://prod.spline.design/T3yZ5RLvQ94JVp-v/scene.splinecode" />
-                </div>
                 <div className={`${styles.spline_image}`}>
                   <Image
                     src={mealCardImage}
