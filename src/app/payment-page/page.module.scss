@@ -10,13 +10,15 @@
   padding: 90px 20px 0px;
   background-image: url(/images/collectPaymentBg.webp);
 
+  padding: 110px 20px 0px;
+    background-image: url(/images/collectPaymentBg.webp);
   @include for-laptops {
     padding: 112px 20px 0;
   }
 
   .group_logo {
     width: 100%;
-    max-width: 280px;
+    max-width: 260px;
     height: auto;
 
     @include for-laptops {
@@ -222,6 +224,7 @@
 
   .list_button {
     padding-left: 40px;
+    padding-left: 48px ;
     padding-top: 20px;
     margin-bottom: 20px !important;
 
