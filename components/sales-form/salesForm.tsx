@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import styles from "./salesForm.module.scss"
 import { DynamicHeading } from "@/components"
 import Link from "next/link"
@@ -23,6 +23,7 @@ const categoryOptions = [
       { value: "UPI Payments", label: "UPI Payments" },
       { value: "Payment Link/button", label: "Payment Link/Button" },
       { value: "AR Automation", label: "AR Automation" },
+      { value: "Collect Payments Other", label: "Other" },
     ],
   },
   {
@@ -34,6 +35,7 @@ const categoryOptions = [
       { value: "Bulk Payments", label: "Bulk Payments" },
       { value: "Rental Payments", label: "Rental Payments" },
       { value: "AP Automation", label: "AP Automation" },
+      { value: "Make Payments Other", label: "Other" },
     ],
   },
   {
@@ -44,14 +46,14 @@ const categoryOptions = [
       { value: "Unsecured Credit Card", label: "Unsecured Credit Card" },
       { value: "Gift Cards", label: "Gift Cards" },
       { value: "Employee Cards", label: "Employee Cards" },
-      { value: "T&amp;E Cards", label: "T&amp;E Cards" },
+      { value: "T&E Cards", label: "T&E Cards" },
       { value: "Meal Cards", label: "Meal Cards" },
+      { value: "Corporate Cards Other", label: "Other" },
     ],
   },
   {
     value: "Manage Expenses",
     label: "Manage Expenses",
-    children: [{ value: "Expense Management", label: "Expense Management" }],
   },
   {
     value: "Rewards",
@@ -61,10 +63,12 @@ const categoryOptions = [
       { value: "Channel Incentives", label: "Channel Incentives" },
     ],
   },
-  { value: "Something Else", label: "Something Else" },
+  { value: "Something Else", label: "Something Else" }, // 👈 special case
 ]
 
 const SalesForm: React.FC = () => {
+  const [showOtherInput, setShowOtherInput] = useState(false)
+
   useEffect(() => {
     if (
       typeof window !== "undefined" &&
@@ -144,7 +148,20 @@ const SalesForm: React.FC = () => {
           name="MultipleChoice"
           options={categoryOptions}
           placeholder="What are you looking for?*"
+          onChange={(vals) => {
+            setShowOtherInput(vals.includes("Something Else"))
+          }}
         />
+
+        {/* 👇 Show textbox if "Something Else" is selected */}
+        {showOtherInput && (
+          <input
+            type="text"
+            name="SomethingElseInput"
+            placeholder="Please specify*"
+            className={styles.otherInput}
+          />
+        )}
 
         <div className={styles.grid}>
           <input

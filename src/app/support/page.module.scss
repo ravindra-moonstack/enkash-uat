@@ -73,6 +73,10 @@
       @include for-laptops {
         gap: 32px;
       }
+        a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
     }
   }  .greyLine {
     height: 2px;

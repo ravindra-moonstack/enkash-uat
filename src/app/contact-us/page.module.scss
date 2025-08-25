@@ -105,6 +105,9 @@
     .termsCond {
       display: flex;
       gap: 8px;
+      a{
+        text-decoration: none !important;
+      }
       @include for-laptops {
         gap: 32px;
       }

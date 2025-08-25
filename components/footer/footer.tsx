@@ -162,7 +162,7 @@ const FooterV2 = () => {
                   className={`col-6 col-md-2 ${styles.info_div} ${styles.info_div_three}`}
                 >
                   <div className={` ${styles.info_header_three}`}>
-                    <h4 className={`${styles.title}`}>CONNECT US ON</h4>
+                    <h4 className={`${styles.title}`}>FIND US ON</h4>
                   </div>
                   <div
                     className={`d-flex  justify-content-start ${styles.info_body}`}
@@ -476,7 +476,9 @@ const FooterV2 = () => {
                       </li>
 
                       <li>
-                        <Link href="/affordability-suite/">Affordability</Link>
+                        <Link href="/affordability-suite/">
+                          Affordability Suite
+                        </Link>
                       </li>
                     </ul>
                   </div>
@@ -498,7 +500,7 @@ const FooterV2 = () => {
                       </Link>
                     </li>
                     <li>
-                      <Link href="/reimbursements/">Reimbursement</Link>
+                      <Link href="/reimbursements/">Reimbursements</Link>
                     </li>
                     <li>
                       <Link href="/receipts/">Scan and Drop Receipts</Link>
@@ -632,21 +634,21 @@ const FooterV2 = () => {
                     </div>
                     <ul>
                       <li>
-                        <Link href="/prepaid-card/">Prepaid Card</Link>
+                        <Link href="/prepaid-card/">Prepaid Cards</Link>
                       </li>
                       <li>
-                        <Link href="/meal-card/">Meal Card</Link>
+                        <Link href="/meal-card/">Meal Cards</Link>
                       </li>
                       <li>
-                        <Link href="/fuel-card/">Fuel Card</Link>
+                        <Link href="/fuel-card/">Fuel Cards</Link>
                       </li>
                       <li>
                         <Link href="/digital-marketing-card/">
-                          Digital Marketing Card
+                          Digital Marketing Cards
                         </Link>
                       </li>
                       <li>
-                        <Link href="/saas-card/">SaaS Card</Link>
+                        <Link href="/saas-card/">SaaS Cards</Link>
                       </li>
                       <li>
                         <Link href="/travel-and-expense-card">T & E Cards</Link>
@@ -661,7 +663,9 @@ const FooterV2 = () => {
                   </div>
                   <div className="mt-3">
                     <Link href="https://docs.enkash.com/" target="_blank">
-                      <h4 className={`col-12 ${styles.title}`}>Developer</h4>
+                      <h4 className={`col-12 ${styles.title}`}>
+                        For Developers
+                      </h4>
                     </Link>
                     <ul>
                       <li>
@@ -674,10 +678,10 @@ const FooterV2 = () => {
                       </li>
                       <li>
                         <a
-                          href="https://docs.enkash.com/corporate-cards"
+                          href="https://docs.enkash.com/folder-1769242"
                           target="_blank"
                         >
-                          Corporate Cards
+                          Prepaid Cards
                         </a>
                       </li>
                       <li>
@@ -689,18 +693,11 @@ const FooterV2 = () => {
                         </a>
                       </li>
                       <li>
-                        <a href="https://docs.enkash.com/" target="_blank">
-                          Employee Rewards
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://docs.enkash.com/" target="_blank">
-                          Channel Incentives
-                        </a>
-                      </li>
-                      <li>
-                        <a href="https://docs.enkash.com/" target="_blank">
-                          Vouchers
+                        <a
+                          href="https://docs.enkash.com/doc-1039810"
+                          target="_blank"
+                        >
+                          Rewards
                         </a>
                       </li>
                     </ul>
@@ -711,12 +708,15 @@ const FooterV2 = () => {
               <div className={`${styles.footer_links_col} col-md-3 col-6`}>
                 {/* col-1 resources */}{" "}
                 <div className="">
-                  <h4 className={`${styles.title}`}>Resources</h4>
+                  <Link target="_blank" href="http://www.enkash.com/resources">
+                    <h4 className={`${styles.title}`}>Resources</h4>
+                  </Link>
+
                   <ul>
                     <li>
                       <Link
                         target="_blank"
-                        href="www.enkash.com/resources/blogs"
+                        href="http://www.enkash.com/resources/blogs"
                       >
                         Blogs
                       </Link>
@@ -733,7 +733,7 @@ const FooterV2 = () => {
                     <li>
                       <Link
                         target="_blank"
-                        href="www.enkash.com/resources/videos"
+                        href="http://www.enkash.com/resources/videos"
                       >
                         Videos
                       </Link>
@@ -799,7 +799,7 @@ const FooterV2 = () => {
                 </div>
                 <div className="mt-3">
                   <div className={styles.freedom_card_box}>
-                    <h4 className={`${styles.title}`}>Parthnership</h4>
+                    <h4 className={`${styles.title}`}>Partnerships</h4>
                   </div>
                   <ul>
                     <li>
@@ -807,6 +807,21 @@ const FooterV2 = () => {
                     </li>
                     <li>
                       <Link href="/affiliate-programs">Affiliate Program</Link>
+                    </li>
+                    <li>
+                      <Link href="/co-branded-card-partners">
+                        Co-branded Cards
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/payment-gateway-partners">
+                        Payment Gateway
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/bharat-connect-partnership">
+                        Bharat Connect
+                      </Link>
                     </li>
                   </ul>
                 </div>

@@ -108,7 +108,8 @@ const SubProductListView = ({
                   "Payable & Receivable+",
                   "Prepaid Cards",
                   "Credit Cards",
-                  "Cards", // makes sure "Cards" only uses the special block above
+                  "Cards",
+                  "Partnership",
                 ].includes(section.title) && (
                   <div className={styles.exploreProduct}>
                     <Link href={section.products[0].subtitleLink}>
