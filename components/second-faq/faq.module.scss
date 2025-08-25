@@ -15,6 +15,7 @@
   th {
     font-weight: 700;
     font-size: 14px;
+
     @include for-laptops {
       font-size: 20px;
     }
@@ -23,9 +24,11 @@
   h4,
   td {
     font-size: 14px;
+
     a {
       text-decoration: none;
     }
+
     @include for-laptops {
       font-size: 20px;
       font-weight: 400;
@@ -35,18 +38,20 @@
   img {
     width: 28px;
     height: 28px;
-    @include for-laptops{
-    width: 55px;
-    height: 55px;
+
+    @include for-laptops {
+      width: 55px;
+      height: 55px;
     }
   }
 
   .faq_inner_row {
     padding: 10px 10px 0 10px;
     position: relative;
-    @include for-laptops{
+
+    @include for-laptops {
       padding: 20px 20px 0 20px;
-    position: relative;
+      position: relative;
     }
   }
 
@@ -82,6 +87,7 @@
     z-index: 99;
     padding: 10px 20px;
     border-radius: 0px 0px 12px 12px;
+
     @include for-laptops {
       padding-left: 80px;
       padding-right: 20px;
@@ -102,6 +108,7 @@
 
     .heading {
       font-size: 14px;
+
       @include for-laptops {
         font-size: 18px;
         font-weight: 400;
@@ -143,7 +150,8 @@
 }
 
 .scrollable::-webkit-scrollbar-thumb {
-  background-color: #3b82f6; /* blue */
+  background-color: #3b82f6;
+  /* blue */
   border-radius: 9999px;
   border: 1px solid transparent;
 }

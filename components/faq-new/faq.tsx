@@ -1,6 +1,7 @@
 import styles from "./faq.module.scss"
 import Image from "next/image"
 import arrowDown from "./img/arrow-down.svg"
+import { useRef } from "react"
 
 
 export interface FAQProps {
@@ -25,10 +26,35 @@ const FAQ = ({
   answerHTML,
   onToggleAnswerVisibility,
 }: FAQProps) => {
+
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
   // No need for local state, use parent state
 
-  // Handle hover and click
-  const handleToggle = () => {
+  const handleMouseEnter = () => {
+    timerRef.current = setTimeout(() => {
+      if (onToggleAnswerVisibility) {
+        onToggleAnswerVisibility()
+      }
+    }, 300)
+  }
+
+  // handle mouse leave (cancel timer)
+  const handleMouseLeave = () => {
+    if (timerRef.current) {
+      clearTimeout(timerRef.current)
+      timerRef.current = null
+    }
+
+    if (answerVisible && onToggleAnswerVisibility) {
+      timerRef.current = setTimeout(() => {
+        onToggleAnswerVisibility()
+        timerRef.current = null
+      }, 200)
+    }
+  }
+
+  // handle click (instant toggle if clicked)
+  const handleClick = () => {
     if (onToggleAnswerVisibility) {
       onToggleAnswerVisibility()
     }
@@ -41,16 +67,16 @@ const FAQ = ({
         style={
           answerVisible
             ? {
-                background: "#F6F6F6",
-                padding: "20px",
-                borderRadius: "12px",
-                transition: "all 0.3s ease",
-              }
+              background: "#F6F6F6",
+              padding: "20px",
+              borderRadius: "12px",
+              transition: "all 0.3s ease",
+            }
             : {}
         }
-        onMouseEnter={handleToggle}
-        onMouseLeave={handleToggle}
-        onClick={handleToggle}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        onClick={handleClick}
         tabIndex={0} // for accessibility, allows keyboard focus
         role="button"
         aria-expanded={answerVisible}
@@ -58,25 +84,22 @@ const FAQ = ({
         <div
           className={`d-flex gap-4 my-md-4 my-2 justify-content-between align-items-center`}
         >
-           
+
           <p className={`${styles.question} subHeading mb-0`} >
             {String(index + 1).padStart(2, "0")}. {question}
           </p>
           <Image
             src={arrowDown}
             alt="faq arrow icon"
-            className={`${answerVisible ? styles.rotated : styles.normal} ${
-              styles.arrow
-            }`}
+            className={`${answerVisible ? styles.rotated : styles.normal} ${styles.arrow
+              }`}
             // Remove onClick here, handled by parent div
             draggable={false}
           />
         </div>
-
         <div
-          className={`${styles.answer} ${
-            answerVisible ? styles.visible : styles.reverse_visible
-          }`}
+          className={`${styles.answer} ${answerVisible ? styles.visible : styles.reverse_visible
+            }`}
         >
           {!answerHTML &&
             answer !== undefined &&

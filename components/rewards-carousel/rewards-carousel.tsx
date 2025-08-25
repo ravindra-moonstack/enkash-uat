@@ -25,7 +25,7 @@ const RewardsCarousel = ({
   return (
     <div>
       <div className={styles.container}>
-        <Marquee speed={70} pauseOnClick={true}>
+        <Marquee speed={70} pauseOnClick={true} pauseOnHover={true}>
           <div className="d-flex align-items-stretch py-2">
             {data.map((card, index) => (
               <div key={index} className="d-flex ms-3">

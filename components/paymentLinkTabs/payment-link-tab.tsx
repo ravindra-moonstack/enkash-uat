@@ -265,9 +265,8 @@ const PaymentLinkTab = ({
 
                   {/* Dropdown content */}
                   <div
-                    className={`${styles.dropdownContent} ${
-                      isOpen ? styles.show : ""
-                    }`}
+                    className={`${styles.dropdownContent} ${isOpen ? styles.show : ""
+                      }`}
                   >
                     {/* small bg image above text */}
                     <div className={styles.dropdownBg}>

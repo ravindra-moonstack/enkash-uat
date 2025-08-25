@@ -28,6 +28,7 @@ export { default as optimizedIcon } from "./img/website-requierd.webp"
 export { default as hundredPercentIcon } from "./img/100%.svg"
 export { default as activationIcon } from "./img/activation.svg"
 export { default as realTimeIcon } from "./img/real-time.svg"
+export { default as customizableIcon } from "./img/customizableIcon.svg"
 
 export { default as scrollIconOne } from "./img/scrollIconOne.svg"
 export { default as scrollIconTwo } from "./img/scrollIconTwo.svg"

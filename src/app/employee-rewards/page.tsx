@@ -23,6 +23,7 @@ import {
   activationIcon,
   realTimeIcon,
   faqBg,
+  extensiveIcon,
 } from "."
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import generateMetaData from "@/common/utils/metaData"
@@ -56,7 +57,7 @@ const EmployeeRewards = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row} `}>
-        <div className="max-w-auto">
+        <div className="max-w-auto mb-4">
           <div className="d-flex flex-column flex-md-row">
             <div className="col-12 col-md-6 d-flex flex-column">
               <div className="d-flex">
@@ -135,13 +136,6 @@ const EmployeeRewards = (): React.JSX.Element => {
                         url={salesUrl}
                       />
                     </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -179,26 +173,16 @@ const EmployeeRewards = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
-              <div className={`d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+
+              <div className={` d-flex ${styles.outerCard}`}>
+                <Image src={extensiveIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -372,7 +356,6 @@ const EmployeeRewards = (): React.JSX.Element => {
           </div>
           <div className="row align-items-end ">
             <div className={`${styles.secondFaq} col-md-6 col-12`}>
-              {" "}
               <SecondFaqHtml SecondfaqData={SecondfaqData} />
             </div>
             <div className="col-md-6 col-12 d-md-block d-none">
@@ -390,7 +373,7 @@ const EmployeeRewards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Ready to turn hard work into heartfelt rewards?",
+                  title: "Ready To Turn Hard Work Into Heartfelt Rewards?",
                   color: "color-white",
                 },
               ]}
