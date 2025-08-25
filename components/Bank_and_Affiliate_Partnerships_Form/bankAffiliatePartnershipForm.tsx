@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect } from "react"
-import styles from "./BankAffiliatePartnershipForm.module.scss"
+import styles from "./bankAffiliatePartnershipForm.module.scss"
 import { DynamicHeading } from "@/components"
 import Link from "next/link"
 import MultiSelect from "../multiSelect/multiSelect"
