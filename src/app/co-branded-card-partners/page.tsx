@@ -20,7 +20,7 @@ import { blueArrow } from "@/components/all-in-one-policy"
 import ProductsSection from "@/components/ourProductsSection"
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
-import BankAffiliatePartnershipForm from "@/components/Bank_and_Affiliate_Partnerships_Form/bankAffiliatePartnershipForm"
+import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm/bankAffiliatePartnershipForm"
 export const metadata: Metadata = generateMetaData({
   title: "Co-Branded Card Partnership: Power Your Brand with Smart Cards",
   description:

@@ -6,6 +6,8 @@ import { DynamicHeading } from "@/components"
 import Link from "next/link"
 import CategoryMultiSelect from "../categoryMultiSelect/categoryMultiSelect"
 import CategoryWithOther from "../categoryWithOther/categoryWithOther"
+import { useFormik } from "formik"
+import { salesInitialValue, salesValidation } from "./formik"
 
 const options = [
   { value: "Google search", label: "Google Search" },
@@ -63,10 +65,12 @@ const categoryOptions = [
       { value: "Channel Incentives", label: "Channel Incentives" },
     ],
   },
-  { value: "Something Else", label: "Something Else" }, // 👈 special case
+  { value: "Something Else", label: "Something Else" },
 ]
 
 const SalesForm: React.FC = () => {
+  //
+
   const [showOtherInput, setShowOtherInput] = useState(false)
 
   useEffect(() => {
@@ -102,16 +106,31 @@ const SalesForm: React.FC = () => {
     }
   }, [])
 
+  const {
+    errors,
+    values,
+    touched,
+    handleSubmit,
+    getFieldProps,
+    setFieldValue,
+  } = useFormik({
+    initialValues: salesInitialValue,
+    validationSchema: salesValidation,
+    onSubmit: () => {
+      //
+    },
+  })
+
   return (
     <div className={styles.contactFormWrapper}>
       <form
-        action="https://forms.zohopublic.in/Enkash/form/TalktoSales/formperma/hmsqE173cI_jvQ9Xnh7Bkuxp1UONfPeWnrlK-L_NTBA/htmlRecords/submit"
+        // action="https://forms.zohopublic.in/Enkash/form/TalktoSales/formperma/hmsqE173cI_jvQ9Xnh7Bkuxp1UONfPeWnrlK-L_NTBA/htmlRecords/submit"
         name="form"
         method="POST"
         acceptCharset="UTF-8"
         encType="multipart/form-data"
         id="form"
-        onSubmit={() => window.zf_ValidateAndSubmit?.() ?? true}
+        onSubmit={handleSubmit}
       >
         <input type="hidden" name="zf_referrer_name" value="" />
         <input type="hidden" name="zf_redirect_url" value="" />
@@ -133,15 +152,49 @@ const SalesForm: React.FC = () => {
         <p className={styles.subtitle}>We just need a few quick details</p>
 
         <div className={styles.grid}>
-          <input type="text" name="SingleLine" placeholder="Name*" />
-          <input type="text" name="Email" placeholder="Business Email ID*" />
-          <input type="text" name="SingleLine1" placeholder="Company Name*" />
-          <input
-            type="text"
-            name="PhoneNumber_countrycode"
-            placeholder="Contact No.*"
-            id="international_PhoneNumber_countrycode"
-          />
+          <div>
+            <input
+              type="text"
+              placeholder="Name*"
+              {...getFieldProps("SingleLine")}
+            />
+            {errors.SingleLine && touched.SingleLine && (
+              <p>{errors.SingleLine}</p>
+            )}
+          </div>
+
+          <div>
+            <input
+              type="text"
+              placeholder="Business Email ID*"
+              {...getFieldProps("Email")}
+            />
+            {errors.Email && touched.Email && <p>{errors.Email}</p>}
+          </div>
+
+          <div>
+            <input
+              type="text"
+              placeholder="Company Name*"
+              {...getFieldProps("SingleLine1")}
+            />
+            {errors.SingleLine1 && touched.SingleLine1 && (
+              <p>{errors.SingleLine1}</p>
+            )}
+          </div>
+
+          <div>
+            <input
+              type="text"
+              placeholder="Contact No.*"
+              id="international_PhoneNumber_countrycode"
+              {...getFieldProps("PhoneNumber_countrycode")}
+            />
+            {errors.PhoneNumber_countrycode &&
+              touched.PhoneNumber_countrycode && (
+                <p>{errors.PhoneNumber_countrycode}</p>
+              )}
+          </div>
         </div>
 
         <CategoryMultiSelect
@@ -150,10 +203,13 @@ const SalesForm: React.FC = () => {
           placeholder="What are you looking for?*"
           onChange={(vals) => {
             setShowOtherInput(vals.includes("Something Else"))
+            // setFieldValue("MultipleChoice", vals)
           }}
         />
+        {errors.MultipleChoice && touched.MultipleChoice && (
+          <p>{JSON.stringify(errors.MultipleChoice)}</p>
+        )}
 
-        {/* 👇 Show textbox if "Something Else" is selected */}
         {showOtherInput && (
           <input
             type="text"
@@ -170,6 +226,7 @@ const SalesForm: React.FC = () => {
             placeholder="Website or App Link*"
             id="Website_error"
           />
+
           <CategoryWithOther
             name="Dropdown5"
             options={options}

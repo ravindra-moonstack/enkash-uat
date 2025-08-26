@@ -89,7 +89,7 @@ const policiesData = [
     description:
       "Accept payments anywhere, anytime with our powerful and flexible solutions. Whether you're an online business, retailer, or service provider, we enable you to offer multiple payment modes and frictionless checkout experiences.",
     image: paymentLinkImage,
-    buttonUrl: "/employee-rewards/",
+    buttonUrl: "/products/collect-payments",
     maxImageHeight: "243px",
   },
   {
@@ -98,7 +98,7 @@ const policiesData = [
     description:
       "Say goodbye to fragmented banking portals and manual errors. We empower you to handle all your business payouts from a single dashboard, with advanced controls and automated workflows.",
     image: shareImage,
-    buttonUrl: "/channel-incentives/",
+    buttonUrl: "/products/make-payments/",
     maxImageHeight: "305px",
     reverse: true,
   },
@@ -108,7 +108,7 @@ const policiesData = [
     description:
       "Empower your teams with purpose-driven cards and real-time controls. From travel and marketing to SaaS and fleet management, we offer the most diverse range of corporate cards.",
     image: paymentOptionImage,
-    buttonUrl: "/gift-cards/",
+    buttonUrl: "/products/corporate-cards/",
     maxImageHeight: "243px",
   },
   {
@@ -117,7 +117,7 @@ const policiesData = [
     description:
       "Track, approve, and analyze every rupee spent, without spreadsheets. Our intelligent expense management system gives finance teams total control, from expense creation to budgeting and reimbursements.",
     image: notificationImage,
-    buttonUrl: "/offers/",
+    buttonUrl: "/products/expense-management/",
     maxImageHeight: "259px",
     reverse: true,
   },
@@ -127,7 +127,7 @@ const policiesData = [
     description:
       "Recognize performance and drive engagement through meaningful rewards. We make it easy to run reward programs for employees, sales channels, and partners, all from one platform.",
     image: secureImage,
-    buttonUrl: "/gift-cards/",
+    buttonUrl: "/products/rewards/",
     maxImageHeight: "243px",
   },
   {
@@ -136,7 +136,7 @@ const policiesData = [
     description:
       "Delight teams and partners with instant access to India’s most popular brands. Our voucher catalog makes gifting fast, flexible, and memorable.",
     image: optimizedIcon,
-    buttonUrl: "/offers/",
+    buttonUrl: "/products/vouchers/",
     maxImageHeight: "259px",
     reverse: true,
   },

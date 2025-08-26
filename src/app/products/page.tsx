@@ -7,9 +7,9 @@ import {
   RectangleButton,
   AllInOnePolicy,
   AllProducts,
+  SalesForm,
 } from "@/components"
 
-import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 
@@ -21,7 +21,7 @@ export const metadata: Metadata = generateMetaData({
     canonical: "https://www.enkash.com/products/",
   },
 })
-const salesUrl = getSalesUrl("/products")
+
 const mergedCards = allProductSections.flatMap((section) => section.items)
 
 const Rewards = (): React.JSX.Element => {
@@ -60,7 +60,9 @@ const Rewards = (): React.JSX.Element => {
             </div>
 
             <div className=" mt-3">
-              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
+              <a href="#salesForm">
+                <RectangleButton title="Talk to Us" theme="blue" />
+              </a>
             </div>
           </div>
         </div>
@@ -99,7 +101,7 @@ const Rewards = (): React.JSX.Element => {
                   title={policy.title}
                   description={policy.description}
                   image={policy.image}
-                  buttonUrl={salesUrl}
+                  buttonUrl={policy.buttonUrl}
                   maxImageHeight={policy.maxImageHeight}
                   reverse={policy.reverse}
                 />
@@ -137,6 +139,9 @@ const Rewards = (): React.JSX.Element => {
           subtitle="Combine all use cases"
           data={mergedCards}
         />
+      </div>
+      <div id="salesForm" className={`${styles.sales_form}`}>
+        <SalesForm />
       </div>
     </div>
   )

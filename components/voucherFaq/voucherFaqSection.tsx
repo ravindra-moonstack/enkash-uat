@@ -32,7 +32,6 @@ const VoucherFaqSection: React.FC<FaqSectionProps> = ({
   return (
     <div className={`${styles.faq_new_row} relative`}>
       <div className={`${styles.faqSection} max-w-auto`}>
-        {/* Title */}
         <div className={`${styles.title} pb-md-5 pb-2`}>
           <DynamicHeading
             content={[
@@ -45,7 +44,7 @@ const VoucherFaqSection: React.FC<FaqSectionProps> = ({
           />
         </div>
 
-        {/* Sub + Button + FAQ content */}
+     
         <div className="d-flex flex-column flex-md-row justify-content-between">
           <div>
             {subTitle && (

@@ -80,11 +80,11 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
   }
 
   // 🔹 Trigger onChange whenever selected updates
-  useEffect(() => {
-    if (onChange) {
-      onChange(selected)
-    }
-  }, [selected, onChange])
+  // useEffect(() => {
+  //   if (onChange) {
+  //     onChange(selected)
+  //   }
+  // }, [selected, onChange])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
