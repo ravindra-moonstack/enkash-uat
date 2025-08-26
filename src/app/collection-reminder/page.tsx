@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicies, cardsData } from "./data"
+import { allInOnePolicies, cardsData, managementCards } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -10,6 +10,7 @@ import {
   RectangleButton,
   AllInOnePolicy,
   FaqSection,
+  ManagementCard,
 } from "@/components"
 import {
   blueArrow,
@@ -19,6 +20,7 @@ import {
   mealCardImage,
   realTimeIcon,
   hundredPercentIcon,
+  activationIcon,
 } from "."
 
 import Spline from "@splinetool/react-spline"
@@ -82,7 +84,7 @@ const CollectionReminders = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "Get paid instantly with automated Collection Reminders",
+                          "Get Paid Instantly with Automated Collection Reminders",
                         color: "color-black",
                       },
                     ]}
@@ -119,13 +121,6 @@ const CollectionReminders = (): React.JSX.Element => {
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -170,16 +165,7 @@ const CollectionReminders = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -201,7 +187,7 @@ const CollectionReminders = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={hundredPercentIcon} alt="icon" />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -354,7 +340,7 @@ const CollectionReminders = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Collect payments faster with reminders! ",
+                  title: "Collect Payments Faster with Reminders",
                   color: "color-white",
                 },
               ]}
@@ -375,6 +361,46 @@ const CollectionReminders = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
+      <div className={styles.other_products}>
+        <div className="max-w-auto">
+          <div
+            className={`${styles.title} text-start text-md-center pb-4 pb-md-5`}
+          >
+            <DynamicHeading
+              content={[
+                {
+                  title: "Check out ",
+                  color: "color-black",
+                },
+                {
+                  title: "other collection products",
+                  color: "color-equity-blue",
+                },
+                {
+                  title: " at EnKash",
+                  color: "color-black",
+                },
+              ]}
+              headingTag="h2"
+              className="f-6"
+            />
+          </div>
+          <div className="row g-3 pb-4">
+            {managementCards.map(
+              ({ titleHtml, description, cardImage, linkUrl }, index) => (
+                <div key={index} className="col-12 col-md-4">
+                  <ManagementCard
+                    titleHtml={titleHtml}
+                    description={description}
+                    cardImage={cardImage}
+                    linkUrl={linkUrl}
+                  />
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
