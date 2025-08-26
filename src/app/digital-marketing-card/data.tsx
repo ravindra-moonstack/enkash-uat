@@ -177,13 +177,13 @@ const intantActionData = [
   {
     title: "Control",
     description:
-      "Manage your expenditure with a predefined usage policy to prevent misuse of cards",
+      "Manage your expenditure with a predefined usage policy to prevent misuse of cards.",
     icon: secondIcon,
   },
   {
     title: "Connect",
     description:
-      "Link your card to digital marketing platforms to have a complete overview of all your digital marketing expenses",
+      "Link your card to digital marketing platforms to have a complete overview of all your digital marketing expenses.",
     icon: thirdIcon,
   },
 ]
@@ -291,6 +291,7 @@ const cardType = [
     description:
       "Pay employees, freelancers, or gig workers directly with zero bank dependency or delays.",
     cardImage: payrollCardImg,
+    linkUrl:'/sales'
   },
   {
     titleHtml: "Virtual Card",
@@ -319,6 +320,7 @@ const cardType = [
     description:
       "Digitize fleet expenses such as fuel, tolls, and repairs, while tracking usage per vehicle or driver.",
     cardImage: fleetCardImg,
+    linkUrl:'/sales'
   },
 ]
 

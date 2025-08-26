@@ -96,11 +96,11 @@ const GiftCards = (): React.JSX.Element => {
               <DynamicHeading
                 content={[
                   {
-                    title: "Build a culture of recognition with ",
+                    title: "Build a Culture of Recognition with ",
                     color: "color-white italic f-3 d-block",
                   },
                   {
-                    title: "customized Gift Cards",
+                    title: "Customized Gift Cards",
                     color: "color-white",
                   },
                 ]}
@@ -275,7 +275,7 @@ const GiftCards = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Explore our customizable gift cards!",
+                  title: "Explore Our Customizable Gift Cards",
                   color: "color-white",
                 },
               ]}
