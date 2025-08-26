@@ -93,7 +93,7 @@ const HomePage = (): React.JSX.Element => {
                     theme="outline-blue"
                     actionImage=""
                     hoverImage=""
-                    url="/sales?source=home"
+                    url="/sales?source=homepage"
                   />
                 </div>
               </div>

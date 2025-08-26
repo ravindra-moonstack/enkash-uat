@@ -8,13 +8,11 @@ import SliderComponent from "@/components/sliderComponent/sliderComponent"
 import { VOUCHER_DATA } from "./data"
 import { blueArrow, whiteArrow } from "../affordability-suite"
 import VoucherFaqComponent from "./voucher-faq"
-// import { getSalesUrl } from "@/common/utils/getSalesUrl"
 import { CATEGORY_META } from "./categoryMeta"
 import { CTASection } from "@/components"
 import VoucherFaqSection from "@/components/voucherFaq/voucherFaqSection"
 import NotFound from "../not-found"
 
-// const salesUrl = getSalesUrl("/affordability-suite")
 
 const VALID_CATEGORIES: string[] = [
   "e-commerce-vouchers",
@@ -24,7 +22,7 @@ const VALID_CATEGORIES: string[] = [
   "movie-and-music-vouchers",
 ]
 
-// ----------------- HELPERS -----------------
+
 const getDiscountValue = (raw: string | number | undefined): number => {
   if (!raw) return 0
   return typeof raw === "string" ? parseFloat(raw) : raw
@@ -79,7 +77,7 @@ const fetchVouchers = async (
   }
 }
 
-// ----------------- PAGE -----------------
+
 export async function generateMetadata({
   params,
 }: {
@@ -98,7 +96,7 @@ export async function generateMetadata({
     }
   }
 
-  // pick from CATEGORY_META, fallback to CategoryData
+
   const categoryMeta = CATEGORY_META[mainCategory]
   const categoryData = CategoryData[mainCategory]
 

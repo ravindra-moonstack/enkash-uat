@@ -40,7 +40,7 @@ export async function generateMetadata({
   }
 
   const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.webp`
-  console.log("OG Image URL:", imageUrl)
+
 
   return {
     title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
@@ -90,7 +90,7 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   let isActive: boolean = false
 
   if (!localVoucher) {
-    console.log("local voucher not found")
+ 
     return null
   }
 
@@ -109,8 +109,7 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
     )
 
     const apiData = await apiResponse.json()
-    console.log(apiData)
-    console.log("API Response JSON:", JSON.stringify(apiData, null, 2))
+   
 
     apiData.payload.data.forEach((product: any) => {
       if (
@@ -144,9 +143,7 @@ const CategoryPage = async ({
     (voucher) => voucher.urlName === voucherName
   )
 
-  if (!localVoucherData) {
-    console.log("No voucher present")
-  }
+
 
   const voucherData = await fetchVoucher(voucherName)
 

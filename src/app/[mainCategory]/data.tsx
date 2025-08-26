@@ -145,7 +145,7 @@ export const VOUCHER_DATA: Record<
     voucherCards: [
       {
         titleHtml: "Amazon Prime Shopping",
-        description: " E-Gift Card",
+        description: "E-Gift Card",
         discount: "0%",
         cardImage: amazonePrime,
         brandName: "Amazon Prime Shopping Edition",
@@ -578,8 +578,8 @@ export const VOUCHER_DATA: Record<
         description: "E-Gift Card",
         discount: "0%",
         cardImage: healthkartLogo,
-        buttonUrl: "/vouchers/myglamm",
-        brandName: "MyGlamm E-Gift Card",
+        buttonUrl: "/vouchers/healthkart",
+        brandName: "HealthKart",
       },
     ],
   },
