@@ -133,7 +133,7 @@ const blogData = [
 const cardsData = [
   {
     title: "Sign Up",
-    description: "Sign up on EnKash to generate and share subscription link",
+    description: "Sign up on EnKash to generate and share subscription link.",
     icon: scrollIconOne,
   },
   {
@@ -385,18 +385,18 @@ const projects = [
 const allInOnePolicies = [
   {
     icon: taskIconOne,
-    title: "Payment Collection Across Multiple Modes",
+    title: "Automate Recurring Payments",
     description:
-      "EnKash Auto-Collect supports various payment methods including UPI, NEFT, IMPS, and RTGS. Whether it’s branch-specific payments or individual customer transfers, EnKash makes the process frictionless, helping your business grow faster.",
+      "Streamline recurring payment schedules, take control of billing cycles, and stay informed with instant alerts. Our advanced billing system simplifies subscription management with a reliable solution for card updates, payment retries, email notifications, and more.",
     image: paymentLinkImage,
     buttonUrl: "/sales/",
     maxImageHeight: "243px",
   },
   {
     icon: taskIconTwo,
-    title: "Real-Time Notifications for Every Transaction",
+    title: "UPI AutoPay for Scalability",
     description:
-      "Stay informed with instant alerts every time a payment is made. Real-time webhook updates and our dashboard ensure complete transparency and keep your financial operations running smoothly.",
+      "Broaden your audience by including non-cardholders, drive conversions with affordable subscription plans, and foster customer loyalty through visibility and control while enjoying extensive UPI app compatibility.",
     image: notificationImage,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "259px",
@@ -404,31 +404,22 @@ const allInOnePolicies = [
   },
   {
     icon: taskIconThree,
-    title: "Zero Cost Setup for Virtual Accounts",
+    title: "Tailored Recurring Payment Models",
     description:
-      "Create unlimited virtual accounts and payment addresses at no additional cost. Eliminate the manual efforts of assigning account numbers, and let our automation simplify your financial workflows.",
+      "Choose fixed, usage-based, or variable models to automate payments. Support predefined amounts, usage-based billing, or both fixed rentals and ad-hoc charges for complete payment flexibility.",
     image: shareImage,
     buttonUrl: "/sales/",
     maxImageHeight: "305px",
   },
   {
     icon: taskIconFour,
-    title: "Tailored for Your Business Needs",
+    title: "Customize Your Checkout Experience",
     description:
-      "Whether you’re managing multiple branches, customer touchpoints, or financial services, EnKash Auto-Collect provides flexible virtual accounts tailored to each business unit, department, or individual customer.",
+      "Seamlessly integrate EnKash’s ready-to-use APIs into your app or website to offer a branded checkout experience. Use our dashboard to create plans, manage customers, and share payment links via email or SMS.",
     image: paymentOptionImage,
     buttonUrl: "/sales/",
     maxImageHeight: "305px",
     reverse: true,
-  },
-  {
-    icon: taskIconFive,
-    title: "Advanced Security & Compliance",
-    description:
-      "Rest easy knowing that every transaction is secure. EnKash adheres to industry-leading compliance standards and encryption protocols to protect your data and funds.",
-    image: secureImage,
-    buttonUrl: "/sales/",
-    maxImageHeight: "305px",
   },
 ]
 
@@ -467,13 +458,6 @@ const managementCards = [
       "Seamlessly accept NEFT, RTGS, and IMPS transfers using customer-specific identifiers, with automated reconciliation for large-scale transactions.",
     cardImage: autoCollect,
     linkUrl: "/auto-collect",
-  },
-  {
-    titleHtml: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    cardImage: invoices,
-    linkUrl: "/digital-invoicing",
   },
   {
     titleHtml: "Instant Settlement",

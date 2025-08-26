@@ -93,7 +93,7 @@ const AutoCollect = (): React.JSX.Element => {
                     content={[
                       {
                         title:
-                          "No more outstanding invoices and manual follow-ups. Embrace automation and efficiency with EnKash’s Bulk Payment Collection solution.",
+                          "Automate reconciliation for all incoming NEFT, RTGS, IMPS, and UPI payments using EnKash Customer Identifiers and Virtual UPI IDs. Receive real-time alerts and enjoy seamless multi-bank support.",
                         color: "color-black subHeading",
                       },
                     ]}
@@ -116,13 +116,6 @@ const AutoCollect = (): React.JSX.Element => {
                         title="Get Started  "
                         theme="blue"
                         url={salesUrl}
-                      />
-                    </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
                       />
                     </div>
                   </div>
@@ -361,11 +354,11 @@ const AutoCollect = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
-                  title: "other payment products",
+                  title: "other collection products",
                   color: "color-equity-blue",
                 },
                 {

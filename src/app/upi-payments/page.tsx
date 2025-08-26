@@ -5,6 +5,7 @@ import {
   cardsData,
   managementCardsData,
   paymentMethodData,
+  stackcardData,
 } from "./data"
 import faqData from "./faq-data"
 import {
@@ -17,6 +18,7 @@ import {
   AllInOnePolicy,
   FeatureCard,
   FaqSection,
+  CardStacking,
 } from "@/components"
 import {
   groupIcon,
@@ -39,7 +41,21 @@ export const metadata: Metadata = generateMetaData({
 })
 const salesUrl = getSalesUrl("/upi-payments")
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const UpiPayments = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -348,7 +364,19 @@ const UpiPayments = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Powerful UPI Payment Solutions",
+                color: "color-black",
+              },
+            ]}
+          />
+        </div>
+      </div>
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center pb-md-5 pb-4`}>

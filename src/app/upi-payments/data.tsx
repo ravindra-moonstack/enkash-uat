@@ -4,8 +4,11 @@ import flexibility from "./img/flexibility.svg"
 
 import {
   autoCollect,
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
   instant,
-  invoices,
   notificationImage,
   paymentButton,
   paymentLink,
@@ -13,15 +16,21 @@ import {
   paymentOptionImage,
   paymentPage,
   qrCodes,
+  realTimeExpense,
+  realTimeExpenseIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
   shareImage,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   taskIconFour,
   taskIconOne,
   taskIconThree,
   taskIconTwo,
+  TravelIcon,
+  TravelImage,
 } from "."
 
 const cardsData = [
@@ -91,7 +100,7 @@ const allInOnePolicyData = [
     description:
       "Security is our top priority. Every UPI payment you process is backed by EnKash’s advanced security infrastructure, along with two-factor authentication ensuring all transactions are encrypted and safe. This means your business and customer data are protected, reducing the risk of fraud and giving both you and your customers peace of mind during every transaction.",
     image: paymentOptionImage,
-    buttonUrl: "/sales/?source=expense_management",
+    buttonUrl: "/sales/?source=upi-payments",
     maxImageHeight: "268px",
   },
   {
@@ -155,5 +164,46 @@ const managementCardsData = [
     url: "/collection-reminder",
   },
 ]
-
-export { cardsData, paymentMethodData, allInOnePolicyData, managementCardsData }
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "UPI Intent Flow",
+    description: `Make UPI payments faster for your customers by automatically opening their preferred UPI app. EnKash supports intent, collect, and in-app flows for a seamless checkout experience.`,
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=upi-payments",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Dynamic QR Code",
+    description: `Create and show dynamic QR codes on your website or softPOS app with our APIs, enabling quick and easy payments for your customers.`,
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Static QR Code",
+    description: `Simplify offline UPI payment collections by generating QR codes directly from your desktop or softPOS app.`,
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=upi-payments",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Virtual UPI ID",
+    description: `Generate unique UPI IDs for each payer, automatically reconcile payments from various customers, and allow users to pay without manually entering the amount.`,
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: TravelIcon,
+    title: "UPI AutoPay",
+    description: `Automate recurring payments up to ₹15,000 with a one-time UPI mandate and streamline your subscription collections.`,
+    image: TravelImage,
+    buttonUrl: "/sales",
+  },
+]
+export { cardsData, paymentMethodData, allInOnePolicyData, managementCardsData, stackcardData }
