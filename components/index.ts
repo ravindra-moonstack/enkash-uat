@@ -140,6 +140,30 @@ const SalesForm = dynamic(
   () => import("./sales-form/salesForm"),
   { ssr: true }
 )
+const OurStoryCard = dynamic(
+  () => import("./AboutOurStoryCard/AboutOurStoryCard"),
+  { ssr: true }
+)
+const LeadersSection = dynamic(
+  () => import("./AboutLeadersCard/AboutLeadersCard"),
+  { ssr: true }
+)
+const InvestorsLogos = dynamic(
+  () => import("./InvestorsLogos/InvestorsLogos"),
+  { ssr: true }
+)
+const EmployeeSlider = dynamic(
+  () => import("./EmployeeSlider/EmployeeSlider"),
+  { ssr: true }
+)
+const CareersCard = dynamic(
+  () => import("./AboutCareersCard/AboutCareersCard"),
+  { ssr: true }
+)
+const LocationTabsMap = dynamic(
+  () => import("./LocationTabsMap/LocationTabsMap"),
+  { ssr: true }
+)
 
 export {
   Header,
@@ -182,5 +206,11 @@ export {
   BpHeroSection,
   TabPoliciesWrapper,
   ourProductsSection,
-  SalesForm
+  SalesForm,
+  OurStoryCard,
+  LeadersSection,
+  InvestorsLogos,
+  EmployeeSlider,
+  CareersCard,
+  LocationTabsMap
 }

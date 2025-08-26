@@ -41,7 +41,7 @@ export default function ProductsSection({ sectionTitle, products }: ProductsSect
                         <div key={product.id} className={styles.card}>
                             {/* Image */}
                             <div className={styles.imageContainer} style={{ alignSelf: product.align ? product.align : "flex-end" }}>
-                                <img
+                                <Image
                                     src={product.image}
                                     alt={product.alt}
                                     className={styles.cardImage}

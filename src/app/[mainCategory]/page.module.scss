@@ -62,3 +62,45 @@
     }
   }
 }
+
+.faq_wrapper {
+  width: 100%;
+}
+
+.scrollable {
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+
+  @include for-laptops {
+    padding-right: 38px;
+  }
+}
+
+.scrollable::-webkit-scrollbar {
+  width: 6px;
+  background-color: #cccc;
+  border-radius: 9999px;
+
+  @include for-laptops {
+    width: 12px;
+  }
+}
+
+.scrollable::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+  background-color: #3b82f6;
+  /* blue */
+  border-radius: 9999px;
+  border: 1px solid transparent;
+}
+
+.scrollable::-webkit-scrollbar-button {
+  background-color: #cccc;
+  height: 0;
+  width: 0;
+  display: none;
+}
