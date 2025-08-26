@@ -16,8 +16,16 @@
       align-items: end;
       img {
         width: 100%;
-        height: auto;
-        object-position: bottom center;
+        height: 100%;
+        object-fit: contain;
+        object-position: top center;
+        @include for-laptops{
+          width: 100%;
+          height: auto;
+          object-fit: contain;
+          object-position: bottom center;
+          
+        }
       }
     }
     .cardHeadding {

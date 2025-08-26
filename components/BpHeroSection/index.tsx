@@ -67,11 +67,11 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
                                 <DynamicHeading
                                     content={mainHeading}
                                     headingTag="p"
-                                    className={` color-equity-blue pt-2 pt-md-5 pb-md-4 mb-0`}
+                                    className={` color-equity-blue pt-3 text-md-start text-center pt-md-5 pb-md-4 mb-2`}
                                 />
                             </div>
 
-                            <div className="d-flex flex-column">
+                            <div className="d-flex flex-column text-md-start text-center">
                                 <DynamicHeading
                                     content={subHeading}
                                     headingTag="h1"
@@ -80,7 +80,7 @@ const BpHeroSection: React.FC<BpHeroSectionProps> = ({
                             </div>
 
                             {/* CTA Button */}
-                            <div className={styles.button_wrapper}>
+                            <div className={`${styles.button_wrapper} text-md-start text-center` }>
                                 <RectangleButton
                                     title={button.title}
                                     //@ts-ignore

@@ -455,11 +455,11 @@ const managementCards = [
     linkUrl: "/payment-button",
   },
   {
-    titleHtml: "UPI Payments",
+    titleHtml: "QR Codes",
     description:
-      "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
+      "Allow customers to make payments via scannable QR codes using their smart devices.",
     cardImage: qrCodes,
-    linkUrl: "/upi-payments",
+    linkUrl: "/qr-code",
   },
   {
     titleHtml: "UPI Payments",
@@ -467,13 +467,6 @@ const managementCards = [
       "UPI payments with any app - BHIM, PhonePe, WhatsApp for smooth transactions. No SMS, no VPA hassles.",
     cardImage: UpiPayments,
     linkUrl: "/upi-payments",
-  },
-  {
-    titleHtml: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    cardImage: invoices,
-    linkUrl: "/digital-invoicing",
   },
   {
     titleHtml: "Instant Settlement",
