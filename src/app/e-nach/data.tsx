@@ -34,6 +34,8 @@ import global from "./img/global.svg"
 import options from "./img/options.png"
 import {
   autoCollect,
+  fraudProtection,
+  fraudProtectionIcon,
   instant,
   invoices,
   notificationImage,
@@ -43,12 +45,16 @@ import {
   paymentOptionImage,
   paymentPage,
   playIntegrationImage,
+  realTimeExpense,
+  realTimeExpenseIcon,
   scrollIconFourth,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
   secureImage,
   shareImage,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   taskIconFive,
   taskIconFour,
   taskIconOne,
@@ -135,12 +141,12 @@ const blogData = [
 const cardsData = [
   {
     title: "Login",
-    description: "Login to EnKash and initiate eNACH registration",
+    description: "Log in to EnKash and initiate eNACH registration",
     icon: scrollIconOne,
   },
   {
     title: "Enter Details",
-    description: "Provide required personal and bank information",
+    description: "Provide the required personal and bank information",
     icon: scrollIconTwo,
   },
   {
@@ -150,7 +156,7 @@ const cardsData = [
   },
   {
     title: "Activation",
-    description: "eNACH is setup for recurring payments, once approved.",
+    description: "eNACH is set up for recurring payments, once approved",
     icon: scrollIconFourth,
   },
 ]
@@ -490,7 +496,32 @@ const managementCards = [
     linkUrl: "/digital-invoicing",
   },
 ];
-
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Product Sales",
+    description: `Sell your products or services online with a professional storefront. List multiple items, manage inventory, and set purchase controls.`,
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Event Registrations",
+    description: `Easily collect event fees and manage attendee registration with customized payment pages.`,
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Donations",
+    description: `Streamline your fundraising efforts with pages that allow supporters to donate quickly and securely. Send automated receipts, including 80G certificates for NGOs.`,
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+]
 export {
   blogData,
   dataSets,
@@ -504,5 +535,6 @@ export {
   supportData,
   savingData,
   allInOnePolicies,
-  managementCards
+  managementCards,
+  stackcardData
 }

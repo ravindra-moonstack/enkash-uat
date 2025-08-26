@@ -18,6 +18,7 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
+  smartIcon,
 } from "."
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
@@ -46,10 +47,10 @@ const BulkCollect = (): React.JSX.Element => {
                 <CustomBreadcrumb
                   items={[
                     { name: "Home", url: "/" },
-                    { name: "Collect Payments", url: "/collect-payments" },
+                    { name: "Collect Payments", url: "/products/collect-payments" },
                     {
                       name: "Bulk Collect",
-                      url: "/collect-payments/bulk-collect",
+                      url: "/bulk-collect",
                     },
                   ]}
                 />
@@ -115,13 +116,6 @@ const BulkCollect = (): React.JSX.Element => {
                         url={salesUrl}
                       />
                     </div>
-                    <div>
-                      <RectangleButton
-                        title="API Doc"
-                        theme="outline-blue"
-                        url="https://docs.enkash.com/"
-                      />
-                    </div>
                   </div>
                 </div>
               </div>
@@ -167,16 +161,7 @@ const BulkCollect = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -198,7 +183,7 @@ const BulkCollect = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={activationIcon} alt="icon" />
+                <Image src={smartIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
@@ -267,9 +252,8 @@ const BulkCollect = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -368,11 +352,11 @@ const BulkCollect = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
-                  title: "other payment products",
+                  title: "other collection products",
                   color: "color-equity-blue",
                 },
                 {
