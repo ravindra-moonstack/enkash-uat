@@ -5,6 +5,7 @@ import {
   cardsData,
   managementCardData,
   paymentMethodData,
+  stackcardData,
 } from "./data"
 import faqData from "./faq-data"
 import {
@@ -17,6 +18,7 @@ import {
   AllInOnePolicy,
   FeatureCard,
   FaqSection,
+  CardStacking,
 } from "@/components"
 import {
   blueArrow,
@@ -26,6 +28,7 @@ import {
   mealCardImage,
   activationIcon,
   realTimeIcon,
+  hundredPercentIcon,
 } from "."
 import { Metadata } from "next"
 import generateMetaData from "@/common/utils/metaData"
@@ -42,7 +45,21 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/qr-code")
 
 const showScroll = cardsData.length > 3
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const QrCode = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -167,21 +184,11 @@ const QrCode = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <DynamicHeading
-                  content={[
-                    {
-                      title: "100%",
-                      color: "color-white",
-                    },
-                  ]}
-                  headingTag="h2"
-                  className="f-6"
-                />
+                <Image src={activationIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -198,12 +205,11 @@ const QrCode = (): React.JSX.Element => {
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
               <div className={` d-flex ${styles.outerCard}`}>
-                <Image src={activationIcon} alt="icon" />
+                <Image src={hundredPercentIcon} alt="icon" />
               </div>
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -225,7 +231,6 @@ const QrCode = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-                {" "}
                 <DynamicHeading
                   content={[
                     {
@@ -356,7 +361,19 @@ const QrCode = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Choose the Best QR Code for Your Business",
+                color: "color-black",
+              },
+            ]}
+          />
+        </div>
+      </div>
       <div className={styles.sixth_row}>
         <div className={` max-w-auto`}>
           <div className={`${styles.title} text-center  pb-md-5 pb-4`}>
@@ -424,11 +441,11 @@ const QrCode = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
-                  title: "other payment products",
+                  title: "other collection products",
                   color: "color-equity-blue",
                 },
                 {
