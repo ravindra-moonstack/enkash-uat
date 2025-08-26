@@ -4,7 +4,6 @@ import {
   acceleratedGrowthData,
   dashboardData,
   integrationData,
-  managementCardData,
   paymentMethodData,
   rankData,
   savingData,
@@ -17,7 +16,6 @@ import {
   CustomBreadcrumb,
   PolicyCard,
   RectangleButton,
-  ManagementCard,
   FaqSection,
 } from "@/components"
 import {
@@ -178,7 +176,6 @@ const PaymentGateway = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-
             <div
               className={` d-flex flex-column justify-content-center align-items-center ${styles.card}`}
             >
@@ -197,7 +194,6 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -228,7 +224,6 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -259,7 +254,6 @@ const PaymentGateway = (): React.JSX.Element => {
               <div
                 className={`py-2 d-flex flex-column justify-content-center align-items-center ${styles.innerCard}`}
               >
-
                 <DynamicHeading
                   content={[
                     {
@@ -769,8 +763,6 @@ const PaymentGateway = (): React.JSX.Element => {
       </div>
 
       <FaqSection faqData={faqData} />
-
-
     </div>
   )
 }

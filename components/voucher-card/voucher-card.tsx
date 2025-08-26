@@ -3,7 +3,7 @@ import styles from "./voucher-card.module.scss"
 import { ReactNode } from "react"
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import RectangleButton from "../buttons/rectangle-button/rectangle-button"
-import { blueArrow, whiteArrow } from "."
+import { whiteArrow } from "."
 
 export interface CardProps {
   titleHtml?: ReactNode
@@ -20,7 +20,6 @@ const VoucherCard = ({
   cardImage,
   discount,
   buttonUrl,
-  brandName,
 }: CardProps) => {
   return (
     <div className={`d-flex flex-column text-start ${styles.card_body}`}>
