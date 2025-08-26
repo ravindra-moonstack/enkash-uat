@@ -1,7 +1,7 @@
 "use client"
 
-import React from "react"
-import Slider from "react-slick"
+import React, { useMemo } from "react"
+import Slider, { Settings } from "react-slick"
 import Image from "next/image"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
@@ -28,35 +28,36 @@ const CareersHero: React.FC = () => {
     { desktop: bannerSlider3, mobile: mobilebannerSlider3 },
   ]
 
-  const settings = {
-    dots: false,
-    infinite: true,
-    autoplay: true,
-    speed: 1000,
-    autoplaySpeed: 2000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    fade: true,
-  }
+  const settings: Settings = useMemo(
+    () => ({
+      dots: false,
+      infinite: true,
+      autoplay: true,
+      speed: 1000,
+      autoplaySpeed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+    }),
+    []
+  )
 
   return (
     <div className={`${styles.careerBannerOuter} careerBannerOuterGlobal`}>
-      {/* Background Slider */}
       <Slider {...settings} className="h-full">
         {backgrounds.map((bg, index) => (
           <div key={index} className={`${styles.careerBannerImage} relative`}>
             <picture>
-              {/* Mobile Image */}
               <source media="(max-width: 768px)" srcSet={bg.mobile.src} />
-              {/* Desktop Image */}
+
               <Image
                 src={bg.desktop}
                 alt={`Background ${index}`}
                 fill
                 className="brightness-75"
                 style={{ objectFit: "cover" }}
-                priority={index === 0} // preload first image
+                priority={index === 0}
               />
             </picture>
           </div>
