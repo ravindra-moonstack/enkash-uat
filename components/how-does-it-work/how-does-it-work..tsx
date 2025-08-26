@@ -75,7 +75,7 @@ const HowDoesItWork = ({ dataSets }: howDoesItWorkProps) => {
                   </div>
                   <div className="mt-3 mt-md-5">
                     <RectangleButton
-                      title="Try Now"
+                      title="Get Started"
                       theme="border-black"
                       actionImage={blueArrow}
                       hoverImage={whiteArrow}

@@ -142,12 +142,17 @@ const MainCategoryPage = async ({
     ),
   }))
 
-  const voucherCardsWithDiscount = pageData.voucherCards.map((card) => ({
-    ...card,
-    discount: `${getDiscountValue(
-      apiDiscounts[nameToUrl(card.brandName || card.titleHtml)] || card.discount
-    )}%`,
-  }))
+  const voucherCardsWithDiscount = pageData.voucherCards.map((card) => {
+    const brandKey = card.brandName ? nameToUrl(card.brandName) : ""
+    const discountFromApi = brandKey ? apiDiscounts[brandKey] : undefined
+
+    return {
+      ...card,
+      discount: discountFromApi
+        ? `${getDiscountValue(discountFromApi)}%`
+        : `${getDiscountValue(card.discount)}%`,
+    }
+  })
 
   return (
     <div className={`color-black ${styles.home_container}`}>

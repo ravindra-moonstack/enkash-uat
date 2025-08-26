@@ -16,15 +16,22 @@
     content: "";
     position: absolute;
     inset: 0;
-   background: linear-gradient(0deg, #000000 0%, #000000 -1.06%, #000000 1.51%, rgba(0, 0, 0, 0.77) 6.74%, rgba(0, 0, 0, 0.33) 26.46%, rgba(0, 0, 0, 0) 45.45%);
-  z-index: -1;
-
+    background: linear-gradient(
+      0deg,
+      #000000 0%,
+      #000000 -1.06%,
+      #000000 1.51%,
+      rgba(0, 0, 0, 0.77) 6.74%,
+      rgba(0, 0, 0, 0.33) 26.46%,
+      rgba(0, 0, 0, 0) 45.45%
+    );
+    z-index: -1;
   }
   .logo {
     padding-bottom: 32px;
     img {
-      width: 75px;
-      height: 20px;
+      width: 100px;
+      height: 45px;
     }
     @include for-laptops {
       padding-bottom: 41px;
@@ -63,7 +70,7 @@
   position: relative;
   background: $color-black;
   padding: 20px;
-  
+
   .greyLine {
     height: 2px;
     background: $color-dark-grey;
@@ -74,12 +81,14 @@
   .trunstedBrands {
     z-index: 2;
     position: relative;
-    
   }
   .officeLocation {
     z-index: 9;
     position: relative;
-   padding: 64px 135px 0px 135px;
+    margin-top: 60px;
+    @include for-laptops {
+      padding: 64px 135px 0px 135px;
+    }
   }
 
   .copyright {
@@ -96,6 +105,9 @@
     .termsCond {
       display: flex;
       gap: 8px;
+      a{
+        text-decoration: none !important;
+      }
       @include for-laptops {
         gap: 32px;
       }

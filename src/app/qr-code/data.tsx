@@ -393,7 +393,7 @@ const projects = [
 const allInOnePolicyData = [
   {
     icon: taskIconOne,
-    title: "Generate QR codes for your business in seconds",
+    title: "Generate QR Codes for your Business in Seconds",
     description:
       "With EnKash QR codes, getting started is quick and easy. Generate your unique QR codes instantly through our user-friendly platform. No complicated processes or long wait times—just a few clicks, and you’re ready to accept payments, boosting efficiency for your business operations.",
     image: paymentLinkImage,

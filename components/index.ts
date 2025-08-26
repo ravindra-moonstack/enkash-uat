@@ -59,10 +59,7 @@ const FeatureSpotlight = dynamic(
 const EnkashWay = dynamic(() => import("./enkash-way/enkash-way"), {
   ssr: true,
 })
-const SplineAnimation = dynamic(
-  () => import("./splineAnimation/splineAnimation"),
-  { ssr: true }
-)
+
 const ContentShowcase = dynamic(
   () => import("./contentShowcase/contentShowcase"),
   { ssr: true }
@@ -139,6 +136,10 @@ const ourProductsSection = dynamic(
   () => import("./ourProductsSection/index"),
   { ssr: true }
 )
+const SalesForm = dynamic(
+  () => import("./sales-form/salesForm"),
+  { ssr: true }
+)
 
 export {
   Header,
@@ -163,7 +164,6 @@ export {
   FeatureSpotlight,
   SecondFaqHtml,
   EnkashWay,
-  SplineAnimation,
   ContentShowcase,
   ManagementCard,
   TestimonialSlider,
@@ -181,5 +181,6 @@ export {
   PartnerShipForm,
   BpHeroSection,
   TabPoliciesWrapper,
-  ourProductsSection
+  ourProductsSection,
+  SalesForm
 }

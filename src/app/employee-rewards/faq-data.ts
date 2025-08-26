@@ -113,7 +113,7 @@ export const SecondfaqData = [
     answer: [
       {
         heading:
-          "An Automated recognition and reward system that tracks employee achievements and delivers rewards efficiently and consistently.",
+          "An automated recognition and reward system that tracks employee achievements and delivers rewards efficiently and consistently.",
       },
     ],
   },

@@ -147,6 +147,7 @@ const ContactUs = () => {
                   {
                     title: "Terms & Condition",
                     color: "color-grey-100",
+                     link: "/policies/tnc",
                   },
                 ]}
                 headingTag="p"
@@ -157,6 +158,7 @@ const ContactUs = () => {
                   {
                     title: "Privacy Policy",
                     color: "color-grey-100",
+                      link: "/policies/privacy-policy",
                   },
                 ]}
                 headingTag="p"

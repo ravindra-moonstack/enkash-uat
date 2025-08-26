@@ -59,7 +59,11 @@ const DynamicHeading: React.FC<DynamicHeadingProps> = ({
 
           // ✅ Wrap with Link if link prop exists
           return item.link ? (
-            <Link key={i} href={item.link} className="no-underline">
+            <Link
+              key={i}
+              href={item.link}
+              className={`${styles.noUnderline}`}
+            >
               {innerContent}
             </Link>
           ) : (
