@@ -1,8 +1,8 @@
 "use client"
 
 import type React from "react"
-import { useRef } from "react"
-import Slider from "react-slick"
+import { useRef, useMemo } from "react"
+import Slider, { Settings } from "react-slick"
 import styles from "./PartnershipSlider.module.scss"
 import Link from "next/link"
 import Image from "next/image"
@@ -18,42 +18,45 @@ interface SlideData {
   }
 }
 
-interface PartnershipSliderProps {
+type PartnershipSliderProps = {
   slides: SlideData[]
 }
 
 const PartnershipSlider: React.FC<PartnershipSliderProps> = ({ slides }) => {
   const sliderRef = useRef<Slider>(null)
 
-  const settings = {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    adaptiveHeight: false,
-    Draggable: true,
-    pauseOnHover: true,
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
+  const settings: Settings = useMemo(
+    () => ({
+      dots: true,
+      arrows: false,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      adaptiveHeight: false,
+      draggable: true, // 👈 lowercase, TS + react-slick correct
+      pauseOnHover: true,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1,
+          },
         },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          },
         },
-      },
-    ],
-  }
+      ],
+    }),
+    [] // static config, so no deps
+  )
 
   return (
     <div className={styles.partnershipSlider}>

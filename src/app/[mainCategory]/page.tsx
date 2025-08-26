@@ -13,7 +13,6 @@ import { CTASection } from "@/components"
 import VoucherFaqSection from "@/components/voucherFaq/voucherFaqSection"
 import NotFound from "../not-found"
 
-
 const VALID_CATEGORIES: string[] = [
   "e-commerce-vouchers",
   "food-and-beverages-vouchers",
@@ -21,7 +20,6 @@ const VALID_CATEGORIES: string[] = [
   "apparels-vouchers",
   "movie-and-music-vouchers",
 ]
-
 
 const getDiscountValue = (raw: string | number | undefined): number => {
   if (!raw) return 0
@@ -77,7 +75,6 @@ const fetchVouchers = async (
   }
 }
 
-
 export async function generateMetadata({
   params,
 }: {
@@ -95,7 +92,6 @@ export async function generateMetadata({
       },
     }
   }
-
 
   const categoryMeta = CATEGORY_META[mainCategory]
   const categoryData = CategoryData[mainCategory]
@@ -125,7 +121,6 @@ const MainCategoryPage = async ({
     return <NotFound />
   }
 
-  const categoryData = CategoryData[mainCategory]
   const pageData = VOUCHER_DATA[mainCategory]
 
   if (!pageData) notFound()

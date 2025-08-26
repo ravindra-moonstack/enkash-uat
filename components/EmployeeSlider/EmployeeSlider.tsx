@@ -1,7 +1,7 @@
 "use client"
 
-import React from "react"
-import Slider from "react-slick"
+import React, { useMemo } from "react"
+import Slider, { Settings } from "react-slick"
 import Image from "next/image"
 
 import styles from "./EmployeeSlider.module.scss"
@@ -15,14 +15,14 @@ const employees = [
 ]
 
 const EmployeeSlider: React.FC = () => {
-  const settings = {
+const settings: Settings = useMemo(
+  () => ({
     dots: false,
     infinite: true,
     speed: 500,
-    autoPlay: true,
+    autoplay: true,          // 👈 use lowercase, `autoPlay` isn’t valid in react-slick
     slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
     autoplaySpeed: 3000,
     arrows: false,
     pauseOnHover: true,
@@ -30,7 +30,9 @@ const EmployeeSlider: React.FC = () => {
       { breakpoint: 1024, settings: { slidesToShow: 3 } },
       { breakpoint: 767, settings: { slidesToShow: 1 } },
     ],
-  }
+  }),
+  []
+  )
 
   return (
     <div className={`${styles.EmployeeSliderOuter} EmployeeSliderOuterGlobal`}>

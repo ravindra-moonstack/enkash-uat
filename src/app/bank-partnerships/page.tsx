@@ -1,6 +1,5 @@
 import React from "react"
 import styles from "./page.module.scss"
-import BankSolutions from "@/components/partnerships/BankSolutions"
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -8,12 +7,16 @@ import {
   slideData,
   stepsData,
 } from "./data"
-import PartnershipSection from "@/components/partnerShipSlider/PartnershipSection"
-import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
 import FaqSection from "@/components/faqSection/faqSection"
 import { ThirdfaqData } from "./faq-data"
-import PartnerShipForm from "@/components/partnerShip-form"
-import { BecomePartnerSteps, BpHeroSection } from "@/components"
+import {
+  BecomePartnerSteps,
+  BpHeroSection,
+  BottomCtaSection,
+  PartnershipSection,
+  BankSolutions,
+  PartnerShipForm,
+} from "@/components"
 import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import generateMetaData from "@/common/utils/metaData"

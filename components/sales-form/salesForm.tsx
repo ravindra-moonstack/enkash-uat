@@ -106,14 +106,7 @@ const SalesForm: React.FC = () => {
     }
   }, [])
 
-  const {
-    errors,
-    values,
-    touched,
-    handleSubmit,
-    getFieldProps,
-    setFieldValue,
-  } = useFormik({
+  const { errors, touched, handleSubmit, getFieldProps } = useFormik({
     initialValues: salesInitialValue,
     validationSchema: salesValidation,
     onSubmit: () => {
@@ -124,7 +117,7 @@ const SalesForm: React.FC = () => {
   return (
     <div className={styles.contactFormWrapper}>
       <form
-        // action="https://forms.zohopublic.in/Enkash/form/TalktoSales/formperma/hmsqE173cI_jvQ9Xnh7Bkuxp1UONfPeWnrlK-L_NTBA/htmlRecords/submit"
+            action={process.env.ZOHO_SALES_URL}
         name="form"
         method="POST"
         acceptCharset="UTF-8"

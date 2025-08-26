@@ -4,7 +4,6 @@ import Image from "next/image"
 import {
   anniversaryGiftingImg,
   birthdayGiftingImg,
-  corporateGiftingImg,
   festivalGiftingImg,
 } from ".."
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"

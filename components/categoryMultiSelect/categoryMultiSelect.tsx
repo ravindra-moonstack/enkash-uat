@@ -13,13 +13,13 @@ interface CategoryMultiSelectProps {
   name: string
   options: Option[]
   placeholder?: string
-  onChange?: (val: string[]) => void 
+  onChange?: (val: string[]) => void
 }
 
 const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
   options,
   placeholder = "What are you looking for? (dropdown)*",
-  onChange, 
+  onChange,
 }) => {
   const [selected, setSelected] = useState<string[]>([])
   const [open, setOpen] = useState(false)
@@ -80,11 +80,11 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
   }
 
   // 🔹 Trigger onChange whenever selected updates
-  // useEffect(() => {
-  //   if (onChange) {
-  //     onChange(selected)
-  //   }
-  // }, [selected, onChange])
+  useEffect(() => {
+    if (onChange) {
+      onChange(selected)
+    }
+  }, [selected, onChange])
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -153,9 +153,8 @@ const CategoryMultiSelect: React.FC<CategoryMultiSelectProps> = ({
                     checked={selected.includes(cat.value)}
                     onChange={() => {
                       toggleOption(cat.value)
-                      setOpenCategories(
-                        (prev) =>
-                          prev.includes(cat.value) ? prev : [...prev, cat.value]
+                      setOpenCategories((prev) =>
+                        prev.includes(cat.value) ? prev : [...prev, cat.value]
                       )
                     }}
                     onClick={(e) => e.stopPropagation()}

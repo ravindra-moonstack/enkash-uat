@@ -57,7 +57,7 @@ const BankAffiliatePartnershipForm: React.FC = () => {
   return (
     <div className={styles.contactFormWrapper}>
       <form
-        action="https://forms.zohopublic.in/Enkash/form/Partnerships/formperma/VeKGFNNABlfHvv4xttxn0KZZuYLpY4mFn-3PK2Ldxe0/htmlRecords/submit"
+        action={process.env.ZOHO_AFFILIATE_URL}
         name="form"
         method="POST"
         acceptCharset="UTF-8"
