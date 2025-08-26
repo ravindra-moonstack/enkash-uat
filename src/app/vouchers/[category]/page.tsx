@@ -12,7 +12,7 @@ import {
 } from "../index"
 import VoucherCard from "@/components/voucher-page/voucher-card"
 import SavingsCalculator from "@/components/voucher-page/voucher-calculator/voucher-calculator"
-import OccasionVoucher from "@/components/voucher-page/occasion-voucher/occasion-voucher"
+import OccasionVoucher from "@/components/voucher-page/occasion-voucher"
 import CustomBreadcrumb from "@/components/breadcrumb/breadbrumb"
 import { linkifyText, nameToUrl } from "@/common/utils/stringUtils"
 import VoucherFaqComponent from "@/components/voucher-page/voucher-faq"
@@ -40,7 +40,6 @@ export async function generateMetadata({
   }
 
   const imageUrl = `https://www.enkash.com/images/voucher-bg/${voucher.urlName}.webp`
-
 
   return {
     title: `${voucher.brandName} Gift Card Vouchers - How to Use, Redeem and Check ${voucher.brandName} Gift Card Balance`,
@@ -86,11 +85,9 @@ const sanitizeUTM = (utm: string): string => {
 
 const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
   // local voucher
-  let localVoucher: Voucher | any = VoucherData[voucherName]
-  let isActive: boolean = false
+  const localVoucher: Voucher | any = VoucherData[voucherName]
 
   if (!localVoucher) {
- 
     return null
   }
 
@@ -109,7 +106,6 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
     )
 
     const apiData = await apiResponse.json()
-   
 
     apiData.payload.data.forEach((product: any) => {
       if (
@@ -117,7 +113,6 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
         product.active &&
         product.enabled
       ) {
-        isActive = true
         localVoucher.discount = parseFloat(product.discount)
       }
     })
@@ -139,12 +134,6 @@ const CategoryPage = async ({
   const { category } = await params
   const voucherName = category
 
-  const localVoucherData = Object.values(VoucherData).find(
-    (voucher) => voucher.urlName === voucherName
-  )
-
-
-
   const voucherData = await fetchVoucher(voucherName)
 
   const voucherCategory = voucherData?.category || ""
@@ -152,7 +141,7 @@ const CategoryPage = async ({
     ? `/images/voucher-bg/${voucherData.urlName}.webp`
     : null
 
-  let categoryNameMap = new Map<string, string>([
+  const categoryNameMap = new Map<string, string>([
     ["e-commerce", "E-Commerce"],
     ["food-and-beverages", "Food & Beverages"],
     ["health-and-wellness", "Health & Wellness"],
@@ -393,8 +382,8 @@ const CategoryPage = async ({
                       </li>
                       <li>
                         <div>
-                          Once ready, head to your cart and click "Buy Now" to
-                          proceed with the purchase
+                          {`Once ready, head to your cart and click "Buy Now" to
+                          proceed with the purchase`}
                         </div>
                       </li>
                     </ul>
@@ -497,7 +486,7 @@ const CategoryPage = async ({
                         },
                       ]}
                       headingTag="h3"
-                      className="f-7 "
+                      className="f-7"
                     />
                   </div>
                   <div className={`mb-4 ${styles.description}`}>

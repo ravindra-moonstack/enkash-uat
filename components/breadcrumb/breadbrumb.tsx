@@ -2,18 +2,7 @@ import React from "react"
 import Link from "next/link"
 import Head from "next/head"
 import styles from "./breadcrumb.module.scss"
-
-
-interface BreadcrumbItem {
-  name: string
-  url: string
-}
-
-interface BreadcrumbProps {
-  items: BreadcrumbItem[]
-  domain?: string
-  linkColor?: "white" | "black" | "allWhite"
-}
+import { BreadcrumbProps } from "@/src/types/common"
 
 const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
   items,
@@ -43,8 +32,8 @@ const CustomBreadcrumb: React.FC<BreadcrumbProps> = ({
           linkColor === "white"
             ? styles.white
             : linkColor === "allWhite"
-            ? styles.allWhite
-            : ""
+              ? styles.allWhite
+              : ""
         }`}
         aria-label="Breadcrumb"
       >

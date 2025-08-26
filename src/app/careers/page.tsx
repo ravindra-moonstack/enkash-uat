@@ -5,7 +5,7 @@ import { HomePageRewardsVouchersSlide } from "./data"
 import CareersHero from "@/components/CareersHeroSlider/CareersHeroSlider"
 import CareersPaycheck from "@/components/CareersPaycheck/CareersPaycheck"
 import CoreValuesData from "@/components/CoreValuesData/CoreValuesData"
-import YourOpportunityCareers from "@/components/YourOpportunityCareers/YourOpportunityCareers"
+import YourOpportunityCareers from "@/components/YourOpportunityCareers"
 import CareersTestimonialSlider from "@/components/CareersTestimonialSlider/CareersTestimonialSlider"
 import {
   CoreValuesIcon1,
