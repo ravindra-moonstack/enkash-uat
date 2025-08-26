@@ -35,7 +35,8 @@ import options from "./img/options.png"
 import {
   autoCollect,
   instant,
-  invoices,
+  fraudProtection,
+  fraudProtectionIcon,
   notificationImage,
   optimizedIcon,
   paymentButton,
@@ -52,6 +53,8 @@ import {
   shareImage,
   taskIconFive,
   taskIconFour,
+  realTimeExpense,
+  realTimeExpenseIcon,
   taskIconOne,
   taskIconThree,
   taskIconTwo,
@@ -477,13 +480,6 @@ const managementCardData = [
     linkUrl: "/auto-collect",
   },
   {
-    titleHtml: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    cardImage: invoices,
-    linkUrl: "/digital-invoicing",
-  },
-  {
     titleHtml: "Instant Settlement",
     description:
       "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
@@ -498,7 +494,22 @@ const managementCardData = [
     linkUrl: "/collection-reminder",
   },
 ]
-
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Static QR Code",
+    description: `Generate a single QR code for your business. Customers scan and pay the pre-defined amount using any UPI app. Ideal for displaying at stores or on invoices`,
+    image: realTimeExpense,
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Dynamic QR Code",
+    description: `Generate unique QR codes for each transaction. Perfect for online payments, allowing you to capture specific invoice details for easy reconciliation and can be left open-ended for variable payment amounts`,
+    image: fraudProtection,
+  },
+]
 export {
   blogData,
   dataSets,
@@ -513,4 +524,5 @@ export {
   savingData,
   allInOnePolicyData,
   managementCardData,
+  stackcardData
 }

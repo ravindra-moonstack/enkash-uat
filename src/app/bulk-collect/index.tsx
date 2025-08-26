@@ -40,6 +40,7 @@ export { default as optimizedIcon } from "./img/website-requierd.webp"
 export { default as hundredPercentIcon } from "./img/100%.svg"
 export { default as activationIcon } from "./img/activation.svg"
 export { default as realTimeIcon } from "./img/real-time.svg"
+export { default as smartIcon } from "./img/smartIcon.svg"
 export { default as greenIcon } from "./img/green-icon.svg"
 
 export { default as scrollIconOne } from "./img/scrollIconOne.svg"
