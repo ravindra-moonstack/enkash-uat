@@ -57,7 +57,7 @@ const ContactForm: React.FC = () => {
 
       <div className={styles.contactFormWrapper}>
         <form
-          action="https://forms.zohopublic.in/Enkash/form/WebsiteLetsConnect/formperma/ya7rxfABr3dsLPI9Cdv2mwNzv4AEHz92m6N4jgOTEiQ/htmlRecords/submit"
+              action={process.env.ZOHO_CONTACT_URL}
           name="form"
           method="POST"
           acceptCharset="UTF-8"

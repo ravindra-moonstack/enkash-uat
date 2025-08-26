@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react"
+import React, { useMemo } from "react"
 import Slider, { Settings } from "react-slick"
 import styles from "./homePageSlider.module.scss"
 import "slick-carousel/slick/slick.css"
@@ -9,7 +9,6 @@ import "slick-carousel/slick/slick-theme.css"
 import { StaticImageData } from "next/image"
 import AdidasCard from "../AdidasCard/AdidasCard"
 
-// ✅ Match interface with your actual data structure
 interface TestimonialItem {
   image: string | StaticImageData
   title1: string
@@ -32,7 +31,8 @@ const HomePageSlider: React.FC<HomePageSliderProps> = ({
   testimonials,
   slidesToShow = 2,
 }) => {
-  const sliderSettings: Settings = {
+const sliderSettings: Settings = useMemo(
+  () => ({
     infinite: true,
     speed: 500,
     autoplay: true,
@@ -49,7 +49,9 @@ const HomePageSlider: React.FC<HomePageSliderProps> = ({
         settings: { slidesToShow: 1 },
       },
     ],
-  }
+  }),
+  [slidesToShow] 
+)
 
   return (
     <div className={`col-12 ${styles.banking_wrapper}`}>

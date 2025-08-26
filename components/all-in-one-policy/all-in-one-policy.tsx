@@ -17,7 +17,7 @@ interface AllInOnePolicyProps {
   buttonUrl: string
   reverse?: boolean
   maxImageHeight?: string
-  buttonTheme?: RectangleButtonTheme // ✅ type-safe!
+  buttonTheme?: RectangleButtonTheme 
   buttonText?: string
   buttonActionIcon?: StaticImageData
   buttonHoverIcon?: StaticImageData

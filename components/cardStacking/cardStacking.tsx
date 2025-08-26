@@ -43,7 +43,7 @@ const CardStacking: React.FC<CardStackingProps> = ({ cards, heading }) => {
     const cardEls = cardsRef.current.filter(Boolean)
     if (cardEls.length !== cards.length) return
 
-    const firstST = ScrollTrigger.create({
+    ScrollTrigger.create({
       trigger: cardEls[0],
       start: "90% center",
     })

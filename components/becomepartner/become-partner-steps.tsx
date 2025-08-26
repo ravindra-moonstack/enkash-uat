@@ -1,7 +1,9 @@
+import React, { JSX } from "react"
 import Link from "next/link"
+import Image from "next/image"
+
 import DynamicHeading from "../dynamicHeading/dynamic-heading"
 import styles from "./become-partner-steps.module.scss"
-import Image from "next/image"
 
 interface StepData {
   stepNumber: string
@@ -13,8 +15,7 @@ interface StepData {
 interface BecomePartnerStepsProps {
   heading: {
     content: { title: string; color: string }[]
-    //@ts-ignore
-    headingTag?: keyof JSX.IntrinsicElements
+    headingTag?: keyof JSX.IntrinsicElements | string
     className?: string
   }
   steps: StepData[]

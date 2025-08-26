@@ -56,7 +56,7 @@ const PaymentGatewayPartnershipForm: React.FC = () => {
   return (
     <div className={styles.contactFormWrapper}>
       <form
-        action="https://forms.zohopublic.in/Enkash/form/PGPartnerships/formperma/LFMjom8KgaqCuwTuWy4XAB-ShE7eCTL2ZebdGC6P7pw/htmlRecords/submit"
+        action={process.env.ZOHO_PARTNERSHIP_URL}
         name="form"
         method="POST"
         acceptCharset="UTF-8"

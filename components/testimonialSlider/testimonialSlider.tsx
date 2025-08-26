@@ -1,5 +1,5 @@
 "use client"
-import React from "react"
+import React, { useMemo } from "react"
 import Slider, { Settings } from "react-slick"
 import styles from "./testimonialSlider.module.scss"
 import "slick-carousel/slick/slick.css"
@@ -25,27 +25,29 @@ const TestimonialSlider: React.FC<TestimonialSliderProps> = ({
   testimonials,
   slidesToShow = 3,
 }) => {
-  const sliderSettings: Settings = {
-    infinite: true,
-    speed: 500,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    cssEase: "ease",
-    slidesToShow,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true,
-    pauseOnHover: true,
-
-    responsive: [
-      {
-        breakpoint: 1200,
-        settings: {
-          slidesToShow: 1,
+  const sliderSettings: Settings = useMemo(
+    () => ({
+      infinite: true,
+      speed: 500,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      cssEase: "ease",
+      slidesToShow,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+      pauseOnHover: true,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 1,
+          },
         },
-      },
-    ],
-  }
+      ],
+    }),
+    [slidesToShow]
+  )
 
   return (
     <div className={`col-12 ${styles.testimonial_wrapper}`}>
