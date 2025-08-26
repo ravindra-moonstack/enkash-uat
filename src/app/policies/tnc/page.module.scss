@@ -1,7 +1,7 @@
 @use "/styles/variables" as *;
 @use "/styles/mixin" as *;
 .policy {
-  padding: 90px 20px 46px;
+  padding: 110px 20px 46px;
   @include for-laptops {
     padding: 112px 20px 50px;
   }

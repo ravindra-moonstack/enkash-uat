@@ -19,9 +19,10 @@
 .container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 0 12px;
-
+    padding: 0 5px;
+    
     @include for-laptops {
+        padding: 0 12px;
         max-width: 1000px;
     }
 }
@@ -65,8 +66,10 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
 
     @include for-laptops {
+        width: max-content;
         margin-right: -10px;
         margin-top: -150px;
         height: 280px;

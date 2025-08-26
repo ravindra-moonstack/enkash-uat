@@ -312,7 +312,7 @@ const CategoryPage = async ({
               </div>
             </div>
 
-            <div className={` mb-4 ${styles.mid_container}`}>
+            <div className={`mb-md-4 ${styles.mid_container}`}>
               <div className={styles.detail_section}>
                 {/* How to Buy Section */}
                 <div>
@@ -328,7 +328,7 @@ const CategoryPage = async ({
                       className="f-7 "
                     />
                   </div>
-                  <div className={`mb-4 ${styles.description}`}>
+                  <div className={`mb-md-4 ${styles.description}`}>
                     <div className={`mb-3`}>
                       Purchasing a {voucherData.name} from the EnKash platform
                       is quite simple. Here are detailed steps on how to do it:
@@ -546,7 +546,7 @@ const CategoryPage = async ({
                   </div>
                 </div>
               </div>
-              <div className={`mb-4 ${styles.description}`}>
+              <div className={`mb-md-4 ${styles.description}`}>
                 <div className={styles.need_container}>
                   <div className={styles.need_img}>
                     <Image src={individualNeed} alt="Individuals" />
