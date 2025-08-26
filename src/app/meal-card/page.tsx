@@ -103,7 +103,7 @@ const MealCards = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "Provide tax-free meal benefits while enhancing employee satisfaction. Widely accepted across platforms, these cards simplify meal allowances and provide a seamless, paperless solution.",
+                      " Simplify meal benefits with tax-free, paperless cards; easy to manage and widely accepted across merchants.",
                     color: "color-white subHeading",
                   },
                 ]}

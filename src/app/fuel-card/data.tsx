@@ -219,23 +219,23 @@ const cardsData = [
 const intantActionData = [
   {
     title: "Login",
-    description: "Log in or register on the EnKash platform",
+    description: "Log in or register on the EnKash platform.",
     icon: firstIcon,
   },
 
   {
     title: "Issue",
-    description: "The card is ready to use post KYC is done",
+    description: "The card is ready to use post KYC is done.",
     icon: secondIcon,
   },
   {
     title: "Notify",
-    description: "Send SMS or email notifications to employees",
+    description: "Send SMS or email notifications to employees.",
     icon: thirdIcon,
   },
   {
     title: "Activate",
-    description: "The card is ready to use post KYC is done",
+    description: "The card is ready to use post KYC is done.",
     icon: fourthIcon,
   },
 ]
