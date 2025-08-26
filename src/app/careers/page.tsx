@@ -1,11 +1,6 @@
 import styles from "./page.module.scss"
-import { DynamicHeading } from "@/components"
+import { DynamicHeading, CareersHero, CareersPaycheck , CoreValuesData, YourOpportunityCareers} from "@/components"
 import { HomePageRewardsVouchersSlide } from "./data"
-
-import CareersHero from "@/components/CareersHeroSlider/CareersHeroSlider"
-import CareersPaycheck from "@/components/CareersPaycheck/CareersPaycheck"
-import CoreValuesData from "@/components/CoreValuesData/CoreValuesData"
-import YourOpportunityCareers from "@/components/YourOpportunityCareers/YourOpportunityCareers"
 import CareersTestimonialSlider from "@/components/CareersTestimonialSlider/CareersTestimonialSlider"
 import {
   CoreValuesIcon1,
