@@ -192,7 +192,7 @@ const ExpenseAnalytics = (): React.JSX.Element => {
                     },
                   ]}
                   headingTag="p"
-                  className="mb-0"
+                  className="mb-0 text-center"
                 />
               </div>
             ))}

@@ -18,8 +18,8 @@ const PoliciesCard = ({
   buttonUrl,
 }: CardProps) => {
   const CardContent = (
-    <div className={`d-flex flex-column text-start ${styles.card_body}`}>
-      <div className="d-flex flex-column flex-grow-1">
+    <div className={` ${styles.card_body}`}>
+      <div className="">
         <div>
           {cardImage && (
             <div>

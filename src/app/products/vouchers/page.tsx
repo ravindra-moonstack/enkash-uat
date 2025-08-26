@@ -248,7 +248,7 @@ const Vouchers = (): React.JSX.Element => {
 
       <div className={`${styles.sixth_row} row d-flex bg-white`}>
         <EnkashWay
-          sectionHeading="The Categories You Love, The Discounts You Deserve"
+          sectionHeading="The Categories You Love, The Discounts You Deserve."
           progressData={categoriesData}
         />
       </div>

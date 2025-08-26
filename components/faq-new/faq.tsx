@@ -1,20 +1,17 @@
 import styles from "./faq.module.scss"
 import Image from "next/image"
 import arrowDown from "./img/arrow-down.svg"
-import { useRef } from "react"
-
+import { KeyboardEvent } from "react"
 
 export interface FAQProps {
   question: string
-  answerHTML?: React.ReactNode // use React.ReactNode instead of string if you pass JSX
+  answerHTML?: React.ReactNode
   answer?: {
     heading?: string
     bullets?: string[]
   }[]
   answerVisible?: boolean
   onToggleAnswerVisibility?: () => void
-
-  // index is used in rendering, not stored in data
   index: number
 }
 
@@ -26,30 +23,11 @@ const FAQ = ({
   answerHTML,
   onToggleAnswerVisibility,
 }: FAQProps) => {
+  //
 
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
-  // No need for local state, use parent state
-
-  const handleMouseEnter = () => {
-    timerRef.current = setTimeout(() => {
-      if (onToggleAnswerVisibility) {
-        onToggleAnswerVisibility()
-      }
-    }, 300)
-  }
-
-  // handle mouse leave (cancel timer)
-  const handleMouseLeave = () => {
-    if (timerRef.current) {
-      clearTimeout(timerRef.current)
-      timerRef.current = null
-    }
-
-    if (answerVisible && onToggleAnswerVisibility) {
-      timerRef.current = setTimeout(() => {
-        onToggleAnswerVisibility()
-        timerRef.current = null
-      }, 200)
+  const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      if (onToggleAnswerVisibility) onToggleAnswerVisibility()
     }
   }
 
@@ -67,15 +45,14 @@ const FAQ = ({
         style={
           answerVisible
             ? {
-              background: "#F6F6F6",
-              padding: "20px",
-              borderRadius: "12px",
-              transition: "all 0.3s ease",
-            }
+                background: "#F6F6F6",
+                padding: "20px",
+                borderRadius: "12px",
+                transition: "all 0.3s ease",
+              }
             : {}
         }
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
+        onKeyDown={handleKeyDown}
         onClick={handleClick}
         tabIndex={0} // for accessibility, allows keyboard focus
         role="button"
@@ -84,36 +61,35 @@ const FAQ = ({
         <div
           className={`d-flex gap-4 my-md-4 my-2 justify-content-between align-items-center`}
         >
-
-          <p className={`${styles.question} subHeading mb-0`} >
+          <p className={`${styles.question} subHeading mb-0`}>
             {String(index + 1).padStart(2, "0")}. {question}
           </p>
           <Image
             src={arrowDown}
             alt="faq arrow icon"
-            className={`${answerVisible ? styles.rotated : styles.normal} ${styles.arrow
-              }`}
+            className={`${answerVisible ? styles.rotated : styles.normal} ${
+              styles.arrow
+            }`}
             // Remove onClick here, handled by parent div
             draggable={false}
           />
         </div>
         <div
-          className={`${styles.answer} ${answerVisible ? styles.visible : styles.reverse_visible
-            }`}
+          className={`${styles.answer} ${
+            answerVisible ? styles.visible : styles.reverse_visible
+          }`}
         >
           {!answerHTML &&
             answer !== undefined &&
             answer.length > 0 &&
             answer.map((item, index) => (
               <div key={index} className="mb-4">
-                {item.heading && (
-                  <p >{item.heading}</p>
-                )}
+                {item.heading && <p>{item.heading}</p>}
                 {item.bullets && item.bullets.length > 0 && (
                   <ul>
                     {item.bullets.map((bullet, bulletIndex) => (
                       <li key={bulletIndex}>
-                        <p >{bullet}</p>
+                        <p>{bullet}</p>
                       </li>
                     ))}
                   </ul>

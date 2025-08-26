@@ -1,13 +1,17 @@
 import React from "react"
 import Image from "next/image"
-import { DynamicHeading, LogoSlider, TestimonialSlider } from "@/components"
+import {
+  DynamicHeading,
+  LogoSlider,
+  TestimonialSlider,
+  SalesForm,
+} from "@/components"
 import styles from "./page.module.scss"
 import { help, login, logo, support } from "."
 import { testimonialData } from "./data"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import { getLoginUrl, getSupportUrl } from "@/common/utils/getSalesUrl"
-import SalesForm from "@/components/sales-form/salesForm"
 
 export const metadata: Metadata = generateMetaData({
   title: "Contact EnKash Sales Get our Payment & Spend Solutions",
@@ -158,6 +162,7 @@ const Sales = () => {
                         {
                           title: "Terms & Condition",
                           color: "color-grey-100",
+                          link: "/policies/tnc",
                         },
                       ]}
                       headingTag="p"
@@ -168,6 +173,7 @@ const Sales = () => {
                         {
                           title: "Privacy Policy",
                           color: "color-grey-100",
+                          link: "/policies/privacy-policy",
                         },
                       ]}
                       headingTag="p"

@@ -21,7 +21,7 @@ const FeatureCard = ({
   url,
   description,
   cardImage,
-  title2,
+  title2 = "",
   padding = "40px 30px",
   hoverClass = "",
 }: CardProps) => {

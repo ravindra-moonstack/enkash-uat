@@ -1,6 +1,6 @@
 import React from "react"
+import { Metadata } from "next"
 import styles from "./page.module.scss"
-import BankSolutions from "@/components/partnerships/BankSolutions"
 import {
   BankSolutionHeading,
   bankSolutions,
@@ -8,19 +8,21 @@ import {
   slideData,
   stepsData,
 } from "./data"
-import PartnershipSection from "@/components/partnerShipSlider/PartnershipSection"
-import BottomCtaSection from "@/components/bottomCtaSection/bottomCtaSection"
-import FaqSection from "@/components/faqSection/faqSection"
 import faqData from "./faq-data"
 import {
   BecomePartnerSteps,
   BpHeroSection,
   PartnerShipForm,
+  BankSolutions,
+  PartnershipSection,
+  BottomCtaSection,
+  FaqSection,
 } from "@/components"
 import { containerScreen, participantBg } from "."
 import { blueArrow } from "@/components/all-in-one-policy"
 import generateMetaData from "@/common/utils/metaData"
-import { Metadata } from "next"
+
+import BankAffiliatePartnershipForm from "@/components/bankAffiliatePartnershipForm/bankAffiliatePartnershipForm"
 
 export const metadata: Metadata = generateMetaData({
   title: " Join EnKash Bharat Connect Partnership Program",
@@ -121,6 +123,7 @@ const partnershipsPage = (): React.JSX.Element => {
             { id: 2, text: "Fast activation for your clients" },
             { id: 3, text: "Dedicated support for accelerated growth" },
           ]}
+          formComponent={<BankAffiliatePartnershipForm />}
         />
       </div>
     </div>

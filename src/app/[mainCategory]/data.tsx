@@ -92,14 +92,14 @@ export const VOUCHER_DATA: Record<
     title: "E-commerce Vouchers",
     breadcrumbItems: [
       { name: "Home", url: "/" },
-      { name: "Vouchers", url: "/vouchers" },
+      { name: "Vouchers", url: "/products/vouchers" },
       { name: "E-commerce Vouchers", url: "/e-commerce-vouchers" },
     ],
     slides: [
       {
         heading: " Shop across a wide range of products with up to  ",
         subHeading:
-          "Sit back and order from the comfort of your home with discounts ",
+          "Sit back and order from the comfort of your home with discounts. ",
         buttonText: "Buy Now",
         backgroundImage: sliderOneBg,
         rightImage: imageOne,
@@ -120,9 +120,9 @@ export const VOUCHER_DATA: Record<
         discount: 0,
       },
       {
-        heading: "Showstopper beauty picks with up to",
+        heading: "Showstopper beauty picks with up to ",
         subHeading:
-          "Shop the best beauty and skincare products with great discounts ",
+          "Shop the best beauty and skincare products with great discounts. ",
         buttonText: "Buy Now",
         backgroundImage: sliderThreeBg,
         rightImage: imageThree,
@@ -133,7 +133,7 @@ export const VOUCHER_DATA: Record<
       {
         heading: "Send your emotions as gifts with up to ",
         subHeading:
-          "Make ordinary days special and special days memorable with great deals",
+          "Make ordinary days special and special days memorable with great deals.",
         buttonText: "Buy Now",
         backgroundImage: sliderFourBg,
         rightImage: imageFour,
@@ -145,8 +145,8 @@ export const VOUCHER_DATA: Record<
     voucherCards: [
       {
         titleHtml: "Amazon Prime Shopping",
-        description: " E-Gift Card",
-        discount: "7%",
+        description: "E-Gift Card",
+        discount: "0%",
         cardImage: amazonePrime,
         brandName: "Amazon Prime Shopping Edition",
         buttonUrl: "/vouchers/amazon-prime-shopping",
@@ -154,7 +154,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Nykaa",
         description: "E-Gift Card",
-        discount: "6%",
+        discount: "0 %",
         cardImage: nykaa,
         brandName: "Nykaa E-Gift Card",
         buttonUrl: "/vouchers/nykaa",
@@ -162,7 +162,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Flipkart Supercoins",
         description: "E-Gift Card",
-        discount: "4%",
+        discount: "0%",
         cardImage: flipkart,
         brandName: "Flipkart Super Coins E-Gift Card",
         buttonUrl: "/vouchers/flipkart-super-coins",
@@ -170,7 +170,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Ajio",
         description: "Gift Card",
-        discount: "18%",
+        discount: "0%",
         cardImage: ajio,
         brandName: "AJIO",
         buttonUrl: "/vouchers/ajio",
@@ -178,7 +178,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "FNP",
         description: "Gift Card",
-        discount: "15%",
+        discount: "0%",
         cardImage: fnp,
         brandName: "Ferns N Petals",
         buttonUrl: "/vouchers/fnp",
@@ -191,7 +191,7 @@ export const VOUCHER_DATA: Record<
     title: "Movie & Music Vouchers",
     breadcrumbItems: [
       { name: "Home", url: "/" },
-      { name: "Vouchers", url: "/vouchers" },
+      { name: "Vouchers", url: "/products/vouchers" },
       { name: "Movie & Music Vouchers", url: "/movie-and-music-vouchers" },
     ],
     slides: [
@@ -246,7 +246,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Amazon Prime",
         description: " E-Gift Card",
-        discount: "13%",
+        discount: "0%",
         cardImage: amazonPrimeLogo,
         buttonUrl: "/vouchers/amazon-prime",
         brandName: "Amazon Prime Shopping Edition",
@@ -254,7 +254,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "SonyLiv Monthly",
         description: " E-Gift Card",
-        discount: "10%",
+        discount: "0%",
         cardImage: sonyLivLogo,
         buttonUrl: "/vouchers/sony-liv",
         brandName: "SonyLIV Yearly",
@@ -262,7 +262,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "PVR ",
         description: "E-Gift Card",
-        discount: "12%",
+        discount: "0%",
         cardImage: pvrLogo,
         buttonUrl: "/vouchers/pvr",
         brandName: "PVR",
@@ -270,7 +270,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "ZEE 5 ",
         description: "E-Gift Card",
-        discount: "15%",
+        discount: "0%",
         cardImage: zee5Logo,
         buttonUrl: "/vouchers/zee5",
         brandName: "ZEE5",
@@ -278,7 +278,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "FanCode",
         description: "E-Gift Card",
-        discount: "15%",
+        discount: "0%",
         cardImage: fancodeLogo,
         buttonUrl: "/vouchers/fan-code",
         brandName: "Fancode B2B E-Gift Card",
@@ -290,7 +290,7 @@ export const VOUCHER_DATA: Record<
     title: "Apparels Vouchers",
     breadcrumbItems: [
       { name: "Home", url: "/" },
-      { name: "Vouchers", url: "/vouchers" },
+      { name: "Vouchers", url: "/products/vouchers" },
       { name: "Apparels Vouchers", url: "/apparels-vouchers" },
     ],
     slides: [
@@ -344,7 +344,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Westside",
         description: " E-Gift Card",
-        discount: "10%",
+        discount: "0%",
         cardImage: westsideLogo,
         buttonUrl: "/vouchers/westside",
         brandName: "Westside E-Gift Card",
@@ -352,7 +352,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Levis",
         description: "E-Gift Card",
-        discount: "13%",
+        discount: "0%",
         cardImage: levisLogo,
         buttonUrl: "/vouchers/levis",
         brandName: "Levi's E-Gift Card",
@@ -360,7 +360,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Jockey",
         description: "E-Gift Card",
-        discount: "10%",
+        discount: "0%",
         cardImage: jockeyLogo,
         buttonUrl: "/vouchers/jockey",
         brandName: "Jockey E-Gift Card",
@@ -368,7 +368,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Pantaloons",
         description: " E-Gift Card",
-        discount: "10%",
+        discount: "0%",
         cardImage: pantaloonLogo,
         buttonUrl: "/vouchers/pantaloons",
         brandName: "Pantaloons E-Gift Card",
@@ -376,7 +376,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Blackberrys",
         description: " E-Gift Card",
-        discount: "15%",
+        discount: "0%",
         cardImage: blackberryLogo,
         buttonUrl: "/vouchers/blackberrys",
         brandName: "Blackberry E-Gift Card",
@@ -387,7 +387,7 @@ export const VOUCHER_DATA: Record<
     title: "Food and Beverages Vouchers",
     breadcrumbItems: [
       { name: "Home", url: "/" },
-      { name: "Vouchers", url: "/vouchers" },
+      { name: "Vouchers", url: "/products/vouchers" },
       {
         name: "Food and Beverages Vouchers",
         url: "/food-and-beverages-vouchers",
@@ -443,7 +443,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "McDonald’s",
         description: " E-Gift Card",
-        discount: "10%",
+        discount: "0%",
         cardImage: macdonaldsLogo,
         buttonUrl: "/vouchers/mcdonalds",
         brandName: "McDonald’s Value Club Gift Voucher",
@@ -451,7 +451,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Domino’s",
         description: "E‑Gift Card",
-        discount: "13%",
+        discount: "0%",
         cardImage: dominosLogo,
         buttonUrl: "/vouchers/dominos",
         brandName: "Dominos Pizza E-Gift Card",
@@ -459,7 +459,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Swiggy",
         description: "Gift Card",
-        discount: "10%",
+        discount: "0%",
         cardImage: swiggyLogo,
         buttonUrl: "/vouchers/swiggy",
         brandName: "Swiggy Money E-Gift Card",
@@ -467,7 +467,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Zomato ",
         description: "Gift Card",
-        discount: "10%",
+        discount: "0%",
         cardImage: zomatoLogo,
         buttonUrl: "/vouchers/zomato",
         brandName: "Zomato E-Gift Voucher",
@@ -475,7 +475,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "KFC",
         description: "Gift Card",
-        discount: "15%",
+        discount: "0%",
         cardImage: kfcLogo,
         buttonUrl: "/vouchers/kfc",
         brandName: "KFC E-Gift Card",
@@ -487,7 +487,7 @@ export const VOUCHER_DATA: Record<
     title: "Health and Wellness Vouchers",
     breadcrumbItems: [
       { name: "Home", url: "/" },
-      { name: "Vouchers", url: "/vouchers" },
+      { name: "Vouchers", url: "/products/vouchers" },
       {
         name: "Health and Wellness Vouchers",
         url: "/health-and-wellness-vouchers",
@@ -507,7 +507,7 @@ export const VOUCHER_DATA: Record<
         brandName: "Mamaearth",
       },
       {
-        heading: "Health essentials delivered with up to",
+        heading: "Health essentials delivered with up to ",
         subHeading:
           "Medicines, wellness, and healthcare delivered to your doorstep.",
         buttonText: "Buy Now",
@@ -518,7 +518,7 @@ export const VOUCHER_DATA: Record<
         brandName: "Apollo Healing E-Gift Card",
       },
       {
-        heading: "Start your fitness journey with up to",
+        heading: "Start your fitness journey with up to ",
         subHeading: "Make fitness a part of your everyday life.",
         buttonText: "Buy Now",
         backgroundImage: cultfitBg,
@@ -529,7 +529,7 @@ export const VOUCHER_DATA: Record<
         brandName: "Cultfit",
       },
       {
-        heading: "Makeup that gets you with up to 16% off",
+        heading: "Makeup that gets you with up to ",
         subHeading: "No drama. Just cruelty-free makeup.",
         buttonText: "Buy Now",
         backgroundImage: myglammBg,
@@ -544,7 +544,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Mamaearth",
         description: "Gift Card",
-        discount: "13%",
+        discount: "0%",
         cardImage: mamaeathLogo,
         buttonUrl: "/vouchers/mamaearth",
         brandName: "Mamaearth",
@@ -552,7 +552,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Apollo Pharmacy",
         description: " E-Gift Card",
-        discount: "10%",
+        discount: "0%",
         cardImage: apolloLogo,
         buttonUrl: "/vouchers/apollo",
         brandName: "Apollo Healing E-Gift Card",
@@ -560,7 +560,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "Cult Fit ",
         description: "E-Gift Card",
-        discount: "12%",
+        discount: "0%",
         cardImage: cultfitLogo,
         buttonUrl: "/vouchers/cultfit",
         brandName: "Cultfit",
@@ -568,7 +568,7 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "MyGlamm",
         description: "E-Gift Card",
-        discount: "15%",
+        discount: "0%",
         cardImage: myglammLogo,
         buttonUrl: "/vouchers/myglamm",
         brandName: "MyGlamm E-Gift Card",
@@ -576,10 +576,10 @@ export const VOUCHER_DATA: Record<
       {
         titleHtml: "HealthKart ",
         description: "E-Gift Card",
-        discount: "15%",
+        discount: "0%",
         cardImage: healthkartLogo,
-        buttonUrl: "/vouchers/myglamm",
-        brandName: "MyGlamm E-Gift Card",
+        buttonUrl: "/vouchers/healthkart",
+        brandName: "HealthKart",
       },
     ],
   },

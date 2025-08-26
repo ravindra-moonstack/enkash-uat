@@ -17,7 +17,6 @@ const contactOptions = [
     label: "Purchasing Voucher",
   },
   { value: "Report a Fraud", label: "Report a Fraud" },
-  { value: "Report a Fraud", label: "Report a Fraud" },
   { value: "Exploring EnKash", label: "Exploring EnKash" },
   { value: "Something Else", label: "Something Else" },
 ]
@@ -56,7 +55,7 @@ const SupportForm: React.FC = () => {
     <>
       <div className={styles.contactFormWrapper}>
         <form
-          action="https://forms.zohopublic.in/Enkash/form/WebsiteSupport/formperma/jf2sOZW7y1DpICWnGbh-N0XD0s3dIeOW_matFy5T7Mc/htmlRecords/submit"
+          action={process.env.ZOHO_SUPPORT_URL}
           name="form"
           method="POST"
           acceptCharset="UTF-8"

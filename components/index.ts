@@ -59,10 +59,7 @@ const FeatureSpotlight = dynamic(
 const EnkashWay = dynamic(() => import("./enkash-way/enkash-way"), {
   ssr: true,
 })
-const SplineAnimation = dynamic(
-  () => import("./splineAnimation/splineAnimation"),
-  { ssr: true }
-)
+
 const ContentShowcase = dynamic(
   () => import("./contentShowcase/contentShowcase"),
   { ssr: true }
@@ -100,20 +97,17 @@ const BankLogoSlider = dynamic(
   () => import("./banking-slider/banking-slider"),
   { ssr: true }
 )
-const EasyStepCard = dynamic(
-  () => import("./easy-step-card/easy-step-card"),
-  { ssr: true }
-)
+const EasyStepCard = dynamic(() => import("./easy-step-card/easy-step-card"), {
+  ssr: true,
+})
 
-const StepsSection = dynamic(
-  () => import("./stepsSection/stepsSection"),
-  { ssr: true }
-)
+const StepsSection = dynamic(() => import("./stepsSection/stepsSection"), {
+  ssr: true,
+})
 
-const FaqSection = dynamic(
-  () => import("./faqSection/faqSection"),
-  { ssr: true }
-)
+const FaqSection = dynamic(() => import("./faqSection/faqSection"), {
+  ssr: true,
+})
 
 const HowDoesItWork = dynamic(
   () => import("./how-does-it-work/how-does-it-work."),
@@ -123,23 +117,96 @@ const BecomePartnerSteps = dynamic(
   () => import("./becomepartner/become-partner-steps"),
   { ssr: true }
 )
-const PartnerShipForm = dynamic(
-  () => import("./partnerShip-form/index"),
-  { ssr: true }
-)
-const BpHeroSection = dynamic(
-  () => import("./BpHeroSection/index"),
-  { ssr: true }
-)
+const PartnerShipForm = dynamic(() => import("./partnerShip-form/index"), {
+  ssr: true,
+})
+const BpHeroSection = dynamic(() => import("./BpHeroSection/index"), {
+  ssr: true,
+})
 const TabPoliciesWrapper = dynamic(
   () => import("./tabPoliciesWrapper/tabPoliciesWrapper"),
-    { ssr: true }
-)
-const ourProductsSection = dynamic(
-  () => import("./ourProductsSection/index"),
   { ssr: true }
 )
+const ProductsSection = dynamic(() => import("./ourProductsSection/index"), {
+  ssr: true,
+})
+const SalesForm = dynamic(() => import("./sales-form/salesForm"), { ssr: true })
+const OurStoryCard = dynamic(
+  () => import("./AboutOurStoryCard/AboutOurStoryCard"),
+  { ssr: true }
+)
+const LeadersSection = dynamic(
+  () => import("./AboutLeadersCard/AboutLeadersCard"),
+  { ssr: true }
+)
+const InvestorsLogos = dynamic(
+  () => import("./InvestorsLogos/InvestorsLogos"),
+  { ssr: true }
+)
+const EmployeeSlider = dynamic(
+  () => import("./EmployeeSlider/EmployeeSlider"),
+  { ssr: true }
+)
+const CareersCard = dynamic(
+  () => import("./AboutCareersCard/AboutCareersCard"),
+  { ssr: true }
+)
+const LocationTabsMap = dynamic(
+  () => import("./LocationTabsMap/LocationTabsMap"),
+  { ssr: true }
+)
+const BottomCtaSection = dynamic(
+  () => import("./bottomCtaSection/bottomCtaSection"),
+  { ssr: true }
+)
+const PartnershipSection = dynamic(
+  () => import("./partnerShipSlider/PartnershipSection"),
+  { ssr: true }
+)
+const BankAffiliatePartnershipForm = dynamic(
+  () => import("./bankAffiliatePartnershipForm/bankAffiliatePartnershipForm"),
+  { ssr: true }
+)
+const BankSolutions = dynamic(() => import("./partnerships/BankSolutions"), {
+  ssr: true,
+})
 
+const CareersHero = dynamic(
+  () => import("./CareersHeroSlider/CareersHeroSlider"),
+  {
+    ssr: true,
+  }
+)
+const CareersPaycheck = dynamic(
+  () => import("./CareersPaycheck/CareersPaycheck"),
+  {
+    ssr: true,
+  }
+)
+const CoreValuesData = dynamic(
+  () => import("./CoreValuesData/CoreValuesData"),
+  {
+    ssr: true,
+  }
+)
+const YourOpportunityCareers = dynamic(
+  () => import("./YourOpportunityCareers"),
+  {
+    ssr: true,
+  }
+)
+const CareersTestimonialSlider = dynamic(
+  () => import("./CareersTestimonialSlider/CareersTestimonialSlider"),
+  {
+    ssr: true,
+  }
+)
+const HiringProcessModal = dynamic(
+  () => import("./HiringProcessModal/HiringProcessModal"),
+  {
+    ssr: true,
+  }
+)
 export {
   Header,
   Footer,
@@ -163,7 +230,6 @@ export {
   FeatureSpotlight,
   SecondFaqHtml,
   EnkashWay,
-  SplineAnimation,
   ContentShowcase,
   ManagementCard,
   TestimonialSlider,
@@ -181,5 +247,22 @@ export {
   PartnerShipForm,
   BpHeroSection,
   TabPoliciesWrapper,
-  ourProductsSection
+  ProductsSection,
+  SalesForm,
+  OurStoryCard,
+  LeadersSection,
+  InvestorsLogos,
+  EmployeeSlider,
+  CareersCard,
+  LocationTabsMap,
+  BottomCtaSection,
+  PartnershipSection,
+  BankAffiliatePartnershipForm,
+  BankSolutions,
+  CareersHero,
+  CareersPaycheck,
+  CoreValuesData,
+  YourOpportunityCareers,
+  CareersTestimonialSlider,
+  HiringProcessModal,
 }

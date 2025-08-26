@@ -27,14 +27,7 @@
     padding-top: 112px;
     padding-bottom: 40px;
   }
-  .spline_background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 0;
-  }
+
   .bannerImages {
     min-height: 150px;
 
@@ -210,7 +203,7 @@
     padding: 162px 20px 90px;
   }
   .list_button {
-    padding-left: 40px;
+    padding-left: 48px;
     margin-top: 20px;
     @include for-laptops {
       margin-top: 20px;
@@ -333,13 +326,7 @@
     }
   }
 
-  .spline_background {
-    position: absolute;
-    // top: 0%;
-    bottom: -43%;
-    right: -52%;
-    width: 1500px;
-  }
+ 
 }
 
 .card_stacking_row {

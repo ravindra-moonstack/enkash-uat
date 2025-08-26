@@ -38,11 +38,8 @@ import {
   mealCardImg,
   payrollCardImg,
   purchesCardImg,
-  sassCardImg,
-  termsAndConCardImg,
   virtualCardImg,
 } from "."
-import { payrollImg } from "../payroll"
 
 const dataSets = [
   {

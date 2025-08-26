@@ -10,7 +10,7 @@ interface CardData {
   icon: string
   title: string
   description: string
-  hoverClass?:string | undefined
+  hoverClass?: string | undefined
 }
 
 interface ScrollableCardsSectionProps {
@@ -38,7 +38,6 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
   buttonTheme = "outline-blue",
   buttonUrl,
   marginBottoms,
-  link,
 }) => {
   return (
     <>
@@ -60,7 +59,6 @@ const ScrollableCardsSection: React.FC<ScrollableCardsSectionProps> = ({
             }}
             className={styles.scrollCard}
           >
-        
             <PolicyCard
               icon={item.icon}
               title={item.title}
