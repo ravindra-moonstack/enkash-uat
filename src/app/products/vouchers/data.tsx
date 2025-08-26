@@ -156,7 +156,7 @@ const categoriesData = [
     description:
       "Access a wide range of online shopping platforms. From electronics to everyday essentials, get everything you need—conveniently and affordably.",
     icon: tabIconOne,
-    bgImage: bg1,
+    bgImage: bg4,
     url: "/e-commerce-vouchers",
   },
   {
@@ -165,7 +165,7 @@ const categoriesData = [
     description:
       "Whether it’s a gourmet meal, a quick bite, or your daily staples, savor irresistible savings every time you eat in or dine out.",
     icon: tabIconTwo,
-    bgImage: bg2,
+    bgImage: bg1,
     url: "/food-and-beverages-vouchers",
   },
   {
@@ -174,7 +174,7 @@ const categoriesData = [
     description:
       "Stay stylish without overspending. Explore discounted options across fashion staples, premium labels, and seasonal collections.",
     icon: tabIconThree,
-    bgImage: bg3,
+    bgImage: bg2,
     url: "/apparels-vouchers",
   },
   {
@@ -183,7 +183,7 @@ const categoriesData = [
     description:
       "Dive into your favorite entertainment - be it movies, concerts, or streaming—while saving big on unforgettable experiences.",
     icon: tabIconFour,
-    bgImage: bg4,
+    bgImage: bg3,
     url: "/movie-and-music-vouchers",
   },
   {

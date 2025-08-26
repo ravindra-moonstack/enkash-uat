@@ -52,8 +52,6 @@ import bg6 from "./img/bg5.jpg"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
-// import OptimisedSpline from "@/components/OptimisedSpline/OptimisedSpline"
-// import Loading from "../../loading"
 
 export const metadata: Metadata = generateMetaData({
   title: "Expense Management Suite: Automate & Track Business Spending",
@@ -81,21 +79,8 @@ const cards = stackcardData.map((item: any) => ({
 }))
 const ExpenseManagement = (): React.JSX.Element => {
   return (
-    // <Suspense fallback={<Loading />}>
     <div className={`color-white ${styles.home_container}`}>
       <div className={`${styles.first_row}`}>
-        <div className={`${styles.spline_background}`}>
-          {/* <spline-viewer url="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode"></spline-viewer> */}
-        </div>
-
-        {/* <OptimisedSpline
-          desktopScene="https://prod.spline.design/SpJTt-mkTnhnxEHG/scene.splinecode"
-          fallbackImage="/spline-placeholder.jpg"
-          height="600px"
-          threshold={0.3} // 30% visible before load
-          unmountWhenHidden={true} // free GPU memory when hidden
-          preloadIdle={true} // preloads on idle time
-        /> */}
         <div className="max-w-auto  position-relative no-pointer">
           <div className="d-flex">
             <CustomBreadcrumb

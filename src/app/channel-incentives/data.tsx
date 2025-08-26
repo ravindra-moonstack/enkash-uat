@@ -68,11 +68,11 @@ const cardType = [
         url: "/offers/",
       },
       {
-        titleHtml: "Channel Incentives ",
+        titleHtml: "Employee Rewards",
         description:
-          "Drive partner performance with strategic rewards, commissions, and loyalty programs.",
+          "Appreciate your employees with rewards they will enjoy!",
         cardImage: incentive,
-        url: "/channel-incentives/",
+        url: "/employee-rewards",
       },
       {
         titleHtml: "Brand Vouchers ",

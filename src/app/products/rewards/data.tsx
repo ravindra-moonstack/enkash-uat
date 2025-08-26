@@ -52,34 +52,34 @@ const allProductSections = [
     items: [
       {
         title: "Personalized ",
-        title2: "Rewards:",
+        title2: "Rewards",
         description:
           "Tailor incentives for employees, partners, and stakeholders.",
         image: crouselIconOne,
       },
       {
         title: "Automated ",
-        title2: "Processes:",
+        title2: "Processes",
         description: "Streamline reward allocation, redemption, and tracking.",
         image: crouselIconTwo,
       },
 
       {
         title: "Flexible ",
-        title2: "Redemption: ",
+        title2: "Redemption",
         description:
           " Offer multiple reward types—vouchers, gift cards, discounts, and more.",
         image: crouselIconThree,
       },
       {
         title: "Real-Time Tracking ",
-        title2: "& Analytics:",
+        title2: "& Analytics",
         description: " Gain insights into reward performance and engagement.",
         image: crouselIconFour,
       },
       {
         title: "Seamless ",
-        title2: "Integration:",
+        title2: "Integration",
         description:
           "Easily integrate with HRMS, CRMs, and business platforms.",
         image: crouselIconFive,
@@ -95,7 +95,7 @@ const policiesData = [
     description:
       "Motivate and retain your workforce with meaningful recognition. EnKash helps businesses set up customized rewards programs that enhance employee morale and performance. Offer digital gift cards, brand vouchers, and exclusive perks.",
     image: paymentLinkImage,
-    buttonUrl: "/employee-rewards/",
+    buttonUrl: "/employee-rewards",
     maxImageHeight: "243px",
   },
   {

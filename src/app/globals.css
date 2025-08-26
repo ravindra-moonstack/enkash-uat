@@ -305,3 +305,10 @@ a {
   max-width: 1200px;
   margin: auto;
 }
+
+.no-underline{
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+}
+}

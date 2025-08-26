@@ -74,7 +74,7 @@ const Rewards = (): React.JSX.Element => {
 
             <div className="mt-md-5 mt-3">
               <RectangleButton
-                title="Talk to Sales"
+                title="Talk to Us"
                 theme="blue"
                 url={salesUrl}
               />
@@ -119,7 +119,8 @@ const Rewards = (): React.JSX.Element => {
                   title={policy.title}
                   description={policy.description}
                   image={policy.image}
-                  buttonUrl={salesUrl}
+                  buttonUrl={policy.buttonUrl}
+                  buttonText="Explore More"
                   maxImageHeight={policy.maxImageHeight}
                   reverse={policy.reverse}
                 />

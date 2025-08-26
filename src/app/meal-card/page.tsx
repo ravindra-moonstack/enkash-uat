@@ -131,7 +131,7 @@ const MealCards = (): React.JSX.Element => {
       <div className="cardsSliderMargin">
         <LogoSlider />
       </div>
-      
+
       <StepsSection
         heading={[
           {

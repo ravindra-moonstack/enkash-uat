@@ -96,7 +96,7 @@ export default function SliderComponent({
                         content={[
                           { title: slide.heading, color: "color-white" },
                           {
-                            title: `${slide.discount} % off`,
+                            title: ` ${slide.discount} % off`,
                             color: "color-white",
                           },
                         ]}
@@ -132,7 +132,7 @@ export default function SliderComponent({
                           src={slide.rightImage}
                           alt="slide visual"
                           style={{
-                            maxHeight: slide.rightImageMaxHeight ?? "400px", // ✅ default 400px
+                            maxHeight: slide.rightImageMaxHeight ?? "400px", 
                             marginTop: slide.rightImageMarginTop ?? "0px",
                           }}
                           className="w-100 mh-550 object-fit-contain "

@@ -22,7 +22,6 @@ import {
 } from "."
 
 import faqData from "./faq-data"
-import Spline from "@splinetool/react-spline"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
 import { getSalesUrl } from "@/common/utils/getSalesUrl"
@@ -48,7 +47,7 @@ const CollectPayment = (): React.JSX.Element => {
                 { name: "Home", url: "/" },
                 { name: "Products", url: "/products" },
                 {
-                  name: "Collect Payment",
+                  name: "Collect PaymentS",
                   url: "/products/collect-payments",
                 },
               ]}
@@ -72,7 +71,7 @@ const CollectPayment = (): React.JSX.Element => {
                 content={[
                   {
                     title:
-                      "No more chasing, no more delays - Payment Collection Solutions for Businesses Who Want to Make Money",
+                      "No more chasing, no more delays - Payment Collection Solutions for Merchants Who Want to Make Money",
                     color: "color-white subHeading",
                   },
                 ]}
@@ -82,7 +81,7 @@ const CollectPayment = (): React.JSX.Element => {
             </div>
 
             <div className="mt-md-5 mt-3">
-              <RectangleButton title="Talk to us" theme="blue" url={salesUrl} />
+              <RectangleButton title="Talk to Us" theme="blue" url={salesUrl} />
             </div>
           </div>
           <div className=" col-12 d-flex justify-content-center align-items-center">
@@ -111,23 +110,12 @@ const CollectPayment = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Built for CFOs, Loved by Teams",
+                  title: "Payments Rolling In Automatically, Every Time.",
                   color: "color-white",
                 },
               ]}
               headingTag="h3"
               className="f-5"
-            />
-            <DynamicHeading
-              content={[
-                {
-                  title:
-                    "From instant issuance to granular controls - corporate cards that do more.",
-                  color: "color-white ",
-                },
-              ]}
-              headingTag="p"
-              className="mt-3"
             />
           </div>
           <div className={`d-flex  flex-wrap  ${styles.section}`}>
@@ -189,7 +177,7 @@ const CollectPayment = (): React.JSX.Element => {
                 className={`${styles.all_in_section_inner} d-flex flex-column gap-3`}
               >
                 {allInOnePolicyData.map((item, i) => (
-                  <AllInOnePolicy key={i} {...item} buttonUrl={salesUrl} />
+                  <AllInOnePolicy key={i} {...item} buttonUrl={item.buttonUrl} buttonText="Learn more" />
                 ))}
               </div>
             </div>
@@ -269,11 +257,12 @@ const CollectPayment = (): React.JSX.Element => {
               />
               <div className={` ${styles.list_button}`}>
                 <RectangleButton
-                  title="Try Now"
+                  title="Learn more"
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url={salesUrl}
+                  url={"/instant-settlement"}
+                  className={styles.try_button}
                 />
               </div>
             </div>
@@ -287,7 +276,7 @@ const CollectPayment = (): React.JSX.Element => {
           </div>
 
           <div className="row align-items-center pt-4 ">
-            {/* On mobile: order-2, on md+: order-1 */}
+            
             <div className="col-12 col-md-6 order-2 order-md-1">
               <Image
                 src={affordabilityImg}
@@ -296,7 +285,7 @@ const CollectPayment = (): React.JSX.Element => {
               />
             </div>
 
-            {/* On mobile: order-1, on md+: order-2 */}
+
             <div className="col-12 col-md-6 order-1 order-md-2">
               <PolicyCard
                 icon={affordabilityIcon}
@@ -307,11 +296,12 @@ const CollectPayment = (): React.JSX.Element => {
               />
               <div className={` ${styles.list_button}`}>
                 <RectangleButton
-                  title="Try Now"
+                  title="Learn more"
                   theme="border-gray"
                   actionImage={blueArrow}
                   hoverImage={whiteArrow}
-                  url={salesUrl}
+                  className={styles.try_button}
+                  url={"/affordability-suite"}
                 />
               </div>
             </div>
@@ -326,7 +316,7 @@ const CollectPayment = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "You Focus on Your Business. Let Us Focus on Payment Collection",
+                    "You Focus on Your Business. Let Us Focus on Payment Collection.",
                   color: "color-white",
                 },
               ]}
@@ -337,7 +327,7 @@ const CollectPayment = (): React.JSX.Element => {
               content={[
                 {
                   title:
-                    "We ensure accepting payment is effortless, no matter where your customers are or how they choose to pay.Explore Our Solutions",
+                    "Wherever your customers are, however they pay. you get paid.",
                   color: "color-white subHeading",
                 },
               ]}

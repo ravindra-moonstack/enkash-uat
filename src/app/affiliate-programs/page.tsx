@@ -19,6 +19,7 @@ import { blueArrow } from "@/components/all-in-one-policy"
 import ProductsSection from "@/components/ourProductsSection"
 import generateMetaData from "@/common/utils/metaData"
 import { Metadata } from "next"
+import BankAffiliatePartnershipForm from "@/components/Bank_and_Affiliate_Partnerships_Form/bankAffiliatePartnershipForm"
 export const metadata: Metadata = generateMetaData({
   title: "Join EnKash Affiliate Program | Earn by Referring Businesses",
   description:
@@ -68,9 +69,7 @@ const partnershipsPage = (): React.JSX.Element => {
           linkColor: "white",
         }}
         backgroundImage={containerScreen.src}
-        mainHeading={[
-          { title: "Affiliate Program", color: "underline" },
-        ]}
+        mainHeading={[{ title: "Affiliate Program", color: "underline" }]}
         subHeading={[
           {
             title:
@@ -140,6 +139,7 @@ const partnershipsPage = (): React.JSX.Element => {
             { id: 2, text: "Fast activation for your clients" },
             { id: 3, text: "Dedicated support for accelerated growth" },
           ]}
+          formComponent={<BankAffiliatePartnershipForm />}
         />
       </div>
     </div>

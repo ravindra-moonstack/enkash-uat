@@ -6,6 +6,10 @@ import crouselIconFive from "./img/crouselIconFive.svg"
 
 import {
   autoCollect,
+  costControlSavings,
+  costControlSavingsIcon,
+  fraudProtection,
+  fraudProtectionIcon,
   instant,
   invoices,
   notificationImage,
@@ -16,23 +20,29 @@ import {
   paymentLinkImage,
   paymentOptionImage,
   qrCodes,
+  realTimeExpense,
+  realTimeExpenseIcon,
   reminder,
   scrollIconOne,
   scrollIconThree,
   scrollIconTwo,
   shareImage,
+  streamlinedReimbursement,
+  streamlinedReimbursementIcon,
   taskIconFive,
   taskIconFour,
   taskIconOne,
   taskIconThree,
   taskIconTwo,
+  TravelIcon,
+  TravelImage,
 } from "."
 
 const cardsData = [
   {
     title: "Create",
     description:
-      "Select a payment page template or customize the page according to your brand guidelines",
+      "Select a payment page template or customize the page according to your brand guidelines.",
     icon: scrollIconOne,
   },
   {
@@ -178,26 +188,60 @@ const managementCardData = [
     linkUrl: "/auto-collect",
   },
   {
-    titleHtml: "Invoices",
-    description:
-      "Automate invoicing for recurring transactions, monitor sales and payments, and generate bulk invoices with integrated payment links.",
-    cardImage: invoices,
-    linkUrl: "/digital-invoicing",
-  },
-  {
     titleHtml: "Instant Settlement",
     description:
       "Access your funds immediately, bypass traditional settlement cycles, and take greater control of your cash flow.",
     cardImage: instant,
-    linkUrl: "/instant",
+    linkUrl: "/instant-settlement",
   },
   {
     titleHtml: "Reminder Engine",
     description:
       "Automate your collections and say goodbye to manual reminders.",
     cardImage: reminder,
-    linkUrl: "/reminder",
+    linkUrl: "/collection-reminder",
   },
 ]
-
-export { cardsData, allProductSections, allInOnePolicyData, managementCardData }
+const stackcardData = [
+  {
+    color: "#fff",
+    icon: realTimeExpenseIcon,
+    title: "Product Sales",
+    description: `Sell your products or services online with a professional storefront. List multiple items, manage inventory, and set purchase controls.`,
+    image: realTimeExpense,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: fraudProtectionIcon,
+    title: "Event Registrations",
+    description: `Easily collect event fees and manage attendee registration with customized payment pages.`,
+    image: fraudProtection,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#fff",
+    icon: streamlinedReimbursementIcon,
+    title: "Donations",
+    description: `Streamline your fundraising efforts with pages that allow supporters to donate quickly and securely. Send automated receipts, including 80G certificates for NGOs.`,
+    image: streamlinedReimbursement,
+    buttonUrl: "/sales/?source=expense_management",
+  },
+  {
+    color: "#eee",
+    icon: costControlSavingsIcon,
+    title: "Tuition and Fee Collection",
+    description: `Simplify fee payments for educational institutions. Automate reconciliation and ensure hassle-free collections.`,
+    image: costControlSavings,
+    buttonUrl: "/sales",
+  },
+  {
+    color: "#eee",
+    icon: TravelIcon,
+    title: "Travel and Hospitality",
+    description: `Collect payments for bookings, packages, or other services effortlessly.`,
+    image: TravelImage,
+    buttonUrl: "/sales",
+  },
+]
+export { cardsData, allProductSections, allInOnePolicyData, managementCardData, stackcardData }

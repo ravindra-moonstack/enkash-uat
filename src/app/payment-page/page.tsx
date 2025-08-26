@@ -1,6 +1,6 @@
 import Image from "next/image"
 import styles from "./page.module.scss"
-import { allInOnePolicyData, allProductSections, cardsData, managementCardData } from "./data"
+import { allInOnePolicyData, allProductSections, cardsData, managementCardData, stackcardData } from "./data"
 import faqData from "./faq-data"
 import {
   DynamicHeading,
@@ -12,6 +12,7 @@ import {
   AllInOnePolicy,
   AllProducts,
   FaqSection,
+  CardStacking,
 } from "@/components"
 import {
   blueArrow,
@@ -37,7 +38,21 @@ export const metadata: Metadata = generateMetaData({
 const salesUrl = getSalesUrl("/payment-page")
 const showScroll = cardsData.length > 3
 const mergedCards = allProductSections.flatMap((section) => section.items)
-
+const cards = stackcardData.map((item, index) => ({
+  color: item.color,
+  content: (
+    <AllInOnePolicy
+      key={index}
+      buttonText="Get Started"
+      icon={item.icon}
+      title={item.title}
+      description={item.description}
+      image={item.image}
+      buttonUrl={salesUrl}
+      maxImageHeight="300px"
+    />
+  ),
+}))
 const PaymentPage = (): React.JSX.Element => {
   return (
     <div className={`color-white ${styles.home_container}`}>
@@ -152,7 +167,7 @@ const PaymentPage = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Best Online Payment Solution",
+                  title: "Collect Payments Directly on Your Page",
                   color: "color-white",
                 },
               ]}
@@ -162,7 +177,7 @@ const PaymentPage = (): React.JSX.Element => {
           </div>
 
           <div className={` d-flex ${styles.section}`}>
-            {" "}
+
             <div className={` ${styles.card}`}>
               <div className={` d-flex ${styles.outerCard}`}>
                 <DynamicHeading
@@ -177,7 +192,7 @@ const PaymentPage = (): React.JSX.Element => {
                 />
               </div>
               <div className={`py-2 text-center ${styles.innerCard}`}>
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -195,7 +210,7 @@ const PaymentPage = (): React.JSX.Element => {
                 <Image src={activationIcon} alt="icon" />
               </div>
               <div className={`py-2 text-center ${styles.innerCard}`}>
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -213,7 +228,7 @@ const PaymentPage = (): React.JSX.Element => {
                 <Image src={realTimeIcon} alt="icon" />
               </div>
               <div className={`py-2 text-center ${styles.innerCard}`}>
-                {" "}
+
                 <DynamicHeading
                   content={[
                     {
@@ -247,9 +262,8 @@ const PaymentPage = (): React.JSX.Element => {
           <div className="row">
             <div className="col-md-6 col-12">
               <div
-                className={` mt-md-5 ${
-                  showScroll ? "overflow-auto scrollbar-thin" : ""
-                }`}
+                className={` mt-md-5 ${showScroll ? "overflow-auto scrollbar-thin" : ""
+                  }`}
                 style={{
                   maxHeight: "400px",
                   direction: showScroll ? "rtl" : "ltr",
@@ -333,7 +347,19 @@ const PaymentPage = (): React.JSX.Element => {
           </div>
         </div>
       </div>
-
+      <div className={styles.card_stacking_row}>
+        <div className={` max-w-auto  ${styles.section}`}>
+          <CardStacking
+            cards={cards}
+            heading={[
+              {
+                title: "Meal Cards that your Employees Deserve",
+                color: "color-black",
+              },
+            ]}
+          />
+        </div>
+      </div>
       <div className={`${styles.slider_row} relative`}>
         <div className="max-w-auto">
           <div className={`${styles.title} row`}>
@@ -368,7 +394,7 @@ const PaymentPage = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Turn clicks into transactions!",
+                  title: "Turn Clicks Into Transactions",
                   color: "color-white",
                 },
               ]}
@@ -396,11 +422,11 @@ const PaymentPage = (): React.JSX.Element => {
             <DynamicHeading
               content={[
                 {
-                  title: "Check out our ",
+                  title: "Check out ",
                   color: "color-black",
                 },
                 {
-                  title: "other payment products",
+                  title: "other collection products",
                   color: "color-equity-blue",
                 },
                 {

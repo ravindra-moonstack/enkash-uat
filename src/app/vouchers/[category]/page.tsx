@@ -20,7 +20,6 @@ import RectangleButton from "@/components/buttons/rectangle-button/rectangle-but
 import DynamicHeading from "@/components/dynamicHeading/dynamic-heading"
 import { blueArrow } from "."
 
-
 export async function generateMetadata({
   params,
 }: {
@@ -55,8 +54,8 @@ export async function generateMetadata({
       images: [
         {
           url: imageUrl,
-          width: 1200, // Recommended width for Open Graph
-          height: 630, // Recommended height for Open Graph
+          width: 1200,
+          height: 630,
           alt: `${voucher.name} image`,
         },
       ],
@@ -73,7 +72,6 @@ export async function generateMetadata({
 const sanitizeStep = (step: string): string => {
   const containsOnlyLetters = /^[a-zA-Z]+$/
   let myStep = step
-  //removing any special character from front (current data is not formatted)
   while (!containsOnlyLetters.test(myStep[0]) && myStep) {
     myStep = myStep.slice(1)
   }
@@ -114,7 +112,6 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
     console.log(apiData)
     console.log("API Response JSON:", JSON.stringify(apiData, null, 2))
 
-    //discount update
     apiData.payload.data.forEach((product: any) => {
       if (
         nameToUrl(product.brand) === localVoucher.urlName &&
@@ -126,7 +123,6 @@ const fetchVoucher = async (voucherName: string): Promise<Voucher | null> => {
       }
     })
 
-    // return isActive ? localVoucher : null
     return localVoucher
   } catch (error) {
     console.error("Error fetching vouchers:", error)
@@ -175,7 +171,7 @@ const CategoryPage = async ({
 
   const breadcrumbItems = [
     { name: "Home", url: "/" },
-    { name: "Vouchers", url: "/vouchers" },
+    { name: "Vouchers", url: "/products/vouchers" },
     {
       name: `${categoryNameMap.get(voucherCategory)}`,
       url: `/vouchers/category/${voucherData?.category}`,

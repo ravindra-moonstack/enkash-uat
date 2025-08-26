@@ -140,7 +140,7 @@ const cardsData = [
   },
   {
     title: "Share Payment Links",
-    description: "Send the link via SMS, email, WhatsApp, or social media",
+    description: "Send the link via SMS, email, WhatsApp, or social media.",
     icon: sharePaymentIcon,
   },
   {
@@ -393,7 +393,7 @@ const policies = [
     icon: quickIcon,
     title: "Quick and Easy Setup",
     description:
-      "Generate payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing businesses of all sizes to start quickly. Focus on running your business while we simplify your payment collection process.",
+      "Generate payment links effortlessly from the dashboard or through APIs in just a few clicks. No technical expertise is required, allowing merchants of all sizes to start quickly. Focus on running your business while we simplify your payment collection process.",
     image: paymentLinkImage,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "248px",
@@ -402,7 +402,7 @@ const policies = [
     icon: websiteIcon,
     title: "No Website Required",
     description:
-      "EnKash Payment Links are perfect for businesses without an online presence. Collect payments via SMS, WhatsApp, email, or social media, eliminating the need for a website or app. This solution bridges the gap between offline and online payment experiences seamlessly.",
+      "EnKash Payment Links are perfect for merchants without an online presence. Collect payments via SMS, WhatsApp, email, or social media, eliminating the need for a website or app. This solution bridges the gap between offline and online payment experiences seamlessly.",
     image: shareImage,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "305px",
@@ -412,7 +412,7 @@ const policies = [
     icon: paymentOptionIcon,
     title: "100+ Payment Options",
     description:
-      "Offer your customers the flexibility to pay using their preferred method, including UPI, net banking, credit/debit cards, wallets, and more. EnKash Payment Links ensure a smooth checkout experience for everyone, boosting customer satisfaction and increasing conversions",
+      "Offer your customers the flexibility to pay using their preferred method, including UPI, net banking, credit/debit cards, wallets, and more. EnKash Payment Links ensure a smooth checkout experience for everyone, boosting customer satisfaction and increasing conversions.",
     image: paymentOptionImage,
     buttonUrl: "/sales/?source=expense_management",
     maxImageHeight: "243px",
